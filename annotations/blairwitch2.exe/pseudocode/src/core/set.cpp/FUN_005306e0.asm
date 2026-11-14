@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   core_charactr.cpp_FUN_004268b0 at 00426943
-;   core_shadow.cpp_FUN_0053e6c0 at 0053e7fb
-;   unkafter_cross.cpp_FUN_005a6bc0 at 005a6ccd
+;   core_charactr.cpp_CCharacter_renderTransparent_FUN_004268b0 at 00426943
+;   core_cross.cpp_CCross_renderTransparent_FUN_005a6bc0 at 005a6ccd
+;   core_shadow.cpp_CShadow_renderTransparent_FUN_0053e6c0 at 0053e7fb
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01fc961c

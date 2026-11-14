@@ -14,6 +14,12 @@
   },
   "cross_references": [
     {
+      "addr": "00598780",
+      "from_addr": "00598794",
+      "name": "core_darkwolf.cpp_CDarkwolf_ctor_FUN_00598780",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0050a450",
       "from_addr": "0050a46b",
       "name": "core_passngr.cpp_CPassenger_ctor_FUN_0050a450",
@@ -53,12 +59,6 @@
       "addr": "0059d750",
       "from_addr": "0059d772",
       "name": "core_styler.cpp_CStyler_ctor_FUN_0059d750",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00598780",
-      "from_addr": "00598794",
-      "name": "unkafter_darkwolf.cpp_CDarkwolf_ctor_FUN_00598780",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -110,7 +110,7 @@
       {
         "call_addr": "00598794",
         "call_type": "direct",
-        "caller": "unkafter_darkwolf.cpp_CDarkwolf_ctor_FUN_00598780",
+        "caller": "core_darkwolf.cpp_CDarkwolf_ctor_FUN_00598780",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -199,6 +199,32 @@
       "STORE": 5
     },
     "pcode_op_count": 30
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b6e60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00522fa0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0052b310",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004e0050",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 8,

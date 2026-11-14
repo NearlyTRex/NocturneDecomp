@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 131,
+    "complexity_score": 66,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 5,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 26,
-    "suspect_count": 9,
+    "suspect_count": 3,
     "suspect_types": [
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 84
@@ -27,7 +26,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_3d.c_renderPolygonTexturedOp45_FUN_00405ee0",
-    "signature": "int __cdecl engine_3d_c_renderPolygonTexturedOp45_FUN_00405ee0(int param_1)"
+    "signature": "SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedOp45_FUN_00405ee0(SMRGLHeaderPrimitive *prim)"
   },
   "function_calls": [
     {
@@ -77,9 +76,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -111,13 +110,47 @@
     },
     "pcode_op_count": 197
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00405d10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00405d10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00405ec0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004074b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "prim",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -127,22 +160,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int __cdecl engine_3d_c_renderPolygonTexturedOp45_FUN_00405ee0(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = engine_3d_c_isVisiblePlane_FUN_00403970(param_1 + 8);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
@@ -159,38 +176,6 @@
       "severity": "mild",
       "text": "else if (DAT_006141c0 == 0x20) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_clipper_c_clipAndRasterize_FUN_00431d90(*(int *)(param_1 + 4),(int *)(param_1 + 0x18));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_clipper_c_clipAndRasterize_FUN_00431d90(*(int *)(param_1 + 4),(int *)(param_1 + 0x18));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return *(int *)(param_1 + 4) * 4 + param_1 + 0x18;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return *(int *)(param_1 + 4) * 4 + param_1 + 0x18;",
-      "type": "unnamed_param"
     }
   ],
   "vtable_info": {

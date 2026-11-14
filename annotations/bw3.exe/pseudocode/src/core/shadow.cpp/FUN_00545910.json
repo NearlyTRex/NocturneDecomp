@@ -2,17 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 99,
+    "complexity_score": 108,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 7,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 14,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 18,
     "suspect_count": 8,
     "suspect_types": [
+      "primitive_walker_cast",
       "unnamed_param"
     ],
-    "total_lines": 68
+    "total_lines": 72
   },
   "cross_references": [],
   "function": {
@@ -25,9 +26,14 @@
     ],
     "convention": "unknown",
     "name": "core_shadow.cpp_FUN_00545910",
-    "signature": "void core_shadow_cpp_FUN_00545910(int param_1)"
+    "signature": "void core_shadow_cpp_FUN_00545910(CEnemy *param_1)"
   },
   "function_calls": [
+    {
+      "addr": "0040ba30",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveDeformableModelInstance_FUN_0040ba30"
+    },
     {
       "addr": "0040b830",
       "is_variadic": false,
@@ -39,19 +45,14 @@
       "name": "core_actor.cpp_archiveInteger_FUN_0040b8b0"
     },
     {
-      "addr": "0040ba30",
-      "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040ba30"
-    },
-    {
       "addr": "0040bab0",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040bab0"
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040bab0"
     },
     {
       "addr": "00489120",
       "is_variadic": false,
-      "name": "core_enemy.cpp_FUN_00489120"
+      "name": "core_enemy.cpp_CEnemy_archive_FUN_00489120"
     }
   ],
   "globals": [
@@ -144,23 +145,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_shadow_cpp_FUN_00545910(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_enemy_cpp_FUN_00489120(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(param_1 + 0xcdcc,\"@speed\" + 1);",
+      "text": "void core_shadow_cpp_FUN_00545910(CEnemy *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -168,7 +153,7 @@
       "line": 7,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_0040ba30((CDeformableModelInstance *)(param_1 + 0x158),\"modelName\");",
+      "text": "core_enemy_cpp_CEnemy_archive_FUN_00489120(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -176,7 +161,7 @@
       "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(param_1 + 0xcddc,\"guardDistance\");",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&param_1->speed,\"@speed\" + 1);",
       "type": "unnamed_param"
     },
     {
@@ -184,23 +169,39 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_0040bab0((CMotionController *)(param_1 + 0x158),\"motion state\");",
+      "text": "model_ptr = &(param_1->base).model;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)(param_1 + 0xd074),\"lightUpEyes\");",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&param_1->guard_distance,\"guardDistance\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
+      "line": 17,
+      "match": "(int *)&param_1[",
+      "severity": "moderate",
+      "text": "((int *)&param_1[1].base.base.location,\"lightUpEyes\");",
+      "type": "primitive_walker_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((int *)&param_1[1].base.base.location,\"lightUpEyes\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)(param_1 + 0xd0e0),\"scaredByLight\");",
+      "text": "((int *)(param_1[1].base.base.create_event + 0x14),\"scaredByLight\");",
       "type": "unnamed_param"
     }
   ],

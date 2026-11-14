@@ -1,0 +1,110 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 10,
+    "complexity_score": 33,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 33,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 43
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004cfa50",
+    "address_range": [
+      [
+        "004cfa50",
+        "004cfa60"
+      ],
+      [
+        "004cfaaf",
+        "004cfab4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_ground.cpp_getGroundTypeName_FUN_004cfa50",
+    "signature": "char * __cdecl core_ground_cpp_getGroundTypeName_FUN_004cfa50(EGroundType type)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005c4944",
+      "name": "s_DEFAULT_005c4944",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.571428571428571,
+    "instruction_count": 7,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCHIND": 1,
+      "CBRANCH": 1,
+      "COPY": 3,
+      "INT_ADD": 3,
+      "INT_AND": 4,
+      "INT_EQUAL": 4,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_SBORROW": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 2,
+      "LOAD": 3,
+      "POPCOUNT": 2,
+      "RETURN": 1
+    },
+    "pcode_op_count": 32
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004ca840",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004e70c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004eed80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3684
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "type",
+        "offset": 4,
+        "size": 4,
+        "type": "EGroundType"
+      }
+    ]
+  },
+  "suspects": []
+}

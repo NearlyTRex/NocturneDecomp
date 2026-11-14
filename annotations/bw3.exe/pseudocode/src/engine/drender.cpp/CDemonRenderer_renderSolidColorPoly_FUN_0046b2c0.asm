@@ -9,12 +9,12 @@
 ;
 ; XREF[7]:
 ;   core_dtrace.cpp_FUN_00475090 at 004754a4
-;   core_dtri.cpp_FUN_0047ae9c at 0047afdd
-;   core_set.cpp_FUN_0053ad70 at 0053add6
+;   core_dtri.cpp_FUN_0047aea0 at 0047afdd
+;   core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_0053ad70 at 0053add6
 ;   core_setdir.cpp_FUN_0053f5d0 at 0053f6c6
 ;   core_setdir.cpp_FUN_0053f940 at 0054085b
 ;   core_skeleton.cpp_CDeformableModel_renderParts_FUN_00548c70 at 00549401
-;   core_water.cpp_FUN_00577760 at 00577cce
+;   core_water.cpp_CWater_render_FUN_00577760 at 00577cce
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01bdd818
@@ -88,7 +88,7 @@ section .text
         ;   Label: LAB_0046b336
     PUSH EAX                            ; 0046b339
     CALL engine_3d.c_isVisiblePlane_FUN_00403920 ; 0046b33a
-        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403920()
+        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403920(SClipPlane * plane)
     ADD ESP,0x4                         ; 0046b33f
     TEST EAX,EAX                        ; 0046b342
     JZ 0x0046b332                       ; 0046b344

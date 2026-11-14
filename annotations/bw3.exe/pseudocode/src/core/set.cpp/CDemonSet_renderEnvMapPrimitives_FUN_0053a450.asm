@@ -30,18 +30,18 @@
 ;   undefined4 DAT_00603e44
 ;   undefined4 DAT_01bdd7e4
 ;   undefined4 DAT_01c6e24c
-;   undefined4 g_CGameInstance.field536_0x218
+;   undefined4 g_CGameInstance.render_mode
 ;   undefined4 DAT_020d4f70
 ;   undefined4 DAT_020d4f74
 ;   undefined4 DAT_020d4f78
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046d1a0
 ;   engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0046bc20
 ;   engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0046c3b0
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
-;   engine_matrix.c_FUN_0046d1a0
 ;
 ; *****************************************************************************
 
@@ -60,7 +60,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0 ; 0053a46d
         ;   XREF to: 0046e5e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     MOV EAX,[0x005fe9dc]                ; 0053a472 | g_CGamePtr
-    MOV ECX,dword ptr [EAX + 0x218]     ; 0053a477 | g_CGameInstance.field536_0x218
+    MOV ECX,dword ptr [EAX + 0x218]     ; 0053a477 | g_CGameInstance.render_mode
     ADD ESP,0x8                         ; 0053a47d
     CMP ECX,0x2                         ; 0053a480
     JNZ 0x0053a669                      ; 0053a483
@@ -72,8 +72,8 @@ section .text
         ;   Label: LAB_0053a498
     PUSH EAX                            ; 0053a49d | DAT_01bdd7e4
     LEA ESI,[ESP + 0xd8]                ; 0053a49e
-    CALL engine_matrix.c_FUN_0046d1a0   ; 0053a4a5
-        ;   XREF to: 0046d1a0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_0046d1a0()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046d1a0 ; 0053a4a5
+        ;   XREF to: 0046d1a0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046d1a0(CDemonRenderer * this_ptr, CVector3i * output)
     ADD ESP,0x4                         ; 0053a4aa
     XOR EDX,EDX                         ; 0053a4ad
     MOV ECX,dword ptr [ESP + 0x100]     ; 0053a4af

@@ -10,6 +10,6 @@ void __cdecl core_netgame_cpp_CNetGame_sendPacket_FUN_005058d0(CNetGame *this_pt
 
 {
   support_trisock_cpp_CSocket_sendSocketData_FUN_0056fbb0
-            ((CSocket *)&this_ptr->field_0x180,(char *)(packet + 4),*(int *)packet + -4,dest_addr);
+            (&this_ptr->socket,(char *)&packet->type,packet->size + -4,dest_addr);
   return;
 }

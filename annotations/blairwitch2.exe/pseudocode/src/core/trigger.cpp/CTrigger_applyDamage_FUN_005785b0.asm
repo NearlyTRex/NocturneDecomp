@@ -11,15 +11,15 @@
 ; undefined8       Stack[-0xc]:8  local_c
 ;
 ; XREF[9]:
-;   core_actor.cpp_FUN_0040a050 at 0040a6d1
-;   core_crossbow.cpp_FUN_0043a7a0 at 0043ab13
-;   core_elephant.cpp_FUN_00485b40 at 00486088
-;   core_gun.cpp_FUN_004cbdc0 at 004cc5fd
-;   core_lightgun.cpp_FUN_004e2e70 at 004e3316
-;   core_set.cpp_FUN_0052e940 at 0052ed7e
-;   core_shotgun.cpp_FUN_0053f170 at 0053f6a9
-;   core_tommygun.cpp_FUN_00575800 at 0057607c
-;   core_turret.cpp_FUN_0057fc20 at 0058013c
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050 at 0040a6d1
+;   core_crossbow.cpp_CCrossbow_fire_FUN_0043a7a0 at 0043ab13
+;   core_elephant.cpp_CElephantGun_fire_FUN_00485b40 at 00486088
+;   core_gun.cpp_CGun_fire_FUN_004cbdc0 at 004cc5fd
+;   core_lightgun.cpp_CLightGun_fire_FUN_004e2e70 at 004e3316
+;   core_set.cpp_CDemonSet_processActors_FUN_0052e940 at 0052ed7e
+;   core_shotgun.cpp_CShotgun_fire_FUN_0053f170 at 0053f6a9
+;   core_tommygun.cpp_CTommyGun_fire_FUN_00575800 at 0057607c
+;   core_turret.cpp_CTurret_fire_FUN_0057fc20 at 0058013c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_received_g_damage_hitp_005eced9
@@ -27,7 +27,7 @@
 ;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
-;   engine_console.cpp_FUN_00436710
+;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;
 ; *****************************************************************************
 
@@ -67,8 +67,8 @@ section .text
     PUSH 0x5eced9                       ; 00578607 | = "%s received %g damage, hitpoints %g\n"
     MOV ECX,dword ptr [0x00609ed0]      ; 0057860c | g_CConsolePtr
     PUSH ECX                            ; 00578612 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00436710 ; 00578613
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 00578613
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     ADD ESP,0x1c                        ; 00578618
     MOV dword ptr [EBX + 0x4cc],0x3f800000 ; 0057861b
     POP EBX                             ; 00578625

@@ -47,7 +47,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0x2f94]    ; 004627ad
     MOV ECX,dword ptr [EBX + 0x2f9c]    ; 004627b3
     CALL crt_watcom.c__memcpy_FUN_004ab0c8 ; 004627b9
-        ;   XREF to: 004ab0c8 (UNCONDITIONAL_CALL)  ; undefined crt_watcom.c__memcpy_FUN_004ab0c8()
+        ;   XREF to: 004ab0c8 (UNCONDITIONAL_CALL)  ; void crt_watcom.c__memcpy_FUN_004ab0c8(void * dest, void * src, uint size)
     POP EBP                             ; 004627be
     POP EBX                             ; 004627bf
     RET                                 ; 004627c0

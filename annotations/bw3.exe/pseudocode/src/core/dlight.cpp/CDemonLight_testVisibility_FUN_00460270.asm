@@ -14,7 +14,7 @@
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
-;   core_set.cpp_FUN_0053b250
+;   core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_0053b250
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0046d460
 ;
 ; *****************************************************************************
@@ -52,8 +52,8 @@ section .text
     PUSH EDI                            ; 004602c5 | g_CDemonSetInstance
     MOV dword ptr [ESP + 0x28],ECX      ; 004602c6
     MOV dword ptr [ESP + 0x2c],ESI      ; 004602ca
-    CALL core_set.cpp_FUN_0053b250      ; 004602ce
-        ;   XREF to: 0053b250 (UNCONDITIONAL_CALL)  ; int core_set.cpp_FUN_0053b250(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_0053b250 ; 004602ce
+        ;   XREF to: 0053b250 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_0053b250(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 004602d3
     TEST EAX,EAX                        ; 004602d6
     JZ 0x004602f9                       ; 004602d8
@@ -87,8 +87,8 @@ section .text
     PUSH ESI                            ; 0046031e | g_CDemonSetInstance
     MOV dword ptr [ESP + 0x28],EDX      ; 0046031f
     MOV dword ptr [ESP + 0x2c],ECX      ; 00460323
-    CALL core_set.cpp_FUN_0053b250      ; 00460327
-        ;   XREF to: 0053b250 (UNCONDITIONAL_CALL)  ; int core_set.cpp_FUN_0053b250(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_0053b250 ; 00460327
+        ;   XREF to: 0053b250 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_0053b250(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 0046032c
     TEST EAX,EAX                        ; 0046032f
     JZ 0x00460337                       ; 00460331
@@ -106,8 +106,8 @@ section .text
     PUSH ECX                            ; 00460351 | g_CDemonSetInstance
     MOV dword ptr [ESP + 0x24],EBP      ; 00460352
     MOV dword ptr [ESP + 0x2c],EDX      ; 00460356
-    CALL core_set.cpp_FUN_0053b250      ; 0046035a
-        ;   XREF to: 0053b250 (UNCONDITIONAL_CALL)  ; int core_set.cpp_FUN_0053b250(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_0053b250 ; 0046035a
+        ;   XREF to: 0053b250 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_0053b250(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 0046035f
     TEST EAX,EAX                        ; 00460362
     JZ 0x0046036d                       ; 00460364
@@ -128,8 +128,8 @@ section .text
     PUSH EDX                            ; 00460392 | g_CDemonSetInstance
     MOV dword ptr [ESP + 0x24],EDI      ; 00460393
     MOV dword ptr [ESP + 0x28],EBP      ; 00460397
-    CALL core_set.cpp_FUN_0053b250      ; 0046039b
-        ;   XREF to: 0053b250 (UNCONDITIONAL_CALL)  ; int core_set.cpp_FUN_0053b250(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_0053b250 ; 0046039b
+        ;   XREF to: 0053b250 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_0053b250(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 004603a0
     TEST EAX,EAX                        ; 004603a3
     JNZ 0x004602da                      ; 004603a5
@@ -144,8 +144,8 @@ section .text
     PUSH EAX                            ; 004603c5 | g_CDemonSetInstance
     MOV dword ptr [ESP + 0x28],EDI      ; 004603c6
     MOV dword ptr [ESP + 0x2c],EBP      ; 004603ca
-    CALL core_set.cpp_FUN_0053b250      ; 004603ce
-        ;   XREF to: 0053b250 (UNCONDITIONAL_CALL)  ; int core_set.cpp_FUN_0053b250(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_0053b250 ; 004603ce
+        ;   XREF to: 0053b250 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_0053b250(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 004603d3
     TEST EAX,EAX                        ; 004603d6
     JZ 0x004603e1                       ; 004603d8
@@ -166,8 +166,8 @@ section .text
     PUSH EBP                            ; 00460406 | g_CDemonSetInstance
     MOV dword ptr [ESP + 0x28],ESI      ; 00460407
     MOV dword ptr [ESP + 0x2c],EDI      ; 0046040b
-    CALL core_set.cpp_FUN_0053b250      ; 0046040f
-        ;   XREF to: 0053b250 (UNCONDITIONAL_CALL)  ; int core_set.cpp_FUN_0053b250(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_0053b250 ; 0046040f
+        ;   XREF to: 0053b250 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_0053b250(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 00460414
     TEST EAX,EAX                        ; 00460417
     JZ 0x004602df                       ; 00460419

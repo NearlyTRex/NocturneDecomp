@@ -9,6 +9,6 @@
 void core_shadow_cpp_FUN_00545700(CCharacter *param_1)
 
 {
-  core_charactr_cpp_FUN_0042e220(param_1);
+  core_charactr_cpp_CCharacter_renderOpaque_FUN_0042e220(param_1);
   return;
 }

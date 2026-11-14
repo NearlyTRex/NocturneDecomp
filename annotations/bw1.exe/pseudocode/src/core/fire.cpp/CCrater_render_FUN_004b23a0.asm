@@ -29,8 +29,8 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:
+;   core_fire.cpp_CCrater_activate_FUN_004b1fb0 at 004b1fda
 ;   core_fire.cpp_CFireEffect_renderDecals_FUN_004b54a0 at 004b5564
-;   core_fire.cpp_FUN_004b1fb0 at 004b1fda
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fff94

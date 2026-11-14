@@ -11,24 +11,26 @@
 void __cdecl core_charactr_cpp_FUN_00423a60(CCharacter *this_ptr,CVector3f *velocity)
 
 {
-  char cVar1;
-  float fVar2;
+  CLocation *pCVar1;
+  UOrientationVector *pUVar2;
   float fVar3;
   float fVar4;
-  bool bVar5;
-  uint *puVar6;
-  uint *puVar7;
+  char cVar5;
+  float fVar6;
+  bool bVar7;
+  CVector3f *pCVar8;
   char *str1;
-  uint uVar8;
-  int iVar9;
-  float *pfVar10;
-  char *pcVar11;
-  int iVar12;
-  byte bVar13;
+  uint uVar9;
+  CVector3f *pCVar10;
+  int iVar11;
+  float *pfVar12;
+  uint *puVar13;
+  char *pcVar14;
+  int iVar15;
+  byte bVar16;
   float afStackY_10d4 [1003];
-  CDemonSet *pCVar14;
+  CDemonSet *pCVar17;
   CCharacter *actor;
-  byte *puVar15;
   float local_f8;
   float local_e8;
   float local_e4;
@@ -38,9 +40,9 @@ void __cdecl core_charactr_cpp_FUN_00423a60(CCharacter *this_ptr,CVector3f *velo
   float local_d4;
   float fStack_d0;
   float fStack_cc;
-  uint local_c8;
+  float local_c8;
   float fStack_c4;
-  byte local_bc [12];
+  CVector3f local_bc;
   float local_b0;
   float afStack_ac [4];
   float fStack_9c;
@@ -56,183 +58,185 @@ void __cdecl core_charactr_cpp_FUN_00423a60(CCharacter *this_ptr,CVector3f *velo
   float local_68;
   float local_64;
   float local_60;
-  byte *local_5c;
-  uint *local_58;
-  uint *local_54;
+  CVector3f *local_5c;
+  CVector3f *local_58;
+  CVector3f *local_54;
   float local_50;
   float fStack_4c;
   float local_48;
-  byte *local_44;
+  CVector3f *local_44;
   float fStack_40;
   float local_3c;
-  uint *local_38;
-  uint *local_34;
-  uint *local_30;
-  uint *local_2c;
-  float *local_28;
-  byte *local_24;
+  CVector3f *local_38;
+  CVector3f *local_34;
+  CVector3f *local_30;
+  CVector3f *local_2c;
+  CLocation *local_28;
+  CVector3f *local_24;
   int local_20;
   int local_1c;
   float local_18;
   
-  bVar13 = 0;
-  DAT_007bdc98 = 0;
-  if (((((*(uint *)&velocity->field_0x8 & 0x7fffffff) == 0) &&
-       ((*(uint *)velocity & 0x7fffffff) == 0)) && (*(float *)&velocity->field_0x4 <= 0.0)) &&
-     ((*(int *)&this_ptr->field_0xdc == 0 &&
-      (*(float *)&this_ptr->field_0x24 == *(float *)&this_ptr->field_0x2574)))) {
+  bVar16 = 0;
+  DAT_007bdc98 = (CDemonActor *)0x0;
+  if ((((ABS(velocity->z) == 0.0) && (ABS(velocity->x) == 0.0)) && (velocity->y <= 0.0)) &&
+     (((this_ptr->base).standing_platform == (CPlatform *)0x0 &&
+      ((this_ptr->base).location.position.y == this_ptr->closest_distance_threshold)))) {
     core_setcolid_cpp_CDemonSet_init_FUN_00537e00(g_CDemonSetPtr);
-    *(uint *)&this_ptr->field_0x2590 = 0;
-    *(uint *)&this_ptr->field_0x258c = *(uint *)&this_ptr->field_0x2590;
-    *(uint *)&this_ptr->field_0x2588 = *(uint *)&this_ptr->field_0x258c;
+    (this_ptr->velocity).z = 0.0;
+    (this_ptr->velocity).y = (this_ptr->velocity).z;
+    (this_ptr->velocity).x = (this_ptr->velocity).y;
     return;
   }
   core_actor_cpp_FUN_00408cf0(this_ptr,velocity);
   local_68 = local_b0;
-  afStack_7c[(uint)bVar13 * -2 + 6] = afStack_ac[(uint)bVar13 * -2];
-  afStack_7c[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 7] =
-       afStack_ac[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1];
-  if (*(int *)&this_ptr->field_0x2814 != 0) {
-    *(uint *)&this_ptr->field_0xdc = 0;
-    *(float *)&this_ptr->field_0x20 = *(float *)&this_ptr->field_0x20 + local_68;
-    *(float *)&this_ptr->field_0x24 = *(float *)&this_ptr->field_0x24 + local_64;
-    *(float *)&this_ptr->field_0x28 = *(float *)&this_ptr->field_0x28 + local_60;
-    *(uint *)&this_ptr->field_0x2590 = 0;
-    *(uint *)&this_ptr->field_0x258c = *(uint *)&this_ptr->field_0x2590;
-    *(uint *)&this_ptr->field_0x2588 = *(uint *)&this_ptr->field_0x258c;
+  afStack_7c[(uint)bVar16 * -2 + 6] = afStack_ac[(uint)bVar16 * -2];
+  afStack_7c[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 7] =
+       afStack_ac[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1];
+  if (this_ptr->is_spectral != 0) {
+    pCVar1 = &(this_ptr->base).location;
+    (this_ptr->base).standing_platform = (CPlatform *)0x0;
+    fVar3 = (this_ptr->base).location.position.y;
+    fVar4 = (this_ptr->base).location.position.z;
+    (pCVar1->position).x = (pCVar1->position).x + local_68;
+    (this_ptr->base).location.position.y = fVar3 + local_64;
+    (this_ptr->base).location.position.z = fVar4 + local_60;
+    (this_ptr->velocity).z = 0.0;
+    (this_ptr->velocity).y = (this_ptr->velocity).z;
+    (this_ptr->velocity).x = (this_ptr->velocity).y;
     return;
   }
-  if (this_ptr->field_0x2514 != '\0') {
-    str1 = (char *)core_motion_cpp_FUN_005035c0(&this_ptr->field_0x2b4);
-    uVar8 = 0xffffffff;
-    pcVar11 = str1;
+  if ((this_ptr->model).model_name[0] != '\0') {
+    str1 = (char *)core_motion_cpp_FUN_005035c0(&this_ptr->model);
+    uVar9 = 0xffffffff;
+    pcVar14 = str1;
     do {
-      if (uVar8 == 0) break;
-      uVar8 = uVar8 - 1;
-      cVar1 = *pcVar11;
-      pcVar11 = pcVar11 + (uint)bVar13 * -2 + 1;
-    } while (cVar1 != '\0');
-    iVar9 = ~uVar8 - 0xc;
+      if (uVar9 == 0) break;
+      uVar9 = uVar9 - 1;
+      cVar5 = *pcVar14;
+      pcVar14 = pcVar14 + (uint)bVar16 * -2 + 1;
+    } while (cVar5 != '\0');
+    iVar11 = ~uVar9 - 0xc;
     local_80[0] = "noCollision"[0];
     local_80[1] = "noCollision"[1];
     local_80[2] = "noCollision"[2];
     local_80[3] = "noCollision"[3];
-    afStack_7c[(uint)bVar13 * -2] = *(float *)("noCollision" + (uint)bVar13 * -8 + 4);
-    afStack_7c[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1] =
-         *(float *)("noCollision" + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
-    iVar12 = 0;
-    local_20 = iVar9;
-    if (-1 < iVar9) {
+    afStack_7c[(uint)bVar16 * -2] = *(float *)("noCollision" + (uint)bVar16 * -8 + 4);
+    afStack_7c[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 1] =
+         *(float *)("noCollision" + (uint)bVar16 * -8 + (uint)bVar16 * -8 + 8);
+    iVar15 = 0;
+    local_20 = iVar11;
+    if (-1 < iVar11) {
       do {
-        iVar9 = _strnicmp(str1,local_80,0xb);
-        if (iVar9 == 0) {
-          *(uint *)&this_ptr->field_0x2590 = 0;
-          *(uint *)&this_ptr->field_0x258c = *(uint *)&this_ptr->field_0x2590;
-          *(uint *)&this_ptr->field_0x2588 = *(uint *)&this_ptr->field_0x258c;
+        iVar11 = _strnicmp(str1,local_80,0xb);
+        if (iVar11 == 0) {
+          (this_ptr->velocity).z = 0.0;
+          (this_ptr->velocity).y = (this_ptr->velocity).z;
+          (this_ptr->velocity).x = (this_ptr->velocity).y;
           return;
         }
-        iVar12 = iVar12 + 1;
+        iVar15 = iVar15 + 1;
         str1 = str1 + 1;
-      } while (iVar12 <= local_20);
+      } while (iVar15 <= local_20);
     }
   }
-  if (*(int *)&this_ptr->field_0xdc != 0) {
-    local_68 = local_68 + *(float *)&this_ptr->field_0xe0;
-    local_60 = local_60 + *(float *)&this_ptr->field_0xe8;
-    *(float *)&this_ptr->field_0x24 =
-         *(float *)&this_ptr->field_0xe4 + *(float *)&this_ptr->field_0x24;
-    *(uint *)&this_ptr->field_0xe8 = 0;
-    *(uint *)&this_ptr->field_0xe4 = *(uint *)&this_ptr->field_0xe8;
-    *(uint *)&this_ptr->field_0xe0 = *(uint *)&this_ptr->field_0xe4;
-    *(float *)&this_ptr->field_0x30 =
-         *(float *)&this_ptr->field_0xec + *(float *)&this_ptr->field_0x30;
-    *(float *)&this_ptr->field_0x34 =
-         *(float *)&this_ptr->field_0xf0 + *(float *)&this_ptr->field_0x34;
-    *(float *)&this_ptr->field_0x38 =
-         *(float *)&this_ptr->field_0xf4 + *(float *)&this_ptr->field_0x38;
-    *(uint *)&this_ptr->field_0xf4 = 0;
-    *(uint *)&this_ptr->field_0xf0 = *(uint *)&this_ptr->field_0xf4;
-    *(uint *)&this_ptr->field_0xec = *(uint *)&this_ptr->field_0xf0;
-    core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0((CDemonActor *)this_ptr);
+  if ((this_ptr->base).standing_platform != (CPlatform *)0x0) {
+    local_68 = local_68 + (this_ptr->base).platform_position_delta.x;
+    local_60 = local_60 + (this_ptr->base).platform_position_delta.z;
+    (this_ptr->base).location.position.y =
+         (this_ptr->base).platform_position_delta.y + (this_ptr->base).location.position.y;
+    (this_ptr->base).platform_position_delta.z = 0.0;
+    pUVar2 = &(this_ptr->base).orient;
+    (this_ptr->base).platform_position_delta.y = (this_ptr->base).platform_position_delta.z;
+    (this_ptr->base).platform_position_delta.x = (this_ptr->base).platform_position_delta.y;
+    pCVar10 = &(this_ptr->base).platform_orientation_delta;
+    (pUVar2->vec).x = pCVar10->x + (pUVar2->vec).x;
+    (this_ptr->base).orient.vec.y =
+         (this_ptr->base).platform_orientation_delta.y + (this_ptr->base).orient.vec.y;
+    (this_ptr->base).orient.vec.z =
+         (this_ptr->base).platform_orientation_delta.z + (this_ptr->base).orient.vec.z;
+    (this_ptr->base).platform_orientation_delta.z = 0.0;
+    (this_ptr->base).platform_orientation_delta.y = (this_ptr->base).platform_orientation_delta.z;
+    pCVar10->x = (this_ptr->base).platform_orientation_delta.y;
+    core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0(&this_ptr->base);
   }
-  local_24 = &this_ptr->field_0x2ed4;
-  iVar9 = 0;
-  local_54 = (uint *)&this_ptr->field_0x2f88;
-  local_58 = (uint *)&this_ptr->field_0x2ef8;
+  local_24 = this_ptr->collision_test_points;
+  iVar11 = 0;
+  local_54 = this_ptr->collision_test_normals;
+  local_58 = this_ptr->collision_test_points + 3;
   do {
-    puVar6 = (uint *)(local_24 + iVar9 * 0x24);
-    puVar7 = local_54;
+    pCVar8 = local_24 + iVar11 * 3;
+    pCVar10 = local_54;
     do {
-      puVar6[2] = 0;
-      puVar6[1] = puVar6[2];
-      *puVar6 = puVar6[1];
-      puVar7[2] = 0;
-      puVar6 = puVar6 + 3;
-      puVar7[1] = puVar7[2];
-      *puVar7 = puVar7[1];
-      puVar7 = puVar7 + 3;
-    } while (puVar6 != local_58);
-    iVar9 = iVar9 + 1;
-    local_54 = local_54 + 9;
-    local_58 = local_58 + 9;
-  } while (iVar9 < 5);
-  pfVar10 = (float *)((int)this_ptr + (uint)bVar13 * -8 + 0x24);
-  local_c8 = *(uint *)&this_ptr->field_0x20;
-  afStack_ac[(uint)bVar13 * -2 + -6] = *pfVar10;
-  pCVar14 = g_CDemonSetPtr;
+      pCVar8->z = 0.0;
+      pCVar8->y = pCVar8->z;
+      pCVar8->x = pCVar8->y;
+      pCVar10->z = 0.0;
+      pCVar8 = pCVar8 + 1;
+      pCVar10->y = pCVar10->z;
+      pCVar10->x = pCVar10->y;
+      pCVar10 = pCVar10 + 1;
+    } while (pCVar8 != local_58);
+    iVar11 = iVar11 + 1;
+    local_54 = local_54 + 3;
+    local_58 = local_58 + 3;
+  } while (iVar11 < 5);
+  pfVar12 = (float *)((int)this_ptr + (uint)bVar16 * -8 + 0x24);
+  local_c8 = (this_ptr->base).location.position.x;
+  afStack_ac[(uint)bVar16 * -2 + -6] = *pfVar12;
+  pCVar17 = g_CDemonSetPtr;
   actor = this_ptr;
-  *(float *)(&stack0xffffff40 + (uint)bVar13 * -8 + (uint)bVar13 * -8) =
-       pfVar10[(uint)bVar13 * -2 + 1];
-  core_setcolid_cpp_CDemonSet_ignore_FUN_00537e30(pCVar14,(CDemonActor *)actor);
-  local_48 = *(float *)&velocity->field_0x4;
-  local_28 = (float *)&this_ptr->field_0x20;
-  local_5c = &this_ptr->field_0x2f88;
-  local_44 = &this_ptr->field_0x2ed4;
-  local_30 = (uint *)&this_ptr->field_0x2ee0;
-  local_34 = (uint *)&this_ptr->field_0x2eec;
-  local_2c = (uint *)&this_ptr->field_0x2f94;
-  local_38 = (uint *)&this_ptr->field_0x2fa0;
+  *(float *)(&stack0xffffff40 + (uint)bVar16 * -8 + (uint)bVar16 * -8) =
+       pfVar12[(uint)bVar16 * -2 + 1];
+  core_setcolid_cpp_CDemonSet_ignore_FUN_00537e30(pCVar17,&actor->base);
+  local_48 = velocity->y;
+  local_28 = &(this_ptr->base).location;
+  local_5c = this_ptr->collision_test_normals;
+  local_44 = this_ptr->collision_test_points;
+  local_30 = this_ptr->collision_test_points + 1;
+  local_34 = this_ptr->collision_test_points + 2;
+  local_2c = this_ptr->collision_test_normals + 1;
+  local_38 = this_ptr->collision_test_normals + 2;
   local_1c = 0;
   do {
-    local_3c = *(float *)&this_ptr->field_0x3444 * *(float *)&this_ptr->field_0x2824;
+    local_3c = this_ptr->collision_cylinder_top * this_ptr->size_scale;
     local_64 = 0.0;
-    if (local_3c < *(float *)&this_ptr->field_0x3440 * *(float *)&this_ptr->field_0x2824) {
-      local_3c = *(float *)&this_ptr->field_0x24fc;
+    if (local_3c < this_ptr->collision_cylinder_bottom * this_ptr->size_scale) {
+      local_3c = (this_ptr->model).bounding_box.max.y;
     }
-    fVar2 = *(float *)&this_ptr->field_0x3440 * *(float *)&this_ptr->field_0x2824;
-    if (local_3c < fVar2) {
-      local_3c = *(float *)&this_ptr->field_0x2824 * (float)_DAT_005ccc7e + fVar2;
+    fVar3 = this_ptr->collision_cylinder_bottom * this_ptr->size_scale;
+    if (local_3c < fVar3) {
+      local_3c = this_ptr->size_scale * (float)_DAT_005ccc7e + fVar3;
     }
     local_f8 = (float)core_setcolid_cpp_FUN_00537030
-                                (g_CDemonSetPtr,*(uint *)&this_ptr->field_0x20,
-                                 *(uint *)&this_ptr->field_0x28,local_68,local_60,
-                                 *(float *)&this_ptr->field_0x3434 *
-                                 *(float *)&this_ptr->field_0x2824,
-                                 *(float *)&this_ptr->field_0x3440 *
-                                 *(float *)&this_ptr->field_0x2824 + *(float *)&this_ptr->field_0x24
-                                 ,*(float *)&this_ptr->field_0x24 + local_3c);
-    pfVar10 = local_28;
+                                (g_CDemonSetPtr,(this_ptr->base).location.position.x,
+                                 (this_ptr->base).location.position.z,local_68,local_60,
+                                 this_ptr->collision_cylinder_radius * this_ptr->size_scale,
+                                 this_ptr->collision_cylinder_bottom * this_ptr->size_scale +
+                                 (this_ptr->base).location.position.y,
+                                 (this_ptr->base).location.position.y + local_3c);
+    pCVar1 = local_28;
     local_18 = local_f8;
-    if (DAT_007bdc98 == 0) {
-      DAT_007bdc98 = *(int *)&g_CDemonSetPtr->field_0x14d144;
+    if (DAT_007bdc98 == (CDemonActor *)0x0) {
+      DAT_007bdc98 = g_CDemonSetPtr->collision_actor;
     }
-    puVar7 = (uint *)(local_44 + local_1c * 0x24);
-    if (puVar7 != (uint *)&DAT_01510da8) {
-      *puVar7 = _DAT_01510da8;
-      puVar7[1] = _DAT_01510dac;
-      puVar7[2] = _DAT_01510db0;
+    pCVar10 = local_44 + local_1c * 3;
+    if (pCVar10 != (CVector3f *)&DAT_01510da8) {
+      pCVar10->x = _DAT_01510da8;
+      pCVar10->y = _DAT_01510dac;
+      pCVar10->z = _DAT_01510db0;
     }
-    if (local_30 != (uint *)&DAT_01510db4) {
-      *local_30 = _DAT_01510db4;
-      local_30[1] = _DAT_01510db8;
-      local_30[2] = _DAT_01510dbc;
+    if (local_30 != (CVector3f *)&DAT_01510db4) {
+      local_30->x = _DAT_01510db4;
+      local_30->y = _DAT_01510db8;
+      local_30->z = _DAT_01510dbc;
     }
-    if (local_34 != (uint *)&DAT_01510dc0) {
-      *local_34 = _DAT_01510dc0;
-      local_34[1] = _DAT_01510dc4;
-      local_34[2] = _DAT_01510dc8;
+    if (local_34 != (CVector3f *)&DAT_01510dc0) {
+      local_34->x = _DAT_01510dc0;
+      local_34->y = _DAT_01510dc4;
+      local_34->z = _DAT_01510dc8;
     }
-    pCVar14 = g_CDemonSetPtr;
+    pCVar17 = g_CDemonSetPtr;
     if (0.0 <= local_f8) {
       if (1.0 < local_f8) {
         local_f8 = 1.0;
@@ -241,114 +245,114 @@ void __cdecl core_charactr_cpp_FUN_00423a60(CCharacter *this_ptr,CVector3f *velo
       local_dc = local_64 * local_f8;
       local_d8 = local_60 * local_f8;
       local_98 = local_68 * local_f8;
-      afStack_ac[(uint)bVar13 * -2 + 6] = *(float *)((int)&stack0xffffff24 + (uint)bVar13 * -8);
-      afStack_ac[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 7] =
-           *(float *)((int)&stack0xffffff28 + (uint)bVar13 * -8 + (uint)bVar13 * -8);
-      *pfVar10 = *pfVar10 + local_98;
-      pfVar10[1] = pfVar10[1] + local_94;
-      pfVar10[2] = pfVar10[2] + local_90;
-      puVar15 = local_bc;
-      puVar7 = (uint *)((int)pCVar14 + (uint)bVar13 * -8 + 0x14d12c);
-      local_d4 = *(float *)&pCVar14->field_0x14d128;
-      *(uint *)((int)&stack0xffffff30 + (uint)bVar13 * -8) = *puVar7;
-      *(uint *)((int)&stack0xffffff34 + (uint)bVar13 * -8 + (uint)bVar13 * -8) =
-           puVar7[(uint)bVar13 * -2 + 1];
-      local_18 = (float)(**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x48))
-                                  (this_ptr,*(uint *)&this_ptr->field_0x3430,puVar15);
-      bVar5 = false;
-      puVar7 = (uint *)(local_5c + local_1c * 0x24);
-      *(float *)&this_ptr->field_0x2574 = local_18;
-      if (puVar7 != (uint *)&DAT_01510da8) {
-        *puVar7 = _DAT_01510da8;
-        puVar7[1] = _DAT_01510dac;
-        puVar7[2] = _DAT_01510db0;
+      afStack_ac[(uint)bVar16 * -2 + 6] = *(float *)((int)&stack0xffffff24 + (uint)bVar16 * -8);
+      afStack_ac[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 7] =
+           *(float *)((int)&stack0xffffff28 + (uint)bVar16 * -8 + (uint)bVar16 * -8);
+      (pCVar1->position).x = (pCVar1->position).x + local_98;
+      (pCVar1->position).y = (pCVar1->position).y + local_94;
+      (pCVar1->position).z = (pCVar1->position).z + local_90;
+      pCVar10 = &local_bc;
+      puVar13 = (uint *)((int)pCVar17 + (uint)bVar16 * -8 + 0x14d12c);
+      local_d4 = (pCVar17->collision_normal).x;
+      *(uint *)((int)&stack0xffffff30 + (uint)bVar16 * -8) = *puVar13;
+      *(uint *)((int)&stack0xffffff34 + (uint)bVar16 * -8 + (uint)bVar16 * -8) =
+           puVar13[(uint)bVar16 * -2 + 1];
+      local_18 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
+                           (&this_ptr->base,this_ptr->collision_cylinder_height,pCVar10);
+      bVar7 = false;
+      pCVar10 = local_5c + local_1c * 3;
+      this_ptr->closest_distance_threshold = local_18;
+      if (pCVar10 != (CVector3f *)&DAT_01510da8) {
+        pCVar10->x = _DAT_01510da8;
+        pCVar10->y = _DAT_01510dac;
+        pCVar10->z = _DAT_01510db0;
       }
-      if (local_2c != (uint *)&DAT_01510db4) {
-        *local_2c = _DAT_01510db4;
-        local_2c[1] = _DAT_01510db8;
-        local_2c[2] = _DAT_01510dbc;
+      if (local_2c != (CVector3f *)&DAT_01510db4) {
+        local_2c->x = _DAT_01510db4;
+        local_2c->y = _DAT_01510db8;
+        local_2c->z = _DAT_01510dbc;
       }
-      if (local_38 != (uint *)&DAT_01510dc0) {
-        *local_38 = _DAT_01510dc0;
-        local_38[1] = _DAT_01510dc4;
-        local_38[2] = _DAT_01510dc8;
+      if (local_38 != (CVector3f *)&DAT_01510dc0) {
+        local_38->x = _DAT_01510dc0;
+        local_38->y = _DAT_01510dc4;
+        local_38->z = _DAT_01510dc8;
       }
-      if (*(float *)&this_ptr->field_0x24 < *(float *)&this_ptr->field_0x2574) {
-        *(uint *)&this_ptr->field_0x24 = *(uint *)&this_ptr->field_0x2574;
-        fStack_c4 = *(float *)&this_ptr->field_0x24;
+      if ((this_ptr->base).location.position.y < this_ptr->closest_distance_threshold) {
+        (this_ptr->base).location.position.y = this_ptr->closest_distance_threshold;
+        fStack_c4 = (this_ptr->base).location.position.y;
       }
       if ((float)_DAT_005ccc8e < local_f8) break;
-      fVar2 = SQRT(fStack_cc * fStack_cc + local_d4 * local_d4);
+      fVar3 = SQRT(fStack_cc * fStack_cc + local_d4 * local_d4);
       fStack_d0 = 0.0;
-      if (0.0 < fVar2) {
-        fStack_40 = 1.0 / fVar2;
+      if (0.0 < fVar3) {
+        fStack_40 = 1.0 / fVar3;
         local_d4 = local_d4 * fStack_40;
         fStack_d0 = fStack_40 * 0.0;
         fStack_cc = fStack_cc * fStack_40;
       }
       fStack_4c = (float)_DAT_005ccc8e - local_f8;
-      fVar2 = local_68 * fStack_4c;
-      fVar3 = local_64 * fStack_4c;
-      local_64 = fVar3;
-      local_68 = fVar2;
+      fVar3 = local_68 * fStack_4c;
+      fVar4 = local_64 * fStack_4c;
+      local_64 = fVar4;
+      local_68 = fVar3;
       local_60 = local_60 * fStack_4c;
-      fVar4 = fStack_cc * local_60 + local_d4 * fVar2 + fStack_d0 * fVar3;
-      if (0.0 <= fVar4) break;
-      fVar4 = fVar4 * (float)_DAT_005ccc86;
-      fStack_8c = local_d4 * fVar4;
-      fStack_88 = fStack_d0 * fVar4;
-      fStack_84 = fStack_cc * fVar4;
-      afStack_ac[2] = local_d4 * fVar4;
-      afStack_ac[(uint)bVar13 * -2 + 3] = afStack_ac[(uint)bVar13 * -2 + 9];
-      afStack_ac[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 4] =
-           afStack_ac[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 10];
-      local_68 = fVar2 - afStack_ac[2];
-      local_64 = fVar3 - afStack_ac[3];
+      fVar6 = fStack_cc * local_60 + local_d4 * fVar3 + fStack_d0 * fVar4;
+      if (0.0 <= fVar6) break;
+      fVar6 = fVar6 * (float)_DAT_005ccc86;
+      fStack_8c = local_d4 * fVar6;
+      fStack_88 = fStack_d0 * fVar6;
+      fStack_84 = fStack_cc * fVar6;
+      afStack_ac[2] = local_d4 * fVar6;
+      afStack_ac[(uint)bVar16 * -2 + 3] = afStack_ac[(uint)bVar16 * -2 + 9];
+      afStack_ac[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 4] =
+           afStack_ac[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 10];
+      local_68 = fVar3 - afStack_ac[2];
+      local_64 = fVar4 - afStack_ac[3];
       local_60 = local_60 - fStack_9c;
     }
     else {
       local_50 = local_f8 + (float)_DAT_005ccc96;
-      local_e8 = *(float *)&g_CDemonSetPtr->field_0x14d12c * local_50;
-      local_e4 = *(float *)&g_CDemonSetPtr->field_0x14d130 * local_50;
-      afStack_7c[2] = *(float *)&g_CDemonSetPtr->field_0x14d128 * local_50;
-      afStack_7c[(uint)bVar13 * -2 + 3] = *(float *)((int)&stack0xffffff18 + (uint)bVar13 * -8);
-      afStack_7c[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 4] =
-           *(float *)((int)&stack0xffffff1c + (uint)bVar13 * -8 + (uint)bVar13 * -8);
-      bVar5 = true;
-      *pfVar10 = *pfVar10 - afStack_7c[2];
-      pfVar10[1] = pfVar10[1] - afStack_7c[3];
-      pfVar10[2] = pfVar10[2] - local_6c;
+      local_e8 = (g_CDemonSetPtr->collision_normal).y * local_50;
+      local_e4 = (g_CDemonSetPtr->collision_normal).z * local_50;
+      afStack_7c[2] = (g_CDemonSetPtr->collision_normal).x * local_50;
+      afStack_7c[(uint)bVar16 * -2 + 3] = *(float *)((int)&stack0xffffff18 + (uint)bVar16 * -8);
+      afStack_7c[(uint)bVar16 * -2 + (uint)bVar16 * -2 + 4] =
+           *(float *)((int)&stack0xffffff1c + (uint)bVar16 * -8 + (uint)bVar16 * -8);
+      bVar7 = true;
+      (pCVar1->position).x = (pCVar1->position).x - afStack_7c[2];
+      (pCVar1->position).y = (pCVar1->position).y - afStack_7c[3];
+      (pCVar1->position).z = (pCVar1->position).z - local_6c;
     }
-    local_30 = local_30 + 9;
-    local_34 = local_34 + 9;
-    local_2c = local_2c + 9;
-    local_38 = local_38 + 9;
+    local_30 = local_30 + 3;
+    local_34 = local_34 + 3;
+    local_2c = local_2c + 3;
+    local_38 = local_38 + 3;
     local_1c = local_1c + 1;
   } while (local_1c < 3);
-  if (bVar5) {
-    local_18 = (float)(**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x48))
-                                (this_ptr,*(uint *)&this_ptr->field_0x3430,0);
-    *(float *)&this_ptr->field_0x2574 = local_18;
+  if (bVar7) {
+    local_18 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
+                         (&this_ptr->base,this_ptr->collision_cylinder_height,(CVector3f *)0x0);
+    this_ptr->closest_distance_threshold = local_18;
   }
-  fVar2 = *(float *)&this_ptr->field_0x24 + local_48;
-  *(float *)&this_ptr->field_0x24 = fVar2;
-  if (*(float *)&this_ptr->field_0x2574 <= fVar2) {
-    if ((*(int *)&this_ptr->field_0x2570 != 0) &&
-       (*(float *)&this_ptr->field_0x24 < *(float *)&this_ptr->field_0x2574 + (float)_DAT_005ccc7e))
-    {
-      *(uint *)&this_ptr->field_0x24 = *(uint *)&this_ptr->field_0x2574;
-      fStack_c4 = *(float *)&this_ptr->field_0x24;
+  fVar3 = (this_ptr->base).location.position.y + local_48;
+  (this_ptr->base).location.position.y = fVar3;
+  if (this_ptr->closest_distance_threshold <= fVar3) {
+    if ((this_ptr->is_on_ground != 0) &&
+       ((this_ptr->base).location.position.y <
+        this_ptr->closest_distance_threshold + (float)_DAT_005ccc7e)) {
+      (this_ptr->base).location.position.y = this_ptr->closest_distance_threshold;
+      fStack_c4 = (this_ptr->base).location.position.y;
     }
   }
   else {
-    *(uint *)&this_ptr->field_0x24 = *(uint *)&this_ptr->field_0x2574;
+    (this_ptr->base).location.position.y = this_ptr->closest_distance_threshold;
   }
-  *(uint *)&this_ptr->field_0x2590 = 0;
-  *(uint *)&this_ptr->field_0x258c = *(uint *)&this_ptr->field_0x2590;
-  *(uint *)&this_ptr->field_0x2588 = *(uint *)&this_ptr->field_0x258c;
-  pCVar14 = g_CDemonSetPtr;
-  *(float *)&this_ptr->field_0x258c =
-       (*(float *)&this_ptr->field_0x24 - fStack_c4) / *(float *)&g_CGamePtr->field_0x284;
-  core_setcolid_cpp_CDemonSet_init_FUN_00537e00(pCVar14);
+  (this_ptr->velocity).z = 0.0;
+  (this_ptr->velocity).y = (this_ptr->velocity).z;
+  (this_ptr->velocity).x = (this_ptr->velocity).y;
+  pCVar17 = g_CDemonSetPtr;
+  (this_ptr->velocity).y =
+       ((this_ptr->base).location.position.y - fStack_c4) / g_CGamePtr->delta_time_float;
+  core_setcolid_cpp_CDemonSet_init_FUN_00537e00(pCVar17);
   return;
 }

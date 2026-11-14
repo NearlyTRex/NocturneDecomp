@@ -1,0 +1,282 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 242,
+    "complexity_score": 227,
+    "cross_reference_count": 0,
+    "function_call_count": 12,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 112,
+    "suspect_count": 9,
+    "suspect_types": [
+      "pointer_cast",
+      "raw_address_pointer_store",
+      "stack_ref",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 354
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004079f0",
+    "address_range": [
+      [
+        "004079f0",
+        "00407c39"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_3d.c_dispatchMRGLToRenderer_FUN_004079f0",
+    "signature": "void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_004079f0(SMRGLHeaderExtended *mrgl)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
+    },
+    {
+      "addr": "004078b0",
+      "is_variadic": false,
+      "name": "engine_3d.c_dispatchMRGLBlockChain_FUN_004078b0"
+    },
+    {
+      "addr": "00403970",
+      "is_variadic": false,
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403970"
+    },
+    {
+      "addr": "00403a40",
+      "is_variadic": false,
+      "name": "engine_3d.c_processVertexLighting_FUN_00403a40"
+    },
+    {
+      "addr": "00405b70",
+      "is_variadic": false,
+      "name": "engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00405b70"
+    },
+    {
+      "addr": "004072b0",
+      "is_variadic": false,
+      "name": "engine_3d.c_renderPolygonFullEffectsBufferedOp65_FUN_004072b0"
+    },
+    {
+      "addr": "004046e0",
+      "is_variadic": false,
+      "name": "engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_004046e0"
+    },
+    {
+      "addr": "00403890",
+      "is_variadic": false,
+      "name": "engine_3d.c_transformAndBufferVertices_FUN_00403890"
+    },
+    {
+      "addr": "00500f30",
+      "is_variadic": false,
+      "name": "engine_model.c_FUN_00500f30"
+    },
+    {
+      "addr": "0055f950",
+      "is_variadic": false,
+      "name": "engine_special.cpp_drawPolyList_FUN_0055f950"
+    },
+    {
+      "addr": "00574e00",
+      "is_variadic": false,
+      "name": "engine_texture.cpp_FUN_00574e00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006141e0",
+      "name": "DAT_006141e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007ba070",
+      "name": "DAT_007ba070",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c37788",
+      "name": "DAT_01c37788",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.252941176470588,
+    "instruction_count": 170,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 5,
+      "BRANCH": 10,
+      "CALL": 15,
+      "CBRANCH": 24,
+      "COPY": 120,
+      "INT_ADD": 39,
+      "INT_AND": 109,
+      "INT_CARRY": 20,
+      "INT_EQUAL": 100,
+      "INT_LESS": 12,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 5,
+      "INT_SBORROW": 12,
+      "INT_SCARRY": 22,
+      "INT_SLESS": 50,
+      "INT_SUB": 54,
+      "INT_XOR": 7,
+      "LOAD": 17,
+      "POPCOUNT": 50,
+      "RETURN": 2,
+      "STORE": 43
+    },
+    "pcode_op_count": 723
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00407820",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00407860",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00407aa0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00408fc0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "mrgl",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderExtended *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_00622014",
+      "severity": "mild",
+      "text": "((SRenderVertex *)&DAT_00622014,(SMRGLPrimitiveQuad **)0x7ba074,_DAT_007ba070,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_006141e0",
+      "severity": "mild",
+      "text": "DAT_006141e0 = 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_006141e0",
+      "severity": "mild",
+      "text": "if (DAT_006141e0 != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 53,
+      "match": "&stack0xfffffef0",
+      "severity": "moderate",
+      "text": "_sprintf(&stack0xfffffef0,\"Unknown primitive : %d\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 56,
+      "match": "&stack0xfffffef0",
+      "severity": "moderate",
+      "text": "core_main_c_FUN_004e4500(&stack0xfffffef0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 80,
+      "match": "DAT_00622014",
+      "severity": "mild",
+      "text": "((SRenderVertex *)&DAT_00622014,(SMRGLPrimitiveQuad **)0x7ba074,_DAT_007ba070,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 103,
+      "match": "*(SMRGLHeaderExtended **)(_DAT_007ba070 * 4 + 0x7ba074",
+      "severity": "moderate",
+      "text": "*(SMRGLHeaderExtended **)(_DAT_007ba070 * 4 + 0x7ba074) = mrgl;",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 113,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "mrgl = (SMRGLHeaderExtended *)((int)&(((SMRGLHeaderPrimitive *)mrgl)->base).type + iVar4);",
+      "type": "pointer_cast"
+    }
+  ]
+}

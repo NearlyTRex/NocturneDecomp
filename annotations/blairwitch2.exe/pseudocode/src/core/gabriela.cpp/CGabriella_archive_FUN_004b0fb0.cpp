@@ -1,0 +1,31 @@
+// Name: core_gabriela.cpp_CGabriella_archive_FUN_004b0fb0
+// Address: 004b0fb0
+// Address Range: [[004b0fb0, 004b1052]]
+// Convention: __cdecl
+// Signature: void __cdecl core_gabriela_cpp_CGabriella_archive_FUN_004b0fb0(CGabriella *this_ptr)
+
+#include "nocturne.h"
+
+void __cdecl core_gabriela_cpp_CGabriella_archive_FUN_004b0fb0(CGabriella *this_ptr)
+
+{
+  core_hero_cpp_CHero_archive_FUN_004ce590(&this_ptr->base);
+  if ((1 < g_CGabriellaClassVersion) && (g_CGabriellaClassVersion < 4)) {
+    core_actor_cpp_archiveActor_FUN_0040b9e0
+              (&(this_ptr->base).object_to_pick_up,"?objectToPickUp" + 1);
+    core_actor_cpp_archiveActor_FUN_0040b9e0
+              ((CDemonActor **)&(this_ptr->base).door_to_open,"doorToOpen");
+    core_actor_cpp_archiveActor_FUN_0040b9e0
+              ((CDemonActor **)&(this_ptr->base).lever_to_pull,"leverToPull");
+    core_actor_cpp_archiveActor_FUN_0040b9e0
+              ((CDemonActor **)&(this_ptr->base).ladder_to_climb,"ladderToClimb");
+  }
+  if (g_CGabriellaClassVersion != 2) {
+    return;
+  }
+  core_actor_cpp_archiveActor_FUN_0040b9e0
+            (&(this_ptr->base).base.carry_hands[0].carry_actor,"lhCarryObject");
+  core_actor_cpp_archiveActor_FUN_0040b9e0
+            (&(this_ptr->base).base.carry_hands[1].carry_actor,"rhCarryObject");
+  return;
+}

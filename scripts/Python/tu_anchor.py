@@ -36,9 +36,10 @@ import glob
 import json
 import os
 import re
-import sys
+from collections import Counter
 
-FUN = re.compile(r"_FUN_([0-9a-fA-F]+)$")
+# An unnamed function's stem is the bare FUN_<addr>, with nothing before it.
+FUN = re.compile(r"(?:^|_)FUN_([0-9a-fA-F]+)$")
 # Body shapes that corroborate a layout conjecture. logic-change is deliberately
 # excluded: it is exactly what a WRONG pairing also looks like.
 PROVEN = ("identical", "layout-drift", "operand-change", "const-change")
@@ -79,6 +80,11 @@ def sizes(funcs_dir):
     return out
 
 
+def program_of(pseudocode_root):
+    """The program an annotations/<program>/pseudocode root belongs to."""
+    return os.path.basename(os.path.dirname(os.path.abspath(pseudocode_root)))
+
+
 def resolve_run(A, B, ia, ja, ib, jb, sz_a, sz_b):
     """Pair the open runs A(ia..ja) and B(ib..jb). Yields (idx_a, idx_b, method)."""
     run_a = list(range(ia + 1, ja))
@@ -90,7 +96,6 @@ def resolve_run(A, B, ia, ja, ib, jb, sz_a, sz_b):
             yield ka, kb, "positional"
         return
     # Lengths disagree -- fall back to sizes that are unique within the run.
-    from collections import Counter
     ca = Counter(sz_a.get("%08x" % A[k][0], -1) for k in run_a)
     cb = Counter(sz_b.get("%08x" % B[k][0], -2) for k in run_b)
     for ka in run_a:
@@ -101,7 +106,7 @@ def resolve_run(A, B, ia, ja, ib, jb, sz_a, sz_b):
         yield ka, kb, "size"
 
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--anchors", required=True,
                     help="make_sibling_anchors.py output (the fixed points)")
@@ -127,7 +132,7 @@ def main():
                     default="annotations/nocturne.exe/sibling_manual_pairs.json",
                     help="existing manual-pairs file to merge into (collisions are "
                          "reported and the existing entry wins)")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
     a, b = tu_map(args.from_root), tu_map(args.to_root)
     sz_a, sz_b = sizes(args.from_funcs), sizes(args.to_funcs)
@@ -251,7 +256,7 @@ def main():
     merged.extend(new.values())
     merged.sort(key=lambda r: r["a"])
     with open(os.path.join(args.out_dir, "sibling_manual_pairs.json"), "w") as fh:
-        json.dump({"schema": 1, "from": "nocedit.exe", "to": "nocturne.exe",
+        json.dump({"schema": 1, "from": program_of(args.from_root), "to": program_of(args.to_root),
                    "pairs": merged}, fh, indent=1)
     if collide:
         print("collisions with the existing file (existing entry kept): %d" % len(collide))
@@ -259,7 +264,6 @@ def main():
             print("   %s -> existing %s, proposed %s" % (a, b_old, b_new))
     with open(os.path.join(args.out_dir, "needs_review.json"), "w") as fh:
         json.dump(sorted(review, key=lambda c: -c.get("distance", 0)), fh, indent=1)
-    from collections import Counter
     tally = Counter(c["verdict"] for c in ok)
     print("accepted %d (%s), %d new"
           % (len(ok), ", ".join("%s %d" % (k.lower(), v) for k, v in sorted(tally.items())),

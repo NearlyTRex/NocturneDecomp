@@ -19,8 +19,8 @@
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_setup_FUN_004a0510
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30
+;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00569b20
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0
-;   core_skeleton.cpp_FUN_00569b20
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00595261
     ADD EBX,0x158                       ; 00595265
     PUSH EBX                            ; 0059526b
-    CALL core_skeleton.cpp_FUN_00569b20 ; 0059526c
-        ;   XREF to: 00569b20 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_00569b20(CDeformableModelInstance * this_ptr)
+    CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00569b20 ; 0059526c
+        ;   XREF to: 00569b20 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00569b20(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00595271
     MOV EDX,dword ptr [ESP + 0x8]       ; 00595274
     PUSH EDX                            ; 00595278

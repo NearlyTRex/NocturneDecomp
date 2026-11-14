@@ -7,60 +7,60 @@
 
 // Original: core_tbplayer.cpp_staticInit_FUN_00571ab0
 // Address: 00571ab0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_tbplayer.cpp_factoryFuncBassPlayer_FUN_00571b00
 // Address: 00571b00
-void factoryFuncBassPlayer(void);
+CBassPlayer * __cdecl factoryFuncBassPlayer(void);
 
 // Original: core_tbplayer.cpp_CBassPlayer_getActorType_FUN_00571b20
 // Address: 00571b20
-CDemonActorType * CBassPlayer::getActorType(CBassPlayer *this_ptr);
+CDemonActorType * __cdecl CBassPlayer::getActorType(CBassPlayer *this_ptr);
 
 // Original: core_tbplayer.cpp_CBassPlayer_ctor_FUN_00571b30
 // Address: 00571b30
 CBassPlayer * __cdecl CBassPlayer::ctor(CBassPlayer *this_ptr);
 
-// Original: core_tbplayer.cpp_FUN_00571b60
+// Original: core_tbplayer.cpp_CBassPlayer_setup_FUN_00571b60
 // Address: 00571b60
-void FUN_00571b60(int param_1);
+void __cdecl CBassPlayer::setup(CBassPlayer *this_ptr);
 
-// Original: core_tbplayer.cpp_FUN_00571c00
+// Original: core_tbplayer.cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_00571c00
 // Address: 00571c00
-void FUN_00571c00(int param_1,int param_2);
+CMatrix3x4f * __stack2_esi CBassPlayer::getCarryObjToBodyXForm(CBassPlayer *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
-// Original: core_tbplayer.cpp_FUN_00571d30
+// Original: core_tbplayer.cpp_CBassPlayer_processDamage_FUN_00571d30
 // Address: 00571d30
-void FUN_00571d30(int param_1,int param_2);
+void __cdecl CBassPlayer::processDamage(CBassPlayer *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_tbplayer.cpp_FUN_00571d80
+// Original: core_tbplayer.cpp_factoryFuncDrummer_FUN_00571d80
 // Address: 00571d80
-void FUN_00571d80(void);
+CDrummer * __cdecl factoryFuncDrummer(void);
 
-// Original: core_tbplayer.cpp_FUN_00571da0
+// Original: core_tbplayer.cpp_CDrummer_getActorType_FUN_00571da0
 // Address: 00571da0
-undefined4 FUN_00571da0(void);
+CDemonActorType * __cdecl CDrummer::getActorType(CDrummer *this_ptr);
 
 // Original: core_tbplayer.cpp_CDrummer_ctor_FUN_00571db0
 // Address: 00571db0
 CDrummer * __cdecl CDrummer::ctor(CDrummer *this_ptr);
 
-// Original: core_tbplayer.cpp_FUN_00571de0
+// Original: core_tbplayer.cpp_CDrummer_setup_FUN_00571de0
 // Address: 00571de0
-void FUN_00571de0(int param_1);
+void __cdecl CDrummer::setup(CDrummer *this_ptr);
 
-// Original: core_tbplayer.cpp_FUN_00571e60
+// Original: core_tbplayer.cpp_CDrummer_getCarryObjToBodyXForm_FUN_00571e60
 // Address: 00571e60
-void FUN_00571e60(int param_1,int param_2);
+CMatrix3x4f * __stack2_esi CDrummer::getCarryObjToBodyXForm(CDrummer *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
-// Original: core_tbplayer.cpp_FUN_00572030
+// Original: core_tbplayer.cpp_CDrummer_processDamage_FUN_00572030
 // Address: 00572030
-void FUN_00572030(int param_1,int param_2);
+void __cdecl CDrummer::processDamage(CDrummer *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_tbplayer.cpp_CDrummer_dtor_FUN_00572060
 // Address: 00572060
-CDrummer * CDrummer::dtor(CDrummer *this_ptr,uint flags);
+CDrummer * __cdecl CDrummer::dtor(CDrummer *this_ptr,uint flags);
 
 // Original: core_tbplayer.cpp_CBassPlayer_dtor_FUN_00572110
 // Address: 00572110
-CBassPlayer * CBassPlayer::dtor(CBassPlayer *this_ptr,uint flags);
+CBassPlayer * __cdecl CBassPlayer::dtor(CBassPlayer *this_ptr,uint flags);

@@ -2,25 +2,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 456,
-    "complexity_score": 381,
+    "complexity_score": 232,
     "cross_reference_count": 8,
     "function_call_count": 7,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 176,
-    "suspect_count": 19,
+    "pseudocode_lines": 177,
+    "suspect_count": 4,
     "suspect_types": [
       "bit_int_float_compare",
-      "unnamed_field",
+      "shadow_pointer_walk",
       "warning_overlapping_globals"
     ],
-    "total_lines": 632
+    "total_lines": 633
   },
   "cross_references": [
     {
       "addr": "004cf5e0",
       "from_addr": "004cfbcf",
-      "name": "core_game.cpp_FUN_004cf5e0",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004cf5e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -42,6 +42,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0052d450",
+      "from_addr": "0052dccc",
+      "name": "core_netgame.cpp_CNetGame_processPacket_FUN_0052d450",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0052e120",
       "from_addr": "0052e46b",
       "name": "core_netgame.cpp_CNetGame_runLobby_FUN_0052e120",
@@ -50,19 +56,13 @@
     {
       "addr": "0052c5d0",
       "from_addr": "0052c5d7",
-      "name": "core_netgame.cpp_FUN_0052c5d0",
+      "name": "core_netgame.cpp_CNetGame_shutdown_FUN_0052c5d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0052c5fc",
+      "addr": "0052c600",
       "from_addr": "0052c621",
-      "name": "core_netgame.cpp_FUN_0052c5fc",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0052d450",
-      "from_addr": "0052dccc",
-      "name": "core_netgame.cpp_FUN_0052d450",
+      "name": "core_netgame.cpp_FUN_0052c600",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -91,14 +91,14 @@
       "name": "core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_005306d0"
     },
     {
+      "addr": "004961b0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004961b0"
+    },
+    {
       "addr": "004942e0",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_004942e0"
-    },
-    {
-      "addr": "004961b0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_004961b0"
     },
     {
       "addr": "004962b0",
@@ -113,7 +113,7 @@
     {
       "addr": "005b2420",
       "is_variadic": false,
-      "name": "wincore_winrun.cpp_FUN_005b2420"
+      "name": "wincore_winrun.cpp_getTime_FUN_005b2420"
     }
   ],
   "globals": [
@@ -252,6 +252,32 @@
     },
     "pcode_op_count": 2043
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0050b8d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9828
+    },
+    "bw3.exe": {
+      "addr": "005043b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9828
+    },
+    "nocedit.exe": {
+      "addr": "0053fd00",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004e9e90",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 68,
     "local_size": 60,
@@ -365,136 +391,16 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x118",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x118 < 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 81,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "(&this_ptr->field_0x3c + *(int *)&this_ptr->field_0x118 * 0x7c),1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 81,
-      "match": "field_0x118",
-      "severity": "mild",
-      "text": "(&this_ptr->field_0x3c + *(int *)&this_ptr->field_0x118 * 0x7c),1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 84,
-      "match": "field_0x118",
-      "severity": "mild",
-      "text": "} while (-1 < *(int *)&this_ptr->field_0x118);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 103,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x1c < 2) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 151,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x1c) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 152,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "dest_addr = (SNetworkAddr *)&this_ptr->field_0x3c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 154,
-      "match": "field_0x11c",
-      "severity": "mild",
-      "text": "if (iVar1 != *(int *)&this_ptr->field_0x11c) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Watcom shadow-pointer walk \u2014 `dest_addr` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*dest_addr) + offsetof(subfield)` equals the real array stride. Replace `dest_addr->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 159,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "} while (iVar1 < *(int *)&this_ptr->field_0x1c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 163,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "} while (1 < *(int *)&this_ptr->field_0x1c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 168,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 169,
-      "match": "field_0x11c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x11c = 0xffffffff;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 170,
-      "match": "field_0x118",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x118 = 0xffffffff;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 171,
-      "match": "field_0x120",
-      "severity": "mild",
-      "text": "this_ptr->field_0x120 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 176,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 178,
-      "match": "field_0x170",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x170 = 0;",
-      "type": "unnamed_field"
+      "match": "dest_addr = (T *)&dest_addr[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "dest_addr = (SNetworkAddr *)&dest_addr[0xf].port;",
+      "type": "shadow_pointer_walk"
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40400000 is the IEEE 754 bit pattern of 3f. Rewrite in a .keep as a plain float compare against 3f.",
-      "line": 53,
+      "line": 54,
       "match": "0x40400000 < (int)local_24))",
       "severity": "moderate",
       "text": "if (((float)_DAT_005eb8f0 < local_24) || (0x40400000 < (int)local_24)) {",
@@ -502,7 +408,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40a00000 is the IEEE 754 bit pattern of 5f. Rewrite in a .keep as a plain float compare against 5f.",
-      "line": 124,
+      "line": 125,
       "match": "0x40a00000 < (int)local_2c))",
       "severity": "moderate",
       "text": "if (((float)_DAT_005eb8f0 < local_2c) || (0x40a00000 < (int)local_2c)) {",

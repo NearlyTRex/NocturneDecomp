@@ -30,7 +30,7 @@ int __cdecl core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004eb240(CHero *thi
   float local_30;
   float local_28;
   float local_24;
-  CHero *local_20;
+  CLocation *local_20;
   int local_1c;
   int local_18;
   CHero *local_14;
@@ -42,14 +42,14 @@ int __cdecl core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004eb240(CHero *thi
   core_actor_cpp_FUN_00408b40(this_ptr,&stack0xffffff9c);
   local_28 = 5.0;
   local_1c = 0;
-  local_20 = this_ptr + 0x20;
-  for (local_18 = 0; local_18 < *(int *)&g_CDemonSetPtr->field_0x14f0a8; local_18 = local_18 + 1) {
-    local_14 = *(CHero **)(&g_CDemonSetPtr->field_0x14f0ac + local_1c);
-    if ((local_14[0x2698] != (CHero)0x0) && (this_ptr != local_14)) {
-      local_70 = *(float *)(local_14 + 0x20) - *(float *)local_20;
-      local_6c = *(float *)(local_14 + 0x24) - *(float *)(local_20 + 4);
-      local_68 = *(float *)(local_14 + 0x28) - *(float *)(local_20 + 8);
-      local_7c = *(float *)(local_14 + 0x20) - *(float *)local_20;
+  local_20 = &(this_ptr->base).base.location;
+  for (local_18 = 0; local_18 < g_CDemonSetPtr->character_count; local_18 = local_18 + 1) {
+    local_14 = *(CHero **)((int)g_CDemonSetPtr->characters + local_1c);
+    if (((local_14->base).talk_to_me_event[0] != '\0') && (this_ptr != local_14)) {
+      local_70 = (local_14->base).base.location.position.x - (local_20->position).x;
+      local_6c = (local_14->base).base.location.position.y - (local_20->position).y;
+      local_68 = (local_14->base).base.location.position.z - (local_20->position).z;
+      local_7c = local_70;
       (&stack0xffffff88)[(uint)bVar1 * 0xfffffffe] =
            (float)*(uint *)((int)&stack0xffffff94 + (uint)bVar1 * -8);
       *(uint *)((int)&stack0xffffff8c + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
@@ -64,17 +64,17 @@ int __cdecl core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004eb240(CHero *thi
                *(uint *)((int)&stack0xffffffac + (uint)bVar1 * 0xfffffffe * 4);
           *(uint *)(&stack0xffffffbc + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
                *(uint *)(&stack0xffffffb0 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-          core_vecdir_cpp_FUN_005a7520(&stack0xffffffb4);
+          core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&stack0xffffffb4);
           local_34 = local_88;
           (&stack0xffffffd0)[(uint)bVar1 * 0xfffffffe] =
                (float)*(uint *)(&stack0xffffff7c + (uint)bVar1 * -8);
           *(uint *)(&stack0xffffffd4 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
                *(uint *)(&stack0xffffff80 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
           if (ABS(local_30) <= (float)_DAT_005e483d) {
-            *(uint *)(this_ptr + 0x1ff70) = 0;
-            *(CHero **)(this_ptr + 0x1ff64) = local_14;
-            *(CHero **)(this_ptr + 0x1ff68) = local_14;
-            *(uint *)(this_ptr + 0x1ff60) = 2;
+            this_ptr->hero_action_range = 0.0;
+            this_ptr->hero_action_actor = (CDemonActor *)local_14;
+            this_ptr->hero_action_target = (CDemonActor *)local_14;
+            this_ptr->hero_action = 2;
             local_28 = local_24;
           }
         }
@@ -82,5 +82,5 @@ int __cdecl core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004eb240(CHero *thi
     }
     local_1c = local_1c + 4;
   }
-  return (uint)(*(int *)(this_ptr + 0x1ff60) == 2);
+  return (uint)(this_ptr->hero_action == 2);
 }

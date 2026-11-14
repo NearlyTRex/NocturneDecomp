@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 337,
-    "complexity_score": 217,
+    "complexity_score": 200,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 19,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 117,
+    "pseudocode_lines": 100,
     "suspect_count": 9,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 454
+    "total_lines": 437
   },
   "cross_references": [
     {
@@ -223,6 +223,32 @@
     },
     "pcode_op_count": 1200
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00491ca0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00495490",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004b0fc0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00480f70",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 300,
     "local_size": 292,
@@ -292,66 +318,66 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 19,
+      "line": 17,
       "match": "DAT_005dedd5",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005dedd5,&local_20);",
+      "text": "_fscanf(file_handle,&DAT_005dedd5);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 25,
       "match": "DAT_005dee4e",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005dee4e,this_ptr);",
+      "text": "_fscanf(file_handle,&DAT_005dee4e);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 34,
       "match": "DAT_005dee59",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005dee59,this_ptr + 0xc84);",
+      "text": "_fscanf(file_handle,&DAT_005dee59);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 43,
       "match": "DAT_005dee64",
       "severity": "mild",
-      "text": "iVar1 = _fscanf(file_handle,&DAT_005dee64,this_ptr + 0x258c);",
+      "text": "iVar1 = _fscanf(file_handle,&DAT_005dee64);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 52,
       "match": "DAT_005dee6f",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005dee6f,this_ptr + 0x3210);",
+      "text": "_fscanf(file_handle,&DAT_005dee6f);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 77,
+      "line": 65,
       "match": "DAT_005dee7e",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005dee7e,this_ptr + 0x337c);",
+      "text": "_fscanf(file_handle,&DAT_005dee7e);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 94,
+      "line": 80,
       "match": "DAT_005dee8d",
       "severity": "mild",
-      "text": "iVar1 = _fscanf(file_handle,&DAT_005dee8d,this_ptr + 0x34e8);",
+      "text": "iVar1 = _fscanf(file_handle,&DAT_005dee8d);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 109,
+      "line": 93,
       "match": "DAT_005deea4",
       "severity": "mild",
-      "text": "iVar1 = _fscanf(file_handle,&DAT_005deea4,this_ptr + 0x1908);",
+      "text": "iVar1 = _fscanf(file_handle,&DAT_005deea4);",
       "type": "undefined_data"
     }
   ]

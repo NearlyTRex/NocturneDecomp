@@ -105,7 +105,7 @@ LAB_005c1df8:
   }
   else {
     local_40[iVar6] = 0;
-    unkafter_morph_cpp_FUN_005c476c();
+    FUN_005c476c();
     if (iVar7 != 0) {
       FUN_005bc220(&local_2c,iVar7);
     }

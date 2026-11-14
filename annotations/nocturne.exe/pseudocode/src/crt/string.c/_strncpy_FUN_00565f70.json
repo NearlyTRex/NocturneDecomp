@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 37,
     "complexity_score": 15,
-    "cross_reference_count": 8,
+    "cross_reference_count": 9,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -35,6 +35,12 @@
       "addr": "0056c864",
       "from_addr": "0056cb4b",
       "name": "crt_io.c_getFileStat_FUN_0056c864",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00570924",
+      "from_addr": "0057095a",
+      "name": "crt_unknown.c_FUN_00570924",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -77,7 +83,7 @@
   "function_calls": [],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 10,
+    "call_site_count": 11,
     "call_sites": [
       {
         "call_addr": "00456dbb",
@@ -219,6 +225,32 @@
       "STORE": 4
     },
     "pcode_op_count": 120
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b9cf0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005c20d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005a4ee0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00600f40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 16,

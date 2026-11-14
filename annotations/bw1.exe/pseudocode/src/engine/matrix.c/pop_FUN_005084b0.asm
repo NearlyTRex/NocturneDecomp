@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   engine_matrix.c_pop_FUN_004839a0 at 004839a0
-;   shape_edittool.cpp_FUN_004985ae at 00498648
+;   engine_drender.cpp_pop_FUN_004839a0 at 004839a0
+;   shape_edittool.cpp_FUN_004985b0 at 00498648
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_matrix_c_005e7736

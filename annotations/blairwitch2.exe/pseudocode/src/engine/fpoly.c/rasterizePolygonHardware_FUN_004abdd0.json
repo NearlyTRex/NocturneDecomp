@@ -2,20 +2,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 333,
-    "complexity_score": 331,
+    "complexity_score": 244,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 161,
-    "suspect_count": 15,
+    "pseudocode_lines": 164,
+    "suspect_count": 7,
     "suspect_types": [
-      "param_count_too_few",
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 494
+    "total_lines": 497
   },
   "cross_references": [
     {
@@ -41,7 +39,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_fpoly.c_rasterizePolygonHardware_FUN_004abdd0",
-    "signature": "void __cdecl engine_fpoly_c_rasterizePolygonHardware_FUN_004abdd0(int *param_1,int param_2)"
+    "signature": "void __cdecl engine_fpoly_c_rasterizePolygonHardware_FUN_004abdd0(SRenderVertex **vertices,int vertex_count)"
   },
   "function_calls": [
     {
@@ -114,11 +112,11 @@
         "stack_params": 2
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.738636363636363,
@@ -158,11 +156,37 @@
     },
     "pcode_op_count": 1515
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004c4d80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004b3960",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004d1340",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00494260",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 40,
+    "frame_size": 48,
     "local_size": 40,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -199,6 +223,20 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "vertices",
+        "offset": 4,
+        "size": 4,
+        "type": "SRenderVertex * *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -212,80 +250,24 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl engine_fpoly_c_rasterizePolygonHardware_FUN_004abdd0(int *param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl engine_fpoly_c_rasterizePolygonHardware_FUN_004abdd0(int *param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 23,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "_DAT_01cb05dc = DAT_006141bc;",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (0 < param_2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_24 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 <= iVar2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = param_1[iVar2];",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 47,
       "match": "DAT_01cb025c",
       "severity": "mild",
-      "text": "*(int *)(&DAT_01cb025c + iVar3) = iVar5;",
+      "text": "*(int *)(&DAT_01cb025c + iVar6) = iVar3;",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 91,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "} while (local_20 < param_2);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 93,
+      "line": 96,
       "match": "DAT_01cb025c",
       "severity": "mild",
       "text": "local_18 = (int *)&DAT_01cb025c;",
@@ -293,7 +275,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 106,
+      "line": 109,
       "match": "DAT_01cb025c",
       "severity": "mild",
       "text": "local_14 = (int *)&DAT_01cb025c;",
@@ -301,7 +283,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 121,
+      "line": 124,
       "match": "DAT_01cb025c",
       "severity": "mild",
       "text": "local_18 = (int *)&DAT_01cb025c;",
@@ -309,22 +291,11 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 138,
+      "line": 141,
       "match": "DAT_01cb025c",
       "severity": "mild",
       "text": "local_14 = (int *)&DAT_01cb025c;",
       "type": "undefined_data"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

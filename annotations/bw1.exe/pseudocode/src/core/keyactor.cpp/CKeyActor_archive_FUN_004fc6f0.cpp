@@ -11,10 +11,9 @@ void __cdecl core_keyactor_cpp_CKeyActor_archive_FUN_004fc6f0(CKeyActor *this_pt
 {
   char acStack_104 [256];
   
-  core_actor_cpp_CDemonActor_archive_FUN_0040c040((CDemonActor *)this_ptr);
-  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b770
-            (&this_ptr->field_0x158,"modelName");
-  core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x2d4,"keyMask");
+  core_actor_cpp_CDemonActor_archive_FUN_0040c040(&this_ptr->base);
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b770(&this_ptr->model,"modelName");
+  core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->key_mask,"keyMask");
   if (g_CKeyActorClassVersion != 2) {
     return;
   }

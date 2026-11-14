@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 193,
+    "complexity_score": 87,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 53,
-    "suspect_count": 13,
+    "pseudocode_lines": 52,
+    "suspect_count": 3,
     "suspect_types": [
-      "unnamed_field",
       "unrolled_strcpy"
     ],
-    "total_lines": 134
+    "total_lines": 133
   },
   "cross_references": [
     {
@@ -31,9 +30,9 @@
         "0059d2f6"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_meleeaxe.cpp_CMeleeAxe_ctor_FUN_0059d220",
-    "signature": "CMeleeAxe * core_meleeaxe_cpp_CMeleeAxe_ctor_FUN_0059d220(CMeleeAxe *this_ptr)"
+    "signature": "CMeleeAxe * __cdecl core_meleeaxe_cpp_CMeleeAxe_ctor_FUN_0059d220(CMeleeAxe *this_ptr)"
   },
   "function_calls": [
     {
@@ -111,88 +110,8 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "*(byte **)&pCVar2->field_0x2b0 = &g_CMeleeAxeVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&pCVar2->field_0x2b4,(char *)0x5ef7fb);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x43c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x43c = 8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x6d8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x6d8 = 0x41c80000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x6dc",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x6dc = 0x42480000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x6e0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x6e0 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 21,
-      "match": "field_0x6fc",
-      "severity": "mild",
-      "text": "pcVar4 = &pCVar2->field_0x6fc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x6e4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x6e4 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x760",
-      "severity": "mild",
-      "text": "pcVar4 = &pCVar2->field_0x760;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x7c4",
-      "severity": "mild",
-      "text": "pcVar4 = &pCVar2->field_0x7c4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 23,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -200,7 +119,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 34,
+      "line": 32,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -208,7 +127,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 45,
+      "line": 43,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

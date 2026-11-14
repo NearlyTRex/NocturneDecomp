@@ -8,9 +8,9 @@
 ; int              Stack[0x8]:4   reset_both
 ;
 ; XREF[4]:
-;   core_game.cpp_FUN_004bd8ee at 004bd904
-;   core_inv.cpp_FUN_004dbb40 at 004dbb68
-;   core_inv.cpp_FUN_004dbd7e at 004dbd8e
+;   core_game.cpp_FUN_004bd8f0 at 004bd904
+;   core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40 at 004dbb68
+;   core_inv.cpp_FUN_004dbd80 at 004dbd8e
 ;   core_inv.cpp_FUN_004dcdb0 at 004dcf95
 ;
 ; Referenced Globals:

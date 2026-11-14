@@ -20,6 +20,7 @@
   {
     "addr":"005bfb18",
     "callers":[
+      "00402160",
       "00445430",
       "004807b0",
       "00480880",
@@ -29,17 +30,19 @@
       "00480bc0",
       "00480ca0",
       "00480d90",
+      "00480e50",
       "00480fa0",
       "004942e0",
       "00494340",
       "004943a0",
       "00494400",
-      "004944fe",
+      "00494500",
       "00494d20",
       "00494de0",
       "00494ea0",
       "004a1210",
       "004c20e0",
+      "004c21e0",
       "004c22e0",
       "004c23f0",
       "004c2500",
@@ -55,10 +58,37 @@
     "instructions":14,
     "method":"vsprintf",
     "name":"crt_stdio.c_vsprintf_FUN_005bfb18",
+    "params":[
+      {
+        "name":"buffer",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"format",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"args",
+        "type":{
+          "header":"stdarg",
+          "kind":"system",
+          "name":"va_list_t",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"crt/stdio.c",

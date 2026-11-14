@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[7]:
+;   core_bmppuzzl.cpp_activatePuzzle_FUN_004119a0 at 004119ce
 ;   core_game.cpp_CGame_playerControls_FUN_004b92e0 at 004b9325
-;   core_game.cpp_FUN_004b7f90 at 004b833c
+;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b833c
 ;   core_game.cpp_FUN_004bec20 at 004befbf
+;   core_script.cpp_CScript_executeInitSection_FUN_00529920 at 005299bd
+;   core_script.cpp_CScript_process_FUN_00528e00 at 00528e83
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052dd0f
-;   core_script.cpp_FUN_00528e00 at 00528e83
-;   core_script.cpp_FUN_00529920 at 005299bd
-;   unkafter_alphabit.cpp_FUN_004119a0 at 004119ce
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fba18
@@ -21,13 +21,13 @@
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 DAT_007dffb4
 ;   CFieldNotes g_CFieldNotesInstance
-;   undefined4 g_CFieldNotesInstance.field64_0x40
+;   undefined4 g_CFieldNotesInstance.is_displayed
 ;   undefined4 DAT_01d21fa0
 ;   undefined4 DAT_01d221f8
 ;   undefined4 DAT_01d221fc
 ;   undefined4 DAT_01d22b48
 ;   CNetGame g_CNetGameInstance
-;   undefined4 g_CDemonSetInstance.field1420984_0x15aeb8
+;   undefined4 g_CDemonSetInstance.selected_camera_index
 ;
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_getMyControls_FUN_00507f10
@@ -56,17 +56,17 @@ section .text
     CALL crt_memory.c_memset_FUN_005a28f0 ; 004ba4b8
         ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005a28f0(void * dest, int value, ulong count)
     MOV EAX,[0x00603b28]                ; 004ba4bd | g_CDemonSetPtr
-    MOV EAX,dword ptr [EAX + 0x15aeb8]  ; 004ba4c2 | g_CDemonSetInstance.field1420984_0x15aeb8
+    MOV EAX,dword ptr [EAX + 0x15aeb8]  ; 004ba4c2 | g_CDemonSetInstance.selected_camera_index
     MOV [0x01d221fc],EAX                ; 004ba4c8 | DAT_01d221fc
     MOV EAX,[0x005fe4b0]                ; 004ba4cd | g_CFieldNotesPtr
-    MOV ECX,dword ptr [EAX + 0x40]      ; 004ba4d2 | g_CFieldNotesInstance.field64_0x40
+    MOV ECX,dword ptr [EAX + 0x40]      ; 004ba4d2 | g_CFieldNotesInstance.is_displayed
     ADD ESP,0xc                         ; 004ba4d5
     TEST ECX,ECX                        ; 004ba4d8
     JZ 0x004ba4fb                       ; 004ba4da
         ;   XREF to: 004ba4fb (CONDITIONAL_JUMP)  ; LAB_004ba4fb
     MOV EAX,[0x005fe4b0]                ; 004ba4dc | g_CFieldNotesPtr | g_CFieldNotesInstance
         ;   Label: LAB_004ba4dc
-    CMP dword ptr [EAX + 0x40],0x0      ; 004ba4e1 | g_CFieldNotesInstance.field64_0x40
+    CMP dword ptr [EAX + 0x40],0x0      ; 004ba4e1 | g_CFieldNotesInstance.is_displayed
     JZ 0x004ba4f1                       ; 004ba4e5
         ;   XREF to: 004ba4f1 (CONDITIONAL_JUMP)  ; LAB_004ba4f1
     MOV dword ptr [0x01d22b48],0xffffffff ; 004ba4e7 | DAT_01d22b48

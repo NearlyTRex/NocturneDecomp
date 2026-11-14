@@ -7,44 +7,44 @@
 
 // Original: core_styler.cpp_staticInit_FUN_0059d6f0
 // Address: 0059d6f0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_styler.cpp_factoryFuncStyler_FUN_0059d720
 // Address: 0059d720
-void factoryFuncStyler(void);
+CStyler * __cdecl factoryFuncStyler(void);
 
 // Original: core_styler.cpp_CStyler_getActorType_FUN_0059d740
 // Address: 0059d740
-CDemonActorType * CStyler::getActorType(CStyler *this_ptr);
+CDemonActorType * __cdecl CStyler::getActorType(CStyler *this_ptr);
 
 // Original: core_styler.cpp_CStyler_ctor_FUN_0059d750
 // Address: 0059d750
-CStyler * CStyler::ctor(CStyler *this_ptr);
+CStyler * __cdecl CStyler::ctor(CStyler *this_ptr);
 
-// Original: core_styler.cpp_FUN_0059d7f0
+// Original: core_styler.cpp_CStyler_setup_FUN_0059d7f0
 // Address: 0059d7f0
-void FUN_0059d7f0(CEnemy *param_1);
+void __cdecl CStyler::setup(CStyler *this_ptr);
 
-// Original: core_styler.cpp_FUN_0059d9e0
+// Original: core_styler.cpp_CStyler_process_FUN_0059d9e0
 // Address: 0059d9e0
-void FUN_0059d9e0(CCharacter *param_1,float param_2);
+void __cdecl CStyler::process(CStyler *this_ptr,float delta_time);
 
-// Original: core_styler.cpp_FUN_0059ddb0
+// Original: core_styler.cpp_CStyler_renderOpaque_FUN_0059ddb0
 // Address: 0059ddb0
-int FUN_0059ddb0(CDemonActor *param_1);
+int __cdecl CStyler::renderOpaque(CStyler *this_ptr);
 
-// Original: core_styler.cpp_FUN_0059dea0
+// Original: core_styler.cpp_CStyler_isInvulnerable_FUN_0059dea0
 // Address: 0059dea0
-undefined4 FUN_0059dea0(void);
+int __cdecl CStyler::isInvulnerable(CStyler *this_ptr);
 
-// Original: core_styler.cpp_FUN_0059deb0
+// Original: core_styler.cpp_CStyler_shouldIgnoreForTargeting_FUN_0059deb0
 // Address: 0059deb0
-bool FUN_0059deb0(int param_1);
+int __cdecl CStyler::shouldIgnoreForTargeting(CStyler *this_ptr);
 
-// Original: core_styler.cpp_FUN_0059dee0
+// Original: core_styler.cpp_CStyler_archive_FUN_0059dee0
 // Address: 0059dee0
-void FUN_0059dee0(int param_1);
+void __cdecl CStyler::archive(CStyler *this_ptr);
 
 // Original: core_styler.cpp_CStyler_dtor_FUN_0059df60
 // Address: 0059df60
-CStyler * CStyler::dtor(CStyler *this_ptr,uint flags);
+CStyler * __cdecl CStyler::dtor(CStyler *this_ptr,uint flags);

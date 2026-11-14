@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBasicNPC.h"
 
 // Structure: CSteuben
-// Stub: size from Watcom RTTI, fields not yet recovered
+// registered under CBasicNPC (registerActorClass); size 71760 from RTTI; no fields of its own
 // Ghidra size: 0x11850 (71760 bytes)
 #pragma pack(push, 1)
 typedef struct CSteuben {
-    char field_0[71760]; // 0x0
+    CBasicNPC base; // 0x0, parent class
 } CSteuben;
 #pragma pack(pop)
 

@@ -9,8 +9,8 @@
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_archive_FUN_004c5410(CFrankenstienMachine *this_ptr)
 
 {
-  core_actor_cpp_CDemonActor_archive_FUN_0040c040((CDemonActor *)this_ptr);
-  core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x158,"whichPart");
-  core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x15c,"masterFrame");
+  core_actor_cpp_CDemonActor_archive_FUN_0040c040(&this_ptr->base);
+  core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->which_part,"whichPart");
+  core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->master_frame,"masterFrame");
   return;
 }

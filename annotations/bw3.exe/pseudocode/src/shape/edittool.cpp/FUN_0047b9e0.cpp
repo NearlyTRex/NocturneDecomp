@@ -12,6 +12,6 @@ void shape_edittool_cpp_FUN_0047b9e0(int param_1)
 
 {
   engine_3d_c_setRenderAlpha_FUN_00406bf0(param_1);
-  engine_mini3d_cpp_FUN_004edaf0((float)param_1 * _DAT_005bcd65);
+  engine_mini3d_cpp_setAlpha_FUN_004edaf0((float)param_1 * _DAT_005bcd65);
   return;
 }

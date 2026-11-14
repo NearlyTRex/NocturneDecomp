@@ -14,49 +14,48 @@ void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_00481540(CStrList *
   char cVar1;
   CEditorTools *this_ptr_00;
   char *pcVar2;
-  char *pcVar3;
-  uint uVar4;
+  uint uVar3;
+  int iVar4;
   int iVar5;
-  int iVar6;
-  char *pcVar7;
-  byte bVar8;
+  char *buffer;
+  byte bVar6;
   
-  bVar8 = 0;
-  iVar6 = 0;
+  bVar6 = 0;
   iVar5 = 0;
-  if (0 < *(int *)this_ptr) {
+  iVar4 = 0;
+  if (0 < this_ptr->item_count) {
     do {
-      pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_00481240(this_ptr,iVar6);
-      uVar4 = 0xffffffff;
+      pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_00481240(this_ptr,iVar5);
+      uVar3 = 0xffffffff;
       do {
-        if (uVar4 == 0) break;
-        uVar4 = uVar4 - 1;
+        if (uVar3 == 0) break;
+        uVar3 = uVar3 - 1;
         cVar1 = *pcVar2;
-        pcVar2 = pcVar2 + (uint)bVar8 * -2 + 1;
+        pcVar2 = pcVar2 + (uint)bVar6 * -2 + 1;
       } while (cVar1 != '\0');
-      iVar6 = iVar6 + 1;
-      iVar5 = iVar5 + ~uVar4;
-    } while (iVar6 < *(int *)this_ptr);
+      iVar5 = iVar5 + 1;
+      iVar4 = iVar4 + ~uVar3;
+    } while (iVar5 < this_ptr->item_count);
   }
-  pcVar2 = (char *)FUN_005b8df8(iVar5 + 1);
+  pcVar2 = (char *)operator_new_array(iVar4 + 1);
   if (pcVar2 == (char *)0x0) {
     _DAT_01d046a0 = "..\\shape\\edittool.cpp";
     _DAT_01d046a4 = 0xcd1;
-    core_main_c_FUN_004e4500("CStrList::copyToClipboard - out of memory for %d items, %d bytes",*(uint *)this_ptr,iVar5 + 1);
+    core_main_c_FUN_004e4500("CStrList::copyToClipboard - out of memory for %d items, %d bytes",this_ptr->item_count,iVar4 + 1);
   }
-  iVar5 = 0;
-  pcVar7 = pcVar2;
-  if (0 < *(int *)this_ptr) {
+  iVar4 = 0;
+  buffer = pcVar2;
+  if (0 < this_ptr->item_count) {
     do {
-      pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_00481240(this_ptr,iVar5);
-      iVar5 = iVar5 + 1;
-      iVar6 = FUN_005b7790(pcVar7,&DAT_005d2824,pcVar3);
-      pcVar7 = pcVar7 + iVar6;
-    } while (iVar5 < *(int *)this_ptr);
+      shape_edittool_cpp_CStrList_getStringAt_FUN_00481240(this_ptr,iVar4);
+      iVar4 = iVar4 + 1;
+      iVar5 = _sprintf(buffer,&DAT_005d2824);
+      buffer = buffer + iVar5;
+    } while (iVar4 < this_ptr->item_count);
   }
   this_ptr_00 = g_CEditorToolsPtr;
-  *pcVar7 = '\0';
-  shape_edittool_cpp_FUN_0047fc30(this_ptr_00,pcVar2);
+  *buffer = '\0';
+  shape_edittool_cpp_CEditorTools_setClipboardText_FUN_0047fc30(this_ptr_00,pcVar2);
   FUN_005b7fce(pcVar2);
   return;
 }

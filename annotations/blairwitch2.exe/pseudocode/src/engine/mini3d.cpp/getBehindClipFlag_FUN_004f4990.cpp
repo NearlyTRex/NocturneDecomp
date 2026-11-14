@@ -1,0 +1,27 @@
+// Name: engine_mini3d.cpp_getBehindClipFlag_FUN_004f4990
+// Address: 004f4990
+// Address Range: [[004f4990, 004f49d0]]
+// Convention: __cdecl
+// Signature: int __cdecl engine_mini3d_cpp_getBehindClipFlag_FUN_004f4990(CVector3f *point)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+int __cdecl engine_mini3d_cpp_getBehindClipFlag_FUN_004f4990(CVector3f *point)
+
+{
+  float fVar1;
+  uint3 uVar2;
+  
+  fVar1 = (point->z - *(float *)(_DAT_01d09918 + 0x2c)) * *(float *)(_DAT_01d09918 + 0x20) +
+          (point->y - *(float *)(_DAT_01d09918 + 0x28)) * *(float *)(_DAT_01d09918 + 0x14) +
+          (point->x - *(float *)(_DAT_01d09918 + 0x24)) * *(float *)(_DAT_01d09918 + 8);
+  uVar2 = (uint3)(CONCAT22((short)((uint)_DAT_01d09918 >> 0x10),
+                           (ushort)(0.0 < fVar1) << 8 | (ushort)NAN(fVar1) << 10 |
+                           (ushort)(fVar1 == 0.0) << 0xe) >> 8);
+  if (0.0 >= fVar1) {
+    return CONCAT31(uVar2,0x10);
+  }
+  return (uint)uVar2 << 8;
+}

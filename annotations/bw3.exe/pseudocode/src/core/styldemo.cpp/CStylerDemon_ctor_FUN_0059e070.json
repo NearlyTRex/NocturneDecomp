@@ -2,18 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 57,
+    "complexity_score": 94,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 27,
-    "suspect_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 39,
+    "suspect_count": 4,
     "suspect_types": [
-      "unnamed_field",
+      "derived_field_index_pun",
+      "negative_offset",
       "warning_overlapping_globals"
     ],
-    "total_lines": 64
+    "total_lines": 76
   },
   "cross_references": [
     {
@@ -31,9 +32,9 @@
         "0059e127"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_styldemo.cpp_CStylerDemon_ctor_FUN_0059e070",
-    "signature": "CStylerDemon * core_styldemo_cpp_CStylerDemon_ctor_FUN_0059e070(CStylerDemon *this_ptr)"
+    "signature": "CStylerDemon * __cdecl core_styldemo_cpp_CStylerDemon_ctor_FUN_0059e070(CStylerDemon *this_ptr)"
   },
   "function_calls": [
     {
@@ -49,7 +50,7 @@
     {
       "addr": "0054eae0",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_0054eae0"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0"
     }
   ],
   "globals": [
@@ -134,12 +135,27 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x10",
+      "description": "Negative struct offset (wrong base type)",
+      "line": 24,
+      "match": "pCVar5[-1].",
       "severity": "mild",
-      "text": "pCVar4 = core_morph_cpp_CMorph_ctor_FUN_004fa8a0((CMorph *)&pCVar3[1].field_0x10);",
-      "type": "unnamed_field"
+      "text": "pSVar1 = pCVar5[-1].models[1].textures;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 33,
+      "match": "pCVar5[-1].",
+      "severity": "mild",
+      "text": "pCVar5[-1].rescale_enabled = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "'pCVar4[1].base.base.actor_name + 0x10' walks 1 x sizeof(CEnemy) (0xd054) + offsetof(base.base.actor_name) (0x0) + 0x10 = 0xd064, which is exactly offsetof(CBaal, fade_timer). Ghidra had no CBaal type here and reached the field by index arithmetic; write it as ((CBaal *)pCVar4)->fade_timer (\u00a7de-pun/\u00a712). Ambiguous: CBoneGuy::pickup_target, CCarved::pickup_target, CConstruct::fall_event[16] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 15,
+      "severity": "moderate",
+      "text": "((CMorph *)(pCVar4[1].base.base.actor_name + 0x10));",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

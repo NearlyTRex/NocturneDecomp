@@ -26,10 +26,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
-;   core_boneguy.cpp_FUN_0041a810 at 0041a85d
+;   core_boneguy.cpp_CBaalSkel_processDamage_FUN_0041a810 at 0041a85d
 ;   core_charactr.cpp_FUN_0042ff70 at 0042ffca
 ;   core_charactr.cpp_FUN_004300e0 at 00430410
-;   unkafter_enemy.cpp_FUN_0048a220 at 0048a261
+;   core_enemy.cpp_CEnemy_randomize_FUN_0048a220 at 0048a261
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CAmmo_Bullet_005bdcb0
@@ -47,10 +47,10 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_actor.cpp_createActorByName_FUN_0040c4f0
-;   core_actor.cpp_FUN_0040ce40
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
 ;   core_inv.cpp_FUN_004dba30
-;   core_mission.cpp_FUN_004f6930
+;   core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930
 ;   crt_math.c_round_FUN_005a3120
 ;
 ; *****************************************************************************
@@ -108,14 +108,14 @@ section .text
     MOV EDX,dword ptr [ESP + 0x28]      ; 00489d1f
     PUSH EDX                            ; 00489d23
     CALL core_actor.cpp_createActorByName_FUN_0040c4f0 ; 00489d24
-        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c4f0()
+        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c4f0(char * class_name)
     ADD ESP,0x4                         ; 00489d29
     MOV ECX,dword ptr [0x007e17b4]      ; 00489d2c | g_CBoxActorClassInfo.name_hash
     PUSH ECX                            ; 00489d32
     PUSH EAX                            ; 00489d33
     MOV EBX,EAX                         ; 00489d34
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 00489d36
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     MOV ESI,EAX                         ; 00489d3b
     ADD ESP,0x8                         ; 00489d3d
     TEST EAX,EAX                        ; 00489d40
@@ -145,14 +145,14 @@ section .text
         ;   XREF to: 00489e3c (CONDITIONAL_JUMP)  ; LAB_00489e3c
     PUSH 0x40000000                     ; 00489d7c
     PUSH 0xc0000000                     ; 00489d81
-    CALL core_actor.cpp_FUN_0040ce40    ; 00489d86
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 00489d86
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x24],EAX      ; 00489d8b
     ADD ESP,0x8                         ; 00489d8f
     PUSH 0x40000000                     ; 00489d92
     PUSH 0xc0000000                     ; 00489d97
-    CALL core_actor.cpp_FUN_0040ce40    ; 00489d9c
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 00489d9c
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x54],EAX      ; 00489da1
     FLD float ptr [ESP + 0x54]          ; 00489da5
     ADD ESP,0x8                         ; 00489da9
@@ -204,8 +204,8 @@ section .text
     PUSH EBX                            ; 00489e2c
     MOV ECX,dword ptr [0x00600530]      ; 00489e2d | DAT_00600530
     PUSH ECX                            ; 00489e33 | DAT_01d81080
-    CALL core_mission.cpp_FUN_004f6930  ; 00489e34
-        ;   XREF to: 004f6930 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_FUN_004f6930(CDemonMission * this_ptr, CDemonActor * actor)
+    CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930 ; 00489e34
+        ;   XREF to: 004f6930 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00489e39
     MOV ESI,dword ptr [ESP + 0x38]      ; 00489e3c
         ;   Label: LAB_00489e3c
@@ -300,8 +300,8 @@ section .text
     SUB ESP,0x4                         ; 00489f36
     FSTP float ptr [ESP]                ; 00489f39
     PUSH 0x0                            ; 00489f3c
-    CALL core_actor.cpp_FUN_0040ce40    ; 00489f3e
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 00489f3e
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x54],EAX      ; 00489f43
     FLD float ptr [ESP + 0x54]          ; 00489f47
     ADD ESP,0x8                         ; 00489f4b
@@ -326,7 +326,7 @@ section .text
         ;   XREF to: 00489fa7 (CONDITIONAL_JUMP)  ; LAB_00489fa7
     PUSH 0x5bdcbd                       ; 00489f7f | = "CAmmo_Mana"
     CALL core_actor.cpp_createActorByName_FUN_0040c4f0 ; 00489f84
-        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c4f0()
+        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c4f0(char * class_name)
     ADD ESP,0x4                         ; 00489f89
     MOV EBX,EAX                         ; 00489f8c
     JMP 0x00489d74                      ; 00489f8e
@@ -334,7 +334,7 @@ section .text
     PUSH 0x5bdcb0                       ; 00489f93 | = "CAmmo_Bullet"
         ;   Label: LAB_00489f93
     CALL core_actor.cpp_createActorByName_FUN_0040c4f0 ; 00489f98
-        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c4f0()
+        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c4f0(char * class_name)
     ADD ESP,0x4                         ; 00489f9d
     MOV EBX,EAX                         ; 00489fa0
     JMP 0x00489d74                      ; 00489fa2
@@ -342,7 +342,7 @@ section .text
     PUSH 0x5bdcc8                       ; 00489fa7 | = "CHealthItemSmall"
         ;   Label: LAB_00489fa7
     CALL core_actor.cpp_createActorByName_FUN_0040c4f0 ; 00489fac
-        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c4f0()
+        ;   XREF to: 0040c4f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c4f0(char * class_name)
     ADD ESP,0x4                         ; 00489fb1
     MOV EBX,EAX                         ; 00489fb4
     JMP 0x00489d74                      ; 00489fb6

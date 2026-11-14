@@ -247,4 +247,99 @@ NOCTURNE_TEST(no_roots_is_the_working_directory) {
     CHECK_EQ(watcom_resolve_fs_dirs("save").size(), (size_t)1);
 }
 
+// -----------------------------------------------------------------------------
+// PODs in subfolders
+// -----------------------------------------------------------------------------
+
+namespace {
+
+std::string nested(const std::vector<WatcomNestedPod> &pods, const char *name) {
+    for (const WatcomNestedPod &pod : pods) {
+        if (pod.name == name)
+            return pod.relative;
+    }
+    return std::string();
+}
+
+} // namespace
+
+// A bare .pod name the data directory does not have is read from the first
+// subfolder, by path, that does. One the data directory or the user directory
+// has is theirs; a path with a folder, a write and a name that is not a POD
+// are as they always were.
+NOCTURNE_TEST(a_pod_in_a_subfolder_reads_as_if_it_were_in_the_data_directory) {
+    Install install;
+    std::error_code ec;
+    fs::create_directories(install.data / "nocturne", ec);
+    fs::create_directories(install.data / "mod", ec);
+    Install::write(install.data / "nocturne" / "ACT2.POD", "package");
+    Install::write(install.data / "mod" / "act2.pod", "mod");
+    Install::write(install.data / "nocturne" / "act1.pod", "package");
+    Install::write(install.data / "nocturne" / "MUSIC.POD", "package");
+    Install::write(install.data / "nocturne" / "notes.txt", "package");
+
+    CHECK(fs::equivalent(watcom_resolve_fs_path("ACT2.POD"), install.in_data("mod/act2.pod")));
+    CHECK(fs::equivalent(watcom_resolve_fs_path("act1.pod"), install.in_data("ACT1.POD")));
+    CHECK_EQ(watcom_resolve_fs_path("sub\\music.pod"), install.in_data("sub/music.pod"));
+    CHECK(
+        fs::equivalent(watcom_resolve_fs_path("music.pod"), install.in_data("nocturne/MUSIC.POD")));
+    CHECK_EQ(watcom_resolve_fs_path("notes.txt"), install.in_data("notes.txt"));
+    CHECK_EQ(watcom_resolve_fs_path("none.pod"), install.in_data("none.pod"));
+    CHECK_EQ(watcom_resolve_fs_path("ACT2.POD", WatcomPathUse::Write), install.in_user("ACT2.POD"));
+    Install::write(install.user / "MUSIC.POD", "mine");
+    CHECK(fs::equivalent(watcom_resolve_fs_path("music.pod"), install.in_user("MUSIC.POD")));
+    // The listing has the user directory's copy once, not the subfolder's as well.
+    const std::vector<std::string> listed = nocturne_find_files("music.pod");
+    CHECK_EQ(listed.size(), (size_t)1);
+    if (listed.size() == 1)
+        CHECK_EQ(listed[0], std::string("MUSIC.POD"));
+    // With no user directory a write goes to the data directory, not a subfolder.
+    watcom_set_path_roots({install.data.generic_string(), ""});
+    CHECK_EQ(watcom_resolve_fs_path("ACT2.POD", WatcomPathUse::Write), install.in_data("ACT2.POD"));
+}
+
+// The listing: one per name, the data directory's own left out, and no
+// dot-folder, link to a folder or folder past the depth entered.
+NOCTURNE_TEST(the_subfolder_pods_are_one_per_name_and_not_from_anywhere) {
+    Install install;
+    std::error_code ec;
+    fs::create_directories(install.data / "nocturne", ec);
+    fs::create_directories(install.data / ".hidden", ec);
+    fs::create_directories(install.base / "elsewhere", ec);
+    fs::create_directories(install.data / "a" / "b" / "c" / "d" / "e", ec);
+    Install::write(install.data / "nocturne" / "ACT1.POD", "shadowed");
+    Install::write(install.data / "nocturne" / "TOWN.POD", "package");
+    Install::write(install.data / ".hidden" / "HIDDEN.POD", "hidden");
+    Install::write(install.base / "elsewhere" / "LINKED.POD", "linked");
+    fs::create_directory_symlink(install.base / "elsewhere", install.data / "link", ec);
+    Install::write(install.data / "a" / "b" / "c" / "d" / "DEEP.POD", "deep");
+    Install::write(install.data / "a" / "b" / "c" / "d" / "e" / "DEEPER.POD", "deeper");
+    watcom_set_path_roots({install.data.generic_string(), install.user.generic_string()});
+
+    const std::vector<WatcomNestedPod> pods = watcom_nested_pods();
+    CHECK_EQ(pods.size(), (size_t)2);
+    CHECK_EQ(nested(pods, "TOWN.POD"), std::string("nocturne/TOWN.POD"));
+    CHECK_EQ(nested(pods, "DEEP.POD"), std::string("a/b/c/d/DEEP.POD"));
+    // Asked again, the same answer, from what was found.
+    CHECK_EQ(watcom_nested_pods().size(), (size_t)2);
+    CHECK_EQ(watcom_nested_pods_in(install.data.generic_string()).size(), (size_t)2);
+    CHECK(watcom_nested_pods_in((install.base / "missing").generic_string()).empty());
+}
+
+// With no roots the working directory is looked under, and the answer is a
+// path relative to it; moving to another is looked under afresh.
+NOCTURNE_TEST(with_no_roots_the_working_directory_has_the_subfolders) {
+    Install install;
+    std::error_code ec;
+    const fs::path previous = fs::current_path(ec);
+    fs::create_directories(install.data / "games" / "nocturne", ec);
+    Install::write(install.data / "games" / "nocturne" / "ACT5.POD", "package");
+    watcom_set_path_roots({});
+    fs::current_path(install.data, ec);
+    CHECK_EQ(watcom_resolve_fs_path("act5.pod"), std::string("games/nocturne/ACT5.POD"));
+    fs::current_path(install.user, ec);
+    CHECK_EQ(watcom_resolve_fs_path("act5.pod"), std::string("act5.pod"));
+    fs::current_path(previous, ec);
+}
+
 NOCTURNE_TEST_MAIN()

@@ -10,16 +10,16 @@
 ;
 ; XREF[7]:
 ;   core_doc.cpp_FUN_004763c0 at 0047640e
-;   core_dracbrid.cpp_FUN_0047d1e0 at 0047d299
-;   core_mimic.cpp_FUN_00510530 at 005105ae
-;   core_moloch.cpp_FUN_005204e0 at 00520aa6
-;   core_stranger.cpp_FUN_00591ce0 at 00591d2e
-;   core_succubus.cpp_FUN_00592320 at 005925c7
-;   core_vampboss.cpp_FUN_005a7290 at 005a72ad
+;   core_dracbrid.cpp_CDraculaBride_archive_FUN_0047d1e0 at 0047d299
+;   core_mimic.cpp_CMimic_setupCloth_FUN_00510530 at 005105ae
+;   core_moloch.cpp_CMoloch_process_FUN_005204e0 at 00520aa6
+;   core_stranger.cpp_CStranger_reset_FUN_00591ce0 at 00591d2e
+;   core_succubus.cpp_CSuccubus_process_FUN_00592320 at 005925c7
+;   core_vampboss.cpp_CVampireBoss_transformToHuman_FUN_005a7290 at 005a72ad
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_jumpToMotion_FUN_00524b10
-;   core_motion.cpp_FUN_005240c0
+;   core_motion.cpp_CMotionList_findMotionIndex_FUN_005240c0
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     PUSH EDX                            ; 00524aeb
     MOV ECX,dword ptr [EAX]             ; 00524aec
     PUSH ECX                            ; 00524aee
-    CALL core_motion.cpp_FUN_005240c0   ; 00524aef
-        ;   XREF to: 005240c0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_FUN_005240c0(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
+    CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_005240c0 ; 00524aef
+        ;   XREF to: 005240c0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_005240c0(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     ADD ESP,0xc                         ; 00524af4
     PUSH dword ptr [ESP + 0x10]         ; 00524af7
     PUSH EAX                            ; 00524afb

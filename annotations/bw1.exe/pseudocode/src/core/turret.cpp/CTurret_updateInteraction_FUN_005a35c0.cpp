@@ -9,18 +9,22 @@
 int __cdecl core_turret_cpp_CTurret_updateInteraction_FUN_005a35c0(CTurret *this_ptr,UOrientationVector *user_orientation,SPlayerInput *player_control)
 
 {
-  if (*(int *)(player_control + 0x10) == 0) {
-    if ((UOrientationVector *)&this_ptr->field_0x30 != user_orientation) {
-      *(uint *)&this_ptr->field_0x30 = *(uint *)user_orientation;
-      *(uint *)&this_ptr->field_0x34 = *(uint *)((int)user_orientation + 4);
-      *(uint *)&this_ptr->field_0x38 = *(uint *)((int)user_orientation + 8);
+  UOrientationVector *pUVar1;
+  CDemonActor *unaff_EDI;
+  
+  if ((player_control->action_state).use_item == 0) {
+    pUVar1 = &(this_ptr->base).base.orient;
+    if (pUVar1 != user_orientation) {
+      (pUVar1->vec).x = (user_orientation->vec).x;
+      (this_ptr->base).base.orient.vec.y = (user_orientation->vec).y;
+      (this_ptr->base).base.orient.vec.z = (user_orientation->vec).z;
     }
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0((CDemonActor *)this_ptr);
-    if (*(int *)(player_control + 0xc) != 0) {
-      (**(code **)(*(int *)&this_ptr->field_0x154 + 0xe4))(this_ptr);
+    if ((player_control->action_state).fire != 0) {
+      (*(((this_ptr->base).base.vtable._uc)->_uc).isGrabbable)((CCharacter *)this_ptr,unaff_EDI);
     }
     return 1;
   }
-  *(uint *)(player_control + 0x10) = 0;
+  (player_control->action_state).use_item = 0;
   return 0;
 }

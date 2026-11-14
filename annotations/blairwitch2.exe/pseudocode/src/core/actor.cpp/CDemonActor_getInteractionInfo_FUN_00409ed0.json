@@ -1,0 +1,167 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 12,
+    "complexity_score": 12,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 24
+  },
+  "cross_references": [
+    {
+      "addr": "004e7980",
+      "from_addr": "004e798b",
+      "name": "core_manpuz.cpp_CMirrorHack_getInteractionInfo_FUN_004e7980",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057f8e0",
+      "from_addr": "0057f8ec",
+      "name": "core_turret.cpp_CTurret_getInteractionInfo_FUN_0057f8e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00409ed0",
+    "address_range": [
+      [
+        "00409ed0",
+        "00409f0f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_CDemonActor_getInteractionInfo_FUN_00409ed0",
+    "signature": "void __cdecl core_actor_cpp_CDemonActor_getInteractionInfo_FUN_00409ed0(CDemonActor *this_ptr,SInteractionInfo *out_info)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004e798b",
+        "call_type": "direct",
+        "caller": "core_manpuz.cpp_CMirrorHack_getInteractionInfo_FUN_004e7980",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0057f8ec",
+        "call_type": "direct",
+        "caller": "core_turret.cpp_CTurret_getInteractionInfo_FUN_0057f8e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.5454545454545454,
+    "instruction_count": 11,
+    "opcode_distribution": {
+      "COPY": 11,
+      "INT_ADD": 8,
+      "LOAD": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 28
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00409d20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00409d60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0040a030",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6207
+    },
+    "nocturne.exe": {
+      "addr": "0040b1b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "out_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SInteractionInfo *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 160,
+        "vtable_addr": "005f7204"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 160,
+        "vtable_addr": "005fab04"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 160,
+        "vtable_addr": "005fbe04"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 160,
+        "vtable_addr": "005fec04"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 160,
+        "vtable_addr": "005ff904"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 139
+  }
+}

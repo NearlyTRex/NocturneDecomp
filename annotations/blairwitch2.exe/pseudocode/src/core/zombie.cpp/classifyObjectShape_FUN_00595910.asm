@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_zombie_cpp_classifyObjectShape_FUN_00595910(float *param_1)
+; int __cdecl core_zombie_cpp_classifyObjectShape_FUN_00595910(CVector3f *dimensions)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   dimensions
 ; Local Variables:
 ; undefined8       Stack[-0x30]:8  local_30
 ; undefined8       Stack[-0x28]:8  local_28
@@ -11,7 +13,7 @@
 ; undefined8       Stack[-0x10]:8  local_10
 ;
 ; XREF[1]:
-;   core_zombie.cpp_FUN_005984e0 at 00598c80
+;   core_zombie.cpp_CZombie_processPickup_FUN_005984e0 at 00598c80
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005eee2a

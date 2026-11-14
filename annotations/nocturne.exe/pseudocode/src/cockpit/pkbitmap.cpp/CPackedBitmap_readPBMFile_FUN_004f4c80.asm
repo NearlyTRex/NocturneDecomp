@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   skip_data_load
 ;
 ; XREF[2]:
-;   cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f4f90 at 004f50a6
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_004f4e40 at 004f4eb5
+;   cockpit_pkbitmap.cpp_parsePBGFile_FUN_004f4f90 at 004f50a6
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_pkbitmap_cpp_0058d252
@@ -23,7 +23,7 @@
 ;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   cockpit_pkbitmap.cpp_CPackedBitmap_FUN_004f3f50
+;   cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_004f3f50
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   crt_memory.c_malloc_FUN_005635b0
 ;   crt_stdio.c_fread_FUN_005636d0
@@ -43,8 +43,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x30]      ; 004f4c87
     MOV EBP,dword ptr [ESP + 0x34]      ; 004f4c8b
     PUSH EBX                            ; 004f4c8f
-    CALL cockpit_pkbitmap.cpp_CPackedBitmap_FUN_004f3f50 ; 004f4c90
-        ;   XREF to: 004f3f50 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_FUN_004f3f50(CPackedBitmap * this_ptr)
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_004f3f50 ; 004f4c90
+        ;   XREF to: 004f3f50 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_004f3f50(CPackedBitmap * this_ptr)
     ADD ESP,0x4                         ; 004f4c95
         ;   Label: LAB_004f4c95
     PUSH EBP                            ; 004f4c98

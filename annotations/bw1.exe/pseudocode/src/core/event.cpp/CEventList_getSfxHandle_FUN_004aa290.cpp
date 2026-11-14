@@ -14,7 +14,7 @@ uint __cdecl core_event_cpp_CEventList_getSfxHandle_FUN_004aa290(CEventList *thi
   core_event_cpp_CEventList_updateSfxEntries_FUN_004aa400(this_ptr);
   iVar1 = core_event_cpp_CEventList_findSfxEntry_FUN_004aa3b0(this_ptr,name);
   if (-1 < iVar1) {
-    return *(uint *)(this_ptr + iVar1 * 0x120 + 0x3acc);
+    return (this_ptr->sfx_handles).entries[iVar1].sfx_handle;
   }
   return 0;
 }

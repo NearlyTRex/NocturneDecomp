@@ -179,7 +179,7 @@ int __cdecl core_shotgun_cpp_CShotgun_fire_FUN_00588060(CShotgun *this_ptr)
             SStack_11c.impact_direction = *pCVar12;
           }
           SStack_11c.ammo_type = (this_ptr->base).ammo_type;
-          SStack_11c.damage_type = DAMAGE_TYPE_IMMUNE|DAMAGE_TYPE_DROWN;
+          SStack_11c.damage_type = DAMAGE_TYPE_ATTACK_BULLET;
           SStack_11c.dismember_prob = 0.15;
           SStack_11c.attacker = (CDemonActor *)this_ptr;
           SStack_11c.wielder =

@@ -2,18 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 533,
+    "complexity_score": 643,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 63,
-    "suspect_count": 46,
+    "pseudocode_lines": 68,
+    "suspect_count": 55,
     "suspect_types": [
+      "derived_field_index_pun",
+      "pointer_cast",
+      "raw_address_pointer_store",
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 216
+    "total_lines": 221
   },
   "cross_references": [
     {
@@ -210,7 +213,7 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar5 = param_1;",
+      "text": "iVar3 = param_1;",
       "type": "unnamed_param"
     },
     {
@@ -222,11 +225,27 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 21,
+      "match": "*(CDemonActor **)(iVar3 + 0x14d168",
+      "severity": "moderate",
+      "text": "actor_ptr = *(CDemonActor **)(iVar3 + 0x14d168);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 23,
+      "match": "*(CDemonActor **)(param_1 + 0x158d00",
+      "severity": "moderate",
+      "text": "*(CDemonActor **)(param_1 + 0x158d00 + *(int *)(param_1 + 0x158cfc) * 4) = actor_ptr;",
+      "type": "raw_address_pointer_store"
+    },
+    {
       "description": "Unnamed function parameter",
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x158d00 + *(int *)(param_1 + 0x158cfc) * 4) = iVar1;",
+      "text": "*(CDemonActor **)(param_1 + 0x158d00 + *(int *)(param_1 + 0x158cfc) * 4) = actor_ptr;",
       "type": "unnamed_param"
     },
     {
@@ -234,7 +253,7 @@
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x158d00 + *(int *)(param_1 + 0x158cfc) * 4) = iVar1;",
+      "text": "*(CDemonActor **)(param_1 + 0x158d00 + *(int *)(param_1 + 0x158cfc) * 4) = actor_ptr;",
       "type": "unnamed_param"
     },
     {
@@ -254,24 +273,32 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 28,
+      "match": "*(CDemonActor **)(param_1 + 0x14f0ac",
+      "severity": "moderate",
+      "text": "*(CDemonActor **)(param_1 + 0x14f0ac + *(int *)(param_1 + 0x14f0a8) * 4) = pCVar1;",
+      "type": "raw_address_pointer_store"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x14f0ac + *(int *)(param_1 + 0x14f0a8) * 4) = uVar3;",
+      "text": "*(CDemonActor **)(param_1 + 0x14f0ac + *(int *)(param_1 + 0x14f0a8) * 4) = pCVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x14f0ac + *(int *)(param_1 + 0x14f0a8) * 4) = uVar3;",
+      "text": "*(CDemonActor **)(param_1 + 0x14f0ac + *(int *)(param_1 + 0x14f0a8) * 4) = pCVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x14f0ac + *(int *)(param_1 + 0x14f0a8) * 4) == 0) {",
@@ -279,42 +306,26 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x14f0ac + *(int *)(param_1 + 0x14f0a8) * 4) == 0) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x154e78 + *(int *)(param_1 + 0x154e74) * 4) = uVar3;",
-      "type": "unnamed_param"
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 33,
+      "match": "*(CDemonActor **)(param_1 + 0x154e78",
+      "severity": "moderate",
+      "text": "*(CDemonActor **)(param_1 + 0x154e78 + *(int *)(param_1 + 0x154e74) * 4) = pCVar1;",
+      "type": "raw_address_pointer_store"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x154e78 + *(int *)(param_1 + 0x154e74) * 4) = uVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x154e78 + *(int *)(param_1 + 0x154e74) * 4) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x154e78 + *(int *)(param_1 + 0x154e74) * 4) != 0) {",
+      "text": "*(CDemonActor **)(param_1 + 0x154e78 + *(int *)(param_1 + 0x154e74) * 4) = pCVar1;",
       "type": "unnamed_param"
     },
     {
@@ -322,12 +333,28 @@
       "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x154e74) = *(int *)(param_1 + 0x154e74) + 1;",
+      "text": "*(CDemonActor **)(param_1 + 0x154e78 + *(int *)(param_1 + 0x154e74) * 4) = pCVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)(param_1 + 0x154e78 + *(int *)(param_1 + 0x154e74) * 4) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(int *)(param_1 + 0x154e78 + *(int *)(param_1 + 0x154e74) * 4) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0x154e74) = *(int *)(param_1 + 0x154e74) + 1;",
@@ -335,31 +362,39 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x152f34 + *(int *)(param_1 + 0x152f30) * 4) = iVar1;",
+      "text": "*(int *)(param_1 + 0x154e74) = *(int *)(param_1 + 0x154e74) + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 41,
+      "match": "*(CDemonActor **)(param_1 + 0x152f34",
+      "severity": "moderate",
+      "text": "*(CDemonActor **)(param_1 + 0x152f34 + *(int *)(param_1 + 0x152f30) * 4) = actor_ptr;",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(CDemonActor **)(param_1 + 0x152f34 + *(int *)(param_1 + 0x152f30) * 4) = actor_ptr;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x152f34 + *(int *)(param_1 + 0x152f30) * 4) = iVar1;",
+      "text": "*(CDemonActor **)(param_1 + 0x152f34 + *(int *)(param_1 + 0x152f30) * 4) = actor_ptr;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x152f30) = *(int *)(param_1 + 0x152f30) + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0x152f30) = *(int *)(param_1 + 0x152f30) + 1;",
@@ -370,12 +405,12 @@
       "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x14f0a8) = *(int *)(param_1 + 0x14f0a8) + 1;",
+      "text": "*(int *)(param_1 + 0x152f30) = *(int *)(param_1 + 0x152f30) + 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0x14f0a8) = *(int *)(param_1 + 0x14f0a8) + 1;",
@@ -383,50 +418,34 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x150ff0 + *(int *)(param_1 + 0x150fec) * 4) = uVar3;",
+      "text": "*(int *)(param_1 + 0x14f0a8) = *(int *)(param_1 + 0x14f0a8) + 1;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x150ff0 + *(int *)(param_1 + 0x150fec) * 4) = uVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar4 = *(int *)(*(int *)(param_1 + 0x150fec) * 4 + param_1 + 0x150ff0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar4 = *(int *)(*(int *)(param_1 + 0x150fec) * 4 + param_1 + 0x150ff0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 47,
-      "match": "code *",
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 48,
+      "match": "*(CDemonActor **)(param_1 + 0x150ff0",
       "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*(int *)(iVar4 + 0x154) + 0x10c))(iVar4);",
-      "type": "unresolved_funcptr"
+      "text": "*(CDemonActor **)(param_1 + 0x150ff0 + *(int *)(param_1 + 0x150fec) * 4) = pCVar1;",
+      "type": "raw_address_pointer_store"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 48,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar4 = *(int *)(param_1 + 0x150ff0 + *(int *)(param_1 + 0x150fec) * 4),",
+      "text": "*(CDemonActor **)(param_1 + 0x150ff0 + *(int *)(param_1 + 0x150fec) * 4) = pCVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(CDemonActor **)(param_1 + 0x150ff0 + *(int *)(param_1 + 0x150fec) * 4) = pCVar1;",
       "type": "unnamed_param"
     },
     {
@@ -434,15 +453,23 @@
       "line": 49,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar4 = *(int *)(param_1 + 0x150ff0 + *(int *)(param_1 + 0x150fec) * 4),",
+      "text": "iVar2 = *(int *)(*(int *)(param_1 + 0x150fec) * 4 + param_1 + 0x150ff0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 49,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = *(int *)(*(int *)(param_1 + 0x150fec) * 4 + param_1 + 0x150ff0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 50,
+      "line": 51,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*(int *)(iVar4 + 0x154) + 0x70))(iVar4), iVar4 == 0)) &&",
+      "text": "iVar2 = (**(code **)(*(int *)(iVar2 + 0x154) + 0x10c))(iVar2);",
       "type": "unresolved_funcptr"
     },
     {
@@ -450,7 +477,7 @@
       "line": 53,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar4 = *(int *)(param_1 + 0x150ff0 + *(int *)(param_1 + 0x150fec) * 4),",
+      "text": "(iVar2 = *(int *)(param_1 + 0x150ff0 + *(int *)(param_1 + 0x150fec) * 4),",
       "type": "unnamed_param"
     },
     {
@@ -458,7 +485,7 @@
       "line": 53,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar4 = *(int *)(param_1 + 0x150ff0 + *(int *)(param_1 + 0x150fec) * 4),",
+      "text": "(iVar2 = *(int *)(param_1 + 0x150ff0 + *(int *)(param_1 + 0x150fec) * 4),",
       "type": "unnamed_param"
     },
     {
@@ -466,39 +493,15 @@
       "line": 54,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar4 = (**(code **)(*(int *)(iVar4 + 0x154) + 0xe0))(iVar4), iVar4 == 0)))) {",
+      "text": "iVar2 = (**(code **)(*(int *)(iVar2 + 0x154) + 0x70))(iVar2), iVar2 == 0)) &&",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x152f34 + *(int *)(param_1 + 0x152f30) * 4) = iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x152f34 + *(int *)(param_1 + 0x152f30) * 4) = iVar1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x152f30) = *(int *)(param_1 + 0x152f30) + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x152f30) = *(int *)(param_1 + 0x152f30) + 1;",
+      "text": "(iVar2 = *(int *)(param_1 + 0x150ff0 + *(int *)(param_1 + 0x150fec) * 4),",
       "type": "unnamed_param"
     },
     {
@@ -506,12 +509,60 @@
       "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x150fec) = *(int *)(param_1 + 0x150fec) + 1;",
+      "text": "(iVar2 = *(int *)(param_1 + 0x150ff0 + *(int *)(param_1 + 0x150fec) * 4),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 59,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar2 = (**(code **)(*(int *)(iVar2 + 0x154) + 0xe0))(iVar2), iVar2 == 0)))) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 60,
+      "match": "*(CDemonActor **)(param_1 + 0x152f34",
+      "severity": "moderate",
+      "text": "*(CDemonActor **)(param_1 + 0x152f34 + *(int *)(param_1 + 0x152f30) * 4) = actor_ptr;",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 60,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(CDemonActor **)(param_1 + 0x152f34 + *(int *)(param_1 + 0x152f30) * 4) = actor_ptr;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 60,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(CDemonActor **)(param_1 + 0x152f34 + *(int *)(param_1 + 0x152f30) * 4) = actor_ptr;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 61,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x152f30) = *(int *)(param_1 + 0x152f30) + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 61,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x152f30) = *(int *)(param_1 + 0x152f30) + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 63,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0x150fec) = *(int *)(param_1 + 0x150fec) + 1;",
@@ -522,8 +573,31 @@
       "line": 63,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar6 < *(int *)(param_1 + 0x14d164));",
+      "text": "*(int *)(param_1 + 0x150fec) = *(int *)(param_1 + 0x150fec) + 1;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 68,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (iVar4 < *(int *)(param_1 + 0x14d164));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 39,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "if (((pCVar1 != (CDemonActor *)0x0) && (*(int *)(pCVar1[1].actor_name + 0x1c) == 4)) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "'pCVar1[1].actor_name + 0x1c' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x1c = 0x174, which is exactly offsetof(CActorDestination, dest_class[24]). Ghidra had no CActorDestination type here and reached the field by index arithmetic; write it as ((CActorDestination *)pCVar1)->dest_class[24] (\u00a7de-pun/\u00a712). Ambiguous: CBarrier::effect_class_name_list[12], CBat::course_filename[28], CBodyPart::vertex_count also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 39,
+      "severity": "moderate",
+      "text": "if (((pCVar1 != (CDemonActor *)0x0) && (*(int *)(pCVar1[1].actor_name + 0x1c) == 4)) &&",
+      "type": "derived_field_index_pun"
     }
   ]
 }

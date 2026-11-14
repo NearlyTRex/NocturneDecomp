@@ -14,7 +14,7 @@ int FUN_005ac8f0(int param_1,uint param_2)
   int iVar3;
   
   iVar3 = 0;
-  for (; (iVar1 = unkafter_asgaya_cpp_FUN_005af2a0(param_1), iVar1 == 0 && (param_2 != 0));
+  for (; (iVar1 = FUN_005af2a0(param_1), iVar1 == 0 && (param_2 != 0));
       param_2 = param_2 - uVar2) {
     uVar2 = FUN_005aca50(param_1);
     if (param_2 < uVar2) {

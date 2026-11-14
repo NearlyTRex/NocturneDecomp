@@ -7,28 +7,28 @@
 
 // Original: core_sps.cpp_staticInit_FUN_005681b0
 // Address: 005681b0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_sps.cpp_factoryFuncSps_FUN_005681e0
 // Address: 005681e0
-void factoryFuncSps(void);
+CSps * __cdecl factoryFuncSps(void);
 
 // Original: core_sps.cpp_CSps_getActorType_FUN_00568200
 // Address: 00568200
-CDemonActorType * CSps::getActorType(CSps *this_ptr);
+CDemonActorType * __cdecl CSps::getActorType(CSps *this_ptr);
 
 // Original: core_sps.cpp_CSps_ctor_FUN_00568210
 // Address: 00568210
-CSps * CSps::ctor(CSps *this_ptr);
+CSps * __cdecl CSps::ctor(CSps *this_ptr);
 
-// Original: core_sps.cpp_FUN_00568290
+// Original: core_sps.cpp_CSps_renderAimBeam_FUN_00568290
 // Address: 00568290
-void FUN_00568290(void);
+void __cdecl CSps::renderAimBeam(CSps *this_ptr);
 
-// Original: core_sps.cpp_FUN_005682f0
+// Original: core_sps.cpp_CSps_fire_FUN_005682f0
 // Address: 005682f0
-undefined4 FUN_005682f0(void);
+int __cdecl CSps::fire(CSps *this_ptr);
 
 // Original: core_sps.cpp_CSps_dtor_FUN_00568300
 // Address: 00568300
-CSps * CSps::dtor(CSps *this_ptr,uint flags);
+CSps * __cdecl CSps::dtor(CSps *this_ptr,uint flags);

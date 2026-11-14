@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 131,
+    "complexity_score": 76,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 11,
-    "suspect_count": 11,
+    "suspect_count": 6,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_field"
+      "negative_offset"
     ],
     "total_lines": 25
   },
@@ -86,6 +85,32 @@
     },
     "pcode_op_count": 54
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005215c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005436d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005597f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9231
+    },
+    "nocturne.exe": {
+      "addr": "004fe490",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -104,92 +129,52 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "pCVar1 = shape_edittool_cpp_CStrList_ctor_FUN_00481f20((CStrList *)&this_ptr->field_0x34);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
       "line": 8,
       "match": "pCVar1[-1].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1[-1].field_0x8 = 0;",
+      "text": "pCVar1[-1].data_array = (char **)0x0;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1[-1].field_0x8 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 9,
       "match": "pCVar1[-1].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1[-1].field_0xc = 0;",
+      "text": "pCVar1[-1].vtable._us = (CStrList_vtable *)0x0;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1[-1].field_0xc = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 10,
       "match": "pCVar1[-2].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1[-2].field_0xc = 0;",
+      "text": "pCVar1[-2].vtable._us = (CStrList_vtable *)0x0;",
       "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0xc",
+      "description": "Negative struct offset (wrong base type)",
+      "line": 11,
+      "match": "pCVar1[-1].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1[-2].field_0xc = 0;",
-      "type": "unnamed_field"
+      "text": "pCVar1[-1].item_count = 0;",
+      "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 12,
       "match": "pCVar1[-1].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1[-1].field_0x4 = 0;",
+      "text": "pCVar1[-1].capacity = 0;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1[-1].field_0x4 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 13,
       "match": "pCVar1[-4].",
       "severity": "mild",
-      "text": "return (CScript *)&pCVar1[-4].field_0xc;",
+      "text": "return (CScript *)&pCVar1[-4].vtable;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "return (CScript *)&pCVar1[-4].field_0xc;",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

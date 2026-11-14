@@ -23,33 +23,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00468aec",
+      "addr": "00468af0",
       "from_addr": "00468b1b",
-      "name": "cockpit_drawsurf.cpp_FUN_00468aec",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00401d8e",
-      "from_addr": "00401dea",
-      "name": "engine_2d.c_FUN_00401d8e",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00402540",
-      "from_addr": "0040254b",
-      "name": "engine_2d.c_FUN_00402540",
+      "name": "cockpit_drawsurf.cpp_FUN_00468af0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00402600",
       "from_addr": "0040260b",
-      "name": "engine_2d.c_FUN_00402600",
+      "name": "engine_2d.c_drawTextCenteredAtColor_FUN_00402600",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004026d0",
       "from_addr": "004026e6",
-      "name": "engine_2d.c_FUN_004026d0",
+      "name": "engine_2d.c_drawTextCenteredColor_FUN_004026d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00402540",
+      "from_addr": "0040254b",
+      "name": "engine_2d.c_drawTextRightAlignedColor_FUN_00402540",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00401d90",
+      "from_addr": "00401dea",
+      "name": "engine_2d.c_wrapTextToWidth_FUN_00401d90",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -80,7 +80,7 @@
       {
         "call_addr": "004026e6",
         "call_type": "direct",
-        "caller": "engine_2d.c_FUN_004026d0",
+        "caller": "engine_2d.c_drawTextCenteredColor_FUN_004026d0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -91,7 +91,7 @@
       {
         "call_addr": "0040254b",
         "call_type": "direct",
-        "caller": "engine_2d.c_FUN_00402540",
+        "caller": "engine_2d.c_drawTextRightAlignedColor_FUN_00402540",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -102,40 +102,7 @@
       {
         "call_addr": "0040260b",
         "call_type": "direct",
-        "caller": "engine_2d.c_FUN_00402600",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "00401dea",
-        "call_type": "direct",
-        "caller": "engine_2d.c_FUN_00401d8e",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "00401e3e",
-        "call_type": "direct",
-        "caller": "engine_2d.c_FUN_00401d8e",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "00468b1b",
-        "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_00468aec",
+        "caller": "engine_2d.c_drawTextCenteredAtColor_FUN_00402600",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -147,6 +114,39 @@
         "call_addr": "00468b6a",
         "call_type": "direct",
         "caller": "cockpit_drawsurf.cpp_CDrawSurface_getTextWidth_FUN_00468b50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00401dea",
+        "call_type": "direct",
+        "caller": "engine_2d.c_wrapTextToWidth_FUN_00401d90",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00401e3e",
+        "call_type": "direct",
+        "caller": "engine_2d.c_wrapTextToWidth_FUN_00401d90",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00468b1b",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_FUN_00468af0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -191,6 +191,32 @@
       "SUBPIECE": 2
     },
     "pcode_op_count": 222
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004018b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004018b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004018a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00401ed0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8919
+    }
   },
   "stack_frame": {
     "frame_size": 8,

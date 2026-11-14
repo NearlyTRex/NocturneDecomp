@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 422,
-    "complexity_score": 411,
+    "complexity_score": 216,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 186,
-    "suspect_count": 21,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_alignment_array",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 608
@@ -132,6 +131,20 @@
       "TRUNC": 12
     },
     "pcode_op_count": 2247
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00473390",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00474400",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 200,
@@ -434,158 +447,6 @@
       "severity": "moderate",
       "text": "float afStackY_1080 [1007];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 49,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "fVar8 = (float10)1 / (float10)*(float *)&this_ptr->field_0x28;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 50,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "fVar9 = ((float10)*(float *)&start_pos->field_0x4 - (float10)*(float *)&this_ptr->field_0x14) /",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 50,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "fVar9 = ((float10)*(float *)&start_pos->field_0x4 - (float10)*(float *)&this_ptr->field_0x14) /",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "(float10)*(float *)&this_ptr->field_0x2c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 52,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "fVar10 = ((float10)*(float *)&start_pos->field_0x8 - (float10)*(float *)&this_ptr->field_0x18) /",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 52,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "fVar10 = ((float10)*(float *)&start_pos->field_0x8 - (float10)*(float *)&this_ptr->field_0x18) /",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "(float10)*(float *)&this_ptr->field_0x30;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "fVar11 = ((float10)*(float *)start_pos - (float10)*(float *)&this_ptr->field_0x10) * fVar8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 55,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "fVar8 = ((float10)*(float *)end_pos - (float10)*(float *)&this_ptr->field_0x10) * fVar8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 67,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "fVar8 = ((float10)*(float *)&end_pos->field_0x4 - (float10)*(float *)&this_ptr->field_0x14) /",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 67,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "fVar8 = ((float10)*(float *)&end_pos->field_0x4 - (float10)*(float *)&this_ptr->field_0x14) /",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 68,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "(float10)*(float *)&this_ptr->field_0x2c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 73,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "fVar8 = ((float10)*(float *)&end_pos->field_0x8 - (float10)*(float *)&this_ptr->field_0x18) /",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 73,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "fVar8 = ((float10)*(float *)&end_pos->field_0x8 - (float10)*(float *)&this_ptr->field_0x18) /",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 74,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "(float10)*(float *)&this_ptr->field_0x30;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 80,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "fVar11 = (float10)*(float *)&end_pos->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 81,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "fVar9 = (float10)*(float *)&end_pos->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 88,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "local_94[0] = (float)(fVar11 - (float10)*(float *)&start_pos->field_0x4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 89,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "local_94[1] = (float)(fVar9 - (float10)*(float *)&start_pos->field_0x8);",
-      "type": "unnamed_field"
     }
   ]
 }

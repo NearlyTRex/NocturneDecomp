@@ -7,7 +7,7 @@
 
 // Original: engine_drender.cpp_staticInit_FUN_0046b0d0
 // Address: 0046b0d0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: engine_drender.cpp_CDemonRenderer_ctor_FUN_0046b0e0
 // Address: 0046b0e0
@@ -29,9 +29,9 @@ void __cdecl CDemonRenderer::renderSolidColorPoly(CDemonRenderer *this_ptr,SMRGL
 // Address: 0046b370
 void __cdecl CDemonRenderer::renderZPrepassPoly(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 
-// Original: engine_drender.cpp_FUN_0046b470
+// Original: engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0046b470
 // Address: 0046b470
-int __cdecl FUN_0046b470(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
+int __cdecl CDemonRenderer::countVisiblePixelsPoly(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0046b580
 // Address: 0046b580
@@ -40,6 +40,10 @@ int __cdecl CDemonRenderer::renderDepthProfiledDirect(CDemonRenderer *this_ptr,S
 // Original: engine_drender.cpp_FUN_0046b670
 // Address: 0046b670
 void FUN_0046b670(CDemonRenderer *param_1,int param_2);
+
+// Original: engine_drender.cpp_CDemonRenderer_renderPerspectiveTextured_FUN_0046b7d0
+// Address: 0046b7d0
+void __cdecl CDemonRenderer::renderPerspectiveTextured(CDemonRenderer *this_ptr,int param_2);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0046b850
 // Address: 0046b850
@@ -53,17 +57,17 @@ void __cdecl CDemonRenderer::renderTexturedPoly(CDemonRenderer *this_ptr,SMRGLPr
 // Address: 0046ba70
 void __cdecl CDemonRenderer::renderTexturedFace(CDemonRenderer *this_ptr,SInputFace *face,int render_flags);
 
-// Original: engine_drender.cpp_FUN_0046bb8c
-// Address: 0046bb8c
-void FUN_0046bb8c(CDemonRenderer *param_1,int param_2);
+// Original: engine_drender.cpp_FUN_0046bb90
+// Address: 0046bb90
+void FUN_0046bb90(void);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0046bc20
 // Address: 0046bc20
 void __cdecl CDemonRenderer::renderAlphaBlendedPoly(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 
-// Original: engine_drender.cpp_FUN_0046bd7e
-// Address: 0046bd7e
-void FUN_0046bd7e(void);
+// Original: engine_drender.cpp_FUN_0046bd80
+// Address: 0046bd80
+void FUN_0046bd80(void);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderDecalPoly_FUN_0046be60
 // Address: 0046be60
@@ -77,13 +81,13 @@ void __cdecl CDemonRenderer::renderSolidTexturedPoly(CDemonRenderer *this_ptr,SM
 // Address: 0046c090
 void __cdecl CDemonRenderer::renderFullEffectsDirect(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 
-// Original: engine_drender.cpp_FUN_0046c16e
-// Address: 0046c16e
-void FUN_0046c16e(CDemonRenderer *param_1,int param_2);
+// Original: engine_drender.cpp_FUN_0046c170
+// Address: 0046c170
+void FUN_0046c170(void);
 
-// Original: engine_drender.cpp_FUN_0046c2ce
-// Address: 0046c2ce
-void FUN_0046c2ce(CDemonRenderer *param_1,int param_2);
+// Original: engine_drender.cpp_FUN_0046c2d0
+// Address: 0046c2d0
+void FUN_0046c2d0(void);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0046c3b0
 // Address: 0046c3b0
@@ -105,9 +109,9 @@ void __cdecl CDemonRenderer::renderBlendedDirect(CDemonRenderer *this_ptr,SMRGLH
 // Address: 0046c800
 void __cdecl CDemonRenderer::renderBlendedPoly(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 
-// Original: engine_drender.cpp_FUN_0046c94e
-// Address: 0046c94e
-void FUN_0046c94e(CDemonRenderer *param_1,int param_2);
+// Original: engine_drender.cpp_FUN_0046c950
+// Address: 0046c950
+void FUN_0046c950(void);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderOverlayPoly_FUN_0046ca20
 // Address: 0046ca20
@@ -117,9 +121,9 @@ void __cdecl CDemonRenderer::renderOverlayPoly(CDemonRenderer *this_ptr,SMRGLPri
 // Address: 0046cb70
 void __cdecl CDemonRenderer::setCameraOrigin(CDemonRenderer *this_ptr,CVector3i *origin);
 
-// Original: engine_drender.cpp_FUN_0046cb90
+// Original: engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90
 // Address: 0046cb90
-void __cdecl FUN_0046cb90(CDemonRenderer *this_ptr,CVector3f *point_ptr);
+void __cdecl CDemonRenderer::setCameraOriginFromScaledPoint(CDemonRenderer *this_ptr,CVector3f *point_ptr);
 
 // Original: engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0046cc10
 // Address: 0046cc10
@@ -144,6 +148,58 @@ void __cdecl CDemonRenderer::applyDirectTransform(CDemonRenderer *this_ptr,CVect
 // Original: engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
 // Address: 0046cf30
 void __cdecl CDemonRenderer::applyScaledTransform(CDemonRenderer *this_ptr,CVector3f *euler_angles,CVector3f *translation);
+
+// Original: engine_drender.cpp_matrixPush_FUN_0046d070
+// Address: 0046d070
+void __cdecl matrixPush(void);
+
+// Original: engine_drender.cpp_pop_FUN_0046d080
+// Address: 0046d080
+void __cdecl pop(void);
+
+// Original: engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046d090
+// Address: 0046d090
+void __cdecl CDemonRenderer::setProjectionScale(CDemonRenderer *this_ptr,float field_of_view);
+
+// Original: engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_0046d0d0
+// Address: 0046d0d0
+void __cdecl CDemonRenderer::setLightIntensity(CDemonRenderer *this_ptr,float intensity);
+
+// Original: engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_0046d100
+// Address: 0046d100
+void __cdecl CDemonRenderer::setLightDirection(CDemonRenderer *this_ptr,CVector3i *direction);
+
+// Original: engine_drender.cpp_CDemonRenderer_scaleAndSetDirectionalLight_FUN_0046d120
+// Address: 0046d120
+void __cdecl CDemonRenderer::scaleAndSetDirectionalLight(CDemonRenderer *this_ptr,CVector3f *light_direction);
+
+// Original: engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046d1a0
+// Address: 0046d1a0
+CVector3i * __stack_esi CDemonRenderer::getCameraOriginFixed(CDemonRenderer *this_ptr,CVector3i *output);
+
+// Original: engine_drender.cpp_FUN_0046d1c0
+// Address: 0046d1c0
+void FUN_0046d1c0(void);
+
+// Original: engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046d230
+// Address: 0046d230
+CVector3i * __stack_esi CDemonRenderer::getCameraRotationFixed(CDemonRenderer *this_ptr,CVector3i *output);
+
+// Original: engine_drender.cpp_FUN_0046d250
+// Address: 0046d250
+void FUN_0046d250(void);
+
+// Original: engine_drender.cpp_FUN_0046d2d0
+// Address: 0046d2d0
+float FUN_0046d2d0(void);
+
+// Original: engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046d2f0
+// Address: 0046d2f0
+void __cdecl CDemonRenderer::pushViewport(CDemonRenderer *this_ptr,int x,int y,int width,int height);
+
+// Original: engine_drender.cpp_popViewport_FUN_0046d320
+// Address: 0046d320
+void __cdecl popViewport(void);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0046d330
 // Address: 0046d330
@@ -173,9 +229,9 @@ void __cdecl CDemonRenderer::setBlendMode(CDemonRenderer *this_ptr,int blend_mod
 // Address: 0046d4c0
 int __cdecl CDemonRenderer::setRenderAlpha(CDemonRenderer *this_ptr,int render_alpha);
 
-// Original: engine_drender.cpp_FUN_0046d4d0
+// Original: engine_drender.cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_0046d4d0
 // Address: 0046d4d0
-void __cdecl FUN_0046d4d0(CDemonRenderer *this_ptr,float render_alpha);
+void __cdecl CDemonRenderer::setRenderAlphaNormalized(CDemonRenderer *this_ptr,float render_alpha);
 
 // Original: engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500
 // Address: 0046d500
@@ -221,9 +277,9 @@ void __cdecl CDemonRenderer::renderFacetList(CDemonRenderer *this_ptr,SMRGLPrimi
 // Address: 0046dbd0
 void __cdecl CDemonRenderer::renderFaceList(CDemonRenderer *this_ptr,SInputFace *face_array,int face_count,int render_flags);
 
-// Original: engine_drender.cpp_FUN_0046de6e
-// Address: 0046de6e
-void FUN_0046de6e(int *param_1,ushort *param_2,int param_3,int param_4,uint param_5);
+// Original: engine_drender.cpp_FUN_0046de70
+// Address: 0046de70
+void FUN_0046de70(void);
 
 // Original: engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e120
 // Address: 0046e120
@@ -243,11 +299,11 @@ void __cdecl CDemonRenderer::captureFace(CDemonRenderer *this_ptr,STrianglePacke
 
 // Original: engine_drender.cpp_qsortByCapturedFaceDepthAscending_FUN_0046e480
 // Address: 0046e480
-undefined4 __cdecl qsortByCapturedFaceDepthAscending(int *param_1,int *param_2);
+int __cdecl qsortByCapturedFaceDepthAscending(SFace **face_ptr_a,SFace **face_ptr_b);
 
 // Original: engine_drender.cpp_qsortByCapturedFaceDepthDescending_FUN_0046e4b0
 // Address: 0046e4b0
-undefined4 __cdecl qsortByCapturedFaceDepthDescending(int *param_1,int *param_2);
+int __cdecl qsortByCapturedFaceDepthDescending(SFace **face_ptr_a,SFace **face_ptr_b);
 
 // Original: engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0
 // Address: 0046e4e0
@@ -257,9 +313,9 @@ void __cdecl CDemonRenderer::processCapturedFaces(CDemonRenderer *this_ptr);
 // Address: 0046e5e0
 void __cdecl CDemonRenderer::captureTexture(CDemonRenderer *this_ptr,SMRGLTextureBasic *texture);
 
-// Original: engine_drender.cpp_FUN_0046e690
+// Original: engine_drender.cpp_CDemonRenderer_updateTexture_FUN_0046e690
 // Address: 0046e690
-void __cdecl FUN_0046e690(CDemonRenderer *this_ptr,SMRGLTextureBasic *texture,SRGBColorPalette *palette);
+void __cdecl CDemonRenderer::updateTexture(CDemonRenderer *this_ptr,SMRGLTextureBasic *texture,SRGBColorPalette *palette);
 
 // Original: engine_drender.cpp_CDemonRenderer_depthTest_FUN_0046e6b0
 // Address: 0046e6b0

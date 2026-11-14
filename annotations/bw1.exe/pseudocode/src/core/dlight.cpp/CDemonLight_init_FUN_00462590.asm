@@ -9,8 +9,8 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[3]:
-;   core_boxactor.cpp_FUN_00422f60 at 00422f7e
-;   core_game.cpp_FUN_004cf5e0 at 004cf82e
+;   core_boxactor.cpp_CLightActor_setup_FUN_00422f60 at 00422f7e
+;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004cf82e
 ;   core_setutil.cpp_C3DSLight_create_FUN_0055cf80 at 0055cfce
 ;
 ; Referenced Globals:
@@ -23,10 +23,10 @@
 ;
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_applyFilter_FUN_00463e30
-;   core_dlight.cpp_FUN_00462670
+;   core_dlight.cpp_CDemonLight_free_FUN_00462670
 ;   core_main.c_FUN_005030e0
 ;   crt_math.c_round_FUN_005c03a0
-;   crt_unknown.c_FUN_005c08d0
+;   crt_memory.c_malloc_FUN_005c08d0
 ;
 ; *****************************************************************************
 
@@ -38,16 +38,16 @@ section .text
     SUB ESP,0x4                         ; 00462592
     MOV EBX,dword ptr [ESP + 0x10]      ; 00462595
     PUSH EBX                            ; 00462599
-    CALL core_dlight.cpp_FUN_00462670   ; 0046259a
-        ;   XREF to: 00462670 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_FUN_00462670()
+    CALL core_dlight.cpp_CDemonLight_free_FUN_00462670 ; 0046259a
+        ;   XREF to: 00462670 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_free_FUN_00462670(CDemonLight * this_ptr)
     MOV EDX,dword ptr [EBX + 0x1cc0]    ; 0046259f
     IMUL EDX,dword ptr [EBX + 0x1cc4]   ; 004625a5
     ADD EDX,EDX                         ; 004625ac
     ADD ESP,0x4                         ; 004625ae
     ADD EDX,0x210                       ; 004625b1
     PUSH EDX                            ; 004625b7
-    CALL crt_unknown.c_FUN_005c08d0     ; 004625b8
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
+    CALL crt_memory.c_malloc_FUN_005c08d0 ; 004625b8
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 004625bd
     MOV dword ptr [EBX + 0x2f98],EAX    ; 004625c0
     TEST EAX,EAX                        ; 004625c6
@@ -67,8 +67,8 @@ section .text
     SBB EAX,EDX                         ; 004625f2
     SAR EAX,0x3                         ; 004625f4
     PUSH EAX                            ; 004625f7
-    CALL crt_unknown.c_FUN_005c08d0     ; 004625f8
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
+    CALL crt_memory.c_malloc_FUN_005c08d0 ; 004625f8
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005c08d0(ulong size)
     FLD float ptr [EBX + 0x2fa8]        ; 004625fd
     FMUL double ptr [0x005d8f2c]        ; 00462603 | DAT_005d8f2c
     ADD ESP,0x4                         ; 00462609

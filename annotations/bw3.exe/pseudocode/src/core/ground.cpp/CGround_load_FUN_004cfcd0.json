@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 335,
-    "complexity_score": 382,
+    "complexity_score": 305,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 157,
-    "suspect_count": 20,
+    "pseudocode_lines": 155,
+    "suspect_count": 13,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "unrolled_strchr",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 492
+    "total_lines": 490
   },
   "cross_references": [
     {
@@ -234,6 +233,32 @@
     },
     "pcode_op_count": 1176
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004caac0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004e7340",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004ef030",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9318
+    },
+    "nocturne.exe": {
+      "addr": "004b14d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 216,
     "local_size": 208,
@@ -395,36 +420,12 @@
       "line": 57,
       "match": "DAT_005c49b2",
       "severity": "mild",
-      "text": "pcVar7 = &DAT_005c49b2;",
+      "text": "pcVar6 = &DAT_005c49b2;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 74,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x4) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 88,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(ushort *)(*(int *)&this_ptr->field_0x24 + (local_18 * *(int *)this_ptr + iVar9) * 4) =",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 94,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "} while (local_18 < *(int *)&this_ptr->field_0x4);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 97,
       "match": "DAT_005c49c2",
       "severity": "mild",
       "text": "local_28 = &DAT_005c49c2;",
@@ -432,7 +433,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 99,
+      "line": 98,
       "match": "DAT_005c49bb",
       "severity": "mild",
       "text": "local_2c = &DAT_005c49bb;",
@@ -440,43 +441,11 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 127,
+      "line": 126,
       "match": "DAT_005c49be",
       "severity": "mild",
-      "text": "pcVar6 = &DAT_005c49be;",
+      "text": "pcVar5 = &DAT_005c49be;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 144,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x4) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 151,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "_fread(iVar5 * 4 + *(int *)&this_ptr->field_0x24 + 2,1,2,local_1c)",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 156,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "} while (local_14 < *(int *)&this_ptr->field_0x4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 159,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "core_texlist_cpp_CTextureList_load_FUN_005690c0(*(CTextureList **)&this_ptr->field_0x28,filename);",
-      "type": "unnamed_field"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
@@ -496,7 +465,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 101,
+      "line": 100,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -504,7 +473,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 128,
+      "line": 127,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -520,7 +489,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 111,
+      "line": 110,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",

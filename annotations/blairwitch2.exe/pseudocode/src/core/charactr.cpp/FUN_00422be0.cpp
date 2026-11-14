@@ -13,6 +13,6 @@ void core_charactr_cpp_FUN_00422be0(int param_1)
   if (*(char *)(param_1 + 0x2514) == '\0') {
     return;
   }
-  core_skeleton_cpp_FUN_00549210(param_1 + 0x2514);
+  core_skeleton_cpp_markModelInUse_FUN_00549210((char *)(param_1 + 0x2514));
   return;
 }

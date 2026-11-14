@@ -8,3 +8,7 @@
 // Original: core_armour.cpp_CFlame_dtor_FUN_00410320
 // Address: 00410320
 CFlame * __cdecl CFlame::dtor(CFlame *this_ptr,uint flags);
+
+// Original: core_armour.cpp_FUN_00410370
+// Address: 00410370
+void FUN_00410370(void *param_1);

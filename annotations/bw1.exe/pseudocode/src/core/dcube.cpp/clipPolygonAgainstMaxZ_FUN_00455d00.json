@@ -1,0 +1,262 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 141,
+    "complexity_score": 179,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 59,
+    "suspect_count": 11,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 200
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00455d00",
+    "address_range": [
+      [
+        "00455d00",
+        "00455e50"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00455d00",
+    "signature": "void __cdecl core_dcube_cpp_clipPolygonAgainstMaxZ_FUN_00455d00(float max_z_plane)"
+  },
+  "function_calls": [
+    {
+      "addr": "00455460",
+      "is_variadic": false,
+      "name": "core_dcube.cpp_clipEdgeToPlane_FUN_00455460"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00455ce8",
+      "name": "PTR_caseD_1_00455ce8",
+      "type": "undefined1*",
+      "value": "00455db4"
+    },
+    {
+      "addr": "00455cf0",
+      "name": "PTR_caseD_3_00455cf0",
+      "type": "undefined1*",
+      "value": "00455d99"
+    },
+    {
+      "addr": "0152c120",
+      "name": "DAT_0152c120",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0152c1e4",
+      "name": "DAT_0152c1e4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.137931034482759,
+    "instruction_count": 116,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 6,
+      "BRANCH": 2,
+      "BRANCHIND": 1,
+      "CALL": 2,
+      "CBRANCH": 8,
+      "COPY": 162,
+      "FLOAT2FLOAT": 8,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "INT_ADD": 33,
+      "INT_AND": 62,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 50,
+      "INT_LEFT": 8,
+      "INT_LESS": 8,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 17,
+      "INT_OR": 11,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 11,
+      "INT_SEXT": 15,
+      "INT_SLESS": 25,
+      "INT_SUB": 32,
+      "INT_XOR": 3,
+      "INT_ZEXT": 8,
+      "LOAD": 22,
+      "POPCOUNT": 25,
+      "RETURN": 1,
+      "STORE": 34,
+      "SUBPIECE": 10
+    },
+    "pcode_op_count": 596
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00444650",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00451e50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00455070",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00448d60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "max_z_plane",
+        "offset": 4,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00455d09",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_0152c1e8",
+      "severity": "mild",
+      "text": "if ((CVector3f *)(&DAT_0152c1e8 + iVar3) != vertex1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_0152c1e8",
+      "severity": "mild",
+      "text": "((CVector3f *)(&DAT_0152c1e8 + iVar3))->x = vertex1->x;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_0152c1ec",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_0152c1ec + iVar3) = vertex1->y;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_0152c1f0",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_0152c1f0 + iVar3) = vertex1->z;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_0152c1e8",
+      "severity": "mild",
+      "text": "(vertex2,vertex1,(CVector3f *)(&DAT_0152c1e8 + _DAT_0152c1e4 * 0xc),0.0,0.0,-1.0,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_0152c1e8",
+      "severity": "mild",
+      "text": "if ((CVector3f *)(&DAT_0152c1e8 + iVar3) != vertex1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 44,
+      "match": "DAT_0152c1e8",
+      "severity": "mild",
+      "text": "((CVector3f *)(&DAT_0152c1e8 + iVar3))->x = vertex1->x;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_0152c1ec",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_0152c1ec + iVar3) = vertex1->y;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_0152c1f0",
+      "severity": "mild",
+      "text": "*(float *)(&DAT_0152c1f0 + iVar3) = vertex1->z;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_0152c1e8",
+      "severity": "mild",
+      "text": "(vertex1,vertex2,(CVector3f *)(&DAT_0152c1e8 + _DAT_0152c1e4 * 0xc),0.0,0.0,-1.0,",
+      "type": "undefined_data"
+    }
+  ]
+}

@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_0042ef90(int param_1,int param_2,float param_3,int param_4)
+; void __cdecl cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_0042ef90(int x,int y,float blend_factor,int palette_index)
 ;
+; Parameters:
+; int              Stack[0x4]:4   x
+; int              Stack[0x8]:4   y
+; float            Stack[0xc]:4   blend_factor
+; int              Stack[0x10]:4   palette_index
 ;
 ; XREF[1]:
 ;   cockpit_ckptutil.c_drawLineAA_FUN_0042e930 at 0042eb04

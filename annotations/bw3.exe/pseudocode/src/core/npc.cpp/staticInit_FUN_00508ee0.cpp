@@ -1,12 +1,12 @@
 // Name: core_npc.cpp_staticInit_FUN_00508ee0
 // Address: 00508ee0
 // Address Range: [[00508ee0, 00508f03]]
-// Convention: unknown
-// Signature: void core_npc_cpp_staticInit_FUN_00508ee0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_npc_cpp_staticInit_FUN_00508ee0(void)
 
 #include "nocturne.h"
 
-void core_npc_cpp_staticInit_FUN_00508ee0(void)
+void __cdecl core_npc_cpp_staticInit_FUN_00508ee0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c3a0

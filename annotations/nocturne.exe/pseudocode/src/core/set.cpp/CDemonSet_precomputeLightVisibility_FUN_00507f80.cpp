@@ -66,7 +66,8 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80(CDemo
       core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(this_ptr,9999.9,0);
       core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(&g_CDemonCameraInstance,0);
       core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_004421b0(&g_CDemonCameraInstance);
-      pCVar2 = core_dcamera_cpp_CDemonCamera_FUN_00447f20(&g_CDemonCameraInstance,aCStack_70);
+      pCVar2 = core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00447f20
+                         (&g_CDemonCameraInstance,aCStack_70);
       if (pCVar2 != pCStack_30) {
         pCStack_30->x = pCVar2->x;
         pCStack_30->y = pCVar2->y;
@@ -167,7 +168,7 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80(CDemo
     } while ((int)pCStack_20 < this_ptr->camera_count);
   }
   if (CStack_50.y_min != 0) {
-    core_set_cpp_CDemonSet_FUN_0050ad20(this_ptr);
+    core_set_cpp_CDemonSet_clearLights_FUN_0050ad20(this_ptr);
     g_CDemonRaytraceInstance.rendering_mode = 0;
     return;
   }

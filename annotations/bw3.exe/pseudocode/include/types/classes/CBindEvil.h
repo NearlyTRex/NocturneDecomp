@@ -4,13 +4,16 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CWeapon.h"
 
 // Structure: CBindEvil
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 1440; ctor 0040f780, fire 0040f840
 // Ghidra size: 0x5a0 (1440 bytes)
 #pragma pack(push, 1)
 typedef struct CBindEvil {
-    char field_0[1440]; // 0x0
+    CWeapon base; // 0x0, derived
+    CVector3f toss_velocity; // 0x594, ctor zeroes +0x594/+0x598/+0x59c; fire passes &+0x594 as the velocity arg of core_fire FUN_004a39a0 -> FUN_004a3a30(.., velocity, fuse_time) and re-zeroes it
 } CBindEvil;
 #pragma pack(pop)
 

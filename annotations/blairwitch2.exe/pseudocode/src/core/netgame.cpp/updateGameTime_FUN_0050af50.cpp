@@ -14,7 +14,7 @@ void __cdecl core_netgame_cpp_updateGameTime_FUN_0050af50(void)
   int iVar1;
   int iVar2;
   
-  iVar1 = wincore_winrun_cpp_FUN_0058e9e0();
+  iVar1 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
   iVar2 = iVar1 / 0x12 - _DAT_01d34e34;
   _DAT_01d34e34 = iVar1 / 0x12;
   if (-1 < iVar2) {

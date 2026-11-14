@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 160,
+    "complexity_score": 111,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 9,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 45,
-    "suspect_count": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 46,
+    "suspect_count": 5,
     "suspect_types": [
+      "pointer_cast",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 137
+    "total_lines": 138
   },
   "cross_references": [
     {
@@ -152,6 +152,32 @@
     },
     "pcode_op_count": 484
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004583d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00454520",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00457a90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0044b430",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -185,76 +211,36 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x28) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x2c + iVar5,cylinder);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "} while (iVar3 < *(int *)&this_ptr->field_0x28);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "puVar1 = *(uint **)(iVar4 * 0x20 + *(int *)&this_ptr->field_0x2c);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 30,
       "match": "DAT_01510da8",
       "severity": "mild",
-      "text": "if (puVar1 != (uint *)&DAT_01510da8) {",
+      "text": "if (pCVar1 != (CVector3f *)&DAT_01510da8) {",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "puVar1 = *(uint **)(iVar4 * 0x20 + 4 + *(int *)&this_ptr->field_0x2c);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 36,
       "match": "DAT_01510db4",
       "severity": "mild",
-      "text": "if (puVar1 != (uint *)&DAT_01510db4) {",
+      "text": "if (pCVar1 != (CVector3f *)&DAT_01510db4) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "puVar1 = *(uint **)(*(int *)&this_ptr->field_0x2c + 8 + iVar4 * 0x20);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 42,
       "match": "DAT_01510dc0",
       "severity": "mild",
-      "text": "if (puVar1 != (uint *)&DAT_01510dc0) {",
+      "text": "if (pCVar1 != (CVector3f *)&DAT_01510dc0) {",
       "type": "undefined_data"
+    },
+    {
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 19,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "severity": "moderate",
+      "text": "((STriangleRef *)",
+      "type": "pointer_cast"
     }
   ]
 }

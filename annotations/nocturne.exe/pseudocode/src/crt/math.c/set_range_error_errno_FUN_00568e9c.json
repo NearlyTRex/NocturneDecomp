@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 6,
     "complexity_score": 5,
-    "cross_reference_count": 2,
+    "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -13,6 +13,12 @@
     "total_lines": 11
   },
   "cross_references": [
+    {
+      "addr": "00572809",
+      "from_addr": "00573608",
+      "name": "crt_fstream.cpp_FUN_00572809",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "00572a35",
       "from_addr": "00572a6b",
@@ -65,6 +71,32 @@
       "STORE": 2
     },
     "pcode_op_count": 18
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005be19c",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005c646c",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005a92dc",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "006027ac",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,

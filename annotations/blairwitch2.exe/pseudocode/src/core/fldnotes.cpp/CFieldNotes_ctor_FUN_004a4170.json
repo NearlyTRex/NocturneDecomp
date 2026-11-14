@@ -2,21 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 4,
-    "complexity_score": 6,
+    "complexity_score": 5,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 6,
+    "pseudocode_lines": 5,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 10
+    "total_lines": 9
   },
   "cross_references": [
     {
       "addr": "004a1200",
       "from_addr": "004a136c",
-      "name": "unkaddr_004a1200.cpp_FUN_004a1200",
+      "name": "core_flashlit.cpp_FUN_004a1200",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -28,9 +28,9 @@
         "004a4177"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_fldnotes.cpp_CFieldNotes_ctor_FUN_004a4170",
-    "signature": "CFieldNotes * core_fldnotes_cpp_CFieldNotes_ctor_FUN_004a4170(CFieldNotes *this_ptr)"
+    "signature": "CFieldNotes * __cdecl core_fldnotes_cpp_CFieldNotes_ctor_FUN_004a4170(CFieldNotes *this_ptr)"
   },
   "function_calls": [],
   "globals": [],
@@ -40,7 +40,7 @@
       {
         "call_addr": "004a136c",
         "call_type": "direct",
-        "caller": "unkaddr_004a1200.cpp_FUN_004a1200",
+        "caller": "core_flashlit.cpp_FUN_004a1200",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -66,6 +66,20 @@
       "STORE": 1
     },
     "pcode_op_count": 8
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004bcb60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004aa7d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 8,

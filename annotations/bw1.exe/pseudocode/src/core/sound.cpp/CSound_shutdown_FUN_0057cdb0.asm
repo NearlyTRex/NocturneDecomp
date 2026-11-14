@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_processHotkeys_FUN_004d1a80 at 004d1b04
-;   core_game.cpp_FUN_004cf5e0 at 004cfccb
+;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004cfccb
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02c832a4

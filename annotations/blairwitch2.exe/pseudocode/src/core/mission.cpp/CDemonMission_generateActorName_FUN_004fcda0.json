@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 65,
+    "complexity_score": 40,
     "cross_reference_count": 13,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 25,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "unnamed_field"
+      "unrolled_strcpy"
     ],
     "total_lines": 73
   },
@@ -19,13 +18,13 @@
     {
       "addr": "00410ac0",
       "from_addr": "00410b32",
-      "name": "core_baron.cpp_FUN_00410ac0",
+      "name": "core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00410ac0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004154f0",
       "from_addr": "004155a3",
-      "name": "core_bodypart.cpp_FUN_004154f0",
+      "name": "core_bodypart.cpp_createBodyPart_FUN_004154f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -35,15 +34,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004b8fce",
-      "from_addr": "004b9003",
-      "name": "core_game.cpp_FUN_004b8fce",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004b90d0",
       "from_addr": "004ba0c4",
       "name": "core_game.cpp_FUN_004b90d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b8fd0",
+      "from_addr": "004b9003",
+      "name": "core_game.cpp_giveHeroWeaponAmmo_FUN_004b8fd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -85,13 +84,13 @@
     {
       "addr": "0056f6d0",
       "from_addr": "0056f9ed",
-      "name": "core_succubus.cpp_FUN_0056f6d0",
+      "name": "core_succubus.cpp_CSuccubus_process_FUN_0056f6d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00583f20",
       "from_addr": "00584665",
-      "name": "core_vehicle.cpp_FUN_00583f20",
+      "name": "core_vehicle.cpp_CVehicle_process_FUN_00583f20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -192,7 +191,7 @@
       {
         "call_addr": "004155a3",
         "call_type": "direct",
-        "caller": "core_bodypart.cpp_FUN_004154f0",
+        "caller": "core_bodypart.cpp_createBodyPart_FUN_004154f0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -214,7 +213,7 @@
       {
         "call_addr": "00410b32",
         "call_type": "direct",
-        "caller": "core_baron.cpp_FUN_00410ac0",
+        "caller": "core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00410ac0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -263,6 +262,32 @@
       "STORE": 13
     },
     "pcode_op_count": 162
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0051bd60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004f7530",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00524700",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004d9720",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 56,
@@ -320,28 +345,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x1",
-      "severity": "mild",
-      "text": "actor->field_0x1 = cVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x2",
-      "severity": "mild",
-      "text": "actor = (CDemonActor *)&actor->field_0x2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `actor` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&actor->owner`). Replace `actor->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 25,
-      "match": "actor = (T *)&actor->FIELD",
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 16,
+      "match": "do {",
       "severity": "moderate",
-      "text": "actor = (CDemonActor *)&actor->field_0x2;",
-      "type": "shadow_pointer_walk"
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

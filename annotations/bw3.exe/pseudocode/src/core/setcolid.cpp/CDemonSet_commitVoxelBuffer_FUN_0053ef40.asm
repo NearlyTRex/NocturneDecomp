@@ -7,7 +7,7 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_mission.cpp_FUN_004f6d70 at 004f6dc0
+;   core_mission.cpp_CDemonMission_removeAllActors_FUN_004f6d70 at 004f6dc0
 ;   core_set.cpp_FUN_00532b80 at 00533b6e
 ;
 ; Referenced Globals:

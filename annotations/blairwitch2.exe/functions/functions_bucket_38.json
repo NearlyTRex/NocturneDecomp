@@ -11,7 +11,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"crt_stdlib.c__qsort_FUN_005b78b8",
-    "ret":"undefined1",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -319,9 +319,72 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"base",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
+        },
+        {
+          "name":"num",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SIZE_T"
+        },
+        {
+          "name":"size",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"SIZE_T"
+        },
+        {
+          "name":"compar",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"QSORT_COMPARATOR"
+        }
+      ]
     }
   },
   {
@@ -336,6 +399,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005bb938",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "locals":[
         {
@@ -436,6 +500,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005bc938",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "locals":[
         {
@@ -488,6 +553,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005be1b8",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -506,6 +572,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005c11b8",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "locals":[
         {
@@ -572,8 +639,9 @@
       }
     ],
     "importable":true,
-    "name":"unkafter_morph.cpp_FUN_005c3e38",
+    "name":"crt_unknown.c_FUN_005c3e38",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -590,8 +658,9 @@
       }
     ],
     "importable":true,
-    "name":"unkafter_2d.cpp_FUN_005c4fb8",
+    "name":"crt_unknown.c_FUN_005c4fb8",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -607,12 +676,38 @@
         "start":"005c50b8"
       }
     ],
+    "conv":"__watcallStack",
     "importable":true,
-    "name":"unkafter_2d.cpp_FUN_005c50b8",
-    "ret":"undefined1",
+    "name":"crt_unknown.c_processSignal_FUN_005c50b8",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"signal_number",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -626,8 +721,9 @@
       }
     ],
     "importable":true,
-    "name":"unkafter_2d.cpp_FUN_005c5138",
+    "name":"crt_unknown.c_FUN_005c5138",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -647,6 +743,7 @@
     "importable":true,
     "name":"crt_user32.c_FindWindowA",
     "ret":"HWND",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000032",
     "thunk":true,
     "vars":{
@@ -709,6 +806,7 @@
     "importable":true,
     "name":"crt_kernel32.c_FindClose",
     "ret":"BOOL",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000058",
     "thunk":true,
     "vars":{

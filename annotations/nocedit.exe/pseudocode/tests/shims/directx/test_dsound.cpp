@@ -9,6 +9,7 @@
 // volume and distance, summed with the others and clipped. SDL's disk driver
 // writes the output to a file, so each case reads back what was heard.
 
+#include "directx/sound_hold.h"
 #include "globals/globals_610000.h"
 #include "nocturne_test.h"
 #include "system/dsound.h"
@@ -349,6 +350,45 @@ NOCTURNE_TEST(a_looping_buffer_plays_until_stopped) {
     release(empty);
     release(buf);
     CHECK(what_was_heard(sound.heard()).frames > 10000);
+}
+
+// A held voice is silent and stays where it is, still playing, while the
+// others play as usual. Let go, it carries on from there.
+NOCTURNE_TEST(a_held_voice_carries_on_from_where_it_was) {
+    Sound sound;
+    // Ten seconds, so it is still playing when it is held.
+    const DWORD long_bytes = 441000 * 2;
+    IDirectSoundBuffer *held = sound.buffer(long_bytes, pcm(1, 16, 44100));
+    IDirectSoundBuffer *other = sound.buffer(441 * 2, pcm(1, 16, 44100));
+    fill(held, long_bytes, 16, 1, 700, 700);
+    fill(other, 441 * 2, 16, 1, 50, 50);
+    CHECK_EQ((*held->vtable->Play)(held, 0, 0, 0), kOk);
+    nocturne_audio_hold_voice(held, 1);
+    DWORD start = 1, write = 1;
+    (*held->vtable->GetCurrentPosition)(held, &start, &write);
+    (*other->vtable->Play)(other, 0, 0, 0);
+    wait_until_played(other);
+    DWORD play = 1;
+    (*held->vtable->GetCurrentPosition)(held, &play, &write);
+    CHECK_EQ(play, start);
+    DWORD status = 0;
+    (*held->vtable->GetStatus)(held, &status);
+    CHECK_EQ(status, kStatusPlaying);
+    nocturne_audio_hold_voice(held, 0);
+    for (int i = 0; i < 300 && play == start; ++i) {
+        SDL_Delay(10);
+        (*held->vtable->GetCurrentPosition)(held, &play, &write);
+    }
+    CHECK(play != start);
+    (*held->vtable->Stop)(held);
+    release(held);
+    release(other);
+    // The other voice was heard alone, with nothing of the held one under it.
+    const std::vector<int16_t> out = sound.heard();
+    int alone = 0;
+    for (size_t i = 0; i + 1 < out.size(); i += 2)
+        alone += (int)(out[i] == 50);
+    CHECK_EQ(alone, 441);
 }
 
 // The cursor is set to a whole frame within the buffer; a buffer of nothing

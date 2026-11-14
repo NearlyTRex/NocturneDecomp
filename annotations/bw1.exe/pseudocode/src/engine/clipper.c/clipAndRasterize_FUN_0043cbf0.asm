@@ -8,9 +8,6 @@
 ; int *            Stack[0x8]:4   vertex_indices
 ;
 ; XREF[58]:
-;   engine_3d.c_FUN_00404dd0 at 00404e22
-;   engine_3d.c_FUN_00404e70 at 00404ec2
-;   engine_3d.c_FUN_00405280 at 0040530c
 ;   engine_3d.c_flushPremiumRenderBuffer_FUN_00406f10 at 00407052
 ;   engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_00404980 at 00404a10
 ;   engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_00406280 at 004064ed
@@ -18,6 +15,9 @@
 ;   engine_3d.c_renderPolygonAlphaBlendedDepthWritePerspOp59_FUN_00406d70 at 00406dd9
 ;   engine_3d.c_renderPolygonAlphaBlendedDepthWritePlaneMaskedOp58_FUN_00406c30 at 00406c99
 ;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_004054e0 at 0040553d
+;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedPerspOp37_FUN_00405600 at 0040565d
+;   engine_3d.c_renderPolygonAlphaTexturedNearPlane_FUN_00404c90 at 00404ce2
+;   engine_3d.c_renderPolygonAlphaTexturedNormalized2_FUN_00404e70 at 00404ec2
 ;   ... and 48 more
 ;
 ; Referenced Globals:
@@ -27,8 +27,8 @@
 ;
 ; Called Functions:
 ;   engine_clipper.c_clipPolygonToViewFrustum_FUN_0043c190
-;   engine_prim.c_FUN_0053e120
-;   engine_prim.c_FUN_0053e650
+;   engine_prim.c_renderIndexedPolygonSoftware_FUN_0053e650
+;   engine_prim.c_renderPolygonSoftware_FUN_0053e120
 ;
 ; *****************************************************************************
 
@@ -59,16 +59,16 @@ section .text
     PUSH EAX                            ; 0043cc1d
         ;   Label: LAB_0043cc1d
     PUSH EDX                            ; 0043cc1e
-    CALL engine_prim.c_FUN_0053e650     ; 0043cc1f
-        ;   XREF to: 0053e650 (UNCONDITIONAL_CALL)  ; void engine_prim.c_FUN_0053e650(int * vertex_indices, int vertex_count)
+    CALL engine_prim.c_renderIndexedPolygonSoftware_FUN_0053e650 ; 0043cc1f
+        ;   XREF to: 0053e650 (UNCONDITIONAL_CALL)  ; void engine_prim.c_renderIndexedPolygonSoftware_FUN_0053e650(int * vertex_indices, int vertex_count)
     ADD ESP,0x8                         ; 0043cc24
     POP EBX                             ; 0043cc27
     RET                                 ; 0043cc28
     PUSH EBX                            ; 0043cc29
         ;   Label: LAB_0043cc29
     PUSH 0x7c7558                       ; 0043cc2a | DAT_007c7558
-    CALL engine_prim.c_FUN_0053e120     ; 0043cc2f
-        ;   XREF to: 0053e120 (UNCONDITIONAL_CALL)  ; void engine_prim.c_FUN_0053e120(SRenderVertex * vertices, int vertex_count)
+    CALL engine_prim.c_renderPolygonSoftware_FUN_0053e120 ; 0043cc2f
+        ;   XREF to: 0053e120 (UNCONDITIONAL_CALL)  ; void engine_prim.c_renderPolygonSoftware_FUN_0053e120(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 0043cc34
     POP EBX                             ; 0043cc37
     RET                                 ; 0043cc38

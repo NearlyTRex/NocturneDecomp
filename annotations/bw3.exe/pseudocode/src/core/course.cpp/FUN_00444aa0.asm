@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   core_course.cpp_FUN_004448f0 at 004448f6
+;   core_course.cpp_CCourse_dtor_FUN_004448f0 at 004448f6
+;   core_course.cpp_CCourse_load_FUN_00444970 at 00444980
 ;   core_course.cpp_FUN_00444910 at 00444916
-;   core_course.cpp_FUN_00444970 at 00444980
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005a30b6

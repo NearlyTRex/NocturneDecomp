@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CIniFile * engine_ini_cpp_CIniFile_dtor_FUN_004d8940(CIniFile *this_ptr,uint flags)
+; CIniFile * __cdecl engine_ini_cpp_CIniFile_dtor_FUN_004d8940(CIniFile *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CIniFile *       Stack[0x4]:4   this_ptr
@@ -9,9 +9,9 @@
 ;
 ; XREF[4]:
 ;   core_game.cpp_FUN_004bc840 at 004bca90
-;   core_inivar.cpp_FUN_004d8d60 at 004d9496
-;   core_inivar.cpp_FUN_004d94d0 at 004d9b93
-;   core_script.cpp_FUN_00522350 at 00525696
+;   core_inivar.cpp_readIniData_FUN_004d8d60 at 004d9496
+;   core_inivar.cpp_writeIniData_FUN_004d94d0 at 004d9b93
+;   core_script.cpp_CScript_step_FUN_00522350 at 00525696
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CIniFileTypeInfo
@@ -44,7 +44,7 @@ section .text
         ;   Label: LAB_004d895f
     PUSH EBX                            ; 004d8964
     CALL crt_memory.c___vec_delete_FUN_005b7fa7 ; 004d8965
-        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005b7fa7()
+        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005b7fa7(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 004d896a
     PUSH EAX                            ; 004d896d
     CALL crt_unknown.c_FUN_005b7fce     ; 004d896e

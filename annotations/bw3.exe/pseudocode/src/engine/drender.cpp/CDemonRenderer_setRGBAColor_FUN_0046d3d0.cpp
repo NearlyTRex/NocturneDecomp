@@ -20,7 +20,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0046d3d0(CDemonR
     if (DAT_005fba20 == 0x20) {
       _DAT_01c6b5c0 = uVar1;
     }
-    _DAT_01c6b5c0 = _DAT_01c6b5c0 | *(uint *)(this_ptr + 0x14);
+    _DAT_01c6b5c0 = _DAT_01c6b5c0 | this_ptr->alpha_mask;
     return;
   }
   if (DAT_005fba20 == 0x20) {

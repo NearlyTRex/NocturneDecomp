@@ -25,13 +25,13 @@
     {
       "addr": "0043f9d0",
       "from_addr": "0043f9ee",
-      "name": "core_cloth.cpp_FUN_0043f9d0",
+      "name": "core_cloth.cpp_CClothList_reset_FUN_0043f9d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0043fabe",
+      "addr": "0043fac0",
       "from_addr": "0043fb10",
-      "name": "core_cloth.cpp_FUN_0043fabe",
+      "name": "core_cloth.cpp_FUN_0043fac0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -51,13 +51,13 @@
     ],
     "convention": "unknown",
     "name": "core_cloth.cpp_FUN_0043c280",
-    "signature": "void core_cloth_cpp_FUN_0043c280(CKeyFramedModel *param_1)"
+    "signature": "void core_cloth_cpp_FUN_0043c280(CCloth *param_1)"
   },
   "function_calls": [
     {
       "addr": "0043c300",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_0043c300"
+      "name": "core_cloth.cpp_CCloth_free_FUN_0043c300"
     },
     {
       "addr": "00460530",
@@ -72,7 +72,7 @@
       {
         "call_addr": "0043f9ee",
         "call_type": "direct",
-        "caller": "core_cloth.cpp_FUN_0043f9d0",
+        "caller": "core_cloth.cpp_CClothList_reset_FUN_0043f9d0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -109,7 +109,7 @@
       {
         "call_addr": "0043fb10",
         "call_type": "direct",
-        "caller": "core_cloth.cpp_FUN_0043fabe",
+        "caller": "core_cloth.cpp_FUN_0043fac0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -146,6 +146,20 @@
     },
     "pcode_op_count": 42
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005ade00",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0043e620",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -160,7 +174,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_cloth_cpp_FUN_0043c280(CKeyFramedModel *param_1)",
+      "text": "void core_cloth_cpp_FUN_0043c280(CCloth *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -168,7 +182,7 @@
       "line": 5,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_cloth_cpp_FUN_0043c300(param_1);",
+      "text": "core_cloth_cpp_CCloth_free_FUN_0043c300(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -176,7 +190,7 @@
       "line": 6,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00460530(param_1,1);",
+      "text": "core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00460530(&param_1->model,1);",
       "type": "unnamed_param"
     },
     {

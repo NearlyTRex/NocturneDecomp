@@ -7,51 +7,51 @@
 
 // Original: core_smiley.cpp_staticInit_FUN_0056bdf0
 // Address: 0056bdf0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_smiley.cpp_factoryFuncSmiley_FUN_0056be20
 // Address: 0056be20
-void factoryFuncSmiley(void);
+CSmiley * __cdecl factoryFuncSmiley(void);
 
 // Original: core_smiley.cpp_CSmiley_getActorType_FUN_0056be40
 // Address: 0056be40
-CDemonActorType * CSmiley::getActorType(CSmiley *this_ptr);
+CDemonActorType * __cdecl CSmiley::getActorType(CSmiley *this_ptr);
 
 // Original: core_smiley.cpp_CSmiley_ctor_FUN_0056be50
 // Address: 0056be50
 CSmiley * __cdecl CSmiley::ctor(CSmiley *this_ptr);
 
-// Original: core_smiley.cpp_FUN_0056bef0
+// Original: core_smiley.cpp_CSmiley_setup_FUN_0056bef0
 // Address: 0056bef0
-void FUN_0056bef0(CEnemy *param_1);
+void __cdecl CSmiley::setup(CSmiley *this_ptr);
 
-// Original: core_smiley.cpp_FUN_0056c220
+// Original: core_smiley.cpp_CSmiley_process_FUN_0056c220
 // Address: 0056c220
-void FUN_0056c220(CEnemy *param_1,float param_2);
+void __cdecl CSmiley::process(CSmiley *this_ptr,float delta_time);
 
-// Original: core_smiley.cpp_FUN_0056ccc0
+// Original: core_smiley.cpp_CSmiley_attractActorToward_FUN_0056ccc0
 // Address: 0056ccc0
-undefined4 FUN_0056ccc0(int param_1,int param_2);
+int __cdecl CSmiley::attractActorToward(CSmiley *this_ptr,CDemonActor *actor,CVector3f *target_local_point);
 
-// Original: core_smiley.cpp_FUN_0056cd90
+// Original: core_smiley.cpp_CSmiley_archive_FUN_0056cd90
 // Address: 0056cd90
-void FUN_0056cd90(CEnemy *param_1);
+void __cdecl CSmiley::archive(CSmiley *this_ptr);
 
-// Original: core_smiley.cpp_FUN_0056cdf0
+// Original: core_smiley.cpp_CSmiley_reset_FUN_0056cdf0
 // Address: 0056cdf0
-undefined4 FUN_0056cdf0(void);
+void __cdecl CSmiley::reset(CSmiley *this_ptr);
 
-// Original: core_smiley.cpp_FUN_0056ce10
+// Original: core_smiley.cpp_CSmiley_processDismemberment_FUN_0056ce10
 // Address: 0056ce10
-void __cdecl FUN_0056ce10(CSmiley *this_ptr,SDamageInfo *damage_info);
+void __cdecl CSmiley::processDismemberment(CSmiley *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_smiley.cpp_FUN_0056d0f0
+// Original: core_smiley.cpp_CSmiley_processDamage_FUN_0056d0f0
 // Address: 0056d0f0
-void FUN_0056d0f0(CSmiley *param_1,SDamageInfo *param_2);
+void __cdecl CSmiley::processDamage(CSmiley *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_smiley.cpp_FUN_0056d200
+// Original: core_smiley.cpp_CSmiley_getTargetPoints_FUN_0056d200
 // Address: 0056d200
-undefined4 FUN_0056d200(int param_1,undefined4 *param_2);
+int __cdecl CSmiley::getTargetPoints(CSmiley *this_ptr,CVector3f *out_points_array);
 
 // Original: core_smiley.cpp_CSmiley_getCollisionType_FUN_0056d3e0
 // Address: 0056d3e0
@@ -59,4 +59,4 @@ ECollisionType __cdecl CSmiley::getCollisionType(CSmiley *this_ptr,SCollisionInf
 
 // Original: core_smiley.cpp_CSmiley_dtor_FUN_0056d400
 // Address: 0056d400
-CSmiley * CSmiley::dtor(CSmiley *this_ptr,uint flags);
+CSmiley * __cdecl CSmiley::dtor(CSmiley *this_ptr,uint flags);

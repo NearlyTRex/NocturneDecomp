@@ -28,7 +28,7 @@
     {
       "addr": "00402cf0",
       "from_addr": "00402f15",
-      "name": "engine_2d.c_FUN_00402cf0",
+      "name": "engine_2d.c_clipAndDrawLine_FUN_00402cf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -40,19 +40,19 @@
     {
       "addr": "00436970",
       "from_addr": "00436a69",
-      "name": "engine_console.cpp_FUN_00436970",
+      "name": "engine_console.cpp_CConsole_render_FUN_00436970",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004831d0",
+      "from_addr": "00483346",
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0047afb0",
       "from_addr": "0047b0b9",
       "name": "shape_edittool.cpp_FUN_0047afb0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004831d0",
-      "from_addr": "00483346",
-      "name": "shape_edittool.cpp_FUN_004831d0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -82,7 +82,7 @@
       {
         "call_addr": "00483346",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_004831d0",
+        "caller": "shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -93,7 +93,7 @@
       {
         "call_addr": "00436a69",
         "call_type": "direct",
-        "caller": "engine_console.cpp_FUN_00436970",
+        "caller": "engine_console.cpp_CConsole_render_FUN_00436970",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -104,7 +104,7 @@
       {
         "call_addr": "00436a76",
         "call_type": "direct",
-        "caller": "engine_console.cpp_FUN_00436970",
+        "caller": "engine_console.cpp_CConsole_render_FUN_00436970",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -115,7 +115,7 @@
       {
         "call_addr": "00436a83",
         "call_type": "direct",
-        "caller": "engine_console.cpp_FUN_00436970",
+        "caller": "engine_console.cpp_CConsole_render_FUN_00436970",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -126,7 +126,7 @@
       {
         "call_addr": "00436a90",
         "call_type": "direct",
-        "caller": "engine_console.cpp_FUN_00436970",
+        "caller": "engine_console.cpp_CConsole_render_FUN_00436970",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -226,6 +226,32 @@
       "STORE": 17
     },
     "pcode_op_count": 422
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004011a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004011a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004011b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004015a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 52,

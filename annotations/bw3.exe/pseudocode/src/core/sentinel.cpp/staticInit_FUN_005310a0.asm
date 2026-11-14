@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_sentinel_cpp_staticInit_FUN_005310a0(void)
+; void __cdecl core_sentinel_cpp_staticInit_FUN_005310a0(void)
 ;
 ;
 ; Called Functions:

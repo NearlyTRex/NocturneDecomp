@@ -1,0 +1,18 @@
+// Name: core_fldnotes.cpp_SNotesMap_dtor_FUN_004bc210
+// Address: 004bc210
+// Address Range: [[004bc210, 004bc241]]
+// Convention: __cdecl
+// Signature: SNotesMap * __cdecl core_fldnotes_cpp_SNotesMap_dtor_FUN_004bc210(SNotesMap *this_ptr,uint flags)
+
+#include "nocturne.h"
+
+SNotesMap * __cdecl core_fldnotes_cpp_SNotesMap_dtor_FUN_004bc210(SNotesMap *this_ptr,uint flags)
+
+{
+  CAlphaBitmap *pCVar1;
+  
+  core_fldnotes_cpp_SNotesMap_reset_FUN_004bc250(this_ptr);
+  pCVar1 = engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d0c0(&this_ptr->reveal_mask,0);
+  pCVar1 = engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d0c0((CAlphaBitmap *)&pCVar1[-2].height,0);
+  return (SNotesMap *)&pCVar1[-6].act;
+}

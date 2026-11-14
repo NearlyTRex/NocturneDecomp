@@ -2,28 +2,29 @@
 // Address: 00593d20
 // Address Range: [[00593d20, 00593d4e]]
 // Convention: __cdecl
-// Signature: undefined4 * __cdecl core_xform_cpp_multiplyQuaternionInPlace_FUN_00593d20(undefined4 *param_1,undefined4 param_2)
+// Signature: CQuaternion4f * __cdecl core_xform_cpp_multiplyQuaternionInPlace_FUN_00593d20(CQuaternion4f *quat1_inout,CQuaternion4f *quat2_ptr)
 
 #include "nocturne.h"
 
-uint * __cdecl core_xform_cpp_multiplyQuaternionInPlace_FUN_00593d20(uint *param_1,uint param_2)
+CQuaternion4f * __cdecl core_xform_cpp_multiplyQuaternionInPlace_FUN_00593d20(CQuaternion4f *quat1_inout,CQuaternion4f *quat2_ptr)
 
 {
   uint *puVar1;
-  byte bVar2;
-  uint auStackY_17f8 [1525];
-  uint local_1c;
+  uint *puVar2;
+  byte bVar3;
+  float afStackY_17f8 [1525];
+  float local_1c;
   
-  bVar2 = 0;
-  core_xform_cpp_multiplyQuaternion_FUN_00593c60(param_1,param_2);
-  puVar1 = param_1 + (uint)bVar2 * -2 + 1;
-  *param_1 = local_1c;
-  *puVar1 = *(uint *)(&stack0xffffffe8 + (uint)bVar2 * -8);
-  puVar1[(uint)bVar2 * -2 + 1] =
-       *(uint *)(&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-  (puVar1 + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1] =
+  bVar3 = 0;
+  core_xform_cpp_multiplyQuaternion_FUN_00593c60(quat1_inout,quat2_ptr);
+  puVar1 = (uint *)((int)quat1_inout + (uint)bVar3 * -8 + 4);
+  quat1_inout->w = local_1c;
+  puVar2 = puVar1 + (uint)bVar3 * -2 + 1;
+  *puVar1 = *(uint *)(&stack0xffffffe8 + (uint)bVar3 * -8);
+  *puVar2 = *(uint *)(&stack0xffffffec + (uint)bVar3 * -8 + (uint)bVar3 * -8);
+  puVar2[(uint)bVar3 * -2 + 1] =
        *(uint *)
-        ((int)(&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4)
+        ((int)(&stack0xffffffec + (uint)bVar3 * -8 + (uint)bVar3 * -8) + ((uint)bVar3 * -2 + 1) * 4)
   ;
-  return param_1;
+  return quat1_inout;
 }

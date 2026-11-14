@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSfxSlot * sound_sndmain_cpp_CSfxSlot_dtor_FUN_0055a620(CSfxSlot *this_ptr,uint flags)
+; CSfxSlot * __cdecl sound_sndmain_cpp_CSfxSlot_dtor_FUN_0055a620(CSfxSlot *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CSfxSlot *       Stack[0x4]:4   this_ptr

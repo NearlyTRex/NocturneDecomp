@@ -45,6 +45,11 @@ struct SMotion {
     bool exit_forward_set_new_state = false;
     int exit_backward_to_motion = 0;
     float exit_backward_to_frame = 0.0F;
+    // The skeleton keeps one pose every frame_resolution frames, stored_frame_count of them
+    // from frame_start. Blair Witch's version 3 lists set them; before that they are 1 and
+    // frame_count.
+    int frame_resolution = 1;
+    int stored_frame_count = 0;
     std::vector<SMotionTransition> transitions;
     std::vector<SMotionSignal> signals;
     std::vector<int> markers;
@@ -55,7 +60,8 @@ class CMotionList {
 public:
     CMotionList();
 
-    // A version past 2 is fatal; markers come from version 2. The original's fixed lists of 80
+    // A version past 3 is fatal; markers come from version 2 and frame resolutions from version 3,
+    // which Blair Witch writes. The original's fixed lists of 80
     // states, 120 motions and 45 transitions, 15 signals and 10 markers a motion overran.
     void load(common::CTextScanner &scanner);
     // The first motion of the name in any case; -1 for none, or fatal when asked.

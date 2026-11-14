@@ -2,16 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 115,
+    "complexity_score": 65,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 35,
-    "suspect_count": 7,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_field"
+      "pointer_cast",
+      "undefined_data"
     ],
     "total_lines": 92
   },
@@ -19,7 +19,7 @@
     {
       "addr": "004d27b0",
       "from_addr": "004d4917",
-      "name": "core_game.cpp_FUN_004d27b0",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -56,7 +56,7 @@
       {
         "call_addr": "004d4917",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d27b0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -100,6 +100,32 @@
     },
     "pcode_op_count": 239
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00443240",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00450a40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00453c90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00447b30",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -125,52 +151,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x148",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x148) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x144",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x144) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 16,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "*(int *)(*(int *)&this_ptr->field_0x158 +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x144",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x144 * iVar4 + iVar1) * 4) = clear_color;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x144",
-      "severity": "mild",
-      "text": "} while (iVar1 < *(int *)&this_ptr->field_0x144);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x148",
-      "severity": "mild",
-      "text": "} while (iVar4 < *(int *)&this_ptr->field_0x148);",
-      "type": "unnamed_field"
+      "match": "(int *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "*(int *)((int)this_ptr->framebuffer_aligned +",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",

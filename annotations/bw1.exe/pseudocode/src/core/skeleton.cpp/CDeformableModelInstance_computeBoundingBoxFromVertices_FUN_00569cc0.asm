@@ -37,8 +37,8 @@
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0
+;   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_00569890
 ;   core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_005675f0
-;   core_skeleton.cpp_FUN_00569890
 ;
 ; *****************************************************************************
 
@@ -72,8 +72,8 @@ section .text
     ADD ESP,0xc                         ; 00569d03
     PUSH 0x0                            ; 00569d06
     PUSH EBP                            ; 00569d08
-    CALL core_skeleton.cpp_FUN_00569890 ; 00569d09
-        ;   XREF to: 00569890 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_00569890(CDeformableModelInstance * this_ptr, int lod_index)
+    CALL core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_00569890 ; 00569d09
+        ;   XREF to: 00569890 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_00569890(CDeformableModelInstance * this_ptr, int lod_index)
     ADD ESP,0x8                         ; 00569d0e
     TEST ESI,ESI                        ; 00569d11
     JLE 0x00569d91                      ; 00569d13

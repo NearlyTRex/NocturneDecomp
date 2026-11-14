@@ -9,5 +9,5 @@
 uint __cdecl support_trisock_cpp_getIPAddress_FUN_00578e20(SNetworkAddr *net_addr)
 
 {
-  return *(uint *)net_addr;
+  return net_addr->ip_address;
 }

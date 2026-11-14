@@ -270,6 +270,9 @@ class Memory:
     def getByte(self, address):
         return struct.unpack("<b", self.read(address, 1))[0]
 
+    def getShort(self, address):
+        return struct.unpack("<h", self.read(address, 2))[0]
+
     def getInt(self, address):
         return struct.unpack("<i", self.read(address, 4))[0]
 
@@ -280,11 +283,12 @@ class Memory:
         return AddressRanges([AddressRange(block.getStart(), block.getEnd()) for block in self.blocks])
 
 
-# Whether control leaves an instruction through a computed target, and by a jump
+# Whether control leaves an instruction through a computed target, by a jump, or by a call
 class FlowType:
-    def __init__(self, computed = False, jump = False):
+    def __init__(self, computed = False, jump = False, call = False):
         self.computed = computed
         self.jump = jump
+        self.call = call
 
     def isComputed(self):
         return self.computed
@@ -292,14 +296,40 @@ class FlowType:
     def isJump(self):
         return self.jump
 
+    def isCall(self):
+        return self.call
 
+
+# flows: the addresses control can go to from it, as getFlows returns them;
+# fallthrough: the address getFallThrough returns, None for none
 class Instruction:
-    def __init__(self, mnemonic, *operands, flow = None):
+    def __init__(self, mnemonic, *operands, flow = None, flows = (), length = 1, fallthrough = None):
         self.mnemonic = mnemonic
         self.operands = operands
         self.flow = flow or FlowType()
+        self.flows = list(flows)
+        self.length = length
+        self.fallthrough = fallthrough
         # Set by Listing.add_instruction
         self.address = None
+
+    def getFlows(self):
+        return list(self.flows)
+
+    def getFallThrough(self):
+        return self.fallthrough
+
+    def getLength(self):
+        return self.length
+
+    def getMinAddress(self):
+        return self.address
+
+    def getMaxAddress(self):
+        return self.address.add(self.length - 1)
+
+    def contains(self, address):
+        return 0 <= address.getOffset() - self.address.getOffset() < self.length
 
     def __str__(self):
         return " ".join([self.mnemonic, ",".join(self.operands)]).strip()
@@ -376,6 +406,9 @@ class Data:
     def getMinAddress(self):
         return self.address
 
+    def getMaxAddress(self):
+        return self.address.add(self.length - 1)
+
     def getDataType(self):
         return self.data_type
 
@@ -424,6 +457,10 @@ class Listing:
         data = self.data.get(address)
         return data if data is not None and data.isDefined() else None
 
+    def getDefinedDataContaining(self, address):
+        data = self.getDataContaining(address)
+        return data if data is not None and data.isDefined() else None
+
     # Ghidra's overloads: (forward) over the whole program, or (address set, forward)
     def getDefinedData(self, *_set_and_forward):
         return [data for _, data in sorted(self.data.items(), key = lambda item: item[0].getOffset())
@@ -431,6 +468,12 @@ class Listing:
 
     def getCodeUnitAt(self, address):
         return self.instructions.get(address) or self.data.get(address)
+
+    def getInstructionContaining(self, address):
+        return next((i for i in self.instructions.values() if i.contains(address)), None)
+
+    def getCodeUnitContaining(self, address):
+        return self.getInstructionContaining(address) or self.getDataContaining(address)
 
     # The data in the set's ranges, in address order
     def getCodeUnits(self, address_set, forward):
@@ -484,6 +527,8 @@ class Function:
         self.name = name
         self.entry = entry
         self.source = "DEFAULT"
+        # Where the signature came from: committed (USER_DEFINED), or DEFAULT/ANALYSIS/IMPORTED
+        self.signature_source = "USER_DEFINED"
         self.thunk_target = None
         self.external = False
         self.body = ghidra_fake.AddressSet(entry, entry.add(size - 1))
@@ -507,6 +552,12 @@ class Function:
         self.return_variable = None
         # (update type, [parameters]) of each replaceParameters
         self.replaced = []
+
+    def getSignatureSource(self):
+        return self.signature_source
+
+    def setSignatureSource(self, source):
+        self.signature_source = str(source)
 
     def isInline(self):
         return self.inline
@@ -839,6 +890,16 @@ class DataTypeManager:
 
     def getAllDataTypes(self):
         return iter(self.types)
+
+    def getDataTypeCount(self, _include_pointers_and_arrays):
+        return len(self.types)
+
+    # True when the type was here to remove, as Ghidra's answers
+    def remove(self, data_type, _monitor):
+        if data_type not in self.types:
+            return False
+        self.types.remove(data_type)
+        return True
 
     # Ghidra fills the list it is handed, whatever category the types are in
     def findDataTypes(self, name, found):

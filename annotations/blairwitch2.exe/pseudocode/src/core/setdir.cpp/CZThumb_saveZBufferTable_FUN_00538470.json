@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 194,
-    "complexity_score": 380,
+    "complexity_score": 199,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 15,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 75,
-    "suspect_count": 29,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 74,
+    "suspect_count": 11,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
+      "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 269
+    "total_lines": 268
   },
   "cross_references": [
     {
@@ -45,7 +45,7 @@
     {
       "addr": "0052d0e0",
       "is_variadic": false,
-      "name": "core_set.cpp_FUN_0052d0e0"
+      "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0"
     },
     {
       "addr": "005386a0",
@@ -68,14 +68,14 @@
       "name": "core_setdir.cpp_CZThumb_setupZBufferScanlines_FUN_00538970"
     },
     {
+      "addr": "005b8580",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005b8580"
+    },
+    {
       "addr": "005b87c0",
       "is_variadic": false,
       "name": "crt_stdio.c_fread_FUN_005b87c0"
-    },
-    {
-      "addr": "005b8580",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b8580"
     },
     {
       "addr": "0046b280",
@@ -255,6 +255,14 @@
     },
     "pcode_op_count": 627
   },
+  "siblings": {
+    "nocedit.exe": {
+      "addr": "00574910",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9905
+    }
+  },
   "stack_frame": {
     "frame_size": 32,
     "local_size": 4,
@@ -323,152 +331,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "if ((CVector3f *)&this_ptr->field_0x8 != camera_pos) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x8 = *(uint *)camera_pos;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xc = *(uint *)&camera_pos->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xc = *(uint *)&camera_pos->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x10 = *(uint *)&camera_pos->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x10 = *(uint *)&camera_pos->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "if ((CVector3f *)&this_ptr->field_0x14 != look_at_pos) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x14 = *(uint *)look_at_pos;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x18 = *(uint *)&look_at_pos->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x18 = *(uint *)&look_at_pos->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1c = *(uint *)&look_at_pos->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1c = *(uint *)&look_at_pos->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x4 = height;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x20 = projection_scale;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "pvVar2 = FUN_005b8580(*(int *)this_ptr * *(int *)&this_ptr->field_0x4 * 4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(void **)&this_ptr->field_0x24 = pvVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "_fread(*(uint *)&this_ptr->field_0x24,*(int *)this_ptr * *(int *)&this_ptr->field_0x4,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "_fread(*(uint *)&this_ptr->field_0x24,*(int *)this_ptr * *(int *)&this_ptr->field_0x4,",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 38,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "value = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);",
@@ -476,23 +340,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 39,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046b940(DAT_0060b280,0);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)&this_ptr->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 51,
+      "line": 50,
       "match": "DAT_020b0258",
       "severity": "mild",
       "text": "*(uint *)(&DAT_020b0258 + iVar4) = *(uint *)(&DAT_01c2b64c + iVar4);",
@@ -500,7 +356,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 51,
+      "line": 50,
       "match": "DAT_01c2b64c",
       "severity": "mild",
       "text": "*(uint *)(&DAT_020b0258 + iVar4) = *(uint *)(&DAT_01c2b64c + iVar4);",
@@ -508,23 +364,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 57,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,(CVector3i *)0x2093940);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 62,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)&this_ptr->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 72,
+      "line": 71,
       "match": "DAT_01c2b64c",
       "severity": "mild",
       "text": "*(uint *)(&DAT_01c2b64c + iVar4) = *(uint *)(&DAT_020b0258 + iVar4);",
@@ -532,7 +380,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 72,
+      "line": 71,
       "match": "DAT_020b0258",
       "severity": "mild",
       "text": "*(uint *)(&DAT_01c2b64c + iVar4) = *(uint *)(&DAT_020b0258 + iVar4);",
@@ -540,11 +388,27 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 77,
+      "line": 76,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046b940(DAT_0060b280,value);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 15,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->camera_position).x = camera_pos->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 20,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->look_at_position).x = look_at_pos->x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

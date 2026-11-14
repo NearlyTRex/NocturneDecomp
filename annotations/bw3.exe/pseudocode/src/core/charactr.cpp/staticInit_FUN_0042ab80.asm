@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_staticInit_FUN_0042ab80(void)
+; void __cdecl core_charactr_cpp_staticInit_FUN_0042ab80(void)
 ;
 ;
 ; Called Functions:

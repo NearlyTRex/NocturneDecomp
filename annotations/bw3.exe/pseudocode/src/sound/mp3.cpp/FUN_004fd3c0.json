@@ -28,13 +28,18 @@
     ],
     "convention": "unknown",
     "name": "sound_mp3.cpp_FUN_004fd3c0",
-    "signature": "void sound_mp3_cpp_FUN_004fd3c0(int *param_1,int param_2,ulong param_3,int param_4)"
+    "signature": "void sound_mp3_cpp_FUN_004fd3c0(int *param_1,_FILE *param_2,ulong param_3,int param_4)"
   },
   "function_calls": [
     {
       "addr": "004e4330",
       "is_variadic": false,
       "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "005a3650",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005a3650"
     },
     {
       "addr": "005a3a90",
@@ -50,11 +55,6 @@
       "addr": "005a5d00",
       "is_variadic": false,
       "name": "crt_stdio.c_ftell_FUN_005a5d00"
-    },
-    {
-      "addr": "005a3650",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a3650"
     },
     {
       "addr": "005a3770",
@@ -108,6 +108,20 @@
     },
     "pcode_op_count": 230
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005048e0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00525ab0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -130,7 +144,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void sound_mp3_cpp_FUN_004fd3c0(int *param_1,int param_2,ulong param_3,int param_4)",
+      "text": "void sound_mp3_cpp_FUN_004fd3c0(int *param_1,_FILE *param_2,ulong param_3,int param_4)",
       "type": "unnamed_param"
     },
     {
@@ -138,7 +152,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void sound_mp3_cpp_FUN_004fd3c0(int *param_1,int param_2,ulong param_3,int param_4)",
+      "text": "void sound_mp3_cpp_FUN_004fd3c0(int *param_1,_FILE *param_2,ulong param_3,int param_4)",
       "type": "unnamed_param"
     },
     {
@@ -146,7 +160,7 @@
       "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "void sound_mp3_cpp_FUN_004fd3c0(int *param_1,int param_2,ulong param_3,int param_4)",
+      "text": "void sound_mp3_cpp_FUN_004fd3c0(int *param_1,_FILE *param_2,ulong param_3,int param_4)",
       "type": "unnamed_param"
     },
     {
@@ -154,7 +168,7 @@
       "line": 4,
       "match": "param_4",
       "severity": "mild",
-      "text": "void sound_mp3_cpp_FUN_004fd3c0(int *param_1,int param_2,ulong param_3,int param_4)",
+      "text": "void sound_mp3_cpp_FUN_004fd3c0(int *param_1,_FILE *param_2,ulong param_3,int param_4)",
       "type": "unnamed_param"
     },
     {
@@ -210,7 +224,7 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "*param_1 = param_2;",
+      "text": "*param_1 = (int)param_2;",
       "type": "unnamed_param"
     },
     {
@@ -218,7 +232,7 @@
       "line": 18,
       "match": "param_2",
       "severity": "mild",
-      "text": "*param_1 = param_2;",
+      "text": "*param_1 = (int)param_2;",
       "type": "unnamed_param"
     },
     {
@@ -226,7 +240,7 @@
       "line": 19,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar1 = _ftell(param_2);",
+      "text": "lVar1 = _ftell(param_2);",
       "type": "unnamed_param"
     },
     {
@@ -234,7 +248,7 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[8] = iVar1;",
+      "text": "param_1[8] = lVar1;",
       "type": "unnamed_param"
     },
     {
@@ -274,7 +288,7 @@
       "line": 23,
       "match": "param_3",
       "severity": "mild",
-      "text": "pvVar2 = FUN_005a3650(param_3);",
+      "text": "pvVar2 = malloc(param_3);",
       "type": "unnamed_param"
     },
     {
@@ -298,7 +312,7 @@
       "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fseek(*param_1,param_1[8],0);",
+      "text": "_fseek((_FILE *)*param_1,param_1[8],0);",
       "type": "unnamed_param"
     },
     {
@@ -306,7 +320,7 @@
       "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fseek(*param_1,param_1[8],0);",
+      "text": "_fseek((_FILE *)*param_1,param_1[8],0);",
       "type": "unnamed_param"
     },
     {

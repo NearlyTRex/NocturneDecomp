@@ -1,0 +1,499 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 359,
+    "complexity_score": 230,
+    "cross_reference_count": 0,
+    "function_call_count": 17,
+    "global_count": 44,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 145,
+    "suspect_count": 6,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "unrolled_memcpy",
+      "unrolled_strcpy",
+      "warning_overlapping_globals",
+      "warning_type_propagation"
+    ],
+    "total_lines": 504
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0059e130",
+    "address_range": [
+      [
+        "0059e130",
+        "0059e588"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_styldemo.cpp_CStylerDemon_setup_FUN_0059e130",
+    "signature": "void __cdecl core_styldemo_cpp_CStylerDemon_setup_FUN_0059e130(CStylerDemon *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c4f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_createActorByName_FUN_0040c4f0"
+    },
+    {
+      "addr": "0042f280",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_0042f280"
+    },
+    {
+      "addr": "00489110",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_setup_FUN_00489110"
+    },
+    {
+      "addr": "004fac10",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorph_getReady_FUN_004fac10"
+    },
+    {
+      "addr": "004fa9c0",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorph_setupModelFromDeformable_FUN_004fa9c0"
+    },
+    {
+      "addr": "004fc070",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070"
+    },
+    {
+      "addr": "004fc310",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_004fc310"
+    },
+    {
+      "addr": "004fc420",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_jumpToMotion_FUN_004fc420"
+    },
+    {
+      "addr": "004fb9c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionList_findMotionIndex_FUN_004fb9c0"
+    },
+    {
+      "addr": "0054dd10",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0054dd10"
+    },
+    {
+      "addr": "0054eac0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0"
+    },
+    {
+      "addr": "0054eae0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0"
+    },
+    {
+      "addr": "0054e6b0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0054e6b0"
+    },
+    {
+      "addr": "0054c090",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0054c090"
+    },
+    {
+      "addr": "0054c110",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0054c110"
+    },
+    {
+      "addr": "00548090",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00548090"
+    },
+    {
+      "addr": "00556230",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_preloadSfx_FUN_00556230"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d9f80",
+      "name": "s_Bip01_R_Hand_005d9f80",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9f8d",
+      "name": "s_Bip01_L_Hand_005d9f8d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9f9a",
+      "name": "s_Bip01_Head_005d9f9a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9fa5",
+      "name": "s_Bip01_Spine_005d9fa5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9fb1",
+      "name": "s_Bip01_Spine2_005d9fb1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9fbe",
+      "name": "s_CStyler_005d9fbe",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9fc6",
+      "name": "s_bwp_stylersub_dfm_005d9fc6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9fd8",
+      "name": "s_Elizabeth_Demon_005d9fd8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9fd9",
+      "name": "s_Elizabeth_Demon_005d9fd8+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d9fda",
+      "name": "s_Elizabeth_Demon_005d9fd8+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d9fdb",
+      "name": "s_Elizabeth_Demon_005d9fd8+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d9fe8",
+      "name": "s_getUpDustOff_005d9fe8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9ff5",
+      "name": "s_CZombie_005d9ff5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9ffd",
+      "name": "s_stydem_stand_wav_005d9ffd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da00e",
+      "name": "s_stydem_walk_wav_005da00e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da01e",
+      "name": "s_stydem_run_wav_005da01e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da02d",
+      "name": "s_stydem_attack_wav_005da02d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da03f",
+      "name": "s_stydem_damage_wav_005da03f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da051",
+      "name": "s_stydem_die_wav_005da051",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da060",
+      "name": "s_stydem_stand_fly_wav_005da060",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da075",
+      "name": "s_stydem_walk_fly_wav_005da075",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da089",
+      "name": "s_stydem_run_fly_wav_005da089",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da09c",
+      "name": "s_stydem_attack_fly_wav_005da09c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da0b2",
+      "name": "s_stydem_warning_fly_spell_005da0b2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da0cf",
+      "name": "s_stydem_fly_spell_wav_005da0cf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da0e4",
+      "name": "s_stydem_damage_fly_wav_005da0e4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da0fa",
+      "name": "s_stydem_die_fly_wav_005da0fa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da10d",
+      "name": "s_stydem_takeoff_wav_005da10d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da120",
+      "name": "s_stydem_land_wav_005da120",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da130",
+      "name": "s_stydem_warning_spell_1_w_005da130",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da14b",
+      "name": "s_stydem_spell_1_wav_005da14b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da15e",
+      "name": "s_stydem_warning_spell_2_w_005da15e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da179",
+      "name": "s_stydem_spell_2_wav_005da179",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da18c",
+      "name": "s_stydem_warning_spell_3_w_005da18c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da1a7",
+      "name": "s_stydem_spell_3_wav_005da1a7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da1ba",
+      "name": "s_stydem_raise_zombie_wav_005da1ba",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da1d2",
+      "name": "s_stydem_transforming_wav_005da1d2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da1ea",
+      "name": "s_stydem_taunt1_wav_005da1ea",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da1fc",
+      "name": "s_stydem_taunt2_wav_005da1fc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02d24cf4",
+      "name": "DAT_02d24cf4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d24cf8",
+      "name": "DAT_02d24cf8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d24cfc",
+      "name": "DAT_02d24cfc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d24d00",
+      "name": "DAT_02d24d00",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d24d04",
+      "name": "DAT_02d24d04",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.4825174825174825,
+    "instruction_count": 286,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BRANCH": 1,
+      "CALL": 56,
+      "CALLIND": 1,
+      "CBRANCH": 7,
+      "COPY": 155,
+      "INT_ADD": 122,
+      "INT_AND": 150,
+      "INT_CARRY": 68,
+      "INT_EQUAL": 150,
+      "INT_LESS": 7,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 68,
+      "INT_SLESS": 75,
+      "INT_SUB": 144,
+      "LOAD": 33,
+      "POPCOUNT": 75,
+      "RETURN": 1,
+      "STORE": 158
+    },
+    "pcode_op_count": 1282
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStylerDemon *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 59,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 69,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pCVar5->location).position.x = (this_ptr->base).base.base.location.position.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 76,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pCVar5->orient).vec.x = (pUVar1->vec).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via pointer arithmetic on its own `actor_name` field (which decays to a pointer), `+ CONST`; `offsetof(actor_name) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar5`. Replace those `pCVar5->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 66,
+      "match": "pCVar5 = (T *)(pCVar5->actor_name + CONST)",
+      "severity": "moderate",
+      "text": "pCVar5 = (CDemonActor *)(pCVar5->actor_name + 2);",
+      "type": "shadow_pointer_walk"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CStylerDemon",
+        "offset": 0,
+        "vtable_addr": "005e84f4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

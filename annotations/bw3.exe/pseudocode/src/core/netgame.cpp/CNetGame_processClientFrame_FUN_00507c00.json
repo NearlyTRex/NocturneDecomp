@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 218,
-    "complexity_score": 265,
+    "complexity_score": 140,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 95,
-    "suspect_count": 15,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_stride_bytecount",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 313
@@ -204,6 +203,32 @@
     },
     "pcode_op_count": 1125
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0050f120",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00530340",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9253
+    },
+    "nocedit.exe": {
+      "addr": "005435a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9422
+    },
+    "nocturne.exe": {
+      "addr": "004ed720",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9422
+    }
+  },
   "stack_frame": {
     "frame_size": 40,
     "local_size": 36,
@@ -275,108 +300,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "if (((*(int *)this_ptr == 2) && (*(int *)&this_ptr->field_0x4 == 3)) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x120",
-      "severity": "mild",
-      "text": "(-1 < *(int *)&this_ptr->field_0x120)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x124",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x124 < 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x120",
-      "severity": "mild",
-      "text": "core_netgame_cpp_CNetGame_updatePing_FUN_00506320(this_ptr,*(int *)&this_ptr->field_0x120,10.0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "uVar5 = *(uint *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x124 * 0x80);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x124",
-      "severity": "mild",
-      "text": "uVar5 = *(uint *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x124 * 0x80);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "iVar4 = *(int *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x124 * 0x80);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x124",
-      "severity": "mild",
-      "text": "iVar4 = *(int *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x124 * 0x80);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 41,
       "match": "DAT_01dc5cf8",
       "severity": "mild",
       "text": "local_18 = &DAT_01dc5cf8;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 56,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x178 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 62,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "while (*(int *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x124 * 0x80) !=",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 62,
-      "match": "field_0x124",
-      "severity": "mild",
-      "text": "while (*(int *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x124 * 0x80) !=",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 73,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x178 = 1;",
-      "type": "unnamed_field"
     },
     {
       "description": "mem* byte count hardcodes an element stride ((_DAT_01dc5c80 - uVar5) * 0x74) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",

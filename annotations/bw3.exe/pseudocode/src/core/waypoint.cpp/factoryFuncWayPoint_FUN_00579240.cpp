@@ -1,20 +1,20 @@
 // Name: core_waypoint.cpp_factoryFuncWayPoint_FUN_00579240
 // Address: 00579240
 // Address Range: [[00579240, 0057925b]]
-// Convention: unknown
-// Signature: void core_waypoint_cpp_factoryFuncWayPoint_FUN_00579240(void)
+// Convention: __cdecl
+// Signature: CWayPoint * __cdecl core_waypoint_cpp_factoryFuncWayPoint_FUN_00579240(void)
 
 #include "nocturne.h"
 
-void core_waypoint_cpp_factoryFuncWayPoint_FUN_00579240(void)
+CWayPoint * __cdecl core_waypoint_cpp_factoryFuncWayPoint_FUN_00579240(void)
 
 {
-  CWayPoint *this_ptr;
+  CWayPoint *pCVar1;
   
-  this_ptr = (CWayPoint *)FUN_005a3cb2(0x55c);
-  if (this_ptr == (CWayPoint *)0x0) {
-    return;
+  pCVar1 = (CWayPoint *)operator_new(0x55c);
+  if (pCVar1 == (CWayPoint *)0x0) {
+    return (CWayPoint *)0x0;
   }
-  core_waypoint_cpp_CWayPoint_ctor_FUN_00579270(this_ptr);
-  return;
+  pCVar1 = core_waypoint_cpp_CWayPoint_ctor_FUN_00579270(pCVar1);
+  return pCVar1;
 }

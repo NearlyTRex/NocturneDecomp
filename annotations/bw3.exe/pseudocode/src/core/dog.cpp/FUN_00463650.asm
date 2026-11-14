@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_dog.cpp_CDogForest_ctor_FUN_00463680
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_memory.c_operator_new_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xd064                         ; 00463650
         ;   Label: core_dog.cpp_FUN_00463650
-    CALL crt_unknown.c_FUN_005a3cb2     ; 00463655
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 00463655
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
     ADD ESP,0x4                         ; 0046365a
     TEST EAX,EAX                        ; 0046365d
     JNZ 0x00463662                      ; 0046365f

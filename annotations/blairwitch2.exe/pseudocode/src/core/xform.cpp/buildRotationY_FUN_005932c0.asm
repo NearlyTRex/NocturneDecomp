@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_buildRotationY_FUN_005932c0(float param_1)
+; CMatrix3x4f * __stack_esi core_xform_cpp_buildRotationY_FUN_005932c0(float angle_radians,CMatrix3x4f *matrix_out)
 ;
+; Parameters:
+; float            Stack[0x4]:4   angle_radians
 ; Local Variables:
 ; undefined4       Stack[-0x44]:4  local_44
 ; undefined4       Stack[-0x40]:4  local_40
@@ -20,10 +22,10 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[5]:
-;   core_charactr.cpp_FUN_00426a10 at 00426ca5
+;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_00426a10 at 00426ca5
 ;   core_doc.cpp_FUN_004568e0 at 00456a33
-;   core_gabriela.cpp_FUN_004b0210 at 004b030b
-;   core_gabriela.cpp_FUN_004b22c0 at 004b2619
+;   core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004b22c0 at 004b2619
+;   core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004b0210 at 004b030b
 ;   core_stranger.cpp_FUN_00568500 at 0056861c
 ;
 ; *****************************************************************************

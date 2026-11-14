@@ -2,27 +2,26 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 597,
+    "complexity_score": 381,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 62,
-    "suspect_count": 51,
+    "pseudocode_lines": 61,
+    "suspect_count": 30,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 193
+    "total_lines": 192
   },
   "cross_references": [
     {
       "addr": "005027b0",
       "from_addr": "0050280f",
-      "name": "sound_mp3.cpp_FUN_005027b0",
+      "name": "sound_mp3.cpp_CMP3Decoder_openFile_FUN_005027b0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -36,7 +35,7 @@
     ],
     "convention": "unknown",
     "name": "sound_mp3.cpp_FUN_00502890",
-    "signature": "void sound_mp3_cpp_FUN_00502890(CMP3Decoder *param_1,undefined4 param_2,undefined4 param_3)"
+    "signature": "void sound_mp3_cpp_FUN_00502890(CMP3Decoder *param_1,_FILE *param_2,int param_3)"
   },
   "function_calls": [
     {
@@ -48,6 +47,11 @@
       "addr": "005a3120",
       "is_variadic": false,
       "name": "crt_math.c_round_FUN_005a3120"
+    },
+    {
+      "addr": "005a3650",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005a3650"
     },
     {
       "addr": "005a3a90",
@@ -65,14 +69,14 @@
       "name": "crt_stdio.c_ftell_FUN_005a5d00"
     },
     {
-      "addr": "005a3650",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a3650"
-    },
-    {
       "addr": "005a3770",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005a3770"
+    },
+    {
+      "addr": "004fd150",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_calculateMpegFrame_FUN_004fd150"
     },
     {
       "addr": "004fdc50",
@@ -93,11 +97,6 @@
       "addr": "00502bc0",
       "is_variadic": false,
       "name": "sound_mp3.cpp_CMP3Decoder_seek_FUN_00502bc0"
-    },
-    {
-      "addr": "004fd150",
-      "is_variadic": false,
-      "name": "sound_mp3.cpp_FUN_004fd150"
     }
   ],
   "globals": [
@@ -144,7 +143,7 @@
       {
         "call_addr": "0050280f",
         "call_type": "direct",
-        "caller": "sound_mp3.cpp_FUN_005027b0",
+        "caller": "sound_mp3.cpp_CMP3Decoder_openFile_FUN_005027b0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -192,6 +191,20 @@
       "TRUNC": 1
     },
     "pcode_op_count": 446
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00509db0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0052af80",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 108,
@@ -265,7 +278,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void sound_mp3_cpp_FUN_00502890(CMP3Decoder *param_1,uint param_2,uint param_3)",
+      "text": "void sound_mp3_cpp_FUN_00502890(CMP3Decoder *param_1,_FILE *param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -273,7 +286,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void sound_mp3_cpp_FUN_00502890(CMP3Decoder *param_1,uint param_2,uint param_3)",
+      "text": "void sound_mp3_cpp_FUN_00502890(CMP3Decoder *param_1,_FILE *param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -281,12 +294,12 @@
       "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "void sound_mp3_cpp_FUN_00502890(CMP3Decoder *param_1,uint param_2,uint param_3)",
+      "text": "void sound_mp3_cpp_FUN_00502890(CMP3Decoder *param_1,_FILE *param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
       "text": "sound_mp3_cpp_CMP3Decoder_free_FUN_00502a10(param_1);",
@@ -294,23 +307,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar1 = &param_1->field_0x5320;",
+      "text": "pCVar1 = &param_1->file_bitstream;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x5320",
-      "severity": "mild",
-      "text": "puVar1 = &param_1->field_0x5320;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 21,
       "match": "param_2",
       "severity": "mild",
       "text": "local_14 = param_2;",
@@ -318,7 +323,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_3",
       "severity": "mild",
       "text": "local_1c = param_3;",
@@ -326,119 +331,55 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x5324 != 0) {",
+      "text": "pcVar3 = (param_1->file_bitstream).buffer;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x5324",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x5324 != 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005a3770(*(int *)&param_1->field_0x5324);",
+      "text": "(param_1->file_bitstream).buffer = (char *)0x0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x5324",
-      "severity": "mild",
-      "text": "FUN_005a3770(*(int *)&param_1->field_0x5324);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x5324 = 0;",
+      "text": "(param_1->file_bitstream).stream_start_position = lVar2;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x5324",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x5324 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x5340 = uVar2;",
+      "text": "(param_1->file_bitstream).stream_length = local_1c;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x5340",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x5340 = uVar2;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x5344 = local_1c;",
+      "text": "(param_1->file_bitstream).buffer_size = local_18;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x5344",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x5344 = local_1c;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(ulong *)&param_1->field_0x5328 = local_18;",
+      "text": "(param_1->file_bitstream).buffer = pcVar3;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x5328",
-      "severity": "mild",
-      "text": "*(ulong *)&param_1->field_0x5328 = local_18;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(void **)&param_1->field_0x5324 = pvVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x5324",
-      "severity": "mild",
-      "text": "*(void **)&param_1->field_0x5324 = pvVar3;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 42,
       "match": "DAT_01d94b98",
       "severity": "mild",
       "text": "core_main_c_FUN_004e4330(\"Out of memory.  File: %s\",&DAT_01d94b98);",
@@ -446,106 +387,66 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fseek(*(uint *)puVar1,*(uint *)&param_1->field_0x5340,0);",
+      "text": "_fseek(pCVar1->file_handle,(param_1->file_bitstream).stream_start_position,0);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Unnamed function parameter",
       "line": 45,
-      "match": "field_0x5340",
+      "match": "param_1",
       "severity": "mild",
-      "text": "_fseek(*(uint *)puVar1,*(uint *)&param_1->field_0x5340,0);",
-      "type": "unnamed_field"
+      "text": "(param_1->file_bitstream).current_byte_index = 0;",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x5330 = 0;",
+      "text": "(param_1->file_bitstream).bits_available = 0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x5330",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x5330 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 47,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x5334 = 0;",
+      "text": "(param_1->file_bitstream).total_bits_read = 0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x5334",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x5334 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 48,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x532c = 0;",
+      "text": "(param_1->file_bitstream).end_of_stream_flag = 0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0x532c",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x532c = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 49,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x5338 = 0;",
+      "text": "(param_1->file_bitstream).error_flag = 0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 49,
-      "match": "field_0x5338",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x5338 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 50,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x533c = 0;",
+      "text": "(param_1->file_bitstream).bytes_remaining = (param_1->file_bitstream).stream_length;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Unnamed function parameter",
       "line": 50,
-      "match": "field_0x533c",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x533c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 51,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x5348 = *(uint *)&param_1->field_0x5344;",
+      "text": "(param_1->file_bitstream).bytes_remaining = (param_1->file_bitstream).stream_length;",
       "type": "unnamed_param"
     },
     {
@@ -553,100 +454,44 @@
       "line": 51,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x5348 = *(uint *)&param_1->field_0x5344;",
+      "text": "sound_mp3_cpp_CFileBitStream_syncToPattern_FUN_004fd780(&param_1->file_bitstream,0xfff,0xc);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x5348",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x5348 = *(uint *)&param_1->field_0x5344;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x5344",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x5348 = *(uint *)&param_1->field_0x5344;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 54,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CFileBitStream *)&param_1->field_0x5320,0xfff,0xc);",
+      "text": "(&param_1->file_bitstream,&local_38.header);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x5320",
-      "severity": "mild",
-      "text": "((CFileBitStream *)&param_1->field_0x5320,0xfff,0xc);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CFileBitStream *)&param_1->field_0x5320,local_38);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 56,
-      "match": "field_0x5320",
-      "severity": "mild",
-      "text": "((CFileBitStream *)&param_1->field_0x5320,local_38);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 57,
       "match": "DAT_006011b8",
       "severity": "mild",
-      "text": "fVar4 = (float10)*(double *)(&DAT_006011b8 + local_58 * 8 + local_68[0] * 0x20) *",
+      "text": "(&DAT_006011b8 + local_68.sampling_rate_index * 8 + local_68.mpeg_version * 0x20",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
+      "line": 61,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)&param_1->field_0x100 = (int)ROUND(fVar4);",
+      "text": "param_1->sample_rate = (int)ROUND(fVar4);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Unnamed function parameter",
       "line": 62,
-      "match": "field_0x100",
+      "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)&param_1->field_0x100 = (int)ROUND(fVar4);",
-      "type": "unnamed_field"
+      "text": "param_1->num_channels = local_38.channel_count;",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 63,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x104 = local_28;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 63,
-      "match": "field_0x104",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x104 = local_28;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
       "match": "param_1",
       "severity": "mild",
       "text": "sound_mp3_cpp_CMP3Decoder_seek_FUN_00502bc0(param_1,sample_offset);",

@@ -260,10 +260,14 @@ TEST_F(CMenuPageTest, APackagesLayoutPlacesBothKindsOfPage) {
 }
 
 // An untitled line takes two rows, and the list one more; a titled line takes one, and the title
-// four. Untitled, the second line is what shows first; titled, the title.
-TEST_F(CMenuPageTest, InAShortWindowThePageIsRaisedToFit) {
-    constexpr int kShortHeight = 240;
-    ON_CALL(screen_, getWindowHeight()).WillByDefault(Return(kShortHeight));
+// four. Untitled, the second line is what shows first; titled, the title. The rows are the
+// layout's 480, which the screen scales as a whole.
+TEST_F(CMenuPageTest, APageLowInTheLayoutIsRaisedToFitItsRows) {
+    constexpr int kLayoutHeight = 480;
+    std::optional<engine::SMenuLayout> &menu = game_parts_.getContent().menu;
+    ASSERT_TRUE(menu.has_value());
+    menu->top = kLayoutHeight - 10;
+    menu->titled_top = kLayoutHeight - 10;
     std::vector<int> rows;
     page_.outcome = EMenuOutcome::Stay;
     on_frame_ = [&](int frame) {
@@ -275,12 +279,19 @@ TEST_F(CMenuPageTest, InAShortWindowThePageIsRaisedToFit) {
         }
     };
     menu_.runPage(page_);
-    EXPECT_EQ(rows, (std::vector<int>{letterRow(kShortHeight - (3 * lineHeight())),
-                                      letterRow(kShortHeight - (6 * lineHeight()))}));
+    EXPECT_EQ(rows, (std::vector<int>{letterRow(kLayoutHeight - (3 * lineHeight())),
+                                      letterRow(kLayoutHeight - (6 * lineHeight()))}));
 }
 
 TEST_F(CMenuPageTest, APageIsNeverRaisedAboveTheTop) {
-    ON_CALL(screen_, getWindowHeight()).WillByDefault(Return(1));
+    constexpr int kTooManyLines = 200;
+    page_.lines_for_frame = [](int) {
+        std::vector<SMenuLine> lines{{.id = 0, .text = ""}};
+        for (int i = 1; i < kTooManyLines; ++i) {
+            lines.push_back({.id = i, .text = "XX"});
+        }
+        return lines;
+    };
     int row = -1;
     on_frame_ = [&](int /*frame*/) {
         row = firstTextRow();

@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1020,
-    "complexity_score": 410,
+    "complexity_score": 412,
     "cross_reference_count": 1,
     "function_call_count": 57,
     "global_count": 70,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 350,
+    "pseudocode_lines": 352,
     "suspect_count": 4,
     "suspect_types": [
       "shadow_pointer_walk",
@@ -15,7 +15,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1370
+    "total_lines": 1372
   },
   "cross_references": [
     {
@@ -70,16 +70,6 @@
       "name": "core_game.cpp_CGame_fadeIn_FUN_004a3a50"
     },
     {
-      "addr": "004a3b90",
-      "is_variadic": false,
-      "name": "core_game.cpp_CGame_FUN_004a3b90"
-    },
-    {
-      "addr": "004a57c0",
-      "is_variadic": false,
-      "name": "core_game.cpp_CGame_FUN_004a57c0"
-    },
-    {
       "addr": "004a3660",
       "is_variadic": false,
       "name": "core_game.cpp_CGame_loadAssets_FUN_004a3660"
@@ -120,6 +110,11 @@
       "name": "core_game.cpp_CGame_saveClockTime_FUN_0049a890"
     },
     {
+      "addr": "004a3b90",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_saveGame_FUN_004a3b90"
+    },
+    {
       "addr": "0049d870",
       "is_variadic": false,
       "name": "core_game.cpp_CGame_setGameRes_FUN_0049d870"
@@ -128,6 +123,11 @@
       "addr": "0049d960",
       "is_variadic": false,
       "name": "core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960"
+    },
+    {
+      "addr": "004a57c0",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004a57c0"
     },
     {
       "addr": "0049b0b0",
@@ -177,7 +177,7 @@
     {
       "addr": "0050ad20",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_FUN_0050ad20"
+      "name": "core_set.cpp_CDemonSet_clearLights_FUN_0050ad20"
     },
     {
       "addr": "005084c0",
@@ -202,7 +202,7 @@
     {
       "addr": "005125a0",
       "is_variadic": false,
-      "name": "core_setdir.cpp_CDemonSet_FUN_005125a0"
+      "name": "core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005125a0"
     },
     {
       "addr": "0052ddf0",
@@ -255,6 +255,11 @@
       "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004720c0"
     },
     {
+      "addr": "00470230",
+      "is_variadic": true,
+      "name": "shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_00470230"
+    },
+    {
       "addr": "00476160",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CPickList_clear_FUN_00476160"
@@ -293,11 +298,6 @@
       "addr": "00473cb0",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_add_FUN_00473cb0"
-    },
-    {
-      "addr": "00470230",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_00470230"
     },
     {
       "addr": "004ee3f0",
@@ -807,6 +807,32 @@
       "STORE": 355
     },
     "pcode_op_count": 3306
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004b6170",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1847
+    },
+    "bw1.exe": {
+      "addr": "004cf5e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.502
+    },
+    "bw3.exe": {
+      "addr": "004b7f90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.442
+    },
+    "nocedit.exe": {
+      "addr": "004daf80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5582
+    }
   },
   "stack_frame": {
     "frame_size": 1032,

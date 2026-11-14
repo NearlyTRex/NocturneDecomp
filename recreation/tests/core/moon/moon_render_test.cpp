@@ -218,6 +218,20 @@ TEST_F(CMoonRenderTest, SoftwareOrAt640TheSceneIsNotOverlaid) {
     moon_.render();
 }
 
+// 640 wide is not 640x480: a shorter screen changes the view's shape too. A screen with no height
+// has no shape to give it.
+TEST_F(CMoonRenderTest, OnlyAt640x480OrWithNoHeightIsTheSceneLeftAsItIs) {
+    startRenderer();
+    ON_CALL(screen_, getWindowHeight()).WillByDefault(Return(400));
+    EXPECT_CALL(renderer_, beginOverlay(::testing::_)).WillOnce(Return(false));
+    moon_.render();
+
+    givenWideScreen();
+    ON_CALL(screen_, getWindowHeight()).WillByDefault(Return(0));
+    EXPECT_CALL(renderer_, beginOverlay(::testing::_)).Times(0);
+    moon_.render();
+}
+
 // The timer can only run negative on a negative step; it shows the first frame too.
 TEST_F(CMoonRenderTest, ANegativeTimerShowsTheFirstFrame) {
     moon_.update(-1.0F);

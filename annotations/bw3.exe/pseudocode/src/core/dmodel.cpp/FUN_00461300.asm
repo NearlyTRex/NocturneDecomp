@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   core_dmodel.cpp_FUN_004606a0 at 0046075f
-;   core_dmodel.cpp_FUN_00460890 at 00460974
+;   core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_004606a0 at 0046075f
+;   core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00460890 at 00460974
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_005bb7e4
@@ -23,7 +23,7 @@
 ; Called Functions:
 ;   core_dmodel.cpp_FUN_00460e10
 ;   core_main.c_FUN_004e4330
-;   crt_unknown.c_FUN_005a40df
+;   crt_memory.c_operator_new_array_FUN_005a40df
 ;
 ; *****************************************************************************
 
@@ -73,8 +73,8 @@ section .text
     SUB EAX,EDX                         ; 00461393
     SHL EAX,0x2                         ; 00461395
     PUSH EAX                            ; 00461398
-    CALL crt_unknown.c_FUN_005a40df     ; 00461399
-        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a40df()
+    CALL crt_memory.c_operator_new_array_FUN_005a40df ; 00461399
+        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005a40df()
     MOV EDX,dword ptr [EBX + 0x110]     ; 0046139e
     MOV dword ptr [EBX + 0x10c],EAX     ; 004613a4
     LEA EAX,[EDX*0x8 + 0x0]             ; 004613aa
@@ -82,15 +82,15 @@ section .text
     ADD ESP,0x4                         ; 004613b3
     SHL EAX,0x3                         ; 004613b6
     PUSH EAX                            ; 004613b9
-    CALL crt_unknown.c_FUN_005a40df     ; 004613ba
-        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a40df()
+    CALL crt_memory.c_operator_new_array_FUN_005a40df ; 004613ba
+        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005a40df()
     MOV dword ptr [EBX + 0x114],EAX     ; 004613bf
     MOV EAX,dword ptr [EBX + 0x110]     ; 004613c5
     ADD ESP,0x4                         ; 004613cb
     SHL EAX,0x2                         ; 004613ce
     PUSH EAX                            ; 004613d1
-    CALL crt_unknown.c_FUN_005a40df     ; 004613d2
-        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a40df()
+    CALL crt_memory.c_operator_new_array_FUN_005a40df ; 004613d2
+        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005a40df()
     MOV EDX,dword ptr [EBX + 0x100]     ; 004613d7
     MOV dword ptr [EBX + 0x118],EAX     ; 004613dd
     LEA EAX,[EDX*0x4 + 0x0]             ; 004613e3
@@ -98,8 +98,8 @@ section .text
     ADD ESP,0x4                         ; 004613ec
     SHL EAX,0x3                         ; 004613ef
     PUSH EAX                            ; 004613f2
-    CALL crt_unknown.c_FUN_005a40df     ; 004613f3
-        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a40df()
+    CALL crt_memory.c_operator_new_array_FUN_005a40df ; 004613f3
+        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005a40df()
     ADD ESP,0x4                         ; 004613f8
     MOV ECX,dword ptr [EBX + 0x10c]     ; 004613fb
     MOV dword ptr [EBX + 0x350],EAX     ; 00461401
@@ -177,8 +177,8 @@ section .text
     SUB EAX,EDX                         ; 004614da
     SHL EAX,0x2                         ; 004614dc
     PUSH EAX                            ; 004614df
-    CALL crt_unknown.c_FUN_005a40df     ; 004614e0
-        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a40df()
+    CALL crt_memory.c_operator_new_array_FUN_005a40df ; 004614e0
+        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005a40df()
     ADD ESP,0x4                         ; 004614e5
     MOV dword ptr [EBX + 0x108],EAX     ; 004614e8
     TEST EAX,EAX                        ; 004614ee

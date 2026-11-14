@@ -1,0 +1,255 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 185,
+    "complexity_score": 205,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 9,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 95,
+    "suspect_count": 8,
+    "suspect_types": [
+      "bit_int_float_compare",
+      "stack_alignment_array",
+      "stack_ref",
+      "unaffected_reg",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 280
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004d1a10",
+    "address_range": [
+      [
+        "004d1a10",
+        "004d1c40"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_heal.cpp_CHeal_fire_FUN_004d1a10",
+    "signature": "int __cdecl core_heal_cpp_CHeal_fire_FUN_004d1a10(CHeal *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c840",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c840"
+    },
+    {
+      "addr": "0040ce40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40"
+    },
+    {
+      "addr": "004a23c0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0"
+    },
+    {
+      "addr": "005609d0",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_playActorSound_FUN_005609d0"
+    },
+    {
+      "addr": "0057b880",
+      "is_variadic": false,
+      "name": "core_weapon.cpp_CWeapon_fire_FUN_0057b880"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c4a24",
+      "name": "s_wp_nomana_wav_005c4a24",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c4a32",
+      "name": "s_wp_heal_wav_005c4a32",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c4a3f",
+      "name": "DAT_005c4a3f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fc5a0",
+      "name": "DAT_005fc5a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006045f8",
+      "name": "DAT_006045f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d5ba70",
+      "name": "g_CHeroClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cfd900",
+      "name": "DAT_02cfd900",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cfd904",
+      "name": "DAT_02cfd904",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cfd908",
+      "name": "DAT_02cfd908",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.888198757763975,
+    "instruction_count": 161,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 7,
+      "CALLIND": 1,
+      "CBRANCH": 8,
+      "COPY": 270,
+      "FLOAT2FLOAT": 17,
+      "FLOAT_ADD": 3,
+      "FLOAT_SUB": 3,
+      "INT2FLOAT": 1,
+      "INT_ADD": 99,
+      "INT_AND": 49,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 47,
+      "INT_LESS": 5,
+      "INT_MULT": 14,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 23,
+      "INT_SUB": 55,
+      "INT_XOR": 3,
+      "INT_ZEXT": 14,
+      "LOAD": 44,
+      "POPCOUNT": 23,
+      "RETURN": 3,
+      "STORE": 64
+    },
+    "pcode_op_count": 787
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHeal *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "CBoundingBox3D *unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 13,
+      "match": "afStackY_102c",
+      "severity": "moderate",
+      "text": "float afStackY_102c [995];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 55,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 56,
+      "match": "&stack0xffffff98",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)&stack0xffffff98;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 57,
+      "match": "&stack0xffffff78",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)&stack0xffffff78;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 58,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x42c80000 is the IEEE 754 bit pattern of 100f. Rewrite in a .keep as a plain float compare against 100f.",
+      "line": 47,
+      "match": "0x42c80000 < (int)this_ptr_00[0x1b].platform_orientation_delta.y)",
+      "severity": "moderate",
+      "text": "if (0x42c80000 < (int)this_ptr_00[0x1b].platform_orientation_delta.y) {",
+      "type": "bit_int_float_compare"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CHeal",
+        "offset": 228,
+        "vtable_addr": "005e11d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

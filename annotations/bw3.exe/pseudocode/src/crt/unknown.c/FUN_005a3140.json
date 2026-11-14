@@ -30,27 +30,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0040bab0",
-      "from_addr": "0040bb49",
-      "name": "core_actor.cpp_FUN_0040bab0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0040bba0",
-      "from_addr": "0040bd19",
-      "name": "core_actor.cpp_FUN_0040bba0",
+      "addr": "0040b930",
+      "from_addr": "0040b97a",
+      "name": "core_actor.cpp_archiveActor_FUN_0040b930",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0040be30",
       "from_addr": "0040bec9",
-      "name": "core_actor.cpp_FUN_0040be30",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0040b930",
-      "from_addr": "0040b97a",
-      "name": "core_actor.cpp_archiveActor_FUN_0040b930",
+      "name": "core_actor.cpp_archiveBox_FUN_0040be30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -84,9 +72,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0040bab0",
+      "from_addr": "0040bb49",
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040bab0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0040b4a0",
       "from_addr": "0040b527",
       "name": "core_actor.cpp_archiveOrientation_FUN_0040b4a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040bba0",
+      "from_addr": "0040bd19",
+      "name": "core_actor.cpp_archivePartStatus_FUN_0040bba0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -116,7 +116,7 @@
     {
       "addr": "00414fd0",
       "from_addr": "00415061",
-      "name": "core_bodypart.cpp_FUN_00414fd0",
+      "name": "core_bodypart.cpp_CBodyPart_archive_FUN_00414fd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -126,9 +126,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00450cbe",
+      "addr": "00450cc0",
       "from_addr": "00450cd1",
-      "name": "core_dcamera.cpp_FUN_00450cbe",
+      "name": "core_dcamera.cpp_saveCameraFog_FUN_00450cc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -176,13 +176,19 @@
     {
       "addr": "004acf00",
       "from_addr": "004acf11",
-      "name": "core_fldnotes.cpp_FUN_004acf00",
+      "name": "core_fldnotes.cpp_CFieldNotes_saveState_FUN_004acf00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004bda10",
       "from_addr": "004bdb09",
       "name": "core_game.cpp_FUN_004bda10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cf0c0",
+      "from_addr": "004cf0ce",
+      "name": "core_gore.cpp_CGore_save_FUN_004cf0c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -198,12 +204,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004cf0c0",
-      "from_addr": "004cf0ce",
-      "name": "core_gore.cpp_FUN_004cf0c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004dc700",
       "from_addr": "004dc734",
       "name": "core_inv.cpp_CInventory_saveItems_FUN_004dc700",
@@ -212,7 +212,7 @@
     {
       "addr": "004dc560",
       "from_addr": "004dc57f",
-      "name": "core_inv.cpp_FUN_004dc560",
+      "name": "core_inv.cpp_CInventory_save_FUN_004dc560",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -224,31 +224,31 @@
     {
       "addr": "004f6410",
       "from_addr": "004f642f",
-      "name": "core_mission.cpp_FUN_004f6410",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004fb72e",
-      "from_addr": "004fb736",
-      "name": "core_motion.cpp_FUN_004fb72e",
+      "name": "core_mission.cpp_CDemonMission_writeFile_FUN_004f6410",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004fcd30",
       "from_addr": "004fcd85",
-      "name": "core_motion.cpp_FUN_004fcd30",
+      "name": "core_motion.cpp_CMotionController_save_FUN_004fcd30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fb6b0",
+      "from_addr": "004fb6c1",
+      "name": "core_motion.cpp_FUN_004fb6b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00530e00",
+      "from_addr": "00530e12",
+      "name": "core_script.cpp_CScript_saveState_FUN_00530e00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00529a70",
       "from_addr": "0052cebb",
       "name": "core_script.cpp_CScript_step_FUN_00529a70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00530e00",
-      "from_addr": "00530e12",
-      "name": "core_script.cpp_FUN_00530e00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -266,13 +266,13 @@
     {
       "addr": "00569380",
       "from_addr": "00569451",
-      "name": "core_texlist.cpp_FUN_00569380",
+      "name": "core_texlist.cpp_CTextureList_save_FUN_00569380",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00441ff0",
       "from_addr": "0044209e",
-      "name": "engine_console.cpp_FUN_00441ff0",
+      "name": "engine_console.cpp_CConsole_printf_FUN_00441ff0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -282,9 +282,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0056a7ce",
+      "addr": "0056a7d0",
       "from_addr": "0056a818",
-      "name": "engine_texture.cpp_FUN_0056a7ce",
+      "name": "engine_texture.cpp_FUN_0056a7d0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -328,7 +328,7 @@
       {
         "call_addr": "0044209e",
         "call_type": "direct",
-        "caller": "engine_console.cpp_FUN_00441ff0",
+        "caller": "engine_console.cpp_CConsole_printf_FUN_00441ff0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -475,6 +475,32 @@
       "STORE": 6
     },
     "pcode_op_count": 60
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b8010",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005c03c0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005fe6d0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "005644f0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 12,

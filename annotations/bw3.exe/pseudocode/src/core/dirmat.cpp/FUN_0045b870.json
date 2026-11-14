@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 47,
     "complexity_score": 297,
-    "cross_reference_count": 23,
+    "cross_reference_count": 24,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
@@ -30,15 +30,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004157c0",
-      "from_addr": "00415d6d",
-      "name": "core_bodypart.cpp_FUN_004157c0",
+      "addr": "00415e30",
+      "from_addr": "0041614f",
+      "name": "core_bodypart.cpp_CBodyPart_applyRotation_FUN_00415e30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00415e30",
-      "from_addr": "0041614f",
-      "name": "core_bodypart.cpp_FUN_00415e30",
+      "addr": "004157c0",
+      "from_addr": "00415d6d",
+      "name": "core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_004157c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -56,7 +56,7 @@
     {
       "addr": "0043e2a0",
       "from_addr": "0043e7f8",
-      "name": "core_cloth.cpp_FUN_0043e2a0",
+      "name": "core_cloth.cpp_CCloth_step_FUN_0043e2a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -74,7 +74,7 @@
     {
       "addr": "0045af60",
       "from_addr": "0045afb5",
-      "name": "core_dglobe.cpp_FUN_0045af60",
+      "name": "core_dglobe.cpp_CDemonGlobe_intersectAABB_FUN_0045af60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -92,7 +92,7 @@
     {
       "addr": "0045dea0",
       "from_addr": "0045df48",
-      "name": "core_dlight.cpp_FUN_0045dea0",
+      "name": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_0045dea0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -104,7 +104,7 @@
     {
       "addr": "004642f0",
       "from_addr": "00464748",
-      "name": "core_door.cpp_FUN_004642f0",
+      "name": "core_door.cpp_CDoor_process_FUN_004642f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -116,13 +116,13 @@
     {
       "addr": "0050df70",
       "from_addr": "0050e160",
-      "name": "core_pendulum.cpp_FUN_0050df70",
+      "name": "core_pendulum.cpp_CPendulum_testCollisionWithActor_FUN_0050df70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005376e0",
       "from_addr": "0053794a",
-      "name": "core_set.cpp_FUN_005376e0",
+      "name": "core_set.cpp_CDemonSet_gatherVisibleLights_FUN_005376e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -146,13 +146,19 @@
     {
       "addr": "005420b0",
       "from_addr": "00542102",
-      "name": "core_setutil.cpp_FUN_005420b0",
+      "name": "core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_005420b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00578570",
+      "from_addr": "0057860c",
+      "name": "core_wateract.cpp_FUN_00578570",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0057b500",
       "from_addr": "0057b55a",
-      "name": "core_weapon.cpp_FUN_0057b500",
+      "name": "core_weapon.cpp_CWeapon_onDropped_FUN_0057b500",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -171,7 +177,7 @@
   "function_calls": [],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 34,
+    "call_site_count": 35,
     "call_sites": [
       {
         "call_addr": "00408c3a",
@@ -307,7 +313,7 @@
       {
         "call_addr": "00415d6d",
         "call_type": "direct",
-        "caller": "core_bodypart.cpp_FUN_004157c0",
+        "caller": "core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_004157c0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -351,6 +357,20 @@
       "STORE": 7
     },
     "pcode_op_count": 341
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004495a0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0045f700",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 20,
@@ -593,7 +613,7 @@
       "type": "unaffected_reg"
     },
     {
-      "call_site_count": 34,
+      "call_site_count": 35,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 5,

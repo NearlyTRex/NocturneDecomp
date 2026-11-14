@@ -4,12 +4,13 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/SMpegLayer3ScalefactorGranule.h"
 
 // Structure: SMpegScalefactorBandData
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x1f0 (496 bytes)
 #pragma pack(push, 1)
 typedef struct SMpegScalefactorBandData {
+    SMpegLayer3ScalefactorGranule granules[2]; // 0x0
 } SMpegScalefactorBandData;
 #pragma pack(pop)
 

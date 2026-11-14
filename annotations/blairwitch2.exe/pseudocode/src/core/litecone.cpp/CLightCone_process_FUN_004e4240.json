@@ -1,0 +1,137 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 41,
+    "complexity_score": 21,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 21,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 62
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004e4240",
+    "address_range": [
+      [
+        "004e4240",
+        "004e429f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_litecone.cpp_CLightCone_process_FUN_004e4240",
+    "signature": "void __cdecl core_litecone_cpp_CLightCone_process_FUN_004e4240(CLightCone *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "0048e340",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_0048e340"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006141f0",
+      "name": "DAT_006141f0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.90625,
+    "instruction_count": 32,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 30,
+      "INT_ADD": 17,
+      "INT_AND": 12,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 10,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 5,
+      "INT_SUB": 9,
+      "LOAD": 11,
+      "POPCOUNT": 5,
+      "RETURN": 3,
+      "STORE": 10
+    },
+    "pcode_op_count": 125
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00502e20",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004e4070",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00506bc0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004c81a0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLightCone *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 20,
+        "vtable_addr": "005f9744"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

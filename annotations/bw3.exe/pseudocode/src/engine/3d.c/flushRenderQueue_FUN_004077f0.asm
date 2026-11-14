@@ -60,7 +60,7 @@ section .text
     PUSH 0x7dd9f4                       ; 0040783e
     PUSH 0x60b014                       ; 00407843
     CALL engine_special.cpp_drawPolyList_FUN_00565c70 ; 00407848
-        ;   XREF to: 00565c70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolyList_FUN_00565c70()
+        ;   XREF to: 00565c70 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolyList_FUN_00565c70(SRenderVertex * vertex_buffer, SMRGLPrimitiveQuad * * polygons, int polygon_count, int render_flags)
     ADD ESP,0x10                        ; 0040784d
     XOR EAX,EAX                         ; 00407850
     MOV [0x007dd9f0],EAX                ; 00407852 | DAT_007dd9f0

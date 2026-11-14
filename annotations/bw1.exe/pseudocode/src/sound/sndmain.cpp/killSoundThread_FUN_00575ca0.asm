@@ -6,7 +6,7 @@
 ;
 ; XREF[3]:
 ;   sound_snddx.cpp_FUN_00577cd0 at 00577d0e
-;   sound_sndmain.cpp_FUN_00575c00 at 00575c08
+;   sound_sndmain.cpp_startSoundThread_FUN_00575c00 at 00575c08
 ;   sound_sndwav.cpp_CWavOutDevice_reset_FUN_0057a8c0 at 0057a8f6
 ;
 ; Referenced Globals:
@@ -15,7 +15,7 @@
 ;   undefined4 DAT_02c807e4
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_005773f0
+;   sound_sndmain.cpp_logSoundError_FUN_005773f0
 ;   wincore_winrun.cpp_sleep_FUN_005b3860
 ;
 ; *****************************************************************************
@@ -60,8 +60,8 @@ section .text
     RET                                 ; 00575cfb
     PUSH 0x5f43a0                       ; 00575cfc | s_Mb_killSoundThread_faile_005f439c+4
         ;   Label: LAB_00575cfc
-    CALL sound_sndmain.cpp_FUN_005773f0 ; 00575d01
-        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005773f0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005773f0 ; 00575d01
+        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005773f0(char * format)
     ADD ESP,0x4                         ; 00575d06
     CMP dword ptr [0x02c807e0],0x0      ; 00575d09 | DAT_02c807e0
     SETZ AL                             ; 00575d10

@@ -21,18 +21,19 @@ int __cdecl sound_sndmain_cpp_initializeSoundDevice_FUN_005755c0(void)
   if (-1 < DAT_006232fc) {
     if (*(int *)(DAT_006232fc * 0x118 + 0x2c7fe90) == 0) {
       _DAT_02c80650 =
-           (int *)sound_sndwav_cpp_getWavOutDevice_FUN_0057b410
-                            (*(uint *)(DAT_006232fc * 0x118 + 0x2c7fe94));
+           sound_sndwav_cpp_getWavOutDevice_FUN_0057b410
+                     (*(UINT *)(DAT_006232fc * 0x118 + 0x2c7fe94));
     }
     if (*(int *)(DAT_006232fc * 0x118 + 0x2c7fe90) == 1) {
       _DAT_02c80650 =
-           (int *)sound_snddx_cpp_getDirectSoundDevice_FUN_0057a340
-                            (*(uint *)(DAT_006232fc * 0x118 + 0x2c7fe94));
+           (CWavOutDevice *)
+           sound_snddx_cpp_getDirectSoundDevice_FUN_0057a340
+                     (*(UINT *)(DAT_006232fc * 0x118 + 0x2c7fe94));
     }
-    if (_DAT_02c80650 == (int *)0x0) {
+    if (_DAT_02c80650 == (CWavOutDevice *)0x0) {
       return 0;
     }
-    _DAT_02c80658 = (**(code **)(*_DAT_02c80650 + 0x14))(_DAT_02c80650);
+    _DAT_02c80658 = (*((_DAT_02c80650->base).vtable)->hasHardware3D)(&_DAT_02c80650->base);
     return 1;
   }
   return 0;

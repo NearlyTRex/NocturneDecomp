@@ -2,19 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 135,
+    "complexity_score": 108,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 60,
-    "suspect_count": 6,
+    "pseudocode_lines": 48,
+    "suspect_count": 4,
     "suspect_types": [
-      "unnamed_field",
+      "pointer_cast",
+      "pointer_truncation",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 143
+    "total_lines": 131
   },
   "cross_references": [
     {
@@ -30,15 +31,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0052c5fc",
-      "from_addr": "0052c662",
-      "name": "core_netgame.cpp_FUN_0052c5fc",
+      "addr": "0052d450",
+      "from_addr": "0052d638",
+      "name": "core_netgame.cpp_CNetGame_processPacket_FUN_0052d450",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0052d450",
-      "from_addr": "0052d638",
-      "name": "core_netgame.cpp_FUN_0052d450",
+      "addr": "0052c600",
+      "from_addr": "0052c662",
+      "name": "core_netgame.cpp_FUN_0052c600",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -110,7 +111,7 @@
       {
         "call_addr": "0052d638",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_FUN_0052d450",
+        "caller": "core_netgame.cpp_CNetGame_processPacket_FUN_0052d450",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -154,7 +155,7 @@
       {
         "call_addr": "0052c662",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_FUN_0052c5fc",
+        "caller": "core_netgame.cpp_FUN_0052c600",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -199,6 +200,32 @@
       "STORE": 27
     },
     "pcode_op_count": 310
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0050ce70",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.922
+    },
+    "bw3.exe": {
+      "addr": "00505950",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.922
+    },
+    "nocedit.exe": {
+      "addr": "005412b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.929
+    },
+    "nocturne.exe": {
+      "addr": "004eb440",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 24,
@@ -254,36 +281,20 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "if (1 < *(int *)&this_ptr->field_0x1c) {",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(uint *)((int)dest",
+      "severity": "moderate",
+      "text": "*(uint *)((int)dest + (uint)bVar6 * -8 + 0x20) = *(uint *)&addr[-(uint)bVar6].port;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)&this_ptr->field_0x1c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "dest = &this_ptr->field_0x20 + iVar2 * 0x7c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x1c = iVar2 + 1;",
-      "type": "unnamed_field"
+      "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 36,
+      "match": "(int)dest",
+      "severity": "moderate",
+      "text": "*(uint *)((int)dest + (uint)bVar6 * -8 + 0x20) = *(uint *)&addr[-(uint)bVar6].port;",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

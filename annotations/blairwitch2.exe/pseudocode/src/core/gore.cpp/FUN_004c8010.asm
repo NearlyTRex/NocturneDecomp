@@ -62,13 +62,13 @@
 ;   ... and 8 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cfc0
+;   core_actor.cpp_getRandomInt_FUN_0040cfc0
 ;   crt_math.c_round_FUN_005b7ff0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
 ;   engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50
-;   engine_matrix.c_pop_FUN_0046b4a0
+;   engine_drender.cpp_pop_FUN_0046b4a0
 ;   engine_special.cpp_FUN_0055d723
 ;
 ; *****************************************************************************
@@ -251,8 +251,8 @@ section .text
     PUSH 0x40                           ; 004c825d
     MOV EBX,dword ptr [ESI + 0x14]      ; 004c825f
     MOV dword ptr [ESP + 0x80],EDX      ; 004c8262 | DAT_0062203c
-    CALL core_actor.cpp_FUN_0040cfc0    ; 004c8269
-        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cfc0(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cfc0 ; 004c8269
+        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cfc0(int min_value, int max_value)
     ADD ESP,0x8                         ; 004c826e
     CMP EBX,0x1                         ; 004c8271
     JNC 0x004c857f                      ; 004c8274
@@ -270,8 +270,8 @@ section .text
     PUSH 0x40                           ; 004c82a5
     MOV EBX,dword ptr [ESI + 0x14]      ; 004c82a7
     MOV dword ptr [ESP + 0x8c],ECX      ; 004c82aa | DAT_00622068
-    CALL core_actor.cpp_FUN_0040cfc0    ; 004c82b1
-        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cfc0(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cfc0 ; 004c82b1
+        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cfc0(int min_value, int max_value)
     ADD ESP,0x8                         ; 004c82b6
     CMP EBX,0x1                         ; 004c82b9
     JNC 0x004c85c9                      ; 004c82bc
@@ -288,8 +288,8 @@ section .text
     PUSH 0x40                           ; 004c82eb
     MOV EBX,dword ptr [ESI + 0x14]      ; 004c82ed
     MOV dword ptr [ESP + 0x84],EBP      ; 004c82f0 | DAT_00622098
-    CALL core_actor.cpp_FUN_0040cfc0    ; 004c82f7
-        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cfc0(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cfc0 ; 004c82f7
+        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cfc0(int min_value, int max_value)
     MOV EBP,0x62209c                    ; 004c82fc | DAT_0062209c
     ADD ESP,0x8                         ; 004c8301
     CMP EBX,0x1                         ; 004c8304
@@ -308,8 +308,8 @@ section .text
     PUSH 0x40                           ; 004c8338
     MOV EBX,dword ptr [ESI + 0x14]      ; 004c833a
     MOV dword ptr [ESP + 0x88],EAX      ; 004c833d | DAT_006220c8
-    CALL core_actor.cpp_FUN_0040cfc0    ; 004c8344
-        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cfc0(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cfc0 ; 004c8344
+        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cfc0(int min_value, int max_value)
     ADD ESP,0x8                         ; 004c8349
     CMP EBX,0x1                         ; 004c834c
     JNC 0x004c865b                      ; 004c834f
@@ -556,8 +556,8 @@ section .text
     MOV EBX,dword ptr [0x0060b280]      ; 004c8667 | DAT_0060b280
         ;   Label: LAB_004c8667
     PUSH EBX                            ; 004c866d | DAT_01ba5c50
-    CALL engine_matrix.c_pop_FUN_0046b4a0 ; 004c866e
-        ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046b4a0()
+    CALL engine_drender.cpp_pop_FUN_0046b4a0 ; 004c866e
+        ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046b4a0()
     ADD ESP,0x4                         ; 004c8673
     ADD ESP,0x8c                        ; 004c8676
     POP EBP                             ; 004c867c

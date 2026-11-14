@@ -17,7 +17,7 @@
 ; XREF[3]:
 ;   engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160 at 0046b203
 ;   engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0046d330 at 0046d38e
-;   engine_drender.cpp_FUN_0046de6e at 0046df33
+;   engine_drender.cpp_FUN_0046de70 at 0046df33
 ;
 ; Referenced Globals:
 ;   void* switchdataD_00587c8c = 00587e5c
@@ -568,7 +568,7 @@ section .text
     PUSH EDX                            ; 00588169 | DAT_02d23638
     PUSH EBP                            ; 0058816a
     CALL core_xform.cpp_clipInterpolateRightPlane_FUN_00587340 ; 0058816b
-        ;   XREF to: 00587340 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_clipInterpolateRightPlane_FUN_00587340()
+        ;   XREF to: 00587340 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clipInterpolateRightPlane_FUN_00587340(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
     MOV EBP,dword ptr [0x02d22ffc]      ; 00588170 | DAT_02d22ffc
     INC EBP                             ; 00588176
     ADD ESP,0xc                         ; 00588177
@@ -616,7 +616,7 @@ section .text
     PUSH EBP                            ; 005881da
     PUSH EDX                            ; 005881db | DAT_02d23638
     CALL core_xform.cpp_clipInterpolateRightPlane_FUN_00587340 ; 005881dc
-        ;   XREF to: 00587340 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_clipInterpolateRightPlane_FUN_00587340()
+        ;   XREF to: 00587340 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clipInterpolateRightPlane_FUN_00587340(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
     MOV ESI,dword ptr [0x02d22ffc]      ; 005881e1 | DAT_02d22ffc
     INC ESI                             ; 005881e7
     ADD ESP,0xc                         ; 005881e8
@@ -630,7 +630,7 @@ section .text
     PUSH EDX                            ; 00588203 | DAT_02d23008
     PUSH EBP                            ; 00588204
     CALL core_xform.cpp_clipInterpolateLeftPlane_FUN_00587400 ; 00588205
-        ;   XREF to: 00587400 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_clipInterpolateLeftPlane_FUN_00587400()
+        ;   XREF to: 00587400 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clipInterpolateLeftPlane_FUN_00587400(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
     MOV ESI,dword ptr [0x02d23000]      ; 0058820a | DAT_02d23000
     INC ESI                             ; 00588210
     ADD ESP,0xc                         ; 00588211
@@ -678,7 +678,7 @@ section .text
     PUSH EBP                            ; 00588274
     PUSH EDX                            ; 00588275 | DAT_02d23008
     CALL core_xform.cpp_clipInterpolateLeftPlane_FUN_00587400 ; 00588276
-        ;   XREF to: 00587400 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_clipInterpolateLeftPlane_FUN_00587400()
+        ;   XREF to: 00587400 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clipInterpolateLeftPlane_FUN_00587400(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
     MOV EDI,dword ptr [0x02d23000]      ; 0058827b | DAT_02d23000
     INC EDI                             ; 00588281
     ADD ESP,0xc                         ; 00588282
@@ -692,7 +692,7 @@ section .text
     PUSH EDX                            ; 0058829d | DAT_02d23c38
     PUSH EBP                            ; 0058829e
     CALL core_xform.cpp_clipInterpolateTopPlane_FUN_005874c0 ; 0058829f
-        ;   XREF to: 005874c0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_clipInterpolateTopPlane_FUN_005874c0()
+        ;   XREF to: 005874c0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clipInterpolateTopPlane_FUN_005874c0(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
     MOV ESI,dword ptr [0x02d23004]      ; 005882a4 | DAT_02d23004
     INC ESI                             ; 005882aa
     ADD ESP,0xc                         ; 005882ab
@@ -740,7 +740,7 @@ section .text
     PUSH EBP                            ; 0058830e
     PUSH EDX                            ; 0058830f | DAT_02d23c38
     CALL core_xform.cpp_clipInterpolateTopPlane_FUN_005874c0 ; 00588310
-        ;   XREF to: 005874c0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_clipInterpolateTopPlane_FUN_005874c0()
+        ;   XREF to: 005874c0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clipInterpolateTopPlane_FUN_005874c0(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
     MOV EDI,dword ptr [0x02d23004]      ; 00588315 | DAT_02d23004
     INC EDI                             ; 0058831b
     ADD ESP,0xc                         ; 0058831c
@@ -754,7 +754,7 @@ section .text
     PUSH EDX                            ; 00588337 | DAT_02d24208
     PUSH EBP                            ; 00588338
     CALL core_xform.cpp_clipInterpolateBottomPlane_FUN_00587580 ; 00588339
-        ;   XREF to: 00587580 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_clipInterpolateBottomPlane_FUN_00587580()
+        ;   XREF to: 00587580 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clipInterpolateBottomPlane_FUN_00587580(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
     MOV ESI,dword ptr [0x007e3e88]      ; 0058833e | DAT_007e3e88
     INC ESI                             ; 00588344
     ADD ESP,0xc                         ; 00588345
@@ -802,7 +802,7 @@ section .text
     PUSH EBP                            ; 005883a8
     PUSH EDX                            ; 005883a9 | DAT_02d24208
     CALL core_xform.cpp_clipInterpolateBottomPlane_FUN_00587580 ; 005883aa
-        ;   XREF to: 00587580 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_clipInterpolateBottomPlane_FUN_00587580()
+        ;   XREF to: 00587580 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clipInterpolateBottomPlane_FUN_00587580(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
     MOV EDI,dword ptr [0x007e3e88]      ; 005883af | DAT_007e3e88
     INC EDI                             ; 005883b5
     ADD ESP,0xc                         ; 005883b6

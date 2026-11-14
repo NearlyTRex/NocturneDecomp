@@ -20,7 +20,7 @@ void __cdecl core_actor_cpp_handleActorPropertyParseError_FUN_0040b2d0(char *pro
   pcVar2 = "(unknown)";
   pCVar4 = (CDemonActor *)"(unknown)";
   if (DAT_007df9bc != (CDemonActor *)0x0) {
-    pcVar2 = core_actor_cpp_FUN_00408870(DAT_007df9bc);
+    pcVar2 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408870(DAT_007df9bc);
     pCVar4 = pCVar1;
   }
   if (property_type == (char *)0x0) {

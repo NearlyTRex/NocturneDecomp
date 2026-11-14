@@ -11,14 +11,14 @@
 ; int              Stack[0x14]:4   dialog_flags
 ;
 ; XREF[8]:
-;   core_game.cpp_FUN_004d27b0 at 004d3f56
+;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d3f56
 ;   core_game.cpp_joinNetworkGame_FUN_004d7e90 at 004d7ebb
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_0052e120 at 0052e9df
 ;   shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_00495f70 at 00495fb8
 ;   shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_00495e70 at 00495ea9
 ;   shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_00495da0 at 00495dce
 ;   shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_00496080 at 004960a9
-;   shape_edittool.cpp_FUN_0049517e at 00495445
+;   shape_edittool.cpp_FUN_00495180 at 00495445
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_showTextInputDialog_FUN_00493720

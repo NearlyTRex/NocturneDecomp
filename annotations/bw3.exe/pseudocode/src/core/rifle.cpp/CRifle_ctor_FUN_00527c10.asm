@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CRifle * core_rifle_cpp_CRifle_ctor_FUN_00527c10(CRifle *this_ptr)
+; CRifle * __cdecl core_rifle_cpp_CRifle_ctor_FUN_00527c10(CRifle *this_ptr)
 ;
 ; Parameters:
 ; CRifle *         Stack[0x4]:4   this_ptr

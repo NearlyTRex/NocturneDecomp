@@ -12,49 +12,49 @@ void __cdecl core_event_cpp_CEventList_setSfxHandle_FUN_00491960(CEventList *thi
 
 {
   char cVar1;
-  CEventList CVar2;
-  int iVar3;
-  uint uVar4;
+  int iVar2;
+  uint uVar3;
+  SSfxEntry *pSVar4;
   char *pcVar5;
-  CEventList *pCVar6;
-  byte bVar7;
+  byte bVar6;
   
-  bVar7 = 0;
+  bVar6 = 0;
   core_event_cpp_CEventList_updateSfxEntries_FUN_00491a90(this_ptr);
-  iVar3 = core_event_cpp_CEventList_findSfxEntry_FUN_00491a40(this_ptr,name);
-  if (iVar3 < 0) {
-    if (0x13 < *(int *)(this_ptr + 0x3ac8)) {
+  iVar2 = core_event_cpp_CEventList_findSfxEntry_FUN_00491a40(this_ptr,name);
+  if (iVar2 < 0) {
+    if (0x13 < (this_ptr->sfx_handles).count) {
       _DAT_01d046a0 = "..\\core\\event.cpp";
       _DAT_01d046a4 = 0xeb8;
       core_main_c_FUN_004e4500("CEventList::setSfxHandle - too many sfx!");
     }
-    iVar3 = *(int *)(this_ptr + 0x3ac8);
-    *(int *)(this_ptr + 0x3ac8) = iVar3 + 1;
+    iVar2 = (this_ptr->sfx_handles).count;
+    (this_ptr->sfx_handles).count = iVar2 + 1;
   }
-  uVar4 = 0xffffffff;
+  pSVar4 = (this_ptr->sfx_handles).entries + iVar2;
+  uVar3 = 0xffffffff;
   pcVar5 = name;
   do {
-    if (uVar4 == 0) break;
-    uVar4 = uVar4 - 1;
+    if (uVar3 == 0) break;
+    uVar3 = uVar3 - 1;
     cVar1 = *pcVar5;
-    pcVar5 = pcVar5 + (uint)bVar7 * -2 + 1;
+    pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
   } while (cVar1 != '\0');
-  if (0x13 < ~uVar4 - 1) {
+  if (0x13 < ~uVar3 - 1) {
     _DAT_01d046a0 = "..\\core\\event.cpp";
     _DAT_01d046a4 = 0xec0;
     core_main_c_FUN_004e4500("CEventList::setSfxHandle - sfx handle name %s is too long - max %d characters",name,0x13);
   }
-  pCVar6 = this_ptr + iVar3 * 0x120 + 0x3acc + 4;
+  pcVar5 = pSVar4->handle_name;
   do {
-    CVar2 = (CEventList)*name;
-    *pCVar6 = CVar2;
-    if (CVar2 == (CEventList)0x0) break;
-    CVar2 = *(CEventList *)(name + 1);
+    cVar1 = *name;
+    *pcVar5 = cVar1;
+    if (cVar1 == '\0') break;
+    cVar1 = name[1];
     name = name + 2;
-    pCVar6[1] = CVar2;
-    pCVar6 = pCVar6 + 2;
-  } while (CVar2 != (CEventList)0x0);
-  *(uint *)(this_ptr + iVar3 * 0x120 + 0x3acc) = sfx_handle;
+    pcVar5[1] = cVar1;
+    pcVar5 = pcVar5 + 2;
+  } while (cVar1 != '\0');
+  pSVar4->sfx_handle = sfx_handle;
   core_event_cpp_CEventList_updateSfxEntries_FUN_00491a90(this_ptr);
   return;
 }

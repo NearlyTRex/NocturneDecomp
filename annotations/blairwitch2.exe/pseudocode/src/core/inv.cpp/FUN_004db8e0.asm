@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[7]:
+;   core_doc.cpp_FUN_0045bdc0 at 0045c85d
 ;   core_inv.cpp_CInventory_clear_FUN_004da860 at 004da883
-;   core_inv.cpp_FUN_004dc8c0 at 004dca6a
-;   core_inv.cpp_FUN_004def40 at 004def7c
-;   core_script.cpp_FUN_00522350 at 00526a40
-;   core_stranger.cpp_FUN_0056db50 at 0056dd3d
-;   core_vampboss.cpp_FUN_00583160 at 00583346
-;   unkafter_stranger.cpp_FUN_0045bdc0 at 0045c85d
+;   core_inv.cpp_CInventory_removeMatchingKeys_FUN_004def40 at 004def7c
+;   core_inv.cpp_CInventory_select_FUN_004dc8c0 at 004dca6a
+;   core_script.cpp_CScript_step_FUN_00522350 at 00526a40
+;   core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_0056db50 at 0056dd3d
+;   core_vampboss.cpp_CVampireBoss_processDamage_FUN_00583160 at 00583346
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Deleting_s_005db732
@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408730
 ;   crt_string.c_memmove_FUN_005ba1f0
-;   engine_console.cpp_FUN_00436710
+;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     PUSH 0x5db732                       ; 004db8ed | = "Deleting: %s\n"
     MOV EDX,dword ptr [0x00609ed0]      ; 004db8f2 | g_CConsolePtr
     PUSH EDX                            ; 004db8f8 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00436710 ; 004db8f9
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 004db8f9
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     MOV EAX,dword ptr [ESI + 0x468]     ; 004db8fe
     SHL EAX,0x2                         ; 004db904
     ADD EAX,ESI                         ; 004db907

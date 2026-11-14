@@ -11,8 +11,8 @@
 ;
 ; XREF[5]:
 ;   core_set.cpp_CDemonSet_initScene_FUN_0054ec60 at 0054ede3
+;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00550260 at 00550461
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0 at 0054f9f3
-;   core_set.cpp_FUN_00550260 at 00550461
 ;   core_set.cpp_FUN_00550da0 at 00550fd3
 ;   core_set.cpp_FUN_00551170 at 005513a4
 ;
@@ -31,7 +31,7 @@
 ;   core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_0044ce90
 ;   core_main.c_FUN_005030e0
 ;   engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00483e40
-;   engine_matrix.c_popViewport_FUN_00483c40
+;   engine_drender.cpp_popViewport_FUN_00483c40
 ;
 ; *****************************************************************************
 
@@ -90,8 +90,8 @@ section .text
     ADD ESP,0x8                         ; 00462b48
     MOV ECX,dword ptr [0x00612560]      ; 00462b4b | DAT_00612560
     PUSH ECX                            ; 00462b51 | DAT_01bc120c
-    CALL engine_matrix.c_popViewport_FUN_00483c40 ; 00462b52
-        ;   XREF to: 00483c40 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_popViewport_FUN_00483c40()
+    CALL engine_drender.cpp_popViewport_FUN_00483c40 ; 00462b52
+        ;   XREF to: 00483c40 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_popViewport_FUN_00483c40()
     ADD ESP,0x4                         ; 00462b57
     MOV EBX,dword ptr [ESI + 0x1cc4]    ; 00462b5a
     XOR EAX,EAX                         ; 00462b60

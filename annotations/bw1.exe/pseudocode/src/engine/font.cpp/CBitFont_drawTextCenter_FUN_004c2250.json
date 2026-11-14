@@ -2,27 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 7,
+    "complexity_score": 8,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 7,
+    "pseudocode_lines": 8,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 38
+    "total_lines": 39
   },
   "cross_references": [
     {
       "addr": "00480480",
       "from_addr": "004805ae",
-      "name": "cockpit_drawsurf.cpp_FUN_00480480",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00480480",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004c22e0",
       "from_addr": "004c2332",
-      "name": "engine_font.cpp_FUN_004c22e0",
+      "name": "engine_font.cpp_CBitFont_drawTextCenterFV_FUN_004c22e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -48,12 +48,12 @@
     {
       "addr": "004c2060",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004c2060"
+      "name": "engine_font.cpp_CBitFont_drawTextWrapper_FUN_004c2060"
     },
     {
       "addr": "004c3ea0",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004c3ea0"
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0"
     }
   ],
   "globals": [],
@@ -63,7 +63,7 @@
       {
         "call_addr": "004805ae",
         "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_00480480",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00480480",
         "estimated_params": 5,
         "instructions_analyzed": 8,
         "method": "push_count",
@@ -74,7 +74,7 @@
       {
         "call_addr": "004805f7",
         "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_00480480",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00480480",
         "estimated_params": 6,
         "instructions_analyzed": 14,
         "method": "push_count",
@@ -96,7 +96,7 @@
       {
         "call_addr": "004c2332",
         "call_type": "direct",
-        "caller": "engine_font.cpp_FUN_004c22e0",
+        "caller": "engine_font.cpp_CBitFont_drawTextCenterFV_FUN_004c22e0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -136,6 +136,32 @@
       "STORE": 12
     },
     "pcode_op_count": 146
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a92a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004b0ea0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004cdde0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00490ce0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 28,

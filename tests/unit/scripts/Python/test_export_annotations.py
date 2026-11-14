@@ -108,13 +108,14 @@ def test_every_category_has_its_export_function():
 
 def test_each_category_takes_only_its_own_options():
     options = dict(ea.DEFAULT_OPTIONS, strict = True, deep_analysis = True, allow_size_mismatch = True,
-        allow_name_address_mismatch = True, allow_this_ptr_mismatch = False,
+        allow_name_address_mismatch = True, allow_this_ptr_mismatch = False, allow_tu_name_violations = True,
         allow_duplicate_data_types = True, pseudocode_options = {"static_analysis": False})
     assert ea.category_arguments("pseudocode", options) == {
         "strict": True, "deep_analysis": True, "static_analysis": False}
     assert ea.category_arguments("type_info", options) == {"strict": True, "allow_size_mismatch": True}
     assert ea.category_arguments("functions", options) == {
-        "allow_name_address_mismatch": True, "allow_this_ptr_mismatch": False}
+        "allow_name_address_mismatch": True, "allow_this_ptr_mismatch": False,
+        "allow_tu_name_violations": True}
     assert ea.category_arguments("data_types", options) == {"allow_duplicates": True}
     assert ea.category_arguments("comments", options) == {}
 
@@ -177,11 +178,12 @@ def test_the_compile_passes_run_for_every_program_unless_limited():
 
 def test_export_options_come_from_the_command_line():
     assert ea.export_options(args_for("--strict", "--deep-analysis", "--allow-struct-size-mismatch",
-            "--allow-name-address-mismatch", "--allow-this-ptr-mismatch", "--allow-duplicate-data-types",
+            "--allow-name-address-mismatch", "--allow-this-ptr-mismatch", "--allow-tu-name-violations",
+            "--allow-duplicate-data-types",
             "--no-static-analysis"), "game.exe") == {
         "strict": True, "deep_analysis": True, "allow_size_mismatch": True,
         "allow_name_address_mismatch": True, "allow_this_ptr_mismatch": True,
-        "allow_duplicate_data_types": True,
+        "allow_tu_name_violations": True, "allow_duplicate_data_types": True,
         "pseudocode_options": {"header_compile": True, "function_compile": True, "static_analysis": False}}
 
 
@@ -317,6 +319,58 @@ def test_a_missing_refresh_script_is_skipped(monkeypatch, launches, capsys):
     ea.maybe_refresh_sibling_mapping(["nocedit.exe"], True)
     assert launches.commands == []
     assert "refresh_sibling_mapping.py not found" in capsys.readouterr().out
+
+
+# --- function siblings refresh --------------------------------------------------------------------
+
+def test_siblings_are_not_written_when_disabled_without_programs_or_without_functions(launches):
+    ea.maybe_refresh_function_siblings(["bw1.exe"], ["functions"], False)
+    ea.maybe_refresh_function_siblings([], ["functions"], True)
+    ea.maybe_refresh_function_siblings(["bw1.exe"], ["comments", "data_types"], True)
+    assert launches.commands == []
+
+
+@pytest.mark.parametrize("category", ["functions", "pseudocode"])
+def test_siblings_are_written_for_the_exported_programs(launches, capsys, category):
+    ea.maybe_refresh_function_siblings(["bw1.exe", "bw3.exe"], [category], True)
+    assert launches.commands == [[sys.executable, "-u", os.path.join(SCRIPTS_DIR, "sibling_identity.py"),
+                                  "bw1.exe", "bw3.exe"]]
+    assert "WARNING" not in capsys.readouterr().out
+
+
+def test_a_failed_siblings_write_only_warns(launches, capsys):
+    launches.code = 3
+    ea.maybe_refresh_function_siblings(["bw1.exe"], ["functions"], True)
+    assert "sibling_identity.py exited 3" in capsys.readouterr().out
+    launches.error = OSError("no python")
+    ea.maybe_refresh_function_siblings(["bw1.exe"], ["functions"], True)
+    assert "could not launch sibling_identity.py: no python" in capsys.readouterr().out
+
+
+# --- per-program function reports ----------------------------------------------------------------
+
+def test_function_reports_need_a_functions_export_and_can_be_skipped(launches):
+    ea.maybe_write_function_reports(["bw1.exe"], ["functions"], False)
+    ea.maybe_write_function_reports([], ["functions"], True)
+    ea.maybe_write_function_reports(["bw1.exe"], ["pseudocode"], True)
+    assert launches.commands == []
+
+
+def test_each_function_report_runs_for_the_exported_programs(launches, capsys):
+    ea.maybe_write_function_reports(["bw1.exe"], ["functions"], True)
+    assert launches.commands == [[sys.executable, "-u", os.path.join(SCRIPTS_DIR, name), "bw1.exe"]
+                                 for name in ea.FUNCTION_REPORTS]
+    assert "WARNING" not in capsys.readouterr().out
+
+
+def test_a_failed_report_only_warns_and_the_rest_still_run(launches, capsys):
+    launches.code = 2
+    ea.maybe_write_function_reports(["bw1.exe"], ["functions"], True)
+    assert len(launches.commands) == 3
+    assert "report_unnamed_functions.py exited 2" in capsys.readouterr().out
+    launches.error = OSError("no python")
+    ea.maybe_write_function_reports(["bw1.exe"], ["functions"], True)
+    assert "could not launch report_bad_instructions.py: no python" in capsys.readouterr().out
 
 
 # --- main -----------------------------------------------------------------------------------------

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_spirindi_cpp_staticInit_FUN_00599f00(void)
+; void __cdecl core_spirindi_cpp_staticInit_FUN_00599f00(void)
 ;
 ;
 ; Called Functions:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CGlass * core_glass_cpp_CGlass_dtor_FUN_004c72f0(CGlass *this_ptr,uint flags)
+; CGlass * __cdecl core_glass_cpp_CGlass_dtor_FUN_004c72f0(CGlass *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CGlass *         Stack[0x4]:4   this_ptr
@@ -51,7 +51,7 @@ section .text
         ;   Label: LAB_004c732d
     PUSH EBX                            ; 004c7332
     CALL crt_memory.c___vec_delete_FUN_005b7fa7 ; 004c7333
-        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005b7fa7()
+        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005b7fa7(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 004c7338
     PUSH EAX                            ; 004c733b
     CALL crt_unknown.c_FUN_005b7fce     ; 004c733c

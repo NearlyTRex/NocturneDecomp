@@ -2,18 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 367,
+    "complexity_score": 127,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 62,
-    "suspect_count": 28,
+    "suspect_count": 5,
     "suspect_types": [
-      "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 215
@@ -22,7 +20,7 @@
     {
       "addr": "005541f0",
       "from_addr": "00554461",
-      "name": "sound_sndmain.cpp_FUN_005541f0",
+      "name": "sound_sndmain.cpp_pollAndMixSfx_FUN_005541f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -37,7 +35,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "sound_sndmain.cpp_convertMixBufToOutput_FUN_0054d220",
-    "signature": "void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_0054d220(float *param_1,undefined2 *param_2,uint param_3,int param_4,int param_5)"
+    "signature": "void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_0054d220(float *input_samples,ushort *output_buffer,int bits_per_sample,int num_samples,int output_stride)"
   },
   "function_calls": [
     {
@@ -102,7 +100,7 @@
       {
         "call_addr": "00554461",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_005541f0",
+        "caller": "sound_sndmain.cpp_pollAndMixSfx_FUN_005541f0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -111,11 +109,11 @@
         "stack_params": 5
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
     "estimated_params": 5,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.548387096774194,
@@ -157,11 +155,37 @@
     },
     "pcode_op_count": 688
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0056f890",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00552d90",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a5b80",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00523330",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 72,
+    "frame_size": 92,
     "local_size": 72,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -240,6 +264,41 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "input_samples",
+        "offset": 4,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "output_buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "ushort *"
+      },
+      {
+        "is_param": true,
+        "name": "bits_per_sample",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "num_samples",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "output_stride",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -253,203 +312,27 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_0054d220(float *param_1,ushort *param_2,uint param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_0054d220(float *param_1,ushort *param_2,uint param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_0054d220(float *param_1,ushort *param_2,uint param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_0054d220(float *param_1,ushort *param_2,uint param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_0054d220(float *param_1,ushort *param_2,uint param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_30 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 < 8) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004e4500(\"convertMixBufToOutput - invalid bits: %d\",param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 < 9) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "if (0 < param_4) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = *param_1;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 37,
       "match": "(ushort *)((int)local_30",
       "severity": "moderate",
-      "text": "local_30 = (ushort *)((int)local_30 + param_5);",
+      "text": "local_30 = (ushort *)((int)local_30 + output_stride);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "local_30 = (ushort *)((int)local_30 + param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "} while (local_18 < param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 != 0x10) goto LAB_0054d36d;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "if (0 < param_4) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = *param_1;",
-      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 59,
       "match": "(ushort *)((int)local_30",
       "severity": "moderate",
-      "text": "local_30 = (ushort *)((int)local_30 + param_5);",
+      "text": "local_30 = (ushort *)((int)local_30 + output_stride);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "local_30 = (ushort *)((int)local_30 + param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "} while (local_14 < param_4);",
-      "type": "unnamed_param"
     },
     {
       "description": "Pointer value `local_30` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 37,
       "match": "(int)local_30",
       "severity": "moderate",
-      "text": "local_30 = (ushort *)((int)local_30 + param_5);",
+      "text": "local_30 = (ushort *)((int)local_30 + output_stride);",
       "type": "pointer_truncation"
     },
     {
@@ -457,19 +340,8 @@
       "line": 59,
       "match": "(int)local_30",
       "severity": "moderate",
-      "text": "local_30 = (ushort *)((int)local_30 + param_5);",
+      "text": "local_30 = (ushort *)((int)local_30 + output_stride);",
       "type": "pointer_truncation"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

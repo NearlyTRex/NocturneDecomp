@@ -11,8 +11,8 @@
 ; XREF[7]:
 ;   core_menu.cpp_FUN_004e94f0 at 004e9d3a
 ;   core_sound.cpp_FUN_0055fc60 at 0055fcaf
-;   sound_sndmain.cpp_FUN_00558050 at 005580a2
-;   sound_sndmain.cpp_FUN_00559220 at 00559405
+;   sound_sndmain.cpp_enableSoundSystem_FUN_00558050 at 005580a2
+;   sound_sndmain.cpp_readIni_FUN_00559220 at 00559405
 ;   sound_sndmain.cpp_setAudioBitDepth_FUN_005583d0 at 005583e1
 ;   sound_sndmain.cpp_setAudioChannelCount_FUN_005583f0 at 00558401
 ;   sound_sndmain.cpp_setAudioSampleRate_FUN_00558410 at 00558421
@@ -30,7 +30,7 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
 ;   sound_sndmain.cpp_allocMixBuffers_FUN_00552970
-;   sound_sndmain.cpp_FUN_005586c0
+;   sound_sndmain.cpp_isSoundBusy_FUN_005586c0
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     PUSH EDI                            ; 00558291
     PUSH EBP                            ; 00558292
     SUB ESP,0x4                         ; 00558293
-    CALL sound_sndmain.cpp_FUN_005586c0 ; 00558296
-        ;   XREF to: 005586c0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005586c0()
+    CALL sound_sndmain.cpp_isSoundBusy_FUN_005586c0 ; 00558296
+        ;   XREF to: 005586c0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundBusy_FUN_005586c0()
     TEST EAX,EAX                        ; 0055829b
     JNZ 0x005582d0                      ; 0055829d
         ;   XREF to: 005582d0 (CONDITIONAL_JUMP)  ; LAB_005582d0

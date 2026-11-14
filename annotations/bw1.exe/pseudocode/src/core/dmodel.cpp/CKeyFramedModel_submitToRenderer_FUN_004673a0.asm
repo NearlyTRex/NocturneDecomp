@@ -33,7 +33,7 @@
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
-;   core_set.cpp_FUN_005551f0
+;   core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_005551f0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60
@@ -221,8 +221,8 @@ section .text
     PUSH EAX                            ; 00467581
     MOV EDX,dword ptr [0x00622c18]      ; 00467582 | g_CDemonSetPtr
     PUSH EDX                            ; 00467588 | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_005551f0      ; 00467589
-        ;   XREF to: 005551f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_005551f0(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
+    CALL core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_005551f0 ; 00467589
+        ;   XREF to: 005551f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_005551f0(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
     ADD ESP,0x10                        ; 0046758e
     JMP 0x00467450                      ; 00467591
         ;   XREF to: 00467450 (UNCONDITIONAL_JUMP)  ; LAB_00467450
@@ -271,8 +271,8 @@ section .text
     PUSH EAX                            ; 004675ff
     MOV EDX,dword ptr [0x00622c18]      ; 00467600 | g_CDemonSetPtr
     PUSH EDX                            ; 00467606 | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_005551f0      ; 00467607
-        ;   XREF to: 005551f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_005551f0(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
+    CALL core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_005551f0 ; 00467607
+        ;   XREF to: 005551f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_005551f0(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
     ADD ESP,0x10                        ; 0046760c
     CMP EBX,dword ptr [ESP + 0x2c]      ; 0046760f
     JL 0x004675a4                       ; 00467613

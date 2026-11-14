@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CWayPoint.h"
 
 // Structure: CPatrolPoint
-// Stub: size from Watcom RTTI, fields not yet recovered
+// registered under CWayPoint (registerActorClass); size 1724 from RTTI; no fields of its own
 // Ghidra size: 0x6bc (1724 bytes)
 #pragma pack(push, 1)
 typedef struct CPatrolPoint {
-    char field_0[1724]; // 0x0
+    CWayPoint base; // 0x0, parent class
 } CPatrolPoint;
 #pragma pack(pop)
 

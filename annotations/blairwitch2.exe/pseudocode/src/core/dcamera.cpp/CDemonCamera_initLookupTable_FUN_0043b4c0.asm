@@ -10,15 +10,15 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_0052d980 at 0052d9da
+;   core_set.cpp_CDemonSet_initScene_FUN_0052d980 at 0052d9da
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006141bc
 ;
 ; Called Functions:
+;   core_dcamera.cpp_CDemonCamera_generateFogGrid_FUN_00441f40
 ;   core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00443180
 ;   core_dcamera.cpp_CDemonCamera_init_FUN_0043b570
-;   core_dcamera.cpp_FUN_00441f40
 ;
 ; *****************************************************************************
 
@@ -48,8 +48,8 @@ section .text
         ;   XREF to: 0043b570 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_init_FUN_0043b570(CDemonCamera * this_ptr, int screen_height)
     ADD ESP,0x8                         ; 0043b4f1
     PUSH EBX                            ; 0043b4f4
-    CALL core_dcamera.cpp_FUN_00441f40  ; 0043b4f5
-        ;   XREF to: 00441f40 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_FUN_00441f40(CDemonCamera * this_ptr)
+    CALL core_dcamera.cpp_CDemonCamera_generateFogGrid_FUN_00441f40 ; 0043b4f5
+        ;   XREF to: 00441f40 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_generateFogGrid_FUN_00441f40(CDemonCamera * this_ptr)
     MOV EDX,0x40                        ; 0043b4fa
     ADD ESP,0x4                         ; 0043b4ff
     XOR EBP,EBP                         ; 0043b502

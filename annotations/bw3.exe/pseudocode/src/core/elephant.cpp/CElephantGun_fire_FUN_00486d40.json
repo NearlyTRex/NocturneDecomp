@@ -1,0 +1,783 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 600,
+    "complexity_score": 765,
+    "cross_reference_count": 0,
+    "function_call_count": 22,
+    "global_count": 27,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 295,
+    "suspect_count": 43,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "self_copy_guard",
+      "shadow_pointer_walk",
+      "stack_alignment_array",
+      "stack_param",
+      "unknown_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 895
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00486d40",
+    "address_range": [
+      [
+        "00486d40",
+        "00487557"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_elephant.cpp_CElephantGun_fire_FUN_00486d40",
+    "signature": "int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_00486d40(CElephantGun *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c840",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c840"
+    },
+    {
+      "addr": "00408b00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408b00"
+    },
+    {
+      "addr": "00408b80",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408b80"
+    },
+    {
+      "addr": "00408bf0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408bf0"
+    },
+    {
+      "addr": "0040ce40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40"
+    },
+    {
+      "addr": "0040cea0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cea0"
+    },
+    {
+      "addr": "0042abb0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0"
+    },
+    {
+      "addr": "004461c0",
+      "is_variadic": false,
+      "name": "core_crate.cpp_FUN_004461c0"
+    },
+    {
+      "addr": "004a2090",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createBulletImpact_FUN_004a2090"
+    },
+    {
+      "addr": "004a2450",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004a2450"
+    },
+    {
+      "addr": "004a7110",
+      "is_variadic": false,
+      "name": "core_flamecan.cpp_CFlameCan_ignite_FUN_004a7110"
+    },
+    {
+      "addr": "004cc5d0",
+      "is_variadic": false,
+      "name": "core_glass.cpp_CGlass_checkBreakableCondition_FUN_004cc5d0"
+    },
+    {
+      "addr": "004cc040",
+      "is_variadic": false,
+      "name": "core_glass.cpp_FUN_004cc040"
+    },
+    {
+      "addr": "0053ec10",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_ignore_FUN_0053ec10"
+    },
+    {
+      "addr": "0053ebe0",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_init_FUN_0053ebe0"
+    },
+    {
+      "addr": "0053ec90",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_setRayType_FUN_0053ec90"
+    },
+    {
+      "addr": "0053ccc0",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_FUN_0053ccc0"
+    },
+    {
+      "addr": "005609d0",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_playActorSound_FUN_005609d0"
+    },
+    {
+      "addr": "0056ede0",
+      "is_variadic": false,
+      "name": "core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_0056ede0"
+    },
+    {
+      "addr": "0056ee20",
+      "is_variadic": false,
+      "name": "core_trigger.cpp_CTrigger_applyDamage_FUN_0056ee20"
+    },
+    {
+      "addr": "0056edc0",
+      "is_variadic": false,
+      "name": "core_trigger.cpp_CTrigger_onProjectileHit_FUN_0056edc0"
+    },
+    {
+      "addr": "0057b880",
+      "is_variadic": false,
+      "name": "core_weapon.cpp_CWeapon_fire_FUN_0057b880"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005bd979",
+      "name": "s_shotgun_noammo_wav_005bd979",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bd98c",
+      "name": "s_elephantgun_wav_005bd98c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bd99c",
+      "name": "DAT_005bd99c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bd9a4",
+      "name": "DAT_005bd9a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bd9ac",
+      "name": "DAT_005bd9ac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bd9b4",
+      "name": "DAT_005bd9b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bd9bc",
+      "name": "DAT_005bd9bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fc5a0",
+      "name": "DAT_005fc5a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00603b28",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01ed78c8"
+    },
+    {
+      "addr": "006045f8",
+      "name": "DAT_006045f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007e2cec",
+      "name": "g_CCharacterClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007f8fc8",
+      "name": "g_CCrateClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d0cf60",
+      "name": "g_CFlameCanClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d22e04",
+      "name": "g_CGlassClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ed78c8",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "020249d8",
+      "name": "g_CDemonSetInstance.ray_origin.x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "020249dc",
+      "name": "g_CDemonSetInstance.ray_origin.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "020249e0",
+      "name": "g_CDemonSetInstance.ray_origin.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "020249e4",
+      "name": "g_CDemonSetInstance.ray_target.x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "020249e8",
+      "name": "g_CDemonSetInstance.ray_target.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "020249ec",
+      "name": "g_CDemonSetInstance.ray_target.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "020249f0",
+      "name": "g_CDemonSetInstance.collision_normal.x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "020249fc",
+      "name": "g_CDemonSetInstance.ground_type",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02024a00",
+      "name": "g_CDemonSetInstance.collision_impact_position.x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02024a0c",
+      "name": "g_CDemonSetInstance.collision_actor",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02024a10",
+      "name": "g_CDemonSetInstance.collision_part_index",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cfd894",
+      "name": "g_CTriggerClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.3531669865642995,
+    "instruction_count": 521,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 5,
+      "BRANCH": 7,
+      "CALL": 31,
+      "CALLIND": 6,
+      "CALLOTHER": 3,
+      "CBRANCH": 21,
+      "COPY": 1084,
+      "FLOAT2FLOAT": 75,
+      "FLOAT_ADD": 6,
+      "FLOAT_DIV": 3,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 15,
+      "FLOAT_NAN": 4,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 7,
+      "INT2FLOAT": 5,
+      "INT_ADD": 304,
+      "INT_AND": 159,
+      "INT_CARRY": 40,
+      "INT_EQUAL": 134,
+      "INT_LEFT": 8,
+      "INT_LESS": 6,
+      "INT_MULT": 60,
+      "INT_NOTEQUAL": 14,
+      "INT_OR": 10,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 42,
+      "INT_SLESS": 67,
+      "INT_SUB": 179,
+      "INT_XOR": 4,
+      "INT_ZEXT": 68,
+      "LOAD": 135,
+      "POPCOUNT": 67,
+      "RETURN": 2,
+      "STORE": 202
+    },
+    "pcode_op_count": 2789
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00485b40",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9741
+    },
+    "bw1.exe": {
+      "addr": "0049e1a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9741
+    },
+    "nocedit.exe": {
+      "addr": "004a7160",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7111
+    },
+    "nocturne.exe": {
+      "addr": "00477890",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6607
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CElephantGun *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00486d4c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 16,
+      "match": "afStackY_1138",
+      "severity": "moderate",
+      "text": "float afStackY_1138 [51];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 17,
+      "match": "apCStackY_106c",
+      "severity": "moderate",
+      "text": "CDemonActor *apCStackY_106c [3];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 18,
+      "match": "afStackY_1060",
+      "severity": "moderate",
+      "text": "float afStackY_1060 [939];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_fffffe58",
+      "severity": "moderate",
+      "text": "CDemonActor *in_stack_fffffe58;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_fffffe5c",
+      "severity": "moderate",
+      "text": "CDemonSet *in_stack_fffffe5c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 150,
+      "match": "in_stack_fffffe5c",
+      "severity": "moderate",
+      "text": "pCVar5 = in_stack_fffffe5c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 153,
+      "match": "in_stack_fffffe5c",
+      "severity": "moderate",
+      "text": "pCVar5 = in_stack_fffffe5c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 159,
+      "match": "in_stack_fffffe5c",
+      "severity": "moderate",
+      "text": "in_stack_fffffe5c = pCVar5;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 183,
+      "match": "in_stack_fffffe58",
+      "severity": "moderate",
+      "text": "((CCharacter *)this_ptr,in_stack_fffffe58,(int)grab_type);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 191,
+      "match": "in_stack_fffffe5c",
+      "severity": "moderate",
+      "text": "in_stack_fffffe5c = (CDemonSet *)g_CDemonSetPtr->collision_actor;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 192,
+      "match": "in_stack_fffffe58",
+      "severity": "moderate",
+      "text": "in_stack_fffffe58 = (CDemonActor *)g_CDemonSetPtr->ground_type;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 195,
+      "match": "in_stack_fffffe58",
+      "severity": "moderate",
+      "text": "&g_CDemonSetPtr->collision_normal,(int)in_stack_fffffe58,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 196,
+      "match": "in_stack_fffffe5c",
+      "severity": "moderate",
+      "text": "(CDemonActor *)in_stack_fffffe5c,0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 214,
+      "match": "in_stack_fffffe58",
+      "severity": "moderate",
+      "text": "in_stack_fffffe58 = (CDemonActor *)0x4872a4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 220,
+      "match": "in_stack_fffffe5c",
+      "severity": "moderate",
+      "text": "in_stack_fffffe5c = (CDemonSet *)0x4874bb;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 223,
+      "match": "in_stack_fffffe58",
+      "severity": "moderate",
+      "text": "in_stack_fffffe58 = (CDemonActor *)0x4874d7;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 228,
+      "match": "in_stack_fffffe5c",
+      "severity": "moderate",
+      "text": "in_stack_fffffe5c = (CDemonSet *)0x4872b9;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 232,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_18c._4_4_ = uStack_2c;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 233,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "auStack_18c._0_4_ = g_CDemonSetPtr->collision_part_index;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 276,
+      "match": "in_stack_fffffe5c",
+      "severity": "moderate",
+      "text": "in_stack_fffffe5c = pCVar5;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 282,
+      "match": "in_stack_fffffe5c",
+      "severity": "moderate",
+      "text": "in_stack_fffffe5c = pCVar5;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Pointer value `&CStack_a8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 85,
+      "match": "(int)&CStack_a8",
+      "severity": "moderate",
+      "text": "*(CDemonActor **)((int)&CStack_a8 + (uint)bVar6 * -8 + 4) = apCStack_80[(uint)bVar6 * -2];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_a8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 87,
+      "match": "(int)&CStack_a8",
+      "severity": "moderate",
+      "text": "*(CDemonActor **)((int)&CStack_a8 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `grab_type` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 183,
+      "match": "(int)grab_type",
+      "severity": "moderate",
+      "text": "((CCharacter *)this_ptr,in_stack_fffffe58,(int)grab_type);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCStack_40` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 185,
+      "match": "(int)pCStack_40",
+      "severity": "moderate",
+      "text": "fStack_30 = ((1.0 - (float)pCVar9) * fVar4) / (float)(int)pCStack_40;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `in_stack_fffffe58` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 195,
+      "match": "(int)in_stack_fffffe58",
+      "severity": "moderate",
+      "text": "&g_CDemonSetPtr->collision_normal,(int)in_stack_fffffe58,",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCStack_1c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 283,
+      "match": "(int)pCStack_1c",
+      "severity": "moderate",
+      "text": "} while ((int)pCStack_1c < 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCStack_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 285,
+      "match": "(int)pCStack_38",
+      "severity": "moderate",
+      "text": "} while ((int)pCStack_38 < (int)fStack_30);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_6c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 289,
+      "match": "(int)&CStack_6c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_6c + (uint)bVar6 * -8 + 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_a8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 290,
+      "match": "(int)&CStack_a8",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_a8 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_6c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 291,
+      "match": "(int)&CStack_6c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_6c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_a8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 292,
+      "match": "(int)&CStack_a8",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_a8 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&pCStack_180 != &pCStack_150)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 253,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "severity": "moderate",
+      "text": "if (&pCStack_180 != &pCStack_150) {",
+      "type": "self_copy_guard"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&pCStack_170 != &pCStack_cc)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 264,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "severity": "moderate",
+      "text": "if (&pCStack_170 != &pCStack_cc) {",
+      "type": "self_copy_guard"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 85,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(CDemonActor **)((int)&CStack_a8 + (uint)bVar6 * -8 + 4) = apCStack_80[(uint)bVar6 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 87,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(CDemonActor **)((int)&CStack_a8 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 289,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_6c + (uint)bVar6 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 290,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_a8 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 291,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_6c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 292,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_a8 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCStack_1c` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCStack_1c->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 281,
+      "match": "pCStack_1c = (T *)((pCStack_1c->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCStack_1c = (CCharacter *)((pCStack_1c->base).actor_name + 1);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCStack_38` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCStack_38->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 284,
+      "match": "pCStack_38 = (T *)((pCStack_38->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCStack_38 = (CCrate *)((pCStack_38->base).actor_name + 1);",
+      "type": "shadow_pointer_walk"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 228,
+        "vtable_addr": "005df104"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

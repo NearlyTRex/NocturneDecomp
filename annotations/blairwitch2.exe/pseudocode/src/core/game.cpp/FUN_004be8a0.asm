@@ -35,14 +35,14 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
 ;   core_actor.cpp_FUN_00408de0
-;   core_actor.cpp_FUN_0040d0c0
+;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
+;   core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780
 ;   core_dcamera.cpp_FUN_0043c6b0
-;   core_dcamera.cpp_FUN_0043c780
 ;   core_door.cpp_FUN_0045fec0
+;   core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbc60
+;   core_inv.cpp_CInventory_selectItem_FUN_004dbb50
+;   core_inv.cpp_CInventory_toggleDetailView_FUN_004defa0
 ;   core_inv.cpp_FUN_004db9d0
-;   core_inv.cpp_FUN_004dbb50
-;   core_inv.cpp_FUN_004dbc60
-;   core_inv.cpp_FUN_004defa0
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_00513650
 ;   core_path.cpp_getPathMap_FUN_00513ea0
 ;   core_script.cpp_CScript_getLetterboxHeight_FUN_00521840
@@ -206,7 +206,7 @@ section .text
     MOV EDX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004beaa2
     PUSH EDX                            ; 004beaa9
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004beaaa
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004beaaf
     TEST EAX,EAX                        ; 004beab2
     JZ 0x004bf61f                       ; 004beab4
@@ -236,7 +236,7 @@ section .text
     MOV ESI,dword ptr [EAX*0x4 + 0x1cedee4] ; 004beaf5
     PUSH ESI                            ; 004beafc
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004beafd
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004beb02
     TEST EAX,EAX                        ; 004beb05
     JZ 0x004bf644                       ; 004beb07
@@ -265,8 +265,8 @@ section .text
     PUSH 0x1                            ; 004beb48
     ADD EAX,0x2437c                     ; 004beb4a
     PUSH EAX                            ; 004beb4f
-    CALL core_inv.cpp_FUN_004dbb50      ; 004beb50
-        ;   XREF to: 004dbb50 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004dbb50(CInventory * this_ptr, int direction)
+    CALL core_inv.cpp_CInventory_selectItem_FUN_004dbb50 ; 004beb50
+        ;   XREF to: 004dbb50 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectItem_FUN_004dbb50(CInventory * this_ptr, int direction)
     ADD ESP,0x8                         ; 004beb55
     MOV EBX,dword ptr [EBP + 0x14]      ; 004beb58
         ;   Label: LAB_004beb58
@@ -285,8 +285,8 @@ section .text
     PUSH -0x1                           ; 004beb80
     ADD EAX,0x2437c                     ; 004beb82
     PUSH EAX                            ; 004beb87
-    CALL core_inv.cpp_FUN_004dbb50      ; 004beb88
-        ;   XREF to: 004dbb50 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004dbb50(CInventory * this_ptr, int direction)
+    CALL core_inv.cpp_CInventory_selectItem_FUN_004dbb50 ; 004beb88
+        ;   XREF to: 004dbb50 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectItem_FUN_004dbb50(CInventory * this_ptr, int direction)
     ADD ESP,0x8                         ; 004beb8d
     MOV EBX,dword ptr [EBP + 0x14]      ; 004beb90
         ;   Label: LAB_004beb90
@@ -305,8 +305,8 @@ section .text
     PUSH 0x1                            ; 004bebb8
     ADD EAX,0x2437c                     ; 004bebba
     PUSH EAX                            ; 004bebbf
-    CALL core_inv.cpp_FUN_004dbc60      ; 004bebc0
-        ;   XREF to: 004dbc60 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004dbc60(CInventory * this_ptr, int direction)
+    CALL core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbc60 ; 004bebc0
+        ;   XREF to: 004dbc60 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbc60(CInventory * this_ptr, int direction)
     ADD ESP,0x8                         ; 004bebc5
     MOV EBX,dword ptr [EBP + 0x14]      ; 004bebc8
         ;   Label: LAB_004bebc8
@@ -324,8 +324,8 @@ section .text
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004bebe9
     ADD EAX,0x2437c                     ; 004bebf0
     PUSH EAX                            ; 004bebf5
-    CALL core_inv.cpp_FUN_004defa0      ; 004bebf6
-        ;   XREF to: 004defa0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004defa0(CInventory * this_ptr)
+    CALL core_inv.cpp_CInventory_toggleDetailView_FUN_004defa0 ; 004bebf6
+        ;   XREF to: 004defa0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_toggleDetailView_FUN_004defa0(CInventory * this_ptr)
     ADD ESP,0x4                         ; 004bebfb
     MOV EBX,dword ptr [EBP + 0x14]      ; 004bebfe
         ;   Label: LAB_004bebfe
@@ -345,7 +345,7 @@ section .text
     MOV ESI,dword ptr [EAX*0x4 + 0x1cedee4] ; 004bec23
     PUSH ESI                            ; 004bec2a
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004bec2b
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004bec30
     TEST EAX,EAX                        ; 004bec33
     JZ 0x004bf669                       ; 004bec35
@@ -375,7 +375,7 @@ section .text
     MOV EDX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004bec75
     PUSH EDX                            ; 004bec7c
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004bec7d
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004bec82
     TEST EAX,EAX                        ; 004bec85
     JZ 0x004bf68e                       ; 004bec87
@@ -405,7 +405,7 @@ section .text
     MOV ESI,dword ptr [EAX*0x4 + 0x1cedee4] ; 004becc8
     PUSH ESI                            ; 004beccf
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004becd0
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004becd5
     TEST EAX,EAX                        ; 004becd8
     JZ 0x004bf6b3                       ; 004becda
@@ -470,8 +470,8 @@ section .text
     PUSH 0x1fc7838                      ; 004bedba
     LEA ESI,[ESP + 0xd4]                ; 004bedbf
     LEA EDI,[ESP + 0xa4]                ; 004bedc6
-    CALL core_dcamera.cpp_FUN_0043c780  ; 004bedcd
-        ;   XREF to: 0043c780 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_0043c780()
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780 ; 004bedcd
+        ;   XREF to: 0043c780 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr)
     LEA ESI,[ESP + 0xd4]                ; 004bedd2
     ADD ESP,0x8                         ; 004bedd9
     LEA EAX,[ESP + 0x9c]                ; 004beddc
@@ -490,9 +490,9 @@ section .text
     LEA EDI,[ESP + 0x198]               ; 004bee08
     MOV ESI,0x1fc783c                   ; 004bee0f
     PUSH 0x1                            ; 004bee14
-    MOVSD ES:EDI,ESI                    ; 004bee16 | g_CDemonCameraInstance.field4_0x4
-    MOVSD ES:EDI,ESI                    ; 004bee17 | g_CDemonCameraInstance.field8_0x8
-    MOVSD ES:EDI,ESI                    ; 004bee18 | g_CDemonCameraInstance.field12_0xc
+    MOVSD ES:EDI,ESI                    ; 004bee16 | g_CDemonCameraInstance.base.position
+    MOVSD ES:EDI,ESI                    ; 004bee17 | g_CDemonCameraInstance.base.position+4
+    MOVSD ES:EDI,ESI                    ; 004bee18 | g_CDemonCameraInstance.base.position+8
     MOV EAX,[0x0061b5a8]                ; 004bee19 | g_CDemonSetPtr
     LEA EDI,[ESP + 0x160]               ; 004bee1e
     LEA ESI,[ESP + 0x19c]               ; 004bee25
@@ -534,7 +534,7 @@ section .text
     JG 0x004beeb7                       ; 004beea3
         ;   XREF to: 004beeb7 (CONDITIONAL_JUMP)  ; LAB_004beeb7
     MOV EAX,[0x0061b5a8]                ; 004beea5 | g_CDemonSetPtr
-    MOV EAX,dword ptr [EAX + 0x14d144]  ; 004beeaa | g_CDemonSetInstance.field1364292_0x14d144
+    MOV EAX,dword ptr [EAX + 0x14d144]  ; 004beeaa | g_CDemonSetInstance.collision_actor
     MOV dword ptr [ESP + 0x1e4],EAX     ; 004beeb0
     CMP dword ptr [ESP + 0x1e0],0x0     ; 004beeb7
         ;   Label: LAB_004beeb7
@@ -567,8 +567,8 @@ section .text
     PUSH 0x1fc7838                      ; 004bef18
     LEA ESI,[ESP + 0x1b8]               ; 004bef1d
     LEA EDI,[ESP + 0x50]                ; 004bef24
-    CALL core_dcamera.cpp_FUN_0043c780  ; 004bef28
-        ;   XREF to: 0043c780 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_0043c780()
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780 ; 004bef28
+        ;   XREF to: 0043c780 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr)
     LEA ESI,[ESP + 0x1b8]               ; 004bef2d
     ADD ESP,0x8                         ; 004bef34
     LEA EBX,[ESP + 0x60]                ; 004bef37
@@ -587,9 +587,9 @@ section .text
     FMUL float ptr [0x005f7558]         ; 004bef62 | DAT_005f7558
     FSTP float ptr [EBX + 0x8]          ; 004bef68
     MOV ESI,0x1fc783c                   ; 004bef6b
-    MOVSD ES:EDI,ESI                    ; 004bef70 | g_CDemonCameraInstance.field4_0x4
-    MOVSD ES:EDI,ESI                    ; 004bef71 | g_CDemonCameraInstance.field8_0x8
-    MOVSD ES:EDI,ESI                    ; 004bef72 | g_CDemonCameraInstance.field12_0xc
+    MOVSD ES:EDI,ESI                    ; 004bef70 | g_CDemonCameraInstance.base.position
+    MOVSD ES:EDI,ESI                    ; 004bef71 | g_CDemonCameraInstance.base.position+4
+    MOVSD ES:EDI,ESI                    ; 004bef72 | g_CDemonCameraInstance.base.position+8
     LEA EDI,[ESP + 0x114]               ; 004bef73
     LEA ESI,[ESP + 0x12c]               ; 004bef7a
     MOVSD ES:EDI,ESI                    ; 004bef81
@@ -634,10 +634,10 @@ section .text
     MOV EDI,dword ptr [0x01c264e0]      ; 004befff | g_CEnemyClassInfo.name_hash
     MOV EAX,[0x0061b5a8]                ; 004bf005 | g_CDemonSetPtr
     PUSH EDI                            ; 004bf00a
-    MOV EDX,dword ptr [EAX + 0x14d144]  ; 004bf00b | g_CDemonSetInstance.field1364292_0x14d144
+    MOV EDX,dword ptr [EAX + 0x14d144]  ; 004bf00b | g_CDemonSetInstance.collision_actor
     PUSH EDX                            ; 004bf011
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004bf012
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004bf017
     TEST EAX,EAX                        ; 004bf01a
     JZ 0x004bf023                       ; 004bf01c
@@ -675,7 +675,7 @@ section .text
     PUSH EDX                            ; 004bf091
     PUSH EAX                            ; 004bf092
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004bf093
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004bf098
     TEST EAX,EAX                        ; 004bf09b
     JZ 0x004bf70d                       ; 004bf09d
@@ -867,8 +867,8 @@ section .text
     FSUB float ptr [EAX + 0x34]         ; 004bf334
     SUB ESP,0x4                         ; 004bf337
     FSTP float ptr [ESP]                ; 004bf33a
-    CALL core_actor.cpp_FUN_0040d0c0    ; 004bf33d
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040d0c0()
+    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 004bf33d
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     MOV dword ptr [ESP + 0x208],EAX     ; 004bf342
     FLD float ptr [ESP + 0x208]         ; 004bf349
     FMUL float ptr [0x005d8ad3]         ; 004bf350 | DAT_005d8ad3
@@ -936,8 +936,8 @@ section .text
     PUSH EAX                            ; 004bf420
     LEA ESI,[ESP + 0x94]                ; 004bf421
     LEA EDI,[ESP + 0x184]               ; 004bf428
-    CALL core_vecdir.cpp_FUN_005838f0   ; 004bf42f
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005838f0()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 004bf42f
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
     LEA ESI,[ESP + 0x94]                ; 004bf434
     ADD ESP,0x4                         ; 004bf43b
     MOV EAX,[0x01cedef4]                ; 004bf43e | DAT_01cedef4
@@ -949,8 +949,8 @@ section .text
     FSUB float ptr [EAX + 0x34]         ; 004bf454
     SUB ESP,0x4                         ; 004bf457
     FSTP float ptr [ESP]                ; 004bf45a
-    CALL core_actor.cpp_FUN_0040d0c0    ; 004bf45d
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040d0c0()
+    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 004bf45d
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     MOV dword ptr [ESP + 0x208],EAX     ; 004bf462
     FLD float ptr [ESP + 0x208]         ; 004bf469
     FMUL float ptr [0x005d8ad3]         ; 004bf470 | DAT_005d8ad3
@@ -1194,8 +1194,8 @@ section .text
     PUSH 0x1fc7838                      ; 004bf760
     LEA EDI,[ESP + 0x170]               ; 004bf765
     LEA EBX,[ESP + 0x17c]               ; 004bf76c
-    CALL core_dcamera.cpp_FUN_0043c780  ; 004bf773
-        ;   XREF to: 0043c780 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_0043c780()
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780 ; 004bf773
+        ;   XREF to: 0043c780 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr)
     LEA ESI,[ESP + 0xec]                ; 004bf778
     ADD ESP,0x8                         ; 004bf77f
     LEA EAX,[ESP + 0x168]               ; 004bf782
@@ -1337,8 +1337,8 @@ section .text
     PUSH 0x1fc7838                      ; 004bf98d
     LEA EDI,[ESP + 0x170]               ; 004bf992
     MOV EBX,0x1cb3924                   ; 004bf999
-    CALL core_dcamera.cpp_FUN_0043c780  ; 004bf99e
-        ;   XREF to: 0043c780 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_0043c780()
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780 ; 004bf99e
+        ;   XREF to: 0043c780 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr)
     LEA ESI,[ESP + 0xb0]                ; 004bf9a3
     ADD ESP,0x8                         ; 004bf9aa
     LEA EAX,[ESP + 0x168]               ; 004bf9ad

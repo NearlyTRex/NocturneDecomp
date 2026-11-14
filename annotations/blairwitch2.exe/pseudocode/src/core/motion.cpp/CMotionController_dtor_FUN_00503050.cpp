@@ -12,12 +12,13 @@ CMotionController * __cdecl core_motion_cpp_CMotionController_dtor_FUN_00503050(
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CMotionControllerTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CMotionControllerTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  *(byte ***)&this_ptr->field_0x50 =
-       &PTR_core_motion_cpp_CMotionController_dtor_FUN_00503050_005fa5e4;
+  this_ptr->vtable =
+       (CMotionController_vtable *)&PTR_core_motion_cpp_CMotionController_dtor_FUN_00503050_005fa5e4
+  ;
   if ((flags & 2) == 0) {
     return this_ptr;
   }

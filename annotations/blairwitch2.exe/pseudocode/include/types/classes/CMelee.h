@@ -4,13 +4,27 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CWeapon.h"
+#include "types/enums/EAmmoType.h"
 
 // Structure: CMelee
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x828 (2088 bytes)
 #pragma pack(push, 1)
 typedef struct CMelee {
-    char field_0[2088]; // 0x0
+    CWeapon base; // 0x0
+    int allowed_attack_types; // 0x6d4
+    float strength_lo; // 0x6d8
+    float strength_hi; // 0x6dc
+    float dismember_prob; // 0x6e0
+    int can_go_in_inventory; // 0x6e4
+    int blood_gore_type; // 0x6e8
+    int blood_spurt_count; // 0x6ec
+    float blood_spurt_timer; // 0x6f0
+    float blood_spurt_interval; // 0x6f4
+    EAmmoType ammo_type; // 0x6f8
+    char thrust_hit_character_sound[100]; // 0x6fc
+    char swing_hit_character_sound[100]; // 0x760
+    char hit_other_sound[100]; // 0x7c4
 } CMelee;
 #pragma pack(pop)
 

@@ -1,0 +1,662 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 582,
+    "complexity_score": 459,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 23,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 129,
+    "suspect_count": 31,
+    "suspect_types": [
+      "pointer_cast",
+      "undefined_data",
+      "warning_overlapping_globals",
+      "warning_unreachable"
+    ],
+    "total_lines": 711
+  },
+  "cross_references": [
+    {
+      "addr": "004668a0",
+      "from_addr": "0046695f",
+      "name": "core_dmodel.cpp_CKeyFramedModel_load_FUN_004668a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00466be0",
+    "address_range": [
+      [
+        "00466be0",
+        "00467151"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00466be0",
+    "signature": "void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00466be0(CKeyFramedModel *this_ptr,_FILE *file)"
+  },
+  "function_calls": [
+    {
+      "addr": "00468340",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_00468340"
+    },
+    {
+      "addr": "00467650",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_FUN_00467650"
+    },
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "005c1268",
+      "is_variadic": false,
+      "name": "crt_memory.c_operator_new_array_FUN_005c1268"
+    },
+    {
+      "addr": "005c0530",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fgetc_FUN_005c0530"
+    },
+    {
+      "addr": "005c04b0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fscanf_FUN_005c04b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d938a",
+      "name": "DAT_005d938a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d938e",
+      "name": "s_core_dmodel_cpp_005d938e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d93a1",
+      "name": "s_KFM_file_is_invalid_vers_005d93a1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d93c0",
+      "name": "s_core_dmodel_cpp_005d93c0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d93d3",
+      "name": "s_KFM_file_is_version_d_th_005d93d3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9416",
+      "name": "s_d_d_d_d_d_005d9416",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9426",
+      "name": "DAT_005d9426",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d942a",
+      "name": "DAT_005d942a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d942e",
+      "name": "DAT_005d942e",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d9432",
+      "name": "DAT_005d9432",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d9436",
+      "name": "s_d_d_d_005d9436",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9440",
+      "name": "s_d_d_005d9440",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9446",
+      "name": "s_d_d_d_005d9446",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9451",
+      "name": "DAT_005d9451",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d9453",
+      "name": "s_core_dmodel_cpp_005d9453",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9466",
+      "name": "s_Out_of_memory_for_envMap_005d9466",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9487",
+      "name": "DAT_005d9487",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d948b",
+      "name": "s_anon_005d948b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9492",
+      "name": "s_d_d_005d9492",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9499",
+      "name": "s_core_dmodel_cpp_005d9499",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d94ac",
+      "name": "s_Error_reading_KFM_model_005d94ac",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0046695f",
+        "call_type": "direct",
+        "caller": "core_dmodel.cpp_CKeyFramedModel_load_FUN_004668a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.488738738738738,
+    "instruction_count": 444,
+    "opcode_distribution": {
+      "BOOL_AND": 12,
+      "BOOL_NEGATE": 25,
+      "BOOL_OR": 5,
+      "BRANCH": 6,
+      "CALL": 31,
+      "CBRANCH": 53,
+      "COPY": 329,
+      "INT_ADD": 157,
+      "INT_AND": 287,
+      "INT_CARRY": 50,
+      "INT_EQUAL": 272,
+      "INT_LESS": 25,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 26,
+      "INT_SBORROW": 36,
+      "INT_SCARRY": 56,
+      "INT_SEXT": 6,
+      "INT_SLESS": 129,
+      "INT_SUB": 145,
+      "INT_XOR": 8,
+      "LOAD": 73,
+      "POPCOUNT": 129,
+      "RETURN": 2,
+      "STORE": 123,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 1993
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0044e010",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00460890",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00477110",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9955
+    },
+    "nocturne.exe": {
+      "addr": "00452990",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 84,
+    "local_size": 76,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CKeyFramedModel *"
+      },
+      {
+        "is_param": true,
+        "name": "file",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00466d8a) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 3,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00466d91) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 4,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00466d9e) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 5,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00466da3) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 6,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00466da8) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 7,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00466d04) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 8,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00466d0b) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 9,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00466d18) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 10,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00466d1d) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 11,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00466d22) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 12,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00466e1d) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 13,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00466d45) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 14,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00466d4c) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 15,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00466d59) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 16,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00466d5e) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 17,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00466d63) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 18,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0046708b) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 19,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00467116) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 20,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004670ac) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 21,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004670b3) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 22,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004670c0) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 23,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004670c5) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 24,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004670ca) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 25,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004670de) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 26,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00467111) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 27,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 49,
+      "match": "DAT_005d938a",
+      "severity": "mild",
+      "text": "_fscanf(file,&DAT_005d938a);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 65,
+      "match": "DAT_005d9426",
+      "severity": "mild",
+      "text": "_fscanf(file,&DAT_005d9426);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 88,
+      "match": "(int *)((int)pSVar1",
+      "severity": "moderate",
+      "text": "if (0 < *(int *)((int)pSVar1->vertices + local_20 + -0x14)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 92,
+      "match": "(int *)((int)pSVar1",
+      "severity": "moderate",
+      "text": "} while (iVar3 < *(int *)((int)pSVar1->vertices + local_20 + -0x14));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 94,
+      "match": "DAT_005d9451",
+      "severity": "mild",
+      "text": "_fscanf(file,&DAT_005d9451);",
+      "type": "undefined_data"
+    }
+  ]
+}

@@ -15,9 +15,9 @@
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
 ;   crt_memory.c_memset_FUN_005bfb70
-;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   sound_snddx.cpp_FUN_00577500
-;   sound_sndmain.cpp_FUN_005773f0
+;   sound_sndmain.cpp_logSoundError_FUN_005773f0
 ;
 ; *****************************************************************************
 
@@ -145,13 +145,13 @@ section .text
     PUSH 0x5f4c35                       ; 00578ba8 | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0xc]                 ; 00578bad
     PUSH EAX                            ; 00578bb1
-    CALL crt_unknown.c_FUN_005bfb40     ; 00578bb2
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 00578bb2
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x10                        ; 00578bb7
     MOV EAX,ESP                         ; 00578bba
     PUSH EAX                            ; 00578bbc
-    CALL sound_sndmain.cpp_FUN_005773f0 ; 00578bbd
-        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005773f0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005773f0 ; 00578bbd
+        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005773f0(char * format)
     ADD ESP,0x4                         ; 00578bc2
     XOR EAX,EAX                         ; 00578bc5
     ADD ESP,0x198                       ; 00578bc7

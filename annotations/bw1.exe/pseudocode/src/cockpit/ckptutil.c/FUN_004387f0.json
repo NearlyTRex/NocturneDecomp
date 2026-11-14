@@ -35,14 +35,14 @@
       "name": "core_main.c_FUN_005030e0"
     },
     {
+      "addr": "005c1268",
+      "is_variadic": false,
+      "name": "crt_memory.c_operator_new_array_FUN_005c1268"
+    },
+    {
       "addr": "005c0344",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005c0344"
-    },
-    {
-      "addr": "005c1268",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c1268"
     }
   ],
   "globals": [
@@ -99,6 +99,14 @@
       "SUBPIECE": 4
     },
     "pcode_op_count": 794
+  },
+  "siblings": {
+    "bw3.exe": {
+      "addr": "00436400",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,
@@ -210,7 +218,7 @@
       "line": 24,
       "match": "param_4",
       "severity": "mild",
-      "text": "piVar1 = (int *)FUN_005c1268(param_4 * 4);",
+      "text": "piVar1 = (int *)operator_new_array(param_4 * 4);",
       "type": "unnamed_param"
     },
     {

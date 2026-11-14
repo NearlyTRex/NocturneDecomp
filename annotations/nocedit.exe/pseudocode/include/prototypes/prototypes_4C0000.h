@@ -298,7 +298,7 @@ void __cdecl core_flies_cpp_CFlies_showEditorHelp_FUN_004ccc70(CFlies *this_ptr,
 CFlies * __cdecl core_flies_cpp_CFlies_dtor_FUN_004cccb0(CFlies *this_ptr,uint flags);
 SFly * __cdecl core_flies_cpp_SFly_ctor_FUN_004ccd20(SFly *this_ptr);
 SFly * __cdecl core_flies_cpp_SFly_dtor_FUN_004ccd40(SFly *this_ptr,uint flags);
-SFly * __cdecl core_flies_cpp_SFly_arrdtor200_FUN_004ccd60(SFly *objs,uint flags);
+SFly * __cdecl core_flies_cpp_SFly_arrdtor200_FUN_004ccd60(SFly *this_ptr,uint flags);
 int __cdecl engine_font_cpp_isRectangleClipped_FUN_004ccd80(int rect_width,int rect_height,int rect_x,int rect_y);
 int __cdecl engine_font_cpp_clipCharacter_FUN_004ccdd0(int *bitmap_offset,int *left_x,int *top_y,int *right_x,int *bottom_y,int bitmap_width );
 CBitFont * __cdecl engine_font_cpp_CBitFont_ctor_FUN_004cce90(CBitFont *this_ptr);

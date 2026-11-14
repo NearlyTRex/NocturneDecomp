@@ -13,7 +13,7 @@ void FUN_005bf210(int param_1)
   int iVar2;
   
   if ((*(byte *)(param_1 + 0xd) & 0x20) == 0) {
-    iVar2 = unkafter_morph_cpp_FUN_005c39c0(*(uint *)(param_1 + 0x10));
+    iVar2 = FUN_005c39c0(*(uint *)(param_1 + 0x10));
     if (iVar2 != 0) {
       bVar1 = *(byte *)(param_1 + 0xd);
       *(byte *)(param_1 + 0xd) = bVar1 | 0x20;

@@ -8,12 +8,12 @@
 ;
 ; XREF[7]:
 ;   core_cloth.cpp_FUN_005ae680 at 005aeabf
-;   core_mimic.cpp_FUN_004f04f0 at 004f0749
-;   core_passngr.cpp_FUN_005115e0 at 0051160a
+;   core_mimic.cpp_CMimic_setup_FUN_004f04f0 at 004f0749
+;   core_passngr.cpp_CPassenger_setup_FUN_005115e0 at 0051160a
 ;   core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_005431b0 at 00543247
 ;   core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_00544380 at 0054444d
-;   core_succubus.cpp_FUN_0056f3a0 at 0056f5ca
-;   core_vampboss.cpp_FUN_00581660 at 0058171d
+;   core_succubus.cpp_CSuccubus_setup_FUN_0056f3a0 at 0056f5ca
+;   core_vampboss.cpp_CVampireBoss_setup_FUN_00581660 at 0058171d
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
@@ -46,7 +46,7 @@ section .text
         ;   Label: LAB_00544e8d
     ADD EBX,0x4                         ; 00544e8e
     CALL core_xform.cpp_setIdentityQuaternion_FUN_00593c40 ; 00544e91
-        ;   XREF to: 00593c40 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_setIdentityQuaternion_FUN_00593c40()
+        ;   XREF to: 00593c40 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_setIdentityQuaternion_FUN_00593c40(CQuaternion4f * quaternion)
     INC ESI                             ; 00544e96
     FLD float ptr [EBX + 0x510]         ; 00544e97
     ADD ESP,0x4                         ; 00544e9d

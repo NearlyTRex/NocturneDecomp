@@ -10,9 +10,9 @@
 ;   core_boxactor.cpp_CLightActor_ctor_FUN_0041cf60 at 0041cf65
 ;   core_boxactor.cpp_factoryFuncBoxActor_FUN_0041bd00 at 0041bd13
 ;   core_doc.cpp_CDoc_ctor_FUN_004500d0 at 004500ea
+;   core_hpbox.cpp_CParticleBox_ctor_FUN_005ac7a0 at 005ac7a6
+;   core_mine.cpp_CSpiritMine_ctor_FUN_005ad3c0 at 005ad3c6
 ;   core_necklace.cpp_CNecklace_ctor_FUN_005adab0 at 005adab5
-;   core_partibox.cpp_CParticleBox_ctor_FUN_005ac7a0 at 005ac7a6
-;   core_spirmine.cpp_CSpiritMine_ctor_FUN_005ad3c0 at 005ad3c6
 ;   core_stone.cpp_CTempleStone_ctor_FUN_00562430 at 00562435
 ;
 ; Called Functions:

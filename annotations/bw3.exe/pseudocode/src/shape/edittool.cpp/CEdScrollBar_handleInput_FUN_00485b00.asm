@@ -7,7 +7,7 @@
 ; CEdScrollBar *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   shape_edittool.cpp_FUN_00483970 at 00483a23
+;   shape_edittool.cpp_CPickList_handleDialogInput_FUN_00483970 at 00483a23
 ;
 ; Referenced Globals:
 ;   void* switchdataD_00485ae8 = 00485d0c
@@ -26,7 +26,7 @@
 ; Called Functions:
 ;   shape_edittool.cpp_CEdScrollBar_clampScrollPosition_FUN_00485ec0
 ;   shape_edittool.cpp_CEdScrollBar_computeThumb_FUN_004859e0
-;   wincore_winrun.cpp_FUN_005806a0
+;   wincore_winrun.cpp_getTime_FUN_005806a0
 ;   wincore_winrun.cpp_setCursorPosition_FUN_005809d0
 ;
 ; *****************************************************************************
@@ -210,8 +210,8 @@ section .text
     MOV dword ptr [EBX],EAX             ; 00485cb1
     JMP 0x00485bc3                      ; 00485cb3
         ;   XREF to: 00485bc3 (UNCONDITIONAL_JUMP)  ; LAB_00485bc3
-    CALL wincore_winrun.cpp_FUN_005806a0 ; 00485cb8
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005806a0()
+    CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 00485cb8
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
         ;   Label: LAB_00485cb8
     MOV ESI,dword ptr [0x01c5bb80]      ; 00485cbd | DAT_01c5bb80
     MOV EDX,EAX                         ; 00485cc3
@@ -355,8 +355,8 @@ section .text
     SUB EBP,EAX                         ; 00485e2b
     MOV dword ptr [0x01c5bb7c],EDI      ; 00485e2d | DAT_01c5bb7c
     MOV dword ptr [EBX],EBP             ; 00485e33
-    CALL wincore_winrun.cpp_FUN_005806a0 ; 00485e35
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005806a0()
+    CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 00485e35
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
         ;   Label: LAB_00485e35
     MOV [0x01c5bb80],EAX                ; 00485e3a | DAT_01c5bb80
     MOV EAX,0x48000                     ; 00485e3f

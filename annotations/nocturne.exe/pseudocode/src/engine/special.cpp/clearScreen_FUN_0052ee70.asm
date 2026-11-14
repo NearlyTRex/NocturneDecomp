@@ -6,13 +6,13 @@
 ;
 ; XREF[28]:
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290 at 004404dc
-;   core_dcube.cpp_FUN_0044b660 at 0044b699
-;   core_game.cpp_CGame_FUN_004a57c0 at 004a5989
+;   core_dcube.cpp_showHelpFile_FUN_0044b660 at 0044b699
 ;   core_game.cpp_CGame_displayActStats_FUN_004a6680 at 004a66b9
 ;   core_game.cpp_CGame_finishAct_FUN_004a6a10 at 004a6a74
 ;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049cd04
 ;   core_game.cpp_CGame_rollCredits_FUN_004a6e90 at 004a701a
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960 at 0049d99e
+;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004a57c0 at 004a5989
 ;   core_level.cpp_CLevelLoader_show_FUN_004c5640 at 004c5900
 ;   core_main.c_finalizeGameSystems_FUN_004c90e0 at 004c9160
 ;   ... and 18 more

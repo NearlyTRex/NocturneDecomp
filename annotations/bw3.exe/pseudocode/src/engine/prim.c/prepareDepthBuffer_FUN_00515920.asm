@@ -1,17 +1,20 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_prim_c_prepareDepthBuffer_FUN_00515920(int param_1,int param_2)
+; void __cdecl engine_prim_c_prepareDepthBuffer_FUN_00515920(SRenderVertex *vertices,int vertex_count)
 ;
+; Parameters:
+; SRenderVertex *  Stack[0x4]:4   vertices
+; int              Stack[0x8]:4   vertex_count
 ;
 ; XREF[7]:
 ;   core_asgaya.cpp_FUN_005a1ea0 at 005a21b0
-;   core_asgaya.cpp_FUN_005a23c0 at 005a264b
-;   engine_3d.c_FUN_00407e30 at 00408091
-;   engine_prim.c_FUN_00515e80 at 00516088
-;   engine_prim.c_FUN_00516de0 at 005170e3
-;   engine_prim.c_FUN_00517480 at 005175f2
-;   unkafter_dpart.cpp_FUN_004673d0 at 004674ea
+;   core_asgaya.cpp_rasterizePolygonCustom_FUN_005a23c0 at 005a264b
+;   core_dpart.cpp_FUN_004673d0 at 004674ea
+;   engine_3d.c_clipAndDrawLine3D_FUN_00407e30 at 00408091
+;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_00517480 at 005175f2
+;   engine_prim.c_renderPolygonSoftware_FUN_00515e80 at 00516088
+;   engine_prim.c_renderScanlinePolygon_FUN_00516de0 at 005170e3
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c6e2b0

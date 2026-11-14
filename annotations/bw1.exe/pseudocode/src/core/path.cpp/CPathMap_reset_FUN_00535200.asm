@@ -8,7 +8,7 @@
 ;
 ; XREF[3]:
 ;   core_path.cpp_CPathMap_ctor_FUN_00532fe0 at 00533003
-;   core_path.cpp_FUN_005334f0 at 0053362a
+;   core_path.cpp_CPathMap_updateIfNeeded_FUN_005334f0 at 0053362a
 ;   core_path.cpp_resetAllPathMaps_FUN_00535280 at 005352c7
 ;
 ; Called Functions:

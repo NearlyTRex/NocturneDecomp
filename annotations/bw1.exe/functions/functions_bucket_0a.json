@@ -82,11 +82,90 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_dstrendr.cpp_blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX_FUN_0048838a",
-    "ret":"undefined1",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"output_buffer",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"ulonglong*"
+        },
+        {
+          "name":"texture_buffer",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"ulonglong*"
+        },
+        {
+          "name":"texture_indices",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"byte*"
+        },
+        {
+          "name":"lightmap_indices",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"byte*"
+        },
+        {
+          "name":"pixel_count",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -101,6 +180,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005c4f0a",
     "ret":"undefined1",
+    "sig":"default",
     "thtarget":"005ca8a4",
     "thunk":true,
     "vars":{
@@ -122,6 +202,7 @@
     "importable":true,
     "name":"crt_kernel32.c_GetModuleHandleA",
     "ret":"HMODULE",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000074",
     "thunk":true,
     "vars":{
@@ -168,6 +249,7 @@
     "importable":true,
     "name":"crt_user32.c_SetFocus",
     "ret":"HWND",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000045",
     "thunk":true,
     "vars":{
@@ -214,6 +296,7 @@
     "importable":true,
     "name":"crt_kernel32.c_SetLastError",
     "ret":"void",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000096",
     "thunk":true,
     "vars":{

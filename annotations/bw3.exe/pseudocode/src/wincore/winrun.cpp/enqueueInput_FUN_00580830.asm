@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   input_value
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_004bb100 at 004bc1ed
+;   core_game.cpp_CGame_processCheatCodes_FUN_004bb100 at 004bc1ed
 ;   wincore_winrun.cpp_FUN_00580a50 at 00580c18
 ;
 ; Referenced Globals:

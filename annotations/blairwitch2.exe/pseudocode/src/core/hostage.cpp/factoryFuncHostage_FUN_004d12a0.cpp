@@ -1,20 +1,20 @@
 // Name: core_hostage.cpp_factoryFuncHostage_FUN_004d12a0
 // Address: 004d12a0
 // Address Range: [[004d12a0, 004d12bb]]
-// Convention: unknown
-// Signature: void core_hostage_cpp_factoryFuncHostage_FUN_004d12a0(void)
+// Convention: __cdecl
+// Signature: CHostage * __cdecl core_hostage_cpp_factoryFuncHostage_FUN_004d12a0(void)
 
 #include "nocturne.h"
 
-void core_hostage_cpp_factoryFuncHostage_FUN_004d12a0(void)
+CHostage * __cdecl core_hostage_cpp_factoryFuncHostage_FUN_004d12a0(void)
 
 {
-  CHostage *this_ptr;
+  CHostage *pCVar1;
   
-  this_ptr = (CHostage *)FUN_005b8be2(0x24730);
-  if (this_ptr == (CHostage *)0x0) {
-    return;
+  pCVar1 = (CHostage *)operator_new(0x24730);
+  if (pCVar1 == (CHostage *)0x0) {
+    return (CHostage *)0x0;
   }
-  core_hostage_cpp_CHostage_ctor_FUN_004d12d0(this_ptr);
-  return;
+  pCVar1 = core_hostage_cpp_CHostage_ctor_FUN_004d12d0(pCVar1);
+  return pCVar1;
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_turret_cpp_staticInit_FUN_005a1fe0(void)
+; void __cdecl core_turret_cpp_staticInit_FUN_005a1fe0(void)
 ;
 ;
 ; Called Functions:

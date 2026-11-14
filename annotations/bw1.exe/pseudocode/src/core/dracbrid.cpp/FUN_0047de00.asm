@@ -35,7 +35,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_dracbrid.cpp_FUN_0047b510 at 0047b5a7
+;   core_dracbrid.cpp_CDraculaBride_process_FUN_0047b510 at 0047b5a7
 ;
 ; Referenced Globals:
 ;   undefined4 s_s_5_2f_5_2f_5_2f_005dafd4+1
@@ -56,12 +56,12 @@
 ;   ... and 15 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cc00
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_spline.cpp_FUN_00583d60
 ;   core_spline.cpp_FUN_00583f90
 ;   core_spline.cpp_FUN_005841d0
-;   engine_console.cpp_FUN_00445430
-;   sound_sndmain.cpp_FUN_005735a0
+;   engine_console.cpp_CConsole_printf_FUN_00445430
+;   sound_sndmain.cpp_isSfxPlaying_FUN_005735a0
 ;
 ; *****************************************************************************
 
@@ -120,8 +120,8 @@ section .text
         ;   Label: LAB_0047de76
     MOV EBX,dword ptr [EAX]             ; 0047de7a | DAT_01bc0da8
     PUSH EBX                            ; 0047de7c
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 0047de7d
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 0047de7d
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 0047de82
     TEST EAX,EAX                        ; 0047de85
     JZ 0x0047e026                       ; 0047de87
@@ -198,11 +198,11 @@ section .text
     LEA EDI,[ESP + 0x24]                ; 0047df65
     MOV ESI,0x1fe37f0                   ; 0047df69
     PUSH 0xc0a00000                     ; 0047df6e
-    MOVSD ES:EDI,ESI                    ; 0047df73 | g_CDemonCameraInstance.field4_0x4
-    MOVSD ES:EDI,ESI                    ; 0047df74 | g_CDemonCameraInstance.field8_0x8
-    MOVSD ES:EDI,ESI                    ; 0047df75 | g_CDemonCameraInstance.field12_0xc
-    CALL core_actor.cpp_FUN_0040cc00    ; 0047df76
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    MOVSD ES:EDI,ESI                    ; 0047df73 | g_CDemonCameraInstance.base.position
+    MOVSD ES:EDI,ESI                    ; 0047df74 | g_CDemonCameraInstance.base.position+4
+    MOVSD ES:EDI,ESI                    ; 0047df75 | g_CDemonCameraInstance.base.position+8
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 0047df76
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     LEA EDI,[ESP + 0x40]                ; 0047df7b
     MOV dword ptr [ESP + 0x94],EAX      ; 0047df7f
     LEA ESI,[ESP + 0x28]                ; 0047df86
@@ -215,8 +215,8 @@ section .text
     FADD float ptr [ESP + 0x3c]         ; 0047df9c
     PUSH 0xc0000000                     ; 0047dfa0
     FSTP float ptr [ESP + 0x40]         ; 0047dfa5
-    CALL core_actor.cpp_FUN_0040cc00    ; 0047dfa9
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 0047dfa9
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [ESP + 0x94],EAX      ; 0047dfae
     FLD float ptr [ESP + 0x94]          ; 0047dfb5
     ADD ESP,0x8                         ; 0047dfbc
@@ -224,8 +224,8 @@ section .text
     FADD float ptr [ESP + 0x40]         ; 0047dfc4
     PUSH 0xc0a00000                     ; 0047dfc8
     FSTP float ptr [ESP + 0x44]         ; 0047dfcd
-    CALL core_actor.cpp_FUN_0040cc00    ; 0047dfd1
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 0047dfd1
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [ESP + 0x94],EAX      ; 0047dfd6
     FLD float ptr [ESP + 0x94]          ; 0047dfdd
     ADD ESP,0x8                         ; 0047dfe4
@@ -309,8 +309,8 @@ section .text
     PUSH 0x5dafd5                       ; 0047e0c3 | s_s_5_2f_5_2f_5_2f_005dafd4+1
     MOV EDI,dword ptr [0x00611100]      ; 0047e0c8 | g_CConsolePtr
     PUSH EDI                            ; 0047e0ce | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 0047e0cf
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 0047e0cf
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x20                        ; 0047e0d4
     MOV EAX,dword ptr [ESP + 0x7c]      ; 0047e0d7
     ADD EAX,0x44                        ; 0047e0db

@@ -2,63 +2,63 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 5,
+    "complexity_score": 4,
     "cross_reference_count": 8,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 5,
+    "pseudocode_lines": 4,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 8
+    "total_lines": 7
   },
   "cross_references": [
     {
-      "addr": "00417e20",
-      "from_addr": "00417e56",
-      "name": "core_boneguy.cpp_FUN_00417e20",
+      "addr": "004192a0",
+      "from_addr": "00419325",
+      "name": "core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004192a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004192a0",
-      "from_addr": "00419325",
-      "name": "core_boneguy.cpp_FUN_004192a0",
+      "addr": "00417e20",
+      "from_addr": "00417e56",
+      "name": "core_boneguy.cpp_getWorldBoundingBoxCenter_FUN_00417e20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e2e70",
       "from_addr": "004e352f",
-      "name": "core_lightgun.cpp_FUN_004e2e70",
+      "name": "core_lightgun.cpp_CLightGun_fire_FUN_004e2e70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004fd6e0",
       "from_addr": "004fd716",
-      "name": "core_mobster.cpp_FUN_004fd6e0",
+      "name": "core_mobster.cpp_getObjectGrabPointWorld_FUN_004fd6e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00522350",
       "from_addr": "00524c61",
-      "name": "core_script.cpp_FUN_00522350",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00595810",
-      "from_addr": "00595846",
-      "name": "core_zombie.cpp_FUN_00595810",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00595f30",
-      "from_addr": "0059766a",
-      "name": "core_zombie.cpp_FUN_00595f30",
+      "name": "core_script.cpp_CScript_step_FUN_00522350",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005980a0",
       "from_addr": "00598169",
-      "name": "core_zombie.cpp_FUN_005980a0",
+      "name": "core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005980a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00595f30",
+      "from_addr": "0059766a",
+      "name": "core_zombie.cpp_CZombie_process_FUN_00595f30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00595810",
+      "from_addr": "00595846",
+      "name": "core_zombie.cpp_getObjectGrabPointWorld_FUN_00595810",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -70,9 +70,9 @@
         "0040d344"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_actor.cpp_CVector3f_ctor_FUN_0040d340",
-    "signature": "CVector3f * core_actor_cpp_CVector3f_ctor_FUN_0040d340(CVector3f *this_ptr)"
+    "signature": "CVector3f * __cdecl core_actor_cpp_CVector3f_ctor_FUN_0040d340(CVector3f *this_ptr)"
   },
   "function_calls": [],
   "globals": [],
@@ -82,148 +82,118 @@
       {
         "call_addr": "00524c61",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00522350",
-        "estimated_params": 2,
+        "caller": "core_script.cpp_CScript_step_FUN_00522350",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "00419325",
         "call_type": "direct",
-        "caller": "core_boneguy.cpp_FUN_004192a0",
-        "estimated_params": 3,
+        "caller": "core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004192a0",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "0041935f",
         "call_type": "direct",
-        "caller": "core_boneguy.cpp_FUN_004192a0",
-        "estimated_params": 3,
+        "caller": "core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004192a0",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "004e352f",
         "call_type": "direct",
-        "caller": "core_lightgun.cpp_FUN_004e2e70",
-        "estimated_params": 3,
+        "caller": "core_lightgun.cpp_CLightGun_fire_FUN_004e2e70",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "004e358d",
         "call_type": "direct",
-        "caller": "core_lightgun.cpp_FUN_004e2e70",
-        "estimated_params": 3,
+        "caller": "core_lightgun.cpp_CLightGun_fire_FUN_004e2e70",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "0059766a",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_00595f30",
-        "estimated_params": 3,
+        "caller": "core_zombie.cpp_CZombie_process_FUN_00595f30",
+        "estimated_params": 1,
         "instructions_analyzed": 8,
         "method": "push_count",
-        "reg_params": [
-          "EAX",
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "00597ad9",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_00595f30",
-        "estimated_params": 4,
+        "caller": "core_zombie.cpp_CZombie_process_FUN_00595f30",
+        "estimated_params": 1,
         "instructions_analyzed": 9,
         "method": "push_count",
-        "reg_params": [
-          "EAX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "00598169",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_005980a0",
-        "estimated_params": 3,
+        "caller": "core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005980a0",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "005981b8",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_005980a0",
-        "estimated_params": 3,
+        "caller": "core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005980a0",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "00417e56",
         "call_type": "direct",
-        "caller": "core_boneguy.cpp_FUN_00417e20",
-        "estimated_params": 3,
+        "caller": "core_boneguy.cpp_getWorldBoundingBoxCenter_FUN_00417e20",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "declared_params": 1,
     "declared_stack_bytes": 4,
-    "estimated_params": 3,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -236,6 +206,32 @@
       "RETURN": 1
     },
     "pcode_op_count": 6
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0040cfe0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0040d220",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00410340",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0040e160",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 8,

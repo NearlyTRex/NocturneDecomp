@@ -1,0 +1,16 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void __cdecl core_vessel_cpp_CCryptVessel_renderBackground_FUN_00576f60(CCryptVessel *this_ptr,int layer_flag)
+;
+; Parameters:
+; CCryptVessel *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   layer_flag
+;
+; *****************************************************************************
+
+section .text
+
+    RET                                 ; 00576f60
+        ;   Label: core_vessel.cpp_CCryptVessel_renderBackground_FUN_00576f60
+

@@ -9,7 +9,7 @@
 void FUN_005c69a8(uint param_1)
 
 {
-  unkafter_zombie_cpp_FUN_005cba50();
+  FUN_005cba50();
   FUN_005c68f8(param_1);
   return;
 }

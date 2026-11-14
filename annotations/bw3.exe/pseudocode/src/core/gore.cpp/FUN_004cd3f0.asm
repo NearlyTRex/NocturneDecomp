@@ -9,8 +9,8 @@
 ;   CGore* g_CGorePtr = 01d22e44
 ;
 ; Called Functions:
+;   core_gore.cpp_CGore_createGroundBloodSplat_FUN_004ce950
 ;   core_gore.cpp_CGore_createWallBloodSplat_FUN_004ce980
-;   core_gore.cpp_FUN_004ce950
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
     PUSH EDX                            ; 004cd42b
     MOV EAX,[0x005fed24]                ; 004cd42c | g_CGorePtr
     PUSH EAX                            ; 004cd431
-    CALL core_gore.cpp_FUN_004ce950     ; 004cd432
-        ;   XREF to: 004ce950 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ce950(CGore * this_ptr, CVector3f * position, EBloodType blood_type)
+    CALL core_gore.cpp_CGore_createGroundBloodSplat_FUN_004ce950 ; 004cd432
+        ;   XREF to: 004ce950 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_createGroundBloodSplat_FUN_004ce950(CGore * this_ptr, CVector3f * position, EBloodType blood_type)
     ADD ESP,0xc                         ; 004cd437
     MOV EAX,0x1                         ; 004cd43a
     POP EBX                             ; 004cd43f

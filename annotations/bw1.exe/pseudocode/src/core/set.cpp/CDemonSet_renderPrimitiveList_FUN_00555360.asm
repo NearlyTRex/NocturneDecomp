@@ -16,10 +16,10 @@
 ;   CGame* g_CGamePtr = 01ccf390
 ;   undefined4 DAT_01bc120c
 ;   undefined4 DAT_01bc1224
-;   undefined4 g_CGameInstance.field524_0x20c
+;   undefined4 g_CGameInstance.suppress_set_geometry
 ;
 ; Called Functions:
-;   core_mirror.cpp_FUN_00519ba0
+;   core_mirror.cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_00519ba0
 ;   engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_00481b80
 ;
 ; *****************************************************************************
@@ -35,7 +35,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x18]      ; 00555368
     MOV EDI,dword ptr [ESP + 0x1c]      ; 0055536c
     MOV EBX,dword ptr [0x0061d95c]      ; 00555370 | g_CGamePtr
-    CMP dword ptr [EBX + 0x20c],0x0     ; 00555376 | g_CGameInstance.field524_0x20c
+    CMP dword ptr [EBX + 0x20c],0x0     ; 00555376 | g_CGameInstance.suppress_set_geometry
     JNZ 0x005553b0                      ; 0055537d
         ;   XREF to: 005553b0 (CONDITIONAL_JUMP)  ; LAB_005553b0
     MOV EBX,dword ptr [0x00612560]      ; 0055537f | DAT_00612560
@@ -53,8 +53,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x161668]  ; 00555395
     PUSH EAX                            ; 0055539b
     INC EBX                             ; 0055539c
-    CALL core_mirror.cpp_FUN_00519ba0   ; 0055539d
-        ;   XREF to: 00519ba0 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_FUN_00519ba0()
+    CALL core_mirror.cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_00519ba0 ; 0055539d
+        ;   XREF to: 00519ba0 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_00519ba0(CMirror * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESI,0x28                        ; 005553a2
     ADD ESP,0x8                         ; 005553a5
     CMP EBX,EDI                         ; 005553a8

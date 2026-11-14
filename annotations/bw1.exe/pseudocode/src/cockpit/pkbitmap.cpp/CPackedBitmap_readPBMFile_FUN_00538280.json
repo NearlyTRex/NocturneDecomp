@@ -1,0 +1,282 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 217,
+    "complexity_score": 168,
+    "cross_reference_count": 2,
+    "function_call_count": 6,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 103,
+    "suspect_count": 5,
+    "suspect_types": [
+      "stack_param",
+      "unaffected_reg",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 320
+  },
+  "cross_references": [
+    {
+      "addr": "00538480",
+      "from_addr": "005384f5",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_00538480",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005385d0",
+      "from_addr": "005386e7",
+      "name": "cockpit_pkbitmap.cpp_parsePBGFile_FUN_005385d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00538280",
+    "address_range": [
+      [
+        "00538280",
+        "0053847b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_00538280",
+    "signature": "void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_00538280(CPackedBitmap *this_ptr,_FILE *file_handle,int skip_data_load)"
+  },
+  "function_calls": [
+    {
+      "addr": "00537550",
+      "is_variadic": false,
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00537550"
+    },
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "005c08d0",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005c08d0"
+    },
+    {
+      "addr": "005c1268",
+      "is_variadic": false,
+      "name": "crt_memory.c_operator_new_array_FUN_005c1268"
+    },
+    {
+      "addr": "005c0b10",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fread_FUN_005c0b10"
+    },
+    {
+      "addr": "005c170c",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fseek_FUN_005c170c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "005384f5",
+        "call_type": "direct",
+        "caller": "cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_00538480",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005386e7",
+        "call_type": "direct",
+        "caller": "cockpit_pkbitmap.cpp_parsePBGFile_FUN_005385d0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0053870d",
+        "call_type": "direct",
+        "caller": "cockpit_pkbitmap.cpp_parsePBGFile_FUN_005385d0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.1117647058823525,
+    "instruction_count": 170,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 19,
+      "BOOL_OR": 3,
+      "BOOL_XOR": 2,
+      "BRANCH": 3,
+      "CALL": 10,
+      "CBRANCH": 22,
+      "COPY": 130,
+      "INT_ADD": 67,
+      "INT_AND": 135,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 110,
+      "INT_LEFT": 4,
+      "INT_LESS": 20,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 7,
+      "INT_OR": 10,
+      "INT_SBORROW": 22,
+      "INT_SCARRY": 21,
+      "INT_SLESS": 57,
+      "INT_SUB": 62,
+      "INT_XOR": 5,
+      "INT_ZEXT": 4,
+      "LOAD": 42,
+      "POPCOUNT": 53,
+      "RETURN": 2,
+      "STORE": 39
+    },
+    "pcode_op_count": 869
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00516f30",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0050ff60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0054b690",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9057
+    },
+    "nocturne.exe": {
+      "addr": "004f4c80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9172
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPackedBitmap *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "skip_data_load",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "005382b9",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 54,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "((this_ptr->width + -1 != iStack_14 || (this_ptr->height + -1 != unaff_EBP))))",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 73,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "if (in_stack_00000010 != 0) {",
+      "type": "stack_param"
+    }
+  ]
+}

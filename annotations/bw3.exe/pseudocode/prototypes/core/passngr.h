@@ -7,15 +7,15 @@
 
 // Original: core_passngr.cpp_staticInit_FUN_0050a3f0
 // Address: 0050a3f0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_passngr.cpp_factoryFuncPassenger_FUN_0050a420
 // Address: 0050a420
-void factoryFuncPassenger(void);
+CPassenger * __cdecl factoryFuncPassenger(void);
 
 // Original: core_passngr.cpp_CPassenger_getActorType_FUN_0050a440
 // Address: 0050a440
-CDemonActorType * CPassenger::getActorType(CPassenger *this_ptr);
+CDemonActorType * __cdecl CPassenger::getActorType(CPassenger *this_ptr);
 
 // Original: core_passngr.cpp_CPassenger_ctor_FUN_0050a450
 // Address: 0050a450
@@ -23,20 +23,32 @@ CPassenger * __cdecl CPassenger::ctor(CPassenger *this_ptr);
 
 // Original: core_passngr.cpp_CPassenger_dtor_FUN_0050a530
 // Address: 0050a530
-CPassenger * CPassenger::dtor(CPassenger *this_ptr,uint flags);
+CPassenger * __cdecl CPassenger::dtor(CPassenger *this_ptr,uint flags);
 
-// Original: core_passngr.cpp_FUN_0050a610
+// Original: core_passngr.cpp_CPassenger_setup_FUN_0050a610
 // Address: 0050a610
-void FUN_0050a610(int param_1);
+void __cdecl CPassenger::setup(CPassenger *this_ptr);
 
-// Original: core_passngr.cpp_FUN_0050a7d0
+// Original: core_passngr.cpp_CPassenger_process_FUN_0050a7d0
 // Address: 0050a7d0
-void FUN_0050a7d0(CCharacter *param_1,float param_2);
+void __cdecl CPassenger::process(CPassenger *this_ptr,float delta_time);
 
-// Original: core_passngr.cpp_FUN_0050a9b0
+// Original: core_passngr.cpp_CPassenger_renderOpaque_FUN_0050a9b0
 // Address: 0050a9b0
-int FUN_0050a9b0(CDemonActor *param_1);
+int __cdecl CPassenger::renderOpaque(CPassenger *this_ptr);
 
-// Original: core_passngr.cpp_FUN_0050aaa0
+// Original: core_passngr.cpp_CPassenger_archive_FUN_0050aaa0
 // Address: 0050aaa0
-void FUN_0050aaa0(int param_1);
+void __cdecl CPassenger::archive(CPassenger *this_ptr);
+
+// Original: core_passngr.cpp_FUN_0050ab80
+// Address: 0050ab80
+void FUN_0050ab80(void);
+
+// Original: core_passngr.cpp_FUN_0050aba0
+// Address: 0050aba0
+bool FUN_0050aba0(void);
+
+// Original: core_passngr.cpp_FUN_0050abc0
+// Address: 0050abc0
+void FUN_0050abc0(void);

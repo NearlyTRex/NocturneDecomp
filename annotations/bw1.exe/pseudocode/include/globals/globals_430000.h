@@ -12,7 +12,6 @@
 // string
 extern string caseD_0;
 extern string caseD_2;
-extern string caseD_0;
 extern string caseD_2;
 extern string caseD_0;
 extern string caseD_2;

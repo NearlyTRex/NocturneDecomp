@@ -1,0 +1,320 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 116,
+    "complexity_score": 293,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 83,
+    "suspect_count": 18,
+    "suspect_types": [
+      "stack_alignment_array",
+      "stack_param",
+      "stack_ref",
+      "unrolled_memcpy",
+      "warning_overlapping_globals",
+      "warning_type_propagation"
+    ],
+    "total_lines": 199
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004a6fa0",
+    "address_range": [
+      [
+        "004a6fa0",
+        "004a7109"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_flamecan.cpp_CFlameCan_setup_FUN_004a6fa0",
+    "signature": "void __cdecl core_flamecan_cpp_CFlameCan_setup_FUN_004a6fa0(CFlameCan *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408890",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setup_FUN_00408890"
+    },
+    {
+      "addr": "00462580",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00462580"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c0cac",
+      "name": "DAT_005c0cac",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.914285714285715,
+    "instruction_count": 105,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 3,
+      "CALL": 2,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 291,
+      "FLOAT2FLOAT": 25,
+      "FLOAT_ADD": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 79,
+      "INT_AND": 18,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 13,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_MULT": 14,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 6,
+      "INT_SUB": 27,
+      "INT_ZEXT": 18,
+      "LOAD": 39,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 40
+    },
+    "pcode_op_count": 621
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a0760",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004b9010",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004cb200",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.75
+    },
+    "nocturne.exe": {
+      "addr": "0048e410",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.75
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFlameCan *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004a6fa9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 16,
+      "match": "afStackY_1028",
+      "severity": "moderate",
+      "text": "float afStackY_1028 [999];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_ffffff78",
+      "severity": "moderate",
+      "text": "CBoundingBox3D *in_stack_ffffff78;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 42,
+      "match": "in_stack_ffffff78",
+      "severity": "moderate",
+      "text": "(*pCVar4->getBoundingBox)(&this_ptr->base,in_stack_ffffff78);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 43,
+      "match": "&stack0xffffffa8",
+      "severity": "moderate",
+      "text": "puVar6 = (uint *)&stack0xffffffa8;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 44,
+      "match": "&stack0xffffff88",
+      "severity": "moderate",
+      "text": "puVar7 = (uint *)&stack0xffffff88;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 60,
+      "match": "&stack0xffffffc4",
+      "severity": "moderate",
+      "text": "(&stack0xffffffc4)[(uint)bVar8 * -2 + 3] = (&stack0xffffffc4)[(uint)bVar8 * -2 + 6];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 60,
+      "match": "&stack0xffffffc4",
+      "severity": "moderate",
+      "text": "(&stack0xffffffc4)[(uint)bVar8 * -2 + 3] = (&stack0xffffffc4)[(uint)bVar8 * -2 + 6];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 61,
+      "match": "&stack0xffffffc4",
+      "severity": "moderate",
+      "text": "(&stack0xffffffc4)[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4] =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 62,
+      "match": "&stack0xffffffc4",
+      "severity": "moderate",
+      "text": "(&stack0xffffffc4)[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 7];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 68,
+      "match": "&stack0xffffffc4",
+      "severity": "moderate",
+      "text": "(&stack0xffffffc4)[(uint)bVar8 * 0xfffffffe] = (&stack0xffffffc4)[(uint)bVar8 * -2 + 9];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 68,
+      "match": "&stack0xffffffc4",
+      "severity": "moderate",
+      "text": "(&stack0xffffffc4)[(uint)bVar8 * 0xfffffffe] = (&stack0xffffffc4)[(uint)bVar8 * -2 + 9];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 69,
+      "match": "&stack0xffffffc4",
+      "severity": "moderate",
+      "text": "(&stack0xffffffc4)[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 70,
+      "match": "&stack0xffffffc4",
+      "severity": "moderate",
+      "text": "(&stack0xffffffc4)[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 10];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 71,
+      "match": "&stack0xffffffc0",
+      "severity": "moderate",
+      "text": "if (pCVar1 != (CVector3f *)&stack0xffffffc0) {",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 45,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 50,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->flame).base.location.position.x = (this_ptr->base).location.position.x;",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CFlameCan",
+        "offset": 0,
+        "vtable_addr": "005dff74"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

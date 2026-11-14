@@ -11,8 +11,8 @@ CTempleStone * __cdecl core_stone_cpp_CTempleStone_ctor_FUN_00584eb0(CTempleSton
 {
   CTempleStone *pCVar1;
   
-  pCVar1 = (CTempleStone *)core_boxactor_cpp_CBoxActor_ctor_FUN_00421ca0((CBoxActor *)this_ptr);
-  *(byte **)&pCVar1->field_0x154 = &g_CTempleStoneVTable;
-  *(uint *)&pCVar1->field_0x678 = 0;
+  pCVar1 = (CTempleStone *)core_boxactor_cpp_CBoxActor_ctor_FUN_00421ca0(&this_ptr->base);
+  (pCVar1->base).base.vtable._ub = &g_CTempleStoneVTable;
+  pCVar1->dest_actor = (CDemonActor *)0x0;
   return pCVar1;
 }

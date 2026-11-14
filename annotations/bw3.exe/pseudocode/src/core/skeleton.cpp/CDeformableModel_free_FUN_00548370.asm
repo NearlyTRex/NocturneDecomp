@@ -7,11 +7,11 @@
 ; CDeformableModel * Stack[0x4]:4   this_ptr
 ;
 ; XREF[5]:
+;   core_skeleton.cpp_CDeformableModel_allocLOD_FUN_00548580 at 005486ce
 ;   core_skeleton.cpp_CDeformableModel_allocMemory_FUN_00548460 at 00548475
 ;   core_skeleton.cpp_CDeformableModel_dtor_FUN_00548350 at 00548356
-;   core_skeleton.cpp_FUN_00548580 at 005486ce
-;   core_skeleton.cpp_FUN_005501a0 at 005501ae
-;   core_skeleton.cpp_FUN_005503f0 at 00550438
+;   core_skeleton.cpp_freeAllModels_FUN_005501a0 at 005501ae
+;   core_skeleton.cpp_freeUnusedModelsAndSkeletons_FUN_005503f0 at 00550438
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005a28f0

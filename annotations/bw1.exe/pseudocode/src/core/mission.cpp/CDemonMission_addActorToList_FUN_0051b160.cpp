@@ -9,24 +9,24 @@
 void __cdecl core_mission_cpp_CDemonMission_addActorToList_FUN_0051b160(CDemonMission *this_ptr,CDemonActor *actor)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   
   if (actor != (CDemonActor *)0x0) {
-    if (*(char *)actor == '\0') {
+    if (actor->actor_name[0] == '\0') {
       core_mission_cpp_CDemonMission_generateActorName_FUN_0051bd60(this_ptr,actor);
     }
-    iVar1 = *(int *)(this_ptr + 0x111c);
-    if (iVar1 != 0) {
-      *(uint *)&actor->field_0x14c = 0;
-      *(int *)&actor->field_0x150 = iVar1;
-      *(CDemonActor **)(*(int *)(this_ptr + 0x111c) + 0x14c) = actor;
-      *(CDemonActor **)(this_ptr + 0x111c) = actor;
+    pCVar1 = this_ptr->last_actor;
+    if (pCVar1 != (CDemonActor *)0x0) {
+      actor->next_actor = (CDemonActor *)0x0;
+      actor->prev_actor = pCVar1;
+      this_ptr->last_actor->next_actor = actor;
+      this_ptr->last_actor = actor;
       return;
     }
-    *(uint *)&actor->field_0x14c = 0;
-    *(uint *)&actor->field_0x150 = 0;
-    *(CDemonActor **)(this_ptr + 0x1118) = actor;
-    *(CDemonActor **)(this_ptr + 0x111c) = actor;
+    actor->next_actor = (CDemonActor *)0x0;
+    actor->prev_actor = (CDemonActor *)0x0;
+    this_ptr->first_actor = actor;
+    this_ptr->last_actor = actor;
   }
   return;
 }

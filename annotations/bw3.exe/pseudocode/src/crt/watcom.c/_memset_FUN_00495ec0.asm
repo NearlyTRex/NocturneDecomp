@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_watcom_c__memset_FUN_00495ec0(uint param_1)
+; void __fastcall crt_watcom_c__memset_FUN_00495ec0(void *dest,int fill_byte,uint size)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   size
 ;
 ; XREF[4]:
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044c130 at 0044c822

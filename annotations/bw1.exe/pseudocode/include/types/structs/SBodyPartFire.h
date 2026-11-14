@@ -4,13 +4,15 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CFlame.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: SBodyPartFire
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x2b0 (688 bytes)
 #pragma pack(push, 1)
 typedef struct SBodyPartFire {
-    char field_0[688]; // 0x0
+    CVector3f local_position; // 0x0
+    CFlame flame; // 0xc
 } SBodyPartFire;
 #pragma pack(pop)
 

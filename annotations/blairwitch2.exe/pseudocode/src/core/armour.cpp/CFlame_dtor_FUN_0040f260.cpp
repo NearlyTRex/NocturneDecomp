@@ -13,11 +13,11 @@ CFlame * __cdecl core_armour_cpp_CFlame_dtor_FUN_0040f260(CFlame *this_ptr,uint 
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CFlameTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CFlameTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  pCVar1 = (CFlame *)core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)this_ptr,1);
+  pCVar1 = (CFlame *)core_actor_cpp_CDemonActor_dtor_FUN_00408930(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

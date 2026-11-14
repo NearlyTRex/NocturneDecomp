@@ -2,36 +2,35 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 53,
+    "complexity_score": 28,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 13,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 51
   },
   "cross_references": [
     {
-      "addr": "0049a9b0",
-      "from_addr": "0049a9e7",
-      "name": "shape_edittool.cpp_FUN_0049a9b0",
+      "addr": "0049add0",
+      "from_addr": "0049ae0f",
+      "name": "shape_edittool.cpp_CPickList_handleDialogInput_FUN_0049add0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0049add0",
-      "from_addr": "0049ae0f",
-      "name": "shape_edittool.cpp_FUN_0049add0",
+      "addr": "0049a9b0",
+      "from_addr": "0049a9e7",
+      "name": "shape_edittool.cpp_CPickList_handleInput_FUN_0049a9b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0049b830",
       "from_addr": "0049bc9c",
-      "name": "shape_edittool.cpp_FUN_0049b830",
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_0049b830",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -104,7 +103,7 @@
       {
         "call_addr": "0049ae0f",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0049add0",
+        "caller": "shape_edittool.cpp_CPickList_handleDialogInput_FUN_0049add0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -115,7 +114,7 @@
       {
         "call_addr": "0049bc9c",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0049b830",
+        "caller": "shape_edittool.cpp_CPickList_renderDialog_FUN_0049b830",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -126,7 +125,7 @@
       {
         "call_addr": "0049a9e7",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0049a9b0",
+        "caller": "shape_edittool.cpp_CPickList_handleInput_FUN_0049a9b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -211,6 +210,32 @@
     },
     "pcode_op_count": 126
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00483aa0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00484ca0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004a54e0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00476040",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -242,22 +267,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x1ac",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x1ac <= item_index) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x1b0",
-      "severity": "mild",
-      "text": "return (uint)(*(int *)(*(int *)&this_ptr->field_0x1b0 + item_index * 4) != 0);",
-      "type": "unnamed_field"
     }
   ]
 }

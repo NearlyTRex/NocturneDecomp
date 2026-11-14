@@ -35,7 +35,7 @@ section .text
     PUSH dword ptr [ESP + 0x10]         ; 0055b09b
     MOV [0x0264b2bc],EAX                ; 0055b09f | DAT_0264b2bc
     CALL sound_sndmain.cpp_set3DListenerOrientRight_FUN_00552cc0 ; 0055b0a4
-        ;   XREF to: 00552cc0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_set3DListenerOrientRight_FUN_00552cc0()
+        ;   XREF to: 00552cc0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_set3DListenerOrientRight_FUN_00552cc0(float orient_right_x, float orient_right_y, float orient_right_z)
     ADD ESP,0xc                         ; 0055b0a9
     RET                                 ; 0055b0ac
 

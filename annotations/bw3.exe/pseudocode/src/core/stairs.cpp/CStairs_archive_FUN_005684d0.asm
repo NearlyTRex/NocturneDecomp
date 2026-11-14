@@ -33,19 +33,19 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 005684e3
     PUSH EAX                            ; 005684e9
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 005684ea
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 005684ef
     PUSH 0x5d5c85                       ; 005684f2 | DAT_005d5c85
     LEA EAX,[EBX + 0x15c]               ; 005684f7
     PUSH EAX                            ; 005684fd
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 005684fe
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00568503
     PUSH 0x5d5c89                       ; 00568506 | = "width"
     LEA EAX,[EBX + 0x160]               ; 0056850b
     PUSH EAX                            ; 00568511
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 00568512
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00568517
     PUSH 0x5d5c8f                       ; 0056851a | = "count"
     LEA EAX,[EBX + 0x16c]               ; 0056851f

@@ -8,12 +8,12 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[6]:
-;   core_fldnotes.cpp_FUN_004a32c0 at 004a32cc
+;   core_fldnotes.cpp_SNotesEntry_dtor_FUN_004a32c0 at 004a32cc
 ;   core_script.cpp_CScript_dtor_FUN_00521600 at 00521614
 ;   shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0047c760 at 0047c7dc
 ;   shape_edittool.cpp_CPickList_dtor_FUN_004820b0 at 00482104
-;   shape_edittool.cpp_FUN_0047c7ee at 0047c86c
-;   shape_edittool.cpp_FUN_0047c87e at 0047c926
+;   shape_edittool.cpp_FUN_0047c7f0 at 0047c86c
+;   shape_edittool.cpp_FUN_0047c880 at 0047c926
 ;
 ; Referenced Globals:
 ;   undefined1* g_CStrListVTable = 00480d40
@@ -50,7 +50,7 @@ section .text
         ;   Label: LAB_00480d67
     PUSH EBX                            ; 00480d6c
     CALL crt_memory.c___vec_delete_FUN_005b7fa7 ; 00480d6d
-        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005b7fa7()
+        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005b7fa7(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00480d72
     PUSH EAX                            ; 00480d75
     CALL crt_unknown.c_FUN_005b7fce     ; 00480d76

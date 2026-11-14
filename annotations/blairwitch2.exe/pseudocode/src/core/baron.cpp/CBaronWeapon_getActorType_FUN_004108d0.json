@@ -1,0 +1,116 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 3,
+    "complexity_score": 19,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 4,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 7
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004108d0",
+    "address_range": [
+      [
+        "004108d0",
+        "004108d5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_baron.cpp_CBaronWeapon_getActorType_FUN_004108d0",
+    "signature": "CDemonActorType * __cdecl core_baron_cpp_CBaronWeapon_getActorType_FUN_004108d0(CBaronWeapon *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "007bc698",
+      "name": "DAT_007bc698",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.0,
+    "instruction_count": 2,
+    "opcode_distribution": {
+      "COPY": 1,
+      "INT_ADD": 1,
+      "LOAD": 1,
+      "RETURN": 1
+    },
+    "pcode_op_count": 4
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00410450",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00413d30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00411340",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBaronWeapon *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_007bc698",
+      "severity": "mild",
+      "text": "return (CDemonActorType *)&DAT_007bc698;",
+      "type": "undefined_data"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 212,
+        "vtable_addr": "005f2b14"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

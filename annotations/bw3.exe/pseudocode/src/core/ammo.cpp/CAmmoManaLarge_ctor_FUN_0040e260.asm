@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CAmmoManaLarge * core_ammo_cpp_CAmmoManaLarge_ctor_FUN_0040e260(CAmmoManaLarge *this_ptr)
+; CAmmoManaLarge * __cdecl core_ammo_cpp_CAmmoManaLarge_ctor_FUN_0040e260(CAmmoManaLarge *this_ptr)
 ;
 ; Parameters:
 ; CAmmoManaLarge * Stack[0x4]:4   this_ptr
@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_mana_lg_kfm_005b6111
-;   void* g_CAmmo_ManaLargeVTable = 0040def0
+;   CDemonActor_vtable g_CAmmoManaLargeVTable
 ;
 ; Called Functions:
 ;   core_ammo.cpp_CAmmo_ctor_FUN_0040de60
@@ -32,7 +32,7 @@ section .text
     MOV EBX,EAX                         ; 0040e273
     ADD EAX,0x158                       ; 0040e275
     PUSH EAX                            ; 0040e27a
-    MOV dword ptr [EAX + -0x4],0x5db2f4 ; 0040e27b | g_CAmmo_ManaLargeVTable
+    MOV dword ptr [EAX + -0x4],0x5db2f4 ; 0040e27b | g_CAmmoManaLargeVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0 ; 0040e282
         ;   XREF to: 004625f0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0040e287

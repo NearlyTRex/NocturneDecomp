@@ -16,6 +16,12 @@
   },
   "cross_references": [
     {
+      "addr": "004bdb10",
+      "from_addr": "004bdb44",
+      "name": "core_game.cpp_CGame_promptLoadGame_FUN_004bdb10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004bb9b0",
       "from_addr": "004bb9f5",
       "name": "core_game.cpp_FUN_004bb9b0",
@@ -34,15 +40,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004bdb10",
-      "from_addr": "004bdb44",
-      "name": "core_game.cpp_FUN_004bdb10",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00529c10",
       "from_addr": "00529d95",
       "name": "core_script.cpp_CScript_dbLoad_FUN_00529c10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00529f90",
+      "from_addr": "00529fb6",
+      "name": "core_script.cpp_CScript_findDialogEntry_FUN_00529f90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00522080",
+      "from_addr": "0052212a",
+      "name": "core_script.cpp_CScript_initRuntime_FUN_00522080",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -52,21 +64,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00522080",
-      "from_addr": "0052212a",
-      "name": "core_script.cpp_FUN_00522080",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00529f90",
-      "from_addr": "00529fb6",
-      "name": "core_script.cpp_FUN_00529f90",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00461070",
       "from_addr": "0046108c",
-      "name": "engine_dosio.cpp_FUN_00461070",
+      "name": "engine_dosio.cpp_splitPath_FUN_00461070",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -106,7 +106,7 @@
       {
         "call_addr": "0046108c",
         "call_type": "direct",
-        "caller": "engine_dosio.cpp_FUN_00461070",
+        "caller": "engine_dosio.cpp_splitPath_FUN_00461070",
         "estimated_params": 5,
         "instructions_analyzed": 13,
         "method": "push_count",
@@ -161,7 +161,7 @@
       {
         "call_addr": "004bdb44",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bdb10",
+        "caller": "core_game.cpp_CGame_promptLoadGame_FUN_004bdb10",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -183,7 +183,7 @@
       {
         "call_addr": "0052212a",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00522080",
+        "caller": "core_script.cpp_CScript_initRuntime_FUN_00522080",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -205,7 +205,7 @@
       {
         "call_addr": "00529fb6",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00529f90",
+        "caller": "core_script.cpp_CScript_findDialogEntry_FUN_00529f90",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -245,6 +245,32 @@
       "STORE": 28
     },
     "pcode_op_count": 370
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005c2238",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005a5128",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005ff178",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00566498",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 44,

@@ -1,0 +1,68 @@
+// Name: core_tommygun.cpp_CTommyGun_process_FUN_00598d50
+// Address: 00598d50
+// Address Range: [[00598d50, 00598f85]]
+// Convention: __cdecl
+// Signature: void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_00598d50(CTommyGun *this_ptr,float delta_time)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_00598d50(CTommyGun *this_ptr,float delta_time)
+
+{
+  float fVar1;
+  int iVar2;
+  uint uVar3;
+  float10 fVar4;
+  float10 fVar5;
+  CSfxSample CStack_1d4;
+  double dStack_20;
+  double dStack_18;
+  
+  core_weapon_cpp_CWeapon_process_FUN_005ad770(&this_ptr->base,delta_time);
+  if (this_ptr->fire_frames_remaining < 1) {
+    dStack_18 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_00573660(this_ptr->sfx_handles[0],2);
+    fVar1 = (float)dStack_18;
+    if (0.0 <= fVar1) {
+      sound_sndmain_cpp_lockSound_FUN_00575d20();
+      dStack_20 = (double)(fVar1 * _DAT_005f7f44);
+      dStack_18 = floor(dStack_20);
+      fVar4 = (float10)dStack_18;
+      fVar5 = (float10)dStack_20;
+      sound_sndmain_cpp_CSfxSample_init_FUN_00572340(&CStack_1d4);
+      iVar2 = sound_sndmain_cpp_getSfxSampleInfo_FUN_00573620(this_ptr->sfx_handles[0],&CStack_1d4);
+      if (iVar2 != 0) {
+        fVar5 = (float10)CStack_1d4.sample_info.sample_count * (float10)(float)(fVar5 - fVar4) *
+                (float10)_DAT_005f7f48;
+        round();
+        sound_sndmain_cpp_pushSfxOptions_FUN_00572ac0();
+        if (0.0 < (double)(int)ROUND(fVar5)) {
+          sound_sndmain_cpp_setNextSfxTriggerTime_FUN_00572a50((double)(int)ROUND(fVar5),0);
+        }
+        uVar3 = (*((this_ptr->base).base.vtable._ub)->playSound)
+                          ((CDemonActor *)this_ptr,"m-gun-t.wav");
+        this_ptr->sfx_handles[1] = uVar3;
+        sound_sndmain_cpp_popSfxOptions_FUN_00572b40();
+      }
+      sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handles[0]);
+      sound_sndmain_cpp_unlockSound_FUN_00573e70();
+      return;
+    }
+    sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handles[0]);
+    return;
+  }
+  this_ptr->fire_frames_remaining = this_ptr->fire_frames_remaining + -1;
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.9,1.1111112);
+  iVar2 = sound_sndmain_cpp_setSfxBaseFrequency_FUN_00573980(this_ptr->sfx_handles[0],fVar1);
+  if (iVar2 != 0) {
+    return;
+  }
+  sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handles[0]);
+  _sprintf((char *)&CStack_1d4.taken,"$@m-gun1.wav @ 2.3 * %f" + 2);
+  sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handles[1]);
+  uVar3 = (*((this_ptr->base).base.vtable._ub)->playAmbientSound)
+                    ((CDemonActor *)this_ptr,(char *)&CStack_1d4.taken);
+  this_ptr->sfx_handles[0] = uVar3;
+  return;
+}

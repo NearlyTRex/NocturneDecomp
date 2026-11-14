@@ -1,0 +1,190 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 13,
+    "complexity_score": 26,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 11,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 24
+  },
+  "cross_references": [
+    {
+      "addr": "004cf430",
+      "from_addr": "004cf500",
+      "name": "core_game.cpp_CGame_setGameRes_FUN_004cf430",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050aa90",
+      "from_addr": "0050b388",
+      "name": "core_menu.cpp_configureGraphicsOptions_FUN_0050aa90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00581310",
+      "from_addr": "00581f02",
+      "name": "engine_special.cpp_loadExternalRenderer_FUN_00581310",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00582b10",
+    "address_range": [
+      [
+        "00582b10",
+        "00582b2f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_special.cpp_selectCard_FUN_00582b10",
+    "signature": "int __cdecl engine_special_cpp_selectCard_FUN_00582b10(int card_index)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02c83374",
+      "name": "DAT_02c83374",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c83414",
+      "name": "DAT_02c83414",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c834ac",
+      "name": "DAT_02c834ac",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004cf500",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_setGameRes_FUN_004cf430",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00581f02",
+        "call_type": "direct",
+        "caller": "engine_special.cpp_loadExternalRenderer_FUN_00581310",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0050b388",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_configureGraphicsOptions_FUN_0050aa90",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.7,
+    "instruction_count": 10,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 7,
+      "INT_ADD": 4,
+      "INT_AND": 6,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 3,
+      "INT_XOR": 1,
+      "LOAD": 3,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 2
+    },
+    "pcode_op_count": 47
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005600c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005663e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005b7d90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8421
+    },
+    "nocturne.exe": {
+      "addr": "00532d00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8421
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "card_index",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 17,
+    "complexity_score": 9,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 26
+  },
+  "cross_references": [
+    {
+      "addr": "004351b0",
+      "from_addr": "004351b6",
+      "name": "core_cloth.cpp_CCloth_allocMemory_FUN_004351b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00435160",
+      "from_addr": "00435166",
+      "name": "core_cloth.cpp_CCloth_dtor_FUN_00435160",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00435210",
+    "address_range": [
+      [
+        "00435210",
+        "00435235"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_cloth.cpp_CCloth_free_FUN_00435210",
+    "signature": "void __cdecl core_cloth_cpp_CCloth_free_FUN_00435210(CCloth *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00564486",
+      "is_variadic": false,
+      "name": "shape_memdbg.cpp_free_FUN_00564486"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00435166",
+        "call_type": "direct",
+        "caller": "core_cloth.cpp_CCloth_dtor_FUN_00435160",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004351b6",
+        "call_type": "direct",
+        "caller": "core_cloth.cpp_CCloth_allocMemory_FUN_004351b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0,
+    "instruction_count": 13,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 11,
+      "INT_ADD": 8,
+      "INT_AND": 5,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 3,
+      "LOAD": 6,
+      "POPCOUNT": 2,
+      "RETURN": 2,
+      "STORE": 4
+    },
+    "pcode_op_count": 52
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005ade80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0043e6a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0043c300",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00438cb0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8125
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCloth *"
+      }
+    ]
+  },
+  "suspects": []
+}

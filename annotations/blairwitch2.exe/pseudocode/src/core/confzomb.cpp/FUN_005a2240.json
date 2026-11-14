@@ -2,24 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 217,
-    "complexity_score": 668,
+    "complexity_score": 638,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 78,
-    "suspect_count": 54,
+    "suspect_count": 52,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
       "undefined_data",
-      "unknown_field",
       "unnamed_param",
       "unresolved_funcptr",
-      "warning_overlapping_globals",
-      "warning_type_propagation"
+      "warning_overlapping_globals"
     ],
     "total_lines": 295
   },
@@ -38,9 +36,24 @@
   },
   "function_calls": [
     {
+      "addr": "0059f570",
+      "is_variadic": false,
+      "name": "core_basicene.cpp_FUN_0059f570"
+    },
+    {
+      "addr": "005a01a0",
+      "is_variadic": false,
+      "name": "core_basicene.cpp_FUN_005a01a0"
+    },
+    {
+      "addr": "005a8180",
+      "is_variadic": false,
+      "name": "core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180"
+    },
+    {
       "addr": "005b1890",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_005b1890"
+      "name": "core_cloth.cpp_CClothList_setWindVelocity_FUN_005b1890"
     },
     {
       "addr": "00503620",
@@ -50,32 +63,17 @@
     {
       "addr": "0059d7f0",
       "is_variadic": false,
-      "name": "unkaddr_0059d350.cpp_FUN_0059d7f0"
+      "name": "core_muzzle.cpp_FUN_0059d7f0"
     },
     {
       "addr": "0059daa0",
       "is_variadic": false,
-      "name": "unkaddr_0059d350.cpp_FUN_0059daa0"
+      "name": "core_muzzle.cpp_FUN_0059daa0"
     },
     {
       "addr": "0059dae0",
       "is_variadic": false,
-      "name": "unkaddr_0059d350.cpp_FUN_0059dae0"
-    },
-    {
-      "addr": "0059f570",
-      "is_variadic": false,
-      "name": "unkafter_basicene.cpp_FUN_0059f570"
-    },
-    {
-      "addr": "005a01a0",
-      "is_variadic": false,
-      "name": "unkafter_basicene.cpp_FUN_005a01a0"
-    },
-    {
-      "addr": "005a8180",
-      "is_variadic": false,
-      "name": "unkafter_superopt.cpp_FUN_005a8180"
+      "name": "core_muzzle.cpp_FUN_0059dae0"
     }
   ],
   "globals": [
@@ -246,16 +244,8 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
       "description": "Overlapping global symbols",
-      "line": 3,
+      "line": 2,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
@@ -263,7 +253,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 5,
+      "line": 4,
       "match": "param_1",
       "severity": "mild",
       "text": "void core_confzomb_cpp_FUN_005a2240(int param_1,float param_2)",
@@ -271,7 +261,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 5,
+      "line": 4,
       "match": "param_2",
       "severity": "mild",
       "text": "void core_confzomb_cpp_FUN_005a2240(int param_1,float param_2)",
@@ -279,7 +269,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 14,
+      "line": 13,
       "match": "afStackY_102c",
       "severity": "moderate",
       "text": "float afStackY_102c [1014];",
@@ -290,7 +280,7 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "unkafter_superopt_cpp_FUN_005a8180(param_1 + 0x264,param_2);",
+      "text": "((CSimpleParticleSystem *)(param_1 + 0x264),param_2);",
       "type": "unnamed_param"
     },
     {
@@ -298,7 +288,7 @@
       "line": 27,
       "match": "param_2",
       "severity": "mild",
-      "text": "unkafter_superopt_cpp_FUN_005a8180(param_1 + 0x264,param_2);",
+      "text": "((CSimpleParticleSystem *)(param_1 + 0x264),param_2);",
       "type": "unnamed_param"
     },
     {
@@ -306,7 +296,7 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = unkaddr_0059d350_cpp_FUN_0059daa0(param_1 + 0x10af8,&DAT_005efe97);",
+      "text": "iVar3 = core_muzzle_cpp_FUN_0059daa0(param_1 + 0x10af8,&DAT_005efe97);",
       "type": "unnamed_param"
     },
     {
@@ -314,7 +304,7 @@
       "line": 28,
       "match": "DAT_005efe97",
       "severity": "mild",
-      "text": "iVar3 = unkaddr_0059d350_cpp_FUN_0059daa0(param_1 + 0x10af8,&DAT_005efe97);",
+      "text": "iVar3 = core_muzzle_cpp_FUN_0059daa0(param_1 + 0x10af8,&DAT_005efe97);",
       "type": "undefined_data"
     },
     {
@@ -338,7 +328,7 @@
       "line": 34,
       "match": "DAT_005efe9c",
       "severity": "mild",
-      "text": "iVar4 = unkaddr_0059d350_cpp_FUN_0059daa0(iVar3,&DAT_005efe9c);",
+      "text": "iVar4 = core_muzzle_cpp_FUN_0059daa0(iVar3,&DAT_005efe9c);",
       "type": "undefined_data"
     },
     {
@@ -362,7 +352,7 @@
       "line": 40,
       "match": "param_1",
       "severity": "mild",
-      "text": "unkafter_basicene_cpp_FUN_005a01a0(param_1,*(uint *)(param_1 + 0x113c4),0x3f800000,0x3f000000);",
+      "text": "core_basicene_cpp_FUN_005a01a0(param_1,*(uint *)(param_1 + 0x113c4),0x3f800000,0x3f000000);",
       "type": "unnamed_param"
     },
     {
@@ -370,7 +360,7 @@
       "line": 40,
       "match": "param_1",
       "severity": "mild",
-      "text": "unkafter_basicene_cpp_FUN_005a01a0(param_1,*(uint *)(param_1 + 0x113c4),0x3f800000,0x3f000000);",
+      "text": "core_basicene_cpp_FUN_005a01a0(param_1,*(uint *)(param_1 + 0x113c4),0x3f800000,0x3f000000);",
       "type": "unnamed_param"
     },
     {
@@ -378,7 +368,7 @@
       "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "unkafter_basicene_cpp_FUN_0059f570(param_1);",
+      "text": "core_basicene_cpp_FUN_0059f570(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -394,7 +384,7 @@
       "line": 47,
       "match": "DAT_005efed1",
       "severity": "mild",
-      "text": "(iVar3 = unkaddr_0059d350_cpp_FUN_0059daa0(iVar3,&DAT_005efed1), iVar3 == 0)) {",
+      "text": "(iVar3 = core_muzzle_cpp_FUN_0059daa0(iVar3,&DAT_005efed1), iVar3 == 0)) {",
       "type": "undefined_data"
     },
     {
@@ -566,19 +556,11 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 76,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "CStack_2c._0_4_ = fStack_44 * param_2;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 76,
       "match": "param_2",
       "severity": "mild",
-      "text": "CStack_2c._0_4_ = fStack_44 * param_2;",
+      "text": "CStack_2c.x = fStack_44 * param_2;",
       "type": "unnamed_param"
     },
     {
@@ -618,7 +600,7 @@
       "line": 77,
       "match": "(int)&CStack_2c",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_2c + (uint)bVar5 * -8 + 4) = afStack_1c[(uint)bVar5 * 0xfffffffe];",
+      "text": "*(float *)((int)&CStack_2c + (uint)bVar5 * -8 + 4) = afStack_1c[(uint)bVar5 * -2];",
       "type": "pointer_truncation"
     },
     {
@@ -666,7 +648,7 @@
       "line": 77,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&CStack_2c + (uint)bVar5 * -8 + 4) = afStack_1c[(uint)bVar5 * 0xfffffffe];",
+      "text": "*(float *)((int)&CStack_2c + (uint)bVar5 * -8 + 4) = afStack_1c[(uint)bVar5 * -2];",
       "type": "pointer_cast"
     },
     {

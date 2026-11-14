@@ -9,16 +9,16 @@
 void __cdecl core_dcamera_cpp_CDemonCamera_free_FUN_0043b730(CDemonCamera *this_ptr)
 
 {
-  if (*(int *)&this_ptr->field_0x160 != 0) {
-    FUN_005b86a0(*(int *)&this_ptr->field_0x160);
+  if (this_ptr->framebuffer_raw != (void *)0x0) {
+    FUN_005b86a0(this_ptr->framebuffer_raw);
   }
-  *(uint *)&this_ptr->field_0x160 = 0;
-  *(uint *)&this_ptr->field_0x158 = 0;
-  if (*(int *)&this_ptr->field_0x164 != 0) {
-    FUN_005b86a0(*(int *)&this_ptr->field_0x164);
+  this_ptr->framebuffer_raw = (void *)0x0;
+  this_ptr->framebuffer_aligned = (void *)0x0;
+  if (this_ptr->zbuffer_raw != (void *)0x0) {
+    FUN_005b86a0(this_ptr->zbuffer_raw);
   }
-  *(uint *)&this_ptr->field_0x164 = 0;
-  *(uint *)&this_ptr->field_0x1d0 = 0;
-  *(uint *)&this_ptr->field_0x15c = 0;
+  this_ptr->zbuffer_raw = (void *)0x0;
+  this_ptr->rect_array_count = 0;
+  this_ptr->zbuffer_aligned = (void *)0x0;
   return;
 }

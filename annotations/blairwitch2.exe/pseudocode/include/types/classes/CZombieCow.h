@@ -4,13 +4,17 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
 
 // Structure: CZombieCow
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x10b2c (68396 bytes)
 #pragma pack(push, 1)
 typedef struct CZombieCow {
-    char field_0[68396]; // 0x0
+    CEnemy base; // 0x0
+    int bone_spine; // 0x10af8
+    int bone_head; // 0x10afc
+    uint sfx_handle; // 0x10b00
+    int part_indices[10]; // 0x10b04
 } CZombieCow;
 #pragma pack(pop)
 

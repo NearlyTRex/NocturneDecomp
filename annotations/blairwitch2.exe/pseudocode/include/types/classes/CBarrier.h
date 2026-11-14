@@ -4,13 +4,17 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CBarrier
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x38c (908 bytes)
 #pragma pack(push, 1)
 typedef struct CBarrier {
-    char field_0[908]; // 0x0
+    CDemonActor base; // 0x0
+    CVector3f size; // 0x2b4
+    int add_to_path_grid; // 0x2c0
+    char effect_class_name_list[200]; // 0x2c4
 } CBarrier;
 #pragma pack(pop)
 

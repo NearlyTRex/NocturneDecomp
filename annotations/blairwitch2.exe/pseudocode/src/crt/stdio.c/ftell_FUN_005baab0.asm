@@ -1,20 +1,22 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_stdio_c_ftell_FUN_005baab0(int param_1)
+; long __cdecl crt_stdio_c_ftell_FUN_005baab0(_FILE *file_handle)
 ;
+; Parameters:
+; _FILE *          Stack[0x4]:4   file_handle
 ;
 ; XREF[10]:
-;   core_fldnotes.cpp_FUN_004a41b0 at 004a4266
+;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0 at 004a4266
 ;   core_game.cpp_FUN_004bbf70 at 004bc103
 ;   core_script.cpp_CScript_dbLoad_FUN_00529c10 at 00529c76
 ;   core_script.cpp_FUN_00521cf0 at 00521dbe
 ;   crt_stdio.c_fclose_FUN_005b8af0 at 005b8b34
-;   engine_pod.cpp_FUN_00519f00 at 0051a6a3
+;   engine_pod.cpp_CPodFile_mountFromFile_FUN_00519f00 at 0051a6a3
 ;   sound_mp3.cpp_FUN_005048e0 at 00504912
 ;   sound_mp3.cpp_FUN_00509db0 at 00509e0f
-;   support_newmsg.cpp_FUN_0050f9e0 at 0050fa35
-;   support_trstream.cpp_FUN_0057dd20 at 0057dd32
+;   support_newmsg.cpp_readMessageFile_FUN_0050f9e0 at 0050fa35
+;   support_trstream.cpp_COutStreamFile_tell_FUN_0057dd20 at 0057dd32
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2a8 = 005bce04

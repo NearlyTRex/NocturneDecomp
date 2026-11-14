@@ -9,46 +9,46 @@
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_init_FUN_00465d70(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface )
 
 {
-  *(int *)(this_ptr + 8) = x;
-  *(int *)(this_ptr + 0xc) = y;
-  *(int *)this_ptr = width;
-  *(int *)(this_ptr + 4) = height;
-  *(uint *)(this_ptr + 0x10) = *(uint *)(this_ptr + 8);
-  *(uint *)(this_ptr + 0x14) = *(uint *)(this_ptr + 0xc);
-  *(int *)(this_ptr + 0x18) = *(int *)(this_ptr + 8) + *(int *)this_ptr + -1;
-  *(int *)(this_ptr + 0x1c) = *(int *)(this_ptr + 0xc) + *(int *)(this_ptr + 4) + -1;
+  this_ptr->x = x;
+  this_ptr->y = y;
+  this_ptr->width = width;
+  this_ptr->height = height;
+  this_ptr->clip_left = this_ptr->x;
+  this_ptr->clip_top = this_ptr->y;
+  this_ptr->clip_right = this_ptr->x + this_ptr->width + -1;
+  this_ptr->clip_bottom = this_ptr->y + this_ptr->height + -1;
   if (parent_surface != (CDrawSurface *)0x0) {
-    *(int *)(this_ptr + 8) = *(int *)(this_ptr + 8) + *(int *)(parent_surface + 8);
-    *(int *)(this_ptr + 0xc) = *(int *)(this_ptr + 0xc) + *(int *)(parent_surface + 0xc);
-    *(int *)(this_ptr + 0x10) = *(int *)(this_ptr + 0x10) + *(int *)(parent_surface + 8);
-    *(int *)(this_ptr + 0x14) = *(int *)(this_ptr + 0x14) + *(int *)(parent_surface + 0xc);
-    *(int *)(this_ptr + 0x18) = *(int *)(this_ptr + 0x18) + *(int *)(parent_surface + 8);
-    *(int *)(this_ptr + 0x1c) = *(int *)(this_ptr + 0x1c) + *(int *)(parent_surface + 0xc);
-    if (*(int *)(this_ptr + 0x10) < *(int *)(parent_surface + 0x10)) {
-      *(int *)(this_ptr + 0x10) = *(int *)(parent_surface + 0x10);
+    this_ptr->x = this_ptr->x + parent_surface->x;
+    this_ptr->y = this_ptr->y + parent_surface->y;
+    this_ptr->clip_left = this_ptr->clip_left + parent_surface->x;
+    this_ptr->clip_top = this_ptr->clip_top + parent_surface->y;
+    this_ptr->clip_right = this_ptr->clip_right + parent_surface->x;
+    this_ptr->clip_bottom = this_ptr->clip_bottom + parent_surface->y;
+    if (this_ptr->clip_left < parent_surface->clip_left) {
+      this_ptr->clip_left = parent_surface->clip_left;
     }
-    if (*(int *)(this_ptr + 0x14) < *(int *)(parent_surface + 0x14)) {
-      *(int *)(this_ptr + 0x14) = *(int *)(parent_surface + 0x14);
+    if (this_ptr->clip_top < parent_surface->clip_top) {
+      this_ptr->clip_top = parent_surface->clip_top;
     }
-    if (*(int *)(parent_surface + 0x18) < *(int *)(this_ptr + 0x18)) {
-      *(int *)(this_ptr + 0x18) = *(int *)(parent_surface + 0x18);
+    if (parent_surface->clip_right < this_ptr->clip_right) {
+      this_ptr->clip_right = parent_surface->clip_right;
     }
-    if (*(int *)(parent_surface + 0x1c) < *(int *)(this_ptr + 0x1c)) {
-      *(int *)(this_ptr + 0x1c) = *(int *)(parent_surface + 0x1c);
+    if (parent_surface->clip_bottom < this_ptr->clip_bottom) {
+      this_ptr->clip_bottom = parent_surface->clip_bottom;
     }
   }
-  if (*(int *)(this_ptr + 0x10) < 0) {
-    *(uint *)(this_ptr + 0x10) = 0;
+  if (this_ptr->clip_left < 0) {
+    this_ptr->clip_left = 0;
   }
-  if (*(int *)(this_ptr + 0x14) < 0) {
-    *(uint *)(this_ptr + 0x14) = 0;
+  if (this_ptr->clip_top < 0) {
+    this_ptr->clip_top = 0;
   }
-  if (DAT_006141b8 <= *(int *)(this_ptr + 0x18)) {
-    *(int *)(this_ptr + 0x18) = DAT_006141b8 + -1;
+  if (DAT_006141b8 <= this_ptr->clip_right) {
+    this_ptr->clip_right = DAT_006141b8 + -1;
   }
-  if (*(int *)(this_ptr + 0x1c) < DAT_006141bc) {
+  if (this_ptr->clip_bottom < DAT_006141bc) {
     return;
   }
-  *(int *)(this_ptr + 0x1c) = DAT_006141bc + -1;
+  this_ptr->clip_bottom = DAT_006141bc + -1;
   return;
 }

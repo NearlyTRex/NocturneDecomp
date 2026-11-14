@@ -14,18 +14,18 @@ void core_set_cpp_FUN_00536f90(CDemonSet *param_1)
   int iVar1;
   int iVar2;
   int iVar3;
-  uint *puVar4;
+  float *pfVar4;
   CVector3f *pCVar5;
   byte bVar6;
   float10 fVar7;
   float10 fVar8;
   float10 fVar9;
-  uint local_74 [6];
+  float local_74 [6];
   CVector3f CStack_5c;
   CVector3f CStack_50;
   CVector3f local_44;
   CVector3f CStack_38;
-  int local_2c;
+  char *local_2c;
   int local_28;
   int iStack_24;
   int iStack_20;
@@ -36,7 +36,7 @@ void core_set_cpp_FUN_00536f90(CDemonSet *param_1)
   bVar6 = 0;
   _DAT_0207babc = 0;
   _DAT_0207bab8 = 0;
-  if ((*(int *)&g_CGamePtr->field_0x24c == 0) &&
+  if ((g_CGamePtr->letterbox_mode == 0) &&
      (iVar1 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04), iVar1 != 0)) {
     if (*(int *)(iVar1 + 0x20b68) != 0) {
       _DAT_0207bab8 = *(int *)(iVar1 + 0x20b70);
@@ -46,9 +46,9 @@ void core_set_cpp_FUN_00536f90(CDemonSet *param_1)
     fVar7 = (float10)fcos((float10)*(float *)(iVar1 + 0x20b90));
     _DAT_0207bac0 = (float)(fVar7 + (float10)_DAT_005d05ef);
   }
-  local_28 = *(int *)&param_1->field_0x15f6fc + -1;
+  local_28 = param_1->sorted_render_actor_count + -1;
   if (-1 < local_28) {
-    local_2c = local_28 * 4 + (int)param_1;
+    local_2c = param_1->cameras[0].name + param_1->sorted_render_actor_count * 4 + -8;
     do {
       iVar1 = *(int *)(local_2c + 0x15f700);
       if (*(int *)(iVar1 + 0xfc) == 0) {
@@ -56,22 +56,22 @@ void core_set_cpp_FUN_00536f90(CDemonSet *param_1)
       }
       else {
         (**(code **)(*(int *)(iVar1 + 0x154) + 0x1c))(iVar1);
-        puVar4 = local_74;
+        pfVar4 = local_74;
         pCVar5 = &local_44;
         for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *(uint *)pCVar5 = *puVar4;
-          puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
+          pCVar5->x = *pfVar4;
+          pfVar4 = pfVar4 + (uint)bVar6 * -2 + 1;
           pCVar5 = (CVector3f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
         }
         if (&CStack_5c != &local_44) {
-          CStack_5c._0_4_ = local_44._0_4_;
-          CStack_5c._4_4_ = local_44._4_4_;
-          CStack_5c._8_4_ = local_44._8_4_;
+          CStack_5c.x = local_44.x;
+          CStack_5c.y = local_44.y;
+          CStack_5c.z = local_44.z;
         }
         if (&CStack_50 != &CStack_38) {
-          CStack_50._0_4_ = CStack_38._0_4_;
-          CStack_50._4_4_ = CStack_38._4_4_;
-          CStack_50._8_4_ = CStack_38._8_4_;
+          CStack_50.x = CStack_38.x;
+          CStack_50.y = CStack_38.y;
+          CStack_50.z = CStack_38.z;
         }
         core_set_cpp_CDemonSet_setLightingParameters_FUN_005375c0
                   (param_1,(CVector3f *)(iVar1 + 0x20),(UOrientationVector *)(iVar1 + 0x30),
@@ -98,7 +98,8 @@ void core_set_cpp_FUN_00536f90(CDemonSet *param_1)
           iStack_1c = (int)ROUND(fVar9);
           iStack_24 = (int)ROUND(fVar8);
         }
-        core_set_cpp_FUN_0053b100(g_CDemonSetPtr,iStack_20,iStack_1c,iStack_24);
+        core_set_cpp_CDemonSet_setFlatColor_FUN_0053b100
+                  (g_CDemonSetPtr,iStack_20,iStack_1c,iStack_24);
         iVar3 = (**(code **)(*(int *)(iVar1 + 0x154) + 0x14))(iVar1);
         if (iVar3 == 0) {
           *(byte *)(iVar1 + 0x144) = *(byte *)(iVar1 + 0x144) & 0xf7;
@@ -108,9 +109,9 @@ void core_set_cpp_FUN_00536f90(CDemonSet *param_1)
         }
         iVar3 = 0;
         engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500(DAT_005f2afc,1);
-        if (0 < *(int *)&param_1->field_0x15acc8) {
+        if (0 < param_1->mirror_glass_actor_count) {
           do {
-            core_set_cpp_FUN_0053adf0(param_1,iVar3,0);
+            core_set_cpp_CDemonSet_setupMirrorRendering_FUN_0053adf0(param_1,iVar3,0);
             iVar2 = (**(code **)(*(int *)(iVar1 + 0x154) + 0x14))(iVar1);
             if (iVar2 != 0) {
               *(byte *)(iVar1 + 0x144) = *(byte *)(iVar1 + 0x144) | 8;
@@ -118,9 +119,9 @@ void core_set_cpp_FUN_00536f90(CDemonSet *param_1)
             engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500(DAT_005f2afc,1);
             iVar3 = iVar3 + 1;
             core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_0053af20(param_1);
-          } while (iVar3 < *(int *)&param_1->field_0x15acc8);
+          } while (iVar3 < param_1->mirror_glass_actor_count);
         }
-        core_set_cpp_FUN_0053b100(param_1,0x10000,0x10000,0x10000);
+        core_set_cpp_CDemonSet_setFlatColor_FUN_0053b100(param_1,0x10000,0x10000,0x10000);
       }
       local_2c = local_2c + -4;
       local_28 = local_28 + -1;

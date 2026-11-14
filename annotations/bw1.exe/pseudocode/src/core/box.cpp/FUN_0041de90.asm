@@ -23,15 +23,16 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[1]:
+; XREF[2]:
 ;   core_box.cpp_CBox_setupCorners_FUN_0041dac0 at 0041dce5
+;   core_box.cpp_FUN_0041dcf0 at 0041de49
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d4a88
 ;   undefined4 DAT_005d4a90
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_0045f3e0
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
 ;   core_dirmat.cpp_FUN_0045f690
 ;
 ; *****************************************************************************
@@ -66,8 +67,8 @@ section .text
     PUSH EAX                            ; 0041dec5
     LEA EBX,[EBP + 0x18]                ; 0041dec6
     PUSH EBX                            ; 0041dec9
-    CALL core_dirmat.cpp_FUN_0045f3e0   ; 0041deca
-        ;   XREF to: 0045f3e0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_0045f3e0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0 ; 0041deca
+        ;   XREF to: 0045f3e0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     FLD float ptr [EBP + 0xa8]          ; 0041decf
     FMUL ST0                            ; 0041ded5
     FLD float ptr [EBP + 0xa4]          ; 0041ded7

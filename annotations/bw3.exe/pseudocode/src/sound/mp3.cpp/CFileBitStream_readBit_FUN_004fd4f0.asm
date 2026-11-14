@@ -9,7 +9,7 @@
 ; XREF[3]:
 ;   sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_004fdc50 at 004fdc5d
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00502d60 at 0050307a
-;   sound_mp3.cpp_FUN_004fee40 at 004feeb8
+;   sound_mp3.cpp_CMP3Decoder_readLayer3SideInfo_FUN_004fee40 at 004feeb8
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00601560
@@ -94,7 +94,7 @@ section .text
     PUSH EAX                            ; 004fd57e
     DEC ESI                             ; 004fd57f
     CALL crt_stdio.c_fread_FUN_005a3890 ; 004fd580
-        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005a3890()
+        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005a3890(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004fd585
     CMP EAX,0x1                         ; 004fd588
         ;   Label: LAB_004fd588

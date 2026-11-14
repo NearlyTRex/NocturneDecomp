@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   support_codec.cpp_FUN_00441610 at 00441639
+;   support_codec.cpp_CAsciiUnarmor_decode_FUN_00441610 at 00441639
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_0123456789ABCDEFGHJKLM_005f1320

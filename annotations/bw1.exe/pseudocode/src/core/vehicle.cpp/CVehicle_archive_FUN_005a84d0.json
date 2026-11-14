@@ -2,17 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 179,
+    "complexity_score": 95,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 11,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 44,
-    "suspect_count": 13,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 45,
+    "suspect_count": 4,
     "suspect_types": [
-      "unnamed_field"
+      "pointer_cast",
+      "shadow_pointer_walk"
     ],
-    "total_lines": 177
+    "total_lines": 178
   },
   "cross_references": [],
   "function": {
@@ -170,6 +171,26 @@
     },
     "pcode_op_count": 567
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005848a0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005e8720",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0054f370",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -188,114 +209,42 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "(&this_ptr->field_0x158,\">@modelName\" + 2);",
-      "type": "unnamed_field"
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 25,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "model_ptr = (CKeyFramedModelInstance *)(model_ptr[1].part_visibility_flags + 0xe);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x938",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x938,\"tireCount\");",
-      "type": "unnamed_field"
+      "description": "Watcom shadow-pointer walk \u2014 `model_ptr` self-updates by self-indexing a constant element step, dereferencing a sibling array field (which decays to a pointer), then adding a constant; the sum equals the larger struct stride being walked. Replace `model_ptr->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 25,
+      "match": "model_ptr = (T *)(model_ptr[N].FIELD + CONST)",
+      "severity": "moderate",
+      "text": "model_ptr = (CKeyFramedModelInstance *)(model_ptr[1].part_visibility_flags + 0xe);",
+      "type": "shadow_pointer_walk"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x938",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x938) {",
-      "type": "unnamed_field"
+      "description": "Watcom shadow-pointer walk \u2014 `float_ptr` was initialized to the address of an array element's subfield (`float_ptr = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*float_ptr)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `float_ptr->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 27,
+      "match": "float_ptr = float_ptr + N",
+      "severity": "moderate",
+      "text": "float_ptr = float_ptr + 0x6d;",
+      "type": "shadow_pointer_walk"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x94c",
-      "severity": "mild",
-      "text": "puVar3 = &this_ptr->field_0x94c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x948",
-      "severity": "mild",
-      "text": "puVar2 = &this_ptr->field_0x948;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x950",
-      "severity": "mild",
-      "text": "puVar4 = &this_ptr->field_0x950;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x93c",
-      "severity": "mild",
-      "text": "(&this_ptr->field_0x93c + iVar1 * 0x1b4,\"static_bpos\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x938",
-      "severity": "mild",
-      "text": "} while (iVar1 < *(int *)&this_ptr->field_0x938);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x102c",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x102c,\"curTime\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x1030",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x1030,\"totalTime\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x1034",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x1034,\"courseName\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x1070",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x1070,\"lastMobsterLeft\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x1070",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x1070,\"lastMobsterRight\");",
-      "type": "unnamed_field"
+      "description": "Watcom shadow-pointer walk \u2014 `float_ptr_00` was initialized to the address of an array element's subfield (`float_ptr_00 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*float_ptr_00)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `float_ptr_00->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 28,
+      "match": "float_ptr_00 = float_ptr_00 + N",
+      "severity": "moderate",
+      "text": "float_ptr_00 = float_ptr_00 + 0x6d;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CVehicle",
         "offset": 212,
         "vtable_addr": "00607964"
       }

@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 6,
-    "complexity_score": 19,
+    "complexity_score": 4,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 4,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 10
   },
   "cross_references": [
@@ -24,7 +22,7 @@
     {
       "addr": "00591b20",
       "from_addr": "00591b63",
-      "name": "core_stranger.cpp_FUN_00591b20",
+      "name": "core_stranger.cpp_CStranger_processWeaponTick_FUN_00591b20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -60,7 +58,7 @@
       {
         "call_addr": "00591b63",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_FUN_00591b20",
+        "caller": "core_stranger.cpp_CStranger_processWeaponTick_FUN_00591b20",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -90,6 +88,26 @@
     },
     "pcode_op_count": 27
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0047a1c0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0049cf90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0046eda0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -106,14 +124,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x578",
-      "severity": "mild",
-      "text": "return (uint)((*(uint *)&this_ptr->field_0x578 & 0x7fffffff) == 0);",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

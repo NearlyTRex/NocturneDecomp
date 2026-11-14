@@ -1,15 +1,19 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_getChannelLevels_FUN_00559c90(int param_1,float *param_2,float *param_3)
+; void __cdecl sound_sndmain_cpp_getChannelLevels_FUN_00559c90(int channel,float *out_peak,float *out_average)
 ;
+; Parameters:
+; int              Stack[0x4]:4   channel
+; float *          Stack[0x8]:4   out_peak
+; float *          Stack[0xc]:4   out_average
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02cf329c
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_00556fd0
-;   sound_sndmain.cpp_FUN_00558e90
+;   sound_sndmain.cpp_lockSound_FUN_00558e90
+;   sound_sndmain.cpp_unlockSound_FUN_00556fd0
 ;
 ; *****************************************************************************
 
@@ -44,8 +48,8 @@ section .text
     MOV EBX,dword ptr [EBX*0x4 + 0x2cf32cc] ; 00559cc9
     MOV dword ptr [ESP],EAX             ; 00559cd0
     MOV dword ptr [ESP + 0x4],EAX       ; 00559cd3
-    CALL sound_sndmain.cpp_FUN_00558e90 ; 00559cd7
-        ;   XREF to: 00558e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00558e90()
+    CALL sound_sndmain.cpp_lockSound_FUN_00558e90 ; 00559cd7
+        ;   XREF to: 00558e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00558e90()
     MOV ECX,dword ptr [0x02cf329c]      ; 00559cdc | DAT_02cf329c
     XOR EDX,EDX                         ; 00559ce2
     TEST ECX,ECX                        ; 00559ce4
@@ -75,8 +79,8 @@ section .text
     CMP EDX,EAX                         ; 00559d1c
     JL 0x00559ce8                       ; 00559d1e
         ;   XREF to: 00559ce8 (CONDITIONAL_JUMP)  ; LAB_00559ce8
-    CALL sound_sndmain.cpp_FUN_00556fd0 ; 00559d20
-        ;   XREF to: 00556fd0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00556fd0()
+    CALL sound_sndmain.cpp_unlockSound_FUN_00556fd0 ; 00559d20
+        ;   XREF to: 00556fd0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00556fd0()
         ;   Label: LAB_00559d20
     FILD dword ptr [0x02cf329c]         ; 00559d25 | DAT_02cf329c
     FDIVR float ptr [ESP]               ; 00559d2b

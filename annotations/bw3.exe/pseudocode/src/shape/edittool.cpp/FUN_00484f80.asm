@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   shape_edittool.cpp_FUN_0047dd1e at 0047df74
+;   shape_edittool.cpp_FUN_0047dd20 at 0047df74
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005a3260

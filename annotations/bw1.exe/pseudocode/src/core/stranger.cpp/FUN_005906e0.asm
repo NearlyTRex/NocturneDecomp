@@ -14,11 +14,11 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:
-;   core_stranger.cpp_FUN_0058e3c0 at 0058e49b
-;   core_stranger.cpp_FUN_005907a0 at 00590dd4
+;   core_stranger.cpp_CStranger_renderOpaque_FUN_0058e3c0 at 0058e49b
+;   core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005907a0 at 00590dd4
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_0045f3e0
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
 ;   core_dirmat.cpp_FUN_0045f690
 ;
 ; *****************************************************************************
@@ -40,8 +40,8 @@ section .text
     PUSH EAX                            ; 00590700
     MOV dword ptr [ESP + 0x44],EDX      ; 00590701
     MOV dword ptr [ESP + 0x40],EDX      ; 00590705
-    CALL core_dirmat.cpp_FUN_0045f3e0   ; 00590709
-        ;   XREF to: 0045f3e0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_0045f3e0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0 ; 00590709
+        ;   XREF to: 0045f3e0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 0059070e
     MOV EAX,dword ptr [ESI + 0x1ffbc]   ; 00590711
     MOV dword ptr [ESP + 0x48],EAX      ; 00590717

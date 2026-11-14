@@ -2,22 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 418,
-    "complexity_score": 696,
+    "complexity_score": 533,
     "cross_reference_count": 2,
     "function_call_count": 22,
     "global_count": 46,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 166,
-    "suspect_count": 50,
+    "pseudocode_lines": 168,
+    "suspect_count": 34,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 584
+    "total_lines": 586
   },
   "cross_references": [
     {
@@ -29,7 +28,7 @@
     {
       "addr": "0050cc90",
       "from_addr": "0050cf43",
-      "name": "core_menu.cpp_FUN_0050cc90",
+      "name": "core_menu.cpp_showMainGameMenu_FUN_0050cc90",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -54,7 +53,7 @@
     {
       "addr": "004bdaa0",
       "is_variadic": false,
-      "name": "core_fldnotes.cpp_FUN_004bdaa0"
+      "name": "core_fldnotes.cpp_CFieldNotes_clear_FUN_004bdaa0"
     },
     {
       "addr": "004d6990",
@@ -122,9 +121,24 @@
       "name": "engine_ini.cpp_FUN_004f4d10"
     },
     {
+      "addr": "00494fd0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00494fd0"
+    },
+    {
+      "addr": "0049c370",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_clear_FUN_0049c370"
+    },
+    {
       "addr": "0049a620",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CPickList_ctor_FUN_0049a620"
+    },
+    {
+      "addr": "0049a8b0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_0049a8b0"
     },
     {
       "addr": "0049a710",
@@ -135,21 +149,6 @@
       "addr": "004994d0",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_add_FUN_004994d0"
-    },
-    {
-      "addr": "00494fd0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_00494fd0"
-    },
-    {
-      "addr": "0049a8b0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0049a8b0"
-    },
-    {
-      "addr": "0049c370",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0049c370"
     },
     {
       "addr": "00531090",
@@ -454,7 +453,7 @@
       {
         "call_addr": "0050cf43",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_0050cc90",
+        "caller": "core_menu.cpp_showMainGameMenu_FUN_0050cc90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -608,87 +607,47 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x26c = 0;",
+      "text": "param_1->damageable_enemy_count = 0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x26c",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x26c = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x274 = 0;",
+      "text": "param_1->total_kill_count = 0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x274",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x274 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x268 = 0;",
+      "text": "param_1->total_game_time = 0.0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x268",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x268 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x270 = 0;",
+      "text": "param_1->total_play_time = 0.0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x270",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x270 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x250 = 0;",
+      "text": "param_1->is_loading = 0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x250",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x250 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 33,
       "match": "DAT_005e3116",
       "severity": "mild",
-      "text": "iVar3 = _fopen(\"pod.ini\",&DAT_005e3116);",
+      "text": "p_Var2 = _fopen(\"pod.ini\",&DAT_005e3116);",
       "type": "undefined_data"
     },
     {
@@ -704,7 +663,7 @@
       "line": 44,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (param_2 == 1 || iVar3 != 0) {",
+      "text": "if (param_2 == 1 || p_Var2 != (_FILE *)0x0) {",
       "type": "unnamed_param"
     },
     {
@@ -717,143 +676,79 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 104,
+      "line": 106,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe8 = 0;",
+      "text": "param_1->combat_difficulty_mode = 0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 104,
-      "match": "field_0xe8",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe8 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 105,
+      "line": 107,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe4 = 0;",
+      "text": "param_1->puzzle_difficulty_mode = 0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 105,
-      "match": "field_0xe4",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe4 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 108,
+      "line": 110,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe4 = 0;",
+      "text": "param_1->puzzle_difficulty_mode = 0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 108,
-      "match": "field_0xe4",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe4 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 109,
+      "line": 111,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe8 = 1;",
+      "text": "param_1->combat_difficulty_mode = 1;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 109,
-      "match": "field_0xe8",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe8 = 1;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 112,
+      "line": 114,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe8 = 0;",
+      "text": "param_1->combat_difficulty_mode = 0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 112,
-      "match": "field_0xe8",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe8 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 113,
+      "line": 115,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe4 = 1;",
+      "text": "param_1->puzzle_difficulty_mode = 1;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 113,
-      "match": "field_0xe4",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe4 = 1;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 116,
+      "line": 118,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe8 = 1;",
+      "text": "param_1->combat_difficulty_mode = 1;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 116,
-      "match": "field_0xe8",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe8 = 1;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 117,
+      "line": 119,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe4 = 1;",
+      "text": "param_1->puzzle_difficulty_mode = 1;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 117,
-      "match": "field_0xe4",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0xe4 = 1;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 122,
+      "line": 124,
       "match": "DAT_01cd09e8",
       "severity": "mild",
-      "text": "pcVar5 = &DAT_01cd09e8;",
+      "text": "pcVar4 = &DAT_01cd09e8;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 123,
+      "line": 125,
       "match": "DAT_0061db5c",
       "severity": "mild",
       "text": "_DAT_01cd0ae8 = *(uint *)(&DAT_0061db5c + local_14 * 4);",
@@ -861,7 +756,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 139,
+      "line": 141,
       "match": "DAT_01cd05c0",
       "severity": "mild",
       "text": "iVar3 = _stricmp(&DAT_01cd05c0,local_134);",
@@ -869,71 +764,47 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 142,
+      "line": 144,
       "match": "DAT_01cd05c0",
       "severity": "mild",
-      "text": "pcVar5 = &DAT_01cd05c0;",
+      "text": "pcVar4 = &DAT_01cd05c0;",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 160,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x9f8 != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 160,
-      "match": "field_0x9f8",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x9f8 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 161,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x9f8 = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 161,
-      "match": "field_0x9f8",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x9f8 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 162,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_game_cpp_FUN_004d6990(param_1,&param_1->field_0x9fc,1);",
+      "text": "if (param_1->need_chapter_reload != 0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 162,
+      "line": 163,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_game_cpp_FUN_004d6990(param_1,&param_1->field_0x9fc,1);",
+      "text": "param_1->need_chapter_reload = 0;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 162,
-      "match": "field_0x9fc",
+      "description": "Unnamed function parameter",
+      "line": 164,
+      "match": "param_1",
       "severity": "mild",
-      "text": "core_game_cpp_FUN_004d6990(param_1,&param_1->field_0x9fc,1);",
-      "type": "unnamed_field"
+      "text": "core_game_cpp_FUN_004d6990(param_1,param_1->chapter_reload_filename,1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 164,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_game_cpp_FUN_004d6990(param_1,param_1->chapter_reload_filename,1);",
+      "type": "unnamed_param"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 94,
+      "line": 96,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -941,7 +812,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 125,
+      "line": 127,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -949,7 +820,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 143,
+      "line": 145,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

@@ -2,35 +2,35 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 131,
+    "complexity_score": 136,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 46,
+    "pseudocode_lines": 51,
     "suspect_count": 8,
     "suspect_types": [
       "extra_output"
     ],
-    "total_lines": 173
+    "total_lines": 178
   },
   "cross_references": [
     {
-      "addr": "00544f80",
-      "from_addr": "00544fbd",
-      "name": "core_skeleton.cpp_FUN_00544f80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00545a60",
       "from_addr": "00545aa2",
-      "name": "core_skeleton.cpp_FUN_00545a60",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00547b80",
       "from_addr": "00547bb6",
-      "name": "core_skeleton.cpp_FUN_00547b80",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_00547b80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00544f80",
+      "from_addr": "00544fbd",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00544f80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -60,7 +60,7 @@
       {
         "call_addr": "00544fbd",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_00544f80",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00544f80",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -71,7 +71,7 @@
       {
         "call_addr": "00545aa2",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_00545a60",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -82,7 +82,7 @@
       {
         "call_addr": "00547bb6",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_00547b80",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_00547b80",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -200,7 +200,7 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 6,
+      "line": 8,
       "match": "extraout_ECX",
       "severity": "moderate",
       "text": "int *extraout_ECX;",
@@ -208,7 +208,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
+      "line": 9,
       "match": "extraout_ECX_00",
       "severity": "moderate",
       "text": "int *extraout_ECX_00;",
@@ -216,7 +216,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
+      "line": 10,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "int extraout_EDX;",
@@ -224,18 +224,10 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 25,
-      "match": "extraout_ECX_00",
-      "severity": "moderate",
-      "text": "*extraout_ECX_00 = (int)ROUND(fVar4);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
       "line": 26,
       "match": "extraout_ECX_00",
       "severity": "moderate",
-      "text": "*out_frame2 = *extraout_ECX_00 + 1;",
+      "text": "*extraout_ECX_00 = (int)ROUND(fVar5);",
       "type": "extra_output"
     },
     {
@@ -243,20 +235,28 @@
       "line": 27,
       "match": "extraout_ECX_00",
       "severity": "moderate",
-      "text": "*out_blend_weight = (float)(fVar3 - (float10)*extraout_ECX_00);",
+      "text": "*out_frame2 = *extraout_ECX_00 + 1;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 40,
+      "line": 28,
+      "match": "extraout_ECX_00",
+      "severity": "moderate",
+      "text": "*out_blend_weight = (float)(fVar4 - (float10)*extraout_ECX_00);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 45,
       "match": "extraout_EDX",
       "severity": "moderate",
-      "text": "fVar1 = frame_number - (float)(*(int *)(extraout_EDX + 100) + -1);",
+      "text": "fVar3 = frame_number - (float)(*(int *)(extraout_EDX + 100) + -1);",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 43,
+      "line": 48,
       "match": "extraout_ECX",
       "severity": "moderate",
       "text": "*extraout_ECX = *out_frame2;",

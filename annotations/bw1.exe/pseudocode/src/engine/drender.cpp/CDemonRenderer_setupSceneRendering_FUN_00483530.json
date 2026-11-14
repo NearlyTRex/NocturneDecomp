@@ -14,15 +14,21 @@
   },
   "cross_references": [
     {
+      "addr": "00416fa0",
+      "from_addr": "004170f1",
+      "name": "core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00416fa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004f90d0",
       "from_addr": "004f9332",
-      "name": "core_inv.cpp_FUN_004f90d0",
+      "name": "core_inv.cpp_CInventory_renderItemModel_FUN_004f90d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004fe9c0",
       "from_addr": "004fea78",
-      "name": "core_level.cpp_FUN_004fe9c0",
+      "name": "core_level.cpp_CLevelLoader_update_FUN_004fe9c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -54,12 +60,6 @@
       "from_addr": "005848c9",
       "name": "shape_spotview.cpp_FUN_005847e0",
       "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00416fa0",
-      "from_addr": "004170f1",
-      "name": "unkafter_bmppuzzl.cpp_FUN_00416fa0",
-      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -78,7 +78,7 @@
     {
       "addr": "0045f3e0",
       "is_variadic": false,
-      "name": "core_dirmat.cpp_FUN_0045f3e0"
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0"
     },
     {
       "addr": "00483560",
@@ -93,7 +93,7 @@
       {
         "call_addr": "004fea78",
         "call_type": "direct",
-        "caller": "core_level.cpp_FUN_004fe9c0",
+        "caller": "core_level.cpp_CLevelLoader_update_FUN_004fe9c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -104,7 +104,7 @@
       {
         "call_addr": "004f9332",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004f90d0",
+        "caller": "core_inv.cpp_CInventory_renderItemModel_FUN_004f90d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -159,7 +159,7 @@
       {
         "call_addr": "004170f1",
         "call_type": "direct",
-        "caller": "unkafter_bmppuzzl.cpp_FUN_00416fa0",
+        "caller": "core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00416fa0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -206,6 +206,32 @@
       "STORE": 6
     },
     "pcode_op_count": 66
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0046b030",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0046cc10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0048c1d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00460780",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 52,

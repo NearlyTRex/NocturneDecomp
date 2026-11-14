@@ -2,15 +2,27 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CCodec;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CInStream.h"
 
 // Structure: CInStreamPipe
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI size 36; ctor 00434e70 calls the in-stream base ctor then zeroes +4..+0x20
 // Ghidra size: 0x24 (36 bytes)
 #pragma pack(push, 1)
 typedef struct CInStreamPipe {
-    char field_0[36]; // 0x0
+    CInStream base; // 0x0, derived
+    struct CCodec* codec; // 0x4, open 00435270 stores arg 1 and calls its reset slot; fillBuffer 00435300 calls its process(source, out) and flush(out) slots; close 004351e0 deletes it when owns_streams
+    void* source; // 0x8, open stores arg 2 (an in-stream; no stream base type in the DB); passed to codec process; isOpen forwards to its isOpen slot; deleted by close when owns_streams
+    int owns_streams; // 0xc, open stores arg 3; close calls the codec and source dtors with flag 2 only when set
+    char* buffer; // 0x10, open mallocs buffer_size bytes ('CInStreamPipe::open - out of memory'); getChar 00434fa0 reads buffer[position]; close frees it
+    int buffer_size; // 0x14, open stores arg 4 and allocates that many bytes; fillBuffer gives it to the COutStreamMemory the codec writes into
+    int buffer_length; // 0x18, fillBuffer stores the decoded byte count; getChar refills when position >= buffer_length
+    int position; // 0x1c, getChar/read advance it, ungetChar decrements it, fillBuffer resets it to 0
+    int codec_finished; // 0x20, fillBuffer sets 1 once the codec flush returns 1 and then returns EOF; isEof 004351b0 returns it once the buffer is drained
 } CInStreamPipe;
 #pragma pack(pop)
 

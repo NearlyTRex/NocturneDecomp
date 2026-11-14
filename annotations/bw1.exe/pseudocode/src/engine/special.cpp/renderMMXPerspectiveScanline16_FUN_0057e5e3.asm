@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0057e5e3(void)
+; void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0057e5e3(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y)
 ;
 ;
 ; XREF[57]:

@@ -1,12 +1,12 @@
 // Name: core_sentinel.cpp_staticInit_FUN_0054b9b0
 // Address: 0054b9b0
 // Address Range: [[0054b9b0, 0054b9d3]]
-// Convention: unknown
-// Signature: void core_sentinel_cpp_staticInit_FUN_0054b9b0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_sentinel_cpp_staticInit_FUN_0054b9b0(void)
 
 #include "nocturne.h"
 
-void core_sentinel_cpp_staticInit_FUN_0054b9b0(void)
+void __cdecl core_sentinel_cpp_staticInit_FUN_0054b9b0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c160

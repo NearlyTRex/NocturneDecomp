@@ -1,13 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl support_trisock_cpp_createNetworkAddr_FUN_0056f730(undefined4 *param_1,undefined4 param_2,undefined2 param_3)
+; void __cdecl support_trisock_cpp_createNetworkAddr_FUN_0056f730(SNetworkAddr *dest_addr,uint32_t *ip_address_ptr,uint16_t port)
 ;
+; Parameters:
+; SNetworkAddr *   Stack[0x4]:4   dest_addr
+; uint32_t *       Stack[0x8]:4   ip_address_ptr
+; uint16_t         Stack[0xc]:2   port
 ;
-; XREF[3]:
+; XREF[4]:
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_00503fb0 at 00503ff9
-;   core_netgame.cpp_FUN_00503efc at 00503f58
-;   core_netgame.cpp_FUN_00504d60 at 0050560c
+;   core_netgame.cpp_CNetGame_processPacket_FUN_00504d60 at 0050560c
+;   core_netgame.cpp_FUN_00503f00 at 00503f58
+;   support_trisock.cpp_FUN_0056fef0 at 0056ffd3
 ;
 ; *****************************************************************************
 

@@ -1,21 +1,23 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_3d_c_isVisiblePlane_FUN_00403920(int *param_1)
+; int __cdecl engine_3d_c_isVisiblePlane_FUN_00403920(SClipPlane *plane)
 ;
+; Parameters:
+; SClipPlane *     Stack[0x4]:4   plane
 ;
-; XREF[80]:
+; XREF[81]:
 ;   core_box.cpp_FUN_0041dcd0 at 0041de3c
-;   core_dpart.cpp_FUN_0046682e at 004668b5
-;   engine_3d.c_FUN_00404dd0 at 00404dde
-;   engine_3d.c_FUN_00404e70 at 00404e7e
-;   engine_3d.c_FUN_00405280 at 004052c0
-;   engine_3d.c_FUN_004075b0 at 004075c0
-;   engine_3d.c_FUN_00407860 at 004079a0
+;   core_dpart.cpp_FUN_00466830 at 004668b5
+;   engine_3d.c_dispatchMRGLToRenderer_FUN_00407860 at 004079a0
 ;   engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_00404980 at 00404995
 ;   engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_004062a0 at 004062b4
 ;   engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_004046e0 at 004046ed
-;   ... and 70 more
+;   engine_3d.c_renderPolygonAlphaBlendedDepthWritePerspOp59_FUN_00406d90 at 00406daa
+;   engine_3d.c_renderPolygonAlphaBlendedDepthWritePlaneMaskedOp58_FUN_00406c50 at 00406c6a
+;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_004054e0 at 004054ee
+;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedPerspOp37_FUN_00405600 at 0040560e
+;   ... and 71 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_007303e8

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_isOfClassHash_FUN_0040c810(int param_1,uint param_2)
+; int __cdecl core_actor_cpp_isOfClassHash_FUN_0040c810(CDemonActor *actor_ptr,uint class_name_hash)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   actor_ptr
+; uint             Stack[0x8]:4   class_name_hash
 ;
 ; XREF[4]:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840 at 0040c853
@@ -11,7 +14,7 @@
 ;   core_setcolid.cpp_CDemonSet_isActorIgnored_FUN_0053d770 at 0053d7b8
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040c7c0
+;   core_actor.cpp_checkNameHash_FUN_0040c7c0
 ;
 ; *****************************************************************************
 
@@ -31,8 +34,8 @@ section .text
     CALL dword ptr [EDX + 0xcc]         ; 0040c825
     ADD ESP,0x4                         ; 0040c82b
     PUSH EAX                            ; 0040c82e
-    CALL core_actor.cpp_FUN_0040c7c0    ; 0040c82f
-        ;   XREF to: 0040c7c0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c7c0(CDemonActorType * type_ptr, uint name_hash)
+    CALL core_actor.cpp_checkNameHash_FUN_0040c7c0 ; 0040c82f
+        ;   XREF to: 0040c7c0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_checkNameHash_FUN_0040c7c0(CDemonActorType * type_ptr, uint name_hash)
     ADD ESP,0x8                         ; 0040c834
     RET                                 ; 0040c837
 

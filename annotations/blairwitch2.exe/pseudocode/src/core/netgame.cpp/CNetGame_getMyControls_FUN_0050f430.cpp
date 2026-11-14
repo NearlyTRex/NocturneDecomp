@@ -11,14 +11,14 @@
 SPlayerInput * __cdecl core_netgame_cpp_CNetGame_getMyControls_FUN_0050f430(CNetGame *this_ptr)
 
 {
-  if (*(int *)this_ptr == 0) {
+  if (this_ptr->connection_type == CONNECTION_NONE) {
     return (SPlayerInput *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x10a68);
   }
-  if (-1 < *(int *)&this_ptr->field_0x124) {
-    return (SPlayerInput *)(&this_ptr->field_0x6c + *(int *)&this_ptr->field_0x124 * 0x80);
+  if (-1 < this_ptr->local_player_index) {
+    return &this_ptr->players[this_ptr->local_player_index].player_input;
   }
   _DAT_01d046a0 = "..\\core\\netgame.cpp";
   _DAT_01d046a4 = 0xa0f;
   core_main_c_FUN_004e4500("CNetGame::getMyControls - I'm not in the player list!");
-  return (SPlayerInput *)(&this_ptr->field_0x6c + *(int *)&this_ptr->field_0x124 * 0x80);
+  return &this_ptr->players[this_ptr->local_player_index].player_input;
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_yow_cpp_staticInit_FUN_005b8100(void)
+; void __cdecl core_yow_cpp_staticInit_FUN_005b8100(void)
 ;
 ;
 ; Called Functions:

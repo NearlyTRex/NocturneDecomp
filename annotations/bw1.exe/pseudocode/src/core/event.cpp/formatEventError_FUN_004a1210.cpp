@@ -12,6 +12,6 @@ int __cdecl core_event_cpp_formatEventError_FUN_004a1210(char *format)
   byte *local_4;
   
   local_4 = &stack0x00000008;
-  _vsprintf(&DAT_01c56ed0,format,&local_4);
+  _vsprintf(&DAT_01c56ed0,format,(va_list_t)&local_4);
   return 0;
 }

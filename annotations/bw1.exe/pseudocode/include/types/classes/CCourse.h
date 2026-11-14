@@ -2,14 +2,19 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CCourseFrame;
+
 // Dependencies
 #include "system/basetypes.h"
 
 // Structure: CCourse
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0xc (12 bytes)
 #pragma pack(push, 1)
 typedef struct CCourse {
+    int len; // 0x0
+    struct CCourseFrame* frames; // 0x4
+    int loop; // 0x8
 } CCourse;
 #pragma pack(pop)
 

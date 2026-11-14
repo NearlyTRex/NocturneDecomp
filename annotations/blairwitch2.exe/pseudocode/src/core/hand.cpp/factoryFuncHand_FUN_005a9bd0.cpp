@@ -1,20 +1,20 @@
 // Name: core_hand.cpp_factoryFuncHand_FUN_005a9bd0
 // Address: 005a9bd0
 // Address Range: [[005a9bd0, 005a9beb]]
-// Convention: unknown
-// Signature: void core_hand_cpp_factoryFuncHand_FUN_005a9bd0(void)
+// Convention: __cdecl
+// Signature: CHand * __cdecl core_hand_cpp_factoryFuncHand_FUN_005a9bd0(void)
 
 #include "nocturne.h"
 
-void core_hand_cpp_factoryFuncHand_FUN_005a9bd0(void)
+CHand * __cdecl core_hand_cpp_factoryFuncHand_FUN_005a9bd0(void)
 
 {
-  CHand *this_ptr;
+  CHand *pCVar1;
   
-  this_ptr = (CHand *)FUN_005b8be2(0x1186c);
-  if (this_ptr == (CHand *)0x0) {
-    return;
+  pCVar1 = (CHand *)operator_new(0x1186c);
+  if (pCVar1 == (CHand *)0x0) {
+    return (CHand *)0x0;
   }
-  core_hand_cpp_CHand_ctor_FUN_005a9c00(this_ptr);
-  return;
+  pCVar1 = core_hand_cpp_CHand_ctor_FUN_005a9c00(pCVar1);
+  return pCVar1;
 }

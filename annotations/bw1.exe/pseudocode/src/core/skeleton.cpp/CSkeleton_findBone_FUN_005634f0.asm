@@ -9,16 +9,16 @@
 ; int              Stack[0xc]:4   assert_if_not_found
 ;
 ; XREF[55]:
-;   core_baron.cpp_FUN_0040f300 at 0040f328
-;   core_batcreat.cpp_FUN_00411280 at 004112bc
-;   core_batman.cpp_FUN_00412840 at 0041287c
-;   core_boneguy.cpp_FUN_0041b940 at 0041b969
-;   core_bride.cpp_FUN_00423940 at 00423976
-;   core_carved.cpp_FUN_004287e0 at 00428835
+;   core_baron.cpp_CBaron_setup_FUN_0040f300 at 0040f328
+;   core_batcreat.cpp_CBatCreature_setup_FUN_00411280 at 004112bc
+;   core_batman.cpp_CBatman_setup_FUN_00412840 at 0041287c
+;   core_bird.cpp_CBird_setup_FUN_004152c0 at 004152e8
+;   core_boneguy.cpp_CBoneGuy_setup_FUN_0041b940 at 0041b969
+;   core_bride.cpp_CBride_setup_FUN_00423940 at 00423976
+;   core_carved.cpp_CCarved_setup_FUN_004287e0 at 00428835
+;   core_charactr.cpp_CCharacter_applyGesture_FUN_00432cb0 at 00432cec
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80 at 00434ac5
-;   core_charactr.cpp_FUN_0042c510 at 0042c5ba
-;   core_charactr.cpp_FUN_00432cb0 at 00432cec
-;   core_charactr.cpp_FUN_00432f10 at 00432f61
+;   core_charactr.cpp_CCharacter_setup_FUN_0042c510 at 0042c5ba
 ;   ... and 45 more
 ;
 ; Referenced Globals:

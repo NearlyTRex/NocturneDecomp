@@ -71,6 +71,10 @@ void nocturne_gl_set_logical_size(int width, int height);
 // This is the frame boundary — it is the only place that swaps.
 void nocturne_gl_present_framebuffer(const void *pixels, int width, int height, int pitch, int bpp);
 
+// The same, letterboxed to the picture's own size rather than the logical
+// one: a movie keeps its shape whatever mode the game is in.
+void nocturne_gl_present_picture(const void *pixels, int width, int height, int pitch, int bpp);
+
 // Draw the SCENE target onto the window and swap, letterboxed the same way an
 // uploaded frame is. For a renderer whose finished frame is already in the
 // scene target, this avoids a readback to the CPU and an upload straight back.
@@ -122,6 +126,11 @@ int nocturne_gl_read_front(unsigned char **out_rgb, int *out_width, int *out_hei
 //
 // Passes the input through unchanged when GL is not active.
 void nocturne_gl_window_to_logical(int window_x, int window_y, int *out_x, int *out_y);
+
+// The reverse, for warping the cursor to a point the game names: the window
+// point at the middle of that game pixel, which nocturne_gl_window_to_logical
+// maps back onto it. Passes the input through unchanged when GL is not active.
+void nocturne_gl_logical_to_window(int logical_x, int logical_y, int *out_x, int *out_y);
 
 // Drop the context and what was drawn with it; nocturne_gl_init brings it up
 // again.

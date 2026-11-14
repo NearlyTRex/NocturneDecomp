@@ -9,5 +9,5 @@
 int __cdecl core_door_cpp_CDoor_getBlockVirtualDirectorFlag_FUN_00465070(CDoor *this_ptr)
 
 {
-  return *(int *)&this_ptr->field_0x9d0;
+  return this_ptr->block_virtual_director_flag;
 }

@@ -13,7 +13,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_0040d910(CAlphaBit
   uint *puVar2;
   uint *puVar3;
   
-  puVar2 = *(uint **)&this_ptr->field_0x8;
+  puVar2 = this_ptr->act;
   puVar3 = (uint *)&DAT_01c4e3d4;
   for (iVar1 = 0x100; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar3 = *puVar2;
@@ -21,7 +21,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_0040d910(CAlphaBit
     puVar3 = puVar3 + 1;
   }
   for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(byte *)puVar3 = *(byte *)puVar2;
+    *(char *)puVar3 = (char)*puVar2;
     puVar2 = (uint *)((int)puVar2 + 1);
     puVar3 = (uint *)((int)puVar3 + 1);
   }

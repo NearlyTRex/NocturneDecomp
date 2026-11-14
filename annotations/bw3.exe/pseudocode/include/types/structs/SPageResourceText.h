@@ -2,15 +2,22 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CBitFont;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/SPageResource.h"
 
 // Structure: SPageResourceText
-// Stub: size from Watcom RTTI, fields not yet recovered
+// new(0x120) in STextView_flushWord; ctor stores Text vtable
 // Ghidra size: 0x120 (288 bytes)
 #pragma pack(push, 1)
 typedef struct SPageResourceText {
-    char field_0[288]; // 0x0
+    SPageResource base; // 0x0, derived
+    int underlined; // 0x18, ctor zeroes; flushWord copies view underline (+0x34, set by <ul>/</ul>); draw adds an underline when set
+    char text[256]; // 0x1c, ctor copies string arg; draw passes it to the font
+    struct CBitFont* font; // 0x11c, ctor arg; getTextWidth/getCharHeight/draw use it
 } SPageResourceText;
 #pragma pack(pop)
 

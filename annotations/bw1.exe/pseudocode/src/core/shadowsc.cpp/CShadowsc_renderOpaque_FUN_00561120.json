@@ -1,0 +1,161 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 55,
+    "complexity_score": 34,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 19,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 74
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00561120",
+    "address_range": [
+      [
+        "00561120",
+        "00561190"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_shadowsc.cpp_CShadowsc_renderOpaque_FUN_00561120",
+    "signature": "int __cdecl core_shadowsc_cpp_CShadowsc_renderOpaque_FUN_00561120(CShadowsc *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cc60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cc60"
+    },
+    {
+      "addr": "0042f240",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_renderOpaque_FUN_0042f240"
+    },
+    {
+      "addr": "004a6c30",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30"
+    },
+    {
+      "addr": "00483e60",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f193b",
+      "name": "s_heroCanSee_005f193b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00612560",
+      "name": "DAT_00612560",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061b4d0",
+      "name": "DAT_0061b4d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061d95c",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01ccf390"
+    },
+    {
+      "addr": "01bc120c",
+      "name": "DAT_01bc120c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf5ec",
+      "name": "g_CGameInstance.goggles_active",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.575,
+    "instruction_count": 40,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 4,
+      "CBRANCH": 5,
+      "COPY": 32,
+      "INT_ADD": 15,
+      "INT_AND": 24,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 22,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 11,
+      "INT_SUB": 15,
+      "INT_XOR": 2,
+      "LOAD": 11,
+      "POPCOUNT": 11,
+      "RETURN": 3,
+      "STORE": 12
+    },
+    "pcode_op_count": 183
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CShadowsc *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "(iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560),",
+      "type": "undefined_data"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CShadowsc",
+        "offset": 16,
+        "vtable_addr": "00605354"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

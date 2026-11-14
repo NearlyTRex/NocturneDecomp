@@ -15,7 +15,7 @@
 ;   core_gore.cpp_FUN_004e63e0 at 004e64bb
 ;
 ; Referenced Globals:
-;   void* g_CFliesVTable = 004bfb20
+;   CDemonActor_vtable g_CFliesVTable
 ;   WatcomTypeInfo g_SFlyTypeInfo
 ;
 ; Called Functions:
@@ -38,7 +38,7 @@ section .text
     ADD EAX,0x168                       ; 004bfa7a
     PUSH EAX                            ; 004bfa7f
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 004bfa80
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EDX,[EAX + 0xfffffe98]          ; 004bfa85
     MOV ECX,0x40a00000                  ; 004bfa8b
     MOV dword ptr [EDX + 0x154],0x600ac4 ; 004bfa90 | g_CFliesVTable

@@ -19,7 +19,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_dmodel.cpp_FUN_004620c0
+;   core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_004620c0
 ;   core_dtri.cpp_cylinderTriangleTest_FUN_00479050
 ;   core_main.c_FUN_004e4330
 ;
@@ -56,8 +56,8 @@ section .text
     PUSH EDX                            ; 00461e3c
         ;   Label: LAB_00461e3c
     PUSH EDI                            ; 00461e3d
-    CALL core_dmodel.cpp_FUN_004620c0   ; 00461e3e
-        ;   XREF to: 004620c0 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_004620c0()
+    CALL core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_004620c0 ; 00461e3e
+        ;   XREF to: 004620c0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_004620c0(CKeyFramedModel * this_ptr, CVector3f * transform_vector)
     ADD ESP,0x8                         ; 00461e43
     CMP dword ptr [EDI + 0x358],0x0     ; 00461e46
         ;   Label: LAB_00461e46
@@ -91,7 +91,7 @@ section .text
     PUSH ESI                            ; 00461e9a
     INC EBX                             ; 00461e9b
     CALL core_dtri.cpp_cylinderTriangleTest_FUN_00479050 ; 00461e9c
-        ;   XREF to: 00479050 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_cylinderTriangleTest_FUN_00479050()
+        ;   XREF to: 00479050 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_cylinderTriangleTest_FUN_00479050(CDemonTriangle * triangle, SIntersectXZCylinder * cylinder)
     ADD ESP,0x8                         ; 00461ea1
     MOV EAX,dword ptr [EDI + 0x354]     ; 00461ea4
     ADD ESI,0x38                        ; 00461eaa

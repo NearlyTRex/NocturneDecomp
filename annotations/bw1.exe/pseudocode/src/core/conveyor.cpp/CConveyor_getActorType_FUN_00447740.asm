@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_conveyor_cpp_CConveyor_getActorType_FUN_00447740(CConveyor *this_ptr)
+; CDemonActorType * __cdecl core_conveyor_cpp_CConveyor_getActorType_FUN_00447740(CConveyor *this_ptr)
 ;
 ; Parameters:
 ; CConveyor *      Stack[0x4]:4   this_ptr

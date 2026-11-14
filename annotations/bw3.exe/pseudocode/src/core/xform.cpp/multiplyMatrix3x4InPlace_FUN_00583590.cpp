@@ -2,27 +2,27 @@
 // Address: 00583590
 // Address Range: [[00583590, 005835c1]]
 // Convention: __cdecl
-// Signature: undefined4 * __cdecl core_xform_cpp_multiplyMatrix3x4InPlace_FUN_00583590(undefined4 *param_1,undefined4 param_2)
+// Signature: CMatrix3x4f * __cdecl core_xform_cpp_multiplyMatrix3x4InPlace_FUN_00583590(CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b)
 
 #include "nocturne.h"
 
-uint * __cdecl core_xform_cpp_multiplyMatrix3x4InPlace_FUN_00583590(uint *param_1,uint param_2)
+CMatrix3x4f * __cdecl core_xform_cpp_multiplyMatrix3x4InPlace_FUN_00583590(CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b)
 
 {
   int iVar1;
-  uint *puVar2;
-  uint *puVar3;
+  CMatrix3x4f *pCVar2;
+  CMatrix3x4f *pCVar3;
   byte bVar4;
-  uint auStack_3c [12];
+  CMatrix3x4f CStack_3c;
   
   bVar4 = 0;
-  core_xform_cpp_multiplyMatrix3x4_FUN_005833e0(param_1,param_2);
-  puVar2 = auStack_3c;
-  puVar3 = param_1;
+  core_xform_cpp_multiplyMatrix3x4_FUN_005833e0(matrix_a,matrix_b,&CStack_3c);
+  pCVar2 = &CStack_3c;
+  pCVar3 = matrix_a;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+    pCVar3->m[0].w = pCVar2->m[0].w;
+    pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
+    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
   }
-  return param_1;
+  return matrix_a;
 }

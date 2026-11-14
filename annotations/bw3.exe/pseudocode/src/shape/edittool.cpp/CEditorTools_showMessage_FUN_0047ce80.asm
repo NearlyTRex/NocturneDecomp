@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[8]:
-;   core_game.cpp_FUN_004bb100 at 004bb9e4
+;   core_game.cpp_CGame_processCheatCodes_FUN_004bb100 at 004bb9e4
 ;   core_game.cpp_FUN_004bdfb0 at 004be41c
 ;   core_game.cpp_setupMovieRecording_FUN_004b3d70 at 004b3e35
 ;   core_main.c_FUN_004e4400 at 004e44ad
@@ -44,7 +44,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0047cea5
     PUSH EAX                            ; 0047cea9
     CALL crt_stdio.c_vsprintf_FUN_005a2898 ; 0047ceaa
-        ;   XREF to: 005a2898 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_005a2898()
+        ;   XREF to: 005a2898 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005a2898(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0047ceaf
     MOV EBX,dword ptr [0x01c5bb04]      ; 0047ceb2 | DAT_01c5bb04
     PUSH EBX                            ; 0047ceb8

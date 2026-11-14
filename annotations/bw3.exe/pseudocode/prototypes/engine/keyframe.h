@@ -7,20 +7,20 @@
 
 // Original: engine_keyframe.c_calculatePackedSurfaceNormal_FUN_004deb20
 // Address: 004deb20
-void __cdecl calculatePackedSurfaceNormal(int param_1,int param_2);
+void __cdecl calculatePackedSurfaceNormal(CVector3i *vertex_data,SMRGLPrimitiveTriangleIndex *texture);
 
 // Original: engine_keyframe.c_calculateSurfaceNormal_FUN_004dece0
 // Address: 004dece0
-void __cdecl calculateSurfaceNormal(int param_1,int param_2);
+void __cdecl calculateSurfaceNormal(CVector3i *vertex_data,SMRGLPrimitiveTriangle *texture);
 
 // Original: engine_keyframe.c_loadAndInterpolateKeyframes_FUN_004dee60
 // Address: 004dee60
-void __cdecl loadAndInterpolateKeyframes(int param_1);
+void __cdecl loadAndInterpolateKeyframes(SMRGLKeyframeModel *keyframe_model);
 
 // Original: engine_keyframe.c_interpolateCubicKeyframes_FUN_004df050
 // Address: 004df050
-int __cdecl interpolateCubicKeyframes(int param_1);
+SMRGLHeaderExtended * __cdecl interpolateCubicKeyframes(SMRGLKeyframeModel *keyframe_model);
 
 // Original: engine_keyframe.c_recomputeKeyFrameNormals_FUN_004df440
 // Address: 004df440
-void __cdecl recomputeKeyFrameNormals(SMRGLHeaderExtended *param_1);
+void __cdecl recomputeKeyFrameNormals(SMRGLPrimitiveTriangle *primitive_list);

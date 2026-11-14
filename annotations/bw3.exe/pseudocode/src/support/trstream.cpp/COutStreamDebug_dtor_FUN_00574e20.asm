@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; COutStreamDebug * support_trstream_cpp_COutStreamDebug_dtor_FUN_00574e20(COutStreamDebug *this_ptr,uint flags)
+; COutStreamDebug * __cdecl support_trstream_cpp_COutStreamDebug_dtor_FUN_00574e20(COutStreamDebug *this_ptr,uint flags)
 ;
 ; Parameters:
 ; COutStreamDebug * Stack[0x4]:4   this_ptr
@@ -15,7 +15,7 @@
 ;   crt_memory.c___vec_delete_FUN_005a308f
 ;   crt_unknown.c_FUN_005a30b6
 ;   crt_unknown.c_FUN_005a30c4
-;   support_trstream.cpp_FUN_005744a0
+;   support_trstream.cpp_COutStream_dtor_FUN_005744a0
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
     PUSH 0x1                            ; 00574e2c
     PUSH EBX                            ; 00574e2e
     MOV dword ptr [EBX],0x5e5b74        ; 00574e2f | g_COutStreamDebugVTable
-    CALL support_trstream.cpp_FUN_005744a0 ; 00574e35
-        ;   XREF to: 005744a0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005744a0()
+    CALL support_trstream.cpp_COutStream_dtor_FUN_005744a0 ; 00574e35
+        ;   XREF to: 005744a0 (UNCONDITIONAL_CALL)  ; COutStream * support_trstream.cpp_COutStream_dtor_FUN_005744a0(COutStream * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00574e3a
     MOV DL,byte ptr [ESP + 0xc]         ; 00574e3d
     MOV EBX,EAX                         ; 00574e41
@@ -45,7 +45,7 @@ section .text
         ;   Label: LAB_00574e4c
     PUSH EBX                            ; 00574e51
     CALL crt_memory.c___vec_delete_FUN_005a308f ; 00574e52
-        ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005a308f()
+        ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005a308f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00574e57
     PUSH EAX                            ; 00574e5a
     CALL crt_unknown.c_FUN_005a30b6     ; 00574e5b

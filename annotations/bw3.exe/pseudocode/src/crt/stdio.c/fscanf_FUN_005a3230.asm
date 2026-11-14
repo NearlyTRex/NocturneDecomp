@@ -1,19 +1,22 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_stdio_c_fscanf_FUN_005a3230(undefined4 param_1,undefined4 param_2)
+; int __cdecl crt_stdio_c_fscanf_FUN_005a3230(_FILE *file,char *format)
 ;
+; Parameters:
+; _FILE *          Stack[0x4]:4   file
+; char *           Stack[0x8]:4   format
 ; Local Variables:
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[48]:
 ;   core_actor.cpp_CDemonActor_load_FUN_0040b110 at 0040b14e
-;   core_actor.cpp_FUN_0040bba0 at 0040bbe9
 ;   core_actor.cpp_archiveClothList_FUN_0040bf20 at 0040bf64
 ;   core_actor.cpp_archiveFloat_FUN_0040b830 at 0040b84c
 ;   core_actor.cpp_archiveInteger_FUN_0040b8b0 at 0040b8cd
 ;   core_actor.cpp_archiveLocation_FUN_0040b540 at 0040b569
 ;   core_actor.cpp_archiveOrientation_FUN_0040b4a0 at 0040b4c4
+;   core_actor.cpp_archivePartStatus_FUN_0040bba0 at 0040bbe9
 ;   core_actor.cpp_archiveQuaternion_FUN_0040b5e0 at 0040b608
 ;   core_actor.cpp_archiveRules_FUN_0040c0c0 at 0040c104
 ;   core_actor.cpp_archiveString_FUN_0040b680 at 0040b6ff

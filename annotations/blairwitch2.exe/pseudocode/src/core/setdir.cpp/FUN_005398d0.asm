@@ -8,8 +8,8 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
+;   core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00539d50 at 00539d57
 ;   core_setdir.cpp_FUN_00539860 at 0053989f
-;   core_setdir.cpp_FUN_00539d50 at 00539d57
 ;
 ; Referenced Globals:
 ;   void* PTR_LAB_005398b4 = 0053992b

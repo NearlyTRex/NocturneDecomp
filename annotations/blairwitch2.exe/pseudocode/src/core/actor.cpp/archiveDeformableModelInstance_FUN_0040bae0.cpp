@@ -2,11 +2,11 @@
 // Address: 0040bae0
 // Address Range: [[0040bae0, 0040bb5a]]
 // Convention: __cdecl
-// Signature: void __cdecl core_actor_cpp_archiveDeformableModelInstance_FUN_0040bae0(CDeformableModelInstance *param_1,char *param_2)
+// Signature: void __cdecl core_actor_cpp_archiveDeformableModelInstance_FUN_0040bae0(CDeformableModelInstance *model_ptr,char *property_name)
 
 #include "nocturne.h"
 
-void __cdecl core_actor_cpp_archiveDeformableModelInstance_FUN_0040bae0(CDeformableModelInstance *param_1,char *param_2)
+void __cdecl core_actor_cpp_archiveDeformableModelInstance_FUN_0040bae0(CDeformableModelInstance *model_ptr,char *property_name)
 
 {
   char cVar1;
@@ -16,11 +16,11 @@ void __cdecl core_actor_cpp_archiveDeformableModelInstance_FUN_0040bae0(CDeforma
   
   pcVar3 = local_d0;
   if (DAT_007bc038 == 1) {
-    core_actor_cpp_archiveString_FUN_0040b730(local_d0,param_2);
-    core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0(param_1,local_d0);
+    core_actor_cpp_archiveString_FUN_0040b730(local_d0,property_name);
+    core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0(model_ptr,local_d0);
     return;
   }
-  pcVar2 = &param_1->field_0x2260;
+  pcVar2 = model_ptr->model_name;
   do {
     cVar1 = *pcVar2;
     *pcVar3 = cVar1;
@@ -30,6 +30,6 @@ void __cdecl core_actor_cpp_archiveDeformableModelInstance_FUN_0040bae0(CDeforma
     pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  core_actor_cpp_archiveString_FUN_0040b730(local_d0,param_2);
+  core_actor_cpp_archiveString_FUN_0040b730(local_d0,property_name);
   return;
 }

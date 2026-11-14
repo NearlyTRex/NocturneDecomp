@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   engine_dosio.cpp_FUN_004794b0 at 0047953a
+;   engine_dosio.cpp_CFileFinder_convertStruct_FUN_004794b0 at 0047953a
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c215b

@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 95,
+    "complexity_score": 110,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 7,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 45,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
+      "shadow_pointer_walk",
       "undefined_data",
       "warning_overlapping_globals"
     ],
@@ -161,6 +162,32 @@
     },
     "pcode_op_count": 419
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00469e80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0046ba70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0048b030",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0045f5e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -223,6 +250,14 @@
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_00481aa0(this_ptr,3,(int *)&DAT_01bc1240);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar3` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 25,
+      "match": "pSVar3 = (T *)&(pSVar3->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar3 = (SInputFace *)&(pSVar3->vertex_indices).vertex_index_1;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

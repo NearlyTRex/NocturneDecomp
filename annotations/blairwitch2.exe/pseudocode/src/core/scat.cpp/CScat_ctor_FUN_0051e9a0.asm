@@ -10,9 +10,9 @@
 ;   core_scat.cpp_factoryFuncScat_FUN_0051e970 at 0051e983
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_0042a330
+;   core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330
 ;   core_hero.cpp_FUN_004ce240
-;   core_scat.cpp_FUN_0051ec20
+;   core_scat.cpp_CScat_createDefaultWeapon_FUN_0051ec20
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;
 ; *****************************************************************************
@@ -43,8 +43,8 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 0051e9ef
     MOV EDX,dword ptr [EAX + 0x4]       ; 0051e9f2
     MOV dword ptr [EAX],EDX             ; 0051e9f5
-    CALL core_scat.cpp_FUN_0051ec20     ; 0051e9f7
-        ;   XREF to: 0051ec20 (UNCONDITIONAL_CALL)  ; void core_scat.cpp_FUN_0051ec20(CScat * this_ptr)
+    CALL core_scat.cpp_CScat_createDefaultWeapon_FUN_0051ec20 ; 0051e9f7
+        ;   XREF to: 0051ec20 (UNCONDITIONAL_CALL)  ; void core_scat.cpp_CScat_createDefaultWeapon_FUN_0051ec20(CScat * this_ptr)
     ADD ESP,0x4                         ; 0051e9fc
     MOV dword ptr [EBX + 0x25654],0x0   ; 0051e9ff
     PUSH 0x0                            ; 0051ea09
@@ -57,16 +57,16 @@ section .text
     FLD float ptr [EBX + 0x2565c]       ; 0051ea32
     PUSH EBX                            ; 0051ea38
     FSTP float ptr [EBX + 0x25658]      ; 0051ea39
-    CALL core_charactr.cpp_FUN_0042a330 ; 0051ea3f
-        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
+    CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330 ; 0051ea3f
+        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 0051ea44
     PUSH 0x0                            ; 0051ea47
     PUSH 0x5e29d6                       ; 0051ea49
     PUSH 0x2                            ; 0051ea4e
     PUSH 0x1                            ; 0051ea50
     PUSH EBX                            ; 0051ea52
-    CALL core_charactr.cpp_FUN_0042a330 ; 0051ea53
-        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
+    CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330 ; 0051ea53
+        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 0051ea58
     MOV EAX,EBX                         ; 0051ea5b
     POP EBX                             ; 0051ea5d

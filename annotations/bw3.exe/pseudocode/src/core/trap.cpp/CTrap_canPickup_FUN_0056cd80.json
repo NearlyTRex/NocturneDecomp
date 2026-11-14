@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 24,
+    "complexity_score": 9,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 9,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 27
   },
   "cross_references": [],
@@ -35,7 +33,7 @@
     {
       "addr": "0040c790",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040c790"
+      "name": "core_actor.cpp_isOfClass_FUN_0040c790"
     }
   ],
   "globals": [],
@@ -71,6 +69,32 @@
     },
     "pcode_op_count": 52
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005764d0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00599d90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005de710",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "005468a0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -94,16 +118,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x2d8",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0x2d8 == 0) &&",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

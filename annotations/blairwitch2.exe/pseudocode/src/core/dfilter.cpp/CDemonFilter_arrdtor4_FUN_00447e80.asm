@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonFilter * core_dfilter_cpp_CDemonFilter_arrdtor4_FUN_00447e80(CDemonFilter *this_ptr,uint flags)
+; CDemonFilter * __cdecl core_dfilter_cpp_CDemonFilter_arrdtor4_FUN_00447e80(CDemonFilter *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CDemonFilter *   Stack[0x4]:4   this_ptr
@@ -20,7 +20,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 00447e87
     PUSH EDX                            ; 00447e8b
     CALL crt_memory.c___arrfini_FUN_005b854f ; 00447e8c
-        ;   XREF to: 005b854f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrfini_FUN_005b854f()
+        ;   XREF to: 005b854f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005b854f(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00447e91
     RET                                 ; 00447e94
 

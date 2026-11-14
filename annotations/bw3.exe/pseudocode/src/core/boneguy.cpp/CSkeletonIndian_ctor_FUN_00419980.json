@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 99,
+    "complexity_score": 14,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 14,
-    "suspect_count": 8,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 38
   },
   "cross_references": [
@@ -30,9 +28,9 @@
         "004199e1"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_boneguy.cpp_CSkeletonIndian_ctor_FUN_00419980",
-    "signature": "CSkeletonIndian * core_boneguy_cpp_CSkeletonIndian_ctor_FUN_00419980(CSkeletonIndian *this_ptr)"
+    "signature": "CSkeletonIndian * __cdecl core_boneguy_cpp_CSkeletonIndian_ctor_FUN_00419980(CSkeletonIndian *this_ptr)"
   },
   "function_calls": [
     {
@@ -43,7 +41,7 @@
     {
       "addr": "0054eae0",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_0054eae0"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0"
     }
   ],
   "globals": [],
@@ -104,72 +102,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "*(byte ***)&pCVar1->field_0x154 = &g_CSkeleton_IndianVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0054eae0(&pCVar1->field_0x158,0x5b718e);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x2538",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x2538 = 0x41f00000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0xce5c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0xce5c = 0x41400000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0xce60",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0xce60 = 0x41000000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0xd074",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0xd074 = 2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0xd058",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0xd058 = *(uint *)&pCVar1->field_0x2538;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x2538",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0xd058 = *(uint *)&pCVar1->field_0x2538;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

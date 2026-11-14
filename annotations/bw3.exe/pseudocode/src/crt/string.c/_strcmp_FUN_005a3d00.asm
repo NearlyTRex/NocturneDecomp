@@ -8,16 +8,16 @@
 ; char *           Stack[0x8]:4   str2
 ;
 ; XREF[38]:
-;   core_asgaya.cpp_FUN_005a0be0 at 005a112f
-;   core_cloth.cpp_FUN_0043fd60 at 0043fd80
-;   core_curtain.cpp_FUN_00447830 at 004478a7
+;   core_asgaya.cpp_CAsgaya_process_FUN_005a0be0 at 005a112f
+;   core_bird.cpp_CBird_process_FUN_0040fb40 at 0040fe47
+;   core_cloth.cpp_CCloth_grabCloth_FUN_0043fd60 at 0043fd80
+;   core_curtain.cpp_CCurtain_process_FUN_00447830 at 004478a7
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044c130 at 0044c332
 ;   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044aa20 at 0044aa4a
 ;   core_dfilter.cpp_CFilterCache_findFilter_FUN_00459850 at 00459869
-;   core_dfilter.cpp_FUN_00459710 at 00459729
+;   core_dfilter.cpp_CFilterCache_getFilter_FUN_00459710 at 00459729
 ;   core_door.cpp_CDoor_setup_FUN_00463c90 at 00463cba
 ;   core_dpart.cpp_FUN_00466540 at 0046664d
-;   core_emitter.cpp_FUN_00487eb0 at 00487ed4
 ;   ... and 28 more
 ;
 ; *****************************************************************************

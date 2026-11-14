@@ -13,25 +13,25 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAntiAliasedLine_FUN_00467290(
 {
   uint uVar1;
   uint uVar2;
-  uint uVar3;
-  uint uVar4;
+  int iVar3;
   uint unaff_EBX;
   uint unaff_retaddr;
+  uint uVar4;
+  uint uVar5;
   
-  uVar3 = _DAT_01c35e54;
   uVar2 = _DAT_01c35e50;
-  uVar4 = _DAT_01c35e4c;
   uVar1 = _DAT_01c35e48;
-  _DAT_01c35e48 = *(uint *)(this_ptr + 0x10);
-  _DAT_01c35e50 = *(uint *)(this_ptr + 0x18);
-  _DAT_01c35e4c = *(uint *)(this_ptr + 0x14);
-  _DAT_01c35e54 = *(uint *)(this_ptr + 0x1c);
-  uVar4 = cockpit_ckptutil_c_FUN_0042f300(uVar4,uVar3);
-  cockpit_ckptutil_c_FUN_0042f320(1);
+  _DAT_01c35e48 = this_ptr->clip_left;
+  _DAT_01c35e50 = this_ptr->clip_right;
+  uVar4 = _DAT_01c35e4c;
+  _DAT_01c35e4c = this_ptr->clip_top;
+  uVar5 = _DAT_01c35e54;
+  _DAT_01c35e54 = this_ptr->clip_bottom;
+  iVar3 = cockpit_ckptutil_c_FUN_0042f300();
+  cockpit_ckptutil_c_FUN_0042f320(1,uVar4,uVar5);
   cockpit_ckptutil_c_drawLineAA_FUN_0042e930
-            (x1 + *(int *)(this_ptr + 8),y1 + *(int *)(this_ptr + 0xc),x2 + *(int *)(this_ptr + 8),
-             y2 + *(int *)(this_ptr + 0xc),_DAT_01ba5c2c);
-  cockpit_ckptutil_c_FUN_0042f320(uVar4);
+            (x1 + this_ptr->x,y1 + this_ptr->y,x2 + this_ptr->x,y2 + this_ptr->y,_DAT_01ba5c2c);
+  cockpit_ckptutil_c_FUN_0042f320(iVar3);
   _DAT_01c35e48 = uVar1;
   _DAT_01c35e4c = unaff_EBX;
   _DAT_01c35e50 = uVar2;

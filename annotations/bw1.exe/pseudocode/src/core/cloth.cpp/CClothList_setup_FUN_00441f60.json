@@ -2,27 +2,29 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 15,
+    "complexity_score": 30,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 15,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
     "total_lines": 51
   },
   "cross_references": [
     {
       "addr": "0042c510",
       "from_addr": "0042c6bd",
-      "name": "core_charactr.cpp_FUN_0042c510",
+      "name": "core_charactr.cpp_CCharacter_setup_FUN_0042c510",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00591ff0",
       "from_addr": "0059207c",
-      "name": "core_succubus.cpp_FUN_00591ff0",
+      "name": "core_succubus.cpp_CSuccubus_setup_FUN_00591ff0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -52,7 +54,7 @@
       {
         "call_addr": "0042c6bd",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_0042c510",
+        "caller": "core_charactr.cpp_CCharacter_setup_FUN_0042c510",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -63,7 +65,7 @@
       {
         "call_addr": "0059207c",
         "call_type": "direct",
-        "caller": "core_succubus.cpp_FUN_00591ff0",
+        "caller": "core_succubus.cpp_CSuccubus_setup_FUN_00591ff0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -104,6 +106,32 @@
     },
     "pcode_op_count": 125
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b1740",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0043fbc0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0043c290",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00438510",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 20,
     "local_size": 4,
@@ -141,5 +169,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 14,
+      "match": "pCVar1 = (T *)pCVar1->ARRAY",
+      "severity": "moderate",
+      "text": "pCVar1 = (CClothList *)pCVar1->filenames;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
 }

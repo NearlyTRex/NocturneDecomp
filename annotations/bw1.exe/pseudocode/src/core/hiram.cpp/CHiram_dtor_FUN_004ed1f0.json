@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 98,
+    "complexity_score": 53,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 28,
-    "suspect_count": 6,
+    "suspect_count": 2,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_field"
+      "negative_offset"
     ],
     "total_lines": 94
   },
@@ -24,9 +23,9 @@
         "004ed28e"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_hiram.cpp_CHiram_dtor_FUN_004ed1f0",
-    "signature": "CHiram * core_hiram_cpp_CHiram_dtor_FUN_004ed1f0(CHiram *this_ptr,uint flags)"
+    "signature": "CHiram * __cdecl core_hiram_cpp_CHiram_dtor_FUN_004ed1f0(CHiram *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -35,9 +34,14 @@
       "name": "core_actor.cpp_CDemonActor_dtor_FUN_00408730"
     },
     {
+      "addr": "0040ee30",
+      "is_variadic": false,
+      "name": "core_armour.cpp_FUN_0040ee30"
+    },
+    {
       "addr": "00441ca0",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_00441ca0"
+      "name": "core_cloth.cpp_CClothList_dtor_FUN_00441ca0"
     },
     {
       "addr": "00533060",
@@ -63,19 +67,14 @@
       "addr": "005c0344",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005c0344"
-    },
-    {
-      "addr": "0040ee30",
-      "is_variadic": false,
-      "name": "unkafter_armour.cpp_FUN_0040ee30"
     }
   ],
   "globals": [
     {
       "addr": "00601fc4",
       "name": "g_CHiramVTable",
-      "type": "undefined1*",
-      "value": "004ed290"
+      "type": "CCharacter_full_vtable",
+      "value": null
     },
     {
       "addr": "00602110",
@@ -117,6 +116,26 @@
     },
     "pcode_op_count": 237
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004d0f90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.955
+    },
+    "nocedit.exe": {
+      "addr": "004f4450",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.876
+    },
+    "nocturne.exe": {
+      "addr": "004b6670",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.876
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -142,52 +161,20 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "*(byte ***)&this_ptr->field_0x154 = &g_CHiramVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0xc1d0",
-      "severity": "mild",
-      "text": "pCVar1 = core_path_cpp_CPathMap_dtor_FUN_00533060((CPathMap *)&this_ptr->field_0xc1d0,0);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 21,
+      "line": 19,
       "match": "pCVar1[-1].",
       "severity": "mild",
-      "text": "iVar2 = unkafter_armour_cpp_FUN_0040ee30(&pCVar1[-1].field_0xace8,0);",
+      "text": "iVar2 = core_armour_cpp_FUN_0040ee30(pCVar1[-1].height_cache_tags[10] + 0x36,0);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0xace8",
-      "severity": "mild",
-      "text": "iVar2 = unkafter_armour_cpp_FUN_0040ee30(&pCVar1[-1].field_0xace8,0);",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 26,
+      "line": 25,
       "match": "pCVar4[-1].",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)&pCVar4[-1].field_0x224c,1);",
+      "text": "((CDemonActor *)(pCVar4[-1].part_data.texture_set_indices + 7),1);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x224c",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)&pCVar4[-1].field_0x224c,1);",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {
@@ -198,7 +185,7 @@
         "vtable_addr": "00602114"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CHiram",
         "offset": 208,
         "vtable_addr": "00601fc4"
       }

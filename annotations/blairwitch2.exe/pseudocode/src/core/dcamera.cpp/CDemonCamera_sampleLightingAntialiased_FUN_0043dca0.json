@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 515,
-    "complexity_score": 1196,
+    "complexity_score": 386,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 201,
-    "suspect_count": 97,
+    "pseudocode_lines": 196,
+    "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 716
+    "total_lines": 711
   },
   "cross_references": [
     {
@@ -166,6 +165,32 @@
     },
     "pcode_op_count": 4238
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0044f360",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0044b4a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0044e790",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004425f0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 76,
     "local_size": 60,
@@ -283,110 +308,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x1cd0",
-      "severity": "mild",
-      "text": "if (*(int *)&light_source->field_0x1cd0 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x16c",
-      "severity": "mild",
-      "text": "iVar6 = *(int *)world_pos - *(int *)&light_source->field_0x16c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x170",
-      "severity": "mild",
-      "text": "iVar7 = *(int *)(world_pos + 4) - *(int *)&light_source->field_0x170;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x174",
-      "severity": "mild",
-      "text": "iVar4 = *(int *)(world_pos + 8) - *(int *)&light_source->field_0x174;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x180",
-      "severity": "mild",
-      "text": "lVar1 = (longlong)*(int *)&light_source->field_0x180 * (longlong)iVar6;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x18c",
-      "severity": "mild",
-      "text": "lVar2 = (longlong)*(int *)&light_source->field_0x18c * (longlong)iVar7;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x198",
-      "severity": "mild",
-      "text": "lVar3 = (longlong)*(int *)&light_source->field_0x198 * (longlong)iVar4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "(lVar1 = (longlong)*(int *)&light_source->field_0x178 * (longlong)iVar6,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x184",
-      "severity": "mild",
-      "text": "lVar2 = (longlong)*(int *)&light_source->field_0x184 * (longlong)iVar7,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x190",
-      "severity": "mild",
-      "text": "lVar3 = (longlong)*(int *)&light_source->field_0x190 * (longlong)iVar4,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x17c",
-      "severity": "mild",
-      "text": "((lVar1 = (longlong)*(int *)&light_source->field_0x17c * (longlong)iVar6,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x188",
-      "severity": "mild",
-      "text": "lVar2 = (longlong)*(int *)&light_source->field_0x188 * (longlong)iVar7,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x194",
-      "severity": "mild",
-      "text": "lVar3 = (longlong)*(int *)&light_source->field_0x194 * (longlong)iVar4,",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 46,
       "match": "DAT_01468540",
@@ -395,296 +316,32 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 50,
-      "match": "field_0x1c0",
-      "severity": "mild",
-      "text": "(int)(((longlong)_DAT_026810c0 * (longlong)*(int *)&light_source->field_0x1c0) /",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x1c8",
-      "severity": "mild",
-      "text": "(longlong)_DAT_026810c8) + *(int *)&light_source->field_0x1c8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x1c4",
-      "severity": "mild",
-      "text": "(int)(((longlong)_DAT_026810c4 * (longlong)*(int *)&light_source->field_0x1c4) /",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x1cc",
-      "severity": "mild",
-      "text": "(longlong)_DAT_026810c8) + *(int *)&light_source->field_0x1cc;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 55,
+      "line": 57,
       "match": "DAT_026810c0",
       "severity": "mild",
       "text": "piVar5 = (int *)&DAT_026810c0;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 58,
-      "match": "field_0x2f94",
-      "severity": "mild",
-      "text": "(*(short *)(*(int *)&light_source->field_0x2f94 +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 59,
-      "match": "field_0x1cc0",
-      "severity": "mild",
-      "text": "((*piVar5 >> 0x10) + *(int *)&light_source->field_0x1cc0 * (piVar5[1] >> 0x10)) *",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 61,
-      "match": "field_0x140",
-      "severity": "mild",
-      "text": "((float)piVar5[2] * (float)_DAT_005ce45e < *(float *)&light_source->field_0x140)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 63,
-      "match": "field_0x140",
-      "severity": "mild",
-      "text": "((*(float *)&light_source->field_0x140 -",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 65,
-      "match": "field_0x140",
-      "severity": "mild",
-      "text": "*(float *)&light_source->field_0x140));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 69,
-      "match": "field_0x16c",
-      "severity": "mild",
-      "text": "iVar6 = *(int *)world_pos - *(int *)&light_source->field_0x16c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 70,
-      "match": "field_0x170",
-      "severity": "mild",
-      "text": "iVar7 = *(int *)(world_pos + 4) - *(int *)&light_source->field_0x170;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 71,
-      "match": "field_0x174",
-      "severity": "mild",
-      "text": "iVar4 = *(int *)(world_pos + 8) - *(int *)&light_source->field_0x174;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 72,
-      "match": "field_0x180",
-      "severity": "mild",
-      "text": "lVar1 = (longlong)*(int *)&light_source->field_0x180 * (longlong)iVar6;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 73,
-      "match": "field_0x18c",
-      "severity": "mild",
-      "text": "lVar2 = (longlong)*(int *)&light_source->field_0x18c * (longlong)iVar7;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 74,
-      "match": "field_0x198",
-      "severity": "mild",
-      "text": "lVar3 = (longlong)*(int *)&light_source->field_0x198 * (longlong)iVar4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 80,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "(lVar1 = (longlong)*(int *)&light_source->field_0x178 * (longlong)iVar6,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 81,
-      "match": "field_0x184",
-      "severity": "mild",
-      "text": "lVar2 = (longlong)*(int *)&light_source->field_0x184 * (longlong)iVar7,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 82,
-      "match": "field_0x190",
-      "severity": "mild",
-      "text": "lVar3 = (longlong)*(int *)&light_source->field_0x190 * (longlong)iVar4,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 88,
-      "match": "field_0x17c",
-      "severity": "mild",
-      "text": "((lVar1 = (longlong)*(int *)&light_source->field_0x17c * (longlong)iVar6,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 89,
-      "match": "field_0x188",
-      "severity": "mild",
-      "text": "lVar2 = (longlong)*(int *)&light_source->field_0x188 * (longlong)iVar7,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 90,
-      "match": "field_0x194",
-      "severity": "mild",
-      "text": "lVar3 = (longlong)*(int *)&light_source->field_0x194 * (longlong)iVar4,",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 96,
+      "line": 97,
       "match": "DAT_01468540",
       "severity": "mild",
       "text": "piVar5 = (int *)&DAT_01468540;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 100,
-      "match": "field_0x1c0",
-      "severity": "mild",
-      "text": "(int)(((longlong)_DAT_026810c0 * (longlong)*(int *)&light_source->field_0x1c0) /",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 101,
-      "match": "field_0x1c8",
-      "severity": "mild",
-      "text": "(longlong)_DAT_026810c8) + *(int *)&light_source->field_0x1c8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 103,
-      "match": "field_0x1c4",
-      "severity": "mild",
-      "text": "(int)(((longlong)_DAT_026810c4 * (longlong)*(int *)&light_source->field_0x1c4) /",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 104,
-      "match": "field_0x1cc",
-      "severity": "mild",
-      "text": "(longlong)_DAT_026810c8) + *(int *)&light_source->field_0x1cc;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 105,
+      "line": 108,
       "match": "DAT_026810c0",
       "severity": "mild",
       "text": "piVar5 = (int *)&DAT_026810c0;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 114,
-      "match": "field_0x1cc0",
-      "severity": "mild",
-      "text": "(((*piVar5 >> 0x10) + *(int *)&light_source->field_0x1cc0 * (piVar5[1] >> 0x10)) * 2 +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 115,
-      "match": "field_0x2f94",
-      "severity": "mild",
-      "text": "*(int *)&light_source->field_0x2f94) + 0x90)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 117,
-      "match": "field_0x1c54",
-      "severity": "mild",
-      "text": "(int)((uint)*(byte *)(*(int *)&light_source->field_0x1c54 +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 118,
-      "match": "field_0x1ccc",
-      "severity": "mild",
-      "text": "((piVar5[1] >> (light_source->field_0x1ccc & 0x1f) &",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 119,
-      "match": "field_0x1c68",
-      "severity": "mild",
-      "text": "*(uint *)&light_source->field_0x1c68) <<",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 120,
-      "match": "field_0x1c60",
-      "severity": "mild",
-      "text": "(light_source->field_0x1c60 & 0x1f)) +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 121,
-      "match": "field_0x1c68",
-      "severity": "mild",
-      "text": "(*(uint *)&light_source->field_0x1c68 &",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 122,
-      "match": "field_0x1cc8",
-      "severity": "mild",
-      "text": "*piVar5 >> (light_source->field_0x1cc8 & 0x1f))) << 10) *",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 126,
+      "line": 128,
       "match": "(short *)((int)piVar5",
       "severity": "moderate",
       "text": "*(short *)((int)piVar5 + 2) = *(short *)((int)piVar5 + 2) + 1;",
@@ -692,151 +349,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 126,
+      "line": 128,
       "match": "(short *)((int)piVar5",
       "severity": "moderate",
       "text": "*(short *)((int)piVar5 + 2) = *(short *)((int)piVar5 + 2) + 1;",
       "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 127,
-      "match": "field_0x1cc0",
-      "severity": "mild",
-      "text": "if (*piVar5 >> 0x10 < *(int *)&light_source->field_0x1cc0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 130,
-      "match": "field_0x2f94",
-      "severity": "mild",
-      "text": "(*(int *)&light_source->field_0x2f94 +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 131,
-      "match": "field_0x1cc0",
-      "severity": "mild",
-      "text": "((*piVar5 >> 0x10) + (piVar5[1] >> 0x10) * *(int *)&light_source->field_0x1cc0) * 2)",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 134,
-      "match": "field_0x1c68",
-      "severity": "mild",
-      "text": "(int)((uint)*(byte *)((*(uint *)&light_source->field_0x1c68 &",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 135,
-      "match": "field_0x1cc8",
-      "severity": "mild",
-      "text": "*piVar5 >> (light_source->field_0x1cc8 & 0x1f)) +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 136,
-      "match": "field_0x1ccc",
-      "severity": "mild",
-      "text": "((piVar5[1] >> (light_source->field_0x1ccc & 0x1f) &",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 137,
-      "match": "field_0x1c68",
-      "severity": "mild",
-      "text": "*(uint *)&light_source->field_0x1c68) <<",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 138,
-      "match": "field_0x1c60",
-      "severity": "mild",
-      "text": "(light_source->field_0x1c60 & 0x1f)) +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 139,
-      "match": "field_0x1c54",
-      "severity": "mild",
-      "text": "*(int *)&light_source->field_0x1c54) << 10) * (longlong)intensity",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 150,
-      "match": "field_0x1cc0",
-      "severity": "mild",
-      "text": "((iVar4 + (piVar5[1] >> 0x10) * *(int *)&light_source->field_0x1cc0) * 2 +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 151,
-      "match": "field_0x2f94",
-      "severity": "mild",
-      "text": "*(int *)&light_source->field_0x2f94) + 0x90)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 153,
-      "match": "field_0x1c54",
-      "severity": "mild",
-      "text": "(int)((uint)*(byte *)(*(int *)&light_source->field_0x1c54 +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 154,
-      "match": "field_0x1ccc",
-      "severity": "mild",
-      "text": "((piVar5[1] >> (light_source->field_0x1ccc & 0x1f) &",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 155,
-      "match": "field_0x1c68",
-      "severity": "mild",
-      "text": "*(uint *)&light_source->field_0x1c68) <<",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 156,
-      "match": "field_0x1c60",
-      "severity": "mild",
-      "text": "(light_source->field_0x1c60 & 0x1f)) +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 157,
-      "match": "field_0x1c68",
-      "severity": "mild",
-      "text": "(*(uint *)&light_source->field_0x1c68 &",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 158,
-      "match": "field_0x1cc8",
-      "severity": "mild",
-      "text": "*piVar5 >> (light_source->field_0x1cc8 & 0x1f))) << 10) *",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 163,
+      "match": "(short *)((int)piVar5",
+      "severity": "moderate",
+      "text": "*(short *)((int)piVar5 + 6) = *(short *)((int)piVar5 + 6) + 1;",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 164,
+      "line": 163,
       "match": "(short *)((int)piVar5",
       "severity": "moderate",
       "text": "*(short *)((int)piVar5 + 6) = *(short *)((int)piVar5 + 6) + 1;",
@@ -847,180 +376,44 @@
       "line": 164,
       "match": "(short *)((int)piVar5",
       "severity": "moderate",
-      "text": "*(short *)((int)piVar5 + 6) = *(short *)((int)piVar5 + 6) + 1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 165,
-      "match": "(short *)((int)piVar5",
-      "severity": "moderate",
       "text": "*(short *)((int)piVar5 + 2) = *(short *)((int)piVar5 + 2) + 1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 165,
-      "match": "(short *)((int)piVar5",
-      "severity": "moderate",
-      "text": "*(short *)((int)piVar5 + 2) = *(short *)((int)piVar5 + 2) + 1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 166,
-      "match": "field_0x1cc4",
-      "severity": "mild",
-      "text": "if (piVar5[1] >> 0x10 < *(int *)&light_source->field_0x1cc4) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 169,
-      "match": "field_0x2f94",
-      "severity": "mild",
-      "text": "(*(int *)&light_source->field_0x2f94 +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 170,
-      "match": "field_0x1cc0",
-      "severity": "mild",
-      "text": "((*piVar5 >> 0x10) + *(int *)&light_source->field_0x1cc0 * (piVar5[1] >> 0x10)) * 2)",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 173,
-      "match": "field_0x1c54",
-      "severity": "mild",
-      "text": "(int)((uint)*(byte *)(*(int *)&light_source->field_0x1c54 +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 174,
-      "match": "field_0x1ccc",
-      "severity": "mild",
-      "text": "((piVar5[1] >> (light_source->field_0x1ccc & 0x1f) &",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 175,
-      "match": "field_0x1c68",
-      "severity": "mild",
-      "text": "*(uint *)&light_source->field_0x1c68) <<",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 176,
-      "match": "field_0x1c60",
-      "severity": "mild",
-      "text": "(light_source->field_0x1c60 & 0x1f)) +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 177,
-      "match": "field_0x1c68",
-      "severity": "mild",
-      "text": "(*(uint *)&light_source->field_0x1c68 &",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 178,
-      "match": "field_0x1cc8",
-      "severity": "mild",
-      "text": "*piVar5 >> (light_source->field_0x1cc8 & 0x1f))) << 10) *",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 189,
-      "match": "field_0x2f94",
-      "severity": "mild",
-      "text": "(*(int *)&light_source->field_0x2f94 +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 190,
-      "match": "field_0x1cc0",
-      "severity": "mild",
-      "text": "((*piVar5 >> 0x10) + (iVar4 >> 0x10) * *(int *)&light_source->field_0x1cc0) * 2) +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 193,
-      "match": "field_0x1c68",
-      "severity": "mild",
-      "text": "(int)((uint)*(byte *)((*(uint *)&light_source->field_0x1c68 &",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 194,
-      "match": "field_0x1cc8",
-      "severity": "mild",
-      "text": "*piVar5 >> (light_source->field_0x1cc8 & 0x1f)) +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 195,
-      "match": "field_0x1ccc",
-      "severity": "mild",
-      "text": "((piVar5[1] >> (light_source->field_0x1ccc & 0x1f) &",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 196,
-      "match": "field_0x1c68",
-      "severity": "mild",
-      "text": "*(uint *)&light_source->field_0x1c68) <<",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 197,
-      "match": "field_0x1c60",
-      "severity": "mild",
-      "text": "(light_source->field_0x1c60 & 0x1f)) +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 198,
-      "match": "field_0x1c54",
-      "severity": "mild",
-      "text": "*(int *)&light_source->field_0x1c54) << 10) * (longlong)intensity",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 126,
-      "match": "(int)piVar5",
-      "severity": "moderate",
-      "text": "*(short *)((int)piVar5 + 2) = *(short *)((int)piVar5 + 2) + 1;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 126,
-      "match": "(int)piVar5",
-      "severity": "moderate",
-      "text": "*(short *)((int)piVar5 + 2) = *(short *)((int)piVar5 + 2) + 1;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 164,
+      "match": "(short *)((int)piVar5",
+      "severity": "moderate",
+      "text": "*(short *)((int)piVar5 + 2) = *(short *)((int)piVar5 + 2) + 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 128,
+      "match": "(int)piVar5",
+      "severity": "moderate",
+      "text": "*(short *)((int)piVar5 + 2) = *(short *)((int)piVar5 + 2) + 1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 128,
+      "match": "(int)piVar5",
+      "severity": "moderate",
+      "text": "*(short *)((int)piVar5 + 2) = *(short *)((int)piVar5 + 2) + 1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 163,
+      "match": "(int)piVar5",
+      "severity": "moderate",
+      "text": "*(short *)((int)piVar5 + 6) = *(short *)((int)piVar5 + 6) + 1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 163,
       "match": "(int)piVar5",
       "severity": "moderate",
       "text": "*(short *)((int)piVar5 + 6) = *(short *)((int)piVar5 + 6) + 1;",
@@ -1031,20 +424,12 @@
       "line": 164,
       "match": "(int)piVar5",
       "severity": "moderate",
-      "text": "*(short *)((int)piVar5 + 6) = *(short *)((int)piVar5 + 6) + 1;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 165,
-      "match": "(int)piVar5",
-      "severity": "moderate",
       "text": "*(short *)((int)piVar5 + 2) = *(short *)((int)piVar5 + 2) + 1;",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 165,
+      "line": 164,
       "match": "(int)piVar5",
       "severity": "moderate",
       "text": "*(short *)((int)piVar5 + 2) = *(short *)((int)piVar5 + 2) + 1;",

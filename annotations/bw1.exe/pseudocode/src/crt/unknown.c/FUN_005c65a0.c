@@ -13,9 +13,9 @@ int FUN_005c65a0(void)
   int iVar2;
   
   iVar1 = DAT_006265c8;
-  iVar2 = unkafter_zombie_cpp_FUN_005cb928();
+  iVar2 = FUN_005cb928();
   if ((iVar2 != -1) && (iVar1 == 0)) {
-    unkafter_zombie_cpp_FUN_005cb9c0(iVar2);
+    FUN_005cb9c0(iVar2);
   }
   return iVar2;
 }

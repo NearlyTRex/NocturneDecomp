@@ -25,15 +25,15 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
-;   core_scat.cpp_FUN_0051ecc0 at 0051f124
+;   core_scat.cpp_CScat_process_FUN_0051ecc0 at 0051f124
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01e620a0
 ;
 ; Called Functions:
 ;   core_xform.cpp_FUN_00591c10
-;   core_xform.cpp_FUN_00591de0
 ;   core_xform.cpp_FUN_00592720
+;   core_xform.cpp_matrixToEulerAngles_FUN_00591de0
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005916b0
 ;
 ; *****************************************************************************
@@ -100,7 +100,7 @@ section .text
     PUSH EAX                            ; 00520e89
     LEA ESI,[EBP + -0x6a]               ; 00520e8a
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_005916b0 ; 00520e8d
-        ;   XREF to: 005916b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_005916b0()
+        ;   XREF to: 005916b0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005916b0(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     ADD ESP,0x8                         ; 00520e92
     LEA EAX,[EBX + 0x30]                ; 00520e95
     LEA EDI,[EBP + -0xa]                ; 00520e98
@@ -122,7 +122,7 @@ section .text
     LEA ESI,[EBP + 0xffffff06]          ; 00520ec4
     LEA EDI,[EBP + -0x3a]               ; 00520eca
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_005916b0 ; 00520ecd
-        ;   XREF to: 005916b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_005916b0()
+        ;   XREF to: 005916b0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005916b0(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 00520ed2
     LEA ESI,[EBP + 0xffffff06]          ; 00520ed7
     MOVSD.REP ES:EDI,ESI                ; 00520edd
@@ -134,8 +134,8 @@ section .text
     PUSH EAX                            ; 00520ef4
     LEA ESI,[EBP + 0x56]                ; 00520ef5
     LEA EDI,[EBP + 0x4a]                ; 00520ef8
-    CALL core_xform.cpp_FUN_00591de0    ; 00520efb
-        ;   XREF to: 00591de0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591de0()
+    CALL core_xform.cpp_matrixToEulerAngles_FUN_00591de0 ; 00520efb
+        ;   XREF to: 00591de0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_00591de0()
     ADD ESP,0x4                         ; 00520f00
     LEA EAX,[EBP + 0x4a]                ; 00520f03
     LEA ESI,[EBP + 0x56]                ; 00520f06

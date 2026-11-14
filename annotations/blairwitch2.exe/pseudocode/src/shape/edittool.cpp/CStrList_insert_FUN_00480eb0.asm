@@ -21,8 +21,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
+;   crt_memory.c_malloc_FUN_005b8580
 ;   crt_string.c_memmove_FUN_005ba1f0
-;   crt_unknown.c_FUN_005b8580
 ;   shape_edittool.cpp_CStrList_allocate_FUN_00480fa0
 ;
 ; *****************************************************************************
@@ -90,8 +90,8 @@ section .text
     DEC ECX                             ; 00480f34
     INC ECX                             ; 00480f35
     PUSH ECX                            ; 00480f36
-    CALL crt_unknown.c_FUN_005b8580     ; 00480f37
-        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005b8580(ulong size)
+    CALL crt_memory.c_malloc_FUN_005b8580 ; 00480f37
+        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005b8580(ulong size)
     MOV ECX,dword ptr [EBX + 0x8]       ; 00480f3c
     MOV dword ptr [ECX + ESI*0x1],EAX   ; 00480f3f
     MOV EAX,dword ptr [EBX + 0x8]       ; 00480f42

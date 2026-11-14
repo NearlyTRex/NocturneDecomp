@@ -21,7 +21,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
-;   core_skeleton.cpp_CSkeleton_FUN_005174e0
+;   core_skeleton.cpp_CSkeleton_free_FUN_005174e0
 ;   shape_memdbg.cpp_malloc_FUN_00564c18
 ;
 ; *****************************************************************************
@@ -35,8 +35,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 005173c3
     MOV ESI,dword ptr [ESP + 0x14]      ; 005173c7
     PUSH EBX                            ; 005173cb
-    CALL core_skeleton.cpp_CSkeleton_FUN_005174e0 ; 005173cc
-        ;   XREF to: 005174e0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CSkeleton_FUN_005174e0(CSkeleton * this_ptr)
+    CALL core_skeleton.cpp_CSkeleton_free_FUN_005174e0 ; 005173cc
+        ;   XREF to: 005174e0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CSkeleton_free_FUN_005174e0(CSkeleton * this_ptr)
     ADD ESP,0x4                         ; 005173d1
     CMP ESI,0x64                        ; 005173d4
     JG 0x00517483                       ; 005173d7

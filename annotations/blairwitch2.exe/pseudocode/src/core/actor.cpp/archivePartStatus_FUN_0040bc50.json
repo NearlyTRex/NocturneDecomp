@@ -2,39 +2,42 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 258,
-    "complexity_score": 686,
+    "complexity_score": 447,
     "cross_reference_count": 7,
     "function_call_count": 7,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 81,
-    "suspect_count": 58,
+    "pseudocode_lines": 77,
+    "suspect_count": 36,
     "suspect_types": [
-      "param_count_too_few",
       "shadow_pointer_walk",
-      "undefined_data",
-      "unnamed_field",
-      "unnamed_param"
+      "undefined_data"
     ],
-    "total_lines": 339
+    "total_lines": 335
   },
   "cross_references": [
     {
       "addr": "00419c50",
       "from_addr": "00419d41",
-      "name": "core_boneguy.cpp_FUN_00419c50",
+      "name": "core_boneguy.cpp_CBoneGuy_archive_FUN_00419c50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00437b80",
+      "from_addr": "00437cdd",
+      "name": "core_construc.cpp_CConstruct_archive_FUN_00437b80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004c39b0",
       "from_addr": "004c3a6f",
-      "name": "core_ghoul.cpp_FUN_004c39b0",
+      "name": "core_ghoul.cpp_CGhoul_archive_FUN_004c39b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004ce590",
       "from_addr": "004ce5f8",
-      "name": "core_hero.cpp_FUN_004ce590",
+      "name": "core_hero.cpp_CHero_archive_FUN_004ce590",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -46,19 +49,13 @@
     {
       "addr": "00572f90",
       "from_addr": "00572fd8",
-      "name": "core_tentacle.cpp_FUN_00572f90",
+      "name": "core_tentacle.cpp_CTentacle_archive_FUN_00572f90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00599160",
       "from_addr": "005991e4",
-      "name": "core_zombie.cpp_FUN_00599160",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00437b80",
-      "from_addr": "00437cdd",
-      "name": "unkafter_conveyor.cpp_FUN_00437b80",
+      "name": "core_zombie.cpp_CZombie_archive_FUN_00599160",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -72,7 +69,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_archivePartStatus_FUN_0040bc50",
-    "signature": "void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bc50(CDeformableModelInstance *param_1,char *param_2)"
+    "signature": "void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bc50(CDeformableModelInstance *model_ptr,char *property_name)"
   },
   "function_calls": [
     {
@@ -257,7 +254,7 @@
       {
         "call_addr": "004ce5f8",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004ce590",
+        "caller": "core_hero.cpp_CHero_archive_FUN_004ce590",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -268,7 +265,7 @@
       {
         "call_addr": "004ce650",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004ce590",
+        "caller": "core_hero.cpp_CHero_archive_FUN_004ce590",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -279,7 +276,7 @@
       {
         "call_addr": "00419d41",
         "call_type": "direct",
-        "caller": "core_boneguy.cpp_FUN_00419c50",
+        "caller": "core_boneguy.cpp_CBoneGuy_archive_FUN_00419c50",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -290,7 +287,7 @@
       {
         "call_addr": "00437cdd",
         "call_type": "direct",
-        "caller": "unkafter_conveyor.cpp_FUN_00437b80",
+        "caller": "core_construc.cpp_CConstruct_archive_FUN_00437b80",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -301,7 +298,7 @@
       {
         "call_addr": "004c3a6f",
         "call_type": "direct",
-        "caller": "core_ghoul.cpp_FUN_004c39b0",
+        "caller": "core_ghoul.cpp_CGhoul_archive_FUN_004c39b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -323,7 +320,7 @@
       {
         "call_addr": "00572fd8",
         "call_type": "direct",
-        "caller": "core_tentacle.cpp_FUN_00572f90",
+        "caller": "core_tentacle.cpp_CTentacle_archive_FUN_00572f90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -334,7 +331,7 @@
       {
         "call_addr": "005991e4",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_00599160",
+        "caller": "core_zombie.cpp_CZombie_archive_FUN_00599160",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -344,10 +341,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.306930693069307,
@@ -377,11 +374,37 @@
     },
     "pcode_op_count": 870
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0040b960",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9975
+    },
+    "bw3.exe": {
+      "addr": "0040bba0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9975
+    },
+    "nocedit.exe": {
+      "addr": "0040bae0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0040cbf0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 24,
+    "frame_size": 32,
     "local_size": 24,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -390,26 +413,24 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "model_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      },
+      {
+        "is_param": true,
+        "name": "property_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
       }
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bc50(CDeformableModelInstance *param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bc50(CDeformableModelInstance *param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Undefined global data reference",
       "line": 11,
@@ -419,19 +440,11 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,param_2);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 12,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,param_2);",
+      "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,property_name);",
       "type": "undefined_data"
     },
     {
@@ -439,7 +452,7 @@
       "line": 12,
       "match": "DAT_00609590",
       "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,param_2);",
+      "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,property_name);",
       "type": "undefined_data"
     },
     {
@@ -483,35 +496,11 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pCVar3 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x2140",
-      "severity": "mild",
-      "text": "puVar4 = &pCVar3->field_0x2140;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "pCVar3 = (CDeformableModelInstance *)&pCVar3->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 20,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac38,*(uint *)puVar4);",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac38,pSVar1->visibility_flags[0]);",
       "type": "undefined_data"
     },
     {
@@ -519,24 +508,8 @@
       "line": 20,
       "match": "DAT_005cac38",
       "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac38,*(uint *)puVar4);",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac38,pSVar1->visibility_flags[0]);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (pCVar3 != (CDeformableModelInstance *)&param_1->field_0x78);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x78",
-      "severity": "mild",
-      "text": "} while (pCVar3 != (CDeformableModelInstance *)&param_1->field_0x78);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
@@ -579,51 +552,11 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "puVar4 = &param_1->field_0x21b8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x21b8",
-      "severity": "mild",
-      "text": "puVar4 = &param_1->field_0x21b8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = (CDeformableModelInstance *)&param_1->field_0x4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = (CDeformableModelInstance *)&param_1->field_0x4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "param_1 = (CDeformableModelInstance *)&param_1->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 29,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac41,*(uint *)puVar4);",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac41,pSVar1->texture_set_indices[0]);",
       "type": "undefined_data"
     },
     {
@@ -631,7 +564,7 @@
       "line": 29,
       "match": "DAT_005cac41",
       "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac41,*(uint *)puVar4);",
+      "text": "FUN_005b8010(DAT_007bc034,&DAT_005cac41,pSVar1->texture_set_indices[0]);",
       "type": "undefined_data"
     },
     {
@@ -679,23 +612,15 @@
       "line": 37,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "iVar1 = _fgetc(DAT_007bc034);",
+      "text": "iVar2 = _fgetc(DAT_007bc034);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(\"part status opening brace\",param_2);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 43,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "_fscanf(DAT_007bc034,&DAT_005cabbb,&local_14);",
+      "text": "_fscanf(DAT_007bc034,&DAT_005cabbb);",
       "type": "undefined_data"
     },
     {
@@ -703,52 +628,28 @@
       "line": 43,
       "match": "DAT_005cabbb",
       "severity": "mild",
-      "text": "_fscanf(DAT_007bc034,&DAT_005cabbb,&local_14);",
+      "text": "_fscanf(DAT_007bc034,&DAT_005cabbb);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_00547440(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "puVar4 = &param_1->field_0x2140;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x2140",
-      "severity": "mild",
-      "text": "puVar4 = &param_1->field_0x2140;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 48,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "iVar2 = _fscanf(DAT_007bc034,&DAT_005cabbe,puVar4);",
+      "text": "iVar3 = _fscanf(DAT_007bc034,&DAT_005cabbe);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 48,
       "match": "DAT_005cabbe",
       "severity": "mild",
-      "text": "iVar2 = _fscanf(DAT_007bc034,&DAT_005cabbe,puVar4);",
+      "text": "iVar3 = _fscanf(DAT_007bc034,&DAT_005cabbe);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 56,
       "match": "DAT_007bc034",
       "severity": "mild",
       "text": "_fscanf(DAT_007bc034,&DAT_005cabdf);",
@@ -756,55 +657,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 56,
       "match": "DAT_005cabdf",
       "severity": "mild",
       "text": "_fscanf(DAT_007bc034,&DAT_005cabdf);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_00547460(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "puVar4 = &param_1->field_0x21b8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 62,
-      "match": "field_0x21b8",
-      "severity": "mild",
-      "text": "puVar4 = &param_1->field_0x21b8;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 61,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "iVar2 = _fscanf(DAT_007bc034,&DAT_005cabe1,puVar4);",
+      "text": "iVar3 = _fscanf(DAT_007bc034,&DAT_005cabe1);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 61,
       "match": "DAT_005cabe1",
       "severity": "mild",
-      "text": "iVar2 = _fscanf(DAT_007bc034,&DAT_005cabe1,puVar4);",
+      "text": "iVar3 = _fscanf(DAT_007bc034,&DAT_005cabe1);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 73,
+      "line": 69,
       "match": "DAT_007bc034",
       "severity": "mild",
       "text": "_fscanf(DAT_007bc034,&DAT_005cac03);",
@@ -812,7 +689,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 73,
+      "line": 69,
       "match": "DAT_005cac03",
       "severity": "mild",
       "text": "_fscanf(DAT_007bc034,&DAT_005cac03);",
@@ -820,46 +697,27 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 71,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "while (iVar1 = _fgetc(DAT_007bc034), -1 < iVar1) {",
+      "text": "while (iVar2 = _fgetc(DAT_007bc034), -1 < iVar2) {",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 81,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(\"part status info closing brace\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar3->owner`). Replace `pCVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 19,
-      "match": "pCVar3 = (T *)&pCVar3->FIELD",
+      "match": "pCVar4 = (T *)&(pCVar4->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar3 = (CDeformableModelInstance *)&pCVar3->field_0x4;",
+      "text": "pCVar4 = (CDeformableModelInstance *)&(pCVar4->base).current_motion_index;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `param_1` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&param_1->owner`). Replace `param_1->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `model_ptr` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `model_ptr->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 27,
-      "match": "param_1 = (T *)&param_1->FIELD",
+      "match": "model_ptr = (T *)&(model_ptr->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "param_1 = (CDeformableModelInstance *)&param_1->field_0x4;",
+      "text": "model_ptr = (CDeformableModelInstance *)&(model_ptr->base).current_motion_index;",
       "type": "shadow_pointer_walk"
-    },
-    {
-      "call_site_count": 8,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

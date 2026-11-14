@@ -2,31 +2,31 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 107,
+    "complexity_score": 108,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 12,
+    "pseudocode_lines": 13,
     "suspect_count": 8,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
       "unnamed_param"
     ],
-    "total_lines": 37
+    "total_lines": 38
   },
   "cross_references": [
     {
-      "addr": "004dc8c0",
-      "from_addr": "004dc9fa",
-      "name": "core_inv.cpp_FUN_004dc8c0",
+      "addr": "0045d2c0",
+      "from_addr": "0045d678",
+      "name": "core_doc.cpp_FUN_0045d2c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0045d2c0",
-      "from_addr": "0045d678",
-      "name": "unkafter_stranger.cpp_FUN_0045d2c0",
+      "addr": "004dc8c0",
+      "from_addr": "004dc9fa",
+      "name": "core_inv.cpp_CInventory_select_FUN_004dc8c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -46,7 +46,7 @@
     {
       "addr": "004db880",
       "is_variadic": false,
-      "name": "core_inv.cpp_FUN_004db880"
+      "name": "core_inv.cpp_CInventory_hasItemOfClass_FUN_004db880"
     }
   ],
   "globals": [
@@ -63,7 +63,7 @@
       {
         "call_addr": "0045d678",
         "call_type": "direct",
-        "caller": "unkafter_stranger.cpp_FUN_0045d2c0",
+        "caller": "core_doc.cpp_FUN_0045d2c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -74,7 +74,7 @@
       {
         "call_addr": "004dc9fa",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004dc8c0",
+        "caller": "core_inv.cpp_CInventory_select_FUN_004dc8c0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -153,23 +153,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 8,
+      "line": 9,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar1 = core_inv_cpp_FUN_004db880((CInventory *)(param_2 + 0x2437c),&DAT_005cb23d);",
+      "text": "((CInventory *)(param_2 + 0x2437c),&DAT_005cb23d);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 8,
+      "line": 9,
       "match": "DAT_005cb23d",
       "severity": "mild",
-      "text": "iVar1 = core_inv_cpp_FUN_004db880((CInventory *)(param_2 + 0x2437c),&DAT_005cb23d);",
+      "text": "((CInventory *)(param_2 + 0x2437c),&DAT_005cb23d);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0x470) = *(int *)(param_1 + 0x470) + -1;",
@@ -177,7 +177,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0x470) = *(int *)(param_1 + 0x470) + -1;",

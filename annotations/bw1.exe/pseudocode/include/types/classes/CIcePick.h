@@ -2,15 +2,28 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CHero.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CIcePick
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x1ffdc (131036 bytes)
 #pragma pack(push, 1)
 typedef struct CIcePick {
-    char field_0[131036]; // 0x0
+    CHero base; // 0x0
+    int guns_drawn; // 0x1ffac
+    int attack_count; // 0x1ffb0
+    uint sfx_handles[2]; // 0x1ffb4
+    CVector3f head_look_euler; // 0x1ffbc
+    float head_look_blend_weight; // 0x1ffc8
+    int is_armed; // 0x1ffcc
+    struct CDemonActor* pending_pickup_target; // 0x1ffd0
+    float shoot_blend_weight; // 0x1ffd4
+    float aim_pitch; // 0x1ffd8
 } CIcePick;
 #pragma pack(pop)
 

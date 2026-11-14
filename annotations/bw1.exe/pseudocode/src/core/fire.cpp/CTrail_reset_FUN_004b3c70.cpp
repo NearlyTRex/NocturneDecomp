@@ -9,6 +9,6 @@
 void __cdecl core_fire_cpp_CTrail_reset_FUN_004b3c70(CTrail *this_ptr)
 
 {
-  *(uint *)&this_ptr->field_0x10 = 0;
+  this_ptr->lifetime = 0.0;
   return;
 }

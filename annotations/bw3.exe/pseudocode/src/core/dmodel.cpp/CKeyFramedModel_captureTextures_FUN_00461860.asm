@@ -7,7 +7,7 @@
 ; CKeyFramedModel * Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_cloth.cpp_FUN_0043c330 at 0043c409
+;   core_cloth.cpp_CCloth_load_FUN_0043c330 at 0043c409
 ;   core_dmodel.cpp_loadModel_FUN_00462420 at 004624b3
 ;
 ; Referenced Globals:

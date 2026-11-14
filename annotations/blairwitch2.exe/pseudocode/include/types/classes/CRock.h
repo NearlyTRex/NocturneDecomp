@@ -2,15 +2,21 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CKeyFramedModel;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CParticle.h"
+#include "types/classes/CVector3i.h"
 
 // Structure: CRock
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x50 (80 bytes)
 #pragma pack(push, 1)
 typedef struct CRock {
-    char field_0[80]; // 0x0
+    CParticle base; // 0x0
+    CVector3i rotation; // 0x40
+    struct CKeyFramedModel* model_ptr; // 0x4c
 } CRock;
 #pragma pack(pop)
 

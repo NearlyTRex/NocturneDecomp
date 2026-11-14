@@ -4,12 +4,13 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/SRGBColor.h"
 
 // Structure: SRGBColorPalette
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x300 (768 bytes)
 #pragma pack(push, 1)
 typedef struct SRGBColorPalette {
+    SRGBColor colors[256]; // 0x0
 } SRGBColorPalette;
 #pragma pack(pop)
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 support_codec_cpp_FUN_00442a80(undefined4 param_1,int param_2,int param_3)
+; undefined4 support_codec_cpp_FUN_00442a80(undefined4 param_1,_FILE *param_2,int param_3)
 ;
 ;
 ; Called Functions:
@@ -30,7 +30,7 @@ section .text
     PUSH ESI                            ; 00442a99
         ;   Label: LAB_00442a99
     CALL crt_stdio.c_fgetc_FUN_005c0530 ; 00442a9a
-        ;   XREF to: 005c0530 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005c0530()
+        ;   XREF to: 005c0530 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005c0530(_FILE * file)
     ADD ESP,0x4                         ; 00442a9f
     MOV dword ptr [ESP],EAX             ; 00442aa2
     TEST EAX,EAX                        ; 00442aa5

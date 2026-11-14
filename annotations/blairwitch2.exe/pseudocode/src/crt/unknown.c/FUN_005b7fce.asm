@@ -7,7 +7,8 @@
 ; void *           Stack[0x4]:4   ptr
 ;
 ; XREF[187]:
-;   cockpit_pkbitmap.cpp_FUN_00516200 at 00516211
+;   cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00516200 at 00516211
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_00517640 at 00517657
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408930 at 00408990
 ;   core_ammo.cpp_CAmmo_dtor_FUN_0040de50 at 0040de8f
 ;   core_ammobox.cpp_CAmmoBox_dtor_FUN_0040e980 at 0040e9b5
@@ -16,7 +17,6 @@
 ;   core_armour.cpp_CEnemy_dtor_FUN_0040f1c0 at 0040f23c
 ;   core_armour.cpp_CFlame_dtor_FUN_0040f260 at 0040f295
 ;   core_backgnd.cpp_CBackgroundActor_dtor_FUN_0040f5b0 at 0040f5e5
-;   core_baron.cpp_CBaronWeapon_dtor_FUN_00410bb0 at 00410be5
 ;   ... and 177 more
 ;
 ; Called Functions:

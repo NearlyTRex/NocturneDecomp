@@ -9,14 +9,14 @@
 void __cdecl core_litecone_cpp_CLightCone_archive_FUN_00502f80(CLightCone *this_ptr)
 
 {
-  core_actor_cpp_CDemonActor_archive_FUN_0040c040((CDemonActor *)this_ptr);
-  core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x158,&DAT_005e7062);
-  core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x15c,"falloff");
+  core_actor_cpp_CDemonActor_archive_FUN_0040c040(&this_ptr->base);
+  core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->fov,&DAT_005e7062);
+  core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->falloff,"falloff");
   if (g_CLightConeClassVersion < 2) {
     return;
   }
-  core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x160,"state");
-  core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x164,"onEvent");
-  core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x1c8,"offEvent");
+  core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->state,"state");
+  core_actor_cpp_archiveString_FUN_0040b440(this_ptr->on_event,"onEvent");
+  core_actor_cpp_archiveString_FUN_0040b440(this_ptr->off_event,"offEvent");
   return;
 }

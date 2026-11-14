@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 154,
+    "complexity_score": 99,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 49,
-    "suspect_count": 9,
+    "suspect_count": 4,
     "suspect_types": [
       "extra_output",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 178
@@ -20,13 +19,13 @@
     {
       "addr": "00447660",
       "from_addr": "0044774e",
-      "name": "core_dfilter.cpp_FUN_00447660",
+      "name": "core_dfilter.cpp_CFilterCache_getFilter_FUN_00447660",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e46c0",
       "from_addr": "004e4cfc",
-      "name": "core_main.c_FUN_004e46c0",
+      "name": "core_main.c_initializeGameSystems_FUN_004e46c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -75,7 +74,7 @@
       {
         "call_addr": "004e4cfc",
         "call_type": "direct",
-        "caller": "core_main.c_FUN_004e46c0",
+        "caller": "core_main.c_initializeGameSystems_FUN_004e46c0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -86,7 +85,7 @@
       {
         "call_addr": "004e4d53",
         "call_type": "direct",
-        "caller": "core_main.c_FUN_004e46c0",
+        "caller": "core_main.c_initializeGameSystems_FUN_004e46c0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -97,7 +96,7 @@
       {
         "call_addr": "0044774e",
         "call_type": "direct",
-        "caller": "core_dfilter.cpp_FUN_00447660",
+        "caller": "core_dfilter.cpp_CFilterCache_getFilter_FUN_00447660",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -158,6 +157,32 @@
       "TRUNC": 1
     },
     "pcode_op_count": 656
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0045dc30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00459b80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004705a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0044c190",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 56,
@@ -238,67 +263,27 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
+      "line": 11,
       "match": "extraout_ECX",
       "severity": "moderate",
       "text": "int extraout_ECX;",
       "type": "extra_output"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x4) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "fVar2 = (float)(*(int *)&this_ptr->field_0x4 / 2 - iVar4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "fVar5 = (float10)*(byte *)(*(int *)&this_ptr->field_0x48 +",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 44,
+      "line": 45,
       "match": "extraout_ECX",
       "severity": "moderate",
-      "text": "*(byte *)(*(int *)this_ptr * iVar4 + extraout_ECX + *(int *)&this_ptr->field_0x48) =",
+      "text": "this_ptr->data_buffer[this_ptr->size * iVar5 + extraout_ECX] = local_1c;",
       "type": "extra_output"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "*(byte *)(*(int *)this_ptr * iVar4 + extraout_ECX + *(int *)&this_ptr->field_0x48) =",
-      "type": "unnamed_field"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 46,
       "match": "extraout_ECX",
       "severity": "moderate",
-      "text": "iVar3 = extraout_ECX + 1;",
+      "text": "iVar4 = extraout_ECX + 1;",
       "type": "extra_output"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 50,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "} while (iVar4 < *(int *)&this_ptr->field_0x4);",
-      "type": "unnamed_field"
     }
   ]
 }

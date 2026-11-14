@@ -7,7 +7,7 @@
 ; CBaronWeapon *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_baron.cpp_FUN_004108b0 at 004108c3
+;   core_baron.cpp_factoryFuncBaronWeapon_FUN_004108b0 at 004108c3
 ;
 ; Called Functions:
 ;   core_weapon.cpp_CWeapon_ctor_FUN_005899d0

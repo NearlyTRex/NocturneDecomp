@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CAsciiArmor * support_codec_cpp_CAsciiArmor_ctor_FUN_004414f0(CAsciiArmor *this_ptr)
+; CAsciiArmor * __cdecl support_codec_cpp_CAsciiArmor_ctor_FUN_004414f0(CAsciiArmor *this_ptr)
 ;
 ; Parameters:
 ; CAsciiArmor *    Stack[0x4]:4   this_ptr

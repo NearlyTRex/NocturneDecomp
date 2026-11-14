@@ -17,7 +17,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_00495e70(CEd
     local_38[0] = '\0';
   }
   else {
-    FUN_005bfb40(local_38,&DAT_005dbf28,(double)*result_ptr);
+    _sprintf(local_38,&DAT_005dbf28);
   }
   while( true ) {
     while( true ) {
@@ -28,11 +28,12 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_00495e70(CEd
       }
       iVar1 = sscanf(local_38,&DAT_005dbf2b);
       if (iVar1 == 1) break;
-      shape_edittool_cpp_FUN_004943a0(this_ptr);
+      shape_edittool_cpp_CEditorTools_showError_FUN_004943a0
+                (this_ptr,"Please enter a valid number.");
     }
     if ((enable_range_check == 0) || ((min_value <= local_18 && (local_18 <= max_value)))) break;
-    shape_edittool_cpp_FUN_004943a0
-              (this_ptr,"Please enter a valid integer between %g and %g.",(double)min_value,(double)max_value);
+    shape_edittool_cpp_CEditorTools_showError_FUN_004943a0
+              (this_ptr,"Please enter a valid integer between %g and %g.");
   }
   *result_ptr = local_18;
   return 1;

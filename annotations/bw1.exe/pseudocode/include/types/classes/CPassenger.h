@@ -2,15 +2,27 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CWerewolf;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CMorph.h"
+#include "types/classes/CNPC.h"
 
 // Structure: CPassenger
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x207f8 (133112 bytes)
 #pragma pack(push, 1)
 typedef struct CPassenger {
-    char field_0[133112]; // 0x0
+    CNPC base; // 0x0
+    char transform_event[100]; // 0x1fab8
+    char wolf_model_name[32]; // 0x1fb1c
+    char name_of_wolf[32]; // 0x1fb3c
+    char transform_wav[100]; // 0x1fb5c
+    struct CWerewolf* werewolf_actor; // 0x1fbc0
+    CMorph morph; // 0x1fbc4
+    float morph_time; // 0x207f0
+    float wolf_size; // 0x207f4
 } CPassenger;
 #pragma pack(pop)
 

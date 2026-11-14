@@ -17,87 +17,84 @@ void __cdecl core_stranger_cpp_FUN_0058a010(CStranger *this_ptr,float delta_time
   float fVar4;
   float local_2c;
   
-  *(uint *)&this_ptr->field_0x20054 = 0;
-  *(uint *)&this_ptr->field_0x20050 = *(uint *)&this_ptr->field_0x20054;
-  *(uint *)&this_ptr->field_0x2004c = *(uint *)&this_ptr->field_0x20050;
-  fVar4 = (float)core_motion_cpp_FUN_00524a40(&this_ptr->field_0x158,0);
-  if ((fVar4 <= 0.0) || (1.0 <= *(float *)&this_ptr->field_0x20028)) {
-    *(uint *)&this_ptr->field_0x20024 = 0;
-    *(uint *)&this_ptr->field_0x20058 = 0xffffffff;
-    *(uint *)&this_ptr->field_0x2002c = 0;
-    *(uint *)&this_ptr->field_0x20030 = 0;
-    *(uint *)&this_ptr->field_0x20028 = 0;
+  (this_ptr->pending_velocity).z = 0.0;
+  (this_ptr->pending_velocity).y = (this_ptr->pending_velocity).z;
+  (this_ptr->pending_velocity).x = (this_ptr->pending_velocity).y;
+  fVar4 = (float)core_motion_cpp_FUN_00524a40(&(this_ptr->base).base.model,0);
+  if ((fVar4 <= 0.0) || (1.0 <= this_ptr->turn_blend_weight)) {
+    this_ptr->turn_angle = 0.0;
+    this_ptr->turn_motion_index = -1;
+    this_ptr->turn_blend_timer = 0.0;
+    this_ptr->turn_elapsed = 0.0;
+    this_ptr->turn_blend_weight = 0.0;
     return;
   }
   if (fVar4 < 1.0) {
     fVar4 = (1.0 - fVar4) * delta_time * (float)_DAT_005f6ae1;
-    if (fVar4 <= ABS(*(float *)&this_ptr->field_0x20024)) {
-      if (0.0 <= *(float *)&this_ptr->field_0x20024) {
-        *(float *)&this_ptr->field_0x20024 = *(float *)&this_ptr->field_0x20024 - fVar4;
+    if (fVar4 <= ABS(this_ptr->turn_angle)) {
+      if (0.0 <= this_ptr->turn_angle) {
+        this_ptr->turn_angle = this_ptr->turn_angle - fVar4;
       }
       else {
-        *(float *)&this_ptr->field_0x20024 = *(float *)&this_ptr->field_0x20024 + fVar4;
+        this_ptr->turn_angle = this_ptr->turn_angle + fVar4;
       }
     }
     else {
-      *(uint *)&this_ptr->field_0x20024 = 0;
+      this_ptr->turn_angle = 0.0;
     }
   }
-  iVar1 = *(int *)&this_ptr->field_0x20058;
-  *(uint *)&this_ptr->field_0x20058 = _DAT_02c83650;
-  if (*(float *)&this_ptr->field_0x20024 < 0.0) {
-    *(uint *)&this_ptr->field_0x20058 = _DAT_02c83654;
+  iVar1 = this_ptr->turn_motion_index;
+  this_ptr->turn_motion_index = _DAT_02c83650;
+  if (this_ptr->turn_angle < 0.0) {
+    this_ptr->turn_motion_index = _DAT_02c83654;
   }
-  if (*(float *)&this_ptr->field_0x20028 <= (float)_DAT_005f6ae9) {
-    *(uint *)&this_ptr->field_0x20030 = 0;
+  if (this_ptr->turn_blend_weight <= (float)_DAT_005f6ae9) {
+    this_ptr->turn_elapsed = 0.0;
   }
   else {
-    *(float *)&this_ptr->field_0x20030 = *(float *)&this_ptr->field_0x20030 + delta_time;
+    this_ptr->turn_elapsed = this_ptr->turn_elapsed + delta_time;
   }
-  if ((*(float *)&this_ptr->field_0x2002c <= 0.0) &&
-     (((float)_DAT_005f6af1 <= *(float *)&this_ptr->field_0x20028 ||
-      (1.0 < *(float *)&this_ptr->field_0x20030)))) {
-    *(float *)&this_ptr->field_0x2002c = (1.0 - *(float *)&this_ptr->field_0x20028) * 1.6;
+  if ((this_ptr->turn_blend_timer <= 0.0) &&
+     (((float)_DAT_005f6af1 <= this_ptr->turn_blend_weight || (1.0 < this_ptr->turn_elapsed)))) {
+    this_ptr->turn_blend_timer = (1.0 - this_ptr->turn_blend_weight) * 1.6;
   }
-  if (*(float *)&this_ptr->field_0x2002c <= 0.0) {
-    local_2c = ABS(*(float *)&this_ptr->field_0x20024 * _DAT_005f6af9);
-    if (iVar1 != *(int *)&this_ptr->field_0x20058) {
+  if (this_ptr->turn_blend_timer <= 0.0) {
+    local_2c = ABS(this_ptr->turn_angle * _DAT_005f6af9);
+    if (iVar1 != this_ptr->turn_motion_index) {
       local_2c = 0.0;
     }
     if (1.0 < local_2c) {
       local_2c = 1.0;
     }
-    fVar4 = (local_2c - *(float *)&this_ptr->field_0x20028) + *(float *)&this_ptr->field_0x20028;
-    *(float *)&this_ptr->field_0x20028 = fVar4;
+    fVar4 = (local_2c - this_ptr->turn_blend_weight) + this_ptr->turn_blend_weight;
+    this_ptr->turn_blend_weight = fVar4;
     if ((float)_DAT_005f6b01 < fVar4) {
-      *(int *)&this_ptr->field_0x20058 = iVar1;
+      this_ptr->turn_motion_index = iVar1;
       return;
     }
   }
   else {
-    fVar4 = *(float *)&this_ptr->field_0x2002c;
+    fVar4 = this_ptr->turn_blend_timer;
     fVar2 = fVar4 - delta_time;
-    *(float *)&this_ptr->field_0x2002c = fVar2;
+    this_ptr->turn_blend_timer = fVar2;
     if (0.0 < fVar2) {
       fVar4 = delta_time / fVar4;
     }
     else {
-      fVar4 = 1.0 - *(float *)&this_ptr->field_0x20028;
-      *(uint *)&this_ptr->field_0x2002c = 0;
+      fVar4 = 1.0 - this_ptr->turn_blend_weight;
+      this_ptr->turn_blend_timer = 0.0;
     }
-    fVar2 = *(float *)&this_ptr->field_0x20028;
+    fVar2 = this_ptr->turn_blend_weight;
     fVar3 = fVar2 + fVar4;
-    *(float *)&this_ptr->field_0x20028 = fVar3;
+    this_ptr->turn_blend_weight = fVar3;
     if (fVar3 < 1.0) {
-      *(float *)&this_ptr->field_0x20024 =
-           *(float *)&this_ptr->field_0x20024 -
-           (*(float *)&this_ptr->field_0x20024 * fVar4) / (1.0 - fVar2);
+      this_ptr->turn_angle = this_ptr->turn_angle - (this_ptr->turn_angle * fVar4) / (1.0 - fVar2);
       return;
     }
-    *(uint *)&this_ptr->field_0x20024 = 0;
-    *(uint *)&this_ptr->field_0x2002c = 0;
-    *(uint *)&this_ptr->field_0x20030 = 0;
-    *(uint *)&this_ptr->field_0x20028 = 0x3f800000;
+    this_ptr->turn_angle = 0.0;
+    this_ptr->turn_blend_timer = 0.0;
+    this_ptr->turn_elapsed = 0.0;
+    this_ptr->turn_blend_weight = 1.0;
   }
   return;
 }

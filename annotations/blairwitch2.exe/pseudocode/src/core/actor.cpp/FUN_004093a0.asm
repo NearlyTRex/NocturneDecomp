@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_actor_cpp_FUN_004093a0(int param_1,float *param_2,float *param_3,undefined4 *param_4,int param_5,uint param_6,CBoundingBox3D *param_7)
+; float core_actor_cpp_FUN_004093a0(int param_1,CBoundingBox3D *param_2,float *param_3,undefined4 *param_4,int param_5,uint param_6,CBoundingBox3D *param_7)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x110]:8  local_110
@@ -38,7 +38,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 DAT_01d046a0
 ;   undefined4 DAT_01d046a4
-;   undefined4 g_CDemonSetInstance.field1439472_0x15f6f0
+;   undefined4 g_CDemonSetInstance.skip_exact_collisions
 ;   undefined4 DAT_020ccfdc
 ;   undefined4 DAT_020ccfe0
 ;   undefined4 DAT_020ccfe4
@@ -250,7 +250,7 @@ section .text
     MOV dword ptr [EBX + 0x18],0xffffffff ; 004095b4
     MOV EAX,[0x0061b5a8]                ; 004095bb | g_CDemonSetPtr
     MOV dword ptr [EBX + 0xc],0xffffffff ; 004095c0
-    MOV EAX,dword ptr [EAX + 0x15f6f0]  ; 004095c7 | g_CDemonSetInstance.field1439472_0x15f6f0
+    MOV EAX,dword ptr [EAX + 0x15f6f0]  ; 004095c7 | g_CDemonSetInstance.skip_exact_collisions
     TEST EAX,EAX                        ; 004095cd
     JZ 0x004096e4                       ; 004095cf
         ;   XREF to: 004096e4 (CONDITIONAL_JUMP)  ; LAB_004096e4

@@ -1,13 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float __cdecl core_bugs_cpp_maxFloat_FUN_00422120(float param_1,float param_2)
+; float __cdecl core_bugs_cpp_maxFloat_FUN_00422120(float a,float b)
 ;
+; Parameters:
+; float            Stack[0x4]:4   a
+; float            Stack[0x8]:4   b
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[1]:
-;   core_bugs.cpp_FUN_0041feb0 at 0041ff4d
+;   core_bugs.cpp_CBugs_sampleGroundHeight_FUN_0041feb0 at 0041ff4d
 ;
 ; *****************************************************************************
 

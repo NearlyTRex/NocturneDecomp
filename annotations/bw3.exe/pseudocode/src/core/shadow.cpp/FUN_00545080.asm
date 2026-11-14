@@ -11,7 +11,7 @@
 ;   TerminatedCString s_shb_attack_wav_005d1332
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_00556700
+;   sound_sndmain.cpp_isSfxPlaying_FUN_00556700
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00545081
     MOV EDX,dword ptr [EBX + 0xd078]    ; 00545085
     PUSH EDX                            ; 0054508b
-    CALL sound_sndmain.cpp_FUN_00556700 ; 0054508c
-        ;   XREF to: 00556700 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00556700(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_00556700 ; 0054508c
+        ;   XREF to: 00556700 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_00556700(uint sfx_handle)
     ADD ESP,0x4                         ; 00545091
     TEST EAX,EAX                        ; 00545094
     JZ 0x0054509a                       ; 00545096

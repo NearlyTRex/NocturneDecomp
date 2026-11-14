@@ -9,8 +9,38 @@
   {
     "kind":"class",
     "name":"CBloodParticle",
+    "parent":"CParticle",
     "rtti_file":"core/gore.cpp",
     "size":72
+  },
+  {
+    "kind":"funcdef",
+    "name":"CCharacter_setWalkTimeout",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      },
+      {
+        "name":"timeout",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -72,21 +102,122 @@
     "variadic":false
   },
   {
+    "kind":"funcdef",
+    "name":"CDemnfolk_vfunc84",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemnfolk",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CDemonActorTransformState",
-    "size":1
+    "size":28
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_getActorType",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"class",
+      "name":"CDemonActorType",
+      "ptr":1
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_setPositionAndOrientation",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"new_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"new_orientation",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
     "name":"CDemonLight",
+    "parent":"CDemonCamera",
     "rtti_file":"core/dlight.cpp",
     "size":12204
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDjien_vfunc83",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDjien",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
     "name":"CEdScrollBar",
     "rtti_file":"shape/edittool.cpp",
-    "size":1
+    "size":52
   },
   {
     "kind":"class",
@@ -98,17 +229,97 @@
   {
     "kind":"class",
     "name":"CExternalRenderer",
-    "size":1
+    "size":7624
+  },
+  {
+    "kind":"funcdef",
+    "name":"CHero_vfunc85",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CHero",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
     "name":"CLeaf",
+    "parent":"CParticle",
     "size":84
   },
   {
     "kind":"class",
     "name":"CLevelLoader",
-    "size":1
+    "size":304
+  },
+  {
+    "kind":"class",
+    "name":"CMemoryBitStream",
+    "size":16400
+  },
+  {
+    "kind":"class",
+    "name":"CPickList_vtable",
+    "size":4,
+    "vtable_slots":[
+      {
+        "name":"handleInput",
+        "offset":0
+      }
+    ]
+  },
+  {
+    "kind":"funcdef",
+    "name":"CPod_load",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CPod",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CPod_remount",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CPod",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -117,10 +328,89 @@
   },
   {
     "kind":"class",
+    "name":"CSlew",
+    "rtti_file":"shape/edittool.cpp",
+    "size":28
+  },
+  {
+    "kind":"funcdef",
+    "name":"CSoundDevice_commitDeferredSettings",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CSoundDevice_killSfx",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      },
+      {
+        "name":"slot",
+        "type":{
+          "kind":"class",
+          "name":"CSfxSlot",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"class",
     "name":"CStranger",
     "parent":"CHero",
     "rtti_file":"core/stranger.cpp",
     "size":131652
+  },
+  {
+    "kind":"enum",
+    "name":"EBugsState",
+    "size":4,
+    "values":[
+      {
+        "name":"BUGS_STATE_IDLE",
+        "value":0
+      },
+      {
+        "name":"BUGS_STATE_ATTACK",
+        "value":1
+      },
+      {
+        "name":"BUGS_STATE_DETACH",
+        "value":2
+      },
+      {
+        "name":"BUGS_STATE_DEAD",
+        "value":3
+      }
+    ]
   },
   {
     "kind":"enum",
@@ -167,6 +457,29 @@
   },
   {
     "kind":"enum",
+    "name":"ENetworkMode",
+    "size":4,
+    "values":[
+      {
+        "name":"NET_MODE_DISCONNECTED",
+        "value":0
+      },
+      {
+        "name":"NET_MODE_LOBBY",
+        "value":1
+      },
+      {
+        "name":"NET_MODE_SYNCING",
+        "value":2
+      },
+      {
+        "name":"NET_MODE_PLAYING",
+        "value":3
+      }
+    ]
+  },
+  {
+    "kind":"enum",
     "name":"ETextAlignment",
     "size":4,
     "values":[
@@ -207,7 +520,12 @@
   {
     "kind":"struct",
     "name":"SCPUInfo",
-    "size":1
+    "size":20
+  },
+  {
+    "kind":"struct",
+    "name":"SCarryHand",
+    "size":120
   },
   {
     "kind":"struct",
@@ -217,27 +535,42 @@
   {
     "kind":"struct",
     "name":"SFog",
-    "size":1
+    "size":36
   },
   {
     "kind":"struct",
     "name":"SFoundFileInfo",
-    "size":1
+    "size":532
+  },
+  {
+    "kind":"struct",
+    "name":"SLayerAction",
+    "size":56
+  },
+  {
+    "kind":"struct",
+    "name":"SMorphPart",
+    "size":16
   },
   {
     "kind":"struct",
     "name":"SMpegScalefactorBandData",
-    "size":1
+    "size":496
   },
   {
     "kind":"struct",
     "name":"SMpegSubbandAllocation",
-    "size":1
+    "size":128
   },
   {
     "kind":"struct",
     "name":"SMpegSubbandQuantizedSamples",
-    "size":1
+    "size":2304
+  },
+  {
+    "kind":"struct",
+    "name":"SNotesEntry",
+    "size":348
   },
   {
     "kind":"struct",

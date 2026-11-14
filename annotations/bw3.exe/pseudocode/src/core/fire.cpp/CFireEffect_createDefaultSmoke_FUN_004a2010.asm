@@ -8,9 +8,9 @@
 ; CVector3f *      Stack[0x8]:4   position
 ;
 ; XREF[3]:
-;   core_blundrbs.cpp_FUN_00410490 at 00410e1f
+;   core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490 at 00410e1f
 ;   core_fire.cpp_CMuzzleFlash_process_FUN_0049a450 at 0049a476
-;   core_flintlck.cpp_FUN_004ae850 at 004aebe9
+;   core_flintlck.cpp_CFlintlock_fire_FUN_004ae850 at 004aebe9
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fc5a0

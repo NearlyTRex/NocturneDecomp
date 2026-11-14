@@ -1,14 +1,12 @@
 // Name: core_fire.cpp_CRainDrop_arrdtor256_FUN_004b7870
 // Address: 004b7870
 // Address Range: [[004b7870, 004b7887]]
-// Convention: unknown
-// Signature: CRainDrop * core_fire_cpp_CRainDrop_arrdtor256_FUN_004b7870(CRainDrop *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CRainDrop * __cdecl core_fire_cpp_CRainDrop_arrdtor256_FUN_004b7870(CRainDrop *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CRainDrop * core_fire_cpp_CRainDrop_arrdtor256_FUN_004b7870(CRainDrop *this_ptr,uint flags)
+CRainDrop * __cdecl core_fire_cpp_CRainDrop_arrdtor256_FUN_004b7870(CRainDrop *this_ptr,uint flags)
 
 {
   CRainDrop *pCVar1;

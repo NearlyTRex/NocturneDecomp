@@ -519,17 +519,16 @@ static void movie_flush_decoders() {
 // Draw one decoded frame. The GL presenter owns the window in the default
 // build (NOCTURNE_GL_PRESENT=1), in which case ddraw never made an
 // SDL_Renderer and the SDL path below is dead; when GL is off the reverse is
-// true. Sizing is handled for us either way: the presenter scales the frame to
-// the engine's logical size (640x480) and integer-scales that into the window,
-// which reproduces the original's "double it if the client area is bigger than
-// 400x300" rule for a 320x240 movie.
+// true. The GL presenter fits the frame to the window at the movie's own shape,
+// not the game's mode, so a 4:3 movie is pillarboxed on a wide front end
+// rather than stretched across it.
 static void movie_present(AVFrame *src) {
     sws_scale(s_movie.sws_ctx, src->data, src->linesize, 0, s_movie.height, s_movie.frame_rgb->data,
               s_movie.frame_rgb->linesize);
 
     if (nocturne_gl_is_active()) {
-        nocturne_gl_present_framebuffer(s_movie.frame_rgb->data[0], s_movie.width, s_movie.height,
-                                        s_movie.frame_rgb->linesize[0], 24);
+        nocturne_gl_present_picture(s_movie.frame_rgb->data[0], s_movie.width, s_movie.height,
+                                    s_movie.frame_rgb->linesize[0], 24);
         return;
     }
 

@@ -10,13 +10,13 @@
 ; undefined        Stack[-0x28]:1  local_28
 ;
 ; XREF[7]:
-;   core_actor.cpp_FUN_00409f20 at 0040aa52
-;   core_elephant.cpp_FUN_0049e1a0 at 0049e95e
-;   core_gun.cpp_FUN_004e8630 at 004e8e88
-;   core_rifle.cpp_FUN_00540080 at 00540792
-;   core_shotgun.cpp_FUN_00561760 at 00561f21
-;   core_tommygun.cpp_FUN_00598420 at 00598cbd
-;   core_turret.cpp_FUN_005a3870 at 005a3deb
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f20 at 0040aa52
+;   core_elephant.cpp_CElephantGun_fire_FUN_0049e1a0 at 0049e95e
+;   core_gun.cpp_CGun_fire_FUN_004e8630 at 004e8e88
+;   core_rifle.cpp_CRifle_fire_FUN_00540080 at 00540792
+;   core_shotgun.cpp_CShotgun_fire_FUN_00561760 at 00561f21
+;   core_tommygun.cpp_CTommyGun_fire_FUN_00598420 at 00598cbd
+;   core_turret.cpp_CTurret_fire_FUN_005a3870 at 005a3deb
 ;
 ; Referenced Globals:
 ;   undefined4 s_s_exploding_005d7362+1
@@ -28,8 +28,8 @@
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_createExplosion_FUN_004b6c60
-;   core_mission.cpp_FUN_0051b740
-;   engine_console.cpp_FUN_00445430
+;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740
+;   engine_console.cpp_CConsole_printf_FUN_00445430
 ;
 ; *****************************************************************************
 
@@ -52,8 +52,8 @@ section .text
     PUSH 0x5d7363                       ; 00449616 | s_s_exploding_005d7362+1
     MOV ECX,dword ptr [0x00611100]      ; 0044961b | g_CConsolePtr
     PUSH ECX                            ; 00449621 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 00449622
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 00449622
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 00449627
     MOV EAX,dword ptr [EBX + 0x154]     ; 0044962a
     PUSH EBX                            ; 00449630
@@ -94,8 +94,8 @@ section .text
     PUSH EBX                            ; 0044969e
     MOV EDI,dword ptr [0x0061f650]      ; 0044969f | DAT_0061f650
     PUSH EDI                            ; 004496a5 | DAT_01d2c900
-    CALL core_mission.cpp_FUN_0051b740  ; 004496a6
-        ;   XREF to: 0051b740 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_0051b740()
+    CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740 ; 004496a6
+        ;   XREF to: 0051b740 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_0051b740(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 004496ab
     MOV dword ptr [EBX + 0x70],0x2      ; 004496ae
     POP ESI                             ; 004496b5

@@ -35,6 +35,9 @@ SIG_RE = re.compile(
     r"^\s*(?P<ret>.+?)\s+(?P<conv>%s)\s*\((?P<params>.*)\)\s*$"
     % "|".join(CONVENTIONS))
 TSV_COLUMNS = ["addr", "conf", "name", "ret", "conv", "params", "note"]
+# Words that end a parameter's type rather than name it.
+TYPE_WORDS = frozenset(("char", "short", "int", "long", "float", "double", "void",
+                        "signed", "unsigned", "const", "volatile"))
 
 
 def parse_signature(sig):
@@ -51,7 +54,8 @@ def parse_signature(sig):
     paren = sig.find("(")
     if paren == -1:
         return sig.strip(), "", ""
-    return sig[:paren].strip(), "", sig[paren + 1:sig.rfind(")")].strip()
+    close = sig.rfind(")")
+    return sig[:paren].strip(), "", sig[paren + 1:close if close > paren else None].strip()
 
 
 def split_params(params_str):
@@ -82,9 +86,10 @@ def split_params(params_str):
         if p == "...":
             out.append(("...", "", True))
             continue
-        # trailing identifier is the name only if preceded by whitespace or '*'
+        # trailing identifier is the name only if preceded by whitespace or '*',
+        # and is not itself part of the type ("unsigned int" has no name)
         m = re.match(r"^(.*[\s\*])([A-Za-z_]\w*)$", p)
-        if m:
+        if m and m.group(2) not in TYPE_WORDS:
             out.append((m.group(1).strip(), m.group(2), False))
         else:
             out.append((p, "", False))
@@ -145,13 +150,18 @@ def _tsv_escape(v):
     return v.replace("\t", " ").replace("\n", " ").strip()
 
 
-def write_tsv(entries, path=CATALOG_TSV):
+def render_tsv(entries):
+    """The TSV text for `entries`, by address, with the header line."""
     rows = sorted(entries, key=lambda e: int(e["addr"], 16))
+    lines = ["\t".join(TSV_COLUMNS)]
+    lines += ["\t".join(_tsv_escape(str(e.get(c, ""))) for c in TSV_COLUMNS) for e in rows]
+    return "\n".join(lines) + "\n"
+
+
+def write_tsv(entries, path=CATALOG_TSV):
     with open(path, "w") as fh:
-        fh.write("\t".join(TSV_COLUMNS) + "\n")
-        for e in rows:
-            fh.write("\t".join(_tsv_escape(str(e.get(c, ""))) for c in TSV_COLUMNS) + "\n")
-    return len(rows)
+        fh.write(render_tsv(entries))
+    return len(entries)
 
 
 def load_tsv(path=CATALOG_TSV):

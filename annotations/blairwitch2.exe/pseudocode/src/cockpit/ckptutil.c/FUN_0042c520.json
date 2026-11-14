@@ -2,36 +2,36 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 65,
+    "complexity_score": 66,
     "cross_reference_count": 3,
     "function_call_count": 8,
     "global_count": 9,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 35,
+    "pseudocode_lines": 36,
     "suspect_count": 2,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 161
+    "total_lines": 162
   },
   "cross_references": [
     {
-      "addr": "005168e0",
-      "from_addr": "0051690e",
-      "name": "cockpit_pkbitmap.cpp_FUN_005168e0",
+      "addr": "00516960",
+      "from_addr": "00516971",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_00516960",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00516960",
-      "from_addr": "00516971",
-      "name": "cockpit_pkbitmap.cpp_FUN_00516960",
+      "addr": "005168e0",
+      "from_addr": "0051690e",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_005168e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004a7d00",
       "from_addr": "004a7e29",
-      "name": "engine_font.cpp_FUN_004a7d00",
+      "name": "engine_font.cpp_CBitFont_loadBitmap_FUN_004a7d00",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -54,39 +54,39 @@
       "name": "core_main.c_FUN_004e4500"
     },
     {
-      "addr": "005b7790",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7790"
-    },
-    {
       "addr": "005b8580",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b8580"
+      "name": "crt_memory.c_malloc_FUN_005b8580"
     },
     {
-      "addr": "0057d390",
+      "addr": "005b7790",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_0057d390"
-    },
-    {
-      "addr": "0057cfe0",
-      "is_variadic": false,
-      "name": "unkaddr_0057b9a0.cpp_FUN_0057cfe0"
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
     },
     {
       "addr": "0057d180",
       "is_variadic": false,
-      "name": "unkaddr_0057b9a0.cpp_FUN_0057d180"
+      "name": "support_trstream.cpp_CInStreamFile_close_FUN_0057d180"
     },
     {
       "addr": "0057cd50",
       "is_variadic": false,
-      "name": "unkclass_instream.cpp_CInStreamFile_ctor_FUN_0057cd50"
+      "name": "support_trstream.cpp_CInStreamFile_ctor_FUN_0057cd50"
     },
     {
       "addr": "0057cec0",
       "is_variadic": false,
-      "name": "unkclass_instream.cpp_CInStreamFile_dtor_FUN_0057cec0"
+      "name": "support_trstream.cpp_CInStreamFile_dtor_FUN_0057cec0"
+    },
+    {
+      "addr": "0057d390",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390"
+    },
+    {
+      "addr": "0057cfe0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_read_FUN_0057cfe0"
     }
   ],
   "globals": [
@@ -151,7 +151,7 @@
       {
         "call_addr": "004a7e29",
         "call_type": "direct",
-        "caller": "engine_font.cpp_FUN_004a7d00",
+        "caller": "engine_font.cpp_CBitFont_loadBitmap_FUN_004a7d00",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -162,7 +162,7 @@
       {
         "call_addr": "0051690e",
         "call_type": "direct",
-        "caller": "cockpit_pkbitmap.cpp_FUN_005168e0",
+        "caller": "cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_005168e0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -173,7 +173,7 @@
       {
         "call_addr": "00516971",
         "call_type": "direct",
-        "caller": "cockpit_pkbitmap.cpp_FUN_00516960",
+        "caller": "cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_00516960",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -268,10 +268,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 22,
       "match": "DAT_005cd38e",
       "severity": "mild",
-      "text": "iVar1 = support_trstream_cpp_FUN_0057d390(&local_38,&DAT_005cd38e,filename);",
+      "text": "(&local_38,&DAT_005cd38e,filename);",
       "type": "undefined_data"
     }
   ]

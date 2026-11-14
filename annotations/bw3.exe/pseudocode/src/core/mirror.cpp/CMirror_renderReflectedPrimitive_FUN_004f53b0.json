@@ -1,0 +1,144 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 24,
+    "complexity_score": 27,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 12,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 36
+  },
+  "cross_references": [
+    {
+      "addr": "0053b250",
+      "from_addr": "0053b26c",
+      "name": "core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_0053b250",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f53b0",
+    "address_range": [
+      [
+        "004f53b0",
+        "004f53e2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_004f53b0",
+    "signature": "int __cdecl core_mirror_cpp_CMirror_renderReflectedPrimitive_FUN_004f53b0(CMirror *this_ptr,SMRGLHeaderPrimitive *prim)"
+  },
+  "function_calls": [
+    {
+      "addr": "004f5130",
+      "is_variadic": false,
+      "name": "core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_004f5130"
+    },
+    {
+      "addr": "0046b580",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0046b580"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f2afc",
+      "name": "DAT_005f2afc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bdd7e4",
+      "name": "DAT_01bdd7e4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.157894736842105,
+    "instruction_count": 19,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 2,
+      "CBRANCH": 1,
+      "COPY": 13,
+      "INT_ADD": 9,
+      "INT_AND": 9,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 7,
+      "LOAD": 6,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 7
+    },
+    "pcode_op_count": 79
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004fac90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00519be0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005225a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004d7720",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMirror *"
+      },
+      {
+        "is_param": true,
+        "name": "prim",
+        "offset": 8,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,&(this_ptr->clip_primitive).base);",
+      "type": "undefined_data"
+    }
+  ]
+}

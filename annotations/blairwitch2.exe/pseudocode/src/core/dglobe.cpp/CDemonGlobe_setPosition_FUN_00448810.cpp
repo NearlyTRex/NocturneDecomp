@@ -18,13 +18,13 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00448810(CDemonGlobe *t
   float10 fVar2;
   float10 fVar3;
   
-  if ((CVector3f *)(this_ptr + 0x24) != position) {
-    *(uint *)(this_ptr + 0x24) = *(uint *)position;
-    *(uint *)(this_ptr + 0x28) = *(uint *)&position->field_0x4;
-    *(uint *)(this_ptr + 0x2c) = *(uint *)&position->field_0x8;
+  if (&this_ptr->position != position) {
+    (this_ptr->position).x = position->x;
+    (this_ptr->position).y = position->y;
+    (this_ptr->position).z = position->z;
   }
   fVar2 = (float10)_DAT_005ceffa;
-  fVar3 = (float10)*(float *)position * fVar2;
+  fVar3 = (float10)position->x * fVar2;
   iVar1 = round();
   *extraout_ECX = (int)ROUND(fVar3);
   fVar3 = (float10)*(float *)(iVar1 + 4) * fVar2;

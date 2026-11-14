@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDisease * core_disease_cpp_CDisease_ctor_FUN_0045bf80(CDisease *this_ptr)
+; CDisease * __cdecl core_disease_cpp_CDisease_ctor_FUN_0045bf80(CDisease *this_ptr)
 ;
 ; Parameters:
 ; CDisease *       Stack[0x4]:4   this_ptr

@@ -11,9 +11,9 @@
 ;   core_morph.cpp_CMorph_setupModelFromDeformable_FUN_004fa9c0 at 004fa9eb
 ;
 ; Called Functions:
-;   core_morph.cpp_FUN_004f9c40
+;   core_morph.cpp_CMorphModel_addPartFromVertexBuffer_FUN_004f9c40
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
-;   core_skeleton.cpp_FUN_0054e420
+;   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0054e420
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x18]      ; 004f9d94
     PUSH 0x0                            ; 004f9d98
     PUSH EBX                            ; 004f9d9a
-    CALL core_skeleton.cpp_FUN_0054e420 ; 004f9d9b
-        ;   XREF to: 0054e420 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_0054e420(CDeformableModelInstance * this_ptr, int lod_index)
+    CALL core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0054e420 ; 004f9d9b
+        ;   XREF to: 0054e420 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0054e420(CDeformableModelInstance * this_ptr, int lod_index)
     ADD ESP,0x8                         ; 004f9da0
     PUSH EBX                            ; 004f9da3
     CALL core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40 ; 004f9da4
@@ -52,8 +52,8 @@ section .text
     PUSH EDX                            ; 004f9dd9
     MOV ECX,dword ptr [ESP + 0x2c]      ; 004f9dda
     PUSH ECX                            ; 004f9dde
-    CALL core_morph.cpp_FUN_004f9c40    ; 004f9ddf
-        ;   XREF to: 004f9c40 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_FUN_004f9c40(CMorphModel * this_ptr, int vertex_count, CVector3i * skinned_vertices, int tri_count, ...)
+    CALL core_morph.cpp_CMorphModel_addPartFromVertexBuffer_FUN_004f9c40 ; 004f9ddf
+        ;   XREF to: 004f9c40 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorphModel_addPartFromVertexBuffer_FUN_004f9c40(CMorphModel * this_ptr, int vertex_count, CVector3i * skinned_vertices, int tri_count, ...)
     ADD ESP,0x1c                        ; 004f9de4
     POP EBP                             ; 004f9de7
     POP EDI                             ; 004f9de8

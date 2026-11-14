@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 227,
+    "complexity_score": 152,
     "cross_reference_count": 13,
     "function_call_count": 0,
     "global_count": 22,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 52,
-    "suspect_count": 15,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "undefined_data",
-      "unnamed_field",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
@@ -20,51 +19,51 @@
   },
   "cross_references": [
     {
-      "addr": "004944c0",
-      "from_addr": "00494558",
-      "name": "core_fire.cpp_FUN_004944c0",
+      "addr": "0049c780",
+      "from_addr": "0049c8a3",
+      "name": "core_fire.cpp_CFireEffect_render_FUN_0049c780",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00495ca0",
       "from_addr": "00495d65",
-      "name": "core_fire.cpp_FUN_00495ca0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004966a0",
-      "from_addr": "00496727",
-      "name": "core_fire.cpp_FUN_004966a0",
+      "name": "core_fire.cpp_CFireball_render_FUN_00495ca0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004968d0",
       "from_addr": "00496956",
-      "name": "core_fire.cpp_FUN_004968d0",
+      "name": "core_fire.cpp_CLeaf_render_FUN_004968d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004966a0",
+      "from_addr": "00496727",
+      "name": "core_fire.cpp_CRock_render_FUN_004966a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0049b6f0",
       "from_addr": "0049b79a",
-      "name": "core_fire.cpp_FUN_0049b6f0",
+      "name": "core_fire.cpp_CShell_render_FUN_0049b6f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0049c780",
-      "from_addr": "0049c8a3",
-      "name": "core_fire.cpp_FUN_0049c780",
+      "addr": "004944c0",
+      "from_addr": "00494558",
+      "name": "core_fire.cpp_CStake_render_FUN_004944c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004c9440",
       "from_addr": "004c9478",
-      "name": "core_gore.cpp_FUN_004c9440",
+      "name": "core_gore.cpp_CGore_renderParticles_FUN_004c9440",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0052dc10",
       "from_addr": "0052dcb3",
-      "name": "core_set.cpp_FUN_0052dc10",
+      "name": "core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0052dc10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -94,7 +93,7 @@
     {
       "addr": "0058ad40",
       "from_addr": "0058ae1c",
-      "name": "core_weather.cpp_FUN_0058ad40",
+      "name": "core_weather.cpp_CWeather_renderParticles_FUN_0058ad40",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -251,7 +250,7 @@
       {
         "call_addr": "00494558",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004944c0",
+        "caller": "core_fire.cpp_CStake_render_FUN_004944c0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -262,7 +261,7 @@
       {
         "call_addr": "0052dcb3",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_0052dc10",
+        "caller": "core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0052dc10",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -273,7 +272,7 @@
       {
         "call_addr": "0049c8a3",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049c780",
+        "caller": "core_fire.cpp_CFireEffect_render_FUN_0049c780",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -284,7 +283,7 @@
       {
         "call_addr": "004c9478",
         "call_type": "direct",
-        "caller": "core_gore.cpp_FUN_004c9440",
+        "caller": "core_gore.cpp_CGore_renderParticles_FUN_004c9440",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -339,7 +338,7 @@
       {
         "call_addr": "0058ae1c",
         "call_type": "direct",
-        "caller": "core_weather.cpp_FUN_0058ad40",
+        "caller": "core_weather.cpp_CWeather_renderParticles_FUN_0058ad40",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -350,7 +349,7 @@
       {
         "call_addr": "0049b79a",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049b6f0",
+        "caller": "core_fire.cpp_CShell_render_FUN_0049b6f0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -389,6 +388,32 @@
       "STORE": 4
     },
     "pcode_op_count": 342
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00551c30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005375c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0056d380",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0050adc0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 28,
@@ -459,44 +484,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "_DAT_0200e898 = *(uint *)&position->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "_DAT_0200e894 = *(uint *)&position->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 19,
       "match": "DAT_0200e89c",
       "severity": "mild",
       "text": "if (orientation != (UOrientationVector *)&DAT_0200e89c) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 21,
-      "match": "(uint *)((int)orientation",
-      "severity": "moderate",
-      "text": "_DAT_0200e8a4 = *(uint *)((int)orientation + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 22,
-      "match": "(uint *)((int)orientation",
-      "severity": "moderate",
-      "text": "_DAT_0200e8a0 = *(uint *)((int)orientation + 4);",
-      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
@@ -507,22 +500,6 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "_DAT_0200e8b0 = *(uint *)&aabb_min->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "_DAT_0200e8ac = *(uint *)&aabb_min->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 29,
       "match": "DAT_0200e8b4",
@@ -531,28 +508,20 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "_DAT_0200e8bc = *(uint *)&aabb_max->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "_DAT_0200e8b8 = *(uint *)&aabb_max->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 47,
       "match": "DAT_0200e8c0",
       "severity": "mild",
       "text": "puVar2 = (uint *)&DAT_0200e8c0;",
       "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(CMatrix3x3f *)((int)rotation_matrix",
+      "severity": "moderate",
+      "text": "rotation_matrix = (CMatrix3x3f *)((int)rotation_matrix + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at 00530a1b, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",

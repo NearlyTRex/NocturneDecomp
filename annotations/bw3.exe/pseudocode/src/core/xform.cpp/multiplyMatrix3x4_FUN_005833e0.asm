@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_multiplyMatrix3x4_FUN_005833e0(float *param_1,float *param_2)
+; CMatrix3x4f * __stack2_esi core_xform_cpp_multiplyMatrix3x4_FUN_005833e0(CMatrix3x4f *matrix_a,CMatrix3x4f *matrix_b,CMatrix3x4f *matrix_out)
 ;
+; Parameters:
+; CMatrix3x4f *    Stack[0x4]:4   matrix_a
+; CMatrix3x4f *    Stack[0x8]:4   matrix_b
 ; Local Variables:
 ; undefined4       Stack[-0x38]:4  local_38
 ; undefined4       Stack[-0x34]:4  local_34
@@ -18,16 +21,16 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[36]:
-;   core_asgaya.cpp_FUN_005a1970 at 005a1a7e
-;   core_baal.cpp_FUN_00597810 at 0059791e
-;   core_bodypart.cpp_FUN_00415e30 at 004160a8
-;   core_boneguy.cpp_FUN_004186b0 at 0041886f
-;   core_boxactor.cpp_FUN_00420420 at 004205f5
-;   core_bugs.cpp_FUN_00422570 at 00422690
-;   core_carved.cpp_FUN_00427780 at 004279b6
-;   core_charactr.cpp_FUN_0042e3a0 at 0042e425
-;   core_charactr.cpp_FUN_0042f770 at 0042fa87
-;   core_charactr.cpp_FUN_00430590 at 004306ff
+;   core_asgaya.cpp_CAsgaya_getCarryObjToBodyXForm_FUN_005a1970 at 005a1a7e
+;   core_baal.cpp_CBaal_getCarryObjToBodyXForm_FUN_00597810 at 0059791e
+;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_00415e30 at 004160a8
+;   core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004186b0 at 0041886f
+;   core_boxactor.cpp_CLightActor_process_FUN_00420420 at 004205f5
+;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422570 at 00422690
+;   core_carved.cpp_CCarved_getCarryObjToBodyXForm_FUN_00427780 at 004279b6
+;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042f770 at 0042fa87
+;   core_charactr.cpp_CCharacter_computePickup_FUN_00431ab0 at 00431b34
+;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00430590 at 004306ff
 ;   ... and 26 more
 ;
 ; *****************************************************************************

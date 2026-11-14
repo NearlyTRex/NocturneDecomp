@@ -11,7 +11,7 @@ void core_ammo_cpp_FUN_0040e3a0(void)
 {
   CAmmoBullet *this_ptr;
   
-  this_ptr = (CAmmoBullet *)FUN_005a3cb2(800);
+  this_ptr = (CAmmoBullet *)operator_new(800);
   if (this_ptr == (CAmmoBullet *)0x0) {
     return;
   }

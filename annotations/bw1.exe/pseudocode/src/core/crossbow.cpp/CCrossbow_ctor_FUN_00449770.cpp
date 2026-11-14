@@ -9,24 +9,48 @@
 CCrossbow * __cdecl core_crossbow_cpp_CCrossbow_ctor_FUN_00449770(CCrossbow *this_ptr)
 
 {
-  CWeapon *pCVar1;
-  CFlame *pCVar2;
+  CFlame *pCVar1;
+  CWeapon *pCVar2;
+  CFlame *pCVar3;
   
-  pCVar1 = core_weapon_cpp_CWeapon_ctor_FUN_005ad4c0((CWeapon *)this_ptr);
-  pCVar2 = core_flame_cpp_CFlame_ctor_FUN_004b7a30((CFlame *)&pCVar1[1].field_0x4);
-  *(byte **)&pCVar2[-2].field_0x120 = &g_CCrossbowVTable;
+  pCVar2 = core_weapon_cpp_CWeapon_ctor_FUN_005ad4c0(&this_ptr->base);
+  pCVar3 = core_flame_cpp_CFlame_ctor_FUN_004b7a30((CFlame *)(pCVar2[1].base.actor_name + 4));
+  *(CWeapon_full_vtable **)pCVar3[-2].base.footstep_sound_code = &g_CCrossbowVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
-            ((CKeyFramedModelInstance *)&pCVar2[-2].field_0x124,(char *)0x5d737c);
-  *(uint *)&pCVar2[-1].field_0x28 = 0;
-  *(uint *)&pCVar2[-1].field_0x2a0 = 0;
-  *(uint *)&pCVar2->field_0x158 = 0x3ee66666;
-  *(uint *)&pCVar2->field_0x15c = 0x3f59999a;
-  *(uint *)&pCVar2->field_0x160 = 0x3ee66666;
-  *(uint *)(pCVar2 + -1) = 0;
-  *(uint *)&pCVar2[-1].field_0x4 = 0;
-  *(uint *)&pCVar2[-1].field_0x8 = 1;
-  *(uint *)&pCVar2[-1].field_0xc = 0;
-  *(uint *)&pCVar2[-1].field_0x10 = 0x42480000;
-  *(uint *)&pCVar2[-1].field_0x14 = 0;
-  return (CCrossbow *)&pCVar2[-3].field_0x270;
+            ((CKeyFramedModelInstance *)&pCVar3[-2].base.dead1,(char *)0x5d737c);
+  pCVar3[-1].base.location.position.z = 0.0;
+  pCVar3[-1].render_corona = 0;
+  (pCVar3->flame_size).x = 0.45;
+  (pCVar3->flame_size).y = 0.85;
+  (pCVar3->flame_size).z = 0.45;
+  pCVar3[-0xffffffff00000001].base.actor_name[0] = '\0';
+  pCVar3[-0xffffffff00000001].base.actor_name[1] = '\0';
+  pCVar3[-0xffffffff00000001].base.actor_name[2] = '\0';
+  pCVar3[-0xffffffff00000001].base.actor_name[3] = '\0';
+  pCVar1 = pCVar3 + -1;
+  (pCVar1->base).actor_name[4] = '\0';
+  (pCVar1->base).actor_name[5] = '\0';
+  (pCVar1->base).actor_name[6] = '\0';
+  (pCVar1->base).actor_name[7] = '\0';
+  pCVar1 = pCVar3 + -1;
+  (pCVar1->base).actor_name[8] = '\x01';
+  (pCVar1->base).actor_name[9] = '\0';
+  (pCVar1->base).actor_name[10] = '\0';
+  (pCVar1->base).actor_name[0xb] = '\0';
+  pCVar1 = pCVar3 + -1;
+  (pCVar1->base).actor_name[0xc] = '\0';
+  (pCVar1->base).actor_name[0xd] = '\0';
+  (pCVar1->base).actor_name[0xe] = '\0';
+  (pCVar1->base).actor_name[0xf] = '\0';
+  pCVar1 = pCVar3 + -1;
+  (pCVar1->base).actor_name[0x10] = '\0';
+  (pCVar1->base).actor_name[0x11] = '\0';
+  (pCVar1->base).actor_name[0x12] = 'H';
+  (pCVar1->base).actor_name[0x13] = 'B';
+  pCVar1 = pCVar3 + -1;
+  (pCVar1->base).actor_name[0x14] = '\0';
+  (pCVar1->base).actor_name[0x15] = '\0';
+  (pCVar1->base).actor_name[0x16] = '\0';
+  (pCVar1->base).actor_name[0x17] = '\0';
+  return (CCrossbow *)(pCVar3[-3].off_event + 0x54);
 }

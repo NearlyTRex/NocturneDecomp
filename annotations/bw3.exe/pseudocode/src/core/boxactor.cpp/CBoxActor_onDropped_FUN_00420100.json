@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 75,
+    "complexity_score": 14,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 15,
-    "suspect_count": 5,
-    "suspect_types": [
-      "unknown_field",
-      "unnamed_field"
-    ],
-    "total_lines": 50
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 49
   },
   "cross_references": [],
   "function": {
@@ -75,6 +72,32 @@
     },
     "pcode_op_count": 130
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0041cd00",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00422c70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004224f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0041f0f0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -98,62 +121,21 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x318",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x318 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 12,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "CStack_10._8_4_ = 0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 13,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "CStack_10._4_4_ = 0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 14,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "CStack_10._0_4_ = 0x4116cbe4;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x394",
-      "severity": "mild",
-      "text": "((CBox *)&this_ptr->field_0x394,drop_position,&CStack_10);",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CLightActor",
         "offset": 140,
         "vtable_addr": "005dca74"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CBoxActor",
         "offset": 140,
         "vtable_addr": "005dc994"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CBoxActor",
         "offset": 140,
         "vtable_addr": "005e4ef4"
       }

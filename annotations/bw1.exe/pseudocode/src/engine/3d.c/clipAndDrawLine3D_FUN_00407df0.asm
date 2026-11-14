@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl engine_3d_c_clipAndDrawLine3D_FUN_00407df0(uint param_1,uint param_2,int param_3,undefined4 param_4,uint param_5)
+; void __cdecl engine_3d_c_clipAndDrawLine3D_FUN_00407df0(SRenderVertex vertex1,SRenderVertex vertex2)
 ;
+; Parameters:
+; SRenderVertex    Stack[0x4]:48   vertex1
+; SRenderVertex    Stack[0x34]:48   vertex2
 ;
 ; XREF[1]:
-;   engine_3d.c_FUN_00407d90 at 00407dd5
+;   engine_3d.c_drawLine3DFromIndices_FUN_00407d70 at 00407dd5
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_007135bc
@@ -55,7 +58,7 @@ section .text
     LEA EDI,[ESP + 0x80]                ; 00407e26
     LEA ESI,[ESP + 0xc]                 ; 00407e2d
     CALL engine_clipper.c_interpolateVertexRightClip_FUN_0043b4b0 ; 00407e31
-        ;   XREF to: 0043b4b0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexRightClip_FUN_0043b4b0()
+        ;   XREF to: 0043b4b0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClip_FUN_0043b4b0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV ECX,0xc                         ; 00407e36
     ADD ESP,0xc                         ; 00407e3b
     MOVSD.REP ES:EDI,ESI                ; 00407e3e
@@ -75,7 +78,7 @@ section .text
     LEA EDI,[ESP + 0x80]                ; 00407e5b
     LEA ESI,[ESP + 0xc]                 ; 00407e62
     CALL engine_clipper.c_interpolateVertexLeftClip_FUN_0043b5b0 ; 00407e66
-        ;   XREF to: 0043b5b0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexLeftClip_FUN_0043b5b0()
+        ;   XREF to: 0043b5b0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexLeftClip_FUN_0043b5b0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV ECX,0xc                         ; 00407e6b
     ADD ESP,0xc                         ; 00407e70
     MOVSD.REP ES:EDI,ESI                ; 00407e73
@@ -93,7 +96,7 @@ section .text
     LEA EDI,[ESP + 0x80]                ; 00407e8c
     LEA ESI,[ESP + 0xc]                 ; 00407e93
     CALL engine_clipper.c_interpolateVertexTopClip_FUN_0043b6b0 ; 00407e97
-        ;   XREF to: 0043b6b0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexTopClip_FUN_0043b6b0()
+        ;   XREF to: 0043b6b0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexTopClip_FUN_0043b6b0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV ECX,0xc                         ; 00407e9c
     ADD ESP,0xc                         ; 00407ea1
     MOVSD.REP ES:EDI,ESI                ; 00407ea4
@@ -113,7 +116,7 @@ section .text
     LEA EDI,[ESP + 0x80]                ; 00407ec1
     LEA ESI,[ESP + 0xc]                 ; 00407ec8
     CALL engine_clipper.c_interpolateVertexBottomClip_FUN_0043b7b0 ; 00407ecc
-        ;   XREF to: 0043b7b0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexBottomClip_FUN_0043b7b0()
+        ;   XREF to: 0043b7b0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexBottomClip_FUN_0043b7b0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV ECX,0xc                         ; 00407ed1
     ADD ESP,0xc                         ; 00407ed6
     MOVSD.REP ES:EDI,ESI                ; 00407ed9
@@ -131,7 +134,7 @@ section .text
     LEA EDI,[ESP + 0x50]                ; 00407ef2
     LEA ESI,[ESP + 0xc]                 ; 00407ef6
     CALL engine_clipper.c_interpolateVertexRightClip_FUN_0043b4b0 ; 00407efa
-        ;   XREF to: 0043b4b0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexRightClip_FUN_0043b4b0()
+        ;   XREF to: 0043b4b0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexRightClip_FUN_0043b4b0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV ECX,0xc                         ; 00407eff
     ADD ESP,0xc                         ; 00407f04
     MOVSD.REP ES:EDI,ESI                ; 00407f07
@@ -151,7 +154,7 @@ section .text
     LEA EDI,[ESP + 0x50]                ; 00407f24
     LEA ESI,[ESP + 0xc]                 ; 00407f28
     CALL engine_clipper.c_interpolateVertexLeftClip_FUN_0043b5b0 ; 00407f2c
-        ;   XREF to: 0043b5b0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexLeftClip_FUN_0043b5b0()
+        ;   XREF to: 0043b5b0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexLeftClip_FUN_0043b5b0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV ECX,0xc                         ; 00407f31
     ADD ESP,0xc                         ; 00407f36
     MOVSD.REP ES:EDI,ESI                ; 00407f39
@@ -169,7 +172,7 @@ section .text
     LEA EDI,[ESP + 0x50]                ; 00407f52
     LEA ESI,[ESP + 0xc]                 ; 00407f56
     CALL engine_clipper.c_interpolateVertexTopClip_FUN_0043b6b0 ; 00407f5a
-        ;   XREF to: 0043b6b0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexTopClip_FUN_0043b6b0()
+        ;   XREF to: 0043b6b0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexTopClip_FUN_0043b6b0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV ECX,0xc                         ; 00407f5f
     ADD ESP,0xc                         ; 00407f64
     MOVSD.REP ES:EDI,ESI                ; 00407f67
@@ -189,7 +192,7 @@ section .text
     LEA EDI,[ESP + 0x50]                ; 00407f84
     LEA ESI,[ESP + 0xc]                 ; 00407f88
     CALL engine_clipper.c_interpolateVertexBottomClip_FUN_0043b7b0 ; 00407f8c
-        ;   XREF to: 0043b7b0 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexBottomClip_FUN_0043b7b0()
+        ;   XREF to: 0043b7b0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_interpolateVertexBottomClip_FUN_0043b7b0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)
     MOV ECX,0xc                         ; 00407f91
     ADD ESP,0xc                         ; 00407f96
     MOVSD.REP ES:EDI,ESI                ; 00407f99
@@ -275,7 +278,7 @@ section .text
     ADD EAX,0xea5a0                     ; 0040804b
     PUSH EAX                            ; 00408050
     CALL engine_prim.c_prepareDepthBuffer_FUN_0053dbc0 ; 00408051
-        ;   XREF to: 0053dbc0 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_prepareDepthBuffer_FUN_0053dbc0()
+        ;   XREF to: 0053dbc0 (UNCONDITIONAL_CALL)  ; void engine_prim.c_prepareDepthBuffer_FUN_0053dbc0(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 00408056
     MOV ECX,dword ptr [0x007135ec]      ; 00408059 | DAT_007135ec
     MOV EAX,[0x007135f8]                ; 0040805f | DAT_007135f8

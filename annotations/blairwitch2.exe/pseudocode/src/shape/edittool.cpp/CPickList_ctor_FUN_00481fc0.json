@@ -2,32 +2,37 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 326,
+    "complexity_score": 151,
     "cross_reference_count": 11,
     "function_call_count": 4,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 46,
-    "suspect_count": 26,
+    "pseudocode_lines": 66,
+    "suspect_count": 7,
     "suspect_types": [
       "negative_offset",
       "undefined_data",
-      "unnamed_field",
       "unrolled_strcpy"
     ],
-    "total_lines": 129
+    "total_lines": 149
   },
   "cross_references": [
     {
       "addr": "004b6170",
       "from_addr": "004b6720",
-      "name": "core_game.cpp_FUN_004b6170",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004b28b0",
       "from_addr": "004b28f3",
       "name": "core_game.cpp_staticInit_FUN_004b28b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059c3d0",
+      "from_addr": "0059c3e4",
+      "name": "core_gmehook.cpp_CGameHook_showDebugMenu_FUN_0059c3d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -57,31 +62,25 @@
     {
       "addr": "0055b110",
       "from_addr": "0055b11c",
-      "name": "core_sound.cpp_FUN_0055b110",
+      "name": "core_sound.cpp_CSound_selectReverbPreset_FUN_0055b110",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0051aa7e",
+      "addr": "0051aa80",
       "from_addr": "0051abe2",
-      "name": "engine_pod.cpp_FUN_0051aa7e",
+      "name": "engine_pod.cpp_FUN_0051aa80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0047c970",
       "from_addr": "0047c984",
-      "name": "shape_edittool.cpp_FUN_0047c970",
+      "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047c970",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047cb1e",
+      "addr": "0047cb20",
       "from_addr": "0047cbcc",
-      "name": "shape_edittool.cpp_FUN_0047cb1e",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059c3d0",
-      "from_addr": "0059c3e4",
-      "name": "unkaddr_0059c270.cpp_FUN_0059c3d0",
+      "name": "shape_edittool.cpp_FUN_0047cb20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -145,7 +144,7 @@
       {
         "call_addr": "0047c984",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047c970",
+        "caller": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047c970",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -156,7 +155,7 @@
       {
         "call_addr": "004b6720",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b6170",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -167,7 +166,7 @@
       {
         "call_addr": "004b69f9",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b6170",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -189,7 +188,7 @@
       {
         "call_addr": "0059c3e4",
         "call_type": "direct",
-        "caller": "unkaddr_0059c270.cpp_FUN_0059c3d0",
+        "caller": "core_gmehook.cpp_CGameHook_showDebugMenu_FUN_0059c3d0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -222,7 +221,7 @@
       {
         "call_addr": "0055b11c",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0055b110",
+        "caller": "core_sound.cpp_CSound_selectReverbPreset_FUN_0055b110",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -283,6 +282,32 @@
     },
     "pcode_op_count": 292
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0049a620",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004831c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004a3b90",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00474c90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3529
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -301,112 +326,16 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "((CEdScrollBar *)&pCVar2[0x1b].field_0xc);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 17,
+      "line": 16,
       "match": "pCVar4[-4].",
       "severity": "mild",
-      "text": "*(byte ***)&pCVar4[-4].field_0xc4 = &g_CPickListVTable;",
+      "text": "*(byte ***)(pCVar4[-4].button_text + 0xa8) = &g_CPickListVTable;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0xc4",
-      "severity": "mild",
-      "text": "*(byte ***)&pCVar4[-4].field_0xc4 = &g_CPickListVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 18,
-      "match": "pCVar4[-2].",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4[-2].field_0xe0 = 0;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0xe0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4[-2].field_0xe0 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 20,
-      "match": "pCVar4[-2].",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4[-2].field_0x9c = 0;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x9c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4[-2].field_0x9c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 21,
-      "match": "pCVar4[-2].",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4[-2].field_0xa0 = 0;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0xa0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4[-2].field_0xa0 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 22,
-      "match": "pCVar4[-2].",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4[-2].field_0xa4 = 0;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0xa4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4[-2].field_0xa4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 23,
-      "match": "pCVar4[-2].",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4[-2].field_0xa8 = 0;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0xa8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4[-2].field_0xa8 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 38,
       "match": "DAT_005d286c",
       "severity": "mild",
       "text": "pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(&DAT_005d286c);",
@@ -414,87 +343,31 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 25,
+      "line": 39,
       "match": "pCVar4[-3].",
       "severity": "mild",
-      "text": "pcVar6 = &pCVar4[-3].field_0x30;",
+      "text": "pcVar6 = pCVar4[-3].button_text + 0x14;",
       "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "pcVar6 = &pCVar4[-3].field_0x30;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 36,
+      "line": 50,
       "match": "pCVar4[-3].",
       "severity": "mild",
-      "text": "pcVar6 = &pCVar4[-3].field_0x94;",
+      "text": "pcVar6 = pCVar4[-3].button_text + 0x78;",
       "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x94",
-      "severity": "mild",
-      "text": "pcVar6 = &pCVar4[-3].field_0x94;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 46,
-      "match": "pCVar4[-3].",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4[-3].field_0x28 = 0xffffffff;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4[-3].field_0x28 = 0xffffffff;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 47,
-      "match": "pCVar4[-3].",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4[-3].field_0x2c = 0;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4[-3].field_0x2c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 48,
+      "line": 68,
       "match": "pCVar4[-4].",
       "severity": "mild",
-      "text": "return (CPickList *)&pCVar4[-4].field_0xb8;",
+      "text": "return (CPickList *)(pCVar4[-4].button_text + 0x9c);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0xb8",
-      "severity": "mild",
-      "text": "return (CPickList *)&pCVar4[-4].field_0xb8;",
-      "type": "unnamed_field"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 26,
+      "line": 40,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -502,7 +375,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 37,
+      "line": 51,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

@@ -1,0 +1,201 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 50,
+    "complexity_score": 88,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 33,
+    "suspect_count": 4,
+    "suspect_types": [
+      "param_count_too_many",
+      "pointer_cast",
+      "shadow_pointer_walk"
+    ],
+    "total_lines": 83
+  },
+  "cross_references": [
+    {
+      "addr": "00433b30",
+      "from_addr": "00433c08",
+      "name": "core_charactr.cpp_CCharacter_applyLookAt_FUN_00433b30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00568cf0",
+    "address_range": [
+      [
+        "00568cf0",
+        "00568d50"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModelInstance_copyBoneRotations_FUN_00568cf0",
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_copyBoneRotations_FUN_00568cf0(CDeformableModelInstance *this_ptr,CQuaternion4f *source_quaternions,int bone_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "00569f30",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30"
+    },
+    {
+      "addr": "00563630",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00563630"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00433c08",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_applyLookAt_FUN_00433b30",
+        "estimated_params": 2,
+        "instructions_analyzed": 11,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.414634146341464,
+    "instruction_count": 41,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 44,
+      "INT_ADD": 25,
+      "INT_AND": 22,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 20,
+      "INT_LESS": 2,
+      "INT_MULT": 8,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 10,
+      "INT_SUB": 20,
+      "INT_XOR": 1,
+      "INT_ZEXT": 8,
+      "LOAD": 16,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 15
+    },
+    "pcode_op_count": 222
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00546650",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0054d880",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0059f6e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8454
+    },
+    "nocturne.exe": {
+      "addr": "0051cf60",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      },
+      {
+        "is_param": true,
+        "name": "source_quaternions",
+        "offset": 8,
+        "size": 4,
+        "type": "CQuaternion4f *"
+      },
+      {
+        "is_param": true,
+        "name": "bone_index",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(uint *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "puVar4 = (uint *)((int)this_ptr + (uint)bVar6 * -8 + 0x6b4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(uint *)((int)source_quaternions",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)((int)source_quaternions + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `this_ptr` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `this_ptr->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 32,
+      "match": "this_ptr = (T *)&(this_ptr->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "this_ptr = (CDeformableModelInstance *)&(this_ptr->base).tween_speed;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 3,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 2,
+      "fix_type": "remove_params",
+      "match": "declared:3 vs estimated:2",
+      "param_delta": -1,
+      "text": "Function declares 3 params but call sites push 2 (1 extra)",
+      "type": "param_count_too_many"
+    }
+  ]
+}

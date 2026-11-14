@@ -1,0 +1,167 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 24,
+    "complexity_score": 64,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 14,
+    "suspect_count": 4,
+    "suspect_types": [
+      "stack_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 38
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0050d120",
+    "address_range": [
+      [
+        "0050d120",
+        "0050d169"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_path.cpp_FUN_0050d120",
+    "signature": "void core_path_cpp_FUN_0050d120(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0050d170",
+      "is_variadic": false,
+      "name": "core_path.cpp_CPathMap_searchGrid_FUN_0050d170"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01ec1514",
+      "name": "DAT_01ec1514",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ec183c",
+      "name": "DAT_01ec183c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ec1840",
+      "name": "DAT_01ec1840",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ec1844",
+      "name": "DAT_01ec1844",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ec1848",
+      "name": "DAT_01ec1848",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.590909090909091,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 22,
+      "INT_ADD": 7,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 6,
+      "LOAD": 6,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 57
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005140f0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00535440",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00548750",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004f2050",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "CPathMap *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(in_stack_00000004,(in_stack_00000004->voxel_coords).y);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(in_stack_00000004,(in_stack_00000004->voxel_coords).y);",
+      "type": "stack_param"
+    }
+  ]
+}

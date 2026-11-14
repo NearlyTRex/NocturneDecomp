@@ -79,11 +79,11 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[7]:
-;   core_bodypart.cpp_FUN_004159e0 at 00415a34
+;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_004159e0 at 00415a34
 ;   core_cloth.cpp_CCloth_render_FUN_005b0fe0 at 005b10bc
 ;   core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_0044e720 at 0044e787
-;   core_glass.cpp_FUN_004c52a0 at 004c53f3
-;   core_glass.cpp_FUN_004c5470 at 004c55bf
+;   core_glass.cpp_CGlass_renderOpaque_FUN_004c52a0 at 004c53f3
+;   core_glass.cpp_CGlass_renderTransparent_FUN_004c5470 at 004c55bf
 ;   core_morph.cpp_CMorphModel_rotatePoints_FUN_005b6a50 at 005b6c5f
 ;   core_skeleton.cpp_CDeformableModel_lightVertices_FUN_005419c0 at 005419ed
 ;
@@ -339,7 +339,7 @@ section .text
     PUSH EAX                            ; 005323eb
     LEA ESI,[ESP + 0x58]                ; 005323ec
     CALL core_set.cpp_transformToWorldSpace_FUN_00531f60 ; 005323f0
-        ;   XREF to: 00531f60 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_transformToWorldSpace_FUN_00531f60()
+        ;   XREF to: 00531f60 (UNCONDITIONAL_CALL)  ; CVector3i * core_set.cpp_transformToWorldSpace_FUN_00531f60(CVector3i * input, CVector3i * output)
     ADD ESP,0x4                         ; 005323f5
     PUSH 0x0                            ; 005323f8
     MOV ECX,dword ptr [ESP + 0x140]     ; 005323fa
@@ -455,7 +455,7 @@ section .text
     PUSH EAX                            ; 0053252a
     LEA ESI,[ESP + 0x4]                 ; 0053252b
     CALL core_set.cpp_transformToWorldSpace_FUN_00531f60 ; 0053252f
-        ;   XREF to: 00531f60 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_transformToWorldSpace_FUN_00531f60()
+        ;   XREF to: 00531f60 (UNCONDITIONAL_CALL)  ; CVector3i * core_set.cpp_transformToWorldSpace_FUN_00531f60(CVector3i * input, CVector3i * output)
     ADD ESP,0x4                         ; 00532534
     MOV EDI,dword ptr [ESP + 0x128]     ; 00532537
     MOV ESI,ESP                         ; 0053253e
@@ -613,7 +613,7 @@ section .text
     LEA ESI,[ESP + 0x34]                ; 0053274a
     LEA EDI,[ESP + 0x28]                ; 0053274e
     CALL core_set.cpp_transformToWorldSpace_FUN_00531f60 ; 00532752
-        ;   XREF to: 00531f60 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_transformToWorldSpace_FUN_00531f60()
+        ;   XREF to: 00531f60 (UNCONDITIONAL_CALL)  ; CVector3i * core_set.cpp_transformToWorldSpace_FUN_00531f60(CVector3i * input, CVector3i * output)
     LEA ESI,[ESP + 0x34]                ; 00532757
     ADD ESP,0x4                         ; 0053275b
     MOVSD ES:EDI,ESI                    ; 0053275e
@@ -662,7 +662,7 @@ section .text
     PUSH EAX                            ; 005327de
     LEA ESI,[ESP + 0x4c]                ; 005327df
     CALL core_set.cpp_transformToWorldSpace_FUN_00531f60 ; 005327e3
-        ;   XREF to: 00531f60 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_transformToWorldSpace_FUN_00531f60()
+        ;   XREF to: 00531f60 (UNCONDITIONAL_CALL)  ; CVector3i * core_set.cpp_transformToWorldSpace_FUN_00531f60(CVector3i * input, CVector3i * output)
     ADD ESP,0x4                         ; 005327e8
     ADD EBX,0x30                        ; 005327eb
     MOV EDI,dword ptr [ESP + 0x11c]     ; 005327ee

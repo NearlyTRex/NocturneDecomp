@@ -11,6 +11,6 @@ int __cdecl core_haystack_cpp_CHaystack_renderOpaque_FUN_004cd870(CHaystack *thi
 {
   int iVar1;
   
-  iVar1 = core_charactr_cpp_FUN_004254b0(this_ptr);
+  iVar1 = core_charactr_cpp_CCharacter_renderOpaque_FUN_004254b0((CCharacter *)this_ptr);
   return iVar1;
 }

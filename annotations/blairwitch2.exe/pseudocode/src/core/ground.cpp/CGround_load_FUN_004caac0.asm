@@ -177,7 +177,7 @@ section .text
     PUSH ESI                            ; 004cabd0
         ;   Label: LAB_004cabd0
     CALL crt_stdio.c_fgetc_FUN_005b8180 ; 004cabd1
-        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005b8180()
+        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005b8180(_FILE * file)
     ADD ESP,0x4                         ; 004cabd6
     SHL EAX,0x7                         ; 004cabd9
         ;   Label: LAB_004cabd9
@@ -333,7 +333,7 @@ section .text
     PUSH EAX                            ; 004cad4a
     INC ESI                             ; 004cad4b
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 004cad4c
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     MOV ECX,dword ptr [EBX]             ; 004cad51
     ADD ESP,0x10                        ; 004cad53
     CMP ESI,ECX                         ; 004cad56

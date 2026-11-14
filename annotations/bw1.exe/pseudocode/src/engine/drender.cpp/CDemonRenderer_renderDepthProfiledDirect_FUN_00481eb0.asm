@@ -9,9 +9,9 @@
 ;
 ; XREF[5]:
 ;   core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_0048cba0 at 0048d28d
-;   core_mirror.cpp_FUN_00519be0 at 00519c09
-;   core_mirror.cpp_FUN_00519cae at 00519e16
-;   core_set.cpp_FUN_005558c0 at 005558e7
+;   core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_00519be0 at 00519c09
+;   core_mirror.cpp_FUN_00519cb0 at 00519e16
+;   core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_005558c0 at 005558e7
 ;   core_water.cpp_CWater_calculateVisibleTiles_FUN_005a9a40 at 005a9ea4
 ;
 ; Referenced Globals:
@@ -100,7 +100,7 @@ section .text
         ;   Label: LAB_00481f53
     PUSH EAX                            ; 00481f56
     CALL engine_3d.c_isVisiblePlane_FUN_00403920 ; 00481f57
-        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403920()
+        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403920(SClipPlane * plane)
     ADD ESP,0x4                         ; 00481f5c
     TEST EAX,EAX                        ; 00481f5f
     JNZ 0x00481ed5                      ; 00481f61

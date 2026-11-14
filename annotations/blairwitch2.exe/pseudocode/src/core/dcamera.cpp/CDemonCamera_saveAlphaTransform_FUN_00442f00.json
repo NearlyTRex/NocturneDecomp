@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 257,
+    "complexity_score": 109,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 32,
-    "suspect_count": 21,
+    "pseudocode_lines": 34,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
-      "unnamed_field",
+      "pointer_truncation",
       "warning_overlapping_globals"
     ],
-    "total_lines": 93
+    "total_lines": 95
   },
   "cross_references": [],
   "function": {
@@ -33,7 +33,7 @@
     {
       "addr": "004ea3b0",
       "is_variadic": false,
-      "name": "engine_matrix.c_FUN_004ea3b0"
+      "name": "engine_matrix.c_getCameraOrigin_FUN_004ea3b0"
     }
   ],
   "globals": [
@@ -184,6 +184,32 @@
     },
     "pcode_op_count": 266
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004545b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00450700",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00453950",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9147
+    },
+    "nocturne.exe": {
+      "addr": "004477f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -242,163 +268,43 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 13,
+      "line": 14,
       "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "puVar1 = (uint *)((int)this_ptr + (uint)bVar2 * -8 + alpha_index * 0xc + 0x11f0);",
       "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x11ec",
-      "severity": "mild",
-      "text": "*(uint *)(&this_ptr->field_0x11ec + alpha_index * 0xc) = auStack_ffc[0x3fa];",
-      "type": "unnamed_field"
+      "description": "Pointer value `&CStack_14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 16,
+      "match": "(int)&CStack_14",
+      "severity": "moderate",
+      "text": "*puVar1 = *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x124c",
-      "severity": "mild",
-      "text": "*(uint *)(&this_ptr->field_0x124c + alpha_index * 4) = _DAT_01c38b9c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Pointer value `&CStack_14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 18,
-      "match": "field_0x126c",
-      "severity": "mild",
-      "text": "*(uint *)(&this_ptr->field_0x126c + alpha_index * 4) = _DAT_01c38ba0;",
-      "type": "unnamed_field"
+      "match": "(int)&CStack_14",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x128c",
-      "severity": "mild",
-      "text": "*(uint *)(&this_ptr->field_0x128c + alpha_index * 4) = _DAT_01c38ba4;",
-      "type": "unnamed_field"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 16,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*puVar1 = *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x12ac",
-      "severity": "mild",
-      "text": "*(uint *)(&this_ptr->field_0x12ac + alpha_index * 4) = _DAT_01c38ba8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x12cc",
-      "severity": "mild",
-      "text": "*(uint *)(&this_ptr->field_0x12cc + alpha_index * 4) = _DAT_01c38bac;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x12ec",
-      "severity": "mild",
-      "text": "*(uint *)(&this_ptr->field_0x12ec + alpha_index * 4) = _DAT_01c38bb0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x130c",
-      "severity": "mild",
-      "text": "*(uint *)(&this_ptr->field_0x130c + alpha_index * 4) = _DAT_01c38bb4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x132c",
-      "severity": "mild",
-      "text": "*(uint *)(&this_ptr->field_0x132c + alpha_index * 4) = _DAT_01c38bb8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x134c",
-      "severity": "mild",
-      "text": "*(uint *)(&this_ptr->field_0x134c + alpha_index * 4) = _DAT_01c38bbc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x136c",
-      "severity": "mild",
-      "text": "*(uint *)(&this_ptr->field_0x136c + alpha_index * 4) = _DAT_01d04fb8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x138c",
-      "severity": "mild",
-      "text": "*(uint *)(&this_ptr->field_0x138c + alpha_index * 4) = _DAT_01d04fbc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x13ac",
-      "severity": "mild",
-      "text": "*(uint *)(&this_ptr->field_0x13ac + alpha_index * 4) = _DAT_01d04fc0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x13cc",
-      "severity": "mild",
-      "text": "*(uint *)(&this_ptr->field_0x13cc + alpha_index * 4) = _DAT_01d04fc4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x13ec",
-      "severity": "mild",
-      "text": "*(uint *)(&this_ptr->field_0x13ec + alpha_index * 4) = _DAT_01d04fc8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x140c",
-      "severity": "mild",
-      "text": "*(uint *)(&this_ptr->field_0x140c + alpha_index * 4) = _DAT_01d04fcc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x142c",
-      "severity": "mild",
-      "text": "*(uint *)(&this_ptr->field_0x142c + alpha_index * 4) = _DAT_01d04fd0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x144c",
-      "severity": "mild",
-      "text": "*(uint *)(&this_ptr->field_0x144c + alpha_index * 4) = _DAT_01d04fd4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x146c",
-      "severity": "mild",
-      "text": "*(uint *)(&this_ptr->field_0x146c + alpha_index * 4) = _DAT_01d04fd8;",
-      "type": "unnamed_field"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 18,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

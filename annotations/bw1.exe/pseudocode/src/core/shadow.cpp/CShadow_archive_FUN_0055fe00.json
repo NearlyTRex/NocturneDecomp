@@ -1,0 +1,167 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 56,
+    "complexity_score": 17,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 7,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 73
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0055fe00",
+    "address_range": [
+      [
+        "0055fe00",
+        "0055fe9b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_shadow.cpp_CShadow_archive_FUN_0055fe00",
+    "signature": "void __cdecl core_shadow_cpp_CShadow_archive_FUN_0055fe00(CShadow *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b7f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveDeformableModelInstance_FUN_0040b7f0"
+    },
+    {
+      "addr": "0040b5f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b5f0"
+    },
+    {
+      "addr": "0040b670",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b670"
+    },
+    {
+      "addr": "0040b870",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040b870"
+    },
+    {
+      "addr": "004a0520",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_archive_FUN_004a0520"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f174a",
+      "name": "s_speed_005f174a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f1750",
+      "name": "s_modelName_005f1750",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f175a",
+      "name": "s_guardDistance_005f175a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f1768",
+      "name": "s_motion_state_005f1768",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f1775",
+      "name": "s_lightUpEyes_005f1775",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f1781",
+      "name": "s_scaredByLight_005f1781",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006231a4",
+      "name": "g_CShadowClassVersion",
+      "type": "int",
+      "value": "0x2"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.043478260869565,
+    "instruction_count": 46,
+    "opcode_distribution": {
+      "CALL": 7,
+      "CBRANCH": 1,
+      "COPY": 32,
+      "INT_ADD": 19,
+      "INT_AND": 18,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 19,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 9,
+      "INT_SUB": 23,
+      "LOAD": 7,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 22
+    },
+    "pcode_op_count": 186
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0053e860",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4219
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CShadow *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CShadow",
+        "offset": 212,
+        "vtable_addr": "006051b4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

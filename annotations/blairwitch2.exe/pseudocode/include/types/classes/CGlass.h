@@ -4,13 +4,40 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CMirror.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
+#include "types/structs/SMRGLHeaderPrimitive.h"
+#include "types/structs/SMRGLPrimitiveQuad.h"
+#include "types/structs/SMRGLTextureBasic.h"
+#include "types/structs/SMRGLVertex.h"
 
 // Structure: CGlass
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0xc9c (3228 bytes)
 #pragma pack(push, 1)
 typedef struct CGlass {
-    char field_0[3228]; // 0x0
+    CDemonActor base; // 0x0
+    CVector3f glass_size; // 0x2b4
+    SMRGLTextureBasic glass_texture; // 0x2c0
+    int opacity; // 0x2d8
+    int shattered; // 0x2dc
+    char break_event[100]; // 0x2e0
+    int mirror_flag; // 0x344
+    CMirror mirror; // 0x348
+    char breakable_condition[100]; // 0x468
+    int background_flag; // 0x4cc
+    SMRGLTextureBasic broken_texture; // 0x4d0
+    CVector3f broken_vertices[25]; // 0x4e8
+    CVector3i render_vertices[25]; // 0x614
+    int texture_u[25]; // 0x740
+    int texture_v[25]; // 0x7a4
+    SMRGLPrimitiveQuad broken_quads[16]; // 0x808
+    int grid_cols; // 0xc88
+    int grid_rows; // 0xc8c
+    int broken_vertex_count; // 0xc90
+    int broken_polygon_count; // 0xc94
+    int pending_background_render; // 0xc98
 } CGlass;
 #pragma pack(pop)
 

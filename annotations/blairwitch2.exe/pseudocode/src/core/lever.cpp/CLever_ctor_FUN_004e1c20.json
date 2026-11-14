@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 205,
+    "complexity_score": 96,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 25,
-    "suspect_count": 17,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 46,
+    "suspect_count": 4,
     "suspect_types": [
       "negative_offset",
-      "unnamed_field"
+      "pointer_cast"
     ],
-    "total_lines": 65
+    "total_lines": 86
   },
   "cross_references": [
     {
@@ -101,6 +101,32 @@
     },
     "pcode_op_count": 138
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004ff040",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004e0100",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005047d0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004c6040",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -119,140 +145,36 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x14c",
-      "severity": "mild",
-      "text": "core_event_cpp_CRuleList_clear_FUN_00492350((CRuleList *)&this_ptr_00[1].field_0x14c);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
       "line": 12,
       "match": "this_ptr_00[-1].",
       "severity": "mild",
-      "text": "*(byte **)&this_ptr_00[-1].field_0x178 = &g_CLeverVTable;",
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CLeverVTable;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "*(byte **)&this_ptr_00[-1].field_0x178 = &g_CLeverVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "this_ptr_00[1].field_0xc = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x70",
-      "severity": "mild",
-      "text": "this_ptr_00[1].field_0x70 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0xd4",
-      "severity": "mild",
-      "text": "this_ptr_00[1].field_0xd4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x8 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x138",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x138 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x13c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x13c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x140",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x140 = 0x17;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x144",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x144 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x148",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x148 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0xc4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[4].field_0xc4 = 2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0xc8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[4].field_0xc8 = 1;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 27,
+      "line": 48,
       "match": "this_ptr_00[-2].",
       "severity": "mild",
-      "text": "return (CLever *)&this_ptr_00[-2].field_0x44;",
+      "text": "return (CLever *)(this_ptr_00[-2].part_visibility_flags + 0x11);",
       "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "return (CLever *)&this_ptr_00[-2].field_0x44;",
-      "type": "unnamed_field"
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 11,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "core_event_cpp_CRuleList_clear_FUN_00492350((CRuleList *)(this_ptr_00[1].model_name + 0xd4));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 17,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "*(byte *)(this_ptr_00[1].part_visibility_flags + 0x1c) = 0;",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

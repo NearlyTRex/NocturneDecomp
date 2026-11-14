@@ -9,7 +9,7 @@
 ; int *            Stack[0xc]:4   input_vertices
 ;
 ; XREF[1]:
-;   core_skeleton.cpp_FUN_0054e4b0 at 0054e4da
+;   core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_0054e4b0 at 0054e4da
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8

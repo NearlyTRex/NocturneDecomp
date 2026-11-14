@@ -21,7 +21,7 @@ void shape_edittool_cpp_FUN_00481ab0(uint param_1,int param_2,int param_3,int pa
       engine_2d_c_plotPixel_FUN_00401130(param_2,param_3);
     }
     else {
-      engine_mini3d_cpp_FUN_004f36e0(param_2,param_3);
+      engine_mini3d_cpp_drawPixel_FUN_004f36e0(param_2,param_3);
     }
   }
   x = param_4 + param_2;
@@ -36,7 +36,7 @@ void shape_edittool_cpp_FUN_00481ab0(uint param_1,int param_2,int param_3,int pa
         engine_2d_c_plotPixel_FUN_00401130(param_2,y);
       }
       else {
-        engine_mini3d_cpp_FUN_004f36e0(param_2,y);
+        engine_mini3d_cpp_drawPixel_FUN_004f36e0(param_2,y);
       }
     }
     if (((((-1 < x) && (-1 < y)) && (x < DAT_005fba18)) &&
@@ -46,7 +46,7 @@ void shape_edittool_cpp_FUN_00481ab0(uint param_1,int param_2,int param_3,int pa
         engine_2d_c_plotPixel_FUN_00401130(x,y);
       }
       else {
-        engine_mini3d_cpp_FUN_004f36e0(x,y);
+        engine_mini3d_cpp_drawPixel_FUN_004f36e0(x,y);
       }
     }
     if ((((((-1 < param_2) && (-1 < param_4)) && (param_2 < DAT_005fba18)) &&
@@ -56,7 +56,7 @@ void shape_edittool_cpp_FUN_00481ab0(uint param_1,int param_2,int param_3,int pa
         engine_2d_c_plotPixel_FUN_00401130(param_2,param_4);
       }
       else {
-        engine_mini3d_cpp_FUN_004f36e0(param_2,param_4);
+        engine_mini3d_cpp_drawPixel_FUN_004f36e0(param_2,param_4);
       }
     }
     if ((((x < 0) || (param_4 < 0)) || (DAT_005fba18 <= x)) ||
@@ -75,7 +75,7 @@ void shape_edittool_cpp_FUN_00481ab0(uint param_1,int param_2,int param_3,int pa
       y = y + 1;
     }
     else {
-      engine_mini3d_cpp_FUN_004f36e0(x,param_4);
+      engine_mini3d_cpp_drawPixel_FUN_004f36e0(x,param_4);
       param_2 = param_2 + 1;
       x = x + -1;
       param_4 = param_4 + -1;

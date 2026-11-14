@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 86,
-    "complexity_score": 241,
+    "complexity_score": 220,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 36,
-    "suspect_count": 20,
+    "pseudocode_lines": 35,
+    "suspect_count": 18,
     "suspect_types": [
       "unnamed_param"
     ],
-    "total_lines": 122
+    "total_lines": 121
   },
   "cross_references": [],
   "function": {
@@ -31,7 +31,7 @@
     {
       "addr": "005b7790",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7790"
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
     },
     {
       "addr": "00579090",
@@ -39,14 +39,14 @@
       "name": "support_trisock.cpp_CSocket_isSocketValid_FUN_00579090"
     },
     {
+      "addr": "00579240",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_CSocket_receiveSocketData_FUN_00579240"
+    },
+    {
       "addr": "00579150",
       "is_variadic": false,
       "name": "support_trisock.cpp_FUN_00579150"
-    },
-    {
-      "addr": "00579240",
-      "is_variadic": false,
-      "name": "support_trisock.cpp_FUN_00579240"
     }
   ],
   "globals": [
@@ -239,31 +239,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0xa18,\"Error receiving %s from %s\",param_1 + 0x500,param_1 + 0x400);",
+      "text": "_sprintf((char *)(param_1 + 0xa18),\"Error receiving %s from %s\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1 + 0xa18,\"Error receiving %s from %s\",param_1 + 0x500,param_1 + 0x400);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1 + 0xa18,\"Error receiving %s from %s\",param_1 + 0x500,param_1 + 0x400);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xd28) = 0xfffffffb;",

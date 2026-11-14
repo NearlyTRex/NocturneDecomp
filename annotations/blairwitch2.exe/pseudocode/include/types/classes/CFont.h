@@ -2,14 +2,24 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CFont_vtable;
+
 // Dependencies
 #include "system/basetypes.h"
 
 // Structure: CFont
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// RTTI CWinFont 27520 minus CWinFont's own 312 bytes (nocedit CWinFont fields 0x4-0x138 sit +27204, ctor 0058df90); base ctor 00510ca0 zeroes +0x0 and stores the vtable 005fa8bc at +0x6a44 (vtable at the end of the class that introduces it). CFont is a text queue in BW: 00510cd0 (queueText) and 00510d50 (flushQueue).
+// Ghidra size: 0x6a48 (27208 bytes)
 #pragma pack(push, 1)
 typedef struct CFont {
+    int queued_text_count; // 0x0, ctor 00510ca0 zeroes; 00510cd0 refuses when 99 < count, writes entry [count] then count++; 00510d50 loops 0..count then zeroes
+    int queued_x[100]; // 0x4, 00510cd0: +0x4 + i*4 = round(x * scale); 00510d50 passes param_1[1+i] as drawText x
+    int queued_y[100]; // 0x194, 00510cd0: +0x194 + i*4 = round(y * scale); 00510d50 piVar+0x65 as drawText y
+    char queued_text[100][256]; // 0x324, 00510cd0: strcpy to param_1 + 0xc9*4 + count*0x100; 00510d50 text arg, stride 0x40 dwords
+    int queued_foreground_color[100]; // 0x6724, 00510cd0: param_1[count+0x19c9] = packed colour (or getDefaultTextColor when <0); 00510d50 drawText fg
+    int queued_background_color[100]; // 0x68b4, 00510cd0: param_1[count+0x1a2d] = param_6; 00510d50 drawText bg
+    struct CFont_vtable* vtable; // 0x6a44, 00510ca0 stores 005fa8bc; 00510d50 calls [param_1[0x1a91]+4] (drawText)
 } CFont;
 #pragma pack(pop)
 

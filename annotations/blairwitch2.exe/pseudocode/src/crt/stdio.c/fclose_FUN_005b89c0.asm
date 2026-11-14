@@ -4,18 +4,18 @@
 ; undefined4 __cdecl crt_stdio_c_fclose_FUN_005b89c0(int param_1)
 ;
 ;
-; XREF[64]:
+; XREF[65]:
 ;   cockpit_ckptutil.c_FUN_0042dec0 at 0042e0aa
 ;   cockpit_ckptutil.c_FUN_0042e130 at 0042e27f
 ;   cockpit_ckptutil.c_FUN_0042f330 at 0042f3c4
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_00517130 at 005171ae
 ;   cockpit_pkbitmap.cpp_FUN_00516de0 at 00516e0c
-;   cockpit_pkbmpset.cpp_FUN_005177de at 005179d3
+;   cockpit_pkbitmap.cpp_FUN_00517400 at 00517461
+;   cockpit_pkbmpset.cpp_FUN_005177e0 at 005179d3
 ;   cockpit_pkbmpset.cpp_FUN_00517a60 at 00517b44
 ;   core_cloth.cpp_CCloth_load_FUN_005adeb0 at 005ae33a
 ;   core_course.cpp_CCourse_load_FUN_00438af0 at 00438be1
-;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0043e930 at 0043e9f8
-;   ... and 54 more
+;   ... and 55 more
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2b8 = 005bce04

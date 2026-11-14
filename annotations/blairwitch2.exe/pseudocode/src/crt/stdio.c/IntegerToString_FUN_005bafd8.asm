@@ -9,11 +9,11 @@
 ; int              Stack[0xc]:4   base
 ;
 ; XREF[5]:
-;   core_patrpoin.cpp_FUN_0059c9c0 at 0059cac3
+;   core_hpatrol.cpp_FUN_0059c9c0 at 0059cac3
 ;   crt_time.c__strftime_FUN_005ba3a4 at 005ba604
 ;   crt_unknown.c_FUN_005bb6f8 at 005bb708
 ;   crt_unknown.c_FUN_005bb75c at 005bb799
-;   unkafter_2d.cpp_FUN_005c67b0 at 005c6822
+;   crt_unknown.c_FUN_005c67b0 at 005c6822
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005baf80

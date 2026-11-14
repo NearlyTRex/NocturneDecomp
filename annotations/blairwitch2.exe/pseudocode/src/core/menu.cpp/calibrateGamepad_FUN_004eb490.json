@@ -1,0 +1,392 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 265,
+    "complexity_score": 194,
+    "cross_reference_count": 2,
+    "function_call_count": 10,
+    "global_count": 22,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 89,
+    "suspect_count": 9,
+    "suspect_types": [
+      "raw_address_pointer_store",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 354
+  },
+  "cross_references": [
+    {
+      "addr": "004ecc70",
+      "from_addr": "004ed1f6",
+      "name": "core_menu.cpp_FUN_004ecc70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004eed60",
+      "from_addr": "004efae9",
+      "name": "core_menu.cpp_FUN_004eed60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004eb490",
+    "address_range": [
+      [
+        "004eb490",
+        "004eb7ba"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_menu.cpp_calibrateGamepad_FUN_004eb490",
+    "signature": "int __cdecl core_menu_cpp_calibrateGamepad_FUN_004eb490(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004b7140",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_resetKeyState_FUN_004b7140"
+    },
+    {
+      "addr": "00502510",
+      "is_variadic": false,
+      "name": "core_moon.cpp_CMoon_render_FUN_00502510"
+    },
+    {
+      "addr": "005344c0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_setFlatColor_FUN_005344c0"
+    },
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
+    },
+    {
+      "addr": "00401fe0",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawText_FUN_00401fe0"
+    },
+    {
+      "addr": "004ab560",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560"
+    },
+    {
+      "addr": "004aaf00",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00"
+    },
+    {
+      "addr": "004a8df0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_FUN_004a8df0"
+    },
+    {
+      "addr": "0050fe80",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_0050fe80"
+    },
+    {
+      "addr": "00589560",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00589560"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005dcad1",
+      "name": "s_d_d_x_005dcad1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dcada",
+      "name": "s_Center_gamepad_press_ENT_005dcada",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dcaf6",
+      "name": "s_Move_gamepad_in_all_dire_005dcaf6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00616494",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01cb6900"
+    },
+    {
+      "addr": "00617dd4",
+      "name": "DAT_00617dd4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061b5a8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e661b8"
+    },
+    {
+      "addr": "01511cb8",
+      "name": "DAT_01511cb8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38af0",
+      "name": "DAT_01c38af0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38af4",
+      "name": "DAT_01c38af4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38b00",
+      "name": "DAT_01c38b00",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6900",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "01cb69b8",
+      "name": "g_CGameInstance.x_center",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69bc",
+      "name": "g_CGameInstance.y_center",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69c0",
+      "name": "g_CGameInstance.x_stick_min",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69c4",
+      "name": "g_CGameInstance.x_stick_max",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69c8",
+      "name": "g_CGameInstance.y_stick_min",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69cc",
+      "name": "g_CGameInstance.y_stick_max",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69d0",
+      "name": "g_CGameInstance.game_control",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d02f84",
+      "name": "DAT_01d02f84",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e661b8",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "01fc103c",
+      "name": "g_CDemonSetInstance.rendering_mode",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fc104c",
+      "name": "g_CDemonSetInstance.ambient_base_quick",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.409691629955947,
+    "instruction_count": 227,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 23,
+      "BOOL_OR": 3,
+      "BRANCH": 2,
+      "CALL": 19,
+      "CALLIND": 4,
+      "CBRANCH": 8,
+      "COPY": 178,
+      "INT_ADD": 64,
+      "INT_AND": 152,
+      "INT_CARRY": 23,
+      "INT_EQUAL": 105,
+      "INT_LESS": 13,
+      "INT_NOTEQUAL": 19,
+      "INT_OR": 16,
+      "INT_SBORROW": 13,
+      "INT_SCARRY": 23,
+      "INT_SLESS": 50,
+      "INT_SRIGHT": 12,
+      "INT_SUB": 98,
+      "INT_XOR": 2,
+      "LOAD": 24,
+      "POPCOUNT": 50,
+      "RETURN": 2,
+      "STORE": 98
+    },
+    "pcode_op_count": 1001
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0050a2b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004e7dc0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005104d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9186
+    },
+    "nocturne.exe": {
+      "addr": "004cf8d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9186
+    }
+  },
+  "stack_frame": {
+    "frame_size": 296,
+    "local_size": 296,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_124",
+        "offset": -292,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 38,
+      "match": "*(code **)(*0x01D02F84",
+      "severity": "moderate",
+      "text": "iVar3 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x1c);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 38,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar3 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x1c);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 40,
+      "match": "*(code **)(*0x01D02F84",
+      "severity": "moderate",
+      "text": "iVar3 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,1);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 40,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar3 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 62,
+      "match": "*(code **)(*0x01D02F84",
+      "severity": "moderate",
+      "text": "iVar3 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x1c);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 62,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar3 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x1c);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 73,
+      "match": "*(code **)(*0x01D02F84",
+      "severity": "moderate",
+      "text": "iVar3 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,1);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 73,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar3 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,1);",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

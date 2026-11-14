@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 52,
+    "complexity_score": 25,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 12,
-    "suspect_count": 3,
+    "pseudocode_lines": 10,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 36
+    "total_lines": 34
   },
   "cross_references": [],
   "function": {
@@ -78,6 +77,32 @@
     },
     "pcode_op_count": 136
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0049eb90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a44c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004c9400",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0048c8d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -116,22 +141,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "iStack_c = (int)ROUND(*(float *)&world_position->field_0x4 * _DAT_005fff94);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "iStack_8 = (int)ROUND(*(float *)&world_position->field_0x8 * _DAT_005fff94);",
-      "type": "unnamed_field"
     }
   ]
 }

@@ -19,7 +19,7 @@
     {
       "addr": "004b7f90",
       "from_addr": "004b82dd",
-      "name": "core_game.cpp_FUN_004b7f90",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -54,12 +54,12 @@
     {
       "addr": "0044a3e0",
       "is_variadic": false,
-      "name": "core_dcamera.cpp_FUN_0044a3e0"
+      "name": "core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044a3e0"
     },
     {
       "addr": "004bd6a0",
       "is_variadic": false,
-      "name": "core_game.cpp_FUN_004bd6a0"
+      "name": "core_game.cpp_calculateIrisFadeCenter_FUN_004bd6a0"
     }
   ],
   "globals": [
@@ -124,7 +124,7 @@
       {
         "call_addr": "004b82dd",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b7f90",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -204,6 +204,14 @@
       "TRUNC": 3
     },
     "pcode_op_count": 1098
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004d6030",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 8,

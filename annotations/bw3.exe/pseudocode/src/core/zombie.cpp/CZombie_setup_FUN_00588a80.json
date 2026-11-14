@@ -1,0 +1,358 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 315,
+    "complexity_score": 164,
+    "cross_reference_count": 0,
+    "function_call_count": 8,
+    "global_count": 24,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 134,
+    "suspect_count": 2,
+    "suspect_types": [
+      "warning_overlapping_globals",
+      "warning_type_propagation"
+    ],
+    "total_lines": 449
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00588a80",
+    "address_range": [
+      [
+        "00588a80",
+        "00588e7e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_zombie.cpp_CZombie_setup_FUN_00588a80",
+    "signature": "void __cdecl core_zombie_cpp_CZombie_setup_FUN_00588a80(CZombie *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ce40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40"
+    },
+    {
+      "addr": "00489110",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_setup_FUN_00489110"
+    },
+    {
+      "addr": "0054a310",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310"
+    },
+    {
+      "addr": "0054ea40",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40"
+    },
+    {
+      "addr": "0054eac0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0"
+    },
+    {
+      "addr": "0054e6b0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0054e6b0"
+    },
+    {
+      "addr": "00548090",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00548090"
+    },
+    {
+      "addr": "005a3260",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005a3260"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00588a68",
+      "name": "switchdataD_00588a68",
+      "type": "undefined1*",
+      "value": "00588d92"
+    },
+    {
+      "addr": "005d83f2",
+      "name": "s_Bip01_Head_005d83f2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d83fd",
+      "name": "s_Bip01_L_ForeArm_005d83fd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d840d",
+      "name": "s_Bip01_R_ForeArm_005d840d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d841d",
+      "name": "s_Bip01_L_UpperArm_005d841d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d842e",
+      "name": "s_Bip01_R_UpperArm_005d842e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d843f",
+      "name": "s_Bip01_L_Foot_005d843f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d844c",
+      "name": "s_Bip01_R_Foot_005d844c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d8459",
+      "name": "s_Bip01_L_Hand_005d8459",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d8466",
+      "name": "s_Bip01_R_Hand_005d8466",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d8473",
+      "name": "s_Bip01_Spine_005d8473",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d847f",
+      "name": "s_Bip01_Spine2_005d847f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d848c",
+      "name": "s_larm01_005d848c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d8493",
+      "name": "s_l4arm01_005d8493",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d849b",
+      "name": "s_rarm01_005d849b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d84a2",
+      "name": "s_r4arm01_005d84a2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d84aa",
+      "name": "s_waist01_005d84aa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d84b2",
+      "name": "s_torso01_005d84b2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d84ba",
+      "name": "s_head01_005d84ba",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d84c1",
+      "name": "s_newzomb1_dfm_005d84c1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d84ce",
+      "name": "s_newzchik_dfm_005d84ce",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d84db",
+      "name": "s_zombho1_dfm_005d84db",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d84e7",
+      "name": "s_zombho2_dfm_005d84e7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d84f7",
+      "name": "DAT_005d84f7",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.041666666666667,
+    "instruction_count": 264,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 3,
+      "BRANCH": 1,
+      "BRANCHIND": 1,
+      "CALL": 27,
+      "CBRANCH": 9,
+      "COPY": 269,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_ADD": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 121,
+      "INT_AND": 90,
+      "INT_CARRY": 27,
+      "INT_EQUAL": 77,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 27,
+      "INT_SLESS": 38,
+      "INT_SUB": 101,
+      "INT_ZEXT": 4,
+      "LOAD": 42,
+      "POPCOUNT": 38,
+      "RETURN": 5,
+      "STORE": 152
+    },
+    "pcode_op_count": 1067
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00595c00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8441
+    },
+    "bw1.exe": {
+      "addr": "005bac80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8441
+    },
+    "nocedit.exe": {
+      "addr": "005f9140",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8441
+    },
+    "nocturne.exe": {
+      "addr": "0055ec20",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8441
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZombie *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CZombie",
+        "offset": 0,
+        "vtable_addr": "005e6e24"
+      },
+      {
+        "class_name": "CZombie",
+        "offset": 0,
+        "vtable_addr": "005e6a34"
+      },
+      {
+        "class_name": "CZombie",
+        "offset": 0,
+        "vtable_addr": "005e6b84"
+      },
+      {
+        "class_name": "CZombie",
+        "offset": 0,
+        "vtable_addr": "005e6794"
+      },
+      {
+        "class_name": "CZombie",
+        "offset": 0,
+        "vtable_addr": "005e6cd4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 6
+  }
+}

@@ -23,8 +23,8 @@
 ; Called Functions:
 ;   crt_string.c_memmove_FUN_005ba1f0
 ;   sound_sndmain.cpp_CSfxSample_init_FUN_0054fcd0
-;   sound_sndmain.cpp_FUN_00550bf0
 ;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00550c30
+;   sound_sndmain.cpp_getSfxSampleInfo_FUN_00550bf0
 ;
 ; *****************************************************************************
 
@@ -104,8 +104,8 @@ section .text
     PUSH EAX                            ; 00491b6a
     MOV EDX,dword ptr [EBX]             ; 00491b6b
     PUSH EDX                            ; 00491b6d
-    CALL sound_sndmain.cpp_FUN_00550bf0 ; 00491b6e
-        ;   XREF to: 00550bf0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00550bf0(uint sfx_handle, CSfxSample * output_buffer)
+    CALL sound_sndmain.cpp_getSfxSampleInfo_FUN_00550bf0 ; 00491b6e
+        ;   XREF to: 00550bf0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getSfxSampleInfo_FUN_00550bf0(uint sfx_handle, CSfxSample * output_buffer)
     ADD ESP,0x8                         ; 00491b73
     TEST EAX,EAX                        ; 00491b76
     JZ 0x00491b10                       ; 00491b78

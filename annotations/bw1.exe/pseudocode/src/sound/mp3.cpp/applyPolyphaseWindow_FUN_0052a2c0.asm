@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_0052a2c0(float *param_1,void *param_2,int param_3)
+; void __cdecl sound_mp3_cpp_applyPolyphaseWindow_FUN_0052a2c0(float *input_samples,float *output_samples,int mpeg_block_type)
 ;
+; Parameters:
+; float *          Stack[0x4]:4   input_samples
+; float *          Stack[0x8]:4   output_samples
+; int              Stack[0xc]:4   mpeg_block_type
 ; Local Variables:
 ; undefined4       Stack[-0x44]:4  local_44
 ; undefined4       Stack[-0x40]:4  local_40

@@ -8,13 +8,13 @@
 ; int              Stack[0x8]:4   y
 ;
 ; XREF[13]:
-;   core_actor.cpp_FUN_00409940 at 00409b1a
+;   core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409940 at 00409b1a
 ;   core_actor.cpp_plotPixelWithBoundsCheck_FUN_004096b0 at 004096d3
 ;   core_setdir.cpp_FUN_0055b4f0 at 0055b6d9
-;   engine_2d.c_FUN_00402ade at 00402b81
+;   engine_2d.c_draw320x200SizeDot_FUN_00402ae0 at 00402b81
 ;   engine_2d.c_drawLine_FUN_004011a0 at 004011f6
 ;   engine_2d.c_project3DPointToScreen_FUN_00401780 at 004017bc
-;   shape_edittool.cpp_FUN_0049293e at 0049295e
+;   shape_edittool.cpp_FUN_00492940 at 0049295e
 ;   shape_edittool.cpp_FUN_00492970 at 004929cd
 ;   shape_edittool.cpp_FUN_00492a40 at 00492b95
 ;   shape_edittool.cpp_FUN_00497870 at 004979ee

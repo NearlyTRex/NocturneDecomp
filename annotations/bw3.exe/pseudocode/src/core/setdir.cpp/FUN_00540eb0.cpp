@@ -131,8 +131,7 @@ void core_setdir_cpp_FUN_00540eb0(int *param_1)
           local_20 = local_20 + 0x100;
         } while (local_18 < 0x30);
       }
-      FUN_005a28c0
-                (local_c4,&DAT_005d0d15,(double)*(float *)(&DAT_02701528 + local_3c * 4));
+      _sprintf(local_c4,&DAT_005d0d15);
       iVar6 = local_2c;
       engine_2d_c_drawText_FUN_00401fe0(local_c4,local_2c,local_44);
       engine_2d_c_drawText_FUN_00401fe0((char *)(local_60 + local_3c * 0x69),iVar6,local_4c);

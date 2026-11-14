@@ -11,12 +11,12 @@
 void __cdecl core_dfilter_cpp_CDemonFilter_allocMemory_FUN_00447860(CDemonFilter *this_ptr)
 
 {
-  void *pvVar1;
+  uchar *puVar1;
   
   core_dfilter_cpp_CDemonFilter_freeMemory_FUN_004478b0(this_ptr);
-  pvVar1 = FUN_005b8580(*(int *)this_ptr * *(int *)&this_ptr->field_0x4);
-  *(void **)&this_ptr->field_0x48 = pvVar1;
-  if (pvVar1 != (void *)0x0) {
+  puVar1 = (uchar *)malloc(this_ptr->size * this_ptr->count);
+  this_ptr->data_buffer = puVar1;
+  if (puVar1 != (uchar *)0x0) {
     return;
   }
   _DAT_01d046a0 = "..\\core\\dfilter.cpp";

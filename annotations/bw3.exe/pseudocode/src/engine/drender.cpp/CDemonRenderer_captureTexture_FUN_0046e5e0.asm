@@ -10,12 +10,12 @@
 ; XREF[73]:
 ;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00414a60 at 00414afb
 ;   core_bodypart.cpp_CBodyPart_setup_FUN_00414f60 at 00414f8c
-;   core_chain.cpp_FUN_0042a280 at 0042a31e
+;   core_chain.cpp_CChain_renderTransparent_FUN_0042a280 at 0042a31e
 ;   core_charactr.cpp_FUN_0042d9f0 at 0042da58
 ;   core_charactr.cpp_FUN_0042f010 at 0042f03b
 ;   core_charactr.cpp_FUN_0042f280 at 0042f2a2
 ;   core_curtain.cpp_CCurtain_renderMesh_FUN_00448060 at 00448107
-;   core_curtain.cpp_FUN_004464c0 at 004464e9
+;   core_curtain.cpp_CCurtain_setup_FUN_004464c0 at 004464e9
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044c130 at 0044c7b8
 ;   core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_0044c060 at 0044c0d1
 ;   ... and 63 more

@@ -10,13 +10,13 @@
 ;
 ; XREF[8]:
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_00503fb0 at 00504164
+;   core_netgame.cpp_CNetGame_processPacket_FUN_00504d60 at 00504ec1
 ;   core_netgame.cpp_CNetGame_processServerFrame_FUN_00507790 at 00507ba6
+;   core_netgame.cpp_CNetGame_sendGameSetting_FUN_00507450 at 005075f3
 ;   core_netgame.cpp_CNetGame_sendMyStateChanged_FUN_00507660 at 00507758
 ;   core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_00507fd0 at 00508068
 ;   core_netgame.cpp_CNetGame_syncPlayers_FUN_00504890 at 00504ad1
 ;   core_netgame.cpp_CNetGame_updatePing_FUN_00506320 at 005064a2
-;   core_netgame.cpp_FUN_00504d60 at 00504ec1
-;   core_netgame.cpp_FUN_00507450 at 005075f3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_005caad1

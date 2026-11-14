@@ -32,7 +32,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0045a6f0(CDracula
     } while (iVar4 < 5);
     bVar2 = true;
   }
-  if (damage_info->damage_type == DAMAGE_TYPE_LAUNCH) {
+  if (damage_info->damage_type == DAMAGE_TYPE_ATTACK_STAKE) {
     bVar2 = true;
   }
   if (damage_info->damage_type == DAMAGE_TYPE_BURN) {

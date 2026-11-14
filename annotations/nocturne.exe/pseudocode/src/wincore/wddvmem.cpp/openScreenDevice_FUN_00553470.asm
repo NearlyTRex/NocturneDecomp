@@ -7,8 +7,8 @@
 ; undefined4       Stack[-0x74]:4  local_74
 ;
 ; XREF[5]:
-;   core_game.cpp_CGame_FUN_004a57c0 at 004a597f
 ;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049cce5
+;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004a57c0 at 004a597f
 ;   engine_special.cpp_toggle_FUN_00532ba0 at 00532be7
 ;   engine_texture.cpp_renderTextureAtlas_FUN_00545aa0 at 00545aab
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910 at 0055394e

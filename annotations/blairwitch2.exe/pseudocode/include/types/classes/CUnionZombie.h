@@ -4,13 +4,17 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBasicEnemy.h"
 
 // Structure: CUnionZombie
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 71772
 // Ghidra size: 0x1185c (71772 bytes)
 #pragma pack(push, 1)
 typedef struct CUnionZombie {
-    char field_0[71772]; // 0x0
+    CBasicEnemy base; // 0x0, derived
+    int left_finger_bone; // 0x11850, setup findBone 'Bip01 L Finger1'; processMotionEvent
+    int right_finger_bone; // 0x11854, setup findBone 'Bip01 R Finger1'; processMotionEvent
+    int vanish_phase; // 0x11858, ctor 0; processVanishAttackState steps 0->1->2, back to 0 on MeleeAttack
 } CUnionZombie;
 #pragma pack(pop)
 

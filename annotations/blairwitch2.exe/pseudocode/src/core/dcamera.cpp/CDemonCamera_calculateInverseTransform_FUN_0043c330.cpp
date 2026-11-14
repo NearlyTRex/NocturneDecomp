@@ -33,15 +33,15 @@ void __cdecl core_dcamera_cpp_CDemonCamera_calculateInverseTransform_FUN_0043c33
   float10 fVar20;
   float10 fVar21;
   
-  fVar2 = (float)*(int *)&this_ptr->field_0x178 * (float)_DAT_005ce3c6;
-  fVar10 = (float)*(int *)&this_ptr->field_0x17c * (float)_DAT_005ce3c6;
-  fVar12 = (float)*(int *)&this_ptr->field_0x180 * (float)_DAT_005ce3c6;
-  fVar8 = (float)*(int *)&this_ptr->field_0x184 * (float)_DAT_005ce3c6;
-  fVar3 = (float)*(int *)&this_ptr->field_0x188 * (float)_DAT_005ce3c6;
-  fVar4 = (float)*(int *)&this_ptr->field_0x18c * (float)_DAT_005ce3c6;
-  fVar11 = (float)*(int *)&this_ptr->field_0x190 * (float)_DAT_005ce3c6;
-  fVar6 = (float)*(int *)&this_ptr->field_0x194 * (float)_DAT_005ce3c6;
-  fVar7 = (float)*(int *)&this_ptr->field_0x198 * (float)_DAT_005ce3c6;
+  fVar2 = (float)(this_ptr->source_matrix).m[0].x * (float)_DAT_005ce3c6;
+  fVar10 = (float)(this_ptr->source_matrix).m[0].y * (float)_DAT_005ce3c6;
+  fVar12 = (float)(this_ptr->source_matrix).m[0].z * (float)_DAT_005ce3c6;
+  fVar8 = (float)(this_ptr->source_matrix).m[1].x * (float)_DAT_005ce3c6;
+  fVar3 = (float)(this_ptr->source_matrix).m[1].y * (float)_DAT_005ce3c6;
+  fVar4 = (float)(this_ptr->source_matrix).m[1].z * (float)_DAT_005ce3c6;
+  fVar11 = (float)(this_ptr->source_matrix).m[2].x * (float)_DAT_005ce3c6;
+  fVar6 = (float)(this_ptr->source_matrix).m[2].y * (float)_DAT_005ce3c6;
+  fVar7 = (float)(this_ptr->source_matrix).m[2].z * (float)_DAT_005ce3c6;
   fVar5 = fVar3 * fVar7 - fVar4 * fVar6;
   fVar9 = fVar8 * fVar7 - fVar4 * fVar11;
   fVar1 = fVar8 * fVar6 - fVar3 * fVar11;

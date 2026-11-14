@@ -2,15 +2,42 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CNPC.h"
 
 // Structure: CHostage
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x24730 (149296 bytes)
 #pragma pack(push, 1)
 typedef struct CHostage {
-    char field_0[149296]; // 0x0
+    CNPC base; // 0x0
+    float rescue_distance; // 0x24348
+    char rescue_condition[100]; // 0x2434c
+    char rescue_event[32]; // 0x243b0
+    char hero_found_me_event[100]; // 0x243d0
+    char hero_left_me_event[100]; // 0x24434
+    char hero_came_back_event[100]; // 0x24498
+    char get_eaten_event[100]; // 0x244fc
+    char going_to_sit_down_event[100]; // 0x24560
+    char sit_down_event[100]; // 0x245c4
+    char damage_sound[100]; // 0x24628
+    char die_sound[100]; // 0x2468c
+    uint sfx_handle; // 0x246f0
+    int follow_state; // 0x246f4
+    int hostage_type; // 0x246f8
+    int hostage_state; // 0x246fc
+    struct CDemonActor* goal_way_point; // 0x24700
+    struct CDemonActor* sit_down_way_point; // 0x24704
+    struct CDemonActor* next_way_point; // 0x24708
+    int bone_indices[4]; // 0x2470c
+    int no_shadows_when_saved; // 0x2471c
+    float gun_raise_progress; // 0x24720
+    float gun_blend_weight; // 0x24724
+    struct CDemonActor* grabber; // 0x24728
+    float grabber_flee_timer; // 0x2472c
 } CHostage;
 #pragma pack(pop)
 

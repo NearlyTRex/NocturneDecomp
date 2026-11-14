@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 157,
-    "complexity_score": 246,
+    "complexity_score": 221,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 61,
-    "suspect_count": 16,
+    "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "undefined_data",
-      "unnamed_field",
       "unresolved_funcptr"
     ],
     "total_lines": 218
@@ -91,6 +90,32 @@
     },
     "pcode_op_count": 939
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00537760",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0050f440",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0054ab30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004f4170",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7687
+    }
+  },
   "stack_frame": {
     "frame_size": 32,
     "local_size": 4,
@@ -159,22 +184,6 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0x20 != 0) && (*(int *)&this_ptr->field_0x14 != 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0x20 != 0) && (*(int *)&this_ptr->field_0x14 != 0)) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 20,
       "match": "DAT_006141c0",
@@ -191,28 +200,28 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 27,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "piVar6 = (int *)(*(int *)&this_ptr->field_0x20 + iStack_20);",
-      "type": "unnamed_field"
+      "match": "(int *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "piVar6 = (int *)((int)this_ptr->row_offsets + iStack_20);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 28,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "puVar9 = (ushort *)(*piVar6 + *(int *)&this_ptr->field_0x14);",
-      "type": "unnamed_field"
+      "match": "(ushort *)(*piVar6 + (int)this_ptr",
+      "severity": "moderate",
+      "text": "puVar9 = (ushort *)(*piVar6 + (int)this_ptr->packed_data);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 29,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "puVar7 = (ushort *)(piVar6[1] + *(int *)&this_ptr->field_0x14);",
-      "type": "unnamed_field"
+      "match": "(ushort *)(piVar6[1] + (int)this_ptr",
+      "severity": "moderate",
+      "text": "puVar7 = (ushort *)(piVar6[1] + (int)this_ptr->packed_data);",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",

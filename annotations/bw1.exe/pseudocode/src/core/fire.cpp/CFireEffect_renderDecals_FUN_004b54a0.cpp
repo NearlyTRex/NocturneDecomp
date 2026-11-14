@@ -49,12 +49,14 @@ void __cdecl core_fire_cpp_CFireEffect_renderDecals_FUN_004b54a0(CFireEffect *th
     pCVar3 = g_StakePool;
     iVar1 = 0;
     do {
-      if (*(int *)&pCVar3->field_0x258 == 0) {
-        *(uint *)(&g_StakePool[0].field_0x0 + iVar1) = 1;
+      if ((pCVar3->physics_box).is_valid == 0) {
+        *(uint *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c) = 1;
 LAB_004b5525:
-        core_fire_cpp_FUN_004ace60((CStake *)(&g_StakePool[0].field_0x0 + iVar1));
+        core_fire_cpp_CStake_render_FUN_004ace60
+                  ((CStake *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c));
       }
-      else if (*(int *)(&g_StakePool[0].field_0x0 + iVar1) != 0) goto LAB_004b5525;
+      else if (*(int *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c) != 0)
+      goto LAB_004b5525;
       iVar1 = iVar1 + 0x260;
       iVar2 = iVar2 + 1;
       pCVar3 = pCVar3 + 1;

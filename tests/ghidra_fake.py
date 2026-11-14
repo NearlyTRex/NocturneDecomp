@@ -71,6 +71,13 @@ class Address:
     def add(self, displacement):
         return Address(self.offset + displacement, self.size)
 
+    def subtract(self, displacement):
+        return Address(self.offset - displacement, self.size)
+
+    # Negative, zero or positive, as Java's Comparable
+    def compareTo(self, other):
+        return (self.offset > other.getOffset()) - (self.offset < other.getOffset())
+
     def toString(self):
         return f"{self.offset:0{self.size}x}"
 
@@ -112,11 +119,21 @@ class AddressSet(JavaObject):
         if start is not None:
             self.add(start, end)
 
+    # Ghidra's overloads: one address, start..end, or every range of another set
     def add(self, start, end = None):
+        if isinstance(start, AddressSet):
+            self.ranges += start.ranges
+            return
         self.ranges.append((start.getOffset(), (end or start).getOffset()))
 
     def isEmpty(self):
         return not self.ranges
+
+    def getMinAddress(self):
+        return Address(min(lo for lo, _ in self.ranges))
+
+    def getMaxAddress(self):
+        return Address(max(hi for _, hi in self.ranges))
 
     def getAddressRanges(self):
         return [AddressRange(Address(lo), Address(hi)) for lo, hi in self.ranges]
@@ -184,6 +201,13 @@ class DataType(JavaObject):
     def setCategoryPath(self, path):
         self.category = path.getPath()
 
+    # Every Ghidra data type carries a description, empty until one is set
+    def getDescription(self):
+        return getattr(self, "description", "")
+
+    def setDescription(self, description):
+        self.description = description
+
     # Ghidra compares layouts; here, the same kind of type of the same size
     def isEquivalent(self, other):
         return type(self) is type(other) and self.length == other.length
@@ -236,6 +260,13 @@ class Settings(JavaObject):
 class TypeDef(DefinedDataType):
     def getDefaultSettings(self):
         return Settings()
+
+    # What the typedef chain finally names
+    def getBaseDataType(self):
+        data_type = self.getDataType()
+        while isinstance(data_type, TypeDef):
+            data_type = data_type.getDataType()
+        return data_type
 
 
 # How a struct or union is laid out: packing, an explicit #pragma pack value, an
@@ -303,11 +334,16 @@ class CompositeLayout(DataType):
         return type(self) is type(other) and self.getLength() == other.getLength() and self.layout() == other.layout()
 
 
-class Structure(DefinedDataType):
+# Ghidra's interface for both structs and unions
+class Composite(DefinedDataType):
     pass
 
 
-class Union(DefinedDataType):
+class Structure(Composite):
+    pass
+
+
+class Union(Composite):
     pass
 
 
@@ -334,9 +370,10 @@ DefaultDataType.dataType = DefaultDataType("undefined", 1)
 
 
 class PointerDataType(Pointer):
+    # Also Ghidra's PointerDataType(type, data type manager): a default-sized pointer
     def __init__(self, data_type = None, length = 4):
         name = f"{data_type.getName()} *" if data_type is not None else "pointer"
-        super().__init__(name, length)
+        super().__init__(name, length if isinstance(length, int) else 4)
         self.data_type = data_type
 
     def getDataType(self):
@@ -344,10 +381,15 @@ class PointerDataType(Pointer):
 
 
 class ArrayDataType(Array):
-    def __init__(self, data_type, count, element_length = None):
+    # Also Ghidra's (type, count, element length, data type manager)
+    def __init__(self, data_type, count, element_length = None, _data_type_manager = None):
         super().__init__(f"{data_type.getName()}[{count}]", count * (element_length or data_type.getLength()))
         self.data_type = data_type
         self.count = count
+        self.element_length = element_length or data_type.getLength()
+
+    def getElementLength(self):
+        return self.element_length
 
     def getDataType(self):
         return self.data_type
@@ -403,12 +445,14 @@ class DataTypeUtilities(JavaObject):
 
 
 class DataTypeComponent(JavaObject):
-    def __init__(self, data_type, field_name = None, offset = 0, comment = None):
+    # `length` models a field left at its type's old length after the type grew
+    def __init__(self, data_type, field_name = None, offset = 0, comment = None, length = None):
         super().__init__(data_type, field_name)
         self.data_type = data_type
         self.field_name = field_name
         self.offset = offset
         self.comment = comment
+        self.length = length
 
     def getDataType(self):
         return self.data_type
@@ -420,7 +464,7 @@ class DataTypeComponent(JavaObject):
         return self.offset
 
     def getLength(self):
-        return self.data_type.getLength()
+        return self.length if self.length is not None else self.data_type.getLength()
 
     def getComment(self):
         return self.comment
@@ -483,6 +527,21 @@ class StructureDataType(CompositeLayout, Structure):
         offset = self.length if self.components else 0
         self.components.append(DataTypeComponent(data_type, field_name, offset, comment))
         self.length = offset + length
+
+    # At the offset, growing the struct to reach it; a type of fixed size keeps
+    # its own length whatever length is asked for, as Ghidra's does
+    # As Ghidra's: every field at or after the offset moves down by the new one's length
+    def insertAtOffset(self, offset, data_type, length, field_name, comment):
+        width = data_type.getLength() or length
+        for existing in self.components:
+            if existing.getOffset() >= offset:
+                existing.offset += width
+        component = DataTypeComponent(data_type, field_name, offset, comment)
+        self.components = sorted(self.components + [component], key = lambda c: c.getOffset())
+        self.length = self.length + width if offset < self.length else offset + width
+
+    def growStructure(self, amount):
+        self.length += amount
 
 
 class Enum(DefinedDataType):
@@ -604,6 +663,17 @@ class FunctionDefinitionDataType(FunctionDefinition):
     def setVarArgs(self, varargs):
         self.varargs = varargs
 
+    # Ghidra's says it "doesn't allow the description to be changed"; a function
+    # definition carries a comment instead
+    def setDescription(self, description):
+        raise UnsupportedOperationException(f"{type(self).__name__} doesn't allow the description to be changed")
+
+    def getComment(self):
+        return getattr(self, "comment", None)
+
+    def setComment(self, comment):
+        self.comment = comment
+
 
 # Records each override where Ghidra's would write it: on the function, at the call
 class HighFunctionDBUtil(JavaObject):
@@ -671,6 +741,10 @@ class MemoryAccessException(JavaException):
 
 
 class InvalidInputException(JavaException):
+    pass
+
+
+class UnsupportedOperationException(JavaException):
     pass
 
 
@@ -798,6 +872,9 @@ class Variable(JavaObject):
     def getName(self):
         return self.name
 
+    def setName(self, name, _source):
+        self.name = name
+
     def getDataType(self):
         return self.data_type
 
@@ -900,6 +977,7 @@ MODELLED = {
     "ghidra.program.model.data": {
         "DataType": DataType, "CategoryPath": CategoryPath, "BuiltInDataType": BuiltInDataType,
         "Pointer": Pointer, "Array": Array, "TypeDef": TypeDef, "Structure": Structure, "Union": Union,
+        "Composite": Composite,
         "FunctionDefinition": FunctionDefinition, "Undefined": Undefined, "DefaultDataType": DefaultDataType,
         "PointerDataType": PointerDataType, "ArrayDataType": ArrayDataType, "TypedefDataType": TypedefDataType,
         "DataTypeComponent": DataTypeComponent, "StructureDataType": StructureDataType,

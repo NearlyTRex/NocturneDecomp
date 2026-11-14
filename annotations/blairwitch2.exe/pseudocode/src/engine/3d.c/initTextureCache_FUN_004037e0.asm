@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_main.c_FUN_004e46c0 at 004e47a7
+;   core_main.c_initializeGameSystems_FUN_004e46c0 at 004e47a7
 ;
 ; Called Functions:
 ;   engine_texture.cpp_FUN_00574d50

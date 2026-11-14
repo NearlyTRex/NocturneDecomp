@@ -4,13 +4,24 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CVector3f.h"
+#include "types/structs/SFly.h"
 
 // Structure: CFlies
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x2b7c (11132 bytes)
 #pragma pack(push, 1)
 typedef struct CFlies {
-    char field_0[11132]; // 0x0
+    CDemonActor base; // 0x0
+    CVector3f box_size; // 0x2b4
+    int fly_count; // 0x2c0
+    SFly flies[200]; // 0x2c4
+    struct CDemonActor* follow_actor; // 0x2b64
+    int gather_count; // 0x2b68
+    float gather_timer; // 0x2b6c
+    float gather_time; // 0x2b70
+    int dead; // 0x2b74
+    int is_visible; // 0x2b78
 } CFlies;
 #pragma pack(pop)
 

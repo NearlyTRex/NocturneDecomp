@@ -2,48 +2,48 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 102,
+    "complexity_score": 82,
     "cross_reference_count": 5,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 42,
-    "suspect_count": 5,
+    "suspect_count": 3,
     "suspect_types": [
-      "unnamed_field",
+      "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
     "total_lines": 131
   },
   "cross_references": [
     {
-      "addr": "004965f0",
-      "from_addr": "00496606",
-      "name": "core_fire.cpp_FUN_004965f0",
+      "addr": "00496c60",
+      "from_addr": "00497036",
+      "name": "core_fire.cpp_CGlassParticle_init_FUN_00496c60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00496750",
       "from_addr": "00496767",
-      "name": "core_fire.cpp_FUN_00496750",
+      "name": "core_fire.cpp_CLeaf_init_FUN_00496750",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00496c60",
-      "from_addr": "00497036",
-      "name": "core_fire.cpp_FUN_00496c60",
+      "addr": "004965f0",
+      "from_addr": "00496606",
+      "name": "core_fire.cpp_CRock_setup_FUN_004965f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0049b660",
       "from_addr": "0049b678",
-      "name": "core_fire.cpp_FUN_0049b660",
+      "name": "core_fire.cpp_CShell_setup_FUN_0049b660",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004c7460",
       "from_addr": "004c7486",
-      "name": "core_gore.cpp_FUN_004c7460",
+      "name": "core_gore.cpp_CBloodParticle_setup_FUN_004c7460",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -63,7 +63,7 @@
     {
       "addr": "0040cf60",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cf60"
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60"
     }
   ],
   "globals": [
@@ -80,7 +80,7 @@
       {
         "call_addr": "00496606",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004965f0",
+        "caller": "core_fire.cpp_CRock_setup_FUN_004965f0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -91,7 +91,7 @@
       {
         "call_addr": "00497036",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_00496c60",
+        "caller": "core_fire.cpp_CGlassParticle_init_FUN_00496c60",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -102,7 +102,7 @@
       {
         "call_addr": "004c7486",
         "call_type": "direct",
-        "caller": "core_gore.cpp_FUN_004c7460",
+        "caller": "core_gore.cpp_CBloodParticle_setup_FUN_004c7460",
         "estimated_params": 3,
         "instructions_analyzed": 8,
         "method": "push_count",
@@ -113,7 +113,7 @@
       {
         "call_addr": "00496767",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_00496750",
+        "caller": "core_fire.cpp_CLeaf_init_FUN_00496750",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -124,7 +124,7 @@
       {
         "call_addr": "0049b678",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049b660",
+        "caller": "core_fire.cpp_CShell_setup_FUN_0049b660",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -166,6 +166,32 @@
       "STORE": 26
     },
     "pcode_op_count": 362
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00532160",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00509e40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00545680",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9867
+    },
+    "nocturne.exe": {
+      "addr": "004ef040",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9867
+    }
   },
   "stack_frame": {
     "frame_size": 44,
@@ -221,36 +247,20 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)(this_ptr + 4) = *(uint *)&position->field_0x4;",
-      "type": "unnamed_field"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 19,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->position).x = position->x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)(this_ptr + 8) = *(uint *)&position->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)(this_ptr + 0x10) = *(uint *)&velocity->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)(this_ptr + 0x14) = *(uint *)&velocity->field_0x8;",
-      "type": "unnamed_field"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 25,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->velocity).x = velocity->x;",
+      "type": "unrolled_memcpy"
     }
   ],
   "vtable_info": {

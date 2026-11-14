@@ -1,12 +1,12 @@
 // Name: core_biggs.cpp_staticInit_FUN_00414cb0
 // Address: 00414cb0
 // Address Range: [[00414cb0, 00414cd3]]
-// Convention: unknown
-// Signature: void core_biggs_cpp_staticInit_FUN_00414cb0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_biggs_cpp_staticInit_FUN_00414cb0(void)
 
 #include "nocturne.h"
 
-void core_biggs_cpp_staticInit_FUN_00414cb0(void)
+void __cdecl core_biggs_cpp_staticInit_FUN_00414cb0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450

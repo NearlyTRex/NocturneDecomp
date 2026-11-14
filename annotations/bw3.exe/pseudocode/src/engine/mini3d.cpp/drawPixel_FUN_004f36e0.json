@@ -1,0 +1,125 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 11,
+    "complexity_score": 5,
+    "cross_reference_count": 5,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 16
+  },
+  "cross_references": [
+    {
+      "addr": "0047b4e0",
+      "from_addr": "0047b4f3",
+      "name": "shape_edittool.cpp_FUN_0047b4e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047b510",
+      "from_addr": "0047b562",
+      "name": "shape_edittool.cpp_FUN_0047b510",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047b5e0",
+      "from_addr": "0047b647",
+      "name": "shape_edittool.cpp_FUN_0047b5e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00480410",
+      "from_addr": "0048057f",
+      "name": "shape_edittool.cpp_FUN_00480410",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00481ab0",
+      "from_addr": "00481ba7",
+      "name": "shape_edittool.cpp_FUN_00481ab0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f36e0",
+    "address_range": [
+      [
+        "004f36e0",
+        "004f36f4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_mini3d.cpp_drawPixel_FUN_004f36e0",
+    "signature": "void __cdecl engine_mini3d_cpp_drawPixel_FUN_004f36e0(int x,int y)"
+  },
+  "function_calls": [
+    {
+      "addr": "004f37e0",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_fillRect_FUN_004f37e0"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.6666666666666665,
+    "instruction_count": 9,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 6,
+      "INT_ADD": 4,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 5,
+      "LOAD": 3,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 33
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004f8fe0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00517f10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

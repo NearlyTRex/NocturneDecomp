@@ -227,6 +227,14 @@ changed. A changed `// Address Range:` is the one to read closely: the function 
 the `.keep` was written without, so check the new addresses in the `.asm` before updating the
 line. `scripts/Python/check_keep_signatures.py` runs the same check by hand.
 
+It also writes `reports/keep_drift.txt`, which finds the obsolete ones. Each `.keep` is compared with
+the export beside it, ignoring comments, `#include` lines and whitespace.
+- **REDUNDANT:** the code is identical. These can be deleted.
+- **NEAR:** a few lines differ. Move those edits into Ghidra, then delete the `.keep`.
+
+A `.keep` that uses a shim or AUTHENTIC switch is never listed, whatever it matches. It carries
+behaviour, not a decompiler fix. `scripts/Python/check_keep_drift.py` runs the same check by hand.
+
 **Compiling but harbouring a runtime trap.** It was written to make the function build, and the
 logic it carried over is itself an artifact that compiles cleanly and misbehaves. Specifically
 check for adjacency-sentinel loops ([§16](decompiler-artifacts.md#16--adjacency-sentinel-init-loops)),

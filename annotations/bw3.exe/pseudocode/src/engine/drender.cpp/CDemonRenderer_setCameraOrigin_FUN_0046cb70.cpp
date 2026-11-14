@@ -9,7 +9,6 @@
 void __cdecl engine_drender_cpp_CDemonRenderer_setCameraOrigin_FUN_0046cb70(CDemonRenderer *this_ptr,CVector3i *origin)
 
 {
-  engine_matrix_c_setCameraOrigin_FUN_004e6a40
-            (*(int *)origin,*(int *)(origin + 4),*(int *)(origin + 8));
+  engine_matrix_c_setCameraOrigin_FUN_004e6a40(origin->x,origin->y,origin->z);
   return;
 }

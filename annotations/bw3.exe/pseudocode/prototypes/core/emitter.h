@@ -7,51 +7,51 @@
 
 // Original: core_emitter.cpp_staticInit_FUN_00487980
 // Address: 00487980
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_emitter.cpp_factoryFuncEmitter_FUN_004879b0
 // Address: 004879b0
-void factoryFuncEmitter(void);
+CEmitter * __cdecl factoryFuncEmitter(void);
 
 // Original: core_emitter.cpp_CEmitter_getActorType_FUN_004879d0
 // Address: 004879d0
-CDemonActorType * CEmitter::getActorType(CEmitter *this_ptr);
+CDemonActorType * __cdecl CEmitter::getActorType(CEmitter *this_ptr);
 
 // Original: core_emitter.cpp_CEmitter_ctor_FUN_004879e0
 // Address: 004879e0
-CEmitter * CEmitter::ctor(CEmitter *this_ptr);
+CEmitter * __cdecl CEmitter::ctor(CEmitter *this_ptr);
 
-// Original: core_emitter.cpp_FUN_00487bb0
+// Original: core_emitter.cpp_CEmitter_setup_FUN_00487bb0
 // Address: 00487bb0
-void FUN_00487bb0(CDemonActor *param_1);
+void __cdecl CEmitter::setup(CEmitter *this_ptr);
 
-// Original: core_emitter.cpp_FUN_00487c80
+// Original: core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_00487c80
 // Address: 00487c80
-void FUN_00487c80(int param_1);
+void __cdecl CEmitter::launchFireballAtHero(CEmitter *this_ptr);
 
-// Original: core_emitter.cpp_FUN_00487eb0
+// Original: core_emitter.cpp_CEmitter_process_FUN_00487eb0
 // Address: 00487eb0
-void FUN_00487eb0(CDemonActor *param_1,float param_2);
+void __cdecl CEmitter::process(CEmitter *this_ptr,float delta_time);
 
-// Original: core_emitter.cpp_FUN_004889b0
+// Original: core_emitter.cpp_CEmitter_renderOpaque_FUN_004889b0
 // Address: 004889b0
-undefined4 FUN_004889b0(CDemonActor *param_1);
+int __cdecl CEmitter::renderOpaque(CEmitter *this_ptr);
 
-// Original: core_emitter.cpp_FUN_00488ac0
+// Original: core_emitter.cpp_CEmitter_renderBackground_FUN_00488ac0
 // Address: 00488ac0
-void FUN_00488ac0(CDemonActor *param_1,int param_2);
+void __cdecl CEmitter::renderBackground(CEmitter *this_ptr,int layer_flag);
 
-// Original: core_emitter.cpp_FUN_00488b30
+// Original: core_emitter.cpp_CEmitter_getBoundingBox_FUN_00488b30
 // Address: 00488b30
-void FUN_00488b30(int param_1);
+CBoundingBox3D * __cdecl CEmitter::getBoundingBox(CEmitter *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_emitter.cpp_FUN_00488bb0
+// Original: core_emitter.cpp_CEmitter_archive_FUN_00488bb0
 // Address: 00488bb0
-void FUN_00488bb0(CDemonActor *param_1);
+void __cdecl CEmitter::archive(CEmitter *this_ptr);
 
-// Original: core_emitter.cpp_FUN_00488e90
+// Original: core_emitter.cpp_CEmitter_getCollisionType_FUN_00488e90
 // Address: 00488e90
-undefined4 FUN_00488e90(void);
+ECollisionType __cdecl CEmitter::getCollisionType(CEmitter *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_emitter.cpp_FUN_00488ea0
 // Address: 00488ea0

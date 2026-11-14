@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 46,
+    "complexity_score": 36,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 6,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
       "negative_offset",
       "unnamed_field"
@@ -67,6 +67,32 @@
     },
     "pcode_op_count": 42
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0041b150",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00416d80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0041b640",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004180c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -91,14 +117,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "pCVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)&this_ptr->field_0xc,1);",
-      "type": "unnamed_field"
-    },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 8,

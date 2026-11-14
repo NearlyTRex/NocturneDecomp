@@ -1,0 +1,26 @@
+// Name: core_flashlit.cpp_FUN_004ba540
+// Address: 004ba540
+// Address Range: [[004ba540, 004ba5dd]]
+// Convention: unknown
+// Signature: undefined4 core_flashlit_cpp_FUN_004ba540(int param_1,int param_2)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+uint core_flashlit_cpp_FUN_004ba540(int param_1,int param_2)
+
+{
+  if ((((0 < _DAT_01cc7b90) && (0x0000004A <= param_1)) && (0x000001AE <= param_2)) &&
+     ((param_1 < 0x0000004A + CAlphaBitmap_01cc7c84.width &&
+      (param_2 < 0x000001AE + CAlphaBitmap_01cc7c84.height)))) {
+    return 0xffffffff;
+  }
+  if (((_DAT_01cc7b90 < g_STextViewInstance.page_count + -2) && (0x000001F4 <= param_1)) &&
+     ((0x000001AE <= param_2 &&
+      ((param_1 < 0x000001F4 + CAlphaBitmap_01cc7c98.width &&
+       (param_2 < CAlphaBitmap_01cc7c98.height + 0x000001AE)))))) {
+    return 1;
+  }
+  return 0;
+}

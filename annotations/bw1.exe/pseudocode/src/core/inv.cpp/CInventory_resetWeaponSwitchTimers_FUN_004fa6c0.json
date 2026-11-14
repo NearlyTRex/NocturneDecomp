@@ -1,0 +1,225 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 21,
+    "complexity_score": 43,
+    "cross_reference_count": 5,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 13,
+    "suspect_count": 2,
+    "suspect_types": [
+      "raw_address_pointer_store",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 34
+  },
+  "cross_references": [
+    {
+      "addr": "004d6300",
+      "from_addr": "004d6314",
+      "name": "core_game.cpp_CGame_resetWeaponSwitchTimers_FUN_004d6300",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f8fe0",
+      "from_addr": "004f8fee",
+      "name": "core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004f8fe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f8dc0",
+      "from_addr": "004f8de8",
+      "name": "core_inv.cpp_CInventory_selectWeapon_FUN_004f8dc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fc370",
+      "from_addr": "004fc3ca",
+      "name": "core_inv.cpp_CInventory_toggleDetailView_FUN_004fc370",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f9f10",
+      "from_addr": "004f9f3d",
+      "name": "core_inv.cpp_FUN_004f9f10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004fa6c0",
+    "address_range": [
+      [
+        "004fa6c0",
+        "004fa700"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004fa6c0",
+    "signature": "void __cdecl core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004fa6c0(CInventory *this_ptr,int reset_both)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01d06ab4",
+      "name": "DAT_01d06ab4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "004f8de8",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_selectWeapon_FUN_004f8dc0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f8fee",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004f8fe0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004fc3ca",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_toggleDetailView_FUN_004fc370",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f9f3d",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_FUN_004f9f10",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004d6314",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_resetWeaponSwitchTimers_FUN_004d6300",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.875,
+    "instruction_count": 16,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CBRANCH": 2,
+      "COPY": 15,
+      "INT_ADD": 11,
+      "INT_AND": 5,
+      "INT_EQUAL": 4,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 2,
+      "LOAD": 8,
+      "POPCOUNT": 2,
+      "RETURN": 2,
+      "STORE": 4
+    },
+    "pcode_op_count": 62
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004dd270",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004dd340",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004fffa0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004c1d20",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInventory *"
+      },
+      {
+        "is_param": true,
+        "name": "reset_both",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 7,
+      "match": "*(CDemonActor **)(_DAT_01d06ab4 * 4 + 0x1d06aa4",
+      "severity": "moderate",
+      "text": "if (this_ptr->owner == *(CDemonActor **)(_DAT_01d06ab4 * 4 + 0x1d06aa4)) {",
+      "type": "raw_address_pointer_store"
+    }
+  ]
+}

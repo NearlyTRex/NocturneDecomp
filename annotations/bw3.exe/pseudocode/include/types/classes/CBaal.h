@@ -2,15 +2,31 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CBoneGuy;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
 
 // Structure: CBaal
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 53436; ctor 00596660, setup 00596730, process 005968a0, renderTransparent 00597970, archive 00597c70, FUN_00597be0
 // Ghidra size: 0xd0bc (53436 bytes)
 #pragma pack(push, 1)
 typedef struct CBaal {
-    char field_0[53436]; // 0x0
+    CEnemy base; // 0x0, derived
+    float countdown_timer; // 0xd054, ctor zeroes; process 005968a0 subtracts dt while > 0 (FLD/FSTP float)
+    char field_53336[8]; // 0xd058
+    int render_alpha; // 0xd060, renderTransparent computes it from the fade and passes it to setRenderAlpha
+    float fade_timer; // 0xd064, ctor = max_fade_time; process adds dt and clamps to max_fade_time; renderTransparent scales alpha by fade_timer/max_fade_time
+    int fading_in; // 0xd068, ctor 1; renderTransparent picks fade-out (0) or fade-in formula
+    float max_fade_time; // 0xd06c, ctor 2.0; archive "maxFadeTime"
+    int fade_out_opacity; // 0xd070, ctor 0x4b; archive "fadeOutOpacity"; renderTransparent int->float alpha base
+    int bone_indices[2]; // 0xd074, setup findBone "Bip01 R Hand" (+0xd074, copied to +0x25a8) and "Bip01 L Hand" (+0xd078, process bone matrix index *0x30)
+    int recombine_pending; // 0xd07c, ctor 0; process sets 1 when the found CBoneGuy is dead, 0 after walkToPoint reaches it; tested as the attack-skip condition
+    float state_cooldown; // 0xd080, ctor 0; process subtracts dt while > 0; FUN_00597be0 forces motion state 0 while > 0 and zeroes it
+    uint sfx_handles[13]; // 0xd084, ctor loop zeroes 13 dwords +0xd084..+0xd0b4; process isSfxPlaying/stores the motion-event sound (event 0x4b0 -> +0xd084)
+    struct CBoneGuy* recombine_target; // 0xd0b8, process stores the found actor, reads its +0xd0e4 and +0xd068 position, calls CBoneGuy_beginRecombine on it
 } CBaal;
 #pragma pack(pop)
 

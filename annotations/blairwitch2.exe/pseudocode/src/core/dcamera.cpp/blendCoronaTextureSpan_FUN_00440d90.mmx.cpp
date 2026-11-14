@@ -2,13 +2,13 @@
 // Address: 00440d90
 // Address Range: [[00440d90, 00440e83]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_00440d90(int param_1,int param_2,int param_3,int param_4)
+// Signature: void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_00440d90(int scanline_y,int x_start,int x_end,SCoronaLightEntry *source_entry)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_00440d90(int param_1,int param_2,int param_3,int param_4)
+void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_00440d90(int scanline_y,int x_start,int x_end,SCoronaLightEntry *source_entry)
 {
 __asm {
         mov EBP,ESP

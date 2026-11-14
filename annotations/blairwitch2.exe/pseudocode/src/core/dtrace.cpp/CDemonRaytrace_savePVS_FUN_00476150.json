@@ -2,15 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 116,
+    "complexity_score": 86,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 13,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 56,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field",
+      "raw_address_pointer_store",
       "warning_overlapping_globals"
     ],
     "total_lines": 172
@@ -19,7 +19,7 @@
     {
       "addr": "0052d0e0",
       "from_addr": "0052d183",
-      "name": "core_set.cpp_FUN_0052d0e0",
+      "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -133,7 +133,7 @@
       {
         "call_addr": "0052d183",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_0052d0e0",
+        "caller": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -181,6 +181,32 @@
     },
     "pcode_op_count": 405
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0048e640",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004771c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00498fb0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9891
+    },
+    "nocturne.exe": {
+      "addr": "0046ae40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -221,36 +247,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "iVar5 = *(int *)&this_ptr->field_0x48 *",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x40 * *(int *)&this_ptr->field_0x44;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x40 * *(int *)&this_ptr->field_0x44;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)&this_ptr->field_0x50;",
-      "type": "unnamed_field"
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 43,
+      "match": "*(CDemonCube **)(iVar7 + 0x1bd3c64",
+      "severity": "moderate",
+      "text": "if (pCVar3 == *(CDemonCube **)(iVar7 + 0x1bd3c64)) break;",
+      "type": "raw_address_pointer_store"
     }
   ]
 }

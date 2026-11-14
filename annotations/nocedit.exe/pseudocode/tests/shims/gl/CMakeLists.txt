@@ -11,6 +11,7 @@ nocturne_test_suite(shims_gl
         shims/gl/antialias_shaders.cpp
         shims/gl/resolution.cpp
         shims/gl/window_mode.cpp
+        shims/gl/display_settings.cpp
         shims/gl/upscaler.cpp
         shims/gl/antialias.cpp
         shims/gl/widescreen.cpp

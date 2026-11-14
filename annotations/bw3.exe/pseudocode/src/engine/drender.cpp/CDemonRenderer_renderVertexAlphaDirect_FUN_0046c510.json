@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 70,
+    "complexity_score": 85,
     "cross_reference_count": 16,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 40,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "shadow_pointer_walk",
       "undefined_data",
       "warning_overlapping_globals"
     ],
@@ -23,27 +24,45 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0045dea0",
+      "from_addr": "0045e654",
+      "name": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_0045dea0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0045d530",
       "from_addr": "0045daa0",
       "name": "core_dlight.cpp_FUN_0045d530",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0045dea0",
-      "from_addr": "0045e654",
-      "name": "core_dlight.cpp_FUN_0045dea0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0045e69e",
+      "addr": "0045e6a0",
       "from_addr": "0045ece1",
-      "name": "core_dlight.cpp_FUN_0045e69e",
+      "name": "core_dlight.cpp_FUN_0045e6a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0045f5a0",
       "from_addr": "0045fa60",
-      "name": "core_dlight.cpp_FUN_0045f5a0",
+      "name": "core_dlight.cpp_renderConeLightGeometry_FUN_0045f5a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00499690",
+      "from_addr": "00499a4f",
+      "name": "core_fire.cpp_CFireball_render_FUN_00499690",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00498b40",
+      "from_addr": "00498c7f",
+      "name": "core_fire.cpp_CFirefly_render_FUN_00498b40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049e500",
+      "from_addr": "0049ee54",
+      "name": "core_fire.cpp_CGunFlame_render_FUN_0049e500",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -59,57 +78,39 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004980b0",
-      "from_addr": "00498204",
-      "name": "core_fire.cpp_FUN_004980b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00498b40",
-      "from_addr": "00498c7f",
-      "name": "core_fire.cpp_FUN_00498b40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00499690",
-      "from_addr": "00499a4f",
-      "name": "core_fire.cpp_FUN_00499690",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0049e500",
-      "from_addr": "0049ee54",
-      "name": "core_fire.cpp_FUN_0049e500",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004a1040",
       "from_addr": "004a13ae",
-      "name": "core_fire.cpp_FUN_004a1040",
+      "name": "core_fire.cpp_CRainDrop_render_FUN_004a1040",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004980b0",
+      "from_addr": "00498204",
+      "name": "core_fire.cpp_CSpark_render_FUN_004980b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004a6090",
       "from_addr": "004a65ae",
-      "name": "core_flame.cpp_FUN_004a6090",
+      "name": "core_flame.cpp_CFlame_renderTransparent_FUN_004a6090",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005454d0",
+      "addr": "00545140",
       "from_addr": "005456db",
-      "name": "core_shadow.cpp_FUN_005454d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0057ee80",
-      "from_addr": "0057f41b",
-      "name": "core_werewolf.cpp_FUN_0057ee80",
+      "name": "core_shadow.cpp_FUN_00545140",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00595760",
       "from_addr": "00595cfb",
-      "name": "unkafter_tawiscar.cpp_FUN_00595760",
+      "name": "core_tawiscara.cpp_FUN_00595760",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057ee80",
+      "from_addr": "0057f41b",
+      "name": "core_werewolf.cpp_CWerewolf_renderEyeGlow_FUN_0057ee80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -180,7 +181,7 @@
       {
         "call_addr": "0049ee54",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049e500",
+        "caller": "core_fire.cpp_CGunFlame_render_FUN_0049e500",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -202,7 +203,7 @@
       {
         "call_addr": "0045e654",
         "call_type": "direct",
-        "caller": "core_dlight.cpp_FUN_0045dea0",
+        "caller": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_0045dea0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -213,7 +214,7 @@
       {
         "call_addr": "00498204",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004980b0",
+        "caller": "core_fire.cpp_CSpark_render_FUN_004980b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -224,7 +225,7 @@
       {
         "call_addr": "00498611",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004980b0",
+        "caller": "core_fire.cpp_CSpark_render_FUN_004980b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -235,7 +236,7 @@
       {
         "call_addr": "00498c7f",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_00498b40",
+        "caller": "core_fire.cpp_CFirefly_render_FUN_00498b40",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -246,7 +247,7 @@
       {
         "call_addr": "0049908c",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_00498b40",
+        "caller": "core_fire.cpp_CFirefly_render_FUN_00498b40",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -257,7 +258,7 @@
       {
         "call_addr": "004a65ae",
         "call_type": "direct",
-        "caller": "core_flame.cpp_FUN_004a6090",
+        "caller": "core_flame.cpp_CFlame_renderTransparent_FUN_004a6090",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -268,7 +269,7 @@
       {
         "call_addr": "0045fa60",
         "call_type": "direct",
-        "caller": "core_dlight.cpp_FUN_0045f5a0",
+        "caller": "core_dlight.cpp_renderConeLightGeometry_FUN_0045f5a0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -314,6 +315,32 @@
     },
     "pcode_op_count": 257
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0046a930",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00482e30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0048bad0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00460080",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -353,6 +380,14 @@
       "severity": "mild",
       "text": "if (DAT_005fba20 == 0x20) {",
       "type": "undefined_data"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar1` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 20,
+      "match": "pSVar1 = (T *)&(pSVar1->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar1 = (SMRGLHeaderPrimitive *)&(pSVar1->base).count;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

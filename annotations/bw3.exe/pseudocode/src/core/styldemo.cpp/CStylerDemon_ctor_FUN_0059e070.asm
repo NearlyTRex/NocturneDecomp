@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CStylerDemon * core_styldemo_cpp_CStylerDemon_ctor_FUN_0059e070(CStylerDemon *this_ptr)
+; CStylerDemon * __cdecl core_styldemo_cpp_CStylerDemon_ctor_FUN_0059e070(CStylerDemon *this_ptr)
 ;
 ; Parameters:
 ; CStylerDemon *   Stack[0x4]:4   this_ptr
@@ -16,7 +16,7 @@
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00488fd0
 ;   core_morph.cpp_CMorph_ctor_FUN_004fa8a0
-;   core_skeleton.cpp_FUN_0054eae0
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 0059e097
     PUSH EAX                            ; 0059e09d
     MOV dword ptr [EBX + 0x154],0x5e84f4 ; 0059e09e
-    CALL core_skeleton.cpp_FUN_0054eae0 ; 0059e0a8
-        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054eae0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 ; 0059e0a8
+        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x326c],0x3f19999a ; 0059e0ad
     MOV dword ptr [EBX + 0x3270],0x3f666666 ; 0059e0b7
     MOV dword ptr [EBX + 0xce60],0x41c80000 ; 0059e0c1

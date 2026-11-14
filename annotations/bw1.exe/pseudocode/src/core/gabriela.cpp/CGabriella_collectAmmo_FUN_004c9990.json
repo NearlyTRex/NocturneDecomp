@@ -1,0 +1,135 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 29,
+    "complexity_score": 17,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 46
+  },
+  "cross_references": [
+    {
+      "addr": "004c83b0",
+      "from_addr": "004c884d",
+      "name": "core_gabriela.cpp_FUN_004c83b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c9990",
+    "address_range": [
+      [
+        "004c9990",
+        "004c99d0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gabriela.cpp_CGabriella_collectAmmo_FUN_004c9990",
+    "signature": "void __cdecl core_gabriela_cpp_CGabriella_collectAmmo_FUN_004c9990(CGabriella *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c600",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c600"
+    },
+    {
+      "addr": "0040e210",
+      "is_variadic": false,
+      "name": "core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e210"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "007c33e0",
+      "name": "g_CAmmoBoxClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004c884d",
+        "call_type": "direct",
+        "caller": "core_gabriela.cpp_FUN_004c83b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.909090909090909,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 2,
+      "CBRANCH": 2,
+      "COPY": 18,
+      "INT_ADD": 10,
+      "INT_AND": 10,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 4,
+      "INT_SUB": 7,
+      "LOAD": 6,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 8
+    },
+    "pcode_op_count": 86
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004b0a40",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004d5c10",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00498790",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGabriella *"
+      }
+    ]
+  },
+  "suspects": []
+}

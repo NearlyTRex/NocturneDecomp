@@ -1,20 +1,23 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archiveMotionState_FUN_0040bb60(CMotionController *param_1,char *param_2)
+; void __cdecl core_actor_cpp_archiveMotionState_FUN_0040bb60(CMotionController *motion_controller,char *property_name)
 ;
+; Parameters:
+; CMotionController * Stack[0x4]:4   motion_controller
+; char *           Stack[0x8]:4   property_name
 ;
 ; XREF[32]:
-;   core_armour.cpp_FUN_0040f040 at 0040f07d
-;   core_batcreat.cpp_FUN_004124a0 at 004124dd
-;   core_batman.cpp_FUN_00413e60 at 00413e9d
-;   core_beast.cpp_FUN_00414b10 at 00414b4d
-;   core_biggs.cpp_FUN_00415250 at 0041528d
-;   core_boneguy.cpp_FUN_00419c50 at 00419cb1
-;   core_bride.cpp_FUN_0041e800 at 0041e87e
-;   core_cow.cpp_FUN_00439830 at 0043987d
-;   core_dog.cpp_FUN_0045eab0 at 0045eafd
-;   core_dracbrid.cpp_FUN_00464cc0 at 00464d96
+;   core_armour.cpp_CArmour_archive_FUN_0040f040 at 0040f07d
+;   core_basicene.cpp_CBasicEnemy_archive_FUN_0059fc10 at 0059fc65
+;   core_batcreat.cpp_CBatCreature_archive_FUN_004124a0 at 004124dd
+;   core_batman.cpp_CBatman_archive_FUN_00413e60 at 00413e9d
+;   core_beast.cpp_CBeast_archive_FUN_00414b10 at 00414b4d
+;   core_biggs.cpp_CBiggs_archive_FUN_00415250 at 0041528d
+;   core_boneguy.cpp_CBoneGuy_archive_FUN_00419c50 at 00419cb1
+;   core_bride.cpp_CBride_archive_FUN_0041e800 at 0041e87e
+;   core_construc.cpp_CConstruct_archive_FUN_00437b80 at 00437bc7
+;   core_cow.cpp_CZombieCow_archive_FUN_00439830 at 0043987d
 ;   ... and 22 more
 ;
 ; Referenced Globals:
@@ -30,7 +33,7 @@
 ;   core_actor.cpp_adjustIndentationLevel_FUN_0040b050
 ;   core_actor.cpp_handleActorPropertyParseError_FUN_0040b380
 ;   core_motion.cpp_CMotionController_load_FUN_005041b0
-;   core_motion.cpp_FUN_00504250
+;   core_motion.cpp_CMotionController_save_FUN_00504250
 ;   crt_stdio.c_fgetc_FUN_005b8180
 ;   crt_unknown.c_FUN_005b8010
 ;
@@ -50,7 +53,7 @@ section .text
         ;   Label: LAB_0040bb74
     PUSH EBP                            ; 0040bb7a
     CALL crt_stdio.c_fgetc_FUN_005b8180 ; 0040bb7b
-        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005b8180()
+        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005b8180(_FILE * file)
     ADD ESP,0x4                         ; 0040bb80
     MOV ESI,EAX                         ; 0040bb83
     TEST EAX,EAX                        ; 0040bb85
@@ -71,7 +74,7 @@ section .text
         ;   Label: LAB_0040bba1
     PUSH ECX                            ; 0040bba7
     CALL crt_stdio.c_fgetc_FUN_005b8180 ; 0040bba8
-        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005b8180()
+        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005b8180(_FILE * file)
     ADD ESP,0x4                         ; 0040bbad
     MOV ESI,EAX                         ; 0040bbb0
     TEST EAX,EAX                        ; 0040bbb2
@@ -124,8 +127,8 @@ section .text
     PUSH EBX                            ; 0040bc16
     MOV ESI,dword ptr [ESP + 0x1c]      ; 0040bc17
     PUSH ESI                            ; 0040bc1b
-    CALL core_motion.cpp_FUN_00504250   ; 0040bc1c
-        ;   XREF to: 00504250 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_FUN_00504250(CMotionController * this_ptr, _FILE * file_handle, char * indent_prefix)
+    CALL core_motion.cpp_CMotionController_save_FUN_00504250 ; 0040bc1c
+        ;   XREF to: 00504250 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_save_FUN_00504250(CMotionController * this_ptr, _FILE * file_handle, char * indent_prefix)
     ADD ESP,0xc                         ; 0040bc21
     PUSH -0x1                           ; 0040bc24
     CALL core_actor.cpp_adjustIndentationLevel_FUN_0040b050 ; 0040bc26

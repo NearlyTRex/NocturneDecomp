@@ -55,7 +55,7 @@ SScrape * __cdecl SScrape::dtor(SScrape *this_ptr,uint flags);
 
 // Original: core_box.cpp_SScrape_arrdtor8_FUN_00420220
 // Address: 00420220
-SScrape * __cdecl SScrape::arrdtor8(SScrape *objs,uint flags);
+SScrape * __cdecl SScrape::arrdtor8(SScrape *this_ptr,uint flags);
 
 // Original: core_box.cpp_CBoundingBox3D_expand_FUN_00420240
 // Address: 00420240

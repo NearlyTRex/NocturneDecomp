@@ -156,6 +156,8 @@ def test_analysis_labels_sizes_and_files_each_class(report):
     assert (rows["ios"]["label"], rows["ios"]["category"]) == ("g_IOSTypeInfo", "/Nocturne/Class/System/iostream.h")
     assert (rows["SFly"]["label"], rows["SFly"]["category"]) == ("g_SFlyTypeInfo", "/Nocturne/Struct/Game")
     assert (rows["CNew"]["sibling_size"], rows["CNew"]["category"]) == (None, "/Nocturne/Class/Game")
+    # A label the sibling has no name for is spelled as the type, not the RTTI class.
+    assert rows["NotesMap"]["label"] == "g_SNotesMapTypeInfo"
     assert rows["CNew"]["in_program"] == {"ctor": False, "copy": False, "dtor": False}
 
 

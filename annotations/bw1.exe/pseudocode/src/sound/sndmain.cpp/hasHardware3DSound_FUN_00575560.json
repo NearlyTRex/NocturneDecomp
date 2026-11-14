@@ -1,0 +1,155 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 3,
+    "complexity_score": 20,
+    "cross_reference_count": 10,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 5,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 8
+  },
+  "cross_references": [
+    {
+      "addr": "0050ba70",
+      "from_addr": "0050c805",
+      "name": "core_menu.cpp_FUN_0050ba70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057cb30",
+      "from_addr": "0057cb6c",
+      "name": "core_sound.cpp_FUN_0057cb30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00577f90",
+      "from_addr": "00578239",
+      "name": "sound_snddx.cpp_FUN_00577f90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005784b0",
+      "from_addr": "005784b7",
+      "name": "sound_snddx.cpp_FUN_005784b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056feb0",
+      "from_addr": "0056fee2",
+      "name": "sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_0056feb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00575db0",
+      "from_addr": "00575dbc",
+      "name": "sound_sndmain.cpp_flushSoundChanges_FUN_00575db0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005735a0",
+      "from_addr": "005735a0",
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005735a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00576f40",
+      "from_addr": "00576f86",
+      "name": "sound_sndmain.cpp_pollAllSfxSlots_FUN_00576f40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00573b30",
+      "from_addr": "00573b7b",
+      "name": "sound_sndmain.cpp_setSfxChannelVol_FUN_00573b30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00572d20",
+      "from_addr": "00572f67",
+      "name": "sound_sndmain.cpp_startSfx_FUN_00572d20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00575560",
+    "address_range": [
+      [
+        "00575560",
+        "00575565"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_hasHardware3DSound_FUN_00575560",
+    "signature": "uint __cdecl sound_sndmain_cpp_hasHardware3DSound_FUN_00575560(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02c80658",
+      "name": "DAT_02c80658",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.0,
+    "instruction_count": 2,
+    "opcode_distribution": {
+      "COPY": 1,
+      "INT_ADD": 1,
+      "LOAD": 1,
+      "RETURN": 1
+    },
+    "pcode_op_count": 4
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00552b30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005586d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005ab5a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5714
+    },
+    "nocturne.exe": {
+      "addr": "005284f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5714
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

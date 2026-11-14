@@ -1,0 +1,146 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 77,
+    "complexity_score": 32,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 32,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 109
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00414fc0",
+    "address_range": [
+      [
+        "00414fc0",
+        "00415062"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_biggs.cpp_CBiggs_processDamage_FUN_00414fc0",
+    "signature": "void __cdecl core_biggs_cpp_CBiggs_processDamage_FUN_00414fc0(CBiggs *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cc60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cc60"
+    },
+    {
+      "addr": "004a0f00",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_processDamage_FUN_004a0f00"
+    },
+    {
+      "addr": "005247c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.745762711864407,
+    "instruction_count": 59,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 5,
+      "CBRANCH": 5,
+      "COPY": 78,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 20,
+      "INT_AND": 25,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 18,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 9,
+      "INT_SUB": 26,
+      "INT_ZEXT": 4,
+      "LOAD": 10,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 26
+    },
+    "pcode_op_count": 280
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004152e0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00418b50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.746
+    },
+    "nocturne.exe": {
+      "addr": "00415900",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.746
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBiggs *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBiggs",
+        "offset": 264,
+        "vtable_addr": "005fc5d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

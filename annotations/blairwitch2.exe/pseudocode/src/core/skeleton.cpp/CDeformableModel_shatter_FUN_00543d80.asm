@@ -72,9 +72,9 @@
 ;   undefined4 DAT_020ccfd8
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_00449280
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
 ;   core_dirmat.cpp_FUN_00449530
-;   core_fire.cpp_FUN_0049d450
+;   core_fire.cpp_CFireEffect_createGlassParticle_FUN_0049d450
 ;   core_main.c_FUN_004e4500
 ;   crt_memory.c___arrinit_FUN_005b7f5f
 ;
@@ -94,8 +94,8 @@ section .text
     MOV EDX,0xffff                      ; 00543d96
     PUSH EAX                            ; 00543d9b
     MOV dword ptr [ESP + 0xec],EDX      ; 00543d9c
-    CALL core_dirmat.cpp_FUN_00449280   ; 00543da3
-        ;   XREF to: 00449280 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_00449280(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280 ; 00543da3
+        ;   XREF to: 00449280 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     MOV AH,byte ptr [0x020ccfd8]        ; 00543da8 | DAT_020ccfd8
     ADD ESP,0x8                         ; 00543dae
     TEST AH,0x1                         ; 00543db1
@@ -203,7 +203,7 @@ section .text
     LEA EAX,[ESP + 0x30]                ; 00543f1f
     PUSH EAX                            ; 00543f23
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 00543f24
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00543f29
     MOV EDX,dword ptr [ESP + 0x104]     ; 00543f2c
     XOR EAX,EAX                         ; 00543f33
@@ -300,8 +300,8 @@ section .text
     PUSH EAX                            ; 005440a3
     MOV EBX,dword ptr [0x00614d30]      ; 005440a4 | DAT_00614d30
     PUSH EBX                            ; 005440aa
-    CALL core_fire.cpp_FUN_0049d450     ; 005440ab
-        ;   XREF to: 0049d450 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_0049d450(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3i * uv_u_per_vertex, CVector3i * uv_v_per_vertex, ...)
+    CALL core_fire.cpp_CFireEffect_createGlassParticle_FUN_0049d450 ; 005440ab
+        ;   XREF to: 0049d450 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGlassParticle_FUN_0049d450(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3i * uv_u_per_vertex, CVector3i * uv_v_per_vertex, ...)
     ADD ESP,0x18                        ; 005440b0
     ADD ESI,0x4                         ; 005440b3
     MOV EBP,dword ptr [ESP + 0xe0]      ; 005440b6
@@ -393,7 +393,7 @@ section .text
     PUSH 0x20c4338                      ; 0054422c | DAT_020c4338
     MOV byte ptr [0x020ccfd8],DL        ; 00544231 | DAT_020ccfd8
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 00544237
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0054423c
     JMP 0x00543dba                      ; 0054423f
         ;   XREF to: 00543dba (UNCONDITIONAL_JUMP)  ; LAB_00543dba
@@ -475,8 +475,8 @@ section .text
     PUSH EAX                            ; 00544342
     MOV EBP,dword ptr [0x00614d30]      ; 00544343 | DAT_00614d30
     PUSH EBP                            ; 00544349
-    CALL core_fire.cpp_FUN_0049d450     ; 0054434a
-        ;   XREF to: 0049d450 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_0049d450(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3i * uv_u_per_vertex, CVector3i * uv_v_per_vertex, ...)
+    CALL core_fire.cpp_CFireEffect_createGlassParticle_FUN_0049d450 ; 0054434a
+        ;   XREF to: 0049d450 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGlassParticle_FUN_0049d450(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3i * uv_u_per_vertex, CVector3i * uv_v_per_vertex, ...)
     ADD ESP,0x18                        ; 0054434f
     MOV EBP,dword ptr [ESP + 0xec]      ; 00544352
         ;   Label: LAB_00544352

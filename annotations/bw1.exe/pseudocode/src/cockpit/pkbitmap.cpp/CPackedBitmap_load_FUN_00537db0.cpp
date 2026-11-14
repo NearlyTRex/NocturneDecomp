@@ -11,103 +11,100 @@
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_00537db0(CPackedBitmap *this_ptr,uchar *bitmap_data,int width,int height,int transparency_color,int row_stride)
 
 {
-  int iVar1;
+  int *piVar1;
   byte *pbVar2;
   int iVar3;
-  void *pvVar4;
-  ushort *puVar5;
-  uint uVar6;
+  ushort *puVar4;
+  uint uVar5;
+  int iVar6;
   int iVar7;
   ulong new_size;
-  uchar *puVar8;
+  uint *puVar8;
   uint uVar9;
   byte bVar10;
-  byte auStack_154 [300];
-  int iStack_28;
+  int in_stack_0000001c;
+  char acStack_150 [300];
   int iStack_24;
   int iStack_20;
-  ulong uStack_1c;
+  int iStack_1c;
   ulong uStack_18;
-  uchar *puStack_14;
+  ulong uStack_14;
   
   bVar10 = 0;
-  cockpit_pkbitmap_cpp_FUN_00537550(this_ptr);
-  *(int *)&this_ptr->field_0x18 = width;
-  *(int *)&this_ptr->field_0x1c = height;
-  if (row_stride == 0) {
-    row_stride = *(int *)&this_ptr->field_0x18;
+  cockpit_pkbitmap_cpp_CPackedBitmap_free_FUN_00537550(this_ptr);
+  this_ptr->width = height;
+  this_ptr->height = transparency_color;
+  if (in_stack_0000001c == 0) {
+    in_stack_0000001c = this_ptr->width;
   }
-  iVar1 = FUN_005c1268((*(int *)&this_ptr->field_0x1c + 1) * 4);
-  *(int *)&this_ptr->field_0x20 = iVar1;
-  if (iVar1 == 0) {
+  piVar1 = (int *)operator_new_array((this_ptr->height + 1) * 4);
+  this_ptr->row_offsets = piVar1;
+  if (piVar1 == (int *)0x0) {
     _DAT_01d1d400 = "..\\cockpit\\pkbitmap.cpp";
     _DAT_01d1d404 = 0x37e;
     core_main_c_FUN_005030e0("Unable to allocate memory for rowOffset table in CPackedBitmap::load");
   }
   new_size = 0;
+  iStack_20 = 0;
   iStack_24 = 0;
-  puStack_14 = bitmap_data;
-  iStack_28 = 0;
-  uStack_18 = 0;
+  uStack_14 = 0;
   do {
-    *(ulong *)(*(int *)&this_ptr->field_0x20 + iStack_28) = new_size;
-    if (*(int *)&this_ptr->field_0x1c <= iStack_24) {
-      pvVar4 = realloc(*(void **)&this_ptr->field_0x14,new_size);
-      *(void **)&this_ptr->field_0x14 = pvVar4;
+    *(ulong *)((int)this_ptr->row_offsets + iStack_24) = new_size;
+    if (this_ptr->height <= iStack_20) {
+      puVar4 = (ushort *)realloc(this_ptr->packed_data,new_size);
+      this_ptr->packed_data = puVar4;
       return;
     }
-    iVar1 = 0;
-    if (0 < *(int *)&this_ptr->field_0x18) {
+    iVar6 = 0;
+    if (0 < this_ptr->width) {
       do {
-        pbVar2 = puStack_14 + iVar1;
-        iVar7 = iVar1;
-        if ((uint)*pbVar2 == transparency_color) {
-          iVar7 = iVar1 + 1;
+        pbVar2 = (byte *)(width + iVar6);
+        iVar7 = iVar6;
+        if ((uint)*pbVar2 == row_stride) {
+          iVar7 = iVar6 + 1;
         }
         else {
           do {
             iVar7 = iVar7 + 1;
             pbVar2 = pbVar2 + 1;
-            if (*(int *)&this_ptr->field_0x18 <= iVar7) break;
-          } while ((uint)*pbVar2 != transparency_color);
-          uVar9 = iVar7 - iVar1;
+            if (this_ptr->width <= iVar7) break;
+          } while ((uint)*pbVar2 != row_stride);
+          uVar9 = iVar7 - iVar6;
           iVar3 = (uVar9 + 3 & 0xfffffffc) + new_size;
-          uStack_1c = iVar3 + 4;
-          iStack_20 = iVar1;
-          if ((int)uStack_18 < (int)uStack_1c) {
-            uStack_18 = iVar3 + 0x4004;
-            pvVar4 = realloc(*(void **)&this_ptr->field_0x14,uStack_18);
-            *(void **)&this_ptr->field_0x14 = pvVar4;
-            if (pvVar4 == (void *)0x0) {
-              FUN_005bfb40
-                        (auStack_154,"Out of memory packing file \"%s\" on row %u trying to get %u bytes",this_ptr,iStack_24,
-                         uStack_18);
+          uStack_18 = iVar3 + 4;
+          iStack_1c = iVar6;
+          if ((int)uStack_14 < (int)uStack_18) {
+            uStack_14 = iVar3 + 0x4004;
+            puVar4 = (ushort *)realloc(this_ptr->packed_data,uStack_14);
+            this_ptr->packed_data = puVar4;
+            if (puVar4 == (ushort *)0x0) {
+              _sprintf(acStack_150,"Out of memory packing file \"%s\" on row %u trying to get %u bytes");
               _DAT_01d1d400 = "..\\cockpit\\pkbitmap.cpp";
               _DAT_01d1d404 = 0x3b6;
-              core_main_c_FUN_005030e0(auStack_154);
+              core_main_c_FUN_005030e0(acStack_150);
             }
           }
-          puVar5 = (ushort *)(*(int *)&this_ptr->field_0x14 + new_size);
-          *puVar5 = (ushort)iStack_20;
-          puVar5[1] = (ushort)uVar9;
-          puVar8 = puStack_14 + *puVar5;
-          puVar5 = puVar5 + 2;
-          for (uVar6 = (uVar9 & 0xffff) >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-            *(uint *)puVar5 = *(uint *)puVar8;
-            puVar8 = puVar8 + (uint)bVar10 * -8 + 4;
-            puVar5 = puVar5 + (uint)bVar10 * -4 + 2;
-          }
-          for (uVar9 = uVar9 & 3; new_size = uStack_1c, uVar9 != 0; uVar9 = uVar9 - 1) {
-            *(uchar *)puVar5 = *puVar8;
+          puVar4 = (ushort *)((int)this_ptr->packed_data + new_size);
+          *puVar4 = (ushort)iStack_1c;
+          puVar4[1] = (ushort)uVar9;
+          puVar8 = (uint *)((uint)*puVar4 + width);
+          puVar4 = puVar4 + 2;
+          for (uVar5 = (uVar9 & 0xffff) >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+            *(uint *)puVar4 = *puVar8;
             puVar8 = puVar8 + (uint)bVar10 * -2 + 1;
-            puVar5 = (ushort *)((int)puVar5 + (uint)bVar10 * -2 + 1);
+            puVar4 = puVar4 + (uint)bVar10 * -4 + 2;
+          }
+          for (uVar9 = uVar9 & 3; new_size = uStack_18, uVar9 != 0; uVar9 = uVar9 - 1) {
+            *(byte *)puVar4 = *(byte *)puVar8;
+            puVar8 = (uint *)((int)puVar8 + (uint)bVar10 * -2 + 1);
+            puVar4 = (ushort *)((int)puVar4 + (uint)bVar10 * -2 + 1);
           }
         }
-        iVar1 = iVar7;
-      } while (iVar7 < *(int *)&this_ptr->field_0x18);
+        iVar6 = iVar7;
+      } while (iVar7 < this_ptr->width);
     }
-    iStack_24 = iStack_24 + 1;
-    iStack_28 = iStack_28 + 4;
-    puStack_14 = puStack_14 + row_stride;
+    iStack_20 = iStack_20 + 1;
+    iStack_24 = iStack_24 + 4;
+    width = width + in_stack_0000001c;
   } while( true );
 }

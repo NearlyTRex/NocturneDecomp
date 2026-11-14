@@ -9,8 +9,8 @@
 ;
 ; Called Functions:
 ;   core_menu.cpp_CAlphaBitmap_arrdtor8_FUN_004f0230
+;   engine_ncursfx.cpp_CAlphaBitmap_arrdtor15_FUN_005103e0
 ;   engine_ncursfx.cpp_CAlphaBitmap_arrdtor7_FUN_005103c0
-;   engine_ncursfx.cpp_FUN_005103e0
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
     PUSH 0x0                            ; 00510074
     ADD EAX,0x12c                       ; 00510076
     PUSH EAX                            ; 0051007b
-    CALL engine_ncursfx.cpp_FUN_005103e0 ; 0051007c
-        ;   XREF to: 005103e0 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_ncursfx.cpp_FUN_005103e0(CAlphaBitmap * this_ptr, uint flags)
+    CALL engine_ncursfx.cpp_CAlphaBitmap_arrdtor15_FUN_005103e0 ; 0051007c
+        ;   XREF to: 005103e0 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_ncursfx.cpp_CAlphaBitmap_arrdtor15_FUN_005103e0(CAlphaBitmap * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00510081
     PUSH 0x0                            ; 00510084
     SUB EAX,0x8c                        ; 00510086

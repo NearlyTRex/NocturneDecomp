@@ -22,16 +22,16 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[11]:
-;   core_baron.cpp_FUN_004101f0 at 00410392
-;   core_batman.cpp_FUN_00413970 at 00413a55
-;   core_biggs.cpp_FUN_00414e00 at 00414eee
-;   core_charactr.cpp_FUN_0042f240 at 0042f2e5
-;   core_dracbrid.cpp_FUN_0047cfe0 at 0047d0c5
+;   core_baron.cpp_CBaron_renderTransparent_FUN_004101f0 at 00410392
+;   core_batman.cpp_CBatman_renderOpaque_FUN_00413970 at 00413a55
+;   core_biggs.cpp_CBiggs_renderOpaque_FUN_00414e00 at 00414eee
+;   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042f240 at 0042f2e5
+;   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_0047cfe0 at 0047d0c5
 ;   core_mimic.cpp_CMimic_renderMirrored_FUN_00510620 at 00510892
-;   core_moloch.cpp_FUN_00521070 at 00521164
-;   core_shadow.cpp_FUN_0055fc60 at 0055fd74
-;   core_shadowsc.cpp_FUN_005611a0 at 005612a2
-;   core_succubus.cpp_FUN_00592aa0 at 00592b76
+;   core_moloch.cpp_CMoloch_renderOpaque_FUN_00521070 at 00521164
+;   core_shadow.cpp_CShadow_renderTransparent_FUN_0055fc60 at 0055fd74
+;   core_shadowsc.cpp_CShadowsc_renderTransparent_FUN_005611a0 at 005612a2
+;   core_succubus.cpp_CSuccubus_renderOpaque_FUN_00592aa0 at 00592b76
 ;   ... and 1 more
 ;
 ; Referenced Globals:
@@ -45,8 +45,8 @@
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
 ;   core_motion.cpp_CMotionController_getCurrentStateName_FUN_00524a10
-;   core_motion.cpp_FUN_00524a00
-;   crt_unknown.c_FUN_005bfb40
+;   core_motion.cpp_CMotionController_getMotionList_FUN_00524a00
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   engine_2d.c_drawText_FUN_00401fe0
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60
 ;   engine_special.cpp_FUN_00580173
@@ -160,8 +160,8 @@ section .text
     SHL ESI,0x4                         ; 005255d1
     PUSH EDX                            ; 005255d4
     SUB ESI,EAX                         ; 005255d5
-    CALL core_motion.cpp_FUN_00524a00   ; 005255d7
-        ;   XREF to: 00524a00 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_FUN_00524a00(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_getMotionList_FUN_00524a00 ; 005255d7
+        ;   XREF to: 00524a00 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_00524a00(CMotionController * this_ptr)
     ADD EAX,0x4                         ; 005255dc
     ADD ESP,0x4                         ; 005255df
     ADD EAX,ESI                         ; 005255e2
@@ -175,8 +175,8 @@ section .text
     PUSH 0x5eb0a2                       ; 005255f5 | = "%s -> %s"
     LEA EAX,[EBP + -0x36]               ; 005255fa
     PUSH EAX                            ; 005255fd
-    CALL crt_unknown.c_FUN_005bfb40     ; 005255fe
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 005255fe
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x10                        ; 00525603
     LEA EAX,[EBX + 0xb]                 ; 00525606
         ;   Label: LAB_00525606
@@ -200,8 +200,8 @@ section .text
     PUSH 0x5eb0ab                       ; 00525633 | = "%s : %5.2f"
     LEA EAX,[EBP + -0x36]               ; 00525638
     PUSH EAX                            ; 0052563b
-    CALL crt_unknown.c_FUN_005bfb40     ; 0052563c
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0052563c
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x14                        ; 00525641
     ADD EBX,0x16                        ; 00525644
     PUSH EBX                            ; 00525647

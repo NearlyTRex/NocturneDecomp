@@ -9,9 +9,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   core_game.cpp_FUN_004b7f90 at 004b822f
-;   core_mission.cpp_FUN_004f70a0 at 004f71fd
-;   core_set.cpp_FUN_00533e5e at 0053412c
+;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b822f
+;   core_mission.cpp_CDemonMission_process_FUN_004f70a0 at 004f71fd
+;   core_set.cpp_FUN_00533e60 at 0053412c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Initializing_scene_005d03c9
@@ -43,7 +43,7 @@
 ;   core_level.cpp_FUN_004e0000
 ;   core_main.c_FUN_004e4330
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00533b80
-;   core_setdir.cpp_FUN_005418d0
+;   core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_005418d0
 ;   core_setdir.cpp_FUN_00541a20
 ;   core_setutil.cpp_C3DSLight_apply_FUN_00542aa0
 ;   core_setutil.cpp_C3DSLight_create_FUN_00542940
@@ -212,8 +212,8 @@ section .text
     MOV dword ptr [0x0203ad30],ECX      ; 005345e5 | DAT_0203ad30
     MOV dword ptr [0x0203aec4],ECX      ; 005345eb | DAT_0203aec4
     MOV dword ptr [EBX + 0x15aec0],ECX  ; 005345f1
-    CALL core_setdir.cpp_FUN_005418d0   ; 005345f7
-        ;   XREF to: 005418d0 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_005418d0()
+    CALL core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_005418d0 ; 005345f7
+        ;   XREF to: 005418d0 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_005418d0(CDemonSet * this_ptr)
     MOV EAX,dword ptr [EBX]             ; 005345fc
     ADD ESP,0x4                         ; 005345fe
     TEST EAX,EAX                        ; 00534601
@@ -254,14 +254,14 @@ section .text
         ;   Label: LAB_0053464e
     PUSH EBP                            ; 00534651
     CALL core_setutil.cpp_C3DSLight_create_FUN_00542940 ; 00534652
-        ;   XREF to: 00542940 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_C3DSLight_create_FUN_00542940()
+        ;   XREF to: 00542940 (UNCONDITIONAL_CALL)  ; CDemonLight * core_setutil.cpp_C3DSLight_create_FUN_00542940(C3DSLight * this_ptr)
     ADD ESP,0x4                         ; 00534657
     PUSH EAX                            ; 0053465a
     MOV EDX,dword ptr [0x0203a414]      ; 0053465b | DAT_0203a414
     PUSH EBP                            ; 00534661
     MOV dword ptr [EDX*0x4 + 0x203a418],EAX ; 00534662 | DAT_0203a418
     CALL core_setutil.cpp_C3DSLight_apply_FUN_00542aa0 ; 00534669
-        ;   XREF to: 00542aa0 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_C3DSLight_apply_FUN_00542aa0()
+        ;   XREF to: 00542aa0 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSLight_apply_FUN_00542aa0(C3DSLight * this_ptr, CDemonLight * light)
     MOV EDX,dword ptr [0x0203a414]      ; 0053466e | DAT_0203a414
     INC EDX                             ; 00534674
     ADD ESP,0x8                         ; 00534675

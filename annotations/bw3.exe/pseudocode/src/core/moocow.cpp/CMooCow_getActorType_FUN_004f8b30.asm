@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_moocow_cpp_CMooCow_getActorType_FUN_004f8b30(CMooCow *this_ptr)
+; CDemonActorType * __cdecl core_moocow_cpp_CMooCow_getActorType_FUN_004f8b30(CMooCow *this_ptr)
 ;
 ; Parameters:
 ; CMooCow *        Stack[0x4]:4   this_ptr

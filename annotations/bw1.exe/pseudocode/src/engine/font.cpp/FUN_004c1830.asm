@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[2]:
-;   engine_font.cpp_FUN_004c0b60 at 004c0b66
-;   engine_font.cpp_FUN_004c1540 at 004c1548
+;   engine_font.cpp_CBitFont_dtor_FUN_004c0b60 at 004c0b66
+;   engine_font.cpp_CBitFont_loadNewBitmap_FUN_004c1540 at 004c1548
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c0336
 ;   crt_unknown.c_FUN_005c09f0
-;   engine_font.cpp_FUN_004c0b80
+;   engine_font.cpp_CBitFont_reset_FUN_004c0b80
 ;
 ; *****************************************************************************
 
@@ -45,8 +45,8 @@ section .text
     JNZ 0x004c1892                      ; 004c186e
         ;   XREF to: 004c1892 (CONDITIONAL_JUMP)  ; LAB_004c1892
     PUSH EDI                            ; 004c1870
-    CALL engine_font.cpp_FUN_004c0b80   ; 004c1871
-        ;   XREF to: 004c0b80 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_FUN_004c0b80(CBitFont * this_ptr)
+    CALL engine_font.cpp_CBitFont_reset_FUN_004c0b80 ; 004c1871
+        ;   XREF to: 004c0b80 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_reset_FUN_004c0b80(CBitFont * this_ptr)
     ADD ESP,0x4                         ; 004c1876
     POP EDI                             ; 004c1879
     POP ESI                             ; 004c187a
@@ -66,8 +66,8 @@ section .text
         ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c09f0()
     ADD ESP,0x4                         ; 004c1898
     PUSH EDI                            ; 004c189b
-    CALL engine_font.cpp_FUN_004c0b80   ; 004c189c
-        ;   XREF to: 004c0b80 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_FUN_004c0b80(CBitFont * this_ptr)
+    CALL engine_font.cpp_CBitFont_reset_FUN_004c0b80 ; 004c189c
+        ;   XREF to: 004c0b80 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_reset_FUN_004c0b80(CBitFont * this_ptr)
     ADD ESP,0x4                         ; 004c18a1
     POP EDI                             ; 004c18a4
     POP ESI                             ; 004c18a5

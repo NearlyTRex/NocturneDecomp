@@ -2,16 +2,17 @@
 // Address: 005b8100
 // Address Range: [[005b8100, 005b8124]]
 // Convention: __cdecl
-// Signature: void __cdecl crt_stdio_c_fscanf_FUN_005b8100(undefined4 param_1,undefined4 param_2)
+// Signature: int __cdecl crt_stdio_c_fscanf_FUN_005b8100(_FILE *file,char *format)
 
 #include "nocturne.h"
 
-void __cdecl _fscanf(uint param_1,uint param_2)
+int __cdecl _fscanf(_FILE *file,char *format)
 
 {
+  int iVar1;
   byte *local_8;
   
   local_8 = &stack0x0000000c;
-  FUN_005b8078(param_1,param_2,&local_8);
-  return;
+  iVar1 = FUN_005b8078(file,format,&local_8);
+  return iVar1;
 }

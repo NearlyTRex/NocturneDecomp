@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setutil_cpp_C3DSCamera_reset_FUN_0053a870(void *param_1)
+; void __cdecl core_setutil_cpp_C3DSCamera_reset_FUN_0053a870(C3DSCamera *this_ptr)
 ;
+; Parameters:
+; C3DSCamera *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_setutil.cpp_FUN_0053a8e0 at 0053a8f9
+;   core_setutil.cpp_C3DSCamera_load_FUN_0053a8e0 at 0053a8f9
 ;
 ; Called Functions:
 ;   core_setutil.cpp_C3DSCamera_free_FUN_0053a830
@@ -20,7 +22,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 0053a871
     PUSH EBX                            ; 0053a875
     CALL core_setutil.cpp_C3DSCamera_free_FUN_0053a830 ; 0053a876
-        ;   XREF to: 0053a830 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_C3DSCamera_free_FUN_0053a830()
+        ;   XREF to: 0053a830 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSCamera_free_FUN_0053a830(C3DSCamera * this_ptr)
     ADD ESP,0x4                         ; 0053a87b
     PUSH 0x1a4                          ; 0053a87e
     PUSH 0x0                            ; 0053a883

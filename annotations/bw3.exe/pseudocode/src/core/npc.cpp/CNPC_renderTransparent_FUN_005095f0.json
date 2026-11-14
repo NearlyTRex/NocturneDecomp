@@ -1,0 +1,364 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 193,
+    "complexity_score": 173,
+    "cross_reference_count": 1,
+    "function_call_count": 12,
+    "global_count": 9,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 83,
+    "suspect_count": 7,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "undefined_data",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 276
+  },
+  "cross_references": [
+    {
+      "addr": "0059a850",
+      "from_addr": "0059a884",
+      "name": "core_spirindi.cpp_CSpiritIndian_renderTransparent_FUN_0059a850",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005095f0",
+    "address_range": [
+      [
+        "005095f0",
+        "005097fc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_npc.cpp_CNPC_renderTransparent_FUN_005095f0",
+    "signature": "int __cdecl core_npc_cpp_CNPC_renderTransparent_FUN_005095f0(CNPC *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408830",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830"
+    },
+    {
+      "addr": "004087f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0"
+    },
+    {
+      "addr": "0041daf0",
+      "is_variadic": false,
+      "name": "core_box.cpp_FUN_0041daf0"
+    },
+    {
+      "addr": "0043fc50",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_CClothList_render_FUN_0043fc50"
+    },
+    {
+      "addr": "00491aa0",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0"
+    },
+    {
+      "addr": "004fcdc0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_FUN_004fcdc0"
+    },
+    {
+      "addr": "0054e3a0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0"
+    },
+    {
+      "addr": "005a3120",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005a3120"
+    },
+    {
+      "addr": "0046e4e0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0"
+    },
+    {
+      "addr": "0046d4b0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0"
+    },
+    {
+      "addr": "0046d4c0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0"
+    },
+    {
+      "addr": "0046e120",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e120"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005cb5c3",
+      "name": "s_heroCanSee_005cb5c3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb5d0",
+      "name": "DAT_005cb5d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cb5d8",
+      "name": "DAT_005cb5d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cb5e0",
+      "name": "DAT_005cb5e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cb5e8",
+      "name": "DAT_005cb5e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f2afc",
+      "name": "DAT_005f2afc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fba60",
+      "name": "DAT_005fba60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bdd7e4",
+      "name": "DAT_01bdd7e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d8e40c",
+      "name": "DAT_01d8e40c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0059a884",
+        "call_type": "direct",
+        "caller": "core_spirindi.cpp_CSpiritIndian_renderTransparent_FUN_0059a850",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.071895424836601,
+    "instruction_count": 153,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 2,
+      "BRANCH": 3,
+      "CALL": 12,
+      "CALLIND": 1,
+      "CBRANCH": 14,
+      "COPY": 251,
+      "FLOAT2FLOAT": 10,
+      "FLOAT_ADD": 1,
+      "FLOAT_DIV": 2,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 3,
+      "INT_ADD": 61,
+      "INT_AND": 71,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 61,
+      "INT_LEFT": 4,
+      "INT_LESS": 8,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 7,
+      "INT_OR": 5,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 30,
+      "INT_SUB": 53,
+      "INT_XOR": 2,
+      "INT_ZEXT": 6,
+      "LOAD": 37,
+      "POPCOUNT": 30,
+      "RETURN": 3,
+      "ROUND": 1,
+      "STORE": 46,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 776
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00510990",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1829
+    },
+    "bw1.exe": {
+      "addr": "00531ba0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1829
+    }
+  },
+  "stack_frame": {
+    "frame_size": 72,
+    "local_size": 68,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNPC *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005095f9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 64,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "this_ptr_01 = DAT_005f2afc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 70,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,(uint)((this_ptr->base).additive != 0));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 71,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e120(DAT_005f2afc,1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 75,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0(DAT_005f2afc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 58,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 49,
+      "match": "pCVar4 = (T *)((pCVar4->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCVar4 = (CNPC *)((pCVar4->base).base.actor_name + 4);",
+      "type": "shadow_pointer_walk"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPassenger",
+        "offset": 20,
+        "vtable_addr": "005e2fe4"
+      },
+      {
+        "class_name": "CPryeMorph",
+        "offset": 20,
+        "vtable_addr": "005e36e4"
+      },
+      {
+        "class_name": "CNPC",
+        "offset": 20,
+        "vtable_addr": "005e2df4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 3
+  }
+}

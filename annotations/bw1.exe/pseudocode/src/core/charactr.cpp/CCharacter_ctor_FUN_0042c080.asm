@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CCharacter * core_charactr_cpp_CCharacter_ctor_FUN_0042c080(CCharacter *this_ptr)
+; CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_0042c080(CCharacter *this_ptr)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
@@ -21,17 +21,17 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
+;   core_bird.cpp_CBird_ctor_FUN_004151f0 at 004151f9
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a0410 at 004a041b
-;   core_hero.cpp_FUN_004ea830 at 004ea836
+;   core_hero.cpp_CHero_ctor_FUN_004ea830 at 004ea836
 ;   core_moocow.cpp_CMooCow_ctor_FUN_00521300 at 00521306
 ;   core_npc.cpp_CNPC_ctor_FUN_00531670 at 00531679
-;   unkafter_bird.cpp_CBird_ctor_FUN_004151f0 at 004151f9
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;   WatcomTypeInfo g_CFlameTypeInfo
 ;   undefined4 DAT_005fd618
-;   void* g_CCharacterVTable = 0042c510
+;   CCharacter_full_vtable g_CCharacterVTable
 ;   WatcomTypeInfo g_SFireTypeInfo
 ;
 ; Called Functions:
@@ -72,28 +72,28 @@ section .text
     ADD EAX,0x1c8                       ; 0042c0b7
     PUSH EAX                            ; 0042c0bc
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 0042c0bd
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0042c0c2
     PUSH 0x5fb430                       ; 0042c0c5 | g_CVectorTypeInfo
     PUSH 0xf                            ; 0042c0ca
     ADD EAX,0xb4                        ; 0042c0cc
     PUSH EAX                            ; 0042c0d1
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 0042c0d2
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0042c0d7
     PUSH 0x5fd770                       ; 0042c0da | g_SFireTypeInfo
     PUSH 0x32                           ; 0042c0df
     ADD EAX,0x210                       ; 0042c0e1
     PUSH EAX                            ; 0042c0e6
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 0042c0e7
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0042c0ec
     PUSH 0x5fb960                       ; 0042c0ef | g_CFlameTypeInfo
     PUSH 0x32                           ; 0042c0f4
     ADD EAX,0x4b0                       ; 0042c0f6
     PUSH EAX                            ; 0042c0fb
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 0042c0fc
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA ESI,[EAX + 0xffffca24]          ; 0042c101
     MOV dword ptr [ESI + 0x154],0x5fd624 ; 0042c107 | g_CCharacterVTable
     LEA EAX,[ESI + 0x2518]              ; 0042c111
@@ -163,13 +163,13 @@ section .text
     PUSH EDI                            ; 0042c2a3
     MOV dword ptr [EBX + 0x25ac],0xffffffff ; 0042c2a4
     CALL core_xform.cpp_setIdentityMatrix3x4_FUN_005b53f0 ; 0042c2ae
-        ;   XREF to: 005b53f0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_setIdentityMatrix3x4_FUN_005b53f0()
+        ;   XREF to: 005b53f0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_setIdentityMatrix3x4_FUN_005b53f0(CMatrix3x4f * matrix)
     ADD ESP,0x4                         ; 0042c2b3
     ADD EBX,0x78                        ; 0042c2b6
     PUSH EBP                            ; 0042c2b9
     MOV dword ptr [EBX + 0x2570],0x3f800000 ; 0042c2ba
     CALL core_xform.cpp_setIdentityMatrix3x4_FUN_005b53f0 ; 0042c2c4
-        ;   XREF to: 005b53f0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_setIdentityMatrix3x4_FUN_005b53f0()
+        ;   XREF to: 005b53f0 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_setIdentityMatrix3x4_FUN_005b53f0(CMatrix3x4f * matrix)
     ADD ESP,0x4                         ; 0042c2c9
     ADD EDI,0x78                        ; 0042c2cc
     MOV EAX,dword ptr [ESP + 0x30]      ; 0042c2cf

@@ -6,11 +6,10 @@
 #include "system/basetypes.h"
 
 // Structure: CEditorTools
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x1 (1 bytes)
 #pragma pack(push, 1)
 typedef struct CEditorTools {
-    char field_0[1]; // 0x0
+    char unused; // 0x0
 } CEditorTools;
 #pragma pack(pop)
 

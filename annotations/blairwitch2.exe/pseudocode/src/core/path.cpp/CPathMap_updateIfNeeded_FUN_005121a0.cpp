@@ -16,63 +16,53 @@ void __cdecl core_path_cpp_CPathMap_updateIfNeeded_FUN_005121a0(CPathMap *this_p
   uint *puVar3;
   uint *puVar4;
   byte bVar5;
-  float afStackY_1008 [1010];
-  float local_38;
-  float local_34;
-  float local_30;
-  float local_2c;
-  float local_28;
-  float local_24;
-  uint local_20;
+  int aiStackY_1008 [1010];
+  CVector3i local_20;
   
   bVar5 = 0;
   if (force_update == 0) {
-    iVar2 = *(int *)&this_ptr->field_0x138d8 - _DAT_01c2a370;
-    *(int *)&this_ptr->field_0x138d8 = iVar2;
+    iVar2 = this_ptr->update_timer - _DAT_01c2a370;
+    this_ptr->update_timer = iVar2;
     if (iVar2 < 0) {
-      *(int *)&this_ptr->field_0x138d8 = iVar2 + 0x4000;
+      this_ptr->update_timer = iVar2 + 0x4000;
     }
-    else {
-      local_38 = *(float *)source_position - *(float *)&this_ptr->field_0x138c0;
-      local_34 = *(float *)&source_position->field_0x4 - *(float *)&this_ptr->field_0x138c4;
-      local_30 = *(float *)&source_position->field_0x8 - *(float *)&this_ptr->field_0x138c8;
-      local_2c = local_38;
-      local_28 = local_34;
-      local_24 = local_30;
-      if (((ABS(local_38) < (float)_DAT_005e1799) && (ABS(local_34) < (float)_DAT_005e1799)) &&
-         (ABS(local_30) < (float)_DAT_005e1799)) {
-        return;
-      }
+    else if (((ABS(source_position->x - (this_ptr->cached_world_position).x) < (float)_DAT_005e1799)
+             && (ABS(source_position->y - (this_ptr->cached_world_position).y) <
+                 (float)_DAT_005e1799)) &&
+            (ABS(source_position->z - (this_ptr->cached_world_position).z) < (float)_DAT_005e1799))
+    {
+      return;
     }
   }
   else {
     uVar1 = rand();
-    *(uint *)&this_ptr->field_0x138d8 = uVar1 & 0x3fff;
+    this_ptr->update_timer = uVar1 & 0x3fff;
   }
   if (this_ptr != (CPathMap *)source_position) {
-    *(uint *)this_ptr = *(uint *)source_position;
-    *(uint *)&this_ptr->field_0x4 = *(uint *)&source_position->field_0x4;
-    *(uint *)&this_ptr->field_0x8 = *(uint *)&source_position->field_0x8;
+    (this_ptr->current_position).x = source_position->x;
+    (this_ptr->current_position).y = source_position->y;
+    (this_ptr->current_position).z = source_position->z;
   }
-  core_dtrace_cpp_FUN_00476a50(&g_CDemonRaytraceInstance,this_ptr);
+  core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00476a50
+            (&g_CDemonRaytraceInstance,&this_ptr->current_position,&local_20);
   puVar3 = (uint *)((int)this_ptr + (uint)bVar5 * -8 + 0x10);
-  *(uint *)&this_ptr->field_0xc = local_20;
-  *puVar3 = *(uint *)(&stack0xffffffe4 + (uint)bVar5 * -8);
+  (this_ptr->voxel_coords).x = local_20.x;
+  *puVar3 = *(uint *)((int)&local_20 + (uint)bVar5 * -8 + 4);
   puVar3[(uint)bVar5 * -2 + 1] =
-       *(uint *)(&stack0xffffffe8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
-  if (((*(int *)&this_ptr->field_0xc == *(int *)&this_ptr->field_0x138b0) &&
-      (*(int *)&this_ptr->field_0x138b4 == *(int *)&this_ptr->field_0x10)) &&
-     (*(int *)&this_ptr->field_0x138b8 == *(int *)&this_ptr->field_0x14)) {
+       *(uint *)((int)&local_20 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
+  if ((((this_ptr->voxel_coords).x == (this_ptr->cached_voxel_coords).x) &&
+      ((this_ptr->cached_voxel_coords).y == (this_ptr->voxel_coords).y)) &&
+     ((this_ptr->cached_voxel_coords).z == (this_ptr->voxel_coords).z)) {
     return;
   }
   puVar4 = (uint *)((int)this_ptr + (uint)bVar5 * -8 + 0x138b4);
   puVar3 = (uint *)((int)this_ptr + (uint)bVar5 * -8 + 0x10);
-  *(uint *)&this_ptr->field_0x138b0 = *(uint *)&this_ptr->field_0xc;
+  (this_ptr->cached_voxel_coords).x = (this_ptr->voxel_coords).x;
   *puVar4 = *puVar3;
   puVar4[(uint)bVar5 * -2 + 1] = puVar3[(uint)bVar5 * -2 + 1];
-  *(int *)&this_ptr->field_0x24 = *(int *)&this_ptr->field_0xc + -0x32;
-  *(uint *)&this_ptr->field_0x28 = *(uint *)&this_ptr->field_0x10;
-  *(int *)&this_ptr->field_0x2c = *(int *)&this_ptr->field_0x14 + -0x32;
+  (this_ptr->grid_origin).x = (this_ptr->voxel_coords).x + -0x32;
+  (this_ptr->grid_origin).y = (this_ptr->voxel_coords).y;
+  (this_ptr->grid_origin).z = (this_ptr->voxel_coords).z + -0x32;
   core_path_cpp_CPathMap_reset_FUN_00513eb0(this_ptr);
   return;
 }

@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[1]:
-;   crt_unknown.c_FUN_005b9bbc at 005b9bd0
+;   crt_unknown.c_fflush_FUN_005b9bbc at 005b9bd0
 ;
 ; Called Functions:
-;   unkafter_morph.cpp_FUN_005c4080
+;   crt_unknown.c_FUN_005c4080
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
     MOV dword ptr [EBX + 0x2c],0xffffffff ; 005c0b64
     PUSH EAX                            ; 005c0b6b
     MOV byte ptr [EBX + 0x39],DL        ; 005c0b6c
-    CALL unkafter_morph.cpp_FUN_005c4080 ; 005c0b6f
-        ;   XREF to: 005c4080 (UNCONDITIONAL_CALL)  ; undefined unkafter_morph.cpp_FUN_005c4080()
+    CALL crt_unknown.c_FUN_005c4080     ; 005c0b6f
+        ;   XREF to: 005c4080 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c4080()
     ADD ESP,0x4                         ; 005c0b74
     TEST EAX,EAX                        ; 005c0b77
     JNZ 0x005c0b4a                      ; 005c0b79

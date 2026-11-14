@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 95,
+    "complexity_score": 88,
     "cross_reference_count": 5,
     "function_call_count": 7,
     "global_count": 9,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 45,
+    "pseudocode_lines": 38,
     "suspect_count": 4,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 187
+    "total_lines": 180
   },
   "cross_references": [
     {
@@ -25,7 +25,7 @@
     {
       "addr": "004c51e0",
       "from_addr": "004c53f0",
-      "name": "core_frankgen.cpp_FUN_004c51e0",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004c51e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -43,7 +43,7 @@
     {
       "addr": "005a7870",
       "from_addr": "005a7b12",
-      "name": "core_vehicle.cpp_FUN_005a7870",
+      "name": "core_vehicle.cpp_CVehicle_setup_FUN_005a7870",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -63,7 +63,7 @@
     {
       "addr": "00447d50",
       "is_variadic": false,
-      "name": "core_course.cpp_FUN_00447d50"
+      "name": "core_course.cpp_CCourse_allocMemory_FUN_00447d50"
     },
     {
       "addr": "00447ee0",
@@ -158,7 +158,7 @@
       {
         "call_addr": "004c53f0",
         "call_type": "direct",
-        "caller": "core_frankgen.cpp_FUN_004c51e0",
+        "caller": "core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004c51e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -202,7 +202,7 @@
       {
         "call_addr": "005a7b12",
         "call_type": "direct",
-        "caller": "core_vehicle.cpp_FUN_005a7870",
+        "caller": "core_vehicle.cpp_CVehicle_setup_FUN_005a7870",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -245,6 +245,32 @@
     },
     "pcode_op_count": 456
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00438af0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00444970",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00442580",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.991
+    },
+    "nocturne.exe": {
+      "addr": "0043b690",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 32,
     "local_size": 24,
@@ -286,26 +312,26 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 12,
       "match": "DAT_005d7188",
       "severity": "mild",
-      "text": "p_Var1 = engine_dosio_cpp_FUN_00479180(&DAT_005d7188,filename,&DAT_005d7185);",
+      "text": "file = engine_dosio_cpp_FUN_00479180(&DAT_005d7188,filename,&DAT_005d7185);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 12,
       "match": "DAT_005d7185",
       "severity": "mild",
-      "text": "p_Var1 = engine_dosio_cpp_FUN_00479180(&DAT_005d7188,filename,&DAT_005d7185);",
+      "text": "file = engine_dosio_cpp_FUN_00479180(&DAT_005d7188,filename,&DAT_005d7185);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 22,
       "match": "DAT_005d71c3",
       "severity": "mild",
-      "text": "_fscanf(p_Var1,&DAT_005d71c3,auStack_18);",
+      "text": "_fscanf(file,&DAT_005d71c3);",
       "type": "undefined_data"
     }
   ]

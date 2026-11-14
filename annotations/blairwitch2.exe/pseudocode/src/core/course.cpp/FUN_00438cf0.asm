@@ -45,7 +45,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_course.cpp_FUN_00438c40 at 00438c6c
+;   core_course.cpp_CCourse_evaluate_FUN_00438c40 at 00438c6c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ce07a

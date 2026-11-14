@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 129,
+    "complexity_score": 61,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 34,
-    "suspect_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 36,
+    "suspect_count": 2,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_field",
-      "unresolved_funcptr"
+      "negative_offset"
     ],
-    "total_lines": 119
+    "total_lines": 121
   },
   "cross_references": [],
   "function": {
@@ -25,9 +23,9 @@
         "00532922"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_passngr.cpp_CPassenger_dtor_FUN_00532850",
-    "signature": "CPassenger * core_passngr_cpp_CPassenger_dtor_FUN_00532850(CPassenger *this_ptr,uint flags)"
+    "signature": "CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_00532850(CPassenger *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -36,9 +34,14 @@
       "name": "core_actor.cpp_CDemonActor_dtor_FUN_00408730"
     },
     {
+      "addr": "0040ee30",
+      "is_variadic": false,
+      "name": "core_armour.cpp_FUN_0040ee30"
+    },
+    {
       "addr": "00441ca0",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_00441ca0"
+      "name": "core_cloth.cpp_CClothList_dtor_FUN_00441ca0"
     },
     {
       "addr": "00522fc0",
@@ -69,19 +72,14 @@
       "addr": "005c0344",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005c0344"
-    },
-    {
-      "addr": "0040ee30",
-      "is_variadic": false,
-      "name": "unkafter_armour.cpp_FUN_0040ee30"
     }
   ],
   "globals": [
     {
       "addr": "00604614",
       "name": "g_CPassengerVTable",
-      "type": "undefined1*",
-      "value": "00532930"
+      "type": "CCharacter_full_vtable",
+      "value": null
     },
     {
       "addr": "00604760",
@@ -124,6 +122,32 @@
     },
     "pcode_op_count": 303
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005114f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9645
+    },
+    "bw3.exe": {
+      "addr": "0050a530",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00545c10",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8553
+    },
+    "nocturne.exe": {
+      "addr": "004ef5c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9007
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -149,74 +173,26 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x1fbc0",
-      "severity": "mild",
-      "text": "iVar3 = *(int *)&this_ptr->field_0x1fbc0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "*(byte ***)&this_ptr->field_0x154 = &g_CPassengerVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 23,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar3 + 0x154) + 0xd0))(iVar3,2);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x1fbc4",
-      "severity": "mild",
-      "text": "pCVar1 = core_morph_cpp_CMorph_dtor_FUN_00522fc0((CMorph *)&this_ptr->field_0x1fbc4,0);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
       "line": 27,
       "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "iVar3 = unkafter_armour_cpp_FUN_0040ee30(&pCVar2[-1].field_0xace8,0);",
+      "text": "iVar3 = core_armour_cpp_FUN_0040ee30(pCVar2[-1].height_cache_tags[10] + 0x36,0);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0xace8",
-      "severity": "mild",
-      "text": "iVar3 = unkafter_armour_cpp_FUN_0040ee30(&pCVar2[-1].field_0xace8,0);",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 32,
+      "line": 33,
       "match": "pCVar5[-1].",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)&pCVar5[-1].field_0x224c,1);",
+      "text": "((CDemonActor *)(pCVar5[-1].part_data.texture_set_indices + 7),1);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x224c",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)&pCVar5[-1].field_0x224c,1);",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CPassenger",
         "offset": 208,
         "vtable_addr": "00604614"
       },

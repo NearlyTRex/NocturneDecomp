@@ -2,15 +2,56 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDeformableModelInstance;
+struct CDemonActor;
+struct CKeyFramedModel;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CEnemy.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CMatrix3x4f.h"
+#include "types/classes/CVector3f.h"
+#include "types/enums/EBugsState.h"
+#include "types/structs/SBug.h"
+#include "types/structs/SSwarmVertex.h"
 
 // Structure: CBugs
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x1bea4 (114340 bytes)
 #pragma pack(push, 1)
 typedef struct CBugs {
-    char field_0[114340]; // 0x0
+    CEnemy base; // 0x0
+    EBugsState state; // 0xd054
+    int count; // 0xd058
+    SBug bugs[400]; // 0xd05c
+    int model_count; // 0x1345c
+    CKeyFramedModelInstance models[1]; // 0x13460, Added in this build
+    float ground_heights[12][12]; // 0x135dc
+    struct CDemonActor* swarm_target; // 0x1381c
+    struct CDeformableModelInstance* deformable_model_ptr; // 0x13820
+    CMatrix3x4f model_world_matrix; // 0x13824
+    int lod_index; // 0x13854
+    int swarm_vertex_count; // 0x13858
+    SSwarmVertex swarm_vertices[850]; // 0x1385c, Added in this build
+    int allow_chase; // 0x1bd2c
+    int allow_swarm; // 0x1bd30
+    float remove_bug_timer; // 0x1bd34, Added in this build
+    float max_life_timer; // 0x1bd38, Added in this build
+    char allow_chase_event[100]; // 0x1bd3c
+    char allow_swarm_event[100]; // 0x1bda0
+    char animate_event[100]; // 0x1be04
+    CBoundingBox3D bounds; // 0x1be68
+    int grid_cell_x; // 0x1be80
+    int grid_cell_z; // 0x1be84
+    float grid_origin_x; // 0x1be88
+    float grid_origin_z; // 0x1be8c
+    float damage_timer; // 0x1be90
+    int has_attacked; // 0x1be94, Added in this build
+    float attack_timer; // 0x1be98, Added in this build
+    uint loop_sfx_handle; // 0x1be9c, Added in this build
+    uint munch_sfx_handle; // 0x1bea0, Added in this build
 } CBugs;
 #pragma pack(pop)
 

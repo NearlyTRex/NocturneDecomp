@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_0046f340(undefined4 *param_1,int param_2,int param_3)
+; void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_0046f340(SMRGLSkyTexture *sky_texture,int u_coord,int v_coord,int vertex_index)
 ;
+; Parameters:
+; SMRGLSkyTexture * Stack[0x4]:4   sky_texture
+; int              Stack[0x8]:4   u_coord
+; int              Stack[0xc]:4   v_coord
+; int              Stack[0x10]:4   vertex_index
 ; Local Variables:
 ; undefined4       Stack[-0x48]:4  local_48
 ; undefined4       Stack[-0x44]:4  local_44
@@ -14,7 +19,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_dskybox.cpp_FUN_0046f480 at 0046f7c9
+;   core_dskybox.cpp_renderSkyDome_FUN_0046f480 at 0046f7c9
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005bc7b5

@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   engine_2d.c_FUN_00402940 at 004029e8
+;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 004029e8
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ca08c

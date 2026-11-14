@@ -7,15 +7,15 @@
 
 // Original: core_marquee.cpp_staticInit_FUN_005068c0
 // Address: 005068c0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_marquee.cpp_factoryFuncMarquee_FUN_005068f0
 // Address: 005068f0
-void factoryFuncMarquee(void);
+CMarquee * __cdecl factoryFuncMarquee(void);
 
 // Original: core_marquee.cpp_CMarquee_getActorType_FUN_00506910
 // Address: 00506910
-CDemonActorType * CMarquee::getActorType(CMarquee *this_ptr);
+CDemonActorType * __cdecl CMarquee::getActorType(CMarquee *this_ptr);
 
 // Original: core_marquee.cpp_CMarquee_ctor_FUN_00506920
 // Address: 00506920
@@ -33,30 +33,38 @@ void __cdecl CMarquee::setup(CMarquee *this_ptr);
 // Address: 00506b60
 void __cdecl CMarquee::process(CMarquee *this_ptr,float delta_time);
 
-// Original: core_marquee.cpp_FUN_00506c10
+// Original: core_marquee.cpp_CMarquee_renderOpaque_FUN_00506c10
 // Address: 00506c10
-undefined4 FUN_00506c10(CDemonActor *param_1);
+int __cdecl CMarquee::renderOpaque(CMarquee *this_ptr);
 
 // Original: core_marquee.cpp_CMarquee_renderLightBulb_FUN_00506c90
 // Address: 00506c90
 void __cdecl CMarquee::renderLightBulb(CMarquee *this_ptr,CVector3f *position);
 
-// Original: core_marquee.cpp_FUN_00506e20
+// Original: core_marquee.cpp_CMarquee_renderTransparent_FUN_00506e20
 // Address: 00506e20
-undefined4 FUN_00506e20(CMarquee *param_1);
+int __cdecl CMarquee::renderTransparent(CMarquee *this_ptr);
 
 // Original: core_marquee.cpp_CMarquee_archive_FUN_00507140
 // Address: 00507140
 void __cdecl CMarquee::archive(CMarquee *this_ptr);
 
-// Original: core_marquee.cpp_FUN_005071c0
+// Original: core_marquee.cpp_CMarquee_getCollisionType_FUN_005071c0
 // Address: 005071c0
-undefined4 FUN_005071c0(void);
+ECollisionType __cdecl CMarquee::getCollisionType(CMarquee *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_marquee.cpp_FUN_005071d0
+// Original: core_marquee.cpp_CMarquee_getBoundingBox_FUN_005071d0
 // Address: 005071d0
-void FUN_005071d0(int param_1);
+CBoundingBox3D * __cdecl CMarquee::getBoundingBox(CMarquee *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_marquee.cpp_CMarquee_dtor_FUN_00507250
 // Address: 00507250
 CMarquee * __cdecl CMarquee::dtor(CMarquee *this_ptr,uint flags);
+
+// Original: core_marquee.cpp_FUN_005072c0
+// Address: 005072c0
+undefined8 FUN_005072c0(void);
+
+// Original: core_marquee.cpp_FUN_00507340
+// Address: 00507340
+void FUN_00507340(void);

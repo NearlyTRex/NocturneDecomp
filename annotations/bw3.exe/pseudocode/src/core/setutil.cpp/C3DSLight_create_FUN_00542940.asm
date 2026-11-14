@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined8 __cdecl core_setutil_cpp_C3DSLight_create_FUN_00542940(int param_1)
+; CDemonLight * __cdecl core_setutil_cpp_C3DSLight_create_FUN_00542940(C3DSLight *this_ptr)
 ;
+; Parameters:
+; C3DSLight *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -17,12 +19,12 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_dfilter.cpp_FUN_00459710
-;   core_dirmat.cpp_FUN_0045b550
+;   core_dfilter.cpp_CFilterCache_getFilter_FUN_00459710
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
 ;   core_dlight.cpp_CDemonLight_ctor_FUN_0045c180
 ;   core_dlight.cpp_CDemonLight_init_FUN_0045c2a0
 ;   core_main.c_FUN_004e4330
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_memory.c_operator_new_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -36,8 +38,8 @@ section .text
     SUB ESP,0x4                         ; 00542944
     MOV EBP,dword ptr [ESP + 0x18]      ; 00542947
     PUSH 0x2fac                         ; 0054294b
-    CALL crt_unknown.c_FUN_005a3cb2     ; 00542950
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 00542950
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
     ADD ESP,0x4                         ; 00542955
     TEST EAX,EAX                        ; 00542958
     JNZ 0x00542a6e                      ; 0054295a
@@ -86,8 +88,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 005429d7
     ADD EAX,0x10                        ; 005429db
     PUSH EAX                            ; 005429de
-    CALL core_dirmat.cpp_FUN_0045b550   ; 005429df
-        ;   XREF to: 0045b550 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_0045b550(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550 ; 005429df
+        ;   XREF to: 0045b550 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 005429e4
     MOV EAX,dword ptr [ESP]             ; 005429e7
     MOV EDX,dword ptr [EBP + 0x11c]     ; 005429ea
@@ -107,8 +109,8 @@ section .text
     PUSH EAX                            ; 00542a14
     ADD EBX,0x4                         ; 00542a15
     INC ESI                             ; 00542a18
-    CALL core_dfilter.cpp_FUN_00459710  ; 00542a19
-        ;   XREF to: 00459710 (UNCONDITIONAL_CALL)  ; undefined core_dfilter.cpp_FUN_00459710()
+    CALL core_dfilter.cpp_CFilterCache_getFilter_FUN_00459710 ; 00542a19
+        ;   XREF to: 00459710 (UNCONDITIONAL_CALL)  ; CDemonFilter * core_dfilter.cpp_CFilterCache_getFilter_FUN_00459710(CFilterCache * this_ptr, char * filter_name, int blend_filter)
     MOV dword ptr [EBX + 0x180c],EAX    ; 00542a1e
     ADD EDI,0x28                        ; 00542a24
     MOV EDX,dword ptr [EBP + 0x11ec]    ; 00542a27

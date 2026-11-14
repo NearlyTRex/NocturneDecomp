@@ -2,19 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 324,
+    "complexity_score": 209,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 69,
-    "suspect_count": 24,
+    "pseudocode_lines": 99,
+    "suspect_count": 8,
     "suspect_types": [
+      "builtin_function",
+      "derived_field_index_pun",
       "negative_offset",
-      "unnamed_field",
+      "pointer_cast",
+      "pointer_truncation",
       "unrolled_strcpy"
     ],
-    "total_lines": 196
+    "total_lines": 226
   },
   "cross_references": [
     {
@@ -109,6 +112,32 @@
     },
     "pcode_op_count": 424
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00424f80",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00420ea0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9289
+    },
+    "nocedit.exe": {
+      "addr": "00424cb0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00421040",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -127,176 +156,48 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "iVar3 = __arrinit(&pCVar2[1].field_0x8,400,&g_SBugTypeInfo);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0xd4",
-      "severity": "mild",
-      "text": "*(byte ***)&this_ptr_00[-0xf6].field_0xd4 = &g_CBugsVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0xe4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[-0x44].field_0xe4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0xe8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[-0x44].field_0xe8 = 0x32;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0xec",
-      "severity": "mild",
-      "text": "memset(&this_ptr_00[-0x44].field_0xec,0,0x6400);",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(void *)((int)pvVar3",
+      "severity": "moderate",
+      "text": "((void *)((int)pvVar3 + 0x6404),4,&g_CKeyFramedModelInstanceTypeInfo);",
+      "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 21,
+      "line": 27,
       "match": "this_ptr_00[-1].",
       "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[-1].field_0x178 = 3;",
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)0x3;",
       "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x178",
+      "description": "Ghidra builtin function",
+      "line": 88,
+      "match": "builtin_strncpy",
       "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[-1].field_0x178 = 3;",
-      "type": "unnamed_field"
+      "text": "builtin_strncpy(this_ptr_00[-0xffffffff000000d5].model_name + 0xe0,\")\\\\\\x1f@\",4);",
+      "type": "builtin_function"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0xd8",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)&this_ptr_00[-0xf6].field_0xd8,(char *)0x5cc92d);",
-      "type": "unnamed_field"
+      "description": "Pointer value `pvVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 16,
+      "match": "(int)pvVar3",
+      "severity": "moderate",
+      "text": "((void *)((int)pvVar3 + 0x6404),4,&g_CKeyFramedModelInstanceTypeInfo);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0xc4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[5].field_0xc4 = 0;",
-      "type": "unnamed_field"
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 53,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0xc8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[5].field_0xc8 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x100",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[5].field_0x100 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x94",
-      "severity": "mild",
-      "text": "pcVar5 = &this_ptr_00[0x4f].field_0x94;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x8c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[0x4f].field_0x8c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0xf8",
-      "severity": "mild",
-      "text": "pcVar5 = &this_ptr_00[0x4f].field_0xf8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x90",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[0x4f].field_0x90 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 57,
-      "match": "field_0x15c",
-      "severity": "mild",
-      "text": "pcVar5 = &this_ptr_00[0x4f].field_0x15c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 67,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[-0xd5].field_0x158 = 0x401f5c29;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 68,
-      "match": "field_0x15c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[-0xd5].field_0x15c = 0x40200000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 69,
-      "match": "field_0x168",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[-0xd5].field_0x168 = 0x3fa66666;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 70,
-      "match": "field_0x16c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[-0xd5].field_0x16c = 0x3fc00000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 71,
-      "match": "field_0x11c",
-      "severity": "mild",
-      "text": "return (CBugs *)&this_ptr_00[-0xf8].field_0x11c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 35,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -304,19 +205,18 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 47,
+      "line": 79,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
     },
     {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 58,
-      "match": "do {",
+      "description": "'pCVar2[1].base.base.actor_name + 8' walks 1 x sizeof(CEnemy) (0x10af8) + offsetof(base.base.actor_name) (0x0) + 0x8 = 0x10b00, which is exactly offsetof(CArmour, fall_apart_event[8]). Ghidra had no CArmour type here and reached the field by index arithmetic; write it as ((CArmour *)pCVar2)->fall_apart_event[8] (\u00a7de-pun/\u00a712). Ambiguous: CBatCreature::part_indices[2], CBatman::fall_event[8], CBoneGuy::pickup_cooldown also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 14,
       "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
+      "text": "(pCVar2[1].base.base.actor_name + 8,400,&g_SBugTypeInfo);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

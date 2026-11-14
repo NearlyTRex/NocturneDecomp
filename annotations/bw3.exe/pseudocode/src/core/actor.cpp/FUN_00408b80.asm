@@ -13,16 +13,16 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[131]:
-;   core_actor.cpp_FUN_00409f60 at 00409fe6
-;   core_actor.cpp_FUN_0040c990 at 0040c9a8
-;   core_asgaya.cpp_FUN_005a0be0 at 005a0df4
-;   core_baal.cpp_FUN_005968a0 at 00596ff0
-;   core_blundrbs.cpp_FUN_00410490 at 004104e0
-;   core_bodypart.cpp_FUN_00415570 at 004155e9
-;   core_bodypart.cpp_FUN_004157c0 at 00415b54
-;   core_bodypart.cpp_FUN_00415e30 at 004161a7
-;   core_bodypart.cpp_FUN_00416750 at 004167a4
-;   core_bodypart.cpp_FUN_00416970 at 00416a97
+;   core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040c990 at 0040c9a8
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f60 at 00409fe6
+;   core_asgaya.cpp_CAsgaya_process_FUN_005a0be0 at 005a0df4
+;   core_baal.cpp_CBaal_process_FUN_005968a0 at 00596ff0
+;   core_bird.cpp_CBird_process_FUN_0040fb40 at 0040fc14
+;   core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490 at 004104e0
+;   core_bodypart.cpp_CBodyPart_addFire_FUN_00416750 at 004167a4
+;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_00415e30 at 004161a7
+;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_004157c0 at 00415b54
+;   core_bodypart.cpp_CBodyPart_processFires_FUN_00415570 at 004155e9
 ;   ... and 121 more
 ;
 ; Called Functions:

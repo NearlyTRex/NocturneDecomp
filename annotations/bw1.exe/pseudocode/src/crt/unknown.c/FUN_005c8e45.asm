@@ -5,17 +5,17 @@
 ;
 ;
 ; XREF[8]:
-;   crt_unknown.c_FUN_005c1f9c at 005c1fc1
-;   crt_unknown.c_FUN_005c1fd7 at 005c1fec
-;   crt_unknown.c_FUN_005c2019 at 005c2055
-;   crt_unknown.c_FUN_005c2078 at 005c20bb
-;   unkafter_2d.cpp_FUN_005cdc9c at 005cdcd3
-;   unkafter_2d.cpp_FUN_005ce203 at 005ce252
-;   unkafter_2d.cpp_FUN_005ce269 at 005ce2d6
-;   unkafter_zombie.cpp_FUN_005cc4d2 at 005cc523
+;   crt_unknown.c_FUN_005cc4d2 at 005cc523
+;   crt_unknown.c_FUN_005cdc9c at 005cdcd3
+;   crt_unknown.c_FUN_005ce203 at 005ce252
+;   crt_unknown.c_FUN_005ce269 at 005ce2d6
+;   crt_unknown.c_fflush_FUN_005c1f9c at 005c1fc1
+;   crt_unknown.c_ios_clear_FUN_005c1fd7 at 005c1fec
+;   crt_unknown.c_istream_seekg_FUN_005c2078 at 005c20bb
+;   crt_unknown.c_openFile_FUN_005c2019 at 005c2055
 ;
 ; Called Functions:
-;   unkafter_zombie.cpp_FUN_005cc3d2
+;   crt_unknown.c_FUN_005cc3d2
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
         ;   Label: LAB_005c8e67
     LEA EAX,[ESP + 0x4]                 ; 005c8e68
     PUSH EAX                            ; 005c8e6c
-    CALL unkafter_zombie.cpp_FUN_005cc3d2 ; 005c8e6d
-        ;   XREF to: 005cc3d2 (UNCONDITIONAL_CALL)  ; undefined unkafter_zombie.cpp_FUN_005cc3d2()
+    CALL crt_unknown.c_FUN_005cc3d2     ; 005c8e6d
+        ;   XREF to: 005cc3d2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005cc3d2()
     ADD ESP,0x8                         ; 005c8e72
     ADD ESP,0x4                         ; 005c8e75
     POP EBX                             ; 005c8e78

@@ -19,7 +19,7 @@ void shape_edittool_cpp_FUN_0047a480(int param_1,int param_2,int param_3)
       engine_2d_c_plotPixel_FUN_00401130(param_1,param_2);
       return;
     }
-    engine_mini3d_cpp_FUN_004f8fe0(param_1,param_2);
+    engine_mini3d_cpp_drawPixel_FUN_004f8fe0(param_1,param_2);
   }
   return;
 }

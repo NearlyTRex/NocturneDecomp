@@ -20,9 +20,9 @@
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005b77c0
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;   sound_snddx.cpp_FUN_00554ad0
-;   sound_sndmain.cpp_FUN_005549c0
+;   sound_sndmain.cpp_logSoundError_FUN_005549c0
 ;
 ; *****************************************************************************
 
@@ -211,18 +211,18 @@ section .text
     PUSH 0x5e9a3b                       ; 00555f76 | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0xc]                 ; 00555f7b
     PUSH EAX                            ; 00555f7f
-    CALL crt_unknown.c_FUN_005b7790     ; 00555f80
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 00555f80
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x10                        ; 00555f85
     MOV EAX,ESP                         ; 00555f88
     PUSH EAX                            ; 00555f8a
-    CALL sound_sndmain.cpp_FUN_005549c0 ; 00555f8b
-        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005549c0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005549c0 ; 00555f8b
+        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005549c0(char * format)
     ADD ESP,0x4                         ; 00555f90
     PUSH 0x5e9c15                       ; 00555f93 | = "DirectSoundDevice::allocateSample - a..."
         ;   Label: LAB_00555f93
-    CALL sound_sndmain.cpp_FUN_005549c0 ; 00555f98
-        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005549c0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005549c0 ; 00555f98
+        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005549c0(char * format)
     ADD ESP,0x4                         ; 00555f9d
     XOR EAX,EAX                         ; 00555fa0
     ADD ESP,0x1b8                       ; 00555fa2

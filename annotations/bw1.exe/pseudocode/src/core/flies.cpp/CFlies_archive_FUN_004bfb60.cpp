@@ -9,22 +9,21 @@
 void __cdecl core_flies_cpp_CFlies_archive_FUN_004bfb60(CFlies *this_ptr)
 
 {
-  core_actor_cpp_CDemonActor_archive_FUN_0040c040((CDemonActor *)this_ptr);
-  core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x164,"count");
+  core_actor_cpp_CDemonActor_archive_FUN_0040c040(&this_ptr->base);
+  core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->fly_count,"count");
   if (g_CFliesClassVersion < 2) {
     if (g_CFliesClassVersion < 3) {
       return;
     }
   }
   else {
-    core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x2a08,"followActor");
-    core_actor_cpp_archiveInteger_FUN_0040b670
-              ((int *)&this_ptr->field_0x2a0c,"gatherCount");
-    core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x2a14,"gatherTime");
+    core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->follow_actor,"followActor");
+    core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->gather_count,"gatherCount");
+    core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->gather_time,"gatherTime");
     if (g_CFliesClassVersion < 3) {
       return;
     }
   }
-  core_actor_cpp_archiveVector_FUN_0040b1c0(&this_ptr->field_0x158,"boxSize");
+  core_actor_cpp_archiveVector_FUN_0040b1c0(&this_ptr->box_size,"boxSize");
   return;
 }

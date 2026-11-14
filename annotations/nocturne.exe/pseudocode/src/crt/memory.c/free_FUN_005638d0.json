@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 7,
     "complexity_score": 5,
-    "cross_reference_count": 65,
+    "cross_reference_count": 66,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -26,15 +26,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004f3f50",
-      "from_addr": "004f3f76",
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_FUN_004f3f50",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004f3f80",
       "from_addr": "004f3f8f",
       "name": "cockpit_pkbitmap.cpp_CPackedBitmap_freePackedData_FUN_004f3f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f3f50",
+      "from_addr": "004f3f76",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_004f3f50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -70,7 +70,7 @@
     {
       "addr": "0044adf0",
       "from_addr": "0044ae33",
-      "name": "core_dcube.cpp_CDemonCube_FUN_0044adf0",
+      "name": "core_dcube.cpp_CDemonCube_freeMemory_FUN_0044adf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -110,15 +110,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004a57c0",
-      "from_addr": "004a5d62",
-      "name": "core_game.cpp_CGame_FUN_004a57c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004a6e90",
       "from_addr": "004a7267",
       "name": "core_game.cpp_CGame_rollCredits_FUN_004a6e90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a57c0",
+      "from_addr": "004a5d62",
+      "name": "core_game.cpp_CGame_showFullscreenBitmap_FUN_004a57c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -136,7 +136,7 @@
     {
       "addr": "004fe500",
       "from_addr": "004fe538",
-      "name": "core_script.cpp_CScript_FUN_004fe500",
+      "name": "core_script.cpp_CScript_clear_FUN_004fe500",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -239,6 +239,12 @@
       "addr": "00571364",
       "from_addr": "0057137d",
       "name": "crt_unknown.c_FUN_00571364",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00572cb0",
+      "from_addr": "00572ce5",
+      "name": "crt_unknown.c_FUN_00572cb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -443,6 +449,14 @@
       "STORE": 2
     },
     "pcode_op_count": 21
+  },
+  "siblings": {
+    "nocedit.exe": {
+      "addr": "00601cd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 8,

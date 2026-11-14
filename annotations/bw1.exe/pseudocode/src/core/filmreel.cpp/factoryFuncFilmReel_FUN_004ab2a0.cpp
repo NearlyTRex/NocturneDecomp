@@ -1,20 +1,20 @@
 // Name: core_filmreel.cpp_factoryFuncFilmReel_FUN_004ab2a0
 // Address: 004ab2a0
 // Address Range: [[004ab2a0, 004ab2bb]]
-// Convention: unknown
-// Signature: void core_filmreel_cpp_factoryFuncFilmReel_FUN_004ab2a0(void)
+// Convention: __cdecl
+// Signature: CFilmReel * __cdecl core_filmreel_cpp_factoryFuncFilmReel_FUN_004ab2a0(void)
 
 #include "nocturne.h"
 
-void core_filmreel_cpp_factoryFuncFilmReel_FUN_004ab2a0(void)
+CFilmReel * __cdecl core_filmreel_cpp_factoryFuncFilmReel_FUN_004ab2a0(void)
 
 {
-  CFilmReel *this_ptr;
+  CFilmReel *pCVar1;
   
-  this_ptr = (CFilmReel *)FUN_005c0f32(0x31c);
-  if (this_ptr == (CFilmReel *)0x0) {
-    return;
+  pCVar1 = (CFilmReel *)operator_new(0x31c);
+  if (pCVar1 == (CFilmReel *)0x0) {
+    return (CFilmReel *)0x0;
   }
-  core_filmreel_cpp_CFilmReel_ctor_FUN_004ab2d0(this_ptr);
-  return;
+  pCVar1 = core_filmreel_cpp_CFilmReel_ctor_FUN_004ab2d0(pCVar1);
+  return pCVar1;
 }

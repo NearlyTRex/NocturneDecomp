@@ -7,15 +7,15 @@
 ; CGlass *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[9]:
-;   core_actor.cpp_FUN_00409f20 at 0040a4e1
-;   core_crossbow.cpp_FUN_00449a50 at 0044a04c
-;   core_elephant.cpp_FUN_0049e1a0 at 0049e916
-;   core_gun.cpp_FUN_004e8630 at 004e8e05
-;   core_rifle.cpp_FUN_00540080 at 00540725
-;   core_set.cpp_FUN_0054fc20 at 0054ffed
-;   core_shotgun.cpp_FUN_00561760 at 00561ed9
-;   core_tommygun.cpp_FUN_00598420 at 00598c3a
-;   core_turret.cpp_FUN_005a3870 at 005a3da7
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f20 at 0040a4e1
+;   core_crossbow.cpp_CCrossbow_fire_FUN_00449a50 at 0044a04c
+;   core_elephant.cpp_CElephantGun_fire_FUN_0049e1a0 at 0049e916
+;   core_gun.cpp_CGun_fire_FUN_004e8630 at 004e8e05
+;   core_rifle.cpp_CRifle_fire_FUN_00540080 at 00540725
+;   core_set.cpp_CDemonSet_processActors_FUN_0054fc20 at 0054ffed
+;   core_shotgun.cpp_CShotgun_fire_FUN_00561760 at 00561ed9
+;   core_tommygun.cpp_CTommyGun_fire_FUN_00598420 at 00598c3a
+;   core_turret.cpp_CTurret_fire_FUN_005a3870 at 005a3da7
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061b4d0

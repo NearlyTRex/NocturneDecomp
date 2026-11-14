@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 120,
-    "complexity_score": 217,
+    "complexity_score": 62,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 7,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 32,
-    "suspect_count": 17,
+    "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_few",
       "undefined_data",
-      "unnamed_param"
+      "unrolled_memcpy"
     ],
     "total_lines": 152
   },
@@ -34,7 +33,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_event.cpp_parseVectorLocation_FUN_00488e30",
-    "signature": "undefined4 __cdecl core_event_cpp_parseVectorLocation_FUN_00488e30(int param_1,int *param_2,undefined4 *param_3)"
+    "signature": "int __cdecl core_event_cpp_parseVectorLocation_FUN_00488e30(char *buffer,int *offset,CVector3f *out_position)"
   },
   "function_calls": [
     {
@@ -50,7 +49,7 @@
     {
       "addr": "005b7790",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7790"
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
     }
   ],
   "globals": [
@@ -123,11 +122,11 @@
         "stack_params": 3
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
     "estimated_params": 3,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.171428571428572,
@@ -154,11 +153,37 @@
     },
     "pcode_op_count": 438
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004a14a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0048ba80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004aa530",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0047a4c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 124,
+    "frame_size": 136,
     "local_size": 124,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -174,148 +199,46 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "offset",
+        "offset": 8,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "out_position",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint __cdecl core_event_cpp_parseVectorLocation_FUN_00488e30(int param_1,int *param_2,uint *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint __cdecl core_event_cpp_parseVectorLocation_FUN_00488e30(int param_1,int *param_2,uint *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uint __cdecl core_event_cpp_parseVectorLocation_FUN_00488e30(int param_1,int *param_2,uint *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "sscanf((char *)(param_1 + *param_2),\" { %f, %f, %f }%n\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "sscanf((char *)(param_1 + *param_2),\" { %f, %f, %f }%n\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*param_2 = *param_2 + local_14;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*param_2 = *param_2 + local_14;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "sscanf((char *)(param_1 + *param_2),\" %[^ ,(){}]%n\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "sscanf((char *)(param_1 + *param_2),\" %[^ ,(){}]%n\");",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 17,
       "match": "DAT_01c3dd10",
       "severity": "mild",
-      "text": "FUN_005b7790(&DAT_01c3dd10,\"Error parsing vector location\");",
+      "text": "_sprintf(&DAT_01c3dd10,\"Error parsing vector location\");",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*param_2 = *param_2 + local_14;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*param_2 = *param_2 + local_14;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 != (uint *)(iVar1 + 0x20)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
       "line": 28,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*param_3 = *(uint *)(iVar1 + 0x20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3[1] = *(uint *)(iVar1 + 0x24);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3[2] = *(uint *)(iVar1 + 0x28);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "out_position->x = (pCVar1->location).position.x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

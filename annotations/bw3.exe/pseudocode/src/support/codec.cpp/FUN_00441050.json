@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 83,
+    "complexity_score": 47,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 33,
-    "suspect_count": 4,
+    "pseudocode_lines": 32,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
       "unresolved_funcptr"
     ],
-    "total_lines": 122
+    "total_lines": 121
   },
   "cross_references": [
     {
@@ -89,6 +88,20 @@
     },
     "pcode_op_count": 392
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004346d0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004433f0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 20,
     "local_size": 4,
@@ -128,36 +141,12 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 9,
-      "match": "(int *)((int)bit_buffer",
-      "severity": "moderate",
-      "text": "piVar1 = (int *)((int)bit_buffer * 0x10 + *(int *)(this_ptr + 0x10));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 20,
-      "match": "(int *)((int)istream",
-      "severity": "moderate",
-      "text": "piVar1 = (int *)((int)istream * 0x10 + *(int *)(this_ptr + 0x10));",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 26,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)(*bytes_remaining + 4))",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(byte *)((int)bit_buffer",
-      "severity": "moderate",
-      "text": "*(byte *)((int)bit_buffer * 0x10 + *(int *)(this_ptr + 0x10)));",
-      "type": "pointer_cast"
     }
   ]
 }

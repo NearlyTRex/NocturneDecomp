@@ -7,15 +7,15 @@
 
 // Original: engine_ini.cpp_staticInit_FUN_004f4360
 // Address: 004f4360
-void staticInit(void);
+void __cdecl staticInit(void);
 
-// Original: engine_ini.cpp_FUN_004f4370
+// Original: engine_ini.cpp_CIni_getProfileString_FUN_004f4370
 // Address: 004f4370
-int __cdecl FUN_004f4370(CIni *this_ptr,char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename);
+int __cdecl CIni::getProfileString(CIni *this_ptr,char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename);
 
 // Original: engine_ini.cpp_FUN_004f4550
 // Address: 004f4550
-int FUN_004f4550(undefined4 *param_1,undefined4 param_2,char *param_3,undefined4 param_4,char *param_5);
+int FUN_004f4550(undefined4 *param_1,undefined4 param_2,char *param_3,char *param_4,char *param_5);
 
 // Original: engine_ini.cpp_CIni_writeProfileString_FUN_004f4720
 // Address: 004f4720
@@ -25,9 +25,9 @@ int __cdecl CIni::writeProfileString(CIni *this_ptr,char *section,char *key,char
 // Address: 004f49f0
 void __cdecl getProfileString(char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename);
 
-// Original: engine_ini.cpp_FUN_004f4a30
+// Original: engine_ini.cpp_getProfileInteger_FUN_004f4a30
 // Address: 004f4a30
-void FUN_004f4a30(char *param_1,char *param_2,undefined4 param_3,char *param_4);
+int __cdecl getProfileInteger(char *section,char *key,int default_value,char *filename);
 
 // Original: engine_ini.cpp_writeProfileString_FUN_004f4ad0
 // Address: 004f4ad0
@@ -39,7 +39,7 @@ CIniFile * FUN_004f4b00(CIniFile *param_1,char *param_2,char *param_3);
 
 // Original: engine_ini.cpp_CIniFile_dtor_FUN_004f4b30
 // Address: 004f4b30
-CIniFile * CIniFile::dtor(CIniFile *this_ptr,uint flags);
+CIniFile * __cdecl CIniFile::dtor(CIniFile *this_ptr,uint flags);
 
 // Original: engine_ini.cpp_initIniFile_FUN_004f4b80
 // Address: 004f4b80
@@ -49,42 +49,42 @@ void __cdecl initIniFile(char *dest,char *source);
 // Address: 004f4bc0
 void __cdecl CIniFile::readIniHeader(CIniFile *this_ptr,char *section);
 
-// Original: engine_ini.cpp_FUN_004f4c00
+// Original: engine_ini.cpp_CIniFile_getString_FUN_004f4c00
 // Address: 004f4c00
-void FUN_004f4c00(char *param_1,char *param_2,char *param_3,int param_4);
+void __cdecl CIniFile::getString(CIniFile *this_ptr,char *key,char *output_buffer,int buffer_size);
 
-// Original: engine_ini.cpp_FUN_004f4c90
+// Original: engine_ini.cpp_CIniFile_setString_FUN_004f4c90
 // Address: 004f4c90
-void FUN_004f4c90(char *param_1,char *param_2,char *param_3);
+void __cdecl CIniFile::setString(CIniFile *this_ptr,char *key,char *value);
 
 // Original: engine_ini.cpp_FUN_004f4d10
 // Address: 004f4d10
-void FUN_004f4d10(int param_1,undefined4 param_2,undefined4 *param_3);
+void FUN_004f4d10(int param_1,undefined4 param_2);
 
 // Original: engine_ini.cpp_FUN_004f4d70
 // Address: 004f4d70
-void FUN_004f4d70(int param_1,undefined4 param_2,undefined4 param_3);
+void FUN_004f4d70(int param_1,undefined4 param_2);
 
 // Original: engine_ini.cpp_FUN_004f4db0
 // Address: 004f4db0
-void FUN_004f4db0(int param_1,undefined4 param_2,float *param_3);
+void FUN_004f4db0(int param_1,undefined4 param_2);
 
 // Original: engine_ini.cpp_FUN_004f4e20
 // Address: 004f4e20
-void FUN_004f4e20(int param_1,undefined4 param_2,float param_3);
+void FUN_004f4e20(int param_1,undefined4 param_2);
 
-// Original: engine_ini.cpp_FUN_004f4e6e
-// Address: 004f4e6e
-void FUN_004f4e6e(int param_1,undefined4 param_2,undefined4 *param_3);
+// Original: engine_ini.cpp_FUN_004f4e70
+// Address: 004f4e70
+void FUN_004f4e70(void);
 
 // Original: engine_ini.cpp_FUN_004f4ee0
 // Address: 004f4ee0
-void FUN_004f4ee0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+void FUN_004f4ee0(int param_1,undefined4 param_2);
 
 // Original: engine_ini.cpp_CIni_ctor_FUN_004f4f30
 // Address: 004f4f30
-CIni * CIni::ctor(CIni *this_ptr);
+CIni * __cdecl CIni::ctor(CIni *this_ptr);
 
 // Original: engine_ini.cpp_CIni_dtor_FUN_004f4f40
 // Address: 004f4f40
-CIni * CIni::dtor(CIni *this_ptr,uint flags);
+CIni * __cdecl CIni::dtor(CIni *this_ptr,uint flags);

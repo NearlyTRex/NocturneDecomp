@@ -2,40 +2,39 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 294,
+    "complexity_score": 240,
     "cross_reference_count": 3,
     "function_call_count": 13,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 64,
-    "suspect_count": 20,
+    "pseudocode_lines": 65,
+    "suspect_count": 15,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 201
+    "total_lines": 202
   },
   "cross_references": [
     {
+      "addr": "004bd570",
+      "from_addr": "004bda81",
+      "name": "core_game.cpp_CGame_process_FUN_004bd570",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004b6170",
       "from_addr": "004b6c1e",
-      "name": "core_game.cpp_FUN_004b6170",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004b82e0",
       "from_addr": "004b844f",
       "name": "core_game.cpp_FUN_004b82e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004bd570",
-      "from_addr": "004bda81",
-      "name": "core_game.cpp_FUN_004bd570",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -63,39 +62,14 @@
       "name": "core_sound.cpp_updateListeners_FUN_00558d50"
     },
     {
-      "addr": "00550450",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00550450"
-    },
-    {
-      "addr": "005504d0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005504d0"
-    },
-    {
       "addr": "00551220",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00551220"
-    },
-    {
-      "addr": "005512a0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005512a0"
-    },
-    {
-      "addr": "00551570",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00551570"
+      "name": "sound_sndmain.cpp_enableSfxChannel_FUN_00551220"
     },
     {
       "addr": "005524b0",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005524b0"
-    },
-    {
-      "addr": "00552b20",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00552b20"
+      "name": "sound_sndmain.cpp_enableSoundSystem_FUN_005524b0"
     },
     {
       "addr": "00551190",
@@ -103,9 +77,34 @@
       "name": "sound_sndmain.cpp_getSfxChannelVol_FUN_00551190"
     },
     {
+      "addr": "005512a0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSfxChannelEnabled_FUN_005512a0"
+    },
+    {
+      "addr": "00552b20",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSoundBusy_FUN_00552b20"
+    },
+    {
+      "addr": "005504d0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005504d0"
+    },
+    {
+      "addr": "00550450",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_00550450"
+    },
+    {
       "addr": "00552cc0",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_set3DListenerOrientRight_FUN_00552cc0"
+    },
+    {
+      "addr": "00551570",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_set3DListenerVelocity_FUN_00551570"
     },
     {
       "addr": "00550310",
@@ -133,25 +132,25 @@
     },
     {
       "addr": "01fc0e28",
-      "name": "g_CDemonSetInstance.field1420400_0x15ac70",
+      "name": "g_CDemonSetInstance.active_fog.scroll.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fc0e2c",
-      "name": "g_CDemonSetInstance.field1420404_0x15ac74",
+      "name": "g_CDemonSetInstance.active_fog.scroll.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fc0e30",
-      "name": "g_CDemonSetInstance.field1420408_0x15ac78",
+      "name": "g_CDemonSetInstance.active_fog.scroll.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fc0e70",
-      "name": "g_CDemonSetInstance.field1420472_0x15acb8",
+      "name": "g_CDemonSetInstance.player_on_train",
       "type": "undefined4",
       "value": null
     },
@@ -264,7 +263,7 @@
       {
         "call_addr": "004b6c1e",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b6170",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -275,7 +274,7 @@
       {
         "call_addr": "004b6df2",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b6170",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -308,7 +307,7 @@
       {
         "call_addr": "004bda81",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bd570",
+        "caller": "core_game.cpp_CGame_process_FUN_004bd570",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -444,48 +443,8 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 49,
-      "match": "field_0x15acb8",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CDemonSetPtr->field_0x15acb8 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 50,
-      "match": "field_0x15ac70",
-      "severity": "mild",
-      "text": "local_18 = -*(float *)&g_CDemonSetPtr->field_0x15ac70;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x15ac74",
-      "severity": "mild",
-      "text": "local_14 = -*(float *)&g_CDemonSetPtr->field_0x15ac74;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 52,
-      "match": "field_0x15ac78",
-      "severity": "mild",
-      "text": "local_10 = -*(float *)&g_CDemonSetPtr->field_0x15ac78;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x15ac70",
-      "severity": "mild",
-      "text": "local_24 = -*(float *)&g_CDemonSetPtr->field_0x15ac70;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 54,
+      "line": 55,
       "match": "&stack0xffffffe0",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar2 * -8) =",
@@ -493,7 +452,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 55,
+      "line": 56,
       "match": "&stack0xffffffec",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar2 * -8);",
@@ -501,7 +460,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 56,
+      "line": 57,
       "match": "&stack0xffffffe4",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffe4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
@@ -509,7 +468,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 57,
+      "line": 58,
       "match": "&stack0xfffffff0",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
@@ -517,7 +476,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 58,
+      "line": 59,
       "match": "&stack0x00000000",
       "severity": "moderate",
       "text": "if (&stack0x00000000 != (byte *)0x264bba8) {",
@@ -525,7 +484,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffffe0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 54,
+      "line": 55,
       "match": "(int)&stack0xffffffe0",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar2 * -8) =",
@@ -533,7 +492,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffffec` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 55,
+      "line": 56,
       "match": "(int)&stack0xffffffec",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar2 * -8);",
@@ -541,7 +500,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffffe4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 56,
+      "line": 57,
       "match": "(int)&stack0xffffffe4",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffe4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
@@ -549,7 +508,7 @@
     },
     {
       "description": "Pointer value `&stack0xfffffff0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 57,
+      "line": 58,
       "match": "(int)&stack0xfffffff0",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
@@ -557,7 +516,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 54,
+      "line": 55,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar2 * -8) =",
@@ -565,7 +524,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 55,
+      "line": 56,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar2 * -8);",
@@ -573,7 +532,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 56,
+      "line": 57,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffe4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
@@ -581,7 +540,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 57,
+      "line": 58,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",

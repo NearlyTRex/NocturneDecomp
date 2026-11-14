@@ -9,5 +9,5 @@
 ECollisionType __cdecl core_lever_cpp_CLever_getCollisionType_FUN_004e0a10(CLever *this_ptr,SCollisionInfo *collision_info)
 
 {
-  return (uint)(*(int *)&this_ptr->field_0x810 != 0);
+  return (uint)(this_ptr->enable_collision != 0);
 }

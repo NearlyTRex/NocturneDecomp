@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 78,
+    "complexity_score": 13,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 13,
-    "suspect_count": 6,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 49
   },
   "cross_references": [],
@@ -31,12 +29,12 @@
     {
       "addr": "00408890",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408890"
+      "name": "core_actor.cpp_CDemonActor_setup_FUN_00408890"
     },
     {
       "addr": "0040ce40",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040ce40"
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40"
     },
     {
       "addr": "0040f2f0",
@@ -46,7 +44,7 @@
     {
       "addr": "00444970",
       "is_variadic": false,
-      "name": "core_course.cpp_FUN_00444970"
+      "name": "core_course.cpp_CCourse_load_FUN_00444970"
     },
     {
       "addr": "00462580",
@@ -86,6 +84,32 @@
     },
     "pcode_op_count": 134
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004110a0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00410c20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004148a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00411ae0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -102,56 +126,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x188",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&this_ptr->field_0x188);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "core_course_cpp_FUN_00444970((CCourse *)&this_ptr->field_0x178,&this_ptr->field_0x158);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_course_cpp_FUN_00444970((CCourse *)&this_ptr->field_0x178,&this_ptr->field_0x158);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x380",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x380 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x378",
-      "severity": "mild",
-      "text": "uVar1 = core_actor_cpp_FUN_0040ce40(*(uint *)&this_ptr->field_0x378);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x384",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x384 = uVar1;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

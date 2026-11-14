@@ -2,24 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1902,
-    "complexity_score": 2193,
+    "complexity_score": 1594,
     "cross_reference_count": 2,
     "function_call_count": 21,
     "global_count": 192,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 803,
-    "suspect_count": 135,
+    "pseudocode_lines": 829,
+    "suspect_count": 74,
     "suspect_types": [
-      "raw_address_constant",
       "undefined_data",
-      "unnamed_field",
-      "unresolved_funcptr",
       "unrolled_strcat",
       "unrolled_strcpy",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 2705
+    "total_lines": 2731
   },
   "cross_references": [
     {
@@ -56,7 +53,7 @@
     {
       "addr": "004b6e10",
       "is_variadic": false,
-      "name": "core_game.cpp_FUN_004b6e10"
+      "name": "core_game.cpp_CGame_restoreDefaultControls_FUN_004b6e10"
     },
     {
       "addr": "004e4500",
@@ -66,12 +63,7 @@
     {
       "addr": "004eb490",
       "is_variadic": false,
-      "name": "core_menu.cpp_FUN_004eb490"
-    },
-    {
-      "addr": "004eeba0",
-      "is_variadic": false,
-      "name": "core_menu.cpp_FUN_004eeba0"
+      "name": "core_menu.cpp_calibrateGamepad_FUN_004eb490"
     },
     {
       "addr": "004ee960",
@@ -79,9 +71,14 @@
       "name": "core_menu.cpp_getKeyDisplayName_FUN_004ee960"
     },
     {
+      "addr": "004eeba0",
+      "is_variadic": false,
+      "name": "core_menu.cpp_isKeyCodeValidForMode_FUN_004eeba0"
+    },
+    {
       "addr": "005b7790",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7790"
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
     },
     {
       "addr": "004032b0",
@@ -99,9 +96,19 @@
       "name": "engine_special.cpp_clearScreen_FUN_0055b1f0"
     },
     {
+      "addr": "0047be40",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0047be40"
+    },
+    {
       "addr": "00481fc0",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CPickList_ctor_FUN_00481fc0"
+    },
+    {
+      "addr": "00482250",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00482250"
     },
     {
       "addr": "004820b0",
@@ -119,29 +126,19 @@
       "name": "shape_edittool.cpp_CPickList_setOkButtonText_FUN_00482150"
     },
     {
+      "addr": "00482240",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_setSelectedResult_FUN_00482240"
+    },
+    {
       "addr": "00480e70",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_add_FUN_00480e70"
     },
     {
-      "addr": "0047be40",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0047be40"
-    },
-    {
       "addr": "0047be90",
       "is_variadic": false,
       "name": "shape_edittool.cpp_FUN_0047be90"
-    },
-    {
-      "addr": "00482240",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_00482240"
-    },
-    {
-      "addr": "00482250",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_00482250"
     },
     {
       "addr": "0050fe80",
@@ -151,7 +148,7 @@
     {
       "addr": "00589560",
       "is_variadic": false,
-      "name": "wincore_wddvmem.cpp_FUN_00589560"
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00589560"
     }
   ],
   "globals": [
@@ -559,31 +556,31 @@
     },
     {
       "addr": "01cb6928",
-      "name": "g_CGameInstance.field40_0x28",
+      "name": "g_CGameInstance.key_walk",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb692c",
-      "name": "g_CGameInstance.field44_0x2c",
+      "name": "g_CGameInstance.key_backup",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb69ac",
-      "name": "g_CGameInstance.field172_0xac",
+      "name": "g_CGameInstance.always_run",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb69b8",
-      "name": "g_CGameInstance.field184_0xb8",
+      "name": "g_CGameInstance.x_center",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb69d0",
-      "name": "g_CGameInstance.field208_0xd0",
+      "name": "g_CGameInstance.game_control",
       "type": "undefined4",
       "value": null
     },
@@ -1411,72 +1408,32 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0xd0",
-      "severity": "mild",
-      "text": "if (((*(int *)&g_CGamePtr->field_0xd0 == 2) && (*(int *)&g_CGamePtr->field_0xb8 == 0)) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0xb8",
-      "severity": "mild",
-      "text": "if (((*(int *)&g_CGamePtr->field_0xd0 == 2) && (*(int *)&g_CGamePtr->field_0xb8 == 0)) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 57,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "puVar25 = &g_CGamePtr->field_0x28;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 65,
       "match": "DAT_01d086f4",
       "severity": "mild",
-      "text": "*(byte **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = puVar25;",
+      "text": "*(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 76,
       "match": "DAT_005dd3aa",
       "severity": "mild",
       "text": "pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(&DAT_005dd3aa);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 76,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "puVar25 = &g_CGamePtr->field_0x2c;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 84,
       "match": "DAT_01d086f4",
       "severity": "mild",
-      "text": "*(byte **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = puVar25;",
+      "text": "*(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 94,
-      "match": "field_0xac",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0xac == 0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 95,
+      "line": 96,
       "match": "DAT_005dd3b4",
       "severity": "mild",
       "text": "pcVar2 = &DAT_005dd3b4;",
@@ -1484,379 +1441,195 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 99,
       "match": "DAT_005dd3af",
       "severity": "mild",
       "text": "pcVar2 = &DAT_005dd3af;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 101,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "puVar25 = &g_CGamePtr->field_0x30;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 108,
+      "line": 109,
       "match": "DAT_01d086f4",
       "severity": "mild",
-      "text": "*(byte **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = puVar25;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 120,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "puVar25 = &g_CGamePtr->field_0x34;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 127,
-      "match": "DAT_01d086f4",
-      "severity": "mild",
-      "text": "*(byte **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = puVar25;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 139,
-      "match": "field_0x38",
-      "severity": "mild",
-      "text": "puVar25 = &g_CGamePtr->field_0x38;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 146,
-      "match": "DAT_01d086f4",
-      "severity": "mild",
-      "text": "*(byte **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = puVar25;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 158,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "puVar25 = &g_CGamePtr->field_0x3c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 165,
-      "match": "DAT_01d086f4",
-      "severity": "mild",
-      "text": "*(byte **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = puVar25;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 177,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "puVar25 = &g_CGamePtr->field_0x44;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 184,
-      "match": "DAT_01d086f4",
-      "severity": "mild",
-      "text": "*(byte **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = puVar25;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 196,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "puVar25 = &g_CGamePtr->field_0x40;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 203,
-      "match": "DAT_01d086f4",
-      "severity": "mild",
-      "text": "*(byte **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = puVar25;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 215,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "puVar25 = &g_CGamePtr->field_0x48;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 222,
-      "match": "DAT_01d086f4",
-      "severity": "mild",
-      "text": "*(byte **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = puVar25;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 234,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "puVar25 = &g_CGamePtr->field_0x4c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 241,
-      "match": "DAT_01d086f4",
-      "severity": "mild",
-      "text": "*(byte **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = puVar25;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 253,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "puVar25 = &g_CGamePtr->field_0x50;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 260,
-      "match": "DAT_01d086f4",
-      "severity": "mild",
-      "text": "*(byte **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = puVar25;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 272,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "puVar25 = &g_CGamePtr->field_0x68;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 279,
-      "match": "DAT_01d086f4",
-      "severity": "mild",
-      "text": "*(byte **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = puVar25;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 291,
-      "match": "field_0x74",
-      "severity": "mild",
-      "text": "puVar25 = &g_CGamePtr->field_0x74;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 298,
-      "match": "DAT_01d086f4",
-      "severity": "mild",
-      "text": "*(byte **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = puVar25;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 310,
-      "match": "field_0x78",
-      "severity": "mild",
-      "text": "puVar25 = &g_CGamePtr->field_0x78;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 317,
-      "match": "DAT_01d086f4",
-      "severity": "mild",
-      "text": "*(byte **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = puVar25;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 329,
-      "match": "field_0x7c",
-      "severity": "mild",
-      "text": "puVar25 = &g_CGamePtr->field_0x7c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 336,
-      "match": "DAT_01d086f4",
-      "severity": "mild",
-      "text": "*(byte **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = puVar25;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 348,
-      "match": "field_0x80",
-      "severity": "mild",
-      "text": "puVar25 = &g_CGamePtr->field_0x80;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 355,
-      "match": "DAT_01d086f4",
-      "severity": "mild",
-      "text": "*(byte **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = puVar25;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 367,
-      "match": "field_0x84",
-      "severity": "mild",
-      "text": "puVar25 = &g_CGamePtr->field_0x84;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 374,
-      "match": "DAT_01d086f4",
-      "severity": "mild",
-      "text": "*(byte **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = puVar25;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 386,
-      "match": "field_0x90",
-      "severity": "mild",
-      "text": "puVar25 = &g_CGamePtr->field_0x90;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 393,
-      "match": "DAT_01d086f4",
-      "severity": "mild",
-      "text": "*(byte **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = puVar25;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 405,
-      "match": "field_0x94",
-      "severity": "mild",
-      "text": "puVar25 = &g_CGamePtr->field_0x94;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 412,
-      "match": "DAT_01d086f4",
-      "severity": "mild",
-      "text": "*(byte **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = puVar25;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 424,
-      "match": "field_0x98",
-      "severity": "mild",
-      "text": "puVar25 = &g_CGamePtr->field_0x98;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 431,
-      "match": "DAT_01d086f4",
-      "severity": "mild",
-      "text": "*(byte **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = puVar25;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 443,
-      "match": "field_0x9c",
-      "severity": "mild",
-      "text": "puVar25 = &g_CGamePtr->field_0x9c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 450,
-      "match": "DAT_01d086f4",
-      "severity": "mild",
-      "text": "*(byte **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = puVar25;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 462,
-      "match": "field_0xa0",
-      "severity": "mild",
-      "text": "puVar25 = &g_CGamePtr->field_0xa0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 469,
-      "match": "DAT_01d086f4",
-      "severity": "mild",
-      "text": "*(byte **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = puVar25;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 481,
-      "match": "field_0xa4",
-      "severity": "mild",
-      "text": "puVar25 = &g_CGamePtr->field_0xa4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 488,
-      "match": "DAT_01d086f4",
-      "severity": "mild",
-      "text": "*(byte **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = puVar25;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 500,
-      "match": "field_0xaf0",
-      "severity": "mild",
-      "text": "puVar25 = &g_CGamePtr->field_0xaf0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 507,
-      "match": "DAT_01d086f4",
-      "severity": "mild",
-      "text": "*(byte **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = puVar25;",
+      "text": "*(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 529,
+      "line": 128,
       "match": "DAT_01d086f4",
       "severity": "mild",
-      "text": "(**(uint **)(&DAT_01d086f4 + iVar27));",
+      "text": "*(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 547,
-      "match": "field_0x28",
+      "description": "Undefined global data reference",
+      "line": 147,
+      "match": "DAT_01d086f4",
       "severity": "mild",
-      "text": "iVar29 = core_menu_cpp_FUN_004eeba0((EInputCodeType *)&g_CGamePtr->field_0x28,pcVar2);",
-      "type": "unnamed_field"
+      "text": "*(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 166,
+      "match": "DAT_01d086f4",
+      "severity": "mild",
+      "text": "*(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 185,
+      "match": "DAT_01d086f4",
+      "severity": "mild",
+      "text": "*(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 204,
+      "match": "DAT_01d086f4",
+      "severity": "mild",
+      "text": "*(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 223,
+      "match": "DAT_01d086f4",
+      "severity": "mild",
+      "text": "*(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 242,
+      "match": "DAT_01d086f4",
+      "severity": "mild",
+      "text": "*(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 261,
+      "match": "DAT_01d086f4",
+      "severity": "mild",
+      "text": "*(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 280,
+      "match": "DAT_01d086f4",
+      "severity": "mild",
+      "text": "*(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 299,
+      "match": "DAT_01d086f4",
+      "severity": "mild",
+      "text": "*(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 318,
+      "match": "DAT_01d086f4",
+      "severity": "mild",
+      "text": "*(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 337,
+      "match": "DAT_01d086f4",
+      "severity": "mild",
+      "text": "*(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 356,
+      "match": "DAT_01d086f4",
+      "severity": "mild",
+      "text": "*(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 375,
+      "match": "DAT_01d086f4",
+      "severity": "mild",
+      "text": "*(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 394,
+      "match": "DAT_01d086f4",
+      "severity": "mild",
+      "text": "*(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 413,
+      "match": "DAT_01d086f4",
+      "severity": "mild",
+      "text": "*(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 432,
+      "match": "DAT_01d086f4",
+      "severity": "mild",
+      "text": "*(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 451,
+      "match": "DAT_01d086f4",
+      "severity": "mild",
+      "text": "*(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 470,
+      "match": "DAT_01d086f4",
+      "severity": "mild",
+      "text": "*(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 489,
+      "match": "DAT_01d086f4",
+      "severity": "mild",
+      "text": "*(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 508,
+      "match": "DAT_01d086f4",
+      "severity": "mild",
+      "text": "*(int **)(&DAT_01d086f4 + _DAT_01d086f0 * 4) = piVar24;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 528,
+      "match": "DAT_01d086f4",
+      "severity": "mild",
+      "text": "core_menu_cpp_getKeyDisplayName_FUN_004ee960(**(EInputCodeType **)(&DAT_01d086f4 + iVar27));",
+      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
@@ -1867,24 +1640,8 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 549,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "iVar26 = core_menu_cpp_FUN_004eeba0((EInputCodeType *)&g_CGamePtr->field_0x2c,pcVar2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 550,
-      "match": "field_0xac",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0xac == 0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 551,
+      "line": 552,
       "match": "DAT_005dd5d1",
       "severity": "mild",
       "text": "pcVar2 = &DAT_005dd5d1;",
@@ -1892,290 +1649,26 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 554,
+      "line": 555,
       "match": "DAT_005dd5cc",
       "severity": "mild",
       "text": "pcVar2 = &DAT_005dd5cc;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 557,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "iVar27 = core_menu_cpp_FUN_004eeba0((EInputCodeType *)&g_CGamePtr->field_0x30,pcVar2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 559,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "iVar4 = core_menu_cpp_FUN_004eeba0((EInputCodeType *)&g_CGamePtr->field_0x34,pcVar2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 561,
-      "match": "field_0x38",
-      "severity": "mild",
-      "text": "iVar5 = core_menu_cpp_FUN_004eeba0((EInputCodeType *)&g_CGamePtr->field_0x38,pcVar2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 563,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "iVar6 = core_menu_cpp_FUN_004eeba0((EInputCodeType *)&g_CGamePtr->field_0x3c,pcVar2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 565,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "iVar7 = core_menu_cpp_FUN_004eeba0((EInputCodeType *)&g_CGamePtr->field_0x44,pcVar2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 567,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "iVar8 = core_menu_cpp_FUN_004eeba0((EInputCodeType *)&g_CGamePtr->field_0x40,pcVar2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 569,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "iVar9 = core_menu_cpp_FUN_004eeba0((EInputCodeType *)&g_CGamePtr->field_0x48,pcVar2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 571,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "iVar10 = core_menu_cpp_FUN_004eeba0((EInputCodeType *)&g_CGamePtr->field_0x4c,pcVar2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 573,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "iVar11 = core_menu_cpp_FUN_004eeba0((EInputCodeType *)&g_CGamePtr->field_0x50,pcVar2);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 574,
+      "line": 584,
       "match": "DAT_005dd62c",
       "severity": "mild",
       "text": "pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(&DAT_005dd62c);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 575,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "iVar12 = core_menu_cpp_FUN_004eeba0((EInputCodeType *)&g_CGamePtr->field_0x68,pcVar2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 577,
-      "match": "field_0x74",
-      "severity": "mild",
-      "text": "iVar13 = core_menu_cpp_FUN_004eeba0((EInputCodeType *)&g_CGamePtr->field_0x74,pcVar2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 579,
-      "match": "field_0x78",
-      "severity": "mild",
-      "text": "iVar14 = core_menu_cpp_FUN_004eeba0((EInputCodeType *)&g_CGamePtr->field_0x78,pcVar2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 581,
-      "match": "field_0x7c",
-      "severity": "mild",
-      "text": "iVar15 = core_menu_cpp_FUN_004eeba0((EInputCodeType *)&g_CGamePtr->field_0x7c,pcVar2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 583,
-      "match": "field_0x80",
-      "severity": "mild",
-      "text": "iVar16 = core_menu_cpp_FUN_004eeba0((EInputCodeType *)&g_CGamePtr->field_0x80,pcVar2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 585,
-      "match": "field_0x84",
-      "severity": "mild",
-      "text": "iVar17 = core_menu_cpp_FUN_004eeba0((EInputCodeType *)&g_CGamePtr->field_0x84,pcVar2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 587,
-      "match": "field_0x90",
-      "severity": "mild",
-      "text": "iVar18 = core_menu_cpp_FUN_004eeba0((EInputCodeType *)&g_CGamePtr->field_0x90,pcVar2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 589,
-      "match": "field_0x94",
-      "severity": "mild",
-      "text": "iVar19 = core_menu_cpp_FUN_004eeba0((EInputCodeType *)&g_CGamePtr->field_0x94,pcVar2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 591,
-      "match": "field_0x98",
-      "severity": "mild",
-      "text": "iVar20 = core_menu_cpp_FUN_004eeba0((EInputCodeType *)&g_CGamePtr->field_0x98,pcVar2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 593,
-      "match": "field_0x9c",
-      "severity": "mild",
-      "text": "iVar21 = core_menu_cpp_FUN_004eeba0((EInputCodeType *)&g_CGamePtr->field_0x9c,pcVar2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 595,
-      "match": "field_0xa0",
-      "severity": "mild",
-      "text": "iVar22 = core_menu_cpp_FUN_004eeba0((EInputCodeType *)&g_CGamePtr->field_0xa0,pcVar2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 597,
-      "match": "field_0xa4",
-      "severity": "mild",
-      "text": "iVar23 = core_menu_cpp_FUN_004eeba0((EInputCodeType *)&g_CGamePtr->field_0xa4,pcVar2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 599,
-      "match": "field_0xaf0",
-      "severity": "mild",
-      "text": "iVar24 = core_menu_cpp_FUN_004eeba0((EInputCodeType *)&g_CGamePtr->field_0xaf0,pcVar2);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 615,
+      "line": 638,
       "match": "DAT_01d086f4",
       "severity": "mild",
-      "text": "switch(**(uint **)(&DAT_01d086f4 + iVar26 * 4)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 694,
-      "match": "field_0xd0",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0xd0 == 2) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 700,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (*(code *)**(uint **)0x01D02F84)(0x01D02F84,iVar27);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 709,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar29 = (*(code *)**(uint **)0x01D02F84)(0x01D02F84,1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 713,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar29 = (*(code *)**(uint **)0x01D02F84)(0x01D02F84,1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 757,
-      "match": "field_0xd0",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0xd0 == 2) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 763,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (*(code *)**(uint **)0x01D02F84)(0x01D02F84,iVar27);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 768,
-      "match": "DAT_01d086f4",
-      "severity": "mild",
-      "text": "**(int **)(&DAT_01d086f4 + iVar26 * 4) = iVar29;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 773,
-      "match": "field_0xd0",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0xd0 == 2) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 779,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar4 = (*(code *)**(uint **)0x01D02F84)(0x01D02F84,iVar27);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 792,
-      "match": "DAT_01d086f4",
-      "severity": "mild",
-      "text": "(**(int **)(&DAT_01d086f4 + iVar27) == **(int **)(&DAT_01d086f4 + iVar26 * 4))) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 792,
-      "match": "DAT_01d086f4",
-      "severity": "mild",
-      "text": "(**(int **)(&DAT_01d086f4 + iVar27) == **(int **)(&DAT_01d086f4 + iVar26 * 4))) {",
+      "text": "switch(**(uint **)(&DAT_01d086f4 + iVar27 * 4)) {",
       "type": "undefined_data"
     },
     {
@@ -2183,20 +1676,36 @@
       "line": 793,
       "match": "DAT_01d086f4",
       "severity": "mild",
-      "text": "**(int **)(&DAT_01d086f4 + iVar27) = 599;",
+      "text": "**(EInputCodeType **)(&DAT_01d086f4 + iVar27 * 4) = EVar30;",
       "type": "undefined_data"
     },
     {
-      "description": "Raw hex address 0x1d08790 assigned to bare local `iVar26`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar26` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 525,
-      "match": "0x1d08790",
-      "severity": "moderate",
-      "text": "iVar26 = 0x1d08790;",
-      "type": "raw_address_constant"
+      "description": "Undefined global data reference",
+      "line": 818,
+      "match": "DAT_01d086f4",
+      "severity": "mild",
+      "text": "(**(int **)(&DAT_01d086f4 + iVar26) == **(int **)(&DAT_01d086f4 + iVar27 * 4))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 818,
+      "match": "DAT_01d086f4",
+      "severity": "mild",
+      "text": "(**(int **)(&DAT_01d086f4 + iVar26) == **(int **)(&DAT_01d086f4 + iVar27 * 4))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 819,
+      "match": "DAT_01d086f4",
+      "severity": "mild",
+      "text": "**(int **)(&DAT_01d086f4 + iVar26) = 599;",
+      "type": "undefined_data"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 65,
+      "line": 66,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2204,7 +1713,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 84,
+      "line": 85,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2212,7 +1721,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 109,
+      "line": 110,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2220,7 +1729,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 128,
+      "line": 129,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2228,7 +1737,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 147,
+      "line": 148,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2236,7 +1745,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 166,
+      "line": 167,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2244,7 +1753,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 185,
+      "line": 186,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2252,7 +1761,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 204,
+      "line": 205,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2260,7 +1769,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 223,
+      "line": 224,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2268,7 +1777,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 242,
+      "line": 243,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2276,7 +1785,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 261,
+      "line": 262,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2284,7 +1793,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 280,
+      "line": 281,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2292,7 +1801,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 299,
+      "line": 300,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2300,7 +1809,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 318,
+      "line": 319,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2308,7 +1817,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 337,
+      "line": 338,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2316,7 +1825,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 356,
+      "line": 357,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2324,7 +1833,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 375,
+      "line": 376,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2332,7 +1841,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 394,
+      "line": 395,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2340,7 +1849,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 413,
+      "line": 414,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2348,7 +1857,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 432,
+      "line": 433,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2356,7 +1865,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 451,
+      "line": 452,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2364,7 +1873,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 470,
+      "line": 471,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2372,7 +1881,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 489,
+      "line": 490,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2380,7 +1889,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 508,
+      "line": 509,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2388,7 +1897,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 622,
+      "line": 645,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2396,7 +1905,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 644,
+      "line": 667,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2404,7 +1913,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 659,
+      "line": 682,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2412,7 +1921,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 681,
+      "line": 704,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2420,7 +1929,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 722,
+      "line": 746,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2428,7 +1937,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 743,
+      "line": 767,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2436,7 +1945,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 635,
+      "line": 658,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2444,7 +1953,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 672,
+      "line": 695,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2452,7 +1961,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 734,
+      "line": 758,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2460,7 +1969,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 635,
+      "line": 658,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -2468,7 +1977,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 672,
+      "line": 695,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -2476,7 +1985,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 734,
+      "line": 758,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",

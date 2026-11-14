@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   mask_mode
 ;
 ; XREF[2]:
-;   shape_edittool.cpp_FUN_0047d270 at 0047d32a
+;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047d270 at 0047d32a
 ;   shape_edittool.cpp_showTextInputDialog_FUN_0047b1f0 at 0047b258
 ;
 ; Called Functions:

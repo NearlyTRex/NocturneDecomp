@@ -11,7 +11,7 @@
 ;
 ; XREF[3]:
 ;   engine_matrix.c_pushViewport_FUN_005090b0 at 005091cc
-;   shape_edittool.cpp_FUN_00496920 at 00496d7e
+;   shape_edittool.cpp_CEditorTools_createModalWindow_FUN_00496920 at 00496d7e
 ;   wincore_wddvmem.cpp_FUN_005ac300 at 005ac6e6
 ;
 ; Referenced Globals:

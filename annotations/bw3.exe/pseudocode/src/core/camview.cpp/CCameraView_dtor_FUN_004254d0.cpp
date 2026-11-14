@@ -12,12 +12,12 @@ CCameraView * __cdecl core_camview_cpp_CCameraView_dtor_FUN_004254d0(CCameraView
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CCameraViewTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CCameraViewTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  *(byte ***)&this_ptr->field_0x3c =
-       &PTR_core_camview_cpp_CCameraView_dtor_FUN_004254d0_005dcef4;
+  this_ptr->vtable =
+       (CCameraView_vtable *)&PTR_core_camview_cpp_CCameraView_dtor_FUN_004254d0_005dcef4;
   if ((flags & 2) == 0) {
     return this_ptr;
   }

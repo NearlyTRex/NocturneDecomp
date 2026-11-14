@@ -1,20 +1,20 @@
 // Name: core_svetlana.cpp_factoryFuncSvetlana_FUN_00592dd0
 // Address: 00592dd0
 // Address Range: [[00592dd0, 00592deb]]
-// Convention: unknown
-// Signature: void core_svetlana_cpp_factoryFuncSvetlana_FUN_00592dd0(void)
+// Convention: __cdecl
+// Signature: CSvetlana * __cdecl core_svetlana_cpp_factoryFuncSvetlana_FUN_00592dd0(void)
 
 #include "nocturne.h"
 
-void core_svetlana_cpp_factoryFuncSvetlana_FUN_00592dd0(void)
+CSvetlana * __cdecl core_svetlana_cpp_factoryFuncSvetlana_FUN_00592dd0(void)
 
 {
-  CSvetlana *this_ptr;
+  CSvetlana *pCVar1;
   
-  this_ptr = (CSvetlana *)FUN_005c0f32(0x95630);
-  if (this_ptr == (CSvetlana *)0x0) {
-    return;
+  pCVar1 = (CSvetlana *)operator_new(0x95630);
+  if (pCVar1 == (CSvetlana *)0x0) {
+    return (CSvetlana *)0x0;
   }
-  core_svetlana_cpp_CSvetlana_ctor_FUN_00592e00(this_ptr);
-  return;
+  pCVar1 = core_svetlana_cpp_CSvetlana_ctor_FUN_00592e00(pCVar1);
+  return pCVar1;
 }

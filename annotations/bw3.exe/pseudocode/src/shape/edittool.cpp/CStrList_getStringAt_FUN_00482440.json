@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 6,
-    "complexity_score": 19,
-    "cross_reference_count": 17,
+    "complexity_score": 4,
+    "cross_reference_count": 18,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 4,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 10
   },
   "cross_references": [
     {
       "addr": "004a9950",
       "from_addr": "004a9a7b",
-      "name": "core_fldnotes.cpp_FUN_004a9950",
+      "name": "core_fldnotes.cpp_SNotesEntry_layout_FUN_004a9950",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -28,27 +26,45 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00529210",
-      "from_addr": "00529367",
-      "name": "core_script.cpp_FUN_00529210",
+      "addr": "005295e0",
+      "from_addr": "0052961f",
+      "name": "core_script.cpp_CScript_buildParsedLines_FUN_005295e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005295e0",
-      "from_addr": "0052961f",
-      "name": "core_script.cpp_FUN_005295e0",
+      "addr": "00529210",
+      "from_addr": "00529367",
+      "name": "core_script.cpp_CScript_renderEditor_FUN_00529210",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0055ef30",
       "from_addr": "0055ef6c",
-      "name": "core_sound.cpp_FUN_0055ef30",
+      "name": "core_sound.cpp_CSound_findRandomSoundFile_FUN_0055ef30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0055e810",
       "from_addr": "0055e838",
       "name": "core_sound.cpp_filterSoundFilesByPattern_FUN_0055e810",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00483c00",
+      "from_addr": "00483c93",
+      "name": "shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_00483c00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00483550",
+      "from_addr": "004836d8",
+      "name": "shape_edittool.cpp_CPickList_handleInput_FUN_00483550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004843d0",
+      "from_addr": "00484800",
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004843d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -82,6 +98,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00482250",
+      "from_addr": "0048228a",
+      "name": "shape_edittool.cpp_CStrList_insertRange_FUN_00482250",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00482820",
       "from_addr": "00482896",
       "name": "shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00482820",
@@ -96,25 +118,7 @@
     {
       "addr": "0047d230",
       "from_addr": "0047d2fd",
-      "name": "shape_edittool.cpp_FUN_0047d230",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00483550",
-      "from_addr": "004836d8",
-      "name": "shape_edittool.cpp_FUN_00483550",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00483c00",
-      "from_addr": "00483c93",
-      "name": "shape_edittool.cpp_FUN_00483c00",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004843d0",
-      "from_addr": "00484800",
-      "name": "shape_edittool.cpp_FUN_004843d0",
+      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0047d230",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -133,7 +137,7 @@
   "function_calls": [],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 23,
+    "call_site_count": 24,
     "call_sites": [
       {
         "call_addr": "0048246f",
@@ -160,7 +164,7 @@
       {
         "call_addr": "00483c93",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00483c00",
+        "caller": "shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_00483c00",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -171,7 +175,7 @@
       {
         "call_addr": "00484800",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_004843d0",
+        "caller": "shape_edittool.cpp_CPickList_renderDialog_FUN_004843d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -182,7 +186,7 @@
       {
         "call_addr": "004a9a7b",
         "call_type": "direct",
-        "caller": "core_fldnotes.cpp_FUN_004a9950",
+        "caller": "core_fldnotes.cpp_SNotesEntry_layout_FUN_004a9950",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -193,7 +197,7 @@
       {
         "call_addr": "0047d2fd",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047d230",
+        "caller": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0047d230",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -204,7 +208,7 @@
       {
         "call_addr": "0047d551",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047d230",
+        "caller": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0047d230",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -215,7 +219,7 @@
       {
         "call_addr": "0047d75b",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047d230",
+        "caller": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0047d230",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -237,7 +241,7 @@
       {
         "call_addr": "00529367",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00529210",
+        "caller": "core_script.cpp_CScript_renderEditor_FUN_00529210",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -264,6 +268,32 @@
     },
     "pcode_op_count": 16
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00481240",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004998a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004a2f70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00474080",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -287,14 +317,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "return *(char **)(*(int *)&this_ptr->field_0x8 + index * 4);",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

@@ -1,12 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * __cdecl support_trisock_cpp_convertSockAddr_FUN_0059c760(undefined4 *param_1,short *param_2)
+; SOCKADDR_IN * __cdecl support_trisock_cpp_convertSockAddr_FUN_0059c760(SNetworkAddr *dest_addr,SOCKADDR *src_addr)
 ;
+; Parameters:
+; SNetworkAddr *   Stack[0x4]:4   dest_addr
+; SOCKADDR *       Stack[0x8]:4   src_addr
 ;
 ; XREF[2]:
 ;   support_trisock.cpp_CSocket_getSocketName_FUN_0059cd10 at 0059cd48
-;   support_trisock.cpp_FUN_0059cb20 at 0059cb88
+;   support_trisock.cpp_CSocket_receiveSocketData_FUN_0059cb20 at 0059cb88
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_support_trisock_cpp_005f832e
@@ -17,7 +20,7 @@
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
 ;   crt_wsock32.c_ntohs
-;   support_trisock.cpp_FUN_0059c4c0
+;   support_trisock.cpp_copyIPAddress_FUN_0059c4c0
 ;
 ; *****************************************************************************
 
@@ -43,8 +46,8 @@ section .text
     PUSH EAX                            ; 0059c786
     LEA EAX,[ESP + 0x4]                 ; 0059c787
     PUSH EAX                            ; 0059c78b
-    CALL support_trisock.cpp_FUN_0059c4c0 ; 0059c78c
-        ;   XREF to: 0059c4c0 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_FUN_0059c4c0()
+    CALL support_trisock.cpp_copyIPAddress_FUN_0059c4c0 ; 0059c78c
+        ;   XREF to: 0059c4c0 (UNCONDITIONAL_CALL)  ; uint * support_trisock.cpp_copyIPAddress_FUN_0059c4c0(uint * dest_ip, uint * src_ip)
     MOV EAX,dword ptr [EAX]             ; 0059c791
     ADD ESP,0x8                         ; 0059c793
     MOV dword ptr [EBX],EAX             ; 0059c796

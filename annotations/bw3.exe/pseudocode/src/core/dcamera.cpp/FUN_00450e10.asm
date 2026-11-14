@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * core_dcamera_cpp_FUN_00450e10(int param_1)
+; undefined4 * core_dcamera_cpp_FUN_00450e10(CDemonCamera *param_1)
 ;
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_00533e5e at 005341b4
+;   core_set.cpp_FUN_00533e60 at 005341b4
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ddfc4
@@ -15,8 +15,8 @@
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_0041d840
+;   core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_00449f80
 ;   core_dcamera.cpp_FUN_00449eb0
-;   core_dcamera.cpp_FUN_00449f80
 ;   core_dirmat.cpp_FUN_0045b870
 ;
 ; *****************************************************************************
@@ -161,8 +161,8 @@ section .text
     PUSH EBP                            ; 00450fe6
     LEA EDI,[ESP + 0xe0]                ; 00450fe7
     LEA EBX,[ESP + 0xc8]                ; 00450fee
-    CALL core_dcamera.cpp_FUN_00449f80  ; 00450ff5
-        ;   XREF to: 00449f80 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00449f80()
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_00449f80 ; 00450ff5
+        ;   XREF to: 00449f80 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_00449f80(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr)
     LEA ESI,[ESP + 0x80]                ; 00450ffa
     ADD ESP,0x8                         ; 00451001
     LEA EAX,[ESP + 0xd8]                ; 00451004

@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_script_cpp_writeActorReference_FUN_0052a090(undefined4 param_1,int *param_2)
+; void __cdecl core_script_cpp_writeActorReference_FUN_0052a090(_FILE *file_handle,CDemonActor **actor)
 ;
+; Parameters:
+; _FILE *          Stack[0x4]:4   file_handle
+; CDemonActor * *  Stack[0x8]:4   actor
 ;
 ; XREF[1]:
-;   core_script.cpp_FUN_0052a400 at 0052a567
+;   core_script.cpp_CScript_saveState_FUN_0052a400 at 0052a567
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_005e5032

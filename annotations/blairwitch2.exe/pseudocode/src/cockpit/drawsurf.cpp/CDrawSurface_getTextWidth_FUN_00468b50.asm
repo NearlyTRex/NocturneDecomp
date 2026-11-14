@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   engine_2d.c_getStringWidth_FUN_004018b0
-;   engine_font.cpp_FUN_004aaf00
+;   engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
         ;   XREF to: 00468b69 (CONDITIONAL_JUMP)  ; LAB_00468b69
     PUSH EAX                            ; 00468b5e
     PUSH EDX                            ; 00468b5f
-    CALL engine_font.cpp_FUN_004aaf00   ; 00468b60
-        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004aaf00()
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00 ; 00468b60
+        ;   XREF to: 004aaf00 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 00468b65
     RET                                 ; 00468b68
     PUSH EAX                            ; 00468b69

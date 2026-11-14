@@ -12,7 +12,7 @@
 ;   core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_0045abd0 at 0045ad7b
 ;   core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_0045d170 at 0045d45f
 ;   core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045ed70 at 0045f41b
-;   core_set.cpp_FUN_0053ab80 at 0053ac1b
+;   core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0053ab80 at 0053ac1b
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_007e3e88
@@ -21,7 +21,7 @@
 ;   undefined4 DAT_01c6e2b8
 ;
 ; Called Functions:
-;   core_asgaya.cpp_FUN_005a23c0
+;   core_asgaya.cpp_rasterizePolygonCustom_FUN_005a23c0
 ;   core_xform.cpp_transformAndClipGeometry_FUN_00587cd0
 ;   engine_3d.c_isVisiblePlane_FUN_00403920
 ;
@@ -53,7 +53,7 @@ section .text
         ;   Label: LAB_0046d351
     PUSH EAX                            ; 0046d354
     CALL engine_3d.c_isVisiblePlane_FUN_00403920 ; 0046d355
-        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403920()
+        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403920(SClipPlane * plane)
     ADD ESP,0x4                         ; 0046d35a
     TEST EAX,EAX                        ; 0046d35d
     JZ 0x0046d34c                       ; 0046d35f
@@ -87,8 +87,8 @@ section .text
     PUSH EDX                            ; 0046d3a4
     PUSH EAX                            ; 0046d3a5
     PUSH 0x7e3e8c                       ; 0046d3a6 | DAT_007e3e8c
-    CALL core_asgaya.cpp_FUN_005a23c0   ; 0046d3ab
-        ;   XREF to: 005a23c0 (UNCONDITIONAL_CALL)  ; undefined core_asgaya.cpp_FUN_005a23c0()
+    CALL core_asgaya.cpp_rasterizePolygonCustom_FUN_005a23c0 ; 0046d3ab
+        ;   XREF to: 005a23c0 (UNCONDITIONAL_CALL)  ; void core_asgaya.cpp_rasterizePolygonCustom_FUN_005a23c0(SRenderVertex * vertex_buffer, int vertex_count, CustomScanlineFunc * scanline_renderer)
     ADD ESP,0xc                         ; 0046d3b0
     POP EBP                             ; 0046d3b3
     POP EDI                             ; 0046d3b4

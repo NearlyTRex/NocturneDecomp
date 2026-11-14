@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 477,
+    "complexity_score": 462,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 67,
-    "suspect_count": 36,
+    "suspect_count": 35,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -18,7 +18,6 @@
       "unaffected_reg",
       "undefined_data",
       "unknown_field",
-      "unnamed_field",
       "unrolled_memcpy"
     ],
     "total_lines": 183
@@ -38,6 +37,11 @@
   },
   "function_calls": [
     {
+      "addr": "0046b470",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0046b470"
+    },
+    {
       "addr": "0046d500",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500"
@@ -51,11 +55,6 @@
       "addr": "0046d460",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0046d460"
-    },
-    {
-      "addr": "0046b470",
-      "is_variadic": false,
-      "name": "engine_drender.cpp_FUN_0046b470"
     }
   ],
   "globals": [
@@ -269,14 +268,6 @@
       "severity": "moderate",
       "text": "in_stack_000000a4 = in_stack_000000a4 + iVar1;",
       "type": "stack_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x20c",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x20c != 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",

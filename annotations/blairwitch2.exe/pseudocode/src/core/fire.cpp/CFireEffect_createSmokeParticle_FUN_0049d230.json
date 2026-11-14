@@ -19,19 +19,19 @@
     {
       "addr": "0040f950",
       "from_addr": "0040fbe5",
-      "name": "core_baron.cpp_FUN_0040f950",
+      "name": "core_baron.cpp_CBaron_process_FUN_0040f950",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00412f40",
       "from_addr": "004132df",
-      "name": "core_batman.cpp_FUN_00412f40",
+      "name": "core_batman.cpp_CBatman_process_FUN_00412f40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0042a7a0",
       "from_addr": "0042a91e",
-      "name": "core_charactr.cpp_FUN_0042a7a0",
+      "name": "core_charactr.cpp_CCharacter_processSmoking_FUN_0042a7a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -41,21 +41,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00436e80",
+      "from_addr": "0043720c",
+      "name": "core_construc.cpp_CConstruct_process_FUN_00436e80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00462ff0",
       "from_addr": "0046367e",
-      "name": "core_dracbrid.cpp_FUN_00462ff0",
+      "name": "core_dracbrid.cpp_CDraculaBride_process_FUN_00462ff0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0046d110",
       "from_addr": "0046d3be",
-      "name": "core_drip.cpp_FUN_0046d110",
+      "name": "core_drip.cpp_CDrip_process_FUN_0046d110",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00486cb0",
       "from_addr": "004870f8",
-      "name": "core_emitter.cpp_FUN_00486cb0",
+      "name": "core_emitter.cpp_CEmitter_process_FUN_00486cb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00499930",
+      "from_addr": "004999b1",
+      "name": "core_fire.cpp_CCrater_process_FUN_00499930",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -67,19 +79,13 @@
     {
       "addr": "00495960",
       "from_addr": "00495a4f",
-      "name": "core_fire.cpp_FUN_00495960",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00499930",
-      "from_addr": "004999b1",
-      "name": "core_fire.cpp_FUN_00499930",
+      "name": "core_fire.cpp_CFireball_process_FUN_00495960",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0049a3a0",
       "from_addr": "0049a496",
-      "name": "core_fire.cpp_FUN_0049a3a0",
+      "name": "core_fire.cpp_CGunFlame_process_FUN_0049a3a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -98,12 +104,6 @@
       "addr": "005a5460",
       "from_addr": "005a56a7",
       "name": "core_union.cpp_FUN_005a5460",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00436e80",
-      "from_addr": "0043720c",
-      "name": "unkafter_conveyor.cpp_FUN_00436e80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -140,7 +140,7 @@
       {
         "call_addr": "004999b1",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_00499930",
+        "caller": "core_fire.cpp_CCrater_process_FUN_00499930",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -151,7 +151,7 @@
       {
         "call_addr": "0049a496",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049a3a0",
+        "caller": "core_fire.cpp_CGunFlame_process_FUN_0049a3a0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -173,7 +173,7 @@
       {
         "call_addr": "0040fbe5",
         "call_type": "direct",
-        "caller": "core_baron.cpp_FUN_0040f950",
+        "caller": "core_baron.cpp_CBaron_process_FUN_0040f950",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -184,7 +184,7 @@
       {
         "call_addr": "004132df",
         "call_type": "direct",
-        "caller": "core_batman.cpp_FUN_00412f40",
+        "caller": "core_batman.cpp_CBatman_process_FUN_00412f40",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -195,7 +195,7 @@
       {
         "call_addr": "00413548",
         "call_type": "direct",
-        "caller": "core_batman.cpp_FUN_00412f40",
+        "caller": "core_batman.cpp_CBatman_process_FUN_00412f40",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -206,7 +206,7 @@
       {
         "call_addr": "0046367e",
         "call_type": "direct",
-        "caller": "core_dracbrid.cpp_FUN_00462ff0",
+        "caller": "core_dracbrid.cpp_CDraculaBride_process_FUN_00462ff0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -217,7 +217,7 @@
       {
         "call_addr": "004638fc",
         "call_type": "direct",
-        "caller": "core_dracbrid.cpp_FUN_00462ff0",
+        "caller": "core_dracbrid.cpp_CDraculaBride_process_FUN_00462ff0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -228,7 +228,7 @@
       {
         "call_addr": "004870f8",
         "call_type": "direct",
-        "caller": "core_emitter.cpp_FUN_00486cb0",
+        "caller": "core_emitter.cpp_CEmitter_process_FUN_00486cb0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -239,7 +239,7 @@
       {
         "call_addr": "0042a91e",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_0042a7a0",
+        "caller": "core_charactr.cpp_CCharacter_processSmoking_FUN_0042a7a0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -282,6 +282,32 @@
       "STORE": 10
     },
     "pcode_op_count": 205
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004b5b30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a2560",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004c7b20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0048afe0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 24,

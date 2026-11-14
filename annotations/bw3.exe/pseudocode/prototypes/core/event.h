@@ -7,7 +7,7 @@
 
 // Original: core_event.cpp_staticInit_FUN_0048b780
 // Address: 0048b780
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_event.cpp_setEventError_FUN_0048b7c0
 // Address: 0048b7c0
@@ -17,17 +17,17 @@ int __cdecl setEventError(char *source_file,int source_line,char *error_message)
 // Address: 0048b7f0
 int __cdecl formatEventError(char *format);
 
-// Original: core_event.cpp_FUN_0048b820
+// Original: core_event.cpp_skipWhitespace_FUN_0048b820
 // Address: 0048b820
-void FUN_0048b820(char *param_1);
+char * __cdecl skipWhitespace(char *str);
 
 // Original: core_event.cpp_skipWhitespaceIndexed_FUN_0048b840
 // Address: 0048b840
 int * __cdecl skipWhitespaceIndexed(char *expression,int *parse_position);
 
-// Original: core_event.cpp_FUN_0048b86e
-// Address: 0048b86e
-undefined4 FUN_0048b86e(char *param_1);
+// Original: core_event.cpp_parseComparisonOp_FUN_0048b870
+// Address: 0048b870
+int __cdecl parseComparisonOp(char *str);
 
 // Original: core_event.cpp_parseIntOrCounter_FUN_0048b910
 // Address: 0048b910
@@ -35,19 +35,19 @@ int __cdecl parseIntOrCounter(char *str);
 
 // Original: core_event.cpp_resolveActorByName_FUN_0048b950
 // Address: 0048b950
-CDemonActor * __cdecl resolveActorByName(char *param_1,undefined4 param_2,undefined4 param_3);
+CDemonActor * __cdecl resolveActorByName(char *name,uint class_hash,char *class_name);
 
 // Original: core_event.cpp_parseVectorLocation_FUN_0048ba80
 // Address: 0048ba80
-undefined4 __cdecl parseVectorLocation(int param_1,int *param_2,undefined4 *param_3);
+int __cdecl parseVectorLocation(char *buffer,int *offset,CVector3f *out_position);
 
-// Original: core_event.cpp_FUN_0048bba0
+// Original: core_event.cpp_trimWhitespace_FUN_0048bba0
 // Address: 0048bba0
-void FUN_0048bba0(char *param_1);
+void __cdecl trimWhitespace(char *str);
 
-// Original: core_event.cpp_FUN_0048bc10
+// Original: core_event.cpp_extractParenArg_FUN_0048bc10
 // Address: 0048bc10
-char * FUN_0048bc10(int *param_1,char *param_2,int param_3,int param_4);
+char * extractParenArg(int *param_1,char *param_2,int param_3,int param_4);
 
 // Original: core_event.cpp_parseDeathType_FUN_0048bd30
 // Address: 0048bd30
@@ -65,9 +65,9 @@ CEventList * __cdecl CEventList::ctor(CEventList *this_ptr);
 // Address: 0048bfd0
 void __cdecl CEventList::reset(CEventList *this_ptr);
 
-// Original: core_event.cpp_FUN_0048c020
+// Original: core_event.cpp_CEventList_process_FUN_0048c020
 // Address: 0048c020
-void __cdecl FUN_0048c020(CEventList *this_ptr);
+void __cdecl CEventList::process(CEventList *this_ptr);
 
 // Original: core_event.cpp_CEventList_executeCommands_FUN_0048c150
 // Address: 0048c150
@@ -79,7 +79,7 @@ int __cdecl CEventList::executeCommandString(CEventList *this_ptr,char *command_
 
 // Original: core_event.cpp_FUN_0048c2e0
 // Address: 0048c2e0
-int FUN_0048c2e0(CEventList *param_1,CEventList *param_2);
+int FUN_0048c2e0(CEventList *param_1,char *param_2);
 
 // Original: core_event.cpp_CEventList_resolveVariable_FUN_00491a10
 // Address: 00491a10
@@ -115,7 +115,7 @@ int __cdecl CEventList::evaluateLogicalExpr(CEventList *this_ptr,char *expressio
 
 // Original: core_event.cpp_FUN_004946f0
 // Address: 004946f0
-void FUN_004946f0(CEventList *param_1,CEventList *param_2,int param_3);
+void FUN_004946f0(CEventList *param_1,char *param_2,int param_3);
 
 // Original: core_event.cpp_FUN_00494880
 // Address: 00494880
@@ -123,7 +123,7 @@ void FUN_00494880(int param_1);
 
 // Original: core_event.cpp_FUN_004948e0
 // Address: 004948e0
-void FUN_004948e0(CEventList *param_1,CEventList *param_2,int param_3);
+void FUN_004948e0(CEventList *param_1,char *param_2,int param_3);
 
 // Original: core_event.cpp_CEventList_setTimerEvent_FUN_00494a70
 // Address: 00494a70
@@ -201,13 +201,13 @@ int __cdecl CEventList::saveState(CEventList *this_ptr,_FILE *file_handle);
 // Address: 00495b40
 void __cdecl CRuleList::clear(CRuleList *this_ptr);
 
-// Original: core_event.cpp_FUN_00495b4e
-// Address: 00495b4e
-void FUN_00495b4e(int *param_1,int param_2,char *param_3,char *param_4);
+// Original: core_event.cpp_FUN_00495b50
+// Address: 00495b50
+void FUN_00495b50(void);
 
-// Original: core_event.cpp_FUN_00495c8e
-// Address: 00495c8e
-void FUN_00495c8e(int *param_1,int param_2);
+// Original: core_event.cpp_FUN_00495c90
+// Address: 00495c90
+void FUN_00495c90(void);
 
 // Original: core_event.cpp_CRuleList_findFirst_FUN_00495d60
 // Address: 00495d60
@@ -216,3 +216,11 @@ int __cdecl CRuleList::findFirst(CRuleList *this_ptr);
 // Original: core_event.cpp_CRuleList_evaluateAndRun_FUN_00495db0
 // Address: 00495db0
 int __cdecl CRuleList::evaluateAndRun(CRuleList *this_ptr);
+
+// Original: core_event.cpp_copyQuaternion_FUN_00495e40
+// Address: 00495e40
+CQuaternion4f * __cdecl copyQuaternion(CQuaternion4f *dest,CQuaternion4f *src);
+
+// Original: core_event.cpp_FUN_00495e60
+// Address: 00495e60
+undefined4 FUN_00495e60(int param_1);

@@ -2,31 +2,34 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 960,
-    "complexity_score": 1923,
+    "complexity_score": 1799,
     "cross_reference_count": 9,
     "function_call_count": 20,
     "global_count": 36,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 448,
-    "suspect_count": 143,
+    "pseudocode_lines": 469,
+    "suspect_count": 127,
     "suspect_types": [
+      "derived_field_index_pun",
+      "pointer_cast",
       "raw_address_constant",
+      "shadow_pointer_walk",
+      "suspect_float",
       "undefined_data",
       "unnamed_field",
       "unnamed_param",
-      "unresolved_funcptr",
       "unrolled_strcat",
       "unrolled_strcpy",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1408
+    "total_lines": 1429
   },
   "cross_references": [
     {
       "addr": "0040e670",
       "from_addr": "0040e696",
-      "name": "core_ammobox.cpp_FUN_0040e670",
+      "name": "core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e670",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -36,15 +39,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004b8fce",
-      "from_addr": "004b9053",
-      "name": "core_game.cpp_FUN_004b8fce",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004b90d0",
       "from_addr": "004b9af6",
       "name": "core_game.cpp_FUN_004b90d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b8fd0",
+      "from_addr": "004b9053",
+      "name": "core_game.cpp_giveHeroWeaponAmmo_FUN_004b8fd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -56,7 +59,7 @@
     {
       "addr": "004d1660",
       "from_addr": "004d19c3",
-      "name": "core_hostage.cpp_FUN_004d1660",
+      "name": "core_hostage.cpp_CHostage_process_FUN_004d1660",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -68,13 +71,13 @@
     {
       "addr": "0051ec20",
       "from_addr": "0051ec6c",
-      "name": "core_scat.cpp_FUN_0051ec20",
+      "name": "core_scat.cpp_CScat_createDefaultWeapon_FUN_0051ec20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00522350",
       "from_addr": "00523e4f",
-      "name": "core_script.cpp_FUN_00522350",
+      "name": "core_script.cpp_CScript_step_FUN_00522350",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -88,7 +91,7 @@
     ],
     "convention": "unknown",
     "name": "core_inv.cpp_FUN_004dadb0",
-    "signature": "undefined4 core_inv_cpp_FUN_004dadb0(int param_1,CDemonActor *param_2,int param_3)"
+    "signature": "undefined4 core_inv_cpp_FUN_004dadb0(CDemonActor *param_1,CDemonActor *param_2,int param_3)"
   },
   "function_calls": [
     {
@@ -114,12 +117,12 @@
     {
       "addr": "0040c840",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040c840"
+      "name": "core_actor.cpp_isOfClass_FUN_0040c840"
     },
     {
       "addr": "0040e240",
       "is_variadic": false,
-      "name": "core_ammo.cpp_FUN_0040e240"
+      "name": "core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040e240"
     },
     {
       "addr": "004b31a0",
@@ -152,14 +155,14 @@
       "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0"
     },
     {
-      "addr": "004fc270",
-      "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004fc270"
-    },
-    {
       "addr": "004fc7b0",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004fc7b0"
+      "name": "core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0"
+    },
+    {
+      "addr": "004fc270",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_removeActorFromList_FUN_004fc270"
     },
     {
       "addr": "005b8c30",
@@ -174,17 +177,17 @@
     {
       "addr": "005b7790",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7790"
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
     },
     {
       "addr": "00436710",
       "is_variadic": false,
-      "name": "engine_console.cpp_FUN_00436710"
+      "name": "engine_console.cpp_CConsole_printf_FUN_00436710"
     },
     {
       "addr": "004aaf00",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004aaf00"
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00"
     },
     {
       "addr": "0050fe80",
@@ -351,31 +354,31 @@
     },
     {
       "addr": "01cb6948",
-      "name": "g_CGameInstance.field72_0x48",
+      "name": "g_CGameInstance.key_fire",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb694c",
-      "name": "g_CGameInstance.field76_0x4c",
+      "name": "g_CGameInstance.key_use_item",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb6998",
-      "name": "g_CGameInstance.field152_0x98",
+      "name": "g_CGameInstance.key_next_item",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb699c",
-      "name": "g_CGameInstance.field156_0x9c",
+      "name": "g_CGameInstance.key_prev_item",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb6b44",
-      "name": "g_CGameInstance.field580_0x244",
+      "name": "g_CGameInstance.letterbox_mode",
       "type": "undefined4",
       "value": null
     },
@@ -561,7 +564,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint core_inv_cpp_FUN_004dadb0(int param_1,CDemonActor *param_2,int param_3)",
+      "text": "uint core_inv_cpp_FUN_004dadb0(CDemonActor *param_1,CDemonActor *param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -569,7 +572,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint core_inv_cpp_FUN_004dadb0(int param_1,CDemonActor *param_2,int param_3)",
+      "text": "uint core_inv_cpp_FUN_004dadb0(CDemonActor *param_1,CDemonActor *param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -577,39 +580,55 @@
       "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "uint core_inv_cpp_FUN_004dadb0(int param_1,CDemonActor *param_2,int param_3)",
+      "text": "uint core_inv_cpp_FUN_004dadb0(CDemonActor *param_1,CDemonActor *param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_24 = *(uint *)(param_1 + 0x468);",
+      "text": "local_24 = param_1[1].particle_systems[1].next_particle;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (99 < *(int *)(param_1 + 0x10)) {",
+      "text": "if (99 < *(int *)(param_1->actor_name + 0x10)) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 40,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar5 = (**(code **)(*(int *)&param_2->field_0x2b0 + 0x9c))(param_2);",
-      "type": "unresolved_funcptr"
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "pCVar3 = (*((param_2->vtable)._ub)->getCarrier)(param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "pCVar3 = (*((param_2->vtable)._ub)->getCarrier)(param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (pCVar3 != *(CDemonActor **)(param_1->actor_name + 4)) {",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 40,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar5 = (**(code **)(*(int *)&param_2->field_0x2b0 + 0x9c))(param_2);",
+      "text": "(*((param_2->vtable)._ub)->onDropped)(param_2,(CVector3f *)0x0);",
       "type": "unnamed_param"
     },
     {
@@ -617,39 +636,15 @@
       "line": 40,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar5 = (**(code **)(*(int *)&param_2->field_0x2b0 + 0x9c))(param_2);",
+      "text": "(*((param_2->vtable)._ub)->onDropped)(param_2,(CVector3f *)0x0);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "iVar5 = (**(code **)(*(int *)&param_2->field_0x2b0 + 0x9c))(param_2);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (iVar5 != *(int *)(param_1 + 4)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 42,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&param_2->field_0x2b0 + 0x94))(param_2,0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_2->field_0x2b0 + 0x94))(param_2,0);",
+      "text": "if (*(CDemonActor **)(param_1->actor_name + 4) != (CDemonActor *)0x0) {",
       "type": "unnamed_param"
     },
     {
@@ -657,100 +652,52 @@
       "line": 42,
       "match": "param_2",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_2->field_0x2b0 + 0x94))(param_2,0);",
+      "text": "(*((param_2->vtable)._ub)->pickup)(param_2,*(CDemonActor **)(param_1->actor_name + 4));",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Unnamed function parameter",
       "line": 42,
-      "match": "field_0x2b0",
+      "match": "param_2",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_2->field_0x2b0 + 0x94))(param_2,0);",
-      "type": "unnamed_field"
+      "text": "(*((param_2->vtable)._ub)->pickup)(param_2,*(CDemonActor **)(param_1->actor_name + 4));",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 4) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 44,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&param_2->field_0x2b0 + 0x90))(param_2,*(int *)(param_1 + 4));",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_2->field_0x2b0 + 0x90))(param_2,*(int *)(param_1 + 4));",
+      "text": "(*((param_2->vtable)._ub)->pickup)(param_2,*(CDemonActor **)(param_1->actor_name + 4));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_2->field_0x2b0 + 0x90))(param_2,*(int *)(param_1 + 4));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 48,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_2->field_0x2b0 + 0x90))(param_2,*(int *)(param_1 + 4));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_2->field_0x2b0 + 0x90))(param_2,*(int *)(param_1 + 4));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((*(int *)(param_1 + 4) == *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4)) && (param_3 != 0)) &&",
+      "text": "if (((*(int *)(param_1->actor_name + 4) == *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4)) &&",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 49,
       "match": "param_3",
       "severity": "mild",
-      "text": "if (((*(int *)(param_1 + 4) == *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4)) && (param_3 != 0)) &&",
+      "text": "(param_3 != 0)) && (g_CGamePtr->letterbox_mode == 0)) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x244",
-      "severity": "mild",
-      "text": "(*(int *)&g_CGamePtr->field_0x244 == 0)) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 50,
       "match": "param_2",
       "severity": "mild",
-      "text": "pcStack_28 = (char *)core_inv_cpp_getItemDisplayName_FUN_004d9f10(param_2);",
+      "text": "pcStack_28 = core_inv_cpp_getItemDisplayName_FUN_004d9f10(param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 51,
       "match": "param_2",
       "severity": "mild",
       "text": "core_inv_cpp_getItemDescription_FUN_004d9f80(param_2);",
@@ -758,186 +705,138 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 52,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar5 = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040c8f0(param_2,g_CAmmoClassInfo.name_hash);",
+      "text": "pCVar3 = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040c8f0(param_2,g_CAmmoClassInfo.name_hash);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 65,
       "match": "DAT_005db537",
       "severity": "mild",
-      "text": "FUN_005b7790(acStack_22c,&DAT_005db537,*(uint *)(iVar5 + 0x470));",
+      "text": "_sprintf(acStack_22c,&DAT_005db537);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 112,
+      "line": 110,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_0040c840(param_2,\"CHealthItem\");",
+      "text": "core_actor_cpp_isOfClass_FUN_0040c840(param_2,\"CHealthItem\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 113,
+      "line": 111,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar5 = core_actor_cpp_FUN_0040c840(param_2,\"CGasMask\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 126,
-      "match": "field_0x98",
-      "severity": "mild",
-      "text": "(*(uint *)&g_CGamePtr->field_0x98);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 169,
-      "match": "field_0x9c",
-      "severity": "mild",
-      "text": "(*(uint *)&g_CGamePtr->field_0x9c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 213,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "(*(uint *)&g_CGamePtr->field_0x4c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 257,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar5 = core_actor_cpp_FUN_0040c840(param_2,\"CKeyActor\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 271,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "(*(uint *)&g_CGamePtr->field_0x48);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 315,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_actor_cpp_FUN_0040c840(param_2,\"CBoxActor\");",
+      "text": "iVar7 = core_actor_cpp_isOfClass_FUN_0040c840(param_2,\"CGasMask\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 316,
+      "line": 252,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_0040c840(param_2,\"CAmmo\");",
+      "text": "iVar7 = core_actor_cpp_isOfClass_FUN_0040c840(param_2,\"CKeyActor\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 317,
+      "line": 309,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_0040c840(param_2,\"CWeapon\");",
+      "text": "core_actor_cpp_isOfClass_FUN_0040c840(param_2,\"CBoxActor\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 319,
+      "line": 310,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_actor_cpp_isOfClass_FUN_0040c840(param_2,\"CAmmo\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 311,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_actor_cpp_isOfClass_FUN_0040c840(param_2,\"CWeapon\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 313,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar14 = (char *)(param_1 + 0x354);",
+      "text": "pcVar12 = param_1[1].create_event + 0x28;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 329,
+      "line": 324,
       "match": "param_1",
       "severity": "mild",
-      "text": "iStack_14 = engine_font_cpp_FUN_004aaf00(_DAT_01511cc4,(char *)(param_1 + 0x354));",
+      "text": "(_DAT_01511cc4,param_1[1].create_event + 0x28);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 330,
+      "line": 325,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x34c) = (float)iStack_14 * (float)_DAT_005db702;",
+      "text": "*(float *)(param_1[1].create_event + 0x20) = (float)iStack_14 * (float)_DAT_005db702;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 333,
+      "line": 328,
       "match": "param_2",
       "severity": "mild",
       "text": "(param_2,g_CAmmoClassInfo.name_hash);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 335,
-      "match": "field_0x430",
-      "severity": "mild",
-      "text": "pcVar14 = &pCStack_1c->field_0x430;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 338,
+      "line": 333,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar5 = param_1;",
+      "text": "pCVar3 = param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 339,
+      "line": 334,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x10)) {",
+      "text": "if (0 < *(int *)(param_1->actor_name + 0x10)) {",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 340,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "if (((*(int *)&pCVar3[1].particle_systems[1].field_0x20 ==",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 344,
+      "line": 341,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (((*(int *)(iVar5 + 0x46c) == *(int *)(param_1 + 0x468)) && (iVar7 != 0)) &&",
+      "text": "param_1[1].particle_systems[1].next_particle) && (pCVar5 != (CDemonActor *)0x0)) &&",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 347,
-      "match": "field_0x474",
-      "severity": "mild",
-      "text": "(*(int *)(iVar7 + 0x474) == *(int *)&pCStack_1c->field_0x474)))) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 348,
-      "match": "field_0x470",
-      "severity": "mild",
-      "text": "*(int *)(iVar7 + 0x470) = *(int *)(iVar7 + 0x470) + *(int *)&pCStack_1c->field_0x470;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 350,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_mission_cpp_FUN_004fc7b0(0x01D182F0,param_2,1);",
+      "text": "core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(0x01D182F0,param_2,1);",
       "type": "unnamed_param"
     },
     {
@@ -945,7 +844,7 @@
       "line": 356,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar9 < *(int *)(param_1 + 0x10));",
+      "text": "} while (iVar7 < *(int *)(param_1->actor_name + 0x10));",
       "type": "unnamed_param"
     },
     {
@@ -953,100 +852,36 @@
       "line": 359,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x10)) {",
+      "text": "if (0 < *(int *)(param_1->actor_name + 0x10)) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 360,
-      "match": "field_0x430",
-      "severity": "mild",
-      "text": "str1 = &pCStack_1c->field_0x430;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 361,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar9 = param_1;",
+      "text": "pCVar3 = param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 372,
+      "line": 373,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar5 < *(int *)(param_1 + 0x10));",
+      "text": "} while (iVar7 < *(int *)(param_1->actor_name + 0x10));",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 374,
-      "match": "field_0x430",
-      "severity": "mild",
-      "text": "iVar5 = _strcmp(&pCStack_1c->field_0x430,\"CDynamite\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 378,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&actor->field_0x2b0 + 8))(actor);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 378,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&actor->field_0x2b0 + 8))(actor);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 379,
-      "match": "field_0x15c",
-      "severity": "mild",
-      "text": "*(uint *)&actor[2].field_0x15c = *(uint *)&pCStack_1c->field_0x470;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 379,
-      "match": "field_0x470",
-      "severity": "mild",
-      "text": "*(uint *)&actor[2].field_0x15c = *(uint *)&pCStack_1c->field_0x470;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 380,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&actor->field_0x2b0 + 0x90))(actor,*(uint *)(param_1 + 4));",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 380,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&actor->field_0x2b0 + 0x90))(actor,*(uint *)(param_1 + 4));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 380,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&actor->field_0x2b0 + 0x90))(actor,*(uint *)(param_1 + 4));",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 381,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*((pCVar3->vtable)._ub)->pickup)(pCVar3,*(CDemonActor **)(param_1->actor_name + 4));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 382,
       "match": "param_2",
       "severity": "mild",
       "text": "core_actor_cpp_FUN_00408730(param_2);",
@@ -1054,122 +889,66 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 383,
+      "line": 385,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_inv_cpp_FUN_004dadb0(param_1,actor,1,0);",
+      "text": "core_inv_cpp_FUN_004dadb0(param_1,pCVar3,1,0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 387,
+      "line": 389,
       "match": "param_2",
       "severity": "mild",
-      "text": "iStack_2c = (CHealthItem *)core_actor_cpp_castToClassHash_FUN_0040c8f0(param_2,g_CHealthItemClassInfo.name_hash);",
+      "text": "pCStack_2c = (CHealthItem *)core_actor_cpp_castToClassHash_FUN_0040c8f0(param_2,g_CHealthItemClassInfo.name_hash)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 388,
+      "line": 392,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((iStack_2c != 0) && (iVar9 = 0, iVar5 = param_1, 0 < *(int *)(param_1 + 0x10))) {",
+      "text": "(iVar7 = 0, pCVar3 = param_1, 0 < *(int *)(param_1->actor_name + 0x10))) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 388,
+      "line": 392,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((iStack_2c != 0) && (iVar9 = 0, iVar5 = param_1, 0 < *(int *)(param_1 + 0x10))) {",
+      "text": "(iVar7 = 0, pCVar3 = param_1, 0 < *(int *)(param_1->actor_name + 0x10))) {",
       "type": "unnamed_param"
     },
     {
+      "description": "Auto-generated struct field name",
+      "line": 398,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "if ((*(int *)&pCVar3[1].particle_systems[1].field_0x20 ==",
+      "type": "unnamed_field"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 393,
+      "line": 399,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(iVar5 + 0x46c) == *(int *)(param_1 + 0x468)) && (iVar7 != 0)) {",
+      "text": "param_1[1].particle_systems[1].next_particle) && (pCVar5 != (CDemonActor *)0x0)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 395,
+      "line": 403,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_mission_cpp_FUN_004fc7b0(pCVar3,param_2,1);",
+      "text": "core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(pCVar2,param_2,1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 400,
+      "line": 408,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar9 < *(int *)(param_1 + 0x10));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 402,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iStack_18 = (CWeapon *)core_actor_cpp_castToClassHash_FUN_0040c8f0(param_2,g_CWeaponClassInfo.name_hash);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 406,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(CDemonActor **)(param_1 + 0x14 + *(int *)(param_1 + 0x10) * 4) = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 406,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(CDemonActor **)(param_1 + 0x14 + *(int *)(param_1 + 0x10) * 4) = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 406,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(CDemonActor **)(param_1 + 0x14 + *(int *)(param_1 + 0x10) * 4) = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 407,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x46c + *(int *)(param_1 + 0x10) * 4) = local_24;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 407,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x46c + *(int *)(param_1 + 0x10) * 4) = local_24;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 409,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x10) = *(int *)(param_1 + 0x10) + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 409,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x10) = *(int *)(param_1 + 0x10) + 1;",
+      "text": "} while (iVar7 < *(int *)(param_1->actor_name + 0x10));",
       "type": "unnamed_param"
     },
     {
@@ -1177,55 +956,31 @@
       "line": 410,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_mission_cpp_FUN_004fc7b0(pCVar3,param_2,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 411,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&param_2->field_0x2b0 + 0x74))(param_2,param_1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 411,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_2->field_0x2b0 + 0x74))(param_2,param_1);",
+      "text": "pCStack_18 = (CWeapon *)core_actor_cpp_castToClassHash_FUN_0040c8f0(param_2,g_CWeaponClassInfo.name_hash);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 411,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_2->field_0x2b0 + 0x74))(param_2,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 411,
+      "line": 414,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_2->field_0x2b0 + 0x74))(param_2,param_1);",
+      "text": "*(CDemonActor **)(param_1->actor_name + *(int *)(param_1->actor_name + 0x10) * 4 + 0x14) =",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 411,
-      "match": "field_0x2b0",
+      "description": "Unnamed function parameter",
+      "line": 414,
+      "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_2->field_0x2b0 + 0x74))(param_2,param_1);",
-      "type": "unnamed_field"
+      "text": "*(CDemonActor **)(param_1->actor_name + *(int *)(param_1->actor_name + 0x10) * 4 + 0x14) =",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 415,
-      "match": "param_1",
+      "match": "param_2",
       "severity": "mild",
-      "text": "iVar5 = param_1;",
+      "text": "param_2;",
       "type": "unnamed_param"
     },
     {
@@ -1233,196 +988,284 @@
       "line": 416,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 0x10)) {",
+      "text": "*(int *)(&param_1[1].particle_systems[1].field_0x20 + *(int *)(param_1->actor_name + 0x10) * 4",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 416,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(&param_1[1].particle_systems[1].field_0x20 + *(int *)(param_1->actor_name + 0x10) * 4",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 416,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "*(int *)(&param_1[1].particle_systems[1].field_0x20 + *(int *)(param_1->actor_name + 0x10) * 4",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 419,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1->actor_name + 0x10) = *(int *)(param_1->actor_name + 0x10) + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 419,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1->actor_name + 0x10) = *(int *)(param_1->actor_name + 0x10) + 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 420,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(int *)(iVar5 + 0x46c) == *(int *)(param_1 + 0x468)) && (iVar7 != 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 432,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_mission_cpp_FUN_004fc7b0(0x01D182F0,param_2,1);",
+      "text": "core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(pCVar2,param_2,0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 438,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar9 < *(int *)(param_1 + 0x10));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 441,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(CDemonActor **)(param_1 + 0x14 + *(int *)(param_1 + 0x10) * 4) = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 441,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(CDemonActor **)(param_1 + 0x14 + *(int *)(param_1 + 0x10) * 4) = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 441,
+      "line": 421,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(CDemonActor **)(param_1 + 0x14 + *(int *)(param_1 + 0x10) * 4) = param_2;",
+      "text": "(*((param_2->vtable)._ub)->onPickup)(param_2,param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 442,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x46c + *(int *)(param_1 + 0x10) * 4) = *(uint *)(param_1 + 0x468)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 442,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x46c + *(int *)(param_1 + 0x10) * 4) = *(uint *)(param_1 + 0x468)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 442,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x46c + *(int *)(param_1 + 0x10) * 4) = *(uint *)(param_1 + 0x468)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 445,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x10) = *(int *)(param_1 + 0x10) + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 445,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x10) = *(int *)(param_1 + 0x10) + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 446,
+      "line": 421,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_mission_cpp_FUN_004fc270(pCVar3,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 447,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&param_2->field_0x2b0 + 0x74))(param_2,param_1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 447,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_2->field_0x2b0 + 0x74))(param_2,param_1);",
+      "text": "(*((param_2->vtable)._ub)->onPickup)(param_2,param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 447,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_2->field_0x2b0 + 0x74))(param_2,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 447,
+      "line": 421,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_2->field_0x2b0 + 0x74))(param_2,param_1);",
+      "text": "(*((param_2->vtable)._ub)->onPickup)(param_2,param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 425,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar3 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 426,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (0 < *(int *)(param_1->actor_name + 0x10)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 447,
-      "match": "field_0x2b0",
+      "line": 431,
+      "match": "field_0x20",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_2->field_0x2b0 + 0x74))(param_2,param_1);",
+      "text": "if ((*(int *)&pCVar3[1].particle_systems[1].field_0x20 ==",
       "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 448,
+      "line": 432,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((iStack_18 != 0) && (*(int *)(param_1 + 0x610 + *(int *)(param_1 + 0x468) * 4) == 0)) {",
+      "text": "param_1[1].particle_systems[1].next_particle) && (pCVar5 != (CDemonActor *)0x0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 446,
+      "match": "2.8026e-43",
+      "severity": "mild",
+      "text": "pCVar3[2].particle_systems[0].position.z = 2.8026e-43;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 450,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_mission_cpp_CDemonMission_markActorToDelete_FUN_004fc7b0(0x01D182F0,param_2,1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 448,
+      "line": 456,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((iStack_18 != 0) && (*(int *)(param_1 + 0x610 + *(int *)(param_1 + 0x468) * 4) == 0)) {",
+      "text": "} while (iVar7 < *(int *)(param_1->actor_name + 0x10));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 449,
+      "line": 459,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_inv_cpp_FUN_004db9d0(param_1,iStack_18,5,1);",
+      "text": "*(CDemonActor **)(param_1->actor_name + *(int *)(param_1->actor_name + 0x10) * 4 + 0x14) = param_2",
       "type": "unnamed_param"
     },
     {
-      "description": "Raw hex address 0x1d182f0 assigned to bare local `pCVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 392,
+      "description": "Unnamed function parameter",
+      "line": 459,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(CDemonActor **)(param_1->actor_name + *(int *)(param_1->actor_name + 0x10) * 4 + 0x14) = param_2",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 459,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(CDemonActor **)(param_1->actor_name + *(int *)(param_1->actor_name + 0x10) * 4 + 0x14) = param_2",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 461,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(&param_1[1].particle_systems[1].field_0x20 + *(int *)(param_1->actor_name + 0x10) * 4) =",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 461,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(&param_1[1].particle_systems[1].field_0x20 + *(int *)(param_1->actor_name + 0x10) * 4) =",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 461,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "*(int *)(&param_1[1].particle_systems[1].field_0x20 + *(int *)(param_1->actor_name + 0x10) * 4) =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 462,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1].particle_systems[1].next_particle;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 464,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1->actor_name + 0x10) = *(int *)(param_1->actor_name + 0x10) + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 464,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1->actor_name + 0x10) = *(int *)(param_1->actor_name + 0x10) + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 465,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_mission_cpp_CDemonMission_removeActorFromList_FUN_004fc270(pCVar2,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 466,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(*((param_2->vtable)._ub)->onPickup)(param_2,param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 466,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(*((param_2->vtable)._ub)->onPickup)(param_2,param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 466,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*((param_2->vtable)._ub)->onPickup)(param_2,param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 468,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(int *)(param_1[2].create_event + param_1[1].particle_systems[1].next_particle * 4 + 0x30) ==",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 468,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*(int *)(param_1[2].create_event + param_1[1].particle_systems[1].next_particle * 4 + 0x30) ==",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 470,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_inv_cpp_FUN_004db9d0(param_1,pCStack_18,5,1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Raw hex address 0x1d182f0 assigned to bare local `pCVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 397,
       "match": "0x1d182f0",
       "severity": "moderate",
-      "text": "pCVar3 = 0x01D182F0;",
+      "text": "pCVar2 = 0x01D182F0;",
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex address 0x1d182f0 assigned to bare local `pCVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 408,
+      "description": "Raw hex address 0x1d182f0 assigned to bare local `pCVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 418,
       "match": "0x1d182f0",
       "severity": "moderate",
-      "text": "pCVar3 = 0x01D182F0;",
+      "text": "pCVar2 = 0x01D182F0;",
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex address 0x1d182f0 assigned to bare local `pCVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 444,
+      "description": "Raw hex address 0x1d182f0 assigned to bare local `pCVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 463,
       "match": "0x1d182f0",
       "severity": "moderate",
-      "text": "pCVar3 = 0x01D182F0;",
+      "text": "pCVar2 = 0x01D182F0;",
       "type": "raw_address_constant"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 57,
+      "line": 55,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1430,7 +1273,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 80,
+      "line": 78,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1438,7 +1281,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 102,
+      "line": 100,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1446,7 +1289,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 116,
+      "line": 114,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1454,7 +1297,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 138,
+      "line": 135,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1462,7 +1305,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 159,
+      "line": 156,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1470,7 +1313,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 181,
+      "line": 177,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1478,7 +1321,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 203,
+      "line": 199,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1486,7 +1329,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 225,
+      "line": 220,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1494,7 +1337,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 247,
+      "line": 242,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1502,7 +1345,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 261,
+      "line": 256,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1510,7 +1353,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 283,
+      "line": 277,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1518,7 +1361,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 305,
+      "line": 299,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1526,15 +1369,39 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 320,
+      "line": 314,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 325,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "*(float *)(param_1[1].create_event + 0x20) = (float)iStack_14 * (float)_DAT_005db702;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via pointer arithmetic on its own `actor_name` field (which decays to a pointer), `+ CONST`; `offsetof(actor_name) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar3`. Replace those `pCVar3->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 354,
+      "match": "pCVar3 = (T *)(pCVar3->actor_name + CONST)",
+      "severity": "moderate",
+      "text": "pCVar3 = (CDemonActor *)(pCVar3->actor_name + 4);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via pointer arithmetic on its own `actor_name` field (which decays to a pointer), `+ CONST`; `offsetof(actor_name) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar3`. Replace those `pCVar3->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 372,
+      "match": "pCVar3 = (T *)(pCVar3->actor_name + CONST)",
+      "severity": "moderate",
+      "text": "pCVar3 = (CDemonActor *)(pCVar3->actor_name + 4);",
+      "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 71,
+      "line": 69,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1542,7 +1409,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 92,
+      "line": 90,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1550,7 +1417,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 129,
+      "line": 126,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1558,7 +1425,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 150,
+      "line": 147,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1566,7 +1433,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 172,
+      "line": 168,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1574,7 +1441,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 194,
+      "line": 190,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1582,7 +1449,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 216,
+      "line": 211,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1590,7 +1457,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 238,
+      "line": 233,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1598,7 +1465,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 274,
+      "line": 268,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1606,7 +1473,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 296,
+      "line": 290,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1614,7 +1481,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 71,
+      "line": 69,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -1622,7 +1489,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 92,
+      "line": 90,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -1630,7 +1497,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 129,
+      "line": 126,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -1638,7 +1505,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 150,
+      "line": 147,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -1646,7 +1513,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 172,
+      "line": 168,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -1654,7 +1521,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 194,
+      "line": 190,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -1662,7 +1529,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 216,
+      "line": 211,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -1670,7 +1537,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 238,
+      "line": 233,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -1678,7 +1545,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 274,
+      "line": 268,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -1686,11 +1553,18 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 296,
+      "line": 290,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcat"
+    },
+    {
+      "description": "'(char *)&pCVar5[1].particle_systems[0].fade_end' walks 1 x sizeof(CDemonActor) (0x2b4) + offsetof(particle_systems[0].fade_end) (0x17c) + 0x0 = 0x430, which is exactly offsetof(CAmmo, weapon_class_name). Ghidra had no CAmmo type here and reached the field by index arithmetic; write it as ((CAmmo *)pCVar5)->weapon_class_name (\u00a7de-pun/\u00a712). Ambiguous: CAmmoBox::weapon_class_name, CAnvil::drop_condition, CBattery::carrier also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 343,
+      "severity": "moderate",
+      "text": "(pcStack_20,(char *)&pCVar5[1].particle_systems[0].fade_end),",
+      "type": "derived_field_index_pun"
     }
   ]
 }

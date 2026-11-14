@@ -13,68 +13,68 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_00505560(CMan
 {
   float fVar1;
   int iVar2;
-  int *piVar3;
-  int *piVar4;
+  SPanel *pSVar3;
+  SPanel *pSVar4;
   
-  piVar3 = (int *)(&this_ptr->field_0x5f0 + panel_index * 100);
-  if (*piVar3 != 0) {
-    fVar1 = ((float)piVar3[2] * delta_time) / _DAT_00603440 + (float)piVar3[1];
-    piVar3[1] = (int)fVar1;
+  pSVar3 = this_ptr->panels + panel_index;
+  if (pSVar3->exists != 0) {
+    fVar1 = (pSVar3->anim_speed * delta_time) / _DAT_00603440 + pSVar3->anim_progress;
+    pSVar3->anim_progress = fVar1;
     if (fVar1 < 0.0) {
-      piVar3[2] = 0;
-      piVar3[1] = 0;
+      pSVar3->anim_speed = 0.0;
+      pSVar3->anim_progress = 0.0;
     }
-    if (1.0 <= (float)piVar3[1]) {
+    if (1.0 <= pSVar3->anim_progress) {
       iVar2 = core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_00506200
                         (this_ptr,panel_index);
-      piVar4 = (int *)(&this_ptr->field_0x5f0 + iVar2 * 100);
-      if (*piVar4 != 0) {
+      pSVar4 = this_ptr->panels + iVar2;
+      if (pSVar4->exists != 0) {
         _DAT_01d1d400 = "..\\core\\manpuz.cpp";
         _DAT_01d1d404 = 0x45d;
         core_main_c_FUN_005030e0("CMansionPuzzleCircle::processPanel - Panel collision!");
       }
-      *piVar4 = *piVar3;
-      piVar4[1] = piVar3[1];
-      piVar4[2] = piVar3[2];
-      if (piVar4 + 3 != piVar3 + 3) {
-        piVar4[3] = piVar3[3];
-        piVar4[4] = piVar3[4];
-        piVar4[5] = piVar3[5];
+      pSVar4->exists = pSVar3->exists;
+      pSVar4->anim_progress = pSVar3->anim_progress;
+      pSVar4->anim_speed = pSVar3->anim_speed;
+      if (&pSVar4->local_position != &pSVar3->local_position) {
+        (pSVar4->local_position).x = (pSVar3->local_position).x;
+        (pSVar4->local_position).y = (pSVar3->local_position).y;
+        (pSVar4->local_position).z = (pSVar3->local_position).z;
       }
-      if (piVar4 + 6 != piVar3 + 6) {
-        piVar4[6] = piVar3[6];
-        piVar4[7] = piVar3[7];
-        piVar4[8] = piVar3[8];
+      if (&pSVar4->rotation != &pSVar3->rotation) {
+        (pSVar4->rotation).x = (pSVar3->rotation).x;
+        (pSVar4->rotation).y = (pSVar3->rotation).y;
+        (pSVar4->rotation).z = (pSVar3->rotation).z;
       }
-      piVar4[9] = piVar3[9];
-      piVar4[10] = piVar3[10];
-      piVar4[0xb] = piVar3[0xb];
-      piVar4[0xc] = piVar3[0xc];
-      piVar4[0xd] = piVar3[0xd];
-      piVar4[0xe] = piVar3[0xe];
-      piVar4[0xf] = piVar3[0xf];
-      piVar4[0x10] = piVar3[0x10];
-      piVar4[0x11] = piVar3[0x11];
-      piVar4[0x12] = piVar3[0x12];
-      piVar4[0x13] = piVar3[0x13];
-      piVar4[0x14] = piVar3[0x14];
-      piVar4[0x15] = piVar3[0x15];
-      if (piVar4 + 0x16 != piVar3 + 0x16) {
-        piVar4[0x16] = piVar3[0x16];
-        piVar4[0x17] = piVar3[0x17];
-        piVar4[0x18] = piVar3[0x18];
+      (pSVar4->rotation_matrix).m[0].x = (pSVar3->rotation_matrix).m[0].x;
+      (pSVar4->rotation_matrix).m[0].y = (pSVar3->rotation_matrix).m[0].y;
+      (pSVar4->rotation_matrix).m[0].z = (pSVar3->rotation_matrix).m[0].z;
+      (pSVar4->rotation_matrix).m[1].x = (pSVar3->rotation_matrix).m[1].x;
+      (pSVar4->rotation_matrix).m[1].y = (pSVar3->rotation_matrix).m[1].y;
+      (pSVar4->rotation_matrix).m[1].z = (pSVar3->rotation_matrix).m[1].z;
+      (pSVar4->rotation_matrix).m[2].x = (pSVar3->rotation_matrix).m[2].x;
+      (pSVar4->rotation_matrix).m[2].y = (pSVar3->rotation_matrix).m[2].y;
+      (pSVar4->rotation_matrix).m[2].z = (pSVar3->rotation_matrix).m[2].z;
+      pSVar4->dead = pSVar3->dead;
+      (pSVar4->color).r = (pSVar3->color).r;
+      (pSVar4->color).g = (pSVar3->color).g;
+      (pSVar4->color).b = (pSVar3->color).b;
+      if (&pSVar4->world_position != &pSVar3->world_position) {
+        (pSVar4->world_position).x = (pSVar3->world_position).x;
+        (pSVar4->world_position).y = (pSVar3->world_position).y;
+        (pSVar4->world_position).z = (pSVar3->world_position).z;
       }
-      piVar4[2] = 0;
-      piVar4[1] = 0;
-      *piVar3 = 0;
+      pSVar4->anim_speed = 0.0;
+      pSVar4->anim_progress = 0.0;
+      pSVar3->exists = 0;
       goto LAB_005056db;
     }
   }
-  if (*piVar3 != 0) {
+  if (pSVar3->exists != 0) {
     return;
   }
 LAB_005056db:
-  piVar3[2] = 0;
-  piVar3[1] = 0;
+  pSVar3->anim_speed = 0.0;
+  pSVar3->anim_progress = 0.0;
   return;
 }

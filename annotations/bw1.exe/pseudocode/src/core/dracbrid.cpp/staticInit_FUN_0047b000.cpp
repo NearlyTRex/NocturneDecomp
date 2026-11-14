@@ -1,14 +1,14 @@
 // Name: core_dracbrid.cpp_staticInit_FUN_0047b000
 // Address: 0047b000
 // Address Range: [[0047b000, 0047b07f]]
-// Convention: unknown
-// Signature: void core_dracbrid_cpp_staticInit_FUN_0047b000(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_dracbrid_cpp_staticInit_FUN_0047b000(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_dracbrid_cpp_staticInit_FUN_0047b000(void)
+void __cdecl core_dracbrid_cpp_staticInit_FUN_0047b000(void)
 
 {
   _DAT_01bc0cd4 = 0;

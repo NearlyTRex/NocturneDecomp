@@ -10,19 +10,19 @@ void __cdecl core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0048fed0(CDemonTria
 
 {
   if (this_ptr != (CDemonTriangle *)vertex1) {
-    *(uint *)this_ptr = *(uint *)vertex1;
-    *(uint *)&this_ptr->field_0x4 = *(uint *)&vertex1->field_0x4;
-    *(uint *)&this_ptr->field_0x8 = *(uint *)&vertex1->field_0x8;
+    (this_ptr->vertex1).x = vertex1->x;
+    (this_ptr->vertex1).y = vertex1->y;
+    (this_ptr->vertex1).z = vertex1->z;
   }
-  if ((CVector3f *)&this_ptr->field_0xc != vertex2) {
-    *(uint *)&this_ptr->field_0xc = *(uint *)vertex2;
-    *(uint *)&this_ptr->field_0x10 = *(uint *)&vertex2->field_0x4;
-    *(uint *)&this_ptr->field_0x14 = *(uint *)&vertex2->field_0x8;
+  if (&this_ptr->vertex2 != vertex2) {
+    (this_ptr->vertex2).x = vertex2->x;
+    (this_ptr->vertex2).y = vertex2->y;
+    (this_ptr->vertex2).z = vertex2->z;
   }
-  if ((CVector3f *)&this_ptr->field_0x18 != vertex3) {
-    *(uint *)&this_ptr->field_0x18 = *(uint *)vertex3;
-    *(uint *)&this_ptr->field_0x1c = *(uint *)&vertex3->field_0x4;
-    *(uint *)&this_ptr->field_0x20 = *(uint *)&vertex3->field_0x8;
+  if (&this_ptr->vertex3 != vertex3) {
+    (this_ptr->vertex3).x = vertex3->x;
+    (this_ptr->vertex3).y = vertex3->y;
+    (this_ptr->vertex3).z = vertex3->z;
   }
   core_dtri_cpp_CDemonTriangle_calculateData_FUN_0048fd80(this_ptr);
   return;

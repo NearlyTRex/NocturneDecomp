@@ -7,63 +7,67 @@
 
 // Original: core_dracbrid.cpp_staticInit_FUN_0047b000
 // Address: 0047b000
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_dracbrid.cpp_factoryFuncDraculaBride_FUN_0047b080
 // Address: 0047b080
-void factoryFuncDraculaBride(void);
+CDraculaBride * __cdecl factoryFuncDraculaBride(void);
 
 // Original: core_dracbrid.cpp_CDraculaBride_getActorType_FUN_0047b0a0
 // Address: 0047b0a0
-CDemonActorType * CDraculaBride::getActorType(CDraculaBride *this_ptr);
+CDemonActorType * __cdecl CDraculaBride::getActorType(CDraculaBride *this_ptr);
 
 // Original: core_dracbrid.cpp_CDraculaBride_ctor_FUN_0047b0b0
 // Address: 0047b0b0
 CDraculaBride * __cdecl CDraculaBride::ctor(CDraculaBride *this_ptr);
 
-// Original: core_dracbrid.cpp_FUN_0047b1b0
+// Original: core_dracbrid.cpp_CDraculaBride_setup_FUN_0047b1b0
 // Address: 0047b1b0
-void FUN_0047b1b0(CEnemy *param_1);
+void __cdecl CDraculaBride::setup(CDraculaBride *this_ptr);
 
-// Original: core_dracbrid.cpp_FUN_0047b510
+// Original: core_dracbrid.cpp_CDraculaBride_process_FUN_0047b510
 // Address: 0047b510
-void FUN_0047b510(CDraculaBride *param_1,float param_2);
+void __cdecl CDraculaBride::process(CDraculaBride *this_ptr,float delta_time);
 
-// Original: core_dracbrid.cpp_FUN_0047cc20
+// Original: core_dracbrid.cpp_CDraculaBride_explode_FUN_0047cc20
 // Address: 0047cc20
-void __cdecl FUN_0047cc20(CDraculaBride *this_ptr,CVector3f *direction,float spread_angle,int render_in_background);
+void __cdecl CDraculaBride::explode(CDraculaBride *this_ptr,CVector3f *direction,float spread_angle,int render_in_background);
 
-// Original: core_dracbrid.cpp_FUN_0047cf20
+// Original: core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_0047cf20
 // Address: 0047cf20
-void __cdecl FUN_0047cf20(CDraculaBride *this_ptr,int part_index,CVector3f *initial_velocity,int render_in_background);
+void __cdecl CDraculaBride::dismemberPart(CDraculaBride *this_ptr,int part_index,CVector3f *initial_velocity,int render_in_background);
 
-// Original: core_dracbrid.cpp_FUN_0047cfc0
+// Original: core_dracbrid.cpp_CDraculaBride_getCollisionType_FUN_0047cfc0
 // Address: 0047cfc0
-ECollisionType FUN_0047cfc0(CCharacter *param_1,SCollisionInfo *param_2);
+ECollisionType __cdecl CDraculaBride::getCollisionType(CDraculaBride *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_dracbrid.cpp_FUN_0047cfe0
+// Original: core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_0047cfe0
 // Address: 0047cfe0
-int FUN_0047cfe0(CCharacter *param_1);
+int __cdecl CDraculaBride::renderOpaque(CDraculaBride *this_ptr);
 
-// Original: core_dracbrid.cpp_FUN_0047d1e0
+// Original: core_dracbrid.cpp_CDraculaBride_archive_FUN_0047d1e0
 // Address: 0047d1e0
-void FUN_0047d1e0(CEnemy *param_1);
+void __cdecl CDraculaBride::archive(CDraculaBride *this_ptr);
 
-// Original: core_dracbrid.cpp_FUN_0047d430
+// Original: core_dracbrid.cpp_CDraculaBride_checkHeartShot_FUN_0047d430
 // Address: 0047d430
-void __cdecl FUN_0047d430(CDraculaBride *this_ptr,SDamageInfo *damage_info);
+void __cdecl CDraculaBride::checkHeartShot(CDraculaBride *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_dracbrid.cpp_FUN_0047d480
+// Original: core_dracbrid.cpp_CDraculaBride_processDamage_FUN_0047d480
 // Address: 0047d480
-void FUN_0047d480(CDraculaBride *param_1,SDamageInfo *param_2);
+void __cdecl CDraculaBride::processDamage(CDraculaBride *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_dracbrid.cpp_CDraculaBride_getDeathState_FUN_0047d750
 // Address: 0047d750
 EDeathState __cdecl CDraculaBride::getDeathState(CDraculaBride *this_ptr);
 
-// Original: core_dracbrid.cpp_FUN_0047d790
+// Original: core_dracbrid.cpp_CDraculaBride_getTargetPoints_FUN_0047d790
 // Address: 0047d790
-undefined4 FUN_0047d790(int param_1,undefined4 *param_2);
+int __cdecl CDraculaBride::getTargetPoints(CDraculaBride *this_ptr,CVector3f *out_points_array);
+
+// Original: core_dracbrid.cpp_FUN_0047d890
+// Address: 0047d890
+void FUN_0047d890(float param_1,float param_2,float param_3);
 
 // Original: core_dracbrid.cpp_FUN_0047d920
 // Address: 0047d920
@@ -79,8 +83,12 @@ SFreaky * __cdecl SFreaky::ctor(SFreaky *this_ptr);
 
 // Original: core_dracbrid.cpp_SFreaky_dtor_FUN_0047e170
 // Address: 0047e170
-SFreaky * SFreaky::dtor(SFreaky *this_ptr,uint flags);
+SFreaky * __cdecl SFreaky::dtor(SFreaky *this_ptr,uint flags);
 
 // Original: core_dracbrid.cpp_CDraculaBride_dtor_FUN_0047e180
 // Address: 0047e180
-CDraculaBride * CDraculaBride::dtor(CDraculaBride *this_ptr,uint flags);
+CDraculaBride * __cdecl CDraculaBride::dtor(CDraculaBride *this_ptr,uint flags);
+
+// Original: core_dracbrid.cpp_FUN_0047e210
+// Address: 0047e210
+CDrawSurface * FUN_0047e210(void);

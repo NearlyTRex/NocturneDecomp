@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[13]:
-;   core_asgaya.cpp_FUN_005a1760 at 005a17b9
-;   core_boneguy.cpp_FUN_00418f90 at 0041901f
-;   core_charactr.cpp_FUN_0042e220 at 0042e298
-;   core_charactr.cpp_FUN_0042e300 at 0042e355
-;   core_charactr.cpp_FUN_0042f510 at 0042f680
-;   core_passngr.cpp_FUN_0050a9b0 at 0050aa24
-;   core_pryemorp.cpp_FUN_00527970 at 005279e4
-;   core_spirbear.cpp_FUN_0059b2e0 at 0059b354
-;   core_spireagl.cpp_FUN_00599a70 at 00599aa9
-;   core_spirindi.cpp_FUN_0059a760 at 0059a7d4
+;   core_asgaya.cpp_CAsgaya_renderOpaque_FUN_005a1760 at 005a17b9
+;   core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_00418f90 at 0041901f
+;   core_charactr.cpp_CCharacter_renderBackground_FUN_0042e300 at 0042e355
+;   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042e220 at 0042e298
+;   core_charactr.cpp_CCharacter_renderTransparent_FUN_0042f510 at 0042f680
+;   core_darkwolf.cpp_CDarkwolf_renderOpaque_FUN_00598e00 at 00598e74
+;   core_passngr.cpp_CPassenger_renderOpaque_FUN_0050a9b0 at 0050aa24
+;   core_pryemorp.cpp_CPryeMorph_renderOpaque_FUN_00527970 at 005279e4
+;   core_spirbear.cpp_CSpiritBear_renderOpaque_FUN_0059b2e0 at 0059b354
+;   core_spireagl.cpp_CSpiritEagle_renderOpaque_FUN_00599a70 at 00599aa9
 ;   ... and 3 more
 ;
 ; Referenced Globals:
@@ -22,16 +22,16 @@
 ;   CGame* g_CGamePtr = 01d2130c
 ;   undefined4 DAT_01bdd7e4
 ;   CGame g_CGameInstance
-;   undefined4 g_CGameInstance.field576_0x240
+;   undefined4 g_CGameInstance.collision_render_enabled
 ;
 ; Called Functions:
+;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042e3a0
 ;   core_charactr.cpp_FUN_0042d500
 ;   core_charactr.cpp_FUN_0042d9f0
-;   core_charactr.cpp_FUN_0042e3a0
 ;   core_charactr.cpp_FUN_0042f010
 ;   core_charactr.cpp_FUN_0042f310
 ;   core_cloth.cpp_CClothList_render_FUN_0043fc50
-;   core_skeleton.cpp_FUN_0054e3a0
+;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0
 ;
@@ -68,8 +68,8 @@ section .text
     PUSH 0x2e7                          ; 0042d923
     PUSH -0x1                           ; 0042d928
     PUSH ESI                            ; 0042d92a
-    CALL core_skeleton.cpp_FUN_0054e3a0 ; 0042d92b
-        ;   XREF to: 0054e3a0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_0054e3a0(CDeformableModelInstance * this_ptr, int lod_index, uint render_flags, int lighting_mode, ...)
+    CALL core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0 ; 0042d92b
+        ;   XREF to: 0054e3a0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0(CDeformableModelInstance * this_ptr, int lod_index, uint render_flags, int lighting_mode, ...)
     ADD ESP,0x14                        ; 0042d930
     PUSH 0x0                            ; 0042d933
     MOV EBP,dword ptr [0x005f2afc]      ; 0042d935 | DAT_005f2afc
@@ -127,10 +127,10 @@ section .text
     ADD ESP,0x4                         ; 0042d9a9
     PUSH EBX                            ; 0042d9ac
         ;   Label: LAB_0042d9ac
-    CALL core_charactr.cpp_FUN_0042e3a0 ; 0042d9ad
-        ;   XREF to: 0042e3a0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042e3a0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042e3a0 ; 0042d9ad
+        ;   XREF to: 0042e3a0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042e3a0(CCharacter * this_ptr)
     MOV EAX,[0x005fe9dc]                ; 0042d9b2 | g_CGamePtr | g_CGameInstance
-    MOV ECX,dword ptr [EAX + 0x240]     ; 0042d9b7 | g_CGameInstance.field576_0x240
+    MOV ECX,dword ptr [EAX + 0x240]     ; 0042d9b7 | g_CGameInstance.collision_render_enabled
     ADD ESP,0x4                         ; 0042d9bd
     TEST ECX,ECX                        ; 0042d9c0
     JNZ 0x0042d9dc                      ; 0042d9c2
@@ -144,8 +144,8 @@ section .text
     PUSH -0x1                           ; 0042d9ca
     PUSH -0x1                           ; 0042d9cc
     PUSH ESI                            ; 0042d9ce
-    CALL core_skeleton.cpp_FUN_0054e3a0 ; 0042d9cf
-        ;   XREF to: 0054e3a0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_0054e3a0(CDeformableModelInstance * this_ptr, int lod_index, uint render_flags, int lighting_mode, ...)
+    CALL core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0 ; 0042d9cf
+        ;   XREF to: 0054e3a0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0(CDeformableModelInstance * this_ptr, int lod_index, uint render_flags, int lighting_mode, ...)
     ADD ESP,0x14                        ; 0042d9d4
     JMP 0x0042d945                      ; 0042d9d7
         ;   XREF to: 0042d945 (UNCONDITIONAL_JUMP)  ; LAB_0042d945

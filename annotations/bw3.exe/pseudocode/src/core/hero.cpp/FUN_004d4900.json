@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 186,
-    "complexity_score": 441,
+    "complexity_score": 373,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 36,
-    "suspect_count": 39,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 43,
+    "suspect_count": 32,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_param",
-      "unresolved_funcptr"
+      "unnamed_param"
     ],
-    "total_lines": 222
+    "total_lines": 229
   },
   "cross_references": [
     {
@@ -26,7 +25,7 @@
     {
       "addr": "00525930",
       "from_addr": "0052596d",
-      "name": "unkafter_prye.cpp_FUN_00525930",
+      "name": "core_prye.cpp_FUN_00525930",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -44,14 +43,24 @@
   },
   "function_calls": [
     {
+      "addr": "004d38b0",
+      "is_variadic": false,
+      "name": "core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004d38b0"
+    },
+    {
       "addr": "004d2cf0",
       "is_variadic": false,
-      "name": "core_hero.cpp_FUN_004d2cf0"
+      "name": "core_hero.cpp_CHero_tryInteract_FUN_004d2cf0"
+    },
+    {
+      "addr": "004d32d0",
+      "is_variadic": false,
+      "name": "core_hero.cpp_CHero_tryPullLever_FUN_004d32d0"
     },
     {
       "addr": "004d2ea0",
       "is_variadic": false,
-      "name": "core_hero.cpp_FUN_004d2ea0"
+      "name": "core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004d2ea0"
     },
     {
       "addr": "004d3040",
@@ -64,19 +73,9 @@
       "name": "core_hero.cpp_FUN_004d3210"
     },
     {
-      "addr": "004d32d0",
-      "is_variadic": false,
-      "name": "core_hero.cpp_FUN_004d32d0"
-    },
-    {
       "addr": "004d3500",
       "is_variadic": false,
       "name": "core_hero.cpp_FUN_004d3500"
-    },
-    {
-      "addr": "004d38b0",
-      "is_variadic": false,
-      "name": "core_hero.cpp_FUN_004d38b0"
     },
     {
       "addr": "004d3e20",
@@ -121,7 +120,7 @@
       {
         "call_addr": "0052596d",
         "call_type": "direct",
-        "caller": "unkafter_prye.cpp_FUN_00525930",
+        "caller": "core_prye.cpp_FUN_00525930",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -189,18 +188,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 9,
+      "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x20b68) == 0) || (*(int *)(param_1 + 0x20b78) == 0)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x20b68) == 0) || (*(int *)(param_1 + 0x20b78) == 0)) {",
+      "text": "if ((param_1->hero_action == 0) || (param_1->hero_action_started == 0)) {",
       "type": "unnamed_param"
     },
     {
@@ -208,7 +199,7 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_hero_cpp_FUN_004d3210(param_1);",
+      "text": "if ((param_1->hero_action == 0) || (param_1->hero_action_started == 0)) {",
       "type": "unnamed_param"
     },
     {
@@ -216,23 +207,7 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x20b7c) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 12,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*(int *)(param_1 + 0x154) + 0x15c))(param_1,4);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)(*(int *)(param_1 + 0x154) + 0x15c))(param_1,4);",
+      "text": "core_hero_cpp_FUN_004d3210(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -240,7 +215,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = (**(code **)(*(int *)(param_1 + 0x154) + 0x15c))(param_1,4);",
+      "text": "pCVar1 = (param_1->base).base.vtable._uh;",
       "type": "unnamed_param"
     },
     {
@@ -248,7 +223,7 @@
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_hero_cpp_FUN_004d3e20(param_1,\"!CBodyPart\");",
+      "text": "param_1->hero_action_range = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -256,23 +231,7 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = *(int *)(param_1 + 0x20b68);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 15,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*(int *)(param_1 + 0x154) + 0x15c))(param_1,1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = (**(code **)(*(int *)(param_1 + 0x154) + 0x15c))(param_1,1);",
+      "text": "iVar2 = (*(pCVar1->_uh).canDoHeroAction)(param_1,4);",
       "type": "unnamed_param"
     },
     {
@@ -280,7 +239,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = (**(code **)(*(int *)(param_1 + 0x154) + 0x15c))(param_1,1);",
+      "text": "core_hero_cpp_FUN_004d3e20(param_1,\"!CBodyPart\");",
       "type": "unnamed_param"
     },
     {
@@ -288,23 +247,7 @@
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (((iVar2 == 0) || (iVar2 = core_hero_cpp_FUN_004d2cf0(param_1), iVar2 == 0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 17,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "((iVar2 = (**(code **)(*(int *)(param_1 + 0x154) + 0x15c))(param_1,2), iVar2 == 0 ||",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((iVar2 = (**(code **)(*(int *)(param_1 + 0x154) + 0x15c))(param_1,2), iVar2 == 0 ||",
+      "text": "iVar4 = param_1->hero_action;",
       "type": "unnamed_param"
     },
     {
@@ -312,7 +255,15 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "((iVar2 = (**(code **)(*(int *)(param_1 + 0x154) + 0x15c))(param_1,2), iVar2 == 0 ||",
+      "text": "iVar3 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar3 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,1);",
       "type": "unnamed_param"
     },
     {
@@ -320,31 +271,23 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar2 = core_hero_cpp_FUN_004d2ea0(param_1), iVar2 == 0)))) {",
+      "text": "if (((iVar3 == 0) || (iVar3 = core_hero_cpp_CHero_tryInteract_FUN_004d2cf0(param_1), iVar3 == 0)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar3 = core_hero_cpp_FUN_004d3e20(param_1,\"!CBodyPart\"), iVar3 == 0)) &&",
+      "text": ") && ((iVar3 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,2),",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 21,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "((((iVar3 = (**(code **)(*(int *)(param_1 + 0x154) + 0x15c))(param_1,3), iVar3 == 0 ||",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "((((iVar3 = (**(code **)(*(int *)(param_1 + 0x154) + 0x15c))(param_1,3), iVar3 == 0 ||",
+      "text": ") && ((iVar3 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,2),",
       "type": "unnamed_param"
     },
     {
@@ -352,47 +295,7 @@
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "((((iVar3 = (**(code **)(*(int *)(param_1 + 0x154) + 0x15c))(param_1,3), iVar3 == 0 ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(iVar3 = core_hero_cpp_FUN_004d3040(param_1,param_2), iVar3 == 0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(iVar3 = core_hero_cpp_FUN_004d3040(param_1,param_2), iVar3 == 0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 23,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "((iVar3 = (**(code **)(*(int *)(param_1 + 0x154) + 0x15c))(param_1,8), iVar3 == 0 ||",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((iVar3 = (**(code **)(*(int *)(param_1 + 0x154) + 0x15c))(param_1,8), iVar3 == 0 ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((iVar3 = (**(code **)(*(int *)(param_1 + 0x154) + 0x15c))(param_1,8), iVar3 == 0 ||",
+      "text": "(iVar3 = core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004d2ea0(param_1),",
       "type": "unnamed_param"
     },
     {
@@ -400,23 +303,7 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar3 = core_hero_cpp_FUN_004d32d0(param_1), iVar3 == 0)))) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 25,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "((iVar3 = (**(code **)(*(int *)(param_1 + 0x154) + 0x15c))(param_1,9), iVar3 == 0 ||",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((iVar3 = (**(code **)(*(int *)(param_1 + 0x154) + 0x15c))(param_1,9), iVar3 == 0 ||",
+      "text": "(iVar4 = core_hero_cpp_FUN_004d3e20(param_1,\"!CBodyPart\"), iVar4 == 0)) &&",
       "type": "unnamed_param"
     },
     {
@@ -424,7 +311,15 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "((iVar3 = (**(code **)(*(int *)(param_1 + 0x154) + 0x15c))(param_1,9), iVar3 == 0 ||",
+      "text": "((((iVar4 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,3),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((((iVar4 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,3),",
       "type": "unnamed_param"
     },
     {
@@ -432,23 +327,15 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar3 = core_hero_cpp_FUN_004d3500(param_1), iVar3 == 0)))))) &&",
+      "text": "iVar4 == 0 || (iVar4 = core_hero_cpp_FUN_004d3040(param_1,param_2), iVar4 == 0)) &&",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 27,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "((iVar3 = (**(code **)(*(int *)(param_1 + 0x154) + 0x15c))(param_1,10), iVar3 == 0 ||",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
+      "line": 26,
+      "match": "param_2",
       "severity": "mild",
-      "text": "((iVar3 = (**(code **)(*(int *)(param_1 + 0x154) + 0x15c))(param_1,10), iVar3 == 0 ||",
+      "text": "iVar4 == 0 || (iVar4 = core_hero_cpp_FUN_004d3040(param_1,param_2), iVar4 == 0)) &&",
       "type": "unnamed_param"
     },
     {
@@ -456,15 +343,23 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "((iVar3 = (**(code **)(*(int *)(param_1 + 0x154) + 0x15c))(param_1,10), iVar3 == 0 ||",
+      "text": "((iVar4 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,8),",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar3 = core_hero_cpp_FUN_004d38b0(param_1), iVar3 == 0)))) {",
+      "text": "((iVar4 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,8),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(iVar4 = core_hero_cpp_CHero_tryPullLever_FUN_004d32d0(param_1), iVar4 == 0)))) &&",
       "type": "unnamed_param"
     },
     {
@@ -472,7 +367,55 @@
       "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar3 = core_hero_cpp_FUN_004d3e20(param_1,\"CBodyPart\"), iVar3 != 0)) {",
+      "text": "((iVar4 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,9),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((iVar4 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,9),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar4 == 0 || (iVar4 = core_hero_cpp_FUN_004d3500(param_1), iVar4 == 0)))))) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((iVar4 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,10),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((iVar4 = (*(((param_1->base).base.vtable._uh)->_uh).canDoHeroAction)(param_1,10),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(iVar4 = core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004d38b0(param_1), iVar4 == 0))))",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(iVar4 = core_hero_cpp_FUN_004d3e20(param_1,\"CBodyPart\"), iVar4 != 0)) {",
       "type": "unnamed_param"
     },
     {

@@ -10,23 +10,37 @@
 // =============================================================================
 
 // Structure: Heap
-// Stub: no RTTI in this build, size and fields not yet recovered
 #pragma pack(push, 1)
 typedef struct Heap {
+    int heap_size;
+    void* heap_base;
+    struct Heap* next_heap_block;
 } Heap;
 #pragma pack(pop)
 
 // Structure: HeapBlock
-// Stub: no RTTI in this build, size and fields not yet recovered
 #pragma pack(push, 1)
 typedef struct HeapBlock {
+    uint size;
+    struct HeapBlock* prev;
+    struct HeapBlock* next;
+    uint heap_info;
+    uint largest_free;
+    uint block_size;
+    uint alloc_count;
+    uint free_count;
+    uchar free_list_area[8];
+    uchar* data_area;
 } HeapBlock;
 #pragma pack(pop)
 
 // Structure: HeapState
-// Stub: no RTTI in this build, size and fields not yet recovered
 #pragma pack(push, 1)
 typedef struct HeapState {
+    void* current_block_ptr;
+    short segment_selector;
+    int block_size;
+    int allocation_status;
 } HeapState;
 #pragma pack(pop)
 

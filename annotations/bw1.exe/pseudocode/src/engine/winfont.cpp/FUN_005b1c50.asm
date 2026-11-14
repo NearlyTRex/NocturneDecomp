@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   engine_winfont.cpp_FUN_005b1c00 at 005b1c3d
+;   engine_winfont.cpp_CWinFont_drawText_FUN_005b1c00 at 005b1c3d
 ;
 ; Referenced Globals:
 ;   void* PTR_SetTextColor_005d0430 = 001d089e

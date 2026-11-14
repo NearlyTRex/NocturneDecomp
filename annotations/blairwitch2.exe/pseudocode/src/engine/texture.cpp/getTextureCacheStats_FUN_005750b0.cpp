@@ -11,6 +11,6 @@
 void __cdecl engine_texture_cpp_getTextureCacheStats_FUN_005750b0(char *output_buffer)
 
 {
-  engine_texture_cpp_FUN_00574af0(_DAT_02652eb0,output_buffer);
+  engine_texture_cpp_CTextureCache_getTextureCacheStats_FUN_00574af0(_DAT_02652eb0,output_buffer);
   return;
 }

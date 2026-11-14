@@ -8,11 +8,11 @@
 ; char *           Stack[0x8]:4   string
 ;
 ; XREF[2]:
-;   core_actor.cpp_FUN_00409c40 at 00409c4c
-;   core_charactr.cpp_FUN_00433c60 at 00433c9c
+;   core_actor.cpp_CDemonActor_calculateChecksum_FUN_00409c40 at 00409c4c
+;   core_charactr.cpp_CCharacter_calculateChecksum_FUN_00433c60 at 00433c9c
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040ce20
+;   core_actor.cpp_crc32ProcessByte_FUN_0040ce20
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     PUSH EAX                            ; 0040cf94
     PUSH ESI                            ; 0040cf95
     INC EBX                             ; 0040cf96
-    CALL core_actor.cpp_FUN_0040ce20    ; 0040cf97
-        ;   XREF to: 0040ce20 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce20()
+    CALL core_actor.cpp_crc32ProcessByte_FUN_0040ce20 ; 0040cf97
+        ;   XREF to: 0040ce20 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_crc32ProcessByte_FUN_0040ce20(uint * crc_state, byte input_byte)
     MOV DL,byte ptr [EBX]               ; 0040cf9c
     ADD ESP,0x8                         ; 0040cf9e
     TEST DL,DL                          ; 0040cfa1

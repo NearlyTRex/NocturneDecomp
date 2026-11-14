@@ -9,7 +9,7 @@
 ; CVector3i *      Stack[0xc]:4   lod_vertices
 ;
 ; XREF[1]:
-;   core_skeleton.cpp_FUN_005699c0 at 005699ea
+;   core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_005699c0 at 005699ea
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00612560

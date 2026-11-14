@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 75,
+    "complexity_score": 50,
     "cross_reference_count": 8,
     "function_call_count": 7,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 25,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_field"
+      "negative_offset"
     ],
     "total_lines": 89
   },
@@ -19,7 +18,7 @@
     {
       "addr": "004b7f90",
       "from_addr": "004b8b3c",
-      "name": "core_game.cpp_FUN_004b7f90",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -43,25 +42,25 @@
     {
       "addr": "00560c90",
       "from_addr": "00560cfd",
-      "name": "core_sound.cpp_FUN_00560c90",
+      "name": "core_sound.cpp_CSound_selectReverbPreset_FUN_00560c90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00513d1e",
+      "addr": "00513d20",
       "from_addr": "00513f56",
-      "name": "engine_pod.cpp_FUN_00513d1e",
+      "name": "engine_pod.cpp_FUN_00513d20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0047db70",
       "from_addr": "0047dcc2",
-      "name": "shape_edittool.cpp_FUN_0047db70",
+      "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047db70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047dd1e",
+      "addr": "0047dd20",
       "from_addr": "0047e00e",
-      "name": "shape_edittool.cpp_FUN_0047dd1e",
+      "name": "shape_edittool.cpp_FUN_0047dd20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -104,14 +103,14 @@
       "name": "shape_edittool.cpp_CEdScrollBar_dtor_FUN_00485550"
     },
     {
+      "addr": "00484f10",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_clear_FUN_00484f10"
+    },
+    {
       "addr": "00481f40",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_dtor_FUN_00481f40"
-    },
-    {
-      "addr": "00484f10",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_00484f10"
     }
   ],
   "globals": [
@@ -134,7 +133,7 @@
       {
         "call_addr": "0047dcc2",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047db70",
+        "caller": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047db70",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -145,7 +144,7 @@
       {
         "call_addr": "004b8b3c",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b7f90",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -156,7 +155,7 @@
       {
         "call_addr": "004b8c23",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b7f90",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
         "estimated_params": 2,
         "instructions_analyzed": 4,
         "method": "push_count",
@@ -167,7 +166,7 @@
       {
         "call_addr": "004b8e41",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b7f90",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -272,6 +271,32 @@
     },
     "pcode_op_count": 225
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004820b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0049a710",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004a3c80",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00474cf0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8913
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -297,36 +322,20 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(byte ***)&this_ptr->field_0xc = &g_CPickListVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x2d8",
-      "severity": "mild",
-      "text": "pCVar1 = shape_edittool_cpp_CEdButton_dtor_FUN_00486050((CEdButton *)&this_ptr->field_0x2d8,0);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
       "line": 20,
       "match": "pCVar1[-1].",
       "severity": "mild",
-      "text": "((CEdScrollBar *)&pCVar1[-1].field_0xac,0);",
+      "text": "((CEdScrollBar *)(pCVar1[-1].button_text + 0x90),0);",
       "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0xac",
+      "description": "Negative struct offset (wrong base type)",
+      "line": 22,
+      "match": "pCVar2[-9].",
       "severity": "mild",
-      "text": "((CEdScrollBar *)&pCVar1[-1].field_0xac,0);",
-      "type": "unnamed_field"
+      "text": "shape_edittool_cpp_CStrList_dtor_FUN_00481f40((CStrList *)&pCVar2[-9].bounds_top,1);",
+      "type": "negative_offset"
     }
   ],
   "vtable_info": {

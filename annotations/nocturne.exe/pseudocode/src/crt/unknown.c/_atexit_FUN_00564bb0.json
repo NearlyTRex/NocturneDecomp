@@ -20,12 +20,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0043abb0",
-      "from_addr": "0043abca",
-      "name": "core_console.cpp_staticInit_FUN_0043abb0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0043f9c0",
       "from_addr": "0043f9f0",
       "name": "core_dcamera.cpp_staticInit_FUN_0043f9c0",
@@ -158,6 +152,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0043abb0",
+      "from_addr": "0043abca",
+      "name": "engine_console.cpp_staticInit_FUN_0043abb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004ee4e0",
       "from_addr": "004ee4f2",
       "name": "engine_ncursfx.cpp_staticInit_FUN_004ee4e0",
@@ -258,7 +258,7 @@
       {
         "call_addr": "0043abca",
         "call_type": "direct",
-        "caller": "core_console.cpp_staticInit_FUN_0043abb0",
+        "caller": "engine_console.cpp_staticInit_FUN_0043abb0",
         "estimated_params": 1,
         "instructions_analyzed": 3,
         "method": "push_count",
@@ -347,6 +347,32 @@
       "STORE": 2
     },
     "pcode_op_count": 21
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b8d8c",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005c1093",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005a3e13",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005ff060",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 8,

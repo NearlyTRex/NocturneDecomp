@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 171,
     "complexity_score": 547,
-    "cross_reference_count": 17,
+    "cross_reference_count": 18,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
@@ -23,13 +23,19 @@
     {
       "addr": "004186c0",
       "from_addr": "004188b3",
-      "name": "core_boneguy.cpp_FUN_004186c0",
+      "name": "core_boneguy.cpp_CBoneGuy_process_FUN_004186c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00429b40",
       "from_addr": "00429bf9",
       "name": "core_charactr.cpp_CCharacter_applyLookAt_FUN_00429b40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00436e80",
+      "from_addr": "00437067",
+      "name": "core_construc.cpp_CConstruct_process_FUN_00436e80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -41,7 +47,7 @@
     {
       "addr": "004555c0",
       "from_addr": "00455927",
-      "name": "core_doc.cpp_FUN_004555c0",
+      "name": "core_doc.cpp_CDoc_makeDrawDecision_FUN_004555c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -59,19 +65,31 @@
     {
       "addr": "004afa20",
       "from_addr": "004afcea",
-      "name": "core_gabriela.cpp_FUN_004afa20",
+      "name": "core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00518310",
       "from_addr": "00518426",
-      "name": "core_platfrm.cpp_FUN_00518310",
+      "name": "core_platfrm.cpp_CPlatform_evaluatePosition_FUN_00518310",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00520140",
       "from_addr": "005202b9",
       "name": "core_scat.cpp_FUN_00520140",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005466c0",
+      "from_addr": "00546772",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_005466c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00545a60",
+      "from_addr": "00545b8a",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -83,19 +101,19 @@
     {
       "addr": "00540f30",
       "from_addr": "00540fb5",
-      "name": "core_skeleton.cpp_FUN_00540f30",
+      "name": "core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_00540f30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00545a60",
-      "from_addr": "00545b8a",
-      "name": "core_skeleton.cpp_FUN_00545a60",
+      "addr": "00548cc0",
+      "from_addr": "00548e0a",
+      "name": "core_skeleton.cpp_blendBoneTransformData_FUN_00548cc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005466c0",
-      "from_addr": "00546772",
-      "name": "core_skeleton.cpp_FUN_005466c0",
+      "addr": "00567fd0",
+      "from_addr": "005681a1",
+      "name": "core_stranger.cpp_CStranger_applyArmAimRotation_FUN_00567fd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -105,21 +123,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00567fd0",
-      "from_addr": "005681a1",
-      "name": "core_stranger.cpp_FUN_00567fd0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00593770",
       "from_addr": "0059383c",
-      "name": "core_xform.cpp_FUN_00593770",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00436e80",
-      "from_addr": "00437067",
-      "name": "unkafter_conveyor.cpp_FUN_00436e80",
+      "name": "core_xform.cpp_lerpMatrix3x4_FUN_00593770",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -152,7 +158,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 29,
+    "call_site_count": 30,
     "call_sites": [
       {
         "call_addr": "00429bf9",
@@ -171,7 +177,7 @@
       {
         "call_addr": "00540fb5",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_00540f30",
+        "caller": "core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_00540f30",
         "estimated_params": 2,
         "instructions_analyzed": 5,
         "method": "push_count",
@@ -184,7 +190,7 @@
       {
         "call_addr": "00545b8a",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_00545a60",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -198,7 +204,7 @@
       {
         "call_addr": "00545feb",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_00545a60",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -212,7 +218,7 @@
       {
         "call_addr": "00546772",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_005466c0",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_005466c0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -225,7 +231,7 @@
       {
         "call_addr": "0059383c",
         "call_type": "direct",
-        "caller": "core_xform.cpp_FUN_00593770",
+        "caller": "core_xform.cpp_lerpMatrix3x4_FUN_00593770",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -238,7 +244,7 @@
       {
         "call_addr": "00455927",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_004555c0",
+        "caller": "core_doc.cpp_CDoc_makeDrawDecision_FUN_004555c0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -338,6 +344,32 @@
       "STORE": 31
     },
     "pcode_op_count": 1026
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005b7940",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00585b20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005f77e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8024
+    },
+    "nocturne.exe": {
+      "addr": "0055d2d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8707
+    }
   },
   "stack_frame": {
     "frame_size": 100,
@@ -802,7 +834,7 @@
       "type": "bit_int_float_compare"
     },
     {
-      "call_site_count": 29,
+      "call_site_count": 30,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 5,

@@ -9,8 +9,8 @@
 int __cdecl core_charactr_cpp_CCharacter_isWalkComplete_FUN_00432200(CCharacter *this_ptr)
 
 {
-  if ((*(int *)&this_ptr->field_0x2704 != 0) &&
-     ((*(int *)&this_ptr->field_0x273c != 0 || (*(int *)&this_ptr->field_0x2740 != 0)))) {
+  if ((this_ptr->walk_to_target != (CDemonActor *)0x0) &&
+     ((this_ptr->walk_state != WALK_STATE_IDLE || (this_ptr->door_target != (CDoor *)0x0)))) {
     return 0;
   }
   return 1;

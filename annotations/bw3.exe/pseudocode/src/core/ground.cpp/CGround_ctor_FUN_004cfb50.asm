@@ -8,6 +8,9 @@
 ; int              Stack[0x8]:4   width
 ; int              Stack[0xc]:4   height
 ;
+; XREF[1]:
+;   core_ground.cpp_staticInit_FUN_004cf850 at 004cf85f
+;
 ; *****************************************************************************
 
 section .text

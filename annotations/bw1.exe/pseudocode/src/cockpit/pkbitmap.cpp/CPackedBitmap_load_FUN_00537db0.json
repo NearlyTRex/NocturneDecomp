@@ -2,33 +2,33 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 178,
-    "complexity_score": 337,
+    "complexity_score": 264,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 102,
-    "suspect_count": 21,
+    "pseudocode_lines": 99,
+    "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "unnamed_field",
+      "stack_param",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 280
+    "total_lines": 277
   },
   "cross_references": [
     {
       "addr": "00537c30",
       "from_addr": "00537c76",
-      "name": "cockpit_pkbitmap.cpp_FUN_00537c30",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_00537c30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00538b2e",
+      "addr": "00538b30",
       "from_addr": "00538cfd",
-      "name": "cockpit_pkbmpset.cpp_FUN_00538b2e",
+      "name": "cockpit_pkbmpset.cpp_FUN_00538b30",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -48,12 +48,17 @@
     {
       "addr": "00537550",
       "is_variadic": false,
-      "name": "cockpit_pkbitmap.cpp_FUN_00537550"
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00537550"
     },
     {
       "addr": "005030e0",
       "is_variadic": false,
       "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "005c1268",
+      "is_variadic": false,
+      "name": "crt_memory.c_operator_new_array_FUN_005c1268"
     },
     {
       "addr": "005c10d0",
@@ -63,12 +68,7 @@
     {
       "addr": "005bfb40",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005bfb40"
-    },
-    {
-      "addr": "005c1268",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c1268"
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
     }
   ],
   "globals": [
@@ -91,7 +91,7 @@
       {
         "call_addr": "00537c76",
         "call_type": "direct",
-        "caller": "cockpit_pkbitmap.cpp_FUN_00537c30",
+        "caller": "cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_00537c30",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -102,7 +102,7 @@
       {
         "call_addr": "00538cfd",
         "call_type": "direct",
-        "caller": "cockpit_pkbmpset.cpp_FUN_00538b2e",
+        "caller": "cockpit_pkbmpset.cpp_FUN_00538b30",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -148,6 +148,32 @@
       "STORE": 42
     },
     "pcode_op_count": 737
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00516a60",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0050fa90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0054b190",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9103
+    },
+    "nocturne.exe": {
+      "addr": "004f47b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9608
+    }
   },
   "stack_frame": {
     "frame_size": 28,
@@ -210,155 +236,99 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x18 = width;",
-      "type": "unnamed_field"
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_0000001c",
+      "severity": "moderate",
+      "text": "int in_stack_0000001c;",
+      "type": "stack_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x1c = height;",
-      "type": "unnamed_field"
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_0000001c",
+      "severity": "moderate",
+      "text": "if (in_stack_0000001c == 0) {",
+      "type": "stack_param"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Unresolved stack parameter",
       "line": 31,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "row_stride = *(int *)&this_ptr->field_0x18;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "iVar1 = FUN_005c1268((*(int *)&this_ptr->field_0x1c + 1) * 4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x20 = iVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "*(ulong *)(*(int *)&this_ptr->field_0x20 + iStack_28) = new_size;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x1c <= iStack_24) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "pvVar4 = realloc(*(void **)&this_ptr->field_0x14,new_size);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 49,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(void **)&this_ptr->field_0x14 = pvVar4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x18) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 64,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x18 <= iVar7) break;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 72,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "pvVar4 = realloc(*(void **)&this_ptr->field_0x14,uStack_18);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 73,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(void **)&this_ptr->field_0x14 = pvVar4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 83,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "puVar5 = (ushort *)(*(int *)&this_ptr->field_0x14 + new_size);",
-      "type": "unnamed_field"
+      "match": "in_stack_0000001c",
+      "severity": "moderate",
+      "text": "in_stack_0000001c = this_ptr->width;",
+      "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 96,
-      "match": "(ushort *)((int)puVar5",
+      "line": 45,
+      "match": "(ulong *)((int)this_ptr",
       "severity": "moderate",
-      "text": "puVar5 = (ushort *)((int)puVar5 + (uint)bVar10 * -2 + 1);",
+      "text": "*(ulong *)((int)this_ptr->row_offsets + iStack_24) = new_size;",
       "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 100,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "} while (iVar7 < *(int *)&this_ptr->field_0x18);",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 80,
+      "match": "(ushort *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "puVar4 = (ushort *)((int)this_ptr->packed_data + new_size);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `puVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 96,
-      "match": "(int)puVar5",
+      "description": "Complex pointer cast",
+      "line": 92,
+      "match": "(uint *)((int)puVar8",
       "severity": "moderate",
-      "text": "puVar5 = (ushort *)((int)puVar5 + (uint)bVar10 * -2 + 1);",
+      "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 93,
+      "match": "(ushort *)((int)puVar4",
+      "severity": "moderate",
+      "text": "puVar4 = (ushort *)((int)puVar4 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 101,
+      "match": "in_stack_0000001c",
+      "severity": "moderate",
+      "text": "width = width + in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Pointer value `puVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 92,
+      "match": "(int)puVar8",
+      "severity": "moderate",
+      "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 93,
+      "match": "(int)puVar4",
+      "severity": "moderate",
+      "text": "puVar4 = (ushort *)((int)puVar4 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 88,
+      "line": 85,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (uVar6 = (uVar9 & 0xffff) >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {",
+      "text": "for (uVar5 = (uVar9 & 0xffff) >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 93,
+      "line": 90,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (uVar9 = uVar9 & 3; new_size = uStack_1c, uVar9 != 0; uVar9 = uVar9 - 1) {",
+      "text": "for (uVar9 = uVar9 & 3; new_size = uStack_18, uVar9 != 0; uVar9 = uVar9 - 1) {",
       "type": "unrolled_memcpy"
     },
     {

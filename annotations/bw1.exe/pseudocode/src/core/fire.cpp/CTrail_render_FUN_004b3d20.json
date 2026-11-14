@@ -2,30 +2,28 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 221,
-    "complexity_score": 621,
+    "complexity_score": 485,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 111,
-    "suspect_count": 47,
+    "pseudocode_lines": 95,
+    "suspect_count": 36,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "raw_address_constant",
       "stack_alignment_array",
       "undefined_data",
-      "unknown_field",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 332
+    "total_lines": 316
   },
   "cross_references": [
     {
       "addr": "004b5100",
       "from_addr": "004b5422",
-      "name": "core_fire.cpp_FUN_004b5100",
+      "name": "core_fire.cpp_CFireEffect_render_FUN_004b5100",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -70,17 +68,17 @@
     {
       "addr": "00483df0",
       "is_variadic": false,
-      "name": "engine_drender.cpp_FUN_00483df0"
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_00483df0"
     },
     {
       "addr": "00483b70",
       "is_variadic": false,
-      "name": "engine_matrix.c_FUN_00483b70"
+      "name": "engine_drender.cpp_FUN_00483b70"
     },
     {
       "addr": "004839a0",
       "is_variadic": false,
-      "name": "engine_matrix.c_pop_FUN_004839a0"
+      "name": "engine_drender.cpp_pop_FUN_004839a0"
     },
     {
       "addr": "00580173",
@@ -234,7 +232,7 @@
       {
         "call_addr": "004b5422",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004b5100",
+        "caller": "core_fire.cpp_CFireEffect_render_FUN_004b5100",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -286,6 +284,32 @@
       "TRUNC": 12
     },
     "pcode_op_count": 987
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0049b380",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a0680",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004c5e90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4828
+    },
+    "nocturne.exe": {
+      "addr": "00489360",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4828
+    }
   },
   "stack_frame": {
     "frame_size": 140,
@@ -504,54 +528,30 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 8,
-      "match": "auStackY_102c",
+      "match": "afStackY_102c",
       "severity": "moderate",
-      "text": "uint auStackY_102c [997];",
+      "text": "float afStackY_102c [997];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "if (*(float *)&this_ptr->field_0x10 <= 0.0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 30,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "(DAT_00612560,*(SMRGLTextureBasic **)&this_ptr->field_0x20);",
+      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00(DAT_00612560,this_ptr->texture_ptr);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(DAT_00612560,*(SMRGLTextureBasic **)&this_ptr->field_0x20);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 53,
+      "line": 41,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "engine_drender_cpp_FUN_00483df0(DAT_00612560,*(float *)&this_ptr->field_0x14);",
+      "text": "(DAT_00612560,this_ptr->current_alpha);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "engine_drender_cpp_FUN_00483df0(DAT_00612560,*(float *)&this_ptr->field_0x14);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 42,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,1);",
@@ -559,95 +559,63 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 44,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "(DAT_00612560,(CVector3f *)this_ptr);",
+      "text": "(DAT_00612560,&this_ptr->position);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 45,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "engine_matrix_c_FUN_00483b70(DAT_00612560);",
+      "text": "engine_drender_cpp_FUN_00483b70(DAT_00612560);",
       "type": "undefined_data"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 59,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_38._0_4_ = local_44._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 59,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_38._0_4_ = local_44._0_4_;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 52,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(DAT_00612560,&local_38,translation);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 67,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "local_50 = *(float *)&this_ptr->field_0xc * *(float *)&this_ptr->field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 67,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "local_50 = *(float *)&this_ptr->field_0xc * *(float *)&this_ptr->field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 72,
+      "line": 59,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_00580173(*(SProjectedVertex **)DAT_00612560,(CVector3i *)&local_2c);",
+      "text": "engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr->projected_vertex,&local_2c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 78,
+      "line": 64,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_00612560 + 0x30),(CVector3i *)&local_20);",
+      "text": "engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&local_20);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 84,
+      "line": 69,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_00612560 + 0x60),(CVector3i *)&local_14);",
+      "text": "engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&local_14);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 90,
+      "line": 74,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_00612560 + 0x90),(CVector3i *)&local_5c);",
+      "text": "engine_special_cpp_FUN_00580173(&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&local_5c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 91,
+      "line": 75,
       "match": "DAT_0062902c",
       "severity": "mild",
       "text": "DAT_0062902c = 0x80000;",
@@ -655,7 +623,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 96,
+      "line": 80,
       "match": "DAT_00629090",
       "severity": "mild",
       "text": "DAT_00629090 = 0x80000;",
@@ -663,7 +631,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 99,
+      "line": 83,
       "match": "DAT_00629034",
       "severity": "mild",
       "text": "DAT_00629034 = 0xffff;",
@@ -671,7 +639,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 100,
+      "line": 84,
       "match": "DAT_00629038",
       "severity": "mild",
       "text": "DAT_00629038 = 0xffff;",
@@ -679,7 +647,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 101,
+      "line": 85,
       "match": "DAT_0062903c",
       "severity": "mild",
       "text": "DAT_0062903c = 0xffff;",
@@ -687,7 +655,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 102,
+      "line": 86,
       "match": "DAT_00629064",
       "severity": "mild",
       "text": "DAT_00629064 = 0xffff;",
@@ -695,7 +663,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 103,
+      "line": 87,
       "match": "DAT_00629068",
       "severity": "mild",
       "text": "DAT_00629068 = 0xffff;",
@@ -703,7 +671,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 104,
+      "line": 88,
       "match": "DAT_0062906c",
       "severity": "mild",
       "text": "DAT_0062906c = 0xffff;",
@@ -711,7 +679,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 105,
+      "line": 89,
       "match": "DAT_00629094",
       "severity": "mild",
       "text": "DAT_00629094 = 0xffff;",
@@ -719,7 +687,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 106,
+      "line": 90,
       "match": "DAT_00629098",
       "severity": "mild",
       "text": "DAT_00629098 = 0xffff;",
@@ -727,7 +695,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 107,
+      "line": 91,
       "match": "DAT_0062909c",
       "severity": "mild",
       "text": "DAT_0062909c = 0xffff;",
@@ -735,7 +703,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 108,
+      "line": 92,
       "match": "DAT_006290c4",
       "severity": "mild",
       "text": "DAT_006290c4 = 0xffff;",
@@ -743,7 +711,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 109,
+      "line": 93,
       "match": "DAT_006290c8",
       "severity": "mild",
       "text": "DAT_006290c8 = 0xffff;",
@@ -751,7 +719,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 110,
+      "line": 94,
       "match": "DAT_006290cc",
       "severity": "mild",
       "text": "DAT_006290cc = 0xffff;",
@@ -759,15 +727,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 111,
+      "line": 95,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_00483050(DAT_00612560,local_84);",
+      "text": "engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_00483050(DAT_00612560,&local_84);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 113,
+      "line": 97,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);",
@@ -775,39 +743,23 @@
     },
     {
       "description": "Pointer value `&local_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 60,
+      "line": 48,
       "match": "(int)&local_38",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_38 + (uint)bVar1 * -8 + 4) =",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&local_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 61,
-      "match": "(int)&local_44",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&local_44 + (uint)bVar1 * -8 + 4);",
+      "text": "*(float *)((int)&local_38 + (uint)bVar1 * -8 + 4) = afStack_40[(uint)bVar1 * -2];",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&local_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 62,
+      "line": 49,
       "match": "(int)&local_38",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_38 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&local_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 63,
-      "match": "(int)&local_44",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&local_44 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);",
+      "text": "*(float *)((int)&local_38 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =",
       "type": "pointer_truncation"
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_00629030`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_00629030` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 92,
+      "line": 76,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "_DAT_00629030 = 0xf80000;",
@@ -815,7 +767,7 @@
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_0062905c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_0062905c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 93,
+      "line": 77,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "_DAT_0062905c = 0xf80000;",
@@ -823,7 +775,7 @@
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_00629060`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_00629060` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 94,
+      "line": 78,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "_DAT_00629060 = 0xf80000;",
@@ -831,7 +783,7 @@
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_0062908c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_0062908c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 95,
+      "line": 79,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "_DAT_0062908c = 0xf80000;",
@@ -839,34 +791,18 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 60,
+      "line": 48,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_38 + (uint)bVar1 * -8 + 4) =",
+      "text": "*(float *)((int)&local_38 + (uint)bVar1 * -8 + 4) = afStack_40[(uint)bVar1 * -2];",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 61,
+      "line": 49,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_44 + (uint)bVar1 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 62,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&local_38 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 63,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&local_44 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);",
+      "text": "*(float *)((int)&local_38 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =",
       "type": "pointer_cast"
     }
   ]

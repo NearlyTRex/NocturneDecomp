@@ -7,7 +7,7 @@
 ; HMODULE          Stack[0x4]:4   hLibModule
 ;
 ; XREF[1]:
-;   engine_special.cpp_FUN_00580740 at 0058090f
+;   engine_special.cpp_shutdownExternalRenderer_FUN_00580740 at 0058090f
 ;
 ; Referenced Globals:
 ;   void* PTR_FreeLibrary_005d0568 = 001d0dba

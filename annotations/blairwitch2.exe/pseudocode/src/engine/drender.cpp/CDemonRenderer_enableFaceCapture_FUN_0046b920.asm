@@ -8,16 +8,16 @@
 ; int              Stack[0x8]:4   enabled
 ;
 ; XREF[18]:
-;   core_bodypart.cpp_FUN_004159e0 at 00415aae
+;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_004159e0 at 00415aae
 ;   core_box.cpp_FUN_0041aa20 at 0041aae8
 ;   core_cloth.cpp_CCloth_render_FUN_005b0fe0 at 005b11fc
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_004468c0 at 004468f7
 ;   core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_0044e7d0 at 0044e8ca
-;   core_dpart.cpp_FUN_00461a4e at 00461b06
+;   core_dpart.cpp_FUN_00461a50 at 00461b06
 ;   core_morph.cpp_CMorphModel_renderFaces_FUN_005b6c90 at 005b6d91
 ;   core_morph.cpp_CMorphModel_rotatePoints_FUN_005b6a50 at 005b6c73
-;   core_set.cpp_CDemonSet_rotateVerticies_FUN_00531e90 at 00531eb4
-;   core_set.cpp_FUN_0052dc10 at 0052dd20
+;   core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0052dc10 at 0052dd20
+;   core_set.cpp_CDemonSet_renderStaticLights_FUN_0052ef80 at 0052f13e
 ;   ... and 8 more
 ;
 ; Referenced Globals:

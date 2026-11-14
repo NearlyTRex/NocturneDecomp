@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 565,
-    "complexity_score": 446,
+    "complexity_score": 458,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 33,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 231,
-    "suspect_count": 19,
+    "pseudocode_lines": 233,
+    "suspect_count": 20,
     "suspect_types": [
       "extra_output",
       "undefined_data",
@@ -16,7 +16,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 796
+    "total_lines": 798
   },
   "cross_references": [
     {
@@ -50,6 +50,11 @@
       "name": "crt_math.c_round_FUN_005c03a0"
     },
     {
+      "addr": "005c08d0",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005c08d0"
+    },
+    {
       "addr": "005bfb70",
       "is_variadic": false,
       "name": "crt_memory.c_memset_FUN_005bfb70"
@@ -57,12 +62,7 @@
     {
       "addr": "005bfb40",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005bfb40"
-    },
-    {
-      "addr": "005c08d0",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c08d0"
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
     },
     {
       "addr": "004796b0",
@@ -82,32 +82,32 @@
     {
       "addr": "00596680",
       "is_variadic": false,
-      "name": "engine_texture.cpp_FUN_00596680"
-    },
-    {
-      "addr": "005a0fd0",
-      "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_005a0fd0"
-    },
-    {
-      "addr": "005a0c10",
-      "is_variadic": false,
-      "name": "unkaddr_0059f520.cpp_FUN_005a0c10"
+      "name": "engine_texture.cpp_CTextureCache_findFreeSlot_FUN_00596680"
     },
     {
       "addr": "005a0dc0",
       "is_variadic": false,
-      "name": "unkaddr_0059f520.cpp_FUN_005a0dc0"
+      "name": "support_trstream.cpp_CInStreamFile_close_FUN_005a0dc0"
     },
     {
       "addr": "005a08d0",
       "is_variadic": false,
-      "name": "unkclass_instream.cpp_CInStreamFile_ctor_FUN_005a08d0"
+      "name": "support_trstream.cpp_CInStreamFile_ctor_FUN_005a08d0"
     },
     {
       "addr": "005a0a50",
       "is_variadic": false,
-      "name": "unkclass_instream.cpp_CInStreamFile_dtor_FUN_005a0a50"
+      "name": "support_trstream.cpp_CInStreamFile_dtor_FUN_005a0a50"
+    },
+    {
+      "addr": "005a0fd0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0"
+    },
+    {
+      "addr": "005a0c10",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_read_FUN_005a0c10"
     }
   ],
   "globals": [
@@ -372,6 +372,32 @@
     },
     "pcode_op_count": 1813
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00573b80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9487
+    },
+    "bw3.exe": {
+      "addr": "00569790",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005dcc00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0363
+    },
+    "nocturne.exe": {
+      "addr": "00544ef0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0638
+    }
+  },
   "stack_frame": {
     "frame_size": 488,
     "local_size": 480,
@@ -500,7 +526,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 13,
+      "line": 11,
       "match": "extraout_ECX",
       "severity": "moderate",
       "text": "int extraout_ECX;",
@@ -508,7 +534,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
+      "line": 12,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "int extraout_EDX;",
@@ -516,7 +542,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 53,
+      "line": 51,
       "match": "DAT_005f7965",
       "severity": "mild",
       "text": "engine_dosio_cpp_FUN_00478e20(0x2c8a688,&DAT_005f7965,texture_name);",
@@ -524,7 +550,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 86,
+      "line": 84,
       "match": "DAT_005f79af",
       "severity": "mild",
       "text": "engine_dosio_cpp_changeFileExtension_FUN_004796b0(local_1dc,&DAT_005f79af);",
@@ -532,7 +558,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 85,
       "match": "DAT_005f79b4",
       "severity": "mild",
       "text": "engine_dosio_cpp_FUN_00478e20(0x2c8a89c,&DAT_005f79b4,local_1dc);",
@@ -540,7 +566,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 100,
+      "line": 98,
       "match": "DAT_005f79b8",
       "severity": "mild",
       "text": "engine_dosio_cpp_changeFileExtension_FUN_004796b0(local_15c,&DAT_005f79b8);",
@@ -548,7 +574,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 101,
+      "line": 99,
       "match": "DAT_005f79bd",
       "severity": "mild",
       "text": "engine_dosio_cpp_FUN_00478e20(0x2c8aab0,&DAT_005f79bd,local_15c);",
@@ -556,10 +582,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 142,
+      "line": 141,
       "match": "DAT_005f7b43",
       "severity": "mild",
-      "text": "support_trstream_cpp_FUN_005a0fd0(&local_5c,&DAT_005f7b43,texture_name,1);",
+      "text": "(&local_5c,&DAT_005f7b43,texture_name,1);",
       "type": "undefined_data"
     },
     {
@@ -567,47 +593,31 @@
       "line": 201,
       "match": "DAT_005f7ab6",
       "severity": "mild",
-      "text": "support_trstream_cpp_FUN_005a0fd0(&local_5c,&DAT_005f7ab6,local_1dc,1);",
+      "text": "(&local_5c,&DAT_005f7ab6,local_1dc,1);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 205,
+      "line": 206,
       "match": "DAT_005f7aba",
       "severity": "mild",
-      "text": "support_trstream_cpp_FUN_005a0fd0(&local_5c,&DAT_005f7aba,local_15c,1);",
+      "text": "(&local_5c,&DAT_005f7aba,local_15c,1);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 209,
+      "line": 212,
       "match": "DAT_005f7abe",
       "severity": "mild",
-      "text": "support_trstream_cpp_FUN_005a0fd0(&local_5c,&DAT_005f7abe,texture_name,1);",
+      "text": "(&local_5c,&DAT_005f7abe,texture_name,1);",
       "type": "undefined_data"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 226,
+      "line": 228,
       "match": "extraout_ECX",
       "severity": "moderate",
-      "text": "*(byte *)(extraout_ECX + extraout_EDX) = (byte)local_20;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 226,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "*(byte *)(extraout_ECX + extraout_EDX) = (byte)local_20;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 227,
-      "match": "extraout_EDX",
-      "severity": "moderate",
-      "text": "*(byte *)(*(int *)(pCVar7 + 0x4c) + 1 + extraout_EDX) = (byte)local_20;",
+      "text": "*(uchar *)(extraout_ECX + extraout_EDX) = (uchar)local_20;",
       "type": "extra_output"
     },
     {
@@ -615,12 +625,36 @@
       "line": 228,
       "match": "extraout_EDX",
       "severity": "moderate",
-      "text": "iVar4 = extraout_EDX + 3;",
+      "text": "*(uchar *)(extraout_ECX + extraout_EDX) = (uchar)local_20;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 229,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "pSVar5->palette_data[extraout_EDX + 1] = (uchar)local_20;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 230,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "iVar2 = extraout_EDX + 3;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 231,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "pSVar5->palette_data[extraout_EDX + 2] = (uchar)local_20;",
       "type": "extra_output"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 77,
+      "line": 75,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -628,7 +662,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 91,
+      "line": 89,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -636,7 +670,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 39,
+      "line": 37,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

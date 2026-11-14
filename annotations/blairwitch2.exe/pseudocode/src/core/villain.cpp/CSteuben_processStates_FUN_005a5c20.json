@@ -1,0 +1,128 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 15,
+    "complexity_score": 8,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 23
+  },
+  "cross_references": [
+    {
+      "addr": "005a5b40",
+      "from_addr": "005a5bd8",
+      "name": "core_villain.cpp_CSteuben_ctor_FUN_005a5b40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a5c20",
+    "address_range": [
+      [
+        "005a5c20",
+        "005a5c3b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_villain.cpp_CSteuben_processStates_FUN_005a5c20",
+    "signature": "void __cdecl core_villain_cpp_CSteuben_processStates_FUN_005a5c20(CSteuben *this_ptr,float delta_time,int mode)"
+  },
+  "function_calls": [
+    {
+      "addr": "0059e8c0",
+      "is_variadic": false,
+      "name": "core_basicene.cpp_CBasicEnemy_processStates_FUN_0059e8c0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005a5bd8",
+        "call_type": "direct",
+        "caller": "core_villain.cpp_CSteuben_ctor_FUN_005a5b40",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.181818181818182,
+    "instruction_count": 11,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 7,
+      "INT_ADD": 6,
+      "INT_AND": 5,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 4,
+      "LOAD": 5,
+      "POPCOUNT": 2,
+      "RETURN": 2,
+      "STORE": 4
+    },
+    "pcode_op_count": 46
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSteuben *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "mode",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 352,
+        "vtable_addr": "005ffad4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

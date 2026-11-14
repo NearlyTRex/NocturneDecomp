@@ -5,45 +5,45 @@
 // Function prototypes for core/crate.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_crate.cpp_staticInit_FUN_00439080
-// Address: 00439080
-void staticInit(void);
+// Original: core_crate.cpp_staticInit_FUN_00439d00
+// Address: 00439d00
+void __cdecl staticInit(void);
 
-// Original: core_crate.cpp_factoryFuncZombieCow_FUN_004390b0
-// Address: 004390b0
-void factoryFuncZombieCow(void);
+// Original: core_crate.cpp_factoryFuncCrate_FUN_00439d30
+// Address: 00439d30
+CCrate * __cdecl factoryFuncCrate(void);
 
 // Original: core_crate.cpp_CCrate_getActorType_FUN_00439d50
 // Address: 00439d50
-CDemonActorType * CCrate::getActorType(CCrate *this_ptr);
+CDemonActorType * __cdecl CCrate::getActorType(CCrate *this_ptr);
 
 // Original: core_crate.cpp_CCrate_ctor_FUN_00439d60
 // Address: 00439d60
 CCrate * __cdecl CCrate::ctor(CCrate *this_ptr);
 
-// Original: core_crate.cpp_FUN_00439dc0
+// Original: core_crate.cpp_CCrate_setup_FUN_00439dc0
 // Address: 00439dc0
-void FUN_00439dc0(CDemonActor *param_1);
+void __cdecl CCrate::setup(CCrate *this_ptr);
 
 // Original: core_crate.cpp_CCrate_canPickup_FUN_00439ea0
 // Address: 00439ea0
 int __cdecl CCrate::canPickup(CCrate *this_ptr,CDemonActor *picker);
 
-// Original: core_crate.cpp_FUN_00439ec0
+// Original: core_crate.cpp_CCrate_pickup_FUN_00439ec0
 // Address: 00439ec0
-void FUN_00439ec0(int param_1,undefined4 param_2);
+void __cdecl CCrate::pickup(CCrate *this_ptr,CDemonActor *carrier);
 
-// Original: core_crate.cpp_FUN_00439ed0
+// Original: core_crate.cpp_CCrate_onDropped_FUN_00439ed0
 // Address: 00439ed0
-void FUN_00439ed0(int param_1);
+void __cdecl CCrate::onDropped(CCrate *this_ptr,CVector3f *drop_position);
 
-// Original: core_crate.cpp_FUN_00439ef0
+// Original: core_crate.cpp_CCrate_getCarrier_FUN_00439ef0
 // Address: 00439ef0
-undefined4 FUN_00439ef0(int param_1);
+CDemonActor * __cdecl CCrate::getCarrier(CCrate *this_ptr);
 
-// Original: core_crate.cpp_FUN_00439f00
+// Original: core_crate.cpp_CCrate_process_FUN_00439f00
 // Address: 00439f00
-void FUN_00439f00(CDemonActor *param_1);
+void __cdecl CCrate::process(CCrate *this_ptr,float delta_time);
 
 // Original: core_crate.cpp_FUN_0043a130
 // Address: 0043a130
@@ -53,9 +53,9 @@ int FUN_0043a130(int param_1);
 // Address: 0043a1b0
 void FUN_0043a1b0(void);
 
-// Original: core_crate.cpp_FUN_0043a1d0
+// Original: core_crate.cpp_CCrate_archive_FUN_0043a1d0
 // Address: 0043a1d0
-void FUN_0043a1d0(CDemonActor *param_1);
+void __cdecl CCrate::archive(CCrate *this_ptr);
 
 // Original: core_crate.cpp_CCrate_getCollisionType_FUN_0043a220
 // Address: 0043a220
@@ -65,9 +65,9 @@ ECollisionType __cdecl CCrate::getCollisionType(CCrate *this_ptr,SCollisionInfo 
 // Address: 0043a240
 void FUN_0043a240(int param_1);
 
-// Original: core_crate.cpp_FUN_0043a280
+// Original: core_crate.cpp_CCrate_getTargetPoints_FUN_0043a280
 // Address: 0043a280
-undefined4 FUN_0043a280(int param_1,float *param_2);
+int __cdecl CCrate::getTargetPoints(CCrate *this_ptr,CVector3f *out_points_array);
 
 // Original: core_crate.cpp_FUN_0043a350
 // Address: 0043a350

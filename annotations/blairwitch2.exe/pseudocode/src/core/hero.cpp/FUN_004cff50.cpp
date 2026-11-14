@@ -9,10 +9,11 @@
 void __cdecl core_hero_cpp_FUN_004cff50(CHero *this_ptr,int hand_index)
 
 {
-  if (*(int *)(this_ptr + 0x25608) == 0) {
+  if (this_ptr->object_to_pick_up == (CDemonActor *)0x0) {
     return;
   }
-  core_charactr_cpp_FUN_00428b10(this_ptr,hand_index,*(int *)(this_ptr + 0x25608),0x3dcccccd,0);
-  *(uint *)(this_ptr + 0x25608) = 0;
+  core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428b10
+            (&this_ptr->base,hand_index,(int)this_ptr->object_to_pick_up,0x3dcccccd,0);
+  this_ptr->object_to_pick_up = (CDemonActor *)0x0;
   return;
 }

@@ -11,51 +11,38 @@
 void __cdecl core_fire_cpp_CCrater_render_FUN_00499a00(CCrater *this_ptr)
 
 {
-  SMRGLHeaderPrimitive local_60 [4];
-  uint local_5c;
-  uint local_58;
-  uint local_54;
-  uint local_50;
-  uint local_4c;
+  SMRGLHeaderPrimitive local_60;
   uint local_48;
   uint local_44;
   uint local_40;
-  int local_38;
-  int local_34;
-  int local_30;
-  int local_2c;
-  int local_28;
-  int local_24;
-  int local_20;
-  int local_1c;
-  int local_18;
-  int local_14;
-  int local_10;
-  int local_c;
+  CVector3i local_38;
+  CVector3i local_2c;
+  CVector3i local_20;
+  CVector3i local_14;
   
-  if (*(int *)this_ptr == 0) {
+  if (this_ptr->active == 0) {
     return;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
-            (DAT_0060b280,(CVector3f *)&this_ptr->field_0xc);
+            (DAT_0060b280,&this_ptr->center_position);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
             (DAT_0060b280,(SMRGLTextureBasic *)&DAT_006157b4);
-  local_38 = (int)ROUND(*(float *)&this_ptr->field_0x40 * _DAT_005f64e4);
-  local_34 = (int)ROUND(*(float *)&this_ptr->field_0x44 * _DAT_005f64e4);
-  local_30 = (int)ROUND(*(float *)&this_ptr->field_0x48 * _DAT_005f64e4);
-  engine_special_cpp_FUN_0055d9ec((SProjectedVertex *)&DAT_00622014,(CVector3i *)&local_38);
-  local_20 = (int)ROUND(*(float *)&this_ptr->field_0x4c * _DAT_005f64e4);
-  local_1c = (int)ROUND(*(float *)&this_ptr->field_0x50 * _DAT_005f64e4);
-  local_18 = (int)ROUND(*(float *)&this_ptr->field_0x54 * _DAT_005f64e4);
-  engine_special_cpp_FUN_0055d9ec((SProjectedVertex *)&DAT_00622044,(CVector3i *)&local_20);
-  local_2c = (int)ROUND(*(float *)&this_ptr->field_0x58 * _DAT_005f64e4);
-  local_28 = (int)ROUND(*(float *)&this_ptr->field_0x5c * _DAT_005f64e4);
-  local_24 = (int)ROUND(*(float *)&this_ptr->field_0x60 * _DAT_005f64e4);
-  engine_special_cpp_FUN_0055d9ec((SProjectedVertex *)&DAT_00622074,(CVector3i *)&local_2c);
-  local_14 = (int)ROUND(*(float *)&this_ptr->field_0x64 * _DAT_005f64e4);
-  local_10 = (int)ROUND(*(float *)&this_ptr->field_0x68 * _DAT_005f64e4);
-  local_c = (int)ROUND(*(float *)&this_ptr->field_0x6c * _DAT_005f64e4);
-  engine_special_cpp_FUN_0055d9ec((SProjectedVertex *)&DAT_006220a4,(CVector3i *)&local_14);
+  local_38.x = (int)ROUND(this_ptr->corner_positions[0].x * _DAT_005f64e4);
+  local_38.y = (int)ROUND(this_ptr->corner_positions[0].y * _DAT_005f64e4);
+  local_38.z = (int)ROUND(this_ptr->corner_positions[0].z * _DAT_005f64e4);
+  engine_special_cpp_FUN_0055d9ec((SProjectedVertex *)&DAT_00622014,&local_38);
+  local_20.x = (int)ROUND(this_ptr->corner_positions[1].x * _DAT_005f64e4);
+  local_20.y = (int)ROUND(this_ptr->corner_positions[1].y * _DAT_005f64e4);
+  local_20.z = (int)ROUND(this_ptr->corner_positions[1].z * _DAT_005f64e4);
+  engine_special_cpp_FUN_0055d9ec((SProjectedVertex *)&DAT_00622044,&local_20);
+  local_2c.x = (int)ROUND(this_ptr->corner_positions[2].x * _DAT_005f64e4);
+  local_2c.y = (int)ROUND(this_ptr->corner_positions[2].y * _DAT_005f64e4);
+  local_2c.z = (int)ROUND(this_ptr->corner_positions[2].z * _DAT_005f64e4);
+  engine_special_cpp_FUN_0055d9ec((SProjectedVertex *)&DAT_00622074,&local_2c);
+  local_14.x = (int)ROUND(this_ptr->corner_positions[3].x * _DAT_005f64e4);
+  local_14.y = (int)ROUND(this_ptr->corner_positions[3].y * _DAT_005f64e4);
+  local_14.z = (int)ROUND(this_ptr->corner_positions[3].z * _DAT_005f64e4);
+  engine_special_cpp_FUN_0055d9ec((SProjectedVertex *)&DAT_006220a4,&local_14);
   DAT_00622034 = 0xffff;
   DAT_00622038 = 0xffff;
   DAT_0062203c = 0xffff;
@@ -76,20 +63,20 @@ void __cdecl core_fire_cpp_CCrater_render_FUN_00499a00(CCrater *this_ptr)
   DAT_00622090 = 0x80000;
   _DAT_006220bc = 0x80000;
   _DAT_006220c0 = 0x80000;
-  local_54 = 0xffff;
-  local_58 = 0;
-  local_50 = 0;
-  local_5c = 3;
-  local_4c = 0;
+  local_60.surface_normal.B.i = 0xffff;
+  local_60.surface_normal.A.i = 0;
+  local_60.surface_normal.C.i = 0;
+  local_60.base.count = 3;
+  local_60.surface_normal.D.i = 0;
   local_48 = 0;
   local_44 = 1;
   local_40 = 2;
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0xffff);
-  engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50(DAT_0060b280,local_60);
+  engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50(DAT_0060b280,&local_60);
   local_48 = 0;
   local_44 = 2;
   local_40 = 3;
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0xffff);
-  engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50(DAT_0060b280,local_60);
+  engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50(DAT_0060b280,&local_60);
   return;
 }

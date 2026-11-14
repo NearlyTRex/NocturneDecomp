@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005bfb70
-;   sound_sndmain.cpp_FUN_00575c00
+;   sound_sndmain.cpp_startSoundThread_FUN_00575c00
 ;   sound_sndwav.cpp_writeWavOutBuffer_FUN_0057a5c0
 ;
 ; *****************************************************************************
@@ -77,8 +77,8 @@ section .text
     FMUL double ptr [0x005f576f]        ; 0057a87f | DAT_005f576f
     SUB ESP,0x4                         ; 0057a885
     FSTP float ptr [ESP]                ; 0057a888
-    CALL sound_sndmain.cpp_FUN_00575c00 ; 0057a88b
-        ;   XREF to: 00575c00 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00575c00()
+    CALL sound_sndmain.cpp_startSoundThread_FUN_00575c00 ; 0057a88b
+        ;   XREF to: 00575c00 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_startSoundThread_FUN_00575c00(double latency_seconds)
     ADD ESP,0x4                         ; 0057a890
     TEST EAX,EAX                        ; 0057a893
     JZ 0x0057a8a0                       ; 0057a895

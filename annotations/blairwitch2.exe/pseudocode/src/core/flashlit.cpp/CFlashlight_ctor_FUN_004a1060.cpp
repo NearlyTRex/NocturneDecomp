@@ -11,21 +11,21 @@
 CFlashlight * __cdecl core_flashlit_cpp_CFlashlight_ctor_FUN_004a1060(CFlashlight *this_ptr)
 
 {
-  uint uVar1;
+  float fVar1;
   CWeapon *pCVar2;
   
-  pCVar2 = core_weapon_cpp_CWeapon_ctor_FUN_005899d0((CWeapon *)this_ptr);
-  *(byte **)&pCVar2->field_0x2b0 = &g_CFlashlightVTable;
+  pCVar2 = core_weapon_cpp_CWeapon_ctor_FUN_005899d0(&this_ptr->base);
+  (pCVar2->base).vtable._ub = &g_CFlashlightVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
-            ((CKeyFramedModelInstance *)&pCVar2->field_0x2b4,"flashlit.kfm");
-  *(uint *)&pCVar2->field_0x434 = 0;
-  *(uint *)&pCVar2->field_0x438 = 0;
-  *(uint *)&pCVar2->field_0x43c = 5;
-  *(uint *)&pCVar2->field_0x440 = 0;
-  *(uint *)&pCVar2->field_0x444 = 0;
-  uVar1 = _DAT_005f6cac;
-  *(uint *)&pCVar2->field_0x448 = 0;
-  *(uint *)&pCVar2->field_0x6c4 = 0;
-  *(uint *)&pCVar2->field_0x6c0 = uVar1;
+            (&pCVar2->model,"flashlit.kfm");
+  pCVar2->is_spread_weapon = 0;
+  pCVar2->fire_mode = FIRE_MODE_AUTOMATIC;
+  pCVar2->weapon_type = WEAPON_TYPE_FLASHLIGHT;
+  pCVar2->can_penetrate = 0;
+  pCVar2->bolt_velocity = 0.0;
+  fVar1 = _DAT_005f6cac;
+  pCVar2->fire_cooldown = 0;
+  pCVar2->ammo_count = 0;
+  pCVar2->weight = fVar1;
   return (CFlashlight *)pCVar2;
 }

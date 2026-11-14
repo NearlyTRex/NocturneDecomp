@@ -20,7 +20,7 @@ void cockpit_ckptutil_c_FUN_00436a50(char *param_1,int param_2,int param_3)
   _FILE *p_Var7;
   int iVar8;
   int iVar9;
-  byte auStack_6c [80];
+  char acStack_6c [80];
   int iStack_1c;
   int iStack_18;
   int iStack_14;
@@ -32,10 +32,10 @@ void cockpit_ckptutil_c_FUN_00436a50(char *param_1,int param_2,int param_3)
   }
   p_Var7 = engine_dosio_cpp_FUN_004659c0((char *)0x5b8b74,param_1,(char *)0x5b8b71);
   if (p_Var7 == (_FILE *)0x0) {
-    FUN_005a28c0(auStack_6c,"Could not create output file (%s).",param_1);
+    _sprintf(acStack_6c,"Could not create output file (%s).");
     _DAT_01d71de4 = 0x4fe;
     _DAT_01d71de0 = "..\\cockpit\\ckptutil.c";
-    core_main_c_FUN_004e4330(auStack_6c);
+    core_main_c_FUN_004e4330(acStack_6c);
   }
   FUN_005a3140(p_Var7,0x5b8bb1,param_3);
   if (0 < param_3) {

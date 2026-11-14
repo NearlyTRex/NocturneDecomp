@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CCheesyCipher * support_codec_cpp_CCheesyCipher_dtor_FUN_00435400(CCheesyCipher *this_ptr,uint flags)
+; CCheesyCipher * __cdecl support_codec_cpp_CCheesyCipher_dtor_FUN_00435400(CCheesyCipher *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CCheesyCipher *  Stack[0x4]:4   this_ptr
@@ -40,7 +40,7 @@ section .text
         ;   Label: LAB_00435426
     PUSH EBX                            ; 0043542b
     CALL crt_memory.c___vec_delete_FUN_005b7fa7 ; 0043542c
-        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005b7fa7()
+        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005b7fa7(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00435431
     PUSH EAX                            ; 00435434
     CALL crt_unknown.c_FUN_005b7fce     ; 00435435

@@ -1,0 +1,192 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 93,
+    "complexity_score": 72,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 37,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 130
+  },
+  "cross_references": [
+    {
+      "addr": "004ef300",
+      "from_addr": "004ef383",
+      "name": "core_hostage.cpp_CHostage_processDamage_FUN_004ef300",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00531da0",
+    "address_range": [
+      [
+        "00531da0",
+        "00531e7c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_npc.cpp_CNPC_processDamage_FUN_00531da0",
+    "signature": "void __cdecl core_npc_cpp_CNPC_processDamage_FUN_00531da0(CNPC *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "004328c0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_004328c0"
+    },
+    {
+      "addr": "004319e0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processDamage_FUN_004319e0"
+    },
+    {
+      "addr": "00531cc0",
+      "is_variadic": false,
+      "name": "core_npc.cpp_CNPC_setRandomMotionVariant_FUN_00531cc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ec7dc",
+      "name": "DAT_005ec7dc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ec7e0",
+      "name": "DAT_005ec7e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ec7e5",
+      "name": "s_DAMAGE_005ec7e5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ec7ec",
+      "name": "DAT_005ec7ec",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.56,
+    "instruction_count": 75,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 7,
+      "CALLIND": 2,
+      "CBRANCH": 6,
+      "COPY": 119,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 30,
+      "INT_AND": 38,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 26,
+      "INT_LEFT": 8,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 13,
+      "INT_SUB": 31,
+      "INT_ZEXT": 8,
+      "LOAD": 18,
+      "POPCOUNT": 13,
+      "RETURN": 2,
+      "STORE": 31
+    },
+    "pcode_op_count": 417
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00510b90",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005099e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00544d30",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004eeea0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNPC *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_005ec7dc",
+      "severity": "mild",
+      "text": "core_npc_cpp_CNPC_setRandomMotionVariant_FUN_00531cc0((CNPC *)this_ptr_00,&DAT_005ec7dc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_005ec7e0",
+      "severity": "mild",
+      "text": "((CNPC *)this_ptr_00,&DAT_005ec7e0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_005ec7ec",
+      "severity": "mild",
+      "text": "core_npc_cpp_CNPC_setRandomMotionVariant_FUN_00531cc0((CNPC *)this_ptr_00,&DAT_005ec7ec);",
+      "type": "undefined_data"
+    }
+  ]
+}

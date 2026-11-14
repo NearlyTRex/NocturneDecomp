@@ -44,7 +44,7 @@
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_resetGameFlags_FUN_00480410
-;   core_game.cpp_CGame_FUN_004a4170
+;   core_game.cpp_CGame_loadGame_FUN_004a4170
 ;   core_level.cpp_CLevelLoader_show_FUN_004c5640
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_004d9a80
 ;   core_mission.cpp_CDemonMission_load_FUN_004d7ee0
@@ -351,8 +351,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x4c0]     ; 004a4eee
     PUSH ECX                            ; 004a4ef5
     MOV dword ptr [EAX + -0x4],0x0      ; 004a4ef6
-    CALL core_game.cpp_CGame_FUN_004a4170 ; 004a4efd
-        ;   XREF to: 004a4170 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_FUN_004a4170(CGame * this_ptr, char * save_filename, int load_mode)
+    CALL core_game.cpp_CGame_loadGame_FUN_004a4170 ; 004a4efd
+        ;   XREF to: 004a4170 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_loadGame_FUN_004a4170(CGame * this_ptr, char * save_filename, int load_mode)
     ADD ESP,0xc                         ; 004a4f02
     MOV EAX,dword ptr [ESP + 0x498]     ; 004a4f05
         ;   Label: LAB_004a4f05

@@ -13,7 +13,7 @@
 ;   undefined4 DAT_0061f650
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408850
+;   core_actor.cpp_CDemonActor_setup_FUN_00408850
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
         ;   Label: core_dest.cpp_CActorDestination_setup_FUN_0045d260
     MOV EBX,dword ptr [ESP + 0x8]       ; 0045d261
     PUSH EBX                            ; 0045d265
-    CALL core_actor.cpp_FUN_00408850    ; 0045d266
-        ;   XREF to: 00408850 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_00408850(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_setup_FUN_00408850 ; 0045d266
+        ;   XREF to: 00408850 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408850(CDemonActor * this_ptr)
     MOV EAX,[0x0061f650]                ; 0045d26b | DAT_0061f650
     MOV dword ptr [EBX + 0xf8],0x0      ; 0045d270
     MOV EAX,dword ptr [EAX + 0x1008]    ; 0045d27a

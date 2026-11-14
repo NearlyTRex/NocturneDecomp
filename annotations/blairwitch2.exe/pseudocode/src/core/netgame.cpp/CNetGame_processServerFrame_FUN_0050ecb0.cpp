@@ -11,7 +11,7 @@
 void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_0050ecb0(CNetGame *this_ptr)
 
 {
-  byte *puVar1;
+  SNetPlayer *pSVar1;
   int iVar2;
   int iVar3;
   CNetGame *pCVar4;
@@ -20,25 +20,25 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_0050ecb0(CNetGame 
   uint *puVar6;
   int iVar7;
   SSimFrame *sim_frame;
-  uint *puVar8;
+  SPlayerInput *pSVar8;
+  uint *puVar9;
   byte *src;
-  SSimFrame *pSVar9;
-  uint *puVar10;
-  byte bVar11;
-  uint local_a0;
-  byte local_9c;
+  SPlayerInput *pSVar10;
+  uint *puVar11;
+  byte bVar12;
+  SNetPacketHeader local_a0;
   uint local_9b;
   uint local_97;
   uint local_93;
   uint local_8f [26];
   SSimFrame *local_24;
   int local_20;
-  byte *local_1c;
+  SNetPlayer *local_1c;
   int local_18;
   int local_14;
   
-  bVar11 = 0;
-  iVar2 = wincore_winrun_cpp_FUN_0058e9e0();
+  bVar12 = 0;
+  iVar2 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
   iVar2 = iVar2 / 0x12;
   _DAT_01d34e34 = iVar2 - _DAT_01d34e34;
   if (_DAT_01d34e34 < 0) {
@@ -49,42 +49,44 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_0050ecb0(CNetGame 
   }
   _DAT_01d34e38 = _DAT_01d34e38 + _DAT_01d34e34;
   _DAT_01d34e34 = iVar2;
-  if (*(int *)this_ptr == 0) {
+  if (this_ptr->connection_type == CONNECTION_NONE) {
     seed_value = rand();
-    *(uint *)&this_ptr->field_0x17c = seed_value;
-    core_actor_cpp_FUN_0040cee0(seed_value);
+    this_ptr->random_seed = seed_value;
+    core_actor_cpp_setRandomSeed_FUN_0040cee0(seed_value);
     return;
   }
-  if ((*(int *)this_ptr == 1) && (*(int *)&this_ptr->field_0x4 == 3)) {
-    if (*(int *)&this_ptr->field_0x124 < 0) {
+  if ((this_ptr->connection_type == CONNECTION_HOST) && (this_ptr->network_mode == NET_MODE_PLAYING)
+     ) {
+    if (this_ptr->local_player_index < 0) {
       _DAT_01d046a0 = "..\\core\\netgame.cpp";
       _DAT_01d046a4 = 0x8f6;
       core_main_c_FUN_004e4500("CNetGame::processServerFrame - I'm not in player list!");
     }
-    if (*(int *)&this_ptr->field_0x124 != *(int *)&this_ptr->field_0x120) {
+    if (this_ptr->local_player_index != this_ptr->server_player_index) {
       _DAT_01d046a0 = "..\\core\\netgame.cpp";
       _DAT_01d046a4 = 0x8f7;
       core_main_c_FUN_004e4500("CNetGame::processServerFrame - I'm not the server in the player list!");
     }
     iVar2 = 0;
-    if (0 < *(int *)&this_ptr->field_0x1c) {
+    if (0 < this_ptr->player_count) {
       do {
         core_netgame_cpp_CNetGame_updatePing_FUN_0050d840(this_ptr,iVar2,10.0);
         iVar2 = iVar2 + 1;
-      } while (iVar2 < *(int *)&this_ptr->field_0x1c);
+      } while (iVar2 < this_ptr->player_count);
     }
     core_netgame_cpp_CNetGame_receivePackets_FUN_0050c190(this_ptr);
     local_20 = 0x7fffffff;
     iVar2 = 0;
     pCVar4 = this_ptr;
-    if (0 < *(int *)&this_ptr->field_0x1c) {
+    if (0 < this_ptr->player_count) {
       do {
-        if (*(int *)&pCVar4->field_0x68 < local_20) {
-          local_20 = *(int *)&pCVar4->field_0x68;
+        iVar7 = pCVar4->players[0].sim_frame_index;
+        if (iVar7 < local_20) {
+          local_20 = iVar7;
         }
         iVar2 = iVar2 + 1;
-        pCVar4 = (CNetGame *)&pCVar4->field_0x80;
-      } while (iVar2 < *(int *)&this_ptr->field_0x1c);
+        pCVar4 = (CNetGame *)&pCVar4->players[0].player_input.action_state.light;
+      } while (iVar2 < this_ptr->player_count);
     }
     iVar2 = 0;
     if (0 < _DAT_01d54640) {
@@ -103,7 +105,7 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_0050ecb0(CNetGame 
         }
       } while (iVar2 < _DAT_01d54640);
     }
-    iVar2 = *(int *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x124 * 0x80);
+    iVar2 = this_ptr->players[this_ptr->local_player_index].sim_frame_index;
     iVar7 = 0;
     if (0 < _DAT_01d54640) {
       iVar3 = 0;
@@ -127,38 +129,38 @@ void __cdecl core_netgame_cpp_CNetGame_processServerFrame_FUN_0050ecb0(CNetGame 
     sim_frame = (SSimFrame *)(_DAT_01d54640 * 0x74 + 0x1d54644);
     _DAT_01d54640 = _DAT_01d54640 + 1;
     memset(sim_frame,0,0x74);
-    *(int *)sim_frame = iVar2;
+    sim_frame->sequence_number = iVar2;
 LAB_0050ee55:
     iVar2 = rand();
-    *(int *)(sim_frame + 4) = iVar2;
-    *(uint *)(sim_frame + 8) = *(uint *)&g_CGamePtr->field_0x284;
+    sim_frame->random_seed = iVar2;
+    sim_frame->delta_time = g_CGamePtr->delta_time_float;
     iVar2 = 0;
     pCVar4 = this_ptr;
     pSVar5 = sim_frame;
-    if (0 < *(int *)&this_ptr->field_0x1c) {
+    if (0 < this_ptr->player_count) {
       do {
-        puVar6 = (uint *)&pCVar4->field_0x6c;
-        pSVar9 = pSVar5 + 0xc;
+        pSVar8 = &pCVar4->players[0].player_input;
+        pSVar10 = pSVar5->player_input;
         for (iVar7 = 0xd; iVar7 != 0; iVar7 = iVar7 + -1) {
-          *(uint *)pSVar9 = *puVar6;
-          puVar6 = puVar6 + (uint)bVar11 * -2 + 1;
-          pSVar9 = pSVar9 + (uint)bVar11 * -8 + 4;
+          (pSVar10->action_state).walk = (pSVar8->action_state).walk;
+          pSVar8 = (SPlayerInput *)((int)pSVar8 + (uint)bVar12 * -8 + 4);
+          pSVar10 = (SPlayerInput *)((int)pSVar10 + (uint)bVar12 * -8 + 4);
         }
         iVar2 = iVar2 + 1;
-        pCVar4 = (CNetGame *)&pCVar4->field_0x80;
-        pSVar5 = pSVar5 + 0x34;
-      } while (iVar2 < *(int *)&this_ptr->field_0x1c);
+        pCVar4 = (CNetGame *)&pCVar4->players[0].player_input.action_state.light;
+        pSVar5 = (SSimFrame *)&pSVar5->player_input[0].turn_speed;
+      } while (iVar2 < this_ptr->player_count);
     }
     local_24 = sim_frame;
     core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_0050f370(this_ptr,sim_frame);
     local_18 = 0;
-    if (0 < *(int *)&this_ptr->field_0x1c) {
-      local_1c = &this_ptr->field_0x20;
+    if (0 < this_ptr->player_count) {
+      local_1c = this_ptr->players;
       do {
-        puVar1 = local_1c;
-        if (local_18 != *(int *)&this_ptr->field_0x124) {
-          iVar2 = *(int *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x124 * 0x80) -
-                  *(int *)(local_1c + 0x48);
+        pSVar1 = local_1c;
+        if (local_18 != this_ptr->local_player_index) {
+          iVar2 = this_ptr->players[this_ptr->local_player_index].sim_frame_index -
+                  local_1c->sim_frame_index;
           if (iVar2 < 1) {
             _DAT_01d046a0 = "..\\core\\netgame.cpp";
             _DAT_01d046a4 = 0x93b;
@@ -167,7 +169,7 @@ LAB_0050ee55:
           if (5 < iVar2) {
             iVar2 = 5;
           }
-          local_14 = *(int *)(puVar1 + 0x48);
+          local_14 = pSVar1->sim_frame_index;
           for (; 0 < iVar2; iVar2 = iVar2 + -1) {
             iVar7 = 0;
             if (0 < _DAT_01d54640) {
@@ -187,33 +189,32 @@ LAB_0050f060:
             }
             iVar7 = iVar7 * 0x74;
             puVar6 = (uint *)(iVar7 + 0x1d54644);
-            local_a0 = 0x79;
-            local_9c = 0xf;
+            local_a0.size = 0x79;
+            local_a0.type = PACKET_SIM_FRAME;
             local_9b = *puVar6;
             local_97 = *(uint *)(iVar7 + 0x1d54648);
             local_93 = *(uint *)(iVar7 + 0x1d5464c);
             iVar7 = 0;
-            if (0 < *(int *)&this_ptr->field_0x1c) {
+            if (0 < this_ptr->player_count) {
               do {
-                puVar8 = puVar6 + 3;
-                puVar10 = local_8f + iVar7 * 0xd;
+                puVar9 = puVar6 + 3;
+                puVar11 = local_8f + iVar7 * 0xd;
                 for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {
-                  *puVar10 = *puVar8;
-                  puVar8 = puVar8 + (uint)bVar11 * -2 + 1;
-                  puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
+                  *puVar11 = *puVar9;
+                  puVar9 = puVar9 + (uint)bVar12 * -2 + 1;
+                  puVar11 = puVar11 + (uint)bVar12 * -2 + 1;
                 }
                 iVar7 = iVar7 + 1;
                 puVar6 = puVar6 + 0xd;
-              } while (iVar7 < *(int *)&this_ptr->field_0x1c);
+              } while (iVar7 < this_ptr->player_count);
             }
-            core_netgame_cpp_CNetGame_send_FUN_0050cd90
-                      (this_ptr,local_18,(SNetPacketHeader *)&local_a0);
+            core_netgame_cpp_CNetGame_send_FUN_0050cd90(this_ptr,local_18,&local_a0);
             local_14 = local_14 + 1;
           }
         }
-        local_1c = local_1c + 0x80;
+        local_1c = local_1c + 1;
         local_18 = local_18 + 1;
-      } while (local_18 < *(int *)&this_ptr->field_0x1c);
+      } while (local_18 < this_ptr->player_count);
     }
   }
   return;

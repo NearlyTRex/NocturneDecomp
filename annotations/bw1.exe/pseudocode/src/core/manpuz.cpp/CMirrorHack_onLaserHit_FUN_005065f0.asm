@@ -11,7 +11,7 @@
 ;   undefined4 DAT_005e768d
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409680
+;   core_actor.cpp_CDemonActor_onLaserHit_FUN_00409680
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
     PUSH EBX                            ; 005065f5
     MOV EDX,dword ptr [ESP + 0xc]       ; 005065f6
     PUSH EDX                            ; 005065fa
-    CALL core_actor.cpp_FUN_00409680    ; 005065fb
-        ;   XREF to: 00409680 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409680()
+    CALL core_actor.cpp_CDemonActor_onLaserHit_FUN_00409680 ; 005065fb
+        ;   XREF to: 00409680 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_onLaserHit_FUN_00409680(CDemonActor * this_ptr, SLaserInfo * laser_info)
     FLD float ptr [EBX + 0x34]          ; 00506600
     ADD ESP,0x8                         ; 00506603
     FCOMP double ptr [0x005e768d]       ; 00506606 | DAT_005e768d

@@ -2,18 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 279,
+    "complexity_score": 69,
     "cross_reference_count": 12,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 29,
-    "suspect_count": 23,
+    "suspect_count": 3,
     "suspect_types": [
-      "param_count_too_few",
       "sign_compare_idiom",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
     "total_lines": 99
   },
@@ -27,13 +25,25 @@
     {
       "addr": "005a23c0",
       "from_addr": "005a2623",
-      "name": "core_asgaya.cpp_FUN_005a23c0",
+      "name": "core_asgaya.cpp_rasterizePolygonCustom_FUN_005a23c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0043b3bc",
+      "addr": "00466d50",
+      "from_addr": "00466e31",
+      "name": "core_dpart.cpp_FUN_00466d50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004673d0",
+      "from_addr": "004674ad",
+      "name": "core_dpart.cpp_FUN_004673d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0043b3c0",
       "from_addr": "0043b3fc",
-      "name": "engine_clipper.c_FUN_0043b3bc",
+      "name": "engine_clipper.c_FUN_0043b3c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -49,45 +59,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0046de6e",
+      "addr": "0046de70",
       "from_addr": "0046df85",
-      "name": "engine_drender.cpp_FUN_0046de6e",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00515e80",
-      "from_addr": "00515f33",
-      "name": "engine_prim.c_FUN_00515e80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005163b0",
-      "from_addr": "005163fd",
-      "name": "engine_prim.c_FUN_005163b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00516de0",
-      "from_addr": "00516e93",
-      "name": "engine_prim.c_FUN_00516de0",
+      "name": "engine_drender.cpp_FUN_0046de70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00517480",
       "from_addr": "005174cd",
-      "name": "engine_prim.c_FUN_00517480",
+      "name": "engine_prim.c_renderIndexedPolygonAdvanced_FUN_00517480",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00466d50",
-      "from_addr": "00466e31",
-      "name": "unkafter_dpart.cpp_FUN_00466d50",
+      "addr": "005163b0",
+      "from_addr": "005163fd",
+      "name": "engine_prim.c_renderIndexedPolygonSoftware_FUN_005163b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004673d0",
-      "from_addr": "004674ad",
-      "name": "unkafter_dpart.cpp_FUN_004673d0",
+      "addr": "00515e80",
+      "from_addr": "00515f33",
+      "name": "engine_prim.c_renderPolygonSoftware_FUN_00515e80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00516de0",
+      "from_addr": "00516e93",
+      "name": "engine_prim.c_renderScanlinePolygon_FUN_00516de0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -102,7 +100,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "engine_prim.c_calculateTriangleWindingOrder_FUN_00515ac0",
-    "signature": "bool __cdecl engine_prim_c_calculateTriangleWindingOrder_FUN_00515ac0(int param_1,int param_2,int param_3)"
+    "signature": "int __cdecl engine_prim_c_calculateTriangleWindingOrder_FUN_00515ac0(SRenderVertex *v0,SRenderVertex *v1,SRenderVertex *v2)"
   },
   "function_calls": [],
   "globals": [
@@ -163,7 +161,7 @@
       {
         "call_addr": "00466e31",
         "call_type": "direct",
-        "caller": "unkafter_dpart.cpp_FUN_00466d50",
+        "caller": "core_dpart.cpp_FUN_00466d50",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -174,7 +172,7 @@
       {
         "call_addr": "004674ad",
         "call_type": "direct",
-        "caller": "unkafter_dpart.cpp_FUN_004673d0",
+        "caller": "core_dpart.cpp_FUN_004673d0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -185,7 +183,7 @@
       {
         "call_addr": "00515f33",
         "call_type": "direct",
-        "caller": "engine_prim.c_FUN_00515e80",
+        "caller": "engine_prim.c_renderPolygonSoftware_FUN_00515e80",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -196,7 +194,7 @@
       {
         "call_addr": "00516030",
         "call_type": "direct",
-        "caller": "engine_prim.c_FUN_00515e80",
+        "caller": "engine_prim.c_renderPolygonSoftware_FUN_00515e80",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -207,7 +205,7 @@
       {
         "call_addr": "005163fd",
         "call_type": "direct",
-        "caller": "engine_prim.c_FUN_005163b0",
+        "caller": "engine_prim.c_renderIndexedPolygonSoftware_FUN_005163b0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -218,7 +216,7 @@
       {
         "call_addr": "005164e6",
         "call_type": "direct",
-        "caller": "engine_prim.c_FUN_005163b0",
+        "caller": "engine_prim.c_renderIndexedPolygonSoftware_FUN_005163b0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -228,10 +226,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
     "estimated_params": 3,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.285714285714286,
@@ -262,11 +260,37 @@
     },
     "pcode_op_count": 270
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0051c760",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0053dd60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00552150",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004f9a10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 40,
+    "frame_size": 52,
     "local_size": 40,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -303,34 +327,31 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "v0",
+        "offset": 4,
+        "size": 4,
+        "type": "SRenderVertex *"
+      },
+      {
+        "is_param": true,
+        "name": "v1",
+        "offset": 8,
+        "size": 4,
+        "type": "SRenderVertex *"
+      },
+      {
+        "is_param": true,
+        "name": "v2",
+        "offset": 12,
+        "size": 4,
+        "type": "SRenderVertex *"
       }
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "bool __cdecl engine_prim_c_calculateTriangleWindingOrder_FUN_00515ac0(int param_1,int param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "bool __cdecl engine_prim_c_calculateTriangleWindingOrder_FUN_00515ac0(int param_1,int param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "bool __cdecl engine_prim_c_calculateTriangleWindingOrder_FUN_00515ac0(int param_1,int param_2,int param_3)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Undefined global data reference",
       "line": 14,
@@ -340,139 +361,11 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_24 = *(int *)(param_2 + 0x10) - *(int *)(param_1 + 0x10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_24 = *(int *)(param_2 + 0x10) - *(int *)(param_1 + 0x10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_20 = *(int *)(param_2 + 0x14) - *(int *)(param_1 + 0x14);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_20 = *(int *)(param_2 + 0x14) - *(int *)(param_1 + 0x14);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_1c = *(int *)(param_3 + 0x10) - *(int *)(param_2 + 0x10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_1c = *(int *)(param_3 + 0x10) - *(int *)(param_2 + 0x10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_18 = *(int *)(param_3 + 0x14) - *(int *)(param_2 + 0x14);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_18 = *(int *)(param_3 + 0x14) - *(int *)(param_2 + 0x14);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_1c = *(int *)(param_2 + 0x10) - *(int *)(param_1 + 0x10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_1c = *(int *)(param_2 + 0x10) - *(int *)(param_1 + 0x10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_18 = *(int *)(param_2 + 0x14) - *(int *)(param_1 + 0x14);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_18 = *(int *)(param_2 + 0x14) - *(int *)(param_1 + 0x14);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_24 = *(int *)(param_3 + 0x10) - *(int *)(param_2 + 0x10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_24 = *(int *)(param_3 + 0x10) - *(int *)(param_2 + 0x10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_20 = *(int *)(param_3 + 0x14) - *(int *)(param_2 + 0x14);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_20 = *(int *)(param_3 + 0x14) - *(int *)(param_2 + 0x14);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
       "line": 31,
       "match": "SBORROW4",
       "severity": "moderate",
-      "text": "return (SBORROW4(iVar4,iVar3) != SBORROW4(iVar2,uVar1)) != (int)(iVar2 - uVar1) < 0;",
+      "text": "return (uint)((SBORROW4(iVar4,iVar3) != SBORROW4(iVar2,uVar1)) != (int)(iVar2 - uVar1) < 0);",
       "type": "sign_compare_idiom"
     },
     {
@@ -480,19 +373,8 @@
       "line": 31,
       "match": "SBORROW4",
       "severity": "moderate",
-      "text": "return (SBORROW4(iVar4,iVar3) != SBORROW4(iVar2,uVar1)) != (int)(iVar2 - uVar1) < 0;",
+      "text": "return (uint)((SBORROW4(iVar4,iVar3) != SBORROW4(iVar2,uVar1)) != (int)(iVar2 - uVar1) < 0);",
       "type": "sign_compare_idiom"
-    },
-    {
-      "call_site_count": 20,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

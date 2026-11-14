@@ -2,25 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 102,
+    "complexity_score": 55,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 27,
-    "suspect_count": 6,
+    "pseudocode_lines": 25,
+    "suspect_count": 2,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "unrolled_strcpy"
     ],
-    "total_lines": 61
+    "total_lines": 59
   },
   "cross_references": [
     {
       "addr": "004d4ab0",
       "from_addr": "004d4ac3",
-      "name": "core_hero.cpp_FUN_004d4ab0",
+      "name": "core_hero.cpp_factoryFuncHeroPlaceholder_FUN_004d4ab0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -38,9 +37,9 @@
         "004d4b38"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_hero.cpp_CHeroPlaceholder_ctor_FUN_004d4ae0",
-    "signature": "CHeroPlaceholder * core_hero_cpp_CHeroPlaceholder_ctor_FUN_004d4ae0(CHeroPlaceholder *this_ptr)"
+    "signature": "CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_ctor_FUN_004d4ae0(CHeroPlaceholder *this_ptr)"
   },
   "function_calls": [
     {
@@ -77,8 +76,8 @@
     {
       "addr": "005e16a4",
       "name": "g_CHeroPlaceholderVTable",
-      "type": "void*",
-      "value": "00408890"
+      "type": "CDemonActor_vtable",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -98,7 +97,7 @@
       {
         "call_addr": "004d4ac3",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004d4ab0",
+        "caller": "core_hero.cpp_factoryFuncHeroPlaceholder_FUN_004d4ab0",
         "estimated_params": 1,
         "instructions_analyzed": 2,
         "method": "push_count",
@@ -137,6 +136,32 @@
     },
     "pcode_op_count": 105
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004d0940",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004ecba0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004f3c00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3889
+    },
+    "nocturne.exe": {
+      "addr": "004b5f90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3889
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -156,47 +181,15 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 12,
+      "line": 10,
       "match": "DAT_005c50eb",
       "severity": "mild",
       "text": "pcVar3 = &DAT_005c50eb;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "*(byte ***)&pCVar2->field_0x154 = &g_CHeroPlaceholderVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0xfc",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0xfc = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x15c",
-      "severity": "mild",
-      "text": "pcVar4 = &pCVar2->field_0x15c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x158 = 0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 19,
+      "line": 16,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

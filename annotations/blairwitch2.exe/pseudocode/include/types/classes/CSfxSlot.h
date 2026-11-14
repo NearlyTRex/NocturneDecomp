@@ -2,15 +2,36 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CSfxSample;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CSfxOptions.h"
 
 // Structure: CSfxSlot
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x11c (284 bytes)
 #pragma pack(push, 1)
 typedef struct CSfxSlot {
-    char field_0[284]; // 0x0
+    CSfxOptions options; // 0x0
+    int hardware_buffer_handle; // 0x60
+    int playback_state; // 0x64
+    struct CSfxSample* sample; // 0x68
+    float effective_frequency; // 0x6c
+    float distance_to_speakers[8]; // 0x70
+    float channel_volumes[8]; // 0x90
+    int channel_target_buffer_offsets[8]; // 0xb0
+    int channel_current_buffer_offsets[8]; // 0xd0
+    float reference_distance; // 0xf0
+    float min_distance; // 0xf4
+    float max_distance; // 0xf8
+    float fade_target_volume; // 0xfc
+    float fade_time_remaining; // 0x100
+    float stop_after_fade; // 0x104
+    int is_active; // 0x108
+    double prev_hardware_playback_pos; // 0x10c
+    int loop_marker_index; // 0x114
+    uint changed_flags; // 0x118, Added in this build
 } CSfxSlot;
 #pragma pack(pop)
 

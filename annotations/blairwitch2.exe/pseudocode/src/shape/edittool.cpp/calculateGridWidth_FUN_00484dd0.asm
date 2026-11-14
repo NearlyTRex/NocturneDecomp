@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   shape_edittool.cpp_FUN_00482a00 at 00482d96
+;   shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_00482a00 at 00482d96
 ;   shape_edittool.cpp_calculateGridHeight_FUN_00484df0 at 00484df0
 ;
 ; Referenced Globals:

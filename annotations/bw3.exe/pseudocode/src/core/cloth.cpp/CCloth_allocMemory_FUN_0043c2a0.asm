@@ -7,7 +7,7 @@
 ; CCloth *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_cloth.cpp_FUN_0043c330 at 0043c58a
+;   core_cloth.cpp_CCloth_load_FUN_0043c330 at 0043c58a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_005b8f78
@@ -16,9 +16,9 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_cloth.cpp_FUN_0043c300
+;   core_cloth.cpp_CCloth_free_FUN_0043c300
 ;   core_main.c_FUN_004e4330
-;   crt_unknown.c_FUN_005a40df
+;   crt_memory.c_operator_new_array_FUN_005a40df
 ;
 ; *****************************************************************************
 
@@ -28,14 +28,14 @@ section .text
         ;   Label: core_cloth.cpp_CCloth_allocMemory_FUN_0043c2a0
     MOV EBX,dword ptr [ESP + 0x8]       ; 0043c2a1
     PUSH EBX                            ; 0043c2a5
-    CALL core_cloth.cpp_FUN_0043c300    ; 0043c2a6
-        ;   XREF to: 0043c300 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043c300()
+    CALL core_cloth.cpp_CCloth_free_FUN_0043c300 ; 0043c2a6
+        ;   XREF to: 0043c300 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_free_FUN_0043c300(CCloth * this_ptr)
     MOV EAX,dword ptr [EBX + 0x104]     ; 0043c2ab
     ADD ESP,0x4                         ; 0043c2b1
     SHL EAX,0x2                         ; 0043c2b4
     PUSH EAX                            ; 0043c2b7
-    CALL crt_unknown.c_FUN_005a40df     ; 0043c2b8
-        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a40df()
+    CALL crt_memory.c_operator_new_array_FUN_005a40df ; 0043c2b8
+        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005a40df()
     ADD ESP,0x4                         ; 0043c2bd
     MOV dword ptr [EBX + 0x3aafc],EAX   ; 0043c2c0
     TEST EAX,EAX                        ; 0043c2c6

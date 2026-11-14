@@ -555,6 +555,125 @@ NOCTURNE_TEST(the_mouse_reports_in_the_games_own_coordinates) {
     stand.logical_scale = 1;
 }
 
+namespace {
+
+void push_motion(int x, int y) {
+    SDL_Event ev;
+    memset(&ev, 0, sizeof(ev));
+    ev.type = SDL_MOUSEMOTION;
+    ev.motion.windowID = SDL_GetWindowID(g_sdlWindow);
+    ev.motion.x = x;
+    ev.motion.y = y;
+    SDL_PushEvent(&ev);
+}
+
+void push_focus(Uint8 event) {
+    SDL_Event ev;
+    memset(&ev, 0, sizeof(ev));
+    ev.type = SDL_WINDOWEVENT;
+    ev.window.event = event;
+    SDL_PushEvent(&ev);
+}
+
+// The WM_MOUSEMOVE points in what was drained, in order.
+std::vector<long> moves(const std::vector<MSG> &got) {
+    std::vector<long> points;
+    for (const MSG &m : got) {
+        if (m.message == kMouseMove)
+            points.push_back((long)m.lParam);
+    }
+    return points;
+}
+
+} // namespace
+
+// Setting the cursor reports the game's own point back as a move, at once, and
+// warps to the window point that maps onto it. That warp's own motion is not
+// reported again; the player's motion after it is.
+NOCTURNE_TEST(setting_the_cursor_reports_the_games_point_and_warps_in_the_windows) {
+    start();
+    if (g_sdlWindow == nullptr)
+        g_CreateWindowExAFunc(0, "Nocturne", nullptr, 0, 0, 0, 640, 480, 0, 0, 0, nullptr);
+    drain();
+    stand.logical_scale = 2;
+    CHECK(g_SetCursorPosFunc(50, 40));
+    // The dummy driver echoes a warp as motion, as X11 does; it is dropped.
+    std::vector<long> got = moves(drain());
+    CHECK_EQ(got.size(), (size_t)1);
+    if (got.size() == 1)
+        CHECK_EQ(got[0], (40L << 16) | 50L);
+    int x = -1, y = -1;
+    SDL_GetMouseState(&x, &y);
+    CHECK_EQ(x, 100);
+    CHECK_EQ(y, 80);
+
+    // Once the echo is spent, the same window point is the player's again, as
+    // is any other.
+    push_motion(100, 80);
+    push_motion(60, 20);
+    got = moves(drain());
+    CHECK_EQ(got.size(), (size_t)2);
+    if (got.size() == 2) {
+        CHECK_EQ(got[0], (40L << 16) | 50L);
+        CHECK_EQ(got[1], (10L << 16) | 30L);
+    }
+    stand.logical_scale = 1;
+}
+
+// Motion already queued when the cursor is set is the player's, though the warp
+// is still waiting: only the warp's own point, both coordinates, is its echo.
+NOCTURNE_TEST(motion_ahead_of_the_warps_echo_is_still_the_players) {
+    start();
+    if (g_sdlWindow == nullptr)
+        g_CreateWindowExAFunc(0, "Nocturne", nullptr, 0, 0, 0, 640, 480, 0, 0, 0, nullptr);
+    drain();
+    stand.logical_scale = 2;
+    push_motion(120, 80); // another column
+    push_motion(100, 60); // the warp's column, another row
+    CHECK(g_SetCursorPosFunc(50, 40));
+    const std::vector<long> got = moves(drain());
+    CHECK_EQ(got.size(), (size_t)3);
+    if (got.size() == 3) {
+        CHECK_EQ(got[0], (40L << 16) | 50L);
+        CHECK_EQ(got[1], (40L << 16) | 60L);
+        CHECK_EQ(got[2], (30L << 16) | 50L);
+    }
+    stand.logical_scale = 1;
+}
+
+// Unfocused, the cursor is the player's: setting it reports the point without
+// warping, and motion over the window is nothing until focus comes back.
+NOCTURNE_TEST(unfocused_the_cursor_is_never_warped_and_motion_is_not_the_games) {
+    start();
+    if (g_sdlWindow == nullptr)
+        g_CreateWindowExAFunc(0, "Nocturne", nullptr, 0, 0, 0, 640, 480, 0, 0, 0, nullptr);
+    CHECK(g_SetCursorPosFunc(1, 2)); // a warp still waiting for its echo
+    push_focus(SDL_WINDOWEVENT_FOCUS_LOST);
+    drain();
+
+    int before_x = -1, before_y = -1;
+    SDL_GetMouseState(&before_x, &before_y);
+    CHECK(g_SetCursorPosFunc(30, 20));
+    push_motion(7, 9);
+    std::vector<long> got = moves(drain());
+    CHECK_EQ(got.size(), (size_t)1);
+    if (got.size() == 1)
+        CHECK_EQ(got[0], (20L << 16) | 30L);
+    int after_x = -1, after_y = -1;
+    SDL_GetMouseState(&after_x, &after_y);
+    CHECK_EQ(after_x, before_x);
+    CHECK_EQ(after_y, before_y);
+
+    // Focus back, motion is reported again; the warp lost with the focus is
+    // not waiting to swallow it.
+    push_focus(SDL_WINDOWEVENT_FOCUS_GAINED);
+    push_motion(1, 2);
+    got = moves(drain());
+    CHECK_EQ(got.size(), (size_t)1);
+    if (got.size() == 1)
+        CHECK_EQ(got[0], (2L << 16) | 1L);
+}
+
 // The wheel goes to the extra-message hook in whole notches, natural scrolling
 // turned back the right way, and a movement of no notches is nothing.
 NOCTURNE_TEST(the_wheel_arrives_as_notches) {

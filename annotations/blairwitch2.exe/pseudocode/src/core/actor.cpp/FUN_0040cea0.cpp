@@ -9,6 +9,7 @@
 void core_actor_cpp_FUN_0040cea0(int param_1,int param_2,uint param_3,uint param_4,uint param_5)
 
 {
-  unkafter_superopt_cpp_FUN_005a8140(param_2 * 0x44 + param_1 + 0x154,param_3,param_4,param_5);
+  core_bwspart_cpp_CSimpleParticleSystem_setFade_FUN_005a8140
+            ((CSimpleParticleSystem *)(param_2 * 0x44 + param_1 + 0x154),param_3,param_4,param_5);
   return;
 }

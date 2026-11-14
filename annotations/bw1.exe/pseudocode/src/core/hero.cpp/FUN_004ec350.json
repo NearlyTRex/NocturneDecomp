@@ -2,35 +2,33 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 155,
-    "complexity_score": 267,
+    "complexity_score": 211,
     "cross_reference_count": 7,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 62,
-    "suspect_count": 17,
+    "pseudocode_lines": 66,
+    "suspect_count": 12,
     "suspect_types": [
       "param_count_too_few",
+      "pointer_cast",
       "stack_alignment_array",
-      "suspicious_cast",
-      "unnamed_field",
       "unnamed_param",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 217
+    "total_lines": 221
   },
   "cross_references": [
     {
       "addr": "0040fcf0",
       "from_addr": "0040fd08",
-      "name": "core_baron.cpp_FUN_0040fcf0",
+      "name": "core_baron.cpp_CBaron_performLightningAttack_FUN_0040fcf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00444b4e",
+      "addr": "00444b50",
       "from_addr": "00444c3a",
-      "name": "core_colonel.cpp_FUN_00444b4e",
+      "name": "core_colonel.cpp_FUN_00444b50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -42,7 +40,7 @@
     {
       "addr": "004e98b0",
       "from_addr": "004e99af",
-      "name": "core_haystack.cpp_FUN_004e98b0",
+      "name": "core_haystack.cpp_CHaystack_updateAI_FUN_004e98b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -54,13 +52,13 @@
     {
       "addr": "005415c0",
       "from_addr": "005416a5",
-      "name": "core_scat.cpp_FUN_005415c0",
+      "name": "core_scat.cpp_CScat_updateAI_FUN_005415c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005938c0",
       "from_addr": "00593a09",
-      "name": "core_svetlana.cpp_FUN_005938c0",
+      "name": "core_svetlana.cpp_CSvetlana_processAI_FUN_005938c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -75,7 +73,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_hero.cpp_FUN_004ec350",
-    "signature": "int core_hero_cpp_FUN_004ec350(int param_1,float *param_2)"
+    "signature": "CCharacter * core_hero_cpp_FUN_004ec350(int param_1,float *param_2)"
   },
   "function_calls": [
     {
@@ -116,7 +114,7 @@
     },
     {
       "addr": "01fd3154",
-      "name": "g_CDemonSetInstance.field1380332_0x150fec",
+      "name": "g_CDemonSetInstance.enemy_count",
       "type": "undefined4",
       "value": null
     },
@@ -133,7 +131,7 @@
       {
         "call_addr": "0040fd08",
         "call_type": "direct",
-        "caller": "core_baron.cpp_FUN_0040fcf0",
+        "caller": "core_baron.cpp_CBaron_performLightningAttack_FUN_0040fcf0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -161,7 +159,7 @@
       {
         "call_addr": "004e99af",
         "call_type": "direct",
-        "caller": "core_haystack.cpp_FUN_004e98b0",
+        "caller": "core_haystack.cpp_CHaystack_updateAI_FUN_004e98b0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -189,7 +187,7 @@
       {
         "call_addr": "005416a5",
         "call_type": "direct",
-        "caller": "core_scat.cpp_FUN_005415c0",
+        "caller": "core_scat.cpp_CScat_updateAI_FUN_005415c0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -203,7 +201,7 @@
       {
         "call_addr": "00593a09",
         "call_type": "direct",
-        "caller": "core_svetlana.cpp_FUN_005938c0",
+        "caller": "core_svetlana.cpp_CSvetlana_processAI_FUN_005938c0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -217,7 +215,7 @@
       {
         "call_addr": "00444c3a",
         "call_type": "direct",
-        "caller": "core_colonel.cpp_FUN_00444b4e",
+        "caller": "core_colonel.cpp_FUN_00444b50",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -344,7 +342,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "int core_hero_cpp_FUN_004ec350(int param_1,float *param_2)",
+      "text": "CCharacter * core_hero_cpp_FUN_004ec350(int param_1,float *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -352,12 +350,12 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "int core_hero_cpp_FUN_004ec350(int param_1,float *param_2)",
+      "text": "CCharacter * core_hero_cpp_FUN_004ec350(int param_1,float *param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 10,
+      "line": 12,
       "match": "afStackY_1030",
       "severity": "moderate",
       "text": "float afStackY_1030 [985];",
@@ -365,7 +363,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 25,
       "match": "param_2",
       "severity": "mild",
       "text": "*param_2 = 9999.9;",
@@ -373,55 +371,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
       "text": "local_1c = (float *)(param_1 + 0x20);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x150fec",
-      "severity": "mild",
-      "text": "for (; local_20 < *(int *)&g_CDemonSetPtr->field_0x150fec; local_20 = local_20 + 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x150ff0",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(&g_CDemonSetPtr->field_0x150ff0 + local_18);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 33,
-      "match": "code *",
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(CCharacter **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*(int *)(iVar1 + 0x154) + 0x10c))(iVar1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 35,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*(int *)(iVar1 + 0x154) + 0x70))(iVar1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 38,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*(int *)(iVar1 + 0x154) + 0x54))(iVar1,auStack_c0);",
-      "type": "unresolved_funcptr"
+      "text": "this_ptr = *(CCharacter **)((int)g_CDemonSetPtr->enemies + local_18);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 54,
       "match": "param_2",
       "severity": "mild",
       "text": "if (fStack_24 < *param_2) {",
@@ -429,7 +395,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 55,
       "match": "param_2",
       "severity": "mild",
       "text": "*param_2 = fStack_24;",
@@ -437,7 +403,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 64,
+      "line": 68,
       "match": "param_2",
       "severity": "mild",
       "text": "*param_2 = SQRT(*param_2);",
@@ -445,19 +411,11 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 64,
+      "line": 68,
       "match": "param_2",
       "severity": "mild",
       "text": "*param_2 = SQRT(*param_2);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00622c28 (at 0x00622c28, +16 bytes).",
-      "line": 28,
-      "match": "g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "iVar1 = *(int *)(&g_CDemonSetPtr->field_0x150ff0 + local_18);",
-      "type": "suspicious_cast"
     },
     {
       "call_site_count": 7,

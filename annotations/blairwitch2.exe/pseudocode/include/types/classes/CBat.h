@@ -4,13 +4,28 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCourse.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
 
 // Structure: CBat
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x4e4 (1252 bytes)
 #pragma pack(push, 1)
 typedef struct CBat {
-    char field_0[1252]; // 0x0
+    CDemonActor base; // 0x0
+    char course_filename[32]; // 0x2b4
+    CCourse course; // 0x2d4
+    float anim_frame; // 0x2e0
+    CKeyFramedModelInstance model; // 0x2e4
+    float param; // 0x460
+    float course_speed; // 0x464
+    float speed; // 0x468
+    float flap_speed; // 0x46c
+    char periodic_sound[100]; // 0x470
+    float periodic_sound_timer_min; // 0x4d4
+    float periodic_sound_timer_max; // 0x4d8
+    uint sfx_handle; // 0x4dc
+    float sound_timer; // 0x4e0
 } CBat;
 #pragma pack(pop)
 

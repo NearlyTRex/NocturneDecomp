@@ -1,20 +1,20 @@
 // Name: core_crossbow.cpp_factoryFuncCrossbow_FUN_00449740
 // Address: 00449740
 // Address Range: [[00449740, 0044975b]]
-// Convention: unknown
-// Signature: void core_crossbow_cpp_factoryFuncCrossbow_FUN_00449740(void)
+// Convention: __cdecl
+// Signature: CCrossbow * __cdecl core_crossbow_cpp_factoryFuncCrossbow_FUN_00449740(void)
 
 #include "nocturne.h"
 
-void core_crossbow_cpp_factoryFuncCrossbow_FUN_00449740(void)
+CCrossbow * __cdecl core_crossbow_cpp_factoryFuncCrossbow_FUN_00449740(void)
 
 {
-  CCrossbow *this_ptr;
+  CCrossbow *pCVar1;
   
-  this_ptr = (CCrossbow *)FUN_005c0f32(0x820);
-  if (this_ptr == (CCrossbow *)0x0) {
-    return;
+  pCVar1 = (CCrossbow *)operator_new(0x820);
+  if (pCVar1 == (CCrossbow *)0x0) {
+    return (CCrossbow *)0x0;
   }
-  core_crossbow_cpp_CCrossbow_ctor_FUN_00449770(this_ptr);
-  return;
+  pCVar1 = core_crossbow_cpp_CCrossbow_ctor_FUN_00449770(pCVar1);
+  return pCVar1;
 }

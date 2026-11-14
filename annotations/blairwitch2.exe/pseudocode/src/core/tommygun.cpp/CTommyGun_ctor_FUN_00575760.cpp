@@ -11,23 +11,23 @@
 CTommyGun * __cdecl core_tommygun_cpp_CTommyGun_ctor_FUN_00575760(CTommyGun *this_ptr)
 
 {
-  uint uVar1;
+  float fVar1;
   CTommyGun *pCVar2;
   
-  pCVar2 = (CTommyGun *)core_weapon_cpp_CWeapon_ctor_FUN_005899d0((CWeapon *)this_ptr);
-  *(byte **)&pCVar2->field_0x2b0 = &g_CTommyGunVTable;
+  pCVar2 = (CTommyGun *)core_weapon_cpp_CWeapon_ctor_FUN_005899d0(&this_ptr->base);
+  (pCVar2->base).base.vtable._ub = &g_CTommyGunVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
-            ((CKeyFramedModelInstance *)&pCVar2->field_0x2b4,"tommygun.kfm");
-  *(uint *)&pCVar2->field_0x434 = 0;
-  *(uint *)&pCVar2->field_0x438 = 0;
-  *(uint *)&pCVar2->field_0x43c = 4;
-  *(uint *)&pCVar2->field_0x440 = 1;
-  *(uint *)&pCVar2->field_0x444 = 0x42c80000;
-  *(uint *)&pCVar2->field_0x448 = 1;
-  *(uint *)&pCVar2->field_0x6d8 = 0;
-  uVar1 = _DAT_005fce6c;
-  *(uint *)&pCVar2->field_0x6dc = 0;
-  *(uint *)&pCVar2->field_0x6d4 = 0;
-  *(uint *)&pCVar2->field_0x6c0 = uVar1;
+            (&(pCVar2->base).model,"tommygun.kfm");
+  (pCVar2->base).is_spread_weapon = 0;
+  (pCVar2->base).fire_mode = FIRE_MODE_AUTOMATIC;
+  (pCVar2->base).weapon_type = WEAPON_TYPE_TOMMY_GUN;
+  (pCVar2->base).can_penetrate = 1;
+  (pCVar2->base).bolt_velocity = 100.0;
+  (pCVar2->base).fire_cooldown = 1;
+  pCVar2->sfx_handles[0] = 0;
+  fVar1 = _DAT_005fce6c;
+  pCVar2->sfx_handles[1] = 0;
+  pCVar2->fire_frames_remaining = 0;
+  (pCVar2->base).weight = fVar1;
   return pCVar2;
 }

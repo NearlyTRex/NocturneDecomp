@@ -20,14 +20,14 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[16]:
-;   core_charactr.cpp_FUN_00426730 at 004267fc
-;   core_charactr.cpp_FUN_00429e90 at 00429eae
+;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90 at 00429eae
+;   core_charactr.cpp_CCharacter_renderEthereal_FUN_00426730 at 004267fc
 ;   core_cloth.cpp_FUN_005ae680 at 005aeac8
 ;   core_doc.cpp_FUN_00450c60 at 00451600
 ;   core_doc.cpp_FUN_00455d10 at 0045605a
-;   core_mimic.cpp_FUN_004f04f0 at 004f0752
-;   core_mimic.cpp_FUN_004f0e10 at 004f172f
-;   core_passngr.cpp_FUN_005115e0 at 0051161e
+;   core_mimic.cpp_CMimic_processAnimation_FUN_004f0e10 at 004f172f
+;   core_mimic.cpp_CMimic_setup_FUN_004f04f0 at 004f0752
+;   core_passngr.cpp_CPassenger_setup_FUN_005115e0 at 0051161e
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_00544ee0 at 00544ef2
 ;   core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_00544f50 at 00544f6e
 ;   ... and 6 more
@@ -35,7 +35,7 @@
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
 ;   core_xform.cpp_FUN_00591530
-;   core_xform.cpp_FUN_005938c0
+;   core_xform.cpp_quaternionToMatrix3x3_FUN_005938c0
 ;
 ; *****************************************************************************
 
@@ -80,8 +80,8 @@ section .text
     PUSH ECX                            ; 00546b52
     MOV EAX,dword ptr [ESP + 0x28]      ; 00546b53
     PUSH EAX                            ; 00546b57
-    CALL core_xform.cpp_FUN_005938c0    ; 00546b58
-        ;   XREF to: 005938c0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_FUN_005938c0(CMatrix3x4f * matrix_out, CQuaternion4f * quat_in)
+    CALL core_xform.cpp_quaternionToMatrix3x3_FUN_005938c0 ; 00546b58
+        ;   XREF to: 005938c0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionToMatrix3x3_FUN_005938c0(CMatrix3x4f * matrix_out, CQuaternion4f * quat_in)
     MOV EDX,dword ptr [EBX + 0xcf0]     ; 00546b5d
     ADD ESP,0x8                         ; 00546b63
     CMP EDX,0x3f800000                  ; 00546b66

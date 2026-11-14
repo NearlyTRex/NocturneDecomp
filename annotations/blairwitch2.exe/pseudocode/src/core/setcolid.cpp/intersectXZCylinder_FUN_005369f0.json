@@ -1,0 +1,179 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 212,
+    "complexity_score": 81,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 66,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 278
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005369f0",
+    "address_range": [
+      [
+        "005369f0",
+        "00536c3a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_setcolid.cpp_intersectXZCylinder_FUN_005369f0",
+    "signature": "int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_005369f0(SIntersectXZCylinder *cylinder,float obstacle_x,float obstacle_y,SCollisionInfo *collision_info)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005e5dbd",
+      "name": "DAT_005e5dbd",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 4,
+    "declared_stack_bytes": 16,
+    "estimated_params": 4,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.90625,
+    "instruction_count": 192,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "BOOL_OR": 16,
+      "BRANCH": 1,
+      "CBRANCH": 11,
+      "COPY": 813,
+      "FLOAT2FLOAT": 89,
+      "FLOAT_ABS": 2,
+      "FLOAT_ADD": 6,
+      "FLOAT_DIV": 2,
+      "FLOAT_EQUAL": 11,
+      "FLOAT_LESS": 11,
+      "FLOAT_MULT": 11,
+      "FLOAT_NAN": 22,
+      "FLOAT_NEG": 2,
+      "FLOAT_SQRT": 2,
+      "FLOAT_SUB": 12,
+      "INT2FLOAT": 3,
+      "INT_ADD": 99,
+      "INT_AND": 64,
+      "INT_EQUAL": 8,
+      "INT_LEFT": 44,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 55,
+      "INT_OR": 55,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 4,
+      "INT_SUB": 3,
+      "INT_XOR": 2,
+      "INT_ZEXT": 44,
+      "LOAD": 77,
+      "POPCOUNT": 4,
+      "RETURN": 4,
+      "STORE": 31
+    },
+    "pcode_op_count": 1518
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00557e10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0053d7d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00572e80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00510450",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "cylinder",
+        "offset": 4,
+        "size": 4,
+        "type": "SIntersectXZCylinder *"
+      },
+      {
+        "is_param": true,
+        "name": "obstacle_x",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "obstacle_y",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "collision_info",
+        "offset": 16,
+        "size": 4,
+        "type": "SCollisionInfo *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005369fa",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

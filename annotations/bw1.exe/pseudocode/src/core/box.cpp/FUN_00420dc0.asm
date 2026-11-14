@@ -26,7 +26,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_skeleton.cpp_FUN_00566380 at 005663c3
+;   core_skeleton.cpp_CDeformableModel_selectLOD_FUN_00566380 at 005663c3
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d4bc4

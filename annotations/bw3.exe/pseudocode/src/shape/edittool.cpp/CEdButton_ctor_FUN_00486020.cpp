@@ -9,16 +9,16 @@
 CEdButton * __cdecl shape_edittool_cpp_CEdButton_ctor_FUN_00486020(CEdButton *this_ptr)
 
 {
-  uint uVar1;
+  int iVar1;
   
-  this_ptr->field_0x4 = 0;
-  this_ptr->field_0x1c = 0;
-  *(uint *)&this_ptr->field_0x14 = 0;
-  *(uint *)&this_ptr->field_0x18 = 0;
-  *(uint *)this_ptr = 0;
-  uVar1 = *(uint *)&this_ptr->field_0x14;
-  *(uint *)&this_ptr->field_0x10 = uVar1;
-  *(uint *)&this_ptr->field_0xc = uVar1;
-  *(uint *)&this_ptr->field_0x8 = uVar1;
+  *(byte *)&this_ptr->shortcut_key = 0;
+  this_ptr->button_text[0] = '\0';
+  this_ptr->bottom = 0;
+  this_ptr->button_state = 0;
+  this_ptr->enabled = 0;
+  iVar1 = this_ptr->bottom;
+  this_ptr->right = iVar1;
+  this_ptr->top = iVar1;
+  this_ptr->left = iVar1;
   return this_ptr;
 }

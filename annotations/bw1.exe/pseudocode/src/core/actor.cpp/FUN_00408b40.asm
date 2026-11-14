@@ -13,16 +13,16 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[176]:
-;   core_actor.cpp_FUN_00409f20 at 00409f9f
-;   core_actor.cpp_FUN_0040c750 at 0040c768
-;   core_baron.cpp_FUN_0040f4d0 at 0040f83f
-;   core_baron.cpp_FUN_0040fcf0 at 0040fef0
-;   core_batcreat.cpp_FUN_004115b0 at 0041196a
-;   core_batcreat.cpp_FUN_004123d0 at 00412444
-;   core_batman.cpp_FUN_00412ba0 at 00412fbd
-;   core_batman.cpp_FUN_00413f90 at 00414004
-;   core_bodypart.cpp_FUN_00419940 at 004199b9
-;   core_bodypart.cpp_FUN_00419b90 at 00419f24
+;   core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040c750 at 0040c768
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f20 at 00409f9f
+;   core_baron.cpp_CBaron_performLightningAttack_FUN_0040fcf0 at 0040fef0
+;   core_baron.cpp_CBaron_process_FUN_0040f4d0 at 0040f83f
+;   core_batcreat.cpp_CBatCreature_processDamage_FUN_004123d0 at 00412444
+;   core_batcreat.cpp_CBatCreature_process_FUN_004115b0 at 0041196a
+;   core_batman.cpp_CBatman_processDamage_FUN_00413f90 at 00414004
+;   core_batman.cpp_CBatman_process_FUN_00412ba0 at 00412fbd
+;   core_bird.cpp_CBird_process_FUN_00415340 at 00415414
+;   core_bodypart.cpp_CBodyPart_addFire_FUN_0041ab20 at 0041ab74
 ;   ... and 166 more
 ;
 ; Called Functions:

@@ -5,17 +5,21 @@
 // Function prototypes for core/mimic.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_mimic.cpp_copyQuaternion_FUN_00492610
-// Address: 00492610
-void __cdecl copyQuaternion(undefined4 *param_1,undefined4 *param_2);
+// Original: core_mimic.cpp_staticInit_FUN_004f0250
+// Address: 004f0250
+void __cdecl staticInit(void);
 
 // Original: core_mimic.cpp_mirrorXTransform_FUN_004f0280
 // Address: 004f0280
 void __cdecl mirrorXTransform(void);
 
+// Original: core_mimic.cpp_factoryFuncMimic_FUN_004f02e0
+// Address: 004f02e0
+CMimic * __cdecl factoryFuncMimic(void);
+
 // Original: core_mimic.cpp_CMimic_getActorType_FUN_004f0300
 // Address: 004f0300
-CDemonActorType * CMimic::getActorType(CMimic *this_ptr);
+CDemonActorType * __cdecl CMimic::getActorType(CMimic *this_ptr);
 
 // Original: core_mimic.cpp_CMimic_ctor_FUN_004f0310
 // Address: 004f0310
@@ -23,27 +27,27 @@ CMimic * __cdecl CMimic::ctor(CMimic *this_ptr);
 
 // Original: core_mimic.cpp_CMimic_dtor_FUN_004f0400
 // Address: 004f0400
-CMimic * CMimic::dtor(CMimic *this_ptr,uint flags);
+CMimic * __cdecl CMimic::dtor(CMimic *this_ptr,uint flags);
 
-// Original: core_mimic.cpp_FUN_004f04f0
+// Original: core_mimic.cpp_CMimic_setup_FUN_004f04f0
 // Address: 004f04f0
-void FUN_004f04f0(CEnemy *param_1);
+void __cdecl CMimic::setup(CMimic *this_ptr);
 
-// Original: core_mimic.cpp_FUN_004f08a0
+// Original: core_mimic.cpp_CMimic_process_FUN_004f08a0
 // Address: 004f08a0
-void FUN_004f08a0(CMimic *param_1,float param_2);
+void __cdecl CMimic::process(CMimic *this_ptr,float delta_time);
 
-// Original: core_mimic.cpp_FUN_004f0a50
+// Original: core_mimic.cpp_CMimic_updatePose_FUN_004f0a50
 // Address: 004f0a50
-void __cdecl FUN_004f0a50(CMimic *this_ptr);
+void __cdecl CMimic::updatePose(CMimic *this_ptr);
 
-// Original: core_mimic.cpp_FUN_004f0e10
+// Original: core_mimic.cpp_CMimic_processAnimation_FUN_004f0e10
 // Address: 004f0e10
-void __cdecl FUN_004f0e10(CMimic *this_ptr,float delta_time);
+void __cdecl CMimic::processAnimation(CMimic *this_ptr,float delta_time);
 
-// Original: core_mimic.cpp_FUN_004f17a0
+// Original: core_mimic.cpp_CMimic_setupCloth_FUN_004f17a0
 // Address: 004f17a0
-void __cdecl FUN_004f17a0(CMimic *this_ptr);
+void __cdecl CMimic::setupCloth(CMimic *this_ptr);
 
 // Original: core_mimic.cpp_CMimic_renderMirrored_FUN_004f1890
 // Address: 004f1890
@@ -57,21 +61,21 @@ int __cdecl CMimic::renderOpaque(CMimic *this_ptr);
 // Address: 004f1b60
 int __cdecl CMimic::renderTransparent(CMimic *this_ptr);
 
-// Original: core_mimic.cpp_FUN_004f1b70
+// Original: core_mimic.cpp_CMimic_getDeathState_FUN_004f1b70
 // Address: 004f1b70
-undefined4 FUN_004f1b70(void);
+EDeathState __cdecl CMimic::getDeathState(CMimic *this_ptr);
 
-// Original: core_mimic.cpp_FUN_004f1b80
+// Original: core_mimic.cpp_CMimic_renderBackground_FUN_004f1b80
 // Address: 004f1b80
-void FUN_004f1b80(CDemonActor *param_1,int param_2);
+void __cdecl CMimic::renderBackground(CMimic *this_ptr,int layer_flag);
 
-// Original: core_mimic.cpp_FUN_004f1c20
+// Original: core_mimic.cpp_CMimic_archive_FUN_004f1c20
 // Address: 004f1c20
-void FUN_004f1c20(CEnemy *param_1);
+void __cdecl CMimic::archive(CMimic *this_ptr);
 
-// Original: core_mimic.cpp_FUN_004f1cf0
+// Original: core_mimic.cpp_CMimic_getCollisionType_FUN_004f1cf0
 // Address: 004f1cf0
-undefined4 FUN_004f1cf0(int param_1,int *param_2);
+ECollisionType __cdecl CMimic::getCollisionType(CMimic *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_mimic.cpp_CMimic_beginMorph_FUN_004f1d70
 // Address: 004f1d70
@@ -80,11 +84,3 @@ void __cdecl CMimic::beginMorph(CMimic *this_ptr);
 // Original: core_mimic.cpp_CMimic_processMorph_FUN_004f1e90
 // Address: 004f1e90
 void __cdecl CMimic::processMorph(CMimic *this_ptr,float delta_time);
-
-// Original: core_mimic.cpp_staticInit_FUN_004f2000
-// Address: 004f2000
-void staticInit(void);
-
-// Original: core_mimic.cpp_factoryFuncMineCar_FUN_004f2030
-// Address: 004f2030
-void factoryFuncMineCar(void);

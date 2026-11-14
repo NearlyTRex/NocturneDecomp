@@ -1,0 +1,1196 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 442,
+    "complexity_score": 828,
+    "cross_reference_count": 31,
+    "function_call_count": 2,
+    "global_count": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 198,
+    "suspect_count": 60,
+    "suspect_types": [
+      "bit_int_float_compare",
+      "extra_output",
+      "param_count_too_few",
+      "unaffected_reg",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 640
+  },
+  "cross_references": [
+    {
+      "addr": "0041a200",
+      "from_addr": "0041a686",
+      "name": "core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a200",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00422f90",
+      "from_addr": "0042318a",
+      "name": "core_boxactor.cpp_CLightActor_process_FUN_00422f90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042c7f0",
+      "from_addr": "0042cb0e",
+      "name": "core_charactr.cpp_CCharacter_archive_FUN_0042c7f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00431210",
+      "from_addr": "00431398",
+      "name": "core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00431210",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042f3c0",
+      "from_addr": "0042f461",
+      "name": "core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042f3c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004328f0",
+      "from_addr": "00432a95",
+      "name": "core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_004328f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00447f00",
+      "from_addr": "00447f64",
+      "name": "core_course.cpp_CCourse_evaluate_FUN_00447f00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00471af0",
+      "from_addr": "00471e6c",
+      "name": "core_doc.cpp_CDoc_renderOpaque_FUN_00471af0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046f610",
+      "from_addr": "0046f6e2",
+      "name": "core_doc.cpp_FUN_0046f610",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046f740",
+      "from_addr": "0047040a",
+      "name": "core_doc.cpp_FUN_0046f740",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ac3e0",
+      "from_addr": "004ac5e8",
+      "name": "core_fire.cpp_CBulletHole_init_FUN_004ac3e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cb1e0",
+      "from_addr": "004cb5a4",
+      "name": "core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004cb1e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c91b0",
+      "from_addr": "004c936a",
+      "name": "core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004c91b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fd750",
+      "from_addr": "004fd845",
+      "name": "core_ladder.cpp_CLadder_cacheRelativePosition_FUN_004fd750",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fd610",
+      "from_addr": "004fd6f7",
+      "name": "core_ladder.cpp_CLadder_updatePositionFromMaster_FUN_004fd610",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00503c90",
+      "from_addr": "00503fdd",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00503c90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00510620",
+      "from_addr": "00510819",
+      "name": "core_mimic.cpp_CMimic_renderMirrored_FUN_00510620",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050f7e0",
+      "from_addr": "0050fb4a",
+      "name": "core_mimic.cpp_CMimic_updatePose_FUN_0050f7e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00539810",
+      "from_addr": "0053a249",
+      "name": "core_platfrm.cpp_CPlatform_process_FUN_00539810",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053aef0",
+      "from_addr": "0053af9d",
+      "name": "core_platfrm.cpp_FUN_0053aef0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00542f20",
+      "from_addr": "0054302b",
+      "name": "core_scat.cpp_FUN_00542f20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00550da0",
+      "from_addr": "00550e43",
+      "name": "core_set.cpp_FUN_00550da0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00551170",
+      "from_addr": "00551238",
+      "name": "core_set.cpp_FUN_00551170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00564b20",
+      "from_addr": "00564ca6",
+      "name": "core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_00564b20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058e3c0",
+      "from_addr": "0058e749",
+      "name": "core_stranger.cpp_CStranger_renderOpaque_FUN_0058e3c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058aeb0",
+      "from_addr": "0058af82",
+      "name": "core_stranger.cpp_CStranger_updateWeaponPosition_FUN_0058aeb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058afe0",
+      "from_addr": "0058bcb4",
+      "name": "core_stranger.cpp_FUN_0058afe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00595d40",
+      "from_addr": "00595e96",
+      "name": "core_tentacle.cpp_CTentacle_attractActorToward_FUN_00595d40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00599a10",
+      "from_addr": "00599b66",
+      "name": "core_thehand.cpp_CTheHand_attractActorToward_FUN_00599a10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059a370",
+      "from_addr": "0059aca6",
+      "name": "core_trash.cpp_CTrash_process_FUN_0059a370",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005b11c0",
+      "from_addr": "005b1254",
+      "name": "core_werewolf.cpp_CWerewolf_renderTransparent_FUN_005b11c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005b5930",
+    "address_range": [
+      [
+        "005b5930",
+        "005b5dc5"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "core_xform.cpp_matrixToEulerAngles_FUN_005b5930",
+    "signature": "float * core_xform_cpp_matrixToEulerAngles_FUN_005b5930(float *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c1d04",
+      "is_variadic": false,
+      "name": "crt_math.c_acos_FUN_005c1d04"
+    },
+    {
+      "addr": "005c1cd6",
+      "is_variadic": false,
+      "name": "crt_math.c_asin_FUN_005c1cd6"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fa0cc",
+      "name": "DAT_005fa0cc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fa0d0",
+      "name": "DAT_005fa0d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fa0d4",
+      "name": "DAT_005fa0d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fa0d8",
+      "name": "DAT_005fa0d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fa0dc",
+      "name": "DAT_005fa0dc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fa0e0",
+      "name": "DAT_005fa0e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fa0e4",
+      "name": "DAT_005fa0e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fa0e8",
+      "name": "DAT_005fa0e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fa0ec",
+      "name": "DAT_005fa0ec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fa0f0",
+      "name": "DAT_005fa0f0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 35,
+    "call_sites": [
+      {
+        "call_addr": "0041a686",
+        "call_type": "direct",
+        "caller": "core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a200",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00431398",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00431210",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "ECX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00550e43",
+        "call_type": "direct",
+        "caller": "core_set.cpp_FUN_00550da0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00551238",
+        "call_type": "direct",
+        "caller": "core_set.cpp_FUN_00551170",
+        "estimated_params": 2,
+        "instructions_analyzed": 10,
+        "method": "push_count",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00432a95",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_004328f0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0046f6e2",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_0046f610",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047040a",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_0046f740",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047061d",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_0046f740",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00471e6c",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_CDoc_renderOpaque_FUN_00471af0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00471ff7",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_CDoc_renderOpaque_FUN_00471af0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 4,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.228650137741047,
+    "instruction_count": 363,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 13,
+      "BOOL_OR": 44,
+      "BRANCH": 11,
+      "CALL": 7,
+      "CBRANCH": 31,
+      "COPY": 1454,
+      "FLOAT2FLOAT": 133,
+      "FLOAT_ADD": 13,
+      "FLOAT_DIV": 4,
+      "FLOAT_EQUAL": 28,
+      "FLOAT_LESS": 28,
+      "FLOAT_MULT": 21,
+      "FLOAT_NAN": 56,
+      "FLOAT_NEG": 2,
+      "FLOAT_SQRT": 4,
+      "FLOAT_SUB": 4,
+      "INT2FLOAT": 14,
+      "INT_ADD": 153,
+      "INT_AND": 165,
+      "INT_EQUAL": 24,
+      "INT_LEFT": 112,
+      "INT_LESS": 4,
+      "INT_MULT": 12,
+      "INT_NOTEQUAL": 143,
+      "INT_OR": 140,
+      "INT_SBORROW": 4,
+      "INT_SLESS": 12,
+      "INT_SUB": 26,
+      "INT_XOR": 7,
+      "INT_ZEXT": 124,
+      "LOAD": 111,
+      "POPCOUNT": 12,
+      "RETURN": 2,
+      "STORE": 69
+    },
+    "pcode_op_count": 2987
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00591de0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00583b10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005f5690",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.523
+    },
+    "nocturne.exe": {
+      "addr": "0055b180",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.523
+    }
+  },
+  "stack_frame": {
+    "frame_size": 116,
+    "local_size": 116,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005b5938",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "float * core_xform_cpp_matrixToEulerAngles_FUN_005b5930(float *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "float *extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_ECX_00",
+      "severity": "moderate",
+      "text": "float *extraout_ECX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_ECX_01",
+      "severity": "moderate",
+      "text": "float *extraout_ECX_01;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_ECX_02",
+      "severity": "moderate",
+      "text": "float *extraout_ECX_02;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 12,
+      "match": "extraout_ECX_03",
+      "severity": "moderate",
+      "text": "float *extraout_ECX_03;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 13,
+      "match": "extraout_ECX_04",
+      "severity": "moderate",
+      "text": "float *extraout_ECX_04;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 15,
+      "match": "extraout_ECX_05",
+      "severity": "moderate",
+      "text": "float *extraout_ECX_05;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 16,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "float *extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 17,
+      "match": "extraout_EDX_00",
+      "severity": "moderate",
+      "text": "float *extraout_EDX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 19,
+      "match": "extraout_EDX_01",
+      "severity": "moderate",
+      "text": "float *extraout_EDX_01;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 20,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "float *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_28 = SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_28 = SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_28 = SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_28 = SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_28 = SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_28 = SQRT(param_1[2] * param_1[2] + *param_1 * *param_1 + param_1[1] * param_1[1]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_20 = SQRT(param_1[6] * param_1[6] + param_1[5] * param_1[5] + param_1[4] * param_1[4]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_20 = SQRT(param_1[6] * param_1[6] + param_1[5] * param_1[5] + param_1[4] * param_1[4]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_20 = SQRT(param_1[6] * param_1[6] + param_1[5] * param_1[5] + param_1[4] * param_1[4]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_20 = SQRT(param_1[6] * param_1[6] + param_1[5] * param_1[5] + param_1[4] * param_1[4]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_20 = SQRT(param_1[6] * param_1[6] + param_1[5] * param_1[5] + param_1[4] * param_1[4]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_20 = SQRT(param_1[6] * param_1[6] + param_1[5] * param_1[5] + param_1[4] * param_1[4]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_24 = SQRT(param_1[10] * param_1[10] + param_1[9] * param_1[9] + param_1[8] * param_1[8]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_24 = SQRT(param_1[10] * param_1[10] + param_1[9] * param_1[9] + param_1[8] * param_1[8]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_24 = SQRT(param_1[10] * param_1[10] + param_1[9] * param_1[9] + param_1[8] * param_1[8]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_24 = SQRT(param_1[10] * param_1[10] + param_1[9] * param_1[9] + param_1[8] * param_1[8]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_24 = SQRT(param_1[10] * param_1[10] + param_1[9] * param_1[9] + param_1[8] * param_1[8]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_24 = SQRT(param_1[10] * param_1[10] + param_1[9] * param_1[9] + param_1[8] * param_1[8]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar1 = -param_1[6] * local_20;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 63,
+      "match": "extraout_ECX_00",
+      "severity": "moderate",
+      "text": "unaff_ESI = extraout_ECX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 63,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI = extraout_ECX_00;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 64,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "param_1 = extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 64,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = extraout_EDX;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 67,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "afStack_103c[0x3fd] = extraout_EDX[2] * local_28 * local_30;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 68,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "local_40 = extraout_EDX[10] * local_24 * local_30;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 70,
+      "match": "extraout_ECX_00",
+      "severity": "moderate",
+      "text": "pfVar2 = extraout_ECX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 71,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "pfVar3 = extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 77,
+      "match": "extraout_ECX_04",
+      "severity": "moderate",
+      "text": "pfVar2 = extraout_ECX_04;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 78,
+      "match": "extraout_EDX_01",
+      "severity": "moderate",
+      "text": "pfVar3 = extraout_EDX_01;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 95,
+      "match": "extraout_ECX_01",
+      "severity": "moderate",
+      "text": "pfVar2 = extraout_ECX_01;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 96,
+      "match": "extraout_EDX_00",
+      "severity": "moderate",
+      "text": "pfVar3 = extraout_EDX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 116,
+      "match": "extraout_ECX_05",
+      "severity": "moderate",
+      "text": "pfVar2 = extraout_ECX_05;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 133,
+      "match": "extraout_ECX_02",
+      "severity": "moderate",
+      "text": "pfVar2 = extraout_ECX_02;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 159,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_38 = *param_1 * local_28;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 160,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_44 = -param_1[8] * local_24;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 168,
+      "match": "extraout_ECX_03",
+      "severity": "moderate",
+      "text": "unaff_ESI = extraout_ECX_03;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 168,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI = extraout_ECX_03;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 185,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "unaff_ESI = extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 185,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI = extraout_ECX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 197,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*unaff_ESI = afStack_103c[0x3fa];",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 198,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI[(uint)bVar4 * -2 + 1] = afStack_103c[(uint)bVar4 * -2 + 0x3fb];",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 199,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "(unaff_ESI + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1] =",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 201,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "return unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
+      "line": 73,
+      "match": "(int)local_40 < 0x3f800000",
+      "severity": "moderate",
+      "text": "if ((int)local_40 < 0x3f800000) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
+      "line": 112,
+      "match": "(int)local_3c < 0x3f800000",
+      "severity": "moderate",
+      "text": "if ((int)local_3c < 0x3f800000) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
+      "line": 164,
+      "match": "(int)local_38 < 0x3f800000",
+      "severity": "moderate",
+      "text": "if ((int)local_38 < 0x3f800000) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "call_site_count": 35,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 4,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:4",
+      "param_delta": 4,
+      "text": "Function declares 0 params but call sites push 4 (4 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

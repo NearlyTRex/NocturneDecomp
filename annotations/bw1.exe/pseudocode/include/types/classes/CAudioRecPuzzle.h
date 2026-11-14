@@ -4,13 +4,43 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CAlphaBitmap.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CPuzzle.h"
+#include "types/structs/SButtonStruct.h"
 
 // Structure: CAudioRecPuzzle
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 3128; existing layout from bw_own_structs.json plus +0x54
 // Ghidra size: 0xc38 (3128 bytes)
 #pragma pack(push, 1)
 typedef struct CAudioRecPuzzle {
-    char field_0[3128]; // 0x0
+    CPuzzle base; // 0x0, derived
+    CAlphaBitmap background; // 0x4, load 00415fc0 loads 'radioback'; render 00416620 displays it
+    int cursor_index; // 0x18, render displays pointer bitmap [cursor_index]
+    int button_count; // 0x1c, addButton 00416570 increments it
+    int selected_button; // 0x20, hitTestButtons 00416f10 stores the hit index
+    int mouse_button; // 0x24, onMouse 00416f80 stores the new state
+    int previous_mouse_button; // 0x28, onMouse moves the old mouse_button here
+    int click_handled; // 0x2c, onMouse zeroes; process sets 1
+    int playback_started; // 0x30, process sets 1 after playClip 00417230, 0 when the clip ends
+    int transport_state; // 0x34, load sets 1; moveTransportSwitch 00416d60 steps 0..2
+    int knob_positions[3]; // 0x38, reset 00415e70 sets 2; turnKnob 00416e20 steps 0..4
+    int speed_setting; // 0x44, reset sets 3; process sets it from the speed buttons
+    int previous_speed_setting; // 0x48, process copies speed_setting here before changing it
+    int power_on; // 0x4c, load sets 1; power button toggles it
+    uint dial_sfx; // 0x50, turnKnob stores startSfx('REC-DIAL?.WAV'); reset 00415e70 zeroes
+    int unknown_0x54; // 0x54, reset 00415e70 zeroes it (MOV [EBX+0x54],0 at 00415f9d) between dial_sfx and switch_sfx; nothing reads it
+    uint switch_sfx; // 0x58, moveTransportSwitch/process store startSfx('REC-FOWARD-SWITCH.WAV'); reset zeroes
+    float reel_angle; // 0x5c, reset zeroes; render advances it and passes it to renderReel 00416fa0
+    SButtonStruct buttons[50]; // 0x60, ctor 00415d90 arrinit 50 buttonStructs at +0x60
+    CKeyFramedModelInstance reel_model; // 0x8f8, reset sets 'audioreel.kfm'; renderReel draws it
+    CKeyFramedModelInstance reel_shadow_model; // 0xa74, reset sets 'audioreelshadow.kfm'
+    int cursor_offset_x[4]; // 0xbf0, reset stores 3,0x14,2,0x12
+    int cursor_offset_y[4]; // 0xc00, reset stores 2,6,6,6
+    int recording_id; // 0xc10, load sets 1/2; playClip formats 'AR%d_'
+    uint clip_sfx[3]; // 0xc14, playClip stores three playSound handles
+    int solution[5]; // 0xc20, reset sets 2s; load stores the answer
+    int solved; // 0xc34, process sets 1 and fires 'AudioPuzzleSuccess'
 } CAudioRecPuzzle;
 #pragma pack(pop)
 

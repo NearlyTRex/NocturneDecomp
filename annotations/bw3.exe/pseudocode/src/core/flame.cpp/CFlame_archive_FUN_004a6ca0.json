@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 133,
+    "complexity_score": 28,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 11,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 28,
-    "suspect_count": 10,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 127
   },
   "cross_references": [],
@@ -156,6 +154,32 @@
     },
     "pcode_op_count": 316
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a0460",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004b8d10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004cac60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0048e100",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -172,92 +196,11 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveVector_FUN_0040b400(&this_ptr->field_0x158,\"?flameSize\" + 1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x1a8",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x1a8,\"whichFlame\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x1ac",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x1ac,\"globeScalar\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x1b8",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x1b8,\"onEvent\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x21c",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x21c,\"onEvent\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x1b4",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x1b4,\"flameState\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x280",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x280,\"intensity\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x284",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x284,\"randomness\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x288",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x288,\"burnHero\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x28c",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x28c,\"burnEnemy\");",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CFlame",
         "offset": 212,
         "vtable_addr": "005dfe74"
       }

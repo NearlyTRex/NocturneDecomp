@@ -7,10 +7,10 @@
 ; CMelee *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
+;   core_cross.cpp_CCross_ctor_FUN_005a69f0 at 005a69f8
+;   core_cross.cpp_CSimpleCross_ctor_FUN_005a7980 at 005a7988
 ;   core_melee.cpp_factoryFuncMelee_FUN_004ea880 at 004ea893
 ;   core_meleeaxe.cpp_CMeleeAxe_ctor_FUN_0059d220 at 0059d228
-;   unkafter_cross.cpp_CCross_ctor_FUN_005a69f0 at 005a69f8
-;   unkafter_cross.cpp_CSimpleCross_ctor_FUN_005a7980 at 005a7988
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70

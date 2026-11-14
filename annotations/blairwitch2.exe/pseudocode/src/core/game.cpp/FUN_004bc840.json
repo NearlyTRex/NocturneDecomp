@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 268,
-    "complexity_score": 477,
+    "complexity_score": 392,
     "cross_reference_count": 2,
     "function_call_count": 17,
     "global_count": 37,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 107,
-    "suspect_count": 34,
+    "suspect_count": 26,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "unrolled_strcpy",
       "warning_overlapping_globals"
@@ -29,7 +28,7 @@
     {
       "addr": "004ee3f0",
       "from_addr": "004ee6a6",
-      "name": "core_menu.cpp_FUN_004ee3f0",
+      "name": "core_menu.cpp_showMainGameMenu_FUN_004ee3f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -54,7 +53,7 @@
     {
       "addr": "004a50b0",
       "is_variadic": false,
-      "name": "core_fldnotes.cpp_FUN_004a50b0"
+      "name": "core_fldnotes.cpp_CFieldNotes_clear_FUN_004a50b0"
     },
     {
       "addr": "004bbf70",
@@ -124,7 +123,7 @@
     {
       "addr": "0047c970",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0047c970"
+      "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047c970"
     },
     {
       "addr": "0050fe80",
@@ -375,7 +374,7 @@
       {
         "call_addr": "004ee6a6",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004ee3f0",
+        "caller": "core_menu.cpp_showMainGameMenu_FUN_004ee3f0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -513,87 +512,47 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x26c = 0;",
+      "text": "param_1->damageable_enemy_count = 0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x26c",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x26c = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x274 = 0;",
+      "text": "param_1->total_kill_count = 0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x274",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x274 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x268 = 0;",
+      "text": "param_1->total_game_time = 0.0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x268",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x268 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x270 = 0;",
+      "text": "param_1->total_play_time = 0.0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x270",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x270 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x250 = 0;",
+      "text": "param_1->is_loading = 0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x250",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x250 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 31,
       "match": "DAT_005d8691",
       "severity": "mild",
-      "text": "iVar4 = _fopen(\"pod.ini\",&DAT_005d8691);",
+      "text": "p_Var3 = _fopen(\"pod.ini\",&DAT_005d8691);",
       "type": "undefined_data"
     },
     {
@@ -609,7 +568,7 @@
       "line": 40,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (param_2 == 1 || iVar4 != 0) {",
+      "text": "if (param_2 == 1 || p_Var3 != (_FILE *)0x0) {",
       "type": "unnamed_param"
     },
     {
@@ -657,39 +616,15 @@
       "line": 102,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x9e8 != 0) {",
+      "text": "if (param_1->need_chapter_reload != 0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 102,
-      "match": "field_0x9e8",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x9e8 != 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 103,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x9e8 = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 103,
-      "match": "field_0x9e8",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x9e8 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 104,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_game_cpp_FUN_004bbf70(param_1,&param_1->field_0x9ec,1);",
+      "text": "param_1->need_chapter_reload = 0;",
       "type": "unnamed_param"
     },
     {
@@ -697,16 +632,16 @@
       "line": 104,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_game_cpp_FUN_004bbf70(param_1,&param_1->field_0x9ec,1);",
+      "text": "core_game_cpp_FUN_004bbf70(param_1,param_1->chapter_reload_filename,1);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Unnamed function parameter",
       "line": 104,
-      "match": "field_0x9ec",
+      "match": "param_1",
       "severity": "mild",
-      "text": "core_game_cpp_FUN_004bbf70(param_1,&param_1->field_0x9ec,1);",
-      "type": "unnamed_field"
+      "text": "core_game_cpp_FUN_004bbf70(param_1,param_1->chapter_reload_filename,1);",
+      "type": "unnamed_param"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

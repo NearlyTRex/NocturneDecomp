@@ -78,6 +78,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044c130(CDemonCamera *
   int local_24;
   int local_20;
   int iStack_1c;
+  int iStack_18;
   _FILE *local_14;
   
   bVar30 = 0;
@@ -164,7 +165,7 @@ LAB_0044c243:
     } while (cVar4 != '\0');
     local_14 = engine_dosio_cpp_FUN_004659c0("backdrop",local_f4,&DAT_005b9e23);
     if (local_14 != (_FILE *)0x0) {
-      _fread(0x149d6dc,0x1000,1,local_14);
+      _fread((void *)0x149d6dc,0x1000,1,local_14);
       p_Var5 = local_14;
       if (_DAT_0149e6f8 == 0) {
         memset((void *)0x13716d0,0,0x12c000);
@@ -192,18 +193,18 @@ LAB_0044c243:
             core_main_c_FUN_004e4330("%s too big to fit in decompress buffer",local_f4);
           }
           _fread(&DAT_007fa464,local_9c,1,local_14);
-          support_codec_cpp_FUN_00441350(&g_CLZWDecompressInstance);
+          support_codec_cpp_CLZWDecompress_init_FUN_00441350(&g_CLZWDecompressInstance);
           local_98 = _DAT_0149d6d8 * 0x12c00;
-          iVar6 = support_codec_cpp_FUN_004409f0
-                            (&g_CLZWDecompressInstance,&DAT_007fa464,&local_9c,0x13716d0,&local_98,1
-                            );
+          iVar6 = support_codec_cpp_CCodec_processBuffer_FUN_004409f0
+                            (&g_CLZWDecompressInstance.base,&DAT_007fa464,(int *)&local_9c,
+                             (char *)0x13716d0,&local_98,1);
           if (iVar6 == 0) {
             _DAT_01d71de0 = "..\\core\\dcamera.cpp";
             _DAT_01d71de4 = 0xa03;
             core_main_c_FUN_004e4330("Error decompressing %s",local_f4);
           }
           local_a4 = 0;
-          if (0 < _DAT_0149d6d8) {
+          if (0 < (int)_DAT_0149d6d8) {
             local_34 = 0;
             local_30 = -0x12c00;
             local_38 = 0x12c00;
@@ -234,12 +235,12 @@ LAB_0044c243:
               local_34 = local_34 + 0x12c00;
               local_30 = local_30 + 0x12c00;
               local_a4 = local_a4 + 1;
-            } while (local_a4 < _DAT_0149d6d8);
+            } while (local_a4 < (int)_DAT_0149d6d8);
           }
         }
         else {
-          _fseek(p_Var5,0xfffffffd,1);
-          _fread(0x13716d0,0x12c00,_DAT_0149d6d8,p_Var5);
+          _fseek(p_Var5,-3,1);
+          _fread((void *)0x13716d0,0x12c00,_DAT_0149d6d8,p_Var5);
         }
       }
       _fclose(local_14);
@@ -267,13 +268,13 @@ LAB_0044c243:
       } while (iVar16 != 0x400);
       _fread(&DAT_014a0300,0x280,0x1e0,p_Var5);
       _fclose(p_Var5);
-      iVar6 = *(int *)&this_ptr->field_0x148;
+      iVar6 = this_ptr->framebuffer_height;
       if (iVar6 == 0xf0) {
         local_20 = 0;
         do {
           local_94 = 0;
           pbVar7 = &DAT_014a0300 + local_20;
-          piVar26 = (int *)(*(int *)&this_ptr->field_0x158 + local_20);
+          piVar26 = (int *)((int)this_ptr->framebuffer_aligned + local_20);
           do {
             local_94 = local_94 + 1;
             *piVar26 = ((*(uint *)((uint)*pbVar7 * 4 + 0xb9dd4c) & 0xfcfcfc) >> 2) +
@@ -290,7 +291,7 @@ LAB_0044c243:
       else if (iVar6 == 0x1e0) {
         pbVar7 = &DAT_014a0300;
         iVar6 = 0;
-        puVar15 = *(uint **)&this_ptr->field_0x158;
+        puVar15 = this_ptr->framebuffer_aligned;
         do {
           bVar1 = *pbVar7;
           pbVar7 = pbVar7 + 1;
@@ -300,25 +301,25 @@ LAB_0044c243:
         } while (iVar6 < 0x4b000);
       }
       else if (iVar6 < 0x1e1) {
-        local_88 = *(uint **)&this_ptr->field_0x158;
-        uVar3 = 0x9600000 / (longlong)*(int *)&this_ptr->field_0x144;
+        local_88 = this_ptr->framebuffer_aligned;
+        uVar3 = 0x9600000 / (longlong)this_ptr->framebuffer_width;
         local_84 = (uint)((longlong)
                           ((ulonglong)(uint)((int)uVar3 >> 0x1f) << 0x20 | uVar3 & 0xffffffff) /
-                         (longlong)*(int *)&this_ptr->field_0x148);
+                         (longlong)this_ptr->framebuffer_height);
         local_7c = 0;
-        if (0 < *(int *)&this_ptr->field_0x148) {
+        if (0 < this_ptr->framebuffer_height) {
           local_28 = 0;
           do {
             local_80 = 0;
-            if (0 < *(int *)&this_ptr->field_0x144) {
+            if (0 < this_ptr->framebuffer_width) {
               local_2c = 0;
               local_64 = local_28;
               do {
-                uVar8 = local_2c / *(int *)&this_ptr->field_0x144;
-                uVar9 = local_28 / *(int *)&this_ptr->field_0x148;
-                local_6c = (int)(0x27d80 / (longlong)*(int *)&this_ptr->field_0x144) + uVar8;
+                uVar8 = local_2c / this_ptr->framebuffer_width;
+                uVar9 = local_28 / this_ptr->framebuffer_height;
+                local_6c = (int)(0x27d80 / (longlong)this_ptr->framebuffer_width) + uVar8;
                 iVar20 = ((int)uVar9 >> 8) * 0x280;
-                local_68 = (int)(0x1de20 / (longlong)*(int *)&this_ptr->field_0x148) + uVar9;
+                local_68 = (int)(0x1de20 / (longlong)this_ptr->framebuffer_height) + uVar9;
                 local_60 = (int)uVar8 >> 8;
                 uVar13 = *(uint *)((uint)(byte)(&DAT_014a0300)[local_60 + iVar20] * 4 + 0xb9dd4c);
                 iVar16 = 0xff - (uVar9 & 0xff);
@@ -363,36 +364,36 @@ LAB_0044c243:
                 *local_88 = uVar13 | uVar8 << 8 | uVar9 << 0x10;
                 local_88 = local_88 + 1;
                 local_2c = local_2c + 0x28000;
-              } while (local_80 < *(int *)&this_ptr->field_0x144);
+              } while (local_80 < this_ptr->framebuffer_width);
             }
             local_28 = local_28 + 0x1e000;
             local_7c = local_7c + 1;
-          } while (local_7c < *(int *)&this_ptr->field_0x148);
+          } while (local_7c < this_ptr->framebuffer_height);
         }
       }
       else {
-        local_90 = *(uint **)&this_ptr->field_0x158;
+        local_90 = this_ptr->framebuffer_aligned;
         local_8c = 0;
-        if (0 < *(int *)&this_ptr->field_0x148) {
+        if (0 < this_ptr->framebuffer_height) {
           local_24 = 0;
           do {
             iVar6 = 0;
-            if (0 < *(int *)&this_ptr->field_0x144) {
+            if (0 < this_ptr->framebuffer_width) {
               iVar20 = 0;
               do {
-                iVar16 = iVar20 / *(int *)&this_ptr->field_0x144;
+                iVar16 = iVar20 / this_ptr->framebuffer_width;
                 iVar20 = iVar20 + 0x280;
                 *local_90 = *(uint *)
                              ((uint)(byte)(&DAT_014a0300)
-                                          [iVar16 + (local_24 / *(int *)&this_ptr->field_0x148) *
+                                          [iVar16 + (local_24 / this_ptr->framebuffer_height) *
                                                     0x280] * 4 + 0xb9dd4c);
                 local_90 = local_90 + 1;
                 iVar6 = iVar6 + 1;
-              } while (iVar6 < *(int *)&this_ptr->field_0x144);
+              } while (iVar6 < this_ptr->framebuffer_width);
             }
             local_24 = local_24 + 0x1e0;
             local_8c = local_8c + 1;
-          } while (local_8c < *(int *)&this_ptr->field_0x148);
+          } while (local_8c < this_ptr->framebuffer_height);
         }
       }
       iVar20 = 0;
@@ -440,34 +441,34 @@ LAB_0044c243:
         puVar15 = (uint *)((int)puVar15 + (uint)bVar30 * -2 + 1);
         puVar27 = (uint *)((int)puVar27 + (uint)bVar30 * -2 + 1);
       }
-      engine_drender_cpp_FUN_0046e690
+      engine_drender_cpp_CDemonRenderer_updateTexture_FUN_0046e690
                 (DAT_005f2afc,(SMRGLTextureBasic *)&DAT_005f1830,(SRGBColorPalette *)&DAT_00b9da48);
-      _memset(0x12d40);
+      _memset((void *)0xb3fd08,0,0x12d40);
       if (DAT_005fba1c == 0x180) {
+        iStack_18 = 0;
         iStack_1c = 0;
-        local_20 = 0;
         do {
           iVar20 = 0;
           iVar6 = 0;
           do {
             iVar16 = 0;
-            if (0 < _DAT_0149d6d8) {
+            if (0 < (int)_DAT_0149d6d8) {
               iVar14 = ((int)((iVar6 + (iVar6 >> 0x1f) * -0x100) - (uint)((iVar6 >> 0x1f) << 7 < 0))
-                       >> 8) + (iStack_1c / 0xc0) * 0x140;
-              iVar18 = local_20 + iVar20;
+                       >> 8) + (iStack_18 / 0xc0) * 0x140;
+              iVar18 = iStack_1c + iVar20;
               do {
                 iVar16 = iVar16 + 1;
                 *(byte *)(iVar18 + 0x13716d0) = *(byte *)(iVar14 + 0x13716d0);
                 iVar14 = iVar14 + 0x12c00;
                 iVar18 = iVar18 + 0x12c00;
-              } while (iVar16 < _DAT_0149d6d8);
+              } while (iVar16 < (int)_DAT_0149d6d8);
             }
             iVar20 = iVar20 + 1;
             iVar6 = iVar6 + 0x140;
           } while (iVar20 < 0x100);
-          iStack_1c = iStack_1c + 0xf0;
-          local_20 = local_20 + 0x140;
-        } while (iStack_1c != 0xb400);
+          iStack_18 = iStack_18 + 0xf0;
+          iStack_1c = iStack_1c + 0x140;
+        } while (iStack_18 != 0xb400);
       }
     }
   }

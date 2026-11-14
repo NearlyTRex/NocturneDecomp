@@ -7,7 +7,7 @@
 ; CExternalRenderer * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   engine_special.cpp_FUN_00581310 at 005813a0
+;   engine_special.cpp_loadExternalRenderer_FUN_00581310 at 005813a0
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005bfb70

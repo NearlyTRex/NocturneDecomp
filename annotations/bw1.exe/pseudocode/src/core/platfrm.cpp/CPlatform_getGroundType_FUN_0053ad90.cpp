@@ -9,5 +9,5 @@
 EGroundType __cdecl core_platfrm_cpp_CPlatform_getGroundType_FUN_0053ad90(CPlatform *this_ptr)
 
 {
-  return *(EGroundType *)&this_ptr->field_0x2d8;
+  return this_ptr->ground_type;
 }

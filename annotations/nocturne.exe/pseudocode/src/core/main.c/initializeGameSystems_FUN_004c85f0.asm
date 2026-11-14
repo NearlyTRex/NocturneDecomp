@@ -131,7 +131,7 @@ section .text
     ADD ESP,0x4                         ; 004c86f1
     PUSH 0x587bc3                       ; 004c86f4 | = "msglist.txt"
     CALL support_newmsg.cpp_readMessageFile_FUN_004edfc0 ; 004c86f9
-        ;   XREF to: 004edfc0 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_readMessageFile_FUN_004edfc0()
+        ;   XREF to: 004edfc0 (UNCONDITIONAL_CALL)  ; int support_newmsg.cpp_readMessageFile_FUN_004edfc0(char * message_file)
     ADD ESP,0x4                         ; 004c86fe
     CALL core_mmx.c_detectCPUFeatures_FUN_004d9e70 ; 004c8701
         ;   XREF to: 004d9e70 (UNCONDITIONAL_CALL)  ; void core_mmx.c_detectCPUFeatures_FUN_004d9e70()

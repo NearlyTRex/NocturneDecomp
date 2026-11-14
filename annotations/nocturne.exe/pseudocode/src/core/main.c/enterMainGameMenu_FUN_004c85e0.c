@@ -138,7 +138,7 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_004c85e0(void)
     case 2:
       core_moon_cpp_CMoon_free_FUN_004dea60(&g_CMoonInstance);
       core_sound_cpp_CSound_reset_FUN_0052e9c0(g_CSound_PTR_005bed68);
-      core_game_cpp_CGame_FUN_004a4170(g_CGamePtr,(char *)0x0,1);
+      core_game_cpp_CGame_loadGame_FUN_004a4170(g_CGamePtr,(char *)0x0,1);
       engine_2d_c_clearInputAndWait_FUN_00403f50();
       engine_texture_cpp_clearTextureCache_FUN_005459f0();
       core_moon_cpp_CMoon_init_FUN_004de860(&g_CMoonInstance);

@@ -1,49 +1,48 @@
 // Name: core_shadow.cpp_CShadow_ctor_FUN_0053c200
 // Address: 0053c200
 // Address Range: [[0053c200, 0053c307]]
-// Convention: unknown
-// Signature: CShadow * core_shadow_cpp_CShadow_ctor_FUN_0053c200(CShadow *this_ptr)
+// Convention: __cdecl
+// Signature: CShadow * __cdecl core_shadow_cpp_CShadow_ctor_FUN_0053c200(CShadow *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CShadow * core_shadow_cpp_CShadow_ctor_FUN_0053c200(CShadow *this_ptr)
+CShadow * __cdecl core_shadow_cpp_CShadow_ctor_FUN_0053c200(CShadow *this_ptr)
 
 {
-  uint uVar1;
-  uint uVar2;
-  uint uVar3;
+  float fVar1;
+  float fVar2;
+  float fVar3;
   CShadow *pCVar4;
   
-  pCVar4 = (CShadow *)core_enemy_cpp_CEnemy_ctor_FUN_00487db0((CEnemy *)this_ptr);
-  *(byte **)&pCVar4->field_0x2b0 = &g_CShadowVTable;
+  pCVar4 = (CShadow *)core_enemy_cpp_CEnemy_ctor_FUN_00487db0(&this_ptr->base);
+  (pCVar4->base).base.base.vtable._ub = &g_CShadowVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
-            ((CDeformableModelInstance *)&pCVar4->field_0x2b4,"shadowbeast.dfm");
-  *(uint *)&pCVar4->field_0x3430 = 0x3f800000;
-  *(uint *)&pCVar4->field_0x3434 = 0x40000000;
-  *(uint *)&pCVar4->field_0x10af8 = 0;
-  *(uint *)&pCVar4->field_0x10b18 = 1;
-  *(uint *)&pCVar4->field_0x10b2c = 0;
-  *(uint *)&pCVar4->field_0x10b30 = 0x40a00000;
-  *(uint *)&pCVar4->field_0x10b34 = 0;
-  *(uint *)&pCVar4->field_0x10b38 = 0;
-  *(uint *)&pCVar4->field_0x10b40 = 0;
-  *(uint *)&pCVar4->field_0x10b74 = 0x3f800000;
-  *(uint *)&pCVar4->field_0x10b3c = 0;
-  *(uint *)&pCVar4->field_0x10b64 = 0;
-  *(uint *)&pCVar4->field_0x10b5c = 0;
-  *(uint *)&pCVar4->field_0x10b60 = 0;
-  uVar1 = _DAT_005fb400;
-  *(uint *)&pCVar4->field_0x10b6c = 0;
-  uVar2 = _DAT_005fb404;
-  *(uint *)&pCVar4->field_0x10b68 = 0x41200000;
-  uVar3 = 0x41200000;
-  *(uint *)&pCVar4->field_0x10b78 = 0;
-  *(uint *)&pCVar4->field_0x10b7c = 0;
-  *(uint *)&pCVar4->field_0x3438 = uVar1;
-  *(uint *)&pCVar4->field_0x343c = uVar2;
-  *(uint *)&pCVar4->field_0x10b44 = uVar3;
+            (&(pCVar4->base).base.model,"shadowbeast.dfm");
+  (pCVar4->base).base.collision_cylinder_height = 1.0;
+  (pCVar4->base).base.collision_cylinder_radius = 2.0;
+  pCVar4->type = 0;
+  pCVar4->light_up_eyes = 1;
+  pCVar4->chain_anchor = (CDemonActor *)0x0;
+  pCVar4->chain_length = 5.0;
+  pCVar4->alpha1 = (CDemonActor *)0x0;
+  pCVar4->alpha2 = (CDemonActor *)0x0;
+  pCVar4->phase = 0;
+  pCVar4->fade_scale = 1.0;
+  pCVar4->eye_glow_phase = 0.0;
+  pCVar4->walk_timeout = 0.0;
+  pCVar4->walk_target = 0;
+  pCVar4->walk_status = 0;
+  fVar1 = _DAT_005fb400;
+  pCVar4->attack_loop_count = 0;
+  fVar2 = _DAT_005fb404;
+  pCVar4->periodic_timer = 10.0;
+  fVar3 = 0x41200000;
+  pCVar4->fade_alpha = 0;
+  pCVar4->corona_added = 0;
+  (pCVar4->base).base.ai_detection_range_min = fVar1;
+  (pCVar4->base).base.ai_detection_range_max = fVar2;
+  pCVar4->phase_timer = fVar3;
   return pCVar4;
 }

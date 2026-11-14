@@ -26,23 +26,23 @@
     ],
     "convention": "unknown",
     "name": "support_codec.cpp_FUN_00433f60",
-    "signature": "undefined4 support_codec_cpp_FUN_00433f60(int *param_1,undefined4 param_2,undefined4 param_3,int *param_4,int param_5)"
+    "signature": "undefined4 support_codec_cpp_FUN_00433f60(int *param_1,undefined4 param_2,char *param_3,int *param_4,int param_5)"
   },
   "function_calls": [
+    {
+      "addr": "0057de80",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_COutStreamMemory_ctorOpen_FUN_0057de80"
+    },
     {
       "addr": "0057df10",
       "is_variadic": false,
       "name": "support_trstream.cpp_COutStreamMemory_dtor_FUN_0057df10"
     },
     {
-      "addr": "0057de80",
-      "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_0057de80"
-    },
-    {
       "addr": "0057e0c0",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_0057e0c0"
+      "name": "support_trstream.cpp_COutStreamMemory_tell_FUN_0057e0c0"
     }
   ],
   "globals": [],
@@ -82,6 +82,20 @@
     },
     "pcode_op_count": 229
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00442c80",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004408e0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -96,7 +110,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint support_codec_cpp_FUN_00433f60(int *param_1,uint param_2,uint param_3,int *param_4,int param_5)",
+      "text": "uint support_codec_cpp_FUN_00433f60(int *param_1,uint param_2,char *param_3,int *param_4,int param_5)",
       "type": "unnamed_param"
     },
     {
@@ -104,7 +118,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint support_codec_cpp_FUN_00433f60(int *param_1,uint param_2,uint param_3,int *param_4,int param_5)",
+      "text": "uint support_codec_cpp_FUN_00433f60(int *param_1,uint param_2,char *param_3,int *param_4,int param_5)",
       "type": "unnamed_param"
     },
     {
@@ -112,7 +126,7 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "uint support_codec_cpp_FUN_00433f60(int *param_1,uint param_2,uint param_3,int *param_4,int param_5)",
+      "text": "uint support_codec_cpp_FUN_00433f60(int *param_1,uint param_2,char *param_3,int *param_4,int param_5)",
       "type": "unnamed_param"
     },
     {
@@ -120,7 +134,7 @@
       "line": 2,
       "match": "param_4",
       "severity": "mild",
-      "text": "uint support_codec_cpp_FUN_00433f60(int *param_1,uint param_2,uint param_3,int *param_4,int param_5)",
+      "text": "uint support_codec_cpp_FUN_00433f60(int *param_1,uint param_2,char *param_3,int *param_4,int param_5)",
       "type": "unnamed_param"
     },
     {
@@ -128,7 +142,7 @@
       "line": 2,
       "match": "param_5",
       "severity": "mild",
-      "text": "uint support_codec_cpp_FUN_00433f60(int *param_1,uint param_2,uint param_3,int *param_4,int param_5)",
+      "text": "uint support_codec_cpp_FUN_00433f60(int *param_1,uint param_2,char *param_3,int *param_4,int param_5)",
       "type": "unnamed_param"
     },
     {
@@ -136,7 +150,7 @@
       "line": 9,
       "match": "param_3",
       "severity": "mild",
-      "text": "support_trstream_cpp_FUN_0057de80(&CStack_24,param_3,*param_4);",
+      "text": "support_trstream_cpp_COutStreamMemory_ctorOpen_FUN_0057de80(&CStack_24,param_3,*param_4);",
       "type": "unnamed_param"
     },
     {
@@ -144,7 +158,7 @@
       "line": 9,
       "match": "param_4",
       "severity": "mild",
-      "text": "support_trstream_cpp_FUN_0057de80(&CStack_24,param_3,*param_4);",
+      "text": "support_trstream_cpp_COutStreamMemory_ctorOpen_FUN_0057de80(&CStack_24,param_3,*param_4);",
       "type": "unnamed_param"
     },
     {

@@ -13,8 +13,8 @@
 ; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[2]:
+;   sound_sndmain.cpp_CSfxSlot_mix_FUN_00554920 at 00554d38
 ;   sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005554a0 at 00555515
-;   sound_sndmain.cpp_FUN_00554920 at 00554d38
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d33cf
@@ -30,7 +30,7 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
 ;   crt_math.c_floor_FUN_005a3600
-;   sound_sndmain.cpp_FUN_00555b80
+;   sound_sndmain.cpp_CSfxSample_getLoopMode_FUN_00555b80
 ;
 ; *****************************************************************************
 
@@ -200,8 +200,8 @@ section .text
         ;   XREF to: 00555617 (UNCONDITIONAL_JUMP)  ; LAB_00555617
     PUSH EDX                            ; 005556e8
         ;   Label: LAB_005556e8
-    CALL sound_sndmain.cpp_FUN_00555b80 ; 005556e9
-        ;   XREF to: 00555b80 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00555b80(CSfxSample * this_ptr)
+    CALL sound_sndmain.cpp_CSfxSample_getLoopMode_FUN_00555b80 ; 005556e9
+        ;   XREF to: 00555b80 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSample_getLoopMode_FUN_00555b80(CSfxSample * this_ptr)
     ADD ESP,0x4                         ; 005556ee
     TEST EAX,EAX                        ; 005556f1
     JNZ 0x00555706                      ; 005556f3

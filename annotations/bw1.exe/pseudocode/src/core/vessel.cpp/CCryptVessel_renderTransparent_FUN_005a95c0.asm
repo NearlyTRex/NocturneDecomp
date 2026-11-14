@@ -20,12 +20,12 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
 ;   core_flame.cpp_CFlame_renderTransparent_FUN_004b8100
 ;   crt_math.c_round_FUN_005c03a0
-;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00483dd0
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0
-;   engine_matrix.c_pop_FUN_004839a0
+;   engine_drender.cpp_pop_FUN_004839a0
 ;
 ; *****************************************************************************
 
@@ -139,13 +139,13 @@ section .text
     ADD ESP,0x8                         ; 005a96e0
     MOV EBX,dword ptr [0x00612560]      ; 005a96e3 | DAT_00612560
     PUSH EBX                            ; 005a96e9 | DAT_01bc120c
-    CALL engine_matrix.c_pop_FUN_004839a0 ; 005a96ea
-        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004839a0()
+    CALL engine_drender.cpp_pop_FUN_004839a0 ; 005a96ea
+        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_004839a0()
     ADD ESP,0x4                         ; 005a96ef
     MOV ESI,dword ptr [0x00612560]      ; 005a96f2 | DAT_00612560
     PUSH ESI                            ; 005a96f8 | DAT_01bc120c
-    CALL engine_matrix.c_pop_FUN_004839a0 ; 005a96f9
-        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004839a0()
+    CALL engine_drender.cpp_pop_FUN_004839a0 ; 005a96f9
+        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_004839a0()
     MOV EAX,0x1                         ; 005a96fe
     ADD ESP,0x4                         ; 005a9703
     MOV ESP,EBP                         ; 005a9706
@@ -193,8 +193,8 @@ section .text
     PUSH 0x5f9173                       ; 005a9761 | = "BWATER%d.RAW"
     ADD EAX,0x12c                       ; 005a9766
     PUSH EAX                            ; 005a976b
-    CALL crt_unknown.c_FUN_005bfb40     ; 005a976c
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 005a976c
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 005a9771
     PUSH 0xbb80                         ; 005a9774
     MOV ESI,dword ptr [0x00612560]      ; 005a9779 | DAT_00612560

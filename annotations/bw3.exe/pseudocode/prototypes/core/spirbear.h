@@ -7,56 +7,56 @@
 
 // Original: core_spirbear.cpp_staticInit_FUN_0059aa40
 // Address: 0059aa40
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_spirbear.cpp_factoryFuncSpiritBear_FUN_0059aa70
 // Address: 0059aa70
-void factoryFuncSpiritBear(void);
+CSpiritBear * __cdecl factoryFuncSpiritBear(void);
 
 // Original: core_spirbear.cpp_CSpiritBear_getActorType_FUN_0059aa90
 // Address: 0059aa90
-CDemonActorType * CSpiritBear::getActorType(CSpiritBear *this_ptr);
+CDemonActorType * __cdecl CSpiritBear::getActorType(CSpiritBear *this_ptr);
 
 // Original: core_spirbear.cpp_CSpiritBear_ctor_FUN_0059aaa0
 // Address: 0059aaa0
-CSpiritBear * CSpiritBear::ctor(CSpiritBear *this_ptr);
+CSpiritBear * __cdecl CSpiritBear::ctor(CSpiritBear *this_ptr);
 
-// Original: core_spirbear.cpp_FUN_0059aba0
+// Original: core_spirbear.cpp_CSpiritBear_setup_FUN_0059aba0
 // Address: 0059aba0
-void FUN_0059aba0(int param_1);
+void __cdecl CSpiritBear::setup(CSpiritBear *this_ptr);
 
-// Original: core_spirbear.cpp_FUN_0059ae00
+// Original: core_spirbear.cpp_CSpiritBear_process_FUN_0059ae00
 // Address: 0059ae00
-void FUN_0059ae00(CCharacter *param_1,float param_2);
+void __cdecl CSpiritBear::process(CSpiritBear *this_ptr,float delta_time);
 
-// Original: core_spirbear.cpp_FUN_0059b2b0
+// Original: core_spirbear.cpp_CSpiritBear_renderBackground_FUN_0059b2b0
 // Address: 0059b2b0
-void FUN_0059b2b0(CNPC *param_1,int param_2);
+void __cdecl CSpiritBear::renderBackground(CSpiritBear *this_ptr,int layer_flag);
 
-// Original: core_spirbear.cpp_FUN_0059b2e0
+// Original: core_spirbear.cpp_CSpiritBear_renderOpaque_FUN_0059b2e0
 // Address: 0059b2e0
-int FUN_0059b2e0(CDemonActor *param_1);
+int __cdecl CSpiritBear::renderOpaque(CSpiritBear *this_ptr);
 
-// Original: core_spirbear.cpp_FUN_0059b3d0
+// Original: core_spirbear.cpp_CSpiritBear_renderTransparent_FUN_0059b3d0
 // Address: 0059b3d0
-undefined4 FUN_0059b3d0(CDemonActor *param_1);
+int __cdecl CSpiritBear::renderTransparent(CSpiritBear *this_ptr);
 
-// Original: core_spirbear.cpp_FUN_0059b470
+// Original: core_spirbear.cpp_CSpiritBear_shouldIgnoreForTargeting_FUN_0059b470
 // Address: 0059b470
-bool FUN_0059b470(int param_1);
+int __cdecl CSpiritBear::shouldIgnoreForTargeting(CSpiritBear *this_ptr);
 
-// Original: core_spirbear.cpp_FUN_0059b4a0
+// Original: core_spirbear.cpp_CSpiritBear_archive_FUN_0059b4a0
 // Address: 0059b4a0
-void FUN_0059b4a0(int param_1);
+void __cdecl CSpiritBear::archive(CSpiritBear *this_ptr);
 
-// Original: core_spirbear.cpp_FUN_0059b510
+// Original: core_spirbear.cpp_CSpiritBear_isInvulnerable_FUN_0059b510
 // Address: 0059b510
-bool FUN_0059b510(int param_1);
+int __cdecl CSpiritBear::isInvulnerable(CSpiritBear *this_ptr);
 
-// Original: core_spirbear.cpp_FUN_0059b530
+// Original: core_spirbear.cpp_CSpiritBear_getPathMap_FUN_0059b530
 // Address: 0059b530
-int FUN_0059b530(int param_1);
+CPathMap * __cdecl CSpiritBear::getPathMap(CSpiritBear *this_ptr);
 
 // Original: core_spirbear.cpp_CSpiritBear_dtor_FUN_0059b540
 // Address: 0059b540
-CSpiritBear * CSpiritBear::dtor(CSpiritBear *this_ptr,uint flags);
+CSpiritBear * __cdecl CSpiritBear::dtor(CSpiritBear *this_ptr,uint flags);

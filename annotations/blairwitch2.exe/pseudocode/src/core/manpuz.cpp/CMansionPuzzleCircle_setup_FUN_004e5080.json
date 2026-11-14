@@ -1,0 +1,492 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 512,
+    "complexity_score": 575,
+    "cross_reference_count": 0,
+    "function_call_count": 16,
+    "global_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 255,
+    "suspect_count": 28,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "raw_address_constant",
+      "shadow_pointer_walk",
+      "stack_alignment_array",
+      "undefined_data",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 767
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004e5080",
+    "address_range": [
+      [
+        "004e5080",
+        "004e56ce"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_004e5080",
+    "signature": "void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_004e5080(CMansionPuzzleCircle *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408a80",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setup_FUN_00408a80"
+    },
+    {
+      "addr": "00449280",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280"
+    },
+    {
+      "addr": "00449530",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_FUN_00449530"
+    },
+    {
+      "addr": "0044fd20",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20"
+    },
+    {
+      "addr": "0044fd00",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00"
+    },
+    {
+      "addr": "004779e0",
+      "is_variadic": false,
+      "name": "core_dtri.cpp_CDemonTriangle_buildCollision_FUN_004779e0"
+    },
+    {
+      "addr": "004e6a50",
+      "is_variadic": false,
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_getPanelColor_FUN_004e6a50"
+    },
+    {
+      "addr": "004e6240",
+      "is_variadic": false,
+      "name": "core_manpuz.cpp_FUN_004e6240"
+    },
+    {
+      "addr": "004e7600",
+      "is_variadic": false,
+      "name": "core_manpuz.cpp_FUN_004e7600"
+    },
+    {
+      "addr": "00591530",
+      "is_variadic": false,
+      "name": "core_xform.cpp_FUN_00591530"
+    },
+    {
+      "addr": "00591c10",
+      "is_variadic": false,
+      "name": "core_xform.cpp_FUN_00591c10"
+    },
+    {
+      "addr": "00592720",
+      "is_variadic": false,
+      "name": "core_xform.cpp_FUN_00592720"
+    },
+    {
+      "addr": "00591de0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_matrixToEulerAngles_FUN_00591de0"
+    },
+    {
+      "addr": "005916b0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_multiplyMatrix3x4_FUN_005916b0"
+    },
+    {
+      "addr": "005b7f5f",
+      "is_variadic": false,
+      "name": "crt_memory.c___arrinit_FUN_005b7f5f"
+    },
+    {
+      "addr": "0046ca00",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005dc4ed",
+      "name": "DAT_005dc4ed",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005dc4f5",
+      "name": "DAT_005dc4f5",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005dc4fd",
+      "name": "DAT_005dc4fd",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005dc505",
+      "name": "DAT_005dc505",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005dc50d",
+      "name": "DAT_005dc50d",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f98bc",
+      "name": "DAT_005f98bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060b280",
+      "name": "DAT_0060b280",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.348684210526316,
+    "instruction_count": 456,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 2,
+      "BRANCH": 8,
+      "CALL": 23,
+      "CALLOTHER": 3,
+      "CBRANCH": 14,
+      "COPY": 972,
+      "FLOAT2FLOAT": 55,
+      "FLOAT_ADD": 8,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 14,
+      "FLOAT_NAN": 4,
+      "FLOAT_NEG": 3,
+      "FLOAT_SQRT": 2,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 3,
+      "INT_ADD": 285,
+      "INT_AND": 146,
+      "INT_CARRY": 47,
+      "INT_EQUAL": 137,
+      "INT_LEFT": 8,
+      "INT_LESS": 9,
+      "INT_MULT": 31,
+      "INT_NOTEQUAL": 14,
+      "INT_OR": 10,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 50,
+      "INT_SEXT": 3,
+      "INT_SLESS": 67,
+      "INT_SUB": 117,
+      "INT_XOR": 6,
+      "INT_ZEXT": 38,
+      "LOAD": 112,
+      "POPCOUNT": 67,
+      "RETURN": 1,
+      "STORE": 160,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 2439
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00503c90",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00508a70",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7721
+    },
+    "nocturne.exe": {
+      "addr": "004c9580",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7721
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMansionPuzzleCircle *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 25,
+      "match": "afStackY_10a0",
+      "severity": "moderate",
+      "text": "float afStackY_10a0 [923];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 70,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "(DAT_0060b280,(SMRGLTextureBasic *)&this_ptr->light_texture);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 76,
+      "match": "(CBoundingBox3D *)((int)pCVar12",
+      "severity": "moderate",
+      "text": "pCVar12 = (CBoundingBox3D *)((int)pCVar12 + (uint)bVar15 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 112,
+      "match": "(CBoundingBox3D *)((int)pCVar12",
+      "severity": "moderate",
+      "text": "pCVar12 = (CBoundingBox3D *)((int)pCVar12 + (uint)bVar15 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 154,
+      "match": "(CMatrix3x4f *)((int)pCVar13",
+      "severity": "moderate",
+      "text": "pCVar13 = (CMatrix3x4f *)((int)pCVar13 + ((uint)bVar15 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 199,
+      "match": "(CVector3f *)((int)(pCStack_2c + 0xf) +",
+      "severity": "moderate",
+      "text": "pCStack_2c = (CVector3f *)((int)(pCStack_2c + 0xf) + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pCVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 76,
+      "match": "(int)pCVar12",
+      "severity": "moderate",
+      "text": "pCVar12 = (CBoundingBox3D *)((int)pCVar12 + (uint)bVar15 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 112,
+      "match": "(int)pCVar12",
+      "severity": "moderate",
+      "text": "pCVar12 = (CBoundingBox3D *)((int)pCVar12 + (uint)bVar15 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 154,
+      "match": "(int)pCVar13",
+      "severity": "moderate",
+      "text": "pCVar13 = (CMatrix3x4f *)((int)pCVar13 + ((uint)bVar15 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_a0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 185,
+      "match": "(int)&CStack_a0",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_a0 + (uint)bVar15 * -8 + 4) = afStack_b4[(uint)bVar15 * -2];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_a0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 186,
+      "match": "(int)&CStack_a0",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_a0 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(pCStack_2c + 0xf)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 199,
+      "match": "(int)(pCStack_2c + 0xf)",
+      "severity": "moderate",
+      "text": "pCStack_2c = (CVector3f *)((int)(pCStack_2c + 0xf) + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Raw hex address 0x4e54a6 assigned to bare local `uStack_220`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_220` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 196,
+      "match": "0x4e54a6",
+      "severity": "moderate",
+      "text": "uStack_220 = 0x4e54a6;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x4e54d6 assigned to bare local `uStack_220`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_220` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 200,
+      "match": "0x4e54d6",
+      "severity": "moderate",
+      "text": "uStack_220 = 0x4e54d6;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 74,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar9 = 6; iVar9 != 0; iVar9 = iVar9 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 110,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar9 = 6; iVar9 != 0; iVar9 = iVar9 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 152,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar9 = 0xc; iVar9 != 0; iVar9 = iVar9 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 189,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar11->x = CStack_a0.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 221,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "this_ptr->reflectors[0].start_position.x = pCVar11->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 185,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_a0 + (uint)bVar15 * -8 + 4) = afStack_b4[(uint)bVar15 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 186,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_a0 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCStack_2c` self-updates via element-arithmetic `(int)(pCStack_2c + N) + M`, where `N*sizeof(*pCStack_2c) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCStack_2c->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 199,
+      "match": "pCStack_2c = (T *)((int)(pCStack_2c + N) + M)",
+      "severity": "moderate",
+      "text": "pCStack_2c = (CVector3f *)((int)(pCStack_2c + 0xf) + 4);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pfStack_30` was initialized to the address of an array element's subfield (`pfStack_30 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pfStack_30)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pfStack_30->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 203,
+      "match": "pfStack_30 = pfStack_30 + N",
+      "severity": "moderate",
+      "text": "pfStack_30 = pfStack_30 + 0x2e;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pfStack_34` was initialized to the address of an array element's subfield (`pfStack_34 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pfStack_34)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pfStack_34->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 204,
+      "match": "pfStack_34 = pfStack_34 + N",
+      "severity": "moderate",
+      "text": "pfStack_34 = pfStack_34 + 0x2e;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 004e5110, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 47,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004e5110: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 004e5253, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 133,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004e5253: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 004e538b, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 230,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004e538b: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "005f98d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

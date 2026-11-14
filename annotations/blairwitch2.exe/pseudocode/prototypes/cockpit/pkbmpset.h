@@ -5,13 +5,29 @@
 // Function prototypes for cockpit/pkbmpset.cpp
 // Generated from Ghidra function signatures
 
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_005175b0
+// Address: 005175b0
+void __cdecl CPackedBitmapSet::ctor(CPackedBitmapSet *this_ptr);
+
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_init_FUN_005175e0
+// Address: 005175e0
+void __cdecl CPackedBitmapSet::init(CPackedBitmapSet *this_ptr);
+
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_00517640
+// Address: 00517640
+void __cdecl CPackedBitmapSet::reset(CPackedBitmapSet *this_ptr);
+
 // Original: cockpit_pkbmpset.cpp_FUN_00517670
 // Address: 00517670
-void FUN_00517670(int *param_1,int param_2);
+void FUN_00517670(CPackedBitmapSet *param_1,int param_2);
 
-// Original: cockpit_pkbmpset.cpp_FUN_005177de
-// Address: 005177de
-void FUN_005177de(CPackedBitmapSet *param_1,char *param_2,int param_3,int param_4,int param_5,undefined4 param_6,undefined4 param_7,int param_8);
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00517710
+// Address: 00517710
+void __cdecl CPackedBitmapSet::loadBitmapSetFromRange(CPackedBitmapSet *this_ptr,char *param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8);
+
+// Original: cockpit_pkbmpset.cpp_FUN_005177e0
+// Address: 005177e0
+void FUN_005177e0(void);
 
 // Original: cockpit_pkbmpset.cpp_FUN_00517a60
 // Address: 00517a60
@@ -21,9 +37,9 @@ void FUN_00517a60(CPackedBitmapSet *param_1,int param_2,int param_3);
 // Address: 00517db0
 void FUN_00517db0(void);
 
-// Original: cockpit_pkbmpset.cpp_FUN_00517e40
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_00517e40
 // Address: 00517e40
-void FUN_00517e40(undefined4 param_1,char *param_2,CPackedBitmapSet *param_3);
+void __cdecl CPackedBitmapSet::loadACTAndApplyToBitmapSet(CPackedBitmapSet *this_ptr,char *act_filename);
 
 // Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_00517e90
 // Address: 00517e90

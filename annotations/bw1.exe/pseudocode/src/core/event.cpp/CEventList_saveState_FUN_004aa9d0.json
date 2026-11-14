@@ -229,6 +229,32 @@
     },
     "pcode_op_count": 1048
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00492060",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00495850",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004b1380",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00481330",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 52,
     "local_size": 44,
@@ -283,7 +309,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 15,
       "match": "DAT_005deec6",
       "severity": "mild",
       "text": "FUN_005c03c0(file_handle,&DAT_005deec6,5);",
@@ -291,66 +317,66 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 17,
+      "line": 18,
       "match": "DAT_005deedf",
       "severity": "mild",
-      "text": "FUN_005c03c0(file_handle,&DAT_005deedf,*(uint *)this_ptr);",
+      "text": "FUN_005c03c0(file_handle,&DAT_005deedf,(this_ptr->events).count);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 23,
       "match": "DAT_005deee3",
       "severity": "mild",
-      "text": "FUN_005c03c0(file_handle,&DAT_005deee3,pCVar2);",
+      "text": "FUN_005c03c0(file_handle,&DAT_005deee3,pacVar2);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 29,
       "match": "DAT_005def03",
       "severity": "mild",
-      "text": "FUN_005c03c0(file_handle,&DAT_005def03,*(uint *)(this_ptr + 0xc84));",
+      "text": "FUN_005c03c0(file_handle,&DAT_005def03,(this_ptr->current_events).count);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 34,
       "match": "DAT_005def07",
       "severity": "mild",
-      "text": "FUN_005c03c0(file_handle,&DAT_005def07,pCVar2);",
+      "text": "FUN_005c03c0(file_handle,&DAT_005def07,pacVar2);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 40,
       "match": "DAT_005def2a",
       "severity": "mild",
-      "text": "FUN_005c03c0(file_handle,&DAT_005def2a,*(uint *)(this_ptr + 0x258c));",
+      "text": "FUN_005c03c0(file_handle,&DAT_005def2a,(this_ptr->persistent_events).count);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 45,
       "match": "DAT_005def2e",
       "severity": "mild",
-      "text": "FUN_005c03c0(file_handle,&DAT_005def2e,pCVar2);",
+      "text": "FUN_005c03c0(file_handle,&DAT_005def2e,pacVar2);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 50,
       "match": "DAT_005def57",
       "severity": "mild",
-      "text": "FUN_005c03c0(file_handle,&DAT_005def57,*(uint *)(this_ptr + 0x3210));",
+      "text": "FUN_005c03c0(file_handle,&DAT_005def57,(this_ptr->timers).count);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 63,
+      "line": 64,
       "match": "DAT_005def87",
       "severity": "mild",
-      "text": "FUN_005c03c0(file_handle,&DAT_005def87,*(uint *)(this_ptr + 0x337c));",
+      "text": "FUN_005c03c0(file_handle,&DAT_005def87,(this_ptr->counters).count);",
       "type": "undefined_data"
     },
     {
@@ -358,7 +384,7 @@
       "line": 78,
       "match": "DAT_005defbf",
       "severity": "mild",
-      "text": "FUN_005c03c0(file_handle,&DAT_005defbf,*(uint *)(this_ptr + 0x34e8));",
+      "text": "FUN_005c03c0(file_handle,&DAT_005defbf,(this_ptr->actor_vars).count);",
       "type": "undefined_data"
     },
     {
@@ -366,7 +392,7 @@
       "line": 91,
       "match": "DAT_005defe7",
       "severity": "mild",
-      "text": "iVar1 = FUN_005c03c0(file_handle,&DAT_005defe7,*(uint *)(this_ptr + 0x1908));",
+      "text": "iVar1 = FUN_005c03c0(file_handle,&DAT_005defe7,(this_ptr->game_flags).count);",
       "type": "undefined_data"
     },
     {
@@ -374,7 +400,7 @@
       "line": 96,
       "match": "DAT_005defeb",
       "severity": "mild",
-      "text": "FUN_005c03c0(file_handle,&DAT_005defeb,pCVar2);",
+      "text": "FUN_005c03c0(file_handle,&DAT_005defeb,pacVar2);",
       "type": "undefined_data"
     }
   ]

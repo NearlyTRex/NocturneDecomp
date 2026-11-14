@@ -165,17 +165,17 @@ void __cdecl CCharacter::detachBodyPart(CCharacter *this_ptr,int part_index,CVec
 // Address: 0042bd30
 void __cdecl CCharacter::dismemberPartInternal(CCharacter *this_ptr,CBodyPart *body_part,int part_index,int render_in_background);
 
-// Original: core_charactr.cpp_CCharacter_isGrabbable_FUN_0042bf30
+// Original: core_charactr.cpp_CCharacter_returnZero_FUN_0042bf30
 // Address: 0042bf30
-int __cdecl CCharacter::isGrabbable(CCharacter *this_ptr,CDemonActor *grabber);
+int __cdecl CCharacter::returnZero(CCharacter *this_ptr,CDemonActor *grabber);
 
 // Original: core_charactr.cpp_CCharacter_releaseFromGrab_FUN_0042bf40
 // Address: 0042bf40
 void __cdecl CCharacter::releaseFromGrab(CCharacter *this_ptr);
 
-// Original: core_charactr.cpp_CCharacter_releaseVictim_FUN_0042bf70
+// Original: core_charactr.cpp_CCharacter_doNothing_FUN_0042bf70
 // Address: 0042bf70
-void __cdecl CCharacter::releaseVictim(CCharacter *this_ptr);
+void __cdecl CCharacter::doNothing(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_getGrabber_FUN_0042bf80
 // Address: 0042bf80

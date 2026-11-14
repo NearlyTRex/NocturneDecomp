@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_004ee960(int param_1)
+; char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
 ;
+; Parameters:
+; EInputCodeType   Stack[0x4]:4   key_code
 ;
 ; XREF[4]:
-;   core_game.cpp_FUN_004b3c50 at 004b40ed
+;   core_game.cpp_CGame_showCustomizableKeys_FUN_004b3c50 at 004b40ed
 ;   core_game.cpp_drawKeyBindingEntry_FUN_004b3b90 at 004b3baa
 ;   core_inv.cpp_FUN_004dadb0 at 004dafcd
 ;   core_menu.cpp_FUN_004eed60 at 004efa1c
@@ -264,7 +266,7 @@ section .text
     PUSH EBX                            ; 004eeb8c
         ;   Label: LAB_004eeb8c
     CALL wincore_winrun.cpp_getKeyName_FUN_0058f630 ; 004eeb8d
-        ;   XREF to: 0058f630 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getKeyName_FUN_0058f630()
+        ;   XREF to: 0058f630 (UNCONDITIONAL_CALL)  ; char * wincore_winrun.cpp_getKeyName_FUN_0058f630(EInputCodeType keycode)
     MOV ESI,EAX                         ; 004eeb92
     ADD ESP,0x4                         ; 004eeb94
     JMP 0x004eeb2e                      ; 004eeb97

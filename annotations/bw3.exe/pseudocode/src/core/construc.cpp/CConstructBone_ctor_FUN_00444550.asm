@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CConstructBone * core_construc_cpp_CConstructBone_ctor_FUN_00444550(CConstructBone *this_ptr)
+; CConstructBone * __cdecl core_construc_cpp_CConstructBone_ctor_FUN_00444550(CConstructBone *this_ptr)
 ;
 ; Parameters:
 ; CConstructBone * Stack[0x4]:4   this_ptr
@@ -10,8 +10,8 @@
 ;   core_construc.cpp_FUN_00444520 at 00444533
 ;
 ; Called Functions:
-;   core_constrct.cpp_CConstruct_ctor_FUN_00442420
-;   core_skeleton.cpp_FUN_0054eae0
+;   core_construc.cpp_CConstruct_ctor_FUN_00442420
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0
 ;   crt_math.c_round_FUN_005a3120
 ;
 ; *****************************************************************************
@@ -22,16 +22,16 @@ section .text
         ;   Label: core_construc.cpp_CConstructBone_ctor_FUN_00444550
     MOV EDX,dword ptr [ESP + 0x8]       ; 00444551
     PUSH EDX                            ; 00444555
-    CALL core_constrct.cpp_CConstruct_ctor_FUN_00442420 ; 00444556
-        ;   XREF to: 00442420 (UNCONDITIONAL_CALL)  ; CConstruct * core_constrct.cpp_CConstruct_ctor_FUN_00442420(CConstruct * this_ptr)
+    CALL core_construc.cpp_CConstruct_ctor_FUN_00442420 ; 00444556
+        ;   XREF to: 00442420 (UNCONDITIONAL_CALL)  ; CConstruct * core_construc.cpp_CConstruct_ctor_FUN_00442420(CConstruct * this_ptr)
     ADD ESP,0x4                         ; 0044455b
     PUSH 0x5b97f6                       ; 0044455e
     MOV EBX,EAX                         ; 00444563
     ADD EAX,0x158                       ; 00444565
     PUSH EAX                            ; 0044456a
     MOV dword ptr [EAX + -0x4],0x5dd864 ; 0044456b
-    CALL core_skeleton.cpp_FUN_0054eae0 ; 00444572
-        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054eae0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 ; 00444572
+        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2538],0x425c0000 ; 00444577
     MOV dword ptr [EBX + 0xce5c],0x41700000 ; 00444581
     MOV dword ptr [EBX + 0xce60],0x41200000 ; 0044458b

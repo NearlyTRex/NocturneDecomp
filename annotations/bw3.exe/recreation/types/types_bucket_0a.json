@@ -2,13 +2,14 @@
   {
     "kind":"class",
     "name":"CAngelSpirit",
+    "parent":"CHotDemon",
     "size":53384
   },
   {
     "kind":"class",
     "name":"CBitFont",
     "rtti_file":"engine/font.cpp",
-    "size":1
+    "size":16928
   },
   {
     "kind":"class",
@@ -23,10 +24,109 @@
     "size":36
   },
   {
+    "kind":"funcdef",
+    "name":"CCharacter_isInvulnerable",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CCharacter_setDoorTarget",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      },
+      {
+        "name":"door_target",
+        "type":{
+          "kind":"class",
+          "name":"CDoor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_startInteraction",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"user",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CDemonCamera",
+    "parent":"CCameraView",
     "rtti_file":"core/dcamera.cpp",
     "size":5320
+  },
+  {
+    "kind":"class",
+    "name":"CEnemy_full_vtable",
+    "size":332,
+    "vtable_slots":[
+      {
+        "name":"_ub",
+        "offset":0
+      },
+      {
+        "name":"_uc",
+        "offset":216
+      },
+      {
+        "name":"_ue",
+        "offset":320
+      }
+    ]
   },
   {
     "kind":"class",
@@ -43,18 +143,20 @@
   {
     "kind":"class",
     "name":"CGlassParticle",
+    "parent":"CParticle",
     "rtti_file":"core/emitter.cpp",
     "size":212
   },
   {
     "kind":"class",
     "name":"CInStreamPipe",
+    "parent":"CInStream",
     "size":36
   },
   {
     "kind":"class",
     "name":"CKeys",
-    "size":1
+    "size":4
   },
   {
     "kind":"class",
@@ -65,8 +167,13 @@
   },
   {
     "kind":"class",
+    "name":"CMatrix3x3i",
+    "size":36
+  },
+  {
+    "kind":"class",
     "name":"CMirrorReflection",
-    "size":1
+    "size":148
   },
   {
     "kind":"class",
@@ -77,13 +184,213 @@
   {
     "kind":"class",
     "name":"COutStreamFile",
+    "parent":"COutStream",
     "size":8
+  },
+  {
+    "kind":"funcdef",
+    "name":"CSoundDevice_set3DListenerPos",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      },
+      {
+        "name":"x",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      },
+      {
+        "name":"y",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      },
+      {
+        "name":"z",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CStrList_swap",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CStrList",
+          "ptr":1
+        }
+      },
+      {
+        "name":"index1",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"index2",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
     "name":"CTextureCache",
     "rtti_file":"engine/texture.cpp",
-    "size":1
+    "size":98316
+  },
+  {
+    "kind":"enum",
+    "name":"EAimMode",
+    "size":4,
+    "values":[
+      {
+        "name":"AIM_MODE_AUTO",
+        "value":0
+      },
+      {
+        "name":"AIM_MODE_SEMI_AUTO",
+        "value":1
+      },
+      {
+        "name":"AIM_MODE_MANUAL",
+        "value":2
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"EDoorSide",
+    "size":4,
+    "values":[
+      {
+        "name":"DOOR_SIDE_LEFT",
+        "value":0
+      },
+      {
+        "name":"DOOR_SIDE_RIGHT",
+        "value":1
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"EDoorState",
+    "size":4,
+    "values":[
+      {
+        "name":"DOOR_STATE_CLOSED",
+        "value":0
+      },
+      {
+        "name":"DOOR_STATE_OPENING",
+        "value":1
+      },
+      {
+        "name":"DOOR_STATE_OPEN",
+        "value":2
+      },
+      {
+        "name":"DOOR_STATE_CLOSING",
+        "value":3
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"EMotionTransitionCmd",
+    "size":4,
+    "values":[
+      {
+        "name":"MOTION_CMD_NONE",
+        "value":0
+      },
+      {
+        "name":"MOTION_CMD_JUMP",
+        "value":1
+      },
+      {
+        "name":"MOTION_CMD_WAIT_EXIT",
+        "value":2
+      },
+      {
+        "name":"MOTION_CMD_TWEEN",
+        "value":3
+      },
+      {
+        "name":"MOTION_CMD_TWEEN_ADVANCE",
+        "value":4
+      },
+      {
+        "name":"MOTION_CMD_TWEEN_ADVANCE_BOTH",
+        "value":5
+      },
+      {
+        "name":"MOTION_CMD_TWEEN_BIDIR",
+        "value":6
+      }
+    ]
+  },
+  {
+    "kind":"struct",
+    "name":"SEventNameBlock",
+    "size":3204
+  },
+  {
+    "kind":"struct",
+    "name":"SFogGridPlane",
+    "size":256
+  },
+  {
+    "kind":"struct",
+    "name":"SMRGLHeaderBasic",
+    "size":8
+  },
+  {
+    "kind":"struct",
+    "name":"SMpegLayer3SideInfoChannel",
+    "size":160
+  },
+  {
+    "kind":"struct",
+    "name":"SNotesMapSet",
+    "size":136
   },
   {
     "kind":"struct",
@@ -98,6 +405,12 @@
   {
     "kind":"struct",
     "name":"SSoftwareEdge",
-    "size":1
+    "parent":"SHardwareEdge",
+    "size":80
+  },
+  {
+    "kind":"struct",
+    "name":"SVoxelGrid",
+    "size":64
   }
 ]

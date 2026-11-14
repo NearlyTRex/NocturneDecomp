@@ -16,43 +16,43 @@
     {
       "addr": "00414ab0",
       "from_addr": "00414ae8",
-      "name": "core_biggs.cpp_FUN_00414ab0",
+      "name": "core_biggs.cpp_CBiggs_setup_FUN_00414ab0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0050f290",
       "from_addr": "0050f503",
-      "name": "core_mimic.cpp_FUN_0050f290",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00520430",
-      "from_addr": "0052049b",
-      "name": "core_moloch.cpp_FUN_00520430",
+      "name": "core_mimic.cpp_CMimic_setup_FUN_0050f290",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005204e0",
       "from_addr": "00520b94",
-      "name": "core_moloch.cpp_FUN_005204e0",
+      "name": "core_moloch.cpp_CMoloch_process_FUN_005204e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00520430",
+      "from_addr": "0052049b",
+      "name": "core_moloch.cpp_CMoloch_setup_FUN_00520430",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00532930",
       "from_addr": "005329a1",
-      "name": "core_passngr.cpp_FUN_00532930",
+      "name": "core_passngr.cpp_CPassenger_setup_FUN_00532930",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00591ff0",
       "from_addr": "00592259",
-      "name": "core_succubus.cpp_FUN_00591ff0",
+      "name": "core_succubus.cpp_CSuccubus_setup_FUN_00591ff0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a52a0",
       "from_addr": "005a5390",
-      "name": "core_vampboss.cpp_FUN_005a52a0",
+      "name": "core_vampboss.cpp_CVampireBoss_setup_FUN_005a52a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -87,7 +87,7 @@
       {
         "call_addr": "00414ae8",
         "call_type": "direct",
-        "caller": "core_biggs.cpp_FUN_00414ab0",
+        "caller": "core_biggs.cpp_CBiggs_setup_FUN_00414ab0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -98,7 +98,7 @@
       {
         "call_addr": "0050f503",
         "call_type": "direct",
-        "caller": "core_mimic.cpp_FUN_0050f290",
+        "caller": "core_mimic.cpp_CMimic_setup_FUN_0050f290",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -109,7 +109,7 @@
       {
         "call_addr": "0050f5cd",
         "call_type": "direct",
-        "caller": "core_mimic.cpp_FUN_0050f290",
+        "caller": "core_mimic.cpp_CMimic_setup_FUN_0050f290",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -120,7 +120,7 @@
       {
         "call_addr": "0052049b",
         "call_type": "direct",
-        "caller": "core_moloch.cpp_FUN_00520430",
+        "caller": "core_moloch.cpp_CMoloch_setup_FUN_00520430",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -131,7 +131,7 @@
       {
         "call_addr": "005204a7",
         "call_type": "direct",
-        "caller": "core_moloch.cpp_FUN_00520430",
+        "caller": "core_moloch.cpp_CMoloch_setup_FUN_00520430",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -142,7 +142,7 @@
       {
         "call_addr": "00520b94",
         "call_type": "direct",
-        "caller": "core_moloch.cpp_FUN_005204e0",
+        "caller": "core_moloch.cpp_CMoloch_process_FUN_005204e0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -153,7 +153,7 @@
       {
         "call_addr": "00520ba0",
         "call_type": "direct",
-        "caller": "core_moloch.cpp_FUN_005204e0",
+        "caller": "core_moloch.cpp_CMoloch_process_FUN_005204e0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -164,7 +164,7 @@
       {
         "call_addr": "005329a1",
         "call_type": "direct",
-        "caller": "core_passngr.cpp_FUN_00532930",
+        "caller": "core_passngr.cpp_CPassenger_setup_FUN_00532930",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -175,7 +175,7 @@
       {
         "call_addr": "005329b8",
         "call_type": "direct",
-        "caller": "core_passngr.cpp_FUN_00532930",
+        "caller": "core_passngr.cpp_CPassenger_setup_FUN_00532930",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -186,7 +186,7 @@
       {
         "call_addr": "00592259",
         "call_type": "direct",
-        "caller": "core_succubus.cpp_FUN_00591ff0",
+        "caller": "core_succubus.cpp_CSuccubus_setup_FUN_00591ff0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -228,6 +228,32 @@
       "STORE": 6
     },
     "pcode_op_count": 156
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b6f80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004fa9c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0052b430",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004e0170",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 16,

@@ -2,24 +2,26 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 73,
+    "complexity_score": 202,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 43,
-    "suspect_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 72,
+    "suspect_count": 11,
     "suspect_types": [
-      "unnamed_field",
+      "derived_field_index_pun",
+      "negative_offset",
+      "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 101
+    "total_lines": 130
   },
   "cross_references": [
     {
       "addr": "004f02e0",
       "from_addr": "004f02f3",
-      "name": "shape_meshlod.cpp_factoryFuncMimic_FUN_004f02e0",
+      "name": "core_mimic.cpp_factoryFuncMimic_FUN_004f02e0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -72,7 +74,7 @@
       {
         "call_addr": "004f02f3",
         "call_type": "direct",
-        "caller": "shape_meshlod.cpp_factoryFuncMimic_FUN_004f02e0",
+        "caller": "core_mimic.cpp_factoryFuncMimic_FUN_004f02e0",
         "estimated_params": 1,
         "instructions_analyzed": 2,
         "method": "push_count",
@@ -112,6 +114,26 @@
     },
     "pcode_op_count": 229
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0050f0c0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0051f1d0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004d4450",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -138,12 +160,83 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0xc8",
+      "description": "Negative struct offset (wrong base type)",
+      "line": 20,
+      "match": "pCVar7[-99].",
       "severity": "mild",
-      "text": "iVar5 = core_necklace_cpp_FUN_005adda0(&pCVar4[1].field_0xc8);",
-      "type": "unnamed_field"
+      "text": "*(CEnemy_full_vtable **)(pCVar7[-99].models[0].textures[0].texture_name + 0x24) = &g_CMimicVTable;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 38,
+      "match": "pCVar7[-1].",
+      "severity": "mild",
+      "text": "pSVar2 = pCVar7[-1].models[1].textures;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 43,
+      "match": "pCVar7[-1].",
+      "severity": "mild",
+      "text": "pcVar9 = pCVar7[-1].models[1].textures[0x13].texture_name + 0x34;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 44,
+      "match": "pCVar7[-1].",
+      "severity": "mild",
+      "text": "pSVar2 = pCVar7[-1].models[1].textures;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 60,
+      "match": "pCVar7[-100].",
+      "severity": "mild",
+      "text": "pSVar2 = pCVar7[-100].models[1].textures;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 65,
+      "match": "pCVar7[-100].",
+      "severity": "mild",
+      "text": "pSVar2 = pCVar7[-100].models[1].textures;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 70,
+      "match": "pCVar7[-100].",
+      "severity": "mild",
+      "text": "pSVar2 = pCVar7[-100].models[1].textures;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 75,
+      "match": "pCVar7[-100].",
+      "severity": "mild",
+      "text": "return (CMimic *)(pCVar7[-100].models[1].textures[0xc].texture_name + 0x38);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 49,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "'pCVar5[1].base.base.create_event + 0x50' walks 1 x sizeof(CEnemy) (0x10af8) + offsetof(base.base.create_event) (0x78) + 0x50 = 0x10bc0, which is exactly offsetof(CBoneGuy, boxes[1]). Ghidra had no CBoneGuy type here and reached the field by index arithmetic; write it as ((CBoneGuy *)pCVar5)->boxes[1] (\u00a7de-pun/\u00a712). Ambiguous: CBugs::bugs[3], CConstruct::death_event[24], CDraculaBride::part_list[6] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 18,
+      "severity": "moderate",
+      "text": "iVar6 = core_necklace_cpp_FUN_005adda0(pCVar5[1].base.base.create_event + 0x50);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

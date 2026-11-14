@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 96,
+    "complexity_score": 138,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 26,
-    "suspect_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 28,
+    "suspect_count": 10,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_field"
+      "pointer_cast",
+      "undefined_data"
     ],
-    "total_lines": 91
+    "total_lines": 93
   },
   "cross_references": [],
   "function": {
@@ -87,6 +87,32 @@
     },
     "pcode_op_count": 303
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00564a80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00549620",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0059b5a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00518ec0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -112,43 +138,19 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x54",
-      "severity": "mild",
-      "text": "if (*(int *)(&this_ptr->field_0x54 + lod_level * 4) <= iVar3) break;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x7c",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)(&this_ptr->field_0x7c + lod_level * 4);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 16,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "(DAT_0060b280,(uint)*(ushort *)(iVar4 + iVar2),(uint)*(ushort *)(iVar4 + 2 + iVar2));",
+      "text": "(DAT_0060b280,(uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar4)",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 18,
+      "line": 19,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "(DAT_0060b280,(uint)*(ushort *)(iVar4 + 2 + iVar2),",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "(DAT_0060b280,(uint)*(ushort *)(iVar1 + iVar2),(int)this_ptr);",
+      "text": "(DAT_0060b280,(uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar4)",
       "type": "undefined_data"
     },
     {
@@ -156,8 +158,64 @@
       "line": 27,
       "match": "DAT_0060b280",
       "severity": "mild",
+      "text": "(DAT_0060b280,(uint)*puVar1,(int)this_ptr);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_0060b280",
+      "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920(DAT_0060b280,1);",
       "type": "undefined_data"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 16,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(DAT_0060b280,(uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar4)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 17,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": ",(uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar4));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 19,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(DAT_0060b280,(uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar4)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 20,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": ",(uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_2 + iVar4));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 22,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 23,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "puVar1 = (ushort *)((int)&(pSVar2->vertex_indices).vertex_index_2 + iVar4);",
+      "type": "pointer_cast"
     }
   ]
 }

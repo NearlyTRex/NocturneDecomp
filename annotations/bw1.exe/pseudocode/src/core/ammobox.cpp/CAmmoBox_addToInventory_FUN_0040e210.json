@@ -1,0 +1,276 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 109,
+    "complexity_score": 91,
+    "cross_reference_count": 3,
+    "function_call_count": 6,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 46,
+    "suspect_count": 3,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 155
+  },
+  "cross_references": [
+    {
+      "addr": "00470750",
+      "from_addr": "0047078c",
+      "name": "core_doc.cpp_FUN_00470750",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c9990",
+      "from_addr": "004c99bd",
+      "name": "core_gabriela.cpp_CGabriella_collectAmmo_FUN_004c9990",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058cda0",
+      "from_addr": "0058cddc",
+      "name": "core_stranger.cpp_CStranger_processPickupComplete_FUN_0058cda0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040e210",
+    "address_range": [
+      [
+        "0040e210",
+        "0040e319"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e210",
+    "signature": "void __cdecl core_ammobox_cpp_CAmmoBox_addToInventory_FUN_0040e210(CAmmoBox *this_ptr,CInventory *inventory)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040dbc0",
+      "is_variadic": false,
+      "name": "core_ammo.cpp_CAmmo_ctor_FUN_0040dbc0"
+    },
+    {
+      "addr": "0040dfd0",
+      "is_variadic": false,
+      "name": "core_ammo.cpp_CAmmo_setAmmoCount_FUN_0040dfd0"
+    },
+    {
+      "addr": "0040ddd0",
+      "is_variadic": false,
+      "name": "core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ddd0"
+    },
+    {
+      "addr": "004f7690",
+      "is_variadic": false,
+      "name": "core_inv.cpp_FUN_004f7690"
+    },
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "005c0f32",
+      "is_variadic": false,
+      "name": "crt_memory.c_operator_new_FUN_005c0f32"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d31dc",
+      "name": "s_core_ammobox_cpp_005d31dc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d31f0",
+      "name": "s_Out_of_memory_005d31f0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d31fe",
+      "name": "s_Some_ammo_005d31fe",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d31ff",
+      "name": "s_ome_ammo_005d31fe+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d3200",
+      "name": "s_me_ammo_005d31fe+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d3201",
+      "name": "s_e_ammo_005d31fe+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "0047078c",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_00470750",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004c99bd",
+        "call_type": "direct",
+        "caller": "core_gabriela.cpp_CGabriella_collectAmmo_FUN_004c9990",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0058cddc",
+        "call_type": "direct",
+        "caller": "core_stranger.cpp_CStranger_processPickupComplete_FUN_0058cda0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.034090909090909,
+    "instruction_count": 88,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "CALL": 8,
+      "CALLIND": 1,
+      "CBRANCH": 6,
+      "COPY": 70,
+      "INT_ADD": 38,
+      "INT_AND": 37,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 34,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 17,
+      "INT_SUB": 33,
+      "LOAD": 23,
+      "POPCOUNT": 17,
+      "RETURN": 3,
+      "STORE": 36
+    },
+    "pcode_op_count": 355
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0040e670",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9888
+    },
+    "bw3.exe": {
+      "addr": "0040e720",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9341
+    },
+    "nocedit.exe": {
+      "addr": "00411700",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9888
+    },
+    "nocturne.exe": {
+      "addr": "0040f1a0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CAmmoBox *"
+      },
+      {
+        "is_param": true,
+        "name": "inventory",
+        "offset": 8,
+        "size": 4,
+        "type": "CInventory *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 38,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 45,
+      "match": "pCVar2 = (T *)((pCVar2->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCVar2 = (CAmmo *)((pCVar2->base).actor_name + 2);",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

@@ -14,18 +14,10 @@ void __cdecl core_stairs_cpp_CStairs_buildCollision_FUN_00568730(CStairs *this_p
   CDemonTriangle *this_ptr_00;
   int iVar1;
   CDemonTriangle *this_ptr_01;
-  float fStack_58;
-  float fStack_54;
-  float fStack_50;
-  float fStack_4c;
-  float fStack_48;
-  float fStack_44;
-  float fStack_40;
-  float fStack_3c;
-  float fStack_38;
-  float fStack_34;
-  float fStack_30;
-  float fStack_2c;
+  CVector3f CStack_58;
+  CVector3f CStack_4c;
+  CVector3f CStack_40;
+  CVector3f CStack_34;
   float fStack_28;
   float fStack_24;
   float fStack_20;
@@ -34,40 +26,38 @@ void __cdecl core_stairs_cpp_CStairs_buildCollision_FUN_00568730(CStairs *this_p
   float fStack_14;
   int iStack_10;
   
-  fStack_18 = *(float *)&this_ptr->field_0x160 * (float)_DAT_005d5ca0;
-  fStack_14 = -*(float *)&this_ptr->field_0x160 * (float)_DAT_005d5ca0;
+  fStack_18 = this_ptr->width * (float)_DAT_005d5ca0;
+  fStack_14 = -this_ptr->width * (float)_DAT_005d5ca0;
   iVar1 = 0;
-  if (0 < *(int *)&this_ptr->field_0x16c) {
-    this_ptr_01 = (CDemonTriangle *)&this_ptr->field_0x170;
-    this_ptr_00 = (CDemonTriangle *)&this_ptr->field_0x1a8;
+  if (0 < this_ptr->stair_count) {
+    this_ptr_01 = this_ptr->collision_triangles;
+    this_ptr_00 = this_ptr->collision_triangles + 1;
     do {
       iVar1 = iVar1 + 1;
-      fStack_54 = *(float *)&this_ptr->field_0x158 * (float)iVar1;
-      fStack_50 = *(float *)&this_ptr->field_0x15c * (float)iVar1;
-      fStack_38 = fStack_50 - *(float *)&this_ptr->field_0x168;
-      fStack_3c = fStack_54 - *(float *)&this_ptr->field_0x164;
-      fStack_58 = fStack_14;
-      fStack_4c = fStack_18;
-      fStack_34 = fStack_18;
-      fStack_40 = fStack_14;
-      fStack_48 = fStack_54;
-      fStack_44 = fStack_50;
-      fStack_30 = fStack_3c;
-      fStack_2c = fStack_38;
-      fStack_28 = fStack_38;
-      fStack_24 = fStack_54;
-      fStack_20 = fStack_3c;
-      fStack_1c = fStack_50;
+      CStack_58.y = this_ptr->rise * (float)iVar1;
+      CStack_58.z = this_ptr->run * (float)iVar1;
+      CStack_40.z = CStack_58.z - this_ptr->bevel_z;
+      CStack_40.y = CStack_58.y - this_ptr->bevel_y;
+      CStack_58.x = fStack_14;
+      CStack_4c.x = fStack_18;
+      CStack_34.x = fStack_18;
+      CStack_40.x = fStack_14;
+      CStack_4c.y = CStack_58.y;
+      CStack_4c.z = CStack_58.z;
+      CStack_34.y = CStack_40.y;
+      CStack_34.z = CStack_40.z;
+      fStack_28 = CStack_40.z;
+      fStack_24 = CStack_58.y;
+      fStack_20 = CStack_40.y;
+      fStack_1c = CStack_58.z;
       iStack_10 = iVar1;
       core_dtri_cpp_CDemonTriangle_buildCollision_FUN_00478a50
-                (this_ptr_01,(CVector3f *)&fStack_58,(CVector3f *)&fStack_4c,(CVector3f *)&fStack_34
-                );
+                (this_ptr_01,&CStack_58,&CStack_4c,&CStack_34);
       this_ptr_01 = this_ptr_01 + 2;
       core_dtri_cpp_CDemonTriangle_buildCollision_FUN_00478a50
-                (this_ptr_00,(CVector3f *)&fStack_58,(CVector3f *)&fStack_34,(CVector3f *)&fStack_40
-                );
+                (this_ptr_00,&CStack_58,&CStack_34,&CStack_40);
       this_ptr_00 = this_ptr_00 + 2;
-    } while (iVar1 < *(int *)&this_ptr->field_0x16c);
+    } while (iVar1 < this_ptr->stair_count);
   }
   return;
 }

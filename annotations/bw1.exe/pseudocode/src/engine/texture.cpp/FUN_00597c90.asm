@@ -8,7 +8,7 @@
 ; SRGBColorPalette * Stack[0x8]:4   palette
 ;
 ; XREF[1]:
-;   engine_drender.cpp_FUN_00484fb0 at 00484fba
+;   engine_drender.cpp_CDemonRenderer_updateTexture_FUN_00484fb0 at 00484fba
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02c8a680

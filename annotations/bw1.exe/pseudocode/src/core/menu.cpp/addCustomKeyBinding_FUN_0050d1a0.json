@@ -1,0 +1,173 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 50,
+    "complexity_score": 71,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 26,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 76
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0050d1a0",
+    "address_range": [
+      [
+        "0050d1a0",
+        "0050d219"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_menu.cpp_addCustomKeyBinding_FUN_0050d1a0",
+    "signature": "void __cdecl core_menu_cpp_addCustomKeyBinding_FUN_0050d1a0(int *key_code_ptr,char *key_name)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d21458",
+      "name": "DAT_01d21458",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.625,
+    "instruction_count": 40,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 11,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 30,
+      "INT_ADD": 16,
+      "INT_AND": 44,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 25,
+      "INT_LEFT": 4,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 10,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 15,
+      "INT_SUB": 11,
+      "INT_XOR": 2,
+      "LOAD": 9,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "STORE": 9
+    },
+    "pcode_op_count": 225
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004ee8e0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004ea9e0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00513460",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004d2880",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "key_code_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "key_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_01d2145c",
+      "severity": "mild",
+      "text": "*(int **)(&DAT_01d2145c + _DAT_01d21458 * 4) = key_code_ptr;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 19,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

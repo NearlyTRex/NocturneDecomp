@@ -13,8 +13,8 @@
 ; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[2]:
+;   sound_sndmain.cpp_CSfxSlot_mix_FUN_0054edb0 at 0054f1c8
 ;   sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_0054f930 at 0054f9a5
-;   sound_sndmain.cpp_FUN_0054edb0 at 0054f1c8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005e88eb

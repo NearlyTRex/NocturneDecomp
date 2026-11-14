@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   vertex_index
 ;
 ; XREF[1]:
-;   core_stranger.cpp_FUN_0056eb60 at 0056ecba
+;   core_stranger.cpp_CStranger_updateClothSimulation_FUN_0056eb60 at 0056ecba
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_005f124f

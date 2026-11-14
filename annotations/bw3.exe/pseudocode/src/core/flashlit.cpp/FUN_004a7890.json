@@ -1,0 +1,258 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 86,
+    "complexity_score": 231,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 46,
+    "suspect_count": 17,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param",
+      "unrolled_strlen"
+    ],
+    "total_lines": 132
+  },
+  "cross_references": [
+    {
+      "addr": "004a7920",
+      "from_addr": "004a793e",
+      "name": "core_flashlit.cpp_FUN_004a7920",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004aa810",
+      "from_addr": "004aaaeb",
+      "name": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a8f30",
+      "from_addr": "004a9045",
+      "name": "core_fldnotes.cpp_STextView_layoutChunk_FUN_004a8f30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a7890",
+    "address_range": [
+      [
+        "004a7890",
+        "004a791f"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_flashlit.cpp_FUN_004a7890",
+    "signature": "void core_flashlit_cpp_FUN_004a7890(char *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a54c0",
+      "is_variadic": false,
+      "name": "crt_string.c_memmove_FUN_005a54c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006074b8",
+      "name": "DAT_006074b8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.318181818181818,
+    "instruction_count": 66,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 2,
+      "BRANCH": 2,
+      "CALL": 1,
+      "CBRANCH": 10,
+      "COPY": 53,
+      "INT_ADD": 25,
+      "INT_AND": 62,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 56,
+      "INT_LESS": 4,
+      "INT_MULT": 3,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 27,
+      "INT_SUB": 18,
+      "INT_XOR": 2,
+      "INT_ZEXT": 2,
+      "LOAD": 18,
+      "POPCOUNT": 27,
+      "RETURN": 2,
+      "STORE": 9
+    },
+    "pcode_op_count": 351
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a1390",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004b9c50",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_flashlit_cpp_FUN_004a7890(char *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pcVar2 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pcVar2 = param_1 + n;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_006074b8",
+      "severity": "mild",
+      "text": "if (((&DAT_006074b8)[(byte)(pcVar2[-1] + 1)] & 2) == 0) break;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[n] = '\\0';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "while (((&DAT_006074b8)[(byte)(*param_1 + 1)] & 2) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_006074b8",
+      "severity": "mild",
+      "text": "while (((&DAT_006074b8)[(byte)(*param_1 + 1)] & 2) != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "memmove(param_1,param_1 + 1,n);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "memmove(param_1,param_1 + 1,n);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "while (((&DAT_006074b8)[(byte)(*param_1 + 1)] & 2) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_006074b8",
+      "severity": "mild",
+      "text": "while (((&DAT_006074b8)[(byte)(*param_1 + 1)] & 2) != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*param_1 = ' ';",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = param_1 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = param_1 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = param_1 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = param_1 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 13,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    }
+  ]
+}

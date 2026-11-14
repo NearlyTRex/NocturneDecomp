@@ -14,13 +14,14 @@ CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_dtor_FUN_00577150(CCryptVess
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CCryptVesselTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CCryptVesselTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  pCVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)&this_ptr->field_0x3c4,1);
+  pCVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00408770(&(this_ptr->flame).base,1);
   pCVar2 = (CCryptVessel *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)&pCVar1[-3].field_0x44,1);
+           core_actor_cpp_CDemonActor_dtor_FUN_00408770
+                     ((CDemonActor *)&pCVar1[-3].orient_matrix.m[0].z,1);
   if ((flags & 2) == 0) {
     return pCVar2;
   }

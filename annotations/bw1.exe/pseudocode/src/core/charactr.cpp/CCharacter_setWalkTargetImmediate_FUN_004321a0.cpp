@@ -9,10 +9,13 @@
 void __cdecl core_charactr_cpp_CCharacter_setWalkTargetImmediate_FUN_004321a0(CCharacter *this_ptr,CDemonActor *target)
 
 {
-  *(uint *)&this_ptr->field_0x273c = 1;
-  *(uint *)&this_ptr->field_0x2708 = 0xbf800000;
-  *(CDemonActor **)&this_ptr->field_0x2704 = target;
-  *(uint *)&this_ptr->field_0x270c = 0x7149f2ca;
-  (**(code **)(*(int *)&this_ptr->field_0x154 + 0x138))(this_ptr,0xbf800000);
+  CCharacter_full_vtable *pCVar1;
+  
+  this_ptr->walk_state = WALK_STATE_WALKING;
+  this_ptr->walk_min_distance = -1.0;
+  this_ptr->walk_to_target = target;
+  pCVar1 = (this_ptr->base).vtable._uc;
+  this_ptr->walk_max_distance = 1e+30;
+  (*(pCVar1->_uc).setWalkTimeout)(this_ptr,-1.0);
   return;
 }

@@ -2,15 +2,40 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CActorDestination;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CFlame.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/enums/ECryptVesselVisual.h"
 
 // Structure: CCryptVessel
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0xaac (2732 bytes)
 #pragma pack(push, 1)
 typedef struct CCryptVessel {
-    char field_0[2732]; // 0x0
+    CDemonActor base; // 0x0
+    CKeyFramedModelInstance model; // 0x2b4
+    struct CDemonActor* carrier; // 0x430
+    struct CCryptVessel* prey; // 0x434
+    struct CCryptVessel* neutral; // 0x438
+    char destroyed_event[100]; // 0x43c
+    char win_event[100]; // 0x4a0
+    struct CActorDestination* start_loc; // 0x504
+    struct CActorDestination* end_loc; // 0x508
+    float eat_distance; // 0x50c
+    ECryptVesselVisual visual_type; // 0x510
+    int state; // 0x514
+    float timer; // 0x518
+    int init_frame; // 0x51c
+    CFlame flame; // 0x520
+    float spin_angle; // 0x920
+    CKeyFramedModelInstance orb_model; // 0x924
+    int is_visible; // 0xaa0
+    float water_anim_timer; // 0xaa4
+    int puzzle_complete; // 0xaa8
 } CCryptVessel;
 #pragma pack(pop)
 

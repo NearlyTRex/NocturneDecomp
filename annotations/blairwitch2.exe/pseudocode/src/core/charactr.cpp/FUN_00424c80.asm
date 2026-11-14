@@ -67,7 +67,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_00424bd0 at 00424c6d
+;   core_charactr.cpp_CCharacter_renderCharacter_FUN_00424bd0 at 00424c6d
 ;
 ; Referenced Globals:
 ;   undefined4 s_s_7headlite_raw_005ccd01+1

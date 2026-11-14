@@ -16,10 +16,10 @@
 ;   int g_WindowHeight = 0xc8
 ;
 ; Called Functions:
-;   core_dcamera.cpp_CDemonCamera_FUN_004401b0
 ;   core_dcamera.cpp_CDemonCamera_generateFogGrid_FUN_00446800
 ;   core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00447a70
 ;   core_dcamera.cpp_CDemonCamera_init_FUN_00440010
+;   core_dcamera.cpp_CDemonCamera_setFramebufferSize_FUN_004401b0
 ;
 ; *****************************************************************************
 
@@ -51,8 +51,8 @@ section .text
     PUSH 0x0                            ; 0043ff8a
     PUSH 0x0                            ; 0043ff8c
     PUSH EBX                            ; 0043ff8e
-    CALL core_dcamera.cpp_CDemonCamera_FUN_004401b0 ; 0043ff8f
-        ;   XREF to: 004401b0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_FUN_004401b0(CDemonCamera * this_ptr, undefined4 param_2, undefined4 param_3)
+    CALL core_dcamera.cpp_CDemonCamera_setFramebufferSize_FUN_004401b0 ; 0043ff8f
+        ;   XREF to: 004401b0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setFramebufferSize_FUN_004401b0(CDemonCamera * this_ptr, int width, int height)
     ADD ESP,0xc                         ; 0043ff94
     PUSH EBX                            ; 0043ff97
     CALL core_dcamera.cpp_CDemonCamera_generateFogGrid_FUN_00446800 ; 0043ff98

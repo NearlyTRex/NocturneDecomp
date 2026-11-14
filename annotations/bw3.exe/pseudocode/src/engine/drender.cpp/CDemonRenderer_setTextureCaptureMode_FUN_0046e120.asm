@@ -8,16 +8,16 @@
 ; int              Stack[0x8]:4   enable_advanced_mode
 ;
 ; XREF[14]:
-;   core_asgaya.cpp_FUN_005a17e0 at 005a18f5
-;   core_baal.cpp_FUN_00597970 at 00597a98
-;   core_boneguy.cpp_FUN_00418f90 at 00418ff3
-;   core_hecaitmx.cpp_FUN_00598480 at 00598516
-;   core_hino.cpp_FUN_0059d120 at 0059d2aa
+;   core_asgaya.cpp_CAsgaya_renderTransparent_FUN_005a17e0 at 005a18f5
+;   core_baal.cpp_CBaal_renderTransparent_FUN_00597970 at 00597a98
+;   core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_00418f90 at 00418ff3
+;   core_hecaitmx.cpp_CHecaitomix_renderTransparent_FUN_00598480 at 00598516
+;   core_hino.cpp_CHino_renderTransparent_FUN_0059d120 at 0059d2aa
 ;   core_inv.cpp_FUN_004dbe70 at 004dc363
-;   core_kedward.cpp_FUN_00591680 at 0059179c
-;   core_mattnntt.cpp_FUN_00593710 at 0059387c
+;   core_kedward.cpp_CKedward_renderTransparent_FUN_00591680 at 0059179c
+;   core_mattnntt.cpp_CMattanntote_renderTransparent_FUN_00593710 at 0059387c
 ;   core_morph.cpp_CMorphModel_renderFaces_FUN_004fa6d0 at 004fa6e4
-;   core_npc.cpp_FUN_005095f0 at 00509735
+;   core_npc.cpp_CNPC_renderTransparent_FUN_005095f0 at 00509735
 ;   ... and 4 more
 ;
 ; Referenced Globals:

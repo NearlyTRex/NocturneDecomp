@@ -7,11 +7,11 @@
 
 // Original: core_slew.cpp_staticInit_FUN_0056b9f0
 // Address: 0056b9f0
-void staticInit(void);
+void __cdecl staticInit(void);
 
-// Original: core_slew.cpp_FUN_0056ba00
+// Original: core_slew.cpp_CSlew_init_FUN_0056ba00
 // Address: 0056ba00
-undefined8 FUN_0056ba00(undefined4 *param_1);
+undefined8 __cdecl CSlew::init(CSlew *this_ptr);
 
 // Original: core_slew.cpp_FUN_0056ba50
 // Address: 0056ba50

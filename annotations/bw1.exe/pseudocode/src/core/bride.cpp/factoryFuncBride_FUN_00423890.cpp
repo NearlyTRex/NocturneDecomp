@@ -1,20 +1,20 @@
 // Name: core_bride.cpp_factoryFuncBride_FUN_00423890
 // Address: 00423890
 // Address Range: [[00423890, 004238ab]]
-// Convention: unknown
-// Signature: void core_bride_cpp_factoryFuncBride_FUN_00423890(void)
+// Convention: __cdecl
+// Signature: CBride * __cdecl core_bride_cpp_factoryFuncBride_FUN_00423890(void)
 
 #include "nocturne.h"
 
-void core_bride_cpp_factoryFuncBride_FUN_00423890(void)
+CBride * __cdecl core_bride_cpp_factoryFuncBride_FUN_00423890(void)
 
 {
-  CBride *this_ptr;
+  CBride *pCVar1;
   
-  this_ptr = (CBride *)FUN_005c0f32(0xc29c);
-  if (this_ptr == (CBride *)0x0) {
-    return;
+  pCVar1 = (CBride *)operator_new(0xc29c);
+  if (pCVar1 == (CBride *)0x0) {
+    return (CBride *)0x0;
   }
-  core_bride_cpp_CBride_ctor_FUN_004238c0(this_ptr);
-  return;
+  pCVar1 = core_bride_cpp_CBride_ctor_FUN_004238c0(pCVar1);
+  return pCVar1;
 }

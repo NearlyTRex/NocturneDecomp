@@ -2,23 +2,35 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 45,
+    "complexity_score": 36,
     "cross_reference_count": 17,
     "function_call_count": 5,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 20,
-    "suspect_count": 2,
+    "pseudocode_lines": 21,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field"
+      "negative_offset"
     ],
-    "total_lines": 68
+    "total_lines": 69
   },
   "cross_references": [
     {
       "addr": "00410bb0",
       "from_addr": "00410bbf",
       "name": "core_baron.cpp_CBaronWeapon_dtor_FUN_00410bb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a6b30",
+      "from_addr": "005a6b49",
+      "name": "core_cross.cpp_CCross_dtor_FUN_005a6b30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a7a60",
+      "from_addr": "005a7a6f",
+      "name": "core_cross.cpp_CSimpleCross_dtor_FUN_005a7a60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -104,18 +116,6 @@
       "from_addr": "0058021f",
       "name": "core_turret.cpp_CTurret_dtor_FUN_00580210",
       "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005a6b30",
-      "from_addr": "005a6b49",
-      "name": "unkafter_cross.cpp_CCross_dtor_FUN_005a6b30",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005a7a60",
-      "from_addr": "005a7a6f",
-      "name": "unkafter_cross.cpp_CSimpleCross_dtor_FUN_005a7a60",
-      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -161,7 +161,7 @@
     {
       "addr": "005fdf64",
       "name": "g_CWeaponVTable",
-      "type": "undefined4",
+      "type": "CWeapon_full_vtable",
       "value": null
     },
     {
@@ -313,6 +313,32 @@
     },
     "pcode_op_count": 156
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005ad5d0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0057aed0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005edf80",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00553ea0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -338,20 +364,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x2b0",
+      "description": "Negative struct offset (wrong base type)",
+      "line": 18,
+      "match": "pCVar1[-2].",
       "severity": "mild",
-      "text": "*(byte **)&this_ptr->field_0x2b0 = &g_CWeaponVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x464",
-      "severity": "mild",
-      "text": "pCVar1 = core_box_cpp_CBox_dtor_FUN_005b1c70((CBox *)&this_ptr->field_0x464,0);",
-      "type": "unnamed_field"
+      "text": "((CDemonActor *)&pCVar1[-2].linear_velocity_local,1);",
+      "type": "negative_offset"
     }
   ],
   "vtable_info": {

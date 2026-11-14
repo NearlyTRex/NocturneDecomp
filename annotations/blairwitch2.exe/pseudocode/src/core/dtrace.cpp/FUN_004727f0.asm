@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   core_dtrace.cpp_CDemonRaytrace_dtor_FUN_00472440 at 0047244f
-;   core_dtrace.cpp_FUN_004725fe at 00472620
+;   core_dtrace.cpp_FUN_00472600 at 00472620
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005b7fce

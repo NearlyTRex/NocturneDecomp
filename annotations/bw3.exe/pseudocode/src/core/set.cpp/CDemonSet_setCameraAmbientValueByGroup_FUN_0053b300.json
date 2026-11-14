@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 57,
+    "complexity_score": 32,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 17,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "unnamed_field"
+      "shadow_pointer_walk"
     ],
     "total_lines": 56
   },
@@ -39,7 +38,7 @@
     {
       "addr": "0053b280",
       "is_variadic": false,
-      "name": "core_set.cpp_FUN_0053b280"
+      "name": "core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_0053b280"
     }
   ],
   "globals": [],
@@ -91,6 +90,32 @@
     },
     "pcode_op_count": 129
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005346c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00555970",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00570e60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0050e510",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -123,27 +148,11 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x150",
-      "severity": "mild",
-      "text": "if (group_id == *(int *)&pCVar1->field_0x150) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar1->vertices[0].a`). Replace `pCVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 16,
-      "match": "field_0x1a4",
-      "severity": "mild",
-      "text": "pCVar1 = (CDemonSet *)&pCVar1->field_0x1a4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar1->owner`). Replace `pCVar1->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 16,
-      "match": "pCVar1 = (T *)&pCVar1->FIELD",
+      "match": "pCVar1 = (T *)&pCVar1->FIELD[N].SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar1 = (CDemonSet *)&pCVar1->field_0x1a4;",
+      "text": "pCVar1 = (CDemonSet *)&pCVar1->cameras[0].enabled;",
       "type": "shadow_pointer_walk"
     }
   ]

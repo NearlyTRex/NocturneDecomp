@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 104,
+    "complexity_score": 82,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 19,
-    "suspect_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 22,
+    "suspect_count": 5,
     "suspect_types": [
-      "raw_address_constant",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 72
+    "total_lines": 75
   },
   "cross_references": [],
   "function": {
@@ -27,13 +26,13 @@
     ],
     "convention": "unknown",
     "name": "cockpit_pkbitmap.cpp_FUN_00538130",
-    "signature": "void cockpit_pkbitmap_cpp_FUN_00538130(CPackedBitmap *param_1,undefined4 param_2)"
+    "signature": "void cockpit_pkbitmap_cpp_FUN_00538130(CPackedBitmap *param_1,char *param_2)"
   },
   "function_calls": [
     {
       "addr": "005381b0",
       "is_variadic": false,
-      "name": "cockpit_pkbitmap.cpp_FUN_005381b0"
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_005381b0"
     },
     {
       "addr": "005030e0",
@@ -53,7 +52,7 @@
     {
       "addr": "005bfb40",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005bfb40"
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
     }
   ],
   "globals": [
@@ -103,6 +102,14 @@
     },
     "pcode_op_count": 165
   },
+  "siblings": {
+    "bw3.exe": {
+      "addr": "0050fe10",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -125,7 +132,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void cockpit_pkbitmap_cpp_FUN_00538130(CPackedBitmap *param_1,uint param_2)",
+      "text": "void cockpit_pkbitmap_cpp_FUN_00538130(CPackedBitmap *param_1,char *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -133,7 +140,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void cockpit_pkbitmap_cpp_FUN_00538130(CPackedBitmap *param_1,uint param_2)",
+      "text": "void cockpit_pkbitmap_cpp_FUN_00538130(CPackedBitmap *param_1,char *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -141,15 +148,7 @@
       "line": 11,
       "match": "param_2",
       "severity": "mild",
-      "text": "file_handle = (_FILE *)_fopen(param_2,\"wb\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "FUN_005bfb40(&uStack_6c,\"Unable to create PBM file %s\",param_2);",
+      "text": "file_handle = _fopen(param_2,\"wb\");",
       "type": "unnamed_param"
     },
     {
@@ -157,16 +156,8 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "cockpit_pkbitmap_cpp_FUN_005381b0(param_1,file_handle);",
+      "text": "cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_005381b0(param_1,file_handle);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Raw hex address 0x538161 assigned to bare local `uStack_6c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_6c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 19,
-      "match": "0x538161",
-      "severity": "moderate",
-      "text": "uStack_6c = 0x538161;",
-      "type": "raw_address_constant"
     }
   ]
 }

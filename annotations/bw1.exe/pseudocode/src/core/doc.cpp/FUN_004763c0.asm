@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_doc_cpp_FUN_004763c0(int param_1)
+; void core_doc_cpp_FUN_004763c0(CHero *param_1)
 ;
 ;
 ; Referenced Globals:
 ;   undefined4 s_stand_005da65b+1
 ;
 ; Called Functions:
-;   core_hero.cpp_FUN_004ec570
+;   core_hero.cpp_CHero_reset_FUN_004ec570
 ;   core_motion.cpp_CMotionController_jumpToMotionByName_FUN_00524ae0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
 ;
@@ -21,8 +21,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 004763c1
     PUSH EBX                            ; 004763c5
     ADD EBX,0x158                       ; 004763c6
-    CALL core_hero.cpp_FUN_004ec570     ; 004763cc
-        ;   XREF to: 004ec570 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004ec570()
+    CALL core_hero.cpp_CHero_reset_FUN_004ec570 ; 004763cc
+        ;   XREF to: 004ec570 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_reset_FUN_004ec570(CHero * this_ptr)
     MOV dword ptr [EBX + 0x1fea8],0x0   ; 004763d1
     ADD ESP,0x4                         ; 004763db
     MOV dword ptr [EBX + 0x1feac],0x0   ; 004763de

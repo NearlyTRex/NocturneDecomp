@@ -11,10 +11,10 @@
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408a50
 ;   core_ammo.cpp_CAmmo_ctor_FUN_0040ddb0
-;   core_ammo.cpp_FUN_0040e240
+;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040e240
 ;   core_inv.cpp_FUN_004dadb0
 ;   core_main.c_FUN_004e4500
-;   crt_unknown.c_FUN_005b8be2
+;   crt_memory.c_operator_new_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     RET                                 ; 004db771
     PUSH 0x47c                          ; 004db772
         ;   Label: LAB_004db772
-    CALL crt_unknown.c_FUN_005b8be2     ; 004db777
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 004db777
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 004db77c
     TEST EAX,EAX                        ; 004db77f
     JZ 0x004db78c                       ; 004db781
@@ -68,8 +68,8 @@ section .text
     ADD ESP,0x4                         ; 004db7d5
     PUSH EAX                            ; 004db7d8
     PUSH EBX                            ; 004db7d9
-    CALL core_ammo.cpp_FUN_0040e240     ; 004db7da
-        ;   XREF to: 0040e240 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_FUN_0040e240(CAmmo * this_ptr, char * weapon_class_name)
+    CALL core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040e240 ; 004db7da
+        ;   XREF to: 0040e240 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040e240(CAmmo * this_ptr, char * weapon_class_name)
     ADD ESP,0x8                         ; 004db7df
     MOV EAX,dword ptr [EBX + 0x2b0]     ; 004db7e2
     PUSH EBX                            ; 004db7e8

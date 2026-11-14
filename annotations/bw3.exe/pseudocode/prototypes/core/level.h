@@ -7,7 +7,7 @@
 
 // Original: core_level.cpp_staticInit_FUN_004dfc10
 // Address: 004dfc10
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_level.cpp_FUN_004dfc40
 // Address: 004dfc40

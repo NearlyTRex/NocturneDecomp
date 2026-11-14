@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBatCreature * core_batcreat_cpp_CBatCreature_dtor_FUN_00412690(CBatCreature *this_ptr,uint flags)
+; CBatCreature * __cdecl core_batcreat_cpp_CBatCreature_dtor_FUN_00412690(CBatCreature *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CBatCreature *   Stack[0x4]:4   this_ptr
@@ -12,12 +12,12 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408730
-;   core_cloth.cpp_FUN_00441ca0
+;   core_armour.cpp_FUN_0040ee30
+;   core_cloth.cpp_CClothList_dtor_FUN_00441ca0
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_005673f0
 ;   crt_memory.c___vec_delete_FUN_005c030f
 ;   crt_unknown.c_FUN_005c0336
 ;   crt_unknown.c_FUN_005c0344
-;   unkafter_armour.cpp_FUN_0040ee30
 ;
 ; *****************************************************************************
 
@@ -32,14 +32,14 @@ section .text
     PUSH 0x0                            ; 0041269c
     ADD EBX,0x35dc                      ; 0041269e
     PUSH EBX                            ; 004126a4
-    CALL unkafter_armour.cpp_FUN_0040ee30 ; 004126a5
-        ;   XREF to: 0040ee30 (UNCONDITIONAL_CALL)  ; undefined unkafter_armour.cpp_FUN_0040ee30()
+    CALL core_armour.cpp_FUN_0040ee30   ; 004126a5
+        ;   XREF to: 0040ee30 (UNCONDITIONAL_CALL)  ; undefined core_armour.cpp_FUN_0040ee30()
     ADD ESP,0x8                         ; 004126aa
     PUSH 0x0                            ; 004126ad
     SUB EAX,0x93c                       ; 004126af
     PUSH EAX                            ; 004126b4
-    CALL core_cloth.cpp_FUN_00441ca0    ; 004126b5
-        ;   XREF to: 00441ca0 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_FUN_00441ca0(CClothList * this_ptr, uint flags)
+    CALL core_cloth.cpp_CClothList_dtor_FUN_00441ca0 ; 004126b5
+        ;   XREF to: 00441ca0 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_CClothList_dtor_FUN_00441ca0(CClothList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004126ba
     PUSH 0x0                            ; 004126bd
     SUB EAX,0x2b48                      ; 004126bf
@@ -65,7 +65,7 @@ section .text
         ;   Label: LAB_004126ed
     PUSH EBX                            ; 004126f2
     CALL crt_memory.c___vec_delete_FUN_005c030f ; 004126f3
-        ;   XREF to: 005c030f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005c030f()
+        ;   XREF to: 005c030f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005c030f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 004126f8
     PUSH EAX                            ; 004126fb
     CALL crt_unknown.c_FUN_005c0336     ; 004126fc

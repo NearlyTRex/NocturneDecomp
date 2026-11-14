@@ -57,8 +57,8 @@
 ;   core_motion.cpp_FUN_005254b0
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_00569810
 ;   core_xform.cpp_FUN_005b5760
-;   core_xform.cpp_FUN_005b5930
 ;   core_xform.cpp_FUN_005b6270
+;   core_xform.cpp_matrixToEulerAngles_FUN_005b5930
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005b5200
 ;   ... and 5 more
 ;
@@ -186,7 +186,7 @@ section .text
     MOV EDI,dword ptr [EAX*0x4 + 0x1d06aa4] ; 0051075d
     PUSH EDI                            ; 00510764
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 00510765
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     MOV dword ptr [EBP + 0x7a],EAX      ; 0051076a
     ADD ESP,0x8                         ; 0051076d
     TEST EAX,EAX                        ; 00510770
@@ -229,7 +229,7 @@ section .text
     LEA ESI,[EBP + -0x72]               ; 005107d9
     LEA EDI,[EBP + 0xffffff5e]          ; 005107dc
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_005b5200 ; 005107e2
-        ;   XREF to: 005b5200 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_005b5200()
+        ;   XREF to: 005b5200 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005b5200(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 005107e7
     LEA ESI,[EBP + -0x72]               ; 005107ec
     LEA EAX,[EBP + 0xffffff5e]          ; 005107ef
@@ -248,8 +248,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00510814
     PUSH EAX                            ; 00510815
     LEA ESI,[EBP + 0x1e]                ; 00510816
-    CALL core_xform.cpp_FUN_005b5930    ; 00510819
-        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b5930()
+    CALL core_xform.cpp_matrixToEulerAngles_FUN_005b5930 ; 00510819
+        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_005b5930()
     ADD ESP,0x4                         ; 0051081e
     LEA EAX,[EBP + 0x5a]                ; 00510821
     PUSH EAX                            ; 00510824
@@ -275,8 +275,8 @@ section .text
     ADD ESP,0xc                         ; 00510853
     MOV ESI,dword ptr [0x00612560]      ; 00510856 | DAT_00612560
     PUSH ESI                            ; 0051085c | DAT_01bc120c
-    CALL engine_matrix.c_pop_FUN_004839a0 ; 0051085d
-        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004839a0()
+    CALL engine_drender.cpp_pop_FUN_004839a0 ; 0051085d
+        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_004839a0()
     ADD ESP,0x4                         ; 00510862
     PUSH EBX                            ; 00510865
         ;   Label: LAB_00510865
@@ -308,8 +308,8 @@ section .text
     MOV EDX,dword ptr [0x00612560]      ; 005108a3 | DAT_00612560
         ;   Label: LAB_005108a3
     PUSH EDX                            ; 005108a9 | DAT_01bc120c
-    CALL engine_matrix.c_pop_FUN_004839a0 ; 005108aa
-        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004839a0()
+    CALL engine_drender.cpp_pop_FUN_004839a0 ; 005108aa
+        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_004839a0()
     ADD ESP,0x4                         ; 005108af
     MOV ECX,dword ptr [EBP + 0x72]      ; 005108b2
     PUSH ECX                            ; 005108b5

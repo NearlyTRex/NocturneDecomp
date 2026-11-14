@@ -9,8 +9,10 @@
 int __cdecl core_gabriela_cpp_CGabriella_renderTransparent_FUN_004ca090(CGabriella *this_ptr)
 
 {
-  (**(code **)(*(int *)(*(int *)&this_ptr->field_0x1fe20 + 0x154) + 0x14))
-            (*(int *)&this_ptr->field_0x1fe20);
-  core_charactr_cpp_FUN_004301e0(this_ptr);
+  CWeapon *this_ptr_00;
+  
+  this_ptr_00 = (this_ptr->base).inventory.selected_weapon;
+  (*((this_ptr_00->base).vtable._ub)->renderTransparent)(&this_ptr_00->base);
+  core_charactr_cpp_CCharacter_renderTransparent_FUN_004301e0((CCharacter *)this_ptr);
   return 1;
 }

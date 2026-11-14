@@ -11,11 +11,11 @@
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 DAT_01c37788
 ;   undefined4 DAT_01cedef4
-;   undefined4 CAlphaBitmap_01d02ed0.field12_0xc
-;   undefined4 CAlphaBitmap_01d02ed0.field16_0x10
+;   undefined4 CAlphaBitmap_01d02ed0.width
+;   undefined4 CAlphaBitmap_01d02ed0.height
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_00449280
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
 ;   core_dirmat.cpp_FUN_00449530
 ;   core_inv.cpp_FUN_004d9ff0
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d900
@@ -39,13 +39,13 @@ section .text
     SUB ESP,0x174                       ; 004da134
     MOV ESI,dword ptr [0x006141bc]      ; 004da13a | DAT_006141bc
     SUB ESI,0x2                         ; 004da140
-    MOV EDX,dword ptr [0x01d02ee0]      ; 004da143 | CAlphaBitmap_01d02ed0.field16_0x10
+    MOV EDX,dword ptr [0x01d02ee0]      ; 004da143 | CAlphaBitmap_01d02ed0.height
     MOV EBX,ESI                         ; 004da149
     PUSH 0xffff                         ; 004da14b
     SUB EBX,EDX                         ; 004da150
     PUSH EBX                            ; 004da152
     PUSH 0x2                            ; 004da153
-    MOV EDI,dword ptr [0x01d02edc]      ; 004da155 | CAlphaBitmap_01d02ed0.field12_0xc
+    MOV EDI,dword ptr [0x01d02edc]      ; 004da155 | CAlphaBitmap_01d02ed0.width
     PUSH 0x1d02ed0                      ; 004da15b
     ADD EDI,0x2                         ; 004da160
     CALL engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d900 ; 004da163
@@ -97,8 +97,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004da248
     MOVSD ES:EDI,ESI                    ; 004da249
     MOVSD ES:EDI,ESI                    ; 004da24a
-    CALL core_dirmat.cpp_FUN_00449280   ; 004da24b
-        ;   XREF to: 00449280 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_00449280(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280 ; 004da24b
+        ;   XREF to: 00449280 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 004da250
     LEA ESI,[ESP + 0xe8]                ; 004da253
     XOR EDI,EDI                         ; 004da25a

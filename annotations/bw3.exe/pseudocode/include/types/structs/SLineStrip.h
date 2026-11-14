@@ -6,10 +6,11 @@
 #include "system/basetypes.h"
 
 // Structure: SLineStrip
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x8 (8 bytes)
 #pragma pack(push, 1)
 typedef struct SLineStrip {
+    int primitive_type; // 0x0
+    int vertex_count; // 0x4
 } SLineStrip;
 #pragma pack(pop)
 

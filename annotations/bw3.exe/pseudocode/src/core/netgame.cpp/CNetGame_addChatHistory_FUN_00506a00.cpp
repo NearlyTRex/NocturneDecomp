@@ -23,9 +23,9 @@ void __cdecl core_netgame_cpp_CNetGame_addChatHistory_FUN_00506a00(CNetGame *thi
     memmove((void *)0x1da6490,(void *)0x1da65b0,_DAT_01da648c * 0x120);
   }
   iVar2 = _DAT_01da648c * 0x120;
-  *(uint *)(iVar2 + 0x1da6490) = *(uint *)sender_addr;
+  *(uint *)(iVar2 + 0x1da6490) = sender_addr->ip_address;
   *(uint *)(iVar2 + 0x1da6494 + (uint)bVar5 * -8) =
-       *(uint *)(sender_addr + (uint)bVar5 * -8 + 4);
+       *(uint *)&sender_addr[-(uint)bVar5].port;
   *(int *)(iVar2 + 0x1da6498) = message_id;
   pcVar3 = (char *)(iVar2 + 0x1da649c);
   do {

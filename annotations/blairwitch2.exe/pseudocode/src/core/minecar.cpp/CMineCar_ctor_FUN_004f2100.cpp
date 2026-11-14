@@ -11,7 +11,7 @@ CMineCar * __cdecl core_minecar_cpp_CMineCar_ctor_FUN_004f2100(CMineCar *this_pt
 {
   CMineCar *pCVar1;
   
-  pCVar1 = (CMineCar *)core_platfrm_cpp_CPlatform_ctor_FUN_005180b0((CPlatform *)this_ptr);
-  *(byte **)&pCVar1->field_0x2b0 = &g_CMineCarVTable;
+  pCVar1 = (CMineCar *)core_platfrm_cpp_CPlatform_ctor_FUN_005180b0(&this_ptr->base);
+  (pCVar1->base).base.vtable._ub = &g_CMineCarVTable;
   return pCVar1;
 }

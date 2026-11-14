@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 310,
+    "complexity_score": 65,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 18,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
-    "suspect_count": 24,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 50,
+    "suspect_count": 1,
     "suspect_types": [
-      "unaffected_reg",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 167
+    "total_lines": 162
   },
   "cross_references": [],
   "function": {
@@ -25,9 +23,9 @@
         "00532180"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__stack_esi",
     "name": "core_set.cpp_transformNormalFixedPoint_FUN_00532030",
-    "signature": "void core_set_cpp_transformNormalFixedPoint_FUN_00532030(int *param_1)"
+    "signature": "CVector3i * __stack_esi core_set_cpp_transformNormalFixedPoint_FUN_00532030(CVector3i *input,CVector3i *output)"
   },
   "function_calls": [],
   "globals": [
@@ -144,9 +142,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 4,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -180,13 +178,41 @@
     },
     "pcode_op_count": 1175
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005532e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00538c70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0056e960",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "input",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3i *"
+      }
+    ]
   },
   "stack_patterns": {
     "note": "Function contains stack manipulation that may cause decompiler artifacts.",
@@ -213,190 +239,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_set_cpp_transformNormalFixedPoint_FUN_00532030(int *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "int *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar7 = ((uint)((longlong)_DAT_01c38b9c * (longlong)*param_1) >> 0x10 |",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(int)((ulonglong)((longlong)_DAT_01c38b9c * (longlong)*param_1) >> 0x20) << 0x10) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((uint)((longlong)_DAT_01c38ba8 * (longlong)param_1[1]) >> 0x10 |",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(int)((ulonglong)((longlong)_DAT_01c38ba8 * (longlong)param_1[1]) >> 0x20) << 0x10) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((uint)((longlong)_DAT_01c38bb4 * (longlong)param_1[2]) >> 0x10 |",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(int)((ulonglong)((longlong)_DAT_01c38bb4 * (longlong)param_1[2]) >> 0x20) << 0x10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar8 = ((uint)((longlong)_DAT_01c38ba0 * (longlong)*param_1) >> 0x10 |",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(int)((ulonglong)((longlong)_DAT_01c38ba0 * (longlong)*param_1) >> 0x20) << 0x10) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((uint)((longlong)_DAT_01c38bac * (longlong)param_1[1]) >> 0x10 |",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(int)((ulonglong)((longlong)_DAT_01c38bac * (longlong)param_1[1]) >> 0x20) << 0x10) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((uint)((longlong)_DAT_01c38bb8 * (longlong)param_1[2]) >> 0x10 |",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(int)((ulonglong)((longlong)_DAT_01c38bb8 * (longlong)param_1[2]) >> 0x20) << 0x10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar9 = ((uint)((longlong)_DAT_01c38ba4 * (longlong)*param_1) >> 0x10 |",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(int)((ulonglong)((longlong)_DAT_01c38ba4 * (longlong)*param_1) >> 0x20) << 0x10) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((uint)((longlong)_DAT_01c38bb0 * (longlong)param_1[1]) >> 0x10 |",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(int)((ulonglong)((longlong)_DAT_01c38bb0 * (longlong)param_1[1]) >> 0x20) << 0x10) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((uint)((longlong)_DAT_01c38bbc * (longlong)param_1[2]) >> 0x10 |",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(int)((ulonglong)((longlong)_DAT_01c38bbc * (longlong)param_1[2]) >> 0x20) << 0x10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 42,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "*unaff_ESI = ((uint)((longlong)_DAT_01d04fb8 * (longlong)iVar7) >> 0x10 |",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 48,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI[1] = ((uint)(lVar1 * iVar7) >> 0x10 | (int)((ulonglong)(lVar1 * iVar7) >> 0x20) << 0x10)",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 53,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI[2] = ((uint)(lVar4 * iVar7) >> 0x10 | (int)((ulonglong)(lVar4 * iVar7) >> 0x20) << 0x10)",
-      "type": "unaffected_reg"
     }
   ]
 }

@@ -1,14 +1,21 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl crt_memory_c___arrfini_FUN_005a3de6(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; void * __cdecl crt_memory_c___arrfini_FUN_005a3de6(void *obj_array,int obj_count,WatcomTypeInfo *type_info)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   obj_array
+; int              Stack[0x8]:4   obj_count
+; WatcomTypeInfo * Stack[0xc]:4   type_info
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ; undefined4       Stack[-0x8]:4  local_8
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[39]:
+;   core_armour.cpp_FUN_00410370 at 0041037c
+;   core_bmppuzzl.cpp_SButtonStruct_arrdtor50Chem_FUN_004144a0 at 004144ac
+;   core_bmppuzzl.cpp_SButtonStruct_arrdtor50_FUN_004144c0 at 004144cc
 ;   core_bodypart.cpp_FUN_00416dc0 at 00416dcc
 ;   core_boxactor.cpp_CDemonFilter_arrdtor8_FUN_00420e20 at 00420e2c
 ;   core_burncrss.cpp_FUN_00425490 at 0042549c
@@ -16,9 +23,6 @@
 ;   core_dfilter.cpp_CDemonFilter_arrdtor4_FUN_00459f30 at 00459f3c
 ;   core_dmodel.cpp_CKeyFramedModel_arrdtor256_FUN_00462630 at 0046263f
 ;   core_fire.cpp_CFireball_arrdtor64_FUN_004a49d0 at 004a49dc
-;   core_fire.cpp_CFirefly_arrdtor64_FUN_004a4a10 at 004a4a1c
-;   core_fire.cpp_CGlassParticle_arrdtor1000_FUN_004a49f0 at 004a49ff
-;   core_fire.cpp_CLeaf_arrdtor64_FUN_004a4990 at 004a499c
 ;   ... and 29 more
 ;
 ; Called Functions:

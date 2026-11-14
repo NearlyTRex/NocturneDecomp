@@ -1,21 +1,25 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_stdio_c_vsprintf_FUN_005bfb18(int param_1,undefined4 param_2,undefined4 param_3)
+; int __cdecl crt_stdio_c_vsprintf_FUN_005bfb18(char *buffer,char *format,va_list_t args)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   buffer
+; char *           Stack[0x8]:4   format
+; va_list_t        Stack[0xc]:4   args
 ;
-; XREF[27]:
+; XREF[30]:
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00480af0 at 00480b1c
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00480fa0 at 00480fca
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthPrintf_FUN_00480e50 at 00480e7b
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00480ca0 at 00480ccd
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00480d90 at 00480dbd
-;   cockpit_drawsurf.cpp_FUN_004807b0 at 004807dc
-;   cockpit_drawsurf.cpp_FUN_00480880 at 004808ac
-;   cockpit_drawsurf.cpp_FUN_00480950 at 0048097c
-;   cockpit_drawsurf.cpp_FUN_00480a20 at 00480a4c
-;   cockpit_drawsurf.cpp_FUN_00480af0 at 00480b1c
-;   cockpit_drawsurf.cpp_FUN_00480bc0 at 00480bed
-;   cockpit_drawsurf.cpp_FUN_00480ca0 at 00480ccd
-;   core_event.cpp_formatEventError_FUN_004a1210 at 004a1227
-;   ... and 17 more
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00480bc0 at 00480bed
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_00480950 at 0048097c
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_004807b0 at 004807dc
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_00480a20 at 00480a4c
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00480880 at 004808ac
+;   ... and 20 more
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c3320

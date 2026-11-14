@@ -15,7 +15,6 @@ int __cdecl core_event_cpp_CRuleList_evaluateAndRun_FUN_00495db0(CRuleList *this
   if (iVar1 < 0) {
     return 0;
   }
-  core_event_cpp_CEventList_executeCommands_FUN_0048c150
-            (0x01C6E360,(char *)(this_ptr + iVar1 * 100 + 0x1f8));
+  core_event_cpp_CEventList_executeCommands_FUN_0048c150(0x01C6E360,this_ptr->events[iVar1]);
   return 1;
 }

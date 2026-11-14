@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_skeleton.cpp_FUN_0054e170 at 0054e282
+;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0054e170 at 0054e282
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d81b3

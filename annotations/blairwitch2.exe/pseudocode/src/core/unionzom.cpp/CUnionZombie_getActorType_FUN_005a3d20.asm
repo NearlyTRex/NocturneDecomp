@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_unionzom_cpp_CUnionZombie_getActorType_FUN_005a3d20(CUnionZombie *this_ptr)
+; CDemonActorType * __cdecl core_unionzom_cpp_CUnionZombie_getActorType_FUN_005a3d20(CUnionZombie *this_ptr)
 ;
 ; Parameters:
 ; CUnionZombie *   Stack[0x4]:4   this_ptr

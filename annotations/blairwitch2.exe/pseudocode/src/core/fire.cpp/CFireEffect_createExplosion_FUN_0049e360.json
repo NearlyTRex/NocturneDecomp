@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 28,
+    "complexity_score": 29,
     "cross_reference_count": 6,
     "function_call_count": 3,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 13,
+    "pseudocode_lines": 14,
     "suspect_count": 1,
     "suspect_types": [
       "warning_overlapping_globals"
     ],
-    "total_lines": 61
+    "total_lines": 62
   },
   "cross_references": [
     {
@@ -36,19 +36,19 @@
     {
       "addr": "004993f0",
       "from_addr": "0049945f",
-      "name": "core_fire.cpp_FUN_004993f0",
+      "name": "core_fire.cpp_CToss_process_FUN_004993f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004a0920",
       "from_addr": "004a09d5",
-      "name": "core_flamecan.cpp_FUN_004a0920",
+      "name": "core_flamecan.cpp_CFlameCan_process_FUN_004a0920",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00585230",
       "from_addr": "00585720",
-      "name": "core_vessel.cpp_FUN_00585230",
+      "name": "core_vessel.cpp_CCryptVessel_process_FUN_00585230",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -66,14 +66,14 @@
   },
   "function_calls": [
     {
+      "addr": "00498d30",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CExplosion_activate_FUN_00498d30"
+    },
+    {
       "addr": "0049e630",
       "is_variadic": false,
       "name": "core_fire.cpp_CFireEffect_createCrater_FUN_0049e630"
-    },
-    {
-      "addr": "00498d30",
-      "is_variadic": false,
-      "name": "core_fire.cpp_FUN_00498d30"
     },
     {
       "addr": "0055ae50",
@@ -118,7 +118,7 @@
       {
         "call_addr": "0049945f",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004993f0",
+        "caller": "core_fire.cpp_CToss_process_FUN_004993f0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -151,7 +151,7 @@
       {
         "call_addr": "00585720",
         "call_type": "direct",
-        "caller": "core_vessel.cpp_FUN_00585230",
+        "caller": "core_vessel.cpp_CCryptVessel_process_FUN_00585230",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -162,7 +162,7 @@
       {
         "call_addr": "004a09d5",
         "call_type": "direct",
-        "caller": "core_flamecan.cpp_FUN_004a0920",
+        "caller": "core_flamecan.cpp_CFlameCan_process_FUN_004a0920",
         "estimated_params": 5,
         "instructions_analyzed": 9,
         "method": "push_count",
@@ -204,6 +204,32 @@
       "STORE": 18
     },
     "pcode_op_count": 239
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004b6c60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a36e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5688
+    },
+    "nocedit.exe": {
+      "addr": "004c8c10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0048c0d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9545
+    }
   },
   "stack_frame": {
     "frame_size": 24,

@@ -11,25 +11,25 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_dismemberPart_FUN_005481
 {
   CDeformableModel *this_ptr_00;
   uint lod_index;
-  byte *puVar1;
+  int *piVar1;
   
   if (body_part == (CBodyPart *)0x0) {
-    *(uint *)(&this_ptr->field_0x2140 + part_index * 4) = 0;
+    (this_ptr->part_data).visibility_flags[part_index] = 0;
     return;
   }
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810(this_ptr);
-  lod_index = (uint)(1 < *(int *)this_ptr_00);
-  for (puVar1 = &this_ptr_00->field_0x0 + lod_index * 8;
-      (0 < (int)lod_index && (*(int *)(puVar1 + 8) != 0)); puVar1 = puVar1 + -8) {
+  lod_index = (uint)(1 < this_ptr_00->num_lods);
+  for (piVar1 = &this_ptr_00->lod_info[lod_index - 1].shadow_only_flag;
+      (0 < (int)lod_index && (piVar1[2] != 0)); piVar1 = piVar1 + -2) {
     lod_index = lod_index - 1;
   }
-  if (lod_index != *(uint *)&this_ptr->field_0x2230) {
+  if (lod_index != this_ptr->cached_skinned_lod_index) {
     core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005471f0(this_ptr,lod_index);
   }
   core_skeleton_cpp_CDeformableModel_dismember_FUN_00543490
-            (this_ptr_00,*(int *)&this_ptr->field_0x2230,body_part,part_index,
-             *(CVector3i **)&this_ptr->field_0x2234,
-             *(int *)(&this_ptr->field_0x21b8 + part_index * 4));
-  *(uint *)(&this_ptr->field_0x2140 + part_index * 4) = 0;
+            (this_ptr_00,this_ptr->cached_skinned_lod_index,body_part,part_index,
+             this_ptr->skinned_vertices_buffer,(this_ptr->part_data).texture_set_indices[part_index]
+            );
+  (this_ptr->part_data).visibility_flags[part_index] = 0;
   return;
 }

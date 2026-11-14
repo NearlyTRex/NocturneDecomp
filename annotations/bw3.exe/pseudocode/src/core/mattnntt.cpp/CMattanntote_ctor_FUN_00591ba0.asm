@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CMattanntote * core_mattnntt_cpp_CMattanntote_ctor_FUN_00591ba0(CMattanntote *this_ptr)
+; CMattanntote * __cdecl core_mattnntt_cpp_CMattanntote_ctor_FUN_00591ba0(CMattanntote *this_ptr)
 ;
 ; Parameters:
 ; CMattanntote *   Stack[0x4]:4   this_ptr
@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00488fd0
-;   core_skeleton.cpp_FUN_0054eae0
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0
 ;   crt_memory.c___arrinit_FUN_005a30d7
 ;
 ; *****************************************************************************
@@ -30,15 +30,15 @@ section .text
     ADD EAX,0xd0b8                      ; 00591bb5
     PUSH EAX                            ; 00591bba
     CALL crt_memory.c___arrinit_FUN_005a30d7 ; 00591bbb
-        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005a30d7()
+        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005a30d7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00591bc0
     LEA EBX,[EAX + 0xffff2f48]          ; 00591bc3
     PUSH 0x5d8f28                       ; 00591bc9
     LEA EAX,[EBX + 0x158]               ; 00591bce
     PUSH EAX                            ; 00591bd4
     MOV dword ptr [EBX + 0x154],0x5e7394 ; 00591bd5
-    CALL core_skeleton.cpp_FUN_0054eae0 ; 00591bdf
-        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054eae0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 ; 00591bdf
+        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x326c],0x3f000000 ; 00591be4
     MOV dword ptr [EBX + 0x3270],0x3f800000 ; 00591bee
     MOV dword ptr [EBX + 0xd054],0x0    ; 00591bf8

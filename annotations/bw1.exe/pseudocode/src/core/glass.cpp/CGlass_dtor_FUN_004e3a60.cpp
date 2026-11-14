@@ -1,14 +1,12 @@
 // Name: core_glass.cpp_CGlass_dtor_FUN_004e3a60
 // Address: 004e3a60
 // Address Range: [[004e3a60, 004e3ac4]]
-// Convention: unknown
-// Signature: CGlass * core_glass_cpp_CGlass_dtor_FUN_004e3a60(CGlass *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CGlass * __cdecl core_glass_cpp_CGlass_dtor_FUN_004e3a60(CGlass *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CGlass * core_glass_cpp_CGlass_dtor_FUN_004e3a60(CGlass *this_ptr,uint flags)
+CGlass * __cdecl core_glass_cpp_CGlass_dtor_FUN_004e3a60(CGlass *this_ptr,uint flags)
 
 {
   CMirror *pCVar1;
@@ -16,13 +14,14 @@ CGlass * core_glass_cpp_CGlass_dtor_FUN_004e3a60(CGlass *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CGlassTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CGlassTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  pCVar1 = core_mirror_cpp_FUN_00518810((CMirror *)&this_ptr->field_0x1ec,0);
+  pCVar1 = core_mirror_cpp_FUN_00518810(&this_ptr->mirror,0);
   pCVar2 = (CGlass *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)(pCVar1 + -0x1ec),1);
+           core_actor_cpp_CDemonActor_dtor_FUN_00408730
+                     ((CDemonActor *)&pCVar1[-2].reflection.mirror_transform_matrix.m[2].x,1);
   if ((flags & 2) == 0) {
     return pCVar2;
   }

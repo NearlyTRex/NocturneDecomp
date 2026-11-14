@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_FUN_00480150(undefined4 param_1,int *param_2,int *param_3,int param_4)
+; void shape_edittool_cpp_FUN_00480150(undefined4 param_1,int *param_2,int *param_3,uint param_4)
 ;
 ;
 ; XREF[1]:
@@ -18,7 +18,7 @@
 ;   crt_memory.c___arrinit_FUN_005b7f5f
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00407cc0
 ;   engine_matrix.c_transformToCache_FUN_004e8e60
-;   engine_mini3d.cpp_FUN_004f8e20
+;   engine_mini3d.cpp_setColor_FUN_004f8e20
 ;
 ; *****************************************************************************
 
@@ -38,7 +38,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00480176
     PUSH EAX                            ; 0048017a
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 0048017b
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00480180
     XOR EAX,EAX                         ; 00480183
     MOV EDX,dword ptr [ESI]             ; 00480185
@@ -103,8 +103,8 @@ section .text
     AND EAX,0xff                        ; 0048022b
     OR EAX,EDX                          ; 00480230
     PUSH EAX                            ; 00480232
-    CALL engine_mini3d.cpp_FUN_004f8e20 ; 00480233
-        ;   XREF to: 004f8e20 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f8e20()
+    CALL engine_mini3d.cpp_setColor_FUN_004f8e20 ; 00480233
+        ;   XREF to: 004f8e20 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setColor_FUN_004f8e20(uint rgb)
     ADD ESP,0x4                         ; 00480238
     XOR ECX,ECX                         ; 0048023b
         ;   Label: LAB_0048023b
@@ -210,7 +210,7 @@ section .text
     MOV EDI,ESP                         ; 004803c8
     MOVSD.REP ES:EDI,ESI                ; 004803ca
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407cc0 ; 004803cc
-        ;   XREF to: 00407cc0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_clipAndDrawLine2D_FUN_00407cc0()
+        ;   XREF to: 00407cc0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407cc0(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 004803d1
     MOV EAX,dword ptr [ESP + 0x15c]     ; 004803d4
     XOR AL,0x2                          ; 004803db
@@ -311,7 +311,7 @@ section .text
     MOV EDI,ESP                         ; 0048055a
     MOVSD.REP ES:EDI,ESI                ; 0048055c
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407cc0 ; 0048055e
-        ;   XREF to: 00407cc0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_clipAndDrawLine2D_FUN_00407cc0()
+        ;   XREF to: 00407cc0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407cc0(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 00480563
     MOV EAX,dword ptr [ESP + 0x15c]     ; 00480566
     XOR AL,0x4                          ; 0048056d
@@ -414,7 +414,7 @@ section .text
     MOV EDI,ESP                         ; 004806da
     MOVSD.REP ES:EDI,ESI                ; 004806dc
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407cc0 ; 004806de
-        ;   XREF to: 00407cc0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_clipAndDrawLine2D_FUN_00407cc0()
+        ;   XREF to: 00407cc0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407cc0(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 004806e3
     MOV EBX,dword ptr [ESP + 0x15c]     ; 004806e6
     INC EBX                             ; 004806ed

@@ -11,7 +11,7 @@ void __cdecl core_cloth_cpp_CCloth_allocMemory_FUN_004351b0(CCloth *this_ptr)
 {
   int *piVar1;
   
-  core_cloth_cpp_CCloth_FUN_00435210(this_ptr);
+  core_cloth_cpp_CCloth_free_FUN_00435210(this_ptr);
   piVar1 = shape_memdbg_cpp_malloc_FUN_00564c18((this_ptr->model).vertex_count << 2);
   this_ptr->vertex_sort_buffer = piVar1;
   if (piVar1 != (int *)0x0) {

@@ -20,3 +20,7 @@ CDemonPod * __cdecl CDemonPod::ctor(CDemonPod *this_ptr);
 // Original: core_podmain.cpp_CDemonPod_dtor_FUN_0053d730
 // Address: 0053d730
 CDemonPod * __cdecl CDemonPod::dtor(CDemonPod *this_ptr,uint flags);
+
+// Original: core_podmain.cpp_FUN_0053d790
+// Address: 0053d790
+void FUN_0053d790(void);

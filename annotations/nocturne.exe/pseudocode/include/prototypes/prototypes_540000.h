@@ -61,11 +61,11 @@ void __cdecl core_stranger_cpp_CStranger_reset_FUN_00540820(CStranger *this_ptr)
 EDeathState __cdecl core_stranger_cpp_CStranger_getDeathState_FUN_00540890(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_dropCarriedObject_FUN_005408c0(CStranger *this_ptr,int hand_index,CVector3f *drop_direction);
 void __cdecl core_stranger_cpp_CStranger_drop_FUN_00540920(CStranger *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
-float core_stranger_cpp_FUN_00540970(void);
+float __cdecl core_stranger_cpp_dotProduct1_FUN_00540970(CVector3f *a,CVector3f *b);
 void __cdecl core_stranger_cpp_divideVectorByScalar_FUN_005409a0(CVector3f *vector,float *divisor);
-float core_stranger_cpp_FUN_005409c0(float *param_1,float *param_2);
+float __cdecl core_stranger_cpp_dotProduct2_FUN_005409c0(CVector3f *a,CVector3f *b);
 void __cdecl core_stranger_cpp_setMatrixTranslation_FUN_005409f0(CMatrix3x4f *matrix,CVector3f *translation);
-void * __cdecl core_stranger_cpp_FUN_00540a10(void *ptr);
+void * __cdecl core_stranger_cpp_unusedGetPointerAt8_FUN_00540a10(void *ptr);
 int __cdecl core_stranger_cpp_isProcessDisabled_FUN_00540a20(CDemonActor *actor);
 int __cdecl core_stranger_cpp_getScaleY_FUN_00540a30(CDemonActor *actor);
 void __cdecl core_stranger_cpp_setWindVelocity_FUN_00540a40(CCloth *cloth_ptr,CVector3f *velocity);
@@ -272,7 +272,7 @@ int __cdecl core_turret_cpp_CTurret_aimAtTarget_FUN_0054a640(CTurret *this_ptr,C
 void __cdecl core_turret_cpp_CTurret_getInteractionInfo_FUN_0054a800(CTurret *this_ptr,SInteractionInfo *interaction_info);
 int __cdecl core_turret_cpp_CTurret_startInteraction_FUN_0054a870(CTurret *this_ptr,CDemonActor *user);
 int __cdecl core_turret_cpp_CTurret_updateInteraction_FUN_0054a890(CTurret *this_ptr,UOrientationVector *user_orientation,SPlayerInput *player_control);
-void __cdecl core_turret_cpp_CTurret_stopUsing_FUN_0054a900(CTurret *this_ptr,CDemonActor *user);
+void __cdecl core_turret_cpp_CTurret_stopInteraction_FUN_0054a900(CTurret *this_ptr,CDemonActor *user);
 void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_0054a920(CTurret *this_ptr,float delta_time);
 float __cdecl core_turret_cpp_CTurret_getDamage_FUN_0054aab0(CTurret *this_ptr);
 CVector3f * __cdecl core_turret_cpp_CTurret_getMuzzlePoint_FUN_0054aae0(CTurret *this_ptr,CVector3f *out_point);
@@ -345,6 +345,6 @@ int __cdecl core_vessel_cpp_CCryptVessel_canPickup_FUN_0054fbc0(CCryptVessel *th
 void __cdecl core_vessel_cpp_CCryptVessel_pickup_FUN_0054fc00(CCryptVessel *this_ptr,CDemonActor *carrier);
 void __cdecl core_vessel_cpp_CCryptVessel_onDropped_FUN_0054fc10(CCryptVessel *this_ptr,CVector3f *drop_position);
 CDemonActor * __cdecl core_vessel_cpp_CCryptVessel_getCarrier_FUN_0054fc30(CCryptVessel *this_ptr);
-int __cdecl core_vessel_cpp_CCryptVessel_FUN_0054fc40(CCryptVessel *actor);
+int __cdecl core_vessel_cpp_isStartLocTriggered_FUN_0054fc40(CCryptVessel *actor);
 void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_0054fc60(CCryptVessel *this_ptr,float delta_time);
 

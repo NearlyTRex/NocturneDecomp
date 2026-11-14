@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_script_cpp_readActorReference_FUN_0054b320(undefined4 param_1,undefined4 *param_2)
+; void __cdecl core_script_cpp_readActorReference_FUN_0054b320(_FILE *file_handle,CDemonActor *actor_out)
 ;
+; Parameters:
+; _FILE *          Stack[0x4]:4   file_handle
+; CDemonActor *    Stack[0x8]:4   actor_out
 ; Local Variables:
 ; undefined        Stack[-0xd0]:1  local_d0
 ;
@@ -18,7 +21,7 @@
 ;   undefined4 DAT_01d2c900
 ;
 ; Called Functions:
-;   core_mission.cpp_FUN_0051b6c0
+;   core_mission.cpp_CDemonMission_findActorByName_FUN_0051b6c0
 ;   crt_stdio.c_fscanf_FUN_005c04b0
 ;   crt_string.c__stricmp_FUN_005c04e0
 ;
@@ -40,7 +43,7 @@ section .text
     PUSH EDX                            ; 0054b345
     MOVSD.REP ES:EDI,ESI                ; 0054b346 | DAT_00622ae0 | DAT_00622ae4
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0054b348
-        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005c04b0()
+        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0054b34d
     PUSH 0x622ad8                       ; 0054b350 | = "(none)"
     LEA EAX,[ESP + 0x4]                 ; 0054b355
@@ -62,8 +65,8 @@ section .text
     PUSH EAX                            ; 0054b37e
     MOV ECX,dword ptr [0x0061f650]      ; 0054b37f | DAT_0061f650
     PUSH ECX                            ; 0054b385 | DAT_01d2c900
-    CALL core_mission.cpp_FUN_0051b6c0  ; 0054b386
-        ;   XREF to: 0051b6c0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_FUN_0051b6c0(CDemonMission * this_ptr, char * name)
+    CALL core_mission.cpp_CDemonMission_findActorByName_FUN_0051b6c0 ; 0054b386
+        ;   XREF to: 0051b6c0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_0051b6c0(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 0054b38b
     MOV EDX,dword ptr [ESP + 0xd8]      ; 0054b38e
     MOV dword ptr [EDX],EAX             ; 0054b395

@@ -1,0 +1,252 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 291,
+    "complexity_score": 138,
+    "cross_reference_count": 1,
+    "function_call_count": 7,
+    "global_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 108,
+    "suspect_count": 2,
+    "suspect_types": [
+      "warning_overlapping_globals",
+      "warning_type_propagation"
+    ],
+    "total_lines": 399
+  },
+  "cross_references": [
+    {
+      "addr": "0056d0f0",
+      "from_addr": "0056d132",
+      "name": "core_smiley.cpp_CSmiley_processDamage_FUN_0056d0f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056ce10",
+    "address_range": [
+      [
+        "0056ce10",
+        "0056d0ef"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_smiley.cpp_CSmiley_processDismemberment_FUN_0056ce10",
+    "signature": "void __cdecl core_smiley_cpp_CSmiley_processDismemberment_FUN_0056ce10(CSmiley *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cd00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_randomChance_FUN_0040cd00"
+    },
+    {
+      "addr": "00419b90",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90"
+    },
+    {
+      "addr": "00418940",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_createBodyPart_FUN_00418940"
+    },
+    {
+      "addr": "004311a0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_detachBodyPart_FUN_004311a0"
+    },
+    {
+      "addr": "00431210",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00431210"
+    },
+    {
+      "addr": "004352e0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_playSoundWithCooldown_FUN_004352e0"
+    },
+    {
+      "addr": "005c084c",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_rand_FUN_005c084c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0056cdf4",
+      "name": "switchdataD_0056cdf4",
+      "type": "undefined1*",
+      "value": "0056cea0"
+    },
+    {
+      "addr": "005f2a2e",
+      "name": "s_limb_wav_005f2a2e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2a3f",
+      "name": "DAT_005f2a3f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f2a47",
+      "name": "DAT_005f2a47",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f2a4f",
+      "name": "DAT_005f2a4f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061d95c",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01ccf390"
+    },
+    {
+      "addr": "01ccf58c",
+      "name": "g_CGameInstance.gratuitous_dismemberment",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0056d132",
+        "call_type": "direct",
+        "caller": "core_smiley.cpp_CSmiley_processDamage_FUN_0056d0f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.093333333333334,
+    "instruction_count": 225,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 14,
+      "BOOL_OR": 4,
+      "BRANCH": 7,
+      "BRANCHIND": 1,
+      "CALL": 13,
+      "CBRANCH": 22,
+      "COPY": 350,
+      "FLOAT2FLOAT": 13,
+      "FLOAT_ADD": 1,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 4,
+      "INT2FLOAT": 3,
+      "INT_ADD": 95,
+      "INT_AND": 101,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 79,
+      "INT_LEFT": 9,
+      "INT_LESS": 19,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 15,
+      "INT_OR": 15,
+      "INT_SBORROW": 19,
+      "INT_SCARRY": 17,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 39,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 80,
+      "INT_ZEXT": 10,
+      "LOAD": 69,
+      "POPCOUNT": 39,
+      "RETURN": 4,
+      "STORE": 72,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 1146
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0054a790",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a32a0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00520b60",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSmiley *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

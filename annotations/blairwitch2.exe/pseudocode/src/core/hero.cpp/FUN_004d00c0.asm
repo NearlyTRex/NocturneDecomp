@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_hero_cpp_FUN_004d00c0(int param_1,float *param_2)
+; CCharacter * core_hero_cpp_FUN_004d00c0(int param_1,float *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
@@ -10,20 +10,20 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[7]:
-;   core_baron.cpp_FUN_00410170 at 00410188
-;   core_colonel.cpp_FUN_00435e30 at 00435f1a
+;   core_baron.cpp_CBaron_performLightningAttack_FUN_00410170 at 00410188
+;   core_colonel.cpp_CColonel_processAI_FUN_00435e30 at 00435f1a
 ;   core_gabriela.cpp_FUN_004aeb00 at 004aebfd
-;   core_haystack.cpp_FUN_004ccff0 at 004cd0ef
-;   core_icepick.cpp_FUN_004d5950 at 004d5a99
-;   core_scat.cpp_FUN_0051f490 at 0051f580
-;   core_svetlana.cpp_FUN_00570c80 at 00570dc9
+;   core_haystack.cpp_CHaystack_updateAI_FUN_004ccff0 at 004cd0ef
+;   core_icepick.cpp_CIcePick_processAI_FUN_004d5950 at 004d5a99
+;   core_scat.cpp_CScat_updateAI_FUN_0051f490 at 0051f580
+;   core_svetlana.cpp_CSvetlana_processAI_FUN_00570c80 at 00570dc9
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d9ddc
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 g_CMobsterClassInfo.name_hash
-;   undefined4 g_CDemonSetInstance.field1380332_0x150fec
+;   undefined4 g_CDemonSetInstance.enemy_count
 ;   undefined4 g_CVehicleClassInfo.name_hash
 ;
 ; Called Functions:
@@ -54,7 +54,7 @@ section .text
     MOV EAX,[0x0061b5a8]                ; 004d00fc | g_CDemonSetPtr
         ;   Label: LAB_004d00fc
     MOV EDX,dword ptr [ESP + 0xa0]      ; 004d0101
-    CMP EDX,dword ptr [EAX + 0x150fec]  ; 004d0108 | g_CDemonSetInstance.field1380332_0x150fec
+    CMP EDX,dword ptr [EAX + 0x150fec]  ; 004d0108 | g_CDemonSetInstance.enemy_count
     JL 0x004d012c                       ; 004d010e
         ;   XREF to: 004d012c (CONDITIONAL_JUMP)  ; LAB_004d012c
     CMP dword ptr [ESP + 0x98],0x0      ; 004d0110
@@ -75,7 +75,7 @@ section .text
     MOV EBX,dword ptr [EAX + 0x150ff0]  ; 004d013c
     PUSH EBX                            ; 004d0142
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004d0143
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004d0148
     TEST EAX,EAX                        ; 004d014b
     JNZ 0x004d0267                      ; 004d014d
@@ -84,7 +84,7 @@ section .text
     PUSH ESI                            ; 004d0159
     PUSH EBX                            ; 004d015a
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004d015b
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004d0160
     TEST EAX,EAX                        ; 004d0163
     JZ 0x004d0174                       ; 004d0165
@@ -112,7 +112,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004d01a8
     PUSH EAX                            ; 004d01ac
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 004d01ad
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004d01b2
     MOV EDX,ESP                         ; 004d01b5
     PUSH EDX                            ; 004d01b7

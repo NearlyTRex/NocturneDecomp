@@ -5,9 +5,49 @@
 // Function prototypes for core/construc.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_construc.cpp_FUN_00444110
+// Original: core_construc.cpp_staticInit_FUN_00442380
+// Address: 00442380
+void __cdecl staticInit(void);
+
+// Original: core_construc.cpp_factoryFuncConstruct_FUN_004423f0
+// Address: 004423f0
+CConstruct * __cdecl factoryFuncConstruct(void);
+
+// Original: core_construc.cpp_CConstruct_getActorType_FUN_00442410
+// Address: 00442410
+CDemonActorType * __cdecl CConstruct::getActorType(CConstruct *this_ptr);
+
+// Original: core_construc.cpp_CConstruct_ctor_FUN_00442420
+// Address: 00442420
+CConstruct * __cdecl CConstruct::ctor(CConstruct *this_ptr);
+
+// Original: core_construc.cpp_CConstruct_setup_FUN_004425f0
+// Address: 004425f0
+void __cdecl CConstruct::setup(CConstruct *this_ptr);
+
+// Original: core_construc.cpp_CConstruct_process_FUN_00442a20
+// Address: 00442a20
+void __cdecl CConstruct::process(CConstruct *this_ptr,float delta_time);
+
+// Original: core_construc.cpp_CConstruct_renderOpaque_FUN_00443c90
+// Address: 00443c90
+int __cdecl CConstruct::renderOpaque(CConstruct *this_ptr);
+
+// Original: core_construc.cpp_CConstruct_archive_FUN_00443ca0
+// Address: 00443ca0
+void __cdecl CConstruct::archive(CConstruct *this_ptr);
+
+// Original: core_construc.cpp_CConstruct_processDamage_FUN_00443f00
+// Address: 00443f00
+void __cdecl CConstruct::processDamage(CConstruct *this_ptr,SDamageInfo *damage_info);
+
+// Original: core_construc.cpp_CConstruct_getTargetPoints_FUN_00444010
+// Address: 00444010
+int __cdecl CConstruct::getTargetPoints(CConstruct *this_ptr,CVector3f *out_points_array);
+
+// Original: core_construc.cpp_CConstruct_explode_FUN_00444110
 // Address: 00444110
-void FUN_00444110(CCharacter *param_1);
+void __cdecl CConstruct::explode(CConstruct *this_ptr);
 
 // Original: core_construc.cpp_FUN_00444340
 // Address: 00444340
@@ -17,13 +57,13 @@ void FUN_00444340(int param_1);
 // Address: 004443d0
 void FUN_004443d0(int param_1);
 
-// Original: core_construc.cpp_FUN_004444c0
+// Original: core_construc.cpp_CConstruct_getCollisionType_FUN_004444c0
 // Address: 004444c0
-ECollisionType FUN_004444c0(CCharacter *param_1,SCollisionInfo *param_2);
+ECollisionType __cdecl CConstruct::getCollisionType(CConstruct *this_ptr,SCollisionInfo *param_2);
 
-// Original: core_construc.cpp_FUN_004444f0
+// Original: core_construc.cpp_CConstruct_getDeathState_FUN_004444f0
 // Address: 004444f0
-int FUN_004444f0(int param_1);
+EDeathState __cdecl CConstruct::getDeathState(CConstruct *this_ptr);
 
 // Original: core_construc.cpp_FUN_00444520
 // Address: 00444520
@@ -35,7 +75,7 @@ undefined * FUN_00444540(void);
 
 // Original: core_construc.cpp_CConstructBone_ctor_FUN_00444550
 // Address: 00444550
-CConstructBone * CConstructBone::ctor(CConstructBone *this_ptr);
+CConstructBone * __cdecl CConstructBone::ctor(CConstructBone *this_ptr);
 
 // Original: core_construc.cpp_FUN_004445d0
 // Address: 004445d0
@@ -47,16 +87,16 @@ undefined * FUN_004445f0(void);
 
 // Original: core_construc.cpp_CConstructRed_ctor_FUN_00444600
 // Address: 00444600
-CConstructRed * CConstructRed::ctor(CConstructRed *this_ptr);
+CConstructRed * __cdecl CConstructRed::ctor(CConstructRed *this_ptr);
 
 // Original: core_construc.cpp_CConstructRed_dtor_FUN_00444660
 // Address: 00444660
-CConstructRed * CConstructRed::dtor(CConstructRed *this_ptr,uint flags);
+CConstructRed * __cdecl CConstructRed::dtor(CConstructRed *this_ptr,uint flags);
 
 // Original: core_construc.cpp_CConstructBone_dtor_FUN_004446f0
 // Address: 004446f0
-CConstructBone * CConstructBone::dtor(CConstructBone *this_ptr,uint flags);
+CConstructBone * __cdecl CConstructBone::dtor(CConstructBone *this_ptr,uint flags);
 
 // Original: core_construc.cpp_CConstruct_dtor_FUN_00444780
 // Address: 00444780
-CConstruct * CConstruct::dtor(CConstruct *this_ptr,uint flags);
+CConstruct * __cdecl CConstruct::dtor(CConstruct *this_ptr,uint flags);

@@ -12,12 +12,12 @@
 ;   core_ammo.cpp_CAmmo_archive_FUN_0040dd40 at 0040dd82
 ;   core_ammobox.cpp_CAmmoBox_archive_FUN_0040e400 at 0040e442
 ;   core_anvil.cpp_CAnvil_archive_FUN_0040e860 at 0040e8b6
-;   core_backgnd.cpp_FUN_0040f050 at 0040f07e
-;   core_baron.cpp_FUN_00410180 at 004101cf
+;   core_backgnd.cpp_CBackgroundActor_archive_FUN_0040f050 at 0040f07e
+;   core_baron.cpp_CBaron_archive_FUN_00410180 at 004101cf
 ;   core_barrier.cpp_CBarrier_archive_FUN_00410940 at 0041098f
 ;   core_batman.cpp_CBatman_archive_FUN_00413b60 at 00413be8
-;   core_biggs.cpp_FUN_00414f30 at 00414f81
-;   core_bodypart.cpp_FUN_004193c0 at 004193e0
+;   core_biggs.cpp_CBiggs_archive_FUN_00414f30 at 00414f81
+;   core_bird.cpp_CBird_archive_FUN_00415780 at 004157e5
 ;   ... and 61 more
 ;
 ; Referenced Globals:
@@ -51,7 +51,7 @@ section .text
     MOV ESI,dword ptr [0x007c3034]      ; 0040b686 | DAT_007c3034
     PUSH ESI                            ; 0040b68c
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0040b68d
-        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005c04b0()
+        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0040b692
     CMP EAX,0x1                         ; 0040b695
     JNZ 0x0040b6b0                      ; 0040b698

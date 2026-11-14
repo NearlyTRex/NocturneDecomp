@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004b7f90 at 004b860a
+;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b860a
 ;
 ; Called Functions:
-;   engine_alphabit.cpp_FUN_0040d400
+;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d400
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
     LEA ESI,[EBX + 0xa0]                ; 004c49f7
     PUSH EBX                            ; 004c49fd
         ;   Label: LAB_004c49fd
-    CALL engine_alphabit.cpp_FUN_0040d400 ; 004c49fe
-        ;   XREF to: 0040d400 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_FUN_0040d400(CAlphaBitmap * this_ptr)
+    CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d400 ; 004c49fe
+        ;   XREF to: 0040d400 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d400(CAlphaBitmap * this_ptr)
     ADD EBX,0x14                        ; 004c4a03
     ADD ESP,0x4                         ; 004c4a06
     CMP EBX,ESI                         ; 004c4a09

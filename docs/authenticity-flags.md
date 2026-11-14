@@ -149,6 +149,7 @@ shipped", but it is not a bug in the retail game.
 | `GOGGLES_CAMERA_HOLD` | a script's timed camera hold (a scare cut such as CASTLE1's ghoul spook) runs out while the goggles are on, instead of cutting the view away when they next come off |
 | `LIGHT_FILTER_LOAD` | the HQ projector keeps the briefing slides its script added when a save is loaded, instead of showing one image throughout |
 | `HELPER_DEATH` | when a companion the mission needs dies, the hero is held still through the death sequence and the game ends on the Game Over menu instead of dropping to the main menu |
+| `PAUSE_SOUND` | the pause menu holds every sound where it is, so Return, Save or a visit to Options carries on mid-line and mid-song, even across a switch of mixing, rate or device, instead of killing them all and restarting only the ambience and the music from the top |
 | `INPUT_REPEAT` | holding fire on an empty weapon clicks at a rate rather than every frame |
 | `TEXT_RENDER_ALPHA` | 2D text blends at its own alpha, not the last pass's leftover |
 | `BOTTOMLESS_FALL` | a fall out of the world kills at once, rather than on whatever geometry it happens to strike |

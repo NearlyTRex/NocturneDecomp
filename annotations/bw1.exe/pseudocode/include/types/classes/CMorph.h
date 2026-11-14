@@ -2,14 +2,24 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct SMRGLPrimitiveTriangle;
+struct SMorphPoint;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CMorphModel.h"
+#include "types/structs/SMRGLHeaderBasic.h"
+#include "types/structs/SMRGLTextureModel.h"
+#include "types/structs/SMorphPart.h"
 
 // Structure: CMorph
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0xc2c (3116 bytes)
 #pragma pack(push, 1)
 typedef struct CMorph {
+    CMorphModel models[2]; // 0x0
+    char dead[24]; // 0xc10
+    int rescale_enabled; // 0xc28
 } CMorph;
 #pragma pack(pop)
 

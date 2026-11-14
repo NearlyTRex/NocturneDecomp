@@ -9,5 +9,5 @@
 int __cdecl core_boxactor_cpp_CBoxActor_getBlockVirtualDirectorFlag_FUN_00422a50(CBoxActor *this_ptr)
 
 {
-  return *(int *)&this_ptr->field_0x668;
+  return this_ptr->block_virtual_director_flag;
 }

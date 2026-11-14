@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CAmmo.h"
 
 // Structure: CAmmoManaLarge
-// Stub: size from Watcom RTTI, fields not yet recovered
+// registered under CAmmo (registerActorClass); size 800 from its new; no fields of its own
 // Ghidra size: 0x320 (800 bytes)
 #pragma pack(push, 1)
 typedef struct CAmmoManaLarge {
-    char field_0[800]; // 0x0
+    CAmmo base; // 0x0, parent class
 } CAmmoManaLarge;
 #pragma pack(pop)
 

@@ -13,15 +13,15 @@ int __cdecl sound_sndmain_cpp_stopRecordingDevice_FUN_00558ce0(void)
 {
   int iVar1;
   
-  sound_sndmain_cpp_FUN_00558e90();
+  sound_sndmain_cpp_lockSound_FUN_00558e90();
   if (_DAT_02cf3c68 != (int *)0x0) {
     iVar1 = (**(code **)(*_DAT_02cf3c68 + 8))(_DAT_02cf3c68);
     if (iVar1 == 0) {
-      sound_sndmain_cpp_FUN_00556fd0();
+      sound_sndmain_cpp_unlockSound_FUN_00556fd0();
       return 0;
     }
   }
   _DAT_02cf3c6c = 0;
-  sound_sndmain_cpp_FUN_00556fd0();
+  sound_sndmain_cpp_unlockSound_FUN_00556fd0();
   return 1;
 }

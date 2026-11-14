@@ -15,18 +15,18 @@ void __cdecl sound_sndmain_cpp_resetSoundSystemDefaults_FUN_00557f60(void)
   
   iVar1 = 0;
   do {
-    sound_sndmain_cpp_setSfxChannelVol_FUN_00556c90(iVar1,0x3f800000);
-    sound_sndmain_cpp_FUN_00556db0(iVar1,1);
+    sound_sndmain_cpp_setSfxChannelVol_FUN_00556c90(iVar1,1.0);
+    sound_sndmain_cpp_enableSfxChannel_FUN_00556db0(iVar1,1);
     iVar1 = iVar1 + 1;
   } while (iVar1 < 0x20);
   sound_sndmain_cpp_setSfxChannelVol_FUN_00556c90(1,_DAT_005e4840 * (float)_DAT_005d3aa2);
-  sound_sndmain_cpp_FUN_00557140(0x3f800000);
-  sound_sndmain_cpp_FUN_00557020(0,0,0,0,0,0);
-  sound_sndmain_cpp_FUN_00557080(0x3f800000,0,0,0,0x3f800000,0,0,0,0x3f800000);
-  sound_sndmain_cpp_FUN_00557100(0,0,0);
-  iVar1 = sound_sndmain_cpp_FUN_00558840();
+  sound_sndmain_cpp_set3DListenerDistanceFactor_FUN_00557140(1.0);
+  sound_sndmain_cpp_set3DListenerPos_FUN_00557020(0.0,0.0,0.0);
+  sound_sndmain_cpp_set3DListenerOrient_FUN_00557080(1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0);
+  sound_sndmain_cpp_set3DListenerVelocity_FUN_00557100(0.0,0.0,0.0);
+  iVar1 = sound_sndmain_cpp_getCurrentSoundDevice_FUN_00558840();
   sound_sndmain_cpp_selectSoundDevice_FUN_00558640(iVar1);
-  iVar1 = sound_sndmain_cpp_FUN_00558b10();
+  iVar1 = sound_sndmain_cpp_getCurrentRecordingDevice_FUN_00558b10();
   sound_sndmain_cpp_selectRecordingDevice_FUN_005589e0(iVar1);
   return;
 }

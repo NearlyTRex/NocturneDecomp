@@ -7,64 +7,64 @@
 
 // Original: core_ghostchi.cpp_staticInit_FUN_005a91d0
 // Address: 005a91d0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_ghostchi.cpp_factoryFuncGhostChild_FUN_005a9200
 // Address: 005a9200
-void factoryFuncGhostChild(void);
+CGhostChild * __cdecl factoryFuncGhostChild(void);
 
 // Original: core_ghostchi.cpp_CGhostChild_getActorType_FUN_005a9220
 // Address: 005a9220
-CDemonActorType * CGhostChild::getActorType(CGhostChild *this_ptr);
+CDemonActorType * __cdecl CGhostChild::getActorType(CGhostChild *this_ptr);
 
 // Original: core_ghostchi.cpp_CGhostChild_ctor_FUN_005a9230
 // Address: 005a9230
-CGhostChild * CGhostChild::ctor(CGhostChild *this_ptr);
+CGhostChild * __cdecl CGhostChild::ctor(CGhostChild *this_ptr);
 
 // Original: core_ghostchi.cpp_CGhostChild_dtor_FUN_005a9370
 // Address: 005a9370
-CGhostChild * CGhostChild::dtor(CGhostChild *this_ptr,uint flags);
+CGhostChild * __cdecl CGhostChild::dtor(CGhostChild *this_ptr,uint flags);
 
-// Original: core_ghostchi.cpp_FUN_005a9440
+// Original: core_ghostchi.cpp_CGhostChild_setup_FUN_005a9440
 // Address: 005a9440
-void FUN_005a9440(int param_1);
+void __cdecl CGhostChild::setup(CGhostChild *this_ptr);
 
-// Original: core_ghostchi.cpp_FUN_005a94c0
+// Original: core_ghostchi.cpp_CGhostChild_processStates_FUN_005a94c0
 // Address: 005a94c0
-void FUN_005a94c0(int param_1,undefined4 param_2,int param_3);
+void __cdecl CGhostChild::processStates(CGhostChild *this_ptr,float delta_time,int mode);
 
-// Original: core_ghostchi.cpp_FUN_005a9580
+// Original: core_ghostchi.cpp_CGhostChild_processMeleeAttackState_FUN_005a9580
 // Address: 005a9580
-void FUN_005a9580(CEnemy *param_1);
+void __cdecl CGhostChild::processMeleeAttackState(CGhostChild *this_ptr,float delta_time);
 
-// Original: core_ghostchi.cpp_FUN_005a9770
+// Original: core_ghostchi.cpp_CGhostChild_processSleepState_FUN_005a9770
 // Address: 005a9770
-void FUN_005a9770(int param_1,float param_2);
+void __cdecl CGhostChild::processSleepState(CGhostChild *this_ptr,float delta_time);
 
 // Original: core_ghostchi.cpp_FUN_005a9890
 // Address: 005a9890
-void FUN_005a9890(int param_1,undefined4 param_2);
+void FUN_005a9890(int param_1,float param_2);
 
-// Original: core_ghostchi.cpp_FUN_005a9980
+// Original: core_ghostchi.cpp_CGhostChild_processDeathState_FUN_005a9980
 // Address: 005a9980
-void FUN_005a9980(int param_1);
+void __cdecl CGhostChild::processDeathState(CGhostChild *this_ptr,float delta_time);
 
-// Original: core_ghostchi.cpp_FUN_005a99f0
+// Original: core_ghostchi.cpp_CGhostChild_getTargetPoints_FUN_005a99f0
 // Address: 005a99f0
-undefined4 FUN_005a99f0(int param_1,undefined4 *param_2);
+int __cdecl CGhostChild::getTargetPoints(CGhostChild *this_ptr,CVector3f *out_points_array);
 
-// Original: core_ghostchi.cpp_FUN_005a9a80
+// Original: core_ghostchi.cpp_CGhostChild_getDeathState_FUN_005a9a80
 // Address: 005a9a80
-undefined4 FUN_005a9a80(int param_1);
+EDeathState __cdecl CGhostChild::getDeathState(CGhostChild *this_ptr);
 
-// Original: core_ghostchi.cpp_FUN_005a9af0
+// Original: core_ghostchi.cpp_CGhostChild_processMotionEvent_FUN_005a9af0
 // Address: 005a9af0
-void FUN_005a9af0(CDemonActor *param_1,uint param_2);
+void __cdecl CGhostChild::processMotionEvent(CGhostChild *this_ptr,int event_id);
 
-// Original: core_ghostchi.cpp_FUN_005a9b60
+// Original: core_ghostchi.cpp_CGhostChild_archive_FUN_005a9b60
 // Address: 005a9b60
-void FUN_005a9b60(undefined4 param_1);
+void __cdecl CGhostChild::archive(CGhostChild *this_ptr);
 
-// Original: core_ghostchi.cpp_FUN_005a9b70
+// Original: core_ghostchi.cpp_CGhostChild_renderTransparent_FUN_005a9b70
 // Address: 005a9b70
-undefined4 FUN_005a9b70(int param_1);
+int __cdecl CGhostChild::renderTransparent(CGhostChild *this_ptr);

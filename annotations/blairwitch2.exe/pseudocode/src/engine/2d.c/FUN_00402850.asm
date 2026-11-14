@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   color
 ;
 ; XREF[1]:
-;   cockpit_drawsurf.cpp_FUN_00467f70 at 00468219
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00467f70 at 00468219
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00609370

@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 31,
+    "complexity_score": 16,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 16,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 57
   },
   "cross_references": [
@@ -113,6 +111,32 @@
     },
     "pcode_op_count": 123
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0051b0b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00514350",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005509b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9836
+    },
+    "nocturne.exe": {
+      "addr": "004f8840",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9836
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -136,18 +160,14 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x194",
-      "severity": "mild",
-      "text": "*(byte ***)&this_ptr->field_0x194 = &PTR_engine_pod_cpp_CPod_dtor_FUN_0053c5f0_00604a34;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
+      {
+        "class_name": "CPod",
+        "offset": 0,
+        "vtable_addr": "00604a34"
+      },
       {
         "class_name": "CPod",
         "offset": 8,
@@ -155,6 +175,6 @@
       }
     ],
     "in_vtable": true,
-    "vtable_count": 1
+    "vtable_count": 2
   }
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_ghostchi_cpp_CGhostChild_getActorType_FUN_005a9220(CGhostChild *this_ptr)
+; CDemonActorType * __cdecl core_ghostchi_cpp_CGhostChild_getActorType_FUN_005a9220(CGhostChild *this_ptr)
 ;
 ; Parameters:
 ; CGhostChild *    Stack[0x4]:4   this_ptr

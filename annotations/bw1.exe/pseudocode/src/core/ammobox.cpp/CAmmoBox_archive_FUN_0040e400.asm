@@ -39,7 +39,7 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 0040e413
     PUSH EAX                            ; 0040e419
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770 ; 0040e41a
-        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770()
+        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770(CKeyFramedModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 0040e41f
     PUSH 0x5d3212                       ; 0040e422 | = "weaponClassName"
     LEA EAX,[EBX + 0x2d4]               ; 0040e427
@@ -63,7 +63,7 @@ section .text
     LEA EAX,[EBX + 0x31c]               ; 0040e460
     PUSH EAX                            ; 0040e466
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 0040e467
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     MOV EDX,dword ptr [0x00610898]      ; 0040e46c | g_CAmmoBoxClassVersion
     ADD ESP,0x8                         ; 0040e472
     CMP EDX,0x2                         ; 0040e475
@@ -90,7 +90,7 @@ section .text
     LEA EAX,[EBX + 0x320]               ; 0040e4a7
     PUSH EAX                            ; 0040e4ad
     CALL core_actor.cpp_archiveActor_FUN_0040b6f0 ; 0040e4ae
-        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b6f0()
+        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b6f0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 0040e4b3
     JMP 0x0040e47a                      ; 0040e4b6
         ;   XREF to: 0040e47a (UNCONDITIONAL_JUMP)  ; LAB_0040e47a

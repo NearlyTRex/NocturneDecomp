@@ -12,12 +12,12 @@ void __cdecl engine_clipper_c_clipAndRasterize_FUN_0043a840(int vertex_count,int
   int iVar1;
   
   if (DAT_005fba40 == 0) {
-    engine_prim_c_FUN_005163b0(vertex_indices,vertex_count);
+    engine_prim_c_renderIndexedPolygonSoftware_FUN_005163b0(vertex_indices,vertex_count);
     return;
   }
   iVar1 = engine_clipper_c_clipPolygonToViewFrustum_FUN_00439da0(vertex_count,vertex_indices);
   if ((iVar1 == 0) && (2 < DAT_007e3e88)) {
-    engine_prim_c_FUN_00515e80((SRenderVertex *)&DAT_007e3e8c,DAT_007e3e88);
+    engine_prim_c_renderPolygonSoftware_FUN_00515e80((SRenderVertex *)&DAT_007e3e8c,DAT_007e3e88);
     return;
   }
   return;

@@ -1,0 +1,211 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 37,
+    "complexity_score": 45,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 20,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
+    "total_lines": 57
+  },
+  "cross_references": [
+    {
+      "addr": "00486cb0",
+      "from_addr": "00486f03",
+      "name": "core_emitter.cpp_CEmitter_process_FUN_00486cb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c6d40",
+      "from_addr": "004c7156",
+      "name": "core_glass.cpp_FUN_004c6d40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ca3e0",
+      "from_addr": "004ca42e",
+      "name": "core_grave.cpp_CGrave_startAnimation_FUN_004ca3e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052ddf0",
+      "from_addr": "0052df58",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0052dd80",
+    "address_range": [
+      [
+        "0052dd80",
+        "0052dde2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_0052dd80",
+    "signature": "void __cdecl core_set_cpp_CDemonSet_snapshotActorTransformState_FUN_0052dd80(CDemonSet *this_ptr,CDemonActor *actor)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "0052df58",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0052e159",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004c7156",
+        "call_type": "direct",
+        "caller": "core_glass.cpp_FUN_004c6d40",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00486f03",
+        "call_type": "direct",
+        "caller": "core_emitter.cpp_CEmitter_process_FUN_00486cb0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004ca42e",
+        "call_type": "direct",
+        "caller": "core_grave.cpp_CGrave_startAnimation_FUN_004ca3e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.1333333333333333,
+    "instruction_count": 30,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 1,
+      "CBRANCH": 2,
+      "COPY": 27,
+      "INT_ADD": 20,
+      "INT_AND": 4,
+      "INT_EQUAL": 4,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 3,
+      "LOAD": 11,
+      "POPCOUNT": 2,
+      "RETURN": 2,
+      "STORE": 10
+    },
+    "pcode_op_count": 94
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0054f060",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00534820",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0056ade0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00508890",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.623
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 9,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(actor->previous_transform_state).position.x = (actor->location).position.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 18,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pUVar1->vec).x = (actor->orient).vec.x;",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

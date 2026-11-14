@@ -2,15 +2,50 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDeformableModelInstance;
+struct CDemonActor;
+struct CKeyFramedModel;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CEnemy.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CMatrix3x4f.h"
+#include "types/classes/CVector3f.h"
+#include "types/enums/EBugsState.h"
+#include "types/structs/SBug.h"
+#include "types/structs/SSwarmVertex.h"
 
 // Structure: CBugs
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x19da4 (105892 bytes)
 #pragma pack(push, 1)
 typedef struct CBugs {
-    char field_0[105892]; // 0x0
+    CEnemy base; // 0x0
+    EBugsState state; // 0xc268
+    int count; // 0xc26c
+    SBug bugs[400]; // 0xc270
+    int model_count; // 0x12670
+    CKeyFramedModelInstance models[4]; // 0x12674
+    float ground_heights[12][12]; // 0x12c64
+    struct CDemonActor* swarm_target; // 0x12ea4
+    struct CDeformableModelInstance* deformable_model_ptr; // 0x12ea8
+    CMatrix3x4f model_world_matrix; // 0x12eac
+    int lod_index; // 0x12edc
+    int swarm_vertex_count; // 0x12ee0
+    SSwarmVertex swarm_vertices[700]; // 0x12ee4
+    int allow_chase; // 0x19c44
+    int allow_swarm; // 0x19c48
+    char allow_chase_event[100]; // 0x19c4c
+    char allow_swarm_event[100]; // 0x19cb0
+    char animate_event[100]; // 0x19d14
+    CBoundingBox3D bounds; // 0x19d78
+    int grid_cell_x; // 0x19d90
+    int grid_cell_z; // 0x19d94
+    float grid_origin_x; // 0x19d98
+    float grid_origin_z; // 0x19d9c
+    float damage_timer; // 0x19da0
 } CBugs;
 #pragma pack(pop)
 

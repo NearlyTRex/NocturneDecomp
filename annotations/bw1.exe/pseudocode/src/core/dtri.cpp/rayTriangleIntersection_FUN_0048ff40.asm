@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_dtri_cpp_rayTriangleIntersection_FUN_0048ff40(float *param_1,float *param_2,float *param_3)
+; float __cdecl core_dtri_cpp_rayTriangleIntersection_FUN_0048ff40(CDemonTriangle *triangle,CVector3f *rayOrigin,CVector3f *rayDirection)
 ;
+; Parameters:
+; CDemonTriangle * Stack[0x4]:4   triangle
+; CVector3f *      Stack[0x8]:4   rayOrigin
+; CVector3f *      Stack[0xc]:4   rayDirection
 ; Local Variables:
 ; undefined4       Stack[-0x48]:4  local_48
 ; undefined4       Stack[-0x44]:4  local_44
@@ -23,10 +27,10 @@
 ; XREF[6]:
 ;   core_dmodel.cpp_FUN_00467c00 at 00467e2a
 ;   core_dtri.cpp_FUN_00490a40 at 00490c63
-;   core_manpuz.cpp_FUN_00504580 at 00504633
-;   core_skeleton.cpp_FUN_005660c0 at 00566238
-;   core_stairs.cpp_FUN_00584b00 at 00584b4b
-;   core_wateract.cpp_FUN_005ab530 at 005ab623
+;   core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00504580 at 00504633
+;   core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_005660c0 at 00566238
+;   core_stairs.cpp_CStairs_customRayIntersect_FUN_00584b00 at 00584b4b
+;   core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005ab530 at 005ab623
 ;
 ; *****************************************************************************
 

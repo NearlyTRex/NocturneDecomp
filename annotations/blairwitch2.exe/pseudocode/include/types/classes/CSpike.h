@@ -4,13 +4,35 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CVector3f.h"
+#include "types/enums/ESpikeState.h"
+#include "types/enums/ESpikeType.h"
 
 // Structure: CSpike
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x6bc (1724 bytes)
 #pragma pack(push, 1)
 typedef struct CSpike {
-    char field_0[1724]; // 0x0
+    CDemonActor base; // 0x0
+    CKeyFramedModelInstance model; // 0x2b4
+    ESpikeType spike_type; // 0x430
+    ESpikeState spike_state; // 0x434
+    int are_we_active; // 0x438
+    CVector3f base_position; // 0x43c
+    float extend_distance; // 0x448
+    char start_event[100]; // 0x44c
+    char stop_event[100]; // 0x4b0
+    char extend_event[100]; // 0x514
+    char retract_event[100]; // 0x578
+    float extend_time; // 0x5dc
+    float retract_time; // 0x5e0
+    float wait_timer; // 0x5e4
+    char extend_sound[100]; // 0x5e8
+    char retract_sound[100]; // 0x64c
+    float period; // 0x6b0
+    float damage_strength; // 0x6b4
+    float param; // 0x6b8
 } CSpike;
 #pragma pack(pop)
 

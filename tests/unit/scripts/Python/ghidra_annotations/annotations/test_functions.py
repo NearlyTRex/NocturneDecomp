@@ -53,8 +53,11 @@ def test_a_class_method_must_take_this_ptr_of_its_class():
     defects = fn.find_this_ptr_defects([
         method("CGame_ok", ("this_ptr", "CGame *")), method("CGame_none"),
         method("CGame_wrong", ("this_ptr", "CMenu *")), method("CGamme_typo", ("this_ptr", "CGame *")),
-        method("CGame_named", ("self", "CGame *")), {"name": "free_function_FUN_00401000"}], {"CGame", "CMenu"})
-    assert len(defects) == 4
+        method("CGame_named", ("self", "CGame *")), {"name": "free_function_FUN_00401000"},
+        method("SMemHead_ok", ("this_ptr", "SMemHead *")), method("SMemHead_add", ("header", "SMemHead *"))],
+        {"CGame", "CMenu", "SMemHead"})
+    assert len(defects) == 5
+    assert "typed SMemHead * but named `header`" in defects[4]
     assert "CGame_none_FUN_00401000 declares no parameters" in defects[0]
     assert "claims class CGame but parameter 0 is `CMenu * this_ptr`" in defects[1]
     assert defects[1].endswith("`") and "NAME is wrong" in defects[2]
@@ -132,6 +135,16 @@ def test_functions_export_their_signature_variables_and_flags(tmp_path):
     assert "conv" not in records["00401100"]
 
 
+@pytest.mark.parametrize("source, recorded", [("USER_DEFINED", None), ("DEFAULT", "default"),
+                                              ("ANALYSIS", "analysis"), ("IMPORTED", "imported")])
+def test_only_an_uncommitted_signature_records_where_it_came_from(tmp_path, source, recorded):
+    program = program_with_functions()
+    program.getFunctionManager().getFunctionAt(Address(0x401000)).signature_source = source
+    fn.export_functions(program, str(tmp_path))
+    record = {r["addr"]: r for r in load_json_files(str(tmp_path), "functions")}["00401000"]
+    assert record.get("sig") == recorded
+
+
 def test_the_importable_flag_is_kept_and_storage_kinds_are_recorded(tmp_path):
     (tmp_path / "functions").mkdir()
     (tmp_path / "functions" / "functions_bucket_00.json").write_text(json.dumps([
@@ -164,6 +177,16 @@ def test_a_misnamed_function_or_receiver_fails_the_export_after_writing_it(tmp_p
     with pytest.raises(fn.ThisPtrMismatchError, match = "1 function"):
         fn.export_functions(program, str(tmp_path), allow_name_address_mismatch = True)
     fn.export_functions(program, str(tmp_path), allow_name_address_mismatch = True, allow_this_ptr_mismatch = True)
+
+
+def test_a_placeholder_unit_fails_the_export_after_writing_it(tmp_path):
+    program = program_with_functions()
+    program.getFunctionManager().add("unkafter_game.cpp_FUN_00401200", 0x401200)
+    out = tmp_path / "bw1.exe"
+    with pytest.raises(fn.TUNameError, match = "unkafter_game.cpp: folder unkafter is a placeholder"):
+        fn.export_functions(program, str(out), allow_this_ptr_mismatch = True)
+    assert "00401200" in {r["addr"] for r in load_json_files(str(out), "functions")}
+    fn.export_functions(program, str(out), allow_this_ptr_mismatch = True, allow_tu_name_violations = True)
 
 
 # --- import ---------------------------------------------------------------------------------------

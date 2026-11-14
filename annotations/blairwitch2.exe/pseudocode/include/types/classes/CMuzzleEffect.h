@@ -4,13 +4,18 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CMuzzleEffect
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI size 92; ctor 0049efa0 is empty (no base, no vtable); static pool of 20 at 0x1c86730 (arrinit 0x14, stride 0x5c in CFireEffect process/render); same layout as nocedit's CMuzzleFlash, which bla also keeps as a separate class
 // Ghidra size: 0x5c (92 bytes)
 #pragma pack(push, 1)
 typedef struct CMuzzleEffect {
-    char field_0[92]; // 0x0
+    int frames_remaining; // 0x0, init 0059d360 sets 2; process 0059d420 decrements and clamps at 0; render 0059d440 draws only when it is 2; CFireEffect hasActive test 0049eb50 checks it == 1
+    CVector3f position; // 0x4, init copies the position arg; render passes this+4 to processCameraRelativeVertex
+    CVector3f rotation; // 0x10, init stores the euler angles of the rotation-matrix arg; render passes this+0x10 to applyScaledTransform
+    CDemonGlobe light; // 0x1c, init calls CDemonGlobe_setPosition/precomputeAttenuation(8.0) on this+0x1c and CDemonSet_addCoronaGlobe
 } CMuzzleEffect;
 #pragma pack(pop)
 

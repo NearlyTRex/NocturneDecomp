@@ -4,13 +4,25 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
 
 // Structure: CHino
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 53424; ctor 0059b670, setup 0059b770, process 0059b960, renderTransparent 0059d120, processDamage 0059d360, FUN_0059d000
 // Ghidra size: 0xd0b0 (53424 bytes)
 #pragma pack(push, 1)
 typedef struct CHino {
-    char field_0[53424]; // 0x0
+    CEnemy base; // 0x0, derived
+    uint sfx_handle; // 0xd054, setup zeroes; processDamage killSfx(+0xd054)
+    int unknown_0xd058; // 0xd058, setup zeroes; nothing reads it
+    int render_alpha; // 0xd05c, ctor 0x10000; renderTransparent computes it, passes to setRenderAlpha and to the target actor vtable+0xf8
+    float action_timer; // 0xd060, ctor 2.0; process state 9 subtracts dt and re-arms 2.0 at <= 0; set 2.0 on entering state 0xc
+    float attack_cooldown; // 0xd064, ctor 0; process sets 13.0 on entering state 0xc, subtracts dt while > 0, gates the attack roll
+    float vanish_timer; // 0xd068, ctor 0; process sets 0.25 and counts down; renderTransparent scales alpha by it
+    int vanishing; // 0xd06c, ctor 0; process sets 1 (disappear) / 0 (appear) with vanish_timer; renderTransparent picks the formula
+    int platform_check_done; // 0xd070, ctor 0; process state 9 runs FUN_0059d000 once when 0 and sets 1; cleared later in process
+    int near_platform; // 0xd074, ctor 0; process stores FUN_0059d000 (bool) and tests it with the Platform/Bridge strstr checks
+    char field_53368[4]; // 0xd078
+    uint sfx_handles[13]; // 0xd07c, ctor loop zeroes 13 dwords +0xd07c..+0xd0ac
 } CHino;
 #pragma pack(pop)
 

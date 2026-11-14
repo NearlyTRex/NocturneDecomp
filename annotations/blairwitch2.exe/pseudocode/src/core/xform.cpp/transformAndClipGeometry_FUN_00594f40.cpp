@@ -12,18 +12,27 @@ void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_00594f40(int vertex_cou
 
 {
   longlong lVar1;
-  int iVar2;
-  byte bVar3;
-  int iVar4;
-  uint uVar5;
-  longlong *plVar6;
-  int iVar7;
-  int iVar8;
-  int *piVar9;
-  longlong *plVar10;
-  longlong *plVar11;
-  longlong *plVar12;
-  byte bVar13;
+  longlong lVar2;
+  longlong lVar3;
+  longlong lVar4;
+  longlong lVar5;
+  longlong lVar6;
+  longlong lVar7;
+  longlong lVar8;
+  int iVar9;
+  byte bVar10;
+  int iVar11;
+  uint uVar12;
+  int *piVar13;
+  longlong *plVar14;
+  int iVar15;
+  int iVar16;
+  SRenderVertex *pSVar17;
+  SRenderVertex *pSVar18;
+  SRenderVertex *pSVar19;
+  longlong *plVar20;
+  longlong *plVar21;
+  byte bVar22;
   int *local_28;
   int local_24;
   int local_20;
@@ -31,446 +40,463 @@ void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_00594f40(int vertex_cou
   int local_18;
   int local_14;
   
-  bVar13 = 0;
-  iVar4 = 0;
-  iVar8 = 0;
-  piVar9 = vertex_indices;
+  bVar22 = 0;
+  iVar11 = 0;
+  iVar16 = 0;
+  piVar13 = vertex_indices;
   if (0 < vertex_count) {
     do {
-      if (((&DAT_00622024)[*piVar9 * 0xc] & 0x80000000) != 0) {
-        iVar8 = iVar8 + 1;
+      if (((&DAT_00622024)[*piVar13 * 0xc] & 0x80000000) != 0) {
+        iVar16 = iVar16 + 1;
       }
-      iVar4 = iVar4 + 1;
-      piVar9 = piVar9 + 1;
-    } while (iVar4 < vertex_count);
+      iVar11 = iVar11 + 1;
+      piVar13 = piVar13 + 1;
+    } while (iVar11 < vertex_count);
   }
-  if (iVar8 == 0) {
+  if (iVar16 == 0) {
     DAT_007bee30 = vertex_count;
     if (0 < vertex_count) {
-      plVar6 = (longlong *)&DAT_007bee34;
+      plVar14 = (longlong *)&DAT_007bee34;
       local_24 = 0;
       do {
-        iVar4 = 0x30;
-        plVar10 = (longlong *)(&DAT_00622014 + *vertex_indices * 0xc);
-        plVar12 = plVar6;
-        if (((uint)plVar6 & 7) != 0) {
-          plVar12 = (longlong *)((int)plVar6 + 4);
-          plVar10 = (longlong *)(&DAT_00622018 + *vertex_indices * 0xc);
-          *(int *)plVar6 = (int)*(longlong *)(&DAT_00622014 + *vertex_indices * 0xc);
-          iVar4 = 0x2c;
+        iVar11 = 0x30;
+        plVar21 = (longlong *)(&DAT_00622014 + *vertex_indices * 0xc);
+        plVar20 = plVar14;
+        if (((uint)plVar14 & 7) != 0) {
+          plVar20 = (longlong *)((int)plVar14 + 4);
+          plVar21 = (longlong *)(&DAT_00622018 + *vertex_indices * 0xc);
+          *(int *)plVar14 = (int)*(longlong *)(&DAT_00622014 + *vertex_indices * 0xc);
+          iVar11 = 0x2c;
         }
-        while (7 < iVar4) {
-          lVar1 = *plVar10;
-          plVar10 = plVar10 + 1;
-          *plVar12 = (longlong)ROUND((float10)lVar1);
-          plVar12 = plVar12 + 1;
-          iVar4 = iVar4 + -8;
+        while (7 < iVar11) {
+          lVar1 = *plVar21;
+          plVar21 = plVar21 + 1;
+          *plVar20 = (longlong)ROUND((float10)lVar1);
+          plVar20 = plVar20 + 1;
+          iVar11 = iVar11 + -8;
         }
-        if (iVar4 != 0 && -9 < iVar4 + -8) {
-          *(int *)plVar12 = (int)*plVar10;
-          if (4 < iVar4) {
-            *(uint *)((int)plVar12 + 4) = *(uint *)((int)plVar10 + 4);
+        if (iVar11 != 0 && -9 < iVar11 + -8) {
+          *(int *)plVar20 = (int)*plVar21;
+          if (4 < iVar11) {
+            *(uint *)((int)plVar20 + 4) = *(uint *)((int)plVar21 + 4);
           }
         }
         vertex_indices = vertex_indices + 1;
         local_24 = local_24 + 1;
-        plVar6 = plVar6 + 6;
+        plVar14 = plVar14 + 6;
       } while (local_24 < vertex_count);
     }
   }
   else {
     _DAT_02665a5c = vertex_count;
-    iVar4 = 0;
+    iVar11 = 0;
     _DAT_02665a60 = 0;
     _DAT_02665a64 = 0;
     _DAT_02665a68 = 0;
     DAT_007bee30 = 0;
     if (0 < vertex_count) {
-      plVar6 = (longlong *)&DAT_0266606c;
+      plVar14 = (longlong *)&DAT_0266606c;
       local_28 = vertex_indices;
       do {
-        iVar8 = 0x30;
-        plVar10 = (longlong *)(&DAT_00622014 + *local_28 * 0xc);
-        plVar12 = plVar6;
-        if (((uint)plVar6 & 7) != 0) {
-          plVar12 = (longlong *)((int)plVar6 + 4);
-          plVar10 = (longlong *)(&DAT_00622018 + *local_28 * 0xc);
-          *(int *)plVar6 = (int)*(longlong *)(&DAT_00622014 + *local_28 * 0xc);
-          iVar8 = 0x2c;
+        iVar16 = 0x30;
+        plVar21 = (longlong *)(&DAT_00622014 + *local_28 * 0xc);
+        plVar20 = plVar14;
+        if (((uint)plVar14 & 7) != 0) {
+          plVar20 = (longlong *)((int)plVar14 + 4);
+          plVar21 = (longlong *)(&DAT_00622018 + *local_28 * 0xc);
+          *(int *)plVar14 = (int)*(longlong *)(&DAT_00622014 + *local_28 * 0xc);
+          iVar16 = 0x2c;
         }
-        while (7 < iVar8) {
-          lVar1 = *plVar10;
-          plVar10 = plVar10 + 1;
-          *plVar12 = (longlong)ROUND((float10)lVar1);
-          plVar12 = plVar12 + 1;
-          iVar8 = iVar8 + -8;
+        while (7 < iVar16) {
+          lVar1 = *plVar21;
+          plVar21 = plVar21 + 1;
+          *plVar20 = (longlong)ROUND((float10)lVar1);
+          plVar20 = plVar20 + 1;
+          iVar16 = iVar16 + -8;
         }
-        if (iVar8 != 0 && -9 < iVar8 + -8) {
-          *(int *)plVar12 = (int)*plVar10;
-          if (4 < iVar8) {
-            *(uint *)((int)plVar12 + 4) = *(uint *)((int)plVar10 + 4);
+        if (iVar16 != 0 && -9 < iVar16 + -8) {
+          *(int *)plVar20 = (int)*plVar21;
+          if (4 < iVar16) {
+            *(uint *)((int)plVar20 + 4) = *(uint *)((int)plVar21 + 4);
           }
         }
-        iVar4 = iVar4 + 1;
+        iVar11 = iVar11 + 1;
         local_28 = local_28 + 1;
-        plVar6 = plVar6 + 6;
-      } while (iVar4 < vertex_count);
+        plVar14 = plVar14 + 6;
+      } while (iVar11 < vertex_count);
     }
     local_20 = 0;
     if (0 < (int)_DAT_02665a5c) {
-      plVar6 = (longlong *)&DAT_0266606c;
+      pSVar17 = (SRenderVertex *)&DAT_0266606c;
       do {
-        uVar5 = local_20 + 1;
-        if (uVar5 == _DAT_02665a5c) {
-          uVar5 = uVar5 ^ _DAT_02665a5c;
+        uVar12 = local_20 + 1;
+        if (uVar12 == _DAT_02665a5c) {
+          uVar12 = uVar12 ^ _DAT_02665a5c;
         }
-        piVar9 = (int *)(&DAT_0266606c + uVar5 * 0x30);
-        bVar3 = (int)plVar6[1] <= (int)*plVar6;
-        if (*(int *)(&DAT_02666074 + uVar5 * 0x30) <= *piVar9) {
-          bVar3 = bVar3 | 2;
+        pSVar18 = (SRenderVertex *)(&DAT_0266606c + uVar12 * 0x30);
+        bVar10 = (pSVar17->projected_vertex).transformed_z <=
+                 (pSVar17->projected_vertex).transformed_x;
+        if (*(int *)(&DAT_02666074 + uVar12 * 0x30) <= (pSVar18->projected_vertex).transformed_x) {
+          bVar10 = bVar10 | 2;
         }
-        switch(bVar3) {
+        switch(bVar10) {
         case 0:
-          plVar11 = (longlong *)(&DAT_02665a6c + _DAT_02665a60 * 0x30);
-          iVar4 = 0x30;
-          plVar10 = plVar6;
-          plVar12 = plVar11;
-          if (((uint)plVar11 & 7) != 0) {
-            plVar12 = (longlong *)(&DAT_02665a70 + (uint)bVar13 * -8 + _DAT_02665a60 * 0x30);
-            plVar10 = (longlong *)((int)plVar6 + (uint)bVar13 * -8 + 4);
-            *(int *)plVar11 = (int)*plVar6;
-            iVar4 = 0x2c;
+          plVar21 = (longlong *)(&DAT_02665a6c + _DAT_02665a60 * 0x30);
+          iVar11 = 0x30;
+          pSVar18 = pSVar17;
+          plVar14 = plVar21;
+          if (((uint)plVar21 & 7) != 0) {
+            plVar14 = (longlong *)(&DAT_02665a70 + (uint)bVar22 * -8 + _DAT_02665a60 * 0x30);
+            pSVar18 = (SRenderVertex *)((int)pSVar17 + (uint)bVar22 * -8 + 4);
+            *(int *)plVar21 = (pSVar17->projected_vertex).transformed_x;
+            iVar11 = 0x2c;
           }
-          while (7 < iVar4) {
-            lVar1 = *plVar10;
-            plVar10 = plVar10 + 1;
-            *plVar12 = (longlong)ROUND((float10)lVar1);
-            plVar12 = plVar12 + 1;
-            iVar4 = iVar4 + -8;
+          while (7 < iVar11) {
+            lVar2._0_4_ = (pSVar18->projected_vertex).transformed_x;
+            lVar2._4_4_ = (pSVar18->projected_vertex).transformed_y;
+            pSVar18 = (SRenderVertex *)&(pSVar18->projected_vertex).transformed_z;
+            *plVar14 = (longlong)ROUND((float10)lVar2);
+            plVar14 = plVar14 + 1;
+            iVar11 = iVar11 + -8;
           }
-          if (iVar4 != 0 && -9 < iVar4 + -8) {
-            *(int *)plVar12 = (int)*plVar10;
-            if (4 < iVar4) {
-              *(uint *)((int)plVar12 + (uint)bVar13 * -8 + 4) =
-                   *(uint *)((int)plVar10 + (uint)bVar13 * -8 + 4);
+          if (iVar11 != 0 && -9 < iVar11 + -8) {
+            *(int *)plVar14 = (pSVar18->projected_vertex).transformed_x;
+            if (4 < iVar11) {
+              *(uint *)((int)plVar14 + (uint)bVar22 * -8 + 4) =
+                   *(uint *)((int)pSVar18 + (uint)bVar22 * -8 + 4);
             }
           }
           _DAT_02665a60 = _DAT_02665a60 + 1;
           break;
         case 1:
           core_xform_cpp_clipInterpolateRightPlane_FUN_005945b0
-                    (piVar9,plVar6,&DAT_02665a6c + _DAT_02665a60 * 0x30);
+                    (pSVar18,pSVar17,(SRenderVertex *)(&DAT_02665a6c + _DAT_02665a60 * 0x30));
           _DAT_02665a60 = _DAT_02665a60 + 1;
           break;
         case 2:
-          plVar11 = (longlong *)(&DAT_02665a6c + _DAT_02665a60 * 0x30);
-          iVar4 = 0x30;
-          plVar10 = plVar6;
-          plVar12 = plVar11;
-          if (((uint)plVar11 & 7) != 0) {
-            plVar12 = (longlong *)(&DAT_02665a70 + (uint)bVar13 * -8 + _DAT_02665a60 * 0x30);
-            plVar10 = (longlong *)((int)plVar6 + (uint)bVar13 * -8 + 4);
-            *(int *)plVar11 = (int)*plVar6;
-            iVar4 = 0x2c;
+          plVar21 = (longlong *)(&DAT_02665a6c + _DAT_02665a60 * 0x30);
+          iVar11 = 0x30;
+          pSVar19 = pSVar17;
+          plVar14 = plVar21;
+          if (((uint)plVar21 & 7) != 0) {
+            plVar14 = (longlong *)(&DAT_02665a70 + (uint)bVar22 * -8 + _DAT_02665a60 * 0x30);
+            pSVar19 = (SRenderVertex *)((int)pSVar17 + (uint)bVar22 * -8 + 4);
+            *(int *)plVar21 = (pSVar17->projected_vertex).transformed_x;
+            iVar11 = 0x2c;
           }
-          while (7 < iVar4) {
-            lVar1 = *plVar10;
-            plVar10 = plVar10 + 1;
-            *plVar12 = (longlong)ROUND((float10)lVar1);
-            plVar12 = plVar12 + 1;
-            iVar4 = iVar4 + -8;
+          while (7 < iVar11) {
+            lVar1._0_4_ = (pSVar19->projected_vertex).transformed_x;
+            lVar1._4_4_ = (pSVar19->projected_vertex).transformed_y;
+            pSVar19 = (SRenderVertex *)&(pSVar19->projected_vertex).transformed_z;
+            *plVar14 = (longlong)ROUND((float10)lVar1);
+            plVar14 = plVar14 + 1;
+            iVar11 = iVar11 + -8;
           }
-          if (iVar4 != 0 && -9 < iVar4 + -8) {
-            *(int *)plVar12 = (int)*plVar10;
-            if (4 < iVar4) {
-              *(uint *)((int)plVar12 + (uint)bVar13 * -8 + 4) =
-                   *(uint *)((int)plVar10 + (uint)bVar13 * -8 + 4);
+          if (iVar11 != 0 && -9 < iVar11 + -8) {
+            *(int *)plVar14 = (pSVar19->projected_vertex).transformed_x;
+            if (4 < iVar11) {
+              *(uint *)((int)plVar14 + (uint)bVar22 * -8 + 4) =
+                   *(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4);
             }
           }
           _DAT_02665a60 = _DAT_02665a60 + 1;
           core_xform_cpp_clipInterpolateRightPlane_FUN_005945b0
-                    (plVar6,piVar9,&DAT_02665a6c + _DAT_02665a60 * 0x30);
+                    (pSVar17,pSVar18,(SRenderVertex *)(&DAT_02665a6c + _DAT_02665a60 * 0x30));
           _DAT_02665a60 = _DAT_02665a60 + 1;
         }
         local_20 = local_20 + 1;
-        plVar6 = plVar6 + 6;
+        pSVar17 = pSVar17 + 1;
       } while (local_20 < (int)_DAT_02665a5c);
     }
     if (2 < (int)_DAT_02665a60) {
       local_18 = 0;
       if (0 < (int)_DAT_02665a60) {
-        plVar6 = (longlong *)&DAT_02665a6c;
+        pSVar17 = (SRenderVertex *)&DAT_02665a6c;
         do {
-          uVar5 = local_18 + 1;
-          if (uVar5 == _DAT_02665a60) {
-            uVar5 = uVar5 ^ _DAT_02665a60;
+          uVar12 = local_18 + 1;
+          if (uVar12 == _DAT_02665a60) {
+            uVar12 = uVar12 ^ _DAT_02665a60;
           }
-          piVar9 = (int *)(&DAT_02665a6c + uVar5 * 0x30);
-          bVar3 = (int)*plVar6 <= -(int)plVar6[1];
-          if (*piVar9 <= -*(int *)(&DAT_02665a74 + uVar5 * 0x30)) {
-            bVar3 = bVar3 | 2;
+          pSVar18 = (SRenderVertex *)(&DAT_02665a6c + uVar12 * 0x30);
+          bVar10 = (pSVar17->projected_vertex).transformed_x <=
+                   -(pSVar17->projected_vertex).transformed_z;
+          if ((pSVar18->projected_vertex).transformed_x <= -*(int *)(&DAT_02665a74 + uVar12 * 0x30))
+          {
+            bVar10 = bVar10 | 2;
           }
-          switch(bVar3) {
+          switch(bVar10) {
           case 0:
-            plVar11 = (longlong *)(_DAT_02665a64 * 0x30 + 0x266666c);
-            iVar4 = 0x30;
-            plVar10 = plVar6;
-            plVar12 = plVar11;
-            if (((uint)plVar11 & 7) != 0) {
-              plVar12 = (longlong *)(&DAT_02666670 + (uint)bVar13 * -8 + _DAT_02665a64 * 0x30);
-              plVar10 = (longlong *)((int)plVar6 + (uint)bVar13 * -8 + 4);
-              *(int *)plVar11 = (int)*plVar6;
-              iVar4 = 0x2c;
+            plVar21 = (longlong *)(_DAT_02665a64 * 0x30 + 0x266666c);
+            iVar11 = 0x30;
+            pSVar18 = pSVar17;
+            plVar14 = plVar21;
+            if (((uint)plVar21 & 7) != 0) {
+              plVar14 = (longlong *)(&DAT_02666670 + (uint)bVar22 * -8 + _DAT_02665a64 * 0x30);
+              pSVar18 = (SRenderVertex *)((int)pSVar17 + (uint)bVar22 * -8 + 4);
+              *(int *)plVar21 = (pSVar17->projected_vertex).transformed_x;
+              iVar11 = 0x2c;
             }
-            while (7 < iVar4) {
-              lVar1 = *plVar10;
-              plVar10 = plVar10 + 1;
-              *plVar12 = (longlong)ROUND((float10)lVar1);
-              plVar12 = plVar12 + 1;
-              iVar4 = iVar4 + -8;
+            while (7 < iVar11) {
+              lVar3._0_4_ = (pSVar18->projected_vertex).transformed_x;
+              lVar3._4_4_ = (pSVar18->projected_vertex).transformed_y;
+              pSVar18 = (SRenderVertex *)&(pSVar18->projected_vertex).transformed_z;
+              *plVar14 = (longlong)ROUND((float10)lVar3);
+              plVar14 = plVar14 + 1;
+              iVar11 = iVar11 + -8;
             }
-            if (iVar4 != 0 && -9 < iVar4 + -8) {
-              *(int *)plVar12 = (int)*plVar10;
-              if (4 < iVar4) {
-                *(uint *)((int)plVar12 + (uint)bVar13 * -8 + 4) =
-                     *(uint *)((int)plVar10 + (uint)bVar13 * -8 + 4);
+            if (iVar11 != 0 && -9 < iVar11 + -8) {
+              *(int *)plVar14 = (pSVar18->projected_vertex).transformed_x;
+              if (4 < iVar11) {
+                *(uint *)((int)plVar14 + (uint)bVar22 * -8 + 4) =
+                     *(uint *)((int)pSVar18 + (uint)bVar22 * -8 + 4);
               }
             }
             _DAT_02665a64 = _DAT_02665a64 + 1;
             break;
           case 1:
             core_xform_cpp_clipInterpolateLeftPlane_FUN_00594670
-                      (piVar9,plVar6,_DAT_02665a64 * 0x30 + 0x266666c);
+                      (pSVar18,pSVar17,(SRenderVertex *)(_DAT_02665a64 * 0x30 + 0x266666c));
             _DAT_02665a64 = _DAT_02665a64 + 1;
             break;
           case 2:
-            plVar11 = (longlong *)(_DAT_02665a64 * 0x30 + 0x266666c);
-            iVar4 = 0x30;
-            plVar10 = plVar6;
-            plVar12 = plVar11;
-            if (((uint)plVar11 & 7) != 0) {
-              plVar12 = (longlong *)(&DAT_02666670 + (uint)bVar13 * -8 + _DAT_02665a64 * 0x30);
-              plVar10 = (longlong *)((int)plVar6 + (uint)bVar13 * -8 + 4);
-              *(int *)plVar11 = (int)*plVar6;
-              iVar4 = 0x2c;
+            plVar21 = (longlong *)(_DAT_02665a64 * 0x30 + 0x266666c);
+            iVar11 = 0x30;
+            pSVar19 = pSVar17;
+            plVar14 = plVar21;
+            if (((uint)plVar21 & 7) != 0) {
+              plVar14 = (longlong *)(&DAT_02666670 + (uint)bVar22 * -8 + _DAT_02665a64 * 0x30);
+              pSVar19 = (SRenderVertex *)((int)pSVar17 + (uint)bVar22 * -8 + 4);
+              *(int *)plVar21 = (pSVar17->projected_vertex).transformed_x;
+              iVar11 = 0x2c;
             }
-            while (7 < iVar4) {
-              lVar1 = *plVar10;
-              plVar10 = plVar10 + 1;
-              *plVar12 = (longlong)ROUND((float10)lVar1);
-              plVar12 = plVar12 + 1;
-              iVar4 = iVar4 + -8;
+            while (7 < iVar11) {
+              lVar6._0_4_ = (pSVar19->projected_vertex).transformed_x;
+              lVar6._4_4_ = (pSVar19->projected_vertex).transformed_y;
+              pSVar19 = (SRenderVertex *)&(pSVar19->projected_vertex).transformed_z;
+              *plVar14 = (longlong)ROUND((float10)lVar6);
+              plVar14 = plVar14 + 1;
+              iVar11 = iVar11 + -8;
             }
-            if (iVar4 != 0 && -9 < iVar4 + -8) {
-              *(int *)plVar12 = (int)*plVar10;
-              if (4 < iVar4) {
-                *(uint *)((int)plVar12 + (uint)bVar13 * -8 + 4) =
-                     *(uint *)((int)plVar10 + (uint)bVar13 * -8 + 4);
+            if (iVar11 != 0 && -9 < iVar11 + -8) {
+              *(int *)plVar14 = (pSVar19->projected_vertex).transformed_x;
+              if (4 < iVar11) {
+                *(uint *)((int)plVar14 + (uint)bVar22 * -8 + 4) =
+                     *(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4);
               }
             }
             _DAT_02665a64 = _DAT_02665a64 + 1;
             core_xform_cpp_clipInterpolateLeftPlane_FUN_00594670
-                      (plVar6,piVar9,_DAT_02665a64 * 0x30 + 0x266666c);
+                      (pSVar17,pSVar18,(SRenderVertex *)(_DAT_02665a64 * 0x30 + 0x266666c));
             _DAT_02665a64 = _DAT_02665a64 + 1;
           }
           local_18 = local_18 + 1;
-          plVar6 = plVar6 + 6;
+          pSVar17 = pSVar17 + 1;
         } while (local_18 < (int)_DAT_02665a60);
       }
       if (2 < (int)_DAT_02665a64) {
         local_14 = 0;
         if (0 < (int)_DAT_02665a64) {
-          plVar6 = (longlong *)0x266666c;
+          pSVar17 = (SRenderVertex *)0x266666c;
           do {
-            uVar5 = local_14 + 1;
-            if (uVar5 == _DAT_02665a64) {
-              uVar5 = uVar5 ^ _DAT_02665a64;
+            uVar12 = local_14 + 1;
+            if (uVar12 == _DAT_02665a64) {
+              uVar12 = uVar12 ^ _DAT_02665a64;
             }
-            iVar4 = uVar5 * 0x30;
-            bVar3 = (int)plVar6[1] <= *(int *)((int)plVar6 + 4);
-            if (*(int *)(&DAT_02666674 + iVar4) <= *(int *)(&DAT_02666670 + iVar4)) {
-              bVar3 = bVar3 | 2;
+            iVar11 = uVar12 * 0x30;
+            bVar10 = (pSVar17->projected_vertex).transformed_z <=
+                     (pSVar17->projected_vertex).transformed_y;
+            if (*(int *)(&DAT_02666674 + iVar11) <= *(int *)(&DAT_02666670 + iVar11)) {
+              bVar10 = bVar10 | 2;
             }
-            switch(bVar3) {
+            switch(bVar10) {
             case 0:
-              plVar11 = (longlong *)(&DAT_02666c6c + _DAT_02665a68 * 0x30);
-              iVar4 = 0x30;
-              plVar10 = plVar6;
-              plVar12 = plVar11;
-              if (((uint)plVar11 & 7) != 0) {
-                plVar12 = (longlong *)(&DAT_02666c70 + (uint)bVar13 * -8 + _DAT_02665a68 * 0x30);
-                plVar10 = (longlong *)((int)plVar6 + (uint)bVar13 * -8 + 4);
-                *(int *)plVar11 = (int)*plVar6;
-                iVar4 = 0x2c;
+              plVar21 = (longlong *)(&DAT_02666c6c + _DAT_02665a68 * 0x30);
+              iVar11 = 0x30;
+              pSVar18 = pSVar17;
+              plVar14 = plVar21;
+              if (((uint)plVar21 & 7) != 0) {
+                plVar14 = (longlong *)(&DAT_02666c70 + (uint)bVar22 * -8 + _DAT_02665a68 * 0x30);
+                pSVar18 = (SRenderVertex *)((int)pSVar17 + (uint)bVar22 * -8 + 4);
+                *(int *)plVar21 = (pSVar17->projected_vertex).transformed_x;
+                iVar11 = 0x2c;
               }
-              while (7 < iVar4) {
-                lVar1 = *plVar10;
-                plVar10 = plVar10 + 1;
-                *plVar12 = (longlong)ROUND((float10)lVar1);
-                plVar12 = plVar12 + 1;
-                iVar4 = iVar4 + -8;
+              while (7 < iVar11) {
+                lVar4._0_4_ = (pSVar18->projected_vertex).transformed_x;
+                lVar4._4_4_ = (pSVar18->projected_vertex).transformed_y;
+                pSVar18 = (SRenderVertex *)&(pSVar18->projected_vertex).transformed_z;
+                *plVar14 = (longlong)ROUND((float10)lVar4);
+                plVar14 = plVar14 + 1;
+                iVar11 = iVar11 + -8;
               }
-              if (iVar4 != 0 && -9 < iVar4 + -8) {
-                *(int *)plVar12 = (int)*plVar10;
-                if (4 < iVar4) {
-                  *(uint *)((int)plVar12 + (uint)bVar13 * -8 + 4) =
-                       *(uint *)((int)plVar10 + (uint)bVar13 * -8 + 4);
+              if (iVar11 != 0 && -9 < iVar11 + -8) {
+                *(int *)plVar14 = (pSVar18->projected_vertex).transformed_x;
+                if (4 < iVar11) {
+                  *(uint *)((int)plVar14 + (uint)bVar22 * -8 + 4) =
+                       *(uint *)((int)pSVar18 + (uint)bVar22 * -8 + 4);
                 }
               }
               _DAT_02665a68 = _DAT_02665a68 + 1;
               break;
             case 1:
               core_xform_cpp_clipInterpolateTopPlane_FUN_00594730
-                        (iVar4 + 0x266666c,plVar6,&DAT_02666c6c + _DAT_02665a68 * 0x30);
+                        ((SRenderVertex *)(iVar11 + 0x266666c),pSVar17,
+                         (SRenderVertex *)(&DAT_02666c6c + _DAT_02665a68 * 0x30));
               _DAT_02665a68 = _DAT_02665a68 + 1;
               break;
             case 2:
-              plVar11 = (longlong *)(&DAT_02666c6c + _DAT_02665a68 * 0x30);
-              iVar8 = 0x30;
-              plVar10 = plVar6;
-              plVar12 = plVar11;
-              if (((uint)plVar11 & 7) != 0) {
-                plVar12 = (longlong *)(&DAT_02666c70 + (uint)bVar13 * -8 + _DAT_02665a68 * 0x30);
-                plVar10 = (longlong *)((int)plVar6 + (uint)bVar13 * -8 + 4);
-                *(int *)plVar11 = (int)*plVar6;
-                iVar8 = 0x2c;
+              plVar21 = (longlong *)(&DAT_02666c6c + _DAT_02665a68 * 0x30);
+              iVar16 = 0x30;
+              pSVar18 = pSVar17;
+              plVar14 = plVar21;
+              if (((uint)plVar21 & 7) != 0) {
+                plVar14 = (longlong *)(&DAT_02666c70 + (uint)bVar22 * -8 + _DAT_02665a68 * 0x30);
+                pSVar18 = (SRenderVertex *)((int)pSVar17 + (uint)bVar22 * -8 + 4);
+                *(int *)plVar21 = (pSVar17->projected_vertex).transformed_x;
+                iVar16 = 0x2c;
               }
-              while (7 < iVar8) {
-                lVar1 = *plVar10;
-                plVar10 = plVar10 + 1;
-                *plVar12 = (longlong)ROUND((float10)lVar1);
-                plVar12 = plVar12 + 1;
-                iVar8 = iVar8 + -8;
+              while (7 < iVar16) {
+                lVar7._0_4_ = (pSVar18->projected_vertex).transformed_x;
+                lVar7._4_4_ = (pSVar18->projected_vertex).transformed_y;
+                pSVar18 = (SRenderVertex *)&(pSVar18->projected_vertex).transformed_z;
+                *plVar14 = (longlong)ROUND((float10)lVar7);
+                plVar14 = plVar14 + 1;
+                iVar16 = iVar16 + -8;
               }
-              if (iVar8 != 0 && -9 < iVar8 + -8) {
-                *(int *)plVar12 = (int)*plVar10;
-                if (4 < iVar8) {
-                  *(uint *)((int)plVar12 + (uint)bVar13 * -8 + 4) =
-                       *(uint *)((int)plVar10 + (uint)bVar13 * -8 + 4);
+              if (iVar16 != 0 && -9 < iVar16 + -8) {
+                *(int *)plVar14 = (pSVar18->projected_vertex).transformed_x;
+                if (4 < iVar16) {
+                  *(uint *)((int)plVar14 + (uint)bVar22 * -8 + 4) =
+                       *(uint *)((int)pSVar18 + (uint)bVar22 * -8 + 4);
                 }
               }
               _DAT_02665a68 = _DAT_02665a68 + 1;
               core_xform_cpp_clipInterpolateTopPlane_FUN_00594730
-                        (plVar6,iVar4 + 0x266666c,&DAT_02666c6c + _DAT_02665a68 * 0x30);
+                        (pSVar17,(SRenderVertex *)(iVar11 + 0x266666c),
+                         (SRenderVertex *)(&DAT_02666c6c + _DAT_02665a68 * 0x30));
               _DAT_02665a68 = _DAT_02665a68 + 1;
             }
             local_14 = local_14 + 1;
-            plVar6 = plVar6 + 6;
+            pSVar17 = pSVar17 + 1;
           } while (local_14 < (int)_DAT_02665a64);
         }
         if (2 < (int)_DAT_02665a68) {
           local_1c = 0;
           if (0 < (int)_DAT_02665a68) {
-            plVar6 = (longlong *)&DAT_02666c6c;
+            pSVar17 = (SRenderVertex *)&DAT_02666c6c;
             do {
-              uVar5 = local_1c + 1;
-              if (uVar5 == _DAT_02665a68) {
-                uVar5 = uVar5 ^ _DAT_02665a68;
+              uVar12 = local_1c + 1;
+              if (uVar12 == _DAT_02665a68) {
+                uVar12 = uVar12 ^ _DAT_02665a68;
               }
-              iVar4 = uVar5 * 0x30;
-              bVar3 = *(int *)((int)plVar6 + 4) <= -(int)plVar6[1];
-              if (*(int *)(&DAT_02666c70 + iVar4) <= -*(int *)(&DAT_02666c74 + iVar4)) {
-                bVar3 = bVar3 | 2;
+              iVar11 = uVar12 * 0x30;
+              bVar10 = (pSVar17->projected_vertex).transformed_y <=
+                       -(pSVar17->projected_vertex).transformed_z;
+              if (*(int *)(&DAT_02666c70 + iVar11) <= -*(int *)(&DAT_02666c74 + iVar11)) {
+                bVar10 = bVar10 | 2;
               }
-              switch(bVar3) {
+              switch(bVar10) {
               case 0:
-                plVar11 = (longlong *)(&DAT_007bee34 + DAT_007bee30 * 0xc);
-                iVar4 = 0x30;
-                plVar10 = plVar6;
-                plVar12 = plVar11;
-                if (((uint)plVar11 & 7) != 0) {
-                  plVar12 = (longlong *)(&DAT_007bee38 + DAT_007bee30 * 0xc + (uint)bVar13 * -2);
-                  plVar10 = (longlong *)((int)plVar6 + (uint)bVar13 * -8 + 4);
-                  *(int *)plVar11 = (int)*plVar6;
-                  iVar4 = 0x2c;
+                plVar21 = (longlong *)(&DAT_007bee34 + DAT_007bee30 * 0xc);
+                iVar11 = 0x30;
+                pSVar18 = pSVar17;
+                plVar14 = plVar21;
+                if (((uint)plVar21 & 7) != 0) {
+                  plVar14 = (longlong *)(&DAT_007bee38 + DAT_007bee30 * 0xc + (uint)bVar22 * -2);
+                  pSVar18 = (SRenderVertex *)((int)pSVar17 + (uint)bVar22 * -8 + 4);
+                  *(int *)plVar21 = (pSVar17->projected_vertex).transformed_x;
+                  iVar11 = 0x2c;
                 }
-                while (7 < iVar4) {
-                  lVar1 = *plVar10;
-                  plVar10 = plVar10 + 1;
-                  *plVar12 = (longlong)ROUND((float10)lVar1);
-                  plVar12 = plVar12 + 1;
-                  iVar4 = iVar4 + -8;
+                while (7 < iVar11) {
+                  lVar5._0_4_ = (pSVar18->projected_vertex).transformed_x;
+                  lVar5._4_4_ = (pSVar18->projected_vertex).transformed_y;
+                  pSVar18 = (SRenderVertex *)&(pSVar18->projected_vertex).transformed_z;
+                  *plVar14 = (longlong)ROUND((float10)lVar5);
+                  plVar14 = plVar14 + 1;
+                  iVar11 = iVar11 + -8;
                 }
-                if (iVar4 != 0 && -9 < iVar4 + -8) {
-                  *(int *)plVar12 = (int)*plVar10;
-                  if (4 < iVar4) {
-                    *(uint *)((int)plVar12 + (uint)bVar13 * -8 + 4) =
-                         *(uint *)((int)plVar10 + (uint)bVar13 * -8 + 4);
+                if (iVar11 != 0 && -9 < iVar11 + -8) {
+                  *(int *)plVar14 = (pSVar18->projected_vertex).transformed_x;
+                  if (4 < iVar11) {
+                    *(uint *)((int)plVar14 + (uint)bVar22 * -8 + 4) =
+                         *(uint *)((int)pSVar18 + (uint)bVar22 * -8 + 4);
                   }
                 }
                 DAT_007bee30 = DAT_007bee30 + 1;
                 break;
               case 1:
                 core_xform_cpp_clipInterpolateBottomPlane_FUN_005947f0
-                          (&DAT_02666c6c + iVar4,plVar6,&DAT_007bee34 + DAT_007bee30 * 0xc);
+                          ((SRenderVertex *)(&DAT_02666c6c + iVar11),pSVar17,
+                           (SRenderVertex *)(&DAT_007bee34 + DAT_007bee30 * 0xc));
                 DAT_007bee30 = DAT_007bee30 + 1;
                 break;
               case 2:
-                plVar11 = (longlong *)(&DAT_007bee34 + DAT_007bee30 * 0xc);
-                iVar8 = 0x30;
-                plVar10 = plVar6;
-                plVar12 = plVar11;
-                if (((uint)plVar11 & 7) != 0) {
-                  plVar12 = (longlong *)(&DAT_007bee38 + DAT_007bee30 * 0xc + (uint)bVar13 * -2);
-                  plVar10 = (longlong *)((int)plVar6 + (uint)bVar13 * -8 + 4);
-                  *(int *)plVar11 = (int)*plVar6;
-                  iVar8 = 0x2c;
+                plVar21 = (longlong *)(&DAT_007bee34 + DAT_007bee30 * 0xc);
+                iVar16 = 0x30;
+                pSVar18 = pSVar17;
+                plVar14 = plVar21;
+                if (((uint)plVar21 & 7) != 0) {
+                  plVar14 = (longlong *)(&DAT_007bee38 + DAT_007bee30 * 0xc + (uint)bVar22 * -2);
+                  pSVar18 = (SRenderVertex *)((int)pSVar17 + (uint)bVar22 * -8 + 4);
+                  *(int *)plVar21 = (pSVar17->projected_vertex).transformed_x;
+                  iVar16 = 0x2c;
                 }
-                while (7 < iVar8) {
-                  lVar1 = *plVar10;
-                  plVar10 = plVar10 + 1;
-                  *plVar12 = (longlong)ROUND((float10)lVar1);
-                  plVar12 = plVar12 + 1;
-                  iVar8 = iVar8 + -8;
+                while (7 < iVar16) {
+                  lVar8._0_4_ = (pSVar18->projected_vertex).transformed_x;
+                  lVar8._4_4_ = (pSVar18->projected_vertex).transformed_y;
+                  pSVar18 = (SRenderVertex *)&(pSVar18->projected_vertex).transformed_z;
+                  *plVar14 = (longlong)ROUND((float10)lVar8);
+                  plVar14 = plVar14 + 1;
+                  iVar16 = iVar16 + -8;
                 }
-                if (iVar8 != 0 && -9 < iVar8 + -8) {
-                  *(int *)plVar12 = (int)*plVar10;
-                  if (4 < iVar8) {
-                    *(uint *)((int)plVar12 + (uint)bVar13 * -8 + 4) =
-                         *(uint *)((int)plVar10 + (uint)bVar13 * -8 + 4);
+                if (iVar16 != 0 && -9 < iVar16 + -8) {
+                  *(int *)plVar14 = (pSVar18->projected_vertex).transformed_x;
+                  if (4 < iVar16) {
+                    *(uint *)((int)plVar14 + (uint)bVar22 * -8 + 4) =
+                         *(uint *)((int)pSVar18 + (uint)bVar22 * -8 + 4);
                   }
                 }
                 DAT_007bee30 = DAT_007bee30 + 1;
                 core_xform_cpp_clipInterpolateBottomPlane_FUN_005947f0
-                          (plVar6,&DAT_02666c6c + iVar4,&DAT_007bee34 + DAT_007bee30 * 0xc);
+                          (pSVar17,(SRenderVertex *)(&DAT_02666c6c + iVar11),
+                           (SRenderVertex *)(&DAT_007bee34 + DAT_007bee30 * 0xc));
                 DAT_007bee30 = DAT_007bee30 + 1;
               }
               local_1c = local_1c + 1;
-              plVar6 = plVar6 + 6;
+              pSVar17 = pSVar17 + 1;
             } while (local_1c < (int)_DAT_02665a68);
           }
           if (2 < DAT_007bee30) {
-            piVar9 = &DAT_007bee34;
-            iVar4 = 0;
+            piVar13 = &DAT_007bee34;
+            iVar11 = 0;
             if (0 < DAT_007bee30) {
               do {
-                iVar8 = piVar9[2];
-                if (iVar8 == 0) {
-                  piVar9[2] = 1;
-                  *piVar9 = 0;
-                  piVar9[1] = 0;
+                iVar16 = piVar13[2];
+                if (iVar16 == 0) {
+                  piVar13[2] = 1;
+                  *piVar13 = 0;
+                  piVar13[1] = 0;
                 }
-                else if (iVar8 < *piVar9) {
-                  *piVar9 = iVar8;
+                else if (iVar16 < *piVar13) {
+                  *piVar13 = iVar16;
                 }
                 else {
-                  iVar7 = -iVar8;
-                  if (-*piVar9 == iVar8 || iVar7 < *piVar9) {
-                    iVar2 = piVar9[1];
-                    if (iVar8 < iVar2) {
-                      piVar9[1] = iVar8;
+                  iVar15 = -iVar16;
+                  if (-*piVar13 == iVar16 || iVar15 < *piVar13) {
+                    iVar9 = piVar13[1];
+                    if (iVar16 < iVar9) {
+                      piVar13[1] = iVar16;
                     }
-                    else if (-iVar2 != iVar8 && iVar2 <= iVar7) {
-                      piVar9[1] = iVar7;
+                    else if (-iVar9 != iVar16 && iVar9 <= iVar15) {
+                      piVar13[1] = iVar15;
                     }
                   }
                   else {
-                    *piVar9 = iVar7;
+                    *piVar13 = iVar15;
                   }
                 }
-                iVar4 = iVar4 + 1;
-                piVar9 = piVar9 + 0xc;
-              } while (iVar4 < DAT_007bee30);
+                iVar11 = iVar11 + 1;
+                piVar13 = piVar13 + 0xc;
+              } while (iVar11 < DAT_007bee30);
             }
           }
         }

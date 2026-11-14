@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
 
 // Structure: CArmour
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0xc2cc (49868 bytes)
 #pragma pack(push, 1)
 typedef struct CArmour {
-    char field_0[49868]; // 0x0
+    CEnemy base; // 0x0
+    char fall_apart_event[100]; // 0xc268
 } CArmour;
 #pragma pack(pop)
 

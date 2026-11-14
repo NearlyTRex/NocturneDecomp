@@ -1,0 +1,234 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 152,
+    "complexity_score": 126,
+    "cross_reference_count": 1,
+    "function_call_count": 7,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 56,
+    "suspect_count": 6,
+    "suspect_types": [
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 208
+  },
+  "cross_references": [
+    {
+      "addr": "004e6c40",
+      "from_addr": "004e6f0d",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_004e6c40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004e7220",
+    "address_range": [
+      [
+        "004e7220",
+        "004e73b7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004e7220",
+    "signature": "void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004e7220(CMansionPuzzleCircle *this_ptr,int panel_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "004e7570",
+      "is_variadic": false,
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004e7570"
+    },
+    {
+      "addr": "004e6240",
+      "is_variadic": false,
+      "name": "core_manpuz.cpp_FUN_004e6240"
+    },
+    {
+      "addr": "005504d0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005504d0"
+    },
+    {
+      "addr": "00550450",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_00550450"
+    },
+    {
+      "addr": "00550170",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_00550170"
+    },
+    {
+      "addr": "005506b0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_startSfx_FUN_005506b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004e6f0d",
+        "call_type": "direct",
+        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_004e6c40",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.923076923076923,
+    "instruction_count": 130,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 22,
+      "BRANCH": 1,
+      "CALL": 7,
+      "CBRANCH": 7,
+      "COPY": 234,
+      "FLOAT2FLOAT": 16,
+      "INT_ADD": 73,
+      "INT_AND": 99,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 56,
+      "INT_LEFT": 8,
+      "INT_LESS": 7,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 20,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 34,
+      "INT_SUB": 29,
+      "INT_XOR": 4,
+      "LOAD": 37,
+      "POPCOUNT": 26,
+      "RETURN": 1,
+      "STORE": 47
+    },
+    "pcode_op_count": 770
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00505ec0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0050aba0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004cb5a0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMansionPuzzleCircle *"
+      },
+      {
+        "is_param": true,
+        "name": "panel_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 20,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pSVar3->exists = pSVar1->exists;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 24,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pSVar3->local_position).x = (pSVar1->local_position).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 29,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pSVar3->rotation).x = (pSVar1->rotation).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (13 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 33,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pSVar3->rotation_matrix).m[0].x = (pSVar1->rotation_matrix).m[0].x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 47,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pSVar3->world_position).x = (pSVar1->world_position).x;",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

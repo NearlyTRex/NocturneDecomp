@@ -1,0 +1,143 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 39,
+    "complexity_score": 33,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 18,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
+    "total_lines": 57
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0046cf50",
+    "address_range": [
+      [
+        "0046cf50",
+        "0046cfd9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_drip.cpp_CDrip_setup_FUN_0046cf50",
+    "signature": "void __cdecl core_drip_cpp_CDrip_setup_FUN_0046cf50(CDrip *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cf60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60"
+    },
+    {
+      "addr": "0044fd00",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00"
+    },
+    {
+      "addr": "0044fd70",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.588235294117647,
+    "instruction_count": 34,
+    "opcode_distribution": {
+      "CALL": 4,
+      "COPY": 40,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 22,
+      "INT_AND": 12,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 12,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 6,
+      "INT_SUB": 12,
+      "LOAD": 9,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 18
+    },
+    "pcode_op_count": 156
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00485450",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0046eb30",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0048e0e0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00462140",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrip *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 9,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->base).location.position.x = (this_ptr->home_pos).x;",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "005f5844"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

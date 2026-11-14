@@ -4,7 +4,8 @@
 # with an id of its own: year, language and game, then anything more (1999-de-nocturne,
 # 2000-en-nocturne-budget), never changed once published. game names the data/games/ file whose content the manifest is written with, and
 # required the PODs the game can't start without. [[release.file]] lists everything else a fresh
-# install had (executable, DLLs, loose data) by its '/'-separated path.
+# install had (executable, DLLs, loose data) by its '/'-separated path, with its size and hash
+# except for an INI, which the game rewrites.
 # scripts/Python/catalog_release.py prints a new release's entry from its install folder.
 
 [[release]]
@@ -441,13 +442,9 @@ xxh3 = "2b6512eef16cd703c9f4e1688f1437f2"
 
 [[release.file]]
 path = "SYSTEM/nocturne.ini"
-size = 1420
-xxh3 = "944208c98590313f4a1d11758601effd"
 
 [[release.file]]
 path = "SYSTEM/RENDER.INI"
-size = 175
-xxh3 = "8c44a96bf17fc7496c4790529b0d7f14"
 
 [[release.file]]
 path = "tridx7.dll"
@@ -627,8 +624,6 @@ xxh3 = "4f5ba48a8195d1a899ab3bfbce87377c"
 
 [[release.file]]
 path = "pod.bak.ini"
-size = 411
-xxh3 = "3e0c58fa11c31f24d1d227cd8a75689d"
 
 [[release.file]]
 path = "readme.txt"
@@ -637,18 +632,12 @@ xxh3 = "d7d1ebb237e5711f5406b8172ff7052f"
 
 [[release.file]]
 path = "skeledit.ini"
-size = 91
-xxh3 = "2871b61c20daf6c540b2549140d7cb46"
 
 [[release.file]]
 path = "SYSTEM/nocturne.ini"
-size = 1629
-xxh3 = "091fc2fa8939422ebee6cb562c72b921"
 
 [[release.file]]
 path = "SYSTEM/RENDER.INI"
-size = 175
-xxh3 = "8c44a96bf17fc7496c4790529b0d7f14"
 
 [[release.file]]
 path = "TRID3D.DLL"
@@ -828,13 +817,9 @@ xxh3 = "7ac1e4d81d5175568c41f441978cf054"
 
 [[release.file]]
 path = "SYSTEM/bw3.ini"
-size = 0
-xxh3 = "99aa06d3014798d86001c324468d497f"
 
 [[release.file]]
 path = "SYSTEM/render.ini"
-size = 174
-xxh3 = "f428af2b810259effc5a9dd5bbd00ccd"
 
 [[release.file]]
 path = "tridx7.dll"

@@ -5,6 +5,198 @@
 // Function prototypes for core/bmppuzzl.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_bmppuzzl.cpp_FUN_00412320
+// Original: core_bmppuzzl.cpp_staticInit_FUN_004118e0
+// Address: 004118e0
+void __cdecl staticInit(void);
+
+// Original: core_bmppuzzl.cpp_CPuzzle_ctor_FUN_00411960
+// Address: 00411960
+CPuzzle * __cdecl CPuzzle::ctor(CPuzzle *this_ptr);
+
+// Original: core_bmppuzzl.cpp_CPuzzle_dtor_FUN_00411980
+// Address: 00411980
+CPuzzle * __cdecl CPuzzle::dtor(CPuzzle *this_ptr,uint flags);
+
+// Original: core_bmppuzzl.cpp_CPuzzle_reset_FUN_00411990
+// Address: 00411990
+void __cdecl CPuzzle::reset(CPuzzle *this_ptr);
+
+// Original: core_bmppuzzl.cpp_activatePuzzle_FUN_004119a0
+// Address: 004119a0
+void __cdecl activatePuzzle(CPuzzle *puzzle,int activate);
+
+// Original: core_bmppuzzl.cpp_resetAllPuzzles_FUN_004119e0
+// Address: 004119e0
+void __cdecl resetAllPuzzles(void);
+
+// Original: core_bmppuzzl.cpp_restorePuzzleGraphics_FUN_00411a10
+// Address: 00411a10
+void __cdecl restorePuzzleGraphics(void);
+
+// Original: core_bmppuzzl.cpp_releasePuzzleGraphics_FUN_00411a40
+// Address: 00411a40
+void __cdecl releasePuzzleGraphics(void);
+
+// Original: core_bmppuzzl.cpp_processActivePuzzle_FUN_00411a90
+// Address: 00411a90
+void __cdecl processActivePuzzle(void);
+
+// Original: core_bmppuzzl.cpp_CAudioRecPuzzle_ctor_FUN_00411b50
+// Address: 00411b50
+CAudioRecPuzzle * __cdecl CAudioRecPuzzle::ctor(CAudioRecPuzzle *this_ptr);
+
+// Original: core_bmppuzzl.cpp_CAudioRecPuzzle_dtor_FUN_00411bb0
+// Address: 00411bb0
+CAudioRecPuzzle * __cdecl CAudioRecPuzzle::dtor(CAudioRecPuzzle *this_ptr,uint flags);
+
+// Original: core_bmppuzzl.cpp_CAudioRecPuzzle_reset_FUN_00411c30
+// Address: 00411c30
+void __cdecl CAudioRecPuzzle::reset(CAudioRecPuzzle *this_ptr);
+
+// Original: core_bmppuzzl.cpp_CAudioRecPuzzle_restoreGraphics_FUN_00411d60
+// Address: 00411d60
+void __cdecl CAudioRecPuzzle::restoreGraphics(CAudioRecPuzzle *this_ptr);
+
+// Original: core_bmppuzzl.cpp_CAudioRecPuzzle_load_FUN_00411d70
+// Address: 00411d70
+void __cdecl CAudioRecPuzzle::load(CAudioRecPuzzle *this_ptr,int activate);
+
+// Original: core_bmppuzzl.cpp_CAudioRecPuzzle_addButton_FUN_00412320
 // Address: 00412320
-void FUN_00412320(int param_1,int param_2,char *param_3,int param_4,int param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9);
+void __cdecl CAudioRecPuzzle::addButton(CAudioRecPuzzle *this_ptr,int index,char *filename,int width,int height,int enabled,int x,int y,int visible);
+
+// Original: core_bmppuzzl.cpp_CAudioRecPuzzle_render_FUN_004123c0
+// Address: 004123c0
+void __cdecl CAudioRecPuzzle::render(CAudioRecPuzzle *this_ptr);
+
+// Original: core_bmppuzzl.cpp_CAudioRecPuzzle_process_FUN_00412530
+// Address: 00412530
+void __cdecl CAudioRecPuzzle::process(CAudioRecPuzzle *this_ptr,float delta_time);
+
+// Original: core_bmppuzzl.cpp_CAudioRecPuzzle_isButtonHovered_FUN_004129f0
+// Address: 004129f0
+int __cdecl CAudioRecPuzzle::isButtonHovered(CAudioRecPuzzle *this_ptr,int button);
+
+// Original: core_bmppuzzl.cpp_FUN_00412a50
+// Address: 00412a50
+void __cdecl FUN_00412a50(CAudioRecPuzzle *this_ptr);
+
+// Original: core_bmppuzzl.cpp_CAudioRecPuzzle_moveTransportSwitch_FUN_00412a60
+// Address: 00412a60
+void __cdecl CAudioRecPuzzle::moveTransportSwitch(CAudioRecPuzzle *this_ptr);
+
+// Original: core_bmppuzzl.cpp_CAudioRecPuzzle_turnKnob_FUN_00412b00
+// Address: 00412b00
+void __cdecl CAudioRecPuzzle::turnKnob(CAudioRecPuzzle *this_ptr,int knob);
+
+// Original: core_bmppuzzl.cpp_CAudioRecPuzzle_hitTestButtons_FUN_00412bc0
+// Address: 00412bc0
+int __cdecl CAudioRecPuzzle::hitTestButtons(CAudioRecPuzzle *this_ptr,int x,int y);
+
+// Original: core_bmppuzzl.cpp_CAudioRecPuzzle_onMouse_FUN_00412c30
+// Address: 00412c30
+void __cdecl CAudioRecPuzzle::onMouse(CAudioRecPuzzle *this_ptr,int x,int y,int button,int pressed);
+
+// Original: core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00412c50
+// Address: 00412c50
+void __cdecl CAudioRecPuzzle::renderReel(CAudioRecPuzzle *this_ptr,int x,int y,float angle,int draw_reel);
+
+// Original: core_bmppuzzl.cpp_CAudioRecPuzzle_playClip_FUN_00412ee0
+// Address: 00412ee0
+void __cdecl CAudioRecPuzzle::playClip(CAudioRecPuzzle *this_ptr,int knob0,int knob1,int knob2,int speed,int transport_state);
+
+// Original: core_bmppuzzl.cpp_CAudioRecPuzzle_getKnob0Position_FUN_004131b0
+// Address: 004131b0
+int __cdecl CAudioRecPuzzle::getKnob0Position(CAudioRecPuzzle *this_ptr);
+
+// Original: core_bmppuzzl.cpp_CAudioRecPuzzle_getKnob1Position_FUN_004131c0
+// Address: 004131c0
+int __cdecl CAudioRecPuzzle::getKnob1Position(CAudioRecPuzzle *this_ptr);
+
+// Original: core_bmppuzzl.cpp_CAudioRecPuzzle_getKnob2Position_FUN_004131d0
+// Address: 004131d0
+int __cdecl CAudioRecPuzzle::getKnob2Position(CAudioRecPuzzle *this_ptr);
+
+// Original: core_bmppuzzl.cpp_CAudioRecPuzzle_getSpeedSetting_FUN_004131e0
+// Address: 004131e0
+int __cdecl CAudioRecPuzzle::getSpeedSetting(CAudioRecPuzzle *this_ptr);
+
+// Original: core_bmppuzzl.cpp_CAudioRecPuzzle_getTransportState_FUN_004131f0
+// Address: 004131f0
+int __cdecl CAudioRecPuzzle::getTransportState(CAudioRecPuzzle *this_ptr);
+
+// Original: core_bmppuzzl.cpp_CChemPuzzle_ctor_FUN_00413200
+// Address: 00413200
+CChemPuzzle * __cdecl CChemPuzzle::ctor(CChemPuzzle *this_ptr);
+
+// Original: core_bmppuzzl.cpp_CChemPuzzle_dtor_FUN_00413240
+// Address: 00413240
+CChemPuzzle * __cdecl CChemPuzzle::dtor(CChemPuzzle *this_ptr,uint flags);
+
+// Original: core_bmppuzzl.cpp_CChemPuzzle_reset_FUN_004132c0
+// Address: 004132c0
+int __cdecl CChemPuzzle::reset(CChemPuzzle *this_ptr);
+
+// Original: core_bmppuzzl.cpp_CChemPuzzle_restoreGraphics_FUN_004133b0
+// Address: 004133b0
+void __cdecl CChemPuzzle::restoreGraphics(CChemPuzzle *this_ptr);
+
+// Original: core_bmppuzzl.cpp_CChemPuzzle_load_FUN_004133c0
+// Address: 004133c0
+void __cdecl CChemPuzzle::load(CChemPuzzle *this_ptr,int activate);
+
+// Original: core_bmppuzzl.cpp_CChemPuzzle_addButton_FUN_00413cd0
+// Address: 00413cd0
+void __cdecl CChemPuzzle::addButton(CChemPuzzle *this_ptr,int index,char *filename,int width,int height,int enabled,int x,int y,int visible);
+
+// Original: core_bmppuzzl.cpp_CChemPuzzle_render_FUN_00413d50
+// Address: 00413d50
+void __cdecl CChemPuzzle::render(CChemPuzzle *this_ptr);
+
+// Original: core_bmppuzzl.cpp_CChemPuzzle_process_FUN_00413e30
+// Address: 00413e30
+void __cdecl CChemPuzzle::process(CChemPuzzle *this_ptr,float delta_time);
+
+// Original: core_bmppuzzl.cpp_CChemPuzzle_isButtonHovered_FUN_00414330
+// Address: 00414330
+int __cdecl CChemPuzzle::isButtonHovered(CChemPuzzle *this_ptr,int button);
+
+// Original: core_bmppuzzl.cpp_CChemPuzzle_hitTestButtons_FUN_004143a0
+// Address: 004143a0
+int __cdecl CChemPuzzle::hitTestButtons(CChemPuzzle *this_ptr,int x,int y);
+
+// Original: core_bmppuzzl.cpp_CChemPuzzle_onMouse_FUN_00414420
+// Address: 00414420
+void __cdecl CChemPuzzle::onMouse(CChemPuzzle *this_ptr,int x,int y,int button,int pressed);
+
+// Original: core_bmppuzzl.cpp_CAudioRecPuzzle_getName_FUN_00414440
+// Address: 00414440
+char * __cdecl CAudioRecPuzzle::getName(CAudioRecPuzzle *this_ptr);
+
+// Original: core_bmppuzzl.cpp_CChemPuzzle_getName_FUN_00414450
+// Address: 00414450
+char * __cdecl CChemPuzzle::getName(CChemPuzzle *this_ptr);
+
+// Original: core_bmppuzzl.cpp_SButtonStruct_ctorChem_FUN_00414460
+// Address: 00414460
+SButtonStruct * __cdecl SButtonStruct::ctorChem(SButtonStruct *this_ptr);
+
+// Original: core_bmppuzzl.cpp_SButtonStruct_dtorChem_FUN_00414470
+// Address: 00414470
+SButtonStruct * __cdecl SButtonStruct::dtorChem(SButtonStruct *this_ptr,uint flags);
+
+// Original: core_bmppuzzl.cpp_SButtonStruct_ctor_FUN_00414480
+// Address: 00414480
+SButtonStruct * __cdecl SButtonStruct::ctor(SButtonStruct *this_ptr);
+
+// Original: core_bmppuzzl.cpp_SButtonStruct_dtor_FUN_00414490
+// Address: 00414490
+SButtonStruct * __cdecl SButtonStruct::dtor(SButtonStruct *this_ptr,uint flags);
+
+// Original: core_bmppuzzl.cpp_SButtonStruct_arrdtor50Chem_FUN_004144a0
+// Address: 004144a0
+SButtonStruct * __cdecl SButtonStruct::arrdtor50Chem(SButtonStruct *this_ptr,uint flags);
+
+// Original: core_bmppuzzl.cpp_SButtonStruct_arrdtor50_FUN_004144c0
+// Address: 004144c0
+SButtonStruct * __cdecl SButtonStruct::arrdtor50(SButtonStruct *this_ptr,uint flags);

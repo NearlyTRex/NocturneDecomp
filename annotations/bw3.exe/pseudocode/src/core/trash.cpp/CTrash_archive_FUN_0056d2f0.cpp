@@ -9,9 +9,8 @@
 void __cdecl core_trash_cpp_CTrash_archive_FUN_0056d2f0(CTrash *this_ptr)
 
 {
-  core_actor_cpp_CDemonActor_archive_FUN_0040c280((CDemonActor *)this_ptr);
-  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b9b0
-            (&this_ptr->field_0x158,"modelName");
-  core_actor_cpp_archiveVector_FUN_0040b400(&this_ptr->field_0x2d4,"homePos");
+  core_actor_cpp_CDemonActor_archive_FUN_0040c280(&this_ptr->base);
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b9b0(&this_ptr->model,"modelName");
+  core_actor_cpp_archiveVector_FUN_0040b400(&this_ptr->home_pos,"homePos");
   return;
 }

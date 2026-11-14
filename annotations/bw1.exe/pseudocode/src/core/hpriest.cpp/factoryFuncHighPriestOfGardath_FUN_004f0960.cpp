@@ -1,20 +1,20 @@
 // Name: core_hpriest.cpp_factoryFuncHighPriestOfGardath_FUN_004f0960
 // Address: 004f0960
 // Address Range: [[004f0960, 004f097b]]
-// Convention: unknown
-// Signature: void core_hpriest_cpp_factoryFuncHighPriestOfGardath_FUN_004f0960(void)
+// Convention: __cdecl
+// Signature: CHighPriestOfGardath * __cdecl core_hpriest_cpp_factoryFuncHighPriestOfGardath_FUN_004f0960(void)
 
 #include "nocturne.h"
 
-void core_hpriest_cpp_factoryFuncHighPriestOfGardath_FUN_004f0960(void)
+CHighPriestOfGardath * __cdecl core_hpriest_cpp_factoryFuncHighPriestOfGardath_FUN_004f0960(void)
 
 {
-  CHighPriestOfGardath *this_ptr;
+  CHighPriestOfGardath *pCVar1;
   
-  this_ptr = (CHighPriestOfGardath *)FUN_005c0f32(0x1fb1c);
-  if (this_ptr == (CHighPriestOfGardath *)0x0) {
-    return;
+  pCVar1 = (CHighPriestOfGardath *)operator_new(0x1fb1c);
+  if (pCVar1 == (CHighPriestOfGardath *)0x0) {
+    return (CHighPriestOfGardath *)0x0;
   }
-  core_hpriest_cpp_CHighPriestOfGardath_ctor_FUN_004f0990(this_ptr);
-  return;
+  pCVar1 = core_hpriest_cpp_CHighPriestOfGardath_ctor_FUN_004f0990(pCVar1);
+  return pCVar1;
 }

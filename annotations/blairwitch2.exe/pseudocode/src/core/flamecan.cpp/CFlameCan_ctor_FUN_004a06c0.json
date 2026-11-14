@@ -2,19 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 186,
+    "complexity_score": 132,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 31,
-    "suspect_count": 14,
+    "pseudocode_lines": 42,
+    "suspect_count": 7,
     "suspect_types": [
       "negative_offset",
-      "unnamed_field",
+      "pointer_cast",
+      "pointer_truncation",
       "unrolled_strcpy"
     ],
-    "total_lines": 84
+    "total_lines": 95
   },
   "cross_references": [
     {
@@ -104,6 +105,32 @@
     },
     "pcode_op_count": 184
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004b8f70",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a6f00",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004cb160",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0048e370",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -122,116 +149,60 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x6c",
-      "severity": "mild",
-      "text": "pCVar4 = core_flame_cpp_CFlame_ctor_FUN_0049f180((CFlame *)&pCVar3[1].field_0x6c);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 17,
+      "line": 18,
       "match": "pCVar4[-1].",
       "severity": "mild",
-      "text": "*(byte **)&pCVar4[-1].field_0x214 = &g_CFlameCanVTable;",
+      "text": "pCVar4[-1].base.particle_systems[2].standalone = (int)&g_CFlameCanVTable;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x214",
-      "severity": "mild",
-      "text": "*(byte **)&pCVar4[-1].field_0x214 = &g_CFlameCanVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 19,
-      "match": "pCVar4[-1].",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&pCVar4[-1].field_0x218,\"question.kfm\");",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x218",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&pCVar4[-1].field_0x218,\"question.kfm\");",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 20,
       "match": "pCVar4[-1].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar4[-1].field_0x394 = 0;",
+      "text": "((CKeyFramedModelInstance *)&pCVar4[-1].base.particle_systems[2].particles,",
       "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x394",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4[-1].field_0x394 = 0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 21,
+      "line": 26,
       "match": "pCVar4[-1].",
       "severity": "mild",
-      "text": "pcVar6 = &pCVar4[-1].field_0x39c;",
+      "text": "pcVar6 = pCVar4[-1].off_event + 0x24;",
       "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x39c",
-      "severity": "mild",
-      "text": "pcVar6 = &pCVar4[-1].field_0x39c;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 22,
-      "match": "pCVar4[-1].",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4[-1].field_0x398 = 0x41200000;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x398",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4[-1].field_0x398 = 0x41200000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 33,
+      "line": 44,
       "match": "pCVar4[-2].",
       "severity": "mild",
-      "text": "return (CFlameCan *)&pCVar4[-2].field_0x364;",
+      "text": "return (CFlameCan *)(pCVar4[-2].on_event + 0x50);",
       "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x364",
-      "severity": "mild",
-      "text": "return (CFlameCan *)&pCVar4[-2].field_0x364;",
-      "type": "unnamed_field"
+      "description": "Pointer value `&g_CFlameCanVTable` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 18,
+      "match": "(int)&g_CFlameCanVTable",
+      "severity": "moderate",
+      "text": "pCVar4[-1].base.particle_systems[2].standalone = (int)&g_CFlameCanVTable;",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 23,
+      "line": 31,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 16,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "((CFlame *)(pCVar3[1].part_visibility_flags + 0x1b));",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

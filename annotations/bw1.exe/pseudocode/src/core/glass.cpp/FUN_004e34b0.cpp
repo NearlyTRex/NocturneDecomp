@@ -13,9 +13,10 @@ void core_glass_cpp_FUN_004e34b0(CDemonActor *param_1)
 
 {
   char cVar1;
-  char *pcVar2;
+  int iVar2;
   char *pcVar3;
-  byte bVar4;
+  char *pcVar4;
+  byte bVar5;
   float afStackY_10c4 [993];
   float local_12c;
   uint local_128;
@@ -81,108 +82,109 @@ void core_glass_cpp_FUN_004e34b0(CDemonActor *param_1)
   uint local_20;
   float local_1c;
   
-  bVar4 = 0;
-  if (*(int *)&param_1[1].field_0x28 == 0) {
-    *(uint *)&param_1[1].field_0x28 = 1;
-    if (*(int *)&param_1[1].field_0x90 != 0) {
-      pcVar2 = ">7YEARS.RAW" + 1;
-      pcVar3 = &param_1[1].field_0x14;
-      *(uint *)&param_1[1].field_0x24 = 0xffff;
+  bVar5 = 0;
+  if (param_1[1].location.position.z == 0.0) {
+    iVar2 = *(int *)(param_1[1].create_event + 0x18);
+    param_1[1].location.position.z = 1.4013e-45;
+    if (iVar2 != 0) {
+      pcVar3 = ">7YEARS.RAW" + 1;
+      pcVar4 = param_1[1].actor_name + 0x14;
+      param_1[1].location.position.y = 9.18341e-41;
       do {
-        cVar1 = *pcVar2;
-        *pcVar3 = cVar1;
+        cVar1 = *pcVar3;
+        *pcVar4 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar2[1];
-        pcVar2 = pcVar2 + 2;
-        pcVar3[1] = cVar1;
+        cVar1 = pcVar3[1];
         pcVar3 = pcVar3 + 2;
+        pcVar4[1] = cVar1;
+        pcVar4 = pcVar4 + 2;
       } while (cVar1 != '\0');
-      core_set_cpp_FUN_00555730(g_CDemonSetPtr);
+      core_set_cpp_CDemonSet_markMirrorCameraDirty_FUN_00555730(g_CDemonSetPtr);
     }
     __arrinit(&stack0xfffffed4,4,&g_CVectorTypeInfo);
-    local_70 = *(float *)(param_1 + 1) * (float)_DAT_005e3fd4;
+    local_70 = *(float *)param_1[1].actor_name * (float)_DAT_005e3fd4;
     local_6c = 0.0;
     local_68 = 0;
-    core_dirmat_cpp_FUN_0045f690(&param_1->field_0x3c,&stack0xffffff90);
+    core_dirmat_cpp_FUN_0045f690(&param_1->orient_matrix,&stack0xffffff90);
     local_c4 = local_94;
-    *(uint *)((int)&stack0xffffff40 + (uint)bVar4 * -8) =
-         *(uint *)(&stack0xffffff70 + (uint)bVar4 * -8);
-    *(uint *)((int)&stack0xffffff44 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-         *(uint *)(&stack0xffffff74 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-    local_ac = *(float *)&param_1->field_0x20 + local_c4;
-    local_a8 = *(float *)&param_1->field_0x24 + local_c0;
-    local_a4 = *(float *)&param_1->field_0x28 + local_bc;
+    *(uint *)((int)&stack0xffffff40 + (uint)bVar5 * -8) =
+         *(uint *)(&stack0xffffff70 + (uint)bVar5 * -8);
+    *(uint *)((int)&stack0xffffff44 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
+         *(uint *)(&stack0xffffff74 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+    local_ac = (param_1->location).position.x + local_c4;
+    local_a8 = (param_1->location).position.y + local_c0;
+    local_a4 = (param_1->location).position.z + local_bc;
     local_34 = local_ac;
-    (&stack0xffffffd0)[(uint)bVar4 * 0xfffffffe] =
-         *(uint *)((int)&stack0xffffff58 + (uint)bVar4 * -8);
-    *(uint *)((int)&stack0xffffffd4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-         *(uint *)((int)&stack0xffffff5c + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+    (&stack0xffffffd0)[(uint)bVar5 * 0xfffffffe] =
+         *(uint *)((int)&stack0xffffff58 + (uint)bVar5 * -8);
+    *(uint *)((int)&stack0xffffffd4 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
+         *(uint *)((int)&stack0xffffff5c + (uint)bVar5 * -8 + (uint)bVar5 * -8);
     if (&stack0xfffffed4 != &stack0xffffffcc) {
       local_12c = local_34;
       local_128 = local_30;
       local_124 = local_2c;
     }
-    local_6c = local_6c + *(float *)&param_1[1].field_0x4;
-    core_dirmat_cpp_FUN_0045f690(&param_1->field_0x3c,&stack0xffffff90);
+    local_6c = local_6c + *(float *)(param_1[1].actor_name + 4);
+    core_dirmat_cpp_FUN_0045f690(&param_1->orient_matrix,&stack0xffffff90);
     local_58 = local_88;
-    *(uint *)((int)&stack0xffffffac + (uint)bVar4 * -8) =
-         *(uint *)(&stack0xffffff7c + (uint)bVar4 * -8);
-    *(uint *)((int)&stack0xffffffb0 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-         *(uint *)(&stack0xffffff80 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-    local_64 = *(float *)&param_1->field_0x20 + local_58;
-    local_60 = *(float *)&param_1->field_0x24 + local_54;
-    local_5c = *(float *)&param_1->field_0x28 + local_50;
+    *(uint *)((int)&stack0xffffffac + (uint)bVar5 * -8) =
+         *(uint *)(&stack0xffffff7c + (uint)bVar5 * -8);
+    *(uint *)((int)&stack0xffffffb0 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
+         *(uint *)(&stack0xffffff80 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+    local_64 = (param_1->location).position.x + local_58;
+    local_60 = (param_1->location).position.y + local_54;
+    local_5c = (param_1->location).position.z + local_50;
     local_d0 = local_64;
-    (&stack0xffffff34)[(uint)bVar4 * 0xfffffffe] = (&stack0xffffffa0)[(uint)bVar4 * 0xfffffffe];
-    *(uint *)((int)&stack0xffffff38 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-         *(uint *)((int)&stack0xffffffa4 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+    (&stack0xffffff34)[(uint)bVar5 * 0xfffffffe] = (&stack0xffffffa0)[(uint)bVar5 * 0xfffffffe];
+    *(uint *)((int)&stack0xffffff38 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
+         *(uint *)((int)&stack0xffffffa4 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
     if (&stack0xfffffee0 != &stack0xffffff30) {
       local_120 = local_d0;
       local_11c = local_cc;
       local_118 = local_c8;
     }
     local_70 = -local_70;
-    core_dirmat_cpp_FUN_0045f690(&param_1->field_0x3c,&stack0xffffff90);
+    core_dirmat_cpp_FUN_0045f690(&param_1->orient_matrix,&stack0xffffff90);
     local_dc = local_40;
-    (&stack0xffffff28)[(uint)bVar4 * 0xfffffffe] =
-         (float)*(uint *)(&stack0xffffffc4 + (uint)bVar4 * -8);
-    *(uint *)((int)&stack0xffffff2c + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-         *(uint *)(&stack0xffffffc8 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-    local_b8 = *(float *)&param_1->field_0x20 + local_dc;
-    local_b4 = *(float *)&param_1->field_0x24 + local_d8;
-    local_b0 = *(float *)&param_1->field_0x28 + local_d4;
+    (&stack0xffffff28)[(uint)bVar5 * 0xfffffffe] =
+         (float)*(uint *)(&stack0xffffffc4 + (uint)bVar5 * -8);
+    *(uint *)((int)&stack0xffffff2c + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
+         *(uint *)(&stack0xffffffc8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+    local_b8 = (param_1->location).position.x + local_dc;
+    local_b4 = (param_1->location).position.y + local_d8;
+    local_b0 = (param_1->location).position.z + local_d4;
     local_a0 = local_b8;
-    (&stack0xffffff64)[(uint)bVar4 * 0xfffffffe] =
-         (float)*(uint *)((int)&stack0xffffff4c + (uint)bVar4 * -8);
-    *(uint *)((int)&stack0xffffff68 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-         *(uint *)((int)&stack0xffffff50 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+    (&stack0xffffff64)[(uint)bVar5 * 0xfffffffe] =
+         (float)*(uint *)((int)&stack0xffffff4c + (uint)bVar5 * -8);
+    *(uint *)((int)&stack0xffffff68 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
+         *(uint *)((int)&stack0xffffff50 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
     if (&stack0xfffffeec != &stack0xffffff60) {
       local_114 = local_a0;
       local_110 = local_9c;
       local_10c = local_98;
     }
     local_6c = 0.0;
-    core_dirmat_cpp_FUN_0045f690(&param_1->field_0x3c,&stack0xffffff90);
+    core_dirmat_cpp_FUN_0045f690(&param_1->orient_matrix,&stack0xffffff90);
     local_4c = local_1c;
-    *(uint *)((int)&stack0xffffffb8 + (uint)bVar4 * -8) =
-         *(uint *)(&stack0xffffffe8 + (uint)bVar4 * -8);
-    *(uint *)((int)&stack0xffffffbc + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-         *(uint *)(&stack0xffffffec + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-    local_7c = *(float *)&param_1->field_0x20 + local_4c;
-    local_78 = *(float *)&param_1->field_0x24 + local_48;
-    local_74 = *(float *)&param_1->field_0x28 + local_44;
+    *(uint *)((int)&stack0xffffffb8 + (uint)bVar5 * -8) =
+         *(uint *)(&stack0xffffffe8 + (uint)bVar5 * -8);
+    *(uint *)((int)&stack0xffffffbc + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
+         *(uint *)(&stack0xffffffec + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+    local_7c = (param_1->location).position.x + local_4c;
+    local_78 = (param_1->location).position.y + local_48;
+    local_74 = (param_1->location).position.z + local_44;
     local_28 = local_7c;
-    (&stack0xffffffdc)[(uint)bVar4 * 0xfffffffe] =
-         (float)*(uint *)((int)&stack0xffffff88 + (uint)bVar4 * -8);
-    *(uint *)((int)&stack0xffffffe0 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-         *(uint *)((int)&stack0xffffff8c + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+    (&stack0xffffffdc)[(uint)bVar5 * 0xfffffffe] =
+         (float)*(uint *)((int)&stack0xffffff88 + (uint)bVar5 * -8);
+    *(uint *)((int)&stack0xffffffe0 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
+         *(uint *)((int)&stack0xffffff8c + (uint)bVar5 * -8 + (uint)bVar5 * -8);
     if (&stack0xfffffef8 != &stack0xffffffd8) {
       local_108 = local_28;
       local_104 = local_24;
       local_100 = local_20;
     }
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-              (DAT_00612560,(SMRGLTextureBasic *)&param_1[1].field_0xc);
+              (DAT_00612560,(SMRGLTextureBasic *)(param_1[1].actor_name + 0xc));
     if (DAT_0061b4a8 == 0x40) {
       local_fc = 0xf80000;
       local_e8 = 0x80000;
@@ -204,10 +206,13 @@ void core_glass_cpp_FUN_004e34b0(CDemonActor *param_1)
       local_ec = 0x20000;
     }
     core_glass_cpp_FUN_004e2320(param_1,&stack0xfffffed4,&stack0xffffff14,&stack0xffffff04,0);
-    (**(code **)(*(int *)&param_1->field_0x154 + 0x2c))(param_1,"glass-1.wav@2.0");
-    if (*(int *)&param_1[2].field_0xc0 != 0) {
-      core_set_cpp_FUN_0054f060(g_CDemonSetPtr,param_1);
-      *(uint *)&param_1[8].field_0x7c = 1;
+    (*((param_1->vtable)._ub)->playSound)(param_1,"glass-1.wav@2.0");
+    if (*(int *)(param_1[2].create_event + 0x48) != 0) {
+      core_set_cpp_CDemonSet_snapshotActorTransformState_FUN_0054f060(g_CDemonSetPtr,param_1);
+      param_1[8].create_event[4] = '\x01';
+      param_1[8].create_event[5] = '\0';
+      param_1[8].create_event[6] = '\0';
+      param_1[8].create_event[7] = '\0';
       return;
     }
   }

@@ -44,13 +44,23 @@ struct SPackageManifest {
     bool operator==(const SPackageManifest &) const = default;
 };
 
-// A file a known release shipped: a POD by its name, or a loose file by its path in the install.
+// A POD a known release shipped, by its name.
 struct SReleaseFile {
     std::string name;
     std::uint64_t size = 0;
     std::string xxh3;
 
     bool operator==(const SReleaseFile &) const = default;
+};
+
+// Any other file a known release shipped, by its '/'-separated path in the install. A file the
+// game rewrites, such as its INI, has no size or hash, since a played install no longer matches.
+struct SReleaseLooseFile {
+    std::string path;
+    std::optional<std::uint64_t> size;
+    std::optional<std::string> xxh3;
+
+    bool operator==(const SReleaseLooseFile &) const = default;
 };
 
 // A release of the game, by the PODs it shipped. Its id is unique in the catalogue, and stays the
@@ -63,7 +73,7 @@ struct SRelease {
     std::vector<std::string> required;
     std::vector<SReleaseFile> pods;
     // Everything else the install had, by '/'-separated path: the executable, DLLs, loose data.
-    std::vector<SReleaseFile> files;
+    std::vector<SReleaseLooseFile> files;
     // From the game's file, for the base manifest written from the release.
     SGameContent content;
 

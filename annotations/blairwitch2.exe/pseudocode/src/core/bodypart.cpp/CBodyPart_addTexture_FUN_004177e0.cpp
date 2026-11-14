@@ -17,8 +17,8 @@ int __cdecl core_bodypart_cpp_CBodyPart_addTexture_FUN_004177e0(CBodyPart *this_
   char *pcVar4;
   
   iVar3 = 0;
-  if (0 < *(int *)&this_ptr->field_0x2e8) {
-    pcVar4 = &this_ptr->field_0x2f4;
+  if (0 < this_ptr->texture_count) {
+    pcVar4 = this_ptr->textures[0].texture_name;
     do {
       iVar2 = _stricmp(pcVar4,texture_name);
       if (iVar2 == 0) {
@@ -26,16 +26,15 @@ int __cdecl core_bodypart_cpp_CBodyPart_addTexture_FUN_004177e0(CBodyPart *this_
       }
       iVar3 = iVar3 + 1;
       pcVar4 = pcVar4 + 0x18;
-    } while (iVar3 < *(int *)&this_ptr->field_0x2e8);
+    } while (iVar3 < this_ptr->texture_count);
   }
-  if (9 < *(int *)&this_ptr->field_0x2e8) {
+  if (9 < this_ptr->texture_count) {
     _DAT_01d046a0 = "..\\core\\bodypart.cpp";
     _DAT_01d046a4 = 0x47a;
     core_main_c_FUN_004e4500("Too many body part textures!");
   }
-  memset
-            (&this_ptr->field_0x2ec + *(int *)&this_ptr->field_0x2e8 * 0x18,0,0x18);
-  pcVar4 = &this_ptr->field_0x2f4 + *(int *)&this_ptr->field_0x2e8 * 0x18;
+  memset(this_ptr->textures + this_ptr->texture_count,0,0x18);
+  pcVar4 = this_ptr->textures[this_ptr->texture_count].texture_name;
   do {
     cVar1 = *texture_name;
     *pcVar4 = cVar1;
@@ -45,7 +44,7 @@ int __cdecl core_bodypart_cpp_CBodyPart_addTexture_FUN_004177e0(CBodyPart *this_
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  iVar3 = *(int *)&this_ptr->field_0x2e8;
-  *(int *)&this_ptr->field_0x2e8 = iVar3 + 1;
+  iVar3 = this_ptr->texture_count;
+  this_ptr->texture_count = iVar3 + 1;
   return iVar3;
 }

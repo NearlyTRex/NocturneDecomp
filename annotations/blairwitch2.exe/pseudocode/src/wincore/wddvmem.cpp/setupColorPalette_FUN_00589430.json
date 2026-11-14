@@ -1,0 +1,346 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 104,
+    "complexity_score": 181,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 15,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 46,
+    "suspect_count": 12,
+    "suspect_types": [
+      "undefined_data",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 150
+  },
+  "cross_references": [
+    {
+      "addr": "00401010",
+      "from_addr": "0040106f",
+      "name": "engine_2d.c_initGraphicsSystem_FUN_00401010",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00588a50",
+      "from_addr": "00588d90",
+      "name": "wincore_wddvmem.cpp_FUN_00588a50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00589430",
+    "address_range": [
+      [
+        "00589430",
+        "00589557"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_wddvmem.cpp_setupColorPalette_FUN_00589430",
+    "signature": "void __cdecl wincore_wddvmem_cpp_setupColorPalette_FUN_00589430(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "00589270",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_analyzePixelFormat_FUN_00589270"
+    },
+    {
+      "addr": "004d0d10",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004d0d10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ee3b9",
+      "name": "s_wincore_wddvmem_cpp_005ee3b9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ee3d0",
+      "name": "s_setpal_Unable_to_create_005ee3d0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ee3f9",
+      "name": "s_wincore_wddvmem_cpp_005ee3f9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ee410",
+      "name": "s_setpal_Unable_to_set_fro_005ee410",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006141c0",
+      "name": "DAT_006141c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35838",
+      "name": "DAT_01c35838",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35839",
+      "name": "DAT_01c35839",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c3583a",
+      "name": "DAT_01c3583a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c37788",
+      "name": "DAT_01c37788",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bc2c",
+      "name": "DAT_0264bc2c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02661ae0",
+      "name": "DAT_02661ae0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02661ae4",
+      "name": "DAT_02661ae4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02661aec",
+      "name": "DAT_02661aec",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0040106f",
+        "call_type": "direct",
+        "caller": "engine_2d.c_initGraphicsSystem_FUN_00401010",
+        "estimated_params": 1,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00588d90",
+        "call_type": "direct",
+        "caller": "wincore_wddvmem.cpp_FUN_00588a50",
+        "estimated_params": 0,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.869047619047619,
+    "instruction_count": 84,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 5,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CALLIND": 4,
+      "CBRANCH": 7,
+      "COPY": 79,
+      "INT_ADD": 28,
+      "INT_AND": 33,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 31,
+      "INT_LESS": 4,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 15,
+      "INT_SUB": 28,
+      "INT_XOR": 3,
+      "LOAD": 22,
+      "POPCOUNT": 15,
+      "RETURN": 3,
+      "STORE": 28
+    },
+    "pcode_op_count": 325
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005acec0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0057a770",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005ed8f0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "005537e0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_01c35838",
+      "severity": "mild",
+      "text": "(*_DAT_0264bc2c)(&DAT_01c35838,&DAT_01c34910);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_01c34910",
+      "severity": "mild",
+      "text": "(*_DAT_0264bc2c)(&DAT_01c35838,&DAT_01c34910);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 17,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*_DAT_02661aec + 8))(_DAT_02661aec);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_006141c0",
+      "severity": "mild",
+      "text": "if (DAT_006141c0 == 8) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_01c35838",
+      "severity": "mild",
+      "text": "*(byte *)(iVar2 + 0x2661b00) = (&DAT_01c35838)[iVar3];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_01c35839",
+      "severity": "mild",
+      "text": "*(byte *)(iVar2 + 0x2661b01) = (&DAT_01c35839)[iVar3];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_01c3583a",
+      "severity": "mild",
+      "text": "*(byte *)(iVar2 + 0x2661b02) = (&DAT_01c3583a)[iVar3];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 32,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar2 = (**(code **)(*_DAT_02661ae0 + 0x14))(_DAT_02661ae0,4,0x2661b00,&DAT_02661aec,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_02661aec",
+      "severity": "mild",
+      "text": "iVar2 = (**(code **)(*_DAT_02661ae0 + 0x14))(_DAT_02661ae0,4,0x2661b00,&DAT_02661aec,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 38,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar2 = (**(code **)(*_DAT_02661ae4 + 0x7c))(_DAT_02661ae4,_DAT_02661aec);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_006141c0",
+      "severity": "mild",
+      "text": "if (DAT_006141c0 < 9) {",
+      "type": "undefined_data"
+    }
+  ]
+}

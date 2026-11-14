@@ -1,0 +1,350 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 161,
+    "complexity_score": 165,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 13,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 45,
+    "suspect_count": 11,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "undefined_data"
+    ],
+    "total_lines": 206
+  },
+  "cross_references": [
+    {
+      "addr": "004d27b0",
+      "from_addr": "004d2a66",
+      "name": "core_hero.cpp_CHero_archive_FUN_004d27b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004dc560",
+    "address_range": [
+      [
+        "004dc560",
+        "004dc6f8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inv.cpp_CInventory_save_FUN_004dc560",
+    "signature": "void __cdecl core_inv_cpp_CInventory_save_FUN_004dc560(CInventory *this_ptr,_FILE *file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040afa0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_adjustIndentationLevel_FUN_0040afa0"
+    },
+    {
+      "addr": "0040aff0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_save_FUN_0040aff0"
+    },
+    {
+      "addr": "004dc700",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_saveItems_FUN_004dc700"
+    },
+    {
+      "addr": "005a3140",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a3140"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c63d3",
+      "name": "s_s_Inventory_005c63d3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c63e5",
+      "name": "s_s_fileVersion_005c63e5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c63f7",
+      "name": "s_s_d_005c63f7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c63fd",
+      "name": "s_s_itemCount_005c63fd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c640d",
+      "name": "s_s_d_005c640d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c6413",
+      "name": "s_s_currentWeapon_005c6413",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c6427",
+      "name": "s_s_d_005c6427",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c642d",
+      "name": "s_s_battery_strength_005c642d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c6444",
+      "name": "s_s_f_005c6444",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c644a",
+      "name": "s_s_actor_name_list_005c644a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c6460",
+      "name": "s_s_actor_data_list_005c6460",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c6476",
+      "name": "s_s_End_inventory_005c6476",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f0990",
+      "name": "DAT_005f0990",
+      "type": "undefined1",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004d2a66",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_CHero_archive_FUN_004d27b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.360902255639098,
+    "instruction_count": 133,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 16,
+      "CBRANCH": 5,
+      "COPY": 111,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 42,
+      "INT_AND": 62,
+      "INT_CARRY": 19,
+      "INT_EQUAL": 60,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 21,
+      "INT_SLESS": 30,
+      "INT_SUB": 70,
+      "INT_XOR": 2,
+      "LOAD": 21,
+      "POPCOUNT": 30,
+      "RETURN": 1,
+      "STORE": 70
+    },
+    "pcode_op_count": 580
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004dc2c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9738
+    },
+    "bw1.exe": {
+      "addr": "004f95b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004ff210",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004c0fa0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInventory *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_005f0990",
+      "severity": "mild",
+      "text": "FUN_005a3140(file_handle,\"%s// fileVersion\\n\",&DAT_005f0990);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_005f0990",
+      "severity": "mild",
+      "text": "FUN_005a3140(file_handle,\"%s%d\\n\",&DAT_005f0990,this_ptr->save_version);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_005f0990",
+      "severity": "mild",
+      "text": "FUN_005a3140(file_handle,\"%s// itemCount\\n\",&DAT_005f0990);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_005f0990",
+      "severity": "mild",
+      "text": "FUN_005a3140(file_handle,\"%s%d\\n\",&DAT_005f0990,this_ptr->item_count);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_005f0990",
+      "severity": "mild",
+      "text": "FUN_005a3140(file_handle,\"%s// currentWeapon\\n\",&DAT_005f0990,iVar3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_005f0990",
+      "severity": "mild",
+      "text": "FUN_005a3140(file_handle,\"%s%d\\n\",&DAT_005f0990,iVar3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_005f0990",
+      "severity": "mild",
+      "text": "FUN_005a3140(file_handle,\"%s// battery strength\\n\",&DAT_005f0990);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_005f0990",
+      "severity": "mild",
+      "text": "(file_handle,\"%s%f\\n\",&DAT_005f0990,(double)this_ptr->battery_charge);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_005f0990",
+      "severity": "mild",
+      "text": "FUN_005a3140(file_handle,\"%s} // End inventory\\n\",&DAT_005f0990);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar2->owner`). Replace `pCVar2->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 24,
+      "match": "pCVar2 = (T *)&pCVar2->FIELD",
+      "severity": "moderate",
+      "text": "pCVar2 = (CInventory *)&pCVar2->owner;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar2->owner`). Replace `pCVar2->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 42,
+      "match": "pCVar2 = (T *)&pCVar2->FIELD",
+      "severity": "moderate",
+      "text": "pCVar2 = (CInventory *)&pCVar2->owner;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

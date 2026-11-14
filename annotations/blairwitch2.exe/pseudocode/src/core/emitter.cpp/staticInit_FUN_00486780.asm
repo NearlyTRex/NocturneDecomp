@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_emitter_cpp_staticInit_FUN_00486780(void)
+; void __cdecl core_emitter_cpp_staticInit_FUN_00486780(void)
 ;
 ;
 ; Called Functions:

@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 31,
+    "complexity_score": 16,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 16,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 54
   },
   "cross_references": [
@@ -108,6 +106,26 @@
     },
     "pcode_op_count": 108
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00428240",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004254d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00427d00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9825
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -131,18 +149,14 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "*(byte ***)&this_ptr->field_0x3c =",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
+      {
+        "class_name": "CCameraView",
+        "offset": 0,
+        "vtable_addr": "005f4024"
+      },
       {
         "class_name": "CCameraView",
         "offset": 8,
@@ -150,6 +164,6 @@
       }
     ],
     "in_vtable": true,
-    "vtable_count": 1
+    "vtable_count": 2
   }
 }

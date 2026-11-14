@@ -1,0 +1,182 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 8,
+    "complexity_score": 6,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 14
+  },
+  "cross_references": [
+    {
+      "addr": "00504f10",
+      "from_addr": "00504fd6",
+      "name": "sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_00504f10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00504e10",
+    "address_range": [
+      [
+        "00504e10",
+        "00504e1f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_CMP3Decoder_readBit_FUN_00504e10",
+    "signature": "uint __cdecl sound_mp3_cpp_CMP3Decoder_readBit_FUN_00504e10(CMP3Decoder *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00504d30",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_readBits_FUN_00504d30"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "00504fd6",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_00504f10",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00504ff3",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_00504f10",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00505010",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_00504f10",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0050502d",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_00504f10",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0050506f",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_00504f10",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00505123",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_00504f10",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0,
+    "instruction_count": 6,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 3,
+      "INT_ADD": 3,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 3,
+      "LOAD": 2,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 24
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00525fe0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004fd8f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0052f250",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004e2dd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMP3Decoder *"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -9,7 +9,7 @@
 void __cdecl core_motion_cpp_CMotionController_clearTweenState_FUN_005039e0(CMotionController *this_ptr)
 
 {
-  *(uint *)&this_ptr->field_0x14 = 0xbf800000;
-  *(uint *)&this_ptr->field_0xc = 0;
+  this_ptr->tween_progress = -1.0;
+  this_ptr->tween_type = MOTION_CMD_NONE;
   return;
 }

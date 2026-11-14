@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 170,
-    "complexity_score": 133,
+    "complexity_score": 128,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 78,
+    "pseudocode_lines": 73,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 248
+    "total_lines": 243
   },
   "cross_references": [
     {
@@ -46,7 +46,7 @@
     {
       "addr": "005b7790",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7790"
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
     },
     {
       "addr": "00554ad0",
@@ -54,14 +54,14 @@
       "name": "sound_snddx.cpp_FUN_00554ad0"
     },
     {
-      "addr": "005541f0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005541f0"
+      "addr": "005549c0",
+      "is_variadic": true,
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005549c0"
     },
     {
-      "addr": "005549c0",
+      "addr": "005541f0",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005549c0"
+      "name": "sound_sndmain.cpp_pollAndMixSfx_FUN_005541f0"
     }
   ],
   "globals": [
@@ -168,6 +168,32 @@
     },
     "pcode_op_count": 742
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005776b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0055a820",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005adff0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00529c10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 36,
     "local_size": 36,
@@ -216,7 +242,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 40,
+      "line": 39,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar1 = (**(code **)(*_DAT_0264a5cc + 0x2c))();",
@@ -224,15 +250,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 56,
-      "match": "(int *)((int)aiStack_60",
+      "line": 53,
+      "match": "(int *)((int)apvStack_60",
       "severity": "moderate",
-      "text": "*(int *)((int)aiStack_60 + iVar3) = iVar5;",
+      "text": "*(int *)((int)apvStack_60 + iVar3) = iVar4;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 68,
+      "line": 65,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar1 = (**(code **)(*_DAT_0264a5cc + 0x4c))",

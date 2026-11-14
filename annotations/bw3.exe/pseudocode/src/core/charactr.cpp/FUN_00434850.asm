@@ -5,22 +5,22 @@
 ;
 ;
 ; XREF[35]:
-;   core_asgaya.cpp_FUN_005a0be0 at 005a0e59
-;   core_baal.cpp_FUN_005968a0 at 00596ab9
-;   core_boneguy.cpp_FUN_004179b0 at 00417e38
-;   core_boneguy.cpp_FUN_00419b40 at 00419fa6
-;   core_carved.cpp_FUN_00425da0 at 00426e36
-;   core_constrct.cpp_FUN_00442a20 at 004433f8
-;   core_cow.cpp_FUN_00445130 at 004451bf
-;   core_demnfolk.cpp_FUN_00455080 at 00455fd1
-;   core_dog.cpp_FUN_004628b0 at 00462987
-;   core_gargoyle.cpp_FUN_004c5350 at 004c541a
+;   core_asgaya.cpp_CAsgaya_process_FUN_005a0be0 at 005a0e59
+;   core_baal.cpp_CBaal_process_FUN_005968a0 at 00596ab9
+;   core_bird.cpp_CBird_process_FUN_0040fb40 at 0040fc60
+;   core_boneguy.cpp_CBaalSkel_process_FUN_00419b40 at 00419fa6
+;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 00417e38
+;   core_carved.cpp_CCarved_process_FUN_00425da0 at 00426e36
+;   core_construc.cpp_CConstruct_process_FUN_00442a20 at 004433f8
+;   core_cow.cpp_CZombieCow_process_FUN_00445130 at 004451bf
+;   core_darkwolf.cpp_CDarkwolf_process_FUN_005989e0 at 00598aac
+;   core_demnfolk.cpp_CDemnfolk_process_FUN_00455080 at 00455fd1
 ;   ... and 25 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_ghost_005b8922
 ;   CGame* g_CGamePtr = 01d2130c
-;   undefined4 g_CGameInstance.field588_0x24c
+;   undefined4 g_CGameInstance.letterbox_mode
 ;
 ; Called Functions:
 ;   crt_string.c__strnicmp_FUN_005a3f90
@@ -35,7 +35,7 @@ section .text
     MOV EBP,ESP                         ; 00434852
     MOV EBX,dword ptr [EBP + 0xc]       ; 00434854
     MOV EAX,[0x005fe9dc]                ; 00434857 | g_CGamePtr
-    CMP dword ptr [EAX + 0x24c],0x0     ; 0043485c | g_CGameInstance.field588_0x24c
+    CMP dword ptr [EAX + 0x24c],0x0     ; 0043485c | g_CGameInstance.letterbox_mode
     JNZ 0x00434891                      ; 00434863
         ;   XREF to: 00434891 (CONDITIONAL_JUMP)  ; LAB_00434891
     FLD float ptr [EBX + 0x252c]        ; 00434865

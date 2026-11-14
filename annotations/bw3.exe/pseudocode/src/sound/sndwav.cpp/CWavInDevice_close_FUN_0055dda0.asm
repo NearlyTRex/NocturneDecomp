@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   GlobalFree
-;   sound_sndmain.cpp_FUN_0055a560
+;   sound_sndmain.cpp_logSoundError_FUN_0055a560
 ;   waveInClose
 ;
 ; *****************************************************************************
@@ -85,8 +85,8 @@ section .text
     JZ 0x0055de32                       ; 0055de21
         ;   XREF to: 0055de32 (CONDITIONAL_JUMP)  ; LAB_0055de32
     PUSH 0x5d507b                       ; 0055de23 | = "waveInClose failed."
-    CALL sound_sndmain.cpp_FUN_0055a560 ; 0055de28
-        ;   XREF to: 0055a560 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_0055a560()
+    CALL sound_sndmain.cpp_logSoundError_FUN_0055a560 ; 0055de28
+        ;   XREF to: 0055a560 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_0055a560(char * format)
     XOR ESI,ESI                         ; 0055de2d
     ADD ESP,0x4                         ; 0055de2f
     XOR EBX,EBX                         ; 0055de32

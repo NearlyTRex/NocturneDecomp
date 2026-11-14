@@ -1,0 +1,170 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 41,
+    "complexity_score": 14,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 5,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 55
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00476ff0",
+    "address_range": [
+      [
+        "00476ff0",
+        "0047705c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dog.cpp_CZombieDog_archive_FUN_00476ff0",
+    "signature": "void __cdecl core_dog_cpp_CZombieDog_archive_FUN_00476ff0(CZombieDog *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b7f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveDeformableModelInstance_FUN_0040b7f0"
+    },
+    {
+      "addr": "0040b5f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b5f0"
+    },
+    {
+      "addr": "0040b870",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040b870"
+    },
+    {
+      "addr": "004a0520",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_archive_FUN_004a0520"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005da718",
+      "name": "s_speed_005da717+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005da71e",
+      "name": "s_modelName_005da71e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da728",
+      "name": "s_guardDistance_005da728",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da736",
+      "name": "s_motion_state_005da736",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006124dc",
+      "name": "g_CZombieDogClassVersion",
+      "type": "int",
+      "value": "0x2"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.161290322580645,
+    "instruction_count": 31,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 5,
+      "CBRANCH": 1,
+      "COPY": 18,
+      "INT_ADD": 12,
+      "INT_AND": 14,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 14,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 7,
+      "INT_SUB": 16,
+      "LOAD": 3,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 15
+    },
+    "pcode_op_count": 129
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0045eab0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00463460",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0047f7b0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00454dc0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZombieDog *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CZombieDog",
+        "offset": 212,
+        "vtable_addr": "005feea4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

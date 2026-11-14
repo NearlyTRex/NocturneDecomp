@@ -26,15 +26,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined        Stack[-0x10]:1  local_10
 ;
-; XREF[8]:
+; XREF[9]:
+;   core_bird.cpp_CBird_process_FUN_00415340 at 0041536d
 ;   core_doc.cpp_FUN_00469550 at 00469744
-;   core_dog.cpp_FUN_004768a0 at 004768d7
+;   core_dog.cpp_CZombieDog_process_FUN_004768a0 at 004768d7
 ;   core_npc.cpp_CNPC_process_FUN_005317c0 at 005317ed
-;   core_shadow.cpp_FUN_0055de50 at 0055de99
-;   core_shadowsc.cpp_FUN_00560630 at 00560691
-;   core_stranger.cpp_FUN_00585b00 at 00585ce2
-;   core_svetlana.cpp_FUN_00593150 at 005931ca
-;   unkafter_bird.cpp_FUN_00415340 at 0041536d
+;   core_shadow.cpp_CShadow_process_FUN_0055de50 at 0055de99
+;   core_shadowsc.cpp_CShadowsc_process_FUN_00560630 at 00560691
+;   core_stranger.cpp_CStranger_processFrame_FUN_00585b00 at 00585ce2
+;   core_svetlana.cpp_CSvetlana_process_FUN_00593150 at 005931ca
+;   core_yow.cpp_CYow_process_FUN_005b8440 at 005b849b
 ;
 ; Referenced Globals:
 ;   undefined4 s_CZombieDog_005d5ef6+1
@@ -47,15 +48,15 @@
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 DAT_007c6340
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.field1420420_0x15ac84
+;   undefined4 g_CDemonSetInstance.active_fog.temperature
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408ac0
 ;   core_actor.cpp_FUN_00408b40
-;   core_actor.cpp_FUN_0040c550
-;   core_actor.cpp_FUN_0040cc00
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
+;   core_actor.cpp_isOfClass_FUN_0040c550
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004b5b30
-;   core_setcolid.cpp_FUN_005595a0
+;   core_setcolid.cpp_CDemonSet_isPointInWater_FUN_005595a0
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0
 ;   core_xform.cpp_FUN_005b5080
@@ -122,8 +123,8 @@ section .text
     PUSH 0x41000000                     ; 00434822
         ;   Label: LAB_00434822
     PUSH 0x40a00000                     ; 00434827
-    CALL core_actor.cpp_FUN_0040cc00    ; 0043482c
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 0043482c
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [EBP + 0x76],EAX      ; 00434831
     FLD float ptr [EBP + 0x76]          ; 00434834
     FADD float ptr [EBX + 0x2e60]       ; 00434837
@@ -132,7 +133,7 @@ section .text
         ;   XREF to: 004347f1 (UNCONDITIONAL_JUMP)  ; LAB_004347f1
     MOV EAX,[0x00622c18]                ; 00434842 | g_CDemonSetPtr
         ;   Label: LAB_00434842
-    FLD float ptr [EAX + 0x15ac84]      ; 00434847 | g_CDemonSetInstance.field1420420_0x15ac84
+    FLD float ptr [EAX + 0x15ac84]      ; 00434847 | g_CDemonSetInstance.active_fog.temperature
     FCOMP double ptr [0x005d5f1f]       ; 0043484d | DAT_005d5f1f
     FNSTSW AX                           ; 00434853
     SAHF                                ; 00434855
@@ -211,8 +212,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00434922
     MOVSD ES:EDI,ESI                    ; 00434923
     MOVSD ES:EDI,ESI                    ; 00434924
-    CALL core_setcolid.cpp_FUN_005595a0 ; 00434925
-        ;   XREF to: 005595a0 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_FUN_005595a0(CDemonSet * this_ptr, CVector3f * point)
+    CALL core_setcolid.cpp_CDemonSet_isPointInWater_FUN_005595a0 ; 00434925
+        ;   XREF to: 005595a0 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_CDemonSet_isPointInWater_FUN_005595a0(CDemonSet * this_ptr, CVector3f * point)
     ADD ESP,0x8                         ; 0043492a
     TEST EAX,EAX                        ; 0043492d
     JNZ 0x00434814                      ; 0043492f
@@ -230,8 +231,8 @@ section .text
     PUSH 0x5d5ef7                       ; 00434952 | s_CZombieDog_005d5ef6+1
         ;   Label: LAB_00434952
     PUSH EBX                            ; 00434957
-    CALL core_actor.cpp_FUN_0040c550    ; 00434958
-        ;   XREF to: 0040c550 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c550(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c550 ; 00434958
+        ;   XREF to: 0040c550 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c550(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 0043495d
     TEST EAX,EAX                        ; 00434960
     JZ 0x00434814                       ; 00434962

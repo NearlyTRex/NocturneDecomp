@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 498,
-    "complexity_score": 486,
+    "complexity_score": 488,
     "cross_reference_count": 4,
     "function_call_count": 17,
     "global_count": 27,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 141,
+    "pseudocode_lines": 143,
     "suspect_count": 32,
     "suspect_types": [
       "param_count_too_few",
@@ -16,13 +16,13 @@
       "warning_overlapping_globals",
       "warning_unreachable"
     ],
-    "total_lines": 639
+    "total_lines": 641
   },
   "cross_references": [
     {
-      "addr": "0047366e",
+      "addr": "00473670",
       "from_addr": "004737b7",
-      "name": "core_dtrace.cpp_FUN_0047366e",
+      "name": "core_dtrace.cpp_FUN_00473670",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -32,15 +32,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00513d1e",
+      "addr": "00513d20",
       "from_addr": "00513eef",
-      "name": "engine_pod.cpp_FUN_00513d1e",
+      "name": "engine_pod.cpp_FUN_00513d20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0047ed50",
       "from_addr": "0047ee10",
-      "name": "shape_edittool.cpp_FUN_0047ed50",
+      "name": "shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_0047ed50",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -99,34 +99,34 @@
       "name": "engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004b0ff0"
     },
     {
-      "addr": "004edaf0",
+      "addr": "004f3ab0",
       "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_004edaf0"
-    },
-    {
-      "addr": "004f3520",
-      "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_004f3520"
-    },
-    {
-      "addr": "004f37e0",
-      "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_004f37e0"
+      "name": "engine_mini3d.cpp_drawHLine_FUN_004f3ab0"
     },
     {
       "addr": "004f3a60",
       "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_004f3a60"
-    },
-    {
-      "addr": "004f3ab0",
-      "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_004f3ab0"
+      "name": "engine_mini3d.cpp_drawRect_FUN_004f3a60"
     },
     {
       "addr": "004f3ad0",
       "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_004f3ad0"
+      "name": "engine_mini3d.cpp_drawVLine_FUN_004f3ad0"
+    },
+    {
+      "addr": "004f37e0",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_fillRect_FUN_004f37e0"
+    },
+    {
+      "addr": "004edaf0",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_setAlpha_FUN_004edaf0"
+    },
+    {
+      "addr": "004f3520",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_setColor_FUN_004f3520"
     },
     {
       "addr": "0047fa80",
@@ -136,12 +136,12 @@
     {
       "addr": "0057a8a0",
       "is_variadic": false,
-      "name": "wincore_wddvmem.cpp_FUN_0057a8a0"
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0"
     },
     {
       "addr": "005806a0",
       "is_variadic": false,
-      "name": "wincore_winrun.cpp_FUN_005806a0"
+      "name": "wincore_winrun.cpp_getTime_FUN_005806a0"
     }
   ],
   "globals": [
@@ -341,7 +341,7 @@
       {
         "call_addr": "0047ee10",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047ed50",
+        "caller": "shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_0047ed50",
         "estimated_params": 7,
         "instructions_analyzed": 15,
         "method": "push_count",
@@ -355,9 +355,9 @@
         "stack_params": 3
       },
       {
-        "call_addr": "004737b7",
+        "call_addr": "00513eef",
         "call_type": "direct",
-        "caller": "core_dtrace.cpp_FUN_0047366e",
+        "caller": "engine_pod.cpp_FUN_00513d20",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -371,9 +371,9 @@
         "stack_params": 3
       },
       {
-        "call_addr": "00513eef",
+        "call_addr": "004737b7",
         "call_type": "direct",
-        "caller": "engine_pod.cpp_FUN_00513d1e",
+        "caller": "core_dtrace.cpp_FUN_00473670",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -644,7 +644,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 32,
       "match": "param_3",
       "severity": "mild",
       "text": "if (0.0 < param_3) {",
@@ -652,7 +652,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 33,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 < 0.0) {",
@@ -660,7 +660,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 34,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = 0.0;",
@@ -668,16 +668,8 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 36,
       "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 < param_2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 35,
-      "match": "param_2",
       "severity": "mild",
       "text": "if (param_3 < param_2) {",
       "type": "unnamed_param"
@@ -687,12 +679,20 @@
       "line": 36,
       "match": "param_2",
       "severity": "mild",
+      "text": "if (param_3 < param_2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 37,
+      "match": "param_2",
+      "severity": "mild",
       "text": "param_2 = param_3;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 37,
       "match": "param_3",
       "severity": "mild",
       "text": "param_2 = param_3;",
@@ -700,7 +700,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 39,
       "match": "param_2",
       "severity": "mild",
       "text": "local_54 = param_2 / param_3;",
@@ -708,7 +708,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 39,
       "match": "param_3",
       "severity": "mild",
       "text": "local_54 = param_2 / param_3;",
@@ -716,7 +716,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
       "text": "shape_edittool_cpp_FUN_0047fa80(param_1);",
@@ -724,7 +724,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 68,
       "match": "DAT_01c6af99",
       "severity": "mild",
       "text": "((uint)(byte)(&DAT_01c6af99)[iVar3] << 8 |",
@@ -732,7 +732,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 68,
+      "line": 69,
       "match": "DAT_01c6af98",
       "severity": "mild",
       "text": "(uint)(byte)(&DAT_01c6af98)[iVar3] << 0x10 | (uint)(byte)(&DAT_01c6af9a)[iVar3]);",
@@ -740,7 +740,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 68,
+      "line": 69,
       "match": "DAT_01c6af9a",
       "severity": "mild",
       "text": "(uint)(byte)(&DAT_01c6af98)[iVar3] << 0x10 | (uint)(byte)(&DAT_01c6af9a)[iVar3]);",
@@ -748,7 +748,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 76,
+      "line": 77,
       "match": "DAT_01c6af98",
       "severity": "mild",
       "text": "((uint)(byte)(&DAT_01c6af98)[iVar8] << 0x10 |",
@@ -756,7 +756,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 77,
+      "line": 78,
       "match": "DAT_01c6af99",
       "severity": "mild",
       "text": "(uint)(byte)(&DAT_01c6af99)[iVar8] << 8 | (uint)(byte)(&DAT_01c6af9a)[iVar8]);",
@@ -764,7 +764,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 77,
+      "line": 78,
       "match": "DAT_01c6af9a",
       "severity": "mild",
       "text": "(uint)(byte)(&DAT_01c6af99)[iVar8] << 8 | (uint)(byte)(&DAT_01c6af9a)[iVar8]);",
@@ -772,7 +772,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 85,
+      "line": 86,
       "match": "DAT_01c6af9a",
       "severity": "mild",
       "text": "((uint)(byte)(&DAT_01c6af9a)[iVar8] |",
@@ -780,7 +780,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 86,
+      "line": 87,
       "match": "DAT_01c6af98",
       "severity": "mild",
       "text": "(uint)(byte)(&DAT_01c6af98)[iVar8] << 0x10 |",
@@ -788,7 +788,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 88,
       "match": "DAT_01c6af99",
       "severity": "mild",
       "text": "(uint)(byte)(&DAT_01c6af99)[iVar8] << 8);",
@@ -796,7 +796,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 116,
+      "line": 117,
       "match": "DAT_01c6af9a",
       "severity": "mild",
       "text": "((uint)(byte)(&DAT_01c6af9a)[iVar4] |",
@@ -804,7 +804,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 117,
+      "line": 118,
       "match": "DAT_01c6af98",
       "severity": "mild",
       "text": "(uint)(byte)(&DAT_01c6af98)[iVar4] << 0x10 |",
@@ -812,7 +812,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 118,
+      "line": 119,
       "match": "DAT_01c6af99",
       "severity": "mild",
       "text": "(uint)(byte)(&DAT_01c6af99)[iVar4] << 8);",
@@ -820,7 +820,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 126,
+      "line": 128,
       "match": "param_3",
       "severity": "mild",
       "text": "fVar10 = (((float10)param_3 - (float10)param_2) * (float10)fVar5) / (float10)param_2 +",
@@ -828,7 +828,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 126,
+      "line": 128,
       "match": "param_2",
       "severity": "mild",
       "text": "fVar10 = (((float10)param_3 - (float10)param_2) * (float10)fVar5) / (float10)param_2 +",
@@ -836,7 +836,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 126,
+      "line": 128,
       "match": "param_2",
       "severity": "mild",
       "text": "fVar10 = (((float10)param_3 - (float10)param_2) * (float10)fVar5) / (float10)param_2 +",

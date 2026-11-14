@@ -56,7 +56,7 @@
     {
       "addr": "005ce150",
       "from_addr": "005ce177",
-      "name": "unkafter_2d.cpp_FUN_005ce150",
+      "name": "crt_unknown.c_FUN_005ce150",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -76,7 +76,7 @@
     {
       "addr": "005c08d0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c08d0"
+      "name": "crt_memory.c_malloc_FUN_005c08d0"
     },
     {
       "addr": "005c74d0",
@@ -172,7 +172,7 @@
       {
         "call_addr": "005ce177",
         "call_type": "direct",
-        "caller": "unkafter_2d.cpp_FUN_005ce150",
+        "caller": "crt_unknown.c_FUN_005ce150",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -213,6 +213,26 @@
       "STORE": 17
     },
     "pcode_op_count": 190
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005be1d0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005a9310",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00568ed0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,
@@ -308,7 +328,7 @@
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "pvVar2 = FUN_005c08d0(param_1[5]);",
+      "text": "pvVar2 = malloc(param_1[5]);",
       "type": "unnamed_param"
     },
     {

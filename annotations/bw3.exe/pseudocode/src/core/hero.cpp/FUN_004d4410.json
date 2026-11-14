@@ -2,24 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 248,
+    "complexity_score": 249,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 28,
+    "pseudocode_lines": 29,
     "suspect_count": 21,
     "suspect_types": [
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 66
+    "total_lines": 67
   },
   "cross_references": [
     {
       "addr": "00526f50",
       "from_addr": "00526f5c",
-      "name": "core_stranger.cpp_FUN_00526f50",
+      "name": "core_prye.cpp_CPrye_reset_FUN_00526f50",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -39,7 +39,7 @@
     {
       "addr": "004de6e0",
       "is_variadic": false,
-      "name": "core_inv.cpp_FUN_004de6e0"
+      "name": "core_inv.cpp_CInventory_removeMatchingKeys_FUN_004de6e0"
     }
   ],
   "globals": [],
@@ -49,7 +49,7 @@
       {
         "call_addr": "00526f5c",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_FUN_00526f50",
+        "caller": "core_prye.cpp_CPrye_reset_FUN_00526f50",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -174,15 +174,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_inv_cpp_FUN_004de6e0((CInventory *)(param_1 + 0x206e8),0xffffffff);",
+      "text": "((CInventory *)(param_1 + 0x206e8),0xffffffff);",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 17,
+      "line": 18,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(param_1 + 0x154) + 0x144))(param_1,0);",
@@ -190,15 +190,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x154) + 0x144))(param_1,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_1 + 0x154) + 0x144))(param_1,0);",
@@ -209,15 +201,15 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = param_1;",
+      "text": "(**(code **)(*(int *)(param_1 + 0x154) + 0x144))(param_1,0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar1 != param_1 + 0xf0);",
+      "text": "iVar2 = param_1;",
       "type": "unnamed_param"
     },
     {
@@ -225,7 +217,7 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x20b9c) = 0;",
+      "text": "} while (iVar1 != param_1 + 0xf0);",
       "type": "unnamed_param"
     },
     {
@@ -233,7 +225,7 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2704) = 0;",
+      "text": "*(uint *)(param_1 + 0x20b9c) = 0;",
       "type": "unnamed_param"
     },
     {
@@ -241,7 +233,7 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2740) = 0;",
+      "text": "*(uint *)(param_1 + 0x2704) = 0;",
       "type": "unnamed_param"
     },
     {
@@ -249,7 +241,7 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2760) = 0;",
+      "text": "*(uint *)(param_1 + 0x2740) = 0;",
       "type": "unnamed_param"
     },
     {
@@ -257,12 +249,20 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2764) = 0;",
+      "text": "*(uint *)(param_1 + 0x2760) = 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x2764) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x20b8c) = 0;",
@@ -272,7 +272,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CHero",
         "offset": 332,
         "vtable_addr": "005e1534"
       }

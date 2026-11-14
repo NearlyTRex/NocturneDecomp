@@ -13,15 +13,15 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[9]:
+;   core_game.cpp_CGame_promptLoadGame_FUN_004d85f0 at 004d8624
 ;   core_game.cpp_FUN_004d6420 at 004d6451
 ;   core_game.cpp_FUN_004d6990 at 004d69cb
 ;   core_game.cpp_FUN_004d77d0 at 004d7851
-;   core_game.cpp_FUN_004d85f0 at 004d8624
 ;   core_script.cpp_CScript_dbLoad_FUN_0054af20 at 0054b0a5
+;   core_script.cpp_CScript_findDialogEntry_FUN_0054b2a0 at 0054b2c6
+;   core_script.cpp_CScript_initRuntime_FUN_00544190 at 0054423a
 ;   core_script.cpp_FUN_00543e00 at 00543e5b
-;   core_script.cpp_FUN_00544190 at 0054423a
-;   core_script.cpp_FUN_0054b2a0 at 0054b2c6
-;   engine_dosio.cpp_FUN_00479580 at 0047959c
+;   engine_dosio.cpp_splitPath_FUN_00479580 at 0047959c
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c21f0

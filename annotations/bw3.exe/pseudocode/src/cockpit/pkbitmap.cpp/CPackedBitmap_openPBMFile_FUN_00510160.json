@@ -43,19 +43,19 @@
       "name": "cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_0050fd90"
     },
     {
-      "addr": "0050f2a0",
-      "is_variadic": false,
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_0050f2a0"
-    },
-    {
       "addr": "0050f230",
       "is_variadic": false,
-      "name": "cockpit_pkbitmap.cpp_FUN_0050f230"
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_0050f230"
     },
     {
       "addr": "0050ff60",
       "is_variadic": false,
-      "name": "cockpit_pkbitmap.cpp_FUN_0050ff60"
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0050ff60"
+    },
+    {
+      "addr": "0050f2a0",
+      "is_variadic": false,
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_0050f2a0"
     },
     {
       "addr": "004e4330",
@@ -70,7 +70,7 @@
     {
       "addr": "005a28c0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a28c0"
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
     },
     {
       "addr": "004659c0",
@@ -137,6 +137,32 @@
     },
     "pcode_op_count": 243
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00517130",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00538480",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0054b860",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9828
+    },
+    "nocturne.exe": {
+      "addr": "004f4e40",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -179,33 +205,33 @@
     {
       "description": "Unresolved stack parameter",
       "line": 8,
-      "match": "in_stack_00000020",
+      "match": "in_stack_00000024",
       "severity": "moderate",
-      "text": "int in_stack_00000020;",
+      "text": "int in_stack_00000024;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 24,
-      "match": "in_stack_00000020",
+      "match": "in_stack_00000024",
       "severity": "moderate",
-      "text": "if (in_stack_00000020 == 0) {",
+      "text": "if (in_stack_00000024 == 0) {",
       "type": "stack_param"
     },
     {
-      "description": "Raw hex address 0x5101e3 assigned to bare local `uStack_60`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_60` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "description": "Raw hex address 0x5101e3 assigned to bare local `uStack_5c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_5c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
       "line": 22,
       "match": "0x5101e3",
       "severity": "moderate",
-      "text": "uStack_60 = 0x5101e3;",
+      "text": "uStack_5c = 0x5101e3;",
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex address 0x5101f9 assigned to bare local `uStack_60`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_60` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "description": "Raw hex address 0x5101f9 assigned to bare local `uStack_5c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_5c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
       "line": 27,
       "match": "0x5101f9",
       "severity": "moderate",
-      "text": "uStack_60 = 0x5101f9;",
+      "text": "uStack_5c = 0x5101f9;",
       "type": "raw_address_constant"
     }
   ]

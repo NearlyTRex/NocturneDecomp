@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDeformableModel * core_skeleton_cpp_CDeformableModel_ctor_FUN_00563690(CDeformableModel *this_ptr)
+; CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModel_ctor_FUN_00563690(CDeformableModel *this_ptr)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr
@@ -22,14 +22,14 @@ section .text
     ADD EBX,0x2290                      ; 0056369c
     PUSH EBX                            ; 005636a2
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 005636a3
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005636a8
     PUSH 0x6042a0                       ; 005636ab
     PUSH 0x64                           ; 005636b0
     ADD EAX,0x4bc                       ; 005636b2
     PUSH EAX                            ; 005636b7
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 005636b8
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EBX,[EAX + 0xffffd8b4]          ; 005636bd
     ADD ESP,0xc                         ; 005636c3
     MOV EAX,EBX                         ; 005636c6

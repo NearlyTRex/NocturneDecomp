@@ -27,7 +27,7 @@
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
-;   core_skeleton.cpp_FUN_0054e3a0
+;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0
 ;   crt_math.c_round_FUN_005a3120
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
 ;
@@ -208,8 +208,8 @@ section .text
     PUSH 0xc9                           ; 0042f1c8
     PUSH -0x1                           ; 0042f1cd
     PUSH EDI                            ; 0042f1cf
-    CALL core_skeleton.cpp_FUN_0054e3a0 ; 0042f1d0
-        ;   XREF to: 0054e3a0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_0054e3a0(CDeformableModelInstance * this_ptr, int lod_index, uint render_flags, int lighting_mode, ...)
+    CALL core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0 ; 0042f1d0
+        ;   XREF to: 0054e3a0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0(CDeformableModelInstance * this_ptr, int lod_index, uint render_flags, int lighting_mode, ...)
     ADD ESP,0x14                        ; 0042f1d5
     MOV ESP,EBP                         ; 0042f1d8
     POP EBP                             ; 0042f1da
@@ -261,8 +261,8 @@ section .text
     PUSH -0x1                           ; 0042f264
     ADD EAX,0x158                       ; 0042f266
     PUSH EAX                            ; 0042f26b
-    CALL core_skeleton.cpp_FUN_0054e3a0 ; 0042f26c
-        ;   XREF to: 0054e3a0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_0054e3a0(CDeformableModelInstance * this_ptr, int lod_index, uint render_flags, int lighting_mode, ...)
+    CALL core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0 ; 0042f26c
+        ;   XREF to: 0054e3a0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0(CDeformableModelInstance * this_ptr, int lod_index, uint render_flags, int lighting_mode, ...)
     ADD ESP,0x14                        ; 0042f271
     MOV ESP,EBP                         ; 0042f274
     POP EBP                             ; 0042f276

@@ -2,15 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 123,
-    "complexity_score": 62,
+    "complexity_score": 89,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 62,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 185
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 64,
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 187
   },
   "cross_references": [
     {
@@ -36,7 +38,7 @@
     {
       "addr": "00504b00",
       "is_variadic": false,
-      "name": "sound_mp3.cpp_FUN_00504b00"
+      "name": "sound_mp3.cpp_CFileBitStream_readBits_FUN_00504b00"
     }
   ],
   "globals": [],
@@ -90,6 +92,32 @@
       "STORE": 22
     },
     "pcode_op_count": 522
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00526400",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004fdd10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0052f670",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004e31f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 56,
@@ -163,5 +191,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(uint *)((int)output_allocation",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)((int)output_allocation->bit_allocations + local_14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(uint *)((int)output_allocation",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)output_allocation->bit_allocations + iVar9);",
+      "type": "pointer_cast"
+    }
+  ]
 }

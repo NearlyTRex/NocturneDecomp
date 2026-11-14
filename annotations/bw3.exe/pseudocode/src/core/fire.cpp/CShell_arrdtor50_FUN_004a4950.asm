@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CShell * core_fire_cpp_CShell_arrdtor50_FUN_004a4950(CShell *this_ptr,uint flags)
+; CShell * __cdecl core_fire_cpp_CShell_arrdtor50_FUN_004a4950(CShell *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CShell *         Stack[0x4]:4   this_ptr
@@ -20,7 +20,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004a4957
     PUSH EDX                            ; 004a495b
     CALL crt_memory.c___arrfini_FUN_005a3de6 ; 004a495c
-        ;   XREF to: 005a3de6 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrfini_FUN_005a3de6()
+        ;   XREF to: 005a3de6 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005a3de6(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004a4961
     RET                                 ; 004a4964
 

@@ -2,24 +2,25 @@
 // Address: 004b3960
 // Address Range: [[004b3960, 004b3cc3]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_fpoly_c_rasterizePolygonHardware_FUN_004b3960(int *param_1,int param_2)
+// Signature: void __cdecl engine_fpoly_c_rasterizePolygonHardware_FUN_004b3960(SRenderVertex **vertices,int vertex_count)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl engine_fpoly_c_rasterizePolygonHardware_FUN_004b3960(int *param_1,int param_2)
+void __cdecl engine_fpoly_c_rasterizePolygonHardware_FUN_004b3960(SRenderVertex **vertices,int vertex_count)
 
 {
-  longlong lVar1;
-  int iVar2;
+  SRenderVertex *pSVar1;
+  longlong lVar2;
   int iVar3;
   int iVar4;
   int iVar5;
   int iVar6;
-  uint uVar7;
-  int iVar8;
-  int *local_24;
+  SRenderVertex *pSVar7;
+  uint uVar8;
+  SRenderVertex *pSVar9;
+  SRenderVertex **local_24;
   int local_20;
   int local_1c;
   int *local_18;
@@ -29,94 +30,96 @@ void __cdecl engine_fpoly_c_rasterizePolygonHardware_FUN_004b3960(int *param_1,i
   _DAT_01d1b0fc = DAT_005fba1c;
   _DAT_01d1b100 = 0;
   local_20 = 0;
-  if (0 < param_2) {
-    local_24 = param_1;
+  if (0 < vertex_count) {
+    local_24 = vertices;
     do {
-      iVar2 = local_20 + 1;
-      if (param_2 <= iVar2) {
-        iVar2 = 0;
+      iVar3 = local_20 + 1;
+      if (vertex_count <= iVar3) {
+        iVar3 = 0;
       }
-      iVar2 = param_1[iVar2];
-      iVar8 = *local_24;
-      iVar3 = *(int *)(iVar2 + 0x14) >> 0x10;
-      iVar5 = *(int *)(iVar8 + 0x14) >> 0x10;
-      if (iVar5 != iVar3) {
-        iVar4 = iVar3;
-        iVar6 = iVar8;
-        if (*(int *)(iVar2 + 0x14) < *(int *)(iVar8 + 0x14)) {
-          iVar4 = iVar5;
+      pSVar9 = vertices[iVar3];
+      pSVar1 = *local_24;
+      iVar4 = (pSVar9->projected_vertex).screen_y >> 0x10;
+      iVar3 = (pSVar1->projected_vertex).screen_y >> 0x10;
+      if (iVar3 != iVar4) {
+        iVar5 = iVar4;
+        pSVar7 = pSVar1;
+        if ((pSVar9->projected_vertex).screen_y < (pSVar1->projected_vertex).screen_y) {
           iVar5 = iVar3;
-          iVar6 = iVar2;
-          iVar2 = iVar8;
+          iVar3 = iVar4;
+          pSVar7 = pSVar9;
+          pSVar9 = pSVar1;
         }
-        iVar3 = _DAT_01d1ad78 * 0x38;
-        *(int *)(&DAT_01d1ad7c + iVar3) = iVar5;
-        iVar8 = _DAT_01d1b0fc;
-        *(int *)(iVar3 + 0x1d1ad80) = iVar4;
-        if (iVar5 < iVar8) {
-          _DAT_01d1b0fc = iVar5;
+        iVar6 = _DAT_01d1ad78 * 0x38;
+        *(int *)(&DAT_01d1ad7c + iVar6) = iVar3;
+        iVar4 = _DAT_01d1b0fc;
+        *(int *)(iVar6 + 0x1d1ad80) = iVar5;
+        if (iVar3 < iVar4) {
+          _DAT_01d1b0fc = iVar3;
         }
-        if (_DAT_01d1b100 < iVar4) {
-          _DAT_01d1b100 = iVar4;
+        if (_DAT_01d1b100 < iVar5) {
+          _DAT_01d1b100 = iVar5;
         }
-        *(uint *)(iVar3 + 0x1d1ad84) = *(uint *)(iVar6 + 0x10);
-        *(uint *)(iVar3 + 0x1d1ad94) = *(uint *)(iVar6 + 0x18);
-        *(uint *)(iVar3 + 0x1d1ad9c) = *(uint *)(iVar6 + 0x1c);
-        uVar7 = *(int *)(iVar2 + 0x14) - *(int *)(iVar6 + 0x14);
-        if (uVar7 < 0x10000) {
-          iVar8 = 0;
+        *(int *)(iVar6 + 0x1d1ad84) = (pSVar7->projected_vertex).screen_x;
+        *(int *)(iVar6 + 0x1d1ad94) = pSVar7->u;
+        *(int *)(iVar6 + 0x1d1ad9c) = pSVar7->v;
+        uVar8 = (pSVar9->projected_vertex).screen_y - (pSVar7->projected_vertex).screen_y;
+        if (uVar8 < 0x10000) {
+          iVar3 = 0;
         }
         else {
-          iVar8 = (int)(0xffffffff / (ulonglong)uVar7);
+          iVar3 = (int)(0xffffffff / (ulonglong)uVar8);
         }
-        lVar1 = (longlong)iVar8 * (longlong)(*(int *)(iVar2 + 0x10) - *(int *)(iVar6 + 0x10));
-        *(uint *)(iVar3 + 0x1d1ad88) = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10
+        lVar2 = (longlong)iVar3 *
+                (longlong)
+                ((pSVar9->projected_vertex).screen_x - (pSVar7->projected_vertex).screen_x);
+        *(uint *)(iVar6 + 0x1d1ad88) = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10
         ;
-        lVar1 = (longlong)iVar8 * (longlong)(*(int *)(iVar2 + 0x18) - *(int *)(iVar6 + 0x18));
-        *(uint *)(iVar3 + 0x1d1ad98) = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10
+        lVar2 = (longlong)iVar3 * (longlong)(pSVar9->u - pSVar7->u);
+        *(uint *)(iVar6 + 0x1d1ad98) = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10
         ;
-        lVar1 = (longlong)iVar8 * (longlong)(*(int *)(iVar2 + 0x1c) - *(int *)(iVar6 + 0x1c));
-        *(uint *)(iVar3 + 0x1d1ada0) = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10
+        lVar2 = (longlong)iVar3 * (longlong)(pSVar9->v - pSVar7->v);
+        *(uint *)(iVar6 + 0x1d1ada0) = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10
         ;
-        uVar7 = (uint)(ushort)((ushort)*(uint *)(iVar6 + 0x14) ^ 0xffff);
-        lVar1 = (longlong)(int)uVar7 * (longlong)*(int *)(iVar3 + 0x1d1ad88);
-        *(int *)(iVar3 + 0x1d1ad84) =
-             *(int *)(iVar3 + 0x1d1ad84) +
-             ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-        lVar1 = (longlong)(int)uVar7 * (longlong)*(int *)(iVar3 + 0x1d1ad98);
-        *(uint *)(iVar3 + 0x1d1ad94) =
-             *(int *)(iVar3 + 0x1d1ad94) +
-             ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-        lVar1 = (longlong)(int)uVar7 * (longlong)*(int *)(iVar3 + 0x1d1ada0);
+        uVar8 = (uint)(ushort)((ushort)(pSVar7->projected_vertex).screen_y ^ 0xffff);
+        lVar2 = (longlong)(int)uVar8 * (longlong)*(int *)(iVar6 + 0x1d1ad88);
+        *(int *)(iVar6 + 0x1d1ad84) =
+             *(int *)(iVar6 + 0x1d1ad84) +
+             ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
+        lVar2 = (longlong)(int)uVar8 * (longlong)*(int *)(iVar6 + 0x1d1ad98);
+        *(uint *)(iVar6 + 0x1d1ad94) =
+             *(int *)(iVar6 + 0x1d1ad94) +
+             ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
+        lVar2 = (longlong)(int)uVar8 * (longlong)*(int *)(iVar6 + 0x1d1ada0);
         _DAT_01d1ad78 = _DAT_01d1ad78 + 1;
-        *(uint *)(iVar3 + 0x1d1ad9c) =
-             *(int *)(iVar3 + 0x1d1ad9c) +
-             ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+        *(uint *)(iVar6 + 0x1d1ad9c) =
+             *(int *)(iVar6 + 0x1d1ad9c) +
+             ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
       }
       local_24 = local_24 + 1;
       local_20 = local_20 + 1;
-    } while (local_20 < param_2);
+    } while (local_20 < vertex_count);
   }
   local_18 = (int *)&DAT_01d1ad7c;
-  iVar2 = 0;
+  iVar3 = 0;
   if (0 < _DAT_01d1ad78) {
     do {
       if ((_DAT_01d1b0fc == *local_18) && (local_18 != (int *)0x0)) goto LAB_004b3a00;
-      iVar2 = iVar2 + 1;
+      iVar3 = iVar3 + 1;
       local_18 = local_18 + 0xe;
-    } while (iVar2 < _DAT_01d1ad78);
+    } while (iVar3 < _DAT_01d1ad78);
   }
   local_18 = (int *)0x0;
 LAB_004b3a00:
   if (local_18 != (int *)0x0) {
-    iVar2 = 0;
+    iVar3 = 0;
     local_14 = (int *)&DAT_01d1ad7c;
     if (0 < _DAT_01d1ad78) {
       do {
         if ((_DAT_01d1b0fc == *local_14) && (local_14 != local_18)) goto LAB_004b3a39;
-        iVar2 = iVar2 + 1;
+        iVar3 = iVar3 + 1;
         local_14 = local_14 + 0xe;
-      } while (iVar2 < _DAT_01d1ad78);
+      } while (iVar3 < _DAT_01d1ad78);
     }
     local_14 = (int *)0x0;
 LAB_004b3a39:
@@ -126,13 +129,13 @@ LAB_004b3a39:
         if (local_18[1] <= local_1c) {
           *local_18 = -1;
           local_18 = (int *)&DAT_01d1ad7c;
-          iVar2 = 0;
+          iVar3 = 0;
           if (0 < _DAT_01d1ad78) {
             do {
               if ((local_1c == *local_18) && (local_18 != local_14)) goto LAB_004b3a92;
-              iVar2 = iVar2 + 1;
+              iVar3 = iVar3 + 1;
               local_18 = local_18 + 0xe;
-            } while (iVar2 < _DAT_01d1ad78);
+            } while (iVar3 < _DAT_01d1ad78);
           }
           local_18 = (int *)0x0;
 LAB_004b3a92:
@@ -143,13 +146,13 @@ LAB_004b3a92:
         if (local_14[1] <= local_1c) {
           *local_14 = -1;
           local_14 = (int *)&DAT_01d1ad7c;
-          iVar2 = 0;
+          iVar3 = 0;
           if (0 < _DAT_01d1ad78) {
             do {
               if ((local_1c == *local_14) && (local_14 != local_18)) goto LAB_004b3ae2;
-              iVar2 = iVar2 + 1;
+              iVar3 = iVar3 + 1;
               local_14 = local_14 + 0xe;
-            } while (iVar2 < _DAT_01d1ad78);
+            } while (iVar3 < _DAT_01d1ad78);
           }
           local_14 = (int *)0x0;
 LAB_004b3ae2:

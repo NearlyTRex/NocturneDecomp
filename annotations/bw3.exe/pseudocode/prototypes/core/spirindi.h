@@ -7,56 +7,56 @@
 
 // Original: core_spirindi.cpp_staticInit_FUN_00599f00
 // Address: 00599f00
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_spirindi.cpp_factoryFuncSpiritIndian_FUN_00599f30
 // Address: 00599f30
-void factoryFuncSpiritIndian(void);
+CSpiritIndian * __cdecl factoryFuncSpiritIndian(void);
 
 // Original: core_spirindi.cpp_CSpiritIndian_getActorType_FUN_00599f50
 // Address: 00599f50
-CDemonActorType * CSpiritIndian::getActorType(CSpiritIndian *this_ptr);
+CDemonActorType * __cdecl CSpiritIndian::getActorType(CSpiritIndian *this_ptr);
 
 // Original: core_spirindi.cpp_CSpiritIndian_ctor_FUN_00599f60
 // Address: 00599f60
-CSpiritIndian * CSpiritIndian::ctor(CSpiritIndian *this_ptr);
+CSpiritIndian * __cdecl CSpiritIndian::ctor(CSpiritIndian *this_ptr);
 
-// Original: core_spirindi.cpp_FUN_0059a060
+// Original: core_spirindi.cpp_CSpiritIndian_setup_FUN_0059a060
 // Address: 0059a060
-void FUN_0059a060(int param_1);
+void __cdecl CSpiritIndian::setup(CSpiritIndian *this_ptr);
 
-// Original: core_spirindi.cpp_FUN_0059a2b0
+// Original: core_spirindi.cpp_CSpiritIndian_process_FUN_0059a2b0
 // Address: 0059a2b0
-void FUN_0059a2b0(CCharacter *param_1,float param_2);
+void __cdecl CSpiritIndian::process(CSpiritIndian *this_ptr,float delta_time);
 
-// Original: core_spirindi.cpp_FUN_0059a730
+// Original: core_spirindi.cpp_CSpiritIndian_renderBackground_FUN_0059a730
 // Address: 0059a730
-void FUN_0059a730(CNPC *param_1,int param_2);
+void __cdecl CSpiritIndian::renderBackground(CSpiritIndian *this_ptr,int layer_flag);
 
-// Original: core_spirindi.cpp_FUN_0059a760
+// Original: core_spirindi.cpp_CSpiritIndian_renderOpaque_FUN_0059a760
 // Address: 0059a760
-int FUN_0059a760(CDemonActor *param_1);
+int __cdecl CSpiritIndian::renderOpaque(CSpiritIndian *this_ptr);
 
-// Original: core_spirindi.cpp_FUN_0059a850
+// Original: core_spirindi.cpp_CSpiritIndian_renderTransparent_FUN_0059a850
 // Address: 0059a850
-undefined4 FUN_0059a850(int param_1);
+int __cdecl CSpiritIndian::renderTransparent(CSpiritIndian *this_ptr);
 
-// Original: core_spirindi.cpp_FUN_0059a8a0
+// Original: core_spirindi.cpp_CSpiritIndian_archive_FUN_0059a8a0
 // Address: 0059a8a0
-void FUN_0059a8a0(int param_1);
+void __cdecl CSpiritIndian::archive(CSpiritIndian *this_ptr);
 
-// Original: core_spirindi.cpp_FUN_0059a910
+// Original: core_spirindi.cpp_CSpiritIndian_shouldIgnoreForTargeting_FUN_0059a910
 // Address: 0059a910
-bool FUN_0059a910(int param_1);
+int __cdecl CSpiritIndian::shouldIgnoreForTargeting(CSpiritIndian *this_ptr);
 
-// Original: core_spirindi.cpp_FUN_0059a940
+// Original: core_spirindi.cpp_CSpiritIndian_isInvulnerable_FUN_0059a940
 // Address: 0059a940
-bool FUN_0059a940(int param_1);
+int __cdecl CSpiritIndian::isInvulnerable(CSpiritIndian *this_ptr);
 
-// Original: core_spirindi.cpp_FUN_0059a960
+// Original: core_spirindi.cpp_CSpiritIndian_getPathMap_FUN_0059a960
 // Address: 0059a960
-int FUN_0059a960(int param_1);
+CPathMap * __cdecl CSpiritIndian::getPathMap(CSpiritIndian *this_ptr);
 
 // Original: core_spirindi.cpp_CSpiritIndian_dtor_FUN_0059a970
 // Address: 0059a970
-CSpiritIndian * CSpiritIndian::dtor(CSpiritIndian *this_ptr,uint flags);
+CSpiritIndian * __cdecl CSpiritIndian::dtor(CSpiritIndian *this_ptr,uint flags);

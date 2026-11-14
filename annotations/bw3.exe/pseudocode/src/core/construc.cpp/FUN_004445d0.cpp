@@ -11,7 +11,7 @@ void core_construc_cpp_FUN_004445d0(void)
 {
   CConstructRed *this_ptr;
   
-  this_ptr = (CConstructRed *)FUN_005a3cb2(0xd860);
+  this_ptr = (CConstructRed *)operator_new(0xd860);
   if (this_ptr == (CConstructRed *)0x0) {
     return;
   }

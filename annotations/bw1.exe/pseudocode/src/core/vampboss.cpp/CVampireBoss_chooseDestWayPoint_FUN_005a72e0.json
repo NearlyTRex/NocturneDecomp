@@ -2,25 +2,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 158,
+    "complexity_score": 89,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 43,
-    "suspect_count": 10,
+    "pseudocode_lines": 44,
+    "suspect_count": 3,
     "suspect_types": [
       "shadow_pointer_walk",
-      "unnamed_field",
-      "warning_overlapping_globals"
+      "warning_overlapping_globals",
+      "warning_type_propagation"
     ],
-    "total_lines": 124
+    "total_lines": 125
   },
   "cross_references": [
     {
       "addr": "005a5550",
       "from_addr": "005a6809",
-      "name": "core_vampboss.cpp_FUN_005a5550",
+      "name": "core_vampboss.cpp_CVampireBoss_process_FUN_005a5550",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -81,7 +81,7 @@
       {
         "call_addr": "005a6809",
         "call_type": "direct",
-        "caller": "core_vampboss.cpp_FUN_005a5550",
+        "caller": "core_vampboss.cpp_CVampireBoss_process_FUN_005a5550",
         "estimated_params": 0,
         "instructions_analyzed": 2,
         "method": "push_count",
@@ -92,7 +92,7 @@
       {
         "call_addr": "005a5606",
         "call_type": "direct",
-        "caller": "core_vampboss.cpp_FUN_005a5550",
+        "caller": "core_vampboss.cpp_CVampireBoss_process_FUN_005a5550",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -145,6 +145,26 @@
     },
     "pcode_op_count": 380
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005836a0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005e7510",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0054e230",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 40,
     "local_size": 36,
@@ -177,83 +197,27 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Type propagation did not converge",
       "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0xbf3e4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xbf3e4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0xbf3e8",
-      "severity": "mild",
-      "text": "if (*(int *)&pCVar10->field_0xbf3e8 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0xbf3e8",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)&pCVar10->field_0xbf3e8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "fVar4 = *(float *)(iVar2 + 0x20) - *(float *)&this_ptr->field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "fVar5 = *(float *)(iVar2 + 0x24) - *(float *)&this_ptr->field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "fVar6 = *(float *)(iVar2 + 0x28) - *(float *)&this_ptr->field_0x28;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0xbf3e4",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0xbf3e4 = iVar9;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "pCVar10 = (CVampireBoss *)&pCVar10->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar10->owner`). Replace `pCVar10->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 44,
-      "match": "pCVar10 = (T *)&pCVar10->FIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar10->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 45,
+      "match": "pCVar10 = (T *)((pCVar10->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
-      "text": "pCVar10 = (CVampireBoss *)&pCVar10->field_0x4;",
+      "text": "pCVar10 = (CVampireBoss *)((pCVar10->base).base.base.actor_name + 4);",
       "type": "shadow_pointer_walk"
     }
   ]

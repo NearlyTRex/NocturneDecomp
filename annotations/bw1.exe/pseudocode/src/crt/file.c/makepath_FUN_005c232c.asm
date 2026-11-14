@@ -15,7 +15,7 @@
 ;
 ; XREF[2]:
 ;   core_mission.cpp_FUN_0051abf0 at 0051ac11
-;   engine_dosio.cpp_FUN_004795b0 at 004795cc
+;   engine_dosio.cpp_makePath_FUN_004795b0 at 004795cc
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c2310

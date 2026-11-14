@@ -7,7 +7,7 @@
 ; CToss *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_004b5100 at 004b53ce
+;   core_fire.cpp_CFireEffect_render_FUN_004b5100 at 004b53ce
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00612560
@@ -17,7 +17,7 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
-;   engine_matrix.c_pop_FUN_004839a0
+;   engine_drender.cpp_pop_FUN_004839a0
 ;
 ; *****************************************************************************
 
@@ -60,8 +60,8 @@ section .text
     ADD ESP,0xc                         ; 004b1f61
     MOV EBX,dword ptr [0x00612560]      ; 004b1f64 | DAT_00612560
     PUSH EBX                            ; 004b1f6a | DAT_01bc120c
-    CALL engine_matrix.c_pop_FUN_004839a0 ; 004b1f6b
-        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004839a0()
+    CALL engine_drender.cpp_pop_FUN_004839a0 ; 004b1f6b
+        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_004839a0()
     ADD ESP,0x4                         ; 004b1f70
     POP EBX                             ; 004b1f73
     RET                                 ; 004b1f74

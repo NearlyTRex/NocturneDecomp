@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 22,
+    "complexity_score": 7,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 7,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 26
   },
   "cross_references": [
@@ -24,13 +22,13 @@
     {
       "addr": "004d8e70",
       "from_addr": "004d8ea0",
-      "name": "core_inivar.cpp_FUN_004d8e70",
+      "name": "core_inivar.cpp_readIniData_FUN_004d8e70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d95c0",
       "from_addr": "004d95d6",
-      "name": "core_inivar.cpp_FUN_004d95c0",
+      "name": "core_inivar.cpp_writeIniData_FUN_004d95c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -89,7 +87,7 @@
       {
         "call_addr": "004d8ea0",
         "call_type": "direct",
-        "caller": "core_inivar.cpp_FUN_004d8e70",
+        "caller": "core_inivar.cpp_readIniData_FUN_004d8e70",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -100,7 +98,7 @@
       {
         "call_addr": "004d95d6",
         "call_type": "direct",
-        "caller": "core_inivar.cpp_FUN_004d95c0",
+        "caller": "core_inivar.cpp_writeIniData_FUN_004d95c0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -157,6 +155,20 @@
     },
     "pcode_op_count": 59
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004d8910",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004f4b00",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -187,14 +199,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x200",
-      "severity": "mild",
-      "text": "*(byte ***)&this_ptr->field_0x200 = &PTR_engine_ini_cpp_CIniFile_dtor_FUN_004d8a50_005e2074;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

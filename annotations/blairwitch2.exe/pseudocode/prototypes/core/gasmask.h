@@ -7,47 +7,47 @@
 
 // Original: core_gasmask.cpp_staticInit_FUN_004c12e0
 // Address: 004c12e0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_gasmask.cpp_factoryFuncGasMask_FUN_004c1310
 // Address: 004c1310
-void factoryFuncGasMask(void);
+CGasMask * __cdecl factoryFuncGasMask(void);
 
 // Original: core_gasmask.cpp_CGasMask_getActorType_FUN_004c1330
 // Address: 004c1330
-CDemonActorType * CGasMask::getActorType(CGasMask *this_ptr);
+CDemonActorType * __cdecl CGasMask::getActorType(CGasMask *this_ptr);
 
 // Original: core_gasmask.cpp_CGasMask_ctor_FUN_004c1340
 // Address: 004c1340
 CGasMask * __cdecl CGasMask::ctor(CGasMask *this_ptr);
 
-// Original: core_gasmask.cpp_FUN_004c1390
+// Original: core_gasmask.cpp_CGasMask_setup_FUN_004c1390
 // Address: 004c1390
-void FUN_004c1390(CDemonActor *param_1);
+void __cdecl CGasMask::setup(CGasMask *this_ptr);
 
 // Original: core_gasmask.cpp_CGasMask_canPickup_FUN_004c13b0
 // Address: 004c13b0
 int __cdecl CGasMask::canPickup(CGasMask *this_ptr,CDemonActor *picker);
 
-// Original: core_gasmask.cpp_FUN_004c13d0
+// Original: core_gasmask.cpp_CGasMask_process_FUN_004c13d0
 // Address: 004c13d0
-void FUN_004c13d0(void);
+void __cdecl CGasMask::process(CGasMask *this_ptr,float delta_time);
 
-// Original: core_gasmask.cpp_FUN_004c13e0
+// Original: core_gasmask.cpp_CGasMask_renderOpaque_FUN_004c13e0
 // Address: 004c13e0
-int FUN_004c13e0(int param_1);
+int __cdecl CGasMask::renderOpaque(CGasMask *this_ptr);
 
-// Original: core_gasmask.cpp_FUN_004c1480
+// Original: core_gasmask.cpp_CGasMask_archive_FUN_004c1480
 // Address: 004c1480
-void FUN_004c1480(CDemonActor *param_1);
+void __cdecl CGasMask::archive(CGasMask *this_ptr);
 
-// Original: core_gasmask.cpp_FUN_004c14b0
+// Original: core_gasmask.cpp_CGasMask_getCollisionType_FUN_004c14b0
 // Address: 004c14b0
-undefined4 FUN_004c14b0(void);
+ECollisionType __cdecl CGasMask::getCollisionType(CGasMask *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_gasmask.cpp_FUN_004c14c0
+// Original: core_gasmask.cpp_CGasMask_getBoundingBox_FUN_004c14c0
 // Address: 004c14c0
-void FUN_004c14c0(int param_1);
+CBoundingBox3D * __cdecl CGasMask::getBoundingBox(CGasMask *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_gasmask.cpp_CGasMask_dtor_FUN_004c1500
 // Address: 004c1500

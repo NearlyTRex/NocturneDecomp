@@ -7,60 +7,60 @@
 
 // Original: core_hino.cpp_staticInit_FUN_0059b610
 // Address: 0059b610
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_hino.cpp_factoryFuncHino_FUN_0059b640
 // Address: 0059b640
-void factoryFuncHino(void);
+CHino * __cdecl factoryFuncHino(void);
 
 // Original: core_hino.cpp_CHino_getActorType_FUN_0059b660
 // Address: 0059b660
-CDemonActorType * CHino::getActorType(CHino *this_ptr);
+CDemonActorType * __cdecl CHino::getActorType(CHino *this_ptr);
 
 // Original: core_hino.cpp_CHino_ctor_FUN_0059b670
 // Address: 0059b670
-CHino * CHino::ctor(CHino *this_ptr);
+CHino * __cdecl CHino::ctor(CHino *this_ptr);
 
 // Original: core_hino.cpp_FUN_0059b740
 // Address: 0059b740
 int FUN_0059b740(int param_1);
 
-// Original: core_hino.cpp_FUN_0059b770
+// Original: core_hino.cpp_CHino_setup_FUN_0059b770
 // Address: 0059b770
-void FUN_0059b770(CEnemy *param_1);
+void __cdecl CHino::setup(CHino *this_ptr);
 
-// Original: core_hino.cpp_FUN_0059b960
+// Original: core_hino.cpp_CHino_process_FUN_0059b960
 // Address: 0059b960
-void FUN_0059b960(CEnemy *param_1,float param_2);
+void __cdecl CHino::process(CHino *this_ptr,float delta_time);
 
 // Original: core_hino.cpp_FUN_0059d000
 // Address: 0059d000
 bool FUN_0059d000(void);
 
-// Original: core_hino.cpp_FUN_0059d120
+// Original: core_hino.cpp_CHino_renderTransparent_FUN_0059d120
 // Address: 0059d120
-undefined4 FUN_0059d120(CCharacter *param_1);
+int __cdecl CHino::renderTransparent(CHino *this_ptr);
 
-// Original: core_hino.cpp_FUN_0059d310
+// Original: core_hino.cpp_CHino_archive_FUN_0059d310
 // Address: 0059d310
-void FUN_0059d310(int param_1);
+void __cdecl CHino::archive(CHino *this_ptr);
 
-// Original: core_hino.cpp_FUN_0059d360
+// Original: core_hino.cpp_CHino_processDamage_FUN_0059d360
 // Address: 0059d360
-void FUN_0059d360(int param_1,int param_2);
+void __cdecl CHino::processDamage(CHino *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_hino.cpp_FUN_0059d410
+// Original: core_hino.cpp_CHino_getTargetPoints_FUN_0059d410
 // Address: 0059d410
-undefined4 FUN_0059d410(int param_1,undefined4 *param_2);
+int __cdecl CHino::getTargetPoints(CHino *this_ptr,CVector3f *out_points_array);
 
-// Original: core_hino.cpp_FUN_0059d510
+// Original: core_hino.cpp_CHino_getCarryObjToBodyXForm_FUN_0059d510
 // Address: 0059d510
-void FUN_0059d510(int param_1,int param_2);
+CMatrix3x4f * __stack2_esi CHino::getCarryObjToBodyXForm(CHino *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
-// Original: core_hino.cpp_FUN_0059d640
+// Original: core_hino.cpp_CHino_getCollisionType_FUN_0059d640
 // Address: 0059d640
-void FUN_0059d640(CCharacter *param_1,SCollisionInfo *param_2);
+ECollisionType __cdecl CHino::getCollisionType(CHino *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_hino.cpp_CHino_dtor_FUN_0059d660
 // Address: 0059d660
-CHino * CHino::dtor(CHino *this_ptr,uint flags);
+CHino * __cdecl CHino::dtor(CHino *this_ptr,uint flags);

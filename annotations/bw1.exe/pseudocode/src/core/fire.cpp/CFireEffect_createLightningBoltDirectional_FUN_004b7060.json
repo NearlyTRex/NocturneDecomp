@@ -18,13 +18,13 @@
     {
       "addr": "0040fcf0",
       "from_addr": "004100c1",
-      "name": "core_baron.cpp_FUN_0040fcf0",
+      "name": "core_baron.cpp_CBaron_performLightningAttack_FUN_0040fcf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0049f310",
       "from_addr": "0049fcfa",
-      "name": "core_emitter.cpp_FUN_0049f310",
+      "name": "core_emitter.cpp_CEmitter_process_FUN_0049f310",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -78,7 +78,7 @@
       {
         "call_addr": "0049fcfa",
         "call_type": "direct",
-        "caller": "core_emitter.cpp_FUN_0049f310",
+        "caller": "core_emitter.cpp_CEmitter_process_FUN_0049f310",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -89,7 +89,7 @@
       {
         "call_addr": "004100c1",
         "call_type": "direct",
-        "caller": "core_baron.cpp_FUN_0040fcf0",
+        "caller": "core_baron.cpp_CBaron_performLightningAttack_FUN_0040fcf0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -100,7 +100,7 @@
       {
         "call_addr": "004100ec",
         "call_type": "direct",
-        "caller": "core_baron.cpp_FUN_0040fcf0",
+        "caller": "core_baron.cpp_CBaron_performLightningAttack_FUN_0040fcf0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -143,6 +143,32 @@
       "STORE": 14
     },
     "pcode_op_count": 261
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0049e760",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a3c50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7835
+    },
+    "nocedit.exe": {
+      "addr": "004c8fd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0048c4a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 28,

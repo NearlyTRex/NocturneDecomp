@@ -9,6 +9,6 @@
 void __cdecl engine_dosio_cpp_CFileFinder_reset_FUN_00460f90(CFileFinder *this_ptr)
 
 {
-  *(byte *)this_ptr = 0;
+  this_ptr->filename[0] = '\0';
   return;
 }

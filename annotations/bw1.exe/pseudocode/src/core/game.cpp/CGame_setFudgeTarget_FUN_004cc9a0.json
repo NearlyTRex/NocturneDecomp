@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 7,
-    "complexity_score": 31,
+    "complexity_score": 6,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 6,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 13
   },
   "cross_references": [
@@ -70,6 +68,26 @@
     },
     "pcode_op_count": 18
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004b39b0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004d8730",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0049b240",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -100,22 +118,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x9f0",
-      "severity": "mild",
-      "text": "*(CVector3f **)&this_ptr->field_0x9f0 = fudge_target;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x9f4",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x9f4 = fudge_step;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

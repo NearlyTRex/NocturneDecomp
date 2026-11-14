@@ -42,18 +42,18 @@
 ;   core_main.c_FUN_004e4330
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
 ;   engine_3d.c_setRenderAlpha_FUN_00406bf0
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0
+;   engine_font.cpp_CBitFont_getTextHeight_FUN_004b2b30
+;   engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80
 ;   engine_font.cpp_FUN_004b0a20
-;   engine_font.cpp_FUN_004b2a80
-;   engine_font.cpp_FUN_004b2b30
-;   engine_font.cpp_FUN_004b30f0
-;   engine_mini3d.cpp_FUN_004edaf0
+;   engine_mini3d.cpp_setAlpha_FUN_004edaf0
+;   shape_edittool.cpp_calculateButtonWidth_FUN_004864f0
 ;   shape_edittool.cpp_CEdButton_ctor_FUN_00486020
 ;   shape_edittool.cpp_CEdButton_dtor_FUN_00486050
 ;   shape_edittool.cpp_CEdButton_setBoundsAndText_FUN_004860d0
 ;   shape_edittool.cpp_CEdButton_wasClicked_FUN_00486440
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047f3e0
 ;   shape_edittool.cpp_FUN_0047f970
-;   shape_edittool.cpp_FUN_0047fa80
 ;   ... and 7 more
 ;
 ; *****************************************************************************
@@ -76,8 +76,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0x41e8]    ; 0047c905
     PUSH EAX                            ; 0047c90b
     MOV dword ptr [0x01c5bae0],EDX      ; 0047c90c | DAT_01c5bae0
-    CALL engine_font.cpp_FUN_004b30f0   ; 0047c912
-        ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004b30f0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0 ; 0047c912
+        ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0(CBitFont * this_ptr, int char_code)
     MOV [0x01c5bae4],EAX                ; 0047c917 | DAT_01c5bae4
     MOV EAX,[0x005fba1c]                ; 0047c91c | DAT_005fba1c
     MOV EDX,EAX                         ; 0047c921
@@ -87,8 +87,8 @@ section .text
     ADD ESP,0x8                         ; 0047c92d
     PUSH 0x5bce11                       ; 0047c930 | = "Cancel"
     MOV EBX,EAX                         ; 0047c935
-    CALL shape_edittool.cpp_FUN_004864f0 ; 0047c937
-        ;   XREF to: 004864f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_FUN_004864f0(char * button_text)
+    CALL shape_edittool.cpp_calculateButtonWidth_FUN_004864f0 ; 0047c937
+        ;   XREF to: 004864f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_calculateButtonWidth_FUN_004864f0(char * button_text)
     ADD ESP,0x4                         ; 0047c93c
     PUSH 0x0                            ; 0047c93f
     MOV dword ptr [ESP + 0xf4],EAX      ; 0047c941
@@ -101,16 +101,16 @@ section .text
     ADD EBX,EBX                         ; 0047c95e
     PUSH EBP                            ; 0047c960
     ADD EBX,EAX                         ; 0047c961
-    CALL engine_font.cpp_FUN_004b2a80   ; 0047c963
-        ;   XREF to: 004b2a80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004b2a80(CBitFont * this_ptr, char * text)
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80 ; 0047c963
+        ;   XREF to: 004b2a80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 0047c968
     MOV EBP,EAX                         ; 0047c96b
     PUSH ESI                            ; 0047c96d
     MOV dword ptr [ESP + 0xf8],EAX      ; 0047c96e
     MOV EAX,[0x01c5b0e0]                ; 0047c975 | DAT_01c5b0e0
     PUSH EAX                            ; 0047c97a
-    CALL engine_font.cpp_FUN_004b2a80   ; 0047c97b
-        ;   XREF to: 004b2a80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004b2a80(CBitFont * this_ptr, char * text)
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80 ; 0047c97b
+        ;   XREF to: 004b2a80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 0047c980
     MOV EDI,EAX                         ; 0047c983
     CMP EAX,EBP                         ; 0047c985
@@ -126,8 +126,8 @@ section .text
         ;   Label: LAB_0047c9a4
     MOV ECX,dword ptr [0x01c5b0e0]      ; 0047c9a5 | DAT_01c5b0e0
     PUSH ECX                            ; 0047c9ab
-    CALL engine_font.cpp_FUN_004b2b30   ; 0047c9ac
-        ;   XREF to: 004b2b30 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004b2b30(CBitFont * this_ptr, char * text_string)
+    CALL engine_font.cpp_CBitFont_getTextHeight_FUN_004b2b30 ; 0047c9ac
+        ;   XREF to: 004b2b30 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextHeight_FUN_004b2b30(CBitFont * this_ptr, char * text_string)
     ADD ESP,0x8                         ; 0047c9b1
     PUSH 0x0                            ; 0047c9b4
     MOV EDX,dword ptr [ESP + 0x110]     ; 0047c9b6
@@ -149,8 +149,8 @@ section .text
         ;   XREF to: 0047f3e0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047f3e0(CEditorTools * this_ptr, int min_width, int min_height, char * text_content, ...)
     ADD ESP,0x14                        ; 0047c9ea
     PUSH 0x5bce18                       ; 0047c9ed | = "Cancel"
-    CALL shape_edittool.cpp_FUN_004864f0 ; 0047c9f2
-        ;   XREF to: 004864f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_FUN_004864f0(char * button_text)
+    CALL shape_edittool.cpp_calculateButtonWidth_FUN_004864f0 ; 0047c9f2
+        ;   XREF to: 004864f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_calculateButtonWidth_FUN_004864f0(char * button_text)
     MOV EDX,dword ptr [0x01c6b5b0]      ; 0047c9f7 | DAT_01c6b5b0
     MOV dword ptr [ESP + 0xf0],EAX      ; 0047c9fd
     ADD ESP,0x4                         ; 0047ca04
@@ -229,8 +229,8 @@ section .text
         ;   XREF to: 00406bf0 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406bf0(int alpha_color_value)
     ADD ESP,0x4                         ; 0047cae4
     PUSH 0x3f800000                     ; 0047cae7
-    CALL engine_mini3d.cpp_FUN_004edaf0 ; 0047caec
-        ;   XREF to: 004edaf0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004edaf0()
+    CALL engine_mini3d.cpp_setAlpha_FUN_004edaf0 ; 0047caec
+        ;   XREF to: 004edaf0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setAlpha_FUN_004edaf0(float alpha)
     ADD ESP,0x4                         ; 0047caf1
     PUSH -0x1                           ; 0047caf4
     MOV EDX,dword ptr [ESP + 0x118]     ; 0047caf6
@@ -271,8 +271,8 @@ section .text
     CALL shape_edittool.cpp_FUN_00480410 ; 0047cb5a
         ;   XREF to: 00480410 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00480410()
     ADD ESP,0x8                         ; 0047cb5f
-    CALL wincore_wddvmem.cpp_FUN_0057a8a0 ; 0047cb62
-        ;   XREF to: 0057a8a0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_0057a8a0()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0 ; 0047cb62
+        ;   XREF to: 0057a8a0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0()
     JMP 0x0047ca8e                      ; 0047cb67
         ;   XREF to: 0047ca8e (UNCONDITIONAL_JUMP)  ; LAB_0047ca8e
     MOV ECX,0x5bcd25                    ; 0047cb6c | = "..\\shape\\edittool.cpp"

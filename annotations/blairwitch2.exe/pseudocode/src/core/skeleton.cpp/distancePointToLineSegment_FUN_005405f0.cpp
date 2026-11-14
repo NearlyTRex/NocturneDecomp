@@ -1,0 +1,51 @@
+// Name: core_skeleton.cpp_distancePointToLineSegment_FUN_005405f0
+// Address: 005405f0
+// Address Range: [[005405f0, 005407d3]]
+// Convention: __cdecl
+// Signature: float __cdecl core_skeleton_cpp_distancePointToLineSegment_FUN_005405f0(CVector3f *line_start,CVector3f *line_end,CVector3f *test_point)
+
+#include "nocturne.h"
+
+float __cdecl core_skeleton_cpp_distancePointToLineSegment_FUN_005405f0(CVector3f *line_start,CVector3f *line_end,CVector3f *test_point)
+
+{
+  float fVar1;
+  float fVar2;
+  float fVar3;
+  float fVar4;
+  float fVar5;
+  
+  fVar1 = line_end->x - line_start->x;
+  fVar2 = line_end->y - line_start->y;
+  fVar3 = line_end->z - line_start->z;
+  fVar4 = SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2);
+  if (0.0 < fVar4) {
+    fVar5 = 1.0 / fVar4;
+    fVar1 = fVar1 * fVar5;
+    fVar2 = fVar2 * fVar5;
+    fVar3 = fVar3 * fVar5;
+    fVar5 = (test_point->z * fVar3 + test_point->y * fVar2 + test_point->x * fVar1) -
+            (line_start->z * fVar3 + line_start->x * fVar1 + line_start->y * fVar2);
+    if (0.0 < fVar5) {
+      if (fVar5 < fVar4) {
+        fVar1 = test_point->x - (line_start->x + fVar1 * fVar5);
+        fVar2 = test_point->y - (line_start->y + fVar2 * fVar5);
+        fVar1 = fVar2 * fVar2 + fVar1 * fVar1;
+        fVar2 = test_point->z - (line_start->z + fVar3 * fVar5);
+      }
+      else {
+        fVar1 = test_point->x - line_end->x;
+        fVar2 = test_point->y - line_end->y;
+        fVar1 = fVar2 * fVar2 + fVar1 * fVar1;
+        fVar2 = test_point->z - line_end->z;
+      }
+      goto LAB_00540704;
+    }
+  }
+  fVar1 = test_point->x - line_start->x;
+  fVar2 = test_point->y - line_start->y;
+  fVar1 = fVar2 * fVar2 + fVar1 * fVar1;
+  fVar2 = test_point->z - line_start->z;
+LAB_00540704:
+  return SQRT(fVar2 * fVar2 + fVar1);
+}

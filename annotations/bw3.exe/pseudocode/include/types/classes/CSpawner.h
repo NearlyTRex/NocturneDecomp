@@ -4,13 +4,26 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDeformableModelInstance.h"
+#include "types/classes/CDemonActor.h"
 
 // Structure: CSpawner
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 9588; CSpawner_ctor 005638a0: CDemonActor ctor, CDeformableModelInstance ctor at +0x1d0 (9124 -> ends at size); archive FUN_00563e50 names every field
 // Ghidra size: 0x2574 (9588 bytes)
 #pragma pack(push, 1)
 typedef struct CSpawner {
-    char field_0[9588]; // 0x0
+    CDemonActor base; // 0x0, derived
+    char spawn_name[30]; // 0x158, archiveString "spawn_name" LEA +0x158; setup FUN_00563910 copies actor_name + suffix; next field at +0x176
+    char actor_class_name[30]; // 0x176, archiveString "actor_class_name" LEA +0x176; ctor byte 0; next field at +0x194
+    char starting_state[32]; // 0x194, archiveString "starting_state" LEA +0x194 (version>1); ctor byte 0; next field at +0x1b4
+    float spawn_timer; // 0x1b4, archiveFloat "spawn_timer"; ctor 0
+    float reset_timer; // 0x1b8, archiveFloat "reset_timer" (version>3); ctor 0
+    float spawn_time; // 0x1bc, archiveFloat "spawn_time"; ctor 30.0
+    int number_of_spawns; // 0x1c0, archiveInteger "number_of_spawns"; ctor 0; process INC/CMP
+    int max_number_of_spawns; // 0x1c4, archiveInteger "max_number_of_spawns"; ctor 10
+    int dont_spawn_when_in_view; // 0x1c8, archiveInteger "dont_spawn_when_in_view" (version>3); ctor 0
+    float start_guard_dist; // 0x1cc, archiveFloat "startGuardDist" (version>=5); ctor 100.0
+    CDeformableModelInstance spawn_model; // 0x1d0, ctor CDeformableModelInstance_ctor(+0x1d0); archive "spawnmodelName"; dtor
 } CSpawner;
 #pragma pack(pop)
 

@@ -25,15 +25,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0057cc00",
-      "from_addr": "0057cc63",
-      "name": "core_sound.cpp_FUN_0057cc00",
+      "addr": "0057d6a0",
+      "from_addr": "0057d78b",
+      "name": "core_sound.cpp_CSound_configure_FUN_0057d6a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0057d6a0",
-      "from_addr": "0057d78b",
-      "name": "core_sound.cpp_FUN_0057d6a0",
+      "addr": "0057cc00",
+      "from_addr": "0057cc63",
+      "name": "core_sound.cpp_FUN_0057cc00",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -56,24 +56,19 @@
       "name": "crt_memory.c_memset_FUN_005bfb70"
     },
     {
-      "addr": "00573e70",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00573e70"
-    },
-    {
-      "addr": "00575540",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00575540"
-    },
-    {
       "addr": "00575550",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00575550"
+      "name": "sound_sndmain.cpp_isSoundBusy_FUN_00575550"
     },
     {
       "addr": "005735f0",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_isSoundMuted_FUN_005735f0"
+    },
+    {
+      "addr": "00575540",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSoundSystemActive_FUN_00575540"
     },
     {
       "addr": "00575d20",
@@ -91,9 +86,14 @@
       "name": "sound_sndmain.cpp_setSoundOutputMode_FUN_00575120"
     },
     {
+      "addr": "00573e70",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_unlockSound_FUN_00573e70"
+    },
+    {
       "addr": "005b2420",
       "is_variadic": false,
-      "name": "wincore_winrun.cpp_FUN_005b2420"
+      "name": "wincore_winrun.cpp_getTime_FUN_005b2420"
     }
   ],
   "globals": [
@@ -234,7 +234,7 @@
       {
         "call_addr": "0057d78b",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0057d6a0",
+        "caller": "core_sound.cpp_CSound_configure_FUN_0057d6a0",
         "estimated_params": 0,
         "instructions_analyzed": 2,
         "method": "push_count",
@@ -281,6 +281,32 @@
       "SUBPIECE": 2
     },
     "pcode_op_count": 632
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005524b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00558050",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005aaef0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7795
+    },
+    "nocturne.exe": {
+      "addr": "00527e40",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7795
+    }
   },
   "stack_frame": {
     "frame_size": 4,

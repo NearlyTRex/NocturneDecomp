@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SWaterVertex * core_wateract_cpp_SWaterVertex_ctor_FUN_005790f0(SWaterVertex *this_ptr)
+; SWaterVertex * __cdecl core_wateract_cpp_SWaterVertex_ctor_FUN_005790f0(SWaterVertex *this_ptr)
 ;
 ; Parameters:
 ; SWaterVertex *   Stack[0x4]:4   this_ptr

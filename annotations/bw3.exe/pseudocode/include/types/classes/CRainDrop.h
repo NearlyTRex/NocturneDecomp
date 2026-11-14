@@ -4,13 +4,13 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CParticle.h"
 
 // Structure: CRainDrop
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x40 (64 bytes)
 #pragma pack(push, 1)
 typedef struct CRainDrop {
-    char field_0[64]; // 0x0
+    CParticle base; // 0x0
 } CRainDrop;
 #pragma pack(pop)
 

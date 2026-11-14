@@ -5,9 +5,21 @@
 // Function prototypes for core/shadow.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_shadow.cpp_staticInit_FUN_00543400
+// Address: 00543400
+void __cdecl staticInit(void);
+
+// Original: core_shadow.cpp_factoryFuncShadow_FUN_005434d0
+// Address: 005434d0
+CShadow * __cdecl factoryFuncShadow(void);
+
+// Original: core_shadow.cpp_CShadow_getActorType_FUN_005434f0
+// Address: 005434f0
+CDemonActorType * __cdecl CShadow::getActorType(CShadow *this_ptr);
+
 // Original: core_shadow.cpp_CShadow_ctor_FUN_00543500
 // Address: 00543500
-CShadow * CShadow::ctor(CShadow *this_ptr);
+CShadow * __cdecl CShadow::ctor(CShadow *this_ptr);
 
 // Original: core_shadow.cpp_FUN_00543680
 // Address: 00543680
@@ -17,9 +29,9 @@ void FUN_00543680(CEnemy *param_1);
 // Address: 005438d0
 void FUN_005438d0(CEnemy *param_1,float param_2);
 
-// Original: core_shadow.cpp_FUN_00544fd0
+// Original: core_shadow.cpp_CShadow_setWalkTarget_FUN_00544fd0
 // Address: 00544fd0
-void FUN_00544fd0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+void __cdecl CShadow::setWalkTarget(CShadow *this_ptr,CDemonActor *target,float min_distance,float max_distance);
 
 // Original: core_shadow.cpp_FUN_00545000
 // Address: 00545000
@@ -41,9 +53,9 @@ void FUN_005450c0(int param_1);
 // Address: 00545100
 void FUN_00545100(int param_1);
 
-// Original: core_shadow.cpp_FUN_005454d0
-// Address: 005454d0
-void FUN_005454d0(void);
+// Original: core_shadow.cpp_FUN_00545140
+// Address: 00545140
+void FUN_00545140(int param_1,float *param_2);
 
 // Original: core_shadow.cpp_FUN_00545700
 // Address: 00545700
@@ -51,15 +63,15 @@ void FUN_00545700(CCharacter *param_1);
 
 // Original: core_shadow.cpp_FUN_00545710
 // Address: 00545710
-undefined4 FUN_00545710(CCharacter *param_1);
+int FUN_00545710(CCharacter *param_1);
 
 // Original: core_shadow.cpp_FUN_00545910
 // Address: 00545910
-void FUN_00545910(int param_1);
+void FUN_00545910(CEnemy *param_1);
 
 // Original: core_shadow.cpp_FUN_005459b0
 // Address: 005459b0
-void FUN_005459b0(int param_1,int param_2);
+void FUN_005459b0(CEnemy *param_1,SDamageInfo *param_2);
 
 // Original: core_shadow.cpp_FUN_00545bd0
 // Address: 00545bd0
@@ -67,7 +79,7 @@ undefined4 FUN_00545bd0(int param_1);
 
 // Original: core_shadow.cpp_FUN_00545c10
 // Address: 00545c10
-undefined4 FUN_00545c10(int param_1,undefined4 *param_2);
+undefined4 FUN_00545c10(int param_1,float *param_2);
 
 // Original: core_shadow.cpp_FUN_00545c80
 // Address: 00545c80
@@ -83,7 +95,7 @@ undefined4 FUN_00545e90(void);
 
 // Original: core_shadow.cpp_CShadowForest_ctor_FUN_00545ea0
 // Address: 00545ea0
-CShadowForest * CShadowForest::ctor(CShadowForest *this_ptr);
+CShadowForest * __cdecl CShadowForest::ctor(CShadowForest *this_ptr);
 
 // Original: core_shadow.cpp_FUN_00545f00
 // Address: 00545f00
@@ -95,7 +107,7 @@ undefined4 FUN_00545f20(void);
 
 // Original: core_shadow.cpp_CSpiritShadow_ctor_FUN_00545f30
 // Address: 00545f30
-CSpiritShadow * CSpiritShadow::ctor(CSpiritShadow *this_ptr);
+CSpiritShadow * __cdecl CSpiritShadow::ctor(CSpiritShadow *this_ptr);
 
 // Original: core_shadow.cpp_FUN_00545f90
 // Address: 00545f90
@@ -107,20 +119,20 @@ undefined4 FUN_00545fb0(void);
 
 // Original: core_shadow.cpp_CDemonShadow_ctor_FUN_00545fc0
 // Address: 00545fc0
-CDemonShadow * CDemonShadow::ctor(CDemonShadow *this_ptr);
+CDemonShadow * __cdecl CDemonShadow::ctor(CDemonShadow *this_ptr);
 
 // Original: core_shadow.cpp_CDemonShadow_dtor_FUN_00546020
 // Address: 00546020
-CDemonShadow * CDemonShadow::dtor(CDemonShadow *this_ptr,uint flags);
+CDemonShadow * __cdecl CDemonShadow::dtor(CDemonShadow *this_ptr,uint flags);
 
 // Original: core_shadow.cpp_CSpiritShadow_dtor_FUN_005460b0
 // Address: 005460b0
-CSpiritShadow * CSpiritShadow::dtor(CSpiritShadow *this_ptr,uint flags);
+CSpiritShadow * __cdecl CSpiritShadow::dtor(CSpiritShadow *this_ptr,uint flags);
 
 // Original: core_shadow.cpp_CShadowForest_dtor_FUN_00546140
 // Address: 00546140
-CShadowForest * CShadowForest::dtor(CShadowForest *this_ptr,uint flags);
+CShadowForest * __cdecl CShadowForest::dtor(CShadowForest *this_ptr,uint flags);
 
 // Original: core_shadow.cpp_CShadow_dtor_FUN_005461d0
 // Address: 005461d0
-CShadow * CShadow::dtor(CShadow *this_ptr,uint flags);
+CShadow * __cdecl CShadow::dtor(CShadow *this_ptr,uint flags);

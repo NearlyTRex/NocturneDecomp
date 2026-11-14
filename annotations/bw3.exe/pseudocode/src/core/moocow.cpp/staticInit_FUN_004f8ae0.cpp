@@ -1,12 +1,12 @@
 // Name: core_moocow.cpp_staticInit_FUN_004f8ae0
 // Address: 004f8ae0
 // Address Range: [[004f8ae0, 004f8b03]]
-// Convention: unknown
-// Signature: void core_moocow_cpp_staticInit_FUN_004f8ae0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_moocow_cpp_staticInit_FUN_004f8ae0(void)
 
 #include "nocturne.h"
 
-void core_moocow_cpp_staticInit_FUN_004f8ae0(void)
+void __cdecl core_moocow_cpp_staticInit_FUN_004f8ae0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c3a0

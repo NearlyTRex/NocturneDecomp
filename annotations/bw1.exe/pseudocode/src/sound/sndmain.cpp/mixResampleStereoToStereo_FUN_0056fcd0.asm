@@ -1,8 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; double __cdecl sound_sndmain_cpp_mixResampleStereoToStereo_FUN_0056fcd0(int param_1,int *param_2,float *param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,int param_8)
+; double __cdecl sound_sndmain_cpp_mixResampleStereoToStereo_FUN_0056fcd0(short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains,double resample_position,double resample_delta,int samples_to_process)
 ;
+; Parameters:
+; short *          Stack[0x4]:4   sample_data
+; SStereoBuffers * Stack[0x8]:4   channel_buffers
+; SStereoGains *   Stack[0xc]:4   channel_gains
+; double           Stack[0x10]:8   resample_position
+; double           Stack[0x18]:8   resample_delta
+; int              Stack[0x20]:4   samples_to_process
 ; Local Variables:
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined4       Stack[-0x38]:4  local_38
@@ -16,7 +23,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   sound_sndmain.cpp_FUN_00571420 at 00571ba2
+;   sound_sndmain.cpp_CSfxSlot_mix_FUN_00571420 at 00571ba2
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f32a0

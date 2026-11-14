@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   bits_per_pixel
 ;
 ; XREF[2]:
-;   wincore_wddvmem.cpp_FUN_005897e0 at 00589812
 ;   wincore_wddvmem.cpp_resetGraphicsSystem_FUN_00588de0 at 00588e90
+;   wincore_wddvmem.cpp_videoRestore_FUN_005897e0 at 00589812
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006141c0
@@ -29,9 +29,9 @@
 ;   undefined4 DAT_0264bcf4
 ;
 ; Called Functions:
-;   engine_special.cpp_FUN_0055e8c0
 ;   engine_special.cpp_FUN_0055f500
-;   engine_special.cpp_FUN_0055f550
+;   engine_special.cpp_loadExternalRenderer_FUN_0055e8c0
+;   engine_special.cpp_unlockFrame_FUN_0055f550
 ;   wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004d0d10
 ;
 ; *****************************************************************************
@@ -56,8 +56,8 @@ section .text
         ;   XREF to: 0055f7aa (CONDITIONAL_JUMP)  ; LAB_0055f7aa
     MOV ESI,dword ptr [0x0264bcf0]      ; 0055f793 | DAT_0264bcf0
     PUSH ESI                            ; 0055f799
-    CALL engine_special.cpp_FUN_0055e8c0 ; 0055f79a
-        ;   XREF to: 0055e8c0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_0055e8c0(HWND window_handle)
+    CALL engine_special.cpp_loadExternalRenderer_FUN_0055e8c0 ; 0055f79a
+        ;   XREF to: 0055e8c0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_loadExternalRenderer_FUN_0055e8c0(HWND window_handle)
     ADD ESP,0x4                         ; 0055f79f
     TEST EAX,EAX                        ; 0055f7a2
     JZ 0x0055f855                       ; 0055f7a4
@@ -108,8 +108,8 @@ section .text
         ;   Label: LAB_0055f840
     PUSH 0x0                            ; 0055f846
         ;   Label: LAB_0055f846
-    CALL engine_special.cpp_FUN_0055f550 ; 0055f848
-        ;   XREF to: 0055f550 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_0055f550(int clear_lock_flag)
+    CALL engine_special.cpp_unlockFrame_FUN_0055f550 ; 0055f848
+        ;   XREF to: 0055f550 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_0055f550(int clear_lock_flag)
     MOV EAX,0x1                         ; 0055f84d
     ADD ESP,0x4                         ; 0055f852
     POP EBP                             ; 0055f855

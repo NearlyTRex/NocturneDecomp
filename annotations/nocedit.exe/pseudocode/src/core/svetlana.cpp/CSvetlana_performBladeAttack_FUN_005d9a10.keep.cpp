@@ -79,7 +79,7 @@ LAB_005d9adc:
     local_84.damage_amount = 15.0;
     local_84.ammo_type = AMMO_TYPE_SILVER;
     local_84.dismember_prob = 0.7;
-    local_84.damage_type = DAMAGE_TYPE_MELEE;
+    local_84.damage_type = DAMAGE_TYPE_ATTACK_BLADE;
     iVar3 = (*(((this_ptr_01->base).base.base.vtable._uc)->_uc).testDamageLine)
                       ((CCharacter *)this_ptr_01,&local_24,&local_3c,&local_84,(CVector3f *)0x0);
     if (iVar3 == 0) goto LAB_005d9adc;

@@ -1,165 +1,5 @@
 [
   {
-    "addr":"0042d81c",
-    "calls":[
-      "0042d390"
-    ],
-    "conv":"unknown",
-    "instructions":18,
-    "method":"FUN_0042d81c",
-    "name":"cockpit_ckptutil.c_FUN_0042d81c",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"cockpit/ckptutil.c",
-    "variadic":false
-  },
-  {
-    "addr":"00469f9c",
-    "calls":[
-      "00403970",
-      "00469590"
-    ],
-    "conv":"unknown",
-    "instructions":45,
-    "method":"FUN_00469f9c",
-    "name":"engine_drender.cpp_FUN_00469f9c",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"engine/drender.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"0047401c",
-    "conv":"unknown",
-    "instructions":1,
-    "method":"FUN_0047401c",
-    "name":"core_dtrace.cpp_FUN_0047401c",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"core/dtrace.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"0047c01c",
-    "conv":"unknown",
-    "instructions":2,
-    "method":"FUN_0047c01c",
-    "name":"shape_edittool.cpp_FUN_0047c01c",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"shape/edittool.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"004f721c",
-    "conv":"unknown",
-    "instructions":23,
-    "method":"FUN_004f721c",
-    "name":"engine_mini3d.cpp_FUN_004f721c",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"engine/mini3d.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"004f8f9c",
-    "conv":"unknown",
-    "instructions":14,
-    "method":"FUN_004f8f9c",
-    "name":"engine_mini3d.cpp_FUN_004f8f9c",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"engine/mini3d.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"0050b41c",
-    "conv":"unknown",
-    "instructions":1,
-    "method":"FUN_0050b41c",
-    "name":"core_netgame.cpp_FUN_0050b41c",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"core/netgame.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"0055141c",
-    "calls":[
-      "005532f0"
-    ],
-    "conv":"unknown",
-    "instructions":9,
-    "method":"FUN_0055141c",
-    "name":"sound_sndmain.cpp_FUN_0055141c",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"sound/sndmain.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"0055651c",
-    "conv":"unknown",
-    "instructions":12,
-    "method":"FUN_0055651c",
-    "name":"sound_snddx.cpp_FUN_0055651c",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"sound/snddx.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"0056029c",
-    "conv":"unknown",
-    "instructions":7,
-    "method":"FUN_0056029c",
-    "name":"engine_special.cpp_FUN_0056029c",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"engine/special.cpp",
-    "variadic":false
-  },
-  {
     "addr":"005b849c",
     "callers":[
       "0040cf60",
@@ -195,7 +35,7 @@
       "005401b0",
       "0054a790",
       "005593d0",
-      "00559b4e",
+      "00559b50",
       "0055a3c0",
       "00599400",
       "0059d440"
@@ -255,11 +95,11 @@
       "00517a60",
       "00519dc0",
       "00519f00",
-      "0051aa7e",
+      "0051aa80",
       "0051ad50",
       "0051ae70",
       "0051af80",
-      "0051b6dc",
+      "0051b6e0",
       "0057d450",
       "0057dcf0",
       "005b8f9c"
@@ -277,10 +117,37 @@
     "instructions":185,
     "method":"fseek",
     "name":"crt_stdio.c_fseek_FUN_005b929c",
+    "params":[
+      {
+        "name":"file",
+        "type":{
+          "header":"stdio",
+          "kind":"system",
+          "name":"_FILE",
+          "ptr":1
+        }
+      },
+      {
+        "name":"offset",
+        "type":{
+          "kind":"builtin",
+          "name":"long",
+          "ptr":0
+        }
+      },
+      {
+        "name":"whence",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"crt/stdio.c",
@@ -341,14 +208,14 @@
     ],
     "instructions":4,
     "method":"FUN_005c289c",
-    "name":"unkafter_morph.cpp_FUN_005c289c",
+    "name":"crt_unknown.c_FUN_005c289c",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/morph.cpp",
+    "tu":"crt/unknown.c",
     "variadic":false
   },
   {
@@ -359,14 +226,14 @@
     "conv":"unknown",
     "instructions":30,
     "method":"FUN_005c349c",
-    "name":"unkafter_morph.cpp_FUN_005c349c",
+    "name":"crt_unknown.c_FUN_005c349c",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/morph.cpp",
+    "tu":"crt/unknown.c",
     "variadic":false
   },
   {
@@ -381,14 +248,14 @@
     ],
     "instructions":27,
     "method":"FUN_005c469c",
-    "name":"unkafter_morph.cpp_FUN_005c469c",
+    "name":"crt_unknown.c_FUN_005c469c",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/morph.cpp",
+    "tu":"crt/unknown.c",
     "variadic":false
   },
   {
@@ -402,14 +269,14 @@
     "conv":"unknown",
     "instructions":28,
     "method":"FUN_005c599c",
-    "name":"unkafter_2d.cpp_FUN_005c599c",
+    "name":"crt_unknown.c_FUN_005c599c",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/2d.cpp",
+    "tu":"crt/unknown.c",
     "variadic":false
   }
 ]

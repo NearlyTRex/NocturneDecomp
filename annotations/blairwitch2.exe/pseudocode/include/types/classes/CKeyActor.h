@@ -4,13 +4,19 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CKeyFramedModelInstance.h"
 
 // Structure: CKeyActor
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x478 (1144 bytes)
 #pragma pack(push, 1)
 typedef struct CKeyActor {
-    char field_0[1144]; // 0x0
+    CDemonActor base; // 0x0
+    CKeyFramedModelInstance model; // 0x2b4
+    int key_mask; // 0x430
+    float rotation_angle; // 0x434
+    CDemonGlobe globe; // 0x438
 } CKeyActor;
 #pragma pack(pop)
 

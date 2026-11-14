@@ -14,15 +14,15 @@
 ;
 ; XREF[47]:
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0 at 00408818
-;   core_battery.cpp_FUN_0040f590 at 0040f5ba
-;   core_bodypart.cpp_FUN_00414bd0 at 00414caa
-;   core_boxactor.cpp_FUN_0041f8e0 at 0041f955
-;   core_boxactor.cpp_FUN_0041f9f0 at 0041fa65
-;   core_bugs.cpp_FUN_004215f0 at 004216c0
-;   core_charactr.cpp_FUN_0042e3a0 at 0042e47d
+;   core_battery.cpp_CBattery_renderOpaque_FUN_0040f590 at 0040f5ba
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00412c50 at 00412e45
+;   core_bodypart.cpp_CBodyPart_renderOpaque_FUN_00414bd0 at 00414caa
+;   core_boxactor.cpp_CBoxActor_renderOpaque_FUN_0041f8e0 at 0041f955
+;   core_boxactor.cpp_CBoxActor_renderTransparent_FUN_0041f9f0 at 0041fa65
+;   core_bugs.cpp_CBugs_renderOpaque_FUN_004215f0 at 004216c0
+;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042e3a0 at 0042e47d
 ;   core_cloth.cpp_FUN_0043f160 at 0043f1b2
-;   core_crate.cpp_FUN_00445fa0 at 00445fca
-;   core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_0044ef20 at 0044f01a
+;   core_crate.cpp_CCrate_renderOpaque_FUN_00445fa0 at 00445fca
 ;   ... and 37 more
 ;
 ; Referenced Globals:

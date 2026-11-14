@@ -17,24 +17,24 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_0046c800(CD
   int iVar4;
   uint local_14;
   
-  if ((*(int *)(this_ptr + 0xc) == 0) ||
-     (iVar4 = engine_3d_c_isVisiblePlane_FUN_00403920(poly + 8), iVar4 != 0)) {
+  if ((this_ptr->plane_culling_enabled == 0) ||
+     (iVar4 = engine_3d_c_isVisiblePlane_FUN_00403920(&(poly->base).surface_normal), iVar4 != 0)) {
     iVar4 = 0;
     local_14 = 0xffffffff;
-    if (0 < *(int *)(poly + 4)) {
+    if (0 < (poly->base).base.count) {
       iVar3 = 0;
       pSVar2 = poly;
       do {
-        iVar1 = *(int *)(pSVar2 + 0x18);
+        iVar1 = pSVar2->vertices[0].vertex_index;
         *(int *)(&DAT_01bdd818 + iVar3) = iVar1;
         iVar3 = iVar3 + 4;
-        local_14 = local_14 & *(uint *)(*(int *)this_ptr + 0x10 + iVar1 * 0x30);
-        pSVar2 = pSVar2 + 0xc;
+        local_14 = local_14 & this_ptr->vertex_buffer_ptr[iVar1].projected_vertex.screen_x;
+        pSVar2 = (SMRGLPrimitivePoly *)&(pSVar2->base).surface_normal.B;
         iVar4 = iVar4 + 1;
-      } while (iVar4 < *(int *)(poly + 4));
+      } while (iVar4 < (poly->base).base.count);
     }
     if (((local_14 & 0x80000000) == 0) || ((local_14 & 0x1f) == 0)) {
-      if (*(int *)(this_ptr + 4) == 0) {
+      if (this_ptr->shadow_pass_active == 0) {
         if (DAT_005fba20 == 0x20) {
           _DAT_01c6b5cc = engine_special_cpp_FUN_00560f31;
         }
@@ -43,19 +43,17 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_0046c800(CD
         }
         _DAT_01c6e2b8 = 6;
         _DAT_01c6e2b4 = 0x267;
-        if ((*(int *)(this_ptr + 0x20) == 0) && (iVar4 = 0, 0 < *(int *)(poly + 4))) {
+        if ((this_ptr->skip_uv_extraction == 0) && (iVar4 = 0, 0 < (poly->base).base.count)) {
           iVar3 = 0;
           pSVar2 = poly;
           do {
             iVar1 = *(int *)(&DAT_01bdd818 + iVar3);
-            *(uint *)(*(int *)this_ptr + 0x18 + iVar1 * 0x30) = *(uint *)(pSVar2 + 0x1c)
-            ;
-            *(uint *)(*(int *)this_ptr + iVar1 * 0x30 + 0x1c) = *(uint *)(pSVar2 + 0x20)
-            ;
-            pSVar2 = pSVar2 + 0xc;
+            this_ptr->vertex_buffer_ptr[iVar1].u = pSVar2->vertices[0].texture_u;
+            this_ptr->vertex_buffer_ptr[iVar1].v = pSVar2->vertices[0].texture_v;
+            pSVar2 = (SMRGLPrimitivePoly *)&(pSVar2->base).surface_normal.B;
             iVar4 = iVar4 + 1;
             iVar3 = iVar3 + 4;
-          } while (iVar4 < *(int *)(poly + 4));
+          } while (iVar4 < (poly->base).base.count);
         }
       }
       else {
@@ -64,7 +62,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_0046c800(CD
         _DAT_01c6b5cc = core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0046f9a6;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160
-                (this_ptr,*(int *)(poly + 4),(int *)&DAT_01bdd818);
+                (this_ptr,(poly->base).base.count,(int *)&DAT_01bdd818);
     }
   }
   return;

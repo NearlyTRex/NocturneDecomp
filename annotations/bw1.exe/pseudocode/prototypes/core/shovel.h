@@ -7,15 +7,15 @@
 
 // Original: core_shovel.cpp_staticInit_FUN_005623b0
 // Address: 005623b0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_shovel.cpp_factoryFuncShovel_FUN_005623e0
 // Address: 005623e0
-void factoryFuncShovel(void);
+CShovel * __cdecl factoryFuncShovel(void);
 
 // Original: core_shovel.cpp_CShovel_getActorType_FUN_00562400
 // Address: 00562400
-CDemonActorType * CShovel::getActorType(CShovel *this_ptr);
+CDemonActorType * __cdecl CShovel::getActorType(CShovel *this_ptr);
 
 // Original: core_shovel.cpp_CShovel_ctor_FUN_00562410
 // Address: 00562410
@@ -25,13 +25,13 @@ CShovel * __cdecl CShovel::ctor(CShovel *this_ptr);
 // Address: 00562490
 int __cdecl CShovel::fire(CShovel *this_ptr);
 
-// Original: core_shovel.cpp_FUN_005624b0
+// Original: core_shovel.cpp_CShovel_getDamage_FUN_005624b0
 // Address: 005624b0
-undefined4 FUN_005624b0(void);
+float __cdecl CShovel::getDamage(CShovel *this_ptr);
 
-// Original: core_shovel.cpp_FUN_005624e0
+// Original: core_shovel.cpp_CShovel_renderAimBeam_FUN_005624e0
 // Address: 005624e0
-void FUN_005624e0(void);
+void __cdecl CShovel::renderAimBeam(CShovel *this_ptr);
 
 // Original: core_shovel.cpp_CShovel_dtor_FUN_005624f0
 // Address: 005624f0

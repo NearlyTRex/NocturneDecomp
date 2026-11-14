@@ -301,9 +301,6 @@ static char* g_ChapterMissionFiles[5][13] = {
     {"hq-act5.msn", nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr}
 };
 
-// char[100] constants
-static char g_IpAddress[100] = "10.0.0.105";
-
 // float constants
 static float FLOAT_005ba82c = 1.0f;
 static float FLOAT_005ba830 = -1.0f;

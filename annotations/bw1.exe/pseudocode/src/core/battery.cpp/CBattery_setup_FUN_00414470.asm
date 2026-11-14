@@ -7,7 +7,7 @@
 ; CBattery *       Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408850
+;   core_actor.cpp_CDemonActor_setup_FUN_00408850
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_004688e0
 ;
 ; *****************************************************************************
@@ -18,8 +18,8 @@ section .text
         ;   Label: core_battery.cpp_CBattery_setup_FUN_00414470
     MOV EBX,dword ptr [ESP + 0x8]       ; 00414471
     PUSH EBX                            ; 00414475
-    CALL core_actor.cpp_FUN_00408850    ; 00414476
-        ;   XREF to: 00408850 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_00408850(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_setup_FUN_00408850 ; 00414476
+        ;   XREF to: 00408850 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408850(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0041447b
     LEA EAX,[EBX + 0x158]               ; 0041447e
     PUSH EAX                            ; 00414484

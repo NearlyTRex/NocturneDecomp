@@ -78,7 +78,7 @@ NOCTURNE_TEST(a_killing_blow_uses_a_health_item) {
     place_heroes(1);
     CHero *hero = heroes[0];
     SDamageInfo damage = {};
-    damage.damage_type = DAMAGE_TYPE_MELEE;
+    damage.damage_type = DAMAGE_TYPE_ATTACK_BLADE;
     damage.damage_amount = 30.0f;
     hero->base.hit_points = -5.0f;
     CHECK_EQ(nocturne_hero_items_damage_taken(hero, &damage), -5.0f);
@@ -93,7 +93,7 @@ NOCTURNE_TEST(a_killing_blow_uses_a_health_item) {
     damage.damage_amount = 0.0f;
     nocturne_hero_items_damage_taken(hero, &damage);
     hero->base.hit_points = 5.0f;
-    damage.damage_type = DAMAGE_TYPE_MELEE;
+    damage.damage_type = DAMAGE_TYPE_ATTACK_BLADE;
     nocturne_hero_items_damage_taken(hero, &damage);
     CHECK_EQ(stand.health_auto_used, 1);
     CHECK_EQ(stand.display_resets, 2);

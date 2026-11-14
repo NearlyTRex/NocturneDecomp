@@ -9,21 +9,21 @@
 void __cdecl engine_pod_cpp_CPod_initSearch_FUN_00514860(CPod *this_ptr,char *search_pattern,CPodSearchContext *search_context)
 
 {
-  CPodSearchContext CVar1;
-  CPodSearchContext *pCVar2;
+  char cVar1;
+  char *pcVar2;
   
-  pCVar2 = search_context + 0x214;
+  pcVar2 = search_context->search_pattern;
   do {
-    CVar1 = (CPodSearchContext)*search_pattern;
-    *pCVar2 = CVar1;
-    if (CVar1 == (CPodSearchContext)0x0) break;
-    CVar1 = *(CPodSearchContext *)(search_pattern + 1);
+    cVar1 = *search_pattern;
+    *pcVar2 = cVar1;
+    if (cVar1 == '\0') break;
+    cVar1 = search_pattern[1];
     search_pattern = search_pattern + 2;
-    pCVar2[1] = CVar1;
-    pCVar2 = pCVar2 + 2;
-  } while (CVar1 != (CPodSearchContext)0x0);
-  *(uint *)(search_context + 0x314) = 0;
-  *(uint *)(search_context + 0x318) = 0;
+    pcVar2[1] = cVar1;
+    pcVar2 = pcVar2 + 2;
+  } while (cVar1 != '\0');
+  search_context->current_pod_index = 0;
+  search_context->current_file_index = 0;
   engine_pod_cpp_CPod_getNextSearchResult_FUN_005148b0(this_ptr,search_context);
   return;
 }

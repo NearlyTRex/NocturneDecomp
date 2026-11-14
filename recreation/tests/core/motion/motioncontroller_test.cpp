@@ -232,6 +232,40 @@ TEST_F(CMotionControllerFramesTest, AWholeFramePastTheLastItHasJumped) {
     expectFrames(0, std::numeric_limits<float>::quiet_NaN(), 11, 11, 0.0F);
 }
 
+// Blair Witch's version 3 list: motion 0 plays nine frames from a pose every second frame, from
+// pose 2, and jumps from its last to motion 1's frame 3, itself a pose every second frame from 10.
+class CMotionControllerStoredFramesTest : public CMotionControllerFramesTest {
+protected:
+    CMotionControllerStoredFramesTest() {
+        const std::string text = "// version\n3\n// states\n0\n// motions\n2\n" +
+                                 storedMotion("2,9", "8,1,3", 5) + storedMotion("10,6", "5,1,0", 3);
+        common::CTextScanner scanner(text);
+        stored_list_.load(scanner);
+        controller_.setMotionList(stored_list_);
+    }
+
+    static std::string storedMotion(std::string_view frames, std::string_view exit_forward,
+                                    int stored) {
+        return std::format("// motion\n\"m\",30,0,{}\n// exit\n{}\n// cmd\n1,0,0\n// back\n0,0\n"
+                           "// resolution\n2,{}\n// transitions\n0\n// signals\n0\n// markers\n0\n",
+                           frames, exit_forward, stored);
+    }
+
+    CMotionList stored_list_;
+};
+
+TEST_F(CMotionControllerStoredFramesTest, AFrameFallsBetweenTheStoredPosesAroundIt) {
+    expectFrames(0, 0.0F, 2, 2, 0.0F);
+    expectFrames(0, 3.0F, 3, 4, 0.5F);
+    expectFrames(0, 6.5F, 5, 6, 0.25F);
+}
+
+TEST_F(CMotionControllerStoredFramesTest, PastTheLastStoredPoseItBlendsTowardsTheExitsPose) {
+    expectFrames(0, 7.0F, 6, 11, 0.0F);
+    expectFrames(0, 8.0F, 6, 11, 0.5F);
+    expectFrames(0, 9.0F, 11, 11, 0.0F);
+}
+
 // The second's exit leaves before its last frame, and the third's tweens.
 TEST_F(CMotionControllerFramesTest, PastTheLastFrameOfAMotionThatDoesntJumpFromThereItStays) {
     expectFrames(1, 2.5F, 12, 12, 0.0F);
@@ -560,6 +594,31 @@ protected:
     CRecordingController controller_;
     float time_left_ = 0.0F;
 };
+
+// Blair Witch's version 3: root motion is gathered over the stored poses, frame / resolution
+// past the motion's start. The motion plays at 8 frames a second from a pose every second frame,
+// from pose 4, and leaves at frame 6 for its own first frame.
+TEST(CMotionController, RootMotionIsGatheredOverTheStoredPoses) {
+    const std::string text =
+        "// version\n3\n// states\n1\nIDLE\n// motions\n1\n// motion\n"
+        "\"m\",8,0,4,8\n// exit\n6,0,0\n// cmd\n1,0,0\n// back\n0,0\n"
+        "// resolution\n2,4\n// transitions\n0\n// signals\n0\n// markers\n0\n";
+    common::CTextScanner scanner(text);
+    CMotionList list;
+    list.load(scanner);
+    CRecordingController controller;
+    controller.setMotionList(list);
+    float time = 0.25F;
+    controller.advance(time);
+    time = 0.5F;
+    controller.advance(time);
+    using SRootMotion = CRecordingController::SRootMotion;
+    ASSERT_GE(controller.root_motion.size(), 2U);
+    EXPECT_EQ(controller.root_motion[0],
+              (SRootMotion{.start_frame = 4.0F, .end_frame = 5.0F, .scale_factor = 1.0F}));
+    EXPECT_EQ(controller.root_motion[1],
+              (SRootMotion{.start_frame = 5.0F, .end_frame = 7.0F, .scale_factor = 1.0F}));
+}
 
 TEST_F(CMotionControllerAdvanceTest, NoTimeToSpeakOfPlaysNothing) {
     EXPECT_EQ(advance(0.000001F), 0);

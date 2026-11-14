@@ -17,9 +17,9 @@ CCloth * __cdecl CCloth::dtor(CCloth *this_ptr,uint flags);
 // Address: 004351b0
 void __cdecl CCloth::allocMemory(CCloth *this_ptr);
 
-// Original: core_cloth.cpp_CCloth_FUN_00435210
+// Original: core_cloth.cpp_CCloth_free_FUN_00435210
 // Address: 00435210
-void __cdecl CCloth(CCloth *this_ptr);
+void __cdecl CCloth::free(CCloth *this_ptr);
 
 // Original: core_cloth.cpp_CCloth_load_FUN_00435240
 // Address: 00435240

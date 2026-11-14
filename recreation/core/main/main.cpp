@@ -21,6 +21,7 @@
 #include "engine/screendevice.h"
 #include "engine/special/special.h"
 #include "engine/texture/texture.h"
+#include "platform/display.h"
 #include "support/newmsg/newmsg.h"
 
 #include <cstddef>
@@ -41,9 +42,20 @@ constexpr std::string_view kLoadingText = "Loading...";
 constexpr int kLoadingHeightChar = 'X';
 constexpr int kLoadingTextColor = 0xf8;
 
-int getStartingFrontEndWidth(const SGameSystemOwners &owners) {
+common::SExtent getStartingFrontEndMode(const SGameSystemOwners &owners) {
     const CGame &game = owners.ini_owners.game;
-    return getFrontEndWidth(game.game_pixx, game.game_pixy, owners.special.getUseDirect3D());
+    return getFrontEndMode(game.game_pixx, game.game_pixy, owners.special.getUseDirect3D());
+}
+
+// A mode the renderer refuses falls back to the layout's own, as setGameRes's does.
+bool setStartingFrontEndMode(const SGameSystemOwners &owners) {
+    const common::SExtent mode = getStartingFrontEndMode(owners);
+    return owners.screen.setScreenResolution(mode.width, mode.height, kBitsPerPixel) ||
+           owners.screen.setScreenResolution(kWidth, kHeight, kBitsPerPixel);
+}
+
+SFrontEndLayout getScreenLayout(const SGameSystemOwners &owners) {
+    return getFrontEndLayout(owners.screen.getWindowWidth(), owners.screen.getWindowHeight());
 }
 
 // The first run starts in 640x480 without acceleration and shows the calibration screens once,
@@ -65,7 +77,9 @@ void showFangs(const SGameSystemOwners &owners) {
     owners.special.clearScreen();
     engine::CAlphaBitmap loading(owners.dosio, owners.screen, owners.special);
     loading.load(kLoadingScreenArt, kWidth, kHeight);
-    loading.display(getFrontEndLeft(owners.screen.getWindowWidth()), 0, kLoadingAlpha);
+    displayInLayout(loading, getScreenLayout(owners),
+                    {.x = 0, .y = 0, .width = kWidth, .height = kHeight}, kLoadingAlpha,
+                    owners.ini_owners.display.getUpscaler());
 }
 
 // The original measured its "Loading..." to centre it, then never drew it.
@@ -73,11 +87,11 @@ void showLoadingScreen(const SGameSystemOwners &owners) {
     showFangs(owners);
     const std::string_view text = owners.messages.getLocalizedString(kLoadingText);
     engine::CBitFont &font = *owners.ini_owners.fonts.getThemeFont();
-    font.drawText(text,
-                  getFrontEndLeft(owners.screen.getWindowWidth()) +
-                      ((kWidth - font.getTextWidth(text)) / 2),
-                  (kHeight - font.getCharHeight(kLoadingHeightChar)) / 2, kLoadingTextColor,
-                  engine::CBitFont::kNoShadow);
+    const SFrontEndLayout layout = getScreenLayout(owners);
+    font.drawTextScaled(
+        text, layout.getX(kWidth / 2) - (font.getTextWidthScaled(text, layout.scale) / 2),
+        layout.getY(kHeight / 2) - (font.getCharHeightScaled(kLoadingHeightChar, layout.scale) / 2),
+        kLoadingTextColor, engine::CBitFont::kNoShadow, layout.scale);
     owners.screen.swapBuffers();
 }
 
@@ -89,8 +103,7 @@ void unpackArchives(const SGameSystemOwners &owners) {
     if (!owners.pod.hasArchivesToUnpack()) {
         return;
     }
-    if (owners.screen.setScreenResolution(getStartingFrontEndWidth(owners), kFrontEndHeight,
-                                          kBitsPerPixel) &&
+    if (setStartingFrontEndMode(owners) &&
         owners.dosio.readFile("art", std::format("{}.raw", kLoadingScreenArt))) {
         showFangs(owners);
         owners.screen.swapBuffers();
@@ -160,13 +173,13 @@ void initializeGameSystems(const SGameSystemOwners &owners) {
     // The retail build's dismount cleared the texture cache.
     owners.pod.setDismountHandler([&texture = owners.texture] { texture.clearTextureCache(); });
     owners.two_d.initGraphicsSystem();
-    if (!owners.screen.setScreenResolution(getStartingFrontEndWidth(owners), kFrontEndHeight,
-                                           kBitsPerPixel)) {
+    if (!setStartingFrontEndMode(owners)) {
         displayErrorAndQuit("Unable to set 640x480x32bpp.  Please make sure that you have a video "
                             "card with a minimum of 2MB of RAM, and the latest DirectDraw video "
                             "drivers.");
     }
     owners.ini_owners.fonts.initFonts();
+    owners.ini_owners.fonts.setOsFontScale(getScreenLayout(owners).scale);
     showFirstRunCalibration(owners);
     owners.attract_movies.setOpeningPlayed(owners.play_movie("video", "opening.avi"));
     showLoadingScreen(owners);

@@ -11,9 +11,9 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
 ;   crt_math.c_round_FUN_005b7ff0
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_boss.c_FUN_0041a510
-;   engine_model.c_FUN_005008f0
+;   engine_model.c_freeMRGLData_FUN_005008f0
 ;   engine_model.c_loadModelFile_FUN_00500720
 ;
 ; *****************************************************************************
@@ -59,8 +59,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 005009e5
     PUSH EAX                            ; 005009e9
     MOV ESI,0x5df091                    ; 005009ea
-    CALL crt_unknown.c_FUN_005b7790     ; 005009ef
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 005009ef
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 005009f4
     MOV EAX,ESP                         ; 005009f7
     MOV EDI,0x177                       ; 005009f9
@@ -316,7 +316,7 @@ section .text
         ;   Label: LAB_00500d80
     PUSH EAX                            ; 00500d83
     CALL engine_model.c_loadModelFile_FUN_00500720 ; 00500d84
-        ;   XREF to: 00500720 (UNCONDITIONAL_CALL)  ; undefined engine_model.c_loadModelFile_FUN_00500720()
+        ;   XREF to: 00500720 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_model.c_loadModelFile_FUN_00500720(char * filename)
     ADD ESP,0x4                         ; 00500d89
     LEA ESI,[ESP + 0xec]                ; 00500d8c
     PUSH EAX                            ; 00500d93
@@ -329,8 +329,8 @@ section .text
     LEA ESI,[ESP + 0xec]                ; 00500daa
     PUSH EBX                            ; 00500db1
     MOVSD.REP ES:EDI,ESI                ; 00500db2
-    CALL engine_model.c_FUN_005008f0    ; 00500db4
-        ;   XREF to: 005008f0 (UNCONDITIONAL_CALL)  ; undefined engine_model.c_FUN_005008f0()
+    CALL engine_model.c_freeMRGLData_FUN_005008f0 ; 00500db4
+        ;   XREF to: 005008f0 (UNCONDITIONAL_CALL)  ; undefined engine_model.c_freeMRGLData_FUN_005008f0()
     MOV ECX,0xd                         ; 00500db9
     LEA EDI,[ESP + 0x54]                ; 00500dbe
     LEA ESI,[ESP + 0xbc]                ; 00500dc2

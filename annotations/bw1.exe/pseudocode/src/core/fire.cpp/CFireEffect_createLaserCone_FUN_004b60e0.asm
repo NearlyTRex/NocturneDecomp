@@ -14,10 +14,10 @@
 ; float            Stack[0x20]:4   cone_angle
 ;
 ; XREF[4]:
-;   core_elephant.cpp_FUN_0049eb30 at 0049ed0e
-;   core_lightgun.cpp_FUN_00500f90 at 0050121c
-;   core_lightpis.cpp_FUN_005026f0 at 0050297c
-;   core_shotgun.cpp_FUN_00562100 at 005622de
+;   core_elephant.cpp_CElephantGun_renderAimBeam_FUN_0049eb30 at 0049ed0e
+;   core_lightgun.cpp_CLightGun_renderAimBeam_FUN_00500f90 at 0050121c
+;   core_lightpis.cpp_CLightPis_renderAimBeam_FUN_005026f0 at 0050297c
+;   core_shotgun.cpp_CShotgun_renderAimBeam_FUN_00562100 at 005622de
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fffac

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_confedrt_cpp_CConfederate_getActorType_FUN_005a0830(CConfederate *this_ptr)
+; CDemonActorType * __cdecl core_confedrt_cpp_CConfederate_getActorType_FUN_005a0830(CConfederate *this_ptr)
 ;
 ; Parameters:
 ; CConfederate *   Stack[0x4]:4   this_ptr

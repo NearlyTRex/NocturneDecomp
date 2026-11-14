@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_calculateIntensityStereoRatio_FUN_005292d0(int param_1,double param_2,int param_3,int param_4)
+; void __cdecl sound_mp3_cpp_calculateIntensityStereoRatio_FUN_005292d0(int intensity_position,double ratio,int sample_index,float *ratio_buffer)
 ;
+; Parameters:
+; int              Stack[0x4]:4   intensity_position
+; double           Stack[0x8]:8   ratio
+; int              Stack[0x10]:4   sample_index
+; float *          Stack[0x14]:4   ratio_buffer
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ;

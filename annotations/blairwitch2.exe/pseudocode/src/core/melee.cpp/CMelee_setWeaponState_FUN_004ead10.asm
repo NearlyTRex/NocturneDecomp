@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   weapon_state
 ;
 ; Called Functions:
-;   core_weapon.cpp_FUN_0058a200
+;   core_weapon.cpp_CWeapon_setWeaponState_FUN_0058a200
 ;
 ; *****************************************************************************
 
@@ -20,8 +20,8 @@ section .text
     PUSH EDX                            ; 004ead18
     PUSH EAX                            ; 004ead19
     MOV dword ptr [EAX + 0x6ec],0x0     ; 004ead1a
-    CALL core_weapon.cpp_FUN_0058a200   ; 004ead24
-        ;   XREF to: 0058a200 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_FUN_0058a200(CWeapon * this_ptr, int weapon_state)
+    CALL core_weapon.cpp_CWeapon_setWeaponState_FUN_0058a200 ; 004ead24
+        ;   XREF to: 0058a200 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_setWeaponState_FUN_0058a200(CWeapon * this_ptr, int weapon_state)
     ADD ESP,0x8                         ; 004ead29
     RET                                 ; 004ead2c
 

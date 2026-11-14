@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SClipPlane * core_mirror_cpp_SClipPlane_ctor_FUN_0051a290(SClipPlane *this_ptr)
+; SClipPlane * __cdecl core_mirror_cpp_SClipPlane_ctor_FUN_0051a290(SClipPlane *this_ptr)
 ;
 ; Parameters:
 ; SClipPlane *     Stack[0x4]:4   this_ptr

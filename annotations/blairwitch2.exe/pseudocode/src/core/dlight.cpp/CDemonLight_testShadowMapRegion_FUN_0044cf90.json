@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 86,
-    "complexity_score": 83,
+    "complexity_score": 38,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 38,
-    "suspect_count": 4,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 124
   },
   "cross_references": [
@@ -71,6 +69,32 @@
     },
     "pcode_op_count": 732
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004657c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0045f4d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00476000",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00451aa0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -94,38 +118,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x1cc0",
-      "severity": "mild",
-      "text": "iVar4 = *(int *)(rect + 8) * *(int *)&this_ptr->field_0x1cc0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x2fa0",
-      "severity": "mild",
-      "text": "iVar5 = *(int *)&this_ptr->field_0x2fa0 +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x1cc0",
-      "severity": "mild",
-      "text": "iVar6 = *(int *)&this_ptr->field_0x1cc0 >> 0x1f;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x1cc0",
-      "severity": "mild",
-      "text": "iVar5 = iVar5 + ((int)((*(int *)&this_ptr->field_0x1cc0 + iVar6 * -8) - (uint)(iVar6 << 2 < 0)",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

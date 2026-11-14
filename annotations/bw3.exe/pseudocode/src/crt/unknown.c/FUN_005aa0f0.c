@@ -30,9 +30,9 @@ uint FUN_005aa0f0(char *param_1,uint param_2,uint param_3,int *param_4)
     return 0xffffffff;
   }
   uVar6 = param_2 & 7;
-  unkafter_asgaya_cpp_FUN_005aea80(uVar6,&local_18,&local_14);
+  FUN_005aea80(uVar6,&local_18,&local_14);
   dwFlagsAndAttributes = 0x80;
-  unkafter_asgaya_cpp_FUN_005aeac4(param_3 | uVar6,&local_1c);
+  FUN_005aeac4(param_3 | uVar6,&local_1c);
   local_28.nLength = 0xc;
   local_28.lpSecurityDescriptor = (LPVOID)0x0;
   local_28.bInheritHandle = (BOOL)((param_2 & 0x80) == 0);
@@ -88,7 +88,7 @@ LAB_005aa22b:
       setErrno(5);
       return 0xffffffff;
     }
-    iVar2 = unkafter_asgaya_cpp_FUN_005aeb30(uVar4);
+    iVar2 = FUN_005aeb30(uVar4);
     if (iVar2 != 0) {
       uVar5 = 0x2000;
     }

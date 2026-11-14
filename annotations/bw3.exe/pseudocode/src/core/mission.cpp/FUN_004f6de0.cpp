@@ -9,32 +9,32 @@
 void core_mission_cpp_FUN_004f6de0(CDemonMission *param_1,int param_2)
 
 {
-  int *piVar1;
+  int iVar1;
   int iVar2;
   int iVar3;
   
-  if (param_2 == *(int *)param_1) {
+  if (param_2 == param_1->current_set_index) {
     return;
   }
-  *(int *)param_1 = param_2;
-  core_set_cpp_FUN_00532b80(g_CDemonSetPtr,param_1 + param_2 * 0x100 + 8);
-  if (*(int *)(param_1 + 0x1008) == 0) {
+  param_1->current_set_index = param_2;
+  core_set_cpp_FUN_00532b80(g_CDemonSetPtr,param_1->set_names + param_2);
+  if (param_1->is_in_editor == 0) {
     core_mission_cpp_FUN_004f6f80(param_1);
   }
   else {
     core_mission_cpp_CDemonMission_buildSetActorList_FUN_004f6bf0(param_1);
   }
-  if (*(int *)param_1 != *(int *)(param_1 + 0x1454)) {
-    core_mission_cpp_FUN_004f6a80(param_1);
+  if (param_1->current_set_index != param_1->prepared_set_index) {
+    core_mission_cpp_CDemonMission_prepareAllActors_FUN_004f6a80(param_1);
   }
   iVar2 = 0;
-  for (iVar3 = 0; iVar3 < *(int *)&g_CDemonSetPtr->field_0x14d164; iVar3 = iVar3 + 1) {
-    piVar1 = (int *)(&g_CDemonSetPtr->field_0x14d168 + iVar2);
+  for (iVar3 = 0; iVar3 < g_CDemonSetPtr->actor_count; iVar3 = iVar3 + 1) {
+    iVar1 = *(int *)((int)g_CDemonSetPtr->actors + iVar2);
     iVar2 = iVar2 + 4;
-    (**(code **)(*(int *)(*piVar1 + 0x154) + 0x50))(*piVar1);
+    (**(code **)(*(int *)(iVar1 + 0x154) + 0x50))(iVar1);
   }
-  sound_sndmain_cpp_FUN_00556c60();
+  sound_sndmain_cpp_killAllSfx_FUN_00556c60();
   core_game_cpp_FUN_004c4870(g_CGamePtr);
-  *(uint *)&g_CGamePtr->field_0x290 = 1;
+  g_CGamePtr->new_set_event_pending = 1;
   return;
 }

@@ -7,7 +7,7 @@
 ; CTeleport *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_teleport.cpp_FUN_00594ef0 at 00594f03
+;   core_teleport.cpp_factoryFuncTeleport_FUN_00594ef0 at 00594f03
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_ctor_FUN_004085c0

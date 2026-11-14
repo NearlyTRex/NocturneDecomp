@@ -7,43 +7,43 @@
 
 // Original: core_succubus.cpp_staticInit_FUN_0056f260
 // Address: 0056f260
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_succubus.cpp_factoryFuncSuccubus_FUN_0056f290
 // Address: 0056f290
-void factoryFuncSuccubus(void);
+CSuccubus * __cdecl factoryFuncSuccubus(void);
 
 // Original: core_succubus.cpp_CSuccubus_getActorType_FUN_0056f2b0
 // Address: 0056f2b0
-CDemonActorType * CSuccubus::getActorType(CSuccubus *this_ptr);
+CDemonActorType * __cdecl CSuccubus::getActorType(CSuccubus *this_ptr);
 
 // Original: core_succubus.cpp_CSuccubus_ctor_FUN_0056f2c0
 // Address: 0056f2c0
 CSuccubus * __cdecl CSuccubus::ctor(CSuccubus *this_ptr);
 
-// Original: core_succubus.cpp_FUN_0056f3a0
+// Original: core_succubus.cpp_CSuccubus_setup_FUN_0056f3a0
 // Address: 0056f3a0
-void FUN_0056f3a0(CEnemy *param_1);
+void __cdecl CSuccubus::setup(CSuccubus *this_ptr);
 
-// Original: core_succubus.cpp_FUN_0056f6d0
+// Original: core_succubus.cpp_CSuccubus_process_FUN_0056f6d0
 // Address: 0056f6d0
-void FUN_0056f6d0(CEnemy *param_1,float param_2);
+void __cdecl CSuccubus::process(CSuccubus *this_ptr,float delta_time);
 
-// Original: core_succubus.cpp_FUN_0056fe50
+// Original: core_succubus.cpp_CSuccubus_renderOpaque_FUN_0056fe50
 // Address: 0056fe50
-int FUN_0056fe50(CCharacter *param_1);
+int __cdecl CSuccubus::renderOpaque(CSuccubus *this_ptr);
 
-// Original: core_succubus.cpp_FUN_0056fff0
+// Original: core_succubus.cpp_CSuccubus_archive_FUN_0056fff0
 // Address: 0056fff0
-void FUN_0056fff0(CEnemy *param_1);
+void __cdecl CSuccubus::archive(CSuccubus *this_ptr);
 
 // Original: core_succubus.cpp_CSuccubus_processDamage_FUN_00570040
 // Address: 00570040
 void __cdecl CSuccubus::processDamage(CSuccubus *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_succubus.cpp_FUN_00570060
+// Original: core_succubus.cpp_CSuccubus_getTargetPoints_FUN_00570060
 // Address: 00570060
-undefined4 FUN_00570060(void);
+int __cdecl CSuccubus::getTargetPoints(CSuccubus *this_ptr,CVector3f *out_points_array);
 
 // Original: core_succubus.cpp_CSuccubus_getCollisionType_FUN_00570070
 // Address: 00570070
@@ -51,4 +51,4 @@ ECollisionType __cdecl CSuccubus::getCollisionType(CSuccubus *this_ptr,SCollisio
 
 // Original: core_succubus.cpp_CSuccubus_dtor_FUN_00570090
 // Address: 00570090
-CSuccubus * CSuccubus::dtor(CSuccubus *this_ptr,uint flags);
+CSuccubus * __cdecl CSuccubus::dtor(CSuccubus *this_ptr,uint flags);

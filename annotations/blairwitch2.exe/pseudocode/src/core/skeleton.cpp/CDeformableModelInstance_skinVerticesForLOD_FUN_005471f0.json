@@ -2,29 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 61,
+    "complexity_score": 17,
     "cross_reference_count": 13,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 16,
-    "suspect_count": 4,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 39
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 40
   },
   "cross_references": [
     {
       "addr": "004203a0",
       "from_addr": "004204fc",
-      "name": "core_bugs.cpp_FUN_004203a0",
+      "name": "core_bugs.cpp_CBugs_attackSwarmTarget_FUN_004203a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00421b10",
       "from_addr": "00421c43",
-      "name": "core_bugs.cpp_FUN_00421b10",
+      "name": "core_bugs.cpp_CBugs_setSwarmTarget_FUN_00421b10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -37,6 +35,12 @@
       "addr": "005b6510",
       "from_addr": "005b6522",
       "name": "core_morph.cpp_CMorphModel_animateFromDeformableModel_FUN_005b6510",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00547620",
+      "from_addr": "00547669",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_00547620",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -86,12 +90,6 @@
       "from_addr": "00544468",
       "name": "core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_00544380",
       "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00547620",
-      "from_addr": "00547669",
-      "name": "core_skeleton.cpp_FUN_00547620",
-      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -108,14 +106,14 @@
   },
   "function_calls": [
     {
+      "addr": "00541640",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModel_skinVertices_FUN_00541640"
+    },
+    {
       "addr": "00547810",
       "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00547810"
-    },
-    {
-      "addr": "00541640",
-      "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_00541640"
     }
   ],
   "globals": [],
@@ -147,7 +145,7 @@
       {
         "call_addr": "004204fc",
         "call_type": "direct",
-        "caller": "core_bugs.cpp_FUN_004203a0",
+        "caller": "core_bugs.cpp_CBugs_attackSwarmTarget_FUN_004203a0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -158,7 +156,7 @@
       {
         "call_addr": "00421c43",
         "call_type": "direct",
-        "caller": "core_bugs.cpp_FUN_00421b10",
+        "caller": "core_bugs.cpp_CBugs_setSwarmTarget_FUN_00421b10",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -169,7 +167,7 @@
       {
         "call_addr": "00547669",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_00547620",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_00547620",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -259,6 +257,32 @@
     },
     "pcode_op_count": 71
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00569890",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0054e420",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a01d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0051da50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -282,38 +306,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x2140",
-      "severity": "mild",
-      "text": "part_data = (SPartInstanceData *)&this_ptr->field_0x2140;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x2234",
-      "severity": "mild",
-      "text": "output_buffer = *(int **)&this_ptr->field_0x2234;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0xe80",
-      "severity": "mild",
-      "text": "bone_matrices = (CMatrix3x4f *)&this_ptr->field_0xe80;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x2230",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x2230 = lod_index;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

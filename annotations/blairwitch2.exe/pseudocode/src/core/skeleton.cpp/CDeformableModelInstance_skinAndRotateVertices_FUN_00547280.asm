@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   lod_index
 ;
 ; XREF[2]:
-;   core_charactr.cpp_FUN_00426730 at 0042681f
+;   core_charactr.cpp_CCharacter_renderEthereal_FUN_00426730 at 0042681f
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_00547170 at 00547183
 ;
 ; Called Functions:

@@ -7,8 +7,8 @@
 ; void *           Stack[0x4]:4   ptr
 ;
 ; XREF[151]:
-;   cockpit_pkbitmap.cpp_CPackedBitmapSet_FUN_004f5320 at 004f5337
-;   cockpit_pkbitmap.cpp_CPackedBitmap_FUN_004f3f50 at 004f3f61
+;   cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_004f3f50 at 004f3f61
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_004f5320 at 004f5337
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0 at 00409ee0
 ;   core_ammo.cpp_CAmmo_dtor_FUN_0040ef90 at 0040efc5
 ;   core_ammobox.cpp_CAmmoBox_dtor_FUN_0040f4b0 at 0040f4e5

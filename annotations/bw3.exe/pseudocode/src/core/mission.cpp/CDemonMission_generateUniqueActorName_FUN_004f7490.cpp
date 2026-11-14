@@ -26,19 +26,17 @@ void __cdecl core_mission_cpp_CDemonMission_generateUniqueActorName_FUN_004f7490
     cVar1 = *pcVar6;
     pcVar6 = pcVar6 + 1;
   } while (cVar1 != '\0');
-  for (pcVar6 = *(char **)(this_ptr + 0x143c); pcVar6 != (char *)0x0;
-      pcVar6 = *(char **)(pcVar6 + 0x14c)) {
-    iVar2 = _strnicmp(pcVar6,base_name,~uVar4 - 1);
+  for (pCVar3 = this_ptr->first_actor; pCVar3 != (CDemonActor *)0x0; pCVar3 = pCVar3->next_actor) {
+    iVar2 = _strnicmp(pCVar3->actor_name,base_name,~uVar4 - 1);
     if (((iVar2 == 0) &&
-        (iVar2 = sscanf(pcVar6 + (~uVar4 - 1),&DAT_005c8c3a), iVar2 == 1))
-       && (iVar5 < local_14)) {
+        (iVar2 = sscanf(pCVar3->actor_name + (~uVar4 - 1),&DAT_005c8c3a),
+        iVar2 == 1)) && (iVar5 < local_14)) {
       iVar5 = local_14;
     }
   }
   do {
-    iVar5 = iVar5 + 1;
-    FUN_005a28c0(out_buf,&DAT_005c8c3d,base_name,iVar5);
-    pCVar3 = core_mission_cpp_FUN_004f6e90(this_ptr,out_buf);
+    _sprintf(out_buf,&DAT_005c8c3d);
+    pCVar3 = core_mission_cpp_CDemonMission_findActorByName_FUN_004f6e90(this_ptr,out_buf);
   } while (pCVar3 != (CDemonActor *)0x0);
   return;
 }

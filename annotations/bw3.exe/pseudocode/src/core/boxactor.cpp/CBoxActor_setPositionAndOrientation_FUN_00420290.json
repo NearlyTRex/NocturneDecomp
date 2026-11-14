@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 259,
+    "complexity_score": 73,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 24,
-    "suspect_count": 23,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 28,
+    "suspect_count": 4,
     "suspect_types": [
-      "unnamed_field"
+      "unrolled_memcpy"
     ],
-    "total_lines": 83
+    "total_lines": 87
   },
   "cross_references": [],
   "function": {
@@ -72,6 +72,32 @@
     },
     "pcode_op_count": 168
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0041ce90",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00422e00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00422640",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0041f240",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -104,204 +130,52 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x20 = *(uint *)new_position;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x24 = *(uint *)&new_position->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x24 = *(uint *)&new_position->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x28 = *(uint *)&new_position->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x28 = *(uint *)&new_position->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
       "line": 8,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "if ((CVector3f *)&this_ptr->field_0x30 != new_orientation) {",
-      "type": "unnamed_field"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->base).location.position.x = new_position->x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x30 = *(uint *)new_orientation;",
-      "type": "unnamed_field"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 13,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pUVar1->vec).x = new_orientation->x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x34 = *(uint *)&new_orientation->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x34 = *(uint *)&new_orientation->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x38",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x38 = *(uint *)&new_orientation->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x38 = *(uint *)&new_orientation->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x394",
-      "severity": "mild",
-      "text": "if ((CVector3f *)&this_ptr->field_0x394 != new_position) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x394",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x394 = *(uint *)new_position;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x398",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x398 = *(uint *)&new_position->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x398 = *(uint *)&new_position->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x39c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x39c = *(uint *)&new_position->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x39c = *(uint *)&new_position->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
       "line": 19,
-      "match": "field_0x3a0",
-      "severity": "mild",
-      "text": "if ((CVector3f *)&this_ptr->field_0x3a0 != new_orientation) {",
-      "type": "unnamed_field"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->physics_box).position.x = new_position->x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x3a0",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x3a0 = *(uint *)new_orientation;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x3a4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x3a4 = *(uint *)&new_orientation->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x3a4 = *(uint *)&new_orientation->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x3a8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x3a8 = *(uint *)&new_orientation->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x3a8 = *(uint *)&new_orientation->field_0x8;",
-      "type": "unnamed_field"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 25,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar2->x = new_orientation->x;",
+      "type": "unrolled_memcpy"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CLightActor",
         "offset": 104,
         "vtable_addr": "005dca74"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CBoxActor",
         "offset": 104,
         "vtable_addr": "005dc994"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CBoxActor",
         "offset": 104,
         "vtable_addr": "005e4ef4"
       }

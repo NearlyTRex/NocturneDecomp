@@ -11,11 +11,11 @@
 ;
 ; XREF[6]:
 ;   core_bodypart.cpp_CBodyPart_spawnGore_FUN_00416b20 at 00416b4d
+;   core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_0042fe90 at 0042ff28
 ;   core_charactr.cpp_FUN_0042fc90 at 0042fdb2
 ;   core_charactr.cpp_FUN_0042fdc0 at 0042fe75
-;   core_charactr.cpp_FUN_0042fe90 at 0042ff28
-;   core_gore.cpp_FUN_004ce9c0 at 004ce9f4
-;   core_melee.cpp_FUN_004e73e0 at 004e749c
+;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004ce9c0 at 004ce9f4
+;   core_melee.cpp_CMelee_process_FUN_004e73e0 at 004e749c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d22eb0

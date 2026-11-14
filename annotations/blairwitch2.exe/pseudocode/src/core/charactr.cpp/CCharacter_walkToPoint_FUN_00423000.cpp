@@ -12,11 +12,12 @@
 int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000(CCharacter *this_ptr,CVector3f *target_pos,CPathMap *path_map,CVector3f *direction,float min_distance,float max_distance)
 
 {
-  byte *puVar1;
-  float fVar2;
-  int iVar3;
-  float fVar4;
-  byte bVar5;
+  CVector3f *pCVar1;
+  float *pfVar2;
+  float fVar3;
+  int iVar4;
+  float fVar5;
+  byte bVar6;
   float afStackY_1170 [1008];
   float local_1a0;
   float local_19c;
@@ -29,7 +30,7 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000(CCharacter *th
   float local_178;
   float local_174;
   uint local_170;
-  byte local_164 [12];
+  CVector3f local_164;
   float local_158;
   float local_154 [5];
   float local_140;
@@ -80,36 +81,34 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000(CCharacter *th
   float local_1c;
   float local_18;
   
-  bVar5 = 0;
-  local_18c = *(float *)&this_ptr->field_0x2594;
-  local_1c = *(float *)&this_ptr->field_0x2598;
-  local_194 = SQRT(*(float *)direction * *(float *)direction +
-                   *(float *)&direction->field_0x8 * *(float *)&direction->field_0x8);
-  core_vecdir_cpp_FUN_005838f0(direction);
+  bVar6 = 0;
+  local_18c = this_ptr->walk_step_speed;
+  local_1c = this_ptr->turn_speed;
+  local_194 = SQRT(direction->x * direction->x + direction->z * direction->z);
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(direction);
   local_d4 = local_98;
-  local_154[(uint)bVar5 * -2 + 0x21] = local_154[(uint)bVar5 * -2 + 0x30];
-  local_154[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x22] =
-       local_154[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x31];
+  local_154[(uint)bVar6 * -2 + 0x21] = local_154[(uint)bVar6 * -2 + 0x30];
+  local_154[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x22] =
+       local_154[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x31];
   local_198 = local_d0;
   core_actor_cpp_FUN_00408de0(this_ptr,target_pos);
   local_e0 = local_154[2];
-  local_154[(uint)bVar5 * -2 + 0x1e] = local_154[(uint)bVar5 * -2 + 3];
-  local_154[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x1f] =
-       local_154[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
+  local_154[(uint)bVar6 * -2 + 0x1e] = local_154[(uint)bVar6 * -2 + 3];
+  local_154[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x1f] =
+       local_154[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
   local_190 = SQRT(local_e0 * local_e0 + local_d8 * local_d8);
-  core_vecdir_cpp_FUN_005838f0(local_154 + 0x1d);
-  fVar4 = local_190 - local_194;
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(local_154 + 0x1d);
+  fVar5 = local_190 - local_194;
   local_bc = local_170;
-  local_154[(uint)bVar5 * -2 + 0x27] = local_154[(uint)bVar5 * -2 + -6];
-  local_154[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x28] =
-       local_154[(uint)bVar5 * -2 + (uint)bVar5 * -2 + -5];
+  local_154[(uint)bVar6 * -2 + 0x27] = local_154[(uint)bVar6 * -2 + -6];
+  local_154[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x28] =
+       local_154[(uint)bVar6 * -2 + (uint)bVar6 * -2 + -5];
   local_3c = 0;
   local_1a0 = 0.0;
-  local_19c = ABS(fVar4);
-  if (0.0 < SQRT(*(float *)&direction->field_0x8 * *(float *)&direction->field_0x8 +
-                 *(float *)direction * *(float *)direction +
-                 *(float *)&direction->field_0x4 * *(float *)&direction->field_0x4)) {
-    local_18 = (float)core_actor_cpp_FUN_0040d0c0(local_b8 - local_d0);
+  local_19c = ABS(fVar5);
+  if (0.0 < SQRT(direction->z * direction->z +
+                 direction->x * direction->x + direction->y * direction->y)) {
+    local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(local_b8 - local_d0);
     local_1a0 = ABS(local_18);
   }
   if (((local_19c < min_distance + (float)_DAT_005ccc3e) &&
@@ -117,64 +116,65 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000(CCharacter *th
   {
     local_3c = 1;
   }
-  *(uint *)&this_ptr->field_0x2510 = 0;
-  *(uint *)&this_ptr->field_0x250c = *(uint *)&this_ptr->field_0x2510;
-  *(uint *)&this_ptr->field_0x2508 = *(uint *)&this_ptr->field_0x250c;
+  (this_ptr->model).accumulated_root_motion.z = 0.0;
+  (this_ptr->model).accumulated_root_motion.y = (this_ptr->model).accumulated_root_motion.z;
+  (this_ptr->model).accumulated_root_motion.x = (this_ptr->model).accumulated_root_motion.y;
   local_74 = local_194 * (float)_DAT_005ccc5e + (float)_DAT_005ccc66 +
              ABS(local_198) * (float)_DAT_005ccc4e * (float)_DAT_005ccc56;
-  if ((*(int *)&this_ptr->field_0x2814 != 0) || ((local_190 < local_74 && (ABS(local_dc) <= 1.0))))
-  {
+  if ((this_ptr->is_spectral != 0) || ((local_190 < local_74 && (ABS(local_dc) <= 1.0)))) {
     if (local_18c * (float)_DAT_005ccc6e + local_194 <= local_190) {
+      pfVar2 = &(this_ptr->position_delta).z;
       local_6c = -local_18c;
       local_38 = local_190 - local_194;
       local_50 = local_6c;
       if ((local_6c <= local_38) && (local_50 = local_38, local_18c < local_38)) {
         local_50 = local_18c;
       }
-      *(float *)&this_ptr->field_0x2584 = *(float *)&this_ptr->field_0x2584 + local_50;
-      core_actor_cpp_FUN_00408d70(this_ptr,&this_ptr->field_0x257c);
+      *pfVar2 = *pfVar2 + local_50;
+      core_actor_cpp_FUN_00408d70(this_ptr,&this_ptr->position_delta);
       local_11c = local_c8;
-      local_154[(uint)bVar5 * -2 + 0xf] = local_154[(uint)bVar5 * -2 + 0x24];
-      local_154[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x10] =
-           local_154[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x25];
+      local_154[(uint)bVar6 * -2 + 0xf] = local_154[(uint)bVar6 * -2 + 0x24];
+      local_154[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x10] =
+           local_154[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x25];
       core_actor_cpp_FUN_00408cf0(this_ptr,direction);
       local_158 = local_8c;
-      local_154[(uint)bVar5 * -2] = local_154[(uint)bVar5 * -2 + 0x33];
-      local_154[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-           local_154[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x34];
-      local_f8 = *(float *)target_pos - local_158;
-      local_f4 = *(float *)&target_pos->field_0x4 - local_154[0];
-      local_f0 = *(float *)&target_pos->field_0x8 - local_154[1];
-      local_104 = *(float *)target_pos - local_158;
-      local_154[(uint)bVar5 * -2 + 0x15] = local_154[(uint)bVar5 * -2 + 0x18];
-      local_154[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x16] =
-           local_154[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x19];
+      local_154[(uint)bVar6 * -2] = local_154[(uint)bVar6 * -2 + 0x33];
+      local_154[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+           local_154[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x34];
+      local_f8 = target_pos->x - local_158;
+      local_f4 = target_pos->y - local_154[0];
+      local_f0 = target_pos->z - local_154[1];
+      local_104 = local_f8;
+      local_154[(uint)bVar6 * -2 + 0x15] = local_154[(uint)bVar6 * -2 + 0x18];
+      local_154[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x16] =
+           local_154[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x19];
       local_140 = local_104 - local_11c;
       local_13c = local_100 - local_118;
       local_138 = local_fc - local_114;
       local_80[0] = local_104 - local_11c;
-      local_154[(uint)bVar5 * -2 + 0x36] = local_154[(uint)bVar5 * -2 + 6];
-      local_154[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x37] =
-           local_154[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7];
-      core_vecdir_cpp_FUN_005838f0(local_154 + 0x35);
+      local_154[(uint)bVar6 * -2 + 0x36] = local_154[(uint)bVar6 * -2 + 6];
+      local_154[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x37] =
+           local_154[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7];
+      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(local_154 + 0x35);
       local_b0 = local_110;
-      local_154[(uint)bVar5 * -2 + 0x2a] = local_154[(uint)bVar5 * -2 + 0x12];
-      local_154[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x2b] =
-           local_154[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x13];
-      fVar2 = (float)core_actor_cpp_FUN_0040d0c0(local_ac - *(float *)&this_ptr->field_0x34);
-      fVar4 = -local_1c;
-      if ((-local_1c <= fVar2) && (fVar4 = fVar2, local_1c < fVar2)) {
-        fVar4 = local_1c;
+      local_154[(uint)bVar6 * -2 + 0x2a] = local_154[(uint)bVar6 * -2 + 0x12];
+      local_154[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x2b] =
+           local_154[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x13];
+      fVar3 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
+                        (local_ac - (this_ptr->base).orient.vec.y);
+      fVar5 = -local_1c;
+      if ((-local_1c <= fVar3) && (fVar5 = fVar3, local_1c < fVar3)) {
+        fVar5 = local_1c;
       }
     }
     else {
-      local_17c = local_e0 - *(float *)direction;
-      local_178 = local_dc - *(float *)&direction->field_0x4;
-      local_174 = local_d8 - *(float *)&direction->field_0x8;
-      local_a4 = local_e0 - *(float *)direction;
-      local_154[(uint)bVar5 * -2 + 0x2d] = *(float *)((int)&stack0xfffffe88 + (uint)bVar5 * -8);
-      local_154[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x2e] =
-           local_154[(uint)bVar5 * -2 + (uint)bVar5 * -2 + -8];
+      local_17c = local_e0 - direction->x;
+      local_178 = local_dc - direction->y;
+      local_174 = local_d8 - direction->z;
+      local_a4 = local_17c;
+      local_154[(uint)bVar6 * -2 + 0x2d] = *(float *)((int)&stack0xfffffe88 + (uint)bVar6 * -8);
+      local_154[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x2e] =
+           local_154[(uint)bVar6 * -2 + (uint)bVar6 * -2 + -8];
       local_68 = SQRT(local_9c * local_9c + local_a4 * local_a4);
       local_a0 = 0.0;
       if (local_18c < local_68) {
@@ -183,67 +183,69 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000(CCharacter *th
         local_a0 = local_34 * 0.0;
         local_9c = local_9c * local_34;
       }
-      puVar1 = &this_ptr->field_0x257c;
-      *(float *)puVar1 = *(float *)puVar1 + local_a4;
-      *(float *)&this_ptr->field_0x2580 = *(float *)&this_ptr->field_0x2580 + local_a0;
-      *(float *)&this_ptr->field_0x2584 = *(float *)&this_ptr->field_0x2584 + local_9c;
-      local_128 = local_e0 - *(float *)puVar1;
-      local_124 = local_dc - *(float *)&this_ptr->field_0x2580;
-      local_120 = local_d8 - *(float *)&this_ptr->field_0x2584;
-      local_188 = local_e0 - *(float *)puVar1;
-      *(float *)((int)&stack0xfffffe7c + (uint)bVar5 * 0xfffffffe * 4) =
-           local_154[(uint)bVar5 * -2 + 0xc];
-      *(float *)(local_164 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + -0x1c) =
-           local_154[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0xd];
-      core_vecdir_cpp_FUN_005838f0(&stack0xfffffe78);
+      pCVar1 = &this_ptr->position_delta;
+      pCVar1->x = pCVar1->x + local_a4;
+      (this_ptr->position_delta).y = (this_ptr->position_delta).y + local_a0;
+      (this_ptr->position_delta).z = (this_ptr->position_delta).z + local_9c;
+      local_128 = local_e0 - pCVar1->x;
+      local_124 = local_dc - (this_ptr->position_delta).y;
+      local_120 = local_d8 - (this_ptr->position_delta).z;
+      local_188 = local_128;
+      *(float *)((int)&stack0xfffffe7c + (uint)bVar6 * 0xfffffffe * 4) =
+           local_154[(uint)bVar6 * -2 + 0xc];
+      *(float *)(&stack0xfffffe80 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
+           local_154[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0xd];
+      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&stack0xfffffe78);
       local_134 = local_ec;
-      local_154[(uint)bVar5 * -2 + 9] = local_154[(uint)bVar5 * -2 + 0x1b];
-      local_154[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 10] =
-           local_154[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x1c];
-      fVar2 = (float)core_actor_cpp_FUN_0040d0c0(local_130 - local_198);
-      fVar4 = -local_1c;
-      if ((fVar4 <= fVar2) && (fVar4 = fVar2, local_1c < fVar2)) {
-        fVar4 = local_1c;
+      local_154[(uint)bVar6 * -2 + 9] = local_154[(uint)bVar6 * -2 + 0x1b];
+      local_154[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 10] =
+           local_154[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x1c];
+      fVar3 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(local_130 - local_198);
+      fVar5 = -local_1c;
+      if ((fVar5 <= fVar3) && (fVar5 = fVar3, local_1c < fVar3)) {
+        fVar5 = local_1c;
       }
     }
-    *(float *)&this_ptr->field_0x2578 = fVar4;
-    if (*(int *)&this_ptr->field_0x2814 != 0) {
-      fVar4 = -local_18c;
-      local_dc = local_dc - *(float *)&direction->field_0x4;
-      if ((fVar4 <= local_dc) && (fVar4 = local_dc, local_18c < local_dc)) {
-        fVar4 = local_18c;
+    this_ptr->turn_angle_accumulator = fVar5;
+    if (this_ptr->is_spectral != 0) {
+      fVar5 = -local_18c;
+      local_dc = local_dc - direction->y;
+      if ((fVar5 <= local_dc) && (fVar5 = local_dc, local_18c < local_dc)) {
+        fVar5 = local_18c;
       }
-      *(float *)&this_ptr->field_0x2580 = fVar4;
+      (this_ptr->position_delta).y = fVar5;
     }
   }
   else {
     if (path_map == (CPathMap *)0x0) {
       path_map = core_path_cpp_getPathMap_FUN_00513ea0((CLocation *)target_pos);
     }
-    iVar3 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00513650
-                      (path_map,(CVector3f *)&this_ptr->field_0x20,(CVector3f *)local_164,
-                       *(int *)&this_ptr->field_0x6c);
-    if (iVar3 == 0) {
+    iVar4 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00513650
+                      (path_map,&(this_ptr->base).location.position,&local_164,
+                       (this_ptr->base).direction_hint);
+    if (iVar4 == 0) {
       if (local_3c == 0) {
-        engine_console_cpp_FUN_00436710(g_CConsolePtr,"CCharacter::walkToPoint - go somewhere failed\n");
+        engine_console_cpp_CConsole_printf_FUN_00436710
+                  (g_CConsolePtr,"CCharacter::walkToPoint - go somewhere failed\n");
         return -1;
       }
       return 1;
     }
+    pfVar2 = &(this_ptr->position_delta).z;
     local_60 = -local_18c;
     local_40 = local_190 - local_194;
     local_2c = local_60;
     if ((local_60 <= local_40) && (local_2c = local_40, local_18c < local_40)) {
       local_2c = local_18c;
     }
-    *(float *)&this_ptr->field_0x2584 = *(float *)&this_ptr->field_0x2584 + local_2c;
-    local_18 = (float)local_164._4_4_ - *(float *)&this_ptr->field_0x34;
-    fVar2 = (float)core_actor_cpp_FUN_0040d0c0(local_18);
-    fVar4 = -local_1c;
-    if ((fVar4 <= fVar2) && (fVar4 = fVar2, local_1c < fVar2)) {
-      fVar4 = local_1c;
+    *pfVar2 = *pfVar2 + local_2c;
+    local_18 = local_164.y - (this_ptr->base).orient.vec.y;
+    fVar3 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(local_18);
+    fVar5 = -local_1c;
+    if ((fVar5 <= fVar3) && (fVar5 = fVar3, local_1c < fVar3)) {
+      fVar5 = local_1c;
     }
-    *(float *)&this_ptr->field_0x2578 = *(float *)&this_ptr->field_0x2578 + fVar4;
+    this_ptr->turn_angle_accumulator = this_ptr->turn_angle_accumulator + fVar5;
   }
   if (local_3c == 0) {
     return 0;

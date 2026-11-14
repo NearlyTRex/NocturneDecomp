@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SChainVertex * __cdecl core_chain_cpp_SChainVertex_arrdtor20_FUN_004313f0(SChainVertex *objs,uint flags)
+; SChainVertex * __cdecl core_chain_cpp_SChainVertex_arrdtor20_FUN_004313f0(SChainVertex *this_ptr,uint flags)
 ;
 ; Parameters:
-; SChainVertex *   Stack[0x4]:4   objs
+; SChainVertex *   Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:

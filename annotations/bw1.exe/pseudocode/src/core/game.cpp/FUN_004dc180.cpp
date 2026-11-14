@@ -13,7 +13,7 @@ void core_game_cpp_FUN_004dc180(void)
   
   this_ptr = CAlphaBitmap_ARRAY_01cd0b44;
   do {
-    engine_alphabit_cpp_FUN_0040d1c0(this_ptr);
+    engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d1c0(this_ptr);
     this_ptr = this_ptr + 1;
   } while (this_ptr != (CAlphaBitmap *)&DAT_01cd0be4);
   return;

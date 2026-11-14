@@ -23,7 +23,7 @@
 ;
 ; Called Functions:
 ;   core_event.cpp_FUN_004a1d00
-;   engine_console.cpp_FUN_00445430
+;   engine_console.cpp_CConsole_printf_FUN_00445430
 ;
 ; *****************************************************************************
 
@@ -114,8 +114,8 @@ section .text
     PUSH 0x5dcd8e                       ; 004a1c30 | DAT_005dcd8e
     MOV ECX,dword ptr [0x00611100]      ; 004a1c35 | g_CConsolePtr
     PUSH ECX                            ; 004a1c3b | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00445430 ; 004a1c3c
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 004a1c3c
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 004a1c41
     JMP 0x004a1ba6                      ; 004a1c44
         ;   XREF to: 004a1ba6 (UNCONDITIONAL_JUMP)  ; LAB_004a1ba6

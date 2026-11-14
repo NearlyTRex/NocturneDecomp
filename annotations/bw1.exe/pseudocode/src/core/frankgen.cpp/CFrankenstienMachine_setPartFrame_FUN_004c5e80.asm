@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   core_frankgen.cpp_FUN_004c5c60 at 004c5d4e
+;   core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004c5c60 at 004c5d4e
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900

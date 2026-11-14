@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 67,
+    "complexity_score": 102,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 22,
-    "suspect_count": 4,
+    "suspect_count": 7,
     "suspect_types": [
+      "suspect_float",
       "unnamed_param"
     ],
     "total_lines": 38
@@ -33,7 +34,7 @@
     ],
     "convention": "unknown",
     "name": "core_doc.cpp_FUN_00468a90",
-    "signature": "undefined4 core_doc_cpp_FUN_00468a90(int param_1)"
+    "signature": "undefined4 core_doc_cpp_FUN_00468a90(CDemonActor *param_1)"
   },
   "function_calls": [],
   "globals": [],
@@ -84,7 +85,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint core_doc_cpp_FUN_00468a90(int param_1)",
+      "text": "uint core_doc_cpp_FUN_00468a90(CDemonActor *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -92,7 +93,7 @@
       "line": 7,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1 == 0) {",
+      "text": "if (param_1 == (CDemonActor *)0x0) {",
       "type": "unnamed_param"
     },
     {
@@ -100,15 +101,39 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "switch(*(uint *)(param_1 + 0x2e0)) {",
+      "text": "switch(param_1[2].orient.vec.x) {",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 12,
+      "match": "7.00649e-45",
+      "severity": "mild",
+      "text": "case 7.00649e-45:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 14,
+      "match": "9.80909e-45",
+      "severity": "mild",
+      "text": "case 9.80909e-45:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 15,
+      "match": "1.12104e-44",
+      "severity": "mild",
+      "text": "case 1.12104e-44:",
+      "type": "suspect_float"
     },
     {
       "description": "Unnamed function parameter",
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600(param_1,g_CMeleeClassInfo.name_hash);",
+      "text": "pCVar1 = (CMelee *)core_actor_cpp_castToClassHash_FUN_0040c600(param_1,g_CMeleeClassInfo.name_hash);",
       "type": "unnamed_param"
     }
   ]

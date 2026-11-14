@@ -2,29 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 55,
+    "complexity_score": 29,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 30,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 81
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 29,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 80
   },
   "cross_references": [
     {
-      "addr": "00588ee0",
-      "from_addr": "00589e92",
-      "name": "core_zombie.cpp_FUN_00588ee0",
+      "addr": "0058b3f0",
+      "from_addr": "0058b89c",
+      "name": "core_zombie.cpp_CZombie_processPickup_FUN_0058b3f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0058b3f0",
-      "from_addr": "0058b89c",
-      "name": "core_zombie.cpp_FUN_0058b3f0",
+      "addr": "00588ee0",
+      "from_addr": "00589e92",
+      "name": "core_zombie.cpp_CZombie_process_FUN_00588ee0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -47,6 +45,11 @@
       "name": "core_actor.cpp_getRandomInt_FUN_0040cea0"
     },
     {
+      "addr": "004fc310",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_004fc310"
+    },
+    {
       "addr": "004fc0d0",
       "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0"
@@ -54,12 +57,7 @@
     {
       "addr": "004fba50",
       "is_variadic": false,
-      "name": "core_motion.cpp_FUN_004fba50"
-    },
-    {
-      "addr": "004fc310",
-      "is_variadic": false,
-      "name": "core_motion.cpp_FUN_004fc310"
+      "name": "core_motion.cpp_CMotionList_findStateIndex_FUN_004fba50"
     }
   ],
   "globals": [
@@ -76,7 +74,7 @@
       {
         "call_addr": "00589e92",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_00588ee0",
+        "caller": "core_zombie.cpp_CZombie_process_FUN_00588ee0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -87,7 +85,7 @@
       {
         "call_addr": "0058a495",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_00588ee0",
+        "caller": "core_zombie.cpp_CZombie_process_FUN_00588ee0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -98,7 +96,7 @@
       {
         "call_addr": "0058a4b8",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_00588ee0",
+        "caller": "core_zombie.cpp_CZombie_process_FUN_00588ee0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -109,7 +107,7 @@
       {
         "call_addr": "0058a629",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_00588ee0",
+        "caller": "core_zombie.cpp_CZombie_process_FUN_00588ee0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -120,7 +118,7 @@
       {
         "call_addr": "0058b89c",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_0058b3f0",
+        "caller": "core_zombie.cpp_CZombie_processPickup_FUN_0058b3f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -131,7 +129,7 @@
       {
         "call_addr": "0058ba54",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_0058b3f0",
+        "caller": "core_zombie.cpp_CZombie_processPickup_FUN_0058b3f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -142,7 +140,7 @@
       {
         "call_addr": "0058aaf2",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_00588ee0",
+        "caller": "core_zombie.cpp_CZombie_process_FUN_00588ee0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -153,7 +151,7 @@
       {
         "call_addr": "0058acbf",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_00588ee0",
+        "caller": "core_zombie.cpp_CZombie_process_FUN_00588ee0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -164,7 +162,7 @@
       {
         "call_addr": "0058925f",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_00588ee0",
+        "caller": "core_zombie.cpp_CZombie_process_FUN_00588ee0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -175,7 +173,7 @@
       {
         "call_addr": "005892d8",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_00588ee0",
+        "caller": "core_zombie.cpp_CZombie_process_FUN_00588ee0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -231,22 +229,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "this_ptr_01 = &this_ptr->field_0x158;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0xd0dc",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0xd0dc == 0) {",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

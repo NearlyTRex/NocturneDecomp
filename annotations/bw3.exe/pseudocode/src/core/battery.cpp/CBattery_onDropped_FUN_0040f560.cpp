@@ -9,6 +9,6 @@
 void __cdecl core_battery_cpp_CBattery_onDropped_FUN_0040f560(CBattery *this_ptr,CVector3f *drop_position)
 
 {
-  *(uint *)&this_ptr->field_0x2d4 = 0;
+  this_ptr->carrier = (CDemonActor *)0x0;
   return;
 }

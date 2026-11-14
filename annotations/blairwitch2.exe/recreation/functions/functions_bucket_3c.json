@@ -8,82 +8,55 @@
     "instructions":256,
     "method":"blendHBilerpLightmapSharedU64toU64pBB12Px2MMX",
     "name":"core_dstrendr.cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_0046f9bc",
+    "params":[
+      {
+        "name":"output_buffer",
+        "type":{
+          "kind":"builtin",
+          "name":"ulonglong",
+          "ptr":1
+        }
+      },
+      {
+        "name":"texture_buffer",
+        "type":{
+          "kind":"builtin",
+          "name":"ulonglong",
+          "ptr":1
+        }
+      },
+      {
+        "name":"texture_indices",
+        "type":{
+          "kind":"builtin",
+          "name":"byte",
+          "ptr":1
+        }
+      },
+      {
+        "name":"lightmap_indices",
+        "type":{
+          "kind":"builtin",
+          "name":"byte",
+          "ptr":1
+        }
+      },
+      {
+        "name":"pixel_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/dstrendr.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"004927bc",
-    "conv":"unknown",
-    "data_refs":[
-      "00614c40"
-    ],
-    "instructions":7,
-    "method":"FUN_004927bc",
-    "name":"unkafter_mimic.cpp_FUN_004927bc",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"unkafter/mimic.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"004933bc",
-    "calls":[
-      "005b9924"
-    ],
-    "conv":"unknown",
-    "instructions":31,
-    "method":"FUN_004933bc",
-    "name":"core_fire.cpp_FUN_004933bc",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"core/fire.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"0057513c",
-    "conv":"unknown",
-    "instructions":3,
-    "method":"FUN_0057513c",
-    "name":"engine_texture.cpp_FUN_0057513c",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"engine/texture.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"0058873c",
-    "calls":[
-      "005b86a0"
-    ],
-    "conv":"unknown",
-    "instructions":33,
-    "method":"FUN_0058873c",
-    "name":"wincore_wddvmem.cpp_FUN_0058873c",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"wincore/wddvmem.cpp",
     "variadic":false
   },
   {
@@ -118,14 +91,25 @@
       "005c0b3c",
       "005c0b85"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":27,
-    "method":"FUN_005b9bbc",
-    "name":"crt_unknown.c_FUN_005b9bbc",
+    "method":"fflush",
+    "name":"crt_unknown.c_fflush_FUN_005b9bbc",
+    "params":[
+      {
+        "name":"stream",
+        "type":{
+          "header":"stdio",
+          "kind":"system",
+          "name":"_FILE",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"crt/unknown.c",
@@ -163,14 +147,14 @@
     ],
     "instructions":4,
     "method":"FUN_005c28bc",
-    "name":"unkafter_morph.cpp_FUN_005c28bc",
+    "name":"crt_unknown.c_FUN_005c28bc",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/morph.cpp",
+    "tu":"crt/unknown.c",
     "variadic":false
   },
   {
@@ -186,14 +170,14 @@
     "conv":"unknown",
     "instructions":21,
     "method":"FUN_005c293c",
-    "name":"unkafter_morph.cpp_FUN_005c293c",
+    "name":"crt_unknown.c_FUN_005c293c",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/morph.cpp",
+    "tu":"crt/unknown.c",
     "variadic":false
   }
 ]

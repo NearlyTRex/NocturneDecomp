@@ -11,22 +11,23 @@
 void __cdecl core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_00476150(CDemonRaytrace *this_ptr,int *output_count,int **input_indices_array)
 
 {
-  int *piVar1;
-  int iVar2;
-  int iVar3;
+  int iVar1;
+  int *piVar2;
+  CDemonCube *pCVar3;
   int iVar4;
   int iVar5;
   int iVar6;
+  int iVar7;
   
   if (_DAT_01bd3c60 == 0) {
     _DAT_01d046a0 = "..\\core\\dtrace.cpp";
     _DAT_01d046a4 = 0x8ea;
     core_main_c_FUN_004e4500("CDemonRenderer::getPVS - PVS is not valid!");
   }
-  iVar4 = _DAT_01bd3c5c;
+  iVar5 = _DAT_01bd3c5c;
   *output_count = _DAT_01bd3c5c;
-  piVar1 = (int *)realloc(*input_indices_array,iVar4 << 2);
-  *input_indices_array = piVar1;
+  piVar2 = (int *)realloc(*input_indices_array,iVar5 << 2);
+  *input_indices_array = piVar2;
   if (*output_count < 1) {
     _DAT_01d046a0 = "..\\core\\dtrace.cpp";
     _DAT_01d046a4 = 0x8f6;
@@ -37,31 +38,30 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_00476150(CDemonRaytrace 
     _DAT_01d046a4 = 0x8fa;
     core_main_c_FUN_004e4500("CDemonRaytrace::getPVS - out of memory");
   }
-  iVar5 = *(int *)&this_ptr->field_0x48 *
-          *(int *)&this_ptr->field_0x40 * *(int *)&this_ptr->field_0x44;
-  iVar4 = 0;
+  iVar6 = (this_ptr->grid_coord).z * (this_ptr->grid_coord).x * (this_ptr->grid_coord).y;
+  iVar5 = 0;
   if (0 < _DAT_01bd3c5c) {
-    iVar6 = 0;
+    iVar7 = 0;
     do {
-      iVar3 = 0;
-      if (0 < iVar5) {
-        iVar2 = *(int *)&this_ptr->field_0x50;
+      iVar4 = 0;
+      if (0 < iVar6) {
+        pCVar3 = this_ptr->cube_data;
         do {
-          if (iVar2 == *(int *)(iVar6 + 0x1bd3c64)) break;
-          iVar3 = iVar3 + 1;
-          iVar2 = iVar2 + 0x34;
-        } while (iVar3 < iVar5);
+          if (pCVar3 == *(CDemonCube **)(iVar7 + 0x1bd3c64)) break;
+          iVar4 = iVar4 + 1;
+          pCVar3 = pCVar3 + 1;
+        } while (iVar4 < iVar6);
       }
-      if (iVar5 <= iVar3) {
+      if (iVar6 <= iVar4) {
         _DAT_01d046a0 = "..\\core\\dtrace.cpp";
         _DAT_01d046a4 = 0x907;
         core_main_c_FUN_004e4500("CDemonRenderer::savePVS - can't find drawn cube!");
       }
-      iVar2 = _DAT_01bd3c5c;
-      iVar4 = iVar4 + 1;
-      *(int *)(iVar6 + (int)*input_indices_array) = iVar3;
-      iVar6 = iVar6 + 4;
-    } while (iVar4 < iVar2);
+      iVar1 = _DAT_01bd3c5c;
+      iVar5 = iVar5 + 1;
+      *(int *)(iVar7 + (int)*input_indices_array) = iVar4;
+      iVar7 = iVar7 + 4;
+    } while (iVar5 < iVar1);
   }
   return;
 }

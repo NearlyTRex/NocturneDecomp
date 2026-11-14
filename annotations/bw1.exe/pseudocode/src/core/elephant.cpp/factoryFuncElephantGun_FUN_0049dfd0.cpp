@@ -1,20 +1,20 @@
 // Name: core_elephant.cpp_factoryFuncElephantGun_FUN_0049dfd0
 // Address: 0049dfd0
 // Address Range: [[0049dfd0, 0049dfeb]]
-// Convention: unknown
-// Signature: void core_elephant_cpp_factoryFuncElephantGun_FUN_0049dfd0(void)
+// Convention: __cdecl
+// Signature: CElephantGun * __cdecl core_elephant_cpp_factoryFuncElephantGun_FUN_0049dfd0(void)
 
 #include "nocturne.h"
 
-void core_elephant_cpp_factoryFuncElephantGun_FUN_0049dfd0(void)
+CElephantGun * __cdecl core_elephant_cpp_factoryFuncElephantGun_FUN_0049dfd0(void)
 
 {
-  CElephantGun *this_ptr;
+  CElephantGun *pCVar1;
   
-  this_ptr = (CElephantGun *)FUN_005c0f32(0x584);
-  if (this_ptr == (CElephantGun *)0x0) {
-    return;
+  pCVar1 = (CElephantGun *)operator_new(0x584);
+  if (pCVar1 == (CElephantGun *)0x0) {
+    return (CElephantGun *)0x0;
   }
-  core_elephant_cpp_CElephantGun_ctor_FUN_0049e000(this_ptr);
-  return;
+  pCVar1 = core_elephant_cpp_CElephantGun_ctor_FUN_0049e000(pCVar1);
+  return pCVar1;
 }

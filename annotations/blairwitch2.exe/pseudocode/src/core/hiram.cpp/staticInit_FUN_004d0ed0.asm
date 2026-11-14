@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hiram_cpp_staticInit_FUN_004d0ed0(void)
+; void __cdecl core_hiram_cpp_staticInit_FUN_004d0ed0(void)
 ;
 ;
 ; Called Functions:

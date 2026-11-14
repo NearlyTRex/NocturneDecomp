@@ -46,10 +46,36 @@
     "instructions":81,
     "method":"blur3x3MMXStride128",
     "name":"core_dstrendr.cpp_blur3x3MMXStride128_FUN_004889b8",
+    "params":[
+      {
+        "name":"output_buffer",
+        "type":{
+          "kind":"builtin",
+          "name":"ulonglong",
+          "ptr":1
+        }
+      },
+      {
+        "name":"input_buffer",
+        "type":{
+          "kind":"builtin",
+          "name":"ulonglong",
+          "ptr":1
+        }
+      },
+      {
+        "name":"pixel_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/dstrendr.cpp",
@@ -131,7 +157,7 @@
   {
     "addr":"005c2738",
     "callers":[
-      "0049517e",
+      "00495180",
       "00499c80",
       "005c8390"
     ],
@@ -143,11 +169,23 @@
     "instructions":8,
     "method":"_localtime",
     "name":"crt_time.c__localtime_FUN_005c2738",
+    "params":[
+      {
+        "name":"timer",
+        "type":{
+          "header":"time",
+          "kind":"system",
+          "name":"time_t",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "header":"time",
+      "kind":"system",
+      "name":"_tm",
+      "ptr":1
     },
     "tu":"crt/time.c",
     "variadic":false
@@ -222,14 +260,14 @@
     ],
     "instructions":8,
     "method":"FUN_005cc138",
-    "name":"unkafter_zombie.cpp_FUN_005cc138",
+    "name":"crt_unknown.c_FUN_005cc138",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/zombie.cpp",
+    "tu":"crt/unknown.c",
     "variadic":false
   },
   {
@@ -245,14 +283,14 @@
     "conv":"unknown",
     "instructions":26,
     "method":"FUN_005cd2b8",
-    "name":"unkafter_2d.cpp_FUN_005cd2b8",
+    "name":"crt_unknown.c_FUN_005cd2b8",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/2d.cpp",
+    "tu":"crt/unknown.c",
     "variadic":false
   },
   {
@@ -269,17 +307,27 @@
       "005cd274",
       "005cd2b8"
     ],
-    "conv":"unknown",
+    "conv":"__watcallStack",
     "instructions":50,
-    "method":"FUN_005cd3b8",
-    "name":"unkafter_2d.cpp_FUN_005cd3b8",
+    "method":"processSignal",
+    "name":"crt_unknown.c_processSignal_FUN_005cd3b8",
+    "params":[
+      {
+        "name":"signal_number",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
-    "tu":"unkafter/2d.cpp",
+    "tu":"crt/unknown.c",
     "variadic":false
   },
   {
@@ -287,14 +335,14 @@
     "conv":"unknown",
     "instructions":25,
     "method":"FUN_005cd438",
-    "name":"unkafter_2d.cpp_FUN_005cd438",
+    "name":"crt_unknown.c_FUN_005cd438",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/2d.cpp",
+    "tu":"crt/unknown.c",
     "variadic":false
   }
 ]

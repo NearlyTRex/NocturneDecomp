@@ -14,7 +14,7 @@
 ;
 ; Called Functions:
 ;   crt_stdlib.c_atoi_FUN_005c30e0
-;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   wincore_winvideo.cpp_closeMovie_FUN_005b4980
 ;
 ; *****************************************************************************
@@ -42,8 +42,8 @@ section .text
     PUSH 0x5f9feb                       ; 005b49fc
     LEA EAX,[ESP + 0xc]                 ; 005b4a01
     PUSH EAX                            ; 005b4a05
-    CALL crt_unknown.c_FUN_005bfb40     ; 005b4a06
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 005b4a06
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x10                        ; 005b4a0b
     PUSH 0x0                            ; 005b4a0e
     PUSH 0x0                            ; 005b4a10

@@ -12,29 +12,30 @@ void __cdecl core_dlight_cpp_CDemonLight_init_FUN_0045c2a0(CDemonLight *this_ptr
 
 {
   void *pvVar1;
-  int iVar2;
+  uchar *puVar2;
   int iVar3;
-  float10 fVar4;
+  int iVar4;
+  float10 fVar5;
   
-  core_dlight_cpp_FUN_0045c380(this_ptr);
-  pvVar1 = FUN_005a3650
-                     (*(int *)&this_ptr->field_0x1cc0 * *(int *)&this_ptr->field_0x1cc4 * 2 + 0x210)
-  ;
-  *(void **)&this_ptr->field_0x2f98 = pvVar1;
+  core_dlight_cpp_CDemonLight_free_FUN_0045c380(this_ptr);
+  pvVar1 = malloc
+                     (this_ptr->shadow_map_width * this_ptr->shadow_map_height * 2 + 0x210);
+  this_ptr->shadow_buffer_raw = pvVar1;
   if (pvVar1 == (void *)0x0) {
     _DAT_01d71de0 = "..\\core\\dlight.cpp";
     _DAT_01d71de4 = 0x6c;
     core_main_c_FUN_004e4330("CDemonCamera::init - Unable to alloc frame buffer");
   }
-  *(uint *)&this_ptr->field_0x2f94 = *(int *)&this_ptr->field_0x2f98 + 0x10U & 0xfffffff0;
-  iVar2 = *(int *)&this_ptr->field_0x1cc0 * *(int *)&this_ptr->field_0x1cc4;
-  iVar3 = iVar2 >> 0x1f;
-  pvVar1 = FUN_005a3650((int)((iVar2 + iVar3 * -8) - (uint)(iVar3 << 2 < 0)) >> 3);
-  fVar4 = (float10)*(float *)&this_ptr->field_0x2fa8 * (float10)_DAT_005bb244;
-  *(void **)&this_ptr->field_0x2fa0 = pvVar1;
-  iVar2 = 0;
+  this_ptr->shadow_depth_buffer = (ushort *)((int)this_ptr->shadow_buffer_raw + 0x10U & 0xfffffff0);
+  iVar3 = this_ptr->shadow_map_width * this_ptr->shadow_map_height;
+  iVar4 = iVar3 >> 0x1f;
+  puVar2 = (uchar *)malloc
+                     ((int)((iVar3 + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3);
+  fVar5 = (float10)this_ptr->volumetric_intensity * (float10)_DAT_005bb244;
+  this_ptr->lightmap_visibility_bits = puVar2;
+  iVar3 = 0;
   round();
   core_dlight_cpp_CDemonLight_applyFilter_FUN_0045db40
-            (this_ptr,(&g_GlobalFilters)[(int)ROUND(fVar4)],0,0,iVar2);
+            (this_ptr,(&g_GlobalFilters)[(int)ROUND(fVar5)],0,0,iVar3);
   return;
 }

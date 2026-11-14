@@ -232,7 +232,7 @@ section .text
     ADD EBX,0x20                        ; 00446a86
     INC ESI                             ; 00446a89
     CALL core_dcube.cpp_buildAndRenderTrianglePrimitive_FUN_00446440 ; 00446a8a
-        ;   XREF to: 00446440 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_buildAndRenderTrianglePrimitive_FUN_00446440()
+        ;   XREF to: 00446440 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_buildAndRenderTrianglePrimitive_FUN_00446440(CVector3f * * triangle_vertex_pointers, CVector3f * vertex_buffer)
     MOV EDX,dword ptr [EBP + 0x14]      ; 00446a8f
     MOV dword ptr [EBP + -0x8],EBX      ; 00446a92
     MOV dword ptr [EBP + -0x4],ESI      ; 00446a95

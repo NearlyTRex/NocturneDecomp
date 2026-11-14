@@ -2,15 +2,37 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCloth.h"
+#include "types/classes/CHero.h"
 
 // Structure: CGabriella
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x601b4 (393652 bytes)
 #pragma pack(push, 1)
 typedef struct CGabriella {
-    char field_0[393652]; // 0x0
+    CHero base; // 0x0
+    int weapon_state_flags; // 0x25640
+    float holster_blend; // 0x25644
+    float draw_blend; // 0x25648
+    float aim_blend; // 0x2564c
+    float light_aim_blend; // 0x25650
+    float flashlight_angle; // 0x25654
+    int fire_state; // 0x25658
+    float left_clavicle_blend; // 0x2565c
+    float right_clavicle_blend; // 0x25660
+    struct CDemonActor* aim_target; // 0x25664
+    float target_aim_pitch; // 0x25668
+    float target_aim_yaw; // 0x2566c
+    float aim_pitch; // 0x25670
+    float aim_yaw; // 0x25674
+    float fire_cooldown_timer; // 0x25678
+    float aim_weight; // 0x2567c
+    CCloth coat_cloth; // 0x25680
+    float dynamite_charge_power; // 0x601b0
 } CGabriella;
 #pragma pack(pop)
 

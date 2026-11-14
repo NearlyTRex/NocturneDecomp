@@ -11,16 +11,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[10]:
-;   core_bodypart.cpp_FUN_004159e0 at 00415a00
+;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_004159e0 at 00415a00
 ;   core_box.cpp_CBoundingBox3D_render_FUN_0041b700 at 0041b78a
 ;   core_cloth.cpp_CCloth_render_FUN_005b0fe0 at 005b1004
 ;   core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_0044e720 at 0044e755
-;   core_dpart.cpp_FUN_00461a4e at 00461aaf
-;   core_glass.cpp_FUN_004c52a0 at 004c539f
-;   core_glass.cpp_FUN_004c5470 at 004c556e
-;   core_glass.cpp_FUN_004c5840 at 004c5941
+;   core_dpart.cpp_FUN_00461a50 at 00461aaf
+;   core_glass.cpp_CGlass_renderBackground_FUN_004c5840 at 004c5941
+;   core_glass.cpp_CGlass_renderOpaque_FUN_004c52a0 at 004c539f
+;   core_glass.cpp_CGlass_renderTransparent_FUN_004c5470 at 004c556e
 ;   core_skeleton.cpp_CDeformableModel_rotateVertices_FUN_00541990 at 005419af
-;   core_wateract.cpp_FUN_00587400 at 00587525
+;   core_wateract.cpp_CWaterActor_renderTransparent_FUN_00587400 at 00587525
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_005e59ea

@@ -32,10 +32,10 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_stranger.cpp_FUN_00563060 at 00563306
+;   core_stranger.cpp_CStranger_processFrame_FUN_00563060 at 00563306
 ;
 ; Referenced Globals:
-;   undefined4 s_actionPending_d_stranger_005eb660+1
+;   TerminatedCString s_actionPending_d_stranger_005eb661
 ;   TerminatedCString s_actionPending_d_stranger_005eb689
 ;   TerminatedCString s_Object_to_pick_up_is_now_005eb6b1
 ;   TerminatedCString s_actionPending_d_stranger_005eb6e4
@@ -56,18 +56,18 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
 ;   core_actor.cpp_FUN_00408d70
 ;   core_actor.cpp_FUN_00408de0
-;   core_actor.cpp_FUN_0040cf60
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042aa00
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0
-;   core_gore.cpp_FUN_004c9850
-;   core_hero.cpp_FUN_004cf230
+;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004c9850
+;   core_hero.cpp_CHero_tryOpenDoor_FUN_004cf230
 ;   core_hero.cpp_FUN_004cf440
 ;   core_hero.cpp_FUN_004cff50
 ;   core_hero.cpp_FUN_004cff90
 ;   core_motion.cpp_CMotionController_advance_FUN_005030c0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;   core_motion.cpp_FUN_005038a0
-;   core_skeleton.cpp_FUN_005469a0
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
 ;   ... and 4 more
 ;
 ; *****************************************************************************
@@ -120,8 +120,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x100]     ; 00565772
     PUSH EDI                            ; 00565779
     LEA ESI,[ESP + 0x7c]                ; 0056577a
-    CALL core_skeleton.cpp_FUN_005469a0 ; 0056577e
-        ;   XREF to: 005469a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_005469a0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0 ; 0056577e
+        ;   XREF to: 005469a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     LEA EDI,[ESP + 0xac]                ; 00565783
     LEA ESI,[ESP + 0x7c]                ; 0056578a
     ADD ESP,0x8                         ; 0056578e
@@ -218,12 +218,12 @@ section .text
         ;   XREF to: 00565858 (CONDITIONAL_JUMP)  ; LAB_00565858
     PUSH 0x75a                          ; 005658ab
     PUSH EDX                            ; 005658b0
-    MOV EAX,0x5eb661                    ; 005658b1 | s_actionPending_d_stranger_005eb660+1
-    PUSH EAX                            ; 005658b6 | s_actionPending_d_stranger_005eb660+1
+    MOV EAX,0x5eb661                    ; 005658b1 | = "actionPending = %d\nstranger.cpp line %d"
+    PUSH EAX                            ; 005658b6 | = "actionPending = %d\nstranger.cpp line %d"
     MOV EAX,[0x006138e0]                ; 005658b7 | g_CEditorToolsPtr
     PUSH EAX                            ; 005658bc
-    CALL shape_edittool.cpp_FUN_0047bdf0 ; 005658bd
-        ;   XREF to: 0047bdf0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047bdf0()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0 ; 005658bd
+        ;   XREF to: 0047bdf0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 005658c2
     JMP 0x00565862                      ; 005658c5
         ;   XREF to: 00565862 (UNCONDITIONAL_JUMP)  ; LAB_00565862
@@ -257,8 +257,8 @@ section .text
     PUSH EAX                            ; 00565913 | = "actionPending = %d\nstranger.cpp line %d"
     MOV ESI,dword ptr [0x006138e0]      ; 00565914 | g_CEditorToolsPtr
     PUSH ESI                            ; 0056591a
-    CALL shape_edittool.cpp_FUN_0047bdf0 ; 0056591b
-        ;   XREF to: 0047bdf0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047bdf0()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0 ; 0056591b
+        ;   XREF to: 0047bdf0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 00565920
     JMP 0x005658dc                      ; 00565923
         ;   XREF to: 005658dc (UNCONDITIONAL_JUMP)  ; LAB_005658dc
@@ -267,8 +267,8 @@ section .text
     PUSH 0x5eb6b1                       ; 0056592a | = "Object to pick up is now NULL\nstrang..."
     MOV ESI,dword ptr [0x006138e0]      ; 0056592f | g_CEditorToolsPtr
     PUSH ESI                            ; 00565935
-    CALL shape_edittool.cpp_FUN_0047bdf0 ; 00565936
-        ;   XREF to: 0047bdf0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047bdf0()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0 ; 00565936
+        ;   XREF to: 0047bdf0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 0056593b
     JMP 0x00565806                      ; 0056593e
         ;   XREF to: 00565806 (UNCONDITIONAL_JUMP)  ; LAB_00565806
@@ -290,8 +290,8 @@ section .text
     PUSH 0x5eb6e4                       ; 00565962 | = "actionPending = %d\nstranger.cpp line %d"
     MOV ECX,dword ptr [0x006138e0]      ; 00565967 | g_CEditorToolsPtr
     PUSH ECX                            ; 0056596d
-    CALL shape_edittool.cpp_FUN_0047bdf0 ; 0056596e
-        ;   XREF to: 0047bdf0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047bdf0()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0 ; 0056596e
+        ;   XREF to: 0047bdf0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 00565973
     MOV dword ptr [EBX + 0x256a4],0x1   ; 00565976
         ;   Label: LAB_00565976
@@ -343,8 +343,8 @@ section .text
     PUSH 0x5eb70c                       ; 00565a07 | = "actionPending = %d\nstranger.cpp line %d"
     MOV EDX,dword ptr [0x006138e0]      ; 00565a0c | g_CEditorToolsPtr
     PUSH EDX                            ; 00565a12
-    CALL shape_edittool.cpp_FUN_0047bdf0 ; 00565a13
-        ;   XREF to: 0047bdf0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047bdf0()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0 ; 00565a13
+        ;   XREF to: 0047bdf0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0(CEditorTools * this_ptr, char * format)
     JMP 0x00565803                      ; 00565a18
         ;   XREF to: 00565803 (UNCONDITIONAL_JUMP)  ; LAB_00565803
     MOV EAX,[0x0264be4c]                ; 00565a1d | DAT_0264be4c
@@ -453,7 +453,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x276c]    ; 00565b72
     PUSH EDI                            ; 00565b78
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 00565b79
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     MOV dword ptr [ESP + 0x100],EAX     ; 00565b7e
     ADD ESP,0x8                         ; 00565b85
     MOV dword ptr [ESP + 0xf4],EAX      ; 00565b88
@@ -466,8 +466,8 @@ section .text
     PUSH ECX                            ; 00565ba5
     LEA ESI,[ESP + 0x4c]                ; 00565ba6
     LEA EDI,[ESP + 0xd0]                ; 00565baa
-    CALL core_skeleton.cpp_FUN_005469a0 ; 00565bb1
-        ;   XREF to: 005469a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_005469a0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0 ; 00565bb1
+        ;   XREF to: 005469a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 00565bb6
     LEA EAX,[ESP + 0xc8]                ; 00565bb9
     LEA ESI,[ESP + 0x44]                ; 00565bc0
@@ -492,8 +492,8 @@ section .text
     ADD ESP,0x4                         ; 00565bed
     PUSH 0x41700000                     ; 00565bf0
     PUSH 0x41200000                     ; 00565bf5
-    CALL core_actor.cpp_FUN_0040cf60    ; 00565bfa
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 00565bfa
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0x108],EAX     ; 00565bff
     FLD float ptr [ESP + 0x108]         ; 00565c06
     ADD ESP,0x8                         ; 00565c0d
@@ -555,8 +555,8 @@ section .text
     PUSH EAX                            ; 00565cc6
     MOV EAX,[0x006167e0]                ; 00565cc7 | g_CGorePtr
     PUSH EAX                            ; 00565ccc
-    CALL core_gore.cpp_FUN_004c9850     ; 00565ccd
-        ;   XREF to: 004c9850 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004c9850(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
+    CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004c9850 ; 00565ccd
+        ;   XREF to: 004c9850 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004c9850(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
     ADD ESP,0x14                        ; 00565cd2
     PUSH 0x5eb734                       ; 00565cd5 | = "kick1.wav"
     MOV EAX,dword ptr [EBX + 0x2b0]     ; 00565cda
@@ -618,8 +618,8 @@ section .text
     PUSH 0x5eb759                       ; 00565d7d | = "actionPending = %d\nstranger.cpp line %d"
     MOV EDI,dword ptr [0x006138e0]      ; 00565d82 | g_CEditorToolsPtr
     PUSH EDI                            ; 00565d88
-    CALL shape_edittool.cpp_FUN_0047bdf0 ; 00565d89
-        ;   XREF to: 0047bdf0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047bdf0()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0 ; 00565d89
+        ;   XREF to: 0047bdf0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 00565d8e
     JMP 0x00565e22                      ; 00565d91
         ;   XREF to: 00565e22 (UNCONDITIONAL_JUMP)  ; LAB_00565e22
@@ -689,13 +689,13 @@ section .text
     PUSH 0x5eb781                       ; 00565e30 | = "doorToOpen == NULL\nstranger.cpp line %d"
     MOV EDX,dword ptr [0x006138e0]      ; 00565e35 | g_CEditorToolsPtr
     PUSH EDX                            ; 00565e3b
-    CALL shape_edittool.cpp_FUN_0047bdf0 ; 00565e3c
-        ;   XREF to: 0047bdf0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047bdf0()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0 ; 00565e3c
+        ;   XREF to: 0047bdf0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 00565e41
     PUSH EBX                            ; 00565e44
         ;   Label: LAB_00565e44
-    CALL core_hero.cpp_FUN_004cf230     ; 00565e45
-        ;   XREF to: 004cf230 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004cf230(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_tryOpenDoor_FUN_004cf230 ; 00565e45
+        ;   XREF to: 004cf230 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryOpenDoor_FUN_004cf230(CHero * this_ptr)
     ADD ESP,0x4                         ; 00565e4a
     TEST EAX,EAX                        ; 00565e4d
     JNZ 0x00565806                      ; 00565e4f

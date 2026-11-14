@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl crt_stdio_c_fclose_FUN_005b8af0(int param_1,int param_2)
+; uint __cdecl crt_stdio_c_fclose_FUN_005b8af0(_FILE *param_1,int param_2)
 ;
 ;
 ; XREF[2]:
@@ -59,7 +59,7 @@ section .text
     ADD ESP,0x4                         ; 005b8b30
     PUSH EBX                            ; 005b8b33
     CALL crt_stdio.c_ftell_FUN_005baab0 ; 005b8b34
-        ;   XREF to: 005baab0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_ftell_FUN_005baab0()
+        ;   XREF to: 005baab0 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_005baab0(_FILE * file_handle)
     ADD ESP,0x4                         ; 005b8b39
     CMP EAX,-0x1                        ; 005b8b3c
     JZ 0x005b8b50                       ; 005b8b3f

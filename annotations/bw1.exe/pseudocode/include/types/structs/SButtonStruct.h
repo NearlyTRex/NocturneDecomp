@@ -4,13 +4,20 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CAlphaBitmap.h"
 
 // Structure: SButtonStruct
-// Stub: size from Watcom RTTI, fields not yet recovered
+// size 44; RTTI 'buttonStruct' (nested in the puzzle classes); ctor 00418870 only constructs a CAlphaBitmap at +0 (no vtable, so +0 is modelled as a member); puzzles arrinit arrays of it with stride 0x2c
 // Ghidra size: 0x2c (44 bytes)
 #pragma pack(push, 1)
 typedef struct SButtonStruct {
-    char field_0[44]; // 0x0
+    CAlphaBitmap bitmap; // 0x0, addButton (004180c0) calls CAlphaBitmap_load on element+0; render (00418140) displays it; ctor/dtor construct/destroy it
+    int enabled; // 0x14, addButton stores arg 6; the puzzle process tests buttons[selected].enabled == 1 (chem) or 1/2/3 as the button kind (audioRec: power / transport+knobs / speed selector)
+    int x; // 0x18, addButton stores arg 7; render draws at it; hitTestButtons (00418790) tests x..x+width
+    int y; // 0x1c, addButton stores arg 8; render y; hit test y..y+height
+    int width; // 0x20, addButton stores the bitmap width arg (arg 4)
+    int height; // 0x24, addButton stores the bitmap height arg (arg 5)
+    int visible; // 0x28, addButton stores arg 9; render and hit testing only consider buttons with visible == 1; process rewrites it to show the current knob/switch frames
 } SButtonStruct;
 #pragma pack(pop)
 

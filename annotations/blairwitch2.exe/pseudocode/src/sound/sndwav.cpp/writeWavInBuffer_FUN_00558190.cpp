@@ -24,13 +24,13 @@ int __cdecl sound_sndwav_cpp_writeWavInBuffer_FUN_00558190(int buffer_index)
              (uint)((_DAT_0264b24c >> 0x1f) << 2 < 0)) >> 3) * _DAT_0264b25c;
   MVar1 = waveInPrepareHeader(_DAT_0264b108,*(LPWAVEHDR *)(iVar2 + 0x264b15c),0x20);
   if (MVar1 != 0) {
-    sound_sndmain_cpp_FUN_005549c0("waveOutPrepareHeader failed!");
+    sound_sndmain_cpp_logSoundError_FUN_005549c0("waveOutPrepareHeader failed!");
     return 0;
   }
   MVar1 = waveInAddBuffer(_DAT_0264b108,*(LPWAVEHDR *)(iVar2 + 0x264b15c),0x20);
   if (MVar1 == 0) {
     return 1;
   }
-  sound_sndmain_cpp_FUN_005549c0("waveOutWrite failed!");
+  sound_sndmain_cpp_logSoundError_FUN_005549c0("waveOutWrite failed!");
   return 0;
 }

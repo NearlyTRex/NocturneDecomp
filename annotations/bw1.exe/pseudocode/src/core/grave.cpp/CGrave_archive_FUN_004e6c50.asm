@@ -41,13 +41,13 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 004e6c67
     PUSH EAX                            ; 004e6c6d
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770 ; 004e6c6e
-        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770()
+        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770(CKeyFramedModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 004e6c73
     PUSH 0x5e41a8                       ; 004e6c76 | DAT_005e41a8
     LEA EAX,[EBX + 0x2d8]               ; 004e6c7b
     PUSH EAX                            ; 004e6c81
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 004e6c82
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     MOV EDX,dword ptr [0x0061eea8]      ; 004e6c87 | g_CGraveClassVersion
     ADD ESP,0x8                         ; 004e6c8d
     CMP EDX,0x2                         ; 004e6c90
@@ -64,7 +64,7 @@ section .text
     LEA EAX,[EBX + 0x2d4]               ; 004e6cae
     PUSH EAX                            ; 004e6cb4
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 004e6cb5
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     MOV ESI,dword ptr [0x0061eea8]      ; 004e6cba | g_CGraveClassVersion
     ADD ESP,0x8                         ; 004e6cc0
     CMP ESI,0x3                         ; 004e6cc3

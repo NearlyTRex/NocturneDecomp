@@ -1,0 +1,267 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 88,
+    "complexity_score": 174,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 39,
+    "suspect_count": 12,
+    "suspect_types": [
+      "bit_int_float_compare",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 127
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00591d10",
+    "address_range": [
+      [
+        "00591d10",
+        "00591dde"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_xform.cpp_angleFromSinCos_FUN_00591d10",
+    "signature": "float core_xform_cpp_angleFromSinCos_FUN_00591d10(float param_1,float param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b9924",
+      "is_variadic": false,
+      "name": "crt_math.c_acos_FUN_005b9924"
+    },
+    {
+      "addr": "005b98f6",
+      "is_variadic": false,
+      "name": "crt_math.c_asin_FUN_005b98f6"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005eecde",
+      "name": "DAT_005eecde",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005eece2",
+      "name": "DAT_005eece2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005eece6",
+      "name": "DAT_005eece6",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005eecea",
+      "name": "DAT_005eecea",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005eecee",
+      "name": "DAT_005eecee",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005eecf2",
+      "name": "DAT_005eecf2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005eecf6",
+      "name": "DAT_005eecf6",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.791044776119403,
+    "instruction_count": 67,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 12,
+      "BRANCH": 3,
+      "CALL": 2,
+      "CBRANCH": 8,
+      "COPY": 244,
+      "FLOAT2FLOAT": 25,
+      "FLOAT_ADD": 2,
+      "FLOAT_EQUAL": 7,
+      "FLOAT_LESS": 7,
+      "FLOAT_NAN": 14,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 13,
+      "INT_AND": 47,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 12,
+      "INT_LEFT": 28,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 36,
+      "INT_OR": 35,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 6,
+      "INT_SUB": 4,
+      "INT_XOR": 2,
+      "INT_ZEXT": 28,
+      "LOAD": 21,
+      "POPCOUNT": 6,
+      "RETURN": 2,
+      "STORE": 10
+    },
+    "pcode_op_count": 589
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005b5860",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00583a40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005f55c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8732
+    },
+    "nocturne.exe": {
+      "addr": "0055b0b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8732
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "float core_xform_cpp_angleFromSinCos_FUN_00591d10(float param_1,float param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "float core_xform_cpp_angleFromSinCos_FUN_00591d10(float param_1,float param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((_DAT_005eecde <= param_1) || (param_1 <= _DAT_005eece2)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((_DAT_005eecde <= param_1) || (param_1 <= _DAT_005eece2)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (_DAT_005eece6 < param_2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((int)param_2 < 0x3f800000) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fVar1 = (float10)param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 < 0.0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar1 = (float10)param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2 < 0.0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
+      "line": 12,
+      "match": "(int)param_2 < 0x3f800000",
+      "severity": "moderate",
+      "text": "if ((int)param_2 < 0x3f800000) {",
+      "type": "bit_int_float_compare"
+    }
+  ]
+}

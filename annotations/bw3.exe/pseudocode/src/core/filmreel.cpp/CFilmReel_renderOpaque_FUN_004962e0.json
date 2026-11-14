@@ -1,0 +1,191 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 62,
+    "complexity_score": 69,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 29,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 91
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004962e0",
+    "address_range": [
+      [
+        "004962e0",
+        "0049635f"
+      ],
+      [
+        "00496361",
+        "00496375"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_filmreel.cpp_CFilmReel_renderOpaque_FUN_004962e0",
+    "signature": "int __cdecl core_filmreel_cpp_CFilmReel_renderOpaque_FUN_004962e0(CFilmReel *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0041daf0",
+      "is_variadic": false,
+      "name": "core_box.cpp_FUN_0041daf0"
+    },
+    {
+      "addr": "00462540",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540"
+    },
+    {
+      "addr": "0046cf30",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30"
+    },
+    {
+      "addr": "0046ce90",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90"
+    },
+    {
+      "addr": "0046d080",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_pop_FUN_0046d080"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f2afc",
+      "name": "DAT_005f2afc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bdd7e4",
+      "name": "DAT_01bdd7e4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.096153846153846,
+    "instruction_count": 52,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 2,
+      "CALL": 5,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 42,
+      "INT_ADD": 22,
+      "INT_AND": 21,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 21,
+      "INT_LESS": 1,
+      "INT_MULT": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 10,
+      "INT_SUB": 25,
+      "INT_ZEXT": 2,
+      "LOAD": 7,
+      "POPCOUNT": 10,
+      "STORE": 22
+    },
+    "pcode_op_count": 213
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00492a90",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004ab440",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004be810",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8132
+    },
+    "nocturne.exe": {
+      "addr": "00481d90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8776
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFilmReel *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,&(this_ptr->base).location.position);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,&(this_ptr->base).orient.vec,(CVector3f *)0x0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 20,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CFilmReel",
+        "offset": 16,
+        "vtable_addr": "005df664"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

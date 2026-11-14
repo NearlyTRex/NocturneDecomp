@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setutil_cpp_C3DSLight_setFilterFrame_FUN_0055d3f0(int param_1,int param_2,CDemonLight *param_3)
+; void __cdecl core_setutil_cpp_C3DSLight_setFilterFrame_FUN_0055d3f0(C3DSLight *this_ptr,int frame_index,CDemonLight *light)
 ;
+; Parameters:
+; C3DSLight *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   frame_index
+; CDemonLight *    Stack[0xc]:4   light
 ;
 ; XREF[1]:
 ;   core_event.cpp_FUN_004a1d00 at 004a5712

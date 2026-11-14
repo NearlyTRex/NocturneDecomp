@@ -1,0 +1,711 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 392,
+    "complexity_score": 437,
+    "cross_reference_count": 1,
+    "function_call_count": 15,
+    "global_count": 47,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 187,
+    "suspect_count": 24,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 579
+  },
+  "cross_references": [
+    {
+      "addr": "004bf4b0",
+      "from_addr": "004bf771",
+      "name": "core_game.cpp_CGame_process_FUN_004bf4b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a1760",
+    "address_range": [
+      [
+        "004a1760",
+        "004a1ac4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_fire.cpp_CFireEffect_process_FUN_004a1760",
+    "signature": "void __cdecl core_fire_cpp_CFireEffect_process_FUN_004a1760(CFireEffect *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00497540",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CBulletHole_process_FUN_00497540"
+    },
+    {
+      "addr": "0049ad00",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CBulletTrail_process_FUN_0049ad00"
+    },
+    {
+      "addr": "0049d8b0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CCrater_process_FUN_0049d8b0"
+    },
+    {
+      "addr": "0049c890",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CExplosion_process_FUN_0049c890"
+    },
+    {
+      "addr": "0049e390",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CGunFlame_process_FUN_0049e390"
+    },
+    {
+      "addr": "0049f4e0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CLightningBolt_process_FUN_0049f4e0"
+    },
+    {
+      "addr": "0049a450",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CMuzzleFlash_process_FUN_0049a450"
+    },
+    {
+      "addr": "0049fdf0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CRing_process_FUN_0049fdf0"
+    },
+    {
+      "addr": "00496e00",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CSmokeParticle_process_FUN_00496e00"
+    },
+    {
+      "addr": "00497e80",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CStake_process_FUN_00497e80"
+    },
+    {
+      "addr": "004a0570",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CStormEffect_process_FUN_004a0570"
+    },
+    {
+      "addr": "0049d090",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CToss_process_FUN_0049d090"
+    },
+    {
+      "addr": "004a0630",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CTrail_process_FUN_004a0630"
+    },
+    {
+      "addr": "0049de60",
+      "is_variadic": false,
+      "name": "core_fire.cpp_initProcess_FUN_0049de60"
+    },
+    {
+      "addr": "0049c620",
+      "is_variadic": false,
+      "name": "core_fire.cpp_updateTextureAnimCounts_FUN_0049c620"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01c74ea0",
+      "name": "DAT_01c74ea0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c74ecc",
+      "name": "DAT_01c74ecc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c8aea0",
+      "name": "DAT_01c8aea0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c8eea8",
+      "name": "DAT_01c8eea8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c8f108",
+      "name": "g_StakePool[0].physics_box.is_valid",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c8f368",
+      "name": "g_StakePool[1].physics_box.is_valid",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb4ed8",
+      "name": "g_SparkPool[0].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb4ef0",
+      "name": "g_SparkPool[0].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb4f2c",
+      "name": "g_SparkPool[1].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb4f44",
+      "name": "g_SparkPool[1].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cba2dc",
+      "name": "CFirefly_ARRAY_01cba2b8[0].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cba2f4",
+      "name": "CFirefly_ARRAY_01cba2b8[0].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cba338",
+      "name": "CFirefly_ARRAY_01cba2b8[1].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cba350",
+      "name": "CFirefly_ARRAY_01cba2b8[1].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cbb9bc",
+      "name": "DAT_01cbb9bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cbba18",
+      "name": "DAT_01cbba18",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cbc114",
+      "name": "CGlassParticle_ARRAY_01cbc0f0[0].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cbc12c",
+      "name": "CGlassParticle_ARRAY_01cbc0f0[0].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cbc1e8",
+      "name": "CGlassParticle_ARRAY_01cbc0f0[1].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cbc200",
+      "name": "CGlassParticle_ARRAY_01cbc0f0[1].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cefd34",
+      "name": "DAT_01cefd34",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cefd58",
+      "name": "DAT_01cefd58",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cefea4",
+      "name": "g_FireballPool[0].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cefebc",
+      "name": "g_FireballPool[0].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ceff48",
+      "name": "g_FireballPool[1].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ceff60",
+      "name": "g_FireballPool[1].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cf27a8",
+      "name": "g_RockPool[0].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cf27c0",
+      "name": "g_RockPool[0].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cf27f8",
+      "name": "g_RockPool[1].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cf2810",
+      "name": "g_RockPool[1].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cf3bac",
+      "name": "CLeaf_ARRAY_01cf3b88[0].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cf3bc4",
+      "name": "CLeaf_ARRAY_01cf3b88[0].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cf3c00",
+      "name": "CLeaf_ARRAY_01cf3b88[1].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cf3c18",
+      "name": "CLeaf_ARRAY_01cf3b88[1].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cf5088",
+      "name": "DAT_01cf5088",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cfb8c8",
+      "name": "DAT_01cfb8c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cfb8f4",
+      "name": "DAT_01cfb8f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d02904",
+      "name": "g_ShellPool[0].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d02964",
+      "name": "g_ShellPool[1].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d03bb0",
+      "name": "g_PopcornPool[0].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d03bc8",
+      "name": "g_PopcornPool[0].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d03bf0",
+      "name": "g_PopcornPool[1].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d03c08",
+      "name": "g_PopcornPool[1].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d07bb4",
+      "name": "g_RainDropPool[0].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d07bcc",
+      "name": "g_RainDropPool[0].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d07bf4",
+      "name": "g_RainDropPool[1].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d07c0c",
+      "name": "g_RainDropPool[1].base.vtable",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004bf771",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_process_FUN_004bf4b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.081632653061225,
+    "instruction_count": 294,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 32,
+      "BOOL_OR": 11,
+      "BRANCH": 1,
+      "CALL": 15,
+      "CALLIND": 10,
+      "CBRANCH": 40,
+      "COPY": 484,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_EQUAL": 9,
+      "FLOAT_LESS": 9,
+      "FLOAT_NAN": 18,
+      "INT2FLOAT": 9,
+      "INT_ADD": 106,
+      "INT_AND": 222,
+      "INT_CARRY": 46,
+      "INT_EQUAL": 168,
+      "INT_LEFT": 36,
+      "INT_LESS": 23,
+      "INT_NOTEQUAL": 49,
+      "INT_OR": 45,
+      "INT_SBORROW": 23,
+      "INT_SCARRY": 48,
+      "INT_SLESS": 84,
+      "INT_SUB": 75,
+      "INT_XOR": 4,
+      "INT_ZEXT": 36,
+      "LOAD": 39,
+      "POPCOUNT": 84,
+      "RETURN": 1,
+      "STORE": 52
+    },
+    "pcode_op_count": 1788
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0049c430",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9329
+    },
+    "bw1.exe": {
+      "addr": "004b4dd0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.972
+    },
+    "nocedit.exe": {
+      "addr": "004c6ec0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8788
+    },
+    "nocturne.exe": {
+      "addr": "0048a390",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8788
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004a1766",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_01c74ea0",
+      "severity": "mild",
+      "text": "this_ptr_00 = (CSmokeParticle *)&DAT_01c74ea0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_01c8aea0",
+      "severity": "mild",
+      "text": "} while (this_ptr_00 != (CSmokeParticle *)&DAT_01c8aea0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 47,
+      "match": "DAT_01cba2b4",
+      "severity": "mild",
+      "text": "} while (this_ptr_01 != (CSpark *)&DAT_01cba2b4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 54,
+      "match": "DAT_01cbb9b8",
+      "severity": "mild",
+      "text": "} while (pCVar2 != (CFirefly *)&DAT_01cbb9b8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_01cbb9bc",
+      "severity": "mild",
+      "text": "this_ptr_02 = (CMuzzleFlash *)&DAT_01cbb9bc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 61,
+      "match": "DAT_01cbc0ec",
+      "severity": "mild",
+      "text": "} while (this_ptr_02 != (CMuzzleFlash *)&DAT_01cbc0ec);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 79,
+      "match": "DAT_01cefd10",
+      "severity": "mild",
+      "text": "} while (this_ptr_04 != (CGlassParticle *)&DAT_01cefd10);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 86,
+      "match": "DAT_01cefe7c",
+      "severity": "mild",
+      "text": "} while (this_ptr_05 != (CBulletTrail *)&DAT_01cefe7c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 93,
+      "match": "DAT_01cf2780",
+      "severity": "mild",
+      "text": "} while (this_ptr_06 != (CFireball *)&DAT_01cf2780);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 100,
+      "match": "DAT_01cf3b84",
+      "severity": "mild",
+      "text": "} while (this_ptr_07 != (CRock *)&DAT_01cf3b84);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 107,
+      "match": "DAT_01cf5088",
+      "severity": "mild",
+      "text": "} while (this_ptr_08 != (CLeaf *)&DAT_01cf5088);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 114,
+      "match": "DAT_01cbb9b8",
+      "severity": "mild",
+      "text": "} while (pCVar2 != (CFirefly *)&DAT_01cbb9b8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 117,
+      "match": "DAT_01c8aea8",
+      "severity": "mild",
+      "text": "this_ptr_09 = (CBulletHole *)&DAT_01c8aea8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 128,
+      "match": "DAT_01cf61d0",
+      "severity": "mild",
+      "text": "} while (this_ptr_10 != (CExplosion *)&DAT_01cf61d0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 133,
+      "match": "DAT_01cfaff4",
+      "severity": "mild",
+      "text": "} while (this_ptr_11 != (CToss *)&DAT_01cfaff4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 138,
+      "match": "DAT_01cfb8b8",
+      "severity": "mild",
+      "text": "} while (this_ptr_12 != (CCrater *)&DAT_01cfb8b8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 150,
+      "match": "DAT_01d00eac",
+      "severity": "mild",
+      "text": "} while (this_ptr_13 != (CGunFlame *)&DAT_01d00eac);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 155,
+      "match": "DAT_01d01ab0",
+      "severity": "mild",
+      "text": "} while (this_ptr_14 != (CLightningBolt *)&DAT_01d01ab0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 160,
+      "match": "DAT_01d028c4",
+      "severity": "mild",
+      "text": "} while (this_ptr_15 != (CTrail *)&DAT_01d028c4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 165,
+      "match": "DAT_01d03b88",
+      "severity": "mild",
+      "text": "} while (this_ptr_16 != (CShell *)&DAT_01d03b88);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 172,
+      "match": "DAT_01d07b8c",
+      "severity": "mild",
+      "text": "} while (&this_ptr_17->base != (CParticle *)&DAT_01d07b8c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 179,
+      "match": "DAT_01d0bb90",
+      "severity": "mild",
+      "text": "} while (&this_ptr_18->base != (CParticle *)&DAT_01d0bb90);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 184,
+      "match": "DAT_01d0ce7c",
+      "severity": "mild",
+      "text": "} while (this_ptr_19 != (CRing *)&DAT_01d0ce7c);",
+      "type": "undefined_data"
+    }
+  ]
+}

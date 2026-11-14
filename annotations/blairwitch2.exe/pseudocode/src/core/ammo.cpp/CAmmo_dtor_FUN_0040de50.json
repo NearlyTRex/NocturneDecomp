@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 33,
+    "complexity_score": 17,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 18,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 59
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 58
   },
   "cross_references": [],
   "function": {
@@ -23,9 +21,9 @@
         "0040dea7"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_ammo.cpp_CAmmo_dtor_FUN_0040de50",
-    "signature": "CAmmo * core_ammo_cpp_CAmmo_dtor_FUN_0040de50(CAmmo *this_ptr,uint flags)"
+    "signature": "CAmmo * __cdecl core_ammo_cpp_CAmmo_dtor_FUN_0040de50(CAmmo *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -53,7 +51,7 @@
     {
       "addr": "005f22f4",
       "name": "g_CAmmoVTable",
-      "type": "undefined4",
+      "type": "CDemonActor_vtable",
       "value": null
     },
     {
@@ -94,6 +92,32 @@
     },
     "pcode_op_count": 127
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0040e000",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9841
+    },
+    "bw3.exe": {
+      "addr": "0040e510",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9841
+    },
+    "nocedit.exe": {
+      "addr": "004114e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9841
+    },
+    "nocturne.exe": {
+      "addr": "0040ef90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9841
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -117,16 +141,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "*(byte **)&this_ptr->field_0x2b0 = &g_CAmmoVTable;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

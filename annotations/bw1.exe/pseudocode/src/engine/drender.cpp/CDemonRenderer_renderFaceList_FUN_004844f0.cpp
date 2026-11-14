@@ -15,19 +15,17 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_004844f0(CDemo
   uint uVar2;
   int iVar3;
   int iVar4;
-  uint local_24;
-  uint local_20;
-  uint local_1c;
+  CVector3i local_24;
   int local_18;
   int local_14;
   
   if (render_flags == -1) {
     render_flags = 0x2cd;
   }
-  if (*(int *)(this_ptr + 0x1c) == 0) {
-    if (((*(int *)(this_ptr + 0x10) == 0) && (*(int *)(this_ptr + 0xc) == 0)) && (DAT_00713a7c != 0)
-       ) {
-      if (*(int *)(this_ptr + 4) == 0) {
+  if (this_ptr->texture_capture_enabled == 0) {
+    if (((this_ptr->face_capture_enabled == 0) && (this_ptr->plane_culling_enabled == 0)) &&
+       (DAT_00713a7c != 0)) {
+      if (this_ptr->shadow_pass_active == 0) {
         if (DAT_0061b4a0 == 0x20) {
           _DAT_01c4f02c = engine_special_cpp_FUN_0057de01;
         }
@@ -38,25 +36,19 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_004844f0(CDemo
         _DAT_01c51d18 = 6;
         if (_DAT_01c50948 == 0) {
           for (; 0 < face_count; face_count = face_count + -1) {
-            local_24 = (uint)*(ushort *)face_array;
-            local_20 = (uint)*(ushort *)(face_array + 2);
-            local_1c = (uint)*(ushort *)(face_array + 4);
-            if (*(int *)(this_ptr + 0x20) == 0) {
-              *(uint *)(local_24 * 0x30 + 0x18 + *(int *)this_ptr) =
-                   (uint)*(ushort *)(face_array + 6) << 8;
-              *(uint *)(*(int *)this_ptr + 0x1c + local_24 * 0x30) =
-                   (uint)*(ushort *)(face_array + 0xc) << 8;
-              *(uint *)(local_20 * 0x30 + 0x18 + *(int *)this_ptr) =
-                   (uint)*(ushort *)(face_array + 8) << 8;
-              *(uint *)(*(int *)this_ptr + 0x1c + local_20 * 0x30) =
-                   (uint)*(ushort *)(face_array + 0xe) << 8;
-              *(uint *)(local_1c * 0x30 + 0x18 + *(int *)this_ptr) =
-                   (uint)*(ushort *)(face_array + 10) << 8;
-              *(uint *)(*(int *)this_ptr + 0x1c + local_1c * 0x30) =
-                   (uint)*(ushort *)(face_array + 0x10) << 8;
+            local_24.x = (int)(face_array->vertex_indices).vertex_index_0;
+            local_24.y = (int)(face_array->vertex_indices).vertex_index_1;
+            local_24.z = (int)(face_array->vertex_indices).vertex_index_2;
+            if (this_ptr->skip_uv_extraction == 0) {
+              this_ptr->vertex_buffer_ptr[local_24.x].u = (uint)face_array->u_coord_0 << 8;
+              this_ptr->vertex_buffer_ptr[local_24.x].v = (uint)face_array->v_coord_0 << 8;
+              this_ptr->vertex_buffer_ptr[local_24.y].u = (uint)face_array->u_coord_1 << 8;
+              this_ptr->vertex_buffer_ptr[local_24.y].v = (uint)face_array->v_coord_1 << 8;
+              this_ptr->vertex_buffer_ptr[local_24.z].u = (uint)face_array->u_coord_2 << 8;
+              this_ptr->vertex_buffer_ptr[local_24.z].v = (uint)face_array->v_coord_2 << 8;
             }
-            face_array = face_array + 0x12;
-            core_dpart_cpp_FUN_0047a480((int *)&local_24,3);
+            face_array = face_array + 1;
+            core_dpart_cpp_FUN_0047a480(&local_24.x,3);
           }
         }
         else {
@@ -65,7 +57,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_004844f0(CDemo
           if (0 < face_count) {
             local_18 = 0;
             do {
-              iVar3 = engine_prim_c_getTriangleWindingFromPackedIndices_FUN_0053e000(face_array);
+              iVar3 = engine_prim_c_getTriangleWindingFromPackedIndices_FUN_0053e000
+                                (&face_array->vertex_indices);
               if (iVar3 != 0) {
                 iVar4 = iVar4 + 1;
                 iVar3 = local_18 + 4;
@@ -78,12 +71,13 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_004844f0(CDemo
                 }
               }
               local_14 = local_14 + 1;
-              face_array = face_array + 0x12;
+              face_array = face_array + 1;
             } while (local_14 < face_count);
           }
           if (0 < iVar4) {
             engine_special_cpp_drawPolyList2_FUN_005824e0
-                      (*(uint *)this_ptr,&DAT_00612568,iVar4,_DAT_01c51d14);
+                      (this_ptr->vertex_buffer_ptr,(SInputFace **)&DAT_00612568,iVar4,_DAT_01c51d14)
+            ;
             return;
           }
         }
@@ -98,12 +92,12 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_004844f0(CDemo
           do {
             _DAT_01c51d18 = uVar2;
             _DAT_01c51d14 = uVar1;
-            local_24 = (uint)*(ushort *)face_array;
-            local_20 = (uint)*(ushort *)(face_array + 2);
-            local_1c = (uint)*(ushort *)(face_array + 4);
+            local_24.x = (int)(face_array->vertex_indices).vertex_index_0;
+            local_24.y = (int)(face_array->vertex_indices).vertex_index_1;
+            local_24.z = (int)(face_array->vertex_indices).vertex_index_2;
             face_count = face_count + -1;
-            face_array = face_array + 0x12;
-            core_dpart_cpp_FUN_0047ab00((CVector3i *)&local_24,3);
+            face_array = face_array + 1;
+            core_dpart_cpp_FUN_0047ab00(&local_24,3);
             uVar1 = _DAT_01c51d14;
             uVar2 = _DAT_01c51d18;
           } while (0 < face_count);
@@ -118,7 +112,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_004844f0(CDemo
           iVar4 = iVar4 + 1;
           engine_drender_cpp_CDemonRenderer_renderTexturedFace_FUN_00482390
                     (this_ptr,face_array,render_flags);
-          face_array = face_array + 0x12;
+          face_array = face_array + 1;
         } while (iVar4 < face_count);
         return;
       }
@@ -130,8 +124,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_004844f0(CDemo
       do {
         iVar4 = iVar4 + 1;
         engine_drender_cpp_CDemonRenderer_captureFace_FUN_00484c20
-                  (this_ptr,(STrianglePackedIndices *)face_array,render_flags);
-        face_array = face_array + 0x12;
+                  (this_ptr,&face_array->vertex_indices,render_flags);
+        face_array = face_array + 1;
       } while (iVar4 < face_count);
     }
   }

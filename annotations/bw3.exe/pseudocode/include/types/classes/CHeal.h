@@ -4,13 +4,16 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CWeapon.h"
 
 // Structure: CHeal
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 1436; ctor 004d1960, fire 004d1a10, process 004d1c50
 // Ghidra size: 0x59c (1436 bytes)
 #pragma pack(push, 1)
 typedef struct CHeal {
-    char field_0[1436]; // 0x0
+    CWeapon base; // 0x0, derived
+    int is_firing; // 0x594, ctor 0; fire sets 1; process moves it to was_firing_prev_frame and clears
+    int was_firing_prev_frame; // 0x598, ctor 0; process stores last is_firing; fire returns 0 while set
 } CHeal;
 #pragma pack(pop)
 

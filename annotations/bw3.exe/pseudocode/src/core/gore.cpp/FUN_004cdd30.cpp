@@ -12,21 +12,13 @@ void core_gore_cpp_FUN_004cdd30(uint *param_1,int param_2)
 
 {
   float10 fVar1;
-  int local_48;
-  int local_44;
-  int local_40;
-  int local_3c;
-  int local_38;
-  int local_34;
-  int local_30;
-  int local_2c;
-  int local_28;
+  CVector3i local_48;
+  CVector3i local_3c;
+  CVector3i local_30;
   uint local_24;
   uint local_20;
   uint local_1c;
-  int local_18;
-  int local_14;
-  int local_10;
+  CVector3i local_18;
   int local_c;
   
   if (param_1[5] == *(int *)(*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) + 0x2c)) {
@@ -47,34 +39,31 @@ void core_gore_cpp_FUN_004cdd30(uint *param_1,int param_2)
     local_24 = 0xbfaa9fbe;
     local_20 = 0;
     local_1c = 0xbfaa9fbe;
-    local_30 = (int)ROUND(_DAT_005e0e18 * -1.333);
-    local_2c = (int)ROUND(_DAT_005e0e18 * 0.0);
-    local_28 = (int)ROUND(_DAT_005e0e18 * -1.333);
-    engine_special_cpp_FUN_005632a3(*(SProjectedVertex **)DAT_005f2afc,(CVector3i *)&local_30);
+    local_30.x = (int)ROUND(_DAT_005e0e18 * -1.333);
+    local_30.y = (int)ROUND(_DAT_005e0e18 * 0.0);
+    local_30.z = (int)ROUND(_DAT_005e0e18 * -1.333);
+    engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr->projected_vertex,&local_30);
     local_24 = 0x3faa9fbe;
     local_20 = 0;
     local_1c = 0xbfaa9fbe;
-    local_48 = (int)ROUND(_DAT_005e0e18 * 1.333);
-    local_44 = (int)ROUND(_DAT_005e0e18 * 0.0);
-    local_40 = (int)ROUND(_DAT_005e0e18 * -1.333);
-    engine_special_cpp_FUN_005632a3
-              ((SProjectedVertex *)(*(int *)DAT_005f2afc + 0x30),(CVector3i *)&local_48);
+    local_48.x = (int)ROUND(_DAT_005e0e18 * 1.333);
+    local_48.y = (int)ROUND(_DAT_005e0e18 * 0.0);
+    local_48.z = (int)ROUND(_DAT_005e0e18 * -1.333);
+    engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[1].projected_vertex,&local_48);
     local_24 = 0x3faa9fbe;
     local_20 = 0;
     local_1c = 0x3faa9fbe;
-    local_18 = (int)ROUND(_DAT_005e0e18 * 1.333);
-    local_14 = (int)ROUND(_DAT_005e0e18 * 0.0);
-    local_10 = (int)ROUND(_DAT_005e0e18 * 1.333);
-    engine_special_cpp_FUN_005632a3
-              ((SProjectedVertex *)(*(int *)DAT_005f2afc + 0x60),(CVector3i *)&local_18);
+    local_18.x = (int)ROUND(_DAT_005e0e18 * 1.333);
+    local_18.y = (int)ROUND(_DAT_005e0e18 * 0.0);
+    local_18.z = (int)ROUND(_DAT_005e0e18 * 1.333);
+    engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[2].projected_vertex,&local_18);
     local_24 = 0xbfaa9fbe;
     local_20 = 0;
     local_1c = 0x3faa9fbe;
-    local_3c = (int)ROUND(_DAT_005e0e18 * -1.333);
-    local_38 = (int)ROUND(_DAT_005e0e18 * 0.0);
-    local_34 = (int)ROUND(_DAT_005e0e18 * 1.333);
-    engine_special_cpp_FUN_005632a3
-              ((SProjectedVertex *)(*(int *)DAT_005f2afc + 0x90),(CVector3i *)&local_3c);
+    local_3c.x = (int)ROUND(_DAT_005e0e18 * -1.333);
+    local_3c.y = (int)ROUND(_DAT_005e0e18 * 0.0);
+    local_3c.z = (int)ROUND(_DAT_005e0e18 * 1.333);
+    engine_special_cpp_FUN_005632a3(&DAT_005f2afc->vertex_buffer_ptr[3].projected_vertex,&local_3c);
     core_gore_cpp_FUN_004cc970(param_1[4],&DAT_0060b034,&DAT_0060b038,&DAT_0060b03c);
     core_gore_cpp_FUN_004cc970(param_1[4],&DAT_0060b064,&DAT_0060b068,&DAT_0060b06c);
     core_gore_cpp_FUN_004cc970(param_1[4],&DAT_0060b094,&DAT_0060b098,&DAT_0060b09c);

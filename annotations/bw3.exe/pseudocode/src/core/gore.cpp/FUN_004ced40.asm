@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CFlies * core_gore_cpp_FUN_004ced40(undefined4 param_1,undefined4 *param_2,undefined4 param_3,float param_4,undefined4 *param_5)
+; CFlies * core_gore_cpp_FUN_004ced40(undefined4 param_1,float *param_2,int param_3,float param_4,float *param_5)
 ;
 ;
 ; XREF[1]:
@@ -19,9 +19,9 @@
 ; Called Functions:
 ;   core_flies.cpp_CFlies_ctor_FUN_004ad7b0
 ;   core_main.c_FUN_004e4330
+;   core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004f7530
-;   core_mission.cpp_FUN_004f6930
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_memory.c_operator_new_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x14]      ; 004ced43
     MOV ESI,dword ptr [ESP + 0x20]      ; 004ced47
     PUSH 0x2a20                         ; 004ced4b
-    CALL crt_unknown.c_FUN_005a3cb2     ; 004ced50
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 004ced50
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
     ADD ESP,0x4                         ; 004ced55
     TEST EAX,EAX                        ; 004ced58
     JNZ 0x004cee1a                      ; 004ced5a
@@ -97,8 +97,8 @@ section .text
     PUSH EBX                            ; 004cee04
     MOV EDI,dword ptr [0x00600530]      ; 004cee05 | DAT_00600530
     PUSH EDI                            ; 004cee0b | DAT_01d81080
-    CALL core_mission.cpp_FUN_004f6930  ; 004cee0c
-        ;   XREF to: 004f6930 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_FUN_004f6930(CDemonMission * this_ptr, CDemonActor * actor)
+    CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930 ; 004cee0c
+        ;   XREF to: 004f6930 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004cee11
     MOV EAX,EBX                         ; 004cee14
     POP EDI                             ; 004cee16

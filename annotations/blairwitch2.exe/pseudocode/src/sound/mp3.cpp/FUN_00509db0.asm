@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_mp3_cpp_FUN_00509db0(CMP3Decoder *param_1,undefined4 param_2,undefined4 param_3)
+; void sound_mp3_cpp_FUN_00509db0(CMP3Decoder *param_1,_FILE *param_2,int param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x68]:4  local_68
@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   sound_mp3.cpp_FUN_00509cd0 at 00509d2f
+;   sound_mp3.cpp_CMP3Decoder_openFile_FUN_00509cd0 at 00509d2f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_005dfee2
@@ -26,16 +26,16 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
 ;   crt_math.c_round_FUN_005b7ff0
+;   crt_memory.c_malloc_FUN_005b8580
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   crt_stdio.c_fseek_FUN_005b929c
 ;   crt_stdio.c_ftell_FUN_005baab0
-;   crt_unknown.c_FUN_005b8580
 ;   crt_unknown.c_FUN_005b86a0
+;   sound_mp3.cpp_calculateMpegFrame_FUN_00504670
 ;   sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_00505170
 ;   sound_mp3.cpp_CFileBitStream_syncToPattern_FUN_00504ca0
 ;   sound_mp3.cpp_CMP3Decoder_free_FUN_00509f30
 ;   sound_mp3.cpp_CMP3Decoder_seek_FUN_0050a0e0
-;   sound_mp3.cpp_FUN_00504670
 ;
 ; *****************************************************************************
 
@@ -80,7 +80,7 @@ section .text
     PUSH EAX                            ; 00509e0c
     MOV dword ptr [EBX],EAX             ; 00509e0d
     CALL crt_stdio.c_ftell_FUN_005baab0 ; 00509e0f
-        ;   XREF to: 005baab0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_ftell_FUN_005baab0()
+        ;   XREF to: 005baab0 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_005baab0(_FILE * file_handle)
     ADD ESP,0x4                         ; 00509e14
     MOV dword ptr [EBX + 0x20],EAX      ; 00509e17
     MOV EAX,dword ptr [ESP + 0x4c]      ; 00509e1a
@@ -88,8 +88,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x50]      ; 00509e21
     PUSH EAX                            ; 00509e25
     MOV dword ptr [EBX + 0x8],EAX       ; 00509e26
-    CALL crt_unknown.c_FUN_005b8580     ; 00509e29
-        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005b8580(ulong size)
+    CALL crt_memory.c_malloc_FUN_005b8580 ; 00509e29
+        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005b8580(ulong size)
     ADD ESP,0x4                         ; 00509e2e
     MOV dword ptr [EBX + 0x4],EAX       ; 00509e31
     TEST EAX,EAX                        ; 00509e34
@@ -102,7 +102,7 @@ section .text
     MOV EBP,dword ptr [EBX]             ; 00509e42
     PUSH EBP                            ; 00509e44
     CALL crt_stdio.c_fseek_FUN_005b929c ; 00509e45
-        ;   XREF to: 005b929c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fseek_FUN_005b929c()
+        ;   XREF to: 005b929c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005b929c(_FILE * file, long offset, int whence)
     MOV dword ptr [EBX + 0x10],0x0      ; 00509e4a
     MOV dword ptr [EBX + 0x14],0x0      ; 00509e51
     MOV dword ptr [EBX + 0xc],0x0       ; 00509e58
@@ -128,8 +128,8 @@ section .text
     ADD ESP,0x8                         ; 00509e9f
     LEA EAX,[ESP + 0x30]                ; 00509ea2
     PUSH EAX                            ; 00509ea6
-    CALL sound_mp3.cpp_FUN_00504670     ; 00509ea7
-        ;   XREF to: 00504670 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_FUN_00504670(SMpegFrame * frame)
+    CALL sound_mp3.cpp_calculateMpegFrame_FUN_00504670 ; 00509ea7
+        ;   XREF to: 00504670 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_calculateMpegFrame_FUN_00504670(SMpegFrame * frame)
     ADD ESP,0x4                         ; 00509eac
     MOV EBX,dword ptr [ESP]             ; 00509eaf
     MOV EAX,dword ptr [ESP + 0x10]      ; 00509eb2

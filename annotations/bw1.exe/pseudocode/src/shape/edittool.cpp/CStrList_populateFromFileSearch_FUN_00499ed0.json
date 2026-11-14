@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 178,
-    "complexity_score": 129,
+    "complexity_score": 94,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 64,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
-      "unknown_field",
       "unrolled_strcpy",
       "unrolled_strlen"
     ],
@@ -20,7 +19,7 @@
     {
       "addr": "00494fd0",
       "from_addr": "00495001",
-      "name": "shape_edittool.cpp_FUN_00494fd0",
+      "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00494fd0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -45,7 +44,7 @@
     {
       "addr": "005bfb40",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005bfb40"
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
     },
     {
       "addr": "00479460",
@@ -73,14 +72,14 @@
       "name": "engine_dosio.cpp_CFileFinder_openSearch_FUN_00479360"
     },
     {
-      "addr": "00479580",
-      "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00479580"
-    },
-    {
       "addr": "004795b0",
       "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_004795b0"
+      "name": "engine_dosio.cpp_makePath_FUN_004795b0"
+    },
+    {
+      "addr": "00479580",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_splitPath_FUN_00479580"
     },
     {
       "addr": "0053cb50",
@@ -118,7 +117,7 @@
       {
         "call_addr": "00495001",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00494fd0",
+        "caller": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00494fd0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -161,6 +160,32 @@
       "STORE": 59
     },
     "pcode_op_count": 602
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00481870",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00482a70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004a35b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004746b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 2132,
@@ -285,32 +310,8 @@
   },
   "suspects": [
     {
-      "description": "Unknown/mangled field access",
-      "line": 59,
-      "match": "._0_1_",
-      "severity": "mild",
-      "text": "while (local_528._0_1_ != '\\0') {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 61,
-      "match": "._260_4_",
-      "severity": "mild",
-      "text": "(this_ptr,(char *)&local_528,(char *)0x0,local_528._260_4_,local_528._264_4_);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 61,
-      "match": "._264_4_",
-      "severity": "mild",
-      "text": "(this_ptr,(char *)&local_528,(char *)0x0,local_528._260_4_,local_528._264_4_);",
-      "type": "unknown_field"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 23,
+      "line": 20,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -318,7 +319,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 43,
+      "line": 41,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

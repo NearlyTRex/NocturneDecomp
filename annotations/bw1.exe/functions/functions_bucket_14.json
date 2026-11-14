@@ -1,23 +1,5 @@
 [
   {
-    "addr":"004ab194",
-    "body":[
-      {
-        "end":"004ab1a2",
-        "size":15,
-        "start":"004ab194"
-      }
-    ],
-    "importable":true,
-    "name":"unkafter_mimic.cpp_FUN_004ab194",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
-  },
-  {
     "addr":"005c1594",
     "body":[
       {
@@ -29,6 +11,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005c1594",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -47,10 +30,67 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"crt_stdio.c_freopen_FUN_005c1614",
-    "ret":"undefined1",
+    "ret":"_FILE*",
     "vars":{
+      "params":[
+        {
+          "name":"filename",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"mode",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"stream",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"_FILE*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -67,6 +107,7 @@
     "importable":true,
     "name":"crt_memory.c___vec_new_FUN_005c2694",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -85,6 +126,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005c2d94",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -103,6 +145,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005c4894",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -423,6 +466,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005c9594",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "locals":[
         {
@@ -505,8 +549,9 @@
       }
     ],
     "importable":true,
-    "name":"unkafter_zombie.cpp_FUN_005cad94",
+    "name":"crt_unknown.c_FUN_005cad94",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -523,8 +568,9 @@
       }
     ],
     "importable":true,
-    "name":"unkafter_2d.cpp_FUN_005ce114",
+    "name":"crt_unknown.c_FUN_005ce114",
     "ret":"undefined1",
+    "sig":"default",
     "thtarget":"005cebdb",
     "thunk":true,
     "vars":{
@@ -546,6 +592,7 @@
     "importable":true,
     "name":"crt_user32.c_SetForegroundWindow",
     "ret":"BOOL",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000046",
     "thunk":true,
     "vars":{
@@ -592,6 +639,7 @@
     "importable":true,
     "name":"crt_kernel32.c_GlobalFree",
     "ret":"HGLOBAL",
+    "sig":"imported",
     "thtarget":"EXTERNAL:0000007c",
     "thunk":true,
     "vars":{

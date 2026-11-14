@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_event_cpp_parseVectorLocation_FUN_004a14a0(int param_1,int *param_2,undefined4 *param_3)
+; int __cdecl core_event_cpp_parseVectorLocation_FUN_004a14a0(char *buffer,int *offset,CVector3f *out_position)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   buffer
+; int *            Stack[0x8]:4   offset
+; CVector3f *      Stack[0xc]:4   out_position
 ; Local Variables:
 ; undefined        Stack[-0x78]:1  local_78
 ; undefined4       Stack[-0x14]:4  local_14
@@ -22,7 +26,7 @@
 ; Called Functions:
 ;   core_event.cpp_resolveActorByName_FUN_004a1370
 ;   crt_stdio.c_sscanf_FUN_005c2cac
-;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;
 ; *****************************************************************************
 
@@ -90,7 +94,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004a1539
     PUSH EAX                            ; 004a153d
     CALL core_event.cpp_resolveActorByName_FUN_004a1370 ; 004a153e
-        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_resolveActorByName_FUN_004a1370()
+        ;   XREF to: 004a1370 (UNCONDITIONAL_CALL)  ; CDemonActor * core_event.cpp_resolveActorByName_FUN_004a1370(char * name, uint class_hash, char * class_name)
     MOV EDX,EAX                         ; 004a1543
     ADD ESP,0xc                         ; 004a1545
     TEST EAX,EAX                        ; 004a1548
@@ -122,8 +126,8 @@ section .text
     PUSH 0x5dcc9f                       ; 004a157e | = "Error parsing vector location"
         ;   Label: LAB_004a157e
     PUSH 0x1c56ed0                      ; 004a1583 | DAT_01c56ed0
-    CALL crt_unknown.c_FUN_005bfb40     ; 004a1588
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004a1588
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EAX,0xffffffff                  ; 004a158d
     ADD ESP,0x8                         ; 004a1592
     ADD ESP,0x68                        ; 004a1595

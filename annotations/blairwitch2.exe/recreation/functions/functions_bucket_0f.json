@@ -1,23 +1,5 @@
 [
   {
-    "addr":"004cc78f",
-    "calls":[
-      "005478b0"
-    ],
-    "conv":"unknown",
-    "instructions":16,
-    "method":"FUN_004cc78f",
-    "name":"core_haystack.cpp_FUN_004cc78f",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"core/haystack.cpp",
-    "variadic":false
-  },
-  {
     "addr":"004fd58f",
     "calls":[
       "004fd4cc",
@@ -27,10 +9,20 @@
     "instructions":23,
     "method":"getCPUInfo",
     "name":"core_mmx.c_getCPUInfo_FUN_004fd58f",
+    "params":[
+      {
+        "name":"cpu_info",
+        "type":{
+          "kind":"struct",
+          "name":"SCPUInfo",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
     "tu":"core/mmx.c",

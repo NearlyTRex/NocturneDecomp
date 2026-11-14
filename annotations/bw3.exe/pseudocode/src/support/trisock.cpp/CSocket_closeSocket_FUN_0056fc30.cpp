@@ -15,7 +15,7 @@ int __cdecl support_trisock_cpp_CSocket_closeSocket_FUN_0056fc30(CSocket *this_p
   if (iVar1 == 0) {
     return 1;
   }
-  iVar1 = closesocket(*(_SOCKET *)this_ptr);
-  *(uint *)this_ptr = 0xffffffff;
+  iVar1 = closesocket(this_ptr->handle);
+  this_ptr->handle = 0xffffffff;
   return (uint)(iVar1 == 0);
 }

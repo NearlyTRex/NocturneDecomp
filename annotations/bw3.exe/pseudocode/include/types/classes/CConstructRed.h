@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CConstruct.h"
 
 // Structure: CConstructRed
-// Stub: size from Watcom RTTI, fields not yet recovered
+// registered under CConstruct (registerActorClass); size 55392 from its new; no fields of its own
 // Ghidra size: 0xd860 (55392 bytes)
 #pragma pack(push, 1)
 typedef struct CConstructRed {
-    char field_0[55392]; // 0x0
+    CConstruct base; // 0x0, parent class
 } CConstructRed;
 #pragma pack(pop)
 

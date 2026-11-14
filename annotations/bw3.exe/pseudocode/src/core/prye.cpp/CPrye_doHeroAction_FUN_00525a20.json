@@ -1,0 +1,449 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 579,
+    "complexity_score": 470,
+    "cross_reference_count": 0,
+    "function_call_count": 11,
+    "global_count": 22,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 260,
+    "suspect_count": 18,
+    "suspect_types": [
+      "stack_alignment_array",
+      "stack_param",
+      "stack_ref",
+      "unaffected_reg",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 839
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00525a20",
+    "address_range": [
+      [
+        "00525a20",
+        "00526075"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_prye.cpp_CPrye_doHeroAction_FUN_00525a20",
+    "signature": "void __cdecl core_prye_cpp_CPrye_doHeroAction_FUN_00525a20(CPrye *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c840",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c840"
+    },
+    {
+      "addr": "00408b80",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408b80"
+    },
+    {
+      "addr": "00408bf0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408bf0"
+    },
+    {
+      "addr": "00495db0",
+      "is_variadic": false,
+      "name": "core_event.cpp_CRuleList_evaluateAndRun_FUN_00495db0"
+    },
+    {
+      "addr": "004d4520",
+      "is_variadic": false,
+      "name": "core_hero.cpp_CHero_doHeroAction_FUN_004d4520"
+    },
+    {
+      "addr": "004d3250",
+      "is_variadic": false,
+      "name": "core_hero.cpp_CHero_tryOpenDoor_FUN_004d3250"
+    },
+    {
+      "addr": "004d3210",
+      "is_variadic": false,
+      "name": "core_hero.cpp_FUN_004d3210"
+    },
+    {
+      "addr": "004fc0d0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0"
+    },
+    {
+      "addr": "0054dbd0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0"
+    },
+    {
+      "addr": "00441ff0",
+      "is_variadic": false,
+      "name": "engine_console.cpp_CConsole_printf_FUN_00441ff0"
+    },
+    {
+      "addr": "0047cf40",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0047cf40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005259b8",
+      "name": "switchdataD_005259b8",
+      "type": "undefined1*",
+      "value": "00525b60"
+    },
+    {
+      "addr": "005259d0",
+      "name": "switchdataD_005259d0",
+      "type": "undefined1*",
+      "value": "00525e3b"
+    },
+    {
+      "addr": "005259e0",
+      "name": "switchdataD_005259e0",
+      "type": "undefined1*",
+      "value": "00525a43"
+    },
+    {
+      "addr": "005cd7f7",
+      "name": "s_CPrye_doHeroAction_pull_005cd7f6+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cd819",
+      "name": "s_CPrye_doHeroAction_type_005cd819",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cd86d",
+      "name": "s_lever_s_005cd86d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cd87b",
+      "name": "s_CHero_doHeroAction_type_005cd87b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cd8cd",
+      "name": "s_Picking_up_heavy_s_shelf_005cd8cd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cd8e8",
+      "name": "s_Picking_up_heavy_s_crate_005cd8e8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cd903",
+      "name": "s_Picking_up_s_waist_level_005cd903",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cd91e",
+      "name": "s_Picking_up_s_off_ground_005cd91e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cd938",
+      "name": "s_Rummaging_s_005cd938",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cd947",
+      "name": "DAT_005cd947",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cd94f",
+      "name": "DAT_005cd94f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cd957",
+      "name": "DAT_005cd957",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f1690",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "007f7ea4"
+    },
+    {
+      "addr": "005fb140",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c5b0e4"
+    },
+    {
+      "addr": "007f7ea4",
+      "name": "g_CConsoleInstance",
+      "type": "CConsole",
+      "value": null
+    },
+    {
+      "addr": "01b85178",
+      "name": "g_CDoorClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d70c34",
+      "name": "g_CLeverClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ed36ec",
+      "name": "DAT_01ed36ec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ed3714",
+      "name": "DAT_01ed3714",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.79296066252588,
+    "instruction_count": 483,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "BOOL_OR": 8,
+      "BRANCH": 7,
+      "BRANCHIND": 3,
+      "CALL": 40,
+      "CALLIND": 3,
+      "CBRANCH": 19,
+      "COPY": 635,
+      "FLOAT2FLOAT": 21,
+      "FLOAT_ADD": 3,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 6,
+      "INT2FLOAT": 1,
+      "INT_ADD": 279,
+      "INT_AND": 174,
+      "INT_CARRY": 58,
+      "INT_EQUAL": 153,
+      "INT_LEFT": 12,
+      "INT_LESS": 10,
+      "INT_MULT": 41,
+      "INT_NOTEQUAL": 15,
+      "INT_OR": 15,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 58,
+      "INT_SLESS": 76,
+      "INT_SUB": 188,
+      "INT_XOR": 1,
+      "INT_ZEXT": 50,
+      "LOAD": 134,
+      "POPCOUNT": 76,
+      "RETURN": 13,
+      "STORE": 189
+    },
+    "pcode_op_count": 2315
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPrye *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 17,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "float unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 21,
+      "match": "afStackY_1090",
+      "severity": "moderate",
+      "text": "float afStackY_1090 [41];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 22,
+      "match": "apCStackY_fec",
+      "severity": "moderate",
+      "text": "CPrye *apCStackY_fec [958];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_ffffff20",
+      "severity": "moderate",
+      "text": "CBoundingBox3D *in_stack_ffffff20;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_ffffff28",
+      "severity": "moderate",
+      "text": "char *in_stack_ffffff28;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 117,
+      "match": "in_stack_ffffff20",
+      "severity": "moderate",
+      "text": "(*((pCVar4->vtable)._ub)->getBoundingBox)(pCVar4,in_stack_ffffff20);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 118,
+      "match": "&stack0xffffff28",
+      "severity": "moderate",
+      "text": "puVar10 = (uint *)&stack0xffffff28;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 143,
+      "match": "&stack0xfffffff0",
+      "severity": "moderate",
+      "text": "*(float *)(&stack0xfffffff0 + (uint)bVar12 * -8 + (uint)bVar12 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 183,
+      "match": "in_stack_ffffff28",
+      "severity": "moderate",
+      "text": "in_stack_ffffff28 = \"Picking up %s off ground\\n\";",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 192,
+      "match": "in_stack_ffffff28",
+      "severity": "moderate",
+      "text": "in_stack_ffffff28 = \"Picking up %s waist level\\n\";",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 207,
+      "match": "in_stack_ffffff28",
+      "severity": "moderate",
+      "text": "in_stack_ffffff28 = \"Picking up heavy %s crate\\n\";",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 213,
+      "match": "&stack0x00000000",
+      "severity": "moderate",
+      "text": "afStack_6c[(uint)bVar12 * -2] = *(float *)(&stack0x00000000 + (uint)bVar12 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 216,
+      "match": "&stack0xffffff90",
+      "severity": "moderate",
+      "text": "if (&this_ptr_00->carry_object_world_center != (CVector3f *)&stack0xffffff90) {",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 217,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(this_ptr_00->carry_object_world_center).x = unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 221,
+      "match": "in_stack_ffffff28",
+      "severity": "moderate",
+      "text": "in_stack_ffffff28 = \"Picking up heavy %s shelf\\n\";",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 231,
+      "match": "in_stack_ffffff28",
+      "severity": "moderate",
+      "text": "engine_console_cpp_CConsole_printf_FUN_00441ff0(this_ptr_01,in_stack_ffffff28);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 120,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar9 = 6; iVar9 != 0; iVar9 = iVar9 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPrye",
+        "offset": 344,
+        "vtable_addr": "005e3534"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

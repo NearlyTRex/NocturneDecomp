@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_succubus_cpp_CSuccubus_getActorType_FUN_0056f2b0(CSuccubus *this_ptr)
+; CDemonActorType * __cdecl core_succubus_cpp_CSuccubus_getActorType_FUN_0056f2b0(CSuccubus *this_ptr)
 ;
 ; Parameters:
 ; CSuccubus *      Stack[0x4]:4   this_ptr

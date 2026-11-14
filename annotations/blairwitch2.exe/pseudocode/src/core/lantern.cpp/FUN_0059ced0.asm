@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[2]:
-;   core_lantern.cpp_FUN_0059ccf0 at 0059ce7b
-;   core_lantern.cpp_FUN_0059d000 at 0059d020
+;   core_lantern.cpp_CLantern_process_FUN_0059ccf0 at 0059ce7b
+;   core_lantern.cpp_CLantern_renderOpaque_FUN_0059d000 at 0059d020
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408d70
-;   core_dirmat.cpp_FUN_00449280
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
 ;   core_dirmat.cpp_FUN_00449530
 ;
 ; *****************************************************************************
@@ -65,8 +65,8 @@ section .text
     PUSH EAX                            ; 0059cf4b
     MOV ESI,0x3f4ccccd                  ; 0059cf4c
     LEA EDI,[ESP + 0x54]                ; 0059cf51
-    CALL core_dirmat.cpp_FUN_00449280   ; 0059cf55
-        ;   XREF to: 00449280 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_00449280(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280 ; 0059cf55
+        ;   XREF to: 00449280 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     MOV EDX,0xbd4ccccd                  ; 0059cf5a
     MOV ECX,0xbf4ccccd                  ; 0059cf5f
     ADD ESP,0x8                         ; 0059cf64
@@ -117,8 +117,8 @@ section .text
     PUSH EDX                            ; 0059cfe5
     ADD EAX,0x10                        ; 0059cfe6
     PUSH EAX                            ; 0059cfe9
-    CALL core_dirmat.cpp_FUN_00449280   ; 0059cfea
-        ;   XREF to: 00449280 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_00449280(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280 ; 0059cfea
+        ;   XREF to: 00449280 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 0059cfef
     ADD ESP,0x64                        ; 0059cff2
     POP EDI                             ; 0059cff5

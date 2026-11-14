@@ -2,15 +2,30 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CMorph.h"
+#include "types/classes/CNPC.h"
 
 // Structure: CPryeMorph
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 136264; CNPC + nocedit CPassenger-style morph block (+targetClass/targetState strings)
 // Ghidra size: 0x21448 (136264 bytes)
 #pragma pack(push, 1)
 typedef struct CPryeMorph {
-    char field_0[136264]; // 0x0
+    CNPC base; // 0x0, existing base
+    char transform_event[100]; // 0x206c8, CPryeMorph_archive@00527a90 archiveString "transformEvent"; process@00527780 evaluateCondition(+0x206c8); ctor copies default (nocedit CPassenger.transform_event)
+    char target_model_name[32]; // 0x2072c, archive "targetModelName"; setup@005275c0 deformable init of target with it
+    char name_of_target[32]; // 0x2074c, archive (v>3) "nameOfTarget"; setup copies it into target actor name
+    char target_class[32]; // 0x2076c, archive (v>6) "targetClass"; setup createActorByName(+0x2076c)
+    char target_state[32]; // 0x2078c, archive (v>=8) "targetState"; setup findMotionIndex(target, +0x2078c)
+    char transform_wav[100]; // 0x207ac, archive (v>5) "transformWav"; process plays it via vtable+0x2c then clears byte 0
+    struct CDemonActor* target_actor; // 0x20810, setup = createActorByName(target_class); process addActorToList when morph_time>=1 then 0 (nocedit CPassenger.werewolf_actor)
+    CMorph morph; // 0x20814, ctor CMorph_ctor(this+0x20814); setup setupModelFromDeformable/addPart/getReady; renderOpaque/dtor
+    float morph_time; // 0x21440, archive "morphTime"; process += dt/k, >=1 completes; setup zeroes
+    float morph_size; // 0x21444, archive (v>2) "morphSize"; ctor 1.0; setup copies to target +0x27b8 (nocedit CPassenger.wolf_size)
 } CPryeMorph;
 #pragma pack(pop)
 

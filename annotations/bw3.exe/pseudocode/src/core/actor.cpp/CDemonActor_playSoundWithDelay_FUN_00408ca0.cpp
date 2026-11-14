@@ -11,7 +11,7 @@ uint __cdecl core_actor_cpp_CDemonActor_playSoundWithDelay_FUN_00408ca0(CDemonAc
 {
   uint uVar1;
   
-  uVar1 = core_sound_cpp_FUN_00560a70
-                    (0x02CF5680,this_ptr,sound_name,(CVector3f *)&this_ptr->field_0x20,delay);
+  uVar1 = core_sound_cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70
+                    (0x02CF5680,this_ptr,sound_name,&(this_ptr->location).position,delay);
   return uVar1;
 }

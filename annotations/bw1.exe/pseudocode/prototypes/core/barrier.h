@@ -7,31 +7,31 @@
 
 // Original: core_barrier.cpp_staticInit_FUN_004107d0
 // Address: 004107d0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_barrier.cpp_factoryFuncBarrier_FUN_00410800
 // Address: 00410800
-void factoryFuncBarrier(void);
+CBarrier * __cdecl factoryFuncBarrier(void);
 
 // Original: core_barrier.cpp_CBarrier_getActorType_FUN_00410820
 // Address: 00410820
-CDemonActorType * CBarrier::getActorType(CBarrier *this_ptr);
+CDemonActorType * __cdecl CBarrier::getActorType(CBarrier *this_ptr);
 
 // Original: core_barrier.cpp_CBarrier_ctor_FUN_00410830
 // Address: 00410830
 CBarrier * __cdecl CBarrier::ctor(CBarrier *this_ptr);
 
-// Original: core_barrier.cpp_FUN_00410880
+// Original: core_barrier.cpp_CBarrier_setup_FUN_00410880
 // Address: 00410880
-void FUN_00410880(CDemonActor *param_1);
+void __cdecl CBarrier::setup(CBarrier *this_ptr);
 
-// Original: core_barrier.cpp_FUN_004108b0
+// Original: core_barrier.cpp_CBarrier_renderTransparent_FUN_004108b0
 // Address: 004108b0
-undefined4 FUN_004108b0(void);
+int __cdecl CBarrier::renderTransparent(CBarrier *this_ptr);
 
-// Original: core_barrier.cpp_FUN_004108c0
+// Original: core_barrier.cpp_CBarrier_getBoundingBox_FUN_004108c0
 // Address: 004108c0
-void FUN_004108c0(int param_1);
+CBoundingBox3D * __cdecl CBarrier::getBoundingBox(CBarrier *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_barrier.cpp_CBarrier_archive_FUN_00410940
 // Address: 00410940

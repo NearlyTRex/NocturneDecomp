@@ -12,10 +12,11 @@ void __cdecl core_werewolf_cpp_CWerewolf_setWalkTarget_FUN_0057edf0(CWerewolf *t
   SMotion *pSVar1;
   
   pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070
-                     ((CMotionController *)&this_ptr->field_0x158);
-  if (*(int *)(pSVar1 + 0x24) == 0x13) {
+                     (&(this_ptr->base).base.model.base);
+  if (pSVar1->state_index == 0x13) {
     return;
   }
-  core_charactr_cpp_FUN_00431470(this_ptr,target,speed,distance);
+  core_charactr_cpp_CCharacter_setWalkTarget_FUN_00431470
+            ((CCharacter *)this_ptr,target,speed,distance);
   return;
 }

@@ -14,9 +14,7 @@ void core_gore_cpp_FUN_004c9000(uint *param_1,int param_2)
   uint uVar1;
   float *pfVar2;
   SProjectedVertex *output;
-  int local_1c;
-  int local_18;
-  int local_14;
+  CVector3i local_1c;
   
   _DAT_01cb82cc = 4;
   _DAT_01cb82e0 = 0;
@@ -41,12 +39,12 @@ void core_gore_cpp_FUN_004c9000(uint *param_1,int param_2)
             (DAT_0060b280,(SMRGLTextureBasic *)&DAT_00617968);
   pfVar2 = (float *)(param_1 + 2);
   do {
-    local_1c = (int)ROUND(*pfVar2 * _DAT_005f7ba8);
-    local_18 = (int)ROUND(pfVar2[1] * _DAT_005f7ba8);
-    local_14 = (int)ROUND(pfVar2[2] * _DAT_005f7ba8);
+    local_1c.x = (int)ROUND(*pfVar2 * _DAT_005f7ba8);
+    local_1c.y = (int)ROUND(pfVar2[1] * _DAT_005f7ba8);
+    local_1c.z = (int)ROUND(pfVar2[2] * _DAT_005f7ba8);
     pfVar2 = pfVar2 + 3;
-    engine_special_cpp_FUN_0055d9ec(output,(CVector3i *)&local_1c);
-    output = output + 0x30;
+    engine_special_cpp_FUN_0055d9ec(output,&local_1c);
+    output = output + 2;
   } while (pfVar2 != (float *)(param_1 + 0xe));
   if (param_1[0xf] == 0) {
     DAT_00622038 = 0x7ff;
@@ -64,7 +62,7 @@ void core_gore_cpp_FUN_004c9000(uint *param_1,int param_2)
     goto LAB_004c915e;
   }
   uVar1 = param_1[1];
-  core_actor_cpp_FUN_0040cfc0(0x40,0xc0);
+  core_actor_cpp_getRandomInt_FUN_0040cfc0(0x40,0xc0);
   if (uVar1 == 0) {
 LAB_004c91eb:
     DAT_00622034 = 0x2000;
@@ -83,7 +81,7 @@ LAB_004c91eb:
     DAT_00622034 = 0;
   }
   uVar1 = param_1[1];
-  core_actor_cpp_FUN_0040cfc0(0x40,0xc0);
+  core_actor_cpp_getRandomInt_FUN_0040cfc0(0x40,0xc0);
   if (uVar1 == 0) {
 LAB_004c922c:
     DAT_00622064 = 0x2000;
@@ -102,7 +100,7 @@ LAB_004c922c:
     DAT_00622064 = 0;
   }
   uVar1 = param_1[1];
-  core_actor_cpp_FUN_0040cfc0(0x40,0xc0);
+  core_actor_cpp_getRandomInt_FUN_0040cfc0(0x40,0xc0);
   if (uVar1 == 0) {
 LAB_004c926d:
     DAT_00622094 = 0x2000;
@@ -121,7 +119,7 @@ LAB_004c926d:
     DAT_00622094 = 0;
   }
   uVar1 = param_1[1];
-  core_actor_cpp_FUN_0040cfc0(0x40,0xc0);
+  core_actor_cpp_getRandomInt_FUN_0040cfc0(0x40,0xc0);
   if (uVar1 != 0) {
     if (uVar1 < 2) {
       DAT_006220c8 = 0x9a80;

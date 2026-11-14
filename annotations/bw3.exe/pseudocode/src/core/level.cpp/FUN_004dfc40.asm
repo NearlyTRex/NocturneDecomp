@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_004b7f90 at 004b8359
+;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b8359
 ;   core_level.cpp_staticInit_FUN_004dfc10 at 004dfc15
 ;
 ; *****************************************************************************

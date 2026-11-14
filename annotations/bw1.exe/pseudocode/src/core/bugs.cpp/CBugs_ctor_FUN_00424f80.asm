@@ -12,7 +12,7 @@
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a0410
-;   core_skeleton.cpp_FUN_00569f50
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50
 ;   crt_memory.c___arrinit_FUN_005c0357
 ;   crt_memory.c_memset_FUN_005bfb70
 ;
@@ -34,14 +34,14 @@ section .text
     ADD EAX,0xc270                      ; 00424f9a
     PUSH EAX                            ; 00424f9f
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 00424fa0
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00424fa5
     PUSH 0x5fd3b0                       ; 00424fa8
     PUSH 0x4                            ; 00424fad
     ADD EAX,0x6404                      ; 00424faf
     PUSH EAX                            ; 00424fb4
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 00424fb5
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00424fba
     LEA EBX,[EAX + 0xfffed98c]          ; 00424fbd
     PUSH 0x6400                         ; 00424fc3
@@ -76,8 +76,8 @@ section .text
     PUSH 0x5d501c                       ; 0042503d
     LEA EAX,[EBX + 0x158]               ; 00425042
     PUSH EAX                            ; 00425048
-    CALL core_skeleton.cpp_FUN_00569f50 ; 00425049
-        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569f50()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 00425049
+        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x12ea4],0x0   ; 0042504e
     MOV ESI,0x5d5025                    ; 00425058
     MOV dword ptr [EBX + 0x12ea8],0x0   ; 0042505d

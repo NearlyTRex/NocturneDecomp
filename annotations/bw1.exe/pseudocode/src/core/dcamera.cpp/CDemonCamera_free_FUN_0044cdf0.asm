@@ -9,7 +9,7 @@
 ; XREF[3]:
 ;   core_dcamera.cpp_CDemonCamera_dtor_FUN_0044cb00 at 0044cb14
 ;   core_dcamera.cpp_CDemonCamera_init_FUN_0044cc30 at 0044cc3c
-;   core_set.cpp_FUN_00551b90 at 00551c0a
+;   core_set.cpp_CDemonSet_clearLights_FUN_00551b90 at 00551c0a
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c09f0

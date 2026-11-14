@@ -69,7 +69,7 @@ section .text
     INC EBP                             ; 00404613
     MOVSD.REP ES:EDI,ESI                ; 00404614
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407cc0 ; 00404616
-        ;   XREF to: 00407cc0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_clipAndDrawLine2D_FUN_00407cc0()
+        ;   XREF to: 00407cc0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407cc0(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 0040461b
     JMP 0x004045a5                      ; 0040461e
         ;   XREF to: 004045a5 (UNCONDITIONAL_JUMP)  ; LAB_004045a5

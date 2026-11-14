@@ -32,7 +32,7 @@ section .text
     PUSH EDX                            ; 004a1221
     PUSH 0x1c56ed0                      ; 004a1222 | DAT_01c56ed0
     CALL crt_stdio.c_vsprintf_FUN_005bfb18 ; 004a1227
-        ;   XREF to: 005bfb18 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_005bfb18()
+        ;   XREF to: 005bfb18 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005bfb18(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 004a122c
     XOR ECX,ECX                         ; 004a122f
     XOR EAX,EAX                         ; 004a1231

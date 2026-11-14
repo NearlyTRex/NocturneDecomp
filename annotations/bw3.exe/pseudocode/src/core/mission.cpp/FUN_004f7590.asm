@@ -22,8 +22,8 @@
 ;   undefined4 DAT_006002ac
 ;   CScript* g_CScriptPtr = 01ed73e0
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 g_CGameInstance.field588_0x24c
-;   undefined4 g_CGameInstance.field660_0x294
+;   undefined4 g_CGameInstance.letterbox_mode
+;   undefined4 g_CGameInstance.end_timer
 ;   undefined4 DAT_01d5ba00
 ;   undefined4 DAT_01d5ba14
 ;   CScript g_CScriptInstance
@@ -32,12 +32,12 @@
 ; Called Functions:
 ;   core_event.cpp_CEventList_reset_FUN_0048bfd0
 ;   core_level.cpp_FUN_004e0000
+;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_004f6a80
 ;   core_mission.cpp_FUN_004f63c0
-;   core_mission.cpp_FUN_004f6a80
 ;   core_mission.cpp_FUN_004f6de0
-;   core_script.cpp_FUN_005297a0
-;   core_script.cpp_FUN_00529920
-;   core_setdir.cpp_FUN_00540bc0
+;   core_script.cpp_CScript_executeInitSection_FUN_00529920
+;   core_script.cpp_CScript_initRuntime_FUN_005297a0
+;   core_setdir.cpp_CDemonSet_clearCameraSwitchCooldown_FUN_00540bc0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0047cf40
 ;   support_newmsg.cpp_getLocalizedString_FUN_00508960
 ;
@@ -78,8 +78,8 @@ section .text
     PUSH EDI                            ; 004f75d7
         ;   Label: LAB_004f75d7
     PUSH EBX                            ; 004f75d8
-    CALL core_mission.cpp_FUN_004f6a80  ; 004f75d9
-        ;   XREF to: 004f6a80 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_FUN_004f6a80(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_prepareAllActors_FUN_004f6a80 ; 004f75d9
+        ;   XREF to: 004f6a80 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_prepareAllActors_FUN_004f6a80(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004f75de
     LEA EAX,[EBX + 0x1444]              ; 004f75e1
     MOV dword ptr [EBX + 0x1450],0xffffffff ; 004f75e7
@@ -93,8 +93,8 @@ section .text
     CALL core_event.cpp_CEventList_reset_FUN_0048bfd0 ; 004f760a
         ;   XREF to: 0048bfd0 (UNCONDITIONAL_CALL)  ; void core_event.cpp_CEventList_reset_FUN_0048bfd0(CEventList * this_ptr)
     MOV EAX,[0x005fe9dc]                ; 004f760f | g_CGamePtr
-    MOV dword ptr [EAX + 0x24c],0x0     ; 004f7614 | g_CGameInstance.field588_0x24c
-    MOV dword ptr [EAX + 0x294],0xbf800000 ; 004f761e | g_CGameInstance.field660_0x294
+    MOV dword ptr [EAX + 0x24c],0x0     ; 004f7614 | g_CGameInstance.letterbox_mode
+    MOV dword ptr [EAX + 0x294],0xbf800000 ; 004f761e | g_CGameInstance.end_timer
     MOV EAX,[0x01d5ba14]                ; 004f7628 | DAT_01d5ba14
     MOV EAX,dword ptr [EAX*0x4 + 0x1d5ba04] ; 004f762d
     ADD ESP,0x4                         ; 004f7634
@@ -121,18 +121,18 @@ section .text
     ADD ESP,0x4                         ; 004f7669
     MOV EAX,[0x006039e0]                ; 004f766c | g_CScriptPtr
     PUSH EAX                            ; 004f7671 | g_CScriptInstance
-    CALL core_script.cpp_FUN_005297a0   ; 004f7672
-        ;   XREF to: 005297a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_005297a0(CScript * this_ptr)
+    CALL core_script.cpp_CScript_initRuntime_FUN_005297a0 ; 004f7672
+        ;   XREF to: 005297a0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_initRuntime_FUN_005297a0(CScript * this_ptr)
     ADD ESP,0x4                         ; 004f7677
     MOV EDX,dword ptr [0x006039e0]      ; 004f767a | g_CScriptPtr
     PUSH EDX                            ; 004f7680 | g_CScriptInstance
-    CALL core_script.cpp_FUN_00529920   ; 004f7681
-        ;   XREF to: 00529920 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00529920(CScript * this_ptr)
+    CALL core_script.cpp_CScript_executeInitSection_FUN_00529920 ; 004f7681
+        ;   XREF to: 00529920 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_executeInitSection_FUN_00529920(CScript * this_ptr)
     ADD ESP,0x4                         ; 004f7686
     MOV ECX,dword ptr [0x00603b28]      ; 004f7689 | g_CDemonSetPtr
     PUSH ECX                            ; 004f768f | g_CDemonSetInstance
-    CALL core_setdir.cpp_FUN_00540bc0   ; 004f7690
-        ;   XREF to: 00540bc0 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_FUN_00540bc0(CDemonSet * this_ptr)
+    CALL core_setdir.cpp_CDemonSet_clearCameraSwitchCooldown_FUN_00540bc0 ; 004f7690
+        ;   XREF to: 00540bc0 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CDemonSet_clearCameraSwitchCooldown_FUN_00540bc0(CDemonSet * this_ptr)
     MOV EAX,0x1                         ; 004f7695
     ADD ESP,0x4                         ; 004f769a
     POP EDI                             ; 004f769d

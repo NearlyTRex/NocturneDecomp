@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CArmour * core_armour_cpp_CArmour_ctor_FUN_0040e9e0(CArmour *this_ptr)
+; CArmour * __cdecl core_armour_cpp_CArmour_ctor_FUN_0040e9e0(CArmour *this_ptr)
 ;
 ; Parameters:
 ; CArmour *        Stack[0x4]:4   this_ptr
@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a0410
-;   core_skeleton.cpp_FUN_00569f50
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     PUSH EDI                            ; 0040e9fd
     MOV ESI,0x5d32d4                    ; 0040e9fe
     MOV dword ptr [EAX + 0x154],0x5fb7d4 ; 0040ea03
-    CALL core_skeleton.cpp_FUN_00569f50 ; 0040ea0d
-        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569f50()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 0040ea0d
+        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
     FLD float ptr [0x005fb7c8]          ; 0040ea12 | DAT_005fb7c8
     FLD float ptr [0x005fb7cc]          ; 0040ea18 | DAT_005fb7cc
     MOV dword ptr [EBX + 0x2fec],0x3f19999a ; 0040ea1e

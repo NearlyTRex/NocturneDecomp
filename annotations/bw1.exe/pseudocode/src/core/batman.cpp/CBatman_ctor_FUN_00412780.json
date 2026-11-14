@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 238,
+    "complexity_score": 83,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 38,
-    "suspect_count": 18,
+    "suspect_count": 3,
     "suspect_types": [
-      "unnamed_field",
       "unrolled_memset",
       "unrolled_strcpy",
       "warning_overlapping_globals"
@@ -33,9 +32,9 @@
         "0041283a"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_batman.cpp_CBatman_ctor_FUN_00412780",
-    "signature": "CBatman * core_batman_cpp_CBatman_ctor_FUN_00412780(CBatman *this_ptr)"
+    "signature": "CBatman * __cdecl core_batman_cpp_CBatman_ctor_FUN_00412780(CBatman *this_ptr)"
   },
   "function_calls": [
     {
@@ -46,7 +45,7 @@
     {
       "addr": "00569f50",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_00569f50"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50"
     }
   ],
   "globals": [
@@ -109,6 +108,26 @@
     },
     "pcode_op_count": 212
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00412b20",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9897
+    },
+    "nocedit.exe": {
+      "addr": "00416450",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9897
+    },
+    "nocturne.exe": {
+      "addr": "004133e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9897
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -135,126 +154,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "*(byte ***)&pCVar4->field_0x154 = &g_CBatmanVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0xc26c",
-      "severity": "mild",
-      "text": "pcVar6 = &pCVar4->field_0xc26c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_00569f50(&pCVar4->field_0x158,0x5d38d9);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x2fec",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0x2fec = 0x3f19999a;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x2ff0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0x2ff0 = 0x40000000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x2ff4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0x2ff4 = uVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x2ff8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0x2ff8 = uVar3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0xc308",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xc308 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0xc30c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xc30c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0xc318",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xc318 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0xc314",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xc314 = *(uint *)&pCVar4->field_0xc318;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0xc318",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xc314 = *(uint *)&pCVar4->field_0xc318;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0xc310",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xc310 = *(uint *)&pCVar4->field_0xc314;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0xc314",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xc310 = *(uint *)&pCVar4->field_0xc314;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0xc268",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xc268 = 0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 26,
       "match": "do {",
@@ -263,11 +162,11 @@
       "type": "unrolled_strcpy"
     },
     {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0`). Replace with 3 direct stores of the constant in a .keep.",
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
       "line": 37,
       "match": "cascade_constant_fill",
       "severity": "moderate",
-      "text": "*(uint *)&pCVar4->field_0xc318 = 0;",
+      "text": "(pCVar4->new_pos).z = 0.0;",
       "type": "unrolled_memset"
     }
   ],

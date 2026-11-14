@@ -23,21 +23,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00559b4e",
-      "from_addr": "00559f92",
-      "name": "core_sound.cpp_FUN_00559b4e",
+      "addr": "0055a3c0",
+      "from_addr": "0055ab3d",
+      "name": "core_sound.cpp_CSound_process_FUN_0055a3c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0055a3c0",
-      "from_addr": "0055ab3d",
-      "name": "core_sound.cpp_FUN_0055a3c0",
+      "addr": "00559b50",
+      "from_addr": "00559f92",
+      "name": "core_sound.cpp_FUN_00559b50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00584d90",
       "from_addr": "00584dae",
-      "name": "core_vehicle.cpp_FUN_00584d90",
+      "name": "core_vehicle.cpp_CVehicle_playTrackedSound_FUN_00584d90",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -68,7 +68,7 @@
       {
         "call_addr": "0055ab3d",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0055a3c0",
+        "caller": "core_sound.cpp_CSound_process_FUN_0055a3c0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -88,9 +88,9 @@
         "stack_params": 1
       },
       {
-        "call_addr": "00559f92",
+        "call_addr": "00584dae",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_00559b4e",
+        "caller": "core_vehicle.cpp_CVehicle_playTrackedSound_FUN_00584d90",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -99,9 +99,9 @@
         "stack_params": 1
       },
       {
-        "call_addr": "00584dae",
+        "call_addr": "00559f92",
         "call_type": "direct",
-        "caller": "core_vehicle.cpp_FUN_00584d90",
+        "caller": "core_sound.cpp_FUN_00559b50",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -140,6 +140,32 @@
       "STORE": 2
     },
     "pcode_op_count": 62
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00572880",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00555d90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a8a00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7059
+    },
+    "nocturne.exe": {
+      "addr": "00526090",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8421
+    }
   },
   "stack_frame": {
     "frame_size": 8,

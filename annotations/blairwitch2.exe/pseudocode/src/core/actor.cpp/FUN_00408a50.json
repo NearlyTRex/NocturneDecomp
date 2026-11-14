@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 81,
+    "complexity_score": 71,
     "cross_reference_count": 15,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 6,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param",
@@ -38,13 +38,13 @@
     {
       "addr": "00422930",
       "from_addr": "00422b98",
-      "name": "core_charactr.cpp_FUN_00422930",
+      "name": "core_charactr.cpp_CCharacter_setup_FUN_00422930",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00488aae",
+      "addr": "00488ab0",
       "from_addr": "00488ac0",
-      "name": "core_enemy.cpp_FUN_00488aae",
+      "name": "core_enemy.cpp_FUN_00488ab0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -57,6 +57,18 @@
       "addr": "00488d00",
       "from_addr": "00488e03",
       "name": "core_event.cpp_resolveActorByName_FUN_00488d00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dbc60",
+      "from_addr": "004dbd00",
+      "name": "core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbc60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dc460",
+      "from_addr": "004dc47c",
+      "name": "core_inv.cpp_CInventory_saveItems_FUN_004dc460",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -78,18 +90,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004dbc60",
-      "from_addr": "004dbd00",
-      "name": "core_inv.cpp_FUN_004dbc60",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004dc460",
-      "from_addr": "004dc47c",
-      "name": "core_inv.cpp_FUN_004dc460",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004fcda0",
       "from_addr": "004fcdae",
       "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0",
@@ -98,7 +98,7 @@
     {
       "addr": "004fbce0",
       "from_addr": "004fbeb9",
-      "name": "core_mission.cpp_FUN_004fbce0",
+      "name": "core_mission.cpp_CDemonMission_writeFile_FUN_004fbce0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -124,7 +124,7 @@
     {
       "addr": "00436710",
       "is_variadic": false,
-      "name": "engine_console.cpp_FUN_00436710"
+      "name": "engine_console.cpp_CConsole_printf_FUN_00436710"
     }
   ],
   "globals": [
@@ -229,7 +229,7 @@
       {
         "call_addr": "004fbeb9",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_004fbce0",
+        "caller": "core_mission.cpp_CDemonMission_writeFile_FUN_004fbce0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -251,7 +251,7 @@
       {
         "call_addr": "004dc47c",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004dc460",
+        "caller": "core_inv.cpp_CInventory_saveItems_FUN_004dc460",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -319,14 +319,6 @@
       "match": "param_1",
       "severity": "mild",
       "text": "void core_actor_cpp_FUN_00408a50(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_console_cpp_FUN_00436710(g_CConsolePtr,\"%s::getClassName()\\n\",param_1);",
       "type": "unnamed_param"
     },
     {

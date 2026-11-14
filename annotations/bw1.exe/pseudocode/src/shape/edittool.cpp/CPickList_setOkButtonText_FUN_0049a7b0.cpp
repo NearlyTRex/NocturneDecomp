@@ -16,7 +16,7 @@ void __cdecl shape_edittool_cpp_CPickList_setOkButtonText_FUN_0049a7b0(CPickList
   char *pcVar3;
   
   if (text == (char *)0x0) {
-    this_ptr->field_0x5c = 0;
+    this_ptr->ok_button_text[0] = '\0';
     return;
   }
   uVar2 = 0xffffffff;
@@ -32,7 +32,7 @@ void __cdecl shape_edittool_cpp_CPickList_setOkButtonText_FUN_0049a7b0(CPickList
     _DAT_01d1d404 = 0xeb5;
     core_main_c_FUN_005030e0("CPickList::setOkButtonText - too long!");
   }
-  pcVar3 = &this_ptr->field_0x5c;
+  pcVar3 = this_ptr->ok_button_text;
   do {
     cVar1 = *text;
     *pcVar3 = cVar1;

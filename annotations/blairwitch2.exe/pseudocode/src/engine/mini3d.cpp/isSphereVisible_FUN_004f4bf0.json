@@ -1,0 +1,151 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 100,
+    "complexity_score": 39,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 24,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 124
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004f4bf0",
+    "address_range": [
+      [
+        "004f4bf0",
+        "004f4d01"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_mini3d.cpp_isSphereVisible_FUN_004f4bf0",
+    "signature": "int __cdecl engine_mini3d_cpp_isSphereVisible_FUN_004f4bf0(CVector3f *center,float radius)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005dde3c",
+      "name": "DAT_005dde3c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d098c8",
+      "name": "DAT_01d098c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d09910",
+      "name": "DAT_01d09910",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d09918",
+      "name": "DAT_01d09918",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.989010989010989,
+    "instruction_count": 91,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 10,
+      "CBRANCH": 6,
+      "COPY": 344,
+      "FLOAT2FLOAT": 47,
+      "FLOAT_ADD": 9,
+      "FLOAT_EQUAL": 6,
+      "FLOAT_LESS": 6,
+      "FLOAT_MULT": 11,
+      "FLOAT_NAN": 12,
+      "FLOAT_NEG": 1,
+      "FLOAT_SUB": 6,
+      "INT2FLOAT": 1,
+      "INT_ADD": 44,
+      "INT_AND": 38,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 8,
+      "INT_LEFT": 24,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 30,
+      "INT_OR": 30,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 4,
+      "INT_SUB": 1,
+      "INT_XOR": 1,
+      "INT_ZEXT": 24,
+      "LOAD": 39,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 8
+    },
+    "pcode_op_count": 727
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00513940",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004ef110",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "center",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "radius",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

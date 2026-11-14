@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 196,
-    "complexity_score": 227,
+    "complexity_score": 162,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 87,
-    "suspect_count": 12,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "shadow_pointer_walk",
-      "unnamed_field"
+      "shadow_pointer_walk"
     ],
     "total_lines": 283
   },
@@ -94,6 +93,32 @@
       "STORE": 22
     },
     "pcode_op_count": 1237
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00507040",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00528210",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00531480",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004e5000",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 60,
@@ -176,75 +201,27 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x7358",
-      "severity": "mild",
-      "text": "puVar7 = &pCVar6->field_0x7358;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "pCVar6 = (CMP3Decoder *)&pCVar6->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x0",
-      "severity": "mild",
-      "text": "puVar7 = &this_ptr->field_0x0 + iVar8 * 4;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 44,
       "match": "(int *)((int)scalefactor_dest",
       "severity": "moderate",
-      "text": "} while (piVar2 != (int *)((int)scalefactor_dest + iVar1 + granule * 0xf8));",
+      "text": "} while (piVar2 != (int *)((int)scalefactor_dest + iVar8 + granule * 0xf8));",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 59,
-      "match": "field_0x0",
-      "severity": "mild",
-      "text": "puVar7 = &this_ptr->field_0x0 + iVar8 * 4;",
-      "type": "unnamed_field"
     },
     {
       "description": "Complex pointer cast",
       "line": 68,
       "match": "(int *)((int)piVar3",
       "severity": "moderate",
-      "text": "} while (piVar5 != (int *)((int)piVar3 + iVar1));",
+      "text": "} while (piVar1 != (int *)((int)piVar3 + iVar8));",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 82,
-      "match": "field_0x7358",
-      "severity": "mild",
-      "text": "puVar7 = &this_ptr->field_0x7358;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 84,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "this_ptr = (CMP3Decoder *)&this_ptr->field_0x4;",
-      "type": "unnamed_field"
     },
     {
       "description": "Complex pointer cast",
       "line": 86,
-      "match": "(uint *)((int)scalefactor_dest",
+      "match": "(int *)((int)scalefactor_dest",
       "severity": "moderate",
-      "text": "*(uint *)((int)scalefactor_dest + iVar8) = *(uint *)puVar7;",
+      "text": "*(int *)((int)scalefactor_dest + iVar8) = *piVar3;",
       "type": "pointer_cast"
     },
     {
@@ -252,23 +229,23 @@
       "line": 68,
       "match": "(int)piVar3",
       "severity": "moderate",
-      "text": "} while (piVar5 != (int *)((int)piVar3 + iVar1));",
+      "text": "} while (piVar1 != (int *)((int)piVar3 + iVar8));",
       "type": "pointer_truncation"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar6->owner`). Replace `pCVar6->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via pointer arithmetic on its own `filename` field (which decays to a pointer), `+ CONST`; `offsetof(filename) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pCVar5`. Replace those `pCVar5->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
       "line": 27,
-      "match": "pCVar6 = (T *)&pCVar6->FIELD",
+      "match": "pCVar5 = (T *)(pCVar5->filename + CONST)",
       "severity": "moderate",
-      "text": "pCVar6 = (CMP3Decoder *)&pCVar6->field_0x4;",
+      "text": "pCVar5 = (CMP3Decoder *)(pCVar5->filename + 4);",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `this_ptr` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&this_ptr->owner`). Replace `this_ptr->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `this_ptr` self-updates via pointer arithmetic on its own `filename` field (which decays to a pointer), `+ CONST`; `offsetof(filename) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `this_ptr`. Replace those `this_ptr->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
       "line": 84,
-      "match": "this_ptr = (T *)&this_ptr->FIELD",
+      "match": "this_ptr = (T *)(this_ptr->filename + CONST)",
       "severity": "moderate",
-      "text": "this_ptr = (CMP3Decoder *)&this_ptr->field_0x4;",
+      "text": "this_ptr = (CMP3Decoder *)(this_ptr->filename + 4);",
       "type": "shadow_pointer_walk"
     }
   ]

@@ -9,13 +9,13 @@
 ; float            Stack[0xc]:4   radius
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_004a36e0 at 004a377e
+;   core_fire.cpp_CFireEffect_createExplosion_FUN_004a36e0 at 004a377e
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01cfaff4
 ;
 ; Called Functions:
-;   core_fire.cpp_FUN_0049d590
+;   core_fire.cpp_CCrater_activate_FUN_0049d590
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     SUB EAX,EDX                         ; 004a3ab6
     ADD EAX,0x1cfaff8                   ; 004a3ab8
     PUSH EAX                            ; 004a3abd
-    CALL core_fire.cpp_FUN_0049d590     ; 004a3abe
-        ;   XREF to: 0049d590 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_0049d590()
+    CALL core_fire.cpp_CCrater_activate_FUN_0049d590 ; 004a3abe
+        ;   XREF to: 0049d590 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CCrater_activate_FUN_0049d590(CCrater * this_ptr, CVector3f * center_position, float radius)
     MOV ECX,dword ptr [0x01cfaff4]      ; 004a3ac3 | DAT_01cfaff4
     INC ECX                             ; 004a3ac9
     ADD ESP,0xc                         ; 004a3aca

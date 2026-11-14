@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CFlies * core_gore_cpp_FUN_004e63e0(undefined4 param_1,undefined4 *param_2,undefined4 param_3,float param_4,undefined4 *param_5)
+; CFlies * core_gore_cpp_FUN_004e63e0(undefined4 param_1,float *param_2,int param_3,float param_4,float *param_5)
 ;
 ;
 ; XREF[1]:
@@ -21,7 +21,7 @@
 ;   core_main.c_FUN_005030e0
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_0051b160
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_0051bd60
-;   crt_unknown.c_FUN_005c0f32
+;   crt_memory.c_operator_new_FUN_005c0f32
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x14]      ; 004e63e3
     MOV ESI,dword ptr [ESP + 0x20]      ; 004e63e7
     PUSH 0x2a20                         ; 004e63eb
-    CALL crt_unknown.c_FUN_005c0f32     ; 004e63f0
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
+    CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004e63f0
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
     ADD ESP,0x4                         ; 004e63f5
     TEST EAX,EAX                        ; 004e63f8
     JNZ 0x004e64ba                      ; 004e63fa

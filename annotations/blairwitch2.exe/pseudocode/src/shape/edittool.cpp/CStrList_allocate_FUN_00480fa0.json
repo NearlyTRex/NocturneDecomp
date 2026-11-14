@@ -2,15 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 87,
-    "cross_reference_count": 2,
+    "complexity_score": 57,
+    "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 8,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 27,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field",
+      "alloc_magic_size",
       "warning_overlapping_globals"
     ],
     "total_lines": 97
@@ -20,6 +20,12 @@
       "addr": "00480dc0",
       "from_addr": "00480de5",
       "name": "shape_edittool.cpp_CStrList_copyFrom_FUN_00480dc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00481050",
+      "from_addr": "00481064",
+      "name": "shape_edittool.cpp_CStrList_insertRange_FUN_00481050",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -104,7 +110,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 3,
     "call_sites": [
       {
         "call_addr": "00480ef8",
@@ -121,6 +127,17 @@
         "call_addr": "00480de5",
         "call_type": "direct",
         "caller": "shape_edittool.cpp_CStrList_copyFrom_FUN_00480dc0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00481064",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CStrList_insertRange_FUN_00481050",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -163,6 +180,32 @@
     },
     "pcode_op_count": 199
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00499600",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004821a0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004a2cc0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9821
+    },
+    "nocturne.exe": {
+      "addr": "00473de0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -196,36 +239,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x4 < new_capacity) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x4 = new_capacity;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Pointer-array allocation strides by 4 (== 32-bit sizeof(char *)). Replace the magic 4 with sizeof(char *): a raw 4 under-allocates and corrupts memory once pointers are 8 bytes at 64-bit (\u00a727).",
       "line": 21,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "pvVar1 = realloc(*(void **)&this_ptr->field_0x8,new_capacity * 4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(void **)&this_ptr->field_0x8 = pvVar1;",
-      "type": "unnamed_field"
+      "match": "(char**) alloc stride 4",
+      "severity": "moderate",
+      "text": "(char **)realloc(this_ptr->data_array,new_capacity * 4)",
+      "type": "alloc_magic_size"
     }
   ]
 }

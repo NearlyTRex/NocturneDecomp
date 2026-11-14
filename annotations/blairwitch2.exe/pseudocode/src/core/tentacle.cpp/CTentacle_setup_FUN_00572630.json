@@ -1,0 +1,188 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 48,
+    "complexity_score": 34,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 19,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 67
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00572630",
+    "address_range": [
+      [
+        "00572630",
+        "005726b1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_tentacle.cpp_CTentacle_setup_FUN_00572630",
+    "signature": "void __cdecl core_tentacle_cpp_CTentacle_setup_FUN_00572630(CTentacle *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00487eb0",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_setup_FUN_00487eb0"
+    },
+    {
+      "addr": "00547890",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890"
+    },
+    {
+      "addr": "00547480",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00547480"
+    },
+    {
+      "addr": "00540e80",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ec471",
+      "name": "s_bipp02_005ec471",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ec478",
+      "name": "s_bipp05_005ec478",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ec47f",
+      "name": "s_bipp06_005ec47f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ec486",
+      "name": "s_bipp09_005ec486",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0264c0b0",
+      "name": "DAT_0264c0b0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264c0b4",
+      "name": "DAT_0264c0b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264c0b8",
+      "name": "DAT_0264c0b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264c0bc",
+      "name": "DAT_0264c0bc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.975,
+    "instruction_count": 40,
+    "opcode_distribution": {
+      "CALL": 7,
+      "COPY": 25,
+      "INT_ADD": 12,
+      "INT_AND": 16,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 16,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 8,
+      "INT_SUB": 23,
+      "LOAD": 4,
+      "POPCOUNT": 8,
+      "RETURN": 1,
+      "STORE": 23
+    },
+    "pcode_op_count": 159
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00595260",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005dafc0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00543bc0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTentacle *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "005fcc84"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

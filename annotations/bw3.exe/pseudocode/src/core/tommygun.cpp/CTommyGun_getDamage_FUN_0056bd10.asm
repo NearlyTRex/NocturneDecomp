@@ -7,7 +7,7 @@
 ; CTommyGun *      Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040ce40
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;
 ; *****************************************************************************
 
@@ -17,8 +17,8 @@ section .text
         ;   Label: core_tommygun.cpp_CTommyGun_getDamage_FUN_0056bd10
     PUSH 0x41700000                     ; 0056bd13
     PUSH 0x41200000                     ; 0056bd18
-    CALL core_actor.cpp_FUN_0040ce40    ; 0056bd1d
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 0056bd1d
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0xc],EAX       ; 0056bd22
     FLD float ptr [ESP + 0xc]           ; 0056bd26
     ADD ESP,0x8                         ; 0056bd2a

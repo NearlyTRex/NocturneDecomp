@@ -1,0 +1,518 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 233,
+    "complexity_score": 348,
+    "cross_reference_count": 5,
+    "function_call_count": 1,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 108,
+    "suspect_count": 21,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "stack_alignment_array",
+      "stack_ref",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 341
+  },
+  "cross_references": [
+    {
+      "addr": "0044e8e0",
+      "from_addr": "0044ed35",
+      "name": "core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044e8e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00452550",
+      "from_addr": "0045259e",
+      "name": "core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00452550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004516c0",
+      "from_addr": "00451916",
+      "name": "core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004516c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004513a0",
+      "from_addr": "00451490",
+      "name": "core_dcamera.cpp_renderCoronaProjectedTextureScanline_FUN_004513a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d6030",
+      "from_addr": "004d5f87",
+      "name": "core_game.cpp_FUN_004d6030",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0044e2a0",
+    "address_range": [
+      [
+        "0044e2a0",
+        "0044e556"
+      ]
+    ],
+    "convention": "__stack2_esi",
+    "name": "core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044e2a0",
+    "signature": "CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044e2a0(CDemonCamera *this_ptr,CVector3i *input_ptr,CVector3i *output_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00484180",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_00484180"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00612560",
+      "name": "DAT_00612560",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01483a40",
+      "name": "DAT_01483a40",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01483a44",
+      "name": "DAT_01483a44",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01483a48",
+      "name": "DAT_01483a48",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bc120c",
+      "name": "DAT_01bc120c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "004d5f87",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004d6030",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0044ed35",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044e8e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00451916",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004516c0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0045259e",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00452550",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00451490",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_renderCoronaProjectedTextureScanline_FUN_004513a0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 8,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.744186046511627,
+    "instruction_count": 215,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 107,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 11,
+      "COPY": 203,
+      "INT_2COMP": 2,
+      "INT_ADD": 125,
+      "INT_AND": 372,
+      "INT_CARRY": 18,
+      "INT_EQUAL": 149,
+      "INT_LEFT": 26,
+      "INT_LESS": 16,
+      "INT_MULT": 45,
+      "INT_NOTEQUAL": 84,
+      "INT_OR": 125,
+      "INT_RIGHT": 36,
+      "INT_SBORROW": 18,
+      "INT_SCARRY": 18,
+      "INT_SDIV": 2,
+      "INT_SEXT": 62,
+      "INT_SLESS": 102,
+      "INT_SREM": 2,
+      "INT_SUB": 84,
+      "INT_XOR": 21,
+      "INT_ZEXT": 28,
+      "LOAD": 83,
+      "POPCOUNT": 60,
+      "RETURN": 2,
+      "STORE": 31,
+      "SUBPIECE": 44
+    },
+    "pcode_op_count": 1880
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0043cbe0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0044a3e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0044d7d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9188
+    },
+    "nocturne.exe": {
+      "addr": "00441610",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "input_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3i *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 4,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0044e331",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0044e33b",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0044e538",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0044e547",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 13,
+      "match": "aiStackY_1018",
+      "severity": "moderate",
+      "text": "int aiStackY_1018 [1017];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "iVar4 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_00484180(DAT_00612560);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 59,
+      "match": "&stack0xffffffd4",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 60,
+      "match": "&stack0xffffffec",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar6 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 61,
+      "match": "&stack0xffffffd8",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 62,
+      "match": "&stack0xfffffff0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 63,
+      "match": "(uint *)((int)output_ptr",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)output_ptr + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 65,
+      "match": "&stack0xffffffd4",
+      "severity": "moderate",
+      "text": "*puVar5 = *(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 67,
+      "match": "&stack0xffffffd8",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 102,
+      "match": "&stack0xffffffd4",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 103,
+      "match": "DAT_01483a44",
+      "severity": "mild",
+      "text": "*(uint *)(&DAT_01483a44 + (uint)bVar6 * -8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 104,
+      "match": "&stack0xffffffd8",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 105,
+      "match": "DAT_01483a48",
+      "severity": "mild",
+      "text": "*(uint *)(&DAT_01483a48 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 106,
+      "match": "(uint *)((int)output_ptr",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)output_ptr + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 108,
+      "match": "&stack0xffffffd4",
+      "severity": "moderate",
+      "text": "*puVar5 = *(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 110,
+      "match": "&stack0xffffffd8",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Pointer value `&stack0xffffffec` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 60,
+      "match": "(int)&stack0xffffffec",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar6 * -8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&stack0xfffffff0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 62,
+      "match": "(int)&stack0xfffffff0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 60,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar6 * -8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 62,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
+      "type": "pointer_cast"
+    }
+  ]
+}

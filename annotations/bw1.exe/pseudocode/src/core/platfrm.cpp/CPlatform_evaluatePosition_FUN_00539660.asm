@@ -36,13 +36,13 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[2]:
+;   core_platfrm.cpp_CPlatform_process_FUN_00539810 at 00539a2d
 ;   core_platfrm.cpp_CPlatform_setup_FUN_005395d0 at 005395eb
-;   core_platfrm.cpp_FUN_00539810 at 00539a2d
 ;
 ; Called Functions:
-;   core_course.cpp_FUN_00447f00
-;   core_xform.cpp_FUN_005b7940
+;   core_course.cpp_CCourse_evaluate_FUN_00447f00
 ;   core_xform.cpp_FUN_005b7c00
+;   core_xform.cpp_slerpQuaternion_FUN_005b7940
 ;
 ; *****************************************************************************
 
@@ -150,8 +150,8 @@ section .text
     PUSH EDX                            ; 0053976f
     LEA ESI,[EBP + 0x6]                 ; 00539770
     LEA EDI,[EBP + -0xa]                ; 00539773
-    CALL core_xform.cpp_FUN_005b7940    ; 00539776
-        ;   XREF to: 005b7940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b7940()
+    CALL core_xform.cpp_slerpQuaternion_FUN_005b7940 ; 00539776
+        ;   XREF to: 005b7940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_slerpQuaternion_FUN_005b7940()
     LEA ESI,[EBP + 0x6]                 ; 0053977b
     LEA EAX,[EBP + -0xa]                ; 0053977e
     ADD ESP,0xc                         ; 00539781
@@ -195,8 +195,8 @@ section .text
     SUB ESP,0x4                         ; 005397d1
     FSTP float ptr [ESP]                ; 005397d4
     PUSH EAX                            ; 005397d7
-    CALL core_course.cpp_FUN_00447f00   ; 005397d8
-        ;   XREF to: 00447f00 (UNCONDITIONAL_CALL)  ; void core_course.cpp_FUN_00447f00(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
+    CALL core_course.cpp_CCourse_evaluate_FUN_00447f00 ; 005397d8
+        ;   XREF to: 00447f00 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_evaluate_FUN_00447f00(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
     ADD ESP,0x10                        ; 005397dd
     JMP 0x005397a4                      ; 005397e0
         ;   XREF to: 005397a4 (UNCONDITIONAL_JUMP)  ; LAB_005397a4

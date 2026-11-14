@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 203,
-    "complexity_score": 319,
+    "complexity_score": 316,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 99,
+    "pseudocode_lines": 96,
     "suspect_count": 20,
     "suspect_types": [
       "undefined_data",
@@ -15,7 +15,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 302
+    "total_lines": 299
   },
   "cross_references": [],
   "function": {
@@ -39,7 +39,7 @@
     {
       "addr": "005b7790",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7790"
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
     },
     {
       "addr": "00554ad0",
@@ -48,8 +48,8 @@
     },
     {
       "addr": "005549c0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005549c0"
+      "is_variadic": true,
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005549c0"
     }
   ],
   "globals": [
@@ -207,15 +207,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 32,
       "match": "DAT_0264a60c",
       "severity": "mild",
-      "text": "iVar3 = *(int *)(&DAT_0264a60c + iVar4);",
+      "text": "iVar2 = *(int *)(&DAT_0264a60c + iVar3);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 51,
       "match": "param_2",
       "severity": "mild",
       "text": "if (*(int *)(param_2 + 0x100) == 2) {",
@@ -223,10 +223,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 53,
       "match": "param_2",
       "severity": "mild",
       "text": "uStack_22 = *(ushort *)(param_2 + 0x108);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uStack_20 = *(uint *)(param_2 + 0x10c);",
       "type": "unnamed_param"
     },
     {
@@ -234,20 +242,12 @@
       "line": 55,
       "match": "param_2",
       "severity": "mild",
-      "text": "uStack_20 = *(uint *)(param_2 + 0x10c);",
+      "text": "iVar2 = (uint)uStack_22 * *(int *)(param_2 + 0x104);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar3 = (uint)uStack_22 * *(int *)(param_2 + 0x104);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 59,
       "match": "param_2",
       "severity": "mild",
       "text": "iStack_1c = *(int *)(param_2 + 0x10c) * (uVar1 & 0xffff);",
@@ -255,7 +255,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
+      "line": 61,
       "match": "param_2",
       "severity": "mild",
       "text": "iStack_30 = (*(int *)(param_2 + 0x110) * *(int *)(param_2 + 0x108)) / 2;",
@@ -263,7 +263,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
+      "line": 61,
       "match": "param_2",
       "severity": "mild",
       "text": "iStack_30 = (*(int *)(param_2 + 0x110) * *(int *)(param_2 + 0x108)) / 2;",
@@ -271,7 +271,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 65,
       "match": "param_2",
       "severity": "mild",
       "text": "uStack_22 = *(ushort *)(param_2 + 0x108);",
@@ -279,7 +279,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 67,
+      "line": 66,
       "match": "param_2",
       "severity": "mild",
       "text": "uStack_20 = *(uint *)(param_2 + 0x10c);",
@@ -287,15 +287,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 67,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar3 = (uint)uStack_22 * *(int *)(param_2 + 0x104);",
+      "text": "iVar2 = (uint)uStack_22 * *(int *)(param_2 + 0x104);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 73,
+      "line": 72,
       "match": "param_2",
       "severity": "mild",
       "text": "iStack_1c = *(int *)(param_2 + 0x10c) * uVar1;",
@@ -303,7 +303,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 74,
+      "line": 73,
       "match": "param_2",
       "severity": "mild",
       "text": "uStack_16 = *(ushort *)(param_2 + 0x104);",
@@ -311,7 +311,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 75,
+      "line": 74,
       "match": "param_2",
       "severity": "mild",
       "text": "iStack_30 = *(int *)(param_2 + 0x110) * uVar1;",
@@ -319,7 +319,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 80,
+      "line": 79,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar1 = (**(code **)(*_DAT_0264a5c4 + 0xc))();",
@@ -327,25 +327,25 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 83,
+      "line": 82,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar4 = *(int *)(param_2 + 0x104) * 0x100 * *(int *)(param_2 + 0x108);",
+      "text": "iVar3 = *(int *)(param_2 + 0x104) * 0x100 * *(int *)(param_2 + 0x108);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 83,
+      "line": 82,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar4 = *(int *)(param_2 + 0x104) * 0x100 * *(int *)(param_2 + 0x108);",
+      "text": "iVar3 = *(int *)(param_2 + 0x104) * 0x100 * *(int *)(param_2 + 0x108);",
       "type": "unnamed_param"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDirectSoundDevice",
         "offset": 48,
         "vtable_addr": "005fbcbc"
       }

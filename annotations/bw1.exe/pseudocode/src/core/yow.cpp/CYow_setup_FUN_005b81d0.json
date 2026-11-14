@@ -1,0 +1,291 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 171,
+    "complexity_score": 120,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 20,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 70,
+    "suspect_count": 4,
+    "suspect_types": [
+      "undefined_data",
+      "warning_type_propagation"
+    ],
+    "total_lines": 241
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005b81d0",
+    "address_range": [
+      [
+        "005b81d0",
+        "005b83d9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_yow.cpp_CYow_setup_FUN_005b81d0",
+    "signature": "void __cdecl core_yow_cpp_CYow_setup_FUN_005b81d0(CYow *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a0510",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_setup_FUN_004a0510"
+    },
+    {
+      "addr": "004a6c30",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30"
+    },
+    {
+      "addr": "00565780",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModel_findPartByName_FUN_00565780"
+    },
+    {
+      "addr": "00569eb0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0"
+    },
+    {
+      "addr": "00569f30",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30"
+    },
+    {
+      "addr": "00569b20",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00569b20"
+    },
+    {
+      "addr": "005634f0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fa1d6",
+      "name": "s_COMBATMODEHARD_005fa1d6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa1e5",
+      "name": "s_Bip01_Spine1_005fa1e5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa1f2",
+      "name": "s_Bip01_Head_005fa1f2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa1fd",
+      "name": "s_Bip01_Pelvis_005fa1fd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa20a",
+      "name": "s_Bip01_Spine_005fa20a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa216",
+      "name": "s_Bip01_Spine1_005fa216",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa223",
+      "name": "s_Bip01_Spine2_005fa223",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa230",
+      "name": "s_Bip01_Head_005fa230",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa23b",
+      "name": "DAT_005fa23b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fa240",
+      "name": "DAT_005fa240",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fa245",
+      "name": "s_l4arm_005fa245",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa24b",
+      "name": "s_r4arm_005fa24b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa251",
+      "name": "s_waist_005fa251",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa257",
+      "name": "s_torso_005fa257",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa25d",
+      "name": "DAT_005fa25d",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fa262",
+      "name": "s_rshin_005fa262",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa268",
+      "name": "s_lshin_005fa268",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa26e",
+      "name": "s_rthigh_005fa26e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa275",
+      "name": "s_lthigh_005fa275",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061b4d0",
+      "name": "DAT_0061b4d0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9510489510489513,
+    "instruction_count": 143,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 23,
+      "CBRANCH": 1,
+      "COPY": 98,
+      "INT_ADD": 51,
+      "INT_AND": 49,
+      "INT_CARRY": 23,
+      "INT_EQUAL": 48,
+      "INT_SCARRY": 23,
+      "INT_SLESS": 24,
+      "INT_SUB": 86,
+      "LOAD": 5,
+      "POPCOUNT": 24,
+      "RETURN": 1,
+      "STORE": 107
+    },
+    "pcode_op_count": 565
+  },
+  "siblings": {
+    "bw3.exe": {
+      "addr": "005863e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5842
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CYow *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 39,
+      "match": "DAT_005fa23b",
+      "severity": "mild",
+      "text": "(this_ptr_02,&DAT_005fa23b,1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 42,
+      "match": "DAT_005fa240",
+      "severity": "mild",
+      "text": "(this_ptr_02,&DAT_005fa240,1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 57,
+      "match": "DAT_005fa25d",
+      "severity": "mild",
+      "text": "(this_ptr_02,&DAT_005fa25d,1);",
+      "type": "undefined_data"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CYow",
+        "offset": 0,
+        "vtable_addr": "00608224"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

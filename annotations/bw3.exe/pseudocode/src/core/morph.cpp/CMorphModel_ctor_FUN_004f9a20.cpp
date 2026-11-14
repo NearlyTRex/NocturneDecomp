@@ -9,11 +9,11 @@
 CMorphModel * __cdecl core_morph_cpp_CMorphModel_ctor_FUN_004f9a20(CMorphModel *this_ptr)
 
 {
-  *(uint *)&this_ptr->field_0x58 = 0;
-  *(uint *)&this_ptr->field_0x5c = 0;
-  *(uint *)&this_ptr->field_0x60 = 0;
-  *(uint *)&this_ptr->field_0x64 = 0;
-  *(uint *)this_ptr = 0;
-  *(uint *)&this_ptr->field_0x54 = 0;
+  this_ptr->points = (SMorphPoint *)0x0;
+  this_ptr->num_faces = 0;
+  this_ptr->faces = (SMRGLPrimitiveTriangle *)0x0;
+  this_ptr->num_textures = 0;
+  this_ptr->part_count = 0;
+  this_ptr->num_points = 0;
   return this_ptr;
 }

@@ -11,11 +11,11 @@
 SMRGLHeaderExtended * __cdecl engine_3d_c_abortOldFuncOp28_FUN_00404e10(SMRGLHeaderExtended *primitive)
 
 {
-  byte auStack_54 [80];
+  char acStack_54 [80];
   
-  FUN_005b7790(auStack_54,"Old func : %d",*(uint *)primitive);
+  _sprintf(acStack_54,"Old func : %d");
   _DAT_01d046a4 = 0xe2;
   _DAT_01d046a0 = "..\\engine\\3d.c";
-  core_main_c_FUN_004e4500(auStack_54);
+  core_main_c_FUN_004e4500(acStack_54);
   return (SMRGLHeaderExtended *)&DAT_0070ca84;
 }

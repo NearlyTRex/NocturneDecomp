@@ -8,11 +8,11 @@
 ;   undefined4 DAT_0060b280
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_00449280
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
 ;   core_dirmat.cpp_FUN_00449530
+;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0
+;   engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0
 ;   engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0046b030
-;   engine_drender.cpp_FUN_0046afb0
-;   engine_matrix.c_FUN_0046b4b0
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     MOV EDX,dword ptr [0x0060b280]      ; 00561d9d | DAT_0060b280
     PUSH 0x41e00000                     ; 00561da3
     PUSH EDX                            ; 00561da8
-    CALL engine_matrix.c_FUN_0046b4b0   ; 00561da9
-        ;   XREF to: 0046b4b0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_0046b4b0()
+    CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0 ; 00561da9
+        ;   XREF to: 0046b4b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0(CDemonRenderer * this_ptr, float field_of_view)
     ADD ESP,0x8                         ; 00561dae
     MOV EAX,dword ptr [EBX + 0x24]      ; 00561db1
     XOR ECX,ECX                         ; 00561db4
@@ -40,8 +40,8 @@ section .text
     PUSH EAX                            ; 00561dc9
     LEA EAX,[ESP + 0x4]                 ; 00561dca
     PUSH EAX                            ; 00561dce
-    CALL core_dirmat.cpp_FUN_00449280   ; 00561dcf
-        ;   XREF to: 00449280 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_00449280(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280 ; 00561dcf
+        ;   XREF to: 00449280 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 00561dd4
     MOV EAX,dword ptr [EBX + 0x30]      ; 00561dd7
     MOV dword ptr [ESP + 0x74],EAX      ; 00561dda
@@ -90,8 +90,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00561e62
     MOVSD ES:EDI,ESI                    ; 00561e63
     MOVSD ES:EDI,ESI                    ; 00561e64
-    CALL engine_drender.cpp_FUN_0046afb0 ; 00561e65
-        ;   XREF to: 0046afb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_FUN_0046afb0(CDemonRenderer * this_ptr, CVector3f * point_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0 ; 00561e65
+        ;   XREF to: 0046afb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0(CDemonRenderer * this_ptr, CVector3f * point_ptr)
     ADD ESP,0x8                         ; 00561e6a
     LEA EAX,[ESP + 0x34]                ; 00561e6d
     PUSH EAX                            ; 00561e71

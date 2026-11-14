@@ -4,13 +4,18 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCharacter.h"
 
 // Structure: CMooCow
-// Stub: size from Watcom RTTI, fields not yet recovered
+// CZombieCow-style tail on CCharacter
 // Ghidra size: 0xcdf0 (52720 bytes)
 #pragma pack(push, 1)
 typedef struct CMooCow {
-    char field_0[52720]; // 0x0
+    CCharacter base; // 0x0, derived; unchanged
+    int bone_spine; // 0xcdcc, CMooCow_setup 004f8bb0 findBone "Bip01 Spine2"
+    int bone_head; // 0xcdd0, CMooCow_setup 004f8bb0 findBone "Bip01 Head"
+    uint sfx_handle; // 0xcdd4, ctor zeroes; CMooCow_process 004f8cc0/processDamage CSound handle
+    int part_indices[6]; // 0xcdd8, CMooCow_setup 004f8bb0 findPartByName head?, lforearm, rforearm, lshin, rshin, torso
 } CMooCow;
 #pragma pack(pop)
 

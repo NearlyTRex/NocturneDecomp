@@ -16,12 +16,6 @@
   },
   "cross_references": [
     {
-      "addr": "005760b0",
-      "from_addr": "00576132",
-      "name": "sound_sndmain.cpp_FUN_005760b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "005757f0",
       "from_addr": "005757f8",
       "name": "sound_sndmain.cpp_findBestRecordingDevice_FUN_005757f0",
@@ -31,6 +25,12 @@
       "addr": "00575790",
       "from_addr": "00575797",
       "name": "sound_sndmain.cpp_getRecordingDeviceInfo_FUN_00575790",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005760b0",
+      "from_addr": "00576132",
+      "name": "sound_sndmain.cpp_readIni_FUN_005760b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -54,14 +54,14 @@
   },
   "function_calls": [
     {
-      "addr": "00573e70",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00573e70"
-    },
-    {
       "addr": "00575d20",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_lockSound_FUN_00575d20"
+    },
+    {
+      "addr": "00573e70",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_unlockSound_FUN_00573e70"
     },
     {
       "addr": "0057b460",
@@ -111,6 +111,26 @@
     },
     "pcode_op_count": 139
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00552d00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005588a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005ab720",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -149,7 +169,7 @@
       "line": 17,
       "match": "DAT_00623318",
       "severity": "mild",
-      "text": "(iVar2,DAT_00623318 * 0x108 + 0x2c807f8);",
+      "text": "(device_id,(SRecordingDeviceInfo *)(DAT_00623318 * 0x108 + 0x2c807f8));",
       "type": "undefined_data"
     },
     {

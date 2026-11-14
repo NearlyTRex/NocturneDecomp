@@ -1,17 +1,21 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl support_trisock_cpp_formatSocketAddress_FUN_0059c830(uchar *param_1,char *param_2)
+; void __cdecl support_trisock_cpp_formatSocketAddress_FUN_0059c830(SNetworkAddr *network_addr,char *output_buffer)
 ;
+; Parameters:
+; SNetworkAddr *   Stack[0x4]:4   network_addr
+; char *           Stack[0x8]:4   output_buffer
 ;
-; XREF[1]:
+; XREF[2]:
+;   support_trisock.cpp_FUN_0059cf00 at 0059cffb
 ;   support_trisock.cpp_FUN_0059e350 at 0059ec20
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f8368
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   support_trisock.cpp_formatIPAddress_FUN_0059c590
 ;
 ; *****************************************************************************
@@ -55,8 +59,8 @@ section .text
         ;   Label: LAB_0059c86e
     PUSH ESI                            ; 0059c870
         ;   Label: LAB_0059c870
-    CALL crt_unknown.c_FUN_005bfb40     ; 0059c871
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0059c871
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 0059c876
     POP ESI                             ; 0059c879
     POP EBX                             ; 0059c87a

@@ -13,21 +13,21 @@
 ; int              Stack[0x1c]:4   fade_rate
 ;
 ; XREF[21]:
-;   core_blundrbs.cpp_FUN_00410490 at 0041103c
-;   core_burncrss.cpp_FUN_00424550 at 00424bda
-;   core_dynamite.cpp_FUN_0047b270 at 0047b455
-;   core_emitter.cpp_FUN_00487eb0 at 00487fe0
-;   core_fire.cpp_FUN_00499350 at 00499461
-;   core_fire.cpp_FUN_00499eb0 at 00499f00
-;   core_fire.cpp_FUN_0049d090 at 0049d41d
-;   core_fire.cpp_FUN_0049fdf0 at 004a0364
-;   core_fire.cpp_FUN_004a2090 at 004a227c
-;   core_flame.cpp_FUN_004a5b10 at 004a5b89
+;   core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490 at 0041103c
+;   core_burncrss.cpp_CBurncross_fire_FUN_00424550 at 00424bda
+;   core_dynamite.cpp_CDynamite_process_FUN_0047b270 at 0047b455
+;   core_emitter.cpp_CEmitter_process_FUN_00487eb0 at 00487fe0
+;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_004a2090 at 004a227c
+;   core_fire.cpp_CFireball_onCollision_FUN_00499eb0 at 00499f00
+;   core_fire.cpp_CFireball_process_FUN_00499350 at 00499461
+;   core_fire.cpp_CRing_process_FUN_0049fdf0 at 004a0364
+;   core_fire.cpp_CToss_process_FUN_0049d090 at 0049d41d
+;   core_flame.cpp_CFlame_process_FUN_004a5b10 at 004a5b89
 ;   ... and 11 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01cb4eb0
-;   undefined4 g_SparkPool[0].field60_0x3c
+;   undefined4 g_SparkPool[0].base.vtable
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
@@ -62,7 +62,7 @@ section .text
     PUSH EDI                            ; 004a23fe
     MOV EBP,dword ptr [ESP + 0x18]      ; 004a23ff
     PUSH EBP                            ; 004a2403
-    MOV EAX,dword ptr [EBX + 0x3c]      ; 004a2404 | g_SparkPool[0].field60_0x3c
+    MOV EAX,dword ptr [EBX + 0x3c]      ; 004a2404 | g_SparkPool[0].base.vtable
     PUSH EBX                            ; 004a2407
     CALL dword ptr [EAX]                ; 004a2408
     ADD ESP,0xc                         ; 004a240a

@@ -2,21 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 282,
-    "complexity_score": 382,
+    "complexity_score": 332,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 30,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 132,
-    "suspect_count": 21,
+    "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
       "undefined_data",
-      "unknown_field",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 414
@@ -25,7 +23,7 @@
     {
       "addr": "0047b510",
       "from_addr": "0047b5a7",
-      "name": "core_dracbrid.cpp_FUN_0047b510",
+      "name": "core_dracbrid.cpp_CDraculaBride_process_FUN_0047b510",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -46,7 +44,7 @@
     {
       "addr": "0040cc00",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cc00"
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00"
     },
     {
       "addr": "00583d60",
@@ -66,12 +64,12 @@
     {
       "addr": "00445430",
       "is_variadic": false,
-      "name": "engine_console.cpp_FUN_00445430"
+      "name": "engine_console.cpp_CConsole_printf_FUN_00445430"
     },
     {
       "addr": "005735a0",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005735a0"
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005735a0"
     }
   ],
   "globals": [
@@ -239,19 +237,19 @@
     },
     {
       "addr": "01fe37f0",
-      "name": "g_CDemonCameraInstance.field4_0x4",
+      "name": "g_CDemonCameraInstance.base.position",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fe37f4",
-      "name": "g_CDemonCameraInstance.field8_0x8",
+      "name": "g_CDemonCameraInstance.base.position+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fe37f8",
-      "name": "g_CDemonCameraInstance.field12_0xc",
+      "name": "g_CDemonCameraInstance.base.position+8",
       "type": "undefined4",
       "value": null
     }
@@ -262,7 +260,7 @@
       {
         "call_addr": "0047b5a7",
         "call_type": "direct",
-        "caller": "core_dracbrid.cpp_FUN_0047b510",
+        "caller": "core_dracbrid.cpp_CDraculaBride_process_FUN_0047b510",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -555,30 +553,6 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0xc2fc",
-      "severity": "mild",
-      "text": "fVar3 = *(float *)&this_ptr->field_0xc2fc - delta_time;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0xc2fc",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0xc2fc = fVar3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0xc2fc",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xc2fc = 0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 43,
       "match": "DAT_01bc0d54",
@@ -595,16 +569,8 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 77,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_80 = (float)g_CDemonCameraInstance._4_4_;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 78,
+      "line": 79,
       "match": "&stack0xffffff84",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff84 + (uint)bVar6 * -8) =",
@@ -612,7 +578,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 80,
+      "line": 81,
       "match": "&stack0xffffff88",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff88 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =",
@@ -620,7 +586,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 85,
+      "line": 86,
       "match": "&stack0xffffff90",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff90 + ((uint)bVar6 * -2 + 3) * 4) =",
@@ -628,7 +594,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 86,
+      "line": 87,
       "match": "&stack0xffffff84",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff84 + (uint)bVar6 * -8);",
@@ -636,7 +602,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 87,
+      "line": 88,
       "match": "&stack0xffffff90",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff90 + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 4) * 4) =",
@@ -644,7 +610,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 88,
+      "line": 89,
       "match": "&stack0xffffff88",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff88 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
@@ -652,7 +618,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 96,
+      "line": 97,
       "match": "&stack0xffffff90",
       "severity": "moderate",
       "text": "*(float *)(&stack0xffffff90 + ((uint)bVar6 * -2 + 3) * 4);",
@@ -660,7 +626,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 98,
+      "line": 99,
       "match": "&stack0xffffff90",
       "severity": "moderate",
       "text": "*(float *)(&stack0xffffff90 + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 4) * 4);",
@@ -668,7 +634,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 105,
+      "line": 106,
       "match": "&stack0xffffff60",
       "severity": "moderate",
       "text": "core_spline_cpp_FUN_00583d60((float *)&stack0xffffff60,(float)local_24[7],0.0);",
@@ -692,7 +658,7 @@
     },
     {
       "description": "Pointer value `&g_CDemonCameraInstance` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 79,
+      "line": 80,
       "match": "(int)&g_CDemonCameraInstance",
       "severity": "moderate",
       "text": "*(uint *)((int)&g_CDemonCameraInstance + (uint)bVar6 * -8 + 8);",
@@ -700,7 +666,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 79,
+      "line": 80,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&g_CDemonCameraInstance + (uint)bVar6 * -8 + 8);",

@@ -19,7 +19,7 @@
     {
       "addr": "0045b550",
       "from_addr": "0045b568",
-      "name": "core_dirmat.cpp_FUN_0045b550",
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -47,9 +47,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004ed1de",
+      "addr": "004ed1e0",
       "from_addr": "004ed245",
-      "name": "engine_mini3d.cpp_FUN_004ed1de",
+      "name": "engine_mini3d.cpp_matrixPushAndTransform_FUN_004ed1e0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -74,7 +74,7 @@
       {
         "call_addr": "0045b568",
         "call_type": "direct",
-        "caller": "core_dirmat.cpp_FUN_0045b550",
+        "caller": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -88,7 +88,7 @@
       {
         "call_addr": "0045b57e",
         "call_type": "direct",
-        "caller": "core_dirmat.cpp_FUN_0045b550",
+        "caller": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -101,7 +101,7 @@
       {
         "call_addr": "0045b594",
         "call_type": "direct",
-        "caller": "core_dirmat.cpp_FUN_0045b550",
+        "caller": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -228,6 +228,20 @@
       "STORE": 6
     },
     "pcode_op_count": 85
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00449c20",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0045fd80",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,

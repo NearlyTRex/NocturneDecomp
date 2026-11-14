@@ -4,13 +4,46 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBox.h"
+#include "types/classes/CColor3i.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/enums/EAmmoType.h"
+#include "types/enums/EFireMode.h"
+#include "types/enums/EWeaponState.h"
+#include "types/enums/EWeaponType.h"
 
 // Structure: CWeapon
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x594 (1428 bytes)
 #pragma pack(push, 1)
 typedef struct CWeapon {
-    char field_0[1428]; // 0x0
+    CDemonActor base; // 0x0
+    CKeyFramedModelInstance model; // 0x158
+    EWeaponState weapon_state; // 0x2d4
+    int is_spread_weapon; // 0x2d8
+    EFireMode fire_mode; // 0x2dc
+    EWeaponType weapon_type; // 0x2e0
+    int can_penetrate; // 0x2e4
+    float bolt_velocity; // 0x2e8
+    int fire_cooldown; // 0x2ec
+    int can_attach_light; // 0x2f0
+    CColor3i muzzle_flash_color; // 0x2f4
+    float fire_cooldown_timer; // 0x300
+    struct CDemonActor* carried_by_actor; // 0x304
+    CBox physics_box; // 0x308
+    float ground_height; // 0x560
+    float weight; // 0x564
+    int ammo_count; // 0x568
+    EAmmoType ammo_type; // 0x56c
+    int infinite_ammo; // 0x570, Added in this build
+    int weapon_class; // 0x574, Added in this build
+    int number_of_hands_needed; // 0x578, Added in this build
+    int draw_crosshair; // 0x57c, Added in this build
+    float sim_timer; // 0x580
+    int is_rendered; // 0x584
+    int render_alpha; // 0x588, Added in this build
+    int ammo_per_shot; // 0x58c, Added in this build
+    int uses_hero_ammo; // 0x590, Added in this build
 } CWeapon;
 #pragma pack(pop)
 

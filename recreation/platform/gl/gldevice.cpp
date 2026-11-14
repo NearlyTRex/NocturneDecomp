@@ -60,6 +60,9 @@ bool CGlDevice::setMode(int width, int height, int bits_per_pixel, std::span<voi
     frame_locked_ = false;
     target_ahead_ = false;
     scene_stretched_ = false;
+    geometry_drawn_ = false;
+    frame_has_2d_ = false;
+    frame_filtered_ = false;
     overlay_.reset();
     pipeline_.setTargetSize(width, height);
     // The engine reloads its assets around a resolution change, so a name can come back
@@ -113,6 +116,7 @@ void CGlDevice::flush() {
         scene_.bind();
         pipeline_.draw(batch_.getVertices(), batch_.getIndices());
         target_ahead_ = true;
+        geometry_drawn_ = true;
     }
     batch_.reset();
 }
@@ -162,6 +166,9 @@ void CGlDevice::present() {
     finishScene();
     presenter_.presentScene(scene_.getColorTexture(), width_, height_);
     invalidate();
+    geometry_drawn_ = false;
+    frame_has_2d_ = false;
+    frame_filtered_ = false;
 }
 
 void CGlDevice::finishScene() {

@@ -1,10 +1,10 @@
 #include "core/skeleton/skeleton.h"
 
 #include "common/error/error.h"
+#include "common/serial/binaryreader.h"
 #include "common/text/ascii.h"
 #include "common/text/scan.h"
 #include "common/text/scanformat.h"
-#include "common/text/textlines.h"
 #include "common/text/textscanner.h"
 #include "core/xform/xform.h"
 #include "engine/dosio/dosio.h"
@@ -21,10 +21,31 @@
 namespace nocturne::core {
 namespace {
 
-constexpr int kLatestVersion = 3;
+constexpr int kLatestVersion = 4;
 constexpr int kOldestVersion = 2;
 // The version that adds the reference bone origins after the motions.
 constexpr int kReferenceOriginVersion = 3;
+// Blair Witch Volume 1's version, whose bone angles are binary.
+constexpr int kBinaryAngleVersion = 4;
+// w, x, y and z, each a little-endian float.
+constexpr std::size_t kBinaryAngleSize = 4 * sizeof(float);
+
+// The angle block of a version 4 file: frames of bones, each angle four floats, fread whole.
+void readBinaryAngles(common::CTextScanner &scanner, std::span<common::CQuaternion4f> angles) {
+    const std::optional<std::string_view> block =
+        scanner.readBytes(angles.size() * kBinaryAngleSize);
+    if (!block) {
+        common::displayErrorAndQuit("Skeleton file corrupt");
+    }
+    common::CBinaryReader reader(std::as_bytes(std::span(*block)));
+    for (common::CQuaternion4f &angle : angles) {
+        angle.w = reader.read<float>();
+        angle.x = reader.read<float>();
+        angle.y = reader.read<float>();
+        angle.z = reader.read<float>();
+    }
+    scanner.skipLine();
+}
 
 } // namespace
 
@@ -60,15 +81,18 @@ void CSkeleton::allocMemory(int bone_count, int frame_count) {
     canceled_movements_.assign(frames, {});
 }
 
+// Read as the file is, as Blair Witch opens it ("rb"): a version 4 file's angles are binary, which
+// text mode would corrupt. The text versions scan the same either way, a carriage return being
+// whitespace to the scan.
 // nocedit 0x00599b10
+// bw1 0x00563000
 void CSkeleton::load(std::string_view filename) {
     loaded_filename_ = filename;
     const std::optional<std::string> file = dosio_.readFile("data", filename);
     if (!file) {
         common::displayErrorAndQuit(std::format("CSkeleton::load - Can't open {}", filename));
     }
-    const std::string text = common::toTextMode(*file);
-    common::CTextScanner scanner(text);
+    common::CTextScanner scanner(*file);
     loadStream(scanner);
 }
 
@@ -76,6 +100,7 @@ void CSkeleton::load(std::string_view filename) {
 // reference bone origins that end a version 3 file, where nocedit keeps them; the original also
 // quit on a read error, which reading the whole file first can't have.
 // nocedit 0x00599bb0
+// bw1 0x00563090
 void CSkeleton::loadStream(common::CTextScanner &scanner) {
     free();
     scanner.skipLine();
@@ -102,8 +127,12 @@ void CSkeleton::loadStream(common::CTextScanner &scanner) {
         common::scanFormat(scanner, "\"%[^\"]\",%d\n", bone.bone_name, bone.parent_index);
     }
     scanner.skipLine();
-    for (common::CQuaternion4f &angle : bone_angle_frames_) {
-        common::scanFormat(scanner, "%f,%f,%f,%f\n", angle.w, angle.x, angle.y, angle.z);
+    if (version >= kBinaryAngleVersion) {
+        readBinaryAngles(scanner, bone_angle_frames_);
+    } else {
+        for (common::CQuaternion4f &angle : bone_angle_frames_) {
+            common::scanFormat(scanner, "%f,%f,%f,%f\n", angle.w, angle.x, angle.y, angle.z);
+        }
     }
     for (std::vector<common::CVector3f> *list : {&root_offsets_, &canceled_movements_}) {
         scanner.skipLine();

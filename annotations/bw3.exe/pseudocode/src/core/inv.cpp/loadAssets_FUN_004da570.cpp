@@ -17,7 +17,7 @@ void __cdecl core_inv_cpp_loadAssets_FUN_004da570(void)
   _DAT_01d70a34 = DAT_005fba1c;
   p_Var1 = engine_dosio_cpp_FUN_004659c0(&DAT_005c5f4e,"invsize.txt",&DAT_005c5f3f);
   if (p_Var1 != (_FILE *)0x0) {
-    _fscanf(p_Var1,"%d,%d\n",&DAT_00600180,&DAT_00600184);
+    _fscanf(p_Var1,"%d,%d\n");
     _fclose(p_Var1);
   }
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460
@@ -61,7 +61,7 @@ void __cdecl core_inv_cpp_loadAssets_FUN_004da570(void)
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460
             (CAlphaBitmap_ARRAY_01d708e0 + 3,"sps15",0x40,0x40);
   _DAT_01d70a20 = 0xffffffff;
-  if (*(int *)&g_CGamePtr->field_0x4 < 0x180) {
+  if (g_CGamePtr->game_pixy < 0x180) {
     engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040da80(&CAlphaBitmap_01d70890,2,2);
     engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040da80(&CAlphaBitmap_01d708a4,2,2);
     engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040da80(&CAlphaBitmap_01d708b8,2,2);
@@ -70,8 +70,9 @@ void __cdecl core_inv_cpp_loadAssets_FUN_004da570(void)
   _DAT_01d5dc88 = 0;
   p_Var1 = engine_dosio_cpp_FUN_004659c0(&DAT_005c5fe1,"itemlist.txt",&DAT_005c5fd1);
   if (p_Var1 != (_FILE *)0x0) {
-    while (((byte)p_Var1[0xc] & 0x10) == 0) {
-      iVar2 = core_inv_cpp_loadItem_FUN_004da320(_DAT_01d5dc88 * 0x300 + 0x1d5dc90,p_Var1);
+    while ((p_Var1->_flag & 0x10) == 0) {
+      iVar2 = core_inv_cpp_loadItem_FUN_004da320
+                        ((SInventoryItemInfo *)(_DAT_01d5dc88 * 0x300 + 0x1d5dc90),p_Var1);
       if (iVar2 == 0) break;
       _DAT_01d5dc88 = _DAT_01d5dc88 + 1;
     }

@@ -4,13 +4,18 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
 
 // Structure: CLightCone
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x388 (904 bytes)
 #pragma pack(push, 1)
 typedef struct CLightCone {
-    char field_0[904]; // 0x0
+    CDemonActor base; // 0x0
+    float fov; // 0x2b4
+    float falloff; // 0x2b8
+    int state; // 0x2bc
+    char on_event[100]; // 0x2c0
+    char off_event[100]; // 0x324
 } CLightCone;
 #pragma pack(pop)
 

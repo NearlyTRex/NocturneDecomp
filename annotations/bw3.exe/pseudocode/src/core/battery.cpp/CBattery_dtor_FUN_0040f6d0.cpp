@@ -13,11 +13,11 @@ CBattery * __cdecl core_battery_cpp_CBattery_dtor_FUN_0040f6d0(CBattery *this_pt
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CBatteryTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CBatteryTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  pCVar1 = (CBattery *)core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)this_ptr,1);
+  pCVar1 = (CBattery *)core_actor_cpp_CDemonActor_dtor_FUN_00408770(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

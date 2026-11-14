@@ -12,8 +12,8 @@
 ; undefined1       Stack[-0x134]:1  local_134
 ;
 ; XREF[2]:
-;   shape_edittool.cpp_FUN_0047c970 at 0047c9e8
-;   shape_edittool.cpp_FUN_0047cb1e at 0047cc7e
+;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047c970 at 0047c9e8
+;   shape_edittool.cpp_FUN_0047cb20 at 0047cc7e
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_00481240

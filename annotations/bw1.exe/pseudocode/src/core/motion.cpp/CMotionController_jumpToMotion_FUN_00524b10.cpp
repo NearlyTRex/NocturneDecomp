@@ -14,14 +14,14 @@ void __cdecl core_motion_cpp_CMotionController_jumpToMotion_FUN_00524b10(CMotion
   int iVar1;
   
   if (target_frame_number == _DAT_005eaf57) {
-    iVar1 = (**(code **)(*(int *)&this_ptr->field_0x50 + 4))
-                      (this_ptr,*(uint *)&this_ptr->field_0x4,
-                       *(uint *)&this_ptr->field_0x8,target_motion_index);
+    iVar1 = (*this_ptr->vtable->findPatchToFrame)
+                      (this_ptr,this_ptr->current_motion_index,this_ptr->current_frame_number,
+                       target_motion_index);
     target_frame_number = (float)iVar1;
   }
-  *(uint *)&this_ptr->field_0x2c = 0;
-  *(int *)&this_ptr->field_0x4 = target_motion_index;
-  *(float *)&this_ptr->field_0x8 = target_frame_number;
+  this_ptr->in_transition = (SMotionTransition *)0x0;
+  this_ptr->current_motion_index = target_motion_index;
+  this_ptr->current_frame_number = target_frame_number;
   core_motion_cpp_CMotionController_clearTweenState_FUN_00524b70(this_ptr);
   return;
 }

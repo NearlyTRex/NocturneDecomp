@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   core_script.cpp_FUN_005437f0 at 00543836
-;   core_script.cpp_FUN_005439b0 at 005439cf
+;   core_script.cpp_CScript_process_FUN_005437f0 at 00543836
+;   core_script.cpp_CScript_renderSubtitles_FUN_005439b0 at 005439cf
 ;
 ; *****************************************************************************
 

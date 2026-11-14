@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_set_cpp_transformToWorldSpace_FUN_00553210(int *param_1)
+; CVector3i * __stack_esi core_set_cpp_transformToWorldSpace_FUN_00553210(CVector3i *input,CVector3i *output)
 ;
+; Parameters:
+; CVector3i *      Stack[0x4]:4   input
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10

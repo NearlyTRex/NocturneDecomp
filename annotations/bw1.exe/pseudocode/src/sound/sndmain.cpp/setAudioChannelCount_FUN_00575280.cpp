@@ -12,8 +12,8 @@ void __cdecl sound_sndmain_cpp_setAudioChannelCount_FUN_00575280(int channel_cou
   int sample_rate;
   int bits_per_sample;
   
-  sample_rate = sound_sndmain_cpp_FUN_00575220();
-  bits_per_sample = sound_sndmain_cpp_FUN_00575200();
+  sample_rate = sound_sndmain_cpp_getAudioSampleRate_FUN_00575220();
+  bits_per_sample = sound_sndmain_cpp_getAudioBitDepth_FUN_00575200();
   sound_sndmain_cpp_setSoundOutputMode_FUN_00575120(bits_per_sample,channel_count,sample_rate);
   return;
 }

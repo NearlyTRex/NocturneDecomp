@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_marquee_cpp_staticInit_FUN_004e7c20(void)
+; void __cdecl core_marquee_cpp_staticInit_FUN_004e7c20(void)
 ;
 ;
 ; Called Functions:

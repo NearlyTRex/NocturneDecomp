@@ -4,12 +4,17 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/STextureCacheEntry.h"
 
 // Structure: CTextureCache
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// alloc 0x1800c (g_TextureCacheInstance); ctor (bw1 00596560) zeroes +0x0, +0x18004, +0x18008 and memsets +0x4 for 0x18000; reset 005965d0 frees 4 pointers per 0x60 entry from +0x4 to +0x18004. nocedit's parallel arrays (dims, data, opacity, names, palettes) became an array of 96-byte entries; max_texture_count is gone (findFreeSlot wraps at 0x400).
+// Ghidra size: 0x1800c (98316 bytes)
 #pragma pack(push, 1)
 typedef struct CTextureCache {
+    int wrap_indicator; // 0x0, findFreeSlot 00596680: set 1 when count reaches 0x400; getTextureCacheStats 00597710 tests it
+    STextureCacheEntry entries[1024]; // 0x4, stride 0x60, 0x400 slots (findFreeSlot loop < 0x400)
+    int current_texture_count; // 0x18004, findFreeSlot param_1[0x6001]++; find 005970b0 loop bound
+    uint use_counter; // 0x18008, 00597140: entry.use_stamp = [+0x18008]; [+0x18008]++; reset and ctor zero it
 } CTextureCache;
 #pragma pack(pop)
 

@@ -1,0 +1,109 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 23,
+    "complexity_score": 16,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 2,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 39
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0045d020",
+    "address_range": [
+      [
+        "0045d020",
+        "0045d056"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_demnfolk.cpp_CDemnfolk_playFeedingSound_FUN_0045d020",
+    "signature": "void __cdecl core_demnfolk_cpp_CDemnfolk_playFeedingSound_FUN_0045d020(CDemnfolk *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cd00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_randomChance_FUN_0040cd00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d831b",
+      "name": "s_ghoul_eat_wav_005d831b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d832b",
+      "name": "s_ghoul_dig_wav_005d832b",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0588235294117645,
+    "instruction_count": 17,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 1,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 13,
+      "INT_ADD": 8,
+      "INT_AND": 7,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 7,
+      "LOAD": 5,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 69
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemnfolk *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDemnfolk",
+        "offset": 340,
+        "vtable_addr": "005fe6b4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

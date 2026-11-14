@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setutil_cpp_C3DSCamera_free_FUN_00541ac0(int param_1)
+; void __cdecl core_setutil_cpp_C3DSCamera_free_FUN_00541ac0(C3DSCamera *this_ptr)
 ;
+; Parameters:
+; C3DSCamera *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   core_set.cpp_CDemonSet_clear_FUN_00532b30 at 00532b4f

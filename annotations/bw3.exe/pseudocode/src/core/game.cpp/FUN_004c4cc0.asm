@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004b7f90 at 004b88d0
+;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b88d0
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005567c0

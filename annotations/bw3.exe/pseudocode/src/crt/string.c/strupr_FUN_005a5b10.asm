@@ -9,11 +9,11 @@
 ; XREF[7]:
 ;   core_event.cpp_FUN_004946f0 at 004947b0
 ;   core_event.cpp_FUN_004948e0 at 004949a0
-;   engine_font.cpp_FUN_004af920 at 004af982
-;   engine_font.cpp_FUN_004b01ce at 004b021d
+;   engine_font.cpp_CBitFont_loadBitmap_FUN_004af920 at 004af982
+;   engine_font.cpp_FUN_004b01d0 at 004b021d
+;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047e470 at 0047e56a
 ;   shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00482820 at 00482a25
-;   shape_edittool.cpp_FUN_0047dd1e at 0047e18e
-;   shape_edittool.cpp_FUN_0047e470 at 0047e56a
+;   shape_edittool.cpp_FUN_0047dd20 at 0047e18e
 ;
 ; *****************************************************************************
 

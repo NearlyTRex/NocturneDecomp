@@ -263,7 +263,8 @@ LAB_0049ef39:
       this_ptr->goggles_active = 0;
     }
     iVar4 = g_CDemonSetPtr->selected_camera_index;
-    core_setdir_cpp_CDemonSet_FUN_005125a0(g_CDemonSetPtr,g_CScriptPtr->focus_actor,1);
+    core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005125a0
+              (g_CDemonSetPtr,g_CScriptPtr->focus_actor,1);
     g_CScriptPtr->focus_actor_changed = 0;
     if (iVar4 == g_CDemonSetPtr->selected_camera_index) {
       core_set_cpp_CDemonSet_setCameraView_FUN_005088f0

@@ -2,22 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 171,
-    "complexity_score": 879,
+    "complexity_score": 604,
     "cross_reference_count": 47,
     "function_call_count": 0,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 119,
-    "suspect_count": 73,
+    "pseudocode_lines": 114,
+    "suspect_count": 47,
     "suspect_types": [
       "concat_reconstruction",
       "pointer_cast",
-      "pointer_truncation",
-      "unaffected_reg",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 290
+    "total_lines": 285
   },
   "cross_references": [
     {
@@ -291,15 +289,15 @@
       "type": "DATA"
     },
     {
-      "addr": "00516060",
-      "from_addr": "0051688e",
-      "name": "engine_mini3d.cpp_FUN_00516060",
+      "addr": "005168c0",
+      "from_addr": "00516c39",
+      "name": "engine_mini3d.cpp_fillPolygon_FUN_005168c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005168c0",
-      "from_addr": "00516c39",
-      "name": "engine_mini3d.cpp_FUN_005168c0",
+      "addr": "00516060",
+      "from_addr": "0051688e",
+      "name": "engine_mini3d.cpp_rasterizeTriangle_FUN_00516060",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -311,9 +309,9 @@
         "0057fd38"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__edi_esi_ebx",
     "name": "engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_0057fb03",
-    "signature": "int * engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_0057fb03(void)"
+    "signature": "void __edi_esi_ebx engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_0057fb03(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y)"
   },
   "function_calls": [],
   "globals": [
@@ -481,10 +479,36 @@
     },
     "pcode_op_count": 1065
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0055d0b3",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00562c33",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005b50ec",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "005300ec",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
-    "local_size": 4,
-    "param_offset": 4,
+    "frame_size": 0,
+    "local_size": 0,
+    "param_offset": 0,
     "param_size": 0,
     "return_addr_offset": 0,
     "variables": []
@@ -499,144 +523,48 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 15,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "int unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 17,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 20,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "uVar9 = *(uint *)(unaff_ESI + 8);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 21,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "uVar6 = *(uint *)(unaff_EDI + 8);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 23,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "iVar8 = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 27,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "iVar8 = unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 28,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "unaff_EDI = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 28,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_EDI = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 33,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "DAT_006239c8 = *(int *)(&DAT_01c4354c + unaff_EBX * 4) + (int)piVar3 * 4;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 30,
       "match": "DAT_006239c8",
       "severity": "mild",
-      "text": "DAT_006239c8 = *(int *)(&DAT_01c4354c + unaff_EBX * 4) + (int)piVar3 * 4;",
+      "text": "DAT_006239c8 = *(int *)(&DAT_01c4354c + scanline_y * 4) + uVar2 * 4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_01c4354c",
+      "severity": "mild",
+      "text": "DAT_006239c8 = *(int *)(&DAT_01c4354c + scanline_y * 4) + uVar2 * 4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_00623964",
+      "severity": "mild",
+      "text": "DAT_00623964 = iVar4 * 4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_01c4480c",
+      "severity": "mild",
+      "text": "piVar8 = (int *)(*(int *)(&DAT_01c4480c + scanline_y * 4) + uVar2 * 4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 33,
-      "match": "DAT_01c4354c",
-      "severity": "mild",
-      "text": "DAT_006239c8 = *(int *)(&DAT_01c4354c + unaff_EBX * 4) + (int)piVar3 * 4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_00623964",
-      "severity": "mild",
-      "text": "DAT_00623964 = iVar5 * 4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 35,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "piVar3 = (int *)(*(int *)(&DAT_01c4480c + unaff_EBX * 4) + (int)piVar3 * 4);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_01c4480c",
-      "severity": "mild",
-      "text": "piVar3 = (int *)(*(int *)(&DAT_01c4480c + unaff_EBX * 4) + (int)piVar3 * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
       "match": "DAT_006239cc",
       "severity": "mild",
-      "text": "DAT_006239cc = piVar3;",
+      "text": "DAT_006239cc = piVar8;",
       "type": "undefined_data"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 40,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "((longlong)(*(int *)(unaff_EDI + 0x28) - (int)piVar4) *",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 38,
       "match": "DAT_01c4f034",
       "severity": "mild",
       "text": "(longlong)*(int *)(&DAT_01c4f034 + DAT_00623964)) >> 0x20);",
@@ -644,7 +572,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 38,
       "match": "DAT_00623964",
       "severity": "mild",
       "text": "(longlong)*(int *)(&DAT_01c4f034 + DAT_00623964)) >> 0x20);",
@@ -652,7 +580,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 42,
+      "line": 39,
       "match": "DAT_00623964",
       "severity": "mild",
       "text": "uVar9 = DAT_00623964;",
@@ -660,63 +588,39 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 40,
       "match": "DAT_006239ac",
       "severity": "mild",
-      "text": "DAT_006239ac = piVar4;",
+      "text": "DAT_006239ac = iVar4;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 41,
       "match": "DAT_00623dd8",
       "severity": "mild",
-      "text": "DAT_00623dd8 = iVar8;",
+      "text": "DAT_00623dd8 = iVar6;",
       "type": "undefined_data"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(int *)((int)piVar4",
-      "severity": "moderate",
-      "text": "piVar4 = (int *)((int)piVar4 + iVar8);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 54,
       "match": "DAT_006239a0",
       "severity": "mild",
       "text": "DAT_006239a0 = (uint)(CONCAT44(((int)uVar9 >> 0x1f) << 0x18 | uVar9 >> 8,uVar9 << 0x18) /",
       "type": "undefined_data"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 59,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "uVar9 = *(uint *)(unaff_EDI + 0x18);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 64,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "(longlong)*(int *)(unaff_EDI + 0x28)) - DAT_006239a0) *",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 61,
       "match": "DAT_006239a0",
       "severity": "mild",
-      "text": "(longlong)*(int *)(unaff_EDI + 0x28)) - DAT_006239a0) *",
+      "text": "(longlong)(left_vertex->base).depth_current) - DAT_006239a0) *",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 62,
       "match": "DAT_01c4f034",
       "severity": "mild",
       "text": "(longlong)*(int *)(&DAT_01c4f034 + DAT_00623964)) >> 0x20);",
@@ -724,7 +628,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 62,
       "match": "DAT_00623964",
       "severity": "mild",
       "text": "(longlong)*(int *)(&DAT_01c4f034 + DAT_00623964)) >> 0x20);",
@@ -732,39 +636,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 64,
       "match": "DAT_006239a4",
       "severity": "mild",
       "text": "DAT_006239a4 = (uint)(CONCAT44(((int)uVar9 >> 0x1f) << 0x18 | uVar9 >> 8,uVar9 << 0x18) /",
       "type": "undefined_data"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 69,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "uVar9 = *(uint *)(unaff_EDI + 0x20);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 74,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "(longlong)*(int *)(unaff_EDI + 0x28)) - DAT_006239a4) *",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 74,
+      "line": 71,
       "match": "DAT_006239a4",
       "severity": "mild",
-      "text": "(longlong)*(int *)(unaff_EDI + 0x28)) - DAT_006239a4) *",
+      "text": "(longlong)(left_vertex->base).depth_current) - DAT_006239a4) *",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 72,
       "match": "DAT_01c4f034",
       "severity": "mild",
       "text": "(longlong)*(int *)(&DAT_01c4f034 + DAT_00623964)) >> 0x20);",
@@ -772,10 +660,18 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 72,
       "match": "DAT_00623964",
       "severity": "mild",
       "text": "(longlong)*(int *)(&DAT_01c4f034 + DAT_00623964)) >> 0x20);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 75,
+      "match": "DAT_006239a0",
+      "severity": "mild",
+      "text": "DAT_006239a0 = (pSVar7->base).u_current;",
       "type": "undefined_data"
     },
     {
@@ -783,28 +679,12 @@
       "line": 78,
       "match": "DAT_006239a0",
       "severity": "mild",
-      "text": "DAT_006239a0 = *(uint *)(iVar8 + 0x18);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 81,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "((longlong)(int)(*(int *)(unaff_EDI + 0x18) - DAT_006239a0) *",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 81,
-      "match": "DAT_006239a0",
-      "severity": "mild",
-      "text": "((longlong)(int)(*(int *)(unaff_EDI + 0x18) - DAT_006239a0) *",
+      "text": "((longlong)(int)((left_vertex->base).u_current - DAT_006239a0) *",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 82,
+      "line": 79,
       "match": "DAT_01c4f034",
       "severity": "mild",
       "text": "(longlong)*(int *)(&DAT_01c4f034 + DAT_00623964)) >> 0x20);",
@@ -812,10 +692,18 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 82,
+      "line": 79,
       "match": "DAT_00623964",
       "severity": "mild",
       "text": "(longlong)*(int *)(&DAT_01c4f034 + DAT_00623964)) >> 0x20);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 80,
+      "match": "DAT_006239a4",
+      "severity": "mild",
+      "text": "DAT_006239a4 = (pSVar7->base).v_current;",
       "type": "undefined_data"
     },
     {
@@ -823,28 +711,12 @@
       "line": 83,
       "match": "DAT_006239a4",
       "severity": "mild",
-      "text": "DAT_006239a4 = *(uint *)(iVar8 + 0x20);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 86,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "((longlong)(int)(*(int *)(unaff_EDI + 0x20) - DAT_006239a4) *",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 86,
-      "match": "DAT_006239a4",
-      "severity": "mild",
-      "text": "((longlong)(int)(*(int *)(unaff_EDI + 0x20) - DAT_006239a4) *",
+      "text": "((longlong)(int)((left_vertex->base).v_current - DAT_006239a4) *",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 84,
       "match": "DAT_01c4f034",
       "severity": "mild",
       "text": "(longlong)*(int *)(&DAT_01c4f034 + DAT_00623964)) >> 0x20);",
@@ -852,135 +724,127 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 84,
       "match": "DAT_00623964",
       "severity": "mild",
       "text": "(longlong)*(int *)(&DAT_01c4f034 + DAT_00623964)) >> 0x20);",
       "type": "undefined_data"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 90,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "lVar2 = (longlong)(*(int *)(unaff_EDI + 0x28) - iVar8) *",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 91,
-      "match": "DAT_01c4f034",
-      "severity": "mild",
-      "text": "(longlong)*(int *)(&DAT_01c4f034 + DAT_00623964);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 91,
-      "match": "DAT_00623964",
-      "severity": "mild",
-      "text": "(longlong)*(int *)(&DAT_01c4f034 + DAT_00623964);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 92,
+      "line": 87,
       "match": "DAT_00623dd8",
       "severity": "mild",
-      "text": "DAT_00623dd8 = (int)((ulonglong)lVar2 >> 0x20);",
+      "text": "DAT_00623dd8 = (int)((ulonglong)",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 95,
+      "line": 89,
+      "match": "DAT_01c4f034",
+      "severity": "mild",
+      "text": "(longlong)*(int *)(&DAT_01c4f034 + DAT_00623964)) >> 0x20);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 89,
+      "match": "DAT_00623964",
+      "severity": "mild",
+      "text": "(longlong)*(int *)(&DAT_01c4f034 + DAT_00623964)) >> 0x20);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 91,
       "match": "DAT_006239ac",
       "severity": "mild",
-      "text": "DAT_006239ac = (int *)iVar8;",
+      "text": "DAT_006239ac = iVar4;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 97,
+      "line": 93,
       "match": "DAT_006239a4",
       "severity": "mild",
-      "text": "(uVar6 = DAT_006239a4, uVar7 = DAT_006239a0, (_DAT_01c51d14 & 2) == 0)) {",
+      "text": "(uVar5 = DAT_006239a4, uVar2 = DAT_006239a0, (_DAT_01c51d14 & 2) == 0)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 97,
+      "line": 93,
       "match": "DAT_006239a0",
       "severity": "mild",
-      "text": "(uVar6 = DAT_006239a4, uVar7 = DAT_006239a0, (_DAT_01c51d14 & 2) == 0)) {",
+      "text": "(uVar5 = DAT_006239a4, uVar2 = DAT_006239a0, (_DAT_01c51d14 & 2) == 0)) {",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 100,
+      "line": 95,
       "match": "(int *)(uVar9 + (int)DAT_006239cc",
       "severity": "moderate",
-      "text": "(piVar3 = (int *)(uVar9 + (int)DAT_006239cc), *piVar3 <= iVar8)) {",
+      "text": "if (((_DAT_01c51d14 & 0x40) == 0) || (*(int *)(uVar9 + (int)DAT_006239cc) <= iVar4)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 100,
+      "line": 95,
       "match": "DAT_006239cc",
       "severity": "mild",
-      "text": "(piVar3 = (int *)(uVar9 + (int)DAT_006239cc), *piVar3 <= iVar8)) {",
+      "text": "if (((_DAT_01c51d14 & 0x40) == 0) || (*(int *)(uVar9 + (int)DAT_006239cc) <= iVar4)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 103,
+      "line": 99,
       "match": "DAT_01c4e3d4",
       "severity": "mild",
-      "text": "piVar3 = *(int **)(&DAT_01c4e3d4 +",
+      "text": "(&DAT_01c4e3d4 +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 100,
+      "match": "DAT_00623eb8",
+      "severity": "mild",
+      "text": "(uint)*(byte *)((uVar2 >> (DAT_00623eb8 & 0x1f) & _DAT_00623ef8) +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 102,
+      "match": "DAT_00623ed8",
+      "severity": "mild",
+      "text": "(uVar5 >> (DAT_00623ed8 & 0x1f) & _DAT_00623f18)) * 4);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 104,
-      "match": "DAT_00623eb8",
-      "severity": "mild",
-      "text": "(uint)*(byte *)((uVar7 >> (DAT_00623eb8 & 0x1f) & _DAT_00623ef8) +",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 106,
-      "match": "DAT_00623ed8",
-      "severity": "mild",
-      "text": "(uVar6 >> (DAT_00623ed8 & 0x1f) & _DAT_00623f18)) * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 108,
       "match": "DAT_006239c8",
       "severity": "mild",
-      "text": "*(int **)(DAT_006239c8 + uVar9) = piVar3;",
+      "text": "*(uint *)(DAT_006239c8 + uVar9) = uVar3;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 110,
+      "line": 106,
       "match": "(int *)((int)DAT_006239cc",
       "severity": "moderate",
-      "text": "piVar3 = (int *)((int)DAT_006239cc + uVar9);",
+      "text": "*(int *)((int)DAT_006239cc + uVar9) = iVar4;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 110,
+      "line": 106,
       "match": "DAT_006239cc",
       "severity": "mild",
-      "text": "piVar3 = (int *)((int)DAT_006239cc + uVar9);",
+      "text": "*(int *)((int)DAT_006239cc + uVar9) = iVar4;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 115,
+      "line": 110,
       "match": "DAT_00623964",
       "severity": "mild",
       "text": "if (DAT_00623964 <= uVar9) break;",
@@ -988,63 +852,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 118,
+      "line": 113,
       "match": "DAT_00623dd8",
       "severity": "mild",
-      "text": "iVar8 = iVar8 + DAT_00623dd8;",
+      "text": "iVar4 = iVar4 + DAT_00623dd8;",
       "type": "undefined_data"
     },
     {
-      "description": "Pointer value `piVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 31,
-      "match": "(int)piVar3",
-      "severity": "moderate",
-      "text": "iVar5 = (int)(uVar6 >> 0x10) - (int)piVar3;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `piVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 33,
-      "match": "(int)piVar3",
-      "severity": "moderate",
-      "text": "DAT_006239c8 = *(int *)(&DAT_01c4354c + unaff_EBX * 4) + (int)piVar3 * 4;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `piVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 35,
-      "match": "(int)piVar3",
-      "severity": "moderate",
-      "text": "piVar3 = (int *)(*(int *)(&DAT_01c4480c + unaff_EBX * 4) + (int)piVar3 * 4);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `piVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 40,
-      "match": "(int)piVar4",
-      "severity": "moderate",
-      "text": "((longlong)(*(int *)(unaff_EDI + 0x28) - (int)piVar4) *",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `piVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 46,
-      "match": "(int)piVar4",
-      "severity": "moderate",
-      "text": "*piVar3 = (int)piVar4;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `piVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 47,
-      "match": "(int)piVar4",
-      "severity": "moderate",
-      "text": "piVar4 = (int *)((int)piVar4 + iVar8);",
-      "type": "pointer_truncation"
-    },
-    {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 57,
+      "line": 54,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "DAT_006239a0 = (uint)(CONCAT44(((int)uVar9 >> 0x1f) << 0x18 | uVar9 >> 8,uVar9 << 0x18) /",
@@ -1052,7 +868,7 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 63,
+      "line": 60,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "(int)((int)(CONCAT44(((int)uVar9 >> 0x1f) << 0x18 | uVar9 >> 8,uVar9 << 0x18) /",
@@ -1060,7 +876,7 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 67,
+      "line": 64,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "DAT_006239a4 = (uint)(CONCAT44(((int)uVar9 >> 0x1f) << 0x18 | uVar9 >> 8,uVar9 << 0x18) /",
@@ -1068,7 +884,7 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 73,
+      "line": 70,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "(int)((int)(CONCAT44(((int)uVar9 >> 0x1f) << 0x18 | uVar9 >> 8,uVar9 << 0x18) /",

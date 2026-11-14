@@ -4,13 +4,18 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CMatrix3x3f.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: SRoom
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x44 (68 bytes)
 #pragma pack(push, 1)
 typedef struct SRoom {
-    char field_0[68]; // 0x0
+    CVector3f position; // 0x0
+    CVector3f extents; // 0xc
+    CMatrix3x3f rotation_matrix; // 0x18
+    int dead; // 0x3c
+    int reverb_size; // 0x40
 } SRoom;
 #pragma pack(pop)
 

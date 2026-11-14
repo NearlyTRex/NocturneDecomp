@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 347,
-    "complexity_score": 232,
-    "cross_reference_count": 4,
+    "complexity_score": 101,
+    "cross_reference_count": 5,
     "function_call_count": 3,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 92,
-    "suspect_count": 13,
+    "pseudocode_lines": 86,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 439
+    "total_lines": 433
   },
   "cross_references": [
     {
@@ -29,15 +28,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0050a2b0",
-      "from_addr": "0050a38e",
-      "name": "core_menu.cpp_FUN_0050a2b0",
+      "addr": "0050d5b0",
+      "from_addr": "0050d5e6",
+      "name": "core_menu.cpp_FUN_0050d5b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0050d640",
       "from_addr": "0050e86a",
       "name": "core_menu.cpp_FUN_0050d640",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050a2b0",
+      "from_addr": "0050a38e",
+      "name": "core_menu.cpp_calibrateGamepad_FUN_0050a2b0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -115,7 +120,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 8,
+    "call_site_count": 9,
     "call_sites": [
       {
         "call_addr": "004d7b9a",
@@ -153,7 +158,7 @@
       {
         "call_addr": "0050a38e",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_0050a2b0",
+        "caller": "core_menu.cpp_calibrateGamepad_FUN_0050a2b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -164,7 +169,7 @@
       {
         "call_addr": "0050a4b6",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_0050a2b0",
+        "caller": "core_menu.cpp_calibrateGamepad_FUN_0050a2b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -198,6 +203,17 @@
         "call_addr": "0050eac7",
         "call_type": "direct",
         "caller": "core_menu.cpp_FUN_0050d640",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0050d5e6",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_0050d5b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -241,6 +257,32 @@
     },
     "pcode_op_count": 1134
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004b7140",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004b93e0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004dbe60",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0049e8b0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 28,
     "local_size": 24,
@@ -272,102 +314,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 77,
-      "match": "field_0xb8",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0xb8 -",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 78,
-      "match": "field_0xb8",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0xb8 - *(int *)&this_ptr->field_0xc0) / 2) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 78,
-      "match": "field_0xc0",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0xb8 - *(int *)&this_ptr->field_0xc0) / 2) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 81,
-      "match": "field_0xc4",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0xc4 - *(int *)&this_ptr->field_0xb8) / 2 +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 81,
-      "match": "field_0xb8",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0xc4 - *(int *)&this_ptr->field_0xb8) / 2 +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 82,
-      "match": "field_0xb8",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0xb8 < _DAT_01c51cb0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 86,
-      "match": "field_0xbc",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0xbc -",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 87,
-      "match": "field_0xbc",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0xbc - *(int *)&this_ptr->field_0xc8) / 2) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 87,
-      "match": "field_0xc8",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0xbc - *(int *)&this_ptr->field_0xc8) / 2) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 90,
-      "match": "field_0xcc",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0xcc - *(int *)&this_ptr->field_0xbc) / 2 +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 90,
-      "match": "field_0xbc",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0xcc - *(int *)&this_ptr->field_0xbc) / 2 +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 91,
-      "match": "field_0xbc",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0xbc < _DAT_01c51cb4) {",
-      "type": "unnamed_field"
     }
   ]
 }

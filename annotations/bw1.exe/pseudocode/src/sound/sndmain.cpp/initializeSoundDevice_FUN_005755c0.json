@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 123,
+    "complexity_score": 109,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 28,
-    "suspect_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 29,
+    "suspect_count": 7,
     "suspect_types": [
       "undefined_data",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 99
+    "total_lines": 100
   },
   "cross_references": [
     {
@@ -180,6 +179,32 @@
     },
     "pcode_op_count": 380
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00552b90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00558730",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005ab5b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00528500",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -226,7 +251,7 @@
       "line": 18,
       "match": "DAT_006232fc",
       "severity": "mild",
-      "text": "(*(uint *)(DAT_006232fc * 0x118 + 0x2c7fe94));",
+      "text": "(*(UINT *)(DAT_006232fc * 0x118 + 0x2c7fe94));",
       "type": "undefined_data"
     },
     {
@@ -239,19 +264,11 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 24,
       "match": "DAT_006232fc",
       "severity": "mild",
-      "text": "(*(uint *)(DAT_006232fc * 0x118 + 0x2c7fe94));",
+      "text": "(*(UINT *)(DAT_006232fc * 0x118 + 0x2c7fe94));",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 28,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "_DAT_02c80658 = (**(code **)(*_DAT_02c80650 + 0x14))(_DAT_02c80650);",
-      "type": "unresolved_funcptr"
     }
   ]
 }

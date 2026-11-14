@@ -4,13 +4,22 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
 
 // Structure: CGrave
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x50c (1292 bytes)
 #pragma pack(push, 1)
 typedef struct CGrave {
-    char field_0[1292]; // 0x0
+    CDemonActor base; // 0x0
+    CKeyFramedModelInstance model; // 0x2b4
+    float cur_frame; // 0x430
+    float fps; // 0x434
+    int animation_started; // 0x438
+    int grave_state; // 0x43c
+    int hide_on_first_frame; // 0x440
+    char start_condition[100]; // 0x444
+    char start_sound[100]; // 0x4a8
 } CGrave;
 #pragma pack(pop)
 

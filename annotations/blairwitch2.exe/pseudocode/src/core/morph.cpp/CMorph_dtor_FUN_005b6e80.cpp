@@ -9,9 +9,9 @@
 CMorph * __cdecl core_morph_cpp_CMorph_dtor_FUN_005b6e80(CMorph *this_ptr,uint flags)
 
 {
-  CMorphModel *pCVar1;
+  CMorph *pCVar1;
   
   core_morph_cpp_CMorph_free_FUN_005b6ea0(this_ptr);
-  pCVar1 = core_morph_cpp_FUN_005b7720((CMorphModel *)this_ptr,0);
-  return (CMorph *)pCVar1;
+  pCVar1 = (CMorph *)core_morph_cpp_FUN_005b7720(this_ptr->models,0);
+  return pCVar1;
 }

@@ -1,19 +1,23 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl crt_stdio_c_fseek_FUN_005b929c(undefined4 *param_1,int param_2,uint param_3)
+; int __cdecl crt_stdio_c_fseek_FUN_005b929c(_FILE *file,long offset,int whence)
 ;
+; Parameters:
+; _FILE *          Stack[0x4]:4   file
+; long             Stack[0x8]:4   offset
+; int              Stack[0xc]:4   whence
 ;
 ; XREF[18]:
-;   cockpit_pkbitmap.cpp_FUN_00516f30 at 0051711c
+;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_00516f30 at 0051711c
 ;   cockpit_pkbmpset.cpp_FUN_00517a60 at 00517b1a
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0043e930 at 0043f150
 ;   core_game.cpp_FUN_004bbf70 at 004bc182
 ;   crt_unknown.c_FUN_005b8f9c at 005b9096
 ;   engine_dosio.cpp_FUN_00460c70 at 00460d19
+;   engine_pod.cpp_CPodFile_mountFromFile_FUN_00519f00 at 0051a30e
 ;   engine_pod.cpp_FUN_00519dc0 at 00519dfb
-;   engine_pod.cpp_FUN_00519f00 at 0051a30e
-;   engine_pod.cpp_FUN_0051aa7e at 0051aafd
+;   engine_pod.cpp_FUN_0051aa80 at 0051aafd
 ;   engine_pod.cpp_FUN_0051ad50 at 0051adf6
 ;   ... and 8 more
 ;

@@ -7,103 +7,103 @@
 
 // Original: core_bugs.cpp_staticInit_FUN_00420e40
 // Address: 00420e40
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_bugs.cpp_factoryFuncBugs_FUN_00420e70
 // Address: 00420e70
-void factoryFuncBugs(void);
+CBugs * __cdecl factoryFuncBugs(void);
 
 // Original: core_bugs.cpp_CBugs_getActorType_FUN_00420e90
 // Address: 00420e90
-CDemonActorType * CBugs::getActorType(CBugs *this_ptr);
+CDemonActorType * __cdecl CBugs::getActorType(CBugs *this_ptr);
 
 // Original: core_bugs.cpp_CBugs_ctor_FUN_00420ea0
 // Address: 00420ea0
-CBugs * CBugs::ctor(CBugs *this_ptr);
+CBugs * __cdecl CBugs::ctor(CBugs *this_ptr);
 
-// Original: core_bugs.cpp_FUN_00421060
+// Original: core_bugs.cpp_CBugs_setup_FUN_00421060
 // Address: 00421060
-void FUN_00421060(CBugs *param_1);
+void __cdecl CBugs::setup(CBugs *this_ptr);
 
-// Original: core_bugs.cpp_FUN_00421300
+// Original: core_bugs.cpp_CBugs_process_FUN_00421300
 // Address: 00421300
-void FUN_00421300(CBugs *param_1,float param_2);
+void __cdecl CBugs::process(CBugs *this_ptr,float delta_time);
 
-// Original: core_bugs.cpp_FUN_004215f0
+// Original: core_bugs.cpp_CBugs_renderOpaque_FUN_004215f0
 // Address: 004215f0
-int FUN_004215f0(CDemonActor *param_1);
+int __cdecl CBugs::renderOpaque(CBugs *this_ptr);
 
-// Original: core_bugs.cpp_FUN_004217c0
+// Original: core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_004217c0
 // Address: 004217c0
-void FUN_004217c0(int param_1);
+void __cdecl CBugs::renderGroundHeightGrid(CBugs *this_ptr);
 
-// Original: core_bugs.cpp_FUN_00421930
+// Original: core_bugs.cpp_CBugs_getBoundingBox_FUN_00421930
 // Address: 00421930
-void FUN_00421930(int param_1);
+CBoundingBox3D * __cdecl CBugs::getBoundingBox(CBugs *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_bugs.cpp_FUN_00421960
+// Original: core_bugs.cpp_CBugs_archive_FUN_00421960
 // Address: 00421960
-void FUN_00421960(int param_1);
+void __cdecl CBugs::archive(CBugs *this_ptr);
 
-// Original: core_bugs.cpp_FUN_00421aa0
+// Original: core_bugs.cpp_CBugs_getCollisionType_FUN_00421aa0
 // Address: 00421aa0
-undefined4 FUN_00421aa0(void);
+ECollisionType __cdecl CBugs::getCollisionType(CBugs *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_bugs.cpp_FUN_00421ab0
+// Original: core_bugs.cpp_CBugs_getDeathState_FUN_00421ab0
 // Address: 00421ab0
-undefined4 FUN_00421ab0(int param_1);
+EDeathState __cdecl CBugs::getDeathState(CBugs *this_ptr);
 
-// Original: core_bugs.cpp_FUN_00421ad0
+// Original: core_bugs.cpp_CBugs_processDamage_FUN_00421ad0
 // Address: 00421ad0
-void FUN_00421ad0(int param_1,int param_2);
+void __cdecl CBugs::processDamage(CBugs *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_bugs.cpp_FUN_00421b00
+// Original: core_bugs.cpp_CBugs_initializeSwarmGraph_FUN_00421b00
 // Address: 00421b00
-void __cdecl FUN_00421b00(CBugs *this_ptr,int tri_count,SInputFace *triangles);
+void __cdecl CBugs::initializeSwarmGraph(CBugs *this_ptr,int tri_count,SInputFace *triangles);
 
 // Original: core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00421be0
 // Address: 00421be0
 void __cdecl CBugs::addSwarmGraphEdge(CBugs *this_ptr,int vertex_index,int neighbor_index,int first_edge_data);
 
-// Original: core_bugs.cpp_FUN_00421c90
+// Original: core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_00421c90
 // Address: 00421c90
-void __cdecl FUN_00421c90(CBugs *this_ptr);
+void __cdecl CBugs::updateGroundHeightGrid(CBugs *this_ptr);
 
-// Original: core_bugs.cpp_FUN_00422070
+// Original: core_bugs.cpp_CBugs_sampleGroundHeight_FUN_00422070
 // Address: 00422070
-undefined4 FUN_00422070(int param_1,float param_2,float param_3);
+float __cdecl CBugs::sampleGroundHeight(CBugs *this_ptr,float x,float z);
 
-// Original: core_bugs.cpp_FUN_004221c0
+// Original: core_bugs.cpp_CBugs_updateBugsBehavior_FUN_004221c0
 // Address: 004221c0
-void __cdecl FUN_004221c0(CBugs *this_ptr,float delta_time);
+void __cdecl CBugs::updateBugsBehavior(CBugs *this_ptr,float delta_time);
 
-// Original: core_bugs.cpp_FUN_00422570
+// Original: core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422570
 // Address: 00422570
-void __cdecl FUN_00422570(CBugs *this_ptr,float delta_time);
+void __cdecl CBugs::attackSwarmTarget(CBugs *this_ptr,float delta_time);
 
-// Original: core_bugs.cpp_FUN_004229f0
+// Original: core_bugs.cpp_CBugs_updateBoundingBox_FUN_004229f0
 // Address: 004229f0
-void __cdecl FUN_004229f0(CBugs *this_ptr,float delta_time);
+void __cdecl CBugs::updateBoundingBox(CBugs *this_ptr,float delta_time);
 
 // Original: core_bugs.cpp_FUN_00422a00
 // Address: 00422a00
-undefined4 FUN_00422a00(undefined4 param_1,int *param_2,float param_3,float *param_4);
+undefined4 FUN_00422a00(CBugs *param_1,int *param_2,float param_3,float *param_4);
 
 // Original: core_bugs.cpp_FUN_00423050
 // Address: 00423050
 void FUN_00423050(CBugs *param_1,SBug *param_2,float param_3);
 
-// Original: core_bugs.cpp_FUN_004239c0
+// Original: core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_004239c0
 // Address: 004239c0
-void __cdecl FUN_004239c0(CBugs *this_ptr,SBug *bug_data);
+void __cdecl CBugs::findNextSwarmVertex(CBugs *this_ptr,SBug *bug_data);
 
-// Original: core_bugs.cpp_FUN_00423bc0
+// Original: core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_00423bc0
 // Address: 00423bc0
-void __cdecl FUN_00423bc0(CBugs *this_ptr);
+void __cdecl CBugs::recalculateBoundingBox(CBugs *this_ptr);
 
-// Original: core_bugs.cpp_FUN_00423cd0
+// Original: core_bugs.cpp_CBugs_setSwarmTarget_FUN_00423cd0
 // Address: 00423cd0
-void __cdecl FUN_00423cd0(CBugs *this_ptr,CDemonActor *target);
+void __cdecl CBugs::setSwarmTarget(CBugs *this_ptr,CDemonActor *target);
 
 // Original: core_bugs.cpp_FUN_00423fb0
 // Address: 00423fb0
@@ -123,12 +123,12 @@ int FUN_004242d0(int param_1);
 
 // Original: core_bugs.cpp_maxFloat_FUN_00424300
 // Address: 00424300
-float __cdecl maxFloat(float param_1,float param_2);
+float __cdecl maxFloat(float a,float b);
 
 // Original: core_bugs.cpp_CBugs_dtor_FUN_00424330
 // Address: 00424330
-CBugs * CBugs::dtor(CBugs *this_ptr,uint flags);
+CBugs * __cdecl CBugs::dtor(CBugs *this_ptr,uint flags);
 
 // Original: core_bugs.cpp_SBug_ctor_FUN_004243c0
 // Address: 004243c0
-SBug * SBug::ctor(SBug *this_ptr);
+SBug * __cdecl SBug::ctor(SBug *this_ptr);

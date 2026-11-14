@@ -1,20 +1,20 @@
 // Name: core_platfrm.cpp_factoryFuncPlatform_FUN_005110b0
 // Address: 005110b0
 // Address Range: [[005110b0, 005110cb]]
-// Convention: unknown
-// Signature: void core_platfrm_cpp_factoryFuncPlatform_FUN_005110b0(void)
+// Convention: __cdecl
+// Signature: CPlatform * __cdecl core_platfrm_cpp_factoryFuncPlatform_FUN_005110b0(void)
 
 #include "nocturne.h"
 
-void core_platfrm_cpp_factoryFuncPlatform_FUN_005110b0(void)
+CPlatform * __cdecl core_platfrm_cpp_factoryFuncPlatform_FUN_005110b0(void)
 
 {
-  CPlatform *this_ptr;
+  CPlatform *pCVar1;
   
-  this_ptr = (CPlatform *)FUN_005a3cb2(0x728);
-  if (this_ptr == (CPlatform *)0x0) {
-    return;
+  pCVar1 = (CPlatform *)operator_new(0x728);
+  if (pCVar1 == (CPlatform *)0x0) {
+    return (CPlatform *)0x0;
   }
-  core_platfrm_cpp_CPlatform_ctor_FUN_005110e0(this_ptr);
-  return;
+  pCVar1 = core_platfrm_cpp_CPlatform_ctor_FUN_005110e0(pCVar1);
+  return pCVar1;
 }

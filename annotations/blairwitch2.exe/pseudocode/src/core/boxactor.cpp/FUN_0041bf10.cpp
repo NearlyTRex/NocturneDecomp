@@ -27,9 +27,10 @@ void core_boxactor_cpp_FUN_0041bf10(int param_1)
   float fStack_5c;
   CVector3f CStack_58;
   CVector3f CStack_4c;
-  CVector3f CStack_40;
-  float fStack_34;
-  float afStack_30 [5];
+  float fStack_40;
+  float afStack_3c [4];
+  float fStack_2c;
+  float afStack_28 [3];
   float fStack_1c;
   float fStack_18;
   float fStack_14;
@@ -53,26 +54,25 @@ void core_boxactor_cpp_FUN_0041bf10(int param_1)
       fStack_c = fStack_78 + fStack_6c;
       fStack_8 = fStack_74 + fStack_68;
       fStack_1c = local_7c + fStack_70;
-      afStack_30[(uint)bVar4 * -2 + 6] = afStack_30[(uint)bVar4 * -2 + 9];
-      afStack_30[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7] =
-           afStack_30[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 10];
-      fStack_34 = fStack_1c * _DAT_005cc515;
-      afStack_30[0] = fStack_18 * _DAT_005cc515;
-      afStack_30[1] = fStack_14 * _DAT_005cc515;
-      afStack_30[2] = fStack_1c * _DAT_005cc515;
-      afStack_30[(uint)bVar4 * -2 + 3] = afStack_30[(uint)bVar4 * -2];
-      afStack_30[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
-           afStack_30[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-      core_actor_cpp_FUN_00408d70(param_1,afStack_30 + 2);
-      CStack_4c._0_4_ = CStack_40._0_4_;
-      *(uint *)((int)&CStack_4c + (uint)bVar4 * -8 + 4) =
-           *(uint *)((int)&CStack_40 + (uint)bVar4 * -8 + 4);
-      *(uint *)((int)&CStack_4c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-           *(uint *)((int)&CStack_40 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+      afStack_3c[(uint)bVar4 * -2 + 9] = afStack_3c[(uint)bVar4 * -2 + 0xc];
+      afStack_3c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 10] =
+           afStack_3c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0xd];
+      afStack_3c[2] = fStack_1c * _DAT_005cc515;
+      afStack_3c[3] = fStack_18 * _DAT_005cc515;
+      fStack_2c = fStack_14 * _DAT_005cc515;
+      afStack_28[0] = fStack_1c * _DAT_005cc515;
+      afStack_3c[(uint)bVar4 * -2 + 6] = afStack_3c[(uint)bVar4 * -2 + 3];
+      afStack_3c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7] =
+           afStack_3c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
+      core_actor_cpp_FUN_00408d70(param_1,afStack_3c + 5);
+      CStack_4c.x = fStack_40;
+      *(float *)((int)&CStack_4c + (uint)bVar4 * -8 + 4) = afStack_3c[(uint)bVar4 * -2];
+      *(float *)((int)&CStack_4c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+           afStack_3c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
       fStack_64 = fStack_70 - local_7c;
       fStack_60 = fStack_6c - fStack_78;
       fStack_5c = fStack_68 - fStack_74;
-      CStack_58._0_4_ = fStack_70 - local_7c;
+      CStack_58.x = fStack_70 - local_7c;
       *(uint *)((int)&CStack_58 + (uint)bVar4 * -8 + 4) =
            *(uint *)((int)&stack0xffffffa0 + (uint)bVar4 * -8);
       *(uint *)((int)&CStack_58 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =

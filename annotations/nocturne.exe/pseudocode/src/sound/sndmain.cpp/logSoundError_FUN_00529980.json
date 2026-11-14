@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 27,
     "complexity_score": 25,
-    "cross_reference_count": 32,
+    "cross_reference_count": 33,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "moderate",
@@ -97,6 +97,12 @@
       "addr": "0052ae90",
       "from_addr": "0052af3d",
       "name": "sound_snddx.cpp_CDirectSoundDevice_unlockSample_FUN_0052ae90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00529bb0",
+      "from_addr": "00529bf4",
+      "name": "sound_snddx.cpp_checkDirectSoundError_FUN_00529bb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -394,6 +400,32 @@
       "STORE": 11
     },
     "pcode_op_count": 96
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005549c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6939
+    },
+    "bw1.exe": {
+      "addr": "005773f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6939
+    },
+    "bw3.exe": {
+      "addr": "0055a560",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6939
+    },
+    "nocedit.exe": {
+      "addr": "005adba0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3
+    }
   },
   "stack_frame": {
     "frame_size": 1040,

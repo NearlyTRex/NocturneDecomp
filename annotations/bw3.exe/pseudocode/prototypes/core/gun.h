@@ -7,27 +7,27 @@
 
 // Original: core_gun.cpp_staticInit_FUN_004d0f00
 // Address: 004d0f00
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_gun.cpp_factoryFuncGun_FUN_004d0f30
 // Address: 004d0f30
-void factoryFuncGun(void);
+CGun * __cdecl factoryFuncGun(void);
 
 // Original: core_gun.cpp_CGun_getActorType_FUN_004d0f50
 // Address: 004d0f50
-CDemonActorType * CGun::getActorType(CGun *this_ptr);
+CDemonActorType * __cdecl CGun::getActorType(CGun *this_ptr);
 
 // Original: core_gun.cpp_CGun_ctor_FUN_004d0f60
 // Address: 004d0f60
 CGun * __cdecl CGun::ctor(CGun *this_ptr);
 
-// Original: core_gun.cpp_FUN_004d0fc0
+// Original: core_gun.cpp_CGun_fire_FUN_004d0fc0
 // Address: 004d0fc0
-undefined4 FUN_004d0fc0(CDemonActor *param_1);
+int __cdecl CGun::fire(CGun *this_ptr);
 
-// Original: core_gun.cpp_FUN_004d1880
+// Original: core_gun.cpp_CGun_getDamage_FUN_004d1880
 // Address: 004d1880
-undefined4 FUN_004d1880(void);
+float __cdecl CGun::getDamage(CGun *this_ptr);
 
 // Original: core_gun.cpp_CGun_dtor_FUN_004d18b0
 // Address: 004d18b0

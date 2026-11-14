@@ -13,10 +13,10 @@ void __cdecl engine_ini_cpp_CIniFile_readIniHeader_FUN_004f4bc0(CIniFile *this_p
   char *pcVar2;
   
   if (section == (char *)0x0) {
-    this_ptr->field_0x100 = 0;
+    this_ptr->section[0] = '\0';
     return;
   }
-  pcVar2 = &this_ptr->field_0x100;
+  pcVar2 = this_ptr->section;
   do {
     cVar1 = *section;
     *pcVar2 = cVar1;

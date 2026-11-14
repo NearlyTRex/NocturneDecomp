@@ -62,14 +62,14 @@ float * core_flies_cpp_FUN_004a7660(int param_1,float *param_2)
   float fStack_2c;
   
   bVar2 = 0;
-  fVar1 = (float)core_actor_cpp_FUN_0040cf60(0,0x3f800000);
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,1.0);
   fStack_c0 = fVar1 * fVar1 * *(float *)(param_1 + 0x2b8);
-  fStack_c4 = (float)core_actor_cpp_FUN_0040cf60
-                               (*(float *)(param_1 + 0x2b4) * (float)_DAT_005d6719,
-                                *(float *)(param_1 + 0x2b4) * (float)_DAT_005d6711);
-  fStack_bc = (float)core_actor_cpp_FUN_0040cf60
-                               (*(float *)(param_1 + 700) * (float)_DAT_005d6719,
-                                *(float *)(param_1 + 700) * (float)_DAT_005d6711);
+  fStack_c4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60
+                        (*(float *)(param_1 + 0x2b4) * (float)_DAT_005d6719,
+                         *(float *)(param_1 + 0x2b4) * (float)_DAT_005d6711);
+  fStack_bc = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60
+                        (*(float *)(param_1 + 700) * (float)_DAT_005d6719,
+                         *(float *)(param_1 + 700) * (float)_DAT_005d6711);
   if (param_2 != (float *)0x0) {
     fStack_64 = fStack_c4 - *param_2;
     fStack_60 = fStack_c0 - param_2[1];

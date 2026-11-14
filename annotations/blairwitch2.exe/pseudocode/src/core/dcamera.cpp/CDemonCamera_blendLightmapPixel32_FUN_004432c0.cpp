@@ -12,12 +12,12 @@ void __cdecl core_dcamera_cpp_CDemonCamera_blendLightmapPixel32_FUN_004432c0(CDe
   int iVar1;
   int iVar2;
   
-  iVar1 = screen_x / *(int *)&this_ptr->field_0x14c;
-  iVar2 = (screen_y / *(int *)&this_ptr->field_0x14c) * 0x140;
+  iVar1 = screen_x / this_ptr->scale_factor;
+  iVar2 = (screen_y / this_ptr->scale_factor) * 0x140;
   core_dstrendr_cpp_blendLightmapSharedU32toU32NoBiasPx1MMX_FUN_00470190
             ((uint *)(*(int *)(&DAT_01c2a38c + screen_y * 4) + screen_x * 4),
-             (uint *)(*(int *)&this_ptr->field_0x144 * screen_y * 4 + *(int *)&this_ptr->field_0x158
-                     + screen_x * 4),(byte *)(iVar1 + iVar2 + 0xb07f58 + offset),
-             &DAT_01326d20 + offset + iVar1 + iVar2);
+             (uint *)((int)this_ptr->framebuffer_aligned +
+                     screen_x * 4 + this_ptr->framebuffer_width * screen_y * 4),
+             (byte *)(iVar1 + iVar2 + 0xb07f58 + offset),&DAT_01326d20 + offset + iVar1 + iVar2);
   return;
 }

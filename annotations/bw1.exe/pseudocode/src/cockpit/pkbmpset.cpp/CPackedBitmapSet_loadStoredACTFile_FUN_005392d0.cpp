@@ -9,6 +9,7 @@
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadStoredACTFile_FUN_005392d0(CPackedBitmapSet *this_ptr)
 
 {
-  cockpit_pkbmpset_cpp_FUN_00539190(this_ptr,this_ptr + 8);
+  cockpit_pkbmpset_cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_00539190
+            (this_ptr,this_ptr->filename);
   return;
 }

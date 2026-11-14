@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CAlphaBitmap * engine_alphabit_cpp_CAlphaBitmap_arrdtor5_FUN_004144e0(CAlphaBitmap *this_ptr,uint flags)
+; CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_arrdtor5_FUN_004144e0(CAlphaBitmap *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CAlphaBitmap *   Stack[0x4]:4   this_ptr
@@ -20,7 +20,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004144e7
     PUSH EDX                            ; 004144eb
     CALL crt_memory.c___arrfini_FUN_005a3de6 ; 004144ec
-        ;   XREF to: 005a3de6 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrfini_FUN_005a3de6()
+        ;   XREF to: 005a3de6 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005a3de6(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004144f1
     RET                                 ; 004144f4
 

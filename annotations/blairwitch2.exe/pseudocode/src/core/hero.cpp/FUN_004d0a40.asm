@@ -36,11 +36,11 @@ section .text
     LEA EAX,[ESI + 0x2b8]               ; 004d0a4e
     PUSH EAX                            ; 004d0a54
     CALL core_actor.cpp_createActorByName_FUN_0040c5a0 ; 004d0a55
-        ;   XREF to: 0040c5a0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c5a0()
+        ;   XREF to: 0040c5a0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c5a0(char * class_name)
     ADD ESP,0x4                         ; 004d0a5a
     PUSH EAX                            ; 004d0a5d
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004d0a5e
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004d0a63
     MOV EBX,EAX                         ; 004d0a66
     TEST EAX,EAX                        ; 004d0a68

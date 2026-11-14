@@ -162,7 +162,7 @@ LAB_005c3e99:
       if (bVar1 == 0x43) {
         puVar4 = (ushort *)*param_2;
         *param_2 = (uint)(puVar4 + 2);
-        iVar6 = unkafter_zombie_cpp_FUN_005ca4b0(param_1,*puVar4);
+        iVar6 = FUN_005ca4b0(param_1,*puVar4);
         if (iVar6 == -1) {
           *(uint *)(param_3 + 0x20) = 0;
           return CONCAT44(local_18,param_1);
@@ -285,7 +285,7 @@ LAB_005c3f95:
             }
             puVar4 = (ushort *)*param_2;
             *param_2 = (uint)(puVar4 + 2);
-            iVar7 = unkafter_zombie_cpp_FUN_005ca4b0(&local_1c,*puVar4);
+            iVar7 = FUN_005ca4b0(&local_1c,*puVar4);
             iVar6 = _DAT_02c9f6e0;
             if (((iVar7 != -1) && (*param_1 = local_1c, iVar6 != 0)) &&
                ((*(byte *)(local_1c + 0x2c9f6f1) & 1) != 0)) {
@@ -338,7 +338,7 @@ LAB_005c3ff7:
   pbVar5 = param_1 + *(int *)(param_3 + 0x20);
   if ((*(byte *)(param_3 + 0x1f) & 1) == 0) {
     if ((*(int *)(param_3 + 8) != 0) || (in_ECX != (uint *)0x0)) {
-      unkafter_zombie_cpp_FUN_005ca610(in_ECX,param_1 + *(int *)(param_3 + 0x20),uVar9);
+      FUN_005ca610(in_ECX,param_1 + *(int *)(param_3 + 0x20),uVar9);
       if (*(char *)(param_3 + 0x15) == 'X') {
         FUN_005c426c(param_1);
       }
@@ -352,7 +352,7 @@ LAB_005c3ff7:
     iVar6 = 0;
   }
   else {
-    unkafter_zombie_cpp_FUN_005ca500(&local_24,param_1 + *(int *)(param_3 + 0x20),uVar9);
+    FUN_005ca500(&local_24,param_1 + *(int *)(param_3 + 0x20),uVar9);
     if (*(char *)(param_3 + 0x15) == 'X') {
       FUN_005c426c(param_1);
     }

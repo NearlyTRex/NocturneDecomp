@@ -18,7 +18,7 @@
 ;   undefined4 DAT_01323d00
 ;
 ; Called Functions:
-;   core_dcamera.cpp_FUN_0044e2a0
+;   core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044e2a0
 ;
 ; *****************************************************************************
 
@@ -103,8 +103,8 @@ section .text
     PUSH EAX                            ; 00451487
     LEA ESI,[ESP + 0x14]                ; 00451488
     LEA EDI,[ESP + 0x8]                 ; 0045148c
-    CALL core_dcamera.cpp_FUN_0044e2a0  ; 00451490
-        ;   XREF to: 0044e2a0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_0044e2a0()
+    CALL core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044e2a0 ; 00451490
+        ;   XREF to: 0044e2a0 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044e2a0(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr)
     LEA ESI,[ESP + 0x14]                ; 00451495
     ADD ESP,0x8                         ; 00451499
     MOVSD ES:EDI,ESI                    ; 0045149c

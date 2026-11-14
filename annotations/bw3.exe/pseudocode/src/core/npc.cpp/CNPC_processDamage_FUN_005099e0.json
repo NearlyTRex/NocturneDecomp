@@ -1,0 +1,225 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 93,
+    "complexity_score": 72,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 37,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 130
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005099e0",
+    "address_range": [
+      [
+        "005099e0",
+        "00509abc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_npc.cpp_CNPC_processDamage_FUN_005099e0",
+    "signature": "void __cdecl core_npc_cpp_CNPC_processDamage_FUN_005099e0(CNPC *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "00431ce0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00431ce0"
+    },
+    {
+      "addr": "00430d60",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processDamage_FUN_00430d60"
+    },
+    {
+      "addr": "00509900",
+      "is_variadic": false,
+      "name": "core_npc.cpp_CNPC_setRandomMotionVariant_FUN_00509900"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005cb644",
+      "name": "DAT_005cb644",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cb648",
+      "name": "DAT_005cb648",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cb64d",
+      "name": "s_DAMAGE_005cb64d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb654",
+      "name": "DAT_005cb654",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.56,
+    "instruction_count": 75,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 7,
+      "CALLIND": 2,
+      "CBRANCH": 6,
+      "COPY": 119,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 30,
+      "INT_AND": 38,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 26,
+      "INT_LEFT": 8,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 13,
+      "INT_SUB": 31,
+      "INT_ZEXT": 8,
+      "LOAD": 18,
+      "POPCOUNT": 13,
+      "RETURN": 2,
+      "STORE": 31
+    },
+    "pcode_op_count": 417
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00510b90",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00531da0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00544d30",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004eeea0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNPC *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_005cb644",
+      "severity": "mild",
+      "text": "core_npc_cpp_CNPC_setRandomMotionVariant_FUN_00509900((CNPC *)this_ptr_00,&DAT_005cb644);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_005cb648",
+      "severity": "mild",
+      "text": "((CNPC *)this_ptr_00,&DAT_005cb648);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_005cb654",
+      "severity": "mild",
+      "text": "core_npc_cpp_CNPC_setRandomMotionVariant_FUN_00509900((CNPC *)this_ptr_00,&DAT_005cb654);",
+      "type": "undefined_data"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CSpiritBear",
+        "offset": 264,
+        "vtable_addr": "005e8024"
+      },
+      {
+        "class_name": "CAsgaya",
+        "offset": 264,
+        "vtable_addr": "005e8684"
+      },
+      {
+        "class_name": "CSpiritIndian",
+        "offset": 264,
+        "vtable_addr": "005e7e94"
+      },
+      {
+        "class_name": "CPassenger",
+        "offset": 264,
+        "vtable_addr": "005e2fe4"
+      },
+      {
+        "class_name": "CPryeMorph",
+        "offset": 264,
+        "vtable_addr": "005e36e4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 6
+  }
+}

@@ -17,8 +17,8 @@ CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_init_FUN_00572340(CSfxSample *
   memset(this_ptr,0,0x150);
   fVar1 = _DAT_02c745e0 * _DAT_00623308;
   fVar2 = _DAT_00605b0c * _DAT_00623308;
-  *(float *)&this_ptr->field_0x114 = _DAT_00605b08 * _DAT_00623308;
-  *(float *)&this_ptr->field_0x118 = fVar1;
-  *(float *)&this_ptr->field_0x11c = fVar2;
+  (this_ptr->sample_info).reference_distance = _DAT_00605b08 * _DAT_00623308;
+  (this_ptr->sample_info).reference_volume_distance = fVar1;
+  (this_ptr->sample_info).max_distance = fVar2;
   return this_ptr;
 }

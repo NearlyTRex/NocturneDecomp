@@ -2,25 +2,30 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 176,
-    "complexity_score": 360,
+    "complexity_score": 325,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 85,
-    "suspect_count": 24,
+    "suspect_count": 21,
     "suspect_types": [
       "param_count_too_few",
+      "pointer_cast",
       "pointer_stride_bytecount",
-      "suspicious_cast",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 261
   },
   "cross_references": [
+    {
+      "addr": "0059ee00",
+      "from_addr": "0059eec1",
+      "name": "core_basicene.cpp_FUN_0059ee00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "0042b420",
       "from_addr": "0042b434",
@@ -30,13 +35,7 @@
     {
       "addr": "004d1660",
       "from_addr": "004d227a",
-      "name": "core_hostage.cpp_FUN_004d1660",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059ee00",
-      "from_addr": "0059eec1",
-      "name": "unkafter_basicene.cpp_FUN_0059ee00",
+      "name": "core_hostage.cpp_CHostage_process_FUN_004d1660",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -73,7 +72,7 @@
     },
     {
       "addr": "01fbb02c",
-      "name": "g_CDemonSetInstance.field1396340_0x154e74",
+      "name": "g_CDemonSetInstance.waypoint_count",
       "type": "undefined4",
       "value": null
     },
@@ -104,7 +103,7 @@
       {
         "call_addr": "004d227a",
         "call_type": "direct",
-        "caller": "core_hostage.cpp_FUN_004d1660",
+        "caller": "core_hostage.cpp_CHostage_process_FUN_004d1660",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -118,7 +117,7 @@
       {
         "call_addr": "004d24cf",
         "call_type": "direct",
-        "caller": "core_hostage.cpp_FUN_004d1660",
+        "caller": "core_hostage.cpp_CHostage_process_FUN_004d1660",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -131,7 +130,7 @@
       {
         "call_addr": "0059eec1",
         "call_type": "direct",
-        "caller": "unkafter_basicene.cpp_FUN_0059ee00",
+        "caller": "core_basicene.cpp_FUN_0059ee00",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -305,20 +304,12 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x154e74",
-      "severity": "mild",
-      "text": "for (iVar8 = 0; iVar8 < *(int *)&g_CDemonSetPtr->field_0x154e74; iVar8 = iVar8 + 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 28,
-      "match": "field_0x154e78",
-      "severity": "mild",
-      "text": "piVar1 = (int *)(&g_CDemonSetPtr->field_0x154e78 + iVar4);",
-      "type": "unnamed_field"
+      "match": "(int *)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)g_CDemonSetPtr->waypoints + iVar4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
@@ -361,20 +352,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 73,
-      "match": "field_0x154e74",
-      "severity": "mild",
-      "text": "for (iVar9 = 0; iVar9 < *(int *)&g_CDemonSetPtr->field_0x154e74; iVar9 = iVar9 + 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 74,
-      "match": "field_0x154e78",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)(&g_CDemonSetPtr->field_0x154e78 + iVar8);",
-      "type": "unnamed_field"
+      "match": "(int *)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)((int)g_CDemonSetPtr->waypoints + iVar8);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
@@ -391,14 +374,6 @@
       "severity": "mild",
       "text": "(iVar6 = core_waypoint_cpp_FUN_00587c30(param_1,iVar2 + 0x20,0,param_3), iVar6 != 0))",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_0061b5b8 (at 0x0061b5b8, +16 bytes).",
-      "line": 74,
-      "match": "g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "iVar2 = *(int *)(&g_CDemonSetPtr->field_0x154e78 + iVar8);",
-      "type": "suspicious_cast"
     },
     {
       "description": "mem* byte count hardcodes an element stride (n = count * N) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",

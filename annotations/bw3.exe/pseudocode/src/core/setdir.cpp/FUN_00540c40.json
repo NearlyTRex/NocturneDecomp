@@ -20,7 +20,7 @@
     {
       "addr": "00540be0",
       "from_addr": "00540c12",
-      "name": "core_setdir.cpp_FUN_00540be0",
+      "name": "core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00540be0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -34,7 +34,7 @@
     ],
     "convention": "unknown",
     "name": "core_setdir.cpp_FUN_00540c40",
-    "signature": "void core_setdir_cpp_FUN_00540c40(undefined4 *param_1,char *param_2)"
+    "signature": "void core_setdir_cpp_FUN_00540c40(SIZE_T *param_1,char *param_2)"
   },
   "function_calls": [
     {
@@ -114,7 +114,7 @@
       {
         "call_addr": "00540c12",
         "call_type": "direct",
-        "caller": "core_setdir.cpp_FUN_00540be0",
+        "caller": "core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00540be0",
         "estimated_params": 3,
         "instructions_analyzed": 5,
         "method": "push_count",
@@ -153,6 +153,14 @@
     },
     "pcode_op_count": 203
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0055b280",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -175,7 +183,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_setdir_cpp_FUN_00540c40(uint *param_1,char *param_2)",
+      "text": "void core_setdir_cpp_FUN_00540c40(SIZE_T *param_1,char *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -183,7 +191,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_setdir_cpp_FUN_00540c40(uint *param_1,char *param_2)",
+      "text": "void core_setdir_cpp_FUN_00540c40(SIZE_T *param_1,char *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -191,7 +199,7 @@
       "line": 9,
       "match": "param_2",
       "severity": "mild",
-      "text": "p_Var1 = engine_dosio_cpp_FUN_004659c0(&DAT_005d0cc9,param_2,&DAT_005d0cc6);",
+      "text": "file = engine_dosio_cpp_FUN_004659c0(&DAT_005d0cc9,param_2,&DAT_005d0cc6);",
       "type": "unnamed_param"
     },
     {
@@ -199,7 +207,7 @@
       "line": 9,
       "match": "DAT_005d0cc9",
       "severity": "mild",
-      "text": "p_Var1 = engine_dosio_cpp_FUN_004659c0(&DAT_005d0cc9,param_2,&DAT_005d0cc6);",
+      "text": "file = engine_dosio_cpp_FUN_004659c0(&DAT_005d0cc9,param_2,&DAT_005d0cc6);",
       "type": "undefined_data"
     },
     {
@@ -207,7 +215,7 @@
       "line": 9,
       "match": "DAT_005d0cc6",
       "severity": "mild",
-      "text": "p_Var1 = engine_dosio_cpp_FUN_004659c0(&DAT_005d0cc9,param_2,&DAT_005d0cc6);",
+      "text": "file = engine_dosio_cpp_FUN_004659c0(&DAT_005d0cc9,param_2,&DAT_005d0cc6);",
       "type": "undefined_data"
     },
     {
@@ -223,7 +231,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fwrite(&DAT_0212551c,0x3000,*param_1,p_Var1);",
+      "text": "_fwrite(&DAT_0212551c,0x3000,*param_1,file);",
       "type": "unnamed_param"
     },
     {
@@ -231,7 +239,7 @@
       "line": 15,
       "match": "DAT_0212551c",
       "severity": "mild",
-      "text": "_fwrite(&DAT_0212551c,0x3000,*param_1,p_Var1);",
+      "text": "_fwrite(&DAT_0212551c,0x3000,*param_1,file);",
       "type": "undefined_data"
     },
     {

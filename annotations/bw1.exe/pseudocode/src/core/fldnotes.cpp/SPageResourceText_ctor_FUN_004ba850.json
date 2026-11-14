@@ -1,0 +1,250 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 52,
+    "complexity_score": 158,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 28,
+    "suspect_count": 12,
+    "suspect_types": [
+      "extra_output",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 80
+  },
+  "cross_references": [
+    {
+      "addr": "004bb570",
+      "from_addr": "004bb598",
+      "name": "core_fldnotes.cpp_STextView_flushWord_FUN_004bb570",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ba850",
+    "address_range": [
+      [
+        "004ba850",
+        "004ba8c9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fldnotes.cpp_SPageResourceText_ctor_FUN_004ba850",
+    "signature": "SPageResourceText * __cdecl core_fldnotes_cpp_SPageResourceText_ctor_FUN_004ba850(SPageResourceText *this_ptr,char *text,CBitFont *font)"
+  },
+  "function_calls": [
+    {
+      "addr": "004ba730",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_SPageResource_ctor_FUN_004ba730"
+    },
+    {
+      "addr": "004c4510",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510"
+    },
+    {
+      "addr": "004c3ea0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00600934",
+      "name": "g_SPageResourceTextVTable",
+      "type": "void*",
+      "value": "004ba8d0"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004bb598",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_STextView_flushWord_FUN_004bb570",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.772727272727273,
+    "instruction_count": 44,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 3,
+      "CBRANCH": 2,
+      "COPY": 35,
+      "INT_ADD": 23,
+      "INT_AND": 14,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 14,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 7,
+      "INT_SUB": 14,
+      "LOAD": 12,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 19
+    },
+    "pcode_op_count": 166
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a1f80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a8490",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "SPageResourceText *"
+      },
+      {
+        "is_param": true,
+        "name": "text",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "font",
+        "offset": 12,
+        "size": 4,
+        "type": "CBitFont *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 7,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "SPageResourceText *extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 12,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "(extraout_EAX->base).vtable = &g_SPageResourceTextVTable;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 13,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "extraout_EAX->font = font;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 14,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "pcVar3 = extraout_EAX->text;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 24,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "extraout_EAX->underlined = 0;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 25,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(extraout_EAX->font,extraout_EAX->text);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 25,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(extraout_EAX->font,extraout_EAX->text);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 26,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "this_ptr_00 = extraout_EAX->font;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 27,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "(extraout_EAX->base).width = iVar2;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 29,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "(extraout_EAX->base).height = iVar2;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 30,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "return extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 15,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

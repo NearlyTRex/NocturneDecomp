@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   z
 ;
 ; XREF[2]:
+;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90 at 0046cbda
 ;   engine_drender.cpp_CDemonRenderer_setCameraOrigin_FUN_0046cb70 at 0046cb80
-;   engine_drender.cpp_FUN_0046cb90 at 0046cbda
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c6e2d8

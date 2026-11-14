@@ -1,0 +1,238 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 164,
+    "complexity_score": 166,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 61,
+    "suspect_count": 9,
+    "suspect_types": [
+      "stack_param",
+      "unaffected_reg",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 225
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00417080",
+    "address_range": [
+      [
+        "00417080",
+        "00417226"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "core_boneguy.cpp_rgbToHsv_FUN_00417080",
+    "signature": "void core_boneguy_cpp_rgbToHsv_FUN_00417080(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005b6d42",
+      "name": "DAT_005b6d42",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b6d4a",
+      "name": "DAT_005b6d4a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b6d52",
+      "name": "DAT_005b6d52",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b6d5a",
+      "name": "DAT_005b6d5a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b6d62",
+      "name": "DAT_005b6d62",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.2444444444444445,
+    "instruction_count": 135,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 12,
+      "BRANCH": 6,
+      "CBRANCH": 9,
+      "COPY": 444,
+      "FLOAT2FLOAT": 42,
+      "FLOAT_ADD": 2,
+      "FLOAT_DIV": 4,
+      "FLOAT_EQUAL": 9,
+      "FLOAT_LESS": 9,
+      "FLOAT_MULT": 2,
+      "FLOAT_NAN": 18,
+      "FLOAT_SUB": 5,
+      "INT2FLOAT": 3,
+      "INT_ADD": 72,
+      "INT_AND": 54,
+      "INT_EQUAL": 8,
+      "INT_LEFT": 36,
+      "INT_LESS": 1,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 45,
+      "INT_OR": 45,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 4,
+      "INT_SUB": 10,
+      "INT_XOR": 2,
+      "INT_ZEXT": 42,
+      "LOAD": 50,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 28
+    },
+    "pcode_op_count": 978
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00417f50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0041b3d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0041b860",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9658
+    },
+    "nocturne.exe": {
+      "addr": "004182d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9658
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00417088",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "float *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "float *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "fVar1 = *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "fVar2 = in_stack_00000004[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "fVar3 = in_stack_00000004[2];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 61,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*unaff_ESI = fStack_44;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 62,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI[1] = fStack_48;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 63,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI[2] = fStack_40;",
+      "type": "unaffected_reg"
+    }
+  ]
+}

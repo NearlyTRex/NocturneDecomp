@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 74,
+    "complexity_score": 72,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 34,
+    "pseudocode_lines": 32,
     "suspect_count": 3,
     "suspect_types": [
       "undefined_data",
       "unrolled_strlen"
     ],
-    "total_lines": 116
+    "total_lines": 114
   },
   "cross_references": [
     {
@@ -39,7 +39,7 @@
     {
       "addr": "004fc740",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004fc740"
+      "name": "core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740"
     },
     {
       "addr": "005ba8cc",
@@ -54,7 +54,7 @@
     {
       "addr": "005b7790",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7790"
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
     }
   ],
   "globals": [
@@ -121,6 +121,32 @@
     },
     "pcode_op_count": 296
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0051bcc0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004f7490",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00524660",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004d9680",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 36,
     "local_size": 24,
@@ -161,18 +187,18 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 25,
       "match": "DAT_005de8eb",
       "severity": "mild",
-      "text": "(iVar2 = sscanf(pcVar6 + (~uVar4 - 1),&DAT_005de8eb), iVar2 == 1))",
+      "text": "(iVar2 = sscanf(pCVar3->actor_name + (~uVar4 - 1),&DAT_005de8eb),",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 31,
       "match": "DAT_005de8ee",
       "severity": "mild",
-      "text": "FUN_005b7790(out_buf,&DAT_005de8ee,base_name,iVar5);",
+      "text": "_sprintf(out_buf,&DAT_005de8ee);",
       "type": "undefined_data"
     },
     {

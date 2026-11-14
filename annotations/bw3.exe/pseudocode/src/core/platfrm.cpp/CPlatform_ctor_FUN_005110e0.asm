@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CPlatform * core_platfrm_cpp_CPlatform_ctor_FUN_005110e0(CPlatform *this_ptr)
+; CPlatform * __cdecl core_platfrm_cpp_CPlatform_ctor_FUN_005110e0(CPlatform *this_ptr)
 ;
 ; Parameters:
 ; CPlatform *      Stack[0x4]:4   this_ptr

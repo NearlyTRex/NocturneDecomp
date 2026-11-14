@@ -11,7 +11,9 @@ void __cdecl core_motion_cpp_CMotionController_jumpToMotionByName_FUN_004fc3f0(C
 {
   int target_motion_index;
   
-  target_motion_index = core_motion_cpp_FUN_004fb9c0(*(CMotionList **)this_ptr,motion_name,1);
+  target_motion_index =
+       core_motion_cpp_CMotionList_findMotionIndex_FUN_004fb9c0
+                 (this_ptr->motion_list_ptr,motion_name,1);
   core_motion_cpp_CMotionController_jumpToMotion_FUN_004fc420
             (this_ptr,target_motion_index,frame_number);
   return;

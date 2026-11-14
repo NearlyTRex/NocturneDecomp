@@ -8,10 +8,12 @@
 
 #include "core/debug_log.h"
 #include "core/ini_setting.h"
+#include "gl/display_settings.h"
 #include "nocturne.h"
 #include "shim_config.h"
 
 #include <SDL.h>
+#include <tuple>
 
 #ifndef NOCTURNE_PLATFORM_FIXED_DISPLAY
 #define NOCTURNE_PLATFORM_FIXED_DISPLAY 0
@@ -71,7 +73,25 @@ void apply_pref_size() {
     DLOG("render", "resize window %dx%d -> %dx%d (render resolution unchanged)", cur_w, cur_h,
          s_pref_width, s_pref_height);
     SDL_SetWindowSize(s_window, s_pref_width, s_pref_height);
-    SDL_SetWindowPosition(s_window, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED);
+    const int centred = (int)SDL_WINDOWPOS_CENTERED_DISPLAY(nocturne_display_index());
+    SDL_SetWindowPosition(s_window, centred, centred);
+}
+
+// The display and Fullscreen display mode the window was last given (width 0
+// for none asked beyond the window's size), so a call that would change
+// nothing does nothing.
+struct Applied {
+    int display;
+    int mode_w;
+    int mode_h;
+    int mode_hz;
+};
+Applied s_applied = {0, 0, 0, 0};
+bool s_applied_once = false;
+
+bool same_applied(const Applied &a, const Applied &b) {
+    return std::tie(a.display, a.mode_w, a.mode_h, a.mode_hz) ==
+           std::tie(b.display, b.mode_w, b.mode_h, b.mode_hz);
 }
 
 } // namespace
@@ -140,26 +160,53 @@ extern "C" void nocturne_window_mode_apply(SDL_Window *window) {
         want = SDL_WINDOW_FULLSCREEN_DESKTOP;
     }
 
+    // Fullscreen's display mode, where the settings ask for more than the
+    // window's own size at SDL's rate (display_settings.h).
+    Applied next = {nocturne_display_index(), 0, 0, 0};
+    SDL_DisplayMode fullscreen_mode = {};
+    if (want == SDL_WINDOW_FULLSCREEN) {
+        int game_w = 0, game_h = 0;
+        nocturne_window_fullscreen_size(&game_w, &game_h);
+        if (nocturne_display_fullscreen_mode(game_w, game_h, &fullscreen_mode)) {
+            next.mode_w = fullscreen_mode.w;
+            next.mode_h = fullscreen_mode.h;
+            next.mode_hz = fullscreen_mode.refresh_rate;
+        }
+    }
+
     // Idempotent. This is re-asserted from several engine paths per mode change
     // (SetDisplayMode, RestoreDisplayMode), and toggling SDL's fullscreen state
     // when it is already correct makes the window visibly churn — and on some
     // window managers it can leave the pre-fullscreen size behind.
     // SDL_WINDOW_FULLSCREEN_DESKTOP contains the FULLSCREEN bit, so mask with
     // the wider value to tell the two apart.
+    // Before the first apply the window has no display mode of ours.
     const Uint32 cur = SDL_GetWindowFlags(window) & SDL_WINDOW_FULLSCREEN_DESKTOP;
-    if (cur == want)
+    Applied now = s_applied_once ? s_applied : Applied{0, 0, 0, 0};
+    now.display = SDL_GetWindowDisplayIndex(window);
+    if (cur == want && same_applied(now, next))
         return;
 
-    DLOG("render", "apply mode=%d (%s) flags 0x%x -> 0x%x", mode, nocturne_window_mode_name(mode),
-         cur, want);
+    DLOG("render", "apply mode=%d (%s) flags 0x%x -> 0x%x display %d mode %dx%d@%d", mode,
+         nocturne_window_mode_name(mode), cur, want, next.display, next.mode_w, next.mode_h,
+         next.mode_hz);
     // Switching straight between exclusive and desktop fullscreen asks the
     // backend to change the display mode and the window geometry while the
     // window stays fullscreen, which not every video driver or window manager
-    // completes. Leave fullscreen first so the new kind starts from a window.
+    // completes. Leave fullscreen first so the new kind starts from a window;
+    // the same for a new display or display mode.
     if (cur != 0 && want != 0) {
         SDL_SetWindowFullscreen(window, 0);
     }
+    // Fullscreen takes the display the window is on; something changed, so
+    // the window starts again from the middle of the chosen one.
+    const int centred = (int)SDL_WINDOWPOS_CENTERED_DISPLAY(next.display);
+    SDL_SetWindowPosition(window, centred, centred);
+    if (want == SDL_WINDOW_FULLSCREEN)
+        SDL_SetWindowDisplayMode(window, next.mode_w != 0 ? &fullscreen_mode : nullptr);
     SDL_SetWindowFullscreen(window, want);
+    s_applied = next;
+    s_applied_once = true;
     if (want == 0) {
         SDL_SetWindowBordered(window, SDL_TRUE);
         // SDL restores the size it was at before it went fullscreen, and that
@@ -178,6 +225,25 @@ extern "C" void nocturne_window_mode_apply(SDL_Window *window) {
     SDL_GetCurrentDisplayMode(SDL_GetWindowDisplayIndex(window), &display_mode);
     DLOG("render", "applied mode=%d: window %dx%d drawable %dx%d display %dx%d", mode, win_w, win_h,
          draw_w, draw_h, display_mode.w, display_mode.h);
+}
+
+extern "C" void nocturne_window_mode_reapply(void) {
+    nocturne_window_mode_apply(s_window);
+}
+
+extern "C" void nocturne_window_fullscreen_size(int *width, int *height) {
+    *width = 0;
+    *height = 0;
+    if (nocturne_fullscreen_size_get() == NOCTURNE_FULLSCREEN_SIZE_DESKTOP) {
+        SDL_DisplayMode desktop = {};
+        if (SDL_GetDesktopDisplayMode(nocturne_display_index(), &desktop) == 0) {
+            *width = desktop.w;
+            *height = desktop.h;
+            return;
+        }
+    }
+    if (nocturne_window_preferred_size(width, height) == 0 && s_window != nullptr)
+        SDL_GetWindowSize(s_window, width, height);
 }
 
 // The size is set only whole, so a width says there is one.

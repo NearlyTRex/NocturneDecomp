@@ -7,7 +7,7 @@
 ; CKeys *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   shape_edittool.cpp_FUN_004958d0 at 00495bd6
+;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_004958d0 at 00495bd6
 ;   shape_edittool.cpp_showTextInputDialog_FUN_00493720 at 004939d6
 ;
 ; Called Functions:

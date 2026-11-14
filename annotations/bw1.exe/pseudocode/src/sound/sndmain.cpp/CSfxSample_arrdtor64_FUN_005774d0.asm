@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSfxSample * sound_sndmain_cpp_CSfxSample_arrdtor64_FUN_005774d0(CSfxSample *this_ptr,uint flags)
+; CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_arrdtor64_FUN_005774d0(CSfxSample *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CSfxSample *     Stack[0x4]:4   this_ptr
@@ -20,7 +20,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 005774d7
     PUSH EDX                            ; 005774db
     CALL crt_memory.c___arrfini_FUN_005c1066 ; 005774dc
-        ;   XREF to: 005c1066 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrfini_FUN_005c1066()
+        ;   XREF to: 005c1066 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005c1066(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005774e1
     RET                                 ; 005774e4
 

@@ -1,15 +1,22 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcube_cpp_clipEdgeToPlane_FUN_00455460(float *param_1,float *param_2,float *param_3,int param_4,uint param_5,int param_6,uint param_7,int param_8,uint param_9,double param_10)
+; void __cdecl core_dcube_cpp_clipEdgeToPlane_FUN_00455460(CVector3f *vertex1,CVector3f *vertex2,CVector3f *output_vertex,double plane_nx,double plane_ny,double plane_nz,double plane_d)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   vertex1
+; CVector3f *      Stack[0x8]:4   vertex2
+; CVector3f *      Stack[0xc]:4   output_vertex
+; double           Stack[0x10]:8   plane_nx
+; double           Stack[0x18]:8   plane_ny
+; double           Stack[0x20]:8   plane_nz
+; double           Stack[0x28]:8   plane_d
 ; Local Variables:
 ; undefined8       Stack[-0x28]:8  local_28
 ;
-; XREF[3]:
-;   core_dcube.cpp_FUN_004558d0 at 004559aa
-;   core_dcube.cpp_FUN_00455d00 at 00455de2
-;   core_dcube.cpp_FUN_004570de at 004576f1
+; XREF[2]:
+;   core_dcube.cpp_clipPolygonAgainstMaxX_FUN_004558d0 at 004559aa
+;   core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00455d00 at 00455de2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dcube_cpp_005d7a87

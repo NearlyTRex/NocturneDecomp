@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * __cdecl core_inv_cpp_getItemDescription_FUN_004d9f80(undefined4 param_1)
+; char * __cdecl core_inv_cpp_getItemDescription_FUN_004d9f80(CDemonActor *actor_ptr)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   actor_ptr
 ;
 ; XREF[2]:
 ;   core_inv.cpp_FUN_004dadb0 at 004dae94
@@ -13,9 +15,9 @@
 ;   undefined4 DAT_01cf0200
 ;
 ; Called Functions:
-;   core_inv.cpp_FUN_004d9db0
+;   core_inv.cpp_getItemModel_FUN_004d9db0
 ;   crt_string.c__stricmp_FUN_005b8130
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;
 ; *****************************************************************************
 
@@ -31,8 +33,8 @@ section .text
     PUSH EDX                            ; 004d9f89
     MOV EBX,0x1cf0208                   ; 004d9f8a
     XOR ESI,ESI                         ; 004d9f8f
-    CALL core_inv.cpp_FUN_004d9db0      ; 004d9f91
-        ;   XREF to: 004d9db0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004d9db0()
+    CALL core_inv.cpp_getItemModel_FUN_004d9db0 ; 004d9f91
+        ;   XREF to: 004d9db0 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_inv.cpp_getItemModel_FUN_004d9db0(CDemonActor * actor_ptr)
     MOV ECX,dword ptr [0x01cf0200]      ; 004d9f96 | DAT_01cf0200
     ADD ESP,0x4                         ; 004d9f9c
     LEA EDI,[EAX + 0x78]                ; 004d9f9f
@@ -58,8 +60,8 @@ section .text
         ;   Label: LAB_004d9fc4
     PUSH 0x5db3d9                       ; 004d9fc5 | = "Add to dict: %s"
     PUSH 0x1cee2b0                      ; 004d9fca
-    CALL crt_unknown.c_FUN_005b7790     ; 004d9fcf
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004d9fcf
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     MOV EAX,0x1cee2b0                   ; 004d9fd4
     ADD ESP,0xc                         ; 004d9fd9
     POP EBP                             ; 004d9fdc

@@ -11,7 +11,7 @@ void core_zombie_cpp_FUN_0058ce40(void)
 {
   CZombieIndian *this_ptr;
   
-  this_ptr = (CZombieIndian *)FUN_005a3cb2(0xd14c);
+  this_ptr = (CZombieIndian *)operator_new(0xd14c);
   if (this_ptr == (CZombieIndian *)0x0) {
     return;
   }

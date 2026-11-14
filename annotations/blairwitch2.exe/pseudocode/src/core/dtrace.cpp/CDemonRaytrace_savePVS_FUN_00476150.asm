@@ -9,7 +9,7 @@
 ; int * *          Stack[0xc]:4   input_indices_array
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_0052d0e0 at 0052d183
+;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0 at 0052d183
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dtrace_cpp_005d1c24

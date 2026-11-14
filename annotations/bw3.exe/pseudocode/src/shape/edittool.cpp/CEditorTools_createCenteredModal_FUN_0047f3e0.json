@@ -23,39 +23,39 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047d19e",
-      "from_addr": "0047d1ef",
-      "name": "shape_edittool.cpp_FUN_0047d19e",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0047d230",
-      "from_addr": "0047d47e",
-      "name": "shape_edittool.cpp_FUN_0047d230",
+      "addr": "0047ed50",
+      "from_addr": "0047edd4",
+      "name": "shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_0047ed50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0047e470",
       "from_addr": "0047e500",
-      "name": "shape_edittool.cpp_FUN_0047e470",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0047ed50",
-      "from_addr": "0047edd4",
-      "name": "shape_edittool.cpp_FUN_0047ed50",
+      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047e470",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00483c00",
       "from_addr": "00484106",
-      "name": "shape_edittool.cpp_FUN_00483c00",
+      "name": "shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_00483c00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047d1a0",
+      "from_addr": "0047d1ef",
+      "name": "shape_edittool.cpp_FUN_0047d1a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0047c8e0",
       "from_addr": "0047c9e5",
       "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047c8e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047d230",
+      "from_addr": "0047d47e",
+      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0047d230",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -84,19 +84,19 @@
       "name": "core_main.c_FUN_004e4330"
     },
     {
-      "addr": "004b2a80",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004b2a80"
-    },
-    {
       "addr": "004b30f0",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004b30f0"
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0"
+    },
+    {
+      "addr": "004b2a80",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80"
     },
     {
       "addr": "0047f4c0",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0047f4c0"
+      "name": "shape_edittool.cpp_CEditorTools_createModalWindow_FUN_0047f4c0"
     }
   ],
   "globals": [
@@ -172,7 +172,7 @@
       {
         "call_addr": "00484106",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00483c00",
+        "caller": "shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_00483c00",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -183,7 +183,7 @@
       {
         "call_addr": "0047d47e",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047d230",
+        "caller": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0047d230",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -194,7 +194,7 @@
       {
         "call_addr": "0047e500",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047e470",
+        "caller": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047e470",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -216,7 +216,7 @@
       {
         "call_addr": "0047edd4",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047ed50",
+        "caller": "shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_0047ed50",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -238,7 +238,7 @@
       {
         "call_addr": "0047d1ef",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047d19e",
+        "caller": "shape_edittool.cpp_FUN_0047d1a0",
         "estimated_params": 5,
         "instructions_analyzed": 16,
         "method": "push_count",
@@ -281,6 +281,32 @@
       "STORE": 20
     },
     "pcode_op_count": 342
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0047e1d0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00496840",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004a0890",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00471a80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.964
+    }
   },
   "stack_frame": {
     "frame_size": 24,

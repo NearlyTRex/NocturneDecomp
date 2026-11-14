@@ -1,20 +1,20 @@
 // Name: core_carved.cpp_factoryFuncCarved_FUN_004286a0
 // Address: 004286a0
 // Address Range: [[004286a0, 004286bb]]
-// Convention: unknown
-// Signature: void core_carved_cpp_factoryFuncCarved_FUN_004286a0(void)
+// Convention: __cdecl
+// Signature: CCarved * __cdecl core_carved_cpp_factoryFuncCarved_FUN_004286a0(void)
 
 #include "nocturne.h"
 
-void core_carved_cpp_factoryFuncCarved_FUN_004286a0(void)
+CCarved * __cdecl core_carved_cpp_factoryFuncCarved_FUN_004286a0(void)
 
 {
-  CCarved *this_ptr;
+  CCarved *pCVar1;
   
-  this_ptr = (CCarved *)FUN_005c0f32(0xc2f4);
-  if (this_ptr == (CCarved *)0x0) {
-    return;
+  pCVar1 = (CCarved *)operator_new(0xc2f4);
+  if (pCVar1 == (CCarved *)0x0) {
+    return (CCarved *)0x0;
   }
-  core_carved_cpp_CCarved_ctor_FUN_004286d0(this_ptr);
-  return;
+  pCVar1 = core_carved_cpp_CCarved_ctor_FUN_004286d0(pCVar1);
+  return pCVar1;
 }

@@ -9,11 +9,14 @@
 void __cdecl core_inv_cpp_clampWeaponAmmoCount_FUN_004f7660(CDemonActor *actor_ptr)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   
-  iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600(actor_ptr,g_CTommyGunClassInfo.name_hash);
-  if ((iVar1 != 0) && (200 < *(int *)(iVar1 + 0x568))) {
-    *(uint *)(iVar1 + 0x568) = 200;
+  pCVar1 = (CTommyGun *)core_actor_cpp_castToClassHash_FUN_0040c600(actor_ptr,g_CTommyGunClassInfo.name_hash);
+  if ((pCVar1 != (CDemonActor *)0x0) && (200 < *(int *)(pCVar1[4].actor_name + 8))) {
+    pCVar1[4].actor_name[8] = -0x38;
+    pCVar1[4].actor_name[9] = '\0';
+    pCVar1[4].actor_name[10] = '\0';
+    pCVar1[4].actor_name[0xb] = '\0';
     return;
   }
   return;

@@ -9,52 +9,55 @@
 CPassenger * __cdecl core_passngr_cpp_CPassenger_ctor_FUN_0050a450(CPassenger *this_ptr)
 
 {
-  CMorph CVar1;
+  char cVar1;
   CNPC *pCVar2;
   CMorph *pCVar3;
-  CMorph *pCVar4;
+  char *pcVar4;
   char *pcVar5;
-  CMorph *pCVar6;
+  int *piVar6;
   
-  pCVar2 = core_npc_cpp_CNPC_ctor_FUN_00508f40((CNPC *)this_ptr);
-  pCVar4 = (CMorph *)0x5cb6a5;
-  pCVar3 = core_morph_cpp_CMorph_ctor_FUN_004fa8a0((CMorph *)&pCVar2[1].field_0x10c);
-  pCVar6 = pCVar3 + -0xa8;
-  *(byte ***)(pCVar3 + -0x20680) = &g_CPassengerVTable;
+  pCVar2 = core_npc_cpp_CNPC_ctor_FUN_00508f40(&this_ptr->base);
+  pcVar4 = (char *)0x5cb6a5;
+  pCVar3 = core_morph_cpp_CMorph_ctor_FUN_004fa8a0((CMorph *)&pCVar2[1].base.base.scale.y);
+  piVar6 = &pCVar3[-1].models[1].textures[0x12].base.count;
+  *(CCharacter_full_vtable **)(pCVar3[-0x2b].models[0].textures[0xf].texture_name + 0x3c) =
+       &g_CPassengerVTable;
   do {
-    CVar1 = *pCVar4;
-    *pCVar6 = CVar1;
-    if (CVar1 == (CMorph)0x0) break;
-    CVar1 = pCVar4[1];
-    pCVar4 = pCVar4 + 2;
-    pCVar6[1] = CVar1;
-    pCVar6 = pCVar6 + 2;
-  } while (CVar1 != (CMorph)0x0);
+    cVar1 = *pcVar4;
+    *(char *)piVar6 = cVar1;
+    if (cVar1 == '\0') break;
+    cVar1 = pcVar4[1];
+    pcVar4 = pcVar4 + 2;
+    *(char *)((int)piVar6 + 1) = cVar1;
+    piVar6 = (int *)((int)piVar6 + 2);
+  } while (cVar1 != '\0');
   pcVar5 = "false";
-  pCVar6 = pCVar3 + -0x10c;
+  pcVar4 = pCVar3[-1].models[1].textures[0x10].texture_name + 0x28;
   do {
-    CVar1 = (CMorph)*pcVar5;
-    *pCVar6 = CVar1;
-    if (CVar1 == (CMorph)0x0) break;
-    CVar1 = *(CMorph *)(pcVar5 + 1);
+    cVar1 = *pcVar5;
+    *pcVar4 = cVar1;
+    if (cVar1 == '\0') break;
+    cVar1 = pcVar5[1];
     pcVar5 = pcVar5 + 2;
-    pCVar6[1] = CVar1;
-    pCVar6 = pCVar6 + 2;
-  } while (CVar1 != (CMorph)0x0);
+    pcVar4[1] = cVar1;
+    pcVar4 = pcVar4 + 2;
+  } while (cVar1 != '\0');
   pcVar5 = "nameMePlease";
-  *(uint *)(pCVar3 + -4) = 0;
-  core_skeleton_cpp_FUN_0054eae0(pCVar3 + -0x2067c,"trainman.dfm");
-  pCVar6 = pCVar3 + -0x88;
-  *(uint *)(pCVar3 + 0xc30) = 0x3f800000;
+  pCVar3[-1].rescale_enabled = 0;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
+            ((CDeformableModelInstance *)(pCVar3[-0x2b].models[0].textures + 0x10),
+             "trainman.dfm");
+  pcVar4 = pCVar3[-1].models[1].textures[0x12].texture_name + 0x1c;
+  pCVar3[1].models[0].parts[0].vertex_count = 0x3f800000;
   do {
-    CVar1 = (CMorph)*pcVar5;
-    *pCVar6 = CVar1;
-    if (CVar1 == (CMorph)0x0) break;
-    CVar1 = *(CMorph *)(pcVar5 + 1);
+    cVar1 = *pcVar5;
+    *pcVar4 = cVar1;
+    if (cVar1 == '\0') break;
+    cVar1 = pcVar5[1];
     pcVar5 = pcVar5 + 2;
-    pCVar6[1] = CVar1;
-    pCVar6 = pCVar6 + 2;
-  } while (CVar1 != (CMorph)0x0);
-  pCVar3[-0x68] = (CMorph)0x0;
-  return (CPassenger *)(pCVar3 + -0x207d4);
+    pcVar4[1] = cVar1;
+    pcVar4 = pcVar4 + 2;
+  } while (cVar1 != '\0');
+  pCVar3[-1].models[1].textures[0x12].texture_name[0x3c] = '\0';
+  return (CPassenger *)(pCVar3[-0x2b].models[0].textures[0xb].texture_name + 8);
 }

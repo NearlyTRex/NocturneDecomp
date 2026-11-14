@@ -9,12 +9,12 @@
 void __cdecl engine_dosio_cpp_CFileFinder_closeSearch_FUN_00460f50(CFileFinder *this_ptr)
 
 {
-  if (*(int *)&this_ptr->field_0x10c == 0) {
+  if (this_ptr->has_results == 0) {
     engine_dosio_cpp_CFileFinder_reset_FUN_00460f90(this_ptr);
     return;
   }
-  FindClose(*(HANDLE *)&this_ptr->field_0x110);
-  *(uint *)&this_ptr->field_0x10c = 0;
+  FindClose(this_ptr->search_handle);
+  this_ptr->has_results = 0;
   engine_dosio_cpp_CFileFinder_reset_FUN_00460f90(this_ptr);
   return;
 }

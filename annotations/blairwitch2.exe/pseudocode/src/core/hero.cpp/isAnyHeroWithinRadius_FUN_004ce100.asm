@@ -1,14 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_hero_cpp_isAnyHeroWithinRadius_FUN_004ce100(float *param_1,float param_2)
+; int __cdecl core_hero_cpp_isAnyHeroWithinRadius_FUN_004ce100(CVector3f *point,float radius)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   point
+; float            Stack[0x8]:4   radius
 ;
 ; XREF[4]:
 ;   core_fire.cpp_initProcess_FUN_00499ee0 at 00499f42
-;   core_manpuz.cpp_FUN_004e57f0 at 004e57fe
-;   core_trash.cpp_FUN_00576ab0 at 00576acb
-;   core_vampboss.cpp_FUN_00581910 at 005829f4
+;   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_004e57f0 at 004e57fe
+;   core_trash.cpp_CTrash_process_FUN_00576ab0 at 00576acb
+;   core_vampboss.cpp_CVampireBoss_process_FUN_00581910 at 005829f4
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01cedee0

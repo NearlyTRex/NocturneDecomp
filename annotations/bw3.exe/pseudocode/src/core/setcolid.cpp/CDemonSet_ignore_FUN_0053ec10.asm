@@ -8,15 +8,15 @@
 ; CDemonActor *    Stack[0x8]:4   actor
 ;
 ; XREF[39]:
-;   core_actor.cpp_FUN_00408a40 at 00408a66
-;   core_actor.cpp_FUN_00409f60 at 0040a697
-;   core_actor.cpp_FUN_0040c8e0 at 0040c93e
-;   core_actor.cpp_FUN_0040c990 at 0040ca0b
-;   core_blundrbs.cpp_FUN_00410490 at 00410768
-;   core_boneguy.cpp_FUN_004179b0 at 00417f1f
-;   core_boneguy.cpp_FUN_00419b40 at 0041a077
-;   core_burncrss.cpp_FUN_00424550 at 00424790
-;   core_carved.cpp_FUN_00425da0 at 00426a16
+;   core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408a40 at 00408a66
+;   core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040c990 at 0040ca0b
+;   core_actor.cpp_CDemonActor_processFootstep_FUN_0040c8e0 at 0040c93e
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f60 at 0040a697
+;   core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490 at 00410768
+;   core_boneguy.cpp_CBaalSkel_process_FUN_00419b40 at 0041a077
+;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 00417f1f
+;   core_burncrss.cpp_CBurncross_fire_FUN_00424550 at 00424790
+;   core_carved.cpp_CCarved_process_FUN_00425da0 at 00426a16
 ;   core_charactr.cpp_FUN_0042c230 at 0042c385
 ;   ... and 29 more
 ;

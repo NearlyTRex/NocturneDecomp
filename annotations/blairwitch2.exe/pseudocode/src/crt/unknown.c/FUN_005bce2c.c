@@ -21,7 +21,7 @@ uint FUN_005bce2c(int param_1,uint param_2,HMODULE param_3)
   uint uVar8;
   
   _DAT_02680170 = param_1;
-  _DAT_0268017c = unkafter_morph_cpp_FUN_005c293c(param_2);
+  _DAT_0268017c = FUN_005c293c(param_2);
   if (_DAT_0268017c == 0) {
     uVar8 = 0;
     if (param_1 == 0) {
@@ -43,10 +43,10 @@ uint FUN_005bce2c(int param_1,uint param_2,HMODULE param_3)
     _DAT_0061f297 = DAT_0061f28f << 8 | DAT_0061f293;
     GetModuleFileNameA((HMODULE)0x0,&DAT_02680180,0x104);
     _DAT_0061f248 = &DAT_02680180;
-    unkafter_morph_cpp_FUN_005c2c60(0,0x2680284,0x208);
+    FUN_005c2c60(0,0x2680284,0x208);
     _DAT_0061f254 = 0x2680284;
     pCVar4 = GetCommandLineA();
-    _DAT_02680174 = (char *)unkafter_morph_cpp_FUN_005c2d10(pCVar4);
+    _DAT_02680174 = (char *)FUN_005c2d10(pCVar4);
     DAT_0061f244 = _DAT_02680174;
     if (*_DAT_02680174 == '\"') {
       cVar1 = _DAT_02680174[1];
@@ -72,7 +72,7 @@ uint FUN_005bce2c(int param_1,uint param_2,HMODULE param_3)
       _DAT_0061f250 = (short *)&DAT_005f19e4;
     }
     else {
-      _DAT_02680178 = (short *)unkafter_morph_cpp_FUN_005c2d60(pWVar6);
+      _DAT_02680178 = (short *)FUN_005c2d60(pWVar6);
       _DAT_0061f250 = _DAT_02680178;
       if (*_DAT_02680178 == 0x22) {
         sVar2 = _DAT_02680178[1];
@@ -97,7 +97,7 @@ uint FUN_005bce2c(int param_1,uint param_2,HMODULE param_3)
     if (param_1 != 0) {
       GetModuleFileNameA(param_3,&DAT_0268048c,0x104);
       _DAT_0061f24c = &DAT_0268048c;
-      unkafter_morph_cpp_FUN_005c2c60(param_3,0x2680590,0x208);
+      FUN_005c2c60(param_3,0x2680590,0x208);
       _DAT_0061f258 = 0x2680590;
     }
     uVar8 = 1;

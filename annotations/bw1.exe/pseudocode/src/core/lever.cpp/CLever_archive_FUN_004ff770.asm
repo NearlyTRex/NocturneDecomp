@@ -105,7 +105,7 @@ section .text
     LEA ESI,[EBX + 0x2dc]               ; 004ff827
     PUSH ESI                            ; 004ff82d
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 004ff82e
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     MOV ECX,dword ptr [0x0061f2fc]      ; 004ff833 | g_CLeverClassVersion
     ADD ESP,0x8                         ; 004ff839
     CMP ECX,0x2                         ; 004ff83c
@@ -125,7 +125,7 @@ section .text
     LEA ESI,[EBX + 0x410]               ; 004ff863
     PUSH ESI                            ; 004ff869
     CALL core_actor.cpp_archiveActor_FUN_0040b6f0 ; 004ff86a
-        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b6f0()
+        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b6f0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 004ff86f
     CMP dword ptr [0x0061f2fc],0x4      ; 004ff872 | g_CLeverClassVersion
         ;   Label: LAB_004ff872
@@ -151,7 +151,7 @@ section .text
     LEA ESI,[EBX + 0x41c]               ; 004ff8b1
     PUSH ESI                            ; 004ff8b7
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 004ff8b8
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004ff8bd
     CMP dword ptr [0x0061f2fc],0x6      ; 004ff8c0 | g_CLeverClassVersion
         ;   Label: LAB_004ff8c0
@@ -161,7 +161,7 @@ section .text
     LEA ESI,[EBX + 0x420]               ; 004ff8ce
     PUSH ESI                            ; 004ff8d4
     CALL core_actor.cpp_archiveRules_FUN_0040be80 ; 004ff8d5
-        ;   XREF to: 0040be80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveRules_FUN_0040be80()
+        ;   XREF to: 0040be80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveRules_FUN_0040be80(CRuleList * rules, char * property_name)
     ADD ESP,0x8                         ; 004ff8da
     CMP dword ptr [0x0061f2fc],0x7      ; 004ff8dd | g_CLeverClassVersion
         ;   Label: LAB_004ff8dd

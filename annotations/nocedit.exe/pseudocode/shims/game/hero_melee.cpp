@@ -68,7 +68,7 @@ extern "C" float nocturne_hero_melee_hit(CCharacter *self, CCharacter *target,
 
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&damage);
     damage.damage_amount = amount;
-    damage.damage_type = DAMAGE_TYPE_MELEE;
+    damage.damage_type = DAMAGE_TYPE_ATTACK_BLADE;
     damage.impact_point = *from;
     core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(
         &target->base, &damage.impact_direction, (CVector3f *)from);

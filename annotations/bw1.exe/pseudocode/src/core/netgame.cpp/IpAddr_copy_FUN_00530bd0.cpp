@@ -9,6 +9,6 @@
 SIpAddr * __cdecl core_netgame_cpp_IpAddr_copy_FUN_00530bd0(SIpAddr *this_ptr,SIpAddr *other)
 
 {
-  *this_ptr = *other;
+  this_ptr->ip_address = other->ip_address;
   return this_ptr;
 }

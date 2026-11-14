@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   palette_data
 ;
 ; XREF[1]:
-;   cockpit_pkbmpset.cpp_FUN_00517e40 at 00517e64
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_00517e40 at 00517e64
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_applyPaletteToPackedData_FUN_00516d00

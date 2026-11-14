@@ -8,8 +8,8 @@
 ; undefined        Stack[-0x7c]:1  local_7c
 ;
 ; XREF[2]:
-;   core_weapon.cpp_FUN_0057af40 at 0057af5e
-;   core_weapon.cpp_FUN_0057b500 at 0057b51a
+;   core_weapon.cpp_CWeapon_onDropped_FUN_0057b500 at 0057b51a
+;   core_weapon.cpp_CWeapon_setup_FUN_0057af40 at 0057af5e
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d78ef

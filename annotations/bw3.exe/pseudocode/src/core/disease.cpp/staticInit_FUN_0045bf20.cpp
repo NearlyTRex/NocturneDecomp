@@ -1,12 +1,12 @@
 // Name: core_disease.cpp_staticInit_FUN_0045bf20
 // Address: 0045bf20
 // Address Range: [[0045bf20, 0045bf43]]
-// Convention: unknown
-// Signature: void core_disease_cpp_staticInit_FUN_0045bf20(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_disease_cpp_staticInit_FUN_0045bf20(void)
 
 #include "nocturne.h"
 
-void core_disease_cpp_staticInit_FUN_0045bf20(void)
+void __cdecl core_disease_cpp_staticInit_FUN_0045bf20(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c3a0

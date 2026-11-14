@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_dosio_cpp_findFileNormally_FUN_00478ef0(char *param_1)
+; int __cdecl engine_dosio_cpp_findFileNormally_FUN_00478ef0(SFoundFileInfo *info)
 ;
+; Parameters:
+; SFoundFileInfo * Stack[0x4]:4   info
 ; Local Variables:
 ; undefined        Stack[-0x14c]:1  local_14c
 ; undefined1       Stack[-0x14b]:1  local_14b
@@ -11,7 +13,7 @@
 ; undefined4       Stack[-0x2e]:4  local_2e
 ;
 ; XREF[4]:
-;   core_main.c_FUN_005032a0 at 0050332e
+;   core_main.c_initializeGameSystems_FUN_005032a0 at 0050332e
 ;   engine_dosio.cpp_findFile_FUN_00478e90 at 00478ed1
 ;   engine_pod.cpp_CPod_dismount_FUN_0053c800 at 0053c837
 ;   engine_pod.cpp_FUN_0053b250 at 0053b2b0

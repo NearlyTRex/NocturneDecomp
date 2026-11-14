@@ -7,7 +7,7 @@
 ; CLightGun *      Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cf60
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     PUSH 0x420c0000                     ; 004e3aec
         ;   Label: LAB_004e3aec
     PUSH 0x41700000                     ; 004e3af1
-    CALL core_actor.cpp_FUN_0040cf60    ; 004e3af6
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 004e3af6
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0xc],EAX       ; 004e3afb
     FLD float ptr [ESP + 0xc]           ; 004e3aff
     ADD ESP,0x8                         ; 004e3b03

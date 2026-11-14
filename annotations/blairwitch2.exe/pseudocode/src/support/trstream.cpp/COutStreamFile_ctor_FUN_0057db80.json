@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 9,
-    "complexity_score": 24,
+    "complexity_score": 10,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 9,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 18
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 19
   },
   "cross_references": [
     {
@@ -30,7 +28,7 @@
     {
       "addr": "00402940",
       "from_addr": "004029f2",
-      "name": "engine_2d.c_FUN_00402940",
+      "name": "engine_2d.c_loadOrBuildColorMap_FUN_00402940",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -42,15 +40,15 @@
         "0057db9a"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "support_trstream.cpp_COutStreamFile_ctor_FUN_0057db80",
-    "signature": "COutStreamFile * support_trstream_cpp_COutStreamFile_ctor_FUN_0057db80(COutStreamFile *this_ptr)"
+    "signature": "COutStreamFile * __cdecl support_trstream_cpp_COutStreamFile_ctor_FUN_0057db80(COutStreamFile *this_ptr)"
   },
   "function_calls": [
     {
       "addr": "0057d860",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_0057d860"
+      "name": "support_trstream.cpp_COutStream_dtor_FUN_0057d860"
     }
   ],
   "globals": [
@@ -68,25 +66,21 @@
         "call_addr": "004bc1ea",
         "call_type": "direct",
         "caller": "core_game.cpp_FUN_004bbf70",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "004029f2",
         "call_type": "direct",
-        "caller": "engine_2d.c_FUN_00402940",
-        "estimated_params": 2,
+        "caller": "engine_2d.c_loadOrBuildColorMap_FUN_00402940",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -94,12 +88,10 @@
         "call_addr": "004bbc70",
         "call_type": "direct",
         "caller": "core_game.cpp_FUN_004bb9b0",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       }
@@ -107,7 +99,7 @@
     "confidence": "high",
     "declared_params": 1,
     "declared_stack_bytes": 4,
-    "estimated_params": 2,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -130,6 +122,20 @@
     },
     "pcode_op_count": 26
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005a17d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005747c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -146,16 +152,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x4 = 0;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -26,13 +26,13 @@
     {
       "addr": "0049f0e0",
       "from_addr": "0049f1c3",
-      "name": "core_emitter.cpp_FUN_0049f0e0",
+      "name": "core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_0049f0e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004ac3e0",
       "from_addr": "004ac4ca",
-      "name": "core_fire.cpp_FUN_004ac3e0",
+      "name": "core_fire.cpp_CBulletHole_init_FUN_004ac3e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -44,13 +44,13 @@
     {
       "addr": "004e6060",
       "from_addr": "004e613a",
-      "name": "core_gore.cpp_FUN_004e6060",
+      "name": "core_gore.cpp_CGore_spawnBloodBurst_FUN_004e6060",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004fda40",
       "from_addr": "004fddb7",
-      "name": "core_larva.cpp_FUN_004fda40",
+      "name": "core_larva.cpp_CLarva_process_FUN_004fda40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -62,31 +62,25 @@
     {
       "addr": "00588ad0",
       "from_addr": "00589a32",
-      "name": "core_stranger.cpp_FUN_00588ad0",
+      "name": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00588ad0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a4260",
       "from_addr": "005a45bf",
-      "name": "core_tvbat.cpp_FUN_005a4260",
+      "name": "core_tvbat.cpp_CTVBat_process_FUN_005a4260",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a5550",
       "from_addr": "005a5934",
-      "name": "core_vampboss.cpp_FUN_005a5550",
+      "name": "core_vampboss.cpp_CVampireBoss_process_FUN_005a5550",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a7520",
       "from_addr": "005a757f",
-      "name": "core_vecdir.cpp_FUN_005a7520",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005b7940",
-      "from_addr": "005b7abb",
-      "name": "core_xform.cpp_FUN_005b7940",
+      "name": "core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -99,6 +93,12 @@
       "addr": "005b7d60",
       "from_addr": "005b7df1",
       "name": "core_xform.cpp_FUN_005b7d60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005b7940",
+      "from_addr": "005b7abb",
+      "name": "core_xform.cpp_slerpQuaternion_FUN_005b7940",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -162,6 +162,32 @@
       "STORE": 1
     },
     "pcode_op_count": 31
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b9989",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005a5cc1",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "006013b1",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00566c81",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,

@@ -7,43 +7,43 @@
 
 // Original: core_simbox.cpp_staticInit_FUN_00547160
 // Address: 00547160
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_simbox.cpp_factoryFuncSimBox_FUN_00547190
 // Address: 00547190
-void factoryFuncSimBox(void);
+CSimBox * __cdecl factoryFuncSimBox(void);
 
 // Original: core_simbox.cpp_CSimBox_getActorType_FUN_005471b0
 // Address: 005471b0
-CDemonActorType * CSimBox::getActorType(CSimBox *this_ptr);
+CDemonActorType * __cdecl CSimBox::getActorType(CSimBox *this_ptr);
 
 // Original: core_simbox.cpp_CSimBox_ctor_FUN_005471c0
 // Address: 005471c0
 CSimBox * __cdecl CSimBox::ctor(CSimBox *this_ptr);
 
-// Original: core_simbox.cpp_FUN_00547280
+// Original: core_simbox.cpp_CSimBox_setup_FUN_00547280
 // Address: 00547280
-void FUN_00547280(CDemonActor *param_1);
+void __cdecl CSimBox::setup(CSimBox *this_ptr);
 
-// Original: core_simbox.cpp_FUN_005473c0
+// Original: core_simbox.cpp_CSimBox_process_FUN_005473c0
 // Address: 005473c0
-void FUN_005473c0(int param_1,float param_2);
+void __cdecl CSimBox::process(CSimBox *this_ptr,float delta_time);
 
-// Original: core_simbox.cpp_FUN_005475a0
+// Original: core_simbox.cpp_CSimBox_renderOpaque_FUN_005475a0
 // Address: 005475a0
-int FUN_005475a0(CDemonActor *param_1);
+int __cdecl CSimBox::renderOpaque(CSimBox *this_ptr);
 
-// Original: core_simbox.cpp_FUN_00547620
+// Original: core_simbox.cpp_CSimBox_getBoundingBox_FUN_00547620
 // Address: 00547620
-void FUN_00547620(int param_1);
+CBoundingBox3D * __cdecl CSimBox::getBoundingBox(CSimBox *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_simbox.cpp_CSimBox_archive_FUN_00547660
 // Address: 00547660
 void __cdecl CSimBox::archive(CSimBox *this_ptr);
 
-// Original: core_simbox.cpp_FUN_00547710
+// Original: core_simbox.cpp_CSimBox_getCollisionType_FUN_00547710
 // Address: 00547710
-undefined4 FUN_00547710(void);
+ECollisionType __cdecl CSimBox::getCollisionType(CSimBox *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_simbox.cpp_CSimBox_dtor_FUN_00547720
 // Address: 00547720

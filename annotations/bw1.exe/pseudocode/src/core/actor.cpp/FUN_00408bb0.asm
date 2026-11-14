@@ -9,18 +9,18 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined        Stack[-0x14]:1  local_14
 ;
-; XREF[94]:
+; XREF[95]:
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f20 at 0040a2fa
 ;   core_actor.cpp_FUN_00409170 at 0040929f
-;   core_actor.cpp_FUN_00409f20 at 0040a2fa
-;   core_baron.cpp_FUN_0040fcf0 at 0040fd34
-;   core_boxactor.cpp_FUN_00422ab0 at 00422acb
+;   core_baron.cpp_CBaron_performLightningAttack_FUN_0040fcf0 at 0040fd34
+;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_00422ab0 at 00422acb
 ;   core_boxactor.cpp_FUN_00422d10 at 00422d39
-;   core_carved.cpp_FUN_00428ae0 at 0042a18c
-;   core_chain.cpp_FUN_00436be0 at 00436cb0
-;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_0042d540 at 0042d558
-;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0 at 0042cd6c
-;   core_charactr.cpp_FUN_0042ea10 at 0042eb80
-;   ... and 84 more
+;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 0042a18c
+;   core_chain.cpp_CChain_getBoundingBox_FUN_00436be0 at 00436cb0
+;   core_charactr.cpp_CCharacter_checkCylinderCollisionWorld_FUN_00431620 at 0043164a
+;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240 at 004323a2
+;   core_charactr.cpp_CCharacter_renderCollision_FUN_0042ea10 at 0042eb80
+;   ... and 85 more
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_FUN_0045f700

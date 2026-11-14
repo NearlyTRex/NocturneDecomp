@@ -1,0 +1,285 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 65,
+    "complexity_score": 139,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 19,
+    "suspect_count": 11,
+    "suspect_types": [
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 84
+  },
+  "cross_references": [
+    {
+      "addr": "0040c870",
+      "from_addr": "0040caa0",
+      "name": "core_actor.cpp_CDemonActor_handleFootstep_FUN_0040c870",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049f310",
+      "from_addr": "0049f8fa",
+      "name": "core_emitter.cpp_CEmitter_process_FUN_0049f310",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b5f00",
+    "address_range": [
+      [
+        "004b5f00",
+        "004b5f95"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireEffect_createLeaf_FUN_004b5f00",
+    "signature": "void __cdecl core_fire_cpp_CFireEffect_createLeaf_FUN_004b5f00(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4 ,float param_5)"
+  },
+  "function_calls": [
+    {
+      "addr": "00468900",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900"
+    },
+    {
+      "addr": "004af0f0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CLeaf_init_FUN_004af0f0"
+    },
+    {
+      "addr": "005c084c",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_rand_FUN_005c084c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01cadb64",
+      "name": "DAT_01cadb64",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0049f8fa",
+        "call_type": "direct",
+        "caller": "core_emitter.cpp_CEmitter_process_FUN_0049f310",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0040caa0",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_CDemonActor_handleFootstep_FUN_0040c870",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.037735849056604,
+    "instruction_count": 53,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 30,
+      "BRANCH": 2,
+      "CALL": 3,
+      "CBRANCH": 2,
+      "COPY": 39,
+      "INT_ADD": 19,
+      "INT_AND": 105,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 45,
+      "INT_LEFT": 11,
+      "INT_LESS": 2,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 13,
+      "INT_OR": 30,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 9,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 29,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 20,
+      "INT_XOR": 6,
+      "INT_ZEXT": 2,
+      "LOAD": 8,
+      "POPCOUNT": 19,
+      "RETURN": 1,
+      "STORE": 12,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 426
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0049d600",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a2930",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "param_3",
+        "offset": 12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "param_4",
+        "offset": 16,
+        "size": 4,
+        "type": "CKeyFramedModel *"
+      },
+      {
+        "is_param": true,
+        "name": "param_5",
+        "offset": 20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void __cdecl core_fire_cpp_CFireEffect_createLeaf_FUN_004b5f00(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4 ,float param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void __cdecl core_fire_cpp_CFireEffect_createLeaf_FUN_004b5f00(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4 ,float param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "void __cdecl core_fire_cpp_CFireEffect_createLeaf_FUN_004b5f00(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4 ,float param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "void __cdecl core_fire_cpp_CFireEffect_createLeaf_FUN_004b5f00(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4 ,float param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "if (param_4 == (CKeyFramedModel *)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "param_4 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_fire_cpp_CLeaf_init_FUN_004af0f0(this_ptr_00,param_2,param_3,param_4,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "core_fire_cpp_CLeaf_init_FUN_004af0f0(this_ptr_00,param_2,param_3,param_4,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "core_fire_cpp_CLeaf_init_FUN_004af0f0(this_ptr_00,param_2,param_3,param_4,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "core_fire_cpp_CLeaf_init_FUN_004af0f0(this_ptr_00,param_2,param_3,param_4,param_5);",
+      "type": "unnamed_param"
+    }
+  ]
+}

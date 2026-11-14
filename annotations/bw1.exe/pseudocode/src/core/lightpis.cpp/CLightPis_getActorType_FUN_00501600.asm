@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_lightpis_cpp_CLightPis_getActorType_FUN_00501600(CLightPis *this_ptr)
+; CDemonActorType * __cdecl core_lightpis_cpp_CLightPis_getActorType_FUN_00501600(CLightPis *this_ptr)
 ;
 ; Parameters:
 ; CLightPis *      Stack[0x4]:4   this_ptr

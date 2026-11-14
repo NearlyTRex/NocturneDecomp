@@ -1,16 +1,15 @@
 // Name: core_boneguy.cpp_CBoneGuy_ctor_FUN_004182d0
 // Address: 004182d0
 // Address Range: [[004182d0, 004184b6]]
-// Convention: unknown
-// Signature: CBoneGuy * core_boneguy_cpp_CBoneGuy_ctor_FUN_004182d0(CBoneGuy *this_ptr)
+// Convention: __cdecl
+// Signature: CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_004182d0(CBoneGuy *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CBoneGuy * core_boneguy_cpp_CBoneGuy_ctor_FUN_004182d0(CBoneGuy *this_ptr)
+CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_004182d0(CBoneGuy *this_ptr)
 
 {
   char cVar1;
@@ -30,17 +29,17 @@ CBoneGuy * core_boneguy_cpp_CBoneGuy_ctor_FUN_004182d0(CBoneGuy *this_ptr)
   float fStack_34;
   float fStack_30;
   float fStack_2c;
-  uint uStack_28;
-  uint uStack_24;
-  uint uStack_20;
+  float fStack_28;
+  float fStack_24;
+  float fStack_20;
   float fStack_1c;
-  uint uStack_10;
+  float fStack_10;
   
   bVar9 = 0;
-  pCVar4 = core_enemy_cpp_CEnemy_ctor_FUN_00487db0((CEnemy *)this_ptr);
-  dest = (void *)__arrinit
-                           (&pCVar4[1].field_0x80,0x14,&g_SBoneGuyBoxTypeInfo);
-  *(byte **)((int)dest + -0x108c8) = &g_CBoneGuyVTable;
+  pCVar4 = core_enemy_cpp_CEnemy_ctor_FUN_00487db0(&this_ptr->base);
+  dest = __arrinit
+                   (pCVar4[1].base.base.create_event + 8,0x14,&g_SBoneGuyBoxTypeInfo);
+  *(CBoneGuy_full_vtable **)((int)dest + -0x108c8) = &g_CBoneGuyVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
             ((CDeformableModelInstance *)((int)dest + -0x108c4),(char *)0x5cc022);
   *(uint *)((int)dest + -0xd748) = 0x3f19999a;
@@ -66,20 +65,20 @@ CBoneGuy * core_boneguy_cpp_CBoneGuy_ctor_FUN_004182d0(CBoneGuy *this_ptr)
   } while (cVar1 != '\0');
   *(uint *)((int)dest + -4) = 0;
   memset(dest,0,0x5a0);
-  iVar5 = core_actor_cpp_FUN_0040cfc0(0,0xff);
+  iVar5 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,0xff);
   *(uint *)((int)dest + -0x7c) = 0;
   *(uint *)((int)dest + -0x78) = 0;
   *(uint *)((int)dest + -0x74) = 0;
   *(uint *)((int)dest + -0x8c) = 0x40c00000;
   *(uint *)((int)dest + -0xe5dc) = 0x3f490fdb;
   *(int *)((int)dest + -0x80) = iVar5;
-  uStack_28 = core_actor_cpp_FUN_0040cf60(0,0x437f0000);
-  uStack_10 = uStack_28;
-  uStack_24 = core_actor_cpp_FUN_0040cf60(0,0x42200000);
-  uStack_10 = uStack_24;
-  uStack_20 = core_actor_cpp_FUN_0040cf60(0x42d40000,0x43800000);
-  uStack_10 = uStack_20;
-  core_boneguy_cpp_FUN_00418110(&stack0xffffffd8);
+  fStack_28 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,255.0);
+  fStack_10 = fStack_28;
+  fStack_24 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,40.0);
+  fStack_10 = fStack_24;
+  fStack_20 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(106.0,256.0);
+  fStack_10 = fStack_20;
+  core_boneguy_cpp_hsvToRgb_FUN_00418110(&stack0xffffffd8);
   fStack_34 = fStack_1c;
   *(uint *)((int)&stack0xffffffd0 + (uint)bVar9 * -8) =
        *(uint *)((int)&stack0xffffffe8 + (uint)bVar9 * 0xfffffffe * 4);

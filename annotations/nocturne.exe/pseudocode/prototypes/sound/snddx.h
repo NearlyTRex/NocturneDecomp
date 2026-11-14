@@ -13,6 +13,10 @@ void __cdecl staticInit(void);
 // Address: 00529a90
 char * __cdecl getDirectSoundErrorString(uint error_code);
 
+// Original: sound_snddx.cpp_checkDirectSoundError_FUN_00529bb0
+// Address: 00529bb0
+int __cdecl checkDirectSoundError(HRESULT error_code,char *operation_description);
+
 // Original: sound_snddx.cpp_fillStreamBuffer_FUN_00529c10
 // Address: 00529c10
 int __cdecl fillStreamBuffer(void);

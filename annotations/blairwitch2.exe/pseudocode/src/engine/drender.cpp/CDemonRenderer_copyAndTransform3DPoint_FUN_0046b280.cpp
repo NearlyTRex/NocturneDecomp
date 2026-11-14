@@ -9,14 +9,11 @@
 void __cdecl engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0046b280(CDemonRenderer *this_ptr,CVector3i *input_point)
 
 {
-  byte auStack_10 [4];
-  uint local_c;
-  uint local_8;
-  uint local_4;
+  SMRGLPoint SStack_10;
   
-  local_c = *(uint *)input_point;
-  local_8 = *(uint *)(input_point + 4);
-  local_4 = *(uint *)(input_point + 8);
-  engine_3d_c_processCameraRelativePoint_FUN_00403830(auStack_10);
+  SStack_10.point.x = input_point->x;
+  SStack_10.point.y = input_point->y;
+  SStack_10.point.z = input_point->z;
+  engine_3d_c_processCameraRelativePoint_FUN_00403830(&SStack_10);
   return;
 }

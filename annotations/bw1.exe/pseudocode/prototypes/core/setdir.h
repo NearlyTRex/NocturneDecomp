@@ -7,7 +7,7 @@
 
 // Original: core_setdir.cpp_staticInit_FUN_00559710
 // Address: 00559710
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_setdir.cpp_FUN_00559c10
 // Address: 00559c10
@@ -17,29 +17,29 @@ float FUN_00559c10(void);
 // Address: 00559f80
 undefined4 FUN_00559f80(CDemonSet *param_1,CDemonActor *param_2,int param_3);
 
-// Original: core_setdir.cpp_FUN_0055b1e0
+// Original: core_setdir.cpp_CDemonSet_setPendingCamera_FUN_0055b1e0
 // Address: 0055b1e0
-void __cdecl FUN_0055b1e0(CDemonSet *this_ptr,int camera_index,float hold_time);
+void __cdecl CDemonSet::setPendingCamera(CDemonSet *this_ptr,int camera_index,float hold_time);
 
-// Original: core_setdir.cpp_FUN_0055b200
+// Original: core_setdir.cpp_CDemonSet_clearCameraSwitchCooldown_FUN_0055b200
 // Address: 0055b200
-void __cdecl FUN_0055b200(CDemonSet *this_ptr);
+void __cdecl CDemonSet::clearCameraSwitchCooldown(CDemonSet *this_ptr);
 
-// Original: core_setdir.cpp_FUN_0055b220
+// Original: core_setdir.cpp_CDemonSet_refreshThumbs_FUN_0055b220
 // Address: 0055b220
-void FUN_0055b220(undefined4 *param_1,char *param_2);
+void __cdecl CDemonSet::refreshThumbs(CDemonSet *this_ptr,char *filename);
 
 // Original: core_setdir.cpp_FUN_0055b280
 // Address: 0055b280
-void FUN_0055b280(undefined4 *param_1,char *param_2);
+void FUN_0055b280(SIZE_T *param_1,char *param_2);
 
 // Original: core_setdir.cpp_FUN_0055b330
 // Address: 0055b330
 void FUN_0055b330(CDemonSet *param_1);
 
-// Original: core_setdir.cpp_FUN_0055b4c0
+// Original: core_setdir.cpp_setPixelGrayscale_FUN_0055b4c0
 // Address: 0055b4c0
-void FUN_0055b4c0(int param_1,int param_2,int param_3);
+void __cdecl setPixelGrayscale(int x,int y,int grayscale_value);
 
 // Original: core_setdir.cpp_FUN_0055b4f0
 // Address: 0055b4f0
@@ -53,17 +53,17 @@ void __cdecl CDemonSet::skipDeprecatedVirtualDirectorData(CDemonSet *this_ptr,_F
 // Address: 0055b990
 undefined4 FUN_0055b990(int param_1,int param_2,float *param_3);
 
-// Original: core_setdir.cpp_FUN_0055ba50
+// Original: core_setdir.cpp_CDemonSet_isPointInVdirGroup_FUN_0055ba50
 // Address: 0055ba50
-undefined4 FUN_0055ba50(CDemonSet *param_1,int param_2,undefined4 param_3);
+int __cdecl CDemonSet::isPointInVdirGroup(CDemonSet *this_ptr,int box_index,CVector3f *point);
 
 // Original: core_setdir.cpp_testOBBIntersection_FUN_0055bab0
 // Address: 0055bab0
-undefined4 __cdecl testOBBIntersection(float *param_1,float *param_2);
+int __cdecl testOBBIntersection(SVDBox *obb_a,SVDBox *obb_b);
 
-// Original: core_setdir.cpp_FUN_0055bf10
+// Original: core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_0055bf10
 // Address: 0055bf10
-undefined8 FUN_0055bf10(CDemonSet *param_1);
+int __cdecl CDemonSet::buildVdirBoxGroups(CDemonSet *this_ptr);
 
 // Original: core_setdir.cpp_CDemonSet_findVdirBoxRoot_FUN_0055c020
 // Address: 0055c020

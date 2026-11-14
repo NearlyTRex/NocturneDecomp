@@ -10,21 +10,21 @@ void __cdecl shape_spotview_cpp_CSpotView_reset_FUN_00567cc0(CSpotView *this_ptr
 
 {
   if ((control_flags & 1) != 0) {
-    *(uint *)(this_ptr + 0x24) = *(uint *)(this_ptr + 8);
+    this_ptr->pitch = this_ptr->default_pitch;
   }
   if ((control_flags & 2) != 0) {
-    *(uint *)(this_ptr + 0x28) = *(uint *)(this_ptr + 0xc);
+    this_ptr->yaw = this_ptr->default_yaw;
   }
   if ((control_flags & 8) != 0) {
-    *(uint *)(this_ptr + 0x34) = *(uint *)(this_ptr + 0x14);
-    *(uint *)(this_ptr + 0x30) = *(uint *)(this_ptr + 0x10);
+    this_ptr->pan_y = this_ptr->default_pan_y;
+    this_ptr->pan_x = this_ptr->default_pan_x;
   }
   if ((control_flags & 4) != 0) {
-    *(uint *)(this_ptr + 0x2c) = *(uint *)this_ptr;
+    this_ptr->distance = this_ptr->default_distance;
   }
   if ((control_flags & 0x10) == 0) {
     return;
   }
-  *(uint *)(this_ptr + 0x38) = *(uint *)(this_ptr + 4);
+  this_ptr->zoom = this_ptr->default_zoom;
   return;
 }

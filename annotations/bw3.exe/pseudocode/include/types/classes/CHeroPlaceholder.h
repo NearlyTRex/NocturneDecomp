@@ -4,13 +4,16 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
 
 // Structure: CHeroPlaceholder
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 380; archive (bw3 hero.cpp) 'index' +0x158, 'heroName' +0x15c.
 // Ghidra size: 0x17c (380 bytes)
 #pragma pack(push, 1)
 typedef struct CHeroPlaceholder {
-    char field_0[380]; // 0x0
+    CDemonActor base; // 0x0
+    int index; // 0x158, archive 'index'
+    char hero_name[32]; // 0x15c, archive 'heroName' (archiveString); ctor copies "CDoc"; ends at the RTTI size
 } CHeroPlaceholder;
 #pragma pack(pop)
 

@@ -31,12 +31,12 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
-;   core_mission.cpp_FUN_004fc740
+;   core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740
 ;   crt_stdio.c_fgetc_FUN_005b8180
 ;   crt_stdio.c_fscanf_FUN_005b8100
 ;   crt_stdio.c_ungetc_FUN_005b8350
 ;   crt_string.c__stricmp_FUN_005b8130
-;   shape_edittool.cpp_FUN_0047be40
+;   shape_edittool.cpp_CEditorTools_showError_FUN_0047be40
 ;
 ; *****************************************************************************
 
@@ -63,7 +63,7 @@ section .text
     PUSH EBX                            ; 004fc071
         ;   Label: LAB_004fc071
     CALL crt_stdio.c_fgetc_FUN_005b8180 ; 004fc072
-        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005b8180()
+        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005b8180(_FILE * file)
     MOV EDX,EAX                         ; 004fc077
     ADD ESP,0x4                         ; 004fc079
     INC DL                              ; 004fc07c
@@ -76,7 +76,7 @@ section .text
         ;   XREF to: 004fc16a (CONDITIONAL_JUMP)  ; LAB_004fc16a
     PUSH EBX                            ; 004fc096
     CALL crt_stdio.c_fgetc_FUN_005b8180 ; 004fc097
-        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005b8180()
+        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005b8180(_FILE * file)
     ADD ESP,0x4                         ; 004fc09c
     CMP EAX,0x22                        ; 004fc09f
     JNZ 0x004fc0e8                      ; 004fc0a2
@@ -95,7 +95,7 @@ section .text
     PUSH EBX                            ; 004fc0c8
         ;   Label: LAB_004fc0c8
     CALL crt_stdio.c_fgetc_FUN_005b8180 ; 004fc0c9
-        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005b8180()
+        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005b8180(_FILE * file)
     ADD ESP,0x4                         ; 004fc0ce
     CMP EAX,-0x1                        ; 004fc0d1
     JZ 0x004fc0a4                       ; 004fc0d4
@@ -114,14 +114,14 @@ section .text
         ;   Label: LAB_004fc0e8
     PUSH EAX                            ; 004fc0e9
     CALL crt_stdio.c_ungetc_FUN_005b8350 ; 004fc0ea
-        ;   XREF to: 005b8350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_ungetc_FUN_005b8350()
+        ;   XREF to: 005b8350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_ungetc_FUN_005b8350(int character, _FILE * stream)
     ADD ESP,0x8                         ; 004fc0ef
     MOV EAX,ESP                         ; 004fc0f2
     PUSH EAX                            ; 004fc0f4
     PUSH 0x5de5f4                       ; 004fc0f5 | = "%[^\"]"
     PUSH EBX                            ; 004fc0fa
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 004fc0fb
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004fc100
     CMP EAX,0x1                         ; 004fc103
     JNZ 0x004fc0a4                      ; 004fc106
@@ -139,7 +139,7 @@ section .text
     PUSH EBX                            ; 004fc120
         ;   Label: LAB_004fc120
     CALL crt_stdio.c_fgetc_FUN_005b8180 ; 004fc121
-        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005b8180()
+        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005b8180(_FILE * file)
     ADD ESP,0x4                         ; 004fc126
     CMP EAX,0x22                        ; 004fc129
     JNZ 0x004fc0a4                      ; 004fc12c
@@ -151,8 +151,8 @@ section .text
     PUSH EAX                            ; 004fc136
     MOV EDX,dword ptr [ESP + 0xe4]      ; 004fc137
     PUSH EDX                            ; 004fc13e
-    CALL core_mission.cpp_FUN_004fc740  ; 004fc13f
-        ;   XREF to: 004fc740 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_FUN_004fc740(CDemonMission * this_ptr, char * name)
+    CALL core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740 ; 004fc13f
+        ;   XREF to: 004fc740 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 004fc144
     MOV ESI,EAX                         ; 004fc147
     TEST EAX,EAX                        ; 004fc149
@@ -165,8 +165,8 @@ section .text
     PUSH 0x5de5fa                       ; 004fc154 | = "WARNING.  Can't find actor '%s' in %s..."
     MOV ECX,dword ptr [0x006138e0]      ; 004fc159 | g_CEditorToolsPtr
     PUSH ECX                            ; 004fc15f
-    CALL shape_edittool.cpp_FUN_0047be40 ; 004fc160
-        ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047be40()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0047be40 ; 004fc160
+        ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0047be40(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 004fc165
     JMP 0x004fc120                      ; 004fc168
         ;   XREF to: 004fc120 (UNCONDITIONAL_JUMP)  ; LAB_004fc120
@@ -174,14 +174,14 @@ section .text
         ;   Label: LAB_004fc16a
     PUSH EAX                            ; 004fc16b
     CALL crt_stdio.c_ungetc_FUN_005b8350 ; 004fc16c
-        ;   XREF to: 005b8350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_ungetc_FUN_005b8350()
+        ;   XREF to: 005b8350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_ungetc_FUN_005b8350(int character, _FILE * stream)
     ADD ESP,0x8                         ; 004fc171
     LEA EAX,[ESP + 0xc8]                ; 004fc174
     PUSH EAX                            ; 004fc17b
     PUSH 0x5de654                       ; 004fc17c | DAT_005de654
     PUSH EBX                            ; 004fc181
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 004fc182
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004fc187
     CMP EAX,0x1                         ; 004fc18a
     JNZ 0x004fc0a4                      ; 004fc18d

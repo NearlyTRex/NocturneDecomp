@@ -2,15 +2,20 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct _FILE;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/COutStream.h"
 
 // Structure: COutStreamFile
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI size 8; ctor 005a17d0 calls the out-stream base ctor then zeroes +4
 // Ghidra size: 0x8 (8 bytes)
 #pragma pack(push, 1)
 typedef struct COutStreamFile {
-    char field_0[8]; // 0x0
+    COutStream base; // 0x0, derived
+    struct _FILE* file; // 0x4, open 005a19e0 stores fopen(path, mode); putChar 005a18c0 fputc()s to it, write fwrite()s, seek/tell fseek/ftell; close 005a19b0 fclose()s and zeroes it; attach stores a caller FILE
 } COutStreamFile;
 #pragma pack(pop)
 

@@ -18,34 +18,33 @@ void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00538470(CZThumb *this
   int iVar4;
   
   core_setdir_cpp_CZThumb_free_FUN_005386a0(this_ptr);
-  if ((CVector3f *)&this_ptr->field_0x8 != camera_pos) {
-    *(uint *)&this_ptr->field_0x8 = *(uint *)camera_pos;
-    *(uint *)&this_ptr->field_0xc = *(uint *)&camera_pos->field_0x4;
-    *(uint *)&this_ptr->field_0x10 = *(uint *)&camera_pos->field_0x8;
+  if (&this_ptr->camera_position != camera_pos) {
+    (this_ptr->camera_position).x = camera_pos->x;
+    (this_ptr->camera_position).y = camera_pos->y;
+    (this_ptr->camera_position).z = camera_pos->z;
   }
-  if ((CVector3f *)&this_ptr->field_0x14 != look_at_pos) {
-    *(uint *)&this_ptr->field_0x14 = *(uint *)look_at_pos;
-    *(uint *)&this_ptr->field_0x18 = *(uint *)&look_at_pos->field_0x4;
-    *(uint *)&this_ptr->field_0x1c = *(uint *)&look_at_pos->field_0x8;
+  if (&this_ptr->look_at_position != look_at_pos) {
+    (this_ptr->look_at_position).x = look_at_pos->x;
+    (this_ptr->look_at_position).y = look_at_pos->y;
+    (this_ptr->look_at_position).z = look_at_pos->z;
   }
-  *(int *)this_ptr = width;
-  *(int *)&this_ptr->field_0x4 = height;
-  *(float *)&this_ptr->field_0x20 = projection_scale;
-  pvVar2 = FUN_005b8580(*(int *)this_ptr * *(int *)&this_ptr->field_0x4 * 4);
-  *(void **)&this_ptr->field_0x24 = pvVar2;
+  this_ptr->width = width;
+  this_ptr->height = height;
+  this_ptr->projection_scale = projection_scale;
+  pvVar2 = malloc(this_ptr->width * this_ptr->height * 4);
+  this_ptr->zbuffer_data = pvVar2;
   if (pvVar2 == (void *)0x0) {
     _DAT_01d046a0 = "..\\core\\setdir.cpp";
     _DAT_01d046a4 = 0x9f;
     core_main_c_FUN_004e4500("Out of memory");
   }
   if (file_handle != (_FILE *)0x0) {
-    _fread(*(uint *)&this_ptr->field_0x24,*(int *)this_ptr * *(int *)&this_ptr->field_0x4,
-               4,file_handle);
+    _fread(this_ptr->zbuffer_data,this_ptr->width * this_ptr->height,4,file_handle);
     return;
   }
   value = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
   engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046b940(DAT_0060b280,0);
-  iVar1 = *(int *)&this_ptr->field_0x4;
+  iVar1 = this_ptr->height;
   if (_DAT_020b0258 != 0) {
     _DAT_01d046a0 = "..\\core\\setdir.cpp";
     _DAT_01d046a4 = 0x67;
@@ -64,9 +63,9 @@ void __cdecl core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00538470(CZThumb *this
   engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0046b280
             (DAT_0060b280,(CVector3i *)0x2093940);
   engine_special_cpp_clearZBufferNative_FUN_0055b254();
-  core_set_cpp_FUN_0052d0e0(g_CDemonSetPtr,9999.9,0);
+  core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0(g_CDemonSetPtr,9999.9,0);
   core_setdir_cpp_CZThumb_popRenderingContext_FUN_00538a30(this_ptr);
-  iVar1 = *(int *)&this_ptr->field_0x4;
+  iVar1 = this_ptr->height;
   if (_DAT_020b0258 == 0) {
     _DAT_01d046a0 = "..\\core\\setdir.cpp";
     _DAT_01d046a4 = 0x70;

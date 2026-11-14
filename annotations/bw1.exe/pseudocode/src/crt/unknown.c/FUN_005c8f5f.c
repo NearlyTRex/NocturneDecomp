@@ -16,6 +16,6 @@ uint FUN_005c8f5f(int *param_1,int param_2)
      (*(int *)(*(int *)(*param_1 + 4) + 8 + (int)param_1) == 0)) {
     return 1;
   }
-  uVar1 = unkafter_zombie_cpp_FUN_005cc4d2(param_1,param_2);
+  uVar1 = FUN_005cc4d2(param_1,param_2);
   return uVar1;
 }

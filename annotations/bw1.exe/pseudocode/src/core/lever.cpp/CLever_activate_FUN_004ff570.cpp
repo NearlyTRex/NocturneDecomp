@@ -11,11 +11,11 @@
 void __cdecl core_lever_cpp_CLever_activate_FUN_004ff570(CLever *this_ptr)
 
 {
-  *(uint *)&this_ptr->field_0x418 = 1;
-  if (*(float *)&this_ptr->field_0x2dc < (float)_DAT_005e6d5a) {
-    *(uint *)&this_ptr->field_0x41c = 0x3f800000;
+  this_ptr->moving = 1;
+  if (this_ptr->param < (float)_DAT_005e6d5a) {
+    this_ptr->move_to_pct = 1.0;
     return;
   }
-  *(uint *)&this_ptr->field_0x41c = 0;
+  this_ptr->move_to_pct = 0.0;
   return;
 }

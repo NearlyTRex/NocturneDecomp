@@ -2,13 +2,13 @@
 // Address: 00404f10
 // Address Range: [[00404f10, 00404fb4]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_3d_c_updateAnimatedTexture_FUN_00404f10(int param_1)
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_updateAnimatedTexture_FUN_00404f10(SMRGLAnimatedTexture *texture)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int __cdecl engine_3d_c_updateAnimatedTexture_FUN_00404f10(int param_1)
+SMRGLHeaderExtended * __cdecl engine_3d_c_updateAnimatedTexture_FUN_00404f10(SMRGLAnimatedTexture *texture)
 
 {
   char cVar1;
@@ -19,16 +19,16 @@ int __cdecl engine_3d_c_updateAnimatedTexture_FUN_00404f10(int param_1)
   uint uStack_24;
   char acStack_20 [16];
   
-  iVar2 = *(int *)(param_1 + 0x14) + _DAT_01c5fad0;
-  *(int *)(param_1 + 0x14) = iVar2;
-  iVar2 = (iVar2 / *(int *)(param_1 + 0x10)) % *(int *)(param_1 + 8);
-  if (iVar2 != *(int *)(param_1 + 0xc)) {
-    *(uint *)(param_1 + 0x18) = 1;
-    *(int *)(param_1 + 0xc) = iVar2;
+  iVar2 = texture->accumulated_time + _DAT_01c5fad0;
+  texture->accumulated_time = iVar2;
+  iVar2 = (iVar2 / texture->frame_duration) % texture->frame_count;
+  if (iVar2 != texture->current_frame) {
+    texture->dirty_flag = 1;
+    texture->current_frame = iVar2;
   }
   uStack_24 = 0;
   pcVar4 = acStack_20;
-  pcVar3 = (char *)(*(int *)(param_1 + 0xc) * 0x20 + param_1 + 0x1c);
+  pcVar3 = (char *)((int)texture + texture->current_frame * 0x20 + 0x1c);
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;
@@ -39,9 +39,9 @@ int __cdecl engine_3d_c_updateAnimatedTexture_FUN_00404f10(int param_1)
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
   engine_texture_cpp_FUN_0056aa10(auStack_28);
-  if (*(int *)(param_1 + 0x18) == 0) {
-    return *(int *)(param_1 + 8) * 0x20 + param_1 + 0x1c;
+  if (texture->dirty_flag == 0) {
+    return (SMRGLHeaderExtended *)((int)texture + texture->frame_count * 0x20 + 0x1c);
   }
-  *(uint *)(param_1 + 0x18) = 0;
-  return *(int *)(param_1 + 8) * 0x20 + param_1 + 0x1c;
+  texture->dirty_flag = 0;
+  return (SMRGLHeaderExtended *)((int)texture + texture->frame_count * 0x20 + 0x1c);
 }

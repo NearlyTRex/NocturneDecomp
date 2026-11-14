@@ -9,8 +9,8 @@
 SClothVertex * __cdecl core_cloth_cpp_SClothVertex_ctor_FUN_00442450(SClothVertex *this_ptr)
 
 {
-  int iVar1;
+  void *pvVar1;
   
-  iVar1 = __arrinit(&this_ptr->field_0xec,3,&g_CVectorTypeInfo);
-  return (SClothVertex *)(iVar1 + -0xec);
+  pvVar1 = __arrinit(this_ptr->bone_positions,3,&g_CVectorTypeInfo);
+  return (SClothVertex *)((int)pvVar1 + -0xec);
 }

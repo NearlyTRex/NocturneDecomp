@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_trash_cpp_factoryFuncTrash_FUN_0056d1b0(void)
+; CTrash * __cdecl core_trash_cpp_factoryFuncTrash_FUN_0056d1b0(void)
 ;
 ;
 ; Called Functions:
 ;   core_trash.cpp_CTrash_ctor_FUN_0056d1e0
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_memory.c_operator_new_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x328                          ; 0056d1b0
         ;   Label: core_trash.cpp_factoryFuncTrash_FUN_0056d1b0
-    CALL crt_unknown.c_FUN_005a3cb2     ; 0056d1b5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 0056d1b5
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
     ADD ESP,0x4                         ; 0056d1ba
     TEST EAX,EAX                        ; 0056d1bd
     JNZ 0x0056d1c2                      ; 0056d1bf

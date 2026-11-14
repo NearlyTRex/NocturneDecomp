@@ -2,17 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 11,
-    "complexity_score": 21,
+    "complexity_score": 37,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 6,
-    "suspect_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 7,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field"
+      "pointer_cast",
+      "pointer_truncation"
     ],
-    "total_lines": 17
+    "total_lines": 18
   },
   "cross_references": [],
   "function": {
@@ -66,6 +67,26 @@
     },
     "pcode_op_count": 45
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005067c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0050b940",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004cbed0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -84,12 +105,20 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "iVar1 = __arrinit(&this_ptr->field_0x3c,2,&g_CDemonTriangleTypeInfo);",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 9,
+      "match": "(SGem *)((int)pvVar1",
+      "severity": "moderate",
+      "text": "return (SGem *)((int)pvVar1 + -0x3c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pvVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 9,
+      "match": "(int)pvVar1",
+      "severity": "moderate",
+      "text": "return (SGem *)((int)pvVar1 + -0x3c);",
+      "type": "pointer_truncation"
     }
   ],
   "vtable_info": {

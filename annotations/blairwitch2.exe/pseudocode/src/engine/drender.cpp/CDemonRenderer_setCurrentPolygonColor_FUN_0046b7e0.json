@@ -18,19 +18,19 @@
     {
       "addr": "0041f620",
       "from_addr": "0041f71c",
-      "name": "core_bugs.cpp_FUN_0041f620",
+      "name": "core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_0041f620",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005b0c8c",
+      "addr": "005b0c90",
       "from_addr": "005b0ca4",
-      "name": "core_cloth.cpp_FUN_005b0c8c",
+      "name": "core_cloth.cpp_FUN_005b0c90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00461a4e",
+      "addr": "00461a50",
       "from_addr": "00461b37",
-      "name": "core_dpart.cpp_FUN_00461a4e",
+      "name": "core_dpart.cpp_FUN_00461a50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -42,7 +42,7 @@
     {
       "addr": "005862e0",
       "from_addr": "005868de",
-      "name": "core_water.cpp_FUN_005862e0",
+      "name": "core_water.cpp_CWater_render_FUN_005862e0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -73,7 +73,7 @@
       {
         "call_addr": "005868de",
         "call_type": "direct",
-        "caller": "core_water.cpp_FUN_005862e0",
+        "caller": "core_water.cpp_CWater_render_FUN_005862e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -84,18 +84,7 @@
       {
         "call_addr": "0041f71c",
         "call_type": "direct",
-        "caller": "core_bugs.cpp_FUN_0041f620",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
-      },
-      {
-        "call_addr": "00461b37",
-        "call_type": "direct",
-        "caller": "core_dpart.cpp_FUN_00461a4e",
+        "caller": "core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_0041f620",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -115,9 +104,20 @@
         "stack_params": 2
       },
       {
+        "call_addr": "00461b37",
+        "call_type": "direct",
+        "caller": "core_dpart.cpp_FUN_00461a50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
         "call_addr": "005b0ca4",
         "call_type": "direct",
-        "caller": "core_cloth.cpp_FUN_005b0c8c",
+        "caller": "core_cloth.cpp_FUN_005b0c90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -142,6 +142,32 @@
       "RETURN": 1
     },
     "pcode_op_count": 7
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00483ce0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0046d3c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0048c960",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00460f10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 12,

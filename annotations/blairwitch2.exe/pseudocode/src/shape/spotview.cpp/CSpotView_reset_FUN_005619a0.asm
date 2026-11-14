@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   shape_spotview.cpp_CSpotView_ctor_FUN_00561940 at 00561992
-;   shape_spotview.cpp_FUN_005619ee at 00561cb7
+;   shape_spotview.cpp_FUN_005619f0 at 00561cb7
 ;
 ; *****************************************************************************
 

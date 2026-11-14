@@ -1,0 +1,223 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 43,
+    "complexity_score": 144,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 29,
+    "suspect_count": 9,
+    "suspect_types": [
+      "concat_reconstruction",
+      "extra_output",
+      "pointer_cast",
+      "pointer_truncation",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 72
+  },
+  "cross_references": [
+    {
+      "addr": "004e44e0",
+      "from_addr": "004e45c2",
+      "name": "core_main.c_initializeGameSystems_FUN_004e44e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004e4d00",
+    "address_range": [
+      [
+        "004e4d00",
+        "004e4d7f"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_main.c_FUN_004e4d00",
+    "signature": "undefined8 core_main_c_FUN_004e4d00(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a3120",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005a3120"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c6eba",
+      "name": "DAT_005c6eba",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c6ebe",
+      "name": "DAT_005c6ebe",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c6ec2",
+      "name": "DAT_005c6ec2",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004e45c2",
+        "call_type": "direct",
+        "caller": "core_main.c_initializeGameSystems_FUN_004e44e0",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.868421052631579,
+    "instruction_count": 38,
+    "opcode_distribution": {
+      "CALL": 2,
+      "CALLOTHER": 2,
+      "CBRANCH": 1,
+      "COPY": 127,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_MULT": 4,
+      "INT2FLOAT": 1,
+      "INT_ADD": 11,
+      "INT_AND": 14,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 14,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 7,
+      "INT_SUB": 4,
+      "INT_XOR": 2,
+      "LOAD": 3,
+      "POPCOUNT": 7,
+      "ROUND": 2,
+      "STORE": 7,
+      "TRUNC": 2
+    },
+    "pcode_op_count": 223
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004e8620",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005072c0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 8,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 7,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "int extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "int extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 28,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "*(int *)((int)&CAlphaBitmap_01d71e28.height + extraout_ECX) = (int)ROUND(fVar6);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 29,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "iVar1 = extraout_EDX + 1;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 30,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "*(int *)(extraout_ECX + 0x1d7223c) = (int)ROUND(fVar5);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Pointer value `&CAlphaBitmap_01d71e28.height` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 28,
+      "match": "(int)&CAlphaBitmap_01d71e28.height",
+      "severity": "moderate",
+      "text": "*(int *)((int)&CAlphaBitmap_01d71e28.height + extraout_ECX) = (int)ROUND(fVar6);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 32,
+      "match": "CONCAT44",
+      "severity": "moderate",
+      "text": "return CONCAT44(iVar1,(int)ROUND(fVar5));",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 28,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(int *)((int)&CAlphaBitmap_01d71e28.height + extraout_ECX) = (int)ROUND(fVar6);",
+      "type": "pointer_cast"
+    }
+  ]
+}

@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 4,
-    "complexity_score": 21,
+    "complexity_score": 5,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 6,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 10
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 9
   },
   "cross_references": [],
   "function": {
@@ -23,9 +21,9 @@
         "004cbf0e"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_game.cpp_CGame_dtor_FUN_004cbf00",
-    "signature": "CGame * core_game_cpp_CGame_dtor_FUN_004cbf00(CGame *this_ptr,uint flags)"
+    "signature": "CGame * __cdecl core_game_cpp_CGame_dtor_FUN_004cbf00(CGame *this_ptr,uint flags)"
   },
   "function_calls": [],
   "globals": [],
@@ -50,6 +48,32 @@
     },
     "pcode_op_count": 9
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004b2ff0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004b4420",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004d7d70",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8
+    },
+    "nocturne.exe": {
+      "addr": "0049a880",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -73,16 +97,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0xb00",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xb00 = 0x600f94;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

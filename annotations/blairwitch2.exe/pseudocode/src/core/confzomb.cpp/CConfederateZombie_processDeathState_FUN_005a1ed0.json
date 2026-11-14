@@ -1,0 +1,122 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 40,
+    "complexity_score": 15,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 55
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005a1ed0",
+    "address_range": [
+      [
+        "005a1ed0",
+        "005a1f37"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_confzomb.cpp_CConfederateZombie_processDeathState_FUN_005a1ed0",
+    "signature": "void __cdecl core_confzomb_cpp_CConfederateZombie_processDeathState_FUN_005a1ed0(CConfederateZombie *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "0059f570",
+      "is_variadic": false,
+      "name": "core_basicene.cpp_FUN_0059f570"
+    },
+    {
+      "addr": "005a01a0",
+      "is_variadic": false,
+      "name": "core_basicene.cpp_FUN_005a01a0"
+    },
+    {
+      "addr": "00503620",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_00503620"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.40625,
+    "instruction_count": 32,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CALL": 3,
+      "CBRANCH": 2,
+      "COPY": 56,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 14,
+      "INT_AND": 14,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_LEFT": 4,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 12,
+      "INT_ZEXT": 4,
+      "LOAD": 8,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 14
+    },
+    "pcode_op_count": 173
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CConfederateZombie *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 372,
+        "vtable_addr": "005fefa4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

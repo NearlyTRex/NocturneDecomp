@@ -7,64 +7,64 @@
 
 // Original: core_hostage.cpp_staticInit_FUN_004d1270
 // Address: 004d1270
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_hostage.cpp_factoryFuncHostage_FUN_004d12a0
 // Address: 004d12a0
-void factoryFuncHostage(void);
+CHostage * __cdecl factoryFuncHostage(void);
 
 // Original: core_hostage.cpp_CHostage_getActorType_FUN_004d12c0
 // Address: 004d12c0
-CDemonActorType * CHostage::getActorType(CHostage *this_ptr);
+CDemonActorType * __cdecl CHostage::getActorType(CHostage *this_ptr);
 
 // Original: core_hostage.cpp_CHostage_ctor_FUN_004d12d0
 // Address: 004d12d0
 CHostage * __cdecl CHostage::ctor(CHostage *this_ptr);
 
-// Original: core_hostage.cpp_FUN_004d1400
+// Original: core_hostage.cpp_CHostage_setup_FUN_004d1400
 // Address: 004d1400
-void FUN_004d1400(int param_1);
+void __cdecl CHostage::setup(CHostage *this_ptr);
 
-// Original: core_hostage.cpp_FUN_004d15d0
+// Original: core_hostage.cpp_CHostage_renderOpaque_FUN_004d15d0
 // Address: 004d15d0
-undefined4 FUN_004d15d0(int param_1);
+int __cdecl CHostage::renderOpaque(CHostage *this_ptr);
 
-// Original: core_hostage.cpp_FUN_004d1660
+// Original: core_hostage.cpp_CHostage_process_FUN_004d1660
 // Address: 004d1660
-void FUN_004d1660(CHostage *param_1,float param_2);
+void __cdecl CHostage::process(CHostage *this_ptr,float delta_time);
 
-// Original: core_hostage.cpp_FUN_004d2c50
+// Original: core_hostage.cpp_CHostage_processGrabberFlee_FUN_004d2c50
 // Address: 004d2c50
-int __cdecl FUN_004d2c50(CHostage *this_ptr,float delta_time);
+int __cdecl CHostage::processGrabberFlee(CHostage *this_ptr,float delta_time);
 
-// Original: core_hostage.cpp_FUN_004d2da0
+// Original: core_hostage.cpp_CHostage_renderBackground_FUN_004d2da0
 // Address: 004d2da0
-void FUN_004d2da0(CNPC *param_1,int param_2);
+void __cdecl CHostage::renderBackground(CHostage *this_ptr,int layer_flag);
 
 // Original: core_hostage.cpp_CHostage_archive_FUN_004d2df0
 // Address: 004d2df0
 void __cdecl CHostage::archive(CHostage *this_ptr);
 
-// Original: core_hostage.cpp_FUN_004d3010
+// Original: core_hostage.cpp_CHostage_isGrabbable_FUN_004d3010
 // Address: 004d3010
-undefined4 FUN_004d3010(int param_1);
+int __cdecl CHostage::isGrabbable(CHostage *this_ptr,CDemonActor *grabber);
 
-// Original: core_hostage.cpp_FUN_004d3050
+// Original: core_hostage.cpp_CHostage_canBeGrabbed_FUN_004d3050
 // Address: 004d3050
-undefined4 FUN_004d3050(void);
+int __cdecl CHostage::canBeGrabbed(CHostage *this_ptr,CDemonActor *grabber,int grab_type);
 
-// Original: core_hostage.cpp_FUN_004d3060
+// Original: core_hostage.cpp_CHostage_getGrabbed_FUN_004d3060
 // Address: 004d3060
-undefined4 FUN_004d3060(int param_1,undefined4 param_2,int param_3);
+int __cdecl CHostage::getGrabbed(CHostage *this_ptr,CDemonActor *grabber,int grab_type);
 
-// Original: core_hostage.cpp_FUN_004d30d0
+// Original: core_hostage.cpp_CHostage_processDamage_FUN_004d30d0
 // Address: 004d30d0
-void FUN_004d30d0(CNPC *param_1,SDamageInfo *param_2);
+void __cdecl CHostage::processDamage(CHostage *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_hostage.cpp_FUN_004d31d0
+// Original: core_hostage.cpp_CHostage_getCarryObjToBodyXForm_FUN_004d31d0
 // Address: 004d31d0
-void FUN_004d31d0(int param_1,int param_2);
+CMatrix3x4f * __stack2_esi CHostage::getCarryObjToBodyXForm(CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_hostage.cpp_CHostage_dtor_FUN_004d36e0
 // Address: 004d36e0
-CHostage * CHostage::dtor(CHostage *this_ptr,uint flags);
+CHostage * __cdecl CHostage::dtor(CHostage *this_ptr,uint flags);

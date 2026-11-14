@@ -12,14 +12,14 @@
 ; XREF[18]:
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_00429b40 at 00429ba1
 ;   core_confedrt.cpp_FUN_005a0bd0 at 005a0d3f
+;   core_doc.cpp_CDoc_makeDrawDecision_FUN_004555c0 at 00455ad5
 ;   core_doc.cpp_FUN_00450c60 at 00451721
 ;   core_doc.cpp_FUN_00453d80 at 00453ff8
 ;   core_doc.cpp_FUN_00455170 at 00455211
-;   core_doc.cpp_FUN_004555c0 at 00455ad5
 ;   core_doc.cpp_FUN_00455d10 at 00455dc3
 ;   core_doc.cpp_FUN_004562a0 at 004562e1
-;   core_gabriela.cpp_FUN_004afa20 at 004afbdf
-;   core_mobster.cpp_CMobster_aimTommyGun_FUN_004fef30 at 004ff244
+;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20 at 004afbdf
+;   core_hpatrol.cpp_CPatrolPoint_process_FUN_0059c680 at 0059c76d
 ;   ... and 8 more
 ;
 ; Referenced Globals:

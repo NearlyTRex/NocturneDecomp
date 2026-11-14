@@ -4,120 +4,123 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/stdarg.h"
 #include "types/classes/CBitFont.h"
 #include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CGame.h"
 #include "types/classes/CSkeleton.h"
-#include "types/enums/EInputCodeType.h"
 #include "types/structs/SPlayerInput.h"
+#include "types/structs/SRenderVertex.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x4B0000
 // =============================================================================
 
 void engine_font_cpp_FUN_004b0170(int param_1,float param_2);
-void __cdecl engine_font_cpp_FUN_004b0190(CBitFont *this_ptr,char *filename,int width,int height,int first_char,int last_char,int load_flags);
-void engine_font_cpp_FUN_004b01ce(CBitFont *param_1,CBitFont *param_2);
+void __cdecl engine_font_cpp_CBitFont_loadNewBitmap_FUN_004b0190(CBitFont *this_ptr,char *filename,int width,int height,int first_char,int last_char,int load_flags);
+void engine_font_cpp_FUN_004b01d0(void);
 void engine_font_cpp_FUN_004b0480(CBitFont *param_1);
-void __cdecl engine_font_cpp_FUN_004b0500(CBitFont *this_ptr);
-void engine_font_cpp_FUN_004b0510(int param_1,int param_2,int param_3,int param_4,int param_5);
-int engine_font_cpp_FUN_004b09c0(int param_1,byte *param_2,int param_3,int param_4,int param_5);
+void __cdecl engine_font_cpp_CBitFont_setInitializedFlag_FUN_004b0500(CBitFont *this_ptr);
+void engine_font_cpp_FUN_004b0510(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5);
+int __cdecl engine_font_cpp_CBitFont_calculateCharacterHeight_FUN_004b09c0(CBitFont *this_ptr,uchar *char_bitmap,int char_width,int char_height,int bitmap_stride);
 int engine_font_cpp_FUN_004b0a20(CBitFont *param_1,byte *param_2,int param_3,int param_4,int param_5,int param_6);
-int __cdecl engine_font_cpp_FUN_004b0cb0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
-void engine_font_cpp_FUN_004b0ce0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
-int __cdecl engine_font_cpp_FUN_004b0d30(CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,undefined4 format_string,undefined4 param_7);
+int __cdecl engine_font_cpp_CBitFont_drawTextWrapper_FUN_004b0cb0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
+int __cdecl engine_font_cpp_CBitFont_drawTextF_FUN_004b0ce0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format_string);
+int __cdecl engine_font_cpp_CBitFont_drawTextFV_FUN_004b0d30(CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
 int __cdecl engine_font_cpp_CBitFont_drawTextRight_FUN_004b0da0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
+void __cdecl engine_font_cpp_CBitFont_printF_FUN_004b0de0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format);
+void __cdecl engine_font_cpp_CBitFont_printFV_FUN_004b0e30(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format,va_list_t args);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenter_FUN_004b0ea0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
-void engine_font_cpp_FUN_004b0ee0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
-int __cdecl engine_font_cpp_FUN_004b0f30(CBitFont *this_ptr,int center_x,int y_pos,int color_mode,int color_value,undefined4 format_string,undefined4 param_7);
+int __cdecl engine_font_cpp_CBitFont_drawTextCenterF_FUN_004b0ee0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format_string);
+int __cdecl engine_font_cpp_CBitFont_drawTextCenterFV_FUN_004b0f30(CBitFont *this_ptr,int center_x,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004b0fa0(CBitFont *this_ptr,int left_x,int right_x,int y,int color_mode,int color_value,char *text);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_004b0ff0(CBitFont *this_ptr,int left_x,int right_x,int y,int color_mode,int color_value,char *format_string);
-int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004b1040(CBitFont *this_ptr,int left_x,int right_x,int y_pos,int color_mode,int color_value,undefined4 format_string,undefined4 param_8);
+int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004b1040(CBitFont *this_ptr,int left_x,int right_x,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenterInClip_FUN_004b10b0(CBitFont *this_ptr,int y,int color_mode,int color_value,char *text);
-int __cdecl engine_font_cpp_CBitFont_printCenterFV_FUN_004b1150(CBitFont *this_ptr,int y,int color_mode,int color_value,undefined4 format_string,undefined4 param_6);
-void engine_font_cpp_FUN_004b11b0(uint param_1,uint param_2,uint param_3);
-int __cdecl engine_font_cpp_FUN_004b12e0(void);
-void __cdecl engine_font_cpp_FUN_004b1300(int text_color);
+int __cdecl engine_font_cpp_CBitFont_printCenterFV_FUN_004b1150(CBitFont *this_ptr,int y,int color_mode,int color_value,char *format_string,va_list_t args);
+void __cdecl engine_font_cpp_setShadowColor_FUN_004b11b0(uint red,uint green,uint blue);
+int __cdecl engine_font_cpp_getDefaultTextColor_FUN_004b12e0(void);
+void __cdecl engine_font_cpp_setDefaultTextColor_FUN_004b1300(int text_color);
 void __cdecl engine_font_cpp_drawAlphaBlendedPixels_FUN_004b1310(uint *dest_buffer,uchar *src_indices,uint *color_table,int pixel_count,uint blend_color);
 void engine_font_cpp_FUN_004b13a0(int param_1);
 int __cdecl engine_font_cpp_FUN_004b1460(CBitFont *this_ptr,int character_code,int x,int y,int color_mode,int color_value);
-int __cdecl engine_font_cpp_FUN_004b2a80(CBitFont *this_ptr,char *text);
-int __cdecl engine_font_cpp_FUN_004b2b30(CBitFont *this_ptr,char *text_string);
+int __cdecl engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(CBitFont *this_ptr,char *text);
+int __cdecl engine_font_cpp_CBitFont_getTextHeight_FUN_004b2b30(CBitFont *this_ptr,char *text_string);
 undefined4 engine_font_cpp_FUN_004b2c10(CBitFont *param_1,char *param_2,char *param_3,int param_4,int param_5,byte param_6,int *param_7);
 int engine_font_cpp_FUN_004b2e40(undefined4 param_1,int param_2,void *param_3,int param_4,int param_5,undefined4 param_6);
-int engine_font_cpp_FUN_004b2eee(CBitFont *param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8);
-undefined4 engine_font_cpp_FUN_004b30c0(int param_1,int param_2);
-int __cdecl engine_font_cpp_FUN_004b30f0(CBitFont *this_ptr,int char_code);
-undefined4 engine_font_cpp_FUN_004b3120(int param_1,int param_2);
-void __cdecl engine_font_cpp_FUN_004b3150(CBitFont *this_ptr,int offset_value,int start_char,int end_char);
-void __cdecl engine_font_cpp_FUN_004b31b0(CBitFont *this_ptr,int value);
+int engine_font_cpp_FUN_004b2ef0(void);
+int __cdecl engine_font_cpp_CBitFont_getCharWidth_FUN_004b30c0(CBitFont *this_ptr,int char_code);
+int __cdecl engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(CBitFont *this_ptr,int char_code);
+int __cdecl engine_font_cpp_CBitFont_getCharYOffset_FUN_004b3120(CBitFont *this_ptr,int char_code);
+void __cdecl engine_font_cpp_CBitFont_setCharYOffsetRange_FUN_004b3150(CBitFont *this_ptr,int offset_value,int start_char,int end_char);
+void __cdecl engine_font_cpp_CBitFont_setFontReady_FUN_004b31b0(CBitFont *this_ptr,int value);
 void __cdecl engine_font_cpp_CBitFont_remapPalette_FUN_004b31c0(CBitFont *this_ptr);
-int unkafter_font_cpp_FUN_004b33d0(int param_1,byte *param_2,int param_3,int param_4,int param_5);
-uint unkafter_font_cpp_FUN_004b377e(int param_1,int param_2,uint param_3);
-undefined4 unkafter_font_cpp_FUN_004b37d0(void);
-int * unkafter_font_cpp_FUN_004b391e(int param_1,int *param_2);
-void __cdecl engine_fpoly_c_rasterizePolygonHardware_FUN_004b3960(int *param_1,int param_2);
-void core_game_cpp_staticInit_FUN_004b3cd0(void);
+int engine_font_cpp_FUN_004b33d0(int param_1,byte *param_2,int param_3,int param_4,int param_5);
+uint engine_font_cpp_FUN_004b3780(void);
+undefined4 engine_font_cpp_FUN_004b37d0(void);
+int * engine_font_cpp_FUN_004b3920(void);
+void __cdecl engine_fpoly_c_rasterizePolygonHardware_FUN_004b3960(SRenderVertex **vertices,int vertex_count);
+void __cdecl core_game_cpp_staticInit_FUN_004b3cd0(void);
 void __cdecl core_game_cpp_setupMovieRecording_FUN_004b3d70(void);
-void core_game_cpp_FUN_004b3e50(void);
+void __cdecl core_game_cpp_captureDebugMovieFrame_FUN_004b3e50(void);
 CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004b4180(CGame *this_ptr);
-CGame * core_game_cpp_CGame_dtor_FUN_004b4420(CGame *this_ptr,uint flags);
-void __cdecl core_game_cpp_FUN_004b4430(CGame *this_ptr);
+CGame * __cdecl core_game_cpp_CGame_dtor_FUN_004b4420(CGame *this_ptr,uint flags);
+void __cdecl core_game_cpp_CGame_saveClockTime_FUN_004b4430(CGame *this_ptr);
 void core_game_cpp_FUN_004b4440(int param_1);
 void __cdecl core_game_cpp_CGame_drawScreenBorder_FUN_004b45e0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_displayMessage_FUN_004b46b0(CGame *this_ptr,char *message,float duration);
-void __cdecl core_game_cpp_FUN_004b4710(CGame *this_ptr);
-void __cdecl core_game_cpp_drawHealthBar_FUN_004b4730(int param_1,int param_2,int param_3,int param_4,float param_5);
-void __cdecl core_game_cpp_FUN_004b47d0(CGame *this_ptr);
-void __cdecl core_game_cpp_FUN_004b4d50(CGame *this_ptr);
-void __cdecl core_game_cpp_FUN_004b4f00(CGame *this_ptr);
-void core_game_cpp_FUN_004b503e(undefined4 param_1);
-void core_game_cpp_FUN_004b50ee(EInputCodeType param_1,undefined4 param_2);
+void __cdecl core_game_cpp_CGame_clearOverlay_FUN_004b4710(CGame *this_ptr);
+void __cdecl core_game_cpp_drawHealthBar_FUN_004b4730(int x1,int y1,int x2,int y2,float fill_percent);
+void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004b47d0(CGame *this_ptr);
+void __cdecl core_game_cpp_CGame_updateStatusDisplays_FUN_004b4d50(CGame *this_ptr);
+void __cdecl core_game_cpp_CGame_processFudge_FUN_004b4f00(CGame *this_ptr);
+void core_game_cpp_FUN_004b5040(void);
+void core_game_cpp_drawKeyBindingEntry_FUN_004b50f0(void);
 void core_game_cpp_FUN_004b51e0(int param_1);
 void core_game_cpp_FUN_004b6f30(CGame *param_1);
 void __cdecl core_game_cpp_CGame_setGameRes_FUN_004b7de0(CGame *this_ptr);
-void __cdecl core_game_cpp_FUN_004b7ee0(CGame *this_ptr);
-int __cdecl core_game_cpp_FUN_004b7f90(CGame *this_ptr);
+void __cdecl core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b7ee0(CGame *this_ptr);
+int __cdecl core_game_cpp_CGame_runGameSession_FUN_004b7f90(CGame *this_ptr);
 void core_game_cpp_FUN_004b8e60(int param_1);
 void __cdecl core_game_cpp_CGame_playerControls_FUN_004b92e0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_resetKeyState_FUN_004b93e0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_processJoystickControls_FUN_004b97b0(CGame *this_ptr,SPlayerInput *player_control);
 void __cdecl core_game_cpp_pollKeyStateOnChange_FUN_004b97f0(int key_index,int *output_state);
-void core_game_cpp_FUN_004b981e(int param_1,uint *param_2);
-void core_game_cpp_FUN_004b984e(int param_1,int param_2,float *param_3,float param_4,float param_5);
-void core_game_cpp_FUN_004b98ee(float *param_1,float param_2,float param_3);
+void core_game_cpp_FUN_004b9820(void);
+void core_game_cpp_FUN_004b9850(void);
+void core_game_cpp_FUN_004b98f0(void);
 void __cdecl core_game_cpp_FUN_004b9960(CGame *this_ptr,SPlayerInput *player_control);
 void core_game_cpp_FUN_004ba220(int param_1,int param_2);
 void core_game_cpp_FUN_004ba280(int param_1,int param_2);
-void __cdecl core_game_cpp_FUN_004ba2e0(CGame *this_ptr,SPlayerInput *player_control);
+void __cdecl core_game_cpp_CGame_processMouseControls_FUN_004ba2e0(CGame *this_ptr,SPlayerInput *player_control);
 void core_game_cpp_FUN_004ba490(void);
 void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004ba540(CGame *this_ptr);
 int __cdecl core_game_cpp_checkCheatCode_FUN_004baf50(char *cheat_string);
-void __cdecl core_game_cpp_FUN_004bafd0(char *class_name);
-void __cdecl core_game_cpp_FUN_004bb090(CDeformableModelInstance *model_instance,CSkeleton *skeleton,float scale_factor,int bone_index);
-void __cdecl core_game_cpp_FUN_004bb100(CGame *this_ptr);
+void __cdecl core_game_cpp_giveHeroWeapon_FUN_004bafd0(char *class_name);
+void __cdecl core_game_cpp_scaleBoneRecursive_FUN_004bb090(CDeformableModelInstance *model_instance,CSkeleton *skeleton,float scale_factor,int bone_index);
+void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004bb100(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_loadAssets_FUN_004bd430(CGame *this_ptr);
 void core_game_cpp_FUN_004bd470(void);
 void __cdecl core_game_cpp_FUN_004bd620(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004bd660(CGame *this_ptr);
-void __cdecl core_game_cpp_FUN_004bd6a0(void);
-void __cdecl core_game_cpp_FUN_004bd6d0(CGame *this_ptr);
-void __cdecl core_game_cpp_FUN_004bd7d0(CGame *this_ptr);
+void __cdecl core_game_cpp_calculateIrisFadeCenter_FUN_004bd6a0(void);
+void __cdecl core_game_cpp_CGame_updateFadeTransition_FUN_004bd6d0(CGame *this_ptr);
+void __cdecl core_game_cpp_CGame_renderIrisFade_FUN_004bd7d0(CGame *this_ptr);
 uint __cdecl core_game_cpp_CGame_fadeIn_FUN_004bd8d0(CGame *this_ptr);
-void core_game_cpp_FUN_004bd8ee(void);
-void __cdecl core_game_cpp_FUN_004bd910(CGame *this_ptr);
-void __cdecl core_game_cpp_FUN_004bd930(CGame *this_ptr,char *name,float value,float duration);
+void core_game_cpp_FUN_004bd8f0(void);
+void __cdecl core_game_cpp_CGame_resetInventoryDisplayTimer_FUN_004bd910(CGame *this_ptr);
+void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004bd930(CGame *this_ptr,char *name,float value,float duration);
 void __cdecl core_game_cpp_FUN_004bda10(CGame *this_ptr,char *save_filename);
 void __cdecl core_game_cpp_FUN_004bdfb0(CGame *this_ptr,char *save_filename,int load_mode);
 void core_game_cpp_FUN_004be8d0(CGame *param_1,int param_2);
-void core_game_cpp_FUN_004beb80(int param_1,char *param_2,undefined4 param_3,undefined4 param_4,uint param_5);
+void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004beb80(CGame *this_ptr,char *param_2,int param_3,int param_4,uint param_5);
 void core_game_cpp_FUN_004bec20(CGame *param_1);
 void __cdecl core_game_cpp_joinNetworkGame_FUN_004bf2e0(void);
 void __cdecl core_game_cpp_CGame_slamDT_FUN_004bf3a0(CGame *this_ptr,float delta_time);
-void core_game_cpp_FUN_004bf40c(void);
-void core_game_cpp_FUN_004bf430(undefined4 param_1);
-void __cdecl core_game_cpp_FUN_004bf4b0(CGame *this_ptr);
-void __cdecl core_game_cpp_FUN_004bfa40(CGame *this_ptr);
-void __cdecl core_game_cpp_FUN_004bfb50(CGame *this_ptr);
-void __cdecl core_game_cpp_FUN_004bfee0(CGame *this_ptr);
+void __cdecl core_game_cpp_beginProfileTimer_FUN_004bf410(void);
+void __cdecl core_game_cpp_endProfileTimer_FUN_004bf430(char *timer_name);
+void __cdecl core_game_cpp_CGame_process_FUN_004bf4b0(CGame *this_ptr);
+void __cdecl core_game_cpp_CGame_promptLoadGame_FUN_004bfa40(CGame *this_ptr);
+void __cdecl core_game_cpp_CGame_displayActStats_FUN_004bfb50(CGame *this_ptr);
+void __cdecl core_game_cpp_CGame_finishAct_FUN_004bfee0(CGame *this_ptr);
 

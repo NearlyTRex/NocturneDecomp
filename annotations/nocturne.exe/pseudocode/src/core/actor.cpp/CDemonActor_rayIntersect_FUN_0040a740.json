@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 343,
     "complexity_score": 263,
-    "cross_reference_count": 2,
+    "cross_reference_count": 3,
     "function_call_count": 14,
     "global_count": 12,
     "max_suspect_severity": "moderate",
@@ -19,6 +19,12 @@
     "total_lines": 491
   },
   "cross_references": [
+    {
+      "addr": "0040a6c0",
+      "from_addr": "0040a71c",
+      "name": "core_actor.cpp_CDemonActor_testRayIntersection_FUN_0040a6c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "0050ffe0",
       "from_addr": "0051025e",
@@ -192,7 +198,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 3,
     "call_sites": [
       {
         "call_addr": "0051025e",
@@ -209,6 +215,17 @@
         "call_addr": "00533b29",
         "call_type": "direct",
         "caller": "core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_00533750",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "0040a71c",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_CDemonActor_testRayIntersection_FUN_0040a6c0",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -259,6 +276,14 @@
       "STORE": 102
     },
     "pcode_op_count": 1323
+  },
+  "siblings": {
+    "nocedit.exe": {
+      "addr": "00409470",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 208,

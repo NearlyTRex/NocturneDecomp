@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SFly * __cdecl core_flies_cpp_SFly_arrdtor200_FUN_004ccd60(SFly *objs,uint flags)
+; SFly * __cdecl core_flies_cpp_SFly_arrdtor200_FUN_004ccd60(SFly *this_ptr,uint flags)
 ;
 ; Parameters:
-; SFly *           Stack[0x4]:4   objs
+; SFly *           Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:

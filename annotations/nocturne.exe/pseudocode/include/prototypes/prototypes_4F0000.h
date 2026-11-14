@@ -23,6 +23,7 @@
 #include "types/classes/CScat.h"
 #include "types/classes/CScript.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CWeapon.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EGroundType.h"
 #include "types/structs/SCollisionInfo.h"
@@ -79,7 +80,7 @@ CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_ctor_FUN_004f3e90(CPa
 CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_init_FUN_004f3eb0(CPackedBitmap *this_ptr,char *filename,int width,int height,int transparency_color,int apply_palette_flag);
 CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_dtor_FUN_004f3f00(CPackedBitmap *this_ptr,uint flags);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_reset_FUN_004f3f20(CPackedBitmap *this_ptr);
-void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_FUN_004f3f50(CPackedBitmap *this_ptr);
+void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_free_FUN_004f3f50(CPackedBitmap *this_ptr);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_freePackedData_FUN_004f3f80(CPackedBitmap *this_ptr);
 int __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_getTotalMemoryUsage_FUN_004f3fa0(CPackedBitmap *this_ptr);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_setFilename_FUN_004f3fc0(CPackedBitmap *this_ptr,char *filename);
@@ -94,7 +95,6 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_reloadFromBitmapFile_FUN_004f463
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadAndCompressBitmap_FUN_004f46b0(CPackedBitmap *this_ptr,int apply_palette_flag);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_004f4700(CPackedBitmap *this_ptr,uchar *raw_bitmap_data,int row_stride);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_004f47b0(CPackedBitmap *this_ptr,uchar *bitmap_data,int width,int height,int transparency_color,int row_stride);
-void cockpit_pkbitmap_cpp_FUN_004f49d8(void);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyACTPalette_FUN_004f4a00(CPackedBitmap *this_ptr,char *act_filename);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPaletteToPackedData_FUN_004f4a50(CPackedBitmap *this_ptr,uchar *palette_buffer);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPalette_FUN_004f4ab0(CPackedBitmap *this_ptr);
@@ -105,11 +105,11 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_004f4c80(CPacked
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_004f4e40(CPackedBitmap *this_ptr,char *filename,int apply_palette_flag);
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadPBMFile_FUN_004f4ef0(CPackedBitmap *this_ptr,int apply_palette_flag);
 void __cdecl cockpit_pkbitmap_cpp_writePBGHeader_FUN_004f4f10(int total_entries,_FILE *file_header);
-CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmapSet_FUN_004f4f90(CPackedBitmapSet *bitmap_set_ptr,_FILE *file_handle,int frames_per_bitmap,int skip_data_load,int selected_bitmap_index);
-CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmapSet_FUN_004f5110(CPackedBitmapSet *bitmap_set_ptr,char *pbg_filename,int apply_palette_flag,int frames_per_bitmap,int skip_data_load,int selected_bitmap_index);
-void __cdecl cockpit_pkbitmap_cpp_CPackedBitmapSet_FUN_004f5290(CPackedBitmapSet *this_ptr);
-void __cdecl cockpit_pkbitmap_cpp_CPackedBitmapSet_FUN_004f52c0(CPackedBitmapSet *this_ptr);
-void __cdecl cockpit_pkbitmap_cpp_CPackedBitmapSet_FUN_004f5320(CPackedBitmapSet *this_ptr);
+CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_parsePBGFile_FUN_004f4f90(CPackedBitmapSet *bitmap_set_ptr,_FILE *file_handle,int frames_per_bitmap,int skip_data_load,int selected_bitmap_index);
+CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_loadPBGFile_FUN_004f5110(CPackedBitmapSet *bitmap_set_ptr,char *pbg_filename,int apply_palette_flag,int frames_per_bitmap,int skip_data_load,int selected_bitmap_index);
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_ctor_FUN_004f5290(CPackedBitmapSet *this_ptr);
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_init_FUN_004f52c0(CPackedBitmapSet *this_ptr);
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reset_FUN_004f5320(CPackedBitmapSet *this_ptr);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_alloc_FUN_004f5350(CPackedBitmapSet *this_ptr,int bitmap_count);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_004f53f0(CPackedBitmapSet *this_ptr,char *filename_format,int width,int height,int start_index,int end_index,int transparency_color,int apply_palette_flag);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_004f54c0(CPackedBitmapSet *this_ptr,char *filename,int bitmap_width,int bitmap_height,int transparency_color,int apply_palette_flag);
@@ -126,8 +126,8 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_setFilename_FUN_004f5c40(CPac
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadStoredACTFile_FUN_004f5c60(CPackedBitmapSet *this_ptr);
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_ensureBitmapLoaded_FUN_004f5c80(CPackedBitmapSet *this_ptr,int bitmap_index);
 int __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_getWidth_FUN_004f5cf0(CPackedBitmap *this_ptr);
-undefined4 cockpit_pkbmpset_cpp_FUN_004f5d00(void);
-void cockpit_pkbmpset_cpp_FUN_004f5d10(void);
+int __cdecl cockpit_pkbmpset_cpp_CPackedBitmap_getHeight_FUN_004f5d00(CPackedBitmap *this_ptr);
+void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_doNothing1_FUN_004f5d10(CPackedBitmapSet *this_ptr);
 void __cdecl core_platfrm_cpp_staticInit_FUN_004f5d30(void);
 CPlatform * __cdecl core_platfrm_cpp_factoryFuncPlatform_FUN_004f5d60(void);
 CDemonActorType * __cdecl core_platfrm_cpp_CPlatform_getActorType_FUN_004f5d80(CPlatform *this_ptr);
@@ -203,8 +203,8 @@ SSoftwareEdge * __cdecl engine_prim_c_findEdgeInTable_FUN_004faca0(int scanline,
 void __cdecl engine_prim_c_renderScanlinePolygon_FUN_004fad00(SRenderVertex *vertices,int vertex_count);
 void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_004fb390(int *vertex_indices,int vertex_count);
 void __cdecl core_scat_cpp_staticInit_FUN_004fbb40(void);
-undefined4 core_scat_cpp_FUN_004fbb70(void);
-undefined4 core_scat_cpp_FUN_004fbbb0(int param_1);
+int __cdecl core_scat_cpp_getWeaponInteractionType_FUN_004fbb70(CWeapon *weapon);
+int __cdecl core_scat_cpp_getWeaponHoldType_FUN_004fbbb0(CWeapon *weapon);
 CScat * __cdecl core_scat_cpp_factoryFuncScat_FUN_004fbbd0(void);
 CDemonActorType * __cdecl core_scat_cpp_CScat_getActorType_FUN_004fbbf0(CScat *this_ptr);
 CScat * __cdecl core_scat_cpp_CScat_ctor_FUN_004fbc00(CScat *this_ptr);
@@ -224,7 +224,7 @@ void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_004fcff0(CScat *this_ptr);
 void __cdecl core_scat_cpp_CScat_blendAimBones_FUN_004fd1d0(CScat *this_ptr,int hand_index);
 void __cdecl core_scat_cpp_CScat_updateAiming_FUN_004fd450(CScat *this_ptr,float delta_time,int is_holstered);
 float __cdecl core_scat_cpp_CScat_scoreAimTarget_FUN_004fda20(CScat *this_ptr,CDemonActor *target,int is_current_target);
-void __cdecl core_scat_cpp_CScat_FUN_004fdd00(CScat *this_ptr);
+void __cdecl core_scat_cpp_CScat_updateWeaponAttachment_FUN_004fdd00(CScat *this_ptr);
 CScat * __cdecl core_scat_cpp_CScat_dtor_FUN_004fde30(CScat *this_ptr,uint flags);
 void __cdecl core_script_cpp_staticInit_FUN_004fde80(void);
 int __cdecl core_script_cpp_validateActorVariableName_FUN_004fdec0(char *variable_name);
@@ -238,13 +238,13 @@ int * __cdecl core_script_cpp_getActionState_FUN_004fe300(SPlayerActionState *ac
 int __cdecl core_script_cpp_parseBodyPartMask_FUN_004fe3d0(CCharacter *character,char *part_names,int *part_mask);
 CScript * __cdecl core_script_cpp_CScript_ctor_FUN_004fe490(CScript *this_ptr);
 CScript * __cdecl core_script_cpp_CScript_dtor_FUN_004fe4d0(CScript *this_ptr,uint flags);
-void __cdecl core_script_cpp_CScript_FUN_004fe500(CScript *this_ptr);
+void __cdecl core_script_cpp_CScript_clear_FUN_004fe500(CScript *this_ptr);
 void __cdecl core_script_cpp_CScript_freeParsedLines_FUN_004fe550(CScript *this_ptr);
 void __cdecl core_script_cpp_CScript_process_FUN_004fe5b0(CScript *this_ptr);
 int __cdecl core_script_cpp_CScript_getLetterboxHeight_FUN_004fe710(CScript *this_ptr);
 void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_004fe770(CScript *this_ptr);
 void __cdecl core_script_cpp_CScript_renderEditor_FUN_004fe9d0(CScript *this_ptr,int left,int top,int right,int bottom);
-int __cdecl core_script_cpp_CScript_FUN_004febd0(CScript *this_ptr,char *param_2,int param_3);
+int __cdecl core_script_cpp_CScript_loadScript_FUN_004febd0(CScript *this_ptr,char *filename,int skip_validation);
 void __cdecl core_script_cpp_CScript_buildParsedLines_FUN_004fee30(CScript *this_ptr);
 char * __cdecl core_script_cpp_CScript_validateSyntax_FUN_004fef60(CScript *this_ptr,int *error_line_out);
 void __cdecl core_script_cpp_CScript_initRuntime_FUN_004feff0(CScript *this_ptr);

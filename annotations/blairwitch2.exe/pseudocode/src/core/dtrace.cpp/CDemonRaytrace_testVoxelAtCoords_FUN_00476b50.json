@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 98,
+    "complexity_score": 43,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 28,
-    "suspect_count": 6,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_field"
+      "undefined_data"
     ],
     "total_lines": 120
   },
@@ -99,6 +98,32 @@
     },
     "pcode_op_count": 812
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0048f040",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00477bc0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00499970",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0046b7f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -124,51 +149,11 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "iVar1 < *(int *)&this_ptr->field_0x40 &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "iVar3 < *(int *)&this_ptr->field_0x44)))) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "iVar4 = *(int *)&this_ptr->field_0x48;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)((iVar1 * *(int *)&this_ptr->field_0x44 * iVar4 + iVar2 + iVar3 * iVar4) *",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "0x34 + *(int *)&this_ptr->field_0x50);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 26,
       "match": "DAT_00613888",
       "severity": "mild",
-      "text": "(&DAT_00613888)[*(uint *)voxel_coords & 7]) != 0);",
+      "text": "(&DAT_00613888)[voxel_coords->x & 7]) != 0);",
       "type": "undefined_data"
     }
   ]

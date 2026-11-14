@@ -8,12 +8,12 @@
 ;
 ; XREF[2]:
 ;   core_tommygun.cpp_factoryFuncTommyGun_FUN_00598350 at 00598363
-;   core_vehicle.cpp_FUN_005a7b50 at 005a820e
+;   core_vehicle.cpp_CVehicle_process_FUN_005a7b50 at 005a820e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_tommygun_kfm_005f7eda
 ;   undefined4 DAT_00606cbc
-;   void* g_CTommyGunVTable = 005ad640
+;   CWeapon_full_vtable g_CTommyGunVTable
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00468950

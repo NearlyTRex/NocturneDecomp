@@ -14,13 +14,13 @@ void __cdecl core_cloth_cpp_CClothList_process_FUN_005b1780(CClothList *this_ptr
   
   iVar1 = 0;
   pCVar2 = this_ptr;
-  if (0 < *(int *)this_ptr) {
+  if (0 < this_ptr->count) {
     do {
       iVar1 = iVar1 + 1;
       core_cloth_cpp_CCloth_process_FUN_005afdf0
-                (*(CCloth **)(pCVar2 + 0x194),position,euler,delta_time,floor_y,model_ptr);
-      pCVar2 = pCVar2 + 4;
-    } while (iVar1 < *(int *)this_ptr);
+                (pCVar2->cloths[0],position,euler,delta_time,floor_y,model_ptr);
+      pCVar2 = (CClothList *)pCVar2->filenames;
+    } while (iVar1 < this_ptr->count);
   }
   return;
 }

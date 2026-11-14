@@ -5372,7 +5372,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_boxactor.cpp_CLightActor_FUN_0041f6e0",
+    "name":"core_boxactor.cpp_CLightActor_setupLightModel_FUN_0041f6e0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -6644,7 +6644,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_CCharacter_releaseVictim_FUN_004280e0",
+    "name":"core_charactr.cpp_CCharacter_doNothing_FUN_004280e0",
     "ret":"void",
     "vars":{
       "params":[
@@ -7124,7 +7124,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_CCharacter_setWalkTimeout_FUN_00428ee0",
+    "name":"core_charactr.cpp_CCharacter_setDoorTarget_FUN_00428ee0",
     "ret":"void",
     "vars":{
       "params":[
@@ -7952,12 +7952,54 @@
         "start":"0042b6e0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_charactr.cpp_FUN_0042b6e0",
-    "ret":"undefined1",
+    "name":"core_charactr.cpp_copyFloat3_FUN_0042b6e0",
+    "ret":"float*",
     "vars":{
+      "params":[
+        {
+          "name":"dst",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"float*"
+        },
+        {
+          "name":"src",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -13477,7 +13519,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_dcube.cpp_FUN_0044b660",
+    "name":"core_dcube.cpp_showHelpFile_FUN_0044b660",
     "ret":"void",
     "vars":{
       "locals":[
@@ -23817,12 +23859,54 @@
         "start":"00481960"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_event.cpp_FUN_00481960",
-    "ret":"undefined1",
+    "name":"core_event.cpp_assignInt1_FUN_00481960",
+    "ret":"int*",
     "vars":{
+      "params":[
+        {
+          "name":"dest",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        },
+        {
+          "name":"src",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -37593,13 +37677,29 @@
         "start":"004e08e0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"core_motion.cpp_FUN_004e08e0",
-    "ret":"undefined1",
+    "name":"core_motion.cpp_skipLine_FUN_004e08e0",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"file_handle",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"_FILE*"
+        }
+      ]
     }
   },
   {
@@ -45726,7 +45826,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_skeleton.cpp_CSkeleton_FUN_005174e0",
+    "name":"core_skeleton.cpp_CSkeleton_free_FUN_005174e0",
     "ret":"void",
     "vars":{
       "params":[
@@ -63139,6 +63239,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_00563ce0",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -63392,6 +63493,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_00567560",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "locals":[
         {
@@ -63706,6 +63808,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_0056c2e0",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "locals":[
         {
@@ -64180,6 +64283,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_00570ce0",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -64198,6 +64302,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_00570f60",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -64216,6 +64321,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_00571160",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -64234,6 +64340,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005713e0",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -64263,6 +64370,25 @@
             "size":4
           }
         ]
+      }
+    }
+  },
+  {
+    "addr":"005718e0",
+    "body":[
+      {
+        "end":"00571a47",
+        "size":360,
+        "start":"005718e0"
+      }
+    ],
+    "importable":true,
+    "name":"crt_unknown.c_FUN_005718e0",
+    "ret":"undefined1",
+    "sig":"default",
+    "vars":{
+      "ret_storage":{
+        "invalid":true
       }
     }
   },
@@ -64366,6 +64492,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_00572e60",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -64599,6 +64726,7 @@
     "importable":true,
     "name":"crt_kernel32.c_CloseHandle",
     "ret":"BOOL",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000040",
     "thunk":true,
     "vars":{
@@ -64645,6 +64773,7 @@
     "importable":true,
     "name":"crt_gdi32.c_DeleteObject",
     "ret":"BOOL",
+    "sig":"imported",
     "thtarget":"EXTERNAL:0000000b",
     "thunk":true,
     "vars":{
@@ -64691,6 +64820,7 @@
     "importable":true,
     "name":"crt_kernel32.c_TlsSetValue",
     "ret":"BOOL",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000090",
     "thunk":true,
     "vars":{

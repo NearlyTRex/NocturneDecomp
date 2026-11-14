@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[4]:
-;   sound_sndmain.cpp_FUN_005760b0 at 00576132
 ;   sound_sndmain.cpp_findBestRecordingDevice_FUN_005757f0 at 005757f8
 ;   sound_sndmain.cpp_getRecordingDeviceInfo_FUN_00575790 at 00575797
+;   sound_sndmain.cpp_readIni_FUN_005760b0 at 00576132
 ;   sound_sndmain.cpp_selectRecordingDevice_FUN_00575870 at 00575888
 ;
 ; Referenced Globals:
@@ -15,8 +15,8 @@
 ;   undefined4 DAT_00623318
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_00573e70
 ;   sound_sndmain.cpp_lockSound_FUN_00575d20
+;   sound_sndmain.cpp_unlockSound_FUN_00573e70
 ;   sound_sndwav.cpp_enumerateWavInDevice_FUN_0057b460
 ;
 ; *****************************************************************************
@@ -37,8 +37,8 @@ section .text
         ;   Label: LAB_00575745
     CALL sound_sndmain.cpp_lockSound_FUN_00575d20 ; 00575746
         ;   XREF to: 00575d20 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00575d20()
-    CALL sound_sndmain.cpp_FUN_00573e70 ; 0057574b
-        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00573e70()
+    CALL sound_sndmain.cpp_unlockSound_FUN_00573e70 ; 0057574b
+        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00573e70()
     XOR ESI,ESI                         ; 00575750
     XOR EBX,EBX                         ; 00575752
     IMUL EAX,ESI,0x108                  ; 00575754
@@ -48,7 +48,7 @@ section .text
     PUSH EBX                            ; 00575760
     MOV dword ptr [0x00623318],ESI      ; 00575761 | DAT_00623318
     CALL sound_sndwav.cpp_enumerateWavInDevice_FUN_0057b460 ; 00575767
-        ;   XREF to: 0057b460 (UNCONDITIONAL_CALL)  ; undefined sound_sndwav.cpp_enumerateWavInDevice_FUN_0057b460()
+        ;   XREF to: 0057b460 (UNCONDITIONAL_CALL)  ; int sound_sndwav.cpp_enumerateWavInDevice_FUN_0057b460(UINT device_id, SRecordingDeviceInfo * device_info)
     MOV ESI,dword ptr [0x00623318]      ; 0057576c | DAT_00623318
     ADD ESP,0x8                         ; 00575772
     TEST EAX,EAX                        ; 00575775

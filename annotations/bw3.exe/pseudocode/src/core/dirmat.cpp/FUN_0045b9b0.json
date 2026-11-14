@@ -50,15 +50,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0045e69e",
+      "addr": "0045e6a0",
       "from_addr": "0045e6e0",
-      "name": "core_dlight.cpp_FUN_0045e69e",
+      "name": "core_dlight.cpp_FUN_0045e6a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0049a390",
       "from_addr": "0049a401",
-      "name": "core_fire.cpp_FUN_0049a390",
+      "name": "core_fire.cpp_CMuzzleFlash_init_FUN_0049a390",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -76,7 +76,7 @@
     {
       "addr": "004eca10",
       "from_addr": "004eca1f",
-      "name": "unkafter_minecar.cpp_FUN_004eca10",
+      "name": "engine_mini3d.cpp_setCameraMatrix_FUN_004eca10",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -240,7 +240,7 @@
       {
         "call_addr": "0049a401",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049a390",
+        "caller": "core_fire.cpp_CMuzzleFlash_init_FUN_0049a390",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -269,27 +269,27 @@
         "stack_params": 1
       },
       {
-        "call_addr": "0045e6e0",
-        "call_type": "direct",
-        "caller": "core_dlight.cpp_FUN_0045e69e",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
         "call_addr": "004eca1f",
         "call_type": "direct",
-        "caller": "unkafter_minecar.cpp_FUN_004eca10",
+        "caller": "engine_mini3d.cpp_setCameraMatrix_FUN_004eca10",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
           "EBX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0045e6e0",
+        "call_type": "direct",
+        "caller": "core_dlight.cpp_FUN_0045e6a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -341,6 +341,20 @@
       "STORE": 67
     },
     "pcode_op_count": 2537
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004496e0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0045f840",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 164,

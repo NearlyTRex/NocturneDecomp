@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_main.c_FUN_004e46c0 at 004e4cc7
+;   core_main.c_initializeGameSystems_FUN_004e46c0 at 004e4cc7
 ;
 ; Referenced Globals:
 ;   undefined4 s_test_logo_005de02b+1

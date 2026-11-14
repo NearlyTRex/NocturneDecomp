@@ -1,0 +1,205 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 128,
+    "complexity_score": 42,
+    "cross_reference_count": 0,
+    "function_call_count": 9,
+    "global_count": 5,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 42,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 170
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004964c0",
+    "address_range": [
+      [
+        "004964c0",
+        "004965eb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireball_onCollision_FUN_004964c0",
+    "signature": "int __cdecl core_fire_cpp_CFireball_onCollision_FUN_004964c0(CFireball *this_ptr,CVector3f *collision_normal)"
+  },
+  "function_calls": [
+    {
+      "addr": "0049d500",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createFireball_FUN_0049d500"
+    },
+    {
+      "addr": "0049d090",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createSpark_FUN_0049d090"
+    },
+    {
+      "addr": "00534800",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_initCameraShake_FUN_00534800"
+    },
+    {
+      "addr": "00551050",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfx_FUN_00551050"
+    },
+    {
+      "addr": "005504d0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005504d0"
+    },
+    {
+      "addr": "00550450",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_00550450"
+    },
+    {
+      "addr": "00550110",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxStaticPosition_FUN_00550110"
+    },
+    {
+      "addr": "00550270",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxVolume_FUN_00550270"
+    },
+    {
+      "addr": "005506b0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_startSfx_FUN_005506b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d540a",
+      "name": "s_rock_x_wav_005d540a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5415",
+      "name": "s_rock_x_wav_005d5415",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00614d30",
+      "name": "DAT_00614d30",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061b5a8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e661b8"
+    },
+    {
+      "addr": "01e661b8",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.295238095238095,
+    "instruction_count": 105,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 1,
+      "CALL": 12,
+      "CBRANCH": 4,
+      "COPY": 178,
+      "FLOAT2FLOAT": 12,
+      "INT_ADD": 28,
+      "INT_AND": 51,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 50,
+      "INT_LESS": 9,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 25,
+      "INT_SUB": 53,
+      "INT_XOR": 4,
+      "LOAD": 19,
+      "POPCOUNT": 25,
+      "RETURN": 2,
+      "STORE": 50
+    },
+    "pcode_op_count": 556
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004aee60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00499eb0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004c1690",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00484b60",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireball *"
+      },
+      {
+        "is_param": true,
+        "name": "collision_normal",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CParticle",
+        "offset": 12,
+        "vtable_addr": "005f65d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -1,175 +1,146 @@
 // Name: core_dtrace.cpp_FUN_00474020
 // Address: 00474020
 // Address Range: [[00474020, 00474543]]
-// Convention: unknown
-// Signature: void core_dtrace_cpp_FUN_00474020(int param_1,float *param_2)
+// Convention: __cdecl
+// Signature: void __cdecl core_dtrace_cpp_FUN_00474020(CDemonRaytrace *this_ptr,CVector3f *world_pos)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_dtrace_cpp_FUN_00474020(int param_1,float *param_2)
+void __cdecl core_dtrace_cpp_FUN_00474020(CDemonRaytrace *this_ptr,CVector3f *world_pos)
 
 {
   uint uVar1;
-  SMRGLPrimitivePoly aSStack_e8 [4];
-  uint uStack_e4;
-  uint uStack_e0;
-  uint uStack_dc;
-  uint uStack_d8;
-  uint uStack_d4;
-  uint uStack_d0;
-  uint uStack_c4;
-  uint uStack_b8;
-  uint uStack_ac;
-  float fStack_a0;
-  float fStack_9c;
-  float fStack_98;
-  int iStack_94;
-  int iStack_90;
-  int iStack_8c;
-  int iStack_88;
-  int iStack_84;
-  int iStack_80;
-  float fStack_7c;
-  float fStack_78;
-  float fStack_74;
-  int iStack_70;
-  int iStack_6c;
-  int iStack_68;
-  int iStack_64;
-  int iStack_60;
-  int iStack_5c;
+  SMRGLPrimitivePoly SStack_e8;
+  CVector3i CStack_70;
+  CVector3i CStack_64;
   float fStack_58;
   float fStack_54;
   float fStack_50;
   float fStack_4c;
   float fStack_48;
   float fStack_44;
-  int iStack_40;
-  int iStack_3c;
-  int iStack_38;
-  int iStack_34;
-  int iStack_30;
-  int iStack_2c;
-  int iStack_28;
-  int iStack_24;
-  int iStack_20;
-  int iStack_1c;
-  int iStack_18;
-  int iStack_14;
+  CVector3i CStack_40;
+  CVector3i CStack_34;
+  CVector3i CStack_28;
+  CVector3i CStack_1c;
   
-  fStack_58 = *(float *)(param_1 + 0x28) * _DAT_005d1b6b;
-  fStack_54 = *(float *)(param_1 + 0x2c) * _DAT_005d1b6b;
-  fStack_50 = *(float *)(param_1 + 0x30) * _DAT_005d1b6b;
-  if (&fStack_a0 != &fStack_4c) {
-    fStack_a0 = fStack_58;
-    fStack_9c = fStack_54;
-    fStack_98 = fStack_50;
+  fStack_58 = (this_ptr->cell_size).x * _DAT_005d1b6b;
+  fStack_54 = (this_ptr->cell_size).y * _DAT_005d1b6b;
+  fStack_50 = (this_ptr->cell_size).z * _DAT_005d1b6b;
+  if (SStack_e8.vertices + 4 != (SMRGLVertex *)&fStack_4c) {
+    SStack_e8.vertices[4].vertex_index = (int)fStack_58;
+    SStack_e8.vertices[4].texture_u = (int)fStack_54;
+    SStack_e8.vertices[4].texture_v = (int)fStack_50;
   }
   fStack_4c = fStack_58;
   fStack_48 = fStack_54;
   fStack_44 = fStack_50;
   engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0046b280
             (0x01BA5C50,(CVector3i *)0x1c21e68);
-  iStack_94 = (int)ROUND(*param_2 * _DAT_005f5b10);
-  iStack_90 = (int)ROUND(param_2[1] * _DAT_005f5b10);
-  iStack_8c = (int)ROUND(param_2[2] * _DAT_005f5b10);
-  engine_special_cpp_FUN_0055d723(*(SProjectedVertex **)DAT_0060b280,(CVector3i *)&iStack_94);
-  fStack_7c = *param_2 + fStack_a0;
-  fStack_78 = param_2[1];
-  fStack_74 = param_2[2];
-  iStack_70 = (int)ROUND(fStack_7c * _DAT_005f5b10);
-  iStack_6c = (int)ROUND(fStack_78 * _DAT_005f5b10);
-  iStack_68 = (int)ROUND(fStack_74 * _DAT_005f5b10);
+  SStack_e8.vertices[5].vertex_index = (int)ROUND(world_pos->x * _DAT_005f5b10);
+  SStack_e8.vertices[5].texture_u = (int)ROUND(world_pos->y * _DAT_005f5b10);
+  SStack_e8.vertices[5].texture_v = (int)ROUND(world_pos->z * _DAT_005f5b10);
   engine_special_cpp_FUN_0055d723
-            ((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x30),(CVector3i *)&iStack_70);
-  fStack_7c = *param_2 + fStack_a0;
-  fStack_78 = param_2[1];
-  fStack_74 = param_2[2] + fStack_98;
-  iStack_40 = (int)ROUND(fStack_7c * _DAT_005f5b10);
-  iStack_3c = (int)ROUND(fStack_78 * _DAT_005f5b10);
-  iStack_38 = (int)ROUND(fStack_74 * _DAT_005f5b10);
+            (&DAT_0060b280->vertex_buffer_ptr->projected_vertex,
+             (CVector3i *)(SStack_e8.vertices + 5));
+  SStack_e8.vertices[7].vertex_index =
+       (int)(world_pos->x + (float)SStack_e8.vertices[4].vertex_index);
+  SStack_e8.vertices[7].texture_u = (int)world_pos->y;
+  SStack_e8.vertices[7].texture_v = (int)world_pos->z;
+  CStack_70.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * _DAT_005f5b10);
+  CStack_70.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * _DAT_005f5b10);
+  CStack_70.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * _DAT_005f5b10);
+  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&CStack_70);
+  SStack_e8.vertices[7].vertex_index =
+       (int)(world_pos->x + (float)SStack_e8.vertices[4].vertex_index);
+  SStack_e8.vertices[7].texture_u = (int)world_pos->y;
+  SStack_e8.vertices[7].texture_v = (int)(world_pos->z + (float)SStack_e8.vertices[4].texture_v);
+  CStack_40.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * _DAT_005f5b10);
+  CStack_40.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * _DAT_005f5b10);
+  CStack_40.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * _DAT_005f5b10);
+  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&CStack_40);
+  SStack_e8.vertices[7].vertex_index = (int)world_pos->x;
+  SStack_e8.vertices[7].texture_u = (int)world_pos->y;
+  SStack_e8.vertices[7].texture_v = (int)(world_pos->z + (float)SStack_e8.vertices[4].texture_v);
+  CStack_64.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * _DAT_005f5b10);
+  CStack_64.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * _DAT_005f5b10);
+  CStack_64.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * _DAT_005f5b10);
+  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&CStack_64);
+  SStack_e8.vertices[7].vertex_index = (int)world_pos->x;
+  SStack_e8.vertices[7].texture_u = (int)(world_pos->y + (float)SStack_e8.vertices[4].texture_u);
+  SStack_e8.vertices[7].texture_v = (int)world_pos->z;
+  CStack_34.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * _DAT_005f5b10);
+  CStack_34.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * _DAT_005f5b10);
+  CStack_34.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * _DAT_005f5b10);
+  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[4].projected_vertex,&CStack_34);
+  SStack_e8.vertices[7].vertex_index =
+       (int)(world_pos->x + (float)SStack_e8.vertices[4].vertex_index);
+  SStack_e8.vertices[7].texture_u = (int)(world_pos->y + (float)SStack_e8.vertices[4].texture_u);
+  SStack_e8.vertices[7].texture_v = (int)world_pos->z;
+  SStack_e8.vertices[6].vertex_index =
+       (int)ROUND((float)SStack_e8.vertices[7].vertex_index * _DAT_005f5b10);
+  SStack_e8.vertices[6].texture_u =
+       (int)ROUND((float)SStack_e8.vertices[7].texture_u * _DAT_005f5b10);
+  SStack_e8.vertices[6].texture_v =
+       (int)ROUND((float)SStack_e8.vertices[7].texture_v * _DAT_005f5b10);
   engine_special_cpp_FUN_0055d723
-            ((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x60),(CVector3i *)&iStack_40);
-  fStack_7c = *param_2;
-  fStack_78 = param_2[1];
-  fStack_74 = param_2[2] + fStack_98;
-  iStack_64 = (int)ROUND(fStack_7c * _DAT_005f5b10);
-  iStack_60 = (int)ROUND(fStack_78 * _DAT_005f5b10);
-  iStack_5c = (int)ROUND(fStack_74 * _DAT_005f5b10);
-  engine_special_cpp_FUN_0055d723
-            ((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x90),(CVector3i *)&iStack_64);
-  fStack_7c = *param_2;
-  fStack_78 = param_2[1] + fStack_9c;
-  fStack_74 = param_2[2];
-  iStack_34 = (int)ROUND(fStack_7c * _DAT_005f5b10);
-  iStack_30 = (int)ROUND(fStack_78 * _DAT_005f5b10);
-  iStack_2c = (int)ROUND(fStack_74 * _DAT_005f5b10);
-  engine_special_cpp_FUN_0055d723
-            ((SProjectedVertex *)(*(int *)DAT_0060b280 + 0xc0),(CVector3i *)&iStack_34);
-  fStack_7c = *param_2 + fStack_a0;
-  fStack_78 = param_2[1] + fStack_9c;
-  fStack_74 = param_2[2];
-  iStack_88 = (int)ROUND(fStack_7c * _DAT_005f5b10);
-  iStack_84 = (int)ROUND(fStack_78 * _DAT_005f5b10);
-  iStack_80 = (int)ROUND(fStack_74 * _DAT_005f5b10);
-  engine_special_cpp_FUN_0055d723
-            ((SProjectedVertex *)(*(int *)DAT_0060b280 + 0xf0),(CVector3i *)&iStack_88);
-  fStack_7c = *param_2 + fStack_a0;
-  fStack_78 = param_2[1] + fStack_9c;
-  fStack_74 = param_2[2] + fStack_98;
-  iStack_1c = (int)ROUND(fStack_7c * _DAT_005f5b10);
-  iStack_18 = (int)ROUND(fStack_78 * _DAT_005f5b10);
-  iStack_14 = (int)ROUND(fStack_74 * _DAT_005f5b10);
-  engine_special_cpp_FUN_0055d723
-            ((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x120),(CVector3i *)&iStack_1c);
-  fStack_7c = *param_2;
-  fStack_78 = param_2[1] + fStack_9c;
-  fStack_74 = param_2[2] + fStack_98;
-  iStack_28 = (int)ROUND(fStack_7c * _DAT_005f5b10);
-  iStack_24 = (int)ROUND(fStack_78 * _DAT_005f5b10);
-  iStack_20 = (int)ROUND(fStack_74 * _DAT_005f5b10);
-  engine_special_cpp_FUN_0055d723
-            ((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x150),(CVector3i *)&iStack_28);
+            (&DAT_0060b280->vertex_buffer_ptr[5].projected_vertex,
+             (CVector3i *)(SStack_e8.vertices + 6));
+  SStack_e8.vertices[7].vertex_index =
+       (int)(world_pos->x + (float)SStack_e8.vertices[4].vertex_index);
+  SStack_e8.vertices[7].texture_u = (int)(world_pos->y + (float)SStack_e8.vertices[4].texture_u);
+  SStack_e8.vertices[7].texture_v = (int)(world_pos->z + (float)SStack_e8.vertices[4].texture_v);
+  CStack_1c.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * _DAT_005f5b10);
+  CStack_1c.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * _DAT_005f5b10);
+  CStack_1c.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * _DAT_005f5b10);
+  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[6].projected_vertex,&CStack_1c);
+  SStack_e8.vertices[7].vertex_index = (int)world_pos->x;
+  SStack_e8.vertices[7].texture_u = (int)(world_pos->y + (float)SStack_e8.vertices[4].texture_u);
+  SStack_e8.vertices[7].texture_v = (int)(world_pos->z + (float)SStack_e8.vertices[4].texture_v);
+  CStack_28.x = (int)ROUND((float)SStack_e8.vertices[7].vertex_index * _DAT_005f5b10);
+  CStack_28.y = (int)ROUND((float)SStack_e8.vertices[7].texture_u * _DAT_005f5b10);
+  CStack_28.z = (int)ROUND((float)SStack_e8.vertices[7].texture_v * _DAT_005f5b10);
+  engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[7].projected_vertex,&CStack_28);
   uVar1 = rand();
   engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0046b7e0(DAT_0060b280,uVar1 & 0xff);
-  uStack_e4 = 4;
-  uStack_e0 = 0;
-  uStack_dc = 0;
-  uStack_d8 = 0;
-  uStack_d4 = 0;
+  SStack_e8.base.base.count = 4;
+  SStack_e8.base.surface_normal.A.i = 0;
+  SStack_e8.base.surface_normal.B.i = 0;
+  SStack_e8.base.surface_normal.C.i = 0;
+  SStack_e8.base.surface_normal.D.i = 0;
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046b880(DAT_0060b280,1);
-  uStack_ac = 0;
-  uStack_b8 = 1;
-  uStack_d0 = 4;
-  uStack_c4 = 5;
-  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0(DAT_0060b280,aSStack_e8);
-  uStack_ac = 2;
-  uStack_b8 = 3;
-  uStack_c4 = 7;
-  uStack_d0 = 6;
-  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0(DAT_0060b280,aSStack_e8);
-  uStack_c4 = 7;
-  uStack_ac = 0;
-  uStack_b8 = 4;
-  uStack_d0 = 3;
-  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0(DAT_0060b280,aSStack_e8);
-  uStack_ac = 1;
-  uStack_b8 = 2;
-  uStack_c4 = 6;
-  uStack_d0 = 5;
-  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0(DAT_0060b280,aSStack_e8);
-  uStack_c4 = 6;
-  uStack_ac = 4;
-  uStack_b8 = 5;
-  uStack_d0 = 7;
-  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0(DAT_0060b280,aSStack_e8);
-  uStack_b8 = 2;
-  uStack_c4 = 1;
-  uStack_ac = 3;
-  uStack_d0 = 0;
-  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0(DAT_0060b280,aSStack_e8);
+  SStack_e8.vertices[3].vertex_index = 0;
+  SStack_e8.vertices[2].vertex_index = 1;
+  SStack_e8.vertices[0].vertex_index = 4;
+  SStack_e8.vertices[1].vertex_index = 5;
+  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0(DAT_0060b280,&SStack_e8);
+  SStack_e8.vertices[3].vertex_index = 2;
+  SStack_e8.vertices[2].vertex_index = 3;
+  SStack_e8.vertices[1].vertex_index = 7;
+  SStack_e8.vertices[0].vertex_index = 6;
+  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0(DAT_0060b280,&SStack_e8);
+  SStack_e8.vertices[1].vertex_index = 7;
+  SStack_e8.vertices[3].vertex_index = 0;
+  SStack_e8.vertices[2].vertex_index = 4;
+  SStack_e8.vertices[0].vertex_index = 3;
+  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0(DAT_0060b280,&SStack_e8);
+  SStack_e8.vertices[3].vertex_index = 1;
+  SStack_e8.vertices[2].vertex_index = 2;
+  SStack_e8.vertices[1].vertex_index = 6;
+  SStack_e8.vertices[0].vertex_index = 5;
+  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0(DAT_0060b280,&SStack_e8);
+  SStack_e8.vertices[1].vertex_index = 6;
+  SStack_e8.vertices[3].vertex_index = 4;
+  SStack_e8.vertices[2].vertex_index = 5;
+  SStack_e8.vertices[0].vertex_index = 7;
+  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0(DAT_0060b280,&SStack_e8);
+  SStack_e8.vertices[2].vertex_index = 2;
+  SStack_e8.vertices[1].vertex_index = 1;
+  SStack_e8.vertices[3].vertex_index = 3;
+  SStack_e8.vertices[0].vertex_index = 0;
+  engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_004696f0(DAT_0060b280,&SStack_e8);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046b880(DAT_0060b280,0);
   return;
 }

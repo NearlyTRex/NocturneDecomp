@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[4]:
+;   core_doc.cpp_CDoc_doHeroAction_FUN_00474fc0 at 00474fe4
 ;   core_doc.cpp_FUN_00469550 at 0046bcc8
-;   core_doc.cpp_FUN_00474fc0 at 00474fe4
-;   core_hero.cpp_FUN_004ec640 at 004ec65b
+;   core_hero.cpp_CHero_doHeroAction_FUN_004ec640 at 004ec65b
 ;   core_hero.cpp_FUN_004eca10 at 004eca17
 ;
 ; *****************************************************************************

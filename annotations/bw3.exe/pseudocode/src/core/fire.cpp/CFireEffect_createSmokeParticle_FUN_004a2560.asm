@@ -11,16 +11,16 @@
 ; int              Stack[0x14]:4   alpha_value
 ;
 ; XREF[10]:
-;   core_blundrbs.cpp_FUN_00410490 at 00410f33
+;   core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490 at 00410f33
 ;   core_charactr.cpp_FUN_00433c60 at 00433f6a
-;   core_constrct.cpp_FUN_00442a20 at 00442cf5
-;   core_drip.cpp_FUN_0046ecf0 at 0046ef9e
-;   core_emitter.cpp_FUN_00487eb0 at 004882f8
+;   core_construc.cpp_CConstruct_process_FUN_00442a20 at 00442cf5
+;   core_drip.cpp_CDrip_process_FUN_0046ecf0 at 0046ef9e
+;   core_emitter.cpp_CEmitter_process_FUN_00487eb0 at 004882f8
+;   core_fire.cpp_CCrater_process_FUN_0049d8b0 at 0049d931
 ;   core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_004a2010 at 004a2028
-;   core_fire.cpp_FUN_00499350 at 0049943f
-;   core_fire.cpp_FUN_0049d8b0 at 0049d931
-;   core_fire.cpp_FUN_0049e390 at 0049e4c4
-;   core_flame.cpp_FUN_004a5b10 at 004a5c21
+;   core_fire.cpp_CFireball_process_FUN_00499350 at 0049943f
+;   core_fire.cpp_CGunFlame_process_FUN_0049e390 at 0049e4c4
+;   core_flame.cpp_CFlame_process_FUN_004a5b10 at 004a5c21
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c74e9c

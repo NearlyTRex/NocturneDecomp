@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_FUN_00430a90(int param_1,int param_2,undefined4 param_3,float param_4)
+; void core_charactr_cpp_FUN_00430a90(int param_1,int param_2,int param_3,float param_4)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x58]:1  local_58
@@ -15,11 +15,11 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[5]:
-;   core_bride.cpp_FUN_00423b70 at 0042478d
-;   core_carved.cpp_FUN_00428ae0 at 004298c2
-;   core_demnfolk.cpp_FUN_00459100 at 00459df6
-;   core_ghoul.cpp_FUN_004de330 at 004e001f
-;   core_zombie.cpp_FUN_005bafb0 at 005bbc9f
+;   core_bride.cpp_CBride_process_FUN_00423b70 at 0042478d
+;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 004298c2
+;   core_demnfolk.cpp_CDemnfolk_process_FUN_00459100 at 00459df6
+;   core_ghoul.cpp_CGhoul_process_FUN_004de330 at 004e001f
+;   core_zombie.cpp_CZombie_process_FUN_005bafb0 at 005bbc9f
 ;
 ; Referenced Globals:
 ;   CGore* g_CGorePtr = 01cd0e3c
@@ -27,9 +27,9 @@
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408ac0
 ;   core_actor.cpp_FUN_00408b40
-;   core_actor.cpp_FUN_0040cd00
+;   core_actor.cpp_randomChance_FUN_0040cd00
 ;   core_gore.cpp_CGore_spawnBloodParticles_FUN_004e5f40
-;   core_skeleton.cpp_FUN_00569130
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
     RET                                 ; 00430aaa
     PUSH dword ptr [ESP + 0x68]         ; 00430aab
         ;   Label: LAB_00430aab
-    CALL core_actor.cpp_FUN_0040cd00    ; 00430aaf
-        ;   XREF to: 0040cd00 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cd00(float probability_threshold)
+    CALL core_actor.cpp_randomChance_FUN_0040cd00 ; 00430aaf
+        ;   XREF to: 0040cd00 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040cd00(float probability_threshold)
     ADD ESP,0x4                         ; 00430ab4
     TEST EAX,EAX                        ; 00430ab7
     JZ 0x00430aa6                       ; 00430ab9
@@ -63,8 +63,8 @@ section .text
     PUSH EAX                            ; 00430ac8
     LEA ESI,[ESP + 0x10]                ; 00430ac9
     LEA EDI,[ESP + 0x40]                ; 00430acd
-    CALL core_skeleton.cpp_FUN_00569130 ; 00430ad1
-        ;   XREF to: 00569130 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569130()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130 ; 00430ad1
+        ;   XREF to: 00569130 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 00430ad6
     LEA EAX,[ESP + 0x38]                ; 00430ad9
     LEA ESI,[ESP + 0x8]                 ; 00430add

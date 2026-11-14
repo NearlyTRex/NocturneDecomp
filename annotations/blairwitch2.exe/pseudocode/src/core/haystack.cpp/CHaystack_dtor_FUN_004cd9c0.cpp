@@ -13,11 +13,11 @@ CHaystack * __cdecl core_haystack_cpp_CHaystack_dtor_FUN_004cd9c0(CHaystack *thi
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CHaystackTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CHaystackTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  pCVar1 = (CHaystack *)core_hero_cpp_CHero_dtor_FUN_004ce3d0((CHero *)this_ptr,1);
+  pCVar1 = (CHaystack *)core_hero_cpp_CHero_dtor_FUN_004ce3d0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

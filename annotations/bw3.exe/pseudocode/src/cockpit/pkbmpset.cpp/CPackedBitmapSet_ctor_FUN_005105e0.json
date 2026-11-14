@@ -1,0 +1,127 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 14,
+    "complexity_score": 9,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 23
+  },
+  "cross_references": [
+    {
+      "addr": "00510740",
+      "from_addr": "00510763",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00510740",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005105e0",
+    "address_range": [
+      [
+        "005105e0",
+        "0051060f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_005105e0",
+    "signature": "void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_ctor_FUN_005105e0(CPackedBitmapSet *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a28f0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005a28f0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00510763",
+        "call_type": "direct",
+        "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00510740",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9166666666666665,
+    "instruction_count": 12,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 8,
+      "INT_ADD": 7,
+      "INT_AND": 4,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 4,
+      "LOAD": 2,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 47
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005175b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00538900",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0054bcd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004f5290",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPackedBitmapSet *"
+      }
+    ]
+  },
+  "suspects": []
+}

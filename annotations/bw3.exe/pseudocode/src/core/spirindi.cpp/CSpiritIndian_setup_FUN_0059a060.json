@@ -1,0 +1,262 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 203,
+    "complexity_score": 161,
+    "cross_reference_count": 0,
+    "function_call_count": 16,
+    "global_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 91,
+    "suspect_count": 5,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "unrolled_memcpy",
+      "unrolled_strcpy",
+      "warning_type_propagation"
+    ],
+    "total_lines": 294
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0059a060",
+    "address_range": [
+      [
+        "0059a060",
+        "0059a2a3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_spirindi.cpp_CSpiritIndian_setup_FUN_0059a060",
+    "signature": "void __cdecl core_spirindi_cpp_CSpiritIndian_setup_FUN_0059a060(CSpiritIndian *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c4f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_createActorByName_FUN_0040c4f0"
+    },
+    {
+      "addr": "0043f920",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_CClothList_load_FUN_0043f920"
+    },
+    {
+      "addr": "0043fc00",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_CClothList_process_FUN_0043fc00"
+    },
+    {
+      "addr": "0043fbc0",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_CClothList_setup_FUN_0043fbc0"
+    },
+    {
+      "addr": "004fab10",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_004fab10"
+    },
+    {
+      "addr": "004fac10",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorph_getReady_FUN_004fac10"
+    },
+    {
+      "addr": "004fa9c0",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorph_setupModelFromDeformable_FUN_004fa9c0"
+    },
+    {
+      "addr": "004fc310",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_004fc310"
+    },
+    {
+      "addr": "004fc420",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_jumpToMotion_FUN_004fc420"
+    },
+    {
+      "addr": "004fb9c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionList_findMotionIndex_FUN_004fb9c0"
+    },
+    {
+      "addr": "00509020",
+      "is_variadic": false,
+      "name": "core_npc.cpp_CNPC_setup_FUN_00509020"
+    },
+    {
+      "addr": "0054dd10",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0054dd10"
+    },
+    {
+      "addr": "0054eae0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0"
+    },
+    {
+      "addr": "0054e6b0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0054e6b0"
+    },
+    {
+      "addr": "0054c090",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0054c090"
+    },
+    {
+      "addr": "0054c110",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0054c110"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d9a48",
+      "name": "s_CPryeMorph_005d9a48",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9a53",
+      "name": "s_bwp3_prye_morph_dfm_005d9a53",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9a67",
+      "name": "s_prye_morph_005d9a67",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9a68",
+      "name": "s_rye_morph_005d9a67+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d9a69",
+      "name": "s_ye_morph_005d9a67+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d9a6a",
+      "name": "s_e_morph_005d9a67+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d9a72",
+      "name": "s_stand_005d9a72",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.321637426900585,
+    "instruction_count": 171,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 21,
+      "CALLIND": 1,
+      "CBRANCH": 5,
+      "COPY": 114,
+      "INT_ADD": 87,
+      "INT_AND": 82,
+      "INT_CARRY": 35,
+      "INT_EQUAL": 80,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 35,
+      "INT_SLESS": 40,
+      "INT_SUB": 72,
+      "LOAD": 36,
+      "POPCOUNT": 40,
+      "RETURN": 1,
+      "STORE": 83
+    },
+    "pcode_op_count": 739
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSpiritIndian *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 43,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 53,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pCVar3->base).base.base.location.position.x = (this_ptr->base).base.base.location.position.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 61,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pUVar4->vec).x = (pUVar1->vec).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 50,
+      "match": "pCVar3 = (T *)((pCVar3->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCVar3 = (CPryeMorph *)((pCVar3->base).base.base.actor_name + 2);",
+      "type": "shadow_pointer_walk"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CSpiritIndian",
+        "offset": 0,
+        "vtable_addr": "005e7e94"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

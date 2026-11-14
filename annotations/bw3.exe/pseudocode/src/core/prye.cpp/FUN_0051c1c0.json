@@ -2,32 +2,33 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 2331,
-    "complexity_score": 2843,
+    "complexity_score": 3969,
     "cross_reference_count": 2,
     "function_call_count": 31,
     "global_count": 46,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1303,
-    "suspect_count": 149,
+    "pseudocode_lines": 1294,
+    "suspect_count": 262,
     "suspect_types": [
+      "bit_int_float_compare",
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
+      "stack_param",
       "stack_ref",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 3634
+    "total_lines": 3625
   },
   "cross_references": [
     {
       "addr": "00518680",
       "from_addr": "0051899d",
-      "name": "core_prye.cpp_FUN_00518680",
+      "name": "core_prye.cpp_CPrye_setup_FUN_00518680",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -48,7 +49,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_prye.cpp_FUN_0051c1c0",
-    "signature": "void core_prye_cpp_FUN_0051c1c0(int param_1)"
+    "signature": "void core_prye_cpp_FUN_0051c1c0(CPrye *param_1)"
   },
   "function_calls": [
     {
@@ -69,7 +70,7 @@
     {
       "addr": "0045b550",
       "is_variadic": false,
-      "name": "core_dirmat.cpp_FUN_0045b550"
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550"
     },
     {
       "addr": "0045b800",
@@ -94,7 +95,7 @@
     {
       "addr": "004fb9c0",
       "is_variadic": false,
-      "name": "core_motion.cpp_FUN_004fb9c0"
+      "name": "core_motion.cpp_CMotionList_findMotionIndex_FUN_004fb9c0"
     },
     {
       "addr": "004fc350",
@@ -109,7 +110,12 @@
     {
       "addr": "0051c0a0",
       "is_variadic": false,
-      "name": "core_prye.cpp_FUN_0051c0a0"
+      "name": "core_prye.cpp_CPrye_getFlashlightMinAngle_FUN_0051c0a0"
+    },
+    {
+      "addr": "0051e6d0",
+      "is_variadic": false,
+      "name": "core_prye.cpp_CPrye_makeDrawDecision_FUN_0051e6d0"
     },
     {
       "addr": "0051c0f0",
@@ -122,9 +128,19 @@
       "name": "core_prye.cpp_FUN_0051e280"
     },
     {
-      "addr": "0051e6d0",
+      "addr": "00517e80",
       "is_variadic": false,
-      "name": "core_prye.cpp_FUN_0051e6d0"
+      "name": "core_prye.cpp_getCarriedObjectVerticalOffset_FUN_00517e80"
+    },
+    {
+      "addr": "0054e170",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0054e170"
+    },
+    {
+      "addr": "0054d8f0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0054d8f0"
     },
     {
       "addr": "0054cc90",
@@ -137,6 +153,11 @@
       "name": "core_skeleton.cpp_CDeformableModelInstance_blendWithPoseData_FUN_0054d3c0"
     },
     {
+      "addr": "0054dbd0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0054dbd0"
+    },
+    {
       "addr": "0054eac0",
       "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0"
@@ -147,34 +168,9 @@
       "name": "core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0054c130"
     },
     {
-      "addr": "0054d8f0",
-      "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_0054d8f0"
-    },
-    {
-      "addr": "0054dbd0",
-      "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_0054dbd0"
-    },
-    {
-      "addr": "0054e170",
-      "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_0054e170"
-    },
-    {
-      "addr": "00517e80",
-      "is_variadic": false,
-      "name": "core_stranger.cpp_getCarriedObjectVerticalOffset_FUN_00517e80"
-    },
-    {
       "addr": "00576250",
       "is_variadic": false,
-      "name": "core_vecdir.cpp_FUN_00576250"
-    },
-    {
-      "addr": "00585d50",
-      "is_variadic": false,
-      "name": "core_xform.cpp_FUN_00585d50"
+      "name": "core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250"
     },
     {
       "addr": "005860b0",
@@ -195,6 +191,11 @@
       "addr": "00585d10",
       "is_variadic": false,
       "name": "core_xform.cpp_quaternionFromAngleY_FUN_00585d10"
+    },
+    {
+      "addr": "00585d50",
+      "is_variadic": false,
+      "name": "core_xform.cpp_quaternionFromAngleZ_FUN_00585d50"
     },
     {
       "addr": "005a4b74",
@@ -354,7 +355,7 @@
     },
     {
       "addr": "01d21570",
-      "name": "g_CGameInstance.field612_0x264",
+      "name": "g_CGameInstance.goggles_active",
       "type": "undefined4",
       "value": null
     },
@@ -513,7 +514,7 @@
       {
         "call_addr": "0051899d",
         "call_type": "direct",
-        "caller": "core_prye.cpp_FUN_00518680",
+        "caller": "core_prye.cpp_CPrye_setup_FUN_00518680",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -2386,39 +2387,103 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_prye_cpp_FUN_0051c1c0(int param_1)",
+      "text": "void core_prye_cpp_FUN_0051c1c0(CPrye *param_1)",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 20,
+      "line": 22,
       "match": "code *",
       "severity": "moderate",
-      "text": "code *pcVar11;",
+      "text": "code *pcVar14;",
       "type": "unresolved_funcptr"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_ffffdb68",
+      "severity": "moderate",
+      "text": "CBoundingBox3D *in_stack_ffffdb68;",
+      "type": "stack_param"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 300,
+      "line": 279,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x158));",
+      "text": "pCVar11 = &(param_1->base).base.model;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 302,
+      "line": 283,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_motion_cpp_FUN_004fc350((CDeformableModelInstance *)(param_1 + 0x158),0);",
+      "text": "if ((int)param_1->turn_blend_weight < 0x3e19999a) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 304,
+      "line": 285,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x20c48) < 0x3e19999a) {",
+      "text": "((param_1->turn_blend_weight / _DAT_005cd337) * (float)local_14);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 287,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (0.85 < param_1->turn_blend_weight) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 289,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(((1.0 - param_1->turn_blend_weight) / 0.15) * (float)local_2420);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 291,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar11 = &(param_1->base).base.model;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 293,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((0.0 < (float)local_2420) && (-1 < param_1->turn_motion_index)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 294,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_prye_cpp_FUN_0051e280(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 301,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_prye_cpp_CPrye_makeDrawDecision_FUN_0051e6d0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 303,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&(param_1->base).base.model.base);",
       "type": "unnamed_param"
     },
     {
@@ -2426,23 +2491,15 @@
       "line": 306,
       "match": "param_1",
       "severity": "mild",
-      "text": "((*(float *)(param_1 + 0x20c48) / _DAT_005cd337) * (float)local_14);",
+      "text": "local_24 = &param_1->carry_object_world_center;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 308,
+      "line": 307,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0.85 < *(float *)(param_1 + 0x20c48)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 310,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(((1.0 - *(float *)(param_1 + 0x20c48)) / 0.15) * (float)local_2420);",
+      "text": "if ((param_1->base).door_to_open == (CDoor *)0x0) {",
       "type": "unnamed_param"
     },
     {
@@ -2450,183 +2507,119 @@
       "line": 313,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x158));",
+      "text": "core_actor_cpp_FUN_00408bf0(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 314,
+      "line": 330,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((0.0 < (float)local_2420) && (-1 < *(int *)(param_1 + 0x20c78))) {",
+      "text": "core_actor_cpp_FUN_00408bf0(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 315,
+      "line": 341,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_prye_cpp_FUN_0051e280(param_1,local_2404);",
+      "text": "_DAT_01ed36a8 = (param_1->base).door_to_open;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 319,
+      "line": 343,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x158),(SPoseData *)local_2404,",
+      "text": "pCVar11 = &(param_1->base).base.model;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 344,
+      "match": "(float *)((int)param_1",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)param_1 + (uint)bVar9 * -8 + 0x20c90);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 344,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pfVar7 = (float *)((int)param_1 + (uint)bVar9 * -8 + 0x20c90);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 322,
+      "line": 345,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_prye_cpp_FUN_0051e6d0(param_1);",
+      "text": "local_fc = (param_1->carry_object_world_center).x;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 324,
+      "line": 398,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CMotionController *)(param_1 + 0x158));",
+      "text": "pCVar11 = &(param_1->base).base.model;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 327,
+      "line": 421,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_24 = (float *)(param_1 + 0x20c8c);",
+      "text": "pCVar11 = &(param_1->base).base.model;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 328,
+      "line": 442,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x20b94) == 0) {",
+      "text": "pCVar1 = (param_1->base).door_to_open;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 444,
+      "match": "(float *)((int)pCVar1",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)pCVar1 + (uint)bVar9 * -8 + 0x9c0);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 453,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->door_align_timer = 0.5;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 334,
+      "line": 455,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408bf0(param_1,afStack_46c + 0x3d);",
+      "text": "EVar2 = ((param_1->base).door_to_open)->door_swing;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 346,
+      "line": 460,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_door_cpp_FUN_00464c10(*(int *)(param_1 + 0x20b94));",
+      "text": "core_actor_cpp_FUN_00408b00((param_1->base).door_to_open);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 351,
+      "line": 469,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408bf0(param_1,local_2a8 + 2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 362,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_DAT_01ed36a8 = *(uint *)(param_1 + 0x20b94);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 364,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar4 = (float *)(param_1 + 0x20c90 + (uint)bVar7 * -8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 365,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_fc = *(float *)(param_1 + 0x20c8c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 366,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_14 = (CDeformableModelInstance *)(param_1 + 0x158);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 369,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0054dbd0((CDeformableModelInstance *)(param_1 + 0x158),_DAT_01ed36e8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 396,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "local_2450 = *(float *)&pCVar9->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 423,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_14 = (CDeformableModelInstance *)(param_1 + 0x158);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 425,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x158),(CQuaternion4f *)&local_620,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 445,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_14 = (CDeformableModelInstance *)(param_1 + 0x158);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 447,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x158),(CQuaternion4f *)&local_580,local_2450,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 459,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar12 = *(int *)(param_1 + 0x20b94);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 465,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408bf0(iVar12,param_1 + 0x20);",
+      "text": "if (((param_1->base).door_to_open)->door_swing == DOOR_SWING_COUNTER_CLOCKWISE) {",
       "type": "unnamed_param"
     },
     {
@@ -2634,31 +2627,23 @@
       "line": 470,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x20cf0) = 0x3f000000;",
+      "text": "param_1->door_align_timer = 0.0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 472,
+      "line": 474,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar12 = *(int *)(*(int *)(param_1 + 0x20b94) + 0x2e4);",
+      "text": "if (((param_1->base).door_to_open)->door_swing == DOOR_SWING_COUNTER_CLOCKWISE) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 477,
+      "line": 478,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408b00(*(uint *)(param_1 + 0x20b94),&local_15c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 486,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(*(int *)(param_1 + 0x20b94) + 0x2e4) == 1) {",
+      "text": "core_actor_cpp_FUN_00408b00((param_1->base).door_to_open);",
       "type": "unnamed_param"
     },
     {
@@ -2666,7 +2651,15 @@
       "line": 487,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x20cf0) = 0;",
+      "text": "if (((param_1->base).door_to_open)->door_swing == DOOR_SWING_CLOCKWISE) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 488,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->door_align_timer = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -2674,15 +2667,63 @@
       "line": 491,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(*(int *)(param_1 + 0x20b94) + 0x2e4) == 1) {",
+      "text": "local_324 = local_390 - (param_1->base).base.base.location.position.x;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 495,
+      "line": 492,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408b00(*(uint *)(param_1 + 0x20b94),local_2a8 + 0x11);",
+      "text": "local_320[0] = local_38c - (param_1->base).base.base.location.position.y;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 493,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_320[1] = local_388 - (param_1->base).base.base.location.position.z;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 498,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (&param_1->door_align_offset != (CVector3f *)(afStack_218 + 0x11)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 499,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->door_align_offset).x = local_1d4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 500,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->door_align_offset).y = local_1d0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 501,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->door_align_offset).z = local_1cc;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 503,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->door_align_offset).y = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -2690,55 +2731,23 @@
       "line": 504,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(*(int *)(param_1 + 0x20b94) + 0x2e4) == 0) {",
+      "text": "core_actor_cpp_FUN_00408bf0(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 505,
+      "line": 514,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x20cf0) = 0;",
+      "text": "param_1->door_align_yaw = (param_1->base).base.base.orient.vec.y + local_380;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 508,
+      "line": 514,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_324 = local_390 - *(float *)(param_1 + 0x20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 509,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_320 = local_38c - *(float *)(param_1 + 0x24);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 510,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_31c = local_388 - *(float *)(param_1 + 0x28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 515,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((float *)(param_1 + 0x20ce0) != afStack_254 + 0x20) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 516,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x20ce0) = local_1d4;",
+      "text": "param_1->door_align_yaw = (param_1->base).base.base.orient.vec.y + local_380;",
       "type": "unnamed_param"
     },
     {
@@ -2746,23 +2755,23 @@
       "line": 517,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x20ce4) = local_1d0;",
+      "text": "pCVar11 = &(param_1->base).base.model;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 518,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x20ce8) = local_1cc;",
-      "type": "unnamed_param"
+      "description": "Complex pointer cast",
+      "line": 520,
+      "match": "(float *)((int)param_1",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)param_1 + (uint)bVar9 * -8 + 0x20c90);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
       "line": 520,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x20ce4) = 0;",
+      "text": "pfVar7 = (float *)((int)param_1 + (uint)bVar9 * -8 + 0x20c90);",
       "type": "unnamed_param"
     },
     {
@@ -2770,63 +2779,31 @@
       "line": 521,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408bf0(param_1,*(int *)(param_1 + 0x20b94) + 0x9bc);",
+      "text": "local_414 = (param_1->carry_object_world_center).x;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 521,
+      "line": 555,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408bf0(param_1,*(int *)(param_1 + 0x20b94) + 0x9bc);",
+      "text": "pCVar11 = &(param_1->base).base.model;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 531,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x20cec) = *(float *)(param_1 + 0x34) + local_380;",
-      "type": "unnamed_param"
+      "description": "Complex pointer cast",
+      "line": 578,
+      "match": "(float *)((int)param_1",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)param_1 + (uint)bVar9 * -8 + 0x20c90);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 531,
+      "line": 578,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x20cec) = *(float *)(param_1 + 0x34) + local_380;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 534,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar12 = param_1 + 0x158;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 537,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pfVar4 = (float *)(param_1 + 0x20c90 + (uint)bVar7 * -8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 538,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_414 = *(float *)(param_1 + 0x20c8c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 577,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_14 = (CDeformableModelInstance *)(param_1 + 0x158);",
+      "text": "pfVar7 = (float *)((int)param_1 + (uint)bVar9 * -8 + 0x20c90);",
       "type": "unnamed_param"
     },
     {
@@ -2834,52 +2811,28 @@
       "line": 579,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x158),(CQuaternion4f *)&local_8f0,local_2448,",
+      "text": "local_198 = (param_1->carry_object_world_center).x;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 593,
+      "line": 613,
       "match": "param_1",
       "severity": "mild",
-      "text": "pfVar4 = (float *)(param_1 + 0x20c90 + (uint)bVar7 * -8);",
+      "text": "pCVar11 = &(param_1->base).base.model;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 594,
+      "line": 638,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_198 = *(float *)(param_1 + 0x20c8c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 633,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_14 = (CDeformableModelInstance *)(param_1 + 0x158);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 635,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x158),(CQuaternion4f *)&local_810,local_2444,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 650,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_dirmat_cpp_FUN_0045b550(local_968,(CVector3f *)(param_1 + 0x20bbc));",
+      "text": "(&local_968,&(param_1->base).target_orientation.vec);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 651,
+      "line": 639,
       "match": "DAT_01ed36bc",
       "severity": "mild",
       "text": "if ((DAT_01ed36bc & 1) == 0) {",
@@ -2887,7 +2840,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 652,
+      "line": 640,
       "match": "DAT_01ed36bc",
       "severity": "mild",
       "text": "DAT_01ed36bc = DAT_01ed36bc | 1;",
@@ -2895,7 +2848,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 652,
+      "line": 640,
       "match": "DAT_01ed36bc",
       "severity": "mild",
       "text": "DAT_01ed36bc = DAT_01ed36bc | 1;",
@@ -2903,122 +2856,106 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 654,
+      "line": 642,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar12 = *(int *)(param_1 + 0x20bac);",
+      "text": "pCVar6 = (param_1->base).target_actor;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 656,
-      "match": "code *",
+      "description": "Unresolved stack parameter",
+      "line": 644,
+      "match": "in_stack_ffffdb68",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar12 + 0x154) + 0x1c))(iVar12);",
-      "type": "unresolved_funcptr"
+      "text": "(*((pCVar6->vtable)._ub)->getBoundingBox)(pCVar6,in_stack_ffffdb68);",
+      "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 678,
+      "line": 666,
       "match": "&stack0x00000000",
       "severity": "moderate",
-      "text": "if (&stack0x00000000 != (byte *)0x1ed382c) {",
+      "text": "if (&stack0x00000000 != (byte *)0x1ed3824) {",
       "type": "stack_ref"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 684,
-      "match": "DAT_01ed36ac",
+      "description": "Unnamed function parameter",
+      "line": 677,
+      "match": "param_1",
       "severity": "mild",
-      "text": "core_dirmat_cpp_FUN_0045b800(local_968,&DAT_01ed36ac);",
-      "type": "undefined_data"
+      "text": "afStack_d8[0] = (param_1->base).target_position.x + local_1c8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 678,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "afStack_d8[1] = (param_1->base).target_position.y + fStack_1c4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 679,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "afStack_d8[2] = (param_1->base).target_position.z + fStack_1c0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 684,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_FUN_00408bf0(param_1);",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 689,
       "match": "param_1",
       "severity": "mild",
-      "text": "fStack_d8 = *(float *)(param_1 + 0x20bb0) + local_1c8;",
+      "text": "local_14 = &(param_1->base).base.model;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 690,
+      "line": 727,
       "match": "param_1",
       "severity": "mild",
-      "text": "fStack_d4 = *(float *)(param_1 + 0x20bb4) + fStack_1c4;",
+      "text": "local_14 = &(param_1->base).base.model;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 691,
+      "line": 744,
       "match": "param_1",
       "severity": "mild",
-      "text": "fStack_d0 = *(float *)(param_1 + 0x20bb8) + fStack_1c0;",
+      "text": "local_20 = &param_1->carry_object_world_center;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 696,
+      "line": 745,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408bf0(param_1,afStack_254 + 0x26);",
+      "text": "if ((param_1->base).lever_to_pull == (CLever *)0x0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 701,
+      "line": 751,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_14 = (CDeformableModelInstance *)(param_1 + 0x158);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 721,
-      "match": "(float *)((int)pCVar9",
-      "severity": "moderate",
-      "text": "fStack_2414 = *(float *)((int)pCVar9 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 738,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_14 = (CDeformableModelInstance *)(param_1 + 0x158);",
+      "text": "core_actor_cpp_FUN_00408bf0(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 755,
+      "line": 768,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_20 = (float *)(param_1 + 0x20c8c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 756,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x20ba0) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 762,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408bf0(param_1,afStack_254 + 0xe);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 774,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_lever_cpp_FUN_004e0770(*(int *)(param_1 + 0x20ba0));",
+      "text": "core_actor_cpp_FUN_00408bf0(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -3026,119 +2963,111 @@
       "line": 779,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408bf0(param_1,afStack_14c + 2);",
+      "text": "_DAT_01ed36b8 = (param_1->base).lever_to_pull;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 790,
+      "line": 781,
       "match": "param_1",
       "severity": "mild",
-      "text": "_DAT_01ed36b8 = *(uint *)(param_1 + 0x20ba0);",
+      "text": "pCVar11 = &(param_1->base).base.model;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 782,
+      "match": "(float *)((int)param_1",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)param_1 + (uint)bVar9 * -8 + 0x20c90);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 782,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pfVar7 = (float *)((int)param_1 + (uint)bVar9 * -8 + 0x20c90);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 792,
+      "line": 783,
       "match": "param_1",
       "severity": "mild",
-      "text": "pfVar4 = (float *)(param_1 + 0x20c90 + (uint)bVar7 * -8);",
+      "text": "local_438 = (param_1->carry_object_world_center).x;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 793,
+      "line": 836,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_438 = *(float *)(param_1 + 0x20c8c);",
+      "text": "pCVar11 = &(param_1->base).base.model;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 794,
+      "line": 859,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_14 = (CDeformableModelInstance *)(param_1 + 0x158);",
+      "text": "pCVar11 = &(param_1->base).base.model;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 797,
+      "line": 883,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0054dbd0((CDeformableModelInstance *)(param_1 + 0x158),_DAT_01ed36ec);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 824,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "local_2424 = *(float *)&pCVar9->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 851,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_14 = (CDeformableModelInstance *)(param_1 + 0x158);",
+      "text": "local_244c = (param_1->base).base.model.base.current_frame_number * (float)_DAT_005cd357;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 853,
+      "line": 887,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x158),(CQuaternion4f *)&local_5c0,",
+      "text": "fVar10 = (float10)fpatan((float10)(param_1->carry_object_bbox).max.x / (float10)_DAT_005e352c,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 873,
+      "line": 897,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_14 = (CDeformableModelInstance *)(param_1 + 0x158);",
+      "text": "local_14 = &(param_1->base).base.model;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 875,
+      "line": 914,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x158),(CQuaternion4f *)&local_530,local_2424,",
+      "text": "local_2434 = (param_1->base).base.model.base.current_frame_number;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 890,
+      "line": 928,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_244c = *(float *)(param_1 + 0x160) * (float)_DAT_005cd357;",
+      "text": "(&(param_1->base).base.model,_DAT_01ed36ec,&local_300);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 894,
+      "line": 933,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar8 = (float10)fpatan((float10)*(float *)(param_1 + 0x20ca4) / (float10)_DAT_005e352c,",
+      "text": "local_34 = ((param_1->carry_object_world_center).y + (param_1->carry_object_bbox).max.y) -",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 904,
+      "line": 933,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_14 = (CDeformableModelInstance *)(param_1 + 0x158);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 921,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_2434 = *(float *)(param_1 + 0x160);",
+      "text": "local_34 = ((param_1->carry_object_world_center).y + (param_1->carry_object_bbox).max.y) -",
       "type": "unnamed_param"
     },
     {
@@ -3146,47 +3075,23 @@
       "line": 934,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0054dbd0(param_1 + 0x158,_DAT_01ed36ec);",
+      "text": "(param_1->carry_object_bbox).min.y;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 939,
+      "line": 935,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_34 = (*(float *)(param_1 + 0x20c90) + *(float *)(param_1 + 0x20ca8)) -",
+      "text": "pCVar6 = (param_1->base).object_to_pick_up;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 939,
+      "line": 951,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_34 = (*(float *)(param_1 + 0x20c90) + *(float *)(param_1 + 0x20ca8)) -",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 940,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x20c9c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 941,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x20b98) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 945,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(int *)(param_1 + 0x20b98));",
+      "text": "local_14 = &(param_1->base).base.model;",
       "type": "unnamed_param"
     },
     {
@@ -3194,111 +3099,95 @@
       "line": 958,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_14 = (CDeformableModelInstance *)(param_1 + 0x158);",
+      "text": "fVar10 = (float10)fpatan((float10)(param_1->carry_object_bbox).max.x / (float10)_DAT_005e352c,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 965,
+      "line": 984,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar8 = (float10)fpatan((float10)*(float *)(param_1 + 0x20ca4) / (float10)_DAT_005e352c,",
+      "text": "local_240c = 1.0 - ((param_1->base).base.model.base.current_frame_number + (float)_DAT_005cd34f)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 991,
+      "line": 992,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_240c = 1.0 - (*(float *)(param_1 + 0x160) + (float)_DAT_005cd34f) * (float)_DAT_005cd357;",
+      "text": "fVar10 = (float10)fpatan((float10)(param_1->carry_object_bbox).max.x / (float10)_DAT_005e352c,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 998,
+      "line": 996,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar8 = (float10)fpatan((float10)*(float *)(param_1 + 0x20ca4) / (float10)_DAT_005e352c,",
+      "text": "pCVar11 = &(param_1->base).base.model;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1008,
+      "line": 1021,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_14 = (CDeformableModelInstance *)(param_1 + 0x158);",
+      "text": "local_2418 = (param_1->base).base.model.base.current_frame_number;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1010,
+      "line": 1034,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x158),(CQuaternion4f *)&local_680,local_240c,",
+      "text": "local_14 = &(param_1->base).base.model;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1026,
+      "line": 1056,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_2418 = *(float *)(param_1 + 0x160);",
+      "text": "fVar10 = (float10)fpatan((float10)(param_1->carry_object_bbox).max.x / (float10)_DAT_005e352c,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1039,
+      "line": 1088,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_14 = (CDeformableModelInstance *)(param_1 + 0x158);",
+      "text": "if ((param_1->guns_drawn != 0) && (param_1->weapon != (CWeapon *)0x0)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1045,
+      "line": 1088,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar8 = (float10)local_2a8[0] - (float10)*(float *)(param_1 + 0x20c90);",
+      "text": "if ((param_1->guns_drawn != 0) && (param_1->weapon != (CWeapon *)0x0)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1061,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar8 = (float10)fpatan((float10)*(float *)(param_1 + 0x20ca4) / (float10)_DAT_005e352c,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 1089,
-      "match": "field_0x264",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x264 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 1093,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x20bcc) != 0) && (*(int *)(param_1 + 0x20c24) != 0)) {",
+      "text": "local_2b8[0] = (param_1->right_arm_aim).target_pitch;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1093,
+      "line": 1102,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x20bcc) != 0) && (*(int *)(param_1 + 0x20c24) != 0)) {",
+      "text": "(&(param_1->base).base.model,&local_6b0,fVar13,iVar15,pcVar14);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1094,
+      "line": 1104,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_2b8[0] = *(float *)(param_1 + 0x20be8);",
+      "text": "if (0.0 < param_1->interact_blend) {",
       "type": "unnamed_param"
     },
     {
@@ -3306,79 +3195,63 @@
       "line": 1107,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x158),(CQuaternion4f *)&local_6b0,fVar10,",
+      "text": "pCVar11 = &(param_1->base).base.model;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1110,
+      "line": 1114,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0.0 < *(float *)(param_1 + 0x20c34)) {",
+      "text": "(pCVar11,iVar15,(float)local_50,param_1->interact_blend,_DAT_01ed371c,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1113,
+      "line": 1118,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar9 = (CDeformableModelInstance *)(param_1 + 0x158);",
+      "text": "((param_1->base).base.carry_hands[0].carry_actor,DAT_007e1a50);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 1118,
+      "match": "DAT_007e1a50",
+      "severity": "mild",
+      "text": "((param_1->base).base.carry_hands[0].carry_actor,DAT_007e1a50);",
+      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
       "line": 1119,
       "match": "param_1",
       "severity": "mild",
-      "text": "(pCVar9,iVar12,(float)local_50,*(float *)(param_1 + 0x20c34),_DAT_01ed371c,",
+      "text": "if ((pCVar6 != (CDemonActor *)0x0) && (param_1->weapon == (CWeapon *)0x0)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1123,
+      "line": 1120,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x25b0),DAT_007e1a50);",
+      "text": "local_58 = core_prye_cpp_CPrye_getFlashlightMinAngle_FUN_0051c0a0(param_1);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 1123,
-      "match": "DAT_007e1a50",
-      "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x25b0),DAT_007e1a50);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
       "line": 1124,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((iVar12 != 0) && (*(int *)(param_1 + 0x20c24) == 0)) {",
+      "text": "(1.0 - (param_1->aim_pitch - local_58) / ((float)local_14 - local_58)) *",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1125,
+      "line": 1126,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_58 = (float)core_prye_cpp_FUN_0051c0a0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 1127,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_14 = (CDeformableModelInstance *)core_prye_cpp_FUN_0051c0f0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 1129,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(1.0 - (*(float *)(param_1 + 0x20bd8) - local_58) / ((float)local_14 - local_58)) *",
+      "text": "param_1->frame_cleared = 1.0;",
       "type": "unnamed_param"
     },
     {
@@ -3386,176 +3259,1208 @@
       "line": 1131,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x20bd4) = 0x3f800000;",
+      "text": "fVar13 = param_1->frame_cleared;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1136,
+      "line": 1133,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar10 = *(float *)(param_1 + 0x20bd4);",
+      "text": "core_xform_cpp_quaternionFromAngleX_FUN_00585cd0(param_1->aim_pitch);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1138,
+      "line": 1155,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_xform_cpp_quaternionFromAngleX_FUN_00585cd0(*(uint *)(param_1 + 0x20bd8));",
+      "text": "(&(param_1->base).base.model,&local_5d0,fVar13,iVar15,pcVar14);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1160,
+      "line": 1157,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 0x158),(CQuaternion4f *)&local_5d0,fVar10,",
+      "text": "pCVar12 = (param_1->base).base.model.bone_transform.pose_data.bone_rotations;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1169,
+      "line": 1166,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_14 = (CDeformableModelInstance *)(param_1 + 0x808);",
+      "text": "pfVar7 = &(param_1->base).base.model.bone_transform.pose_data.bone_rotations[_DAT_01ed372c].w;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1171,
+      "line": 1183,
       "match": "param_1",
       "severity": "mild",
-      "text": "(&((CDeformableModelInstance *)(param_1 + 0x808))->field_0x0 + _DAT_01ed372c * 0x10,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1171,
-      "match": "field_0x0",
-      "severity": "mild",
-      "text": "(&((CDeformableModelInstance *)(param_1 + 0x808))->field_0x0 + _DAT_01ed372c * 0x10,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 1173,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "puVar1 = (uint *)(_DAT_01ed372c * 0x10 + 0x808 + param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1181,
-      "match": "field_0x0",
-      "severity": "mild",
-      "text": "puVar2 = &local_14->field_0x0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 1189,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "puVar1 = (uint *)(param_1 + 0x808 + _DAT_01ed3730 * 0x10);",
+      "text": "pfVar7 = &(param_1->base).base.model.bone_transform.pose_data.bone_rotations[_DAT_01ed3730].w;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1198,
+      "line": 1192,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x20c24),g_CBurncrossClassInfo.name_hash);",
+      "text": "(&param_1->weapon->base,g_CBurncrossClassInfo.name_hash);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1199,
+      "line": 1193,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_2c = param_1 + 0x808;",
+      "text": "local_2c = (param_1->base).base.model.bone_transform.pose_data.bone_rotations;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1210,
+      "line": 1203,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar1 = (uint *)(_DAT_01ed3734 * 0x10 + 0x808 + param_1);",
+      "text": "pfVar7 = &(param_1->base).base.model.bone_transform.pose_data.bone_rotations[_DAT_01ed3734].w;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1225,
+      "line": 1218,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar1 = (uint *)(param_1 + 0x808 + _DAT_01ed3738 * 0x10);",
+      "text": "pfVar7 = &(param_1->base).base.model.bone_transform.pose_data.bone_rotations[_DAT_01ed3738].w;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1235,
+      "line": 1228,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x20c24),g_CExorcismClassInfo.name_hash);",
+      "text": "(&param_1->weapon->base,g_CExorcismClassInfo.name_hash);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1246,
+      "line": 1238,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar1 = (uint *)(_DAT_01ed3734 * 0x10 + 0x808 + param_1);",
+      "text": "pfVar7 = &(param_1->base).base.model.bone_transform.pose_data.bone_rotations[_DAT_01ed3734].w;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1261,
+      "line": 1253,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar1 = (uint *)(param_1 + 0x808 + _DAT_01ed3738 * 0x10);",
+      "text": "pfVar7 = &(param_1->base).base.model.bone_transform.pose_data.bone_rotations[_DAT_01ed3738].w;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1271,
+      "line": 1263,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x20c24),g_CStormClassInfo.name_hash);",
+      "text": "(&param_1->weapon->base,g_CStormClassInfo.name_hash);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1281,
+      "line": 1273,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar1 = (uint *)(param_1 + 0x808 + _DAT_01ed3734 * 0x10);",
+      "text": "pfVar7 = &(param_1->base).base.model.bone_transform.pose_data.bone_rotations[_DAT_01ed3734].w;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1297,
+      "line": 1288,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar1 = (uint *)(param_1 + 0x808 + _DAT_01ed3738 * 0x10);",
+      "text": "pfVar7 = &(param_1->base).base.model.bone_transform.pose_data.bone_rotations[_DAT_01ed3738].w;",
       "type": "unnamed_param"
     },
     {
-      "description": "Pointer value `pCVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 721,
-      "match": "(int)pCVar9",
+      "description": "Pointer value `&local_150` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 353,
+      "match": "(int)&local_150",
       "severity": "moderate",
-      "text": "fStack_2414 = *(float *)((int)pCVar9 + 8);",
+      "text": "local_2a8[(uint)bVar9 * -2 + 9] = *(float *)((int)&local_150 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_150` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 355,
+      "match": "(int)&local_150",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_150 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_620` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 400,
+      "match": "(int)&local_620",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_620 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_620` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 401,
+      "match": "(int)&local_620",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_620 + (uint)bVar9 * -8 + 4) = afStack_65c[(uint)bVar9 * -2];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_470` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 411,
+      "match": "(int)&local_470",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_470 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_470` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 412,
+      "match": "(int)&local_470",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_470 + (uint)bVar9 * -8 + 4) = afStack_78c[(uint)bVar9 * -2 + 0x10];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_580` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 423,
+      "match": "(int)&local_580",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_580 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_580` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 424,
+      "match": "(int)&local_580",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_580 + (uint)bVar9 * -8 + 4) = afStack_7bc[(uint)bVar9 * -2];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_890` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 434,
+      "match": "(int)&local_890",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_890 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_890` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 435,
+      "match": "(int)&local_890",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_890 + (uint)bVar9 * -8 + 4) = afStack_87c[(uint)bVar9 * -2 + 0x10];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 444,
+      "match": "(int)pCVar1",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)pCVar1 + (uint)bVar9 * -8 + 0x9c0);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_78` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 528,
+      "match": "(int)&local_78",
+      "severity": "moderate",
+      "text": "local_3fc[(uint)bVar9 * -2 + 0x13] = *(float *)((int)&local_78 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_78` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 530,
+      "match": "(int)&local_78",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_78 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_8f0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 557,
+      "match": "(int)&local_8f0",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_8f0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_8f0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 558,
+      "match": "(int)&local_8f0",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_8f0 + (uint)bVar9 * -8 + 4) = afStack_5ec[(uint)bVar9 * -2];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_720` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 568,
+      "match": "(int)&local_720",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_720 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_720` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 569,
+      "match": "(int)&local_720",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_720 + (uint)bVar9 * -8 + 4) = afStack_4ac[(uint)bVar9 * -2];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_228` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 586,
+      "match": "(int)&local_228",
+      "severity": "moderate",
+      "text": "afStack_218[(uint)bVar9 * -2 + 0xc] = *(float *)((int)&local_228 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_228` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 588,
+      "match": "(int)&local_228",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_228 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_810` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 615,
+      "match": "(int)&local_810",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_810 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_810` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 616,
+      "match": "(int)&local_810",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_810 + (uint)bVar9 * -8 + 4) = afStack_87c[(uint)bVar9 * -2 + 0x14];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_4a0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 627,
+      "match": "(int)&local_4a0",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_4a0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_4a0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 628,
+      "match": "(int)&local_4a0",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_4a0 + (uint)bVar9 * -8 + 4) = afStack_8dc[(uint)bVar9 * -2];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_2f4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 694,
+      "match": "(int)&CStack_2f4",
+      "severity": "moderate",
+      "text": "afStack_174[(uint)bVar9 * -2 + 1] = *(float *)((int)&CStack_2f4 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_2f4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 696,
+      "match": "(int)&CStack_2f4",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_2f4 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_710` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 722,
+      "match": "(int)&CStack_710",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&CStack_710 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_710` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 723,
+      "match": "(int)&CStack_710",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_710 + (uint)bVar9 * -8 + 4) = afStack_63c[(uint)bVar9 * -2 + 4];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_4c0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 735,
+      "match": "(int)&CStack_4c0",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&CStack_4c0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_4c0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 736,
+      "match": "(int)&CStack_4c0",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_4c0 + (uint)bVar9 * -8 + 4) = afStack_6fc[(uint)bVar9 * -2 + 0xc];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_36c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 791,
+      "match": "(int)&local_36c",
+      "severity": "moderate",
+      "text": "local_3fc[(uint)bVar9 * -2 + 0x16] = *(float *)((int)&local_36c + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_36c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 793,
+      "match": "(int)&local_36c",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_36c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_5c0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 838,
+      "match": "(int)&local_5c0",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_5c0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_5c0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 839,
+      "match": "(int)&local_5c0",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_5c0 + (uint)bVar9 * -8 + 4) = afStack_7bc[(uint)bVar9 * -2 + 4];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_650` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 849,
+      "match": "(int)&local_650",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_650 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_650` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 850,
+      "match": "(int)&local_650",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_650 + (uint)bVar9 * -8 + 4) = afStack_60c[(uint)bVar9 * -2];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_530` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 861,
+      "match": "(int)&local_530",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_530 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_530` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 862,
+      "match": "(int)&local_530",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_530 + (uint)bVar9 * -8 + 4) = afStack_78c[(uint)bVar9 * -2];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_600` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 873,
+      "match": "(int)&local_600",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_600 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_600` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 874,
+      "match": "(int)&local_600",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_600 + (uint)bVar9 * -8 + 4) = afStack_51c[(uint)bVar9 * -2 + 4];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_670` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 892,
+      "match": "(int)&local_670",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_670 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_670` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 893,
+      "match": "(int)&local_670",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_670 + (uint)bVar9 * -8 + 4) = afStack_55c[(uint)bVar9 * -2 + 4];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_670` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 905,
+      "match": "(int)&local_670",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_670 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_670` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 906,
+      "match": "(int)&local_670",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_670 + (uint)bVar9 * -8 + 4) = afStack_51c[(uint)bVar9 * -2 + 0x10];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_300` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 930,
+      "match": "(int)&local_300",
+      "severity": "moderate",
+      "text": "afStack_218[(uint)bVar9 * -2 + 6] = *(float *)((int)&local_300 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_300` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 932,
+      "match": "(int)&local_300",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_300 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_7f0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 946,
+      "match": "(int)&local_7f0",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_7f0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_7f0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 947,
+      "match": "(int)&local_7f0",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_7f0 + (uint)bVar9 * -8 + 4) = afStack_6fc[(uint)bVar9 * -2];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_7d0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 963,
+      "match": "(int)&local_7d0",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_7d0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_7d0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 964,
+      "match": "(int)&local_7d0",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_7d0 + (uint)bVar9 * -8 + 4) = afStack_69c[(uint)bVar9 * -2 + 4];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_7d0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 975,
+      "match": "(int)&local_7d0",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_7d0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_7d0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 976,
+      "match": "(int)&local_7d0",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_7d0 + (uint)bVar9 * -8 + 4) = afStack_78c[(uint)bVar9 * -2 + 4];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_680` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 998,
+      "match": "(int)&local_680",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_680 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_680` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 999,
+      "match": "(int)&local_680",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_680 + (uint)bVar9 * -8 + 4) = afStack_8dc[(uint)bVar9 * -2 + 8];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_680` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1010,
+      "match": "(int)&local_680",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_680 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_680` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1011,
+      "match": "(int)&local_680",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_680 + (uint)bVar9 * -8 + 4) = afStack_7dc[(uint)bVar9 * -2];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_330` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1038,
+      "match": "(int)&local_330",
+      "severity": "moderate",
+      "text": "local_2a8[(uint)bVar9 * -2] = *(float *)((int)&local_330 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_330` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1040,
+      "match": "(int)&local_330",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_330 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_7a0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1045,
+      "match": "(int)&local_7a0",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_7a0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_7a0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1046,
+      "match": "(int)&local_7a0",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_7a0 + (uint)bVar9 * -8 + 4) = afStack_78c[(uint)bVar9 * -2 + 8];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_570` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1061,
+      "match": "(int)&local_570",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_570 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_570` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1062,
+      "match": "(int)&local_570",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_570 + (uint)bVar9 * -8 + 4) = afStack_78c[(uint)bVar9 * -2 + 0x18];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_570` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1073,
+      "match": "(int)&local_570",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_570 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_570` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1074,
+      "match": "(int)&local_570",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_570 + (uint)bVar9 * -8 + 4) = afStack_63c[(uint)bVar9 * -2];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_6b0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1096,
+      "match": "(int)&local_6b0",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_6b0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_6b0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1097,
+      "match": "(int)&local_6b0",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_6b0 + (uint)bVar9 * -8 + 4) = afStack_5ec[(uint)bVar9 * -2 + 4];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_5d0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1149,
+      "match": "(int)&local_5d0",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_5d0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_5d0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 1150,
+      "match": "(int)&local_5d0",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_5d0 + (uint)bVar9 * -8 + 4) = afStack_51c[(uint)bVar9 * -2 + 0x14];",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 659,
+      "line": 647,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar12 = 6; iVar12 != 0; iVar12 = iVar12 + -1) {",
+      "text": "for (iVar15 = 6; iVar15 != 0; iVar15 = iVar15 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 353,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_2a8[(uint)bVar9 * -2 + 9] = *(float *)((int)&local_150 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 355,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_150 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 400,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_620 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 401,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_620 + (uint)bVar9 * -8 + 4) = afStack_65c[(uint)bVar9 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 411,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_470 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 412,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_470 + (uint)bVar9 * -8 + 4) = afStack_78c[(uint)bVar9 * -2 + 0x10];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 423,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_580 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 424,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_580 + (uint)bVar9 * -8 + 4) = afStack_7bc[(uint)bVar9 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 434,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_890 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 435,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_890 + (uint)bVar9 * -8 + 4) = afStack_87c[(uint)bVar9 * -2 + 0x10];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 528,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_3fc[(uint)bVar9 * -2 + 0x13] = *(float *)((int)&local_78 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 530,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_78 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 557,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_8f0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 558,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_8f0 + (uint)bVar9 * -8 + 4) = afStack_5ec[(uint)bVar9 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 568,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_720 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 569,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_720 + (uint)bVar9 * -8 + 4) = afStack_4ac[(uint)bVar9 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 586,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "afStack_218[(uint)bVar9 * -2 + 0xc] = *(float *)((int)&local_228 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 588,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_228 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 615,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_810 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 616,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_810 + (uint)bVar9 * -8 + 4) = afStack_87c[(uint)bVar9 * -2 + 0x14];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 627,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_4a0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 628,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_4a0 + (uint)bVar9 * -8 + 4) = afStack_8dc[(uint)bVar9 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 694,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "afStack_174[(uint)bVar9 * -2 + 1] = *(float *)((int)&CStack_2f4 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 696,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_2f4 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 722,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&CStack_710 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 723,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_710 + (uint)bVar9 * -8 + 4) = afStack_63c[(uint)bVar9 * -2 + 4];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 735,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&CStack_4c0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 736,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_4c0 + (uint)bVar9 * -8 + 4) = afStack_6fc[(uint)bVar9 * -2 + 0xc];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 791,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_3fc[(uint)bVar9 * -2 + 0x16] = *(float *)((int)&local_36c + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 793,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_36c + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 838,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_5c0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 839,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_5c0 + (uint)bVar9 * -8 + 4) = afStack_7bc[(uint)bVar9 * -2 + 4];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 849,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_650 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 850,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_650 + (uint)bVar9 * -8 + 4) = afStack_60c[(uint)bVar9 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 861,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_530 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 862,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_530 + (uint)bVar9 * -8 + 4) = afStack_78c[(uint)bVar9 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 873,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_600 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 874,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_600 + (uint)bVar9 * -8 + 4) = afStack_51c[(uint)bVar9 * -2 + 4];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 892,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_670 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 893,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_670 + (uint)bVar9 * -8 + 4) = afStack_55c[(uint)bVar9 * -2 + 4];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 905,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_670 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 906,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_670 + (uint)bVar9 * -8 + 4) = afStack_51c[(uint)bVar9 * -2 + 0x10];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 930,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "afStack_218[(uint)bVar9 * -2 + 6] = *(float *)((int)&local_300 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 932,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_300 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 946,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_7f0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 947,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_7f0 + (uint)bVar9 * -8 + 4) = afStack_6fc[(uint)bVar9 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 963,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_7d0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 964,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_7d0 + (uint)bVar9 * -8 + 4) = afStack_69c[(uint)bVar9 * -2 + 4];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 975,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_7d0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 976,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_7d0 + (uint)bVar9 * -8 + 4) = afStack_78c[(uint)bVar9 * -2 + 4];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 998,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_680 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 999,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_680 + (uint)bVar9 * -8 + 4) = afStack_8dc[(uint)bVar9 * -2 + 8];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 1010,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_680 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 1011,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_680 + (uint)bVar9 * -8 + 4) = afStack_7dc[(uint)bVar9 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 1038,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_2a8[(uint)bVar9 * -2] = *(float *)((int)&local_330 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 1040,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_330 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 1045,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_7a0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 1046,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_7a0 + (uint)bVar9 * -8 + 4) = afStack_78c[(uint)bVar9 * -2 + 8];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 1061,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_570 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 1062,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_570 + (uint)bVar9 * -8 + 4) = afStack_78c[(uint)bVar9 * -2 + 0x18];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 1073,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_570 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 1074,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_570 + (uint)bVar9 * -8 + 4) = afStack_63c[(uint)bVar9 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 1096,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_6b0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 1097,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_6b0 + (uint)bVar9 * -8 + 4) = afStack_5ec[(uint)bVar9 * -2 + 4];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 1149,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_5d0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 1150,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_5d0 + (uint)bVar9 * -8 + 4) = afStack_51c[(uint)bVar9 * -2 + 0x14];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3e19999a is the IEEE 754 bit pattern of 0.15f. Rewrite in a .keep as a plain float compare against 0.15f.",
+      "line": 283,
+      "match": "(int)param_1->turn_blend_weight < 0x3e19999a",
+      "severity": "moderate",
+      "text": "if ((int)param_1->turn_blend_weight < 0x3e19999a) {",
+      "type": "bit_int_float_compare"
     },
     {
       "call_site_count": 3,

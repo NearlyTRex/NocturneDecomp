@@ -69,7 +69,7 @@ uint wincore_wddvmem_cpp_FUN_00579bb0(int param_1,int param_2,int param_3)
     DAT_0072ffac = 0;
   }
   iStack_f8 = 0x579cbf;
-  DAT_0060b010 = FUN_005a3650
+  DAT_0060b010 = malloc
                            (((int)((DAT_005fba20 + (DAT_005fba20 >> 0x1f) * -8) -
                                   (uint)((DAT_005fba20 >> 0x1f) << 2 < 0)) >> 3) *
                             DAT_005fba18 * DAT_005fba1c);
@@ -80,7 +80,7 @@ uint wincore_wddvmem_cpp_FUN_00579bb0(int param_1,int param_2,int param_3)
     core_main_c_FUN_004e4330();
   }
   iStack_f8 = 0x579d05;
-  _DAT_02d0bcf0 = FUN_005a3650(DAT_005fba18 * DAT_005fba1c * 4 + 0x40);
+  _DAT_02d0bcf0 = malloc(DAT_005fba18 * DAT_005fba1c * 4 + 0x40);
   if (_DAT_02d0bcf0 == (void *)0x0) {
     _DAT_01d71de0 = "..\\wincore\\wddvmem.cpp";
     _DAT_01d71de4 = 0xf2;
@@ -153,7 +153,7 @@ uint wincore_wddvmem_cpp_FUN_00579bb0(int param_1,int param_2,int param_3)
     }
     engine_2d_c_setupViewportAndClipping_FUN_00401810(0,0,iStack_28 + -1,iStack_24 + -1);
     iVar1 = 0;
-    wincore_wddvmem_cpp_FUN_0057a770();
+    wincore_wddvmem_cpp_setupColorPalette_FUN_0057a770();
     do {
       memset(auStack_b0,0,0x6c);
       auStack_b0[0] = 0x6c;
@@ -183,7 +183,7 @@ uint wincore_wddvmem_cpp_FUN_00579bb0(int param_1,int param_2,int param_3)
       }
       _DAT_02d0bcf4 = 1;
       iVar1 = iVar1 + 1;
-      wincore_wddvmem_cpp_FUN_0057a8a0();
+      wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
     } while (iVar1 < 3);
     return 1;
   }

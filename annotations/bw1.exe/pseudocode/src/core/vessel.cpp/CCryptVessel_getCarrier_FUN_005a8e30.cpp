@@ -9,5 +9,5 @@
 CDemonActor * __cdecl core_vessel_cpp_CCryptVessel_getCarrier_FUN_005a8e30(CCryptVessel *this_ptr)
 
 {
-  return *(CDemonActor **)&this_ptr->field_0x2d4;
+  return this_ptr->carrier;
 }

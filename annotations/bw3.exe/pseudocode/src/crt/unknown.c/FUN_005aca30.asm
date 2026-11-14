@@ -6,9 +6,9 @@
 ;
 ; XREF[4]:
 ;   crt_file.c_makepath_FUN_005a521c at 005a52bd
-;   unkafter_2d.cpp_FUN_005b08a0 at 005b08b0
-;   unkafter_2d.cpp_FUN_005b0c90 at 005b0cbe
-;   unkafter_2d.cpp_FUN_005b1720 at 005b172d
+;   crt_unknown.c_FUN_005b08a0 at 005b08b0
+;   crt_unknown.c_FUN_005b0c90 at 005b0cbe
+;   crt_unknown.c_FUN_005b1720 at 005b172d
 ;
 ; *****************************************************************************
 

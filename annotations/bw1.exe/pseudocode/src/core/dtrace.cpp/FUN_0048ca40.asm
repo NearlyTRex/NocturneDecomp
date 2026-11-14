@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dtrace_cpp_FUN_0048ca40(int param_1,int *param_2,int param_3,int param_4,int param_5)
+; void core_dtrace_cpp_FUN_0048ca40(CDemonRaytrace *param_1,int *param_2,int param_3,int param_4,int param_5)
 ;
 ;
 ; Referenced Globals:
@@ -102,7 +102,7 @@ section .text
     PUSH ESI                            ; 0048cb3e
     FSTP float ptr [ESP + 0x1c]         ; 0048cb3f
     CALL core_dtrace.cpp_FUN_0048c510   ; 0048cb43
-        ;   XREF to: 0048c510 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_0048c510()
+        ;   XREF to: 0048c510 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_FUN_0048c510(CDemonRaytrace * this_ptr, CVector3f * world_pos)
     ADD ESP,0x8                         ; 0048cb48
     INC EBX                             ; 0048cb4b
         ;   Label: LAB_0048cb4b

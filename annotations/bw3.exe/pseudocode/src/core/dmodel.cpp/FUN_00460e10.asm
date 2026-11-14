@@ -8,8 +8,8 @@
 ;   core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00460530 at 00460536
 ;   core_dmodel.cpp_CKeyFramedModel_load_FUN_00460550 at 00460559
 ;   core_dmodel.cpp_FUN_00461300 at 00461309
-;   core_dmodel.cpp_FUN_004624d0 at 004624de
-;   core_moon.cpp_FUN_004f9580 at 004f958f
+;   core_dmodel.cpp_freeAllModels_FUN_004624d0 at 004624de
+;   core_moon.cpp_CMoon_free_FUN_004f9580 at 004f958f
 ;   core_set.cpp_CDemonSet_clear_FUN_00532b30 at 00532b37
 ;
 ; Called Functions:

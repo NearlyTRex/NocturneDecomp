@@ -13,20 +13,20 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_allocPointList_FUN_00544
 {
   int iVar1;
   CDeformableModel *pCVar2;
-  int iVar3;
+  CVector3i *pCVar3;
   
-  core_skeleton_cpp_FUN_00544e30(this_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_free_FUN_00544e30(this_ptr);
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810(this_ptr);
-  iVar1 = *(int *)&pCVar2->field_0x2c;
-  iVar3 = FUN_005b8df8(iVar1 * 0xc);
-  *(int *)&this_ptr->field_0x2234 = iVar3;
-  if (iVar3 != 0) {
-    *(uint *)&this_ptr->field_0x2230 = 0xffffffff;
+  iVar1 = pCVar2->vertex_count[0];
+  pCVar3 = (CVector3i *)operator_new_array(iVar1 * 0xc);
+  this_ptr->skinned_vertices_buffer = pCVar3;
+  if (pCVar3 != (CVector3i *)0x0) {
+    this_ptr->cached_skinned_lod_index = -1;
     return;
   }
   _DAT_01d046a0 = "..\\core\\skeleton.cpp";
   _DAT_01d046a4 = 0x909;
   core_main_c_FUN_004e4500("CDeformableModelInstance::allocPointList out of memory for %d points!",iVar1);
-  *(uint *)&this_ptr->field_0x2230 = 0xffffffff;
+  this_ptr->cached_skinned_lod_index = -1;
   return;
 }

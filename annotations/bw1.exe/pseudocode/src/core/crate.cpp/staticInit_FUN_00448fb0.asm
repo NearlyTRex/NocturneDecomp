@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_crate_cpp_staticInit_FUN_00448fb0(void)
+; void __cdecl core_crate_cpp_staticInit_FUN_00448fb0(void)
 ;
 ;
 ; Called Functions:

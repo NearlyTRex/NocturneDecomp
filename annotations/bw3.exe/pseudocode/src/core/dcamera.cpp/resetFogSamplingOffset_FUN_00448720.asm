@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcamera_cpp_resetFogSamplingOffset_FUN_00448720(int param_1)
+; void __cdecl core_dcamera_cpp_resetFogSamplingOffset_FUN_00448720(SFogGrid *fog)
 ;
+; Parameters:
+; SFogGrid *       Stack[0x4]:4   fog
 ;
 ; XREF[2]:
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_0044f750 at 0044f77d

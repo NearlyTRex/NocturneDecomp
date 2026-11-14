@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSfxSample * sound_sndmain_cpp_CSfxSample_dtor_FUN_0054d810(CSfxSample *this_ptr,uint flags)
+; CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_dtor_FUN_0054d810(CSfxSample *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CSfxSample *     Stack[0x4]:4   this_ptr
@@ -9,7 +9,7 @@
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_0054d9b0
-;   unkclass_instream.cpp_CInStreamFile_dtor_FUN_0057cec0
+;   support_trstream.cpp_CInStreamFile_dtor_FUN_0057cec0
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     PUSH 0x0                            ; 0054d81e
     ADD EBX,0x17c                       ; 0054d820
     PUSH EBX                            ; 0054d826
-    CALL unkclass_instream.cpp_CInStreamFile_dtor_FUN_0057cec0 ; 0054d827
-        ;   XREF to: 0057cec0 (UNCONDITIONAL_CALL)  ; CInStreamFile * unkclass_instream.cpp_CInStreamFile_dtor_FUN_0057cec0(CInStreamFile * this_ptr, uint flags)
+    CALL support_trstream.cpp_CInStreamFile_dtor_FUN_0057cec0 ; 0054d827
+        ;   XREF to: 0057cec0 (UNCONDITIONAL_CALL)  ; CInStreamFile * support_trstream.cpp_CInStreamFile_dtor_FUN_0057cec0(CInStreamFile * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0054d82c
     SUB EAX,0x17c                       ; 0054d82f
     POP EBX                             ; 0054d834

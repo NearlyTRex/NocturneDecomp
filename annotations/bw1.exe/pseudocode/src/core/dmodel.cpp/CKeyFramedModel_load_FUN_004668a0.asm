@@ -11,7 +11,7 @@
 ;   core_cloth.cpp_CCloth_load_FUN_0043e6d0 at 0043e7a0
 ;   core_dmodel.cpp_loadModel_FUN_00468780 at 0046880a
 ;   core_level.cpp_FUN_004fe840 at 004fe8c5
-;   core_moon.cpp_FUN_00521c50 at 00521c82
+;   core_moon.cpp_CMoon_init_FUN_00521c50 at 00521c82
 ;   core_set.cpp_FUN_0054d3c0 at 0054df30
 ;
 ; Referenced Globals:
@@ -28,10 +28,10 @@
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_calcNormals_FUN_00467880
-;   core_dmodel.cpp_FUN_004669f0
-;   core_dmodel.cpp_FUN_00466be0
+;   core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00467a30
+;   core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_004669f0
+;   core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00466be0
 ;   core_dmodel.cpp_FUN_00467160
-;   core_dmodel.cpp_FUN_00467a30
 ;   core_main.c_FUN_005030e0
 ;   crt_stdio.c_fclose_FUN_005c0d10
 ;   crt_stdio.c_fgetc_FUN_005c0530
@@ -84,13 +84,13 @@ section .text
         ;   Label: LAB_004668f1
     PUSH EBP                            ; 004668f2
     CALL crt_stdio.c_fgetc_FUN_005c0530 ; 004668f3
-        ;   XREF to: 005c0530 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005c0530()
+        ;   XREF to: 005c0530 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005c0530(_FILE * file)
     ADD ESP,0x4                         ; 004668f8
     PUSH EBP                            ; 004668fb
     PUSH EAX                            ; 004668fc
     MOV ESI,EAX                         ; 004668fd
     CALL crt_stdio.c_ungetc_FUN_005c0700 ; 004668ff
-        ;   XREF to: 005c0700 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_ungetc_FUN_005c0700()
+        ;   XREF to: 005c0700 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_ungetc_FUN_005c0700(int character, _FILE * stream)
     ADD ESP,0x8                         ; 00466904
     CMP ESI,0x2f                        ; 00466907
     JNZ 0x004669db                      ; 0046690a
@@ -123,8 +123,8 @@ section .text
     PUSH EBP                            ; 0046695d
         ;   Label: LAB_0046695d
     PUSH EBX                            ; 0046695e
-    CALL core_dmodel.cpp_FUN_00466be0   ; 0046695f
-        ;   XREF to: 00466be0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_FUN_00466be0(CKeyFramedModel * this_ptr, _FILE * file)
+    CALL core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00466be0 ; 0046695f
+        ;   XREF to: 00466be0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00466be0(CKeyFramedModel * this_ptr, _FILE * file)
     ADD ESP,0x8                         ; 00466964
         ;   Label: LAB_00466964
     PUSH EBP                            ; 00466967
@@ -132,8 +132,8 @@ section .text
         ;   XREF to: 005c0d10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005c0d10()
     ADD ESP,0x4                         ; 0046696d
     PUSH EBX                            ; 00466970
-    CALL core_dmodel.cpp_FUN_00467a30   ; 00466971
-        ;   XREF to: 00467a30 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_FUN_00467a30(CKeyFramedModel * this_ptr)
+    CALL core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00467a30 ; 00466971
+        ;   XREF to: 00467a30 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00467a30(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 00466976
     MOV ESI,dword ptr [EBX + 0x120]     ; 00466979
     XOR EDX,EDX                         ; 0046697f
@@ -176,8 +176,8 @@ section .text
     PUSH EBP                            ; 004669db
         ;   Label: LAB_004669db
     PUSH EBX                            ; 004669dc
-    CALL core_dmodel.cpp_FUN_004669f0   ; 004669dd
-        ;   XREF to: 004669f0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_FUN_004669f0(CKeyFramedModel * this_ptr, _FILE * file)
+    CALL core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_004669f0 ; 004669dd
+        ;   XREF to: 004669f0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_004669f0(CKeyFramedModel * this_ptr, _FILE * file)
     JMP 0x00466964                      ; 004669e2
         ;   XREF to: 00466964 (UNCONDITIONAL_JUMP)  ; LAB_00466964
 

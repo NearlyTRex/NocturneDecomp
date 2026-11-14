@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_filmreel_cpp_factoryFuncFilmReel_FUN_004928f0(void)
+; CFilmReel * __cdecl core_filmreel_cpp_factoryFuncFilmReel_FUN_004928f0(void)
 ;
 ;
 ; Called Functions:
 ;   core_filmreel.cpp_CFilmReel_ctor_FUN_00492920
-;   crt_unknown.c_FUN_005b8be2
+;   crt_memory.c_operator_new_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x478                          ; 004928f0
         ;   Label: core_filmreel.cpp_factoryFuncFilmReel_FUN_004928f0
-    CALL crt_unknown.c_FUN_005b8be2     ; 004928f5
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 004928f5
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 004928fa
     TEST EAX,EAX                        ; 004928fd
     JNZ 0x00492902                      ; 004928ff

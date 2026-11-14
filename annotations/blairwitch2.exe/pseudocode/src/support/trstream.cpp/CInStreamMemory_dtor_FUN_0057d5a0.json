@@ -2,27 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 19,
+    "complexity_score": 18,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 2,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 19,
+    "pseudocode_lines": 18,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 64
+    "total_lines": 63
   },
   "cross_references": [
+    {
+      "addr": "00434070",
+      "from_addr": "004340cf",
+      "name": "support_codec.cpp_CCodec_processBuffer_FUN_00434070",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "00433ff0",
       "from_addr": "0043404f",
       "name": "support_codec.cpp_FUN_00433ff0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00434070",
-      "from_addr": "004340cf",
-      "name": "support_codec.cpp_FUN_00434070",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -34,9 +34,9 @@
         "0057d5fc"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "support_trstream.cpp_CInStreamMemory_dtor_FUN_0057d5a0",
-    "signature": "CInStreamMemory * support_trstream_cpp_CInStreamMemory_dtor_FUN_0057d5a0(CInStreamMemory *this_ptr,uint flags)"
+    "signature": "CInStreamMemory * __cdecl support_trstream_cpp_CInStreamMemory_dtor_FUN_0057d5a0(CInStreamMemory *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -55,14 +55,14 @@
       "name": "crt_unknown.c_FUN_005b7fdc"
     },
     {
-      "addr": "0057d7b0",
-      "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_0057d7b0"
-    },
-    {
       "addr": "0057b9d0",
       "is_variadic": false,
-      "name": "unkaddr_0057b9a0.cpp_FUN_0057b9d0"
+      "name": "support_trstream.cpp_CInStream_dtor_FUN_0057b9d0"
+    },
+    {
+      "addr": "0057d7b0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamMemory_close_FUN_0057d7b0"
     }
   ],
   "globals": [
@@ -85,14 +85,11 @@
       {
         "call_addr": "004340cf",
         "call_type": "direct",
-        "caller": "support_codec.cpp_FUN_00434070",
-        "estimated_params": 4,
+        "caller": "support_codec.cpp_CCodec_processBuffer_FUN_00434070",
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -100,13 +97,10 @@
         "call_addr": "0043404f",
         "call_type": "direct",
         "caller": "support_codec.cpp_FUN_00433ff0",
-        "estimated_params": 4,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       }
@@ -114,7 +108,7 @@
     "confidence": "high",
     "declared_params": 2,
     "declared_stack_bytes": 8,
-    "estimated_params": 4,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -138,6 +132,20 @@
       "STORE": 14
     },
     "pcode_op_count": 141
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005a11e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005741d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 12,

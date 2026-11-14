@@ -9,6 +9,6 @@
 CExplosion * __cdecl core_fire_cpp_CExplosion_ctor_FUN_004b1620(CExplosion *this_ptr)
 
 {
-  *(uint *)&this_ptr->field_0xc = 0;
+  this_ptr->lifetime = 0.0;
   return this_ptr;
 }

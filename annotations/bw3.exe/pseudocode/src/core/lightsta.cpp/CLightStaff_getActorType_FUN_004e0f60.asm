@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_lightsta_cpp_CLightStaff_getActorType_FUN_004e0f60(CLightStaff *this_ptr)
+; CDemonActorType * __cdecl core_lightsta_cpp_CLightStaff_getActorType_FUN_004e0f60(CLightStaff *this_ptr)
 ;
 ; Parameters:
 ; CLightStaff *    Stack[0x4]:4   this_ptr

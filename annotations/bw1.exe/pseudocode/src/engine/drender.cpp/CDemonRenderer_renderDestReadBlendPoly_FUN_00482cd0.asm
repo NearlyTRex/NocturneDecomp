@@ -11,7 +11,7 @@
 ;
 ; XREF[2]:
 ;   core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00554ac0 at 00554d22
-;   core_set.cpp_FUN_00554d30 at 0055516b
+;   core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_00554d30 at 0055516b
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061b4a0
@@ -109,7 +109,7 @@ section .text
     ADD EAX,0x8                         ; 00482d92
     PUSH EAX                            ; 00482d95
     CALL engine_3d.c_isVisiblePlane_FUN_00403920 ; 00482d96
-        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403920()
+        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403920(SClipPlane * plane)
     ADD ESP,0x4                         ; 00482d9b
     TEST EAX,EAX                        ; 00482d9e
     JZ 0x00482d86                       ; 00482da0

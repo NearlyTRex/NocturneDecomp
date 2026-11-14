@@ -16,15 +16,15 @@
   },
   "cross_references": [
     {
-      "addr": "00483490",
-      "from_addr": "004834a0",
-      "name": "engine_drender.cpp_CDemonRenderer_setCameraOrigin_FUN_00483490",
+      "addr": "004834b0",
+      "from_addr": "004834fa",
+      "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004834b0",
-      "from_addr": "004834fa",
-      "name": "engine_drender.cpp_FUN_004834b0",
+      "addr": "00483490",
+      "from_addr": "004834a0",
+      "name": "engine_drender.cpp_CDemonRenderer_setCameraOrigin_FUN_00483490",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -67,7 +67,7 @@
       {
         "call_addr": "004834fa",
         "call_type": "direct",
-        "caller": "engine_drender.cpp_FUN_004834b0",
+        "caller": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -103,6 +103,32 @@
       "RETURN": 1
     },
     "pcode_op_count": 15
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004ea360",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004e6a40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0050e270",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004ce710",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 16,

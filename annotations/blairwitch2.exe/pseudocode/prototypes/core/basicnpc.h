@@ -7,56 +7,56 @@
 
 // Original: core_basicnpc.cpp_staticInit_FUN_005a4750
 // Address: 005a4750
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_basicnpc.cpp_factoryFuncBasicNPC_FUN_005a4780
 // Address: 005a4780
-void factoryFuncBasicNPC(void);
+CBasicNPC * __cdecl factoryFuncBasicNPC(void);
 
 // Original: core_basicnpc.cpp_CBasicNPC_getActorType_FUN_005a47a0
 // Address: 005a47a0
-CDemonActorType * CBasicNPC::getActorType(CBasicNPC *this_ptr);
+CDemonActorType * __cdecl CBasicNPC::getActorType(CBasicNPC *this_ptr);
 
 // Original: core_basicnpc.cpp_CBasicNPC_ctor_FUN_005a47b0
 // Address: 005a47b0
-CBasicNPC * CBasicNPC::ctor(CBasicNPC *this_ptr);
+CBasicNPC * __cdecl CBasicNPC::ctor(CBasicNPC *this_ptr);
 
-// Original: core_basicnpc.cpp_FUN_005a4870
+// Original: core_basicnpc.cpp_CBasicNPC_setup_FUN_005a4870
 // Address: 005a4870
-void FUN_005a4870(undefined4 param_1);
+void __cdecl CBasicNPC::setup(CBasicNPC *this_ptr);
 
-// Original: core_basicnpc.cpp_FUN_005a4880
+// Original: core_basicnpc.cpp_CBasicNPC_processStates_FUN_005a4880
 // Address: 005a4880
-void FUN_005a4880(undefined4 param_1,undefined4 param_2,int param_3);
+void __cdecl CBasicNPC::processStates(CBasicNPC *this_ptr,float delta_time,int mode);
 
-// Original: core_basicnpc.cpp_FUN_005a48a0
+// Original: core_basicnpc.cpp_CBasicNPC_processDeathState_FUN_005a48a0
 // Address: 005a48a0
-void FUN_005a48a0(int param_1);
+void __cdecl CBasicNPC::processDeathState(CBasicNPC *this_ptr,float delta_time);
 
 // Original: core_basicnpc.cpp_FUN_005a48d0
 // Address: 005a48d0
 void FUN_005a48d0(int param_1);
 
-// Original: core_basicnpc.cpp_FUN_005a48f0
+// Original: core_basicnpc.cpp_CBasicNPC_processMotionEvent_FUN_005a48f0
 // Address: 005a48f0
-void FUN_005a48f0(void);
+void __cdecl CBasicNPC::processMotionEvent(CBasicNPC *this_ptr,int event_id);
 
-// Original: core_basicnpc.cpp_FUN_005a4920
+// Original: core_basicnpc.cpp_CBasicNPC_renderOpaque_FUN_005a4920
 // Address: 005a4920
-void FUN_005a4920(undefined4 param_1);
+int __cdecl CBasicNPC::renderOpaque(CBasicNPC *this_ptr);
 
-// Original: core_basicnpc.cpp_FUN_005a4930
+// Original: core_basicnpc.cpp_CBasicNPC_archive_FUN_005a4930
 // Address: 005a4930
-void FUN_005a4930(undefined4 param_1);
+void __cdecl CBasicNPC::archive(CBasicNPC *this_ptr);
 
-// Original: core_basicnpc.cpp_FUN_005a4940
+// Original: core_basicnpc.cpp_CBasicNPC_getTargetPoints_FUN_005a4940
 // Address: 005a4940
-undefined4 FUN_005a4940(void);
+int __cdecl CBasicNPC::getTargetPoints(CBasicNPC *this_ptr,CVector3f *out_points_array);
 
-// Original: core_basicnpc.cpp_FUN_005a4950
+// Original: core_basicnpc.cpp_CBasicNPC_isGrabbable_FUN_005a4950
 // Address: 005a4950
-uint FUN_005a4950(uint param_1,uint param_2);
+int __cdecl CBasicNPC::isGrabbable(CBasicNPC *this_ptr,CDemonActor *grabber);
 
 // Original: core_basicnpc.cpp_CBasicNPC_dtor_FUN_005a4980
 // Address: 005a4980
-CBasicNPC * CBasicNPC::dtor(CBasicNPC *this_ptr,uint flags);
+CBasicNPC * __cdecl CBasicNPC::dtor(CBasicNPC *this_ptr,uint flags);

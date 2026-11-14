@@ -16,15 +16,15 @@
   },
   "cross_references": [
     {
-      "addr": "004facd0",
-      "from_addr": "004fad4c",
-      "name": "core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_004facd0",
+      "addr": "004fac50",
+      "from_addr": "004fac79",
+      "name": "core_mirror.cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_004fac50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004fac50",
-      "from_addr": "004fac79",
-      "name": "core_mirror.cpp_FUN_004fac50",
+      "addr": "004facd0",
+      "from_addr": "004fad4c",
+      "name": "core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_004facd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -95,7 +95,7 @@
       {
         "call_addr": "004fac79",
         "call_type": "direct",
-        "caller": "core_mirror.cpp_FUN_004fac50",
+        "caller": "core_mirror.cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_004fac50",
         "estimated_params": 2,
         "instructions_analyzed": 7,
         "method": "push_count",
@@ -146,6 +146,32 @@
       "STORE": 10
     },
     "pcode_op_count": 138
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00481b80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0046b240",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0048a820",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0045ee60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 12,

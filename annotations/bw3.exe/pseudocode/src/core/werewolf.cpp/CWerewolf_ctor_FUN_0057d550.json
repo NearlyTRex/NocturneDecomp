@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 187,
+    "complexity_score": 43,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 27,
-    "suspect_count": 15,
+    "pseudocode_lines": 28,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 61
+    "total_lines": 62
   },
   "cross_references": [
     {
@@ -44,7 +43,7 @@
     {
       "addr": "0054eae0",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_0054eae0"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0"
     }
   ],
   "globals": [
@@ -109,6 +108,32 @@
     },
     "pcode_op_count": 157
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0058b780",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005af2d0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005efc10",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00555a90",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -133,118 +158,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "*(byte ***)&pCVar4->field_0x154 = &g_CWerewolfVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0054eae0(&pCVar4->field_0x158,0x5d79f5);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x326c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0x326c = 0x3f800000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x3270",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0x3270 = 0x40000000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0xd054",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xd054 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0xd06c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xd06c = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0xd080",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xd080 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0xd084",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xd084 = 0x40a00000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0xd088",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xd088 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0xd08c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xd08c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0xd090",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xd090 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x3274",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0x3274 = uVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x3278",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0x3278 = uVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0xd094",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xd094 = uVar3;",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

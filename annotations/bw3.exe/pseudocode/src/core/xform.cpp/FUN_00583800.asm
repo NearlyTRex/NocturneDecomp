@@ -16,16 +16,16 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[10]:
-;   core_bodypart.cpp_FUN_00415e30 at 00416068
-;   core_bugs.cpp_FUN_00422570 at 00422677
-;   core_charactr.cpp_FUN_0042f770 at 0042fad6
-;   core_charactr.cpp_FUN_00431ab0 at 00431af6
+;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_00415e30 at 00416068
+;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422570 at 00422677
+;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042f770 at 0042fad6
+;   core_charactr.cpp_CCharacter_computePickup_FUN_00431ab0 at 00431af6
 ;   core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043d680 at 0043d786
-;   core_fire.cpp_FUN_00497290 at 0049740c
+;   core_fire.cpp_CBulletHole_init_FUN_00497290 at 0049740c
 ;   core_ladder.cpp_CLadder_cacheRelativePosition_FUN_004dfa70 at 004dfabb
 ;   core_platfrm.cpp_CPlatform_attachActor_FUN_00512aa0 at 00512b28
-;   core_platfrm.cpp_FUN_005114f0 at 00511701
-;   core_thehand.cpp_FUN_0056c140 at 0056c3a4
+;   core_platfrm.cpp_CPlatform_process_FUN_005114f0 at 00511701
+;   core_toxhand.cpp_CTheHand_process_FUN_0056c140 at 0056c3a4
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_FUN_0045bef0

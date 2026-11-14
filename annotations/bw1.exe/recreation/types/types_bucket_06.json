@@ -7,27 +7,313 @@
     "size":3892
   },
   {
+    "kind":"funcdef",
+    "name":"CCharacter_checkCylinderCollisionWorld",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      },
+      {
+        "name":"world_point",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"tolerance",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"damage_info",
+        "type":{
+          "kind":"struct",
+          "name":"SDamageInfo",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CCharacter_getPartDominantBone",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      },
+      {
+        "name":"part_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CCharacter_testDamageLine",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      },
+      {
+        "name":"start",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"end",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"damage_info",
+        "type":{
+          "kind":"struct",
+          "name":"SDamageInfo",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_hit",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CCheesyCipher",
+    "parent":"CCodec",
     "size":12
   },
   {
     "kind":"class",
     "name":"CCloth",
     "rtti_file":"core/cloth.cpp",
-    "size":1
+    "size":240432
+  },
+  {
+    "kind":"class",
+    "name":"CColor3f",
+    "size":12
   },
   {
     "kind":"class",
     "name":"CCourse",
     "rtti_file":"core/course.cpp",
-    "size":1
+    "size":12
   },
   {
     "kind":"class",
     "name":"CDeformableModel",
     "rtti_file":"core/skeleton.cpp",
     "size":13824
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_handleFootstep",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"ground_type",
+        "type":{
+          "kind":"enum",
+          "name":"EGroundType",
+          "ptr":0
+        }
+      },
+      {
+        "name":"volume",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"uint",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_markResourcesInUse",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_playSoundWithDelay",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"sound_name",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"delay",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"uint",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_processActionButton",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_renderBackground",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"layer_flag",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -43,6 +329,122 @@
     "size":36
   },
   {
+    "kind":"funcdef",
+    "name":"CHero_canDoHeroAction",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CHero",
+          "ptr":1
+        }
+      },
+      {
+        "name":"action_type",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CHero_canReachPickup",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CHero",
+          "ptr":1
+        }
+      },
+      {
+        "name":"item",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"pickup_type",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"best_distance",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CHero_renderOpaque",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CHero",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CHero_toggleGoggles",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CHero",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CImp",
     "parent":"CEnemy",
@@ -52,6 +454,7 @@
   {
     "kind":"class",
     "name":"CLZWDecompress",
+    "parent":"CCodec",
     "rtti_file":"support/codec.cpp",
     "size":52
   },
@@ -63,6 +466,11 @@
   },
   {
     "kind":"class",
+    "name":"COutStream",
+    "size":4
+  },
+  {
+    "kind":"class",
     "name":"CPod",
     "rtti_file":"engine/pod.cpp",
     "size":408
@@ -71,7 +479,28 @@
     "kind":"class",
     "name":"CSampleInfo",
     "rtti_file":"sound/sndmain.cpp",
-    "size":1
+    "size":288
+  },
+  {
+    "kind":"funcdef",
+    "name":"CSoundDevice_start",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -86,6 +515,29 @@
     "parent":"CTrigger",
     "rtti_file":"core/waypoint.cpp",
     "size":1372
+  },
+  {
+    "kind":"enum",
+    "name":"EDoorType",
+    "size":4,
+    "values":[
+      {
+        "name":"DOOR_TYPE_SWING",
+        "value":0
+      },
+      {
+        "name":"DOOR_TYPE_VERTICAL",
+        "value":1
+      },
+      {
+        "name":"DOOR_TYPE_SLIDE",
+        "value":2
+      },
+      {
+        "name":"DOOR_TYPE_TILT",
+        "value":3
+      }
+    ]
   },
   {
     "kind":"struct",
@@ -115,36 +567,68 @@
   {
     "kind":"struct",
     "name":"SInventoryItemInfo",
-    "size":1
+    "size":768
   },
   {
     "kind":"struct",
     "name":"SMRGLKeyframeModel",
-    "size":1
+    "size":344
   },
   {
     "kind":"struct",
     "name":"SMRGLPrimitiveTriangleIndex",
-    "size":1
+    "parent":"SMRGLHeaderPrimitive",
+    "size":36
+  },
+  {
+    "kind":"struct",
+    "name":"SMixBuffer",
+    "size":44
   },
   {
     "kind":"struct",
     "name":"SNetPacket_SimFrame",
-    "size":105
+    "size":113
   },
   {
     "kind":"struct",
     "name":"SPageResourceText",
+    "parent":"SPageResource",
     "size":288
   },
   {
     "kind":"struct",
+    "name":"SRGBColor",
+    "size":3
+  },
+  {
+    "kind":"struct",
+    "name":"SSurfacePlane",
+    "size":32
+  },
+  {
+    "kind":"struct",
     "name":"STrianglePackedIndices",
-    "size":1
+    "size":6
   },
   {
     "kind":"struct",
     "name":"STriangleVertices",
-    "size":1
+    "size":36
+  },
+  {
+    "kind":"union",
+    "name":"UActorVTable",
+    "size":4
+  },
+  {
+    "kind":"union",
+    "name":"UMpegSubbandScalefactorCodes",
+    "size":384
+  },
+  {
+    "kind":"union",
+    "name":"UVector3",
+    "size":12
   }
 ]

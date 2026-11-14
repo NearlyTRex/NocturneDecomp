@@ -27,10 +27,10 @@
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_calcNormals_FUN_0044ecb0
-;   core_dmodel.cpp_FUN_0044de20
-;   core_dmodel.cpp_FUN_0044e010
+;   core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_0044ee60
+;   core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_0044de20
+;   core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_0044e010
 ;   core_dmodel.cpp_FUN_0044e590
-;   core_dmodel.cpp_FUN_0044ee60
 ;   core_main.c_FUN_004e4500
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   crt_stdio.c_fgetc_FUN_005b8180
@@ -83,13 +83,13 @@ section .text
         ;   Label: LAB_0044dd21
     PUSH EBP                            ; 0044dd22
     CALL crt_stdio.c_fgetc_FUN_005b8180 ; 0044dd23
-        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005b8180()
+        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005b8180(_FILE * file)
     ADD ESP,0x4                         ; 0044dd28
     PUSH EBP                            ; 0044dd2b
     PUSH EAX                            ; 0044dd2c
     MOV ESI,EAX                         ; 0044dd2d
     CALL crt_stdio.c_ungetc_FUN_005b8350 ; 0044dd2f
-        ;   XREF to: 005b8350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_ungetc_FUN_005b8350()
+        ;   XREF to: 005b8350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_ungetc_FUN_005b8350(int character, _FILE * stream)
     ADD ESP,0x8                         ; 0044dd34
     CMP ESI,0x2f                        ; 0044dd37
     JNZ 0x0044de0b                      ; 0044dd3a
@@ -122,8 +122,8 @@ section .text
     PUSH EBP                            ; 0044dd8d
         ;   Label: LAB_0044dd8d
     PUSH EBX                            ; 0044dd8e
-    CALL core_dmodel.cpp_FUN_0044e010   ; 0044dd8f
-        ;   XREF to: 0044e010 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_FUN_0044e010(CKeyFramedModel * this_ptr, _FILE * file)
+    CALL core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_0044e010 ; 0044dd8f
+        ;   XREF to: 0044e010 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_0044e010(CKeyFramedModel * this_ptr, _FILE * file)
     ADD ESP,0x8                         ; 0044dd94
         ;   Label: LAB_0044dd94
     PUSH EBP                            ; 0044dd97
@@ -131,8 +131,8 @@ section .text
         ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
     ADD ESP,0x4                         ; 0044dd9d
     PUSH EBX                            ; 0044dda0
-    CALL core_dmodel.cpp_FUN_0044ee60   ; 0044dda1
-        ;   XREF to: 0044ee60 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_FUN_0044ee60(CKeyFramedModel * this_ptr)
+    CALL core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_0044ee60 ; 0044dda1
+        ;   XREF to: 0044ee60 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_0044ee60(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 0044dda6
     MOV ESI,dword ptr [EBX + 0x120]     ; 0044dda9
     XOR EDX,EDX                         ; 0044ddaf
@@ -175,8 +175,8 @@ section .text
     PUSH EBP                            ; 0044de0b
         ;   Label: LAB_0044de0b
     PUSH EBX                            ; 0044de0c
-    CALL core_dmodel.cpp_FUN_0044de20   ; 0044de0d
-        ;   XREF to: 0044de20 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_FUN_0044de20(CKeyFramedModel * this_ptr, _FILE * file)
+    CALL core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_0044de20 ; 0044de0d
+        ;   XREF to: 0044de20 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_0044de20(CKeyFramedModel * this_ptr, _FILE * file)
     JMP 0x0044dd94                      ; 0044de12
         ;   XREF to: 0044dd94 (UNCONDITIONAL_JUMP)  ; LAB_0044dd94
 

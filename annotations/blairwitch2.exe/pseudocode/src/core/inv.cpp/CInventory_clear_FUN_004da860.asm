@@ -7,9 +7,9 @@
 ; CInventory *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
+;   core_inv.cpp_CInventory_dtor_FUN_004da840 at 004da846
 ;   core_inv.cpp_CInventory_initialize_FUN_004da900 at 004da90b
 ;   core_inv.cpp_CInventory_load_FUN_004dc4b0 at 004dc4c2
-;   core_inv.cpp_FUN_004da840 at 004da846
 ;
 ; Called Functions:
 ;   core_inv.cpp_FUN_004db8e0

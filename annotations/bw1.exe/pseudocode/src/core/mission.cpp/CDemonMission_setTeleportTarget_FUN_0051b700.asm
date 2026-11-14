@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_event.cpp_FUN_004a1d00 at 004a69a6
-;   core_teleport.cpp_FUN_00594f60 at 0059502d
+;   core_teleport.cpp_CTeleport_process_FUN_00594f60 at 0059502d
 ;
 ; *****************************************************************************
 

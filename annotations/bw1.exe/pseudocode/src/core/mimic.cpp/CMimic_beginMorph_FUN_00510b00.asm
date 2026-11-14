@@ -7,7 +7,7 @@
 ; CMimic *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_mimic.cpp_FUN_0050fba0 at 00510051
+;   core_mimic.cpp_CMimic_processAnimation_FUN_0050fba0 at 00510051
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_mimic_cpp_005e8a8c
@@ -22,7 +22,7 @@
 ;   core_main.c_FUN_005030e0
 ;   core_mimic.cpp_CMimic_processMorph_FUN_00510c20
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
-;   engine_console.cpp_FUN_00445430
+;   engine_console.cpp_CConsole_printf_FUN_00445430
 ;
 ; *****************************************************************************
 
@@ -90,8 +90,8 @@ section .text
     MOV EDI,dword ptr [0x00611100]      ; 00510bce | g_CConsolePtr
     PUSH EDI                            ; 00510bd4 | g_CConsoleInstance
     MOV dword ptr [EBX + 0xfc],0x1      ; 00510bd5
-    CALL engine_console.cpp_FUN_00445430 ; 00510bdf
-        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00445430()
+    CALL engine_console.cpp_CConsole_printf_FUN_00445430 ; 00510bdf
+        ;   XREF to: 00445430 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00445430(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 00510be4
     POP EDI                             ; 00510be7
     POP EBX                             ; 00510be8

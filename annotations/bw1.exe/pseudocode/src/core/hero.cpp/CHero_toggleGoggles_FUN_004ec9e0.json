@@ -1,0 +1,169 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 18,
+    "complexity_score": 34,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 9,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unresolved_funcptr"
+    ],
+    "total_lines": 27
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004ec9e0",
+    "address_range": [
+      [
+        "004ec9e0",
+        "004eca0b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hero.cpp_CHero_toggleGoggles_FUN_004ec9e0",
+    "signature": "void __cdecl core_hero_cpp_CHero_toggleGoggles_FUN_004ec9e0(CHero *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0061d95c",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01ccf390"
+    },
+    {
+      "addr": "01ccf390",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "01ccf5ec",
+      "name": "g_CGameInstance.goggles_active",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccfe90",
+      "name": "g_CGameInstance.vtable",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.466666666666667,
+    "instruction_count": 15,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALLIND": 2,
+      "CBRANCH": 1,
+      "COPY": 10,
+      "INT_ADD": 7,
+      "INT_AND": 6,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 7,
+      "LOAD": 7,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 6
+    },
+    "pcode_op_count": 67
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004d0750",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004d48d0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHero *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 6,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)g_CGamePtr->vtable)(g_CGamePtr,1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 9,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)g_CGamePtr->vtable)(g_CGamePtr,0);",
+      "type": "unresolved_funcptr"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CMoloch",
+        "offset": 336,
+        "vtable_addr": "00603f04"
+      },
+      {
+        "class_name": "CSvetlana",
+        "offset": 336,
+        "vtable_addr": "00606414"
+      },
+      {
+        "class_name": "CHero",
+        "offset": 336,
+        "vtable_addr": "00601d34"
+      },
+      {
+        "class_name": "CIcePick",
+        "offset": 336,
+        "vtable_addr": "00602634"
+      },
+      {
+        "class_name": "CScat",
+        "offset": 336,
+        "vtable_addr": "00604c44"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 10
+  }
+}

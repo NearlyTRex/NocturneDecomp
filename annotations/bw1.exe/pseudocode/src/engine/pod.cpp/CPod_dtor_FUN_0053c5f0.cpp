@@ -12,11 +12,11 @@ CPod * __cdecl engine_pod_cpp_CPod_dtor_FUN_0053c5f0(CPod *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CPodTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CPodTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  *(byte ***)&this_ptr->field_0x194 = &PTR_engine_pod_cpp_CPod_dtor_FUN_0053c5f0_00604a34;
+  this_ptr->vtable = (CPod_vtable *)&PTR_engine_pod_cpp_CPod_dtor_FUN_0053c5f0_00604a34;
   engine_pod_cpp_CPod_cleanup_FUN_0053c8f0(this_ptr);
   if ((flags & 2) == 0) {
     return this_ptr;

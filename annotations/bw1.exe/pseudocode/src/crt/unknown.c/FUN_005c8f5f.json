@@ -17,21 +17,21 @@
   },
   "cross_references": [
     {
-      "addr": "005c2078",
-      "from_addr": "005c2080",
-      "name": "crt_unknown.c_FUN_005c2078",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "005ce203",
       "from_addr": "005ce20c",
-      "name": "unkafter_2d.cpp_FUN_005ce203",
+      "name": "crt_unknown.c_FUN_005ce203",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005ce269",
       "from_addr": "005ce277",
-      "name": "unkafter_2d.cpp_FUN_005ce269",
+      "name": "crt_unknown.c_FUN_005ce269",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c2078",
+      "from_addr": "005c2080",
+      "name": "crt_unknown.c_istream_seekg_FUN_005c2078",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -51,7 +51,7 @@
     {
       "addr": "005cc4d2",
       "is_variadic": false,
-      "name": "unkafter_zombie.cpp_FUN_005cc4d2"
+      "name": "crt_unknown.c_FUN_005cc4d2"
     }
   ],
   "globals": [],
@@ -61,7 +61,7 @@
       {
         "call_addr": "005ce20c",
         "call_type": "direct",
-        "caller": "unkafter_2d.cpp_FUN_005ce203",
+        "caller": "crt_unknown.c_FUN_005ce203",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -74,7 +74,7 @@
       {
         "call_addr": "005ce277",
         "call_type": "direct",
-        "caller": "unkafter_2d.cpp_FUN_005ce269",
+        "caller": "crt_unknown.c_FUN_005ce269",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -87,7 +87,7 @@
       {
         "call_addr": "005c2080",
         "call_type": "direct",
-        "caller": "crt_unknown.c_FUN_005c2078",
+        "caller": "crt_unknown.c_istream_seekg_FUN_005c2078",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -128,6 +128,26 @@
       "STORE": 4
     },
     "pcode_op_count": 113
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005c0c9f",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005abd9f",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0056ce57",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,
@@ -215,7 +235,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar1 = unkafter_zombie_cpp_FUN_005cc4d2(param_1,param_2);",
+      "text": "uVar1 = FUN_005cc4d2(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -223,7 +243,7 @@
       "line": 12,
       "match": "param_2",
       "severity": "mild",
-      "text": "uVar1 = unkafter_zombie_cpp_FUN_005cc4d2(param_1,param_2);",
+      "text": "uVar1 = FUN_005cc4d2(param_1,param_2);",
       "type": "unnamed_param"
     },
     {

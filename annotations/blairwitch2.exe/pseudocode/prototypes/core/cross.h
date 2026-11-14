@@ -7,8 +7,56 @@
 
 // Original: core_cross.cpp_staticInit_FUN_005a6970
 // Address: 005a6970
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_cross.cpp_factoryFuncCross_FUN_005a69c0
 // Address: 005a69c0
-void factoryFuncCross(void);
+CCross * __cdecl factoryFuncCross(void);
+
+// Original: core_cross.cpp_CCross_getActorType_FUN_005a69e0
+// Address: 005a69e0
+CDemonActorType * __cdecl CCross::getActorType(CCross *this_ptr);
+
+// Original: core_cross.cpp_CCross_ctor_FUN_005a69f0
+// Address: 005a69f0
+CCross * __cdecl CCross::ctor(CCross *this_ptr);
+
+// Original: core_cross.cpp_CCross_dtor_FUN_005a6b30
+// Address: 005a6b30
+CCross * __cdecl CCross::dtor(CCross *this_ptr,uint flags);
+
+// Original: core_cross.cpp_CCross_setup_FUN_005a6b90
+// Address: 005a6b90
+void __cdecl CCross::setup(CCross *this_ptr);
+
+// Original: core_cross.cpp_CCross_renderOpaque_FUN_005a6ba0
+// Address: 005a6ba0
+int __cdecl CCross::renderOpaque(CCross *this_ptr);
+
+// Original: core_cross.cpp_CCross_renderTransparent_FUN_005a6bc0
+// Address: 005a6bc0
+int __cdecl CCross::renderTransparent(CCross *this_ptr);
+
+// Original: core_cross.cpp_FUN_005a6cf0
+// Address: 005a6cf0
+void FUN_005a6cf0(CDemonActor *param_1);
+
+// Original: core_cross.cpp_CCross_process_FUN_005a6ed0
+// Address: 005a6ed0
+void __cdecl CCross::process(CCross *this_ptr,float delta_time);
+
+// Original: core_cross.cpp_FUN_005a7950
+// Address: 005a7950
+void FUN_005a7950(void);
+
+// Original: core_cross.cpp_CSimpleCross_getActorType_FUN_005a7970
+// Address: 005a7970
+CDemonActorType * __cdecl CSimpleCross::getActorType(CSimpleCross *this_ptr);
+
+// Original: core_cross.cpp_CSimpleCross_ctor_FUN_005a7980
+// Address: 005a7980
+CSimpleCross * __cdecl CSimpleCross::ctor(CSimpleCross *this_ptr);
+
+// Original: core_cross.cpp_CSimpleCross_dtor_FUN_005a7a60
+// Address: 005a7a60
+CSimpleCross * __cdecl CSimpleCross::dtor(CSimpleCross *this_ptr,uint flags);

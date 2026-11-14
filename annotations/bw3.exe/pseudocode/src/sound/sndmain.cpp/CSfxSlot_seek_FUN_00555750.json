@@ -2,24 +2,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 233,
+    "complexity_score": 91,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 33,
-    "suspect_count": 19,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 36,
+    "suspect_count": 4,
     "suspect_types": [
-      "unnamed_field",
+      "pointer_cast",
+      "pointer_truncation",
       "warning_overlapping_globals"
     ],
-    "total_lines": 120
+    "total_lines": 123
   },
   "cross_references": [
     {
       "addr": "00556240",
       "from_addr": "005563c0",
-      "name": "sound_sndmain.cpp_FUN_00556240",
+      "name": "sound_sndmain.cpp_startSfx_FUN_00556240",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -94,7 +95,7 @@
       {
         "call_addr": "005563c0",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00556240",
+        "caller": "sound_sndmain.cpp_startSfx_FUN_00556240",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -137,6 +138,32 @@
     },
     "pcode_op_count": 359
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0054fbe0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00572250",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a8390",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00525a80",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 36,
     "local_size": 32,
@@ -177,148 +204,28 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x68 == 0) {",
-      "type": "unnamed_field"
+      "description": "Pointer value `&this_ptr->prev_hardware_playback_pos` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 30,
+      "match": "(int)&this_ptr->prev_hardware_playback_pos",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4) =",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "(*(CSampleInfo **)&this_ptr->field_0x68,*(double *)&this_ptr->field_0x50,",
-      "type": "unnamed_field"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 30,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4) =",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "(*(CSampleInfo **)&this_ptr->field_0x68,*(double *)&this_ptr->field_0x50,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x58",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x58,0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x58",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x58 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "*(double *)&this_ptr->field_0x50 = dVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "(*(CSfxSample **)&this_ptr->field_0x68,*(double *)&this_ptr->field_0x50,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "(*(CSfxSample **)&this_ptr->field_0x68,*(double *)&this_ptr->field_0x50,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x58",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x58);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "*(double *)&this_ptr->field_0x50 = dVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "if (*(int *)(*(int *)&this_ptr->field_0x68 + 0x160) < 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x10c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x10c = *(uint *)&this_ptr->field_0x50;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x10c = *(uint *)&this_ptr->field_0x50;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x110",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x110 = *(uint *)&this_ptr->field_0x54;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x54",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x110 = *(uint *)&this_ptr->field_0x54;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 31,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "fVar1 = (float10)*(double *)&this_ptr->field_0x50;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x10c",
-      "severity": "mild",
-      "text": "*(double *)&this_ptr->field_0x10c = (double)*(int *)(*(int *)&this_ptr->field_0x68 + 0x170);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "*(double *)&this_ptr->field_0x10c = (double)*(int *)(*(int *)&this_ptr->field_0x68 + 0x170);",
-      "type": "unnamed_field"
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&(this_ptr->options).playback_position + 4);",
+      "type": "pointer_cast"
     }
   ]
 }

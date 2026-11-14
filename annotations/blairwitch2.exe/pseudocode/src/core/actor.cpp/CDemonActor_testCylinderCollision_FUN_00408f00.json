@@ -2,25 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 73,
+    "complexity_score": 19,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 18,
-    "suspect_count": 4,
-    "suspect_types": [
-      "unknown_field",
-      "unnamed_field",
-      "unresolved_funcptr"
-    ],
-    "total_lines": 79
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 19,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 80
   },
   "cross_references": [
     {
       "addr": "004ce500",
       "from_addr": "004ce52c",
-      "name": "core_hero.cpp_FUN_004ce500",
+      "name": "core_hero.cpp_CHero_testCylinderCollision_FUN_004ce500",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -50,7 +46,7 @@
       {
         "call_addr": "004ce52c",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004ce500",
+        "caller": "core_hero.cpp_CHero_testCylinderCollision_FUN_004ce500",
         "estimated_params": 3,
         "instructions_analyzed": 6,
         "method": "push_count",
@@ -103,6 +99,32 @@
     },
     "pcode_op_count": 364
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00408cd0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00408d10",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004090c0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0040a390",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 64,
     "local_size": 52,
@@ -140,40 +162,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unknown/mangled field access",
-      "line": 11,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_30._0_4_ = 0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 12,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x44))(this_ptr,local_30);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x44))(this_ptr,local_30);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 13,
-      "match": "._20_4_",
-      "severity": "mild",
-      "text": "if ((((iVar1 == 2) && ((float)local_30._20_4_ - tolerance <= *(float *)(collision_info + 4))) &&",
-      "type": "unknown_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

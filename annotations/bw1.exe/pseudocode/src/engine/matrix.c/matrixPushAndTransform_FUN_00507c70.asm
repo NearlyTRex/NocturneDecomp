@@ -27,7 +27,7 @@
 ; XREF[3]:
 ;   engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00483800 at 0048381d
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850 at 004838be
-;   shape_edittool.cpp_FUN_004985ae at 0049862a
+;   shape_edittool.cpp_FUN_004985b0 at 0049862a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_matrix_c_005e76ee

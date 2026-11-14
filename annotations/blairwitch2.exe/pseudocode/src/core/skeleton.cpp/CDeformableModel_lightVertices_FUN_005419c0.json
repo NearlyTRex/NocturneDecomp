@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 44,
+    "complexity_score": 7,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 9,
-    "suspect_count": 3,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 38
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 36
   },
   "cross_references": [
     {
@@ -101,6 +99,32 @@
     },
     "pcode_op_count": 129
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00564030",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00548bd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0059ab50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00518470",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -131,30 +155,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "(g_CDemonSetPtr,*(int *)(&this_ptr->field_0x2c + lod_index * 4),",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x54",
-      "severity": "mild",
-      "text": "*(int *)(&this_ptr->field_0x54 + lod_index * 4),",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x7c",
-      "severity": "mild",
-      "text": "*(void **)(&this_ptr->field_0x7c + lod_index * 4),skinned_vertices,-3,(CVector3i *)0x0)",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

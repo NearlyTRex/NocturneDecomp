@@ -7,7 +7,7 @@
 ; XREF[3]:
 ;   core_game.cpp_CGame_loadAssets_FUN_004bd430 at 004bd45e
 ;   core_inv.cpp_CInventory_renderAllItems_FUN_004dda90 at 004ddae7
-;   core_inv.cpp_FUN_004dd770 at 004dd9f1
+;   core_inv.cpp_CInventory_renderSelectedItems_FUN_004dd770 at 004dd9f1
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c5f3f
@@ -196,7 +196,7 @@ section .text
     MOV EAX,[0x005fe9dc]                ; 004da751 | g_CGamePtr
     MOV EDX,0xffffffff                  ; 004da756
     ADD ESP,0x10                        ; 004da75b
-    MOV ECX,dword ptr [EAX + 0x4]       ; 004da75e | g_CGameInstance.field4_0x4
+    MOV ECX,dword ptr [EAX + 0x4]       ; 004da75e | g_CGameInstance.game_pixy
     MOV dword ptr [0x01d70a20],EDX      ; 004da761 | DAT_01d70a20
     CMP ECX,0x180                       ; 004da767
     JGE 0x004da7b3                      ; 004da76d
@@ -247,7 +247,7 @@ section .text
     ADD EAX,0x1d5dc90                   ; 004da7e9
     PUSH EAX                            ; 004da7ee
     CALL core_inv.cpp_loadItem_FUN_004da320 ; 004da7ef
-        ;   XREF to: 004da320 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_loadItem_FUN_004da320()
+        ;   XREF to: 004da320 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_loadItem_FUN_004da320(SInventoryItemInfo * item_info, _FILE * file_handle)
     ADD ESP,0x8                         ; 004da7f4
     TEST EAX,EAX                        ; 004da7f7
     JZ 0x004da829                       ; 004da7f9
@@ -261,7 +261,7 @@ section .text
     PUSH 0x5c5f53                       ; 004da80d | = "%d,%d\n"
     PUSH EAX                            ; 004da812
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004da813
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005a3230(_FILE * file, char * format)
     ADD ESP,0x10                        ; 004da818
     PUSH EBX                            ; 004da81b
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 004da81c

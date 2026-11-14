@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 206,
+    "complexity_score": 100,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 16,
-    "suspect_count": 18,
+    "pseudocode_lines": 15,
+    "suspect_count": 8,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_field"
+      "undefined_data"
     ],
-    "total_lines": 80
+    "total_lines": 79
   },
   "cross_references": [
     {
@@ -107,6 +106,32 @@
     },
     "pcode_op_count": 531
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004cb2f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004d0500",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004ef880",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004b1d00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -139,148 +164,68 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "(*(CTextureList **)&this_ptr->field_0x28,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Undefined global data reference",
       "line": 8,
-      "match": "field_0x24",
+      "match": "DAT_0062902c",
       "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x24 + 2 + (row * *(int *)this_ptr + column) * 4));",
-      "type": "unnamed_field"
+      "text": "(&DAT_0062902c)[this_ptr->vertex_indices[1] * 0xc] = 0xf80000;",
+      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 9,
-      "match": "DAT_0062902c",
+      "match": "DAT_00629030",
       "severity": "mild",
-      "text": "(&DAT_0062902c)[*(int *)&this_ptr->field_0x50 * 0xc] = 0xf80000;",
+      "text": "*(uint *)(&DAT_00629030 + this_ptr->vertex_indices[1] * 0x30) = 0xf80000;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "(&DAT_0062902c)[*(int *)&this_ptr->field_0x50 * 0xc] = 0xf80000;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 10,
-      "match": "DAT_00629030",
+      "match": "DAT_0062902c",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_00629030 + *(int *)&this_ptr->field_0x50 * 0x30) = 0xf80000;",
+      "text": "(&DAT_0062902c)[this_ptr->vertex_indices[0] * 0xc] = 0x80000;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_00629030 + *(int *)&this_ptr->field_0x50 * 0x30) = 0xf80000;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 11,
-      "match": "DAT_0062902c",
+      "match": "DAT_00629030",
       "severity": "mild",
-      "text": "(&DAT_0062902c)[*(int *)&this_ptr->field_0x4c * 0xc] = 0x80000;",
+      "text": "*(uint *)(&DAT_00629030 + this_ptr->vertex_indices[0] * 0x30) = 0xf80000;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "(&DAT_0062902c)[*(int *)&this_ptr->field_0x4c * 0xc] = 0x80000;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 12,
-      "match": "DAT_00629030",
+      "match": "DAT_0062902c",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_00629030 + *(int *)&this_ptr->field_0x4c * 0x30) = 0xf80000;",
+      "text": "(&DAT_0062902c)[this_ptr->vertex_indices[3] * 0xc] = 0x80000;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_00629030 + *(int *)&this_ptr->field_0x4c * 0x30) = 0xf80000;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 13,
-      "match": "DAT_0062902c",
+      "match": "DAT_00629030",
       "severity": "mild",
-      "text": "(&DAT_0062902c)[*(int *)&this_ptr->field_0x58 * 0xc] = 0x80000;",
+      "text": "*(uint *)(&DAT_00629030 + this_ptr->vertex_indices[3] * 0x30) = 0x80000;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x58",
-      "severity": "mild",
-      "text": "(&DAT_0062902c)[*(int *)&this_ptr->field_0x58 * 0xc] = 0x80000;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 14,
-      "match": "DAT_00629030",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_00629030 + *(int *)&this_ptr->field_0x58 * 0x30) = 0x80000;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x58",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_00629030 + *(int *)&this_ptr->field_0x58 * 0x30) = 0x80000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
       "match": "DAT_0062902c",
       "severity": "mild",
-      "text": "(&DAT_0062902c)[*(int *)&this_ptr->field_0x54 * 0xc] = 0xf80000;",
+      "text": "(&DAT_0062902c)[this_ptr->vertex_indices[2] * 0xc] = 0xf80000;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x54",
-      "severity": "mild",
-      "text": "(&DAT_0062902c)[*(int *)&this_ptr->field_0x54 * 0xc] = 0xf80000;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 15,
       "match": "DAT_00629030",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_00629030 + *(int *)&this_ptr->field_0x54 * 0x30) = 0x80000;",
+      "text": "*(uint *)(&DAT_00629030 + this_ptr->vertex_indices[2] * 0x30) = 0x80000;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x54",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_00629030 + *(int *)&this_ptr->field_0x54 * 0x30) = 0x80000;",
-      "type": "unnamed_field"
     }
   ]
 }

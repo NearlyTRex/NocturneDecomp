@@ -14,6 +14,18 @@
   },
   "cross_references": [
     {
+      "addr": "005990d0",
+      "from_addr": "005990e5",
+      "name": "core_darkwolf.cpp_CDarkwolf_dtor_FUN_005990d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00599030",
+      "from_addr": "00599045",
+      "name": "core_darkwolf.cpp_CWhitewolf_dtor_FUN_00599030",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0050a530",
       "from_addr": "0050a573",
       "name": "core_passngr.cpp_CPassenger_dtor_FUN_0050a530",
@@ -54,18 +66,6 @@
       "from_addr": "0059df75",
       "name": "core_styler.cpp_CStyler_dtor_FUN_0059df60",
       "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005990d0",
-      "from_addr": "005990e5",
-      "name": "unkafter_darkwolf.cpp_CDarkwolf_dtor_FUN_005990d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00599030",
-      "from_addr": "00599045",
-      "name": "unkafter_darkwolf.cpp_CWhitewolf_dtor_FUN_00599030",
-      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -89,7 +89,7 @@
     {
       "addr": "004fb180",
       "is_variadic": false,
-      "name": "unkafter_box.cpp_FUN_004fb180"
+      "name": "core_morph.cpp_FUN_004fb180"
     }
   ],
   "globals": [],
@@ -121,7 +121,7 @@
       {
         "call_addr": "005990e5",
         "call_type": "direct",
-        "caller": "unkafter_darkwolf.cpp_CDarkwolf_dtor_FUN_005990d0",
+        "caller": "core_darkwolf.cpp_CDarkwolf_dtor_FUN_005990d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -132,7 +132,7 @@
       {
         "call_addr": "00599045",
         "call_type": "direct",
-        "caller": "unkafter_darkwolf.cpp_CWhitewolf_dtor_FUN_00599030",
+        "caller": "core_darkwolf.cpp_CWhitewolf_dtor_FUN_00599030",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -221,6 +221,32 @@
       "STORE": 5
     },
     "pcode_op_count": 42
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b6e80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00522fc0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0052b330",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004e0070",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 12,

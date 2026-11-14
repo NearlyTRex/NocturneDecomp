@@ -2,32 +2,30 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 493,
+    "complexity_score": 130,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 43,
-    "suspect_count": 43,
+    "pseudocode_lines": 50,
+    "suspect_count": 7,
     "suspect_types": [
       "carry_arith_idiom",
-      "concat_reconstruction",
-      "param_count_too_few",
-      "unnamed_param"
+      "concat_reconstruction"
     ],
-    "total_lines": 155
+    "total_lines": 162
   },
   "cross_references": [
     {
       "addr": "00407b30",
       "from_addr": "00407bd7",
-      "name": "engine_3d.c_FUN_00407b30",
+      "name": "engine_3d.c_clipAndDrawLine2D_FUN_00407b30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00407e30",
       "from_addr": "00407ed7",
-      "name": "engine_3d.c_FUN_00407e30",
+      "name": "engine_3d.c_clipAndDrawLine3D_FUN_00407e30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -53,7 +51,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_clipper.c_interpolateVertexTopClip_FUN_004392c0",
-    "signature": "void __cdecl engine_clipper_c_interpolateVertexTopClip_FUN_004392c0(int *param_1,int *param_2,int *param_3)"
+    "signature": "void __cdecl engine_clipper_c_interpolateVertexTopClip_FUN_004392c0(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output)"
   },
   "function_calls": [],
   "globals": [],
@@ -85,7 +83,7 @@
       {
         "call_addr": "00407bd7",
         "call_type": "direct",
-        "caller": "engine_3d.c_FUN_00407b30",
+        "caller": "engine_3d.c_clipAndDrawLine2D_FUN_00407b30",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -96,7 +94,7 @@
       {
         "call_addr": "00407c9a",
         "call_type": "direct",
-        "caller": "engine_3d.c_FUN_00407b30",
+        "caller": "engine_3d.c_clipAndDrawLine2D_FUN_00407b30",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -107,7 +105,7 @@
       {
         "call_addr": "00407ed7",
         "call_type": "direct",
-        "caller": "engine_3d.c_FUN_00407e30",
+        "caller": "engine_3d.c_clipAndDrawLine3D_FUN_00407e30",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -118,7 +116,7 @@
       {
         "call_addr": "00407f9a",
         "call_type": "direct",
-        "caller": "engine_3d.c_FUN_00407e30",
+        "caller": "engine_3d.c_clipAndDrawLine3D_FUN_00407e30",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -150,10 +148,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
     "estimated_params": 3,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.548076923076923,
@@ -193,361 +191,118 @@
     },
     "pcode_op_count": 577
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00430850",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0043b6b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00435c00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00431730",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "v1",
+        "offset": 4,
+        "size": 4,
+        "type": "SRenderVertex *"
+      },
+      {
+        "is_param": true,
+        "name": "v2",
+        "offset": 8,
+        "size": 4,
+        "type": "SRenderVertex *"
+      },
+      {
+        "is_param": true,
+        "name": "output",
+        "offset": 12,
+        "size": 4,
+        "type": "SRenderVertex *"
+      }
+    ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl engine_clipper_c_interpolateVertexTopClip_FUN_004392c0(int *param_1,int *param_2,int *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl engine_clipper_c_interpolateVertexTopClip_FUN_004392c0(int *param_1,int *param_2,int *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl engine_clipper_c_interpolateVertexTopClip_FUN_004392c0(int *param_1,int *param_2,int *param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar4 = (param_2[1] + param_1[2]) - (param_1[1] + param_2[2]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar4 = (param_2[1] + param_1[2]) - (param_1[1] + param_2[2]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar4 = (param_2[1] + param_1[2]) - (param_1[1] + param_2[2]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar4 = (param_2[1] + param_1[2]) - (param_1[1] + param_2[2]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar2 = param_1[2] - param_1[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar2 = param_1[2] - param_1[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "lVar1 = (longlong)(param_2[2] - param_1[2]) * (longlong)iVar4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "lVar1 = (longlong)(param_2[2] - param_1[2]) * (longlong)iVar4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + param_1[2];",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
-      "line": 25,
-      "match": "CARRY4(uVar2,uVar2)",
-      "severity": "moderate",
-      "text": "iVar3 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + param_1[2];",
-      "type": "carry_arith_idiom"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3[2] = iVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3[1] = iVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 28,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "lVar1 = (longlong)(*param_2 - *param_1) * (longlong)iVar4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "lVar1 = (longlong)(*param_2 - *param_1) * (longlong)iVar4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*param_3 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + *param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_3 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + *param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
-      "line": 30,
       "match": "CARRY4(uVar2,uVar2)",
       "severity": "moderate",
-      "text": "*param_3 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + *param_1;",
+      "text": "iVar4 = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +",
       "type": "carry_arith_idiom"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "lVar1 = (longlong)(param_2[8] - param_1[8]) * (longlong)iVar4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "lVar1 = (longlong)(param_2[8] - param_1[8]) * (longlong)iVar4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3[8] = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + param_1[8];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_3[8] = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + param_1[8];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
-      "line": 33,
-      "match": "CARRY4(uVar2,uVar2)",
-      "severity": "moderate",
-      "text": "param_3[8] = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + param_1[8];",
-      "type": "carry_arith_idiom"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "lVar1 = (longlong)(param_2[0xb] - param_1[0xb]) * (longlong)iVar4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "lVar1 = (longlong)(param_2[0xb] - param_1[0xb]) * (longlong)iVar4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3[0xb] = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + param_1[0xb];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_3[0xb] = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + param_1[0xb];",
-      "type": "unnamed_param"
     },
     {
       "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
       "line": 36,
       "match": "CARRY4(uVar2,uVar2)",
       "severity": "moderate",
-      "text": "param_3[0xb] = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + param_1[0xb];",
+      "text": "(int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) +",
       "type": "carry_arith_idiom"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "lVar1 = (longlong)(param_2[6] - param_1[6]) * (longlong)iVar4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "lVar1 = (longlong)(param_2[6] - param_1[6]) * (longlong)iVar4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3[6] = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + param_1[6];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_3[6] = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + param_1[6];",
-      "type": "unnamed_param"
     },
     {
       "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
-      "line": 39,
-      "match": "CARRY4(uVar2,uVar2)",
-      "severity": "moderate",
-      "text": "param_3[6] = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + param_1[6];",
-      "type": "carry_arith_idiom"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 40,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "lVar1 = (longlong)(param_2[7] - param_1[7]) * (longlong)iVar4;",
-      "type": "unnamed_param"
+      "match": "CARRY4(uVar2,uVar2)",
+      "severity": "moderate",
+      "text": "output->r = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->r;",
+      "type": "carry_arith_idiom"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "lVar1 = (longlong)(param_2[7] - param_1[7]) * (longlong)iVar4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar4 = param_1[7];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
       "line": 43,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3[4] = -1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3[7] = iVar4 + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2);",
-      "type": "unnamed_param"
+      "match": "CARRY4(uVar2,uVar2)",
+      "severity": "moderate",
+      "text": "output->a = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->a;",
+      "type": "carry_arith_idiom"
     },
     {
       "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
-      "line": 44,
+      "line": 46,
       "match": "CARRY4(uVar2,uVar2)",
       "severity": "moderate",
-      "text": "param_3[7] = iVar4 + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2);",
+      "text": "output->u = (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2) + v1->u;",
+      "type": "carry_arith_idiom"
+    },
+    {
+      "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
+      "line": 51,
+      "match": "CARRY4(uVar2,uVar2)",
+      "severity": "moderate",
+      "text": "output->v = iVar3 + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar2,uVar2);",
       "type": "carry_arith_idiom"
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 14,
+      "line": 16,
       "match": "CONCAT44",
       "severity": "moderate",
-      "text": "iVar4 = (int)(CONCAT44((int)uVar2 >> 1,(uint)((uVar2 & 1) != 0) << 0x1f) / (longlong)iVar4);",
+      "text": "iVar3 = (int)(CONCAT44((int)uVar2 >> 1,(uint)((uVar2 & 1) != 0) << 0x1f) / (longlong)iVar4);",
       "type": "concat_reconstruction"
-    },
-    {
-      "call_site_count": 8,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

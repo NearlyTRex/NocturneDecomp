@@ -1,15 +1,19 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_getChannelLevels_FUN_00576b20(int param_1,float *param_2,float *param_3)
+; void __cdecl sound_sndmain_cpp_getChannelLevels_FUN_00576b20(int channel,float *out_peak,float *out_average)
 ;
+; Parameters:
+; int              Stack[0x4]:4   channel
+; float *          Stack[0x8]:4   out_peak
+; float *          Stack[0xc]:4   out_average
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02c80668
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_00573e70
 ;   sound_sndmain.cpp_lockSound_FUN_00575d20
+;   sound_sndmain.cpp_unlockSound_FUN_00573e70
 ;
 ; *****************************************************************************
 
@@ -75,8 +79,8 @@ section .text
     CMP EDX,EAX                         ; 00576bac
     JL 0x00576b78                       ; 00576bae
         ;   XREF to: 00576b78 (CONDITIONAL_JUMP)  ; LAB_00576b78
-    CALL sound_sndmain.cpp_FUN_00573e70 ; 00576bb0
-        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00573e70()
+    CALL sound_sndmain.cpp_unlockSound_FUN_00573e70 ; 00576bb0
+        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00573e70()
         ;   Label: LAB_00576bb0
     FILD dword ptr [0x02c80668]         ; 00576bb5 | DAT_02c80668
     FDIVR float ptr [ESP]               ; 00576bbb

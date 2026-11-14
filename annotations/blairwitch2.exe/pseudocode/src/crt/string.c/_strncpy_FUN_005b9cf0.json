@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 37,
     "complexity_score": 15,
-    "cross_reference_count": 12,
+    "cross_reference_count": 13,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -26,15 +26,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0050d9f0",
-      "from_addr": "0050daef",
-      "name": "core_netgame.cpp_FUN_0050d9f0",
+      "addr": "0059c9c0",
+      "from_addr": "0059ca02",
+      "name": "core_hpatrol.cpp_FUN_0059c9c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0059c9c0",
-      "from_addr": "0059ca02",
-      "name": "core_patrpoin.cpp_FUN_0059c9c0",
+      "addr": "0050d9f0",
+      "from_addr": "0050daef",
+      "name": "core_netgame.cpp_CNetGame_processChatOut_FUN_0050d9f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -44,15 +44,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "005c3f24",
+      "from_addr": "005c3f5a",
+      "name": "crt_unknown.c_FUN_005c3f24",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c59e0",
+      "from_addr": "005c5a2e",
+      "name": "crt_unknown.c_FUN_005c59e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00460fa0",
       "from_addr": "00460fc8",
-      "name": "engine_dosio.cpp_FUN_00460fa0",
+      "name": "engine_dosio.cpp_CFileFinder_convertStruct_FUN_00460fa0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d8180",
       "from_addr": "004d8347",
-      "name": "engine_ini.cpp_FUN_004d8180",
+      "name": "engine_ini.cpp_CIni_getProfileString_FUN_004d8180",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -68,21 +80,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0055753e",
+      "addr": "00557540",
       "from_addr": "005576fb",
-      "name": "sound_snddx.cpp_FUN_0055753e",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005c59e0",
-      "from_addr": "005c5a2e",
-      "name": "unkafter_2d.cpp_FUN_005c59e0",
+      "name": "sound_snddx.cpp_directSoundEnumerationCallback_FUN_00557540",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00579550",
       "from_addr": "00579584",
-      "name": "unkafter_trisock.cpp_FUN_00579550",
+      "name": "support_trisock.cpp_FUN_00579550",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -101,12 +107,12 @@
   "function_calls": [],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 15,
+    "call_site_count": 16,
     "call_sites": [
       {
         "call_addr": "00460fc8",
         "call_type": "direct",
-        "caller": "engine_dosio.cpp_FUN_00460fa0",
+        "caller": "engine_dosio.cpp_CFileFinder_convertStruct_FUN_00460fa0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -117,7 +123,7 @@
       {
         "call_addr": "004d8347",
         "call_type": "direct",
-        "caller": "engine_ini.cpp_FUN_004d8180",
+        "caller": "engine_ini.cpp_CIni_getProfileString_FUN_004d8180",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -148,20 +154,9 @@
         "stack_params": 3
       },
       {
-        "call_addr": "005576fb",
-        "call_type": "direct",
-        "caller": "sound_snddx.cpp_FUN_0055753e",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
-      },
-      {
         "call_addr": "0059ca02",
         "call_type": "direct",
-        "caller": "core_patrpoin.cpp_FUN_0059c9c0",
+        "caller": "core_hpatrol.cpp_FUN_0059c9c0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -172,7 +167,7 @@
       {
         "call_addr": "0050daef",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_FUN_0050d9f0",
+        "caller": "core_netgame.cpp_CNetGame_processChatOut_FUN_0050d9f0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -205,7 +200,18 @@
       {
         "call_addr": "00579584",
         "call_type": "direct",
-        "caller": "unkafter_trisock.cpp_FUN_00579550",
+        "caller": "support_trisock.cpp_FUN_00579550",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00579631",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_FUN_00579550",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -243,6 +249,32 @@
       "STORE": 4
     },
     "pcode_op_count": 120
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005c20d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005a4ee0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00600f40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00565f70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 16,

@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   core_script.cpp_FUN_00522350 at 00528dd6
+;   core_script.cpp_CScript_step_FUN_00522350 at 00528dd6
 ;
 ; *****************************************************************************
 

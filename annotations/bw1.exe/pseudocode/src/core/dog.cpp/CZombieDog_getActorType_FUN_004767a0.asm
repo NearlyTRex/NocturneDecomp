@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_dog_cpp_CZombieDog_getActorType_FUN_004767a0(CZombieDog *this_ptr)
+; CDemonActorType * __cdecl core_dog_cpp_CZombieDog_getActorType_FUN_004767a0(CZombieDog *this_ptr)
 ;
 ; Parameters:
 ; CZombieDog *     Stack[0x4]:4   this_ptr

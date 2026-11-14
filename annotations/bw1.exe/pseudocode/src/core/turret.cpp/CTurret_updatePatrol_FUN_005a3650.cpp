@@ -11,83 +11,82 @@
 void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_005a3650(CTurret *this_ptr,float delta_time)
 
 {
-  byte *target_pos;
-  int iVar1;
-  uint *puVar2;
-  float *pfVar3;
-  uint *puVar4;
-  byte bVar5;
-  float afStackY_1038 [1003];
-  float local_80;
-  uint uStack_7c;
+  CVector3f *target_pos;
+  float fVar1;
+  float fVar2;
+  float fVar3;
+  int iVar4;
+  uint *puVar5;
+  float *pfVar6;
+  uint *puVar7;
+  byte bVar8;
+  float afStackY_1030 [1001];
+  CDemonActor *in_stack_ffffff80;
   float fStack_78;
   float fStack_74;
+  float fStack_70;
   float fStack_6c;
-  CVector3f CStack_50;
-  CVector3f CStack_44;
-  float fStack_38;
-  float afStack_34 [6];
-  float *pfStack_1c;
-  int iStack_18;
-  float fStack_14;
+  float fStack_64;
+  CVector3f CStack_48;
+  float fStack_3c;
+  float afStack_38 [4];
+  float fStack_28;
+  float fStack_24;
+  CVector3f *pCStack_14;
   
-  bVar5 = 0;
-  if (*(float *)&this_ptr->field_0x86c <= 0.0) {
-    if (*(int *)&this_ptr->field_0x780 != 0) {
-      target_pos = &this_ptr->field_0x84c;
-      iVar1 = core_turret_cpp_FUN_005a3350
-                        (this_ptr,(CVector3f *)target_pos,delta_time * (float)_DAT_005f8b78);
-      if (iVar1 != 0) {
-        (**(code **)(*(int *)(*(int *)&this_ptr->field_0x780 + 0x154) + 0x1c))
-                  (*(int *)&this_ptr->field_0x780);
-        puVar2 = (uint *)&stack0xffffff98;
-        puVar4 = &stack0xffffff80;
-        for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-          *puVar4 = *puVar2;
-          puVar2 = puVar2 + (uint)bVar5 * -2 + 1;
-          puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
+  bVar8 = 0;
+  if (this_ptr->fire_sound_timer <= 0.0) {
+    if (this_ptr->guard_zone_box_trigger != (CDemonActor *)0x0) {
+      target_pos = &this_ptr->patrol_target;
+      iVar4 = core_turret_cpp_CTurret_aimAtTarget_FUN_005a3350
+                        (this_ptr,target_pos,delta_time * (float)_DAT_005f8b78);
+      if (iVar4 != 0) {
+        (*((this_ptr->guard_zone_box_trigger->vtable)._ub)->getBoundingBox)
+                  (this_ptr->guard_zone_box_trigger,(CBoundingBox3D *)in_stack_ffffff80);
+        puVar5 = (uint *)&stack0xffffffa0;
+        puVar7 = (uint *)&stack0xffffff80;
+        for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
+          *puVar7 = *puVar5;
+          puVar5 = puVar5 + (uint)bVar8 * -2 + 1;
+          puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
         }
-        iStack_18 = 0;
-        pfVar3 = (float *)((int)this_ptr + (uint)bVar5 * -8 + 0x850);
-        fStack_38 = *(float *)&this_ptr->field_0x84c;
-        pfStack_1c = (float *)target_pos;
-        afStack_34[(uint)bVar5 * -2] = *pfVar3;
-        afStack_34[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] = pfVar3[(uint)bVar5 * -2 + 1];
+        iVar4 = 0;
+        pfVar6 = (float *)((int)this_ptr + (uint)bVar8 * -8 + 0x850);
+        afStack_38[2] = (this_ptr->patrol_target).x;
+        pCStack_14 = target_pos;
+        afStack_38[(uint)bVar8 * -2 + 3] = *pfVar6;
+        afStack_38[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4] = pfVar6[(uint)bVar8 * -2 + 1];
         while( true ) {
-          afStack_34[2] = (float)core_actor_cpp_FUN_0040cc00(0x3dcccccd,0x3f666666);
-          *(float *)&this_ptr->field_0x84c =
-               local_80 * afStack_34[2] + (1.0 - afStack_34[2]) * fStack_74;
-          fStack_14 = afStack_34[2];
-          afStack_34[2] = (float)core_actor_cpp_FUN_0040cc00(0x3dcccccd,0x3f666666);
-          *(uint *)&this_ptr->field_0x850 = uStack_7c;
-          *(float *)&this_ptr->field_0x854 =
-               fStack_78 * afStack_34[2] + (1.0 - afStack_34[2]) * fStack_6c;
-          fStack_14 = afStack_34[2];
-          core_actor_cpp_FUN_00408b40(*(uint *)&this_ptr->field_0x780,target_pos);
-          CStack_50._0_4_ = CStack_44._0_4_;
-          *(uint *)((int)&CStack_50 + (uint)bVar5 * -8 + 4) =
-               *(uint *)((int)&CStack_44 + (uint)bVar5 * -8 + 4);
-          *(uint *)((int)&CStack_50 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-               *(uint *)((int)&CStack_44 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-          if ((CVector3f *)target_pos != &CStack_50) {
-            *(uint *)target_pos = CStack_50._0_4_;
-            *(uint *)&this_ptr->field_0x850 = CStack_50._4_4_;
-            *(uint *)&this_ptr->field_0x854 = CStack_50._8_4_;
+          fStack_24 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.1,0.9);
+          (this_ptr->patrol_target).x = fStack_78 * fStack_24 + (1.0 - fStack_24) * fStack_6c;
+          fStack_24 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.1,0.9);
+          (this_ptr->patrol_target).y = fStack_74;
+          (this_ptr->patrol_target).z = fStack_70 * fStack_24 + (1.0 - fStack_24) * fStack_64;
+          core_actor_cpp_FUN_00408b40();
+          CStack_48.x = fStack_3c;
+          *(float *)((int)&CStack_48 + (uint)bVar8 * -8 + 4) = afStack_38[(uint)bVar8 * -2];
+          *(float *)((int)&CStack_48 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8) =
+               afStack_38[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
+          if (target_pos != &CStack_48) {
+            target_pos->x = CStack_48.x;
+            (this_ptr->patrol_target).y = CStack_48.y;
+            (this_ptr->patrol_target).z = CStack_48.z;
           }
-          if (_DAT_005f8b80 <
-              (pfStack_1c[2] - afStack_34[1]) * (pfStack_1c[2] - afStack_34[1]) +
-              (pfStack_1c[1] - afStack_34[0]) * (pfStack_1c[1] - afStack_34[0]) +
-              (*pfStack_1c - fStack_38) * (*pfStack_1c - fStack_38)) break;
-          iStack_18 = iStack_18 + 1;
-          if (4 < iStack_18) {
+          fVar1 = pCStack_14->x - afStack_38[2];
+          fVar3 = pCStack_14->y - afStack_38[3];
+          fVar2 = pCStack_14->z - fStack_28;
+          if (_DAT_005f8b80 < fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1) break;
+          iVar4 = iVar4 + 1;
+          if (4 < iVar4) {
             return;
           }
         }
       }
     }
   }
-  else if (*(float *)&this_ptr->field_0x300 <= 0.0) {
-    (**(code **)(*(int *)&this_ptr->field_0x154 + 0xe4))(this_ptr);
+  else if ((this_ptr->base).fire_cooldown_timer <= 0.0) {
+    (*(((this_ptr->base).base.vtable._uc)->_uc).isGrabbable)
+              ((CCharacter *)this_ptr,in_stack_ffffff80);
   }
   return;
 }

@@ -250,7 +250,7 @@ def analyse(program, sibling):
     for r in records:
         r["type"] = type_name(r["class"], cats)
         s = sib_records.get(r["class"])
-        r["label"] = labels.get(r["class"], "g_%sTypeInfo" % r["class"])
+        r["label"] = labels.get(r["class"], "g_%sTypeInfo" % r["type"])
         r["sibling_size"] = s["size"] if s else None
         r["category"] = cats.get(r["type"]) or default_category(r["type"])
         r["in_program"] = {slot: r[slot] in image.by_addr for slot in ("ctor", "copy", "dtor")}

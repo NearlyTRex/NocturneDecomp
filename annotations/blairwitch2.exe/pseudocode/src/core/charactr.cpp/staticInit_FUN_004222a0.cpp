@@ -1,12 +1,12 @@
 // Name: core_charactr.cpp_staticInit_FUN_004222a0
 // Address: 004222a0
 // Address Range: [[004222a0, 004222cd]]
-// Convention: unknown
-// Signature: void core_charactr_cpp_staticInit_FUN_004222a0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_charactr_cpp_staticInit_FUN_004222a0(void)
 
 #include "nocturne.h"
 
-void core_charactr_cpp_staticInit_FUN_004222a0(void)
+void __cdecl core_charactr_cpp_staticInit_FUN_004222a0(void)
 
 {
   core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80

@@ -4,13 +4,15 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
 
 // Structure: CSentinel
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0xd05c (53340 bytes)
 #pragma pack(push, 1)
 typedef struct CSentinel {
-    char field_0[53340]; // 0x0
+    CEnemy base; // 0x0
+    uint sfx_handle; // 0xd054
+    float hover_timer; // 0xd058
 } CSentinel;
 #pragma pack(pop)
 

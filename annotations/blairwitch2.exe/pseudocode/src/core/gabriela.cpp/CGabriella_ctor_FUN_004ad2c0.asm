@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CGabriella * core_gabriela_cpp_CGabriella_ctor_FUN_004ad2c0(CGabriella *this_ptr)
+; CGabriella * __cdecl core_gabriela_cpp_CGabriella_ctor_FUN_004ad2c0(CGabriella *this_ptr)
 ;
 ; Parameters:
 ; CGabriella *     Stack[0x4]:4   this_ptr

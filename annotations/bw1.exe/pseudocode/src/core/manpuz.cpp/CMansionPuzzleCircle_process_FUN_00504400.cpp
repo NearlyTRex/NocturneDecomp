@@ -9,52 +9,58 @@
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_process_FUN_00504400(CMansionPuzzleCircle *this_ptr,float delta_time)
 
 {
-  int iVar1;
+  CVector3f *pCVar1;
+  CVector3f *pCVar2;
+  int iVar3;
   
-  iVar1 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004ea6f0(&this_ptr->field_0x20,0x41f00000);
-  if (iVar1 != 0) {
-    iVar1 = 0;
+  iVar3 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004ea6f0(&(this_ptr->base).location.position,30.0)
+  ;
+  if (iVar3 != 0) {
+    iVar3 = 0;
     do {
-      core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_00505560(this_ptr,iVar1,delta_time);
-      iVar1 = iVar1 + 1;
-    } while (iVar1 < 0xc);
-    iVar1 = 0;
+      core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_00505560(this_ptr,iVar3,delta_time);
+      iVar3 = iVar3 + 1;
+    } while (iVar3 < 0xc);
+    iVar3 = 0;
     do {
-      core_manpuz_cpp_CMansionPuzzleCircle_updateReflector_FUN_00506220(this_ptr,iVar1,delta_time);
-      iVar1 = iVar1 + 1;
-    } while (iVar1 < 2);
-    iVar1 = 0;
+      core_manpuz_cpp_CMansionPuzzleCircle_updateReflector_FUN_00506220(this_ptr,iVar3,delta_time);
+      iVar3 = iVar3 + 1;
+    } while (iVar3 < 2);
+    iVar3 = 0;
     do {
-      core_manpuz_cpp_CMansionPuzzleCircle_updateLaser_FUN_00505bc0(this_ptr,iVar1,delta_time);
-      iVar1 = iVar1 + 1;
-    } while (iVar1 < 0xc);
-    iVar1 = 0;
+      core_manpuz_cpp_CMansionPuzzleCircle_updateLaser_FUN_00505bc0(this_ptr,iVar3,delta_time);
+      iVar3 = iVar3 + 1;
+    } while (iVar3 < 0xc);
+    iVar3 = 0;
     do {
-      core_manpuz_cpp_CMansionPuzzleCircle_updateGem_FUN_005058e0(this_ptr,iVar1,delta_time);
-      iVar1 = iVar1 + 1;
-    } while (iVar1 < 0xc);
-    iVar1 = 0;
+      core_manpuz_cpp_CMansionPuzzleCircle_updateGem_FUN_005058e0(this_ptr,iVar3,delta_time);
+      iVar3 = iVar3 + 1;
+    } while (iVar3 < 0xc);
+    iVar3 = 0;
     do {
-      core_manpuz_cpp_FUN_00504ee0(this_ptr,iVar1);
-      iVar1 = iVar1 + 1;
-    } while (iVar1 < 0xc);
-    iVar1 = 0;
+      core_manpuz_cpp_FUN_00504ee0(this_ptr,iVar3);
+      iVar3 = iVar3 + 1;
+    } while (iVar3 < 0xc);
+    iVar3 = 0;
     do {
-      core_manpuz_cpp_FUN_005062a0(this_ptr,iVar1);
-      iVar1 = iVar1 + 1;
-    } while (iVar1 < 2);
-    if (&this_ptr->field_0x13c8 != &this_ptr->field_0x1368) {
-      *(uint *)&this_ptr->field_0x13c8 = *(uint *)&this_ptr->field_0x1368;
-      *(uint *)&this_ptr->field_0x13cc = *(uint *)&this_ptr->field_0x136c;
-      *(uint *)&this_ptr->field_0x13d0 = *(uint *)&this_ptr->field_0x1370;
+      core_manpuz_cpp_FUN_005062a0(this_ptr,iVar3);
+      iVar3 = iVar3 + 1;
+    } while (iVar3 < 2);
+    pCVar1 = &this_ptr->reflectors[1].rotation;
+    pCVar2 = &this_ptr->reflectors[0].rotation;
+    if (pCVar1 != pCVar2) {
+      pCVar1->x = pCVar2->x;
+      this_ptr->reflectors[1].rotation.y = this_ptr->reflectors[0].rotation.y;
+      this_ptr->reflectors[1].rotation.z = this_ptr->reflectors[0].rotation.z;
     }
-    this_ptr->field_0x13cf = this_ptr->field_0x13cf ^ 0x80;
-    core_dirmat_cpp_FUN_0045f3e0
-              ((CMatrix3x3f *)&this_ptr->field_0x1374,(CVector3f *)&this_ptr->field_0x1368);
-    core_dirmat_cpp_FUN_0045f3e0
-              ((CMatrix3x3f *)&this_ptr->field_0x13d4,(CVector3f *)&this_ptr->field_0x13c8);
-    core_game_cpp_CGame_setFudgeTarget_FUN_004cc9a0
-              (g_CGamePtr,(CVector3f *)&this_ptr->field_0x1368,0.017453292);
+    pCVar1 = &this_ptr->reflectors[0].rotation;
+    *(byte *)((int)&this_ptr->reflectors[1].rotation.y + 3) =
+         *(byte *)((int)&this_ptr->reflectors[1].rotation.y + 3) ^ 0x80;
+    core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
+              (&this_ptr->reflectors[0].rotation_matrix,pCVar1);
+    core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
+              (&this_ptr->reflectors[1].rotation_matrix,&this_ptr->reflectors[1].rotation);
+    core_game_cpp_CGame_setFudgeTarget_FUN_004cc9a0(g_CGamePtr,pCVar1,0.017453292);
   }
   return;
 }

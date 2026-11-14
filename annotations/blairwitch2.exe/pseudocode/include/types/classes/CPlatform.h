@@ -4,13 +4,53 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCourse.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CMatrix3x4f.h"
+#include "types/classes/CQuaternion4f.h"
+#include "types/classes/CVector3f.h"
+#include "types/enums/EGroundType.h"
+#include "types/enums/EOneShotState.h"
+#include "types/enums/EPlatformStateType.h"
+#include "types/structs/SPlatformAttachment.h"
 
 // Structure: CPlatform
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x884 (2180 bytes)
 #pragma pack(push, 1)
 typedef struct CPlatform {
-    char field_0[2180]; // 0x0
+    CDemonActor base; // 0x0
+    CKeyFramedModelInstance model; // 0x2b4
+    EPlatformStateType state; // 0x430
+    EGroundType ground_type; // 0x434
+    float param; // 0x438
+    float goal_param; // 0x43c
+    float current_movement_rate; // 0x440
+    float travel_time_to_end; // 0x444
+    float travel_time_to_start; // 0x448
+    char course_filename[32]; // 0x44c
+    CCourse course; // 0x46c
+    CVector3f start_pos; // 0x478
+    CVector3f end_pos; // 0x484
+    CQuaternion4f orig_orient; // 0x490
+    CQuaternion4f end_orient; // 0x4a0
+    char to_start_event[100]; // 0x4b0
+    char to_end_event[100]; // 0x514
+    char stop_event[100]; // 0x578
+    char start_sound[20]; // 0x5dc
+    char stop_sound[20]; // 0x5f0
+    char active_sound[20]; // 0x604
+    uint sfx_handle; // 0x618
+    EOneShotState one_shot; // 0x61c
+    int block_virtual_director_flag; // 0x620
+    int render_in_background_when_not_moving_flag; // 0x624
+    char camera_while_moving[64]; // 0x628
+    int plot_as_box_in_shadow; // 0x668
+    int push_flag; // 0x66c
+    int recompute_fog; // 0x670
+    int plot_in_shadow_flag; // 0x674
+    SPlatformAttachment attach_actors[10]; // 0x678
+    int rendered_in_background; // 0x880
 } CPlatform;
 #pragma pack(pop)
 

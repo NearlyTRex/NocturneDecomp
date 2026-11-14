@@ -16,7 +16,29 @@
   {
     "kind":"class",
     "name":"CCarved",
+    "parent":"CEnemy",
     "size":49908
+  },
+  {
+    "kind":"funcdef",
+    "name":"CCharacter_getGrabber",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"class",
+      "name":"CDemonActor",
+      "ptr":1
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -33,15 +55,220 @@
   },
   {
     "kind":"class",
+    "name":"CDemnfolk_vtable",
+    "size":16,
+    "vtable_slots":[
+      {
+        "name":"playChaseSound",
+        "offset":0
+      },
+      {
+        "name":"playHurtSound",
+        "offset":4
+      },
+      {
+        "name":"playDeathSound",
+        "offset":8
+      },
+      {
+        "name":"playFeedingSound",
+        "offset":12
+      }
+    ]
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_canPickup",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"picker",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_playAmbientSoundWithDelay",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"sound_name",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"delay",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"uint",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_playSound",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"sound_name",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"uint",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_stopInteraction",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"user",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"class",
     "name":"CDemonPart",
     "rtti_file":"core/dpart.cpp",
-    "size":1
+    "size":904
   },
   {
     "kind":"class",
     "name":"CDemonRaytrace",
     "rtti_file":"core/dtrace.cpp",
     "size":108
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDjien_damageSack",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDjien",
+          "ptr":1
+        }
+      },
+      {
+        "name":"damage",
+        "type":{
+          "kind":"struct",
+          "name":"SDamageInfo",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDjien_getSackIndex",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDjien",
+          "ptr":1
+        }
+      },
+      {
+        "name":"part_id",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -54,7 +281,7 @@
     "kind":"class",
     "name":"CInputString",
     "rtti_file":"shape/edittool.cpp",
-    "size":1
+    "size":320
   },
   {
     "kind":"class",
@@ -77,6 +304,109 @@
     "size":1092
   },
   {
+    "kind":"funcdef",
+    "name":"CSoundDevice_isSfxPlaying",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      },
+      {
+        "name":"slot",
+        "type":{
+          "kind":"class",
+          "name":"CSfxSlot",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CSoundDevice_set3DListenerVelocity",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      },
+      {
+        "name":"x_velocity",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      },
+      {
+        "name":"y_velocity",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      },
+      {
+        "name":"z_velocity",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CSoundDevice_startSfx",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      },
+      {
+        "name":"slot",
+        "type":{
+          "kind":"class",
+          "name":"CSfxSlot",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CTeleportDest",
     "parent":"CDemonActor",
@@ -86,7 +416,7 @@
   {
     "kind":"class",
     "name":"CVector3i",
-    "size":1
+    "size":12
   },
   {
     "kind":"class",
@@ -96,44 +426,207 @@
     "size":4216
   },
   {
+    "kind":"enum",
+    "name":"EAmmoType",
+    "size":4,
+    "values":[
+      {
+        "name":"AMMO_TYPE_NONE",
+        "value":-1
+      },
+      {
+        "name":"AMMO_TYPE_GENERIC",
+        "value":0
+      },
+      {
+        "name":"AMMO_TYPE_HOLY",
+        "value":1
+      },
+      {
+        "name":"AMMO_TYPE_WOOD",
+        "value":2
+      },
+      {
+        "name":"AMMO_TYPE_SILVER",
+        "value":3
+      },
+      {
+        "name":"AMMO_TYPE_GOLD",
+        "value":4
+      },
+      {
+        "name":"AMMO_TYPE_FLAMING",
+        "value":5
+      },
+      {
+        "name":"AMMO_TYPE_BLANKS",
+        "value":6
+      },
+      {
+        "name":"AMMO_TYPE_LITHIUM",
+        "value":7
+      },
+      {
+        "name":"AMMO_TYPE_MERCURY",
+        "value":8
+      },
+      {
+        "name":"AMMO_TYPE_STAGGER",
+        "value":9
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"EDamageType",
+    "size":4,
+    "values":[
+      {
+        "name":"DAMAGE_TYPE_GENERIC",
+        "value":0
+      },
+      {
+        "name":"DAMAGE_TYPE_DROWN",
+        "value":1
+      },
+      {
+        "name":"DAMAGE_TYPE_FALL",
+        "value":2
+      },
+      {
+        "name":"DAMAGE_TYPE_EXPLODE",
+        "value":3
+      },
+      {
+        "name":"DAMAGE_TYPE_FALL_APART",
+        "value":4
+      },
+      {
+        "name":"DAMAGE_TYPE_SHATTER",
+        "value":5
+      },
+      {
+        "name":"DAMAGE_TYPE_ELECTROCUTE",
+        "value":6
+      },
+      {
+        "name":"DAMAGE_TYPE_CHOPPED",
+        "value":7
+      },
+      {
+        "name":"DAMAGE_TYPE_CRUSHED",
+        "value":8
+      },
+      {
+        "name":"DAMAGE_TYPE_IMPALE",
+        "value":9
+      },
+      {
+        "name":"DAMAGE_TYPE_FIRE",
+        "value":10
+      },
+      {
+        "name":"DAMAGE_TYPE_UNUSED",
+        "value":11
+      },
+      {
+        "name":"DAMAGE_TYPE_ATTACK_GENERIC",
+        "value":100
+      },
+      {
+        "name":"DAMAGE_TYPE_ATTACK_BULLET",
+        "value":101
+      },
+      {
+        "name":"DAMAGE_TYPE_ATTACK_FIRE",
+        "value":102
+      },
+      {
+        "name":"DAMAGE_TYPE_ATTACK_BLADE",
+        "value":103
+      },
+      {
+        "name":"DAMAGE_TYPE_ATTACK_STAKE",
+        "value":104
+      },
+      {
+        "name":"DAMAGE_TYPE_ATTACK_GAS",
+        "value":105
+      },
+      {
+        "name":"DAMAGE_TYPE_ATTACK_ELECTROCUTE",
+        "value":106
+      },
+      {
+        "name":"DAMAGE_TYPE_PIERCING",
+        "value":107
+      },
+      {
+        "name":"DAMAGE_TYPE_BURN",
+        "value":108
+      },
+      {
+        "name":"DAMAGE_TYPE_SHADOW",
+        "value":109
+      }
+    ]
+  },
+  {
     "kind":"struct",
     "name":"SBitBuffer",
-    "size":1
+    "size":8
+  },
+  {
+    "kind":"struct",
+    "name":"SBone",
+    "size":36
+  },
+  {
+    "kind":"struct",
+    "name":"SCurtainMeshData",
+    "size":300012
+  },
+  {
+    "kind":"struct",
+    "name":"SFace",
+    "size":32
   },
   {
     "kind":"struct",
     "name":"SIntersectXZCylinder",
-    "size":1
+    "size":92
   },
   {
     "kind":"struct",
     "name":"SLineStrip",
-    "size":1
+    "size":8
   },
   {
     "kind":"struct",
     "name":"SMRGLPrimitiveQuad",
-    "size":1
+    "parent":"SMRGLHeaderPrimitive",
+    "size":72
   },
   {
     "kind":"struct",
     "name":"SMRGLPrimitiveTriangle",
-    "size":1
+    "parent":"SMRGLHeaderPrimitive",
+    "size":60
   },
   {
     "kind":"struct",
     "name":"SMpegLayer3GranuleInfo",
-    "size":1
+    "size":72
   },
   {
     "kind":"struct",
     "name":"SNetworkAddr",
-    "size":1
+    "size":8
   },
   {
     "kind":"struct",
     "name":"SPlayerInput",
-    "size":1
+    "size":48
   },
   {
     "kind":"struct",

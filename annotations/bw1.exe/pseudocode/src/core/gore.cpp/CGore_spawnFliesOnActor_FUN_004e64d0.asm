@@ -11,15 +11,15 @@
 ; CVector3f *      Stack[0x14]:4   box_size
 ;
 ; XREF[9]:
-;   core_actor.cpp_FUN_00409c00 at 00409c2a
-;   core_colonel.cpp_FUN_004451c0 at 004452a6
-;   core_doc.cpp_FUN_004737b0 at 00473a04
-;   core_gabriela.cpp_FUN_004cab10 at 004cac4e
-;   core_haystack.cpp_FUN_004ea140 at 004ea240
-;   core_icepick.cpp_FUN_004f2570 at 004f26b6
-;   core_scat.cpp_FUN_00541c70 at 00541d56
-;   core_stranger.cpp_FUN_0058fcb0 at 0058fe8d
-;   core_svetlana.cpp_FUN_005944c0 at 005945df
+;   core_actor.cpp_CDemonActor_spawnFlies_FUN_00409c00 at 00409c2a
+;   core_colonel.cpp_CColonel_processDamage_FUN_004451c0 at 004452a6
+;   core_doc.cpp_CDoc_processDamage_FUN_004737b0 at 00473a04
+;   core_gabriela.cpp_CGabriella_processDamage_FUN_004cab10 at 004cac4e
+;   core_haystack.cpp_CHaystack_processDamage_FUN_004ea140 at 004ea240
+;   core_icepick.cpp_CIcePick_processDamage_FUN_004f2570 at 004f26b6
+;   core_scat.cpp_CScat_processDamage_FUN_00541c70 at 00541d56
+;   core_stranger.cpp_CStranger_processDamage_FUN_0058fcb0 at 0058fe8d
+;   core_svetlana.cpp_CSvetlana_processDamage_FUN_005944c0 at 005945df
 ;
 ; Called Functions:
 ;   core_gore.cpp_FUN_004e63e0

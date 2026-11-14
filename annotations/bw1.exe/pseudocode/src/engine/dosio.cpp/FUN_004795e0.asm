@@ -9,11 +9,11 @@
 ; char *           Stack[0xc]:4   output_path
 ;
 ; XREF[1]:
-;   unkafter_dosio.cpp_FUN_00479770 at 004797fa
+;   engine_dosio.cpp_FUN_00479770 at 004797fa
 ;
 ; Called Functions:
-;   engine_dosio.cpp_FUN_00479580
-;   engine_dosio.cpp_FUN_004795b0
+;   engine_dosio.cpp_makePath_FUN_004795b0
+;   engine_dosio.cpp_splitPath_FUN_00479580
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     PUSH EDX                            ; 00479609
     MOV ECX,dword ptr [ESP + 0x31c]     ; 0047960a
     PUSH ECX                            ; 00479611
-    CALL engine_dosio.cpp_FUN_00479580  ; 00479612
-        ;   XREF to: 00479580 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_FUN_00479580(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00479580 ; 00479612
+        ;   XREF to: 00479580 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00479580(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 00479617
     MOV ECX,ESP                         ; 0047961a
     PUSH ECX                            ; 0047961c
@@ -45,8 +45,8 @@ section .text
     PUSH ECX                            ; 0047962c
     PUSH 0x0                            ; 0047962d
     PUSH EBX                            ; 0047962f
-    CALL engine_dosio.cpp_FUN_004795b0  ; 00479630
-        ;   XREF to: 004795b0 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_FUN_004795b0(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_makePath_FUN_004795b0 ; 00479630
+        ;   XREF to: 004795b0 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_makePath_FUN_004795b0(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 00479635
     TEST EBX,EBX                        ; 00479638
     JZ 0x00479641                       ; 0047963a

@@ -25,16 +25,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[21]:
-;   core_actor.cpp_FUN_00409f20 at 0040a581
-;   core_crossbow.cpp_FUN_00449a50 at 00449c57
-;   core_doc.cpp_FUN_00473160 at 004732f0
-;   core_doc.cpp_FUN_00473c10 at 00473f7c
-;   core_elephant.cpp_FUN_0049e1a0 at 0049e49e
-;   core_fire.cpp_FUN_004b6420 at 004b64c6
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f20 at 0040a581
+;   core_crossbow.cpp_CCrossbow_fire_FUN_00449a50 at 00449c57
+;   core_doc.cpp_CDoc_aimLeftPistol_FUN_00473160 at 004732f0
+;   core_doc.cpp_CDoc_updateArmRecoilBlend_FUN_00473c10 at 00473f7c
+;   core_elephant.cpp_CElephantGun_fire_FUN_0049e1a0 at 0049e49e
+;   core_fire.cpp_CFireEffect_traceLaser_FUN_004b6420 at 004b64c6
+;   core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_004ca0c0 at 004ca3d9
 ;   core_gabriela.cpp_FUN_004c7aa0 at 004c812b
-;   core_gabriela.cpp_FUN_004ca0c0 at 004ca3d9
 ;   core_game.cpp_FUN_004d9260 at 004d9a5e
-;   core_gun.cpp_FUN_004e8630 at 004e8850
+;   core_gun.cpp_CGun_fire_FUN_004e8630 at 004e8850
 ;   ... and 11 more
 ;
 ; Referenced Globals:

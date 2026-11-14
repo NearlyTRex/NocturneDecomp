@@ -1,0 +1,177 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 61,
+    "complexity_score": 96,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 41,
+    "suspect_count": 4,
+    "suspect_types": [
+      "derived_field_index_pun",
+      "negative_offset",
+      "suspect_float"
+    ],
+    "total_lines": 102
+  },
+  "cross_references": [
+    {
+      "addr": "00517f80",
+      "from_addr": "00517f86",
+      "name": "core_prye.cpp_CPrye_ctor_FUN_00517f80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d24b0",
+    "address_range": [
+      [
+        "004d24b0",
+        "004d261d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hero.cpp_CHero_ctor_FUN_004d24b0",
+    "signature": "CHero * __cdecl core_hero_cpp_CHero_ctor_FUN_004d24b0(CHero *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042ac20",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_ctor_FUN_0042ac20"
+    },
+    {
+      "addr": "004d2cd0",
+      "is_variadic": false,
+      "name": "core_hero.cpp_FUN_004d2cd0"
+    },
+    {
+      "addr": "004da360",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_ctor_FUN_004da360"
+    },
+    {
+      "addr": "0050acc0",
+      "is_variadic": false,
+      "name": "core_path.cpp_CPathMap_ctor_FUN_0050acc0"
+    },
+    {
+      "addr": "005a28f0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005a28f0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00517f86",
+        "call_type": "direct",
+        "caller": "core_prye.cpp_CPrye_ctor_FUN_00517f80",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.709090909090909,
+    "instruction_count": 55,
+    "opcode_distribution": {
+      "CALL": 5,
+      "COPY": 43,
+      "INT_ADD": 41,
+      "INT_AND": 14,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 14,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 7,
+      "INT_SUB": 13,
+      "LOAD": 3,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 42
+    },
+    "pcode_op_count": 204
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004ea830",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.972
+    },
+    "nocedit.exe": {
+      "addr": "004f2340",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.932
+    },
+    "nocturne.exe": {
+      "addr": "004b46d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.932
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHero *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 22,
+      "match": "2.8026e-45",
+      "severity": "mild",
+      "text": "pCVar3[-0x47].item_angles[0x15] = 2.8026e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 23,
+      "match": "pCVar3[-1].",
+      "severity": "mild",
+      "text": "pCVar3[-1].cached_mana_count = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 37,
+      "match": "1.4013e-45",
+      "severity": "mild",
+      "text": "pCVar3[-0x6d].item_angles[0x19] = 1.4013e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "'(CPathMap *)&pCVar1[1].base.orient_matrix' walks 1 x sizeof(CCharacter) (0xcdcc) + offsetof(base.orient_matrix) (0x3c) + 0x0 = 0xce08, which is exactly offsetof(CEnemy, patrol_name_pattern[24]). Ghidra had no CEnemy type here and reached the field by index arithmetic; write it as ((CEnemy *)pCVar1)->patrol_name_pattern[24] (\u00a7de-pun/\u00a712). Ambiguous: CHero::path_map also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 10,
+      "severity": "moderate",
+      "text": "pCVar2 = core_path_cpp_CPathMap_ctor_FUN_0050acc0((CPathMap *)&pCVar1[1].base.orient_matrix);",
+      "type": "derived_field_index_pun"
+    }
+  ]
+}

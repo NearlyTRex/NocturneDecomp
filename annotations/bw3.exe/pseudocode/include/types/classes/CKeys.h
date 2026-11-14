@@ -2,14 +2,17 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CKeys_vtable;
+
 // Dependencies
 #include "system/basetypes.h"
 
 // Structure: CKeys
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x4 (4 bytes)
 #pragma pack(push, 1)
 typedef struct CKeys {
+    struct CKeys_vtable* vtable; // 0x0
 } CKeys;
 #pragma pack(pop)
 

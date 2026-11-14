@@ -7,12 +7,12 @@
 ; HANDLE           Stack[0x4]:4   mutex_handle
 ;
 ; XREF[6]:
-;   sound_sndmain.cpp_FUN_00573e70 at 00573ea0
-;   sound_sndmain.cpp_FUN_00575fb0 at 0057601b
-;   support_trisock.cpp_FUN_0059daec at 0059dba3
-;   support_trisock.cpp_FUN_0059df10 at 0059df52
+;   sound_sndmain.cpp_processAudio_FUN_00575fb0 at 0057601b
+;   sound_sndmain.cpp_unlockSound_FUN_00573e70 at 00573ea0
+;   support_trisock.cpp_FUN_0059daf0 at 0059dba3
+;   support_trisock.cpp_FUN_0059deb0 at 0059df52
 ;   support_trisock.cpp_FUN_0059dfc0 at 0059e035
-;   unkafter_trisock.cpp_FUN_0059ef20 at 0059ef96
+;   support_trisock.cpp_FUN_0059ef20 at 0059ef96
 ;
 ; Referenced Globals:
 ;   void* PTR_ReleaseMutex_005d061c = 001d1106

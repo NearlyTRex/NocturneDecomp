@@ -16,10 +16,10 @@ void __cdecl core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_0044d570(CDe
   int iVar3;
   int iVar4;
   
-  *(float *)&this_ptr->field_0x2fa8 = intensity;
-  if (0x100 < *(int *)&this_ptr->field_0x1cc0) {
+  this_ptr->volumetric_intensity = intensity;
+  if (0x100 < this_ptr->shadow_map_width) {
     iVar4 = 0;
-    fVar2 = (float10)*(float *)&this_ptr->field_0x2fa8 * (float10)_DAT_005cf587;
+    fVar2 = (float10)this_ptr->volumetric_intensity * (float10)_DAT_005cf587;
     iVar3 = 0;
     pCVar1 = (CDemonLight *)round();
     core_dlight_cpp_CDemonLight_applyFilter_FUN_0044b600
@@ -27,7 +27,7 @@ void __cdecl core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_0044d570(CDe
     return;
   }
   iVar4 = 0;
-  fVar2 = (float10)*(float *)&this_ptr->field_0x2fa8 * (float10)_DAT_005cf57f;
+  fVar2 = (float10)this_ptr->volumetric_intensity * (float10)_DAT_005cf57f;
   iVar3 = 0;
   pCVar1 = (CDemonLight *)round();
   core_dlight_cpp_CDemonLight_applyFilter_FUN_0044b600

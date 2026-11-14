@@ -8,12 +8,12 @@
 ; SRenderVertex *  Stack[0x8]:4   vertex_ptr
 ;
 ; XREF[7]:
+;   core_fire.cpp_CFirefly_render_FUN_00498b40 at 00498ba9
 ;   core_fire.cpp_CPopcorn_render_FUN_004a0cd0 at 004a0d26
+;   core_fire.cpp_CRainDrop_render_FUN_004a1040 at 004a1096
+;   core_fire.cpp_CShell_render_FUN_004a09f0 at 004a0a51
 ;   core_fire.cpp_CSmokeParticle_render_FUN_00496f60 at 00496fb2
-;   core_fire.cpp_FUN_004980b0 at 0049812e
-;   core_fire.cpp_FUN_00498b40 at 00498ba9
-;   core_fire.cpp_FUN_004a09f0 at 004a0a51
-;   core_fire.cpp_FUN_004a1040 at 004a1096
+;   core_fire.cpp_CSpark_render_FUN_004980b0 at 0049812e
 ;   core_weather.cpp_FUN_0057c890 at 0057ca79
 ;
 ; Referenced Globals:
@@ -64,7 +64,7 @@ section .text
         ;   Label: LAB_0046e6f6
     PUSH EBX                            ; 0046e6f8
     CALL engine_prim.c_replaceWWithDepth_FUN_00515a80 ; 0046e6f9
-        ;   XREF to: 00515a80 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_replaceWWithDepth_FUN_00515a80()
+        ;   XREF to: 00515a80 (UNCONDITIONAL_CALL)  ; void engine_prim.c_replaceWWithDepth_FUN_00515a80(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 0046e6fe
     JMP 0x0046e6c6                      ; 0046e701
         ;   XREF to: 0046e6c6 (UNCONDITIONAL_JUMP)  ; LAB_0046e6c6

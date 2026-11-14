@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CPathMap * core_path_cpp_CPathMap_arrdtor12_FUN_005145d0(CPathMap *this_ptr,uint flags)
+; CPathMap * __cdecl core_path_cpp_CPathMap_arrdtor12_FUN_005145d0(CPathMap *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CPathMap *       Stack[0x4]:4   this_ptr
@@ -20,7 +20,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 005145d7
     PUSH EDX                            ; 005145db
     CALL crt_memory.c___arrfini_FUN_005b854f ; 005145dc
-        ;   XREF to: 005b854f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrfini_FUN_005b854f()
+        ;   XREF to: 005b854f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005b854f(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005145e1
     RET                                 ; 005145e4
 

@@ -11,8 +11,8 @@
     "suspect_count": 6,
     "suspect_types": [
       "pointer_truncation",
+      "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 117
@@ -148,6 +148,32 @@
     },
     "pcode_op_count": 309
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00441710",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0043f370",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0043b9f0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00437cc0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -181,14 +207,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x2230",
-      "severity": "mild",
-      "text": "iVar4 = *(int *)&model_ptr->field_0x2230;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 31,
       "match": "DAT_0060b280",
@@ -201,7 +219,7 @@
       "line": 33,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "*(uint *)(pCVar2 + 0x3a64c) = *(uint *)(iVar4 + 0x20 + *DAT_0060b280);",
+      "text": "pCVar2->locked_vertex_indices[600] = *(int *)(iVar4 + 0x20 + *DAT_0060b280);",
       "type": "undefined_data"
     },
     {
@@ -219,6 +237,14 @@
       "severity": "moderate",
       "text": "return (int)pCVar3;",
       "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom shadow-pointer walk (two-step form) \u2014 `pCVar2` is advanced into scratch `pCVar3`, then rebound via a later `pCVar2 = pCVar3;`. Functionally identical to the single-line self-update; replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer and drop both the advance line and the rebind.",
+      "line": 35,
+      "match": "pCVar3 = (T *)((pCVar2->FIELD).SUBFIELD...ARRAY + CONST); ...; pCVar2 = pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CCloth *)((pCVar2->model).model_filename + 4);",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

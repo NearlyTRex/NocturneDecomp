@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBatCreature * core_batcreat_cpp_CBatCreature_ctor_FUN_00411210(CBatCreature *this_ptr)
+; CBatCreature * __cdecl core_batcreat_cpp_CBatCreature_ctor_FUN_00411210(CBatCreature *this_ptr)
 ;
 ; Parameters:
 ; CBatCreature *   Stack[0x4]:4   this_ptr
@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a0410
-;   core_skeleton.cpp_FUN_00569f50
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     ADD EAX,0x158                       ; 00411225
     PUSH EAX                            ; 0041122a
     MOV dword ptr [EAX + -0x4],0x5fbfe4 ; 0041122b
-    CALL core_skeleton.cpp_FUN_00569f50 ; 00411232
-        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569f50()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 00411232
+        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
     FLD float ptr [0x005fbfd0]          ; 00411237 | DAT_005fbfd0
     MOV dword ptr [EBX + 0x2fec],0x3f19999a ; 0041123d
     FLD float ptr [0x005fbfd4]          ; 00411247 | DAT_005fbfd4

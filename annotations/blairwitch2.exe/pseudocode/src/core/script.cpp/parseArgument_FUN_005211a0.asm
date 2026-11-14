@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   max_length
 ;
 ; XREF[2]:
-;   core_script.cpp_FUN_00522350 at 00524322
+;   core_script.cpp_CScript_step_FUN_00522350 at 00524322
 ;   core_script.cpp_parseConditionExpr_FUN_00521250 at 0052125c
 ;
 ; Referenced Globals:

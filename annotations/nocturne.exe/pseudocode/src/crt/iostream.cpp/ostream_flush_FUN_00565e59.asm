@@ -7,8 +7,8 @@
 ; void *           Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_game.cpp_CGame_FUN_004a3b90 at 004a3f6a
-;   core_game.cpp_CGame_FUN_004a4170 at 004a4511
+;   core_game.cpp_CGame_loadGame_FUN_004a4170 at 004a4511
+;   core_game.cpp_CGame_saveGame_FUN_004a3b90 at 004a3f6a
 ;   engine_dosio.cpp_reopenFileStream_FUN_00456b20 at 00456b38
 ;
 ; Called Functions:

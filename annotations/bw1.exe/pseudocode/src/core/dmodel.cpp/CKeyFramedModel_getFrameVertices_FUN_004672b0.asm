@@ -10,7 +10,7 @@
 ; XREF[6]:
 ;   core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004672f0 at 0046730c
 ;   core_dmodel.cpp_FUN_00467c00 at 00467ca2
-;   core_frankgen.cpp_FUN_004c5c60 at 004c5cd9
+;   core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004c5c60 at 004c5cd9
 ;   core_morph.cpp_CMorphModel_addPartFromKeyFramedModel_FUN_005224f0 at 0052251a
 ;   core_morph.cpp_CMorphModel_animateFromKeyframedModel_FUN_005226a0 at 005226b5
 ;   core_turret.cpp_CTurret_setup_FUN_005a21a0 at 005a21e5

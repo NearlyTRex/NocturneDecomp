@@ -9,9 +9,9 @@
 ;
 ; XREF[4]:
 ;   core_boxactor.cpp_CBoxActor_onDropped_FUN_00420100 at 00420113
+;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_0041ff20 at 0042007d
 ;   core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_00420290 at 00420307
-;   core_boxactor.cpp_FUN_0041f130 at 0041f1c7
-;   core_boxactor.cpp_FUN_0041ff20 at 0042007d
+;   core_boxactor.cpp_CBoxActor_setup_FUN_0041f130 at 0041f1c7
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b74ed

@@ -19,24 +19,24 @@ void __cdecl core_set_cpp_CDemonSet_setLightingParameters_FUN_00551c30(CDemonSet
   }
   else {
     if (position != (CVector3f *)&DAT_0202a844) {
-      _DAT_0202a844 = *(uint *)position;
-      _DAT_0202a84c = *(uint *)&position->field_0x8;
-      _DAT_0202a848 = *(uint *)&position->field_0x4;
+      _DAT_0202a844 = position->x;
+      _DAT_0202a84c = position->z;
+      _DAT_0202a848 = position->y;
     }
     if (orientation != (UOrientationVector *)&DAT_0202a850) {
-      _DAT_0202a850 = *(uint *)orientation;
-      _DAT_0202a858 = *(uint *)((int)orientation + 8);
-      _DAT_0202a854 = *(uint *)((int)orientation + 4);
+      _DAT_0202a850 = (orientation->vec).x;
+      _DAT_0202a858 = (orientation->vec).z;
+      _DAT_0202a854 = (orientation->vec).y;
     }
     if (aabb_min != (CVector3f *)&DAT_0202a85c) {
-      _DAT_0202a85c = *(uint *)aabb_min;
-      _DAT_0202a864 = *(uint *)&aabb_min->field_0x8;
-      _DAT_0202a860 = *(uint *)&aabb_min->field_0x4;
+      _DAT_0202a85c = aabb_min->x;
+      _DAT_0202a864 = aabb_min->z;
+      _DAT_0202a860 = aabb_min->y;
     }
     if (aabb_max != (CVector3f *)&DAT_0202a868) {
-      _DAT_0202a868 = *(uint *)aabb_max;
-      _DAT_0202a870 = *(uint *)&aabb_max->field_0x8;
-      _DAT_0202a86c = *(uint *)&aabb_max->field_0x4;
+      _DAT_0202a868 = aabb_max->x;
+      _DAT_0202a870 = aabb_max->z;
+      _DAT_0202a86c = aabb_max->y;
     }
     if (rotation_matrix == (CMatrix3x3f *)0x0) {
       _DAT_0202a878 = rotation_matrix;
@@ -54,7 +54,7 @@ void __cdecl core_set_cpp_CDemonSet_setLightingParameters_FUN_00551c30(CDemonSet
     puVar2 = (uint *)&DAT_0202a874;
     for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
       *puVar2 = *(uint *)rotation_matrix;
-      rotation_matrix = rotation_matrix + 4;
+      rotation_matrix = (CMatrix3x3f *)((int)rotation_matrix + 4);
       puVar2 = puVar2 + 1;
     }
     _DAT_0202a840 = 2;

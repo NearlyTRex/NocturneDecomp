@@ -2,30 +2,30 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 80,
+    "complexity_score": 84,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 50,
+    "pseudocode_lines": 54,
     "suspect_count": 2,
     "suspect_types": [
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 151
+    "total_lines": 155
   },
   "cross_references": [
+    {
+      "addr": "004cf5e0",
+      "from_addr": "004cf680",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004cf5e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "004ce580",
       "from_addr": "004ceeee",
       "name": "core_game.cpp_FUN_004ce580",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004cf5e0",
-      "from_addr": "004cf680",
-      "name": "core_game.cpp_FUN_004cf5e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -57,7 +57,7 @@
     {
       "addr": "005bfb40",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005bfb40"
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
     }
   ],
   "globals": [
@@ -133,7 +133,7 @@
       {
         "call_addr": "004cf680",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004cf5e0",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004cf5e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -191,6 +191,32 @@
       "STORE": 19
     },
     "pcode_op_count": 405
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004807e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004819e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004a2590",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004736d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 68,
@@ -292,7 +318,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 42,
+      "line": 46,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

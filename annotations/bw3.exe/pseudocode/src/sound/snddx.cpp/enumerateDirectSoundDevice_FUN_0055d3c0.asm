@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_snddx_cpp_enumerateDirectSoundDevice_FUN_0055d3c0(int param_1,int param_2)
+; int __cdecl sound_snddx_cpp_enumerateDirectSoundDevice_FUN_0055d3c0(UINT device_id,SSoundDeviceInfo *device_info)
 ;
+; Parameters:
+; UINT             Stack[0x4]:4   device_id
+; SSoundDeviceInfo * Stack[0x8]:4   device_info
 ;
 ; XREF[2]:
 ;   sound_snddx.cpp_getDirectSoundDevice_FUN_0055d470 at 0055d4a4
@@ -14,7 +17,7 @@
 ;
 ; Called Functions:
 ;   crt_dsound.c_DirectSoundEnumerateA
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;
 ; *****************************************************************************
 
@@ -43,7 +46,7 @@ section .text
     XOR ECX,ECX                         ; 0055d3e4
         ;   Label: LAB_0055d3e4
     PUSH ECX                            ; 0055d3e6
-    PUSH 0x55d0e0                       ; 0055d3e7 | LAB_0055d0e0
+    PUSH 0x55d0e0                       ; 0055d3e7
     MOV dword ptr [0x00604510],ECX      ; 0055d3ec | DAT_00604510
     CALL crt_dsound.c_DirectSoundEnumerateA ; 0055d3f2
         ;   XREF to: 005b25ec (UNCONDITIONAL_CALL)  ; HRESULT crt_dsound.c_DirectSoundEnumerateA(LPDSENUMCALLBACKA lp_ds_enum_callback, LPVOID lp_context)
@@ -69,8 +72,8 @@ section .text
     PUSH 0x5d4eec                       ; 0055d44b | = "DirectSound: %s"
     PUSH EBX                            ; 0055d450
     MOV dword ptr [EBX + 0x110],EDX     ; 0055d451
-    CALL crt_unknown.c_FUN_005a28c0     ; 0055d457
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0055d457
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     MOV EAX,0x1                         ; 0055d45c
     ADD ESP,0xc                         ; 0055d461
     POP ESI                             ; 0055d464

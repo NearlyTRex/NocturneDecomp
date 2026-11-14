@@ -7,44 +7,44 @@
 
 // Original: core_cow.cpp_staticInit_FUN_00448340
 // Address: 00448340
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_cow.cpp_factoryFuncZombieCow_FUN_00448370
 // Address: 00448370
-void factoryFuncZombieCow(void);
+CZombieCow * __cdecl factoryFuncZombieCow(void);
 
 // Original: core_cow.cpp_CZombieCow_getActorType_FUN_00448390
 // Address: 00448390
-CDemonActorType * CZombieCow::getActorType(CZombieCow *this_ptr);
+CDemonActorType * __cdecl CZombieCow::getActorType(CZombieCow *this_ptr);
 
 // Original: core_cow.cpp_CZombieCow_ctor_FUN_004483a0
 // Address: 004483a0
-CZombieCow * CZombieCow::ctor(CZombieCow *this_ptr);
+CZombieCow * __cdecl CZombieCow::ctor(CZombieCow *this_ptr);
 
-// Original: core_cow.cpp_FUN_00448410
+// Original: core_cow.cpp_CZombieCow_setup_FUN_00448410
 // Address: 00448410
-void FUN_00448410(CEnemy *param_1);
+void __cdecl CZombieCow::setup(CZombieCow *this_ptr);
 
-// Original: core_cow.cpp_FUN_00448570
+// Original: core_cow.cpp_CZombieCow_process_FUN_00448570
 // Address: 00448570
-void FUN_00448570(CEnemy *param_1,float param_2);
+void __cdecl CZombieCow::process(CZombieCow *this_ptr,float delta_time);
 
-// Original: core_cow.cpp_FUN_00448af0
+// Original: core_cow.cpp_CZombieCow_archive_FUN_00448af0
 // Address: 00448af0
-void FUN_00448af0(CEnemy *param_1);
+void __cdecl CZombieCow::archive(CZombieCow *this_ptr);
 
-// Original: core_cow.cpp_FUN_00448b70
+// Original: core_cow.cpp_CZombieCow_processDismemberment_FUN_00448b70
 // Address: 00448b70
-void __cdecl FUN_00448b70(CZombieCow *this_ptr,SDamageInfo *damage_info);
+void __cdecl CZombieCow::processDismemberment(CZombieCow *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_cow.cpp_FUN_00448df0
+// Original: core_cow.cpp_CZombieCow_processDamage_FUN_00448df0
 // Address: 00448df0
-void FUN_00448df0(CZombieCow *param_1,SDamageInfo *param_2);
+void __cdecl CZombieCow::processDamage(CZombieCow *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_cow.cpp_FUN_00448eb0
+// Original: core_cow.cpp_CZombieCow_getTargetPoints_FUN_00448eb0
 // Address: 00448eb0
-undefined4 FUN_00448eb0(int param_1,undefined4 *param_2);
+int __cdecl CZombieCow::getTargetPoints(CZombieCow *this_ptr,CVector3f *out_points_array);
 
 // Original: core_cow.cpp_CZombieCow_dtor_FUN_00448f20
 // Address: 00448f20
-CZombieCow * CZombieCow::dtor(CZombieCow *this_ptr,uint flags);
+CZombieCow * __cdecl CZombieCow::dtor(CZombieCow *this_ptr,uint flags);

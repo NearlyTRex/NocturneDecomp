@@ -1,0 +1,204 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 75,
+    "complexity_score": 37,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 9,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 22,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 97
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00583080",
+    "address_range": [
+      [
+        "00583080",
+        "00583153"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_vampboss.cpp_CVampireBoss_archive_FUN_00583080",
+    "signature": "void __cdecl core_vampboss_cpp_CVampireBoss_archive_FUN_00583080(CVampireBoss *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b9e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveActor_FUN_0040b9e0"
+    },
+    {
+      "addr": "0040b8e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b8e0"
+    },
+    {
+      "addr": "0040b960",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b960"
+    },
+    {
+      "addr": "0040bb60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040bb60"
+    },
+    {
+      "addr": "00487ec0",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_archive_FUN_00487ec0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005edacc",
+      "name": "s_human_model_motion_state_005edacb+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005edae5",
+      "name": "s_bat_model_motion_state_005edae5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005edafc",
+      "name": "s_wayPoint0_005edafc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005edb06",
+      "name": "s_wayPoint1_005edb06",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005edb10",
+      "name": "s_wayPoint2_005edb10",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005edb1a",
+      "name": "s_wayPoint3_005edb1a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005edb24",
+      "name": "DAT_005edb24",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005edb29",
+      "name": "s_morphT_005edb29",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061e4bc",
+      "name": "g_CVampireBossClassVersion",
+      "type": "int",
+      "value": "0x4"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.2105263157894735,
+    "instruction_count": 57,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 9,
+      "CBRANCH": 3,
+      "COPY": 34,
+      "INT_ADD": 22,
+      "INT_AND": 26,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 28,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 13,
+      "INT_SUB": 30,
+      "LOAD": 5,
+      "POPCOUNT": 13,
+      "RETURN": 2,
+      "STORE": 27
+    },
+    "pcode_op_count": 240
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005a6cc0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005e6f50",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0054dc70",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CVampireBoss *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_005edb24",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->form,&DAT_005edb24);",
+      "type": "undefined_data"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 220,
+        "vtable_addr": "005fd844"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

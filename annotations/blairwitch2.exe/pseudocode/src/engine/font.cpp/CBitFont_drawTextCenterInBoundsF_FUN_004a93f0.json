@@ -2,20 +2,26 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 39,
-    "cross_reference_count": 3,
+    "complexity_score": 40,
+    "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 9,
+    "pseudocode_lines": 10,
     "suspect_count": 2,
     "suspect_types": [
       "param_count_too_few",
       "stack_ref"
     ],
-    "total_lines": 44
+    "total_lines": 45
   },
   "cross_references": [
+    {
+      "addr": "004eba50",
+      "from_addr": "004ebc2e",
+      "name": "core_menu.cpp_FUN_004eba50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "004ebf10",
       "from_addr": "004ecb4b",
@@ -56,7 +62,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 4,
+    "call_site_count": 5,
     "call_sites": [
       {
         "call_addr": "0047dd3c",
@@ -101,6 +107,17 @@
         "reg_params": [],
         "stack_bytes": 36,
         "stack_params": 9
+      },
+      {
+        "call_addr": "004ebc2e",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004eba50",
+        "estimated_params": 9,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 36,
+        "stack_params": 9
       }
     ],
     "confidence": "low",
@@ -131,6 +148,32 @@
       "STORE": 15
     },
     "pcode_op_count": 122
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004c23a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004b0ff0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004cdf30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00490e30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 52,
@@ -207,7 +250,7 @@
       "type": "stack_ref"
     },
     {
-      "call_site_count": 4,
+      "call_site_count": 5,
       "declared_params": 7,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 9,

@@ -1,0 +1,239 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 108,
+    "complexity_score": 46,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 13,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 31,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 139
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0057f5b0",
+    "address_range": [
+      [
+        "0057f5b0",
+        "0057f6eb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_werewolf.cpp_CWerewolf_archive_FUN_0057f5b0",
+    "signature": "void __cdecl core_werewolf_cpp_CWerewolf_archive_FUN_0057f5b0(CWerewolf *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b930",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveActor_FUN_0040b930"
+    },
+    {
+      "addr": "0040ba30",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveDeformableModelInstance_FUN_0040ba30"
+    },
+    {
+      "addr": "0040b830",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b830"
+    },
+    {
+      "addr": "0040b8b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b8b0"
+    },
+    {
+      "addr": "0040bab0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040bab0"
+    },
+    {
+      "addr": "00489120",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_archive_FUN_00489120"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d7b5b",
+      "name": "s_speed_005d7b5a+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d7b61",
+      "name": "s_modelName_005d7b61",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7b6b",
+      "name": "s_guardDistance_005d7b6b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7b79",
+      "name": "s_motion_state_005d7b79",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7b86",
+      "name": "s_lightUpEyes_005d7b86",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7b92",
+      "name": "s_chainAnchor_005d7b92",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7b9e",
+      "name": "s_chainLength_005d7b9e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7baa",
+      "name": "DAT_005d7baa",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d7baf",
+      "name": "s_phase_005d7baf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7bb5",
+      "name": "s_phaseTimer_005d7bb5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7bc0",
+      "name": "s_alpha1_005d7bc0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7bc7",
+      "name": "s_alpha2_005d7bc7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0060723c",
+      "name": "g_CWerewolfClassVersion",
+      "type": "int",
+      "value": "0x6"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.2073170731707314,
+    "instruction_count": 82,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 13,
+      "CBRANCH": 5,
+      "COPY": 49,
+      "INT_ADD": 30,
+      "INT_AND": 38,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 39,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 19,
+      "INT_SUB": 44,
+      "LOAD": 5,
+      "POPCOUNT": 19,
+      "RETURN": 2,
+      "STORE": 39
+    },
+    "pcode_op_count": 345
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0058d7e0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005b1330",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005f1980",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00557800",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWerewolf *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_005d7baa",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->type,&DAT_005d7baa);",
+      "type": "undefined_data"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWerewolf",
+        "offset": 212,
+        "vtable_addr": "005e63c4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

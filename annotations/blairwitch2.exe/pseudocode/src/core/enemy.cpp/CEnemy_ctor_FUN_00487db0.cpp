@@ -11,29 +11,29 @@ CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_00487db0(CEnemy *this_ptr)
 {
   char cVar1;
   CEnemy *pCVar2;
-  uint uVar3;
+  float fVar3;
   char *pcVar4;
   char *pcVar5;
   
-  pCVar2 = (CEnemy *)core_charactr_cpp_CCharacter_ctor_FUN_00422340((CCharacter *)this_ptr);
-  *(byte **)&pCVar2->field_0x2b0 = &g_CEnemyVTable;
-  uVar3 = core_actor_cpp_FUN_0040cf60(0x3f666666,0x3f8ccccd);
-  *(uint *)&pCVar2->field_0x10a64 = 0;
-  *(uint *)&pCVar2->field_0x10ae8 = 0;
-  *(uint *)&pCVar2->field_0x10a78 = 0;
-  *(uint *)&pCVar2->field_0x10a7c = 0;
-  *(uint *)&pCVar2->field_0x10a80 = 0x42480000;
-  *(uint *)&pCVar2->field_0x10a68 = 1;
-  *(uint *)&pCVar2->field_0x10af0 = 0;
-  *(uint *)&pCVar2->field_0x10a6c = 0;
-  pCVar2->field_0x10a84 = 0;
-  *(uint *)&pCVar2->field_0x10a70 = 0x42c80000;
+  pCVar2 = (CEnemy *)core_charactr_cpp_CCharacter_ctor_FUN_00422340(&this_ptr->base);
+  (pCVar2->base).base.vtable._ub = &g_CEnemyVTable._ub;
+  fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.9,1.1);
+  pCVar2->pool_me = 0;
+  pCVar2->special_form_flag = 0;
+  pCVar2->victim = (CCharacter *)0x0;
+  pCVar2->victim_search_timer = 0.0;
+  pCVar2->victim_search_radius = 50.0;
+  pCVar2->randomize_me = 1;
+  pCVar2->script_victim = (CCharacter *)0x0;
+  pCVar2->is_in_combat = 0;
+  pCVar2->patrol_name_pattern[0] = '\0';
+  pCVar2->guard_distance = 100.0;
   pcVar4 = &DAT_005d2d28;
-  *(uint *)&pCVar2->field_0x10a74 = 0;
-  pcVar5 = &pCVar2->field_0x120;
-  *(uint *)&pCVar2->field_0x10aec = 0x40c00000;
-  *(uint *)&pCVar2->field_0x10af4 = 1;
-  *(uint *)&pCVar2->field_0x10a60 = uVar3;
+  pCVar2->attack_cooldown = 0.0;
+  pcVar5 = (pCVar2->base).base.footstep_sound_code;
+  pCVar2->victim_height = 6.0;
+  pCVar2->allow_pathfind_to_new_targets = 1;
+  pCVar2->speed = fVar3;
   do {
     cVar1 = *pcVar4;
     *pcVar5 = cVar1;
@@ -43,6 +43,6 @@ CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_00487db0(CEnemy *this_ptr)
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  *(uint *)&pCVar2->field_0x259c = 0x3fc90fdb;
+  (pCVar2->base).turn_rate = 1.5707964;
   return pCVar2;
 }

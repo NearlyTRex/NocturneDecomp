@@ -1,0 +1,412 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 243,
+    "complexity_score": 110,
+    "cross_reference_count": 3,
+    "function_call_count": 9,
+    "global_count": 25,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 85,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 328
+  },
+  "cross_references": [
+    {
+      "addr": "0041d270",
+      "from_addr": "0041d27a",
+      "name": "core_boxactor.cpp_CLightActor_archive_FUN_0041d270",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ad9f0",
+      "from_addr": "005ad9f6",
+      "name": "core_mine.cpp_CSpiritMine_archive_FUN_005ad9f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00562460",
+      "from_addr": "00562465",
+      "name": "core_stone.cpp_CTempleStone_archive_FUN_00562460",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0041c7f0",
+    "address_range": [
+      [
+        "0041c7f0",
+        "0041cadc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_boxactor.cpp_CBoxActor_archive_FUN_0041c7f0",
+    "signature": "void __cdecl core_boxactor_cpp_CBoxActor_archive_FUN_0041c7f0(CBoxActor *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b9e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveActor_FUN_0040b9e0"
+    },
+    {
+      "addr": "0040bee0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveBox_FUN_0040bee0"
+    },
+    {
+      "addr": "0040b8e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b8e0"
+    },
+    {
+      "addr": "0040b960",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b960"
+    },
+    {
+      "addr": "0040ba60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60"
+    },
+    {
+      "addr": "0040b550",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveOrientation_FUN_0040b550"
+    },
+    {
+      "addr": "0040b730",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b730"
+    },
+    {
+      "addr": "0040b4b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveVector_FUN_0040b4b0"
+    },
+    {
+      "addr": "0040c330",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c330"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005cc52d",
+      "name": "s_L_modelName_005cc52b+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cc537",
+      "name": "s_weightInPounds_005cc537",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc546",
+      "name": "DAT_005cc546",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cc54a",
+      "name": "DAT_005cc54a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cc54e",
+      "name": "s_loopWavName_005cc54e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc55a",
+      "name": "s_collisionWavName_005cc55a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc56b",
+      "name": "s_canBeCarried_005cc56b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc578",
+      "name": "s_pickupType_005cc578",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc583",
+      "name": "s_carriedByActor_005cc583",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc592",
+      "name": "s_canBePushed_005cc592",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc59e",
+      "name": "s_pushedByActor_005cc59e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc5ac",
+      "name": "s_groundType_005cc5ac",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc5b7",
+      "name": "s_simBox_005cc5b7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc5be",
+      "name": "s_plotInShadowFlag_005cc5be",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc5cf",
+      "name": "s_collisionFlag_005cc5cf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc5dd",
+      "name": "s_isTransparent_005cc5dd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc5eb",
+      "name": "s_dontUseNormals_005cc5eb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc5fa",
+      "name": "s_descriptiveName_005cc5fa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc60a",
+      "name": "s_constrainExtentsActor_005cc60a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc620",
+      "name": "s_useEvent_005cc620",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc629",
+      "name": "s_allowedMeleeAttackTypes_005cc629",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc641",
+      "name": "s_pushSound_005cc641",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc64b",
+      "name": "s_blockVirtualDirectorFlag_005cc64b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc664",
+      "name": "s_camOrient_005cc664",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0060995c",
+      "name": "g_CBoxActorClassVersion",
+      "type": "int",
+      "value": "0x10"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "0041d27a",
+        "call_type": "direct",
+        "caller": "core_boxactor.cpp_CLightActor_archive_FUN_0041d270",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00562465",
+        "call_type": "direct",
+        "caller": "core_stone.cpp_CTempleStone_archive_FUN_00562460",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005ad9f6",
+        "call_type": "direct",
+        "caller": "core_mine.cpp_CSpiritMine_archive_FUN_005ad9f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.286516853932584,
+    "instruction_count": 178,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 5,
+      "CALL": 25,
+      "CBRANCH": 15,
+      "COPY": 107,
+      "INT_ADD": 64,
+      "INT_AND": 89,
+      "INT_CARRY": 28,
+      "INT_EQUAL": 89,
+      "INT_LESS": 15,
+      "INT_NOTEQUAL": 12,
+      "INT_SBORROW": 15,
+      "INT_SCARRY": 28,
+      "INT_SLESS": 44,
+      "INT_SUB": 91,
+      "LOAD": 8,
+      "POPCOUNT": 44,
+      "RETURN": 2,
+      "STORE": 81
+    },
+    "pcode_op_count": 763
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00422760",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0041fb90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9622
+    },
+    "nocedit.exe": {
+      "addr": "00422060",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9799
+    },
+    "nocturne.exe": {
+      "addr": "0041ec60",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9799
+    }
+  },
+  "stack_frame": {
+    "frame_size": 276,
+    "local_size": 272,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10c",
+        "offset": -268,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBoxActor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_005cc546",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->fps,&DAT_005cc546);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_005cc54a",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveVector_FUN_0040b4b0(&this_ptr->rpm,&DAT_005cc54a);",
+      "type": "undefined_data"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 220,
+        "vtable_addr": "005f3a24"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 220,
+        "vtable_addr": "00600e34"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 220,
+        "vtable_addr": "00601094"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 3
+  }
+}

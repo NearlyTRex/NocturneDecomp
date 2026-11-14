@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 475,
-    "complexity_score": 1100,
+    "complexity_score": 1101,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 200,
+    "pseudocode_lines": 201,
     "suspect_count": 86,
     "suspect_types": [
       "param_count_too_few",
@@ -19,13 +19,13 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 675
+    "total_lines": 676
   },
   "cross_references": [
     {
       "addr": "00420000",
       "from_addr": "004200f9",
-      "name": "core_bugs.cpp_FUN_00420000",
+      "name": "core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00420000",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -46,28 +46,28 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_bugs.cpp_FUN_00420840",
-    "signature": "undefined4 core_bugs_cpp_FUN_00420840(undefined4 param_1,int *param_2,float param_3,float *param_4)"
+    "signature": "undefined4 core_bugs_cpp_FUN_00420840(CBugs *param_1,int *param_2,float param_3,float *param_4)"
   },
   "function_calls": [
     {
       "addr": "0040cf60",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cf60"
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60"
     },
     {
       "addr": "0040d0c0",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040d0c0"
+      "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0"
     },
     {
       "addr": "0041feb0",
       "is_variadic": false,
-      "name": "core_bugs.cpp_FUN_0041feb0"
+      "name": "core_bugs.cpp_CBugs_sampleGroundHeight_FUN_0041feb0"
     },
     {
       "addr": "005838f0",
       "is_variadic": false,
-      "name": "core_vecdir.cpp_FUN_005838f0"
+      "name": "core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0"
     }
   ],
   "globals": [
@@ -126,7 +126,7 @@
       {
         "call_addr": "004200f9",
         "call_type": "direct",
-        "caller": "core_bugs.cpp_FUN_00420000",
+        "caller": "core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00420000",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -200,6 +200,20 @@
       "STORE": 123
     },
     "pcode_op_count": 2942
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00426870",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00422a00",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 240,
@@ -606,7 +620,7 @@
       "line": 5,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint core_bugs_cpp_FUN_00420840(uint param_1,int *param_2,float param_3,float *param_4)",
+      "text": "uint core_bugs_cpp_FUN_00420840(CBugs *param_1,int *param_2,float param_3,float *param_4)",
       "type": "unnamed_param"
     },
     {
@@ -614,7 +628,7 @@
       "line": 5,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint core_bugs_cpp_FUN_00420840(uint param_1,int *param_2,float param_3,float *param_4)",
+      "text": "uint core_bugs_cpp_FUN_00420840(CBugs *param_1,int *param_2,float param_3,float *param_4)",
       "type": "unnamed_param"
     },
     {
@@ -622,7 +636,7 @@
       "line": 5,
       "match": "param_3",
       "severity": "mild",
-      "text": "uint core_bugs_cpp_FUN_00420840(uint param_1,int *param_2,float param_3,float *param_4)",
+      "text": "uint core_bugs_cpp_FUN_00420840(CBugs *param_1,int *param_2,float param_3,float *param_4)",
       "type": "unnamed_param"
     },
     {
@@ -630,12 +644,12 @@
       "line": 5,
       "match": "param_4",
       "severity": "mild",
-      "text": "uint core_bugs_cpp_FUN_00420840(uint param_1,int *param_2,float param_3,float *param_4)",
+      "text": "uint core_bugs_cpp_FUN_00420840(CBugs *param_1,int *param_2,float param_3,float *param_4)",
       "type": "unnamed_param"
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 11,
+      "line": 10,
       "match": "afStackY_10c0",
       "severity": "moderate",
       "text": "float afStackY_10c0 [1011];",
@@ -643,7 +657,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 57,
       "match": "param_2",
       "severity": "mild",
       "text": "if (*param_2 != 0) {",
@@ -651,7 +665,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 61,
+      "line": 60,
       "match": "param_2",
       "severity": "mild",
       "text": "local_28 = (float *)(param_2 + 8);",
@@ -659,7 +673,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
+      "line": 61,
       "match": "param_2",
       "severity": "mild",
       "text": "local_30 = (float *)(param_2 + 2);",
@@ -667,7 +681,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 64,
+      "line": 63,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_e0 = (float)param_2[9] - (float)param_2[3];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 63,
       "match": "param_2",
       "severity": "mild",
       "text": "local_e0 = (float)param_2[9] - (float)param_2[3];",
@@ -676,14 +698,6 @@
     {
       "description": "Unnamed function parameter",
       "line": 64,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_e0 = (float)param_2[9] - (float)param_2[3];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 65,
       "match": "param_2",
       "severity": "mild",
       "text": "local_dc = (float)param_2[10] - (float)param_2[4];",
@@ -691,7 +705,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 64,
       "match": "param_2",
       "severity": "mild",
       "text": "local_dc = (float)param_2[10] - (float)param_2[4];",
@@ -702,7 +716,7 @@
       "line": 72,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_18 = (float)core_bugs_cpp_FUN_0041feb0(param_1,param_2[2],param_2[4]);",
+      "text": "(param_1,(float)param_2[2],(float)param_2[4]);",
       "type": "unnamed_param"
     },
     {
@@ -710,7 +724,7 @@
       "line": 72,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_18 = (float)core_bugs_cpp_FUN_0041feb0(param_1,param_2[2],param_2[4]);",
+      "text": "(param_1,(float)param_2[2],(float)param_2[4]);",
       "type": "unnamed_param"
     },
     {
@@ -718,7 +732,7 @@
       "line": 72,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_18 = (float)core_bugs_cpp_FUN_0041feb0(param_1,param_2[2],param_2[4]);",
+      "text": "(param_1,(float)param_2[2],(float)param_2[4]);",
       "type": "unnamed_param"
     },
     {
@@ -755,26 +769,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 81,
+      "line": 82,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_18 = (float)core_bugs_cpp_FUN_0041feb0(param_1,param_2[8],param_2[10]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 81,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_18 = (float)core_bugs_cpp_FUN_0041feb0(param_1,param_2[8],param_2[10]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 81,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_18 = (float)core_bugs_cpp_FUN_0041feb0(param_1,param_2[8],param_2[10]);",
+      "text": "(param_1,(float)param_2[8],(float)param_2[10]);",
       "type": "unnamed_param"
     },
     {
@@ -782,28 +780,44 @@
       "line": 82,
       "match": "param_2",
       "severity": "mild",
+      "text": "(param_1,(float)param_2[8],(float)param_2[10]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 82,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_1,(float)param_2[8],(float)param_2[10]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 83,
+      "match": "param_2",
+      "severity": "mild",
       "text": "param_2[9] = (int)local_18;",
       "type": "unnamed_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 88,
+      "line": 89,
       "match": "&stack0xffffff38",
       "severity": "moderate",
-      "text": "(float)*(uint *)((int)&stack0xffffff38 + (uint)bVar3 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 90,
-      "match": "&stack0xffffff3c",
-      "severity": "moderate",
-      "text": "(float)*(uint *)((int)&stack0xffffff3c + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
+      "text": "(float)*(uint *)((int)&stack0xffffff38 + (uint)bVar2 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 91,
+      "match": "&stack0xffffff3c",
+      "severity": "moderate",
+      "text": "(float)*(uint *)((int)&stack0xffffff3c + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 92,
       "match": "&stack0xffffff1c",
       "severity": "moderate",
       "text": "if (&stack0xffffff1c != local_a4 + 0xb) {",
@@ -811,7 +825,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 99,
+      "line": 100,
       "match": "param_4",
       "severity": "mild",
       "text": "if (param_4 != local_28) {",
@@ -819,7 +833,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 100,
+      "line": 101,
       "match": "param_4",
       "severity": "mild",
       "text": "*local_28 = *param_4;",
@@ -827,7 +841,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 101,
+      "line": 102,
       "match": "param_4",
       "severity": "mild",
       "text": "local_28[1] = param_4[1];",
@@ -835,7 +849,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 102,
+      "line": 103,
       "match": "param_4",
       "severity": "mild",
       "text": "local_28[2] = param_4[2];",
@@ -843,15 +857,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 104,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_a4[2] = (float)param_2[8] - (float)param_2[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 104,
+      "line": 105,
       "match": "param_2",
       "severity": "mild",
       "text": "local_a4[2] = (float)param_2[8] - (float)param_2[2];",
@@ -862,12 +868,12 @@
       "line": 105,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_a4[3] = (float)param_2[9] - (float)param_2[3];",
+      "text": "local_a4[2] = (float)param_2[8] - (float)param_2[2];",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 105,
+      "line": 106,
       "match": "param_2",
       "severity": "mild",
       "text": "local_a4[3] = (float)param_2[9] - (float)param_2[3];",
@@ -878,12 +884,12 @@
       "line": 106,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_94 = (float)param_2[10] - (float)param_2[4];",
+      "text": "local_a4[3] = (float)param_2[9] - (float)param_2[3];",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 106,
+      "line": 107,
       "match": "param_2",
       "severity": "mild",
       "text": "local_94 = (float)param_2[10] - (float)param_2[4];",
@@ -894,36 +900,44 @@
       "line": 107,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_d8 = (float)param_2[8] - (float)param_2[2];",
+      "text": "local_94 = (float)param_2[10] - (float)param_2[4];",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 107,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_d8 = (float)param_2[8] - (float)param_2[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Direct stack address reference",
       "line": 108,
-      "match": "&stack0xffffff2c",
-      "severity": "moderate",
-      "text": "(&stack0xffffff2c)[(uint)bVar3 * 0xfffffffe] = local_a4[(uint)bVar3 * 0xfffffffe + 3];",
-      "type": "stack_ref"
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_d8 = (float)param_2[8] - (float)param_2[2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 108,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_d8 = (float)param_2[8] - (float)param_2[2];",
+      "type": "unnamed_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 109,
-      "match": "&stack0xffffff30",
+      "match": "&stack0xffffff2c",
       "severity": "moderate",
-      "text": "*(float *)((int)&stack0xffffff30 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
+      "text": "(&stack0xffffff2c)[(uint)bVar2 * 0xfffffffe] = local_a4[(uint)bVar2 * 0xfffffffe + 3];",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 111,
+      "line": 110,
+      "match": "&stack0xffffff30",
+      "severity": "moderate",
+      "text": "*(float *)((int)&stack0xffffff30 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 112,
       "match": "&stack0xffffff1c",
       "severity": "moderate",
       "text": "if (&stack0xffffff1c != &stack0xffffff28) {",
@@ -931,7 +945,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 111,
+      "line": 112,
       "match": "&stack0xffffff28",
       "severity": "moderate",
       "text": "if (&stack0xffffff1c != &stack0xffffff28) {",
@@ -939,15 +953,15 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 123,
+      "line": 124,
       "match": "&stack0xffffff1c",
       "severity": "moderate",
-      "text": "core_vecdir_cpp_FUN_005838f0(&stack0xffffff1c);",
+      "text": "core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&stack0xffffff1c);",
       "type": "stack_ref"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 132,
+      "line": 133,
       "match": "param_3",
       "severity": "mild",
       "text": "local_3c = _DAT_005f3e30 * param_3;",
@@ -955,7 +969,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 133,
+      "line": 134,
       "match": "param_3",
       "severity": "mild",
       "text": "if (local_e8 < _DAT_005f3e30 * param_3) {",
@@ -963,7 +977,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 140,
+      "line": 141,
       "match": "param_2",
       "severity": "mild",
       "text": "local_60 = (float)param_2[2] + local_e4;",
@@ -971,7 +985,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 141,
+      "line": 142,
       "match": "param_2",
       "severity": "mild",
       "text": "local_5c[0] = (float)param_2[3] + local_e0;",
@@ -979,7 +993,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 142,
+      "line": 143,
       "match": "param_2",
       "severity": "mild",
       "text": "local_5c[1] = (float)param_2[4] + local_dc;",
@@ -987,15 +1001,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 144,
+      "line": 145,
       "match": "(float *)((int)local_a4",
       "severity": "moderate",
-      "text": "*(float *)((int)local_a4 + (uint)bVar3 * -8) = local_5c[(uint)bVar3 * 0xfffffffe];",
+      "text": "*(float *)((int)local_a4 + (uint)bVar2 * -8) = local_5c[(uint)bVar2 * 0xfffffffe];",
       "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 147,
+      "line": 148,
       "match": "param_2",
       "severity": "mild",
       "text": "local_2c = (float *)(param_2 + 2);",
@@ -1003,15 +1017,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 148,
+      "line": 149,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_18 = (float)core_bugs_cpp_FUN_0041feb0(param_1,local_a8,local_a4[1]);",
+      "text": "local_18 = core_bugs_cpp_CBugs_sampleGroundHeight_FUN_0041feb0(param_1,local_a8,local_a4[1]);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 150,
+      "line": 151,
       "match": "param_2",
       "severity": "mild",
       "text": "if (local_18 - (float)param_2[3] <= local_e8 * (float)_DAT_005cca59) {",
@@ -1019,7 +1033,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 156,
+      "line": 157,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((float)param_2[3] < local_18) {",
@@ -1027,7 +1041,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 157,
+      "line": 158,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2[3] = (int)local_18;",
@@ -1035,7 +1049,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 162,
+      "line": 163,
       "match": "param_2",
       "severity": "mild",
       "text": "fVar1 = (float)param_2[3] - local_3c;",
@@ -1043,7 +1057,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 166,
+      "line": 167,
       "match": "param_2",
       "severity": "mild",
       "text": "fVar1 = (float)param_2[3] + local_3c;",
@@ -1051,7 +1065,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 169,
+      "line": 170,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2[3] = (int)fVar1;",
@@ -1059,7 +1073,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 171,
+      "line": 172,
       "match": "param_2",
       "severity": "mild",
       "text": "local_b4 = local_90 - (float)param_2[5];",
@@ -1067,7 +1081,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 172,
+      "line": 173,
       "match": "param_2",
       "severity": "mild",
       "text": "local_b0 = local_8c - (float)param_2[6];",
@@ -1075,7 +1089,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 173,
+      "line": 174,
       "match": "param_2",
       "severity": "mild",
       "text": "local_ac = local_88 - (float)param_2[7];",
@@ -1083,7 +1097,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 174,
+      "line": 175,
       "match": "param_2",
       "severity": "mild",
       "text": "local_c0 = local_90 - (float)param_2[5];",
@@ -1091,39 +1105,39 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 175,
+      "line": 176,
       "match": "&stack0xffffff44",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff44 + (uint)bVar3 * -8) =",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 176,
-      "match": "&stack0xffffff50",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff50 + (uint)bVar3 * -8);",
+      "text": "*(uint *)((int)&stack0xffffff44 + (uint)bVar2 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 177,
-      "match": "&stack0xffffff48",
+      "match": "&stack0xffffff50",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffff48 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffff50 + (uint)bVar2 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 178,
+      "match": "&stack0xffffff48",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffff48 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 179,
       "match": "&stack0xffffff54",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff54 + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
+      "text": "*(uint *)((int)&stack0xffffff54 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 182,
+      "line": 183,
       "match": "param_3",
       "severity": "mild",
       "text": "local_34 = param_3 * _DAT_005cca61 * _DAT_005cca65;",
@@ -1131,18 +1145,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 198,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_18 = (float)core_actor_cpp_FUN_0040d0c0((float)param_2[6] + local_44);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 199,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[7] = 0;",
+      "text": "local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0((float)param_2[6] + local_44);",
       "type": "unnamed_param"
     },
     {
@@ -1150,7 +1156,7 @@
       "line": 200,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[6] = (int)local_18;",
+      "text": "param_2[7] = 0;",
       "type": "unnamed_param"
     },
     {
@@ -1158,7 +1164,7 @@
       "line": 201,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = core_actor_cpp_FUN_0040d0c0((float)param_2[5] + local_38);",
+      "text": "param_2[6] = (int)local_18;",
       "type": "unnamed_param"
     },
     {
@@ -1166,87 +1172,87 @@
       "line": 202,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[5] = iVar2;",
+      "text": "fVar1 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0((float)param_2[5] + local_38);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 203,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2[5] = (int)fVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Pointer value `&stack0xffffff38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 88,
+      "line": 89,
       "match": "(int)&stack0xffffff38",
       "severity": "moderate",
-      "text": "(float)*(uint *)((int)&stack0xffffff38 + (uint)bVar3 * -8);",
+      "text": "(float)*(uint *)((int)&stack0xffffff38 + (uint)bVar2 * -8);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&stack0xffffff3c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 90,
+      "line": 91,
       "match": "(int)&stack0xffffff3c",
       "severity": "moderate",
-      "text": "(float)*(uint *)((int)&stack0xffffff3c + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
+      "text": "(float)*(uint *)((int)&stack0xffffff3c + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&stack0xffffff30` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 109,
+      "line": 110,
       "match": "(int)&stack0xffffff30",
       "severity": "moderate",
-      "text": "*(float *)((int)&stack0xffffff30 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
+      "text": "*(float *)((int)&stack0xffffff30 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&stack0xffffff44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 175,
+      "line": 176,
       "match": "(int)&stack0xffffff44",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff44 + (uint)bVar3 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffff44 + (uint)bVar2 * -8) =",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&stack0xffffff50` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 176,
+      "line": 177,
       "match": "(int)&stack0xffffff50",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff50 + (uint)bVar3 * -8);",
+      "text": "*(uint *)((int)&stack0xffffff50 + (uint)bVar2 * -8);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&stack0xffffff54` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 178,
+      "line": 179,
       "match": "(int)&stack0xffffff54",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff54 + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
+      "text": "*(uint *)((int)&stack0xffffff54 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
       "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 88,
+      "line": 89,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "(float)*(uint *)((int)&stack0xffffff38 + (uint)bVar3 * -8);",
+      "text": "(float)*(uint *)((int)&stack0xffffff38 + (uint)bVar2 * -8);",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 90,
+      "line": 91,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "(float)*(uint *)((int)&stack0xffffff3c + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
+      "text": "(float)*(uint *)((int)&stack0xffffff3c + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 109,
+      "line": 110,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&stack0xffffff30 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 175,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff44 + (uint)bVar3 * -8) =",
+      "text": "*(float *)((int)&stack0xffffff30 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
       "type": "pointer_cast"
     },
     {
@@ -1254,15 +1260,23 @@
       "line": 176,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff50 + (uint)bVar3 * -8);",
+      "text": "*(uint *)((int)&stack0xffffff44 + (uint)bVar2 * -8) =",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 178,
+      "line": 177,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff54 + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
+      "text": "*(uint *)((int)&stack0xffffff50 + (uint)bVar2 * -8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 179,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffff54 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
       "type": "pointer_cast"
     },
     {

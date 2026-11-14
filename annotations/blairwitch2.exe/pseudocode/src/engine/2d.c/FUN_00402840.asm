@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   cockpit_drawsurf.cpp_FUN_00467f70 at 00468204
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00467f70 at 00468204
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00609370

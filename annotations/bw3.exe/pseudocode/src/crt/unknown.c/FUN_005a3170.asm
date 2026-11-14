@@ -20,7 +20,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0x8]       ; 005a3175
     PUSH EDX                            ; 005a3178
     CALL crt_stdio.c_fgetc_FUN_005a32b0 ; 005a3179
-        ;   XREF to: 005a32b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005a32b0()
+        ;   XREF to: 005a32b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005a32b0(_FILE * file)
     ADD ESP,0x4                         ; 005a317e
     MOV EDX,EAX                         ; 005a3181
     CMP EAX,-0x1                        ; 005a3183

@@ -9,5 +9,5 @@
 EGroundType __cdecl core_boxactor_cpp_CBoxActor_getGroundType_FUN_00422ce0(CBoxActor *this_ptr)
 
 {
-  return *(EGroundType *)&this_ptr->field_0x5f0;
+  return this_ptr->ground_type;
 }

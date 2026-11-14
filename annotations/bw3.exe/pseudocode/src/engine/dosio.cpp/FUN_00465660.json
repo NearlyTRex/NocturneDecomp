@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 12,
     "complexity_score": 101,
-    "cross_reference_count": 6,
+    "cross_reference_count": 7,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
@@ -36,6 +36,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00514c20",
+      "from_addr": "00514c48",
+      "name": "engine_pod.cpp_CPod_locateFile_FUN_00514c20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00512fb0",
       "from_addr": "00513005",
       "name": "engine_pod.cpp_FUN_00512fb0",
@@ -50,7 +56,7 @@
     {
       "addr": "00573fc0",
       "from_addr": "00573ff3",
-      "name": "support_trstream.cpp_FUN_00573fc0",
+      "name": "support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -82,7 +88,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 8,
+    "call_site_count": 9,
     "call_sites": [
       {
         "call_addr": "004659e7",
@@ -156,7 +162,7 @@
       {
         "call_addr": "00573ff3",
         "call_type": "direct",
-        "caller": "support_trstream.cpp_FUN_00573fc0",
+        "caller": "support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -195,6 +201,22 @@
         ],
         "stack_bytes": 12,
         "stack_params": 3
+      },
+      {
+        "call_addr": "00514c48",
+        "call_type": "direct",
+        "caller": "engine_pod.cpp_CPod_locateFile_FUN_00514c20",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 12,
+        "stack_params": 3
       }
     ],
     "confidence": "low",
@@ -222,6 +244,20 @@
       "STORE": 5
     },
     "pcode_op_count": 41
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00460910",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00478e20",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,
@@ -289,7 +325,7 @@
       "type": "unnamed_param"
     },
     {
-      "call_site_count": 8,
+      "call_site_count": 9,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 6,

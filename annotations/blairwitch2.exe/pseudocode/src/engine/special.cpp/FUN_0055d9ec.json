@@ -17,9 +17,15 @@
   },
   "cross_references": [
     {
+      "addr": "005a86a0",
+      "from_addr": "005a870d",
+      "name": "core_bwspart.cpp_FUN_005a86a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "005b56c0",
       "from_addr": "005b5843",
-      "name": "core_chain.cpp_FUN_005b56c0",
+      "name": "core_chain.cpp_CChain_renderTransparent_FUN_005b56c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -35,9 +41,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00495150",
+      "from_addr": "004951a9",
+      "name": "core_fire.cpp_CFirefly_render_FUN_00495150",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049abd0",
+      "from_addr": "0049afcb",
+      "name": "core_fire.cpp_CLightningBolt_render_FUN_0049abd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0049b9d0",
       "from_addr": "0049ba16",
       "name": "core_fire.cpp_CPopcorn_render_FUN_0049b9d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049bd40",
+      "from_addr": "0049bd86",
+      "name": "core_fire.cpp_CRainDrop_render_FUN_0049bd40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049b6f0",
+      "from_addr": "0049b741",
+      "name": "core_fire.cpp_CShell_render_FUN_0049b6f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -49,37 +79,13 @@
     {
       "addr": "004947a0",
       "from_addr": "004947f2",
-      "name": "core_fire.cpp_FUN_004947a0",
+      "name": "core_fire.cpp_CSpark_render_FUN_004947a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00495150",
-      "from_addr": "004951a9",
-      "name": "core_fire.cpp_FUN_00495150",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0049abd0",
-      "from_addr": "0049afcb",
-      "name": "core_fire.cpp_FUN_0049abd0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0049b6f0",
-      "from_addr": "0049b741",
-      "name": "core_fire.cpp_FUN_0049b6f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0049bd40",
-      "from_addr": "0049bd86",
-      "name": "core_fire.cpp_FUN_0049bd40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0049eb8e",
+      "addr": "0049eb90",
       "from_addr": "0049ebc4",
-      "name": "core_fire.cpp_FUN_0049eb8e",
+      "name": "core_fire.cpp_transformWorldToScreen_FUN_0049eb90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -113,21 +119,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004fad5e",
+      "addr": "004fad60",
       "from_addr": "004fada0",
-      "name": "core_mirror.cpp_FUN_004fad5e",
+      "name": "core_mirror.cpp_FUN_004fad60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0058ad40",
       "from_addr": "0058aee6",
-      "name": "core_weather.cpp_FUN_0058ad40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005a86a0",
-      "from_addr": "005a870d",
-      "name": "unkafter_superopt.cpp_FUN_005a86a0",
+      "name": "core_weather.cpp_CWeather_renderParticles_FUN_0058ad40",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -479,7 +479,7 @@
       "line": 61,
       "match": "DAT_0061c7d8",
       "severity": "mild",
-      "text": "DAT_0061c7d8 = *(int *)input - _DAT_01c38b78;",
+      "text": "DAT_0061c7d8 = input->x - _DAT_01c38b78;",
       "type": "undefined_data"
     },
     {
@@ -487,7 +487,7 @@
       "line": 62,
       "match": "DAT_0061c7dc",
       "severity": "mild",
-      "text": "DAT_0061c7dc = *(int *)(input + 4) - _DAT_01c38b7c;",
+      "text": "DAT_0061c7dc = input->y - _DAT_01c38b7c;",
       "type": "undefined_data"
     },
     {
@@ -495,7 +495,7 @@
       "line": 63,
       "match": "DAT_0061c7e0",
       "severity": "mild",
-      "text": "DAT_0061c7e0 = *(int *)(input + 8) - _DAT_01c38b80;",
+      "text": "DAT_0061c7e0 = input->z - _DAT_01c38b80;",
       "type": "undefined_data"
     },
     {
@@ -615,7 +615,7 @@
       "line": 95,
       "match": "DAT_0061c7e8",
       "severity": "mild",
-      "text": "*(uint *)output = DAT_0061c7e8;",
+      "text": "output->transformed_x = DAT_0061c7e8;",
       "type": "undefined_data"
     },
     {
@@ -639,7 +639,7 @@
       "line": 107,
       "match": "DAT_0061c7e8",
       "severity": "mild",
-      "text": "*(uint *)output = DAT_0061c7e8;",
+      "text": "output->transformed_x = DAT_0061c7e8;",
       "type": "undefined_data"
     }
   ]

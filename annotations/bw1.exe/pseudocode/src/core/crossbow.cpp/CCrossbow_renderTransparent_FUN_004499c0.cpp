@@ -9,9 +9,9 @@
 int __cdecl core_crossbow_cpp_CCrossbow_renderTransparent_FUN_004499c0(CCrossbow *this_ptr)
 
 {
-  if (*(int *)&this_ptr->field_0x578 == 0) {
+  if (this_ptr->flame_active == 0) {
     return 0;
   }
-  core_flame_cpp_CFlame_renderTransparent_FUN_004b8100((CFlame *)&this_ptr->field_0x57c);
+  core_flame_cpp_CFlame_renderTransparent_FUN_004b8100(&this_ptr->bolt_flame);
   return 1;
 }

@@ -9,10 +9,10 @@
 void __cdecl core_motion_cpp_CMotionController_reset_FUN_005035f0(CMotionController *this_ptr)
 
 {
-  *(uint *)&this_ptr->field_0x4 = 0;
-  *(uint *)&this_ptr->field_0x8 = 0;
-  *(uint *)&this_ptr->field_0x2c = 0;
-  *(uint *)&this_ptr->field_0x28 = 0xffffffff;
+  this_ptr->current_motion_index = 0;
+  this_ptr->current_frame_number = 0.0;
+  this_ptr->in_transition = (SMotionTransition *)0x0;
+  this_ptr->state_index = -1;
   core_motion_cpp_CMotionController_clearTweenState_FUN_005039e0(this_ptr);
   return;
 }

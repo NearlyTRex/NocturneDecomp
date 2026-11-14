@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_goggles_cpp_staticInit_FUN_0059c000(void)
+; void __cdecl core_goggles_cpp_staticInit_FUN_0059c000(void)
 ;
 ;
 ; Called Functions:

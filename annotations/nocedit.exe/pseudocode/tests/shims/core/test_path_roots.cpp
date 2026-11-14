@@ -249,6 +249,18 @@ NOCTURNE_TEST(a_data_directory_with_a_pod_has_the_game) {
     CHECK_EQ(message_support::shown, 0);
 }
 
+// A .pod in a subfolder, a package per game, is the game too.
+NOCTURNE_TEST(a_data_directory_with_a_pod_in_a_subfolder_has_the_game) {
+    Run run;
+    run.make("game/nocturne");
+    run.write("game/nocturne/ACT1.POD", "pod");
+    message_support::shown = 0;
+    const char *args[] = {"nocturne", "--data-dir", "game"};
+    Run::init(args);
+    CHECK_EQ(nocturne_check_game_data(), 1);
+    CHECK_EQ(message_support::shown, 0);
+}
+
 // Without one it says where it looked; a data directory asked for is the one
 // named, with no data_dir.txt to suggest.
 NOCTURNE_TEST(without_a_pod_it_says_where_it_looked) {

@@ -11,14 +11,14 @@
 ;
 ; XREF[9]:
 ;   core_doc.cpp_FUN_00455d10 at 004561b6
-;   core_elephant.cpp_FUN_00485a30 at 00485b08
-;   core_lantern.cpp_FUN_0059ccf0 at 0059ce4d
+;   core_elephant.cpp_CElephantGun_process_FUN_00485a30 at 00485b08
+;   core_lantern.cpp_CLantern_process_FUN_0059ccf0 at 0059ce4d
 ;   core_lightgun.cpp_FUN_004e2bf0 at 004e2ca8
 ;   core_set.cpp_FUN_0052fad0 at 0052fbf3
 ;   core_set.cpp_FUN_0052fea0 at 0052ffca
 ;   core_setutil.cpp_C3DSLight_apply_FUN_0053b810 at 0053b876
-;   core_shotgun.cpp_FUN_0053f060 at 0053f138
-;   core_weapon.cpp_FUN_00589fd0 at 0058a181
+;   core_shotgun.cpp_CShotgun_process_FUN_0053f060 at 0053f138
+;   core_weapon.cpp_CWeapon_updateLighting_FUN_00589fd0 at 0058a181
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005cf57f

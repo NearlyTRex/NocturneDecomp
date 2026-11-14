@@ -12,8 +12,8 @@
 ;
 ; XREF[3]:
 ;   core_manpuz.cpp_CMansionPuzzleCircle_initPuzzleState_FUN_00504cb0 at 00504e76
+;   core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00503c90 at 00503e9f
 ;   core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_005058e0 at 005059d9
-;   core_manpuz.cpp_FUN_00503c90 at 00503e9f
 ;
 ; *****************************************************************************
 

@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 168,
-    "complexity_score": 240,
+    "complexity_score": 230,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 60,
-    "suspect_count": 17,
+    "suspect_count": 16,
     "suspect_types": [
       "unnamed_param",
       "warning_overlapping_globals"
@@ -45,6 +45,11 @@
       "name": "core_main.c_FUN_005030e0"
     },
     {
+      "addr": "005c08d0",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005c08d0"
+    },
+    {
       "addr": "005c0d10",
       "is_variadic": false,
       "name": "crt_stdio.c_fclose_FUN_005c0d10"
@@ -60,19 +65,14 @@
       "name": "crt_stdio.c_fseek_FUN_005c170c"
     },
     {
-      "addr": "005bfb40",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005bfb40"
-    },
-    {
-      "addr": "005c08d0",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c08d0"
-    },
-    {
       "addr": "005c09f0",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005c09f0"
+    },
+    {
+      "addr": "005bfb40",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
     },
     {
       "addr": "00479180",
@@ -134,6 +134,14 @@
     },
     "pcode_op_count": 547
   },
+  "siblings": {
+    "bw3.exe": {
+      "addr": "00510a90",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -180,15 +188,7 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "p_Stack_14 = engine_dosio_cpp_FUN_00479180(\"art\",(char *)(param_1 + 8),\"rb\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_005bfb40(auStack_e4,\"Unable to open %s in CPackedBitmapSet::reloadJoinedRAW\",param_1 + 8);",
+      "text": "p_Stack_14 = engine_dosio_cpp_FUN_00479180(\"art\",param_1->filename,\"rb\");",
       "type": "unnamed_param"
     },
     {
@@ -196,7 +196,7 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "size = *(int *)(param_1 + 0x1c) * *(int *)(param_1 + 0x20);",
+      "text": "size = param_1->width * param_1->height;",
       "type": "unnamed_param"
     },
     {
@@ -204,7 +204,7 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "size = *(int *)(param_1 + 0x1c) * *(int *)(param_1 + 0x20);",
+      "text": "size = param_1->width * param_1->height;",
       "type": "unnamed_param"
     },
     {
@@ -212,7 +212,7 @@
       "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)param_1) {",
+      "text": "if (0 < param_1->bitmap_count) {",
       "type": "unnamed_param"
     },
     {
@@ -220,7 +220,7 @@
       "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCStack_1c = param_1 + 8;",
+      "text": "pcStack_1c = param_1->filename;",
       "type": "unnamed_param"
     },
     {
@@ -244,7 +244,7 @@
       "line": 47,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CPackedBitmap *)(*(int *)(param_1 + 4) + iVar3),puStack_18,",
+      "text": "((CPackedBitmap *)(param_1->bitmap_array->filename + iVar3),puStack_18,",
       "type": "unnamed_param"
     },
     {
@@ -252,7 +252,7 @@
       "line": 48,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x1c));",
+      "text": "param_1->width);",
       "type": "unnamed_param"
     },
     {
@@ -260,7 +260,7 @@
       "line": 55,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar2 < *(int *)param_1);",
+      "text": "} while (iVar2 < param_1->bitmap_count);",
       "type": "unnamed_param"
     },
     {

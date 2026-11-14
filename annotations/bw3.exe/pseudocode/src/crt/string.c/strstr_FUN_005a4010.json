@@ -19,19 +19,25 @@
     {
       "addr": "00431000",
       "from_addr": "004310a3",
-      "name": "core_charactr.cpp_FUN_00431000",
+      "name": "core_charactr.cpp_CCharacter_getDeathState_FUN_00431000",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a7920",
+      "from_addr": "004a792a",
+      "name": "core_flashlit.cpp_FUN_004a7920",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004aa810",
       "from_addr": "004aaadb",
-      "name": "core_fldnotes.cpp_FUN_004aa810",
+      "name": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0059b960",
       "from_addr": "0059c194",
-      "name": "core_hino.cpp_FUN_0059b960",
+      "name": "core_hino.cpp_CHino_process_FUN_0059b960",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -49,19 +55,13 @@
     {
       "addr": "00551620",
       "from_addr": "0055181a",
-      "name": "sound_sndmain.cpp_FUN_00551620",
+      "name": "sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00551620",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00551590",
       "from_addr": "0055159d",
       "name": "sound_sndmain.cpp_trimLineAndRemoveComments_FUN_00551590",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004a7920",
-      "from_addr": "004a792a",
-      "name": "unkaddr_004a76f0.cpp_FUN_004a7920",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -85,7 +85,7 @@
       {
         "call_addr": "004aaadb",
         "call_type": "direct",
-        "caller": "core_fldnotes.cpp_FUN_004aa810",
+        "caller": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -107,7 +107,7 @@
       {
         "call_addr": "0055181a",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00551620",
+        "caller": "sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00551620",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -129,7 +129,7 @@
       {
         "call_addr": "0059c194",
         "call_type": "direct",
-        "caller": "core_hino.cpp_FUN_0059b960",
+        "caller": "core_hino.cpp_CHino_process_FUN_0059b960",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -140,7 +140,7 @@
       {
         "call_addr": "0059c58c",
         "call_type": "direct",
-        "caller": "core_hino.cpp_FUN_0059b960",
+        "caller": "core_hino.cpp_CHino_process_FUN_0059b960",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -151,7 +151,7 @@
       {
         "call_addr": "004310a3",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_00431000",
+        "caller": "core_charactr.cpp_CCharacter_getDeathState_FUN_00431000",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -162,7 +162,7 @@
       {
         "call_addr": "004a792a",
         "call_type": "direct",
-        "caller": "unkaddr_004a76f0.cpp_FUN_004a7920",
+        "caller": "core_flashlit.cpp_FUN_004a7920",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -217,6 +217,32 @@
       "STORE": 9
     },
     "pcode_op_count": 526
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005ba9e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005c2dc0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005fedd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00566fe0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 32,

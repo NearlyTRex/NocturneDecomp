@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   core_main.c_FUN_004e44e0 at 004e4c64
+;   core_main.c_initializeGameSystems_FUN_004e44e0 at 004e4c64
 ;   core_menu.cpp_FUN_004e85a0 at 004e8ec7
 ;
 ; Referenced Globals:
@@ -20,9 +20,9 @@
 ; Called Functions:
 ;   core_menu.cpp_showCalibrationTestPattern_FUN_004e8380
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
+;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d400
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460
-;   engine_alphabit.cpp_FUN_0040d400
-;   engine_font.cpp_FUN_004b30f0
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0
 ;   support_newmsg.cpp_getLocalizedString_FUN_00508960
 ;
 ; *****************************************************************************
@@ -40,8 +40,8 @@ section .text
     PUSH 0x58                           ; 004e84ec
     MOV EDX,dword ptr [0x01549ab4]      ; 004e84ee | DAT_01549ab4
     PUSH EDX                            ; 004e84f4
-    CALL engine_font.cpp_FUN_004b30f0   ; 004e84f5
-        ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004b30f0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0 ; 004e84f5
+        ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004e84fa
     PUSH 0x5c72ea                       ; 004e84fd | = "1. Turn off all the lights in your room."
     CALL support_newmsg.cpp_getLocalizedString_FUN_00508960 ; 004e8502
@@ -84,8 +84,8 @@ section .text
         ;   XREF to: 004e8380 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_showCalibrationTestPattern_FUN_004e8380(char * message_text)
     ADD ESP,0x4                         ; 004e8568
     PUSH 0x1d737e8                      ; 004e856b
-    CALL engine_alphabit.cpp_FUN_0040d400 ; 004e8570
-        ;   XREF to: 0040d400 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_FUN_0040d400(CAlphaBitmap * this_ptr)
+    CALL engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d400 ; 004e8570
+        ;   XREF to: 0040d400 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d400(CAlphaBitmap * this_ptr)
     ADD ESP,0x4                         ; 004e8575
     JMP 0x004032b0                      ; 004e8578
         ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)

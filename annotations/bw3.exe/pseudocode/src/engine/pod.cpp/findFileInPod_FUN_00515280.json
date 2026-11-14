@@ -2,24 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 39,
+    "complexity_score": 9,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 9,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_field",
-      "unresolved_funcptr"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 25
   },
   "cross_references": [
     {
       "addr": "004e44e0",
       "from_addr": "004e456e",
-      "name": "core_main.c_FUN_004e44e0",
+      "name": "core_main.c_initializeGameSystems_FUN_004e44e0",
       "type": "DATA"
     }
   ],
@@ -45,7 +42,7 @@
     },
     {
       "addr": "01ed2c84",
-      "name": "g_CDemonPodInstance.field404_0x194",
+      "name": "g_CDemonPodInstance.base.vtable",
       "type": "undefined4",
       "value": null
     }
@@ -82,6 +79,32 @@
     },
     "pcode_op_count": 55
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0051bfa0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0053d520",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00551960",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004f9250",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -98,22 +121,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 10,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*(int *)&g_CDemonPodPtr->field_0x194 + 8))(g_CDemonPodPtr,info);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x194",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)(*(int *)&g_CDemonPodPtr->field_0x194 + 8))(g_CDemonPodPtr,info);",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 121,
+    "complexity_score": 28,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 10,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 26,
-    "suspect_count": 9,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 115
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 28,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 117
   },
   "cross_references": [],
   "function": {
@@ -145,6 +143,32 @@
     },
     "pcode_op_count": 284
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004c5a80",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004cad80",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004ea090",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004acbc0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -161,84 +185,11 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveVector_FUN_0040b1c0(&this_ptr->field_0x158,\"?glassSize\" + 1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x16c",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x16c,\"glassTexture\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x17c",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x17c,\"opacity\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x180",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x180,\"shattered\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x184",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x184,\"breakEvent\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x1e8",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x1e8,\"mirrorFlag\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x30c",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x30c,\"breakableCondition\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x370",
-      "severity": "mild",
-      "text": "((int *)&this_ptr->field_0x370,\"backgroundFlag\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x37c",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x37c,\"brokenTexture\");",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CGlass",
         "offset": 212,
         "vtable_addr": "00601474"
       }

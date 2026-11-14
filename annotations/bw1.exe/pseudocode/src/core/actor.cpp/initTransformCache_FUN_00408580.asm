@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_initTransformCache_FUN_00408580(undefined4 *param_1)
+; CDemonActorTransformState * __cdecl core_actor_cpp_initTransformCache_FUN_00408580(CDemonActorTransformState *transform_cache)
 ;
+; Parameters:
+; CDemonActorTransformState * Stack[0x4]:4   transform_cache
 ;
 ; XREF[1]:
 ;   core_actor.cpp_CDemonActor_ctor_FUN_004085c0 at 004085ce

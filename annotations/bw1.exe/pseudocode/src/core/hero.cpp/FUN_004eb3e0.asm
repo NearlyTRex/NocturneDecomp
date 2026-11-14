@@ -16,13 +16,14 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[6]:
-;   core_gabriela.cpp_FUN_004c65f0 at 004c7899
-;   core_haystack.cpp_FUN_004e9250 at 004e96dd
+; XREF[7]:
+;   core_colonel.cpp_CColonel_process_FUN_00444550 at 004449af
+;   core_gabriela.cpp_CGabriella_process_FUN_004c65f0 at 004c7899
+;   core_haystack.cpp_CHaystack_process_FUN_004e9250 at 004e96dd
 ;   core_hero.cpp_FUN_004eca10 at 004ecac1
-;   core_icepick.cpp_FUN_004f0e50 at 004f1402
-;   core_stranger.cpp_FUN_00591120 at 00591191
-;   core_svetlana.cpp_FUN_00593150 at 005936c7
+;   core_icepick.cpp_CIcePick_process_FUN_004f0e50 at 004f1402
+;   core_stranger.cpp_CStranger_handleActionButton_FUN_00591120 at 00591191
+;   core_svetlana.cpp_CSvetlana_process_FUN_00593150 at 005936c7
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e4845
@@ -30,14 +31,14 @@
 ;   undefined4 DAT_005e4855
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 g_CDoorClassInfo.name_hash
-;   undefined4 g_CDemonSetInstance.field1364324_0x14d164
-;   undefined4 g_CDemonSetInstance.field1364328_0x14d168
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
 ;   core_actor.cpp_FUN_00408bb0
 ;   core_door.cpp_CDoor_getMoveType_FUN_00478b40
-;   core_vecdir.cpp_FUN_005a7520
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
 ;
 ; *****************************************************************************
 
@@ -59,7 +60,7 @@ section .text
     MOV EAX,[0x00622c18]                ; 004eb3ff | g_CDemonSetPtr
         ;   Label: LAB_004eb3ff
     MOV EBX,dword ptr [ESP + 0x3c]      ; 004eb404
-    CMP EBX,dword ptr [EAX + 0x14d164]  ; 004eb408 | g_CDemonSetInstance.field1364324_0x14d164
+    CMP EBX,dword ptr [EAX + 0x14d164]  ; 004eb408 | g_CDemonSetInstance.actor_count
     JL 0x004eb429                       ; 004eb40e
         ;   XREF to: 004eb429 (CONDITIONAL_JUMP)  ; LAB_004eb429
     MOV EAX,dword ptr [EBP + 0x14]      ; 004eb410
@@ -77,10 +78,10 @@ section .text
     MOV EDI,dword ptr [0x01b68928]      ; 004eb42d | g_CDoorClassInfo.name_hash
     ADD EAX,EDX                         ; 004eb433
     PUSH EDI                            ; 004eb435
-    MOV ECX,dword ptr [EAX + 0x14d168]  ; 004eb436 | g_CDemonSetInstance.field1364328_0x14d168
+    MOV ECX,dword ptr [EAX + 0x14d168]  ; 004eb436 | g_CDemonSetInstance.actors[0]
     PUSH ECX                            ; 004eb43c
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 004eb43d
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     MOV EBX,EAX                         ; 004eb442
     ADD ESP,0x8                         ; 004eb444
     TEST EAX,EAX                        ; 004eb447
@@ -140,8 +141,8 @@ section .text
     PUSH EAX                            ; 004eb4e1
     LEA ESI,[ESP + 0x28]                ; 004eb4e2
     LEA EDI,[ESP + 0x1c]                ; 004eb4e6
-    CALL core_vecdir.cpp_FUN_005a7520   ; 004eb4ea
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005a7520()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 004eb4ea
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
     LEA ESI,[ESP + 0x28]                ; 004eb4ef
     ADD ESP,0x4                         ; 004eb4f3
     MOVSD ES:EDI,ESI                    ; 004eb4f6

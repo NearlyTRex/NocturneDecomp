@@ -12,11 +12,11 @@ void __cdecl sound_sndmain_cpp_pollAllStreams_FUN_0055a1b0(int paused_mode)
 
 {
   double dVar1;
-  CSfxSample *pCVar2;
+  CSfxSample *this_ptr;
   float local_18;
   float local_14;
   
-  sound_sndmain_cpp_FUN_00558e90();
+  sound_sndmain_cpp_lockSound_FUN_00558e90();
   local_18 = 0x40000000 + (float)_DAT_005d3f22;
   dVar1 = _DAT_005d3f1a;
   if (paused_mode != 0) {
@@ -24,11 +24,11 @@ void __cdecl sound_sndmain_cpp_pollAllStreams_FUN_0055a1b0(int paused_mode)
     dVar1 = _DAT_005d3f2a;
   }
   local_14 = 0x40000000 + (float)dVar1;
-  pCVar2 = g_SfxSamples;
+  this_ptr = g_SfxSamples;
   do {
-    sound_sndmain_cpp_FUN_00553960(pCVar2,local_14,local_18);
-    pCVar2 = pCVar2 + 1;
-  } while (pCVar2 != (CSfxSample *)0x2cf2824);
-  sound_sndmain_cpp_FUN_00556fd0();
+    sound_sndmain_cpp_CSfxSample_pollStream_FUN_00553960(this_ptr,local_14,local_18);
+    this_ptr = this_ptr + 1;
+  } while (this_ptr != (CSfxSample *)0x2cf2824);
+  sound_sndmain_cpp_unlockSound_FUN_00556fd0();
   return;
 }

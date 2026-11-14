@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 32,
+    "complexity_score": 17,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 17,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 58
   },
   "cross_references": [
     {
       "addr": "0059c610",
       "from_addr": "0059c629",
-      "name": "core_patrpoin.cpp_CPatrolPoint_dtor_FUN_0059c610",
+      "name": "core_hpatrol.cpp_CPatrolPoint_dtor_FUN_0059c610",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -66,7 +64,7 @@
     {
       "addr": "005fd224",
       "name": "g_CTriggerVTable",
-      "type": "undefined4",
+      "type": "CDemonActor_vtable",
       "value": null
     },
     {
@@ -93,7 +91,7 @@
       {
         "call_addr": "0059c629",
         "call_type": "direct",
-        "caller": "core_patrpoin.cpp_CPatrolPoint_dtor_FUN_0059c610",
+        "caller": "core_hpatrol.cpp_CPatrolPoint_dtor_FUN_0059c610",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -130,6 +128,32 @@
     },
     "pcode_op_count": 127
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0059c420",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9841
+    },
+    "bw3.exe": {
+      "addr": "0056f410",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9841
+    },
+    "nocedit.exe": {
+      "addr": "005e1660",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9841
+    },
+    "nocturne.exe": {
+      "addr": "00548a50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9841
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -153,16 +177,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "*(byte **)&this_ptr->field_0x2b0 = &g_CTriggerVTable;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

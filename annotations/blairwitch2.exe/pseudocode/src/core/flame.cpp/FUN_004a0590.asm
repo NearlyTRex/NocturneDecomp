@@ -20,7 +20,7 @@
 ;   undefined4 DAT_005d592d
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cf60
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00448860
 ;   core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00448810
 ;   crt_math.c_round_FUN_005b7ff0
@@ -62,8 +62,8 @@ section .text
     SUB ESP,0x4                         ; 004a05df
     FCHS                                ; 004a05e2
     FSTP float ptr [ESP]                ; 004a05e4
-    CALL core_actor.cpp_FUN_0040cf60    ; 004a05e7
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 004a05e7
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0x1c],EAX      ; 004a05ec
     FLD float ptr [ESP + 0x1c]          ; 004a05f0
     FADD float ptr [EBX + 0x3dc]        ; 004a05f4

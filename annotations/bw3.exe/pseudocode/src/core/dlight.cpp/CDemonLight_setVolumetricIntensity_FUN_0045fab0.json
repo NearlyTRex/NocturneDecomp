@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 110,
+    "complexity_score": 65,
     "cross_reference_count": 6,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 25,
-    "suspect_count": 7,
+    "suspect_count": 3,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals",
       "wrong_global"
     ],
@@ -20,13 +19,13 @@
     {
       "addr": "00420420",
       "from_addr": "00420669",
-      "name": "core_boxactor.cpp_FUN_00420420",
+      "name": "core_boxactor.cpp_CLightActor_process_FUN_00420420",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00486c30",
       "from_addr": "00486d08",
-      "name": "core_elephant.cpp_FUN_00486c30",
+      "name": "core_elephant.cpp_CElephantGun_process_FUN_00486c30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -50,7 +49,7 @@
     {
       "addr": "0057b5c0",
       "from_addr": "0057b771",
-      "name": "core_weapon.cpp_FUN_0057b5c0",
+      "name": "core_weapon.cpp_CWeapon_updateLighting_FUN_0057b5c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -143,7 +142,7 @@
       {
         "call_addr": "0057b771",
         "call_type": "direct",
-        "caller": "core_weapon.cpp_FUN_0057b5c0",
+        "caller": "core_weapon.cpp_CWeapon_updateLighting_FUN_0057b5c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -154,7 +153,7 @@
       {
         "call_addr": "00420669",
         "call_type": "direct",
-        "caller": "core_boxactor.cpp_FUN_00420420",
+        "caller": "core_boxactor.cpp_CLightActor_process_FUN_00420420",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -165,7 +164,7 @@
       {
         "call_addr": "00486d08",
         "call_type": "direct",
-        "caller": "core_elephant.cpp_FUN_00486c30",
+        "caller": "core_elephant.cpp_CElephantGun_process_FUN_00486c30",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -210,6 +209,32 @@
     },
     "pcode_op_count": 194
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0044d570",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00465da0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004765e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00452080",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 16,
     "local_size": 8,
@@ -248,38 +273,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x2fa8",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x2fa8 = intensity;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x1cc0",
-      "severity": "mild",
-      "text": "if (0x100 < *(int *)&this_ptr->field_0x1cc0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x2fa8",
-      "severity": "mild",
-      "text": "fVar2 = (float10)*(float *)&this_ptr->field_0x2fa8 * (float10)_DAT_005bb5bc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x2fa8",
-      "severity": "mild",
-      "text": "fVar2 = (float10)*(float *)&this_ptr->field_0x2fa8 * (float10)_DAT_005bb5b4;",
-      "type": "unnamed_field"
     },
     {
       "description": "Scalar global g_PlayerFilters accessed via (&g_PlayerFilters)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_CFilterCachePtr (at 0x005f190c, +16 bytes).",

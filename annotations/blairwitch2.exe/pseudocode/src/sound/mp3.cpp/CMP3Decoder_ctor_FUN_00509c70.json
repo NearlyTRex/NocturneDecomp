@@ -2,35 +2,33 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 43,
+    "complexity_score": 8,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 8,
-    "suspect_count": 3,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 24
   },
   "cross_references": [
     {
+      "addr": "005519e0",
+      "from_addr": "00551bb4",
+      "name": "sound_sndmain.cpp_getSampleInfo_FUN_005519e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0054c1c0",
       "from_addr": "0054c25a",
-      "name": "sound_sndmain.cpp_FUN_0054c1c0",
+      "name": "sound_sndmain.cpp_getSfxSample_FUN_0054c1c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0054c7f0",
       "from_addr": "0054c8d6",
-      "name": "sound_sndmain.cpp_FUN_0054c7f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005519e0",
-      "from_addr": "00551bb4",
-      "name": "sound_sndmain.cpp_FUN_005519e0",
+      "name": "sound_sndmain.cpp_loadStreamingSoundFile_FUN_0054c7f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -60,7 +58,7 @@
       {
         "call_addr": "0054c25a",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_0054c1c0",
+        "caller": "sound_sndmain.cpp_getSfxSample_FUN_0054c1c0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -71,7 +69,7 @@
       {
         "call_addr": "0054c8d6",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_0054c7f0",
+        "caller": "sound_sndmain.cpp_loadStreamingSoundFile_FUN_0054c7f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -82,7 +80,7 @@
       {
         "call_addr": "00551bb4",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_005519e0",
+        "caller": "sound_sndmain.cpp_getSampleInfo_FUN_005519e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -117,6 +115,32 @@
     },
     "pcode_op_count": 45
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0052ae40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00502750",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005344f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004e7d90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -133,32 +157,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x108",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x108 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x10c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x10c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x5320",
-      "severity": "mild",
-      "text": "memset(&this_ptr->field_0x5320,0,0x2c);",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

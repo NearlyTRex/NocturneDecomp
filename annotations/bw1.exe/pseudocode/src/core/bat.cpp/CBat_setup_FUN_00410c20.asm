@@ -7,8 +7,8 @@
 ; CBat *           Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408850
-;   core_actor.cpp_FUN_0040cc00
+;   core_actor.cpp_CDemonActor_setup_FUN_00408850
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_bat.cpp_CBat_updateCoursePosition_FUN_00411060
 ;   core_course.cpp_CCourse_load_FUN_00447db0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_004688e0
@@ -34,8 +34,8 @@ section .text
         ;   XREF to: 00447db0 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_load_FUN_00447db0(CCourse * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00410c4a
     PUSH EBX                            ; 00410c4d
-    CALL core_actor.cpp_FUN_00408850    ; 00410c4e
-        ;   XREF to: 00408850 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_00408850(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_setup_FUN_00408850 ; 00410c4e
+        ;   XREF to: 00408850 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408850(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00410c53
     PUSH EBX                            ; 00410c56
     CALL core_bat.cpp_CBat_updateCoursePosition_FUN_00411060 ; 00410c57
@@ -44,8 +44,8 @@ section .text
     PUSH dword ptr [EBX + 0x37c]        ; 00410c5f
     PUSH dword ptr [EBX + 0x378]        ; 00410c65
     MOV dword ptr [EBX + 0x380],0x0     ; 00410c6b
-    CALL core_actor.cpp_FUN_0040cc00    ; 00410c75
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 00410c75
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [ESP + 0x8],EAX       ; 00410c7a
     MOV EAX,dword ptr [ESP + 0x8]       ; 00410c7e
     MOV dword ptr [EBX + 0x384],EAX     ; 00410c82

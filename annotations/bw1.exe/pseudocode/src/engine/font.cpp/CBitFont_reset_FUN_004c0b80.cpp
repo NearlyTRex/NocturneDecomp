@@ -1,0 +1,56 @@
+// Name: engine_font.cpp_CBitFont_reset_FUN_004c0b80
+// Address: 004c0b80
+// Address Range: [[004c0b80, 004c0c95]]
+// Convention: __cdecl
+// Signature: void __cdecl engine_font_cpp_CBitFont_reset_FUN_004c0b80(CBitFont *this_ptr)
+
+#include "nocturne.h"
+
+void __cdecl engine_font_cpp_CBitFont_reset_FUN_004c0b80(CBitFont *this_ptr)
+
+{
+  char (*pacVar1) [80];
+  CBitFont *pCVar2;
+  CBitFont *pCVar3;
+  
+  this_ptr->bitmap_count = 0;
+  pCVar2 = this_ptr;
+  pCVar3 = this_ptr;
+  do {
+    pacVar1 = pCVar2->bitmap_files;
+    pCVar3->bitmap_files[0][0] = '\0';
+    pCVar2->bitmap_data[0] = (void *)0x0;
+    pCVar3 = (CBitFont *)(pCVar3->bitmap_files[0] + 0x4c);
+    pCVar2->bitmap_widths[0] = 0;
+    pCVar2 = (CBitFont *)pacVar1;
+  } while (pacVar1 != (char (*) [80])(this_ptr->bitmap_files[0] + 0xc));
+  this_ptr->font_filename[0] = '\0';
+  pCVar2 = this_ptr;
+  do {
+    pacVar1 = pCVar2->bitmap_files;
+    pCVar2->char_bitmap_index[0] = 0;
+    pCVar2->char_widths[0] = 0;
+    pCVar2->char_heights[0] = 0;
+    pCVar2->char_y_offsets[0] = 0;
+    pCVar2->char_positions[0] = (uchar *)0x0;
+    pCVar2 = (CBitFont *)pacVar1;
+  } while (pacVar1 != (char (*) [80])(this_ptr->palette_data + 0x24c));
+  this_ptr->max_char_height = 0;
+  this_ptr->current_line_height = 0;
+  this_ptr->char_spacing = 1;
+  this_ptr->line_spacing = 2;
+  this_ptr->char_widths[0x20] = 8;
+  this_ptr->shadow_offset_x = 2;
+  this_ptr->shadow_offset_y = 1;
+  this_ptr->rendering_ready = 0;
+  this_ptr->is_initialized = 0;
+  this_ptr->use_3d_rendering = 0;
+  this_ptr->win_font_enabled = 0;
+  this_ptr->win_font_helper = (CWinFont *)0x0;
+  this_ptr->accel_vertex_alloc = (void *)0x0;
+  this_ptr->accel_indices = (void *)0x0;
+  this_ptr->accel_vertex_count = 0;
+  this_ptr->accel_index_count = 0;
+  this_ptr->max_char_width = 0;
+  return;
+}

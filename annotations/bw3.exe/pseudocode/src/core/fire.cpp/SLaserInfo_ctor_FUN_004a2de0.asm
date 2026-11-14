@@ -7,9 +7,9 @@
 ; SLaserInfo *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_emitter.cpp_FUN_004889b0 at 00488a0c
-;   core_sps.cpp_FUN_00568290 at 005682c5
-;   core_weapon.cpp_FUN_0057bb60 at 0057bb73
+;   core_emitter.cpp_CEmitter_renderOpaque_FUN_004889b0 at 00488a0c
+;   core_sps.cpp_CSps_renderAimBeam_FUN_00568290 at 005682c5
+;   core_weapon.cpp_CWeapon_renderAimBeam_FUN_0057bb60 at 0057bb73
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005df8fc

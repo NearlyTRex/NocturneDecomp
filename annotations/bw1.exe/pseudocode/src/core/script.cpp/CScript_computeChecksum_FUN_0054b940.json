@@ -1,0 +1,179 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 50,
+    "complexity_score": 56,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 26,
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation"
+    ],
+    "total_lines": 76
+  },
+  "cross_references": [
+    {
+      "addr": "0054b3e0",
+      "from_addr": "0054b6d7",
+      "name": "core_script.cpp_CScript_loadState_FUN_0054b3e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054b710",
+      "from_addr": "0054b91f",
+      "name": "core_script.cpp_CScript_saveState_FUN_0054b710",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0054b940",
+    "address_range": [
+      [
+        "0054b940",
+        "0054b995"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CScript_computeChecksum_FUN_0054b940",
+    "signature": "uint __cdecl core_script_cpp_CScript_computeChecksum_FUN_0054b940(CScript *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ce20",
+      "is_variadic": false,
+      "name": "core_actor.cpp_crc32ProcessByte_FUN_0040ce20"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0054b6d7",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_loadState_FUN_0054b3e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0054b91f",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_saveState_FUN_0054b710",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.05,
+    "instruction_count": 40,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CALL": 1,
+      "CBRANCH": 4,
+      "COPY": 38,
+      "INT_ADD": 17,
+      "INT_AND": 30,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 28,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 14,
+      "INT_SUB": 10,
+      "INT_XOR": 4,
+      "LOAD": 14,
+      "POPCOUNT": 14,
+      "RETURN": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 202
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0052a630",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00531030",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00560d80",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00505820",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Pointer value `&this_ptr->parsed_lines->text` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 16,
+      "match": "(int)&this_ptr->parsed_lines->text",
+      "severity": "moderate",
+      "text": "pbVar2 = *(byte **)((int)&this_ptr->parsed_lines->text + iVar3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 16,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pbVar2 = *(byte **)((int)&this_ptr->parsed_lines->text + iVar3);",
+      "type": "pointer_cast"
+    }
+  ]
+}

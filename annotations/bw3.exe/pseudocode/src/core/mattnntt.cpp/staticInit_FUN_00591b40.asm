@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_mattnntt_cpp_staticInit_FUN_00591b40(void)
+; void __cdecl core_mattnntt_cpp_staticInit_FUN_00591b40(void)
 ;
 ;
 ; Called Functions:

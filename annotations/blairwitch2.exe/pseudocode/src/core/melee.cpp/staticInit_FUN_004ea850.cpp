@@ -1,12 +1,12 @@
 // Name: core_melee.cpp_staticInit_FUN_004ea850
 // Address: 004ea850
 // Address Range: [[004ea850, 004ea873]]
-// Convention: unknown
-// Signature: void core_melee_cpp_staticInit_FUN_004ea850(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_melee_cpp_staticInit_FUN_004ea850(void)
 
 #include "nocturne.h"
 
-void core_melee_cpp_staticInit_FUN_004ea850(void)
+void __cdecl core_melee_cpp_staticInit_FUN_004ea850(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450

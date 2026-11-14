@@ -9,5 +9,5 @@
 CDemonActor * __cdecl core_boxactor_cpp_CBoxActor_getCarrier_FUN_00422cd0(CBoxActor *this_ptr)
 
 {
-  return *(CDemonActor **)&this_ptr->field_0x318;
+  return this_ptr->carrier_actor;
 }

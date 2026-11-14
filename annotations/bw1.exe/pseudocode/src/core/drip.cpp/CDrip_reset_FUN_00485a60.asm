@@ -7,7 +7,7 @@
 ; CDrip *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_vampboss.cpp_FUN_005a7160 at 005a71c9
+;   core_vampboss.cpp_CVampireBoss_summonStalagmites_FUN_005a7160 at 005a71c9
 ;
 ; *****************************************************************************
 

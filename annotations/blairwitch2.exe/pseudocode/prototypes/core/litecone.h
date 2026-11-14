@@ -7,15 +7,15 @@
 
 // Original: core_litecone.cpp_staticInit_FUN_004e4130
 // Address: 004e4130
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_litecone.cpp_factoryFuncLightCone_FUN_004e4160
 // Address: 004e4160
-void factoryFuncLightCone(void);
+CLightCone * __cdecl factoryFuncLightCone(void);
 
 // Original: core_litecone.cpp_CLightCone_getActorType_FUN_004e4180
 // Address: 004e4180
-CDemonActorType * CLightCone::getActorType(CLightCone *this_ptr);
+CDemonActorType * __cdecl CLightCone::getActorType(CLightCone *this_ptr);
 
 // Original: core_litecone.cpp_CLightCone_ctor_FUN_004e4190
 // Address: 004e4190
@@ -25,25 +25,25 @@ CLightCone * __cdecl CLightCone::ctor(CLightCone *this_ptr);
 // Address: 004e4230
 void __cdecl CLightCone::setup(CLightCone *this_ptr);
 
-// Original: core_litecone.cpp_FUN_004e4240
+// Original: core_litecone.cpp_CLightCone_process_FUN_004e4240
 // Address: 004e4240
-void FUN_004e4240(int param_1);
+void __cdecl CLightCone::process(CLightCone *this_ptr,float delta_time);
 
-// Original: core_litecone.cpp_FUN_004e42a0
+// Original: core_litecone.cpp_CLightCone_renderTransparent_FUN_004e42a0
 // Address: 004e42a0
-int FUN_004e42a0(CDemonActor *param_1);
+int __cdecl CLightCone::renderTransparent(CLightCone *this_ptr);
 
-// Original: core_litecone.cpp_FUN_004e4340
+// Original: core_litecone.cpp_CLightCone_getBoundingBox_FUN_004e4340
 // Address: 004e4340
-void FUN_004e4340(int param_1);
+CBoundingBox3D * __cdecl CLightCone::getBoundingBox(CLightCone *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_litecone.cpp_FUN_004e43a0
+// Original: core_litecone.cpp_CLightCone_archive_FUN_004e43a0
 // Address: 004e43a0
-void FUN_004e43a0(CDemonActor *param_1);
+void __cdecl CLightCone::archive(CLightCone *this_ptr);
 
-// Original: core_litecone.cpp_FUN_004e4430
+// Original: core_litecone.cpp_CLightCone_getCollisionType_FUN_004e4430
 // Address: 004e4430
-undefined4 FUN_004e4430(void);
+ECollisionType __cdecl CLightCone::getCollisionType(CLightCone *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_litecone.cpp_CLightCone_dtor_FUN_004e4440
 // Address: 004e4440

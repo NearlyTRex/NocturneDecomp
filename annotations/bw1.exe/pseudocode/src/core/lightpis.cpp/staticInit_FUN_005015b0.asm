@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_lightpis_cpp_staticInit_FUN_005015b0(void)
+; void __cdecl core_lightpis_cpp_staticInit_FUN_005015b0(void)
 ;
 ;
 ; Called Functions:

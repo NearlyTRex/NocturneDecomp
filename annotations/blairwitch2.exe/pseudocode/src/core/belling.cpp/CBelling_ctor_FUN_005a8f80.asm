@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBelling * core_belling_cpp_CBelling_ctor_FUN_005a8f80(CBelling *this_ptr)
+; CBelling * __cdecl core_belling_cpp_CBelling_ctor_FUN_005a8f80(CBelling *this_ptr)
 ;
 ; Parameters:
 ; CBelling *       Stack[0x4]:4   this_ptr
@@ -11,11 +11,11 @@
 ;
 ; Called Functions:
 ;   core_basicnpc.cpp_CBasicNPC_ctor_FUN_005a47b0
-;   core_belling.cpp_FUN_005a9060
+;   core_belling.cpp_CBelling_processStates_FUN_005a9060
 ;   core_cloth.cpp_CClothList_add_FUN_005b15c0
+;   core_muzzle.cpp_FUN_0059d990
+;   core_muzzle.cpp_FUN_0059dc80
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
-;   unkaddr_0059d350.cpp_FUN_0059d990
-;   unkaddr_0059d350.cpp_FUN_0059dc80
 ;
 ; *****************************************************************************
 
@@ -54,18 +54,18 @@ section .text
     PUSH 0x0                            ; 005a9013
     PUSH 0x0                            ; 005a9015
     PUSH EBX                            ; 005a9017
-    CALL core_belling.cpp_FUN_005a9060  ; 005a9018
-        ;   XREF to: 005a9060 (UNCONDITIONAL_CALL)  ; undefined core_belling.cpp_FUN_005a9060()
+    CALL core_belling.cpp_CBelling_processStates_FUN_005a9060 ; 005a9018
+        ;   XREF to: 005a9060 (UNCONDITIONAL_CALL)  ; void core_belling.cpp_CBelling_processStates_FUN_005a9060(CBelling * this_ptr, float delta_time, int mode)
     ADD ESP,0xc                         ; 005a901d
     PUSH 0x5f088d                       ; 005a9020
     LEA ESI,[EBX + 0x10af8]             ; 005a9025
     PUSH ESI                            ; 005a902b
-    CALL unkaddr_0059d350.cpp_FUN_0059d990 ; 005a902c
-        ;   XREF to: 0059d990 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d990()
+    CALL core_muzzle.cpp_FUN_0059d990   ; 005a902c
+        ;   XREF to: 0059d990 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d990()
     ADD ESP,0x8                         ; 005a9031
     PUSH ESI                            ; 005a9034
-    CALL unkaddr_0059d350.cpp_FUN_0059dc80 ; 005a9035
-        ;   XREF to: 0059dc80 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059dc80()
+    CALL core_muzzle.cpp_FUN_0059dc80   ; 005a9035
+        ;   XREF to: 0059dc80 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059dc80()
     ADD ESP,0x4                         ; 005a903a
     MOV EAX,EBX                         ; 005a903d
     POP ESI                             ; 005a903f

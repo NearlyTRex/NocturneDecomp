@@ -21,6 +21,7 @@ struct Stand {
     int preferred_width = 0; // nocturne_window_preferred_size; 0 for none
     int preferred_height = 0;
     int mode_applies = 0; // nocturne_window_mode_apply
+    int vsync = 1;        // nocturne_vsync_get
 
     // nocturne_gl_present_framebuffer
     int presents = 0;

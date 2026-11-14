@@ -19,7 +19,7 @@ int __cdecl support_trisock_cpp_CSocket_sendSocketData_FUN_0059cbc0(CSocket *thi
   
   bVar4 = 0;
   if (dest_addr == (SNetworkAddr *)0x0) {
-    iVar1 = send(*(_SOCKET *)this_ptr,buffer,length,0);
+    iVar1 = send(this_ptr->handle,buffer,length,0);
     return iVar1;
   }
   support_trisock_cpp_buildSockaddrIn_FUN_0059c7d0(dest_addr);
@@ -32,6 +32,6 @@ int __cdecl support_trisock_cpp_CSocket_sendSocketData_FUN_0059cbc0(CSocket *thi
        *(uint *)((int)&local_2c + (uint)bVar4 * -8 + 4);
   *puVar3 = *puVar2;
   puVar3[(uint)bVar4 * -2 + 1] = puVar2[(uint)bVar4 * -2 + 1];
-  iVar1 = sendto(*(SOCKET *)this_ptr,buffer,length,0,&local_1c,0x10);
+  iVar1 = sendto(this_ptr->handle,buffer,length,0,&local_1c,0x10);
   return iVar1;
 }

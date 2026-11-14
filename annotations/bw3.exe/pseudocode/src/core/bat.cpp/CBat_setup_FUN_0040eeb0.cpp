@@ -9,15 +9,15 @@
 void __cdecl core_bat_cpp_CBat_setup_FUN_0040eeb0(CBat *this_ptr)
 
 {
-  uint uVar1;
+  float fVar1;
   
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00462580
-            ((CKeyFramedModelInstance *)&this_ptr->field_0x188);
-  core_course_cpp_FUN_00444970((CCourse *)&this_ptr->field_0x178,&this_ptr->field_0x158);
-  core_actor_cpp_FUN_00408890((CDemonActor *)this_ptr);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00462580(&this_ptr->model);
+  core_course_cpp_CCourse_load_FUN_00444970(&this_ptr->course,this_ptr->course_filename);
+  core_actor_cpp_CDemonActor_setup_FUN_00408890(&this_ptr->base);
   core_bat_cpp_CBat_updateCoursePosition_FUN_0040f2f0(this_ptr);
-  *(uint *)&this_ptr->field_0x380 = 0;
-  uVar1 = core_actor_cpp_FUN_0040ce40(*(uint *)&this_ptr->field_0x378);
-  *(uint *)&this_ptr->field_0x384 = uVar1;
+  this_ptr->sfx_handle = 0;
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40
+                    (this_ptr->periodic_sound_timer_min,this_ptr->periodic_sound_timer_max);
+  this_ptr->sound_timer = fVar1;
   return;
 }

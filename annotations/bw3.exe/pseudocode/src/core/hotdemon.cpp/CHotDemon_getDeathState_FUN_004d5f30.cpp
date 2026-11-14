@@ -12,8 +12,8 @@ EDeathState __cdecl core_hotdemon_cpp_CHotDemon_getDeathState_FUN_004d5f30(CHotD
   SMotion *pSVar1;
   
   pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070
-                     ((CMotionController *)&this_ptr->field_0x158);
-  switch(*(uint *)(pSVar1 + 0x24)) {
+                     (&(this_ptr->base).base.model.base);
+  switch(pSVar1->state_index) {
   case 4:
   case 10:
     return DEATH_STATE_DYING;

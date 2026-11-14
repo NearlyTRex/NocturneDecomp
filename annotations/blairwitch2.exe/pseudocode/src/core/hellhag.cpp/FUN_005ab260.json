@@ -1,0 +1,593 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 433,
+    "complexity_score": 669,
+    "cross_reference_count": 0,
+    "function_call_count": 15,
+    "global_count": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 204,
+    "suspect_count": 43,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "stack_alignment_array",
+      "unnamed_param",
+      "unresolved_funcptr",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 637
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005ab260",
+    "address_range": [
+      [
+        "005ab260",
+        "005ab752"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "core_hellhag.cpp_FUN_005ab260",
+    "signature": "void core_hellhag_cpp_FUN_005ab260(int param_1,float param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cf60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60"
+    },
+    {
+      "addr": "005a7ed0",
+      "is_variadic": false,
+      "name": "core_bwgrndma.cpp_FUN_005a7ed0"
+    },
+    {
+      "addr": "005a8300",
+      "is_variadic": false,
+      "name": "core_bwspart.cpp_CSimpleParticleSystem_emit_FUN_005a8300"
+    },
+    {
+      "addr": "005a8130",
+      "is_variadic": false,
+      "name": "core_bwspart.cpp_CSimpleParticleSystem_isActive_FUN_005a8130"
+    },
+    {
+      "addr": "005a8180",
+      "is_variadic": false,
+      "name": "core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180"
+    },
+    {
+      "addr": "005035c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_FUN_005035c0"
+    },
+    {
+      "addr": "0059daa0",
+      "is_variadic": false,
+      "name": "core_muzzle.cpp_FUN_0059daa0"
+    },
+    {
+      "addr": "00591530",
+      "is_variadic": false,
+      "name": "core_xform.cpp_FUN_00591530"
+    },
+    {
+      "addr": "00594380",
+      "is_variadic": false,
+      "name": "core_xform.cpp_FUN_00594380"
+    },
+    {
+      "addr": "00593a10",
+      "is_variadic": false,
+      "name": "core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10"
+    },
+    {
+      "addr": "00550b70",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_00550b70"
+    },
+    {
+      "addr": "00551050",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfx_FUN_00551050"
+    },
+    {
+      "addr": "005504d0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005504d0"
+    },
+    {
+      "addr": "00550450",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_00550450"
+    },
+    {
+      "addr": "005503e0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005503e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f0c42",
+      "name": "s_Death_005f0c42",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f0c48",
+      "name": "s_Animation_005f0c48",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f0c52",
+      "name": "DAT_005f0c52",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f0c57",
+      "name": "s_Death_005f0c57",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f0c5d",
+      "name": "DAT_005f0c5d",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f0c62",
+      "name": "s_hagheal01L_wav_005f0c62",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f0c76",
+      "name": "DAT_005f0c76",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f0c7e",
+      "name": "DAT_005f0c7e",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f0c82",
+      "name": "DAT_005f0c82",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f0c86",
+      "name": "DAT_005f0c86",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.529411764705882,
+    "instruction_count": 374,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 2,
+      "BRANCH": 5,
+      "CALL": 29,
+      "CALLIND": 3,
+      "CALLOTHER": 2,
+      "CBRANCH": 15,
+      "COPY": 765,
+      "FLOAT2FLOAT": 48,
+      "FLOAT_ADD": 1,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 9,
+      "FLOAT_NAN": 4,
+      "FLOAT_NEG": 3,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 215,
+      "INT_AND": 132,
+      "INT_CARRY": 36,
+      "INT_EQUAL": 113,
+      "INT_LEFT": 8,
+      "INT_LESS": 6,
+      "INT_MULT": 34,
+      "INT_NOTEQUAL": 11,
+      "INT_OR": 10,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 37,
+      "INT_SLESS": 56,
+      "INT_SUB": 145,
+      "INT_XOR": 3,
+      "INT_ZEXT": 42,
+      "LOAD": 90,
+      "POPCOUNT": 56,
+      "RETURN": 2,
+      "STORE": 167
+    },
+    "pcode_op_count": 2068
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_hellhag_cpp_FUN_005ab260(int param_1,float param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void core_hellhag_cpp_FUN_005ab260(int param_1,float param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 15,
+      "match": "afStackY_18cc",
+      "severity": "moderate",
+      "text": "float afStackY_18cc [1490];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 63,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)(param_1 + 0x2b0) + 0x17c))(param_1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 63,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)(param_1 + 0x2b0) + 0x17c))(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 63,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)(param_1 + 0x2b0) + 0x17c))(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 68,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CSimpleParticleSystem *)(param_1 + 0x154),param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 68,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "((CSimpleParticleSystem *)(param_1 + 0x154),param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 70,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CSimpleParticleSystem *)(param_1 + 0x264),param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 70,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "((CSimpleParticleSystem *)(param_1 + 0x264),param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 71,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = core_motion_cpp_FUN_005035c0(param_1 + 0x2b4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 73,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(char *)(param_1 + 0x11741) == '\\0') {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 74,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "sound_sndmain_cpp_killSfx_FUN_00551050(*(uint *)(param_1 + 0x11848));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 77,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar9 = *(float *)(param_1 + 0x11840) - param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 77,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fVar9 = *(float *)(param_1 + 0x11840) - param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 78,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)(param_1 + 0x11840) = fVar9;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 80,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x11840) = *(uint *)(param_1 + 0x11844);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 80,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x11840) = *(uint *)(param_1 + 0x11844);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 81,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar2 = (**(code **)(*(int *)(param_1 + 0x2b0) + 0x34))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 81,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar2 = (**(code **)(*(int *)(param_1 + 0x2b0) + 0x34))();",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 82,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x11848) = uVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 87,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "sound_sndmain_cpp_killSfx_FUN_00551050(*(uint *)(param_1 + 0x11848));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 89,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(float *)(param_1 + 0x25a8) < *(float *)(param_1 + 0x25ac)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 89,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(float *)(param_1 + 0x25a8) < *(float *)(param_1 + 0x25ac)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 94,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)(param_1 + 0x25a8) = param_2 * (float)_DAT_005f0c76 + *(float *)(param_1 + 0x25a8)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 94,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(float *)(param_1 + 0x25a8) = param_2 * (float)_DAT_005f0c76 + *(float *)(param_1 + 0x25a8)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 94,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)(param_1 + 0x25a8) = param_2 * (float)_DAT_005f0c76 + *(float *)(param_1 + 0x25a8)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 96,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_00550b70(*(uint *)(param_1 + 0x1185c));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 102,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar2 = (**(code **)(*(int *)(param_1 + 0x2b0) + 0x38))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 102,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar2 = (**(code **)(*(int *)(param_1 + 0x2b0) + 0x38))();",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 103,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x1185c) = uVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 107,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CSimpleParticleSystem *)(param_1 + 0x154));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 110,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCStack_24 = (CSimpleParticleSystem *)(param_1 + 0x154);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 135,
+      "match": "(CMatrix3x4f *)((int)pCVar4",
+      "severity": "moderate",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 199,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CSimpleParticleSystem *)(param_1 + 0x154),0x40000000,0x3f333333,0,0x3e99999a",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `&CStack_f0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 125,
+      "match": "(int)&CStack_f0",
+      "severity": "moderate",
+      "text": "pfVar5 = (float *)((int)&CStack_f0 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_f0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 126,
+      "match": "(int)&CStack_f0",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_f0 + (uint)bVar6 * -8 + 4) = afStack_dc[(uint)bVar6 * -2];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 135,
+      "match": "(int)pCVar4",
+      "severity": "moderate",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 133,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 125,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar5 = (float *)((int)&CStack_f0 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 126,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_f0 + (uint)bVar6 * -8 + 4) = afStack_dc[(uint)bVar6 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 005ab651, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 335,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005ab651: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 340,
+        "vtable_addr": "00600a84"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

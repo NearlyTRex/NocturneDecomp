@@ -2,29 +2,30 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 36,
+    "complexity_score": 52,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 21,
-    "suspect_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 22,
+    "suspect_count": 2,
     "suspect_types": [
+      "alloc_magic_size",
       "warning_overlapping_globals"
     ],
-    "total_lines": 75
+    "total_lines": 76
   },
   "cross_references": [
     {
       "addr": "004434e0",
       "from_addr": "004434f5",
-      "name": "support_codec.cpp_FUN_004434e0",
+      "name": "support_codec.cpp_CLZWCompress_init_FUN_004434e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004436f0",
       "from_addr": "00443705",
-      "name": "support_codec.cpp_FUN_004436f0",
+      "name": "support_codec.cpp_CLZWDecompress_init_FUN_004436f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -89,7 +90,7 @@
       {
         "call_addr": "00443705",
         "call_type": "direct",
-        "caller": "support_codec.cpp_FUN_004436f0",
+        "caller": "support_codec.cpp_CLZWDecompress_init_FUN_004436f0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -100,7 +101,7 @@
       {
         "call_addr": "004434f5",
         "call_type": "direct",
-        "caller": "support_codec.cpp_FUN_004434e0",
+        "caller": "support_codec.cpp_CLZWCompress_init_FUN_004434e0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -143,6 +144,32 @@
     },
     "pcode_op_count": 206
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004342d0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00440c50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0043ee60",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9778
+    },
+    "nocturne.exe": {
+      "addr": "004393d0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -181,6 +208,14 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Allocation size hardcodes 0x10 == sizeof(CLZWDictionaryNode). Replace the magic with sizeof(CLZWDictionaryNode) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 12,
+      "match": "(CLZWDictionaryNode*) alloc stride 0x10",
+      "severity": "moderate",
+      "text": "(CLZWDictionaryNode *)realloc(this_ptr->node_table,new_dict_size << 4)",
+      "type": "alloc_magic_size"
     }
   ]
 }

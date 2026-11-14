@@ -9,19 +9,22 @@
 int __cdecl core_manpuz_cpp_CMirrorHack_updateInteraction_FUN_00506690(CMirrorHack *this_ptr,UOrientationVector *user_orientation,SPlayerInput *player_control)
 
 {
-  if (*(int *)(player_control + 0xc) != 0) {
-    *(uint *)(player_control + 0xc) = 0;
+  UOrientationVector *pUVar1;
+  
+  if ((player_control->action_state).fire != 0) {
+    (player_control->action_state).fire = 0;
     return 0;
   }
-  if (*(int *)(player_control + 0x10) == 0) {
-    if ((UOrientationVector *)&this_ptr->field_0x30 != user_orientation) {
-      *(uint *)&this_ptr->field_0x30 = *(uint *)user_orientation;
-      *(uint *)&this_ptr->field_0x34 = *(uint *)((int)user_orientation + 4);
-      *(uint *)&this_ptr->field_0x38 = *(uint *)((int)user_orientation + 8);
+  if ((player_control->action_state).use_item == 0) {
+    pUVar1 = &(this_ptr->base).orient;
+    if (pUVar1 != user_orientation) {
+      (pUVar1->vec).x = (user_orientation->vec).x;
+      (this_ptr->base).orient.vec.y = (user_orientation->vec).y;
+      (this_ptr->base).orient.vec.z = (user_orientation->vec).z;
     }
-    core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0((CDemonActor *)this_ptr);
+    core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0(&this_ptr->base);
     return 1;
   }
-  *(uint *)(player_control + 0x10) = 0;
+  (player_control->action_state).use_item = 0;
   return 0;
 }

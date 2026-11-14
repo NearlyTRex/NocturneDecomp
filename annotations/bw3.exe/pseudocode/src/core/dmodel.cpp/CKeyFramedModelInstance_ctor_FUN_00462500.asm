@@ -11,12 +11,12 @@
 ;   core_ammobox.cpp_CAmmoBox_ctor_FUN_0040e5c0 at 0040e5d6
 ;   core_bat.cpp_CBat_ctor_FUN_0040ede0 at 0040ee02
 ;   core_battery.cpp_CBattery_ctor_FUN_0040f4a0 at 0040f4b4
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_ctor_FUN_00411b50 at 00411b82
 ;   core_bodypart.cpp_SBodyPartModel_ctor_FUN_00416da0 at 00416da8
 ;   core_boxactor.cpp_CBoxActor_ctor_FUN_0041efe0 at 0041eff4
 ;   core_charactr.cpp_staticInit_FUN_0042ab80 at 0042ab85
 ;   core_crate.cpp_CCrate_ctor_FUN_00445bd0 at 00445be4
 ;   core_door.cpp_CDoor_ctor_FUN_00463ab0 at 00463ac6
-;   core_drip.cpp_CDrip_ctor_FUN_0046ea50 at 0046ea66
 ;   ... and 26 more
 ;
 ; Called Functions:

@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 26,
+    "complexity_score": 12,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 11,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 34
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 35
   },
   "cross_references": [],
   "function": {
@@ -31,7 +29,7 @@
     {
       "addr": "00432050",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_00432050"
+      "name": "core_charactr.cpp_CCharacter_setWalkTarget_FUN_00432050"
     },
     {
       "addr": "00524770",
@@ -73,6 +71,32 @@
     },
     "pcode_op_count": 82
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0058d020",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0057edf0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005f11a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00557020",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 20,
     "local_size": 4,
@@ -110,20 +134,11 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CMotionController *)&this_ptr->field_0x158);",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CWerewolf",
         "offset": 304,
         "vtable_addr": "00607ff4"
       }

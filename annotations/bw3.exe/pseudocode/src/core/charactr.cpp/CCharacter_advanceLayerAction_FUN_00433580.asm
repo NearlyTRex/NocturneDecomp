@@ -18,7 +18,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   unkafter_prye.cpp_FUN_00524940 at 00524a12
+;   core_prye.cpp_FUN_00524940 at 00524a12
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_005b874e

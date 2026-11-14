@@ -9,8 +9,8 @@
 ; XREF[4]:
 ;   sound_mp3.cpp_CMP3Decoder_dtor_FUN_00509cb0 at 00509cb6
 ;   sound_mp3.cpp_FUN_00509db0 at 00509dbc
-;   sound_sndmain.cpp_FUN_0054c1c0 at 0054c43b
-;   sound_sndmain.cpp_FUN_005519e0 at 00551c06
+;   sound_sndmain.cpp_getSampleInfo_FUN_005519e0 at 00551c06
+;   sound_sndmain.cpp_getSfxSample_FUN_0054c1c0 at 0054c43b
 ;
 ; Called Functions:
 ;   crt_stdio.c_fclose_FUN_005b89c0

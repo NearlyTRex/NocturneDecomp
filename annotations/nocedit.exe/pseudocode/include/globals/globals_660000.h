@@ -430,6 +430,9 @@ extern char g_CourseLastBonPath[256];
 extern char g_CourseLastPthPath[264];
 extern char g_CourseLastCrsPath[264];
 
+// char[28]
+extern char g_ConsoleLogFilename[28];
+
 // char[2]
 extern char g_PropertyNamePrefixMinusTwo[2];
 

@@ -1,12 +1,12 @@
 // Name: core_emitter.cpp_staticInit_FUN_00487980
 // Address: 00487980
 // Address Range: [[00487980, 004879a3]]
-// Convention: unknown
-// Signature: void core_emitter_cpp_staticInit_FUN_00487980(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_emitter_cpp_staticInit_FUN_00487980(void)
 
 #include "nocturne.h"
 
-void core_emitter_cpp_staticInit_FUN_00487980(void)
+void __cdecl core_emitter_cpp_staticInit_FUN_00487980(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c3a0

@@ -4,13 +4,29 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3d.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CSfxOptions
-// Stub: size from Watcom RTTI, fields not yet recovered
+// CSfxOptions_reset 00555bf0 instruction-identical to bw1's; setNextSfxDelay 00555ee0 at options+0x40, setNextSfxFlags 00555f00 at +0x4c (base 0x2ceb920, stride 0x60). Fields as bw1.
 // Ghidra size: 0x60 (96 bytes)
 #pragma pack(push, 1)
 typedef struct CSfxOptions {
-    char field_0[96]; // 0x0
+    int channel_index; // 0x0, as bw1
+    CVector3d position; // 0x4, as bw1
+    void* position_source_ptr; // 0x1c, as bw1
+    int position_format; // 0x20, as bw1
+    CVector3f velocity; // 0x24, as bw1
+    void* velocity_source_ptr; // 0x30, as bw1
+    int velocity_format; // 0x34, as bw1
+    float current_volume; // 0x38, as bw1
+    float base_frequency; // 0x3c, as bw1
+    float delay_remaining; // 0x40, setNextSfxDelay 00555ee0
+    void* userdata[2]; // 0x44, as bw1
+    uint flags; // 0x4c, setNextSfxFlags 00555f00
+    double playback_position; // 0x50, as bw1
+    int playback_position_type; // 0x58, as bw1
+    int dead; // 0x5c, as bw1
 } CSfxOptions;
 #pragma pack(pop)
 

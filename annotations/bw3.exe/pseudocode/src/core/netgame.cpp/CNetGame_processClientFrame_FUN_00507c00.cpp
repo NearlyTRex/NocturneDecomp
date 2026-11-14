@@ -19,19 +19,19 @@ void __cdecl core_netgame_cpp_CNetGame_processClientFrame_FUN_00507c00(CNetGame 
   float local_20;
   byte *local_18;
   
-  if (((*(int *)this_ptr == 2) && (*(int *)&this_ptr->field_0x4 == 3)) &&
-     (-1 < *(int *)&this_ptr->field_0x120)) {
-    if (*(int *)&this_ptr->field_0x124 < 0) {
+  if (((this_ptr->connection_type == CONNECTION_CLIENT) &&
+      (this_ptr->network_mode == NET_MODE_PLAYING)) && (-1 < this_ptr->server_player_index)) {
+    if (this_ptr->local_player_index < 0) {
       _DAT_01d71de0 = "..\\core\\netgame.cpp";
       _DAT_01d71de4 = 0x97c;
       core_main_c_FUN_004e4330("CNetGame::processClientFrame - I'm not in player list!");
     }
-    core_netgame_cpp_CNetGame_updatePing_FUN_00506320(this_ptr,*(int *)&this_ptr->field_0x120,10.0);
+    core_netgame_cpp_CNetGame_updatePing_FUN_00506320(this_ptr,this_ptr->server_player_index,10.0);
     core_netgame_cpp_CNetGame_receivePackets_FUN_00504c70(this_ptr);
-    if (*(int *)this_ptr == 2) {
+    if (this_ptr->connection_type == CONNECTION_CLIENT) {
 LAB_00507c65:
       iVar4 = 0;
-      uVar5 = *(uint *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x124 * 0x80);
+      uVar5 = this_ptr->players[this_ptr->local_player_index].sim_frame_index;
       if (0 < _DAT_01dc5c80) {
         iVar2 = 0;
         do {
@@ -42,7 +42,7 @@ LAB_00507c65:
                         (this_ptr,(SSimFrame *)(iVar2 + 0x1dc5c84));
               core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00507fd0(this_ptr);
               uVar5 = uVar5 ^ uVar1;
-              iVar4 = *(int *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x124 * 0x80);
+              iVar4 = this_ptr->players[this_ptr->local_player_index].sim_frame_index;
               if (0 < _DAT_01dc5c80) {
                 iVar2 = 0;
                 local_18 = &DAT_01dc5cf8;
@@ -60,13 +60,13 @@ LAB_00507c65:
                 } while ((int)uVar5 < _DAT_01dc5c80);
               }
               iVar4 = _DAT_01dc5c80;
-              *(uint *)&this_ptr->field_0x178 = 0;
+              this_ptr->has_pending_sim_frame = 0;
               iVar2 = 0;
               if (iVar4 < 1) {
                 return;
               }
               iVar3 = 0;
-              while (*(int *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x124 * 0x80) !=
+              while (this_ptr->players[this_ptr->local_player_index].sim_frame_index !=
                      *(int *)(iVar3 + 0x1dc5c84)) {
                 iVar3 = iVar3 + 0x74;
                 iVar2 = iVar2 + 1;
@@ -77,7 +77,7 @@ LAB_00507c65:
               if (iVar2 < 0) {
                 return;
               }
-              *(uint *)&this_ptr->field_0x178 = 1;
+              this_ptr->has_pending_sim_frame = 1;
               return;
             }
             break;
@@ -87,7 +87,7 @@ LAB_00507c65:
         } while (iVar2 < _DAT_01dc5c80 * 0x74);
       }
       core_netgame_cpp_CNetGame_receivePackets_FUN_00504c70(this_ptr);
-      if (*(int *)this_ptr == 2) {
+      if (this_ptr->connection_type == CONNECTION_CLIENT) {
         local_20 = (float)(_DAT_01da6478 - _DAT_01da6488) * (float)_DAT_005cb119;
         if (local_20 < 0.0) {
           local_20 = 0.0;

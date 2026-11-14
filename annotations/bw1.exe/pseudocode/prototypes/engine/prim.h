@@ -13,29 +13,29 @@ void __cdecl FUN_0053d7a0(int culling_mode);
 // Address: 0053d7b0
 void FUN_0053d7b0(int param_1,int param_2);
 
-// Original: engine_prim.c_FUN_0053db80
+// Original: engine_prim.c_findEdgeInBuffer_FUN_0053db80
 // Address: 0053db80
-SSoftwareEdge * __cdecl FUN_0053db80(int y_value,SSoftwareEdge *edge_ptr);
+SSoftwareEdge * __cdecl findEdgeInBuffer(int y_value,SSoftwareEdge *edge_ptr);
 
 // Original: engine_prim.c_prepareDepthBuffer_FUN_0053dbc0
 // Address: 0053dbc0
-void __cdecl prepareDepthBuffer(int param_1,int param_2);
+void __cdecl prepareDepthBuffer(SRenderVertex *vertices,int vertex_count);
 
 // Original: engine_prim.c_normalizeTextureCoords_FUN_0053dc30
 // Address: 0053dc30
-void __cdecl normalizeTextureCoords(int param_1,int param_2);
+void __cdecl normalizeTextureCoords(SRenderVertex *vertices,int vertex_count);
 
 // Original: engine_prim.c_adjustNearPlaneTextureCoords_FUN_0053dcb0
 // Address: 0053dcb0
-void __cdecl adjustNearPlaneTextureCoords(int param_1,int param_2);
+void __cdecl adjustNearPlaneTextureCoords(SRenderVertex *vertices,int vertex_count);
 
 // Original: engine_prim.c_replaceWWithDepth_FUN_0053dd20
 // Address: 0053dd20
-void __cdecl replaceWWithDepth(int param_1,int param_2);
+void __cdecl replaceWWithDepth(SRenderVertex *vertices,int vertex_count);
 
 // Original: engine_prim.c_calculateTriangleWindingOrder_FUN_0053dd60
 // Address: 0053dd60
-bool __cdecl calculateTriangleWindingOrder(int param_1,int param_2,int param_3);
+int __cdecl calculateTriangleWindingOrder(SRenderVertex *v0,SRenderVertex *v1,SRenderVertex *v2);
 
 // Original: engine_prim.c_calculateTriangleWindingOrderFromIndices_FUN_0053de20
 // Address: 0053de20
@@ -47,24 +47,24 @@ undefined4 FUN_0053df50(void);
 
 // Original: engine_prim.c_getTriangleWindingFromPackedIndices_FUN_0053e000
 // Address: 0053e000
-bool __cdecl getTriangleWindingFromPackedIndices(ushort *param_1);
+int __cdecl getTriangleWindingFromPackedIndices(STrianglePackedIndices *triangle);
 
-// Original: engine_prim.c_FUN_0053e120
+// Original: engine_prim.c_renderPolygonSoftware_FUN_0053e120
 // Address: 0053e120
-void __cdecl FUN_0053e120(SRenderVertex *vertices,int vertex_count);
+void __cdecl renderPolygonSoftware(SRenderVertex *vertices,int vertex_count);
 
-// Original: engine_prim.c_FUN_0053e650
+// Original: engine_prim.c_renderIndexedPolygonSoftware_FUN_0053e650
 // Address: 0053e650
-void __cdecl FUN_0053e650(int *vertex_indices,int vertex_count);
+void __cdecl renderIndexedPolygonSoftware(int *vertex_indices,int vertex_count);
 
-// Original: engine_prim.c_FUN_0053eda0
+// Original: engine_prim.c_setupColoredSoftwareEdge_FUN_0053eda0
 // Address: 0053eda0
-void FUN_0053eda0(int param_1,int param_2);
+void __cdecl setupColoredSoftwareEdge(SRenderVertex *vertex0,SRenderVertex *vertex1);
 
-// Original: engine_prim.c_FUN_0053f080
+// Original: engine_prim.c_renderScanlinePolygon_FUN_0053f080
 // Address: 0053f080
-void __cdecl FUN_0053f080(SRenderVertex *vertices,int vertex_count);
+void __cdecl renderScanlinePolygon(SRenderVertex *vertices,int vertex_count);
 
-// Original: engine_prim.c_FUN_0053f720
+// Original: engine_prim.c_renderIndexedPolygonAdvanced_FUN_0053f720
 // Address: 0053f720
-void __cdecl FUN_0053f720(int *vertex_indices,int vertex_count);
+void __cdecl renderIndexedPolygonAdvanced(int *vertex_indices,int vertex_count);

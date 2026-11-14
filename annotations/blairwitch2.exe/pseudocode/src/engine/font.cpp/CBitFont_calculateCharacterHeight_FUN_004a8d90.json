@@ -1,0 +1,174 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 54,
+    "complexity_score": 28,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 28,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 82
+  },
+  "cross_references": [
+    {
+      "addr": "004a88e0",
+      "from_addr": "004a8c6d",
+      "name": "engine_font.cpp_FUN_004a88e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a8d90",
+    "address_range": [
+      [
+        "004a8d90",
+        "004a8ded"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_004a8d90",
+    "signature": "int __cdecl engine_font_cpp_CBitFont_calculateCharacterHeight_FUN_004a8d90(CBitFont *this_ptr,uchar *char_bitmap,int char_width,int char_height,int bitmap_stride)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004a8c6d",
+        "call_type": "direct",
+        "caller": "engine_font.cpp_FUN_004a88e0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004a8ce9",
+        "call_type": "direct",
+        "caller": "engine_font.cpp_FUN_004a88e0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0,
+    "instruction_count": 42,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CBRANCH": 5,
+      "COPY": 39,
+      "INT_ADD": 18,
+      "INT_AND": 32,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 30,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 15,
+      "INT_SUB": 8,
+      "INT_XOR": 4,
+      "LOAD": 14,
+      "POPCOUNT": 15,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 210
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004c1d70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004b09c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004cda20",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00490920",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBitFont *"
+      },
+      {
+        "is_param": true,
+        "name": "char_bitmap",
+        "offset": 8,
+        "size": 4,
+        "type": "uchar *"
+      },
+      {
+        "is_param": true,
+        "name": "char_width",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "char_height",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "bitmap_stride",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

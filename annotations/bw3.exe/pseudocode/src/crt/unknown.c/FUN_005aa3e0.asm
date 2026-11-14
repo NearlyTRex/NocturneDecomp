@@ -14,7 +14,7 @@
 ;   crt_math.c_pow_FUN_005a4764 at 005a4786
 ;
 ; Called Functions:
-;   unkafter_asgaya.cpp_FUN_005aec4d
+;   crt_unknown.c_FUN_005aec4d
 ;
 ; *****************************************************************************
 
@@ -87,8 +87,8 @@ section .text
     LEA EDX,[EBP + 0x8]                 ; 005aa44f
     PUSH EDX                            ; 005aa452
     PUSH EAX                            ; 005aa453
-    CALL unkafter_asgaya.cpp_FUN_005aec4d ; 005aa454
-        ;   XREF to: 005aec4d (UNCONDITIONAL_CALL)  ; undefined unkafter_asgaya.cpp_FUN_005aec4d()
+    CALL crt_unknown.c_FUN_005aec4d     ; 005aa454
+        ;   XREF to: 005aec4d (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005aec4d()
     MOV dword ptr [EBP + -0xc],EAX      ; 005aa459
     MOV dword ptr [EBP + -0x8],EDX      ; 005aa45c
     ADD ESP,0xc                         ; 005aa45f

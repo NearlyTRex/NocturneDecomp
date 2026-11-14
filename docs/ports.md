@@ -17,7 +17,7 @@ bug report.
 
 | Platform | Presets | Built in CI | Played | Status |
 |---|---|:---:|:---:|---|
-| Linux x86_64 | `exe-linux-x86_64`, `exe-linux-asan-x86_64` (default), `exe-linux-gles-x86_64` | Yes | Yes | Playable; the main development platform |
+| Linux x86_64 | `exe-linux-x86_64` (default), `exe-linux-asan-x86_64`, `exe-linux-gles-x86_64` | Yes | Yes | Playable; the main development platform |
 | Windows x86_64 | `exe-windows-x86_64` (cross from Linux), `exe-windows-msys2`, `exe-windows-msvc` | Yes, tests under wine and on Windows | Yes | Playable |
 | macOS Apple silicon | `exe-macos-arm64` | Yes | No | Builds; needs testing |
 | macOS Intel | `exe-macos-x86_64` | Yes | No | Builds; needs testing |

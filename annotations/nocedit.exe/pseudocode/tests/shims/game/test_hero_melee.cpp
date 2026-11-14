@@ -93,7 +93,7 @@ NOCTURNE_TEST(a_blow_is_melee_damage_from_the_hero) {
     CHECK_EQ(stand.damage.size(), (size_t)1);
     if (!stand.damage.empty()) {
         const SDamageInfo &d = stand.damage[0].second;
-        CHECK_EQ((int)d.damage_type, (int)DAMAGE_TYPE_MELEE);
+        CHECK_EQ((int)d.damage_type, (int)DAMAGE_TYPE_ATTACK_BLADE);
         CHECK(d.attacker == &self->base);
         CHECK_EQ(d.impact_point.z, 3.0f);
     }

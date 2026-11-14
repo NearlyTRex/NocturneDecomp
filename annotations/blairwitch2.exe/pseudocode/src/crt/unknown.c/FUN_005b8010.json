@@ -126,9 +126,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004434be",
+      "addr": "004434c0",
       "from_addr": "004434d1",
-      "name": "core_dcamera.cpp_FUN_004434be",
+      "name": "core_dcamera.cpp_saveCameraFog_FUN_004434c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -158,7 +158,7 @@
     {
       "addr": "004a6470",
       "from_addr": "004a6481",
-      "name": "core_fldnotes.cpp_FUN_004a6470",
+      "name": "core_fldnotes.cpp_CFieldNotes_saveState_FUN_004a6470",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -186,15 +186,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004dc2c0",
-      "from_addr": "004dc2df",
-      "name": "core_inv.cpp_FUN_004dc2c0",
+      "addr": "004dc460",
+      "from_addr": "004dc494",
+      "name": "core_inv.cpp_CInventory_saveItems_FUN_004dc460",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004dc460",
-      "from_addr": "004dc494",
-      "name": "core_inv.cpp_FUN_004dc460",
+      "addr": "004dc2c0",
+      "from_addr": "004dc2df",
+      "name": "core_inv.cpp_CInventory_save_FUN_004dc2c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -206,25 +206,25 @@
     {
       "addr": "004fbce0",
       "from_addr": "004fbcff",
-      "name": "core_mission.cpp_FUN_004fbce0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00502c1e",
-      "from_addr": "00502c31",
-      "name": "core_motion.cpp_FUN_00502c1e",
+      "name": "core_mission.cpp_CDemonMission_writeFile_FUN_004fbce0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00504250",
       "from_addr": "005042a5",
-      "name": "core_motion.cpp_FUN_00504250",
+      "name": "core_motion.cpp_CMotionController_save_FUN_00504250",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00502c20",
+      "from_addr": "00502c31",
+      "name": "core_motion.cpp_FUN_00502c20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0052a400",
       "from_addr": "0052a412",
-      "name": "core_script.cpp_FUN_0052a400",
+      "name": "core_script.cpp_CScript_saveState_FUN_0052a400",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -242,13 +242,13 @@
     {
       "addr": "00573770",
       "from_addr": "00573841",
-      "name": "core_texlist.cpp_FUN_00573770",
+      "name": "core_texlist.cpp_CTextureList_save_FUN_00573770",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00436710",
       "from_addr": "004367be",
-      "name": "engine_console.cpp_FUN_00436710",
+      "name": "engine_console.cpp_CConsole_printf_FUN_00436710",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -258,9 +258,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00574bbe",
+      "addr": "00574bc0",
       "from_addr": "00574c08",
-      "name": "engine_texture.cpp_FUN_00574bbe",
+      "name": "engine_texture.cpp_FUN_00574bc0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -383,7 +383,7 @@
       {
         "call_addr": "004367be",
         "call_type": "direct",
-        "caller": "engine_console.cpp_FUN_00436710",
+        "caller": "engine_console.cpp_CConsole_printf_FUN_00436710",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -446,6 +446,32 @@
       "STORE": 6
     },
     "pcode_op_count": 60
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005c03c0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005a3140",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005fe6d0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "005644f0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 12,

@@ -11,31 +11,33 @@
 void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_00540870(CSkeleton *this_ptr,int bone_count,int frame_count)
 
 {
-  uint uVar1;
+  CQuaternion4f *pCVar1;
+  CVector3f *pCVar2;
   
-  core_skeleton_cpp_FUN_00540980(this_ptr,0);
+  core_skeleton_cpp_CSkeleton_free_FUN_00540980(this_ptr,0);
   if (100 < bone_count) {
     _DAT_01d046a0 = "..\\core\\skeleton.cpp";
     _DAT_01d046a4 = 199;
     core_main_c_FUN_004e4500("Too bony!");
   }
-  *(int *)&this_ptr->field_0x1d1f8 = bone_count;
-  *(int *)&this_ptr->field_0x1e00c = frame_count;
-  uVar1 = FUN_005b8df8
-                    (*(int *)&this_ptr->field_0x1d1f8 * *(int *)&this_ptr->field_0x1e00c * 0x10);
-  *(uint *)&this_ptr->field_0x1e010 = uVar1;
-  uVar1 = FUN_005b8df8(*(int *)&this_ptr->field_0x1e00c * 0xc);
-  *(uint *)&this_ptr->field_0x1e014 = uVar1;
-  uVar1 = FUN_005b8df8(*(int *)&this_ptr->field_0x1e00c * 0xc);
-  *(uint *)&this_ptr->field_0x1e018 = uVar1;
-  if (((*(int *)&this_ptr->field_0x1e010 != 0) && (*(int *)&this_ptr->field_0x1e014 != 0)) &&
-     (*(int *)&this_ptr->field_0x1e018 != 0)) {
+  this_ptr->bone_count = bone_count;
+  this_ptr->frame_count = frame_count;
+  pCVar1 = (CQuaternion4f *)
+           operator_new_array
+                     (this_ptr->bone_count * this_ptr->frame_count * 0x10);
+  this_ptr->bone_angle_frames = pCVar1;
+  pCVar2 = (CVector3f *)operator_new_array(this_ptr->frame_count * 0xc);
+  this_ptr->frame_positions_1 = pCVar2;
+  pCVar2 = (CVector3f *)operator_new_array(this_ptr->frame_count * 0xc);
+  this_ptr->frame_positions_2 = pCVar2;
+  if (((this_ptr->bone_angle_frames != (CQuaternion4f *)0x0) &&
+      (this_ptr->frame_positions_1 != (CVector3f *)0x0)) &&
+     (this_ptr->frame_positions_2 != (CVector3f *)0x0)) {
     return;
   }
   _DAT_01d046a0 = "..\\core\\skeleton.cpp";
   _DAT_01d046a4 = 0xdb;
   core_main_c_FUN_004e4500
-            ("Out of hunk in CSkeleton::allocMemory.  boneCount=%d, frameCount=%d",*(uint *)&this_ptr->field_0x1d1f8,
-             *(uint *)&this_ptr->field_0x1e00c);
+            ("Out of hunk in CSkeleton::allocMemory.  boneCount=%d, frameCount=%d",this_ptr->bone_count,this_ptr->frame_count);
   return;
 }

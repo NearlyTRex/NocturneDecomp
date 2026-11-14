@@ -1,20 +1,20 @@
 // Name: core_confedrt.cpp_factoryFuncConfederate_FUN_005a0810
 // Address: 005a0810
 // Address Range: [[005a0810, 005a082b]]
-// Convention: unknown
-// Signature: void core_confedrt_cpp_factoryFuncConfederate_FUN_005a0810(void)
+// Convention: __cdecl
+// Signature: CConfederate * __cdecl core_confedrt_cpp_factoryFuncConfederate_FUN_005a0810(void)
 
 #include "nocturne.h"
 
-void core_confedrt_cpp_factoryFuncConfederate_FUN_005a0810(void)
+CConfederate * __cdecl core_confedrt_cpp_factoryFuncConfederate_FUN_005a0810(void)
 
 {
-  CConfederate *this_ptr;
+  CConfederate *pCVar1;
   
-  this_ptr = (CConfederate *)FUN_005b8be2(0x11868);
-  if (this_ptr == (CConfederate *)0x0) {
-    return;
+  pCVar1 = (CConfederate *)operator_new(0x11868);
+  if (pCVar1 == (CConfederate *)0x0) {
+    return (CConfederate *)0x0;
   }
-  core_confedrt_cpp_CConfederate_ctor_FUN_005a0840(this_ptr);
-  return;
+  pCVar1 = core_confedrt_cpp_CConfederate_ctor_FUN_005a0840(pCVar1);
+  return pCVar1;
 }

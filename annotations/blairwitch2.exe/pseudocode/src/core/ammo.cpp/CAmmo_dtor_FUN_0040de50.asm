@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CAmmo * core_ammo_cpp_CAmmo_dtor_FUN_0040de50(CAmmo *this_ptr,uint flags)
+; CAmmo * __cdecl core_ammo_cpp_CAmmo_dtor_FUN_0040de50(CAmmo *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CAmmo *          Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   undefined4 g_CAmmoVTable
+;   CDemonActor_vtable g_CAmmoVTable
 ;   WatcomTypeInfo g_CAmmoTypeInfo
 ;
 ; Called Functions:
@@ -45,7 +45,7 @@ section .text
         ;   Label: LAB_0040de80
     PUSH EBX                            ; 0040de85
     CALL crt_memory.c___vec_delete_FUN_005b7fa7 ; 0040de86
-        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005b7fa7()
+        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005b7fa7(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 0040de8b
     PUSH EAX                            ; 0040de8e
     CALL crt_unknown.c_FUN_005b7fce     ; 0040de8f

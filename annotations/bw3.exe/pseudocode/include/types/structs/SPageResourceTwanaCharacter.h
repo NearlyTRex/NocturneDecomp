@@ -4,13 +4,15 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/SPageResourceBitmap.h"
 
 // Structure: SPageResourceTwanaCharacter
-// Stub: size from Watcom RTTI, fields not yet recovered
+// new(0x4c) for <twanachar>; ctor calls the Bitmap ctor first
 // Ghidra size: 0x4c (76 bytes)
 #pragma pack(push, 1)
 typedef struct SPageResourceTwanaCharacter {
-    char field_0[76]; // 0x0
+    SPageResourceBitmap base; // 0x0, derived
+    char character[32]; // 0x2c, ctor copies name arg; sprintf l_%s image; onMouse passes it to TwanaEntry_addCharacter
 } SPageResourceTwanaCharacter;
 #pragma pack(pop)
 

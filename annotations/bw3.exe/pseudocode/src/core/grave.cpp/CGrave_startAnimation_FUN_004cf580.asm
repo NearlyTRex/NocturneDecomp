@@ -7,16 +7,16 @@
 ; CGrave *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_demnfolk.cpp_FUN_00455080 at 0045640f
+;   core_demnfolk.cpp_CDemnfolk_process_FUN_00455080 at 0045640f
 ;   core_grave.cpp_CGrave_process_FUN_004cf370 at 004cf3c5
-;   core_zombie.cpp_FUN_00588ee0 at 0058a2d6
+;   core_zombie.cpp_CZombie_process_FUN_00588ee0 at 0058a2d6
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
-;   core_set.cpp_FUN_00534820
+;   core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_00534820
 ;
 ; *****************************************************************************
 
@@ -48,8 +48,8 @@ section .text
         ;   Label: LAB_004cf5c6
     MOV EBX,dword ptr [0x00603b28]      ; 004cf5c7 | g_CDemonSetPtr
     PUSH EBX                            ; 004cf5cd | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_00534820      ; 004cf5ce
-        ;   XREF to: 00534820 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00534820(CDemonSet * this_ptr, CDemonActor * actor)
+    CALL core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_00534820 ; 004cf5ce
+        ;   XREF to: 00534820 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_00534820(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004cf5d3
     POP EBX                             ; 004cf5d6
         ;   Label: LAB_004cf5d6

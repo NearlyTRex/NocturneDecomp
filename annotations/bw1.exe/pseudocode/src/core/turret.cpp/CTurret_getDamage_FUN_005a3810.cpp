@@ -11,6 +11,6 @@ float __cdecl core_turret_cpp_CTurret_getDamage_FUN_005a3810(CTurret *this_ptr)
 {
   float fVar1;
   
-  fVar1 = (float)core_actor_cpp_FUN_0040cc00(0x41200000,0x41700000);
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(10.0,15.0);
   return fVar1;
 }

@@ -7,39 +7,39 @@
 
 // Original: core_armour.cpp_staticInit_FUN_0040e980
 // Address: 0040e980
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_armour.cpp_factoryFuncArmour_FUN_0040e9b0
 // Address: 0040e9b0
-void factoryFuncArmour(void);
+CArmour * __cdecl factoryFuncArmour(void);
 
 // Original: core_armour.cpp_CArmour_getActorType_FUN_0040e9d0
 // Address: 0040e9d0
-CDemonActorType * CArmour::getActorType(CArmour *this_ptr);
+CDemonActorType * __cdecl CArmour::getActorType(CArmour *this_ptr);
 
 // Original: core_armour.cpp_CArmour_ctor_FUN_0040e9e0
 // Address: 0040e9e0
-CArmour * CArmour::ctor(CArmour *this_ptr);
+CArmour * __cdecl CArmour::ctor(CArmour *this_ptr);
 
 // Original: core_armour.cpp_CArmour_setup_FUN_0040ea80
 // Address: 0040ea80
 void __cdecl CArmour::setup(CArmour *this_ptr);
 
-// Original: core_armour.cpp_FUN_0040eaa0
+// Original: core_armour.cpp_CArmour_process_FUN_0040eaa0
 // Address: 0040eaa0
-void FUN_0040eaa0(CCharacter *param_1,float param_2);
+void __cdecl CArmour::process(CArmour *this_ptr,float delta_time);
 
-// Original: core_armour.cpp_FUN_0040ebe0
+// Original: core_armour.cpp_CArmour_archive_FUN_0040ebe0
 // Address: 0040ebe0
-void FUN_0040ebe0(CEnemy *param_1);
+void __cdecl CArmour::archive(CArmour *this_ptr);
 
-// Original: core_armour.cpp_FUN_0040ec40
+// Original: core_armour.cpp_CArmour_processDamage_FUN_0040ec40
 // Address: 0040ec40
-void FUN_0040ec40(CCharacter *param_1,undefined4 param_2);
+void __cdecl CArmour::processDamage(CArmour *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_armour.cpp_FUN_0040ec90
+// Original: core_armour.cpp_CArmour_getTargetPoints_FUN_0040ec90
 // Address: 0040ec90
-undefined4 FUN_0040ec90(void);
+int __cdecl CArmour::getTargetPoints(CArmour *this_ptr,CVector3f *out_points_array);
 
 // Original: core_armour.cpp_CArmour_getCollisionType_FUN_0040eca0
 // Address: 0040eca0
@@ -47,12 +47,16 @@ ECollisionType __cdecl CArmour::getCollisionType(CArmour *this_ptr,SCollisionInf
 
 // Original: core_armour.cpp_CArmour_dtor_FUN_0040ecc0
 // Address: 0040ecc0
-CArmour * CArmour::dtor(CArmour *this_ptr,uint flags);
+CArmour * __cdecl CArmour::dtor(CArmour *this_ptr,uint flags);
 
 // Original: core_armour.cpp_CEnemy_dtor_FUN_0040ed50
 // Address: 0040ed50
-CEnemy * CEnemy::dtor(CEnemy *this_ptr,uint flags);
+CEnemy * __cdecl CEnemy::dtor(CEnemy *this_ptr,uint flags);
 
 // Original: core_armour.cpp_CFlame_dtor_FUN_0040ede0
 // Address: 0040ede0
 CFlame * __cdecl CFlame::dtor(CFlame *this_ptr,uint flags);
+
+// Original: core_armour.cpp_FUN_0040ee30
+// Address: 0040ee30
+void FUN_0040ee30(void *param_1);

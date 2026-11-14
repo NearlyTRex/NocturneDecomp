@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_drawsurf_cpp_FUN_00469080(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+; void cockpit_drawsurf_cpp_FUN_00469080(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5)
 ;
 ;
 ; Referenced Globals:
@@ -39,7 +39,7 @@ section .text
     PUSH EDX                            ; 004690bb
     MOV dword ptr [0x005f2af0],ECX      ; 004690bc | DAT_005f2af0
     CALL cockpit_drawsurf.cpp_FUN_004691e0 ; 004690c2
-        ;   XREF to: 004691e0 (UNCONDITIONAL_CALL)  ; undefined cockpit_drawsurf.cpp_FUN_004691e0()
+        ;   XREF to: 004691e0 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_FUN_004691e0(CDrawSurface * this_ptr, int x1, int y1, int x2, ...)
     ADD ESP,0x14                        ; 004690c7
     MOV EAX,dword ptr [ESP]             ; 004690ca
     MOV dword ptr [0x005f2aec],EBX      ; 004690cd | DAT_005f2aec

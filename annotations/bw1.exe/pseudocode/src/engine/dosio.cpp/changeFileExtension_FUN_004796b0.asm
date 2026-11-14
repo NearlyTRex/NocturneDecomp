@@ -12,12 +12,12 @@
 ; undefined        Stack[-0x8]:1  local_8
 ;
 ; XREF[2]:
-;   core_fldnotes.cpp_FUN_004bcba0 at 004bd7d8
+;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004bcba0 at 004bd7d8
 ;   engine_texture.cpp_CTextureCache_loadTexture_FUN_005967a0 at 005968dd
 ;
 ; Called Functions:
-;   engine_dosio.cpp_FUN_00479580
-;   engine_dosio.cpp_FUN_004795b0
+;   engine_dosio.cpp_makePath_FUN_004795b0
+;   engine_dosio.cpp_splitPath_FUN_00479580
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     PUSH EAX                            ; 004796cd
     MOV EDX,dword ptr [ESP + 0x21c]     ; 004796ce
     PUSH EDX                            ; 004796d5
-    CALL engine_dosio.cpp_FUN_00479580  ; 004796d6
-        ;   XREF to: 00479580 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_FUN_00479580(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00479580 ; 004796d6
+        ;   XREF to: 00479580 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00479580(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004796db
     MOV ECX,dword ptr [ESP + 0x210]     ; 004796de
     PUSH ECX                            ; 004796e5
@@ -48,8 +48,8 @@ section .text
     PUSH EAX                            ; 004796fa
     MOV EBX,dword ptr [ESP + 0x21c]     ; 004796fb
     PUSH EBX                            ; 00479702
-    CALL engine_dosio.cpp_FUN_004795b0  ; 00479703
-        ;   XREF to: 004795b0 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_FUN_004795b0(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_makePath_FUN_004795b0 ; 00479703
+        ;   XREF to: 004795b0 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_makePath_FUN_004795b0(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 00479708
     ADD ESP,0x204                       ; 0047970b
     POP EBX                             ; 00479711

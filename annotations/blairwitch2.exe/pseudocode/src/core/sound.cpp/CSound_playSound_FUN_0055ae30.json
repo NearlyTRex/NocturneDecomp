@@ -2,15 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 6,
+    "complexity_score": 7,
     "cross_reference_count": 7,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 6,
+    "pseudocode_lines": 7,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 20
+    "total_lines": 21
   },
   "cross_references": [
     {
@@ -28,7 +28,7 @@
     {
       "addr": "00529750",
       "from_addr": "005298ca",
-      "name": "core_script.cpp_FUN_00529750",
+      "name": "core_script.cpp_CScript_startDialogLine_FUN_00529750",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -40,7 +40,7 @@
     {
       "addr": "00583160",
       "from_addr": "005833a1",
-      "name": "core_vampboss.cpp_FUN_00583160",
+      "name": "core_vampboss.cpp_CVampireBoss_processDamage_FUN_00583160",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -52,7 +52,7 @@
     {
       "addr": "0058a660",
       "from_addr": "0058aa14",
-      "name": "core_weather.cpp_FUN_0058a660",
+      "name": "core_weather.cpp_CWeather_update_FUN_0058a660",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -72,7 +72,7 @@
     {
       "addr": "005594c0",
       "is_variadic": false,
-      "name": "core_sound.cpp_FUN_005594c0"
+      "name": "core_sound.cpp_playSfxInternal_FUN_005594c0"
     }
   ],
   "globals": [],
@@ -115,7 +115,7 @@
       {
         "call_addr": "005298ca",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00529750",
+        "caller": "core_script.cpp_CScript_startDialogLine_FUN_00529750",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -137,7 +137,7 @@
       {
         "call_addr": "0058aa14",
         "call_type": "direct",
-        "caller": "core_weather.cpp_FUN_0058a660",
+        "caller": "core_weather.cpp_CWeather_update_FUN_0058a660",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -159,7 +159,7 @@
       {
         "call_addr": "005833a1",
         "call_type": "direct",
-        "caller": "core_vampboss.cpp_FUN_00583160",
+        "caller": "core_vampboss.cpp_CVampireBoss_processDamage_FUN_00583160",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -193,6 +193,32 @@
       "STORE": 8
     },
     "pcode_op_count": 42
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0057d880",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005609b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005b3a20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0052ea40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 16,

@@ -1,0 +1,188 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 15,
+    "complexity_score": 85,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 10,
+    "suspect_count": 7,
+    "suspect_types": [
+      "extra_output"
+    ],
+    "total_lines": 25
+  },
+  "cross_references": [
+    {
+      "addr": "004a4070",
+      "from_addr": "004a40cd",
+      "name": "core_fldnotes.cpp_SNotesMap_paginate_FUN_004a4070",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a4120",
+    "address_range": [
+      [
+        "004a4120",
+        "004a414a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fldnotes.cpp_SPageResourceMap_ctor_FUN_004a4120",
+    "signature": "SPageResourceMap * __cdecl core_fldnotes_cpp_SPageResourceMap_ctor_FUN_004a4120(SPageResourceMap *this_ptr,SNotesMap *map)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a1e60",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_SPageResource_ctor_FUN_004a1e60"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f6f14",
+      "name": "g_SPageResourceMapVTable",
+      "type": "void*",
+      "value": "004a66a0"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004a40cd",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_SNotesMap_paginate_FUN_004a4070",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.4615384615384617,
+    "instruction_count": 13,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 10,
+      "INT_ADD": 11,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 2,
+      "LOAD": 6,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 45
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004bcb10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004aa780",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "SPageResourceMap *"
+      },
+      {
+        "is_param": true,
+        "name": "map",
+        "offset": 8,
+        "size": 4,
+        "type": "SNotesMap *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 5,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "SPageResourceMap *extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "(extraout_EAX->base).vtable = &g_SPageResourceMapVTable;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "extraout_EAX->map = map;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 10,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "(extraout_EAX->base).width = map->width;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "(extraout_EAX->base).height = extraout_EAX->map->height;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "(extraout_EAX->base).height = extraout_EAX->map->height;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 12,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "return extraout_EAX;",
+      "type": "extra_output"
+    }
+  ]
+}

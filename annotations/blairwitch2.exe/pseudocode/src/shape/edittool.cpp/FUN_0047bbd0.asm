@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   engine_special.cpp_FUN_0055f500
-;   engine_special.cpp_FUN_0055f550
+;   engine_special.cpp_unlockFrame_FUN_0055f550
 ;
 ; *****************************************************************************
 
@@ -98,8 +98,8 @@ section .text
         ;   XREF to: 0047bc4b (CONDITIONAL_JUMP)  ; LAB_0047bc4b
     PUSH 0x1                            ; 0047bc81
         ;   Label: LAB_0047bc81
-    CALL engine_special.cpp_FUN_0055f550 ; 0047bc83
-        ;   XREF to: 0055f550 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_0055f550(int clear_lock_flag)
+    CALL engine_special.cpp_unlockFrame_FUN_0055f550 ; 0047bc83
+        ;   XREF to: 0055f550 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_0055f550(int clear_lock_flag)
     ADD ESP,0x4                         ; 0047bc88
     POP ESI                             ; 0047bc8b
     POP EDI                             ; 0047bc8c

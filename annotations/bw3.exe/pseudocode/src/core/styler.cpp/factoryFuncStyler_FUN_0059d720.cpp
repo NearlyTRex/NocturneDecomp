@@ -1,20 +1,20 @@
 // Name: core_styler.cpp_factoryFuncStyler_FUN_0059d720
 // Address: 0059d720
 // Address Range: [[0059d720, 0059d73b]]
-// Convention: unknown
-// Signature: void core_styler_cpp_factoryFuncStyler_FUN_0059d720(void)
+// Convention: __cdecl
+// Signature: CStyler * __cdecl core_styler_cpp_factoryFuncStyler_FUN_0059d720(void)
 
 #include "nocturne.h"
 
-void core_styler_cpp_factoryFuncStyler_FUN_0059d720(void)
+CStyler * __cdecl core_styler_cpp_factoryFuncStyler_FUN_0059d720(void)
 
 {
-  CStyler *this_ptr;
+  CStyler *pCVar1;
   
-  this_ptr = (CStyler *)FUN_005a3cb2(0x487c8);
-  if (this_ptr == (CStyler *)0x0) {
-    return;
+  pCVar1 = (CStyler *)operator_new(0x487c8);
+  if (pCVar1 == (CStyler *)0x0) {
+    return (CStyler *)0x0;
   }
-  core_styler_cpp_CStyler_ctor_FUN_0059d750(this_ptr);
-  return;
+  pCVar1 = core_styler_cpp_CStyler_ctor_FUN_0059d750(pCVar1);
+  return pCVar1;
 }

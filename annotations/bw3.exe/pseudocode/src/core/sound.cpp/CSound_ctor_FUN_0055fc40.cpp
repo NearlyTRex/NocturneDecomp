@@ -9,8 +9,8 @@
 CSound * __cdecl core_sound_cpp_CSound_ctor_FUN_0055fc40(CSound *this_ptr)
 
 {
-  *(uint *)this_ptr = 0x1400;
-  sound_sndmain_cpp_FUN_00556d70(3);
+  this_ptr->magic = 0x1400;
+  sound_sndmain_cpp_setNumberOfSfxChannels_FUN_00556d70(3);
   sound_sndmain_cpp_resetSoundSystemDefaults_FUN_00557f60();
   return this_ptr;
 }

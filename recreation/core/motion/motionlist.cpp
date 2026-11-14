@@ -14,8 +14,10 @@
 namespace nocturne::core {
 namespace {
 
-constexpr int kLatestVersion = 2;
+constexpr int kLatestVersion = 3;
 constexpr int kMarkerVersion = 2;
+// Blair Witch's version, which stores a motion's poses at a frame resolution.
+constexpr int kFrameResolutionVersion = 3;
 
 // The file's number for the command; every one it holds is an EMotionTransitionCmd.
 EMotionTransitionCmd toCommand(int number) {
@@ -29,6 +31,7 @@ CMotionList::CMotionList() = default;
 
 // Each group of fields follows a comment line, which is passed over.
 // nocedit 0x0052cd70
+// bw1 0x00523980
 void CMotionList::load(common::CTextScanner &scanner) {
     scanner.skipLine();
     int version = -1;
@@ -74,6 +77,13 @@ void CMotionList::loadMotion(common::CTextScanner &scanner, int version, SMotion
     scanner.skipLine();
     common::scanFormat(scanner, "%d,%f\n", motion.exit_backward_to_motion,
                        motion.exit_backward_to_frame);
+    if (version < kFrameResolutionVersion) {
+        motion.frame_resolution = 1;
+        motion.stored_frame_count = motion.frame_count;
+    } else {
+        scanner.skipLine();
+        common::scanFormat(scanner, "%d,%d\n", motion.frame_resolution, motion.stored_frame_count);
+    }
     scanner.skipLine();
     int transition_count = 0;
     common::scanFormat(scanner, "%d\n", transition_count);

@@ -17,7 +17,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_00495da0(C
     local_34[0] = '\0';
   }
   else {
-    FUN_005bfb40(local_34,&DAT_005dbed4,*result_ptr);
+    _sprintf(local_34,&DAT_005dbed4);
   }
   while( true ) {
     while( true ) {
@@ -28,11 +28,12 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_00495da0(C
       }
       iVar1 = sscanf(local_34,&DAT_005dbed7);
       if (iVar1 == 1) break;
-      shape_edittool_cpp_FUN_004943a0(this_ptr,"Please enter a valid integer.");
+      shape_edittool_cpp_CEditorTools_showError_FUN_004943a0
+                (this_ptr,"Please enter a valid integer.");
     }
     if ((enable_range_check == 0) || ((min_value <= local_14 && (local_14 <= max_value)))) break;
-    shape_edittool_cpp_FUN_004943a0
-              (this_ptr,"Please enter a valid integer between %d and %d.",min_value,max_value);
+    shape_edittool_cpp_CEditorTools_showError_FUN_004943a0
+              (this_ptr,"Please enter a valid integer between %d and %d.");
   }
   *result_ptr = local_14;
   return 1;

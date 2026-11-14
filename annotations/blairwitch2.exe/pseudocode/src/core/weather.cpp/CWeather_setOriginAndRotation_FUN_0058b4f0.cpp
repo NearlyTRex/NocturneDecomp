@@ -29,30 +29,29 @@ void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_0058b4f0(CWeathe
   float local_18;
   float local_14;
   
-  if ((CVector3f *)(this_ptr + 8) != direction) {
-    *(uint *)(this_ptr + 8) = *(uint *)direction;
-    *(uint *)(this_ptr + 0xc) = *(uint *)&direction->field_0x4;
-    *(uint *)(this_ptr + 0x10) = *(uint *)&direction->field_0x8;
+  if (&this_ptr->direction != direction) {
+    (this_ptr->direction).x = direction->x;
+    (this_ptr->direction).y = direction->y;
+    (this_ptr->direction).z = direction->z;
   }
-  if ((CVector3f *)(this_ptr + 0x14) != rotation) {
-    *(uint *)(this_ptr + 0x14) = *(uint *)rotation;
-    *(uint *)(this_ptr + 0x18) = *(uint *)&rotation->field_0x4;
-    *(uint *)(this_ptr + 0x1c) = *(uint *)&rotation->field_0x8;
+  if (&this_ptr->rotation != rotation) {
+    (this_ptr->rotation).x = rotation->x;
+    (this_ptr->rotation).y = rotation->y;
+    (this_ptr->rotation).z = rotation->z;
   }
-  if (*(int *)this_ptr != 0) {
+  if (this_ptr->weather_type != WEATHER_TYPE_NONE) {
     pfVar2 = (float *)&DAT_02661fb8;
     iVar3 = 0;
     do {
-      local_18 = (float)core_actor_cpp_FUN_0040cf60(0x40a00000,0x42480000);
+      local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(5.0,50.0);
       local_14 = local_18;
-      local_14 = (float)core_actor_cpp_FUN_0040cf60
-                                  (*(float *)&rotation->field_0x4 + (float)_DAT_005ee5e2,
-                                   *(float *)&rotation->field_0x4 + (float)_DAT_005ee5da);
+      local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60
+                           (rotation->y + (float)_DAT_005ee5e2,rotation->y + (float)_DAT_005ee5da);
       fVar4 = (float10)fsin((float10)local_14);
       fVar5 = (float10)fcos((float10)local_14);
-      local_38 = (float)(fVar4 * (float10)local_18 + (float10)*(float *)direction);
-      local_34 = *(float *)&direction->field_0x4;
-      local_30 = (float)(fVar5 * (float10)local_18 + (float10)*(float *)&direction->field_0x8);
+      local_38 = (float)(fVar4 * (float10)local_18 + (float10)direction->x);
+      local_34 = direction->y;
+      local_30 = (float)(fVar5 * (float10)local_18 + (float10)direction->z);
       if (&local_50 != &local_38) {
         local_50 = local_38;
         local_4c = local_34;
@@ -71,7 +70,7 @@ void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_0058b4f0(CWeathe
       fVar1 = (local_40 - local_4c) * local_14 + local_4c;
       *(float *)(iVar3 + 0x2662918) = fVar1;
       local_24 = (double)fVar1;
-      local_14 = (float)core_actor_cpp_FUN_0040cf60(0,0x3f800000);
+      local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,1.0);
       local_34 = local_14 * (float)_DAT_005ee5d2 + (float)local_24;
       if (pfVar2 != &local_38) {
         *pfVar2 = local_38;
@@ -81,8 +80,8 @@ void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_0058b4f0(CWeathe
       iVar3 = iVar3 + 4;
       pfVar2 = pfVar2 + 3;
     } while (iVar3 != 800);
-    *(uint *)(this_ptr + 0x28) = 0;
-    *(uint *)(this_ptr + 0x24) = 0;
+    this_ptr->flash_timer = 0.0;
+    this_ptr->lightning_active = 0;
   }
   return;
 }

@@ -1,0 +1,290 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 97,
+    "complexity_score": 32,
+    "cross_reference_count": 5,
+    "function_call_count": 6,
+    "global_count": 9,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 32,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 129
+  },
+  "cross_references": [
+    {
+      "addr": "005a1aa0",
+      "from_addr": "005a1aa7",
+      "name": "core_asgaya.cpp_CAsgaya_archive_FUN_005a1aa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050aaa0",
+      "from_addr": "0050aaa7",
+      "name": "core_passngr.cpp_CPassenger_archive_FUN_0050aaa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00527a90",
+      "from_addr": "00527a97",
+      "name": "core_pryemorp.cpp_CPryeMorph_archive_FUN_00527a90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059b4a0",
+      "from_addr": "0059b4a7",
+      "name": "core_spirbear.cpp_CSpiritBear_archive_FUN_0059b4a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059a8a0",
+      "from_addr": "0059a8a7",
+      "name": "core_spirindi.cpp_CSpiritIndian_archive_FUN_0059a8a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00509800",
+    "address_range": [
+      [
+        "00509800",
+        "005098ff"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_npc.cpp_CNPC_archive_FUN_00509800",
+    "signature": "void __cdecl core_npc_cpp_CNPC_archive_FUN_00509800(CNPC *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ba30",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveDeformableModelInstance_FUN_0040ba30"
+    },
+    {
+      "addr": "0040b830",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b830"
+    },
+    {
+      "addr": "0040b8b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b8b0"
+    },
+    {
+      "addr": "0040bab0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040bab0"
+    },
+    {
+      "addr": "0040c280",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c280"
+    },
+    {
+      "addr": "0042b450",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_archive_FUN_0042b450"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005cb5f0",
+      "name": "s_hitPoints_005cb5f0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb5fa",
+      "name": "s_modelName_005cb5fa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb604",
+      "name": "s_motion_state_005cb604",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb611",
+      "name": "s_shootMe_005cb611",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb619",
+      "name": "s_poolMe_005cb619",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb620",
+      "name": "s_speed_005cb620",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb626",
+      "name": "s_fadeTime_005cb626",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb62f",
+      "name": "s_startOpc_005cb62f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006035e4",
+      "name": "g_CNPCClassVersion",
+      "type": "int",
+      "value": "0x8"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "0050aaa7",
+        "call_type": "direct",
+        "caller": "core_passngr.cpp_CPassenger_archive_FUN_0050aaa0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00527a97",
+        "call_type": "direct",
+        "caller": "core_pryemorp.cpp_CPryeMorph_archive_FUN_00527a90",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0059a8a7",
+        "call_type": "direct",
+        "caller": "core_spirindi.cpp_CSpiritIndian_archive_FUN_0059a8a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0059b4a7",
+        "call_type": "direct",
+        "caller": "core_spirbear.cpp_CSpiritBear_archive_FUN_0059b4a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005a1aa7",
+        "call_type": "direct",
+        "caller": "core_asgaya.cpp_CAsgaya_archive_FUN_005a1aa0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.569444444444445,
+    "instruction_count": 72,
+    "opcode_distribution": {
+      "CALL": 10,
+      "CBRANCH": 7,
+      "COPY": 46,
+      "INT_ADD": 27,
+      "INT_AND": 38,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 39,
+      "INT_LESS": 7,
+      "INT_NOTEQUAL": 6,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 19,
+      "INT_SUB": 37,
+      "LOAD": 10,
+      "POPCOUNT": 19,
+      "RETURN": 3,
+      "STORE": 30
+    },
+    "pcode_op_count": 329
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005109e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8923
+    },
+    "bw1.exe": {
+      "addr": "00531bf0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8923
+    },
+    "nocedit.exe": {
+      "addr": "00544ba0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8293
+    },
+    "nocturne.exe": {
+      "addr": "004eed10",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8293
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNPC *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CNPC",
+        "offset": 212,
+        "vtable_addr": "005e2df4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

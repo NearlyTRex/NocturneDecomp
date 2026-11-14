@@ -25,7 +25,7 @@ uint FUN_005aa490(void)
     return 0;
   }
   if (in_AL != '\a') {
-    unkafter_asgaya_cpp_FUN_005aed4b((double)in_ST0);
+    FUN_005aed4b((double)in_ST0);
   }
   return 1;
 }

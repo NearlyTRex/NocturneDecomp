@@ -114,6 +114,22 @@ std::vector<std::string> nocturne_find_files(const char *filespec) {
         }
     }
 
+    // The game's own directory also lists the PODs in its subfolders, by the
+    // bare name an open of it resolves (watcom/path.h).
+    if (directory.empty()) {
+        for (const WatcomNestedPod &pod : watcom_nested_pods()) {
+            if (!matches(pattern.c_str(), pod.name.c_str()))
+                continue;
+            bool duplicate = false;
+            for (const std::string &other : seen) {
+                if (nocturne_ascii_iequals(other.c_str(), pod.name.c_str()))
+                    duplicate = true;
+            }
+            if (!duplicate)
+                found.push_back(pod.name);
+        }
+    }
+
     std::sort(found.begin(), found.end());
     return found;
 }

@@ -18,7 +18,7 @@
     {
       "addr": "004bb100",
       "from_addr": "004bcb7d",
-      "name": "core_game.cpp_FUN_004bb100",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004bb100",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -30,7 +30,7 @@
     {
       "addr": "0053b280",
       "from_addr": "0053b2ad",
-      "name": "core_set.cpp_FUN_0053b280",
+      "name": "core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_0053b280",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -91,7 +91,7 @@
       {
         "call_addr": "004bcb7d",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bb100",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004bb100",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -113,7 +113,7 @@
       {
         "call_addr": "0053b2ad",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_0053b280",
+        "caller": "core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_0053b280",
         "estimated_params": 2,
         "instructions_analyzed": 3,
         "method": "push_count",
@@ -211,6 +211,32 @@
       "TRUNC": 1
     },
     "pcode_op_count": 37
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00441e80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00453540",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004528e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00446740",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 12,

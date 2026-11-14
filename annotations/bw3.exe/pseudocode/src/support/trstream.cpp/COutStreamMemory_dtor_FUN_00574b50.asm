@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; COutStreamMemory * support_trstream_cpp_COutStreamMemory_dtor_FUN_00574b50(COutStreamMemory *this_ptr,uint flags)
+; COutStreamMemory * __cdecl support_trstream_cpp_COutStreamMemory_dtor_FUN_00574b50(COutStreamMemory *this_ptr,uint flags)
 ;
 ; Parameters:
 ; COutStreamMemory * Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[3]:
+;   support_codec.cpp_CInStreamPipe_fillBuffer_FUN_00441c80 at 00441d15
 ;   support_codec.cpp_FUN_004408e0 at 0044093a
 ;   support_codec.cpp_FUN_00440b60 at 00440bb8
-;   support_codec.cpp_FUN_00441c80 at 00441d15
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_COutStreamMemoryTypeInfo
@@ -20,8 +20,8 @@
 ;   crt_memory.c___vec_delete_FUN_005a308f
 ;   crt_unknown.c_FUN_005a30b6
 ;   crt_unknown.c_FUN_005a30c4
-;   support_trstream.cpp_FUN_005744a0
-;   support_trstream.cpp_FUN_00574d10
+;   support_trstream.cpp_COutStream_dtor_FUN_005744a0
+;   support_trstream.cpp_COutStreamMemory_close_FUN_00574d10
 ;
 ; *****************************************************************************
 
@@ -35,13 +35,13 @@ section .text
         ;   XREF to: 00574b85 (CONDITIONAL_JUMP)  ; LAB_00574b85
     PUSH EBX                            ; 00574b5c
     MOV dword ptr [EBX],0x5e5b54        ; 00574b5d | g_COutStreamMemoryVTable
-    CALL support_trstream.cpp_FUN_00574d10 ; 00574b63
-        ;   XREF to: 00574d10 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_00574d10()
+    CALL support_trstream.cpp_COutStreamMemory_close_FUN_00574d10 ; 00574b63
+        ;   XREF to: 00574d10 (UNCONDITIONAL_CALL)  ; void support_trstream.cpp_COutStreamMemory_close_FUN_00574d10(COutStreamMemory * this_ptr)
     ADD ESP,0x4                         ; 00574b68
     PUSH 0x1                            ; 00574b6b
     PUSH EBX                            ; 00574b6d
-    CALL support_trstream.cpp_FUN_005744a0 ; 00574b6e
-        ;   XREF to: 005744a0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005744a0()
+    CALL support_trstream.cpp_COutStream_dtor_FUN_005744a0 ; 00574b6e
+        ;   XREF to: 005744a0 (UNCONDITIONAL_CALL)  ; COutStream * support_trstream.cpp_COutStream_dtor_FUN_005744a0(COutStream * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00574b73
     MOV DL,byte ptr [ESP + 0xc]         ; 00574b76
     MOV EBX,EAX                         ; 00574b7a
@@ -55,7 +55,7 @@ section .text
         ;   Label: LAB_00574b85
     PUSH EBX                            ; 00574b8a
     CALL crt_memory.c___vec_delete_FUN_005a308f ; 00574b8b
-        ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005a308f()
+        ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005a308f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00574b90
     PUSH EAX                            ; 00574b93
     CALL crt_unknown.c_FUN_005a30b6     ; 00574b94

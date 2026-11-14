@@ -1,0 +1,236 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 105,
+    "complexity_score": 22,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 16,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 127
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00560b50",
+    "address_range": [
+      [
+        "00560b50",
+        "00560c9f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_spike.cpp_CSpike_archive_FUN_00560b50",
+    "signature": "void __cdecl core_spike_cpp_CSpike_archive_FUN_00560b50(CSpike *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b8e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b8e0"
+    },
+    {
+      "addr": "0040b960",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b960"
+    },
+    {
+      "addr": "0040ba60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60"
+    },
+    {
+      "addr": "0040b730",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b730"
+    },
+    {
+      "addr": "0040c330",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c330"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005eb014",
+      "name": "s_modelName_005eb013+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005eb01e",
+      "name": "s_spikeType_005eb01e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eb028",
+      "name": "s_spikeState_005eb028",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eb033",
+      "name": "s_areWeActive_005eb033",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eb03f",
+      "name": "s_extendDistance_005eb03f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eb04e",
+      "name": "s_startEvent_005eb04e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eb059",
+      "name": "s_stopEvent_005eb059",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eb063",
+      "name": "s_extendEvent_005eb063",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eb06f",
+      "name": "s_retractEvent_005eb06f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eb07c",
+      "name": "s_extendTime_005eb07c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eb087",
+      "name": "s_retractTime_005eb087",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eb093",
+      "name": "s_extendSound_005eb093",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eb09f",
+      "name": "s_retractSound_005eb09f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eb0ac",
+      "name": "s_period_005eb0ac",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eb0b3",
+      "name": "s_damageStrength_005eb0b3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eb0c2",
+      "name": "s_param_005eb0c2",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.080459770114943,
+    "instruction_count": 87,
+    "opcode_distribution": {
+      "CALL": 17,
+      "COPY": 52,
+      "INT_ADD": 36,
+      "INT_AND": 36,
+      "INT_CARRY": 18,
+      "INT_EQUAL": 36,
+      "INT_SCARRY": 18,
+      "INT_SLESS": 18,
+      "INT_SUB": 51,
+      "LOAD": 3,
+      "POPCOUNT": 18,
+      "RETURN": 1,
+      "STORE": 51
+    },
+    "pcode_op_count": 355
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005835a0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00566e70",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005b87f0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "005335f0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSpike *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 220,
+        "vtable_addr": "005fbe04"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -21,7 +21,7 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_004f54c0(CP
   _FILE *local_18;
   ulong local_14;
   
-  cockpit_pkbitmap_cpp_CPackedBitmapSet_FUN_004f5320(this_ptr);
+  cockpit_pkbmpset_cpp_CPackedBitmapSet_reset_FUN_004f5320(this_ptr);
   iVar2 = engine_dosio_cpp_getFileSize_FUN_004568c0("art",filename);
   local_18 = engine_dosio_cpp_getFile_FUN_00456a60("art",filename,"rb");
   if (local_18 == (_FILE *)0x0) {

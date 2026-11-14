@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 283,
-    "complexity_score": 212,
+    "complexity_score": 178,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 37,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 82,
-    "suspect_count": 11,
+    "pseudocode_lines": 83,
+    "suspect_count": 8,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 365
+    "total_lines": 366
   },
   "cross_references": [
     {
@@ -27,7 +26,7 @@
     {
       "addr": "004dd670",
       "from_addr": "004dd90d",
-      "name": "core_inv.cpp_FUN_004dd670",
+      "name": "core_inv.cpp_CInventory_renderSelectedItems_FUN_004dd670",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -269,7 +268,7 @@
     },
     {
       "addr": "01cb6904",
-      "name": "g_CGameInstance.field4_0x4",
+      "name": "g_CGameInstance.game_pixy",
       "type": "undefined4",
       "value": null
     },
@@ -338,7 +337,7 @@
       {
         "call_addr": "004dd90d",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004dd670",
+        "caller": "core_inv.cpp_CInventory_renderSelectedItems_FUN_004dd670",
         "estimated_params": 0,
         "instructions_analyzed": 1,
         "method": "push_count",
@@ -383,6 +382,26 @@
     },
     "pcode_op_count": 937
   },
+  "siblings": {
+    "bw3.exe": {
+      "addr": "004da570",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8518
+    },
+    "nocedit.exe": {
+      "addr": "004fd220",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5046
+    },
+    "nocturne.exe": {
+      "addr": "004befa0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5231
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -426,35 +445,11 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_00617cd0",
-      "severity": "mild",
-      "text": "_fscanf(p_Var2,\"%d,%d\\n\",&DAT_00617cd0,&DAT_00617cd4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_00617cd4",
-      "severity": "mild",
-      "text": "_fscanf(p_Var2,\"%d,%d\\n\",&DAT_00617cd0,&DAT_00617cd4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 50,
       "match": "DAT_01d02eec",
       "severity": "mild",
       "text": "pcVar5 = &DAT_01d02eec;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 61,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x4 < 0x180) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",

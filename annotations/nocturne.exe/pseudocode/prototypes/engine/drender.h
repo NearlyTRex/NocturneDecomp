@@ -5,9 +5,9 @@
 // Function prototypes for engine/drender.cpp
 // Generated from Ghidra function signatures
 
-// Original: engine_drender.cpp_FUN_004579c0
+// Original: engine_drender.cpp_findEdgeByYStart_FUN_004579c0
 // Address: 004579c0
-int * FUN_004579c0(int param_1,int *param_2);
+SSoftwareEdge * __cdecl findEdgeByYStart(int scanline_y,SSoftwareEdge *exclude_edge);
 
 // Original: engine_drender.cpp_renderTriangleTextured_FUN_00457a00
 // Address: 00457a00

@@ -20,7 +20,7 @@
 ;   undefined1 DAT_005f8834
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   support_trisock.cpp_CSocket_closeSocket_FUN_0059cc40
 ;   support_trisock.cpp_formatSocketAddress_FUN_0059c830
 ;
@@ -97,8 +97,8 @@ section .text
     PUSH 0x5f87d6                       ; 0059ebeb | = "Looking up %s..."
     MOV EDX,dword ptr [ESP + 0xa10]     ; 0059ebf0
     PUSH EDX                            ; 0059ebf7
-    CALL crt_unknown.c_FUN_005bfb40     ; 0059ebf8
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0059ebf8
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 0059ebfd
     MOV EAX,dword ptr [EBP + 0xd28]     ; 0059ec00
     ADD ESP,0x9f0                       ; 0059ec06
@@ -113,15 +113,15 @@ section .text
     LEA EAX,[EBP + 0x600]               ; 0059ec19
     PUSH EAX                            ; 0059ec1f
     CALL support_trisock.cpp_formatSocketAddress_FUN_0059c830 ; 0059ec20
-        ;   XREF to: 0059c830 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_formatSocketAddress_FUN_0059c830()
+        ;   XREF to: 0059c830 (UNCONDITIONAL_CALL)  ; void support_trisock.cpp_formatSocketAddress_FUN_0059c830(SNetworkAddr * network_addr, char * output_buffer)
     ADD ESP,0x8                         ; 0059ec25
     LEA EAX,[ESP + 0x9b8]               ; 0059ec28
     PUSH EAX                            ; 0059ec2f
     PUSH 0x5f87e7                       ; 0059ec30 | = "Contacting %s..."
     MOV EAX,dword ptr [ESP + 0xa10]     ; 0059ec35
     PUSH EAX                            ; 0059ec3c
-    CALL crt_unknown.c_FUN_005bfb40     ; 0059ec3d
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0059ec3d
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 0059ec42
     MOV EAX,dword ptr [EBP + 0xd28]     ; 0059ec45
     ADD ESP,0x9f0                       ; 0059ec4b
@@ -136,8 +136,8 @@ section .text
     PUSH 0x5f87f8                       ; 0059ec5d | = "Requesting %s..."
     MOV EDI,dword ptr [ESP + 0xa10]     ; 0059ec62
     PUSH EDI                            ; 0059ec69
-    CALL crt_unknown.c_FUN_005bfb40     ; 0059ec6a
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0059ec6a
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 0059ec6f
     MOV EAX,dword ptr [EBP + 0xd28]     ; 0059ec72
     ADD ESP,0x9f0                       ; 0059ec78
@@ -174,8 +174,8 @@ section .text
     PUSH 0x5f8809                       ; 0059ecc1 | = "Received %d%% of %s... "
     MOV ESI,dword ptr [ESP + 0xa14]     ; 0059ecc6
     PUSH ESI                            ; 0059eccd
-    CALL crt_unknown.c_FUN_005bfb40     ; 0059ecce
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0059ecce
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x10                        ; 0059ecd3
     MOV EAX,dword ptr [EBP + 0xd28]     ; 0059ecd6
     ADD ESP,0x9f0                       ; 0059ecdc
@@ -190,8 +190,8 @@ section .text
     PUSH 0x5f8821                       ; 0059ecee | = "Receiving %s..."
     MOV EBX,dword ptr [ESP + 0xa10]     ; 0059ecf3
     PUSH EBX                            ; 0059ecfa
-    CALL crt_unknown.c_FUN_005bfb40     ; 0059ecfb
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0059ecfb
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 0059ed00
     MOV EAX,dword ptr [EBP + 0xd28]     ; 0059ed03
     ADD ESP,0x9f0                       ; 0059ed09

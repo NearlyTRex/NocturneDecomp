@@ -11,20 +11,20 @@ void __cdecl core_morph_cpp_CMorphModel_addPartFromKeyFramedModel_FUN_004f9df0(C
 {
   CVector3i *vertex_data;
   int poly_count;
-  SMRGLHeaderPrimitive *poly_data;
+  SMRGLPrimitiveQuad *poly_data;
   int poly_stride;
   SMRGLTextureModel *texture_list;
   int *texture_index_list;
   
-  texture_index_list = *(int **)&model_ptr->field_0x118;
-  texture_list = (SMRGLTextureModel *)&model_ptr->field_0x124;
+  texture_index_list = model_ptr->poly_texture_index_list;
+  texture_list = model_ptr->texture_list;
   poly_stride = 0x48;
-  poly_data = *(SMRGLHeaderPrimitive **)&model_ptr->field_0x114;
-  poly_count = *(int *)&model_ptr->field_0x110;
+  poly_data = model_ptr->poly_vert_list;
+  poly_count = model_ptr->poly_count;
   vertex_data = core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00460f60(model_ptr,frame_index)
   ;
   core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_004f9ad0
-            (this_ptr,*(int *)&model_ptr->field_0x104,vertex_data,poly_count,poly_data,poly_stride,
+            (this_ptr,model_ptr->vertex_count,vertex_data,poly_count,&poly_data->base,poly_stride,
              texture_list,texture_index_list);
   return;
 }

@@ -4,12 +4,13 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/winsock.h"
 
 // Structure: CSocket
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x4 (4 bytes)
 #pragma pack(push, 1)
 typedef struct CSocket {
+    _SOCKET handle; // 0x0
 } CSocket;
 #pragma pack(pop)
 

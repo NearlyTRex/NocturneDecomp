@@ -1,0 +1,138 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 25,
+    "complexity_score": 13,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 38
+  },
+  "cross_references": [
+    {
+      "addr": "00412f40",
+      "from_addr": "004135a4",
+      "name": "core_batman.cpp_CBatman_process_FUN_00412f40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00412ec0",
+    "address_range": [
+      [
+        "00412ec0",
+        "00412ef6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_batman.cpp_CBatman_pickRandomMovementState_FUN_00412ec0",
+    "signature": "void __cdecl core_batman_cpp_CBatman_pickRandomMovementState_FUN_00412ec0(CBatman *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d060",
+      "is_variadic": false,
+      "name": "core_actor.cpp_randomChance_FUN_0040d060"
+    },
+    {
+      "addr": "00503620",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_00503620"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004135a4",
+        "call_type": "direct",
+        "caller": "core_batman.cpp_CBatman_process_FUN_00412f40",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00413917",
+        "call_type": "direct",
+        "caller": "core_batman.cpp_CBatman_process_FUN_00412f40",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.473684210526316,
+    "instruction_count": 19,
+    "opcode_distribution": {
+      "CALL": 3,
+      "CBRANCH": 1,
+      "COPY": 10,
+      "INT_ADD": 7,
+      "INT_AND": 11,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 10,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 5,
+      "INT_SUB": 10,
+      "LOAD": 3,
+      "POPCOUNT": 5,
+      "RETURN": 2,
+      "STORE": 10
+    },
+    "pcode_op_count": 85
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00412b20",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004167f0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00413780",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBatman *"
+      }
+    ]
+  },
+  "suspects": []
+}

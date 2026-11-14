@@ -1,0 +1,177 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 23,
+    "complexity_score": 36,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 11,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unaffected_reg"
+    ],
+    "total_lines": 34
+  },
+  "cross_references": [
+    {
+      "addr": "00453610",
+      "from_addr": "004536d5",
+      "name": "core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00453610",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00442e10",
+      "from_addr": "00442e4e",
+      "name": "support_codec.cpp_FUN_00442e10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a17f0",
+    "address_range": [
+      [
+        "005a17f0",
+        "005a1825"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_trstream.cpp_COutStreamFile_ctorOpen_FUN_005a17f0",
+    "signature": "COutStreamFile * __cdecl support_trstream_cpp_COutStreamFile_ctorOpen_FUN_005a17f0(COutStreamFile *this_ptr,char *path,char *mode)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a14b0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_COutStream_dtor_FUN_005a14b0"
+    },
+    {
+      "addr": "005a19e0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_COutStreamFile_open_FUN_005a19e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00607424",
+      "name": "g_COutStreamFileVTable",
+      "type": "undefined1*",
+      "value": "005a1860"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004536d5",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00453610",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00442e4e",
+        "call_type": "direct",
+        "caller": "support_codec.cpp_FUN_00442e10",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.45,
+    "instruction_count": 20,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 17,
+      "INT_ADD": 9,
+      "INT_AND": 4,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 8,
+      "LOAD": 6,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 10
+    },
+    "pcode_op_count": 69
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0057dba0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005747e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "COutStreamFile *"
+      },
+      {
+        "is_param": true,
+        "name": "path",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "mode",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 6,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "uint unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "support_trstream_cpp_COutStream_dtor_FUN_005a14b0(&this_ptr->base,unaff_ESI);",
+      "type": "unaffected_reg"
+    }
+  ]
+}

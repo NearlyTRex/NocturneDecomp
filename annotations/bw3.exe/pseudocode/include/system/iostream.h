@@ -4,10 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/watcom.h"
 
 // =============================================================================
 // IOSTREAM - System Header
 // =============================================================================
+
+// Forward declarations
+struct streambuf;
 
 // Structure: _istream
 // Stub: no RTTI in this build, size and fields not yet recovered
@@ -16,10 +20,65 @@ typedef struct _istream {
 } _istream;
 #pragma pack(pop)
 
+// Function Definition: cpp_streambuf_destructor
+typedef struct streambuf* cpp_streambuf_destructor(struct streambuf* param0);
+
+// Function Definition: cpp_streambuf_do_sgetn
+typedef int cpp_streambuf_do_sgetn(struct streambuf* param0, char* param1, int param2);
+
+// Function Definition: cpp_streambuf_do_sputn
+typedef int cpp_streambuf_do_sputn(struct streambuf* param0, char* param1, int param2);
+
+// Function Definition: cpp_streambuf_doallocate
+typedef int cpp_streambuf_doallocate(struct streambuf* param0);
+
+// Function Definition: cpp_streambuf_overflow
+typedef int cpp_streambuf_overflow(struct streambuf* param0, int param1);
+
+// Function Definition: cpp_streambuf_pbackfail
+typedef int cpp_streambuf_pbackfail(struct streambuf* param0, int param1);
+
+// Function Definition: cpp_streambuf_seekoff
+typedef int cpp_streambuf_seekoff(struct streambuf* param0, int param1, int param2, int param3);
+
+// Function Definition: cpp_streambuf_seekpos
+typedef int cpp_streambuf_seekpos(struct streambuf* param0, int param1, int param2);
+
+// Function Definition: cpp_streambuf_setbuf
+typedef struct streambuf* cpp_streambuf_setbuf(struct streambuf* param0, char* param1, int param2);
+
+// Function Definition: cpp_streambuf_sync
+typedef int cpp_streambuf_sync(struct streambuf* param0);
+
+// Function Definition: cpp_streambuf_underflow
+typedef int cpp_streambuf_underflow(struct streambuf* param0);
+
 // Structure: ios
 // Stub: no RTTI in this build, size and fields not yet recovered
 #pragma pack(push, 1)
 typedef struct ios {
 } ios;
 #pragma pack(pop)
+
+// Structure: istream_core
+typedef struct istream_core {
+    struct WatcomInheritanceLayout* layout_info;
+    int __last_read_length;
+    struct WatcomThunkedDestructor* destructor_vtable;
+    void* istream_data;
+} istream_core;
+
+// Structure: streambuf
+typedef struct streambuf {
+    void* __b_lock;
+    char* __reserve_base;
+    char* __reserve_end;
+    char* __get_base;
+    char* __get_end;
+    char* __get_ptr;
+    char* __put_base;
+    char* __put_end;
+    char* __put_ptr;
+    uint __flags;
+} streambuf;
 

@@ -1,0 +1,685 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 550,
+    "complexity_score": 509,
+    "cross_reference_count": 2,
+    "function_call_count": 16,
+    "global_count": 27,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 239,
+    "suspect_count": 23,
+    "suspect_types": [
+      "concat_reconstruction",
+      "extra_output",
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data",
+      "undefined_type",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 789
+  },
+  "cross_references": [
+    {
+      "addr": "0055a1b0",
+      "from_addr": "0055a1fe",
+      "name": "sound_sndmain.cpp_pollAllStreams_FUN_0055a1b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00556240",
+      "from_addr": "00556472",
+      "name": "sound_sndmain.cpp_startSfx_FUN_00556240",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00553960",
+    "address_range": [
+      [
+        "00553960",
+        "00553f3d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_00553960",
+    "signature": "int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_00553960(CSfxSample *this_ptr,float time_window,float update_interval)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "005a3120",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005a3120"
+    },
+    {
+      "addr": "005a28f0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005a28f0"
+    },
+    {
+      "addr": "00502a80",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_read_FUN_00502a80"
+    },
+    {
+      "addr": "005558e0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_bytesToFrames_FUN_005558e0"
+    },
+    {
+      "addr": "00555900",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_framesToBytes_FUN_00555900"
+    },
+    {
+      "addr": "00553520",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00553520"
+    },
+    {
+      "addr": "00555b80",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_getLoopMode_FUN_00555b80"
+    },
+    {
+      "addr": "00553660",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_lock_FUN_00553660"
+    },
+    {
+      "addr": "00553760",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00553760"
+    },
+    {
+      "addr": "005537c0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_seek_FUN_005537c0"
+    },
+    {
+      "addr": "00555270",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSlot_kill_FUN_00555270"
+    },
+    {
+      "addr": "005554a0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005554a0"
+    },
+    {
+      "addr": "0055a560",
+      "is_variadic": true,
+      "name": "sound_sndmain.cpp_logSoundError_FUN_0055a560"
+    },
+    {
+      "addr": "00573d60",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_isOpen_FUN_00573d60"
+    },
+    {
+      "addr": "00573c00",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_read_FUN_00573c00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d2b3e",
+      "name": "s_sound_sndmain_cpp_005d2b3e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2b53",
+      "name": "s_generateSilence_invalid_005d2b53",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2d95",
+      "name": "s_sound_sndmain_cpp_005d2d95",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2daa",
+      "name": "s_SfxSlot_pollStream_must_005d2daa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2dd0",
+      "name": "s_sound_sndmain_cpp_005d2dd0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2de5",
+      "name": "s_SfxSample_pollStream_my_005d2de5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2e1a",
+      "name": "s_SfxSample_pollStream_no_005d2e1a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2e44",
+      "name": "s_sound_sndmain_cpp_005d2e44",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2e59",
+      "name": "s_SfxSample_pollStream_can_005d2e59",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2ea2",
+      "name": "s_SfxSample_pollStream_err_005d2ea2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2ee0",
+      "name": "s_sound_sndmain_cpp_005d2ee0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2ef5",
+      "name": "s_nextLoadSampleDest_d_all_005d2ef5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2f1f",
+      "name": "s_Error_locking_s_while_st_005d2f1f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2f41",
+      "name": "s_sound_sndmain_cpp_005d2f41",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2f56",
+      "name": "s_Can_t_stream_unless_we_h_005d2f56",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2f90",
+      "name": "s_Error_reading_s_while_st_005d2f90",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2fb2",
+      "name": "s_Error_locking_s_while_st_005d2fb2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2fd4",
+      "name": "s_sound_sndmain_cpp_005d2fd4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2fe9",
+      "name": "s_MP3_decoded_more_than_ba_005d2fe9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cdafb8",
+      "name": "DAT_02cdafb8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cdafbc",
+      "name": "DAT_02cdafbc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cdafbd",
+      "name": "DAT_02cdafbd",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02ce7280",
+      "name": "DAT_02ce7280",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf3280",
+      "name": "DAT_02cf3280",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf341c",
+      "name": "DAT_02cf341c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0055a1fe",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_pollAllStreams_FUN_0055a1b0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00556472",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_startSfx_FUN_00556240",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.743276283618582,
+    "instruction_count": 409,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 27,
+      "BOOL_OR": 9,
+      "BRANCH": 18,
+      "CALL": 31,
+      "CBRANCH": 48,
+      "COPY": 370,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 2,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 4,
+      "INT_ADD": 159,
+      "INT_AND": 254,
+      "INT_CARRY": 38,
+      "INT_EQUAL": 210,
+      "INT_LEFT": 8,
+      "INT_LESS": 34,
+      "INT_MULT": 7,
+      "INT_NOTEQUAL": 27,
+      "INT_OR": 20,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 35,
+      "INT_SCARRY": 39,
+      "INT_SEXT": 6,
+      "INT_SLESS": 104,
+      "INT_SUB": 135,
+      "INT_XOR": 7,
+      "INT_ZEXT": 8,
+      "LOAD": 99,
+      "POPCOUNT": 99,
+      "RETURN": 3,
+      "ROUND": 3,
+      "STORE": 116,
+      "SUBPIECE": 4,
+      "TRUNC": 3
+    },
+    "pcode_op_count": 1940
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0054ddf0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00570460",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a6730",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8375
+    },
+    "nocturne.exe": {
+      "addr": "00523ea0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2927
+    }
+  },
+  "stack_frame": {
+    "frame_size": 72,
+    "local_size": 60,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSfxSample *"
+      },
+      {
+        "is_param": true,
+        "name": "time_window",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "update_interval",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved type",
+      "line": 16,
+      "match": "undefined3 extraout_var",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 16,
+      "match": "extraout_var",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_02ce7280",
+      "severity": "mild",
+      "text": "if ((*(int *)(&DAT_02ce7280 + iVar1) == 0) ||",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_02ce7284",
+      "severity": "mild",
+      "text": "(this_ptr != *(CSfxSample **)(&DAT_02ce7284 + iVar1))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_02ce727c",
+      "severity": "mild",
+      "text": "if (*(int *)(&DAT_02ce727c + iVar1) != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 123,
+      "match": "DAT_02ce7284",
+      "severity": "mild",
+      "text": "(*(CSfxSample **)(&DAT_02ce7284 + iVar1));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 125,
+      "match": "DAT_02ce7284",
+      "severity": "mild",
+      "text": "(this_ptr_00 = *(CSfxSample **)(&DAT_02ce7284 + iVar1),",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 138,
+      "match": "DAT_02cdafb8",
+      "severity": "mild",
+      "text": "output_buffer = (short *)&DAT_02cdafb8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 158,
+      "match": "DAT_02ce7284",
+      "severity": "mild",
+      "text": "count = *(int *)(*(int *)(&DAT_02ce7284 + iVar1) + 0x108) * iVar5;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 159,
+      "match": "DAT_02ce7284",
+      "severity": "mild",
+      "text": "uVar8 = *(uint *)(*(int *)(&DAT_02ce7284 + iVar1) + 0x104);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 176,
+      "match": "extraout_var",
+      "severity": "moderate",
+      "text": "if (CONCAT31(extraout_var,bVar4) == 0) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 189,
+      "match": "DAT_02ce7284",
+      "severity": "mild",
+      "text": "if (*(int *)(*(int *)(&DAT_02ce7284 + iVar1) + 0x104) == 0x10) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 190,
+      "match": "DAT_02ce7284",
+      "severity": "mild",
+      "text": "for (iVar6 = 0; iVar6 < *(int *)(*(int *)(&DAT_02ce7284 + iVar1) + 0x108) * iVar5;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 207,
+      "match": "DAT_02cdafb8",
+      "severity": "mild",
+      "text": "puVar11 = (uint *)&DAT_02cdafb8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 215,
+      "match": "(uint *)((int)puVar11",
+      "severity": "moderate",
+      "text": "puVar11 = (uint *)((int)puVar11 + (uint)bVar12 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 216,
+      "match": "(uint *)((int)puVar7",
+      "severity": "moderate",
+      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar12 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `puVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 215,
+      "match": "(int)puVar11",
+      "severity": "moderate",
+      "text": "puVar11 = (uint *)((int)puVar11 + (uint)bVar12 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 216,
+      "match": "(int)puVar7",
+      "severity": "moderate",
+      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar12 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 208,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar10 = uVar8 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 213,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 176,
+      "match": "CONCAT31",
+      "severity": "moderate",
+      "text": "if (CONCAT31(extraout_var,bVar4) == 0) {",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 00553d83, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 373,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00553d83: MOVSD.REP ES:EDI,ESI  ; DAT_02cdafb8 | DAT_02cdafbc",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 233,
     "complexity_score": 593,
-    "cross_reference_count": 2,
+    "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 8,
     "max_suspect_severity": "mild",
@@ -28,6 +28,12 @@
       "addr": "00484f20",
       "from_addr": "00484f50",
       "name": "shape_edittool.cpp_FUN_00484f20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00485610",
+      "from_addr": "004856b6",
+      "name": "shape_edittool.cpp_FUN_00485610",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -60,24 +66,24 @@
       "name": "engine_2d.c_fillRectColor_FUN_004031c0"
     },
     {
-      "addr": "004f8e20",
-      "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_004f8e20"
-    },
-    {
-      "addr": "004f90d0",
-      "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_004f90d0"
-    },
-    {
       "addr": "004f9390",
       "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_004f9390"
+      "name": "engine_mini3d.cpp_drawHLine_FUN_004f9390"
     },
     {
       "addr": "004f93b0",
       "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_004f93b0"
+      "name": "engine_mini3d.cpp_drawVLine_FUN_004f93b0"
+    },
+    {
+      "addr": "004f90d0",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_fillRect_FUN_004f90d0"
+    },
+    {
+      "addr": "004f8e20",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_setColor_FUN_004f8e20"
     }
   ],
   "globals": [
@@ -131,7 +137,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 6,
+    "call_site_count": 7,
     "call_sites": [
       {
         "call_addr": "00484f50",
@@ -223,6 +229,20 @@
         ],
         "stack_bytes": 20,
         "stack_params": 5
+      },
+      {
+        "call_addr": "004856b6",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00485610",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "ECX"
+        ],
+        "stack_bytes": 20,
+        "stack_params": 5
       }
     ],
     "confidence": "medium",
@@ -259,6 +279,20 @@
       "STORE": 56
     },
     "pcode_op_count": 1040
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0049c500",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004850a0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 32,
@@ -400,7 +434,7 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_004f9390(param_1,param_2,param_3 + -1);",
+      "text": "engine_mini3d_cpp_drawHLine_FUN_004f9390(param_1,param_2,param_3 + -1);",
       "type": "unnamed_param"
     },
     {
@@ -408,7 +442,7 @@
       "line": 27,
       "match": "param_2",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_004f9390(param_1,param_2,param_3 + -1);",
+      "text": "engine_mini3d_cpp_drawHLine_FUN_004f9390(param_1,param_2,param_3 + -1);",
       "type": "unnamed_param"
     },
     {
@@ -416,7 +450,7 @@
       "line": 27,
       "match": "param_3",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_004f9390(param_1,param_2,param_3 + -1);",
+      "text": "engine_mini3d_cpp_drawHLine_FUN_004f9390(param_1,param_2,param_3 + -1);",
       "type": "unnamed_param"
     },
     {
@@ -448,7 +482,7 @@
       "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_004f93b0(param_1,param_2,param_4 + -1);",
+      "text": "engine_mini3d_cpp_drawVLine_FUN_004f93b0(param_1,param_2,param_4 + -1);",
       "type": "unnamed_param"
     },
     {
@@ -456,7 +490,7 @@
       "line": 33,
       "match": "param_2",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_004f93b0(param_1,param_2,param_4 + -1);",
+      "text": "engine_mini3d_cpp_drawVLine_FUN_004f93b0(param_1,param_2,param_4 + -1);",
       "type": "unnamed_param"
     },
     {
@@ -464,7 +498,7 @@
       "line": 33,
       "match": "param_4",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_004f93b0(param_1,param_2,param_4 + -1);",
+      "text": "engine_mini3d_cpp_drawVLine_FUN_004f93b0(param_1,param_2,param_4 + -1);",
       "type": "unnamed_param"
     },
     {
@@ -528,7 +562,7 @@
       "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_004f9390(param_1,param_4 + -1,param_3 + -1);",
+      "text": "engine_mini3d_cpp_drawHLine_FUN_004f9390(param_1,param_4 + -1,param_3 + -1);",
       "type": "unnamed_param"
     },
     {
@@ -536,7 +570,7 @@
       "line": 52,
       "match": "param_4",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_004f9390(param_1,param_4 + -1,param_3 + -1);",
+      "text": "engine_mini3d_cpp_drawHLine_FUN_004f9390(param_1,param_4 + -1,param_3 + -1);",
       "type": "unnamed_param"
     },
     {
@@ -544,7 +578,7 @@
       "line": 52,
       "match": "param_3",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_004f9390(param_1,param_4 + -1,param_3 + -1);",
+      "text": "engine_mini3d_cpp_drawHLine_FUN_004f9390(param_1,param_4 + -1,param_3 + -1);",
       "type": "unnamed_param"
     },
     {
@@ -576,7 +610,7 @@
       "line": 58,
       "match": "param_3",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_004f93b0(param_3 + -1,param_2,param_4 + -1);",
+      "text": "engine_mini3d_cpp_drawVLine_FUN_004f93b0(param_3 + -1,param_2,param_4 + -1);",
       "type": "unnamed_param"
     },
     {
@@ -584,7 +618,7 @@
       "line": 58,
       "match": "param_2",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_004f93b0(param_3 + -1,param_2,param_4 + -1);",
+      "text": "engine_mini3d_cpp_drawVLine_FUN_004f93b0(param_3 + -1,param_2,param_4 + -1);",
       "type": "unnamed_param"
     },
     {
@@ -592,7 +626,7 @@
       "line": 58,
       "match": "param_4",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_004f93b0(param_3 + -1,param_2,param_4 + -1);",
+      "text": "engine_mini3d_cpp_drawVLine_FUN_004f93b0(param_3 + -1,param_2,param_4 + -1);",
       "type": "unnamed_param"
     },
     {
@@ -656,7 +690,7 @@
       "line": 75,
       "match": "param_1",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_004f90d0(param_1 + 1,param_2 + 1,param_3 + -2,param_4 + -2);",
+      "text": "engine_mini3d_cpp_fillRect_FUN_004f90d0(param_1 + 1,param_2 + 1,param_3 + -2,param_4 + -2);",
       "type": "unnamed_param"
     },
     {
@@ -664,7 +698,7 @@
       "line": 75,
       "match": "param_2",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_004f90d0(param_1 + 1,param_2 + 1,param_3 + -2,param_4 + -2);",
+      "text": "engine_mini3d_cpp_fillRect_FUN_004f90d0(param_1 + 1,param_2 + 1,param_3 + -2,param_4 + -2);",
       "type": "unnamed_param"
     },
     {
@@ -672,7 +706,7 @@
       "line": 75,
       "match": "param_3",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_004f90d0(param_1 + 1,param_2 + 1,param_3 + -2,param_4 + -2);",
+      "text": "engine_mini3d_cpp_fillRect_FUN_004f90d0(param_1 + 1,param_2 + 1,param_3 + -2,param_4 + -2);",
       "type": "unnamed_param"
     },
     {
@@ -680,11 +714,11 @@
       "line": 75,
       "match": "param_4",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_004f90d0(param_1 + 1,param_2 + 1,param_3 + -2,param_4 + -2);",
+      "text": "engine_mini3d_cpp_fillRect_FUN_004f90d0(param_1 + 1,param_2 + 1,param_3 + -2,param_4 + -2);",
       "type": "unnamed_param"
     },
     {
-      "call_site_count": 6,
+      "call_site_count": 7,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 8,

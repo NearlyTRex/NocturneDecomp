@@ -11,12 +11,13 @@
 ; int              Stack[0x14]:4   color_value
 ; char *           Stack[0x18]:4   text
 ;
-; XREF[1]:
-;   cockpit_drawsurf.cpp_FUN_00469b40 at 00469c59
+; XREF[2]:
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00469b40 at 00469c59
+;   engine_font.cpp_CBitFont_printFV_FUN_004b0e30 at 004b0e82
 ;
 ; Called Functions:
-;   engine_font.cpp_FUN_004b0cb0
-;   engine_font.cpp_FUN_004b2a80
+;   engine_font.cpp_CBitFont_drawTextWrapper_FUN_004b0cb0
+;   engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80
 ;
 ; *****************************************************************************
 
@@ -36,16 +37,16 @@ section .text
     PUSH EAX                            ; 004b0db6
     MOV ESI,dword ptr [ESP + 0x20]      ; 004b0db7
     PUSH ESI                            ; 004b0dbb
-    CALL engine_font.cpp_FUN_004b2a80   ; 004b0dbc
-        ;   XREF to: 004b2a80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004b2a80(CBitFont * this_ptr, char * text)
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80 ; 004b0dbc
+        ;   XREF to: 004b2a80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 004b0dc1
     MOV EDX,dword ptr [ESP + 0x20]      ; 004b0dc4
     SUB EDX,EAX                         ; 004b0dc8
     LEA EAX,[EDX + 0x1]                 ; 004b0dca
     PUSH EAX                            ; 004b0dcd
     PUSH ESI                            ; 004b0dce
-    CALL engine_font.cpp_FUN_004b0cb0   ; 004b0dcf
-        ;   XREF to: 004b0cb0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004b0cb0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
+    CALL engine_font.cpp_CBitFont_drawTextWrapper_FUN_004b0cb0 ; 004b0dcf
+        ;   XREF to: 004b0cb0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextWrapper_FUN_004b0cb0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     ADD ESP,0x18                        ; 004b0dd4
     POP ESI                             ; 004b0dd7
     POP EBX                             ; 004b0dd8

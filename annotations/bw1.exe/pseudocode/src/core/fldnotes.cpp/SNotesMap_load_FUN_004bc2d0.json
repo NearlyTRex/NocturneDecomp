@@ -1,0 +1,225 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 141,
+    "complexity_score": 113,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 63,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 204
+  },
+  "cross_references": [
+    {
+      "addr": "004bcba0",
+      "from_addr": "004bcce8",
+      "name": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004bcba0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004bc2d0",
+    "address_range": [
+      [
+        "004bc2d0",
+        "004bc44e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fldnotes.cpp_SNotesMap_load_FUN_004bc2d0",
+    "signature": "int __cdecl core_fldnotes_cpp_SNotesMap_load_FUN_004bc2d0(SNotesMap *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "005c10d0",
+      "is_variadic": false,
+      "name": "crt_memory.c_realloc_FUN_005c10d0"
+    },
+    {
+      "addr": "0040d0e0",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d0e0"
+    },
+    {
+      "addr": "0040d220",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d220"
+    },
+    {
+      "addr": "0040d970",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_FUN_0040d970"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005dfc3e",
+      "name": "s_core_fldnotes_cpp_005dfc3e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dfc53",
+      "name": "s_Out_of_memory_005dfc53",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004bcce8",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004bcba0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.747967479674797,
+    "instruction_count": 123,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 15,
+      "BOOL_OR": 1,
+      "BRANCH": 3,
+      "CALL": 5,
+      "CBRANCH": 7,
+      "COPY": 191,
+      "FLOAT2FLOAT": 5,
+      "FLOAT_ABS": 2,
+      "FLOAT_DIV": 2,
+      "FLOAT_MULT": 2,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 2,
+      "INT2FLOAT": 3,
+      "INT_ADD": 56,
+      "INT_AND": 89,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 57,
+      "INT_LESS": 8,
+      "INT_MULT": 9,
+      "INT_NOTEQUAL": 18,
+      "INT_OR": 13,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 8,
+      "INT_SEXT": 15,
+      "INT_SLESS": 26,
+      "INT_SRIGHT": 6,
+      "INT_SUB": 39,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 37,
+      "POPCOUNT": 25,
+      "RETURN": 1,
+      "STORE": 29,
+      "SUBPIECE": 10
+    },
+    "pcode_op_count": 707
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a38e0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a9f30",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "SNotesMap *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 31,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 36,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 004bc336, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 40,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004bc336: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

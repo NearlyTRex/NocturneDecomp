@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 69,
+    "complexity_score": 68,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 29,
+    "pseudocode_lines": 28,
     "suspect_count": 3,
     "suspect_types": [
       "unaffected_reg",
       "warning_overlapping_globals"
     ],
-    "total_lines": 92
+    "total_lines": 91
   },
   "cross_references": [],
   "function": {
@@ -35,14 +35,14 @@
       "name": "cockpit_ckptutil.c_drawLineAA_FUN_00439640"
     },
     {
-      "addr": "0043a010",
-      "is_variadic": false,
-      "name": "cockpit_ckptutil.c_FUN_0043a010"
-    },
-    {
       "addr": "0043a030",
       "is_variadic": false,
       "name": "cockpit_ckptutil.c_FUN_0043a030"
+    },
+    {
+      "addr": "0043a010",
+      "is_variadic": false,
+      "name": "cockpit_ckptutil.c_setLineBlendingDisabled_FUN_0043a010"
     }
   ],
   "globals": [
@@ -108,6 +108,32 @@
     },
     "pcode_op_count": 202
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00467290",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00468e60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00488410",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0045ca50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 24,
     "local_size": 4,
@@ -171,7 +197,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 29,
+      "line": 28,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "_DAT_01c4f00c = unaff_EBX;",

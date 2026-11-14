@@ -22,7 +22,7 @@ void FUN_005bb8c0(ushort *param_1,uint param_2,int param_3,code *param_4)
     puVar3 = local_18;
     uVar1 = *param_1;
     param_1 = param_1 + 1;
-    iVar2 = unkafter_morph_cpp_FUN_005c21b0(local_18,uVar1);
+    iVar2 = FUN_005c21b0(local_18,uVar1);
     if (iVar2 != -1) {
       if (*(int *)(param_3 + 0x28) < iVar2) {
         *(uint *)(param_3 + 0x28) = 0;

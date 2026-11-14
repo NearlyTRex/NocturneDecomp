@@ -13,7 +13,7 @@ void __cdecl engine_dosio_cpp_changeFileExtension_FUN_004796b0(char *path,char *
   char local_108 [256];
   char local_8 [4];
   
-  engine_dosio_cpp_FUN_00479580(path,local_8,local_108,local_208,(char *)0x0);
-  engine_dosio_cpp_FUN_004795b0(path,local_8,local_108,local_208,new_extension);
+  engine_dosio_cpp_splitPath_FUN_00479580(path,local_8,local_108,local_208,(char *)0x0);
+  engine_dosio_cpp_makePath_FUN_004795b0(path,local_8,local_108,local_208,new_extension);
   return;
 }

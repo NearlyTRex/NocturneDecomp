@@ -7,7 +7,7 @@
 ; CSocket *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_netgame.cpp_FUN_0050b790 at 0050b7bb
+;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_0050b790 at 0050b7bb
 ;
 ; Called Functions:
 ;   crt_wsock32.c_socket

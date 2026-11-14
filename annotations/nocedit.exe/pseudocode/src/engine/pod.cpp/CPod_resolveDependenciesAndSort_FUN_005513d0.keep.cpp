@@ -72,7 +72,7 @@ LAB_0055145b:
       pCVar3 = this_ptr->pod_files[local_48];
       while (local_30 < pCVar3->dependency_count) {
         engine_pod_cpp_CPodFile_getDependencyRecord_FUN_005506c0(pCVar3,local_30,&local_470);
-        if ((local_470.is_required == 0) ||
+        if ((local_470.mount_order == 0) ||
            (iVar6 = engine_pod_cpp_CPod_getPodIndexByFilename_FUN_00551820
                               (this_ptr,local_470.filename), iVar6 < 0)) {
           local_30 = local_30 + 1;
@@ -83,7 +83,7 @@ LAB_0055145b:
             g_CurrentLineNumber = 1394;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Too many POD dependency ordering rules");
           }
-          if (local_470.is_required < 0) {
+          if (local_470.mount_order < 0) {
             local_ab0[local_24 * 2] = pCVar3;
             pCVar2 = this_ptr->pod_files[iVar6];
           }

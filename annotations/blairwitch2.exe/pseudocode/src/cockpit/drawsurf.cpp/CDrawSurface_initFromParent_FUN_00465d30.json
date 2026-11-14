@@ -16,13 +16,13 @@
     {
       "addr": "00468b80",
       "from_addr": "00468bdc",
-      "name": "cockpit_drawsurf.cpp_FUN_00468b80",
+      "name": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_00468b80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00521af0",
       "from_addr": "00521b2e",
-      "name": "core_script.cpp_FUN_00521af0",
+      "name": "core_script.cpp_CScript_renderEditor_FUN_00521af0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -52,7 +52,7 @@
       {
         "call_addr": "00521b2e",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00521af0",
+        "caller": "core_script.cpp_CScript_renderEditor_FUN_00521af0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -63,7 +63,7 @@
       {
         "call_addr": "00468bdc",
         "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_00468b80",
+        "caller": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_00468b80",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -74,7 +74,7 @@
       {
         "call_addr": "00468bf6",
         "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_00468b80",
+        "caller": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_00468b80",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -85,7 +85,7 @@
       {
         "call_addr": "00468c13",
         "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_00468b80",
+        "caller": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_00468b80",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -96,7 +96,7 @@
       {
         "call_addr": "00468f7e",
         "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_00468b80",
+        "caller": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_00468b80",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -107,7 +107,7 @@
       {
         "call_addr": "00469274",
         "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_00468b80",
+        "caller": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_00468b80",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -141,6 +141,32 @@
       "STORE": 11
     },
     "pcode_op_count": 80
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0047e240",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00467900",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00486ea0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0045b480",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 28,

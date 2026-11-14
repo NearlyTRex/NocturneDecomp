@@ -16,7 +16,7 @@
     {
       "addr": "004bcba0",
       "from_addr": "004bd7d8",
-      "name": "core_fldnotes.cpp_FUN_004bcba0",
+      "name": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004bcba0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -40,14 +40,14 @@
   },
   "function_calls": [
     {
-      "addr": "00479580",
-      "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00479580"
-    },
-    {
       "addr": "004795b0",
       "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_004795b0"
+      "name": "engine_dosio.cpp_makePath_FUN_004795b0"
+    },
+    {
+      "addr": "00479580",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_splitPath_FUN_00479580"
     }
   ],
   "globals": [],
@@ -57,7 +57,7 @@
       {
         "call_addr": "004bd7d8",
         "call_type": "direct",
-        "caller": "core_fldnotes.cpp_FUN_004bcba0",
+        "caller": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004bcba0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -115,6 +115,26 @@
       "STORE": 13
     },
     "pcode_op_count": 103
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004611a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00465f80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00482050",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 532,

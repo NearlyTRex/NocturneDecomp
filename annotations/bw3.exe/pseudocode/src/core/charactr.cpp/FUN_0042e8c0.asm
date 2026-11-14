@@ -48,11 +48,11 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
 ;   core_xform.cpp_FUN_00583260
-;   sound_sndmain.cpp_FUN_00555df0
-;   sound_sndmain.cpp_FUN_00555fd0
-;   sound_sndmain.cpp_FUN_00556050
-;   sound_sndmain.cpp_FUN_00556ab0
 ;   sound_sndmain.cpp_killSfx_FUN_00556be0
+;   sound_sndmain.cpp_popSfxOptions_FUN_00556050
+;   sound_sndmain.cpp_pushSfxOptions_FUN_00555fd0
+;   sound_sndmain.cpp_setNextSfxVolume_FUN_00555df0
+;   sound_sndmain.cpp_setSfxVolume_FUN_00556ab0
 ;
 ; *****************************************************************************
 
@@ -204,8 +204,8 @@ section .text
     FSTP float ptr [ESP + 0x70]         ; 0042ea96
     PUSH dword ptr [ESP + 0x70]         ; 0042ea9a
     PUSH EDX                            ; 0042ea9e
-    CALL sound_sndmain.cpp_FUN_00556ab0 ; 0042ea9f
-        ;   XREF to: 00556ab0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556ab0()
+    CALL sound_sndmain.cpp_setSfxVolume_FUN_00556ab0 ; 0042ea9f
+        ;   XREF to: 00556ab0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxVolume_FUN_00556ab0(uint sfx_handle, float volume)
     ADD ESP,0x8                         ; 0042eaa4
     TEST EAX,EAX                        ; 0042eaa7
     JZ 0x0042ecf6                       ; 0042eaa9
@@ -372,12 +372,12 @@ section .text
         ;   Label: LAB_0042ecf0
     JMP 0x0042ea15                      ; 0042ecf1
         ;   XREF to: 0042ea15 (UNCONDITIONAL_JUMP)  ; LAB_0042ea15
-    CALL sound_sndmain.cpp_FUN_00555fd0 ; 0042ecf6
-        ;   XREF to: 00555fd0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00555fd0()
+    CALL sound_sndmain.cpp_pushSfxOptions_FUN_00555fd0 ; 0042ecf6
+        ;   XREF to: 00555fd0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00555fd0()
         ;   Label: LAB_0042ecf6
     PUSH dword ptr [ESP + 0x70]         ; 0042ecfb
-    CALL sound_sndmain.cpp_FUN_00555df0 ; 0042ecff
-        ;   XREF to: 00555df0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00555df0(float volume)
+    CALL sound_sndmain.cpp_setNextSfxVolume_FUN_00555df0 ; 0042ecff
+        ;   XREF to: 00555df0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxVolume_FUN_00555df0(float volume)
     ADD ESP,0x4                         ; 0042ed04
     PUSH 0x5b831d                       ; 0042ed07 | = "character-onfire-loop.wav"
     MOV EAX,dword ptr [EBX + 0x154]     ; 0042ed0c
@@ -385,8 +385,8 @@ section .text
     CALL dword ptr [EAX + 0x30]         ; 0042ed13
     ADD ESP,0x8                         ; 0042ed16
     MOV dword ptr [EBX + 0xbc64],EAX    ; 0042ed19
-    CALL sound_sndmain.cpp_FUN_00556050 ; 0042ed1f
-        ;   XREF to: 00556050 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00556050()
+    CALL sound_sndmain.cpp_popSfxOptions_FUN_00556050 ; 0042ed1f
+        ;   XREF to: 00556050 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_00556050()
     JMP 0x0042eaaf                      ; 0042ed24
         ;   XREF to: 0042eaaf (UNCONDITIONAL_JUMP)  ; LAB_0042eaaf
     MOV EDX,dword ptr [EBX + 0x33a0]    ; 0042ed29

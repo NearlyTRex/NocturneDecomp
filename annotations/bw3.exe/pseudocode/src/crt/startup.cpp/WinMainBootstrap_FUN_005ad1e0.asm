@@ -20,12 +20,12 @@
 ;   crt_memory.c_memset_FUN_005a28f0
 ;   crt_unknown.c_FUN_005a6033
 ;   crt_unknown.c_FUN_005a81b8
+;   crt_unknown.c_FUN_005ad2c4
+;   crt_unknown.c_FUN_005ae4a0
+;   crt_unknown.c_FUN_005aefe0
+;   crt_unknown.c_FUN_005af7f0
 ;   GetModuleHandleA
-;   unkafter_asgaya.cpp_FUN_005ad2c4
-;   unkafter_asgaya.cpp_FUN_005ae4a0
-;   unkafter_asgaya.cpp_FUN_005aefe0
-;   unkafter_asgaya.cpp_FUN_005af7f0
-;   wincore_winrun.cpp_FUN_00581080
+;   wincore_winrun.cpp_winMain_FUN_00581080
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     MOV EBP,ESP                         ; 005ad1e2
     SUB ESP,0x8                         ; 005ad1e4
     MOV EAX,0x1                         ; 005ad1e7
-    CALL unkafter_asgaya.cpp_FUN_005ae4a0 ; 005ad1ec
-        ;   XREF to: 005ae4a0 (UNCONDITIONAL_CALL)  ; undefined unkafter_asgaya.cpp_FUN_005ae4a0()
+    CALL crt_unknown.c_FUN_005ae4a0     ; 005ad1ec
+        ;   XREF to: 005ae4a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005ae4a0()
     MOV EAX,[0x00607e78]                ; 005ad1f1 | DAT_00607e78
     ADD EAX,0x3                         ; 005ad1f6
     AND AL,0xfc                         ; 005ad1f9
@@ -62,8 +62,8 @@ section .text
     ADD EBX,0x3                         ; 005ad22c
     ADD ESP,0x8                         ; 005ad22f
     AND BL,0xfc                         ; 005ad232
-    CALL unkafter_asgaya.cpp_FUN_005aefe0 ; 005ad235
-        ;   XREF to: 005aefe0 (UNCONDITIONAL_CALL)  ; undefined unkafter_asgaya.cpp_FUN_005aefe0()
+    CALL crt_unknown.c_FUN_005aefe0     ; 005ad235
+        ;   XREF to: 005aefe0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005aefe0()
     CMP EBX,EAX                         ; 005ad23a
     JNC 0x005ad254                      ; 005ad23c
         ;   XREF to: 005ad254 (CONDITIONAL_JUMP)  ; LAB_005ad254
@@ -83,8 +83,8 @@ section .text
         ;   Label: LAB_005ad256
     ADD EAX,EBX                         ; 005ad25c
     MOV [0x00607968],EAX                ; 005ad25e | DAT_00607968
-    CALL unkafter_asgaya.cpp_FUN_005af7f0 ; 005ad263
-        ;   XREF to: 005af7f0 (UNCONDITIONAL_CALL)  ; undefined unkafter_asgaya.cpp_FUN_005af7f0()
+    CALL crt_unknown.c_FUN_005af7f0     ; 005ad263
+        ;   XREF to: 005af7f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005af7f0()
     PUSH 0xa                            ; 005ad268
     MOV EBX,dword ptr [0x00607940]      ; 005ad26a | DAT_00607940
     PUSH EBX                            ; 005ad270
@@ -92,11 +92,11 @@ section .text
     PUSH 0x0                            ; 005ad273
     CALL dword ptr CS:[0x5b35c0]        ; 005ad275 | PTR_GetModuleHandleA_005b35c0
     PUSH EAX                            ; 005ad27c
-    CALL wincore_winrun.cpp_FUN_00581080 ; 005ad27d
-        ;   XREF to: 00581080 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_00581080()
+    CALL wincore_winrun.cpp_winMain_FUN_00581080 ; 005ad27d
+        ;   XREF to: 00581080 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_winMain_FUN_00581080(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
     PUSH EAX                            ; 005ad282
-    CALL unkafter_asgaya.cpp_FUN_005ad2c4 ; 005ad283
-        ;   XREF to: 005ad2c4 (UNCONDITIONAL_CALL)  ; undefined unkafter_asgaya.cpp_FUN_005ad2c4()
+    CALL crt_unknown.c_FUN_005ad2c4     ; 005ad283
+        ;   XREF to: 005ad2c4 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005ad2c4()
     ADD ESP,0x4                         ; 005ad288
     MOV ESP,EBP                         ; 005ad28b
     POP EBP                             ; 005ad28d

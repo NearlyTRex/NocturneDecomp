@@ -7,7 +7,7 @@
 ; CDemonRaytrace * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_dtrace.cpp_FUN_004728d0 at 004729f3
+;   core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004728d0 at 004729f3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dtrace_cpp_005d198d
@@ -19,7 +19,7 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
 ;   crt_memory.c___vec_new_FUN_005ba2b4
-;   crt_unknown.c_FUN_005b8df8
+;   crt_memory.c_operator_new_array_FUN_005b8df8
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     SHL EAX,0x2                         ; 00472576
     ADD EAX,0x4                         ; 00472579
     PUSH EAX                            ; 0047257c
-    CALL crt_unknown.c_FUN_005b8df8     ; 0047257d
-        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8df8()
+    CALL crt_memory.c_operator_new_array_FUN_005b8df8 ; 0047257d
+        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005b8df8()
     ADD ESP,0x4                         ; 00472582
     PUSH EAX                            ; 00472585
     CALL crt_memory.c___vec_new_FUN_005ba2b4 ; 00472586

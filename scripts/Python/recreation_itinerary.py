@@ -19,6 +19,10 @@ and functions come leaves first. A function counts as done when the recreation h
 `// deferred: <what>, with <what brings it>` or `// unverified: <what>, <how>` item, which may run
 on over lines starting `//` and two or more spaces.
 
+The Blair Witch builds add two kinds of work (itinerary_bw.py): under a function, the builds whose
+body differs from nocedit's, each done by its `// bwN 0x...` line; and at the end, the Blair Witch
+functions nocedit has no twin of, by unit.
+
 Usage: recreation_itinerary.py [--out docs/recreation-itinerary.md] [--split 300] [--merge 25]
 """
 
@@ -31,6 +35,7 @@ import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import itinerary_bw  # noqa: E402
 import scaffold_recreation as scaffold  # noqa: E402
 
 ROOT = scaffold.ROOT
@@ -87,7 +92,7 @@ SOURCE_SUFFIXES = (".c", ".cpp")
 MAX_SPLIT_DEPTH = 4
 
 
-def source_files(source=SOURCE):
+def source_files(source):
     """Address to the raw decompiled body, which keeps the original's call order."""
     files = {}
     for directory, _, names in os.walk(source):
@@ -179,7 +184,7 @@ class Itinerary:
         # What the recreation drops never runs, so the walk doesn't follow its calls either.
         self.dropped = {a for a, f in self.model.replaced.items()
                         if scaffold.boundary_destination(f).startswith("dropped")}
-        self.sources = source_files()
+        self.sources = source_files(SOURCE)
         with open(MAPPING, encoding="utf-8") as f:
             pairs = json.load(f)["pairs"]
         retail_sources = source_files(RETAIL_SOURCE)
@@ -199,6 +204,7 @@ class Itinerary:
         self.named = {}
         self.reached = set()
         self.steps = []
+        self.bw = itinerary_bw.BlairWitch.load(RECREATION)
 
     def is_compiler_generated(self, f):
         method = f["method"]
@@ -224,7 +230,7 @@ class Itinerary:
                     found = [self.from_retail.get(callee) for callee in found]
                 for callee in found:
                     if callee != addr and callee not in names and callee in self.walkable:
-                            names.append(callee)
+                        names.append(callee)
             self.named[addr] = names
         return self.named[addr]
 
@@ -386,7 +392,7 @@ class Itinerary:
         note = ", compiler-generated" if addr in self.generated else ""
         lines = ["  - [%s] `%s` 0x%s (%d%s)" % (mark, f["method"], addr, f["instructions"], note)]
         lines += ["    - %s" % item for item in self.deferred.get(addr, [])]
-        return lines
+        return lines + self.bw.variant_lines(addr)
 
     def render(self):
         lines = [
@@ -403,17 +409,24 @@ class Itinerary:
             "path not yet verified against it, and each such item is listed under it. Partial",
             "functions don't count as done. Sizes are in instructions.",
             "",
-            "| Step | First needed by | TUs | Functions | Instructions | Done | Partial | % Done |",
-            "|---|---|---|---|---|---|---|---|",
+            "A `BW:` line under a function lists the Blair Witch builds whose body differs from",
+            "nocedit's, builds sharing one body together, each ticked when the recreation has its",
+            "`// bwN 0x...` line. BW variants counts those functions, and BW done the ones with",
+            "every variant ticked. Blair Witch code nocedit has no twin of is listed at the end.",
+            "",
+            "| Step | First needed by | TUs | Functions | Instructions | Done | Partial | % Done "
+            "| BW variants | BW done |",
+            "|---|---|---|---|---|---|---|---|---|---|",
         ]
         for i, step in enumerate(self.steps):
             n, instructions, done, partial = self.counts(step.addrs)
-            lines.append("| %d | %s | %d | %d | %d | %d | %d | %s |"
-                         % (i, step.label, len(self.tu_groups(step)), n, instructions, done,
-                            partial, percent(done, n)))
+            lines.append("| %d | %s | %d | %d | %d | %d | %d | %s | %d | %d |"
+                         % ((i, step.label, len(self.tu_groups(step)), n, instructions, done,
+                             partial, percent(done, n)) + self.bw.variant_counts(step.addrs)))
         n, instructions, done, partial = self.counts(self.in_scope)
-        lines.append("| | **All** | | **%d** | **%d** | **%d** | **%d** | **%s** |"
-                     % (n, instructions, done, partial, percent(done, n)))
+        lines.append("| | **All** | | **%d** | **%d** | **%d** | **%d** | **%s** | **%d** | **%d** |"
+                     % ((n, instructions, done, partial, percent(done, n))
+                        + self.bw.variant_counts(self.in_scope)))
         for i, step in enumerate(self.steps):
             lines += ["", "## Step %d: %s" % (i, step.label)]
             for tu, addrs in self.tu_groups(step):
@@ -427,6 +440,7 @@ class Itinerary:
                     lines.append("- %s" % ("class `%s`" % cls if cls else "free functions"))
                     for addr in members:
                         lines += self.function_lines(addr)
+        lines += self.bw.only_lines()
         stray = sorted(set(self.deferred) - self.in_scope)
         if stray:
             lines += ["", "## Partial outside the itinerary", ""]

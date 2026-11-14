@@ -1,25 +1,25 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDoc * core_doc_cpp_CDoc_dtor_FUN_00450580(CDoc *this_ptr,uint flags)
+; CDoc * __cdecl core_doc_cpp_CDoc_dtor_FUN_00450580(CDoc *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CDoc *           Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   undefined4 g_CDocVTable
+;   CHero_full_vtable g_CDocVTable
 ;   WatcomTypeInfo g_CDocTypeInfo
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408930
 ;   core_box.cpp_CBox_dtor_FUN_005b1c70
+;   core_bwspart.cpp_CSimpleParticleSystem_release_FUN_005a8220
+;   core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100
 ;   core_hero.cpp_CHero_dtor_FUN_004ce3d0
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
 ;   crt_unknown.c_FUN_005b7fce
 ;   crt_unknown.c_FUN_005b7fdc
-;   unkaddr_005a7eb0.cpp_FUN_005a8100
-;   unkafter_superopt.cpp_FUN_005a8220
 ;
 ; *****************************************************************************
 
@@ -36,12 +36,12 @@ section .text
     LEA ESI,[EBX + 0x154]               ; 0045058f
     PUSH ESI                            ; 00450595
     MOV dword ptr [EBX + 0x2b0],0x5f5174 ; 00450596 | g_CDocVTable
-    CALL unkaddr_005a7eb0.cpp_FUN_005a8100 ; 004505a0
-        ;   XREF to: 005a8100 (UNCONDITIONAL_CALL)  ; undefined unkaddr_005a7eb0.cpp_FUN_005a8100()
+    CALL core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100 ; 004505a0
+        ;   XREF to: 005a8100 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100(CSimpleParticleSystem * this_ptr, int param_2)
     ADD ESP,0x8                         ; 004505a5
     PUSH ESI                            ; 004505a8
-    CALL unkafter_superopt.cpp_FUN_005a8220 ; 004505a9
-        ;   XREF to: 005a8220 (UNCONDITIONAL_CALL)  ; undefined unkafter_superopt.cpp_FUN_005a8220()
+    CALL core_bwspart.cpp_CSimpleParticleSystem_release_FUN_005a8220 ; 004505a9
+        ;   XREF to: 005a8220 (UNCONDITIONAL_CALL)  ; void core_bwspart.cpp_CSimpleParticleSystem_release_FUN_005a8220(CSimpleParticleSystem * this_ptr)
     ADD ESP,0x4                         ; 004505ae
     PUSH 0x0                            ; 004505b1
     ADD EBX,0x25ea4                     ; 004505b3
@@ -74,7 +74,7 @@ section .text
         ;   Label: LAB_004505f3
     PUSH EBX                            ; 004505f8
     CALL crt_memory.c___vec_delete_FUN_005b7fa7 ; 004505f9
-        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005b7fa7()
+        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005b7fa7(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 004505fe
     PUSH EAX                            ; 00450601
     CALL crt_unknown.c_FUN_005b7fce     ; 00450602

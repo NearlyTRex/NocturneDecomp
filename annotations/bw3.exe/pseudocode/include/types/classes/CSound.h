@@ -6,10 +6,10 @@
 #include "system/basetypes.h"
 
 // Structure: CSound
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x4 (4 bytes)
 #pragma pack(push, 1)
 typedef struct CSound {
+    int magic; // 0x0
 } CSound;
 #pragma pack(pop)
 

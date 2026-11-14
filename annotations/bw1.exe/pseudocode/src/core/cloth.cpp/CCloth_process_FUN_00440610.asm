@@ -13,13 +13,13 @@
 ;
 ; XREF[5]:
 ;   core_cloth.cpp_CClothList_process_FUN_00441fa0 at 00441fd4
-;   core_gabriela.cpp_FUN_004c65f0 at 004c6eb8
-;   core_mimic.cpp_FUN_0050fba0 at 005104e3
-;   core_svetlana.cpp_FUN_00593150 at 00593505
-;   core_vampboss.cpp_FUN_005a5550 at 005a6354
+;   core_gabriela.cpp_CGabriella_process_FUN_004c65f0 at 004c6eb8
+;   core_mimic.cpp_CMimic_processAnimation_FUN_0050fba0 at 005104e3
+;   core_svetlana.cpp_CSvetlana_process_FUN_00593150 at 00593505
+;   core_vampboss.cpp_CVampireBoss_process_FUN_005a5550 at 005a6354
 ;
 ; Called Functions:
-;   core_cloth.cpp_FUN_00440640
+;   core_cloth.cpp_CCloth_step_FUN_00440640
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     PUSH EBX                            ; 00440628
     MOV ESI,dword ptr [ESP + 0x20]      ; 00440629
     PUSH ESI                            ; 0044062d
-    CALL core_cloth.cpp_FUN_00440640    ; 0044062e
-        ;   XREF to: 00440640 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_00440640(CCloth * this_ptr, CVector3f * position, CVector3f * euler, float delta_time, ...)
+    CALL core_cloth.cpp_CCloth_step_FUN_00440640 ; 0044062e
+        ;   XREF to: 00440640 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_step_FUN_00440640(CCloth * this_ptr, CVector3f * position, CVector3f * euler, float delta_time, ...)
     ADD ESP,0x18                        ; 00440633
     POP ESI                             ; 00440636
     POP EBX                             ; 00440637

@@ -36,7 +36,7 @@ section .text
     ADD EAX,0x1a0                       ; 004c9bc4
     PUSH EAX                            ; 004c9bc9
     CALL crt_memory.c___arrinit_FUN_005a30d7 ; 004c9bca
-        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005a30d7()
+        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005a30d7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EDX,[EAX + 0xfffffc44]          ; 004c9bcf
     MOV dword ptr [EDX + 0x154],0x5e0be4 ; 004c9bd5
     MOV ESI,0x5c443f                    ; 004c9bdf

@@ -2,14 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 56,
+    "complexity_score": 116,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 56,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 5,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation"
+    ],
     "total_lines": 169
   },
   "cross_references": [
@@ -36,7 +39,7 @@
     {
       "addr": "00504b00",
       "is_variadic": false,
-      "name": "sound_mp3.cpp_FUN_00504b00"
+      "name": "sound_mp3.cpp_CFileBitStream_readBits_FUN_00504b00"
     }
   ],
   "globals": [],
@@ -91,6 +94,32 @@
       "STORE": 18
     },
     "pcode_op_count": 467
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005268e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004fe1f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0052fb50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004e36d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 52,
@@ -157,5 +186,46 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(int *)((int)allocation",
+      "severity": "moderate",
+      "text": "piVar5 = (int *)((int)allocation->bit_allocations + local_14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `&quantized_samples->codes` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 22,
+      "match": "(int)&quantized_samples->codes",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)((int)&quantized_samples->codes + local_14);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&quantized_samples->codes` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 47,
+      "match": "(int)&quantized_samples->codes",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)((int)&quantized_samples->codes + iVar6);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 22,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)((int)&quantized_samples->codes + local_14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 47,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)((int)&quantized_samples->codes + iVar6);",
+      "type": "pointer_cast"
+    }
+  ]
 }

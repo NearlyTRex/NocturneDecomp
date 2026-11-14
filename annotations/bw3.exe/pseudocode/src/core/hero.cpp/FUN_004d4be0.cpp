@@ -11,26 +11,27 @@
 CDemonActor * core_hero_cpp_FUN_004d4be0(int param_1)
 
 {
-  uint uVar1;
-  CDemonActor *actor;
+  CDemonActor *pCVar1;
+  uint class_name_hash;
   
-  uVar1 = core_actor_cpp_createActorByName_FUN_0040c4f0(param_1 + 0x15c,g_CHeroClassInfo.name_hash);
-  actor = (CDemonActor *)core_actor_cpp_castToClassHash_FUN_0040c840(uVar1);
-  if (actor == (CDemonActor *)0x0) {
+  class_name_hash = g_CHeroClassInfo.name_hash;
+  pCVar1 = core_actor_cpp_createActorByName_FUN_0040c4f0((char *)(param_1 + 0x15c));
+  pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c840(pCVar1,class_name_hash);
+  if (pCVar1 == (CDemonActor *)0x0) {
     _DAT_01d71de0 = "..\\core\\hero.cpp";
     _DAT_01d71de4 = 0x75c;
     core_main_c_FUN_004e4330("CHeroPlaceholder::createHero - failed.");
   }
-  core_mission_cpp_CDemonMission_generateActorName_FUN_004f7530(0x01D81080,actor);
-  *(uint *)&actor->field_0x20 = *(uint *)(param_1 + 0x20);
-  *(uint *)&actor->field_0x24 = *(uint *)(param_1 + 0x24);
-  *(uint *)&actor->field_0x28 = *(uint *)(param_1 + 0x28);
-  *(uint *)&actor->field_0x2c = *(uint *)(param_1 + 0x2c);
-  if ((uint *)&actor->field_0x30 != (uint *)(param_1 + 0x30)) {
-    *(uint *)&actor->field_0x30 = *(uint *)(param_1 + 0x30);
-    *(uint *)&actor->field_0x34 = *(uint *)(param_1 + 0x34);
-    *(uint *)&actor->field_0x38 = *(uint *)(param_1 + 0x38);
+  core_mission_cpp_CDemonMission_generateActorName_FUN_004f7530(0x01D81080,pCVar1);
+  (pCVar1->location).position.x = *(float *)(param_1 + 0x20);
+  (pCVar1->location).position.y = *(float *)(param_1 + 0x24);
+  (pCVar1->location).position.z = *(float *)(param_1 + 0x28);
+  (pCVar1->location).area_id = *(int *)(param_1 + 0x2c);
+  if (&pCVar1->orient != (UOrientationVector *)(param_1 + 0x30)) {
+    (pCVar1->orient).vec.x = *(float *)(param_1 + 0x30);
+    (pCVar1->orient).vec.y = *(float *)(param_1 + 0x34);
+    (pCVar1->orient).vec.z = *(float *)(param_1 + 0x38);
   }
-  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0(actor);
-  return actor;
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0(pCVar1);
+  return pCVar1;
 }

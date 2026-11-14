@@ -14,7 +14,7 @@ void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_005173c0(CSkeleton *thi
   CVector3f *pCVar3;
   CVector3f *pCVar4;
   
-  core_skeleton_cpp_CSkeleton_FUN_005174e0(this_ptr);
+  core_skeleton_cpp_CSkeleton_free_FUN_005174e0(this_ptr);
   if (100 < bone_count) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 198;

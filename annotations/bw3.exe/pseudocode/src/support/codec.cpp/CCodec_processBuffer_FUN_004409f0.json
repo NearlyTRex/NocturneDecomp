@@ -1,0 +1,233 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 52,
+    "complexity_score": 43,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 13,
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 65
+  },
+  "cross_references": [
+    {
+      "addr": "0044c130",
+      "from_addr": "0044c42f",
+      "name": "core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044c130",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004409f0",
+    "address_range": [
+      [
+        "004409f0",
+        "00440a60"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_codec.cpp_CCodec_processBuffer_FUN_004409f0",
+    "signature": "int __cdecl support_codec_cpp_CCodec_processBuffer_FUN_004409f0(CCodec *this_ptr,char *input,int *input_length,char *output,int *output_length,int enable_callback)"
+  },
+  "function_calls": [
+    {
+      "addr": "00574150",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamMemory_ctorOpen_FUN_00574150"
+    },
+    {
+      "addr": "005741d0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamMemory_dtor_FUN_005741d0"
+    },
+    {
+      "addr": "005743a0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamMemory_tell_FUN_005743a0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0044c42f",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044c130",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.75,
+    "instruction_count": 48,
+    "opcode_distribution": {
+      "CALL": 3,
+      "CALLIND": 1,
+      "COPY": 41,
+      "INT_ADD": 21,
+      "INT_AND": 14,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 14,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 7,
+      "INT_SUB": 21,
+      "LOAD": 16,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 20
+    },
+    "pcode_op_count": 180
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00434070",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00442d90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0043eba0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8696
+    },
+    "nocturne.exe": {
+      "addr": "00439120",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8696
+    }
+  },
+  "stack_frame": {
+    "frame_size": 64,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCodec *"
+      },
+      {
+        "is_param": true,
+        "name": "input",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "input_length",
+        "offset": 12,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "output",
+        "offset": 16,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "output_length",
+        "offset": 20,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "enable_callback",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 10,
+      "match": "(code **)((int)this_ptr",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)((int)this_ptr->vtable + 0x10))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 10,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)((int)this_ptr->vtable + 0x10))",
+      "type": "unresolved_funcptr"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CCheesyCipher",
+        "offset": 24,
+        "vtable_addr": "005dd524"
+      },
+      {
+        "class_name": "CCodec",
+        "offset": 24,
+        "vtable_addr": "005dd434"
+      },
+      {
+        "class_name": "CLZWCompress",
+        "offset": 24,
+        "vtable_addr": "005dd464"
+      },
+      {
+        "class_name": "CLZWDecompress",
+        "offset": 24,
+        "vtable_addr": "005dd494"
+      },
+      {
+        "class_name": "CAsciiArmor",
+        "offset": 24,
+        "vtable_addr": "005dd4c4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 6
+  }
+}

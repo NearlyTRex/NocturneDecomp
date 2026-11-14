@@ -1,45 +1,41 @@
 // Name: core_exorcism.cpp_CExorcism_ctor_FUN_0048a310
 // Address: 0048a310
 // Address Range: [[0048a310, 0048a41b]]
-// Convention: unknown
-// Signature: CExorcism * core_exorcism_cpp_CExorcism_ctor_FUN_0048a310(CExorcism *this_ptr)
+// Convention: __cdecl
+// Signature: CExorcism * __cdecl core_exorcism_cpp_CExorcism_ctor_FUN_0048a310(CExorcism *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CExorcism * core_exorcism_cpp_CExorcism_ctor_FUN_0048a310(CExorcism *this_ptr)
+CExorcism * __cdecl core_exorcism_cpp_CExorcism_ctor_FUN_0048a310(CExorcism *this_ptr)
 
 {
   CExorcism *pCVar1;
   
-  pCVar1 = (CExorcism *)core_weapon_cpp_CWeapon_ctor_FUN_0057ad70((CWeapon *)this_ptr);
-  *(byte **)&pCVar1->field_0x154 = &g_CExorcismVTable;
+  pCVar1 = (CExorcism *)core_weapon_cpp_CWeapon_ctor_FUN_0057ad70(&this_ptr->base);
+  (pCVar1->base).base.vtable._ub = &g_CExorcismVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
-            ((CKeyFramedModelInstance *)&pCVar1->field_0x158,"exo_bible.kfm");
-  *(uint *)&pCVar1->field_0x2d8 = 0;
-  *(uint *)&pCVar1->field_0x2dc = 0;
-  *(uint *)&pCVar1->field_0x2e4 = 1;
-  *(uint *)&pCVar1->field_0x2e8 = 0x42480000;
-  *(uint *)&pCVar1->field_0x2ec = 0;
-  *(uint *)&pCVar1->field_0x56c = 10;
-  *(uint *)&pCVar1->field_0x58c = 1;
-  *(uint *)&pCVar1->field_0x574 = 2;
-  *(uint *)&pCVar1->field_0x594 = 0;
-  *(uint *)&pCVar1->field_0x598 = 0;
-  *(uint *)&pCVar1->field_0x59c = 0;
-  *(uint *)&pCVar1->field_0x5a4 = 0;
-  *(uint *)&pCVar1->field_0x5e8 = 0x8000;
-  pCVar1->field_0x5c8 = 0x20;
-  core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0045ab30
-            ((CDemonGlobe *)&pCVar1->field_0x5ac,8.0);
-  *(uint *)&pCVar1->field_0x5cc = 1;
-  *(uint *)&pCVar1->field_0x628 = 0x8000;
-  pCVar1->field_0x608 = 0x20;
-  core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0045ab30
-            ((CDemonGlobe *)&pCVar1->field_0x5ec,8.0);
-  *(uint *)&pCVar1->field_0x60c = 1;
-  *(uint *)&pCVar1->field_0x57c = 0;
-  *(uint *)&pCVar1->field_0x5a8 = 0;
+            (&(pCVar1->base).model,"exo_bible.kfm");
+  (pCVar1->base).is_spread_weapon = 0;
+  (pCVar1->base).fire_mode = FIRE_MODE_AUTOMATIC;
+  (pCVar1->base).can_penetrate = 1;
+  (pCVar1->base).bolt_velocity = 50.0;
+  (pCVar1->base).fire_cooldown = 0;
+  (pCVar1->base).ammo_type = AMMO_TYPE_MANA;
+  (pCVar1->base).ammo_per_shot = 1;
+  (pCVar1->base).weapon_class = 2;
+  pCVar1->was_firing_prev_frame = 0;
+  pCVar1->is_firing = 0;
+  pCVar1->target = (CCharacter *)0x0;
+  pCVar1->zap_timer = 0.0;
+  pCVar1->globes[0].intensity_multiplier = 0x8000;
+  pCVar1->globes[0].intensity.bytes[0] = ' ';
+  core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0045ab30(pCVar1->globes,8.0);
+  pCVar1->globes[0].corona_mode = 1;
+  pCVar1->globes[1].intensity_multiplier = 0x8000;
+  pCVar1->globes[1].intensity.bytes[0] = ' ';
+  core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0045ab30(pCVar1->globes + 1,8.0);
+  pCVar1->globes[1].corona_mode = 1;
+  (pCVar1->base).draw_crosshair = 0;
+  pCVar1->fire_cooldown = 0.0;
   return pCVar1;
 }

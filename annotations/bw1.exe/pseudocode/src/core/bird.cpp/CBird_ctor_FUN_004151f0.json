@@ -1,0 +1,214 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 42,
+    "complexity_score": 123,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 23,
+    "suspect_count": 9,
+    "suspect_types": [
+      "negative_offset",
+      "pointer_truncation"
+    ],
+    "total_lines": 65
+  },
+  "cross_references": [
+    {
+      "addr": "004151c0",
+      "from_addr": "004151d3",
+      "name": "core_bird.cpp_factoryFuncBird_FUN_004151c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004151f0",
+    "address_range": [
+      [
+        "004151f0",
+        "004152b3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bird.cpp_CBird_ctor_FUN_004151f0",
+    "signature": "CBird * __cdecl core_bird_cpp_CBird_ctor_FUN_004151f0(CBird *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cc00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00"
+    },
+    {
+      "addr": "0042c080",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_ctor_FUN_0042c080"
+    },
+    {
+      "addr": "00532fe0",
+      "is_variadic": false,
+      "name": "core_path.cpp_CPathMap_ctor_FUN_00532fe0"
+    },
+    {
+      "addr": "00569f50",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004151d3",
+        "call_type": "direct",
+        "caller": "core_bird.cpp_factoryFuncBird_FUN_004151c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.54054054054054,
+    "instruction_count": 37,
+    "opcode_distribution": {
+      "CALL": 4,
+      "COPY": 42,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 24,
+      "INT_AND": 14,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 14,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 7,
+      "INT_SUB": 12,
+      "LOAD": 4,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 23
+    },
+    "pcode_op_count": 168
+  },
+  "siblings": {
+    "bw3.exe": {
+      "addr": "0040f9f0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBird *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 11,
+      "match": "pCVar2[-1].",
+      "severity": "mild",
+      "text": "pCVar2[-1].height_cache[0x4c][0x5c] = (int)&g_CBirdVTable;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 12,
+      "match": "pCVar2[-1].",
+      "severity": "mild",
+      "text": "pCVar2[-1].height_cache_tags[6][0x4a] = 0x3f19999a;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 13,
+      "match": "pCVar2[-1].",
+      "severity": "mild",
+      "text": "pCVar2[-1].height_cache_tags[6][0x4b] = 0x3f666666;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 14,
+      "match": "pCVar2[-1].",
+      "severity": "mild",
+      "text": "pCVar2[-1].height_cache_tags[6][0x4e] = 0x3fcccccd;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 15,
+      "match": "pCVar2[-1].",
+      "severity": "mild",
+      "text": "pCVar2[-1].height_cache_tags[6][0x4f] = -0x3b864000;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 21,
+      "match": "pCVar2[-1].",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)(pCVar2[-1].height_cache[0x4c] + 0x5d),(char *)0x5d3c93);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 22,
+      "match": "pCVar2[-1].",
+      "severity": "mild",
+      "text": "pCVar2[-1].height_cache_tags[1][0x33] = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 25,
+      "match": "pCVar2[-1].",
+      "severity": "mild",
+      "text": "return (CBird *)(pCVar2[-1].height_cache[0x4c] + 7);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Pointer value `&g_CBirdVTable` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 11,
+      "match": "(int)&g_CBirdVTable",
+      "severity": "moderate",
+      "text": "pCVar2[-1].height_cache[0x4c][0x5c] = (int)&g_CBirdVTable;",
+      "type": "pointer_truncation"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBird",
+        "offset": 0,
+        "vtable_addr": "005fc8b4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -7,9 +7,9 @@
 ; CTextureCache *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   engine_texture.cpp_FUN_005739a0 at 005739a5
-;   engine_texture.cpp_FUN_00574db0 at 00574dd7
+;   engine_texture.cpp_CTextureCache_reset_FUN_005739a0 at 005739a5
 ;   engine_texture.cpp_FUN_00575010 at 00575017
+;   engine_texture.cpp_freeTextureCache_FUN_00574db0 at 00574dd7
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0264bcbc

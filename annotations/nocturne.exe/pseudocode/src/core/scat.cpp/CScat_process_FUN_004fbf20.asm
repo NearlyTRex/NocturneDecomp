@@ -53,7 +53,7 @@
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0
 ;   core_scat.cpp_CScat_advanceMotionWithGrabDamage_FUN_004fca50
 ;   core_scat.cpp_CScat_blendLayerAction_FUN_004fcff0
-;   core_scat.cpp_CScat_FUN_004fdd00
+;   core_scat.cpp_CScat_isWeaponReady_FUN_004fcd40
 ;   ... and 10 more
 ;
 ; *****************************************************************************
@@ -422,8 +422,8 @@ section .text
         ;   XREF to: 0042a150 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042a150(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004fc2d7
     PUSH EBX                            ; 004fc2da
-    CALL core_scat.cpp_CScat_FUN_004fdd00 ; 004fc2db
-        ;   XREF to: 004fdd00 (UNCONDITIONAL_CALL)  ; void core_scat.cpp_CScat_FUN_004fdd00(CScat * this_ptr)
+    CALL core_scat.cpp_CScat_updateWeaponAttachment_FUN_004fdd00 ; 004fc2db
+        ;   XREF to: 004fdd00 (UNCONDITIONAL_CALL)  ; void core_scat.cpp_CScat_updateWeaponAttachment_FUN_004fdd00(CScat * this_ptr)
     ADD ESP,0x4                         ; 004fc2e0
     MOV ESP,EBP                         ; 004fc2e3
         ;   Label: caseD_5

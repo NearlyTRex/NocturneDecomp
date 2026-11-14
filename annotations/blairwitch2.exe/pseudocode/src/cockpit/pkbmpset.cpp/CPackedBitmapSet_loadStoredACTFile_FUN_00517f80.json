@@ -2,21 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 9,
-    "complexity_score": 5,
+    "complexity_score": 6,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 5,
+    "pseudocode_lines": 6,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 14
+    "total_lines": 15
   },
   "cross_references": [
     {
-      "addr": "005177de",
+      "addr": "005177e0",
       "from_addr": "00517a41",
-      "name": "cockpit_pkbmpset.cpp_FUN_005177de",
+      "name": "cockpit_pkbmpset.cpp_FUN_005177e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -42,7 +42,7 @@
     {
       "addr": "00517e40",
       "is_variadic": false,
-      "name": "cockpit_pkbmpset.cpp_FUN_00517e40"
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_00517e40"
     }
   ],
   "globals": [],
@@ -50,9 +50,9 @@
     "call_site_count": 2,
     "call_sites": [
       {
-        "call_addr": "00517a41",
+        "call_addr": "00517c1f",
         "call_type": "direct",
-        "caller": "cockpit_pkbmpset.cpp_FUN_005177de",
+        "caller": "cockpit_pkbmpset.cpp_FUN_00517a60",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -61,9 +61,9 @@
         "stack_params": 1
       },
       {
-        "call_addr": "00517c1f",
+        "call_addr": "00517a41",
         "call_type": "direct",
-        "caller": "cockpit_pkbmpset.cpp_FUN_00517a60",
+        "caller": "cockpit_pkbmpset.cpp_FUN_005177e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -97,6 +97,32 @@
       "STORE": 3
     },
     "pcode_op_count": 26
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005392d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00510fb0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0054c710",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004f5c60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 8,

@@ -7,43 +7,43 @@
 
 // Original: core_bat.cpp_staticInit_FUN_00410ed0
 // Address: 00410ed0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_bat.cpp_factoryFuncBat_FUN_00410fa0
 // Address: 00410fa0
-void factoryFuncBat(void);
+CBat * __cdecl factoryFuncBat(void);
 
 // Original: core_bat.cpp_CBat_getActorType_FUN_00410fc0
 // Address: 00410fc0
-CDemonActorType * CBat::getActorType(CBat *this_ptr);
+CDemonActorType * __cdecl CBat::getActorType(CBat *this_ptr);
 
 // Original: core_bat.cpp_CBat_ctor_FUN_00410fd0
 // Address: 00410fd0
 CBat * __cdecl CBat::ctor(CBat *this_ptr);
 
-// Original: core_bat.cpp_FUN_004110a0
+// Original: core_bat.cpp_CBat_setup_FUN_004110a0
 // Address: 004110a0
-void FUN_004110a0(CDemonActor *param_1);
+void __cdecl CBat::setup(CBat *this_ptr);
 
-// Original: core_bat.cpp_FUN_00411110
+// Original: core_bat.cpp_CBat_archive_FUN_00411110
 // Address: 00411110
-void FUN_00411110(CDemonActor *param_1);
+void __cdecl CBat::archive(CBat *this_ptr);
 
-// Original: core_bat.cpp_FUN_00411200
+// Original: core_bat.cpp_CBat_process_FUN_00411200
 // Address: 00411200
-void FUN_00411200(int param_1,float param_2);
+void __cdecl CBat::process(CBat *this_ptr,float delta_time);
 
-// Original: core_bat.cpp_FUN_004113f0
+// Original: core_bat.cpp_CBat_renderOpaque_FUN_004113f0
 // Address: 004113f0
-int FUN_004113f0(CDemonActor *param_1);
+int __cdecl CBat::renderOpaque(CBat *this_ptr);
 
-// Original: core_bat.cpp_FUN_00411480
+// Original: core_bat.cpp_CBat_getBoundingBox_FUN_00411480
 // Address: 00411480
-void FUN_00411480(int param_1);
+CBoundingBox3D * __cdecl CBat::getBoundingBox(CBat *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_bat.cpp_FUN_004114e0
+// Original: core_bat.cpp_CBat_updateCoursePosition_FUN_004114e0
 // Address: 004114e0
-void FUN_004114e0(int param_1);
+void __cdecl CBat::updateCoursePosition(CBat *this_ptr);
 
 // Original: core_bat.cpp_CBat_dtor_FUN_004115c0
 // Address: 004115c0

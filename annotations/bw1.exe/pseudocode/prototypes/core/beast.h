@@ -7,43 +7,43 @@
 
 // Original: core_beast.cpp_staticInit_FUN_00414690
 // Address: 00414690
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_beast.cpp_factoryFuncBeast_FUN_004146c0
 // Address: 004146c0
-void factoryFuncBeast(void);
+CBeast * __cdecl factoryFuncBeast(void);
 
 // Original: core_beast.cpp_CBeast_getActorType_FUN_004146e0
 // Address: 004146e0
-CDemonActorType * CBeast::getActorType(CBeast *this_ptr);
+CDemonActorType * __cdecl CBeast::getActorType(CBeast *this_ptr);
 
 // Original: core_beast.cpp_CBeast_ctor_FUN_004146f0
 // Address: 004146f0
 CBeast * __cdecl CBeast::ctor(CBeast *this_ptr);
 
-// Original: core_beast.cpp_FUN_00414750
+// Original: core_beast.cpp_CBeast_setup_FUN_00414750
 // Address: 00414750
-void FUN_00414750(CEnemy *param_1);
+void __cdecl CBeast::setup(CBeast *this_ptr);
 
-// Original: core_beast.cpp_FUN_00414770
+// Original: core_beast.cpp_CBeast_process_FUN_00414770
 // Address: 00414770
-void FUN_00414770(CCharacter *param_1,float param_2);
+void __cdecl CBeast::process(CBeast *this_ptr,float delta_time);
 
-// Original: core_beast.cpp_FUN_00414800
+// Original: core_beast.cpp_CBeast_archive_FUN_00414800
 // Address: 00414800
-void FUN_00414800(CEnemy *param_1);
+void __cdecl CBeast::archive(CBeast *this_ptr);
 
 // Original: core_beast.cpp_CBeast_processDamage_FUN_00414850
 // Address: 00414850
 void __cdecl CBeast::processDamage(CBeast *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_beast.cpp_FUN_00414870
+// Original: core_beast.cpp_CBeast_getDeathState_FUN_00414870
 // Address: 00414870
-undefined4 FUN_00414870(void);
+EDeathState __cdecl CBeast::getDeathState(CBeast *this_ptr);
 
-// Original: core_beast.cpp_FUN_00414880
+// Original: core_beast.cpp_CBeast_getTargetPoints_FUN_00414880
 // Address: 00414880
-undefined4 FUN_00414880(int param_1,undefined4 *param_2);
+int __cdecl CBeast::getTargetPoints(CBeast *this_ptr,CVector3f *out_points_array);
 
 // Original: core_beast.cpp_CBeast_getCollisionType_FUN_004148e0
 // Address: 004148e0
@@ -51,4 +51,4 @@ ECollisionType __cdecl CBeast::getCollisionType(CBeast *this_ptr,SCollisionInfo 
 
 // Original: core_beast.cpp_CBeast_dtor_FUN_00414900
 // Address: 00414900
-CBeast * CBeast::dtor(CBeast *this_ptr,uint flags);
+CBeast * __cdecl CBeast::dtor(CBeast *this_ptr,uint flags);

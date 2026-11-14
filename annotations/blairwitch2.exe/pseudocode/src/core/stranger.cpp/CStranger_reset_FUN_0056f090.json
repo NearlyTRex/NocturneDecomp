@@ -1,0 +1,130 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 27,
+    "complexity_score": 15,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 42
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0056f090",
+    "address_range": [
+      [
+        "0056f090",
+        "0056f0f4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_stranger.cpp_CStranger_reset_FUN_0056f090",
+    "signature": "void __cdecl core_stranger_cpp_CStranger_reset_FUN_0056f090(CStranger *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004d02e0",
+      "is_variadic": false,
+      "name": "core_hero.cpp_CHero_reset_FUN_004d02e0"
+    },
+    {
+      "addr": "00503950",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_jumpToMotionByName_FUN_00503950"
+    },
+    {
+      "addr": "00503620",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_00503620"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ebf72",
+      "name": "s_stand_005ebf72",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.086956521739131,
+    "instruction_count": 23,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 16,
+      "INT_ADD": 12,
+      "INT_AND": 8,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 4,
+      "INT_SUB": 11,
+      "LOAD": 3,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 16
+    },
+    "pcode_op_count": 94
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00591ce0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005c6750",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00540820",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStranger *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CHero",
+        "offset": 108,
+        "vtable_addr": "005fc300"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

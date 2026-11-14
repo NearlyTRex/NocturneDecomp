@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 208,
-    "complexity_score": 522,
+    "complexity_score": 352,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 92,
-    "suspect_count": 38,
+    "suspect_count": 22,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
       "undefined_data",
-      "unknown_field",
-      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr",
       "unrolled_memcpy",
@@ -50,6 +48,11 @@
       "name": "core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_005342e0"
     },
     {
+      "addr": "005344c0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_setFlatColor_FUN_005344c0"
+    },
+    {
       "addr": "00530980",
       "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_setLightingParameters_FUN_00530980"
@@ -57,12 +60,7 @@
     {
       "addr": "005341b0",
       "is_variadic": false,
-      "name": "core_set.cpp_FUN_005341b0"
-    },
-    {
-      "addr": "005344c0",
-      "is_variadic": false,
-      "name": "core_set.cpp_FUN_005344c0"
+      "name": "core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005341b0"
     },
     {
       "addr": "0046b920",
@@ -97,7 +95,7 @@
     },
     {
       "addr": "01cb6b44",
-      "name": "g_CGameInstance.field580_0x244",
+      "name": "g_CGameInstance.letterbox_mode",
       "type": "undefined4",
       "value": null
     },
@@ -230,35 +228,27 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x244",
-      "severity": "mild",
-      "text": "if (((*(int *)&g_CGamePtr->field_0x244 == 0) &&",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_18 = *(int *)&param_1->field_0x15f6f8 + -1;",
+      "text": "local_18 = param_1->sorted_render_actor_count + -1;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x15f6f8",
-      "severity": "mild",
-      "text": "local_18 = *(int *)&param_1->field_0x15f6f8 + -1;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_14 = local_18 * 4 + (int)param_1;",
+      "text": "local_14 = param_1->cameras[0].name + param_1->sorted_render_actor_count * 4 + -8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_14 = param_1->cameras[0].name + param_1->sorted_render_actor_count * 4 + -8;",
       "type": "unnamed_param"
     },
     {
@@ -276,102 +266,6 @@
       "severity": "moderate",
       "text": "pCVar5 = (CVector3f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 47,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "CStack_48._0_4_ = local_60._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 47,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "CStack_48._0_4_ = local_60._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 48,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "CStack_48._4_4_ = local_60._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 48,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "CStack_48._4_4_ = local_60._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 49,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "CStack_48._8_4_ = local_60._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 49,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "CStack_48._8_4_ = local_60._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 52,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "CStack_3c._0_4_ = CStack_54._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 52,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "CStack_3c._0_4_ = CStack_54._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 53,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "CStack_3c._4_4_ = CStack_54._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 53,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "CStack_3c._4_4_ = CStack_54._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 54,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "CStack_3c._8_4_ = CStack_54._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 54,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "CStack_3c._8_4_ = CStack_54._8_4_;",
-      "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -402,23 +296,15 @@
       "line": 77,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)&param_1->field_0x15acc8) {",
+      "text": "if (0 < param_1->mirror_glass_actor_count) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 77,
-      "match": "field_0x15acc8",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&param_1->field_0x15acc8) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 79,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_set_cpp_FUN_005341b0(param_1,iVar3,0);",
+      "text": "core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005341b0(param_1,iVar3,0);",
       "type": "unnamed_param"
     },
     {
@@ -450,23 +336,15 @@
       "line": 87,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar3 < *(int *)&param_1->field_0x15acc8);",
+      "text": "} while (iVar3 < param_1->mirror_glass_actor_count);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 87,
-      "match": "field_0x15acc8",
-      "severity": "mild",
-      "text": "} while (iVar3 < *(int *)&param_1->field_0x15acc8);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 89,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_set_cpp_FUN_005344c0(param_1,0x10000,0x10000,0x10000);",
+      "text": "core_set_cpp_CDemonSet_setFlatColor_FUN_005344c0(param_1,0x10000,0x10000,0x10000);",
       "type": "unnamed_param"
     },
     {
@@ -490,7 +368,7 @@
       "line": 47,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "CStack_48._0_4_ = local_60._0_4_;",
+      "text": "CStack_48.x = local_60.x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -498,16 +376,8 @@
       "line": 52,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "CStack_3c._0_4_ = CStack_54._0_4_;",
+      "text": "CStack_3c.x = CStack_54.x;",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 33,
-      "match": "(int *)(local_14 + 0x15f6fc)",
-      "severity": "moderate",
-      "text": "iVar1 = *(int *)(local_14 + 0x15f6fc);",
-      "type": "pointer_cast"
     },
     {
       "call_site_count": 1,

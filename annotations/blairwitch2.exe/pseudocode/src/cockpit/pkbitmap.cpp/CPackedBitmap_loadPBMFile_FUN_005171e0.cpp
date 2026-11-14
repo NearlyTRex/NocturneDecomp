@@ -10,6 +10,6 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadPBMFile_FUN_005171e0(CPacked
 
 {
   cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_00517130
-            (this_ptr,(char *)this_ptr,apply_palette_flag);
+            (this_ptr,this_ptr->filename,apply_palette_flag);
   return;
 }

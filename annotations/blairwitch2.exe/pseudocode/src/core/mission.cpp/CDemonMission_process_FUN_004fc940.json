@@ -1,0 +1,242 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 115,
+    "complexity_score": 90,
+    "cross_reference_count": 1,
+    "function_call_count": 10,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 45,
+    "suspect_count": 3,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "unrolled_memset",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 160
+  },
+  "cross_references": [
+    {
+      "addr": "004bd570",
+      "from_addr": "004bd9bd",
+      "name": "core_game.cpp_CGame_process_FUN_004bd570",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004fc940",
+    "address_range": [
+      [
+        "004fc940",
+        "004fca82"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mission.cpp_CDemonMission_process_FUN_004fc940",
+    "signature": "void __cdecl core_mission_cpp_CDemonMission_process_FUN_004fc940(CDemonMission *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004fc6b0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_loadSet_FUN_004fc6b0"
+    },
+    {
+      "addr": "004fc570",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_removeActor_FUN_004fc570"
+    },
+    {
+      "addr": "004fc820",
+      "is_variadic": false,
+      "name": "core_mission.cpp_FUN_004fc820"
+    },
+    {
+      "addr": "005308e0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_clearLights_FUN_005308e0"
+    },
+    {
+      "addr": "0052d980",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_initScene_FUN_0052d980"
+    },
+    {
+      "addr": "0040d420",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_0040d420"
+    },
+    {
+      "addr": "0040d440",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040d440"
+    },
+    {
+      "addr": "0040d540",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540"
+    },
+    {
+      "addr": "0055b1f0",
+      "is_variadic": false,
+      "name": "engine_special.cpp_clearScreen_FUN_0055b1f0"
+    },
+    {
+      "addr": "00589560",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00589560"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061b460",
+      "name": "g_CScriptPtr",
+      "type": "CScript*",
+      "value": "01e65cd0"
+    },
+    {
+      "addr": "0061b5a8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e661b8"
+    },
+    {
+      "addr": "01cedef4",
+      "name": "DAT_01cedef4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e65ce0",
+      "name": "g_CScriptInstance.focus_actor_changed",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004bd9bd",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_process_FUN_004bd570",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9239130434782608,
+    "instruction_count": 92,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 10,
+      "CBRANCH": 5,
+      "COPY": 71,
+      "INT_ADD": 42,
+      "INT_AND": 39,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 36,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 18,
+      "INT_SUB": 29,
+      "INT_XOR": 1,
+      "LOAD": 21,
+      "POPCOUNT": 18,
+      "RETURN": 1,
+      "STORE": 36
+    },
+    "pcode_op_count": 361
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0051b8d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8867
+    },
+    "bw3.exe": {
+      "addr": "004f70a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8867
+    },
+    "nocedit.exe": {
+      "addr": "00524250",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8587
+    },
+    "nocturne.exe": {
+      "addr": "004d92a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8588
+    }
+  },
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 44,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(this_ptr->pending_teleport).position.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar1->owner`). Replace `pCVar1->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 19,
+      "match": "pCVar1 = (T *)&pCVar1->FIELD",
+      "severity": "moderate",
+      "text": "pCVar1 = (CDemonMission *)&pCVar1->num_sets;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

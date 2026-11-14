@@ -56,11 +56,11 @@
 ;   undefined4 DAT_015484d8
 ;   undefined4 DAT_01c60dac
 ;   CGame g_CGameInstance
-;   undefined4 g_CGameInstance.field12_0xc
+;   undefined4 g_CGameInstance.halo_mode
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_blendCoronaTextureSpan_FUN_0044e590
-;   core_dcamera.cpp_FUN_0044a3e0
+;   core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044a3e0
 ;   core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_0045abd0
 ;
 ; *****************************************************************************
@@ -75,7 +75,7 @@ section .text
     SUB ESP,0x84                        ; 0044e694
     MOV EBX,dword ptr [ESP + 0xa0]      ; 0044e69a
     MOV EAX,[0x005fe9dc]                ; 0044e6a1 | g_CGamePtr | g_CGameInstance
-    CMP dword ptr [EAX + 0xc],0x0       ; 0044e6a6 | g_CGameInstance.field12_0xc
+    CMP dword ptr [EAX + 0xc],0x0       ; 0044e6a6 | g_CGameInstance.halo_mode
     JNZ 0x0044e6c5                      ; 0044e6aa
         ;   XREF to: 0044e6c5 (CONDITIONAL_JUMP)  ; LAB_0044e6c5
     TEST EBX,EBX                        ; 0044e6ac
@@ -92,8 +92,8 @@ section .text
     PUSH EDI                            ; 0044e6d4
     LEA ESI,[ESP + 0x8]                 ; 0044e6d5
     MOV [0x015484c8],EAX                ; 0044e6d9 | DAT_015484c8
-    CALL core_dcamera.cpp_FUN_0044a3e0  ; 0044e6de
-        ;   XREF to: 0044a3e0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_0044a3e0()
+    CALL core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044a3e0 ; 0044e6de
+        ;   XREF to: 0044a3e0 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044a3e0(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr)
     LEA ESI,[ESP + 0x8]                 ; 0044e6e3
     ADD ESP,0x8                         ; 0044e6e7
     MOV EDI,0x15484d0                   ; 0044e6ea
@@ -275,7 +275,7 @@ section .text
     PUSH EAX                            ; 0044e936
     PUSH ESI                            ; 0044e937
     CALL core_dcamera.cpp_blendCoronaTextureSpan_FUN_0044e590 ; 0044e938
-        ;   XREF to: 0044e590 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_blendCoronaTextureSpan_FUN_0044e590()
+        ;   XREF to: 0044e590 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_blendCoronaTextureSpan_FUN_0044e590(int scanline_y, int x_start, int x_end, SCoronaLightEntry * source_entry)
     ADD ESP,0x10                        ; 0044e93d
     JMP 0x0044e81f                      ; 0044e940
         ;   XREF to: 0044e81f (UNCONDITIONAL_JUMP)  ; LAB_0044e81f
@@ -502,7 +502,7 @@ section .text
     PUSH ECX                            ; 0044ec0b
     PUSH EAX                            ; 0044ec0c
     CALL core_dcamera.cpp_blendCoronaTextureSpan_FUN_0044e590 ; 0044ec0d
-        ;   XREF to: 0044e590 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_blendCoronaTextureSpan_FUN_0044e590()
+        ;   XREF to: 0044e590 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_blendCoronaTextureSpan_FUN_0044e590(int scanline_y, int x_start, int x_end, SCoronaLightEntry * source_entry)
     ADD ESP,0x10                        ; 0044ec12
     MOV ESI,dword ptr [ESP + 0x28]      ; 0044ec15
         ;   Label: LAB_0044ec15

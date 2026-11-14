@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_flies.cpp_FUN_004addd0 at 004ae024
+;   core_flies.cpp_CFlies_renderOpaque_FUN_004addd0 at 004ae024
 ;
 ; *****************************************************************************
 

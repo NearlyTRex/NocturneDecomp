@@ -14,10 +14,10 @@
 ;   core_batman.cpp_CBatman_dtor_FUN_00414320 at 00414355
 ;   core_beast.cpp_CBeast_dtor_FUN_00414900 at 00414935
 ;   core_biggs.cpp_CBiggs_dtor_FUN_004150f0 at 00415135
+;   core_bird.cpp_CBird_dtor_FUN_004159f0 at 00415a35
 ;   core_boneguy.cpp_CBoneGuy_dtor_FUN_0041d850 at 0041d885
 ;   core_bride.cpp_CBride_dtor_FUN_00424e90 at 00424ec5
 ;   core_bugs.cpp_CBugs_dtor_FUN_00428180 at 004281b5
-;   core_carved.cpp_CCarved_dtor_FUN_0042bf50 at 0042bf85
 ;   ... and 40 more
 ;
 ; Referenced Globals:
@@ -26,7 +26,7 @@
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_dtor_FUN_00524200
-;   core_skeleton.cpp_FUN_005674d0
+;   core_skeleton.cpp_CDeformableModelInstance_free_FUN_005674d0
 ;   crt_memory.c___vec_delete_FUN_005c030f
 ;   crt_unknown.c_FUN_005c0336
 ;   crt_unknown.c_FUN_005c0344
@@ -43,8 +43,8 @@ section .text
         ;   XREF to: 00567426 (CONDITIONAL_JUMP)  ; LAB_00567426
     PUSH EBX                            ; 005673fc
     MOV dword ptr [EBX + 0x50],0x6058b4 ; 005673fd | g_CDeformableModelInstanceVTable
-    CALL core_skeleton.cpp_FUN_005674d0 ; 00567404
-        ;   XREF to: 005674d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_005674d0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_free_FUN_005674d0 ; 00567404
+        ;   XREF to: 005674d0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_free_FUN_005674d0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00567409
     PUSH 0x1                            ; 0056740c
     PUSH EBX                            ; 0056740e
@@ -63,7 +63,7 @@ section .text
         ;   Label: LAB_00567426
     PUSH EBX                            ; 0056742b
     CALL crt_memory.c___vec_delete_FUN_005c030f ; 0056742c
-        ;   XREF to: 005c030f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005c030f()
+        ;   XREF to: 005c030f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005c030f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00567431
     PUSH EAX                            ; 00567434
     CALL crt_unknown.c_FUN_005c0336     ; 00567435

@@ -13,9 +13,8 @@ void shape_spotview_cpp_FUN_005847e0(int param_1)
   float afStackY_1048 [1006];
   CDemonRenderer *this_ptr;
   CVector3f *point_ptr;
-  CMatrix3x3f aCStack_88 [40];
-  float fStack_60;
-  float afStack_5c [2];
+  CMatrix3x3f CStack_88;
+  CVector3f CStack_60;
   CVector3f CStack_54;
   uint uStack_48;
   uint uStack_44;
@@ -30,19 +29,19 @@ void shape_spotview_cpp_FUN_005847e0(int param_1)
   uint uStack_10;
   
   bVar1 = 0;
-  engine_matrix_c_FUN_004839b0(DAT_00612560,0x41e00000);
-  CStack_54._0_4_ = *(uint *)(param_1 + 0x24);
-  CStack_54._8_4_ = 0;
-  CStack_54._4_4_ = *(uint *)(param_1 + 0x28);
-  core_dirmat_cpp_FUN_0045f3e0(aCStack_88,&CStack_54);
+  engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_004839b0(DAT_00612560,28.0);
+  CStack_54.x = *(float *)(param_1 + 0x24);
+  CStack_54.z = 0.0;
+  CStack_54.y = *(float *)(param_1 + 0x28);
+  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0(&CStack_88,&CStack_54);
   uStack_48 = *(uint *)(param_1 + 0x30);
   uStack_44 = *(uint *)(param_1 + 0x34);
   fStack_40 = -*(float *)(param_1 + 0x2c);
   fStack_18 = fStack_40;
   uStack_14 = uStack_48;
   uStack_10 = uStack_44;
-  core_dirmat_cpp_FUN_0045f690(aCStack_88,&uStack_48);
-  point_ptr = (CVector3f *)&fStack_60;
+  core_dirmat_cpp_FUN_0045f690(&CStack_88,&uStack_48);
+  point_ptr = &CStack_60;
   fStack_3c = afStack_38[2];
   afStack_38[(uint)bVar1 * -2] = afStack_38[(uint)bVar1 * -2 + 3];
   afStack_38[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
@@ -50,12 +49,12 @@ void shape_spotview_cpp_FUN_005847e0(int param_1)
   fStack_24 = *(float *)(param_1 + 0x18) + fStack_3c;
   fStack_20 = *(float *)(param_1 + 0x1c) + afStack_38[0];
   fStack_1c = *(float *)(param_1 + 0x20) + afStack_38[1];
-  fStack_60 = fStack_24;
-  afStack_5c[(uint)bVar1 * -2] = afStack_38[(uint)bVar1 * -2 + 6];
+  CStack_60.x = fStack_24;
+  *(float *)((int)&CStack_60 + (uint)bVar1 * -8 + 4) = afStack_38[(uint)bVar1 * -2 + 6];
   this_ptr = DAT_00612560;
-  afStack_5c[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
+  *(float *)((int)&CStack_60 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =
        afStack_38[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 7];
-  engine_drender_cpp_FUN_004834b0(this_ptr,point_ptr);
+  engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0(this_ptr,point_ptr);
   engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00483530(DAT_00612560,&CStack_54);
   return;
 }

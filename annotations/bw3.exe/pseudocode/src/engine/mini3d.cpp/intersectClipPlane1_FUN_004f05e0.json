@@ -1,0 +1,167 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 74,
+    "complexity_score": 39,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 24,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 98
+  },
+  "cross_references": [
+    {
+      "addr": "004f0980",
+      "from_addr": "004f0a46",
+      "name": "engine_mini3d.cpp_clipAgainstPlane1_FUN_004f0980",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f05e0",
+    "address_range": [
+      [
+        "004f05e0",
+        "004f069f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_mini3d.cpp_intersectClipPlane1_FUN_004f05e0",
+    "signature": "void __cdecl engine_mini3d_cpp_intersectClipPlane1_FUN_004f05e0(float *from,float *to,float *out)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01d7a694",
+      "name": "DAT_01d7a694",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004f0a46",
+        "call_type": "direct",
+        "caller": "engine_mini3d.cpp_clipAgainstPlane1_FUN_004f0980",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004f0a84",
+        "call_type": "direct",
+        "caller": "engine_mini3d.cpp_clipAgainstPlane1_FUN_004f0980",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.732394366197183,
+    "instruction_count": 71,
+    "opcode_distribution": {
+      "CBRANCH": 1,
+      "COPY": 265,
+      "FLOAT2FLOAT": 45,
+      "FLOAT_ADD": 10,
+      "FLOAT_DIV": 1,
+      "FLOAT_MULT": 9,
+      "FLOAT_NEG": 1,
+      "FLOAT_SUB": 11,
+      "INT_ADD": 47,
+      "INT_AND": 9,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 4,
+      "INT_SUB": 2,
+      "LOAD": 41,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 12
+    },
+    "pcode_op_count": 478
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004f6090",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00514e10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "from",
+        "offset": 4,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "to",
+        "offset": 8,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "out",
+        "offset": 12,
+        "size": 4,
+        "type": "float *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

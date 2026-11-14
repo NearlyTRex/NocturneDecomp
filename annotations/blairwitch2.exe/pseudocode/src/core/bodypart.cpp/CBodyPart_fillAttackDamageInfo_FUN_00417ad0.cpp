@@ -9,11 +9,12 @@
 void __cdecl core_bodypart_cpp_CBodyPart_fillAttackDamageInfo_FUN_00417ad0(CBodyPart *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim)
 
 {
-  uint uVar1;
+  float fVar1;
   
-  core_actor_cpp_FUN_0040ad50(this_ptr,attack_flags,out_damage_info,victim);
-  uVar1 = core_actor_cpp_FUN_0040cf60(0x40a00000,0x41700000);
-  *(uint *)(out_damage_info + 0x2c) = 0x3ca3d70a;
-  *(uint *)(out_damage_info + 4) = uVar1;
+  core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040ad50
+            (&this_ptr->base,attack_flags,out_damage_info,victim);
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(5.0,15.0);
+  out_damage_info->dismember_prob = 0.02;
+  out_damage_info->damage_amount = fVar1;
   return;
 }

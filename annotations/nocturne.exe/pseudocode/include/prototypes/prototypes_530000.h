@@ -154,8 +154,8 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_00535900(CStranger *th
 void __cdecl core_stranger_cpp_CStranger_processMotionEvents_FUN_00537cd0(CStranger *this_ptr,float delta_time);
 float __cdecl core_stranger_cpp_CStranger_getCarryLightIntensity_FUN_005383e0(CStranger *this_ptr);
 CVector3f * __cdecl core_stranger_cpp_CStranger_getHandsMidpoint_FUN_00538440(CStranger *this_ptr,CVector3f *out_position);
-void __cdecl core_stranger_cpp_CStranger_FUN_005384d0(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_CStranger_FUN_005396d0(CStranger *this_ptr,SPose *out_pose);
+void __cdecl core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_005384d0(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_extractTurnPose_FUN_005396d0(CStranger *this_ptr,SPose *out_pose);
 void __cdecl core_stranger_cpp_CStranger_updateTurnBlending_FUN_005397b0(CStranger *this_ptr,float delta_time);
 void __cdecl core_stranger_cpp_CStranger_setPositionAndOrientation_FUN_00539ac0(CStranger *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
 void __cdecl core_stranger_cpp_CStranger_makeDrawDecision_FUN_00539b10(CStranger *this_ptr);

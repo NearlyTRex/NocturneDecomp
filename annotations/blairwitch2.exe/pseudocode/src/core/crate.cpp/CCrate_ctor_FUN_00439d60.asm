@@ -7,7 +7,7 @@
 ; CCrate *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_crossbow.cpp_factoryFuncCrate_FUN_00439d30 at 00439d43
+;   core_crate.cpp_factoryFuncCrate_FUN_00439d30 at 00439d43
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_ctor_FUN_00408790

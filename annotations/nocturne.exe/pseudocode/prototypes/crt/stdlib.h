@@ -45,6 +45,10 @@ char * __cdecl utoa(uint value,char *buffer,int base);
 // Address: 00573720
 long __cdecl strtol::internal(char *str,char **endptr,int base,int is_signed);
 
+// Original: crt_stdlib.c_strtoul_FUN_00573890
+// Address: 00573890
+ulong __cdecl strtoul(char *str,char **endptr,int base);
+
 // Original: crt_stdlib.c_strtol_FUN_005738ac
 // Address: 005738ac
 long __cdecl strtol(char *str,char **endptr,int base);

@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 58,
+    "complexity_score": 33,
     "cross_reference_count": 71,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 18,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "unrolled_strcpy"
     ],
     "total_lines": 48
@@ -31,7 +30,7 @@
     {
       "addr": "0040ddd0",
       "from_addr": "0040de44",
-      "name": "core_ammo.cpp_FUN_0040ddd0",
+      "name": "core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ddd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -77,6 +76,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00415e70",
+      "from_addr": "00415f30",
+      "name": "core_bmppuzzl.cpp_CAudioRecPuzzle_reset_FUN_00415e70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0041aaa0",
       "from_addr": "0041aaf5",
       "name": "core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_0041aaa0",
@@ -95,6 +100,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004257f0",
+      "from_addr": "00425848",
+      "name": "core_bugs.cpp_CBugs_archive_FUN_004257f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00424f80",
       "from_addr": "0042500d",
       "name": "core_bugs.cpp_CBugs_ctor_FUN_00424f80",
@@ -103,19 +114,13 @@
     {
       "addr": "00425120",
       "from_addr": "004251c2",
-      "name": "core_bugs.cpp_FUN_00425120",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004257f0",
-      "from_addr": "00425848",
-      "name": "core_bugs.cpp_FUN_004257f0",
+      "name": "core_bugs.cpp_CBugs_setup_FUN_00425120",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0042c510",
       "from_addr": "0042c548",
-      "name": "core_charactr.cpp_FUN_0042c510",
+      "name": "core_charactr.cpp_CCharacter_setup_FUN_0042c510",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -185,27 +190,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004acad0",
-      "from_addr": "004acada",
-      "name": "core_fire.cpp_FUN_004acad0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004af120",
-      "from_addr": "004af144",
-      "name": "core_fire.cpp_FUN_004af120",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004af5e0",
-      "from_addr": "004af5ea",
-      "name": "core_fire.cpp_FUN_004af5e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004b1c50",
       "from_addr": "004b1d70",
-      "name": "core_fire.cpp_FUN_004b1c50",
+      "name": "core_fire.cpp_CToss_create_FUN_004b1c50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -218,6 +205,24 @@
       "addr": "004ae2a0",
       "from_addr": "004ae2aa",
       "name": "core_fire.cpp_loadFireBallAssets_FUN_004ae2a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004af5e0",
+      "from_addr": "004af5ea",
+      "name": "core_fire.cpp_loadGunFlashAssets_FUN_004af5e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004af120",
+      "from_addr": "004af144",
+      "name": "core_fire.cpp_loadLeafAssets_FUN_004af120",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004acad0",
+      "from_addr": "004acada",
+      "name": "core_fire.cpp_loadStakeAssets_FUN_004acad0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -247,7 +252,7 @@
     {
       "addr": "004d27b0",
       "from_addr": "004d50cc",
-      "name": "core_game.cpp_FUN_004d27b0",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -385,7 +390,7 @@
     {
       "addr": "00585670",
       "from_addr": "00585961",
-      "name": "core_stranger.cpp_FUN_00585670",
+      "name": "core_stranger.cpp_CStranger_setup_FUN_00585670",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -435,12 +440,6 @@
       "from_addr": "005ad5a6",
       "name": "core_weapon.cpp_CWeapon_ctor_FUN_005ad4c0",
       "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00415e70",
-      "from_addr": "00415f30",
-      "name": "unkafter_alphabit.cpp_FUN_00415e70",
-      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -469,7 +468,7 @@
       {
         "call_addr": "004acada",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004acad0",
+        "caller": "core_fire.cpp_loadStakeAssets_FUN_004acad0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -513,7 +512,7 @@
       {
         "call_addr": "004af144",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004af120",
+        "caller": "core_fire.cpp_loadLeafAssets_FUN_004af120",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -524,7 +523,7 @@
       {
         "call_addr": "004af5ea",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004af5e0",
+        "caller": "core_fire.cpp_loadGunFlashAssets_FUN_004af5e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -607,6 +606,32 @@
     },
     "pcode_op_count": 99
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0044fd70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004625f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00478dd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00454580",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -631,22 +656,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x78",
-      "severity": "mild",
-      "text": "pcVar2 = &this_ptr->field_0x78;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x178 = 0;",
-      "type": "unnamed_field"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 9,

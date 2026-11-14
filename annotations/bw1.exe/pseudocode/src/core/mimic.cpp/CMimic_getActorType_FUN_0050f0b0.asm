@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_mimic_cpp_CMimic_getActorType_FUN_0050f0b0(CMimic *this_ptr)
+; CDemonActorType * __cdecl core_mimic_cpp_CMimic_getActorType_FUN_0050f0b0(CMimic *this_ptr)
 ;
 ; Parameters:
 ; CMimic *         Stack[0x4]:4   this_ptr

@@ -1,0 +1,124 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 23,
+    "complexity_score": 7,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 30
+  },
+  "cross_references": [
+    {
+      "addr": "004a91b0",
+      "from_addr": "004a921e",
+      "name": "core_fldnotes.cpp_STextView_flushWord_FUN_004a91b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a9330",
+      "from_addr": "004a94f3",
+      "name": "core_fldnotes.cpp_STextView_handleTag_FUN_004a9330",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a9150",
+      "from_addr": "004a9191",
+      "name": "core_fldnotes.cpp_STextView_placeResource_FUN_004a9150",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a9230",
+    "address_range": [
+      [
+        "004a9230",
+        "004a9266"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fldnotes.cpp_STextView_addResource_FUN_004a9230",
+    "signature": "void __cdecl core_fldnotes_cpp_STextView_addResource_FUN_004a9230(STextView *this_ptr,SPageResource *resource)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a8d00",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_STextPage_addResource_FUN_004a8d00"
+    },
+    {
+      "addr": "004a9830",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_STextView_ensurePage_FUN_004a9830"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.95,
+    "instruction_count": 20,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "CALL": 2,
+      "COPY": 13,
+      "INT_ADD": 12,
+      "INT_AND": 36,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 16,
+      "INT_LEFT": 4,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 10,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 11,
+      "INT_SUB": 8,
+      "INT_XOR": 2,
+      "LOAD": 6,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 159
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a2bb0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004bb5f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "STextView *"
+      },
+      {
+        "is_param": true,
+        "name": "resource",
+        "offset": 8,
+        "size": 4,
+        "type": "SPageResource *"
+      }
+    ]
+  },
+  "suspects": []
+}

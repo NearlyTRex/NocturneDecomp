@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 34,
+    "complexity_score": 49,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 19,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "shadow_pointer_walk",
       "undefined_data"
     ],
     "total_lines": 58
@@ -18,13 +19,13 @@
     {
       "addr": "004dc560",
       "from_addr": "004dc678",
-      "name": "core_inv.cpp_FUN_004dc560",
+      "name": "core_inv.cpp_CInventory_save_FUN_004dc560",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f6410",
       "from_addr": "004f6763",
-      "name": "core_mission.cpp_FUN_004f6410",
+      "name": "core_mission.cpp_CDemonMission_writeFile_FUN_004f6410",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -44,7 +45,7 @@
     {
       "addr": "00408870",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408870"
+      "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870"
     },
     {
       "addr": "005a3140",
@@ -72,7 +73,7 @@
       {
         "call_addr": "004f6763",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_004f6410",
+        "caller": "core_mission.cpp_CDemonMission_writeFile_FUN_004f6410",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -83,7 +84,7 @@
       {
         "call_addr": "004dc678",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004dc560",
+        "caller": "core_inv.cpp_CInventory_save_FUN_004dc560",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -124,6 +125,32 @@
     },
     "pcode_op_count": 139
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004dc460",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004f9750",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004ff3b0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004c1140",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -155,6 +182,14 @@
       "severity": "mild",
       "text": "FUN_005a3140(file_handle,\"%s%s \\\"%s\\\"\\n\",&DAT_005f0990,pcVar1,this_ptr_00);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar2->owner`). Replace `pCVar2->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 18,
+      "match": "pCVar2 = (T *)&pCVar2->FIELD",
+      "severity": "moderate",
+      "text": "pCVar2 = (CInventory *)&pCVar2->owner;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

@@ -4,13 +4,24 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CParticle.h"
 
 // Structure: CFireball
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0xa4 (164 bytes)
 #pragma pack(push, 1)
 typedef struct CFireball {
-    char field_0[164]; // 0x0
+    CParticle base; // 0x0
+    int timer; // 0x40
+    int fade_rate; // 0x44
+    int first_update_flag; // 0x48
+    int lighting_active; // 0x4c
+    int spawn_timer; // 0x50
+    int rotation_angle1; // 0x54
+    int rotation_angle2; // 0x58
+    int dead; // 0x5c
+    uint sfx_handle; // 0x60
+    CDemonGlobe light_globe; // 0x64
 } CFireball;
 #pragma pack(pop)
 

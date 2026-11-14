@@ -1,0 +1,226 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 113,
+    "complexity_score": 81,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 41,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 154
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005a0270",
+    "address_range": [
+      [
+        "005a0270",
+        "005a0378"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_basicene.cpp_CBasicEnemy_startBurn_FUN_005a0270",
+    "signature": "void __cdecl core_basicene_cpp_CBasicEnemy_startBurn_FUN_005a0270(CBasicEnemy *this_ptr,CVector3f *direction,float strength)"
+  },
+  "function_calls": [
+    {
+      "addr": "0059d7f0",
+      "is_variadic": false,
+      "name": "core_muzzle.cpp_FUN_0059d7f0"
+    },
+    {
+      "addr": "0059d8e0",
+      "is_variadic": false,
+      "name": "core_muzzle.cpp_FUN_0059d8e0"
+    },
+    {
+      "addr": "0059daa0",
+      "is_variadic": false,
+      "name": "core_muzzle.cpp_FUN_0059daa0"
+    },
+    {
+      "addr": "0059db70",
+      "is_variadic": false,
+      "name": "core_muzzle.cpp_FUN_0059db70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005efb55",
+      "name": "DAT_005efb55",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005efb5a",
+      "name": "s_BurnComplete_005efb5a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005efb67",
+      "name": "DAT_005efb67",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.040816326530612,
+    "instruction_count": 98,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CBRANCH": 4,
+      "COPY": 233,
+      "FLOAT2FLOAT": 12,
+      "FLOAT_ADD": 2,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 6,
+      "FLOAT_NAN": 2,
+      "FLOAT_SQRT": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 46,
+      "INT_AND": 25,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 18,
+      "INT_LEFT": 4,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 9,
+      "INT_SUB": 19,
+      "INT_ZEXT": 4,
+      "LOAD": 32,
+      "POPCOUNT": 9,
+      "RETURN": 3,
+      "STORE": 28
+    },
+    "pcode_op_count": 494
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBasicEnemy *"
+      },
+      {
+        "is_param": true,
+        "name": "direction",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "strength",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005a0279",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_005efb55",
+      "severity": "mild",
+      "text": "iVar5 = core_muzzle_cpp_FUN_0059daa0(pSVar1,&DAT_005efb55);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_005efb67",
+      "severity": "mild",
+      "text": "core_muzzle_cpp_FUN_0059d8e0(&this_ptr->state_machine,&DAT_005efb67);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 24,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->burn_direction).x = direction->x;",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 364,
+        "vtable_addr": "005fec04"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 364,
+        "vtable_addr": "005ff904"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 364,
+        "vtable_addr": "00600104"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 364,
+        "vtable_addr": "00600314"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 364,
+        "vtable_addr": "005ff724"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 16
+  }
+}

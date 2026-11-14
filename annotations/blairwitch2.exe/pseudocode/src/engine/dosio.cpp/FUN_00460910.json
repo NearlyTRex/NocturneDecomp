@@ -38,7 +38,7 @@
     {
       "addr": "00519f00",
       "from_addr": "00519f32",
-      "name": "engine_pod.cpp_FUN_00519f00",
+      "name": "engine_pod.cpp_CPodFile_mountFromFile_FUN_00519f00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -50,7 +50,7 @@
     {
       "addr": "0057d390",
       "from_addr": "0057d3c3",
-      "name": "support_trstream.cpp_FUN_0057d390",
+      "name": "support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -156,7 +156,7 @@
       {
         "call_addr": "0057d3c3",
         "call_type": "direct",
-        "caller": "support_trstream.cpp_FUN_0057d390",
+        "caller": "support_trstream.cpp_CInStreamFile_openInDirectory_FUN_0057d390",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -171,7 +171,7 @@
       {
         "call_addr": "00519f32",
         "call_type": "direct",
-        "caller": "engine_pod.cpp_FUN_00519f00",
+        "caller": "engine_pod.cpp_CPodFile_mountFromFile_FUN_00519f00",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -222,6 +222,20 @@
       "STORE": 5
     },
     "pcode_op_count": 41
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00478e20",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00465660",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,

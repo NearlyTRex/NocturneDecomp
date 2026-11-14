@@ -20,7 +20,7 @@
     {
       "addr": "00418930",
       "from_addr": "00418b6a",
-      "name": "core_boneguy.cpp_FUN_00418930",
+      "name": "core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_00418930",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -38,13 +38,13 @@
     {
       "addr": "0058b3f0",
       "from_addr": "0058b6ba",
-      "name": "core_zombie.cpp_FUN_0058b3f0",
+      "name": "core_zombie.cpp_CZombie_processPickup_FUN_0058b3f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0058efb0",
       "from_addr": "0058f21e",
-      "name": "unkafter_zombiepr.cpp_FUN_0058efb0",
+      "name": "core_zombiepriest.cpp_FUN_0058efb0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -68,7 +68,7 @@
       {
         "call_addr": "00418b6a",
         "call_type": "direct",
-        "caller": "core_boneguy.cpp_FUN_00418930",
+        "caller": "core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_00418930",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -143,7 +143,7 @@
       {
         "call_addr": "0058b6ba",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_0058b3f0",
+        "caller": "core_zombie.cpp_CZombie_processPickup_FUN_0058b3f0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -158,7 +158,7 @@
       {
         "call_addr": "0058b911",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_0058b3f0",
+        "caller": "core_zombie.cpp_CZombie_processPickup_FUN_0058b3f0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -173,7 +173,7 @@
       {
         "call_addr": "0058f21e",
         "call_type": "direct",
-        "caller": "unkafter_zombiepr.cpp_FUN_0058efb0",
+        "caller": "core_zombiepriest.cpp_FUN_0058efb0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -216,6 +216,20 @@
       "STORE": 7
     },
     "pcode_op_count": 180
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00417ba0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0041b020",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 20,

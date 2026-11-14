@@ -7,7 +7,7 @@
 ; CZombie *        Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040c890
+;   core_actor.cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040c890
 ;   core_motion.cpp_FUN_005035c0
 ;
 ; *****************************************************************************
@@ -30,8 +30,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 00599cf0
         ;   Label: LAB_00599cf0
     PUSH EDX                            ; 00599cf4
-    CALL core_actor.cpp_FUN_0040c890    ; 00599cf5
-        ;   XREF to: 0040c890 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c890(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040c890 ; 00599cf5
+        ;   XREF to: 0040c890 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040c890(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00599cfa
     RET                                 ; 00599cfd
 

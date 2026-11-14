@@ -10,7 +10,7 @@
 ; CVector3f *      Stack[0x10]:4   euler_angles
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_00431210 at 004313d8
+;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00431210 at 004313d8
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_004688e0

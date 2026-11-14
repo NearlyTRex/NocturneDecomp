@@ -1,0 +1,269 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 43,
+    "complexity_score": 34,
+    "cross_reference_count": 8,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 19,
+    "suspect_count": 1,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
+    "total_lines": 62
+  },
+  "cross_references": [
+    {
+      "addr": "004a14f0",
+      "from_addr": "004a150a",
+      "name": "core_flashlit.cpp_FUN_004a14f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a55b0",
+      "from_addr": "004a55d1",
+      "name": "core_fldnotes.cpp_CFieldNotes_completeTask_FUN_004a55b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a5310",
+      "from_addr": "004a5331",
+      "name": "core_fldnotes.cpp_CFieldNotes_enableEntry_FUN_004a5310",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a5430",
+      "from_addr": "004a544d",
+      "name": "core_fldnotes.cpp_CFieldNotes_getEntryKind_FUN_004a5430",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a41b0",
+      "from_addr": "004a47ca",
+      "name": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a61b0",
+      "from_addr": "004a6367",
+      "name": "core_fldnotes.cpp_CFieldNotes_loadState_FUN_004a61b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a5200",
+      "from_addr": "004a5221",
+      "name": "core_fldnotes.cpp_CFieldNotes_showMapAnnotation_FUN_004a5200",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a5490",
+      "from_addr": "004a54b1",
+      "name": "core_fldnotes.cpp_CFieldNotes_turnToEntry_FUN_004a5490",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a35e0",
+    "address_range": [
+      [
+        "004a35e0",
+        "004a362d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fldnotes.cpp_SNotesSection_findEntry_FUN_004a35e0",
+    "signature": "SNotesEntry * __cdecl core_fldnotes_cpp_SNotesSection_findEntry_FUN_004a35e0(SNotesSection *this_ptr,char *name)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b8130",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005b8130"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 9,
+    "call_sites": [
+      {
+        "call_addr": "004a6367",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_CFieldNotes_loadState_FUN_004a61b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a47ca",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a4945",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a5221",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_CFieldNotes_showMapAnnotation_FUN_004a5200",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a5331",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_CFieldNotes_enableEntry_FUN_004a5310",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a544d",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_CFieldNotes_getEntryKind_FUN_004a5430",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a54b1",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_CFieldNotes_turnToEntry_FUN_004a5490",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a55d1",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_CFieldNotes_completeTask_FUN_004a55b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a150a",
+        "call_type": "direct",
+        "caller": "core_flashlit.cpp_FUN_004a14f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.457142857142857,
+    "instruction_count": 35,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 38,
+      "INT_ADD": 19,
+      "INT_AND": 18,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 16,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 8,
+      "INT_SUB": 8,
+      "INT_XOR": 2,
+      "LOAD": 16,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 7
+    },
+    "pcode_op_count": 156
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004bbfd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a9c30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "SNotesSection *"
+      },
+      {
+        "is_param": true,
+        "name": "name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via pointer arithmetic on its own `name` field (which decays to a pointer), `+ CONST`; `offsetof(name) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pSVar2`. Replace those `pSVar2->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 18,
+      "match": "pSVar2 = (T *)(pSVar2->name + CONST)",
+      "severity": "moderate",
+      "text": "pSVar2 = (SNotesSection *)(pSVar2->name + 4);",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

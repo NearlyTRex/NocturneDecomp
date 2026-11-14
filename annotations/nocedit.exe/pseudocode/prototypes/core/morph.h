@@ -183,7 +183,7 @@ CVector3f * __cdecl CVector3f::arrdtor2(CVector3f *this_ptr,uint flags);
 
 // Original: core_morph.cpp_SMorphControlPoint_arrdtor20_FUN_0052ccb0
 // Address: 0052ccb0
-SMorphControlPoint * __cdecl SMorphControlPoint::arrdtor20(SMorphControlPoint *objs,uint flags);
+SMorphControlPoint * __cdecl SMorphControlPoint::arrdtor20(SMorphControlPoint *this_ptr,uint flags);
 
 // Original: core_morph.cpp_CDeformableModelInstance_arrdtor2_FUN_0052ccd0
 // Address: 0052ccd0

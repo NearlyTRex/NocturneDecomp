@@ -2,33 +2,40 @@
 // Address: 00456620
 // Address Range: [[00456620, 004566bd]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_dcube_cpp_intersectXZCylinderWithHeight_FUN_00456620(SIntersectXZCylinder *param_1,undefined4 *param_2,undefined4 *param_3)
+// Signature: int __cdecl core_dcube_cpp_intersectXZCylinderWithHeight_FUN_00456620(SIntersectXZCylinder *cylinder,CVector3f *segment_start,CVector3f *segment_end)
 
 #include "nocturne.h"
 
-uint __cdecl core_dcube_cpp_intersectXZCylinderWithHeight_FUN_00456620(SIntersectXZCylinder *param_1,uint *param_2,uint *param_3)
+int __cdecl core_dcube_cpp_intersectXZCylinderWithHeight_FUN_00456620(SIntersectXZCylinder *cylinder,CVector3f *segment_start,CVector3f *segment_end)
 
 {
   float fVar1;
-  int iVar2;
+  float fVar2;
+  float fVar3;
+  float fVar4;
+  float fVar5;
+  float fVar6;
+  int iVar7;
   
-  *(uint *)(param_1 + 0x3c) = *param_2;
-  *(uint *)(param_1 + 0x40) = param_2[2];
-  *(uint *)(param_1 + 0x44) = *param_3;
-  *(uint *)(param_1 + 0x48) = param_3[2];
-  iVar2 = core_dcube_cpp_FUN_00456340(param_1);
-  if (((iVar2 != 0) &&
-      (fVar1 = ((float)param_3[1] - (float)param_2[1]) * *(float *)(param_1 + 0x50) +
-               (float)param_2[1], *(float *)(param_1 + 0x28) < fVar1)) &&
-     (fVar1 < *(float *)(param_1 + 0x24))) {
-    *(uint *)(param_1 + 8) = 0;
-    *(uint *)param_1 = *(uint *)(param_1 + 0x4c);
-    *(float *)(param_1 + 0xc) =
-         (*(float *)(param_1 + 0x1c) * *(float *)(param_1 + 0x4c) + *(float *)(param_1 + 0x14)) -
-         *(float *)(param_1 + 0x58);
-    *(float *)(param_1 + 4) =
-         (*(float *)(param_1 + 0x18) * *(float *)(param_1 + 0x4c) + *(float *)(param_1 + 0x10)) -
-         *(float *)(param_1 + 0x54);
+  cylinder->edge_x1 = segment_start->x;
+  cylinder->edge_z1 = segment_start->z;
+  cylinder->edge_x2 = segment_end->x;
+  cylinder->edge_z2 = segment_end->z;
+  iVar7 = core_dcube_cpp_intersectXZCylinder_FUN_00456340(cylinder);
+  if (((iVar7 != 0) &&
+      (fVar1 = (segment_end->y - segment_start->y) * cylinder->param_clamped + segment_start->y,
+      cylinder->bottom_y < fVar1)) && (fVar1 < cylinder->top_y)) {
+    fVar1 = cylinder->dir_x;
+    fVar2 = cylinder->param_t;
+    fVar3 = cylinder->dir_z;
+    fVar4 = cylinder->param_t;
+    fVar5 = cylinder->param_t;
+    (cylinder->push_normal).y = 0.0;
+    cylinder->closest_t = fVar5;
+    fVar5 = cylinder->center_x;
+    fVar6 = cylinder->intersect_x;
+    (cylinder->push_normal).z = (fVar3 * fVar4 + cylinder->center_z) - cylinder->intersect_z;
+    (cylinder->push_normal).x = (fVar1 * fVar2 + fVar5) - fVar6;
     return 1;
   }
   return 0;

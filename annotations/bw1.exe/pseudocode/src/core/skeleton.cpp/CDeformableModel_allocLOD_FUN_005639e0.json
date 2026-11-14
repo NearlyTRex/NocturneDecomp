@@ -1,0 +1,251 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 150,
+    "complexity_score": 70,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 55,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 205
+  },
+  "cross_references": [
+    {
+      "addr": "00564ed0",
+      "from_addr": "00565047",
+      "name": "core_skeleton.cpp_CDeformableModel_loadStream_FUN_00564ed0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005639e0",
+    "address_range": [
+      [
+        "005639e0",
+        "00563b69"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModel_allocLOD_FUN_005639e0",
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModel_allocLOD_FUN_005639e0(CDeformableModel *this_ptr,int lod_index,int vertex_count,int tri_count,int cap_tri_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "005637d0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModel_free_FUN_005637d0"
+    },
+    {
+      "addr": "005c1268",
+      "is_variadic": false,
+      "name": "crt_memory.c_operator_new_array_FUN_005c1268"
+    },
+    {
+      "addr": "005c0336",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c0336"
+    },
+    {
+      "addr": "005c267a",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c267a"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f1ef2",
+      "name": "s_core_skeleton_cpp_005f1ef2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f1f07",
+      "name": "s_CDeformableModel_allocLO_005f1f07",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f1f3a",
+      "name": "s_core_skeleton_cpp_005f1f3a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f1f4f",
+      "name": "s_Out_of_hunk_in_CDeformab_005f1f4f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006058c0",
+      "name": "g_SVertTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00565047",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModel_loadStream_FUN_00564ed0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00565110",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModel_loadStream_FUN_00564ed0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.254098360655738,
+    "instruction_count": 122,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 15,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 12,
+      "CBRANCH": 8,
+      "COPY": 88,
+      "INT_ADD": 65,
+      "INT_AND": 99,
+      "INT_CARRY": 20,
+      "INT_EQUAL": 67,
+      "INT_LEFT": 6,
+      "INT_LESS": 7,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 15,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 20,
+      "INT_SLESS": 38,
+      "INT_SUB": 44,
+      "INT_XOR": 3,
+      "LOAD": 33,
+      "POPCOUNT": 32,
+      "RETURN": 2,
+      "STORE": 42
+    },
+    "pcode_op_count": 641
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00541370",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00548580",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0059a510",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7591
+    },
+    "nocturne.exe": {
+      "addr": "00517ec0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9799
+    }
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModel *"
+      },
+      {
+        "is_param": true,
+        "name": "lod_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "tri_count",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "cap_tri_count",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

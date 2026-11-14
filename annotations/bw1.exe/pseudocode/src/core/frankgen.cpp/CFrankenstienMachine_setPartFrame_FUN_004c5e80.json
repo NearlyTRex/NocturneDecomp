@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 96,
+    "complexity_score": 19,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 21,
-    "suspect_count": 7,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 73
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 19,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 71
   },
   "cross_references": [
     {
       "addr": "004c5c60",
       "from_addr": "004c5d4e",
-      "name": "core_frankgen.cpp_FUN_004c5c60",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004c5c60",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -48,7 +46,7 @@
       {
         "call_addr": "004c5d4e",
         "call_type": "direct",
-        "caller": "core_frankgen.cpp_FUN_004c5c60",
+        "caller": "core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004c5c60",
         "estimated_params": 3,
         "instructions_analyzed": 4,
         "method": "push_count",
@@ -59,7 +57,7 @@
       {
         "call_addr": "004c5d63",
         "call_type": "direct",
-        "caller": "core_frankgen.cpp_FUN_004c5c60",
+        "caller": "core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004c5c60",
         "estimated_params": 3,
         "instructions_analyzed": 4,
         "method": "push_count",
@@ -70,7 +68,7 @@
       {
         "call_addr": "004c5d78",
         "call_type": "direct",
-        "caller": "core_frankgen.cpp_FUN_004c5c60",
+        "caller": "core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004c5c60",
         "estimated_params": 3,
         "instructions_analyzed": 4,
         "method": "push_count",
@@ -81,7 +79,7 @@
       {
         "call_addr": "004c5d8d",
         "call_type": "direct",
-        "caller": "core_frankgen.cpp_FUN_004c5c60",
+        "caller": "core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004c5c60",
         "estimated_params": 3,
         "instructions_analyzed": 4,
         "method": "push_count",
@@ -92,7 +90,7 @@
       {
         "call_addr": "004c5da2",
         "call_type": "direct",
-        "caller": "core_frankgen.cpp_FUN_004c5c60",
+        "caller": "core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004c5c60",
         "estimated_params": 3,
         "instructions_analyzed": 4,
         "method": "push_count",
@@ -145,6 +143,26 @@
     },
     "pcode_op_count": 317
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004aced0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004d23a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004952b0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 28,
     "local_size": 16,
@@ -189,62 +207,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x184",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&this_ptr->field_0x184);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x100",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)&pCVar3->field_0x100;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x15c",
-      "severity": "mild",
-      "text": "fVar2 = ((float)iVar1 * (*(float *)&this_ptr->field_0x15c - start_frame)) /",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x180",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x180 = fVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x180",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x180 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x180",
-      "severity": "mild",
-      "text": "if (*(float *)&this_ptr->field_0x180 <= fVar2) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x180",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x180 = fVar2;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

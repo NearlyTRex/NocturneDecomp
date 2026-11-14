@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 160,
+    "complexity_score": 64,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 35,
-    "suspect_count": 11,
+    "pseudocode_lines": 34,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 84
+    "total_lines": 83
   },
   "cross_references": [
     {
@@ -32,9 +31,9 @@
         "0040eedc"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_armour.cpp_CArmour_ctor_FUN_0040ee40",
-    "signature": "CArmour * core_armour_cpp_CArmour_ctor_FUN_0040ee40(CArmour *this_ptr)"
+    "signature": "CArmour * __cdecl core_armour_cpp_CArmour_ctor_FUN_0040ee40(CArmour *this_ptr)"
   },
   "function_calls": [
     {
@@ -108,6 +107,26 @@
     },
     "pcode_op_count": 186
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0040e9e0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004121a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.988
+    },
+    "nocturne.exe": {
+      "addr": "0040f960",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.988
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -134,80 +153,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "*(byte **)&pCVar4->field_0x2b0 = &g_CArmourVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)&pCVar4->field_0x2b4,(char *)0x5cb35e);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x3430",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0x3430 = 0x3f19999a;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x3434",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0x3434 = 0x40000000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x10af8",
-      "severity": "mild",
-      "text": "pcVar6 = &pCVar4->field_0x10af8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x3438",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0x3438 = uVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x343c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0x343c = uVar3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x280c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0x280c = 2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x259c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0x259c = 0x40490fdb;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 27,
+      "line": 26,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

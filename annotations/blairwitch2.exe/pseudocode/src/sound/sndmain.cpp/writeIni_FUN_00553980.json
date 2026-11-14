@@ -1,0 +1,448 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 169,
+    "complexity_score": 247,
+    "cross_reference_count": 1,
+    "function_call_count": 11,
+    "global_count": 13,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 62,
+    "suspect_count": 16,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data",
+      "unresolved_funcptr",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 231
+  },
+  "cross_references": [
+    {
+      "addr": "004d94d0",
+      "from_addr": "004d96ed",
+      "name": "core_inivar.cpp_writeIniData_FUN_004d94d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00553980",
+    "address_range": [
+      [
+        "00553980",
+        "00553b5a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_writeIni_FUN_00553980",
+    "signature": "void __cdecl sound_sndmain_cpp_writeIni_FUN_00553980(CIniFile *ini_file)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
+    },
+    {
+      "addr": "004d8b80",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_FUN_004d8b80"
+    },
+    {
+      "addr": "004d8c30",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_FUN_004d8c30"
+    },
+    {
+      "addr": "00552790",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getAudioFormat_FUN_00552790"
+    },
+    {
+      "addr": "00553600",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getMaxSwLatency_FUN_00553600"
+    },
+    {
+      "addr": "00551190",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getSfxChannelVol_FUN_00551190"
+    },
+    {
+      "addr": "00552890",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getSoundDeviceCount_FUN_00552890"
+    },
+    {
+      "addr": "00552920",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getSoundDeviceInfo_FUN_00552920"
+    },
+    {
+      "addr": "00552b40",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isHardwareMixingEnabled_FUN_00552b40"
+    },
+    {
+      "addr": "005512a0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSfxChannelEnabled_FUN_005512a0"
+    },
+    {
+      "addr": "00550bc0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSoundMuted_FUN_00550bc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e9341",
+      "name": "s_DeviceName_005e9341",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e934c",
+      "name": "DAT_005e934c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e9351",
+      "name": "s_Channels_005e9351",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e935a",
+      "name": "DAT_005e935a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e935d",
+      "name": "s_AccelEnabled_005e935d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e936a",
+      "name": "s_MaxSwLatency_005e936a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9377",
+      "name": "DAT_005e9377",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e937c",
+      "name": "s_SfxChannel_dEnabled_005e937c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e9390",
+      "name": "s_SfxChannel_dVol_005e9390",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061bc94",
+      "name": "DAT_0061bc94",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061bcac",
+      "name": "DAT_0061bcac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061bde0",
+      "name": "DAT_0061bde0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061bde4",
+      "name": "DAT_0061bde4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004d96ed",
+        "call_type": "direct",
+        "caller": "core_inivar.cpp_writeIniData_FUN_004d94d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.39568345323741,
+    "instruction_count": 139,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 18,
+      "CALLIND": 1,
+      "CBRANCH": 7,
+      "COPY": 132,
+      "FLOAT2FLOAT": 4,
+      "INT_ADD": 49,
+      "INT_AND": 60,
+      "INT_CARRY": 18,
+      "INT_EQUAL": 59,
+      "INT_LESS": 7,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 19,
+      "INT_SLESS": 29,
+      "INT_SUB": 72,
+      "INT_XOR": 1,
+      "INT_ZEXT": 2,
+      "LOAD": 17,
+      "POPCOUNT": 29,
+      "RETURN": 1,
+      "STORE": 69
+    },
+    "pcode_op_count": 611
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005763b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00559520",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005ac220",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9856
+    },
+    "nocturne.exe": {
+      "addr": "00528c80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9856
+    }
+  },
+  "stack_frame": {
+    "frame_size": 676,
+    "local_size": 672,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_29c",
+        "offset": -668,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_29b",
+        "offset": -667,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_184",
+        "offset": -388,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_183",
+        "offset": -387,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "ini_file",
+        "offset": 4,
+        "size": 4,
+        "type": "CIniFile *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "005539c9",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_0061bde0",
+      "severity": "mild",
+      "text": "puVar3 = &DAT_0061bde0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_0061bcac",
+      "severity": "mild",
+      "text": "if ((-1 < DAT_0061bcac) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_0061bcac",
+      "severity": "mild",
+      "text": "(iVar2 = sound_sndmain_cpp_getSoundDeviceCount_FUN_00552890(), DAT_0061bcac < iVar2)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_0061bcac",
+      "severity": "mild",
+      "text": "sound_sndmain_cpp_getSoundDeviceInfo_FUN_00552920(DAT_0061bcac,&local_29c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(char *)((int)pSVar4",
+      "severity": "moderate",
+      "text": "cVar1 = *(char *)((int)pSVar4 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(SSoundDeviceInfo *)((int)pSVar4",
+      "severity": "moderate",
+      "text": "pSVar4 = (SSoundDeviceInfo *)((int)pSVar4 + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(code **)((int)ini_file",
+      "severity": "moderate",
+      "text": "(**(code **)((int)ini_file->vtable + 8))(ini_file,\"DeviceName\",local_184);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 41,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)((int)ini_file->vtable + 8))(ini_file,\"DeviceName\",local_184);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_005e934c",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b80(ini_file,&DAT_005e934c,iStack_18);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_005e935a",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b80(ini_file,&DAT_005e935a,iStack_1c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 52,
+      "match": "DAT_005e9377",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b80(ini_file,&DAT_005e9377,iVar2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 53,
+      "match": "DAT_0061bc94",
+      "severity": "mild",
+      "text": "if (0 < DAT_0061bc94) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 62,
+      "match": "DAT_0061bc94",
+      "severity": "mild",
+      "text": "} while (channel_index < DAT_0061bc94);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `pSVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 35,
+      "match": "(int)pSVar4",
+      "severity": "moderate",
+      "text": "cVar1 = *(char *)((int)pSVar4 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 36,
+      "match": "(int)pSVar4",
+      "severity": "moderate",
+      "text": "pSVar4 = (SSoundDeviceInfo *)((int)pSVar4 + 2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 31,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * core_actor_cpp_CDemonActor_dtor_FUN_00408930(CDemonActor *this_ptr,uint flags)
+; CDemonActor * __cdecl core_actor_cpp_CDemonActor_dtor_FUN_00408930(CDemonActor *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr
@@ -16,19 +16,19 @@
 ;   core_armour.cpp_CFlame_dtor_FUN_0040f260 at 0040f26f
 ;   core_backgnd.cpp_CBackgroundActor_dtor_FUN_0040f5b0 at 0040f5bf
 ;   core_barrier.cpp_CBarrier_dtor_FUN_00410e80 at 00410e8f
+;   core_basicene.cpp_CBasicEnemy_dtor_FUN_005a0780 at 005a07cc
 ;   core_basicnpc.cpp_CBasicNPC_dtor_FUN_005a4980 at 005a49d6
-;   core_bat.cpp_CBat_dtor_FUN_004115c0 at 004115e6
 ;   ... and 104 more
 ;
 ; Referenced Globals:
-;   undefined4 g_CDemonActorVTable
+;   CDemonActor_vtable g_CDemonActorVTable
 ;   WatcomTypeInfo g_CDemonActorTypeInfo
 ;
 ; Called Functions:
+;   core_actor.cpp_FUN_0040d400
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
 ;   crt_unknown.c_FUN_005b7fce
 ;   crt_unknown.c_FUN_005b7fdc
-;   unkafter_actor.cpp_FUN_0040d400
 ;
 ; *****************************************************************************
 
@@ -45,8 +45,8 @@ section .text
     MOV dword ptr [EBX + 0x15c],0x5f2184 ; 00408944 | g_CDemonActorVTable
     PUSH EBX                            ; 0040894e
     MOV dword ptr [EBX + 0xffffff14],0x495fd67 ; 0040894f
-    CALL unkafter_actor.cpp_FUN_0040d400 ; 00408959
-        ;   XREF to: 0040d400 (UNCONDITIONAL_CALL)  ; undefined unkafter_actor.cpp_FUN_0040d400()
+    CALL core_actor.cpp_FUN_0040d400    ; 00408959
+        ;   XREF to: 0040d400 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040d400()
     ADD ESP,0x8                         ; 0040895e
     MOV DL,byte ptr [ESP + 0xc]         ; 00408961
     LEA EBX,[EAX + 0xfffffeac]          ; 00408965
@@ -62,7 +62,7 @@ section .text
         ;   Label: LAB_00408981
     PUSH EBX                            ; 00408986
     CALL crt_memory.c___vec_delete_FUN_005b7fa7 ; 00408987
-        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005b7fa7()
+        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005b7fa7(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 0040898c
     PUSH EAX                            ; 0040898f
     CALL crt_unknown.c_FUN_005b7fce     ; 00408990

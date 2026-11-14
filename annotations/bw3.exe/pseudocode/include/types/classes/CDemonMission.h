@@ -4,12 +4,32 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CLocation.h"
 
 // Structure: CDemonMission
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// No RTTI. bw1's fields with the delete queue moved ahead of mission_name; the lookup table of 6000 (writeFile asserts at 5999) at +0x1460 ends at +0x7220, where the next global after the static instance at 0x1d81080 starts (0x1d882a0).
+// Ghidra size: 0x7220 (29216 bytes)
 #pragma pack(push, 1)
 typedef struct CDemonMission {
+    int current_set_index; // 0x0, process compares the pending teleport's area_id with it
+    int num_sets; // 0x4, clearMissionData zeroes it; the aligned drift puts nocedit's +0x144 here (5 sightings)
+    char set_names[16][256]; // 0x8, as bw1: names at +0x8 + i * 0x100 up to the flags at +0x1008
+    int is_in_editor; // 0x1008, nocedit's +0x4 + 0x1004, with the flags after it (27 aligned sightings)
+    int mission_version_num; // 0x100c, nocedit's +0x8 + 0x1004
+    int has_inventory_actors; // 0x1010, clearMissionData zeroes it
+    int teleport_requested; // 0x1014, setTeleportTarget sets 1; process clears it
+    int delete_queue_count; // 0x1018, markActorToDelete appends at it; process drains it and zeroes it
+    struct CDemonActor* delete_queue_actors[100]; // 0x101c, markActorToDelete stores the actor at +0x101c + count * 4; process passes it to removeActor
+    uint delete_queue_flags[100]; // 0x11ac, markActorToDelete stores its second argument at +0x11ac + count * 4
+    char mission_name[256]; // 0x133c, clearMissionData clears its first byte
+    struct CDemonActor* first_actor; // 0x143c, nocedit's +0x548 + 3828 (33 sightings, +0x548..+0x55c)
+    struct CDemonActor* last_actor; // 0x1440, nocedit's +0x54c + 3828
+    CLocation pending_teleport; // 0x1444, setTeleportTarget copies the target to +0x1444..+0x1450; process moves the hero when area_id (+0x1450) >= 0 and resets it to -1
+    int prepared_set_index; // 0x1454, nocedit's +0x884 + 3024, as bw1's
+    struct CDemonActor* next_inventory_actor; // 0x1458, clearMissionData zeroes it; nocedit's +0x888 + 3024 (21 sightings)
+    int actor_lookup_count; // 0x145c, clearMissionData zeroes it; writeFile appends at it and asserts below 6000
+    struct CDemonActor* actor_lookup_table[6000]; // 0x1460, writeFile stores each actor at +0x1460 + count * 4
 } CDemonMission;
 #pragma pack(pop)
 

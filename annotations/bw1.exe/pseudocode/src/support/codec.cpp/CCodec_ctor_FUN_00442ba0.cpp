@@ -9,6 +9,6 @@
 CCodec * __cdecl support_codec_cpp_CCodec_ctor_FUN_00442ba0(CCodec *this_ptr)
 
 {
-  *this_ptr = (CCodec)&PTR_support_codec_cpp_CCodec_dtor_FUN_00442bb0_005fd954;
+  this_ptr->vtable = &PTR_support_codec_cpp_CCodec_dtor_FUN_00442bb0_005fd954;
   return this_ptr;
 }

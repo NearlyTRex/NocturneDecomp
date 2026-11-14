@@ -1,0 +1,265 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 80,
+    "complexity_score": 64,
+    "cross_reference_count": 4,
+    "function_call_count": 4,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 34,
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast",
+      "raw_address_constant"
+    ],
+    "total_lines": 114
+  },
+  "cross_references": [
+    {
+      "addr": "00410990",
+      "from_addr": "00410996",
+      "name": "core_baron.cpp_CBaronWeapon_fire_FUN_00410990",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004109d0",
+      "from_addr": "004109d6",
+      "name": "core_baron.cpp_CBaronWeapon_isReadyToFire_FUN_004109d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00410960",
+      "from_addr": "00410965",
+      "name": "core_baron.cpp_CBaronWeapon_process_FUN_00410960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00410a30",
+      "from_addr": "00410a89",
+      "name": "core_baron.cpp_CBaronWeapon_setWeaponState_FUN_00410a30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00410ac0",
+    "address_range": [
+      [
+        "00410ac0",
+        "00410b82"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00410ac0",
+    "signature": "void __cdecl core_baron_cpp_CBaronWeapon_findOrCreateBaron_FUN_00410ac0(CBaronWeapon *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c8f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c8f0"
+    },
+    {
+      "addr": "0040c5a0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_createActorByName_FUN_0040c5a0"
+    },
+    {
+      "addr": "004fc200",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200"
+    },
+    {
+      "addr": "004fcda0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005cb608",
+      "name": "s_CBaron_005cb608",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00618170",
+      "name": "DAT_00618170",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061b5a8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e661b8"
+    },
+    {
+      "addr": "007bc518",
+      "name": "g_CBaronClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d182f0",
+      "name": "DAT_01d182f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e661b8",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "01fb331c",
+      "name": "g_CDemonSetInstance.actor_count",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fb3320",
+      "name": "g_CDemonSetInstance.actors[0]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "00410996",
+        "call_type": "direct",
+        "caller": "core_baron.cpp_CBaronWeapon_fire_FUN_00410990",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004109d6",
+        "call_type": "direct",
+        "caller": "core_baron.cpp_CBaronWeapon_isReadyToFire_FUN_004109d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00410a89",
+        "call_type": "direct",
+        "caller": "core_baron.cpp_CBaronWeapon_setWeaponState_FUN_00410a30",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00410965",
+        "call_type": "direct",
+        "caller": "core_baron.cpp_CBaronWeapon_process_FUN_00410960",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.507692307692308,
+    "instruction_count": 65,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CALLIND": 2,
+      "CBRANCH": 4,
+      "COPY": 56,
+      "INT_ADD": 35,
+      "INT_AND": 31,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 30,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 15,
+      "INT_SUB": 24,
+      "INT_XOR": 2,
+      "LOAD": 22,
+      "POPCOUNT": 15,
+      "RETURN": 2,
+      "STORE": 23
+    },
+    "pcode_op_count": 293
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00410640",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00413f20",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00411530",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBaronWeapon *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Raw hex address 0x1d182f0 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 23,
+      "match": "0x1d182f0",
+      "severity": "moderate",
+      "text": "this_ptr_00 = 0x01D182F0;",
+      "type": "raw_address_constant"
+    }
+  ]
+}

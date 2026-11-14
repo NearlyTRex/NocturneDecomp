@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_vessel_cpp_staticInit_FUN_00584e70(void)
+; void __cdecl core_vessel_cpp_staticInit_FUN_00584e70(void)
 ;
 ;
 ; Called Functions:

@@ -6,11 +6,13 @@
 #include "system/basetypes.h"
 
 // Structure: CWater
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x10 (16 bytes)
 #pragma pack(push, 1)
 typedef struct CWater {
-    char field_0[16]; // 0x0
+    int wave_animation_enabled; // 0x0
+    float water_level_y; // 0x4
+    float tile_size; // 0x8
+    float visible_area_sqft; // 0xc
 } CWater;
 #pragma pack(pop)
 

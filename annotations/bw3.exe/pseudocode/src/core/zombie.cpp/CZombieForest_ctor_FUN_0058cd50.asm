@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CZombieForest * core_zombie_cpp_CZombieForest_ctor_FUN_0058cd50(CZombieForest *this_ptr)
+; CZombieForest * __cdecl core_zombie_cpp_CZombieForest_ctor_FUN_0058cd50(CZombieForest *this_ptr)
 ;
 ; Parameters:
 ; CZombieForest *  Stack[0x4]:4   this_ptr
@@ -10,7 +10,7 @@
 ;   core_zombie.cpp_FUN_0058cd20 at 0058cd33
 ;
 ; Called Functions:
-;   core_skeleton.cpp_FUN_0054eae0
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0
 ;   core_zombie.cpp_CZombie_ctor_FUN_005888d0
 ;
 ; *****************************************************************************
@@ -29,8 +29,8 @@ section .text
     ADD EAX,0x158                       ; 0058cd65
     PUSH EAX                            ; 0058cd6a
     MOV dword ptr [EAX + -0x4],0x5e6a34 ; 0058cd6b
-    CALL core_skeleton.cpp_FUN_0054eae0 ; 0058cd72
-        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054eae0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 ; 0058cd72
+        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0xd140],0x2    ; 0058cd77
     MOV dword ptr [EBX + 0x2538],0x41c80000 ; 0058cd81
     ADD ESP,0x8                         ; 0058cd8b

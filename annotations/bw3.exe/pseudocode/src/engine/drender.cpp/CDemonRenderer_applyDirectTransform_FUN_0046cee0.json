@@ -2,21 +2,51 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 12,
+    "complexity_score": 10,
     "cross_reference_count": 10,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 12,
+    "pseudocode_lines": 10,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 59
+    "total_lines": 57
   },
   "cross_references": [
+    {
+      "addr": "00499690",
+      "from_addr": "004996f0",
+      "name": "core_fire.cpp_CFireball_render_FUN_00499690",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00498b40",
+      "from_addr": "00498e1b",
+      "name": "core_fire.cpp_CFirefly_render_FUN_00498b40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049a2c0",
+      "from_addr": "0049a2ec",
+      "name": "core_fire.cpp_CLeaf_render_FUN_0049a2c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "004a0cd0",
       "from_addr": "004a0d85",
       "name": "core_fire.cpp_CPopcorn_render_FUN_004a0cd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a1040",
+      "from_addr": "004a10f8",
+      "name": "core_fire.cpp_CRainDrop_render_FUN_004a1040",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049a090",
+      "from_addr": "0049a0bc",
+      "name": "core_fire.cpp_CRock_render_FUN_0049a090",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -28,43 +58,13 @@
     {
       "addr": "004980b0",
       "from_addr": "004983a0",
-      "name": "core_fire.cpp_FUN_004980b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00498b40",
-      "from_addr": "00498e1b",
-      "name": "core_fire.cpp_FUN_00498b40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00499690",
-      "from_addr": "004996f0",
-      "name": "core_fire.cpp_FUN_00499690",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0049a090",
-      "from_addr": "0049a0bc",
-      "name": "core_fire.cpp_FUN_0049a090",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0049a2c0",
-      "from_addr": "0049a2ec",
-      "name": "core_fire.cpp_FUN_0049a2c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004a1040",
-      "from_addr": "004a10f8",
-      "name": "core_fire.cpp_FUN_004a1040",
+      "name": "core_fire.cpp_CSpark_render_FUN_004980b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004a6090",
       "from_addr": "004a61e1",
-      "name": "core_flame.cpp_FUN_004a6090",
+      "name": "core_flame.cpp_CFlame_renderTransparent_FUN_004a6090",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -111,7 +111,7 @@
       {
         "call_addr": "004983a0",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004980b0",
+        "caller": "core_fire.cpp_CSpark_render_FUN_004980b0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -122,7 +122,7 @@
       {
         "call_addr": "00498e1b",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_00498b40",
+        "caller": "core_fire.cpp_CFirefly_render_FUN_00498b40",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -133,7 +133,7 @@
       {
         "call_addr": "004a61e1",
         "call_type": "direct",
-        "caller": "core_flame.cpp_FUN_004a6090",
+        "caller": "core_flame.cpp_CFlame_renderTransparent_FUN_004a6090",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -144,7 +144,7 @@
       {
         "call_addr": "004a6271",
         "call_type": "direct",
-        "caller": "core_flame.cpp_FUN_004a6090",
+        "caller": "core_flame.cpp_CFlame_renderTransparent_FUN_004a6090",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -155,7 +155,7 @@
       {
         "call_addr": "004a10f8",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004a1040",
+        "caller": "core_fire.cpp_CRainDrop_render_FUN_004a1040",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -177,7 +177,7 @@
       {
         "call_addr": "0049a2ec",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049a2c0",
+        "caller": "core_fire.cpp_CLeaf_render_FUN_0049a2c0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -188,7 +188,7 @@
       {
         "call_addr": "0049a0bc",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049a090",
+        "caller": "core_fire.cpp_CRock_render_FUN_0049a090",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -199,7 +199,7 @@
       {
         "call_addr": "004996f0",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_00499690",
+        "caller": "core_fire.cpp_CFireball_render_FUN_00499690",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -235,6 +235,32 @@
       "STORE": 18
     },
     "pcode_op_count": 147
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0046b300",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00483800",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0048c4a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00460a50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 16,

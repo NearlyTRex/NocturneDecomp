@@ -122,7 +122,7 @@ LAB_0054f6fe:
                          (this_ptr->file_count * sizeof(CPodDirectoryEntry),"..\\engine\\pod.cpp",427);
       this_ptr->directory_entries = pCVar5;
       if (pCVar5 != (CPodDirectoryEntry *)0x0) {
-        _fseek(p_Var3,local_490.data_start_offset,0);
+        _fseek(p_Var3,local_490.directory_offset,0);
         for (rec_idx = 0; rec_idx < this_ptr->file_count; rec_idx = rec_idx + 1) {
           _fread(&disk_entry,1,0x14,p_Var3);
           this_ptr->directory_entries[rec_idx].name = (char *)(size_t)disk_entry.name_offset;
@@ -132,10 +132,10 @@ LAB_0054f6fe:
           this_ptr->directory_entries[rec_idx].checksum = disk_entry.checksum;
         }
         if ((p_Var3->_flag & 0x20) == 0) {
-          if ((this_ptr->file_count <= (int)local_490.total_file_size) &&
-             ((int)local_490.total_file_size <= this_ptr->file_count * 0x100)) {
+          if ((this_ptr->file_count <= (int)local_490.name_table_size) &&
+             ((int)local_490.name_table_size <= this_ptr->file_count * 0x100)) {
             pcVar13 = (char *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                                (local_490.total_file_size,"..\\engine\\pod.cpp",442);
+                                (local_490.name_table_size,"..\\engine\\pod.cpp",442);
             this_ptr->file_data_buffer = pcVar13;
             if (pcVar13 == (char *)0x0) {
               g_CurrentFilename = "..\\engine\\pod.cpp";
@@ -143,13 +143,13 @@ LAB_0054f6fe:
               core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
             }
             file_handle = local_20;
-            _fread(this_ptr->file_data_buffer,local_490.total_file_size,1,local_20);
+            _fread(this_ptr->file_data_buffer,local_490.name_table_size,1,local_20);
             if ((file_handle->_flag & 0x20) == 0) {
               uVar7 = _ftell(file_handle);
               this_ptr->dependency_records_offset = uVar7;
-              this_ptr->total_file_size =
+              this_ptr->audit_records_offset =
                    this_ptr->dependency_records_offset + this_ptr->dependency_count * 0x108;
-              size = local_490.total_file_size;
+              size = local_490.name_table_size;
               goto LAB_0054f9a8;
             }
           }
@@ -188,7 +188,7 @@ LAB_0054f6fe:
         }
         _fread(this_ptr->file_data_buffer,size,1,local_20);
         iVar4 = this_ptr->file_count + -1;
-        this_ptr->total_file_size =
+        this_ptr->audit_records_offset =
              this_ptr->directory_entries[iVar4].offset + this_ptr->directory_entries[iVar4].size;
         goto LAB_0054f9a8;
       }

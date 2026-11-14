@@ -11,43 +11,43 @@ void __cdecl staticInit(void);
 
 // Original: core_drip.cpp_factoryFuncDrip_FUN_0046ce40
 // Address: 0046ce40
-void factoryFuncDrip(void);
+CDrip * __cdecl factoryFuncDrip(void);
 
 // Original: core_drip.cpp_CDrip_getActorType_FUN_0046ce60
 // Address: 0046ce60
-CDemonActorType * CDrip::getActorType(CDrip *this_ptr);
+CDemonActorType * __cdecl CDrip::getActorType(CDrip *this_ptr);
 
 // Original: core_drip.cpp_CDrip_ctor_FUN_0046ce70
 // Address: 0046ce70
 CDrip * __cdecl CDrip::ctor(CDrip *this_ptr);
 
-// Original: core_drip.cpp_FUN_0046cf50
+// Original: core_drip.cpp_CDrip_setup_FUN_0046cf50
 // Address: 0046cf50
-void FUN_0046cf50(int param_1);
+void __cdecl CDrip::setup(CDrip *this_ptr);
 
-// Original: core_drip.cpp_FUN_0046cfe0
+// Original: core_drip.cpp_CDrip_archive_FUN_0046cfe0
 // Address: 0046cfe0
-void FUN_0046cfe0(CDemonActor *param_1);
+void __cdecl CDrip::archive(CDrip *this_ptr);
 
-// Original: core_drip.cpp_FUN_0046d110
+// Original: core_drip.cpp_CDrip_process_FUN_0046d110
 // Address: 0046d110
-void FUN_0046d110(int param_1,float param_2);
+void __cdecl CDrip::process(CDrip *this_ptr,float delta_time);
 
-// Original: core_drip.cpp_FUN_0046d560
+// Original: core_drip.cpp_CDrip_reset_FUN_0046d560
 // Address: 0046d560
-void __cdecl FUN_0046d560(CDrip *this_ptr);
+void __cdecl CDrip::reset(CDrip *this_ptr);
 
-// Original: core_drip.cpp_FUN_0046d570
+// Original: core_drip.cpp_CDrip_renderOpaque_FUN_0046d570
 // Address: 0046d570
-int FUN_0046d570(CDemonActor *param_1);
+int __cdecl CDrip::renderOpaque(CDrip *this_ptr);
 
-// Original: core_drip.cpp_FUN_0046d610
+// Original: core_drip.cpp_CDrip_getBoundingBox_FUN_0046d610
 // Address: 0046d610
-void FUN_0046d610(int param_1);
+CBoundingBox3D * __cdecl CDrip::getBoundingBox(CDrip *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_drip.cpp_FUN_0046d690
+// Original: core_drip.cpp_CDrip_getCollisionType_FUN_0046d690
 // Address: 0046d690
-undefined4 FUN_0046d690(void);
+ECollisionType __cdecl CDrip::getCollisionType(CDrip *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_drip.cpp_CDrip_dtor_FUN_0046d6a0
 // Address: 0046d6a0

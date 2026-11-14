@@ -17,21 +17,9 @@
   },
   "cross_references": [
     {
-      "addr": "0040bab0",
-      "from_addr": "0040bb15",
-      "name": "core_actor.cpp_FUN_0040bab0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0040bba0",
-      "from_addr": "0040bc2d",
-      "name": "core_actor.cpp_FUN_0040bba0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0040be30",
       "from_addr": "0040be95",
-      "name": "core_actor.cpp_FUN_0040be30",
+      "name": "core_actor.cpp_archiveBox_FUN_0040be30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -65,9 +53,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0040bab0",
+      "from_addr": "0040bb15",
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040bab0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0040b4a0",
       "from_addr": "0040b4f1",
       "name": "core_actor.cpp_archiveOrientation_FUN_0040b4a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040bba0",
+      "from_addr": "0040bc2d",
+      "name": "core_actor.cpp_archivePartStatus_FUN_0040bba0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -111,7 +111,7 @@
     {
       "addr": "00408870",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408870"
+      "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870"
     },
     {
       "addr": "004e4330",
@@ -332,6 +332,32 @@
     },
     "pcode_op_count": 129
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0040b380",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0040b090",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0040b210",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0040c320",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -385,7 +411,7 @@
       "line": 16,
       "match": "DAT_007df9bc",
       "severity": "mild",
-      "text": "pcVar2 = core_actor_cpp_FUN_00408870(DAT_007df9bc);",
+      "text": "pcVar2 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408870(DAT_007df9bc);",
       "type": "undefined_data"
     },
     {

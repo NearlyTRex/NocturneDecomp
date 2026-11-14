@@ -33,6 +33,10 @@ void __cdecl CLarva::process(CLarva *this_ptr,float delta_time);
 // Address: 004c5250
 void __cdecl CLarva::archive(CLarva *this_ptr);
 
+// Original: core_larva.cpp_getSizeCategory_FUN_004c52c0
+// Address: 004c52c0
+char * __cdecl getSizeCategory(float scale);
+
 // Original: core_larva.cpp_CLarva_processDamage_FUN_004c5310
 // Address: 004c5310
 void __cdecl CLarva::processDamage(CLarva *this_ptr,SDamageInfo *damage_info);

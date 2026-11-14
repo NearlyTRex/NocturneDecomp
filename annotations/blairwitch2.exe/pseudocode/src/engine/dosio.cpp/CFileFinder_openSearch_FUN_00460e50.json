@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 74,
+    "complexity_score": 19,
     "cross_reference_count": 6,
     "function_call_count": 4,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 19,
-    "suspect_count": 5,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 63
   },
   "cross_references": [
     {
       "addr": "0051c000",
       "from_addr": "0051c040",
-      "name": "core_podmain.cpp_FUN_0051c000",
+      "name": "core_podmain.cpp_CDemonPod_load_FUN_0051c000",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -34,9 +32,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047cb1e",
+      "addr": "0047cb20",
       "from_addr": "0047cc09",
-      "name": "shape_edittool.cpp_FUN_0047cb1e",
+      "name": "shape_edittool.cpp_FUN_0047cb20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -71,14 +69,14 @@
       "name": "engine_dosio.cpp_CFileFinder_closeSearch_FUN_00460f50"
     },
     {
+      "addr": "00460fa0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_convertStruct_FUN_00460fa0"
+    },
+    {
       "addr": "00460f90",
       "is_variadic": false,
       "name": "engine_dosio.cpp_CFileFinder_reset_FUN_00460f90"
-    },
-    {
-      "addr": "00460fa0",
-      "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00460fa0"
     },
     {
       "addr": "EXTERNAL:00000059",
@@ -122,7 +120,7 @@
       {
         "call_addr": "0051c040",
         "call_type": "direct",
-        "caller": "core_podmain.cpp_FUN_0051c000",
+        "caller": "core_podmain.cpp_CDemonPod_load_FUN_0051c000",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -155,7 +153,7 @@
       {
         "call_addr": "0047cc09",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047cb1e",
+        "caller": "shape_edittool.cpp_FUN_0047cb20",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -166,7 +164,7 @@
       {
         "call_addr": "0047cd03",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047cb1e",
+        "caller": "shape_edittool.cpp_FUN_0047cb20",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -207,6 +205,32 @@
     },
     "pcode_op_count": 148
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00479360",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00465ba0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00481c70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00456c40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -230,46 +254,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x10c",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x10c == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x10c",
-      "severity": "mild",
-      "text": "return *(int *)&this_ptr->field_0x10c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x110",
-      "severity": "mild",
-      "text": "*(HANDLE *)&this_ptr->field_0x110 = pvVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x10c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x10c = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x10c",
-      "severity": "mild",
-      "text": "return *(int *)&this_ptr->field_0x10c;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

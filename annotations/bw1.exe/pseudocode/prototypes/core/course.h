@@ -13,9 +13,9 @@ CCourse * __cdecl CCourse::ctor(CCourse *this_ptr);
 // Address: 00447d30
 CCourse * __cdecl CCourse::dtor(CCourse *this_ptr,uint flags);
 
-// Original: core_course.cpp_FUN_00447d50
+// Original: core_course.cpp_CCourse_allocMemory_FUN_00447d50
 // Address: 00447d50
-void FUN_00447d50(int *param_1,int param_2);
+void __cdecl CCourse::allocMemory(CCourse *this_ptr,int param_2);
 
 // Original: core_course.cpp_CCourse_load_FUN_00447db0
 // Address: 00447db0
@@ -25,9 +25,9 @@ void __cdecl CCourse::load(CCourse *this_ptr,char *filename);
 // Address: 00447ee0
 void FUN_00447ee0(undefined4 *param_1);
 
-// Original: core_course.cpp_FUN_00447f00
+// Original: core_course.cpp_CCourse_evaluate_FUN_00447f00
 // Address: 00447f00
-void __cdecl FUN_00447f00(CCourse *this_ptr,float time,CVector3f *out_pos,CVector3f *out_euler);
+void __cdecl CCourse::evaluate(CCourse *this_ptr,float time,CVector3f *out_pos,CVector3f *out_euler);
 
 // Original: core_course.cpp_FUN_00447fb0
 // Address: 00447fb0

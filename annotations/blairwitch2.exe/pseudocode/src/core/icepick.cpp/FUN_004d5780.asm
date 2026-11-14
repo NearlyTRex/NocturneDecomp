@@ -7,7 +7,7 @@
 ; CIcePick *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_icepick.cpp_FUN_004d4c50 at 004d51b5
+;   core_icepick.cpp_CIcePick_process_FUN_004d4c50 at 004d51b5
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620

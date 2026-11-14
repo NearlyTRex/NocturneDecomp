@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CNecklace * core_necklace_cpp_CNecklace_dtor_FUN_005add30(CNecklace *this_ptr,uint flags)
+; CNecklace * __cdecl core_necklace_cpp_CNecklace_dtor_FUN_005add30(CNecklace *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CNecklace *      Stack[0x4]:4   this_ptr
@@ -51,7 +51,7 @@ section .text
         ;   Label: LAB_005add6d
     PUSH EBX                            ; 005add72
     CALL crt_memory.c___vec_delete_FUN_005b7fa7 ; 005add73
-        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005b7fa7()
+        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005b7fa7(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 005add78
     PUSH EAX                            ; 005add7b
     CALL crt_unknown.c_FUN_005b7fce     ; 005add7c

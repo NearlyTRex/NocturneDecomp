@@ -7,8 +7,8 @@
 ; CEdButton *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
+;   shape_edittool.cpp_CPickList_handleDialogInput_FUN_00482770 at 00482869
 ;   shape_edittool.cpp_FUN_0047c0f0 at 0047c685
-;   shape_edittool.cpp_FUN_00482770 at 00482869
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047b800 at 0047b9be
 ;   shape_edittool.cpp_showTextInputDialog_FUN_0047b1f0 at 0047b5fa
 ;

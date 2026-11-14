@@ -11,10 +11,51 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"crt_memory.c___vec_delete_FUN_005b7fa7",
-    "ret":"undefined1",
+    "ret":"void*",
     "vars":{
+      "params":[
+        {
+          "name":"object_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
+        },
+        {
+          "name":"type_info",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"WatcomTypeInfo*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -30,6 +71,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005bc727",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "locals":[
         {
@@ -66,6 +108,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005bf5a7",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true

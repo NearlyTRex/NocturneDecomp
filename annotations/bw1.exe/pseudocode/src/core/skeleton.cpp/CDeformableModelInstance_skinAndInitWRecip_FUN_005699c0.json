@@ -1,0 +1,149 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 32,
+    "complexity_score": 15,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 47
+  },
+  "cross_references": [
+    {
+      "addr": "00569810",
+      "from_addr": "00569882",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_00569810",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005699c0",
+    "address_range": [
+      [
+        "005699c0",
+        "00569a00"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_005699c0",
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_005699c0(CDeformableModelInstance *this_ptr,int lod_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "00564070",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_00564070"
+    },
+    {
+      "addr": "00569eb0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0"
+    },
+    {
+      "addr": "00569890",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_00569890"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00569882",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_00569810",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.083333333333333,
+    "instruction_count": 24,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CBRANCH": 1,
+      "COPY": 17,
+      "INT_ADD": 11,
+      "INT_AND": 8,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 12,
+      "LOAD": 8,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 11
+    },
+    "pcode_op_count": 98
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00547320",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0054e550",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a02f0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0051db70",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      },
+      {
+        "is_param": true,
+        "name": "lod_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

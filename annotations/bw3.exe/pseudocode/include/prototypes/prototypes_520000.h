@@ -8,14 +8,14 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CHero.h"
+#include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CPrye.h"
 #include "types/classes/CPryeMorph.h"
 #include "types/classes/CRifle.h"
 #include "types/classes/CScript.h"
-#include "types/classes/CStranger.h"
 #include "types/classes/CVector3f.h"
-#include "types/classes/CWeapon.h"
 #include "types/enums/EDeathState.h"
+#include "types/structs/SDamageInfo.h"
 #include "types/structs/SPlayerActionState.h"
 
 // =============================================================================
@@ -24,83 +24,83 @@
 
 void core_prye_cpp_FUN_00520d20(int param_1);
 void core_prye_cpp_FUN_00520da0(int param_1);
-undefined4 core_prye_cpp_FUN_00520dec(int param_1);
-undefined4 core_prye_cpp_FUN_00521880(CDemonActor *param_1);
-void core_prye_cpp_FUN_00521f40(CHero *param_1);
-undefined4 core_prye_cpp_FUN_005220d0(CCharacter *param_1);
-undefined4 core_prye_cpp_FUN_00522880(int param_1);
-void core_prye_cpp_FUN_005228be(float *param_1,float param_2,float param_3);
-float * core_prye_cpp_FUN_0052294e(float *param_1,float *param_2);
+undefined4 core_prye_cpp_FUN_00520df0(void);
+undefined4 core_prye_cpp_FUN_00521880(CCharacter *param_1);
+void __cdecl core_prye_cpp_CPrye_archive_FUN_00521f40(CPrye *this_ptr);
+int __cdecl core_prye_cpp_CPrye_renderOpaque_FUN_005220d0(CPrye *this_ptr);
+int __cdecl core_prye_cpp_CPrye_renderTransparent_FUN_00522880(CPrye *this_ptr);
+void core_prye_cpp_FUN_005228c0(void);
+float * core_prye_cpp_FUN_00522950(void);
 void core_prye_cpp_FUN_00522b00(CDemonActor *param_1,int param_2,float param_3);
-void core_prye_cpp_FUN_00523800(CDemonActor *param_1);
-void unkafter_prye_cpp_FUN_00523e50(CDemonActor *param_1,int param_2);
-void unkafter_prye_cpp_FUN_00524170(CDemonActor *param_1,float param_2,int param_3);
-void unkafter_prye_cpp_FUN_005247b0(int param_1,int param_2);
-void unkafter_prye_cpp_FUN_00524800(int param_1);
-void unkafter_prye_cpp_FUN_00524940(CCharacter *param_1,float param_2);
-void unkafter_prye_cpp_FUN_00525930(int param_1);
-void unkafter_prye_cpp_FUN_00525a20(CHero *param_1);
-undefined4 unkafter_prye_cpp_FUN_005260b0(int param_1,undefined4 param_2);
-undefined4 unkafter_prye_cpp_FUN_005262f0(int param_1);
-void unkafter_prye_cpp_FUN_005263c0(int param_1);
-undefined4 unkafter_prye_cpp_FUN_005267c0(int param_1,int param_2,int param_3,float *param_4);
-void unkafter_prye_cpp_FUN_00526cf0(int param_1);
-void unkafter_prye_cpp_FUN_00526dc0(int param_1,undefined4 param_2);
-undefined4 unkafter_prye_cpp_FUN_00526df0(int param_1);
-void unkafter_prye_cpp_FUN_00526e00(int param_1,int param_2);
-int unkafter_prye_cpp_FUN_00526e30(int param_1,int param_2,undefined4 param_3);
-void core_stranger_cpp_FUN_00526f50(int param_1);
-EDeathState __cdecl core_stranger_cpp_CStranger_getDeathState_FUN_00526fc0(CStranger *this_ptr);
-void core_stranger_cpp_FUN_00526ff0(CCharacter *param_1,int param_2,CVector3f *param_3);
-void core_stranger_cpp_FUN_00527050(CCharacter *param_1,CDemonActor *param_2,CVector3f *param_3);
-void unkafter_stranger_cpp_FUN_005270a0(int param_1);
-undefined4 unkafter_stranger_cpp_FUN_00527110(int param_1);
-void unkafter_stranger_cpp_FUN_005271d0(float *param_1,float *param_2);
-void unkafter_stranger_cpp_FUN_00527200(undefined4 param_1,undefined4 param_2,undefined4 param_3);
-CPrye * unkafter_stranger_cpp_CPrye_dtor_FUN_00527300(CPrye *this_ptr,uint flags);
-void core_pryemorp_cpp_staticInit_FUN_00527350(void);
-void core_pryemorp_cpp_factoryFuncPryeMorph_FUN_00527380(void);
-CDemonActorType * core_pryemorp_cpp_CPryeMorph_getActorType_FUN_005273a0(CPryeMorph *this_ptr);
-CPryeMorph * core_pryemorp_cpp_CPryeMorph_ctor_FUN_005273b0(CPryeMorph *this_ptr);
-CPryeMorph * core_pryemorp_cpp_CPryeMorph_dtor_FUN_005274e0(CPryeMorph *this_ptr,uint flags);
-void core_pryemorp_cpp_FUN_005275c0(int param_1);
-void core_pryemorp_cpp_FUN_00527780(CCharacter *param_1,float param_2);
-int core_pryemorp_cpp_FUN_00527970(CDemonActor *param_1);
-bool core_pryemorp_cpp_FUN_00527a60(int param_1);
-void core_pryemorp_cpp_FUN_00527a90(int param_1);
-void core_rifle_cpp_staticInit_FUN_00527bb0(void);
-void core_rifle_cpp_factoryFuncRifle_FUN_00527be0(void);
-CDemonActorType * core_rifle_cpp_CRifle_getActorType_FUN_00527c00(CRifle *this_ptr);
-CRifle * core_rifle_cpp_CRifle_ctor_FUN_00527c10(CRifle *this_ptr);
-void core_rifle_cpp_FUN_00527ca0(int param_1);
-void core_rifle_cpp_FUN_00527d50(CWeapon *param_1,float param_2);
-undefined4 core_rifle_cpp_FUN_00527d70(CDemonActor *param_1);
-void core_rifle_cpp_FUN_005284d0(int param_1);
-undefined4 core_rifle_cpp_FUN_00528610(int param_1);
-void core_rifle_cpp_FUN_00528650(CWeapon *param_1);
-CRifle * core_rifle_cpp_CRifle_dtor_FUN_00528660(CRifle *this_ptr,uint flags);
-void core_script_cpp_staticInit_FUN_005286b0(void);
+void __cdecl core_prye_cpp_CPrye_aimLeftPistol_FUN_00523800(CPrye *this_ptr);
+void __cdecl core_prye_cpp_CPrye_processDamage_FUN_00523e50(CPrye *this_ptr,SDamageInfo *damage_info);
+void __cdecl core_prye_cpp_CPrye_updateArmRecoilBlend_FUN_00524170(CPrye *this_ptr,float delta_time,int is_weapon_active);
+CMatrix3x4f * __stack2_esi core_prye_cpp_CPrye_getCarryObjToBodyXForm_FUN_005247b0(CPrye *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+void core_prye_cpp_FUN_00524800(int param_1);
+void core_prye_cpp_FUN_00524940(CHero *param_1,float param_2);
+void core_prye_cpp_FUN_00525930(int param_1);
+void __cdecl core_prye_cpp_CPrye_doHeroAction_FUN_00525a20(CPrye *this_ptr);
+int __cdecl core_prye_cpp_CPrye_canDoHeroAction_FUN_005260b0(CPrye *this_ptr,int action_type);
+undefined4 core_prye_cpp_FUN_005262f0(int param_1);
+void core_prye_cpp_FUN_005263c0(CPrye *param_1);
+int __cdecl core_prye_cpp_CPrye_canReachPickup_FUN_005267c0(CPrye *this_ptr,CDemonActor *item,int pickup_type,float *best_distance);
+void core_prye_cpp_FUN_00526cf0(int param_1);
+void core_prye_cpp_FUN_00526dc0(int param_1,undefined4 param_2);
+int __cdecl core_prye_cpp_CPrye_isWeaponDrawn_FUN_00526df0(CPrye *this_ptr);
+void __cdecl core_prye_cpp_CPrye_drawWeapon_FUN_00526e00(CPrye *this_ptr,int drawn);
+int __cdecl core_prye_cpp_CPrye_getGrabbed_FUN_00526e30(CPrye *this_ptr,CDemonActor *grabber,int grab_type);
+void __cdecl core_prye_cpp_CPrye_reset_FUN_00526f50(CPrye *this_ptr);
+EDeathState __cdecl core_prye_cpp_CPrye_getDeathState_FUN_00526fc0(CPrye *this_ptr);
+void __cdecl core_prye_cpp_CPrye_dropCarriedObject_FUN_00526ff0(CPrye *this_ptr,int hand_index,CVector3f *drop_direction);
+void __cdecl core_prye_cpp_CPrye_drop_FUN_00527050(CPrye *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
+void __cdecl core_prye_cpp_CPrye_toggleGoggles_FUN_005270a0(CPrye *this_ptr);
+undefined4 core_prye_cpp_FUN_00527110(int param_1);
+void core_prye_cpp_FUN_005271d0(float *param_1,float *param_2);
+void core_prye_cpp_FUN_00527200(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+CPrye * __cdecl core_prye_cpp_CPrye_dtor_FUN_00527300(CPrye *this_ptr,uint flags);
+void __cdecl core_pryemorp_cpp_staticInit_FUN_00527350(void);
+CPryeMorph * __cdecl core_pryemorp_cpp_factoryFuncPryeMorph_FUN_00527380(void);
+CDemonActorType * __cdecl core_pryemorp_cpp_CPryeMorph_getActorType_FUN_005273a0(CPryeMorph *this_ptr);
+CPryeMorph * __cdecl core_pryemorp_cpp_CPryeMorph_ctor_FUN_005273b0(CPryeMorph *this_ptr);
+CPryeMorph * __cdecl core_pryemorp_cpp_CPryeMorph_dtor_FUN_005274e0(CPryeMorph *this_ptr,uint flags);
+void __cdecl core_pryemorp_cpp_CPryeMorph_setup_FUN_005275c0(CPryeMorph *this_ptr);
+void __cdecl core_pryemorp_cpp_CPryeMorph_process_FUN_00527780(CPryeMorph *this_ptr,float delta_time);
+int __cdecl core_pryemorp_cpp_CPryeMorph_renderOpaque_FUN_00527970(CPryeMorph *this_ptr);
+int __cdecl core_pryemorp_cpp_CPryeMorph_shouldIgnoreForTargeting_FUN_00527a60(CPryeMorph *this_ptr);
+void __cdecl core_pryemorp_cpp_CPryeMorph_archive_FUN_00527a90(CPryeMorph *this_ptr);
+void __cdecl core_rifle_cpp_staticInit_FUN_00527bb0(void);
+CRifle * __cdecl core_rifle_cpp_factoryFuncRifle_FUN_00527be0(void);
+CDemonActorType * __cdecl core_rifle_cpp_CRifle_getActorType_FUN_00527c00(CRifle *this_ptr);
+CRifle * __cdecl core_rifle_cpp_CRifle_ctor_FUN_00527c10(CRifle *this_ptr);
+CVector3f * __cdecl core_rifle_cpp_CRifle_getMuzzlePoint_FUN_00527ca0(CRifle *this_ptr,CVector3f *out_point);
+void __cdecl core_rifle_cpp_CRifle_process_FUN_00527d50(CRifle *this_ptr,float delta_time);
+int __cdecl core_rifle_cpp_CRifle_fire_FUN_00527d70(CRifle *this_ptr);
+void __cdecl core_rifle_cpp_CRifle_onFired_FUN_005284d0(CRifle *this_ptr);
+float __cdecl core_rifle_cpp_CRifle_getDamage_FUN_00528610(CRifle *this_ptr);
+void __cdecl core_rifle_cpp_CRifle_renderAimBeam_FUN_00528650(CRifle *this_ptr);
+CRifle * __cdecl core_rifle_cpp_CRifle_dtor_FUN_00528660(CRifle *this_ptr,uint flags);
+void __cdecl core_script_cpp_staticInit_FUN_005286b0(void);
 int __cdecl core_script_cpp_validateActorVariableName_FUN_005286f0(char *variable_name);
 void __cdecl core_script_cpp_trimLine_FUN_00528790(char *input_line,char *output_buffer);
 void __cdecl core_script_cpp_trimString_FUN_00528830(char *str);
 char * __cdecl core_script_cpp_skipWhitespace_FUN_005288a0(char *str);
 char * __cdecl core_script_cpp_parseArgument_FUN_005288c0(char **cursor,char *out_buffer,int max_length);
 char * __cdecl core_script_cpp_parseConditionExpr_FUN_00528970(char **cursor,char *out_buffer);
-CDemonActor * __cdecl core_script_cpp_getActor_FUN_005289b0(char *param_1,undefined4 param_2,undefined4 param_3);
-int * __cdecl core_script_cpp_FUN_00528b30(SPlayerActionState *action_state,char *action_name);
-int __cdecl core_script_cpp_FUN_00528c20(CCharacter *character,char *part_names,int *part_mask);
+CDemonActor * __cdecl core_script_cpp_getActor_FUN_005289b0(char *actor_specifier,uint expected_class_hash,CDemonActorType *expected_class);
+int * __cdecl core_script_cpp_getActionState_FUN_00528b30(SPlayerActionState *action_state,char *action_name);
+int __cdecl core_script_cpp_parseBodyPartMask_FUN_00528c20(CCharacter *character,char *part_names,int *part_mask);
 CScript * __cdecl core_script_cpp_CScript_ctor_FUN_00528ce0(CScript *this_ptr);
 CScript * __cdecl core_script_cpp_CScript_dtor_FUN_00528d20(CScript *this_ptr,uint flags);
-void core_script_cpp_FUN_00528d50(CScript *param_1);
-void __cdecl core_script_cpp_FUN_00528da0(CScript *this_ptr);
-void __cdecl core_script_cpp_FUN_00528e00(CScript *this_ptr);
+void __cdecl core_script_cpp_CScript_clear_FUN_00528d50(CScript *this_ptr);
+void __cdecl core_script_cpp_CScript_freeParsedLines_FUN_00528da0(CScript *this_ptr);
+void __cdecl core_script_cpp_CScript_process_FUN_00528e00(CScript *this_ptr);
 int __cdecl core_script_cpp_CScript_getLetterboxHeight_FUN_00528f60(CScript *this_ptr);
-void __cdecl core_script_cpp_FUN_00528fc0(CScript *this_ptr);
-void __cdecl core_script_cpp_FUN_00529210(CScript *this_ptr,int left,int top,int right,int bottom);
+void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_00528fc0(CScript *this_ptr);
+void __cdecl core_script_cpp_CScript_renderEditor_FUN_00529210(CScript *this_ptr,int left,int top,int right,int bottom);
 undefined4 core_script_cpp_FUN_00529410(CScript *param_1,char *param_2);
-void __cdecl core_script_cpp_FUN_005295e0(CScript *this_ptr);
+void __cdecl core_script_cpp_CScript_buildParsedLines_FUN_005295e0(CScript *this_ptr);
 undefined * core_script_cpp_FUN_00529710(CScript *param_1,int *param_2,int param_3);
-void __cdecl core_script_cpp_FUN_005297a0(CScript *this_ptr);
-void __cdecl core_script_cpp_FUN_00529920(CScript *this_ptr);
+void __cdecl core_script_cpp_CScript_initRuntime_FUN_005297a0(CScript *this_ptr);
+void __cdecl core_script_cpp_CScript_executeInitSection_FUN_00529920(CScript *this_ptr);
 int __cdecl core_script_cpp_CScript_step_FUN_00529a70(CScript *this_ptr,float *time_remaining);
 

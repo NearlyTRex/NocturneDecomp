@@ -11,7 +11,7 @@
 ; int              Stack[0x14]:4   height
 ;
 ; XREF[1]:
-;   cockpit_drawsurf.cpp_FUN_004673b0 at 004673c2
+;   cockpit_drawsurf.cpp_CDrawSurface_drawSurfaceBorder_FUN_004673b0 at 004673c2
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_00466f90

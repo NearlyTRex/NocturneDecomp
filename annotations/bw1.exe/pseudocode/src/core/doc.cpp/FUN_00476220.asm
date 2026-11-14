@@ -8,7 +8,7 @@
 ;   undefined4 s_flashlit_wav_5_005da5f3+1
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CGame g_CGameInstance
-;   undefined4 g_CGameInstance.field612_0x264
+;   undefined4 g_CGameInstance.flashlight_active
 ;
 ; *****************************************************************************
 
@@ -22,14 +22,14 @@ section .text
     JNZ 0x00476240                      ; 00476230
         ;   XREF to: 00476240 (CONDITIONAL_JUMP)  ; LAB_00476240
     MOV EAX,[0x0061d95c]                ; 00476232 | g_CGamePtr | g_CGameInstance
-    CMP dword ptr [EAX + 0x264],0x0     ; 00476237 | g_CGameInstance.field612_0x264
+    CMP dword ptr [EAX + 0x264],0x0     ; 00476237 | g_CGameInstance.flashlight_active
     JNZ 0x00476241                      ; 0047623e
         ;   XREF to: 00476241 (CONDITIONAL_JUMP)  ; LAB_00476241
     RET                                 ; 00476240
         ;   Label: LAB_00476240
     PUSH 0x5da5f4                       ; 00476241 | s_flashlit_wav_5_005da5f3+1
         ;   Label: LAB_00476241
-    MOV dword ptr [EAX + 0x264],0x0     ; 00476246 | g_CGameInstance.field612_0x264
+    MOV dword ptr [EAX + 0x264],0x0     ; 00476246 | g_CGameInstance.flashlight_active
     PUSH EDX                            ; 00476250
     MOV EAX,dword ptr [EDX + 0x154]     ; 00476251
     CALL dword ptr [EAX + 0x2c]         ; 00476257

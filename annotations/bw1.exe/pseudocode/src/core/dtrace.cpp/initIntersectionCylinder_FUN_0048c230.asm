@@ -1,8 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dtrace_cpp_initIntersectionCylinder_FUN_0048c230(undefined4 *param_1,float param_2,float param_3,float param_4,float param_5,float param_6,undefined4 param_7,undefined4 param_8)
+; void __cdecl core_dtrace_cpp_initIntersectionCylinder_FUN_0048c230(SIntersectXZCylinder *this_ptr,float start_x,float start_z,float dir_x,float dir_z,float radius,float bottom_y,float top_y)
 ;
+; Parameters:
+; SIntersectXZCylinder * Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   start_x
+; float            Stack[0xc]:4   start_z
+; float            Stack[0x10]:4   dir_x
+; float            Stack[0x14]:4   dir_z
+; float            Stack[0x18]:4   radius
+; float            Stack[0x1c]:4   bottom_y
+; float            Stack[0x20]:4   top_y
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ;

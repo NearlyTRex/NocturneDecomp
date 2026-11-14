@@ -9,8 +9,8 @@
 ;   TerminatedCString s_Too_many_PODs_already_mo_005ed9e9
 ;
 ; Called Functions:
+;   crt_memory.c_operator_new_FUN_005c0f32
 ;   crt_unknown.c_FUN_005c0344
-;   crt_unknown.c_FUN_005c0f32
 ;   engine_pod.cpp_CPodFile_ctor_FUN_0053b1a0
 ;   engine_pod.cpp_CPodFile_dtor_FUN_0053b210
 ;   engine_pod.cpp_FUN_0053b250
@@ -28,8 +28,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x14]      ; 0053c654
     MOV EDI,dword ptr [ESP + 0x1c]      ; 0053c658
     PUSH 0x42c                          ; 0053c65c
-    CALL crt_unknown.c_FUN_005c0f32     ; 0053c661
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
+    CALL crt_memory.c_operator_new_FUN_005c0f32 ; 0053c661
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
     ADD ESP,0x4                         ; 0053c666
     TEST EAX,EAX                        ; 0053c669
     JNZ 0x0053c6a4                      ; 0053c66b

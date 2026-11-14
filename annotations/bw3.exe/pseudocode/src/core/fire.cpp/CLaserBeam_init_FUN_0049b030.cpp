@@ -10,27 +10,26 @@ void __cdecl core_fire_cpp_CLaserBeam_init_FUN_0049b030(CLaserBeam *this_ptr,CVe
 
 {
   if (this_ptr != (CLaserBeam *)origin) {
-    *(uint *)this_ptr = *(uint *)origin;
-    *(uint *)&this_ptr->field_0x4 = *(uint *)&origin->field_0x4;
-    *(uint *)&this_ptr->field_0x8 = *(uint *)&origin->field_0x8;
+    (this_ptr->origin).x = origin->x;
+    (this_ptr->origin).y = origin->y;
+    (this_ptr->origin).z = origin->z;
   }
-  if ((CVector3f *)&this_ptr->field_0xc != hit_position) {
-    *(uint *)&this_ptr->field_0xc = *(uint *)hit_position;
-    *(uint *)&this_ptr->field_0x10 = *(uint *)&hit_position->field_0x4;
-    *(uint *)&this_ptr->field_0x14 = *(uint *)&hit_position->field_0x8;
+  if (&this_ptr->hit_position != hit_position) {
+    (this_ptr->hit_position).x = hit_position->x;
+    (this_ptr->hit_position).y = hit_position->y;
+    (this_ptr->hit_position).z = hit_position->z;
   }
-  *(float *)&this_ptr->field_0x18 = beam_width;
-  *(float *)&this_ptr->field_0x1c = reticle_intensity;
-  if ((0.0 < *(float *)&this_ptr->field_0x1c) &&
-     ((CVector3f *)&this_ptr->field_0x20 != reflection_normal)) {
-    *(uint *)&this_ptr->field_0x20 = *(uint *)reflection_normal;
-    *(uint *)&this_ptr->field_0x24 = *(uint *)&reflection_normal->field_0x4;
-    *(uint *)&this_ptr->field_0x28 = *(uint *)&reflection_normal->field_0x8;
+  this_ptr->beam_width = beam_width;
+  this_ptr->reticle_intensity = reticle_intensity;
+  if ((0.0 < this_ptr->reticle_intensity) && (&this_ptr->reflection_normal != reflection_normal)) {
+    (this_ptr->reflection_normal).x = reflection_normal->x;
+    (this_ptr->reflection_normal).y = reflection_normal->y;
+    (this_ptr->reflection_normal).z = reflection_normal->z;
   }
-  *(int *)&this_ptr->field_0x2c = red << 7;
-  *(int *)&this_ptr->field_0x30 = green << 7;
-  *(int *)&this_ptr->field_0x34 = blue << 7;
-  *(float *)&this_ptr->field_0x38 = halo_spread;
-  *(float *)&this_ptr->field_0x3c = cone_angle;
+  (this_ptr->color).r = red << 7;
+  (this_ptr->color).g = green << 7;
+  (this_ptr->color).b = blue << 7;
+  this_ptr->halo_spread = halo_spread;
+  this_ptr->cone_angle = cone_angle;
   return;
 }

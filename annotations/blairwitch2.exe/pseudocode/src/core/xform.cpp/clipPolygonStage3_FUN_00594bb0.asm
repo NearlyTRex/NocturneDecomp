@@ -124,7 +124,7 @@ section .text
     PUSH EDX                            ; 00594c84
     PUSH EBP                            ; 00594c85
     CALL core_xform.cpp_clipInterpolateTopPlane_FUN_00594730 ; 00594c86
-        ;   XREF to: 00594730 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_clipInterpolateTopPlane_FUN_00594730()
+        ;   XREF to: 00594730 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clipInterpolateTopPlane_FUN_00594730(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
     MOV ESI,dword ptr [0x02665a68]      ; 00594c8b | DAT_02665a68
     INC ESI                             ; 00594c91
     ADD ESP,0xc                         ; 00594c92
@@ -172,7 +172,7 @@ section .text
     PUSH EBP                            ; 00594cf2
     PUSH EDX                            ; 00594cf3
     CALL core_xform.cpp_clipInterpolateTopPlane_FUN_00594730 ; 00594cf4
-        ;   XREF to: 00594730 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_clipInterpolateTopPlane_FUN_00594730()
+        ;   XREF to: 00594730 (UNCONDITIONAL_CALL)  ; void core_xform.cpp_clipInterpolateTopPlane_FUN_00594730(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)
     MOV EDI,dword ptr [0x02665a68]      ; 00594cf9 | DAT_02665a68
     INC EDI                             ; 00594cff
     ADD ESP,0xc                         ; 00594d00

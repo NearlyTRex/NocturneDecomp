@@ -17,11 +17,12 @@ int __cdecl core_npc_cpp_CNPC_setRandomMotionVariant_FUN_00531cc0(CNPC *this_ptr
   char local_d8 [200];
   
   iVar3 = 0;
-  this_ptr_00 = core_motion_cpp_FUN_00524a00((CMotionController *)this_ptr);
+  this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_00524a00
+                          ((CMotionController *)this_ptr);
   pcVar4 = local_d8;
   while( true ) {
-    FUN_005bfb40(local_d8,"%s_%d",motion_name,iVar3 + 1);
-    iVar2 = core_motion_cpp_FUN_00524150(this_ptr_00,local_d8,0);
+    _sprintf(local_d8,"%s_%d");
+    iVar2 = core_motion_cpp_CMotionList_findStateIndex_FUN_00524150(this_ptr_00,local_d8,0);
     if (iVar2 < 0) break;
     iVar3 = iVar3 + 1;
   }
@@ -37,10 +38,10 @@ int __cdecl core_npc_cpp_CNPC_setRandomMotionVariant_FUN_00531cc0(CNPC *this_ptr
     } while (cVar1 != '\0');
   }
   else {
-    iVar3 = core_actor_cpp_FUN_0040cc60(1,iVar3);
-    FUN_005bfb40(local_d8,"%s_%d",motion_name,iVar3);
+    core_actor_cpp_getRandomInt_FUN_0040cc60(1,iVar3);
+    _sprintf(local_d8,"%s_%d");
   }
-  iVar3 = core_motion_cpp_FUN_00524150(this_ptr_00,local_d8,0);
+  iVar3 = core_motion_cpp_CMotionList_findStateIndex_FUN_00524150(this_ptr_00,local_d8,0);
   if (-1 < iVar3) {
     core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
               ((CMotionController *)this_ptr,iVar3,1);

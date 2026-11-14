@@ -11,45 +11,45 @@ ushort * __cdecl core_dlight_cpp_CDemonLight_projectLightAndMarkVisibility_FUN_0
 {
   uint uVar1;
   int iVar2;
-  byte *pbVar3;
-  uint uVar4;
-  uint uVar5;
+  uint uVar3;
+  int iVar4;
+  int iVar5;
   int iVar6;
-  int iVar7;
-  int iVar8;
   
-  uVar5 = 0;
+  uVar3 = 0;
   uVar1 = 0;
   if ((x_round_flag & 1) != 0) {
     uVar1 = 0x4000;
-    uVar5 = 0x4000;
+    uVar3 = 0x4000;
   }
   if ((y_round_flag & 1) != 0) {
-    uVar5 = uVar5 | 0x8000;
+    uVar3 = uVar3 | 0x8000;
     uVar1 = uVar1 | 0x8000;
   }
-  if (0 < *(int *)(projected_coord + 8)) {
-    uVar4 = (int)(uVar1 + *(int *)projected_coord) >> 0x10;
-    iVar8 = (int)(uVar5 + *(int *)(projected_coord + 4)) >> 0x10;
-    if (*(int *)&this_ptr->field_0x1cb8 == 0) {
-      if ((((-1 < (int)uVar4) && ((int)uVar4 < *(int *)&this_ptr->field_0x1cc0)) && (-1 < iVar8)) &&
-         (iVar8 < *(int *)&this_ptr->field_0x1cc4)) goto LAB_004630a3;
+  if (0 < projected_coord->z) {
+    iVar5 = uVar1 + projected_coord->x;
+    uVar1 = iVar5 >> 0x10;
+    iVar6 = (int)(uVar3 + projected_coord->y) >> 0x10;
+    if (this_ptr->shadow_bounds_mode == SHADOW_BOUNDS_RECTANGULAR) {
+      if ((((-1 < (int)uVar1) && ((int)uVar1 < this_ptr->shadow_map_width)) && (-1 < iVar6)) &&
+         (iVar6 < this_ptr->shadow_map_height)) goto LAB_004630a3;
     }
     else {
-      iVar2 = *(int *)&this_ptr->field_0x1cc0 / 2;
-      if ((int)((iVar8 - iVar2) * (iVar8 - iVar2) + (uVar4 - iVar2) * (uVar4 - iVar2)) <=
+      iVar2 = this_ptr->shadow_map_width / 2;
+      if ((int)((iVar6 - iVar2) * (iVar6 - iVar2) + (uVar1 - iVar2) * (uVar1 - iVar2)) <=
           iVar2 * iVar2) {
 LAB_004630a3:
-        iVar2 = *(int *)&this_ptr->field_0x1cc0 * iVar8;
-        iVar6 = iVar2 >> 0x1f;
-        iVar7 = (int)(uVar1 + *(int *)projected_coord) >> 0x1f;
-        pbVar3 = (byte *)(*(int *)&this_ptr->field_0x2fa0 +
-                         ((int)((iVar2 + iVar6 * -8) - (uint)(iVar6 << 2 < 0)) >> 3) +
-                         ((int)((uVar4 + iVar7 * -8) - (uint)(iVar7 << 2 < 0)) >> 3));
-        *pbVar3 = *pbVar3 | (&DAT_006122a0)[uVar4 & 7];
-        return (ushort *)
-               (*(int *)&this_ptr->field_0x2f94 +
-               (uVar4 + iVar8 * *(int *)&this_ptr->field_0x1cc0) * 2);
+        iVar2 = this_ptr->shadow_map_width * iVar6;
+        iVar4 = iVar2 >> 0x1f;
+        iVar5 = iVar5 >> 0x1f;
+        this_ptr->lightmap_visibility_bits
+        [((int)((iVar2 + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3) +
+         ((int)((uVar1 + iVar5 * -8) - (uint)(iVar5 << 2 < 0)) >> 3)] =
+             this_ptr->lightmap_visibility_bits
+             [((int)((iVar2 + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3) +
+              ((int)((uVar1 + iVar5 * -8) - (uint)(iVar5 << 2 < 0)) >> 3)] |
+             (&DAT_006122a0)[uVar1 & 7];
+        return this_ptr->shadow_depth_buffer + uVar1 + iVar6 * this_ptr->shadow_map_width;
       }
     }
   }

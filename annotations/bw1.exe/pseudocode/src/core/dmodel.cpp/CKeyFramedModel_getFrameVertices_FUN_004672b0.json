@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 56,
+    "complexity_score": 10,
     "cross_reference_count": 6,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 11,
-    "suspect_count": 4,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 36
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 35
   },
   "cross_references": [
     {
@@ -30,7 +28,7 @@
     {
       "addr": "004c5c60",
       "from_addr": "004c5cd9",
-      "name": "core_frankgen.cpp_FUN_004c5c60",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004c5c60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -94,7 +92,7 @@
       {
         "call_addr": "004c5cd9",
         "call_type": "direct",
-        "caller": "core_frankgen.cpp_FUN_004c5c60",
+        "caller": "core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004c5c60",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -169,6 +167,32 @@
     },
     "pcode_op_count": 85
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0044e6e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00460f60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00477890",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00453080",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -192,38 +216,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x100",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x100 <= frame_index) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x100",
-      "severity": "mild",
-      "text": "frame_index = *(int *)&this_ptr->field_0x100 + -1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x10c",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x10c + *(int *)&this_ptr->field_0x104 * frame_index * 0xc);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x104",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x10c + *(int *)&this_ptr->field_0x104 * frame_index * 0xc);",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

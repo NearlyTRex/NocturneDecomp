@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_fire.cpp_CFireEffect_renderDecals_FUN_0049cb50 at 0049cb5d
-;   core_fire.cpp_FUN_0049c780 at 0049c8b2
+;   core_fire.cpp_CFireEffect_render_FUN_0049c780 at 0049c8b2
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0060b280

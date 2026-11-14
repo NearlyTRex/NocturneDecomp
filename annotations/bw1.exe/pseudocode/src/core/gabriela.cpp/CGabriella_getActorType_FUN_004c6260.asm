@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_gabriela_cpp_CGabriella_getActorType_FUN_004c6260(CGabriella *this_ptr)
+; CDemonActorType * __cdecl core_gabriela_cpp_CGabriella_getActorType_FUN_004c6260(CGabriella *this_ptr)
 ;
 ; Parameters:
 ; CGabriella *     Stack[0x4]:4   this_ptr

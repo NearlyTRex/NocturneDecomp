@@ -1,0 +1,410 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 305,
+    "complexity_score": 172,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 28,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 77,
+    "suspect_count": 8,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 382
+  },
+  "cross_references": [
+    {
+      "addr": "00532b80",
+      "from_addr": "005330a1",
+      "name": "core_set.cpp_FUN_00532b80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00541b70",
+    "address_range": [
+      [
+        "00541b70",
+        "00541ef0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setutil.cpp_C3DSCamera_load_FUN_00541b70",
+    "signature": "void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_00541b70(C3DSCamera *this_ptr,_FILE *file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "00450c00",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_loadCameraFog_FUN_00450c00"
+    },
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "00541b00",
+      "is_variadic": false,
+      "name": "core_setutil.cpp_C3DSCamera_reset_FUN_00541b00"
+    },
+    {
+      "addr": "005a3f00",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fgets_FUN_005a3f00"
+    },
+    {
+      "addr": "005a3230",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fscanf_FUN_005a3230"
+    },
+    {
+      "addr": "005a5b9c",
+      "is_variadic": false,
+      "name": "crt_stdio.c_sscanf_FUN_005a5b9c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d0d2a",
+      "name": "DAT_005d0d2a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d0d2e",
+      "name": "s_f_f_f_005d0d2e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0d38",
+      "name": "s_f_f_f_005d0d38",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0d42",
+      "name": "DAT_005d0d42",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d0d46",
+      "name": "s_f_f_f_005d0d46",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0d50",
+      "name": "s_f_f_f_005d0d50",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0d5a",
+      "name": "s_f_f_f_005d0d5a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0d64",
+      "name": "DAT_005d0d64",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d0d68",
+      "name": "s_f_f_f_005d0d68",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0d72",
+      "name": "s_f_f_f_005d0d72",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0d7c",
+      "name": "DAT_005d0d7c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d0d80",
+      "name": "DAT_005d0d80",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d0d84",
+      "name": "s_core_setutil_cpp_005d0d84",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0d98",
+      "name": "s_Panning_cameras_not_supp_005d0d98",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00603b28",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01ed78c8"
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ed78c8",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "02032508",
+      "name": "g_CDemonSetInstance.scene_fog.color_index.r",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0203250c",
+      "name": "g_CDemonSetInstance.scene_fog.color_index.g",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02032510",
+      "name": "g_CDemonSetInstance.scene_fog.color_index.b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02032514",
+      "name": "g_CDemonSetInstance.scene_fog.scroll.x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02032518",
+      "name": "g_CDemonSetInstance.scene_fog.scroll.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0203251c",
+      "name": "g_CDemonSetInstance.scene_fog.scroll.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02032520",
+      "name": "g_CDemonSetInstance.scene_fog.height_threshold",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02032524",
+      "name": "g_CDemonSetInstance.scene_fog.density_multiplier",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02032528",
+      "name": "g_CDemonSetInstance.scene_fog.temperature",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02032588",
+      "name": "g_CDemonSetInstance.set_file_version",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005330a1",
+        "call_type": "direct",
+        "caller": "core_set.cpp_FUN_00532b80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.7137254901960786,
+    "instruction_count": 255,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 2,
+      "CALL": 24,
+      "CBRANCH": 11,
+      "COPY": 196,
+      "INT_ADD": 105,
+      "INT_AND": 84,
+      "INT_CARRY": 29,
+      "INT_EQUAL": 83,
+      "INT_LESS": 10,
+      "INT_NOTEQUAL": 6,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 29,
+      "INT_SLESS": 41,
+      "INT_SUB": 120,
+      "LOAD": 32,
+      "POPCOUNT": 41,
+      "RETURN": 2,
+      "STORE": 121
+    },
+    "pcode_op_count": 947
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0053a8e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0055c1b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00585420",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "005144e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9256
+    }
+  },
+  "stack_frame": {
+    "frame_size": 284,
+    "local_size": 276,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_110",
+        "offset": -272,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "C3DSCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_005d0d2a",
+      "severity": "mild",
+      "text": "sscanf(local_110,&DAT_005d0d2a);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_005d0d42",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005d0d42);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 52,
+      "match": "DAT_005d0d64",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005d0d64);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 65,
+      "match": "DAT_005d0d7c",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005d0d7c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 69,
+      "match": "DAT_005d0d80",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005d0d80);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 43,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar3->x = pCVar2->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 47,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->fog).height_threshold = (pCVar1->scene_fog).height_threshold;",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

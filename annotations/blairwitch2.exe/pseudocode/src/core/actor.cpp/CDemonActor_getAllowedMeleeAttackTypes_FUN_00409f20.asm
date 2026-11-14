@@ -7,7 +7,7 @@
 ; CDemonActor *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_bodypart.cpp_FUN_00417ab0 at 00417ac1
+;   core_bodypart.cpp_CBodyPart_getAllowedMeleeAttackTypes_FUN_00417ab0 at 00417ac1
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ca66e

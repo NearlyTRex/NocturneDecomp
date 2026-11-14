@@ -2,23 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 189,
-    "complexity_score": 329,
+    "complexity_score": 295,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 84,
-    "suspect_count": 21,
+    "pseudocode_lines": 85,
+    "suspect_count": 18,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "unrolled_strcat",
       "unrolled_strcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 273
+    "total_lines": 274
   },
   "cross_references": [
     {
@@ -42,24 +41,24 @@
   },
   "function_calls": [
     {
+      "addr": "00521ec0",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_buildParsedLines_FUN_00521ec0"
+    },
+    {
+      "addr": "00521630",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_clear_FUN_00521630"
+    },
+    {
       "addr": "00529c10",
       "is_variadic": false,
       "name": "core_script.cpp_CScript_dbLoad_FUN_00529c10"
     },
     {
-      "addr": "00521630",
-      "is_variadic": false,
-      "name": "core_script.cpp_FUN_00521630"
-    },
-    {
-      "addr": "00521ec0",
-      "is_variadic": false,
-      "name": "core_script.cpp_FUN_00521ec0"
-    },
-    {
       "addr": "00522080",
       "is_variadic": false,
-      "name": "core_script.cpp_FUN_00522080"
+      "name": "core_script.cpp_CScript_initRuntime_FUN_00522080"
     },
     {
       "addr": "005b89c0",
@@ -92,14 +91,14 @@
       "name": "engine_dosio.cpp_getFileSize_FUN_00460aa0"
     },
     {
+      "addr": "0047be40",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0047be40"
+    },
+    {
       "addr": "00480e70",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_add_FUN_00480e70"
-    },
-    {
-      "addr": "0047be40",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0047be40"
     },
     {
       "addr": "004858f0",
@@ -217,6 +216,20 @@
     },
     "pcode_op_count": 708
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00543e00",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00529410",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 796,
     "local_size": 796,
@@ -273,15 +286,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_script_cpp_FUN_00521630(param_1);",
+      "text": "core_script_cpp_CScript_clear_FUN_00521630(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 23,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar3 = engine_dosio_cpp_getFileSize_FUN_00460aa0(\"world\",param_2);",
@@ -289,7 +302,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 25,
       "match": "param_2",
       "severity": "mild",
       "text": "splitpath(param_2,(char *)0x0,(char *)0x0,local_118,(char *)0x0);",
@@ -297,7 +310,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 26,
       "match": "DAT_005e2ed4",
       "severity": "mild",
       "text": "pcVar8 = &DAT_005e2ed4;",
@@ -305,7 +318,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
       "text": "core_script_cpp_CScript_dbLoad_FUN_00529c10(param_1,local_118);",
@@ -313,74 +326,42 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 48,
       "match": "param_2",
       "severity": "mild",
-      "text": "p_Var4 = engine_dosio_cpp_FUN_00460c70(\"world\",param_2,&DAT_005e2ed9);",
+      "text": "file_handle = engine_dosio_cpp_FUN_00460c70(\"world\",param_2,&DAT_005e2ed9);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 48,
       "match": "DAT_005e2ed9",
       "severity": "mild",
-      "text": "p_Var4 = engine_dosio_cpp_FUN_00460c70(\"world\",param_2,&DAT_005e2ed9);",
+      "text": "file_handle = engine_dosio_cpp_FUN_00460c70(\"world\",param_2,&DAT_005e2ed9);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 51,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_14 = (CStrList *)&param_1->field_0x34;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 50,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "local_14 = (CStrList *)&param_1->field_0x34;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 63,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = shape_edittool_cpp_FUN_004858f0((CStrList *)&param_1->field_0x34);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 63,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "iVar3 = shape_edittool_cpp_FUN_004858f0((CStrList *)&param_1->field_0x34);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(g_CEditorToolsPtr,\"Probable non-text file %s detected near line %d.  Cannot use script.\",param_2,iVar3 + 1);",
+      "text": "local_14 = &param_1->script_text;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 64,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_script_cpp_FUN_00521630(param_1);",
+      "text": "shape_edittool_cpp_FUN_004858f0(&param_1->script_text);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 67,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_script_cpp_FUN_00521ec0(param_1);",
+      "text": "core_script_cpp_CScript_clear_FUN_00521630(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -388,12 +369,20 @@
       "line": 80,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_script_cpp_FUN_00522080(param_1);",
+      "text": "core_script_cpp_CScript_buildParsedLines_FUN_00521ec0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 81,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_script_cpp_CScript_initRuntime_FUN_00522080(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 37,
+      "line": 38,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -401,7 +390,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 28,
+      "line": 29,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -409,7 +398,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 28,
+      "line": 29,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",

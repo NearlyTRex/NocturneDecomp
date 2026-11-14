@@ -2,22 +2,22 @@
 // Address: 00403e70
 // Address Range: [[00403e70, 00403f66]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_3d_c_renderPolygonTexturedNormalizedUVLitOp14_FUN_00403e70(int param_1)
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedNormalizedUVLitOp14_FUN_00403e70(SMRGLHeaderPrimitive *prim)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int __cdecl engine_3d_c_renderPolygonTexturedNormalizedUVLitOp14_FUN_00403e70(int param_1)
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedNormalizedUVLitOp14_FUN_00403e70(SMRGLHeaderPrimitive *prim)
 
 {
   int iVar1;
   int iVar2;
-  int *piVar3;
+  SMRGLHeaderPrimitive *pSVar3;
   int iVar4;
   int vertex_count;
   
-  iVar2 = engine_3d_c_isVisiblePlane_FUN_00403920(param_1 + 8);
+  iVar2 = engine_3d_c_isVisiblePlane_FUN_00403920(&prim->surface_normal);
   if (iVar2 != 0) {
     if (_DAT_01c6e2a0 == 0) {
       if (DAT_005fba20 == 0x20) {
@@ -35,20 +35,20 @@ int __cdecl engine_3d_c_renderPolygonTexturedNormalizedUVLitOp14_FUN_00403e70(in
     }
     _DAT_01c6e2b4 = 1;
     _DAT_01c6e2b8 = 2;
-    engine_3d_c_calculatePolygonLighting_FUN_004039d0(param_1);
+    engine_3d_c_calculatePolygonLighting_FUN_004039d0(prim);
     vertex_count = 0;
     iVar2 = 0;
-    piVar3 = (int *)(param_1 + 0x18);
-    for (iVar4 = 0; iVar4 < *(int *)(param_1 + 4) * 3; iVar4 = iVar4 + 3) {
-      iVar1 = *piVar3;
+    pSVar3 = prim + 1;
+    for (iVar4 = 0; iVar4 < (prim->base).count * 3; iVar4 = iVar4 + 3) {
+      iVar1 = (pSVar3->base).type;
       *(int *)((int)&DAT_00730418 + iVar2) = iVar1;
-      (&DAT_0060b02c)[iVar1 * 0xc] = piVar3[1];
+      (&DAT_0060b02c)[iVar1 * 0xc] = (pSVar3->base).count;
       iVar2 = iVar2 + 4;
       vertex_count = vertex_count + 1;
-      *(int *)(&DAT_0060b030 + *piVar3 * 0x30) = piVar3[2];
-      piVar3 = piVar3 + 3;
+      *(UIntegerFloat *)(&DAT_0060b030 + (pSVar3->base).type * 0x30) = (pSVar3->surface_normal).A;
+      pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
     }
     engine_clipper_c_clipAndRasterize_FUN_0043a840(vertex_count,&DAT_00730418);
   }
-  return param_1 + 0x18 + *(int *)(param_1 + 4) * 0xc;
+  return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
 }

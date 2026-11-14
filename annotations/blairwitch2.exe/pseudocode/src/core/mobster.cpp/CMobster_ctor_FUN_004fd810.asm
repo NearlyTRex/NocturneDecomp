@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_mobster.cpp_factoryFuncMobster_FUN_004fd7e0 at 004fd7f3
-;   core_vehicle.cpp_FUN_00583f20 at 005845c2
+;   core_vehicle.cpp_CVehicle_process_FUN_00583f20 at 005845c2
 ;
 ; Referenced Globals:
 ;   undefined4 s_mobster1_dfm_005dec0c+1
@@ -18,10 +18,10 @@
 ;   undefined1 DAT_005dec1d
 ;   undefined4 DAT_005fa230
 ;   undefined4 DAT_005fa234
-;   undefined4 g_CMobsterVTable
+;   CMobster_full_vtable g_CMobsterVTable
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cfc0
+;   core_actor.cpp_getRandomInt_FUN_0040cfc0
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00487db0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;
@@ -55,8 +55,8 @@ section .text
     FSTP float ptr [EBX + 0x3438]       ; 004fd863
     PUSH 0x0                            ; 004fd869
     FSTP float ptr [EBX + 0x343c]       ; 004fd86b
-    CALL core_actor.cpp_FUN_0040cfc0    ; 004fd871
-        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cfc0(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cfc0 ; 004fd871
+        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cfc0(int min_value, int max_value)
     MOV dword ptr [EBX + 0x10afc],0x0   ; 004fd876
     MOV dword ptr [EBX + 0x10b00],0x0   ; 004fd880
     MOV dword ptr [EBX + 0x10b04],0x0   ; 004fd88a
@@ -67,8 +67,8 @@ section .text
     MOV dword ptr [EBX + 0x10aec],0x42200000 ; 004fd8ad
     PUSH 0x62                           ; 004fd8b7
     MOV dword ptr [EBX + 0x10af8],EAX   ; 004fd8b9
-    CALL core_actor.cpp_FUN_0040cfc0    ; 004fd8bf
-        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cfc0(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cfc0 ; 004fd8bf
+        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cfc0(int min_value, int max_value)
     MOV dword ptr [EBX + 0x10b10],0x0   ; 004fd8c4
     MOV dword ptr [EBX + 0x10b08],0x0   ; 004fd8ce
     MOV dword ptr [EBX + 0x10b14],0x0   ; 004fd8d8

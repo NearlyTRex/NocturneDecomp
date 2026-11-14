@@ -17,15 +17,14 @@ void __cdecl engine_3d_c_flushPremiumRenderBuffer_FUN_004070e0(void)
   int iVar4;
   byte *puVar5;
   int *piVar6;
+  int *unaff_EBP;
   int *piVar7;
   int *piVar8;
   byte bVar9;
-  int iStack_10;
-  int iStack_c;
   
   bVar9 = 0;
   if (DAT_0070caf8 != 0) {
-    if (0 < DAT_0070cafc) {
+    if (0 < (int)DAT_0070cafc) {
       puVar5 = &DAT_0070cb00;
       iVar3 = DAT_0070cafc * 4;
       iVar2 = 0;
@@ -35,7 +34,8 @@ void __cdecl engine_3d_c_flushPremiumRenderBuffer_FUN_004070e0(void)
         puVar5 = puVar5 + 0x118;
       } while (iVar2 < iVar3);
     }
-    _qsort(0x7b7960,DAT_0070cafc,4,&UNK_004070a0);
+    _qsort
+              ((void *)0x7b7960,DAT_0070cafc,4,(QSORT_COMPARATOR)&UNK_004070a0);
     if (_DAT_01c38b40 == 0) {
       if (DAT_006141c0 == 0x20) {
         _DAT_01c35e6c = engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_0055d0b3;
@@ -51,15 +51,13 @@ void __cdecl engine_3d_c_flushPremiumRenderBuffer_FUN_004070e0(void)
       _DAT_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0055bb93;
     }
     _DAT_01c38b58 = 1;
-    iStack_c = 0;
     _DAT_01c38b54 = 0x1e7;
-    if (0 < DAT_0070cafc) {
-      iStack_10 = 0;
+    if (0 < (int)DAT_0070cafc) {
       do {
-        piVar1 = *(int **)(iStack_10 + 0x7b7960);
+        piVar1 = piRam007b7960;
         iVar3 = 0;
-        if (0 < *piVar1) {
-          piVar6 = piVar1;
+        if (0 < *piRam007b7960) {
+          piVar6 = piRam007b7960;
           iVar2 = 0;
           do {
             piVar7 = piVar6 + 1;
@@ -77,17 +75,15 @@ void __cdecl engine_3d_c_flushPremiumRenderBuffer_FUN_004070e0(void)
             iVar2 = iVar2 + 4;
           } while (iVar3 < *piVar1);
         }
-        engine_texture_cpp_loadTextureAndGetData_FUN_00574e80(piVar1 + 0x31);
-        _DAT_01c38b4c = piVar1[0x44];
-        DAT_006141d8 = piVar1[0x43];
-        engine_clipper_c_clipAndRasterize_FUN_00431d90(*piVar1,&DAT_0070ca98);
-        iStack_10 = iStack_10 + 4;
-        iStack_c = iStack_c + 1;
-      } while (iStack_c < DAT_0070cafc);
+        engine_texture_cpp_loadTextureAndGetData_FUN_00574e80((SMRGLTextureBasic *)(piVar1 + 0x31));
+        _DAT_01c38b4c = unaff_EBP[0x44];
+        DAT_006141d8 = unaff_EBP[0x43];
+        engine_clipper_c_clipAndRasterize_FUN_00431d90(*unaff_EBP,&DAT_0070ca98);
+      } while ((int)piVar1 + 1 < (int)DAT_0070cafc);
     }
     DAT_0070cafc = 0;
     DAT_0070caf8 = 0;
-    engine_3d_c_FUN_00406df0(0);
+    engine_3d_c_setBlendMode_FUN_00406df0(0);
   }
   return;
 }

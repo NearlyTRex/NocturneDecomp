@@ -11,47 +11,47 @@ void __cdecl staticInit(void);
 
 // Original: core_manpuz.cpp_factoryFuncMansionPuzzleCircle_FUN_00503b10
 // Address: 00503b10
-void factoryFuncMansionPuzzleCircle(void);
+CMansionPuzzleCircle * __cdecl factoryFuncMansionPuzzleCircle(void);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_getActorType_FUN_00503b30
 // Address: 00503b30
-CDemonActorType * CMansionPuzzleCircle::getActorType(CMansionPuzzleCircle *this_ptr);
+CDemonActorType * __cdecl CMansionPuzzleCircle::getActorType(CMansionPuzzleCircle *this_ptr);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00503b40
 // Address: 00503b40
 CMansionPuzzleCircle * __cdecl CMansionPuzzleCircle::ctor(CMansionPuzzleCircle *this_ptr);
 
-// Original: core_manpuz.cpp_FUN_00503c90
+// Original: core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00503c90
 // Address: 00503c90
-void FUN_00503c90(CMansionPuzzleCircle *param_1);
+void __cdecl CMansionPuzzleCircle::setup(CMansionPuzzleCircle *this_ptr);
 
-// Original: core_manpuz.cpp_FUN_005042e0
+// Original: core_manpuz.cpp_CMansionPuzzleCircle_renderOpaque_FUN_005042e0
 // Address: 005042e0
-int FUN_005042e0(CMansionPuzzleCircle *param_1);
+int __cdecl CMansionPuzzleCircle::renderOpaque(CMansionPuzzleCircle *this_ptr);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_00504400
 // Address: 00504400
 void __cdecl CMansionPuzzleCircle::process(CMansionPuzzleCircle *this_ptr,float delta_time);
 
-// Original: core_manpuz.cpp_FUN_00504510
+// Original: core_manpuz.cpp_CMansionPuzzleCircle_getBoundingBox_FUN_00504510
 // Address: 00504510
-void FUN_00504510(int param_1);
+CBoundingBox3D * __cdecl CMansionPuzzleCircle::getBoundingBox(CMansionPuzzleCircle *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_manpuz.cpp_FUN_00504570
+// Original: core_manpuz.cpp_CMansionPuzzleCircle_getCollisionType_FUN_00504570
 // Address: 00504570
-undefined4 FUN_00504570(void);
+ECollisionType __cdecl CMansionPuzzleCircle::getCollisionType(CMansionPuzzleCircle *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_manpuz.cpp_FUN_00504580
+// Original: core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00504580
 // Address: 00504580
-float FUN_00504580(int param_1,float *param_2,undefined4 param_3,float *param_4);
+float __cdecl CMansionPuzzleCircle::customRayIntersect(CMansionPuzzleCircle *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 
-// Original: core_manpuz.cpp_FUN_00504b10
+// Original: core_manpuz.cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_00504b10
 // Address: 00504b10
-void FUN_00504b10(int param_1,SIntersectXZCylinder *param_2);
+void __cdecl CMansionPuzzleCircle::customIntersectCylinderXZ(CMansionPuzzleCircle *this_ptr,SIntersectXZCylinder *cylinder);
 
-// Original: core_manpuz.cpp_FUN_00504b90
+// Original: core_manpuz.cpp_CMansionPuzzleCircle_customGetFloorHeight_FUN_00504b90
 // Address: 00504b90
-undefined4 FUN_00504b90(void);
+int __cdecl CMansionPuzzleCircle::customGetFloorHeight(CMansionPuzzleCircle *this_ptr,CVector3f *position,float search_radius,float *out_floor_height);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_onLaserHit_FUN_00504ba0
 // Address: 00504ba0
@@ -69,13 +69,13 @@ void FUN_00504ee0(int param_1,int param_2);
 // Address: 00504fe0
 void FUN_00504fe0(int param_1,int param_2);
 
-// Original: core_manpuz.cpp_FUN_00505060
+// Original: core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_00505060
 // Address: 00505060
-void __cdecl FUN_00505060(CMansionPuzzleCircle *this_ptr,int gem_index);
+void __cdecl CMansionPuzzleCircle::renderGem(CMansionPuzzleCircle *this_ptr,int gem_index);
 
-// Original: core_manpuz.cpp_FUN_005054c0
+// Original: core_manpuz.cpp_CMansionPuzzleCircle_renderReflector_FUN_005054c0
 // Address: 005054c0
-void __cdecl FUN_005054c0(CMansionPuzzleCircle *this_ptr,int reflector_index);
+void __cdecl CMansionPuzzleCircle::renderReflector(CMansionPuzzleCircle *this_ptr,int reflector_index);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_processPanel_FUN_00505560
 // Address: 00505560
@@ -85,9 +85,13 @@ void __cdecl CMansionPuzzleCircle::processPanel(CMansionPuzzleCircle *this_ptr,i
 // Address: 005056f0
 void __cdecl CMansionPuzzleCircle::getPanelColor(CMansionPuzzleCircle *this_ptr,int panel_index,float *out_r,float *out_g,float *out_b);
 
+// Original: core_manpuz.cpp_stepToward_FUN_00505760
+// Address: 00505760
+int __cdecl stepToward(float *value,float target,float max_step);
+
 // Original: core_manpuz.cpp_updateGemHumChannel_FUN_005057c0
 // Address: 005057c0
-undefined4 __cdecl updateGemHumChannel(float *param_1,float param_2,float param_3,uint *param_4,char *param_5,float *param_6);
+int __cdecl updateGemHumChannel(float *hum_value,float target,float max_step,uint *sfx_handle,char *wav_filename,CVector3f *world_position);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_005058e0
 // Address: 005058e0
@@ -129,13 +133,13 @@ void FUN_005062a0(int param_1,int param_2);
 // Address: 00506390
 int __cdecl CMansionPuzzleCircle::panelOccupied(CMansionPuzzleCircle *this_ptr,int panel_index);
 
-// Original: core_manpuz.cpp_FUN_00506420
+// Original: core_manpuz.cpp_factoryFuncMirrorHack_FUN_00506420
 // Address: 00506420
-void FUN_00506420(void);
+CMirrorHack * __cdecl factoryFuncMirrorHack(void);
 
-// Original: core_manpuz.cpp_FUN_00506440
+// Original: core_manpuz.cpp_CMirrorHack_getActorType_FUN_00506440
 // Address: 00506440
-undefined4 FUN_00506440(void);
+CDemonActorType * __cdecl CMirrorHack::getActorType(CMirrorHack *this_ptr);
 
 // Original: core_manpuz.cpp_CMirrorHack_ctor_FUN_00506450
 // Address: 00506450
@@ -145,21 +149,21 @@ CMirrorHack * __cdecl CMirrorHack::ctor(CMirrorHack *this_ptr);
 // Address: 005064a0
 void __cdecl CMirrorHack::setup(CMirrorHack *this_ptr);
 
-// Original: core_manpuz.cpp_FUN_005064c0
+// Original: core_manpuz.cpp_CMirrorHack_renderOpaque_FUN_005064c0
 // Address: 005064c0
-undefined4 FUN_005064c0(CDemonActor *param_1);
+int __cdecl CMirrorHack::renderOpaque(CMirrorHack *this_ptr);
 
-// Original: core_manpuz.cpp_FUN_00506510
+// Original: core_manpuz.cpp_CMirrorHack_process_FUN_00506510
 // Address: 00506510
-void FUN_00506510(CDemonActor *param_1,float param_2);
+void __cdecl CMirrorHack::process(CMirrorHack *this_ptr,float delta_time);
 
-// Original: core_manpuz.cpp_FUN_005065a0
+// Original: core_manpuz.cpp_CMirrorHack_getBoundingBox_FUN_005065a0
 // Address: 005065a0
-void FUN_005065a0(int param_1);
+CBoundingBox3D * __cdecl CMirrorHack::getBoundingBox(CMirrorHack *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_manpuz.cpp_FUN_005065e0
+// Original: core_manpuz.cpp_CMirrorHack_getCollisionType_FUN_005065e0
 // Address: 005065e0
-undefined4 FUN_005065e0(void);
+ECollisionType __cdecl CMirrorHack::getCollisionType(CMirrorHack *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_manpuz.cpp_CMirrorHack_onLaserHit_FUN_005065f0
 // Address: 005065f0
@@ -187,11 +191,11 @@ CMirrorHack * __cdecl CMirrorHack::dtor(CMirrorHack *this_ptr,uint flags);
 
 // Original: core_manpuz.cpp_CMansionPuzzleCircle_dtor_FUN_00506760
 // Address: 00506760
-CMansionPuzzleCircle * CMansionPuzzleCircle::dtor(CMansionPuzzleCircle *this_ptr,uint flags);
+CMansionPuzzleCircle * __cdecl CMansionPuzzleCircle::dtor(CMansionPuzzleCircle *this_ptr,uint flags);
 
 // Original: core_manpuz.cpp_SReflector_ctor_FUN_005067b0
 // Address: 005067b0
-SReflector * SReflector::ctor(SReflector *this_ptr);
+SReflector * __cdecl SReflector::ctor(SReflector *this_ptr);
 
 // Original: core_manpuz.cpp_SGem_ctor_FUN_005067c0
 // Address: 005067c0
@@ -199,4 +203,4 @@ SGem * __cdecl SGem::ctor(SGem *this_ptr);
 
 // Original: core_manpuz.cpp_SPanel_ctor_FUN_005067e0
 // Address: 005067e0
-SPanel * SPanel::ctor(SPanel *this_ptr);
+SPanel * __cdecl SPanel::ctor(SPanel *this_ptr);

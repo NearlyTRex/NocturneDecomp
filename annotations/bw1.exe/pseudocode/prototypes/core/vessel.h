@@ -7,23 +7,23 @@
 
 // Original: core_vessel.cpp_staticInit_FUN_005a8aa0
 // Address: 005a8aa0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_vessel.cpp_factoryFuncCryptVessel_FUN_005a8ad0
 // Address: 005a8ad0
-void factoryFuncCryptVessel(void);
+CCryptVessel * __cdecl factoryFuncCryptVessel(void);
 
 // Original: core_vessel.cpp_CCryptVessel_getActorType_FUN_005a8af0
 // Address: 005a8af0
-CDemonActorType * CCryptVessel::getActorType(CCryptVessel *this_ptr);
+CDemonActorType * __cdecl CCryptVessel::getActorType(CCryptVessel *this_ptr);
 
 // Original: core_vessel.cpp_CCryptVessel_ctor_FUN_005a8b00
 // Address: 005a8b00
 CCryptVessel * __cdecl CCryptVessel::ctor(CCryptVessel *this_ptr);
 
-// Original: core_vessel.cpp_FUN_005a8c60
+// Original: core_vessel.cpp_CCryptVessel_setup_FUN_005a8c60
 // Address: 005a8c60
-void FUN_005a8c60(CDemonActor *param_1);
+void __cdecl CCryptVessel::setup(CCryptVessel *this_ptr);
 
 // Original: core_vessel.cpp_CCryptVessel_canPickup_FUN_005a8dc0
 // Address: 005a8dc0
@@ -43,23 +43,23 @@ CDemonActor * __cdecl CCryptVessel::getCarrier(CCryptVessel *this_ptr);
 
 // Original: core_vessel.cpp_isStartLocTriggered_FUN_005a8e40
 // Address: 005a8e40
-undefined4 __cdecl isStartLocTriggered(int param_1);
+int __cdecl isStartLocTriggered(CCryptVessel *actor);
 
-// Original: core_vessel.cpp_FUN_005a8e60
+// Original: core_vessel.cpp_CCryptVessel_process_FUN_005a8e60
 // Address: 005a8e60
-void FUN_005a8e60(int param_1,float param_2);
+void __cdecl CCryptVessel::process(CCryptVessel *this_ptr,float delta_time);
 
-// Original: core_vessel.cpp_FUN_005a9440
+// Original: core_vessel.cpp_CCryptVessel_renderOpaque_FUN_005a9440
 // Address: 005a9440
-undefined4 FUN_005a9440(int param_1);
+int __cdecl CCryptVessel::renderOpaque(CCryptVessel *this_ptr);
 
 // Original: core_vessel.cpp_CCryptVessel_renderTransparent_FUN_005a95c0
 // Address: 005a95c0
 int __cdecl CCryptVessel::renderTransparent(CCryptVessel *this_ptr);
 
-// Original: core_vessel.cpp_FUN_005a9710
+// Original: core_vessel.cpp_CCryptVessel_renderBackground_FUN_005a9710
 // Address: 005a9710
-void FUN_005a9710(void);
+void __cdecl CCryptVessel::renderBackground(CCryptVessel *this_ptr,int layer_flag);
 
 // Original: core_vessel.cpp_CCryptVessel_archive_FUN_005a9790
 // Address: 005a9790
@@ -69,9 +69,9 @@ void __cdecl CCryptVessel::archive(CCryptVessel *this_ptr);
 // Address: 005a98a0
 ECollisionType __cdecl CCryptVessel::getCollisionType(CCryptVessel *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_vessel.cpp_FUN_005a98c0
+// Original: core_vessel.cpp_CCryptVessel_getBoundingBox_FUN_005a98c0
 // Address: 005a98c0
-void FUN_005a98c0(int param_1);
+CBoundingBox3D * __cdecl CCryptVessel::getBoundingBox(CCryptVessel *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_vessel.cpp_CCryptVessel_dtor_FUN_005a9900
 // Address: 005a9900

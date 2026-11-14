@@ -7,7 +7,7 @@
 
 // Original: core_weapon.cpp_staticInit_FUN_0057ad40
 // Address: 0057ad40
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_weapon.cpp_CWeapon_ctor_FUN_0057ad70
 // Address: 0057ad70
@@ -17,57 +17,57 @@ CWeapon * __cdecl CWeapon::ctor(CWeapon *this_ptr);
 // Address: 0057aed0
 CWeapon * __cdecl CWeapon::dtor(CWeapon *this_ptr,uint flags);
 
-// Original: core_weapon.cpp_FUN_0057af40
+// Original: core_weapon.cpp_CWeapon_setup_FUN_0057af40
 // Address: 0057af40
-void __cdecl FUN_0057af40(CWeapon *this_ptr);
+void __cdecl CWeapon::setup(CWeapon *this_ptr);
 
-// Original: core_weapon.cpp_FUN_0057af80
+// Original: core_weapon.cpp_CWeapon_renderOpaque_FUN_0057af80
 // Address: 0057af80
-int __cdecl FUN_0057af80(CWeapon *this_ptr);
+int __cdecl CWeapon::renderOpaque(CWeapon *this_ptr);
 
 // Original: core_weapon.cpp_FUN_0057b030
 // Address: 0057b030
 void FUN_0057b030(int param_1,undefined4 param_2);
 
-// Original: core_weapon.cpp_FUN_0057b040
+// Original: core_weapon.cpp_CWeapon_renderTransparent_FUN_0057b040
 // Address: 0057b040
-int FUN_0057b040(CDemonActor *param_1);
+int __cdecl CWeapon::renderTransparent(CWeapon *this_ptr);
 
-// Original: core_weapon.cpp_FUN_0057b120
+// Original: core_weapon.cpp_CWeapon_getBoundingBox_FUN_0057b120
 // Address: 0057b120
-void FUN_0057b120(int param_1);
+CBoundingBox3D * __cdecl CWeapon::getBoundingBox(CWeapon *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_weapon.cpp_FUN_0057b160
+// Original: core_weapon.cpp_CWeapon_process_FUN_0057b160
 // Address: 0057b160
-void __cdecl FUN_0057b160(CWeapon *this_ptr,float delta_time);
+void __cdecl CWeapon::process(CWeapon *this_ptr,float delta_time);
 
-// Original: core_weapon.cpp_FUN_0057b2a0
+// Original: core_weapon.cpp_CWeapon_archive_FUN_0057b2a0
 // Address: 0057b2a0
-void FUN_0057b2a0(CDemonActor *param_1);
+void __cdecl CWeapon::archive(CWeapon *this_ptr);
 
-// Original: core_weapon.cpp_FUN_0057b430
+// Original: core_weapon.cpp_CWeapon_getCollisionType_FUN_0057b430
 // Address: 0057b430
-bool FUN_0057b430(undefined4 param_1,int *param_2);
+ECollisionType __cdecl CWeapon::getCollisionType(CWeapon *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_weapon.cpp_FUN_0057b440
+// Original: core_weapon.cpp_CWeapon_canPickup_FUN_0057b440
 // Address: 0057b440
-undefined4 FUN_0057b440(int param_1,CDemonActor *param_2);
+int __cdecl CWeapon::canPickup(CWeapon *this_ptr,CDemonActor *picker);
 
 // Original: core_weapon.cpp_CWeapon_pickup_FUN_0057b4f0
 // Address: 0057b4f0
 void __cdecl CWeapon::pickup(CWeapon *this_ptr,CDemonActor *carrier);
 
-// Original: core_weapon.cpp_FUN_0057b500
+// Original: core_weapon.cpp_CWeapon_onDropped_FUN_0057b500
 // Address: 0057b500
-void FUN_0057b500(int param_1,undefined4 *param_2);
+void __cdecl CWeapon::onDropped(CWeapon *this_ptr,CVector3f *drop_position);
 
 // Original: core_weapon.cpp_CWeapon_getCarrier_FUN_0057b5b0
 // Address: 0057b5b0
 CDemonActor * __cdecl CWeapon::getCarrier(CWeapon *this_ptr);
 
-// Original: core_weapon.cpp_FUN_0057b5c0
+// Original: core_weapon.cpp_CWeapon_updateLighting_FUN_0057b5c0
 // Address: 0057b5c0
-void FUN_0057b5c0(int param_1);
+void __cdecl CWeapon::updateLighting(CWeapon *this_ptr);
 
 // Original: core_weapon.cpp_CWeapon_setWeaponState_FUN_0057b7f0
 // Address: 0057b7f0
@@ -77,30 +77,30 @@ void __cdecl CWeapon::setWeaponState(CWeapon *this_ptr,int weapon_state);
 // Address: 0057b800
 void __cdecl CWeapon::onPickup(CWeapon *this_ptr,CDemonActor *owner);
 
-// Original: core_weapon.cpp_FUN_0057b820
+// Original: core_weapon.cpp_CWeapon_getMuzzlePoint_FUN_0057b820
 // Address: 0057b820
-void FUN_0057b820(int param_1);
+CVector3f * __cdecl CWeapon::getMuzzlePoint(CWeapon *this_ptr,CVector3f *out_point);
 
-// Original: core_weapon.cpp_FUN_0057b880
+// Original: core_weapon.cpp_CWeapon_fire_FUN_0057b880
 // Address: 0057b880
-undefined4 FUN_0057b880(int param_1);
+int __cdecl CWeapon::fire(CWeapon *this_ptr);
 
-// Original: core_weapon.cpp_FUN_0057b930
+// Original: core_weapon.cpp_CWeapon_isReadyToFire_FUN_0057b930
 // Address: 0057b930
-undefined4 FUN_0057b930(CDemonActor *param_1);
+int __cdecl CWeapon::isReadyToFire(CWeapon *this_ptr);
 
-// Original: core_weapon.cpp_FUN_0057ba00
+// Original: core_weapon.cpp_CWeapon_getDamage_FUN_0057ba00
 // Address: 0057ba00
-undefined4 FUN_0057ba00(void);
+float __cdecl CWeapon::getDamage(CWeapon *this_ptr);
 
 // Original: core_weapon.cpp_FUN_0057ba10
 // Address: 0057ba10
 void FUN_0057ba10(int param_1);
 
-// Original: core_weapon.cpp_FUN_0057bb60
+// Original: core_weapon.cpp_CWeapon_renderAimBeam_FUN_0057bb60
 // Address: 0057bb60
-void __cdecl FUN_0057bb60(CWeapon *this_ptr);
+void __cdecl CWeapon::renderAimBeam(CWeapon *this_ptr);
 
-// Original: core_weapon.cpp_FUN_0057bba0
+// Original: core_weapon.cpp_CWeapon_onFired_FUN_0057bba0
 // Address: 0057bba0
-void FUN_0057bba0(void);
+void __cdecl CWeapon::onFired(CWeapon *this_ptr);

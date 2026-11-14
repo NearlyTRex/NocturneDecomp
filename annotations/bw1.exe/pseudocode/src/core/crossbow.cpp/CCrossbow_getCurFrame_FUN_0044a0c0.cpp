@@ -11,6 +11,6 @@
 float __cdecl core_crossbow_cpp_CCrossbow_getCurFrame_FUN_0044a0c0(CCrossbow *this_ptr)
 
 {
-  return ((float)_DAT_005d73aa - *(float *)&this_ptr->field_0x300) * (float)_DAT_005d73b2 *
+  return ((float)_DAT_005d73aa - (this_ptr->base).fire_cooldown_timer) * (float)_DAT_005d73b2 *
          (float)_DAT_005d73ba;
 }

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   unkafter_2d.cpp_FUN_005cdce0 at 005cdded
+;   crt_unknown.c_FUN_005cdce0 at 005cdded
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626630 = 005c50d4

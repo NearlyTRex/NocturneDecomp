@@ -9,8 +9,7 @@
 void __cdecl core_ladder_cpp_CLadder_setup_FUN_004fd3e0(CLadder *this_ptr)
 
 {
-  core_actor_cpp_FUN_00408850((CDemonActor *)this_ptr);
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_004688e0
-            ((CKeyFramedModelInstance *)&this_ptr->field_0x158);
+  core_actor_cpp_CDemonActor_setup_FUN_00408850(&this_ptr->base);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_004688e0(&this_ptr->model);
   return;
 }

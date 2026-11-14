@@ -29,11 +29,11 @@
 ;   engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0046b300
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00
 ;   engine_drender.cpp_CDemonRenderer_depthTest_FUN_0046cad0
+;   engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046b650
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
 ;   engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046a930
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0
-;   engine_matrix.c_FUN_0046b650
-;   engine_matrix.c_pop_FUN_0046b4a0
+;   engine_drender.cpp_pop_FUN_0046b4a0
 ;   engine_special.cpp_FUN_0055d723
 ;   engine_special.cpp_FUN_0055d9ec
 ;
@@ -92,8 +92,8 @@ section .text
     PUSH EBX                            ; 0049ba53 | DAT_01ba5c50
     LEA ESI,[ESP + 0x30]                ; 0049ba54
     LEA EDI,[ESP + 0x48]                ; 0049ba58
-    CALL engine_matrix.c_FUN_0046b650   ; 0049ba5c
-        ;   XREF to: 0046b650 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_0046b650()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046b650 ; 0049ba5c
+        ;   XREF to: 0046b650 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046b650(CDemonRenderer * this_ptr, CVector3i * output)
     ADD ESP,0x4                         ; 0049ba61
     LEA ESI,[ESP + 0x2c]                ; 0049ba64
     LEA EAX,[ESP + 0x44]                ; 0049ba68
@@ -293,8 +293,8 @@ section .text
     ADD ESP,0x8                         ; 0049bd1b
     MOV EBX,dword ptr [0x0060b280]      ; 0049bd1e | DAT_0060b280
     PUSH EBX                            ; 0049bd24 | DAT_01ba5c50
-    CALL engine_matrix.c_pop_FUN_0046b4a0 ; 0049bd25
-        ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046b4a0()
+    CALL engine_drender.cpp_pop_FUN_0046b4a0 ; 0049bd25
+        ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046b4a0()
     ADD ESP,0x4                         ; 0049bd2a
     POP EDI                             ; 0049bd2d
     ADD ESP,0x94                        ; 0049bd2e

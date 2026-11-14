@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_drawHealthBar_FUN_004b4730(int param_1,int param_2,int param_3,int param_4,float param_5)
+; void __cdecl core_game_cpp_drawHealthBar_FUN_004b4730(int x1,int y1,int x2,int y2,float fill_percent)
 ;
+; Parameters:
+; int              Stack[0x4]:4   x1
+; int              Stack[0x8]:4   y1
+; int              Stack[0xc]:4   x2
+; int              Stack[0x10]:4   y2
+; float            Stack[0x14]:4   fill_percent
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c2208

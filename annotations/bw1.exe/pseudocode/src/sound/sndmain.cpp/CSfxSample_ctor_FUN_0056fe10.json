@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 230,
+    "complexity_score": 123,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 20,
-    "suspect_count": 20,
+    "pseudocode_lines": 18,
+    "suspect_count": 10,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_field"
+      "negative_offset"
     ],
-    "total_lines": 43
+    "total_lines": 41
   },
   "cross_references": [],
   "function": {
@@ -24,9 +23,9 @@
         "0056fe76"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "sound_sndmain.cpp_CSfxSample_ctor_FUN_0056fe10",
-    "signature": "CSfxSample * sound_sndmain_cpp_CSfxSample_ctor_FUN_0056fe10(CSfxSample *this_ptr)"
+    "signature": "CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_ctor_FUN_0056fe10(CSfxSample *this_ptr)"
   },
   "function_calls": [
     {
@@ -37,7 +36,7 @@
     {
       "addr": "005a08d0",
       "is_variadic": false,
-      "name": "unkclass_instream.cpp_CInStreamFile_ctor_FUN_005a08d0"
+      "name": "support_trstream.cpp_CInStreamFile_ctor_FUN_005a08d0"
     }
   ],
   "globals": [],
@@ -72,6 +71,32 @@
     },
     "pcode_op_count": 84
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0054d7a0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00553310",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a60f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7879
+    },
+    "nocturne.exe": {
+      "addr": "00523890",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7879
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -90,164 +115,84 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x17c",
-      "severity": "mild",
-      "text": "((CInStreamFile *)&pCVar1->field_0x17c);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 13,
+      "line": 10,
       "match": "pCVar2[-3].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2[-3].field_0x28 = 0;",
+      "text": "pCVar2[-3].binary_mode = 0;",
       "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Negative struct offset (wrong base type)",
+      "line": 11,
+      "match": "pCVar2[-1].",
+      "severity": "mild",
+      "text": "pCVar2[-1].file_handle = (HANDLE)0x0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 12,
+      "match": "pCVar2[-1].",
+      "severity": "mild",
+      "text": "pCVar2[-1].file_size = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
       "line": 13,
-      "match": "field_0x28",
+      "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2[-3].field_0x28 = 0;",
-      "type": "unnamed_field"
+      "text": "pCVar2[-1].base.vtable = (void *)0x0;",
+      "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 14,
       "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0x4 = 0;",
+      "text": "pCVar2[-1].file_offset = 0;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0x4 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 15,
       "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0x8 = 0;",
+      "text": "pCVar2[-1].position = -1;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0x8 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 17,
+      "line": 16,
       "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0xc = 0;",
+      "text": "pCVar2[-1].buffer_length = 0;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0xc = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 18,
       "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0x10 = 0xffffffff;",
+      "text": "pCVar2[-1].buffer_alloc = (void *)0x0;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0x10 = 0xffffffff;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 19,
       "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0x24 = 0;",
+      "text": "pCVar2[-1].buffer = (char *)0x0;",
       "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0x24 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Negative struct offset (wrong base type)",
       "line": 20,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[1].field_0x4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 21,
-      "match": "pCVar2[-1].",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0x14 = 0;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0x14 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 22,
-      "match": "pCVar2[-1].",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0x18 = 0;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0x18 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 23,
       "match": "pCVar2[-9].",
       "severity": "mild",
-      "text": "return (CSfxSample *)&pCVar2[-9].field_0x10;",
+      "text": "return (CSfxSample *)&pCVar2[-9].position;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "return (CSfxSample *)&pCVar2[-9].field_0x10;",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

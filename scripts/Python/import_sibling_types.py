@@ -1,121 +1,148 @@
 #!/usr/bin/env python3
-# Copy data types the target is missing from the sibling build's program.
-#
-# Signature transfer is all-or-nothing per function: a parameter typed
-# `CGame*` cannot be applied to a program that has never heard of `CGame`, so
-# the whole prototype is abandoned. A handful of missing types therefore blocks
-# a disproportionate number of signatures, and importing them is the cheapest
-# way to unblock them.
-#
-# The list is derived, not hardcoded, from two sources:
-#
-#   prototypes  every parameter and return type named by a transferable pair
-#   globals     every type reachable through the source program's defined data
-#
-# The second source is not optional decoration. In this codebase a function
-# definition is almost never a parameter or return type -- it is the pointee of
-# a global function pointer (`APIDLL_clear* g_APIDLL_clear`,
-# `MainScanlineFunc* g_ScanlineRenderFunc`). Prototype-only discovery cannot see
-# one, so it imported exactly zero funcdefs and every one of them had to be
-# written by hand. Pass --no-globals to get the old prototype-only behaviour.
-#
-# Whatever fails to resolve against the target is what gets imported. Re-running
-# after a mapping changes therefore imports exactly what the new mapping needs.
-#
-# Re-running is safe and idempotent: a type the target already has is skipped,
-# never re-added, and the run reports what it skipped rather than silently
-# doing nothing. Conflicts created by dependency resolution are detected and
-# reported, and --prune-conflicts removes the ones this run introduced, so a
-# second pass never leaves `.conflict` debris to clean up by hand.
-#
-# Ghidra pulls dependencies in automatically. The conflict handler is set to
-# keep what the target already has, because the target's layouts are the
-# corrected ones -- a struct arriving from the source must reference the
-# target's `CDemonActor`, not drag the source's copy in beside it.
-#
-# Every import is checked against Watcom RTTI afterwards and reported as:
-#
-#   EXACT      the imported length matches the class's recorded size
-#   DRIFTED    it does not. Imported anyway, because a pointer to a wrongly
-#              sized struct is still the right parameter type, but the layout
-#              needs fixing -- often shift_struct_fields.py will do it
-#   NO_RTTI    the class was never instantiated, so nothing can be checked
-#
-# Usage:
-#   GHIDRA_INSTALL_DIR=/path/to/ghidra/lib \
-#   python3 -u import_sibling_types.py <ABS_project_path> <project_name> \
-#           --mapping verified.json [--type NAME ...] \
-#           [--kind funcdef|struct|union|enum|typedef ...] \
-#           [--no-globals] [--prune-conflicts] [--apply]
-#
-# Import only the missing function definitions:
-#   python3 -u import_sibling_types.py ... --kind funcdef --apply
-#
+"""Copy data types the target is missing from the sibling build's program.
+
+Signature transfer is all-or-nothing per function: a parameter typed `CGame*`
+cannot be applied to a program that has never heard of `CGame`, so the whole
+prototype is abandoned. A handful of missing types therefore blocks a
+disproportionate number of signatures, and importing them is the cheapest way
+to unblock them.
+
+The list is derived, not hardcoded, from two sources:
+
+  prototypes  every parameter and return type named by a transferable pair
+  globals     every type reachable through the source program's defined data
+
+The second source is not optional decoration. In this codebase a function
+definition is almost never a parameter or return type -- it is the pointee of
+a global function pointer (`APIDLL_clear* g_APIDLL_clear`). Prototype-only
+discovery cannot see one. Pass --no-globals for prototype-only discovery.
+
+Whatever fails to resolve against the target is what gets imported, so
+re-running after a mapping changes imports exactly what the new mapping needs.
+A type the target already has is skipped and reported, never re-added.
+
+Ghidra pulls dependencies in automatically. The conflict handler keeps what the
+target already has, because the target's layouts are the corrected ones -- a
+struct arriving from the source must reference the target's `CDemonActor`, not
+drag the source's copy in beside it. `.conflict` types a run does introduce
+are reported, and --prune-conflicts removes them.
+
+--replace-stubs rebuilds a placeholder the target has (an RTTI-sized or
+unsized `Stub:` struct) with the source's layout, from the target's own types,
+for the names given with --type or --types-file. Name them in dependency order
+(plan_struct_transfer.py writes them so): a field typed as a placeholder not
+yet replaced takes that placeholder's length.
+
+Every import is checked against Watcom RTTI afterwards:
+
+  EXACT      the imported length matches the class's recorded size
+  DRIFTED    it does not. Imported anyway, because a pointer to a wrongly sized
+             struct is still the right parameter type, but the layout needs fixing
+  NO_RTTI    the class was never instantiated, so nothing can be checked
+
+Usage:
+    import_sibling_types.py <ABS_project> <project> [program] --mapping verified.json \\
+        [--type NAME ...] [--types-file FILE] [--kind KIND ...] [--no-globals] \\
+        [--stub-structs] [--replace-stubs] [--prune-conflicts] [--apply]
+
 #@author NearlyTRex
 #@category Annotations
+"""
 
 import argparse
 import json
 import os
 import re
 import sys
-from collections import Counter
 
-THIS_DIR = os.path.dirname(os.path.abspath(__file__))
-if THIS_DIR not in sys.path:
-    sys.path.insert(0, THIS_DIR)
-
-import sibling_match as sm
 import apply_sibling_annotations as asa
-
-REPO_ROOT = os.path.dirname(os.path.dirname(THIS_DIR))
+import sibling_match as sm
 
 _ARRAY_RE = re.compile(r"^(.*?)\s*\[(\d+)\]$")
+KINDS = ("funcdef", "struct", "union", "enum", "typedef", "other")
+STUB_DESCRIPTION = "Stub: no RTTI in this build, size and fields not yet recovered"
+ROW = "%-30s %-9s %-10s %8s %8s"
 
 
 def base_type_name(text):
     """Strip pointer and array decoration down to the underlying type name.
 
-    str() is not redundant: names arriving from the prototype path are Python
-    strings, but names read live out of Ghidra are java.lang.String, and the
-    array regex silently fails to match one of those -- leaving decorated names
-    like `CVector3f[241]` to be looked up verbatim and reported as missing.
-
-    The array strip loops because element types can themselves be arrays;
-    a single pass turns `int[2][3]` into `int[2]`, which resolves to nothing.
+    str() is not redundant: names read live out of Ghidra are java.lang.String,
+    which the array regex does not match. Pointers and arrays are stripped in
+    turn until neither is left, since either can wrap the other: `int[2][3]`
+    and `CPodFile *[4]`, an array of pointers, both come down to the base.
     """
     if not text:
         return None
-    rest = str(text).strip()
-    while rest.endswith("*"):
-        rest = rest[:-1].strip()
-    while True:
+    rest, previous = str(text).strip(), None
+    while rest != previous:
+        previous = rest
+        rest = rest.rstrip("*").strip()
         m = _ARRAY_RE.match(rest)
-        if not m:
-            break
-        rest = m.group(1).strip()
+        if m:
+            rest = m.group(1).strip()
     return rest or None
 
 
-KINDS = ("funcdef", "struct", "union", "enum", "typedef", "other")
+def kind_of(dt):
+    """Coarse category for a Ghidra data type, matching --kind values.
 
-STUB_DESCRIPTION = "Stub: no RTTI in this build, size and fields not yet recovered"
+    Ghidra models a C++ class as a Structure, so ask for `struct` to get both.
+    """
+    from ghidra.program.model.data import Enum, FunctionDefinition, Structure, TypeDef, Union
+    for kind, cls in (("funcdef", FunctionDefinition), ("struct", Structure), ("union", Union),
+                      ("enum", Enum), ("typedef", TypeDef)):
+        if isinstance(dt, cls):
+            return kind
+    return "other"
+
+
+RTTI_STUB_DESCRIPTION = "Stub: size from Watcom RTTI, fields not yet recovered"
 
 
 def is_stub(dt):
-    """A placeholder this tool or watcom_type_info.py made, with no layout recovered."""
-    return str(dt.getDescription() or "").startswith("Stub:")
+    """A placeholder: one this tool or watcom_type_info.py made, or a struct with no fields."""
+    if str(dt.getDescription() or "").startswith("Stub:"):
+        return True
+    from ghidra.program.model.data import Structure
+    return isinstance(dt, Structure) and not list(dt.getDefinedComponents())
+
+
+def find_type(dtm, name):
+    dt = dtm.getDataType("/" + name)
+    if dt is not None:
+        return dt
+    from java.util import ArrayList
+    matches = ArrayList()
+    dtm.findDataTypes(name, matches)
+    return matches.get(0) if not matches.isEmpty() else None
+
+
+# The first dimension is the count, as Ghidra writes them: char[16][256] is 16 char[256]
+_ARRAY = re.compile(r"^(.*?)\[(\d+)\]((?:\[\d+\])*)$")
+
+
+def spec_type(dtm, text, cache=None):
+    """A type as a hand-written spec names it (`CBitFont *`, `CInventory[3]`, `char[16][256]`)
+    -> the target's data type, arrays of any element included; None if it lacks one."""
+    cache = {} if cache is None else cache
+    m = _ARRAY.match(text.strip())
+    if m:
+        from ghidra.program.model.data import ArrayDataType
+        element = spec_type(dtm, m.group(1) + m.group(3), cache)
+        if element is None:
+            return None
+        return ArrayDataType(element, int(m.group(2)), element.getLength(), dtm)
+    return asa.resolve_type(dtm, text, cache)
 
 
 def in_target(dt, dtm):
     """`dt` rebuilt from the target's own types, or None if one is missing.
 
     Pointers and arrays are rebuilt around the target's type of the same name,
-    so nothing from the source program comes along: a struct copied this way
-    brings its own layout and no one else's.
+    so a struct copied this way brings its own layout and no one else's.
     """
-    from ghidra.program.model.data import (Array, ArrayDataType, BuiltInDataType, Pointer,
-                                           PointerDataType)
+    from ghidra.program.model.data import Array, ArrayDataType, BuiltInDataType, Pointer, PointerDataType
     if isinstance(dt, Pointer):
         inner = dt.getDataType()
         if inner is None:
@@ -130,17 +157,61 @@ def in_target(dt, dtm):
     return find_type(dtm, dt.getName())
 
 
-def layout_in_target(sdt, dtm):
-    """The source struct `sdt` as a new struct of the target's types, or None."""
+def embeds_stub(dt):
+    """Whether `dt` holds a placeholder struct by value, directly or as array elements.
+    Such a field would take the placeholder's length, not the member's."""
+    from ghidra.program.model.data import Array, Structure
+    while isinstance(dt, Array):
+        dt = dt.getDataType()
+    return isinstance(dt, Structure) and is_stub(dt)
+
+
+def layout_in_target(sdt, dtm, placement=None):
+    """The source struct `sdt` as a new struct of the target's types, or None.
+
+    `placement` (plan_struct_transfer.py --out-shifts) is for a class whose
+    size changed: only the fields it places come across, each at its target
+    offset, and the struct is the target's size. The rest stay undefined bytes.
+    Its "added" fields, ones the target build introduced, are inserted as well.
+    A field holding a struct the target has only as a placeholder is not
+    placed: copied verbatim the struct is refused (None), placed by shift the
+    field stays undefined bytes.
+    """
     from ghidra.program.model.data import StructureDataType
     out = StructureDataType(sdt.getCategoryPath(), sdt.getName(), 0, dtm)
+    size = placement["size"] if placement else sdt.getLength()
+    fields = []
     for c in sdt.getComponents():
+        at = c.getOffset()
+        if placement is not None:
+            at = placement["place"].get(str(at))
+            if at is None:
+                continue
         dt = in_target(c.getDataType(), dtm)
+        if dt is None or (embeds_stub(dt) and placement is None):
+            return None
+        if embeds_stub(dt):
+            continue
+        fields.append((at, dt, c.getLength(), c.getFieldName(), c.getComment()))
+    for a in (placement or {}).get("added", []):
+        dt = spec_type(dtm, a["type"])
         if dt is None:
             return None
-        out.insertAtOffset(c.getOffset(), dt, c.getLength(), c.getFieldName(), c.getComment())
-    if out.getLength() < sdt.getLength():
-        out.growStructure(sdt.getLength() - out.getLength())
+        fields.append((a["offset"], dt, a["len"], a["name"], "Added in this build"))
+    # In offset order: an insertion moves every field already after it
+    for at, dt, length, name, comment in sorted(fields, key=lambda f: f[0]):
+        out.insertAtOffset(at, dt, length, name, comment)
+    fields = list(out.getDefinedComponents())
+    if not fields:
+        # Nothing placed: a struct of the size and nothing else. Grown from
+        # empty it would come out a byte short, since Ghidra reports an
+        # empty struct as 1 byte long.
+        stub = StructureDataType(sdt.getCategoryPath(), sdt.getName(), size, dtm)
+        stub.setDescription(RTTI_STUB_DESCRIPTION)
+        return stub
+    end = max(c.getOffset() + c.getLength() for c in fields)
+    if end < size:
+        out.growStructure(size - out.getLength())
     out.setDescription(sdt.getDescription())
     return out
 
@@ -149,8 +220,7 @@ def empty_stub(sdt, dtm):
     """A struct named and filed as `sdt`, asserting nothing about its layout.
 
     Enough for `T *` to resolve in a signature. With no RTTI record there is no
-    size to give it, and the source's would be a guess across the build
-    boundary, which is exactly the layout drift a stub exists to avoid.
+    size to give it, and the source's would be a guess across the build boundary.
     """
     from ghidra.program.model.data import StructureDataType
     stub = StructureDataType(sdt.getCategoryPath(), sdt.getName(), 0, dtm)
@@ -158,92 +228,42 @@ def empty_stub(sdt, dtm):
     return stub
 
 
-def kind_of(dt):
-    """Coarse category for a Ghidra data type, matching --kind values.
-
-    Ghidra models a C++ class as a Structure, so `class` is not a separate
-    kind here -- ask for `struct` and you get both.
-    """
-    from ghidra.program.model.data import (
-        Enum, FunctionDefinition, Structure, TypeDef, Union)
-    if isinstance(dt, FunctionDefinition):
-        return "funcdef"
-    if isinstance(dt, Structure):
-        return "struct"
-    if isinstance(dt, Union):
-        return "union"
-    if isinstance(dt, Enum):
-        return "enum"
-    if isinstance(dt, TypeDef):
-        return "typedef"
-    return "other"
-
-
 def globals_type_names(program):
-    """Base type names reachable through the source program's defined data.
-
-    This is the half of discovery that prototype walking structurally cannot
-    reach. A funcdef in this codebase is the pointee of a global function
-    pointer, never a parameter or return type, so without this pass the import
-    list contains no function definitions at all.
-    """
-    names, seen = [], set()
-    data_iter = program.getListing().getDefinedData(True)
-    while data_iter.hasNext():
-        dt = data_iter.next().getDataType()
-        if dt is None:
-            continue
-        n = base_type_name(dt.getDisplayName())
-        if n and n not in seen:
-            seen.add(n)
+    """Base type names reachable through the source program's defined data, in order."""
+    names = []
+    for data in program.getListing().getDefinedData(True):
+        dt = data.getDataType()
+        n = base_type_name(dt.getDisplayName()) if dt is not None else None
+        if n and n not in names:
             names.append(n)
     return names
 
 
 def conflict_paths(dtm):
     """Full paths of every `.conflict` type currently in a manager."""
-    out = set()
-    it = dtm.getAllDataTypes()
-    while it.hasNext():
-        dt = it.next()
-        if ".conflict" in dt.getName():
-            out.add(dt.getPathName())
-    return out
+    return {dt.getPathName() for dt in dtm.getAllDataTypes() if ".conflict" in dt.getName()}
 
 
 def all_type_paths(dtm):
-    """Path names of every data type currently in a manager."""
-    out = set()
-    it = dtm.getAllDataTypes()
-    while it.hasNext():
-        out.add(it.next().getPathName())
-    return out
+    return {dt.getPathName() for dt in dtm.getAllDataTypes()}
 
 
 def new_types_since(dtm, before_paths):
     """Types added since the snapshot, split from derived pointer/array forms.
 
-    Ghidra resolves a type's dependencies automatically, so importing one
-    funcdef can drag a whole struct in behind it -- and that struct arrives
-    with the SOURCE build's layout. Those are precisely the types the sibling
-    boundary does not transfer, and until now they were invisible: counted in
-    "including dependencies" but never named and never RTTI-checked, so a
-    drifted layout could enter in silence.
-
-    Pointer and array forms are separated out because Ghidra creates them
-    on demand whenever a type is used; they carry no layout of their own.
+    Importing one funcdef can drag a whole struct in behind it, with the
+    SOURCE build's layout; those are named and RTTI-checked like requests.
+    Pointer and array forms carry no layout of their own and are only counted.
     """
     from ghidra.program.model.data import Array, Pointer
     fresh, derived = [], 0
-    it = dtm.getAllDataTypes()
-    while it.hasNext():
-        dt = it.next()
+    for dt in dtm.getAllDataTypes():
         if dt.getPathName() in before_paths:
             continue
         if isinstance(dt, (Pointer, Array)):
             derived += 1
-            continue
-        fresh.append(dt)
+        else:
+            fresh.append(dt)
     return fresh, derived
 
 
@@ -258,41 +278,33 @@ def rtti_verdict(rtti, name, size):
 def wanted_types(mapping_path, source_program, min_confidence):
     """Base type names every transferable prototype needs, in mapping order.
 
-    The eligibility test is imported from apply_sibling_annotations rather than
-    repeated here. It was repeated once, and the copy went stale the moment the
-    signature gate widened: this tool went on reporting "nothing to import"
-    while 37 prototypes were being dropped for 14 unknown types.
+    The eligibility test is apply_sibling_annotations' own, never a copy: a
+    copy went stale once and this tool reported "nothing to import" while 37
+    prototypes were being dropped for 14 unknown types.
     """
-    with open(mapping_path) as fh:
+    with open(mapping_path, encoding="utf-8") as fh:
         mapping = json.load(fh)
     src = sm.Image(source_program)
-
-    names, seen = [], set()
+    names = []
     for p in mapping.get("pairs", []):
-        if p.get("ambiguous"):
-            continue
-        if not asa.signature_supported(p.get("shape_agreement", "unshaped"),
-                                       p.get("sig_verdict", "unverifiable"),
-                                       p.get("confidence", 0), min_confidence):
+        if p.get("ambiguous") or not asa.signature_supported(
+                p.get("shape_agreement", "unshaped"), p.get("sig_verdict", "unverifiable"),
+                p.get("confidence", 0), min_confidence):
             continue
         rec = src.by_addr.get(p["a"])
         if not rec:
             continue
-        texts = [rec.get("ret")]
-        texts += [q.get("type") for q in (rec.get("vars") or {}).get("params") or []]
-        for t in texts:
+        for t in [rec.get("ret")] + [q.get("type") for q in (rec.get("vars") or {}).get("params") or []]:
             n = base_type_name(t)
-            if n and n not in seen:
-                seen.add(n)
+            if n and n not in names:
                 names.append(n)
     return names
 
 
 def load_rtti(program_name):
-    path = os.path.join(REPO_ROOT, "annotations", program_name,
-                        "type_info", "type_info.json")
+    path = os.path.join(sm.ANNOTATIONS, program_name, "type_info", "type_info.json")
     try:
-        with open(path) as fh:
+        with open(path, encoding="utf-8") as fh:
             doc = json.load(fh)
     except OSError:
         return {}
@@ -300,254 +312,222 @@ def load_rtti(program_name):
             if "typeinfo_size" in e and "name" in e}
 
 
-def find_type(dtm, name):
-    dt = dtm.getDataType("/" + name)
-    if dt is not None:
-        return dt
-    from java.util import ArrayList
-    matches = ArrayList()
-    dtm.findDataTypes(name, matches)
-    return matches.get(0) if not matches.isEmpty() else None
+def triage(needed, src_dtm, dst_dtm, kinds, named, replace_stubs, relayout=False):
+    """-> (have [(name, source type)], already, wrong kind, absent, names to replace).
+
+    With `relayout`, a named struct is replaced even if it is laid out already.
+    """
+    replace, have, already, wrong_kind, absent = set(), [], [], [], []
+    for name in needed:
+        existing = find_type(dst_dtm, name)
+        if existing is not None:
+            if not (replace_stubs and name in named and (relayout or is_stub(existing))):
+                already.append(name)
+                continue
+            replace.add(name)
+        sdt = find_type(src_dtm, name)
+        if sdt is None:
+            absent.append(name)
+        elif kinds and kind_of(sdt) not in kinds:
+            wrong_kind.append(name)
+        else:
+            have.append((name, sdt))
+    return have, already, wrong_kind, absent, replace
 
 
-def main():
-    ap = argparse.ArgumentParser(
-        description="Import missing data types from the sibling program.")
+def import_into(dst, have, replace, stub_structs, shifts=None):
+    """Stub, replace or add each type; -> the names left as they were.
+
+    `shifts` is {name: placement} for replacements whose size changed.
+    """
+    shifts = shifts or {}
+    from ghidra.program.model.data import DataTypeConflictHandler
+    dtm, keep = dst.getDataTypeManager(), DataTypeConflictHandler.KEEP_HANDLER
+    left = []
+    tx = dst.startTransaction("Import sibling data types")
+    ok = False
+    try:
+        # Stubs first, so a type imported after them that mentions one resolves
+        # to the stub rather than dragging the source's layout in.
+        stubbed = [(n, s) for n, s in have if stub_structs and kind_of(s) == "struct" and n not in replace]
+        for _name, sdt in stubbed:
+            dtm.addDataType(empty_stub(sdt, dtm), keep)
+        if stubbed:
+            print("\nstubbed %d struct(s) as empty placeholders" % len(stubbed))
+        for name, sdt in have:
+            if (name, sdt) in stubbed:
+                continue
+            if name in replace:
+                rebuilt = layout_in_target(sdt, dtm, shifts.get(name))
+                if rebuilt is None:
+                    print("  %s: a field type is missing from the target; stub left as it is" % name)
+                    left.append(name)
+                    continue
+                dtm.replaceDataType(find_type(dtm, name), rebuilt, True)
+                print("  %s: stub replaced, %d bytes" % (name, rebuilt.getLength()))
+                continue
+            dtm.addDataType(sdt, keep)
+        ok = True
+    finally:
+        dst.endTransaction(tx, ok)
+    return left
+
+
+def report_dependencies(dtm, have, types_before, rtti, from_program, program_name):
+    """Name the types an import dragged in unasked, and hold them to RTTI."""
+    fresh, derived = new_types_since(dtm, types_before)
+    requested = {n for n, _ in have}
+    deps = sorted((d for d in fresh if d.getName() not in requested), key=lambda d: d.getName())
+    if deps:
+        print("\n%d dependency type(s) arrived unrequested - these carry %s's layout:"
+              % (len(deps), from_program))
+        print(ROW % ("type", "kind", "verdict", "length", "rtti"))
+        suspect = []
+        for dt in deps:
+            verdict, rec = rtti_verdict(rtti, dt.getName(), dt.getLength())
+            print(ROW % (dt.getName(), kind_of(dt), verdict, dt.getLength(), rec))
+            if verdict != "EXACT" and kind_of(dt) in ("struct", "union"):
+                suspect.append(dt.getName())
+        if suspect:
+            print("\nWARNING: %d unverified struct/union layout(s) imported from %s: %s"
+                  % (len(suspect), from_program, ", ".join(suspect)))
+            print("  Layouts do not transfer across the sibling boundary. Verify each against "
+                  "%s's own assembly before trusting a field offset." % program_name)
+    if derived:
+        print("\n%d derived pointer/array type(s) also created (no layout of their own)" % derived)
+
+
+def prune(dst, paths, monitor):
+    dtm = dst.getDataTypeManager()
+    tx = dst.startTransaction("Prune import conflicts")
+    pruned = 0
+    try:
+        for p in paths:
+            dt = dtm.getDataType(p)
+            if dt is not None and dtm.remove(dt, monitor):
+                pruned += 1
+    finally:
+        dst.endTransaction(tx, True)
+    return pruned
+
+
+def requested_names(args):
+    names = list(args.type)
+    if args.types_file:
+        with open(args.types_file, encoding="utf-8") as fh:
+            names += [ln.split("#", 1)[0].strip() for ln in fh]
+    return [n for n in dict.fromkeys(names) if n]
+
+
+def main(argv=None):
+    ap = argparse.ArgumentParser(description="Import missing data types from the sibling program.")
     ap.add_argument("project_path")
     ap.add_argument("project_name")
     ap.add_argument("program_name", nargs="?", default="nocturne.exe")
     ap.add_argument("--from-program", default="nocedit.exe")
     ap.add_argument("--mapping", help="derive the needed types from this mapping")
     ap.add_argument("--min-confidence", type=float, default=0.90)
-    ap.add_argument("--type", action="append", default=[],
-                    help="import this type as well (repeatable)")
+    ap.add_argument("--type", action="append", default=[], help="import this type as well (repeatable)")
+    ap.add_argument("--types-file", help="more names, one per line ('#' comments ignored), in order")
     ap.add_argument("--kind", action="append", default=[], choices=KINDS,
-                    help="import only types of this kind (repeatable; "
-                         "default: every kind). 'struct' covers C++ classes.")
+                    help="import only types of this kind (repeatable; default: every kind). "
+                         "'struct' covers C++ classes.")
     ap.add_argument("--no-globals", action="store_true",
-                    help="skip discovery through the source program's global "
-                         "data (funcdefs are only reachable that way)")
+                    help="skip discovery through the source program's global data "
+                         "(funcdefs are only reachable that way)")
     ap.add_argument("--prune-conflicts", action="store_true",
                     help="delete any .conflict types this run introduces")
     ap.add_argument("--stub-structs", action="store_true",
-                    help="create each missing struct as an empty placeholder "
-                         "at the source's category instead of copying its "
-                         "layout, for a build whose layouts are not known")
+                    help="create each missing struct as an empty placeholder at the source's "
+                         "category instead of copying its layout, for a build whose layouts "
+                         "are not known")
     ap.add_argument("--replace-stubs", action="store_true",
-                    help="replace a type named with --type that is still a "
-                         "placeholder stub with the source's layout")
+                    help="replace a named type that is still a placeholder stub with the "
+                         "source's layout")
+    ap.add_argument("--shifts",
+                    help="with --replace-stubs: placements for classes whose size changed "
+                         "(plan_struct_transfer.py --out-shifts)")
+    ap.add_argument("--relayout", action="store_true",
+                    help="with --replace-stubs: also replace named structs that are laid out "
+                         "already, whose applied layout the code contradicts")
     ap.add_argument("--apply", action="store_true")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
+    args.placements = {}
+    if args.shifts:
+        with open(args.shifts, encoding="utf-8") as fh:
+            args.placements = json.load(fh)
 
-    needed = list(args.type)
+    named = requested_names(args)
+    needed = list(named)
     if args.mapping:
-        needed = wanted_types(args.mapping, args.from_program,
-                              args.min_confidence) + needed
+        needed = [n for n in wanted_types(args.mapping, args.from_program, args.min_confidence)
+                  if n not in named] + needed
     if not needed and args.no_globals:
-        sys.exit("nothing to do: pass --mapping and/or --type, "
-                 "or drop --no-globals")
-    print("%d distinct type name(s) referenced by transferable prototypes"
-          % len(needed))
-
+        ap.error("nothing to do: pass --mapping and/or --type, or drop --no-globals")
+    print("%d distinct type name(s) asked for" % len(needed))
     rtti = load_rtti(args.program_name)
-    project_path = os.path.abspath(args.project_path)
 
     import pyghidra
-    print("Starting PyGhidra...")
     pyghidra.start()
-    code = 0
+    project = pyghidra.open_project(os.path.abspath(args.project_path), args.project_name)
     try:
-        project = pyghidra.open_project(project_path, args.project_name)
         with pyghidra.program_context(project, "/" + args.from_program) as src:
             with pyghidra.program_context(project, "/" + args.program_name) as dst:
-                src_dtm, dst_dtm = src.getDataTypeManager(), dst.getDataTypeManager()
-
-                if not args.no_globals:
-                    seen = set(needed)
-                    extra = [n for n in globals_type_names(src)
-                             if n not in seen]
-                    needed = needed + extra
-                    print("%d more from global data in %s (%d total)"
-                          % (len(extra), args.from_program, len(needed)))
-
-                kinds = set(args.kind)
-                replace = set()
-                missing, already, wrong_kind = [], [], []
-                for name in needed:
-                    existing = find_type(dst_dtm, name)
-                    if existing is not None:
-                        if not (args.replace_stubs and name in args.type and is_stub(existing)):
-                            already.append(name)
-                            continue
-                        replace.add(name)
-                    sdt = find_type(src_dtm, name)
-                    if sdt is not None and kinds and kind_of(sdt) not in kinds:
-                        wrong_kind.append(name)
-                        continue
-                    missing.append((name, sdt))
-
-                have = [m for m in missing if m[1] is not None]
-                absent = [m[0] for m in missing if m[1] is None]
-
-                # Report the skips rather than swallowing them: "nothing to
-                # import" is ambiguous between "already done" and "discovery
-                # found nothing", and those need opposite responses.
-                print("\nalready in %s, skipped : %d"
-                      % (args.program_name, len(already)))
-                if kinds:
-                    print("excluded by --kind %s : %d"
-                          % ("/".join(sorted(kinds)), len(wrong_kind)))
-                print("missing from %s : %d" % (args.program_name, len(missing)))
-                print("  available in %s : %d" % (args.from_program, len(have)))
-                if absent:
-                    print("  not in either program (built-ins or gone): %s"
-                          % ", ".join(sorted(absent)))
-
-                if not have:
-                    print("\nnothing to import.")
-                else:
-                    print("\n%-30s %-9s %-10s %8s %8s"
-                          % ("type", "kind", "verdict", "length", "rtti"))
-                    for name, sdt in sorted(have, key=lambda t: t[0]):
-                        size = sdt.getLength()
-                        verdict, rec = rtti_verdict(rtti, name, size)
-                        print("%-30s %-9s %-10s %8d %8s"
-                              % (name, kind_of(sdt), verdict, size, rec))
-
-                if args.apply and have:
-                    from ghidra.program.model.data import DataTypeConflictHandler
-                    from ghidra.util.task import ConsoleTaskMonitor
-                    monitor = ConsoleTaskMonitor()
-                    before = dst_dtm.getDataTypeCount(True)
-                    # Snapshot pre-existing conflicts so the report blames this
-                    # run only for the ones it actually introduced, and the
-                    # full type set so dependencies can be told from requests.
-                    conflicts_before = conflict_paths(dst_dtm)
-                    types_before = all_type_paths(dst_dtm)
-                    tx = dst.startTransaction("Import sibling data types")
-                    ok = True
-                    try:
-                        # Stubs first, so a type imported after them that
-                        # mentions one resolves to the stub rather than
-                        # dragging the source's layout in as a dependency.
-                        stubbed = []
-                        if args.stub_structs:
-                            stubbed = [(n, s) for n, s in have
-                                       if kind_of(s) == "struct"]
-                            for name, sdt in stubbed:
-                                dst_dtm.addDataType(
-                                    empty_stub(sdt, dst_dtm),
-                                    DataTypeConflictHandler.KEEP_HANDLER)
-                            print("\nstubbed %d struct(s) as empty placeholders"
-                                  % len(stubbed))
-                        for name, sdt in have:
-                            if (name, sdt) in stubbed:
-                                continue
-                            # KEEP_HANDLER: dependencies the target already has
-                            # are its own, corrected copies -- do not replace
-                            # them with the source's. A stub asked for by name
-                            # with --replace-stubs is rebuilt from the target's
-                            # own types instead, so no dependency comes along.
-                            if name in replace:
-                                rebuilt = layout_in_target(sdt, dst_dtm)
-                                if rebuilt is None:
-                                    print("  %s: a field type is missing from the target; "
-                                          "stub left as it is" % name)
-                                    continue
-                                dst_dtm.replaceDataType(find_type(dst_dtm, name), rebuilt, True)
-                                print("  %s: stub replaced, %d bytes" % (name, rebuilt.getLength()))
-                                continue
-                            dst_dtm.addDataType(
-                                sdt, DataTypeConflictHandler.KEEP_HANDLER)
-                    except Exception as e:
-                        ok = False
-                        print("ERROR: %s" % e)
-                        import traceback
-                        traceback.print_exc()
-                    finally:
-                        dst.endTransaction(tx, ok)
-
-                    if ok:
-                        after = dst_dtm.getDataTypeCount(True)
-                        print("\nimported %d requested type(s); data type count "
-                              "%d -> %d (%+d, including dependencies)"
-                              % (len(have), before, after, after - before))
-
-                        # Dependencies are the silent half of an import: never
-                        # asked for, never checked, and carrying the source
-                        # build's layout. Name them and hold them to the same
-                        # RTTI standard as the requested types.
-                        fresh, derived = new_types_since(dst_dtm, types_before)
-                        requested = set(n for n, _ in have)
-                        deps = [d for d in fresh
-                                if d.getName() not in requested]
-                        if deps:
-                            print("\n%d dependency type(s) arrived unrequested "
-                                  "- these carry %s's layout:"
-                                  % (len(deps), args.from_program))
-                            print("%-30s %-9s %-10s %8s %8s"
-                                  % ("type", "kind", "verdict", "length", "rtti"))
-                            suspect = []
-                            for dt in sorted(deps, key=lambda d: d.getName()):
-                                nm, size = dt.getName(), dt.getLength()
-                                verdict, rec = rtti_verdict(rtti, nm, size)
-                                print("%-30s %-9s %-10s %8d %8s"
-                                      % (nm, kind_of(dt), verdict, size, rec))
-                                if verdict != "EXACT" and kind_of(dt) in (
-                                        "struct", "union"):
-                                    suspect.append(nm)
-                            if suspect:
-                                print("\nWARNING: %d unverified struct/union "
-                                      "layout(s) imported from %s: %s"
-                                      % (len(suspect), args.from_program,
-                                         ", ".join(suspect)))
-                                print("  Layouts do not transfer across the "
-                                      "sibling boundary. Verify each against "
-                                      "%s's own assembly before trusting a "
-                                      "field offset." % args.program_name)
-                        if derived:
-                            print("\n%d derived pointer/array type(s) also "
-                                  "created (no layout of their own)" % derived)
-
-                        new_conflicts = sorted(
-                            conflict_paths(dst_dtm) - conflicts_before)
-                        if new_conflicts:
-                            print("\n%d new .conflict type(s) from dependency "
-                                  "resolution:" % len(new_conflicts))
-                            for p in new_conflicts:
-                                print("  %s" % p)
-                            if args.prune_conflicts:
-                                tx = dst.startTransaction("Prune import conflicts")
-                                pruned = 0
-                                try:
-                                    for p in new_conflicts:
-                                        dt = dst_dtm.getDataType(p)
-                                        if dt is not None and dst_dtm.remove(
-                                                dt, monitor):
-                                            pruned += 1
-                                finally:
-                                    dst.endTransaction(tx, True)
-                                print("pruned %d of %d"
-                                      % (pruned, len(new_conflicts)))
-                            else:
-                                print("re-run with --prune-conflicts to remove "
-                                      "them")
-
-                        print("Saving...")
-                        dst.getDomainFile().save(monitor)
-                        print("Saved.")
-                elif not args.apply:
-                    print("\n[dry-run] re-run with --apply to import.")
+                run(args, needed, named, rtti, src, dst)
+    finally:
         project.close()
-    except Exception as e:
-        print("ERROR: %s" % e)
-        import traceback
-        traceback.print_exc()
-        code = 1
-    sys.stdout.flush()
-    sys.stderr.flush()
-    os._exit(code)
+    return 0
+
+
+def run(args, needed, named, rtti, src, dst):
+    src_dtm, dst_dtm = src.getDataTypeManager(), dst.getDataTypeManager()
+    if not args.no_globals:
+        extra = [n for n in globals_type_names(src) if n not in needed]
+        needed = needed + extra
+        print("%d more from global data in %s (%d total)" % (len(extra), args.from_program, len(needed)))
+    have, already, wrong_kind, absent, replace = triage(
+        needed, src_dtm, dst_dtm, set(args.kind), set(named), args.replace_stubs, args.relayout)
+
+    # "nothing to import" is ambiguous between "already done" and "discovery
+    # found nothing", and those need opposite responses: report the skips.
+    print("\nalready in %s, skipped : %d" % (args.program_name, len(already)))
+    if args.kind:
+        print("excluded by --kind %s : %d" % ("/".join(sorted(args.kind)), len(wrong_kind)))
+    print("to import or replace : %d" % len(have))
+    if absent:
+        print("  not in either program (built-ins or gone): %s" % ", ".join(sorted(absent)))
+    if not have:
+        print("\nnothing to import.")
+        return
+    print("\n" + ROW % ("type", "kind", "verdict", "length", "rtti"))
+    for name, sdt in sorted(have, key=lambda t: t[0]):
+        verdict, rec = rtti_verdict(rtti, name, sdt.getLength())
+        print(ROW % (name, kind_of(sdt), verdict, sdt.getLength(), rec))
+    if not args.apply:
+        print("\n[dry-run] re-run with --apply to import.")
+        return
+
+    from ghidra.util.task import ConsoleTaskMonitor
+    monitor = ConsoleTaskMonitor()
+    before = dst_dtm.getDataTypeCount(True)
+    conflicts_before, types_before = conflict_paths(dst_dtm), all_type_paths(dst_dtm)
+    left = import_into(dst, have, replace, args.stub_structs, args.placements)
+    after = dst_dtm.getDataTypeCount(True)
+    print("\nimported or replaced %d of %d type(s); data type count %d -> %d (%+d, including dependencies)"
+          % (len(have) - len(left), len(have), before, after, after - before))
+    report_dependencies(dst_dtm, have, types_before, rtti, args.from_program, args.program_name)
+    new_conflicts = sorted(conflict_paths(dst_dtm) - conflicts_before)
+    if new_conflicts:
+        print("\n%d new .conflict type(s) from dependency resolution:" % len(new_conflicts))
+        for p in new_conflicts:
+            print("  %s" % p)
+        if args.prune_conflicts:
+            print("pruned %d of %d" % (prune(dst, new_conflicts, monitor), len(new_conflicts)))
+        else:
+            print("re-run with --prune-conflicts to remove them")
+    dst.getDomainFile().save(monitor)
+    print("Saved.")
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

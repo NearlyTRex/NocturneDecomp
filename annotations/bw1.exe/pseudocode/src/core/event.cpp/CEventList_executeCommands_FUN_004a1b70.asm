@@ -8,16 +8,16 @@
 ; char *           Stack[0x8]:4   commands
 ;
 ; XREF[38]:
-;   core_actor.cpp_FUN_0040c870 at 0040c921
-;   core_carved.cpp_FUN_00428ae0 at 00429b2d
-;   core_carved.cpp_FUN_0042b850 at 0042b970
-;   core_charactr.cpp_FUN_004319e0 at 00431ba3
-;   core_constrct.cpp_FUN_00445cb0 at 004461bf
-;   core_dest.cpp_FUN_0045d2a0 at 0045d437
-;   core_doc.cpp_FUN_004737b0 at 004738af
-;   core_door.cpp_CDoor_onOpened_FUN_004774d0 at 004774e1
-;   core_door.cpp_FUN_00477ab0 at 00477b7f
-;   core_enemy.cpp_FUN_004a0f00 at 004a0f4c
+;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040c870 at 0040c921
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_process_FUN_00416790 at 004167a7
+;   core_bmppuzzl.cpp_CChemPuzzle_process_FUN_00418220 at 00418234
+;   core_carved.cpp_CCarved_processDamage_FUN_0042b850 at 0042b970
+;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 00429b2d
+;   core_charactr.cpp_CCharacter_processDamage_FUN_004319e0 at 00431ba3
+;   core_construc.cpp_CConstruct_process_FUN_00445cb0 at 004461bf
+;   core_demnfolk.cpp_CDemnfolk_processDamage_FUN_0045c7b0 at 0045c8e8
+;   core_dest.cpp_CActorDestination_process_FUN_0045d2a0 at 0045d437
+;   core_djien.cpp_CDjien_damageSack_FUN_00460f90 at 0046107a
 ;   ... and 28 more
 ;
 ; Referenced Globals:

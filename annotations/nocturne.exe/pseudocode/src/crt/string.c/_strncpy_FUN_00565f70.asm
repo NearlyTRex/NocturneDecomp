@@ -8,11 +8,12 @@
 ; char *           Stack[0x8]:4   src
 ; SIZE_T           Stack[0xc]:4   count
 ;
-; XREF[8]:
+; XREF[9]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_004f3fc0 at 004f3fcc
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_setFilename_FUN_004f5c40 at 004f5c4f
 ;   core_netgame.cpp_CNetGame_processChatOut_FUN_004ebfd0 at 004ec0cf
 ;   crt_io.c_getFileStat_FUN_0056c864 at 0056cb4b
+;   crt_unknown.c_FUN_00570924 at 0057095a
 ;   crt_unknown.c_FUN_00572b70 at 00572bbe
 ;   engine_dosio.cpp_CFileFinder_convertStruct_FUN_00456d90 at 00456dbb
 ;   engine_pod.cpp_findFilesByExtension_FUN_004f8b90 at 004f8cfa

@@ -1,8 +1,119 @@
 [
   {
+    "kind":"funcdef",
+    "name":"CCharacter_applyDamage",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      },
+      {
+        "name":"damage_type",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"damage_amount",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CCharacter_canBeGrabbed",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      },
+      {
+        "name":"grabber",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"grab_type",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_updateInteraction",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"user_orientation",
+        "type":{
+          "kind":"union",
+          "name":"UOrientationVector",
+          "ptr":1
+        }
+      },
+      {
+        "name":"player_control",
+        "type":{
+          "kind":"struct",
+          "name":"SPlayerInput",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CDemonCubeTriangle",
-    "size":1
+    "size":32
   },
   {
     "kind":"class",
@@ -13,6 +124,7 @@
   {
     "kind":"class",
     "name":"CDisease",
+    "parent":"CWeapon",
     "size":1444
   },
   {
@@ -44,11 +156,52 @@
   {
     "kind":"class",
     "name":"CFont",
-    "size":1
+    "size":27208
+  },
+  {
+    "kind":"class",
+    "name":"CHero_full_vtable",
+    "size":352,
+    "vtable_slots":[
+      {
+        "name":"_ub",
+        "offset":0
+      },
+      {
+        "name":"_uc",
+        "offset":216
+      },
+      {
+        "name":"_uh",
+        "offset":320
+      }
+    ]
+  },
+  {
+    "kind":"funcdef",
+    "name":"CHero_vfunc83",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CHero",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
     "name":"CInStreamFile",
+    "parent":"CInStream",
     "size":44
   },
   {
@@ -58,6 +211,54 @@
     "size":380
   },
   {
+    "kind":"funcdef",
+    "name":"CKeys_getKeyState",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CKeys",
+          "ptr":1
+        }
+      },
+      {
+        "name":"key_code",
+        "type":{
+          "kind":"enum",
+          "name":"EInputCodeType",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"class",
+    "name":"CKeys_vtable",
+    "size":12,
+    "vtable_slots":[
+      {
+        "name":"getKeyState",
+        "offset":0
+      },
+      {
+        "name":"getAndClearKeyState",
+        "offset":4
+      },
+      {
+        "name":"clearKeyPresses",
+        "offset":8
+      }
+    ]
+  },
+  {
     "kind":"class",
     "name":"CLightActor",
     "parent":"CBoxActor",
@@ -65,47 +266,184 @@
     "size":14068
   },
   {
+    "kind":"funcdef",
+    "name":"CMotionController_findPatchToFrame",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CMotionController",
+          "ptr":1
+        }
+      },
+      {
+        "name":"source_motion_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"source_frame",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"target_motion_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"COutStreamMemory",
+    "parent":"COutStream",
     "size":24
   },
   {
     "kind":"class",
     "name":"CPackedBitmapSet",
     "rtti_file":"cockpit/pkbmpset.cpp",
-    "size":1
+    "size":40
   },
   {
     "kind":"class",
     "name":"CRock",
+    "parent":"CParticle",
     "rtti_file":"core/emitter.cpp",
     "size":80
   },
   {
     "kind":"class",
     "name":"CSocket",
-    "size":1
+    "size":4
   },
   {
-    "kind":"class",
-    "name":"CTentacle",
-    "parent":"CEnemy",
-    "rtti_file":"core/tentacle.cpp",
-    "size":1
+    "kind":"funcdef",
+    "name":"CSoundDevice_reset",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CSoundDevice_setMode",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      },
+      {
+        "name":"bits_per_sample",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"channels",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"sample_rate",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"out_samples_per_block",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
     "name":"CTerrain",
-    "size":1
+    "size":8
   },
   {
     "kind":"class",
     "name":"CTheHand",
+    "parent":"CEnemy",
     "size":53452
+  },
+  {
+    "kind":"funcdef",
+    "name":"CWeapon_fire",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CWeapon",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
     "name":"CZombieDemon",
+    "parent":"CZombie",
     "size":53580
   },
   {
@@ -132,14 +470,53 @@
     ]
   },
   {
+    "kind":"enum",
+    "name":"EFireMode",
+    "size":4,
+    "values":[
+      {
+        "name":"FIRE_MODE_AUTOMATIC",
+        "value":0
+      },
+      {
+        "name":"FIRE_MODE_SINGLE",
+        "value":1
+      },
+      {
+        "name":"FIRE_MODE_PUMP",
+        "value":2
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"EHeroControlType",
+    "size":4,
+    "values":[
+      {
+        "name":"HERO_CONTROL_PLAYER",
+        "value":0
+      },
+      {
+        "name":"HERO_CONTROL_NETWORK",
+        "value":1
+      },
+      {
+        "name":"HERO_CONTROL_AI",
+        "value":2
+      }
+    ]
+  },
+  {
     "kind":"struct",
     "name":"SCoronaLightEntry",
-    "size":1
+    "size":78724
   },
   {
     "kind":"struct",
     "name":"SMRGLPrimitivePoly",
-    "size":1
+    "parent":"SMRGLHeaderPrimitive",
+    "size":120
   },
   {
     "kind":"struct",
@@ -149,6 +526,6 @@
   {
     "kind":"struct",
     "name":"SPoseData",
-    "size":1
+    "size":1612
   }
 ]

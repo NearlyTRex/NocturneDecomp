@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   sound_sndmain.cpp_FUN_00552e40 at 00552e61
+;   sound_sndmain.cpp_selectRecordingDevice_FUN_00552e40 at 00552e61
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_getRecordingDeviceCount_FUN_00552d00
@@ -38,7 +38,7 @@ section .text
     PUSH EAX                            ; 00552de1
     PUSH EBX                            ; 00552de2
     CALL sound_sndmain.cpp_getRecordingDeviceInfo_FUN_00552d60 ; 00552de3
-        ;   XREF to: 00552d60 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getRecordingDeviceInfo_FUN_00552d60()
+        ;   XREF to: 00552d60 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_getRecordingDeviceInfo_FUN_00552d60(int index, SRecordingDeviceInfo * device_info)
     ADD ESP,0x8                         ; 00552de8
     CMP dword ptr [ESP + 0x208],0x1     ; 00552deb
     JZ 0x00552e1d                       ; 00552df3
@@ -57,7 +57,7 @@ section .text
     PUSH EAX                            ; 00552e02
     PUSH EBX                            ; 00552e03
     CALL sound_sndmain.cpp_getRecordingDeviceInfo_FUN_00552d60 ; 00552e04
-        ;   XREF to: 00552d60 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getRecordingDeviceInfo_FUN_00552d60()
+        ;   XREF to: 00552d60 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_getRecordingDeviceInfo_FUN_00552d60(int index, SRecordingDeviceInfo * device_info)
     ADD ESP,0x8                         ; 00552e09
     CMP dword ptr [ESP + 0x100],0x0     ; 00552e0c
     JZ 0x00552e1d                       ; 00552e14

@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 87,
+    "complexity_score": 51,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 27,
-    "suspect_count": 5,
+    "pseudocode_lines": 26,
+    "suspect_count": 2,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_field"
+      "negative_offset"
     ],
-    "total_lines": 92
+    "total_lines": 91
   },
   "cross_references": [],
   "function": {
@@ -24,9 +23,9 @@
         "00509b84"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_npc.cpp_CNPC_dtor_FUN_00509af0",
-    "signature": "CNPC * core_npc_cpp_CNPC_dtor_FUN_00509af0(CNPC *this_ptr,uint flags)"
+    "signature": "CNPC * __cdecl core_npc_cpp_CNPC_dtor_FUN_00509af0(CNPC *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -35,9 +34,14 @@
       "name": "core_actor.cpp_CDemonActor_dtor_FUN_00408770"
     },
     {
+      "addr": "00410370",
+      "is_variadic": false,
+      "name": "core_armour.cpp_FUN_00410370"
+    },
+    {
       "addr": "0043f900",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_0043f900"
+      "name": "core_cloth.cpp_CClothList_dtor_FUN_0043f900"
     },
     {
       "addr": "0050ad40",
@@ -63,11 +67,6 @@
       "addr": "005a30c4",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005a30c4"
-    },
-    {
-      "addr": "00410370",
-      "is_variadic": false,
-      "name": "unkafter_armour.cpp_FUN_00410370"
     }
   ],
   "globals": [
@@ -111,6 +110,32 @@
     },
     "pcode_op_count": 234
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004d11c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9541
+    },
+    "bw1.exe": {
+      "addr": "004ed400",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004f4700",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8739
+    },
+    "nocturne.exe": {
+      "addr": "004b68c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8739
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -136,44 +161,20 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0xcdcc",
-      "severity": "mild",
-      "text": "pCVar1 = core_path_cpp_CPathMap_dtor_FUN_0050ad40((CPathMap *)&this_ptr->field_0xcdcc,0);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 20,
+      "line": 18,
       "match": "pCVar1[-1].",
       "severity": "mild",
-      "text": "iVar2 = unkafter_armour_cpp_FUN_00410370(&pCVar1[-1].field_0xa36c,0);",
+      "text": "iVar2 = core_armour_cpp_FUN_00410370(pCVar1[-1].height_cache_tags[4] + 0x2f,0);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0xa36c",
-      "severity": "mild",
-      "text": "iVar2 = unkafter_armour_cpp_FUN_00410370(&pCVar1[-1].field_0xa36c,0);",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 25,
+      "line": 23,
       "match": "pCVar4[-1].",
       "severity": "mild",
-      "text": "((CDemonActor *)&pCVar4[-1].field_0x224c,1);",
+      "text": "((CDemonActor *)(pCVar4[-1].part_data.texture_set_indices + 7),1);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x224c",
-      "severity": "mild",
-      "text": "((CDemonActor *)&pCVar4[-1].field_0x224c,1);",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {
@@ -184,7 +185,7 @@
         "vtable_addr": "005e2f44"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CNPC",
         "offset": 208,
         "vtable_addr": "005e2df4"
       }

@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c5430
-;   unkafter_zombie.cpp_FUN_005cb6f0
+;   crt_unknown.c_FUN_005cb6f0
 ;
 ; *****************************************************************************
 
@@ -112,8 +112,8 @@ section .text
     PUSH EAX                            ; 005c590d
     LEA EAX,[ESP + 0x8]                 ; 005c590e
     PUSH EAX                            ; 005c5912
-    CALL unkafter_zombie.cpp_FUN_005cb6f0 ; 005c5913
-        ;   XREF to: 005cb6f0 (UNCONDITIONAL_CALL)  ; undefined unkafter_zombie.cpp_FUN_005cb6f0()
+    CALL crt_unknown.c_FUN_005cb6f0     ; 005c5913
+        ;   XREF to: 005cb6f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005cb6f0()
     ADD ESP,0xc                         ; 005c5918
     CMP EAX,-0x1                        ; 005c591b
     JNZ 0x005c5924                      ; 005c591e

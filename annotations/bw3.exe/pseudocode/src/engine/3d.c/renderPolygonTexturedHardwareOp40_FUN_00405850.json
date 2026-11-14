@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 152,
+    "complexity_score": 97,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 27,
-    "suspect_count": 11,
+    "suspect_count": 6,
     "suspect_types": [
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 88
@@ -27,7 +26,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_3d.c_renderPolygonTexturedHardwareOp40_FUN_00405850",
-    "signature": "undefined * __cdecl engine_3d_c_renderPolygonTexturedHardwareOp40_FUN_00405850(int param_1)"
+    "signature": "SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedHardwareOp40_FUN_00405850(SMRGLHeaderPrimitive *prim)"
   },
   "function_calls": [
     {
@@ -89,9 +88,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -120,13 +119,47 @@
     },
     "pcode_op_count": 154
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00405a20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00405850",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00405a00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00406fd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "prim",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -136,14 +169,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "byte * __cdecl engine_3d_c_renderPolygonTexturedHardwareOp40_FUN_00405850(int param_1)",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
@@ -170,51 +195,19 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((int *)(param_1 + 0x18),*(uint *)(param_1 + 4));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((int *)(param_1 + 0x18),*(uint *)(param_1 + 4));",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 26,
       "match": "DAT_00730404",
       "severity": "mild",
-      "text": "return &DAT_00730404;",
+      "text": "return (SMRGLHeaderExtended *)&DAT_00730404;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_clipper_c_clipAndRasterize_FUN_0043a840(*(int *)(param_1 + 4),(int *)(param_1 + 0x18));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_clipper_c_clipAndRasterize_FUN_0043a840(*(int *)(param_1 + 4),(int *)(param_1 + 0x18));",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 29,
       "match": "DAT_00730404",
       "severity": "mild",
-      "text": "return &DAT_00730404;",
+      "text": "return (SMRGLHeaderExtended *)&DAT_00730404;",
       "type": "undefined_data"
     }
   ],

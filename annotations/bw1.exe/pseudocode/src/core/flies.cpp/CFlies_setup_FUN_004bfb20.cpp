@@ -11,14 +11,14 @@ void __cdecl core_flies_cpp_CFlies_setup_FUN_004bfb20(CFlies *this_ptr)
 {
   int fly_index;
   
-  core_actor_cpp_FUN_00408850((CDemonActor *)this_ptr);
+  core_actor_cpp_CDemonActor_setup_FUN_00408850(&this_ptr->base);
   fly_index = 0;
-  if (0 < *(int *)&this_ptr->field_0x164) {
+  if (0 < this_ptr->fly_count) {
     do {
-      core_flies_cpp_FUN_004c0530(this_ptr,fly_index);
+      core_flies_cpp_CFlies_initFly_FUN_004c0530(this_ptr,fly_index);
       fly_index = fly_index + 1;
-    } while (fly_index < *(int *)&this_ptr->field_0x164);
+    } while (fly_index < this_ptr->fly_count);
   }
-  *(uint *)&this_ptr->field_0x2a1c = 1;
+  this_ptr->is_visible = 1;
   return;
 }

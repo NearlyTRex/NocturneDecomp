@@ -12,15 +12,15 @@
 ;   undefined4 DAT_005e4840
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_00556db0
-;   sound_sndmain.cpp_FUN_00557020
-;   sound_sndmain.cpp_FUN_00557080
-;   sound_sndmain.cpp_FUN_00557100
-;   sound_sndmain.cpp_FUN_00557140
-;   sound_sndmain.cpp_FUN_00558840
-;   sound_sndmain.cpp_FUN_00558b10
+;   sound_sndmain.cpp_enableSfxChannel_FUN_00556db0
+;   sound_sndmain.cpp_getCurrentRecordingDevice_FUN_00558b10
+;   sound_sndmain.cpp_getCurrentSoundDevice_FUN_00558840
 ;   sound_sndmain.cpp_selectRecordingDevice_FUN_005589e0
 ;   sound_sndmain.cpp_selectSoundDevice_FUN_00558640
+;   sound_sndmain.cpp_set3DListenerDistanceFactor_FUN_00557140
+;   sound_sndmain.cpp_set3DListenerOrient_FUN_00557080
+;   sound_sndmain.cpp_set3DListenerPos_FUN_00557020
+;   sound_sndmain.cpp_set3DListenerVelocity_FUN_00557100
 ;   sound_sndmain.cpp_setSfxChannelVol_FUN_00556c90
 ;
 ; *****************************************************************************
@@ -34,12 +34,12 @@ section .text
         ;   Label: LAB_00557f63
     PUSH EBX                            ; 00557f68
     CALL sound_sndmain.cpp_setSfxChannelVol_FUN_00556c90 ; 00557f69
-        ;   XREF to: 00556c90 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setSfxChannelVol_FUN_00556c90()
+        ;   XREF to: 00556c90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setSfxChannelVol_FUN_00556c90(int channel_index, float volume)
     ADD ESP,0x8                         ; 00557f6e
     PUSH 0x1                            ; 00557f71
     PUSH EBX                            ; 00557f73
-    CALL sound_sndmain.cpp_FUN_00556db0 ; 00557f74
-        ;   XREF to: 00556db0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00556db0(int channel_index, int enable_state)
+    CALL sound_sndmain.cpp_enableSfxChannel_FUN_00556db0 ; 00557f74
+        ;   XREF to: 00556db0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_enableSfxChannel_FUN_00556db0(int channel_index, int enable_state)
     INC EBX                             ; 00557f79
     ADD ESP,0x8                         ; 00557f7a
     CMP EBX,0x20                        ; 00557f7d
@@ -51,11 +51,11 @@ section .text
     FSTP float ptr [ESP]                ; 00557f91
     PUSH 0x1                            ; 00557f94
     CALL sound_sndmain.cpp_setSfxChannelVol_FUN_00556c90 ; 00557f96
-        ;   XREF to: 00556c90 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setSfxChannelVol_FUN_00556c90()
+        ;   XREF to: 00556c90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setSfxChannelVol_FUN_00556c90(int channel_index, float volume)
     ADD ESP,0x8                         ; 00557f9b
     PUSH 0x3f800000                     ; 00557f9e
-    CALL sound_sndmain.cpp_FUN_00557140 ; 00557fa3
-        ;   XREF to: 00557140 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00557140()
+    CALL sound_sndmain.cpp_set3DListenerDistanceFactor_FUN_00557140 ; 00557fa3
+        ;   XREF to: 00557140 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_set3DListenerDistanceFactor_FUN_00557140(float distance_in_feet)
     ADD ESP,0x4                         ; 00557fa8
     PUSH 0x0                            ; 00557fab
     PUSH 0x0                            ; 00557fad
@@ -63,8 +63,8 @@ section .text
     PUSH 0x0                            ; 00557fb1
     PUSH 0x0                            ; 00557fb3
     PUSH 0x0                            ; 00557fb5
-    CALL sound_sndmain.cpp_FUN_00557020 ; 00557fb7
-        ;   XREF to: 00557020 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00557020()
+    CALL sound_sndmain.cpp_set3DListenerPos_FUN_00557020 ; 00557fb7
+        ;   XREF to: 00557020 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_set3DListenerPos_FUN_00557020(double pos_x, double pos_y, double pos_z)
     ADD ESP,0x18                        ; 00557fbc
     PUSH 0x3f800000                     ; 00557fbf
     PUSH 0x0                            ; 00557fc4
@@ -75,23 +75,23 @@ section .text
     PUSH 0x0                            ; 00557fd1
     PUSH 0x0                            ; 00557fd3
     PUSH 0x3f800000                     ; 00557fd5
-    CALL sound_sndmain.cpp_FUN_00557080 ; 00557fda
-        ;   XREF to: 00557080 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00557080()
+    CALL sound_sndmain.cpp_set3DListenerOrient_FUN_00557080 ; 00557fda
+        ;   XREF to: 00557080 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_set3DListenerOrient_FUN_00557080(float front_x, float front_y, float front_z, float up_x, ...)
     ADD ESP,0x24                        ; 00557fdf
     PUSH 0x0                            ; 00557fe2
     PUSH 0x0                            ; 00557fe4
     PUSH 0x0                            ; 00557fe6
-    CALL sound_sndmain.cpp_FUN_00557100 ; 00557fe8
-        ;   XREF to: 00557100 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00557100()
+    CALL sound_sndmain.cpp_set3DListenerVelocity_FUN_00557100 ; 00557fe8
+        ;   XREF to: 00557100 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_set3DListenerVelocity_FUN_00557100(float velocity_x, float velocity_y, float velocity_z)
     ADD ESP,0xc                         ; 00557fed
-    CALL sound_sndmain.cpp_FUN_00558840 ; 00557ff0
-        ;   XREF to: 00558840 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00558840()
+    CALL sound_sndmain.cpp_getCurrentSoundDevice_FUN_00558840 ; 00557ff0
+        ;   XREF to: 00558840 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getCurrentSoundDevice_FUN_00558840()
     PUSH EAX                            ; 00557ff5
     CALL sound_sndmain.cpp_selectSoundDevice_FUN_00558640 ; 00557ff6
         ;   XREF to: 00558640 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_selectSoundDevice_FUN_00558640(int device_id)
     ADD ESP,0x4                         ; 00557ffb
-    CALL sound_sndmain.cpp_FUN_00558b10 ; 00557ffe
-        ;   XREF to: 00558b10 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00558b10()
+    CALL sound_sndmain.cpp_getCurrentRecordingDevice_FUN_00558b10 ; 00557ffe
+        ;   XREF to: 00558b10 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getCurrentRecordingDevice_FUN_00558b10()
     PUSH EAX                            ; 00558003
     CALL sound_sndmain.cpp_selectRecordingDevice_FUN_005589e0 ; 00558004
         ;   XREF to: 005589e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_selectRecordingDevice_FUN_005589e0(int device_id)

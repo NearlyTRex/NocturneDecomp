@@ -12,32 +12,36 @@ void __cdecl core_hero_cpp_CHero_createDefaultWeapon_FUN_004eafd0(CHero *this_pt
 
 {
   char cVar1;
-  uint uVar2;
-  CDemonActor *item_actor;
+  CDemonActor *pCVar2;
   char *pcVar3;
   CDemonActor *pCVar4;
+  uint class_name_hash;
   
-  core_inv_cpp_CInventory_initialize_FUN_004f7050((CInventory *)(this_ptr + 0x1fae8));
-  uVar2 = core_actor_cpp_createActorByName_FUN_0040c2b0(&DAT_005e4800,g_CWeaponClassInfo.name_hash);
-  item_actor = (CDemonActor *)core_actor_cpp_castToClassHash_FUN_0040c600(uVar2);
-  if (item_actor == (CDemonActor *)0x0) {
+  core_inv_cpp_CInventory_initialize_FUN_004f7050(&this_ptr->inventory);
+  class_name_hash = g_CWeaponClassInfo.name_hash;
+  pCVar2 = core_actor_cpp_createActorByName_FUN_0040c2b0(&DAT_005e4800);
+  pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c600(pCVar2,class_name_hash);
+  if (pCVar2 == (CDemonActor *)0x0) {
     _DAT_01d1d400 = "..\\core\\hero.cpp";
     _DAT_01d1d404 = 0x1d3;
     core_main_c_FUN_005030e0("Out of memory!");
   }
   pcVar3 = "Your_weapon";
-  pCVar4 = item_actor;
+  pCVar4 = pCVar2;
   do {
     cVar1 = *pcVar3;
-    *(char *)pCVar4 = cVar1;
+    pCVar4->actor_name[0] = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = pcVar3[1];
     pcVar3 = pcVar3 + 2;
-    pCVar4->field_0x1 = cVar1;
-    pCVar4 = (CDemonActor *)&pCVar4->field_0x2;
+    pCVar4->actor_name[1] = cVar1;
+    pCVar4 = (CDemonActor *)(pCVar4->actor_name + 2);
   } while (cVar1 != '\0');
-  core_inv_cpp_FUN_004f7690((CInventory *)(this_ptr + 0x1fae8),item_actor,1);
-  core_inv_cpp_FUN_004f8dc0((CInventory *)(this_ptr + 0x1fae8),(CDemonActor *)0x0,5,1);
-  *(uint *)&item_actor[4].field_0x8 = 100;
+  core_inv_cpp_FUN_004f7690(&this_ptr->inventory,pCVar2,1);
+  core_inv_cpp_CInventory_selectWeapon_FUN_004f8dc0(&this_ptr->inventory,(CDemonActor *)0x0,5,1);
+  pCVar2[4].actor_name[8] = 'd';
+  pCVar2[4].actor_name[9] = '\0';
+  pCVar2[4].actor_name[10] = '\0';
+  pCVar2[4].actor_name[0xb] = '\0';
   return;
 }

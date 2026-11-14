@@ -15,14 +15,16 @@ CLightActor * __cdecl core_boxactor_cpp_CLightActor_dtor_FUN_00420d30(CLightActo
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CLightActorTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CLightActorTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  pCVar1 = core_dlight_cpp_CDemonLight_dtor_FUN_0045c240((CDemonLight *)&this_ptr->field_0x6ec,0);
-  pCVar2 = core_box_cpp_CBox_dtor_FUN_0041adf0((CBox *)&pCVar1[-1].field_0x2c54,0);
+  pCVar1 = core_dlight_cpp_CDemonLight_dtor_FUN_0045c240(&this_ptr->light,0);
+  pCVar2 = core_box_cpp_CBox_dtor_FUN_0041adf0
+                     ((CBox *)(pCVar1[-1].saved_screen_buffer_rows + 0x3e0),0);
   pCVar3 = (CLightActor *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)(pCVar2 + -0x394),1);
+           core_actor_cpp_CDemonActor_dtor_FUN_00408770
+                     ((CDemonActor *)(pCVar2[-2].scrape_points + 2),1);
   if ((flags & 2) == 0) {
     return pCVar3;
   }

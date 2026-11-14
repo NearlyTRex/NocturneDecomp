@@ -1,12 +1,12 @@
 // Name: core_tentacle.cpp_staticInit_FUN_00572570
 // Address: 00572570
 // Address Range: [[00572570, 00572593]]
-// Convention: unknown
-// Signature: void core_tentacle_cpp_staticInit_FUN_00572570(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_tentacle_cpp_staticInit_FUN_00572570(void)
 
 #include "nocturne.h"
 
-void core_tentacle_cpp_staticInit_FUN_00572570(void)
+void __cdecl core_tentacle_cpp_staticInit_FUN_00572570(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450

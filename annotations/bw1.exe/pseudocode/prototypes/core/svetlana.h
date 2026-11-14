@@ -7,63 +7,63 @@
 
 // Original: core_svetlana.cpp_staticInit_FUN_00592da0
 // Address: 00592da0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_svetlana.cpp_factoryFuncSvetlana_FUN_00592dd0
 // Address: 00592dd0
-void factoryFuncSvetlana(void);
+CSvetlana * __cdecl factoryFuncSvetlana(void);
 
 // Original: core_svetlana.cpp_CSvetlana_getActorType_FUN_00592df0
 // Address: 00592df0
-CDemonActorType * CSvetlana::getActorType(CSvetlana *this_ptr);
+CDemonActorType * __cdecl CSvetlana::getActorType(CSvetlana *this_ptr);
 
 // Original: core_svetlana.cpp_CSvetlana_ctor_FUN_00592e00
 // Address: 00592e00
 CSvetlana * __cdecl CSvetlana::ctor(CSvetlana *this_ptr);
 
-// Original: core_svetlana.cpp_FUN_00592e90
+// Original: core_svetlana.cpp_CSvetlana_setup_FUN_00592e90
 // Address: 00592e90
-void FUN_00592e90(CHero *param_1);
+void __cdecl CSvetlana::setup(CSvetlana *this_ptr);
 
-// Original: core_svetlana.cpp_FUN_00593150
+// Original: core_svetlana.cpp_CSvetlana_process_FUN_00593150
 // Address: 00593150
-void FUN_00593150(CSvetlana *param_1,float param_2);
+void __cdecl CSvetlana::process(CSvetlana *this_ptr,float delta_time);
 
-// Original: core_svetlana.cpp_FUN_005938c0
+// Original: core_svetlana.cpp_CSvetlana_processAI_FUN_005938c0
 // Address: 005938c0
-void __cdecl FUN_005938c0(CSvetlana *this_ptr,float delta_time);
+void __cdecl CSvetlana::processAI(CSvetlana *this_ptr,float delta_time);
 
-// Original: core_svetlana.cpp_FUN_005940a0
+// Original: core_svetlana.cpp_CSvetlana_advanceMotion_FUN_005940a0
 // Address: 005940a0
-void __cdecl FUN_005940a0(CSvetlana *this_ptr,float delta_time);
+void __cdecl CSvetlana::advanceMotion(CSvetlana *this_ptr,float delta_time);
 
-// Original: core_svetlana.cpp_FUN_00594140
+// Original: core_svetlana.cpp_CSvetlana_performBladeAttack_FUN_00594140
 // Address: 00594140
-void __cdecl FUN_00594140(CSvetlana *this_ptr,int bone_index);
+void __cdecl CSvetlana::performBladeAttack(CSvetlana *this_ptr,int bone_index);
 
 // Original: core_svetlana.cpp_CSvetlana_archive_FUN_00594330
 // Address: 00594330
 void __cdecl CSvetlana::archive(CSvetlana *this_ptr);
 
-// Original: core_svetlana.cpp_FUN_00594340
+// Original: core_svetlana.cpp_CSvetlana_renderOpaque_FUN_00594340
 // Address: 00594340
-int FUN_00594340(CCharacter *param_1);
+int __cdecl CSvetlana::renderOpaque(CSvetlana *this_ptr);
 
-// Original: core_svetlana.cpp_FUN_005944c0
+// Original: core_svetlana.cpp_CSvetlana_processDamage_FUN_005944c0
 // Address: 005944c0
-void FUN_005944c0(CDemonActor *param_1,int param_2);
+void __cdecl CSvetlana::processDamage(CSvetlana *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_svetlana.cpp_FUN_00594650
+// Original: core_svetlana.cpp_CSvetlana_getGrabbed_FUN_00594650
 // Address: 00594650
-undefined4 FUN_00594650(void);
+int __cdecl CSvetlana::getGrabbed(CSvetlana *this_ptr,CDemonActor *grabber,int grab_type);
 
-// Original: core_svetlana.cpp_FUN_00594660
+// Original: core_svetlana.cpp_CSvetlana_isWeaponDrawn_FUN_00594660
 // Address: 00594660
-undefined4 FUN_00594660(int param_1);
+int __cdecl CSvetlana::isWeaponDrawn(CSvetlana *this_ptr);
 
-// Original: core_svetlana.cpp_FUN_00594670
+// Original: core_svetlana.cpp_CSvetlana_drawWeapon_FUN_00594670
 // Address: 00594670
-void FUN_00594670(int param_1,undefined4 param_2);
+void __cdecl CSvetlana::drawWeapon(CSvetlana *this_ptr,int drawn);
 
 // Original: core_svetlana.cpp_CSvetlana_dtor_FUN_00594680
 // Address: 00594680

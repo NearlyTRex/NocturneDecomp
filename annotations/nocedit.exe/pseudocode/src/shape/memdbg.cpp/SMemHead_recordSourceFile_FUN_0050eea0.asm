@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_memdbg_cpp_SMemHead_recordSourceFile_FUN_0050eea0(SMemHead *header,char *source_filename)
+; void __cdecl shape_memdbg_cpp_SMemHead_recordSourceFile_FUN_0050eea0(SMemHead *this_ptr,char *source_filename)
 ;
 ; Parameters:
-; SMemHead *       Stack[0x4]:4   header
+; SMemHead *       Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   source_filename
 ;
 ; XREF[3]:

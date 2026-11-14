@@ -2,34 +2,35 @@
 // Address: 0040c5a0
 // Address Range: [[0040c5a0, 0040c63d]]
 // Convention: __cdecl
-// Signature: int __cdecl core_actor_cpp_createActorByName_FUN_0040c5a0(undefined4 param_1)
+// Signature: CDemonActor * __cdecl core_actor_cpp_createActorByName_FUN_0040c5a0(char *class_name)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int __cdecl core_actor_cpp_createActorByName_FUN_0040c5a0(uint param_1)
+CDemonActor * __cdecl core_actor_cpp_createActorByName_FUN_0040c5a0(char *class_name)
 
 {
-  int iVar1;
+  CDemonActorType *pCVar1;
+  CDemonActor *pCVar2;
   
-  iVar1 = core_actor_cpp_getActorClassByName_FUN_0040c530(param_1);
-  if (iVar1 == 0) {
+  pCVar1 = core_actor_cpp_getActorClassByName_FUN_0040c530(class_name);
+  if (pCVar1 == (CDemonActorType *)0x0) {
     _DAT_01d046a0 = "..\\core\\actor.cpp";
     _DAT_01d046a4 = 0xaad;
-    core_main_c_FUN_004e4500("Can't create actor of unknown class type: %s",param_1);
+    core_main_c_FUN_004e4500("Can't create actor of unknown class type: %s",class_name);
   }
-  if (*(int *)(iVar1 + 0x2c) == 0) {
+  if (pCVar1->factory_func == (CDemonActor_FactoryFunc *)0x0) {
     _DAT_01d046a0 = "..\\core\\actor.cpp";
     _DAT_01d046a4 = 0xab3;
-    core_main_c_FUN_004e4500("Can't create instance of abstract type %s",param_1);
+    core_main_c_FUN_004e4500("Can't create instance of abstract type %s",class_name);
   }
-  iVar1 = (**(code **)(iVar1 + 0x2c))();
-  if (iVar1 != 0) {
-    return iVar1;
+  pCVar2 = (*pCVar1->factory_func)();
+  if (pCVar2 != (CDemonActor *)0x0) {
+    return pCVar2;
   }
   _DAT_01d046a0 = "..\\core\\actor.cpp";
   _DAT_01d046a4 = 0xabc;
-  core_main_c_FUN_004e4500("Not enough memory to create %s",param_1);
-  return 0;
+  core_main_c_FUN_004e4500("Not enough memory to create %s",class_name);
+  return (CDemonActor *)0x0;
 }

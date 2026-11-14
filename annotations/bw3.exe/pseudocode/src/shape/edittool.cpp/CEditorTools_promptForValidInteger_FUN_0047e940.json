@@ -18,7 +18,7 @@
     {
       "addr": "004bb100",
       "from_addr": "004bb977",
-      "name": "core_game.cpp_FUN_004bb100",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004bb100",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -49,7 +49,7 @@
     {
       "addr": "005a28c0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a28c0"
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
     },
     {
       "addr": "0047cf40",
@@ -94,7 +94,7 @@
       {
         "call_addr": "004bb977",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bb100",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004bb100",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -105,7 +105,7 @@
       {
         "call_addr": "004bb99f",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bb100",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004bb100",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -116,7 +116,7 @@
       {
         "call_addr": "004bb9c7",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bb100",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004bb100",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -191,6 +191,32 @@
       "STORE": 28
     },
     "pcode_op_count": 314
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0047d730",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00495da0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004a0020",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00471360",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 84,
@@ -270,7 +296,7 @@
       "line": 13,
       "match": "DAT_005bcf91",
       "severity": "mild",
-      "text": "FUN_005a28c0(local_34,&DAT_005bcf91,*result_ptr);",
+      "text": "_sprintf(local_34,&DAT_005bcf91);",
       "type": "undefined_data"
     },
     {

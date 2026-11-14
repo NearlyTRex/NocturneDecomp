@@ -9,7 +9,7 @@
 void shape_edittool_cpp_FUN_0047f970(CEditorTools *param_1)
 
 {
-  shape_edittool_cpp_FUN_0047cd80();
+  shape_edittool_cpp_paintWindowBackground_FUN_0047cd80();
   shape_edittool_cpp_FUN_0047ccb0();
   shape_edittool_cpp_CEditorTools_popWindowState_FUN_0047f990(param_1);
   return;

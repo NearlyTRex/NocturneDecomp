@@ -1,14 +1,14 @@
 // Name: core_doc.cpp_staticInit_FUN_004689b0
 // Address: 004689b0
 // Address Range: [[004689b0, 00468a1d]]
-// Convention: unknown
-// Signature: void core_doc_cpp_staticInit_FUN_004689b0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_doc_cpp_staticInit_FUN_004689b0(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_doc_cpp_staticInit_FUN_004689b0(void)
+void __cdecl core_doc_cpp_staticInit_FUN_004689b0(void)
 
 {
   _DAT_01b687f8 = 0x3f012dba;

@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 65,
+    "complexity_score": 40,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 25,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_field"
+      "negative_offset"
     ],
     "total_lines": 84
   },
@@ -24,9 +23,9 @@
         "0057fd44"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_werewolf.cpp_CWerewolf_dtor_FUN_0057fcc0",
-    "signature": "CWerewolf * core_werewolf_cpp_CWerewolf_dtor_FUN_0057fcc0(CWerewolf *this_ptr,uint flags)"
+    "signature": "CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_dtor_FUN_0057fcc0(CWerewolf *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -35,9 +34,14 @@
       "name": "core_actor.cpp_CDemonActor_dtor_FUN_00408770"
     },
     {
+      "addr": "00410370",
+      "is_variadic": false,
+      "name": "core_armour.cpp_FUN_00410370"
+    },
+    {
       "addr": "0043f900",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_0043f900"
+      "name": "core_cloth.cpp_CClothList_dtor_FUN_0043f900"
     },
     {
       "addr": "0054bf80",
@@ -58,11 +62,6 @@
       "addr": "005a30c4",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005a30c4"
-    },
-    {
-      "addr": "00410370",
-      "is_variadic": false,
-      "name": "unkafter_armour.cpp_FUN_00410370"
     }
   ],
   "globals": [
@@ -106,6 +105,32 @@
     },
     "pcode_op_count": 207
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0058def0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9495
+    },
+    "bw1.exe": {
+      "addr": "005b1a40",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005f2220",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8624
+    },
+    "nocturne.exe": {
+      "addr": "00557e90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8624
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -131,28 +156,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x385c",
-      "severity": "mild",
-      "text": "iVar1 = unkafter_armour_cpp_FUN_00410370(&this_ptr->field_0x385c,0);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 23,
+      "line": 22,
       "match": "pCVar3[-1].",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)&pCVar3[-1].field_0x224c,1);",
+      "text": "((CDemonActor *)(pCVar3[-1].part_data.texture_set_indices + 7),1);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x224c",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)&pCVar3[-1].field_0x224c,1);",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {
@@ -163,7 +172,7 @@
         "vtable_addr": "005e6514"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CWerewolf",
         "offset": 208,
         "vtable_addr": "005e63c4"
       }

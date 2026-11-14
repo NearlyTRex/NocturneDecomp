@@ -8,15 +8,15 @@
 ;
 ; XREF[40]:
 ;   core_door.cpp_CDoor_getMoveType_FUN_00465380 at 00465406
-;   core_fldnotes.cpp_FUN_004a9950 at 004a9b02
-;   core_fldnotes.cpp_FUN_004abe00 at 004ac624
+;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004abe00 at 004ac624
+;   core_fldnotes.cpp_SNotesEntry_layout_FUN_004a9950 at 004a9b02
+;   core_game.cpp_CGame_displayActStats_FUN_004bfb50 at 004bfc8d
+;   core_game.cpp_CGame_finishAct_FUN_004bfee0 at 004c0023
+;   core_game.cpp_CGame_processCheatCodes_FUN_004bb100 at 004bb15c
 ;   core_game.cpp_CGame_processHotkeys_FUN_004ba540 at 004bacb9
+;   core_game.cpp_CGame_promptLoadGame_FUN_004bfa40 at 004bfae5
+;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b88fb
 ;   core_game.cpp_FUN_004b51e0 at 004b524c
-;   core_game.cpp_FUN_004b6f30 at 004b78e7
-;   core_game.cpp_FUN_004b7f90 at 004b88fb
-;   core_game.cpp_FUN_004bb100 at 004bb15c
-;   core_game.cpp_FUN_004bda10 at 004bdd04
-;   core_game.cpp_FUN_004bdfb0 at 004be458
 ;   ... and 30 more
 ;
 ; Referenced Globals:

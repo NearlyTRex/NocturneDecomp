@@ -31,7 +31,7 @@ void FUN_005616a0(void);
 
 // Original: engine_special.cpp_renderMMXPerspectiveScanline16_FUN_00561713
 // Address: 00561713
-void renderMMXPerspectiveScanline16(void);
+void __edi_esi_ebx renderMMXPerspectiveScanline16(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 
 // Original: engine_special.cpp_FUN_00561fdc
 // Address: 00561fdc
@@ -43,11 +43,11 @@ void FUN_005625a3(void);
 
 // Original: engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_00562c33
 // Address: 00562c33
-int * renderPerspectiveCorrectScanline32(void);
+void __edi_esi_ebx renderPerspectiveCorrectScanline32(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 
 // Original: engine_special.cpp_renderPerspectiveCorrectScanline16_FUN_00562e69
 // Address: 00562e69
-int * renderPerspectiveCorrectScanline16(void);
+void __edi_esi_ebx renderPerspectiveCorrectScanline16(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 
 // Original: engine_special.cpp_renderAlphaRow32_FUN_005630a3
 // Address: 005630a3
@@ -69,49 +69,21 @@ void __cdecl FUN_005632a3(SProjectedVertex *output,CVector3i *input);
 // Address: 0056356c
 void __cdecl FUN_0056356c(SProjectedVertex *output,CVector3i *input);
 
-// Original: engine_special.cpp_CSpawner_getActorType_FUN_00563890
-// Address: 00563890
-CDemonActorType * CSpawner::getActorType(CSpawner *this_ptr);
-
-// Original: engine_special.cpp_CSpawner_ctor_FUN_005638a0
-// Address: 005638a0
-CSpawner * CSpawner::ctor(CSpawner *this_ptr);
-
-// Original: engine_special.cpp_FUN_00563910
-// Address: 00563910
-void FUN_00563910(CDemonActor *param_1);
-
-// Original: engine_special.cpp_FUN_00563970
-// Address: 00563970
-void FUN_00563970(int param_1,float param_2);
-
-// Original: engine_special.cpp_FUN_00563e40
-// Address: 00563e40
-undefined4 FUN_00563e40(void);
-
-// Original: engine_special.cpp_FUN_00563e50
-// Address: 00563e50
-void FUN_00563e50(CDemonActor *param_1);
-
-// Original: engine_special.cpp_CSpawner_dtor_FUN_00563f70
-// Address: 00563f70
-CSpawner * CSpawner::dtor(CSpawner *this_ptr,uint flags);
-
-// Original: engine_special.cpp_FUN_00564010
+// Original: engine_special.cpp_shutdownExternalRenderer_FUN_00564010
 // Address: 00564010
-void __cdecl FUN_00564010(void);
+void __cdecl shutdownExternalRenderer(void);
 
-// Original: engine_special.cpp_FUN_00564be0
+// Original: engine_special.cpp_loadExternalRenderer_FUN_00564be0
 // Address: 00564be0
-int __cdecl FUN_00564be0(HWND window_handle);
+int __cdecl loadExternalRenderer(HWND window_handle);
 
 // Original: engine_special.cpp_kill_FUN_005657f0
 // Address: 005657f0
 int __cdecl kill(void);
 
-// Original: engine_special.cpp_FUN_00565810
+// Original: engine_special.cpp_isExternalRendererActive_FUN_00565810
 // Address: 00565810
-undefined4 FUN_00565810(void);
+int __cdecl isExternalRendererActive(void);
 
 // Original: engine_special.cpp_FUN_00565820
 // Address: 00565820
@@ -133,25 +105,29 @@ int __cdecl FUN_005658d0(void);
 // Address: 005658f0
 undefined4 FUN_005658f0(undefined4 param_1);
 
-// Original: engine_special.cpp_FUN_0056592e
-// Address: 0056592e
-undefined4 FUN_0056592e(undefined4 param_1);
+// Original: engine_special.cpp_FUN_00565930
+// Address: 00565930
+undefined4 FUN_00565930(void);
 
-// Original: engine_special.cpp_FUN_0056596e
-// Address: 0056596e
-undefined4 FUN_0056596e(undefined4 param_1,undefined4 param_2);
+// Original: engine_special.cpp_FUN_00565970
+// Address: 00565970
+undefined4 FUN_00565970(void);
 
-// Original: engine_special.cpp_FUN_00565a2c
-// Address: 00565a2c
-undefined4 FUN_00565a2c(undefined4 param_1,undefined4 param_2);
+// Original: engine_special.cpp_FUN_005659b0
+// Address: 005659b0
+undefined4 FUN_005659b0(undefined4 param_1,undefined4 param_2);
 
-// Original: engine_special.cpp_FUN_00565a6c
-// Address: 00565a6c
-undefined4 FUN_00565a6c(undefined4 param_1);
+// Original: engine_special.cpp_FUN_00565a30
+// Address: 00565a30
+undefined4 FUN_00565a30(void);
 
-// Original: engine_special.cpp_FUN_00565a90
+// Original: engine_special.cpp_FUN_00565a70
+// Address: 00565a70
+undefined4 FUN_00565a70(void);
+
+// Original: engine_special.cpp_setResolutionAndColorTable_FUN_00565a90
 // Address: 00565a90
-int __cdecl FUN_00565a90(int width,int height,int bits_per_pixel);
+int __cdecl setResolutionAndColorTable(int width,int height,int bits_per_pixel);
 
 // Original: engine_special.cpp_setColorTable16_FUN_00565bb0
 // Address: 00565bb0
@@ -163,39 +139,39 @@ int __cdecl restoreVideoMode(void);
 
 // Original: engine_special.cpp_drawPolygon_FUN_00565c10
 // Address: 00565c10
-undefined4 __cdecl drawPolygon(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+int __cdecl drawPolygon(SRenderVertex *vertices,int vertex_count,int render_flags);
 
 // Original: engine_special.cpp_drawPolygon2_FUN_00565c40
 // Address: 00565c40
-undefined4 __cdecl drawPolygon2(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+int __cdecl drawPolygon2(SRenderVertex **vertex_array,int vertex_count,int render_flags);
 
 // Original: engine_special.cpp_drawPolyList_FUN_00565c70
 // Address: 00565c70
-undefined4 __cdecl drawPolyList(int param_1,int *param_2,int param_3,undefined4 param_4);
+int __cdecl drawPolyList(SRenderVertex *vertex_buffer,SMRGLPrimitiveQuad **polygons,int polygon_count,int render_flags);
 
 // Original: engine_special.cpp_drawPolyList2_FUN_00565db0
 // Address: 00565db0
-undefined4 __cdecl drawPolyList2(int param_1,undefined4 *param_2,int param_3,undefined4 param_4);
+int __cdecl drawPolyList2(SRenderVertex *vertex_buffer,SInputFace **polygons,int polygon_count,int render_flags);
 
 // Original: engine_special.cpp_drawPolyList3_FUN_00565ef0
 // Address: 00565ef0
 int __cdecl drawPolyList3(SRenderVertex *vertex_buffer,STrianglePackedIndices *polygons,int polygon_count,int render_flags);
 
-// Original: engine_special.cpp_FUN_00565fbe
-// Address: 00565fbe
-undefined4 FUN_00565fbe(undefined4 param_1,undefined4 param_2);
+// Original: engine_special.cpp_addParticle_FUN_00565fc0
+// Address: 00565fc0
+int __cdecl addParticle(void *particle_data,int particle_type);
 
-// Original: engine_special.cpp_FUN_00565fee
-// Address: 00565fee
-undefined4 FUN_00565fee(void);
+// Original: engine_special.cpp_flushParticleList_FUN_00565ff0
+// Address: 00565ff0
+int __cdecl flushParticleList(void);
 
-// Original: engine_special.cpp_FUN_00566010
+// Original: engine_special.cpp_add3dLine_FUN_00566010
 // Address: 00566010
-undefined4 FUN_00566010(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+int __cdecl add3dLine(void *start_point,void *end_point,int line_style);
 
-// Original: engine_special.cpp_FUN_00566040
+// Original: engine_special.cpp_flushLineList_FUN_00566040
 // Address: 00566040
-undefined4 FUN_00566040(void);
+int __cdecl flushLineList(void);
 
 // Original: engine_special.cpp_clear_FUN_00566060
 // Address: 00566060
@@ -225,25 +201,25 @@ int __cdecl clearZBox(int left,int right,int top,int bottom);
 // Address: 00566260
 void __cdecl presentToExternalRenderer(int skip_buffer_copy);
 
-// Original: engine_special.cpp_FUN_00566350
+// Original: engine_special.cpp_masterZBuffer_FUN_00566350
 // Address: 00566350
-int __cdecl FUN_00566350(int slot);
+int __cdecl masterZBuffer(int slot);
 
-// Original: engine_special.cpp_FUN_00566370
+// Original: engine_special.cpp_restoreZBuffer_FUN_00566370
 // Address: 00566370
-int __cdecl FUN_00566370(int slot,int left,int top,int right,int bottom);
+int __cdecl restoreZBuffer(int slot,int left,int top,int right,int bottom);
 
-// Original: engine_special.cpp_FUN_005663b0
+// Original: engine_special.cpp_getVideoMemory_FUN_005663b0
 // Address: 005663b0
-int __cdecl FUN_005663b0(int *total_memory,int *available_memory,int *memory_type);
+int __cdecl getVideoMemory(int *total_memory,int *available_memory,int *memory_type);
 
-// Original: engine_special.cpp_FUN_005663e0
+// Original: engine_special.cpp_selectCard_FUN_005663e0
 // Address: 005663e0
-int __cdecl FUN_005663e0(int card_index);
+int __cdecl selectCard(int card_index);
 
-// Original: engine_special.cpp_FUN_00566400
+// Original: engine_special.cpp_buildCardList_FUN_00566400
 // Address: 00566400
-undefined4 FUN_00566400(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
+int __cdecl buildCardList(int *out_card_count,char **out_driver_names,char **out_card_names,int *out_vendor_ids ,int *out_device_ids);
 
 // Original: engine_special.cpp_FUN_00566440
 // Address: 00566440
@@ -257,25 +233,25 @@ int __cdecl FUN_00566460(void);
 // Address: 00566480
 undefined4 FUN_00566480(undefined4 param_1);
 
-// Original: engine_special.cpp_FUN_0056649e
-// Address: 0056649e
-undefined4 FUN_0056649e(void);
+// Original: engine_special.cpp_FUN_005664a0
+// Address: 005664a0
+undefined4 FUN_005664a0(void);
 
 // Original: engine_special.cpp_FUN_005664c0
 // Address: 005664c0
 undefined4 FUN_005664c0(undefined4 param_1);
 
-// Original: engine_special.cpp_FUN_005664de
-// Address: 005664de
-undefined4 FUN_005664de(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+// Original: engine_special.cpp_FUN_005664e0
+// Address: 005664e0
+undefined4 FUN_005664e0(void);
 
-// Original: engine_special.cpp_FUN_0056655e
-// Address: 0056655e
-undefined4 FUN_0056655e(void);
+// Original: engine_special.cpp_FUN_00566560
+// Address: 00566560
+undefined4 FUN_00566560(void);
 
-// Original: engine_special.cpp_FUN_005665bc
-// Address: 005665bc
-undefined4 FUN_005665bc(void);
+// Original: engine_special.cpp_FUN_005665c0
+// Address: 005665c0
+undefined4 FUN_005665c0(void);
 
 // Original: engine_special.cpp_CExternalRenderer_ctor_FUN_005665e0
 // Address: 005665e0
@@ -285,10 +261,10 @@ void __cdecl CExternalRenderer::ctor(CExternalRenderer *this_ptr);
 // Address: 00566630
 int __cdecl CExternalRenderer::validate(CExternalRenderer *this_ptr,CExternalRenderer *capabilities);
 
-// Original: engine_special.cpp_FUN_0056678e
-// Address: 0056678e
-void FUN_0056678e(char *param_1,undefined4 param_2);
+// Original: engine_special.cpp_switchRenderer_FUN_00566790
+// Address: 00566790
+void switchRenderer(void);
 
-// Original: engine_special.cpp_FUN_005667de
-// Address: 005667de
-undefined1 * FUN_005667de(undefined4 *param_1);
+// Original: engine_special.cpp_FUN_005667e0
+// Address: 005667e0
+undefined1 * FUN_005667e0(void);

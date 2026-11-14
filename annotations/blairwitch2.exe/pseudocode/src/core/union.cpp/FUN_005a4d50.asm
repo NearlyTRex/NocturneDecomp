@@ -14,8 +14,8 @@
 ;   undefined4 DAT_005ff8f4
 ;
 ; Called Functions:
-;   unkaddr_0059d350.cpp_FUN_0059daa0
-;   unkaddr_0059d350.cpp_FUN_0059dae0
+;   core_muzzle.cpp_FUN_0059daa0
+;   core_muzzle.cpp_FUN_0059dae0
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     PUSH 0x5f04d9                       ; 005a4d5e | = "Death"
     LEA ESI,[EBX + 0x10af8]             ; 005a4d63
     PUSH ESI                            ; 005a4d69
-    CALL unkaddr_0059d350.cpp_FUN_0059daa0 ; 005a4d6a
-        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059daa0()
+    CALL core_muzzle.cpp_FUN_0059daa0   ; 005a4d6a
+        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059daa0()
     ADD ESP,0x8                         ; 005a4d6f
     TEST EAX,EAX                        ; 005a4d72
     JZ 0x005a4d85                       ; 005a4d74
@@ -51,8 +51,8 @@ section .text
     PUSH 0x5f04df                       ; 005a4d85 | = "Animation"
         ;   Label: LAB_005a4d85
     PUSH ESI                            ; 005a4d8a
-    CALL unkaddr_0059d350.cpp_FUN_0059daa0 ; 005a4d8b
-        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059daa0()
+    CALL core_muzzle.cpp_FUN_0059daa0   ; 005a4d8b
+        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059daa0()
     ADD ESP,0x8                         ; 005a4d90
     TEST EAX,EAX                        ; 005a4d93
     JNZ 0x005a4d76                      ; 005a4d95
@@ -73,8 +73,8 @@ section .text
         ;   Label: LAB_005a4db6
     LEA ESI,[EBX + 0x10af8]             ; 005a4dbb
     PUSH ESI                            ; 005a4dc1
-    CALL unkaddr_0059d350.cpp_FUN_0059daa0 ; 005a4dc2
-        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059daa0()
+    CALL core_muzzle.cpp_FUN_0059daa0   ; 005a4dc2
+        ;   XREF to: 0059daa0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059daa0()
     ADD ESP,0x8                         ; 005a4dc7
     TEST EAX,EAX                        ; 005a4dca
     JZ 0x005a4d7f                       ; 005a4dcc
@@ -82,8 +82,8 @@ section .text
     PUSH 0x5f04f1                       ; 005a4dce | = "RangeAttack"
     PUSH 0x5f04fd                       ; 005a4dd3 | = "ChaseComplete"
     PUSH ESI                            ; 005a4dd8
-    CALL unkaddr_0059d350.cpp_FUN_0059dae0 ; 005a4dd9
-        ;   XREF to: 0059dae0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059dae0()
+    CALL core_muzzle.cpp_FUN_0059dae0   ; 005a4dd9
+        ;   XREF to: 0059dae0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059dae0()
     ADD ESP,0xc                         ; 005a4dde
     TEST EAX,EAX                        ; 005a4de1
     JZ 0x005a4d7f                       ; 005a4de3

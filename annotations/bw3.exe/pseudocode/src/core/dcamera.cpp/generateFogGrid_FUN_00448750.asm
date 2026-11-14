@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcamera_cpp_generateFogGrid_FUN_00448750(void *param_1)
+; void __cdecl core_dcamera_cpp_generateFogGrid_FUN_00448750(SFogGrid *fog)
 ;
+; Parameters:
+; SFogGrid *       Stack[0x4]:4   fog
 ; Local Variables:
 ; undefined4       Stack[-0x4c]:4  local_4c
 ; undefined4       Stack[-0x48]:4  local_48
@@ -21,7 +23,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_dcamera.cpp_FUN_0044f740 at 0044f745
+;   core_dcamera.cpp_CDemonCamera_generateFogGrid_FUN_0044f740 at 0044f745
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_resetFogSamplingOffset_FUN_00448720
@@ -219,7 +221,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x50]      ; 00448964
     PUSH ECX                            ; 00448968
     CALL core_dcamera.cpp_resetFogSamplingOffset_FUN_00448720 ; 00448969
-        ;   XREF to: 00448720 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_resetFogSamplingOffset_FUN_00448720()
+        ;   XREF to: 00448720 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_resetFogSamplingOffset_FUN_00448720(SFogGrid * fog)
     ADD ESP,0x4                         ; 0044896e
     ADD ESP,0x3c                        ; 00448971
     POP EBP                             ; 00448974

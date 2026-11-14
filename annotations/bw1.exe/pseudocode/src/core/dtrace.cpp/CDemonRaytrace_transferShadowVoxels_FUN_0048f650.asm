@@ -44,14 +44,14 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_setcolid.cpp_FUN_005594e0 at 0055954a
+;   core_setcolid.cpp_CDemonSet_transferVoxelShadow_FUN_005594e0 at 0055954a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005dbb3c
 ;   undefined4 DAT_005dbb44
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_0045f3e0
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
 ;   core_dirmat.cpp_FUN_0045f690
 ;   core_dtrace.cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0048fa40
 ;   crt_math.c_round_FUN_005c03a0
@@ -75,8 +75,8 @@ section .text
     PUSH EAX                            ; 0048f66a
     LEA EDI,[ESP + 0x6c]                ; 0048f66b
     LEA ESI,[ESP + 0x48]                ; 0048f66f
-    CALL core_dirmat.cpp_FUN_0045f3e0   ; 0048f673
-        ;   XREF to: 0045f3e0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_0045f3e0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0 ; 0048f673
+        ;   XREF to: 0045f3e0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     FLD float ptr [EBX]                 ; 0048f678
     ADD ESP,0x8                         ; 0048f67a
     FLD float ptr [EBX + 0x4]           ; 0048f67d

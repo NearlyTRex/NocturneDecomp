@@ -16,7 +16,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_004bb100 at 004bb977
+;   core_game.cpp_CGame_processCheatCodes_FUN_004bb100 at 004bb977
 ;   core_game.cpp_setupMovieRecording_FUN_004b3d70 at 004b3dce
 ;
 ; Referenced Globals:
@@ -27,7 +27,7 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c_sscanf_FUN_005a5b9c
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0047cf40
 ;   shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_0047ecf0
 ;
@@ -76,8 +76,8 @@ section .text
     PUSH 0x5bcf91                       ; 0047e989 | DAT_005bcf91
     LEA EAX,[ESP + 0x8]                 ; 0047e98e
     PUSH EAX                            ; 0047e992
-    CALL crt_unknown.c_FUN_005a28c0     ; 0047e993
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0047e993
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0047e998
     JMP 0x0047e963                      ; 0047e99b
         ;   XREF to: 0047e963 (UNCONDITIONAL_JUMP)  ; LAB_0047e963

@@ -41,7 +41,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_manpuz.cpp_FUN_004e5e70 at 004e5ed6
+;   core_manpuz.cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_004e5e70 at 004e5ed6
 ;   core_setcolid.cpp_FUN_00537030 at 00537515
 ;
 ; Referenced Globals:
@@ -71,7 +71,7 @@ section .text
     LEA EBX,[ESP + 0xc]                 ; 00536cc6
     XOR EBP,EBP                         ; 00536cca
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 00536ccc
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00536cd1
     PUSH EBP                            ; 00536cd4
         ;   Label: LAB_00536cd4
@@ -148,7 +148,7 @@ section .text
     LEA EAX,[ESP + 0x144]               ; 00536dd4
     PUSH EAX                            ; 00536ddb
     CALL core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0 ; 00536ddc
-        ;   XREF to: 00477fe0 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0()
+        ;   XREF to: 00477fe0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0(CDemonTriangle * triangle, SIntersectXZCylinder * cylinder)
     ADD ESP,0x8                         ; 00536de1
     LEA EAX,[ESP + 0x18]                ; 00536de4
     PUSH EAX                            ; 00536de8
@@ -165,7 +165,7 @@ section .text
     LEA EAX,[ESP + 0x144]               ; 00536e04
     PUSH EAX                            ; 00536e0b
     CALL core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0 ; 00536e0c
-        ;   XREF to: 00477fe0 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0()
+        ;   XREF to: 00477fe0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0(CDemonTriangle * triangle, SIntersectXZCylinder * cylinder)
     ADD ESP,0x8                         ; 00536e11
     LEA EAX,[ESP + 0x54]                ; 00536e14
     PUSH EAX                            ; 00536e18
@@ -182,7 +182,7 @@ section .text
     LEA EAX,[ESP + 0x10c]               ; 00536e34
     PUSH EAX                            ; 00536e3b
     CALL core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0 ; 00536e3c
-        ;   XREF to: 00477fe0 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0()
+        ;   XREF to: 00477fe0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0(CDemonTriangle * triangle, SIntersectXZCylinder * cylinder)
     ADD ESP,0x8                         ; 00536e41
     LEA EAX,[ESP + 0x3c]                ; 00536e44
     PUSH EAX                            ; 00536e48
@@ -199,7 +199,7 @@ section .text
     LEA EAX,[ESP + 0x10c]               ; 00536e64
     PUSH EAX                            ; 00536e6b
     CALL core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0 ; 00536e6c
-        ;   XREF to: 00477fe0 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0()
+        ;   XREF to: 00477fe0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0(CDemonTriangle * triangle, SIntersectXZCylinder * cylinder)
     ADD ESP,0x8                         ; 00536e71
     LEA EAX,[ESP + 0x3c]                ; 00536e74
     PUSH EAX                            ; 00536e78
@@ -216,7 +216,7 @@ section .text
     LEA EAX,[ESP + 0xd4]                ; 00536e94
     PUSH EAX                            ; 00536e9b
     CALL core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0 ; 00536e9c
-        ;   XREF to: 00477fe0 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0()
+        ;   XREF to: 00477fe0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0(CDemonTriangle * triangle, SIntersectXZCylinder * cylinder)
     ADD ESP,0x8                         ; 00536ea1
     LEA EAX,[ESP + 0x30]                ; 00536ea4
     PUSH EAX                            ; 00536ea8
@@ -233,7 +233,7 @@ section .text
     LEA EAX,[ESP + 0xd4]                ; 00536ec4
     PUSH EAX                            ; 00536ecb
     CALL core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0 ; 00536ecc
-        ;   XREF to: 00477fe0 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0()
+        ;   XREF to: 00477fe0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0(CDemonTriangle * triangle, SIntersectXZCylinder * cylinder)
     ADD ESP,0x8                         ; 00536ed1
     LEA EAX,[ESP + 0x54]                ; 00536ed4
     PUSH EAX                            ; 00536ed8
@@ -250,7 +250,7 @@ section .text
     LEA EAX,[ESP + 0x64]                ; 00536ef1
     PUSH EAX                            ; 00536ef5
     CALL core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0 ; 00536ef6
-        ;   XREF to: 00477fe0 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0()
+        ;   XREF to: 00477fe0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0(CDemonTriangle * triangle, SIntersectXZCylinder * cylinder)
     ADD ESP,0x8                         ; 00536efb
     LEA EAX,[ESP + 0x24]                ; 00536efe
     PUSH EAX                            ; 00536f02
@@ -267,7 +267,7 @@ section .text
     LEA EAX,[ESP + 0x64]                ; 00536f1b
     PUSH EAX                            ; 00536f1f
     CALL core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0 ; 00536f20
-        ;   XREF to: 00477fe0 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0()
+        ;   XREF to: 00477fe0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0(CDemonTriangle * triangle, SIntersectXZCylinder * cylinder)
     ADD ESP,0x8                         ; 00536f25
     LEA EAX,[ESP + 0x24]                ; 00536f28
     PUSH EAX                            ; 00536f2c
@@ -284,7 +284,7 @@ section .text
     LEA EAX,[ESP + 0x9c]                ; 00536f48
     PUSH EAX                            ; 00536f4f
     CALL core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0 ; 00536f50
-        ;   XREF to: 00477fe0 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0()
+        ;   XREF to: 00477fe0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0(CDemonTriangle * triangle, SIntersectXZCylinder * cylinder)
     ADD ESP,0x8                         ; 00536f55
     LEA EAX,[ESP + 0xc]                 ; 00536f58
     PUSH EAX                            ; 00536f5c
@@ -301,7 +301,7 @@ section .text
     LEA EAX,[ESP + 0x9c]                ; 00536f78
     PUSH EAX                            ; 00536f7f
     CALL core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0 ; 00536f80
-        ;   XREF to: 00477fe0 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0()
+        ;   XREF to: 00477fe0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0(CDemonTriangle * triangle, SIntersectXZCylinder * cylinder)
     ADD ESP,0x8                         ; 00536f85
     LEA EAX,[ESP + 0x54]                ; 00536f88
     PUSH EAX                            ; 00536f8c
@@ -318,7 +318,7 @@ section .text
     LEA EAX,[ESP + 0x17c]               ; 00536fa8
     PUSH EAX                            ; 00536faf
     CALL core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0 ; 00536fb0
-        ;   XREF to: 00477fe0 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0()
+        ;   XREF to: 00477fe0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0(CDemonTriangle * triangle, SIntersectXZCylinder * cylinder)
     ADD ESP,0x8                         ; 00536fb5
     LEA EAX,[ESP + 0x48]                ; 00536fb8
     PUSH EAX                            ; 00536fbc
@@ -335,7 +335,7 @@ section .text
     LEA EAX,[ESP + 0x17c]               ; 00536fd8
     PUSH EAX                            ; 00536fdf
     CALL core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0 ; 00536fe0
-        ;   XREF to: 00477fe0 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0()
+        ;   XREF to: 00477fe0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0(CDemonTriangle * triangle, SIntersectXZCylinder * cylinder)
     ADD ESP,0x8                         ; 00536fe5
     FLD float ptr [EBX]                 ; 00536fe8
     FCOMP float ptr [ESP + 0x1f8]       ; 00536fea

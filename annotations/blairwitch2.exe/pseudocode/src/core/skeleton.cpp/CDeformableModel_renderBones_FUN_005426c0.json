@@ -1,0 +1,196 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 93,
+    "complexity_score": 97,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 42,
+    "suspect_count": 4,
+    "suspect_types": [
+      "stack_alignment_array",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 135
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005426c0",
+    "address_range": [
+      [
+        "005426c0",
+        "005427b7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModel_renderBones_FUN_005426c0",
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModel_renderBones_FUN_005426c0(CDeformableModel *this_ptr,CMatrix3x4f *bone_matrices)"
+  },
+  "function_calls": [
+    {
+      "addr": "005415d0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_005415d0"
+    },
+    {
+      "addr": "00592720",
+      "is_variadic": false,
+      "name": "core_xform.cpp_FUN_00592720"
+    },
+    {
+      "addr": "00401fe0",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawText_FUN_00401fe0"
+    },
+    {
+      "addr": "0055d723",
+      "is_variadic": false,
+      "name": "engine_special.cpp_FUN_0055d723"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fb998",
+      "name": "DAT_005fb998",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060b280",
+      "name": "DAT_0060b280",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.7625,
+    "instruction_count": 80,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CBRANCH": 3,
+      "COPY": 121,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_MULT": 3,
+      "INT_ADD": 46,
+      "INT_AND": 58,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 36,
+      "INT_LESS": 2,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 8,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 17,
+      "INT_SRIGHT": 4,
+      "INT_SUB": 25,
+      "INT_XOR": 1,
+      "INT_ZEXT": 6,
+      "LOAD": 24,
+      "POPCOUNT": 17,
+      "RETURN": 1,
+      "ROUND": 3,
+      "STORE": 26,
+      "TRUNC": 3
+    },
+    "pcode_op_count": 461
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00564d40",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005498d0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0059b800",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8591
+    },
+    "nocturne.exe": {
+      "addr": "00519120",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8591
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModel *"
+      },
+      {
+        "is_param": true,
+        "name": "bone_matrices",
+        "offset": 8,
+        "size": 4,
+        "type": "CMatrix3x4f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 10,
+      "match": "afStackY_101c",
+      "severity": "moderate",
+      "text": "float afStackY_101c [1012];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "engine_special_cpp_FUN_0055d723((SProjectedVertex *)(*DAT_0060b280 + 0xea5d0),&CStack_40);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "iVar1 = *DAT_0060b280;",
+      "type": "undefined_data"
+    }
+  ]
+}

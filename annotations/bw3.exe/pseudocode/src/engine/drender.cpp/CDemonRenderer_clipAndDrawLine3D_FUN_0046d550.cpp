@@ -13,148 +13,163 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046d550(CD
 {
   int iVar1;
   int iVar2;
-  uint *puVar3;
-  int *piVar4;
-  int *piVar5;
-  byte bVar6;
-  int aiStack_a0 [4];
-  uint uStack_90;
-  int aiStack_70 [12];
-  int aiStack_40 [4];
-  uint uStack_30;
+  SRenderVertex *pSVar3;
+  SRenderVertex *pSVar4;
+  byte bVar5;
+  SRenderVertex SStack_a0;
+  SRenderVertex SStack_70;
+  SRenderVertex SStack_40;
   
-  bVar6 = 0;
+  bVar5 = 0;
   _DAT_01c6b5c0 = DAT_007303dc;
-  piVar4 = (int *)(*(int *)this_ptr + vertex_index1 * 0x30);
-  piVar5 = aiStack_40;
+  pSVar3 = this_ptr->vertex_buffer_ptr + vertex_index1;
+  pSVar4 = &SStack_40;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *piVar5 = *piVar4;
-    piVar4 = piVar4 + 1;
-    piVar5 = piVar5 + 1;
+    (pSVar4->projected_vertex).transformed_x = (pSVar3->projected_vertex).transformed_x;
+    pSVar3 = (SRenderVertex *)&(pSVar3->projected_vertex).transformed_y;
+    pSVar4 = (SRenderVertex *)&(pSVar4->projected_vertex).transformed_y;
   }
-  puVar3 = (uint *)(*(int *)this_ptr + vertex_index2 * 0x30);
-  piVar4 = aiStack_a0;
+  pSVar3 = this_ptr->vertex_buffer_ptr + vertex_index2;
+  pSVar4 = &SStack_a0;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *piVar4 = *puVar3;
-    puVar3 = puVar3 + 1;
-    piVar4 = piVar4 + 1;
+    *(int *)pSVar4 = (pSVar3->projected_vertex).transformed_x;
+    pSVar3 = (SRenderVertex *)&(pSVar3->projected_vertex).transformed_y;
+    pSVar4 = (SRenderVertex *)((int)pSVar4 + 4);
   }
-  if (((uStack_30 & uStack_90 & 0x80000000) == 0) || ((char)(uStack_30 & uStack_90) == '\0')) {
+  if (((SStack_40.projected_vertex.screen_x & SStack_a0.projected_vertex.screen_x & 0x80000000U) ==
+       0) || ((char)(SStack_40.projected_vertex.screen_x & SStack_a0.projected_vertex.screen_x) ==
+              '\0')) {
     iVar1 = 0;
     do {
-      if (aiStack_a0[2] < aiStack_a0[0]) {
-        engine_clipper_c_interpolateVertexRightClip_FUN_004390c0(aiStack_40,aiStack_a0,aiStack_70);
-        piVar4 = aiStack_70;
-        piVar5 = aiStack_a0;
+      if (SStack_a0.projected_vertex.transformed_z < SStack_a0.projected_vertex.transformed_x) {
+        engine_clipper_c_interpolateVertexRightClip_FUN_004390c0(&SStack_40,&SStack_a0,&SStack_70);
+        pSVar3 = &SStack_70;
+        pSVar4 = &SStack_a0;
         for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-          *piVar5 = *piVar4;
-          piVar4 = piVar4 + (uint)bVar6 * -2 + 1;
-          piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
+          *(int *)pSVar4 = (pSVar3->projected_vertex).transformed_x;
+          pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
+          pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar5 * -2 + 1) * 4);
         }
       }
-      if (-aiStack_a0[0] != aiStack_a0[2] && aiStack_a0[0] <= -aiStack_a0[2]) {
-        engine_clipper_c_interpolateVertexLeftClip_FUN_004391c0(aiStack_40,aiStack_a0,aiStack_70);
-        piVar4 = aiStack_70;
-        piVar5 = aiStack_a0;
+      if (-SStack_a0.projected_vertex.transformed_x != SStack_a0.projected_vertex.transformed_z &&
+          SStack_a0.projected_vertex.transformed_x <= -SStack_a0.projected_vertex.transformed_z) {
+        engine_clipper_c_interpolateVertexLeftClip_FUN_004391c0(&SStack_40,&SStack_a0,&SStack_70);
+        pSVar3 = &SStack_70;
+        pSVar4 = &SStack_a0;
         for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-          *piVar5 = *piVar4;
-          piVar4 = piVar4 + (uint)bVar6 * -2 + 1;
-          piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
+          *(int *)pSVar4 = (pSVar3->projected_vertex).transformed_x;
+          pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
+          pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar5 * -2 + 1) * 4);
         }
       }
-      if (aiStack_a0[2] < aiStack_a0[1]) {
-        engine_clipper_c_interpolateVertexTopClip_FUN_004392c0(aiStack_40,aiStack_a0,aiStack_70);
-        piVar4 = aiStack_70;
-        piVar5 = aiStack_a0;
+      if (SStack_a0.projected_vertex.transformed_z < SStack_a0.projected_vertex.transformed_y) {
+        engine_clipper_c_interpolateVertexTopClip_FUN_004392c0(&SStack_40,&SStack_a0,&SStack_70);
+        pSVar3 = &SStack_70;
+        pSVar4 = &SStack_a0;
         for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-          *piVar5 = *piVar4;
-          piVar4 = piVar4 + (uint)bVar6 * -2 + 1;
-          piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
+          *(int *)pSVar4 = (pSVar3->projected_vertex).transformed_x;
+          pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
+          pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar5 * -2 + 1) * 4);
         }
       }
-      if (-aiStack_a0[1] != aiStack_a0[2] && aiStack_a0[1] <= -aiStack_a0[2]) {
-        engine_clipper_c_interpolateVertexBottomClip_FUN_004393c0(aiStack_40,aiStack_a0,aiStack_70);
-        piVar4 = aiStack_70;
-        piVar5 = aiStack_a0;
+      if (-SStack_a0.projected_vertex.transformed_y != SStack_a0.projected_vertex.transformed_z &&
+          SStack_a0.projected_vertex.transformed_y <= -SStack_a0.projected_vertex.transformed_z) {
+        engine_clipper_c_interpolateVertexBottomClip_FUN_004393c0(&SStack_40,&SStack_a0,&SStack_70);
+        pSVar3 = &SStack_70;
+        pSVar4 = &SStack_a0;
         for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-          *piVar5 = *piVar4;
-          piVar4 = piVar4 + (uint)bVar6 * -2 + 1;
-          piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
+          *(int *)pSVar4 = (pSVar3->projected_vertex).transformed_x;
+          pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
+          pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar5 * -2 + 1) * 4);
         }
       }
-      if (aiStack_40[2] < aiStack_40[0]) {
-        engine_clipper_c_interpolateVertexRightClip_FUN_004390c0(aiStack_a0,aiStack_40,aiStack_70);
-        piVar4 = aiStack_70;
-        piVar5 = aiStack_40;
+      if (SStack_40.projected_vertex.transformed_z < SStack_40.projected_vertex.transformed_x) {
+        engine_clipper_c_interpolateVertexRightClip_FUN_004390c0(&SStack_a0,&SStack_40,&SStack_70);
+        pSVar3 = &SStack_70;
+        pSVar4 = &SStack_40;
         for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-          *piVar5 = *piVar4;
-          piVar4 = piVar4 + (uint)bVar6 * -2 + 1;
-          piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
+          (pSVar4->projected_vertex).transformed_x = (pSVar3->projected_vertex).transformed_x;
+          pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
+          pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar5 * -2 + 1) * 4);
         }
       }
-      if (-aiStack_40[0] != aiStack_40[2] && aiStack_40[0] <= -aiStack_40[2]) {
-        engine_clipper_c_interpolateVertexLeftClip_FUN_004391c0(aiStack_a0,aiStack_40,aiStack_70);
-        piVar4 = aiStack_70;
-        piVar5 = aiStack_40;
+      if (-SStack_40.projected_vertex.transformed_x != SStack_40.projected_vertex.transformed_z &&
+          SStack_40.projected_vertex.transformed_x <= -SStack_40.projected_vertex.transformed_z) {
+        engine_clipper_c_interpolateVertexLeftClip_FUN_004391c0(&SStack_a0,&SStack_40,&SStack_70);
+        pSVar3 = &SStack_70;
+        pSVar4 = &SStack_40;
         for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-          *piVar5 = *piVar4;
-          piVar4 = piVar4 + (uint)bVar6 * -2 + 1;
-          piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
+          (pSVar4->projected_vertex).transformed_x = (pSVar3->projected_vertex).transformed_x;
+          pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
+          pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar5 * -2 + 1) * 4);
         }
       }
-      if (aiStack_40[2] < aiStack_40[1]) {
-        engine_clipper_c_interpolateVertexTopClip_FUN_004392c0(aiStack_a0,aiStack_40,aiStack_70);
-        piVar4 = aiStack_70;
-        piVar5 = aiStack_40;
+      if (SStack_40.projected_vertex.transformed_z < SStack_40.projected_vertex.transformed_y) {
+        engine_clipper_c_interpolateVertexTopClip_FUN_004392c0(&SStack_a0,&SStack_40,&SStack_70);
+        pSVar3 = &SStack_70;
+        pSVar4 = &SStack_40;
         for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-          *piVar5 = *piVar4;
-          piVar4 = piVar4 + (uint)bVar6 * -2 + 1;
-          piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
+          (pSVar4->projected_vertex).transformed_x = (pSVar3->projected_vertex).transformed_x;
+          pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
+          pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar5 * -2 + 1) * 4);
         }
       }
-      if (-aiStack_40[1] != aiStack_40[2] && aiStack_40[1] <= -aiStack_40[2]) {
-        engine_clipper_c_interpolateVertexBottomClip_FUN_004393c0(aiStack_a0,aiStack_40,aiStack_70);
-        piVar4 = aiStack_70;
-        piVar5 = aiStack_40;
+      if (-SStack_40.projected_vertex.transformed_y != SStack_40.projected_vertex.transformed_z &&
+          SStack_40.projected_vertex.transformed_y <= -SStack_40.projected_vertex.transformed_z) {
+        engine_clipper_c_interpolateVertexBottomClip_FUN_004393c0(&SStack_a0,&SStack_40,&SStack_70);
+        pSVar3 = &SStack_70;
+        pSVar4 = &SStack_40;
         for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-          *piVar5 = *piVar4;
-          piVar4 = piVar4 + (uint)bVar6 * -2 + 1;
-          piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
+          (pSVar4->projected_vertex).transformed_x = (pSVar3->projected_vertex).transformed_x;
+          pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
+          pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar5 * -2 + 1) * 4);
         }
       }
       iVar1 = iVar1 + 1;
     } while (iVar1 < 2);
-    if ((((((aiStack_40[0] <= aiStack_40[2]) &&
-           (-aiStack_40[0] == aiStack_40[2] || -aiStack_40[2] < aiStack_40[0])) &&
-          (aiStack_40[1] <= aiStack_40[2])) &&
-         ((-aiStack_40[1] == aiStack_40[2] || -aiStack_40[2] < aiStack_40[1] &&
-          (aiStack_a0[0] <= aiStack_a0[2])))) &&
-        ((-aiStack_a0[0] == aiStack_a0[2] || -aiStack_a0[2] < aiStack_a0[0] &&
-         ((aiStack_a0[1] <= aiStack_a0[2] &&
-          (-aiStack_a0[1] == aiStack_a0[2] || -aiStack_a0[2] < aiStack_a0[1])))))) &&
-       ((0 < aiStack_40[2] && (0 < aiStack_a0[2])))) {
-      piVar4 = aiStack_40;
-      piVar5 = (int *)(*(int *)this_ptr + 0x124f20);
+    if ((((((SStack_40.projected_vertex.transformed_x <= SStack_40.projected_vertex.transformed_z)
+           && (-SStack_40.projected_vertex.transformed_x == SStack_40.projected_vertex.transformed_z
+               || -SStack_40.projected_vertex.transformed_z <
+                  SStack_40.projected_vertex.transformed_x)) &&
+          (SStack_40.projected_vertex.transformed_y <= SStack_40.projected_vertex.transformed_z)) &&
+         ((-SStack_40.projected_vertex.transformed_y == SStack_40.projected_vertex.transformed_z ||
+           -SStack_40.projected_vertex.transformed_z < SStack_40.projected_vertex.transformed_y &&
+          (SStack_a0.projected_vertex.transformed_x <= SStack_a0.projected_vertex.transformed_z))))
+        && ((-SStack_a0.projected_vertex.transformed_x == SStack_a0.projected_vertex.transformed_z
+             || -SStack_a0.projected_vertex.transformed_z < SStack_a0.projected_vertex.transformed_x
+            && ((SStack_a0.projected_vertex.transformed_y <=
+                 SStack_a0.projected_vertex.transformed_z &&
+                (-SStack_a0.projected_vertex.transformed_y ==
+                 SStack_a0.projected_vertex.transformed_z ||
+                 -SStack_a0.projected_vertex.transformed_z <
+                 SStack_a0.projected_vertex.transformed_y)))))) &&
+       ((0 < SStack_40.projected_vertex.transformed_z &&
+        (0 < SStack_a0.projected_vertex.transformed_z)))) {
+      pSVar3 = &SStack_40;
+      pSVar4 = this_ptr->vertex_buffer_ptr + 0x61a6;
       for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-        *piVar5 = *piVar4;
-        piVar4 = piVar4 + (uint)bVar6 * -2 + 1;
-        piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
+        (pSVar4->projected_vertex).transformed_x = (pSVar3->projected_vertex).transformed_x;
+        pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
+        pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar5 * -2 + 1) * 4);
       }
-      piVar4 = aiStack_a0;
-      puVar3 = (uint *)(*(int *)this_ptr + 0x124f50);
+      pSVar3 = &SStack_a0;
+      pSVar4 = this_ptr->vertex_buffer_ptr + 24999;
       for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-        *puVar3 = *piVar4;
-        piVar4 = piVar4 + (uint)bVar6 * -2 + 1;
-        puVar3 = puVar3 + (uint)bVar6 * -2 + 1;
+        (pSVar4->projected_vertex).transformed_x = *(int *)pSVar3;
+        pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);
+        pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar5 * -2 + 1) * 4);
       }
       engine_matrix_c_projectCachedPointUnchecked_FUN_004e5630(0x61a6);
       engine_matrix_c_projectCachedPointUnchecked_FUN_004e5630(24999);
-      engine_prim_c_replaceWWithDepth_FUN_00515a80(*(int *)this_ptr + 0x124f20,2);
-      iVar1 = *(int *)this_ptr;
+      engine_prim_c_replaceWWithDepth_FUN_00515a80(this_ptr->vertex_buffer_ptr + 0x61a6,2);
+      pSVar3 = this_ptr->vertex_buffer_ptr;
       engine_2d_c_drawLine3D_FUN_00401310
-                (*(int *)(iVar1 + 0x124f30) >> 0x10,*(int *)(iVar1 + 0x124f34) >> 0x10,
-                 *(uint *)(iVar1 + 0x124f28),*(int *)(iVar1 + 0x124f60) >> 0x10,
-                 *(int *)(iVar1 + 0x124f64) >> 0x10,*(uint *)(iVar1 + 0x124f58));
+                (pSVar3[0x61a6].projected_vertex.screen_x >> 0x10,
+                 pSVar3[0x61a6].projected_vertex.screen_y >> 0x10,
+                 pSVar3[0x61a6].projected_vertex.transformed_z,
+                 pSVar3[24999].projected_vertex.screen_x >> 0x10,
+                 pSVar3[24999].projected_vertex.screen_y >> 0x10,
+                 pSVar3[24999].projected_vertex.transformed_z);
       return;
     }
   }

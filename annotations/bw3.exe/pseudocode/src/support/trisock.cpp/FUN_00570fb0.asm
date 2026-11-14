@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   support_trisock.cpp_FUN_00570adc at 00570c13
+;   support_trisock.cpp_FUN_00570ae0 at 00570c13
 ;   support_trisock.cpp_FUN_00570e80 at 00570e87
 ;
 ; Referenced Globals:

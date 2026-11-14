@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_doc_cpp_factoryFuncDoc_FUN_00468c50(void)
+; CDoc * __cdecl core_doc_cpp_factoryFuncDoc_FUN_00468c50(void)
 ;
 ;
 ; Called Functions:
 ;   core_doc.cpp_CDoc_ctor_FUN_00468c80
-;   crt_unknown.c_FUN_005c0f32
+;   crt_memory.c_operator_new_FUN_005c0f32
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x200e4                        ; 00468c50
         ;   Label: core_doc.cpp_factoryFuncDoc_FUN_00468c50
-    CALL crt_unknown.c_FUN_005c0f32     ; 00468c55
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
+    CALL crt_memory.c_operator_new_FUN_005c0f32 ; 00468c55
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
     ADD ESP,0x4                         ; 00468c5a
     TEST EAX,EAX                        ; 00468c5d
     JNZ 0x00468c62                      ; 00468c5f

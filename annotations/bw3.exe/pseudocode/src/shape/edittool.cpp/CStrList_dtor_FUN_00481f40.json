@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 31,
+    "complexity_score": 16,
     "cross_reference_count": 6,
     "function_call_count": 4,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 16,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 54
   },
   "cross_references": [
     {
       "addr": "004a9930",
       "from_addr": "004a993c",
-      "name": "core_fldnotes.cpp_FUN_004a9930",
+      "name": "core_fldnotes.cpp_SNotesEntry_dtor_FUN_004a9930",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -28,15 +26,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004832b0",
-      "from_addr": "00483304",
-      "name": "shape_edittool.cpp_CPickList_dtor_FUN_004832b0",
+      "addr": "0047d8c0",
+      "from_addr": "0047d95f",
+      "name": "shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0047d8c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047d8c0",
-      "from_addr": "0047d95f",
-      "name": "shape_edittool.cpp_FUN_0047d8c0",
+      "addr": "004832b0",
+      "from_addr": "00483304",
+      "name": "shape_edittool.cpp_CPickList_dtor_FUN_004832b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -117,7 +115,7 @@
       {
         "call_addr": "004a993c",
         "call_type": "direct",
-        "caller": "core_fldnotes.cpp_FUN_004a9930",
+        "caller": "core_fldnotes.cpp_SNotesEntry_dtor_FUN_004a9930",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -128,7 +126,7 @@
       {
         "call_addr": "0047d95f",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047d8c0",
+        "caller": "shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0047d8c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -209,6 +207,32 @@
     },
     "pcode_op_count": 122
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00480d40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004993a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004a2a40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00473b80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -232,16 +256,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(byte ***)&this_ptr->field_0xc = &g_CStrListVTable;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

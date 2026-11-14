@@ -2,15 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 5,
+    "complexity_score": 6,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 5,
+    "pseudocode_lines": 6,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 28
+    "total_lines": 29
   },
   "cross_references": [
     {
@@ -20,9 +20,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004a859e",
+      "addr": "004a85a0",
       "from_addr": "004a8842",
-      "name": "engine_font.cpp_FUN_004a859e",
+      "name": "engine_font.cpp_FUN_004a85a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -42,7 +42,7 @@
     {
       "addr": "004a8560",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004a8560"
+      "name": "engine_font.cpp_CBitFont_loadNewBitmap_FUN_004a8560"
     }
   ],
   "globals": [],
@@ -129,7 +129,7 @@
       {
         "call_addr": "004a8842",
         "call_type": "direct",
-        "caller": "engine_font.cpp_FUN_004a859e",
+        "caller": "engine_font.cpp_FUN_004a85a0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -163,6 +163,32 @@
       "STORE": 11
     },
     "pcode_op_count": 72
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004c0ca0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004af8f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004ccfc0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0048ff40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 24,

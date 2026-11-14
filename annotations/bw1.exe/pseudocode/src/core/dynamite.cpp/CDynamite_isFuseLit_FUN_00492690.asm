@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_doc.cpp_FUN_00474400 at 004745c8
-;   core_stranger.cpp_FUN_005907a0 at 005908ac
+;   core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005907a0 at 005908ac
 ;
 ; *****************************************************************************
 

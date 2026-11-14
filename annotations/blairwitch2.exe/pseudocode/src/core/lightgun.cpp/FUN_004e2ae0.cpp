@@ -11,15 +11,15 @@ uint core_lightgun_cpp_FUN_004e2ae0(CDemonActor *param_1)
 {
   int iVar1;
   
-  iVar1 = core_actor_cpp_FUN_0040c840(param_1,"CDraculaBride");
+  iVar1 = core_actor_cpp_isOfClass_FUN_0040c840(param_1,"CDraculaBride");
   if (iVar1 == 0) {
-    iVar1 = core_actor_cpp_FUN_0040c840(param_1,"CBatman");
+    iVar1 = core_actor_cpp_isOfClass_FUN_0040c840(param_1,"CBatman");
     if (iVar1 == 0) {
-      iVar1 = core_actor_cpp_FUN_0040c840(param_1,"CBatCreature");
+      iVar1 = core_actor_cpp_isOfClass_FUN_0040c840(param_1,"CBatCreature");
       if (iVar1 == 0) {
-        iVar1 = core_actor_cpp_FUN_0040c840(param_1,"CBride");
+        iVar1 = core_actor_cpp_isOfClass_FUN_0040c840(param_1,"CBride");
         if (iVar1 == 0) {
-          iVar1 = core_actor_cpp_FUN_0040c840(param_1,"CShadow");
+          iVar1 = core_actor_cpp_isOfClass_FUN_0040c840(param_1,"CShadow");
           if (iVar1 == 0) {
             return 0;
           }

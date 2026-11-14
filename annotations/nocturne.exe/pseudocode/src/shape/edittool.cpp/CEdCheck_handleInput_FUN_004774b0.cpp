@@ -28,7 +28,7 @@ int __cdecl shape_edittool_cpp_CEdCheck_handleInput_FUN_004774b0(CEdCheck *this_
     if (((bVar1 & 1) == 0) &&
        (_DAT_01bcde24 = (CEdCheck *)((uint)_DAT_01bcde24 ^ (uint)this_ptr), iVar2 != 0)) {
       this_ptr->border_style_flag = 0;
-      if (this_ptr->checkbox_mode == 1) {
+      if (this_ptr->checkbox_mode == CHECKBOX_MODE_TRI_STATE) {
         iVar2 = this_ptr->checked_state + 1;
         this_ptr->checked_state = iVar2;
         if (2 < iVar2) {

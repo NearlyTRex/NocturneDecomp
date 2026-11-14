@@ -2,31 +2,33 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 145,
+    "complexity_score": 124,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 40,
-    "suspect_count": 9,
+    "pseudocode_lines": 39,
+    "suspect_count": 6,
     "suspect_types": [
-      "unnamed_field",
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 105
+    "total_lines": 104
   },
   "cross_references": [
+    {
+      "addr": "0050f120",
+      "from_addr": "0050f1c4",
+      "name": "core_netgame.cpp_CNetGame_processClientFrame_FUN_0050f120",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "0050ecb0",
       "from_addr": "0050eea8",
       "name": "core_netgame.cpp_CNetGame_processServerFrame_FUN_0050ecb0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0050f120",
-      "from_addr": "0050f1c4",
-      "name": "core_netgame.cpp_FUN_0050f120",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -109,7 +111,7 @@
       {
         "call_addr": "0050f1c4",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_FUN_0050f120",
+        "caller": "core_netgame.cpp_CNetGame_processClientFrame_FUN_0050f120",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -156,6 +158,32 @@
     },
     "pcode_op_count": 263
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005305a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.955
+    },
+    "bw3.exe": {
+      "addr": "00507e50",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00543800",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.955
+    },
+    "nocturne.exe": {
+      "addr": "004ed980",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.955
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -189,60 +217,36 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x124",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x124 < 0) {",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(SPlayerInput *)((int)pSVar5",
+      "severity": "moderate",
+      "text": "pSVar5 = (SPlayerInput *)((int)pSVar5 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x17c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x17c = *(uint *)(sim_frame + 4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x1c) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "} while (iVar2 < *(int *)&this_ptr->field_0x1c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "*(int *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x124 * 0x80) = *(int *)sim_frame + 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x124",
-      "severity": "mild",
-      "text": "*(int *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x124 * 0x80) = *(int *)sim_frame + 1;",
-      "type": "unnamed_field"
+      "description": "Pointer value `pSVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 34,
+      "match": "(int)pSVar5",
+      "severity": "moderate",
+      "text": "pSVar5 = (SPlayerInput *)((int)pSVar5 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 33,
+      "line": 32,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {",
+      "text": "for (iVar2 = 0xd; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar3` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pSVar3->vertices[0].a`). Replace `pSVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 38,
+      "match": "pSVar3 = (T *)&pSVar3->FIELD[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar3 = (SSimFrame *)&pSVar3->player_input[0].turn_speed;",
+      "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at 0050f3ce, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",

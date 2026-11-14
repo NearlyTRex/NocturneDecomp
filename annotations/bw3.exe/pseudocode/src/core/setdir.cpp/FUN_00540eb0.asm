@@ -43,7 +43,7 @@
 ;   undefined4 DAT_0270f3e0
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   engine_2d.c_drawText_FUN_00401fe0
 ;   engine_2d.c_plotPixel_FUN_00401130
 ;
@@ -227,8 +227,8 @@ section .text
     PUSH 0x5d0d15                       ; 005410ff | DAT_005d0d15
     LEA EAX,[ESP + 0xc]                 ; 00541104
     PUSH EAX                            ; 00541108
-    CALL crt_unknown.c_FUN_005a28c0     ; 00541109
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00541109
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0054110e
     MOV ECX,dword ptr [ESP + 0x80]      ; 00541111
     PUSH ECX                            ; 00541118

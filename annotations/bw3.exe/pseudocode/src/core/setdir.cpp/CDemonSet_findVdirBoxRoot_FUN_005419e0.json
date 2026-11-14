@@ -2,29 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 61,
+    "complexity_score": 16,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 16,
-    "suspect_count": 4,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 43
   },
   "cross_references": [
     {
-      "addr": "00541410",
-      "from_addr": "00541424",
-      "name": "core_setdir.cpp_FUN_00541410",
+      "addr": "005418d0",
+      "from_addr": "00541933",
+      "name": "core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_005418d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005418d0",
-      "from_addr": "00541933",
-      "name": "core_setdir.cpp_FUN_005418d0",
+      "addr": "00541410",
+      "from_addr": "00541424",
+      "name": "core_setdir.cpp_CDemonSet_isPointInVdirGroup_FUN_00541410",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -54,7 +52,7 @@
       {
         "call_addr": "00541933",
         "call_type": "direct",
-        "caller": "core_setdir.cpp_FUN_005418d0",
+        "caller": "core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_005418d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -65,7 +63,7 @@
       {
         "call_addr": "005419a0",
         "call_type": "direct",
-        "caller": "core_setdir.cpp_FUN_005418d0",
+        "caller": "core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_005418d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -87,7 +85,7 @@
       {
         "call_addr": "00541424",
         "call_type": "direct",
-        "caller": "core_setdir.cpp_FUN_00541410",
+        "caller": "core_setdir.cpp_CDemonSet_isPointInVdirGroup_FUN_00541410",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -98,7 +96,7 @@
       {
         "call_addr": "0054143a",
         "call_type": "direct",
-        "caller": "core_setdir.cpp_FUN_00541410",
+        "caller": "core_setdir.cpp_CDemonSet_isPointInVdirGroup_FUN_00541410",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -139,6 +137,32 @@
     },
     "pcode_op_count": 80
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0053a720",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0055c020",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00576820",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7273
+    },
+    "nocturne.exe": {
+      "addr": "00514300",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -162,38 +186,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x15b46c",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)(&this_ptr->field_0x15b46c + iVar1 * 0x44);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x15b46c",
-      "severity": "mild",
-      "text": "} while (-1 < *(int *)(&this_ptr->field_0x15b46c + iVar1 * 0x44));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x15b46c",
-      "severity": "mild",
-      "text": "box_index = *(int *)(&this_ptr->field_0x15b46c + iVar2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x15b46c",
-      "severity": "mild",
-      "text": "*(int *)(&this_ptr->field_0x15b46c + iVar2) = iVar1;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

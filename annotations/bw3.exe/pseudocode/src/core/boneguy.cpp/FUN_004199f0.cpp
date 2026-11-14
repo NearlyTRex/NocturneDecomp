@@ -11,7 +11,7 @@ void core_boneguy_cpp_FUN_004199f0(void)
 {
   CSkeletonDemon *this_ptr;
   
-  this_ptr = (CSkeletonDemon *)FUN_005a3cb2(0xd698);
+  this_ptr = (CSkeletonDemon *)operator_new(0xd698);
   if (this_ptr == (CSkeletonDemon *)0x0) {
     return;
   }

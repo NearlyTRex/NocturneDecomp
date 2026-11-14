@@ -1,0 +1,182 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 47,
+    "complexity_score": 52,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 12,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 59
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004b3b10",
+    "address_range": [
+      [
+        "004b3b10",
+        "004b3b8f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_drawCreditsLine_FUN_004b3b10",
+    "signature": "void __cdecl core_game_cpp_drawCreditsLine_FUN_004b3b10(char *text_string)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a8df0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_FUN_004a8df0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006141b8",
+      "name": "DAT_006141b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006141bc",
+      "name": "DAT_006141bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01511cc0",
+      "name": "DAT_01511cc0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb80e8",
+      "name": "DAT_01cb80e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb80ec",
+      "name": "DAT_01cb80ec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb80f0",
+      "name": "DAT_01cb80f0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.209302325581396,
+    "instruction_count": 43,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 38,
+      "INT_ADD": 14,
+      "INT_AND": 40,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 20,
+      "INT_LEFT": 3,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 10,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 4,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 11,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 15,
+      "INT_XOR": 1,
+      "INT_ZEXT": 2,
+      "LOAD": 9,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 10,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 224
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004ccb00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004d8890",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0049b3a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "text_string",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_006141bc",
+      "severity": "mild",
+      "text": "if (_DAT_01cb80ec <= DAT_006141bc + _DAT_01cb80f0 * -4) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_006141b8",
+      "severity": "mild",
+      "text": "_DAT_01cb80e8 = _DAT_01cb80e8 + DAT_006141b8 / 3;",
+      "type": "undefined_data"
+    }
+  ]
+}

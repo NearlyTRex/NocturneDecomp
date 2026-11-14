@@ -43,9 +43,16 @@ common::CExtendedFloat extended(double value) {
     return common::CExtendedFloat(value);
 }
 
-// The int and the float added at the x87's precision, then stored.
-float addStored(int whole, float part) {
-    return (extended(whole) + extended(part)).toFloat();
+// Where a motion's frame falls among the skeleton's stored poses, at the x87's precision: a
+// motion stored at a frame resolution (Blair Witch) reaches its poses at frame / resolution.
+common::CExtendedFloat storedPosition(const SMotion &motion, double frame) {
+    return extended(motion.frame_start) + (extended(frame) / extended(motion.frame_resolution));
+}
+
+// As storedPosition, as root motion takes it: through the resolution's reciprocal, then stored.
+float rootMotionFrame(const SMotion &motion, double frame) {
+    const common::CExtendedFloat step = extended(1.0) / extended(motion.frame_resolution);
+    return (extended(motion.frame_start) + (extended(frame) * step)).toFloat();
 }
 
 // As far as delta_time takes the frame at the motion's rate, at the x87's precision, then stored.
@@ -334,19 +341,20 @@ int CMotionController::stepTween(float &step_time) {
 
 // A NaN step runs the frame to NaN, before the motion's end.
 // nocedit 0x0052de70
+// bw1 0x00524ba0
 int CMotionController::advanceFrameAndCheckSignals(int &motion_index, float &frame_number,
                                                    float delta_time, float scale_factor) {
     const SMotion &motion = motion_list_->getMotions()[static_cast<std::size_t>(motion_index)];
     const SSignalStep step =
         findSignal(motion, frame_number, stepFrame(motion, frame_number, delta_time));
     if (!(extended(step.end) >= extended(motion.frame_count) + extended(-kExitMargin))) {
-        accumulateScaledRootMotion(addStored(motion.frame_start, frame_number),
-                                   addStored(motion.frame_start, step.end), scale_factor);
+        accumulateScaledRootMotion(rootMotionFrame(motion, frame_number),
+                                   rootMotionFrame(motion, step.end), scale_factor);
         frame_number = step.end;
         return step.signal;
     }
-    accumulateScaledRootMotion(addStored(motion.frame_start, frame_number),
-                               static_cast<float>(motion.frame_start + motion.frame_count),
+    accumulateScaledRootMotion(storedPosition(motion, frame_number).toFloat(),
+                               static_cast<float>(motion.frame_start + motion.stored_frame_count),
                                scale_factor);
     const int last_frame = motion.frame_count - 1;
     if (isTween(motion.exit_forward_cmd)) {
@@ -366,6 +374,7 @@ int CMotionController::advanceFrameAndCheckSignals(int &motion_index, float &fra
 // Before the exit frame the step is a cut to where it reached; otherwise the motion's exit, taken
 // to the target of a route waiting for it. A NaN step counts as before the exit.
 // nocedit 0x0052e020
+// bw1 0x00524d70
 int CMotionController::advanceFrameToExitPoint(int motion_index, float current_frame,
                                                float &delta_time,
                                                SMotionTransition &out_transition) {
@@ -374,8 +383,8 @@ int CMotionController::advanceFrameToExitPoint(int motion_index, float current_f
     const SSignalStep step = findSignal(motion, current_frame, full_step);
     if (!(extended(step.end) >=
           extended(motion.exit_forward_from_frame) + extended(-kExitMargin))) {
-        accumulateScaledRootMotion(addStored(motion.frame_start, current_frame),
-                                   addStored(motion.frame_start, step.end), 1.0F);
+        accumulateScaledRootMotion(rootMotionFrame(motion, current_frame),
+                                   rootMotionFrame(motion, step.end), 1.0F);
         out_transition.cmd = EMotionTransitionCmd::MOTION_CMD_JUMP;
         out_transition.set_new_state_as_desired = false;
         out_transition.to_motion_number = motion_index;
@@ -385,9 +394,8 @@ int CMotionController::advanceFrameToExitPoint(int motion_index, float current_f
         }
         return step.signal;
     }
-    accumulateScaledRootMotion(
-        addStored(motion.frame_start, current_frame),
-        static_cast<float>(motion.frame_start + motion.exit_forward_from_frame), 1.0F);
+    accumulateScaledRootMotion(rootMotionFrame(motion, current_frame),
+                               rootMotionFrame(motion, motion.exit_forward_from_frame), 1.0F);
     out_transition.cmd = motion.exit_forward_cmd;
     out_transition.to_motion_number = motion.exit_forward_to_motion;
     out_transition.to_frame_number = motion.exit_forward_to_frame;
@@ -448,7 +456,10 @@ const CMotionList *CMotionController::getMotionList() const {
 
 // Each frame's start and position add at the x87's precision and are then chopped, as the CRT
 // round does. A NaN position is past the last frame, and is taken as having jumped.
+// Positions are counted in stored poses: frame / resolution past the motion's start, which is
+// the frame itself until Blair Witch's frame resolutions.
 // nocedit 0x0052e4c0
+// bw1 0x00525240
 SInterpolationFrames CMotionController::getFramesForInterpolation(int motion_index,
                                                                   float frame_number) const {
     const std::span<const SMotion> motions = motion_list_->getMotions();
@@ -456,30 +467,30 @@ SInterpolationFrames CMotionController::getFramesForInterpolation(int motion_ind
     if (frame_number <= 0.0F) {
         return {.frame_1 = motion.frame_start, .frame_2 = motion.frame_start};
     }
-    const int last_frame = motion.frame_count - 1;
-    if (static_cast<double>(last_frame) > frame_number) {
-        const common::CExtendedFloat position =
-            common::CExtendedFloat(motion.frame_start) + common::CExtendedFloat(frame_number);
+    // The first frame past the last stored pose.
+    const int last_pose_frame = motion.frame_count - motion.frame_resolution;
+    if (static_cast<double>(last_pose_frame) > frame_number) {
+        const common::CExtendedFloat position = storedPosition(motion, frame_number);
         const std::int32_t frame_1 = position.truncateToInt();
         return {.frame_1 = frame_1,
                 .frame_2 = frame_1 + 1,
                 .blend_weight =
                     (position + common::CExtendedFloat(-static_cast<double>(frame_1))).toFloat()};
     }
-    const int frame_1 = motion.frame_start + last_frame;
-    if (last_frame > motion.exit_forward_from_frame ||
+    const int frame_1 = motion.frame_start + motion.stored_frame_count - 1;
+    if (motion.frame_count - 1 > motion.exit_forward_from_frame ||
         motion.exit_forward_cmd != EMotionTransitionCmd::MOTION_CMD_JUMP) {
         return {.frame_1 = frame_1, .frame_2 = frame_1};
     }
     const SMotion &target = motions[static_cast<std::size_t>(motion.exit_forward_to_motion)];
-    const std::int32_t frame_2 = (common::CExtendedFloat(target.frame_start) +
-                                  common::CExtendedFloat(motion.exit_forward_to_frame))
-                                     .truncateToInt();
-    const double past_last = static_cast<double>(frame_number) - last_frame;
-    if (!(1.0 > past_last)) {
+    const std::int32_t frame_2 =
+        storedPosition(target, motion.exit_forward_to_frame).truncateToInt();
+    const common::CExtendedFloat past_last =
+        (extended(frame_number) - extended(last_pose_frame)) / extended(motion.frame_resolution);
+    if (!(extended(1.0) > past_last)) {
         return {.frame_1 = frame_2, .frame_2 = frame_2};
     }
-    return {.frame_1 = frame_1, .frame_2 = frame_2, .blend_weight = static_cast<float>(past_last)};
+    return {.frame_1 = frame_1, .frame_2 = frame_2, .blend_weight = past_last.toFloat()};
 }
 
 const std::string &CMotionController::getCurrentMotionName() const {

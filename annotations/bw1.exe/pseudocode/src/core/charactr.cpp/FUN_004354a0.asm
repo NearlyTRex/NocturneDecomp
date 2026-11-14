@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[3]:
-;   core_charactr.cpp_FUN_00432240 at 00432510
+;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240 at 00432510
 ;   core_charactr.cpp_FUN_00433f10 at 00434032
 ;   core_charactr.cpp_FUN_00435380 at 0043547d
 ;

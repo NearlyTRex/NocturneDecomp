@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archiveFloat_FUN_0040b5f0(float *param_1,char *param_2)
+; void __cdecl core_actor_cpp_archiveFloat_FUN_0040b5f0(float *float_ptr,char *property_name)
 ;
+; Parameters:
+; float *          Stack[0x4]:4   float_ptr
+; char *           Stack[0x8]:4   property_name
 ; Local Variables:
 ; undefined8       Stack[-0x10]:8  local_10
 ;
@@ -10,13 +13,13 @@
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040c040 at 0040c08d
 ;   core_ammobox.cpp_CAmmoBox_archive_FUN_0040e400 at 0040e467
 ;   core_anvil.cpp_CAnvil_archive_FUN_0040e860 at 0040e8a2
-;   core_armour.cpp_FUN_0040ebe0 at 0040ebfb
+;   core_armour.cpp_CArmour_archive_FUN_0040ebe0 at 0040ebfb
 ;   core_bat.cpp_CBat_archive_FUN_00410c90 at 00410cbe
-;   core_batcreat.cpp_FUN_00412110 at 0041212b
+;   core_batcreat.cpp_CBatCreature_archive_FUN_00412110 at 0041212b
 ;   core_batman.cpp_CBatman_archive_FUN_00413b60 at 00413b7b
 ;   core_battery.cpp_CBattery_archive_FUN_004145a0 at 004145ce
-;   core_beast.cpp_FUN_00414800 at 0041481b
-;   core_biggs.cpp_FUN_00414f30 at 00414f4b
+;   core_beast.cpp_CBeast_archive_FUN_00414800 at 0041481b
+;   core_biggs.cpp_CBiggs_archive_FUN_00414f30 at 00414f4b
 ;   ... and 66 more
 ;
 ; Referenced Globals:
@@ -49,7 +52,7 @@ section .text
     MOV EBX,dword ptr [0x007c3034]      ; 0040b605 | DAT_007c3034
     PUSH EBX                            ; 0040b60b
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0040b60c
-        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005c04b0()
+        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0040b611
     CMP EAX,0x1                         ; 0040b614
     JNZ 0x0040b62e                      ; 0040b617

@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_ghoul.cpp_FUN_004c1bb0 at 004c2e8e
+;   core_ghoul.cpp_CGhoul_process_FUN_004c1bb0 at 004c2e8e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_ghoul_cpp_005d8fae
@@ -26,14 +26,14 @@
 ;   undefined4 DAT_01d046a0
 ;   undefined4 DAT_01d046a4
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.field1364324_0x14d164
-;   undefined4 g_CDemonSetInstance.field1364328_0x14d168
-;   undefined4 g_CDemonSetInstance.field1380332_0x150fec
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
+;   undefined4 g_CDemonSetInstance.enemy_count
 ;   undefined4 g_CWayPointClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
-;   core_actor.cpp_FUN_0040cf60
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_main.c_FUN_004e4500
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_00513650
 ;   core_path.cpp_getPathMap_FUN_00513ea0
@@ -72,8 +72,8 @@ section .text
     PUSH 0x40000000                     ; 004c19b5
         ;   Label: LAB_004c19b5
     PUSH 0x3f800000                     ; 004c19ba
-    CALL core_actor.cpp_FUN_0040cf60    ; 004c19bf
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 004c19bf
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0x24],EAX      ; 004c19c4
     XOR ECX,ECX                         ; 004c19c8
     FLD float ptr [ESP + 0x24]          ; 004c19ca
@@ -87,17 +87,17 @@ section .text
     MOV EAX,[0x0061b5a8]                ; 004c19ec | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_004c19ec
     MOV EBX,dword ptr [ESP + 0x18]      ; 004c19f1
-    CMP EBX,dword ptr [EAX + 0x14d164]  ; 004c19f5 | g_CDemonSetInstance.field1364324_0x14d164
+    CMP EBX,dword ptr [EAX + 0x14d164]  ; 004c19f5 | g_CDemonSetInstance.actor_count
     JGE 0x004c19ad                      ; 004c19fb
         ;   XREF to: 004c19ad (CONDITIONAL_JUMP)  ; LAB_004c19ad
     MOV EDX,dword ptr [ESP + 0x14]      ; 004c19fd
     MOV EDI,dword ptr [0x02661adc]      ; 004c1a01 | g_CWayPointClassInfo.name_hash
     ADD EAX,EDX                         ; 004c1a07
     PUSH EDI                            ; 004c1a09
-    MOV ECX,dword ptr [EAX + 0x14d168]  ; 004c1a0a | g_CDemonSetInstance.field1364328_0x14d168
+    MOV ECX,dword ptr [EAX + 0x14d168]  ; 004c1a0a | g_CDemonSetInstance.actors[0]
     PUSH ECX                            ; 004c1a10
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004c1a11
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004c1a16
     MOV EDI,EAX                         ; 004c1a19
     TEST EAX,EAX                        ; 004c1a1b
@@ -129,7 +129,7 @@ section .text
     XOR ESI,ESI                         ; 004c1a56
     MOV EAX,[0x0061b5a8]                ; 004c1a58 | g_CDemonSetPtr
         ;   Label: LAB_004c1a58
-    CMP ESI,dword ptr [EAX + 0x150fec]  ; 004c1a5d | g_CDemonSetInstance.field1380332_0x150fec
+    CMP ESI,dword ptr [EAX + 0x150fec]  ; 004c1a5d | g_CDemonSetInstance.enemy_count
     JL 0x004c1af0                       ; 004c1a63
         ;   XREF to: 004c1af0 (CONDITIONAL_JUMP)  ; LAB_004c1af0
     CMP dword ptr [ESP + 0x10],0x0      ; 004c1a69
@@ -187,7 +187,7 @@ section .text
     MOV EDX,dword ptr [EBX + EAX*0x1 + 0x150ff0] ; 004c1af7
     PUSH EDX                            ; 004c1afe
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004c1aff
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004c1b04
     TEST EAX,EAX                        ; 004c1b07
     JZ 0x004c1ae7                       ; 004c1b09

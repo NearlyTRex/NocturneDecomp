@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CWeapon.h"
 
 // Structure: CFlintlock
-// Stub: size from Watcom RTTI, fields not yet recovered
+// registered under CWeapon (registerActorClass); size 1428 from RTTI; no fields of its own
 // Ghidra size: 0x594 (1428 bytes)
 #pragma pack(push, 1)
 typedef struct CFlintlock {
-    char field_0[1428]; // 0x0
+    CWeapon base; // 0x0, parent class
 } CFlintlock;
 #pragma pack(pop)
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_barrier_cpp_CBarrier_getActorType_FUN_00410820(CBarrier *this_ptr)
+; CDemonActorType * __cdecl core_barrier_cpp_CBarrier_getActorType_FUN_00410820(CBarrier *this_ptr)
 ;
 ; Parameters:
 ; CBarrier *       Stack[0x4]:4   this_ptr

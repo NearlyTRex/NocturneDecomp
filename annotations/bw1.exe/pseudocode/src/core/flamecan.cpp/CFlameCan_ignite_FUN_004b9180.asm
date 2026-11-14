@@ -7,16 +7,16 @@
 ; CFlameCan *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[10]:
-;   core_actor.cpp_FUN_00409f20 at 0040a930
-;   core_elephant.cpp_FUN_0049e1a0 at 0049e953
-;   core_fire.cpp_FUN_004b2980 at 004b2ae3
-;   core_flamecan.cpp_FUN_004b91d0 at 004b9201
-;   core_gun.cpp_FUN_004e8630 at 004e8b7f
-;   core_rifle.cpp_FUN_00540080 at 00540717
-;   core_set.cpp_FUN_0054fc20 at 0055009f
-;   core_shotgun.cpp_FUN_00561760 at 00561f16
-;   core_tommygun.cpp_FUN_00598420 at 005989b6
-;   core_turret.cpp_FUN_005a3870 at 005a3ddd
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f20 at 0040a930
+;   core_elephant.cpp_CElephantGun_fire_FUN_0049e1a0 at 0049e953
+;   core_fire.cpp_CGunFlame_init_FUN_004b2980 at 004b2ae3
+;   core_flamecan.cpp_CFlameCan_process_FUN_004b91d0 at 004b9201
+;   core_gun.cpp_CGun_fire_FUN_004e8630 at 004e8b7f
+;   core_rifle.cpp_CRifle_fire_FUN_00540080 at 00540717
+;   core_set.cpp_CDemonSet_processActors_FUN_0054fc20 at 0055009f
+;   core_shotgun.cpp_CShotgun_fire_FUN_00561760 at 00561f16
+;   core_tommygun.cpp_CTommyGun_fire_FUN_00598420 at 005989b6
+;   core_turret.cpp_CTurret_fire_FUN_005a3870 at 005a3ddd
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061c010

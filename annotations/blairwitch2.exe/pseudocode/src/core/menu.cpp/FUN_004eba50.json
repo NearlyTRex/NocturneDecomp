@@ -1,0 +1,425 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 240,
+    "complexity_score": 346,
+    "cross_reference_count": 0,
+    "function_call_count": 10,
+    "global_count": 11,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 81,
+    "suspect_count": 24,
+    "suspect_types": [
+      "raw_address_pointer_store",
+      "undefined_data",
+      "unnamed_param",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 321
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004eba50",
+    "address_range": [
+      [
+        "004eba50",
+        "004ebcdf"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "core_menu.cpp_FUN_004eba50",
+    "signature": "void core_menu_cpp_FUN_004eba50(int *param_1,char *param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "004032b0",
+      "is_variadic": false,
+      "name": "engine_2d.c_clearInputAndWait_FUN_004032b0"
+    },
+    {
+      "addr": "004031c0",
+      "is_variadic": false,
+      "name": "engine_2d.c_fillRectColor_FUN_004031c0"
+    },
+    {
+      "addr": "00403250",
+      "is_variadic": false,
+      "name": "engine_2d.c_fillRectWithBorder_FUN_00403250"
+    },
+    {
+      "addr": "004a93f0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004a93f0"
+    },
+    {
+      "addr": "004ab560",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560"
+    },
+    {
+      "addr": "0047e1d0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047e1d0"
+    },
+    {
+      "addr": "0047e760",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_0047e760"
+    },
+    {
+      "addr": "0047e870",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_0047e870"
+    },
+    {
+      "addr": "00589560",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00589560"
+    },
+    {
+      "addr": "0058ed10",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_setCursorPosition_FUN_0058ed10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005dcb3d",
+      "name": "DAT_005dcb3d",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006138e0",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c25594"
+    },
+    {
+      "addr": "006141b8",
+      "name": "DAT_006141b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00617dd4",
+      "name": "DAT_00617dd4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c25590",
+      "name": "DAT_01c25590",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c2a37c",
+      "name": "DAT_01c2a37c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c2a380",
+      "name": "DAT_01c2a380",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e48",
+      "name": "DAT_01c35e48",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e4c",
+      "name": "DAT_01c35e4c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e50",
+      "name": "DAT_01c35e50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e54",
+      "name": "DAT_01c35e54",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.845,
+    "instruction_count": 200,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 22,
+      "BOOL_OR": 4,
+      "BOOL_XOR": 1,
+      "BRANCH": 4,
+      "CALL": 10,
+      "CALLIND": 5,
+      "CBRANCH": 12,
+      "COPY": 167,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_MULT": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 46,
+      "INT_AND": 149,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 104,
+      "INT_LEFT": 5,
+      "INT_LESS": 16,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 19,
+      "INT_OR": 20,
+      "INT_SBORROW": 20,
+      "INT_SCARRY": 18,
+      "INT_SDIV": 3,
+      "INT_SEXT": 12,
+      "INT_SLESS": 51,
+      "INT_SREM": 3,
+      "INT_SRIGHT": 7,
+      "INT_SUB": 82,
+      "INT_XOR": 2,
+      "INT_ZEXT": 7,
+      "LOAD": 26,
+      "POPCOUNT": 49,
+      "RETURN": 1,
+      "STORE": 68,
+      "SUBPIECE": 12
+    },
+    "pcode_op_count": 969
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004eba59",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_menu_cpp_FUN_004eba50(int *param_1,char *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void core_menu_cpp_FUN_004eba50(int *param_1,char *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_006141b8",
+      "severity": "mild",
+      "text": "iVar3 = DAT_006141b8 * 3 >> 0x1f;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_006141b8",
+      "severity": "mild",
+      "text": "(g_CEditorToolsPtr,(int)((DAT_006141b8 * 3 + iVar3 * -4) - (uint)(iVar3 << 1 < 0)) >> 2,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "0x2c,param_2,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar3 = *param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*param_1 = 0x3fff;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*param_1 = 0x3fff;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*param_1 = 0xffff;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar3 = *param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_006141b8",
+      "severity": "mild",
+      "text": "((int)(((longlong)(DAT_006141b8 + -1) * (longlong)(iVar3 + -0x3fff)) / 0xc000),",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 42,
+      "match": "DAT_006141b8",
+      "severity": "mild",
+      "text": "iVar3 = (int)(((longlong)_DAT_01c2a37c * 0xc000) / (longlong)(DAT_006141b8 + -1)) + 0x3fff;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 45,
+      "match": "*(code **)(*0x01D02F84",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 45,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 49,
+      "match": "*(code **)(*0x01D02F84",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 49,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 77,
+      "match": "*(code **)(*0x01D02F84",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 77,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 79,
+      "match": "*(code **)(*0x01D02F84",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 79,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 80,
+      "match": "*(code **)(*0x01D02F84",
+      "severity": "moderate",
+      "text": "} while ((iVar1 == 0) && (iVar1 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84), iVar1 == 0));",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 80,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "} while ((iVar1 == 0) && (iVar1 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84), iVar1 == 0));",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 81,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*param_1 = iVar3;",
+      "type": "unnamed_param"
+    }
+  ]
+}

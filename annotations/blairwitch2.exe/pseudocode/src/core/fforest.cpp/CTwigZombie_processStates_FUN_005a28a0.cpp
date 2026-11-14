@@ -1,0 +1,26 @@
+// Name: core_fforest.cpp_CTwigZombie_processStates_FUN_005a28a0
+// Address: 005a28a0
+// Address Range: [[005a28a0, 005a2902]]
+// Convention: __cdecl
+// Signature: void __cdecl core_fforest_cpp_CTwigZombie_processStates_FUN_005a28a0(CTwigZombie *this_ptr,float delta_time,int mode)
+
+#include "nocturne.h"
+
+void __cdecl core_fforest_cpp_CTwigZombie_processStates_FUN_005a28a0(CTwigZombie *this_ptr,float delta_time,int mode)
+
+{
+  int iVar1;
+  
+  if (mode == 0) {
+    core_muzzle_cpp_FUN_0059d650(&(this_ptr->base).state_machine,"Attacking");
+    return;
+  }
+  core_basicene_cpp_CBasicEnemy_processStates_FUN_0059e8c0(&this_ptr->base,delta_time,mode);
+  if ((mode == 1) &&
+     (iVar1 = core_muzzle_cpp_FUN_0059daa0(&(this_ptr->base).state_machine,"Attacking"),
+     iVar1 != 0)) {
+    core_fforest_cpp_FUN_005a2ac0(this_ptr,delta_time);
+    return;
+  }
+  return;
+}

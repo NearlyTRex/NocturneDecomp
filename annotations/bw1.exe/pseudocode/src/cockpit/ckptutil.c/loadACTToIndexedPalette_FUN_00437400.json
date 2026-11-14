@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 53,
     "complexity_score": 99,
-    "cross_reference_count": 3,
+    "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
@@ -26,13 +26,19 @@
     {
       "addr": "00538000",
       "from_addr": "00538011",
-      "name": "cockpit_pkbitmap.cpp_FUN_00538000",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_applyACTPalette_FUN_00538000",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00538750",
+      "from_addr": "00538850",
+      "name": "cockpit_pkbitmap.cpp_FUN_00538750",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00539190",
       "from_addr": "005391a1",
-      "name": "cockpit_pkbmpset.cpp_FUN_00539190",
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_00539190",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -57,7 +63,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 3,
+    "call_site_count": 4,
     "call_sites": [
       {
         "call_addr": "00437399",
@@ -73,7 +79,7 @@
       {
         "call_addr": "00538011",
         "call_type": "direct",
-        "caller": "cockpit_pkbitmap.cpp_FUN_00538000",
+        "caller": "cockpit_pkbitmap.cpp_CPackedBitmap_applyACTPalette_FUN_00538000",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -84,7 +90,18 @@
       {
         "call_addr": "005391a1",
         "call_type": "direct",
-        "caller": "cockpit_pkbmpset.cpp_FUN_00539190",
+        "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_00539190",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00538850",
+        "call_type": "direct",
+        "caller": "cockpit_pkbitmap.cpp_FUN_00538750",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -131,6 +148,32 @@
       "STORE": 7
     },
     "pcode_op_count": 589
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0042c6f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00435010",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00431a30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0042d3f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 12,

@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 74,
+    "complexity_score": 89,
     "cross_reference_count": 5,
     "function_call_count": 2,
     "global_count": 5,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 34,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
+      "shadow_pointer_walk",
       "undefined_data",
       "warning_overlapping_globals"
     ],
@@ -23,15 +24,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00479e0c",
+      "addr": "00479e10",
       "from_addr": "00479f4d",
-      "name": "core_dtri.cpp_FUN_00479e0c",
+      "name": "core_dtri.cpp_FUN_00479e10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00534130",
       "from_addr": "00534196",
-      "name": "core_set.cpp_FUN_00534130",
+      "name": "core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_00534130",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -43,7 +44,7 @@
     {
       "addr": "005862e0",
       "from_addr": "005868f2",
-      "name": "core_water.cpp_FUN_005862e0",
+      "name": "core_water.cpp_CWater_render_FUN_005862e0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -109,7 +110,7 @@
       {
         "call_addr": "005868f2",
         "call_type": "direct",
-        "caller": "core_water.cpp_FUN_005862e0",
+        "caller": "core_water.cpp_CWater_render_FUN_005862e0",
         "estimated_params": 2,
         "instructions_analyzed": 5,
         "method": "push_count",
@@ -131,7 +132,7 @@
       {
         "call_addr": "00534196",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00534130",
+        "caller": "core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_00534130",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -208,7 +209,7 @@
       {
         "call_addr": "00479f4d",
         "call_type": "direct",
-        "caller": "core_dtri.cpp_FUN_00479e0c",
+        "caller": "core_dtri.cpp_FUN_00479e10",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -251,6 +252,32 @@
     },
     "pcode_op_count": 219
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00481c00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0046b2c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0048a8a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0045eee0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -288,7 +315,7 @@
       "line": 18,
       "match": "DAT_01ba5c84",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_01ba5c84 + iVar2) = *(uint *)(pSVar1 + 0x18);",
+      "text": "*(int *)(&DAT_01ba5c84 + iVar2) = pSVar1->vertices[0].vertex_index;",
       "type": "undefined_data"
     },
     {
@@ -296,8 +323,16 @@
       "line": 35,
       "match": "DAT_01ba5c84",
       "severity": "mild",
-      "text": "(this_ptr,*(int *)(poly + 4),(int *)&DAT_01ba5c84);",
+      "text": "(this_ptr,(poly->base).base.count,(int *)&DAT_01ba5c84);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar1` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 20,
+      "match": "pSVar1 = (T *)&(pSVar1->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar1 = (SMRGLPrimitivePoly *)&(pSVar1->base).surface_normal.B;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

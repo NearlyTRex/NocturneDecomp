@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_buildRotationY_FUN_00584ff0(float param_1)
+; CMatrix3x4f * __stack_esi core_xform_cpp_buildRotationY_FUN_00584ff0(float angle_radians,CMatrix3x4f *matrix_out)
 ;
+; Parameters:
+; float            Stack[0x4]:4   angle_radians
 ; Local Variables:
 ; undefined4       Stack[-0x44]:4  local_44
 ; undefined4       Stack[-0x40]:4  local_40
@@ -20,7 +22,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
-;   core_charactr.cpp_FUN_0042f770 at 0042fa05
+;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042f770 at 0042fa05
 ;   core_prye.cpp_FUN_0051f490 at 005203af
 ;
 ; *****************************************************************************

@@ -2,21 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 145,
-    "complexity_score": 440,
-    "cross_reference_count": 6,
+    "complexity_score": 395,
+    "cross_reference_count": 7,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 75,
-    "suspect_count": 32,
+    "suspect_count": 29,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_pointer_store",
       "stack_alignment_array",
       "stack_ref",
-      "suspicious_cast",
-      "unnamed_field",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
@@ -24,15 +21,21 @@
   },
   "cross_references": [
     {
+      "addr": "00444550",
+      "from_addr": "004449c7",
+      "name": "core_colonel.cpp_CColonel_process_FUN_00444550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004c65f0",
       "from_addr": "004c78d6",
-      "name": "core_gabriela.cpp_FUN_004c65f0",
+      "name": "core_gabriela.cpp_CGabriella_process_FUN_004c65f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e9250",
       "from_addr": "004e96f9",
-      "name": "core_haystack.cpp_FUN_004e9250",
+      "name": "core_haystack.cpp_CHaystack_process_FUN_004e9250",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -44,19 +47,19 @@
     {
       "addr": "004f0e50",
       "from_addr": "004f141e",
-      "name": "core_icepick.cpp_FUN_004f0e50",
+      "name": "core_icepick.cpp_CIcePick_process_FUN_004f0e50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00591120",
       "from_addr": "005912f7",
-      "name": "core_stranger.cpp_FUN_00591120",
+      "name": "core_stranger.cpp_CStranger_handleActionButton_FUN_00591120",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00593150",
       "from_addr": "005936e3",
-      "name": "core_svetlana.cpp_FUN_00593150",
+      "name": "core_svetlana.cpp_CSvetlana_process_FUN_00593150",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -87,7 +90,7 @@
     {
       "addr": "005a7520",
       "is_variadic": false,
-      "name": "core_vecdir.cpp_FUN_005a7520"
+      "name": "core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520"
     }
   ],
   "globals": [
@@ -111,13 +114,13 @@
     },
     {
       "addr": "01fd1210",
-      "name": "g_CDemonSetInstance.field1372328_0x14f0a8",
+      "name": "g_CDemonSetInstance.character_count",
       "type": "undefined4",
       "value": null
     }
   ],
   "param_estimates": {
-    "call_site_count": 6,
+    "call_site_count": 7,
     "call_sites": [
       {
         "call_addr": "004eca67",
@@ -133,7 +136,7 @@
       {
         "call_addr": "004c78d6",
         "call_type": "direct",
-        "caller": "core_gabriela.cpp_FUN_004c65f0",
+        "caller": "core_gabriela.cpp_CGabriella_process_FUN_004c65f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -144,7 +147,7 @@
       {
         "call_addr": "004e96f9",
         "call_type": "direct",
-        "caller": "core_haystack.cpp_FUN_004e9250",
+        "caller": "core_haystack.cpp_CHaystack_process_FUN_004e9250",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -155,7 +158,7 @@
       {
         "call_addr": "005912f7",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_FUN_00591120",
+        "caller": "core_stranger.cpp_CStranger_handleActionButton_FUN_00591120",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -166,7 +169,7 @@
       {
         "call_addr": "005936e3",
         "call_type": "direct",
-        "caller": "core_svetlana.cpp_FUN_00593150",
+        "caller": "core_svetlana.cpp_CSvetlana_process_FUN_00593150",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -177,7 +180,18 @@
       {
         "call_addr": "004f141e",
         "call_type": "direct",
-        "caller": "core_icepick.cpp_FUN_004f0e50",
+        "caller": "core_icepick.cpp_CIcePick_process_FUN_004f0e50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004449c7",
+        "call_type": "direct",
+        "caller": "core_colonel.cpp_CColonel_process_FUN_00444550",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -232,6 +246,32 @@
       "STORE": 41
     },
     "pcode_op_count": 757
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004cee90",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004d2ea0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004f2c40",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4615
+    },
+    "nocturne.exe": {
+      "addr": "004b4fe0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4615
+    }
   },
   "stack_frame": {
     "frame_size": 144,
@@ -447,28 +487,12 @@
       "type": "stack_ref"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x14f0a8",
-      "severity": "mild",
-      "text": "for (local_18 = 0; local_18 < *(int *)&g_CDemonSetPtr->field_0x14f0a8; local_18 = local_18 + 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "description": "Complex pointer cast",
       "line": 40,
-      "match": "*(CHero **)(&g_CDemonSetPtr->field_0x14f0ac",
+      "match": "(CHero **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "local_14 = *(CHero **)(&g_CDemonSetPtr->field_0x14f0ac + local_1c);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x14f0ac",
-      "severity": "mild",
-      "text": "local_14 = *(CHero **)(&g_CDemonSetPtr->field_0x14f0ac + local_1c);",
-      "type": "unnamed_field"
+      "text": "local_14 = *(CHero **)((int)g_CDemonSetPtr->characters + local_1c);",
+      "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
@@ -547,7 +571,7 @@
       "line": 60,
       "match": "&stack0xffffffb4",
       "severity": "moderate",
-      "text": "core_vecdir_cpp_FUN_005a7520(&stack0xffffffb4);",
+      "text": "core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&stack0xffffffb4);",
       "type": "stack_ref"
     },
     {
@@ -581,14 +605,6 @@
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff80 + (uint)bVar1 * -8 + (uint)bVar1 * -8);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00622c28 (at 0x00622c28, +16 bytes).",
-      "line": 40,
-      "match": "g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "local_14 = *(CHero **)(&g_CDemonSetPtr->field_0x14f0ac + local_1c);",
-      "type": "suspicious_cast"
     },
     {
       "description": "Pointer value `&stack0xffffff94` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

@@ -1,0 +1,156 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 33,
+    "complexity_score": 17,
+    "cross_reference_count": 3,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 50
+  },
+  "cross_references": [
+    {
+      "addr": "004a50b0",
+      "from_addr": "004a50e5",
+      "name": "core_fldnotes.cpp_CFieldNotes_clear_FUN_004a50b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a37c0",
+      "from_addr": "004a3806",
+      "name": "core_fldnotes.cpp_SNotesMap_ctor_FUN_004a37c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a3820",
+      "from_addr": "004a3826",
+      "name": "core_fldnotes.cpp_SNotesMap_dtor_FUN_004a3820",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a3860",
+    "address_range": [
+      [
+        "004a3860",
+        "004a38d2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fldnotes.cpp_SNotesMap_reset_FUN_004a3860",
+    "signature": "void __cdecl core_fldnotes_cpp_SNotesMap_reset_FUN_004a3860(SNotesMap *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b86a0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b86a0"
+    },
+    {
+      "addr": "0040d540",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004a50e5",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_CFieldNotes_clear_FUN_004a50b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004a3806",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_SNotesMap_ctor_FUN_004a37c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004a3826",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_SNotesMap_dtor_FUN_004a3820",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.814814814814815,
+    "instruction_count": 27,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 3,
+      "CBRANCH": 1,
+      "COPY": 21,
+      "INT_ADD": 17,
+      "INT_AND": 9,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 7,
+      "LOAD": 6,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 14
+    },
+    "pcode_op_count": 103
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004bc250",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a9eb0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "SNotesMap *"
+      }
+    ]
+  },
+  "suspects": []
+}

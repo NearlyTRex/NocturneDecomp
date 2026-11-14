@@ -1,0 +1,5759 @@
+[
+  {
+    "program": "bw1.exe",
+    "struct": "CDemonActor",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x118",
+        "delta": 0
+      },
+      {
+        "from": "0x11c",
+        "to": "0x144",
+        "delta": 4
+      },
+      {
+        "from": "0x14c",
+        "to": "0x154",
+        "delta": 0
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x11c",
+        "name": "footstep_particle_count",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "ctor copies footstep_sound_code to +0x120 (nocedit +0x11c); handleFootstep keeps blood_effect_color at +0x118 and takes footstep_sound_code at +0x120; snapshotActorTransformState, renderScene and buildDisplayList address previous_transform_state at +0x12c/+0x138 (nocedit +0x128/+0x134); render_needs_update at +0x148, next_actor at +0x14c, so is_editor_hidden is gone. The new dword at +0x11c: setup zeroes it; handleFootstep sets it to 1 when isOfClass(this, \"CShadow\"), else getRandomInt(1, 3), and calls the core_fire.cpp spawner that many times."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CDemonActor",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x118",
+        "delta": 0
+      },
+      {
+        "from": "0x11c",
+        "to": "0x144",
+        "delta": 4
+      },
+      {
+        "from": "0x14c",
+        "to": "0x154",
+        "delta": 0
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x11c",
+        "name": "footstep_particle_count",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "As bw1: ctor stores +0x100..+0x114 at nocedit's offsets and copies footstep_sound_code to +0x120; setup zeroes +0x11c; handleFootstep sets +0x11c to 1 for CShadow, else getRandomInt(1, 3), and loops that many spawns; snapshotActorTransformState addresses previous_transform_state at +0x12c/+0x138."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "SBodyPartFire",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0xc",
+        "delta": 0
+      }
+    ],
+    "basis": "RTTI 1036 = local_position (12) + CFlame, which is 1024 in this build (676 in nocedit). CBodyPart.fires (SBodyPartFire[2]) sits at +0x8ac and the next field at +0x10c4, 2 x 1036; CBodyPart's shift is +348 before the array and +1044 after it, the 2 x 348 that CFlame grew by."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CBulletHole",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x30",
+        "delta": 0
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x3c",
+        "name": "decal_type",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "RTTI 64. allocateBulletHole steps the pool by 0x40. CBulletHole_render reads position at +0, actor_ptr at +0x10, euler_angles at +0x14, texture_index at +0x20, transformed_pos at +0x24 and actor_local_space at +0x30, as nocedit. The new +0x3c selects the texture (0: the bullet-hole atlas, quadrant from texture_index; 1, 2: two other decals) and the size (0.17, 1.0, 0.5)."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CFootstep",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x4",
+        "delta": 0
+      },
+      {
+        "from": "0x8",
+        "to": "0x3c",
+        "delta": 4
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x8",
+        "name": "area_id",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "RTTI 68. The ctor runs __arrinit over the corners at +0xc (nocedit +0x8). CFootstep_init writes expired at +0, blood_type at +4, the corners at +0xc..+0x3b, alpha at +0x3c and is_bloody at +0x40; the new +0x8 takes location.area_id (+0x2c) of g_HeroActors[current hero]."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CGunFlame",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 12
+      },
+      {
+        "from": "0x4",
+        "to": "0x4",
+        "delta": -4
+      },
+      {
+        "from": "0x10",
+        "to": "0x20",
+        "delta": 0
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x24",
+        "name": "flame_style",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x28",
+        "name": "frame_count",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "RTTI 44; the pool at 0x1cfb8bc is __arrinit(500) and steps by 0x2c. activate (FUN_0049e1a0) copies position to +0, sets lifetime at +0xc (3.0 for style 6, else random 0.9-1.0 times a constant), velocity at +0x10, anim_frame at +0x1c, flame_type at +0x20 and its new last argument at +0x24; that style also picks the frame count at +0x28 (1, 6 or 20). process (FUN_0049e390) counts lifetime down at +0xc, moves position by velocity, makes smoke and calls burnNearby only when +0x24 is 0 (burnNearby only when flame_type is set too), and wraps anim_frame at +0x28."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CCharacter",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x158",
+        "delta": 0
+      },
+      {
+        "from": "0x240c",
+        "to": "0x2438",
+        "delta": 240
+      },
+      {
+        "from": "0x243c",
+        "to": "0x24ac",
+        "delta": 252
+      },
+      {
+        "from": "0x2534",
+        "to": "0x25ac",
+        "delta": 356
+      },
+      {
+        "from": "0x25b0",
+        "to": "0x25cc",
+        "delta": 396
+      },
+      {
+        "from": "0x25d0",
+        "to": "0x2614",
+        "delta": 400
+      },
+      {
+        "from": "0x2618",
+        "to": "0x2628",
+        "delta": 412
+      },
+      {
+        "from": "0x2a8c",
+        "to": "0x2dd8",
+        "delta": 524
+      },
+      {
+        "from": "0x2ddc",
+        "to": "0xb7e0",
+        "delta": 528
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x252c",
+        "name": "turn_rate",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x2530",
+        "name": "cutscene_turn_rate",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x2534",
+        "name": "ghost_turn_rate",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x275c",
+        "name": "gesture_looping",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x27a8",
+        "name": "is_spectral",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x27ac",
+        "name": "spectral_sound_handle",
+        "type": "uint",
+        "len": 4
+      },
+      {
+        "offset": "0x27b0",
+        "name": "is_invulnerable",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x27c8",
+        "name": "layer_actions",
+        "type": "SLayerAction[22]",
+        "len": 1232
+      },
+      {
+        "offset": "0xb9f4",
+        "name": "motion_transition_costs",
+        "type": "float[22][22]",
+        "len": 1936
+      },
+      {
+        "offset": "0xc184",
+        "name": "left_eye_frame",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0xc188",
+        "name": "right_eye_frame",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0xc18c",
+        "name": "mouth_frame",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0xc190",
+        "name": "is_blinking",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0xc194",
+        "name": "blink_timer",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0xc198",
+        "name": "mouth_timer",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0xc19c",
+        "name": "head_part_index",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0xc1a0",
+        "name": "left_eye_parts",
+        "type": "int[4]",
+        "len": 16
+      },
+      {
+        "offset": "0xc1b0",
+        "name": "right_eye_parts",
+        "type": "int[4]",
+        "len": 16
+      },
+      {
+        "offset": "0xc1c0",
+        "name": "mouth_parts",
+        "type": "int[4]",
+        "len": 16
+      }
+    ],
+    "basis": "ctor 0042c080 stores render_active +0x24fc, velocity +0x2518, hit_points +0x2538, max_hit_points +0x253c, health_bar_mode +0x2540, descriptive_name +0x2544, carry_hands memset +0x25a8 len 0xf0 (stride 0x78), talk_to_me_event[0] +0x2698, grabbed_by +0x26fc, walk_to_target..walk_timeout +0x2704..+0x2710, walk_state +0x273c, door_target +0x2740, look_offset +0x2744, gesture root/index +0x2750/+0x2754, look_at_* +0x2760..+0x2778, wander_* +0x277c..+0x2784, blood_type +0x27a0, is_ethereal +0x27a4, speech_timer +0x27b4, size_scale +0x27b8, was_rendered_opaque +0x27bc, gun_flame_ignitable +0x27c0, layer_action_count +0x27c4, layer_action_index/t +0x2c98/+0x2c9c, smoke_* +0x2e5c.., hero_proximity_timer +0x2fd0, walk_stuck_timer +0x2fe0, sound_cooldown +0x2fe4 (playSoundWithCooldown 004352e0), collision_cylinder_* +0x2fec..+0x3000, damage_decal_count +0x3004 (addDamageDecal 00430440, decals at +0x3008), fire_count +0x3120, flame_scale +0x3128, is_fully_burned +0xb9e8, stagger_amount +0xb9f0; arrinit chain cloth_list +0x2ca0, fires +0x312c, flames +0x35dc. gesture_looping: CScript_step stores it after initGesture; FUN_00432e00 wraps gesture_frame to 0 instead of ending when it is 1, FUN_00432cb0 uses weight 1.0. spectral_sound_handle: inv.cpp FUN_004f6b50/FUN_004f6bb0 store the 'sps_*.wav' playSound handle there for spectral characters. turn_rate/cutscene_turn_rate/ghost_turn_rate: FUN_00435320 (bw1) / FUN_0042b2a0 (bw2) sets turn_speed = (g_CGamePtr letterbox_mode ? cutscene_turn_rate : turn_rate) * arg, and ghost_turn_rate*arg when the model name starts 'ghost'; ctor stores 2pi/pi/pi (bw1, bw3) or 2pi/2pi/pi (bw2), CHero ctor 4pi, CEnemy ctor pi/2. is_spectral/is_invulnerable: CCharacter_archive 'spectralFlag'/'invulnerableFlag' (is_ethereal is 'etheralFlag', unmoved order); is_invulnerable gates checkCylinderCollisionWorld and processDamage; is_spectral gates getCollisionType/onLaserHit. layer_actions: addLayerAction errors when count > 0x15 (bw1, bw2: 22 slots) or > 0x20 (bw3: 33), stride 0x38; motion_transition_costs: buildLayerActionTransitionCosts row stride 0x58 / loop 0x16 (bw1, bw2) and 0x84 / 0x21 (bw3). Face block: the ctor zeroes the three frames/blink/mouth timer and sets head_part_index -2; the per-frame face function (bw1 FUN_0042e580, bw2 FUN_004247f0) on -2 finds part 'head' into head_part_index, 'm1'..'m4' into mouth_parts, 'e1_left'..'e4_left' into left_eye_parts and 'e1_right'..'e4_right' into right_eye_parts (strings read from the PE), hides all of them, then shows left_eye_parts[left_eye_frame], right_eye_parts[right_eye_frame], mouth_parts[mouth_frame]; blink_timer counts down (is_blinking 1 -> frames 0, timer getRandomFloat(5,8); else frames 3, is_blinking 1, timer 0.05); mouth_timer counts down and, for g_CScriptPtr->who_is_speaking, re-arms 0.15 with mouth_frame = rand()&3."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CCharacter",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x158",
+        "to": "0x240c",
+        "delta": 348
+      },
+      {
+        "from": "0x2410",
+        "to": "0x2438",
+        "delta": 352
+      },
+      {
+        "from": "0x243c",
+        "to": "0x24ac",
+        "delta": 364
+      },
+      {
+        "from": "0x2534",
+        "to": "0x25ac",
+        "delta": 468
+      },
+      {
+        "from": "0x25b0",
+        "to": "0x2614",
+        "delta": 508
+      },
+      {
+        "from": "0x2618",
+        "to": "0x2628",
+        "delta": 520
+      },
+      {
+        "from": "0x2a8c",
+        "to": "0x2dd8",
+        "delta": 632
+      },
+      {
+        "from": "0x2ddc",
+        "to": "0x2f1c",
+        "delta": 1620
+      },
+      {
+        "from": "0x33cc",
+        "to": "0x33cc",
+        "delta": 1620
+      },
+      {
+        "from": "0xb7d4",
+        "to": "0xb7e0",
+        "delta": 19020
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x256c",
+        "name": "gravity_enabled",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x259c",
+        "name": "turn_rate",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x25a0",
+        "name": "cutscene_turn_rate",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x25a4",
+        "name": "ghost_turn_rate",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x2814",
+        "name": "is_spectral",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x281c",
+        "name": "is_invulnerable",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x2834",
+        "name": "layer_actions",
+        "type": "SLayerAction[22]",
+        "len": 1232
+      },
+      {
+        "offset": "0x3058",
+        "name": "follow_formation",
+        "type": "SFollowFormation",
+        "len": 980
+      },
+      {
+        "offset": "0x342c",
+        "name": "follow_leader",
+        "type": "CCharacter*",
+        "len": 4
+      },
+      {
+        "offset": "0x10230",
+        "name": "motion_transition_costs",
+        "type": "float[22][22]",
+        "len": 1936
+      },
+      {
+        "offset": "0x109c0",
+        "name": "left_eye_frame",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x109c4",
+        "name": "right_eye_frame",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x109c8",
+        "name": "mouth_frame",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x109cc",
+        "name": "is_blinking",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x109d0",
+        "name": "blink_timer",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x109d4",
+        "name": "mouth_timer",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x109d8",
+        "name": "head_part_index",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x109dc",
+        "name": "left_eye_parts",
+        "type": "int[4]",
+        "len": 16
+      },
+      {
+        "offset": "0x109ec",
+        "name": "right_eye_parts",
+        "type": "int[4]",
+        "len": 16
+      },
+      {
+        "offset": "0x109fc",
+        "name": "mouth_parts",
+        "type": "int[4]",
+        "len": 16
+      },
+      {
+        "offset": "0x10a0c",
+        "name": "eye_glow_left_offset",
+        "type": "CVector3f",
+        "len": 12
+      },
+      {
+        "offset": "0x10a18",
+        "name": "eye_glow_right_offset",
+        "type": "CVector3f",
+        "len": 12
+      },
+      {
+        "offset": "0x10a24",
+        "name": "eye_glow_bone",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x10a28",
+        "name": "eye_glow_enabled",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x10a2c",
+        "name": "eye_glow_from",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x10a30",
+        "name": "eye_glow_to",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x10a34",
+        "name": "eye_glow_duration",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x10a38",
+        "name": "eye_glow_timer",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x10a3c",
+        "name": "eye_glow_color",
+        "type": "CVector3f",
+        "len": 12
+      },
+      {
+        "offset": "0x10a48",
+        "name": "eye_glow_left_angles",
+        "type": "CVector3f",
+        "len": 12
+      },
+      {
+        "offset": "0x10a54",
+        "name": "eye_glow_right_angles",
+        "type": "CVector3f",
+        "len": 12
+      }
+    ],
+    "basis": "ctor 00422340: CDemonActor is 692 so model is at +0x2b4; render_active +0x2568, is_on_ground.. (tdrift 9232/9236 +352), velocity +0x2588, hit_points +0x25a8, carry_hands loop +0x2618 stride 0x78, talk_to_me_event +0x2708, walk_* +0x2774..+0x2780, walk_state +0x27ac, gesture +0x27c0/+0x27c4, look_at_* +0x27cc..+0x27e4, blood_type +0x280c, is_ethereal +0x2810, speech_timer +0x2820, size_scale +0x2824, layer_action_count +0x2830, layer_action_index +0x2d04, cloth_list +0x2d0c, collision_test_points/normals +0x2ed4/+0x2f88, hero_proximity +0x303c, sound_cooldown +0x3050, collision_cylinder_* +0x3430.., damage_decal_count +0x3448, fire_count +0x3564, fires +0x3570, flames +0x3a20 (CFlame 1024 by RTTI, 50 -> ends +0x10220), sfx_handle.. +0x10220, is_fully_burned +0x10224, stagger +0x1022c. No gesture_looping in bw2 (gesture_frame +0x27c8, look_at_candidate +0x27cc). gravity_enabled: ctor 1, FUN_00423a10 adds gravity*dt to velocity.y when !is_spectral && gravity_enabled else zeroes velocity; CHand ctor writes it. follow_formation: the ctor's arrinit chain constructs it at +0x3058 with FUN_0059ded0 and binds this as its leader (bindDllFunction(+0x3058, this)); FUN_00450c60 (doc.cpp) updates it via FUN_0059e110. follow_leader: FUN_0059e110 drops slots whose follower's +0x342c != leader; ctor and CDog/CGhostChild/CConfederateZombie/CUnionZombie death states zero it. eye_glow_*: FUN_0042b620 renders both eyes at bone matrix [eye_glow_bone] (+0x10a24, ctor -1, set in CDoc/CGhostChild/CHag/CRobin setup) when eye_glow_enabled; translations +0x10a0c/+0x10a18 (ctor (-0.097,0.328,0.24)/(0.097,0.328,0.24)), euler +0x10a48/+0x10a54; FUN_0042b550 sets enabled/from/to/duration/timer/color; FUN_0042b5e0 counts timer down; FUN_0042b760 draws with from + (to-from)*(1 - timer/duration) and scales vertices by color (ctor (0,0,1)). turn_rate/cutscene_turn_rate/ghost_turn_rate: FUN_00435320 (bw1) / FUN_0042b2a0 (bw2) sets turn_speed = (g_CGamePtr letterbox_mode ? cutscene_turn_rate : turn_rate) * arg, and ghost_turn_rate*arg when the model name starts 'ghost'; ctor stores 2pi/pi/pi (bw1, bw3) or 2pi/2pi/pi (bw2), CHero ctor 4pi, CEnemy ctor pi/2. is_spectral/is_invulnerable: CCharacter_archive 'spectralFlag'/'invulnerableFlag' (is_ethereal is 'etheralFlag', unmoved order); is_invulnerable gates checkCylinderCollisionWorld and processDamage; is_spectral gates getCollisionType/onLaserHit. layer_actions: addLayerAction errors when count > 0x15 (bw1, bw2: 22 slots) or > 0x20 (bw3: 33), stride 0x38; motion_transition_costs: buildLayerActionTransitionCosts row stride 0x58 / loop 0x16 (bw1, bw2) and 0x84 / 0x21 (bw3). Face block: the ctor zeroes the three frames/blink/mouth timer and sets head_part_index -2; the per-frame face function (bw1 FUN_0042e580, bw2 FUN_004247f0) on -2 finds part 'head' into head_part_index, 'm1'..'m4' into mouth_parts, 'e1_left'..'e4_left' into left_eye_parts and 'e1_right'..'e4_right' into right_eye_parts (strings read from the PE), hides all of them, then shows left_eye_parts[left_eye_frame], right_eye_parts[right_eye_frame], mouth_parts[mouth_frame]; blink_timer counts down (is_blinking 1 -> frames 0, timer getRandomFloat(5,8); else frames 3, is_blinking 1, timer 0.05); mouth_timer counts down and, for g_CScriptPtr->who_is_speaking, re-arms 0.15 with mouth_frame = rand()&3."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CCharacter",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x158",
+        "delta": 0
+      },
+      {
+        "from": "0x240c",
+        "to": "0x2438",
+        "delta": 240
+      },
+      {
+        "from": "0x243c",
+        "to": "0x24ac",
+        "delta": 252
+      },
+      {
+        "from": "0x2534",
+        "to": "0x25ac",
+        "delta": 356
+      },
+      {
+        "from": "0x25b0",
+        "to": "0x25cc",
+        "delta": 396
+      },
+      {
+        "from": "0x25d0",
+        "to": "0x2614",
+        "delta": 400
+      },
+      {
+        "from": "0x2618",
+        "to": "0x2628",
+        "delta": 412
+      },
+      {
+        "from": "0x2a8c",
+        "to": "0x2dd8",
+        "delta": 1140
+      },
+      {
+        "from": "0x2ddc",
+        "to": "0xb7e0",
+        "delta": 1168
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x252c",
+        "name": "turn_rate",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x2530",
+        "name": "cutscene_turn_rate",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x2534",
+        "name": "ghost_turn_rate",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x275c",
+        "name": "gesture_looping",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x27a8",
+        "name": "is_spectral",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x27ac",
+        "name": "spectral_sound_handle",
+        "type": "uint",
+        "len": 4
+      },
+      {
+        "offset": "0x27b0",
+        "name": "is_invulnerable",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x27c8",
+        "name": "layer_actions",
+        "type": "SLayerAction[33]",
+        "len": 1848
+      },
+      {
+        "offset": "0x3254",
+        "name": "bind_time",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x3258",
+        "name": "bind_type",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x325c",
+        "name": "bind_sound_handle",
+        "type": "uint",
+        "len": 4
+      },
+      {
+        "offset": "0x3260",
+        "name": "on_fire_time",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x3268",
+        "name": "been_damaged",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0xbc74",
+        "name": "motion_transition_costs",
+        "type": "float[33][33]",
+        "len": 4356
+      },
+      {
+        "offset": "0xcd78",
+        "name": "left_eye_frame",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0xcd7c",
+        "name": "right_eye_frame",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0xcd80",
+        "name": "mouth_frame",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0xcd84",
+        "name": "is_blinking",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0xcd88",
+        "name": "blink_timer",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0xcd8c",
+        "name": "mouth_timer",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0xcd90",
+        "name": "head_part_index",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0xcd94",
+        "name": "left_eye_parts",
+        "type": "int[4]",
+        "len": 16
+      },
+      {
+        "offset": "0xcda4",
+        "name": "right_eye_parts",
+        "type": "int[4]",
+        "len": 16
+      },
+      {
+        "offset": "0xcdb4",
+        "name": "mouth_parts",
+        "type": "int[4]",
+        "len": 16
+      },
+      {
+        "offset": "0xcdc4",
+        "name": "additive",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0xcdc8",
+        "name": "walk_immediate_pending",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "ctor 0042ac20 matches bw1 through layer_action_count +0x27c4; layer_action_index/t +0x2f00/+0x2f04, cloth_list +0x2f08, hero_proximity +0x3238, walk_stuck +0x3248, sound_cooldown +0x324c, collision_cylinder_* +0x326c.., damage_decal_count +0x3284, fire_count +0x33a0, fires +0x33ac, flames +0x385c, is_fully_burned +0xbc68, stagger +0xbc70; tdrift 10892..11736 +1140 and 11740.. +1168. bind_time/on_fire_time/bind_type/additive/been_damaged: CCharacter_archive 0042b450 names 'bind_time' +0x3254, 'on_fire_time' +0x3260, 'bind_type' +0x3258, 'additive' +0xcdc4, 'been_damaged' +0x3268. bind_sound_handle: FUN_0042cd70 stores playActorSound's handle at +0x325c and killSfx's it; CEnemy_processDamage kills it. walk_immediate_pending: setWalkTargetImmediate sets 1, processWalking clears it when the walk ends. spectral_sound_handle +0x27ac: FUN_004d9fc0 stores the playSound handle as bw1 does. turn_rate/cutscene_turn_rate/ghost_turn_rate: FUN_00435320 (bw1) / FUN_0042b2a0 (bw2) sets turn_speed = (g_CGamePtr letterbox_mode ? cutscene_turn_rate : turn_rate) * arg, and ghost_turn_rate*arg when the model name starts 'ghost'; ctor stores 2pi/pi/pi (bw1, bw3) or 2pi/2pi/pi (bw2), CHero ctor 4pi, CEnemy ctor pi/2. is_spectral/is_invulnerable: CCharacter_archive 'spectralFlag'/'invulnerableFlag' (is_ethereal is 'etheralFlag', unmoved order); is_invulnerable gates checkCylinderCollisionWorld and processDamage; is_spectral gates getCollisionType/onLaserHit. layer_actions: addLayerAction errors when count > 0x15 (bw1, bw2: 22 slots) or > 0x20 (bw3: 33), stride 0x38; motion_transition_costs: buildLayerActionTransitionCosts row stride 0x58 / loop 0x16 (bw1, bw2) and 0x84 / 0x21 (bw3). Face block: the ctor zeroes the three frames/blink/mouth timer and sets head_part_index -2; the per-frame face function (bw1 FUN_0042e580, bw2 FUN_004247f0) on -2 finds part 'head' into head_part_index, 'm1'..'m4' into mouth_parts, 'e1_left'..'e4_left' into left_eye_parts and 'e1_right'..'e4_right' into right_eye_parts (strings read from the PE), hides all of them, then shows left_eye_parts[left_eye_frame], right_eye_parts[right_eye_frame], mouth_parts[mouth_frame]; blink_timer counts down (is_blinking 1 -> frames 0, timer getRandomFloat(5,8); else frames 3, is_blinking 1, timer 0.05); mouth_timer counts down and, for g_CScriptPtr->who_is_speaking, re-arms 0.15 with mouth_frame = rand()&3."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CDemonActor",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x118",
+        "delta": 0
+      },
+      {
+        "from": "0x11c",
+        "to": "0x144",
+        "delta": 4
+      },
+      {
+        "from": "0x14c",
+        "to": "0x150",
+        "delta": 0
+      },
+      {
+        "from": "0x154",
+        "to": "0x154",
+        "delta": 348
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x11c",
+        "name": "footstep_particle_count",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x154",
+        "name": "particle_systems",
+        "type": "CSimpleParticleSystem[5]",
+        "len": 340
+      },
+      {
+        "offset": "0x2ac",
+        "name": "footstep_effects_enabled",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "ctor 00408790: initTransformCache(+0x12c) (previous_transform_state, nocedit +0x128), then __arrinit(+0x154, 5, typeinfo 005f2270 = CSimpleParticleSystem, RTTI 68), vtable +0x2b0; location +0x20/area_id +0x2c, orient +0x30, health +0x64, validation_magic +0x68, lifecycle_state +0x70, create_prob +0x74, create_event +0x78, standing_platform +0xdc, deltas +0xe0/+0xec, is_renderable..process_disabled +0xf8..+0x104, scale +0x108, blood_effect_timer +0x114 (all nocedit offsets), footstep_sound_code copied to +0x120, next/prev_actor +0x14c/+0x150. setup zeroes +0x11c and handleFootstep sets it and loops that many spawns (as bw1). snapshotActorTransformState addresses +0x12c/+0x138 and zeroes render_needs_update +0x148, so is_editor_hidden is gone as in bw1. footstep_effects_enabled: ctor 1; handleFootstep skips the blood/footstep effect when +0x2ac is 0."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CHero",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0xbe24",
+        "to": "0xbe2c",
+        "delta": 940
+      },
+      {
+        "from": "0xbe58",
+        "to": "0x1f738",
+        "delta": 944
+      },
+      {
+        "from": "0x1fb98",
+        "to": "0x1fb98",
+        "delta": 956
+      },
+      {
+        "from": "0x1fb9c",
+        "to": "0x1fbd0",
+        "delta": 984
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x1ff58",
+        "name": "is_wearing_goggles",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x1ff5c",
+        "name": "action_pending",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x1ff60",
+        "name": "hero_action",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x1ff64",
+        "name": "hero_action_actor",
+        "type": "CDemonActor*",
+        "len": 4
+      },
+      {
+        "offset": "0x1ff68",
+        "name": "hero_action_target",
+        "type": "CDemonActor*",
+        "len": 4
+      },
+      {
+        "offset": "0x1ff6c",
+        "name": "hero_action_data",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x1ff70",
+        "name": "hero_action_range",
+        "type": "float",
+        "len": 4
+      }
+    ],
+    "basis": "ctor 004ea830: invincibility_timer +0xc1d0, control_type +0xc1d4, memset(player_input +0xc1d8, 0, 0x30), CPathMap ctor at +0xc208, CInventory ctor at +0x1fae8 (path_map+0x138e0) with owner +0x1faec, aim_mode +0x1fae4, door_to_open..target_actor +0x1ff74..+0x1ff8c, ai_task +0x1ffa8. CHero_archive: 'isWearingGasMask' +0x1ff54, 'isWearingGoggles' +0x1ff58, doorToOpen..pushedObject +0x1ff74..+0x1ff84, 'AITask' +0x1ffa8. action_pending: zeroed by the CHero ctor; CStranger_archive/CDoc_archive name it 'actionPending' and the CStranger/CDoc action functions (handleActionButton, tryPickupObject, processDamage, getGrabbed, canDoHeroAction) use it - nocedit's CStranger.action_pending, moved into CHero. hero_action*: setup zeroes +0x1ff60..+0x1ff68 and sets +0x1ff70 1e30; tryInteract/tryApproachNearbyActor/FUN_004eb3e0 store action code (1, 3, 9) at +0x1ff60, the actor at +0x1ff64, the target actor at +0x1ff68 and 0 at +0x1ff70; FUN_004eb3e0 stores +0x1ff6c; doHeroAction switches on +0x1ff60."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CHero",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0xbe24",
+        "to": "0xbe2c",
+        "delta": 19516
+      },
+      {
+        "from": "0xbe58",
+        "to": "0x1f734",
+        "delta": 19524
+      },
+      {
+        "from": "0x1fb98",
+        "to": "0x1fb98",
+        "delta": 23120
+      },
+      {
+        "from": "0x1fb9c",
+        "to": "0x1fbd0",
+        "delta": 23144
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x2437c",
+        "name": "inventories",
+        "type": "CInventory[3]",
+        "len": 4716
+      },
+      {
+        "offset": "0x255ec",
+        "name": "is_wearing_goggles",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x255f0",
+        "name": "hero_action",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x255f4",
+        "name": "hero_action_actor",
+        "type": "CDemonActor*",
+        "len": 4
+      },
+      {
+        "offset": "0x255f8",
+        "name": "hero_action_target",
+        "type": "CDemonActor*",
+        "len": 4
+      },
+      {
+        "offset": "0x255fc",
+        "name": "hero_action_data",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x25600",
+        "name": "hero_action_range",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x2563c",
+        "name": "hero_inventory_index",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "ctor FUN_004ce240: invincibility_timer +0x10a60, control_type +0x10a64, memset(player_input +0x10a68, 0, 0x34), CPathMap at +0x10a9c, aim_mode +0x24378, three CInventory ctors at +0x2437c stride 0x624 (owners +0x24380/+0x249a4/+0x24fc8), door_to_open..target_actor +0x25604..+0x2561c, ai_task +0x25638, +0x2563c zeroed; archive FUN_004ce590: 'isWearingGasMask' +0x255e8, 'isWearingGoggles' +0x255ec, 'AITask' +0x25638, 'HeroInventoryIndex' +0x2563c (setInventoryIndex stores it). setup zeroes +0x255f0..+0x255f8 and sets +0x25600 1e30 (bw1's hero_action block); doHeroAction/CDoc_doHeroAction read +0x255f0..+0x255fc. No action_pending slot between aim_mode and door_to_open in bw2. nocedit's single inventory is replaced by inventories."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CHero",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0xbe24",
+        "to": "0xbe2c",
+        "delta": 4008
+      },
+      {
+        "from": "0xbe58",
+        "to": "0x1f738",
+        "delta": 4016
+      },
+      {
+        "from": "0x1fb98",
+        "to": "0x1fb98",
+        "delta": 4032
+      },
+      {
+        "from": "0x1fb9c",
+        "to": "0x1fbd0",
+        "delta": 4088
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x20b5c",
+        "name": "is_wearing_goggles",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x20b60",
+        "name": "staff_blocked",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x20b64",
+        "name": "action_pending",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x20b68",
+        "name": "hero_action",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x20b6c",
+        "name": "hero_action_actor",
+        "type": "CDemonActor*",
+        "len": 4
+      },
+      {
+        "offset": "0x20b70",
+        "name": "hero_action_target",
+        "type": "CDemonActor*",
+        "len": 4
+      },
+      {
+        "offset": "0x20b74",
+        "name": "hero_action_data",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x20b78",
+        "name": "hero_action_started",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x20b7c",
+        "name": "hero_action_range",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x20b80",
+        "name": "mana",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x20b84",
+        "name": "bullets",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x20b88",
+        "name": "light_radius",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x20b8c",
+        "name": "aim_target_actor",
+        "type": "CDemonActor*",
+        "len": 4
+      },
+      {
+        "offset": "0x20b90",
+        "name": "aim_target_pulse",
+        "type": "float",
+        "len": 4
+      }
+    ],
+    "basis": "ctor 004d24b0: invincibility_timer +0xcdcc, control_type +0xcdd0, memset(player_input +0xcdd4, 0, 0x34), CPathMap at +0xce08, aim_mode +0x206e4, CInventory at +0x206e8 (owner +0x206ec), door_to_open..target_actor +0x20b94..+0x20bac, ai_task +0x20bc8; archive 004d27b0: 'isWearingGasMask' +0x20b58, 'isWearingGoggles' +0x20b5c, 'mana' (string at 005c4bfd) +0x20b80, 'bullets' +0x20b84, 'light_radius' +0x20b88. CWeapon_fire/isReadyToFire use mana for weapon type 10 and bullets otherwise; isReadyToFire refuses type 10 while +0x20b60 is set. action_pending +0x20b64: ctor zeroes, CPrye archive/canDoHeroAction/doHeroAction/getGrabbed use it (bw1's slot). setup FUN_004d26b0 and FUN_004d3210 zero +0x20b68/+0x20b6c/+0x20b70/+0x20b78 and set +0x20b7c 1e30; FUN_004d4520 reads +0x20b74 as the action's object; FUN_004d4900 tests +0x20b78. fire.cpp FUN_004a2e20 stores the aimed-at actor at +0x20b8c and zeroes +0x20b90 when it changes; CPrye_process adds dt*k to +0x20b90, set.cpp takes its cosine."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CNPC",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0xbe24",
+        "to": "0xbe24",
+        "delta": 940
+      },
+      {
+        "from": "0x1f700",
+        "to": "0x1f704",
+        "delta": 940
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x1fab4",
+        "name": "speed",
+        "type": "float",
+        "len": 4
+      }
+    ],
+    "basis": "ctor 00531670: CPathMap at +0xc1d0, shoot_me +0x1faac, pool_me +0x1fab0, +0x1fab4 = getRandomFloat(0.9, 1.1); CNPC_process multiplies by it; CBird_archive names +0x1faac 'shootMe', +0x1fab0 'poolMe', +0x1fab4 'speed'."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CNPC",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0xbe24",
+        "to": "0xbe24",
+        "delta": 19516
+      },
+      {
+        "from": "0x1f700",
+        "to": "0x1f704",
+        "delta": 19516
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x24344",
+        "name": "speed",
+        "type": "float",
+        "len": 4
+      }
+    ],
+    "basis": "ctor 00510460: CPathMap at +0x10a60, shoot_me +0x2433c, pool_me +0x24340, +0x24344 = getRandomFloat(0.9, 1.1); CNPC_process 005105b0 multiplies by it (bw1's speed)."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CNPC",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0xbe24",
+        "to": "0xbe24",
+        "delta": 4008
+      },
+      {
+        "from": "0x1f700",
+        "to": "0x1f704",
+        "delta": 4008
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x206b0",
+        "name": "speed",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x206b4",
+        "name": "fade_alpha",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x206b8",
+        "name": "fade_state",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x206bc",
+        "name": "start_opcode",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x206c0",
+        "name": "fade_timer",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x206c4",
+        "name": "fade_time",
+        "type": "float",
+        "len": 4
+      }
+    ],
+    "basis": "ctor 00508f40: CPathMap at +0xcdcc, shoot_me +0x206a8, pool_me +0x206ac, speed +0x206b0 = getRandomFloat(0.9,1.1), +0x206b4 0x10000, +0x206b8 -1, +0x206bc 100, +0x206c4 2.0; CNPC_archive: 'shootMe','poolMe','speed' +0x206b0,'fadeTime' +0x206c4,'startOpc' +0x206bc. CNPC_process sets +0x206b8 1 and +0x206c0 = +0x206c4 on 'APPEAR'; renderTransparent computes +0x206b4 from +0x206c0/+0x206c4 (direction by +0x206b8) and passes it to setRenderAlpha."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CEnemy",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0xbe24",
+        "to": "0xbeb0",
+        "delta": 4008
+      },
+      {
+        "from": "0xbeb4",
+        "to": "0xbeb8",
+        "delta": 4504
+      }
+    ],
+    "added": [
+      {
+        "offset": "0xce5c",
+        "name": "attack_damage",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0xce60",
+        "name": "pain_threshold",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0xce64",
+        "name": "spawn_amount",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0xce68",
+        "name": "spawn_item_class",
+        "type": "char[100]",
+        "len": 100
+      },
+      {
+        "offset": "0xcecc",
+        "name": "spawned_item_already",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0xced0",
+        "name": "spawn_model",
+        "type": "CKeyFramedModelInstance",
+        "len": 380
+      }
+    ],
+    "basis": "ctor 00488fd0 stores in nocedit's order: pool_me +0xcdd0, special_form_flag +0xce54, victim +0xcde4, search timer/radius +0xcde8/+0xcdec, randomize_me +0xcdd4, script_victim +0xd04c, is_in_combat +0xcdd8, patrol_name_pattern +0xcdf0, guard_distance +0xcddc, attack_cooldown +0xcde0, victim_height +0xce58, allow_pathfind_to_new_targets +0xd050, speed +0xcdcc; CKeyFramedModelInstance ctor at +0xced0. CEnemy_archive 00489120: 'speed' +0xcdcc, 'scriptVictim' +0xd04c, 'victimHeight' +0xce58, 'attack_damage' +0xce5c, 'spawn_amount' +0xce64, 'spawn_item_class' +0xce68, 'spawned_item_already' +0xcecc, 'spawnmodelName' +0xced0. pain_threshold: FUN_0048a1b0 (called from the processDamage of CZombie, CZombieDog, CHino, CKedward) reacts when damage > it or getRandomInt(0, it) < damage."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CArmour",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0xbebc",
+        "to": "0xbebc",
+        "delta": 940
+      }
+    ],
+    "added": [],
+    "basis": "CArmour_archive 0040ebe0 archives 'fallApartEvent' at +0xc268; ctor copies its default there; CArmour_process passes +0xc268 to the event list."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CArmour",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0xbebc",
+        "to": "0xbebc",
+        "delta": 19516
+      }
+    ],
+    "added": [],
+    "basis": "CArmour_archive archives 'fallApartEvent' at +0x10af8 (CEnemy 68344)."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CBatCreature",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0xbebc",
+        "to": "0xbf00",
+        "delta": 944
+      }
+    ],
+    "added": [
+      {
+        "offset": "0xc268",
+        "name": "dismember_death_timer",
+        "type": "float",
+        "len": 4
+      }
+    ],
+    "basis": "ctor 00411210 and setup zero +0xc268; part_indices at +0xc26c (placed). CBatCreature_process 004115b0: +0xc268 ticks only when the listed parts are gone (part visibility tests), accumulates dt and, past a constant, applies a self-damage SDamageInfo through processDamage and sets it to -1."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CBatman",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0xbebc",
+        "to": "0xbf6c",
+        "delta": 944
+      }
+    ],
+    "added": [
+      {
+        "offset": "0xc268",
+        "name": "dismember_death_timer",
+        "type": "float",
+        "len": 4
+      }
+    ],
+    "basis": "ctor 00412780 and setup zero +0xc268; fall_event at +0xc26c (ctor LEA). CBatman_process 00412ba0: +0xc268 ticks only when the listed parts are gone (part visibility tests), accumulates dt and, past a constant, applies a self-damage SDamageInfo through processDamage and sets it to -1."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CBride",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0xbebc",
+        "to": "0xbebc",
+        "delta": 940
+      },
+      {
+        "from": "0xbee0",
+        "to": "0xbee4",
+        "delta": 944
+      }
+    ],
+    "added": [
+      {
+        "offset": "0xc28c",
+        "name": "dismember_death_timer",
+        "type": "float",
+        "len": 4
+      }
+    ],
+    "basis": "part_indices at +0xc268 (placed). CBride_process 00423b70: +0xc28c ticks only when the listed parts are gone (part visibility tests), accumulates dt and, past a constant, applies a self-damage SDamageInfo through processDamage and sets it to -1; +0xc290 counts down like action_timer and re-arms; +0xc294/+0xc298 are sound handles (processDamage killSfx, isPlaying). ctor zeroes +0xc28c and +0xc290."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CBoneGuy",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0xbebc",
+        "to": "0xc4e0",
+        "delta": 940
+      }
+    ],
+    "added": [],
+    "basis": "CBoneGuy_updatePickupBehavior 0041c9a0 increments +0xc268 (pickup_attempt_count) and reloads +0xc26c with getRandomFloat(5,10) (search_timer); +0xc270 pickup_cooldown; ctor zeroes +0xc26c..+0xc274 and stores getRandomInt into +0xc268 as nocedit; death_event LEA +0xc27c, recombine_time +0xc2e0, box_count +0xc2e4."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CBoneGuy",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0xbebc",
+        "to": "0xc4e0",
+        "delta": 19516
+      }
+    ],
+    "added": [],
+    "basis": "bw2 boneguy.cpp addresses +0x10af8/+0x10afc as bw1's +0xc268/+0xc26c; sfx_handle +0x10b08 and death_event +0x10b0c already placed, so the four nocedit fields fill +0x10af8..+0x10b08."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CBoneGuy",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0xbebc",
+        "to": "0xbebc",
+        "delta": 4504
+      },
+      {
+        "from": "0xbec0",
+        "to": "0xbec8",
+        "delta": 4508
+      },
+      {
+        "from": "0xbecc",
+        "to": "0xbf34",
+        "delta": 4524
+      },
+      {
+        "from": "0xc4dc",
+        "to": "0xc4dc",
+        "delta": 3080
+      },
+      {
+        "from": "0xbf38",
+        "to": "0xbf38",
+        "delta": 4528
+      },
+      {
+        "from": "0xbf3c",
+        "to": "0xbf3c",
+        "delta": 4532
+      },
+      {
+        "from": "0xc4e0",
+        "to": "0xc4e0",
+        "delta": 4532
+      }
+    ],
+    "added": [
+      {
+        "offset": "0xd058",
+        "name": "start_hit_points",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0xd068",
+        "name": "explode_position",
+        "type": "CVector3f",
+        "len": 12
+      },
+      {
+        "offset": "0xd074",
+        "name": "skeleton_variant",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0xd0ec",
+        "name": "explode_count",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0xd690",
+        "name": "guard_idle",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "ctor 00417400: getRandomInt -> +0xd054 (pickup_attempt_count), zeroes +0xd05c..+0xd064 (search_timer, pickup_cooldown, pickup_target), +0xd074, +0xd0e4, +0xd0ec; recombine_time 10.0 at +0xd0e0, box_count +0xd0e8, memset boxes at +0xd0f0 (SBoneGuyBox 72, 20 -> +0xd690). CBoneGuy_archive: 'deathEvent' +0xd07c, 'recombineTime' +0xd0e0, 'blownUp' +0xd0e4 (moved ahead of box_count), 'param' +0xd694 (recombine_interpolation), 'boxCount' +0xd0e8. sfx_handle +0xd078 (process/processDamage killSfx). start_hit_points: setup and CSkeletonForest/Indian/Demon ctors store hit_points there, process restores hit_points from it. explode_position: CBoneGuy_explode copies a CLocation's position to +0xd068. skeleton_variant: CSkeletonForest/Indian/Demon ctors set +0xd074 to 1/2/3. explode_count: processDamage explodes once while +0xd0ec < 1 and increments it. guard_idle: CBoneGuy_process/CBaalSkel_process set +0xd690 1 when entering motion state 6 near the guard point and 0 on patrol/victim; setup zeroes it."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CDraculaBride",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0xbebc",
+        "to": "0xbf68",
+        "delta": 940
+      },
+      {
+        "from": "0xbfe4",
+        "to": "0xbfe8",
+        "delta": 1060
+      }
+    ],
+    "added": [
+      {
+        "offset": "0xc318",
+        "name": "part_list",
+        "type": "CBodyPart*[60]",
+        "len": 240
+      }
+    ],
+    "basis": "ctor 0047b0b0 zeroes part_count +0xc314 and loops EAX from this+4 to this+0xf0 storing 0 at [EAX+0xc314] (60 slots; nocedit loops to +0x78, 30); dismemberPart stores [+0xc318 + count*4] and increments +0xc314; ctor zeroes exploded +0xc408 and fade_timer +0xc40c (nocedit +0xbfe4/+0xbfe8)."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CBiggs",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0xbebc",
+        "to": "0xcc6c",
+        "delta": 940
+      }
+    ],
+    "added": [],
+    "basis": "morph CMorph (3116) between morph_timer +0xc3e8 and morph_event +0xd018 (both placed): +0xc3ec..+0xd018 is exactly 3116."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CGhoul",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0xbebc",
+        "to": "0xbf2c",
+        "delta": 4504
+      }
+    ],
+    "added": [],
+    "basis": "Same size as nocedit's own fields (124); CGhoul_ctor 004c68e0 stores the rounded burp timer at +0xd058, CGhoul_process counts +0xd058 down and plays sound handle +0xd054."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CHotDemon",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0xbebc",
+        "to": "0xbec4",
+        "delta": 4504
+      }
+    ],
+    "added": [],
+    "basis": "Same size as nocedit's own fields (52); CHotDemon_process/processDamage use +0xd054 and +0xd058 as the two sfx handles (isPlaying/killSfx)."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CZombie",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0xbebc",
+        "to": "0xbf48",
+        "delta": 4504
+      },
+      {
+        "from": "0xbf4c",
+        "to": "0xbf9c",
+        "delta": 4508
+      },
+      {
+        "from": "0xbfa4",
+        "to": "0xbfa8",
+        "delta": 4512
+      }
+    ],
+    "added": [
+      {
+        "offset": "0xd0e4",
+        "name": "start_guard_dist",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0xd140",
+        "name": "zombie_variant",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "ctor 005888d0 in nocedit's order: pickup_target +0xd064, approach_progress +0xd060, rise_from_grave_condition LEA +0xd074, grave_actor +0xd06c, range_factor +0xd054, scan_timer +0xd05c, target_door +0xd070, pickup_seed +0xd058, is_miner_zombie +0xd0d8, pain_cooldown +0xd130, always_chase_fast +0xd0dc, rise_delay +0xd144, buried_timer +0xd148. setup finds bones into +0xd0e8.. (bone_indices); processDamage uses sfx handle +0xd138. start_guard_dist: ctor copies guard_distance (+0xcddc) to +0xd0e4, archive 'startGuardDist'. zombie_variant: ctor 0; CZombieCemetery/Forest/Spirit/Indian/Demon ctors set +0xd140 to 1..5."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CZombieDog",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0xbebc",
+        "to": "0xbec4",
+        "delta": 4504
+      }
+    ],
+    "added": [
+      {
+        "offset": "0xd060",
+        "name": "dog_variant",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "setup stores a bone index at +0xd054 (bone_indices), process/processDamage use +0xd05c as the sfx handle; ctor 00462710 zeroes +0xd05c and +0xd060, CDogForest/CDemonDog/CEtherealDog ctors set +0xd060 to 1/2/3."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CHiram",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x1f708",
+        "to": "0x1f708",
+        "delta": 944
+      }
+    ],
+    "added": [],
+    "basis": "kill_event follows CNPC (129720); 100 bytes fill the RTTI size 129820."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CHighPriestOfGardath",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x1f708",
+        "to": "0x1f708",
+        "delta": 944
+      }
+    ],
+    "added": [],
+    "basis": "kill_event follows CNPC (129720); 100 bytes fill the RTTI size 129820."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CHiram",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x1f708",
+        "to": "0x1f708",
+        "delta": 19520
+      }
+    ],
+    "added": [],
+    "basis": "archive 'killEvent' at +0x24348 (CNPC 148296)."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CHighPriestOfGardath",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x1f708",
+        "to": "0x1f708",
+        "delta": 19520
+      }
+    ],
+    "added": [],
+    "basis": "Same layout as CHiram (archive 'killEvent' at +0x24348); RTTI 148396."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CPassenger",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x1f708",
+        "to": "0x20444",
+        "delta": 944
+      }
+    ],
+    "added": [],
+    "basis": "werewolf_actor +0x1fbc0 and morph_time +0x207f0 placed; morph CMorph (3116) fills +0x1fbc4..+0x207f0 exactly."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CPassenger",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x1f708",
+        "to": "0x20444",
+        "delta": 4032
+      }
+    ],
+    "added": [],
+    "basis": "morph CMorph (3116) at +0x207d4 (gap 133076..136192), followed by morph_time/wolf_size to the RTTI size 136200."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CStranger",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x1fbd4",
+        "to": "0x1fc34",
+        "delta": 984
+      },
+      {
+        "from": "0x1fc3c",
+        "to": "0x1fe6c",
+        "delta": 980
+      }
+    ],
+    "added": [],
+    "basis": "ctor 00585270 zeroes +0x20008 and +0x20010 together (nocedit dual_wield_side, melee_attack_index) and +0x2000c later (can_grab_weapon); handleFireButton toggles +0x20008, sets +0x2000c 0/1 and increments +0x20010; makeDrawDecision tests +0x2000c. action_pending is gone from CStranger: it is CHero +0x1ff5c ('actionPending')."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CSuccubus",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0xbebc",
+        "to": "0xbebc",
+        "delta": 940
+      },
+      {
+        "from": "0xe170",
+        "to": "0xe33c",
+        "delta": 1180
+      }
+    ],
+    "added": [],
+    "basis": "hotdemon_model is CDeformableModelInstance (9124 in bw1) at +0xc268, so the rest moves by 940+240; morph CMorph at +0xe7d8 fills to the RTTI size 62468."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CMoloch",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x1fbd4",
+        "to": "0x1fbd4",
+        "delta": 984
+      },
+      {
+        "from": "0x21e88",
+        "to": "0x22b94",
+        "delta": 1224
+      }
+    ],
+    "added": [],
+    "basis": "model CDeformableModelInstance (9124) at +0x1ffac (CHero 130988) ends at +0x22350 = in_human_form (placed); morph CMorph at +0x22424 ends at dead1 +0x23050 (placed)."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CGabriella",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x1fbd4",
+        "to": "0x1fc14",
+        "delta": 984
+      },
+      {
+        "from": "0x5fa84",
+        "to": "0x5fa84",
+        "delta": -20328
+      }
+    ],
+    "added": [],
+    "basis": "ctor: CCloth ctor at +0x1ffec (CCloth 240432 in BW); dynamite_charge_power at +0x5ab1c, the last dword of the RTTI size 371488."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CGabriella",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x1fbd4",
+        "to": "0x1fc14",
+        "delta": 23148
+      },
+      {
+        "from": "0x5fa84",
+        "to": "0x5fa84",
+        "delta": 1836
+      }
+    ],
+    "added": [],
+    "basis": "coat_cloth at +0x25680 (after aim_weight +0x2567c), CCloth 240432 -> dynamite_charge_power +0x601b0, last dword of RTTI 393652."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CSvetlana",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x1fbd4",
+        "to": "0x1fbdc",
+        "delta": 984
+      },
+      {
+        "from": "0x5fa4c",
+        "to": "0x5fa4c",
+        "delta": -20328
+      },
+      {
+        "from": "0x9f8bc",
+        "to": "0x9f8d0",
+        "delta": -41640
+      }
+    ],
+    "added": [],
+    "basis": "ctor: CCloth ctors at +0x1ffb4 and +0x1ffb4+0x3ab30 = +0x5aae4; sfx_handle +0x95614 (placed) follows the second."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CSvetlana",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x1fbd4",
+        "to": "0x1fbdc",
+        "delta": 23148
+      },
+      {
+        "from": "0x5fa4c",
+        "to": "0x5fa4c",
+        "delta": 1836
+      },
+      {
+        "from": "0x9f8bc",
+        "to": "0x9f8d0",
+        "delta": -19476
+      }
+    ],
+    "added": [],
+    "basis": "cape_cloth at +0x25648 (after attack_hand +0x25644), hair_cloth at +0x60178, sfx_handle +0x9aca8 (placed): 2 x 240432."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CMimic",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0xbebc",
+        "to": "0xbf84",
+        "delta": 940
+      },
+      {
+        "from": "0x4bdf4",
+        "to": "0x4ca54",
+        "delta": -20372
+      }
+    ],
+    "added": [],
+    "basis": "ctor: CCloth ctor at +0xc330, then +0x3ab60 -> CMorph ctor at +0x46e90; attack_mode +0x46e60 and morph_blend +0x47abc placed."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CMimic",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0xbebc",
+        "to": "0xbf84",
+        "delta": 19516
+      },
+      {
+        "from": "0x4bdf4",
+        "to": "0x4ca54",
+        "delta": -1796
+      }
+    ],
+    "added": [],
+    "basis": "cloth at +0x10bc0 (after attack_condition +0x10b5c); attack_mode +0x4b6f0 placed = +0x10bc0 + 240432."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CVampireBoss",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0xbebc",
+        "to": "0xbebc",
+        "delta": 940
+      },
+      {
+        "from": "0xe170",
+        "to": "0xe170",
+        "delta": 1180
+      },
+      {
+        "from": "0x4dfe0",
+        "to": "0x4dfe0",
+        "delta": -20132
+      },
+      {
+        "from": "0x8de50",
+        "to": "0x8de50",
+        "delta": -41444
+      },
+      {
+        "from": "0xcdcc0",
+        "to": "0xce91c",
+        "delta": -62756
+      }
+    ],
+    "added": [],
+    "basis": "ctor: CDeformableModelInstance at +0xc268, CCloth ctors at +0xe60c, +0x4913c, +0x83c6c (stride 0x3ab30), CMorph ctor at +0xbe7a0; form +0xbe79c placed."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CVampireBoss",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0xbebc",
+        "to": "0xe170",
+        "delta": 19516
+      },
+      {
+        "from": "0x4dfe0",
+        "to": "0x4dfe0",
+        "delta": -1796
+      },
+      {
+        "from": "0x8de50",
+        "to": "0x8de50",
+        "delta": -23108
+      },
+      {
+        "from": "0xcdcc0",
+        "to": "0xce91c",
+        "delta": -44420
+      }
+    ],
+    "added": [],
+    "basis": "ctor: CDeformableModelInstance (8884) at +0x10af8, cloth ctors (core_necklace.cpp FUN_005adda0) at +0x12dac, +0x4d8dc, +0x8840c, CMorph at +0xc2f40; form +0xc2f3c placed."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CInventory",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x4",
+        "delta": 0
+      },
+      {
+        "from": "0x8",
+        "to": "0x454",
+        "delta": 8
+      },
+      {
+        "from": "0x458",
+        "to": "0x45c",
+        "delta": 12
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x8",
+        "name": "show_compass",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0xc",
+        "name": "show_sps",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x460",
+        "name": "goggles_ptr",
+        "type": "CGoggles*",
+        "len": 4
+      }
+    ],
+    "size": 1132,
+    "basis": "'compass'/'sps' commands (strings in the PE) resolve +0x8/+0xc of the hero's inventory and set them (bw1 FUN_004a1d00 via CHero+0x1faf0/+0x1faf4, bw3 FUN_0048c2e0 via +0x206f0/+0x206f4); ctor and clear zero both. ctor 004f6ed0 stores save_version..selected_item +0x334..+0x33c, timers +0x340.., render_mode_flag +0x454, preserve_items +0x458, light_gun_ptr +0x45c, message_display_timer +0x34c, message_text +0x354, ammo_ptr +0x464, cached_ammo_count +0x468, item_count +0x10. goggles_ptr: FUN_004f9b20 (setupItems) casts items to CGoggles into +0x460 and to CGasMask into +0x45c (nocedit's light_gun_ptr slot holds the gas mask in BW); CInventory_select toggles them."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CInventory",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x4",
+        "delta": 0
+      },
+      {
+        "from": "0x8",
+        "to": "0x450",
+        "delta": 8
+      },
+      {
+        "from": "0x458",
+        "to": "0x45c",
+        "delta": 12
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x8",
+        "name": "show_compass",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0xc",
+        "name": "show_sps",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x46c",
+        "name": "cached_mana_count",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "size": 1136,
+    "basis": "'compass'/'sps' commands (strings in the PE) resolve +0x8/+0xc of the hero's inventory and set them (bw1 FUN_004a1d00 via CHero+0x1faf0/+0x1faf4, bw3 FUN_0048c2e0 via +0x206f0/+0x206f4); ctor and clear zero both. ctor 004da360 as bw1 plus +0x46c; FUN_004dcdb0 compares +0x46c with the hero's mana (+0x20b80) for weapon type 10 and +0x468 with bullets (+0x20b84) for type 11, resetting the weapon display and caching the new value. nocedit light_gun_ptr (0x454) is left out: bw3 has no CLightGun and nothing here reads +0x460."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CWinFont",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x4",
+        "to": "0x138",
+        "delta": 27204
+      }
+    ],
+    "added": [],
+    "basis": "ctor 005b1ad0: base CFont ctor 00531eb0, own vtable at +0x6a44, device_context_handle +0x6a48, font_handle +0x6a50, object_handle +0x6a54, ppv_bits +0x6a58, right +0x6b64 .. cached_background_color +0x6b74, y_offset1 +0x6b78, y_offset2 +0x6b7c (all nocedit +27204); base CFont is 27208 (rebuilt); RTTI 27520"
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CWinFont",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x4",
+        "to": "0x138",
+        "delta": 27204
+      }
+    ],
+    "added": [],
+    "basis": "ctor 0058df90: base CFont ctor 00510ca0, own vtable at +0x6a44, device_context_handle +0x6a48, font_handle +0x6a50, object_handle +0x6a54, ppv_bits +0x6a58, right +0x6b64 .. cached_background_color +0x6b74, y_offset1 +0x6b78, y_offset2 +0x6b7c (all nocedit +27204); base CFont is 27208 (rebuilt); RTTI 27520"
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CWinFont",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x4",
+        "to": "0x138",
+        "delta": 27204
+      }
+    ],
+    "added": [],
+    "basis": "ctor 0057fd50: base CFont ctor 00509b90, own vtable at +0x6a44, device_context_handle +0x6a48, font_handle +0x6a50, object_handle +0x6a54, ppv_bits +0x6a58, right +0x6b64 .. cached_background_color +0x6b74, y_offset1 +0x6b78, y_offset2 +0x6b7c (all nocedit +27204); base CFont is 27208 (rebuilt); RTTI 27520"
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CBitFont",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x4",
+        "delta": 0
+      },
+      {
+        "from": "0x144",
+        "to": "0xd64",
+        "delta": 80
+      },
+      {
+        "from": "0x1d64",
+        "to": "0x2168",
+        "delta": 128
+      },
+      {
+        "from": "0x2568",
+        "to": "0x3194",
+        "delta": 4224
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x144",
+        "name": "font_filename",
+        "type": "char[80]",
+        "len": 80
+      },
+      {
+        "offset": "0x1db4",
+        "name": "accel_texture",
+        "type": "SMRGLTextureBasic",
+        "len": 24
+      },
+      {
+        "offset": "0x1dcc",
+        "name": "accel_vertex_alloc",
+        "type": "void*",
+        "len": 4
+      },
+      {
+        "offset": "0x1dd0",
+        "name": "accel_vertices",
+        "type": "void*",
+        "len": 4
+      },
+      {
+        "offset": "0x1dd4",
+        "name": "accel_indices",
+        "type": "void*",
+        "len": 4
+      },
+      {
+        "offset": "0x1dd8",
+        "name": "accel_vertex_count",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x1ddc",
+        "name": "accel_index_count",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x1de0",
+        "name": "accel_color",
+        "type": "uint",
+        "len": 4
+      },
+      {
+        "offset": "0x25e8",
+        "name": "char_uv_rects",
+        "type": "float[256][4]",
+        "len": 4096
+      },
+      {
+        "offset": "0x4218",
+        "name": "accel_scale",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x421c",
+        "name": "accel_inv_scale",
+        "type": "float",
+        "len": 4
+      }
+    ],
+    "size": 16928,
+    "basis": "alloc 0x4220 (core_dfont initFonts). bw1 reset 004c0b80: bitmap_files[4] +0x4 stride 0x50, bitmap_data +0x194, bitmap_widths +0x1a4 (+80), byte +0x144 cleared; per-char loop: char_positions +0x1de8, char_bitmap_index +0x21e8 (+128), char_widths +0x35e8, char_heights +0x39e8, char_y_offsets +0x3de8 (+4224); is_initialized +0x1de4; max_char_width +0x41e8 .. win_font_helper +0x4214 (+4224). New: 004c157e strcpy+strupr of the definition filename to +0x144; setAcceleration 004c0fa0 copies palette +0x1b4, fills SMRGLTextureBasic at +0x1db4 (+0x1db8 count=0, name strcpy to +0x1dbc) and registers it (mini3d 00512200), +0x1dcc = malloc(0x7d20), +0x1dd0 = 32-aligned +0x1dcc, +0x1dd4 = malloc(2000), +0x1dd8/+0x1ddc = 0, per char c in 0x20..0xff stores 4 floats u0,v0,u1,v1 at +0x25e8 + c*16, sets +0x420c, calls 004c1520; 004c1520: +0x4218 = s, +0x421c = 1/s; 004c2750 flush: selects +0x1db4, draws (+0x1dd0 vertices, +0x1dd8 count, +0x1dd4 indices, +0x1ddc/3), zeroes both counts; 004c1dd0 stores alpha<<24 colour to +0x1de0. bw2/bw3 reset and accel functions use the same displacements."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CBitFont",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x4",
+        "delta": 0
+      },
+      {
+        "from": "0x144",
+        "to": "0xd64",
+        "delta": 80
+      },
+      {
+        "from": "0x1d64",
+        "to": "0x2168",
+        "delta": 128
+      },
+      {
+        "from": "0x2568",
+        "to": "0x3194",
+        "delta": 4224
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x144",
+        "name": "font_filename",
+        "type": "char[80]",
+        "len": 80
+      },
+      {
+        "offset": "0x1db4",
+        "name": "accel_texture",
+        "type": "SMRGLTextureBasic",
+        "len": 24
+      },
+      {
+        "offset": "0x1dcc",
+        "name": "accel_vertex_alloc",
+        "type": "void*",
+        "len": 4
+      },
+      {
+        "offset": "0x1dd0",
+        "name": "accel_vertices",
+        "type": "void*",
+        "len": 4
+      },
+      {
+        "offset": "0x1dd4",
+        "name": "accel_indices",
+        "type": "void*",
+        "len": 4
+      },
+      {
+        "offset": "0x1dd8",
+        "name": "accel_vertex_count",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x1ddc",
+        "name": "accel_index_count",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x1de0",
+        "name": "accel_color",
+        "type": "uint",
+        "len": 4
+      },
+      {
+        "offset": "0x25e8",
+        "name": "char_uv_rects",
+        "type": "float[256][4]",
+        "len": 4096
+      },
+      {
+        "offset": "0x4218",
+        "name": "accel_scale",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x421c",
+        "name": "accel_inv_scale",
+        "type": "float",
+        "len": 4
+      }
+    ],
+    "size": 16928,
+    "basis": "alloc 0x4220 (core_dfont initFonts). bw1 reset 004c0b80: bitmap_files[4] +0x4 stride 0x50, bitmap_data +0x194, bitmap_widths +0x1a4 (+80), byte +0x144 cleared; per-char loop: char_positions +0x1de8, char_bitmap_index +0x21e8 (+128), char_widths +0x35e8, char_heights +0x39e8, char_y_offsets +0x3de8 (+4224); is_initialized +0x1de4; max_char_width +0x41e8 .. win_font_helper +0x4214 (+4224). New: 004c157e strcpy+strupr of the definition filename to +0x144; setAcceleration 004c0fa0 copies palette +0x1b4, fills SMRGLTextureBasic at +0x1db4 (+0x1db8 count=0, name strcpy to +0x1dbc) and registers it (mini3d 00512200), +0x1dcc = malloc(0x7d20), +0x1dd0 = 32-aligned +0x1dcc, +0x1dd4 = malloc(2000), +0x1dd8/+0x1ddc = 0, per char c in 0x20..0xff stores 4 floats u0,v0,u1,v1 at +0x25e8 + c*16, sets +0x420c, calls 004c1520; 004c1520: +0x4218 = s, +0x421c = 1/s; 004c2750 flush: selects +0x1db4, draws (+0x1dd0 vertices, +0x1dd8 count, +0x1dd4 indices, +0x1ddc/3), zeroes both counts; 004c1dd0 stores alpha<<24 colour to +0x1de0. bw2/bw3 reset and accel functions use the same displacements."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CBitFont",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x4",
+        "delta": 0
+      },
+      {
+        "from": "0x144",
+        "to": "0xd64",
+        "delta": 80
+      },
+      {
+        "from": "0x1d64",
+        "to": "0x2168",
+        "delta": 128
+      },
+      {
+        "from": "0x2568",
+        "to": "0x3194",
+        "delta": 4224
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x144",
+        "name": "font_filename",
+        "type": "char[80]",
+        "len": 80
+      },
+      {
+        "offset": "0x1db4",
+        "name": "accel_texture",
+        "type": "SMRGLTextureBasic",
+        "len": 24
+      },
+      {
+        "offset": "0x1dcc",
+        "name": "accel_vertex_alloc",
+        "type": "void*",
+        "len": 4
+      },
+      {
+        "offset": "0x1dd0",
+        "name": "accel_vertices",
+        "type": "void*",
+        "len": 4
+      },
+      {
+        "offset": "0x1dd4",
+        "name": "accel_indices",
+        "type": "void*",
+        "len": 4
+      },
+      {
+        "offset": "0x1dd8",
+        "name": "accel_vertex_count",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x1ddc",
+        "name": "accel_index_count",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x1de0",
+        "name": "accel_color",
+        "type": "uint",
+        "len": 4
+      },
+      {
+        "offset": "0x25e8",
+        "name": "char_uv_rects",
+        "type": "float[256][4]",
+        "len": 4096
+      },
+      {
+        "offset": "0x4218",
+        "name": "accel_scale",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x421c",
+        "name": "accel_inv_scale",
+        "type": "float",
+        "len": 4
+      }
+    ],
+    "size": 16928,
+    "basis": "alloc 0x4220 (core_dfont initFonts). bw1 reset 004c0b80: bitmap_files[4] +0x4 stride 0x50, bitmap_data +0x194, bitmap_widths +0x1a4 (+80), byte +0x144 cleared; per-char loop: char_positions +0x1de8, char_bitmap_index +0x21e8 (+128), char_widths +0x35e8, char_heights +0x39e8, char_y_offsets +0x3de8 (+4224); is_initialized +0x1de4; max_char_width +0x41e8 .. win_font_helper +0x4214 (+4224). New: 004c157e strcpy+strupr of the definition filename to +0x144; setAcceleration 004c0fa0 copies palette +0x1b4, fills SMRGLTextureBasic at +0x1db4 (+0x1db8 count=0, name strcpy to +0x1dbc) and registers it (mini3d 00512200), +0x1dcc = malloc(0x7d20), +0x1dd0 = 32-aligned +0x1dcc, +0x1dd4 = malloc(2000), +0x1dd8/+0x1ddc = 0, per char c in 0x20..0xff stores 4 floats u0,v0,u1,v1 at +0x25e8 + c*16, sets +0x420c, calls 004c1520; 004c1520: +0x4218 = s, +0x421c = 1/s; 004c2750 flush: selects +0x1db4, draws (+0x1dd0 vertices, +0x1dd8 count, +0x1dd4 indices, +0x1ddc/3), zeroes both counts; 004c1dd0 stores alpha<<24 colour to +0x1de0. bw2/bw3 reset and accel functions use the same displacements."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CTextureList",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x5dc4",
+        "delta": 0
+      }
+    ],
+    "added": [],
+    "basis": "RTTI 28004 = 4 + SMRGLTextureBasic[1000] + int[1000]; bw1 load 005960d0: texture_count +0x0, entries stride 0x18 from +0x4 (name +0xc), texture_values +0x5dc4 per entry, tail zero loop to 1000 at piVar[0x1771]; bw2/bw3 load same (+0x5dc4, stride 0x18, 0x3e8). nocedit's master_texture_count/master_texture_names/current_master_selection are gone."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CTextureList",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x5dc4",
+        "delta": 0
+      }
+    ],
+    "added": [],
+    "basis": "RTTI 28004 = 4 + SMRGLTextureBasic[1000] + int[1000]; bw1 load 005960d0: texture_count +0x0, entries stride 0x18 from +0x4 (name +0xc), texture_values +0x5dc4 per entry, tail zero loop to 1000 at piVar[0x1771]; bw2/bw3 load same (+0x5dc4, stride 0x18, 0x3e8). nocedit's master_texture_count/master_texture_names/current_master_selection are gone."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CTextureList",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x5dc4",
+        "delta": 0
+      }
+    ],
+    "added": [],
+    "basis": "RTTI 28004 = 4 + SMRGLTextureBasic[1000] + int[1000]; bw1 load 005960d0: texture_count +0x0, entries stride 0x18 from +0x4 (name +0xc), texture_values +0x5dc4 per entry, tail zero loop to 1000 at piVar[0x1771]; bw2/bw3 load same (+0x5dc4, stride 0x18, 0x3e8). nocedit's master_texture_count/master_texture_names/current_master_selection are gone."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CKeyFramedModel",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x120",
+        "delta": 0
+      },
+      {
+        "from": "0x5584",
+        "to": "0x56d4",
+        "delta": -21312
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x124",
+        "name": "texture_list",
+        "type": "SMRGLTextureModel[4]",
+        "len": 288
+      }
+    ],
+    "basis": "RTTI 920. bw1 readTextModel 00466be0 reads texture names to +0x12c stepping 0x48 for texture_count (+0x120); captureTextures 00467bc0 walks +0x124 by 72; part_count at +0x244 (nocedit 0x5584 -21312), so texture_list is 0x124..0x244 = SMRGLTextureModel[4]. bw2/bw3 same (ADD reg,0x48; +0x12c; +0x244)."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CKeyFramedModel",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x120",
+        "delta": 0
+      },
+      {
+        "from": "0x5584",
+        "to": "0x56d4",
+        "delta": -21312
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x124",
+        "name": "texture_list",
+        "type": "SMRGLTextureModel[4]",
+        "len": 288
+      }
+    ],
+    "basis": "RTTI 920. bw1 readTextModel 00466be0 reads texture names to +0x12c stepping 0x48 for texture_count (+0x120); captureTextures 00467bc0 walks +0x124 by 72; part_count at +0x244 (nocedit 0x5584 -21312), so texture_list is 0x124..0x244 = SMRGLTextureModel[4]. bw2/bw3 same (ADD reg,0x48; +0x12c; +0x244)."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CKeyFramedModel",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x120",
+        "delta": 0
+      },
+      {
+        "from": "0x5584",
+        "to": "0x56d4",
+        "delta": -21312
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x124",
+        "name": "texture_list",
+        "type": "SMRGLTextureModel[4]",
+        "len": 288
+      }
+    ],
+    "basis": "RTTI 920. bw1 readTextModel 00466be0 reads texture names to +0x12c stepping 0x48 for texture_count (+0x120); captureTextures 00467bc0 walks +0x124 by 72; part_count at +0x244 (nocedit 0x5584 -21312), so texture_list is 0x124..0x244 = SMRGLTextureModel[4]. bw2/bw3 same (ADD reg,0x48; +0x12c; +0x244)."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CCloth",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x56d8",
+        "to": "0x3fe64",
+        "delta": -21312
+      }
+    ],
+    "added": [],
+    "size": 240432,
+    "basis": "alloc 240432. CKeyFramedModel base is 920 (was 22232). bw1 ctor 0043e5c0: __arrinit(this+0x398, 800, SClothVertex), __arrinit(+0x37b50, 0x32, SClothBone), zeroes +0x3aafc (vertex_sort_buffer), +0x37b4c (collide_bone_count), +0x37b44 (double_sided); load 0043e6d0 weight +0x37b18, gravity +0x37b1c, transparency +0x37b48; locked_vertex_count +0x39ce8. All nocedit -21312. bw2 ctor 005adda0 and bw3 ctor 0043c220 use the same 0x377b8/0x2fac/0x37b50; bw3 load 0043c330 reads +0x37b18."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CCloth",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x56d8",
+        "to": "0x3fe64",
+        "delta": -21312
+      }
+    ],
+    "added": [],
+    "size": 240432,
+    "basis": "alloc 240432. CKeyFramedModel base is 920 (was 22232). bw1 ctor 0043e5c0: __arrinit(this+0x398, 800, SClothVertex), __arrinit(+0x37b50, 0x32, SClothBone), zeroes +0x3aafc (vertex_sort_buffer), +0x37b4c (collide_bone_count), +0x37b44 (double_sided); load 0043e6d0 weight +0x37b18, gravity +0x37b1c, transparency +0x37b48; locked_vertex_count +0x39ce8. All nocedit -21312. bw2 ctor 005adda0 and bw3 ctor 0043c220 use the same 0x377b8/0x2fac/0x37b50; bw3 load 0043c330 reads +0x37b18."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CCloth",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x56d8",
+        "to": "0x3fe64",
+        "delta": -21312
+      }
+    ],
+    "added": [],
+    "size": 240432,
+    "basis": "alloc 240432. CKeyFramedModel base is 920 (was 22232). bw1 ctor 0043e5c0: __arrinit(this+0x398, 800, SClothVertex), __arrinit(+0x37b50, 0x32, SClothBone), zeroes +0x3aafc (vertex_sort_buffer), +0x37b4c (collide_bone_count), +0x37b44 (double_sided); load 0043e6d0 weight +0x37b18, gravity +0x37b1c, transparency +0x37b48; locked_vertex_count +0x39ce8. All nocedit -21312. bw2 ctor 005adda0 and bw3 ctor 0043c220 use the same 0x377b8/0x2fac/0x37b50; bw3 load 0043c330 reads +0x37b18."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CSkeleton",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x28508",
+        "to": "0x29378",
+        "delta": -42720
+      }
+    ],
+    "added": [],
+    "basis": "RTTI 126108. ctor 00562dd0 calls CMotionList ctor 005238c0 on this, clears loaded_filename byte at 0x1de28; bw1 free 00562f70: bone_count +0x1de78, frame_count +0x1ec8c, frees +0x1ec90/+0x1ec94/+0x1ec98 (bone_angle_frames, frame_positions_1/2). motion_list (CMotionList) is 122408; reference_bone_origins[100] is gone (size ends after frame_positions_2)."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CSkeleton",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x28508",
+        "to": "0x29378",
+        "delta": -45920
+      }
+    ],
+    "added": [],
+    "basis": "RTTI 122908. ctor 005407e0 calls CMotionList ctor 00502760 on this, clears loaded_filename byte at 0x1d1a8; bw1 free 00562f70: bone_count +0x1de78, frame_count +0x1ec8c, frees +0x1ec90/+0x1ec94/+0x1ec98 (bone_angle_frames, frame_positions_1/2). motion_list (CMotionList) is 119208; reference_bone_origins[100] is gone (size ends after frame_positions_2)."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CSkeleton",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x28508",
+        "to": "0x29378",
+        "delta": -42720
+      }
+    ],
+    "added": [],
+    "basis": "RTTI 126108. ctor 005479f0 calls CMotionList ctor 004fb1c0 on this, clears loaded_filename byte at 0x1de28; bw1 free 00562f70: bone_count +0x1de78, frame_count +0x1ec8c, frees +0x1ec90/+0x1ec94/+0x1ec98 (bone_angle_frames, frame_positions_1/2). motion_list (CMotionList) is 122408; reference_bone_origins[100] is gone (size ends after frame_positions_2)."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CDeformableModel",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0xc0",
+        "delta": 0
+      },
+      {
+        "from": "0x7140",
+        "to": "0x7140",
+        "delta": -25920
+      },
+      {
+        "from": "0x7c84",
+        "to": "0x8fb0",
+        "delta": -23040
+      }
+    ],
+    "added": [
+      {
+        "offset": "0xc04",
+        "name": "parts",
+        "type": "SPart[60]",
+        "len": 5760
+      }
+    ],
+    "basis": "RTTI 13824. loadStream 00564ed0: texture_sets +0xc0 stride 0x240 (STextureSet 576), num_parts +0xc00, parts from +0xc04 stride 0x60 (EDI*3<<5); skeleton.cpp: model_scale +0x2284, bone_origins +0x2290, bias_used +0x2740, bone_bounds +0x274c, bone_flags +0x30ac, bone_to_part_map +0x323c (nocedit -23040); parts span 0xc04..0x2284 = 60 x 96. CDeformableModelInstance.part_data holds 60-entry arrays (00569ae0/00569b00), agreeing."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CDeformableModel",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0xc0",
+        "delta": 0
+      },
+      {
+        "from": "0x7140",
+        "to": "0x8fb0",
+        "delta": -25920
+      }
+    ],
+    "added": [],
+    "basis": "RTTI 10944. bw2 loadStream 00542850: texture_sets at +0xc0 stride 0x240 (STextureSet now 576), num_parts +0xc00, parts from +0xc04 stride 0x60; skeleton.cpp: model_scale +0x1744, bone_origins +0x1750, bias_used +0x1c00, bone_bounds +0x1c0c, bone_flags +0x256c (all nocedit -25920); parts stay SPart[30] (0xc04..0x1744)."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CDeformableModel",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0xc0",
+        "delta": 0
+      },
+      {
+        "from": "0x7140",
+        "to": "0x7140",
+        "delta": -25920
+      },
+      {
+        "from": "0x7c84",
+        "to": "0x8fb0",
+        "delta": -23040
+      }
+    ],
+    "added": [
+      {
+        "offset": "0xc04",
+        "name": "parts",
+        "type": "SPart[60]",
+        "len": 5760
+      }
+    ],
+    "basis": "RTTI 13824. loadStream 00549a60: texture_sets +0xc0 stride 0x240 (STextureSet 576), num_parts +0xc00, parts from +0xc04 stride 0x60 (EDI*3<<5); skeleton.cpp: model_scale +0x2284, bone_origins +0x2290, bias_used +0x2740, bone_bounds +0x274c, bone_flags +0x30ac, bone_to_part_map +0x323c (nocedit -23040); parts span 0xc04..0x2284 = 60 x 96. CDeformableModelInstance.part_data holds 60-entry arrays (00569ae0/00569b00), agreeing."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CDeformableModelInstance",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x2140",
+        "delta": 0
+      },
+      {
+        "from": "0x2230",
+        "to": "0x22b0",
+        "delta": 240
+      }
+    ],
+    "added": [],
+    "basis": "RTTI 9124 (nocedit 8884). bone_transform +0x6a4 unchanged (resetToRestPose 00567500, getBoneTransform 0056acc0); part_data +0x2140 grows to 480 (SPartInstanceData int[60]x2, 00569ae0/00569b00); fields from cached_skinned_lod_index sit +240 (BW layout already has cached_skinned_lod_index +0x2320 .. model_ptr +0x23a0)."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CDeformableModelInstance",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x2140",
+        "delta": 0
+      },
+      {
+        "from": "0x2230",
+        "to": "0x22b0",
+        "delta": 240
+      }
+    ],
+    "added": [],
+    "basis": "RTTI 9124 (nocedit 8884). bone_transform +0x6a4 unchanged (resetToRestPose 00567500, getBoneTransform 0056acc0); part_data +0x2140 grows to 480 (SPartInstanceData int[60]x2, 00569ae0/00569b00); fields from cached_skinned_lod_index sit +240 (BW layout already has cached_skinned_lod_index +0x2320 .. model_ptr +0x23a0)."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "SNetPlayer",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x4c",
+        "delta": 0
+      }
+    ],
+    "added": [],
+    "basis": "nocedit's layout with SPlayerInput grown to 48. updatePing/syncPlayers/runLobby/addPlayer/processChatOut differ from nocedit only in the player stride (0x78 -> 0x7c) and CNetGame offsets; processPacket keeps last_arrival_time +0x24, addr +0x1c/+0x20, sim_frame_index +0x48; getMyControls returns SNetPlayer+0x4c. RTTI 124."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "SNetPlayer",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x4c",
+        "delta": 0
+      }
+    ],
+    "added": [],
+    "basis": "nocedit's layout with SPlayerInput grown to 52. updatePing/syncPlayers/runLobby/addPlayer/processChatOut differ from nocedit only in the player stride (0x78 -> 0x80) and CNetGame offsets; processPacket keeps last_arrival_time +0x24, addr +0x1c/+0x20, sim_frame_index +0x48; getMyControls returns SNetPlayer+0x4c. RTTI 128."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "SNetPlayer",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x4c",
+        "delta": 0
+      }
+    ],
+    "added": [],
+    "basis": "nocedit's layout with SPlayerInput grown to 52. updatePing/syncPlayers/runLobby/addPlayer/processChatOut differ from nocedit only in the player stride (0x78 -> 0x80) and CNetGame offsets; processPacket keeps last_arrival_time +0x24, addr +0x1c/+0x20, sim_frame_index +0x48; getMyControls returns SNetPlayer+0x4c. RTTI 128."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CNetGame",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x20",
+        "delta": 0
+      },
+      {
+        "from": "0x110",
+        "to": "0x170",
+        "delta": 8
+      }
+    ],
+    "added": [],
+    "basis": "players[2] grows by 2 x 4. server_player_index/local_player_index at 0x118/0x11c (sendSimFrameAck, getMyControls), mission_name 0x120 (runLobby ADD 0x128 in bw2/bw3), socket at 0x178: sendPacket passes &this+0x178 to CSocket_sendSocketData; RTTI 380 ends there."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CNetGame",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x20",
+        "delta": 0
+      },
+      {
+        "from": "0x110",
+        "to": "0x170",
+        "delta": 16
+      }
+    ],
+    "added": [],
+    "basis": "players[2] grows by 2 x 8. server_player_index/local_player_index at 0x120/0x124 (sendSimFrameAck, getMyControls), mission_name 0x128 (runLobby ADD 0x128 in bw2/bw3), socket at 0x180: sendPacket passes &this+0x180 to CSocket_sendSocketData; RTTI 388 ends there."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CNetGame",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x20",
+        "delta": 0
+      },
+      {
+        "from": "0x110",
+        "to": "0x170",
+        "delta": 16
+      }
+    ],
+    "added": [],
+    "basis": "players[2] grows by 2 x 8. server_player_index/local_player_index at 0x120/0x124 (sendSimFrameAck, getMyControls), mission_name 0x128 (runLobby ADD 0x128 in bw2/bw3), socket at 0x180: sendPacket passes &this+0x180 to CSocket_sendSocketData; RTTI 388 ends there."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CScript",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x14",
+        "delta": 0
+      },
+      {
+        "from": "0x18",
+        "to": "0x24",
+        "delta": 4
+      },
+      {
+        "from": "0x30",
+        "to": "0x460",
+        "delta": -4
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x18",
+        "name": "monster_vision_actor",
+        "type": "CCharacter *",
+        "len": 4
+      }
+    ],
+    "basis": "BW dropped the editor's event xrefs (xref_count, xref_entries; no BW code has SScriptXRef). initRuntime stores next_cmd +0x44, current_message +0x50, cmd_timer +0x48, dialog_wav_time +0x4c, message_duration +0x450, saved_cmd_index +0x454, call_stack_count +0x458, focus_actor_locked +0x14, script_state +0x1c (processHotkeys CMP [g_CScript+0x1c],2), and zeroes +0x18. The new +0x18: the monsterVision command (\"(%[^,], %d )\") stores getActor(name, CCharacter) there (CScript_step 00548245); bw1 set.cpp FUN_00551170 reads it. RTTI 1148."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CScript",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x14",
+        "delta": 0
+      },
+      {
+        "from": "0x18",
+        "to": "0x24",
+        "delta": 4
+      },
+      {
+        "from": "0x30",
+        "to": "0x460",
+        "delta": -4
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x18",
+        "name": "monster_vision_actor",
+        "type": "CCharacter *",
+        "len": 4
+      }
+    ],
+    "basis": "BW dropped the editor's event xrefs (xref_count, xref_entries; no BW code has SScriptXRef). initRuntime stores next_cmd +0x44, current_message +0x50, cmd_timer +0x48, dialog_wav_time +0x4c, message_duration +0x450, saved_cmd_index +0x454, call_stack_count +0x458, focus_actor_locked +0x14, script_state +0x1c (processHotkeys CMP [g_CScript+0x1c],2), and zeroes +0x18. The new +0x18: the monsterVision command (\"(%[^,], %d )\") stores getActor(name, CCharacter) there (FUN_00522350 (step) 00526223); bw1 set.cpp FUN_00551170 reads it. RTTI 1148."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CScript",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x14",
+        "delta": 0
+      },
+      {
+        "from": "0x18",
+        "to": "0x24",
+        "delta": 4
+      },
+      {
+        "from": "0x30",
+        "to": "0x460",
+        "delta": -4
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x18",
+        "name": "monster_vision_actor",
+        "type": "CCharacter *",
+        "len": 4
+      }
+    ],
+    "basis": "BW dropped the editor's event xrefs (xref_count, xref_entries; no BW code has SScriptXRef). initRuntime stores next_cmd +0x44, current_message +0x50, cmd_timer +0x48, dialog_wav_time +0x4c, message_duration +0x450, saved_cmd_index +0x454, call_stack_count +0x458, focus_actor_locked +0x14, script_state +0x1c (processHotkeys CMP [g_CScript+0x1c],2), and zeroes +0x18. The new +0x18: the monsterVision command (\"(%[^,], %d )\") stores getActor(name, CCharacter) there (CScript_step 0052d935); bw1 set.cpp FUN_00551170 reads it. RTTI 1148."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CPickList",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x38",
+        "to": "0x3a4",
+        "delta": 24
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x10",
+        "name": "tab_column_widths",
+        "type": "int[16]",
+        "len": 64
+      }
+    ],
+    "basis": "calculateLayoutAndCreateComponents (bw1 0049b060, bw2 00482a00, bw3 00483c00): memset(this+0x10, 0, 0x40) and tab_column_count = 1 at +0x50; \"Too many picklist columns!\" when the column index reaches 0x10 (nocedit memset 0x28, 10 columns). Everything from tab_column_count on sits 24 higher: ctor stores selection_state -1 at +0x3bc (nocedit +0x3a4), setSelectedResult stores +0x54 (selected_index). RTTI 960."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CPickList",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x38",
+        "to": "0x3a4",
+        "delta": 24
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x10",
+        "name": "tab_column_widths",
+        "type": "int[16]",
+        "len": 64
+      }
+    ],
+    "basis": "calculateLayoutAndCreateComponents (bw1 0049b060, bw2 00482a00, bw3 00483c00): memset(this+0x10, 0, 0x40) and tab_column_count = 1 at +0x50; \"Too many picklist columns!\" when the column index reaches 0x10 (nocedit memset 0x28, 10 columns). Everything from tab_column_count on sits 24 higher: ctor stores selection_state -1 at +0x3bc (nocedit +0x3a4), setSelectedResult stores +0x54 (selected_index). RTTI 960."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CPickList",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x38",
+        "to": "0x3a4",
+        "delta": 24
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x10",
+        "name": "tab_column_widths",
+        "type": "int[16]",
+        "len": 64
+      }
+    ],
+    "basis": "calculateLayoutAndCreateComponents (bw1 0049b060, bw2 00482a00, bw3 00483c00): memset(this+0x10, 0, 0x40) and tab_column_count = 1 at +0x50; \"Too many picklist columns!\" when the column index reaches 0x10 (nocedit memset 0x28, 10 columns). Everything from tab_column_count on sits 24 higher: ctor stores selection_state -1 at +0x3bc (nocedit +0x3a4), setSelectedResult stores +0x54 (selected_index). RTTI 960."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CConsole",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x4",
+        "to": "0xfb8",
+        "delta": 4
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x4",
+        "name": "field_0x4",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "CConsole_ctor (bw1 004453a0, bw2 00436680, bw3 00441f60) zeroes file_logging_enabled at +0 and a new dword at +4 (MOV dword [EBX+4],0). Nothing else addresses the new dword (no reader through g_CConsolePtr or the instance), so its role is unknown; the name stays positional. RTTI 4032 = nocedit 4028 + 4."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CConsole",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x4",
+        "to": "0xfb8",
+        "delta": 4
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x4",
+        "name": "field_0x4",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "CConsole_ctor (bw1 004453a0, bw2 00436680, bw3 00441f60) zeroes file_logging_enabled at +0 and a new dword at +4 (MOV dword [EBX+4],0). Nothing else addresses the new dword (no reader through g_CConsolePtr or the instance), so its role is unknown; the name stays positional. RTTI 4032 = nocedit 4028 + 4."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CConsole",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x4",
+        "to": "0xfb8",
+        "delta": 4
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x4",
+        "name": "field_0x4",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "CConsole_ctor (bw1 004453a0, bw2 00436680, bw3 00441f60) zeroes file_logging_enabled at +0 and a new dword at +4 (MOV dword [EBX+4],0). Nothing else addresses the new dword (no reader through g_CConsolePtr or the instance), so its role is unknown; the name stays positional. RTTI 4032 = nocedit 4028 + 4."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CIniFile",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x100",
+        "delta": 0
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x200",
+        "name": "vtable",
+        "type": "void *",
+        "len": 4
+      }
+    ],
+    "basis": "BW made CIniFile virtual: the ctor (bw1 FUN_004f4b00, bw2 004d8910, bw3 004d8a20) and the dtor store the vtable at +0x200 (bw1 0x602964); the typed getters/setters (bw1 FUN_004f4db0/4e20/4e6e/4ee0) call through [this+0x200]+8. The vtable sits after the fields (Watcom). filename +0 (initIniFile), section +0x100 (readIniHeader). RTTI 516."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CIniFile",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x100",
+        "delta": 0
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x200",
+        "name": "vtable",
+        "type": "void *",
+        "len": 4
+      }
+    ],
+    "basis": "BW made CIniFile virtual: the ctor (bw1 FUN_004f4b00, bw2 004d8910, bw3 004d8a20) and the dtor store the vtable at +0x200 (bw1 0x602964); the typed getters/setters (bw1 FUN_004f4db0/4e20/4e6e/4ee0) call through [this+0x200]+8. The vtable sits after the fields (Watcom). filename +0 (initIniFile), section +0x100 (readIniHeader). RTTI 516."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CIniFile",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x100",
+        "delta": 0
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x200",
+        "name": "vtable",
+        "type": "void *",
+        "len": 4
+      }
+    ],
+    "basis": "BW made CIniFile virtual: the ctor (bw1 FUN_004f4b00, bw2 004d8910, bw3 004d8a20) and the dtor store the vtable at +0x200 (bw1 0x602964); the typed getters/setters (bw1 FUN_004f4db0/4e20/4e6e/4ee0) call through [this+0x200]+8. The vtable sits after the fields (Watcom). filename +0 (initIniFile), section +0x100 (readIniHeader). RTTI 516."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CLZWCompress",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x30",
+        "delta": 0
+      },
+      {
+        "from": "0x34",
+        "to": "0x34",
+        "delta": 4
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x34",
+        "name": "pending_code",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x3c",
+        "name": "pending_char_code",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "BW's compressor is resumable. init (bw1 004434e0) sets +0x30..+0x3c to -1; process (bw1 FUN_00443530): findCode(char & char_mask +0x28, current_code +0x30); on a miss stores the char at +0x3c and the code to write at +0x34; the write uses +0x30, then addNode(prev_char_code +0x2c, prev_code +0x38), prev_code = current_code, prev_char_code = current_code = +0x3c, +0x34/+0x3c reset to -1. finalize (FUN_00443630) writes +0x30. Same init stores in bw2/bw3. RTTI 64."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CLZWDecompress",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x2c",
+        "delta": 0
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x30",
+        "name": "pending_sequence_index",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "ctor (bw1 004436b0) stores the vtable at +0, buffer_size +0x20, num_bits +0x24; init (004436f0) inits the dictionary at +4, resets the bit buffer at +0x18, sets +0x28/+0x2c/+0x30 to -1. process (FUN_00443790): current_code +0x2c, previous_code +0x28 (addNode), and +0x30 the resume position of a partly written code sequence (-1 none, else -2 - result). Same in bw2/bw3. RTTI 52."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CLZWCompress",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x30",
+        "delta": 0
+      },
+      {
+        "from": "0x34",
+        "to": "0x34",
+        "delta": 4
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x34",
+        "name": "pending_code",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x3c",
+        "name": "pending_char_code",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "BW's compressor is resumable. init (bw1 004434e0) sets +0x30..+0x3c to -1; process (bw1 FUN_00443530): findCode(char & char_mask +0x28, current_code +0x30); on a miss stores the char at +0x3c and the code to write at +0x34; the write uses +0x30, then addNode(prev_char_code +0x2c, prev_code +0x38), prev_code = current_code, prev_char_code = current_code = +0x3c, +0x34/+0x3c reset to -1. finalize (FUN_00443630) writes +0x30. Same init stores in bw2/bw3. RTTI 64."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CLZWDecompress",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x2c",
+        "delta": 0
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x30",
+        "name": "pending_sequence_index",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "ctor (bw1 004436b0) stores the vtable at +0, buffer_size +0x20, num_bits +0x24; init (004436f0) inits the dictionary at +4, resets the bit buffer at +0x18, sets +0x28/+0x2c/+0x30 to -1. process (FUN_00443790): current_code +0x2c, previous_code +0x28 (addNode), and +0x30 the resume position of a partly written code sequence (-1 none, else -2 - result). Same in bw2/bw3. RTTI 52."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CLZWCompress",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x30",
+        "delta": 0
+      },
+      {
+        "from": "0x34",
+        "to": "0x34",
+        "delta": 4
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x34",
+        "name": "pending_code",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x3c",
+        "name": "pending_char_code",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "BW's compressor is resumable. init (bw1 004434e0) sets +0x30..+0x3c to -1; process (bw1 FUN_00443530): findCode(char & char_mask +0x28, current_code +0x30); on a miss stores the char at +0x3c and the code to write at +0x34; the write uses +0x30, then addNode(prev_char_code +0x2c, prev_code +0x38), prev_code = current_code, prev_char_code = current_code = +0x3c, +0x34/+0x3c reset to -1. finalize (FUN_00443630) writes +0x30. Same init stores in bw2/bw3. RTTI 64."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CLZWDecompress",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x2c",
+        "delta": 0
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x30",
+        "name": "pending_sequence_index",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "ctor (bw1 004436b0) stores the vtable at +0, buffer_size +0x20, num_bits +0x24; init (004436f0) inits the dictionary at +4, resets the bit buffer at +0x18, sets +0x28/+0x2c/+0x30 to -1. process (FUN_00443790): current_code +0x2c, previous_code +0x28 (addNode), and +0x30 the resume position of a partly written code sequence (-1 none, else -2 - result). Same in bw2/bw3. RTTI 52."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CGame",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x54",
+        "delta": 0
+      },
+      {
+        "from": "0x58",
+        "to": "0x5c",
+        "delta": 16
+      },
+      {
+        "from": "0x60",
+        "to": "0xcc",
+        "delta": 20
+      },
+      {
+        "from": "0xd0",
+        "to": "0x240",
+        "delta": 28
+      },
+      {
+        "from": "0x244",
+        "to": "0x254",
+        "delta": 32
+      },
+      {
+        "from": "0x258",
+        "to": "0x258",
+        "delta": 36
+      },
+      {
+        "from": "0x25c",
+        "to": "0x384",
+        "delta": 48
+      },
+      {
+        "from": "0x388",
+        "to": "0xac8",
+        "delta": 52
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x58",
+        "name": "key_field_notes",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x5c",
+        "name": "key_map",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x60",
+        "name": "key_compass",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x64",
+        "name": "key_sps",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x70",
+        "name": "key_quick_turn",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0xe4",
+        "name": "puzzle_difficulty_mode",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0xe8",
+        "name": "combat_difficulty_mode",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x260",
+        "name": "special_view_active",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x278",
+        "name": "screen_clear_count",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x280",
+        "name": "slow_motion_mode",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x284",
+        "name": "slow_motion_timer",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x288",
+        "name": "new_set_event_pending",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x3b8",
+        "name": "bitmap_display_time",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0xb00",
+        "name": "vtable",
+        "type": "void *",
+        "len": 4
+      }
+    ],
+    "basis": "RTTI 2820. readIniData 004f4f50 names every option/key slot: haloMode..foulLanguageFlag +0xc..+0x1c, quimbyFlag +0x20, shadowFlag +0x24 (nocedit offsets; the current layout's quimby_flag/shadow_flag/key_walk at 0x24/0x28/0x2c are each one slot too high), keyWalk +0x28 .. keyInfrared +0x54, keyFieldNotes +0x58, keyMap +0x5c, keyCompass +0x60, keySPS +0x64, keyDraw +0x68, keyJump +0x6c, keyQuickTurn +0x70, keyPointUp +0x74 .. keyNextAmmo +0xa4, invertMouseYAxis +0xa8, gameControl +0xd0, heroNumber +0xd4, aimMode +0xd8, autoUseHealth +0xdc, puzzleDifficultyMode +0xe4, combatDifficultyMode +0xe8, gamma +0x240, headOfHorrorCheat +0x230. restoreDefaultControls FUN_004d0400 sets the same key slots (nocedit defaults plus N/J/Tab/C/S at 0x54..0x64, End at 0x70, P at 0xa0) and aim_mode +0xd8. showCustomizableKeys 004ccc40 labels: Night Vision 0x54, Journal 0x58, Map 0x5c, Compass 0x60, SPS 0x64, Draw 0x68, Quick turn 0x70, Item description 0xa0. ctor 004cbc80 aligns with nocedit ctor 004d7b40 store-for-store: debug_info_string byte +0xec, god_mode..gratuitous +0x1ec..+0x1fc, time_scale_factor +0x208 (1.0), render.. collision +0x20c..+0x238, cinematic +0xe0, allow_damage..hero_controls_blocked +0x248..+0x254, is_processing +0x258, goggles +0x25c, player_hit +0x23c, fudge +0x9f0/+0x9f4, bitmap +0x8e8/+0x9e8/+0x9ec, need_chapter_reload +0x9f8, show_customizable_keys +0xafc, chapter_reload_filename +0x9fc, vtable 0x600f94 at +0xb00 (dtor 004cbf00 too). flashlight_active = +0x264 (CWeapon_updateLighting 005adb20 tests it; CDoc FUN_00469550 toggles it with flashlit.wav); goggles +0x25c (CDoc_toggleGoggles, renderGogglesView call in processFrame FUN_004ce580). total_* +0x268..+0x274 (ctor order, finishAct 004d8a90). act_completion_state +0x27c (finishAct ==2 -> rollCredits, runGameSession =0, CDemonMission_run). updateDT FUN_004cbf20 reads clocktime +0x28c, delta_time_int +0x290, delta_time_float +0x294, time_scale +0x208. displayBitmap FUN_004d7730 queues name +0x8e8, w/h +0x9e8/+0x9ec and param_5 to +0x3b8 (FUN_004d77d0 counts it down by delta_time_float as float). Added: 0x260: FUN_004d17c0 sets it, saving g_CDemonSetPtr->selected_camera_index on enable and restoring the camera view on disable; processFrame FUN_004ce580 calls CDemonSet FUN_00551170 when it is set and goggles are off; runGameSession zeroes it with goggles/flashlight; 0x278: runGameSession 004cf5e0: if < 3, clearScreen() and increment, before swapBuffers; ctor zeroes; 0x280: updateDT FUN_004cbf20: ==1 ramps time_scale_factor from the +0x284 timer and resets to 0 when it expires, ==2 leaves time_scale alone; cheat (processCheatCodes) sets 2 before 'Enter time factor'; CDemnfolk FUN_0045c4a0 sets 1; 0x284: float: updateDT subtracts delta_time_float, reset to 1.0 when <=0; CDemnfolk_process reads (1 - x); 0x288: ctor =1, CDemonMission FUN_0051b610 sets 1 after preparing a set; runGameSession fires event 'NewSet' and decrements; 0xe4: ini puzzleDifficultyMode; menu FUN_0050c990; 0xe8: ini combatDifficultyMode; event FUN_004a9a00"
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CGame",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x54",
+        "delta": 0
+      },
+      {
+        "from": "0x58",
+        "to": "0x5c",
+        "delta": 16
+      },
+      {
+        "from": "0x60",
+        "to": "0xcc",
+        "delta": 20
+      },
+      {
+        "from": "0xd0",
+        "to": "0x240",
+        "delta": 28
+      },
+      {
+        "from": "0x244",
+        "to": "0x384",
+        "delta": 32
+      },
+      {
+        "from": "0x388",
+        "to": "0xac8",
+        "delta": 36
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x58",
+        "name": "key_field_notes",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x5c",
+        "name": "key_map",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x60",
+        "name": "key_compass",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x64",
+        "name": "key_sps",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x70",
+        "name": "key_quick_turn",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0xe4",
+        "name": "puzzle_difficulty_mode",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0xe8",
+        "name": "combat_difficulty_mode",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x260",
+        "name": "special_view_active",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x3a8",
+        "name": "bitmap_display_time",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0xaf0",
+        "name": "key_drop",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0xaf4",
+        "name": "alpha_fade_alpha",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0xaf8",
+        "name": "alpha_fade_start",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0xafc",
+        "name": "alpha_fade_end",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0xb00",
+        "name": "alpha_fade_duration",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0xb04",
+        "name": "alpha_fade_time_left",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0xb08",
+        "name": "alpha_fade_red",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0xb0c",
+        "name": "alpha_fade_green",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0xb10",
+        "name": "alpha_fade_blue",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0xb14",
+        "name": "alpha_fade_active",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0xb18",
+        "name": "alpha_fade_texture",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0xb1c",
+        "name": "vtable",
+        "type": "void *",
+        "len": 4
+      }
+    ],
+    "basis": "RTTI 2848. readIniData 004d8d60: haloMode +0xc .. foulLanguageFlag +0x1c, quimbyFlag +0x20, shadowFlag +0x24 (current names quimby_flag/shadow_flag/key_walk one slot high), keyWalk +0x28, keyBackup +0x2c, keyRun +0x30 .. keyLight +0x50, keyDraw +0x68, keyPointUp +0x74, keyWeapon1-3 +0x7c..+0x84, keyNextWeapon +0x90 .. keyNextAmmo +0xa4, keyDrop +0xaf0, invertMouseYAxis +0xa8, gameControl +0xd0, heroNumber +0xd4, aimMode +0xd8, autoUseHealth +0xdc, puzzle/combatDifficultyMode +0xe4/+0xe8, gamma +0x240. restoreDefaultControls 004b6e10 writes every slot +0x28..+0xa4 (unused ones 0x54..0x64, 0x6c, 0x70, 0x88, 0x8c set to -1) and +0xaf0 (0x12 = E). showCustomizableKeys 004b3c50: Lantern 0x50, Draw 0x68, Drop Item or Weapon 0xaf0. ctor 004b2d80 matches bw1's ctor store-for-store through +0x274 (total_kill), then act_completion +0x278 (finishAct ==2), chapter_reload_filename +0x9ec, show_customizable_keys +0xaec, vtable 0x5f7574 at +0xb1c; no slow-motion/clear-count/new-set fields (clocktime at +0x27c). flashlight_active +0x264 (CWeapon_updateLighting 00589fd0). +0x260: FUN_004b8030 = bw1 FUN_004d17c0 (camera save/restore), processFrame FUN_004b5190 tests it. displayBitmap FUN_004bcb50 stores param_5 at +0x3a8; FUN_004bcbf0 counts it down as float. Alpha fade: FUN_004bb500(this,start,end,duration,r,g,b,tex) stores +0xaf8,+0xafc,+0xb00,+0xb08,+0xb0c,+0xb10,+0xb18 (script setAlphaFade '(%f, %f, %f, %f, %f, %f)' in FUN_00522350; ctor passes 0,1.0,5.0,0,0,0,0); FUN_004bb550 (script startAlphaFade) sets +0xb14=1, +0xaf4=start, +0xb04=duration; FUN_004bb5b0 (from CGame_process) decrements +0xb04 by delta_time_float(+0x284) and lerps +0xaf4; FUN_004bb620 draws a quad with alpha +0xaf4, colour +0xb08..+0xb10, texture table index +0xb18 (*0x18)."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CGame",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x48",
+        "delta": 0
+      },
+      {
+        "from": "0x4c",
+        "to": "0x54",
+        "delta": 4
+      },
+      {
+        "from": "0x58",
+        "to": "0x5c",
+        "delta": 20
+      },
+      {
+        "from": "0x60",
+        "to": "0xc4",
+        "delta": 24
+      },
+      {
+        "from": "0xcc",
+        "to": "0xcc",
+        "delta": 28
+      },
+      {
+        "from": "0xd0",
+        "to": "0x240",
+        "delta": 36
+      },
+      {
+        "from": "0x244",
+        "to": "0x254",
+        "delta": 40
+      },
+      {
+        "from": "0x258",
+        "to": "0x258",
+        "delta": 44
+      },
+      {
+        "from": "0x25c",
+        "to": "0x384",
+        "delta": 176
+      },
+      {
+        "from": "0x388",
+        "to": "0xac8",
+        "delta": 180
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x4c",
+        "name": "key_action",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x5c",
+        "name": "key_field_notes",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x60",
+        "name": "key_map",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x64",
+        "name": "key_compass",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x68",
+        "name": "key_voodoo_doll",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x74",
+        "name": "key_quick_turn",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0xe0",
+        "name": "show_hero_numbers",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0xe4",
+        "name": "show_crosshair",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0xec",
+        "name": "puzzle_difficulty_mode",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0xf0",
+        "name": "combat_difficulty_mode",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x268",
+        "name": "special_view_active",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x280",
+        "name": "screen_clear_count",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x288",
+        "name": "slow_motion_mode",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x28c",
+        "name": "slow_motion_timer",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x290",
+        "name": "new_set_event_pending",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x294",
+        "name": "end_timer",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x298",
+        "name": "music_name",
+        "type": "char[100]",
+        "len": 100
+      },
+      {
+        "offset": "0x2fc",
+        "name": "music_sfx_handle",
+        "type": "uint",
+        "len": 4
+      },
+      {
+        "offset": "0x300",
+        "name": "music_position",
+        "type": "double",
+        "len": 8
+      },
+      {
+        "offset": "0x308",
+        "name": "music_volume",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x438",
+        "name": "bitmap_display_time",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0xb80",
+        "name": "end_timer_text",
+        "type": "char[12]",
+        "len": 12
+      },
+      {
+        "offset": "0xb8c",
+        "name": "vtable",
+        "type": "void *",
+        "len": 4
+      }
+    ],
+    "basis": "RTTI 2960. readIniData 004d8e70: haloMode..foulLanguageFlag +0xc..+0x1c, shadowFlag +0x24 (ctor still zeroes quimby_flag +0x20; current names quimby_flag/shadow_flag/key_walk at 0x28/0x2c/0x30 are one slot high), keyWalk +0x28, keyBackup +0x2c, keyRun +0x30, keyStrafe..keyFire +0x34..+0x48, keyAction +0x4c, keyUseItem +0x50, keyLight +0x54, keyFieldNotes +0x5c, keyMap +0x60, keyVoodooDoll +0x68, keyDraw +0x6c, keyQuickTurn +0x74, keyPointUp +0x78, keyPointDown +0x7c, keyWeapon1-5 +0x80..+0x90, keyNextWeapon +0x94, keyPrevWeapon +0x98, keyNextItem +0x9c, keyPrevItem +0xa0, invertMouseYAxis +0xac, gameControl +0xd4, heroNumber +0xd8, aimMode +0xdc, show_hero_numbers +0xe0, show_crosshair +0xe4, gamma +0x248. restoreDefaultControls FUN_004b8e60 writes +0x28..+0xa8 (N at +0x58, C at +0x64, Space at +0x70, P at +0xa4, ` at +0xa8: bw1's Night Vision / Compass / Jump / Item description / Next ammo defaults) and aim_mode +0xdc; showCustomizableKeys FUN_004b51e0 labels Fire 0x48, Use item 0x50, Lantern 0x54, Journal 0x5c, Map 0x60, Voodoo Doll 0x68, Draw 0x6c, Quick turn 0x74, the five weapon cycles 0x80..0x90. Keyboard controls FUN_004b9960: +0x58 key toggles a hero virtual (+0x150) like nocedit's infrared. ctor 004b4180: game_control +0xd4, hero_number +0xd8, +0xe0=0 where nocedit stores auto_use_health, +0xe4=1, cinematic +0xe8, +0xec/+0xf0 (event FUN_00494880 'puzzleModeHard'/'combatModeHard'), debug_info_string +0xf4, god_mode.. +0x1f4.., time_scale +0x210, allow_damage..hero_controls_blocked +0x250..+0x25c, is_processing +0x260, goggles +0x264 (CBird_renderOpaque), +0x268, flashlight +0x26c (CWeapon_updateLighting 0057b5c0), player_hit +0x244, total_* +0x270..+0x27c, +0x284 = act_completion_state (finishAct 004bfee0, CDemonMission_run 004f72a0), +0x280, fudge +0xa70/+0xa74, bitmap +0x968/+0xa68/+0xa6c, need_chapter_reload +0xa78, show_customizable_keys +0xb7c, chapter_reload_filename +0xa7c, vtable 0x5e0704 at +0xb8c (dtor 004b4420). updateDT FUN_004b4440: clocktime +0x30c, delta_time_int +0x310, delta_time_float +0x314 (existing names agree). displayBitmap FUN_004beb80 stores param_5 at +0x438. Added: 0xe0: ini 'show_hero_numbers'; occupies nocedit's auto_use_health ctor slot, autoUseHealth is no longer read (auto_use_health dropped); 0xe4: ini 'show_crosshair'; menu FUN_004e85a0 'Display Crosshair'; CWeapon_renderAimBeam gates on it; 0x64: default C (0x2e) = bw1 keyCompass default; not read, shown or tested in bw3 code (name follows bw1); 0x268: FUN_004ba280 = bw1 FUN_004d17c0 (camera save/restore); runGameSession zeroes it; 0x280: runGameSession: < 3 -> clearScreen and increment; 0x288: updateDT FUN_004b4440 slow-motion mode as bw1 +0x280; processCheatCodes sets it; 0x28c: updateDT slow-motion timer (float) as bw1 +0x284; 0x290: ctor 1, CDemonMission FUN_004f6de0 sets 1, runGameSession fires NewSet and decrements; 0x294: script setEndTimer (event FUN_0048c2e0) stores it; runGameSession counts it down by delta_time_float, sprintf('%d') to +0xb80, beginFadeOut at 0; save FUN_004bda10/load FUN_004bdfb0 'Game stats' %f; ctor and FUN_004be8d0 set -1.0; 0x298: FUN_004c4a60 (script playMusic) stricmp/copies the music name here and plays it; save/load %s; next field at +0x2fc bounds it to 100; 0x2fc: sfx handle from CSound_playSound in FUN_004c4a60; FUN_004c4bc0 fades/clears it; 0x300: FUN_004c4cc0 stores getSfxPlaybackPosition (double) as two dwords +0x300/+0x304; FUN_004c4a60 passes them as setNextSfxTriggerTime(double); 0x308: music volume: FUN_004c4d10 =1.0, FUN_004c4bc0 0.3/1.0 by letterbox_mode(+0x24c), passed to setSfxFade; 0xb80: CGame_renderOverlay 004b47d0 draws it centred when non-empty; clearOverlay and runGameSession zero byte 0; runGameSession sprintf('%d', end_timer+1); vtable at +0xb8c bounds it to 12"
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CDemonSet",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x14d150",
+        "delta": 0
+      },
+      {
+        "from": "0x14d154",
+        "to": "0x15aca8",
+        "delta": 16
+      },
+      {
+        "from": "0x15acac",
+        "to": "0x15aeac",
+        "delta": 20
+      },
+      {
+        "from": "0x15aeb0",
+        "to": "0x161668",
+        "delta": 24
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x14d154",
+        "name": "directional_light_dir",
+        "type": "CVector3f",
+        "len": 12
+      },
+      {
+        "offset": "0x14d160",
+        "name": "directional_light_intensity",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x15acbc",
+        "name": "altitude_reference_y",
+        "type": "float",
+        "len": 4
+      }
+    ],
+    "basis": "min_ambient_value stays +0x14d150: C3DSCamera_apply 0055c5f0 FCOMP float [EAX+0x14d150]; load FUN_0054d3c0 fscanf's it then, for set_file_version(+0x15acc0)>=0x1e, '%f,%f,%f,%f' into +0x14d154/158/15c/160 (older sets: -1,-1,-1 normalized, intensity 0); setCameraView 0054f0d0 passes (&+0x14d154, +0x14d160) to dcamera FUN_0044ee30, which dots it with normals and scales by the float; FUN_00555930 sets all four; calculateSpatialLighting 00552490 tests +0x14d160&0x7fffffff. scene_fog SFog at +0x15ac40 (initScene 0054ec60 passes it as SFog* and copies it to +0x15ac64 active_fog; setCameraView writes +0x15ac64) = delta 16. +0x15acbc: load reads a float when set_file_version>=0x1d else 0, ctor zeroes it, inv.cpp FUN_004fae10/FUN_004f655e subtract it from the hero's +0x34 (y). set_file_version +0x15acc0 (19 version compares in load) and actor_list_capacity +0x15acc4 (ctor zeroes 0x15acc0/0x15acc4 as nocedit's ctor does) = delta 20. pending_camera_index +0x15aec8, camera_switch_cooldown +0x15aecc (setPendingCamera 00540ba0) = delta 24; previous_best_camera_index/timer +0x15aebc/+0x15aec0 (setdir FUN_0053f940) = delta 20. Drift segments agree (bw1_tdrift CDemonSet). RTTI 1447556 = nocedit+24."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CDemonSet",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x14d150",
+        "delta": 0
+      },
+      {
+        "from": "0x14d154",
+        "to": "0x15aca8",
+        "delta": 16
+      },
+      {
+        "from": "0x15acac",
+        "to": "0x15aeac",
+        "delta": 20
+      },
+      {
+        "from": "0x15aeb0",
+        "to": "0x161668",
+        "delta": 24
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x14d154",
+        "name": "directional_light_dir",
+        "type": "CVector3f",
+        "len": 12
+      },
+      {
+        "offset": "0x14d160",
+        "name": "directional_light_intensity",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x15acbc",
+        "name": "altitude_reference_y",
+        "type": "float",
+        "len": 4
+      }
+    ],
+    "basis": "Same code as bw1: C3DSCamera_apply 00541fb0 reads +0x14d150; load FUN_00532b80 reads +0x14d154..+0x14d160 and +0x15acbc, compares +0x15acc0; ctor 005327c0 zeroes +0x14d154..160, +0x15acbc/+0x15acc0/+0x15acc4; setCameraView 00534890 uses +0x14d154/+0x14d160 and +0x15ac40; initScene 00534420 SFog +0x15ac40 -> +0x15ac64; setPendingCamera 0055b1e0 stores +0x15aec8/+0x15aecc. RTTI 1447556."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CDemonSet",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x14d150",
+        "delta": 0
+      },
+      {
+        "from": "0x14d154",
+        "to": "0x15aca8",
+        "delta": 16
+      },
+      {
+        "from": "0x15acac",
+        "to": "0x161668",
+        "delta": 20
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x14d154",
+        "name": "directional_light_dir",
+        "type": "CVector3f",
+        "len": 12
+      },
+      {
+        "offset": "0x14d160",
+        "name": "directional_light_intensity",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x15acbc",
+        "name": "altitude_reference_y",
+        "type": "float",
+        "len": 4
+      }
+    ],
+    "basis": "min_ambient_value +0x14d150: C3DSCamera_apply 0053ad20 FCOMP float [EAX+0x14d150], also load 0052c0e0 / initScene 0052d980. load 0052c0e0, ctor 0052bd20, setCameraView 0052ddf0, FUN_00534680 and calculateSpatialLighting 005311e0 use +0x14d154..+0x14d160 as in bw1; initScene/setCameraView SFog +0x15ac40/+0x15ac64; +0x15acbc read by load, used by inv.cpp FUN_004dd9b0/FUN_004da130; +0x15acc0 version compares. No camera insertion: setPendingCamera 00539820 stores pending_camera_index at +0x15aec4 (nocedit 0x15aeb0 +20). RTTI 1447552 = nocedit+20."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CSfxSlot",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x70",
+        "to": "0x124",
+        "delta": -16
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x118",
+        "name": "changed_flags",
+        "type": "uint",
+        "len": 4
+      }
+    ],
+    "size": 284,
+    "basis": "options CSfxOptions at +0 (96 bytes in BW): pollStream FUN_00570460 reads slot+0x50 options.playback_position (double), slot+0x60 hardware_buffer_handle, slot+0x68 sample; slot stride 0x11c (pollStream imul 0x11c). is_active +0x108 (startSfx 00572d20, kill 00571d70, compute 00570f30; nocedit +0x118), prev_hardware_playback_pos double +0x10c (seek 00572250, updatePlaybackPos 00572030; nocedit +0x11c), loop_marker_index +0x114 (mix FUN_00571420 indexes sample+0x128 loop_endpoints with it, wraps at sample+0x124; nocedit +0x124), fade fields +0x100/+0x104 (startSfx). New +0x118: startSfx stores -1, kill stores 0, updateBoundPositionAndVelocity FUN_00570a40 ORs bit 2 on position change and bit 4 on velocity change, setSfxPosition FUN_00573760 / FUN_005737d0 |2, FUN_005738d0 |4, setSfxVolume FUN_00573950 and compute |8."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CSfxSlot",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x70",
+        "to": "0x124",
+        "delta": -16
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x118",
+        "name": "changed_flags",
+        "type": "uint",
+        "len": 4
+      }
+    ],
+    "size": 284,
+    "basis": "Same as bw1: mix FUN_0054edb0 zeroes loop_marker_index at +0x114, CSfxSlot_seek stores prev_hardware_playback_pos double at +0x10c/+0x110, byte ORs on +0x118 in the position/velocity updater and AND +0x118,0xdffffff9; CSfxSlot_ctor 00554a60 identical to nocedit."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CSfxSlot",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x70",
+        "to": "0x124",
+        "delta": -16
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x118",
+        "name": "changed_flags",
+        "type": "uint",
+        "len": 4
+      }
+    ],
+    "size": 284,
+    "basis": "Same as bw1: mix FUN_00554920 zeroes loop_marker_index at +0x114, CSfxSlot_seek +0x10c double, byte ORs on +0x118 and AND +0x118,0xdffffff9."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CSfxSample",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x158",
+        "delta": 0
+      },
+      {
+        "from": "0x15c",
+        "to": "0x160",
+        "delta": 4
+      },
+      {
+        "from": "0x164",
+        "to": "0x170",
+        "delta": 8
+      },
+      {
+        "from": "0x178",
+        "to": "0x17c",
+        "delta": 48
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x15c",
+        "name": "is_user_sample",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x168",
+        "name": "data_size_bytes",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x17c",
+        "name": "file_stream",
+        "type": "CInStreamFile",
+        "len": 44
+      }
+    ],
+    "size": 432,
+    "basis": "ctor 0056fe10 builds CInStreamFile at +0x17c (replaces nocedit's _FILE* file_handle) and zeroes +0x120,+0x150,+0x154,+0x158,+0x15c,+0x164,+0x168,+0x174,+0x1ac, -1 to +0x160. pollStream FUN_00570460: +0x160 streaming_slot_index, +0x164 streaming_buffer_size, +0x16c stream_read_position, +0x170 stream_write_position, +0x174 mp3_data (CMP3Decoder_read), reads through &+0x17c when no decoder. lock FUN_00570160: locked_length +0x1ac, locked_offset +0x1a8. getSfxSample FUN_0056e830 / startSfx 00572d20: +0x178 passed to the wav parser as the file-offset pointer (file_offset); +0x168 = FUN_00572400(sample, frames) bytes, read by allocateHwSample 0056feb0 as the allocation size. +0x15c: FUN_005740fe sets 1 for a sample made from a caller's CSampleInfo; free-slot scans (startSfx, getSfxSample, FUN_005740fe) skip slots with it set; freeMemory 00570020 clears it. nocedit file_handle (+0x174) has no BW counterpart. Size: arrdtor/stride and lock offsets, 0x1b0."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CSfxSample",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x158",
+        "delta": 0
+      },
+      {
+        "from": "0x15c",
+        "to": "0x160",
+        "delta": 4
+      },
+      {
+        "from": "0x164",
+        "to": "0x170",
+        "delta": 8
+      },
+      {
+        "from": "0x178",
+        "to": "0x17c",
+        "delta": 48
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x15c",
+        "name": "is_user_sample",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x168",
+        "name": "data_size_bytes",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x17c",
+        "name": "file_stream",
+        "type": "CInStreamFile",
+        "len": 44
+      }
+    ],
+    "size": 432,
+    "basis": "ctor 00553310 instruction-identical to bw1's (CInStreamFile at +0x17c, locked_length +0x1ac); lock 00553660 uses +0x1ac/+0x1a8; FUN_0055725e sets +0x15c=1; +0x168/+0x178 stored as in bw1."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CSfxSample",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x158",
+        "delta": 0
+      },
+      {
+        "from": "0x15c",
+        "to": "0x160",
+        "delta": 4
+      },
+      {
+        "from": "0x164",
+        "to": "0x170",
+        "delta": 8
+      },
+      {
+        "from": "0x178",
+        "to": "0x17c",
+        "delta": 44
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x15c",
+        "name": "is_user_sample",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x168",
+        "name": "data_size_bytes",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x17c",
+        "name": "file_stream",
+        "type": "CInStreamFile",
+        "len": 40
+      }
+    ],
+    "size": 428,
+    "basis": "ctor 0054d7a0 as bw1's but locked_length at this+0x17c+0x2c = +0x1a8 (bw2's CInStreamFile is 40); lock 0054daf0 uses +0x1a8/+0x1a4; pollStream 0054ddf0 uses +0x160/+0x164/+0x16c/+0x170/+0x174 and &+0x17c; FUN_005516ce sets +0x15c=1; +0x168/+0x178 stored as in bw1."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CGlassParticle",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x38",
+        "to": "0x78",
+        "delta": 8
+      }
+    ],
+    "basis": "init FUN_004af600 (pair of nocedit CGlassParticle_init): lifetime [EBX+0x40], texture REP MOVSD ECX=6 to [EBX+0x44], euler_angles FSTP [EBX+0x5c]/[0x60], [0x64]=0, uv_u [0x68..0x70], uv_v [0x74..0x7c], triangle_delta LEA [EBX+0x80]/[0x8c]/[0x98]; render 004af9f0 and process 004afbf0 read the same offsets. Base CParticle is 64."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CGlassParticle",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x38",
+        "to": "0x78",
+        "delta": 8
+      }
+    ],
+    "basis": "init FUN_00496c60: same stores as bw1 (lifetime +0x40, 6-dword texture copy to +0x44, euler +0x5c, uv +0x68/+0x74, triangle_delta +0x80/+0x8c/+0x98)."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CGlassParticle",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x38",
+        "to": "0x38",
+        "delta": 8
+      },
+      {
+        "from": "0x54",
+        "to": "0x78",
+        "delta": 56
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x44",
+        "name": "texture",
+        "type": "SMRGLTextureModel",
+        "len": 72
+      }
+    ],
+    "basis": "init FUN_0049a650: lifetime [EBX+0x40]; texture copied with MOV ECX,0x12 / REP MOVSD to [EBX+0x44] (72 bytes; callers pass texture_sets[].textures[] at stride 0x48 from CDeformableModel_shatter 0054afb0, and CGlass+0x164 from FUN_004caeb0); euler FSTP [EBX+0x8c]/[0x90], [0x94]=0; uv_u [0x98..0xa0]; uv_v [0xa4..0xac]; triangle_delta LEA [EBX+0xb0]/[0xbc]/[0xc8]. render 0049a9f0 reads +0x8c,+0x98..+0xc8; process 0049ac10 reads +0x8c/+0x90. RTTI 212."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CRock",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x38",
+        "to": "0x44",
+        "delta": 8
+      }
+    ],
+    "basis": "CRock_setup 004aef90 stores model_ptr at +0x4c; process FUN_004aefc0 adds to rotation [EBX+0x40]/[0x44]; render FUN_004af040 passes LEA [EBX+0x40] as rotation to applyDirectTransform and reads model_ptr [EBX+0x4c]. RTTI 80."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CRock",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x38",
+        "to": "0x44",
+        "delta": 8
+      }
+    ],
+    "basis": "CRock_setup 004965f0 [EAX+0x4c]=model_ptr; FUN_00496620 (process) [EBX+0x40]/[0x44]; FUN_004966a0 (render) [EBX+0x40], [EBX+0x4c]."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CRock",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x38",
+        "to": "0x44",
+        "delta": 8
+      }
+    ],
+    "basis": "CRock_setup 00499fe0 [EAX+0x4c]=model_ptr; FUN_0049a010 (process) [EBX+0x40]/[0x44]; FUN_0049a090 (render) [EBX+0x40], [EBX+0x4c]."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CBackgroundActor",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x158",
+        "to": "0x2d8",
+        "delta": 4
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x158",
+        "name": "cast_shadows_flag",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "ctor 0040eeb0: model at +0x15c, collide_with_me +0x2d8, ground_type +0x2dc, [EBX+0x158]=1; archive 0040f050: modelName +0x15c, collideWithMe +0x2d8, groundType +0x2dc, castShadowsFlag +0x158; renderBackground 0040ef70 draws in the shadow pass only when [EBX+0x158]!=0."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CBackgroundActor",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x158",
+        "to": "0x2d8",
+        "delta": 352
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x2b4",
+        "name": "cast_shadows_flag",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "archive 0040f4d0: modelName +0x2b8, collideWithMe +0x434, groundType +0x438, castShadowsFlag +0x2b4; ctor 0040f330 [EBX+0x2b4]=1, zeroes +0x434/+0x438."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CBodyPart",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0xcc4",
+        "delta": 0
+      },
+      {
+        "from": "0xcc8",
+        "to": "0xf2c",
+        "delta": 4
+      }
+    ],
+    "added": [
+      {
+        "offset": "0xcc8",
+        "name": "render_disabled",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "processFires 00419940 decrements fire_time_remaining at FLD/FST [EAX+0xccc] (nocedit +0xcc8); addFire 0041ab20 stores +0xccc; ctor 00418b40 zeroes +0xcc8 and +0xccc. renderBackground 00419130 returns at once when [EBX+0xcc8]!=0; CConstruct explode FUN_004472a0 sets dont_pick_me_up(+0xcc4)=0 and [ESI+0xcc8]=1. physics_box..is_visible already at +4 (RTTI 3892)."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CBodyPart",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0xcc4",
+        "delta": 0
+      },
+      {
+        "from": "0xcc8",
+        "to": "0xf2c",
+        "delta": 4
+      }
+    ],
+    "added": [
+      {
+        "offset": "0xcc8",
+        "name": "render_disabled",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "As bw1: processFires 00415570 FLD/FST [EAX+0xccc]; addFire 00416750 stores +0xccc; ctor 00414750 zeroes +0xcc8/+0xccc; renderBackground 00414d40 CMP [EBX+0xcc8],0 first; construct FUN_00444110 sets [EAX+0xcc8]=1."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CBodyPart",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x158",
+        "to": "0x750",
+        "delta": 348
+      },
+      {
+        "from": "0xcb0",
+        "to": "0xf2c",
+        "delta": 1044
+      }
+    ],
+    "basis": "textures (unplaced): addTexture 004177e0 LEA [EBX+0x2ec] and texture_name [EBX+0x2f4]; renderGeometry 004159e0 LEA [ESI+0x2ec]; ctor 004156e0 initial_velocity LEA +0x3dc; fire_time_remaining +0x10dc (processFires 004164b0, ctor). SBodyPartFire[2] is 2072 here, so fields after fires move 1044. No render_disabled dword in bw2 (fire_time_remaining directly before physics_box +0x10e0)."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CBoxActor",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x668",
+        "delta": 0
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x66c",
+        "name": "cam_orientation",
+        "type": "COrientation",
+        "len": 12
+      }
+    ],
+    "basis": "archive 00422760: archiveOrientation(+0x66c, \"camOrient\") when g_CBoxActorClassVersion>=0x10; ctor 00421ca0 zeroes the three dwords at +0x66c. RTTI 1656."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CBoxActor",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x158",
+        "to": "0x668",
+        "delta": 348
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x7c8",
+        "name": "cam_orientation",
+        "type": "COrientation",
+        "len": 12
+      }
+    ],
+    "basis": "archive 0041c7f0: every nocedit property at +0x15c (useEvent +0x75c, allowedMeleeAttackTypes +0x7c0, blockVirtualDirectorFlag +0x7c4) and camOrient at +0x7c8. RTTI 2004."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CBoxActor",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x600",
+        "delta": 0
+      },
+      {
+        "from": "0x664",
+        "to": "0x668",
+        "delta": 100
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x664",
+        "name": "fade_event",
+        "type": "char[100]",
+        "len": 100
+      },
+      {
+        "offset": "0x6d0",
+        "name": "cam_orientation",
+        "type": "COrientation",
+        "len": 12
+      },
+      {
+        "offset": "0x6dc",
+        "name": "fade_timer",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x6e0",
+        "name": "fade_time",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x6e4",
+        "name": "fade_alpha",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "archive 0041fb90: useEvent +0x600, allowedMeleeAttackTypes +0x6c8, blockVirtualDirectorFlag +0x6cc, camOrient +0x6d0, fadeTime (archiveFloat) +0x6e0, fadeEvent string at +0x664. ctor 0041efe0 [0x6e0]=2.0; setup 0041f130 [0x6dc]=0, [0x6e4]=0x10000. process 0041f360: when evaluateCondition(+0x664) is true it sets [0x6dc]=[0x6e0], then counts [0x6dc] down by delta. renderTransparent 0041f9f0: [0x6e4]=round([0x6dc]/[0x6e0]*k) and passes it on. RTTI 1768."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CDoor",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x9dc",
+        "delta": 0
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x9e0",
+        "name": "shake_me_strength",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x9e4",
+        "name": "shake_me_event",
+        "type": "char[100]",
+        "len": 100
+      },
+      {
+        "offset": "0xa48",
+        "name": "handle_vertex_index",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "archive (door.cpp, 004786f9..004787c2): shakeMeEvent archiveString +0x9e4, shakeMeStrength archiveFloat +0x9e0, handleVertexIndex archiveInteger +0xa48 (ADD EBX,0xa48). RTTI 2636."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CDoor",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x9dc",
+        "delta": 0
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x9e0",
+        "name": "shake_me_strength",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x9e4",
+        "name": "shake_me_event",
+        "type": "char[100]",
+        "len": 100
+      },
+      {
+        "offset": "0xa48",
+        "name": "handle_vertex_index",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "archive 00464cd0: openRules +0x478, shakeMeEvent +0x9e4, shakeMeStrength +0x9e0, handleVertexIndex +0xa48."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CDoor",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x158",
+        "to": "0x9dc",
+        "delta": 348
+      }
+    ],
+    "added": [
+      {
+        "offset": "0xb3c",
+        "name": "shake_me_strength",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0xb40",
+        "name": "shake_me_event",
+        "type": "char[100]",
+        "len": 100
+      },
+      {
+        "offset": "0xba4",
+        "name": "handle_vertex_index",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "archive 0045ff80: openRules (CRuleList, unplaced) LEA +0x5d4 = nocedit +0x478 + 348; shakeMeEvent +0xb40, shakeMeStrength +0xb3c, handleVertexIndex +0xba4. RTTI 2984."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CEmitter",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x3c4",
+        "delta": 0
+      },
+      {
+        "from": "0x3c8",
+        "to": "0x3cc",
+        "delta": 28
+      },
+      {
+        "from": "0x3d0",
+        "to": "0x3d0",
+        "delta": 32
+      },
+      {
+        "from": "0x3d4",
+        "to": "0x490",
+        "delta": 36
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x3c8",
+        "name": "wind_resist",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x3cc",
+        "name": "max_speed",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x3d0",
+        "name": "firefly_type",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x3d4",
+        "name": "fizzle",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x3d8",
+        "name": "bright",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x3dc",
+        "name": "delta_mult",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x3e0",
+        "name": "ff_size",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x3ec",
+        "name": "is_active",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x3f4",
+        "name": "sound_radius",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x4b8",
+        "name": "emit_radius",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x4bc",
+        "name": "blood_velocity",
+        "type": "float",
+        "len": 4
+      }
+    ],
+    "basis": "archive 0049fff0: emitterType..laserType, maxEmitTime, modelName +0x248, rockSpeed +0x3c4 unchanged; windResist +0x3c8, maxSpeed +0x3cc, EFireflyType +0x3d0, fizzle +0x3d4, bright +0x3d8, deltaMult +0x3dc, FFSize +0x3e0, periodicFlag +0x3e4, maxWaitTime +0x3e8, destActor +0x3f0, soundRadius +0x3f4, wavName +0x3f8, sfxType +0x460, emitPeriod +0x468, emitRadius +0x4b8, bloodVel +0x4bc. process 0049f310: sfx_handle +0x45c, emit_timer +0x464, state_timer +0x46c, globe LEA +0x470, was_on_screen +0x4b0, prev_emitter_state +0x4b4 (=emitter_state). +0x3ec: ctor 0049ee40 =1; process sets 1 with emitter_state=1 when eventOn fires, 0 when eventOff fires, and returns early when it is 0. RTTI 1216."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CEmitter",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x3c4",
+        "delta": 0
+      },
+      {
+        "from": "0x3c8",
+        "to": "0x3cc",
+        "delta": 28
+      },
+      {
+        "from": "0x3d0",
+        "to": "0x3d0",
+        "delta": 32
+      },
+      {
+        "from": "0x3d4",
+        "to": "0x490",
+        "delta": 36
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x3c8",
+        "name": "wind_resist",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x3cc",
+        "name": "max_speed",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x3d0",
+        "name": "firefly_type",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x3d4",
+        "name": "fizzle",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x3d8",
+        "name": "bright",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x3dc",
+        "name": "delta_mult",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x3e0",
+        "name": "ff_size",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x3ec",
+        "name": "is_active",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x3f4",
+        "name": "sound_radius",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x4b8",
+        "name": "emit_radius",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x4bc",
+        "name": "blood_velocity",
+        "type": "float",
+        "len": 4
+      }
+    ],
+    "basis": "archive 00488bb0 has the identical property->offset table to bw1; ctor 004879e0 and process 00487eb0 use +0x3ec. RTTI 1216."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CEmitter",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x158",
+        "to": "0x3c4",
+        "delta": 348
+      },
+      {
+        "from": "0x3c8",
+        "to": "0x3cc",
+        "delta": 376
+      },
+      {
+        "from": "0x3d0",
+        "to": "0x3d0",
+        "delta": 380
+      },
+      {
+        "from": "0x3d4",
+        "to": "0x490",
+        "delta": 384
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x524",
+        "name": "wind_resist",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x528",
+        "name": "max_speed",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x52c",
+        "name": "firefly_type",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x530",
+        "name": "fizzle",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x534",
+        "name": "bright",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x538",
+        "name": "delta_mult",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x53c",
+        "name": "ff_size",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x548",
+        "name": "is_active",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x550",
+        "name": "sound_radius",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x614",
+        "name": "emit_radius",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x618",
+        "name": "blood_velocity",
+        "type": "float",
+        "len": 4
+      }
+    ],
+    "basis": "archive 00487990: every property at bw1's offset + 0x15c (emitterType +0x2b4 .. bloodVel +0x618); process uses +0x548 as bw1 uses +0x3ec. RTTI 1564."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CLightGun",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x578",
+        "to": "0x588",
+        "delta": 0
+      },
+      {
+        "from": "0x58c",
+        "to": "0x58c",
+        "delta": 8
+      }
+    ],
+    "basis": "ctor 004ffeb0 = nocedit's stores (sfx_handle +0x57c, fire_flash_pending +0x578, hit_enemy +0x588, charge_ratio +0x584=1.0, charge_level +0x580) plus [EBX+0x58c]=1; fire 00500310 FSTP beam_length to [EAX+0x594] (nocedit +0x58c) and sets +0x578=1; renderAimBeam 00500f90 FLD [EAX+0x594]; process 00500d20 reads/clears +0x578. RTTI 1432."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CLightGun",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x578",
+        "to": "0x588",
+        "delta": 348
+      },
+      {
+        "from": "0x58c",
+        "to": "0x58c",
+        "delta": 356
+      }
+    ],
+    "basis": "ctor 004e2a20: +0x6d8, +0x6d4, +0x6e4, +0x6e0=1.0, FSTP +0x6dc, and +0x6e8=1; fire/renderAimBeam use +0x6f0 as bw1 uses +0x594 (all bw1 + 0x15c; CWeapon base 1748). RTTI 1780."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CWeapon",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x56c",
+        "delta": 0
+      },
+      {
+        "from": "0x570",
+        "to": "0x574",
+        "delta": 16
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x570",
+        "name": "infinite_ammo",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x574",
+        "name": "weapon_class",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x578",
+        "name": "number_of_hands_needed",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x57c",
+        "name": "draw_crosshair",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x588",
+        "name": "render_alpha",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x58c",
+        "name": "ammo_per_shot",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x590",
+        "name": "uses_hero_ammo",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "archive 0057b2a0: ammoCount +0x568, ammoType +0x56c, simTimer +0x580 (nocedit +0x570). ctor 0057ad70: weight +0x564=5.0, ammo_count +0x568=20, +0x570=0, +0x574=0, +0x578=1, +0x57c=1, +0x580=0, +0x584=0, +0x588=0x10000, +0x58c=1, +0x590=0. is_rendered +0x584 set 0/1 in renderOpaque/renderTransparent; sim_timer +0x580 in process/onDropped. fire 0057b880: when [0x570]==0 subtracts [0x58c] from the hero's ammo (+0x20b80 for ammo_type 10, +0x20b84 otherwise). isReadyToFire 0057b930: when [0x590]!=0 refuses unless hero ammo >= [0x58c]. Spell ctors (CDisease 0045bf80, CBindEvil 0040f780) set +0x58c=20, +0x574=4, +0x590=1, +0x578=2, +0x57c=0; CHolycross +0x574=1, +0x578=2, +0x57c=0; CFlintlock +0x574=0. inventory FUN_004dd310 compares +0x574; renderAimBeam 0057bb60 reads +0x57c; renderTransparent reads +0x588 (CMP 0x10000), FUN_0057b030 sets it. The archive's infinite_ammo/ammo_per_shot/weapon_class/draw_crosshair/number_of_hands_needed strings (read into locals in this version) name the fields. RTTI 1428."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CCrossbow",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x578",
+        "to": "0x57c",
+        "delta": 348
+      }
+    ],
+    "basis": "ctor 0043a4c0: CFlame_ctor(this+0x6d8) (bolt_flame; CFlame is 1024 in bw2), flame_active [EBX+0x6d4]=0. 0x6d8+1024 = RTTI 2776."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CAmmo",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x158",
+        "to": "0x318",
+        "delta": 348
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x478",
+        "name": "check_timer",
+        "type": "float",
+        "len": 4
+      }
+    ],
+    "basis": "archive 0040e1b0: ammoCount +0x470, ammoType +0x474. ctor 0040ddb0 +0x478=0.25; process 0040ded0 subtracts delta from [EBX+0x478], returns while >0, then resets it to 0.1 and runs the check. RTTI 1148."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CAmmo",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x318",
+        "delta": 0
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x31c",
+        "name": "anim_frame",
+        "type": "float",
+        "len": 4
+      }
+    ],
+    "basis": "archive 0040e000: ammoCount +0x314, ammoType +0x318. ctor 0040de60 zeroes +0x31c; CAmmoMana_process 0040e140 / CAmmoManaLarge_process 0040e2b0 advance +0x31c by delta and wrap at frame_count-1; renderOpaque 0040df20 rounds +0x31c and passes it to prepareForRendering as the frame. RTTI 800."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CBat",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x158",
+        "to": "0x384",
+        "delta": 348
+      }
+    ],
+    "basis": "course (CCourse, unplaced): setup 004110a0 CCourse_load(this+0x2d4, this+0x2b4); updateCoursePosition 004114e0 reads course.len [+0x2d4] and param +0x460. RTTI 1252."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CDemonLight",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x2fa8",
+        "delta": 0
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x2fac",
+        "name": "bloom_intensity",
+        "type": "float",
+        "len": 4
+      }
+    ],
+    "basis": "ctor 00449c70 [EAX+0x2fac]=1.0; CLantern_process 0059ccf0 FSTP the flicker-scaled intensity to [light+0x2fac] right after setVolumetricIntensity; renderLightBloomQuad FUN_0044b020 (pair of nocedit 00473a20) FMULs by [EAX+0x2fac]. RTTI 12208."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CFrankenstienMachine",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x158",
+        "to": "0x490",
+        "delta": 348
+      }
+    ],
+    "basis": "course (CCourse, unplaced): setup 004ac230 CCourse_load(LEA [EBX+0x45c]); setCourseFrame 004acf60 LEA [EBX+0x45c] (nocedit +0x300). RTTI 1528."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CGlass",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x158",
+        "to": "0xb3c",
+        "delta": 348
+      }
+    ],
+    "basis": "unplaced members: ctor 004c48a0 glass_texture header type=0xd at +0x2c0, name +0x2c8; broken_texture type +0x4d0, name +0x4d8; renderOpaque 004c52a0 / renderTransparent 004c5470 LEA [EBP+0x2c0] and broken_quads LEA [EBP+0x808] (nocedit +0x6ac). RTTI 3228."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CGlass",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x158",
+        "delta": 0
+      },
+      {
+        "from": "0x17c",
+        "to": "0xb3c",
+        "delta": 48
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x164",
+        "name": "glass_texture",
+        "type": "SMRGLTextureModel",
+        "len": 72
+      }
+    ],
+    "basis": "ctor 004c9ba0: glass_texture type 0xd at +0x164, count +0x168, name +0x16c; opacity +0x1ac=0x8000; shattered +0x1b0; break_event +0x1b4; broken_texture type +0x3a4, name +0x3ac. archive 004cad80: glassSize +0x158, glassTexture +0x16c, opacity +0x1ac, shattered +0x1b0, mirrorFlag +0x218, breakableCondition +0x33c, backgroundFlag +0x3a0, brokenTexture +0x3ac. FUN_004caeb0 passes this+0x164 to createGlassParticle, which copies 0x12 dwords (72 bytes) from it. Nothing addresses +0x17c..+0x1a8. RTTI 2928."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CHealthItem",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x158",
+        "to": "0x2d8",
+        "delta": 348
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x438",
+        "name": "check_timer",
+        "type": "float",
+        "len": 4
+      }
+    ],
+    "basis": "archive 004cdee0: useCount +0x430, hpRestored +0x434; useItem 004cdf90 same. ctor 004cda70 +0x438=0.25; process 004cdb60 counts +0x438 down by delta and resets it to 0.2 (as CAmmo +0x478). RTTI 1084."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CHealthItem",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x2d8",
+        "delta": 0
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x2dc",
+        "name": "anim_frame",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x2e0",
+        "name": "automatic_use",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "archive 004d1fe0: modelName +0x158, useCount +0x2d4, hpRestored +0x2d8, automatic_use (archiveInteger) +0x2e0. ctor 004d1d80 +0x2e0=0, +0x2dc=0; CHealthItemSmall ctor +0x2e0=1; canPickup 004d2090 tests +0x2e0; process 004d1e10 FADD/FST +0x2dc; renderOpaque 004d1f10 pushes +0x2dc as the model frame. RTTI 740."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CLever",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x158",
+        "to": "0x810",
+        "delta": 348
+      }
+    ],
+    "basis": "rule (CRuleList, unplaced): archive 004e22e0 LEA [EBX+0x57c] (nocedit +0x420); allowed_sides +0x968 / enable_collision +0x96c already +348. RTTI 2416."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CMarquee",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x158",
+        "to": "0x1b0",
+        "delta": 348
+      }
+    ],
+    "basis": "course (CCourse, unplaced): setup 004e7e80, process 004e7ec0, renderTransparent 004e8180 all LEA +0x300 (nocedit +0x1a4). RTTI 792."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CPlatform",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x51c",
+        "delta": 0
+      },
+      {
+        "from": "0x728",
+        "to": "0x728",
+        "delta": -4
+      }
+    ],
+    "basis": "archive 0053a740 writes the same property->offset table as nocedit's 0054dbc0. rendered_in_background at +0x724: ctor 00539400 zeroes it, process 00539810 clears it, renderBackground 0053a520 sets 1, renderOpaque 0053a3d0 tests it. slew_mode (nocedit +0x724, editor-only property callbacks) is gone; RTTI 1832 = nocedit 1836 - 4."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CPlatform",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x51c",
+        "delta": 0
+      },
+      {
+        "from": "0x728",
+        "to": "0x728",
+        "delta": -4
+      }
+    ],
+    "basis": "As bw1: rendered_in_background +0x724 in ctor 005110e0, process 005114f0, renderBackground 00512200, renderOpaque 005120b0. RTTI 1832."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CPlatform",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x158",
+        "to": "0x51c",
+        "delta": 348
+      },
+      {
+        "from": "0x728",
+        "to": "0x728",
+        "delta": 344
+      }
+    ],
+    "basis": "course (CCourse, unplaced): setup 00518280 / evaluatePosition 00518310 LEA +0x46c (nocedit +0x110); rendered_in_background +0x880 in ctor 005180b0, process 005184c0, renderBackground 005191d0, renderOpaque 00519080. RTTI 2180."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CTempleStone",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x66c",
+        "to": "0x66c",
+        "delta": 12
+      }
+    ],
+    "basis": "ctor 00584eb0 [EAX+0x678]=0; canPickup 00584f10 reads dest_actor [EBX+0x678]. Base CBoxActor is 1656 here. RTTI 1660."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CTempleStone",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x66c",
+        "to": "0x66c",
+        "delta": 360
+      }
+    ],
+    "basis": "ctor 00562430 [EAX+0x7d4]=0; canPickup 00562490 reads [EBX+0x7d4]. Base CBoxActor 2004. RTTI 2008."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CTempleStone",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x66c",
+        "to": "0x66c",
+        "delta": 124
+      }
+    ],
+    "basis": "ctor 00568920 [EAX+0x6e8]=0; canPickup 00568980 reads [EBX+0x6e8]. Base CBoxActor 1768. RTTI 1772."
+  },
+  {
+    "program": "bw1.exe",
+    "struct": "CTrigger",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x2f8",
+        "delta": 0
+      },
+      {
+        "from": "0x2fc",
+        "to": "0x36c",
+        "delta": 4
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x2fc",
+        "name": "hilite_actor",
+        "type": "CDemonActor *",
+        "len": 4
+      }
+    ],
+    "basis": "archive (trigger.cpp): hitPoints +0x2f8, autoAimAtMe +0x304, damageActorWildcard +0x308, hiliteActor archiveActor +0x2fc. ctor 0059afb0 stores this to +0x2fc; evaluateTriggerCondition 0059bc70 returns [EBX+0x2fc] through its out pointer. RTTI 884."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CTrigger",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x2f8",
+        "delta": 0
+      },
+      {
+        "from": "0x2fc",
+        "to": "0x36c",
+        "delta": 4
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x2fc",
+        "name": "hilite_actor",
+        "type": "CDemonActor *",
+        "len": 4
+      }
+    ],
+    "basis": "archive: shape +0x170, damageActorWildcard +0x308, hiliteActor archiveActor +0x2fc (as bw1). RTTI 884."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CTrigger",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x158",
+        "to": "0x2f8",
+        "delta": 348
+      },
+      {
+        "from": "0x2fc",
+        "to": "0x36c",
+        "delta": 352
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x458",
+        "name": "hilite_actor",
+        "type": "CDemonActor *",
+        "len": 4
+      }
+    ],
+    "basis": "archive: testRadius +0x2b4, triggerType +0x2b8, triggerSize +0x2bc, triggerState +0x2c8, shape +0x2cc, hitPoints +0x454, hiliteActor +0x458, autoAimAtMe +0x460, damageActorWildcard +0x464 (bw1 + 0x15c). RTTI 1232."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CVehicle",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x158",
+        "to": "0x1074",
+        "delta": 348
+      }
+    ],
+    "basis": "course (CCourse, unplaced): setup 00583c40 / process 00583f20 LEA [EBX+0x117c] (nocedit +0x1020); tires +0xa98 and tire_count +0xa94 = nocedit +0x15c. RTTI 4564."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CWaterActor",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x158",
+        "to": "0x2b234",
+        "delta": 348
+      }
+    ],
+    "basis": "every placed field sits at nocedit+348 on both sides of the unplaced primitives (grid_rows +0x8100, texture_frame +0x2b384), so primitives (SMRGLPrimitiveQuad[2000], 144000) sits at +0x8104. RTTI 177044."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CWaterActor",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x28c",
+        "delta": 0
+      },
+      {
+        "from": "0x298",
+        "to": "0x2b234",
+        "delta": 4
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x298",
+        "name": "is_lava",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "archive 00578af0: roundFlag +0x288, color r/g/b +0x28c/+0x290/+0x294, is_lava archiveInteger +0x298. ctor 00577d90 color=0xff, +0x298=0; CLava ctor 00579020 +0x298=1; renderTransparent 005787f0 reads +0x298 and color +0x28c..+0x294; vertex_count +0x29c in setup 00577ee0. RTTI 176700."
+  },
+  {
+    "program": "blairwitch2.exe",
+    "struct": "CWayPoint",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0x370",
+        "to": "0x554",
+        "delta": 352
+      }
+    ],
+    "basis": "ctor 00587d70 zeroes num_adjacent_waypoints +0x4d0; setup 00587dc0 walks adjacency from +0x4d4 (waypoint ptr) / +0x4d8 (distance) in steps of 8; FUN_005882d0 (pathfinding) uses pathfind_cost +0x6b4. Needs SWayPointAdjacency (8) laid out. RTTI 1724."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CBugs",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x0",
+        "delta": 0
+      },
+      {
+        "from": "0xbebc",
+        "to": "0x122c4",
+        "delta": 4504
+      },
+      {
+        "from": "0x128b8",
+        "to": "0x12b34",
+        "delta": 3364
+      },
+      {
+        "from": "0x19898",
+        "to": "0x1989c",
+        "delta": 9364
+      },
+      {
+        "from": "0x198a0",
+        "to": "0x199f4",
+        "delta": 9372
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x13460",
+        "name": "models",
+        "type": "CKeyFramedModelInstance[1]",
+        "len": 380
+      },
+      {
+        "offset": "0x1385c",
+        "name": "swarm_vertices",
+        "type": "SSwarmVertex[850]",
+        "len": 34000
+      },
+      {
+        "offset": "0x1bd34",
+        "name": "remove_bug_timer",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x1bd38",
+        "name": "max_life_timer",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x1be94",
+        "name": "has_attacked",
+        "type": "int",
+        "len": 4
+      },
+      {
+        "offset": "0x1be98",
+        "name": "attack_timer",
+        "type": "float",
+        "len": 4
+      },
+      {
+        "offset": "0x1be9c",
+        "name": "loop_sfx_handle",
+        "type": "uint",
+        "len": 4
+      },
+      {
+        "offset": "0x1bea0",
+        "name": "munch_sfx_handle",
+        "type": "uint",
+        "len": 4
+      }
+    ],
+    "basis": "ctor 00420ea0: __arrinit(+0xd05c, 0x190 SBug), __arrinit(+0x13460, count 1, CKeyFramedModelInstance) (nocedit count 4), state +0xd054, count +0xd058, model_count +0x1345c, swarm_target +0x1381c, deformable_model_ptr +0x13820, swarm_vertex_count +0x13858, allow_chase +0x1bd2c, allow_swarm +0x1bd30, event strings +0x1bd3c/+0x1bda0/+0x1be04, +0x1bd34=0, +0x1bd38=30.0, +0x1be94/+0x1be9c/+0x1bea0=0. addSwarmGraphEdge 00421be0 / setSwarmTarget 00423cd0 cap swarm_vertex_count at 0x352 (nocedit 700); 0x1bd2c-0x1385c = 850*40. archive 00421960: remove_bug_timer +0x1bd34, max_life_timer +0x1bd38. setup 00421060: grid_cell +0x1be80/+0x1be84, damage_timer +0x1be90; bounds +0x1be68 (getBoundingBox). process 00421300: counts +0x1bd38 and +0x1be98 down, plays wp_disease_loop.wav into +0x1be9c and wp_disease_munch.wav into +0x1bea0; +0x1bd34 is the 0.1s step that removes 3 bugs. updateBugsBehavior 004221c0 sets +0x1be94=1, +0x1be98=10.0 after attackSwarmTarget. RTTI 114340."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CBloodPool",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x10",
+        "delta": 0
+      },
+      {
+        "from": "0x14",
+        "to": "0x1c",
+        "delta": 4
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x14",
+        "name": "area_id",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "init 004cdff0: texture_variant +0x18, position +0x4..+0xc, age +0x1c, position_fixed +0x20, blood_type +0x10, +0x14 = current hero (array 0x1d5ba04[0x1d5ba14]) +0x2c = location.area_id. CGore_findBloodTypeAtPosition 004ceef0 compares the hero's area_id with pool[i]+0x14 at stride 0x2c. RTTI 44."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CBloodSplat",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x4",
+        "delta": 0
+      },
+      {
+        "from": "0x10",
+        "to": "0x38",
+        "delta": 4
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x10",
+        "name": "area_id",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "initGroundSplat 004cd450: position +0x4, is_wall_splat +0x14=0, blood_type +0x18, rotation +0x1c..+0x24 zeroed, age +0x28, texture_variant +0x2c, position_fixed +0x30, normal_fixed +0x3c, expired +0x0, +0x10 = current hero location.area_id (+0x2c). findBloodTypeAtPosition walks splats at stride 0x48. RTTI 72."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CExplosion",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x18",
+        "delta": 0
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x1c",
+        "name": "explosion_type",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "activate FUN_0049c730 (pair of nocedit 004c3970) takes a 5th argument and stores it at +0x1c: position +0x0, lifetime +0xc=1.0, scale +0x10, gore_multiplier +0x14, flip_flag +0x18; spawns rocks only when it is 0. Its caller FUN_004a36e0 uses the same value to pick the sound (0 xplode, 1 wp_bindevil, 3 wp_disease) and indexes explosions at stride 0x20. RTTI 32."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CLightningBolt",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x28",
+        "delta": 0
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x2c",
+        "name": "render_alpha",
+        "type": "int",
+        "len": 4
+      }
+    ],
+    "basis": "activate 0049f420: lifetime +0x14=0.25, mode +0x0=0, start_width +0x10, end_width +0x18, start_position +0x4, +0x2c=0xffff; activateDirectional 0049f470 stores end_spread +0x28, end_position +0x1c and its last argument to +0x2c; render FUN_0049f520 passes [EBP+0x2c] to setRenderAlpha. RTTI 48."
+  },
+  {
+    "program": "bw3.exe",
+    "struct": "CToss",
+    "shifts": [
+      {
+        "from": "0x0",
+        "to": "0x3dc",
+        "delta": 0
+      },
+      {
+        "from": "0x3e0",
+        "to": "0x3e0",
+        "delta": 4
+      }
+    ],
+    "added": [
+      {
+        "offset": "0x3e0",
+        "name": "fuse_time",
+        "type": "float",
+        "len": 4
+      }
+    ],
+    "basis": "ctor 0049ce90: model +0x4, CBox ctor at +0x180, +0x3dc=0. create FUN_0049cee0: toss_type +0x0, fuse_timer +0x3dc (clamped to 5.0), FSTP copy of it to +0x3e0, sfx_handle +0x3e4=0, physics_box +0x180. process FUN_0049d090 counts +0x3dc down and uses +0x3e0 - +0x3dc; reads sfx_handle +0x3e4. RTTI 1000."
+  }
+]

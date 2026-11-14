@@ -21,7 +21,7 @@
     {
       "addr": "00407860",
       "from_addr": "0040790e",
-      "name": "engine_3d.c_FUN_00407860",
+      "name": "engine_3d.c_dispatchMRGLToRenderer_FUN_00407860",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -79,7 +79,7 @@
       {
         "call_addr": "0040790e",
         "call_type": "direct",
-        "caller": "engine_3d.c_FUN_00407860",
+        "caller": "engine_3d.c_dispatchMRGLToRenderer_FUN_00407860",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -119,6 +119,14 @@
       "STORE": 2
     },
     "pcode_op_count": 75
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004076e0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,

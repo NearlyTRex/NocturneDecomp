@@ -22,19 +22,19 @@
     {
       "addr": "004b7f90",
       "from_addr": "004b8c6c",
-      "name": "core_game.cpp_FUN_004b7f90",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004ec8ce",
+      "addr": "004ec8d0",
       "from_addr": "004ec8db",
-      "name": "unkafter_minecar.cpp_FUN_004ec8ce",
+      "name": "engine_mini3d.cpp_swapBuffers_FUN_004ec8d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0057a8a0",
       "from_addr": "0057a987",
-      "name": "wincore_wddvmem.cpp_FUN_0057a8a0",
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -62,14 +62,14 @@
       "name": "engine_special.cpp_unlockFrame_FUN_00565870"
     },
     {
-      "addr": "0057a3c0",
-      "is_variadic": false,
-      "name": "wincore_wddvmem.cpp_FUN_0057a3c0"
-    },
-    {
       "addr": "0057a4b0",
       "is_variadic": false,
-      "name": "wincore_wddvmem.cpp_FUN_0057a4b0"
+      "name": "wincore_wddvmem.cpp_closeScreenDevice_FUN_0057a4b0"
+    },
+    {
+      "addr": "0057a3c0",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_openScreenDevice_FUN_0057a3c0"
     }
   ],
   "globals": [
@@ -134,7 +134,7 @@
       {
         "call_addr": "004b8c6c",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b7f90",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -145,7 +145,7 @@
       {
         "call_addr": "0057a987",
         "call_type": "direct",
-        "caller": "wincore_wddvmem.cpp_FUN_0057a8a0",
+        "caller": "wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -156,7 +156,7 @@
       {
         "call_addr": "004ec8db",
         "call_type": "direct",
-        "caller": "unkafter_minecar.cpp_FUN_004ec8ce",
+        "caller": "engine_mini3d.cpp_swapBuffers_FUN_004ec8d0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -208,6 +208,26 @@
       "SUBPIECE": 2
     },
     "pcode_op_count": 525
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0055ff40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00582990",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005b7c30",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7883
+    }
   },
   "stack_frame": {
     "frame_size": 4812,

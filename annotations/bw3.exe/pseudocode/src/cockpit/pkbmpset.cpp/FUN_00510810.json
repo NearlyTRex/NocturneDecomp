@@ -1,0 +1,482 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 215,
+    "complexity_score": 476,
+    "cross_reference_count": 0,
+    "function_call_count": 13,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 76,
+    "suspect_count": 38,
+    "suspect_types": [
+      "stack_param",
+      "stack_ref",
+      "unaffected_reg",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 291
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00510810",
+    "address_range": [
+      [
+        "00510810",
+        "00510a83"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "cockpit_pkbmpset.cpp_FUN_00510810",
+    "signature": "void cockpit_pkbmpset_cpp_FUN_00510810(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0050fa90",
+      "is_variadic": false,
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0050fa90"
+    },
+    {
+      "addr": "00510fb0",
+      "is_variadic": false,
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadStoredACTFile_FUN_00510fb0"
+    },
+    {
+      "addr": "00510670",
+      "is_variadic": false,
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_00510670"
+    },
+    {
+      "addr": "00510f90",
+      "is_variadic": false,
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_setFilename_FUN_00510f90"
+    },
+    {
+      "addr": "005106a0",
+      "is_variadic": false,
+      "name": "cockpit_pkbmpset.cpp_FUN_005106a0"
+    },
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "005a3650",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005a3650"
+    },
+    {
+      "addr": "005a3a90",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_005a3a90"
+    },
+    {
+      "addr": "005a3890",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fread_FUN_005a3890"
+    },
+    {
+      "addr": "005a3770",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a3770"
+    },
+    {
+      "addr": "005a28c0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
+    },
+    {
+      "addr": "004659c0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_FUN_004659c0"
+    },
+    {
+      "addr": "004657f0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFileSize_FUN_004657f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.106145251396648,
+    "instruction_count": 179,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 19,
+      "CBRANCH": 7,
+      "COPY": 137,
+      "INT_ADD": 67,
+      "INT_AND": 84,
+      "INT_CARRY": 23,
+      "INT_EQUAL": 71,
+      "INT_LEFT": 1,
+      "INT_LESS": 5,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 7,
+      "INT_OR": 5,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 24,
+      "INT_SDIV": 1,
+      "INT_SEXT": 7,
+      "INT_SLESS": 35,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 72,
+      "INT_XOR": 2,
+      "INT_ZEXT": 2,
+      "LOAD": 34,
+      "POPCOUNT": 35,
+      "RETURN": 2,
+      "STORE": 70,
+      "SUBPIECE": 6
+    },
+    "pcode_op_count": 735
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00538b30",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "ulong unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 13,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "_FILE *unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "CPackedBitmapSet *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "char *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000014",
+      "severity": "moderate",
+      "text": "char *in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000018",
+      "severity": "moderate",
+      "text": "int in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000020",
+      "severity": "moderate",
+      "text": "int in_stack_00000020;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_0000002c",
+      "severity": "moderate",
+      "text": "int in_stack_0000002c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "cockpit_pkbmpset_cpp_CPackedBitmapSet_reset_FUN_00510670(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "iVar1 = engine_dosio_cpp_getFileSize_FUN_004657f0((char *)0x5cbfe0,in_stack_0000000c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "p_Stack_14 = engine_dosio_cpp_FUN_004659c0((char *)0x5cbfe7,in_stack_0000000c,(char *)0x5cbfe4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 30,
+      "match": "&stack0xfffffe5c",
+      "severity": "moderate",
+      "text": "_sprintf(&stack0xfffffe5c,\"Unable to open %s in CPackedBitmapSet::loadJoinedRAW\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 33,
+      "match": "&stack0xfffffe5c",
+      "severity": "moderate",
+      "text": "core_main_c_FUN_004e4330(&stack0xfffffe5c);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "iVar2 = iVar1 / (in_stack_00000010 * in_stack_00000010);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "iVar2 = iVar1 / (in_stack_00000010 * in_stack_00000010);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 36,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "if (in_stack_00000010 * in_stack_00000010 * iVar2 - iVar1 != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 36,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "if (in_stack_00000010 * in_stack_00000010 * iVar2 - iVar1 != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 42,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "cockpit_pkbmpset_cpp_FUN_005106a0(in_stack_00000004,iVar2);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004->height = in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "in_stack_00000004->height = in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004->width = in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_00000018",
+      "severity": "moderate",
+      "text": "in_stack_00000004->width = in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 45,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "bitmap_data = (uchar *)malloc(unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 53,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "if (0 < in_stack_00000004->bitmap_count) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 56,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "SVar3 = _fread(bitmap_data,unaff_ESI,1,unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 56,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "SVar3 = _fread(bitmap_data,unaff_ESI,1,unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 65,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "((CPackedBitmap *)(in_stack_00000004->bitmap_array->filename + iVar2),bitmap_data,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 66,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004->width,in_stack_00000004->height,in_stack_00000020,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 66,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004->width,in_stack_00000004->height,in_stack_00000020,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 66,
+      "match": "in_stack_00000020",
+      "severity": "moderate",
+      "text": "in_stack_00000004->width,in_stack_00000004->height,in_stack_00000020,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 67,
+      "match": "in_stack_00000018",
+      "severity": "moderate",
+      "text": "in_stack_00000018);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 69,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "} while (iVar1 < in_stack_00000004->bitmap_count);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 74,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(in_stack_00000004,in_stack_00000014);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 74,
+      "match": "in_stack_00000014",
+      "severity": "moderate",
+      "text": "(in_stack_00000004,in_stack_00000014);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 75,
+      "match": "in_stack_0000002c",
+      "severity": "moderate",
+      "text": "if (in_stack_0000002c == 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 78,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "cockpit_pkbmpset_cpp_CPackedBitmapSet_loadStoredACTFile_FUN_00510fb0(in_stack_00000004);",
+      "type": "stack_param"
+    }
+  ]
+}

@@ -1,0 +1,326 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 194,
+    "complexity_score": 113,
+    "cross_reference_count": 0,
+    "function_call_count": 10,
+    "global_count": 18,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 58,
+    "suspect_count": 5,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
+    "total_lines": 252
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00419c50",
+    "address_range": [
+      [
+        "00419c50",
+        "00419e92"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_boneguy.cpp_CBoneGuy_archive_FUN_00419c50",
+    "signature": "void __cdecl core_boneguy_cpp_CBoneGuy_archive_FUN_00419c50(CBoneGuy *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b9e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveActor_FUN_0040b9e0"
+    },
+    {
+      "addr": "0040bae0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveDeformableModelInstance_FUN_0040bae0"
+    },
+    {
+      "addr": "0040b8e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b8e0"
+    },
+    {
+      "addr": "0040b960",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b960"
+    },
+    {
+      "addr": "0040bb60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040bb60"
+    },
+    {
+      "addr": "0040bc50",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archivePartStatus_FUN_0040bc50"
+    },
+    {
+      "addr": "0040b690",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveQuaternion_FUN_0040b690"
+    },
+    {
+      "addr": "0040b730",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b730"
+    },
+    {
+      "addr": "0040b4b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveVector_FUN_0040b4b0"
+    },
+    {
+      "addr": "00487ec0",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_archive_FUN_00487ec0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005cc2ca",
+      "name": "s_speed_005cc2c9+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cc2d0",
+      "name": "s_modelName_005cc2d0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc2da",
+      "name": "s_guardDistance_005cc2da",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc2e8",
+      "name": "s_motion_state_005cc2e8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc2f5",
+      "name": "s_deathEvent_005cc2f5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc300",
+      "name": "s_recombineTime_005cc300",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc30e",
+      "name": "s_blownUp_005cc30e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc316",
+      "name": "s_param_005cc316",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc31c",
+      "name": "s_boxCount_005cc31c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc325",
+      "name": "s_partStatus_005cc325",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc330",
+      "name": "s_boxListPos_005cc330",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc33b",
+      "name": "s_boxListOrient_005cc33b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc349",
+      "name": "s_boxListDestOrient_005cc349",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc35b",
+      "name": "s_boxListStartOrient_005cc35b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc36e",
+      "name": "s_sourcePos_005cc36e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc378",
+      "name": "s_boxListPart_005cc378",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc384",
+      "name": "s_victimHeight_005cc384",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00609924",
+      "name": "g_CBoneGuyClassVersion",
+      "type": "int",
+      "value": "0x5"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.8580246913580245,
+    "instruction_count": 162,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 18,
+      "CBRANCH": 6,
+      "COPY": 100,
+      "INT_ADD": 81,
+      "INT_AND": 103,
+      "INT_CARRY": 42,
+      "INT_EQUAL": 102,
+      "INT_LESS": 6,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 7,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 43,
+      "INT_SEXT": 3,
+      "INT_SLESS": 51,
+      "INT_SUB": 63,
+      "INT_XOR": 1,
+      "LOAD": 35,
+      "POPCOUNT": 51,
+      "RETURN": 2,
+      "STORE": 62,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 787
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0041d0d0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00419070",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0041d270",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00419ce0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBoneGuy *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `vector_ptr` was initialized to the address of an array element's subfield (`vector_ptr = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*vector_ptr)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `vector_ptr->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 45,
+      "match": "vector_ptr = vector_ptr + N",
+      "severity": "moderate",
+      "text": "vector_ptr = vector_ptr + 6;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `quat_ptr` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*quat_ptr) + offsetof(subfield)` equals the real array stride. Replace `quat_ptr->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 46,
+      "match": "quat_ptr = (T *)&quat_ptr[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "quat_ptr = (CQuaternion4f *)&quat_ptr[4].y;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `vector_ptr_00` was initialized to the address of an array element's subfield (`vector_ptr_00 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*vector_ptr_00)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `vector_ptr_00->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 49,
+      "match": "vector_ptr_00 = vector_ptr_00 + N",
+      "severity": "moderate",
+      "text": "vector_ptr_00 = vector_ptr_00 + 6;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `ppCStack_14` was initialized to the address of an array element's subfield (`ppCStack_14 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*ppCStack_14)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `ppCStack_14->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 50,
+      "match": "ppCStack_14 = ppCStack_14 + N",
+      "severity": "moderate",
+      "text": "ppCStack_14 = ppCStack_14 + 0x12;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCStack_18` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*pCStack_18) + offsetof(subfield)` equals the real array stride. Replace `pCStack_18->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 51,
+      "match": "pCStack_18 = (T *)&pCStack_18[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "pCStack_18 = (CQuaternion4f *)&pCStack_18[4].y;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 220,
+        "vtable_addr": "005f3844"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

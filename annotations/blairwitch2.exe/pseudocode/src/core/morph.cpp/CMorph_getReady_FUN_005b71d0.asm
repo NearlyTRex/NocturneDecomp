@@ -63,13 +63,13 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[7]:
-;   core_biggs.cpp_FUN_00414dd0 at 00414e28
-;   core_mimic.cpp_FUN_004f04f0 at 004f085a
-;   core_moloch.cpp_FUN_00501480 at 00501500
-;   core_moloch.cpp_FUN_00501530 at 00501bf9
-;   core_passngr.cpp_FUN_005115e0 at 00511671
-;   core_succubus.cpp_FUN_0056f3a0 at 0056f664
-;   core_vampboss.cpp_FUN_00581660 at 00581805
+;   core_biggs.cpp_CBiggs_setup_FUN_00414dd0 at 00414e28
+;   core_mimic.cpp_CMimic_setup_FUN_004f04f0 at 004f085a
+;   core_moloch.cpp_CMoloch_process_FUN_00501530 at 00501bf9
+;   core_moloch.cpp_CMoloch_setup_FUN_00501480 at 00501500
+;   core_passngr.cpp_CPassenger_setup_FUN_005115e0 at 00511671
+;   core_succubus.cpp_CSuccubus_setup_FUN_0056f3a0 at 0056f664
+;   core_vampboss.cpp_CVampireBoss_setup_FUN_00581660 at 00581805
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_morph_cpp_005f17cb
@@ -107,7 +107,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 005b71ff
     PUSH EAX                            ; 005b7203
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 005b7204
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005b7209
     MOV EAX,dword ptr [ESP + 0x11c]     ; 005b720c
     XOR EDI,EDI                         ; 005b7213

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * __cdecl core_inv_cpp_getItemDisplayName_FUN_004f62e0(undefined4 param_1)
+; char * __cdecl core_inv_cpp_getItemDisplayName_FUN_004f62e0(CDemonActor *actor_ptr)
 ;
+; Parameters:
+; CDemonActor *    Stack[0x4]:4   actor_ptr
 ;
 ; XREF[3]:
 ;   core_inv.cpp_CInventory_select_FUN_004f9bd0 at 004f9d2d
@@ -16,7 +18,7 @@
 ; Called Functions:
 ;   core_inv.cpp_FUN_004f60c0
 ;   crt_string.c__stricmp_FUN_005c04e0
-;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;
 ; *****************************************************************************
 
@@ -59,8 +61,8 @@ section .text
         ;   Label: LAB_004f6324
     PUSH 0x5e5f98                       ; 004f6325 | = "Add to dict: %s"
     PUSH 0x1d06d70                      ; 004f632a
-    CALL crt_unknown.c_FUN_005bfb40     ; 004f632f
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004f632f
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EAX,0x1d06d70                   ; 004f6334
     ADD ESP,0xc                         ; 004f6339
     POP EBP                             ; 004f633c

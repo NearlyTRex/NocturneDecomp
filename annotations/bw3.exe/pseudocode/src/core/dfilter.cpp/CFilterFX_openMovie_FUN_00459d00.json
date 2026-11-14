@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 152,
-    "complexity_score": 112,
+    "complexity_score": 57,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 3,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 42,
-    "suspect_count": 6,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 194
@@ -19,7 +18,7 @@
     {
       "addr": "00496560",
       "from_addr": "00496673",
-      "name": "core_filmreel.cpp_FUN_00496560",
+      "name": "core_filmreel.cpp_CFilmProjector_process_FUN_00496560",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -49,12 +48,17 @@
     {
       "addr": "00459ce0",
       "is_variadic": false,
-      "name": "core_dfilter.cpp_FUN_00459ce0"
+      "name": "core_dfilter.cpp_CFilterFX_free_FUN_00459ce0"
     },
     {
       "addr": "004e4330",
       "is_variadic": false,
       "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "005a3650",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005a3650"
     },
     {
       "addr": "005a3a90",
@@ -74,12 +78,7 @@
     {
       "addr": "005a28c0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a28c0"
-    },
-    {
-      "addr": "005a3650",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a3650"
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
     },
     {
       "addr": "004659c0",
@@ -113,7 +112,7 @@
       {
         "call_addr": "00496673",
         "call_type": "direct",
-        "caller": "core_filmreel.cpp_FUN_00496560",
+        "caller": "core_filmreel.cpp_CFilmProjector_process_FUN_00496560",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -124,7 +123,7 @@
       {
         "call_addr": "004966af",
         "call_type": "direct",
-        "caller": "core_filmreel.cpp_FUN_00496560",
+        "caller": "core_filmreel.cpp_CFilmProjector_process_FUN_00496560",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -173,6 +172,32 @@
     },
     "pcode_op_count": 706
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00447c50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0045ddb0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00470730",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9688
+    },
+    "nocturne.exe": {
+      "addr": "0044c310",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -204,46 +229,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(void **)&this_ptr->field_0x4 = pvVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "_fread(*(uint *)&this_ptr->field_0x4,0x2000,*(uint *)this_ptr,p_Var1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(char *)(iVar3 + *(int *)&this_ptr->field_0x4) =",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "(char)((uint)((int)(uint)*(byte *)(iVar3 + *(int *)&this_ptr->field_0x4) >> 2) / 2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x8 = 0;",
-      "type": "unnamed_field"
     }
   ]
 }

@@ -26,19 +26,18 @@ int __cdecl core_hero_cpp_FUN_004d3b20(CHero *this_ptr)
   int local_18;
   
   bVar2 = 0;
-  local_20 = *(CDemonActor **)(this_ptr + 0x20a24);
+  local_20 = (this_ptr->inventory).selected_item;
   if (local_20 != (CDemonActor *)0x0) {
     local_18 = 0;
-    for (local_1c = 0; local_1c < *(int *)&g_CDemonSetPtr->field_0x14d164; local_1c = local_1c + 1)
-    {
+    for (local_1c = 0; local_1c < g_CDemonSetPtr->actor_count; local_1c = local_1c + 1) {
       this_ptr_00 = (CActorDestination *)
                     core_actor_cpp_castToClassHash_FUN_0040c840
-                              (*(uint *)(&g_CDemonSetPtr->field_0x14d168 + local_18),
+                              (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_18),
                                g_CActorDestinationClassInfo.name_hash);
       if ((this_ptr_00 != (CActorDestination *)0x0) &&
          (iVar1 = core_dest_cpp_CActorDestination_acceptsActor_FUN_004594a0(this_ptr_00,local_20),
          iVar1 != 0)) {
-        core_actor_cpp_FUN_00408bf0(this_ptr,&this_ptr_00->field_0x20);
+        core_actor_cpp_FUN_00408bf0(this_ptr,&(this_ptr_00->base).location);
         local_38 = local_2c;
         (&stack0xffffffcc)[(uint)bVar2 * 0xfffffffe] =
              (float)*(uint *)(&stack0xffffffd8 + (uint)bVar2 * -8);
@@ -47,16 +46,16 @@ int __cdecl core_hero_cpp_FUN_004d3b20(CHero *this_ptr)
         if (((1.0 <= (double)local_34) &&
             ((((double)local_34 <= _DAT_005c4dcd && ((float)_DAT_005c4dd5 <= local_30)) &&
              ((double)local_30 <= _DAT_005c4ddd)))) && (ABS(local_38) <= (float)_DAT_005c4ddd)) {
-          core_vecdir_cpp_FUN_00576250(&stack0xffffffc8);
+          core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&stack0xffffffc8);
           *(uint *)((int)&stack0xffffffc0 + (uint)bVar2 * -8) =
                *(uint *)(&stack0xffffffb4 + (uint)bVar2 * -8);
           *(uint *)(&stack0xffffffc4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
                *(uint *)(&stack0xffffffb8 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
           if (ABS(local_40) <= (float)_DAT_005c4de5) {
-            *(uint *)(this_ptr + 0x20b7c) = 0;
-            *(uint *)(this_ptr + 0x20b68) = 6;
-            *(CDemonActor **)(this_ptr + 0x20b6c) = local_20;
-            *(CDemonActor **)(this_ptr + 0x20b70) = local_20;
+            this_ptr->hero_action_range = 0.0;
+            this_ptr->hero_action = 6;
+            this_ptr->hero_action_actor = local_20;
+            this_ptr->hero_action_target = local_20;
             return 1;
           }
         }

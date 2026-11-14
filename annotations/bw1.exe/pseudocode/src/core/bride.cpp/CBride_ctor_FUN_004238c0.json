@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 131,
+    "complexity_score": 36,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 21,
-    "suspect_count": 10,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 49
@@ -31,9 +30,9 @@
         "00423939"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_bride.cpp_CBride_ctor_FUN_004238c0",
-    "signature": "CBride * core_bride_cpp_CBride_ctor_FUN_004238c0(CBride *this_ptr)"
+    "signature": "CBride * __cdecl core_bride_cpp_CBride_ctor_FUN_004238c0(CBride *this_ptr)"
   },
   "function_calls": [
     {
@@ -44,7 +43,7 @@
     {
       "addr": "00569f50",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_00569f50"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50"
     }
   ],
   "globals": [
@@ -103,6 +102,26 @@
     },
     "pcode_op_count": 123
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0041d950",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9796
+    },
+    "nocedit.exe": {
+      "addr": "004237a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9583
+    },
+    "nocturne.exe": {
+      "addr": "0041fbb0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9583
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -127,78 +146,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "*(byte ***)&pCVar3->field_0x154 = &g_CBrideVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_00569f50(&pCVar3->field_0x158,\"bride.dfm\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x2fec",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x2fec = 0x3f400000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x2ff0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x2ff0 = 0x3fc00000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0xc290",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0xc290 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x252c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x252c = 0x3fc90fdb;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0xc28c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0xc28c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x2ff4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x2ff4 = uVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x2ff8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x2ff8 = uVar2;",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

@@ -1,20 +1,5 @@
 [
   {
-    "addr":"00496004",
-    "conv":"unknown",
-    "instructions":3,
-    "method":"FUN_00496004",
-    "name":"unkafter_mimic.cpp_FUN_00496004",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"unkafter/mimic.cpp",
-    "variadic":false
-  },
-  {
     "addr":"005a4404",
     "callers":[
       "005a4484"
@@ -52,11 +37,39 @@
     "instructions":58,
     "method":"freopen",
     "name":"crt_stdio.c_freopen_FUN_005a4484",
+    "params":[
+      {
+        "name":"filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"mode",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"stream",
+        "type":{
+          "header":"stdio",
+          "kind":"system",
+          "name":"_FILE",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "header":"stdio",
+      "kind":"system",
+      "name":"_FILE",
+      "ptr":1
     },
     "tu":"crt/stdio.c",
     "variadic":false
@@ -160,14 +173,14 @@
     "conv":"unknown",
     "instructions":7,
     "method":"FUN_005adc04",
-    "name":"unkafter_asgaya.cpp_FUN_005adc04",
+    "name":"crt_unknown.c_FUN_005adc04",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/asgaya.cpp",
+    "tu":"crt/unknown.c",
     "variadic":false
   },
   {
@@ -183,14 +196,14 @@
     "conv":"unknown",
     "instructions":15,
     "method":"FUN_005b0004",
-    "name":"unkafter_asgaya.cpp_FUN_005b0004",
+    "name":"crt_unknown.c_FUN_005b0004",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/asgaya.cpp",
+    "tu":"crt/unknown.c",
     "variadic":false
   }
 ]

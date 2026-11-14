@@ -16,7 +16,7 @@
     {
       "addr": "00581080",
       "from_addr": "005812d7",
-      "name": "wincore_winrun.cpp_FUN_00581080",
+      "name": "wincore_winrun.cpp_winMain_FUN_00581080",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -34,6 +34,11 @@
   },
   "function_calls": [
     {
+      "addr": "004119e0",
+      "is_variadic": false,
+      "name": "core_bmppuzzl.cpp_resetAllPuzzles_FUN_004119e0"
+    },
+    {
       "addr": "0045a8d0",
       "is_variadic": false,
       "name": "core_dfont.cpp_FUN_0045a8d0"
@@ -41,32 +46,42 @@
     {
       "addr": "004624d0",
       "is_variadic": false,
-      "name": "core_dmodel.cpp_FUN_004624d0"
+      "name": "core_dmodel.cpp_freeAllModels_FUN_004624d0"
     },
     {
       "addr": "004d95c0",
       "is_variadic": false,
-      "name": "core_inivar.cpp_FUN_004d95c0"
+      "name": "core_inivar.cpp_writeIniData_FUN_004d95c0"
+    },
+    {
+      "addr": "004e4d80",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4d80"
     },
     {
       "addr": "004f5b70",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004f5b70"
+      "name": "core_mission.cpp_CDemonMission_clearMission_FUN_004f5b70"
     },
     {
       "addr": "00503ed0",
       "is_variadic": false,
-      "name": "core_netgame.cpp_FUN_00503ed0"
+      "name": "core_netgame.cpp_CNetGame_shutdown_FUN_00503ed0"
     },
     {
       "addr": "005501a0",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_005501a0"
+      "name": "core_skeleton.cpp_freeAllModels_FUN_005501a0"
     },
     {
       "addr": "005502d0",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_005502d0"
+      "name": "core_skeleton.cpp_freeAllSkeletons_FUN_005502d0"
+    },
+    {
+      "addr": "0055fcc0",
+      "is_variadic": false,
+      "name": "core_sound.cpp_shutdownSoundSystem_FUN_0055fcc0"
     },
     {
       "addr": "00401120",
@@ -81,7 +96,7 @@
     {
       "addr": "00508c70",
       "is_variadic": false,
-      "name": "engine_ncursfx.cpp_FUN_00508c70"
+      "name": "engine_ncursfx.cpp_CMouse_reset_FUN_00508c70"
     },
     {
       "addr": "00514650",
@@ -89,29 +104,14 @@
       "name": "engine_pod.cpp_CPod_cleanup_FUN_00514650"
     },
     {
-      "addr": "0055fcc0",
+      "addr": "00581cf0",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_shutdownSoundSystem_FUN_0055fcc0"
-    },
-    {
-      "addr": "004119e0",
-      "is_variadic": false,
-      "name": "unkafter_alphabit.cpp_FUN_004119e0"
-    },
-    {
-      "addr": "004e4d80",
-      "is_variadic": false,
-      "name": "unkafter_main.cpp_FUN_004e4d80"
+      "name": "wincore_winrun.cpp_doNothing2_FUN_00581cf0"
     },
     {
       "addr": "00580690",
       "is_variadic": false,
       "name": "wincore_winrun.cpp_endPeriod_FUN_00580690"
-    },
-    {
-      "addr": "00581cf0",
-      "is_variadic": false,
-      "name": "wincore_winrun.cpp_FUN_00581cf0"
     }
   ],
   "globals": [
@@ -158,7 +158,7 @@
       {
         "call_addr": "005812d7",
         "call_type": "direct",
-        "caller": "wincore_winrun.cpp_FUN_00581080",
+        "caller": "wincore_winrun.cpp_winMain_FUN_00581080",
         "estimated_params": 0,
         "instructions_analyzed": 1,
         "method": "push_count",
@@ -192,6 +192,20 @@
       "STORE": 24
     },
     "pcode_op_count": 137
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004e4e20",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00503a30",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,

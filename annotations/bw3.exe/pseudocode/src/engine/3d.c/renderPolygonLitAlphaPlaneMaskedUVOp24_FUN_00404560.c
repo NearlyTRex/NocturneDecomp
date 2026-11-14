@@ -2,22 +2,22 @@
 // Address: 00404560
 // Address Range: [[00404560, 004046d1]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00404560(int param_1)
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00404560(SMRGLHeaderPrimitive *primitive)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int __cdecl engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00404560(int param_1)
+SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00404560(SMRGLHeaderPrimitive *primitive)
 
 {
   int iVar1;
-  int *piVar2;
+  SMRGLHeaderPrimitive *pSVar2;
   int *piVar3;
   
-  iVar1 = engine_3d_c_isVisiblePlane_FUN_00403920(param_1 + 8);
+  iVar1 = engine_3d_c_isVisiblePlane_FUN_00403920(&primitive->surface_normal);
   if (iVar1 == 0) goto LAB_00404580;
-  engine_3d_c_calculatePolygonLighting_FUN_004039d0(param_1);
+  engine_3d_c_calculatePolygonLighting_FUN_004039d0(primitive);
   if (_DAT_01c6e24c == 0) {
     if (_DAT_01c6e2a0 == 0) {
       if (DAT_005fba20 == 0x20) goto LAB_004045d6;
@@ -47,15 +47,16 @@ LAB_00404668:
   piVar3 = &DAT_00730418;
   _DAT_01c6e2b8 = 1;
   _DAT_01c6e2b4 = 0xd9;
-  piVar2 = (int *)(param_1 + 0x18);
-  for (iVar1 = 0; iVar1 < *(int *)(param_1 + 4) * 3; iVar1 = iVar1 + 3) {
-    *piVar3 = *piVar2 + DAT_007303e0;
-    (&DAT_0060b02c)[(*piVar2 + DAT_007303e0) * 0xc] = piVar2[1];
+  pSVar2 = primitive + 1;
+  for (iVar1 = 0; iVar1 < (primitive->base).count * 3; iVar1 = iVar1 + 3) {
+    *piVar3 = (pSVar2->base).type + DAT_007303e0;
+    (&DAT_0060b02c)[((pSVar2->base).type + DAT_007303e0) * 0xc] = (pSVar2->base).count;
     piVar3 = piVar3 + 1;
-    *(int *)(&DAT_0060b030 + (*piVar2 + DAT_007303e0) * 0x30) = piVar2[2];
-    piVar2 = piVar2 + 3;
+    *(UIntegerFloat *)(&DAT_0060b030 + ((pSVar2->base).type + DAT_007303e0) * 0x30) =
+         (pSVar2->surface_normal).A;
+    pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
   }
-  engine_clipper_c_clipAndRasterize_FUN_0043a840(*(int *)(param_1 + 4),&DAT_00730418);
+  engine_clipper_c_clipAndRasterize_FUN_0043a840((primitive->base).count,&DAT_00730418);
 LAB_00404580:
-  return param_1 + 0x18 + *(int *)(param_1 + 4) * 0xc;
+  return (SMRGLHeaderExtended *)((int)&primitive[1].base + (primitive->base).count * 0xc);
 }

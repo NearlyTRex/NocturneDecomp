@@ -13,8 +13,8 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[2]:
-;   core_turret.cpp_FUN_005a2280 at 005a22ce
-;   core_turret.cpp_FUN_005a28c0 at 005a28d5
+;   core_turret.cpp_CTurret_getBoundingBox_FUN_005a28c0 at 005a28d5
+;   core_turret.cpp_CTurret_renderOpaque_FUN_005a2280 at 005a22ce
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_005a2ac0 = 005a2b7d

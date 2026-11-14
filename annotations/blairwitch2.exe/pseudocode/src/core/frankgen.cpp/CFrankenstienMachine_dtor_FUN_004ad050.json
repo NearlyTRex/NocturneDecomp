@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 35,
+    "complexity_score": 19,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 20,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 67
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 19,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 66
   },
   "cross_references": [],
   "function": {
@@ -23,9 +21,9 @@
         "004ad0b4"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_frankgen.cpp_CFrankenstienMachine_dtor_FUN_004ad050",
-    "signature": "CFrankenstienMachine * core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_004ad050(CFrankenstienMachine *this_ptr,uint flags)"
+    "signature": "CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_004ad050(CFrankenstienMachine *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -93,6 +91,26 @@
     },
     "pcode_op_count": 153
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004c6000",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004d28a0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00495430",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -116,16 +134,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x45c",
-      "severity": "mild",
-      "text": "pCVar1 = core_course_cpp_CCourse_dtor_FUN_00438a70((CCourse *)&this_ptr->field_0x45c,0);",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

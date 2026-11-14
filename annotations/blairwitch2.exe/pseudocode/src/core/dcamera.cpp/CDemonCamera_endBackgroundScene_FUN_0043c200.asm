@@ -31,8 +31,8 @@
 ;
 ; Called Functions:
 ;   core_dstrendr.cpp_memcpyMMX_FUN_00470201
-;   engine_matrix.c_popViewport_FUN_0046b740
-;   engine_special.cpp_FUN_00560030
+;   engine_drender.cpp_popViewport_FUN_0046b740
+;   engine_special.cpp_masterZBuffer_FUN_00560030
 ;
 ; *****************************************************************************
 
@@ -58,8 +58,8 @@ section .text
     MOV EBX,dword ptr [0x0060b280]      ; 0043c21c | DAT_0060b280
         ;   Label: LAB_0043c21c
     PUSH EBX                            ; 0043c222 | DAT_01ba5c50
-    CALL engine_matrix.c_popViewport_FUN_0046b740 ; 0043c223
-        ;   XREF to: 0046b740 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_popViewport_FUN_0046b740()
+    CALL engine_drender.cpp_popViewport_FUN_0046b740 ; 0043c223
+        ;   XREF to: 0046b740 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_popViewport_FUN_0046b740()
     MOV EAX,[0x01c35e38]                ; 0043c228 | DAT_01c35e38
     MOV dword ptr [EBP + 0x1c0],EAX     ; 0043c22d
     MOV EAX,[0x01c35e3c]                ; 0043c233 | DAT_01c35e3c
@@ -130,8 +130,8 @@ section .text
     JZ 0x0043c217                       ; 0043c317
         ;   XREF to: 0043c217 (CONDITIONAL_JUMP)  ; LAB_0043c217
     PUSH 0x0                            ; 0043c31d
-    CALL engine_special.cpp_FUN_00560030 ; 0043c31f
-        ;   XREF to: 00560030 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_00560030(int slot)
+    CALL engine_special.cpp_masterZBuffer_FUN_00560030 ; 0043c31f
+        ;   XREF to: 00560030 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_masterZBuffer_FUN_00560030(int slot)
     ADD ESP,0x4                         ; 0043c324
     POP EBP                             ; 0043c327
     POP EDI                             ; 0043c328

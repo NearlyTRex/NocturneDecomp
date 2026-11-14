@@ -1,0 +1,142 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 54,
+    "complexity_score": 57,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 32,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 86
+  },
+  "cross_references": [
+    {
+      "addr": "005a7eb0",
+      "from_addr": "005a7eba",
+      "name": "core_bwgrndma.cpp_FUN_005a7eb0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a7f50",
+    "address_range": [
+      [
+        "005a7f50",
+        "005a7ffd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bwspart.cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a7f50",
+    "signature": "int __cdecl core_bwspart_cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a7f50(CSimpleParticleSystem *this_ptr,int param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a84c0",
+      "is_variadic": false,
+      "name": "core_bwspart.cpp_FUN_005a84c0"
+    },
+    {
+      "addr": "005b8580",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005b8580"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005a7eba",
+        "call_type": "direct",
+        "caller": "core_bwgrndma.cpp_FUN_005a7eb0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0,
+    "instruction_count": 47,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 1,
+      "CALL": 2,
+      "CBRANCH": 2,
+      "COPY": 42,
+      "INT_ADD": 31,
+      "INT_AND": 34,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 23,
+      "INT_LEFT": 2,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 13,
+      "INT_SUB": 10,
+      "INT_XOR": 3,
+      "LOAD": 10,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "STORE": 22
+    },
+    "pcode_op_count": 235
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSimpleParticleSystem *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "int __cdecl core_bwspart_cpp_CSimpleParticleSystem_ctorCapacity_FUN_005a7f50(CSimpleParticleSystem *this_ptr,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "this_ptr->max_particles = param_2;",
+      "type": "unnamed_param"
+    }
+  ]
+}

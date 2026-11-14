@@ -16,83 +16,90 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_dstrendr.cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_0046f9bc",
-    "ret":"undefined1",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
-  },
-  {
-    "addr":"004927bc",
-    "body":[
-      {
-        "end":"004927d0",
-        "size":21,
-        "start":"004927bc"
-      }
-    ],
-    "importable":true,
-    "name":"unkafter_mimic.cpp_FUN_004927bc",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
-  },
-  {
-    "addr":"004933bc",
-    "body":[
-      {
-        "end":"0049340f",
-        "size":84,
-        "start":"004933bc"
-      }
-    ],
-    "importable":true,
-    "name":"core_fire.cpp_FUN_004933bc",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
-  },
-  {
-    "addr":"0057513c",
-    "body":[
-      {
-        "end":"0057514a",
-        "size":15,
-        "start":"0057513c"
-      }
-    ],
-    "importable":true,
-    "name":"engine_texture.cpp_FUN_0057513c",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
-  },
-  {
-    "addr":"0058873c",
-    "body":[
-      {
-        "end":"0058878c",
-        "size":81,
-        "start":"0058873c"
-      }
-    ],
-    "importable":true,
-    "name":"wincore_wddvmem.cpp_FUN_0058873c",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"output_buffer",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"ulonglong*"
+        },
+        {
+          "name":"texture_buffer",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"ulonglong*"
+        },
+        {
+          "name":"texture_indices",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"byte*"
+        },
+        {
+          "name":"lightmap_indices",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"byte*"
+        },
+        {
+          "name":"pixel_count",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -107,6 +114,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005b8a3c",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -122,13 +130,29 @@
         "start":"005b9bbc"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"crt_unknown.c_FUN_005b9bbc",
-    "ret":"undefined1",
+    "name":"crt_unknown.c_fflush_FUN_005b9bbc",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"stream",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"_FILE*"
+        }
+      ]
     }
   },
   {
@@ -143,6 +167,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005c0b3c",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -159,8 +184,9 @@
       }
     ],
     "importable":true,
-    "name":"unkafter_morph.cpp_FUN_005c28bc",
+    "name":"crt_unknown.c_FUN_005c28bc",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -177,8 +203,9 @@
       }
     ],
     "importable":true,
-    "name":"unkafter_morph.cpp_FUN_005c293c",
+    "name":"crt_unknown.c_FUN_005c293c",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -198,6 +225,7 @@
     "importable":true,
     "name":"crt_kernel32.c_GetFullPathNameA",
     "ret":"DWORD",
+    "sig":"imported",
     "thtarget":"EXTERNAL:0000006e",
     "thunk":true,
     "vars":{
@@ -292,6 +320,7 @@
     "importable":true,
     "name":"crt_gdi32.c_SetBkColor",
     "ret":"COLORREF",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000011",
     "thunk":true,
     "vars":{
@@ -354,6 +383,7 @@
     "importable":true,
     "name":"crt_kernel32.c_SetConsoleMode",
     "ret":"BOOL",
+    "sig":"imported",
     "thtarget":"EXTERNAL:0000008b",
     "thunk":true,
     "vars":{

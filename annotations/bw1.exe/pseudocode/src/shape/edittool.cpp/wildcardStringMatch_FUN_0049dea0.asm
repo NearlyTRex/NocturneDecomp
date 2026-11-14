@@ -12,9 +12,9 @@
 ;   core_charactr.cpp_FUN_00435380 at 0043540f
 ;   core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004de100 at 004de1bf
 ;   core_script.cpp_CScript_step_FUN_00544460 at 00549242
-;   core_sound.cpp_FUN_0057be00 at 0057be46
+;   core_sound.cpp_CSound_findRandomSoundFile_FUN_0057be00 at 0057be46
 ;   core_sound.cpp_filterSoundFilesByPattern_FUN_0057b6e0 at 0057b712
-;   core_trigger.cpp_FUN_0059bdf0 at 0059be25
+;   core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_0059bdf0 at 0059be25
 ;   engine_pod.cpp_CPod_getNextSearchResult_FUN_0053cb50 at 0053cbf8
 ;   shape_edittool.cpp_FUN_0049a300 at 0049a41d
 ;

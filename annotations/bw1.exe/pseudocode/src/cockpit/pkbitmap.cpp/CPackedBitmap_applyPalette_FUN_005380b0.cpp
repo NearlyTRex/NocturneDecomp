@@ -9,6 +9,6 @@
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPalette_FUN_005380b0(CPackedBitmap *this_ptr)
 
 {
-  cockpit_pkbitmap_cpp_FUN_00538000(this_ptr,(char *)this_ptr);
+  cockpit_pkbitmap_cpp_CPackedBitmap_applyACTPalette_FUN_00538000(this_ptr,this_ptr->filename);
   return;
 }

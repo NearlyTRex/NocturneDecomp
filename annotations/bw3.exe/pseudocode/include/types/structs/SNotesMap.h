@@ -2,15 +2,34 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct SNotesEntry;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CAlphaBitmap.h"
+#include "types/structs/SNotesMapAnnotation.h"
+#include "types/structs/SNotesMapSet.h"
 
 // Structure: SNotesMap
-// Stub: size from Watcom RTTI, fields not yet recovered
+// static array of 4, stride 0x126c; RTTI size
 // Ghidra size: 0x126c (4716 bytes)
 #pragma pack(push, 1)
 typedef struct SNotesMap {
-    char field_0[4716]; // 0x0
+    struct SNotesEntry* entry; // 0x0, \map stores the new entry; map code reads entry->kind
+    char image_name[100]; // 0x4, \image splitPath target; load passes it to CAlphaBitmap_load; ctor zeroes byte 0
+    int width; // 0x68, \image sscanf %d; load size; SPageResourceMap width
+    int height; // 0x6c, \image sscanf %d; load size; SPageResourceMap height
+    CAlphaBitmap image; // 0x70, CAlphaBitmap ctor/load/display/free on +0x70
+    void* saved_alpha; // 0x84, load reallocs width*height and copies the image's alpha; applyReveal multiplies by it; reset frees
+    CAlphaBitmap reveal_mask; // 0x88, CAlphaBitmap ctor; load creates it at width/2 x height/2; revealPixel writes its alpha bytes
+    int set_count; // 0x9c, \set increments (limit 10); loops in load/worldToMap
+    SNotesMapSet sets[10]; // 0xa0, \set sscanf targets at +0xa0 + i*0x88
+    int annotation_count; // 0x5f0, \annotation increments (limit 15); ctor zeroes
+    SNotesMapAnnotation annotations[15]; // 0x5f4, \annotation sscanf targets at +0x5f4 + i*0xd4
+    int last_reveal_x; // 0x1260, reset -1; revealCircle skips when unchanged, then stores
+    int last_reveal_y; // 0x1264, reset -1; revealCircle
+    int reveal_dirty; // 0x1268, reset 1; revealPixel sets 1; draw calls applyReveal when set; applyReveal clears
 } SNotesMap;
 #pragma pack(pop)
 

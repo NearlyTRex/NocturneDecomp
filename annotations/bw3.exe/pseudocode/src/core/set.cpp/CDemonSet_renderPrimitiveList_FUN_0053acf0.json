@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 79,
+    "complexity_score": 80,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 5,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 29,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 30,
     "suspect_count": 4,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_field"
+      "shadow_pointer_walk",
+      "undefined_data"
     ],
-    "total_lines": 93
+    "total_lines": 94
   },
   "cross_references": [
     {
@@ -39,7 +39,7 @@
     {
       "addr": "004f5370",
       "is_variadic": false,
-      "name": "core_mirror.cpp_FUN_004f5370"
+      "name": "core_mirror.cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_004f5370"
     },
     {
       "addr": "0046b240",
@@ -74,7 +74,7 @@
     },
     {
       "addr": "01d21520",
-      "name": "g_CGameInstance.field532_0x214",
+      "name": "g_CGameInstance.suppress_set_geometry",
       "type": "undefined4",
       "value": null
     }
@@ -127,6 +127,32 @@
     },
     "pcode_op_count": 231
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005340b0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00555360",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005708e0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0050df40",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9107
+    }
+  },
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -159,19 +185,11 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x214",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x214 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 8,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "if (*(int *)(DAT_005f2afc + 0x18) == 0) {",
+      "text": "if (DAT_005f2afc->advanced_culling_enabled == 0) {",
       "type": "undefined_data"
     },
     {
@@ -183,12 +201,20 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x161668",
-      "severity": "mild",
-      "text": "core_mirror_cpp_FUN_004f5370(*(uint *)&this_ptr->field_0x161668,primitive_array);",
-      "type": "unnamed_field"
+      "description": "Watcom shadow-pointer walk \u2014 `primitive_array` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*primitive_array) + offsetof(subfield)` equals the real array stride. Replace `primitive_array->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 15,
+      "match": "primitive_array = (T *)&primitive_array[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "primitive_array = (SMRGLHeaderPrimitive *)&primitive_array[1].surface_normal.C;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `primitive_array` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*primitive_array) + offsetof(subfield)` equals the real array stride. Replace `primitive_array->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 27,
+      "match": "primitive_array = (T *)&primitive_array[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "primitive_array = (SMRGLHeaderPrimitive *)&primitive_array[1].surface_normal.C;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

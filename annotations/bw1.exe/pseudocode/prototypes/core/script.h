@@ -5,13 +5,9 @@
 // Function prototypes for core/script.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_script.cpp_staticInit_FUN_00503070
-// Address: 00503070
-void __cdecl staticInit(void);
-
 // Original: core_script.cpp_staticInit_FUN_005430c0
 // Address: 005430c0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_script.cpp_validateActorVariableName_FUN_00543100
 // Address: 00543100
@@ -39,15 +35,15 @@ char * __cdecl parseConditionExpr(char **cursor,char *out_buffer);
 
 // Original: core_script.cpp_getActor_FUN_005433c0
 // Address: 005433c0
-CDemonActor * __cdecl getActor(char *param_1,undefined4 param_2,undefined4 param_3);
+CDemonActor * __cdecl getActor(char *actor_specifier,uint expected_class_hash,CDemonActorType *expected_class);
 
 // Original: core_script.cpp_getActionState_FUN_00543540
 // Address: 00543540
-int __cdecl getActionState(int param_1,char *param_2);
+int * __cdecl getActionState(SPlayerActionState *action_state,char *action_name);
 
-// Original: core_script.cpp_FUN_00543610
+// Original: core_script.cpp_parseBodyPartMask_FUN_00543610
 // Address: 00543610
-int __cdecl FUN_00543610(CCharacter *character,char *part_names,int *part_mask);
+int __cdecl parseBodyPartMask(CCharacter *character,char *part_names,int *part_mask);
 
 // Original: core_script.cpp_CScript_ctor_FUN_005436d0
 // Address: 005436d0
@@ -57,110 +53,110 @@ CScript * __cdecl CScript::ctor(CScript *this_ptr);
 // Address: 00543710
 CScript * __cdecl CScript::dtor(CScript *this_ptr,uint flags);
 
-// Original: core_script.cpp_FUN_00543740
+// Original: core_script.cpp_CScript_clear_FUN_00543740
 // Address: 00543740
-void FUN_00543740(CScript *param_1);
+void __cdecl CScript::clear(CScript *this_ptr);
 
-// Original: core_script.cpp_FUN_00543790
+// Original: core_script.cpp_CScript_freeParsedLines_FUN_00543790
 // Address: 00543790
-void __cdecl FUN_00543790(CScript *this_ptr);
+void __cdecl CScript::freeParsedLines(CScript *this_ptr);
 
-// Original: core_script.cpp_FUN_005437f0
+// Original: core_script.cpp_CScript_process_FUN_005437f0
 // Address: 005437f0
-void __cdecl FUN_005437f0(CScript *this_ptr);
+void __cdecl CScript::process(CScript *this_ptr);
 
 // Original: core_script.cpp_CScript_getLetterboxHeight_FUN_00543950
 // Address: 00543950
 int __cdecl CScript::getLetterboxHeight(CScript *this_ptr);
 
-// Original: core_script.cpp_FUN_005439b0
+// Original: core_script.cpp_CScript_renderSubtitles_FUN_005439b0
 // Address: 005439b0
-void __cdecl FUN_005439b0(CScript *this_ptr);
+void __cdecl CScript::renderSubtitles(CScript *this_ptr);
 
-// Original: core_script.cpp_FUN_00543c00
+// Original: core_script.cpp_CScript_renderEditor_FUN_00543c00
 // Address: 00543c00
-void __cdecl FUN_00543c00(CScript *this_ptr,int left,int top,int right,int bottom);
+void __cdecl CScript::renderEditor(CScript *this_ptr,int left,int top,int right,int bottom);
 
 // Original: core_script.cpp_FUN_00543e00
 // Address: 00543e00
 undefined4 FUN_00543e00(CScript *param_1,char *param_2);
 
-// Original: core_script.cpp_FUN_00543fd0
+// Original: core_script.cpp_CScript_buildParsedLines_FUN_00543fd0
 // Address: 00543fd0
-void __cdecl FUN_00543fd0(CScript *this_ptr);
+void __cdecl CScript::buildParsedLines(CScript *this_ptr);
 
 // Original: core_script.cpp_FUN_00544100
 // Address: 00544100
 undefined * FUN_00544100(CScript *param_1,int *param_2,int param_3);
 
-// Original: core_script.cpp_FUN_00544190
+// Original: core_script.cpp_CScript_initRuntime_FUN_00544190
 // Address: 00544190
-void __cdecl FUN_00544190(CScript *this_ptr);
+void __cdecl CScript::initRuntime(CScript *this_ptr);
 
-// Original: core_script.cpp_FUN_00544310
+// Original: core_script.cpp_CScript_executeInitSection_FUN_00544310
 // Address: 00544310
-void __cdecl FUN_00544310(CScript *this_ptr);
+void __cdecl CScript::executeInitSection(CScript *this_ptr);
 
 // Original: core_script.cpp_CScript_step_FUN_00544460
 // Address: 00544460
 int __cdecl CScript::step(CScript *this_ptr,float *time_remaining);
 
-// Original: core_script.cpp_FUN_0054aa60
+// Original: core_script.cpp_CScript_startDialogLine_FUN_0054aa60
 // Address: 0054aa60
-float FUN_0054aa60(void *param_1,undefined4 param_2,char *param_3,char *param_4);
+float __cdecl CScript::startDialogLine(CScript *this_ptr,char *actor_specifier,char *sound_name,char *dialog_text);
 
 // Original: core_script.cpp_CScript_processTimer_FUN_0054ac20
 // Address: 0054ac20
 int __cdecl CScript::processTimer(CScript *this_ptr,float delta_time,float *timer_value);
 
-// Original: core_script.cpp_FUN_0054aca0
+// Original: core_script.cpp_CScript_setSpeaker_FUN_0054aca0
 // Address: 0054aca0
-void __cdecl FUN_0054aca0(CScript *this_ptr,CDemonActor *actor);
+void __cdecl CScript::setSpeaker(CScript *this_ptr,CDemonActor *actor);
 
-// Original: core_script.cpp_FUN_0054acc0
+// Original: core_script.cpp_CScript_findLabelIndex_FUN_0054acc0
 // Address: 0054acc0
-int __cdecl FUN_0054acc0(CScript *this_ptr,char *label_name);
+int __cdecl CScript::findLabelIndex(CScript *this_ptr,char *label_name);
 
-// Original: core_script.cpp_FUN_0054ad20
+// Original: core_script.cpp_CScript_skipCommands_FUN_0054ad20
 // Address: 0054ad20
-int FUN_0054ad20(int param_1,int param_2,int param_3);
+int __cdecl CScript::skipCommands(CScript *this_ptr,int direction,int count);
 
-// Original: core_script.cpp_FUN_0054ae10
+// Original: core_script.cpp_CScript_resetDialogState_FUN_0054ae10
 // Address: 0054ae10
-void FUN_0054ae10(CScript *param_1);
+void __cdecl CScript::resetDialogState(CScript *this_ptr);
 
-// Original: core_script.cpp_FUN_0054ae40
+// Original: core_script.cpp_CScript_skipCinematic_FUN_0054ae40
 // Address: 0054ae40
-int __cdecl FUN_0054ae40(CScript *this_ptr);
+int __cdecl CScript::skipCinematic(CScript *this_ptr);
 
 // Original: core_script.cpp_CScript_dbLoad_FUN_0054af20
 // Address: 0054af20
 void __cdecl CScript::dbLoad(CScript *this_ptr,char *filename);
 
-// Original: core_script.cpp_FUN_0054b2a0
+// Original: core_script.cpp_CScript_findDialogEntry_FUN_0054b2a0
 // Address: 0054b2a0
-int __cdecl FUN_0054b2a0(CScript *this_ptr,char *path);
+int __cdecl CScript::findDialogEntry(CScript *this_ptr,char *path);
 
 // Original: core_script.cpp_readActorReference_FUN_0054b320
 // Address: 0054b320
-void __cdecl readActorReference(undefined4 param_1,undefined4 *param_2);
+void __cdecl readActorReference(_FILE *file_handle,CDemonActor *actor_out);
 
 // Original: core_script.cpp_writeActorReference_FUN_0054b3a0
 // Address: 0054b3a0
-void __cdecl writeActorReference(undefined4 param_1,int *param_2);
+void __cdecl writeActorReference(_FILE *file_handle,CDemonActor **actor);
 
 // Original: core_script.cpp_CScript_loadState_FUN_0054b3e0
 // Address: 0054b3e0
 void __cdecl CScript::loadState(CScript *this_ptr,_FILE *file_handle);
 
-// Original: core_script.cpp_FUN_0054b710
+// Original: core_script.cpp_CScript_saveState_FUN_0054b710
 // Address: 0054b710
-void __cdecl FUN_0054b710(CScript *this_ptr,_FILE *file_handle);
+void __cdecl CScript::saveState(CScript *this_ptr,_FILE *file_handle);
 
-// Original: core_script.cpp_FUN_0054b940
+// Original: core_script.cpp_CScript_computeChecksum_FUN_0054b940
 // Address: 0054b940
-uint __cdecl FUN_0054b940(CScript *this_ptr);
+uint __cdecl CScript::computeChecksum(CScript *this_ptr);
 
-// Original: core_script.cpp_FUN_0054b9a0
+// Original: core_script.cpp_getDeformableModelFilename_FUN_0054b9a0
 // Address: 0054b9a0
-char * __cdecl FUN_0054b9a0(CDeformableModel *model_ptr);
+char * __cdecl getDeformableModelFilename(CDeformableModel *model_ptr);

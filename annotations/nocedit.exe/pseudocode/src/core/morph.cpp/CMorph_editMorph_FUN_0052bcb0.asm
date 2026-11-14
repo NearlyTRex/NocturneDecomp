@@ -1119,7 +1119,7 @@ section .text
     LEA EAX,[ESP + 0x4920]              ; 0052ca64
     PUSH EAX                            ; 0052ca6b
     CALL core_morph.cpp_SMorphControlPoint_arrdtor20_FUN_0052ccb0 ; 0052ca6c
-        ;   XREF to: 0052ccb0 (UNCONDITIONAL_CALL)  ; SMorphControlPoint * core_morph.cpp_SMorphControlPoint_arrdtor20_FUN_0052ccb0(SMorphControlPoint * objs, uint flags)
+        ;   XREF to: 0052ccb0 (UNCONDITIONAL_CALL)  ; SMorphControlPoint * core_morph.cpp_SMorphControlPoint_arrdtor20_FUN_0052ccb0(SMorphControlPoint * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0052ca71
     PUSH 0x0                            ; 0052ca74
     LEA EAX,[ESP + 0x10]                ; 0052ca76

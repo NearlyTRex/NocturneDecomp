@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 support_codec_cpp_FUN_00442c80(int *param_1,undefined4 param_2,undefined4 param_3,int *param_4,int param_5)
+; undefined4 support_codec_cpp_FUN_00442c80(int *param_1,undefined4 param_2,char *param_3,int *param_4,int param_5)
 ;
 ;
 ; Called Functions:
+;   support_trstream.cpp_COutStreamMemory_ctorOpen_FUN_005a1ad0
 ;   support_trstream.cpp_COutStreamMemory_dtor_FUN_005a1b60
-;   support_trstream.cpp_FUN_005a1ad0
-;   support_trstream.cpp_FUN_005a1d10
+;   support_trstream.cpp_COutStreamMemory_tell_FUN_005a1d10
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     PUSH ECX                            ; 00442c95
     LEA EAX,[ESP + 0x8]                 ; 00442c96
     PUSH EAX                            ; 00442c9a
-    CALL support_trstream.cpp_FUN_005a1ad0 ; 00442c9b
-        ;   XREF to: 005a1ad0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005a1ad0()
+    CALL support_trstream.cpp_COutStreamMemory_ctorOpen_FUN_005a1ad0 ; 00442c9b
+        ;   XREF to: 005a1ad0 (UNCONDITIONAL_CALL)  ; COutStreamMemory * support_trstream.cpp_COutStreamMemory_ctorOpen_FUN_005a1ad0(COutStreamMemory * this_ptr, char * buffer, int capacity)
     ADD ESP,0xc                         ; 00442ca0
     MOV EBX,ESP                         ; 00442ca3
     PUSH EBX                            ; 00442ca5
@@ -47,8 +47,8 @@ section .text
     MOV EAX,ESP                         ; 00442cc2
         ;   Label: LAB_00442cc2
     PUSH EAX                            ; 00442cc4
-    CALL support_trstream.cpp_FUN_005a1d10 ; 00442cc5
-        ;   XREF to: 005a1d10 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005a1d10()
+    CALL support_trstream.cpp_COutStreamMemory_tell_FUN_005a1d10 ; 00442cc5
+        ;   XREF to: 005a1d10 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_COutStreamMemory_tell_FUN_005a1d10(COutStreamMemory * this_ptr)
     ADD ESP,0x4                         ; 00442cca
     MOV EDX,dword ptr [EDI]             ; 00442ccd
     PUSH 0x0                            ; 00442ccf

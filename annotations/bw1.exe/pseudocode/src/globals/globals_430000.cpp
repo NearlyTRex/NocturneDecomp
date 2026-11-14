@@ -7,7 +7,6 @@
 // string
 string caseD_0 = "k=Tu|";
 string caseD_2 = "k=Tu|";
-string caseD_0 = "k=Tu|";
 string caseD_2 = "k=Tu|";
 string caseD_0 = "k=Tu|";
 string caseD_2 = "k=Tu|";

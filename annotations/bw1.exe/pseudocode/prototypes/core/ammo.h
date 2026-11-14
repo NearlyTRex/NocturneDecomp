@@ -7,47 +7,47 @@
 
 // Original: core_ammo.cpp_staticInit_FUN_0040db60
 // Address: 0040db60
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_ammo.cpp_factoryFuncAmmo_FUN_0040db90
 // Address: 0040db90
-void factoryFuncAmmo(void);
+CAmmo * __cdecl factoryFuncAmmo(void);
 
 // Original: core_ammo.cpp_CAmmo_getActorType_FUN_0040dbb0
 // Address: 0040dbb0
-CDemonActorType * CAmmo::getActorType(CAmmo *this_ptr);
+CDemonActorType * __cdecl CAmmo::getActorType(CAmmo *this_ptr);
 
 // Original: core_ammo.cpp_CAmmo_ctor_FUN_0040dbc0
 // Address: 0040dbc0
 CAmmo * __cdecl CAmmo::ctor(CAmmo *this_ptr);
 
-// Original: core_ammo.cpp_FUN_0040dc50
+// Original: core_ammo.cpp_CAmmo_setup_FUN_0040dc50
 // Address: 0040dc50
-void FUN_0040dc50(CDemonActor *param_1);
+void __cdecl CAmmo::setup(CAmmo *this_ptr);
 
-// Original: core_ammo.cpp_FUN_0040dc70
+// Original: core_ammo.cpp_CAmmo_process_FUN_0040dc70
 // Address: 0040dc70
-void FUN_0040dc70(void);
+void __cdecl CAmmo::process(CAmmo *this_ptr,float delta_time);
 
-// Original: core_ammo.cpp_FUN_0040dc80
+// Original: core_ammo.cpp_CAmmo_renderOpaque_FUN_0040dc80
 // Address: 0040dc80
-int FUN_0040dc80(CDemonActor *param_1);
+int __cdecl CAmmo::renderOpaque(CAmmo *this_ptr);
 
-// Original: core_ammo.cpp_FUN_0040dd00
+// Original: core_ammo.cpp_CAmmo_getBoundingBox_FUN_0040dd00
 // Address: 0040dd00
-void FUN_0040dd00(int param_1);
+CBoundingBox3D * __cdecl CAmmo::getBoundingBox(CAmmo *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_ammo.cpp_CAmmo_archive_FUN_0040dd40
 // Address: 0040dd40
 void __cdecl CAmmo::archive(CAmmo *this_ptr);
 
-// Original: core_ammo.cpp_FUN_0040dda0
+// Original: core_ammo.cpp_CAmmo_getCollisionType_FUN_0040dda0
 // Address: 0040dda0
-undefined4 FUN_0040dda0(void);
+ECollisionType __cdecl CAmmo::getCollisionType(CAmmo *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_ammo.cpp_FUN_0040ddd0
+// Original: core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ddd0
 // Address: 0040ddd0
-void __cdecl FUN_0040ddd0(CAmmo *this_ptr,char *weapon_class_name);
+void __cdecl CAmmo::setWeaponClass(CAmmo *this_ptr,char *weapon_class_name);
 
 // Original: core_ammo.cpp_CAmmo_setAmmoCount_FUN_0040dfd0
 // Address: 0040dfd0

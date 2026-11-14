@@ -15,7 +15,7 @@
 ; Referenced Globals:
 ;   undefined4 DAT_005b892a
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 g_CDemonSetInstance.field1396340_0x154e74
+;   undefined4 g_CDemonSetInstance.waypoint_count
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
@@ -42,7 +42,7 @@ section .text
     MOV EAX,[0x00603b28]                ; 004348d8 | g_CDemonSetPtr
         ;   Label: LAB_004348d8
     MOV EBX,dword ptr [ESP + 0x1f4c]    ; 004348dd
-    CMP EBX,dword ptr [EAX + 0x154e74]  ; 004348e4 | g_CDemonSetInstance.field1396340_0x154e74
+    CMP EBX,dword ptr [EAX + 0x154e74]  ; 004348e4 | g_CDemonSetInstance.waypoint_count
     JL 0x0043492d                       ; 004348ea
         ;   XREF to: 0043492d (CONDITIONAL_JUMP)  ; LAB_0043492d
     MOV ECX,dword ptr [ESP + 0x1f48]    ; 004348ec

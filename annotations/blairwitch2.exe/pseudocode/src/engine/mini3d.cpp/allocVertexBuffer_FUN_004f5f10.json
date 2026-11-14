@@ -1,0 +1,211 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 40,
+    "complexity_score": 117,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 17,
+    "suspect_count": 8,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_ram",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 57
+  },
+  "cross_references": [
+    {
+      "addr": "004f22a0",
+      "from_addr": "004f22a5",
+      "name": "engine_mini3d.cpp_init_FUN_004f22a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f5f10",
+    "address_range": [
+      [
+        "004f5f10",
+        "004f5f6f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_mini3d.cpp_allocVertexBuffer_FUN_004f5f10",
+    "signature": "void * __cdecl engine_mini3d_cpp_allocVertexBuffer_FUN_004f5f10(int vertex_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "005b8580",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005b8580"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004f22a5",
+        "call_type": "direct",
+        "caller": "engine_mini3d.cpp_init_FUN_004f22a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.914285714285715,
+    "instruction_count": 35,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "CALL": 2,
+      "CBRANCH": 1,
+      "COPY": 31,
+      "INT_ADD": 14,
+      "INT_AND": 32,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 19,
+      "INT_LEFT": 2,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 11,
+      "INT_SUB": 10,
+      "INT_XOR": 1,
+      "LOAD": 7,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 9
+    },
+    "pcode_op_count": 172
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00514c90",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004f0460",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 12,
+      "match": "(void *)((int)pvVar1",
+      "severity": "moderate",
+      "text": "pvVar2 = (void *)((int)pvVar1 + 0x20U & 0xffffffe0);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(char *)((int)pvVar2",
+      "severity": "moderate",
+      "text": "*(char *)((int)pvVar2 + -1) = (char)pvVar2 - (char)pvVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined RAM reference",
+      "line": 19,
+      "match": "uRam0000001f",
+      "severity": "mild",
+      "text": "uRam0000001f = 0x20;",
+      "type": "undefined_ram"
+    },
+    {
+      "description": "Pointer value `pvVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 12,
+      "match": "(int)pvVar1",
+      "severity": "moderate",
+      "text": "pvVar2 = (void *)((int)pvVar1 + 0x20U & 0xffffffe0);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 13,
+      "match": "(int)pvVar2",
+      "severity": "moderate",
+      "text": "*(char *)((int)pvVar2 + -1) = (char)pvVar2 - (char)pvVar1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar2` truncated by cast to `char` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 13,
+      "match": "(char)pvVar2",
+      "severity": "moderate",
+      "text": "*(char *)((int)pvVar2 + -1) = (char)pvVar2 - (char)pvVar1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar1` truncated by cast to `char` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 13,
+      "match": "(char)pvVar1",
+      "severity": "moderate",
+      "text": "*(char *)((int)pvVar2 + -1) = (char)pvVar2 - (char)pvVar1;",
+      "type": "pointer_truncation"
+    }
+  ]
+}

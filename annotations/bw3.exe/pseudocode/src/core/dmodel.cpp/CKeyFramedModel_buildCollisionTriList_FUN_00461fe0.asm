@@ -7,8 +7,8 @@
 ; CKeyFramedModel * Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_dmodel.cpp_FUN_004606a0 at 0046087a
-;   core_dmodel.cpp_FUN_00460890 at 00460df2
+;   core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_004606a0 at 0046087a
+;   core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00460890 at 00460df2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_005bba75
@@ -18,10 +18,10 @@
 ;   undefined4 DAT_02cfd900
 ;
 ; Called Functions:
-;   core_dmodel.cpp_FUN_004620c0
+;   core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_004620c0
 ;   core_main.c_FUN_004e4330
+;   crt_memory.c_operator_new_array_FUN_005a40df
 ;   crt_unknown.c_FUN_005a30b6
-;   crt_unknown.c_FUN_005a40df
 ;
 ; *****************************************************************************
 
@@ -73,8 +73,8 @@ section .text
     SHL EAX,0x3                         ; 00462072
     SUB EAX,EDX                         ; 00462075
     PUSH EAX                            ; 00462077
-    CALL crt_unknown.c_FUN_005a40df     ; 00462078
-        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a40df()
+    CALL crt_memory.c_operator_new_array_FUN_005a40df ; 00462078
+        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005a40df()
     ADD ESP,0x4                         ; 0046207d
     MOV dword ptr [EBX + 0x358],EAX     ; 00462080
     TEST EAX,EAX                        ; 00462086
@@ -91,8 +91,8 @@ section .text
     PUSH 0x2cfd900                      ; 004620ac | DAT_02cfd900
         ;   Label: LAB_004620ac
     PUSH EBX                            ; 004620b1
-    CALL core_dmodel.cpp_FUN_004620c0   ; 004620b2
-        ;   XREF to: 004620c0 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_004620c0()
+    CALL core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_004620c0 ; 004620b2
+        ;   XREF to: 004620c0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_004620c0(CKeyFramedModel * this_ptr, CVector3f * transform_vector)
     ADD ESP,0x8                         ; 004620b7
     POP EBP                             ; 004620ba
         ;   Label: LAB_004620ba

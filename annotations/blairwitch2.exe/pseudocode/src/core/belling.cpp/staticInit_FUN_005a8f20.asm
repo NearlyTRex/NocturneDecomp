@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_belling_cpp_staticInit_FUN_005a8f20(void)
+; void __cdecl core_belling_cpp_staticInit_FUN_005a8f20(void)
 ;
 ;
 ; Called Functions:

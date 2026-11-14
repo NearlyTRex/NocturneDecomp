@@ -9,6 +9,7 @@
 ;
 ; XREF[9]:
 ;   core_asgaya.cpp_CAsgaya_dtor_FUN_005a1b50 at 005a1b65
+;   core_bird.cpp_CBird_dtor_FUN_004101f0 at 00410205
 ;   core_hero.cpp_FUN_004d2620 at 004d265a
 ;   core_npc.cpp_CNPC_dtor_FUN_00509af0 at 00509b05
 ;   core_passngr.cpp_CPassenger_dtor_FUN_0050a530 at 0050a583
@@ -16,7 +17,6 @@
 ;   core_spirbear.cpp_CSpiritBear_dtor_FUN_0059b540 at 0059b579
 ;   core_spireagl.cpp_CSpiritEagle_dtor_FUN_00599e40 at 00599e79
 ;   core_spirindi.cpp_CSpiritIndian_dtor_FUN_0059a970 at 0059a9a9
-;   unkafter_bird.cpp_CBird_dtor_FUN_004101f0 at 00410205
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01ec1518

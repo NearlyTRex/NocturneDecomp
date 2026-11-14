@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBoxActor.h"
 
 // Structure: CNecklace
-// Stub: size from Watcom RTTI, fields not yet recovered
+// registered under CBoxActor (registerActorClass); size 2004 from RTTI; no fields of its own
 // Ghidra size: 0x7d4 (2004 bytes)
 #pragma pack(push, 1)
 typedef struct CNecklace {
-    char field_0[2004]; // 0x0
+    CBoxActor base; // 0x0, parent class
 } CNecklace;
 #pragma pack(pop)
 

@@ -2,34 +2,32 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 183,
-    "complexity_score": 358,
+    "complexity_score": 189,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 68,
-    "suspect_count": 26,
+    "pseudocode_lines": 69,
+    "suspect_count": 10,
     "suspect_types": [
-      "param_count_too_few",
       "raw_address_pointer_store",
       "undefined_data",
-      "unnamed_param",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 251
+    "total_lines": 252
   },
   "cross_references": [
+    {
+      "addr": "0054aa60",
+      "from_addr": "0054aa9e",
+      "name": "core_script.cpp_CScript_startDialogLine_FUN_0054aa60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "00544460",
       "from_addr": "00545c9b",
       "name": "core_script.cpp_CScript_step_FUN_00544460",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0054aa60",
-      "from_addr": "0054aa9e",
-      "name": "core_script.cpp_FUN_0054aa60",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -43,13 +41,13 @@
     ],
     "convention": "__cdecl",
     "name": "core_script.cpp_getActor_FUN_005433c0",
-    "signature": "CDemonActor * __cdecl core_script_cpp_getActor_FUN_005433c0(char *param_1,undefined4 param_2,undefined4 param_3)"
+    "signature": "CDemonActor * __cdecl core_script_cpp_getActor_FUN_005433c0(char *actor_specifier,uint expected_class_hash,CDemonActorType *expected_class)"
   },
   "function_calls": [
     {
       "addr": "00408830",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408830"
+      "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408830"
     },
     {
       "addr": "0040c5d0",
@@ -64,7 +62,7 @@
     {
       "addr": "0051b6c0",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_0051b6c0"
+      "name": "core_mission.cpp_CDemonMission_findActorByName_FUN_0051b6c0"
     },
     {
       "addr": "00543100",
@@ -79,7 +77,7 @@
     {
       "addr": "005bfb40",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005bfb40"
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
     }
   ],
   "globals": [
@@ -325,10 +323,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
     "estimated_params": 3,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.214765100671141,
@@ -356,13 +354,61 @@
     },
     "pcode_op_count": 628
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00521290",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005289b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005594e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004fe180",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "actor_specifier",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "expected_class_hash",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "expected_class",
+        "offset": 12,
+        "size": 4,
+        "type": "CDemonActorType *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -374,46 +420,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "CDemonActor * __cdecl core_script_cpp_getActor_FUN_005433c0(char *param_1,uint param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "CDemonActor * __cdecl core_script_cpp_getActor_FUN_005433c0(char *param_1,uint param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "CDemonActor * __cdecl core_script_cpp_getActor_FUN_005433c0(char *param_1,uint param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1 == (char *)0x0) || (*param_1 == '\\0')) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((param_1 == (char *)0x0) || (*param_1 == '\\0')) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 16,
       "match": "DAT_01e810b0",
@@ -422,139 +428,59 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*param_1 == '@') {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = core_script_cpp_validateActorVariableName_FUN_00543100(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = core_event_cpp_CEventList_getActorByVarName_FUN_004aa1d0(0x01C51D80,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_005bfb40(&DAT_01e810b0,\"Actor variable %s not defined, or doesn't reference an existing actor\",param_1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 39,
       "match": "DAT_01e810b0",
       "severity": "mild",
-      "text": "FUN_005bfb40(&DAT_01e810b0,\"Actor variable %s not defined, or doesn't reference an existing actor\",param_1);",
+      "text": "_sprintf(&DAT_01e810b0,\"Actor variable %s not defined, or doesn't reference an existing actor\");",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = _stricmp(param_1,&DAT_005ee033);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 44,
       "match": "DAT_005ee033",
       "severity": "mild",
-      "text": "iVar2 = _stricmp(param_1,&DAT_005ee033);",
+      "text": "iVar2 = _stricmp(actor_specifier,&DAT_005ee033);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 47,
       "match": "DAT_01e810b0",
       "severity": "mild",
-      "text": "FUN_005bfb40(&DAT_01e810b0,\"Can't use '$' actor specifier in multi-player\");",
+      "text": "_sprintf(&DAT_01e810b0,\"Can't use '$' actor specifier in multi-player\");",
       "type": "undefined_data"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 49,
+      "line": 50,
       "match": "*(CDemonActor **)(_DAT_01d06ab4 * 4 + 0x1d06aa4",
       "severity": "moderate",
-      "text": "this_ptr = *(CDemonActor **)(_DAT_01d06ab4 * 4 + 0x1d06aa4);",
+      "text": "actor_ptr = *(CDemonActor **)(_DAT_01d06ab4 * 4 + 0x1d06aa4);",
       "type": "raw_address_pointer_store"
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 53,
       "match": "DAT_01e810b0",
       "severity": "mild",
-      "text": "FUN_005bfb40(&DAT_01e810b0,\"Hero doesn't exist!!?!\");",
+      "text": "_sprintf(&DAT_01e810b0,\"Hero doesn't exist!!?!\");",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 57,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "this_ptr = core_mission_cpp_FUN_0051b6c0(0x01D2C900,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_005bfb40(&DAT_01e810b0,\"Actor \\\"%s\\\" does not exist.\",param_1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 61,
       "match": "DAT_01e810b0",
       "severity": "mild",
-      "text": "FUN_005bfb40(&DAT_01e810b0,\"Actor \\\"%s\\\" does not exist.\",param_1);",
+      "text": "_sprintf(&DAT_01e810b0,\"Actor \\\"%s\\\" does not exist.\");",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar2 = core_actor_cpp_isOfClassHash_FUN_0040c5d0(this_ptr,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 68,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&DAT_01e810b0,\"Actor \\\"%s\\\" is of type %s, this command requires an actor of type %s.\",param_1,pcVar3,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 68,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(&DAT_01e810b0,\"Actor \\\"%s\\\" is of type %s, this command requires an actor of type %s.\",param_1,pcVar3,param_3);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 68,
+      "line": 69,
       "match": "DAT_01e810b0",
       "severity": "mild",
-      "text": "(&DAT_01e810b0,\"Actor \\\"%s\\\" is of type %s, this command requires an actor of type %s.\",param_1,pcVar3,param_3);",
+      "text": "_sprintf(&DAT_01e810b0,\"Actor \\\"%s\\\" is of type %s, this command requires an actor of type %s.\");",
       "type": "undefined_data"
     },
     {
@@ -564,17 +490,6 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
-    },
-    {
-      "call_site_count": 38,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

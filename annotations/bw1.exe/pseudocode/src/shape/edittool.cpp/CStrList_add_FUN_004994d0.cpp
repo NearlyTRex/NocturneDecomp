@@ -9,6 +9,6 @@
 void __cdecl shape_edittool_cpp_CStrList_add_FUN_004994d0(CStrList *this_ptr,char *string_data)
 
 {
-  (**(code **)(*(int *)&this_ptr->field_0xc + 0xc))(this_ptr,*(uint *)this_ptr,string_data);
+  (*((this_ptr->vtable)._us)->insert)(this_ptr,this_ptr->item_count,string_data);
   return;
 }

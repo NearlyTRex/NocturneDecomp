@@ -4,12 +4,13 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CSoundDevice.h"
 
 // Structure: CWavInDevice
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x4 (4 bytes)
 #pragma pack(push, 1)
 typedef struct CWavInDevice {
+    CSoundDevice base; // 0x0
 } CWavInDevice;
 #pragma pack(pop)
 

@@ -14,7 +14,7 @@ void __cdecl core_sound_cpp_CSound_playAmbientSound_FUN_00560940(CSound *this_pt
   char cVar1;
   char *pcVar2;
   
-  core_sound_cpp_FUN_00560b00(this_ptr,_DAT_02cf5ec0);
+  core_sound_cpp_CSound_killSound_FUN_00560b00(this_ptr,_DAT_02cf5ec0);
   pcVar2 = &DAT_02cf5e98;
   do {
     cVar1 = *sound_name;

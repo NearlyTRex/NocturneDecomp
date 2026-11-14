@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CBoundingBox3D
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x18 (24 bytes)
 #pragma pack(push, 1)
 typedef struct CBoundingBox3D {
-    char field_0[24]; // 0x0
+    CVector3f min; // 0x0
+    CVector3f max; // 0xc
 } CBoundingBox3D;
 #pragma pack(pop)
 

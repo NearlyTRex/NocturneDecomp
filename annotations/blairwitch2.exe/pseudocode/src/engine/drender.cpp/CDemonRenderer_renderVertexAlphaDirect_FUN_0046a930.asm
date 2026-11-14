@@ -8,16 +8,16 @@
 ; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ;
 ; XREF[17]:
+;   core_bwspart.cpp_FUN_005a86a0 at 005a8c60
 ;   core_charactr.cpp_FUN_0042b760 at 0042be48
 ;   core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_00448b00 at 00448c72
+;   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_0044b960 at 0044c114
 ;   core_dlight.cpp_FUN_0044b020 at 0044b55b
-;   core_dlight.cpp_FUN_0044b960 at 0044c114
-;   core_dlight.cpp_FUN_0044c15e at 0044c7a1
-;   core_dlight.cpp_FUN_0044d060 at 0044d520
-;   core_fire.cpp_CLaserBeam_render_FUN_00497800 at 00498024
-;   core_fire.cpp_CPopcorn_render_FUN_0049b9d0 at 0049bd04
-;   core_fire.cpp_FUN_004947a0 at 004948c9
-;   core_fire.cpp_FUN_00495150 at 0049528f
+;   core_dlight.cpp_FUN_0044c160 at 0044c7a1
+;   core_dlight.cpp_renderConeLightGeometry_FUN_0044d060 at 0044d520
+;   core_fire.cpp_CFireball_render_FUN_00495ca0 at 0049605f
+;   core_fire.cpp_CFirefly_render_FUN_00495150 at 0049528f
+;   core_fire.cpp_CGunFlame_render_FUN_0049a500 at 0049aa7b
 ;   ... and 7 more
 ;
 ; Referenced Globals:
@@ -99,7 +99,7 @@ section .text
         ;   Label: LAB_0046a9b1
     PUSH EAX                            ; 0046a9b4
     CALL engine_3d.c_isVisiblePlane_FUN_00403970 ; 0046a9b5
-        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403970()
+        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403970(SClipPlane * plane)
     ADD ESP,0x4                         ; 0046a9ba
     TEST EAX,EAX                        ; 0046a9bd
     JZ 0x0046a9ac                       ; 0046a9bf

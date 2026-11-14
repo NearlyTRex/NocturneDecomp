@@ -15,7 +15,7 @@
 ;   undefined4 DAT_005f7ba8
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cfc0
+;   core_actor.cpp_getRandomInt_FUN_0040cfc0
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
         ;   Label: LAB_004c7e29
     PUSH 0x0                            ; 004c7e2b
     LEA EBX,[ESI + 0x2c]                ; 004c7e2d
-    CALL core_actor.cpp_FUN_0040cfc0    ; 004c7e30
-        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cfc0(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cfc0 ; 004c7e30
+        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cfc0(int min_value, int max_value)
     ADD ESP,0x8                         ; 004c7e35
     MOV dword ptr [ESI + 0x28],EAX      ; 004c7e38
     MOV EAX,EDI                         ; 004c7e3b

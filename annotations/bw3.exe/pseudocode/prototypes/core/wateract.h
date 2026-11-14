@@ -7,55 +7,59 @@
 
 // Original: core_wateract.cpp_staticInit_FUN_00577cf0
 // Address: 00577cf0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_wateract.cpp_factoryFuncWaterActor_FUN_00577d60
 // Address: 00577d60
-void factoryFuncWaterActor(void);
+CWaterActor * __cdecl factoryFuncWaterActor(void);
 
 // Original: core_wateract.cpp_CWaterActor_getActorType_FUN_00577d80
 // Address: 00577d80
-CDemonActorType * CWaterActor::getActorType(CWaterActor *this_ptr);
+CDemonActorType * __cdecl CWaterActor::getActorType(CWaterActor *this_ptr);
 
 // Original: core_wateract.cpp_CWaterActor_ctor_FUN_00577d90
 // Address: 00577d90
 CWaterActor * __cdecl CWaterActor::ctor(CWaterActor *this_ptr);
 
-// Original: core_wateract.cpp_FUN_00577ee0
+// Original: core_wateract.cpp_CWaterActor_setup_FUN_00577ee0
 // Address: 00577ee0
-void FUN_00577ee0(CDemonActor *param_1);
+void __cdecl CWaterActor::setup(CWaterActor *this_ptr);
 
 // Original: core_wateract.cpp_FUN_00578490
 // Address: 00578490
 void FUN_00578490(int param_1);
 
-// Original: core_wateract.cpp_FUN_00578670
+// Original: core_wateract.cpp_FUN_00578570
+// Address: 00578570
+void FUN_00578570(int param_1);
+
+// Original: core_wateract.cpp_CWaterActor_process_FUN_00578670
 // Address: 00578670
-void FUN_00578670(int param_1,float param_2);
+void __cdecl CWaterActor::process(CWaterActor *this_ptr,float delta_time);
 
-// Original: core_wateract.cpp_FUN_005787f0
+// Original: core_wateract.cpp_CWaterActor_renderTransparent_FUN_005787f0
 // Address: 005787f0
-int FUN_005787f0(CDemonActor *param_1);
+int __cdecl CWaterActor::renderTransparent(CWaterActor *this_ptr);
 
-// Original: core_wateract.cpp_FUN_00578a70
+// Original: core_wateract.cpp_CWaterActor_getBoundingBox_FUN_00578a70
 // Address: 00578a70
-void FUN_00578a70(int param_1);
+CBoundingBox3D * __cdecl CWaterActor::getBoundingBox(CWaterActor *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_wateract.cpp_FUN_00578af0
+// Original: core_wateract.cpp_CWaterActor_archive_FUN_00578af0
 // Address: 00578af0
-void FUN_00578af0(CDemonActor *param_1);
+void __cdecl CWaterActor::archive(CWaterActor *this_ptr);
 
 // Original: core_wateract.cpp_CWaterActor_getCollisionType_FUN_00578d00
 // Address: 00578d00
 ECollisionType __cdecl CWaterActor::getCollisionType(CWaterActor *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_wateract.cpp_FUN_00578d20
+// Original: core_wateract.cpp_CWaterActor_getGroundType_FUN_00578d20
 // Address: 00578d20
-undefined4 FUN_00578d20(void);
+EGroundType __cdecl CWaterActor::getGroundType(CWaterActor *this_ptr);
 
-// Original: core_wateract.cpp_FUN_00578d30
+// Original: core_wateract.cpp_CWaterActor_customRayIntersect_FUN_00578d30
 // Address: 00578d30
-float FUN_00578d30(int param_1,undefined4 param_2,undefined4 param_3,float *param_4);
+float __cdecl CWaterActor::customRayIntersect(CWaterActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 
 // Original: core_wateract.cpp_CWaterActor_onLaserHit_FUN_00578fc0
 // Address: 00578fc0
@@ -65,22 +69,22 @@ void __cdecl CWaterActor::onLaserHit(CWaterActor *this_ptr,SLaserInfo *laser_inf
 // Address: 00578ff0
 void FUN_00578ff0(void);
 
-// Original: core_wateract.cpp_FUN_00579010
+// Original: core_wateract.cpp_CLava_getActorType_FUN_00579010
 // Address: 00579010
-undefined4 FUN_00579010(void);
+CDemonActorType * __cdecl CLava::getActorType(CLava *this_ptr);
 
 // Original: core_wateract.cpp_CLava_ctor_FUN_00579020
 // Address: 00579020
-CLava * CLava::ctor(CLava *this_ptr);
+CLava * __cdecl CLava::ctor(CLava *this_ptr);
 
 // Original: core_wateract.cpp_CLava_dtor_FUN_00579050
 // Address: 00579050
-CLava * CLava::dtor(CLava *this_ptr,uint flags);
+CLava * __cdecl CLava::dtor(CLava *this_ptr,uint flags);
 
 // Original: core_wateract.cpp_CWaterActor_dtor_FUN_005790a0
 // Address: 005790a0
-CWaterActor * CWaterActor::dtor(CWaterActor *this_ptr,uint flags);
+CWaterActor * __cdecl CWaterActor::dtor(CWaterActor *this_ptr,uint flags);
 
 // Original: core_wateract.cpp_SWaterVertex_ctor_FUN_005790f0
 // Address: 005790f0
-SWaterVertex * SWaterVertex::ctor(SWaterVertex *this_ptr);
+SWaterVertex * __cdecl SWaterVertex::ctor(SWaterVertex *this_ptr);

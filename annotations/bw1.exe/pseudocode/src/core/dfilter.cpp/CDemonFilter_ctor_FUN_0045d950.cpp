@@ -13,11 +13,11 @@ CDemonFilter * __cdecl core_dfilter_cpp_CDemonFilter_ctor_FUN_0045d950(CDemonFil
   char *pcVar2;
   char *pcVar3;
   
-  *(uint *)&this_ptr->field_0x48 = 0;
+  this_ptr->data_buffer = (uchar *)0x0;
   pcVar2 = "unnamed";
-  *(uint *)this_ptr = 0x40;
-  pcVar3 = &this_ptr->field_0x8;
-  *(uint *)&this_ptr->field_0x4 = 0x40;
+  this_ptr->size = 0x40;
+  pcVar3 = this_ptr->name;
+  this_ptr->count = 0x40;
   do {
     cVar1 = *pcVar2;
     *pcVar3 = cVar1;

@@ -2,23 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 431,
-    "complexity_score": 715,
+    "complexity_score": 556,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 190,
-    "suspect_count": 49,
+    "pseudocode_lines": 196,
+    "suspect_count": 33,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk",
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 621
+    "total_lines": 627
   },
   "cross_references": [
     {
@@ -28,9 +27,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00533e5e",
+      "addr": "00533e60",
       "from_addr": "005342a9",
-      "name": "core_set.cpp_FUN_00533e5e",
+      "name": "core_set.cpp_FUN_00533e60",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -51,7 +50,7 @@
     {
       "addr": "0044a3e0",
       "is_variadic": false,
-      "name": "core_dcamera.cpp_FUN_0044a3e0"
+      "name": "core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044a3e0"
     },
     {
       "addr": "0045f490",
@@ -135,7 +134,7 @@
       {
         "call_addr": "005342a9",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00533e5e",
+        "caller": "core_set.cpp_FUN_00533e60",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -192,6 +191,32 @@
       "SUBPIECE": 4
     },
     "pcode_op_count": 2201
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0043d220",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0044e8e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0044de10",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9628
+    },
+    "nocturne.exe": {
+      "addr": "00441c50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7367
+    }
   },
   "stack_frame": {
     "frame_size": 144,
@@ -434,386 +459,258 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 15,
+      "line": 18,
       "match": "aiStackY_185c",
       "severity": "moderate",
       "text": "int aiStackY_185c [1523];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x1c74",
-      "severity": "mild",
-      "text": "iVar1 = _strcmp(&light_source->field_0x1c74,\"@movscrn.raw\" + 1);",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(int *)((int)_DAT_00b9e554",
+      "severity": "moderate",
+      "text": "piVar2 = (int *)((int)_DAT_00b9e554 * 0x4b000 + 0xb9e558);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 57,
-      "match": "field_0x1c48",
-      "severity": "mild",
-      "text": "*(int *)&light_source->field_0x1c48 = iVar1;",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(byte *)((int)_DAT_00b9e554",
+      "severity": "moderate",
+      "text": "puVar6 = (byte *)((int)_DAT_00b9e554 + 1);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 64,
-      "match": "field_0x1c4c",
-      "severity": "mild",
-      "text": "*(int *)&light_source->field_0x1c4c = iVar1;",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 63,
+      "match": "(ushort **)((int)puVar7",
+      "severity": "moderate",
+      "text": "ppuVar3 = (ushort **)((int)puVar7 * 0x4b000 + 0xb9e558);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
+      "line": 69,
+      "match": "(CRect *)((int)_DAT_00b9e554",
+      "severity": "moderate",
+      "text": "_DAT_00b9e554 = (CRect *)((int)_DAT_00b9e554 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 70,
-      "match": "field_0x1c50",
-      "severity": "mild",
-      "text": "*(int *)&light_source->field_0x1c50 = iVar1;",
-      "type": "unnamed_field"
+      "match": "(int *)((int)puVar6",
+      "severity": "moderate",
+      "text": "piVar2 = (int *)((int)puVar6 * 0x4b000 + 0xb9e558);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 71,
-      "match": "field_0x1c48",
-      "severity": "mild",
-      "text": "if (((*(int *)&light_source->field_0x1c48 == 0) || (*(int *)&light_source->field_0x1c4c == 0)) ||",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 71,
-      "match": "field_0x1c4c",
-      "severity": "mild",
-      "text": "if (((*(int *)&light_source->field_0x1c48 == 0) || (*(int *)&light_source->field_0x1c4c == 0)) ||",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 72,
-      "match": "field_0x1c50",
-      "severity": "mild",
-      "text": "(*(int *)&light_source->field_0x1c50 == 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 75,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004e4330(\"CDemonCamera::precomputeLight - Too many lights visible from camera %s\",&this_ptr->field_0x40);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 78,
-      "match": "field_0x148",
-      "severity": "mild",
-      "text": "if ((rect == (CRect *)0x0) || (*(int *)&this_ptr->field_0x148 != 0x1e0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 79,
-      "match": "field_0x150",
-      "severity": "mild",
-      "text": "local_7c = *(int *)&this_ptr->field_0x150 + -1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 81,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "local_74 = *(int *)&this_ptr->field_0x154 + -1;",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 90,
+      "match": "(uint *)((int)rect",
+      "severity": "moderate",
+      "text": "puVar8 = (uint *)((int)rect + (uint)bVar11 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 87,
+      "line": 93,
       "match": "&stack0xffffff84",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff84 + (uint)bVar8 * -8) = *(uint *)pCVar6;",
+      "text": "*(uint *)((int)&stack0xffffff84 + (uint)bVar11 * -8) = *puVar8;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 88,
+      "line": 94,
       "match": "&stack0xffffff88",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff88 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffff88 + (uint)bVar11 * -8 + (uint)bVar11 * -8) = *puVar9;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 90,
+      "line": 95,
       "match": "&stack0xffffff88",
       "severity": "moderate",
-      "text": "((uint *)((int)&stack0xffffff88 + (uint)bVar8 * -8 + (uint)bVar8 * -8))",
+      "text": "((uint *)((int)&stack0xffffff88 + (uint)bVar11 * -8 + (uint)bVar11 * -8))",
       "type": "stack_ref"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 96,
-      "match": "field_0x14c8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x14c8 = 999;",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 130,
+      "match": "(int *)((int)light_source",
+      "severity": "moderate",
+      "text": "local_20 = (int *)((int)light_source->corona_visibility_buffers + local_4c + local_44);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 98,
-      "match": "field_0x1888",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x1888 = 0;",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 131,
+      "match": "(uint *)((int)light_source",
+      "severity": "moderate",
+      "text": "local_1c = (uint *)((int)light_source->corona_depth_buffer + local_4c + local_44);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 99,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "pCVar2 = (CDemonLight *)&pCVar2->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 103,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "if (iVar1 < *(int *)&this_ptr->field_0x154) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 104,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "puVar3 = &light_source->field_0x4 + local_74 * 4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 110,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "} while (iVar1 < *(int *)&this_ptr->field_0x154);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 120,
-      "match": "field_0x0",
-      "severity": "mild",
-      "text": "local_48 = &light_source->field_0x0 + local_78 * 4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 125,
-      "match": "field_0x1c48",
-      "severity": "mild",
-      "text": "local_20 = (int *)(local_4c + *(int *)&light_source->field_0x1c48 + local_44);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 126,
-      "match": "field_0x1c4c",
-      "severity": "mild",
-      "text": "local_1c = (uint *)(local_4c + *(int *)&light_source->field_0x1c4c + local_44);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 128,
-      "match": "field_0x1c50",
-      "severity": "mild",
-      "text": "local_24 = (int *)(local_4c + *(int *)&light_source->field_0x1c50 + local_44);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 133,
-      "match": "field_0x14c",
-      "severity": "mild",
-      "text": "((iVar1 = local_18 * *(int *)&this_ptr->field_0x14c,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 134,
-      "match": "field_0x144",
-      "severity": "mild",
-      "text": "iVar7 = *(int *)&this_ptr->field_0x144 + -2, iVar1 - iVar7 != 0 && iVar7 <= iVar1 ||",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 135,
-      "match": "field_0x14c",
-      "severity": "mild",
-      "text": "(iVar7 = local_2c * *(int *)&this_ptr->field_0x14c,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 136,
-      "match": "field_0x148",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)&this_ptr->field_0x148 + -2, iVar7 - iVar1 != 0 && iVar1 <= iVar7))))",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 138,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "(local_28[2] * *(float *)&light_source->field_0x30 +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 139,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "*local_28 * *(float *)&light_source->field_0x18 +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 140,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "local_28[1] * *(float *)&light_source->field_0x24 < 0.0)))) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 150,
-      "match": "&stack0xffffff94",
+      "match": "(int *)((int)light_source",
       "severity": "moderate",
-      "text": "local_60[(uint)bVar8 * -2] = *(int *)(&stack0xffffff94 + (uint)bVar8 * -8);",
-      "type": "stack_ref"
+      "text": "local_24 = (int *)((int)light_source->corona_lightmap_indices + local_4c + local_44);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 152,
-      "match": "&stack0xffffff98",
+      "description": "Pointer value `&_DAT_00b9e554->x_min` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 55,
+      "match": "(int)&_DAT_00b9e554->x_min",
       "severity": "moderate",
-      "text": "*(int *)(&stack0xffffff98 + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 164,
-      "match": "field_0x1ccc",
-      "severity": "mild",
-      "text": "*local_24 = ((local_60[0] >> (light_source->field_0x1ccc & 0x1f) &",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 165,
-      "match": "field_0x1c68",
-      "severity": "mild",
-      "text": "*(uint *)&light_source->field_0x1c68) <<",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 166,
-      "match": "field_0x1c60",
-      "severity": "mild",
-      "text": "(light_source->field_0x1c60 & 0x1f)) +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 167,
-      "match": "field_0x1cc8",
-      "severity": "mild",
-      "text": "(local_64 >> (light_source->field_0x1cc8 & 0x1f) &",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 168,
-      "match": "field_0x1c68",
-      "severity": "mild",
-      "text": "*(uint *)&light_source->field_0x1c68);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Pointer value `pCVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 59,
-      "match": "(int)pCVar6",
-      "severity": "moderate",
-      "text": "iVar1 = (int)pCVar6 * 0x4b000 + 0xb9e558;",
+      "text": "puVar7 = (byte *)((int)&_DAT_00b9e554->x_min + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `pCVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 66,
-      "match": "(int)pCVar5",
+      "description": "Pointer value `puVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 63,
+      "match": "(int)puVar7",
       "severity": "moderate",
-      "text": "iVar1 = (int)pCVar5 * 0x4b000 + 0xb9e558;",
+      "text": "ppuVar3 = (ushort **)((int)puVar7 * 0x4b000 + 0xb9e558);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 70,
+      "match": "(int)puVar6",
+      "severity": "moderate",
+      "text": "piVar2 = (int *)((int)puVar6 * 0x4b000 + 0xb9e558);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&stack0xffffff84` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 87,
+      "line": 93,
       "match": "(int)&stack0xffffff84",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff84 + (uint)bVar8 * -8) = *(uint *)pCVar6;",
+      "text": "*(uint *)((int)&stack0xffffff84 + (uint)bVar11 * -8) = *puVar8;",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&stack0xffffff88` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 88,
+      "line": 94,
       "match": "(int)&stack0xffffff88",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff88 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffff88 + (uint)bVar11 * -8 + (uint)bVar11 * -8) = *puVar9;",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&stack0xffffff88` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 90,
+      "line": 95,
       "match": "(int)&stack0xffffff88",
       "severity": "moderate",
-      "text": "((uint *)((int)&stack0xffffff88 + (uint)bVar8 * -8 + (uint)bVar8 * -8))",
+      "text": "((uint *)((int)&stack0xffffff88 + (uint)bVar11 * -8 + (uint)bVar11 * -8))",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_64` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 156,
+      "match": "(int)&local_64",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_64 + (uint)bVar11 * -8 + 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_70` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 157,
+      "match": "(int)&local_70",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_70 + (uint)bVar11 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_64` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 158,
+      "match": "(int)&local_64",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_64 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_70` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 159,
+      "match": "(int)&local_70",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_70 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);",
       "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 87,
+      "line": 55,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff84 + (uint)bVar8 * -8) = *(uint *)pCVar6;",
+      "text": "puVar7 = (byte *)((int)&_DAT_00b9e554->x_min + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 88,
+      "line": 93,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffff88 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
+      "text": "*(uint *)((int)&stack0xffffff84 + (uint)bVar11 * -8) = *puVar8;",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 90,
+      "line": 94,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "((uint *)((int)&stack0xffffff88 + (uint)bVar8 * -8 + (uint)bVar8 * -8))",
+      "text": "*(uint *)((int)&stack0xffffff88 + (uint)bVar11 * -8 + (uint)bVar11 * -8) = *puVar9;",
       "type": "pointer_cast"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar2->owner`). Replace `pCVar2->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 99,
-      "match": "pCVar2 = (T *)&pCVar2->FIELD",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 95,
+      "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "pCVar2 = (CDemonLight *)&pCVar2->field_0x4;",
+      "text": "((uint *)((int)&stack0xffffff88 + (uint)bVar11 * -8 + (uint)bVar11 * -8))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 156,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_64 + (uint)bVar11 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 157,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_70 + (uint)bVar11 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 158,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_64 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 159,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_70 + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 104,
+      "match": "pCVar4 = (T *)&(pCVar4->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar4 = (CDemonLight *)&(pCVar4->base).base.position;",
       "type": "shadow_pointer_walk"
     }
   ]

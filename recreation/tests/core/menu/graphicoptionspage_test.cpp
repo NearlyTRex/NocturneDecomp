@@ -1,17 +1,17 @@
 #include "core/game/game.h"
 #include "core/menu/graphicoptionspage.h"
 #include "core/menu/menupage.h"
+#include "core/menu/screenmodepage.h"
 #include "engine/keys/inputcodetype.h"
 #include "engine/special/special.h"
 #include "platform/display.h"
 #include "platform/upscaler.h"
 #include "tests/mocks/core/menufixture.h"
-#include "tests/mocks/engine/fontsheet.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
-#include <cstddef>
+#include <algorithm>
 #include <optional>
 #include <string>
 #include <type_traits>
@@ -21,26 +21,21 @@ namespace nocturne::core {
 namespace {
 
 using platform::EUpscaler;
-using platform::EWindowMode;
 using ::testing::_;
 using ::testing::Return;
 
 // The lines' ids, in the order they are listed.
-constexpr int kResolution = 0;
-constexpr int kWindow = 1;
-constexpr int kWidescreen = 2;
-constexpr int kHalo = 3;
-constexpr int kAcceleration = 4;
-constexpr int kApi = 5;
-constexpr int kCard = 6;
-constexpr int kBits = 7;
-constexpr int kUpscaler = 8;
-constexpr int kSharpness = 9;
-constexpr int kAntialias = 10;
-constexpr int kCalibration = 11;
+constexpr int kAcceleration = 0;
+constexpr int kApi = 1;
+constexpr int kCard = 2;
+constexpr int kBits = 3;
+constexpr int kUpscaler = 4;
+constexpr int kSharpness = 5;
+constexpr int kAntialias = 6;
+constexpr int kHalo = 7;
 
 TEST(CGraphicOptionsPage, PublicInterface) {
-    static_assert(std::is_base_of_v<CMenuPage, CGraphicOptionsPage>);
+    static_assert(std::is_base_of_v<CScreenModePage, CGraphicOptionsPage>);
     static_assert(std::is_final_v<CGraphicOptionsPage>);
     static_assert(std::is_constructible_v<CGraphicOptionsPage, CMenu &, const SMenuOwners &>);
 }
@@ -71,8 +66,12 @@ protected:
         return result;
     }
 
+    // Empty for a line not listed.
     [[nodiscard]] static std::string text(CGraphicOptionsPage &page, int id) {
-        return texts(page).at(static_cast<std::size_t>(id));
+        std::vector<SMenuLine> lines;
+        page.build(lines);
+        const auto found = std::ranges::find(lines, id, &SMenuLine::id);
+        return found == lines.end() ? std::string() : found->text;
     }
 
     void loadRenderer() {
@@ -102,11 +101,10 @@ TEST_F(CGraphicOptionsPageTest, TheTitleIsGraphicOptions) {
 
 TEST_F(CGraphicOptionsPageTest, WithoutAccelerationThereIsNoApiOrCard) {
     CGraphicOptionsPage page(menu_, menu_owners_);
-    EXPECT_EQ(texts(page), (std::vector<std::string>{
-                               "Resolution : 640x480", "Window : Windowed", "Widescreen : Stretch",
-                               "Flashlight halo : Off", "Acceleration : Off", "3D API : None",
-                               "No 3D Hardware detected", "Bits per pixel : 32",
-                               "Upscaler : Standard", "Monitor calibration"}));
+    EXPECT_EQ(texts(page),
+              (std::vector<std::string>{"Acceleration : Off", "3D API : None",
+                                        "No 3D Hardware detected", "Bits per pixel : 32",
+                                        "Upscaler : Standard", "Flashlight halo : Off"}));
 }
 
 TEST_F(CGraphicOptionsPageTest, TheRenderersCardsAndApiAreListed) {
@@ -117,26 +115,7 @@ TEST_F(CGraphicOptionsPageTest, TheRenderersCardsAndApiAreListed) {
     EXPECT_EQ(text(page, kCard), "3D Card : First (0)");
 }
 
-TEST_F(CGraphicOptionsPageTest, TheWidescreenFramingIsNamed) {
-    CGraphicOptionsPage page(menu_, menu_owners_);
-    ON_CALL(display_, getWidescreen()).WillByDefault(Return(common::EWidescreen::Pillarbox));
-    EXPECT_EQ(text(page, kWidescreen), "Widescreen : Pillarbox");
-    ON_CALL(display_, getWidescreen()).WillByDefault(Return(common::EWidescreen::PanAndScan));
-    EXPECT_EQ(text(page, kWidescreen), "Widescreen : Pan & scan");
-}
-
-TEST_F(CGraphicOptionsPageTest, TheWidescreenFramingStepsBothWaysAndWraps) {
-    CGraphicOptionsPage page(menu_, menu_owners_);
-    EXPECT_CALL(display_, setWidescreen(common::EWidescreen::Pillarbox));
-    EXPECT_EQ(page.choose(kWidescreen, EMenuStep::On), EMenuOutcome::Stay);
-    EXPECT_CALL(display_, setWidescreen(common::EWidescreen::PanAndScan));
-    EXPECT_EQ(page.choose(kWidescreen, EMenuStep::Back), EMenuOutcome::Stay);
-    ON_CALL(display_, getWidescreen()).WillByDefault(Return(common::EWidescreen::PanAndScan));
-    EXPECT_CALL(display_, setWidescreen(common::EWidescreen::Stretch));
-    EXPECT_EQ(page.choose(kWidescreen, EMenuStep::On), EMenuOutcome::Stay);
-}
-
-// Above the calibration, and only while accelerated: the pass runs over the renderer's scene.
+// Above the halo, and only while accelerated: the pass runs over the renderer's scene.
 TEST_F(CGraphicOptionsPageTest, AntialiasingIsListedWhileAccelerated) {
     loadRenderer();
     CGraphicOptionsPage page(menu_, menu_owners_);
@@ -203,98 +182,29 @@ TEST_F(CGraphicOptionsPageTest, WithNoCardTheBoardIsTheFirst) {
     EXPECT_EQ(special_.getCurrentGraphicsBoard(), 0);
 }
 
-TEST_F(CGraphicOptionsPageTest, WithoutAccelerationTheResolutionWrapsAt640x480) {
-    CGraphicOptionsPage page(menu_, menu_owners_);
-    EXPECT_EQ(page.choose(kResolution, EMenuStep::On), EMenuOutcome::Stay);
-    EXPECT_EQ(resolution(), "320x240");
-    EXPECT_EQ(page.choose(kResolution, EMenuStep::Back), EMenuOutcome::Stay);
-    EXPECT_EQ(resolution(), "640x480");
-    EXPECT_EQ(page.choose(kResolution, EMenuStep::Back), EMenuOutcome::Stay);
-    EXPECT_EQ(resolution(), "512x384");
-}
-
-TEST_F(CGraphicOptionsPageTest, WithAccelerationTheResolutionStepsByWidthThenHeightTo3840x2160) {
-    loadRenderer();
-    setResolution(1024, 768);
-    CGraphicOptionsPage page(menu_, menu_owners_);
-    std::vector<std::string> stepped;
-    for (int i = 0; i < 12; ++i) {
-        EXPECT_EQ(page.choose(kResolution, EMenuStep::On), EMenuOutcome::Stay);
-        stepped.push_back(resolution());
-    }
-    EXPECT_EQ(stepped,
-              (std::vector<std::string>{"1200x900", "1280x720", "1280x1024", "1440x1080",
-                                        "1600x900", "1600x1200", "1920x1080", "1920x1440",
-                                        "2560x1440", "2880x2160", "3840x2160", "320x240"}));
-    EXPECT_EQ(page.choose(kResolution, EMenuStep::Back), EMenuOutcome::Stay);
-    EXPECT_EQ(resolution(), "3840x2160");
-}
-
-TEST_F(CGraphicOptionsPageTest, AResolutionWiderThanFourByThreeIsMarkedWide) {
-    loadRenderer();
-    setResolution(1920, 1080);
-    CGraphicOptionsPage page(menu_, menu_owners_);
-    EXPECT_EQ(text(page, kResolution), "Resolution : 1920x1080 (wide)");
-    setResolution(1440, 1080);
-    EXPECT_EQ(text(page, kResolution), "Resolution : 1440x1080");
-}
-
-TEST_F(CGraphicOptionsPageTest, AnUnlistedResolutionGoesToTheNearestByHeightThenWidth) {
-    loadRenderer();
-    setResolution(1900, 1070);
-    CGraphicOptionsPage page(menu_, menu_owners_);
-    EXPECT_EQ(page.choose(kResolution, EMenuStep::On), EMenuOutcome::Stay);
-    EXPECT_EQ(resolution(), "1920x1080");
-    setResolution(1500, 1070);
-    EXPECT_EQ(page.choose(kResolution, EMenuStep::On), EMenuOutcome::Stay);
-    EXPECT_EQ(resolution(), "1440x1080");
-}
-
-// As an old INI can leave it.
-TEST_F(CGraphicOptionsPageTest, AResolutionNotListedGoesToTheNearest) {
-    setResolution(700, 500);
-    CGraphicOptionsPage page(menu_, menu_owners_);
-    EXPECT_EQ(page.choose(kResolution, EMenuStep::On), EMenuOutcome::Stay);
-    EXPECT_EQ(resolution(), "640x480");
-}
-
-TEST_F(CGraphicOptionsPageTest, AResolutionIsListedOnlyByBothItsSides) {
-    setResolution(640, 400);
-    CGraphicOptionsPage page(menu_, menu_owners_);
-    EXPECT_EQ(page.choose(kResolution, EMenuStep::On), EMenuOutcome::Stay);
-    EXPECT_EQ(resolution(), "512x384");
-}
-
-TEST_F(CGraphicOptionsPageTest, AResolutionAboveTheCapGoesToTheLargestUnderIt) {
-    setResolution(1024, 768);
-    CGraphicOptionsPage page(menu_, menu_owners_);
-    EXPECT_EQ(page.choose(kResolution, EMenuStep::Back), EMenuOutcome::Stay);
-    EXPECT_EQ(resolution(), "640x480");
-}
-
+// Acceleration is turned off here, so this page holds the resolution too.
 TEST_F(CGraphicOptionsPageTest, WithoutAccelerationTheResolutionIsHeldAt640x480) {
-    setResolution(1024, 768);
-    CGraphicOptionsPage page(menu_, menu_owners_);
-    page.beforeSwap();
-    EXPECT_EQ(resolution(), "640x480");
     loadRenderer();
     setResolution(1024, 768);
+    CGraphicOptionsPage page(menu_, menu_owners_);
     page.beforeSwap();
     EXPECT_EQ(resolution(), "1024x768");
-    setResolution(320, 240);
-    special_.setUseDirect3D(false);
+    EXPECT_EQ(page.choose(kAcceleration, EMenuStep::On), EMenuOutcome::Stay);
     page.beforeSwap();
-    EXPECT_EQ(resolution(), "320x240");
+    EXPECT_EQ(resolution(), "640x480");
 }
 
-TEST_F(CGraphicOptionsPageTest, TheWindowModeStepsEitherWayAndWraps) {
+TEST_F(CGraphicOptionsPageTest, AResolutionHeldThereSizesTheWindowAtOnce) {
+    loadRenderer();
+    setResolution(1024, 768);
     CGraphicOptionsPage page(menu_, menu_owners_);
-    EXPECT_CALL(display_, setWindowMode(EWindowMode::Fullscreen));
-    EXPECT_EQ(page.choose(kWindow, EMenuStep::On), EMenuOutcome::Stay);
-    EXPECT_CALL(display_, setWindowMode(EWindowMode::Borderless));
-    EXPECT_EQ(page.choose(kWindow, EMenuStep::Back), EMenuOutcome::Stay);
-    ON_CALL(display_, getWindowMode()).WillByDefault(Return(EWindowMode::Borderless));
-    EXPECT_EQ(text(page, kWindow), "Window : Borderless");
+    static_cast<void>(texts(page));
+    EXPECT_CALL(display_, setWindowSize(_, _)).Times(0);
+    EXPECT_EQ(page.endFrame(), EMenuOutcome::Stay);
+    ::testing::Mock::VerifyAndClearExpectations(&display_);
+    setResolution(640, 480);
+    EXPECT_CALL(display_, setWindowSize(640, 480));
+    EXPECT_EQ(page.endFrame(), EMenuOutcome::Stay);
 }
 
 TEST_F(CGraphicOptionsPageTest, TheHaloStepsEitherWayAndWraps) {
@@ -353,12 +263,16 @@ TEST_F(CGraphicOptionsPageTest, TheDepthTogglesBetween16And32) {
 
 TEST_F(CGraphicOptionsPageTest, TheUpscalerStepsEitherWayAndWraps) {
     CGraphicOptionsPage page(menu_, menu_owners_);
-    EXPECT_CALL(display_, setUpscaler(EUpscaler::Fsr));
+    EXPECT_CALL(display_, setUpscaler(EUpscaler::Nearest));
     EXPECT_EQ(page.choose(kUpscaler, EMenuStep::On), EMenuOutcome::Stay);
     EXPECT_CALL(display_, setUpscaler(EUpscaler::Xbr));
     EXPECT_EQ(page.choose(kUpscaler, EMenuStep::Back), EMenuOutcome::Stay);
     ON_CALL(display_, getUpscaler()).WillByDefault(Return(EUpscaler::Xbr));
-    EXPECT_EQ(texts(page).at(kUpscaler), "Upscaler : xBR");
+    EXPECT_EQ(text(page, kUpscaler), "Upscaler : xBR");
+    ON_CALL(display_, getUpscaler()).WillByDefault(Return(EUpscaler::Nearest));
+    EXPECT_EQ(text(page, kUpscaler), "Upscaler : Nearest");
+    ON_CALL(display_, getUpscaler()).WillByDefault(Return(EUpscaler::Smooth));
+    EXPECT_EQ(text(page, kUpscaler), "Upscaler : Smooth");
 }
 
 // The sharpness line is the upscaler's next, for a filter that sharpens.
@@ -366,9 +280,11 @@ TEST_F(CGraphicOptionsPageTest, AFilterThatSharpensShowsItsSharpness) {
     ON_CALL(display_, getUpscaler()).WillByDefault(Return(EUpscaler::Lanczos));
     ON_CALL(display_, getUpscalerSharpness()).WillByDefault(Return(50));
     CGraphicOptionsPage page(menu_, menu_owners_);
-    EXPECT_EQ(texts(page).at(kSharpness), "Monitor calibration");
+    EXPECT_EQ(text(page, kSharpness), "");
     ON_CALL(display_, getUpscaler()).WillByDefault(Return(EUpscaler::Nis));
-    EXPECT_EQ(texts(page).at(kSharpness), "Sharpness : 50%");
+    EXPECT_EQ(text(page, kSharpness), "Sharpness : 50%");
+    const std::vector<std::string> lines = texts(page);
+    EXPECT_EQ(*(std::ranges::find(lines, "Upscaler : NIS") + 1), "Sharpness : 50%");
 }
 
 TEST_F(CGraphicOptionsPageTest, TheSharpnessStepsByAQuarterAndWraps) {
@@ -389,29 +305,6 @@ TEST_F(CGraphicOptionsPageTest, ASharpnessBetweenStepsStepsFromTheOneBelow) {
     EXPECT_EQ(page.choose(kSharpness, EMenuStep::On), EMenuOutcome::Stay);
     EXPECT_CALL(display_, setUpscalerSharpness(25));
     EXPECT_EQ(page.choose(kSharpness, EMenuStep::Back), EMenuOutcome::Stay);
-}
-
-// Five screens over the brightness image, each until a key.
-TEST_F(CGraphicOptionsPageTest, MonitorCalibrationShowsTheTest) {
-    givenFile("art\\brightness.raw", std::string(std::size_t{kWidth} * kHeight, '\x01'));
-    givenFile("art\\brightness.act", engine::makePalette({0, 0, 0}));
-    CGraphicOptionsPage page(menu_, menu_owners_);
-    EXPECT_EQ(page.choose(kCalibration, EMenuStep::On), EMenuOutcome::Stay);
-    EXPECT_EQ(frames_, 5);
-}
-
-TEST_F(CGraphicOptionsPageTest, ANewResolutionSizesTheWindowAtOnce) {
-    CGraphicOptionsPage page(menu_, menu_owners_);
-    static_cast<void>(texts(page));
-    EXPECT_CALL(display_, setWindowSize(_, _)).Times(0);
-    EXPECT_EQ(page.endFrame(), EMenuOutcome::Stay);
-    ::testing::Mock::VerifyAndClearExpectations(&display_);
-    setResolution(320, 240);
-    EXPECT_CALL(display_, setWindowSize(320, 240));
-    EXPECT_EQ(page.endFrame(), EMenuOutcome::Stay);
-    setResolution(640, 400);
-    EXPECT_CALL(display_, setWindowSize(640, 400));
-    EXPECT_EQ(page.endFrame(), EMenuOutcome::Stay);
 }
 
 TEST_F(CGraphicOptionsPageTest, CancelLeaves) {

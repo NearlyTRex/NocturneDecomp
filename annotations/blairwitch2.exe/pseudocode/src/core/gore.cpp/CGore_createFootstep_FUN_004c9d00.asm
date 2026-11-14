@@ -12,7 +12,7 @@
 ; EBloodType       Stack[0x18]:4   blood_type
 ;
 ; XREF[1]:
-;   core_actor.cpp_FUN_0040cb60 at 0040cc5f
+;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040cb60 at 0040cc5f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01cde344

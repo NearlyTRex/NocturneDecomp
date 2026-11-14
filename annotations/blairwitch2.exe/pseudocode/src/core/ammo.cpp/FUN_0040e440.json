@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 5,
-    "complexity_score": 20,
+    "complexity_score": 5,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 5,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 10
   },
   "cross_references": [
     {
       "addr": "0040e670",
       "from_addr": "0040e712",
-      "name": "core_ammobox.cpp_FUN_0040e670",
+      "name": "core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e670",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -42,7 +40,7 @@
       {
         "call_addr": "0040e712",
         "call_type": "direct",
-        "caller": "core_ammobox.cpp_FUN_0040e670",
+        "caller": "core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e670",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -92,14 +90,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x470",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x470 = ammo_count;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

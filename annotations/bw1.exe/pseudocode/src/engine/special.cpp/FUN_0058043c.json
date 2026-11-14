@@ -19,7 +19,7 @@
     {
       "addr": "00436600",
       "from_addr": "00436783",
-      "name": "core_chain.cpp_FUN_00436600",
+      "name": "core_chain.cpp_CChain_renderTransparent_FUN_00436600",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -35,9 +35,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004adaf0",
+      "from_addr": "004adb49",
+      "name": "core_fire.cpp_CFirefly_render_FUN_004adaf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b3570",
+      "from_addr": "004b396b",
+      "name": "core_fire.cpp_CLightningBolt_render_FUN_004b3570",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004b4370",
       "from_addr": "004b43b6",
       "name": "core_fire.cpp_CPopcorn_render_FUN_004b4370",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b46e0",
+      "from_addr": "004b4726",
+      "name": "core_fire.cpp_CRainDrop_render_FUN_004b46e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b4090",
+      "from_addr": "004b40e1",
+      "name": "core_fire.cpp_CShell_render_FUN_004b4090",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -49,31 +73,7 @@
     {
       "addr": "004ad140",
       "from_addr": "004ad192",
-      "name": "core_fire.cpp_FUN_004ad140",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004adaf0",
-      "from_addr": "004adb49",
-      "name": "core_fire.cpp_FUN_004adaf0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004b3570",
-      "from_addr": "004b396b",
-      "name": "core_fire.cpp_FUN_004b3570",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004b4090",
-      "from_addr": "004b40e1",
-      "name": "core_fire.cpp_FUN_004b4090",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004b46e0",
-      "from_addr": "004b4726",
-      "name": "core_fire.cpp_FUN_004b46e0",
+      "name": "core_fire.cpp_CSpark_render_FUN_004ad140",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -113,15 +113,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00519cae",
+      "addr": "00519cb0",
       "from_addr": "00519cf0",
-      "name": "core_mirror.cpp_FUN_00519cae",
+      "name": "core_mirror.cpp_FUN_00519cb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005ae890",
       "from_addr": "005aea36",
-      "name": "core_weather.cpp_FUN_005ae890",
+      "name": "core_weather.cpp_CWeather_renderParticles_FUN_005ae890",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -473,7 +473,7 @@
       "line": 61,
       "match": "DAT_00623e28",
       "severity": "mild",
-      "text": "DAT_00623e28 = *(int *)input - _DAT_01c51d38;",
+      "text": "DAT_00623e28 = input->x - _DAT_01c51d38;",
       "type": "undefined_data"
     },
     {
@@ -481,7 +481,7 @@
       "line": 62,
       "match": "DAT_00623e2c",
       "severity": "mild",
-      "text": "DAT_00623e2c = *(int *)(input + 4) - _DAT_01c51d3c;",
+      "text": "DAT_00623e2c = input->y - _DAT_01c51d3c;",
       "type": "undefined_data"
     },
     {
@@ -489,7 +489,7 @@
       "line": 63,
       "match": "DAT_00623e30",
       "severity": "mild",
-      "text": "DAT_00623e30 = *(int *)(input + 8) - _DAT_01c51d40;",
+      "text": "DAT_00623e30 = input->z - _DAT_01c51d40;",
       "type": "undefined_data"
     },
     {
@@ -609,7 +609,7 @@
       "line": 95,
       "match": "DAT_00623e38",
       "severity": "mild",
-      "text": "*(uint *)output = DAT_00623e38;",
+      "text": "output->transformed_x = DAT_00623e38;",
       "type": "undefined_data"
     },
     {
@@ -633,7 +633,7 @@
       "line": 107,
       "match": "DAT_00623e38",
       "severity": "mild",
-      "text": "*(uint *)output = DAT_00623e38;",
+      "text": "output->transformed_x = DAT_00623e38;",
       "type": "undefined_data"
     }
   ]

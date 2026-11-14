@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   render_flags
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_005551f0 at 005552ae
+;   core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_005551f0 at 005552ae
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_processQuadPrimitive_FUN_00484b20

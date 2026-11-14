@@ -1,17 +1,43 @@
 [
   {
     "addr":"0046f9f4",
-    "conv":"unknown",
+    "conv":"__edi_esi_ebx",
     "data_refs":[
       "0046b3ff"
     ],
     "instructions":35,
     "method":"renderDepth16BitConditional",
     "name":"core_dstrendr.cpp_renderDepth16BitConditional_FUN_0046f9f4",
+    "params":[
+      {
+        "name":"left_edge",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      },
+      {
+        "name":"right_edge",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      },
+      {
+        "name":"scanline_y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/dstrendr.cpp",
@@ -22,11 +48,11 @@
     "callers":[
       "0045b8e0",
       "0045b9b0",
-      "00496c0c",
+      "00496c10",
       "004a2e20",
       "0051c1c0",
-      "005228be",
-      "0052294e",
+      "005228c0",
+      "00522950",
       "00522b00",
       "00523800",
       "00583a40",
@@ -54,7 +80,7 @@
   {
     "addr":"005a5674",
     "callers":[
-      "0047dd1e",
+      "0047dd20",
       "00482820"
     ],
     "calls":[
@@ -66,10 +92,45 @@
     "instructions":336,
     "method":"_strftime",
     "name":"crt_time.c__strftime_FUN_005a5674",
+    "params":[
+      {
+        "name":"dest_buffer",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"buffer_size",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":0
+        }
+      },
+      {
+        "name":"format_string",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"time_ptr",
+        "type":{
+          "header":"time",
+          "kind":"system",
+          "name":"_tm",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"uint",
       "ptr":0
     },
     "tu":"crt/time.c",
@@ -109,14 +170,14 @@
     "conv":"unknown",
     "instructions":99,
     "method":"FUN_005b1d74",
-    "name":"unkafter_2d.cpp_FUN_005b1d74",
+    "name":"crt_unknown.c_FUN_005b1d74",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/2d.cpp",
+    "tu":"crt/unknown.c",
     "variadic":false
   }
 ]

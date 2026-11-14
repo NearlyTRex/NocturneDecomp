@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_3d_c_setVertexTextureU_FUN_004050c0(int param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_setVertexTextureU_FUN_004050c0(SMRGLHeaderExtended *mrgl)
 ;
+; Parameters:
+; SMRGLHeaderExtended * Stack[0x4]:4   mrgl
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0062902c

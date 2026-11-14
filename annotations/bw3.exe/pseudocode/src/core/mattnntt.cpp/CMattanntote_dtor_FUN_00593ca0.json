@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 66,
+    "complexity_score": 41,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 26,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_field"
+      "negative_offset"
     ],
     "total_lines": 91
   },
@@ -24,9 +23,9 @@
         "00593d34"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_mattnntt.cpp_CMattanntote_dtor_FUN_00593ca0",
-    "signature": "CMattanntote * core_mattnntt_cpp_CMattanntote_dtor_FUN_00593ca0(CMattanntote *this_ptr,uint flags)"
+    "signature": "CMattanntote * __cdecl core_mattnntt_cpp_CMattanntote_dtor_FUN_00593ca0(CMattanntote *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -35,9 +34,14 @@
       "name": "core_actor.cpp_CDemonActor_dtor_FUN_00408770"
     },
     {
+      "addr": "00410370",
+      "is_variadic": false,
+      "name": "core_armour.cpp_FUN_00410370"
+    },
+    {
       "addr": "0043f900",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_0043f900"
+      "name": "core_cloth.cpp_CClothList_dtor_FUN_0043f900"
     },
     {
       "addr": "004a5930",
@@ -63,11 +67,6 @@
       "addr": "005a30c4",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005a30c4"
-    },
-    {
-      "addr": "00410370",
-      "is_variadic": false,
-      "name": "unkafter_armour.cpp_FUN_00410370"
     }
   ],
   "globals": [
@@ -136,34 +135,18 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0xd0b8",
-      "severity": "mild",
-      "text": "iVar1 = core_firestff_cpp_FUN_004a5930(&this_ptr->field_0xd0b8,0);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 24,
+      "line": 23,
       "match": "pCVar3[-1].",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)&pCVar3[-1].field_0x224c,1);",
+      "text": "((CDemonActor *)(pCVar3[-1].part_data.texture_set_indices + 7),1);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x224c",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)&pCVar3[-1].field_0x224c,1);",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CMattanntote",
         "offset": 208,
         "vtable_addr": "005e7394"
       },

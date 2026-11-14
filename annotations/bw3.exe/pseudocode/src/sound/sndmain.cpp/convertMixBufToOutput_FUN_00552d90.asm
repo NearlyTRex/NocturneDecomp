@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_00552d90(float *param_1,undefined2 *param_2,uint param_3,int param_4,int param_5)
+; void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_00552d90(float *input_samples,ushort *output_buffer,int bits_per_sample,int num_samples,int output_stride)
 ;
+; Parameters:
+; float *          Stack[0x4]:4   input_samples
+; ushort *         Stack[0x8]:4   output_buffer
+; int              Stack[0xc]:4   bits_per_sample
+; int              Stack[0x10]:4   num_samples
+; int              Stack[0x14]:4   output_stride
 ; Local Variables:
 ; undefined8       Stack[-0x44]:8  local_44
 ; undefined8       Stack[-0x3c]:8  local_3c
@@ -17,7 +23,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   sound_sndmain.cpp_FUN_00559d90 at 0055a001
+;   sound_sndmain.cpp_pollAndMixSfx_FUN_00559d90 at 0055a001
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d2ae9

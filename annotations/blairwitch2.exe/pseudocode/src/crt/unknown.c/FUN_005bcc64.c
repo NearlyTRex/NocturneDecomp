@@ -15,6 +15,6 @@ void FUN_005bcc64(void)
     _DAT_0061f6b4 = FUN_005bcc50;
     _DAT_0061f6b8 = FUN_005bcc5c;
   }
-  unkafter_morph_cpp_FUN_005c25f0();
+  FUN_005c25f0();
   return;
 }

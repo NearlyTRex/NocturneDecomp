@@ -2,16 +2,16 @@
 // Address: 004deb20
 // Address Range: [[004deb20, 004decdb]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_004deb20(int param_1,int param_2)
+// Signature: void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_004deb20(CVector3i *vertex_data,SMRGLPrimitiveTriangleIndex *texture)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_004deb20(int param_1,int param_2)
+void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_004deb20(CVector3i *vertex_data,SMRGLPrimitiveTriangleIndex *texture)
 
 {
-  int *piVar1;
+  CVector3i *pCVar1;
   int iVar2;
   int iVar3;
   float fVar4;
@@ -30,15 +30,15 @@ void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_004deb20(int par
   float10 fVar15;
   float local_30;
   
-  iVar2 = *(int *)(param_2 + 0x18);
-  piVar1 = (int *)(*(int *)(param_2 + 0x1c) * 0xc + param_1);
-  iVar3 = *(int *)(param_2 + 0x20);
-  fVar9 = (float)(piVar1[2] - *(int *)(param_1 + 8 + iVar2 * 0xc));
-  fVar4 = (float)(*(int *)(param_1 + iVar3 * 0xc) - *piVar1);
-  fVar8 = (float)(*piVar1 - *(int *)(param_1 + iVar2 * 0xc));
-  fVar10 = (float)(*(int *)(param_1 + 4 + iVar3 * 0xc) - piVar1[1]);
-  fVar6 = (float)(piVar1[1] - *(int *)(param_1 + 4 + iVar2 * 0xc));
-  fVar5 = (float)(*(int *)(param_1 + 8 + iVar3 * 0xc) - piVar1[2]);
+  iVar2 = texture->vertices[0];
+  pCVar1 = vertex_data + texture->vertices[1];
+  iVar3 = texture->vertices[2];
+  fVar9 = (float)(pCVar1->z - vertex_data[iVar2].z);
+  fVar4 = (float)(vertex_data[iVar3].x - pCVar1->x);
+  fVar8 = (float)(pCVar1->x - vertex_data[iVar2].x);
+  fVar10 = (float)(vertex_data[iVar3].y - pCVar1->y);
+  fVar6 = (float)(pCVar1->y - vertex_data[iVar2].y);
+  fVar5 = (float)(vertex_data[iVar3].z - pCVar1->z);
   fVar7 = fVar6 * fVar5 - fVar10 * fVar9;
   fVar5 = fVar4 * fVar9 - fVar8 * fVar5;
   fVar4 = fVar8 * fVar10 - fVar4 * fVar6;
@@ -47,14 +47,14 @@ void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_004deb20(int par
     local_30 = 65535.0;
   }
   local_30 = 1.0 / local_30;
-  iVar2 = *(int *)(param_2 + 0x18);
+  iVar2 = texture->vertices[0];
   fVar8 = (float)_DAT_005c66e5;
   fVar6 = fVar7 * local_30 * fVar8;
   fVar5 = fVar5 * local_30 * fVar8;
   fVar8 = fVar4 * local_30 * fVar8;
-  fVar15 = (float10)*(int *)(param_1 + iVar2 * 0xc) * (float10)fVar6 +
-           (float10)*(int *)(param_1 + 4 + iVar2 * 0xc) * (float10)fVar5;
-  fVar11 = (float10)*(int *)(param_1 + 8 + iVar2 * 0xc) * (float10)fVar8;
+  fVar15 = (float10)vertex_data[iVar2].x * (float10)fVar6 +
+           (float10)vertex_data[iVar2].y * (float10)fVar5;
+  fVar11 = (float10)vertex_data[iVar2].z * (float10)fVar8;
   fVar12 = (float10)fVar6;
   fVar13 = (float10)fVar5;
   fVar14 = (float10)fVar8;

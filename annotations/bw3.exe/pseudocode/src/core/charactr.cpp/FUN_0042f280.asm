@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[5]:
-;   core_asgaya.cpp_FUN_005a0b00 at 005a0ba4
-;   core_exorcism.cpp_FUN_0048b690 at 0048b6dc
-;   core_fire.cpp_FUN_004a4340 at 004a43d8
-;   core_styldemo.cpp_FUN_0059e130 at 0059e16f
-;   unkafter_lightgun.cpp_FUN_004e3eb0 at 004e3f04
+;   core_asgaya.cpp_CAsgaya_setup_FUN_005a0b00 at 005a0ba4
+;   core_exorcism.cpp_CExorcism_setup_FUN_0048b690 at 0048b6dc
+;   core_fire.cpp_CFireEffect_preloadTossAssets_FUN_004a4340 at 004a43d8
+;   core_lightsta.cpp_CLightStaff_setup_FUN_004e3eb0 at 004e3f04
+;   core_styldemo.cpp_CStylerDemon_setup_FUN_0059e130 at 0059e16f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f1004

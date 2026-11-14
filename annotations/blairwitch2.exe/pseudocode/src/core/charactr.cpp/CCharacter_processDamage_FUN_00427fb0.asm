@@ -16,16 +16,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[11]:
-;   core_baron.cpp_FUN_00410880 at 00410898
-;   core_colonel.cpp_FUN_004364a0 at 00436517
-;   core_enemy.cpp_FUN_00488890 at 004888b7
-;   core_gabriela.cpp_FUN_004b1bf0 at 004b1d48
-;   core_haystack.cpp_FUN_004cd880 at 004cd910
-;   core_icepick.cpp_FUN_004d6370 at 004d642d
-;   core_npc.cpp_FUN_00510b90 at 00510c0b
-;   core_scat.cpp_FUN_0051fb40 at 0051fbb7
-;   core_stranger.cpp_FUN_0056d060 at 0056d2bb
-;   core_svetlana.cpp_FUN_00571870 at 0057191b
+;   core_baron.cpp_CBaron_processDamage_FUN_00410880 at 00410898
+;   core_colonel.cpp_CColonel_processDamage_FUN_004364a0 at 00436517
+;   core_doc.cpp_CDoc_processDamage_FUN_0045b190 at 0045b3eb
+;   core_enemy.cpp_CEnemy_processDamage_FUN_00488890 at 004888b7
+;   core_gabriela.cpp_CGabriella_processDamage_FUN_004b1bf0 at 004b1d48
+;   core_haystack.cpp_CHaystack_processDamage_FUN_004cd880 at 004cd910
+;   core_icepick.cpp_CIcePick_processDamage_FUN_004d6370 at 004d642d
+;   core_npc.cpp_CNPC_processDamage_FUN_00510b90 at 00510c0b
+;   core_scat.cpp_CScat_processDamage_FUN_0051fb40 at 0051fbb7
+;   core_stranger.cpp_CStranger_processDamage_FUN_0056d060 at 0056d2bb
 ;   ... and 1 more
 ;
 ; Referenced Globals:
@@ -38,15 +38,15 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408d70
+;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_00426a10
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00427360
+;   core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00428e00
 ;   core_charactr.cpp_CCharacter_igniteBone_FUN_00426e70
-;   core_charactr.cpp_FUN_00426a10
-;   core_charactr.cpp_FUN_00427210
+;   core_charactr.cpp_CCharacter_shatter_FUN_00427210
 ;   core_charactr.cpp_FUN_00427260
-;   core_charactr.cpp_FUN_00428e00
 ;   core_event.cpp_CEventList_executeCommands_FUN_004894f0
 ;   core_game.cpp_CGame_setStatusDisplay_FUN_004bb8d0
-;   core_gore.cpp_FUN_004c9850
+;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004c9850
 ;   crt_math.c_round_FUN_005b7ff0
 ;
 ; *****************************************************************************
@@ -182,8 +182,8 @@ section .text
     PUSH EAX                            ; 004280d6
     MOV EDX,dword ptr [0x006167e0]      ; 004280d7 | g_CGorePtr
     PUSH EDX                            ; 004280dd
-    CALL core_gore.cpp_FUN_004c9850     ; 004280de
-        ;   XREF to: 004c9850 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004c9850(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
+    CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004c9850 ; 004280de
+        ;   XREF to: 004c9850 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004c9850(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
     ADD ESP,0x14                        ; 004280e3
     CMP dword ptr [EBX + 0x25b0],0x1    ; 004280e6
         ;   Label: LAB_004280e6
@@ -246,8 +246,8 @@ section .text
         ;   XREF to: 00428034 (UNCONDITIONAL_JUMP)  ; LAB_00428034
     PUSH EBX                            ; 00428175
         ;   Label: LAB_00428175
-    CALL core_charactr.cpp_FUN_00426a10 ; 00428176
-        ;   XREF to: 00426a10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00426a10(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_addDamageDecal_FUN_00426a10 ; 00428176
+        ;   XREF to: 00426a10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addDamageDecal_FUN_00426a10(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0042817b
     JMP 0x00428034                      ; 0042817e
         ;   XREF to: 00428034 (UNCONDITIONAL_JUMP)  ; LAB_00428034
@@ -278,15 +278,15 @@ section .text
         ;   XREF to: 0042815e (CONDITIONAL_JUMP)  ; LAB_0042815e
         ;   Label: LAB_004281af
     PUSH EBX                            ; 004281b1
-    CALL core_charactr.cpp_FUN_00427210 ; 004281b2
-        ;   XREF to: 00427210 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00427210(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_shatter_FUN_00427210 ; 004281b2
+        ;   XREF to: 00427210 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_shatter_FUN_00427210(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004281b7
     JMP 0x00428034                      ; 004281ba
         ;   XREF to: 00428034 (UNCONDITIONAL_JUMP)  ; LAB_00428034
     PUSH EBX                            ; 004281bf
         ;   Label: LAB_004281bf
-    CALL core_charactr.cpp_FUN_00428e00 ; 004281c0
-        ;   XREF to: 00428e00 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00428e00(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00428e00 ; 004281c0
+        ;   XREF to: 00428e00 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00428e00(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004281c5
     MOV ESP,EBP                         ; 004281c8
     POP EBP                             ; 004281ca

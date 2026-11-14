@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_setdir.cpp_FUN_00540be0 at 00540c04
+;   core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00540be0 at 00540c04
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f2af8
@@ -27,12 +27,12 @@
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00533b80
 ;   engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0046ce60
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540
+;   engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046d2f0
+;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90
+;   engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046d090
 ;   engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046d520
 ;   engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0046cc10
-;   engine_drender.cpp_FUN_0046cb90
-;   engine_matrix.c_FUN_0046d090
-;   engine_matrix.c_FUN_0046d2f0
-;   engine_matrix.c_popViewport_FUN_0046d320
+;   engine_drender.cpp_popViewport_FUN_0046d320
 ;   engine_special.cpp_clearZBufferNative_FUN_00560dd4
 ;
 ; *****************************************************************************
@@ -63,8 +63,8 @@ section .text
     PUSH 0x0                            ; 00540d21
     MOV EBX,dword ptr [0x005f2afc]      ; 00540d23 | DAT_005f2afc
     PUSH EBX                            ; 00540d29 | DAT_01bdd7e4
-    CALL engine_matrix.c_FUN_0046d2f0   ; 00540d2a
-        ;   XREF to: 0046d2f0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_0046d2f0()
+    CALL engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046d2f0 ; 00540d2a
+        ;   XREF to: 0046d2f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046d2f0(CDemonRenderer * this_ptr, int x, int y, int width, ...)
     ADD ESP,0x14                        ; 00540d2f
     MOV EAX,dword ptr [ESP + 0x28]      ; 00540d32
     MOV ESI,dword ptr [EAX]             ; 00540d36
@@ -89,15 +89,15 @@ section .text
     MOV EAX,[0x005f2af8]                ; 00540d77 | DAT_005f2af8
     PUSH EAX                            ; 00540d7c | DAT_01bdd7e4
     MOV ESI,dword ptr [ESP + 0xc]       ; 00540d7d
-    CALL engine_drender.cpp_FUN_0046cb90 ; 00540d81
-        ;   XREF to: 0046cb90 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_FUN_0046cb90(CDemonRenderer * this_ptr, CVector3f * point_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90 ; 00540d81
+        ;   XREF to: 0046cb90 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90(CDemonRenderer * this_ptr, CVector3f * point_ptr)
     ADD ESP,0x8                         ; 00540d86
     ADD EBX,ESI                         ; 00540d89
     MOV EDX,dword ptr [0x005f2af8]      ; 00540d8b | DAT_005f2af8
     PUSH dword ptr [EBX + 0x144]        ; 00540d91
     PUSH EDX                            ; 00540d97 | DAT_01bdd7e4
-    CALL engine_matrix.c_FUN_0046d090   ; 00540d98
-        ;   XREF to: 0046d090 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_0046d090()
+    CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046d090 ; 00540d98
+        ;   XREF to: 0046d090 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046d090(CDemonRenderer * this_ptr, float field_of_view)
     ADD ESP,0x8                         ; 00540d9d
     MOV ECX,dword ptr [ESP + 0x8]       ; 00540da0
     PUSH ECX                            ; 00540da4
@@ -158,8 +158,8 @@ section .text
     MOV EBP,dword ptr [0x005f2afc]      ; 00540e4d | DAT_005f2afc
         ;   Label: LAB_00540e4d
     PUSH EBP                            ; 00540e53 | DAT_01bdd7e4
-    CALL engine_matrix.c_popViewport_FUN_0046d320 ; 00540e54
-        ;   XREF to: 0046d320 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_popViewport_FUN_0046d320()
+    CALL engine_drender.cpp_popViewport_FUN_0046d320 ; 00540e54
+        ;   XREF to: 0046d320 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_popViewport_FUN_0046d320()
     ADD ESP,0x4                         ; 00540e59
     MOV EAX,dword ptr [ESP]             ; 00540e5c
     PUSH EAX                            ; 00540e5f

@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 191,
+    "complexity_score": 37,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 21,
-    "suspect_count": 16,
+    "pseudocode_lines": 22,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 68
+    "total_lines": 69
   },
   "cross_references": [
     {
@@ -39,7 +38,7 @@
     {
       "addr": "0040cfc0",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cfc0"
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cfc0"
     },
     {
       "addr": "00534ea0",
@@ -121,6 +120,32 @@
     },
     "pcode_op_count": 262
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004e5570",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004cdff0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9565
+    },
+    "nocedit.exe": {
+      "addr": "004ed0d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004af730",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 28,
     "local_size": 16,
@@ -166,126 +191,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x14 = iVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x4 = *(uint *)position;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x8 = uVar3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xc = *(uint *)&position->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xc = *(uint *)&position->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x18 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x8 = *(float *)&this_ptr->field_0x8 + _DAT_005d94ea;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x8 = *(float *)&this_ptr->field_0x8 + _DAT_005d94ea;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x1c = (int)ROUND(*(float *)&this_ptr->field_0x4 * _DAT_005f7ba8);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x1c = (int)ROUND(*(float *)&this_ptr->field_0x4 * _DAT_005f7ba8);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x20 = (int)ROUND(*(float *)&this_ptr->field_0x8 * _DAT_005f7ba8);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x20 = (int)ROUND(*(float *)&this_ptr->field_0x8 * _DAT_005f7ba8);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x24 = (int)ROUND(*(float *)&this_ptr->field_0xc * _DAT_005f7ba8);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x24 = (int)ROUND(*(float *)&this_ptr->field_0xc * _DAT_005f7ba8);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(EBloodType *)&this_ptr->field_0x10 = blood_type;",
-      "type": "unnamed_field"
     }
   ]
 }

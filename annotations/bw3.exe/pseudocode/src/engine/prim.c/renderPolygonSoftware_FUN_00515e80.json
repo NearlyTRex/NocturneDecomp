@@ -1,0 +1,413 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 514,
+    "complexity_score": 338,
+    "cross_reference_count": 1,
+    "function_call_count": 8,
+    "global_count": 17,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 223,
+    "suspect_count": 10,
+    "suspect_types": [
+      "sign_compare_idiom",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 737
+  },
+  "cross_references": [
+    {
+      "addr": "0043a840",
+      "from_addr": "0043a87f",
+      "name": "engine_clipper.c_clipAndRasterize_FUN_0043a840",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00515e80",
+    "address_range": [
+      [
+        "00515e80",
+        "005163a0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_prim.c_renderPolygonSoftware_FUN_00515e80",
+    "signature": "void __cdecl engine_prim_c_renderPolygonSoftware_FUN_00515e80(SRenderVertex *vertices,int vertex_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "00515a10",
+      "is_variadic": false,
+      "name": "engine_prim.c_adjustNearPlaneTextureCoords_FUN_00515a10"
+    },
+    {
+      "addr": "00515ac0",
+      "is_variadic": false,
+      "name": "engine_prim.c_calculateTriangleWindingOrder_FUN_00515ac0"
+    },
+    {
+      "addr": "005158e0",
+      "is_variadic": false,
+      "name": "engine_prim.c_findEdgeInBuffer_FUN_005158e0"
+    },
+    {
+      "addr": "00515990",
+      "is_variadic": false,
+      "name": "engine_prim.c_normalizeTextureCoords_FUN_00515990"
+    },
+    {
+      "addr": "00515920",
+      "is_variadic": false,
+      "name": "engine_prim.c_prepareDepthBuffer_FUN_00515920"
+    },
+    {
+      "addr": "00515a80",
+      "is_variadic": false,
+      "name": "engine_prim.c_replaceWWithDepth_FUN_00515a80"
+    },
+    {
+      "addr": "00565c10",
+      "is_variadic": false,
+      "name": "engine_special.cpp_drawPolygon_FUN_00565c10"
+    },
+    {
+      "addr": "00563257",
+      "is_variadic": false,
+      "name": "engine_special.cpp_FUN_00563257"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00515e58",
+      "name": "switchdataD_00515e58",
+      "type": "void*",
+      "value": "00515f90"
+    },
+    {
+      "addr": "005fba40",
+      "name": "DAT_005fba40",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00603974",
+      "name": "DAT_00603974",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007303f4",
+      "name": "DAT_007303f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007303fc",
+      "name": "DAT_007303fc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6b598",
+      "name": "DAT_01c6b598",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6b59c",
+      "name": "DAT_01c6b59c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6b5a0",
+      "name": "DAT_01c6b5a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6b5a4",
+      "name": "DAT_01c6b5a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6cee8",
+      "name": "DAT_01c6cee8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e2b4",
+      "name": "DAT_01c6e2b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e2b8",
+      "name": "DAT_01c6e2b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ed2c88",
+      "name": "DAT_01ed2c88",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ed2c8c",
+      "name": "DAT_01ed2c8c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ed318c",
+      "name": "DAT_01ed318c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ed3190",
+      "name": "DAT_01ed3190",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ed3198",
+      "name": "DAT_01ed3198",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0043a87f",
+        "call_type": "direct",
+        "caller": "engine_clipper.c_clipAndRasterize_FUN_0043a840",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.686182669789227,
+    "instruction_count": 427,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 80,
+      "BOOL_OR": 7,
+      "BRANCH": 10,
+      "BRANCHIND": 1,
+      "CALL": 13,
+      "CBRANCH": 29,
+      "COPY": 336,
+      "INT_ADD": 198,
+      "INT_AND": 420,
+      "INT_CARRY": 44,
+      "INT_DIV": 1,
+      "INT_EQUAL": 250,
+      "INT_LEFT": 16,
+      "INT_LESS": 30,
+      "INT_MULT": 18,
+      "INT_NOTEQUAL": 73,
+      "INT_OR": 88,
+      "INT_REM": 1,
+      "INT_RIGHT": 24,
+      "INT_SBORROW": 30,
+      "INT_SCARRY": 52,
+      "INT_SDIV": 3,
+      "INT_SEXT": 54,
+      "INT_SLESS": 140,
+      "INT_SREM": 3,
+      "INT_SRIGHT": 6,
+      "INT_SUB": 101,
+      "INT_XOR": 20,
+      "INT_ZEXT": 9,
+      "LOAD": 125,
+      "POPCOUNT": 116,
+      "RETURN": 3,
+      "STORE": 85,
+      "SUBPIECE": 42
+    },
+    "pcode_op_count": 2428
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0051cb20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0053e120",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00552510",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004f9dd0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9671
+    }
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "vertices",
+        "offset": 4,
+        "size": 4,
+        "type": "SRenderVertex *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_005fba40",
+      "severity": "mild",
+      "text": "if ((DAT_005fba40 != 0) && (iVar9 = 0, pSVar4 = vertices, 0 < vertex_count)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_007303fc",
+      "severity": "mild",
+      "text": "if (DAT_007303fc != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 69,
+      "match": "DAT_007303f4",
+      "severity": "mild",
+      "text": "if ((_DAT_01c6cee8 != 0) && (DAT_007303f4 == 0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 115,
+      "match": "DAT_01ed2c8c",
+      "severity": "mild",
+      "text": "*(int *)(&DAT_01ed2c8c + iVar3) = iVar8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 185,
+      "match": "DAT_00603974",
+      "severity": "mild",
+      "text": "iVar9 = _DAT_01ed318c - DAT_00603974;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
+      "line": 186,
+      "match": "SBORROW4",
+      "severity": "moderate",
+      "text": "bVar12 = SBORROW4(_DAT_01ed318c,DAT_00603974);",
+      "type": "sign_compare_idiom"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 186,
+      "match": "DAT_00603974",
+      "severity": "mild",
+      "text": "bVar12 = SBORROW4(_DAT_01ed318c,DAT_00603974);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 217,
+      "match": "DAT_00603974",
+      "severity": "mild",
+      "text": "iVar6 = DAT_00603974;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
+      "line": 223,
+      "match": "SBORROW4",
+      "severity": "moderate",
+      "text": "bVar12 = SBORROW4(local_18,iVar6);",
+      "type": "sign_compare_idiom"
+    }
+  ]
+}

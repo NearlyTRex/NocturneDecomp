@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
-;   core_path.cpp_FUN_00513950
+;   core_path.cpp_CPathMap_renderPathMap_FUN_00513950
 ;
 ; *****************************************************************************
 
@@ -76,8 +76,8 @@ section .text
     PUSH ECX                            ; 00514007
     PUSH EBP                            ; 00514008
     PUSH EDX                            ; 00514009
-    CALL core_path.cpp_FUN_00513950     ; 0051400a
-        ;   XREF to: 00513950 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_FUN_00513950()
+    CALL core_path.cpp_CPathMap_renderPathMap_FUN_00513950 ; 0051400a
+        ;   XREF to: 00513950 (UNCONDITIONAL_CALL)  ; void core_path.cpp_CPathMap_renderPathMap_FUN_00513950(CPathMap * this_ptr, int depth, int red, int green, ...)
     ADD ESP,0x14                        ; 0051400f
     JMP 0x00513fc5                      ; 00514012
         ;   XREF to: 00513fc5 (UNCONDITIONAL_JUMP)  ; LAB_00513fc5

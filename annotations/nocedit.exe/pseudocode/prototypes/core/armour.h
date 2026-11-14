@@ -75,7 +75,7 @@ CVector3f * __cdecl CVector3f::arrdtor15(CVector3f *this_ptr,uint flags);
 
 // Original: core_armour.cpp_SFire_arrdtor50_FUN_00412700
 // Address: 00412700
-SFire * __cdecl SFire::arrdtor50(SFire *objs,uint flags);
+SFire * __cdecl SFire::arrdtor50(SFire *this_ptr,uint flags);
 
 // Original: core_armour.cpp_CFlame_arrdtor50_FUN_00412720
 // Address: 00412720

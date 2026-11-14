@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 110,
+    "complexity_score": 35,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 35,
-    "suspect_count": 7,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 115
   },
   "cross_references": [
@@ -24,7 +22,7 @@
     {
       "addr": "0050cc90",
       "from_addr": "0050ccda",
-      "name": "core_menu.cpp_FUN_0050cc90",
+      "name": "core_menu.cpp_showMainGameMenu_FUN_0050cc90",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -48,7 +46,7 @@
       {
         "call_addr": "0050ccda",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_0050cc90",
+        "caller": "core_menu.cpp_showMainGameMenu_FUN_0050cc90",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -197,6 +195,32 @@
     },
     "pcode_op_count": 375
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0040dbd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0040da80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00410c20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0040e9e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 56,
     "local_size": 44,
@@ -269,62 +293,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "iVar3 = *(int *)&this_ptr->field_0xc / scaleFactorX;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "iVar4 = *(int *)&this_ptr->field_0x10 / scaleFactorY;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "iVar1 = local_14 * *(int *)&this_ptr->field_0xc * scaleFactorY + iVar5;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "puVar2 = (byte *)(*(int *)&this_ptr->field_0x4 + iVar6);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*puVar2 = *(byte *)(*(int *)&this_ptr->field_0x4 + iVar1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0xc = iVar3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x10 = iVar4;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

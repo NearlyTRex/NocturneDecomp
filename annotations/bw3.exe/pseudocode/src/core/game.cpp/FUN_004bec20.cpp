@@ -34,25 +34,25 @@ void core_game_cpp_FUN_004bec20(CGame *param_1)
   char *pcVar9;
   
   bVar10 = 0;
-  if (param_1->field_0x968 == '\0') {
+  if (param_1->bitmap_filename[0] == '\0') {
     return;
   }
-  *(uint *)&param_1->field_0xe8 = 0;
-  iVar2 = engine_dosio_cpp_getFileSize_FUN_004657f0(&DAT_005c38a8,&param_1->field_0x968);
+  param_1->cinematic_skip_in_progress = 0;
+  iVar2 = engine_dosio_cpp_getFileSize_FUN_004657f0(&DAT_005c38a8,param_1->bitmap_filename);
   if (iVar2 < 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0047cf40
               (g_CEditorToolsPtr,"Can't open %s");
-    param_1->field_0x968 = 0;
+    param_1->bitmap_filename[0] = '\0';
     return;
   }
-  if (iVar2 != *(int *)&param_1->field_0xa68 * *(int *)&param_1->field_0xa6c) {
+  if (iVar2 != param_1->bitmap_width * param_1->bitmap_height) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0047cf40
               (g_CEditorToolsPtr,"%s is %d bytes, but expected %dx%d=%d byte file");
-    param_1->field_0x968 = 0;
+    param_1->bitmap_filename[0] = '\0';
     return;
   }
   splitpath
-            (&param_1->field_0x968,(char *)0x0,(char *)0x0,local_12c,(char *)0x0);
+            (param_1->bitmap_filename,(char *)0x0,(char *)0x0,local_12c,(char *)0x0);
   pcVar5 = &DAT_005c38ea;
   iVar2 = -1;
   pcVar9 = local_12c;
@@ -110,36 +110,33 @@ void core_game_cpp_FUN_004bec20(CGame *param_1)
       iVar2 = iVar2 + 3;
       local_1c = local_1c + 4;
     } while (iVar6 != 0x200);
-    wincore_wddvmem_cpp_FUN_0057a3c0();
+    wincore_wddvmem_cpp_openScreenDevice_FUN_0057a3c0();
     engine_special_cpp_FUN_00565820();
     engine_special_cpp_clearScreen_FUN_00560d70();
     engine_special_cpp_unlockFrame_FUN_00565870(0);
-    wincore_wddvmem_cpp_FUN_0057a4b0();
-    wincore_wddvmem_cpp_FUN_0057a8a0();
-    local_18 = FUN_005a3650
-                         (*(int *)&param_1->field_0xa68 * *(int *)&param_1->field_0xa6c);
+    wincore_wddvmem_cpp_closeScreenDevice_FUN_0057a4b0();
+    wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
+    local_18 = malloc(param_1->bitmap_width * param_1->bitmap_height);
     if (local_18 != (void *)0x0) {
-      p_Var3 = engine_dosio_cpp_FUN_004659c0(&DAT_005c3907,&param_1->field_0x968,&DAT_005c3904);
+      p_Var3 = engine_dosio_cpp_FUN_004659c0(&DAT_005c3907,param_1->bitmap_filename,&DAT_005c3904);
       if (p_Var3 == (_FILE *)0x0) {
         _DAT_01d71de0 = "..\\core\\game.cpp";
         _DAT_01d71de4 = 0x1287;
-        core_main_c_FUN_004e4330("Can't open %s",&param_1->field_0x968);
+        core_main_c_FUN_004e4330("Can't open %s",param_1->bitmap_filename);
       }
-      _fread(local_18,*(uint *)&param_1->field_0xa68,*(uint *)&param_1->field_0xa6c,
-                 p_Var3);
+      _fread(local_18,param_1->bitmap_width,param_1->bitmap_height,p_Var3);
       _fclose(p_Var3);
       local_24 = 0;
       if (0 < DAT_005fba1c) {
         local_20 = 0;
         do {
-          local_14 = *(int *)&param_1->field_0xa68 *
-                     ((local_24 * *(int *)&param_1->field_0xa6c) / DAT_005fba1c);
+          local_14 = param_1->bitmap_width * ((local_24 * param_1->bitmap_height) / DAT_005fba1c);
           iVar2 = 0;
           if (0 < DAT_005fba18) {
             iVar7 = 0;
             iVar6 = 0;
             do {
-              pbVar4 = (byte *)((*(int *)&param_1->field_0xa68 * iVar2) / DAT_005fba18 + local_14 +
+              pbVar4 = (byte *)((param_1->bitmap_width * iVar2) / DAT_005fba18 + local_14 +
                                (int)local_18);
               if (DAT_005fba20 == 0x10) {
                 *(ushort *)(*(int *)(&DAT_01c5faec + local_20) + iVar6) = auStack_32c[*pbVar4];
@@ -159,38 +156,36 @@ void core_game_cpp_FUN_004bec20(CGame *param_1)
       engine_2d_c_clearInputAndWait_FUN_004032b0();
       core_game_cpp_FUN_004ba490(param_1);
       while( true ) {
-        wincore_wddvmem_cpp_FUN_0057a8a0();
-        if (*(int *)&param_1->field_0xd4 == 2) {
+        wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
+        if (param_1->game_control == CONTROL_MODE_GAMEPAD) {
           core_game_cpp_CGame_resetKeyState_FUN_004b93e0(param_1);
         }
         iVar2 = wincore_winrun_cpp_wasKeyPressed_FUN_00580800();
         if ((((iVar2 != 0) ||
-             (iVar2 = (**(code **)*0x01D70A78)(0x01D70A78,*(uint *)&param_1->field_0x48),
-             iVar2 != 0)) || (_DAT_01c5fae4 != 0)) ||
-           ((_DAT_01d22b44 != 1 && (*(float *)&param_1->field_0x438 < 0.0)))) break;
+             (iVar2 = (**(code **)*0x01D70A78)(0x01D70A78,param_1->key_fire), iVar2 != 0)) ||
+            (_DAT_01c5fae4 != 0)) || ((_DAT_01d22b44 != 1 && (param_1->bitmap_display_time < 0.0))))
+        break;
         core_game_cpp_FUN_004b4440(g_CGamePtr);
-        *(float *)&param_1->field_0x438 =
-             *(float *)&param_1->field_0x438 - *(float *)&g_CGamePtr->field_0x314;
+        param_1->bitmap_display_time = param_1->bitmap_display_time - g_CGamePtr->delta_time_float;
       }
       while ((_DAT_01c5fae4 != 0 ||
-             (iVar2 = (**(code **)*0x01D70A78)(0x01D70A78,*(uint *)&param_1->field_0x48),
-             iVar2 != 0))) {
-        if (*(int *)&param_1->field_0xd4 == 2) {
+             (iVar2 = (**(code **)*0x01D70A78)(0x01D70A78,param_1->key_fire), iVar2 != 0))) {
+        if (param_1->game_control == CONTROL_MODE_GAMEPAD) {
           core_game_cpp_CGame_resetKeyState_FUN_004b93e0(param_1);
-          wincore_wddvmem_cpp_FUN_0057a8a0();
+          wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
         }
         else {
-          wincore_wddvmem_cpp_FUN_0057a8a0();
+          wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
         }
       }
       engine_2d_c_clearInputAndWait_FUN_004032b0();
       core_game_cpp_FUN_004ba490(param_1);
-      core_game_cpp_FUN_004b4430(param_1);
-      param_1->field_0x968 = 0;
+      core_game_cpp_CGame_saveClockTime_FUN_004b4430(param_1);
+      param_1->bitmap_filename[0] = '\0';
       FUN_005a3770(local_18);
       return;
     }
   }
-  param_1->field_0x968 = 0;
+  param_1->bitmap_filename[0] = '\0';
   return;
 }

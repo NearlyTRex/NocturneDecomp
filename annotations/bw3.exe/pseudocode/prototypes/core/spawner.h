@@ -7,8 +7,36 @@
 
 // Original: core_spawner.cpp_staticInit_FUN_00563840
 // Address: 00563840
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_spawner.cpp_factoryFuncSpawner_FUN_00563870
 // Address: 00563870
-void factoryFuncSpawner(void);
+CSpawner * __cdecl factoryFuncSpawner(void);
+
+// Original: core_spawner.cpp_CSpawner_getActorType_FUN_00563890
+// Address: 00563890
+CDemonActorType * __cdecl CSpawner::getActorType(CSpawner *this_ptr);
+
+// Original: core_spawner.cpp_CSpawner_ctor_FUN_005638a0
+// Address: 005638a0
+CSpawner * __cdecl CSpawner::ctor(CSpawner *this_ptr);
+
+// Original: core_spawner.cpp_CSpawner_setup_FUN_00563910
+// Address: 00563910
+void __cdecl CSpawner::setup(CSpawner *this_ptr);
+
+// Original: core_spawner.cpp_CSpawner_process_FUN_00563970
+// Address: 00563970
+void __cdecl CSpawner::process(CSpawner *this_ptr,float param_2);
+
+// Original: core_spawner.cpp_FUN_00563e40
+// Address: 00563e40
+undefined4 FUN_00563e40(void);
+
+// Original: core_spawner.cpp_FUN_00563e50
+// Address: 00563e50
+void FUN_00563e50(CDemonActor *param_1);
+
+// Original: core_spawner.cpp_CSpawner_dtor_FUN_00563f70
+// Address: 00563f70
+CSpawner * __cdecl CSpawner::dtor(CSpawner *this_ptr,uint flags);

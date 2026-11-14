@@ -157,7 +157,7 @@ class DeltaModel(object):
         return out
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser(
         description="Attribute sibling-build struct size differences to their root causes",
         formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -168,7 +168,7 @@ def main():
     parser.add_argument("--class", dest="only", metavar="NAME",
                         help="explain a single class in detail")
     parser.add_argument("--json", metavar="PATH", help="also write the findings as JSON")
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     from_sizes = load_type_info_sizes(args.from_program)
     to_sizes = load_type_info_sizes(args.to_program)
@@ -306,8 +306,8 @@ def main():
                 "name": n,
                 "delta": truth[n],
                 "own_delta": model.residual[n],
-                "from_size": from_sizes.get(n, layouts.get(n, {}).get("len")),
-                "to_size": to_sizes[n],
+                "from_size": size_in(from_sizes, n) or layouts.get(n, {}).get("len"),
+                "to_size": size_in(to_sizes, n),
                 "explained_by": model.contributors[n],
             } for n in roots],
             "explained": {n: {"delta": truth[n], "explained_by": model.contributors[n]}

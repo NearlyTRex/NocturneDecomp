@@ -14,13 +14,14 @@ CLZWDecompress * __cdecl support_codec_cpp_CLZWDecompress_dtor_FUN_00444210(CLZW
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CLZWDecompressTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CLZWDecompressTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  pCVar1 = support_codec_cpp_CLZWDictionary_dtor_FUN_00442f90
-                     ((CLZWDictionary *)&this_ptr->field_0x4,0);
-  pCVar2 = (CLZWDecompress *)support_codec_cpp_CCodec_dtor_FUN_00442bb0((CCodec *)(pCVar1 + -4),1);
+  pCVar1 = support_codec_cpp_CLZWDictionary_dtor_FUN_00442f90(&this_ptr->lzw_dict,0);
+  pCVar2 = (CLZWDecompress *)
+           support_codec_cpp_CCodec_dtor_FUN_00442bb0
+                     ((CCodec *)&pCVar1[-1].bit_state.accumulated_bits,1);
   if ((flags & 2) == 0) {
     return pCVar2;
   }

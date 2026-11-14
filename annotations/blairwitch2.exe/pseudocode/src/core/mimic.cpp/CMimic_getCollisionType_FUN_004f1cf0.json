@@ -1,0 +1,162 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 44,
+    "complexity_score": 54,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 24,
+    "suspect_count": 2,
+    "suspect_types": [
+      "warning_overlapping_globals",
+      "warning_type_propagation"
+    ],
+    "total_lines": 68
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004f1cf0",
+    "address_range": [
+      [
+        "004f1cf0",
+        "004f1d69"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mimic.cpp_CMimic_getCollisionType_FUN_004f1cf0",
+    "signature": "ECollisionType __cdecl core_mimic_cpp_CMimic_getCollisionType_FUN_004f1cf0(CMimic *this_ptr,SCollisionInfo *collision_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "005035c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_FUN_005035c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005dd9f9",
+      "name": "DAT_005dd9f9",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005dda01",
+      "name": "DAT_005dda01",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.888888888888889,
+    "instruction_count": 36,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 100,
+      "FLOAT2FLOAT": 8,
+      "FLOAT_ADD": 1,
+      "FLOAT_MULT": 1,
+      "INT_ADD": 18,
+      "INT_AND": 14,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 14,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 7,
+      "INT_SUB": 5,
+      "INT_XOR": 1,
+      "LOAD": 9,
+      "POPCOUNT": 7,
+      "RETURN": 2,
+      "STORE": 8
+    },
+    "pcode_op_count": 212
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00510a80",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00520a00",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004d5c80",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMimic *"
+      },
+      {
+        "is_param": true,
+        "name": "collision_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SCollisionInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 68,
+        "vtable_addr": "005f9e94"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

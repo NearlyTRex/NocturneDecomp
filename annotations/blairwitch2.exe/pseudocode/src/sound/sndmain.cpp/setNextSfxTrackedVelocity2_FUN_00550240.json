@@ -1,0 +1,134 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 9,
+    "complexity_score": 39,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 9,
+    "suspect_count": 2,
+    "suspect_types": [
+      "raw_address_pointer_store",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 18
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00550240",
+    "address_range": [
+      [
+        "00550240",
+        "00550266"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_setNextSfxTrackedVelocity2_FUN_00550240",
+    "signature": "void __cdecl sound_sndmain_cpp_setNextSfxTrackedVelocity2_FUN_00550240(CVector3d *velocity_source_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0264161c",
+      "name": "DAT_0264161c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.75,
+    "instruction_count": 8,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "COPY": 6,
+      "INT_ADD": 5,
+      "INT_AND": 15,
+      "INT_EQUAL": 5,
+      "INT_LEFT": 2,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 4,
+      "INT_SUB": 2,
+      "INT_XOR": 1,
+      "LOAD": 2,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 62
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005728b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00555dc0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a8a30",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7059
+    },
+    "nocturne.exe": {
+      "addr": "005260c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8421
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "velocity_source_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3d *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 11,
+      "match": "*(CVector3d **)(iVar1 + 0x2641650",
+      "severity": "moderate",
+      "text": "*(CVector3d **)(iVar1 + 0x2641650) = velocity_source_ptr;",
+      "type": "raw_address_pointer_store"
+    }
+  ]
+}

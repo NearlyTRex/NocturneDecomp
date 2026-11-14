@@ -8,7 +8,7 @@
 ; SNetworkAddr *   Stack[0x8]:4   out_address
 ;
 ; XREF[1]:
-;   core_netgame.cpp_FUN_00504270 at 005042e7
+;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_00504270 at 005042e7
 ;
 ; Called Functions:
 ;   crt_wsock32.c_getsockname
@@ -45,7 +45,7 @@ section .text
     LEA EAX,[ESP + 0x1c]                ; 0056fd33
     PUSH EAX                            ; 0056fd37
     CALL support_trisock.cpp_convertSockAddr_FUN_0056f750 ; 0056fd38
-        ;   XREF to: 0056f750 (UNCONDITIONAL_CALL)  ; undefined support_trisock.cpp_convertSockAddr_FUN_0056f750()
+        ;   XREF to: 0056f750 (UNCONDITIONAL_CALL)  ; SOCKADDR_IN * support_trisock.cpp_convertSockAddr_FUN_0056f750(SNetworkAddr * dest_addr, SOCKADDR * src_addr)
     ADD ESP,0x8                         ; 0056fd3d
     MOV ESI,EAX                         ; 0056fd40
     MOV EDI,dword ptr [ESP + 0x2c]      ; 0056fd42

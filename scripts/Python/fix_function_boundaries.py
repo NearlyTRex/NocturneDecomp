@@ -42,7 +42,7 @@ Five detected classes (thunks/externals skipped):
                 INSIDE an instruction, so every question asked *at* the entry
                 returns a phase-shifted decode. This is why ENTRY_EARLY misses
                 it -- that class asks what instruction is at the entry and tests
-                it with _is_nop_like, but an entry bisecting `8D 52 00`
+                it with is_alignment_nop, but an entry bisecting `8D 52 00`
                 (`LEA EDX,[EDX]`) comes back as `PUSH EDX`, not a NOP, so its
                 run length is 0 and it bails. ENTRY_LATE/SPLIT need *defined*
                 code before the entry and OVERLAP needs a preceding function
@@ -106,6 +106,13 @@ Safety rails:
     this shape, so the flag actively SELECTED FOR the vtable-absorption bug. It
     is only meaningful once the reference + vtable checks above have run.
 
+  * An ENTRY_EARLY or ENTRY_MISALIGNED correction is never applied when the last
+    non-padding instruction before it falls through into it (a loop-closing `Jcc`,
+    a `PUSH`, a `CALL`): Watcom aligns branch targets inside a function as well as
+    entries, so that address is a join inside the previous function. The bogus
+    entry is reported and skipped; deleting it and letting validate_function_ranges
+    --fix re-absorb the bytes is the repair.
+
 Prefer fixing bodies (validate_function_ranges) before trusting fallthrough-only
 SPLITs at all - if A's real body ends in a RET before B, the fall-through that
 the detector keys on is itself an artifact of A's truncated body.
@@ -131,9 +138,10 @@ Examples:
 
 import os
 import re
-import sys
 import json
 import argparse
+
+from alignment_nop import is_alignment_nop
 
 MAX_CHAIN = 64     # safety bound on prologue-chain walk-back
 MAX_NOP_RUN = 8    # safety bound on leading alignment-padding NOP run
@@ -146,20 +154,11 @@ MAX_OVERSHOOT = 32 # how far past the entry that sweep may continue
 DEFAULT_KINDS = ("ENTRY_LATE", "SPLIT", "ENTRY_EARLY", "ENTRY_MISALIGNED")
 ALL_KINDS = ("ENTRY_LATE", "SPLIT", "ENTRY_EARLY", "ENTRY_MISALIGNED", "OVERLAP")
 
-# Single-instruction no-ops Watcom/MSVC emit as inter-function alignment padding.
-_NOP_FORMS = (
-    re.compile(r'^LEA\s+(E[A-Z]{2}),\[\1\]$'),
-    re.compile(r'^MOV\s+(E[A-Z]{2}),\1$'),
-    re.compile(r'^XCHG\s+(E?[A-Z]{2}),\1$'),
-)
-
-
-def _is_nop_like(instr):
-    """True if `instr` is a single-instruction no-op used as alignment padding."""
-    if instr.getMnemonicString().upper() == "NOP":
-        return True
-    text = " ".join(str(instr).split()).upper()
-    return any(rx.match(text) for rx in _NOP_FORMS)
+# An ENTRY_EARLY/ENTRY_MISALIGNED correction whose preceding code falls into it is
+# a branch target inside that code's function: reported, never applied. Deleting B
+# and letting validate_function_ranges --fix re-absorb the bytes is the repair.
+JOIN_NOTE = "; the code before falls into it, so it is a branch target inside that function"
+JOIN_SKIP = "joins the previous function (delete it, then validate_function_ranges --fix)"
 
 
 def _external_ref_count_to(program, addr, exclude_body=None):
@@ -236,10 +235,37 @@ def _ft_offset(instr):
     return None if ft is None else ft.getOffset()
 
 
+def _before(addr):
+    """The address one byte before `addr`, or None at the bottom of the space."""
+    return None if addr.getOffset() == 0 else addr.subtract(1)
+
+
+def _falls_into(listing, addr):
+    """True if the last non-padding instruction before `addr` falls through into it.
+
+    A function entry follows a RET or JMP, then alignment padding. When the code
+    before the padding falls through instead (a `Jcc` closing a loop, a `PUSH`, a
+    `CALL`), `addr` is a branch target inside that code's function, which Watcom
+    also aligns to 16 bytes, and not an entry at all. Undefined or data bytes
+    before `addr` answer False: nothing is known to flow in.
+    """
+    cur = addr
+    for _ in range(MAX_CHAIN):
+        prev = _before(cur)
+        ins = None if prev is None else listing.getInstructionContaining(prev)
+        if ins is None:
+            return False
+        if not is_alignment_nop(ins):
+            return _ft_offset(ins) == cur.getOffset()
+        cur = ins.getAddress()
+    return False
+
+
 def _detect_entry_early(program, B, listing):
     """ENTRY_EARLY: entry sits in alignment padding ahead of the real code.
 
-    Returns (correct_addr, refs_to_correct) or None.
+    Returns (correct_addr, refs_to_correct, joins) or None; `joins` is True when
+    the code before the padding falls into the corrected entry (see _falls_into).
     """
     E = B.getEntryPoint()
     if (E.getOffset() & 0xf) == 0:
@@ -252,7 +278,7 @@ def _detect_entry_early(program, B, listing):
         ins = listing.getInstructionAt(cur)
         if ins is None:
             return None  # data/undefined inside the body -> not our shape
-        if not _is_nop_like(ins):
+        if not is_alignment_nop(ins):
             break
         cur = ins.getAddress().add(ins.getLength())
         run += 1
@@ -267,7 +293,7 @@ def _detect_entry_early(program, B, listing):
     # reference to E means this is a genuine (if unaligned) entry point.
     if _ref_count_to(program, E) > 0:
         return None
-    return cur, _ref_count_to(program, cur)
+    return cur, _ref_count_to(program, cur), _falls_into(listing, cur)
 
 
 def _make_pseudo(program):
@@ -284,7 +310,7 @@ def _detect_entry_misaligned(program, B, listing, fm, pseudo):
 
     ENTRY_EARLY can only see an entry sitting exactly ON the first byte of a
     padding NOP, because it asks Ghidra what instruction is AT the entry and
-    tests it with _is_nop_like. When the entry is phase-shifted INTO the middle
+    tests it with is_alignment_nop. When the entry is phase-shifted INTO the middle
     of an instruction, that question returns garbage that happens to decode --
     `0040e1cc` is the second byte of `8D 52 00` (`LEA EDX,[EDX]`) and comes back
     as `PUSH EDX`, which is not NOP-like, so the run length is 0 and the
@@ -305,7 +331,11 @@ def _detect_entry_misaligned(program, B, listing, fm, pseudo):
       * entry inside the real first instruction -> true start is that
         instruction (`0040e2e1` -> `0040e2e0`, 1 byte EARLIER)
 
-    Returns (correct_addr, refs_to_correct, direction) or None.
+    A 16-aligned start found by walking back can still be a branch target inside
+    the code before it (bw2 004ebc2a -> 004ebc20 follows a PUSH), so the result
+    says whether the preceding instruction falls into it.
+
+    Returns (correct_addr, refs_to_correct, direction, joins) or None.
     """
     E = B.getEntryPoint()
     if (E.getOffset() & 0xf) == 0:
@@ -351,18 +381,11 @@ def _detect_entry_misaligned(program, B, listing, fm, pseudo):
         starts.append((cur, ins))
         cur = cur.add(ins.getLength())
         steps += 1
-    if not starts:
-        return None
     if any(a.getOffset() == E.getOffset() for a, _ in starts):
         return None          # entry IS a boundary -> not this bug
 
-    # The instruction containing E is the last start below it.
-    idx = None
-    for i, (a, _) in enumerate(starts):
-        if a.getOffset() < E.getOffset():
-            idx = i
-    if idx is None:
-        return None
+    # The instruction containing E is the last start below it; the anchor is one.
+    idx = max(i for i, (a, _) in enumerate(starts) if a.getOffset() < E.getOffset())
 
     # Watcom aligns function entries to 16 bytes, so the true start is a
     # 16-aligned, non-padding instruction start. Anchoring on alignment (rather
@@ -370,34 +393,41 @@ def _detect_entry_misaligned(program, B, listing, fm, pseudo):
     # can sit inside ANY instruction of the function, not just the first: at
     # 00460c26 it bisects the *second* instruction, and the containing
     # instruction 00460c24 is a valid boundary but still not the entry.
-    if _is_nop_like(starts[idx][1]):
+    if is_alignment_nop(starts[idx][1]):
         # Entry fell inside alignment padding -> real code starts after the run.
         j = idx
-        while j < len(starts) and _is_nop_like(starts[j][1]):
+        while j < len(starts) and is_alignment_nop(starts[j][1]):
             j += 1
         if j >= len(starts):
             return None      # padding runs past the sweep; give up
-        correct, direction = starts[j][0], "forward"
+        pos, correct, direction = j, starts[j][0], "forward"
     else:
         # Entry fell inside the body -> walk back to the aligned start.
         k = None
         for i in range(idx, -1, -1):
-            if (starts[i][0].getOffset() & 0xf) == 0 and not _is_nop_like(starts[i][1]):
+            if (starts[i][0].getOffset() & 0xf) == 0 and not is_alignment_nop(starts[i][1]):
                 k = i
                 break
         if k is None:
             return None      # no aligned candidate in range; refuse to guess
-        correct, direction = starts[k][0], "back"
+        pos, correct, direction = k, starts[k][0], "back"
     if (correct.getOffset() & 0xf) != 0:
         return None          # not an alignment boundary -> not this shape
 
-    if correct.getOffset() == E.getOffset():
-        return None
     # A real entry gets called (or sits in a vtable); padding and
     # mid-instruction addresses do not.
     if _ref_count_to(program, E) > 0:
         return None
-    return correct, _ref_count_to(program, correct), direction
+
+    # What precedes the corrected entry: the swept padding run, then the swept
+    # instruction before it, or the listing's once the walk reaches the anchor.
+    while pos > 0 and is_alignment_nop(starts[pos - 1][1]):
+        pos -= 1
+    if pos > 0:
+        joins = _ft_offset(starts[pos - 1][1]) == starts[pos][0].getOffset()
+    else:
+        joins = _falls_into(listing, anchor)
+    return correct, _ref_count_to(program, correct), direction, joins
 
 
 def _detect_overlap(program, B, listing, fm, vtable_targets):
@@ -425,17 +455,16 @@ def _detect_overlap(program, B, listing, fm, vtable_targets):
     victim's tail is rebuilt by validate_function_ranges --fix).
     """
     E = B.getEntryPoint()
-    prev = E.subtract(1) if E.getOffset() > 0 else None
-    if prev is None or listing.getInstructionContaining(prev) is not None:
-        return None  # predecessor is defined code -> ENTRY_LATE/SPLIT territory
+    # detect() only asks when no instruction holds the byte before E
+    prev = _before(E)
     if listing.getDefinedDataContaining(prev) is not None:
         return None  # predecessor is defined DATA -> genuine data/code boundary
 
     # walk back through contiguous undefined bytes to the start of the gap
-    g_start = E
-    steps = 0
+    g_start = prev
+    steps = 1
     while steps < MAX_CHAIN:
-        pb = g_start.subtract(1) if g_start.getOffset() > 0 else None
+        pb = _before(g_start)
         if pb is None:
             return None
         if listing.getInstructionContaining(pb) is not None:
@@ -444,10 +473,8 @@ def _detect_overlap(program, B, listing, fm, vtable_targets):
             return None  # ran into defined data before finding a function tail
         g_start = pb
         steps += 1
-    if g_start.getOffset() == E.getOffset():
-        return None  # no undefined gap
 
-    vlast = listing.getInstructionContaining(g_start.subtract(1))
+    vlast = listing.getInstructionContaining(_before(g_start))
     if vlast is None:
         return None
     V = fm.getFunctionContaining(vlast.getAddress())
@@ -478,29 +505,26 @@ def detect(program, vtable_targets=frozenset()):
 
         mis = _detect_entry_misaligned(program, B, listing, fm, pseudo)
         if mis is not None:
-            correct, nrefs, direction = mis
+            correct, nrefs, direction, joins = mis
             findings.append({
                 "kind": "ENTRY_MISALIGNED", "entry": E, "correct": correct,
-                "other": None, "name": B.getName(), "func": B,
+                "other": None, "name": B.getName(), "func": B, "joins": joins,
                 "note": "entry is mid-instruction; true start lies %s (%d ref(s) "
-                        "to corrected entry)" % (direction, nrefs),
+                        "to corrected entry)%s" % (direction, nrefs, JOIN_NOTE if joins else ""),
             })
             continue
 
         early = _detect_entry_early(program, B, listing)
         if early is not None:
-            correct, nrefs = early
+            correct, nrefs, joins = early
             findings.append({
                 "kind": "ENTRY_EARLY", "entry": E, "correct": correct,
-                "other": None, "name": B.getName(), "func": B,
-                "note": "%d ref(s) to corrected entry" % nrefs,
+                "other": None, "name": B.getName(), "func": B, "joins": joins,
+                "note": "%d ref(s) to corrected entry%s" % (nrefs, JOIN_NOTE if joins else ""),
             })
             continue
 
-        try:
-            prev_byte = E.subtract(1)
-        except Exception:
-            continue
+        prev_byte = _before(E)
         if prev_byte is None:
             continue
         pinstr = listing.getInstructionContaining(prev_byte)
@@ -549,7 +573,7 @@ def detect(program, vtable_targets=frozenset()):
             continue
 
         # owner is None: orphan predecessor.
-        if _is_nop_like(pinstr):
+        if is_alignment_nop(pinstr):
             # Alignment padding, not an orphaned prologue. It falls through into
             # the entry so it looks identical to a too-late entry, but padding
             # before an entry is a legitimate boundary. Without this check
@@ -561,18 +585,16 @@ def detect(program, vtable_targets=frozenset()):
             # whose `LEA EAX,[EAX]` pad precedes its own split-off `return 0` tail).
             continue
 
-        # Walk the fall-through chain back to a boundary.
+        # Walk the fall-through chain back to a boundary. pinstr is an orphan,
+        # non-padding instruction falling into E, so the walk always moves.
         cur = E
         steps = 0
         while steps < MAX_CHAIN:
-            try:
-                pb = cur.subtract(1)
-            except Exception:
-                break
-            ins = listing.getInstructionContaining(pb)
+            pb = _before(cur)
+            ins = None if pb is None else listing.getInstructionContaining(pb)
             if ins is None:
                 break  # padding/data/undefined -> true start reached
-            if _is_nop_like(ins):
+            if is_alignment_nop(ins):
                 break  # alignment padding -> true start reached, do not absorb it
             if fm.getFunctionContaining(ins.getAddress()) is not None:
                 break  # ran into another function -> stop
@@ -580,11 +602,10 @@ def detect(program, vtable_targets=frozenset()):
                 break  # this orphan doesn't flow into the chain -> stop
             cur = ins.getAddress()
             steps += 1
-        if cur.getOffset() != E.getOffset():
-            findings.append({
-                "kind": "ENTRY_LATE", "entry": E, "correct": cur,
-                "other": None, "name": B.getName(), "func": B,
-            })
+        findings.append({
+            "kind": "ENTRY_LATE", "entry": E, "correct": cur,
+            "other": None, "name": B.getName(), "func": B,
+        })
     return findings
 
 
@@ -665,6 +686,8 @@ def annotate_skips(findings, only_fun, excludes, allow_patched,
         name = f["name"]
         if f["kind"].split("(")[0] not in kinds:
             reason = "--kind"
+        elif f.get("joins"):
+            reason = JOIN_SKIP
         elif (split_strong_only and f["kind"].startswith("SPLIT")
               and not f.get("spans")):
             reason = "--split-strong-only (A not fragmented around B)"

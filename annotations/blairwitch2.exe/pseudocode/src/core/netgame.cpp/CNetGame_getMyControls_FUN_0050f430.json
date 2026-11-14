@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 42,
-    "complexity_score": 84,
+    "complexity_score": 29,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 14,
-    "suspect_count": 6,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 56
@@ -25,7 +24,7 @@
     {
       "addr": "004b8250",
       "from_addr": "004b825b",
-      "name": "core_game.cpp_FUN_004b8250",
+      "name": "core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004b8250",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -97,7 +96,7 @@
       {
         "call_addr": "004b825b",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b8250",
+        "caller": "core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004b8250",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -141,6 +140,32 @@
     },
     "pcode_op_count": 234
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00530660",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8
+    },
+    "bw3.exe": {
+      "addr": "00507f10",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005438c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8
+    },
+    "nocturne.exe": {
+      "addr": "004eda40",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -165,46 +190,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x124",
-      "severity": "mild",
-      "text": "if (-1 < *(int *)&this_ptr->field_0x124) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x6c",
-      "severity": "mild",
-      "text": "return (SPlayerInput *)(&this_ptr->field_0x6c + *(int *)&this_ptr->field_0x124 * 0x80);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x124",
-      "severity": "mild",
-      "text": "return (SPlayerInput *)(&this_ptr->field_0x6c + *(int *)&this_ptr->field_0x124 * 0x80);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x6c",
-      "severity": "mild",
-      "text": "return (SPlayerInput *)(&this_ptr->field_0x6c + *(int *)&this_ptr->field_0x124 * 0x80);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x124",
-      "severity": "mild",
-      "text": "return (SPlayerInput *)(&this_ptr->field_0x6c + *(int *)&this_ptr->field_0x124 * 0x80);",
-      "type": "unnamed_field"
     }
   ]
 }

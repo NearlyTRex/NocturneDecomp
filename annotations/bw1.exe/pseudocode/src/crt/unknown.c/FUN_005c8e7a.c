@@ -20,7 +20,7 @@ int FUN_005c8e7a(int param_1,uint param_2,uint param_3,uint param_4)
     }
     if ((((param_3 & 0x100) == 0) || ((param_3 & 0x80) == 0)) &&
        (((param_3 & 0x40) == 0 || ((param_3 & 0x20) == 0)))) {
-      iVar1 = unkafter_zombie_cpp_FUN_005cc3e0(param_2,&param_3,param_4);
+      iVar1 = FUN_005cc3e0(param_2,&param_3,param_4);
       *(int *)(param_1 + 0x2c) = iVar1;
       if (-1 < iVar1) {
         *(uint *)(param_1 + 0x30) = param_3;

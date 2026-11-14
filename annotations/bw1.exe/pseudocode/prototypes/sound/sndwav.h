@@ -9,9 +9,9 @@
 // Address: 0057a570
 void __cdecl staticInit(void);
 
-// Original: sound_sndwav.cpp_FUN_0057a590
+// Original: sound_sndwav.cpp_getWavOutBufferSizeBytes_FUN_0057a590
 // Address: 0057a590
-int FUN_0057a590(void);
+int __cdecl getWavOutBufferSizeBytes(void);
 
 // Original: sound_sndwav.cpp_writeWavOutBuffer_FUN_0057a5c0
 // Address: 0057a5c0
@@ -37,9 +37,9 @@ int __cdecl CWavOutDevice::setMode(CWavOutDevice *this_ptr,int bits_per_sample,i
 // Address: 0057ab10
 int __cdecl CWavOutDevice::poll(CWavOutDevice *this_ptr,short *output_buffer,int num_samples);
 
-// Original: sound_sndwav.cpp_FUN_0057ab90
+// Original: sound_sndwav.cpp_getWavInBufferSizeBytes_FUN_0057ab90
 // Address: 0057ab90
-int FUN_0057ab90(void);
+int __cdecl getWavInBufferSizeBytes(void);
 
 // Original: sound_sndwav.cpp_writeWavInBuffer_FUN_0057abc0
 // Address: 0057abc0
@@ -67,19 +67,15 @@ int __cdecl CWavInDevice::poll(CWavInDevice *this_ptr,short *output_buffer,int n
 
 // Original: sound_sndwav.cpp_enumerateWavOutDevice_FUN_0057b370
 // Address: 0057b370
-undefined4 __cdecl enumerateWavOutDevice(UINT_PTR param_1,char *param_2);
+int __cdecl enumerateWavOutDevice(UINT device_id,SSoundDeviceInfo *device_info);
 
 // Original: sound_sndwav.cpp_getWavOutDevice_FUN_0057b410
 // Address: 0057b410
-undefined * __cdecl getWavOutDevice(UINT_PTR param_1);
+CWavOutDevice * __cdecl getWavOutDevice(UINT device_id);
 
 // Original: sound_sndwav.cpp_enumerateWavInDevice_FUN_0057b460
 // Address: 0057b460
-undefined4 __cdecl enumerateWavInDevice(UINT_PTR param_1,char *param_2);
-
-// Original: sound_sndwav.cpp_FUN_0057b4fe
-// Address: 0057b4fe
-undefined * FUN_0057b4fe(undefined4 param_1,UINT_PTR param_2);
+int __cdecl enumerateWavInDevice(UINT device_id,SRecordingDeviceInfo *device_info);
 
 // Original: sound_sndwav.cpp_getWavInDevice_FUN_0057b500
 // Address: 0057b500

@@ -92,16 +92,16 @@
 ;   sound_mp3.cpp_antiAliasingButterfly_FUN_005019f0
 ;   sound_mp3.cpp_applyScalefactorsToSubbands_FUN_004fe990
 ;   sound_mp3.cpp_calculateMainDataSize_FUN_00502190
+;   sound_mp3.cpp_calculateMpegFrame_FUN_004fd150
 ;   sound_mp3.cpp_CFileBitStream_readAllocationTable_FUN_004fde40
 ;   sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_004fdd10
 ;   sound_mp3.cpp_CFileBitStream_readBit_FUN_004fd4f0
+;   sound_mp3.cpp_CFileBitStream_readBits_FUN_004fd5e0
 ;   sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_004fdc50
 ;   sound_mp3.cpp_CFileBitStream_readQuantizedSamples_FUN_004fe1f0
 ;   sound_mp3.cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_004fe2f0
 ;   sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_004fdef0
 ;   sound_mp3.cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_004fdf80
-;   sound_mp3.cpp_CFileBitStream_syncToPattern_FUN_004fd780
-;   sound_mp3.cpp_CMP3Decoder_getTotalBitsRead_FUN_004fd800
 ;   ... and 16 more
 ;
 ; *****************************************************************************
@@ -204,7 +204,7 @@ section .text
     PUSH EAX                            ; 00502e7d
     XOR ESI,ESI                         ; 00502e7e
     CALL sound_mp3.cpp_requantizeSamples_FUN_004fe850 ; 00502e80
-        ;   XREF to: 004fe850 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_requantizeSamples_FUN_004fe850()
+        ;   XREF to: 004fe850 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_requantizeSamples_FUN_004fe850(SMpegSubbandScalefactors * quantized_samples, SMpegSubbandScalefactors * dequantized_samples, SMpegSubbandAllocation * allocation, SMpegFrame * frame)
     ADD ESP,0x10                        ; 00502e85
     LEA EAX,[ESP + 0x5708]              ; 00502e88
     MOV EDI,dword ptr [ESP + 0x6000]    ; 00502e8f
@@ -407,7 +407,7 @@ section .text
     LEA EAX,[ESP + 0x5114]              ; 0050314e
     PUSH EAX                            ; 00503155
     CALL sound_mp3.cpp_requantizeLayer3SamplesSimple_FUN_004fe580 ; 00503156
-        ;   XREF to: 004fe580 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_requantizeLayer3SamplesSimple_FUN_004fe580()
+        ;   XREF to: 004fe580 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_requantizeLayer3SamplesSimple_FUN_004fe580(int * scalefactor_indices, uint * quantized_samples, float * dequantized_output, SMpegFrame * frame)
     ADD ESP,0x10                        ; 0050315b
     MOV EAX,dword ptr [ESP + 0x6014]    ; 0050315e
     SAR EAX,0x2                         ; 00503165
@@ -419,7 +419,7 @@ section .text
     LEA EAX,[ESP + 0x5714]              ; 00503179
     PUSH EAX                            ; 00503180
     CALL sound_mp3.cpp_applyScalefactorsToSubbands_FUN_004fe990 ; 00503181
-        ;   XREF to: 004fe990 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_applyScalefactorsToSubbands_FUN_004fe990()
+        ;   XREF to: 004fe990 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_applyScalefactorsToSubbands_FUN_004fe990(float * spectral_samples, int * scalefactor_band_indices, SMpegFrame * frame_info, int channel_or_granule_index)
     ADD ESP,0x10                        ; 00503186
     TEST EBX,EBX                        ; 00503189
     JNZ 0x005031aa                      ; 0050318b
@@ -535,8 +535,8 @@ section .text
     MOV ESI,dword ptr [EBP + 0x14]      ; 00503305
     PUSH ESI                            ; 00503308
     MOV dword ptr [ESP + 0x604c],EAX    ; 00503309
-    CALL sound_mp3.cpp_FUN_004fee40     ; 00503310
-        ;   XREF to: 004fee40 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_FUN_004fee40(CMP3Decoder * this_ptr, CFileBitStream * bit_stream, SMpegLayer3SideInfo * side_info_array, SMpegFrame * frame)
+    CALL sound_mp3.cpp_CMP3Decoder_readLayer3SideInfo_FUN_004fee40 ; 00503310
+        ;   XREF to: 004fee40 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CMP3Decoder_readLayer3SideInfo_FUN_004fee40(CMP3Decoder * this_ptr, CFileBitStream * bit_stream, SMpegLayer3SideInfo * side_info_array, SMpegFrame * frame)
     ADD ESP,0x10                        ; 00503315
     MOV ECX,0x7                         ; 00503318
     SUB ESP,0x1c                        ; 0050331d
@@ -544,7 +544,7 @@ section .text
     MOV EDI,ESP                         ; 00503327
     MOVSD.REP ES:EDI,ESI                ; 00503329
     CALL sound_mp3.cpp_calculateMainDataSize_FUN_00502190 ; 0050332b
-        ;   XREF to: 00502190 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_calculateMainDataSize_FUN_00502190()
+        ;   XREF to: 00502190 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_calculateMainDataSize_FUN_00502190(SMpegFrame frame_info)
     ADD ESP,0x1c                        ; 00503330
     MOV ESI,EAX                         ; 00503333
     TEST EAX,EAX                        ; 00503335
@@ -555,15 +555,15 @@ section .text
         ;   Label: LAB_00503340
     PUSH 0x8                            ; 00503342
     PUSH EDI                            ; 00503344
-    CALL sound_mp3.cpp_FUN_004fd5e0     ; 00503345
-        ;   XREF to: 004fd5e0 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_FUN_004fd5e0(CFileBitStream * this_ptr, int num_bits)
+    CALL sound_mp3.cpp_CFileBitStream_readBits_FUN_004fd5e0 ; 00503345
+        ;   XREF to: 004fd5e0 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CFileBitStream_readBits_FUN_004fd5e0(CFileBitStream * this_ptr, int num_bits)
     ADD ESP,0x8                         ; 0050334a
     PUSH EAX                            ; 0050334d
     MOV EDX,dword ptr [EBP + 0x14]      ; 0050334e
     PUSH EDX                            ; 00503351
     DEC ESI                             ; 00503352
-    CALL sound_mp3.cpp_FUN_004fd900     ; 00503353
-        ;   XREF to: 004fd900 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_FUN_004fd900(CMP3Decoder * this_ptr, uint byte_value, uint bits_per_byte)
+    CALL sound_mp3.cpp_CMP3Decoder_putByte_FUN_004fd900 ; 00503353
+        ;   XREF to: 004fd900 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CMP3Decoder_putByte_FUN_004fd900(CMP3Decoder * this_ptr, uint byte_value, uint bits_per_byte)
     ADD ESP,0xc                         ; 00503358
     TEST ESI,ESI                        ; 0050335b
     JG 0x00503340                       ; 0050335d
@@ -622,7 +622,7 @@ section .text
     MOV EDI,ESP                         ; 005033ed
     MOVSD.REP ES:EDI,ESI                ; 005033ef
     CALL sound_mp3.cpp_calculateMainDataSize_FUN_00502190 ; 005033f1
-        ;   XREF to: 00502190 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_calculateMainDataSize_FUN_00502190()
+        ;   XREF to: 00502190 (UNCONDITIONAL_CALL)  ; int sound_mp3.cpp_calculateMainDataSize_FUN_00502190(SMpegFrame frame_info)
     ADD ESP,0x1c                        ; 005033f6
     MOV EDX,dword ptr [EBP + 0x14]      ; 005033f9
     MOV EDI,dword ptr [EDX + 0x534c]    ; 005033fc
@@ -743,7 +743,7 @@ section .text
     LEA EAX,[ESP + 0x481c]              ; 00503577
     PUSH EAX                            ; 0050357e
     CALL sound_mp3.cpp_requantizeLayer3Samples_FUN_005003f0 ; 0050357f
-        ;   XREF to: 005003f0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_requantizeLayer3Samples_FUN_005003f0()
+        ;   XREF to: 005003f0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_requantizeLayer3Samples_FUN_005003f0(SMpegSubbandQuantizedSamples * quantized_samples, SMpegSubbandSamples * output_samples, int * scalefactor_data, SMpegLayer3GranuleInfo * granule, ...)
     ADD ESP,0x18                        ; 00503584
     INC ESI                             ; 00503587
     MOV EDX,dword ptr [ESP + 0x6054]    ; 00503588
@@ -766,7 +766,7 @@ section .text
     LEA EAX,[ESP + 0x18]                ; 005035d1
     PUSH EAX                            ; 005035d5
     CALL sound_mp3.cpp_mpegLayer3StereoProcess_FUN_00500c80 ; 005035d6
-        ;   XREF to: 00500c80 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_mpegLayer3StereoProcess_FUN_00500c80()
+        ;   XREF to: 00500c80 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_mpegLayer3StereoProcess_FUN_00500c80(SMpegStereoSubbandSamples * input_lr_samples, SMpegStereoSubbandSamples * output_samples, SMpegScalefactorBandData * scalefactor_data, SMpegLayer3GranuleInfo * granule, ...)
     ADD ESP,0x14                        ; 005035db
     XOR EDI,EDI                         ; 005035de
     MOV EAX,dword ptr [ESP + 0x6018]    ; 005035e0
@@ -794,7 +794,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x6074]    ; 0050364b
     PUSH EDI                            ; 00503652
     CALL sound_mp3.cpp_reorderShortBlockSamples_FUN_005008a0 ; 00503653
-        ;   XREF to: 005008a0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_reorderShortBlockSamples_FUN_005008a0()
+        ;   XREF to: 005008a0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_reorderShortBlockSamples_FUN_005008a0(SMpegSubbandSamples * input_samples, SMpegSubbandSamples * output_samples, SMpegLayer3GranuleInfo * granule, SMpegFrame * frame)
     ADD ESP,0x10                        ; 00503658
     LEA EAX,[ESP + 0x5ff0]              ; 0050365b
     PUSH EAX                            ; 00503662
@@ -804,7 +804,7 @@ section .text
     LEA EAX,[ESP + 0x2d14]              ; 0050366c
     PUSH EAX                            ; 00503673
     CALL sound_mp3.cpp_antiAliasingButterfly_FUN_005019f0 ; 00503674
-        ;   XREF to: 005019f0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_antiAliasingButterfly_FUN_005019f0()
+        ;   XREF to: 005019f0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_antiAliasingButterfly_FUN_005019f0(float * input_samples, float * output_samples, SMpegLayer3GranuleInfo * granule, SMpegFrameHeader * header)
     ADD ESP,0x10                        ; 00503679
     MOV EAX,dword ptr [ESP + 0x6064]    ; 0050367c
     LEA EDI,[ESP + 0x3608]              ; 00503683
@@ -1004,8 +1004,8 @@ section .text
     ADD ESP,0x8                         ; 00503939
     LEA EAX,[ESP + 0x5ff0]              ; 0050393c
     PUSH EAX                            ; 00503943
-    CALL sound_mp3.cpp_FUN_004fd150     ; 00503944
-        ;   XREF to: 004fd150 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_FUN_004fd150(SMpegFrame * frame)
+    CALL sound_mp3.cpp_calculateMpegFrame_FUN_004fd150 ; 00503944
+        ;   XREF to: 004fd150 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_calculateMpegFrame_FUN_004fd150(SMpegFrame * frame)
     ADD ESP,0x4                         ; 00503949
     MOV EAX,dword ptr [ESP + 0x6000]    ; 0050394c
     MOV dword ptr [ESP + 0x6018],EAX    ; 00503953

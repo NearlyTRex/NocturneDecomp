@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_simbox_cpp_staticInit_FUN_00562540(void)
+; void __cdecl core_simbox_cpp_staticInit_FUN_00562540(void)
 ;
 ;
 ; Called Functions:

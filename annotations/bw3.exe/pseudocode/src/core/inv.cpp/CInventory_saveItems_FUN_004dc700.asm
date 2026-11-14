@@ -8,15 +8,15 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[2]:
-;   core_inv.cpp_FUN_004dc560 at 004dc678
-;   core_mission.cpp_FUN_004f6410 at 004f6763
+;   core_inv.cpp_CInventory_save_FUN_004dc560 at 004dc678
+;   core_mission.cpp_CDemonMission_writeFile_FUN_004f6410 at 004f6763
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_s_s_005c648c
 ;   undefined1 DAT_005f0990
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408870
+;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870
 ;   crt_unknown.c_FUN_005a3140
 ;
 ; *****************************************************************************
@@ -40,8 +40,8 @@ section .text
         ;   Label: LAB_004dc717
     PUSH ECX                            ; 004dc71a
     PUSH ECX                            ; 004dc71b
-    CALL core_actor.cpp_FUN_00408870    ; 004dc71c
-        ;   XREF to: 00408870 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_FUN_00408870(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870 ; 004dc71c
+        ;   XREF to: 00408870 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004dc721
     PUSH EAX                            ; 004dc724
     PUSH 0x5f0990                       ; 004dc725 | DAT_005f0990

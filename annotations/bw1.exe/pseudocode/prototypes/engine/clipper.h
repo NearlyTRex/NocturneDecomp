@@ -9,41 +9,41 @@
 // Address: 0043b480
 void __cdecl setFarPlaneDistance(int distance);
 
-// Original: engine_clipper.c_FUN_0043b4a0
+// Original: engine_clipper.c_getFarPlaneDistance_FUN_0043b4a0
 // Address: 0043b4a0
-undefined4 FUN_0043b4a0(void);
+int __cdecl getFarPlaneDistance(void);
 
 // Original: engine_clipper.c_interpolateVertexRightClip_FUN_0043b4b0
 // Address: 0043b4b0
-void __cdecl interpolateVertexRightClip(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexRightClip(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_interpolateVertexLeftClip_FUN_0043b5b0
 // Address: 0043b5b0
-void __cdecl interpolateVertexLeftClip(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexLeftClip(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_interpolateVertexTopClip_FUN_0043b6b0
 // Address: 0043b6b0
-void __cdecl interpolateVertexTopClip(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexTopClip(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_interpolateVertexBottomClip_FUN_0043b7b0
 // Address: 0043b7b0
-void __cdecl interpolateVertexBottomClip(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexBottomClip(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_interpolateVertexFarClip_FUN_0043b8b0
 // Address: 0043b8b0
-void __cdecl interpolateVertexFarClip(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexFarClip(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_clipPolygonRightPlane_FUN_0043b9d0
 // Address: 0043b9d0
 int __cdecl clipPolygonRightPlane(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count);
 
-// Original: engine_clipper.c_FUN_0043bb0e
-// Address: 0043bb0e
-int FUN_0043bb0e(undefined4 *param_1,int param_2,int param_3);
+// Original: engine_clipper.c_clipPolygonLeftPlane_FUN_0043bb10
+// Address: 0043bb10
+int clipPolygonLeftPlane(void);
 
-// Original: engine_clipper.c_FUN_0043bd8e
-// Address: 0043bd8e
-int FUN_0043bd8e(int *param_1,int param_2,int param_3);
+// Original: engine_clipper.c_clipPolygonBottomPlane_FUN_0043bd90
+// Address: 0043bd90
+int clipPolygonBottomPlane(void);
 
 // Original: engine_clipper.c_normalizeClippedVertices_FUN_0043c0d0
 // Address: 0043c0d0
@@ -59,31 +59,31 @@ void __cdecl clipAndRasterize(int vertex_count,int *vertex_indices);
 
 // Original: engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_0043cc70
 // Address: 0043cc70
-void __cdecl interpolateVertexRightClipAdvanced(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexRightClipAdvanced(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_0043cda0
 // Address: 0043cda0
-void __cdecl interpolateVertexLeftClipAdvanced(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexLeftClipAdvanced(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_0043ced0
 // Address: 0043ced0
-void __cdecl interpolateVertexTopClipAdvanced(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexTopClipAdvanced(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
 // Original: engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_0043d000
 // Address: 0043d000
-void __cdecl interpolateVertexBottomClipAdvanced(int *param_1,int *param_2,int *param_3);
+void __cdecl interpolateVertexBottomClipAdvanced(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output);
 
-// Original: engine_clipper.c_FUN_0043d13e
-// Address: 0043d13e
-void FUN_0043d13e(void);
+// Original: engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_0043d140
+// Address: 0043d140
+void clipPolygonRightPlaneGlobal(void);
 
 // Original: engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_0043d280
 // Address: 0043d280
 void __cdecl clipPolygonLeftPlaneGlobal(void);
 
-// Original: engine_clipper.c_FUN_0043d4fe
-// Address: 0043d4fe
-void FUN_0043d4fe(void);
+// Original: engine_clipper.c_FUN_0043d500
+// Address: 0043d500
+void FUN_0043d500(void);
 
 // Original: engine_clipper.c_FUN_0043d880
 // Address: 0043d880

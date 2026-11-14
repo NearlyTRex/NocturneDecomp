@@ -1,14 +1,22 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dtri_cpp_clipLineToPlane_FUN_00478900(float *param_1,float *param_2,float *param_3,int param_4,uint param_5,int param_6,uint param_7,int param_8,uint param_9,double param_10)
+; void __cdecl core_dtri_cpp_clipLineToPlane_FUN_00478900(CVector3f *point1_ptr,CVector3f *point2_ptr,CVector3f *result_ptr,double plane_nx,double plane_ny,double plane_nz,double plane_d)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   point1_ptr
+; CVector3f *      Stack[0x8]:4   point2_ptr
+; CVector3f *      Stack[0xc]:4   result_ptr
+; double           Stack[0x10]:8   plane_nx
+; double           Stack[0x18]:8   plane_ny
+; double           Stack[0x20]:8   plane_nz
+; double           Stack[0x28]:8   plane_d
 ; Local Variables:
 ; undefined8       Stack[-0x28]:8  local_28
 ;
 ; XREF[3]:
-;   core_dtri.cpp_FUN_00478d70 at 00478e4a
-;   core_dtri.cpp_FUN_004791a0 at 00479282
+;   core_dtri.cpp_clipPolygonToFar_FUN_004791a0 at 00479282
+;   core_dtri.cpp_clipPolygonToRight_FUN_00478d70 at 00478e4a
 ;   core_dtri.cpp_clipTriangleToBounds_FUN_00479360 at 00479973
 ;
 ; Referenced Globals:

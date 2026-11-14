@@ -1,0 +1,323 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 342,
+    "complexity_score": 336,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 146,
+    "suspect_count": 15,
+    "suspect_types": [
+      "bitcast_double_pair",
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk",
+      "stack_alignment_array",
+      "unknown_field",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 488
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004a6c30",
+    "address_range": [
+      [
+        "004a6c30",
+        "004a6fdd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_flies.cpp_CFlies_process_FUN_004a6c30",
+    "signature": "void __cdecl core_flies_cpp_CFlies_process_FUN_004a6c30(CFlies *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408d30",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408d30"
+    },
+    {
+      "addr": "004a7560",
+      "is_variadic": false,
+      "name": "core_flies.cpp_CFlies_initFly_FUN_004a7560"
+    },
+    {
+      "addr": "004a7660",
+      "is_variadic": false,
+      "name": "core_flies.cpp_FUN_004a7660"
+    },
+    {
+      "addr": "005b84d0",
+      "is_variadic": false,
+      "name": "crt_math.c_floor_FUN_005b84d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d66d9",
+      "name": "DAT_005d66d9",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d66e1",
+      "name": "DAT_005d66e1",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.099009900990099,
+    "instruction_count": 303,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 7,
+      "BRANCH": 3,
+      "CALL": 4,
+      "CBRANCH": 17,
+      "COPY": 854,
+      "FLOAT2FLOAT": 71,
+      "FLOAT_ADD": 3,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_MULT": 7,
+      "FLOAT_NAN": 6,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 17,
+      "INT2FLOAT": 3,
+      "INT_ADD": 198,
+      "INT_AND": 91,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 72,
+      "INT_LEFT": 12,
+      "INT_LESS": 12,
+      "INT_MULT": 24,
+      "INT_NOTEQUAL": 21,
+      "INT_OR": 15,
+      "INT_SBORROW": 13,
+      "INT_SCARRY": 17,
+      "INT_SLESS": 36,
+      "INT_SUB": 53,
+      "INT_XOR": 2,
+      "INT_ZEXT": 36,
+      "LOAD": 114,
+      "POPCOUNT": 36,
+      "RETURN": 1,
+      "STORE": 80
+    },
+    "pcode_op_count": 1848
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004bfc00",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004ad950",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004cbf00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3292
+    },
+    "nocturne.exe": {
+      "addr": "0048f090",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3292
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFlies *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004a6c39",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 15,
+      "match": "afStackY_105c",
+      "severity": "moderate",
+      "text": "float afStackY_105c [1011];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 42,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "uStack_80 = __BITCAST_DOUBLE(CONCAT44(fStack_40,afStack_50[3]));",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 59,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "uStack_80 = __BITCAST_DOUBLE(CONCAT44(afStack_70[0],fStack_74));",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 69,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "pCVar4->y = pCVar4->y - uStack_80._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 73,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "pCVar4[1].y = pCVar4[1].y - uStack_80._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 76,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "pCVar5->y = pCVar5->y - uStack_80._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 80,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "pCVar5[1].y = pCVar5[1].y - uStack_80._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 84,
+      "match": "(CVector3f *)((int)(pCVar5 + 4) +",
+      "severity": "moderate",
+      "text": "pCVar5 = (CVector3f *)((int)(pCVar5 + 4) + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `(pCVar5 + 4)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 84,
+      "match": "(int)(pCVar5 + 4)",
+      "severity": "moderate",
+      "text": "pCVar5 = (CVector3f *)((int)(pCVar5 + 4) + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 89,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->base).location.position.x = (pCVar2->location).position.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 119,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pSVar7->control_points[0].x = pSVar7->control_points[1].x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 124,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pSVar7->control_points[1].x = pSVar7->control_points[2].x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 129,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pSVar7->control_points[2].x = pSVar7->control_points[3].x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via element-arithmetic `(int)(pCVar5 + N) + M`, where `N*sizeof(*pCVar5) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `pCVar5->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 84,
+      "match": "pCVar5 = (T *)((int)(pCVar5 + N) + M)",
+      "severity": "moderate",
+      "text": "pCVar5 = (CVector3f *)((int)(pCVar5 + 4) + 4);",
+      "type": "shadow_pointer_walk"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 20,
+        "vtable_addr": "005f7084"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

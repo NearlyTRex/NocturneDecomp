@@ -10,7 +10,7 @@
 ;   core_event.cpp_CEventList_updateSfxEntries_FUN_004aa400 at 004aa4d0
 ;   core_game.cpp_FUN_004ce580 at 004cee44
 ;   core_sound.cpp_CSound_getSoundDuration_FUN_0057d9e0 at 0057d9f1
-;   core_tommygun.cpp_FUN_00598d50 at 00598eb4
+;   core_tommygun.cpp_CTommyGun_process_FUN_00598d50 at 00598eb4
 ;   sound_sndmain.cpp_CSfxSample_ctor_FUN_0056fe10 at 0056fe15
 ;
 ; Referenced Globals:

@@ -17,17 +17,17 @@
 ;
 ; XREF[3]:
 ;   core_game.cpp_CGame_processHotkeys_FUN_004d1a80 at 004d1be0
-;   core_game.cpp_FUN_004cf5e0 at 004d0144
-;   core_game.cpp_FUN_004d8060 at 004d8548
+;   core_game.cpp_CGame_process_FUN_004d8060 at 004d8548
+;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004d0144
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061b4d0
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.field1420400_0x15ac70
-;   undefined4 g_CDemonSetInstance.field1420404_0x15ac74
-;   undefined4 g_CDemonSetInstance.field1420408_0x15ac78
-;   undefined4 g_CDemonSetInstance.field1420472_0x15acb8
+;   undefined4 g_CDemonSetInstance.active_fog.scroll.x
+;   undefined4 g_CDemonSetInstance.active_fog.scroll.y
+;   undefined4 g_CDemonSetInstance.active_fog.scroll.z
+;   undefined4 g_CDemonSetInstance.player_on_train
 ;   undefined4 DAT_02c82a6c
 ;   undefined4 DAT_02c82a70
 ;   undefined4 DAT_02c82a74
@@ -44,14 +44,14 @@
 ;   core_sound.cpp_updateListeners_FUN_0057b780
 ;   sound_sndmain.cpp_enableSfxChannel_FUN_00573c50
 ;   sound_sndmain.cpp_enableSoundSystem_FUN_00574ee0
-;   sound_sndmain.cpp_FUN_00572980
-;   sound_sndmain.cpp_FUN_00572ac0
-;   sound_sndmain.cpp_FUN_00572b40
-;   sound_sndmain.cpp_FUN_00573cd0
-;   sound_sndmain.cpp_FUN_00573fa0
-;   sound_sndmain.cpp_FUN_00575550
 ;   sound_sndmain.cpp_getSfxChannelVol_FUN_00573bc0
+;   sound_sndmain.cpp_isSfxChannelEnabled_FUN_00573cd0
+;   sound_sndmain.cpp_isSoundBusy_FUN_00575550
+;   sound_sndmain.cpp_popSfxOptions_FUN_00572b40
+;   sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0
 ;   sound_sndmain.cpp_set3DListenerOrientRight_FUN_005756f0
+;   sound_sndmain.cpp_set3DListenerVelocity_FUN_00573fa0
+;   sound_sndmain.cpp_setNextSfxChannel_FUN_00572980
 ;   sound_sndmain.cpp_setSfxChannelVol_FUN_00573b30
 ;
 ; *****************************************************************************
@@ -72,8 +72,8 @@ section .text
     MOV dword ptr [0x02c82a6c],ESI      ; 0057cc23 | DAT_02c82a6c
     MOV dword ptr [0x02c82a70],ESI      ; 0057cc29 | DAT_02c82a70
     MOV dword ptr [0x02c82a74],ESI      ; 0057cc2f | DAT_02c82a74
-    CALL sound_sndmain.cpp_FUN_00573fa0 ; 0057cc35
-        ;   XREF to: 00573fa0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00573fa0()
+    CALL sound_sndmain.cpp_set3DListenerVelocity_FUN_00573fa0 ; 0057cc35
+        ;   XREF to: 00573fa0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_set3DListenerVelocity_FUN_00573fa0(float velocity_x, float velocity_y, float velocity_z)
     ADD ESP,0xc                         ; 0057cc3a
     CALL core_sound.cpp_updateListeners_FUN_0057b780 ; 0057cc3d
         ;   XREF to: 0057b780 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_updateListeners_FUN_0057b780()
@@ -83,12 +83,12 @@ section .text
     PUSH dword ptr [0x02c82a84]         ; 0057cc50 | DAT_02c82a84
     MOV [0x02c82a7c],EAX                ; 0057cc56 | DAT_02c82a7c
     CALL sound_sndmain.cpp_set3DListenerOrientRight_FUN_005756f0 ; 0057cc5b
-        ;   XREF to: 005756f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_set3DListenerOrientRight_FUN_005756f0()
+        ;   XREF to: 005756f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_set3DListenerOrientRight_FUN_005756f0(float orient_right_x, float orient_right_y, float orient_right_z)
     ADD ESP,0xc                         ; 0057cc60
     CALL sound_sndmain.cpp_enableSoundSystem_FUN_00574ee0 ; 0057cc63
         ;   XREF to: 00574ee0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_enableSoundSystem_FUN_00574ee0()
-    CALL sound_sndmain.cpp_FUN_00575550 ; 0057cc68
-        ;   XREF to: 00575550 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00575550()
+    CALL sound_sndmain.cpp_isSoundBusy_FUN_00575550 ; 0057cc68
+        ;   XREF to: 00575550 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundBusy_FUN_00575550()
     TEST EAX,EAX                        ; 0057cc6d
     JNZ 0x0057cc76                      ; 0057cc6f
         ;   XREF to: 0057cc76 (CONDITIONAL_JUMP)  ; LAB_0057cc76
@@ -104,8 +104,8 @@ section .text
     PUSH EBX                            ; 0057cc85
     MOV dword ptr [0x02c832ac],EDX      ; 0057cc86 | DAT_02c832ac
     MOV dword ptr [0x02c832b0],EBX      ; 0057cc8c | DAT_02c832b0
-    CALL sound_sndmain.cpp_FUN_00573cd0 ; 0057cc92
-        ;   XREF to: 00573cd0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00573cd0(int channel_index)
+    CALL sound_sndmain.cpp_isSfxChannelEnabled_FUN_00573cd0 ; 0057cc92
+        ;   XREF to: 00573cd0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxChannelEnabled_FUN_00573cd0(int channel_index)
     ADD ESP,0x4                         ; 0057cc97
     TEST EAX,EAX                        ; 0057cc9a
     JZ 0x0057cd9f                       ; 0057cc9c
@@ -117,7 +117,7 @@ section .text
     ADD ESP,0x8                         ; 0057ccab
     PUSH EBX                            ; 0057ccae
     CALL sound_sndmain.cpp_getSfxChannelVol_FUN_00573bc0 ; 0057ccaf
-        ;   XREF to: 00573bc0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_getSfxChannelVol_FUN_00573bc0()
+        ;   XREF to: 00573bc0 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_getSfxChannelVol_FUN_00573bc0(int channel_index)
     MOV dword ptr [ESP + 0x24],EAX      ; 0057ccb4
     FLD float ptr [ESP + 0x24]          ; 0057ccb8
     ADD ESP,0x4                         ; 0057ccbc
@@ -126,14 +126,14 @@ section .text
     FSTP float ptr [ESP]                ; 0057ccc8
     PUSH 0x3                            ; 0057cccb
     CALL sound_sndmain.cpp_setSfxChannelVol_FUN_00573b30 ; 0057cccd
-        ;   XREF to: 00573b30 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setSfxChannelVol_FUN_00573b30()
+        ;   XREF to: 00573b30 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setSfxChannelVol_FUN_00573b30(int channel_index, float volume)
     ADD ESP,0x8                         ; 0057ccd2
         ;   Label: LAB_0057ccd2
-    CALL sound_sndmain.cpp_FUN_00572ac0 ; 0057ccd5
-        ;   XREF to: 00572ac0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00572ac0()
+    CALL sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0 ; 0057ccd5
+        ;   XREF to: 00572ac0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0()
     PUSH 0x3                            ; 0057ccda
-    CALL sound_sndmain.cpp_FUN_00572980 ; 0057ccdc
-        ;   XREF to: 00572980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00572980(int channel_index)
+    CALL sound_sndmain.cpp_setNextSfxChannel_FUN_00572980 ; 0057ccdc
+        ;   XREF to: 00572980 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxChannel_FUN_00572980(int channel_index)
     ADD ESP,0x4                         ; 0057cce1
     PUSH 0x2c83278                      ; 0057cce4 | DAT_02c83278
     MOV ESI,dword ptr [0x00622c18]      ; 0057cce9 | g_CDemonSetPtr
@@ -144,15 +144,15 @@ section .text
         ;   XREF to: 0057d880 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_0057d880(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 0057ccfa
     MOV [0x02c832a0],EAX                ; 0057ccfd | DAT_02c832a0
-    CALL sound_sndmain.cpp_FUN_00572b40 ; 0057cd02
-        ;   XREF to: 00572b40 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00572b40()
+    CALL sound_sndmain.cpp_popSfxOptions_FUN_00572b40 ; 0057cd02
+        ;   XREF to: 00572b40 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_00572b40()
     MOV EAX,[0x00622c18]                ; 0057cd07 | g_CDemonSetPtr
-    CMP dword ptr [EAX + 0x15acb8],0x0  ; 0057cd0c | g_CDemonSetInstance.field1420472_0x15acb8
+    CMP dword ptr [EAX + 0x15acb8],0x0  ; 0057cd0c | g_CDemonSetInstance.player_on_train
     JZ 0x0057cd7e                       ; 0057cd13
         ;   XREF to: 0057cd7e (CONDITIONAL_JUMP)  ; LAB_0057cd7e
-    FLD float ptr [EAX + 0x15ac70]      ; 0057cd15 | g_CDemonSetInstance.field1420400_0x15ac70
-    FLD float ptr [EAX + 0x15ac74]      ; 0057cd1b | g_CDemonSetInstance.field1420404_0x15ac74
-    FLD float ptr [EAX + 0x15ac78]      ; 0057cd21 | g_CDemonSetInstance.field1420408_0x15ac78
+    FLD float ptr [EAX + 0x15ac70]      ; 0057cd15 | g_CDemonSetInstance.active_fog.scroll.x
+    FLD float ptr [EAX + 0x15ac74]      ; 0057cd1b | g_CDemonSetInstance.active_fog.scroll.y
+    FLD float ptr [EAX + 0x15ac78]      ; 0057cd21 | g_CDemonSetInstance.active_fog.scroll.z
     LEA EDI,[ESP + 0x8]                 ; 0057cd27
     LEA ESI,[ESP + 0x14]                ; 0057cd2b
     FXCH ST2                            ; 0057cd2f

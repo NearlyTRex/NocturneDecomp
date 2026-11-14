@@ -9,8 +9,9 @@
 SGem * __cdecl core_manpuz_cpp_SGem_ctor_FUN_004e7b20(SGem *this_ptr)
 
 {
-  int iVar1;
+  void *pvVar1;
   
-  iVar1 = __arrinit(&this_ptr->field_0x3c,2,&g_CDemonTriangleTypeInfo);
-  return (SGem *)(iVar1 + -0x3c);
+  pvVar1 = __arrinit
+                     (&this_ptr->collision_tri_a,2,&g_CDemonTriangleTypeInfo);
+  return (SGem *)((int)pvVar1 + -0x3c);
 }

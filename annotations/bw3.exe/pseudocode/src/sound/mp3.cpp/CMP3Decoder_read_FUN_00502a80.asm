@@ -12,8 +12,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   sound_sndmain.cpp_FUN_00551d20 at 0055224a
-;   sound_sndmain.cpp_FUN_00553960 at 00553f12
+;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00553960 at 00553f12
+;   sound_sndmain.cpp_getSfxSample_FUN_00551d20 at 0055224a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d94b98

@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 300,
-    "complexity_score": 208,
+    "complexity_score": 133,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 103,
-    "suspect_count": 9,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_alignment_array",
-      "unknown_field",
-      "unnamed_field"
+      "unrolled_memcpy"
     ],
     "total_lines": 403
   },
@@ -128,6 +127,20 @@
       "STORE": 126
     },
     "pcode_op_count": 1128
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00536cb0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005580d0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 548,
@@ -386,68 +399,12 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "local_1c = local_40 + *(float *)&position->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 55,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "local_18 = local_3c + *(float *)&position->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 56,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_50._0_4_ = local_44 + *(float *)position;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
       "line": 61,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "*(uint *)pCVar1 = local_50._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 62,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x4 = local_50._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 62,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x4 = local_50._4_4_;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 63,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x8 = local_50._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 63,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x8 = local_50._8_4_;",
-      "type": "unnamed_field"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar1->x = local_50.x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

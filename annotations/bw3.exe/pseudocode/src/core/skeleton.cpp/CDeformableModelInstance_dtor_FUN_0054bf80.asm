@@ -10,14 +10,14 @@
 ; XREF[66]:
 ;   core_asgaya.cpp_CAsgaya_dtor_FUN_005a1b50 at 005a1ba5
 ;   core_baal.cpp_CBaal_dtor_FUN_00597d00 at 00597d35
+;   core_bird.cpp_CBird_dtor_FUN_004101f0 at 00410235
+;   core_boneguy.cpp_CBaalSkel_dtor_FUN_0041a8c0 at 0041a8f5
 ;   core_boneguy.cpp_CBoneGuy_dtor_FUN_0041ab00 at 0041ab35
 ;   core_boneguy.cpp_CSkeletonDemon_dtor_FUN_0041a950 at 0041a985
 ;   core_boneguy.cpp_CSkeletonForest_dtor_FUN_0041aa70 at 0041aaa5
 ;   core_boneguy.cpp_CSkeletonIndian_dtor_FUN_0041a9e0 at 0041aa15
 ;   core_bugs.cpp_CBugs_dtor_FUN_00424330 at 00424365
 ;   core_carved.cpp_CCarved_dtor_FUN_004291f0 at 00429225
-;   core_charactr.cpp_CCharacter_dtor_FUN_00410290 at 004102c5
-;   core_construc.cpp_CConstructBone_dtor_FUN_004446f0 at 00444725
 ;   ... and 56 more
 ;
 ; Referenced Globals:
@@ -26,7 +26,7 @@
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_dtor_FUN_004fbb00
-;   core_skeleton.cpp_FUN_0054c060
+;   core_skeleton.cpp_CDeformableModelInstance_free_FUN_0054c060
 ;   crt_memory.c___vec_delete_FUN_005a308f
 ;   crt_unknown.c_FUN_005a30b6
 ;   crt_unknown.c_FUN_005a30c4
@@ -43,8 +43,8 @@ section .text
         ;   XREF to: 0054bfb6 (CONDITIONAL_JUMP)  ; LAB_0054bfb6
     PUSH EBX                            ; 0054bf8c
     MOV dword ptr [EBX + 0x50],0x5e4784 ; 0054bf8d | g_CDeformableModelInstanceVTable
-    CALL core_skeleton.cpp_FUN_0054c060 ; 0054bf94
-        ;   XREF to: 0054c060 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054c060()
+    CALL core_skeleton.cpp_CDeformableModelInstance_free_FUN_0054c060 ; 0054bf94
+        ;   XREF to: 0054c060 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_free_FUN_0054c060(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0054bf99
     PUSH 0x1                            ; 0054bf9c
     PUSH EBX                            ; 0054bf9e
@@ -63,7 +63,7 @@ section .text
         ;   Label: LAB_0054bfb6
     PUSH EBX                            ; 0054bfbb
     CALL crt_memory.c___vec_delete_FUN_005a308f ; 0054bfbc
-        ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005a308f()
+        ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005a308f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 0054bfc1
     PUSH EAX                            ; 0054bfc4
     CALL crt_unknown.c_FUN_005a30b6     ; 0054bfc5

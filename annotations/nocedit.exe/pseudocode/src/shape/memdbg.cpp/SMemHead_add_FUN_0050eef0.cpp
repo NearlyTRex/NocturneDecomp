@@ -2,24 +2,24 @@
 // Address: 0050eef0
 // Address Range: [[0050eef0, 0050ef1b]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_memdbg_cpp_SMemHead_add_FUN_0050eef0(SMemHead *header)
+// Signature: void __cdecl shape_memdbg_cpp_SMemHead_add_FUN_0050eef0(SMemHead *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl shape_memdbg_cpp_SMemHead_add_FUN_0050eef0(SMemHead *header)
+void __cdecl shape_memdbg_cpp_SMemHead_add_FUN_0050eef0(SMemHead *this_ptr)
 
 {
   SMemHead *pSVar1;
   
   pSVar1 = g_MemoryListHead;
-  header->prev = (SMemHead *)0x0;
+  this_ptr->prev = (SMemHead *)0x0;
   if (g_MemoryListHead == (SMemHead *)0x0) {
-    g_MemoryListHead = header;
-    header->next = (SMemHead *)0x0;
+    g_MemoryListHead = this_ptr;
+    this_ptr->next = (SMemHead *)0x0;
     return;
   }
-  g_MemoryListHead->prev = header;
-  g_MemoryListHead = header;
-  header->next = pSVar1;
+  g_MemoryListHead->prev = this_ptr;
+  g_MemoryListHead = this_ptr;
+  this_ptr->next = pSVar1;
   return;
 }

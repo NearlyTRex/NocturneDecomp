@@ -1,14 +1,12 @@
 // Name: core_werewolf.cpp_CWerewolf_dtor_FUN_0057fcc0
 // Address: 0057fcc0
 // Address Range: [[0057fcc0, 0057fd44]]
-// Convention: unknown
-// Signature: CWerewolf * core_werewolf_cpp_CWerewolf_dtor_FUN_0057fcc0(CWerewolf *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_dtor_FUN_0057fcc0(CWerewolf *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CWerewolf * core_werewolf_cpp_CWerewolf_dtor_FUN_0057fcc0(CWerewolf *this_ptr,uint flags)
+CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_dtor_FUN_0057fcc0(CWerewolf *this_ptr,uint flags)
 
 {
   int iVar1;
@@ -18,16 +16,17 @@ CWerewolf * core_werewolf_cpp_CWerewolf_dtor_FUN_0057fcc0(CWerewolf *this_ptr,ui
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CWerewolfTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CWerewolfTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  iVar1 = unkafter_armour_cpp_FUN_00410370(&this_ptr->field_0x385c,0);
-  pCVar2 = core_cloth_cpp_FUN_0043f900((CClothList *)(iVar1 + -0x954),0);
+  iVar1 = core_armour_cpp_FUN_00410370((this_ptr->base).base.flames,0);
+  pCVar2 = core_cloth_cpp_CClothList_dtor_FUN_0043f900((CClothList *)(iVar1 + -0x954),0);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0054bf80
-                     ((CDeformableModelInstance *)(pCVar2 + -0x2db0),0);
+                     ((CDeformableModelInstance *)(pCVar2[-0x1b].filenames[7] + 8),0);
   pCVar4 = (CWerewolf *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)&pCVar3[-1].field_0x224c,1);
+           core_actor_cpp_CDemonActor_dtor_FUN_00408770
+                     ((CDemonActor *)(pCVar3[-1].part_data.texture_set_indices + 7),1);
   if ((flags & 2) == 0) {
     return pCVar4;
   }

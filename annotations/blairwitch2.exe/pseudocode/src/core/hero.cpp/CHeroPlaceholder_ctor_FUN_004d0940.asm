@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CHeroPlaceholder * core_hero_cpp_CHeroPlaceholder_ctor_FUN_004d0940(CHeroPlaceholder *this_ptr)
+; CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_ctor_FUN_004d0940(CHeroPlaceholder *this_ptr)
 ;
 ; Parameters:
 ; CHeroPlaceholder * Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_hero.cpp_FUN_004d0910 at 004d0923
+;   core_hero.cpp_factoryFuncHeroPlaceholder_FUN_004d0910 at 004d0923
 ;   core_mission.cpp_FUN_004fd280 at 004fd363
 ;
 ; Referenced Globals:
@@ -15,7 +15,7 @@
 ;   undefined1 DAT_005da038
 ;   undefined1 DAT_005da039
 ;   undefined1 DAT_005da03a
-;   undefined4 g_CHeroPlaceholderVTable
+;   CDemonActor_vtable g_CHeroPlaceholderVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_ctor_FUN_00408790

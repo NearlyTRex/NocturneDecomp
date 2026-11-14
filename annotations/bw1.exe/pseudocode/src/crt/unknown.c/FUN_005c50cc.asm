@@ -11,10 +11,10 @@
 ;   crt_unknown.c_FUN_005c0840 at 005c0840
 ;   crt_unknown.c_FUN_005c5348 at 005c5367
 ;   crt_unknown.c_FUN_005c6488 at 005c6488
-;   unkafter_2d.cpp_FUN_005cea10 at 005cea6a
-;   unkafter_zombie.cpp_FUN_005cb5a8 at 005cb5ad
-;   unkafter_zombie.cpp_FUN_005cb5f4 at 005cb5f4
-;   unkafter_zombie.cpp_FUN_005cc370 at 005cc371
+;   crt_unknown.c_FUN_005cb5a8 at 005cb5ad
+;   crt_unknown.c_FUN_005cb5f4 at 005cb5f4
+;   crt_unknown.c_FUN_005cc370 at 005cc371
+;   crt_unknown.c_FUN_005cd0f0 at 005cd123
 ;   ... and 2 more
 ;
 ; Referenced Globals:

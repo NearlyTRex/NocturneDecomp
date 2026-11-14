@@ -12,15 +12,15 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[9]:
-;   core_carved.cpp_FUN_00428ae0 at 00428df8
+;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 00428df8
 ;   core_charactr.cpp_FUN_00432f10 at 00433517
-;   core_demnfolk.cpp_FUN_00459100 at 00459470
+;   core_demnfolk.cpp_CDemnfolk_process_FUN_00459100 at 00459470
 ;   core_doc.cpp_FUN_004724a0 at 00472d28
 ;   core_gabriela.cpp_FUN_004caff0 at 004cb17f
-;   core_sound.cpp_FUN_0057c57e at 0057c645
-;   core_sound.cpp_FUN_0057ce10 at 0057d553
-;   core_stranger.cpp_FUN_0058eb50 at 0058f3d8
-;   core_zombie.cpp_FUN_005bafb0 at 005bb291
+;   core_sound.cpp_CSound_process_FUN_0057ce10 at 0057d553
+;   core_sound.cpp_FUN_0057c580 at 0057c645
+;   core_stranger.cpp_CStranger_autoAimAtThreat_FUN_0058eb50 at 0058f3d8
+;   core_zombie.cpp_CZombie_process_FUN_005bafb0 at 005bb291
 ;
 ; Referenced Globals:
 ;   CDemonRaytrace g_CDemonRaytraceInstance

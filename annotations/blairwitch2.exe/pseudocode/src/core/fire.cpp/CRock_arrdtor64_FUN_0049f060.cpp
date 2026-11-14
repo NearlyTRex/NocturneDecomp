@@ -1,14 +1,12 @@
 // Name: core_fire.cpp_CRock_arrdtor64_FUN_0049f060
 // Address: 0049f060
 // Address Range: [[0049f060, 0049f074]]
-// Convention: unknown
-// Signature: CRock * core_fire_cpp_CRock_arrdtor64_FUN_0049f060(CRock *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CRock * __cdecl core_fire_cpp_CRock_arrdtor64_FUN_0049f060(CRock *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CRock * core_fire_cpp_CRock_arrdtor64_FUN_0049f060(CRock *this_ptr,uint flags)
+CRock * __cdecl core_fire_cpp_CRock_arrdtor64_FUN_0049f060(CRock *this_ptr,uint flags)
 
 {
   CRock *pCVar1;

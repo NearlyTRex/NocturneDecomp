@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 129,
+    "complexity_score": 121,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 14,
-    "suspect_count": 10,
+    "pseudocode_lines": 16,
+    "suspect_count": 9,
     "suspect_types": [
-      "unnamed_field",
+      "suspect_float",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 53
+    "total_lines": 55
   },
   "cross_references": [],
   "function": {
@@ -31,14 +31,14 @@
   },
   "function_calls": [
     {
+      "addr": "004ce950",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CGore_createGroundBloodSplat_FUN_004ce950"
+    },
+    {
       "addr": "004ce980",
       "is_variadic": false,
       "name": "core_gore.cpp_CGore_createWallBloodSplat_FUN_004ce980"
-    },
-    {
-      "addr": "004ce950",
-      "is_variadic": false,
-      "name": "core_gore.cpp_FUN_004ce950"
     }
   ],
   "globals": [
@@ -135,55 +135,47 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "blood_type = *(EBloodType *)&param_1[5].field_0x4;",
+      "text": "blood_type = param_1[5].y;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x4",
+      "description": "Likely misinterpreted integer as float",
+      "line": 10,
+      "match": "4.2039e-45",
       "severity": "mild",
-      "text": "blood_type = *(EBloodType *)&param_1[5].field_0x4;",
-      "type": "unnamed_field"
+      "text": "if (blood_type != 4.2039e-45) {",
+      "type": "suspect_float"
     },
     {
       "description": "Unnamed function parameter",
       "line": 11,
       "match": "param_2",
       "severity": "mild",
-      "text": "if ((float)_DAT_005c4649 < *(float *)&param_2->field_0x4) {",
+      "text": "if ((float)_DAT_005c4649 < param_2->y) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "if ((float)_DAT_005c4649 < *(float *)&param_2->field_0x4) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_gore_cpp_FUN_004ce950(g_CGorePtr,param_1,blood_type);",
+      "text": "(g_CGorePtr,param_1,(EBloodType)blood_type);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_gore_cpp_CGore_createWallBloodSplat_FUN_004ce980(g_CGorePtr,param_1,param_2,blood_type);",
+      "text": "(g_CGorePtr,param_1,param_2,(EBloodType)blood_type);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 17,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_gore_cpp_CGore_createWallBloodSplat_FUN_004ce980(g_CGorePtr,param_1,param_2,blood_type);",
+      "text": "(g_CGorePtr,param_1,param_2,(EBloodType)blood_type);",
       "type": "unnamed_param"
     }
   ],

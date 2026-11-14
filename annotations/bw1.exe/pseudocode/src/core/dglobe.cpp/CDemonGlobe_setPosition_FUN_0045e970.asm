@@ -8,15 +8,15 @@
 ; CVector3f *      Stack[0x8]:4   position
 ;
 ; XREF[9]:
-;   core_boxactor.cpp_FUN_00422f90 at 00423062
-;   core_charactr.cpp_FUN_004301e0 at 004302bc
-;   core_emitter.cpp_FUN_0049f310 at 0049f450
-;   core_fire.cpp_FUN_004ae300 at 004ae369
-;   core_fire.cpp_FUN_004af340 at 004af354
+;   core_boxactor.cpp_CLightActor_process_FUN_00422f90 at 00423062
+;   core_charactr.cpp_CCharacter_renderTransparent_FUN_004301e0 at 004302bc
+;   core_emitter.cpp_CEmitter_process_FUN_0049f310 at 0049f450
+;   core_fire.cpp_CFireball_process_FUN_004ae300 at 004ae369
+;   core_fire.cpp_CMuzzleFlash_init_FUN_004af340 at 004af354
 ;   core_flame.cpp_FUN_004b8e40 at 004b8e7b
-;   core_keyactor.cpp_FUN_004fc590 at 004fc5ba
-;   core_shadow.cpp_FUN_0055de50 at 0055ea72
-;   core_weapon.cpp_FUN_005adb20 at 005adcfd
+;   core_keyactor.cpp_CKeyActor_process_FUN_004fc590 at 004fc5ba
+;   core_shadow.cpp_CShadow_process_FUN_0055de50 at 0055ea72
+;   core_weapon.cpp_CWeapon_updateLighting_FUN_005adb20 at 005adcfd
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d88f3

@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_boneguy.cpp_CSkeletonForest_ctor_FUN_004198e0
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_memory.c_operator_new_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xd698                         ; 004198b0
         ;   Label: core_boneguy.cpp_FUN_004198b0
-    CALL crt_unknown.c_FUN_005a3cb2     ; 004198b5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 004198b5
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
     ADD ESP,0x4                         ; 004198ba
     TEST EAX,EAX                        ; 004198bd
     JNZ 0x004198c2                      ; 004198bf

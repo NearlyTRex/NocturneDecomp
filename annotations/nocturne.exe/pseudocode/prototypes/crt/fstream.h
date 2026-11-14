@@ -88,3 +88,19 @@ int __watcallStack filebuf::seekoff(filebuf *this_ptr,long offset,int direction,
 // Original: crt_fstream.cpp_filebuf_sync_FUN_005723ae
 // Address: 005723ae
 int __watcallStack filebuf::sync(filebuf *this_ptr);
+
+// Original: crt_fstream.cpp_FUN_00572446
+// Address: 00572446
+double FUN_00572446(void);
+
+// Original: crt_fstream.cpp_FUN_0057264c
+// Address: 0057264c
+double FUN_0057264c(void);
+
+// Original: crt_fstream.cpp_FUN_00572809
+// Address: 00572809
+double FUN_00572809(void);
+
+// Original: crt_fstream.cpp_FUN_005729a6
+// Address: 005729a6
+int FUN_005729a6(void);

@@ -15,7 +15,7 @@
 ;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
-;   core_dmodel.cpp_CKeyFramedModel_FUN_00452f10
+;   core_dmodel.cpp_CKeyFramedModel_free_FUN_00452f10
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
 ;
 ; *****************************************************************************
@@ -34,8 +34,8 @@ section .text
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 004c5fbf
     PUSH 0x1cc3290                      ; 004c5fc2
-    CALL core_dmodel.cpp_CKeyFramedModel_FUN_00452f10 ; 004c5fc7
-        ;   XREF to: 00452f10 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_FUN_00452f10(CKeyFramedModel * this_ptr)
+    CALL core_dmodel.cpp_CKeyFramedModel_free_FUN_00452f10 ; 004c5fc7
+        ;   XREF to: 00452f10 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_free_FUN_00452f10(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 004c5fcc
     RET                                 ; 004c5fcf
 

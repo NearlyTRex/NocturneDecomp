@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 255,
+    "complexity_score": 126,
     "cross_reference_count": 6,
     "function_call_count": 4,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 25,
-    "suspect_count": 22,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 26,
+    "suspect_count": 9,
     "suspect_types": [
       "negative_offset",
-      "unnamed_field"
+      "pointer_truncation"
     ],
-    "total_lines": 69
+    "total_lines": 70
   },
   "cross_references": [
     {
@@ -61,15 +61,15 @@
         "00509017"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_npc.cpp_CNPC_ctor_FUN_00508f40",
-    "signature": "CNPC * core_npc_cpp_CNPC_ctor_FUN_00508f40(CNPC *this_ptr)"
+    "signature": "CNPC * __cdecl core_npc_cpp_CNPC_ctor_FUN_00508f40(CNPC *this_ptr)"
   },
   "function_calls": [
     {
       "addr": "0040ce40",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040ce40"
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40"
     },
     {
       "addr": "0042ac20",
@@ -84,7 +84,7 @@
     {
       "addr": "0054eae0",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_0054eae0"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0"
     }
   ],
   "globals": [],
@@ -95,12 +95,10 @@
         "call_addr": "0050a458",
         "call_type": "direct",
         "caller": "core_passngr.cpp_CPassenger_ctor_FUN_0050a450",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -108,12 +106,10 @@
         "call_addr": "005273b8",
         "call_type": "direct",
         "caller": "core_pryemorp.cpp_CPryeMorph_ctor_FUN_005273b0",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -121,12 +117,10 @@
         "call_addr": "00599f6b",
         "call_type": "direct",
         "caller": "core_spirindi.cpp_CSpiritIndian_ctor_FUN_00599f60",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -134,12 +128,10 @@
         "call_addr": "0059aaab",
         "call_type": "direct",
         "caller": "core_spirbear.cpp_CSpiritBear_ctor_FUN_0059aaa0",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -147,12 +139,10 @@
         "call_addr": "005a0a19",
         "call_type": "direct",
         "caller": "core_asgaya.cpp_CAsgaya_ctor_FUN_005a0a10",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -171,7 +161,7 @@
     "confidence": "high",
     "declared_params": 1,
     "declared_stack_bytes": 4,
-    "estimated_params": 2,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -197,6 +187,32 @@
     },
     "pcode_op_count": 174
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00510460",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9459
+    },
+    "bw1.exe": {
+      "addr": "00531670",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9459
+    },
+    "nocedit.exe": {
+      "addr": "005447e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7077
+    },
+    "nocturne.exe": {
+      "addr": "004ee950",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7077
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -216,179 +232,75 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 13,
+      "line": 11,
       "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "*(byte ***)&pCVar2[-1].field_0x6c64 = &g_CNPCVTable;",
+      "text": "pCVar2[-1].height_cache[0x45][0x19] = (int)&g_CNPCVTable;",
       "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x6c64",
+      "description": "Negative struct offset (wrong base type)",
+      "line": 12,
+      "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "*(byte ***)&pCVar2[-1].field_0x6c64 = &g_CNPCVTable;",
-      "type": "unnamed_field"
+      "text": "pCVar2[-1].height_cache_tags[0][0x43] = 0x3f19999a;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 13,
+      "match": "pCVar2[-1].",
+      "severity": "mild",
+      "text": "pCVar2[-1].height_cache_tags[0][0x44] = 0x3f666666;",
+      "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 14,
       "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0x9d7c = 0x3f19999a;",
+      "text": "pCVar2[-1].height_cache_tags[0][0x47] = 0x3fcccccd;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x9d7c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0x9d7c = 0x3f19999a;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 15,
       "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0x9d80 = 0x3f666666;",
+      "text": "pCVar2[-1].height_cache_tags[0][0x48] = -0x3b864000;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x9d80",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0x9d80 = 0x3f666666;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 16,
-      "match": "pCVar2[-1].",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0x9d8c = 0x3fcccccd;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x9d8c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0x9d8c = 0x3fcccccd;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 17,
-      "match": "pCVar2[-1].",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0x9d90 = 0xc479c000;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x9d90",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0x9d90 = 0xc479c000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 19,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[1].field_0x8 = uVar3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 20,
       "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0054eae0(&pCVar2[-1].field_0x6c68,\"nocchar.dfm\");",
+      "text": "((CDeformableModelInstance *)(pCVar2[-1].height_cache[0x45] + 0x1a),",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x6c68",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0054eae0(&pCVar2[-1].field_0x6c68,\"nocchar.dfm\");",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 21,
       "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0x92d0 = 0;",
+      "text": "pCVar2[-1].height_cache[0x5d][0x54] = 0;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x92d0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0x92d0 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[1].field_0x4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[1].field_0xc = 0x10000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[1].field_0x14 = 100;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[1].field_0x1c = 0x40000000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[1].field_0x10 = 0xffffffff;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 28,
       "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "return (CNPC *)&pCVar2[-1].field_0x6b10;",
+      "text": "return (CNPC *)(pCVar2[-1].height_cache[0x44] + 0x28);",
       "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x6b10",
-      "severity": "mild",
-      "text": "return (CNPC *)&pCVar2[-1].field_0x6b10;",
-      "type": "unnamed_field"
+      "description": "Pointer value `&g_CNPCVTable` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 11,
+      "match": "(int)&g_CNPCVTable",
+      "severity": "moderate",
+      "text": "pCVar2[-1].height_cache[0x45][0x19] = (int)&g_CNPCVTable;",
+      "type": "pointer_truncation"
     }
   ],
   "vtable_info": {

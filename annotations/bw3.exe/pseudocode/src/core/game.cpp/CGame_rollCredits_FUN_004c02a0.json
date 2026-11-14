@@ -2,29 +2,28 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 412,
-    "complexity_score": 366,
+    "complexity_score": 353,
     "cross_reference_count": 2,
     "function_call_count": 23,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 191,
-    "suspect_count": 14,
+    "pseudocode_lines": 193,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
       "undefined_data",
-      "unnamed_field",
       "unresolved_funcptr",
       "unrolled_strcpy",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 603
+    "total_lines": 605
   },
   "cross_references": [
     {
       "addr": "004bfee0",
       "from_addr": "004c00d7",
-      "name": "core_game.cpp_FUN_004bfee0",
+      "name": "core_game.cpp_CGame_finishAct_FUN_004bfee0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -50,7 +49,7 @@
     {
       "addr": "004b4430",
       "is_variadic": false,
-      "name": "core_game.cpp_FUN_004b4430"
+      "name": "core_game.cpp_CGame_saveClockTime_FUN_004b4430"
     },
     {
       "addr": "004b4440",
@@ -66,6 +65,11 @@
       "addr": "005a3120",
       "is_variadic": false,
       "name": "crt_math.c_round_FUN_005a3120"
+    },
+    {
+      "addr": "005a3650",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005a3650"
     },
     {
       "addr": "005a3a90",
@@ -86,11 +90,6 @@
       "addr": "005a4ee0",
       "is_variadic": false,
       "name": "crt_string.c__strncpy_FUN_005a4ee0"
-    },
-    {
-      "addr": "005a3650",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a3650"
     },
     {
       "addr": "005a3770",
@@ -140,12 +139,12 @@
     {
       "addr": "004b0cb0",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004b0cb0"
+      "name": "engine_font.cpp_CBitFont_drawTextWrapper_FUN_004b0cb0"
     },
     {
       "addr": "004b30f0",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004b30f0"
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0"
     },
     {
       "addr": "00560d70",
@@ -155,12 +154,12 @@
     {
       "addr": "00558050",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00558050"
+      "name": "sound_sndmain.cpp_enableSoundSystem_FUN_00558050"
     },
     {
       "addr": "0057a8a0",
       "is_variadic": false,
-      "name": "wincore_wddvmem.cpp_FUN_0057a8a0"
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0"
     }
   ],
   "globals": [
@@ -255,7 +254,7 @@
       {
         "call_addr": "004c00d7",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bfee0",
+        "caller": "core_game.cpp_CGame_finishAct_FUN_004bfee0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -323,6 +322,32 @@
       "TRUNC": 1
     },
     "pcode_op_count": 1583
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004be430",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2797
+    },
+    "bw1.exe": {
+      "addr": "004d8e50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3038
+    },
+    "nocedit.exe": {
+      "addr": "004e4010",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2079
+    },
+    "nocturne.exe": {
+      "addr": "004a6e90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3038
+    }
   },
   "stack_frame": {
     "frame_size": 5460,
@@ -480,7 +505,7 @@
       "line": 45,
       "match": "(uint *)((int)local_154c",
       "severity": "moderate",
-      "text": "*(uint *)((int)local_154c + iVar11) = 0;",
+      "text": "*(uint *)((int)local_154c + iVar10) = 0;",
       "type": "pointer_cast"
     },
     {
@@ -488,7 +513,7 @@
       "line": 50,
       "match": "DAT_005c3b9d",
       "severity": "mild",
-      "text": "p_Var5 = engine_dosio_cpp_FUN_004659c0(&DAT_005c3b9d,\"credits.txt\",&DAT_005c3b8e);",
+      "text": "stream = engine_dosio_cpp_FUN_004659c0(&DAT_005c3b9d,\"credits.txt\",&DAT_005c3b8e);",
       "type": "undefined_data"
     },
     {
@@ -496,7 +521,7 @@
       "line": 50,
       "match": "DAT_005c3b8e",
       "severity": "mild",
-      "text": "p_Var5 = engine_dosio_cpp_FUN_004659c0(&DAT_005c3b9d,\"credits.txt\",&DAT_005c3b8e);",
+      "text": "stream = engine_dosio_cpp_FUN_004659c0(&DAT_005c3b9d,\"credits.txt\",&DAT_005c3b8e);",
       "type": "undefined_data"
     },
     {
@@ -512,7 +537,7 @@
       "line": 69,
       "match": "(void **)((int)local_154c",
       "severity": "moderate",
-      "text": "*(void **)((int)local_154c + iVar11) = pvVar8;",
+      "text": "*(void **)((int)local_154c + iVar10) = pvVar7;",
       "type": "pointer_cast"
     },
     {
@@ -520,7 +545,7 @@
       "line": 76,
       "match": "(char **)((int)local_154c",
       "severity": "moderate",
-      "text": "pcVar10 = *(char **)((int)local_154c + iVar11);",
+      "text": "pcVar9 = *(char **)((int)local_154c + iVar10);",
       "type": "pointer_cast"
     },
     {
@@ -528,32 +553,24 @@
       "line": 114,
       "match": "(char **)((int)local_154c",
       "severity": "moderate",
-      "text": "pcVar12 = *(char **)((int)local_154c + local_30);",
+      "text": "pcVar11 = *(char **)((int)local_154c + local_30);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 170,
+      "line": 172,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar11 = (**(code **)*0x01D70A78)(0x01D70A78,1);",
+      "text": "iVar10 = (**(code **)*0x01D70A78)(0x01D70A78,1);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
-      "line": 180,
+      "line": 182,
       "match": "(uint *)((int)local_154c",
       "severity": "moderate",
       "text": "puVar1 = (uint *)((int)local_154c + iVar4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 189,
-      "match": "field_0x314",
-      "severity": "mild",
-      "text": "local_38 = local_38 - *(float *)&this_ptr->field_0x314 * _DAT_005c3bdc;",
-      "type": "unnamed_field"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

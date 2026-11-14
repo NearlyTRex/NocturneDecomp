@@ -21,9 +21,9 @@ void __cdecl CDemonGlobe::renderCorona(CDemonGlobe *this_ptr);
 // Address: 0045add0
 void __cdecl CDemonGlobe::renderCoronaTextured(CDemonGlobe *this_ptr);
 
-// Original: core_dglobe.cpp_FUN_0045af60
+// Original: core_dglobe.cpp_CDemonGlobe_intersectAABB_FUN_0045af60
 // Address: 0045af60
-int __cdecl FUN_0045af60(CDemonGlobe *this_ptr,CVector3f *reference_position,CMatrix3x3f *rotation_matrix,CVector3f *aabb_min,CVector3f *aabb_max);
+int __cdecl CDemonGlobe::intersectAABB(CDemonGlobe *this_ptr,CVector3f *reference_position,CMatrix3x3f *rotation_matrix,CVector3f *aabb_min,CVector3f *aabb_max);
 
 // Original: core_dglobe.cpp_FUN_0045b070
 // Address: 0045b070

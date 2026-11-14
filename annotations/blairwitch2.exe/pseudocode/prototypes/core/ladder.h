@@ -7,55 +7,55 @@
 
 // Original: core_ladder.cpp_staticInit_FUN_004dff00
 // Address: 004dff00
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_ladder.cpp_factoryFuncLadder_FUN_004dff30
 // Address: 004dff30
-void factoryFuncLadder(void);
+CLadder * __cdecl factoryFuncLadder(void);
 
 // Original: core_ladder.cpp_CLadder_getActorType_FUN_004dff50
 // Address: 004dff50
-CDemonActorType * CLadder::getActorType(CLadder *this_ptr);
+CDemonActorType * __cdecl CLadder::getActorType(CLadder *this_ptr);
 
 // Original: core_ladder.cpp_CLadder_ctor_FUN_004dff60
 // Address: 004dff60
 CLadder * __cdecl CLadder::ctor(CLadder *this_ptr);
 
-// Original: core_ladder.cpp_FUN_004e0010
+// Original: core_ladder.cpp_CLadder_setup_FUN_004e0010
 // Address: 004e0010
-void FUN_004e0010(CDemonActor *param_1);
+void __cdecl CLadder::setup(CLadder *this_ptr);
 
 // Original: core_ladder.cpp_CLadder_process_FUN_004e0030
 // Address: 004e0030
 void __cdecl CLadder::process(CLadder *this_ptr,float delta_time);
 
-// Original: core_ladder.cpp_FUN_004e0040
+// Original: core_ladder.cpp_CLadder_renderOpaque_FUN_004e0040
 // Address: 004e0040
-int FUN_004e0040(CDemonActor *param_1);
+int __cdecl CLadder::renderOpaque(CLadder *this_ptr);
 
-// Original: core_ladder.cpp_FUN_004e00d0
+// Original: core_ladder.cpp_CLadder_getBoundingBox_FUN_004e00d0
 // Address: 004e00d0
-void FUN_004e00d0(int param_1);
+CBoundingBox3D * __cdecl CLadder::getBoundingBox(CLadder *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_ladder.cpp_FUN_004e0190
+// Original: core_ladder.cpp_CLadder_archive_FUN_004e0190
 // Address: 004e0190
-void FUN_004e0190(CLadder *param_1);
+void __cdecl CLadder::archive(CLadder *this_ptr);
 
 // Original: core_ladder.cpp_CLadder_getCollisionType_FUN_004e0210
 // Address: 004e0210
 ECollisionType __cdecl CLadder::getCollisionType(CLadder *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_ladder.cpp_FUN_004e0240
+// Original: core_ladder.cpp_CLadder_updatePositionFromMaster_FUN_004e0240
 // Address: 004e0240
-void __cdecl FUN_004e0240(CLadder *this_ptr);
+void __cdecl CLadder::updatePositionFromMaster(CLadder *this_ptr);
 
-// Original: core_ladder.cpp_FUN_004e0380
+// Original: core_ladder.cpp_CLadder_cacheRelativePosition_FUN_004e0380
 // Address: 004e0380
-void __cdecl FUN_004e0380(CLadder *this_ptr);
+void __cdecl CLadder::cacheRelativePosition(CLadder *this_ptr);
 
-// Original: core_ladder.cpp_FUN_004e04c0
+// Original: core_ladder.cpp_CLadder_getGroundType_FUN_004e04c0
 // Address: 004e04c0
-undefined4 FUN_004e04c0(int param_1);
+EGroundType __cdecl CLadder::getGroundType(CLadder *this_ptr);
 
 // Original: core_ladder.cpp_CLadder_dtor_FUN_004e04d0
 // Address: 004e04d0

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CIni * engine_ini_cpp_CIni_ctor_FUN_004d8d40(CIni *this_ptr)
+; CIni * __cdecl engine_ini_cpp_CIni_ctor_FUN_004d8d40(CIni *this_ptr)
 ;
 ; Parameters:
 ; CIni *           Stack[0x4]:4   this_ptr

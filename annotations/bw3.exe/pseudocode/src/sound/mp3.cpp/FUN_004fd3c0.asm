@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_mp3_cpp_FUN_004fd3c0(int *param_1,int param_2,ulong param_3,int param_4)
+; void sound_mp3_cpp_FUN_004fd3c0(int *param_1,_FILE *param_2,ulong param_3,int param_4)
 ;
 ;
 ; Referenced Globals:
@@ -10,10 +10,10 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
+;   crt_memory.c_malloc_FUN_005a3650
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fseek_FUN_005a457c
 ;   crt_stdio.c_ftell_FUN_005a5d00
-;   crt_unknown.c_FUN_005a3650
 ;   crt_unknown.c_FUN_005a3770
 ;
 ; *****************************************************************************
@@ -46,7 +46,7 @@ section .text
     PUSH EAX                            ; 004fd3ef
     MOV dword ptr [EBX],EAX             ; 004fd3f0
     CALL crt_stdio.c_ftell_FUN_005a5d00 ; 004fd3f2
-        ;   XREF to: 005a5d00 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_ftell_FUN_005a5d00()
+        ;   XREF to: 005a5d00 (UNCONDITIONAL_CALL)  ; long crt_stdio.c_ftell_FUN_005a5d00(_FILE * file_handle)
     ADD ESP,0x4                         ; 004fd3f7
     MOV dword ptr [EBX + 0x20],EAX      ; 004fd3fa
     MOV EAX,dword ptr [ESP + 0x20]      ; 004fd3fd
@@ -54,8 +54,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004fd404
     PUSH EAX                            ; 004fd408
     MOV dword ptr [EBX + 0x8],EAX       ; 004fd409
-    CALL crt_unknown.c_FUN_005a3650     ; 004fd40c
-        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005a3650(ulong size)
+    CALL crt_memory.c_malloc_FUN_005a3650 ; 004fd40c
+        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005a3650(ulong size)
     ADD ESP,0x4                         ; 004fd411
     MOV dword ptr [EBX + 0x4],EAX       ; 004fd414
     TEST EAX,EAX                        ; 004fd417
@@ -68,7 +68,7 @@ section .text
     MOV EAX,dword ptr [EBX]             ; 004fd421
     PUSH EAX                            ; 004fd423
     CALL crt_stdio.c_fseek_FUN_005a457c ; 004fd424
-        ;   XREF to: 005a457c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fseek_FUN_005a457c()
+        ;   XREF to: 005a457c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005a457c(_FILE * file, long offset, int whence)
     MOV dword ptr [EBX + 0x10],0x0      ; 004fd429
     MOV dword ptr [EBX + 0x14],0x0      ; 004fd430
     MOV dword ptr [EBX + 0xc],0x0       ; 004fd437

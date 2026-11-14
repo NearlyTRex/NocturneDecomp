@@ -1,0 +1,331 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 24,
+    "complexity_score": 12,
+    "cross_reference_count": 16,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 36
+  },
+  "cross_references": [
+    {
+      "addr": "0042c520",
+      "from_addr": "0042c5b3",
+      "name": "cockpit_ckptutil.c_FUN_0042c520",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042c780",
+      "from_addr": "0042c89f",
+      "name": "cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042c780",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bb9b0",
+      "from_addr": "004bbd64",
+      "name": "core_game.cpp_FUN_004bb9b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bbf70",
+      "from_addr": "004bc2cc",
+      "name": "core_game.cpp_FUN_004bbf70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00401590",
+      "from_addr": "004015d3",
+      "name": "engine_2d.c_FUN_00401590",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00401010",
+      "from_addr": "004010f8",
+      "name": "engine_2d.c_initGraphicsSystem_FUN_00401010",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00402940",
+      "from_addr": "00402aac",
+      "name": "engine_2d.c_loadOrBuildColorMap_FUN_00402940",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a7d00",
+      "from_addr": "004a7f1c",
+      "name": "engine_font.cpp_CBitFont_loadBitmap_FUN_004a7d00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a7fd0",
+      "from_addr": "004a817e",
+      "name": "engine_font.cpp_FUN_004a7fd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a85a0",
+      "from_addr": "004a87a3",
+      "name": "engine_font.cpp_FUN_004a85a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00573b80",
+      "from_addr": "00573e9f",
+      "name": "engine_texture.cpp_CTextureCache_loadTexture_FUN_00573b80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00575150",
+      "from_addr": "00575284",
+      "name": "engine_texture.cpp_FUN_00575150",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054d9b0",
+      "from_addr": "0054da19",
+      "name": "sound_sndmain.cpp_CSfxSample_freeMemory_FUN_0054d9b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005519e0",
+      "from_addr": "00551b1c",
+      "name": "sound_sndmain.cpp_getSampleInfo_FUN_005519e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054c1c0",
+      "from_addr": "0054c52f",
+      "name": "sound_sndmain.cpp_getSfxSample_FUN_0054c1c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057cec0",
+      "from_addr": "0057ced3",
+      "name": "support_trstream.cpp_CInStreamFile_dtor_FUN_0057cec0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0057d180",
+    "address_range": [
+      [
+        "0057d180",
+        "0057d1c1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_trstream.cpp_CInStreamFile_close_FUN_0057d180",
+    "signature": "int __cdecl support_trstream_cpp_CInStreamFile_close_FUN_0057d180(CInStreamFile *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:0000004a",
+      "is_variadic": false,
+      "name": "CloseHandle"
+    },
+    {
+      "addr": "0057d240",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_freeBuffer_FUN_0057d240"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c850c",
+      "name": "PTR_CloseHandle_005c850c",
+      "type": "void*",
+      "value": "001c8c32"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 22,
+    "call_sites": [
+      {
+        "call_addr": "004bc2cc",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004bbf70",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004010f8",
+        "call_type": "direct",
+        "caller": "engine_2d.c_initGraphicsSystem_FUN_00401010",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004015d3",
+        "call_type": "direct",
+        "caller": "engine_2d.c_FUN_00401590",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00402aac",
+        "call_type": "direct",
+        "caller": "engine_2d.c_loadOrBuildColorMap_FUN_00402940",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004a7f1c",
+        "call_type": "direct",
+        "caller": "engine_font.cpp_CBitFont_loadBitmap_FUN_004a7d00",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0042c5b3",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_FUN_0042c520",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0042c639",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_FUN_0042c520",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004bbd64",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004bb9b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0054c52f",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_getSfxSample_FUN_0054c1c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0054da19",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_CSfxSample_freeMemory_FUN_0054d9b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.5,
+    "instruction_count": 18,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 15,
+      "INT_ADD": 9,
+      "INT_AND": 5,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 5,
+      "LOAD": 4,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 9
+    },
+    "pcode_op_count": 63
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005a0dc0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00573db0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInStreamFile *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CInStreamFile",
+        "offset": 36,
+        "vtable_addr": "005fd3e4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -8,10 +8,10 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[6]:
-;   core_podmain.cpp_FUN_0051c000 at 0051c082
+;   core_podmain.cpp_CDemonPod_load_FUN_0051c000 at 0051c082
 ;   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00481870 at 00481a2a
 ;   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_00481a70 at 00481c29
-;   shape_edittool.cpp_FUN_0047cb1e at 0047cdff
+;   shape_edittool.cpp_FUN_0047cb20 at 0047cdff
 ;   shape_edittool.cpp_FUN_00481ca0 at 00481d54
 ;   shape_edittool.cpp_FUN_00481e20 at 00481f2f
 ;

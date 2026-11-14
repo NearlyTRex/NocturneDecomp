@@ -18,13 +18,13 @@
     {
       "addr": "005032a0",
       "from_addr": "00503a24",
-      "name": "core_main.c_FUN_005032a0",
+      "name": "core_main.c_initializeGameSystems_FUN_005032a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0050aa90",
       "from_addr": "0050b3e9",
-      "name": "core_menu.cpp_FUN_0050aa90",
+      "name": "core_menu.cpp_configureGraphicsOptions_FUN_0050aa90",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -52,19 +52,19 @@
       "name": "engine_2d.c_clearInputAndWait_FUN_004032b0"
     },
     {
+      "addr": "0040d1c0",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d1c0"
+    },
+    {
       "addr": "0040d220",
       "is_variadic": false,
       "name": "engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d220"
     },
     {
-      "addr": "0040d1c0",
-      "is_variadic": false,
-      "name": "engine_alphabit.cpp_FUN_0040d1c0"
-    },
-    {
       "addr": "004c4510",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004c4510"
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510"
     },
     {
       "addr": "00531090",
@@ -122,7 +122,7 @@
       {
         "call_addr": "00503a24",
         "call_type": "direct",
-        "caller": "core_main.c_FUN_005032a0",
+        "caller": "core_main.c_initializeGameSystems_FUN_005032a0",
         "estimated_params": 0,
         "instructions_analyzed": 9,
         "method": "push_count",
@@ -133,7 +133,7 @@
       {
         "call_addr": "0050b3e9",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_0050aa90",
+        "caller": "core_menu.cpp_configureGraphicsOptions_FUN_0050aa90",
         "estimated_params": 0,
         "instructions_analyzed": 1,
         "method": "push_count",
@@ -166,6 +166,32 @@
       "STORE": 30
     },
     "pcode_op_count": 209
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004ebe30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004e84d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00510ba0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004cffa0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,

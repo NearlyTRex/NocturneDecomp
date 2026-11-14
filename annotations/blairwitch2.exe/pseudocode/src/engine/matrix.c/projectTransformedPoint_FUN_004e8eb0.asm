@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_matrix_c_projectTransformedPoint_FUN_004e8eb0(int *param_1)
+; void __cdecl engine_matrix_c_projectTransformedPoint_FUN_004e8eb0(SProjectedVertex *point)
 ;
+; Parameters:
+; SProjectedVertex * Stack[0x4]:4   point
 ;
 ; XREF[3]:
-;   core_flame.cpp_FUN_0049f850 at 004a006e
+;   core_flame.cpp_CFlame_renderTransparent_FUN_0049f850 at 004a006e
 ;   core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_005386e0 at 00538813
 ;   engine_matrix.c_projectCachedPoint_FUN_004e8e90 at 004e8ea6
 ;

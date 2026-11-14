@@ -2,25 +2,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 96,
+    "complexity_score": 95,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 51,
+    "pseudocode_lines": 50,
     "suspect_count": 3,
     "suspect_types": [
       "undefined_data",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 155
+    "total_lines": 154
   },
   "cross_references": [
     {
       "addr": "0049a9b0",
       "from_addr": "0049aa40",
-      "name": "shape_edittool.cpp_FUN_0049a9b0",
+      "name": "shape_edittool.cpp_CPickList_handleInput_FUN_0049a9b0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -43,9 +43,9 @@
       "name": "core_main.c_FUN_005030e0"
     },
     {
-      "addr": "005bfb40",
+      "addr": "005c1268",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005bfb40"
+      "name": "crt_memory.c_operator_new_array_FUN_005c1268"
     },
     {
       "addr": "005c0336",
@@ -53,19 +53,19 @@
       "name": "crt_unknown.c_FUN_005c0336"
     },
     {
-      "addr": "005c1268",
+      "addr": "005bfb40",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c1268"
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
+    },
+    {
+      "addr": "00498290",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_setClipboardText_FUN_00498290"
     },
     {
       "addr": "004998a0",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004998a0"
-    },
-    {
-      "addr": "00498290",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_00498290"
     }
   ],
   "globals": [
@@ -112,7 +112,7 @@
       {
         "call_addr": "0049aa40",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0049a9b0",
+        "caller": "shape_edittool.cpp_CPickList_handleInput_FUN_0049a9b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -123,7 +123,7 @@
       {
         "call_addr": "0049aa5d",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0049a9b0",
+        "caller": "shape_edittool.cpp_CPickList_handleInput_FUN_0049a9b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -168,6 +168,32 @@
     },
     "pcode_op_count": 401
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00481540",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00482740",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004a3270",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9432
+    },
+    "nocturne.exe": {
+      "addr": "00474380",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 28,
     "local_size": 24,
@@ -202,15 +228,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 45,
       "match": "DAT_005dc5bd",
       "severity": "mild",
-      "text": "iVar6 = FUN_005bfb40(pcVar7,&DAT_005dc5bd,pcVar3);",
+      "text": "iVar5 = _sprintf(buffer,&DAT_005dc5bd);",
       "type": "undefined_data"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 24,
+      "line": 23,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

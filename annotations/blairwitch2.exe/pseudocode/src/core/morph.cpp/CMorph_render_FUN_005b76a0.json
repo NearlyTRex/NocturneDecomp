@@ -16,7 +16,7 @@
     {
       "addr": "00415120",
       "from_addr": "004151e2",
-      "name": "core_biggs.cpp_FUN_00415120",
+      "name": "core_biggs.cpp_CBiggs_renderOpaque_FUN_00415120",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -28,25 +28,25 @@
     {
       "addr": "005020c0",
       "from_addr": "00502189",
-      "name": "core_moloch.cpp_FUN_005020c0",
+      "name": "core_moloch.cpp_CMoloch_renderOpaque_FUN_005020c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00511980",
       "from_addr": "00511a48",
-      "name": "core_passngr.cpp_FUN_00511980",
+      "name": "core_passngr.cpp_CPassenger_renderOpaque_FUN_00511980",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0056fe50",
       "from_addr": "0056ffcf",
-      "name": "core_succubus.cpp_FUN_0056fe50",
+      "name": "core_succubus.cpp_CSuccubus_renderOpaque_FUN_0056fe50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00582ec0",
       "from_addr": "00583074",
-      "name": "core_vampboss.cpp_FUN_00582ec0",
+      "name": "core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_00582ec0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -76,7 +76,7 @@
       {
         "call_addr": "004151e2",
         "call_type": "direct",
-        "caller": "core_biggs.cpp_FUN_00415120",
+        "caller": "core_biggs.cpp_CBiggs_renderOpaque_FUN_00415120",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -98,7 +98,7 @@
       {
         "call_addr": "00502189",
         "call_type": "direct",
-        "caller": "core_moloch.cpp_FUN_005020c0",
+        "caller": "core_moloch.cpp_CMoloch_renderOpaque_FUN_005020c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -109,7 +109,7 @@
       {
         "call_addr": "00511a48",
         "call_type": "direct",
-        "caller": "core_passngr.cpp_FUN_00511980",
+        "caller": "core_passngr.cpp_CPassenger_renderOpaque_FUN_00511980",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -120,7 +120,7 @@
       {
         "call_addr": "0056ffcf",
         "call_type": "direct",
-        "caller": "core_succubus.cpp_FUN_0056fe50",
+        "caller": "core_succubus.cpp_CSuccubus_renderOpaque_FUN_0056fe50",
         "estimated_params": 1,
         "instructions_analyzed": 3,
         "method": "push_count",
@@ -131,7 +131,7 @@
       {
         "call_addr": "00583074",
         "call_type": "direct",
-        "caller": "core_vampboss.cpp_FUN_00582ec0",
+        "caller": "core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_00582ec0",
         "estimated_params": 2,
         "instructions_analyzed": 4,
         "method": "push_count",
@@ -182,6 +182,32 @@
       "STORE": 13
     },
     "pcode_op_count": 274
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005237e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004fb0e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0052bae0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004e0820",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 32,

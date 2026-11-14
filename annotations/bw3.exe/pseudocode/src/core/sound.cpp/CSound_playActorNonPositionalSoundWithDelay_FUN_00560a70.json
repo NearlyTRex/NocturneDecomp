@@ -1,0 +1,321 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 27,
+    "complexity_score": 51,
+    "cross_reference_count": 5,
+    "function_call_count": 4,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 11,
+    "suspect_count": 3,
+    "suspect_types": [
+      "bitcast_double_pair",
+      "unaffected_reg"
+    ],
+    "total_lines": 38
+  },
+  "cross_references": [
+    {
+      "addr": "00408ca0",
+      "from_addr": "00408cba",
+      "name": "core_actor.cpp_CDemonActor_playSoundWithDelay_FUN_00408ca0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00410490",
+      "from_addr": "004115a3",
+      "name": "core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a2090",
+      "from_addr": "004a23a6",
+      "name": "core_fire.cpp_CFireEffect_createBulletImpact_FUN_004a2090",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a25f0",
+      "from_addr": "004a2727",
+      "name": "core_fire.cpp_CFireEffect_createStake_FUN_004a25f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ae850",
+      "from_addr": "004af0fd",
+      "name": "core_flintlck.cpp_CFlintlock_fire_FUN_004ae850",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00560a70",
+    "address_range": [
+      [
+        "00560a70",
+        "00560aae"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70",
+    "signature": "uint __cdecl core_sound_cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70(CSound *this_ptr,CDemonActor *actor,char *sound_name,CVector3f *position,float delay )"
+  },
+  "function_calls": [
+    {
+      "addr": "0055f020",
+      "is_variadic": false,
+      "name": "core_sound.cpp_playSfxInternal_FUN_0055f020"
+    },
+    {
+      "addr": "00556050",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_00556050"
+    },
+    {
+      "addr": "00555fd0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_00555fd0"
+    },
+    {
+      "addr": "00555ee0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxDelay_FUN_00555ee0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 15,
+    "call_sites": [
+      {
+        "call_addr": "004a23a6",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CFireEffect_createBulletImpact_FUN_004a2090",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004a2727",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CFireEffect_createStake_FUN_004a25f0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00408cba",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_CDemonActor_playSoundWithDelay_FUN_00408ca0",
+        "estimated_params": 5,
+        "instructions_analyzed": 10,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004115a3",
+        "call_type": "direct",
+        "caller": "core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004115ee",
+        "call_type": "direct",
+        "caller": "core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00411639",
+        "call_type": "direct",
+        "caller": "core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00411692",
+        "call_type": "direct",
+        "caller": "core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004116dd",
+        "call_type": "direct",
+        "caller": "core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00411737",
+        "call_type": "direct",
+        "caller": "core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004af0fd",
+        "call_type": "direct",
+        "caller": "core_flintlck.cpp_CFlintlock_fire_FUN_004ae850",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.727272727272727,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "CALL": 4,
+      "COPY": 16,
+      "INT_ADD": 10,
+      "INT_AND": 4,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 13,
+      "LOAD": 9,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 13
+    },
+    "pcode_op_count": 82
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0055aef0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0057d940",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005b3aa0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7556
+    },
+    "nocturne.exe": {
+      "addr": "0052eac0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7556
+    }
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSound *"
+      },
+      {
+        "is_param": true,
+        "name": "actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "sound_name",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 16,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "delay",
+        "offset": 20,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 6,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "uint unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "sound_sndmain_cpp_setNextSfxDelay_FUN_00555ee0(__BITCAST_DOUBLE(CONCAT44(unaff_EBX,delay)));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 9,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "sound_sndmain_cpp_setNextSfxDelay_FUN_00555ee0(__BITCAST_DOUBLE(CONCAT44(unaff_EBX,delay)));",
+      "type": "bitcast_double_pair"
+    }
+  ]
+}

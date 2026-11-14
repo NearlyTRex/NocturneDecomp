@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 62,
+    "complexity_score": 27,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 12,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_field"
+      "undefined_data"
     ],
     "total_lines": 46
   },
@@ -108,6 +107,32 @@
     },
     "pcode_op_count": 115
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00410dc0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00410940",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00414340",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00411800",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -130,38 +155,14 @@
       "line": 6,
       "match": "DAT_005b61f7",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveVector_FUN_0040b400(&this_ptr->field_0x158,&DAT_005b61f7);",
+      "text": "core_actor_cpp_archiveVector_FUN_0040b400(&this_ptr->size,&DAT_005b61f7);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveVector_FUN_0040b400(&this_ptr->field_0x158,&DAT_005b61f7);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x168",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x168,\"effectClassNameList\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x164",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x164,\"addToPathGrid\")",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CBarrier",
         "offset": 212,
         "vtable_addr": "005db674"
       }

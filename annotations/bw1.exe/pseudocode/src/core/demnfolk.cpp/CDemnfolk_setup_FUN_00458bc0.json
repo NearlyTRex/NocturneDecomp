@@ -1,0 +1,660 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 379,
+    "complexity_score": 389,
+    "cross_reference_count": 0,
+    "function_call_count": 9,
+    "global_count": 57,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 174,
+    "suspect_count": 19,
+    "suspect_types": [
+      "undefined_data",
+      "unknown_param",
+      "unrolled_strcpy",
+      "warning_overlapping_globals",
+      "warning_type_propagation"
+    ],
+    "total_lines": 553
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00458bc0",
+    "address_range": [
+      [
+        "00458bc0",
+        "00459037"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_demnfolk.cpp_CDemnfolk_setup_FUN_00458bc0",
+    "signature": "void __cdecl core_demnfolk_cpp_CDemnfolk_setup_FUN_00458bc0(CDemnfolk *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cc00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00"
+    },
+    {
+      "addr": "004a0510",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_setup_FUN_004a0510"
+    },
+    {
+      "addr": "004a6c30",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30"
+    },
+    {
+      "addr": "00565780",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModel_findPartByName_FUN_00565780"
+    },
+    {
+      "addr": "00569eb0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0"
+    },
+    {
+      "addr": "00569f30",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30"
+    },
+    {
+      "addr": "00569b20",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00569b20"
+    },
+    {
+      "addr": "005634f0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0"
+    },
+    {
+      "addr": "005c04e0",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005c04e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d7d65",
+      "name": "s_COMBATMODEHARD_005d7d65",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7d74",
+      "name": "s_Bip01_Head_005d7d74",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7d7f",
+      "name": "s_Bip01_L_ForeArm_005d7d7f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7d8f",
+      "name": "s_Bip01_R_ForeArm_005d7d8f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7d9f",
+      "name": "s_Bip01_L_UpperArm_005d7d9f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7db0",
+      "name": "s_Bip01_R_UpperArm_005d7db0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7dc1",
+      "name": "s_Bip01_L_Foot_005d7dc1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7dce",
+      "name": "s_Bip01_R_Foot_005d7dce",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7ddb",
+      "name": "s_Bip01_L_Hand_005d7ddb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7de8",
+      "name": "s_Bip01_R_Hand_005d7de8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7df5",
+      "name": "s_Bip01_Spine_005d7df5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7e01",
+      "name": "s_Bip01_Spine2_005d7e01",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7e0e",
+      "name": "DAT_005d7e0e",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d7e13",
+      "name": "s_l4arm_005d7e13",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7e19",
+      "name": "DAT_005d7e19",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d7e1e",
+      "name": "s_r4arm_005d7e1e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7e24",
+      "name": "s_waist_005d7e24",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7e2a",
+      "name": "s_torso_005d7e2a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7e30",
+      "name": "DAT_005d7e30",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d7e35",
+      "name": "s_d_cooper_dfm_005d7e35",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7e42",
+      "name": "DAT_005d7e42",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d7e43",
+      "name": "DAT_005d7e43",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d7e45",
+      "name": "s_d_deputy_dfm_005d7e45",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7e52",
+      "name": "DAT_005d7e52",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d7e53",
+      "name": "DAT_005d7e53",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d7e55",
+      "name": "s_d_editor_dfm_005d7e55",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7e62",
+      "name": "DAT_005d7e62",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d7e63",
+      "name": "DAT_005d7e63",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d7e65",
+      "name": "s_d_gretchen_dfm_005d7e65",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7e74",
+      "name": "DAT_005d7e74",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d7e75",
+      "name": "DAT_005d7e75",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d7e77",
+      "name": "s_d_innkeeper_dfm_005d7e77",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7e87",
+      "name": "DAT_005d7e87",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d7e88",
+      "name": "DAT_005d7e88",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d7e8a",
+      "name": "s_d_librarian_dfm_005d7e8a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7e9a",
+      "name": "DAT_005d7e9a",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d7e9b",
+      "name": "DAT_005d7e9b",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d7e9d",
+      "name": "s_d_marm_dfm_005d7e9d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7ea8",
+      "name": "DAT_005d7ea8",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d7ea9",
+      "name": "DAT_005d7ea9",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d7eab",
+      "name": "s_d_mrsbrody_dfm_005d7eab",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7eba",
+      "name": "DAT_005d7eba",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d7ebb",
+      "name": "DAT_005d7ebb",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d7ebd",
+      "name": "s_d_pastor_dfm_005d7ebd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7eca",
+      "name": "DAT_005d7eca",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d7ecb",
+      "name": "DAT_005d7ecb",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d7ecd",
+      "name": "s_d_sheriff_dfm_005d7ecd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7edb",
+      "name": "DAT_005d7edb",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d7edc",
+      "name": "DAT_005d7edc",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d7ede",
+      "name": "s_d_shopkeep_dfm_005d7ede",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d7eed",
+      "name": "DAT_005d7eed",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d7eee",
+      "name": "DAT_005d7eee",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d7eef",
+      "name": "DAT_005d7eef",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d7ef0",
+      "name": "DAT_005d7ef0",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d7ef1",
+      "name": "DAT_005d7ef1",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d7ef3",
+      "name": "DAT_005d7ef3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061b4d0",
+      "name": "DAT_0061b4d0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.071428571428571,
+    "instruction_count": 294,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 2,
+      "BRANCH": 13,
+      "CALL": 35,
+      "CBRANCH": 17,
+      "COPY": 256,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_ADD": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 95,
+      "INT_AND": 133,
+      "INT_CARRY": 37,
+      "INT_EQUAL": 112,
+      "INT_LEFT": 4,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 7,
+      "INT_OR": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 37,
+      "INT_SLESS": 56,
+      "INT_SUB": 127,
+      "INT_ZEXT": 4,
+      "LOAD": 18,
+      "POPCOUNT": 56,
+      "RETURN": 1,
+      "STORE": 162
+    },
+    "pcode_op_count": 1197
+  },
+  "siblings": {
+    "bw3.exe": {
+      "addr": "00454d20",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7122
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemnfolk *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 56,
+      "match": "DAT_005d7e0e",
+      "severity": "mild",
+      "text": "(this_ptr_02,&DAT_005d7e0e,1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 62,
+      "match": "DAT_005d7e19",
+      "severity": "mild",
+      "text": "(this_ptr_02,&DAT_005d7e19,1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 77,
+      "match": "DAT_005d7e30",
+      "severity": "mild",
+      "text": "(this_ptr_02,&DAT_005d7e30,1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 98,
+      "match": "DAT_005d7e42",
+      "severity": "mild",
+      "text": "pcVar4 = &DAT_005d7e42;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 103,
+      "match": "DAT_005d7e52",
+      "severity": "mild",
+      "text": "pcVar4 = &DAT_005d7e52;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 108,
+      "match": "DAT_005d7e62",
+      "severity": "mild",
+      "text": "pcVar4 = &DAT_005d7e62;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 113,
+      "match": "DAT_005d7e74",
+      "severity": "mild",
+      "text": "pcVar4 = &DAT_005d7e74;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 118,
+      "match": "DAT_005d7e87",
+      "severity": "mild",
+      "text": "pcVar4 = &DAT_005d7e87;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 123,
+      "match": "DAT_005d7e9a",
+      "severity": "mild",
+      "text": "pcVar4 = &DAT_005d7e9a;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 128,
+      "match": "DAT_005d7ea8",
+      "severity": "mild",
+      "text": "pcVar4 = &DAT_005d7ea8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 133,
+      "match": "DAT_005d7eba",
+      "severity": "mild",
+      "text": "pcVar4 = &DAT_005d7eba;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 138,
+      "match": "DAT_005d7eca",
+      "severity": "mild",
+      "text": "pcVar4 = &DAT_005d7eca;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 143,
+      "match": "DAT_005d7edb",
+      "severity": "mild",
+      "text": "pcVar4 = &DAT_005d7edb;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 148,
+      "match": "DAT_005d7eed",
+      "severity": "mild",
+      "text": "pcVar4 = &DAT_005d7eed;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 151,
+      "match": "DAT_005d7ef0",
+      "severity": "mild",
+      "text": "pcVar4 = &DAT_005d7ef0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Parameter/variable named unknown (needs investigation)",
+      "line": 175,
+      "match": "unknown_0xc364",
+      "severity": "mild",
+      "text": "this_ptr->unknown_0xc364 = 0;",
+      "type": "unknown_param"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 163,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDemnfolk",
+        "offset": 0,
+        "vtable_addr": "005fe6b4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

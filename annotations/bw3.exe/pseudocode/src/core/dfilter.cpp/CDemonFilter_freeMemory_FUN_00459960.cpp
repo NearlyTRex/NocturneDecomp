@@ -9,10 +9,10 @@
 void __cdecl core_dfilter_cpp_CDemonFilter_freeMemory_FUN_00459960(CDemonFilter *this_ptr)
 
 {
-  if (*(int *)&this_ptr->field_0x48 == 0) {
+  if (this_ptr->data_buffer == (uchar *)0x0) {
     return;
   }
-  FUN_005a3770(*(int *)&this_ptr->field_0x48);
-  *(uint *)&this_ptr->field_0x48 = 0;
+  FUN_005a3770(this_ptr->data_buffer);
+  this_ptr->data_buffer = (uchar *)0x0;
   return;
 }

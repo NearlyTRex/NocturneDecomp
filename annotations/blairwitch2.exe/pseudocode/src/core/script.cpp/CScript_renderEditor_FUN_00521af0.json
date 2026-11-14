@@ -1,0 +1,288 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 184,
+    "complexity_score": 83,
+    "cross_reference_count": 1,
+    "function_call_count": 11,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 68,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 252
+  },
+  "cross_references": [
+    {
+      "addr": "004b5190",
+      "from_addr": "004b5b07",
+      "name": "core_game.cpp_FUN_004b5190",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00521af0",
+    "address_range": [
+      [
+        "00521af0",
+        "00521ce6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CScript_renderEditor_FUN_00521af0",
+    "signature": "void __cdecl core_script_cpp_CScript_renderEditor_FUN_00521af0(CScript *this_ptr,int left,int top,int right,int bottom)"
+  },
+  "function_calls": [
+    {
+      "addr": "004673b0",
+      "is_variadic": false,
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawSurfaceBorder_FUN_004673b0"
+    },
+    {
+      "addr": "00468a70",
+      "is_variadic": false,
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_00468a70"
+    },
+    {
+      "addr": "00468240",
+      "is_variadic": false,
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_00468240"
+    },
+    {
+      "addr": "00467ac0",
+      "is_variadic": false,
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_fillFullSurface_FUN_00467ac0"
+    },
+    {
+      "addr": "00468b30",
+      "is_variadic": false,
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_00468b30"
+    },
+    {
+      "addr": "00465d30",
+      "is_variadic": false,
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_00465d30"
+    },
+    {
+      "addr": "00465ea0",
+      "is_variadic": false,
+      "name": "cockpit_drawsurf.cpp_setColor_FUN_00465ea0"
+    },
+    {
+      "addr": "00466350",
+      "is_variadic": false,
+      "name": "cockpit_drawsurf.cpp_setCurrentFont_FUN_00466350"
+    },
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
+    },
+    {
+      "addr": "00481240",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_00481240"
+    },
+    {
+      "addr": "004858f0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_004858f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e2eb7",
+      "name": "DAT_005e2eb7",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e2eba",
+      "name": "s_No_script_loaded_005e2eba",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004b5b07",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b5190",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.7465753424657535,
+    "instruction_count": 146,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 13,
+      "BOOL_OR": 2,
+      "BRANCH": 5,
+      "CALL": 15,
+      "CBRANCH": 8,
+      "COPY": 98,
+      "INT_ADD": 56,
+      "INT_AND": 102,
+      "INT_CARRY": 17,
+      "INT_EQUAL": 79,
+      "INT_LEFT": 1,
+      "INT_LESS": 11,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 11,
+      "INT_OR": 9,
+      "INT_SBORROW": 12,
+      "INT_SCARRY": 19,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 38,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 5,
+      "INT_SUB": 66,
+      "INT_XOR": 1,
+      "INT_ZEXT": 2,
+      "LOAD": 22,
+      "POPCOUNT": 38,
+      "RETURN": 1,
+      "STORE": 56,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 693
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00543c00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00529210",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00559d80",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004fe9d0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 188,
+    "local_size": 168,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_a4",
+        "offset": -164,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
+      },
+      {
+        "is_param": true,
+        "name": "left",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "top",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "right",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "bottom",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 57,
+      "match": "DAT_005e2eb7",
+      "severity": "mild",
+      "text": "_sprintf(local_a4,&DAT_005e2eb7);",
+      "type": "undefined_data"
+    }
+  ]
+}

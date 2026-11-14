@@ -8,21 +8,19 @@ decompiler artifacts (SUB84/CONCAT44/._0_4_/._4_4_ splits).
 
 SUMMARY
 --------------------------------------------------
-Functions returning double:         14
-Functions with double parameter(s): 17
+Functions returning double:         10
+Functions with double parameter(s): 22
 
 ====================================================================================================
-FUNCTIONS RETURNING DOUBLE (14)
+FUNCTIONS RETURNING DOUBLE (10)
 ====================================================================================================
 
   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00573660
     Address: 00573660  File: sound/sndmain.cpp [1 double-related suspects]
-  core_dcamera.cpp_FUN_0045168c
-    Address: 0045168c  File: core/dcamera.cpp
+  core_dcamera.cpp_log2Custom_FUN_00451690
+    Address: 00451690  File: core/dcamera.cpp
   core_xform.cpp_determinant_FUN_005b6330
     Address: 005b6330  File: core/xform.cpp
-  sound_mp3.cpp_FUN_0052718e
-    Address: 0052718e  File: sound/mp3.cpp
   sound_snddx.cpp_FUN_005799b0
     Address: 005799b0  File: sound/snddx.cpp
   sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_00572430
@@ -37,35 +35,32 @@ FUNCTIONS RETURNING DOUBLE (14)
     Address: 0056fcd0  File: sound/sndmain.cpp
   sound_sndwav.cpp_CWavOutDevice_getSfxPlaybackPos_FUN_0057b620
     Address: 0057b620  File: sound/sndwav.cpp
-  unkafter_2d.cpp_FUN_005cd4be
-    Address: 005cd4be  File: unkafter/2d.cpp
-  unkafter_2d.cpp_FUN_005cd6c4
-    Address: 005cd6c4  File: unkafter/2d.cpp
-  unkafter_2d.cpp_FUN_005cd881
-    Address: 005cd881  File: unkafter/2d.cpp
 
 ====================================================================================================
-FUNCTIONS WITH DOUBLE PARAMETER(S) (17)
+FUNCTIONS WITH DOUBLE PARAMETER(S) (22)
 ====================================================================================================
 
   core_dcube.cpp_clipEdgeToPlane_FUN_00455460
     Address: 00455460  File: core/dcube.cpp [1 double-related suspects]
-    Double params: (from signature)
+    Double params: plane_nx, plane_ny, plane_nz, plane_d
   core_dtri.cpp_clipLineToPlane_FUN_00490df0
     Address: 00490df0  File: core/dtri.cpp [1 double-related suspects]
-    Double params: (from signature)
-  core_dcamera.cpp_FUN_0045168c
-    Address: 0045168c  File: core/dcamera.cpp
-    Double params: (from signature)
-  core_dirmat.cpp_FUN_0045f770
+    Double params: plane_nx, plane_ny, plane_nz, plane_d
+  core_dcamera.cpp_log2Custom_FUN_00451690
+    Address: 00451690  File: core/dcamera.cpp
+    Double params: val
+  core_dirmat.cpp_angleFromSinCos_FUN_0045f770
     Address: 0045f770  File: core/dirmat.cpp
-    Double params: (from signature)
+    Double params: y, x
   shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_00495f70
     Address: 00495f70  File: shape/edittool.cpp
     Double params: min_value, max_value
   sound_mp3.cpp_calculateIntensityStereoRatio_FUN_005292d0
     Address: 005292d0  File: sound/mp3.cpp
-    Double params: (from signature)
+    Double params: ratio
+  sound_snddx.cpp_CDirectSoundDevice_set3DListenerDistanceFactor_FUN_005786e0
+    Address: 005786e0  File: sound/snddx.cpp
+    Double params: distance_in_feet
   sound_snddx.cpp_FUN_00578640
     Address: 00578640  File: sound/snddx.cpp
     Double params: (from signature)
@@ -78,21 +73,33 @@ FUNCTIONS WITH DOUBLE PARAMETER(S) (17)
   sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00572030
     Address: 00572030  File: sound/sndmain.cpp
     Double params: hardware_playback_pos
-  sound_sndmain.cpp_FUN_00572780
+  sound_sndmain.cpp_getNearestListener_FUN_00574080
+    Address: 00574080  File: sound/sndmain.cpp
+    Double params: pos_x, pos_y, pos_z
+  sound_sndmain.cpp_isWithinListenerRadius_FUN_00574010
+    Address: 00574010  File: sound/sndmain.cpp
+    Double params: pos_x, pos_y, pos_z
+  sound_sndmain.cpp_mixResampleMonoToStereo_FUN_0056fb90
+    Address: 0056fb90  File: sound/sndmain.cpp
+    Double params: resample_position, resample_delta
+  sound_sndmain.cpp_mixResampleStereoToStereo_FUN_0056fcd0
+    Address: 0056fcd0  File: sound/sndmain.cpp
+    Double params: resample_position, resample_delta
+  sound_sndmain.cpp_set3DListenerPos_FUN_00573ec0
+    Address: 00573ec0  File: sound/sndmain.cpp
+    Double params: pos_x, pos_y, pos_z
+  sound_sndmain.cpp_setNextSfxStaticPosition_FUN_00572780
     Address: 00572780  File: sound/sndmain.cpp
     Double params: pos_x, pos_y, pos_z
-  sound_sndmain.cpp_FUN_00572a50
+  sound_sndmain.cpp_setNextSfxTriggerTime_FUN_00572a50
     Address: 00572a50  File: sound/sndmain.cpp
     Double params: trigger_time
-  sound_sndmain.cpp_FUN_00574010
-    Address: 00574010  File: sound/sndmain.cpp
-    Double params: (from signature)
-  sound_sndmain.cpp_FUN_00574080
-    Address: 00574080  File: sound/sndmain.cpp
-    Double params: (from signature)
-  unkafter_zombie.cpp_FUN_005cbedb
-    Address: 005cbedb  File: unkafter/zombie.cpp
-    Double params: (from signature)
+  sound_sndmain.cpp_setSfxPosition_FUN_00573760
+    Address: 00573760  File: sound/sndmain.cpp
+    Double params: pos_x, pos_y, pos_z
+  sound_sndmain.cpp_startSoundThread_FUN_00575c00
+    Address: 00575c00  File: sound/sndmain.cpp
+    Double params: latency_seconds
   wincore_winrun.cpp_sleep_FUN_005b3860
     Address: 005b3860  File: wincore/winrun.cpp
     Double params: seconds

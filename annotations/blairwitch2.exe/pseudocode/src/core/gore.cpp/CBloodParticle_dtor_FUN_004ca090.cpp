@@ -11,6 +11,6 @@ CBloodParticle * __cdecl core_gore_cpp_CBloodParticle_dtor_FUN_004ca090(CBloodPa
 {
   CBloodParticle *pCVar1;
   
-  pCVar1 = (CBloodParticle *)core_particle_cpp_FUN_00510df0((CParticle *)this_ptr,1);
+  pCVar1 = (CBloodParticle *)core_particle_cpp_CParticle_dtor_FUN_00510df0(&this_ptr->base,1);
   return pCVar1;
 }

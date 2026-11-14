@@ -1,13 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_FUN_00480f00(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; void __cdecl shape_edittool_cpp_FUN_00480f00(CEditorTools *this_ptr,float scale_factor,int text_color)
 ;
+; Parameters:
+; CEditorTools *   Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   scale_factor
+; int              Stack[0xc]:4   text_color
 ;
 ; XREF[3]:
 ;   core_cloth.cpp_FUN_0043f160 at 0043f35d
-;   core_skeleton.cpp_FUN_005496bc at 0054988c
-;   shape_edittool.cpp_FUN_0048114e at 004811e0
+;   core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_005496c0 at 0054988c
+;   shape_edittool.cpp_FUN_00481150 at 004811e0
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005bd335
@@ -23,14 +27,14 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
 ;   crt_math.c_round_FUN_005a3120
-;   crt_unknown.c_FUN_005a28c0
-;   engine_3d.c_FUN_00407b30
+;   crt_unknown.c_sprintf_FUN_005a28c0
+;   engine_3d.c_clipAndDrawLine2D_FUN_00407b30
 ;   engine_3d.c_setRenderAlpha_FUN_00406bf0
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0
 ;   engine_font.cpp_FUN_004b0a20
-;   engine_font.cpp_FUN_004b30f0
 ;   engine_matrix.c_transformToCache_FUN_004e5540
-;   engine_mini3d.cpp_FUN_004edaf0
-;   engine_mini3d.cpp_FUN_004f3520
+;   engine_mini3d.cpp_setAlpha_FUN_004edaf0
+;   engine_mini3d.cpp_setColor_FUN_004f3520
 ;
 ; *****************************************************************************
 
@@ -52,8 +56,8 @@ section .text
     MOV EBX,dword ptr [EAX + 0x41e8]    ; 00480f1f
     PUSH EAX                            ; 00480f25
     MOV dword ptr [0x01c5bae0],EBX      ; 00480f26 | DAT_01c5bae0
-    CALL engine_font.cpp_FUN_004b30f0   ; 00480f2c
-        ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004b30f0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0 ; 00480f2c
+        ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00480f31
     FLD float ptr [ESP + 0x3c]          ; 00480f34
     FMUL double ptr [0x005bd335]        ; 00480f38 | DAT_005bd335
@@ -81,8 +85,8 @@ section .text
     AND EAX,0xff                        ; 00480f8b
     OR EBX,EAX                          ; 00480f90
     PUSH EBX                            ; 00480f92
-    CALL engine_mini3d.cpp_FUN_004f3520 ; 00480f93
-        ;   XREF to: 004f3520 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f3520()
+    CALL engine_mini3d.cpp_setColor_FUN_004f3520 ; 00480f93
+        ;   XREF to: 004f3520 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setColor_FUN_004f3520(uint rgb)
     ADD ESP,0x4                         ; 00480f98
     LEA EAX,[ESP + 0x14]                ; 00480f9b
         ;   Label: LAB_00480f9b
@@ -115,8 +119,8 @@ section .text
     MOV ESI,0x60b014                    ; 00480fef
     MOV EDI,ESP                         ; 00480ff4
     MOVSD.REP ES:EDI,ESI                ; 00480ff6
-    CALL engine_3d.c_FUN_00407b30       ; 00480ff8
-        ;   XREF to: 00407b30 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_FUN_00407b30()
+    CALL engine_3d.c_clipAndDrawLine2D_FUN_00407b30 ; 00480ff8
+        ;   XREF to: 00407b30 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407b30(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 00480ffd
     MOV EAX,dword ptr [ESP + 0x20]      ; 00481000
     MOV dword ptr [ESP + 0x18],EAX      ; 00481004
@@ -138,8 +142,8 @@ section .text
     MOV ESI,0x60b014                    ; 00481038
     MOV EDI,ESP                         ; 0048103d
     MOVSD.REP ES:EDI,ESI                ; 0048103f
-    CALL engine_3d.c_FUN_00407b30       ; 00481041
-        ;   XREF to: 00407b30 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_FUN_00407b30()
+    CALL engine_3d.c_clipAndDrawLine2D_FUN_00407b30 ; 00481041
+        ;   XREF to: 00407b30 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407b30(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 00481046
     MOV EAX,dword ptr [ESP + 0x20]      ; 00481049
     MOV dword ptr [ESP + 0x1c],EAX      ; 0048104d
@@ -163,8 +167,8 @@ section .text
     MOV EDI,ESP                         ; 0048108b
     ADD EBX,0x30                        ; 0048108d
     MOVSD.REP ES:EDI,ESI                ; 00481090
-    CALL engine_3d.c_FUN_00407b30       ; 00481092
-        ;   XREF to: 00407b30 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_FUN_00407b30()
+    CALL engine_3d.c_clipAndDrawLine2D_FUN_00407b30 ; 00481092
+        ;   XREF to: 00407b30 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407b30(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 00481097
     XOR ESI,ESI                         ; 0048109a
     TEST byte ptr [EBX + 0x13],0x80     ; 0048109c
@@ -207,16 +211,16 @@ section .text
     PUSH EAX                            ; 004810f8
     MOV EDI,dword ptr [EBX + 0x10]      ; 004810f9
     MOV EBP,dword ptr [EBX + 0x14]      ; 004810fc
-    CALL crt_unknown.c_FUN_005a28c0     ; 004810ff
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004810ff
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00481104
     PUSH 0xffff                         ; 00481107
     CALL engine_3d.c_setRenderAlpha_FUN_00406bf0 ; 0048110c
         ;   XREF to: 00406bf0 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406bf0(int alpha_color_value)
     ADD ESP,0x4                         ; 00481111
     PUSH 0x3f800000                     ; 00481114
-    CALL engine_mini3d.cpp_FUN_004edaf0 ; 00481119
-        ;   XREF to: 004edaf0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004edaf0()
+    CALL engine_mini3d.cpp_setAlpha_FUN_004edaf0 ; 00481119
+        ;   XREF to: 004edaf0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setAlpha_FUN_004edaf0(float alpha)
     ADD ESP,0x4                         ; 0048111e
     PUSH -0x1                           ; 00481121
     MOV EDX,dword ptr [0x01c5bb3c]      ; 00481123 | DAT_01c5bb3c

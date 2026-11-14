@@ -1,20 +1,20 @@
 // Name: core_schngeis.cpp_factoryFuncSchnellGeist_FUN_005a2f80
 // Address: 005a2f80
 // Address Range: [[005a2f80, 005a2f9b]]
-// Convention: unknown
-// Signature: void core_schngeis_cpp_factoryFuncSchnellGeist_FUN_005a2f80(void)
+// Convention: __cdecl
+// Signature: CSchnellGeist * __cdecl core_schngeis_cpp_factoryFuncSchnellGeist_FUN_005a2f80(void)
 
 #include "nocturne.h"
 
-void core_schngeis_cpp_factoryFuncSchnellGeist_FUN_005a2f80(void)
+CSchnellGeist * __cdecl core_schngeis_cpp_factoryFuncSchnellGeist_FUN_005a2f80(void)
 
 {
-  CSchnellGeist *this_ptr;
+  CSchnellGeist *pCVar1;
   
-  this_ptr = (CSchnellGeist *)FUN_005b8be2(0x11870);
-  if (this_ptr == (CSchnellGeist *)0x0) {
-    return;
+  pCVar1 = (CSchnellGeist *)operator_new(0x11870);
+  if (pCVar1 == (CSchnellGeist *)0x0) {
+    return (CSchnellGeist *)0x0;
   }
-  core_schngeis_cpp_CSchnellGeist_ctor_FUN_005a2fb0(this_ptr);
-  return;
+  pCVar1 = core_schngeis_cpp_CSchnellGeist_ctor_FUN_005a2fb0(pCVar1);
+  return pCVar1;
 }

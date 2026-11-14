@@ -8,11 +8,11 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[2]:
-;   core_patrpoin.cpp_CPatrolPoint_dtor_FUN_0059c610 at 0059c629
+;   core_hpatrol.cpp_CPatrolPoint_dtor_FUN_0059c610 at 0059c629
 ;   core_waypoint.cpp_CWayPoint_dtor_FUN_00588480 at 0058848f
 ;
 ; Referenced Globals:
-;   undefined4 g_CTriggerVTable
+;   CDemonActor_vtable g_CTriggerVTable
 ;   WatcomTypeInfo g_CTriggerTypeInfo
 ;
 ; Called Functions:
@@ -49,7 +49,7 @@ section .text
         ;   Label: LAB_00577870
     PUSH EBX                            ; 00577875
     CALL crt_memory.c___vec_delete_FUN_005b7fa7 ; 00577876
-        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005b7fa7()
+        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005b7fa7(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 0057787b
     PUSH EAX                            ; 0057787e
     CALL crt_unknown.c_FUN_005b7fce     ; 0057787f

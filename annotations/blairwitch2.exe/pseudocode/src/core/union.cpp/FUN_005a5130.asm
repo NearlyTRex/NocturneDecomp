@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_union.cpp_FUN_005a4c50 at 005a4d36
+;   core_union.cpp_CUnion_processStates_FUN_005a4c50 at 005a4d36
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f056a

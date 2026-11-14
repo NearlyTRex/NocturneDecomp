@@ -2,11 +2,11 @@
 // Address: 0040c530
 // Address Range: [[0040c530, 0040c59c]]
 // Convention: __cdecl
-// Signature: int __cdecl core_actor_cpp_getActorClassByName_FUN_0040c530(byte *param_1)
+// Signature: CDemonActorType * __cdecl core_actor_cpp_getActorClassByName_FUN_0040c530(char *className)
 
 #include "nocturne.h"
 
-int __cdecl core_actor_cpp_getActorClassByName_FUN_0040c530(byte *param_1)
+CDemonActorType * __cdecl core_actor_cpp_getActorClassByName_FUN_0040c530(char *className)
 
 {
   byte bVar1;
@@ -15,8 +15,8 @@ int __cdecl core_actor_cpp_getActorClassByName_FUN_0040c530(byte *param_1)
   
   uVar3 = 0;
   while( true ) {
-    bVar1 = *param_1;
-    param_1 = param_1 + 1;
+    bVar1 = *className;
+    className = className + 1;
     if (bVar1 == 0) break;
     if (((&DAT_0061ed94)[(byte)(bVar1 + 1)] & 0xe0) != 0) {
       iVar2 = tolower((uint)bVar1);
@@ -26,11 +26,11 @@ int __cdecl core_actor_cpp_getActorClassByName_FUN_0040c530(byte *param_1)
   if (0 < DAT_007bc044) {
     iVar2 = 0;
     do {
-      if (uVar3 == *(uint *)(*(int *)((int)&DAT_007bc048 + iVar2) + 0x38)) {
-        return *(int *)((int)&DAT_007bc048 + iVar2);
+      if (uVar3 == (*(CDemonActorType **)((int)&DAT_007bc048 + iVar2))->name_hash) {
+        return *(CDemonActorType **)((int)&DAT_007bc048 + iVar2);
       }
       iVar2 = iVar2 + 4;
     } while (iVar2 < DAT_007bc044 * 4);
   }
-  return 0;
+  return (CDemonActorType *)0x0;
 }

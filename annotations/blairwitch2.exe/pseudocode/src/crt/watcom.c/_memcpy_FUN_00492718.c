@@ -1,29 +1,27 @@
 // Name: crt_watcom.c__memcpy_FUN_00492718
 // Address: 00492718
 // Address Range: [[00492718, 00492735] [00492738, 00492752] [00492754, 00492771] [00492774, 00492789] [0049278c, 004927b3]]
-// Convention: unknown
-// Signature: void crt_watcom_c__memcpy_FUN_00492718(uint param_1)
+// Convention: __fastcall
+// Signature: void __fastcall crt_watcom_c__memcpy_FUN_00492718(void *dest,void *src,uint size)
 
 #include "nocturne.h"
 
-void _memcpy(uint param_1)
+void __fastcall _memcpy(void *dest,void *src,uint size)
 
 {
   longlong lVar1;
   uint uVar2;
-  int in_ECX;
   longlong *plVar3;
-  int in_EDX;
   longlong *plVar4;
   uint uVar5;
   bool bVar6;
   bool bVar7;
   
-  uVar2 = param_1 - 8;
-  if (7 < param_1 && uVar2 != 0) {
-    uVar5 = -in_ECX & 7;
-    plVar3 = (longlong *)(in_ECX + uVar5);
-    plVar4 = (longlong *)(in_EDX + uVar5);
+  uVar2 = size - 8;
+  if (7 < size && uVar2 != 0) {
+    uVar5 = -(int)dest & 7;
+    plVar3 = (longlong *)((int)dest + uVar5);
+    plVar4 = (longlong *)((int)src + uVar5);
     bVar6 = uVar2 < uVar5;
     uVar2 = uVar2 - uVar5;
     bVar7 = uVar2 == 0;

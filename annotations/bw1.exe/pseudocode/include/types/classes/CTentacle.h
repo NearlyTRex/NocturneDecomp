@@ -2,15 +2,25 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
+#include "types/classes/CMatrix3x4f.h"
 
 // Structure: CTentacle
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0xc2d8 (49880 bytes)
 #pragma pack(push, 1)
 typedef struct CTentacle {
-    char field_0[49880]; // 0x0
+    CEnemy base; // 0x0
+    float wait_timer; // 0xc268
+    float chase_timer; // 0xc26c
+    struct CDemonActor* grave_actor; // 0xc270
+    float target_blend; // 0xc274
+    CMatrix3x4f target_matrix; // 0xc278
+    CMatrix3x4f prev_target_matrix; // 0xc2a8
 } CTentacle;
 #pragma pack(pop)
 

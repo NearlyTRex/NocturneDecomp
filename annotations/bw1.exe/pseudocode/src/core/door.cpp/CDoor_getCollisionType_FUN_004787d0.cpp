@@ -11,11 +11,10 @@ ECollisionType __cdecl core_door_cpp_CDoor_getCollisionType_FUN_004787d0(CDoor *
 {
   CKeyFramedModel *pCVar1;
   
-  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
-                     ((CKeyFramedModelInstance *)&this_ptr->field_0x158);
-  if (*(int *)&pCVar1->field_0x358 == 0) {
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900(&this_ptr->model);
+  if (pCVar1->collision_triangle_list == (CDemonTriangle *)0x0) {
     return COLLISION_TYPE_MESH;
   }
-  *(byte **)&collision_info->field_0x24 = &this_ptr->field_0x158;
+  collision_info->keyframed_model = &this_ptr->model;
   return COLLISION_TYPE_MESH;
 }

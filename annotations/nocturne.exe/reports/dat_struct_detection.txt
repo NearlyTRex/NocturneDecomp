@@ -2,12 +2,12 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 2386
-Filtered out (inside named data): 106
+Total DAT_ globals found: 2388
+Filtered out (inside named data): 111
 Immediate constants (not real globals): 72
-Real globals remaining: 2314
+Real globals remaining: 2316
 Clusters detected: 223
-DAT_ globals in clusters: 2231
+DAT_ globals in clusters: 2232
 
 Classification summary:
   unknown              86 clusters
@@ -620,6 +620,20 @@ MEDIUM CONFIDENCE (69 clusters)
       0x01cc8134  DAT_01cc8134  undefined4
       ... +127 more
 
+  0x005c1c28 - 0x005c2201  (80 items, 1497 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 14 groups of 3 consecutive ints found
+    Referenced by: 66 functions
+     near: PTR_crt_unknown.c_FUN_0056ad3f_005c1cb4 (undefined1*) at -140
+      0x005c1c28  DAT_005c1c28  undefined4
+      0x005c1c2c  DAT_005c1c2c  undefined4
+      0x005c1c30  DAT_005c1c30  undefined2 [short]
+      0x005c1cc8  DAT_005c1cc8  undefined4
+      0x005c1ccc  DAT_005c1ccc  undefined4
+      0x005c1cd0  DAT_005c1cd0  undefined4
+      ... +74 more
+
   0x01c789c0 - 0x01c78ce8  (80 items, 808 bytes span)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
@@ -633,20 +647,6 @@ MEDIUM CONFIDENCE (69 clusters)
       0x01c78ac0  DAT_01c78ac0  undefined4
       0x01c78ac4  DAT_01c78ac4  undefined4 [float]
       ... +74 more
-
-  0x005c1c28 - 0x005c2201  (79 items, 1497 bytes span)
-    Classification: vector_groups
-    Likely type: likely contains CVector3i/f fields
-    Reason: 14 groups of 3 consecutive ints found
-    Referenced by: 63 functions
-     near: PTR_crt_unknown.c_FUN_0056ad3f_005c1cb4 (undefined1*) at -140
-      0x005c1c28  DAT_005c1c28  undefined4
-      0x005c1c2c  DAT_005c1c2c  undefined4
-      0x005c1c30  DAT_005c1c30  undefined2 [short]
-      0x005c1cc8  DAT_005c1cc8  undefined4
-      0x005c1ccc  DAT_005c1ccc  undefined4
-      0x005c1cd0  DAT_005c1cd0  undefined4
-      ... +73 more
 
   0x01cae018 - 0x01cae37c  (62 items, 868 bytes span)
     Classification: vector_groups
@@ -1789,8 +1789,8 @@ LOW CONFIDENCE (135 clusters)
   0x02de5460 - 0x02de54a8  (8 items, 72 bytes span)
     Classification: struct
     Likely type: struct (72 bytes span, 8 fields)
-    Reason: mixed strides, shared by 16 functions
-    Referenced by: 16 functions
+    Reason: mixed strides, shared by 17 functions
+    Referenced by: 17 functions
       0x02de5460  DAT_02de5460  undefined4 [byte]
       0x02de5461  DAT_02de5461  undefined4 [byte]
       0x02de5474  DAT_02de5474  undefined4 [byte]
@@ -1870,8 +1870,8 @@ LOW CONFIDENCE (135 clusters)
   0x02de5be0 - 0x02de5c30  (7 items, 80 bytes span)
     Classification: struct
     Likely type: struct (80 bytes span, 7 fields)
-    Reason: mixed strides, shared by 22 functions
-    Referenced by: 22 functions
+    Reason: mixed strides, shared by 23 functions
+    Referenced by: 23 functions
       0x02de5be0  DAT_02de5be0  undefined4
       0x02de5be4  DAT_02de5be4  undefined4
       0x02de5c10  DAT_02de5c10  undefined4
@@ -2909,7 +2909,7 @@ LOW CONFIDENCE (135 clusters)
       0x02dd9260  DAT_02dd9260  undefined4 [float]
 
 --------------------------------------------------------------------------------
-ISOLATED DAT_ GLOBALS (83 - not part of any cluster)
+ISOLATED DAT_ GLOBALS (84 - not part of any cluster)
 --------------------------------------------------------------------------------
   DAT_02dc1b74                    addr=02dc1b74    type=undefined4      refs=20
   DAT_02dc1ed8                    addr=02dc1ed8    type=undefined4      refs=7
@@ -2961,10 +2961,10 @@ ISOLATED DAT_ GLOBALS (83 - not part of any cluster)
   DAT_0057c391                    addr=0057c391    type=undefined4      refs=1 [likely double]  near: DOUBLE_0057c389(+8)
   DAT_01abacb4                    addr=01abacb4    type=undefined4      refs=1
   DAT_0059cda8                    addr=0059cda8    type=undefined4      refs=1  near: g_CEnemyVTable(-12)
-  ... +33 more
+  ... +34 more
 
 --------------------------------------------------------------------------------
-FILTERED OUT - INSIDE NAMED DATA (106)
+FILTERED OUT - INSIDE NAMED DATA (111)
 --------------------------------------------------------------------------------
   DAT_005779d5                    inside s_Dangling_corrupt_actor_p_00577987
   DAT_00578e76                    inside s_CBodyPart_00578e6a
@@ -2997,6 +2997,8 @@ FILTERED OUT - INSIDE NAMED DATA (106)
   DAT_00581ac5                    inside s_Here_is_a_newline_Next_l_00581a77
   DAT_00581ae0                    inside s_maxCharHght_d_00581ad0
   DAT_00586e60                    inside s_itemlist_txt_00586e53
+  DAT_0058786c                    inside s_big_00587867
+  DAT_00587874                    inside s_big_00587867
   DAT_005882b3                    inside s_Matrix_unbalance_0058829e
   DAT_005882bb                    inside s_Matrix_unbalance_0058829e
   DAT_0058a161                    inside s_CMobster_0058a151
@@ -3070,6 +3072,9 @@ FILTERED OUT - INSIDE NAMED DATA (106)
   DAT_005c1f54                    inside s_s_0123456789abcdefghijkl_005c1f24
   DAT_005c1f58                    inside s_s_0123456789abcdefghijkl_005c1f24
   DAT_005c1f5c                    inside s_s_0123456789abcdefghijkl_005c1f24
+  DAT_005c2040                    inside s_s_0123456789abcdefghijkl_005c2018
+  DAT_005c2044                    inside s_s_0123456789abcdefghijkl_005c2018
+  DAT_005c2048                    inside s_s_0123456789abcdefghijkl_005c2018
   DAT_005c204c                    inside s_s_0123456789abcdefghijkl_005c2018
   DAT_005c2050                    inside s_s_0123456789abcdefghijkl_005c2018
 

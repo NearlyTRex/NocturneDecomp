@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 77,
+    "complexity_score": 27,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 12,
-    "suspect_count": 6,
+    "suspect_count": 1,
     "suspect_types": [
       "unnamed_field"
     ],
@@ -18,7 +18,7 @@
     {
       "addr": "0059c5e0",
       "from_addr": "0059c5e5",
-      "name": "core_patrpoin.cpp_CPatrolPoint_ctor_FUN_0059c5e0",
+      "name": "core_hpatrol.cpp_CPatrolPoint_ctor_FUN_0059c5e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -54,7 +54,7 @@
       {
         "call_addr": "0059c5e5",
         "call_type": "direct",
-        "caller": "core_patrpoin.cpp_CPatrolPoint_ctor_FUN_0059c5e0",
+        "caller": "core_hpatrol.cpp_CPatrolPoint_ctor_FUN_0059c5e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -100,6 +100,32 @@
     },
     "pcode_op_count": 39
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005ab9c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9524
+    },
+    "bw3.exe": {
+      "addr": "00579270",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9524
+    },
+    "nocedit.exe": {
+      "addr": "005ebe70",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9524
+    },
+    "nocturne.exe": {
+      "addr": "005524d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9524
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -117,46 +143,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "*(byte **)&pCVar1->field_0x2b0 = &g_CWayPointVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x2bc",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x2bc = 0x3f000000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x2c0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x2c0 = 0x3f800000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x2c4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x2c4 = 0x3f000000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x4d0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x4d0 = 0;",
-      "type": "unnamed_field"
-    },
     {
       "description": "Auto-generated struct field name",
       "line": 13,

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CHino * core_hino_cpp_CHino_ctor_FUN_0059b670(CHino *this_ptr)
+; CHino * __cdecl core_hino_cpp_CHino_ctor_FUN_0059b670(CHino *this_ptr)
 ;
 ; Parameters:
 ; CHino *          Stack[0x4]:4   this_ptr
@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00488fd0
-;   core_skeleton.cpp_FUN_0054eae0
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     ADD EAX,0x158                       ; 0059b688
     PUSH EAX                            ; 0059b68d
     MOV dword ptr [EAX + -0x4],0x5e81c4 ; 0059b68e
-    CALL core_skeleton.cpp_FUN_0054eae0 ; 0059b695
-        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054eae0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 ; 0059b695
+        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x326c],0x3f19999a ; 0059b69a
     MOV dword ptr [EBX + 0x3270],0x3f666666 ; 0059b6a4
     MOV dword ptr [EBX + 0x2538],0x42b40000 ; 0059b6ae

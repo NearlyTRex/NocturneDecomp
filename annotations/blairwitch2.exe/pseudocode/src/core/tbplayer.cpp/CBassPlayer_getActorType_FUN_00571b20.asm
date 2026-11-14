@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_tbplayer_cpp_CBassPlayer_getActorType_FUN_00571b20(CBassPlayer *this_ptr)
+; CDemonActorType * __cdecl core_tbplayer_cpp_CBassPlayer_getActorType_FUN_00571b20(CBassPlayer *this_ptr)
 ;
 ; Parameters:
 ; CBassPlayer *    Stack[0x4]:4   this_ptr

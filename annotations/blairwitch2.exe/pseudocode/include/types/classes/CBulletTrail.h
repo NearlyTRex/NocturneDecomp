@@ -2,15 +2,22 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CKeyFramedModel;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CBulletTrail
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x24 (36 bytes)
 #pragma pack(push, 1)
 typedef struct CBulletTrail {
-    char field_0[36]; // 0x0
+    CVector3f start_position; // 0x0
+    CVector3f end_position; // 0xc
+    struct CKeyFramedModel* model_ptr; // 0x18
+    float segment_length; // 0x1c
+    int frames_remaining; // 0x20
 } CBulletTrail;
 #pragma pack(pop)
 

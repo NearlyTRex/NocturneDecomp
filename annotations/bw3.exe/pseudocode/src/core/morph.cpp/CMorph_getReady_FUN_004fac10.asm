@@ -63,14 +63,14 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[8]:
-;   core_passngr.cpp_FUN_0050a610 at 0050a6a1
-;   core_pryemorp.cpp_FUN_005275c0 at 0052774a
-;   core_spirbear.cpp_FUN_0059aba0 at 0059adb0
-;   core_spireagl.cpp_FUN_005992f0 at 005994ec
-;   core_spirindi.cpp_FUN_0059a060 at 0059a270
-;   core_styldemo.cpp_FUN_0059e130 at 0059e3b2
-;   core_styler.cpp_FUN_0059d7f0 at 0059d9bb
-;   unkafter_darkwolf.cpp_FUN_00598800 at 00598997
+;   core_darkwolf.cpp_CDarkwolf_setup_FUN_00598800 at 00598997
+;   core_passngr.cpp_CPassenger_setup_FUN_0050a610 at 0050a6a1
+;   core_pryemorp.cpp_CPryeMorph_setup_FUN_005275c0 at 0052774a
+;   core_spirbear.cpp_CSpiritBear_setup_FUN_0059aba0 at 0059adb0
+;   core_spireagl.cpp_CSpiritEagle_setup_FUN_005992f0 at 005994ec
+;   core_spirindi.cpp_CSpiritIndian_setup_FUN_0059a060 at 0059a270
+;   core_styldemo.cpp_CStylerDemon_setup_FUN_0059e130 at 0059e3b2
+;   core_styler.cpp_CStyler_setup_FUN_0059d7f0 at 0059d9bb
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_morph_cpp_005c96f7
@@ -108,7 +108,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004fac3f
     PUSH EAX                            ; 004fac43
     CALL crt_memory.c___arrinit_FUN_005a30d7 ; 004fac44
-        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005a30d7()
+        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005a30d7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004fac49
     MOV EAX,dword ptr [ESP + 0x11c]     ; 004fac4c
     XOR EDI,EDI                         ; 004fac53

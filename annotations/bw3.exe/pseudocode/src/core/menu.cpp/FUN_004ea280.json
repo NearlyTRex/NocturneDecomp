@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 195,
-    "complexity_score": 195,
+    "complexity_score": 130,
     "cross_reference_count": 2,
     "function_call_count": 18,
     "global_count": 17,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 70,
-    "suspect_count": 10,
+    "suspect_count": 4,
     "suspect_types": [
       "raw_address_constant",
       "raw_address_pointer_store",
-      "unnamed_field",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
@@ -22,13 +21,13 @@
     {
       "addr": "004b7f90",
       "from_addr": "004b8a18",
-      "name": "core_game.cpp_FUN_004b7f90",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004ea4d0",
       "from_addr": "004ea9ac",
-      "name": "core_menu.cpp_FUN_004ea4d0",
+      "name": "core_menu.cpp_showMainGameMenu_FUN_004ea4d0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -53,7 +52,7 @@
     {
       "addr": "004b4430",
       "is_variadic": false,
-      "name": "core_game.cpp_FUN_004b4430"
+      "name": "core_game.cpp_CGame_saveClockTime_FUN_004b4430"
     },
     {
       "addr": "004b4440",
@@ -63,7 +62,7 @@
     {
       "addr": "004d95c0",
       "is_variadic": false,
-      "name": "core_inivar.cpp_FUN_004d95c0"
+      "name": "core_inivar.cpp_writeIniData_FUN_004d95c0"
     },
     {
       "addr": "004e7860",
@@ -91,39 +90,39 @@
       "name": "core_menu.cpp_FUN_004eae80"
     },
     {
-      "addr": "004f94a0",
-      "is_variadic": false,
-      "name": "core_moon.cpp_FUN_004f94a0"
-    },
-    {
       "addr": "004f9580",
       "is_variadic": false,
-      "name": "core_moon.cpp_FUN_004f9580"
+      "name": "core_moon.cpp_CMoon_free_FUN_004f9580"
+    },
+    {
+      "addr": "004f94a0",
+      "is_variadic": false,
+      "name": "core_moon.cpp_CMoon_init_FUN_004f94a0"
     },
     {
       "addr": "004f9670",
       "is_variadic": false,
-      "name": "core_moon.cpp_FUN_004f9670"
+      "name": "core_moon.cpp_CMoon_render_FUN_004f9670"
     },
     {
       "addr": "0053b100",
       "is_variadic": false,
-      "name": "core_set.cpp_FUN_0053b100"
+      "name": "core_set.cpp_CDemonSet_setFlatColor_FUN_0053b100"
     },
     {
       "addr": "005607d0",
       "is_variadic": false,
-      "name": "core_sound.cpp_FUN_005607d0"
+      "name": "core_sound.cpp_CSound_configure_FUN_005607d0"
     },
     {
       "addr": "00560930",
       "is_variadic": false,
-      "name": "core_sound.cpp_FUN_00560930"
+      "name": "core_sound.cpp_CSound_reset_FUN_00560930"
     },
     {
       "addr": "005a28c0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a28c0"
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
     },
     {
       "addr": "00508960",
@@ -133,7 +132,7 @@
     {
       "addr": "0057a8a0",
       "is_variadic": false,
-      "name": "wincore_wddvmem.cpp_FUN_0057a8a0"
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0"
     }
   ],
   "globals": [
@@ -199,13 +198,13 @@
     },
     {
       "addr": "01d213e0",
-      "name": "g_CGameInstance.field212_0xd4",
+      "name": "g_CGameInstance.game_control",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d213e4",
-      "name": "g_CGameInstance.field216_0xd8",
+      "name": "g_CGameInstance.hero_number",
       "type": "undefined4",
       "value": null
     },
@@ -229,13 +228,13 @@
     },
     {
       "addr": "0203274c",
-      "name": "g_CDemonSetInstance.field1420932_0x15ae84",
+      "name": "g_CDemonSetInstance.rendering_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0203275c",
-      "name": "g_CDemonSetInstance.field1420948_0x15ae94",
+      "name": "g_CDemonSetInstance.ambient_base_quick",
       "type": "undefined4",
       "value": null
     }
@@ -246,7 +245,7 @@
       {
         "call_addr": "004b8a18",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b7f90",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -257,7 +256,7 @@
       {
         "call_addr": "004ea9ac",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004ea4d0",
+        "caller": "core_menu.cpp_showMainGameMenu_FUN_004ea4d0",
         "estimated_params": 1,
         "instructions_analyzed": 2,
         "method": "push_count",
@@ -333,54 +332,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x15ae84",
-      "severity": "mild",
-      "text": "*(uint *)&g_CDemonSetPtr->field_0x15ae84 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x15ae94",
-      "severity": "mild",
-      "text": "*(uint *)&g_CDemonSetPtr->field_0x15ae94 = 0xdac;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x15ae84",
-      "severity": "mild",
-      "text": "*(uint *)&g_CDemonSetPtr->field_0x15ae84 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0xd8",
-      "severity": "mild",
-      "text": "*(uint *)&g_CGamePtr->field_0xd8 = 9;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0xd4",
-      "severity": "mild",
-      "text": "_DAT_01d737d8 = *(int *)&g_CGamePtr->field_0xd4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 56,
-      "match": "field_0xd4",
-      "severity": "mild",
-      "text": "if (_DAT_01d737d8 != *(int *)&g_CGamePtr->field_0xd4) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",

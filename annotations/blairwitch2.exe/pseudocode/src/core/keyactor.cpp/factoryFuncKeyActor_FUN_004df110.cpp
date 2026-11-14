@@ -1,20 +1,20 @@
 // Name: core_keyactor.cpp_factoryFuncKeyActor_FUN_004df110
 // Address: 004df110
 // Address Range: [[004df110, 004df12b]]
-// Convention: unknown
-// Signature: void core_keyactor_cpp_factoryFuncKeyActor_FUN_004df110(void)
+// Convention: __cdecl
+// Signature: CKeyActor * __cdecl core_keyactor_cpp_factoryFuncKeyActor_FUN_004df110(void)
 
 #include "nocturne.h"
 
-void core_keyactor_cpp_factoryFuncKeyActor_FUN_004df110(void)
+CKeyActor * __cdecl core_keyactor_cpp_factoryFuncKeyActor_FUN_004df110(void)
 
 {
-  CKeyActor *this_ptr;
+  CKeyActor *pCVar1;
   
-  this_ptr = (CKeyActor *)FUN_005b8be2(0x478);
-  if (this_ptr == (CKeyActor *)0x0) {
-    return;
+  pCVar1 = (CKeyActor *)operator_new(0x478);
+  if (pCVar1 == (CKeyActor *)0x0) {
+    return (CKeyActor *)0x0;
   }
-  core_keyactor_cpp_CKeyActor_ctor_FUN_004df140(this_ptr);
-  return;
+  pCVar1 = core_keyactor_cpp_CKeyActor_ctor_FUN_004df140(pCVar1);
+  return pCVar1;
 }

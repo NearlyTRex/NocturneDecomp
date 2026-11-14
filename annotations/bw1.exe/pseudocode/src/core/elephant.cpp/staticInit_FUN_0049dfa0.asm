@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_elephant_cpp_staticInit_FUN_0049dfa0(void)
+; void __cdecl core_elephant_cpp_staticInit_FUN_0049dfa0(void)
 ;
 ;
 ; Called Functions:

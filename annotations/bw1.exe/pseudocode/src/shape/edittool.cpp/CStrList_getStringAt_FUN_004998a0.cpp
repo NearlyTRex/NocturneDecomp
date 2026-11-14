@@ -9,5 +9,5 @@
 char * __cdecl shape_edittool_cpp_CStrList_getStringAt_FUN_004998a0(CStrList *this_ptr,int index)
 
 {
-  return *(char **)(*(int *)&this_ptr->field_0x8 + index * 4);
+  return this_ptr->data_array[index];
 }

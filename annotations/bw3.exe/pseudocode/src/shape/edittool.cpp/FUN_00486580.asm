@@ -7,11 +7,11 @@
 ; char *           Stack[0x4]:4   button_text
 ;
 ; XREF[6]:
-;   shape_edittool.cpp_FUN_0047d230 at 0047d441
+;   shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_00483c00 at 00484088
+;   shape_edittool.cpp_CPickList_renderDialog_FUN_004843d0 at 0048450b
 ;   shape_edittool.cpp_FUN_00480200 at 00480256
-;   shape_edittool.cpp_FUN_00483c00 at 00484088
-;   shape_edittool.cpp_FUN_004843d0 at 0048450b
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047c8e0 at 0047c948
+;   shape_edittool.cpp_showMultiChoiceDialog_FUN_0047d230 at 0047d441
 ;   shape_edittool.cpp_showTextInputDialog_FUN_0047c2c0 at 0047c359
 ;
 ; Referenced Globals:
@@ -26,8 +26,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
-;   engine_font.cpp_FUN_004b2b30
-;   engine_font.cpp_FUN_004b30f0
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0
+;   engine_font.cpp_CBitFont_getTextHeight_FUN_004b2b30
 ;
 ; *****************************************************************************
 
@@ -56,8 +56,8 @@ section .text
     MOV ECX,dword ptr [EAX + 0x41e8]    ; 004865bb
     PUSH EAX                            ; 004865c1
     MOV dword ptr [0x01c5bae0],ECX      ; 004865c2 | DAT_01c5bae0
-    CALL engine_font.cpp_FUN_004b30f0   ; 004865c8
-        ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004b30f0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0 ; 004865c8
+        ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004865cd
     MOV [0x01c5bae4],EAX                ; 004865d0 | DAT_01c5bae4
     TEST EBX,EBX                        ; 004865d5
@@ -79,8 +79,8 @@ section .text
         ;   Label: LAB_004865fb
     MOV EDI,dword ptr [0x01c5b0e0]      ; 004865fc | DAT_01c5b0e0
     PUSH EDI                            ; 00486602
-    CALL engine_font.cpp_FUN_004b2b30   ; 00486603
-        ;   XREF to: 004b2b30 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004b2b30(CBitFont * this_ptr, char * text_string)
+    CALL engine_font.cpp_CBitFont_getTextHeight_FUN_004b2b30 ; 00486603
+        ;   XREF to: 004b2b30 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextHeight_FUN_004b2b30(CBitFont * this_ptr, char * text_string)
     ADD ESP,0x8                         ; 00486608
     MOV ECX,EAX                         ; 0048660b
     JMP 0x004865e5                      ; 0048660d

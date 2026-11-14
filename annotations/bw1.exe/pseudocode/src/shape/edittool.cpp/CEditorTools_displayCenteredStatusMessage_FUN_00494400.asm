@@ -13,11 +13,11 @@
 ; XREF[7]:
 ;   core_menu.cpp_FUN_0050d640 at 0050e847
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0052c6b0 at 0052c786
+;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_0052c970 at 0052c983
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_0052e120 at 0052e710
-;   core_netgame.cpp_FUN_0052c5fc at 0052c616
-;   core_netgame.cpp_FUN_0052c970 at 0052c983
-;   engine_pod.cpp_FUN_0053bfbe at 0053c016
-;   engine_pod.cpp_FUN_0053cc5c at 0053cc7e
+;   core_netgame.cpp_FUN_0052c600 at 0052c616
+;   engine_pod.cpp_FUN_0053bfc0 at 0053c016
+;   engine_pod.cpp_FUN_0053cc60 at 0053cc7e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005dbc68
@@ -36,10 +36,10 @@
 ;   crt_stdio.c_vsprintf_FUN_005bfb18
 ;   engine_3d.c_setRenderAlpha_FUN_00406bd0
 ;   engine_font.cpp_CBitFont_drawTextCenter_FUN_004c2250
-;   engine_font.cpp_FUN_004c4510
-;   engine_mini3d.cpp_FUN_00512320
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510
+;   engine_mini3d.cpp_setAlpha_FUN_00512320
 ;   engine_special.cpp_clearScreen_FUN_0057dc40
-;   wincore_wddvmem.cpp_FUN_005acff0
+;   wincore_wddvmem.cpp_swapBuffers_FUN_005acff0
 ;
 ; *****************************************************************************
 
@@ -60,8 +60,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0x41e8]    ; 0049441e
     PUSH EAX                            ; 00494424
     MOV dword ptr [0x01c3f538],EDX      ; 00494425 | DAT_01c3f538
-    CALL engine_font.cpp_FUN_004c4510   ; 0049442b
-        ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004c4510(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510 ; 0049442b
+        ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00494430
     MOV [0x01c3f53c],EAX                ; 00494433 | DAT_01c3f53c
     LEA EAX,[ESP + 0x420]               ; 00494438
@@ -74,7 +74,7 @@ section .text
     PUSH EAX                            ; 0049445a
     XOR EDI,EDI                         ; 0049445b
     CALL crt_stdio.c_vsprintf_FUN_005bfb18 ; 0049445d
-        ;   XREF to: 005bfb18 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_005bfb18()
+        ;   XREF to: 005bfb18 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005bfb18(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 00494462
     MOV dword ptr [ESP + 0x400],EDI     ; 00494465
     CALL engine_special.cpp_clearScreen_FUN_0057dc40 ; 0049446c
@@ -84,8 +84,8 @@ section .text
         ;   XREF to: 00406bd0 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406bd0(int alpha_color_value)
     ADD ESP,0x4                         ; 0049447b
     PUSH 0x3f800000                     ; 0049447e
-    CALL engine_mini3d.cpp_FUN_00512320 ; 00494483
-        ;   XREF to: 00512320 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_00512320()
+    CALL engine_mini3d.cpp_setAlpha_FUN_00512320 ; 00494483
+        ;   XREF to: 00512320 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setAlpha_FUN_00512320(float alpha)
     ADD ESP,0x4                         ; 00494488
     MOV EAX,ESP                         ; 0049448b
     PUSH EAX                            ; 0049448d
@@ -109,8 +109,8 @@ section .text
     CALL engine_font.cpp_CBitFont_drawTextCenter_FUN_004c2250 ; 004944bb
         ;   XREF to: 004c2250 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenter_FUN_004c2250(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     ADD ESP,0x18                        ; 004944c0
-    CALL wincore_wddvmem.cpp_FUN_005acff0 ; 004944c3
-        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_005acff0()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005acff0 ; 004944c3
+        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005acff0()
     ADD ESP,0x404                       ; 004944c8
     POP EBP                             ; 004944ce
     POP EDI                             ; 004944cf

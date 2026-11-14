@@ -1,19 +1,22 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_prim_c_replaceWWithDepth_FUN_0051c720(int param_1,int param_2)
+; void __cdecl engine_prim_c_replaceWWithDepth_FUN_0051c720(SRenderVertex *vertices,int vertex_count)
 ;
+; Parameters:
+; SRenderVertex *  Stack[0x4]:4   vertices
+; int              Stack[0x8]:4   vertex_count
 ;
 ; XREF[9]:
 ;   core_dpart.cpp_FUN_004625f0 at 00462967
-;   core_flies.cpp_FUN_004a70b0 at 004a749b
+;   core_flies.cpp_CFlies_renderOpaque_FUN_004a70b0 at 004a749b
+;   core_zombie.cpp_FUN_0059a0b0 at 0059a3d7
+;   core_zombie.cpp_rasterizePolygonCustom_FUN_0059a5d0 at 0059a8b7
 ;   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046b970 at 0046bc22
 ;   engine_drender.cpp_CDemonRenderer_depthTest_FUN_0046cad0 at 0046cb19
-;   engine_prim.c_FUN_0051cb20 at 0051cd84
 ;   engine_prim.c_FUN_0051da80 at 0051ddf5
-;   engine_prim.c_FUN_0051e130 at 0051e36f
-;   unkafter_zombie.cpp_FUN_0059a0b0 at 0059a3d7
-;   unkafter_zombie.cpp_FUN_0059a5d0 at 0059a8b7
+;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_0051e130 at 0051e36f
+;   engine_prim.c_renderPolygonSoftware_FUN_0051cb20 at 0051cd84
 ;
 ; *****************************************************************************
 

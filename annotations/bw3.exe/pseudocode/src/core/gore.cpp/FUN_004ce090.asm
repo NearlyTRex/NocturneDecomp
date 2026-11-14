@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gore_cpp_FUN_004ce090(int param_1,undefined4 param_2)
+; void core_gore_cpp_FUN_004ce090(undefined4 param_1,_FILE *param_2)
 ;
 ;
 ; XREF[1]:
-;   core_gore.cpp_FUN_004cf010 at 004cf05b
+;   core_gore.cpp_CGore_load_FUN_004cf010 at 004cf05b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_f_f_f_d_005c46ed
@@ -35,7 +35,7 @@ section .text
     PUSH 0x5c46ed                       ; 004ce0aa | = "%f,%f,%f,%d\n"
     PUSH ESI                            ; 004ce0af
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004ce0b0
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005a3230(_FILE * file, char * format)
     ADD ESP,0x18                        ; 004ce0b5
     LEA EAX,[EBX + 0x10]                ; 004ce0b8
     PUSH EAX                            ; 004ce0bb
@@ -43,7 +43,7 @@ section .text
     PUSH 0x5c46fa                       ; 004ce0bd | = "%d,%d\n"
     PUSH ESI                            ; 004ce0c2
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004ce0c3
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005a3230(_FILE * file, char * format)
     ADD ESP,0x10                        ; 004ce0c8
     LEA EAX,[EBX + 0x28]                ; 004ce0cb
     PUSH EAX                            ; 004ce0ce
@@ -58,7 +58,7 @@ section .text
     PUSH 0x5c4701                       ; 004ce0df | = "%d,%f,%d,%d,%d\n"
     PUSH ESI                            ; 004ce0e4
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 004ce0e5
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005a3230(_FILE * file, char * format)
     ADD ESP,0x1c                        ; 004ce0ea
     POP ESI                             ; 004ce0ed
     POP EBX                             ; 004ce0ee

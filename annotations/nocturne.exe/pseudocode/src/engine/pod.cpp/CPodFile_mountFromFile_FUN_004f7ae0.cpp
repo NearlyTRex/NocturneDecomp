@@ -99,7 +99,7 @@ int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_004f7ae0(CPodFile *this_pt
           }
           _fread(this_ptr->file_data_buffer,new_size,1,local_1c);
           iVar7 = this_ptr->file_count + -1;
-          this_ptr->total_file_size =
+          this_ptr->audit_records_offset =
                this_ptr->directory_entries[iVar7].offset + this_ptr->directory_entries[iVar7].size;
           goto LAB_004f7d60;
         }

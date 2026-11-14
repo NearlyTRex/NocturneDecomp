@@ -11,19 +11,19 @@
 ;
 ; XREF[8]:
 ;   core_bodypart.cpp_CBodyPart_spawnGore_FUN_0041aef0 at 0041af1d
+;   core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_00430b60 at 00430bf8
 ;   core_charactr.cpp_FUN_00430960 at 00430a82
 ;   core_charactr.cpp_FUN_00430a90 at 00430b45
-;   core_charactr.cpp_FUN_00430b60 at 00430bf8
-;   core_gore.cpp_FUN_004e6060 at 004e6094
-;   core_hostage.cpp_FUN_004ed890 at 004ede00
-;   core_melee.cpp_FUN_005099a0 at 00509a5c
-;   core_tentacle.cpp_FUN_005952f0 at 00595741
+;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004e6060 at 004e6094
+;   core_hostage.cpp_CHostage_process_FUN_004ed890 at 004ede00
+;   core_melee.cpp_CMelee_process_FUN_005099a0 at 00509a5c
+;   core_tentacle.cpp_CTentacle_process_FUN_005952f0 at 00595741
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01cd0ea8
 ;
 ; Called Functions:
-;   core_gore.cpp_FUN_004e3e20
+;   core_gore.cpp_CBloodParticle_setup_FUN_004e3e20
 ;
 ; *****************************************************************************
 
@@ -57,8 +57,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x18]      ; 004e5f81
     PUSH EBP                            ; 004e5f85
     PUSH EAX                            ; 004e5f86
-    CALL core_gore.cpp_FUN_004e3e20     ; 004e5f87
-        ;   XREF to: 004e3e20 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004e3e20(CBloodParticle * this_ptr, CVector3f * position, CVector3f * velocity, EBloodType blood_type)
+    CALL core_gore.cpp_CBloodParticle_setup_FUN_004e3e20 ; 004e5f87
+        ;   XREF to: 004e3e20 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodParticle_setup_FUN_004e3e20(CBloodParticle * this_ptr, CVector3f * position, CVector3f * velocity, EBloodType blood_type)
     ADD ESP,0x10                        ; 004e5f8c
     POP EDI                             ; 004e5f8f
     POP EBP                             ; 004e5f90

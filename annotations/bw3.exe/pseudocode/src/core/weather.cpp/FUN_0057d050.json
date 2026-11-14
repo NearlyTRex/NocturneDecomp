@@ -24,25 +24,25 @@
     {
       "addr": "004a0480",
       "from_addr": "004a04fe",
-      "name": "core_fire.cpp_FUN_004a0480",
+      "name": "core_fire.cpp_CStormEffect_activate_FUN_004a0480",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004a0570",
       "from_addr": "004a05b0",
-      "name": "core_fire.cpp_FUN_004a0570",
+      "name": "core_fire.cpp_CStormEffect_process_FUN_004a0570",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004bb100",
       "from_addr": "004bcd9f",
-      "name": "core_game.cpp_FUN_004bb100",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004bb100",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0059b960",
       "from_addr": "0059c088",
-      "name": "core_hino.cpp_FUN_0059b960",
+      "name": "core_hino.cpp_CHino_process_FUN_0059b960",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -74,7 +74,7 @@
     {
       "addr": "0040ce40",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040ce40"
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40"
     },
     {
       "addr": "0044f680",
@@ -315,7 +315,7 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[8] = iVar1;",
+      "text": "param_1[8] = (int)fVar1;",
       "type": "unnamed_param"
     },
     {
@@ -323,7 +323,7 @@
       "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_actor_cpp_FUN_0040ce40(0x3f000000,param_1[0xd]);",
+      "text": "fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.5,(float)param_1[0xd]);",
       "type": "unnamed_param"
     },
     {
@@ -339,7 +339,7 @@
       "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0xb] = iVar1;",
+      "text": "param_1[0xb] = (int)fVar1;",
       "type": "unnamed_param"
     },
     {
@@ -371,7 +371,7 @@
       "line": 48,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[8] = iVar1;",
+      "text": "param_1[8] = (int)fVar1;",
       "type": "unnamed_param"
     },
     {
@@ -379,7 +379,7 @@
       "line": 49,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_actor_cpp_FUN_0040ce40(0x40000000,param_1[0xd]);",
+      "text": "fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(2.0,(float)param_1[0xd]);",
       "type": "unnamed_param"
     },
     {
@@ -387,7 +387,7 @@
       "line": 50,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0xb] = iVar1;",
+      "text": "param_1[0xb] = (int)fVar1;",
       "type": "unnamed_param"
     }
   ]

@@ -13,7 +13,7 @@
 ; undefined        Stack[-0x18]:1  local_18
 ;
 ; XREF[1]:
-;   core_gore.cpp_FUN_004ce5b0 at 004ce5fa
+;   core_gore.cpp_CGore_renderParticles_FUN_004ce5b0 at 004ce5fa
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c4629
@@ -35,7 +35,7 @@
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005a3120
-;   engine_matrix.c_FUN_0046d230
+;   engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046d230
 ;
 ; *****************************************************************************
 
@@ -64,8 +64,8 @@ section .text
     MOV ECX,0x3                         ; 004ccb40
     MOV dword ptr [0x01d22e68],EDX      ; 004ccb45 | DAT_01d22e68
     MOV dword ptr [0x01d22e6c],ECX      ; 004ccb4b | DAT_01d22e6c
-    CALL engine_matrix.c_FUN_0046d230   ; 004ccb51
-        ;   XREF to: 0046d230 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_0046d230()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046d230 ; 004ccb51
+        ;   XREF to: 0046d230 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046d230(CDemonRenderer * this_ptr, CVector3i * output)
     LEA ESI,[ESP + 0x54]                ; 004ccb56
     ADD ESP,0x4                         ; 004ccb5a
     MOVSD ES:EDI,ESI                    ; 004ccb5d | DAT_01d22e70

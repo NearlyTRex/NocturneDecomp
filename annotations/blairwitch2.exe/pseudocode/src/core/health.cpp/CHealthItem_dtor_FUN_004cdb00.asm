@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CHealthItem * core_health_cpp_CHealthItem_dtor_FUN_004cdb00(CHealthItem *this_ptr,uint flags)
+; CHealthItem * __cdecl core_health_cpp_CHealthItem_dtor_FUN_004cdb00(CHealthItem *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CHealthItem *    Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   undefined4 g_CHealthItemVTable
+;   CDemonActor_vtable g_CHealthItemVTable
 ;   WatcomTypeInfo g_CHealthItemTypeInfo
 ;
 ; Called Functions:
@@ -45,7 +45,7 @@ section .text
         ;   Label: LAB_004cdb30
     PUSH EBX                            ; 004cdb35
     CALL crt_memory.c___vec_delete_FUN_005b7fa7 ; 004cdb36
-        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005b7fa7()
+        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005b7fa7(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 004cdb3b
     PUSH EAX                            ; 004cdb3e
     CALL crt_unknown.c_FUN_005b7fce     ; 004cdb3f

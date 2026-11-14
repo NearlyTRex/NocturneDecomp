@@ -1,12 +1,12 @@
 // Name: core_flamecan.cpp_staticInit_FUN_004a0660
 // Address: 004a0660
 // Address Range: [[004a0660, 004a0683]]
-// Convention: unknown
-// Signature: void core_flamecan_cpp_staticInit_FUN_004a0660(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_flamecan_cpp_staticInit_FUN_004a0660(void)
 
 #include "nocturne.h"
 
-void core_flamecan_cpp_staticInit_FUN_004a0660(void)
+void __cdecl core_flamecan_cpp_staticInit_FUN_004a0660(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450

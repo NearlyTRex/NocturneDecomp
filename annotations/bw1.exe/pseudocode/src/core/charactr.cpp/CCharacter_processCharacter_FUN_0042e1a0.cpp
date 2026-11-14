@@ -12,90 +12,94 @@ int __cdecl core_charactr_cpp_CCharacter_processCharacter_FUN_0042e1a0(CCharacte
 
 {
   float fVar1;
+  float fVar2;
+  CPlatform *pCVar3;
   CScript *this_ptr_00;
-  int iVar2;
-  CCharacter *pCVar3;
-  uint *puVar4;
-  uint *puVar5;
-  byte bVar6;
+  int iVar4;
+  CCharacter *pCVar5;
+  uint *puVar6;
+  uint *puVar7;
+  byte bVar8;
   uint auStack_44 [6];
   uint auStack_2c [6];
-  uint uStack_14;
+  float fStack_14;
   
-  bVar6 = 0;
-  fVar1 = *(float *)&this_ptr->field_0x2fe4 - delta_time;
-  *(float *)&this_ptr->field_0x2fe4 = fVar1;
+  bVar8 = 0;
+  fVar1 = this_ptr->sound_cooldown - delta_time;
+  this_ptr->sound_cooldown = fVar1;
   if (fVar1 < 0.0) {
-    *(uint *)&this_ptr->field_0x2fe4 = 0;
+    this_ptr->sound_cooldown = 0.0;
   }
-  core_charactr_cpp_FUN_0042f8e0(this_ptr,delta_time);
+  core_charactr_cpp_CCharacter_processFire_FUN_0042f8e0(this_ptr,delta_time);
   core_charactr_cpp_FUN_00432e00(this_ptr,delta_time);
-  fVar1 = *(float *)&this_ptr->field_0xb9f0 - delta_time;
-  *(float *)&this_ptr->field_0xb9f0 = fVar1;
+  fVar1 = this_ptr->stagger_amount - delta_time;
+  this_ptr->stagger_amount = fVar1;
   if (fVar1 < 0.0) {
-    *(uint *)&this_ptr->field_0xb9f0 = 0;
+    this_ptr->stagger_amount = 0.0;
   }
-  if ((0.0 < *(float *)&this_ptr->field_0x27b4) &&
-     (fVar1 = *(float *)&this_ptr->field_0x27b4 - delta_time,
-     *(float *)&this_ptr->field_0x27b4 = fVar1, this_ptr_00 = g_CScriptPtr, fVar1 < 0.0)) {
-    *(uint *)&this_ptr->field_0x27b4 = 0;
-    core_script_cpp_FUN_0054aca0(this_ptr_00,(CDemonActor *)this_ptr);
+  if ((0.0 < this_ptr->speech_timer) &&
+     (fVar1 = this_ptr->speech_timer - delta_time, this_ptr->speech_timer = fVar1,
+     this_ptr_00 = g_CScriptPtr, fVar1 < 0.0)) {
+    this_ptr->speech_timer = 0.0;
+    core_script_cpp_CScript_setSpeaker_FUN_0054aca0(this_ptr_00,&this_ptr->base);
   }
-  if (*(int *)&this_ptr->field_0x2540 == 2) {
-    core_game_cpp_FUN_004d6340
-              (g_CGamePtr,&this_ptr->field_0x2544,
-               *(float *)&this_ptr->field_0x2538 / *(float *)&this_ptr->field_0x253c,2.0);
+  if (this_ptr->health_bar_mode == HEALTH_BAR_ALWAYS) {
+    core_game_cpp_CGame_setStatusDisplay_FUN_004d6340
+              (g_CGamePtr,this_ptr->descriptive_name,this_ptr->hit_points / this_ptr->max_hit_points
+               ,2.0);
   }
-  if (*(int *)&this_ptr->field_0x24fc == 0) {
-    if (*(float *)&this_ptr->field_0x2504 == _DAT_005fd614) {
-      iVar2 = 0;
-      pCVar3 = this_ptr;
+  if (this_ptr->render_active == 0) {
+    if (this_ptr->closest_distance_threshold == _DAT_005fd614) {
+      iVar4 = 0;
+      pCVar5 = this_ptr;
       do {
-        if ((*(int *)&pCVar3->field_0x25b0 != 0) && (*(int *)&pCVar3->field_0x25ec == 0)) {
-          core_charactr_cpp_FUN_00432690(this_ptr,iVar2,0,0);
+        if ((pCVar5->carry_hands[0].carry_actor != (CDemonActor *)0x0) &&
+           (pCVar5->carry_hands[0].has_carry_offset == 0)) {
+          core_charactr_cpp_CCharacter_computePickup_FUN_00432690(this_ptr,iVar4,0.0,(int *)0x0);
         }
-        iVar2 = iVar2 + 1;
-        pCVar3 = (CCharacter *)&pCVar3->field_0x78;
-      } while (iVar2 < 2);
+        iVar4 = iVar4 + 1;
+        pCVar5 = (CCharacter *)(pCVar5->base).create_event;
+      } while (iVar4 < 2);
     }
-    fVar1 = *(float *)&this_ptr->field_0xe4;
-    *(uint *)&this_ptr->field_0xe4 = 0;
-    *(float *)&this_ptr->field_0x24 = fVar1 + *(float *)&this_ptr->field_0x24;
-    if ((*(float *)&this_ptr->field_0x2504 == _DAT_005fd614) || (*(int *)&this_ptr->field_0xdc != 0)
-       ) {
-      uStack_14 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x40))
-                            (this_ptr,*(uint *)&this_ptr->field_0x2fec,0);
-      *(uint *)&this_ptr->field_0x2504 = uStack_14;
+    fVar1 = (this_ptr->base).platform_position_delta.y;
+    (this_ptr->base).platform_position_delta.y = 0.0;
+    fVar2 = this_ptr->closest_distance_threshold;
+    (this_ptr->base).location.position.y = fVar1 + (this_ptr->base).location.position.y;
+    if ((fVar2 == _DAT_005fd614) || ((this_ptr->base).standing_platform != (CPlatform *)0x0)) {
+      fStack_14 = (*((this_ptr->base).vtable._ub)->cylinderGroundCheck)
+                            (&this_ptr->base,this_ptr->collision_cylinder_height,(CVector3f *)0x0);
+      this_ptr->closest_distance_threshold = fStack_14;
     }
-    *(uint *)&this_ptr->field_0x2500 =
-         (uint)(*(float *)&this_ptr->field_0x24 <
-               *(float *)&this_ptr->field_0x2504 + (float)_DAT_005d592f);
-    *(uint *)&this_ptr->field_0x2514 = 0;
-    *(uint *)&this_ptr->field_0x2510 = *(uint *)&this_ptr->field_0x2514;
-    *(uint *)&this_ptr->field_0x250c = *(uint *)&this_ptr->field_0x2510;
-    *(uint *)&this_ptr->field_0x2508 = 0;
-    if (((*(int *)&this_ptr->field_0xdc == 0) && (*(int *)&this_ptr->field_0x2704 == 0)) &&
-       (iVar2 = core_hero_cpp_FUN_004ea770
-                          ((CVector3f *)&this_ptr->field_0x20,*(float *)&this_ptr->field_0x2ff8,
-                           *(float *)&this_ptr->field_0x2ff4), iVar2 == 0)) {
-      (**(code **)(*(int *)&this_ptr->field_0x154 + 0x1c))(this_ptr,0);
-      puVar4 = auStack_2c;
-      puVar5 = auStack_44;
-      for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *puVar5 = *puVar4;
-        puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
-        puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+    this_ptr->is_on_ground =
+         (uint)((this_ptr->base).location.position.y <
+               this_ptr->closest_distance_threshold + (float)_DAT_005d592f);
+    (this_ptr->position_delta).z = 0.0;
+    (this_ptr->position_delta).y = (this_ptr->position_delta).z;
+    (this_ptr->position_delta).x = (this_ptr->position_delta).y;
+    pCVar3 = (this_ptr->base).standing_platform;
+    this_ptr->turn_angle_accumulator = 0.0;
+    if (((pCVar3 == (CPlatform *)0x0) && (this_ptr->walk_to_target == (CDemonActor *)0x0)) &&
+       (iVar4 = core_hero_cpp_isAnyHeroWithinCylinder_FUN_004ea770
+                          (&(this_ptr->base).location.position,this_ptr->ai_detection_range_max,
+                           this_ptr->ai_detection_range_min), iVar4 == 0)) {
+      (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
+      puVar6 = auStack_2c;
+      puVar7 = auStack_44;
+      for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
+        *puVar7 = *puVar6;
+        puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
+        puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
       }
-      iVar2 = core_box_cpp_FUN_004207b0(auStack_44);
-      if (iVar2 != 0) {
-        sound_sndmain_cpp_killSfx_FUN_00573a80(*(uint *)&this_ptr->field_0xb9e4);
+      iVar4 = core_box_cpp_FUN_004207b0(auStack_44);
+      if (iVar4 != 0) {
+        sound_sndmain_cpp_killSfx_FUN_00573a80(this_ptr->sfx_handle);
         return 0;
       }
     }
-    iVar2 = 1;
+    iVar4 = 1;
   }
   else {
-    iVar2 = 0;
+    iVar4 = 0;
   }
-  return iVar2;
+  return iVar4;
 }

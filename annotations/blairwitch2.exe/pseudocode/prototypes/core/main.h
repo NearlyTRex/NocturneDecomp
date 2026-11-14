@@ -5,21 +5,25 @@
 // Function prototypes for core/main.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_main.c_staticInit_FUN_004e4490
+// Address: 004e4490
+void __cdecl staticInit(void);
+
 // Original: core_main.c_FUN_004e4500
 // Address: 004e4500
-void FUN_004e4500(undefined4 param_1);
+void FUN_004e4500(char *param_1);
 
 // Original: core_main.c_FUN_004e45e0
 // Address: 004e45e0
 void FUN_004e45e0(void);
 
-// Original: core_main.c_FUN_004e46b0
+// Original: core_main.c_enterMainGameMenu_FUN_004e46b0
 // Address: 004e46b0
-int __cdecl FUN_004e46b0(void);
+int __cdecl enterMainGameMenu(void);
 
-// Original: core_main.c_FUN_004e46c0
+// Original: core_main.c_initializeGameSystems_FUN_004e46c0
 // Address: 004e46c0
-void __cdecl FUN_004e46c0(int argc,char **argv);
+void __cdecl initializeGameSystems(int argc,char **argv);
 
 // Original: core_main.c_FUN_004e4e20
 // Address: 004e4e20

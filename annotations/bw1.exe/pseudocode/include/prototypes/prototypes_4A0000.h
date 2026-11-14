@@ -5,10 +5,9 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "system/stdio.h"
-#include "types/classes/CActorDestination.h"
+#include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CBulletHole.h"
 #include "types/classes/CBulletTrail.h"
-#include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CEmitter.h"
@@ -17,62 +16,69 @@
 #include "types/classes/CFilmProjector.h"
 #include "types/classes/CFilmReel.h"
 #include "types/classes/CFireball.h"
+#include "types/classes/CFirefly.h"
+#include "types/classes/CGlassParticle.h"
 #include "types/classes/CKeyFramedModel.h"
+#include "types/classes/CLeaf.h"
 #include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CMuzzleFlash.h"
-#include "types/classes/CParticle.h"
+#include "types/classes/CQuaternion4f.h"
 #include "types/classes/CRock.h"
 #include "types/classes/CRuleList.h"
 #include "types/classes/CSmokeParticle.h"
+#include "types/classes/CSpark.h"
 #include "types/classes/CStake.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
 #include "types/enums/ECollisionType.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
+#include "types/structs/SMRGLTextureBasic.h"
+#include "types/structs/STriangleVertices.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x4A0000
 // =============================================================================
 
-undefined4 core_emitter_cpp_FUN_004a02d0(void);
+ECollisionType __cdecl core_emitter_cpp_CEmitter_getCollisionType_FUN_004a02d0(CEmitter *this_ptr,SCollisionInfo *collision_info);
 void core_emitter_cpp_FUN_004a02e0(int param_1);
 CEmitter * __cdecl core_emitter_cpp_CEmitter_dtor_FUN_004a0390(CEmitter *this_ptr,uint flags);
 void __cdecl core_enemy_cpp_staticInit_FUN_004a03e0(void);
 CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_004a0410(CEnemy *this_ptr);
 void __cdecl core_enemy_cpp_CEnemy_setup_FUN_004a0510(CEnemy *this_ptr);
 void __cdecl core_enemy_cpp_CEnemy_archive_FUN_004a0520(CEnemy *this_ptr);
-undefined4 core_enemy_cpp_FUN_004a0680(int param_1,float *param_2);
-int __cdecl core_enemy_cpp_FUN_004a0770(CEnemy *this_ptr,CVector3f *point,float radius,SDamageInfo *damage_info);
-int __cdecl core_enemy_cpp_FUN_004a0810(CEnemy *this_ptr,CVector3f *start,CVector3f *end,SDamageInfo *damage_info);
-void core_enemy_cpp_FUN_004a08b0(int param_1);
+int __cdecl core_enemy_cpp_CEnemy_getTargetPoints_FUN_004a0680(CEnemy *this_ptr,CVector3f *out_points_array);
+int __cdecl core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a0770(CEnemy *this_ptr,CVector3f *point,float radius,SDamageInfo *damage_info);
+int __cdecl core_enemy_cpp_CEnemy_testAttackLine_FUN_004a0810(CEnemy *this_ptr,CVector3f *start,CVector3f *end,SDamageInfo *damage_info);
+CVector3f * __cdecl core_enemy_cpp_CEnemy_getTargetPoint_FUN_004a08b0(CEnemy *this_ptr,CVector3f *out_point);
 bool core_enemy_cpp_FUN_004a0980(int param_1,int param_2);
-void core_enemy_cpp_FUN_004a0ab0(int param_1,float param_2);
-void __cdecl core_enemy_cpp_FUN_004a0ee0(CEnemy *this_ptr,CDemonActor *victim);
-void core_enemy_cpp_FUN_004a0f00(int param_1,int param_2);
-void __cdecl core_enemy_cpp_FUN_004a0fb0(CEnemy *this_ptr,int layer_flag);
-int __cdecl core_enemy_cpp_FUN_004a0fe0(CEnemy *this_ptr,float delta_time);
-void core_enemy_cpp_FUN_004a1040(CCharacter *param_1);
-void core_enemy_cpp_FUN_004a10f0(int param_1,int param_2);
-int core_enemy_cpp_FUN_004a111e(CDemonActor *param_1);
-void core_event_cpp_staticInit_FUN_004a11a0(void);
+void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a0ab0(CEnemy *this_ptr,float delta_time);
+void __cdecl core_enemy_cpp_CEnemy_setVictim_FUN_004a0ee0(CEnemy *this_ptr,CDemonActor *victim);
+void __cdecl core_enemy_cpp_CEnemy_processDamage_FUN_004a0f00(CEnemy *this_ptr,SDamageInfo *damage_info);
+void __cdecl core_enemy_cpp_CEnemy_renderBackground_FUN_004a0fb0(CEnemy *this_ptr,int layer_flag);
+int __cdecl core_enemy_cpp_CEnemy_updatePatrol_FUN_004a0fe0(CEnemy *this_ptr,float delta_time);
+void __cdecl core_enemy_cpp_CEnemy_releaseVictim_FUN_004a1040(CEnemy *this_ptr);
+void __cdecl core_enemy_cpp_CEnemy_onVictimLost_FUN_004a10f0(CEnemy *this_ptr,CDemonActor *lost_actor);
+int core_enemy_cpp_FUN_004a1120(void);
+void __cdecl core_event_cpp_staticInit_FUN_004a11a0(void);
 int __cdecl core_event_cpp_setEventError_FUN_004a11e0(char *source_file,int source_line,char *error_message);
 int __cdecl core_event_cpp_formatEventError_FUN_004a1210(char *format);
-void core_event_cpp_FUN_004a1240(char *param_1);
+char * __cdecl core_event_cpp_skipWhitespace_FUN_004a1240(char *str);
 int * __cdecl core_event_cpp_skipWhitespaceIndexed_FUN_004a1260(char *expression,int *parse_position);
-undefined4 core_event_cpp_FUN_004a128e(char *param_1);
+int __cdecl core_event_cpp_parseComparisonOp_FUN_004a1290(char *str);
 int __cdecl core_event_cpp_parseIntOrCounter_FUN_004a1330(char *str);
-CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_004a1370(char *param_1,undefined4 param_2,undefined4 param_3);
-undefined4 __cdecl core_event_cpp_parseVectorLocation_FUN_004a14a0(int param_1,int *param_2,undefined4 *param_3);
-void core_event_cpp_FUN_004a15c0(char *param_1);
-char * core_event_cpp_FUN_004a1630(int *param_1,char *param_2,int param_3,int param_4);
+CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_004a1370(char *name,uint class_hash,char *class_name);
+int __cdecl core_event_cpp_parseVectorLocation_FUN_004a14a0(char *buffer,int *offset,CVector3f *out_position);
+void __cdecl core_event_cpp_trimWhitespace_FUN_004a15c0(char *str);
+char * core_event_cpp_extractParenArg_FUN_004a1630(int *param_1,char *param_2,int param_3,int param_4);
 int __cdecl core_event_cpp_parseDeathType_FUN_004a1750(char *type_name,int *out_type_id);
 int __cdecl core_event_cpp_parseDamageType_FUN_004a18e0(char *type_name,int *out_type_id);
 CEventList * __cdecl core_event_cpp_CEventList_ctor_FUN_004a19d0(CEventList *this_ptr);
 void __cdecl core_event_cpp_CEventList_reset_FUN_004a19f0(CEventList *this_ptr);
-void __cdecl core_event_cpp_FUN_004a1a40(CEventList *this_ptr);
+void __cdecl core_event_cpp_CEventList_process_FUN_004a1a40(CEventList *this_ptr);
 int __cdecl core_event_cpp_CEventList_executeCommands_FUN_004a1b70(CEventList *this_ptr,char *commands);
 int __cdecl core_event_cpp_CEventList_executeCommandString_FUN_004a1b90(CEventList *this_ptr,char *command_string);
-int core_event_cpp_FUN_004a1d00(CEventList *param_1,CEventList *param_2);
+int core_event_cpp_FUN_004a1d00(CEventList *param_1,char *param_2);
 int __cdecl core_event_cpp_CEventList_resolveVariable_FUN_004a6ba0(CEventList *this_ptr,char *identifier);
 int __cdecl core_event_cpp_CEventList_evaluateCondition_FUN_004a6c30(CEventList *this_ptr,char *condition_expression);
 char * __cdecl core_event_cpp_CEventList_validateCondition_FUN_004a6c90(CEventList *this_ptr,char *expression);
@@ -81,9 +87,9 @@ int __cdecl core_event_cpp_CEventList_evaluateExpression_FUN_004a6d10(CEventList
 void __cdecl core_event_cpp_CEventList_render_FUN_004a6d80(CEventList *this_ptr);
 int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004a70d0(CEventList *this_ptr,char *expression,int *parse_position);
 int __cdecl core_event_cpp_CEventList_evaluateLogicalExpr_FUN_004a97b0(CEventList *this_ptr,char *expression,int *parse_position);
-void core_event_cpp_FUN_004a9870(CEventList *param_1,CEventList *param_2,int param_3);
+void core_event_cpp_FUN_004a9870(CEventList *param_1,char *param_2,int param_3);
 void core_event_cpp_FUN_004a9a00(int param_1);
-void core_event_cpp_FUN_004a9a60(CEventList *param_1,CEventList *param_2,int param_3);
+void core_event_cpp_FUN_004a9a60(CEventList *param_1,char *param_2,int param_3);
 void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_004a9bf0(CEventList *this_ptr,char *name,float duration);
 void __cdecl core_event_cpp_CEventList_setCounter_FUN_004a9d70(CEventList *this_ptr,char *name,int value);
 int __cdecl core_event_cpp_CEventList_getCounterValue_FUN_004a9e80(CEventList *this_ptr,char *str);
@@ -103,96 +109,91 @@ int __cdecl core_event_cpp_isValidIdentifierChar_FUN_004aa5e0(int ch);
 int __cdecl core_event_cpp_CEventList_loadState_FUN_004aa610(CEventList *this_ptr,_FILE *file_handle);
 int __cdecl core_event_cpp_CEventList_saveState_FUN_004aa9d0(CEventList *this_ptr,_FILE *file_handle);
 void __cdecl core_event_cpp_CRuleList_clear_FUN_004aacc0(CRuleList *this_ptr);
-void core_event_cpp_FUN_004aacce(int *param_1,int param_2,char *param_3,char *param_4);
-void core_event_cpp_FUN_004aae0e(int *param_1,int param_2);
+void core_event_cpp_FUN_004aacd0(void);
+void core_event_cpp_FUN_004aae10(void);
 int __cdecl core_event_cpp_CRuleList_findFirst_FUN_004aaee0(CRuleList *this_ptr);
 int __cdecl core_event_cpp_CRuleList_evaluateAndRun_FUN_004aaf30(CRuleList *this_ptr);
-void __cdecl core_mimic_cpp_copyQuaternion_FUN_004aafc0(undefined4 *param_1,undefined4 *param_2);
-undefined4 unkafter_mimic_cpp_FUN_004aafe0(int param_1);
-void crt_watcom_c__memset_FUN_004ab020(uint param_1);
+CQuaternion4f * __cdecl core_event_cpp_copyQuaternion_FUN_004aafc0(CQuaternion4f *dest,CQuaternion4f *src);
+undefined4 core_event_cpp_FUN_004aafe0(int param_1);
+void __fastcall crt_watcom_c__memset_FUN_004ab020(void *dest,int fill_byte,uint size);
 void crt_unknown_c_FUN_004ab090(void);
 void crt_unknown_c_FUN_004ab098(void);
 void crt_unknown_c_FUN_004ab0a8(void);
 void crt_unknown_c_FUN_004ab0b4(void);
 void crt_unknown_c_FUN_004ab0c0(void);
-void crt_watcom_c__memcpy_FUN_004ab0c8(uint param_1);
-void unkafter_mimic_cpp_FUN_004ab164(void);
-void unkafter_mimic_cpp_FUN_004ab16c(void);
-void unkafter_mimic_cpp_FUN_004ab184(void);
-void unkafter_mimic_cpp_FUN_004ab194(void);
-void unkafter_mimic_cpp_FUN_004ab1a4(void);
-void unkafter_mimic_cpp_FUN_004ab1ac(void);
+void __fastcall crt_watcom_c__memcpy_FUN_004ab0c8(void *dest,void *src,uint size);
+void crt_watcom_c_FUN_004ab1ac(void);
 void __cdecl core_filmreel_cpp_staticInit_FUN_004ab250(void);
-void core_filmreel_cpp_factoryFuncFilmReel_FUN_004ab2a0(void);
-CDemonActorType * core_filmreel_cpp_CFilmReel_getActorType_FUN_004ab2c0(CFilmReel *this_ptr);
+CFilmReel * __cdecl core_filmreel_cpp_factoryFuncFilmReel_FUN_004ab2a0(void);
+CDemonActorType * __cdecl core_filmreel_cpp_CFilmReel_getActorType_FUN_004ab2c0(CFilmReel *this_ptr);
 CFilmReel * __cdecl core_filmreel_cpp_CFilmReel_ctor_FUN_004ab2d0(CFilmReel *this_ptr);
-void core_filmreel_cpp_FUN_004ab340(CDemonActor *param_1);
+void __cdecl core_filmreel_cpp_CFilmReel_setup_FUN_004ab340(CFilmReel *this_ptr);
 int __cdecl core_filmreel_cpp_CFilmReel_canPickup_FUN_004ab3e0(CFilmReel *this_ptr,CDemonActor *picker);
 void __cdecl core_filmreel_cpp_CFilmReel_pickup_FUN_004ab400(CFilmReel *this_ptr,CDemonActor *carrier);
 void __cdecl core_filmreel_cpp_CFilmReel_onDropped_FUN_004ab410(CFilmReel *this_ptr,CVector3f *drop_position);
 CDemonActor * __cdecl core_filmreel_cpp_CFilmReel_getCarrier_FUN_004ab420(CFilmReel *this_ptr);
-void core_filmreel_cpp_FUN_004ab430(void);
-int core_filmreel_cpp_FUN_004ab440(int param_1);
-void core_filmreel_cpp_FUN_004ab4c0(void);
+void __cdecl core_filmreel_cpp_CFilmReel_process_FUN_004ab430(CFilmReel *this_ptr,float delta_time);
+int __cdecl core_filmreel_cpp_CFilmReel_renderOpaque_FUN_004ab440(CFilmReel *this_ptr);
+void __cdecl core_filmreel_cpp_CFilmReel_renderBackground_FUN_004ab4c0(CFilmReel *this_ptr,int layer_flag);
 void __cdecl core_filmreel_cpp_CFilmReel_archive_FUN_004ab4e0(CFilmReel *this_ptr);
 ECollisionType __cdecl core_filmreel_cpp_CFilmReel_getCollisionType_FUN_004ab530(CFilmReel *this_ptr,SCollisionInfo *collision_info);
-void core_filmreel_cpp_FUN_004ab550(int param_1);
-void core_filmreel_cpp_FUN_004ab590(void);
-undefined4 core_filmreel_cpp_FUN_004ab5b0(void);
+CBoundingBox3D * __cdecl core_filmreel_cpp_CFilmReel_getBoundingBox_FUN_004ab550(CFilmReel *this_ptr,CBoundingBox3D *out_box);
+CFilmProjector * __cdecl core_filmreel_cpp_factoryFuncFilmProjector_FUN_004ab590(void);
+CDemonActorType * __cdecl core_filmreel_cpp_CFilmProjector_getActorType_FUN_004ab5b0(CFilmProjector *this_ptr);
 CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_ctor_FUN_004ab5c0(CFilmProjector *this_ptr);
 void __cdecl core_filmreel_cpp_CFilmProjector_setup_FUN_004ab680(CFilmProjector *this_ptr);
-void core_filmreel_cpp_FUN_004ab6c0(CActorDestination *param_1,float param_2);
-void core_filmreel_cpp_FUN_004ab850(void);
-int core_filmreel_cpp_FUN_004ab8a0(CDemonActor *param_1);
+void __cdecl core_filmreel_cpp_CFilmProjector_process_FUN_004ab6c0(CFilmProjector *this_ptr,float delta_time);
+CBoundingBox3D * __cdecl core_filmreel_cpp_CFilmProjector_getBoundingBox_FUN_004ab850(CFilmProjector *this_ptr,CBoundingBox3D *out_box);
+int __cdecl core_filmreel_cpp_CFilmProjector_renderOpaque_FUN_004ab8a0(CFilmProjector *this_ptr);
 void __cdecl core_filmreel_cpp_CFilmProjector_archive_FUN_004ab9a0(CFilmProjector *this_ptr);
 CFilmReel * __cdecl core_filmreel_cpp_CFilmReel_dtor_FUN_004ab9f0(CFilmReel *this_ptr,uint flags);
 CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_dtor_FUN_004aba40(CFilmProjector *this_ptr,uint flags);
-void core_fire_cpp_staticInit_FUN_004aba90(void);
-float core_fire_cpp_FUN_004abd5e(float param_1);
-void __cdecl core_fire_cpp_FUN_004abdb0(CSmokeParticle *this_ptr);
-void __cdecl core_fire_cpp_FUN_004abea0(CSmokeParticle *this_ptr);
+void __cdecl core_fire_cpp_staticInit_FUN_004aba90(void);
+float __cdecl core_fire_cpp_safeAcos_FUN_004abd60(float value);
+void __cdecl core_fire_cpp_CSmokeParticle_setupRenderState_FUN_004abdb0(CSmokeParticle *this_ptr);
+void __cdecl core_fire_cpp_CSmokeParticle_reset_FUN_004abea0(CSmokeParticle *this_ptr);
 void __cdecl core_fire_cpp_CSmokeParticle_init_FUN_004abeb0(CSmokeParticle *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence,int alpha_value);
-void core_fire_cpp_FUN_004abf50(undefined4 *param_1);
+void __cdecl core_fire_cpp_CSmokeParticle_process_FUN_004abf50(CSmokeParticle *this_ptr);
 void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004ac0b0(CSmokeParticle *this_ptr);
-void __cdecl core_fire_cpp_FUN_004ac3e0(CBulletHole *this_ptr,CVector3f *hit_position,CVector3f *surface_normal,CDemonActor *hit_actor);
-void core_fire_cpp_FUN_004ac690(undefined4 *param_1);
+void __cdecl core_fire_cpp_CBulletHole_init_FUN_004ac3e0(CBulletHole *this_ptr,CVector3f *hit_position,CVector3f *surface_normal,CDemonActor *hit_actor);
+void __cdecl core_fire_cpp_CBulletHole_process_FUN_004ac690(CBulletHole *this_ptr);
 void __cdecl core_fire_cpp_CBulletHole_setupRenderState_FUN_004ac6f0(CBulletHole *this_ptr);
 void __cdecl core_fire_cpp_CBulletHole_render_FUN_004ac770(CBulletHole *this_ptr);
-void __cdecl core_fire_cpp_FUN_004acad0(void);
+void __cdecl core_fire_cpp_loadStakeAssets_FUN_004acad0(void);
 void __cdecl core_fire_cpp_CStake_init_FUN_004acaf0(CStake *this_ptr,CVector3f *position,CVector3f *orientation);
 void __cdecl core_fire_cpp_CStake_spawn_FUN_004acb60(CStake *this_ptr,CVector3f *spawn_position,CVector3f *orientation_angles,CVector3f *surface_normal);
-void __cdecl core_fire_cpp_FUN_004ace60(CStake *this_ptr);
+void __cdecl core_fire_cpp_CStake_render_FUN_004ace60(CStake *this_ptr);
 void __cdecl core_fire_cpp_CStake_process_FUN_004acf20(CStake *this_ptr);
-void core_fire_cpp_FUN_004acf50(int param_1);
-void core_fire_cpp_FUN_004ad010(void);
-void core_fire_cpp_FUN_004ad140(CVector3f *param_1);
-undefined4 core_fire_cpp_FUN_004ad850(void);
-void core_fire_cpp_FUN_004ad860(int param_1);
-void core_fire_cpp_FUN_004ad9c0(void);
-void core_fire_cpp_FUN_004adaf0(CVector3f *param_1);
+void __cdecl core_fire_cpp_CSpark_process_FUN_004acf50(CSpark *this_ptr);
+void __cdecl core_fire_cpp_CSpark_setupRenderState_FUN_004ad010(CSpark *this_ptr);
+void __cdecl core_fire_cpp_CSpark_render_FUN_004ad140(CSpark *this_ptr);
+int __cdecl core_fire_cpp_CSpark_onCollision_FUN_004ad850(CSpark *this_ptr,CVector3f *collision_normal);
+void __cdecl core_fire_cpp_CFirefly_process_FUN_004ad860(CFirefly *this_ptr);
+void __cdecl core_fire_cpp_CFirefly_setupRenderState_FUN_004ad9c0(CFirefly *this_ptr);
+void __cdecl core_fire_cpp_CFirefly_render_FUN_004adaf0(CFirefly *this_ptr);
 void __cdecl core_fire_cpp_loadFireBallAssets_FUN_004ae2a0(void);
-void core_fire_cpp_FUN_004ae300(CVector3f *param_1);
-void __cdecl core_fire_cpp_FUN_004ae550(CFireball *this_ptr);
-void core_fire_cpp_FUN_004ae640(CVector3f *param_1);
-undefined4 core_fire_cpp_FUN_004aee60(CVector3f *param_1);
-void __cdecl core_fire_cpp_FUN_004aef90(CRock *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr);
-void core_fire_cpp_FUN_004aefb0(void);
-void core_fire_cpp_FUN_004aefc0(int param_1);
-void core_fire_cpp_FUN_004af040(CVector3f *param_1);
-void core_fire_cpp_FUN_004af0f0(CParticle *param_1,CVector3f *param_2,CVector3f *param_3,undefined4 param_4,undefined4 param_5);
-void core_fire_cpp_FUN_004af120(void);
-void core_fire_cpp_FUN_004af170(int param_1);
-void core_fire_cpp_FUN_004af270(CVector3f *param_1);
-undefined4 core_fire_cpp_FUN_004af330(void);
-void __cdecl core_fire_cpp_FUN_004af340(CMuzzleFlash *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix);
+void __cdecl core_fire_cpp_CFireball_process_FUN_004ae300(CFireball *this_ptr);
+void __cdecl core_fire_cpp_CFireball_setupRenderState_FUN_004ae550(CFireball *this_ptr);
+void __cdecl core_fire_cpp_CFireball_render_FUN_004ae640(CFireball *this_ptr);
+int __cdecl core_fire_cpp_CFireball_onCollision_FUN_004aee60(CFireball *this_ptr,CVector3f *collision_normal);
+void __cdecl core_fire_cpp_CRock_setup_FUN_004aef90(CRock *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr);
+void __cdecl core_fire_cpp_loadRockAssets_FUN_004aefb0(void);
+void __cdecl core_fire_cpp_CRock_process_FUN_004aefc0(CRock *this_ptr);
+void __cdecl core_fire_cpp_CRock_render_FUN_004af040(CRock *this_ptr);
+void __cdecl core_fire_cpp_CLeaf_init_FUN_004af0f0(CLeaf *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4,float param_5);
+void __cdecl core_fire_cpp_loadLeafAssets_FUN_004af120(void);
+void __cdecl core_fire_cpp_CLeaf_process_FUN_004af170(CLeaf *this_ptr);
+void __cdecl core_fire_cpp_CLeaf_render_FUN_004af270(CLeaf *this_ptr);
+undefined4 __cdecl core_fire_cpp_CLeaf_onCollision_FUN_004af330(CLeaf *this_ptr);
+void __cdecl core_fire_cpp_CMuzzleFlash_init_FUN_004af340(CMuzzleFlash *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix);
 void __cdecl core_fire_cpp_CMuzzleFlash_process_FUN_004af400(CMuzzleFlash *this_ptr);
-void __cdecl core_fire_cpp_FUN_004af430(CMuzzleFlash *this_ptr);
-void __cdecl core_fire_cpp_FUN_004af5e0(void);
-void core_fire_cpp_FUN_004af600(CParticle *param_1,float *param_2,undefined4 *param_3,undefined4 *param_4,undefined4 *param_5,undefined4 param_6);
-void core_fire_cpp_FUN_004af9f0(CVector3f *param_1);
-void core_fire_cpp_FUN_004afbf0(int param_1);
-undefined4 core_fire_cpp_FUN_004afc60(void);
+void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_004af430(CMuzzleFlash *this_ptr);
+void __cdecl core_fire_cpp_loadGunFlashAssets_FUN_004af5e0(void);
+void __cdecl core_fire_cpp_CGlassParticle_init_FUN_004af600(CGlassParticle *this_ptr,STriangleVertices *triangle_vertices,CVector3i *uv_u_per_vertex,CVector3i *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime);
+void __cdecl core_fire_cpp_CGlassParticle_render_FUN_004af9f0(CGlassParticle *this_ptr);
+void __cdecl core_fire_cpp_CGlassParticle_process_FUN_004afbf0(CGlassParticle *this_ptr);
+int __cdecl core_fire_cpp_CGlassParticle_onCollision_FUN_004afc60(CGlassParticle *this_ptr,CVector3f *collision_normal);
 void __cdecl core_fire_cpp_CBulletTrail_init_FUN_004afc70(CBulletTrail *this_ptr,CVector3f *start_position,CVector3f *end_position,CKeyFramedModel *model_ptr,float segment_length);
 void __cdecl core_fire_cpp_CBulletTrail_process_FUN_004afcd0(CBulletTrail *this_ptr);
-void __cdecl core_fire_cpp_FUN_004afcf0(CBulletTrail *this_ptr);
+void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004afcf0(CBulletTrail *this_ptr);
 

@@ -1,0 +1,268 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 88,
+    "complexity_score": 100,
+    "cross_reference_count": 7,
+    "function_call_count": 7,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 35,
+    "suspect_count": 5,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_memcpy",
+      "warning_unreachable"
+    ],
+    "total_lines": 123
+  },
+  "cross_references": [
+    {
+      "addr": "0059f980",
+      "from_addr": "0059fa01",
+      "name": "core_basicene.cpp_CBasicEnemy_renderTransparent_FUN_0059f980",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b1160",
+      "from_addr": "004b1183",
+      "name": "core_gabriela.cpp_CGabriella_renderTransparent_FUN_004b1160",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00510990",
+      "from_addr": "005109c4",
+      "name": "core_npc.cpp_CNPC_renderTransparent_FUN_00510990",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053e6c0",
+      "from_addr": "0053e84a",
+      "name": "core_shadow.cpp_CShadow_renderTransparent_FUN_0053e6c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056bc80",
+      "from_addr": "0056bc86",
+      "name": "core_stranger.cpp_CStranger_renderTransparent_FUN_0056bc80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058d670",
+      "from_addr": "0058d798",
+      "name": "core_werewolf.cpp_CWerewolf_renderTransparent_FUN_0058d670",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00598fa0",
+      "from_addr": "00599149",
+      "name": "core_zombie.cpp_CZombie_renderTransparent_FUN_00598fa0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004268b0",
+    "address_range": [
+      [
+        "004268b0",
+        "00426981"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_renderTransparent_FUN_004268b0",
+    "signature": "int __cdecl core_charactr_cpp_CCharacter_renderTransparent_FUN_004268b0(CCharacter *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408a10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10"
+    },
+    {
+      "addr": "004089d0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0"
+    },
+    {
+      "addr": "0041a840",
+      "is_variadic": false,
+      "name": "core_box.cpp_FUN_0041a840"
+    },
+    {
+      "addr": "00424bd0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_renderCharacter_FUN_00424bd0"
+    },
+    {
+      "addr": "00426990",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_renderFlames_FUN_00426990"
+    },
+    {
+      "addr": "0042b620",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_0042b620"
+    },
+    {
+      "addr": "005306e0",
+      "is_variadic": false,
+      "name": "core_set.cpp_FUN_005306e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061b5a8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e661b8"
+    },
+    {
+      "addr": "007bda98",
+      "name": "DAT_007bda98",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007bdad8",
+      "name": "DAT_007bdad8",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "01e661b8",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.7,
+    "instruction_count": 70,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 7,
+      "CALLIND": 1,
+      "CBRANCH": 6,
+      "COPY": 60,
+      "INT_ADD": 34,
+      "INT_AND": 39,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 37,
+      "INT_LESS": 3,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 1,
+      "INT_OR": 1,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 18,
+      "INT_SUB": 28,
+      "INT_XOR": 1,
+      "INT_ZEXT": 2,
+      "LOAD": 18,
+      "POPCOUNT": 18,
+      "RETURN": 2,
+      "STORE": 24
+    },
+    "pcode_op_count": 329
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004301e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6
+    },
+    "bw3.exe": {
+      "addr": "0042f510",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6
+    },
+    "nocedit.exe": {
+      "addr": "0042b0e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3529
+    },
+    "nocturne.exe": {
+      "addr": "00427260",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3529
+    }
+  },
+  "stack_frame": {
+    "frame_size": 72,
+    "local_size": 68,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00426937) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_007bdad8",
+      "severity": "mild",
+      "text": "if ((DAT_007bdad8 & 1) == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_007bdad8",
+      "severity": "mild",
+      "text": "DAT_007bdad8 = DAT_007bdad8 | 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_007bdad8",
+      "severity": "mild",
+      "text": "DAT_007bdad8 = DAT_007bdad8 | 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 22,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

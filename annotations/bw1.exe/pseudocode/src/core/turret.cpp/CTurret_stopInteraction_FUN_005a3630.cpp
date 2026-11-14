@@ -9,9 +9,9 @@
 void __cdecl core_turret_cpp_CTurret_stopInteraction_FUN_005a3630(CTurret *this_ptr,CDemonActor *user)
 
 {
-  if (user != *(CDemonActor **)&this_ptr->field_0x85c) {
+  if (user != this_ptr->user) {
     return;
   }
-  *(uint *)&this_ptr->field_0x85c = 0;
+  this_ptr->user = (CDemonActor *)0x0;
   return;
 }

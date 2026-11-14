@@ -7,7 +7,7 @@
 ; CWavInDevice *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   sound_sndwav.cpp_FUN_00558ace at 00558ad8
+;   sound_sndwav.cpp_getWavInDevice_FUN_00558ad0 at 00558ad8
 ;
 ; Referenced Globals:
 ;   void* PTR_waveInClose_005c8454 = 001c893c
@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   GlobalFree
-;   sound_sndmain.cpp_FUN_005549c0
+;   sound_sndmain.cpp_logSoundError_FUN_005549c0
 ;   waveInClose
 ;
 ; *****************************************************************************
@@ -85,8 +85,8 @@ section .text
     JZ 0x005582d2                       ; 005582c1
         ;   XREF to: 005582d2 (CONDITIONAL_JUMP)  ; LAB_005582d2
     PUSH 0x5ea628                       ; 005582c3 | = "waveInClose failed."
-    CALL sound_sndmain.cpp_FUN_005549c0 ; 005582c8
-        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005549c0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005549c0 ; 005582c8
+        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005549c0(char * format)
     XOR ESI,ESI                         ; 005582cd
     ADD ESP,0x4                         ; 005582cf
     XOR EBX,EBX                         ; 005582d2

@@ -1,0 +1,161 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 39,
+    "complexity_score": 74,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 9,
+    "suspect_count": 6,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 48
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004a1d00",
+    "address_range": [
+      [
+        "004a1d00",
+        "004a1d4a"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_flashlit.cpp_FUN_004a1d00",
+    "signature": "undefined4 core_flashlit_cpp_FUN_004a1d00(int param_1,int param_2)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00616028",
+      "name": "DAT_00616028",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061602c",
+      "name": "DAT_0061602c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01caf224",
+      "name": "CAlphaBitmap_01caf218.width",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01caf228",
+      "name": "CAlphaBitmap_01caf218.height",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.875,
+    "instruction_count": 32,
+    "opcode_distribution": {
+      "CBRANCH": 4,
+      "COPY": 35,
+      "INT_ADD": 14,
+      "INT_AND": 10,
+      "INT_EQUAL": 11,
+      "INT_LESS": 4,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 4,
+      "INT_SLESS": 5,
+      "INT_SUB": 8,
+      "INT_XOR": 1,
+      "LOAD": 12,
+      "POPCOUNT": 5,
+      "RETURN": 2,
+      "STORE": 4
+    },
+    "pcode_op_count": 124
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004ba5e0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a8220",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint core_flashlit_cpp_FUN_004a1d00(int param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint core_flashlit_cpp_FUN_004a1d00(int param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((((0x00000262 <= param_1) && (0x000001C0 <= param_2)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((((0x00000262 <= param_1) && (0x000001C0 <= param_2)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 6,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1 < 0x00000262 + CAlphaBitmap_01caf218.width)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_2 < 0x000001C0 + CAlphaBitmap_01caf218.height)) {",
+      "type": "unnamed_param"
+    }
+  ]
+}

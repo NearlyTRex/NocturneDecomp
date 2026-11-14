@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_3d_c_updateAnimatedTexture_FUN_004050e0(int param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_updateAnimatedTexture_FUN_004050e0(SMRGLAnimatedTexture *texture)
 ;
+; Parameters:
+; SMRGLAnimatedTexture * Stack[0x4]:4   texture
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c2a370

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_holycrss_cpp_CHolycross_getActorType_FUN_004d50c0(CHolycross *this_ptr)
+; CDemonActorType * __cdecl core_holycrss_cpp_CHolycross_getActorType_FUN_004d50c0(CHolycross *this_ptr)
 ;
 ; Parameters:
 ; CHolycross *     Stack[0x4]:4   this_ptr

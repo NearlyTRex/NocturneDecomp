@@ -1,0 +1,427 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 158,
+    "complexity_score": 105,
+    "cross_reference_count": 3,
+    "function_call_count": 10,
+    "global_count": 10,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 60,
+    "suspect_count": 4,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 218
+  },
+  "cross_references": [
+    {
+      "addr": "0058e0c0",
+      "from_addr": "0058e0cb",
+      "name": "engine_winfont.cpp_CWinFont_drawText_FUN_0058e0c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058e720",
+      "from_addr": "0058e732",
+      "name": "engine_winfont.cpp_CWinFont_getStringHeight_FUN_0058e720",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058e6c0",
+      "from_addr": "0058e6d1",
+      "name": "engine_winfont.cpp_CWinFont_getStringWidth_FUN_0058e6c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0058e450",
+    "address_range": [
+      [
+        "0058e450",
+        "0058e63e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_winfont.cpp_CWinFont_createTextBackground_FUN_0058e450",
+    "signature": "int __cdecl engine_winfont_cpp_CWinFont_createTextBackground_FUN_0058e450(CWinFont *this_ptr,int width,int height)"
+  },
+  "function_calls": [
+    {
+      "addr": "EXTERNAL:00000007",
+      "is_variadic": false,
+      "name": "CreateBrushIndirect"
+    },
+    {
+      "addr": "EXTERNAL:00000008",
+      "is_variadic": false,
+      "name": "CreateCompatibleDC"
+    },
+    {
+      "addr": "EXTERNAL:00000009",
+      "is_variadic": false,
+      "name": "CreateDIBSection"
+    },
+    {
+      "addr": "005b77c0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005b77c0"
+    },
+    {
+      "addr": "EXTERNAL:0000000c",
+      "is_variadic": false,
+      "name": "DeleteObject"
+    },
+    {
+      "addr": "0058e640",
+      "is_variadic": false,
+      "name": "engine_winfont.cpp_CWinFont_reset_FUN_0058e640"
+    },
+    {
+      "addr": "EXTERNAL:0000000f",
+      "is_variadic": false,
+      "name": "Rectangle"
+    },
+    {
+      "addr": "EXTERNAL:00000010",
+      "is_variadic": false,
+      "name": "SelectObject"
+    },
+    {
+      "addr": "EXTERNAL:00000011",
+      "is_variadic": false,
+      "name": "SetBkColor"
+    },
+    {
+      "addr": "EXTERNAL:00000012",
+      "is_variadic": false,
+      "name": "SetBkMode"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c83f4",
+      "name": "PTR_CreateBrushIndirect_005c83f4",
+      "type": "void*",
+      "value": "001c87bc"
+    },
+    {
+      "addr": "005c83f8",
+      "name": "PTR_CreateCompatibleDC_005c83f8",
+      "type": "void*",
+      "value": "001c87d2"
+    },
+    {
+      "addr": "005c83fc",
+      "name": "PTR_CreateDIBSection_005c83fc",
+      "type": "void*",
+      "value": "001c87e8"
+    },
+    {
+      "addr": "005c8408",
+      "name": "PTR_DeleteObject_005c8408",
+      "type": "void*",
+      "value": "001c8816"
+    },
+    {
+      "addr": "005c8414",
+      "name": "PTR_Rectangle_005c8414",
+      "type": "void*",
+      "value": "001c8850"
+    },
+    {
+      "addr": "005c8418",
+      "name": "PTR_SelectObject_005c8418",
+      "type": "void*",
+      "value": "001c885c"
+    },
+    {
+      "addr": "005c841c",
+      "name": "PTR_SetBkColor_005c841c",
+      "type": "void*",
+      "value": "001c886c"
+    },
+    {
+      "addr": "005c8420",
+      "name": "PTR_SetBkMode_005c8420",
+      "type": "void*",
+      "value": "001c887a"
+    },
+    {
+      "addr": "006141b8",
+      "name": "DAT_006141b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006141c0",
+      "name": "DAT_006141c0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "0058e0cb",
+        "call_type": "direct",
+        "caller": "engine_winfont.cpp_CWinFont_drawText_FUN_0058e0c0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0058e6d1",
+        "call_type": "direct",
+        "caller": "engine_winfont.cpp_CWinFont_getStringWidth_FUN_0058e6c0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0058e732",
+        "call_type": "direct",
+        "caller": "engine_winfont.cpp_CWinFont_getStringHeight_FUN_0058e720",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.909090909090909,
+    "instruction_count": 143,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 2,
+      "BRANCH": 2,
+      "CALL": 2,
+      "CALLIND": 10,
+      "CBRANCH": 4,
+      "COPY": 144,
+      "INT_2COMP": 2,
+      "INT_ADD": 56,
+      "INT_AND": 54,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 50,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 3,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 24,
+      "INT_SUB": 49,
+      "INT_XOR": 4,
+      "INT_ZEXT": 3,
+      "LOAD": 28,
+      "POPCOUNT": 24,
+      "RETURN": 2,
+      "STORE": 65
+    },
+    "pcode_op_count": 559
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005b1e90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00580110",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005f2860",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "005584d0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 88,
+    "local_size": 76,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 2,
+        "type": "undefined2"
+      },
+      {
+        "is_param": false,
+        "name": "local_3a",
+        "offset": -58,
+        "size": 2,
+        "type": "undefined2"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWinFont *"
+      },
+      {
+        "is_param": true,
+        "name": "width",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "height",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_006141b8",
+      "severity": "mild",
+      "text": "width = DAT_006141b8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_006141c0",
+      "severity": "mild",
+      "text": "this_ptr->top < height) || this_ptr->bpp != DAT_006141c0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_006141c0",
+      "severity": "mild",
+      "text": "local_48.bmiHeader.biBitCount = (WORD)DAT_006141c0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_006141c0",
+      "severity": "mild",
+      "text": "this_ptr->bpp = DAT_006141c0;",
+      "type": "undefined_data"
+    }
+  ]
+}

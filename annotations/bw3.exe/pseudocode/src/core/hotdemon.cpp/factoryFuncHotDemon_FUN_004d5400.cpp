@@ -1,20 +1,20 @@
 // Name: core_hotdemon.cpp_factoryFuncHotDemon_FUN_004d5400
 // Address: 004d5400
 // Address Range: [[004d5400, 004d541b]]
-// Convention: unknown
-// Signature: void core_hotdemon_cpp_factoryFuncHotDemon_FUN_004d5400(void)
+// Convention: __cdecl
+// Signature: CHotDemon * __cdecl core_hotdemon_cpp_factoryFuncHotDemon_FUN_004d5400(void)
 
 #include "nocturne.h"
 
-void core_hotdemon_cpp_factoryFuncHotDemon_FUN_004d5400(void)
+CHotDemon * __cdecl core_hotdemon_cpp_factoryFuncHotDemon_FUN_004d5400(void)
 
 {
-  CHotDemon *this_ptr;
+  CHotDemon *pCVar1;
   
-  this_ptr = (CHotDemon *)FUN_005a3cb2(0xd088);
-  if (this_ptr == (CHotDemon *)0x0) {
-    return;
+  pCVar1 = (CHotDemon *)operator_new(0xd088);
+  if (pCVar1 == (CHotDemon *)0x0) {
+    return (CHotDemon *)0x0;
   }
-  core_hotdemon_cpp_CHotDemon_ctor_FUN_004d5430(this_ptr);
-  return;
+  pCVar1 = core_hotdemon_cpp_CHotDemon_ctor_FUN_004d5430(pCVar1);
+  return pCVar1;
 }

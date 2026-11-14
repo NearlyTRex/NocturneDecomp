@@ -9,6 +9,6 @@
 void __cdecl core_fire_cpp_CToss_reset_FUN_004992a0(CToss *this_ptr)
 
 {
-  *(uint *)&this_ptr->field_0x3dc = 0;
+  this_ptr->fuse_timer = 0.0;
   return;
 }

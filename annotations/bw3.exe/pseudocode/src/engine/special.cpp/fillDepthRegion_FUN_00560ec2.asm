@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   bottom
 ;
 ; XREF[1]:
-;   unkafter_bmppuzzl.cpp_FUN_00412c50 at 00412d0f
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00412c50 at 00412d0f
 ;
 ; Referenced Globals:
 ;   undefined8 DAT_00604d1c

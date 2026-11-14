@@ -9,5 +9,5 @@
 int __cdecl core_vessel_cpp_isStartLocTriggered_FUN_00585210(CCryptVessel *actor)
 
 {
-  return *(int *)(*(int *)&actor->field_0x504 + 0x2e0);
+  return actor->start_loc->triggered;
 }

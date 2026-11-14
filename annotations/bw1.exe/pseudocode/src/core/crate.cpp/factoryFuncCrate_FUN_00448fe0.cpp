@@ -1,20 +1,20 @@
 // Name: core_crate.cpp_factoryFuncCrate_FUN_00448fe0
 // Address: 00448fe0
 // Address Range: [[00448fe0, 00448ffb]]
-// Convention: unknown
-// Signature: void core_crate_cpp_factoryFuncCrate_FUN_00448fe0(void)
+// Convention: __cdecl
+// Signature: CCrate * __cdecl core_crate_cpp_factoryFuncCrate_FUN_00448fe0(void)
 
 #include "nocturne.h"
 
-void core_crate_cpp_factoryFuncCrate_FUN_00448fe0(void)
+CCrate * __cdecl core_crate_cpp_factoryFuncCrate_FUN_00448fe0(void)
 
 {
-  CCrate *this_ptr;
+  CCrate *pCVar1;
   
-  this_ptr = (CCrate *)FUN_005c0f32(0x2fc);
-  if (this_ptr == (CCrate *)0x0) {
-    return;
+  pCVar1 = (CCrate *)operator_new(0x2fc);
+  if (pCVar1 == (CCrate *)0x0) {
+    return (CCrate *)0x0;
   }
-  core_crate_cpp_CCrate_ctor_FUN_00449010(this_ptr);
-  return;
+  pCVar1 = core_crate_cpp_CCrate_ctor_FUN_00449010(pCVar1);
+  return pCVar1;
 }

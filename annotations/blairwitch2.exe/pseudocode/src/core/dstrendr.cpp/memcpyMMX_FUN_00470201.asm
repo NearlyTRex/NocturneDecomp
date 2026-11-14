@@ -12,8 +12,8 @@
 ;   core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0043c200 at 0043c2f2
 ;   core_dcamera.cpp_CDemonCamera_restoreZBufferRectArray_FUN_0043bc30 at 0043be37
 ;   core_dcamera.cpp_CDemonCamera_restoreZBufferRect_FUN_0043bb50 at 0043bbf0
-;   core_dlight.cpp_FUN_0044a210 at 0044a28f
-;   core_dlight.cpp_FUN_0044a520 at 0044a6fc
+;   core_dlight.cpp_CDemonLight_blitZBuffer_FUN_0044a210 at 0044a28f
+;   core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044a520 at 0044a6fc
 ;
 ; *****************************************************************************
 

@@ -4,13 +4,23 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CVector3f.h"
+#include "types/unions/UOrientationVector.h"
 
 // Structure: CCrate
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x458 (1112 bytes)
 #pragma pack(push, 1)
 typedef struct CCrate {
-    char field_0[1112]; // 0x0
+    CDemonActor base; // 0x0
+    CKeyFramedModelInstance model; // 0x2b4
+    struct CDemonActor* carrier; // 0x430
+    float ground_check_radius; // 0x434
+    struct CDemonActor* last_platform; // 0x438
+    CVector3f cached_position; // 0x43c
+    UOrientationVector cached_orientation; // 0x448
+    float cached_ground_height; // 0x454
 } CCrate;
 #pragma pack(pop)
 

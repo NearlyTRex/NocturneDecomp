@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dtri_cpp_cylinderTriangleTest_FUN_00477fe0(float *param_1,undefined4 *param_2)
+; void __cdecl core_dtri_cpp_cylinderTriangleTest_FUN_00477fe0(CDemonTriangle *triangle,SIntersectXZCylinder *cylinder)
 ;
+; Parameters:
+; CDemonTriangle * Stack[0x4]:4   triangle
+; SIntersectXZCylinder * Stack[0x8]:4   cylinder
 ; Local Variables:
 ; undefined4       Stack[-0x7c]:4  local_7c
 ; undefined4       Stack[-0x78]:4  local_78
@@ -25,7 +28,7 @@
 ; XREF[3]:
 ;   core_dmodel.cpp_CKeyFramedModel_intersectCylinder_FUN_0044f580 at 0044f61c
 ;   core_setcolid.cpp_FUN_00536cb0 at 00536ddc
-;   core_stairs.cpp_FUN_005621a0 at 005621c8
+;   core_stairs.cpp_CStairs_customIntersectCylinderXZ_FUN_005621a0 at 005621c8
 ;
 ; Called Functions:
 ;   core_dtri.cpp_cylinderEdgeIntersection_FUN_00477c60
@@ -278,7 +281,7 @@ section .text
     PUSH ESI                            ; 00478242
     MOV dword ptr [ESI + 0x48],EAX      ; 00478243
     CALL core_dtri.cpp_cylinderEdgeIntersection_FUN_00477c60 ; 00478246
-        ;   XREF to: 00477c60 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_cylinderEdgeIntersection_FUN_00477c60()
+        ;   XREF to: 00477c60 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_cylinderEdgeIntersection_FUN_00477c60(SIntersectXZCylinder * cylinder)
     ADD ESP,0x4                         ; 0047824b
     TEST EAX,EAX                        ; 0047824e
     JNZ 0x00478328                      ; 00478250
@@ -358,7 +361,7 @@ section .text
     PUSH ESI                            ; 00478314
     MOV dword ptr [ESI + 0x48],EAX      ; 00478315
     CALL core_dtri.cpp_cylinderEdgeIntersection_FUN_00477c60 ; 00478318
-        ;   XREF to: 00477c60 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_cylinderEdgeIntersection_FUN_00477c60()
+        ;   XREF to: 00477c60 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_cylinderEdgeIntersection_FUN_00477c60(SIntersectXZCylinder * cylinder)
     ADD ESP,0x4                         ; 0047831d
     TEST EAX,EAX                        ; 00478320
     JZ 0x004783bb                       ; 00478322
@@ -425,14 +428,14 @@ section .text
     PUSH EBP                            ; 004783bc
     PUSH ESI                            ; 004783bd
     CALL core_dtri.cpp_cylinderEdgeTestWithHeight_FUN_00477f40 ; 004783be
-        ;   XREF to: 00477f40 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_cylinderEdgeTestWithHeight_FUN_00477f40()
+        ;   XREF to: 00477f40 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_cylinderEdgeTestWithHeight_FUN_00477f40(SIntersectXZCylinder * cylinder, CVector3f * vertex1, CVector3f * vertex2)
     ADD ESP,0xc                         ; 004783c3
     MOV EBX,dword ptr [ESP + 0x3c]      ; 004783c6
     PUSH EBX                            ; 004783ca
     PUSH EBP                            ; 004783cb
     PUSH ESI                            ; 004783cc
     CALL core_dtri.cpp_cylinderEdgeTestWithHeight_FUN_00477f40 ; 004783cd
-        ;   XREF to: 00477f40 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_cylinderEdgeTestWithHeight_FUN_00477f40()
+        ;   XREF to: 00477f40 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_cylinderEdgeTestWithHeight_FUN_00477f40(SIntersectXZCylinder * cylinder, CVector3f * vertex1, CVector3f * vertex2)
     ADD ESP,0xc                         ; 004783d2
     ADD ESP,0x6c                        ; 004783d5
     POP EBP                             ; 004783d8

@@ -13,7 +13,7 @@ int core_setdir_cpp_FUN_0055c060(CDemonSet *param_1,uint param_2)
   int iVar2;
   
   iVar2 = 0;
-  if (0 < *(int *)&param_1->field_0x15b428) {
+  if (0 < param_1->vdir_box_count) {
     do {
       iVar1 = core_setdir_cpp_FUN_0055b990(param_1,iVar2,param_2);
       if (iVar1 != 0) {
@@ -21,7 +21,7 @@ int core_setdir_cpp_FUN_0055c060(CDemonSet *param_1,uint param_2)
         return iVar2;
       }
       iVar2 = iVar2 + 1;
-    } while (iVar2 < *(int *)&param_1->field_0x15b428);
+    } while (iVar2 < param_1->vdir_box_count);
   }
   return -1;
 }

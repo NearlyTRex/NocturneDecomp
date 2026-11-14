@@ -32,7 +32,8 @@ void __cdecl wincore_wddvmem_cpp_videoRestore_FUN_005ad2c0(void)
   else {
     iVar1 = _stricmp(&DAT_006257d0,"trigl.dll");
     if (iVar1 != 0) {
-      iVar1 = engine_special_cpp_FUN_005821c0(DAT_0061b498,DAT_0061b49c,DAT_0061b4a0);
+      iVar1 = engine_special_cpp_setResolutionAndColorTable_FUN_005821c0
+                        (DAT_0061b498,DAT_0061b49c,DAT_0061b4a0);
       if (iVar1 == 0) {
         _DAT_02c83370 = iVar1;
         if (_DAT_02c9930c != (int *)0x0) {

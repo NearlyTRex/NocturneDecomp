@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_boss_c_modelStructNotSupported2_FUN_0041ac60(void)
+; SMRGLHeaderExtended * __cdecl engine_boss_c_modelStructNotSupported2_FUN_0041ac60(char *filename)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
 ;
 ; XREF[1]:
 ;   engine_model.c_loadModelFile_FUN_004f7f20 at 004f80dd

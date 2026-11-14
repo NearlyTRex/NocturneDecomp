@@ -4,12 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/SMRGLHeaderBasic.h"
 
 // Structure: SMRGLHeaderExtended
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0xc (12 bytes)
 #pragma pack(push, 1)
 typedef struct SMRGLHeaderExtended {
+    SMRGLHeaderBasic base; // 0x0
+    int child_count; // 0x8
 } SMRGLHeaderExtended;
 #pragma pack(pop)
 

@@ -9,48 +9,48 @@
 void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00528210(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3SideInfo *side_info,int channel,int granule,SMpegFrame *frame)
 
 {
-  int iVar1;
+  int *piVar1;
   int *piVar2;
   int *piVar3;
   int *piVar4;
-  CMP3Decoder *pCVar6;
-  byte *puVar7;
+  CMP3Decoder *pCVar5;
+  char *pcVar6;
+  int iVar7;
   int iVar8;
   int iVar9;
-  int *piVar5;
   
-  iVar1 = channel * 0x48 + granule * 0xa0 + 0x18;
-  iVar8 = 0;
+  iVar7 = 0;
   sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_00527e80
             (this_ptr,scalefactor_dest,side_info,channel,granule,frame);
-  if ((*(int *)(side_info + iVar1 + 0x10) != 0) && (*(int *)(side_info + iVar1 + 0x14) == 2)) {
+  if ((side_info->channels[granule].granules[channel].window_switching_flag != 0) &&
+     (side_info->channels[granule].granules[channel].block_type == 2)) {
     piVar3 = scalefactor_dest + granule * 0x3e;
-    if (*(int *)(side_info + iVar1 + 0x18) != 0) {
+    if (side_info->channels[granule].granules[channel].mixed_block_flag != 0) {
       piVar4 = piVar3;
-      pCVar6 = this_ptr;
+      pCVar5 = this_ptr;
       do {
-        piVar2 = piVar4 + 1;
-        puVar7 = &pCVar6->field_0x7358;
-        pCVar6 = (CMP3Decoder *)&pCVar6->field_0x4;
-        iVar8 = iVar8 + 1;
-        *piVar4 = *(int *)puVar7;
-        piVar4 = piVar2;
-      } while (piVar2 != piVar3 + 8);
-      iVar1 = 0xa8;
+        piVar1 = piVar4 + 1;
+        piVar2 = pCVar5->layer3_scalefactors;
+        pCVar5 = (CMP3Decoder *)(pCVar5->filename + 4);
+        iVar7 = iVar7 + 1;
+        *piVar4 = *piVar2;
+        piVar4 = piVar1;
+      } while (piVar1 != piVar3 + 8);
+      iVar8 = 0xa8;
       iVar9 = 3;
       do {
-        puVar7 = &this_ptr->field_0x0 + iVar8 * 4;
+        pcVar6 = this_ptr->filename + iVar7 * 4;
         piVar3 = scalefactor_dest + granule * 0x3e + iVar9;
         do {
           piVar2 = piVar3 + 0xd;
-          piVar4 = (int *)(puVar7 + 0x7358);
-          puVar7 = puVar7 + 4;
-          iVar8 = iVar8 + 1;
+          piVar4 = (int *)(pcVar6 + 0x7358);
+          pcVar6 = pcVar6 + 4;
+          iVar7 = iVar7 + 1;
           piVar3[0x17] = *piVar4;
           piVar3 = piVar2;
-        } while (piVar2 != (int *)((int)scalefactor_dest + iVar1 + granule * 0xf8));
+        } while (piVar2 != (int *)((int)scalefactor_dest + iVar8 + granule * 0xf8));
         iVar9 = iVar9 + 1;
-        iVar1 = iVar1 + 4;
+        iVar8 = iVar8 + 4;
       } while (iVar9 < 0xc);
       piVar3 = scalefactor_dest + granule * 0x3e + 0xc;
       do {
@@ -60,21 +60,21 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00528210(CM
       } while (piVar4 != scalefactor_dest + granule * 0x3e + 0x33);
       return;
     }
-    iVar1 = 0x9c;
+    iVar8 = 0x9c;
     iVar9 = 0;
     do {
-      puVar7 = &this_ptr->field_0x0 + iVar8 * 4;
+      pcVar6 = this_ptr->filename + iVar7 * 4;
       piVar4 = piVar3 + iVar9;
       do {
-        piVar5 = piVar4 + 0xd;
-        piVar2 = (int *)(puVar7 + 0x7358);
-        puVar7 = puVar7 + 4;
-        iVar8 = iVar8 + 1;
+        piVar1 = piVar4 + 0xd;
+        piVar2 = (int *)(pcVar6 + 0x7358);
+        pcVar6 = pcVar6 + 4;
+        iVar7 = iVar7 + 1;
         piVar4[0x17] = *piVar2;
-        piVar4 = piVar5;
-      } while (piVar5 != (int *)((int)piVar3 + iVar1));
+        piVar4 = piVar1;
+      } while (piVar1 != (int *)((int)piVar3 + iVar8));
       iVar9 = iVar9 + 1;
-      iVar1 = iVar1 + 4;
+      iVar8 = iVar8 + 4;
     } while (iVar9 < 0xc);
     piVar3 = scalefactor_dest + granule * 0x3e + 0xc;
     do {
@@ -84,14 +84,14 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00528210(CM
     } while (piVar4 != scalefactor_dest + granule * 0x3e + 0x33);
     return;
   }
-  iVar1 = 0;
+  iVar7 = 0;
   do {
-    puVar7 = &this_ptr->field_0x7358;
-    iVar8 = iVar1 + granule * 0xf8;
-    this_ptr = (CMP3Decoder *)&this_ptr->field_0x4;
-    iVar1 = iVar1 + 4;
-    *(uint *)((int)scalefactor_dest + iVar8) = *(uint *)puVar7;
-  } while (iVar1 != 0x54);
+    piVar3 = this_ptr->layer3_scalefactors;
+    iVar8 = iVar7 + granule * 0xf8;
+    this_ptr = (CMP3Decoder *)(this_ptr->filename + 4);
+    iVar7 = iVar7 + 4;
+    *(int *)((int)scalefactor_dest + iVar8) = *piVar3;
+  } while (iVar7 != 0x54);
   scalefactor_dest[granule * 0x3e + 0x16] = 0;
   return;
 }

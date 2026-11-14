@@ -19,7 +19,7 @@
     {
       "addr": "004e44e0",
       "from_addr": "004e4615",
-      "name": "core_main.c_FUN_004e44e0",
+      "name": "core_main.c_initializeGameSystems_FUN_004e44e0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -44,7 +44,12 @@
     {
       "addr": "005a3cb2",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a3cb2"
+      "name": "crt_memory.c_operator_new_FUN_005a3cb2"
+    },
+    {
+      "addr": "004af790",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_ctor_FUN_004af790"
     },
     {
       "addr": "004af8f0",
@@ -52,29 +57,24 @@
       "name": "engine_font.cpp_CBitFont_openFontFile_FUN_004af8f0"
     },
     {
-      "addr": "004af790",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004af790"
-    },
-    {
-      "addr": "004b0500",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004b0500"
-    },
-    {
       "addr": "004b3150",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004b3150"
+      "name": "engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004b3150"
     },
     {
       "addr": "004b31b0",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004b31b0"
+      "name": "engine_font.cpp_CBitFont_setFontReady_FUN_004b31b0"
+    },
+    {
+      "addr": "004b0500",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_setInitializedFlag_FUN_004b0500"
     },
     {
       "addr": "0057fd50",
       "is_variadic": false,
-      "name": "engine_winfont.cpp_FUN_0057fd50"
+      "name": "engine_winfont.cpp_CWinFont_ctor_FUN_0057fd50"
     }
   ],
   "globals": [
@@ -403,7 +403,7 @@
       {
         "call_addr": "004e4615",
         "call_type": "direct",
-        "caller": "core_main.c_FUN_004e44e0",
+        "caller": "core_main.c_initializeGameSystems_FUN_004e44e0",
         "estimated_params": 0,
         "instructions_analyzed": 2,
         "method": "push_count",
@@ -463,7 +463,7 @@
       "line": 217,
       "match": "DAT_006034c0",
       "severity": "mild",
-      "text": "pCVar4 = engine_winfont_cpp_FUN_0057fd50(pCVar3,&DAT_006034c0,0xe,2,2);",
+      "text": "pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_0057fd50(pCVar3,&DAT_006034c0,0xe,2,2);",
       "type": "undefined_data"
     },
     {
@@ -471,7 +471,7 @@
       "line": 232,
       "match": "DAT_006034c0",
       "severity": "mild",
-      "text": "pCVar4 = engine_winfont_cpp_FUN_0057fd50(pCVar3,&DAT_006034c0,0x12,0,0);",
+      "text": "pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_0057fd50(pCVar3,&DAT_006034c0,0x12,0,0);",
       "type": "undefined_data"
     },
     {
@@ -479,7 +479,7 @@
       "line": 247,
       "match": "DAT_006034c0",
       "severity": "mild",
-      "text": "pCVar4 = engine_winfont_cpp_FUN_0057fd50(pCVar3,&DAT_006034c0,0xc,0,0);",
+      "text": "pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_0057fd50(pCVar3,&DAT_006034c0,0xc,0,0);",
       "type": "undefined_data"
     },
     {
@@ -487,7 +487,7 @@
       "line": 262,
       "match": "DAT_006034c0",
       "severity": "mild",
-      "text": "pCVar4 = engine_winfont_cpp_FUN_0057fd50(pCVar3,&DAT_006034c0,10,0,0);",
+      "text": "pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_0057fd50(pCVar3,&DAT_006034c0,10,0,0);",
       "type": "undefined_data"
     }
   ]

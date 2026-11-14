@@ -363,13 +363,13 @@ static undefined1* DAT_0060A004 = (undefined1*)crt_unknown_c_FUN_005aaa5f;
 static undefined1* DAT_0060A008 = (undefined1*)crt_unknown_c_FUN_005aaa7f;
 static undefined1* DAT_0060A00C = (undefined1*)crt_unknown_c_FUN_005aaa93;
 static undefined1* DAT_0060A010 = (undefined1*)crt_unknown_c_FUN_005aaaab;
-static undefined1* DAT_0060A028 = (undefined1*)unkafter_asgaya_cpp_FUN_005af4bb;
-static undefined1* DAT_0060A02C = (undefined1*)unkafter_asgaya_cpp_FUN_005af4c8;
-static undefined1* DAT_0060A030 = (undefined1*)unkafter_asgaya_cpp_FUN_005af4db;
-static undefined1* DAT_0060A034 = (undefined1*)unkafter_asgaya_cpp_FUN_005af4f0;
-static undefined1* DAT_0060A038 = (undefined1*)unkafter_asgaya_cpp_FUN_005af503;
-static undefined1* DAT_0060A03C = (undefined1*)unkafter_asgaya_cpp_FUN_005af518;
-static undefined1* DAT_0060A040 = (undefined1*)unkafter_asgaya_cpp_FUN_005af52b;
+static undefined1* DAT_0060A028 = (undefined1*)crt_unknown_c_FUN_005af4bb;
+static undefined1* DAT_0060A02C = (undefined1*)crt_unknown_c_FUN_005af4c8;
+static undefined1* DAT_0060A030 = (undefined1*)crt_unknown_c_FUN_005af4db;
+static undefined1* DAT_0060A034 = (undefined1*)crt_unknown_c_FUN_005af4f0;
+static undefined1* DAT_0060A038 = (undefined1*)crt_unknown_c_FUN_005af503;
+static undefined1* DAT_0060A03C = (undefined1*)crt_unknown_c_FUN_005af518;
+static undefined1* DAT_0060A040 = (undefined1*)crt_unknown_c_FUN_005af52b;
 
 // undefined2 constants
 static undefined2 DAT_006078a4 = 0x4002;

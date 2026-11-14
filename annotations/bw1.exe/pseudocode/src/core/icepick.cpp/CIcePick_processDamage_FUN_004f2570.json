@@ -1,0 +1,205 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 167,
+    "complexity_score": 61,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 7,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 61,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 228
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004f2570",
+    "address_range": [
+      [
+        "004f2570",
+        "004f271d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_icepick.cpp_CIcePick_processDamage_FUN_004f2570",
+    "signature": "void __cdecl core_icepick_cpp_CIcePick_processDamage_FUN_004f2570(CIcePick *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "004319e0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processDamage_FUN_004319e0"
+    },
+    {
+      "addr": "004e64d0",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CGore_spawnFliesOnActor_FUN_004e64d0"
+    },
+    {
+      "addr": "00524770",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770"
+    },
+    {
+      "addr": "005247c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0"
+    },
+    {
+      "addr": "005735a0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005735a0"
+    },
+    {
+      "addr": "00573a80",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfx_FUN_00573a80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e5462",
+      "name": "s_icepick_die01_wav_005e5462",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5474",
+      "name": "s_icepick_injured_wav_005e5474",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00602628",
+      "name": "DAT_00602628",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061d95c",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01ccf390"
+    },
+    {
+      "addr": "0061dca4",
+      "name": "g_CGorePtr",
+      "type": "CGore*",
+      "value": "01cd0e3c"
+    },
+    {
+      "addr": "01ccf57c",
+      "name": "g_CGameInstance.god_mode_enabled",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf5d8",
+      "name": "g_CGameInstance.allow_damage_flag",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.7669172932330826,
+    "instruction_count": 133,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 2,
+      "BRANCH": 3,
+      "CALL": 11,
+      "CALLIND": 3,
+      "CBRANCH": 9,
+      "COPY": 170,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 58,
+      "INT_AND": 55,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 42,
+      "INT_LEFT": 8,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 21,
+      "INT_SUB": 53,
+      "INT_ZEXT": 8,
+      "LOAD": 35,
+      "POPCOUNT": 21,
+      "RETURN": 3,
+      "STORE": 57
+    },
+    "pcode_op_count": 634
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004d6370",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004f95b0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004bb4e0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CIcePick *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CIcePick",
+        "offset": 264,
+        "vtable_addr": "00602634"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

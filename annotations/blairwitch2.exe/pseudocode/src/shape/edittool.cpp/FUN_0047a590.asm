@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   shape_edittool.cpp_FUN_004831d0 at 004835df
+;   shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0 at 004835df
 ;   shape_edittool.cpp_FUN_00484f20 at 004850b0
 ;
 ; Referenced Globals:
@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   engine_2d.c_plotPixel_FUN_00401130
-;   engine_mini3d.cpp_FUN_004f8fe0
+;   engine_mini3d.cpp_drawPixel_FUN_004f8fe0
 ;
 ; *****************************************************************************
 
@@ -67,8 +67,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x24]      ; 0047a5f1
     PUSH ECX                            ; 0047a5f5
     PUSH ESI                            ; 0047a5f6
-    CALL engine_mini3d.cpp_FUN_004f8fe0 ; 0047a5f7
-        ;   XREF to: 004f8fe0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f8fe0()
+    CALL engine_mini3d.cpp_drawPixel_FUN_004f8fe0 ; 0047a5f7
+        ;   XREF to: 004f8fe0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_drawPixel_FUN_004f8fe0(int x, int y)
     ADD ESP,0x8                         ; 0047a5fc
         ;   Label: LAB_0047a5fc
     MOV EDX,dword ptr [ESP + 0x28]      ; 0047a5ff
@@ -100,8 +100,8 @@ section .text
     PUSH ESI                            ; 0047a636
     MOV ECX,dword ptr [ESP + 0x2c]      ; 0047a637
     PUSH ECX                            ; 0047a63b
-    CALL engine_mini3d.cpp_FUN_004f8fe0 ; 0047a63c
-        ;   XREF to: 004f8fe0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f8fe0()
+    CALL engine_mini3d.cpp_drawPixel_FUN_004f8fe0 ; 0047a63c
+        ;   XREF to: 004f8fe0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_drawPixel_FUN_004f8fe0(int x, int y)
     ADD ESP,0x8                         ; 0047a641
         ;   Label: LAB_0047a641
     INC ESI                             ; 0047a644
@@ -132,8 +132,8 @@ section .text
         ;   XREF to: 0047a6ff (CONDITIONAL_JUMP)  ; LAB_0047a6ff
     PUSH EBP                            ; 0047a67b
     PUSH ESI                            ; 0047a67c
-    CALL engine_mini3d.cpp_FUN_004f8fe0 ; 0047a67d
-        ;   XREF to: 004f8fe0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f8fe0()
+    CALL engine_mini3d.cpp_drawPixel_FUN_004f8fe0 ; 0047a67d
+        ;   XREF to: 004f8fe0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_drawPixel_FUN_004f8fe0(int x, int y)
     ADD ESP,0x8                         ; 0047a682
         ;   Label: LAB_0047a682
     MOV EAX,dword ptr [ESP + 0x20]      ; 0047a685
@@ -164,8 +164,8 @@ section .text
     PUSH ESI                            ; 0047a6b2
     MOV EDX,dword ptr [ESP + 0x24]      ; 0047a6b3
     PUSH EDX                            ; 0047a6b7
-    CALL engine_mini3d.cpp_FUN_004f8fe0 ; 0047a6b8
-        ;   XREF to: 004f8fe0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f8fe0()
+    CALL engine_mini3d.cpp_drawPixel_FUN_004f8fe0 ; 0047a6b8
+        ;   XREF to: 004f8fe0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_drawPixel_FUN_004f8fe0(int x, int y)
     ADD ESP,0x8                         ; 0047a6bd
         ;   Label: LAB_0047a6bd
     MOV EDX,dword ptr [ESP + 0x24]      ; 0047a6c0

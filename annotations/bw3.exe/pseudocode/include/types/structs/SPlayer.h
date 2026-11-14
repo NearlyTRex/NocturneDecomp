@@ -6,11 +6,11 @@
 #include "system/basetypes.h"
 
 // Structure: SPlayer
-// Stub: size from Watcom RTTI, fields not yet recovered
+// PGameSettingsChanged's nested player record ($GSPlayer$:PGameSettingsChanged$$): RTTI 40, as in nocedit, whose layout is one 40-character name. Its ctor returns this; the netgame code around it is nocedit's.
 // Ghidra size: 0x28 (40 bytes)
 #pragma pack(push, 1)
 typedef struct SPlayer {
-    char field_0[40]; // 0x0
+    char name[40]; // 0x0, nocedit's layout; RTTI 40 leaves room for nothing else
 } SPlayer;
 #pragma pack(pop)
 

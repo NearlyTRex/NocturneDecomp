@@ -2,15 +2,33 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
 
 // Structure: CZombiePriest
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 53524; nocedit CMobster tail without the vehicle/weapon-search/sound-variant/taunt fields and one sfx handle; ctor 0058d4e0, setup FUN_0058d5e0, archive 0058f510, processDamage 0058f990, getTargetPoints 0058fb20, FUN_0058d960/FUN_0058e8d0/FUN_0058efb0/FUN_0058f630
 // Ghidra size: 0xd114 (53524 bytes)
 #pragma pack(push, 1)
 typedef struct CZombiePriest {
-    char field_0[53524]; // 0x0
+    CEnemy base; // 0x0, derived
+    int ai_idle_counter; // 0xd054, ctor getRandomInt(0,0xff) (nocedit CMobster ctor same)
+    float idle_timer; // 0xd058, ctor 0; FUN_0058efb0 FLD/FST float
+    float weapon_approach_timer; // 0xd05c, ctor 0; FUN_0058efb0 FLD/FADD float
+    struct CDemonActor* target_weapon; // 0xd060, ctor 0; FUN_0058d960/FUN_0058efb0 store/test an actor pointer
+    int post_mode; // 0xd064, ctor 0; archive "postMode"
+    struct CDemonActor* our_post; // 0xd068, ctor 0; archive archiveActor "ourPost"
+    int hold_pos_flag; // 0xd06c, ctor 0; archive "holdPosFlag"
+    char hold_pos_condition[100]; // 0xd070, ctor copies "none"; archive archiveString "holdPosCond"; next field at +0xd0d4
+    uint death_sfx_handle; // 0xd0d4, processDamage kill/play/isPlaying on +0xd0d4 (nocedit sfx_handles[0])
+    int death_sound_played; // 0xd0d8, processDamage tests 0, sets 1 after playing the death sound
+    uint sfx_handle; // 0xd0dc, processDamage killSfx(+0xd0dc)
+    int part_indices[11]; // 0xd0e0, FUN_0058d5e0 stores 11 findPartByName results +0xd0e0..+0xd108; processDamage/getTargetPoints index visibility flags (+0x2298) by [1],[3],[8],[9]
+    float firing_blend; // 0xd10c, ctor 0; FUN_0058d5e0/FUN_0058d960/FUN_0058e8d0 FLD/FST float (nocedit CMobster.firing_blend)
+    float firing_cooldown; // 0xd110, ctor 0; FUN_0058d5e0/FUN_0058d960 FLD/FST float
 } CZombiePriest;
 #pragma pack(pop)
 

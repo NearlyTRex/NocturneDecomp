@@ -20,7 +20,7 @@
     {
       "addr": "00407860",
       "from_addr": "00407987",
-      "name": "engine_3d.c_FUN_00407860",
+      "name": "engine_3d.c_dispatchMRGLToRenderer_FUN_00407860",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -142,7 +142,7 @@
       {
         "call_addr": "00407987",
         "call_type": "direct",
-        "caller": "engine_3d.c_FUN_00407860",
+        "caller": "engine_3d.c_dispatchMRGLToRenderer_FUN_00407860",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -156,7 +156,7 @@
       {
         "call_addr": "00407a94",
         "call_type": "direct",
-        "caller": "engine_3d.c_FUN_00407860",
+        "caller": "engine_3d.c_dispatchMRGLToRenderer_FUN_00407860",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -206,6 +206,32 @@
     },
     "pcode_op_count": 390
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00405b70",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9681
+    },
+    "bw1.exe": {
+      "addr": "004059a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9681
+    },
+    "nocedit.exe": {
+      "addr": "00405b50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9681
+    },
+    "nocturne.exe": {
+      "addr": "00407120",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9175
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -236,7 +262,7 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = engine_3d_c_isVisiblePlane_FUN_00403920(param_1 + 8);",
+      "text": "iVar1 = engine_3d_c_isVisiblePlane_FUN_00403920((SClipPlane *)(param_1 + 8));",
       "type": "unnamed_param"
     },
     {

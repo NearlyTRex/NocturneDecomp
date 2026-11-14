@@ -34,7 +34,7 @@
 ;   core_main.c_FUN_004e4500
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200
 ;   core_motion.cpp_CMotionController_jumpToMotion_FUN_00503980
-;   shape_edittool.cpp_FUN_0047be40
+;   shape_edittool.cpp_CEditorTools_showError_FUN_0047be40
 ;
 ; *****************************************************************************
 
@@ -76,7 +76,7 @@ section .text
     PUSH EBX                            ; 004fcfd0
     PUSH ESI                            ; 004fcfd1
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004fcfd2
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     MOV EBX,EAX                         ; 004fcfd7
     ADD ESP,0x8                         ; 004fcfd9
     TEST EAX,EAX                        ; 004fcfdc
@@ -169,8 +169,8 @@ section .text
     PUSH 0x5de9cd                       ; 004fd0b8 | = "Can't find hero placeholder for hero %d"
     MOV EDI,dword ptr [0x006138e0]      ; 004fd0bd | g_CEditorToolsPtr
     PUSH EDI                            ; 004fd0c3
-    CALL shape_edittool.cpp_FUN_0047be40 ; 004fd0c4
-        ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047be40()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0047be40 ; 004fd0c4
+        ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0047be40(CEditorTools * this_ptr, char * format)
     ADD ESP,0xc                         ; 004fd0c9
     XOR EAX,EAX                         ; 004fd0cc
     ADD ESP,0x4                         ; 004fd0ce

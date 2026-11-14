@@ -8,8 +8,12 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 
+#include <array>
+#include <bit>
 #include <cmath>
+#include <cstdint>
 #include <format>
+#include <span>
 #include <string>
 #include <string_view>
 #include <type_traits>
@@ -174,12 +178,54 @@ TEST_F(CSkeletonTest, AFileThatWontOpenIsFatal) {
                 ThrowsMessage<common::CFatalError>(StrEq("CSkeleton::load - Can't open none.skl")));
 }
 
-TEST_F(CSkeletonTest, AVersionOutsideTwoToThreeIsFatal) {
+TEST_F(CSkeletonTest, AVersionOutsideTwoToFourIsFatal) {
     expectFatal("// v\nx\n", "Invalid skeleton version");
     expectFatal(skeletonFile(0), "Invalid skeleton version");
     expectFatal(skeletonFile(1), "Old skeleton version 1 not supported");
-    expectFatal(skeletonFile(4),
-                "Skeleton version 4 is newer than .EXE, which can only process up to version 3");
+    expectFatal(skeletonFile(5),
+                "Skeleton version 5 is newer than .EXE, which can only process up to version 4");
+}
+
+// A float whose little-endian bytes hold a CR LF pair, which reading the file as text would fold.
+const float kCrLfFloat = std::bit_cast<float>(std::uint32_t{0x3F0A0D00});
+
+// The angles of skeletonFile as a version 4 file holds them: four little-endian floats each.
+std::string binaryAngles(std::span<const float> values) {
+    std::string bytes;
+    for (const float value : values) {
+        const auto bits = std::bit_cast<std::uint32_t>(value);
+        for (int shift = 0; shift < 32; shift += 8) {
+            bytes += static_cast<char>((bits >> shift) & 0xFFU);
+        }
+    }
+    return bytes;
+}
+
+// skeletonFile(4) with its text angles swapped for a binary block, as Blair Witch Volume 1 writes.
+std::string binarySkeletonFile(std::string_view block) {
+    std::string file = skeletonFile(4);
+    const std::string_view angles = "1,0,0,0\r\n0.5,0.25,0.125,1\r\n0,1,0,0\r\n0,0,1,0\r\n";
+    file.replace(file.find(angles), angles.size(), std::string(block) + "\r\n");
+    return file;
+}
+
+TEST_F(CSkeletonTest, AVersionFourSkeletonHoldsItsAnglesAsBinary) {
+    const std::array<float, 16> values = {1, 0, 0, 0, kCrLfFloat, 0.25F, 0.125F, 1,
+                                          0, 1, 0, 0, 0,          0,     1,      0};
+    givenFile("data\\SHADOW.SKL", binarySkeletonFile(binaryAngles(values)));
+    skeleton_.load("SHADOW.SKL");
+    EXPECT_EQ(skeleton_.getBoneAngleAtFrame(1, 0),
+              (common::CQuaternion4f{.w = kCrLfFloat, .x = 0.25F, .y = 0.125F, .z = 1.0F}));
+    EXPECT_EQ(skeleton_.getBoneAngleAtFrame(1, 1), (common::CQuaternion4f{.y = 1.0F}));
+    EXPECT_TRUE(skeleton_.getRootOffsets()[1].equals({.x = 4.0F, .y = 5.0F, .z = 6.0F}));
+    EXPECT_EQ(skeleton_.getMotionList().getMotions()[0].motion_name, "stand");
+}
+
+TEST_F(CSkeletonTest, AShortBinaryAngleBlockIsFatal) {
+    std::string file = binarySkeletonFile("");
+    file.resize(file.find("// angle list"));
+    expectFatal(file + "// angle list: w,x,y,z\r\n" + binaryAngles(std::array<float, 3>{}),
+                "Skeleton file corrupt");
 }
 
 TEST_F(CSkeletonTest, MoreThanAHundredBonesIsFatal) {

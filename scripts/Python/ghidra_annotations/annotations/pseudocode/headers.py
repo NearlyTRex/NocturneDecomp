@@ -92,7 +92,7 @@ def get_fallback_calling_conventions():
         "__cdecl0", "__cdecl4", "__cdecl8", "__cdecl12", "__cdecl16",
         "__cdecl20", "__cdecl24", "__cdecl28", "__cdecl32", "__cdecl36", "__cdecl40",
         # Hybrid conventions
-        "__stack_esi", "__stack2_esi", "__stack3_esi",
+        "__stack_esi", "__stack2_esi", "__stack3_esi", "__stack4_esi",
         "__stack_esi_edi", "__stack2_esi_edi",
     ]
 

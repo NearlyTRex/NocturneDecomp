@@ -1,0 +1,420 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 110,
+    "complexity_score": 277,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 52,
+    "suspect_count": 20,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "stack_alignment_array",
+      "stack_ref",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 162
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0040ca40",
+    "address_range": [
+      [
+        "0040ca40",
+        "0040cb58"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040ca40",
+    "signature": "uint __cdecl core_actor_cpp_CDemonActor_processFootstepAtOffset_FUN_0040ca40(CDemonActor *this_ptr,CVector3f *location,float volume)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408d70",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408d70"
+    },
+    {
+      "addr": "00537e30",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_ignore_FUN_00537e30"
+    },
+    {
+      "addr": "00537e00",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_init_FUN_00537e00"
+    },
+    {
+      "addr": "00534ea0",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_FUN_00534ea0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005caeda",
+      "name": "DAT_005caeda",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005caede",
+      "name": "DAT_005caede",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061b5a8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e661b8"
+    },
+    {
+      "addr": "01e661b8",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "01fb32ec",
+      "name": "g_CDemonSetInstance.ground_type",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fc783c",
+      "name": "g_CDemonCameraInstance.base.position",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fc7840",
+      "name": "g_CDemonCameraInstance.base.position+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fc7844",
+      "name": "g_CDemonCameraInstance.base.position+8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.04,
+    "instruction_count": 100,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 3,
+      "CALL": 5,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 222,
+      "FLOAT2FLOAT": 14,
+      "FLOAT_ADD": 3,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 62,
+      "INT_AND": 30,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 20,
+      "INT_LEFT": 8,
+      "INT_LESS": 1,
+      "INT_MULT": 18,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 10,
+      "INT_SUB": 43,
+      "INT_XOR": 1,
+      "INT_ZEXT": 26,
+      "LOAD": 34,
+      "POPCOUNT": 10,
+      "RETURN": 2,
+      "STORE": 37
+    },
+    "pcode_op_count": 604
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0040c750",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0040c990",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0040c8f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8125
+    },
+    "nocturne.exe": {
+      "addr": "0040d9f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8125
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "location",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "volume",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0040ca73",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 10,
+      "match": "afStackY_103c",
+      "severity": "moderate",
+      "text": "float afStackY_103c [1014];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 25,
+      "match": "&stack0xffffffbc",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffbc + (uint)bVar2 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 27,
+      "match": "&stack0xffffffc0",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffc0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 29,
+      "match": "&stack0xffffffc8",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffc8 + (uint)bVar2 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 31,
+      "match": "&stack0xffffffcc",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffcc + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 34,
+      "match": "&stack0xffffffb0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffffb0 + (uint)bVar2 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 35,
+      "match": "&stack0xffffffc8",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffc8 + (uint)bVar2 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 36,
+      "match": "&stack0xffffffb4",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffffb4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 37,
+      "match": "&stack0xffffffcc",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffcc + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Pointer value `&CStack_30` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 24,
+      "match": "(int)&CStack_30",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_30 + (uint)bVar2 * -8 + 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_30` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 26,
+      "match": "(int)&CStack_30",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_30 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_CDemonCameraInstance` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 30,
+      "match": "(int)&g_CDemonCameraInstance",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_CDemonCameraInstance + (uint)bVar2 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&stack0xffffffb0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 34,
+      "match": "(int)&stack0xffffffb0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffffb0 + (uint)bVar2 * -8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&stack0xffffffb4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 36,
+      "match": "(int)&stack0xffffffb4",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffffb4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 24,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_30 + (uint)bVar2 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 26,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_30 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 30,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_CDemonCameraInstance + (uint)bVar2 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 34,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffffb0 + (uint)bVar2 * -8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 36,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffffb4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
+      "type": "pointer_cast"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 44,
+        "vtable_addr": "005f7204"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 44,
+        "vtable_addr": "005fab04"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 44,
+        "vtable_addr": "005fbe04"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 44,
+        "vtable_addr": "005fec04"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 44,
+        "vtable_addr": "005ff904"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 141
+  }
+}

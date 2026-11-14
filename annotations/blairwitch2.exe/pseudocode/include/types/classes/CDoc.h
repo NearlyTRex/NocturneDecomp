@@ -2,15 +2,71 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CLadder;
+struct CWeapon;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CBoxActor.h"
+#include "types/classes/CHero.h"
+#include "types/classes/CMatrix3x4f.h"
+#include "types/classes/CVector3f.h"
+#include "types/structs/SArmAimData.h"
 
 // Structure: CDoc
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 156040; CHero + CStranger-style tail (ctor@004500d0+FUN_004501a2 repeat bw2 CStranger_ctor sequence) + lantern block + embedded CBoxActor at 0x259b4 ending at size
 // Ghidra size: 0x26188 (156040 bytes)
 #pragma pack(push, 1)
 typedef struct CDoc {
-    char field_0[156040]; // 0x0
+    CHero base; // 0x0, existing base
+    int guns_drawn; // 0x25640, archive CDoc_archive@004597a0 "gunsDrawn"/"gunDrawn"; ctor zeroes; canDoHeroAction tests
+    float guns_drawn_blend; // 0x25644, ctor zeroes (same slot/sequence as CStranger ctor); processFrame-equivalent FADD/FSUBR
+    float frame_cleared; // 0x25648, ctor zeroes, CStranger ctor sequence
+    float aim_pitch; // 0x2564c, ctor 0xbf060a92 (-pi/6), as CStranger ctor
+    float aim_speed_factor; // 0x25650, ctor FSTP random float, as CStranger ctor
+    SArmAimData right_arm_aim; // 0x25654, ctor zero/copy pattern +0x0/+0x4/+0x8/+0xc/+0x10/+0x14/+0x18/+0x1c identical to CStranger right_arm_aim
+    SArmAimData left_arm_aim; // 0x25674, ctor pattern identical to CStranger left_arm_aim
+    struct CLadder* ladder_to_descend; // 0x25694, archiveActor "ladderToDescend"; processDamage clears
+    struct CWeapon* weapon; // 0x25698, archiveActor "weapon"; drop/dropCarriedObject/processDamage compare with carry objects
+    int dual_wield_side; // 0x2569c, ctor zeroes; fire-button handler MOV/CMP/toggle as CStranger.dual_wield_side
+    int can_grab_weapon; // 0x256a0, ctor zeroes; fire-button handler sets 0/1, CMP in ladder fn (CStranger.can_grab_weapon)
+    int action_pending; // 0x256a4, archive CDoc_archive@004597a0 "actionPending"; heavy MOV/CMP in process/doHeroAction/canDoHeroAction
+    int melee_attack_index; // 0x256a8, ctor zeroes in CStranger.melee_attack_index slot (bw2 CStranger ctor 0x256a8)
+    float interact_blend; // 0x256ac, processFrame-equivalent FUN_00450c60: += / -= k*dt clamped 0..1 (CStranger.interact_blend pattern)
+    uint goggle_sfx_handles[2]; // 0x256b0, setup zeroes both; FUN_00450c60 killSfx on +0x256b0/+0x256b4 then startSfx
+    float turn_angle; // 0x256b8, ctor zeroes; turn fns FSUBR/FCOMP/FSTP (CStranger.turn_angle slot)
+    float turn_blend_weight; // 0x256bc, ctor zeroes; turn fns
+    float turn_blend_timer; // 0x256c0, ctor zeroes; turn fns
+    float turn_elapsed; // 0x256c4, ctor zeroes; turn fns
+    char field_153288[24]; // 0x256c8
+    CVector3f pending_velocity; // 0x256e0, ctor LEA+zero x/y/z (CStranger.pending_velocity)
+    int turn_motion_index; // 0x256ec, ctor -1; turn fns
+    int pickup_facing_reversed; // 0x256f0, ctor zeroes; doHeroAction sets (0 < dot)
+    float arm_recoil_blend; // 0x256f4, ctor zeroes; FLD/FSUB in recoil fns
+    float airborne_timer; // 0x256f8, ctor zeroes; processFrame-equivalent
+    float jump_speed; // 0x256fc, FUN_00450c60: set to const DAT_005f513c next to airborne_timer=0, then FMUL dt (CStranger.jump_speed)
+    CVector3f carry_object_world_center; // 0x25700, ctor x=-1e30; doHeroAction writes x/y/z
+    CBoundingBox3D carry_object_bbox; // 0x2570c, ctor +0xc = -1e30; doHeroAction writes 6 floats, adds to world center
+    CVector3f ref_r_hand_bone_pos; // 0x25724, setup copies bone position (CStranger.ref_r_hand_bone_pos)
+    CVector3f ref_r_upperarm_bone_pos; // 0x25730, setup copies bone position
+    float grab_timer; // 0x2573c, setup and getGrabbed zero it
+    CVector3f ladder_offset; // 0x25740, ladder-climb fn ("Climbing ladder %s") ADD this,+0x100; ladder blend LEA/FMUL
+    float ladder_facing_angle; // 0x2574c, ladder-climb fn stores it; processFrame FLD
+    float ladder_blend_time; // 0x25750, ladder-climb fn sets 1.0; setup zeroes; processFrame FDIV/FSTP
+    uint sfx_handle; // 0x25754, processDamage killSfx / vtable+0x34 pain sound stored here
+    int lantern_mode; // 0x25758, ctor/setInventoryIndex zero; FUN_00455d10 tweens lantern_tween_pct when set; FUN_00450c60 CMP
+    CMatrix3x4f lantern_transform; // 0x2575c, FUN_00455d10 multiplyMatrix3x4 then REP MOVSD 12 dwords into +0x2575c; transforms lantern light pos/dir; renderOpaque LEA
+    char field_153484[4]; // 0x2578c
+    CVector3f lantern_light_position; // 0x25790, FUN_00455d10 transformVector3x4InPlace by lantern_transform; renderTransparent renderConeLightGeometry arg
+    CVector3f lantern_light_direction; // 0x2579c, FUN_00455d10 set then transformed, passed to g_CDemonLight; renderConeLightGeometry arg
+    float fall_velocity_snapshot; // 0x257a8, ctor/setup zero; FUN_00450c60 copies velocity +0x258c ("Splat at %3.2f fps"), FCHS/compares
+    char field_153516[4]; // 0x257ac
+    char model_name[256]; // 0x257b0, archive v>=10 "modelName"; setCharacterModel strcpy; ctor copies default
+    char cloth_name[256]; // 0x258b0, archive v>=10 "clothName"; setCharacterModel strcpy; setup uses
+    float lantern_tween_pct; // 0x259b0, FUN_00455d10 += k*dt clamped 0..1; render* test >0; setInventoryIndex zeroes (archive key "lanternTweenPct")
+    CBoxActor lantern_box; // 0x259b4, ctor CBoxActor_ctor(this+0x259b4); setup setModelName(box.model,"Lantern.kfm"); renderOpaque/dtor
 } CDoc;
 #pragma pack(pop)
 

@@ -178,10 +178,6 @@ static char* g_MenuBitmapFilenames[8] = {
     "f0900", "f1100", "f1300", "f1500"
 };
 
-// char[100] constants
-static char g_IpAddress[100] = "10.0.0.105";
-static char g_DefaultActorTypeClass[100] = "corrupt!";
-
 // char[1024] constants
 static char g_HuffmanData12[1024] = {
     (char)0x02, (char)0x01, (char)0x00, (char)0x00, (char)0x06, (char)0x01, (char)0x02, (char)0x01, (char)0x00, (char)0x10, (char)0x02, (char)0x01,
@@ -589,12 +585,6 @@ static char g_HuffmanData01[16] = {
     (char)0x00, (char)0x11, (char)0x00, (char)0x00
 };
 
-// char[200] constants
-static char g_LoadSavefileStatus[200] = "(file corrupt)";
-
-// char[20] constants
-static char g_DefaultMissionIdentifier[20] = "(none)";
-
 // char[256] constants
 static char g_HuffmanData09[256] = {
     (char)0x02, (char)0x01, (char)0x00, (char)0x00, (char)0x04, (char)0x01, (char)0x02, (char)0x01, (char)0x00, (char)0x10, (char)0x00, (char)0x01,
@@ -668,12 +658,6 @@ static char g_HuffmanData11[256] = {
     (char)0x00, (char)0x75, (char)0x00, (char)0x57, (char)0x02, (char)0x01, (char)0x00, (char)0x76, (char)0x02, (char)0x01, (char)0x00, (char)0x67,
     (char)0x00, (char)0x77, (char)0x00, (char)0x00
 };
-
-// char[260] constants
-static char g_NetworkModelFilename[260] = "t:\\";
-
-// char[28] constants
-static char g_ReplayLodFilename[28] = "replay.txt";
 
 // char[40] constants
 static char g_HuffmanData02[40] = {

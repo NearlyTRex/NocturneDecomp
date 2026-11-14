@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_storm_cpp_staticInit_FUN_00568a50(void)
+; void __cdecl core_storm_cpp_staticInit_FUN_00568a50(void)
 ;
 ;
 ; Called Functions:

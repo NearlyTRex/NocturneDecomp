@@ -1,0 +1,135 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 25,
+    "complexity_score": 11,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 3,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 36
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005998d0",
+    "address_range": [
+      [
+        "005998d0",
+        "0059990f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_thehand.cpp_CTheHand_archive_FUN_005998d0",
+    "signature": "void __cdecl core_thehand_cpp_CTheHand_archive_FUN_005998d0(CTheHand *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b7f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveDeformableModelInstance_FUN_0040b7f0"
+    },
+    {
+      "addr": "0040b870",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040b870"
+    },
+    {
+      "addr": "0040b960",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archivePartStatus_FUN_0040b960"
+    },
+    {
+      "addr": "004a0520",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_archive_FUN_004a0520"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f7fbc",
+      "name": "s_s_0_modelName_005f7fba+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f7fc6",
+      "name": "s_motion_state_005f7fc6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f7fd3",
+      "name": "s_partStatus_005f7fd3",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.55,
+    "instruction_count": 20,
+    "opcode_distribution": {
+      "CALL": 4,
+      "COPY": 11,
+      "INT_ADD": 8,
+      "INT_AND": 10,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 10,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 5,
+      "INT_SUB": 12,
+      "LOAD": 3,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 12
+    },
+    "pcode_op_count": 91
+  },
+  "siblings": {
+    "bw3.exe": {
+      "addr": "0056c8c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTheHand *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CTheHand",
+        "offset": 212,
+        "vtable_addr": "00606e04"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -25,10 +25,10 @@
 ;   undefined4 DAT_005fba1c
 ;   CGame* g_CGamePtr = 01d2130c
 ;   undefined4 DAT_01c5faec
-;   undefined4 g_CGameInstance.field520_0x208
+;   undefined4 g_CGameInstance.camera_debug_enabled
 ;
 ; Called Functions:
-;   engine_2d.c_FUN_00402710
+;   engine_2d.c_drawTextCenteredXYColor_FUN_00402710
 ;
 ; *****************************************************************************
 
@@ -222,7 +222,7 @@ section .text
         ;   XREF to: 0045cef6 (UNCONDITIONAL_JUMP)  ; LAB_0045cef6
     MOV EAX,[0x005fe9dc]                ; 0045d025 | g_CGamePtr
         ;   Label: LAB_0045d025
-    CMP dword ptr [EAX + 0x208],0x0     ; 0045d02a | g_CGameInstance.field520_0x208
+    CMP dword ptr [EAX + 0x208],0x0     ; 0045d02a | g_CGameInstance.camera_debug_enabled
     JNZ 0x0045d03b                      ; 0045d031
         ;   XREF to: 0045d03b (CONDITIONAL_JUMP)  ; LAB_0045d03b
     ADD ESP,0x1c                        ; 0045d033
@@ -246,8 +246,8 @@ section .text
     PUSH EAX                            ; 0045d053
     MOV EDI,dword ptr [ESP + 0x40]      ; 0045d054
     PUSH EDI                            ; 0045d058
-    CALL engine_2d.c_FUN_00402710       ; 0045d059
-        ;   XREF to: 00402710 (UNCONDITIONAL_CALL)  ; void engine_2d.c_FUN_00402710(int left_x, int right_x, int y, char * text)
+    CALL engine_2d.c_drawTextCenteredXYColor_FUN_00402710 ; 0045d059
+        ;   XREF to: 00402710 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextCenteredXYColor_FUN_00402710(int left_x, int right_x, int y, char * text)
     ADD ESP,0x10                        ; 0045d05e
     ADD ESP,0x1c                        ; 0045d061
     POP EBP                             ; 0045d064

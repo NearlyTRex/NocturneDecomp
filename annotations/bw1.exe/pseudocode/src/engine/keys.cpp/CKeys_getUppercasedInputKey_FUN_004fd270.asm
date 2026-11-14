@@ -7,9 +7,9 @@
 ; CKeys *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_game.cpp_FUN_004d27b0 at 004d2873
-;   shape_edittool.cpp_FUN_00494690 at 00494afe
-;   shape_edittool.cpp_FUN_0049a9b0 at 0049aad4
+;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d2873
+;   shape_edittool.cpp_CPickList_handleInput_FUN_0049a9b0 at 0049aad4
+;   shape_edittool.cpp_showMultiChoiceDialog_FUN_00494690 at 00494afe
 ;
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_005c12b0

@@ -31,7 +31,7 @@ section .text
     ADD EBX,0x168                       ; 004cccbe
     PUSH EBX                            ; 004cccc4
     CALL core_flies.cpp_SFly_arrdtor200_FUN_004ccd60 ; 004cccc5
-        ;   XREF to: 004ccd60 (UNCONDITIONAL_CALL)  ; SFly * core_flies.cpp_SFly_arrdtor200_FUN_004ccd60(SFly * objs, uint flags)
+        ;   XREF to: 004ccd60 (UNCONDITIONAL_CALL)  ; SFly * core_flies.cpp_SFly_arrdtor200_FUN_004ccd60(SFly * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004cccca
     PUSH 0x1                            ; 004ccccd
     LEA EBX,[EAX + 0xfffffe98]          ; 004ccccf

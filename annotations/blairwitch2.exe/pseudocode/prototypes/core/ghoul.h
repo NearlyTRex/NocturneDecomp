@@ -11,43 +11,43 @@ void __cdecl staticInit(void);
 
 // Original: core_ghoul.cpp_factoryFuncGhoul_FUN_004c15b0
 // Address: 004c15b0
-void factoryFuncGhoul(void);
+CGhoul * __cdecl factoryFuncGhoul(void);
 
 // Original: core_ghoul.cpp_CGhoul_getActorType_FUN_004c15d0
 // Address: 004c15d0
-CDemonActorType * CGhoul::getActorType(CGhoul *this_ptr);
+CDemonActorType * __cdecl CGhoul::getActorType(CGhoul *this_ptr);
 
 // Original: core_ghoul.cpp_CGhoul_ctor_FUN_004c15e0
 // Address: 004c15e0
-CGhoul * CGhoul::ctor(CGhoul *this_ptr);
+CGhoul * __cdecl CGhoul::ctor(CGhoul *this_ptr);
 
-// Original: core_ghoul.cpp_FUN_004c1710
+// Original: core_ghoul.cpp_CGhoul_setup_FUN_004c1710
 // Address: 004c1710
-void FUN_004c1710(CEnemy *param_1);
+void __cdecl CGhoul::setup(CGhoul *this_ptr);
 
 // Original: core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004c1980
 // Address: 004c1980
 void __cdecl CGhoul::findDarkWayPoint(CGhoul *this_ptr,float delta_time);
 
-// Original: core_ghoul.cpp_FUN_004c1bb0
+// Original: core_ghoul.cpp_CGhoul_process_FUN_004c1bb0
 // Address: 004c1bb0
-void FUN_004c1bb0(CGhoul *param_1,float param_2);
+void __cdecl CGhoul::process(CGhoul *this_ptr,float delta_time);
 
 // Original: core_ghoul.cpp_CGhoul_renderBackground_FUN_004c3980
 // Address: 004c3980
 void __cdecl CGhoul::renderBackground(CGhoul *this_ptr,int layer_flag);
 
-// Original: core_ghoul.cpp_FUN_004c39b0
+// Original: core_ghoul.cpp_CGhoul_archive_FUN_004c39b0
 // Address: 004c39b0
-void FUN_004c39b0(CEnemy *param_1);
+void __cdecl CGhoul::archive(CGhoul *this_ptr);
 
-// Original: core_ghoul.cpp_FUN_004c3ac0
+// Original: core_ghoul.cpp_CGhoul_canBeAttracted_FUN_004c3ac0
 // Address: 004c3ac0
-undefined4 FUN_004c3ac0(int param_1,undefined4 *param_2);
+int __cdecl CGhoul::canBeAttracted(CGhoul *this_ptr,CVector3f *out_attract_position);
 
-// Original: core_ghoul.cpp_FUN_004c3da0
+// Original: core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004c3da0
 // Address: 004c3da0
-void FUN_004c3da0(int param_1);
+CVector3f * __cdecl CGhoul::getTargetPoint(CGhoul *this_ptr,CVector3f *out_point);
 
 // Original: core_ghoul.cpp_CGhoul_processDismemberment_FUN_004c3e30
 // Address: 004c3e30
@@ -57,10 +57,10 @@ void __cdecl CGhoul::processDismemberment(CGhoul *this_ptr,SDamageInfo *damage_i
 // Address: 004c40f0
 void __cdecl CGhoul::processDamage(CGhoul *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_ghoul.cpp_FUN_004c44d0
+// Original: core_ghoul.cpp_CGhoul_getTargetPoints_FUN_004c44d0
 // Address: 004c44d0
-int FUN_004c44d0(int param_1,float *param_2);
+int __cdecl CGhoul::getTargetPoints(CGhoul *this_ptr,CVector3f *out_points_array);
 
 // Original: core_ghoul.cpp_CGhoul_dtor_FUN_004c47a0
 // Address: 004c47a0
-CGhoul * CGhoul::dtor(CGhoul *this_ptr,uint flags);
+CGhoul * __cdecl CGhoul::dtor(CGhoul *this_ptr,uint flags);

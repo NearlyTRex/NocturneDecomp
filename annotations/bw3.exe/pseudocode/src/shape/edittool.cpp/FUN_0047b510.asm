@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   engine_2d.c_plotPixel_FUN_00401130
-;   engine_mini3d.cpp_FUN_004f36e0
+;   engine_mini3d.cpp_drawPixel_FUN_004f36e0
 ;
 ; *****************************************************************************
 
@@ -57,8 +57,8 @@ section .text
         ;   XREF to: 0047b56b (CONDITIONAL_JUMP)  ; LAB_0047b56b
     PUSH EDX                            ; 0047b560
     PUSH EAX                            ; 0047b561
-    CALL engine_mini3d.cpp_FUN_004f36e0 ; 0047b562
-        ;   XREF to: 004f36e0 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f36e0()
+    CALL engine_mini3d.cpp_drawPixel_FUN_004f36e0 ; 0047b562
+        ;   XREF to: 004f36e0 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_drawPixel_FUN_004f36e0(int x, int y)
     ADD ESP,0x8                         ; 0047b567
     RET                                 ; 0047b56a
         ;   Label: LAB_0047b56a

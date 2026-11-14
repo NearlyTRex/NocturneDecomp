@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_FUN_00433c60(CDemonActor *param_1,float param_2)
+; void core_charactr_cpp_FUN_00433c60(CCharacter *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xb0]:4  local_b0
@@ -27,16 +27,16 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[14]:
-;   core_asgaya.cpp_FUN_005a0be0 at 005a0d6f
-;   core_dog.cpp_FUN_004628b0 at 004628ee
-;   core_hecaitmx.cpp_FUN_00597f40 at 00597f99
-;   core_npc.cpp_FUN_00509120 at 005091a9
+;   core_asgaya.cpp_CAsgaya_process_FUN_005a0be0 at 005a0d6f
+;   core_bird.cpp_CBird_process_FUN_0040fb40 at 0040fb6d
+;   core_darkwolf.cpp_CDarkwolf_process_FUN_005989e0 at 00598a20
+;   core_dog.cpp_CZombieDog_process_FUN_004628b0 at 004628ee
+;   core_hecaitmx.cpp_CHecaitomix_process_FUN_00597f40 at 00597f99
+;   core_npc.cpp_CNPC_process_FUN_00509120 at 005091a9
 ;   core_prye.cpp_FUN_00518cd0 at 00518ec4
 ;   core_shadow.cpp_FUN_005438d0 at 00543919
-;   core_shotgun.cpp_FUN_00546400 at 0054643e
-;   core_spirbear.cpp_FUN_0059ae00 at 0059ae16
-;   core_spireagl.cpp_FUN_00599540 at 00599553
-;   core_spirindi.cpp_FUN_0059a2b0 at 0059a2c6
+;   core_shotgun.cpp_CShadowsc_process_FUN_00546400 at 0054643e
+;   core_spirbear.cpp_CSpiritBear_process_FUN_0059ae00 at 0059ae16
 ;   ... and 4 more
 ;
 ; Referenced Globals:
@@ -49,17 +49,17 @@
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 DAT_007e2cb0
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.field1420420_0x15ac84
+;   undefined4 g_CDemonSetInstance.active_fog.temperature
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b00
 ;   core_actor.cpp_FUN_00408b80
-;   core_actor.cpp_FUN_0040c790
-;   core_actor.cpp_FUN_0040ce40
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
+;   core_actor.cpp_isOfClass_FUN_0040c790
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004a2560
-;   core_setcolid.cpp_FUN_0053ef60
+;   core_setcolid.cpp_CDemonSet_isPointInWater_FUN_0053ef60
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
-;   core_skeleton.cpp_FUN_00548090
+;   core_skeleton.cpp_CSkeleton_findBone_FUN_00548090
 ;   core_xform.cpp_FUN_00583260
 ;
 ; *****************************************************************************
@@ -127,8 +127,8 @@ section .text
     PUSH 0x41000000                     ; 00433d00
         ;   Label: LAB_00433d00
     PUSH 0x40a00000                     ; 00433d05
-    CALL core_actor.cpp_FUN_0040ce40    ; 00433d0a
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 00433d0a
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [EBP + 0x76],EAX      ; 00433d0f
     FLD float ptr [EBP + 0x76]          ; 00433d12
     FADD float ptr [EBX + 0x30c8]       ; 00433d15
@@ -137,7 +137,7 @@ section .text
         ;   XREF to: 00433cc0 (UNCONDITIONAL_JUMP)  ; LAB_00433cc0
     MOV EAX,[0x00603b28]                ; 00433d20 | g_CDemonSetPtr
         ;   Label: LAB_00433d20
-    FLD float ptr [EAX + 0x15ac84]      ; 00433d25 | g_CDemonSetInstance.field1420420_0x15ac84
+    FLD float ptr [EAX + 0x15ac84]      ; 00433d25 | g_CDemonSetInstance.active_fog.temperature
     FCOMP double ptr [0x005b8866]       ; 00433d2b | DAT_005b8866
     FNSTSW AX                           ; 00433d31
     SAHF                                ; 00433d33
@@ -167,8 +167,8 @@ section .text
     PUSH 0x0                            ; 00433d80
     PUSH 0x5b8854                       ; 00433d82 | = "Bip01 head"
     PUSH EAX                            ; 00433d87
-    CALL core_skeleton.cpp_FUN_00548090 ; 00433d88
-        ;   XREF to: 00548090 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_00548090(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
+    CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00548090 ; 00433d88
+        ;   XREF to: 00548090 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00548090(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 00433d8d
     CMP EAX,-0x1                        ; 00433d90
     JZ 0x00433ce2                       ; 00433d93
@@ -213,8 +213,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00433df9
     MOVSD ES:EDI,ESI                    ; 00433dfa
     MOVSD ES:EDI,ESI                    ; 00433dfb
-    CALL core_setcolid.cpp_FUN_0053ef60 ; 00433dfc
-        ;   XREF to: 0053ef60 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_FUN_0053ef60(CDemonSet * this_ptr, CVector3f * point)
+    CALL core_setcolid.cpp_CDemonSet_isPointInWater_FUN_0053ef60 ; 00433dfc
+        ;   XREF to: 0053ef60 (UNCONDITIONAL_CALL)  ; int core_setcolid.cpp_CDemonSet_isPointInWater_FUN_0053ef60(CDemonSet * this_ptr, CVector3f * point)
     ADD ESP,0x8                         ; 00433e01
     TEST EAX,EAX                        ; 00433e04
     JNZ 0x00433ce2                      ; 00433e06
@@ -227,8 +227,8 @@ section .text
         ;   XREF to: 00433f77 (CONDITIONAL_JUMP)  ; LAB_00433f77
     PUSH 0x40400000                     ; 00433e27
     PUSH 0x3fc00000                     ; 00433e2c
-    CALL core_actor.cpp_FUN_0040ce40    ; 00433e31
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 00433e31
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [EBP + 0x76],EAX      ; 00433e36
     FLD float ptr [EBP + 0x76]          ; 00433e39
     FADD float ptr [EBX + 0x30c8]       ; 00433e3c
@@ -243,8 +243,8 @@ section .text
     PUSH 0x5b883e                       ; 00433e53 | s_CZombieDog_005b883d+1
         ;   Label: LAB_00433e53
     PUSH EBX                            ; 00433e58
-    CALL core_actor.cpp_FUN_0040c790    ; 00433e59
-        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c790 ; 00433e59
+        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 00433e5e
     TEST EAX,EAX                        ; 00433e61
     JNZ 0x00433d3a                      ; 00433e63
@@ -293,8 +293,8 @@ section .text
     PUSH 0x0                            ; 00433edd
     PUSH 0x5b8849                       ; 00433edf | = "Bip01 head"
     PUSH EAX                            ; 00433ee4
-    CALL core_skeleton.cpp_FUN_00548090 ; 00433ee5
-        ;   XREF to: 00548090 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_00548090(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
+    CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00548090 ; 00433ee5
+        ;   XREF to: 00548090 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00548090(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 00433eea
     CMP EAX,-0x1                        ; 00433eed
     JZ 0x00433d48                       ; 00433ef0
@@ -352,8 +352,8 @@ section .text
     PUSH 0x3fc00000                     ; 00433f77
         ;   Label: LAB_00433f77
     PUSH 0x3f800000                     ; 00433f7c
-    CALL core_actor.cpp_FUN_0040ce40    ; 00433f81
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 00433f81
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [EBP + 0x76],EAX      ; 00433f86
     FLD float ptr [EBP + 0x76]          ; 00433f89
     FADD float ptr [EBX + 0x30c8]       ; 00433f8c

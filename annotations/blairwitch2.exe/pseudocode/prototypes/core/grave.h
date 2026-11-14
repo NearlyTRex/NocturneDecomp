@@ -7,51 +7,51 @@
 
 // Original: core_grave.cpp_staticInit_FUN_004ca0c0
 // Address: 004ca0c0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_grave.cpp_factoryFuncGrave_FUN_004ca0f0
 // Address: 004ca0f0
-void factoryFuncGrave(void);
+CGrave * __cdecl factoryFuncGrave(void);
 
 // Original: core_grave.cpp_CGrave_getActorType_FUN_004ca110
 // Address: 004ca110
-CDemonActorType * CGrave::getActorType(CGrave *this_ptr);
+CDemonActorType * __cdecl CGrave::getActorType(CGrave *this_ptr);
 
 // Original: core_grave.cpp_CGrave_ctor_FUN_004ca120
 // Address: 004ca120
 CGrave * __cdecl CGrave::ctor(CGrave *this_ptr);
 
-// Original: core_grave.cpp_FUN_004ca1b0
+// Original: core_grave.cpp_CGrave_setup_FUN_004ca1b0
 // Address: 004ca1b0
-void FUN_004ca1b0(CDemonActor *param_1);
+void __cdecl CGrave::setup(CGrave *this_ptr);
 
-// Original: core_grave.cpp_FUN_004ca1d0
+// Original: core_grave.cpp_CGrave_process_FUN_004ca1d0
 // Address: 004ca1d0
-void FUN_004ca1d0(CGrave *param_1,float param_2);
+void __cdecl CGrave::process(CGrave *this_ptr,float delta_time);
 
-// Original: core_grave.cpp_FUN_004ca290
+// Original: core_grave.cpp_CGrave_renderOpaque_FUN_004ca290
 // Address: 004ca290
-int FUN_004ca290(CDemonActor *param_1);
+int __cdecl CGrave::renderOpaque(CGrave *this_ptr);
 
-// Original: core_grave.cpp_FUN_004ca340
+// Original: core_grave.cpp_CGrave_renderBackground_FUN_004ca340
 // Address: 004ca340
-void FUN_004ca340(CDemonActor *param_1,int param_2);
+void __cdecl CGrave::renderBackground(CGrave *this_ptr,int layer_flag);
 
-// Original: core_grave.cpp_FUN_004ca3e0
+// Original: core_grave.cpp_CGrave_startAnimation_FUN_004ca3e0
 // Address: 004ca3e0
-void __cdecl FUN_004ca3e0(CGrave *this_ptr);
+void __cdecl CGrave::startAnimation(CGrave *this_ptr);
 
-// Original: core_grave.cpp_FUN_004ca440
+// Original: core_grave.cpp_CGrave_archive_FUN_004ca440
 // Address: 004ca440
-void FUN_004ca440(CDemonActor *param_1);
+void __cdecl CGrave::archive(CGrave *this_ptr);
 
-// Original: core_grave.cpp_FUN_004ca540
+// Original: core_grave.cpp_CGrave_getBoundingBox_FUN_004ca540
 // Address: 004ca540
-void FUN_004ca540(int param_1);
+CBoundingBox3D * __cdecl CGrave::getBoundingBox(CGrave *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_grave.cpp_FUN_004ca650
+// Original: core_grave.cpp_CGrave_getCollisionType_FUN_004ca650
 // Address: 004ca650
-undefined4 FUN_004ca650(void);
+ECollisionType __cdecl CGrave::getCollisionType(CGrave *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_grave.cpp_CGrave_dtor_FUN_004ca660
 // Address: 004ca660

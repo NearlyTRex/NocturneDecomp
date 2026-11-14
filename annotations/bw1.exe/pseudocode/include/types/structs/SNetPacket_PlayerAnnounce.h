@@ -13,9 +13,7 @@
 #pragma pack(push, 1)
 typedef struct SNetPacket_PlayerAnnounce {
     SNetPacketHeader header; // 0x0
-    char field_1[4]; // 0x1
     SNetworkAddr addr; // 0x5
-    char field_6[7]; // 0x6
     char name[20]; // 0xd
     EHeroType hero_number; // 0x21
     int aim_mode; // 0x25

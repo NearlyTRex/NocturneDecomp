@@ -9,5 +9,5 @@
 EGroundType __cdecl core_stairs_cpp_CStairs_getGroundType_FUN_00568720(CStairs *this_ptr)
 
 {
-  return *(EGroundType *)&this_ptr->field_0xa30;
+  return this_ptr->ground_type;
 }

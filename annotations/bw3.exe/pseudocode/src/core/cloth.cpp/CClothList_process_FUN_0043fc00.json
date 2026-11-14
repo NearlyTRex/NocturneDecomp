@@ -2,45 +2,47 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 16,
+    "complexity_score": 31,
     "cross_reference_count": 5,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 16,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
     "total_lines": 54
   },
   "cross_references": [
     {
-      "addr": "0042b0e0",
-      "from_addr": "0042b2aa",
-      "name": "core_charactr.cpp_FUN_0042b0e0",
+      "addr": "00433350",
+      "from_addr": "004333cd",
+      "name": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00433350",
-      "from_addr": "004333cd",
-      "name": "core_charactr.cpp_FUN_00433350",
+      "addr": "0042b0e0",
+      "from_addr": "0042b2aa",
+      "name": "core_charactr.cpp_CCharacter_setup_FUN_0042b0e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0059aba0",
       "from_addr": "0059ac4b",
-      "name": "core_spirbear.cpp_FUN_0059aba0",
+      "name": "core_spirbear.cpp_CSpiritBear_setup_FUN_0059aba0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005992f0",
       "from_addr": "00599387",
-      "name": "core_spireagl.cpp_FUN_005992f0",
+      "name": "core_spireagl.cpp_CSpiritEagle_setup_FUN_005992f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0059a060",
       "from_addr": "0059a10b",
-      "name": "core_spirindi.cpp_FUN_0059a060",
+      "name": "core_spirindi.cpp_CSpiritIndian_setup_FUN_0059a060",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -70,7 +72,7 @@
       {
         "call_addr": "004333cd",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_00433350",
+        "caller": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350",
         "estimated_params": 6,
         "instructions_analyzed": 11,
         "method": "push_count",
@@ -81,7 +83,7 @@
       {
         "call_addr": "0042b2aa",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_0042b0e0",
+        "caller": "core_charactr.cpp_CCharacter_setup_FUN_0042b0e0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -92,7 +94,7 @@
       {
         "call_addr": "00599387",
         "call_type": "direct",
-        "caller": "core_spireagl.cpp_FUN_005992f0",
+        "caller": "core_spireagl.cpp_CSpiritEagle_setup_FUN_005992f0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -103,7 +105,7 @@
       {
         "call_addr": "0059a10b",
         "call_type": "direct",
-        "caller": "core_spirindi.cpp_FUN_0059a060",
+        "caller": "core_spirindi.cpp_CSpiritIndian_setup_FUN_0059a060",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -114,7 +116,7 @@
       {
         "call_addr": "0059ac4b",
         "call_type": "direct",
-        "caller": "core_spirbear.cpp_FUN_0059aba0",
+        "caller": "core_spirbear.cpp_CSpiritBear_setup_FUN_0059aba0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -154,6 +156,32 @@
       "STORE": 11
     },
     "pcode_op_count": 135
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b1780",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00441fa0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0043c2d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00438550",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 28,
@@ -206,5 +234,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 15,
+      "match": "pCVar2 = (T *)pCVar2->ARRAY",
+      "severity": "moderate",
+      "text": "pCVar2 = (CClothList *)pCVar2->filenames;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
 }

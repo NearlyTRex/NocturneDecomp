@@ -13,11 +13,11 @@ CElephantGun * __cdecl core_elephant_cpp_CElephantGun_dtor_FUN_00487930(CElephan
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CElephantGunTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CElephantGunTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  pCVar1 = (CElephantGun *)core_weapon_cpp_CWeapon_dtor_FUN_0057aed0((CWeapon *)this_ptr,1);
+  pCVar1 = (CElephantGun *)core_weapon_cpp_CWeapon_dtor_FUN_0057aed0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

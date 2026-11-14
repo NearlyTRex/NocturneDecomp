@@ -46,24 +46,19 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_00477530(CDemonRay
   int local_24;
   
   fVar16 = (float10)_DAT_005bcbdd;
-  fVar19 = (float10)1 / ((float10)*(float *)&this_ptr->field_0x28 * fVar16);
-  fVar20 = (float10)1 / ((float10)*(float *)&this_ptr->field_0x2c * fVar16);
-  fVar2 = (float)(((float10)*(float *)start_position - (float10)*(float *)&this_ptr->field_0x10) *
-                 fVar19);
-  fVar21 = (float10)1 / ((float10)*(float *)&this_ptr->field_0x30 * fVar16);
-  fVar19 = ((float10)*(float *)end_position - (float10)*(float *)&this_ptr->field_0x10) * fVar19;
-  fVar3 = (float)(((float10)*(float *)&start_position->field_0x4 -
-                  (float10)*(float *)&this_ptr->field_0x14) * fVar20);
-  fVar20 = ((float10)*(float *)&end_position->field_0x4 - (float10)*(float *)&this_ptr->field_0x14)
-           * fVar20;
-  fVar16 = ((float10)*(float *)&end_position->field_0x8 - (float10)*(float *)&this_ptr->field_0x18)
-           * fVar21;
+  fVar19 = (float10)1 / ((float10)(this_ptr->cell_size).x * fVar16);
+  fVar20 = (float10)1 / ((float10)(this_ptr->cell_size).y * fVar16);
+  fVar2 = (float)(((float10)start_position->x - (float10)(this_ptr->bbox_min).x) * fVar19);
+  fVar21 = (float10)1 / ((float10)(this_ptr->cell_size).z * fVar16);
+  fVar19 = ((float10)end_position->x - (float10)(this_ptr->bbox_min).x) * fVar19;
+  fVar3 = (float)(((float10)start_position->y - (float10)(this_ptr->bbox_min).y) * fVar20);
+  fVar20 = ((float10)end_position->y - (float10)(this_ptr->bbox_min).y) * fVar20;
+  fVar16 = ((float10)end_position->z - (float10)(this_ptr->bbox_min).z) * fVar21;
   iVar15 = 1;
-  fVar5 = *(float *)end_position - *(float *)start_position;
-  fVar6 = *(float *)&end_position->field_0x4 - *(float *)&start_position->field_0x4;
-  fVar7 = *(float *)&end_position->field_0x8 - *(float *)&start_position->field_0x8;
-  fVar4 = (float)(((float10)*(float *)&start_position->field_0x8 -
-                  (float10)*(float *)&this_ptr->field_0x18) * fVar21);
+  fVar5 = end_position->x - start_position->x;
+  fVar6 = end_position->y - start_position->y;
+  fVar7 = end_position->z - start_position->z;
+  fVar4 = (float)(((float10)start_position->z - (float10)(this_ptr->bbox_min).z) * fVar21);
   round();
   round();
   round();
@@ -154,8 +149,8 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_00477530(CDemonRay
                          (int)((local_2c + (local_2c >> 0x1f) * -8) -
                               (uint)((local_2c >> 0x1f) << 2 < 0)) >> 3);
     if (pCVar14 != (CDemonCube *)0x0) {
-      if ((*(int *)pCVar14 != 0) &&
-         ((*(byte *)(*(int *)pCVar14 + (local_2c % 8) * 8 + local_34 % 8) &
+      if ((pCVar14->voxel_buffer1 != (SVoxelGrid *)0x0) &&
+         ((pCVar14->voxel_buffer1->voxels[local_2c % 8][local_34 % 8] &
           (&DAT_005fb0e8)[local_38 % 8]) != 0)) {
         return 1;
       }

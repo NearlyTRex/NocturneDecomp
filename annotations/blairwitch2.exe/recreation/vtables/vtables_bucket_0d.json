@@ -1,7 +1,7 @@
 [
   {
     "addr":"005f65d4",
-    "owner":"CParticle",
+    "owner":"CFireball",
     "slots":[
       {
         "addr":"00510e00",
@@ -10,24 +10,45 @@
       },
       {
         "addr":"00495960",
-        "name":"core_fire.cpp_FUN_00495960",
+        "name":"core_fire.cpp_CFireball_process_FUN_00495960",
         "offset":4
       },
       {
         "addr":"00495ca0",
-        "name":"core_fire.cpp_FUN_00495ca0",
+        "name":"core_fire.cpp_CFireball_render_FUN_00495ca0",
         "offset":8
       },
       {
         "addr":"004964c0",
-        "name":"core_fire.cpp_FUN_004964c0",
+        "name":"core_fire.cpp_CFireball_onCollision_FUN_004964c0",
         "offset":12
       }
     ]
   },
   {
+    "addr":"005f6ed4",
+    "owner":"SPageResourceText",
+    "slots":[
+      {
+        "addr":"004a2000",
+        "name":"core_fldnotes.cpp_SPageResourceText_dtor_FUN_004a2000",
+        "offset":0
+      },
+      {
+        "addr":"004a2060",
+        "name":"core_fldnotes.cpp_SPageResourceText_draw_FUN_004a2060",
+        "offset":4
+      },
+      {
+        "addr":"004a1f60",
+        "name":"core_fldnotes.cpp_SPageResource_onMouse_FUN_004a1f60",
+        "offset":8
+      }
+    ]
+  },
+  {
     "addr":"005f7bd4",
-    "owner":"CParticle",
+    "owner":"CBloodParticle",
     "slots":[
       {
         "addr":"00510e00",
@@ -46,7 +67,7 @@
       },
       {
         "addr":"004c7da0",
-        "name":"core_gore.cpp_FUN_004c7da0",
+        "name":"core_gore.cpp_CBloodParticle_onCollision_FUN_004c7da0",
         "offset":12
       }
     ]
@@ -67,7 +88,7 @@
       },
       {
         "addr":"004d1400",
-        "name":"core_hostage.cpp_FUN_004d1400",
+        "name":"core_hostage.cpp_CHostage_setup_FUN_004d1400",
         "offset":8
       },
       {
@@ -82,42 +103,42 @@
       },
       {
         "addr":"004d1660",
-        "name":"core_hostage.cpp_FUN_004d1660",
+        "name":"core_hostage.cpp_CHostage_process_FUN_004d1660",
         "offset":20
       },
       {
         "addr":"004d15d0",
-        "name":"core_hostage.cpp_FUN_004d15d0",
+        "name":"core_hostage.cpp_CHostage_renderOpaque_FUN_004d15d0",
         "offset":24
       },
       {
         "addr":"00510990",
-        "name":"core_npc.cpp_FUN_00510990",
+        "name":"core_npc.cpp_CNPC_renderTransparent_FUN_00510990",
         "offset":28
       },
       {
         "addr":"004d2da0",
-        "name":"core_hostage.cpp_FUN_004d2da0",
+        "name":"core_hostage.cpp_CHostage_renderBackground_FUN_004d2da0",
         "offset":32
       },
       {
         "addr":"004271e0",
-        "name":"core_charactr.cpp_FUN_004271e0",
+        "name":"core_charactr.cpp_CCharacter_getBoundingBox_FUN_004271e0",
         "offset":36
       },
       {
         "addr":"0040c990",
-        "name":"core_actor.cpp_FUN_0040c990",
+        "name":"core_actor.cpp_CDemonActor_processFootstep_FUN_0040c990",
         "offset":40
       },
       {
         "addr":"0040ca40",
-        "name":"core_actor.cpp_FUN_0040ca40",
+        "name":"core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040ca40",
         "offset":44
       },
       {
         "addr":"0040cb60",
-        "name":"core_actor.cpp_FUN_0040cb60",
+        "name":"core_actor.cpp_CDemonActor_handleFootstep_FUN_0040cb60",
         "offset":48
       },
       {
@@ -137,17 +158,17 @@
       },
       {
         "addr":"00408ec0",
-        "name":"core_actor.cpp_FUN_00408ec0",
+        "name":"core_actor.cpp_CDemonActor_playAmbientSoundWithDelay_FUN_00408ec0",
         "offset":64
       },
       {
         "addr":"00427680",
-        "name":"core_charactr.cpp_FUN_00427680",
+        "name":"core_charactr.cpp_CCharacter_getCollisionType_FUN_00427680",
         "offset":68
       },
       {
         "addr":"00408c30",
-        "name":"core_actor.cpp_FUN_00408c30",
+        "name":"core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408c30",
         "offset":72
       },
       {
@@ -167,7 +188,7 @@
       },
       {
         "addr":"00409850",
-        "name":"core_actor.cpp_FUN_00409850",
+        "name":"core_actor.cpp_CDemonActor_updateCollisionData_FUN_00409850",
         "offset":88
       },
       {
@@ -177,27 +198,27 @@
       },
       {
         "addr":"00409af0",
-        "name":"core_actor.cpp_FUN_00409af0",
+        "name":"core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409af0",
         "offset":96
       },
       {
         "addr":"00429ce0",
-        "name":"core_charactr.cpp_FUN_00429ce0",
+        "name":"core_charactr.cpp_CCharacter_canLookAt_FUN_00429ce0",
         "offset":100
       },
       {
         "addr":"00409e30",
-        "name":"core_actor.cpp_FUN_00409e30",
+        "name":"core_actor.cpp_CDemonActor_evaluateTriggerCondition_FUN_00409e30",
         "offset":104
       },
       {
         "addr":"00409e40",
-        "name":"core_actor.cpp_FUN_00409e40",
+        "name":"core_actor.cpp_CDemonActor_processActionButton_FUN_00409e40",
         "offset":108
       },
       {
         "addr":"00422ec0",
-        "name":"core_charactr.cpp_FUN_00422ec0",
+        "name":"core_charactr.cpp_CCharacter_setPositionAndOrientation_FUN_00422ec0",
         "offset":112
       },
       {
@@ -207,7 +228,7 @@
       },
       {
         "addr":"0040c890",
-        "name":"core_actor.cpp_FUN_0040c890",
+        "name":"core_actor.cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040c890",
         "offset":120
       },
       {
@@ -217,17 +238,17 @@
       },
       {
         "addr":"0040a050",
-        "name":"core_actor.cpp_FUN_0040a050",
+        "name":"core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050",
         "offset":128
       },
       {
         "addr":"0040ad50",
-        "name":"core_actor.cpp_FUN_0040ad50",
+        "name":"core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040ad50",
         "offset":132
       },
       {
         "addr":"0040ad90",
-        "name":"core_actor.cpp_FUN_0040ad90",
+        "name":"core_actor.cpp_CDemonActor_playAttackHitEffects_FUN_0040ad90",
         "offset":136
       },
       {
@@ -247,7 +268,7 @@
       },
       {
         "addr":"00427a60",
-        "name":"core_charactr.cpp_FUN_00427a60",
+        "name":"core_charactr.cpp_CCharacter_drop_FUN_00427a60",
         "offset":152
       },
       {
@@ -257,7 +278,7 @@
       },
       {
         "addr":"00409ed0",
-        "name":"core_actor.cpp_FUN_00409ed0",
+        "name":"core_actor.cpp_CDemonActor_getInteractionInfo_FUN_00409ed0",
         "offset":160
       },
       {
@@ -272,12 +293,12 @@
       },
       {
         "addr":"00409f10",
-        "name":"core_actor.cpp_FUN_00409f10",
+        "name":"core_actor.cpp_CDemonActor_stopInteraction_FUN_00409f10",
         "offset":172
       },
       {
         "addr":"00429e60",
-        "name":"core_charactr.cpp_FUN_00429e60",
+        "name":"core_charactr.cpp_CCharacter_spawnFlies_FUN_00429e60",
         "offset":176
       },
       {
@@ -287,32 +308,32 @@
       },
       {
         "addr":"00408f90",
-        "name":"core_actor.cpp_FUN_00408f90",
+        "name":"core_actor.cpp_CDemonActor_testLineIntersection_FUN_00408f90",
         "offset":184
       },
       {
         "addr":"00427730",
-        "name":"core_charactr.cpp_FUN_00427730",
+        "name":"core_charactr.cpp_CCharacter_onLaserHit_FUN_00427730",
         "offset":188
       },
       {
         "addr":"00408b90",
-        "name":"core_actor.cpp_FUN_00408b90",
+        "name":"core_actor.cpp_CDemonActor_customRayIntersect_FUN_00408b90",
         "offset":192
       },
       {
         "addr":"00408bc0",
-        "name":"core_actor.cpp_FUN_00408bc0",
+        "name":"core_actor.cpp_CDemonActor_customIntersectCylinderXZ_FUN_00408bc0",
         "offset":196
       },
       {
         "addr":"00408bf0",
-        "name":"core_actor.cpp_FUN_00408bf0",
+        "name":"core_actor.cpp_CDemonActor_customGetFloorHeight_FUN_00408bf0",
         "offset":200
       },
       {
         "addr":"00510c90",
-        "name":"unkafter_npc.cpp_FUN_00510c90",
+        "name":"core_npc.cpp_CNPC_getPathMap_FUN_00510c90",
         "offset":204
       },
       {
@@ -337,42 +358,42 @@
       },
       {
         "addr":"004239b0",
-        "name":"core_charactr.cpp_FUN_004239b0",
+        "name":"core_charactr.cpp_CCharacter_applyDamage_FUN_004239b0",
         "offset":224
       },
       {
         "addr":"00423900",
-        "name":"core_charactr.cpp_FUN_00423900",
+        "name":"core_charactr.cpp_CCharacter_kill_FUN_00423900",
         "offset":228
       },
       {
         "addr":"00510c70",
-        "name":"unkafter_npc.cpp_FUN_00510c70",
+        "name":"core_npc.cpp_CNPC_isInvulnerable_FUN_00510c70",
         "offset":232
       },
       {
         "addr":"004d3010",
-        "name":"core_hostage.cpp_FUN_004d3010",
+        "name":"core_hostage.cpp_CHostage_isGrabbable_FUN_004d3010",
         "offset":236
       },
       {
         "addr":"004d3050",
-        "name":"core_hostage.cpp_FUN_004d3050",
+        "name":"core_hostage.cpp_CHostage_canBeGrabbed_FUN_004d3050",
         "offset":240
       },
       {
         "addr":"004d3060",
-        "name":"core_hostage.cpp_FUN_004d3060",
+        "name":"core_hostage.cpp_CHostage_getGrabbed_FUN_004d3060",
         "offset":244
       },
       {
         "addr":"00427a10",
-        "name":"core_charactr.cpp_FUN_00427a10",
+        "name":"core_charactr.cpp_CCharacter_releaseFromGrab_FUN_00427a10",
         "offset":248
       },
       {
         "addr":"00427a50",
-        "name":"core_charactr.cpp_FUN_00427a50",
+        "name":"core_charactr.cpp_CCharacter_getGrabber_FUN_00427a50",
         "offset":252
       },
       {
@@ -387,87 +408,87 @@
       },
       {
         "addr":"00427bf0",
-        "name":"core_charactr.cpp_FUN_00427bf0",
+        "name":"core_charactr.cpp_CCharacter_checkCylinderCollisionWorld_FUN_00427bf0",
         "offset":264
       },
       {
         "addr":"00427c80",
-        "name":"core_charactr.cpp_FUN_00427c80",
+        "name":"core_charactr.cpp_CCharacter_testDamageLine_FUN_00427c80",
         "offset":268
       },
       {
         "addr":"004d30d0",
-        "name":"core_hostage.cpp_FUN_004d30d0",
+        "name":"core_hostage.cpp_CHostage_processDamage_FUN_004d30d0",
         "offset":272
       },
       {
         "addr":"004281d0",
-        "name":"core_charactr.cpp_FUN_004281d0",
+        "name":"core_charactr.cpp_CCharacter_getDeathState_FUN_004281d0",
         "offset":276
       },
       {
         "addr":"00427ac0",
-        "name":"core_charactr.cpp_FUN_00427ac0",
+        "name":"core_charactr.cpp_CCharacter_attractActorToward_FUN_00427ac0",
         "offset":280
       },
       {
         "addr":"00427a00",
-        "name":"core_charactr.cpp_FUN_00427a00",
+        "name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_00427a00",
         "offset":284
       },
       {
         "addr":"00425a70",
-        "name":"core_charactr.cpp_FUN_00425a70",
+        "name":"core_charactr.cpp_CCharacter_getPartDominantBone_FUN_00425a70",
         "offset":288
       },
       {
         "addr":"00428ab0",
-        "name":"core_charactr.cpp_FUN_00428ab0",
+        "name":"core_charactr.cpp_CCharacter_setDoorTarget_FUN_00428ab0",
         "offset":292
       },
       {
         "addr":"00428ac0",
-        "name":"core_charactr.cpp_FUN_00428ac0",
+        "name":"core_charactr.cpp_CCharacter_clearDoorTarget_FUN_00428ac0",
         "offset":296
       },
       {
         "addr":"00428af0",
-        "name":"core_charactr.cpp_FUN_00428af0",
+        "name":"core_charactr.cpp_CCharacter_hasDoorTarget_FUN_00428af0",
         "offset":300
       },
       {
         "addr":"00428d60",
-        "name":"core_charactr.cpp_FUN_00428d60",
+        "name":"core_charactr.cpp_CCharacter_dropCarriedObject_FUN_00428d60",
         "offset":304
       },
       {
         "addr":"004d31d0",
-        "name":"core_hostage.cpp_FUN_004d31d0",
+        "name":"core_hostage.cpp_CHostage_getCarryObjToBodyXForm_FUN_004d31d0",
         "offset":308
       },
       {
         "addr":"004285f0",
-        "name":"core_charactr.cpp_FUN_004285f0",
+        "name":"core_charactr.cpp_CCharacter_setWalkTarget_FUN_004285f0",
         "offset":312
       },
       {
         "addr":"00428750",
-        "name":"core_charactr.cpp_FUN_00428750",
+        "name":"core_charactr.cpp_CCharacter_setWalkTargetImmediate_FUN_00428750",
         "offset":316
       },
       {
         "addr":"004287a0",
-        "name":"core_charactr.cpp_FUN_004287a0",
+        "name":"core_charactr.cpp_CCharacter_setWalkTimeout_FUN_004287a0",
         "offset":320
       },
       {
         "addr":"004287b0",
-        "name":"core_charactr.cpp_FUN_004287b0",
+        "name":"core_charactr.cpp_CCharacter_isWalkComplete_FUN_004287b0",
         "offset":324
       },
       {
         "addr":"0042b440",
-        "name":"core_charactr.cpp_FUN_0042b440",
+        "name":"core_charactr.cpp_CCharacter_setCharacterModel_FUN_0042b440",
         "offset":328
       }
     ]
@@ -488,7 +509,7 @@
       },
       {
         "addr":"004e0610",
-        "name":"core_larva.cpp_FUN_004e0610",
+        "name":"core_larva.cpp_CLarva_setup_FUN_004e0610",
         "offset":8
       },
       {
@@ -503,17 +524,17 @@
       },
       {
         "addr":"004e0670",
-        "name":"core_larva.cpp_FUN_004e0670",
+        "name":"core_larva.cpp_CLarva_process_FUN_004e0670",
         "offset":20
       },
       {
         "addr":"004254b0",
-        "name":"core_charactr.cpp_FUN_004254b0",
+        "name":"core_charactr.cpp_CCharacter_renderOpaque_FUN_004254b0",
         "offset":24
       },
       {
         "addr":"004268b0",
-        "name":"core_charactr.cpp_FUN_004268b0",
+        "name":"core_charactr.cpp_CCharacter_renderTransparent_FUN_004268b0",
         "offset":28
       },
       {
@@ -523,22 +544,22 @@
       },
       {
         "addr":"004271e0",
-        "name":"core_charactr.cpp_FUN_004271e0",
+        "name":"core_charactr.cpp_CCharacter_getBoundingBox_FUN_004271e0",
         "offset":36
       },
       {
         "addr":"0040c990",
-        "name":"core_actor.cpp_FUN_0040c990",
+        "name":"core_actor.cpp_CDemonActor_processFootstep_FUN_0040c990",
         "offset":40
       },
       {
         "addr":"0040ca40",
-        "name":"core_actor.cpp_FUN_0040ca40",
+        "name":"core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040ca40",
         "offset":44
       },
       {
         "addr":"0040cb60",
-        "name":"core_actor.cpp_FUN_0040cb60",
+        "name":"core_actor.cpp_CDemonActor_handleFootstep_FUN_0040cb60",
         "offset":48
       },
       {
@@ -558,17 +579,17 @@
       },
       {
         "addr":"00408ec0",
-        "name":"core_actor.cpp_FUN_00408ec0",
+        "name":"core_actor.cpp_CDemonActor_playAmbientSoundWithDelay_FUN_00408ec0",
         "offset":64
       },
       {
         "addr":"00427680",
-        "name":"core_charactr.cpp_FUN_00427680",
+        "name":"core_charactr.cpp_CCharacter_getCollisionType_FUN_00427680",
         "offset":68
       },
       {
         "addr":"00408c30",
-        "name":"core_actor.cpp_FUN_00408c30",
+        "name":"core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408c30",
         "offset":72
       },
       {
@@ -588,37 +609,37 @@
       },
       {
         "addr":"00409850",
-        "name":"core_actor.cpp_FUN_00409850",
+        "name":"core_actor.cpp_CDemonActor_updateCollisionData_FUN_00409850",
         "offset":88
       },
       {
         "addr":"004e1340",
-        "name":"core_larva.cpp_FUN_004e1340",
+        "name":"core_larva.cpp_CLarva_getTargetPoints_FUN_004e1340",
         "offset":92
       },
       {
         "addr":"00409af0",
-        "name":"core_actor.cpp_FUN_00409af0",
+        "name":"core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409af0",
         "offset":96
       },
       {
         "addr":"00429ce0",
-        "name":"core_charactr.cpp_FUN_00429ce0",
+        "name":"core_charactr.cpp_CCharacter_canLookAt_FUN_00429ce0",
         "offset":100
       },
       {
         "addr":"00409e30",
-        "name":"core_actor.cpp_FUN_00409e30",
+        "name":"core_actor.cpp_CDemonActor_evaluateTriggerCondition_FUN_00409e30",
         "offset":104
       },
       {
         "addr":"00409e40",
-        "name":"core_actor.cpp_FUN_00409e40",
+        "name":"core_actor.cpp_CDemonActor_processActionButton_FUN_00409e40",
         "offset":108
       },
       {
         "addr":"00422ec0",
-        "name":"core_charactr.cpp_FUN_00422ec0",
+        "name":"core_charactr.cpp_CCharacter_setPositionAndOrientation_FUN_00422ec0",
         "offset":112
       },
       {
@@ -628,7 +649,7 @@
       },
       {
         "addr":"0040c890",
-        "name":"core_actor.cpp_FUN_0040c890",
+        "name":"core_actor.cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040c890",
         "offset":120
       },
       {
@@ -638,17 +659,17 @@
       },
       {
         "addr":"0040a050",
-        "name":"core_actor.cpp_FUN_0040a050",
+        "name":"core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050",
         "offset":128
       },
       {
         "addr":"0040ad50",
-        "name":"core_actor.cpp_FUN_0040ad50",
+        "name":"core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040ad50",
         "offset":132
       },
       {
         "addr":"0040ad90",
-        "name":"core_actor.cpp_FUN_0040ad90",
+        "name":"core_actor.cpp_CDemonActor_playAttackHitEffects_FUN_0040ad90",
         "offset":136
       },
       {
@@ -668,7 +689,7 @@
       },
       {
         "addr":"00427a60",
-        "name":"core_charactr.cpp_FUN_00427a60",
+        "name":"core_charactr.cpp_CCharacter_drop_FUN_00427a60",
         "offset":152
       },
       {
@@ -678,7 +699,7 @@
       },
       {
         "addr":"00409ed0",
-        "name":"core_actor.cpp_FUN_00409ed0",
+        "name":"core_actor.cpp_CDemonActor_getInteractionInfo_FUN_00409ed0",
         "offset":160
       },
       {
@@ -693,12 +714,12 @@
       },
       {
         "addr":"00409f10",
-        "name":"core_actor.cpp_FUN_00409f10",
+        "name":"core_actor.cpp_CDemonActor_stopInteraction_FUN_00409f10",
         "offset":172
       },
       {
         "addr":"00429e60",
-        "name":"core_charactr.cpp_FUN_00429e60",
+        "name":"core_charactr.cpp_CCharacter_spawnFlies_FUN_00429e60",
         "offset":176
       },
       {
@@ -708,27 +729,27 @@
       },
       {
         "addr":"00408f90",
-        "name":"core_actor.cpp_FUN_00408f90",
+        "name":"core_actor.cpp_CDemonActor_testLineIntersection_FUN_00408f90",
         "offset":184
       },
       {
         "addr":"00427730",
-        "name":"core_charactr.cpp_FUN_00427730",
+        "name":"core_charactr.cpp_CCharacter_onLaserHit_FUN_00427730",
         "offset":188
       },
       {
         "addr":"00408b90",
-        "name":"core_actor.cpp_FUN_00408b90",
+        "name":"core_actor.cpp_CDemonActor_customRayIntersect_FUN_00408b90",
         "offset":192
       },
       {
         "addr":"00408bc0",
-        "name":"core_actor.cpp_FUN_00408bc0",
+        "name":"core_actor.cpp_CDemonActor_customIntersectCylinderXZ_FUN_00408bc0",
         "offset":196
       },
       {
         "addr":"00408bf0",
-        "name":"core_actor.cpp_FUN_00408bf0",
+        "name":"core_actor.cpp_CDemonActor_customGetFloorHeight_FUN_00408bf0",
         "offset":200
       },
       {
@@ -753,152 +774,152 @@
       },
       {
         "addr":"004e1080",
-        "name":"core_larva.cpp_FUN_004e1080",
+        "name":"core_larva.cpp_CLarva_archive_FUN_004e1080",
         "offset":220
       },
       {
         "addr":"004239b0",
-        "name":"core_charactr.cpp_FUN_004239b0",
+        "name":"core_charactr.cpp_CCharacter_applyDamage_FUN_004239b0",
         "offset":224
       },
       {
         "addr":"00423900",
-        "name":"core_charactr.cpp_FUN_00423900",
+        "name":"core_charactr.cpp_CCharacter_kill_FUN_00423900",
         "offset":228
       },
       {
         "addr":"004287e0",
-        "name":"core_charactr.cpp_FUN_004287e0",
+        "name":"core_charactr.cpp_CCharacter_isInvulnerable_FUN_004287e0",
         "offset":232
       },
       {
         "addr":"00427a00",
-        "name":"core_charactr.cpp_FUN_00427a00",
+        "name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_00427a00",
         "offset":236
       },
       {
         "addr":"00427a00",
-        "name":"core_charactr.cpp_FUN_00427a00",
+        "name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_00427a00",
         "offset":240
       },
       {
         "addr":"00427a00",
-        "name":"core_charactr.cpp_FUN_00427a00",
+        "name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_00427a00",
         "offset":244
       },
       {
         "addr":"00427a10",
-        "name":"core_charactr.cpp_FUN_00427a10",
+        "name":"core_charactr.cpp_CCharacter_releaseFromGrab_FUN_00427a10",
         "offset":248
       },
       {
         "addr":"00427a50",
-        "name":"core_charactr.cpp_FUN_00427a50",
+        "name":"core_charactr.cpp_CCharacter_getGrabber_FUN_00427a50",
         "offset":252
       },
       {
         "addr":"004889d0",
-        "name":"core_enemy.cpp_FUN_004889d0",
+        "name":"core_enemy.cpp_CEnemy_releaseVictim_FUN_004889d0",
         "offset":256
       },
       {
         "addr":"00488a80",
-        "name":"core_enemy.cpp_FUN_00488a80",
+        "name":"core_enemy.cpp_CEnemy_onVictimLost_FUN_00488a80",
         "offset":260
       },
       {
         "addr":"00427bf0",
-        "name":"core_charactr.cpp_FUN_00427bf0",
+        "name":"core_charactr.cpp_CCharacter_checkCylinderCollisionWorld_FUN_00427bf0",
         "offset":264
       },
       {
         "addr":"00427c80",
-        "name":"core_charactr.cpp_FUN_00427c80",
+        "name":"core_charactr.cpp_CCharacter_testDamageLine_FUN_00427c80",
         "offset":268
       },
       {
         "addr":"004e1140",
-        "name":"core_larva.cpp_FUN_004e1140",
+        "name":"core_larva.cpp_CLarva_processDamage_FUN_004e1140",
         "offset":272
       },
       {
         "addr":"004281d0",
-        "name":"core_charactr.cpp_FUN_004281d0",
+        "name":"core_charactr.cpp_CCharacter_getDeathState_FUN_004281d0",
         "offset":276
       },
       {
         "addr":"00427ac0",
-        "name":"core_charactr.cpp_FUN_00427ac0",
+        "name":"core_charactr.cpp_CCharacter_attractActorToward_FUN_00427ac0",
         "offset":280
       },
       {
         "addr":"00427a00",
-        "name":"core_charactr.cpp_FUN_00427a00",
+        "name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_00427a00",
         "offset":284
       },
       {
         "addr":"00425a70",
-        "name":"core_charactr.cpp_FUN_00425a70",
+        "name":"core_charactr.cpp_CCharacter_getPartDominantBone_FUN_00425a70",
         "offset":288
       },
       {
         "addr":"00428ab0",
-        "name":"core_charactr.cpp_FUN_00428ab0",
+        "name":"core_charactr.cpp_CCharacter_setDoorTarget_FUN_00428ab0",
         "offset":292
       },
       {
         "addr":"00428ac0",
-        "name":"core_charactr.cpp_FUN_00428ac0",
+        "name":"core_charactr.cpp_CCharacter_clearDoorTarget_FUN_00428ac0",
         "offset":296
       },
       {
         "addr":"00428af0",
-        "name":"core_charactr.cpp_FUN_00428af0",
+        "name":"core_charactr.cpp_CCharacter_hasDoorTarget_FUN_00428af0",
         "offset":300
       },
       {
         "addr":"00428d60",
-        "name":"core_charactr.cpp_FUN_00428d60",
+        "name":"core_charactr.cpp_CCharacter_dropCarriedObject_FUN_00428d60",
         "offset":304
       },
       {
         "addr":"00429120",
-        "name":"core_charactr.cpp_FUN_00429120",
+        "name":"core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429120",
         "offset":308
       },
       {
         "addr":"004285f0",
-        "name":"core_charactr.cpp_FUN_004285f0",
+        "name":"core_charactr.cpp_CCharacter_setWalkTarget_FUN_004285f0",
         "offset":312
       },
       {
         "addr":"00428750",
-        "name":"core_charactr.cpp_FUN_00428750",
+        "name":"core_charactr.cpp_CCharacter_setWalkTargetImmediate_FUN_00428750",
         "offset":316
       },
       {
         "addr":"004287a0",
-        "name":"core_charactr.cpp_FUN_004287a0",
+        "name":"core_charactr.cpp_CCharacter_setWalkTimeout_FUN_004287a0",
         "offset":320
       },
       {
         "addr":"004287b0",
-        "name":"core_charactr.cpp_FUN_004287b0",
+        "name":"core_charactr.cpp_CCharacter_isWalkComplete_FUN_004287b0",
         "offset":324
       },
       {
         "addr":"0042b440",
-        "name":"core_charactr.cpp_FUN_0042b440",
+        "name":"core_charactr.cpp_CCharacter_setCharacterModel_FUN_0042b440",
         "offset":328
       },
       {
         "addr":"00488250",
-        "name":"core_enemy.cpp_FUN_00488250",
+        "name":"core_enemy.cpp_CEnemy_getTargetPoint_FUN_00488250",
         "offset":332
       },
       {
         "addr":"00488450",
-        "name":"core_enemy.cpp_FUN_00488450",
+        "name":"core_enemy.cpp_CEnemy_updateVictim_FUN_00488450",
         "offset":336
       }
     ]
@@ -919,7 +940,7 @@
       },
       {
         "addr":"004e5080",
-        "name":"core_manpuz.cpp_FUN_004e5080",
+        "name":"core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_004e5080",
         "offset":8
       },
       {
@@ -934,12 +955,12 @@
       },
       {
         "addr":"004e57f0",
-        "name":"core_manpuz.cpp_FUN_004e57f0",
+        "name":"core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_004e57f0",
         "offset":20
       },
       {
         "addr":"004e56d0",
-        "name":"core_manpuz.cpp_FUN_004e56d0",
+        "name":"core_manpuz.cpp_CMansionPuzzleCircle_renderOpaque_FUN_004e56d0",
         "offset":24
       },
       {
@@ -949,27 +970,27 @@
       },
       {
         "addr":"004089c0",
-        "name":"core_actor.cpp_FUN_004089c0",
+        "name":"core_actor.cpp_CDemonActor_renderBackground_FUN_004089c0",
         "offset":32
       },
       {
         "addr":"004e5900",
-        "name":"core_manpuz.cpp_FUN_004e5900",
+        "name":"core_manpuz.cpp_CMansionPuzzleCircle_getBoundingBox_FUN_004e5900",
         "offset":36
       },
       {
         "addr":"0040c990",
-        "name":"core_actor.cpp_FUN_0040c990",
+        "name":"core_actor.cpp_CDemonActor_processFootstep_FUN_0040c990",
         "offset":40
       },
       {
         "addr":"0040ca40",
-        "name":"core_actor.cpp_FUN_0040ca40",
+        "name":"core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040ca40",
         "offset":44
       },
       {
         "addr":"0040cb60",
-        "name":"core_actor.cpp_FUN_0040cb60",
+        "name":"core_actor.cpp_CDemonActor_handleFootstep_FUN_0040cb60",
         "offset":48
       },
       {
@@ -989,17 +1010,17 @@
       },
       {
         "addr":"00408ec0",
-        "name":"core_actor.cpp_FUN_00408ec0",
+        "name":"core_actor.cpp_CDemonActor_playAmbientSoundWithDelay_FUN_00408ec0",
         "offset":64
       },
       {
         "addr":"004e5960",
-        "name":"core_manpuz.cpp_FUN_004e5960",
+        "name":"core_manpuz.cpp_CMansionPuzzleCircle_getCollisionType_FUN_004e5960",
         "offset":68
       },
       {
         "addr":"00408c30",
-        "name":"core_actor.cpp_FUN_00408c30",
+        "name":"core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408c30",
         "offset":72
       },
       {
@@ -1019,7 +1040,7 @@
       },
       {
         "addr":"00409850",
-        "name":"core_actor.cpp_FUN_00409850",
+        "name":"core_actor.cpp_CDemonActor_updateCollisionData_FUN_00409850",
         "offset":88
       },
       {
@@ -1029,7 +1050,7 @@
       },
       {
         "addr":"00409af0",
-        "name":"core_actor.cpp_FUN_00409af0",
+        "name":"core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409af0",
         "offset":96
       },
       {
@@ -1039,17 +1060,17 @@
       },
       {
         "addr":"00409e30",
-        "name":"core_actor.cpp_FUN_00409e30",
+        "name":"core_actor.cpp_CDemonActor_evaluateTriggerCondition_FUN_00409e30",
         "offset":104
       },
       {
         "addr":"00409e40",
-        "name":"core_actor.cpp_FUN_00409e40",
+        "name":"core_actor.cpp_CDemonActor_processActionButton_FUN_00409e40",
         "offset":108
       },
       {
         "addr":"00409e70",
-        "name":"core_actor.cpp_FUN_00409e70",
+        "name":"core_actor.cpp_CDemonActor_setPositionAndOrientation_FUN_00409e70",
         "offset":112
       },
       {
@@ -1059,7 +1080,7 @@
       },
       {
         "addr":"0040c890",
-        "name":"core_actor.cpp_FUN_0040c890",
+        "name":"core_actor.cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040c890",
         "offset":120
       },
       {
@@ -1069,17 +1090,17 @@
       },
       {
         "addr":"0040a050",
-        "name":"core_actor.cpp_FUN_0040a050",
+        "name":"core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050",
         "offset":128
       },
       {
         "addr":"0040ad50",
-        "name":"core_actor.cpp_FUN_0040ad50",
+        "name":"core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040ad50",
         "offset":132
       },
       {
         "addr":"0040ad90",
-        "name":"core_actor.cpp_FUN_0040ad90",
+        "name":"core_actor.cpp_CDemonActor_playAttackHitEffects_FUN_0040ad90",
         "offset":136
       },
       {
@@ -1109,7 +1130,7 @@
       },
       {
         "addr":"00409ed0",
-        "name":"core_actor.cpp_FUN_00409ed0",
+        "name":"core_actor.cpp_CDemonActor_getInteractionInfo_FUN_00409ed0",
         "offset":160
       },
       {
@@ -1124,12 +1145,12 @@
       },
       {
         "addr":"00409f10",
-        "name":"core_actor.cpp_FUN_00409f10",
+        "name":"core_actor.cpp_CDemonActor_stopInteraction_FUN_00409f10",
         "offset":172
       },
       {
         "addr":"00409db0",
-        "name":"core_actor.cpp_FUN_00409db0",
+        "name":"core_actor.cpp_CDemonActor_spawnFlies_FUN_00409db0",
         "offset":176
       },
       {
@@ -1139,27 +1160,27 @@
       },
       {
         "addr":"00408f90",
-        "name":"core_actor.cpp_FUN_00408f90",
+        "name":"core_actor.cpp_CDemonActor_testLineIntersection_FUN_00408f90",
         "offset":184
       },
       {
         "addr":"004e5f00",
-        "name":"core_manpuz.cpp_FUN_004e5f00",
+        "name":"core_manpuz.cpp_CMansionPuzzleCircle_onLaserHit_FUN_004e5f00",
         "offset":188
       },
       {
         "addr":"004e5970",
-        "name":"core_manpuz.cpp_FUN_004e5970",
+        "name":"core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_004e5970",
         "offset":192
       },
       {
         "addr":"004e5e70",
-        "name":"core_manpuz.cpp_FUN_004e5e70",
+        "name":"core_manpuz.cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_004e5e70",
         "offset":196
       },
       {
         "addr":"004e5ef0",
-        "name":"core_manpuz.cpp_FUN_004e5ef0",
+        "name":"core_manpuz.cpp_CMansionPuzzleCircle_customGetFloorHeight_FUN_004e5ef0",
         "offset":200
       },
       {
@@ -1184,24 +1205,194 @@
       },
       {
         "addr":"004e7470",
-        "name":"core_manpuz.cpp_FUN_004e7470",
+        "name":"core_manpuz.cpp_CMansionPuzzleCircle_archive_FUN_004e7470",
         "offset":220
       }
     ]
   },
   {
+    "addr":"005fa4d0",
+    "owner":"CMoloch",
+    "slots":[
+      {
+        "addr":"004ce9d0",
+        "name":"core_hero.cpp_CHero_isGrabbable_FUN_004ce9d0",
+        "offset":0
+      },
+      {
+        "addr":"004cea00",
+        "name":"core_hero.cpp_CHero_canBeGrabbed_FUN_004cea00",
+        "offset":4
+      },
+      {
+        "addr":"004cea50",
+        "name":"core_hero.cpp_CHero_getGrabbed_FUN_004cea50",
+        "offset":8
+      },
+      {
+        "addr":"004ceb80",
+        "name":"core_hero.cpp_CHero_releaseFromGrab_FUN_004ceb80",
+        "offset":12
+      },
+      {
+        "addr":"00427a50",
+        "name":"core_charactr.cpp_CCharacter_getGrabber_FUN_00427a50",
+        "offset":16
+      },
+      {
+        "addr":"00427a40",
+        "name":"core_charactr.cpp_FUN_00427a40",
+        "offset":20
+      },
+      {
+        "addr":"00427a40",
+        "name":"core_charactr.cpp_FUN_00427a40",
+        "offset":24
+      },
+      {
+        "addr":"00427bf0",
+        "name":"core_charactr.cpp_CCharacter_checkCylinderCollisionWorld_FUN_00427bf0",
+        "offset":28
+      },
+      {
+        "addr":"00427c80",
+        "name":"core_charactr.cpp_CCharacter_testDamageLine_FUN_00427c80",
+        "offset":32
+      },
+      {
+        "addr":"00427fb0",
+        "name":"core_charactr.cpp_CCharacter_processDamage_FUN_00427fb0",
+        "offset":36
+      },
+      {
+        "addr":"004281d0",
+        "name":"core_charactr.cpp_CCharacter_getDeathState_FUN_004281d0",
+        "offset":40
+      },
+      {
+        "addr":"00427ac0",
+        "name":"core_charactr.cpp_CCharacter_attractActorToward_FUN_00427ac0",
+        "offset":44
+      },
+      {
+        "addr":"00427a00",
+        "name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_00427a00",
+        "offset":48
+      },
+      {
+        "addr":"00425a70",
+        "name":"core_charactr.cpp_CCharacter_getPartDominantBone_FUN_00425a70",
+        "offset":52
+      },
+      {
+        "addr":"00428ab0",
+        "name":"core_charactr.cpp_CCharacter_setDoorTarget_FUN_00428ab0",
+        "offset":56
+      },
+      {
+        "addr":"00428ac0",
+        "name":"core_charactr.cpp_CCharacter_clearDoorTarget_FUN_00428ac0",
+        "offset":60
+      },
+      {
+        "addr":"00428af0",
+        "name":"core_charactr.cpp_CCharacter_hasDoorTarget_FUN_00428af0",
+        "offset":64
+      },
+      {
+        "addr":"00428d60",
+        "name":"core_charactr.cpp_CCharacter_dropCarriedObject_FUN_00428d60",
+        "offset":68
+      },
+      {
+        "addr":"00429120",
+        "name":"core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429120",
+        "offset":72
+      },
+      {
+        "addr":"004285f0",
+        "name":"core_charactr.cpp_CCharacter_setWalkTarget_FUN_004285f0",
+        "offset":76
+      },
+      {
+        "addr":"00428750",
+        "name":"core_charactr.cpp_CCharacter_setWalkTargetImmediate_FUN_00428750",
+        "offset":80
+      },
+      {
+        "addr":"004287a0",
+        "name":"core_charactr.cpp_CCharacter_setWalkTimeout_FUN_004287a0",
+        "offset":84
+      },
+      {
+        "addr":"004287b0",
+        "name":"core_charactr.cpp_CCharacter_isWalkComplete_FUN_004287b0",
+        "offset":88
+      },
+      {
+        "addr":"0042b440",
+        "name":"core_charactr.cpp_CCharacter_setCharacterModel_FUN_0042b440",
+        "offset":92
+      },
+      {
+        "addr":"004cec30",
+        "name":"core_hero.cpp_CHero_createDefaultWeapon_FUN_004cec30",
+        "offset":96
+      },
+      {
+        "addr":"005022d0",
+        "name":"core_moloch.cpp_CMoloch_drawWeapon_FUN_005022d0",
+        "offset":100
+      },
+      {
+        "addr":"005022e0",
+        "name":"core_moloch.cpp_CMoloch_isWeaponDrawn_FUN_005022e0",
+        "offset":104
+      },
+      {
+        "addr":"004d02e0",
+        "name":"core_hero.cpp_CHero_reset_FUN_004d02e0",
+        "offset":108
+      },
+      {
+        "addr":"004d0750",
+        "name":"core_hero.cpp_CHero_toggleGoggles_FUN_004d0750",
+        "offset":112
+      },
+      {
+        "addr":"004cea40",
+        "name":"core_hero.cpp_CHero_canReachPickup_FUN_004cea40",
+        "offset":116
+      },
+      {
+        "addr":"004d03b0",
+        "name":"core_hero.cpp_CHero_doHeroAction_FUN_004d03b0",
+        "offset":120
+      },
+      {
+        "addr":"004d06c0",
+        "name":"core_hero.cpp_CHero_canDoHeroAction_FUN_004d06c0",
+        "offset":124
+      },
+      {
+        "addr":"004ce3b0",
+        "name":"core_hero.cpp_CHero_setInventoryIndex_FUN_004ce3b0",
+        "offset":128
+      }
+    ]
+  },
+  {
     "addr":"005fadd4",
-    "owner":"CPod",
+    "owner":"CDemonPod",
     "slots":[
       {
         "addr":"0051c130",
-        "foreign":"CDemonPod",
         "name":"core_podmain.cpp_CDemonPod_dtor_FUN_0051c130",
         "offset":0
       },
       {
         "addr":"0051c000",
-        "name":"core_podmain.cpp_FUN_0051c000",
+        "name":"core_podmain.cpp_CDemonPod_load_FUN_0051c000",
         "offset":4
       },
       {
@@ -1221,7 +1412,7 @@
       },
       {
         "addr":"0051b1e0",
-        "name":"engine_pod.cpp_FUN_0051b1e0",
+        "name":"engine_pod.cpp_CPod_remount_FUN_0051b1e0",
         "offset":20
       }
     ]
@@ -1237,29 +1428,29 @@
       },
       {
         "addr":"0057e240",
-        "name":"support_trstream.cpp_FUN_0057e240",
+        "name":"support_trstream.cpp_COutStreamDebug_putChar_FUN_0057e240",
         "offset":4
       },
       {
         "addr":"0057e270",
-        "name":"support_trstream.cpp_FUN_0057e270",
+        "name":"support_trstream.cpp_COutStreamDebug_write_FUN_0057e270",
         "offset":8
       },
       {
         "addr":"0057e330",
-        "name":"support_trstream.cpp_FUN_0057e330",
+        "name":"support_trstream.cpp_COutStreamDebug_seek_FUN_0057e330",
         "offset":12
       },
       {
         "addr":"0057e360",
-        "name":"support_trstream.cpp_FUN_0057e360",
+        "name":"support_trstream.cpp_COutStreamDebug_tell_FUN_0057e360",
         "offset":16
       }
     ]
   },
   {
     "addr":"005ffad4",
-    "owner":"CEnemy",
+    "owner":"CSteuben",
     "slots":[
       {
         "addr":"0040ced0",
@@ -1273,7 +1464,7 @@
       },
       {
         "addr":"005a5c10",
-        "name":"core_steuben.cpp_FUN_005a5c10",
+        "name":"core_villain.cpp_CSteuben_setup_FUN_005a5c10",
         "offset":8
       },
       {
@@ -1288,17 +1479,17 @@
       },
       {
         "addr":"0059f420",
-        "name":"unkafter_basicene.cpp_FUN_0059f420",
+        "name":"core_basicene.cpp_CBasicEnemy_process_FUN_0059f420",
         "offset":20
       },
       {
         "addr":"005a5d50",
-        "name":"core_steuben.cpp_FUN_005a5d50",
+        "name":"core_villain.cpp_CSteuben_renderOpaque_FUN_005a5d50",
         "offset":24
       },
       {
         "addr":"0059f980",
-        "name":"unkafter_basicene.cpp_FUN_0059f980",
+        "name":"core_basicene.cpp_CBasicEnemy_renderTransparent_FUN_0059f980",
         "offset":28
       },
       {
@@ -1308,22 +1499,22 @@
       },
       {
         "addr":"004271e0",
-        "name":"core_charactr.cpp_FUN_004271e0",
+        "name":"core_charactr.cpp_CCharacter_getBoundingBox_FUN_004271e0",
         "offset":36
       },
       {
         "addr":"0040c990",
-        "name":"core_actor.cpp_FUN_0040c990",
+        "name":"core_actor.cpp_CDemonActor_processFootstep_FUN_0040c990",
         "offset":40
       },
       {
         "addr":"0040ca40",
-        "name":"core_actor.cpp_FUN_0040ca40",
+        "name":"core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040ca40",
         "offset":44
       },
       {
         "addr":"0040cb60",
-        "name":"core_actor.cpp_FUN_0040cb60",
+        "name":"core_actor.cpp_CDemonActor_handleFootstep_FUN_0040cb60",
         "offset":48
       },
       {
@@ -1343,17 +1534,17 @@
       },
       {
         "addr":"00408ec0",
-        "name":"core_actor.cpp_FUN_00408ec0",
+        "name":"core_actor.cpp_CDemonActor_playAmbientSoundWithDelay_FUN_00408ec0",
         "offset":64
       },
       {
         "addr":"0059f960",
-        "name":"unkafter_basicene.cpp_FUN_0059f960",
+        "name":"core_basicene.cpp_CBasicEnemy_getCollisionType_FUN_0059f960",
         "offset":68
       },
       {
         "addr":"00408c30",
-        "name":"core_actor.cpp_FUN_00408c30",
+        "name":"core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408c30",
         "offset":72
       },
       {
@@ -1373,37 +1564,37 @@
       },
       {
         "addr":"00409850",
-        "name":"core_actor.cpp_FUN_00409850",
+        "name":"core_actor.cpp_CDemonActor_updateCollisionData_FUN_00409850",
         "offset":88
       },
       {
         "addr":"005a4940",
-        "name":"core_basicnpc.cpp_FUN_005a4940",
+        "name":"core_basicnpc.cpp_CBasicNPC_getTargetPoints_FUN_005a4940",
         "offset":92
       },
       {
         "addr":"00409af0",
-        "name":"core_actor.cpp_FUN_00409af0",
+        "name":"core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409af0",
         "offset":96
       },
       {
         "addr":"00429ce0",
-        "name":"core_charactr.cpp_FUN_00429ce0",
+        "name":"core_charactr.cpp_CCharacter_canLookAt_FUN_00429ce0",
         "offset":100
       },
       {
         "addr":"00409e30",
-        "name":"core_actor.cpp_FUN_00409e30",
+        "name":"core_actor.cpp_CDemonActor_evaluateTriggerCondition_FUN_00409e30",
         "offset":104
       },
       {
         "addr":"00409e40",
-        "name":"core_actor.cpp_FUN_00409e40",
+        "name":"core_actor.cpp_CDemonActor_processActionButton_FUN_00409e40",
         "offset":108
       },
       {
         "addr":"00422ec0",
-        "name":"core_charactr.cpp_FUN_00422ec0",
+        "name":"core_charactr.cpp_CCharacter_setPositionAndOrientation_FUN_00422ec0",
         "offset":112
       },
       {
@@ -1413,7 +1604,7 @@
       },
       {
         "addr":"0040c890",
-        "name":"core_actor.cpp_FUN_0040c890",
+        "name":"core_actor.cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040c890",
         "offset":120
       },
       {
@@ -1423,17 +1614,17 @@
       },
       {
         "addr":"0040a050",
-        "name":"core_actor.cpp_FUN_0040a050",
+        "name":"core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050",
         "offset":128
       },
       {
         "addr":"0040ad50",
-        "name":"core_actor.cpp_FUN_0040ad50",
+        "name":"core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040ad50",
         "offset":132
       },
       {
         "addr":"0040ad90",
-        "name":"core_actor.cpp_FUN_0040ad90",
+        "name":"core_actor.cpp_CDemonActor_playAttackHitEffects_FUN_0040ad90",
         "offset":136
       },
       {
@@ -1453,7 +1644,7 @@
       },
       {
         "addr":"00427a60",
-        "name":"core_charactr.cpp_FUN_00427a60",
+        "name":"core_charactr.cpp_CCharacter_drop_FUN_00427a60",
         "offset":152
       },
       {
@@ -1463,7 +1654,7 @@
       },
       {
         "addr":"00409ed0",
-        "name":"core_actor.cpp_FUN_00409ed0",
+        "name":"core_actor.cpp_CDemonActor_getInteractionInfo_FUN_00409ed0",
         "offset":160
       },
       {
@@ -1478,12 +1669,12 @@
       },
       {
         "addr":"00409f10",
-        "name":"core_actor.cpp_FUN_00409f10",
+        "name":"core_actor.cpp_CDemonActor_stopInteraction_FUN_00409f10",
         "offset":172
       },
       {
         "addr":"00429e60",
-        "name":"core_charactr.cpp_FUN_00429e60",
+        "name":"core_charactr.cpp_CCharacter_spawnFlies_FUN_00429e60",
         "offset":176
       },
       {
@@ -1493,27 +1684,27 @@
       },
       {
         "addr":"00408f90",
-        "name":"core_actor.cpp_FUN_00408f90",
+        "name":"core_actor.cpp_CDemonActor_testLineIntersection_FUN_00408f90",
         "offset":184
       },
       {
         "addr":"00427730",
-        "name":"core_charactr.cpp_FUN_00427730",
+        "name":"core_charactr.cpp_CCharacter_onLaserHit_FUN_00427730",
         "offset":188
       },
       {
         "addr":"00408b90",
-        "name":"core_actor.cpp_FUN_00408b90",
+        "name":"core_actor.cpp_CDemonActor_customRayIntersect_FUN_00408b90",
         "offset":192
       },
       {
         "addr":"00408bc0",
-        "name":"core_actor.cpp_FUN_00408bc0",
+        "name":"core_actor.cpp_CDemonActor_customIntersectCylinderXZ_FUN_00408bc0",
         "offset":196
       },
       {
         "addr":"00408bf0",
-        "name":"core_actor.cpp_FUN_00408bf0",
+        "name":"core_actor.cpp_CDemonActor_customGetFloorHeight_FUN_00408bf0",
         "offset":200
       },
       {
@@ -1528,219 +1719,217 @@
       },
       {
         "addr":"005a5b30",
-        "foreign":"CSteuben",
-        "name":"core_steuben.cpp_CSteuben_getActorType_FUN_005a5b30",
+        "name":"core_villain.cpp_CSteuben_getActorType_FUN_005a5b30",
         "offset":212
       },
       {
         "addr":"005a5d70",
-        "foreign":"CSteuben",
-        "name":"core_steuben.cpp_CSteuben_dtor_FUN_005a5d70",
+        "name":"core_villain.cpp_CSteuben_dtor_FUN_005a5d70",
         "offset":216
       },
       {
         "addr":"005a5d60",
-        "name":"core_steuben.cpp_FUN_005a5d60",
+        "name":"core_villain.cpp_CSteuben_archive_FUN_005a5d60",
         "offset":220
       },
       {
         "addr":"004239b0",
-        "name":"core_charactr.cpp_FUN_004239b0",
+        "name":"core_charactr.cpp_CCharacter_applyDamage_FUN_004239b0",
         "offset":224
       },
       {
         "addr":"00423900",
-        "name":"core_charactr.cpp_FUN_00423900",
+        "name":"core_charactr.cpp_CCharacter_kill_FUN_00423900",
         "offset":228
       },
       {
         "addr":"004287e0",
-        "name":"core_charactr.cpp_FUN_004287e0",
+        "name":"core_charactr.cpp_CCharacter_isInvulnerable_FUN_004287e0",
         "offset":232
       },
       {
         "addr":"005a4950",
-        "name":"core_basicnpc.cpp_FUN_005a4950",
+        "name":"core_basicnpc.cpp_CBasicNPC_isGrabbable_FUN_005a4950",
         "offset":236
       },
       {
         "addr":"00427a00",
-        "name":"core_charactr.cpp_FUN_00427a00",
+        "name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_00427a00",
         "offset":240
       },
       {
         "addr":"00427a00",
-        "name":"core_charactr.cpp_FUN_00427a00",
+        "name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_00427a00",
         "offset":244
       },
       {
         "addr":"00427a10",
-        "name":"core_charactr.cpp_FUN_00427a10",
+        "name":"core_charactr.cpp_CCharacter_releaseFromGrab_FUN_00427a10",
         "offset":248
       },
       {
         "addr":"00427a50",
-        "name":"core_charactr.cpp_FUN_00427a50",
+        "name":"core_charactr.cpp_CCharacter_getGrabber_FUN_00427a50",
         "offset":252
       },
       {
         "addr":"004889d0",
-        "name":"core_enemy.cpp_FUN_004889d0",
+        "name":"core_enemy.cpp_CEnemy_releaseVictim_FUN_004889d0",
         "offset":256
       },
       {
         "addr":"00488a80",
-        "name":"core_enemy.cpp_FUN_00488a80",
+        "name":"core_enemy.cpp_CEnemy_onVictimLost_FUN_00488a80",
         "offset":260
       },
       {
         "addr":"00427bf0",
-        "name":"core_charactr.cpp_FUN_00427bf0",
+        "name":"core_charactr.cpp_CCharacter_checkCylinderCollisionWorld_FUN_00427bf0",
         "offset":264
       },
       {
         "addr":"00427c80",
-        "name":"core_charactr.cpp_FUN_00427c80",
+        "name":"core_charactr.cpp_CCharacter_testDamageLine_FUN_00427c80",
         "offset":268
       },
       {
         "addr":"0059f800",
-        "name":"unkafter_basicene.cpp_FUN_0059f800",
+        "name":"core_basicene.cpp_CBasicEnemy_processDamage_FUN_0059f800",
         "offset":272
       },
       {
         "addr":"005a5d30",
-        "name":"core_steuben.cpp_FUN_005a5d30",
+        "name":"core_villain.cpp_CSteuben_getDeathState_FUN_005a5d30",
         "offset":276
       },
       {
         "addr":"00427ac0",
-        "name":"core_charactr.cpp_FUN_00427ac0",
+        "name":"core_charactr.cpp_CCharacter_attractActorToward_FUN_00427ac0",
         "offset":280
       },
       {
         "addr":"00427a00",
-        "name":"core_charactr.cpp_FUN_00427a00",
+        "name":"core_charactr.cpp_CCharacter_isGrabbable_FUN_00427a00",
         "offset":284
       },
       {
         "addr":"00425a70",
-        "name":"core_charactr.cpp_FUN_00425a70",
+        "name":"core_charactr.cpp_CCharacter_getPartDominantBone_FUN_00425a70",
         "offset":288
       },
       {
         "addr":"00428ab0",
-        "name":"core_charactr.cpp_FUN_00428ab0",
+        "name":"core_charactr.cpp_CCharacter_setDoorTarget_FUN_00428ab0",
         "offset":292
       },
       {
         "addr":"00428ac0",
-        "name":"core_charactr.cpp_FUN_00428ac0",
+        "name":"core_charactr.cpp_CCharacter_clearDoorTarget_FUN_00428ac0",
         "offset":296
       },
       {
         "addr":"00428af0",
-        "name":"core_charactr.cpp_FUN_00428af0",
+        "name":"core_charactr.cpp_CCharacter_hasDoorTarget_FUN_00428af0",
         "offset":300
       },
       {
         "addr":"00428d60",
-        "name":"core_charactr.cpp_FUN_00428d60",
+        "name":"core_charactr.cpp_CCharacter_dropCarriedObject_FUN_00428d60",
         "offset":304
       },
       {
         "addr":"00429120",
-        "name":"core_charactr.cpp_FUN_00429120",
+        "name":"core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_00429120",
         "offset":308
       },
       {
         "addr":"004285f0",
-        "name":"core_charactr.cpp_FUN_004285f0",
+        "name":"core_charactr.cpp_CCharacter_setWalkTarget_FUN_004285f0",
         "offset":312
       },
       {
         "addr":"00428750",
-        "name":"core_charactr.cpp_FUN_00428750",
+        "name":"core_charactr.cpp_CCharacter_setWalkTargetImmediate_FUN_00428750",
         "offset":316
       },
       {
         "addr":"004287a0",
-        "name":"core_charactr.cpp_FUN_004287a0",
+        "name":"core_charactr.cpp_CCharacter_setWalkTimeout_FUN_004287a0",
         "offset":320
       },
       {
         "addr":"004287b0",
-        "name":"core_charactr.cpp_FUN_004287b0",
+        "name":"core_charactr.cpp_CCharacter_isWalkComplete_FUN_004287b0",
         "offset":324
       },
       {
         "addr":"0042b440",
-        "name":"core_charactr.cpp_FUN_0042b440",
+        "name":"core_charactr.cpp_CCharacter_setCharacterModel_FUN_0042b440",
         "offset":328
       },
       {
         "addr":"00488250",
-        "name":"core_enemy.cpp_FUN_00488250",
+        "name":"core_enemy.cpp_CEnemy_getTargetPoint_FUN_00488250",
         "offset":332
       },
       {
         "addr":"00488450",
-        "name":"core_enemy.cpp_FUN_00488450",
+        "name":"core_enemy.cpp_CEnemy_updateVictim_FUN_00488450",
         "offset":336
       },
       {
         "addr":"005a5c40",
-        "name":"core_steuben.cpp_FUN_005a5c40",
+        "name":"core_villain.cpp_FUN_005a5c40",
         "offset":340
       },
       {
         "addr":"005a0380",
-        "name":"unkafter_basicene.cpp_FUN_005a0380",
+        "name":"core_basicene.cpp_CBasicEnemy_processBurnState_FUN_005a0380",
         "offset":344
       },
       {
         "addr":"0059e7d0",
-        "name":"unkafter_basicene.cpp_FUN_0059e7d0",
+        "name":"core_basicene.cpp_CBasicEnemy_advanceMotion_FUN_0059e7d0",
         "offset":348
       },
       {
         "addr":"005a5c20",
-        "name":"core_steuben.cpp_FUN_005a5c20",
+        "name":"core_villain.cpp_CSteuben_processStates_FUN_005a5c20",
         "offset":352
       },
       {
         "addr":"0059f0e0",
-        "name":"unkafter_basicene.cpp_FUN_0059f0e0",
+        "name":"core_basicene.cpp_FUN_0059f0e0",
         "offset":356
       },
       {
         "addr":"005a5d40",
-        "name":"core_steuben.cpp_FUN_005a5d40",
+        "name":"core_villain.cpp_CSteuben_processMotionEvent_FUN_005a5d40",
         "offset":360
       },
       {
         "addr":"005a0270",
-        "name":"unkafter_basicene.cpp_FUN_005a0270",
+        "name":"core_basicene.cpp_CBasicEnemy_startBurn_FUN_005a0270",
         "offset":364
       },
       {
         "addr":"0059ebe0",
-        "name":"unkafter_basicene.cpp_FUN_0059ebe0",
+        "name":"core_basicene.cpp_CBasicEnemy_processAnimationState_FUN_0059ebe0",
         "offset":368
       },
       {
         "addr":"005a5d10",
-        "name":"core_steuben.cpp_FUN_005a5d10",
+        "name":"core_villain.cpp_CSteuben_processDeathState_FUN_005a5d10",
         "offset":372
       },
       {
         "addr":"0059ef90",
-        "name":"unkafter_basicene.cpp_FUN_0059ef90",
+        "name":"core_basicene.cpp_CBasicEnemy_processChasingState_FUN_0059ef90",
         "offset":376
       },
       {
         "addr":"0059f6b0",
-        "name":"unkafter_basicene.cpp_FUN_0059f6b0",
+        "name":"core_basicene.cpp_CBasicEnemy_checkVictim_FUN_0059f6b0",
         "offset":380
       }
     ]

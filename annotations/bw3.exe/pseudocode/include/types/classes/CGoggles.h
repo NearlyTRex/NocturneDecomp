@@ -4,13 +4,17 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
 
 // Structure: CGoggles
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 728; same shape as nocedit CGasMask (728)
 // Ghidra size: 0x2d8 (728 bytes)
 #pragma pack(push, 1)
 typedef struct CGoggles {
-    char field_0[728]; // 0x0
+    CDemonActor base; // 0x0, derived
+    CKeyFramedModelInstance model; // 0x158, ctor 004cc6c0 model ctor at this+0x158; archive modelName at +0x158
+    struct CDemonActor* carrier; // 0x2d4, ctor 004cc6c0 stores 0 at 0x2d4 after the model, as nocedit CGasMask carrier
 } CGoggles;
 #pragma pack(pop)
 

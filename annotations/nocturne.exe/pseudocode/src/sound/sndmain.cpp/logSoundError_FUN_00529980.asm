@@ -9,7 +9,7 @@
 ; undefined        Stack[-0x408]:1  local_408
 ; undefined4       Stack[-0x8]:4  local_8
 ;
-; XREF[32]:
+; XREF[33]:
 ;   sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_0052ab60 at 0052acc6
 ;   sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_0052af50 at 0052b145
 ;   sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_0052b880 at 0052b976
@@ -20,7 +20,7 @@
 ;   sound_snddx.cpp_CDirectSoundDevice_poll_FUN_0052a970 at 0052aa19
 ;   sound_snddx.cpp_CDirectSoundDevice_reset_FUN_0052a0d0 at 0052a1c3
 ;   sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_0052a450 at 0052a848
-;   ... and 22 more
+;   ... and 23 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_00593b86

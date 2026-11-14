@@ -8,16 +8,16 @@
 ; char *           Stack[0x8]:4   string_data
 ;
 ; XREF[19]:
-;   core_fldnotes.cpp_FUN_004a41b0 at 004a4ff0
-;   core_game.cpp_FUN_004b6170 at 004b673d
+;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0 at 004a4ff0
+;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b673d
+;   core_gmehook.cpp_CGameHook_showDebugMenu_FUN_0059c3d0 at 0059c453
 ;   core_menu.cpp_FUN_004ed260 at 004ee0d1
 ;   core_menu.cpp_FUN_004eed60 at 004ef9fa
 ;   core_mission.cpp_FUN_004fd280 at 004fd2bd
+;   core_script.cpp_CScript_startDialogLine_FUN_00529750 at 0052981c
+;   core_script.cpp_CScript_step_FUN_00522350 at 005247b6
 ;   core_script.cpp_FUN_00521cf0 at 00521e00
-;   core_script.cpp_FUN_00522350 at 005247b6
-;   core_script.cpp_FUN_00529750 at 0052981c
-;   core_sound.cpp_FUN_0055b110 at 0055b133
-;   engine_pod.cpp_FUN_0051aa7e at 0051ac80
+;   core_sound.cpp_CSound_selectReverbPreset_FUN_0055b110 at 0055b133
 ;   ... and 9 more
 ;
 ; *****************************************************************************

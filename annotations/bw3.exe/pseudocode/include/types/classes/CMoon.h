@@ -2,15 +2,33 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonTriangle;
+struct CVector3i;
+struct SMRGLPrimitiveQuad;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CKeyFramedModel.h"
+#include "types/classes/CKeyFramedModelPart.h"
+#include "types/classes/CMatrix3x3f.h"
+#include "types/classes/CVector3f.h"
+#include "types/structs/SMRGLHeaderBasic.h"
+#include "types/structs/SMRGLTextureModel.h"
 
 // Structure: CMoon
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 2792: bw1's 2768 and six ints for the main menu's animation. The ctor constructs three CKeyFramedModels at +0x8, +0x3a0, +0x738 and zeroes +0; free (004f9580) releases the three.
 // Ghidra size: 0xae8 (2792 bytes)
 #pragma pack(push, 1)
 typedef struct CMoon {
-    char field_0[2792]; // 0x0
+    int is_loaded; // 0x0, init (004f94a0) loads the menu bitmaps and sets 1; free clears it
+    char field_4[4]; // 0x4
+    CKeyFramedModel models[3]; // 0x8, ctor and free at +0x8, +0x3a0, +0x738
+    int scroll_x[2]; // 0xad0, init sets 320 and -320; render (004f9670) steps each by 2, wraps to -640, and draws bwp3_menu_scroll at each x
+    int scroll_y[2]; // 0xad8, init sets 0 and 480; render steps each by -1, wraps to 479, and draws the tile at each y
+    int hand_alpha; // 0xae0, init sets 0x10000; render steps it by 500 between 5000 and 0xffff and draws bwp3_hand at (64, 64) with it
+    int hand_alpha_rising; // 0xae4, init sets 0; render's direction for hand_alpha, flipped at either bound
 } CMoon;
 #pragma pack(pop)
 

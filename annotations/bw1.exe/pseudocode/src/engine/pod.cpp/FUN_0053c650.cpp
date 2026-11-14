@@ -15,7 +15,7 @@ uint engine_pod_cpp_FUN_0053c650(int *param_1,uint param_2,char *param_3)
   CPodFile *pCVar3;
   char *pcVar4;
   
-  this_ptr = (CPodFile *)FUN_005c0f32(0x42c);
+  this_ptr = (CPodFile *)operator_new(0x42c);
   pCVar3 = (CPodFile *)0x0;
   if (this_ptr != (CPodFile *)0x0) {
     pCVar3 = engine_pod_cpp_CPodFile_ctor_FUN_0053b1a0(this_ptr);

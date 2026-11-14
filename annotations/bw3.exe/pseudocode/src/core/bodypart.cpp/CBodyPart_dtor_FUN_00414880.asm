@@ -1,20 +1,20 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBodyPart * core_bodypart_cpp_CBodyPart_dtor_FUN_00414880(CBodyPart *this_ptr,uint flags)
+; CBodyPart * __cdecl core_bodypart_cpp_CBodyPart_dtor_FUN_00414880(CBodyPart *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CBodyPart *      Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   void* g_CBodyPartVTable = 00414f60
+;   CDemonActor_vtable g_CBodyPartVTable
 ;   WatcomTypeInfo g_CBodyPartTypeInfo
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408770
-;   core_bodypart.cpp_FUN_00414910
 ;   core_bodypart.cpp_FUN_00416dc0
+;   core_bodypart.cpp_setCounts_FUN_00414910
 ;   core_box.cpp_CBox_dtor_FUN_0041adf0
 ;   crt_memory.c___vec_delete_FUN_005a308f
 ;   crt_unknown.c_FUN_005a30b6
@@ -34,8 +34,8 @@ section .text
     PUSH 0x0                            ; 0041488e
     PUSH EBX                            ; 00414890
     MOV dword ptr [EBX + 0x154],0x5dbfe4 ; 00414891 | g_CBodyPartVTable
-    CALL core_bodypart.cpp_FUN_00414910 ; 0041489b
-        ;   XREF to: 00414910 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_00414910()
+    CALL core_bodypart.cpp_setCounts_FUN_00414910 ; 0041489b
+        ;   XREF to: 00414910 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_setCounts_FUN_00414910()
     ADD ESP,0xc                         ; 004148a0
     PUSH 0x0                            ; 004148a3
     ADD EBX,0xcd0                       ; 004148a5
@@ -67,7 +67,7 @@ section .text
         ;   Label: LAB_004148e4
     PUSH EBX                            ; 004148e9
     CALL crt_memory.c___vec_delete_FUN_005a308f ; 004148ea
-        ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005a308f()
+        ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005a308f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 004148ef
     PUSH EAX                            ; 004148f2
     CALL crt_unknown.c_FUN_005a30b6     ; 004148f3

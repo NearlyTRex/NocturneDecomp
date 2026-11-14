@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 124,
+    "complexity_score": 79,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 34,
-    "suspect_count": 7,
+    "suspect_count": 3,
     "suspect_types": [
       "bitcast_double_pair",
       "sub84_truncation",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 119
@@ -27,13 +26,13 @@
     {
       "addr": "00598d50",
       "from_addr": "00598e2f",
-      "name": "core_tommygun.cpp_FUN_00598d50",
+      "name": "core_tommygun.cpp_CTommyGun_process_FUN_00598d50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a23b0",
       "from_addr": "005a285f",
-      "name": "core_turret.cpp_FUN_005a23b0",
+      "name": "core_turret.cpp_CTurret_process_FUN_005a23b0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -64,12 +63,12 @@
     {
       "addr": "0056fa10",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_0056fa10"
+      "name": "sound_sndmain.cpp_getSfxSlotFromHandle_FUN_0056fa10"
     },
     {
       "addr": "00573e70",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00573e70"
+      "name": "sound_sndmain.cpp_unlockSound_FUN_00573e70"
     }
   ],
   "globals": [
@@ -97,7 +96,7 @@
       {
         "call_addr": "005a285f",
         "call_type": "direct",
-        "caller": "core_turret.cpp_FUN_005a23b0",
+        "caller": "core_turret.cpp_CTurret_process_FUN_005a23b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -108,7 +107,7 @@
       {
         "call_addr": "00598e2f",
         "call_type": "direct",
-        "caller": "core_tommygun.cpp_FUN_00598d50",
+        "caller": "core_tommygun.cpp_CTommyGun_process_FUN_00598d50",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -148,6 +147,32 @@
       "STORE": 26
     },
     "pcode_op_count": 273
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00550c30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005567c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a9720",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00526d10",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 52,
@@ -225,38 +250,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0x60 != 0) && (_DAT_02c80650 != 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "(*(CSampleInfo **)&this_ptr->field_0x68,*(double *)&this_ptr->field_0x50,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "(*(CSampleInfo **)&this_ptr->field_0x68,*(double *)&this_ptr->field_0x50,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x58",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x58,output_format);",
-      "type": "unnamed_field"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",

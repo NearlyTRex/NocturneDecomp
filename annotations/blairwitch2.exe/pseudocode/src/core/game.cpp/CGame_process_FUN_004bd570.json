@@ -1,0 +1,549 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 444,
+    "complexity_score": 138,
+    "cross_reference_count": 1,
+    "function_call_count": 25,
+    "global_count": 41,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 108,
+    "suspect_count": 2,
+    "suspect_types": [
+      "raw_address_constant",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 552
+  },
+  "cross_references": [
+    {
+      "addr": "004b5190",
+      "from_addr": "004b5208",
+      "name": "core_game.cpp_FUN_004b5190",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004bd570",
+    "address_range": [
+      [
+        "004bd570",
+        "004bdb0a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_CGame_process_FUN_004bd570",
+    "signature": "void __cdecl core_game_cpp_CGame_process_FUN_004bd570(CGame *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cee0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_setRandomSeed_FUN_0040cee0"
+    },
+    {
+      "addr": "0059ac60",
+      "is_variadic": false,
+      "name": "core_bmppuzzl.cpp_processActivePuzzle_FUN_0059ac60"
+    },
+    {
+      "addr": "005a8180",
+      "is_variadic": false,
+      "name": "core_bwspart.cpp_CSimpleParticleSystem_process_FUN_005a8180"
+    },
+    {
+      "addr": "00447de0",
+      "is_variadic": false,
+      "name": "core_dfilter.cpp_CFilterFX_process_FUN_00447de0"
+    },
+    {
+      "addr": "004893d0",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_process_FUN_004893d0"
+    },
+    {
+      "addr": "0049c430",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_process_FUN_0049c430"
+    },
+    {
+      "addr": "004a5f60",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_CFieldNotes_process_FUN_004a5f60"
+    },
+    {
+      "addr": "004b3000",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_saveClockTime_FUN_004b3000"
+    },
+    {
+      "addr": "004bb2f0",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_updateFadeTransition_FUN_004bb2f0"
+    },
+    {
+      "addr": "004b90d0",
+      "is_variadic": false,
+      "name": "core_game.cpp_FUN_004b90d0"
+    },
+    {
+      "addr": "004bb5b0",
+      "is_variadic": false,
+      "name": "core_game.cpp_FUN_004bb5b0"
+    },
+    {
+      "addr": "004c9670",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CGore_process_FUN_004c9670"
+    },
+    {
+      "addr": "004fc940",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_process_FUN_004fc940"
+    },
+    {
+      "addr": "005216e0",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_process_FUN_005216e0"
+    },
+    {
+      "addr": "00533010",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_process_FUN_00533010"
+    },
+    {
+      "addr": "0052e940",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_processActors_FUN_0052e940"
+    },
+    {
+      "addr": "00538d10",
+      "is_variadic": false,
+      "name": "core_setdir.cpp_FUN_00538d10"
+    },
+    {
+      "addr": "0055a1d0",
+      "is_variadic": false,
+      "name": "core_sound.cpp_FUN_0055a1d0"
+    },
+    {
+      "addr": "0057b970",
+      "is_variadic": false,
+      "name": "core_terrain.cpp_CTerrain_process_FUN_0057b970"
+    },
+    {
+      "addr": "00585e60",
+      "is_variadic": false,
+      "name": "core_water.cpp_CWater_process_FUN_00585e60"
+    },
+    {
+      "addr": "0058a660",
+      "is_variadic": false,
+      "name": "core_weather.cpp_CWeather_update_FUN_0058a660"
+    },
+    {
+      "addr": "005b849c",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_rand_FUN_005b849c"
+    },
+    {
+      "addr": "004032b0",
+      "is_variadic": false,
+      "name": "engine_2d.c_clearInputAndWait_FUN_004032b0"
+    },
+    {
+      "addr": "00436710",
+      "is_variadic": false,
+      "name": "engine_console.cpp_CConsole_printf_FUN_00436710"
+    },
+    {
+      "addr": "0058e9e0",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_getTime_FUN_0058e9e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d884f",
+      "name": "s_G_s_3_2f_ms_005d884e+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d887b",
+      "name": "s_gFilterFX_process_005d887a+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d8890",
+      "name": "s_gScript_process_005d8890",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d88a3",
+      "name": "s_gSet_process_005d88a3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d88b3",
+      "name": "s_gGore_process_005d88b3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d88c4",
+      "name": "s_gFire_process_005d88c4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d88d5",
+      "name": "s_gEventList_process_005d88d5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d88eb",
+      "name": "s_gSit_process_005d88eb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d88fb",
+      "name": "s_simulate_3_2f_ms_005d88fb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d8913",
+      "name": "DAT_005d8913",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d891b",
+      "name": "DAT_005d891b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d8923",
+      "name": "DAT_005d8923",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00609ed0",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "007c158c"
+    },
+    {
+      "addr": "0060a0b8",
+      "name": "g_CFilterFXPtr",
+      "type": "CFilterFX*",
+      "value": "01511cac"
+    },
+    {
+      "addr": "006141f0",
+      "name": "DAT_006141f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00614d30",
+      "name": "DAT_00614d30",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00616044",
+      "name": "g_CFieldNotesPtr",
+      "type": "CFieldNotes*",
+      "value": "01caf56c"
+    },
+    {
+      "addr": "00616494",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01cb6900"
+    },
+    {
+      "addr": "006167e0",
+      "name": "g_CGorePtr",
+      "type": "CGore*",
+      "value": "01cb8284"
+    },
+    {
+      "addr": "00618170",
+      "name": "DAT_00618170",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061b120",
+      "name": "g_CNetGamePtr",
+      "type": "CNetGame*",
+      "value": "01d34cb0"
+    },
+    {
+      "addr": "0061b460",
+      "name": "g_CScriptPtr",
+      "type": "CScript*",
+      "value": "01e65cd0"
+    },
+    {
+      "addr": "0061b5a8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e661b8"
+    },
+    {
+      "addr": "0061c068",
+      "name": "DAT_0061c068",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061e450",
+      "name": "DAT_0061e450",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061e520",
+      "name": "g_CWaterPtr",
+      "type": "CWater*",
+      "value": "02653790"
+    },
+    {
+      "addr": "0061e8f4",
+      "name": "DAT_0061e8f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061ebfc",
+      "name": "g_CSimpleParticleSystemPtr",
+      "type": "CSimpleParticleSystem*",
+      "value": "026687b0"
+    },
+    {
+      "addr": "007c158c",
+      "name": "g_CConsoleInstance",
+      "type": "CConsole",
+      "value": null
+    },
+    {
+      "addr": "01caf56c",
+      "name": "g_CFieldNotesInstance",
+      "type": "CFieldNotes",
+      "value": null
+    },
+    {
+      "addr": "01cb6900",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "01cb6b28",
+      "name": "g_CGameInstance.profile_mode",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6b84",
+      "name": "g_CGameInstance.delta_time_float",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb8118",
+      "name": "DAT_01cb8118",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d34cb0",
+      "name": "g_CNetGameInstance",
+      "type": "CNetGame",
+      "value": null
+    },
+    {
+      "addr": "01d34e2c",
+      "name": "g_CNetGameInstance.random_seed",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e65cd0",
+      "name": "g_CScriptInstance",
+      "type": "CScript",
+      "value": null
+    },
+    {
+      "addr": "01e65cdc",
+      "name": "g_CScriptInstance.focus_actor",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e65ce0",
+      "name": "g_CScriptInstance.focus_actor_changed",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e661b8",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "02653790",
+      "name": "g_CWaterInstance",
+      "type": "CWater",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004b5208",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b5190",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b5cb1",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b5190",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.60968660968661,
+    "instruction_count": 351,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 17,
+      "BRANCH": 4,
+      "CALL": 47,
+      "CBRANCH": 19,
+      "COPY": 534,
+      "FLOAT2FLOAT": 43,
+      "FLOAT_ADD": 1,
+      "FLOAT_DIV": 8,
+      "FLOAT_MULT": 24,
+      "INT2FLOAT": 8,
+      "INT_ADD": 87,
+      "INT_AND": 133,
+      "INT_CARRY": 29,
+      "INT_EQUAL": 132,
+      "INT_LESS": 36,
+      "INT_SBORROW": 36,
+      "INT_SCARRY": 29,
+      "INT_SLESS": 66,
+      "INT_SUB": 133,
+      "LOAD": 46,
+      "POPCOUNT": 66,
+      "RETURN": 1,
+      "STORE": 119
+    },
+    "pcode_op_count": 1618
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004d8060",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6945
+    },
+    "bw3.exe": {
+      "addr": "004bf4b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6945
+    },
+    "nocedit.exe": {
+      "addr": "004e3190",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7784
+    },
+    "nocturne.exe": {
+      "addr": "004a6010",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7784
+    }
+  },
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Raw hex address 0x264b290 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 42,
+      "match": "0x264b290",
+      "severity": "moderate",
+      "text": "this_ptr_00 = 0x0264B290;",
+      "type": "raw_address_constant"
+    }
+  ]
+}

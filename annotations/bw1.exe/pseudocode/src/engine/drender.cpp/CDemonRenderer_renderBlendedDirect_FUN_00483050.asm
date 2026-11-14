@@ -8,13 +8,13 @@
 ; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ;
 ; XREF[13]:
-;   core_chain.cpp_FUN_00436600 at 0043697a
+;   core_chain.cpp_CChain_renderTransparent_FUN_00436600 at 0043697a
 ;   core_fire.cpp_CBulletHole_render_FUN_004ac770 at 004ac9c6
 ;   core_fire.cpp_CCrater_render_FUN_004b23a0 at 004b25aa
+;   core_fire.cpp_CGlassParticle_render_FUN_004af9f0 at 004afbd0
+;   core_fire.cpp_CLightningBolt_render_FUN_004b3570 at 004b38ba
 ;   core_fire.cpp_CSmokeParticle_render_FUN_004ac0b0 at 004ac3bf
 ;   core_fire.cpp_CTrail_render_FUN_004b3d20 at 004b3fd1
-;   core_fire.cpp_FUN_004af9f0 at 004afbd0
-;   core_fire.cpp_FUN_004b3570 at 004b38ba
 ;   core_gore.cpp_CBloodPool_render_FUN_004e5180 at 004e542f
 ;   core_gore.cpp_CBloodSplat_render_FUN_004e49a0 at 004e4c8c
 ;   core_gore.cpp_CFootstep_render_FUN_004e5860 at 004e5a41
@@ -99,7 +99,7 @@ section .text
         ;   Label: LAB_004830d1
     PUSH EAX                            ; 004830d4
     CALL engine_3d.c_isVisiblePlane_FUN_00403920 ; 004830d5
-        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403920()
+        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403920(SClipPlane * plane)
     ADD ESP,0x4                         ; 004830da
     TEST EAX,EAX                        ; 004830dd
     JZ 0x004830cc                       ; 004830df

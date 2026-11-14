@@ -7,7 +7,7 @@
 ; CNetGame *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_main.c_FUN_005032a0 at 00503986
+;   core_main.c_initializeGameSystems_FUN_005032a0 at 00503986
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_netlog_txt_005eb66f
@@ -27,7 +27,7 @@
 ;   crt_env.c_getenv_FUN_005c3050
 ;   crt_unknown.c_FUN_005c25c0
 ;   support_trisock.cpp_FUN_0059eeb0
-;   wincore_winrun.cpp_FUN_005b2420
+;   wincore_winrun.cpp_getTime_FUN_005b2420
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     MOV EDX,0x1                         ; 0052c52c
     ADD ESP,0x4                         ; 0052c531
     MOV dword ptr [0x01d51da0],EDX      ; 0052c534 | DAT_01d51da0
-    CALL wincore_winrun.cpp_FUN_005b2420 ; 0052c53a
-        ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005b2420()
+    CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 0052c53a
+        ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
     MOV EDX,EAX                         ; 0052c53f
     MOV ESI,0x12                        ; 0052c541
     SAR EDX,0x1f                        ; 0052c546

@@ -6,10 +6,13 @@
 #include "system/basetypes.h"
 
 // Structure: SInventoryItemInfo
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// nocedit's layout. getItemDisplayName / getItemDescription (bw1 004f62e0/004f6350, bw2 004d9f10/004d9f80, bw3 004d9e40/004d9eb0) walk g_ItemDefinitionArray with stride 0x300, compare the model name at +0 and return +0x100 / +0x200; loadItem fscanf's the three strings; all instruction-identical to nocedit.
+// Ghidra size: 0x300 (768 bytes)
 #pragma pack(push, 1)
 typedef struct SInventoryItemInfo {
+    char model_name[256]; // 0x0
+    char display_name[256]; // 0x100
+    char description[256]; // 0x200
 } SInventoryItemInfo;
 #pragma pack(pop)
 

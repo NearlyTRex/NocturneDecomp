@@ -7,8 +7,80 @@
 
 // Original: core_djien.cpp_staticInit_FUN_0045fdb0
 // Address: 0045fdb0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_djien.cpp_factoryFuncDjien_FUN_0045fde0
 // Address: 0045fde0
-void factoryFuncDjien(void);
+CDjien * __cdecl factoryFuncDjien(void);
+
+// Original: core_djien.cpp_CDjien_getActorType_FUN_0045fe00
+// Address: 0045fe00
+CDemonActorType * __cdecl CDjien::getActorType(CDjien *this_ptr);
+
+// Original: core_djien.cpp_CDjien_ctor_FUN_0045fe10
+// Address: 0045fe10
+CDjien * __cdecl CDjien::ctor(CDjien *this_ptr);
+
+// Original: core_djien.cpp_CDjien_setup_FUN_0045ff00
+// Address: 0045ff00
+void __cdecl CDjien::setup(CDjien *this_ptr);
+
+// Original: core_djien.cpp_CDjien_process_FUN_00460230
+// Address: 00460230
+void __cdecl CDjien::process(CDjien *this_ptr,float delta_time);
+
+// Original: core_djien.cpp_FUN_00460960
+// Address: 00460960
+void FUN_00460960(int param_1);
+
+// Original: core_djien.cpp_FUN_004609c0
+// Address: 004609c0
+void FUN_004609c0(CEnemy *param_1);
+
+// Original: core_djien.cpp_FUN_00460cb0
+// Address: 00460cb0
+void FUN_00460cb0(CCharacter *param_1);
+
+// Original: core_djien.cpp_CDjien_archive_FUN_00460e80
+// Address: 00460e80
+void __cdecl CDjien::archive(CDjien *this_ptr);
+
+// Original: core_djien.cpp_CDjien_damageSack_FUN_00460f90
+// Address: 00460f90
+void __cdecl CDjien::damageSack(CDjien *this_ptr,SDamageInfo *damage);
+
+// Original: core_djien.cpp_CDjien_getCollisionType_FUN_00461090
+// Address: 00461090
+ECollisionType __cdecl CDjien::getCollisionType(CDjien *this_ptr,SCollisionInfo *collision_info);
+
+// Original: core_djien.cpp_CDjien_customRayIntersect_FUN_004610b0
+// Address: 004610b0
+float __cdecl CDjien::customRayIntersect(CDjien *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
+
+// Original: core_djien.cpp_CDjien_processDamage_FUN_004613b0
+// Address: 004613b0
+void __cdecl CDjien::processDamage(CDjien *this_ptr,SDamageInfo *damage_info);
+
+// Original: core_djien.cpp_CDjien_getSackIndex_FUN_00461530
+// Address: 00461530
+int __cdecl CDjien::getSackIndex(CDjien *this_ptr,int part_id);
+
+// Original: core_djien.cpp_CDjien_getTargetPoints_FUN_00461590
+// Address: 00461590
+int __cdecl CDjien::getTargetPoints(CDjien *this_ptr,CVector3f *out_points_array);
+
+// Original: core_djien.cpp_FUN_004615b0
+// Address: 004615b0
+int FUN_004615b0(int param_1,int param_2,int param_3);
+
+// Original: core_djien.cpp_CDjien_dtor_FUN_004623b0
+// Address: 004623b0
+CDjien * __cdecl CDjien::dtor(CDjien *this_ptr,uint flags);
+
+// Original: core_djien.cpp_SDjienBox_ctor_FUN_00462440
+// Address: 00462440
+SDjienBox * __cdecl SDjienBox::ctor(SDjienBox *this_ptr);
+
+// Original: core_djien.cpp_FUN_00462450
+// Address: 00462450
+void FUN_00462450(void);

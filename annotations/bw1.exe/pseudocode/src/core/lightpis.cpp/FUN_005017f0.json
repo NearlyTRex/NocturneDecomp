@@ -2,22 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 404,
+    "complexity_score": 279,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 39,
-    "suspect_count": 31,
+    "suspect_count": 20,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "tautological_addr_guard",
-      "unknown_field",
-      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
@@ -28,13 +25,13 @@
     {
       "addr": "00501a70",
       "from_addr": "00501ce8",
-      "name": "core_lightpis.cpp_FUN_00501a70",
+      "name": "core_lightpis.cpp_CLightPis_fire_FUN_00501a70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00502480",
       "from_addr": "0050257c",
-      "name": "core_lightpis.cpp_FUN_00502480",
+      "name": "core_lightpis.cpp_CLightPis_process_FUN_00502480",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -59,7 +56,7 @@
     {
       "addr": "0045f3e0",
       "is_variadic": false,
-      "name": "core_dirmat.cpp_FUN_0045f3e0"
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0"
     },
     {
       "addr": "00465da0",
@@ -76,55 +73,55 @@
     },
     {
       "addr": "01ccc3e8",
-      "name": "g_CDemonLightInstance.field4_0x4",
+      "name": "g_CDemonLightInstance.base.base.position",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccc3ec",
-      "name": "g_CDemonLightInstance.field8_0x8",
+      "name": "g_CDemonLightInstance.base.base.position+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccc3f0",
-      "name": "g_CDemonLightInstance.field12_0xc",
+      "name": "g_CDemonLightInstance.base.base.position+8",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccc3f4",
-      "name": "g_CDemonLightInstance.field16_0x10",
+      "name": "g_CDemonLightInstance.base.base.rotation_matrix.m[0].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccc41c",
-      "name": "g_CDemonLightInstance.field56_0x38",
+      "name": "g_CDemonLightInstance.base.base.focal_length",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccc524",
-      "name": "g_CDemonLightInstance.field320_0x140",
+      "name": "g_CDemonLightInstance.base.max_distance",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cce098",
-      "name": "g_CDemonLightInstance.field7348_0x1cb4",
+      "name": "g_CDemonLightInstance.light_enabled_flag",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cce0a0",
-      "name": "g_CDemonLightInstance.field7356_0x1cbc",
+      "name": "g_CDemonLightInstance.volumetric_enabled",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cce0b4",
-      "name": "g_CDemonLightInstance.field7376_0x1cd0",
+      "name": "g_CDemonLightInstance.antialiasing_enabled",
       "type": "undefined4",
       "value": null
     }
@@ -135,7 +132,7 @@
       {
         "call_addr": "00501ce8",
         "call_type": "direct",
-        "caller": "core_lightpis.cpp_FUN_00501a70",
+        "caller": "core_lightpis.cpp_CLightPis_fire_FUN_00501a70",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -148,7 +145,7 @@
       {
         "call_addr": "0050257c",
         "call_type": "direct",
-        "caller": "core_lightpis.cpp_FUN_00502480",
+        "caller": "core_lightpis.cpp_CLightPis_process_FUN_00502480",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -233,9 +230,9 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 8,
-      "match": "auStackY_1024",
+      "match": "afStackY_1024",
       "severity": "moderate",
-      "text": "uint auStackY_1024 [1016];",
+      "text": "float afStackY_1024 [1016];",
       "type": "stack_alignment_array"
     },
     {
@@ -287,22 +284,6 @@
       "type": "stack_ref"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 24,
-      "match": "._7348_4_",
-      "severity": "mild",
-      "text": "g_CDemonLightInstance._7348_4_ = 1;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 25,
-      "match": "._7356_4_",
-      "severity": "mild",
-      "text": "g_CDemonLightInstance._7356_4_ = 1;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 27,
       "match": "&stack0xffffffe0",
@@ -339,80 +320,16 @@
       "line": 31,
       "match": "&stack0x00000000",
       "severity": "moderate",
-      "text": "if (&stack0x00000000 != &g_CDemonLightInstance.field_0x28) {",
+      "text": "if ((CVector3f *)&stack0x00000000 != g_CDemonLightInstance.base.base.rotation_matrix.m + 2) {",
       "type": "stack_ref"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "if (&stack0x00000000 != &g_CDemonLightInstance.field_0x28) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 32,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "g_CDemonLightInstance._4_4_ = uStack_24;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 33,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "g_CDemonLightInstance._8_4_ = uStack_20;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 34,
-      "match": "._12_4_",
-      "severity": "mild",
-      "text": "g_CDemonLightInstance._12_4_ = uStack_1c;",
-      "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CMatrix3x3f *)&g_CDemonLightInstance.field_0x10,(CVector3f *)(param_1 + 0x30));",
+      "text": "(&g_CDemonLightInstance.base.base.rotation_matrix,(CVector3f *)(param_1 + 0x30));",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "((CMatrix3x3f *)&g_CDemonLightInstance.field_0x10,(CVector3f *)(param_1 + 0x30));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 38,
-      "match": "._320_4_",
-      "severity": "mild",
-      "text": "g_CDemonLightInstance._320_4_ = 0x42000000;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 39,
-      "match": "._56_4_",
-      "severity": "mild",
-      "text": "g_CDemonLightInstance._56_4_ = _DAT_00603174;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 40,
-      "match": "._7376_4_",
-      "severity": "mild",
-      "text": "g_CDemonLightInstance._7376_4_ = 1;",
-      "type": "unknown_field"
     },
     {
       "description": "Pointer value `&stack0xffffffe0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
@@ -429,14 +346,6 @@
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffe4 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =",
       "type": "pointer_truncation"
-    },
-    {
-      "description": "Tautological address-of guard: `if (... != ...)` comparing a null literal against `&g_CDemonLightInstance.field_0x28` is always TRUE (the address of `g_CDemonLightInstance.field_0x28` is never null), so the guard never skips its body. Drop the if-wrapper in a .keep, leaving the body unconditional.",
-      "line": 31,
-      "match": "if ((T *)0x0 != &g_CDemonLightInstance.field_0x28)",
-      "severity": "moderate",
-      "text": "if (&stack0x00000000 != &g_CDemonLightInstance.field_0x28) {",
-      "type": "tautological_addr_guard"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",

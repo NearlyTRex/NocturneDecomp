@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 6,
-    "complexity_score": 32,
+    "complexity_score": 7,
     "cross_reference_count": 14,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 7,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 13
   },
   "cross_references": [
@@ -30,19 +28,19 @@
     {
       "addr": "004642f0",
       "from_addr": "004646a7",
-      "name": "core_door.cpp_FUN_004642f0",
+      "name": "core_door.cpp_CDoor_process_FUN_004642f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004a5b10",
       "from_addr": "004a5cd1",
-      "name": "core_flame.cpp_FUN_004a5b10",
+      "name": "core_flame.cpp_CFlame_process_FUN_004a5b10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0050df70",
       "from_addr": "0050df85",
-      "name": "core_pendulum.cpp_FUN_0050df70",
+      "name": "core_pendulum.cpp_CPendulum_testCollisionWithActor_FUN_0050df70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -54,7 +52,13 @@
     {
       "addr": "005114f0",
       "from_addr": "00511c32",
-      "name": "core_platfrm.cpp_FUN_005114f0",
+      "name": "core_platfrm.cpp_CPlatform_process_FUN_005114f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00524170",
+      "from_addr": "0052429f",
+      "name": "core_prye.cpp_CPrye_updateArmRecoilBlend_FUN_00524170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -78,25 +82,19 @@
     {
       "addr": "00566fd0",
       "from_addr": "005672f9",
-      "name": "core_spike.cpp_FUN_00566fd0",
+      "name": "core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_00566fd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0056cde0",
       "from_addr": "0056cede",
-      "name": "core_trap.cpp_FUN_0056cde0",
+      "name": "core_trap.cpp_CTrap_process_FUN_0056cde0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00575380",
       "from_addr": "00575740",
-      "name": "core_tvbat.cpp_FUN_00575380",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00524170",
-      "from_addr": "0052429f",
-      "name": "unkafter_prye.cpp_FUN_00524170",
+      "name": "core_tvbat.cpp_CTVBat_process_FUN_00575380",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -153,7 +151,7 @@
       {
         "call_addr": "004646a7",
         "call_type": "direct",
-        "caller": "core_door.cpp_FUN_004642f0",
+        "caller": "core_door.cpp_CDoor_process_FUN_004642f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -164,7 +162,7 @@
       {
         "call_addr": "00511c32",
         "call_type": "direct",
-        "caller": "core_platfrm.cpp_FUN_005114f0",
+        "caller": "core_platfrm.cpp_CPlatform_process_FUN_005114f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -186,7 +184,7 @@
       {
         "call_addr": "0052429f",
         "call_type": "direct",
-        "caller": "unkafter_prye.cpp_FUN_00524170",
+        "caller": "core_prye.cpp_CPrye_updateArmRecoilBlend_FUN_00524170",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -219,7 +217,7 @@
       {
         "call_addr": "004a5cd1",
         "call_type": "direct",
-        "caller": "core_flame.cpp_FUN_004a5b10",
+        "caller": "core_flame.cpp_CFlame_process_FUN_004a5b10",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -246,6 +244,32 @@
     },
     "pcode_op_count": 14
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00537fa0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005593c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005743c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00511990",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -262,24 +286,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x20 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x24 = 0;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

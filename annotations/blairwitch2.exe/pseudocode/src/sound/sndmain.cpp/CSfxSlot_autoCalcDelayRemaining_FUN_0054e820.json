@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 151,
+    "complexity_score": 86,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 11,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 26,
-    "suspect_count": 11,
+    "suspect_count": 5,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 77
@@ -166,6 +165,32 @@
     },
     "pcode_op_count": 226
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00570e90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00554390",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a7070",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9524
+    },
+    "nocturne.exe": {
+      "addr": "005247a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9524
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -192,44 +217,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "if ((this_ptr->field_0x4c & 1) != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x40 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "fVar1 = (float10)*(double *)&this_ptr->field_0x4 -",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 21,
       "match": "DAT_02648428",
       "severity": "mild",
       "text": "(float10)*(double *)(&DAT_02648428 + _DAT_026484b8 * 8);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "fVar2 = (float10)*(double *)&this_ptr->field_0xc -",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
@@ -240,28 +233,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "fVar3 = (float10)*(double *)&this_ptr->field_0x14 -",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 25,
       "match": "DAT_02648448",
       "severity": "mild",
       "text": "(float10)*(double *)(&DAT_02648448 + _DAT_026484b8 * 8);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x40 =",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",

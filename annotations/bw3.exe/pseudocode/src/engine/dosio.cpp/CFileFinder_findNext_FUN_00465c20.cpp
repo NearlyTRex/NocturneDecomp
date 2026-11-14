@@ -14,12 +14,12 @@ int __cdecl engine_dosio_cpp_CFileFinder_findNext_FUN_00465c20(CFileFinder *this
   BOOL BVar1;
   _WIN32_FIND_DATAA _Stack_148;
   
-  if (*(int *)&this_ptr->field_0x10c == 0) {
+  if (this_ptr->has_results == 0) {
     _DAT_01d71de0 = "..\\engine\\dosio.c";
     _DAT_01d71de4 = 0x28e;
     core_main_c_FUN_004e4330("CFileFinder::open - search not opened!");
   }
-  BVar1 = FindNextFileA(*(HANDLE *)&this_ptr->field_0x110,&_Stack_148);
+  BVar1 = FindNextFileA(this_ptr->search_handle,&_Stack_148);
   if (BVar1 != 0) {
     engine_dosio_cpp_CFileFinder_convertStruct_FUN_00465cf0(this_ptr,&_Stack_148);
     return 1;

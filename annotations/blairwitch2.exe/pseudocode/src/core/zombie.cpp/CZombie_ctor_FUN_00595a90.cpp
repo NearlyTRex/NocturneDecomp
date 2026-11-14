@@ -1,40 +1,38 @@
 // Name: core_zombie.cpp_CZombie_ctor_FUN_00595a90
 // Address: 00595a90
 // Address Range: [[00595a90, 00595bf1]]
-// Convention: unknown
-// Signature: CZombie * core_zombie_cpp_CZombie_ctor_FUN_00595a90(CZombie *this_ptr)
+// Convention: __cdecl
+// Signature: CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_00595a90(CZombie *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CZombie * core_zombie_cpp_CZombie_ctor_FUN_00595a90(CZombie *this_ptr)
+CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_00595a90(CZombie *this_ptr)
 
 {
   char cVar1;
-  uint uVar2;
+  float fVar2;
   CZombie *pCVar3;
-  uint uVar4;
+  float fVar4;
   int iVar5;
-  byte *str1;
   char *pcVar6;
   char *pcVar7;
   
-  pCVar3 = (CZombie *)core_enemy_cpp_CEnemy_ctor_FUN_00487db0((CEnemy *)this_ptr);
+  pCVar3 = (CZombie *)core_enemy_cpp_CEnemy_ctor_FUN_00487db0(&this_ptr->base);
   pcVar6 = (char *)0x5eee4e;
-  *(byte **)&pCVar3->field_0x2b0 = &g_CZombieVTable;
+  (pCVar3->base).base.base.vtable._ub = &g_CZombieVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
-            ((CDeformableModelInstance *)&pCVar3->field_0x2b4,(char *)0x5eee42);
-  *(uint *)&pCVar3->field_0x3430 = 0x3f000000;
-  pcVar7 = &pCVar3->field_0x10b18;
-  *(uint *)&pCVar3->field_0x3434 = 0x3f800000;
-  uVar4 = _DAT_005fe31c;
-  *(uint *)&pCVar3->field_0x10b08 = 0;
-  uVar2 = _DAT_005fe320;
-  *(uint *)&pCVar3->field_0x10b04 = 0;
-  *(uint *)&pCVar3->field_0x3438 = uVar4;
-  *(uint *)&pCVar3->field_0x343c = uVar2;
+            (&(pCVar3->base).base.model,(char *)0x5eee42);
+  (pCVar3->base).base.collision_cylinder_height = 0.5;
+  pcVar7 = pCVar3->rise_from_grave_condition;
+  (pCVar3->base).base.collision_cylinder_radius = 1.0;
+  fVar4 = _DAT_005fe31c;
+  pCVar3->pickup_target = (CDemonActor *)0x0;
+  fVar2 = _DAT_005fe320;
+  pCVar3->pickup_approach_progress = 0.0;
+  (pCVar3->base).base.ai_detection_range_min = fVar4;
+  (pCVar3->base).base.ai_detection_range_max = fVar2;
   do {
     cVar1 = *pcVar6;
     *pcVar7 = cVar1;
@@ -44,22 +42,22 @@ CZombie * core_zombie_cpp_CZombie_ctor_FUN_00595a90(CZombie *this_ptr)
     pcVar7[1] = cVar1;
     pcVar7 = pcVar7 + 2;
   } while (cVar1 != '\0');
-  uVar4 = core_actor_cpp_FUN_0040cf60(0x3e99999a,0x3f800000);
-  *(uint *)&pCVar3->field_0x10b10 = 0;
-  *(uint *)&pCVar3->field_0x10af8 = uVar4;
-  iVar5 = core_actor_cpp_FUN_0040cfc0(0,0xff);
-  *(uint *)&pCVar3->field_0x10b00 = 0;
-  *(uint *)&pCVar3->field_0x10b14 = 0;
-  *(int *)&pCVar3->field_0x10afc = iVar5;
-  str1 = &g_CDemonSetPtr->field_0x14d0f0;
-  *(uint *)&pCVar3->field_0x10b7c = 0;
-  *(uint *)&pCVar3->field_0x10bd0 = 0;
-  iVar5 = _stricmp(str1,"mine.geo");
-  *(uint *)&pCVar3->field_0x10b80 = 0;
-  *(uint *)&pCVar3->field_0x10be0 = 0;
-  *(uint *)&pCVar3->field_0x10be4 = 0;
-  *(uint *)&pCVar3->field_0x10af4 = 0;
-  *(uint *)&pCVar3->field_0x259c = 0x3fc90fdb;
-  *(uint *)&pCVar3->field_0x10b7c = (uint)(iVar5 == 0);
+  fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.3,1.0);
+  pCVar3->grave_actor = (CDemonActor *)0x0;
+  pCVar3->pickup_range_factor = fVar4;
+  iVar5 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,0xff);
+  pCVar3->pickup_scan_timer = 0.0;
+  pCVar3->target_door = (CDoor *)0x0;
+  pCVar3->pickup_seed = iVar5;
+  pcVar7 = g_CDemonSetPtr->geometry_filename;
+  pCVar3->is_miner_zombie = 0;
+  pCVar3->pain_cooldown = 0.0;
+  iVar5 = _stricmp(pcVar7,"mine.geo");
+  pCVar3->always_chase_fast = 0;
+  pCVar3->rise_delay = 0.0;
+  pCVar3->buried_timer = 0.0;
+  (pCVar3->base).allow_pathfind_to_new_targets = 0;
+  (pCVar3->base).base.turn_rate = 1.5707964;
+  pCVar3->is_miner_zombie = (uint)(iVar5 == 0);
   return pCVar3;
 }

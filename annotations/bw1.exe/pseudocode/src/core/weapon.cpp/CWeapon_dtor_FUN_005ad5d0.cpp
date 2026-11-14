@@ -14,14 +14,15 @@ CWeapon * __cdecl core_weapon_cpp_CWeapon_dtor_FUN_005ad5d0(CWeapon *this_ptr,ui
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CWeaponTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CWeaponTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  *(byte ***)&this_ptr->field_0x154 = &g_CWeaponVTable;
-  pCVar1 = core_box_cpp_CBox_dtor_FUN_0041dab0((CBox *)&this_ptr->field_0x308,0);
+  (this_ptr->base).vtable._ub = &g_CWeaponVTable._ub;
+  pCVar1 = core_box_cpp_CBox_dtor_FUN_0041dab0(&this_ptr->physics_box,0);
   pCVar2 = (CWeapon *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)(pCVar1 + -0x308),1);
+           core_actor_cpp_CDemonActor_dtor_FUN_00408730
+                     ((CDemonActor *)&pCVar1[-2].scrape_points[4].raytrace_intersection,1);
   if ((flags & 2) == 0) {
     return pCVar2;
   }

@@ -4,13 +4,34 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CAlphaBitmap.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CPuzzle.h"
+#include "types/structs/SButtonStruct.h"
 
 // Structure: CAudioRecPuzzle
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI size 2188; ctor 0059be60: puzzle base ctor 0059ab30, CAlphaBitmap at +4, arrinit 30 buttonStructs at 0x4c, two CKeyFramedModelInstance at 0x574/0x6f0, vtable at +0; bla's radio has no clip playback/solution block and 30 buttons
 // Ghidra size: 0x88c (2188 bytes)
 #pragma pack(push, 1)
 typedef struct CAudioRecPuzzle {
-    char field_0[2188]; // 0x0
+    CPuzzle base; // 0x0, derived
+    CAlphaBitmap background; // 0x4, load 0059af30 loads 'radioback' 640x480 into this+4; render 0059b430 displays it first
+    int cursor_index; // 0x18, render displays pointer bitmap [cursor_index] at the cursor; hover/knob code sets 0..3
+    int button_count; // 0x1c, addButton 0059b3c0 increments it; load resets 0
+    int selected_button; // 0x20, hitTestButtons 0059bad0 stores the hit index; process and the switch/knob slots compare it
+    int mouse_button; // 0x24, onMouse 0059bb40 stores the new button state
+    int previous_mouse_button; // 0x28, onMouse moves the old mouse_button here
+    int click_handled; // 0x2c, onMouse zeroes it; process sets 1 after handling one click
+    int transport_state; // 0x30, reset 0059ae40 sets 1; moveTransportSwitch 0059b970 steps it 0..2; render spins the reel forward at 0 and back at 2; getter slot returns +0x30
+    int knob_positions[3]; // 0x34, reset sets 2; turnKnob 0059ba10 steps entry i in 0..4; getter slots return +0x34/+0x38/+0x3c
+    int speed_setting; // 0x40, reset sets 3; process sets it from the 5 speed buttons; render scales the reel speed by speed_setting+1
+    int power_on; // 0x44, load sets 1; the power button toggles it; process exits the puzzle when 0
+    float reel_angle; // 0x48, reset zeroes it; render advances it by dt and normalizeAngleToPi and passes it to renderReel 0059bb60
+    SButtonStruct buttons[30]; // 0x4c, ctor 0059be60 arrinit 30 buttonStructs at +0x4c; addButton writes this+0x4c+i*0x2c
+    CKeyFramedModelInstance reel_model; // 0x574, ctor constructs it; reset sets 'audioreel.kfm'; load preCaches it; renderReel draws it
+    CKeyFramedModelInstance reel_shadow_model; // 0x6f0, ctor constructs it; reset sets 'audioreelshadow.kfm'; renderReel draws it when the shadow arg is 0
+    int cursor_offset_x[4]; // 0x86c, reset stores 3,0x14,2,0x12; render subtracts [cursor_index] from the cursor x
+    int cursor_offset_y[4]; // 0x87c, reset stores 2,6,6,6; render subtracts [cursor_index] from the cursor y
 } CAudioRecPuzzle;
 #pragma pack(pop)
 

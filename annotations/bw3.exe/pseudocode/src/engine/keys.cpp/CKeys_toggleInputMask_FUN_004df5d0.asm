@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   enable_extended
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_004b7f90 at 004b8415
+;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b8415
 ;   core_menu.cpp_FUN_004eae80 at 004ec076
 ;
 ; Referenced Globals:

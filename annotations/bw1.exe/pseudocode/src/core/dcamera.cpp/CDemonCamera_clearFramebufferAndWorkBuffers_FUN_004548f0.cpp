@@ -15,18 +15,18 @@ void __cdecl core_dcamera_cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00
   int iVar3;
   
   iVar4 = 0;
-  if (0 < *(int *)&this_ptr->field_0x148) {
+  if (0 < this_ptr->framebuffer_height) {
     do {
       iVar1 = 0;
-      if (0 < *(int *)&this_ptr->field_0x144) {
+      if (0 < this_ptr->framebuffer_width) {
         do {
-          *(int *)(*(int *)&this_ptr->field_0x158 +
-                  (*(int *)&this_ptr->field_0x144 * iVar4 + iVar1) * 4) = clear_color;
+          *(int *)((int)this_ptr->framebuffer_aligned +
+                  (this_ptr->framebuffer_width * iVar4 + iVar1) * 4) = clear_color;
           iVar1 = iVar1 + 1;
-        } while (iVar1 < *(int *)&this_ptr->field_0x144);
+        } while (iVar1 < this_ptr->framebuffer_width);
       }
       iVar4 = iVar4 + 1;
-    } while (iVar4 < *(int *)&this_ptr->field_0x148);
+    } while (iVar4 < this_ptr->framebuffer_height);
   }
   iVar1 = 0x140;
   iVar4 = 0;

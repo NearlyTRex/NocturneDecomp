@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   engine_mini3d.cpp_FUN_004ed9d0 at 004ed9ec
-;   engine_texture.cpp_FUN_0056ad5e at 0056b1d8
+;   engine_mini3d.cpp_loadTexture_FUN_004ed9d0 at 004ed9ec
+;   engine_texture.cpp_FUN_0056ad60 at 0056b1d8
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_007303f4

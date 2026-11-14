@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_shadowsc_cpp_staticInit_FUN_00560440(void)
+; void __cdecl core_shadowsc_cpp_staticInit_FUN_00560440(void)
 ;
 ;
 ; Called Functions:

@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 106,
+    "complexity_score": 46,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 21,
-    "suspect_count": 7,
+    "suspect_count": 2,
     "suspect_types": [
-      "raw_address_pointer_store",
-      "suspicious_cast",
-      "unnamed_field"
+      "pointer_cast"
     ],
     "total_lines": 78
   },
@@ -63,13 +61,13 @@
     },
     {
       "addr": "02024a2c",
-      "name": "g_CDemonSetInstance.field1364324_0x14d164",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02024a30",
-      "name": "g_CDemonSetInstance.field1364328_0x14d168",
+      "name": "g_CDemonSetInstance.actors[0]",
       "type": "undefined4",
       "value": null
     }
@@ -136,6 +134,32 @@
     },
     "pcode_op_count": 259
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00491860",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004aa1d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004b0b80",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00480b30",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -161,60 +185,20 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x14d164",
-      "severity": "mild",
-      "text": "for (iVar4 = 0; iVar4 < *(int *)&g_CDemonSetPtr->field_0x14d164; iVar4 = iVar4 + 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "description": "Complex pointer cast",
       "line": 15,
-      "match": "*(char **)(&g_CDemonSetPtr->field_0x14d168",
+      "match": "(char **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "(*(char **)(&g_CDemonSetPtr->field_0x14d168 + iVar3),",
-      "type": "raw_address_pointer_store"
+      "text": "(*(char **)((int)g_CDemonSetPtr->actors + iVar3),",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x14d168",
-      "severity": "mild",
-      "text": "(*(char **)(&g_CDemonSetPtr->field_0x14d168 + iVar3),",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "description": "Complex pointer cast",
       "line": 18,
-      "match": "*(CDemonActor **)(&g_CDemonSetPtr->field_0x14d168",
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "return *(CDemonActor **)(&g_CDemonSetPtr->field_0x14d168 + iVar3);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x14d168",
-      "severity": "mild",
-      "text": "return *(CDemonActor **)(&g_CDemonSetPtr->field_0x14d168 + iVar3);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00603b38 (at 0x00603b38, +16 bytes).",
-      "line": 15,
-      "match": "g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "(*(char **)(&g_CDemonSetPtr->field_0x14d168 + iVar3),",
-      "type": "suspicious_cast"
-    },
-    {
-      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00603b38 (at 0x00603b38, +16 bytes).",
-      "line": 18,
-      "match": "g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "return *(CDemonActor **)(&g_CDemonSetPtr->field_0x14d168 + iVar3);",
-      "type": "suspicious_cast"
+      "text": "return *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3);",
+      "type": "pointer_cast"
     }
   ]
 }

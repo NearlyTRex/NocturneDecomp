@@ -1,20 +1,20 @@
 // Name: core_imp.cpp_factoryFuncImp_FUN_004f27c0
 // Address: 004f27c0
 // Address Range: [[004f27c0, 004f27db]]
-// Convention: unknown
-// Signature: void core_imp_cpp_factoryFuncImp_FUN_004f27c0(void)
+// Convention: __cdecl
+// Signature: CImp * __cdecl core_imp_cpp_factoryFuncImp_FUN_004f27c0(void)
 
 #include "nocturne.h"
 
-void core_imp_cpp_factoryFuncImp_FUN_004f27c0(void)
+CImp * __cdecl core_imp_cpp_factoryFuncImp_FUN_004f27c0(void)
 
 {
-  CImp *this_ptr;
+  CImp *pCVar1;
   
-  this_ptr = (CImp *)FUN_005c0f32(0xc2a0);
-  if (this_ptr == (CImp *)0x0) {
-    return;
+  pCVar1 = (CImp *)operator_new(0xc2a0);
+  if (pCVar1 == (CImp *)0x0) {
+    return (CImp *)0x0;
   }
-  core_imp_cpp_CImp_ctor_FUN_004f27f0(this_ptr);
-  return;
+  pCVar1 = core_imp_cpp_CImp_ctor_FUN_004f27f0(pCVar1);
+  return pCVar1;
 }

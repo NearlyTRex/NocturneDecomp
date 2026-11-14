@@ -18,7 +18,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_set.cpp_CDemonSet_FUN_0050aa70 at 0050aaa6
+;   core_set.cpp_CDemonSet_renderLightDebugView_FUN_0050aa70 at 0050aaa6
 ;
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140

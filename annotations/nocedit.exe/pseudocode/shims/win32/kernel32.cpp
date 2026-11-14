@@ -125,6 +125,7 @@ static inline long tm_utc_offset(const struct tm *tm_buf) {
 }
 #endif
 
+#include <algorithm>
 #include <stdint.h>
 #include <string>
 #include <vector>
@@ -1276,6 +1277,9 @@ static DWORD shim_GetModuleFileNameA(HMODULE hModule, LPSTR lpFilename, DWORD nS
     ssize_t len = host_program_path(lpFilename, nSize);
     if (len < 0)
         return 0;
+    // host_program_path keeps len below nSize; the analyzer cannot see that
+    // through readlink's answer.
+    // NOLINTNEXTLINE(clang-analyzer-security.ArrayBound)
     lpFilename[len] = '\0';
     return (DWORD)len;
 }
@@ -1566,24 +1570,20 @@ static LPWSTR shim_GetCommandLineW(void) {
 
 static LPSTR shim_GetEnvironmentStrings(void) {
     // Return a double-null-terminated block of "KEY=VALUE\0" pairs
+    // Read once, so the block is sized for exactly what it holds even if the
+    // environment changes while it is made.
     extern char **environ;
-    size_t total = 0;
+    std::string joined;
     for (int i = 0; environ[i]; i++) {
-        total += strlen(environ[i]) + 1;
+        joined += environ[i];
+        joined += '\0';
     }
-    total++; // double null terminator
+    joined += '\0'; // double null terminator
 
-    char *block = new (std::nothrow) char[total];
+    char *block = new (std::nothrow) char[joined.size()];
     if (!block)
         return NULL;
-
-    char *p = block;
-    for (int i = 0; environ[i]; i++) {
-        size_t len = strlen(environ[i]);
-        memcpy(p, environ[i], len + 1);
-        p += len + 1;
-    }
-    *p = '\0';
+    std::copy(joined.begin(), joined.end(), block);
     return block;
 }
 

@@ -2,30 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 35,
+    "complexity_score": 5,
     "cross_reference_count": 18,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 5,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_field",
-      "unresolved_funcptr"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 18
   },
   "cross_references": [
     {
       "addr": "004aa810",
       "from_addr": "004ab6d8",
-      "name": "core_fldnotes.cpp_FUN_004aa810",
+      "name": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004b7f90",
       "from_addr": "004b890b",
-      "name": "core_game.cpp_FUN_004b7f90",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -47,6 +44,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00530150",
+      "from_addr": "0053021c",
+      "name": "core_script.cpp_CScript_startDialogLine_FUN_00530150",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00529a70",
       "from_addr": "0052bd52",
       "name": "core_script.cpp_CScript_step_FUN_00529a70",
@@ -59,21 +62,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00530150",
-      "from_addr": "0053021c",
-      "name": "core_script.cpp_FUN_00530150",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00560c90",
       "from_addr": "00560cb3",
-      "name": "core_sound.cpp_FUN_00560c90",
+      "name": "core_sound.cpp_CSound_selectReverbPreset_FUN_00560c90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00513d1e",
+      "addr": "00513d20",
       "from_addr": "00513f20",
-      "name": "engine_pod.cpp_FUN_00513d1e",
+      "name": "engine_pod.cpp_FUN_00513d20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047d8c0",
+      "from_addr": "0047d918",
+      "name": "shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0047d8c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -89,12 +92,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047d8c0",
-      "from_addr": "0047d918",
-      "name": "shape_edittool.cpp_FUN_0047d8c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0047d980",
       "from_addr": "0047d9d8",
       "name": "shape_edittool.cpp_FUN_0047d980",
@@ -107,9 +104,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047dd1e",
+      "addr": "0047dd20",
       "from_addr": "0047df46",
-      "name": "shape_edittool.cpp_FUN_0047dd1e",
+      "name": "shape_edittool.cpp_FUN_0047dd20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -145,7 +142,7 @@
       {
         "call_addr": "004ab6d8",
         "call_type": "direct",
-        "caller": "core_fldnotes.cpp_FUN_004aa810",
+        "caller": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -156,7 +153,7 @@
       {
         "call_addr": "004b890b",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b7f90",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -167,7 +164,7 @@
       {
         "call_addr": "004b8928",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b7f90",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -178,7 +175,7 @@
       {
         "call_addr": "004b8945",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b7f90",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -189,7 +186,7 @@
       {
         "call_addr": "004b8962",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b7f90",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -200,7 +197,7 @@
       {
         "call_addr": "004b897f",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b7f90",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -211,7 +208,7 @@
       {
         "call_addr": "004b89a7",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b7f90",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -222,7 +219,7 @@
       {
         "call_addr": "004b8b5c",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b7f90",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -233,7 +230,7 @@
       {
         "call_addr": "004b8b77",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b7f90",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -244,7 +241,7 @@
       {
         "call_addr": "004b8bbf",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b7f90",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -279,6 +276,32 @@
     },
     "pcode_op_count": 45
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00480e70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004994d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004a2b80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00473cb0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -302,22 +325,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 5,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0xc + 0xc))(this_ptr,*(uint *)this_ptr,string_data);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0xc + 0xc))(this_ptr,*(uint *)this_ptr,string_data);",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

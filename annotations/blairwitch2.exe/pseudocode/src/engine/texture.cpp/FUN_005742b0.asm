@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_texture_cpp_FUN_005742b0(int param_1,char *param_2,undefined4 param_3,undefined4 param_4)
+; int engine_texture_cpp_FUN_005742b0(CTextureCache *param_1,char *param_2,int param_3,uchar *param_4)
 ;
 ;
 ; XREF[1]:
-;   engine_texture.cpp_FUN_00574f5c at 00574fb0
+;   engine_texture.cpp_FUN_00574f60 at 00574fb0
 ;
 ; Called Functions:
-;   engine_texture.cpp_FUN_00573a60
+;   engine_texture.cpp_CTextureCache_findFreeSlot_FUN_00573a60
 ;
 ; *****************************************************************************
 
@@ -19,8 +19,8 @@ section .text
     PUSH EDI                            ; 005742b1
     MOV EDI,dword ptr [ESP + 0xc]       ; 005742b2
     PUSH EDI                            ; 005742b6
-    CALL engine_texture.cpp_FUN_00573a60 ; 005742b7
-        ;   XREF to: 00573a60 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_00573a60()
+    CALL engine_texture.cpp_CTextureCache_findFreeSlot_FUN_00573a60 ; 005742b7
+        ;   XREF to: 00573a60 (UNCONDITIONAL_CALL)  ; int engine_texture.cpp_CTextureCache_findFreeSlot_FUN_00573a60(CTextureCache * this_ptr)
     MOV ECX,EAX                         ; 005742bc
     SHL EAX,0x2                         ; 005742be
     SUB EAX,ECX                         ; 005742c1

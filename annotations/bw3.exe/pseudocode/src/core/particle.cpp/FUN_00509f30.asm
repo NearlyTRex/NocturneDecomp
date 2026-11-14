@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_particle_cpp_FUN_00509f30(float *param_1)
+; void core_particle_cpp_FUN_00509f30(CVector3f *param_1)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x130]:8  local_130
@@ -51,26 +51,26 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[7]:
-;   core_fire.cpp_FUN_00497eb0 at 00497f08
-;   core_fire.cpp_FUN_004988b0 at 0049890d
-;   core_fire.cpp_FUN_00499350 at 00499371
-;   core_fire.cpp_FUN_0049a010 at 0049a01e
-;   core_fire.cpp_FUN_0049a1c0 at 0049a1cf
-;   core_fire.cpp_FUN_0049ac10 at 0049ac4d
-;   core_fire.cpp_FUN_004a0af0 at 004a0b0c
+;   core_fire.cpp_CFireball_process_FUN_00499350 at 00499371
+;   core_fire.cpp_CFirefly_process_FUN_004988b0 at 0049890d
+;   core_fire.cpp_CGlassParticle_process_FUN_0049ac10 at 0049ac4d
+;   core_fire.cpp_CLeaf_process_FUN_0049a1c0 at 0049a1cf
+;   core_fire.cpp_CRock_process_FUN_0049a010 at 0049a01e
+;   core_fire.cpp_CShell_process_FUN_004a0af0 at 004a0b0c
+;   core_fire.cpp_CSpark_process_FUN_00497eb0 at 00497f08
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005cb65d
 ;   undefined4 DAT_005cb661
 ;   undefined4 DAT_005cb665
 ;   CGame* g_CGamePtr = 01d2130c
-;   undefined4 g_CGameInstance.field788_0x314
+;   undefined4 g_CGameInstance.delta_time_float
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_testVoxelAtCoords_FUN_00477bc0
+;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00477ac0
 ;   core_dtrace.cpp_FUN_00473cd0
-;   core_dtrace.cpp_FUN_00477ac0
 ;
 ; *****************************************************************************
 
@@ -106,7 +106,7 @@ section .text
         ;   Label: LAB_00509f69
     MOV dword ptr [EBX + 0x38],EAX      ; 00509f6c
     MOV EAX,[0x005fe9dc]                ; 00509f6f | g_CGamePtr
-    MOV EAX,dword ptr [EAX + 0x314]     ; 00509f74 | g_CGameInstance.field788_0x314
+    MOV EAX,dword ptr [EAX + 0x314]     ; 00509f74 | g_CGameInstance.delta_time_float
     MOV dword ptr [ESP + 0x108],EAX     ; 00509f7a
     MOV dword ptr [ESP + 0x114],EAX     ; 00509f81
     LEA EAX,[EBX + 0x18]                ; 00509f88
@@ -167,8 +167,8 @@ section .text
     FXCH                                ; 0050a054
     FSTP float ptr [EBX + 0x4]          ; 0050a056
     FSTP float ptr [EBX + 0x8]          ; 0050a059
-    CALL core_dtrace.cpp_FUN_00477ac0   ; 0050a05c
-        ;   XREF to: 00477ac0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00477ac0()
+    CALL core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00477ac0 ; 0050a05c
+        ;   XREF to: 00477ac0 (UNCONDITIONAL_CALL)  ; CVector3i * core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00477ac0(CDemonRaytrace * this_ptr, CVector3f * world_position, CVector3i * output_voxel_coords)
     ADD ESP,0x8                         ; 0050a061
     LEA EAX,[ESP + 0xc]                 ; 0050a064
     PUSH EAX                            ; 0050a068

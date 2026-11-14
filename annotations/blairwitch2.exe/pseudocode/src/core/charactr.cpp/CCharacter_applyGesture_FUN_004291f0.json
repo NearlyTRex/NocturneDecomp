@@ -2,24 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 182,
+    "complexity_score": 56,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 42,
-    "suspect_count": 13,
+    "pseudocode_lines": 41,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 140
+    "total_lines": 139
   },
   "cross_references": [
     {
       "addr": "00429e90",
       "from_addr": "00429e96",
-      "name": "core_charactr.cpp_FUN_00429e90",
+      "name": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -44,7 +43,12 @@
     {
       "addr": "00503860",
       "is_variadic": false,
-      "name": "core_motion.cpp_FUN_00503860"
+      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_00503860"
+    },
+    {
+      "addr": "00545a60",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60"
     },
     {
       "addr": "00547890",
@@ -54,12 +58,7 @@
     {
       "addr": "00540e80",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_00540e80"
-    },
-    {
-      "addr": "00545a60",
-      "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_00545a60"
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80"
     }
   ],
   "globals": [
@@ -112,7 +111,7 @@
       {
         "call_addr": "00429e96",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_00429e90",
+        "caller": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -167,6 +166,32 @@
     },
     "pcode_op_count": 535
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00432cb0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8538
+    },
+    "bw3.exe": {
+      "addr": "004320d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8538
+    },
+    "nocedit.exe": {
+      "addr": "0042d3d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8514
+    },
+    "nocturne.exe": {
+      "addr": "00429560",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8514
+    }
+  },
   "stack_frame": {
     "frame_size": 28,
     "local_size": 24,
@@ -212,102 +237,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x27c4",
-      "severity": "mild",
-      "text": "if (-1 < *(int *)&this_ptr->field_0x27c4) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x27c0",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x27c0 < -1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)&this_ptr->field_0x2b4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x27c4",
-      "severity": "mild",
-      "text": "iVar4 = *(int *)&this_ptr->field_0x27c4 * 0x118;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x27c0",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x27c0 = iVar5;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "pCVar3 = core_motion_cpp_FUN_00503860((CMotionController *)&this_ptr->field_0x2b4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x27c8",
-      "severity": "mild",
-      "text": "fVar2 = *(float *)&this_ptr->field_0x27c8 * fVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x27c8",
-      "severity": "mild",
-      "text": "fVar1 = ((float)*(int *)(pCVar3 + iVar4 + 0x1c8c) - *(float *)&this_ptr->field_0x27c8) * fVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "(&this_ptr->field_0x2b4,*(uint *)&this_ptr->field_0x27c4,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x27c4",
-      "severity": "mild",
-      "text": "(&this_ptr->field_0x2b4,*(uint *)&this_ptr->field_0x27c4,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x27c8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x27c8,local_c,*(uint *)&this_ptr->field_0x27c0",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x27c0",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x27c8,local_c,*(uint *)&this_ptr->field_0x27c0",
-      "type": "unnamed_field"
     }
   ]
 }

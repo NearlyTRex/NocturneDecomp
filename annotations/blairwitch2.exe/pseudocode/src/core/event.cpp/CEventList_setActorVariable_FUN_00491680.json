@@ -2,26 +2,26 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 215,
-    "complexity_score": 194,
+    "complexity_score": 185,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 84,
-    "suspect_count": 9,
+    "pseudocode_lines": 85,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_stride_bytecount",
-      "shadow_pointer_walk",
-      "unnamed_field",
-      "warning_overlapping_globals"
+      "unrolled_strcpy",
+      "warning_overlapping_globals",
+      "warning_type_propagation"
     ],
-    "total_lines": 299
+    "total_lines": 300
   },
   "cross_references": [
     {
       "addr": "00522350",
       "from_addr": "005257a7",
-      "name": "core_script.cpp_FUN_00522350",
+      "name": "core_script.cpp_CScript_step_FUN_00522350",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -103,7 +103,7 @@
       {
         "call_addr": "005257a7",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00522350",
+        "caller": "core_script.cpp_CScript_step_FUN_00522350",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -114,7 +114,7 @@
       {
         "call_addr": "00527123",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00522350",
+        "caller": "core_script.cpp_CScript_step_FUN_00522350",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -157,6 +157,32 @@
       "STORE": 40
     },
     "pcode_op_count": 1004
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004a9ff0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00494e70",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004b09a0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00480950",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 40,
@@ -204,71 +230,63 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Type propagation did not converge",
       "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x1",
-      "severity": "mild",
-      "text": "CVar1 = (CEventList)actor->field_0x1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x2",
-      "severity": "mild",
-      "text": "actor = (CDemonActor *)&actor->field_0x2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 81,
-      "match": "field_0x1",
-      "severity": "mild",
-      "text": "CVar1 = (CEventList)actor->field_0x1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 82,
-      "match": "field_0x2",
-      "severity": "mild",
-      "text": "actor = (CDemonActor *)&actor->field_0x2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `actor` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&actor->owner`). Replace `actor->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 45,
-      "match": "actor = (T *)&actor->FIELD",
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 30,
+      "match": "do {",
       "severity": "moderate",
-      "text": "actor = (CDemonActor *)&actor->field_0x2;",
-      "type": "shadow_pointer_walk"
+      "text": "do {",
+      "type": "unrolled_strcpy"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `actor` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&actor->owner`). Replace `actor->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 82,
-      "match": "actor = (T *)&actor->FIELD",
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 40,
+      "match": "do {",
       "severity": "moderate",
-      "text": "actor = (CDemonActor *)&actor->field_0x2;",
-      "type": "shadow_pointer_walk"
+      "text": "do {",
+      "type": "unrolled_strcpy"
     },
     {
-      "description": "mem* byte count hardcodes an element stride (((iVar2 + -1) - iVar5) * 0x1e) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 60,
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 67,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 76,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride ((iVar5 - iVar3) * 0x1e) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 59,
       "match": "memmove",
       "severity": "moderate",
       "text": "memmove",
       "type": "pointer_stride_bytecount"
     },
     {
-      "description": "mem* byte count hardcodes an element stride ((*(int *)(this_ptr + 0x34e8) - iVar5) * 0x1e) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "description": "mem* byte count hardcodes an element stride (((this_ptr->actor_vars).count - iVar3) * 0x1e) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
       "line": 62,
       "match": "memmove",
       "severity": "moderate",

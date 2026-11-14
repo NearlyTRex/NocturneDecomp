@@ -8,7 +8,7 @@
 ;   core_dmodel.cpp_CKeyFramedModel_dtor_FUN_0044dcb0 at 0044dcb6
 ;   core_dmodel.cpp_CKeyFramedModel_load_FUN_0044dcd0 at 0044dcd9
 ;   core_dmodel.cpp_FUN_0044ea80 at 0044ea89
-;   core_dmodel.cpp_FUN_0044fc50 at 0044fc5e
+;   core_dmodel.cpp_freeAllModels_FUN_0044fc50 at 0044fc5e
 ;   core_level.cpp_CLevelLoader_cleanup_FUN_004e1b80 at 004e1ba7
 ;   core_set.cpp_CDemonSet_clear_FUN_0052c090 at 0052c097
 ;

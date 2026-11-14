@@ -8,7 +8,7 @@
 ; CDemonLight *    Stack[0x8]:4   light_source
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_00533e5e at 005342b7
+;   core_set.cpp_FUN_00533e60 at 005342b7
 ;
 ; *****************************************************************************
 

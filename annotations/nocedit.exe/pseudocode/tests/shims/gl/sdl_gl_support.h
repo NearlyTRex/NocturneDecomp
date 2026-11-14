@@ -21,6 +21,7 @@ struct Stand {
     bool make_current_fails = false;             // SDL_GL_MakeCurrent
     bool load_fails = false;                     // nocturne_gl_load_api
     bool adaptive_vsync = true;                  // SDL_GL_SetSwapInterval(-1) succeeds
+    int vsync = 1;                               // nocturne_vsync_get
     const char *version = "4.6.0 NVIDIA 595.84"; // GL_VERSION, or null
 
     int window_width = 640; // SDL_GetWindowSize

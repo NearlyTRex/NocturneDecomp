@@ -1,20 +1,23 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl crt_stdio_c_fputc_FUN_005c2f00(uint param_1,int *param_2)
+; int __cdecl crt_stdio_c_fputc_FUN_005c2f00(int character,_FILE *file)
 ;
+; Parameters:
+; int              Stack[0x4]:4   character
+; _FILE *          Stack[0x8]:4   file
 ;
 ; XREF[11]:
-;   core_game.cpp_FUN_004cb950 at 004cbbbe
 ;   core_game.cpp_FUN_004ce580 at 004cf379
+;   core_game.cpp_captureDebugMovieFrame_FUN_004cb950 at 004cbbbe
 ;   crt_stdio.c_fwrite_FUN_005c1a70 at 005c1c2e
 ;   crt_unknown.c_FUN_005c4fc0 at 005c4fce
-;   engine_pcx.c_FUN_00535d80 at 00535ee6
+;   crt_unknown.c_FUN_005cda60 at 005cdaa2
+;   crt_unknown.c_FUN_005ce150 at 005ce1ae
 ;   engine_pcx.c_saveScreenRaw16_FUN_00535a10 at 00535b3c
 ;   engine_pcx.c_saveScreenRaw32_FUN_00535bd0 at 00535cea
+;   engine_pcx.c_saveScreenshotGeneral_FUN_00535d80 at 00535ee6
 ;   engine_pcx.c_writePCXScanline_FUN_00535940 at 00535976
-;   support_trstream.cpp_FUN_005a18c0 at 005a18db
-;   unkafter_2d.cpp_FUN_005cda60 at 005cdaa2
 ;   ... and 1 more
 ;
 ; Referenced Globals:

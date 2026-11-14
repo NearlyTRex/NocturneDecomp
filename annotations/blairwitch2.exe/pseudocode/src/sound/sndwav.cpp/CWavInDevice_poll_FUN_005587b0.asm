@@ -24,7 +24,7 @@
 ;   undefined4 DAT_0264b278
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_005549c0
+;   sound_sndmain.cpp_logSoundError_FUN_005549c0
 ;   sound_sndmain.cpp_resampleAndConvertAudio_FUN_00551dc0
 ;   sound_sndwav.cpp_writeWavInBuffer_FUN_00558190
 ;
@@ -169,8 +169,8 @@ section .text
         ;   XREF to: 005587f8 (UNCONDITIONAL_JUMP)  ; LAB_005587f8
     PUSH 0x5ea69a                       ; 00558926 | = "WavInDevice::poll - queueWavInBuffer ..."
         ;   Label: LAB_00558926
-    CALL sound_sndmain.cpp_FUN_005549c0 ; 0055892b
-        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005549c0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005549c0 ; 0055892b
+        ;   XREF to: 005549c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005549c0(char * format)
     MOV EAX,0xffffffff                  ; 00558930
     ADD ESP,0x4                         ; 00558935
     ADD ESP,0xc                         ; 00558938

@@ -1,11 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setutil_cpp_C3DSLight_addFilter_FUN_0053bbc0(int param_1,char *param_2,undefined4 param_3,undefined4 param_4)
+; void __cdecl core_setutil_cpp_C3DSLight_addFilter_FUN_0053bbc0(C3DSLight *this_ptr,char *filter_name,float duration,int filter_mode)
 ;
+; Parameters:
+; C3DSLight *      Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   filter_name
+; float            Stack[0xc]:4   duration
+; int              Stack[0x10]:4   filter_mode
 ;
 ; XREF[1]:
-;   core_script.cpp_FUN_00522350 at 00523f6b
+;   core_script.cpp_CScript_step_FUN_00522350 at 00523f6b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setutil_cpp_005e6462
@@ -15,7 +20,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_dfilter.cpp_FUN_00447660
+;   core_dfilter.cpp_CFilterCache_getFilter_FUN_00447660
 ;   core_main.c_FUN_004e4500
 ;
 ; *****************************************************************************
@@ -71,8 +76,8 @@ section .text
     PUSH ECX                            ; 0053bc4b
     MOV EBP,dword ptr [0x0060a0b4]      ; 0053bc4c | g_CFilterCachePtr
     PUSH EBP                            ; 0053bc52
-    CALL core_dfilter.cpp_FUN_00447660  ; 0053bc53
-        ;   XREF to: 00447660 (UNCONDITIONAL_CALL)  ; undefined core_dfilter.cpp_FUN_00447660()
+    CALL core_dfilter.cpp_CFilterCache_getFilter_FUN_00447660 ; 0053bc53
+        ;   XREF to: 00447660 (UNCONDITIONAL_CALL)  ; CDemonFilter * core_dfilter.cpp_CFilterCache_getFilter_FUN_00447660(CFilterCache * this_ptr, char * filter_name, int blend_filter)
     MOV EDX,dword ptr [EBX + 0x11ec]    ; 0053bc58
     MOV dword ptr [EBX + EDX*0x4 + 0x1810],EAX ; 0053bc5e
     MOV EAX,dword ptr [EBX + 0x11ec]    ; 0053bc65

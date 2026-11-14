@@ -1,0 +1,926 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 592,
+    "complexity_score": 124,
+    "cross_reference_count": 2,
+    "function_call_count": 6,
+    "global_count": 126,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 84,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 676
+  },
+  "cross_references": [
+    {
+      "addr": "004e4e20",
+      "from_addr": "004e4ea0",
+      "name": "core_main.c_FUN_004e4e20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ee1a0",
+      "from_addr": "004ee33a",
+      "name": "core_menu.cpp_FUN_004ee1a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d94d0",
+    "address_range": [
+      [
+        "004d94d0",
+        "004d9bf6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inivar.cpp_writeIniData_FUN_004d94d0",
+    "signature": "void __cdecl core_inivar_cpp_writeIniData_FUN_004d94d0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004d8940",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_CIniFile_dtor_FUN_004d8940"
+    },
+    {
+      "addr": "004d89d0",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_CIniFile_readIniHeader_FUN_004d89d0"
+    },
+    {
+      "addr": "004d8aa0",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_CIniFile_setString_FUN_004d8aa0"
+    },
+    {
+      "addr": "004d8910",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_FUN_004d8910"
+    },
+    {
+      "addr": "004d8b80",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_FUN_004d8b80"
+    },
+    {
+      "addr": "00553980",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_writeIni_FUN_00553980"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005db095",
+      "name": "s_gamePIXX_005db095",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db09e",
+      "name": "s_gamePIXY_005db09e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db0a7",
+      "name": "s_gameBPP_005db0a7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db0af",
+      "name": "s_useDirect3D_005db0af",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db0bb",
+      "name": "s_useAGPFlag_005db0bb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db0c6",
+      "name": "s_rendererDLLPath_005db0c6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db0d6",
+      "name": "s_gamma_005db0d6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db0dc",
+      "name": "s_heroNumber_005db0dc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db0e7",
+      "name": "s_haloMode_005db0e7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db0f0",
+      "name": "s_firstTimeFlag_005db0f0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db0fe",
+      "name": "s_subtitleMode_005db0fe",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db10b",
+      "name": "s_bloodFlag_005db10b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db115",
+      "name": "s_nudityFlag_005db115",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db120",
+      "name": "s_foulLanguageFlag_005db120",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db131",
+      "name": "s_shadowFlag_005db131",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db13c",
+      "name": "s_quimbyFlag_005db13c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db147",
+      "name": "s_particleDensity_005db147",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db157",
+      "name": "s_currentBoard_005db157",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db164",
+      "name": "s_puzzleDifficultyMode_005db164",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db179",
+      "name": "s_combatDifficultyMode_005db179",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db18e",
+      "name": "s_gameControl_005db18e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db19a",
+      "name": "s_keyWalk_005db19a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db1a2",
+      "name": "s_keyBackup_005db1a2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db1ac",
+      "name": "s_keyRun_005db1ac",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db1b3",
+      "name": "s_keyStrafe_005db1b3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db1bd",
+      "name": "s_keyStrafeLeft_005db1bd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db1cb",
+      "name": "s_keyStrafeRight_005db1cb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db1da",
+      "name": "s_keyRight_005db1da",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db1e3",
+      "name": "s_keyLeft_005db1e3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db1eb",
+      "name": "s_keyFire_005db1eb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db1f3",
+      "name": "s_keyUseItem_005db1f3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db1fe",
+      "name": "s_keyLight_005db1fe",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db207",
+      "name": "s_keyDraw_005db207",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db20f",
+      "name": "s_keyPointUp_005db20f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db21a",
+      "name": "s_keyPointDown_005db21a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db227",
+      "name": "s_keyWeapon1_005db227",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db232",
+      "name": "s_keyWeapon2_005db232",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db23d",
+      "name": "s_keyWeapon3_005db23d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db248",
+      "name": "s_keyDrop_005db248",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db250",
+      "name": "s_keyNextWeapon_005db250",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db25e",
+      "name": "s_keyPrevWeapon_005db25e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db26c",
+      "name": "s_keyNextItem_005db26c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db278",
+      "name": "s_keyPrevItem_005db278",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db284",
+      "name": "s_keyItemDesc_005db284",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db290",
+      "name": "s_keyNextAmmo_005db290",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db29c",
+      "name": "s_invertMouseYAxis_005db29c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db2ad",
+      "name": "s_alwaysRun_005db2ad",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db2b7",
+      "name": "s_xMouseSensitivity_005db2b7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db2c9",
+      "name": "s_yMouseSensitivity_005db2c9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db2db",
+      "name": "s_xCenter_005db2db",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db2e3",
+      "name": "s_yCenter_005db2e3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db2eb",
+      "name": "s_xStickMin_005db2eb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db2f5",
+      "name": "s_xStickMax_005db2f5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db2ff",
+      "name": "s_yStickMin_005db2ff",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db309",
+      "name": "s_yStickMax_005db309",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db313",
+      "name": "s_aimMode_005db313",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db31b",
+      "name": "s_autoUseHealth_005db31b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db329",
+      "name": "s_logConsoleFlag_005db329",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db338",
+      "name": "s_headOfHorrorCheat_005db338",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00609ed0",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "007c158c"
+    },
+    {
+      "addr": "00616494",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01cb6900"
+    },
+    {
+      "addr": "00617b50",
+      "name": "s_system_nocturne_ini_00617b50",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00617b70",
+      "name": "s_Sound_00617b70",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00617b78",
+      "name": "s_Graphics_00617b78",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00617b88",
+      "name": "s_Control_00617b88",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00617bc0",
+      "name": "s_Debug_00617bc0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00617bc8",
+      "name": "s_Editor_00617bc8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061e180",
+      "name": "DAT_0061e180",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "0061ec60",
+      "name": "DAT_0061ec60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007c158c",
+      "name": "g_CConsoleInstance",
+      "type": "CConsole",
+      "value": null
+    },
+    {
+      "addr": "01cb6900",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "01cb6904",
+      "name": "g_CGameInstance.game_pixy",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6908",
+      "name": "g_CGameInstance.game_bpp",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb690c",
+      "name": "g_CGameInstance.halo_mode",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6910",
+      "name": "g_CGameInstance.subtitle_mode",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6914",
+      "name": "g_CGameInstance.blood_flag",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6918",
+      "name": "g_CGameInstance.nudity_flag",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb691c",
+      "name": "g_CGameInstance.foul_language_flag",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6920",
+      "name": "g_CGameInstance.quimby_flag",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6924",
+      "name": "g_CGameInstance.shadow_flag",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6928",
+      "name": "g_CGameInstance.key_walk",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb692c",
+      "name": "g_CGameInstance.key_backup",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6930",
+      "name": "g_CGameInstance.key_run",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6934",
+      "name": "g_CGameInstance.key_strafe",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6938",
+      "name": "g_CGameInstance.key_strafe_left",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb693c",
+      "name": "g_CGameInstance.key_strafe_right",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6940",
+      "name": "g_CGameInstance.key_right",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6944",
+      "name": "g_CGameInstance.key_left",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6948",
+      "name": "g_CGameInstance.key_fire",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb694c",
+      "name": "g_CGameInstance.key_use_item",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6950",
+      "name": "g_CGameInstance.key_light",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6968",
+      "name": "g_CGameInstance.key_draw",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6974",
+      "name": "g_CGameInstance.key_point_up",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6978",
+      "name": "g_CGameInstance.key_point_down",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb697c",
+      "name": "g_CGameInstance.key_weapon_1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6980",
+      "name": "g_CGameInstance.key_weapon_2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6984",
+      "name": "g_CGameInstance.key_weapon_3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6990",
+      "name": "g_CGameInstance.key_next_weapon",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6994",
+      "name": "g_CGameInstance.key_prev_weapon",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6998",
+      "name": "g_CGameInstance.key_next_item",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb699c",
+      "name": "g_CGameInstance.key_prev_item",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69a0",
+      "name": "g_CGameInstance.key_item_desc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69a4",
+      "name": "g_CGameInstance.key_next_ammo",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69a8",
+      "name": "g_CGameInstance.invert_mouse_y_axis",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69ac",
+      "name": "g_CGameInstance.always_run",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69b0",
+      "name": "g_CGameInstance.x_mouse_sensitivity",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69b4",
+      "name": "g_CGameInstance.y_mouse_sensitivity",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69b8",
+      "name": "g_CGameInstance.x_center",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69bc",
+      "name": "g_CGameInstance.y_center",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69c0",
+      "name": "g_CGameInstance.x_stick_min",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69c4",
+      "name": "g_CGameInstance.x_stick_max",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69c8",
+      "name": "g_CGameInstance.y_stick_min",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69cc",
+      "name": "g_CGameInstance.y_stick_max",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69d0",
+      "name": "g_CGameInstance.game_control",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69d4",
+      "name": "g_CGameInstance.hero_number",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69d8",
+      "name": "g_CGameInstance.aim_mode",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69dc",
+      "name": "g_CGameInstance.auto_use_health",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69e4",
+      "name": "g_CGameInstance.puzzle_difficulty_mode",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb69e8",
+      "name": "g_CGameInstance.combat_difficulty_mode",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6b30",
+      "name": "g_CGameInstance.head_of_horror_cheat",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6b40",
+      "name": "g_CGameInstance.gamma",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb73f0",
+      "name": "g_CGameInstance.key_drop",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cee1a8",
+      "name": "DAT_01cee1a8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d06a74",
+      "name": "DAT_01d06a74",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bba0",
+      "name": "DAT_0264bba0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0264bbac",
+      "name": "DAT_0264bbac",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.45,
+    "instruction_count": 520,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 67,
+      "CBRANCH": 1,
+      "COPY": 386,
+      "INT_ADD": 191,
+      "INT_AND": 141,
+      "INT_CARRY": 68,
+      "INT_EQUAL": 140,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 68,
+      "INT_SLESS": 70,
+      "INT_SUB": 265,
+      "LOAD": 59,
+      "POPCOUNT": 70,
+      "RETURN": 1,
+      "STORE": 264
+    },
+    "pcode_op_count": 1794
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004f5760",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4097
+    },
+    "bw3.exe": {
+      "addr": "004d95c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8924
+    },
+    "nocedit.exe": {
+      "addr": "004fc510",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3189
+    },
+    "nocturne.exe": {
+      "addr": "004be2d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3802
+    }
+  },
+  "stack_frame": {
+    "frame_size": 536,
+    "local_size": 536,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_214",
+        "offset": -532,
+        "size": 1,
+        "type": "undefined"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_0061e180",
+      "severity": "mild",
+      "text": "(&local_214,\"rendererDLLPath\",&DAT_0061e180);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_0061ec60",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8b80(&local_214,\"particleDensity\",DAT_0061ec60);",
+      "type": "undefined_data"
+    }
+  ]
+}

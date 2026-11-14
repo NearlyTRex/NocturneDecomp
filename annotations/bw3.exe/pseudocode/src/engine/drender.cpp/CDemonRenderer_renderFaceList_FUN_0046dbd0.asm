@@ -16,7 +16,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_0053ac80 at 0053acc2
+;   core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0053ac80 at 0053acc2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_005bc5e8
@@ -32,13 +32,13 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
+;   core_dpart.cpp_FUN_00466d50
+;   core_dpart.cpp_FUN_004673d0
 ;   core_main.c_FUN_004e4330
 ;   engine_drender.cpp_CDemonRenderer_captureFace_FUN_0046e300
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0046ba70
 ;   engine_prim.c_getTriangleWindingFromPackedIndices_FUN_00515d60
 ;   engine_special.cpp_drawPolyList2_FUN_00565db0
-;   unkafter_dpart.cpp_FUN_00466d50
-;   unkafter_dpart.cpp_FUN_004673d0
 ;
 ; *****************************************************************************
 
@@ -209,8 +209,8 @@ section .text
     PUSH EAX                            ; 0046dd5c
     DEC EDI                             ; 0046dd5d
     ADD EBX,0x12                        ; 0046dd5e
-    CALL unkafter_dpart.cpp_FUN_00466d50 ; 0046dd61
-        ;   XREF to: 00466d50 (UNCONDITIONAL_CALL)  ; void unkafter_dpart.cpp_FUN_00466d50(int * vertex_indices, int vertex_count)
+    CALL core_dpart.cpp_FUN_00466d50    ; 0046dd61
+        ;   XREF to: 00466d50 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_FUN_00466d50(int * vertex_indices, int vertex_count)
     ADD ESP,0x8                         ; 0046dd66
     JMP 0x0046dc9f                      ; 0046dd69
         ;   XREF to: 0046dc9f (UNCONDITIONAL_JUMP)  ; LAB_0046dc9f
@@ -237,8 +237,8 @@ section .text
     PUSH EAX                            ; 0046ddad
     DEC EDI                             ; 0046ddae
     ADD EBX,0x12                        ; 0046ddaf
-    CALL unkafter_dpart.cpp_FUN_004673d0 ; 0046ddb2
-        ;   XREF to: 004673d0 (UNCONDITIONAL_CALL)  ; void unkafter_dpart.cpp_FUN_004673d0(CVector3i * vertex_indices, int vertex_count)
+    CALL core_dpart.cpp_FUN_004673d0    ; 0046ddb2
+        ;   XREF to: 004673d0 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_FUN_004673d0(CVector3i * vertex_indices, int vertex_count)
     ADD ESP,0x8                         ; 0046ddb7
     TEST EDI,EDI                        ; 0046ddba
     JG 0x0046dd8b                       ; 0046ddbc
@@ -263,7 +263,7 @@ section .text
     PUSH EBX                            ; 0046dde3
         ;   Label: LAB_0046dde3
     CALL engine_prim.c_getTriangleWindingFromPackedIndices_FUN_00515d60 ; 0046dde4
-        ;   XREF to: 00515d60 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_getTriangleWindingFromPackedIndices_FUN_00515d60()
+        ;   XREF to: 00515d60 (UNCONDITIONAL_CALL)  ; int engine_prim.c_getTriangleWindingFromPackedIndices_FUN_00515d60(STrianglePackedIndices * triangle)
     ADD ESP,0x4                         ; 0046dde9
     TEST EAX,EAX                        ; 0046ddec
     JZ 0x0046de2d                       ; 0046ddee
@@ -304,7 +304,7 @@ section .text
     MOV ECX,dword ptr [ESI]             ; 0046de52
     PUSH ECX                            ; 0046de54
     CALL engine_special.cpp_drawPolyList2_FUN_00565db0 ; 0046de55
-        ;   XREF to: 00565db0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolyList2_FUN_00565db0()
+        ;   XREF to: 00565db0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolyList2_FUN_00565db0(SRenderVertex * vertex_buffer, SInputFace * * polygons, int polygon_count, int render_flags)
     ADD ESP,0x10                        ; 0046de5a
     ADD ESP,0x14                        ; 0046de5d
     POP EBP                             ; 0046de60

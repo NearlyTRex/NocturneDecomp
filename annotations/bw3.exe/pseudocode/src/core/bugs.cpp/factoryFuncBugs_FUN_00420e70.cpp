@@ -1,20 +1,20 @@
 // Name: core_bugs.cpp_factoryFuncBugs_FUN_00420e70
 // Address: 00420e70
 // Address Range: [[00420e70, 00420e8b]]
-// Convention: unknown
-// Signature: void core_bugs_cpp_factoryFuncBugs_FUN_00420e70(void)
+// Convention: __cdecl
+// Signature: CBugs * __cdecl core_bugs_cpp_factoryFuncBugs_FUN_00420e70(void)
 
 #include "nocturne.h"
 
-void core_bugs_cpp_factoryFuncBugs_FUN_00420e70(void)
+CBugs * __cdecl core_bugs_cpp_factoryFuncBugs_FUN_00420e70(void)
 
 {
-  CBugs *this_ptr;
+  CBugs *pCVar1;
   
-  this_ptr = (CBugs *)FUN_005a3cb2(0x1bea4);
-  if (this_ptr == (CBugs *)0x0) {
-    return;
+  pCVar1 = (CBugs *)operator_new(0x1bea4);
+  if (pCVar1 == (CBugs *)0x0) {
+    return (CBugs *)0x0;
   }
-  core_bugs_cpp_CBugs_ctor_FUN_00420ea0(this_ptr);
-  return;
+  pCVar1 = core_bugs_cpp_CBugs_ctor_FUN_00420ea0(pCVar1);
+  return pCVar1;
 }

@@ -12,9 +12,9 @@
 ; undefined        Stack[-0x3c]:1  local_3c
 ;
 ; XREF[3]:
-;   cockpit_pkbitmap.cpp_FUN_0050f910 at 0050f93e
-;   cockpit_pkbitmap.cpp_FUN_0050f990 at 0050f9a1
-;   engine_font.cpp_FUN_004af920 at 004afa49
+;   cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0050f990 at 0050f9a1
+;   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0050f910 at 0050f93e
+;   engine_font.cpp_CBitFont_loadBitmap_FUN_004af920 at 004afa49
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Unable_to_allocate_u_byt_005b8e90
@@ -29,13 +29,13 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
-;   crt_unknown.c_FUN_005a28c0
-;   crt_unknown.c_FUN_005a3650
-;   support_trstream.cpp_FUN_00573fc0
-;   unkafter_turret.cpp_CInStreamFile_ctor_FUN_005738c0
-;   unkafter_turret.cpp_CInStreamFile_dtor_FUN_00573a40
-;   unkafter_turret.cpp_FUN_00573c00
-;   unkafter_turret.cpp_FUN_00573db0
+;   crt_memory.c_malloc_FUN_005a3650
+;   crt_unknown.c_sprintf_FUN_005a28c0
+;   support_trstream.cpp_CInStreamFile_close_FUN_00573db0
+;   support_trstream.cpp_CInStreamFile_ctor_FUN_005738c0
+;   support_trstream.cpp_CInStreamFile_dtor_FUN_00573a40
+;   support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0
+;   support_trstream.cpp_CInStreamFile_read_FUN_00573c00
 ;
 ; *****************************************************************************
 
@@ -56,16 +56,16 @@ section .text
     LEA EAX,[ESP + 0x50]                ; 00438f14
         ;   Label: LAB_00438f14
     PUSH EAX                            ; 00438f18
-    CALL unkafter_turret.cpp_CInStreamFile_ctor_FUN_005738c0 ; 00438f19
-        ;   XREF to: 005738c0 (UNCONDITIONAL_CALL)  ; CInStreamFile * unkafter_turret.cpp_CInStreamFile_ctor_FUN_005738c0(CInStreamFile * this_ptr)
+    CALL support_trstream.cpp_CInStreamFile_ctor_FUN_005738c0 ; 00438f19
+        ;   XREF to: 005738c0 (UNCONDITIONAL_CALL)  ; CInStreamFile * support_trstream.cpp_CInStreamFile_ctor_FUN_005738c0(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 00438f1e
     PUSH 0x1                            ; 00438f21
     PUSH ESI                            ; 00438f23
     PUSH 0x5b8ed8                       ; 00438f24 | DAT_005b8ed8
     LEA EAX,[ESP + 0x5c]                ; 00438f29
     PUSH EAX                            ; 00438f2d
-    CALL support_trstream.cpp_FUN_00573fc0 ; 00438f2e
-        ;   XREF to: 00573fc0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_00573fc0()
+    CALL support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0 ; 00438f2e
+        ;   XREF to: 00573fc0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0(CInStreamFile * this_ptr, char * directory, char * filename, int binary_mode)
     ADD ESP,0x10                        ; 00438f33
     TEST EAX,EAX                        ; 00438f36
     JNZ 0x00438f6d                      ; 00438f38
@@ -74,8 +74,8 @@ section .text
     PUSH 0x5b8edc                       ; 00438f3b | = "Unable to open bitmap file (%s)."
     LEA EAX,[ESP + 0x8]                 ; 00438f40
     PUSH EAX                            ; 00438f44
-    CALL crt_unknown.c_FUN_005a28c0     ; 00438f45
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00438f45
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     MOV EAX,0x994                       ; 00438f4a
     ADD ESP,0xc                         ; 00438f4f
     MOV [0x01d71de4],EAX                ; 00438f52 | DAT_01d71de4
@@ -91,8 +91,8 @@ section .text
     PUSH EBX                            ; 00438f6e
     LEA EAX,[ESP + 0x58]                ; 00438f6f
     PUSH EAX                            ; 00438f73
-    CALL unkafter_turret.cpp_FUN_00573c00 ; 00438f74
-        ;   XREF to: 00573c00 (UNCONDITIONAL_CALL)  ; undefined unkafter_turret.cpp_FUN_00573c00()
+    CALL support_trstream.cpp_CInStreamFile_read_FUN_00573c00 ; 00438f74
+        ;   XREF to: 00573c00 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_read_FUN_00573c00(CInStreamFile * this_ptr, void * buffer, int count)
     ADD ESP,0xc                         ; 00438f79
     CMP EAX,EDI                         ; 00438f7c
     JNZ 0x00438ff3                      ; 00438f7e
@@ -100,14 +100,14 @@ section .text
     LEA EAX,[ESP + 0x50]                ; 00438f80
         ;   Label: LAB_00438f80
     PUSH EAX                            ; 00438f84
-    CALL unkafter_turret.cpp_FUN_00573db0 ; 00438f85
-        ;   XREF to: 00573db0 (UNCONDITIONAL_CALL)  ; undefined unkafter_turret.cpp_FUN_00573db0()
+    CALL support_trstream.cpp_CInStreamFile_close_FUN_00573db0 ; 00438f85
+        ;   XREF to: 00573db0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_close_FUN_00573db0(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 00438f8a
     PUSH 0x0                            ; 00438f8d
     LEA EAX,[ESP + 0x54]                ; 00438f8f
     PUSH EAX                            ; 00438f93
-    CALL unkafter_turret.cpp_CInStreamFile_dtor_FUN_00573a40 ; 00438f94
-        ;   XREF to: 00573a40 (UNCONDITIONAL_CALL)  ; CInStreamFile * unkafter_turret.cpp_CInStreamFile_dtor_FUN_00573a40(CInStreamFile * this_ptr, uint flags)
+    CALL support_trstream.cpp_CInStreamFile_dtor_FUN_00573a40 ; 00438f94
+        ;   XREF to: 00573a40 (UNCONDITIONAL_CALL)  ; CInStreamFile * support_trstream.cpp_CInStreamFile_dtor_FUN_00573a40(CInStreamFile * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00438f99
     MOV EAX,EBX                         ; 00438f9c
     ADD ESP,0x7c                        ; 00438f9e
@@ -118,8 +118,8 @@ section .text
     RET                                 ; 00438fa5
     PUSH EDI                            ; 00438fa6
         ;   Label: LAB_00438fa6
-    CALL crt_unknown.c_FUN_005a3650     ; 00438fa7
-        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005a3650(ulong size)
+    CALL crt_memory.c_malloc_FUN_005a3650 ; 00438fa7
+        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005a3650(ulong size)
     ADD ESP,0x4                         ; 00438fac
     MOV EBX,EAX                         ; 00438faf
     TEST EAX,EAX                        ; 00438fb1
@@ -130,8 +130,8 @@ section .text
     PUSH 0x5b8e90                       ; 00438fbb | = "Unable to allocate %u bytes for bitma..."
     LEA EAX,[ESP + 0xc]                 ; 00438fc0
     PUSH EAX                            ; 00438fc4
-    CALL crt_unknown.c_FUN_005a28c0     ; 00438fc5
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00438fc5
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     MOV EDX,0x5b8ec2                    ; 00438fca | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0x10                        ; 00438fcf
     MOV EAX,ESP                         ; 00438fd2
@@ -149,13 +149,13 @@ section .text
     PUSH 0x5b8f13                       ; 00438ff4 | = "Unable to read bitmap file (%s)."
     LEA EAX,[ESP + 0x8]                 ; 00438ff9
     PUSH EAX                            ; 00438ffd
-    CALL crt_unknown.c_FUN_005a28c0     ; 00438ffe
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00438ffe
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00439003
     LEA EAX,[ESP + 0x50]                ; 00439006
     PUSH EAX                            ; 0043900a
-    CALL unkafter_turret.cpp_FUN_00573db0 ; 0043900b
-        ;   XREF to: 00573db0 (UNCONDITIONAL_CALL)  ; undefined unkafter_turret.cpp_FUN_00573db0()
+    CALL support_trstream.cpp_CInStreamFile_close_FUN_00573db0 ; 0043900b
+        ;   XREF to: 00573db0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_close_FUN_00573db0(CInStreamFile * this_ptr)
     MOV EDX,0x5b8f34                    ; 00439010 | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0x4                         ; 00439015
     MOV EAX,ESP                         ; 00439018

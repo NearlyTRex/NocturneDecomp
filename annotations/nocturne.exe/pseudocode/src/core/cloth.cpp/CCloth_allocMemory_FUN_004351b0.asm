@@ -16,7 +16,7 @@
 ;   int g_CurrentLineNumber
 ;
 ; Called Functions:
-;   core_cloth.cpp_CCloth_FUN_00435210
+;   core_cloth.cpp_CCloth_free_FUN_00435210
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
 ;   shape_memdbg.cpp_malloc_FUN_00564c18
 ;
@@ -28,8 +28,8 @@ section .text
         ;   Label: core_cloth.cpp_CCloth_allocMemory_FUN_004351b0
     MOV EBX,dword ptr [ESP + 0x8]       ; 004351b1
     PUSH EBX                            ; 004351b5
-    CALL core_cloth.cpp_CCloth_FUN_00435210 ; 004351b6
-        ;   XREF to: 00435210 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_FUN_00435210(CCloth * this_ptr)
+    CALL core_cloth.cpp_CCloth_free_FUN_00435210 ; 004351b6
+        ;   XREF to: 00435210 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CCloth_free_FUN_00435210(CCloth * this_ptr)
     MOV EAX,dword ptr [EBX + 0x104]     ; 004351bb
     ADD ESP,0x4                         ; 004351c1
     SHL EAX,0x2                         ; 004351c4

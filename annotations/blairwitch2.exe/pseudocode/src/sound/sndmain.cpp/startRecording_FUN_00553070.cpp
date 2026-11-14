@@ -28,10 +28,10 @@ int __cdecl sound_sndmain_cpp_startRecording_FUN_00553070(void)
     iVar1 = (**(code **)(*_DAT_02649868 + 4))();
     if (iVar1 != 0) {
       _DAT_0264986c = 1;
-      sound_sndmain_cpp_FUN_00551440();
+      sound_sndmain_cpp_unlockSound_FUN_00551440();
       return 1;
     }
   }
-  sound_sndmain_cpp_FUN_00551440();
+  sound_sndmain_cpp_unlockSound_FUN_00551440();
   return 0;
 }

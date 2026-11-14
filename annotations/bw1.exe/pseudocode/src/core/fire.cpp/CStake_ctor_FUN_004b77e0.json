@@ -10,7 +10,7 @@
     "pseudocode_lines": 6,
     "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field"
+      "negative_offset"
     ],
     "total_lines": 15
   },
@@ -66,6 +66,32 @@
     },
     "pcode_op_count": 39
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0049ef10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a4880",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004c9740",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0048cc10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -84,12 +110,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x4",
+      "description": "Negative struct offset (wrong base type)",
+      "line": 8,
+      "match": "pCVar1[-1].",
       "severity": "mild",
-      "text": "pCVar1 = core_box_cpp_CBox_ctor_FUN_0041da00((CBox *)&this_ptr->field_0x4);",
-      "type": "unnamed_field"
+      "text": "return (CStake *)&pCVar1[-1].is_valid;",
+      "type": "negative_offset"
     }
   ],
   "vtable_info": {

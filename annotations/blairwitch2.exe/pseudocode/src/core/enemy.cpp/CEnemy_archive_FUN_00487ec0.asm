@@ -7,16 +7,16 @@
 ; CEnemy *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[30]:
-;   core_armour.cpp_FUN_0040f040 at 0040f047
-;   core_batcreat.cpp_FUN_004124a0 at 004124a7
-;   core_batman.cpp_FUN_00413e60 at 00413e67
-;   core_beast.cpp_FUN_00414b10 at 00414b17
-;   core_biggs.cpp_FUN_00415250 at 00415257
-;   core_boneguy.cpp_FUN_00419c50 at 00419c5c
-;   core_bride.cpp_FUN_0041e800 at 0041e806
-;   core_bugs.cpp_FUN_0041f7c0 at 0041f7c9
-;   core_cow.cpp_FUN_00439830 at 00439836
-;   core_dog.cpp_FUN_0045eab0 at 0045eab6
+;   core_armour.cpp_CArmour_archive_FUN_0040f040 at 0040f047
+;   core_basicene.cpp_CBasicEnemy_archive_FUN_0059fc10 at 0059fc22
+;   core_batcreat.cpp_CBatCreature_archive_FUN_004124a0 at 004124a7
+;   core_batman.cpp_CBatman_archive_FUN_00413e60 at 00413e67
+;   core_beast.cpp_CBeast_archive_FUN_00414b10 at 00414b17
+;   core_biggs.cpp_CBiggs_archive_FUN_00415250 at 00415257
+;   core_boneguy.cpp_CBoneGuy_archive_FUN_00419c50 at 00419c5c
+;   core_bride.cpp_CBride_archive_FUN_0041e800 at 0041e806
+;   core_bugs.cpp_CBugs_archive_FUN_0041f7c0 at 0041f7c9
+;   core_construc.cpp_CConstruct_archive_FUN_00437b80 at 00437b8a
 ;   ... and 20 more
 ;
 ; Referenced Globals:
@@ -65,7 +65,7 @@ section .text
     PUSH 0x5d2d2c                       ; 00487eeb | = "speed"
     PUSH ESI                            ; 00487ef0
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 00487ef1
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00487ef6
     CMP dword ptr [0x006141a0],0x3      ; 00487ef9 | g_CEnemyClassVersion
         ;   Label: LAB_00487ef9
@@ -80,7 +80,7 @@ section .text
     LEA ESI,[EBX + 0x25a8]              ; 00487f0a
     PUSH ESI                            ; 00487f10
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 00487f11
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00487f16
     PUSH 0x5d2d3c                       ; 00487f19 | = "poolMe"
     ADD EBX,0x10a64                     ; 00487f1e
@@ -99,7 +99,7 @@ section .text
     PUSH 0x5d2d43                       ; 00487f39 | = "speed"
     PUSH ESI                            ; 00487f3e
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 00487f3f
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00487f44
     PUSH 0x5d2d49                       ; 00487f47 | = "poolMe"
     LEA ESI,[EBX + 0x10a64]             ; 00487f4c
@@ -125,7 +125,7 @@ section .text
     LEA ESI,[EBX + 0x10af0]             ; 00487f88
     PUSH ESI                            ; 00487f8e
     CALL core_actor.cpp_archiveActor_FUN_0040b9e0 ; 00487f8f
-        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b9e0()
+        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b9e0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 00487f94
     CMP dword ptr [0x006141a0],0x7      ; 00487f97 | g_CEnemyClassVersion
         ;   Label: LAB_00487f97
@@ -145,7 +145,7 @@ section .text
     LEA ESI,[EBX + 0x10a70]             ; 00487fc2
     PUSH ESI                            ; 00487fc8
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 00487fc9
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00487fce
     CMP dword ptr [0x006141a0],0x9      ; 00487fd1 | g_CEnemyClassVersion
         ;   Label: LAB_00487fd1
@@ -155,7 +155,7 @@ section .text
     LEA ESI,[EBX + 0x10aec]             ; 00487fdf
     PUSH ESI                            ; 00487fe5
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 00487fe6
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00487feb
     CMP dword ptr [0x006141a0],0xa      ; 00487fee | g_CEnemyClassVersion
         ;   Label: LAB_00487fee
@@ -165,7 +165,7 @@ section .text
     ADD EBX,0x10a78                     ; 00488000
     PUSH EBX                            ; 00488006
     CALL core_actor.cpp_archiveActor_FUN_0040b9e0 ; 00488007
-        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b9e0()
+        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b9e0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 0048800c
     POP ESI                             ; 0048800f
     POP EBX                             ; 00488010

@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 72,
+    "complexity_score": 57,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 22,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_field"
+      "undefined_data"
     ],
     "total_lines": 65
   },
@@ -19,13 +18,13 @@
     {
       "addr": "00417690",
       "from_addr": "00417717",
-      "name": "core_bodypart.cpp_FUN_00417690",
+      "name": "core_bodypart.cpp_CBodyPart_addFire_FUN_00417690",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00585030",
       "from_addr": "0058516c",
-      "name": "core_vessel.cpp_FUN_00585030",
+      "name": "core_vessel.cpp_CCryptVessel_setup_FUN_00585030",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -45,7 +44,7 @@
     {
       "addr": "00408a80",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408a80"
+      "name": "core_actor.cpp_CDemonActor_setup_FUN_00408a80"
     },
     {
       "addr": "005b849c",
@@ -96,7 +95,7 @@
       {
         "call_addr": "00417717",
         "call_type": "direct",
-        "caller": "core_bodypart.cpp_FUN_00417690",
+        "caller": "core_bodypart.cpp_CBodyPart_addFire_FUN_00417690",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -107,7 +106,7 @@
       {
         "call_addr": "0058516c",
         "call_type": "direct",
-        "caller": "core_vessel.cpp_FUN_00585030",
+        "caller": "core_vessel.cpp_CCryptVessel_setup_FUN_00585030",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -151,6 +150,32 @@
     },
     "pcode_op_count": 173
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004b7b20",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a5aa0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.449
+    },
+    "nocedit.exe": {
+      "addr": "004c9b90",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0048d050",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -191,14 +216,6 @@
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00(DAT_0060b280,texture);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x3f0",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x3f0 = uVar1 & 1;",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

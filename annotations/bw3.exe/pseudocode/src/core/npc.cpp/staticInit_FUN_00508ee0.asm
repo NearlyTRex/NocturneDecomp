@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_npc_cpp_staticInit_FUN_00508ee0(void)
+; void __cdecl core_npc_cpp_staticInit_FUN_00508ee0(void)
 ;
 ;
 ; Called Functions:

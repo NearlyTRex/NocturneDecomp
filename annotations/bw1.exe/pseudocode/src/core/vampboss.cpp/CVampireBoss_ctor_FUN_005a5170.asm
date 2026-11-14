@@ -10,11 +10,11 @@
 ;   core_vampboss.cpp_factoryFuncVampireBoss_FUN_005a5140 at 005a5153
 ;
 ; Called Functions:
-;   core_cloth.cpp_FUN_0043e5c0
+;   core_cloth.cpp_CCloth_ctor_FUN_0043e5c0
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a0410
 ;   core_morph.cpp_CMorph_ctor_FUN_00522fa0
 ;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_00567370
-;   core_skeleton.cpp_FUN_00569f50
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50
 ;
 ; *****************************************************************************
 
@@ -34,18 +34,18 @@ section .text
     ADD ESP,0x4                         ; 005a5189
     ADD EAX,0x23a4                      ; 005a518c
     PUSH EAX                            ; 005a5191
-    CALL core_cloth.cpp_FUN_0043e5c0    ; 005a5192
-        ;   XREF to: 0043e5c0 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_FUN_0043e5c0(CCloth * this_ptr)
+    CALL core_cloth.cpp_CCloth_ctor_FUN_0043e5c0 ; 005a5192
+        ;   XREF to: 0043e5c0 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_ctor_FUN_0043e5c0(CCloth * this_ptr)
     ADD ESP,0x4                         ; 005a5197
     ADD EAX,0x3ab30                     ; 005a519a
     PUSH EAX                            ; 005a519f
-    CALL core_cloth.cpp_FUN_0043e5c0    ; 005a51a0
-        ;   XREF to: 0043e5c0 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_FUN_0043e5c0(CCloth * this_ptr)
+    CALL core_cloth.cpp_CCloth_ctor_FUN_0043e5c0 ; 005a51a0
+        ;   XREF to: 0043e5c0 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_ctor_FUN_0043e5c0(CCloth * this_ptr)
     ADD ESP,0x4                         ; 005a51a5
     ADD EAX,0x3ab30                     ; 005a51a8
     PUSH EAX                            ; 005a51ad
-    CALL core_cloth.cpp_FUN_0043e5c0    ; 005a51ae
-        ;   XREF to: 0043e5c0 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_FUN_0043e5c0(CCloth * this_ptr)
+    CALL core_cloth.cpp_CCloth_ctor_FUN_0043e5c0 ; 005a51ae
+        ;   XREF to: 0043e5c0 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_ctor_FUN_0043e5c0(CCloth * this_ptr)
     ADD ESP,0x4                         ; 005a51b3
     ADD EAX,0x3ab34                     ; 005a51b6
     PUSH EAX                            ; 005a51bb
@@ -57,14 +57,14 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 005a51cf
     PUSH EAX                            ; 005a51d5
     MOV dword ptr [EBX + 0x154],0x6077c4 ; 005a51d6
-    CALL core_skeleton.cpp_FUN_00569f50 ; 005a51e0
-        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569f50()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 005a51e0
+        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 005a51e5
     PUSH 0x5f8cf8                       ; 005a51e8
     LEA EAX,[EBX + 0xc268]              ; 005a51ed
     PUSH EAX                            ; 005a51f3
-    CALL core_skeleton.cpp_FUN_00569f50 ; 005a51f4
-        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569f50()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 005a51f4
+        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2fec],0x40000000 ; 005a51f9
     MOV dword ptr [EBX + 0x2ff0],0x40400000 ; 005a5203
     MOV dword ptr [EBX + 0x2ff4],0x42480000 ; 005a520d

@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 176,
-    "complexity_score": 345,
+    "complexity_score": 310,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 85,
-    "suspect_count": 23,
+    "suspect_count": 20,
     "suspect_types": [
+      "pointer_cast",
       "pointer_stride_bytecount",
-      "suspicious_cast",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
@@ -60,7 +59,7 @@
     },
     {
       "addr": "0202c73c",
-      "name": "g_CDemonSetInstance.field1396340_0x154e74",
+      "name": "g_CDemonSetInstance.waypoint_count",
       "type": "undefined4",
       "value": null
     },
@@ -132,6 +131,14 @@
       "STORE": 28
     },
     "pcode_op_count": 708
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005abb80",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 28,
@@ -252,20 +259,12 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x154e74",
-      "severity": "mild",
-      "text": "for (iVar8 = 0; iVar8 < *(int *)&g_CDemonSetPtr->field_0x154e74; iVar8 = iVar8 + 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 28,
-      "match": "field_0x154e78",
-      "severity": "mild",
-      "text": "piVar1 = (int *)(&g_CDemonSetPtr->field_0x154e78 + iVar4);",
-      "type": "unnamed_field"
+      "match": "(int *)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)g_CDemonSetPtr->waypoints + iVar4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
@@ -308,20 +307,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 73,
-      "match": "field_0x154e74",
-      "severity": "mild",
-      "text": "for (iVar9 = 0; iVar9 < *(int *)&g_CDemonSetPtr->field_0x154e74; iVar9 = iVar9 + 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 74,
-      "match": "field_0x154e78",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)(&g_CDemonSetPtr->field_0x154e78 + iVar8);",
-      "type": "unnamed_field"
+      "match": "(int *)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)((int)g_CDemonSetPtr->waypoints + iVar8);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
@@ -338,14 +329,6 @@
       "severity": "mild",
       "text": "(iVar6 = core_waypoint_cpp_FUN_00579130(param_1,iVar2 + 0x20,0,param_3), iVar6 != 0))",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00603b38 (at 0x00603b38, +16 bytes).",
-      "line": 74,
-      "match": "g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "iVar2 = *(int *)(&g_CDemonSetPtr->field_0x154e78 + iVar8);",
-      "type": "suspicious_cast"
     },
     {
       "description": "mem* byte count hardcodes an element stride (n = count * N) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",

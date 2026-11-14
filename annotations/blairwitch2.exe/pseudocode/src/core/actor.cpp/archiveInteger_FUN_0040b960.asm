@@ -9,15 +9,15 @@
 ;
 ; XREF[68]:
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040c330 at 0040c39c
-;   core_ammo.cpp_FUN_0040e1b0 at 0040e1f2
-;   core_ammobox.cpp_FUN_0040e860 at 0040e8a2
-;   core_anvil.cpp_FUN_0040ecc0 at 0040ed16
-;   core_backgnd.cpp_FUN_0040f4d0 at 0040f4fe
-;   core_baron.cpp_FUN_00410600 at 0041064f
-;   core_barrier.cpp_FUN_00410dc0 at 00410e0f
-;   core_batman.cpp_FUN_00413e60 at 00413ee8
-;   core_biggs.cpp_FUN_00415250 at 004152a1
-;   core_bodypart.cpp_CBodyPart_archive_FUN_00415f50 at 00415f70
+;   core_ammo.cpp_CAmmo_archive_FUN_0040e1b0 at 0040e1f2
+;   core_ammobox.cpp_CAmmoBox_archive_FUN_0040e860 at 0040e8a2
+;   core_anvil.cpp_CAnvil_archive_FUN_0040ecc0 at 0040ed16
+;   core_backgnd.cpp_CBackgroundActor_archive_FUN_0040f4d0 at 0040f4fe
+;   core_baron.cpp_CBaron_archive_FUN_00410600 at 0041064f
+;   core_barrier.cpp_CBarrier_archive_FUN_00410dc0 at 00410e0f
+;   core_basicene.cpp_CBasicEnemy_archive_FUN_0059fc10 at 0059fd46
+;   core_batman.cpp_CBatman_archive_FUN_00413e60 at 00413ee8
+;   core_biggs.cpp_CBiggs_archive_FUN_00415250 at 004152a1
 ;   ... and 58 more
 ;
 ; Referenced Globals:
@@ -51,7 +51,7 @@ section .text
     MOV ESI,dword ptr [0x007bc034]      ; 0040b976 | DAT_007bc034
     PUSH ESI                            ; 0040b97c
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0040b97d
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0040b982
     CMP EAX,0x1                         ; 0040b985
     JNZ 0x0040b9a0                      ; 0040b988

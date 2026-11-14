@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CGoggles * core_goggles_cpp_CGoggles_ctor_FUN_004cc6c0(CGoggles *this_ptr)
+; CGoggles * __cdecl core_goggles_cpp_CGoggles_ctor_FUN_004cc6c0(CGoggles *this_ptr)
 ;
 ; Parameters:
 ; CGoggles *       Stack[0x4]:4   this_ptr

@@ -9,7 +9,7 @@
 ; EBloodType       Stack[0xc]:4   blood_type
 ;
 ; XREF[1]:
-;   core_gore.cpp_FUN_004ce950 at 004ce972
+;   core_gore.cpp_CGore_createGroundBloodSplat_FUN_004ce950 at 004ce972
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e0e18

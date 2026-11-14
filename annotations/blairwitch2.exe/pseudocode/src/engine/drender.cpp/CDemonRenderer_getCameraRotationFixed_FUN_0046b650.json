@@ -1,0 +1,366 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 18,
+    "complexity_score": 75,
+    "cross_reference_count": 9,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 15,
+    "suspect_count": 5,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation"
+    ],
+    "total_lines": 33
+  },
+  "cross_references": [
+    {
+      "addr": "005a86a0",
+      "from_addr": "005a8748",
+      "name": "core_bwspart.cpp_FUN_005a86a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00495bb0",
+      "from_addr": "00495c11",
+      "name": "core_fire.cpp_CFireball_setupRenderState_FUN_00495bb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00495020",
+      "from_addr": "004950bb",
+      "name": "core_fire.cpp_CFirefly_setupRenderState_FUN_00495020",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049b9d0",
+      "from_addr": "0049ba5c",
+      "name": "core_fire.cpp_CPopcorn_render_FUN_0049b9d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049bd40",
+      "from_addr": "0049bdcf",
+      "name": "core_fire.cpp_CRainDrop_render_FUN_0049bd40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00493410",
+      "from_addr": "00493471",
+      "name": "core_fire.cpp_CSmokeParticle_setupRenderState_FUN_00493410",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00494670",
+      "from_addr": "0049470b",
+      "name": "core_fire.cpp_CSpark_setupRenderState_FUN_00494670",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049f850",
+      "from_addr": "0049f968",
+      "name": "core_flame.cpp_CFlame_renderTransparent_FUN_0049f850",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c7490",
+      "from_addr": "004c74f1",
+      "name": "core_gore.cpp_CBloodParticle_setupRenderState_FUN_004c7490",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0046b650",
+    "address_range": [
+      [
+        "0046b650",
+        "0046b66c"
+      ]
+    ],
+    "convention": "__stack_esi",
+    "name": "engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046b650",
+    "signature": "CVector3i * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046b650(CDemonRenderer *this_ptr,CVector3i *output)"
+  },
+  "function_calls": [
+    {
+      "addr": "004ea3e0",
+      "is_variadic": false,
+      "name": "engine_matrix.c_getCameraRotation_FUN_004ea3e0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 10,
+    "call_sites": [
+      {
+        "call_addr": "00493471",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CSmokeParticle_setupRenderState_FUN_00493410",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0049470b",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CSpark_setupRenderState_FUN_00494670",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004950bb",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CFirefly_setupRenderState_FUN_00495020",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00495c11",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CFireball_setupRenderState_FUN_00495bb0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004c74f1",
+        "call_type": "direct",
+        "caller": "core_gore.cpp_CBloodParticle_setupRenderState_FUN_004c7490",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005a8748",
+        "call_type": "direct",
+        "caller": "core_bwspart.cpp_FUN_005a86a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0049f968",
+        "call_type": "direct",
+        "caller": "core_flame.cpp_CFlame_renderTransparent_FUN_0049f850",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0049f9da",
+        "call_type": "direct",
+        "caller": "core_flame.cpp_CFlame_renderTransparent_FUN_0049f850",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0049bdcf",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CRainDrop_render_FUN_0049bd40",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0049ba5c",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CPopcorn_render_FUN_0049b9d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 4,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.125,
+    "instruction_count": 16,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 20,
+      "INT_ADD": 10,
+      "INT_AND": 4,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_LESS": 1,
+      "INT_MULT": 6,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 10,
+      "INT_ZEXT": 6,
+      "LOAD": 6,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 82
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00483b50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0046d230",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0048c7e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7442
+    },
+    "nocturne.exe": {
+      "addr": "00460d90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0046b657",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0046b660",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 12,
+      "match": "(uint *)((int)output",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)output + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `&CStack_14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 14,
+      "match": "(int)&CStack_14",
+      "severity": "moderate",
+      "text": "*puVar1 = *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 16,
+      "match": "(int)&CStack_14",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 14,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*puVar1 = *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 16,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
+      "type": "pointer_cast"
+    }
+  ]
+}

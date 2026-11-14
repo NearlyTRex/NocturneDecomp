@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   sound_sndmain.cpp_FUN_00558e90 at 00558e9b
+;   sound_sndmain.cpp_lockSound_FUN_00558e90 at 00558e9b
 ;   support_trisock.cpp_FUN_00571ea0 at 00571ed0
 ;
 ; Referenced Globals:

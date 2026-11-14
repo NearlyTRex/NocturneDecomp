@@ -10,11 +10,11 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
-;   core_fldnotes.cpp_FUN_004bcba0 at 004bce5d
+;   core_flashlit.cpp_FUN_004b9ce0 at 004b9cea
+;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004bcba0 at 004bce5d
 ;   core_script.cpp_trimLine_FUN_005431a0 at 005431e5
-;   sound_sndmain.cpp_FUN_0056e130 at 0056e32a
+;   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_0056e130 at 0056e32a
 ;   sound_sndmain.cpp_trimLineAndRemoveComments_FUN_0056e0a0 at 0056e0ad
-;   unkaddr_004b9ab0.cpp_FUN_004b9ce0 at 004b9cea
 ;
 ; *****************************************************************************
 

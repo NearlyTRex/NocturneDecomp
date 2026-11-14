@@ -7,76 +7,76 @@
 
 // Original: core_asgaya.cpp_staticInit_FUN_005a09b0
 // Address: 005a09b0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_asgaya.cpp_factoryFuncAsgaya_FUN_005a09e0
 // Address: 005a09e0
-void factoryFuncAsgaya(void);
+CAsgaya * __cdecl factoryFuncAsgaya(void);
 
 // Original: core_asgaya.cpp_CAsgaya_getActorType_FUN_005a0a00
 // Address: 005a0a00
-CDemonActorType * CAsgaya::getActorType(CAsgaya *this_ptr);
+CDemonActorType * __cdecl CAsgaya::getActorType(CAsgaya *this_ptr);
 
 // Original: core_asgaya.cpp_CAsgaya_ctor_FUN_005a0a10
 // Address: 005a0a10
-CAsgaya * CAsgaya::ctor(CAsgaya *this_ptr);
+CAsgaya * __cdecl CAsgaya::ctor(CAsgaya *this_ptr);
 
-// Original: core_asgaya.cpp_FUN_005a0b00
+// Original: core_asgaya.cpp_CAsgaya_setup_FUN_005a0b00
 // Address: 005a0b00
-void FUN_005a0b00(int param_1);
+void __cdecl CAsgaya::setup(CAsgaya *this_ptr);
 
-// Original: core_asgaya.cpp_FUN_005a0be0
+// Original: core_asgaya.cpp_CAsgaya_process_FUN_005a0be0
 // Address: 005a0be0
-void FUN_005a0be0(CCharacter *param_1,float param_2);
+void __cdecl CAsgaya::process(CAsgaya *this_ptr,float delta_time);
 
-// Original: core_asgaya.cpp_FUN_005a1730
+// Original: core_asgaya.cpp_CAsgaya_renderBackground_FUN_005a1730
 // Address: 005a1730
-void FUN_005a1730(CNPC *param_1,int param_2);
+void __cdecl CAsgaya::renderBackground(CAsgaya *this_ptr,int layer_flag);
 
-// Original: core_asgaya.cpp_FUN_005a1760
+// Original: core_asgaya.cpp_CAsgaya_renderOpaque_FUN_005a1760
 // Address: 005a1760
-int FUN_005a1760(CDemonActor *param_1);
+int __cdecl CAsgaya::renderOpaque(CAsgaya *this_ptr);
 
-// Original: core_asgaya.cpp_FUN_005a17e0
+// Original: core_asgaya.cpp_CAsgaya_renderTransparent_FUN_005a17e0
 // Address: 005a17e0
-undefined4 FUN_005a17e0(CDemonActor *param_1);
+int __cdecl CAsgaya::renderTransparent(CAsgaya *this_ptr);
 
-// Original: core_asgaya.cpp_FUN_005a1970
+// Original: core_asgaya.cpp_CAsgaya_getCarryObjToBodyXForm_FUN_005a1970
 // Address: 005a1970
-void FUN_005a1970(int param_1,int param_2);
+CMatrix3x4f * __stack2_esi CAsgaya::getCarryObjToBodyXForm(CAsgaya *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
-// Original: core_asgaya.cpp_FUN_005a1aa0
+// Original: core_asgaya.cpp_CAsgaya_archive_FUN_005a1aa0
 // Address: 005a1aa0
-void FUN_005a1aa0(int param_1);
+void __cdecl CAsgaya::archive(CAsgaya *this_ptr);
 
-// Original: core_asgaya.cpp_FUN_005a1b10
+// Original: core_asgaya.cpp_CAsgaya_shouldIgnoreForTargeting_FUN_005a1b10
 // Address: 005a1b10
-undefined4 FUN_005a1b10(void);
+int __cdecl CAsgaya::shouldIgnoreForTargeting(CAsgaya *this_ptr);
 
-// Original: core_asgaya.cpp_FUN_005a1b20
+// Original: core_asgaya.cpp_CAsgaya_isInvulnerable_FUN_005a1b20
 // Address: 005a1b20
-bool FUN_005a1b20(int param_1);
+int __cdecl CAsgaya::isInvulnerable(CAsgaya *this_ptr);
 
-// Original: core_asgaya.cpp_FUN_005a1b40
+// Original: core_asgaya.cpp_CAsgaya_getPathMap_FUN_005a1b40
 // Address: 005a1b40
-int FUN_005a1b40(int param_1);
+CPathMap * __cdecl CAsgaya::getPathMap(CAsgaya *this_ptr);
 
 // Original: core_asgaya.cpp_CAsgaya_dtor_FUN_005a1b50
 // Address: 005a1b50
-CAsgaya * CAsgaya::dtor(CAsgaya *this_ptr,uint flags);
+CAsgaya * __cdecl CAsgaya::dtor(CAsgaya *this_ptr,uint flags);
 
-// Original: core_asgaya.cpp_FUN_005a1bfe
-// Address: 005a1bfe
-void FUN_005a1bfe(int param_1,int param_2);
+// Original: core_asgaya.cpp_FUN_005a1c00
+// Address: 005a1c00
+void FUN_005a1c00(void);
 
-// Original: core_asgaya.cpp_FUN_005a1e5e
-// Address: 005a1e5e
-int * FUN_005a1e5e(int param_1,int *param_2);
+// Original: core_asgaya.cpp_FUN_005a1e60
+// Address: 005a1e60
+int * FUN_005a1e60(void);
 
 // Original: core_asgaya.cpp_FUN_005a1ea0
 // Address: 005a1ea0
-void FUN_005a1ea0(int *param_1,int param_2);
+void FUN_005a1ea0(SRenderVertex *param_1,int param_2);
 
-// Original: core_asgaya.cpp_FUN_005a23c0
+// Original: core_asgaya.cpp_rasterizePolygonCustom_FUN_005a23c0
 // Address: 005a23c0
-void FUN_005a23c0(int *param_1,int param_2,code *param_3);
+void __cdecl rasterizePolygonCustom(SRenderVertex *vertex_buffer,int vertex_count,CustomScanlineFunc *scanline_renderer);

@@ -1,0 +1,756 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 446,
+    "complexity_score": 554,
+    "cross_reference_count": 1,
+    "function_call_count": 22,
+    "global_count": 23,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 204,
+    "suspect_count": 31,
+    "suspect_types": [
+      "negative_offset",
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data",
+      "unrolled_strcat",
+      "unrolled_strcpy",
+      "unrolled_strlen",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 650
+  },
+  "cross_references": [
+    {
+      "addr": "004bb9b0",
+      "from_addr": "004bbe72",
+      "name": "core_game.cpp_FUN_004bb9b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0047d270",
+    "address_range": [
+      [
+        "0047d270",
+        "0047d72c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047d270",
+    "signature": "int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0047d270(CEditorTools *this_ptr,char *dialog_title,char *directory_path,char *file_extension,char *output_buffer,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "005ba840",
+      "is_variadic": false,
+      "name": "crt_string.c_strupr_FUN_005ba840"
+    },
+    {
+      "addr": "004032b0",
+      "is_variadic": false,
+      "name": "engine_2d.c_clearInputAndWait_FUN_004032b0"
+    },
+    {
+      "addr": "00406da0",
+      "is_variadic": false,
+      "name": "engine_3d.c_setRenderAlpha_FUN_00406da0"
+    },
+    {
+      "addr": "004ab560",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560"
+    },
+    {
+      "addr": "004aaf00",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00"
+    },
+    {
+      "addr": "004a8df0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_FUN_004a8df0"
+    },
+    {
+      "addr": "004dfe90",
+      "is_variadic": false,
+      "name": "engine_keys.cpp_CKeys_getInputKey_FUN_004dfe90"
+    },
+    {
+      "addr": "004f3570",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_setAlpha_FUN_004f3570"
+    },
+    {
+      "addr": "0047e1d0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047e1d0"
+    },
+    {
+      "addr": "0047abd0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CInputString_backspace_FUN_0047abd0"
+    },
+    {
+      "addr": "0047ab80",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CInputString_deleteSelection_FUN_0047ab80"
+    },
+    {
+      "addr": "0047acc0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_0047acc0"
+    },
+    {
+      "addr": "0047a9d0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CInputString_init_FUN_0047a9d0"
+    },
+    {
+      "addr": "0047aa80",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CInputString_insertChar_FUN_0047aa80"
+    },
+    {
+      "addr": "0047aa60",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CInputString_setSelectionToCursor_FUN_0047aa60"
+    },
+    {
+      "addr": "0047afb0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_0047afb0"
+    },
+    {
+      "addr": "0047e760",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_0047e760"
+    },
+    {
+      "addr": "0047e870",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_0047e870"
+    },
+    {
+      "addr": "0050fe80",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_0050fe80"
+    },
+    {
+      "addr": "00589560",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00589560"
+    },
+    {
+      "addr": "0058eb40",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_wasKeyPressed_FUN_0058eb40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d1e6f",
+      "name": "s_shape_edittool_cpp_005d1e6f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d1e85",
+      "name": "s_gEdFont_must_be_set_by_t_005d1e85",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2111",
+      "name": "DAT_005d2111",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d2112",
+      "name": "s_Directory_005d2112",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d211e",
+      "name": "s_Filename_005d211e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2129",
+      "name": "s_Filename_005d2129",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d2134",
+      "name": "DAT_005d2134",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d2135",
+      "name": "DAT_005d2135",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d2136",
+      "name": "DAT_005d2136",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d2137",
+      "name": "DAT_005d2137",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "006141cc",
+      "name": "DAT_006141cc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00617dd4",
+      "name": "DAT_00617dd4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061ed94",
+      "name": "DAT_0061ed94",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c25590",
+      "name": "DAT_01c25590",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c25f78",
+      "name": "DAT_01c25f78",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c25f7c",
+      "name": "DAT_01c25f7c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c263bc",
+      "name": "DAT_01c263bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c263c0",
+      "name": "DAT_01c263c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e48",
+      "name": "DAT_01c35e48",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e4c",
+      "name": "DAT_01c35e4c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d02f84",
+      "name": "DAT_01d02f84",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004bbe72",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004bb9b0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.550432276657061,
+    "instruction_count": 347,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 21,
+      "BRANCH": 6,
+      "CALL": 31,
+      "CBRANCH": 39,
+      "COPY": 225,
+      "INT_ADD": 116,
+      "INT_AND": 219,
+      "INT_CARRY": 43,
+      "INT_EQUAL": 207,
+      "INT_LEFT": 2,
+      "INT_LESS": 37,
+      "INT_MULT": 4,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 45,
+      "INT_SCARRY": 46,
+      "INT_SLESS": 103,
+      "INT_SUB": 146,
+      "INT_XOR": 4,
+      "INT_ZEXT": 4,
+      "LOAD": 61,
+      "POPCOUNT": 101,
+      "RETURN": 2,
+      "STORE": 109
+    },
+    "pcode_op_count": 1579
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004958d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9971
+    },
+    "bw3.exe": {
+      "addr": "0047e470",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9971
+    },
+    "nocedit.exe": {
+      "addr": "0049fb70",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9448
+    },
+    "nocturne.exe": {
+      "addr": "00470eb0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9448
+    }
+  },
+  "stack_frame": {
+    "frame_size": 892,
+    "local_size": 868,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_360",
+        "offset": -864,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_35f",
+        "offset": -863,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_158",
+        "offset": -344,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_157",
+        "offset": -343,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEditorTools *"
+      },
+      {
+        "is_param": true,
+        "name": "dialog_title",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "directory_path",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "file_extension",
+        "offset": 16,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "output_buffer",
+        "offset": 20,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 24,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0047d38f",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0047d3b4",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_005d2111",
+      "severity": "mild",
+      "text": "directory_path = &DAT_005d2111;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 42,
+      "match": "DAT_006141cc",
+      "severity": "mild",
+      "text": "local_18 = DAT_006141cc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_006141cc",
+      "severity": "mild",
+      "text": "DAT_006141cc = 0x7f;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 108,
+      "match": "DAT_006141cc",
+      "severity": "mild",
+      "text": "DAT_006141cc = local_18;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 125,
+      "match": "DAT_005d2134",
+      "severity": "mild",
+      "text": "pcVar9 = &DAT_005d2134;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 132,
+      "match": "(CInputString *)((int)pCVar7",
+      "severity": "moderate",
+      "text": "pCVar8 = (CInputString *)((int)pCVar7 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 136,
+      "match": "pCVar8[-1].",
+      "severity": "mild",
+      "text": "pcVar2 = (char *)((int)&pCVar8[-1].mask_mode + 3);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 153,
+      "match": "(CInputString *)((int)pCVar7",
+      "severity": "moderate",
+      "text": "pCVar8 = (CInputString *)((int)pCVar7 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 157,
+      "match": "pCVar8[-1].",
+      "severity": "mild",
+      "text": "pcVar2 = (char *)((int)&pCVar8[-1].mask_mode + 3);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 174,
+      "match": "(CInputString *)((int)pCVar7",
+      "severity": "moderate",
+      "text": "pCVar7 = (CInputString *)((int)pCVar7 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 186,
+      "match": "DAT_0061ed94",
+      "severity": "mild",
+      "text": "else if ((((((&DAT_0061ed94)[(byte)((char)iVar4 + 1)] & 8) != 0) && (iVar4 != 0x5c)) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 187,
+      "match": "DAT_0061ed94",
+      "severity": "mild",
+      "text": "(iVar4 != 0x3a)) && (((&DAT_0061ed94)[(byte)((char)iVar4 + 1)] & 2) == 0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 206,
+      "match": "DAT_006141cc",
+      "severity": "mild",
+      "text": "DAT_006141cc = local_18;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `pCVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 132,
+      "match": "(int)pCVar7",
+      "severity": "moderate",
+      "text": "pCVar8 = (CInputString *)((int)pCVar7 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar8[-1].mask_mode` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 136,
+      "match": "(int)&pCVar8[-1].mask_mode",
+      "severity": "moderate",
+      "text": "pcVar2 = (char *)((int)&pCVar8[-1].mask_mode + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 153,
+      "match": "(int)pCVar7",
+      "severity": "moderate",
+      "text": "pCVar8 = (CInputString *)((int)pCVar7 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar8[-1].mask_mode` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 157,
+      "match": "(int)&pCVar8[-1].mask_mode",
+      "severity": "moderate",
+      "text": "pcVar2 = (char *)((int)&pCVar8[-1].mask_mode + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 174,
+      "match": "(int)pCVar7",
+      "severity": "moderate",
+      "text": "pCVar7 = (CInputString *)((int)pCVar7 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 50,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 71,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 137,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 159,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 196,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 136,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pcVar2 = (char *)((int)&pCVar8[-1].mask_mode + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 157,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pcVar2 = (char *)((int)&pCVar8[-1].mask_mode + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 61,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 128,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 149,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 170,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 61,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    }
+  ]
+}

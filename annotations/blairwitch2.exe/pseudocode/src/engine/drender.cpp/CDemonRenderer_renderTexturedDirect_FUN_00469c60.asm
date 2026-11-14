@@ -11,11 +11,11 @@
 ; XREF[9]:
 ;   core_box.cpp_CBoundingBox3D_render_FUN_0041b700 at 0041b987
 ;   core_charactr.cpp_FUN_00424c80 at 00424ea8
-;   core_fire.cpp_FUN_00498ed0 at 00499235
-;   core_flame.cpp_FUN_0049f850 at 004a0175
+;   core_fire.cpp_CExplosion_render_FUN_00498ed0 at 00499235
+;   core_flame.cpp_CFlame_renderTransparent_FUN_0049f850 at 004a0175
 ;   core_ground.cpp_CGround_renderTerrainPrimitive_FUN_004cb3e0 at 004cb3f1
-;   core_inv.cpp_FUN_004dd320 at 004dd492
 ;   core_inv.cpp_drawItemIconBackground_FUN_004dd4e0 at 004dd618
+;   core_inv.cpp_drawWeaponIconBackground_FUN_004dd320 at 004dd492
 ;   core_marquee.cpp_CMarquee_renderLightBulb_FUN_004e7ff0 at 004e8167
 ;   core_menu.cpp_FUN_004eaf30 at 004eb09e
 ;
@@ -77,7 +77,7 @@ section .text
         ;   Label: LAB_00469cb5
     PUSH EAX                            ; 00469cb8
     CALL engine_3d.c_isVisiblePlane_FUN_00403970 ; 00469cb9
-        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403970()
+        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403970(SClipPlane * plane)
     ADD ESP,0x4                         ; 00469cbe
     TEST EAX,EAX                        ; 00469cc1
     JZ 0x00469cb0                       ; 00469cc3

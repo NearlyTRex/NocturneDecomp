@@ -21,7 +21,7 @@
 ;   ... and 104 more
 ;
 ; Referenced Globals:
-;   void* g_CDemonActorVTable = 00408890
+;   CDemonActor_vtable g_CDemonActorVTable
 ;   WatcomTypeInfo g_CDemonActorTypeInfo
 ;
 ; Called Functions:
@@ -54,7 +54,7 @@ section .text
         ;   Label: LAB_004087a1
     PUSH EBX                            ; 004087a6
     CALL crt_memory.c___vec_delete_FUN_005a308f ; 004087a7
-        ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005a308f()
+        ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005a308f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 004087ac
     PUSH EAX                            ; 004087af
     CALL crt_unknown.c_FUN_005a30b6     ; 004087b0

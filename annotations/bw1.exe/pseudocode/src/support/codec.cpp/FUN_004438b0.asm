@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   support_codec.cpp_FUN_00442470
+;   support_codec.cpp_resetBitBuffer_FUN_00442470
 ;
 ; *****************************************************************************
 
@@ -15,8 +15,8 @@ section .text
         ;   Label: support_codec.cpp_FUN_004438b0
     ADD EAX,0x4                         ; 004438b4
     PUSH EAX                            ; 004438b7
-    CALL support_codec.cpp_FUN_00442470 ; 004438b8
-        ;   XREF to: 00442470 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_FUN_00442470(SBitBuffer * bit_buffer)
+    CALL support_codec.cpp_resetBitBuffer_FUN_00442470 ; 004438b8
+        ;   XREF to: 00442470 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_resetBitBuffer_FUN_00442470(SBitBuffer * bit_buffer)
     ADD ESP,0x4                         ; 004438bd
     RET                                 ; 004438c0
 

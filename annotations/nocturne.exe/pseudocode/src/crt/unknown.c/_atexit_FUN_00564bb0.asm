@@ -8,7 +8,6 @@
 ;
 ; XREF[29]:
 ;   core_boxactor.cpp_staticInit_FUN_0041e260 at 0041e29c
-;   core_console.cpp_staticInit_FUN_0043abb0 at 0043abca
 ;   core_dcamera.cpp_staticInit_FUN_0043f9c0 at 0043f9f0
 ;   core_dfilter.cpp_staticInit_FUN_0044bc20 at 0044bc39
 ;   core_dmodel.cpp_staticInit_FUN_00452530 at 0045254c
@@ -17,6 +16,7 @@
 ;   core_game.cpp_staticInit_FUN_0049a1e0 at 0049a1fc
 ;   core_gore.cpp_staticInit_FUN_004adf90 at 004adfa2
 ;   core_ground.cpp_staticInit_FUN_004b1060 at 004b107c
+;   core_inv.cpp_staticInit_FUN_004be9d0 at 004be9e2
 ;   ... and 19 more
 ;
 ; Called Functions:

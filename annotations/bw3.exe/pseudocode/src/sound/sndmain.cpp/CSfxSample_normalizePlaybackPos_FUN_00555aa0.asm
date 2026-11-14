@@ -18,7 +18,7 @@
 ; Called Functions:
 ;   crt_math.c_floor_FUN_005a3600
 ;   sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_00555930
-;   sound_sndmain.cpp_FUN_00555b80
+;   sound_sndmain.cpp_CSfxSample_getLoopMode_FUN_00555b80
 ;
 ; *****************************************************************************
 
@@ -47,8 +47,8 @@ section .text
     ADD ESP,0x14                        ; 00555ace
     PUSH EBX                            ; 00555ad1
     FSTP double ptr [ESP + 0x2c]        ; 00555ad2
-    CALL sound_sndmain.cpp_FUN_00555b80 ; 00555ad6
-        ;   XREF to: 00555b80 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00555b80(CSfxSample * this_ptr)
+    CALL sound_sndmain.cpp_CSfxSample_getLoopMode_FUN_00555b80 ; 00555ad6
+        ;   XREF to: 00555b80 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSample_getLoopMode_FUN_00555b80(CSfxSample * this_ptr)
     ADD ESP,0x4                         ; 00555adb
     TEST EAX,EAX                        ; 00555ade
     JNZ 0x00555b43                      ; 00555ae0

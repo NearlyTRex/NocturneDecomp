@@ -1,0 +1,228 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 115,
+    "complexity_score": 81,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 51,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 166
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00414d40",
+    "address_range": [
+      [
+        "00414d40",
+        "00414e89"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bodypart.cpp_CBodyPart_renderBackground_FUN_00414d40",
+    "signature": "void __cdecl core_bodypart_cpp_CBodyPart_renderBackground_FUN_00414d40(CBodyPart *this_ptr,int layer_flag)"
+  },
+  "function_calls": [
+    {
+      "addr": "004087f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0"
+    },
+    {
+      "addr": "00414a60",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00414a60"
+    },
+    {
+      "addr": "0041daf0",
+      "is_variadic": false,
+      "name": "core_box.cpp_FUN_0041daf0"
+    },
+    {
+      "addr": "00441ff0",
+      "is_variadic": false,
+      "name": "engine_console.cpp_CConsole_printf_FUN_00441ff0"
+    },
+    {
+      "addr": "0046d540",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540"
+    },
+    {
+      "addr": "0046d080",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_pop_FUN_0046d080"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b6b10",
+      "name": "s_s_going_into_background_005b6b10",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f1690",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "007f7ea4"
+    },
+    {
+      "addr": "005f2afc",
+      "name": "DAT_005f2afc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00603b28",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01ed78c8"
+    },
+    {
+      "addr": "007f7ea4",
+      "name": "g_CConsoleInstance",
+      "type": "CConsole",
+      "value": null
+    },
+    {
+      "addr": "01bdd7e4",
+      "name": "DAT_01bdd7e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ed78c8",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "02032560",
+      "name": "g_CDemonSetInstance.disable_directional_lighting",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.686046511627907,
+    "instruction_count": 86,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "BRANCH": 3,
+      "CALL": 6,
+      "CALLIND": 2,
+      "CBRANCH": 13,
+      "COPY": 64,
+      "INT_ADD": 40,
+      "INT_AND": 47,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 45,
+      "INT_LESS": 10,
+      "INT_MULT": 2,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 22,
+      "INT_SUB": 37,
+      "INT_ZEXT": 2,
+      "LOAD": 21,
+      "POPCOUNT": 22,
+      "RETURN": 1,
+      "STORE": 30
+    },
+    "pcode_op_count": 403
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00415cd0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9882
+    },
+    "bw1.exe": {
+      "addr": "00419130",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00419610",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.908
+    },
+    "nocturne.exe": {
+      "addr": "00416300",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9268
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBodyPart *"
+      },
+      {
+        "is_param": true,
+        "name": "layer_flag",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 44,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "(iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc),",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 36,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBodyPart",
+        "offset": 24,
+        "vtable_addr": "005dbfe4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -48,7 +48,7 @@ section .text
     MOV dword ptr [0x01c35e4c],ESI      ; 004672cf | DAT_01c35e4c
     MOV [0x01c35e54],EAX                ; 004672d5 | DAT_01c35e54
     CALL cockpit_ckptutil.c_FUN_0042f300 ; 004672da
-        ;   XREF to: 0042f300 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_0042f300()
+        ;   XREF to: 0042f300 (UNCONDITIONAL_CALL)  ; int cockpit_ckptutil.c_FUN_0042f300()
     PUSH 0x1                            ; 004672df
     MOV ESI,EAX                         ; 004672e1
     CALL cockpit_ckptutil.c_FUN_0042f320 ; 004672e3

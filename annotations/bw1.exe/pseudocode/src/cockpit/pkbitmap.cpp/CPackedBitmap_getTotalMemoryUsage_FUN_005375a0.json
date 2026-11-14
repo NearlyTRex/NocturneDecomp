@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 53,
+    "complexity_score": 7,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 8,
-    "suspect_count": 4,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 25
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 24
   },
   "cross_references": [
     {
@@ -83,6 +81,32 @@
     },
     "pcode_op_count": 94
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00516250",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0050f280",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0054a970",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004f3fa0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -99,38 +123,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x20 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "return (*(int *)&this_ptr->field_0x1c + 1) * 4 +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "*(int *)(*(int *)&this_ptr->field_0x20 + *(int *)&this_ptr->field_0x1c * 4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "*(int *)(*(int *)&this_ptr->field_0x20 + *(int *)&this_ptr->field_0x1c * 4);",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

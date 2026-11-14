@@ -1,17 +1,22 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00479240(char *param_1,undefined4 param_2,uint param_3,int *param_4)
+; void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00479240(char *directory_path,char *filename,uint mode_flags,ifstream *file_stream)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   directory_path
+; char *           Stack[0x8]:4   filename
+; uint             Stack[0xc]:4   mode_flags
+; ifstream *       Stack[0x10]:4   file_stream
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00608528
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005c1f9c
-;   crt_unknown.c_FUN_005c1fd7
-;   crt_unknown.c_FUN_005c2019
-;   crt_unknown.c_FUN_005c2078
+;   crt_unknown.c_fflush_FUN_005c1f9c
+;   crt_unknown.c_ios_clear_FUN_005c1fd7
+;   crt_unknown.c_istream_seekg_FUN_005c2078
+;   crt_unknown.c_openFile_FUN_005c2019
 ;   crt_watcom.c__mkdir_FUN_005c2000
 ;   engine_dosio.cpp_findFile_FUN_00478e90
 ;   engine_dosio.cpp_FUN_00478e20
@@ -28,16 +33,16 @@ section .text
     MOV ESI,dword ptr [ESP + 0x224]     ; 00479249
     MOV EBX,dword ptr [ESP + 0x230]     ; 00479250
     PUSH EBX                            ; 00479257
-    CALL crt_unknown.c_FUN_005c1f9c     ; 00479258
-        ;   XREF to: 005c1f9c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c1f9c()
+    CALL crt_unknown.c_fflush_FUN_005c1f9c ; 00479258
+        ;   XREF to: 005c1f9c (UNCONDITIONAL_CALL)  ; void crt_unknown.c_fflush_FUN_005c1f9c(_FILE * stream)
     MOV EAX,dword ptr [EBX]             ; 0047925d
     ADD ESP,0x4                         ; 0047925f
     MOV EAX,dword ptr [EAX + 0x4]       ; 00479262
     PUSH 0x0                            ; 00479265
     ADD EAX,EBX                         ; 00479267
     PUSH EAX                            ; 00479269
-    CALL crt_unknown.c_FUN_005c1fd7     ; 0047926a
-        ;   XREF to: 005c1fd7 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c1fd7()
+    CALL crt_unknown.c_ios_clear_FUN_005c1fd7 ; 0047926a
+        ;   XREF to: 005c1fd7 (UNCONDITIONAL_CALL)  ; uint crt_unknown.c_ios_clear_FUN_005c1fd7(ios * this_ptr, uint state_flags)
     ADD ESP,0x8                         ; 0047926f
     MOV EDX,dword ptr [ESP + 0x228]     ; 00479272
     PUSH EDX                            ; 00479279
@@ -65,8 +70,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004792ad
     PUSH EAX                            ; 004792b1
     PUSH EBX                            ; 004792b2
-    CALL crt_unknown.c_FUN_005c2019     ; 004792b3
-        ;   XREF to: 005c2019 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c2019()
+    CALL crt_unknown.c_openFile_FUN_005c2019 ; 004792b3
+        ;   XREF to: 005c2019 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_openFile_FUN_005c2019(void * stream_obj, char * filename, int open_mode, SIZE_T buffer_size)
     ADD ESP,0x10                        ; 004792b8
     ADD ESP,0x214                       ; 004792bb
         ;   Label: LAB_004792bb
@@ -78,7 +83,7 @@ section .text
         ;   Label: LAB_004792c5
     PUSH EAX                            ; 004792c7
     CALL engine_dosio.cpp_findFile_FUN_00478e90 ; 004792c8
-        ;   XREF to: 00478e90 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_findFile_FUN_00478e90()
+        ;   XREF to: 00478e90 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_findFile_FUN_00478e90(SFoundFileInfo * context)
     ADD ESP,0x4                         ; 004792cd
     TEST EAX,EAX                        ; 004792d0
     JZ 0x004792bb                       ; 004792d2
@@ -90,8 +95,8 @@ section .text
     LEA EAX,[ESP + 0x108]               ; 004792e2
     PUSH EAX                            ; 004792e9
     PUSH EBX                            ; 004792ea
-    CALL crt_unknown.c_FUN_005c2019     ; 004792eb
-        ;   XREF to: 005c2019 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c2019()
+    CALL crt_unknown.c_openFile_FUN_005c2019 ; 004792eb
+        ;   XREF to: 005c2019 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_openFile_FUN_005c2019(void * stream_obj, char * filename, int open_mode, SIZE_T buffer_size)
     ADD ESP,0x10                        ; 004792f0
     MOV ESI,dword ptr [ESP + 0x200]     ; 004792f3
     TEST ESI,ESI                        ; 004792fa
@@ -100,8 +105,8 @@ section .text
     PUSH ESI                            ; 004792fe
     ADD EBX,0x44                        ; 004792ff
     PUSH EBX                            ; 00479302
-    CALL crt_unknown.c_FUN_005c2078     ; 00479303
-        ;   XREF to: 005c2078 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c2078()
+    CALL crt_unknown.c_istream_seekg_FUN_005c2078 ; 00479303
+        ;   XREF to: 005c2078 (UNCONDITIONAL_CALL)  ; _istream * crt_unknown.c_istream_seekg_FUN_005c2078(void * this_ptr, int offset)
     ADD ESP,0x8                         ; 00479308
     ADD ESP,0x214                       ; 0047930b
     POP EBP                             ; 00479311

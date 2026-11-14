@@ -2,18 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 65,
+    "complexity_score": 6,
     "cross_reference_count": 23,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 5,
-    "suspect_count": 5,
-    "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param"
-    ],
-    "total_lines": 17
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 18
   },
   "cross_references": [
     {
@@ -43,19 +40,19 @@
     {
       "addr": "004e46c0",
       "from_addr": "004e46f7",
-      "name": "core_main.c_FUN_004e46c0",
+      "name": "core_main.c_initializeGameSystems_FUN_004e46c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0051c000",
       "from_addr": "0051c019",
-      "name": "core_podmain.cpp_FUN_0051c000",
+      "name": "core_podmain.cpp_CDemonPod_load_FUN_0051c000",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00436710",
       "from_addr": "004367a7",
-      "name": "engine_console.cpp_FUN_00436710",
+      "name": "engine_console.cpp_CConsole_printf_FUN_00436710",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -65,27 +62,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004d8180",
+      "from_addr": "004d81a7",
+      "name": "engine_ini.cpp_CIni_getProfileString_FUN_004d8180",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004d8530",
       "from_addr": "004d8591",
       "name": "engine_ini.cpp_CIni_writeProfileString_FUN_004d8530",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004d8180",
-      "from_addr": "004d81a7",
-      "name": "engine_ini.cpp_FUN_004d8180",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004d8360",
       "from_addr": "004d8388",
       "name": "engine_ini.cpp_FUN_004d8360",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00514a30",
-      "from_addr": "00514b05",
-      "name": "engine_pcx.c_FUN_00514a30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -101,21 +92,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00514a30",
+      "from_addr": "00514b05",
+      "name": "engine_pcx.c_saveScreenshotGeneral_FUN_00514a30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00519f00",
+      "from_addr": "00519f8d",
+      "name": "engine_pod.cpp_CPodFile_mountFromFile_FUN_00519f00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00519dc0",
       "from_addr": "00519de9",
       "name": "engine_pod.cpp_FUN_00519dc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00519f00",
-      "from_addr": "00519f8d",
-      "name": "engine_pod.cpp_FUN_00519f00",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0051aa7e",
+      "addr": "0051aa80",
       "from_addr": "0051aae4",
-      "name": "engine_pod.cpp_FUN_0051aa7e",
+      "name": "engine_pod.cpp_FUN_0051aa80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -137,21 +134,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0051b6dc",
+      "addr": "0051b6e0",
       "from_addr": "0051b7a8",
-      "name": "engine_pod.cpp_FUN_0051b6dc",
+      "name": "engine_pod.cpp_FUN_0051b6e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0057dd90",
       "from_addr": "0057dda8",
-      "name": "support_trstream.cpp_FUN_0057dd90",
+      "name": "support_trstream.cpp_COutStreamFile_open_FUN_0057dd90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00591190",
       "from_addr": "005911c9",
-      "name": "wincore_winvideo.cpp_FUN_00591190",
+      "name": "wincore_winvideo.cpp_playMovie_FUN_00591190",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -165,7 +162,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_stdio.c_fopen_FUN_005b910c",
-    "signature": "void __cdecl crt_stdio_c_fopen_FUN_005b910c(undefined4 param_1,undefined4 param_2)"
+    "signature": "_FILE * __cdecl crt_stdio_c_fopen_FUN_005b910c(char *filename,char *mode)"
   },
   "function_calls": [
     {
@@ -225,7 +222,7 @@
       {
         "call_addr": "004e46f7",
         "call_type": "direct",
-        "caller": "core_main.c_FUN_004e46c0",
+        "caller": "core_main.c_initializeGameSystems_FUN_004e46c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -236,7 +233,7 @@
       {
         "call_addr": "004d81a7",
         "call_type": "direct",
-        "caller": "engine_ini.cpp_FUN_004d8180",
+        "caller": "engine_ini.cpp_CIni_getProfileString_FUN_004d8180",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -280,7 +277,7 @@
       {
         "call_addr": "004367a7",
         "call_type": "direct",
-        "caller": "engine_console.cpp_FUN_00436710",
+        "caller": "engine_console.cpp_CConsole_printf_FUN_00436710",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -290,10 +287,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.7,
@@ -315,57 +312,54 @@
     },
     "pcode_op_count": 37
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005c157c",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005a43ec",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00601a7c",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0056568c",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "mode",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl _fopen(uint param_1,uint param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl _fopen(uint param_1,uint param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_005b90b0(param_1,param_2,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "FUN_005b90b0(param_1,param_2,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 27,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

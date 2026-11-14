@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   support_trisock.cpp_FUN_0059df10 at 0059dfa1
+;   support_trisock.cpp_FUN_0059deb0 at 0059dfa1
 ;
 ; *****************************************************************************
 

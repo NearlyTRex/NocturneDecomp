@@ -24,7 +24,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[4]:
-;   core_inv.cpp_FUN_004f655e at 004f668c
+;   core_inv.cpp_FUN_004f6560 at 004f668c
 ;   core_inv.cpp_FUN_004fae10 at 004fb8ff
 ;   engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_00483560 at 00483772
 ;   engine_matrix.c_buildRotationMatrix_FUN_005076b0 at 00507994

@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
-;   crt_unknown.c_FUN_005c08d0
+;   crt_memory.c_malloc_FUN_005c08d0
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
 
     PUSH 0x10000                        ; 00463de0
         ;   Label: core_dlight.cpp_CDemonLight_allocateFilter_FUN_00463de0
-    CALL crt_unknown.c_FUN_005c08d0     ; 00463de5
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
+    CALL crt_memory.c_malloc_FUN_005c08d0 ; 00463de5
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 00463dea
     MOV EDX,dword ptr [ESP + 0x4]       ; 00463ded
     MOV dword ptr [EDX + 0x1c6c],EAX    ; 00463df1

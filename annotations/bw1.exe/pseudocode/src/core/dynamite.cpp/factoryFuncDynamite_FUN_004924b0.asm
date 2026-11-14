@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dynamite_cpp_factoryFuncDynamite_FUN_004924b0(void)
+; CDynamite * __cdecl core_dynamite_cpp_factoryFuncDynamite_FUN_004924b0(void)
 ;
 ;
 ; Called Functions:
 ;   core_dynamite.cpp_CDynamite_ctor_FUN_004924e0
-;   crt_unknown.c_FUN_005c0f32
+;   crt_memory.c_operator_new_FUN_005c0f32
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x58c                          ; 004924b0
         ;   Label: core_dynamite.cpp_factoryFuncDynamite_FUN_004924b0
-    CALL crt_unknown.c_FUN_005c0f32     ; 004924b5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
+    CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004924b5
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
     ADD ESP,0x4                         ; 004924ba
     TEST EAX,EAX                        ; 004924bd
     JNZ 0x004924c2                      ; 004924bf

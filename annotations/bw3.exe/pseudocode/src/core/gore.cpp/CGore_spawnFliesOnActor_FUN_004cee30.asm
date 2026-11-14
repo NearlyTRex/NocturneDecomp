@@ -11,8 +11,8 @@
 ; CVector3f *      Stack[0x14]:4   box_size
 ;
 ; XREF[2]:
-;   core_actor.cpp_FUN_00409c40 at 00409c6a
-;   unkafter_prye.cpp_FUN_00523e50 at 00523fc9
+;   core_actor.cpp_CDemonActor_spawnFlies_FUN_00409c40 at 00409c6a
+;   core_prye.cpp_CPrye_processDamage_FUN_00523e50 at 00523fc9
 ;
 ; Called Functions:
 ;   core_gore.cpp_FUN_004ced40

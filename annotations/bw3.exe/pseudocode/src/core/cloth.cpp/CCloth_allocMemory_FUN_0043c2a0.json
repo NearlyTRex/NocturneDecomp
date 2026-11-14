@@ -18,7 +18,7 @@
     {
       "addr": "0043c330",
       "from_addr": "0043c58a",
-      "name": "core_cloth.cpp_FUN_0043c330",
+      "name": "core_cloth.cpp_CCloth_load_FUN_0043c330",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -38,7 +38,7 @@
     {
       "addr": "0043c300",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_0043c300"
+      "name": "core_cloth.cpp_CCloth_free_FUN_0043c300"
     },
     {
       "addr": "004e4330",
@@ -48,7 +48,7 @@
     {
       "addr": "005a40df",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a40df"
+      "name": "crt_memory.c_operator_new_array_FUN_005a40df"
     }
   ],
   "globals": [
@@ -83,7 +83,7 @@
       {
         "call_addr": "0043c58a",
         "call_type": "direct",
-        "caller": "core_cloth.cpp_FUN_0043c330",
+        "caller": "core_cloth.cpp_CCloth_load_FUN_0043c330",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -123,6 +123,32 @@
       "STORE": 8
     },
     "pcode_op_count": 122
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005ade20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0043e640",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00438c50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.92
+    },
+    "nocturne.exe": {
+      "addr": "004351b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 8,

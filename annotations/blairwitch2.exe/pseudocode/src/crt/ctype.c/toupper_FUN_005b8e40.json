@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 11,
     "complexity_score": 7,
-    "cross_reference_count": 15,
+    "cross_reference_count": 16,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -20,15 +20,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004a1450",
+      "from_addr": "004a1481",
+      "name": "core_flashlit.cpp_FUN_004a1450",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004a41b0",
       "from_addr": "004a4503",
-      "name": "core_fldnotes.cpp_FUN_004a41b0",
+      "name": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004b90d0",
       "from_addr": "004b91f4",
       "name": "core_game.cpp_FUN_004b90d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b8d90",
+      "from_addr": "004b8dc8",
+      "name": "core_game.cpp_checkCheatCode_FUN_004b8d90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -47,6 +59,12 @@
       "addr": "005bbf9c",
       "from_addr": "005bbfac",
       "name": "crt_unknown.c_FUN_005bbf9c",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c6580",
+      "from_addr": "005c65a1",
+      "name": "crt_unknown.c_FUN_005c6580",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -86,21 +104,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004a1450",
-      "from_addr": "004a1481",
-      "name": "unkaddr_004a1200.cpp_FUN_004a1450",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0057bb80",
       "from_addr": "0057bdd9",
-      "name": "unkaddr_0057b9a0.cpp_FUN_0057bb80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005c6580",
-      "from_addr": "005c65a1",
-      "name": "unkafter_2d.cpp_FUN_005c6580",
+      "name": "support_trstream.cpp_CInStream_vscanf_FUN_0057bb80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -179,7 +185,7 @@
       {
         "call_addr": "004a4503",
         "call_type": "direct",
-        "caller": "core_fldnotes.cpp_FUN_004a41b0",
+        "caller": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -190,7 +196,7 @@
       {
         "call_addr": "004a4512",
         "call_type": "direct",
-        "caller": "core_fldnotes.cpp_FUN_004a41b0",
+        "caller": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -201,7 +207,7 @@
       {
         "call_addr": "004a461e",
         "call_type": "direct",
-        "caller": "core_fldnotes.cpp_FUN_004a41b0",
+        "caller": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -212,7 +218,7 @@
       {
         "call_addr": "004a462d",
         "call_type": "direct",
-        "caller": "core_fldnotes.cpp_FUN_004a41b0",
+        "caller": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -223,7 +229,7 @@
       {
         "call_addr": "004a4744",
         "call_type": "direct",
-        "caller": "core_fldnotes.cpp_FUN_004a41b0",
+        "caller": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -259,6 +265,32 @@
       "RETURN": 1
     },
     "pcode_op_count": 41
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005c12b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005a4120",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005ff9e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00565e20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 8,

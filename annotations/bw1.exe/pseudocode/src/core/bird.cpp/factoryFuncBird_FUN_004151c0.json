@@ -21,20 +21,20 @@
         "004151db"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_bird.cpp_factoryFuncBird_FUN_004151c0",
-    "signature": "void core_bird_cpp_factoryFuncBird_FUN_004151c0(void)"
+    "signature": "CBird * __cdecl core_bird_cpp_factoryFuncBird_FUN_004151c0(void)"
   },
   "function_calls": [
     {
-      "addr": "005c0f32",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c0f32"
-    },
-    {
       "addr": "004151f0",
       "is_variadic": false,
-      "name": "unkafter_bird.cpp_CBird_ctor_FUN_004151f0"
+      "name": "core_bird.cpp_CBird_ctor_FUN_004151f0"
+    },
+    {
+      "addr": "005c0f32",
+      "is_variadic": false,
+      "name": "crt_memory.c_operator_new_FUN_005c0f32"
     }
   ],
   "globals": [],
@@ -68,6 +68,14 @@
       "STORE": 4
     },
     "pcode_op_count": 47
+  },
+  "siblings": {
+    "bw3.exe": {
+      "addr": "0040f9c0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,

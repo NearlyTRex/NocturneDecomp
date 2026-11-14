@@ -1,20 +1,20 @@
 // Name: core_batman.cpp_factoryFuncBatman_FUN_00412750
 // Address: 00412750
 // Address Range: [[00412750, 0041276b]]
-// Convention: unknown
-// Signature: void core_batman_cpp_factoryFuncBatman_FUN_00412750(void)
+// Convention: __cdecl
+// Signature: CBatman * __cdecl core_batman_cpp_factoryFuncBatman_FUN_00412750(void)
 
 #include "nocturne.h"
 
-void core_batman_cpp_factoryFuncBatman_FUN_00412750(void)
+CBatman * __cdecl core_batman_cpp_factoryFuncBatman_FUN_00412750(void)
 
 {
-  CBatman *this_ptr;
+  CBatman *pCVar1;
   
-  this_ptr = (CBatman *)FUN_005c0f32(0xc328);
-  if (this_ptr == (CBatman *)0x0) {
-    return;
+  pCVar1 = (CBatman *)operator_new(0xc328);
+  if (pCVar1 == (CBatman *)0x0) {
+    return (CBatman *)0x0;
   }
-  core_batman_cpp_CBatman_ctor_FUN_00412780(this_ptr);
-  return;
+  pCVar1 = core_batman_cpp_CBatman_ctor_FUN_00412780(pCVar1);
+  return pCVar1;
 }

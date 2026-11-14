@@ -13,12 +13,12 @@
 ;   undefined4 DAT_02c81dc0
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   sound_snddx.cpp_fillStreamBuffer_FUN_005776b0
 ;   sound_snddx.cpp_FUN_00577500
-;   sound_sndmain.cpp_FUN_00575560
-;   sound_sndmain.cpp_FUN_00576f40
-;   sound_sndmain.cpp_FUN_005773f0
+;   sound_sndmain.cpp_hasHardware3DSound_FUN_00575560
+;   sound_sndmain.cpp_logSoundError_FUN_005773f0
+;   sound_sndmain.cpp_pollAllSfxSlots_FUN_00576f40
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     PUSH EBX                            ; 005784b0
         ;   Label: sound_snddx.cpp_FUN_005784b0
     SUB ESP,0x198                       ; 005784b1
-    CALL sound_sndmain.cpp_FUN_00575560 ; 005784b7
-        ;   XREF to: 00575560 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00575560(int enable)
+    CALL sound_sndmain.cpp_hasHardware3DSound_FUN_00575560 ; 005784b7
+        ;   XREF to: 00575560 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_hasHardware3DSound_FUN_00575560()
     CMP EAX,0x1                         ; 005784bc
     JGE 0x005784d5                      ; 005784bf
         ;   XREF to: 005784d5 (CONDITIONAL_JUMP)  ; LAB_005784d5
@@ -41,8 +41,8 @@ section .text
         ;   Label: LAB_005784cd
     POP EBX                             ; 005784d3
     RET                                 ; 005784d4
-    CALL sound_sndmain.cpp_FUN_00576f40 ; 005784d5
-        ;   XREF to: 00576f40 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00576f40()
+    CALL sound_sndmain.cpp_pollAllSfxSlots_FUN_00576f40 ; 005784d5
+        ;   XREF to: 00576f40 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pollAllSfxSlots_FUN_00576f40()
         ;   Label: LAB_005784d5
     MOV EAX,0x1                         ; 005784da
     JMP 0x005784cd                      ; 005784df
@@ -94,13 +94,13 @@ section .text
     PUSH 0x5f4c35                       ; 00578547 | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0xc]                 ; 0057854c
     PUSH EAX                            ; 00578550
-    CALL crt_unknown.c_FUN_005bfb40     ; 00578551
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 00578551
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x10                        ; 00578556
     MOV EAX,ESP                         ; 00578559
     PUSH EAX                            ; 0057855b
-    CALL sound_sndmain.cpp_FUN_005773f0 ; 0057855c
-        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005773f0()
+    CALL sound_sndmain.cpp_logSoundError_FUN_005773f0 ; 0057855c
+        ;   XREF to: 005773f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_005773f0(char * format)
     ADD ESP,0x4                         ; 00578561
     XOR EAX,EAX                         ; 00578564
     ADD ESP,0x198                       ; 00578566

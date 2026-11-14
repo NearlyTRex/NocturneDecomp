@@ -1,0 +1,350 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 111,
+    "complexity_score": 133,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 22,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 58,
+    "suspect_count": 6,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 169
+  },
+  "cross_references": [
+    {
+      "addr": "00512de0",
+      "from_addr": "00513118",
+      "name": "engine_mini3d.cpp_polyListD3DTL_FUN_00512de0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005159c0",
+    "address_range": [
+      [
+        "005159c0",
+        "00515ade"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_mini3d.cpp_clipAndFillPolygon_FUN_005159c0",
+    "signature": "void __cdecl engine_mini3d_cpp_clipAndFillPolygon_FUN_005159c0(float *vertices,int vertex_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "00515530",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_clampClippedPolygon_FUN_00515530"
+    },
+    {
+      "addr": "00515080",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_clipAgainstPlane0_FUN_00515080"
+    },
+    {
+      "addr": "005151b0",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_clipAgainstPlane1_FUN_005151b0"
+    },
+    {
+      "addr": "005152e0",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_clipAgainstPlane2_FUN_005152e0"
+    },
+    {
+      "addr": "00515410",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_clipAgainstPlane3_FUN_00515410"
+    },
+    {
+      "addr": "005168c0",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_fillPolygon_FUN_005168c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01d224dc",
+      "name": "DAT_01d224dc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d224e0",
+      "name": "DAT_01d224e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d224e4",
+      "name": "DAT_01d224e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d224e8",
+      "name": "DAT_01d224e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d227e8",
+      "name": "DAT_01d227e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d227ec",
+      "name": "DAT_01d227ec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d227f0",
+      "name": "DAT_01d227f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d227f4",
+      "name": "DAT_01d227f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d227f8",
+      "name": "DAT_01d227f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d22ffc",
+      "name": "DAT_01d22ffc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d23000",
+      "name": "DAT_01d23000",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2303c",
+      "name": "DAT_01d2303c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d247fc",
+      "name": "DAT_01d247fc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d24800",
+      "name": "DAT_01d24800",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d24804",
+      "name": "DAT_01d24804",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d24808",
+      "name": "DAT_01d24808",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d24810",
+      "name": "DAT_01d24810",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d24814",
+      "name": "DAT_01d24814",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2483c",
+      "name": "DAT_01d2483c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d24840",
+      "name": "DAT_01d24840",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d24844",
+      "name": "DAT_01d24844",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d24848",
+      "name": "DAT_01d24848",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00513118",
+        "call_type": "direct",
+        "caller": "engine_mini3d.cpp_polyListD3DTL_FUN_00512de0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.9,
+    "instruction_count": 90,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 6,
+      "CBRANCH": 9,
+      "COPY": 236,
+      "FLOAT2FLOAT": 12,
+      "FLOAT_ADD": 2,
+      "FLOAT_DIV": 1,
+      "FLOAT_MULT": 4,
+      "INT2FLOAT": 1,
+      "INT_ADD": 25,
+      "INT_AND": 49,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 39,
+      "INT_LEFT": 2,
+      "INT_LESS": 6,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 9,
+      "INT_OR": 5,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 20,
+      "INT_SUB": 22,
+      "INT_XOR": 5,
+      "INT_ZEXT": 2,
+      "LOAD": 16,
+      "POPCOUNT": 18,
+      "RETURN": 2,
+      "STORE": 16
+    },
+    "pcode_op_count": 531
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004f6be0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004f1190",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "vertices",
+        "offset": 4,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_01d22ffc",
+      "severity": "mild",
+      "text": "pfVar9 = (float *)(&DAT_01d22ffc + iVar8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 48,
+      "match": "DAT_01d247fc",
+      "severity": "mild",
+      "text": "pfVar6 = (float *)&DAT_01d247fc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_01d247fc",
+      "severity": "mild",
+      "text": "engine_mini3d_cpp_fillPolygon_FUN_005168c0((float *)&DAT_01d247fc,_DAT_01d227f8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 29,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar7 = 0x10; iVar7 != 0; iVar7 = iVar7 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 00515a0a, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 27,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00515a0a: MOVSD.REP ES:EDI,ESI  ; DAT_01d22ffc | DAT_01d23000 | DAT_01d2303c",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

@@ -8,16 +8,16 @@
 ; char *           Stack[0x8]:4   commands
 ;
 ; XREF[33]:
-;   core_actor.cpp_FUN_0040cab0 at 0040cb61
-;   core_carved.cpp_FUN_00425da0 at 00426de9
-;   core_carved.cpp_FUN_00428a80 at 00428bad
-;   core_charactr.cpp_FUN_00430d60 at 00430f76
-;   core_constrct.cpp_FUN_00442a20 at 00442c89
-;   core_dest.cpp_FUN_004591f0 at 00459387
+;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040cab0 at 0040cb61
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_process_FUN_00412530 at 00412556
+;   core_bmppuzzl.cpp_CChemPuzzle_process_FUN_00413e30 at 00414189
+;   core_carved.cpp_CCarved_processDamage_FUN_00428a80 at 00428bad
+;   core_carved.cpp_CCarved_process_FUN_00425da0 at 00426de9
+;   core_charactr.cpp_CCharacter_processDamage_FUN_00430d60 at 00430f76
+;   core_construc.cpp_CConstruct_process_FUN_00442a20 at 00442c89
+;   core_demnfolk.cpp_CDemnfolk_processDamage_FUN_00458950 at 00458a94
+;   core_dest.cpp_CActorDestination_process_FUN_004591f0 at 00459387
 ;   core_door.cpp_CDoor_onOpened_FUN_00463d10 at 00463d21
-;   core_door.cpp_FUN_004642f0 at 004643bf
-;   core_enemy.cpp_FUN_00489b80 at 00489c40
-;   core_event.cpp_CRuleList_evaluateAndRun_FUN_00495db0 at 00495de7
 ;   ... and 23 more
 ;
 ; Referenced Globals:

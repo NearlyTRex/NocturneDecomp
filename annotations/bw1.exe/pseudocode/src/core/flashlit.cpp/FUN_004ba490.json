@@ -1,0 +1,330 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 75,
+    "complexity_score": 177,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 12,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 32,
+    "suspect_count": 12,
+    "suspect_types": [
+      "param_count_too_few",
+      "pointer_cast",
+      "pointer_truncation",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 107
+  },
+  "cross_references": [
+    {
+      "addr": "004be0f0",
+      "from_addr": "004be291",
+      "name": "core_fldnotes.cpp_CFieldNotes_draw_FUN_004be0f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004be970",
+      "from_addr": "004beaaf",
+      "name": "core_fldnotes.cpp_CFieldNotes_process_FUN_004be970",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ba490",
+    "address_range": [
+      [
+        "004ba490",
+        "004ba53c"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_flashlit.cpp_FUN_004ba490",
+    "signature": "int core_flashlit_cpp_FUN_004ba490(int param_1,int param_2)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01cc4470",
+      "name": "DAT_01cc4470",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc45b4",
+      "name": "SNotesSection_ARRAY_01cc4474[0].first_page",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc45b8",
+      "name": "SNotesSection_ARRAY_01cc4474[0].page_count",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc45bc",
+      "name": "SNotesSection_ARRAY_01cc4474[0].tab_x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc45c0",
+      "name": "SNotesSection_ARRAY_01cc4474[0].tab_y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc4898",
+      "name": "SNotesSection_ARRAY_01cc4474[1].first_page",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc489c",
+      "name": "SNotesSection_ARRAY_01cc4474[1].page_count",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc48a0",
+      "name": "SNotesSection_ARRAY_01cc4474[1].tab_x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc48a4",
+      "name": "SNotesSection_ARRAY_01cc4474[1].tab_y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc7b90",
+      "name": "DAT_01cc7b90",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc7bc8",
+      "name": "CAlphaBitmap_ARRAY_01cc7ba8[1].width",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc7bcc",
+      "name": "CAlphaBitmap_ARRAY_01cc7ba8[1].height",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004be291",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_CFieldNotes_draw_FUN_004be0f0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004beaaf",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_CFieldNotes_process_FUN_004be970",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 5,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0508474576271185,
+    "instruction_count": 59,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CBRANCH": 8,
+      "COPY": 50,
+      "INT_ADD": 28,
+      "INT_AND": 39,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 41,
+      "INT_LESS": 8,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 6,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 8,
+      "INT_SEXT": 3,
+      "INT_SLESS": 19,
+      "INT_SUB": 12,
+      "INT_XOR": 2,
+      "LOAD": 22,
+      "POPCOUNT": 19,
+      "RETURN": 2,
+      "STORE": 6,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 298
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a1bb0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a80d0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int core_flashlit_cpp_FUN_004ba490(int param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "int core_flashlit_cpp_FUN_004ba490(int param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((((iVar4 <= param_1) && (SNotesSection_ARRAY_01cc4474[iVar3].tab_y <= param_2)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((((iVar4 <= param_1) && (SNotesSection_ARRAY_01cc4474[iVar3].tab_y <= param_2)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1 < iVar5)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_2 < *(int *)((int)&CAlphaBitmap_ARRAY_01cc7ba8[0].height + iVar2) +",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `&CAlphaBitmap_ARRAY_01cc7ba8[0].width` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 19,
+      "match": "(int)&CAlphaBitmap_ARRAY_01cc7ba8[0].width",
+      "severity": "moderate",
+      "text": "iVar5 = *(int *)((int)&CAlphaBitmap_ARRAY_01cc7ba8[0].width + iVar2) + iVar4;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CAlphaBitmap_ARRAY_01cc7ba8[0].height` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 26,
+      "match": "(int)&CAlphaBitmap_ARRAY_01cc7ba8[0].height",
+      "severity": "moderate",
+      "text": "(param_2 < *(int *)((int)&CAlphaBitmap_ARRAY_01cc7ba8[0].height + iVar2) +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 19,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "iVar5 = *(int *)((int)&CAlphaBitmap_ARRAY_01cc7ba8[0].width + iVar2) + iVar4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 26,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(param_2 < *(int *)((int)&CAlphaBitmap_ARRAY_01cc7ba8[0].height + iVar2) +",
+      "type": "pointer_cast"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 5,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:5",
+      "param_delta": 5,
+      "text": "Function declares 0 params but call sites push 5 (5 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

@@ -10,7 +10,7 @@
 ; LPARAM           Stack[0x10]:4   lParam
 ;
 ; XREF[1]:
-;   wincore_winrun.cpp_FUN_00581080 at 005811f4
+;   wincore_winrun.cpp_winMain_FUN_00581080 at 005811f4
 ;
 ; Referenced Globals:
 ;   void* PTR_DefWindowProcA_005b34ac = 001b3a9e
@@ -38,7 +38,7 @@
 ;   SetCursor
 ;   SetThreadPriority
 ;   wincore_wddvmem.cpp_FUN_0057ab20
-;   wincore_wddvmem.cpp_FUN_0057ac80
+;   wincore_wddvmem.cpp_stubFunction_FUN_0057ac80
 ;   wincore_wddvmem.cpp_videoRestore_FUN_0057ab70
 ;   wincore_winrun.cpp_enqueueInput_FUN_00580830
 ;   wincore_winvideo.cpp_closeMovie_FUN_00582b60
@@ -193,13 +193,13 @@ section .text
         ;   Label: LAB_00580bb3
     JZ 0x00580ad4                       ; 00580bb7
         ;   XREF to: 00580ad4 (CONDITIONAL_JUMP)  ; LAB_00580ad4
-    CALL wincore_wddvmem.cpp_FUN_0057ac80 ; 00580bbd
-        ;   XREF to: 0057ac80 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_0057ac80()
+    CALL wincore_wddvmem.cpp_stubFunction_FUN_0057ac80 ; 00580bbd
+        ;   XREF to: 0057ac80 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_stubFunction_FUN_0057ac80()
         ;   Label: LAB_00580bbd
     JMP 0x00580ad4                      ; 00580bc2
         ;   XREF to: 00580ad4 (UNCONDITIONAL_JUMP)  ; LAB_00580ad4
-    CALL wincore_wddvmem.cpp_FUN_0057ac80 ; 00580bc7
-        ;   XREF to: 0057ac80 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_0057ac80()
+    CALL wincore_wddvmem.cpp_stubFunction_FUN_0057ac80 ; 00580bc7
+        ;   XREF to: 0057ac80 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_stubFunction_FUN_0057ac80()
         ;   Label: LAB_00580bc7
     JMP 0x00580ad4                      ; 00580bcc
         ;   XREF to: 00580ad4 (UNCONDITIONAL_JUMP)  ; LAB_00580ad4

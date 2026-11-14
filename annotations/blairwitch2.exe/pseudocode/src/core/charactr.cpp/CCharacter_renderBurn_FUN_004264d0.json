@@ -1,0 +1,439 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 232,
+    "complexity_score": 330,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 105,
+    "suspect_count": 19,
+    "suspect_types": [
+      "displaced_global_access",
+      "extra_output",
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 337
+  },
+  "cross_references": [
+    {
+      "addr": "00424bd0",
+      "from_addr": "00424bfc",
+      "name": "core_charactr.cpp_CCharacter_renderCharacter_FUN_00424bd0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004264d0",
+    "address_range": [
+      [
+        "004264d0",
+        "0042672a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_charactr.cpp_CCharacter_renderBurn_FUN_004264d0",
+    "signature": "void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_004264d0(CCharacter *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00547810",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00547810"
+    },
+    {
+      "addr": "00547890",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890"
+    },
+    {
+      "addr": "00547170",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_00547170"
+    },
+    {
+      "addr": "005b7ff0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005b7ff0"
+    },
+    {
+      "addr": "0046ca00",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ccd9e",
+      "name": "DAT_005ccd9e",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f4080",
+      "name": "DAT_005f4080",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00609acc",
+      "name": "DAT_00609acc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060b280",
+      "name": "DAT_0060b280",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007bdc9c",
+      "name": "DAT_007bdc9c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007bdca0",
+      "name": "DAT_007bdca0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ba5c50",
+      "name": "DAT_01ba5c50",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00424bfc",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_renderCharacter_FUN_00424bd0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.678947368421053,
+    "instruction_count": 190,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "BOOL_OR": 6,
+      "BRANCH": 3,
+      "CALL": 7,
+      "CBRANCH": 14,
+      "COPY": 328,
+      "FLOAT2FLOAT": 14,
+      "FLOAT_ADD": 2,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 2,
+      "FLOAT_NAN": 4,
+      "INT2FLOAT": 1,
+      "INT_ADD": 92,
+      "INT_AND": 124,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 101,
+      "INT_LEFT": 10,
+      "INT_LESS": 9,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 18,
+      "INT_OR": 15,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 23,
+      "INT_SLESS": 51,
+      "INT_SUB": 35,
+      "INT_XOR": 12,
+      "INT_ZEXT": 8,
+      "LOAD": 60,
+      "POPCOUNT": 49,
+      "RETURN": 3,
+      "ROUND": 2,
+      "STORE": 43,
+      "TRUNC": 2
+    },
+    "pcode_op_count": 1079
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0042fe00",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0042ad00",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00426e80",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 56,
+    "local_size": 52,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004264d9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 14,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "int extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 16,
+      "match": "extraout_ECX_00",
+      "severity": "moderate",
+      "text": "int extraout_ECX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 19,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "int extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "(DAT_0060b280,(SMRGLTextureBasic *)&DAT_00609acc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_00609acc",
+      "severity": "mild",
+      "text": "(DAT_0060b280,(SMRGLTextureBasic *)&DAT_00609acc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_007bdc9c",
+      "severity": "mild",
+      "text": "*(uint *)((int)&DAT_007bdc9c + iVar9) = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_007bdc9c",
+      "severity": "mild",
+      "text": "(&DAT_007bdc9c)[iVar9] =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 59,
+      "match": "DAT_007bdc9c",
+      "severity": "mild",
+      "text": "(float)(&DAT_007bdc9c)[iVar9] + (pCVar10->fires[0].size * fVar2) / fVar3;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 69,
+      "match": "DAT_007bdc9c",
+      "severity": "mild",
+      "text": "if ((float)_DAT_005ccd9e <= (float)(&DAT_007bdc9c)[iVar6]) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 91,
+      "match": "DAT_007bdc9c",
+      "severity": "mild",
+      "text": "fVar14 = (float10)*(float *)(puVar8 + 4) * (float10)(float)(&DAT_007bdc9c)[puVar11[1]];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 93,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "puVar8 = (uchar *)(extraout_ECX + 4);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 96,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "iVar9 = extraout_EDX + 1;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 104,
+      "match": "extraout_ECX_00",
+      "severity": "moderate",
+      "text": "*(int *)(*piVar7 + extraout_ECX_00 + 0x2c) = (int)ROUND(fVar14);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Pointer value `&DAT_007bdc9c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)&DAT_007bdc9c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_007bdc9c + iVar9) = 0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 46,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&DAT_007bdc9c + iVar9) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar10->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 61,
+      "match": "pCVar10 = (T *)((pCVar10->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCVar10 = (CCharacter *)((pCVar10->base).actor_name + 0x18);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar13` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar13->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 76,
+      "match": "pCVar13 = (T *)pCVar13->ARRAY",
+      "severity": "moderate",
+      "text": "pCVar13 = (CDeformableModel *)pCVar13->lod_info;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*4 + 0x7bdc9c] lands in DAT_007bdc9c but intended target is DAT_007bdca0 at 0x7bdca0 (displaced by 4 bytes)",
+      "displaced_from": "DAT_007bdc9c",
+      "displacement": "0x7bdc9c",
+      "instruction_address": "",
+      "intended_global": "DAT_007bdca0",
+      "line": 78,
+      "match": "0x7bdc9c",
+      "scale": 4,
+      "severity": "moderate",
+      "text": "// 0042659b: FLD float ptr [EAX*0x4 + 0x7bdc9c]  ; DAT_007bdc9c",
+      "type": "displaced_global_access"
+    }
+  ]
+}

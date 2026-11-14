@@ -2,18 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 120,
+    "complexity_score": 143,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 60,
-    "suspect_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 58,
+    "suspect_count": 7,
     "suspect_types": [
+      "shadow_pointer_walk",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 192
+    "total_lines": 190
   },
   "cross_references": [
     {
@@ -25,7 +26,7 @@
     {
       "addr": "00554d30",
       "from_addr": "0055516b",
-      "name": "core_set.cpp_FUN_00554d30",
+      "name": "core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_00554d30",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -108,7 +109,7 @@
       {
         "call_addr": "0055516b",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00554d30",
+        "caller": "core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_00554d30",
         "estimated_params": 2,
         "instructions_analyzed": 5,
         "method": "push_count",
@@ -153,6 +154,32 @@
       "SUBPIECE": 4
     },
     "pcode_op_count": 456
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0046a7d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0046c3b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0048b970",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0045ff20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 32,
@@ -219,11 +246,27 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 58,
       "match": "DAT_01bc1240",
       "severity": "mild",
-      "text": "(this_ptr,*(int *)(poly + 4),(int *)&DAT_01bc1240);",
+      "text": "(this_ptr,(poly->base).base.count,(int *)&DAT_01bc1240);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 25,
+      "match": "pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar2 = (SMRGLPrimitivePoly *)&(pSVar2->base).surface_normal.B;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 46,
+      "match": "pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar2 = (SMRGLPrimitivePoly *)&(pSVar2->base).surface_normal.B;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

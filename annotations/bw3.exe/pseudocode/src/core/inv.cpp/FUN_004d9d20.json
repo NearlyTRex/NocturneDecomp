@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 189,
+    "complexity_score": 191,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 14,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 34,
+    "pseudocode_lines": 36,
     "suspect_count": 14,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 155
+    "total_lines": 157
   },
   "cross_references": [
     {
@@ -46,7 +46,7 @@
     ],
     "convention": "unknown",
     "name": "core_inv.cpp_FUN_004d9d20",
-    "signature": "int core_inv_cpp_FUN_004d9d20(CDemonActor *param_1)"
+    "signature": "CDemonActor * core_inv_cpp_FUN_004d9d20(CDemonActor *param_1)"
   },
   "function_calls": [
     {
@@ -57,7 +57,7 @@
     {
       "addr": "0040c790",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040c790"
+      "name": "core_actor.cpp_isOfClass_FUN_0040c790"
     },
     {
       "addr": "004e4330",
@@ -245,84 +245,84 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "int core_inv_cpp_FUN_004d9d20(CDemonActor *param_1)",
+      "text": "CDemonActor * core_inv_cpp_FUN_004d9d20(CDemonActor *param_1)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 9,
+      "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_actor_cpp_FUN_0040c790(param_1,\"CWeapon\");",
+      "text": "iVar1 = core_actor_cpp_isOfClass_FUN_0040c790(param_1,\"CWeapon\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_actor_cpp_castToClassHash_FUN_0040c840(param_1,g_CWeaponClassInfo.name_hash);",
+      "text": "pCVar2 = (CWeapon *)core_actor_cpp_castToClassHash_FUN_0040c840(param_1,g_CWeaponClassInfo.name_hash);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_actor_cpp_FUN_0040c790(param_1,\"CAmmo\");",
+      "text": "iVar1 = core_actor_cpp_isOfClass_FUN_0040c790(param_1,\"CAmmo\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_actor_cpp_castToClassHash_FUN_0040c840(param_1,g_CAmmoClassInfo.name_hash);",
+      "text": "pCVar2 = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040c840(param_1,g_CAmmoClassInfo.name_hash);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_actor_cpp_FUN_0040c790(param_1,\"CKeyActor\");",
+      "text": "iVar1 = core_actor_cpp_isOfClass_FUN_0040c790(param_1,\"CKeyActor\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_actor_cpp_castToClassHash_FUN_0040c840(param_1,g_CKeyActorClassInfo.name_hash);",
+      "text": "pCVar2 = (CKeyActor *)core_actor_cpp_castToClassHash_FUN_0040c840(param_1,g_CKeyActorClassInfo.name_hash);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_actor_cpp_FUN_0040c790(param_1,\"CBoxActor\");",
+      "text": "iVar1 = core_actor_cpp_isOfClass_FUN_0040c790(param_1,\"CBoxActor\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_actor_cpp_FUN_0040c790(param_1,\"CHealthItem\");",
+      "text": "iVar1 = core_actor_cpp_isOfClass_FUN_0040c790(param_1,\"CHealthItem\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_actor_cpp_castToClassHash_FUN_0040c840(param_1,g_CHealthItemClassInfo.name_hash);",
+      "text": "pCVar2 = (CHealthItem *)core_actor_cpp_castToClassHash_FUN_0040c840(param_1,g_CHealthItemClassInfo.name_hash)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
       "text": "core_main_c_FUN_004e4330(\"getModel - Can't classify : %s\",param_1);",
@@ -330,10 +330,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_actor_cpp_castToClassHash_FUN_0040c840(param_1,g_CBoxActorClassInfo.name_hash);",
+      "text": "pCVar2 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040c840(param_1,g_CBoxActorClassInfo.name_hash);",
       "type": "unnamed_param"
     },
     {

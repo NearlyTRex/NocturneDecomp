@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 237,
+    "complexity_score": 147,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 7,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 32,
-    "suspect_count": 19,
+    "suspect_count": 11,
     "suspect_types": [
-      "param_count_too_few",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
     "total_lines": 137
   },
@@ -26,7 +24,7 @@
     {
       "addr": "0041c7f0",
       "from_addr": "0041c920",
-      "name": "core_boxactor.cpp_FUN_0041c7f0",
+      "name": "core_boxactor.cpp_CBoxActor_archive_FUN_0041c7f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -40,7 +38,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_archiveBox_FUN_0040bee0",
-    "signature": "void __cdecl core_actor_cpp_archiveBox_FUN_0040bee0(CBox *param_1,char *param_2)"
+    "signature": "void __cdecl core_actor_cpp_archiveBox_FUN_0040bee0(CBox *box_ptr,char *property_name)"
   },
   "function_calls": [
     {
@@ -54,14 +52,14 @@
       "name": "core_actor.cpp_handleActorPropertyParseError_FUN_0040b380"
     },
     {
+      "addr": "005b4300",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBox_loadFromFile_FUN_005b4300"
+    },
+    {
       "addr": "005b44b0",
       "is_variadic": false,
       "name": "core_box.cpp_CBox_saveToFile_FUN_005b44b0"
-    },
-    {
-      "addr": "005b4300",
-      "is_variadic": false,
-      "name": "core_box.cpp_FUN_005b4300"
     },
     {
       "addr": "005b8180",
@@ -135,7 +133,7 @@
       {
         "call_addr": "0041c920",
         "call_type": "direct",
-        "caller": "core_boxactor.cpp_FUN_0041c7f0",
+        "caller": "core_boxactor.cpp_CBoxActor_archive_FUN_0041c7f0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -144,11 +142,11 @@
         "stack_params": 2
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.061728395061729,
@@ -176,31 +174,56 @@
     },
     "pcode_op_count": 329
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0040bbf0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0040be30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0040bd70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0040ce80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "box_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBox *"
+      },
+      {
+        "is_param": true,
+        "name": "property_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_actor_cpp_archiveBox_FUN_0040bee0(CBox *param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_actor_cpp_archiveBox_FUN_0040bee0(CBox *param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Undefined global data reference",
       "line": 7,
@@ -210,19 +233,11 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,param_2);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 8,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,param_2);",
+      "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,property_name);",
       "type": "undefined_data"
     },
     {
@@ -230,23 +245,15 @@
       "line": 8,
       "match": "DAT_00609590",
       "severity": "mild",
-      "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,param_2);",
+      "text": "FUN_005b8010(DAT_007bc034,\"%s{ // %s\\n\",&DAT_00609590,property_name);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_box_cpp_CBox_saveToFile_FUN_005b44b0(param_1,DAT_007bc034,&DAT_00609590);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 10,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "core_box_cpp_CBox_saveToFile_FUN_005b44b0(param_1,DAT_007bc034,&DAT_00609590);",
+      "text": "core_box_cpp_CBox_saveToFile_FUN_005b44b0(box_ptr,DAT_007bc034,&DAT_00609590);",
       "type": "undefined_data"
     },
     {
@@ -254,7 +261,7 @@
       "line": 10,
       "match": "DAT_00609590",
       "severity": "mild",
-      "text": "core_box_cpp_CBox_saveToFile_FUN_005b44b0(param_1,DAT_007bc034,&DAT_00609590);",
+      "text": "core_box_cpp_CBox_saveToFile_FUN_005b44b0(box_ptr,DAT_007bc034,&DAT_00609590);",
       "type": "undefined_data"
     },
     {
@@ -290,27 +297,11 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(\"sim box state info opening brace\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_box_cpp_FUN_005b4300(param_1,DAT_007bc034);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 22,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "core_box_cpp_FUN_005b4300(param_1,DAT_007bc034);",
+      "text": "core_box_cpp_CBox_loadFromFile_FUN_005b4300(box_ptr,DAT_007bc034);",
       "type": "undefined_data"
     },
     {
@@ -320,25 +311,6 @@
       "severity": "mild",
       "text": "iVar1 = _fgetc(DAT_007bc034);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(\"sim box state info closing brace\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

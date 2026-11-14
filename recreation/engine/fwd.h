@@ -73,6 +73,7 @@ struct SPodCheck;
 struct SProjectionParams;
 struct SRelease;
 struct SReleaseFile;
+struct SReleaseLooseFile;
 struct SRGBColorPalette;
 struct SSoftwareEdge;
 struct SStoryUnlock;

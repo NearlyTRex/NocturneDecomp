@@ -11,12 +11,13 @@
 void __cdecl core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_005342e0(CDemonSet *this_ptr)
 
 {
-  engine_drender_cpp_FUN_0046afb0(DAT_0060b280,(CVector3f *)&DAT_020935f8);
-  engine_matrix_c_FUN_0046b4b0(DAT_0060b280,_DAT_02093610);
+  engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0
+            (DAT_0060b280,(CVector3f *)&DAT_020935f8);
+  engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0(DAT_0060b280,_DAT_02093610);
   engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0046b030
             (DAT_0060b280,(CVector3f *)&DAT_02093604);
   engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_0046bc90(DAT_0060b280,0);
   engine_drender_cpp_CDemonRenderer_setAlphaMask_FUN_0046bc70(DAT_0060b280,0);
-  *(uint *)&this_ptr->field_0x161664 = 0;
+  this_ptr->active_mirror = (CMirror *)0x0;
   return;
 }

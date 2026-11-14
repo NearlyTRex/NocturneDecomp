@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 221,
+    "complexity_score": 117,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 36,
-    "suspect_count": 17,
+    "pseudocode_lines": 42,
+    "suspect_count": 6,
     "suspect_types": [
+      "derived_field_index_pun",
       "negative_offset",
-      "unnamed_field",
       "unrolled_strcpy"
     ],
-    "total_lines": 95
+    "total_lines": 101
   },
   "cross_references": [
     {
@@ -104,6 +104,32 @@
     },
     "pcode_op_count": 202
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00410fd0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0040ede0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004147d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00411a10",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -122,132 +148,36 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "pCVar3 = core_course_cpp_CCourse_ctor_FUN_00447d10((CCourse *)&pCVar2[1].field_0x20);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
       "line": 16,
       "match": "this_ptr_00[-1].",
       "severity": "mild",
-      "text": "*(byte **)&this_ptr_00[-1].field_0x148 = &g_CBatVTable;",
+      "text": "*(CDemonActor_vtable **)(this_ptr_00[-1].model_name + 0xd0) = &g_CBatVTable;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x148",
-      "severity": "mild",
-      "text": "*(byte **)&this_ptr_00[-1].field_0x148 = &g_CBatVTable;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 17,
       "match": "this_ptr_00[-1].",
       "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[-1].field_0x178 = 0;",
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)0x0;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[-1].field_0x178 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x4 = 0x41f00000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x8 = 0x3f800000;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 22,
       "match": "this_ptr_00[-1].",
       "severity": "mild",
-      "text": "pcVar5 = &this_ptr_00[-1].field_0x14c;",
+      "text": "pcVar5 = this_ptr_00[-1].model_name + 0xd4;",
       "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x14c",
-      "severity": "mild",
-      "text": "pcVar5 = &this_ptr_00[-1].field_0x14c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0xc = 0x41f00000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "this_ptr_00[1].field_0x10 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x74",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x74 = 0x41700000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x78",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x78 = 0x41f00000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x80",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x80 = 0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 38,
+      "line": 44,
       "match": "this_ptr_00[-2].",
       "severity": "mild",
-      "text": "return (CBat *)&this_ptr_00[-2].field_0x170;",
+      "text": "return (CBat *)(this_ptr_00[-2].model_name + 0xf8);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x170",
-      "severity": "mild",
-      "text": "return (CBat *)&this_ptr_00[-2].field_0x170;",
-      "type": "unnamed_field"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
@@ -256,6 +186,13 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "'(CCourse *)&pCVar2[1].location' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(location) (0x20) + 0x0 = 0x178, which is exactly offsetof(CActorDestination, dest_class[28]). Ghidra had no CActorDestination type here and reached the field by index arithmetic; write it as ((CActorDestination *)pCVar2)->dest_class[28] (\u00a7de-pun/\u00a712). Ambiguous: CBarrier::effect_class_name_list[16], CBat::course, CBodyPart::vertices also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 13,
+      "severity": "moderate",
+      "text": "pCVar3 = core_course_cpp_CCourse_ctor_FUN_00447d10((CCourse *)&pCVar2[1].location);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

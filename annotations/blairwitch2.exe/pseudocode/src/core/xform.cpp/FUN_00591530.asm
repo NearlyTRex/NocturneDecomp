@@ -8,18 +8,18 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ; undefined4       Stack[-0x8]:4  local_8
 ;
-; XREF[76]:
-;   core_ammo.cpp_FUN_0040ded0 at 0040e042
-;   core_baron.cpp_FUN_0040f950 at 0040fc9c
-;   core_baron.cpp_FUN_00410170 at 0041047a
-;   core_batcreat.cpp_FUN_00411a10 at 00411db9
-;   core_batman.cpp_FUN_00412f40 at 004137ad
-;   core_boneguy.cpp_FUN_004186c0 at 00418e3a
-;   core_boneguy.cpp_FUN_004192a0 at 00419403
-;   core_bride.cpp_FUN_0041dbe0 at 0041e147
-;   core_bride.cpp_FUN_0041ede0 at 0041ee35
-;   core_bugs.cpp_FUN_00420e90 at 004210db
-;   ... and 66 more
+; XREF[77]:
+;   core_ammo.cpp_CAmmo_process_FUN_0040ded0 at 0040e042
+;   core_baron.cpp_CBaron_performLightningAttack_FUN_00410170 at 0041047a
+;   core_baron.cpp_CBaron_process_FUN_0040f950 at 0040fc9c
+;   core_basicene.cpp_CBasicEnemy_processBurnState_FUN_005a0380 at 005a04f1
+;   core_basicene.cpp_FUN_0059f740 at 0059f7a5
+;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 00411db9
+;   core_batman.cpp_CBatman_process_FUN_00412f40 at 004137ad
+;   core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004192a0 at 00419403
+;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 00418e3a
+;   core_bride.cpp_CBride_getTargetPoint_FUN_0041ede0 at 0041ee35
+;   ... and 67 more
 ;
 ; *****************************************************************************
 

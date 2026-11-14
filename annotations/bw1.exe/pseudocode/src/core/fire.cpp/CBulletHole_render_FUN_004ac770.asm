@@ -34,7 +34,7 @@
 ;
 ; XREF[2]:
 ;   core_fire.cpp_CFireEffect_renderDecals_FUN_004b54a0 at 004b54df
-;   core_fire.cpp_FUN_004b5100 at 004b5257
+;   core_fire.cpp_CFireEffect_render_FUN_004b5100 at 004b5257
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fff94
@@ -62,7 +62,7 @@
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
 ;   engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_00483050
-;   engine_matrix.c_pop_FUN_004839a0
+;   engine_drender.cpp_pop_FUN_004839a0
 ;   engine_special.cpp_FUN_00580173
 ;
 ; *****************************************************************************
@@ -243,8 +243,8 @@ section .text
         ;   XREF to: 004acaa1 (CONDITIONAL_JUMP)  ; LAB_004acaa1
     MOV EAX,[0x00612560]                ; 004ac9d9 | DAT_00612560
     PUSH EAX                            ; 004ac9de | DAT_01bc120c
-    CALL engine_matrix.c_pop_FUN_004839a0 ; 004ac9df
-        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004839a0()
+    CALL engine_drender.cpp_pop_FUN_004839a0 ; 004ac9df
+        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_004839a0()
     ADD ESP,0x4                         ; 004ac9e4
     ADD ESP,0x6c                        ; 004ac9e7
     POP EBP                             ; 004ac9ea
@@ -321,8 +321,8 @@ section .text
     ADD ESP,0x4                         ; 004acaa7
     MOV EBP,dword ptr [0x00612560]      ; 004acaaa | DAT_00612560
     PUSH EBP                            ; 004acab0 | DAT_01bc120c
-    CALL engine_matrix.c_pop_FUN_004839a0 ; 004acab1
-        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004839a0()
+    CALL engine_drender.cpp_pop_FUN_004839a0 ; 004acab1
+        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_004839a0()
     ADD ESP,0x4                         ; 004acab6
     ADD ESP,0x6c                        ; 004acab9
     POP EBP                             ; 004acabc

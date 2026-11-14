@@ -17,15 +17,15 @@
   },
   "cross_references": [
     {
-      "addr": "0048aaee",
+      "addr": "0048aaf0",
       "from_addr": "0048ac58",
-      "name": "core_dtrace.cpp_FUN_0048aaee",
+      "name": "core_dtrace.cpp_FUN_0048aaf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004cf5e0",
       "from_addr": "004cfba3",
-      "name": "core_game.cpp_FUN_004cf5e0",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004cf5e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -41,33 +41,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0053bfbe",
+      "addr": "0053bfc0",
       "from_addr": "0053c1e1",
-      "name": "engine_pod.cpp_FUN_0053bfbe",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00494690",
-      "from_addr": "00494c63",
-      "name": "shape_edittool.cpp_FUN_00494690",
+      "name": "engine_pod.cpp_FUN_0053bfc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004958d0",
       "from_addr": "00495bab",
-      "name": "shape_edittool.cpp_FUN_004958d0",
+      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_004958d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0049a8b0",
       "from_addr": "0049a95f",
-      "name": "shape_edittool.cpp_FUN_0049a8b0",
+      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_0049a8b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00493d40",
       "from_addr": "0049400c",
       "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_00493d40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00494690",
+      "from_addr": "00494c63",
+      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_00494690",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -103,7 +103,7 @@
     {
       "addr": "004941e0",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_004941e0"
+      "name": "shape_edittool.cpp_paintWindowBackground_FUN_004941e0"
     }
   ],
   "globals": [],
@@ -126,7 +126,7 @@
       {
         "call_addr": "0049a95f",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0049a8b0",
+        "caller": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_0049a8b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -137,7 +137,7 @@
       {
         "call_addr": "004cfba3",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004cf5e0",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004cf5e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -150,7 +150,7 @@
       {
         "call_addr": "00494c63",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00494690",
+        "caller": "shape_edittool.cpp_showMultiChoiceDialog_FUN_00494690",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -163,7 +163,7 @@
       {
         "call_addr": "00495bab",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_004958d0",
+        "caller": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_004958d0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -177,7 +177,7 @@
       {
         "call_addr": "00495d5a",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_004958d0",
+        "caller": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_004958d0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -268,6 +268,20 @@
       "STORE": 4
     },
     "pcode_op_count": 27
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0047e760",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0047f970",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,

@@ -5,49 +5,49 @@
 // Function prototypes for core/conveyor.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_conveyor.cpp_staticInit_FUN_00436aa0
-// Address: 00436aa0
-void staticInit(void);
+// Original: core_conveyor.cpp_staticInit_FUN_00438430
+// Address: 00438430
+void __cdecl staticInit(void);
 
-// Original: core_conveyor.cpp_factoryFuncConstruct_FUN_00436ad0
-// Address: 00436ad0
-void factoryFuncConstruct(void);
+// Original: core_conveyor.cpp_factoryFuncConveyor_FUN_00438460
+// Address: 00438460
+CConveyor * __cdecl factoryFuncConveyor(void);
 
 // Original: core_conveyor.cpp_CConveyor_getActorType_FUN_00438480
 // Address: 00438480
-CDemonActorType * CConveyor::getActorType(CConveyor *this_ptr);
+CDemonActorType * __cdecl CConveyor::getActorType(CConveyor *this_ptr);
 
 // Original: core_conveyor.cpp_CConveyor_ctor_FUN_00438490
 // Address: 00438490
 CConveyor * __cdecl CConveyor::ctor(CConveyor *this_ptr);
 
-// Original: core_conveyor.cpp_FUN_00438550
+// Original: core_conveyor.cpp_CConveyor_setup_FUN_00438550
 // Address: 00438550
-void FUN_00438550(CPlatform *param_1);
+void __cdecl CConveyor::setup(CConveyor *this_ptr);
 
-// Original: core_conveyor.cpp_FUN_004385e0
+// Original: core_conveyor.cpp_CConveyor_process_FUN_004385e0
 // Address: 004385e0
-void FUN_004385e0(int param_1,float param_2);
+void __cdecl CConveyor::process(CConveyor *this_ptr,float delta_time);
 
 // Original: core_conveyor.cpp_CConveyor_renderOpaque_FUN_00438760
 // Address: 00438760
 int __cdecl CConveyor::renderOpaque(CConveyor *this_ptr);
 
-// Original: core_conveyor.cpp_FUN_00438770
+// Original: core_conveyor.cpp_CConveyor_renderBackground_FUN_00438770
 // Address: 00438770
-void FUN_00438770(void);
+void __cdecl CConveyor::renderBackground(CConveyor *this_ptr);
 
 // Original: core_conveyor.cpp_CConveyor_archive_FUN_00438780
 // Address: 00438780
 void __cdecl CConveyor::archive(CConveyor *this_ptr);
 
-// Original: core_conveyor.cpp_FUN_00438820
+// Original: core_conveyor.cpp_CConveyor_getCollisionType_FUN_00438820
 // Address: 00438820
-undefined4 FUN_00438820(void);
+undefined4 __cdecl CConveyor::getCollisionType(CConveyor *this_ptr);
 
-// Original: core_conveyor.cpp_FUN_00438830
+// Original: core_conveyor.cpp_CConveyor_getBoundingBox_FUN_00438830
 // Address: 00438830
-void FUN_00438830(int param_1);
+CBoundingBox3D * __cdecl CConveyor::getBoundingBox(CConveyor *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_conveyor.cpp_CConveyor_dtor_FUN_004388b0
 // Address: 004388b0

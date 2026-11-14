@@ -9,21 +9,25 @@
 void __cdecl core_turret_cpp_CTurret_archive_FUN_0057efa0(CTurret *this_ptr)
 
 {
-  core_weapon_cpp_CWeapon_archive_FUN_00589d60((CWeapon *)this_ptr);
-  core_actor_cpp_archiveOrientation_FUN_0040b550(&this_ptr->field_0x6d4,"homeOrient");
-  core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->field_0x85c,"state");
-  core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x860,"activateEvent");
-  core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x8c4,"chargeTime");
-  core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x8c8,"patrolTime");
-  core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x8cc,"powerDownTime");
-  core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x8d0,"fireDelayTime");
-  core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x8d8,"timer");
-  core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->field_0x8dc,"guardZoneTriggerPtr");
-  core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x8e0,"allowedVictimTypes");
-  core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x8d4,"rotateDegPerSec");
+  core_weapon_cpp_CWeapon_archive_FUN_00589d60(&this_ptr->base);
+  core_actor_cpp_archiveOrientation_FUN_0040b550
+            (&(this_ptr->home_orient).orient,"homeOrient");
+  core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->state,"state");
+  core_actor_cpp_archiveString_FUN_0040b730(this_ptr->activate_event,"activateEvent");
+  core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->charge_time,"chargeTime");
+  core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->patrol_time,"patrolTime");
+  core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->power_down_time,"powerDownTime");
+  core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->fire_delay_time,"fireDelayTime");
+  core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->timer,"timer");
+  core_actor_cpp_archiveActor_FUN_0040b9e0
+            (&this_ptr->guard_zone_box_trigger,"guardZoneTriggerPtr");
+  core_actor_cpp_archiveString_FUN_0040b730
+            (this_ptr->allowed_victim_types,"allowedVictimTypes");
+  core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->rotate_deg_per_sec,"rotateDegPerSec")
+  ;
   if (g_CTurretClassVersion < 2) {
     return;
   }
-  core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->field_0x9b4,"canManualAim");
+  core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->can_manual_aim,"canManualAim");
   return;
 }

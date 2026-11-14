@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 50,
+    "complexity_score": 15,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 15,
-    "suspect_count": 3,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 47
   },
   "cross_references": [
@@ -98,6 +96,32 @@
     },
     "pcode_op_count": 98
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005699c0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0054e550",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a02f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0051db70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -121,30 +145,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x2230",
-      "severity": "mild",
-      "text": "if (lod_index != *(int *)&this_ptr->field_0x2230) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x2234",
-      "severity": "mild",
-      "text": "lod_vertices = *(CVector3i **)&this_ptr->field_0x2234;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x2230",
-      "severity": "mild",
-      "text": "lod_index_00 = *(int *)&this_ptr->field_0x2230;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SFire * core_charactr_cpp_SFire_ctor_FUN_0042c0a0(SFire *this_ptr)
+; SFire * __cdecl core_charactr_cpp_SFire_ctor_FUN_0042c0a0(SFire *this_ptr)
 ;
 ; Parameters:
 ; SFire *          Stack[0x4]:4   this_ptr

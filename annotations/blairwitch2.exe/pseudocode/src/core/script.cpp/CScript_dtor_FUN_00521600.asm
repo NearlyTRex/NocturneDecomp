@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Called Functions:
-;   core_script.cpp_FUN_00521630
+;   core_script.cpp_CScript_clear_FUN_00521630
 ;   shape_edittool.cpp_CStrList_dtor_FUN_00480d40
 ;
 ; *****************************************************************************
@@ -19,8 +19,8 @@ section .text
         ;   Label: core_script.cpp_CScript_dtor_FUN_00521600
     MOV EBX,dword ptr [ESP + 0x8]       ; 00521601
     PUSH EBX                            ; 00521605
-    CALL core_script.cpp_FUN_00521630   ; 00521606
-        ;   XREF to: 00521630 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00521630()
+    CALL core_script.cpp_CScript_clear_FUN_00521630 ; 00521606
+        ;   XREF to: 00521630 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_clear_FUN_00521630(CScript * this_ptr)
     ADD ESP,0x4                         ; 0052160b
     PUSH 0x0                            ; 0052160e
     ADD EBX,0x34                        ; 00521610

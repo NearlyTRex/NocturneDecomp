@@ -9,6 +9,6 @@
 void __cdecl core_filmreel_cpp_CFilmReel_pickup_FUN_004ab400(CFilmReel *this_ptr,CDemonActor *carrier)
 
 {
-  *(CDemonActor **)&this_ptr->field_0x2d4 = carrier;
+  this_ptr->carrier = carrier;
   return;
 }

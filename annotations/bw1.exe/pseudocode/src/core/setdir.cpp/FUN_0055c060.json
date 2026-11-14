@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 42,
-    "complexity_score": 132,
+    "complexity_score": 107,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 17,
-    "suspect_count": 10,
+    "suspect_count": 8,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_field",
       "unnamed_param"
     ],
     "total_lines": 59
@@ -125,6 +124,14 @@
     },
     "pcode_op_count": 141
   },
+  "siblings": {
+    "bw3.exe": {
+      "addr": "00541a20",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -155,16 +162,8 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)&param_1->field_0x15b428) {",
+      "text": "if (0 < param_1->vdir_box_count) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x15b428",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&param_1->field_0x15b428) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -195,16 +194,8 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar2 < *(int *)&param_1->field_0x15b428);",
+      "text": "} while (iVar2 < param_1->vdir_box_count);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x15b428",
-      "severity": "mild",
-      "text": "} while (iVar2 < *(int *)&param_1->field_0x15b428);",
-      "type": "unnamed_field"
     },
     {
       "call_site_count": 2,

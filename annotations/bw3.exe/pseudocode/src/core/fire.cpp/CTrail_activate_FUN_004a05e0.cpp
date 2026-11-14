@@ -10,15 +10,15 @@ void __cdecl core_fire_cpp_CTrail_activate_FUN_004a05e0(CTrail *this_ptr,CVector
 
 {
   if (this_ptr != (CTrail *)position) {
-    *(uint *)this_ptr = *(uint *)position;
-    *(uint *)&this_ptr->field_0x4 = *(uint *)&position->field_0x4;
-    *(uint *)&this_ptr->field_0x8 = *(uint *)&position->field_0x8;
+    (this_ptr->position).x = position->x;
+    (this_ptr->position).y = position->y;
+    (this_ptr->position).z = position->z;
   }
-  *(float *)&this_ptr->field_0xc = size;
-  *(float *)&this_ptr->field_0x14 = alpha;
-  *(float *)&this_ptr->field_0x10 = lifetime;
-  *(float *)&this_ptr->field_0x18 = lifetime;
-  *(float *)&this_ptr->field_0x1c = alpha;
-  *(SMRGLTextureBasic **)&this_ptr->field_0x20 = texture_ptr;
+  this_ptr->size = size;
+  this_ptr->current_alpha = alpha;
+  this_ptr->lifetime = lifetime;
+  this_ptr->initial_lifetime = lifetime;
+  this_ptr->initial_alpha = alpha;
+  this_ptr->texture_ptr = texture_ptr;
   return;
 }

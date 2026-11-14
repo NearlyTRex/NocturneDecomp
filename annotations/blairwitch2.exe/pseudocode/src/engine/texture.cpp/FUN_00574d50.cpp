@@ -14,12 +14,12 @@ void engine_texture_cpp_FUN_00574d50(void)
 {
   int iVar1;
   
-  iVar1 = FUN_005b8be2(0x1800c);
+  iVar1 = operator_new(0x1800c);
   if (iVar1 == 0) {
     _DAT_02652eb0 = 0;
   }
   else {
-    _DAT_02652eb0 = unkafter_texlist_cpp_FUN_00573940(iVar1);
+    _DAT_02652eb0 = core_texlist_cpp_FUN_00573940(iVar1);
     if (_DAT_02652eb0 != 0) {
       return;
     }

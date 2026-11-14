@@ -7,15 +7,15 @@
 
 // Original: core_litecone.cpp_staticInit_FUN_00502d10
 // Address: 00502d10
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_litecone.cpp_factoryFuncLightCone_FUN_00502d40
 // Address: 00502d40
-void factoryFuncLightCone(void);
+CLightCone * __cdecl factoryFuncLightCone(void);
 
 // Original: core_litecone.cpp_CLightCone_getActorType_FUN_00502d60
 // Address: 00502d60
-CDemonActorType * CLightCone::getActorType(CLightCone *this_ptr);
+CDemonActorType * __cdecl CLightCone::getActorType(CLightCone *this_ptr);
 
 // Original: core_litecone.cpp_CLightCone_ctor_FUN_00502d70
 // Address: 00502d70
@@ -29,21 +29,21 @@ void __cdecl CLightCone::setup(CLightCone *this_ptr);
 // Address: 00502e20
 void __cdecl CLightCone::process(CLightCone *this_ptr,float delta_time);
 
-// Original: core_litecone.cpp_FUN_00502e80
+// Original: core_litecone.cpp_CLightCone_renderTransparent_FUN_00502e80
 // Address: 00502e80
-int FUN_00502e80(CDemonActor *param_1);
+int __cdecl CLightCone::renderTransparent(CLightCone *this_ptr);
 
-// Original: core_litecone.cpp_FUN_00502f20
+// Original: core_litecone.cpp_CLightCone_getBoundingBox_FUN_00502f20
 // Address: 00502f20
-void FUN_00502f20(int param_1);
+CBoundingBox3D * __cdecl CLightCone::getBoundingBox(CLightCone *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_litecone.cpp_CLightCone_archive_FUN_00502f80
 // Address: 00502f80
 void __cdecl CLightCone::archive(CLightCone *this_ptr);
 
-// Original: core_litecone.cpp_FUN_00503010
+// Original: core_litecone.cpp_CLightCone_getCollisionType_FUN_00503010
 // Address: 00503010
-undefined4 FUN_00503010(void);
+ECollisionType __cdecl CLightCone::getCollisionType(CLightCone *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_litecone.cpp_CLightCone_dtor_FUN_00503020
 // Address: 00503020

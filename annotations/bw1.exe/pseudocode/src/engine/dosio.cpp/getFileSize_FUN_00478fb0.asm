@@ -11,16 +11,16 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[22]:
-;   cockpit_pkbmpset.cpp_FUN_00538b2e at 00538b5e
+;   cockpit_pkbmpset.cpp_FUN_00538b30 at 00538b5e
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044fff0 at 0045020c
 ;   core_dfilter.cpp_CDemonFilter_load_FUN_0045da30 at 0045da6b
 ;   core_event.cpp_FUN_004a1d00 at 004a2fc9
-;   core_fldnotes.cpp_FUN_004bcba0 at 004bcc15
+;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004bcba0 at 004bcc15
 ;   core_game.cpp_FUN_004d77d0 at 004d780b
 ;   core_script.cpp_CScript_dbLoad_FUN_0054af20 at 0054af43
 ;   core_script.cpp_CScript_step_FUN_00544460 at 00545dee
 ;   core_script.cpp_FUN_00543e00 at 00543e27
-;   engine_font.cpp_FUN_004c0cd0 at 004c0d5c
+;   engine_font.cpp_CBitFont_loadBitmap_FUN_004c0cd0 at 004c0d5c
 ;   ... and 12 more
 ;
 ; Called Functions:
@@ -45,7 +45,7 @@ section .text
     MOV EAX,ESP                         ; 00478fd3
     PUSH EAX                            ; 00478fd5
     CALL engine_dosio.cpp_findFile_FUN_00478e90 ; 00478fd6
-        ;   XREF to: 00478e90 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_findFile_FUN_00478e90()
+        ;   XREF to: 00478e90 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_findFile_FUN_00478e90(SFoundFileInfo * context)
     ADD ESP,0x4                         ; 00478fdb
     TEST EAX,EAX                        ; 00478fde
     JZ 0x00478ff0                       ; 00478fe0

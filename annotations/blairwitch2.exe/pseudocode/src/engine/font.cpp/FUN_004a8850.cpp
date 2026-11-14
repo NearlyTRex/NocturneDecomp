@@ -10,24 +10,24 @@ void engine_font_cpp_FUN_004a8850(CBitFont *param_1)
 
 {
   CBitFont *pCVar1;
-  CBitFont *pCVar2;
+  char (*pacVar2) [80];
   
   pCVar1 = param_1;
   do {
-    pCVar2 = pCVar1 + 4;
-    FUN_005b7fce(*(void **)(pCVar1 + 0x194));
-    *(uint *)(pCVar1 + 0x194) = 0;
-    pCVar1 = pCVar2;
-  } while (pCVar2 != param_1 + 0x10);
-  if (*(int *)(param_1 + 0x1dcc) != 0) {
-    FUN_005b86a0(*(int *)(param_1 + 0x1dcc));
-    *(uint *)(param_1 + 0x1dcc) = 0;
+    pacVar2 = pCVar1->bitmap_files;
+    FUN_005b7fce(pCVar1->bitmap_data[0]);
+    pCVar1->bitmap_data[0] = (void *)0x0;
+    pCVar1 = (CBitFont *)pacVar2;
+  } while (pacVar2 != (char (*) [80])(param_1->bitmap_files[0] + 0xc));
+  if (param_1->accel_vertex_alloc != (void *)0x0) {
+    FUN_005b86a0(param_1->accel_vertex_alloc);
+    param_1->accel_vertex_alloc = (void *)0x0;
   }
-  if (*(int *)(param_1 + 0x1dd4) == 0) {
-    engine_font_cpp_FUN_004a7bb0(param_1);
+  if (param_1->accel_indices == (void *)0x0) {
+    engine_font_cpp_CBitFont_reset_FUN_004a7bb0(param_1);
     return;
   }
-  FUN_005b86a0(*(int *)(param_1 + 0x1dd4));
-  engine_font_cpp_FUN_004a7bb0(param_1);
+  FUN_005b86a0(param_1->accel_indices);
+  engine_font_cpp_CBitFont_reset_FUN_004a7bb0(param_1);
   return;
 }

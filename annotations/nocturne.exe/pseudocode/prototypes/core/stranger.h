@@ -57,13 +57,13 @@ float __cdecl CStranger::getCarryLightIntensity(CStranger *this_ptr);
 // Address: 00538440
 CVector3f * __cdecl CStranger::getHandsMidpoint(CStranger *this_ptr,CVector3f *out_position);
 
-// Original: core_stranger.cpp_CStranger_FUN_005384d0
+// Original: core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005384d0
 // Address: 005384d0
-void __cdecl CStranger(CStranger *this_ptr);
+void __cdecl CStranger::updateProceduralAnimation(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_CStranger_FUN_005396d0
+// Original: core_stranger.cpp_CStranger_extractTurnPose_FUN_005396d0
 // Address: 005396d0
-void __cdecl CStranger(CStranger *this_ptr,SPose *out_pose);
+void __cdecl CStranger::extractTurnPose(CStranger *this_ptr,SPose *out_pose);
 
 // Original: core_stranger.cpp_CStranger_updateTurnBlending_FUN_005397b0
 // Address: 005397b0
@@ -209,25 +209,25 @@ void __cdecl CStranger::dropCarriedObject(CStranger *this_ptr,int hand_index,CVe
 // Address: 00540920
 void __cdecl CStranger::drop(CStranger *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
 
-// Original: core_stranger.cpp_FUN_00540970
+// Original: core_stranger.cpp_dotProduct1_FUN_00540970
 // Address: 00540970
-float FUN_00540970(void);
+float __cdecl dotProduct1(CVector3f *a,CVector3f *b);
 
 // Original: core_stranger.cpp_divideVectorByScalar_FUN_005409a0
 // Address: 005409a0
 void __cdecl divideVectorByScalar(CVector3f *vector,float *divisor);
 
-// Original: core_stranger.cpp_FUN_005409c0
+// Original: core_stranger.cpp_dotProduct2_FUN_005409c0
 // Address: 005409c0
-float FUN_005409c0(float *param_1,float *param_2);
+float __cdecl dotProduct2(CVector3f *a,CVector3f *b);
 
 // Original: core_stranger.cpp_setMatrixTranslation_FUN_005409f0
 // Address: 005409f0
 void __cdecl setMatrixTranslation(CMatrix3x4f *matrix,CVector3f *translation);
 
-// Original: core_stranger.cpp_FUN_00540a10
+// Original: core_stranger.cpp_unusedGetPointerAt8_FUN_00540a10
 // Address: 00540a10
-void * __cdecl FUN_00540a10(void *ptr);
+void * __cdecl unusedGetPointerAt8(void *ptr);
 
 // Original: core_stranger.cpp_isProcessDisabled_FUN_00540a20
 // Address: 00540a20

@@ -11,9 +11,12 @@
 CPathMap * __cdecl core_path_cpp_CPathMap_ctor_FUN_00511c90(CPathMap *this_ptr)
 
 {
-  *(uint *)&this_ptr->field_0x138b8 = 0x7fffffff;
-  *(uint *)&this_ptr->field_0x138b4 = *(uint *)&this_ptr->field_0x138b8;
-  *(uint *)&this_ptr->field_0x138b0 = *(uint *)&this_ptr->field_0x138b8;
+  int iVar1;
+  
+  (this_ptr->cached_voxel_coords).z = 0x7fffffff;
+  iVar1 = (this_ptr->cached_voxel_coords).z;
+  (this_ptr->cached_voxel_coords).y = iVar1;
+  (this_ptr->cached_voxel_coords).x = iVar1;
   core_path_cpp_CPathMap_reset_FUN_00513eb0(this_ptr);
   if (199 < _DAT_01e4fed8) {
     _DAT_01d046a0 = "..\\core\\path.cpp";

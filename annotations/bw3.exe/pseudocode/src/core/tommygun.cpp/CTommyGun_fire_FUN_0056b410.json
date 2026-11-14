@@ -1,0 +1,665 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 668,
+    "complexity_score": 623,
+    "cross_reference_count": 0,
+    "function_call_count": 25,
+    "global_count": 26,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 303,
+    "suspect_count": 27,
+    "suspect_types": [
+      "stack_alignment_array",
+      "stack_param",
+      "stack_ref",
+      "sub84_truncation",
+      "suspect_float",
+      "unaffected_reg",
+      "unknown_field",
+      "unrolled_memcpy",
+      "warning_overlapping_globals",
+      "warning_type_propagation"
+    ],
+    "total_lines": 971
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0056b410",
+    "address_range": [
+      [
+        "0056b410",
+        "0056bd06"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_tommygun.cpp_CTommyGun_fire_FUN_0056b410",
+    "signature": "int __cdecl core_tommygun_cpp_CTommyGun_fire_FUN_0056b410(CTommyGun *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c840",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c840"
+    },
+    {
+      "addr": "00408b00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408b00"
+    },
+    {
+      "addr": "00408b80",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408b80"
+    },
+    {
+      "addr": "00408bf0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408bf0"
+    },
+    {
+      "addr": "0040ce40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40"
+    },
+    {
+      "addr": "0042abb0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0"
+    },
+    {
+      "addr": "004461c0",
+      "is_variadic": false,
+      "name": "core_crate.cpp_FUN_004461c0"
+    },
+    {
+      "addr": "0045b550",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550"
+    },
+    {
+      "addr": "0045b800",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_FUN_0045b800"
+    },
+    {
+      "addr": "00462420",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_loadModel_FUN_00462420"
+    },
+    {
+      "addr": "004a2090",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createBulletImpact_FUN_004a2090"
+    },
+    {
+      "addr": "004a2450",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createMuzzleFlash_FUN_004a2450"
+    },
+    {
+      "addr": "004a3e70",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createShell_FUN_004a3e70"
+    },
+    {
+      "addr": "004a7110",
+      "is_variadic": false,
+      "name": "core_flamecan.cpp_CFlameCan_ignite_FUN_004a7110"
+    },
+    {
+      "addr": "004cc5d0",
+      "is_variadic": false,
+      "name": "core_glass.cpp_CGlass_checkBreakableCondition_FUN_004cc5d0"
+    },
+    {
+      "addr": "004cc040",
+      "is_variadic": false,
+      "name": "core_glass.cpp_FUN_004cc040"
+    },
+    {
+      "addr": "0053ec10",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_ignore_FUN_0053ec10"
+    },
+    {
+      "addr": "0053ebe0",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_init_FUN_0053ebe0"
+    },
+    {
+      "addr": "0053ec90",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_setRayType_FUN_0053ec90"
+    },
+    {
+      "addr": "0053ccc0",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_FUN_0053ccc0"
+    },
+    {
+      "addr": "0056ede0",
+      "is_variadic": false,
+      "name": "core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_0056ede0"
+    },
+    {
+      "addr": "0056ee20",
+      "is_variadic": false,
+      "name": "core_trigger.cpp_CTrigger_applyDamage_FUN_0056ee20"
+    },
+    {
+      "addr": "0056edc0",
+      "is_variadic": false,
+      "name": "core_trigger.cpp_CTrigger_onProjectileHit_FUN_0056edc0"
+    },
+    {
+      "addr": "0057b880",
+      "is_variadic": false,
+      "name": "core_weapon.cpp_CWeapon_fire_FUN_0057b880"
+    },
+    {
+      "addr": "00556be0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfx_FUN_00556be0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d6456",
+      "name": "s_s_45_dry_wav_2_0_005d6456",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6468",
+      "name": "s_bullet_kfm_005d6468",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d6473",
+      "name": "DAT_005d6473",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d6477",
+      "name": "DAT_005d6477",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d647f",
+      "name": "DAT_005d647f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d6487",
+      "name": "DAT_005d6487",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fc5a0",
+      "name": "DAT_005fc5a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00603b28",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01ed78c8"
+    },
+    {
+      "addr": "007e2cec",
+      "name": "g_CCharacterClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007f8fc8",
+      "name": "g_CCrateClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d0cf60",
+      "name": "g_CFlameCanClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d22e04",
+      "name": "g_CGlassClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d5ba70",
+      "name": "g_CHeroClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ed78c8",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "020249d8",
+      "name": "g_CDemonSetInstance.ray_origin.x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "020249dc",
+      "name": "g_CDemonSetInstance.ray_origin.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "020249e0",
+      "name": "g_CDemonSetInstance.ray_origin.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "020249e4",
+      "name": "g_CDemonSetInstance.ray_target.x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "020249e8",
+      "name": "g_CDemonSetInstance.ray_target.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "020249ec",
+      "name": "g_CDemonSetInstance.ray_target.z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "020249f0",
+      "name": "g_CDemonSetInstance.collision_normal.x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "020249fc",
+      "name": "g_CDemonSetInstance.ground_type",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02024a00",
+      "name": "g_CDemonSetInstance.collision_impact_position.x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02024a0c",
+      "name": "g_CDemonSetInstance.collision_actor",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02024a10",
+      "name": "g_CDemonSetInstance.collision_part_index",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cfd894",
+      "name": "g_CTriggerClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.312068965517241,
+    "instruction_count": 580,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 5,
+      "BRANCH": 7,
+      "CALL": 37,
+      "CALLIND": 8,
+      "CBRANCH": 23,
+      "COPY": 1104,
+      "FLOAT2FLOAT": 72,
+      "FLOAT_ADD": 7,
+      "FLOAT_DIV": 2,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_MULT": 9,
+      "FLOAT_NAN": 6,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 6,
+      "INT2FLOAT": 3,
+      "INT_ADD": 348,
+      "INT_AND": 193,
+      "INT_CARRY": 49,
+      "INT_EQUAL": 162,
+      "INT_LEFT": 12,
+      "INT_LESS": 7,
+      "INT_MULT": 72,
+      "INT_NOTEQUAL": 17,
+      "INT_OR": 15,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 51,
+      "INT_SLESS": 81,
+      "INT_SUB": 209,
+      "INT_XOR": 7,
+      "INT_ZEXT": 84,
+      "LOAD": 151,
+      "POPCOUNT": 81,
+      "RETURN": 4,
+      "STORE": 228
+    },
+    "pcode_op_count": 3081
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00575800",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9767
+    },
+    "bw1.exe": {
+      "addr": "00598420",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9767
+    },
+    "nocedit.exe": {
+      "addr": "005ddb30",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6485
+    },
+    "nocturne.exe": {
+      "addr": "00545c30",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6056
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTommyGun *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0056b41c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 19,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "float unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 21,
+      "match": "afStackY_1138",
+      "severity": "moderate",
+      "text": "float afStackY_1138 [981];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_fffffe3c",
+      "severity": "moderate",
+      "text": "float in_stack_fffffe3c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 184,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX = (float)(*(((this_ptr->base).base.vtable._uc)->_uc).getGrabbed)",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 185,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "((CCharacter *)this_ptr,SUB84(__BITCAST_UINT64(dVar8),0),",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 187,
+      "match": "in_stack_fffffe3c",
+      "severity": "moderate",
+      "text": "in_stack_fffffe3c = unaff_EBX;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 187,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "in_stack_fffffe3c = unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 188,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "core_trigger_cpp_CTrigger_applyDamage_FUN_0056ee20(this_ptr_02,unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 213,
+      "match": "&stack0xfffffe40",
+      "severity": "moderate",
+      "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0((SDamageInfo *)&stack0xfffffe40);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 216,
+      "match": "in_stack_fffffe3c",
+      "severity": "moderate",
+      "text": "((CCharacter *)this_ptr,pCVar9,(int)in_stack_fffffe3c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 217,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_1b0._4_4_ = 0.4;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 218,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "auStack_1b0._0_4_ = this_ptr_04;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 237,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "auStack_1b0._8_4_ = afStack_14c[2];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 238,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "auStack_1b0._12_4_ = afStack_14c[3];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 239,
+      "match": "._16_4_",
+      "severity": "mild",
+      "text": "auStack_1b0._16_4_ = fStack_13c;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 241,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "core_actor_cpp_FUN_00408bf0(unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 247,
+      "match": "._24_4_",
+      "severity": "mild",
+      "text": "auStack_1b0._24_4_ = fStack_150;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 248,
+      "match": "._28_4_",
+      "severity": "mild",
+      "text": "auStack_1b0._28_4_ = afStack_14c[0];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 249,
+      "match": "._32_4_",
+      "severity": "mild",
+      "text": "auStack_1b0._32_4_ = afStack_14c[1];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 251,
+      "match": "._36_4_",
+      "severity": "mild",
+      "text": "auStack_1b0._36_4_ = (this_ptr->base).ammo_type;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 252,
+      "match": "1.41531e-43",
+      "severity": "mild",
+      "text": "fStack_184 = 1.41531e-43;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 253,
+      "match": "._40_4_",
+      "severity": "mild",
+      "text": "auStack_1b0._40_4_ = (CDemonActor *)0x3e19999a;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 256,
+      "match": "in_stack_fffffe3c",
+      "severity": "moderate",
+      "text": "in_stack_fffffe3c = 7.965292e-39;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 256,
+      "match": "7.965292e-39",
+      "severity": "mild",
+      "text": "in_stack_fffffe3c = 7.965292e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 295,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "CStack_f4.x = CStack_40.x;",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 228,
+        "vtable_addr": "005e53c4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

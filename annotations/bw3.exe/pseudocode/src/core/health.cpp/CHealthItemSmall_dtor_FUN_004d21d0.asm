@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CHealthItemSmall * core_health_cpp_CHealthItemSmall_dtor_FUN_004d21d0(CHealthItemSmall *this_ptr,uint flags)
+; CHealthItemSmall * __cdecl core_health_cpp_CHealthItemSmall_dtor_FUN_004d21d0(CHealthItemSmall *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CHealthItemSmall * Stack[0x4]:4   this_ptr
@@ -43,7 +43,7 @@ section .text
         ;   Label: LAB_004d21f6
     PUSH EBX                            ; 004d21fb
     CALL crt_memory.c___vec_delete_FUN_005a308f ; 004d21fc
-        ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005a308f()
+        ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005a308f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 004d2201
     PUSH EAX                            ; 004d2204
     CALL crt_unknown.c_FUN_005a30b6     ; 004d2205

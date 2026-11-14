@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 8,
-    "complexity_score": 23,
+    "complexity_score": 7,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 8,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 16
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 15
   },
   "cross_references": [],
   "function": {
@@ -23,15 +21,15 @@
         "004a47a4"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_fire.cpp_CLeaf_ctor_FUN_004a4790",
-    "signature": "CLeaf * core_fire_cpp_CLeaf_ctor_FUN_004a4790(CLeaf *this_ptr)"
+    "signature": "CLeaf * __cdecl core_fire_cpp_CLeaf_ctor_FUN_004a4790(CLeaf *this_ptr)"
   },
   "function_calls": [
     {
       "addr": "00509e10",
       "is_variadic": false,
-      "name": "core_particle.cpp_FUN_00509e10"
+      "name": "core_particle.cpp_CParticle_ctor_FUN_00509e10"
     }
   ],
   "globals": [],
@@ -64,6 +62,20 @@
     },
     "pcode_op_count": 24
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0049ee20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004b76f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -80,16 +92,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "*(byte ***)&pCVar1->field_0x3c = &g_CLeafVTable;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -18,13 +18,13 @@
     {
       "addr": "00553580",
       "from_addr": "005535a3",
-      "name": "sound_sndmain.cpp_FUN_00553580",
+      "name": "sound_sndmain.cpp_processAudio_FUN_00553580",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0057a47c",
+      "addr": "0057a480",
       "from_addr": "0057a4d2",
-      "name": "support_trisock.cpp_FUN_0057a47c",
+      "name": "support_trisock.cpp_FUN_0057a480",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -72,7 +72,7 @@
       {
         "call_addr": "005535a3",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00553580",
+        "caller": "sound_sndmain.cpp_processAudio_FUN_00553580",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -83,7 +83,7 @@
       {
         "call_addr": "0057a4d2",
         "call_type": "direct",
-        "caller": "support_trisock.cpp_FUN_0057a47c",
+        "caller": "support_trisock.cpp_FUN_0057a480",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -127,6 +127,32 @@
       "TRUNC": 1
     },
     "pcode_op_count": 117
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005b3770",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00581950",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005f4010",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00559bf0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 24,

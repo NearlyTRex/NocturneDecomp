@@ -9,11 +9,14 @@
 void __cdecl core_box_cpp_CBoundingBox3D_reset_FUN_0041b600(CBoundingBox3D *this_ptr)
 
 {
-  *(uint *)&this_ptr->field_0x8 = 0x7cf0bdc2;
-  *(uint *)&this_ptr->field_0x14 = 0xfcf0bdc2;
-  *(uint *)&this_ptr->field_0x4 = *(uint *)&this_ptr->field_0x8;
-  *(uint *)&this_ptr->field_0x10 = *(uint *)&this_ptr->field_0x14;
-  *(uint *)this_ptr = *(uint *)&this_ptr->field_0x4;
-  *(uint *)&this_ptr->field_0xc = *(uint *)&this_ptr->field_0x14;
+  float fVar1;
+  
+  (this_ptr->min).z = 1e+37;
+  (this_ptr->max).z = -1e+37;
+  fVar1 = (this_ptr->max).z;
+  (this_ptr->min).y = (this_ptr->min).z;
+  (this_ptr->max).y = fVar1;
+  (this_ptr->min).x = (this_ptr->min).y;
+  (this_ptr->max).x = fVar1;
   return;
 }

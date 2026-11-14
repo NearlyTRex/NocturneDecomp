@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBoneGuy.h"
 
 // Structure: CSkeletonForest
-// Stub: size from Watcom RTTI, fields not yet recovered
+// registered under CBoneGuy (registerActorClass); size 54936 from its new; no fields of its own
 // Ghidra size: 0xd698 (54936 bytes)
 #pragma pack(push, 1)
 typedef struct CSkeletonForest {
-    char field_0[54936]; // 0x0
+    CBoneGuy base; // 0x0, parent class
 } CSkeletonForest;
 #pragma pack(pop)
 

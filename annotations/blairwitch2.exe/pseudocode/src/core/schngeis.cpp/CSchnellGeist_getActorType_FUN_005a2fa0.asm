@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_schngeis_cpp_CSchnellGeist_getActorType_FUN_005a2fa0(CSchnellGeist *this_ptr)
+; CDemonActorType * __cdecl core_schngeis_cpp_CSchnellGeist_getActorType_FUN_005a2fa0(CSchnellGeist *this_ptr)
 ;
 ; Parameters:
 ; CSchnellGeist *  Stack[0x4]:4   this_ptr

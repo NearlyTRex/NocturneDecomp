@@ -34,7 +34,7 @@
     {
       "addr": "0055ef30",
       "from_addr": "0055ef76",
-      "name": "core_sound.cpp_FUN_0055ef30",
+      "name": "core_sound.cpp_CSound_findRandomSoundFile_FUN_0055ef30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -46,7 +46,7 @@
     {
       "addr": "0056ede0",
       "from_addr": "0056ee15",
-      "name": "core_trigger.cpp_FUN_0056ede0",
+      "name": "core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_0056ede0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -110,7 +110,7 @@
       {
         "call_addr": "0055ef76",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0055ef30",
+        "caller": "core_sound.cpp_CSound_findRandomSoundFile_FUN_0055ef30",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -143,7 +143,7 @@
       {
         "call_addr": "0056ee15",
         "call_type": "direct",
-        "caller": "core_trigger.cpp_FUN_0056ede0",
+        "caller": "core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_0056ede0",
         "estimated_params": 3,
         "instructions_analyzed": 5,
         "method": "push_count",
@@ -206,6 +206,32 @@
       "STORE": 12
     },
     "pcode_op_count": 369
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00485840",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0049dea0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004a6e20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004775b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 16,

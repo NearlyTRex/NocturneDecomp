@@ -2,15 +2,26 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBasicEnemy.h"
 
 // Structure: CDog
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 71792; archive chains to CBasicEnemy archive 0059fc10
 // Ghidra size: 0x11870 (71792 bytes)
 #pragma pack(push, 1)
 typedef struct CDog {
-    char field_0[71792]; // 0x0
+    CBasicEnemy base; // 0x0, derived
+    int mouth_bone; // 0x11850, setup findBone 'Dummy01'; processMotionEvent bite damage bone
+    char field_71764[8]; // 0x11854
+    struct CDemonActor* food; // 0x1185c, ctor 0; archive archiveActor (v2+); setup calls its vtable+0x90; processChaseFoodState reads its carrier +0x474
+    float food_scan_timer; // 0x11860, ctor 1.0; FUN_005ac2f0 counts down, rescans CBoxActors for meat1.kfm, reloads 1.0
+    float eat_time; // 0x11864, ctor 5.0; archive EatTime; FUN_005ac2f0 copies to eat_timer
+    float eat_timer; // 0x11868, processChaseFoodState counts it down
+    int death_effect_done; // 0x1186c, ctor 0; processDeathState sets 1 once (BDOG) after FUN_0042b550
 } CDog;
 #pragma pack(pop)
 

@@ -41,7 +41,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004bd570 at 004bd971
+;   core_game.cpp_CGame_process_FUN_004bd570 at 004bd971
 ;
 ; Referenced Globals:
 ;   undefined4 s_Enter_Movie_FPS_005d7216+1
@@ -63,9 +63,9 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_createActorByName_FUN_0040c5a0
-;   core_actor.cpp_FUN_0040c840
+;   core_actor.cpp_isOfClass_FUN_0040c840
 ;   core_ammo.cpp_CAmmo_ctor_FUN_0040ddb0
-;   core_ammo.cpp_FUN_0040e240
+;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040e240
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0
 ;   core_dcamera.cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00443240
 ;   core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00441e80
@@ -74,9 +74,9 @@
 ;   core_event.cpp_CEventList_validateCommands_FUN_0048e3e0
 ;   core_game.cpp_CGame_displayMessage_FUN_004b31a0
 ;   core_game.cpp_FUN_004b8e10
-;   core_game.cpp_FUN_004b9060
+;   core_game.cpp_scaleBoneRecursive_FUN_004b9060
+;   core_inv.cpp_CInventory_findItemByName_FUN_004db830
 ;   core_inv.cpp_FUN_004dadb0
-;   core_inv.cpp_FUN_004db830
 ;   ... and 21 more
 ;
 ; *****************************************************************************
@@ -112,12 +112,12 @@ section .text
     JZ 0x004b9141                       ; 004b9105
         ;   XREF to: 004b9141 (CONDITIONAL_JUMP)  ; LAB_004b9141
     MOV EAX,[0x00616494]                ; 004b9107 | g_CGamePtr
-    CMP dword ptr [EAX + 0x230],0x29a   ; 004b910c | g_CGameInstance.field560_0x230
+    CMP dword ptr [EAX + 0x230],0x29a   ; 004b910c | g_CGameInstance.head_of_horror_cheat
     JZ 0x004b9141                       ; 004b9116
         ;   XREF to: 004b9141 (CONDITIONAL_JUMP)  ; LAB_004b9141
     PUSH 0x40a00000                     ; 004b9118
     PUSH 0x5d7a63                       ; 004b911d | = "The horror has been unleashed."
-    MOV dword ptr [EAX + 0x230],0x29a   ; 004b9122 | g_CGameInstance.field560_0x230
+    MOV dword ptr [EAX + 0x230],0x29a   ; 004b9122 | g_CGameInstance.head_of_horror_cheat
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004b912c
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     ADD ESP,0x4                         ; 004b9131
@@ -162,8 +162,8 @@ section .text
         ;   XREF to: 004b9192 (CONDITIONAL_JUMP)  ; LAB_004b9192
     PUSH 0x5d7a93                       ; 004b91a3 | DAT_005d7a93
     MOV byte ptr [0x01cb80f8],AH        ; 004b91a8 | DAT_01cb80f8
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004b91ae
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b91ae
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR ESI,ESI                         ; 004b91b3
     ADD ESP,0x4                         ; 004b91b5
     MOV EDI,EAX                         ; 004b91b8
@@ -230,8 +230,8 @@ section .text
     MOV dword ptr [EBX + 0x22c],EAX     ; 004b925c
     PUSH 0x5d7b05                       ; 004b9262 | DAT_005d7b05
         ;   Label: LAB_004b9262
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004b9267
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b9267
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR ESI,ESI                         ; 004b926c
     ADD ESP,0x4                         ; 004b926e
     MOV EDI,EAX                         ; 004b9271
@@ -284,8 +284,8 @@ section .text
     JNZ 0x004b9fa0                      ; 004b92e8
         ;   XREF to: 004b9fa0 (CONDITIONAL_JUMP)  ; LAB_004b9fa0
     MOV EBX,dword ptr [EBP + 0x14]      ; 004b92ee
-    CALL wincore_winrun.cpp_FUN_0058e9e0 ; 004b92f1
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_0058e9e0()
+    CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 004b92f1
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_0058e9e0()
     MOV dword ptr [EBX + 0x224],0x1     ; 004b92f6
     MOV dword ptr [EBX + 0x288],EAX     ; 004b9300
     MOV dword ptr [EBX + 0x28c],ESI     ; 004b9306
@@ -295,8 +295,8 @@ section .text
     JZ 0x004b93bf                       ; 004b9316
         ;   XREF to: 004b93bf (CONDITIONAL_JUMP)  ; LAB_004b93bf
     PUSH 0x5d7b45                       ; 004b931c | DAT_005d7b45
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004b9321
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b9321
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR ESI,ESI                         ; 004b9326
     ADD ESP,0x4                         ; 004b9328
     MOV EDI,EAX                         ; 004b932b
@@ -358,8 +358,8 @@ section .text
     JZ 0x004b9490                       ; 004b93c9
         ;   XREF to: 004b9490 (CONDITIONAL_JUMP)  ; LAB_004b9490
     PUSH 0x5d7b7a                       ; 004b93cf | DAT_005d7b7a
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004b93d4
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b93d4
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     MOV EBX,EAX                         ; 004b93d9
     ADD ESP,0x4                         ; 004b93db
     XOR ECX,ECX                         ; 004b93de
@@ -432,8 +432,8 @@ section .text
     JZ 0x004b9584                       ; 004b949a
         ;   XREF to: 004b9584 (CONDITIONAL_JUMP)  ; LAB_004b9584
     PUSH 0x5d7bcc                       ; 004b94a0 | DAT_005d7bcc
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004b94a5
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b94a5
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     MOV EBX,EAX                         ; 004b94aa
     ADD ESP,0x4                         ; 004b94ac
     XOR ECX,ECX                         ; 004b94af
@@ -506,8 +506,8 @@ section .text
     MOV ECX,dword ptr [0x0061b5a8]      ; 004b956b | g_CDemonSetPtr
     PUSH ECX                            ; 004b9571
     MOV dword ptr [EBX + 0x298],0x1     ; 004b9572
-    CALL core_set.cpp_FUN_0052e910      ; 004b957c
-        ;   XREF to: 0052e910 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0052e910(CDemonSet * this_ptr, int clear_enabled, int is_clearing, int screen_height)
+    CALL core_set.cpp_CDemonSet_reinitCamera_FUN_0052e910 ; 004b957c
+        ;   XREF to: 0052e910 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_reinitCamera_FUN_0052e910(CDemonSet * this_ptr, int clear_enabled, int is_clearing, int screen_height)
         ;   Label: LAB_004b957c
     ADD ESP,0x10                        ; 004b9581
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b9584
@@ -516,8 +516,8 @@ section .text
     JZ 0x004b9657                       ; 004b958e
         ;   XREF to: 004b9657 (CONDITIONAL_JUMP)  ; LAB_004b9657
     PUSH 0x5d7c21                       ; 004b9594 | DAT_005d7c21
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004b9599
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b9599
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     MOV EBX,EAX                         ; 004b959e
     ADD ESP,0x4                         ; 004b95a0
     XOR ECX,ECX                         ; 004b95a3
@@ -587,8 +587,8 @@ section .text
     ADD ESP,0xc                         ; 004b9654
     PUSH 0x5d7c7e                       ; 004b9657 | DAT_005d7c7e
         ;   Label: LAB_004b9657
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004b965c
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b965c
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR ESI,ESI                         ; 004b9661
     ADD ESP,0x4                         ; 004b9663
     MOV EDI,EAX                         ; 004b9666
@@ -655,8 +655,8 @@ section .text
     MOV dword ptr [EBX + 0x24378],EAX   ; 004b9713
     PUSH 0x5d7cc5                       ; 004b9719 | DAT_005d7cc5
         ;   Label: LAB_004b9719
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004b971e
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b971e
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR ESI,ESI                         ; 004b9723
     ADD ESP,0x4                         ; 004b9725
     MOV EDI,EAX                         ; 004b9728
@@ -726,8 +726,8 @@ section .text
     JZ 0x004b9942                       ; 004b97e2
         ;   XREF to: 004b9942 (CONDITIONAL_JUMP)  ; LAB_004b9942
     PUSH 0x5d7d08                       ; 004b97e8 | DAT_005d7d08
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004b97ed
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b97ed
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     MOV EBX,EAX                         ; 004b97f2
     ADD ESP,0x4                         ; 004b97f4
     XOR EAX,EAX                         ; 004b97f7
@@ -848,8 +848,8 @@ section .text
     JZ 0x004b99f2                       ; 004b994c
         ;   XREF to: 004b99f2 (CONDITIONAL_JUMP)  ; LAB_004b99f2
     PUSH 0x5d7d3b                       ; 004b9952 | DAT_005d7d3b
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004b9957
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b9957
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     MOV EBX,EAX                         ; 004b995c
     ADD ESP,0x4                         ; 004b995e
     XOR ECX,ECX                         ; 004b9961
@@ -906,8 +906,8 @@ section .text
     MOV dword ptr [EBX + 0x238],EAX     ; 004b99ec
     PUSH 0x5d7d72                       ; 004b99f2 | DAT_005d7d72
         ;   Label: LAB_004b99f2
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004b99f7
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b99f7
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR EBX,EBX                         ; 004b99fc
     ADD ESP,0x4                         ; 004b99fe
     MOV EDI,EAX                         ; 004b9a01
@@ -959,15 +959,15 @@ section .text
     XOR CL,CL                           ; 004b9a7f
     PUSH EAX                            ; 004b9a81
     MOV byte ptr [0x01cb80f8],CL        ; 004b9a82 | DAT_01cb80f8
-    CALL core_inv.cpp_FUN_004db830      ; 004b9a88
-        ;   XREF to: 004db830 (UNCONDITIONAL_CALL)  ; CDemonActor * core_inv.cpp_FUN_004db830(CInventory * this_ptr, char * item_name)
+    CALL core_inv.cpp_CInventory_findItemByName_FUN_004db830 ; 004b9a88
+        ;   XREF to: 004db830 (UNCONDITIONAL_CALL)  ; CDemonActor * core_inv.cpp_CInventory_findItemByName_FUN_004db830(CInventory * this_ptr, char * item_name)
     ADD ESP,0x8                         ; 004b9a8d
     TEST EAX,EAX                        ; 004b9a90
     JNZ 0x004b9b1d                      ; 004b9a92
         ;   XREF to: 004b9b1d (CONDITIONAL_JUMP)  ; LAB_004b9b1d
     PUSH 0x5d7db8                       ; 004b9a98 | = "CKeyActor"
     CALL core_actor.cpp_createActorByName_FUN_0040c5a0 ; 004b9a9d
-        ;   XREF to: 0040c5a0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c5a0()
+        ;   XREF to: 0040c5a0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c5a0(char * class_name)
     ADD ESP,0x4                         ; 004b9aa2
     MOV EBX,EAX                         ; 004b9aa5
     PUSH EBX                            ; 004b9aa7
@@ -1016,8 +1016,8 @@ section .text
     ADD ESP,0xc                         ; 004b9b1a
     PUSH 0x5d7de9                       ; 004b9b1d | DAT_005d7de9
         ;   Label: LAB_004b9b1d
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004b9b22
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b9b22
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR ESI,ESI                         ; 004b9b27
     ADD ESP,0x4                         ; 004b9b29
     MOV EDI,EAX                         ; 004b9b2c
@@ -1088,8 +1088,8 @@ section .text
     MOV dword ptr [EAX + 0x25a8],0x42c80000 ; 004b9be2
     PUSH 0x5d7e42                       ; 004b9bec | DAT_005d7e42
         ;   Label: LAB_004b9bec
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004b9bf1
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b9bf1
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     MOV EBX,EAX                         ; 004b9bf6
     ADD ESP,0x4                         ; 004b9bf8
     XOR ECX,ECX                         ; 004b9bfb
@@ -1158,8 +1158,8 @@ section .text
     ADD ESP,0xc                         ; 004b9ca9
     PUSH 0x5d7e95                       ; 004b9cac | DAT_005d7e95
         ;   Label: LAB_004b9cac
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004b9cb1
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b9cb1
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     MOV EBX,EAX                         ; 004b9cb6
     ADD ESP,0x4                         ; 004b9cb8
     XOR ECX,ECX                         ; 004b9cbb
@@ -1235,8 +1235,8 @@ section .text
     PUSH 0x47c                          ; 004b9d82
     MOV EDI,0x5d7efa                    ; 004b9d87 | DAT_005d7efa
     XOR ESI,ESI                         ; 004b9d8c
-    CALL crt_unknown.c_FUN_005b8be2     ; 004b9d8e
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 004b9d8e
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 004b9d93
     TEST EAX,EAX                        ; 004b9d96
     JZ 0x004ba0b5                       ; 004b9d98
@@ -1256,8 +1256,8 @@ section .text
     JZ 0x004ba142                       ; 004b9dbb
         ;   XREF to: 004ba142 (CONDITIONAL_JUMP)  ; LAB_004ba142
     PUSH 0x5d7eff                       ; 004b9dc1 | DAT_005d7eff
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004b9dc6
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b9dc6
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR ESI,ESI                         ; 004b9dcb
     ADD ESP,0x4                         ; 004b9dcd
     MOV EDI,EAX                         ; 004b9dd0
@@ -1332,8 +1332,8 @@ section .text
     PUSH EAX                            ; 004b9e86
     MOV ECX,dword ptr [0x006138e0]      ; 004b9e87 | g_CEditorToolsPtr
     PUSH ECX                            ; 004b9e8d
-    CALL shape_edittool.cpp_FUN_0047be40 ; 004b9e8e
-        ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047be40()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0047be40 ; 004b9e8e
+        ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0047be40(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004b9e93
     JMP 0x004b9e4e                      ; 004b9e96
         ;   XREF to: 004b9e4e (UNCONDITIONAL_JUMP)  ; LAB_004b9e4e
@@ -1385,8 +1385,8 @@ section .text
         ;   XREF to: 004b9160 (UNCONDITIONAL_JUMP)  ; LAB_004b9160
     PUSH 0x5d7ac7                       ; 004b9f13 | DAT_005d7ac7
         ;   Label: LAB_004b9f13
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004b9f18
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004b9f18
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR ESI,ESI                         ; 004b9f1d
     ADD ESP,0x4                         ; 004b9f1f
     MOV EDI,EAX                         ; 004b9f22
@@ -1438,8 +1438,8 @@ section .text
         ;   XREF to: 004b9228 (UNCONDITIONAL_JUMP)  ; LAB_004b9228
     MOV EBX,dword ptr [EBP + 0x14]      ; 004b9fa0
         ;   Label: LAB_004b9fa0
-    CALL wincore_winrun.cpp_FUN_0058e9e0 ; 004b9fa3
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_0058e9e0()
+    CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 004b9fa3
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_0058e9e0()
     MOV EDI,dword ptr [EBX + 0x288]     ; 004b9fa8
     SUB EAX,EDI                         ; 004b9fae
     MOV dword ptr [ESP + 0x350],EAX     ; 004b9fb0
@@ -1460,8 +1460,8 @@ section .text
     PUSH 0x5d7b39                       ; 004ba003 | = "FPS: %3.2lf"
     LEA EAX,[ESP + 0xc]                 ; 004ba008
     PUSH EAX                            ; 004ba00c
-    CALL crt_unknown.c_FUN_005b7790     ; 004ba00d
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004ba00d
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x10                        ; 004ba012
     MOV EAX,ESP                         ; 004ba015
     PUSH 0x40a00000                     ; 004ba017
@@ -1538,8 +1538,8 @@ section .text
     PUSH EDI                            ; 004ba0d9 | DAT_005d7efa
     PUSH EBX                            ; 004ba0da
     MOV dword ptr [EBX + 0x474],ESI     ; 004ba0db
-    CALL core_ammo.cpp_FUN_0040e240     ; 004ba0e1
-        ;   XREF to: 0040e240 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_FUN_0040e240(CAmmo * this_ptr, char * weapon_class_name)
+    CALL core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040e240 ; 004ba0e1
+        ;   XREF to: 0040e240 (UNCONDITIONAL_CALL)  ; void core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040e240(CAmmo * this_ptr, char * weapon_class_name)
     ADD ESP,0x8                         ; 004ba0e6
     PUSH 0x0                            ; 004ba0e9
     MOV EAX,[0x01cedef4]                ; 004ba0eb | DAT_01cedef4
@@ -1575,8 +1575,8 @@ section .text
         ;   XREF to: 004b9e49 (CONDITIONAL_JUMP)  ; LAB_004b9e49
     PUSH 0x5d7f41                       ; 004ba142 | DAT_005d7f41
         ;   Label: LAB_004ba142
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004ba147
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba147
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR ESI,ESI                         ; 004ba14c
     ADD ESP,0x4                         ; 004ba14e
     MOV EDI,EAX                         ; 004ba151
@@ -1630,7 +1630,7 @@ section .text
     MOV EAX,[0x0061b5a8]                ; 004ba1da | g_CDemonSetPtr
         ;   Label: LAB_004ba1da
     MOV EBX,dword ptr [ESP + 0x34c]     ; 004ba1df
-    CMP EBX,dword ptr [EAX + 0x150fec]  ; 004ba1e6 | g_CDemonSetInstance.field1380332_0x150fec
+    CMP EBX,dword ptr [EAX + 0x150fec]  ; 004ba1e6 | g_CDemonSetInstance.enemy_count
     JGE 0x004ba2e5                      ; 004ba1ec
         ;   XREF to: 004ba2e5 (CONDITIONAL_JUMP)  ; LAB_004ba2e5
     ADD EAX,dword ptr [ESP + 0x304]     ; 004ba1f2
@@ -1702,8 +1702,8 @@ section .text
         ;   XREF to: 004ba271 (UNCONDITIONAL_JUMP)  ; LAB_004ba271
     PUSH 0x5d7f76                       ; 004ba2e5 | DAT_005d7f76
         ;   Label: LAB_004ba2e5
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004ba2ea
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba2ea
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR ESI,ESI                         ; 004ba2ef
     ADD ESP,0x4                         ; 004ba2f1
     MOV EDI,EAX                         ; 004ba2f4
@@ -1775,8 +1775,8 @@ section .text
     JZ 0x004ba45b                       ; 004ba3a7
         ;   XREF to: 004ba45b (CONDITIONAL_JUMP)  ; LAB_004ba45b
     PUSH 0x5d7fef                       ; 004ba3ad | DAT_005d7fef
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004ba3b2
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba3b2
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     MOV EBX,EAX                         ; 004ba3b7
     ADD ESP,0x4                         ; 004ba3b9
     XOR ECX,ECX                         ; 004ba3bc
@@ -1838,8 +1838,8 @@ section .text
     ADD ESP,0x1c                        ; 004ba458
     PUSH 0x5d8033                       ; 004ba45b | DAT_005d8033
         ;   Label: LAB_004ba45b
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004ba460
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba460
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR ESI,ESI                         ; 004ba465
     ADD ESP,0x4                         ; 004ba467
     MOV EDI,EAX                         ; 004ba46a
@@ -1895,8 +1895,8 @@ section .text
     MOV dword ptr [EBX + 0x20c],EAX     ; 004ba4ec
     PUSH 0x5d8066                       ; 004ba4f2 | DAT_005d8066
         ;   Label: LAB_004ba4f2
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004ba4f7
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba4f7
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR ESI,ESI                         ; 004ba4fc
     ADD ESP,0x4                         ; 004ba4fe
     MOV EDI,EAX                         ; 004ba501
@@ -1952,8 +1952,8 @@ section .text
     MOV dword ptr [EBX + 0x210],EAX     ; 004ba583
     PUSH 0x5d8099                       ; 004ba589 | DAT_005d8099
         ;   Label: LAB_004ba589
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004ba58e
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba58e
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR EDI,EDI                         ; 004ba593
     ADD ESP,0x4                         ; 004ba595
     MOV dword ptr [ESP + 0x24c],EDI     ; 004ba598
@@ -2030,8 +2030,8 @@ section .text
     JZ 0x004ba705                       ; 004ba669
         ;   XREF to: 004ba705 (CONDITIONAL_JUMP)  ; LAB_004ba705
     PUSH 0x5d8138                       ; 004ba66f | DAT_005d8138
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004ba674
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba674
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR EBX,EBX                         ; 004ba679
     ADD ESP,0x4                         ; 004ba67b
     MOV EDI,EAX                         ; 004ba67e
@@ -2090,8 +2090,8 @@ section .text
     JZ 0x004ba7b7                       ; 004ba70f
         ;   XREF to: 004ba7b7 (CONDITIONAL_JUMP)  ; LAB_004ba7b7
     PUSH 0x5d816b                       ; 004ba715 | DAT_005d816b
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004ba71a
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba71a
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR ESI,ESI                         ; 004ba71f
     ADD ESP,0x4                         ; 004ba721
     MOV EDI,EAX                         ; 004ba724
@@ -2142,7 +2142,7 @@ section .text
     XOR DL,DL                           ; 004ba798
     PUSH 0x1fc7838                      ; 004ba79a
     MOV byte ptr [0x01cb80f8],DL        ; 004ba79f | DAT_01cb80f8
-    MOV dword ptr [EAX + 0x14d150],0x0  ; 004ba7a5 | g_CDemonSetInstance.field1364304_0x14d150
+    MOV dword ptr [EAX + 0x14d150],0x0  ; 004ba7a5 | g_CDemonSetInstance.min_ambient_value
     CALL core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00441e80 ; 004ba7af
         ;   XREF to: 00441e80 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00441e80(CDemonCamera * this_ptr, float intensity)
     ADD ESP,0x8                         ; 004ba7b4
@@ -2152,8 +2152,8 @@ section .text
     JZ 0x004ba889                       ; 004ba7c1
         ;   XREF to: 004ba889 (CONDITIONAL_JUMP)  ; LAB_004ba889
     PUSH 0x5d819d                       ; 004ba7c7 | DAT_005d819d
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004ba7cc
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba7cc
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR ESI,ESI                         ; 004ba7d1
     ADD ESP,0x4                         ; 004ba7d3
     MOV EDI,EAX                         ; 004ba7d6
@@ -2223,8 +2223,8 @@ section .text
     ADD ESP,0xc                         ; 004ba886
     PUSH 0x5d81f8                       ; 004ba889 | DAT_005d81f8
         ;   Label: LAB_004ba889
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004ba88e
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba88e
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR ESI,ESI                         ; 004ba893
     ADD ESP,0x4                         ; 004ba895
     MOV EDI,EAX                         ; 004ba898
@@ -2287,8 +2287,8 @@ section .text
     ADD ESP,0xc                         ; 004ba936
     PUSH 0x5d824a                       ; 004ba939 | DAT_005d824a
         ;   Label: LAB_004ba939
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004ba93e
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba93e
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR ESI,ESI                         ; 004ba943
     ADD ESP,0x4                         ; 004ba945
     MOV EDI,EAX                         ; 004ba948
@@ -2343,8 +2343,8 @@ section .text
     ADD ESP,0x8                         ; 004ba9c2
     PUSH 0x5d8284                       ; 004ba9c5 | DAT_005d8284
         ;   Label: LAB_004ba9c5
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004ba9ca
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004ba9ca
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR ESI,ESI                         ; 004ba9cf
     ADD ESP,0x4                         ; 004ba9d1
     MOV EDI,EAX                         ; 004ba9d4
@@ -2399,8 +2399,8 @@ section .text
     ADD ESP,0x8                         ; 004baa4e
     PUSH 0x5d82bb                       ; 004baa51 | DAT_005d82bb
         ;   Label: LAB_004baa51
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004baa56
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004baa56
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR EDI,EDI                         ; 004baa5b
     ADD ESP,0x4                         ; 004baa5d
     MOV dword ptr [ESP + 0x278],EDI     ; 004baa60
@@ -2475,7 +2475,7 @@ section .text
     MOV EAX,[0x0061b5a8]                ; 004bab39 | g_CDemonSetPtr
         ;   Label: LAB_004bab39
     MOV EBX,dword ptr [ESP + 0x348]     ; 004bab3e
-    CMP EBX,dword ptr [EAX + 0x14f0a8]  ; 004bab45 | g_CDemonSetInstance.field1372328_0x14f0a8
+    CMP EBX,dword ptr [EAX + 0x14f0a8]  ; 004bab45 | g_CDemonSetInstance.character_count
     JGE 0x004bae34                      ; 004bab4b
         ;   XREF to: 004bae34 (CONDITIONAL_JUMP)  ; LAB_004bae34
     ADD EAX,dword ptr [ESP + 0x338]     ; 004bab51
@@ -2503,8 +2503,8 @@ section .text
     PUSH 0x5d80e9                       ; 004babaa | = "CCrossbow"
         ;   Label: LAB_004babaa
     PUSH EBX                            ; 004babaf
-    CALL core_actor.cpp_FUN_0040c840    ; 004babb0
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c840 ; 004babb0
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004babb5
     TEST EAX,EAX                        ; 004babb8
     JZ 0x004babe2                       ; 004babba
@@ -2553,8 +2553,8 @@ section .text
     PUSH EAX                            ; 004bac2f
     MOV ESI,EAX                         ; 004bac30
     MOV dword ptr [ESP + 0x290],EAX     ; 004bac32
-    CALL core_skeleton.cpp_FUN_00540e80 ; 004bac39
-        ;   XREF to: 00540e80 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_00540e80(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
+    CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80 ; 004bac39
+        ;   XREF to: 00540e80 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 004bac3e
     CMP EAX,-0x1                        ; 004bac41
     JZ 0x004bacd0                       ; 004bac44
@@ -2586,8 +2586,8 @@ section .text
     PUSH EDI                            ; 004bacb1
     MOV ECX,dword ptr [ESP + 0x294]     ; 004bacb2
     PUSH ECX                            ; 004bacb9
-    CALL core_game.cpp_FUN_004b9060     ; 004bacba
-        ;   XREF to: 004b9060 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004b9060(CDeformableModelInstance * model_instance, CSkeleton * skeleton, float scale_factor, int bone_index)
+    CALL core_game.cpp_scaleBoneRecursive_FUN_004b9060 ; 004bacba
+        ;   XREF to: 004b9060 (UNCONDITIONAL_CALL)  ; void core_game.cpp_scaleBoneRecursive_FUN_004b9060(CDeformableModelInstance * model_instance, CSkeleton * skeleton, float scale_factor, int bone_index)
     ADD ESP,0x10                        ; 004bacbf
     INC EBX                             ; 004bacc2
         ;   Label: LAB_004bacc2
@@ -2601,8 +2601,8 @@ section .text
     PUSH 0x5d830f                       ; 004bacd2 | = "bipltit02"
     MOV EBX,dword ptr [ESP + 0x28c]     ; 004bacd7
     PUSH EBX                            ; 004bacde
-    CALL core_skeleton.cpp_FUN_00540e80 ; 004bacdf
-        ;   XREF to: 00540e80 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_00540e80(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
+    CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80 ; 004bacdf
+        ;   XREF to: 00540e80 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 004bace4
     CMP EAX,-0x1                        ; 004bace7
     JZ 0x004bad7d                       ; 004bacea
@@ -2635,8 +2635,8 @@ section .text
     PUSH EDI                            ; 004bad5e
     MOV ECX,dword ptr [ESP + 0x2a0]     ; 004bad5f
     PUSH ECX                            ; 004bad66
-    CALL core_game.cpp_FUN_004b9060     ; 004bad67
-        ;   XREF to: 004b9060 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004b9060(CDeformableModelInstance * model_instance, CSkeleton * skeleton, float scale_factor, int bone_index)
+    CALL core_game.cpp_scaleBoneRecursive_FUN_004b9060 ; 004bad67
+        ;   XREF to: 004b9060 (UNCONDITIONAL_CALL)  ; void core_game.cpp_scaleBoneRecursive_FUN_004b9060(CDeformableModelInstance * model_instance, CSkeleton * skeleton, float scale_factor, int bone_index)
     ADD ESP,0x10                        ; 004bad6c
     INC EBX                             ; 004bad6f
         ;   Label: LAB_004bad6f
@@ -2650,8 +2650,8 @@ section .text
     PUSH 0x5d8319                       ; 004bad7f | = "biprtit02"
     MOV EBX,dword ptr [ESP + 0x28c]     ; 004bad84
     PUSH EBX                            ; 004bad8b
-    CALL core_skeleton.cpp_FUN_00540e80 ; 004bad8c
-        ;   XREF to: 00540e80 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_00540e80(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
+    CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80 ; 004bad8c
+        ;   XREF to: 00540e80 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 004bad91
     CMP EAX,-0x1                        ; 004bad94
     JZ 0x004bab79                       ; 004bad97
@@ -2684,8 +2684,8 @@ section .text
     PUSH EDI                            ; 004bae0f
     MOV ECX,dword ptr [ESP + 0x2ac]     ; 004bae10
     PUSH ECX                            ; 004bae17
-    CALL core_game.cpp_FUN_004b9060     ; 004bae18
-        ;   XREF to: 004b9060 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004b9060(CDeformableModelInstance * model_instance, CSkeleton * skeleton, float scale_factor, int bone_index)
+    CALL core_game.cpp_scaleBoneRecursive_FUN_004b9060 ; 004bae18
+        ;   XREF to: 004b9060 (UNCONDITIONAL_CALL)  ; void core_game.cpp_scaleBoneRecursive_FUN_004b9060(CDeformableModelInstance * model_instance, CSkeleton * skeleton, float scale_factor, int bone_index)
     ADD ESP,0x10                        ; 004bae1d
     INC EBX                             ; 004bae20
         ;   Label: LAB_004bae20
@@ -2702,8 +2702,8 @@ section .text
     JZ 0x004baee4                       ; 004bae3e
         ;   XREF to: 004baee4 (CONDITIONAL_JUMP)  ; LAB_004baee4
     PUSH 0x5d8323                       ; 004bae44 | DAT_005d8323
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004bae49
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004bae49
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     MOV EBX,EAX                         ; 004bae4e
     ADD ESP,0x4                         ; 004bae50
     XOR EAX,EAX                         ; 004bae53
@@ -2760,8 +2760,8 @@ section .text
     MOV dword ptr [EBX + 0x234],EAX     ; 004baede
     PUSH 0x5d8357                       ; 004baee4 | DAT_005d8357
         ;   Label: LAB_004baee4
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004baee9
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004baee9
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR ESI,ESI                         ; 004baeee
     ADD ESP,0x4                         ; 004baef0
     MOV EDI,EAX                         ; 004baef3
@@ -2828,8 +2828,8 @@ section .text
     JZ 0x004b916f                       ; 004baf9e
         ;   XREF to: 004b916f (CONDITIONAL_JUMP)  ; LAB_004b916f
     PUSH 0x5d839c                       ; 004bafa4 | DAT_005d839c
-    CALL support_newmsg.cpp_FUN_0050ff00 ; 004bafa9
-        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_FUN_0050ff00(char * encrypted_msg)
+    CALL support_newmsg.cpp_decryptMessage_FUN_0050ff00 ; 004bafa9
+        ;   XREF to: 0050ff00 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_0050ff00(char * encrypted_msg)
     XOR ESI,ESI                         ; 004bafae
     ADD ESP,0x4                         ; 004bafb0
     MOV EDI,EAX                         ; 004bafb3

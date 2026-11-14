@@ -12,17 +12,17 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[5]:
-;   core_fire.cpp_FUN_004aef90 at 004aefa6
-;   core_fire.cpp_FUN_004af0f0 at 004af107
-;   core_fire.cpp_FUN_004af600 at 004af9d6
-;   core_fire.cpp_FUN_004b4000 at 004b4018
-;   core_gore.cpp_FUN_004e3e20 at 004e3e46
+;   core_fire.cpp_CGlassParticle_init_FUN_004af600 at 004af9d6
+;   core_fire.cpp_CLeaf_init_FUN_004af0f0 at 004af107
+;   core_fire.cpp_CRock_setup_FUN_004aef90 at 004aefa6
+;   core_fire.cpp_CShell_setup_FUN_004b4000 at 004b4018
+;   core_gore.cpp_CBloodParticle_setup_FUN_004e3e20 at 004e3e46
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ec7f1
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cc00
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;
 ; *****************************************************************************
 
@@ -75,16 +75,16 @@ section .text
     PUSH 0x3fc90fdb                     ; 005321cb
         ;   Label: LAB_005321cb
     PUSH 0x3f490fdb                     ; 005321d0
-    CALL core_actor.cpp_FUN_0040cc00    ; 005321d5
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 005321d5
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [ESP + 0x2c],EAX      ; 005321da
     FLD float ptr [ESP + 0x2c]          ; 005321de
     ADD ESP,0x8                         ; 005321e2
     PUSH 0x40c90fdb                     ; 005321e5
     PUSH 0x0                            ; 005321ea
     FSTP float ptr [ESP + 0x18]         ; 005321ec
-    CALL core_actor.cpp_FUN_0040cc00    ; 005321f0
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 005321f0
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [ESP + 0x2c],EAX      ; 005321f5
     FLD float ptr [ESP + 0x2c]          ; 005321f9
     ADD ESP,0x8                         ; 005321fd

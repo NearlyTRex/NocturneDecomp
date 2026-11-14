@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 166,
+    "complexity_score": 91,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 31,
-    "suspect_count": 12,
+    "suspect_count": 5,
     "suspect_types": [
       "negative_offset",
-      "shadow_pointer_walk",
-      "unnamed_field"
+      "pointer_cast"
     ],
     "total_lines": 79
   },
@@ -99,6 +98,26 @@
     },
     "pcode_op_count": 160
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0040ea30",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00411ce0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0040f560",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -121,96 +140,40 @@
       "line": 15,
       "match": "this_ptr_00[-1].",
       "severity": "mild",
-      "text": "*(byte **)&this_ptr_00[-1].field_0x178 = &g_CAnvilVTable;",
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CAnvilVTable;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "*(byte **)&this_ptr_00[-1].field_0x178 = &g_CAnvilVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x64",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x64 = 0x41c80000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x68 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x6c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x6c = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 26,
       "match": "this_ptr_00[-1].",
       "severity": "mild",
-      "text": "return (CAnvil *)&this_ptr_00[-1].field_0x24;",
+      "text": "return (CAnvil *)(this_ptr_00[-1].part_visibility_flags + 9);",
       "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "return (CAnvil *)&this_ptr_00[-1].field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 30,
-      "match": "field_0x1",
-      "severity": "mild",
-      "text": "pCVar4->field_0x1 = cVar1;",
-      "type": "unnamed_field"
+      "match": "(char *)((int)pCVar4",
+      "severity": "moderate",
+      "text": "*(char *)((int)pCVar4->part_visibility_flags + 1) = cVar1;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 31,
-      "match": "field_0x2",
-      "severity": "mild",
-      "text": "pCVar4 = (CKeyFramedModelInstance *)&pCVar4->field_0x2;",
-      "type": "unnamed_field"
+      "match": "(CKeyFramedModelInstance *)((int)pCVar4",
+      "severity": "moderate",
+      "text": "pCVar4 = (CKeyFramedModelInstance *)((int)pCVar4->part_visibility_flags + 2);",
+      "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 33,
       "match": "this_ptr_00[-1].",
       "severity": "mild",
-      "text": "return (CAnvil *)&this_ptr_00[-1].field_0x24;",
+      "text": "return (CAnvil *)(this_ptr_00[-1].part_visibility_flags + 9);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "return (CAnvil *)&this_ptr_00[-1].field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar4->owner`). Replace `pCVar4->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 31,
-      "match": "pCVar4 = (T *)&pCVar4->FIELD",
-      "severity": "moderate",
-      "text": "pCVar4 = (CKeyFramedModelInstance *)&pCVar4->field_0x2;",
-      "type": "shadow_pointer_walk"
     }
   ],
   "vtable_info": {

@@ -6,41 +6,47 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_mimic_cpp_CMimic_beginMorph_FUN_00510b00(CMimic *this_ptr)
 
 {
-  int iVar1;
-  CConsole *pCVar2;
+  UOrientationVector *pUVar1;
+  CDemonActor *pCVar2;
+  CConsole *this_ptr_00;
   
-  if (*(int *)&this_ptr->field_0x47ac0 == 0) {
+  if (this_ptr->morph_target_actor == (CDemonActor *)0x0) {
     _DAT_01d1d400 = "..\\core\\mimic.cpp";
     _DAT_01d1d404 = 0x499;
     core_main_c_FUN_005030e0("CMimic::beginMorph() - can't do this unless morphActor has been created!");
   }
-  *(uint *)(*(int *)&this_ptr->field_0x47ac0 + 0x108) = *(uint *)&this_ptr->field_0x108;
-  *(uint *)(*(int *)&this_ptr->field_0x47ac0 + 0x10c) = *(uint *)&this_ptr->field_0x10c;
-  *(uint *)(*(int *)&this_ptr->field_0x47ac0 + 0x110) = *(uint *)&this_ptr->field_0x110;
-  *(uint *)(*(int *)&this_ptr->field_0x47ac0 + 0xc258) = 1;
-  iVar1 = *(int *)&this_ptr->field_0x47ac0;
-  *(uint *)(iVar1 + 0x20) = *(uint *)&this_ptr->field_0x20;
-  *(uint *)(iVar1 + 0x24) = *(uint *)&this_ptr->field_0x24;
-  *(uint *)(iVar1 + 0x28) = *(uint *)&this_ptr->field_0x28;
-  *(uint *)(iVar1 + 0x2c) = *(uint *)&this_ptr->field_0x2c;
-  iVar1 = *(int *)&this_ptr->field_0x47ac0;
-  if ((uint *)(iVar1 + 0x30) != (uint *)&this_ptr->field_0x30) {
-    *(uint *)(iVar1 + 0x30) = *(uint *)&this_ptr->field_0x30;
-    *(uint *)(iVar1 + 0x34) = *(uint *)&this_ptr->field_0x34;
-    *(uint *)(iVar1 + 0x38) = *(uint *)&this_ptr->field_0x38;
+  (this_ptr->morph_target_actor->scale).x = (this_ptr->base).base.base.scale.x;
+  (this_ptr->morph_target_actor->scale).y = (this_ptr->base).base.base.scale.y;
+  (this_ptr->morph_target_actor->scale).z = (this_ptr->base).base.base.scale.z;
+  pCVar2 = this_ptr->morph_target_actor;
+  pCVar2[0x90].create_event[0x60] = '\x01';
+  pCVar2[0x90].create_event[0x61] = '\0';
+  pCVar2[0x90].create_event[0x62] = '\0';
+  pCVar2[0x90].create_event[99] = '\0';
+  pCVar2 = this_ptr->morph_target_actor;
+  (pCVar2->location).position.x = (this_ptr->base).base.base.location.position.x;
+  (pCVar2->location).position.y = (this_ptr->base).base.base.location.position.y;
+  (pCVar2->location).position.z = (this_ptr->base).base.base.location.position.z;
+  (pCVar2->location).area_id = (this_ptr->base).base.base.location.area_id;
+  pCVar2 = this_ptr->morph_target_actor;
+  pUVar1 = &(this_ptr->base).base.base.orient;
+  if (&pCVar2->orient != pUVar1) {
+    (pCVar2->orient).vec.x = (pUVar1->vec).x;
+    (pCVar2->orient).vec.y = (this_ptr->base).base.base.orient.vec.y;
+    (pCVar2->orient).vec.z = (this_ptr->base).base.base.orient.vec.z;
   }
-  *(uint *)&this_ptr->field_0x47abc = 0;
+  this_ptr->morph_blend = 0.0;
   core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
-            ((CMotionController *)&this_ptr->field_0x158,0,1);
+            (&(this_ptr->base).base.model.base,0,1);
   core_mimic_cpp_CMimic_processMorph_FUN_00510c20(this_ptr,0.0);
-  pCVar2 = g_CConsolePtr;
-  *(uint *)&this_ptr->field_0xfc = 1;
-  engine_console_cpp_FUN_00445430
-            (pCVar2,"%s morphing into type %s\n",this_ptr,&this_ptr->field_0x46e68);
+  this_ptr_00 = g_CConsolePtr;
+  (this_ptr->base).base.base.is_transparent = 1;
+  engine_console_cpp_CConsole_printf_FUN_00445430(this_ptr_00,"%s morphing into type %s\n");
   return;
 }

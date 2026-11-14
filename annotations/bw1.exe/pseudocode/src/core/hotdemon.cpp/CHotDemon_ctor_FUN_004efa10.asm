@@ -8,17 +8,17 @@
 ;
 ; XREF[2]:
 ;   core_hotdemon.cpp_factoryFuncHotDemon_FUN_004ef9e0 at 004ef9f3
-;   core_succubus.cpp_FUN_00592320 at 00592619
+;   core_succubus.cpp_CSuccubus_process_FUN_00592320 at 00592619
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_hotdemon_dfm_005e5054
 ;   undefined4 DAT_00602300
 ;   undefined4 DAT_00602304
-;   undefined1* g_CHotDemonVTable = 004efa70
+;   CEnemy_full_vtable g_CHotDemonVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a0410
-;   core_skeleton.cpp_FUN_00569f50
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     ADD EAX,0x158                       ; 004efa25
     PUSH EAX                            ; 004efa2a
     MOV dword ptr [EAX + -0x4],0x602314 ; 004efa2b | g_CHotDemonVTable
-    CALL core_skeleton.cpp_FUN_00569f50 ; 004efa32
-        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569f50()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 004efa32
+        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
     FLD float ptr [0x00602300]          ; 004efa37 | DAT_00602300
     FLD float ptr [0x00602304]          ; 004efa3d | DAT_00602304
     MOV dword ptr [EBX + 0x2fec],0x3f19999a ; 004efa43

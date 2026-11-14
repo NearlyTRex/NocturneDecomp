@@ -29,17 +29,18 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_00417400(CBoneGuy *this_pt
   float fStack_30;
   float fStack_2c;
   float fStack_28;
-  uint uStack_24;
-  uint uStack_20;
-  uint uStack_1c;
+  float fStack_24;
+  float fStack_20;
+  float fStack_1c;
   float fStack_18;
   
   bVar9 = 0;
-  pCVar4 = core_enemy_cpp_CEnemy_ctor_FUN_00488fd0((CEnemy *)this_ptr);
-  dest = (void *)__arrinit
-                           (&pCVar4[1].field_0x9c,0x14,&g_SBoneGuyBoxTypeInfo);
-  *(byte ***)((int)dest + -0xcf9c) = &g_CBoneGuyVTable;
-  core_skeleton_cpp_FUN_0054eae0((int)dest + -0xcf98,0x5b6d7a);
+  pCVar4 = core_enemy_cpp_CEnemy_ctor_FUN_00488fd0(&this_ptr->base);
+  dest = __arrinit
+                   (pCVar4[1].base.base.create_event + 0x24,0x14,&g_SBoneGuyBoxTypeInfo);
+  *(CBoneGuy_full_vtable **)((int)dest + -0xcf9c) = &g_CBoneGuyVTable;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
+            ((CDeformableModelInstance *)((int)dest + -0xcf98),(char *)0x5b6d7a);
   *(uint *)((int)dest + -0x9e84) = 0x3f19999a;
   *(uint *)((int)dest + -0x9e80) = 0x3f666666;
   pcVar7 = "boneguydie";
@@ -72,10 +73,10 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_00417400(CBoneGuy *this_pt
   *(uint *)((int)dest + -4) = 0;
   *(uint *)((int)dest + -0x7c) = 0;
   *(int *)((int)dest + -0x9c) = iVar5;
-  uStack_24 = core_actor_cpp_FUN_0040ce40(0,0x437f0000);
-  uStack_20 = core_actor_cpp_FUN_0040ce40(0,0x42200000);
-  uStack_1c = core_actor_cpp_FUN_0040ce40(0x42d40000,0x43800000);
-  core_boneguy_cpp_FUN_00417240(&stack0xffffffdc);
+  fStack_24 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.0,255.0);
+  fStack_20 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.0,40.0);
+  fStack_1c = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(106.0,256.0);
+  core_boneguy_cpp_hsvToRgb_FUN_00417240(&stack0xffffffdc);
   fStack_30 = fStack_18;
   *(uint *)((int)&stack0xffffffd4 + (uint)bVar9 * -8) =
        *(uint *)((int)&stack0xffffffec + (uint)bVar9 * 0xfffffffe * 4);

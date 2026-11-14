@@ -1,11 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_3d_c_calculatePolygonLighting_FUN_004039d0(int param_1)
+; void __cdecl engine_3d_c_calculatePolygonLighting_FUN_004039d0(SMRGLHeaderPrimitive *prim)
 ;
+; Parameters:
+; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ;
 ; XREF[20]:
-;   engine_3d.c_FUN_00405280 at 004052ff
 ;   engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_004046e0 at 004047e4
 ;   engine_3d.c_renderPolygonAlphaTexturedNormalizedLit_FUN_00405360 at 004053ae
 ;   engine_3d.c_renderPolygonBlendedLitOp63_FUN_00406ad0 at 00406b28
@@ -15,6 +16,7 @@
 ;   engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00404560 at 004045a3
 ;   engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp56_FUN_004066b0 at 00406707
 ;   engine_3d.c_renderPolygonLitNearPlaneOp35_FUN_004048e0 at 0040492e
+;   engine_3d.c_renderPolygonSolidLitClampedOp17_FUN_00404120 at 0040417d
 ;   ... and 10 more
 ;
 ; Referenced Globals:

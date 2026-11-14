@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_displayMessage_FUN_004cc190
-;   core_game.cpp_FUN_004d2540
+;   core_game.cpp_giveHeroWeapon_FUN_004d2540
 ;   core_sound.cpp_CSound_playSound_FUN_0057d880
 ;   crt_ctype.c_toupper_FUN_005c12b0
 ;
@@ -82,8 +82,8 @@ section .text
     XOR AH,AH                           ; 004d26f3
     PUSH EBX                            ; 004d26f5
     MOV byte ptr [0x01cd0c68],AH        ; 004d26f6 | DAT_01cd0c68
-    CALL core_game.cpp_FUN_004d2540     ; 004d26fc
-        ;   XREF to: 004d2540 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004d2540(char * class_name)
+    CALL core_game.cpp_giveHeroWeapon_FUN_004d2540 ; 004d26fc
+        ;   XREF to: 004d2540 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004d2540(char * class_name)
     ADD ESP,0x4                         ; 004d2701
     MOV ESI,dword ptr [ESP + 0x24]      ; 004d2704
     PUSH 0x40a00000                     ; 004d2708

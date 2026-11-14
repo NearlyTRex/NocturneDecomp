@@ -4,13 +4,15 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CWeapon.h"
 
 // Structure: CBlunderbus
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 1432; ctor 004103f0, fire 00410490
 // Ghidra size: 0x598 (1432 bytes)
 #pragma pack(push, 1)
 typedef struct CBlunderbus {
-    char field_0[1432]; // 0x0
+    CWeapon base; // 0x0, derived
+    float spread_angle; // 0x594, ctor 10.0; fire takes tan(spread_angle * deg->rad) * +0x2e8 (nocedit CShotgun.spread_angle)
 } CBlunderbus;
 #pragma pack(pop)
 

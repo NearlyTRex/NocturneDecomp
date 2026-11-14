@@ -1,20 +1,20 @@
 // Name: core_spike.cpp_factoryFuncSpike_FUN_00560510
 // Address: 00560510
 // Address Range: [[00560510, 0056052b]]
-// Convention: unknown
-// Signature: void core_spike_cpp_factoryFuncSpike_FUN_00560510(void)
+// Convention: __cdecl
+// Signature: CSpike * __cdecl core_spike_cpp_factoryFuncSpike_FUN_00560510(void)
 
 #include "nocturne.h"
 
-void core_spike_cpp_factoryFuncSpike_FUN_00560510(void)
+CSpike * __cdecl core_spike_cpp_factoryFuncSpike_FUN_00560510(void)
 
 {
-  CSpike *this_ptr;
+  CSpike *pCVar1;
   
-  this_ptr = (CSpike *)FUN_005b8be2(0x6bc);
-  if (this_ptr == (CSpike *)0x0) {
-    return;
+  pCVar1 = (CSpike *)operator_new(0x6bc);
+  if (pCVar1 == (CSpike *)0x0) {
+    return (CSpike *)0x0;
   }
-  core_spike_cpp_CSpike_ctor_FUN_00560540(this_ptr);
-  return;
+  pCVar1 = core_spike_cpp_CSpike_ctor_FUN_00560540(pCVar1);
+  return pCVar1;
 }

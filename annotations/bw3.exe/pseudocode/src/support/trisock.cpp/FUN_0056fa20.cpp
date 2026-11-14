@@ -24,21 +24,21 @@ byte support_trisock_cpp_FUN_0056fa20(CSocket *param_1)
     return 4;
   }
   local_214.fd_count = 1;
-  local_214.fd_array[0] = *(SOCKET *)param_1;
+  local_214.fd_array[0] = param_1->handle;
   local_318.fd_count = 1;
-  local_318.fd_array[0] = *(SOCKET *)param_1;
+  local_318.fd_array[0] = param_1->handle;
   local_110.fd_count = 1;
-  local_110.fd_array[0] = *(SOCKET *)param_1;
+  local_110.fd_array[0] = param_1->handle;
   local_c.tv_sec = _DAT_02cfd8a0;
   (&local_c)[-(uint)bVar2].tv_usec = *(long *)(&DAT_02cfd8a4 + (uint)bVar2 * -8);
   select(0,&local_214,&local_318,&local_110,&local_c);
-  iVar1 = __WSAFDIsSet(*(SOCKET *)param_1,&local_214);
+  iVar1 = __WSAFDIsSet(param_1->handle,&local_214);
   bVar2 = iVar1 != 0;
-  iVar1 = __WSAFDIsSet(*(SOCKET *)param_1,&local_318);
+  iVar1 = __WSAFDIsSet(param_1->handle,&local_318);
   if (iVar1 != 0) {
     bVar2 = bVar2 | 2;
   }
-  iVar1 = __WSAFDIsSet(*(SOCKET *)param_1,&local_110);
+  iVar1 = __WSAFDIsSet(param_1->handle,&local_110);
   if (iVar1 != 0) {
     bVar2 = bVar2 | 4;
   }

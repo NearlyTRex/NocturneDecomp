@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 167,
-    "complexity_score": 185,
+    "complexity_score": 78,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 65,
-    "suspect_count": 11,
+    "pseudocode_lines": 63,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 232
+    "total_lines": 230
   },
   "cross_references": [
     {
@@ -68,7 +67,7 @@
     {
       "addr": "005806a0",
       "is_variadic": false,
-      "name": "wincore_winrun.cpp_FUN_005806a0"
+      "name": "wincore_winrun.cpp_getTime_FUN_005806a0"
     }
   ],
   "globals": [
@@ -229,6 +228,32 @@
     },
     "pcode_op_count": 883
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0050d840",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0052ea10",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9783
+    },
+    "nocedit.exe": {
+      "addr": "00541c80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9783
+    },
+    "nocturne.exe": {
+      "addr": "004ebe10",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9783
+    }
+  },
   "stack_frame": {
     "frame_size": 64,
     "local_size": 52,
@@ -333,86 +358,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "if ((player_index < 0) || (*(int *)&this_ptr->field_0x1c <= player_index)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x124",
-      "severity": "mild",
-      "text": "if (player_index != *(int *)&this_ptr->field_0x124) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "local_28 = (float)(local_18 - *(int *)(&this_ptr->field_0x4c + iVar2)) * (float)_DAT_005cac69;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "local_18 = local_18 - *(int *)(&this_ptr->field_0x50 + iVar2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "if ((*(float *)(&this_ptr->field_0x48 + iVar2) < 0.0) || (max_ping <= local_2c)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "*(uint *)(&this_ptr->field_0x48 + iVar2) = 0xbf800000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 58,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "*(int *)(&this_ptr->field_0x4c + iVar2) = _DAT_01da6478;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 65,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "*(uint *)(&this_ptr->field_0x48 + iVar2) = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 66,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "*(int *)(&this_ptr->field_0x4c + iVar2) = local_18;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 67,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "*(int *)(&this_ptr->field_0x50 + iVar2) = local_18;",
-      "type": "unnamed_field"
     }
   ]
 }

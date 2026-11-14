@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_boxactor.cpp_FUN_004203f0 at 004203f6
+;   core_boxactor.cpp_CLightActor_setup_FUN_004203f0 at 004203f6
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b76e9
@@ -17,7 +17,7 @@
 ;   core_dlight.cpp_CDemonLight_applyFilter_FUN_0045db40
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00462580
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;
 ; *****************************************************************************
 
@@ -267,8 +267,8 @@ section .text
     PUSH 0x5b76db                       ; 00420cb9
     LEA EAX,[ESP + 0x8]                 ; 00420cbe
     PUSH EAX                            ; 00420cc2
-    CALL crt_unknown.c_FUN_005a28c0     ; 00420cc3
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00420cc3
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00420cc8
     MOV EAX,ESP                         ; 00420ccb
     PUSH EAX                            ; 00420ccd

@@ -19,8 +19,8 @@ int __cdecl engine_special_cpp_setResolutionAndColorTable_FUN_0055f770(int width
   if (bits_per_pixel < 0x10) {
     bits_per_pixel = 0x10;
   }
-  if ((_DAT_0264bcdc == 0) && (iVar2 = engine_special_cpp_FUN_0055e8c0(_DAT_0264bcf0), iVar2 == 0))
-  {
+  if ((_DAT_0264bcdc == 0) &&
+     (iVar2 = engine_special_cpp_loadExternalRenderer_FUN_0055e8c0(_DAT_0264bcf0), iVar2 == 0)) {
     return 0;
   }
   iVar2 = (*_DAT_0264bbc8)(width,height,bits_per_pixel,&DAT_01c2a38c);
@@ -50,6 +50,6 @@ int __cdecl engine_special_cpp_setResolutionAndColorTable_FUN_0055f770(int width
   }
   _DAT_0264bbb0 = (uint)bVar3;
 LAB_0055f846:
-  engine_special_cpp_FUN_0055f550(0);
+  engine_special_cpp_unlockFrame_FUN_0055f550(0);
   return 1;
 }

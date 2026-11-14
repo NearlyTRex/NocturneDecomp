@@ -40,12 +40,12 @@
 ;
 ; XREF[8]:
 ;   core_game.cpp_CGame_processHotkeys_FUN_004d1a80 at 004d20ae
-;   core_game.cpp_FUN_004cf5e0 at 004cfa39
+;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004cfa39
 ;   core_game.cpp_FUN_004d1760 at 004d17a8
 ;   core_game.cpp_FUN_004d17c0 at 004d1808
 ;   core_script.cpp_CScript_step_FUN_00544460 at 00547e86
-;   core_set.cpp_FUN_0054fbf0 at 0054fc0e
-;   core_set.cpp_FUN_00555740 at 00555754
+;   core_set.cpp_CDemonSet_reinitCamera_FUN_0054fbf0 at 0054fc0e
+;   core_set.cpp_CDemonSet_restoreCameraView_FUN_00555740 at 00555754
 ;   core_setdir.cpp_FUN_00559f80 at 00559fb9
 ;
 ; Referenced Globals:
@@ -205,8 +205,8 @@ section .text
     PUSH EDI                            ; 0054f233
     ADD ESI,0x4                         ; 0054f234
     INC EBX                             ; 0054f237
-    CALL core_set.cpp_FUN_0054f060      ; 0054f238
-        ;   XREF to: 0054f060 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0054f060(CDemonSet * this_ptr, CDemonActor * actor)
+    CALL core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_0054f060 ; 0054f238
+        ;   XREF to: 0054f060 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_0054f060(CDemonSet * this_ptr, CDemonActor * actor)
     MOV EBP,dword ptr [EDI + 0x14d164]  ; 0054f23d
     ADD ESP,0x8                         ; 0054f243
     CMP EBX,EBP                         ; 0054f246
@@ -240,8 +240,8 @@ section .text
         ;   Label: LAB_0054f2ba
     PUSH EAX                            ; 0054f2c1
     MOV dword ptr [EAX + 0x15f6f8],0x0  ; 0054f2c2
-    CALL core_set.cpp_FUN_00550260      ; 0054f2cc
-        ;   XREF to: 00550260 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00550260(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_renderStaticLights_FUN_00550260 ; 0054f2cc
+        ;   XREF to: 00550260 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderStaticLights_FUN_00550260(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0054f2d1
     IMUL EAX,dword ptr [ESP + 0x200],0x1a4 ; 0054f2d4
     MOV ECX,dword ptr [ESP + 0x1fc]     ; 0054f2df
@@ -259,9 +259,9 @@ section .text
     ADD ESP,0x8                         ; 0054f307
     LEA EDI,[ESP + 0x160]               ; 0054f30a
     MOV ESI,0x1fe37f0                   ; 0054f311
-    MOVSD ES:EDI,ESI                    ; 0054f316 | g_CDemonCameraInstance.field4_0x4
-    MOVSD ES:EDI,ESI                    ; 0054f317 | g_CDemonCameraInstance.field8_0x8
-    MOVSD ES:EDI,ESI                    ; 0054f318 | g_CDemonCameraInstance.field12_0xc
+    MOVSD ES:EDI,ESI                    ; 0054f316 | g_CDemonCameraInstance.base.position
+    MOVSD ES:EDI,ESI                    ; 0054f317 | g_CDemonCameraInstance.base.position+4
+    MOVSD ES:EDI,ESI                    ; 0054f318 | g_CDemonCameraInstance.base.position+8
     LEA EDI,[ESP + 0x1b4]               ; 0054f319
     LEA ESI,[ESP + 0x160]               ; 0054f320
     LEA EAX,[ESP + 0x1b4]               ; 0054f327
@@ -282,7 +282,7 @@ section .text
         ;   Label: LAB_0054f366
     LEA EDI,[ESP + 0xb0]                ; 0054f36b
     MOV ESI,0x1fe37fc                   ; 0054f372
-    MOVSD.REP ES:EDI,ESI                ; 0054f377 | g_CDemonCameraInstance.field16_0x10 | g_CDemonCameraInstance.field20_0x14
+    MOVSD.REP ES:EDI,ESI                ; 0054f377 | g_CDemonCameraInstance.base.rotation_matrix.m[0].x | g_CDemonCameraInstance.base.rotation_matrix.m[0].y
     MOV ECX,0xa                         ; 0054f379
     LEA EDI,[ESP + 0xd8]                ; 0054f37e
     LEA ESI,[ESP + 0xb0]                ; 0054f385
@@ -333,8 +333,8 @@ section .text
     PUSH EBP                            ; 0054f434
     ADD EBX,0x4                         ; 0054f435
     INC ESI                             ; 0054f438
-    CALL core_set.cpp_FUN_0054f060      ; 0054f439
-        ;   XREF to: 0054f060 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0054f060(CDemonSet * this_ptr, CDemonActor * actor)
+    CALL core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_0054f060 ; 0054f439
+        ;   XREF to: 0054f060 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_0054f060(CDemonSet * this_ptr, CDemonActor * actor)
     MOV EDX,dword ptr [EBP + 0x14d164]  ; 0054f43e
     ADD ESP,0x8                         ; 0054f444
     CMP ESI,EDX                         ; 0054f447
@@ -484,7 +484,7 @@ section .text
     ADD EDI,EAX                         ; 0054f68e
     PUSH EDI                            ; 0054f690
     CALL core_setutil.cpp_C3DSCamera_apply_FUN_0055c5f0 ; 0054f691
-        ;   XREF to: 0055c5f0 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_C3DSCamera_apply_FUN_0055c5f0()
+        ;   XREF to: 0055c5f0 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSCamera_apply_FUN_0055c5f0(C3DSCamera * this_ptr, CDemonCamera * camera)
     ADD ESP,0x8                         ; 0054f696
     MOV ECX,dword ptr [ESI + 0x154]     ; 0054f699
     MOV EBX,dword ptr [ESP + 0x1fc]     ; 0054f69f
@@ -543,8 +543,8 @@ section .text
     PUSH 0x10                           ; 0054f74e
     MOV ESI,dword ptr [ESP + 0x200]     ; 0054f750
     PUSH ESI                            ; 0054f757
-    CALL core_set.cpp_FUN_005545a0      ; 0054f758
-        ;   XREF to: 005545a0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_005545a0(CDemonSet * this_ptr, uint dirty_flags_mask)
+    CALL core_set.cpp_CDemonSet_buildDisplayList_FUN_005545a0 ; 0054f758
+        ;   XREF to: 005545a0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_buildDisplayList_FUN_005545a0(CDemonSet * this_ptr, uint dirty_flags_mask)
     ADD ESP,0x8                         ; 0054f75d
     PUSH 0x1                            ; 0054f760
     PUSH 0x461c3f9a                     ; 0054f762
@@ -560,8 +560,8 @@ section .text
     PUSH EBP                            ; 0054f782
     PUSH ESI                            ; 0054f783
     MOV dword ptr [0x02026344],EBP      ; 0054f784 | DAT_02026344
-    CALL core_set.cpp_FUN_0054eef0      ; 0054f78a
-        ;   XREF to: 0054eef0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0054eef0(CDemonSet * this_ptr, int layer_flag)
+    CALL core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0054eef0 ; 0054f78a
+        ;   XREF to: 0054eef0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0054eef0(CDemonSet * this_ptr, int layer_flag)
     ADD ESP,0x8                         ; 0054f78f
     PUSH 0x1fe37ec                      ; 0054f792
     MOV dword ptr [0x02026344],EBX      ; 0054f797 | DAT_02026344
@@ -579,8 +579,8 @@ section .text
     PUSH 0x5f0809                       ; 0054f7c3 | = "%s.raw"
     LEA EAX,[ESP + 0x68]                ; 0054f7c8
     PUSH EAX                            ; 0054f7cc
-    CALL crt_unknown.c_FUN_005bfb40     ; 0054f7cd
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0054f7cd
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 0054f7d2
     LEA EAX,[ESP + 0x60]                ; 0054f7d5
     PUSH EAX                            ; 0054f7d9
@@ -590,8 +590,8 @@ section .text
     ADD ESP,0x8                         ; 0054f7e4
     PUSH EBP                            ; 0054f7e7
     PUSH ESI                            ; 0054f7e8
-    CALL core_set.cpp_FUN_0054eef0      ; 0054f7e9
-        ;   XREF to: 0054eef0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0054eef0(CDemonSet * this_ptr, int layer_flag)
+    CALL core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0054eef0 ; 0054f7e9
+        ;   XREF to: 0054eef0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0054eef0(CDemonSet * this_ptr, int layer_flag)
     ADD ESP,0x8                         ; 0054f7ee
     PUSH EBX                            ; 0054f7f1
     PUSH 0x1fe37ec                      ; 0054f7f2
@@ -616,15 +616,15 @@ section .text
         ;   XREF to: 0054f834 (CONDITIONAL_JUMP)  ; LAB_0054f834
     PUSH EBX                            ; 0054f82a
     PUSH EAX                            ; 0054f82b | g_CWaterInstance
-    CALL core_water.cpp_FUN_005a9f10    ; 0054f82c
-        ;   XREF to: 005a9f10 (UNCONDITIONAL_CALL)  ; void core_water.cpp_FUN_005a9f10(CWater * this_ptr, int render_mode)
+    CALL core_water.cpp_CWater_render_FUN_005a9f10 ; 0054f82c
+        ;   XREF to: 005a9f10 (UNCONDITIONAL_CALL)  ; void core_water.cpp_CWater_render_FUN_005a9f10(CWater * this_ptr, int render_mode)
     ADD ESP,0x8                         ; 0054f831
     PUSH 0x1                            ; 0054f834
         ;   Label: LAB_0054f834
     MOV EAX,dword ptr [ESP + 0x200]     ; 0054f836
     PUSH EAX                            ; 0054f83d
-    CALL core_set.cpp_FUN_0054eef0      ; 0054f83e
-        ;   XREF to: 0054eef0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0054eef0(CDemonSet * this_ptr, int layer_flag)
+    CALL core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0054eef0 ; 0054f83e
+        ;   XREF to: 0054eef0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0054eef0(CDemonSet * this_ptr, int layer_flag)
     ADD ESP,0x8                         ; 0054f843
     PUSH 0x0                            ; 0054f846
         ;   Label: LAB_0054f846
@@ -718,8 +718,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x1fc]     ; 0054f971
         ;   Label: LAB_0054f971
     PUSH EBP                            ; 0054f978
-    CALL core_set.cpp_FUN_005542c0      ; 0054f979
-        ;   XREF to: 005542c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_005542c0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_process_FUN_005542c0 ; 0054f979
+        ;   XREF to: 005542c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_process_FUN_005542c0(CDemonSet * this_ptr)
     MOV EAX,[0x01fe4e38]                ; 0054f97e | DAT_01fe4e38
     ADD ESP,0x4                         ; 0054f983
     XOR EBP,EBP                         ; 0054f986
@@ -750,8 +750,8 @@ section .text
     PUSH 0x1                            ; 0054f9d5
     MOV EAX,dword ptr [ESP + 0x200]     ; 0054f9d7
     PUSH EAX                            ; 0054f9de
-    CALL core_set.cpp_FUN_0054eef0      ; 0054f9df
-        ;   XREF to: 0054eef0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0054eef0(CDemonSet * this_ptr, int layer_flag)
+    CALL core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0054eef0 ; 0054f9df
+        ;   XREF to: 0054eef0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0054eef0(CDemonSet * this_ptr, int layer_flag)
     ADD ESP,0x8                         ; 0054f9e4
     PUSH ESI                            ; 0054f9e7
     CALL core_dlight.cpp_CDemonLight_endBackgroundScene_FUN_00462cd0 ; 0054f9e8
@@ -845,15 +845,15 @@ section .text
     PUSH EAX                            ; 0054faf0
     MOV ECX,dword ptr [0x006144d0]      ; 0054faf1 | DAT_006144d0
     PUSH ECX                            ; 0054faf7
-    CALL core_dskybox.cpp_FUN_00486900  ; 0054faf8
-        ;   XREF to: 00486900 (UNCONDITIONAL_CALL)  ; void core_dskybox.cpp_FUN_00486900(SMRGLSkyTexture * sky_texture, char * texture_name, int brightness_factor)
+    CALL core_dskybox.cpp_renderSkyDome_FUN_00486900 ; 0054faf8
+        ;   XREF to: 00486900 (UNCONDITIONAL_CALL)  ; void core_dskybox.cpp_renderSkyDome_FUN_00486900(SMRGLSkyTexture * sky_texture, char * texture_name, int brightness_factor)
     ADD ESP,0xc                         ; 0054fafd
     PUSH 0x1                            ; 0054fb00
         ;   Label: LAB_0054fb00
     MOV EBX,dword ptr [ESP + 0x200]     ; 0054fb02
     PUSH EBX                            ; 0054fb09
-    CALL core_set.cpp_FUN_0054eef0      ; 0054fb0a
-        ;   XREF to: 0054eef0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0054eef0(CDemonSet * this_ptr, int layer_flag)
+    CALL core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0054eef0 ; 0054fb0a
+        ;   XREF to: 0054eef0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0054eef0(CDemonSet * this_ptr, int layer_flag)
     ADD ESP,0x8                         ; 0054fb0f
     PUSH 0x1                            ; 0054fb12
     PUSH 0x1                            ; 0054fb14
@@ -876,8 +876,8 @@ section .text
         ;   XREF to: 0054fb4d (CONDITIONAL_JUMP)  ; LAB_0054fb4d
     PUSH EBP                            ; 0054fb43
     PUSH EAX                            ; 0054fb44 | g_CWaterInstance
-    CALL core_water.cpp_FUN_005a9f10    ; 0054fb45
-        ;   XREF to: 005a9f10 (UNCONDITIONAL_CALL)  ; void core_water.cpp_FUN_005a9f10(CWater * this_ptr, int render_mode)
+    CALL core_water.cpp_CWater_render_FUN_005a9f10 ; 0054fb45
+        ;   XREF to: 005a9f10 (UNCONDITIONAL_CALL)  ; void core_water.cpp_CWater_render_FUN_005a9f10(CWater * this_ptr, int render_mode)
     ADD ESP,0x8                         ; 0054fb4a
     PUSH 0x0                            ; 0054fb4d
         ;   Label: LAB_0054fb4d

@@ -1,0 +1,153 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 40,
+    "complexity_score": 67,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 27,
+    "suspect_count": 3,
+    "suspect_types": [
+      "pointer_cast",
+      "undefined_data"
+    ],
+    "total_lines": 67
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004fea40",
+    "address_range": [
+      [
+        "004fea40",
+        "004fea97"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_applyScalefactorsToLayer2Samples_FUN_004fea40",
+    "signature": "void __cdecl sound_mp3_cpp_applyScalefactorsToLayer2Samples_FUN_004fea40(float *sample_array,int *scalefactor_indices,SMpegFrame *frame_info)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.363636363636363,
+    "instruction_count": 33,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CBRANCH": 3,
+      "COPY": 59,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_MULT": 1,
+      "INT_ADD": 17,
+      "INT_AND": 27,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 26,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 13,
+      "INT_SUB": 6,
+      "INT_XOR": 2,
+      "LOAD": 11,
+      "POPCOUNT": 13,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 210
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00505f60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00527130",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005303a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004e3f20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "sample_array",
+        "offset": 4,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "scalefactor_indices",
+        "offset": 8,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "frame_info",
+        "offset": 12,
+        "size": 4,
+        "type": "SMpegFrame *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(int *)((int)scalefactor_indices",
+      "severity": "moderate",
+      "text": "piVar4 = (int *)((int)scalefactor_indices + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(float *)((int)sample_array",
+      "severity": "moderate",
+      "text": "pfVar3 = (float *)((int)sample_array + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_00601360",
+      "severity": "mild",
+      "text": "*pfVar3 = *pfVar3 * (float)*(double *)(&DAT_00601360 + iVar2 * 8);",
+      "type": "undefined_data"
+    }
+  ]
+}

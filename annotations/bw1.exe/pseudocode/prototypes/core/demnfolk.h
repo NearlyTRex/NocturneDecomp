@@ -7,7 +7,7 @@
 
 // Original: core_demnfolk.cpp_staticInit_FUN_00458600
 // Address: 00458600
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_demnfolk.cpp_FUN_00458630
 // Address: 00458630
@@ -27,28 +27,108 @@ undefined4 FUN_00458890(float *param_1);
 
 // Original: core_demnfolk.cpp_factoryFuncDemnfolk_FUN_004589e0
 // Address: 004589e0
-void factoryFuncDemnfolk(void);
+CDemnfolk * __cdecl factoryFuncDemnfolk(void);
 
 // Original: core_demnfolk.cpp_CDemnfolk_getActorType_FUN_00458a00
 // Address: 00458a00
-CDemonActorType * CDemnfolk::getActorType(CDemnfolk *this_ptr);
+CDemonActorType * __cdecl CDemnfolk::getActorType(CDemnfolk *this_ptr);
 
 // Original: core_demnfolk.cpp_CDemnfolk_ctor_FUN_00458a10
 // Address: 00458a10
-CDemnfolk * CDemnfolk::ctor(CDemnfolk *this_ptr);
+CDemnfolk * __cdecl CDemnfolk::ctor(CDemnfolk *this_ptr);
 
-// Original: core_demnfolk.cpp_FUN_00458bc0
+// Original: core_demnfolk.cpp_CDemnfolk_setup_FUN_00458bc0
 // Address: 00458bc0
-void FUN_00458bc0(CEnemy *param_1);
+void __cdecl CDemnfolk::setup(CDemnfolk *this_ptr);
 
-// Original: core_demnfolk.cpp_FUN_00459100
+// Original: core_demnfolk.cpp_CDemnfolk_process_FUN_00459100
 // Address: 00459100
-void FUN_00459100(CEnemy *param_1,float param_2);
+void __cdecl CDemnfolk::process(CDemnfolk *this_ptr,float delta_time);
 
-// Original: core_demnfolk.cpp_FUN_0045b120
+// Original: core_demnfolk.cpp_CDemnfolk_getCarryObjToBodyXForm_FUN_0045b120
 // Address: 0045b120
-void FUN_0045b120(int param_1,int param_2);
+CMatrix3x4f * __stack2_esi CDemnfolk::getCarryObjToBodyXForm(CDemnfolk *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_demnfolk.cpp_FUN_0045b560
 // Address: 0045b560
 undefined4 FUN_0045b560(CCharacter *param_1,float param_2);
+
+// Original: core_demnfolk.cpp_FUN_0045bec0
+// Address: 0045bec0
+undefined4 FUN_0045bec0(int param_1,uint param_2);
+
+// Original: core_demnfolk.cpp_FUN_0045bf60
+// Address: 0045bf60
+undefined4 FUN_0045bf60(int param_1,undefined4 param_2);
+
+// Original: core_demnfolk.cpp_FUN_0045bfa0
+// Address: 0045bfa0
+void FUN_0045bfa0(int param_1);
+
+// Original: core_demnfolk.cpp_CDemnfolk_renderOpaque_FUN_0045bfe0
+// Address: 0045bfe0
+int __cdecl CDemnfolk::renderOpaque(CDemnfolk *this_ptr);
+
+// Original: core_demnfolk.cpp_CDemnfolk_renderTransparent_FUN_0045c020
+// Address: 0045c020
+int __cdecl CDemnfolk::renderTransparent(CDemnfolk *this_ptr);
+
+// Original: core_demnfolk.cpp_CDemnfolk_archive_FUN_0045c1e0
+// Address: 0045c1e0
+void __cdecl CDemnfolk::archive(CDemnfolk *this_ptr);
+
+// Original: core_demnfolk.cpp_CDemnfolk_canBeAttracted_FUN_0045c350
+// Address: 0045c350
+int __cdecl CDemnfolk::canBeAttracted(CDemnfolk *this_ptr,CDemonActor *grabber);
+
+// Original: core_demnfolk.cpp_FUN_0045c4a0
+// Address: 0045c4a0
+void FUN_0045c4a0(CCharacter *param_1,float *param_2);
+
+// Original: core_demnfolk.cpp_CDemnfolk_processDamage_FUN_0045c7b0
+// Address: 0045c7b0
+void __cdecl CDemnfolk::processDamage(CDemnfolk *this_ptr,SDamageInfo *damage_info);
+
+// Original: core_demnfolk.cpp_CDemnfolk_getTargetPoints_FUN_0045c9f0
+// Address: 0045c9f0
+int __cdecl CDemnfolk::getTargetPoints(CDemnfolk *this_ptr,CVector3f *out_points_array);
+
+// Original: core_demnfolk.cpp_CDemnfolk_isGrabbable_FUN_0045cd00
+// Address: 0045cd00
+int __cdecl CDemnfolk::isGrabbable(CDemnfolk *this_ptr,CDemonActor *grabber);
+
+// Original: core_demnfolk.cpp_CDemnfolk_canBeGrabbed_FUN_0045cd40
+// Address: 0045cd40
+int __cdecl CDemnfolk::canBeGrabbed(CDemnfolk *this_ptr,CDemonActor *grabber,int grab_type);
+
+// Original: core_demnfolk.cpp_CDemnfolk_getGrabbed_FUN_0045cd50
+// Address: 0045cd50
+int __cdecl CDemnfolk::getGrabbed(CDemnfolk *this_ptr,CDemonActor *grabber,int grab_type);
+
+// Original: core_demnfolk.cpp_CDemnfolk_shouldIgnoreForTargeting_FUN_0045cdc0
+// Address: 0045cdc0
+int __cdecl CDemnfolk::shouldIgnoreForTargeting(CDemnfolk *this_ptr);
+
+// Original: core_demnfolk.cpp_CDemnfolk_playChaseSound_FUN_0045cdf0
+// Address: 0045cdf0
+void __cdecl CDemnfolk::playChaseSound(CDemnfolk *this_ptr);
+
+// Original: core_demnfolk.cpp_CDemnfolk_playHurtSound_FUN_0045cec0
+// Address: 0045cec0
+void __cdecl CDemnfolk::playHurtSound(CDemnfolk *this_ptr);
+
+// Original: core_demnfolk.cpp_CDemnfolk_playDeathSound_FUN_0045cf70
+// Address: 0045cf70
+void __cdecl CDemnfolk::playDeathSound(CDemnfolk *this_ptr);
+
+// Original: core_demnfolk.cpp_CDemnfolk_playFeedingSound_FUN_0045d020
+// Address: 0045d020
+void __cdecl CDemnfolk::playFeedingSound(CDemnfolk *this_ptr);
+
+// Original: core_demnfolk.cpp_FUN_0045d060
+// Address: 0045d060
+void FUN_0045d060(int param_1);
+
+// Original: core_demnfolk.cpp_CDemnfolk_dtor_FUN_0045d0e0
+// Address: 0045d0e0
+CDemnfolk * __cdecl CDemnfolk::dtor(CDemnfolk *this_ptr,uint flags);

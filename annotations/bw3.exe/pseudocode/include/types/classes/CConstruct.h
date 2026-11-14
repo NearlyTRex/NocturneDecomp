@@ -2,15 +2,39 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CBodyPart;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
+#include "types/classes/CQuaternion4f.h"
+#include "types/classes/CVector3f.h"
+#include "types/structs/SBoneGuyBox.h"
 
 // Structure: CConstruct
-// Stub: size from Watcom RTTI, fields not yet recovered
+// ctor 00442420 __arrinit(this+0xd184, 0x18, SBoneGuyBox); archive 00443ca0 keys; setup 004425f0; CConstructBone/CConstructRed ctors
 // Ghidra size: 0xd860 (55392 bytes)
 #pragma pack(push, 1)
 typedef struct CConstruct {
-    char field_0[55392]; // 0x0
+    CEnemy base; // 0x0, derived; unchanged
+    char fall_event[100]; // 0xd054, ctor strcpy; archive "fallEvent"
+    int part_indices[12]; // 0xd0b8, setup 004425f0 findPartByName into +0xd0b8..+0xd0e4 (slot 7 unused); [0] read by explode FUN_00444110
+    char field_53480[8]; // 0xd0e8
+    uint sfx_handles[8]; // 0xd0f0, ctor zeroes +0xd0f0..+0xd10c; process 00442a20 / processDamage 00443f00 isSfxPlaying/killSfx
+    int unknown_0xd110; // 0xd110, ctor stores 2; no reader found
+    char death_event[100]; // 0xd114, ctor strcpy; archive "deathEvent"
+    float recombine_time; // 0xd178, archive "recombineTime"
+    int initial_hit_points; // 0xd17c, setup round(hit_points) / 0x2d,0x37,0x41 by variant; CConstructBone/Red ctors; process restores hit_points
+    int box_count; // 0xd180, archive "boxCount"
+    SBoneGuyBox boxes[24]; // 0xd184, ctor __arrinit count 0x18 stride 0x48; archive boxList*
+    int blown_up; // 0xd844, archive "blownUp"; process states 0..3
+    int pickable_box_index; // 0xd848, process sets -1, indexes boxes[i].body_part (+0xd1c8 + i*0x48)
+    int construct_variant; // 0xd84c, ctor 0, CConstructBone ctor 1, CConstructRed ctor 2; setup picks hit points/radii by it
+    float recombine_interpolation; // 0xd850, archive "param"; process accumulates
+    int death_sound_played; // 0xd854, process: plays once, sets 1
+    float difficulty_speed_scale; // 0xd858, setup 0.75 / 1.0 by COMBATMODEHARD; process delta*speed*this
+    int trail_texture_type; // 0xd85c, setup 2/3, Bone ctor 3, Red ctor 2; process picks fire-trail texture 1/2/3
 } CConstruct;
 #pragma pack(pop)
 

@@ -2,59 +2,57 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 43,
+    "complexity_score": 8,
     "cross_reference_count": 7,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 8,
-    "suspect_count": 3,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 21
   },
   "cross_references": [
     {
       "addr": "0043a7a0",
       "from_addr": "0043a801",
-      "name": "core_crossbow.cpp_FUN_0043a7a0",
+      "name": "core_crossbow.cpp_CCrossbow_fire_FUN_0043a7a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0047a0a0",
       "from_addr": "0047a0a6",
-      "name": "core_dynamite.cpp_FUN_0047a0a0",
+      "name": "core_dynamite.cpp_CDynamite_fire_FUN_0047a0a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00485b40",
       "from_addr": "00485ba4",
-      "name": "core_elephant.cpp_FUN_00485b40",
+      "name": "core_elephant.cpp_CElephantGun_fire_FUN_00485b40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004cbdc0",
       "from_addr": "004cbe21",
-      "name": "core_gun.cpp_FUN_004cbdc0",
+      "name": "core_gun.cpp_CGun_fire_FUN_004cbdc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e2e70",
       "from_addr": "004e38b9",
-      "name": "core_lightgun.cpp_FUN_004e2e70",
+      "name": "core_lightgun.cpp_CLightGun_fire_FUN_004e2e70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0053f170",
       "from_addr": "0053f1d4",
-      "name": "core_shotgun.cpp_FUN_0053f170",
+      "name": "core_shotgun.cpp_CShotgun_fire_FUN_0053f170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00575800",
       "from_addr": "00575898",
-      "name": "core_tommygun.cpp_FUN_00575800",
+      "name": "core_tommygun.cpp_CTommyGun_fire_FUN_00575800",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -78,7 +76,7 @@
       {
         "call_addr": "0043a801",
         "call_type": "direct",
-        "caller": "core_crossbow.cpp_FUN_0043a7a0",
+        "caller": "core_crossbow.cpp_CCrossbow_fire_FUN_0043a7a0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -89,7 +87,7 @@
       {
         "call_addr": "0047a0a6",
         "call_type": "direct",
-        "caller": "core_dynamite.cpp_FUN_0047a0a0",
+        "caller": "core_dynamite.cpp_CDynamite_fire_FUN_0047a0a0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -100,7 +98,7 @@
       {
         "call_addr": "00485ba4",
         "call_type": "direct",
-        "caller": "core_elephant.cpp_FUN_00485b40",
+        "caller": "core_elephant.cpp_CElephantGun_fire_FUN_00485b40",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -111,7 +109,7 @@
       {
         "call_addr": "004cbe21",
         "call_type": "direct",
-        "caller": "core_gun.cpp_FUN_004cbdc0",
+        "caller": "core_gun.cpp_CGun_fire_FUN_004cbdc0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -122,7 +120,7 @@
       {
         "call_addr": "004e38b9",
         "call_type": "direct",
-        "caller": "core_lightgun.cpp_FUN_004e2e70",
+        "caller": "core_lightgun.cpp_CLightGun_fire_FUN_004e2e70",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -133,7 +131,7 @@
       {
         "call_addr": "0053f1d4",
         "call_type": "direct",
-        "caller": "core_shotgun.cpp_FUN_0053f170",
+        "caller": "core_shotgun.cpp_CShotgun_fire_FUN_0053f170",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -144,7 +142,7 @@
       {
         "call_addr": "00575898",
         "call_type": "direct",
-        "caller": "core_tommygun.cpp_FUN_00575800",
+        "caller": "core_tommygun.cpp_CTommyGun_fire_FUN_00575800",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -181,6 +179,32 @@
     },
     "pcode_op_count": 42
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005adde0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9167
+    },
+    "bw3.exe": {
+      "addr": "0057b880",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1389
+    },
+    "nocedit.exe": {
+      "addr": "005ee6e0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00554600",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -197,32 +221,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x6c4",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x6c4) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x6c4",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x6c4 = *(int *)&this_ptr->field_0x6c4 + -1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x6c4",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x6c4 = *(int *)&this_ptr->field_0x6c4 + -1;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

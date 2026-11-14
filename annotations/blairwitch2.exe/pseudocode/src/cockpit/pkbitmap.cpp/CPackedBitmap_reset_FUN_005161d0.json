@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 7,
-    "complexity_score": 53,
+    "complexity_score": 8,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 8,
-    "suspect_count": 4,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 15
   },
   "cross_references": [
@@ -22,15 +20,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00516160",
-      "from_addr": "00516169",
-      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_init_FUN_00516160",
+      "addr": "00516200",
+      "from_addr": "0051621a",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00516200",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00516200",
-      "from_addr": "0051621a",
-      "name": "cockpit_pkbitmap.cpp_FUN_00516200",
+      "addr": "00516160",
+      "from_addr": "00516169",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_init_FUN_00516160",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -65,7 +63,7 @@
       {
         "call_addr": "0051621a",
         "call_type": "direct",
-        "caller": "cockpit_pkbitmap.cpp_FUN_00516200",
+        "caller": "cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00516200",
         "estimated_params": 1,
         "instructions_analyzed": 3,
         "method": "push_count",
@@ -103,6 +101,32 @@
     },
     "pcode_op_count": 18
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00537520",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0050f200",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0054a8b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004f3f20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -119,38 +143,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x18 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x20 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x14 = 0;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

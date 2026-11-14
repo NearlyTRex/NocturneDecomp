@@ -31,7 +31,7 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 00449493
     PUSH EAX                            ; 00449499
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770 ; 0044949a
-        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770()
+        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770(CKeyFramedModelInstance * model_ptr, char * property_name)
     MOV EDX,dword ptr [0x006111a4]      ; 0044949f | g_CCrateClassVersion
     ADD ESP,0x8                         ; 004494a5
     CMP EDX,0x2                         ; 004494a8
@@ -44,7 +44,7 @@ section .text
     LEA EAX,[EBX + 0x2dc]               ; 004494b4
     PUSH EAX                            ; 004494ba
     CALL core_actor.cpp_archiveActor_FUN_0040b6f0 ; 004494bb
-        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b6f0()
+        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b6f0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 004494c0
     POP EBX                             ; 004494c3
     RET                                 ; 004494c4

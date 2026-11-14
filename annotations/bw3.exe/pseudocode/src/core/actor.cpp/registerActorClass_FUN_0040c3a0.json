@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 155,
-    "cross_reference_count": 104,
+    "complexity_score": 154,
+    "cross_reference_count": 105,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 45,
+    "pseudocode_lines": 44,
     "suspect_count": 9,
     "suspect_types": [
       "displaced_global_access",
@@ -15,7 +15,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 134
+    "total_lines": 133
   },
   "cross_references": [
     {
@@ -135,7 +135,7 @@
     {
       "addr": "00442380",
       "from_addr": "0044239b",
-      "name": "core_constrct.cpp_staticInit_FUN_00442380",
+      "name": "core_construc.cpp_staticInit_FUN_00442380",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -160,6 +160,12 @@
       "addr": "00598700",
       "from_addr": "0059871b",
       "name": "core_darkwolf.cpp_staticInit_FUN_00598700",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00454750",
+      "from_addr": "0045476b",
+      "name": "core_demnfolk.cpp_staticInit_FUN_00454750",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -343,12 +349,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00454750",
-      "from_addr": "0045476b",
-      "name": "core_hostage.cpp_staticInit_FUN_00454750",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004d5370",
       "from_addr": "004d538b",
       "name": "core_hotdemon.cpp_staticInit_FUN_004d5370",
@@ -465,7 +465,7 @@
     {
       "addr": "00543400",
       "from_addr": "00543455",
-      "name": "core_setedit.cpp_staticInit_FUN_00543400",
+      "name": "core_shadow.cpp_staticInit_FUN_00543400",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -555,7 +555,7 @@
     {
       "addr": "00593d40",
       "from_addr": "00593d95",
-      "name": "core_tawiscar.cpp_staticInit_FUN_00593d40",
+      "name": "core_tawiscara.cpp_staticInit_FUN_00593d40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -565,15 +565,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0056c000",
-      "from_addr": "0056c01b",
-      "name": "core_thehand.cpp_staticInit_FUN_0056c000",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0056b310",
       "from_addr": "0056b32b",
       "name": "core_tommygun.cpp_staticInit_FUN_0056b310",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056c000",
+      "from_addr": "0056c01b",
+      "name": "core_toxhand.cpp_staticInit_FUN_0056c000",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056cca0",
+      "from_addr": "0056ccbb",
+      "name": "core_trap.cpp_staticInit_FUN_0056cca0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -639,7 +645,7 @@
     {
       "addr": "0058d2c0",
       "from_addr": "0058d2db",
-      "name": "core_zombprie.cpp_staticInit_FUN_0058d2c0",
+      "name": "core_zombiepriest.cpp_staticInit_FUN_0058d2c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -651,9 +657,9 @@
         "0040c473"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_actor.cpp_registerActorClass_FUN_0040c3a0",
-    "signature": "CDemonActorType * core_actor_cpp_registerActorClass_FUN_0040c3a0(CDemonActorType *this_ptr,char *class_name,CDemonActor_FactoryFunc *factory_func,int *max_version,int version,CDemonActorType *parent_class_info)"
+    "signature": "CDemonActorType * __cdecl core_actor_cpp_registerActorClass_FUN_0040c3a0(CDemonActorType *this_ptr,char *class_name,CDemonActor_FactoryFunc *factory_func,int *max_version,int version,CDemonActorType *parent_class_info)"
   },
   "function_calls": [
     {
@@ -862,6 +868,32 @@
     },
     "pcode_op_count": 389
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0040c450",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0040c160",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0040c2e0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0040d3f0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 28,
     "local_size": 4,
@@ -924,7 +956,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 30,
       "match": "DAT_007df9c4",
       "severity": "mild",
       "text": "iVar3 = DAT_007df9c4;",
@@ -932,7 +964,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 34,
       "match": "DAT_006074b8",
       "severity": "mild",
       "text": "if (((&DAT_006074b8)[(byte)(bVar2 + 1)] & 0xe0) != 0) {",
@@ -940,7 +972,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 45,
       "match": "DAT_007df9c8",
       "severity": "mild",
       "text": "(&DAT_007df9c8)[DAT_007df9c4] = this_ptr;",
@@ -948,7 +980,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 45,
       "match": "DAT_007df9c4",
       "severity": "mild",
       "text": "(&DAT_007df9c8)[DAT_007df9c4] = this_ptr;",
@@ -956,7 +988,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 46,
       "match": "DAT_007df9c4",
       "severity": "mild",
       "text": "DAT_007df9c4 = DAT_007df9c4 + 1;",
@@ -964,7 +996,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 46,
       "match": "DAT_007df9c4",
       "severity": "mild",
       "text": "DAT_007df9c4 = DAT_007df9c4 + 1;",
@@ -972,7 +1004,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 15,
+      "line": 14,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

@@ -69,16 +69,16 @@
 ;   undefined4 DAT_01c6e24c
 ;
 ; Called Functions:
-;   core_dlight.cpp_FUN_0045dea0
+;   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_0045dea0
 ;   crt_math.c_round_FUN_005a3120
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046d1a0
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
 ;   engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046c510
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0
-;   engine_matrix.c_FUN_0046d1a0
-;   engine_matrix.c_FUN_0046d250
-;   engine_matrix.c_pop_FUN_0046d080
+;   engine_drender.cpp_FUN_0046d250
+;   engine_drender.cpp_pop_FUN_0046d080
 ;   engine_special.cpp_FUN_005632a3
 ;
 ; *****************************************************************************
@@ -117,8 +117,8 @@ section .text
     PUSH ESI                            ; 0045d57a | DAT_01bdd7e4
     LEA ESI,[ESP + 0x8c]                ; 0045d57b
     LEA EDI,[ESP + 0x50]                ; 0045d582
-    CALL engine_matrix.c_FUN_0046d250   ; 0045d586
-        ;   XREF to: 0046d250 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_0046d250()
+    CALL engine_drender.cpp_FUN_0046d250 ; 0045d586
+        ;   XREF to: 0046d250 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046d250()
     ADD ESP,0x4                         ; 0045d58b
     LEA ESI,[ESP + 0x88]                ; 0045d58e
     LEA EAX,[ESP + 0x4c]                ; 0045d595
@@ -136,8 +136,8 @@ section .text
     PUSH EAX                            ; 0045d5b3 | DAT_01bdd7e4
     LEA ESI,[ESP + 0x80]                ; 0045d5b4
     LEA EDI,[ESP + 0x98]                ; 0045d5bb
-    CALL engine_matrix.c_FUN_0046d1a0   ; 0045d5c2
-        ;   XREF to: 0046d1a0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_0046d1a0()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046d1a0 ; 0045d5c2
+        ;   XREF to: 0046d1a0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046d1a0(CDemonRenderer * this_ptr, CVector3i * output)
     LEA ESI,[ESP + 0x80]                ; 0045d5c7
     ADD ESP,0x4                         ; 0045d5ce
     MOVSD ES:EDI,ESI                    ; 0045d5d1
@@ -459,13 +459,13 @@ section .text
     ADD ESP,0x8                         ; 0045dab5
     MOV EDX,dword ptr [0x005f2afc]      ; 0045dab8 | DAT_005f2afc
     PUSH EDX                            ; 0045dabe | DAT_01bdd7e4
-    CALL engine_matrix.c_pop_FUN_0046d080 ; 0045dabf
-        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046d080()
+    CALL engine_drender.cpp_pop_FUN_0046d080 ; 0045dabf
+        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046d080()
     ADD ESP,0x4                         ; 0045dac4
     MOV ECX,dword ptr [EBP + 0x14]      ; 0045dac7
     PUSH ECX                            ; 0045daca
-    CALL core_dlight.cpp_FUN_0045dea0   ; 0045dacb
-        ;   XREF to: 0045dea0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_FUN_0045dea0(CDemonLight * this_ptr)
+    CALL core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_0045dea0 ; 0045dacb
+        ;   XREF to: 0045dea0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_0045dea0(CDemonLight * this_ptr)
     ADD ESP,0x4                         ; 0045dad0
     MOV ESP,EBP                         ; 0045dad3
     POP EBP                             ; 0045dad5

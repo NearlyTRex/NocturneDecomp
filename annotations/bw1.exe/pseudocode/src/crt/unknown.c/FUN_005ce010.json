@@ -1,0 +1,204 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 33,
+    "complexity_score": 145,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 20,
+    "suspect_count": 12,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 53
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005ce010",
+    "address_range": [
+      [
+        "005ce010",
+        "005ce059"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_005ce010",
+    "signature": "void crt_unknown_c_FUN_005ce010(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00626b70",
+      "name": "PTR_crt_unknown.c_FUN_005ceab0_00626b70",
+      "type": "undefined1*",
+      "value": "005ceab0"
+    },
+    {
+      "addr": "00626b74",
+      "name": "PTR_crt_unknown.c_FUN_005ceba8_00626b74",
+      "type": "undefined1*",
+      "value": "005ceba8"
+    },
+    {
+      "addr": "00626b78",
+      "name": "PTR_crt_unknown.c_FUN_005cdfd0_00626b78",
+      "type": "undefined1*",
+      "value": "005cdfd0"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.8461538461538463,
+    "instruction_count": 26,
+    "opcode_distribution": {
+      "CBRANCH": 3,
+      "COPY": 27,
+      "INT_ADD": 6,
+      "INT_AND": 9,
+      "INT_EQUAL": 6,
+      "INT_SLESS": 3,
+      "INT_SUB": 2,
+      "LOAD": 9,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 74
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005c5d10",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005b0da0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00572ea0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_005ce010(uint *param_1,uint *param_2,uint *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void FUN_005ce010(uint *param_1,uint *param_2,uint *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void FUN_005ce010(uint *param_1,uint *param_2,uint *param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 7,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 != (uint *)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puVar1 = (byte *)*param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*param_1 = PTR_crt_unknown_c_FUN_005ceab0_00626b70;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (param_2 != (uint *)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "puVar1 = (byte *)*param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*param_2 = PTR_crt_unknown_c_FUN_005ceba8_00626b74;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (param_3 != (uint *)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "puVar1 = (byte *)*param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "*param_3 = PTR_crt_unknown_c_FUN_005cdfd0_00626b78;",
+      "type": "unnamed_param"
+    }
+  ]
+}

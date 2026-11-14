@@ -9,100 +9,106 @@
 void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_004277e0(CCharacter *this_ptr,CBodyPart *body_part,int part_index,int render_in_background)
 
 {
-  int *piVar1;
-  CCharacter *pCVar2;
-  int iVar3;
-  uint *puVar4;
-  uint *puVar5;
-  byte bVar6;
-  uint auStackY_1050 [990];
+  SDamageDecal *pSVar1;
+  SFire *pSVar2;
+  CCharacter *pCVar3;
+  int iVar4;
+  CMatrix3x4f *pCVar5;
+  float *pfVar6;
+  byte bVar7;
+  float afStackY_1050 [15];
+  CMatrix3x4f *apCStackY_1014 [975];
   CBodyPart *this_ptr_00;
   char *model_name;
   CVector3f *position_offset;
   CVector3f *euler_angles;
-  CVector3f local_8c [3];
-  CVector3f local_68;
+  CMatrix3x4f local_c8;
+  float local_98 [3];
+  float local_8c;
+  float local_7c;
+  uint local_6c;
+  float local_68;
+  float afStack_64 [2];
   CVector3f local_5c;
-  CVector3f local_50;
+  float local_50;
+  float local_4c [2];
   CVector3f local_44;
   CVector3f local_38;
-  CVector3f local_2c;
-  byte *local_20;
-  byte *local_1c;
+  float local_2c;
+  CMatrix3x4f *apCStack_28 [4];
   int local_18;
   int local_14;
   
-  bVar6 = 0;
-  if ((this_ptr->field_0x2514 != '\0') && (*(int *)(&this_ptr->field_0x23f4 + part_index * 4) != 0))
-  {
+  bVar7 = 0;
+  if (((this_ptr->model).model_name[0] != '\0') &&
+     ((this_ptr->model).part_data.visibility_flags[part_index] != 0)) {
     core_skeleton_cpp_CDeformableModelInstance_dismemberPart_FUN_00548130
-              ((CDeformableModelInstance *)&this_ptr->field_0x2b4,body_part,part_index);
+              (&this_ptr->model,body_part,part_index);
     local_18 = 0;
-    if (0 < *(int *)&this_ptr->field_0x3448) {
-      local_20 = &this_ptr->field_0x1134;
-      piVar1 = (int *)&this_ptr->field_0x344c;
+    if (0 < this_ptr->damage_decal_count) {
+      apCStack_28[2] = (this_ptr->model).bone_transform.bone_model_matrices;
+      pSVar1 = this_ptr->damage_decals;
       do {
-        if (part_index == *piVar1) {
-          core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(piVar1 + 2,local_20 + piVar1[1] * 0x30);
-          puVar4 = (uint *)&stack0xffffff38;
-          puVar5 = (uint *)&stack0xffffff68;
-          for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-            *puVar5 = *puVar4;
-            puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
-            puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+        if (part_index == pSVar1->part_index) {
+          core_xform_cpp_multiplyMatrix3x4_FUN_005916b0
+                    (&pSVar1->transform,apCStack_28[2] + pSVar1->bone_index,&local_c8);
+          pCVar5 = &local_c8;
+          pfVar6 = local_98;
+          for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
+            *pfVar6 = pCVar5->m[0].w;
+            pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);
+            pfVar6 = pfVar6 + (uint)bVar7 * -2 + 1;
           }
-          core_xform_cpp_FUN_00591de0(&stack0xffffff68);
+          core_xform_cpp_matrixToEulerAngles_FUN_00591de0(local_98);
           euler_angles = &local_5c;
-          local_50._0_4_ = local_8c[0]._0_4_;
-          local_50._4_4_ = local_8c[1]._4_4_;
-          local_50._8_4_ = local_8c[2]._8_4_;
+          local_50 = local_8c;
+          local_4c[0] = local_7c;
+          local_4c[1] = (float)local_6c;
           position_offset = &local_44;
-          local_5c._0_4_ = local_68._0_4_;
-          *(uint *)((int)&local_5c + (uint)bVar6 * -8 + 4) =
-               *(uint *)((int)&local_68 + (uint)bVar6 * -8 + 4);
-          *(uint *)((int)&local_5c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
-               *(uint *)((int)&local_68 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+          local_5c.x = local_68;
+          *(float *)((int)&local_5c + (uint)bVar7 * -8 + 4) = afStack_64[(uint)bVar7 * -2];
+          *(float *)((int)&local_5c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
+               afStack_64[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
           model_name = &DAT_007bdb54;
-          local_44._0_4_ = local_50._0_4_;
-          *(uint *)((int)&local_44 + (uint)bVar6 * -8 + 4) =
-               *(uint *)((int)&local_50 + (uint)bVar6 * -8 + 4);
+          local_44.x = local_50;
+          *(float *)((int)&local_44 + (uint)bVar7 * -8 + 4) = local_4c[(uint)bVar7 * -2];
           this_ptr_00 = body_part;
-          *(uint *)((int)&local_44 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
-               *(uint *)((int)&local_50 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-          core_bodypart_cpp_FUN_00417610(this_ptr_00,model_name,position_offset,euler_angles);
+          *(float *)((int)&local_44 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
+               local_4c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+          core_bodypart_cpp_CBodyPart_addAttachedModel_FUN_00417610
+                    (this_ptr_00,model_name,position_offset,euler_angles);
         }
-        piVar1 = piVar1 + 0xe;
+        pSVar1 = pSVar1 + 1;
         local_18 = local_18 + 1;
-      } while (local_18 < *(int *)&this_ptr->field_0x3448);
+      } while (local_18 < this_ptr->damage_decal_count);
     }
     local_14 = 0;
-    if (0 < *(int *)&this_ptr->field_0x3564) {
-      local_1c = &this_ptr->field_0x1134;
-      piVar1 = (int *)&this_ptr->field_0x3570;
+    if (0 < this_ptr->fire_count) {
+      apCStack_28[3] = (this_ptr->model).bone_transform.bone_model_matrices;
+      pSVar2 = this_ptr->fires;
       do {
-        if ((part_index == *piVar1) && (-1 < piVar1[1])) {
-          core_xform_cpp_FUN_00591530(piVar1 + 2,local_1c + piVar1[1] * 0x30);
-          local_38._0_4_ = local_2c._0_4_;
-          *(uint *)((int)&local_38 + (uint)bVar6 * -8 + 4) =
-               *(uint *)((int)&local_2c + (uint)bVar6 * -8 + 4);
-          *(uint *)((int)&local_38 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
-               *(uint *)((int)&local_2c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-          core_bodypart_cpp_FUN_00417690(body_part,&local_38);
+        if ((part_index == pSVar2->bone_part) && (-1 < pSVar2->bone_index)) {
+          core_xform_cpp_FUN_00591530(&pSVar2->offset,apCStack_28[3] + pSVar2->bone_index);
+          local_38.x = local_2c;
+          *(CMatrix3x4f **)((int)&local_38 + (uint)bVar7 * -8 + 4) = apCStack_28[(uint)bVar7 * -2];
+          *(CMatrix3x4f **)((int)&local_38 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
+               apCStack_28[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+          core_bodypart_cpp_CBodyPart_addFire_FUN_00417690(body_part,&local_38);
         }
-        piVar1 = piVar1 + 6;
+        pSVar2 = pSVar2 + 1;
         local_14 = local_14 + 1;
-      } while (local_14 < *(int *)&this_ptr->field_0x3564);
+      } while (local_14 < this_ptr->fire_count);
     }
-    iVar3 = 0;
-    pCVar2 = this_ptr;
+    iVar4 = 0;
+    pCVar3 = this_ptr;
     do {
-      if (part_index == *(int *)&pCVar2->field_0x261c) {
-        (**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x130))(this_ptr,iVar3,0);
+      if (part_index == pCVar3->carry_hands[0].secondary_bone_index) {
+        (*(((this_ptr->base).vtable._uc)->_uc).dropCarriedObject)(this_ptr,iVar4,(CVector3f *)0x0);
       }
-      iVar3 = iVar3 + 1;
-      pCVar2 = (CCharacter *)&pCVar2->field_0x78;
-    } while (iVar3 < 2);
-    *(int *)&body_part->field_0x2b4 = render_in_background;
+      iVar4 = iVar4 + 1;
+      pCVar3 = (CCharacter *)(pCVar3->base).create_event;
+    } while (iVar4 < 2);
+    body_part->render_in_background = render_in_background;
     return;
   }
   return;

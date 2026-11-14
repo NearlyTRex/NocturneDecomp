@@ -1,0 +1,248 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 145,
+    "complexity_score": 74,
+    "cross_reference_count": 3,
+    "function_call_count": 4,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 49,
+    "suspect_count": 2,
+    "suspect_types": [
+      "stack_param"
+    ],
+    "total_lines": 194
+  },
+  "cross_references": [
+    {
+      "addr": "004fca90",
+      "from_addr": "004fcade",
+      "name": "core_mission.cpp_CDemonMission_createFromSingleSet_FUN_004fca90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fc6b0",
+      "from_addr": "004fc71f",
+      "name": "core_mission.cpp_CDemonMission_loadSet_FUN_004fc6b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fce00",
+      "from_addr": "004fce49",
+      "name": "core_mission.cpp_FUN_004fce00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004fc350",
+    "address_range": [
+      [
+        "004fc350",
+        "004fc4b6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mission.cpp_CDemonMission_prepareAllActors_FUN_004fc350",
+    "signature": "void __cdecl core_mission_cpp_CDemonMission_prepareAllActors_FUN_004fc350(CDemonMission *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e1600",
+      "is_variadic": false,
+      "name": "core_level.cpp_CLevelLoader_update_FUN_004e1600"
+    },
+    {
+      "addr": "00549180",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_clearModelAndSkeletonInUseFlags_FUN_00549180"
+    },
+    {
+      "addr": "005491b0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_freeUnusedModelsAndSkeletons_FUN_005491b0"
+    },
+    {
+      "addr": "0050fe80",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_0050fe80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005de66c",
+      "name": "s_Setting_up_actors_005de66c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005de67e",
+      "name": "s_Setting_up_actors_005de67e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005de690",
+      "name": "s_Setting_up_actors_005de690",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005de6a2",
+      "name": "s_Setting_up_actors_005de6a2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00617e10",
+      "name": "DAT_00617e10",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004fc71f",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_loadSet_FUN_004fc6b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004fce49",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_FUN_004fce00",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004fcade",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_createFromSingleSet_FUN_004fca90",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.315789473684211,
+    "instruction_count": 114,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 39,
+      "BOOL_OR": 2,
+      "BOOL_XOR": 2,
+      "BRANCH": 2,
+      "CALL": 10,
+      "CALLIND": 2,
+      "CBRANCH": 8,
+      "COPY": 84,
+      "INT_ADD": 34,
+      "INT_AND": 154,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 79,
+      "INT_LEFT": 4,
+      "INT_LESS": 11,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 20,
+      "INT_OR": 30,
+      "INT_SBORROW": 11,
+      "INT_SCARRY": 13,
+      "INT_SLESS": 40,
+      "INT_SRIGHT": 11,
+      "INT_SUB": 52,
+      "INT_XOR": 4,
+      "INT_ZEXT": 2,
+      "LOAD": 21,
+      "POPCOUNT": 36,
+      "RETURN": 1,
+      "STORE": 36
+    },
+    "pcode_op_count": 720
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0051b2b0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004f6a80",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00523cf0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7456
+    },
+    "nocturne.exe": {
+      "addr": "004d8db0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9014
+    }
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_ffffffec",
+      "severity": "moderate",
+      "text": "float in_stack_ffffffec;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_ffffffec",
+      "severity": "moderate",
+      "text": "(*((pCVar3->vtable)._ub)->process)(pCVar3,in_stack_ffffffec);",
+      "type": "stack_param"
+    }
+  ]
+}

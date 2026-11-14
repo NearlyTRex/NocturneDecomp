@@ -9,17 +9,17 @@
 // Address: 004ffa50
 void __cdecl setAmbientLightLevel(int light_level);
 
-// Original: engine_light.cpp_FUN_004ffa7e
-// Address: 004ffa7e
-undefined4 FUN_004ffa7e(void);
+// Original: engine_light.cpp_getAmbientLightLevel_FUN_004ffa80
+// Address: 004ffa80
+int __cdecl getAmbientLightLevel(void);
 
 // Original: engine_light.cpp_setDirectionalLightVector_FUN_004ffa90
 // Address: 004ffa90
 void __cdecl setDirectionalLightVector(int dir_x,int dir_y,int dir_z);
 
-// Original: engine_light.cpp_FUN_004ffac0
+// Original: engine_light.cpp_setSpecularEnabled_FUN_004ffac0
 // Address: 004ffac0
-void FUN_004ffac0(undefined4 param_1);
+void __cdecl setSpecularEnabled(int enabled);
 
 // Original: engine_light.cpp_setLightingMultipliers_FUN_004ffad0
 // Address: 004ffad0
@@ -35,4 +35,4 @@ int __cdecl calculateLighting(int normal_x,int normal_y,int normal_z);
 
 // Original: engine_light.cpp_calculateAndStoreVertexLight_FUN_004ffe10
 // Address: 004ffe10
-void __cdecl calculateAndStoreVertexLight(int param_1,int *param_2);
+void __cdecl calculateAndStoreVertexLight(int vertex_index,CVector3i *vertex_position);

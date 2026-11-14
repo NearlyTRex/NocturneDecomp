@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_3d_c_renderPolygonFullEffectsBufferedOp65_FUN_004070e0(int param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonFullEffectsBufferedOp65_FUN_004070e0(SMRGLHeaderPrimitive *prim)
 ;
+; Parameters:
+; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ;
 ; XREF[1]:
-;   engine_3d.c_FUN_00407820 at 004079c7
+;   engine_3d.c_dispatchMRGLToRenderer_FUN_00407820 at 004079c7
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061b4a0
@@ -28,7 +30,7 @@
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403920
 ;   engine_clipper.c_clipAndRasterize_FUN_0043cbf0
-;   engine_texture.cpp_FUN_00597d00
+;   engine_texture.cpp_getCurrentTexture_FUN_00597d00
 ;
 ; *****************************************************************************
 
@@ -45,7 +47,7 @@ section .text
     LEA EAX,[EBP + 0x8]                 ; 004070ee
     PUSH EAX                            ; 004070f1
     CALL engine_3d.c_isVisiblePlane_FUN_00403920 ; 004070f2
-        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403920()
+        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403920(SClipPlane * plane)
     ADD ESP,0x4                         ; 004070f7
     TEST EAX,EAX                        ; 004070fa
     JZ 0x0040728f                       ; 004070fc
@@ -159,8 +161,8 @@ section .text
     CMP EBX,EDI                         ; 00407251
     JL 0x00407221                       ; 00407253
         ;   XREF to: 00407221 (CONDITIONAL_JUMP)  ; LAB_00407221
-    CALL engine_texture.cpp_FUN_00597d00 ; 00407255
-        ;   XREF to: 00597d00 (UNCONDITIONAL_CALL)  ; SMRGLTextureBasic * engine_texture.cpp_FUN_00597d00()
+    CALL engine_texture.cpp_getCurrentTexture_FUN_00597d00 ; 00407255
+        ;   XREF to: 00597d00 (UNCONDITIONAL_CALL)  ; SMRGLTextureBasic * engine_texture.cpp_getCurrentTexture_FUN_00597d00()
         ;   Label: LAB_00407255
     MOV EDI,dword ptr [ESP]             ; 0040725a
     MOV ECX,0x12                        ; 0040725d

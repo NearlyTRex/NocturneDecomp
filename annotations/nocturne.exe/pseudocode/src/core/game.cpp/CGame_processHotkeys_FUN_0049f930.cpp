@@ -22,8 +22,8 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_0049f930(CGame *this_ptr)
   uint uStack00000078;
   int iStack0000007c;
   float in_stack_00000080;
-  uint uVar8;
-  float fVar9;
+  uint clear_enabled;
+  float fVar8;
   float fStack_188;
   char acStack_ac [156];
   
@@ -37,7 +37,8 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_0049f930(CGame *this_ptr)
         (iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_E),
         iVar4 != 0)) &&
        (iVar4 = 1 - this_ptr->is_game_active, this_ptr->is_game_active = iVar4, iVar4 != 0)) {
-      core_setdir_cpp_CDemonSet_FUN_005125a0(g_CDemonSetPtr,g_CScriptPtr->focus_actor,1);
+      core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005125a0
+                (g_CDemonSetPtr,g_CScriptPtr->focus_actor,1);
       g_CScriptPtr->focus_actor_changed = 0;
     }
     if ((this_ptr->is_game_active == 0) &&
@@ -126,8 +127,9 @@ LAB_0049f9d8:
     if (iVar5 != 0) {
       iVar4 = 0xf0;
     }
-    uVar8 = (uint)(iVar5 != 0);
-    core_set_cpp_CDemonSet_FUN_005090f0(g_CDemonSetPtr,uVar8,uVar8,iVar4);
+    clear_enabled = (uint)(iVar5 != 0);
+    core_set_cpp_CDemonSet_reinitCamera_FUN_005090f0
+              (g_CDemonSetPtr,clear_enabled,clear_enabled,iVar4);
   }
   if (((this_ptr->developer_mode_enabled != 0) && (_DAT_01c78ac8 == 0)) &&
      ((iVar4 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_LCONTROL),
@@ -140,11 +142,11 @@ LAB_0049f9d8:
   if (((iVar4 != 0) &&
       (iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_S),
       iVar4 != 0)) && (this_ptr->letterbox_mode == 0)) {
-    core_game_cpp_CGame_FUN_004a3b90(this_ptr,(char *)0x0);
+    core_game_cpp_CGame_saveGame_FUN_004a3b90(this_ptr,(char *)0x0);
   }
   iVar4 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_F2);
   if ((iVar4 != 0) && (this_ptr->letterbox_mode == 0)) {
-    core_game_cpp_CGame_FUN_004a3b90(this_ptr,(char *)0x0);
+    core_game_cpp_CGame_saveGame_FUN_004a3b90(this_ptr,(char *)0x0);
   }
   iVar4 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_F3);
   if (iVar4 != 0) {
@@ -152,10 +154,10 @@ LAB_0049f9d8:
   }
   iVar4 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_F6);
   if ((iVar4 != 0) && (this_ptr->letterbox_mode == 0)) {
-    core_game_cpp_CGame_FUN_004a3b90(this_ptr,"quicksavedgame.noc");
-    fVar9 = 2.0;
+    core_game_cpp_CGame_saveGame_FUN_004a3b90(this_ptr,"quicksavedgame.noc");
+    fVar8 = 2.0;
     pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Quick Save");
-    core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar6,fVar9);
+    core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar6,fVar8);
   }
   if ((this_ptr->subtitle_system_enabled == 0) &&
      (iVar4 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_F9), iVar4 != 0)
@@ -163,16 +165,17 @@ LAB_0049f9d8:
     file_handle = engine_dosio_cpp_getFile_FUN_00456a60
                             ("save","quicksavedgame.noc","rb");
     if (file_handle == (_FILE *)0x0) {
-      fVar9 = 2.0;
+      fVar8 = 2.0;
       pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                          ("No quicked saved game to load");
-      core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar6,fVar9);
+      core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,pcVar6,fVar8);
     }
     else {
       _fclose(file_handle);
       pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                          ("Restore quick saved game?");
-      iVar4 = shape_edittool_cpp_FUN_00470230(g_CEditorToolsPtr,pcVar6);
+      iVar4 = shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_00470230
+                        (g_CEditorToolsPtr,pcVar6);
       if (iVar4 != 0) {
         pcVar7 = "quicksavedgame.noc";
         pcVar6 = this_ptr->chapter_reload_filename;
@@ -208,7 +211,7 @@ LAB_0049fc23:
        (iVar4 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_F5),
        pCVar3 = g_CDemonSetPtr, iVar4 != 0)) {
       this_ptr->screen_clear_enabled = 1;
-      core_set_cpp_CDemonSet_FUN_005090f0(pCVar3,0,0,0xf0);
+      core_set_cpp_CDemonSet_reinitCamera_FUN_005090f0(pCVar3,0,0,0xf0);
       pCVar2 = g_CScriptPtr;
       this_ptr->subtitle_system_enabled = 1;
       if (pCVar2->script_state == 1) {

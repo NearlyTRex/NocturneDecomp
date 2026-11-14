@@ -36,7 +36,7 @@ section .text
     ADD EBX,0xbf3c                      ; 0041da52
     PUSH EBX                            ; 0041da58
     CALL core_boneguy.cpp_SBoneGuyBox_arrdtor20_FUN_0041db30 ; 0041da59
-        ;   XREF to: 0041db30 (UNCONDITIONAL_CALL)  ; SBoneGuyBox * core_boneguy.cpp_SBoneGuyBox_arrdtor20_FUN_0041db30(SBoneGuyBox * objs, uint flags)
+        ;   XREF to: 0041db30 (UNCONDITIONAL_CALL)  ; SBoneGuyBox * core_boneguy.cpp_SBoneGuyBox_arrdtor20_FUN_0041db30(SBoneGuyBox * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0041da5e
     PUSH 0x0                            ; 0041da61
     SUB EAX,0x8b70                      ; 0041da63
@@ -48,7 +48,7 @@ section .text
     SUB EAX,0x4b0                       ; 0041da73
     PUSH EAX                            ; 0041da78
     CALL core_armour.cpp_SFire_arrdtor50_FUN_00412700 ; 0041da79
-        ;   XREF to: 00412700 (UNCONDITIONAL_CALL)  ; SFire * core_armour.cpp_SFire_arrdtor50_FUN_00412700(SFire * objs, uint flags)
+        ;   XREF to: 00412700 (UNCONDITIONAL_CALL)  ; SFire * core_armour.cpp_SFire_arrdtor50_FUN_00412700(SFire * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0041da7e
     PUSH 0x0                            ; 0041da81
     SUB EAX,0x20c                       ; 0041da83

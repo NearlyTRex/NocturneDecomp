@@ -2,15 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 103,
+    "complexity_score": 73,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 43,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field",
+      "shadow_pointer_walk",
       "warning_overlapping_globals"
     ],
     "total_lines": 120
@@ -19,7 +19,7 @@
     {
       "addr": "00425970",
       "from_addr": "004259b9",
-      "name": "core_bugs.cpp_FUN_00425970",
+      "name": "core_bugs.cpp_CBugs_initializeSwarmGraph_FUN_00425970",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -74,7 +74,7 @@
       {
         "call_addr": "004259b9",
         "call_type": "direct",
-        "caller": "core_bugs.cpp_FUN_00425970",
+        "caller": "core_bugs.cpp_CBugs_initializeSwarmGraph_FUN_00425970",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -85,7 +85,7 @@
       {
         "call_addr": "004259d1",
         "call_type": "direct",
-        "caller": "core_bugs.cpp_FUN_00425970",
+        "caller": "core_bugs.cpp_CBugs_initializeSwarmGraph_FUN_00425970",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -96,7 +96,7 @@
       {
         "call_addr": "004259e8",
         "call_type": "direct",
-        "caller": "core_bugs.cpp_FUN_00425970",
+        "caller": "core_bugs.cpp_CBugs_initializeSwarmGraph_FUN_00425970",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -107,7 +107,7 @@
       {
         "call_addr": "004259ff",
         "call_type": "direct",
-        "caller": "core_bugs.cpp_FUN_00425970",
+        "caller": "core_bugs.cpp_CBugs_initializeSwarmGraph_FUN_00425970",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -118,7 +118,7 @@
       {
         "call_addr": "00425a17",
         "call_type": "direct",
-        "caller": "core_bugs.cpp_FUN_00425970",
+        "caller": "core_bugs.cpp_CBugs_initializeSwarmGraph_FUN_00425970",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -129,7 +129,7 @@
       {
         "call_addr": "00425a32",
         "call_type": "direct",
-        "caller": "core_bugs.cpp_FUN_00425970",
+        "caller": "core_bugs.cpp_CBugs_initializeSwarmGraph_FUN_00425970",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -174,6 +174,32 @@
       "STORE": 12
     },
     "pcode_op_count": 312
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0041fa20",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00421be0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00425740",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00421ad0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 20,
@@ -222,36 +248,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x12ee0",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x12ee0 <= vertex_index) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x12ee0",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x12ee0 = vertex_index + 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x12ee0",
-      "severity": "mild",
-      "text": "if (700 < *(int *)&this_ptr->field_0x12ee0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x12ee4",
-      "severity": "mild",
-      "text": "piVar3 = (int *)(&this_ptr->field_0x12ee4 + vertex_index * 0x28);",
-      "type": "unnamed_field"
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar4` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar4->owner`). Replace `pSVar4->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 37,
+      "match": "pSVar4 = (T *)&pSVar4->FIELD",
+      "severity": "moderate",
+      "text": "pSVar4 = (SSwarmVertex *)&pSVar4->first_edge_data;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

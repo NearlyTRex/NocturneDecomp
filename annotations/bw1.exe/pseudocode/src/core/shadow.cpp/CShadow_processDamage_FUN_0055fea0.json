@@ -1,0 +1,266 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 255,
+    "complexity_score": 188,
+    "cross_reference_count": 0,
+    "function_call_count": 10,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 83,
+    "suspect_count": 8,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "stack_alignment_array",
+      "stack_ref",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 338
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0055fea0",
+    "address_range": [
+      [
+        "0055fea0",
+        "005600fa"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_shadow.cpp_CShadow_processDamage_FUN_0055fea0",
+    "signature": "void __cdecl core_shadow_cpp_CShadow_processDamage_FUN_0055fea0(CShadow *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408b40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408b40"
+    },
+    {
+      "addr": "00408bb0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408bb0"
+    },
+    {
+      "addr": "0040cc60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cc60"
+    },
+    {
+      "addr": "004a0f00",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_processDamage_FUN_004a0f00"
+    },
+    {
+      "addr": "004a1b70",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_executeCommands_FUN_004a1b70"
+    },
+    {
+      "addr": "00524770",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770"
+    },
+    {
+      "addr": "005247c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0"
+    },
+    {
+      "addr": "0055f4f0",
+      "is_variadic": false,
+      "name": "core_shadow.cpp_FUN_0055f4f0"
+    },
+    {
+      "addr": "0055f540",
+      "is_variadic": false,
+      "name": "core_shadow.cpp_FUN_0055f540"
+    },
+    {
+      "addr": "00573a80",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfx_FUN_00573a80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f178f",
+      "name": "s_ShotShadowWithLead_005f178f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f17a2",
+      "name": "s_ShadowDead_005f17a2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061b4d0",
+      "name": "DAT_0061b4d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d06ab4",
+      "name": "DAT_01d06ab4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.907692307692308,
+    "instruction_count": 195,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 2,
+      "BRANCH": 3,
+      "CALL": 21,
+      "CBRANCH": 23,
+      "COPY": 182,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 73,
+      "INT_AND": 106,
+      "INT_CARRY": 25,
+      "INT_EQUAL": 94,
+      "INT_LEFT": 8,
+      "INT_LESS": 20,
+      "INT_MULT": 7,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 20,
+      "INT_SCARRY": 25,
+      "INT_SLESS": 47,
+      "INT_SUB": 92,
+      "INT_ZEXT": 14,
+      "LOAD": 32,
+      "POPCOUNT": 47,
+      "RETURN": 2,
+      "STORE": 73
+    },
+    "pcode_op_count": 957
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0053ea00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4513
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CShadow *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 11,
+      "match": "afStackY_100c",
+      "severity": "moderate",
+      "text": "float afStackY_100c [1010];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 70,
+      "match": "&stack0xffffffec",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffec + (uint)bVar4 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 71,
+      "match": "&stack0xffffffe0",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar4 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 72,
+      "match": "&stack0xfffffff0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 73,
+      "match": "&stack0xffffffe4",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffe4 + (uint)bVar4 * -8 + (uint)bVar4 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Pointer value `&stack0xfffffff0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 72,
+      "match": "(int)&stack0xfffffff0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 72,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xfffffff0 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =",
+      "type": "pointer_cast"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CShadow",
+        "offset": 264,
+        "vtable_addr": "006051b4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

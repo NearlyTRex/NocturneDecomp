@@ -560,9 +560,11 @@ def export_type_info(currentProgram, path, strict = False, allow_size_mismatch =
     # every size seen for a name rather than letting the last one win, and
     # accept the type if the binary's instance_size is any of them.
     ghidra_struct_sizes = {}
+    defined_types = set()
     dtm = currentProgram.getDataTypeManager()
     for dt in dtm.getAllDataTypes():
         dt_name = dt.getName()
+        defined_types.add(dt_name)
         if dt_name and dt.getLength() > 0:
             ghidra_struct_sizes.setdefault(dt_name, set()).add(dt.getLength())
 
@@ -672,29 +674,17 @@ def export_type_info(currentProgram, path, strict = False, allow_size_mismatch =
             }
         type_info_dict[class_name]["methods"] = methods
 
-    # Add missing classes
-    log_info("Adding missing classes")
-    classes_added_from_files = 0
-    for class_name in class_files.keys():
-        if class_name not in type_info_dict:
-            type_info_dict[class_name] = {
-                "name": class_name,
+    # The file tables are Nocturne's: a type they name is added only when this
+    # program defines it, so a build without the class (bw3 has no CBaron) does
+    # not list it.
+    log_info("Adding the program's types the file tables name")
+    for table_name in list(class_files) + list(structure_files):
+        if table_name not in type_info_dict and table_name in defined_types:
+            type_info_dict[table_name] = {
+                "name": table_name,
                 "addr": None
             }
-            classes_added_from_files += 1
-            log_info("Added class from file mapping: %s" % class_name)
-
-    # Add missing structures
-    log_info("Adding missing structures")
-    structures_added_from_files = 0
-    for structure_name in structure_files.keys():
-        if structure_name not in type_info_dict:
-            type_info_dict[structure_name] = {
-                "name": structure_name,
-                "addr": None
-            }
-            structures_added_from_files += 1
-            log_info("Added structure from file mapping: %s" % structure_name)
+            log_info("Added type from file mapping: %s" % table_name)
 
     # Add parent and file information to each type
     for type_name, type_info in type_info_dict.items():

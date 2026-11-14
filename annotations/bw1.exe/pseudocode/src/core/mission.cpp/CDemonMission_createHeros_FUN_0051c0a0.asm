@@ -18,19 +18,19 @@
 ;   TerminatedCString s_CHeroPlaceholder_005e9a99
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CNetGame* g_CNetGamePtr = 01d51c20
-;   undefined4 g_CGameInstance.field212_0xd4
-;   undefined4 g_CGameInstance.field216_0xd8
+;   undefined4 g_CGameInstance.hero_number
+;   undefined4 g_CGameInstance.aim_mode
 ;   undefined4 DAT_01d06aa0
 ;   undefined4 DAT_01d06ab4
 ;   undefined4 DAT_01d1d400
 ;   undefined4 DAT_01d1d404
 ;   CNetGame g_CNetGameInstance
-;   undefined4 g_CNetGameInstance.field28_0x1c
-;   undefined4 g_CNetGameInstance.field56_0x38
-;   undefined4 g_CNetGameInstance.field284_0x11c
+;   undefined4 g_CNetGameInstance.player_count
+;   undefined4 g_CNetGameInstance.players[0].aim_mode
+;   undefined4 g_CNetGameInstance.local_player_index
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040c550
+;   core_actor.cpp_isOfClass_FUN_0040c550
 ;   core_main.c_FUN_005030e0
 ;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_0051b420
 ;   core_mission.cpp_CDemonMission_createOneHero_FUN_0051bf30
@@ -59,7 +59,7 @@ section .text
     TEST ECX,ECX                        ; 0051c0c1
     JZ 0x0051c1ad                       ; 0051c0c3
         ;   XREF to: 0051c1ad (CONDITIONAL_JUMP)  ; LAB_0051c1ad
-    MOV EAX,dword ptr [EAX + 0x1c]      ; 0051c0c9 | g_CNetGameInstance.field28_0x1c
+    MOV EAX,dword ptr [EAX + 0x1c]      ; 0051c0c9 | g_CNetGameInstance.player_count
     MOV [0x01d06aa0],EAX                ; 0051c0cc | DAT_01d06aa0
     CMP EAX,0x4                         ; 0051c0d1
     JGE 0x0051c200                      ; 0051c0d4
@@ -91,7 +91,7 @@ section .text
     ADD EBX,0x4                         ; 0051c11c
     LEA EDX,[EAX + ESI*0x1]             ; 0051c11f
     MOV EAX,dword ptr [EBX + 0x1d06aa0] ; 0051c122
-    MOV EDX,dword ptr [EDX + 0x38]      ; 0051c128 | g_CNetGameInstance.field56_0x38
+    MOV EDX,dword ptr [EDX + 0x38]      ; 0051c128 | g_CNetGameInstance.players[0].aim_mode
     INC EDI                             ; 0051c12b
     MOV dword ptr [EAX + 0x1fae4],EDX   ; 0051c12c
     MOV EAX,[0x01d06aa0]                ; 0051c132 | DAT_01d06aa0
@@ -101,7 +101,7 @@ section .text
         ;   XREF to: 0051c0e9 (CONDITIONAL_JUMP)  ; LAB_0051c0e9
     MOV EAX,[0x00622580]                ; 0051c13e | g_CNetGamePtr
         ;   Label: LAB_0051c13e
-    MOV EAX,dword ptr [EAX + 0x11c]     ; 0051c143 | g_CNetGameInstance.field284_0x11c
+    MOV EAX,dword ptr [EAX + 0x11c]     ; 0051c143 | g_CNetGameInstance.local_player_index
     MOV [0x01d06ab4],EAX                ; 0051c149 | DAT_01d06ab4
     MOV EAX,[0x01d06ab4]                ; 0051c14e | DAT_01d06ab4
         ;   Label: LAB_0051c14e
@@ -114,8 +114,8 @@ section .text
     PUSH 0x5e9a99                       ; 0051c16e | = "CHeroPlaceholder"
         ;   Label: LAB_0051c16e
     PUSH EBX                            ; 0051c173
-    CALL core_actor.cpp_FUN_0040c550    ; 0051c174
-        ;   XREF to: 0040c550 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c550(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c550 ; 0051c174
+        ;   XREF to: 0040c550 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c550(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 0051c179
     TEST EAX,EAX                        ; 0051c17c
     JZ 0x0051c228                       ; 0051c17e
@@ -147,7 +147,7 @@ section .text
         ;   Label: LAB_0051c1ad
     MOV EAX,[0x0061d95c]                ; 0051c1b1 | g_CGamePtr
     PUSH EBX                            ; 0051c1b6
-    MOV ESI,dword ptr [EAX + 0xd4]      ; 0051c1b7 | g_CGameInstance.field212_0xd4
+    MOV ESI,dword ptr [EAX + 0xd4]      ; 0051c1b7 | g_CGameInstance.hero_number
     PUSH ESI                            ; 0051c1bd
     PUSH ECX                            ; 0051c1be
     MOV EDX,0x1                         ; 0051c1bf
@@ -163,7 +163,7 @@ section .text
     MOV EAX,[0x01d06ab4]                ; 0051c1dd | DAT_01d06ab4
     MOV EDX,dword ptr [0x0061d95c]      ; 0051c1e2 | g_CGamePtr
     MOV EBX,dword ptr [EAX*0x4 + 0x1d06aa4] ; 0051c1e8
-    MOV EAX,dword ptr [EDX + 0xd8]      ; 0051c1ef | g_CGameInstance.field216_0xd8
+    MOV EAX,dword ptr [EDX + 0xd8]      ; 0051c1ef | g_CGameInstance.aim_mode
     MOV dword ptr [EBX + 0x1fae4],EAX   ; 0051c1f5
     JMP 0x0051c14e                      ; 0051c1fb
         ;   XREF to: 0051c14e (UNCONDITIONAL_JUMP)  ; LAB_0051c14e

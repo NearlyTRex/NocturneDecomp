@@ -560,6 +560,21 @@ NOCTURNE_TEST(fractional_metrics_follow_the_text) {
     CHECK_EQ(nocturne_ui_char_height_f(font.get(), 'X', 1.5f), 10);
 }
 
+// An OS font not made again at the scale draws at its own size, so it
+// measures at it; no font measures as
+// the engine does.
+NOCTURNE_TEST(an_os_font_measures_at_its_own_size) {
+    ui_support::screen(64, 64, 32);
+    stand.reset();
+    Font font;
+    char text[] = "abc";
+    font.get()->win_font_enabled = 1;
+    CHECK_EQ(nocturne_ui_text_width_f(font.get(), text, 1.5f), 24);
+    CHECK_EQ(nocturne_ui_char_height_f(font.get(), 'X', 1.5f), 10);
+    font.get()->win_font_enabled = 0;
+    CHECK_EQ(nocturne_ui_text_width_f(nullptr, text, 1.5f), 36);
+}
+
 // A pushed clip can only narrow; popping puts back what was there; the stack
 // holds four, and a pop with nothing pushed does nothing.
 NOCTURNE_TEST(clip_rectangles_nest) {

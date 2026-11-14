@@ -9,6 +9,6 @@
 CSocket * __cdecl support_trisock_cpp_CSocket_ctor_FUN_0056f8d0(CSocket *this_ptr)
 
 {
-  *(uint *)this_ptr = 0xffffffff;
+  this_ptr->handle = 0xffffffff;
   return this_ptr;
 }

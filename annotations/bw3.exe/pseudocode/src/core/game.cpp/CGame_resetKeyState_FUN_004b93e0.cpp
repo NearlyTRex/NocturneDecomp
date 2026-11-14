@@ -80,22 +80,16 @@ void __cdecl core_game_cpp_CGame_resetKeyState_FUN_004b93e0(CGame *this_ptr)
   engine_keys_cpp_CKeys_clearKeyPressState_FUN_004df5c0(0x01D70A78,DIJ_RIGHT);
   engine_keys_cpp_CKeys_clearKeyPressState_FUN_004df5c0(0x01D70A78,DIJ_UP);
   engine_keys_cpp_CKeys_clearKeyPressState_FUN_004df5c0(0x01D70A78,DIJ_DOWN);
-  if (_DAT_01c6e250 <
-      *(int *)&this_ptr->field_0xbc -
-      (*(int *)&this_ptr->field_0xbc - *(int *)&this_ptr->field_0xc4) / 2) {
+  if (_DAT_01c6e250 < this_ptr->x_center - (this_ptr->x_center - this_ptr->x_stick_min) / 2) {
     engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004df5b0(0x01D70A78,DIJ_LEFT);
   }
-  if ((*(int *)&this_ptr->field_0xc8 - *(int *)&this_ptr->field_0xbc) / 2 +
-      *(int *)&this_ptr->field_0xbc < _DAT_01c6e250) {
+  if ((this_ptr->x_stick_max - this_ptr->x_center) / 2 + this_ptr->x_center < _DAT_01c6e250) {
     engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004df5b0(0x01D70A78,DIJ_RIGHT);
   }
-  if (_DAT_01c6e254 <
-      *(int *)&this_ptr->field_0xc0 -
-      (*(int *)&this_ptr->field_0xc0 - *(int *)&this_ptr->field_0xcc) / 2) {
+  if (_DAT_01c6e254 < this_ptr->y_center - (this_ptr->y_center - this_ptr->y_stick_min) / 2) {
     engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004df5b0(0x01D70A78,DIJ_UP);
   }
-  if ((*(int *)&this_ptr->field_0xd0 - *(int *)&this_ptr->field_0xc0) / 2 +
-      *(int *)&this_ptr->field_0xc0 < _DAT_01c6e254) {
+  if ((this_ptr->y_stick_max - this_ptr->y_center) / 2 + this_ptr->y_center < _DAT_01c6e254) {
     engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004df5b0(0x01D70A78,DIJ_DOWN);
     return;
   }

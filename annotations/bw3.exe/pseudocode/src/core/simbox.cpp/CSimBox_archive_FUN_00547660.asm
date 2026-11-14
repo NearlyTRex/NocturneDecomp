@@ -38,13 +38,13 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 00547673
     PUSH EAX                            ; 00547679
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0 ; 0054767a
-        ;   XREF to: 0040b9b0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0()
+        ;   XREF to: 0040b9b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0(CKeyFramedModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 0054767f
     PUSH 0x5d15c0                       ; 00547682 | = "weight"
     LEA EAX,[EBX + 0x2d8]               ; 00547687
     PUSH EAX                            ; 0054768d
     CALL core_actor.cpp_archiveFloat_FUN_0040b830 ; 0054768e
-        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b830()
+        ;   XREF to: 0040b830 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b830(float * float_ptr, char * property_name)
     MOV EDX,dword ptr [0x0060415c]      ; 00547693 | g_CSimBoxClassVersion
     ADD ESP,0x8                         ; 00547699
     CMP EDX,0x2                         ; 0054769c
@@ -60,13 +60,13 @@ section .text
     LEA EAX,[EBX + 0x340]               ; 005476b1
     PUSH EAX                            ; 005476b7
     CALL core_actor.cpp_archiveVector_FUN_0040b400 ; 005476b8
-        ;   XREF to: 0040b400 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040b400()
+        ;   XREF to: 0040b400 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040b400(CVector3f * vector_ptr, char * property_name)
     ADD ESP,0x8                         ; 005476bd
     PUSH 0x5d15d7                       ; 005476c0 | = "initRotVel"
     LEA EAX,[EBX + 0x34c]               ; 005476c5
     PUSH EAX                            ; 005476cb
     CALL core_actor.cpp_archiveVector_FUN_0040b400 ; 005476cc
-        ;   XREF to: 0040b400 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040b400()
+        ;   XREF to: 0040b400 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040b400(CVector3f * vector_ptr, char * property_name)
     ADD ESP,0x8                         ; 005476d1
     PUSH 0x5d15e2                       ; 005476d4 | = "triggerEvent"
     LEA EAX,[EBX + 0x2dc]               ; 005476d9

@@ -12,14 +12,14 @@ char * __cdecl _fullpath(char *buffer,char *path,SIZE_T buffer_size)
   char *pcVar1;
   int iVar2;
   DWORD DVar3;
-  LPSTR unaff_EBP;
+  char *unaff_EBP;
   LPSTR pCStack_14;
   
   if (buffer == (char *)0x0) {
     buffer_size = 0x104;
-    buffer = FUN_005b8580(0x104);
+    buffer = malloc(0x104);
     unaff_EBP = buffer;
-    if (buffer == (LPSTR)0x0) {
+    if (buffer == (char *)0x0) {
       setErrno(5);
       return (char *)0x0;
     }
@@ -43,6 +43,6 @@ char * __cdecl _fullpath(char *buffer,char *path,SIZE_T buffer_size)
     }
     return buffer;
   }
-  pcVar1 = (char *)FUN_005c0f10(buffer,buffer_size);
+  pcVar1 = FUN_005c0f10(buffer,buffer_size);
   return pcVar1;
 }

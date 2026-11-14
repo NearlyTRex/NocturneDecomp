@@ -2,29 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 90,
+    "complexity_score": 15,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 15,
-    "suspect_count": 7,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 37
   },
   "cross_references": [
     {
-      "addr": "004dd320",
-      "from_addr": "004dd4c7",
-      "name": "core_inv.cpp_FUN_004dd320",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004dd4e0",
       "from_addr": "004dd655",
       "name": "core_inv.cpp_drawItemIconBackground_FUN_004dd4e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dd320",
+      "from_addr": "004dd4c7",
+      "name": "core_inv.cpp_drawWeaponIconBackground_FUN_004dd320",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -76,6 +74,32 @@
     },
     "pcode_op_count": 163
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0044d1d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00449310",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0044c740",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8085
+    },
+    "nocturne.exe": {
+      "addr": "004405d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 24,
     "local_size": 4,
@@ -120,62 +144,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x1d0",
-      "severity": "mild",
-      "text": "if (0xff < *(int *)&this_ptr->field_0x1d0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x1d0",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x1d0 = *(int *)&this_ptr->field_0x1d0 + 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x1d0",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x1d0 = *(int *)&this_ptr->field_0x1d0 + 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x1d4",
-      "severity": "mild",
-      "text": "piVar1 = (int *)(&this_ptr->field_0x1d4 + *(int *)&this_ptr->field_0x1d0 * 0x10);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x1d0",
-      "severity": "mild",
-      "text": "piVar1 = (int *)(&this_ptr->field_0x1d4 + *(int *)&this_ptr->field_0x1d0 * 0x10);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x1d0",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x1d0 = *(int *)&this_ptr->field_0x1d0 + 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x1d0",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x1d0 = *(int *)&this_ptr->field_0x1d0 + 1;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

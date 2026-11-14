@@ -2,17 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 16,
+    "complexity_score": 13,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 16,
+    "pseudocode_lines": 13,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 54
+    "total_lines": 51
   },
   "cross_references": [
+    {
+      "addr": "004dbc60",
+      "from_addr": "004dbd63",
+      "name": "core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbc60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "004dc4b0",
       "from_addr": "004dc713",
@@ -23,12 +29,6 @@
       "addr": "004db9d0",
       "from_addr": "004dbb3c",
       "name": "core_inv.cpp_FUN_004db9d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004dbc60",
-      "from_addr": "004dbd63",
-      "name": "core_inv.cpp_FUN_004dbc60",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -53,7 +53,7 @@
     {
       "addr": "0040e240",
       "is_variadic": false,
-      "name": "core_ammo.cpp_FUN_0040e240"
+      "name": "core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040e240"
     }
   ],
   "globals": [],
@@ -74,7 +74,7 @@
       {
         "call_addr": "004dbd63",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004dbc60",
+        "caller": "core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbc60",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -126,6 +126,26 @@
       "STORE": 9
     },
     "pcode_op_count": 161
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004fa4e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.918
+    },
+    "nocedit.exe": {
+      "addr": "004ffe10",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.918
+    },
+    "nocturne.exe": {
+      "addr": "004c1b90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.918
+    }
   },
   "stack_frame": {
     "frame_size": 12,

@@ -7,15 +7,15 @@
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ;
 ; XREF[9]:
-;   core_baron.cpp_FUN_004101f0 at 0041037e
-;   core_batman.cpp_FUN_00413970 at 00413b0f
-;   core_boneguy.cpp_FUN_0041d000 at 0041d0ad
-;   core_dracbrid.cpp_FUN_0047cfe0 at 0047d18e
-;   core_inv.cpp_FUN_004f90d0 at 004f94ff
+;   core_baron.cpp_CBaron_renderTransparent_FUN_004101f0 at 0041037e
+;   core_batman.cpp_CBatman_renderOpaque_FUN_00413970 at 00413b0f
+;   core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_0041d000 at 0041d0ad
+;   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_0047cfe0 at 0047d18e
+;   core_inv.cpp_CInventory_renderItemModel_FUN_004f90d0 at 004f94ff
 ;   core_morph.cpp_CMorphModel_renderFaces_FUN_00522dd0 at 00522eaf
-;   core_shadow.cpp_FUN_0055fc60 at 0055fd60
-;   core_shadowsc.cpp_FUN_005611a0 at 0056128e
-;   core_vessel.cpp_FUN_005a9440 at 005a957a
+;   core_shadow.cpp_CShadow_renderTransparent_FUN_0055fc60 at 0055fd60
+;   core_shadowsc.cpp_CShadowsc_renderTransparent_FUN_005611a0 at 0056128e
+;   core_vessel.cpp_CCryptVessel_renderOpaque_FUN_005a9440 at 005a957a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01bc1280
@@ -67,7 +67,7 @@ section .text
     PUSH 0x1be8388                      ; 00484e58
         ;   Label: LAB_00484e58
     CALL crt_stdlib.c__qsort_FUN_005bfc68 ; 00484e5d
-        ;   XREF to: 005bfc68 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__qsort_FUN_005bfc68()
+        ;   XREF to: 005bfc68 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__qsort_FUN_005bfc68(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
     ADD ESP,0x10                        ; 00484e62
     MOV EAX,dword ptr [EBP + 0x10]      ; 00484e65
     MOV dword ptr [EBP + 0x1c],0x0      ; 00484e68

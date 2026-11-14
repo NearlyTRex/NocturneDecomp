@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 207,
+    "complexity_score": 206,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 32,
+    "pseudocode_lines": 31,
     "suspect_count": 16,
     "suspect_types": [
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 137
+    "total_lines": 136
   },
   "cross_references": [],
   "function": {
@@ -34,12 +34,12 @@
     {
       "addr": "0059daa0",
       "is_variadic": false,
-      "name": "unkaddr_0059d350.cpp_FUN_0059daa0"
+      "name": "core_muzzle.cpp_FUN_0059daa0"
     },
     {
       "addr": "0059dae0",
       "is_variadic": false,
-      "name": "unkaddr_0059d350.cpp_FUN_0059dae0"
+      "name": "core_muzzle.cpp_FUN_0059dae0"
     }
   ],
   "globals": [
@@ -180,7 +180,7 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = unkaddr_0059d350_cpp_FUN_0059daa0(param_1 + 0x10af8,\"Death\");",
+      "text": "iVar3 = core_muzzle_cpp_FUN_0059daa0(param_1 + 0x10af8,\"Death\");",
       "type": "unnamed_param"
     },
     {
@@ -188,12 +188,12 @@
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar3 = unkaddr_0059d350_cpp_FUN_0059daa0(param_1 + 0x10af8,\"Animation\"), iVar3 == 0)",
+      "text": "(iVar3 = core_muzzle_cpp_FUN_0059daa0(param_1 + 0x10af8,\"Animation\"), iVar3 == 0)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 15,
+      "line": 14,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(param_1 + 0x2b0) + 0x17c))(param_1);",
@@ -201,7 +201,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)(param_1 + 0x2b0) + 0x17c))(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_1 + 0x2b0) + 0x17c))(param_1);",
@@ -210,14 +218,6 @@
     {
       "description": "Unnamed function parameter",
       "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_1 + 0x2b0) + 0x17c))(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x10a78) == 0) {",
@@ -225,7 +225,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "else if (*(int *)(param_1 + 0x10a78) == 0) {",
@@ -233,15 +233,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = unkaddr_0059d350_cpp_FUN_0059daa0(param_1 + 0x10af8,\"Chasing\");",
+      "text": "iVar3 = core_muzzle_cpp_FUN_0059daa0(param_1 + 0x10af8,\"Chasing\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1 + 0x10af8,\"ChaseComplete\",\"RangeAttack\"),",
@@ -249,7 +249,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(fVar2 = *(float *)(*(int *)(param_1 + 0x10a78) + 0x20) - *(float *)(param_1 + 0x20),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
       "text": "(fVar2 = *(float *)(*(int *)(param_1 + 0x10a78) + 0x20) - *(float *)(param_1 + 0x20),",
@@ -260,12 +268,12 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "(fVar2 = *(float *)(*(int *)(param_1 + 0x10a78) + 0x20) - *(float *)(param_1 + 0x20),",
+      "text": "fVar1 = *(float *)(*(int *)(param_1 + 0x10a78) + 0x28) - *(float *)(param_1 + 0x28),",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar1 = *(float *)(*(int *)(param_1 + 0x10a78) + 0x28) - *(float *)(param_1 + 0x28),",
@@ -273,15 +281,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar1 = *(float *)(*(int *)(param_1 + 0x10a78) + 0x28) - *(float *)(param_1 + 0x28),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x11394) = fVar1;",

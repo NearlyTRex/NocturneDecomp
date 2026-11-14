@@ -11,7 +11,7 @@
 ;   core_ammo.cpp_CAmmoManaLarge_ctor_FUN_0040e260 at 0040e266
 ;   core_ammo.cpp_CAmmoMana_ctor_FUN_0040e0f0 at 0040e0f6
 ;   core_ammo.cpp_factoryFuncAmmo_FUN_0040de30 at 0040de43
-;   core_ammobox.cpp_FUN_0040e720 at 0040e775
+;   core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e720 at 0040e775
 ;   core_inv.cpp_FUN_004db8d0 at 004db8f4
 ;
 ; Referenced Globals:
@@ -20,7 +20,7 @@
 ;   undefined1 DAT_005b60c3
 ;   undefined1 DAT_005b60c4
 ;   undefined1 DAT_005b60c5
-;   void* g_CAmmoVTable = 0040def0
+;   CDemonActor_vtable g_CAmmoVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_ctor_FUN_00408600

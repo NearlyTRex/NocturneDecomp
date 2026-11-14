@@ -30,19 +30,19 @@
     {
       "addr": "004b7ee0",
       "from_addr": "004b7f0b",
-      "name": "core_game.cpp_FUN_004b7ee0",
+      "name": "core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b7ee0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e44e0",
       "from_addr": "004e45e7",
-      "name": "core_main.c_FUN_004e44e0",
+      "name": "core_main.c_initializeGameSystems_FUN_004e44e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00401010",
       "from_addr": "0040103d",
-      "name": "engine_2d.c_FUN_00401010",
+      "name": "engine_2d.c_initGraphicsSystem_FUN_00401010",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -83,14 +83,14 @@
       "name": "core_main.c_FUN_004e4330"
     },
     {
+      "addr": "005a3650",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005a3650"
+    },
+    {
       "addr": "005a28f0",
       "is_variadic": false,
       "name": "crt_memory.c_memset_FUN_005a28f0"
-    },
-    {
-      "addr": "005a3650",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a3650"
     },
     {
       "addr": "005a3770",
@@ -105,12 +105,12 @@
     {
       "addr": "0057a770",
       "is_variadic": false,
-      "name": "wincore_wddvmem.cpp_FUN_0057a770"
+      "name": "wincore_wddvmem.cpp_setupColorPalette_FUN_0057a770"
     },
     {
       "addr": "0057a8a0",
       "is_variadic": false,
-      "name": "wincore_wddvmem.cpp_FUN_0057a8a0"
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0"
     }
   ],
   "globals": [
@@ -344,6 +344,14 @@
     },
     "pcode_op_count": 1869
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005ac300",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -534,7 +542,7 @@
       "line": 65,
       "match": "DAT_0060b010",
       "severity": "mild",
-      "text": "DAT_0060b010 = FUN_005a3650",
+      "text": "DAT_0060b010 = malloc",
       "type": "undefined_data"
     },
     {
@@ -590,7 +598,7 @@
       "line": 76,
       "match": "DAT_005fba18",
       "severity": "mild",
-      "text": "_DAT_02d0bcf0 = FUN_005a3650(DAT_005fba18 * DAT_005fba1c * 4 + 0x40);",
+      "text": "_DAT_02d0bcf0 = malloc(DAT_005fba18 * DAT_005fba1c * 4 + 0x40);",
       "type": "undefined_data"
     },
     {
@@ -598,7 +606,7 @@
       "line": 76,
       "match": "DAT_005fba1c",
       "severity": "mild",
-      "text": "_DAT_02d0bcf0 = FUN_005a3650(DAT_005fba18 * DAT_005fba1c * 4 + 0x40);",
+      "text": "_DAT_02d0bcf0 = malloc(DAT_005fba18 * DAT_005fba1c * 4 + 0x40);",
       "type": "undefined_data"
     },
     {

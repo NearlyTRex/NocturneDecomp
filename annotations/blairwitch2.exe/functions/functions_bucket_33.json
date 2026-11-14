@@ -1,23 +1,5 @@
 [
   {
-    "addr":"004854b3",
-    "body":[
-      {
-        "end":"004854b6",
-        "size":4,
-        "start":"004854b3"
-      }
-    ],
-    "importable":true,
-    "name":"shape_edittool.cpp_FUN_004854b3",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
-  },
-  {
     "addr":"0055d0b3",
     "body":[
       {
@@ -26,13 +8,58 @@
         "start":"0055d0b3"
       }
     ],
+    "conv":"__edi_esi_ebx",
     "importable":true,
     "name":"engine_special.cpp_renderPerspectiveCorrectScanline32_FUN_0055d0b3",
-    "ret":"undefined1",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"left_vertex",
+          "storage":{
+            "reg":"EDI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:0000001c",
+                "offset":28,
+                "size":4
+              }
+            ]
+          },
+          "type":"SSoftwareEdge*"
+        },
+        {
+          "name":"right_vertex",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"SSoftwareEdge*"
+        },
+        {
+          "name":"scanline_y",
+          "storage":{
+            "reg":"EBX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:0000000c",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -47,6 +74,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005bf833",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true

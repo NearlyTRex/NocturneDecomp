@@ -17,15 +17,36 @@ Signals (per function, thunks/externals skipped):
                    code exists but the body never absorbed it. (MEDIUM)
   BODY_HOLE      - undefined bytes strictly inside [entry .. bodyMax] that aren't
                    claimed by another function. An interior gap in the body. (MEDIUM)
+  ENTRY_UNDEFINED - the entry itself was never disassembled, so the body is a
+                   byte or two of raw data and nothing else here can see it. (HIGH)
+  FALLTHROUGH_INTO_FUNCTION - a non-call instruction falls through into another
+                   function's entry. Code does not fall into a function, so that
+                   function is this one's continuation: an entry split in two. (HIGH)
+  PADDING_FUNCTION - the whole body is alignment padding (`mov ecx,ecx`,
+                   `lea edx,[edx+0]`): a phantom defined on the run before a real
+                   entry, which nothing calls. (HIGH)
 
 Inter-function jumps (tail calls, shared code) are NOT flagged - a target that
-lands inside a *different* function is legitimate.
+lands inside a *different* function is legitimate. A fall-through is not a jump.
 
-Report-first. Pass --fix to repair: disassemble the missing targets following
-flow, then recompute each affected function's body with
-CreateFunctionCmd.fixupFunctionBody (which preserves the function's name and
-signature - it does not delete/recreate). --fix iterates until no new fragments
-appear (bounded by --max-passes) since fixing one tail can reveal the next.
+Report-first. Pass --fix to repair: disassemble the missing targets (and an
+undisassembled entry) following flow, then recompute each affected function's
+body with CreateFunctionCmd.fixupFunctionBody (which preserves the function's
+name and signature - it does not delete/recreate). That recompute also absorbs
+FLOW_ORPHAN code. --fix iterates until no new fragments appear (bounded by
+--max-passes) since fixing one tail can reveal the next.
+
+PADDING_FUNCTION is reported, not fixed; the report prints the delete_function.py
+command, which still refuses one that something references.
+
+FALLTHROUGH_INTO_FUNCTION is reported, not fixed: the repair deletes the second
+function and moves its name (it often holds the real one) to the first entry,
+which is a naming decision. The report prints the delete_function.py command.
+Review each first: Watcom shares a tail between functions, so a branch's
+`xor eax,eax; ret` path can run into a tiny function with that exact body
+(CCurtain_renderTransparent into getCollisionType); an empty virtual can be a
+`ret` byte inside another function (bw3's CWater_process in calculateVisibleTiles);
+and the CRT has functions with several entries. None of these is a split.
 
 Usage:
     python3 -u validate_function_ranges.py <project_dir> <project_name> <program_name> \\
@@ -42,6 +63,9 @@ Examples:
 import os
 import sys
 import argparse
+
+# A body that ends in padding "falls into" the next entry without being split from it
+from alignment_nop import is_alignment_nop
 
 SEVERITY_ORDER = ["MEDIUM", "HIGH"]
 
@@ -69,6 +93,7 @@ def is_undefined(program, addr):
     return False
 
 
+
 def scan_function(program, func, exec_set, fm):
     """Return a list of fragmentation findings for one function."""
     listing = program.getListing()
@@ -77,14 +102,39 @@ def scan_function(program, func, exec_set, fm):
     findings = []
     seen_targets = set()
 
-    for instr in listing.getInstructions(body, True):
+    if listing.getInstructionAt(entry) is None and is_undefined(program, entry):
+        findings.append({
+            "kind": "ENTRY_UNDEFINED", "severity": "HIGH",
+            "from": entry, "target": entry,
+            "note": "entry never disassembled",
+        })
+
+    instructions = list(listing.getInstructions(body, True))
+    if instructions and all(is_alignment_nop(i) for i in instructions):
+        findings.append({
+            "kind": "PADDING_FUNCTION", "severity": "HIGH",
+            "from": entry, "target": entry,
+            "note": "body is only alignment padding (%d instruction(s))" % len(instructions),
+        })
+
+    for instr in instructions:
+        fallthrough = instr.getFallThrough()
+        if fallthrough is not None and not instr.getFlowType().isCall() \
+                and not is_alignment_nop(instr):
+            into = fm.getFunctionAt(fallthrough)
+            if into is not None and into.getEntryPoint() != entry:
+                findings.append({
+                    "kind": "FALLTHROUGH_INTO_FUNCTION", "severity": "HIGH",
+                    "from": instr.getAddress(), "target": fallthrough,
+                    "note": "%s falls into %s" % (instr.getMnemonicString(), into.getName()),
+                    "into": into,
+                })
         ft = instr.getFlowType()
         # non-call control-flow targets: jump targets + fall-through
         targets = []
         if ft.isJump():
             for t in instr.getFlows():
                 targets.append(t)
-        fallthrough = instr.getFallThrough()
         if fallthrough is not None:
             targets.append(fallthrough)
 
@@ -162,7 +212,6 @@ def _first_defined_unit(program, start, span):
     instruction is at most 15 bytes, so a span of 16 covers the first instruction's
     footprint. Returns the CodeUnit or None if the whole window is undefined.
     """
-    from ghidra.program.model.listing import Data
     listing = program.getListing()
     for i in range(span):
         a = start.add(i)
@@ -232,7 +281,8 @@ def fixup_function(program, func, findings, monitor, fix_holes):
     listing = program.getListing()
     fm = program.getFunctionManager()
 
-    kinds = ("FLOW_UNDEFINED", "BODY_HOLE") if fix_holes else ("FLOW_UNDEFINED",)
+    kinds = ("FLOW_UNDEFINED", "ENTRY_UNDEFINED", "BODY_HOLE") if fix_holes \
+        else ("FLOW_UNDEFINED", "ENTRY_UNDEFINED")
     progressed = False
     blockers = []
     for f in findings:
@@ -300,7 +350,7 @@ def write_report(path, program_name, results, fixed):
     lines.append("=" * 60)
     lines.append("Program: %s" % program_name)
     lines.append("Fragmented functions: %d" % len(results))
-    lines.append("  with HIGH (flows into undefined bytes): %d" % n_high)
+    lines.append("  with HIGH (undefined flow or entry, or split entry): %d" % n_high)
     lines.append("  MEDIUM only (orphan code / interior gap): %d" % n_med)
     lines.append("Mode: %s" % ("FIXED" if fixed else "report only"))
     lines.append("")
@@ -330,7 +380,7 @@ def write_report(path, program_name, results, fixed):
 def run(program, out_path, do_fix, max_passes, fix_holes):
     from ghidra.util.task import ConsoleTaskMonitor
     monitor = ConsoleTaskMonitor()
-    log = lambda m: print(m)
+    log = print
 
     fm = program.getFunctionManager()
     exec_set = get_executable_set(program)
@@ -385,6 +435,32 @@ def run(program, out_path, do_fix, max_passes, fix_holes):
                 " ".join("--addr %s" % a for a in uniq)))
             log("      then re-run validate_function_ranges.py ... --fix")
 
+    splits = sorted({(f["into"].getEntryPoint().getOffset(), str(f["into"].getEntryPoint()),
+                      f["into"].getName(), str(func.getEntryPoint()), func.getName())
+                     for func, findings in results for f in findings
+                     if f["kind"] == "FALLTHROUGH_INTO_FUNCTION"})
+    if splits:
+        log("")
+        log("!! %d function(s) are the continuation of the function before them (an"
+            % len(splits))
+        log("   entry split in two). Delete the continuation, keep the better name on")
+        log("   the first entry (its _FUN_ suffix must be that entry), then --fix:")
+        for _off, into_addr, into_name, head_addr, head_name in splits:
+            log("   %s %-40s continues %s %s" % (into_addr, into_name, head_addr, head_name))
+        log("      delete_function.py <ABS>/projects <project> %s %s --apply --force" % (
+            program.getName(), " ".join("--addr %s" % s[1] for s in splits)))
+
+    padding = sorted({(func.getEntryPoint().getOffset(), str(func.getEntryPoint()), func.getName())
+                      for func, findings in results for f in findings
+                      if f["kind"] == "PADDING_FUNCTION"})
+    if padding:
+        log("")
+        log("!! %d function(s) are only alignment padding. Delete them:" % len(padding))
+        for _off, addr, name in padding:
+            log("   %s %s" % (addr, name))
+        log("      delete_function.py <ABS>/projects <project> %s %s --apply" % (
+            program.getName(), " ".join("--addr %s" % p[1] for p in padding)))
+
     write_report(out_path, program.getName(), results, do_fix)
     return changed
 
@@ -397,7 +473,8 @@ def main():
     parser.add_argument("program_name", nargs="?", default="nocturne.exe")
     parser.add_argument("--out", default=None)
     parser.add_argument("--fix", action="store_true",
-                        help="Disassemble missing code (FLOW_UNDEFINED) and recompute bodies, then save")
+                        help="Disassemble missing code (FLOW_UNDEFINED, ENTRY_UNDEFINED) and "
+                             "recompute bodies, which also absorbs FLOW_ORPHAN code, then save")
     parser.add_argument("--fix-holes", action="store_true",
                         help="Also disassemble interior BODY_HOLE gaps (usually alignment padding - off by default)")
     parser.add_argument("--max-passes", type=int, default=4)

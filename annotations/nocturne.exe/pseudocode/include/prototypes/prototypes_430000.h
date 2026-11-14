@@ -6,6 +6,7 @@
 #include "system/basetypes.h"
 #include "system/fstream.h"
 #include "system/iostream.h"
+#include "system/stdio.h"
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CCloth.h"
 #include "types/classes/CClothList.h"
@@ -89,7 +90,7 @@ void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_004349a0(int vertex_coun
 CCloth * __cdecl core_cloth_cpp_CCloth_ctor_FUN_00435100(CCloth *this_ptr);
 CCloth * __cdecl core_cloth_cpp_CCloth_dtor_FUN_00435160(CCloth *this_ptr,uint flags);
 void __cdecl core_cloth_cpp_CCloth_allocMemory_FUN_004351b0(CCloth *this_ptr);
-void __cdecl core_cloth_cpp_CCloth_FUN_00435210(CCloth *this_ptr);
+void __cdecl core_cloth_cpp_CCloth_free_FUN_00435210(CCloth *this_ptr);
 int __cdecl core_cloth_cpp_CCloth_load_FUN_00435240(CCloth *this_ptr,char *filename);
 void __cdecl core_cloth_cpp_CCloth_initializeConnections_FUN_004357b0(CCloth *this_ptr);
 void __cdecl core_cloth_cpp_CCloth_setup_FUN_004359e0(CCloth *this_ptr,CVector3f *position,CVector3f *euler,CDeformableModelInstance *model_ptr);
@@ -183,7 +184,7 @@ int __cdecl core_colonel_cpp_CColonel_isWeaponDrawn_FUN_0043ab20(CColonel *this_
 void __cdecl core_colonel_cpp_CColonel_drawWeapon_FUN_0043ab30(CColonel *this_ptr,int drawn);
 int __cdecl core_colonel_cpp_getCurrentMotionState_FUN_0043ab40(CMotionController *motion_ptr);
 CColonel * __cdecl core_colonel_cpp_CColonel_dtor_FUN_0043ab60(CColonel *this_ptr,uint flags);
-void __cdecl core_console_cpp_staticInit_FUN_0043abb0(void);
+void __cdecl engine_console_cpp_staticInit_FUN_0043abb0(void);
 CConsole * __cdecl engine_console_cpp_CConsole_ctor_FUN_0043abe0(CConsole *this_ptr,int width,int height,int screen_x,int screen_y);
 CConsole * __cdecl engine_console_cpp_CConsole_dtor_FUN_0043ac50(CConsole *this_ptr,uint flags);
 void __cdecl engine_console_cpp_CConsole_printf_FUN_0043ac60(CConsole *this_ptr,char *format,...) __attribute__((format(printf, 2, 3)));
@@ -204,9 +205,9 @@ ECollisionType __cdecl core_conveyor_cpp_CConveyor_getCollisionType_FUN_0043b3b0
 CBoundingBox3D * __cdecl core_conveyor_cpp_CConveyor_getBoundingBox_FUN_0043b3c0(CConveyor *this_ptr,CBoundingBox3D *out_box);
 CConveyor * __cdecl core_conveyor_cpp_CConveyor_dtor_FUN_0043b420(CConveyor *this_ptr,uint flags);
 CPlatform * __cdecl core_conveyor_cpp_CPlatform_dtor_FUN_0043b490(CPlatform *this_ptr,uint flags);
-undefined4 * core_course_cpp_FUN_0043b500(void);
+int * __cdecl core_course_cpp_assignInt_FUN_0043b500(int *dest,int *src);
 float __cdecl core_course_cpp_fmodfPositive_FUN_0043b510(float value,float modulus);
-void core_course_cpp_FUN_0043b5b0(void);
+void __cdecl core_course_cpp_skipLine_FUN_0043b5b0(_FILE *file_handle);
 CCourse * __cdecl core_course_cpp_CCourse_ctor_FUN_0043b5d0(CCourse *this_ptr);
 CCourse * __cdecl core_course_cpp_CCourse_dtor_FUN_0043b5f0(CCourse *this_ptr,uint flags);
 void __cdecl core_course_cpp_CCourse_allocMemory_FUN_0043b610(CCourse *this_ptr,int count);

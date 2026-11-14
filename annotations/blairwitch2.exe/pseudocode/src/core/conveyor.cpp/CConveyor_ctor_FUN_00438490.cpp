@@ -14,14 +14,14 @@ CConveyor * __cdecl core_conveyor_cpp_CConveyor_ctor_FUN_00438490(CConveyor *thi
   char *pcVar3;
   char *pcVar4;
   
-  pCVar2 = (CConveyor *)core_platfrm_cpp_CPlatform_ctor_FUN_005180b0((CPlatform *)this_ptr);
-  *(byte ***)&pCVar2->field_0x2b0 = &g_CConveyorVTable;
+  pCVar2 = (CConveyor *)core_platfrm_cpp_CPlatform_ctor_FUN_005180b0(&this_ptr->base);
+  (pCVar2->base).base.vtable._ub = &g_CConveyorVTable;
   pcVar3 = (char *)0x5cdf8c;
-  *(uint *)&pCVar2->field_0x884 = 0x3f800000;
-  *(uint *)&pCVar2->field_0x88c = 0x3f800000;
-  *(uint *)&pCVar2->field_0x888 = 0x3dcccccd;
-  pcVar4 = &pCVar2->field_0x89c;
-  *(uint *)&pCVar2->field_0x964 = 0;
+  (pCVar2->size).x = 1.0;
+  (pCVar2->size).z = 1.0;
+  (pCVar2->size).y = 0.1;
+  pcVar4 = pCVar2->start_event;
+  pCVar2->state = 0;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;
@@ -32,7 +32,7 @@ CConveyor * __cdecl core_conveyor_cpp_CConveyor_ctor_FUN_00438490(CConveyor *thi
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
   pcVar3 = (char *)0x5cdf91;
-  pcVar4 = &pCVar2->field_0x900;
+  pcVar4 = pCVar2->stop_event;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;
@@ -42,9 +42,9 @@ CConveyor * __cdecl core_conveyor_cpp_CConveyor_ctor_FUN_00438490(CConveyor *thi
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  *(uint *)&pCVar2->field_0x890 = 0;
-  *(uint *)&pCVar2->field_0x894 = 0;
-  *(uint *)&pCVar2->field_0x898 = 0x3f800000;
-  pCVar2->field_0x968 = 0;
+  (pCVar2->direction).x = 0.0;
+  (pCVar2->direction).y = 0.0;
+  (pCVar2->direction).z = 1.0;
+  pCVar2->actor_class[0] = '\0';
   return pCVar2;
 }

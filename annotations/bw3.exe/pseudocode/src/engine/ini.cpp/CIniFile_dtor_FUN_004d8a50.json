@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 31,
+    "complexity_score": 15,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 16,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 51
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 50
   },
   "cross_references": [
     {
@@ -24,13 +22,13 @@
     {
       "addr": "004d8e70",
       "from_addr": "004d9583",
-      "name": "core_inivar.cpp_FUN_004d8e70",
+      "name": "core_inivar.cpp_readIniData_FUN_004d8e70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d95c0",
       "from_addr": "004d9c6f",
-      "name": "core_inivar.cpp_FUN_004d95c0",
+      "name": "core_inivar.cpp_writeIniData_FUN_004d95c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -48,9 +46,9 @@
         "004d8a96"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "engine_ini.cpp_CIniFile_dtor_FUN_004d8a50",
-    "signature": "CIniFile * engine_ini_cpp_CIniFile_dtor_FUN_004d8a50(CIniFile *this_ptr,uint flags)"
+    "signature": "CIniFile * __cdecl engine_ini_cpp_CIniFile_dtor_FUN_004d8a50(CIniFile *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -90,38 +88,32 @@
         "call_addr": "004beb2c",
         "call_type": "direct",
         "caller": "core_game.cpp_FUN_004be8d0",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
       {
         "call_addr": "004d9583",
         "call_type": "direct",
-        "caller": "core_inivar.cpp_FUN_004d8e70",
-        "estimated_params": 3,
+        "caller": "core_inivar.cpp_readIniData_FUN_004d8e70",
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
       {
         "call_addr": "004d9c6f",
         "call_type": "direct",
-        "caller": "core_inivar.cpp_FUN_004d95c0",
-        "estimated_params": 3,
+        "caller": "core_inivar.cpp_writeIniData_FUN_004d95c0",
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -129,12 +121,10 @@
         "call_addr": "0052ccea",
         "call_type": "direct",
         "caller": "core_script.cpp_CScript_step_FUN_00529a70",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -142,12 +132,10 @@
         "call_addr": "0052efb7",
         "call_type": "direct",
         "caller": "core_script.cpp_CScript_step_FUN_00529a70",
-        "estimated_params": 3,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       }
@@ -155,7 +143,7 @@
     "confidence": "high",
     "declared_params": 2,
     "declared_stack_bytes": 8,
-    "estimated_params": 3,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -180,6 +168,20 @@
     },
     "pcode_op_count": 106
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004d8940",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004f4b30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -203,16 +205,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x200",
-      "severity": "mild",
-      "text": "*(byte ***)&this_ptr->field_0x200 = &PTR_engine_ini_cpp_CIniFile_dtor_FUN_004d8a50_005e2074;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

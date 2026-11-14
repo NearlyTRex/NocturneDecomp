@@ -1,16 +1,20 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_special_cpp_drawPolygon2_FUN_0055f920(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; int __cdecl engine_special_cpp_drawPolygon2_FUN_0055f920(SRenderVertex **vertex_array,int vertex_count,int render_flags)
 ;
+; Parameters:
+; SRenderVertex * * Stack[0x4]:4   vertex_array
+; int              Stack[0x8]:4   vertex_count
+; int              Stack[0xc]:4   render_flags
 ;
 ; XREF[6]:
 ;   core_dpart.cpp_FUN_00461f70 at 00461ff1
 ;   core_dpart.cpp_FUN_004625f0 at 0046266d
 ;   engine_clipper.c_clipPolygonToViewFrustum_FUN_00431330 at 00431490
 ;   engine_clipper.c_clipPolygonToViewport_FUN_00433000 at 00433144
-;   engine_prim.c_FUN_0051d050 at 0051d126
-;   engine_prim.c_FUN_0051e130 at 0051e1f0
+;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_0051e130 at 0051e1f0
+;   engine_prim.c_renderIndexedPolygonSoftware_FUN_0051d050 at 0051d126
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c37788

@@ -19,7 +19,7 @@
     {
       "addr": "004b56a0",
       "from_addr": "004b586a",
-      "name": "core_fire.cpp_FUN_004b56a0",
+      "name": "core_fire.cpp_CFireEffect_createBulletImpact_FUN_004b56a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -33,7 +33,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fire.cpp_allocateBulletHole_FUN_004b4ac0",
-    "signature": "undefined * __cdecl core_fire_cpp_allocateBulletHole_FUN_004b4ac0(void)"
+    "signature": "CBulletHole * __cdecl core_fire_cpp_allocateBulletHole_FUN_004b4ac0(void)"
   },
   "function_calls": [],
   "globals": [
@@ -79,6 +79,32 @@
     },
     "pcode_op_count": 124
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0049c120",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a1420",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8889
+    },
+    "nocedit.exe": {
+      "addr": "004c6c10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0048a0e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -101,7 +127,7 @@
       "line": 18,
       "match": "DAT_01c6eaa8",
       "severity": "mild",
-      "text": "return &DAT_01c6eaa8 + iVar1;",
+      "text": "return (CBulletHole *)(&DAT_01c6eaa8 + iVar1);",
       "type": "undefined_data"
     }
   ]

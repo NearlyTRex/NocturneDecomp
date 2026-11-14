@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hecaitmx_cpp_factoryFuncHecaitomix_FUN_00597dc0(void)
+; CHecaitomix * __cdecl core_hecaitmx_cpp_factoryFuncHecaitomix_FUN_00597dc0(void)
 ;
 ;
 ; Called Functions:
 ;   core_hecaitmx.cpp_CHecaitomix_ctor_FUN_00597df0
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_memory.c_operator_new_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xd07c                         ; 00597dc0
         ;   Label: core_hecaitmx.cpp_factoryFuncHecaitomix_FUN_00597dc0
-    CALL crt_unknown.c_FUN_005a3cb2     ; 00597dc5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 00597dc5
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
     ADD ESP,0x4                         ; 00597dca
     TEST EAX,EAX                        ; 00597dcd
     JNZ 0x00597dd2                      ; 00597dcf

@@ -14,21 +14,27 @@
   },
   "cross_references": [
     {
+      "addr": "00459ff0",
+      "from_addr": "0045a8c2",
+      "name": "core_doc.cpp_FUN_00459ff0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004b20d0",
       "from_addr": "004b225f",
       "name": "core_gabriela.cpp_FUN_004b20d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00559b4e",
-      "from_addr": "00559c15",
-      "name": "core_sound.cpp_FUN_00559b4e",
+      "addr": "0055a3c0",
+      "from_addr": "0055a71b",
+      "name": "core_sound.cpp_CSound_process_FUN_0055a3c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0055a3c0",
-      "from_addr": "0055a71b",
-      "name": "core_sound.cpp_FUN_0055a3c0",
+      "addr": "00559b50",
+      "from_addr": "00559c15",
+      "name": "core_sound.cpp_FUN_00559b50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -40,13 +46,7 @@
     {
       "addr": "00595f30",
       "from_addr": "00596211",
-      "name": "core_zombie.cpp_FUN_00595f30",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00459ff0",
-      "from_addr": "0045a8c2",
-      "name": "unkafter_stranger.cpp_FUN_00459ff0",
+      "name": "core_zombie.cpp_CZombie_process_FUN_00595f30",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -89,7 +89,7 @@
       {
         "call_addr": "0055a71b",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0055a3c0",
+        "caller": "core_sound.cpp_CSound_process_FUN_0055a3c0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -100,7 +100,7 @@
       {
         "call_addr": "0045a8c2",
         "call_type": "direct",
-        "caller": "unkafter_stranger.cpp_FUN_00459ff0",
+        "caller": "core_doc.cpp_FUN_00459ff0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -133,7 +133,7 @@
       {
         "call_addr": "00596211",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_00595f30",
+        "caller": "core_zombie.cpp_CZombie_process_FUN_00595f30",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -144,7 +144,7 @@
       {
         "call_addr": "00559c15",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_00559b4e",
+        "caller": "core_sound.cpp_FUN_00559b50",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -193,6 +193,32 @@
       "STORE": 16
     },
     "pcode_op_count": 289
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00557230",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0053cbf0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00572460",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0050fa30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 48,

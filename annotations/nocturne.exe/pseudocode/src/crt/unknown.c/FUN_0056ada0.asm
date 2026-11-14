@@ -5,10 +5,12 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 SUB_0056ad64
 ;   undefined4 DAT_005c1794
 ;   undefined4 DAT_005c1795
 ;   undefined4 DAT_005c1d04
+;
+; Called Functions:
+;   crt_unknown.c_FUN_0056ad64
 ;
 ; *****************************************************************************
 
@@ -32,8 +34,8 @@ section .text
     CMP AL,0x3                          ; 0056adc0
     JNZ 0x0056adcd                      ; 0056adc2
         ;   XREF to: 0056adcd (CONDITIONAL_JUMP)  ; LAB_0056adcd
-    CALL 0x0056ad64                     ; 0056adc4
-        ;   XREF to: 0056ad64 (UNCONDITIONAL_CALL)  ; SUB_0056ad64
+    CALL crt_unknown.c_FUN_0056ad64     ; 0056adc4
+        ;   XREF to: 0056ad64 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056ad64()
     MOV BH,AL                           ; 0056adc9
     MOV BL,AL                           ; 0056adcb
     CMP byte ptr [0x005c1d04],0x0       ; 0056adcd | DAT_005c1d04

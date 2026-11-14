@@ -14,9 +14,8 @@ double sound_snddx_cpp_FUN_0055cb20(uint param_1,int param_2)
   int *piVar1;
   uint error_code;
   int iVar2;
-  char *pcVar3;
   char *apcStack_1bc [101];
-  uint uStack_28;
+  int iStack_28;
   char acStack_20 [16];
   
   iVar2 = *(int *)(param_2 + 0x60);
@@ -31,14 +30,13 @@ double sound_snddx_cpp_FUN_0055cb20(uint param_1,int param_2)
     piVar1 = *(int **)(iVar2 * 0x24 + 0x2cf500c);
     error_code = (**(code **)(*piVar1 + 0x10))(piVar1);
     if (error_code != 0) {
-      pcVar3 = sound_snddx_cpp_FUN_0055a670(error_code);
-      FUN_005a28c0
-                (apcStack_1bc,"DirectSux: Unable to %s.  (%s)","Get playback cursor of hardware sfx secondary buffer"
-                 ,pcVar3);
-      sound_sndmain_cpp_FUN_0055a560(apcStack_1bc);
+      sound_snddx_cpp_FUN_0055a670(error_code);
+      _sprintf((char *)apcStack_1bc,"DirectSux: Unable to %s.  (%s)");
+      sound_sndmain_cpp_logSoundError_FUN_0055a560((char *)apcStack_1bc);
       return -1.0;
     }
-    iVar2 = sound_sndmain_cpp_FUN_005558e0(*(uint *)(param_2 + 0x68),uStack_28);
+    iVar2 = sound_sndmain_cpp_CSfxSample_bytesToFrames_FUN_005558e0
+                      (*(CSfxSample **)(param_2 + 0x68),iStack_28);
     return (double)iVar2;
   }
   return -1.0;

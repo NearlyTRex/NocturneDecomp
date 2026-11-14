@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_disease_cpp_staticInit_FUN_0045bf20(void)
+; void __cdecl core_disease_cpp_staticInit_FUN_0045bf20(void)
 ;
 ;
 ; Called Functions:

@@ -8,3 +8,27 @@
 // Original: core_flattn.cpp_staticInit_FUN_004ad490
 // Address: 004ad490
 void __cdecl staticInit(void);
+
+// Original: core_flattn.cpp_FUN_004ad4c0
+// Address: 004ad4c0
+void FUN_004ad4c0(void);
+
+// Original: core_flattn.cpp_FUN_004ad4d0
+// Address: 004ad4d0
+void FUN_004ad4d0(undefined4 *param_1);
+
+// Original: core_flattn.cpp_FUN_004ad550
+// Address: 004ad550
+void FUN_004ad550(undefined4 *param_1,undefined4 *param_2);
+
+// Original: core_flattn.cpp_FUN_004ad5e0
+// Address: 004ad5e0
+void FUN_004ad5e0(undefined4 *param_1);
+
+// Original: core_flattn.cpp_FUN_004ad660
+// Address: 004ad660
+void FUN_004ad660(float *param_1,float *param_2);
+
+// Original: core_flattn.cpp_FUN_004ad6e0
+// Address: 004ad6e0
+void FUN_004ad6e0(float *param_1,float *param_2);

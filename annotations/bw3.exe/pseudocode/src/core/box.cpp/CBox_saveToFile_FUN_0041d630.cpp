@@ -15,22 +15,22 @@ void __cdecl core_box_cpp_CBox_saveToFile_FUN_0041d630(CBox *this_ptr,_FILE *fil
   FUN_005a3140(file_handle,"%s%d\n",indent_prefix,1);
   FUN_005a3140();
   FUN_005a3140
-            (file_handle,"%s%f,%f,%f\n",indent_prefix,(double)*(float *)this_ptr,
-             (double)*(float *)(this_ptr + 4),(double)*(float *)(this_ptr + 8));
+            (file_handle,"%s%f,%f,%f\n",indent_prefix,(double)(this_ptr->position).x,
+             (double)(this_ptr->position).y,(double)(this_ptr->position).z);
   FUN_005a3140
-            (file_handle,"%s%f,%f,%f\n",indent_prefix,(double)*(float *)(this_ptr + 0xc),
-             (double)*(float *)(this_ptr + 0x14),(double)*(float *)(this_ptr + 0x10));
+            (file_handle,"%s%f,%f,%f\n",indent_prefix,(double)(this_ptr->orientation).x,
+             (double)(this_ptr->orientation).z,(double)(this_ptr->orientation).y);
   FUN_005a3140
-            (file_handle,"%s%f,%f,%f\n",indent_prefix,(double)*(float *)(this_ptr + 0xa4),
-             (double)*(float *)(this_ptr + 0xa8),(double)*(float *)(this_ptr + 0xac));
+            (file_handle,"%s%f,%f,%f\n",indent_prefix,(double)(this_ptr->extents).x,
+             (double)(this_ptr->extents).y,(double)(this_ptr->extents).z);
   FUN_005a3140();
   FUN_005a3140
-            (file_handle,"%s%f,%f,%f\n",indent_prefix,(double)*(float *)(this_ptr + 0x4c),
-             (double)*(float *)(this_ptr + 0x50),(double)*(float *)(this_ptr + 0x54));
+            (file_handle,"%s%f,%f,%f\n",indent_prefix,
+             (double)(this_ptr->linear_velocity_local).x,(double)(this_ptr->linear_velocity_local).y
+             ,(double)(this_ptr->linear_velocity_local).z);
   FUN_005a3140
-            (file_handle,"%s%f,%f,%f\n",indent_prefix,(double)*(float *)(this_ptr + 0x70),
-             (double)*(float *)(this_ptr + 0x74),(double)*(float *)(this_ptr + 0x78));
-  FUN_005a3140
-            (file_handle,"%s%d\n",indent_prefix,*(uint *)(this_ptr + 0x254));
+            (file_handle,"%s%f,%f,%f\n",indent_prefix,(double)(this_ptr->angular_velocity).x,
+             (double)(this_ptr->angular_velocity).y,(double)(this_ptr->angular_velocity).z);
+  FUN_005a3140(file_handle,"%s%d\n",indent_prefix,this_ptr->is_valid);
   return;
 }

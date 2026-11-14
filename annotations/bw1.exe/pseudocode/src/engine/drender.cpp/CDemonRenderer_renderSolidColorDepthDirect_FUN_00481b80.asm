@@ -8,8 +8,8 @@
 ; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ;
 ; XREF[4]:
+;   core_mirror.cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_00519ba0 at 00519bc9
 ;   core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_00519c20 at 00519c9c
-;   core_mirror.cpp_FUN_00519ba0 at 00519bc9
 ;   core_set.cpp_CDemonSet_renderPrimitiveList_FUN_00555360 at 005553c6
 ;   core_setdir.cpp_FUN_00559f80 at 0055b013
 ;
@@ -62,7 +62,7 @@ section .text
         ;   Label: LAB_00481bc5
     PUSH EAX                            ; 00481bc8
     CALL engine_3d.c_isVisiblePlane_FUN_00403920 ; 00481bc9
-        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403920()
+        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403920(SClipPlane * plane)
     ADD ESP,0x4                         ; 00481bce
     TEST EAX,EAX                        ; 00481bd1
     JZ 0x00481bc1                       ; 00481bd3

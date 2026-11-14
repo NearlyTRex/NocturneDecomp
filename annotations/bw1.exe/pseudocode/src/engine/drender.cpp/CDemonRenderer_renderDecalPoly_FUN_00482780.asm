@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   core_water.cpp_FUN_005a9f10 at 005aa538
+;   core_water.cpp_CWater_render_FUN_005a9f10 at 005aa538
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01bc1240
@@ -92,7 +92,7 @@ section .text
     ADD EAX,0x8                         ; 00482815
     PUSH EAX                            ; 00482818
     CALL engine_3d.c_isVisiblePlane_FUN_00403920 ; 00482819
-        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403920()
+        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403920(SClipPlane * plane)
     ADD ESP,0x4                         ; 0048281e
     TEST EAX,EAX                        ; 00482821
     JZ 0x0048280b                       ; 00482823

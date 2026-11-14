@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 190,
+    "complexity_score": 47,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 30,
-    "suspect_count": 15,
+    "pseudocode_lines": 32,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 115
+    "total_lines": 117
   },
   "cross_references": [
     {
@@ -44,12 +43,12 @@
     {
       "addr": "00540980",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_00540980"
+      "name": "core_skeleton.cpp_CSkeleton_free_FUN_00540980"
     },
     {
       "addr": "005b8df8",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b8df8"
+      "name": "crt_memory.c_operator_new_array_FUN_005b8df8"
     }
   ],
   "globals": [
@@ -143,6 +142,32 @@
     },
     "pcode_op_count": 391
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00562e60",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00547a80",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00599910",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3797
+    },
+    "nocturne.exe": {
+      "addr": "005173c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7368
+    }
+  },
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -181,118 +206,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x1d1f8",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x1d1f8 = bone_count;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x1e00c",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x1e00c = frame_count;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x1d1f8",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x1d1f8 * *(int *)&this_ptr->field_0x1e00c * 0x10);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x1e00c",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x1d1f8 * *(int *)&this_ptr->field_0x1e00c * 0x10);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x1e010",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1e010 = uVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x1e00c",
-      "severity": "mild",
-      "text": "uVar1 = FUN_005b8df8(*(int *)&this_ptr->field_0x1e00c * 0xc);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x1e014",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1e014 = uVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x1e00c",
-      "severity": "mild",
-      "text": "uVar1 = FUN_005b8df8(*(int *)&this_ptr->field_0x1e00c * 0xc);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x1e018",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1e018 = uVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x1e010",
-      "severity": "mild",
-      "text": "if (((*(int *)&this_ptr->field_0x1e010 != 0) && (*(int *)&this_ptr->field_0x1e014 != 0)) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x1e014",
-      "severity": "mild",
-      "text": "if (((*(int *)&this_ptr->field_0x1e010 != 0) && (*(int *)&this_ptr->field_0x1e014 != 0)) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x1e018",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x1e018 != 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x1d1f8",
-      "severity": "mild",
-      "text": "(\"Out of hunk in CSkeleton::allocMemory.  boneCount=%d, frameCount=%d\",*(uint *)&this_ptr->field_0x1d1f8,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x1e00c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1e00c);",
-      "type": "unnamed_field"
     }
   ]
 }

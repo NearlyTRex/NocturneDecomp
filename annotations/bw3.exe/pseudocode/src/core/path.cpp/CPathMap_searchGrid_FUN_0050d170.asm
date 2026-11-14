@@ -16,7 +16,7 @@
 ;
 ; XREF[2]:
 ;   core_path.cpp_CPathMap_findPathToDestination_FUN_0050baa0 at 0050c1dc
-;   core_path.cpp_FUN_0050d11e at 0050d15e
+;   core_path.cpp_FUN_0050d120 at 0050d15e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_path_cpp_005cb744

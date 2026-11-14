@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl core_actor_cpp_matchesClassName_FUN_0040c5b0(undefined4 param_1)
+; int __cdecl core_actor_cpp_matchesClassName_FUN_0040c5b0(CDemonActorType *type_ptr,char *class_name)
 ;
+; Parameters:
+; CDemonActorType * Stack[0x4]:4   type_ptr
+; char *           Stack[0x8]:4   class_name
 ;
 ; XREF[1]:
-;   core_actor.cpp_FUN_0040c550 at 0040c56f
+;   core_actor.cpp_isOfClass_FUN_0040c550 at 0040c56f
 ;
 ; Called Functions:
 ;   core_actor.cpp_matchClassExpression_FUN_0040c490
@@ -20,7 +23,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x8]       ; 0040c5b5
     PUSH EDX                            ; 0040c5b9
     CALL core_actor.cpp_matchClassExpression_FUN_0040c490 ; 0040c5ba
-        ;   XREF to: 0040c490 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_matchClassExpression_FUN_0040c490()
+        ;   XREF to: 0040c490 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_matchClassExpression_FUN_0040c490(CDemonActorType * type_ptr, char * * parse_pos)
     ADD ESP,0x8                         ; 0040c5bf
     TEST EAX,EAX                        ; 0040c5c2
     SETG AL                             ; 0040c5c4

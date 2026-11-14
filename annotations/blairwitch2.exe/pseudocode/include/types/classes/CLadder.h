@@ -4,13 +4,22 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CVector3f.h"
+#include "types/enums/EGroundType.h"
 
 // Structure: CLadder
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x45c (1116 bytes)
 #pragma pack(push, 1)
 typedef struct CLadder {
-    char field_0[1116]; // 0x0
+    CDemonActor base; // 0x0
+    CKeyFramedModelInstance model; // 0x2b4
+    CVector3f ladder_size; // 0x430
+    struct CDemonActor* master_actor; // 0x43c
+    CVector3f relative_position; // 0x440
+    CVector3f cached_euler_angles; // 0x44c
+    EGroundType ground_type; // 0x458
 } CLadder;
 #pragma pack(pop)
 

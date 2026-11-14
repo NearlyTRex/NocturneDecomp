@@ -1,0 +1,579 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 239,
+    "complexity_score": 652,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 92,
+    "suspect_count": 53,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "stack_param",
+      "undefined_data",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 331
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0042cc30",
+    "address_range": [
+      [
+        "0042cc30",
+        "0042ce75"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_0042cc30",
+    "signature": "void cockpit_ckptutil_c_blitSpanBasedSpriteClipped_FUN_0042cc30(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042c410",
+      "is_variadic": false,
+      "name": "cockpit_ckptutil.c_FUN_0042c410"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006141c0",
+      "name": "DAT_006141c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c2a38c",
+      "name": "DAT_01c2a38c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c2a390",
+      "name": "DAT_01c2a390",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e48",
+      "name": "DAT_01c35e48",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e50",
+      "name": "DAT_01c35e50",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.025252525252525,
+    "instruction_count": 198,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 34,
+      "BOOL_OR": 2,
+      "BRANCH": 6,
+      "CALL": 1,
+      "CALLIND": 2,
+      "CBRANCH": 16,
+      "COPY": 135,
+      "INT_ADD": 115,
+      "INT_AND": 218,
+      "INT_CARRY": 33,
+      "INT_EQUAL": 168,
+      "INT_LEFT": 10,
+      "INT_LESS": 22,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 17,
+      "INT_OR": 29,
+      "INT_SBORROW": 24,
+      "INT_SCARRY": 39,
+      "INT_SEXT": 3,
+      "INT_SLESS": 85,
+      "INT_SRIGHT": 3,
+      "INT_SUB": 43,
+      "INT_XOR": 9,
+      "LOAD": 61,
+      "POPCOUNT": 75,
+      "RETURN": 1,
+      "STORE": 34,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 1193
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00437940",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00435550",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00431f40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0042d900",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 9,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "code *pcVar2;",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000014",
+      "severity": "moderate",
+      "text": "int in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000018",
+      "severity": "moderate",
+      "text": "int in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_0000001c",
+      "severity": "moderate",
+      "text": "int in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000020",
+      "severity": "moderate",
+      "text": "int in_stack_00000020;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_00000014",
+      "severity": "moderate",
+      "text": "iVar8 = in_stack_00000014 + _DAT_01c35e50;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 32,
+      "match": "in_stack_00000014",
+      "severity": "moderate",
+      "text": "iVar7 = in_stack_00000014 + _DAT_01c35e48;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 33,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "if (in_stack_00000004 != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004 =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004 + in_stack_0000001c * in_stack_00000010 + in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_0000001c",
+      "severity": "moderate",
+      "text": "in_stack_00000004 + in_stack_0000001c * in_stack_00000010 + in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "in_stack_00000004 + in_stack_0000001c * in_stack_00000010 + in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "in_stack_00000004 + in_stack_0000001c * in_stack_00000010 + in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 36,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "pcVar2 = (code *)cockpit_ckptutil_c_FUN_0042c410();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_00000018",
+      "severity": "moderate",
+      "text": "iVar5 = (in_stack_00000018 + in_stack_00000010) * 4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "iVar5 = (in_stack_00000018 + in_stack_00000010) * 4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 38,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "iStack_30 = in_stack_00000010 * 0x84;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 39,
+      "match": "DAT_006141c0",
+      "severity": "mild",
+      "text": "if (DAT_006141c0 == 8) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 40,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "iStack_18 = in_stack_0000000c + *(int *)(&DAT_01c2a38c + iVar5);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_01c2a38c",
+      "severity": "mild",
+      "text": "iStack_18 = in_stack_0000000c + *(int *)(&DAT_01c2a38c + iVar5);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 41,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "if (in_stack_00000010 < in_stack_00000020) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 41,
+      "match": "in_stack_00000020",
+      "severity": "moderate",
+      "text": "if (in_stack_00000010 < in_stack_00000020) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "while (piVar3 = (int *)(in_stack_00000008 + iStack_30), iVar9 < *piVar3) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(int *)((int)piVar3",
+      "severity": "moderate",
+      "text": "iVar4 = *(int *)((int)piVar3 + iVar5 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(int *)((int)piVar3",
+      "severity": "moderate",
+      "text": "iVar6 = *(int *)((int)piVar3 + iVar5 + 0x44) + iVar4 + -1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 54,
+      "match": "in_stack_00000014",
+      "severity": "moderate",
+      "text": "(*pcVar2)((iVar4 + iStack_18) - in_stack_00000014,in_stack_00000004 + iVar4,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 54,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(*pcVar2)((iVar4 + iStack_18) - in_stack_00000014,in_stack_00000004 + iVar4,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 62,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004 = in_stack_00000004 + in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 62,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004 = in_stack_00000004 + in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 62,
+      "match": "in_stack_0000001c",
+      "severity": "moderate",
+      "text": "in_stack_00000004 = in_stack_00000004 + in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 63,
+      "match": "in_stack_00000020",
+      "severity": "moderate",
+      "text": "} while (iStack_30 < in_stack_00000020 * 0x84);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 67,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "iStack_1c = *(int *)(&DAT_01c2a38c + iVar5) + in_stack_0000000c * 2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 67,
+      "match": "DAT_01c2a38c",
+      "severity": "mild",
+      "text": "iStack_1c = *(int *)(&DAT_01c2a38c + iVar5) + in_stack_0000000c * 2;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 68,
+      "match": "in_stack_00000010",
+      "severity": "moderate",
+      "text": "if (in_stack_00000010 < in_stack_00000020) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 68,
+      "match": "in_stack_00000020",
+      "severity": "moderate",
+      "text": "if (in_stack_00000010 < in_stack_00000020) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 73,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "while (piVar3 = (int *)(in_stack_00000008 + iStack_2c), iVar9 < *piVar3) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 74,
+      "match": "(int *)((int)piVar3",
+      "severity": "moderate",
+      "text": "iVar4 = *(int *)((int)piVar3 + iVar5 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 75,
+      "match": "(int *)((int)piVar3",
+      "severity": "moderate",
+      "text": "iVar6 = *(int *)((int)piVar3 + iVar5 + 0x44) + iVar4 + -1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 82,
+      "match": "in_stack_00000014",
+      "severity": "moderate",
+      "text": "(*pcVar2)(iVar4 * 2 + iStack_1c + in_stack_00000014 * -2,in_stack_00000004 + iVar4,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 82,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(*pcVar2)(iVar4 * 2 + iStack_1c + in_stack_00000014 * -2,in_stack_00000004 + iVar4,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 90,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004 = in_stack_00000004 + in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 90,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004 = in_stack_00000004 + in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 90,
+      "match": "in_stack_0000001c",
+      "severity": "moderate",
+      "text": "in_stack_00000004 = in_stack_00000004 + in_stack_0000001c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 91,
+      "match": "in_stack_00000020",
+      "severity": "moderate",
+      "text": "} while (iStack_2c < in_stack_00000020 * 0x84);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Pointer value `piVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)piVar3",
+      "severity": "moderate",
+      "text": "iVar4 = *(int *)((int)piVar3 + iVar5 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 47,
+      "match": "(int)piVar3",
+      "severity": "moderate",
+      "text": "iVar6 = *(int *)((int)piVar3 + iVar5 + 0x44) + iVar4 + -1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 74,
+      "match": "(int)piVar3",
+      "severity": "moderate",
+      "text": "iVar4 = *(int *)((int)piVar3 + iVar5 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 75,
+      "match": "(int)piVar3",
+      "severity": "moderate",
+      "text": "iVar6 = *(int *)((int)piVar3 + iVar5 + 0x44) + iVar4 + -1;",
+      "type": "pointer_truncation"
+    }
+  ]
+}

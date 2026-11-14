@@ -2,21 +2,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 32,
+    "complexity_score": 77,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 32,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 3,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "unrolled_strlen"
+    ],
     "total_lines": 83
   },
   "cross_references": [
     {
       "addr": "004958d0",
       "from_addr": "0049598a",
-      "name": "shape_edittool.cpp_FUN_004958d0",
+      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_004958d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -57,7 +61,7 @@
       {
         "call_addr": "0049598a",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_004958d0",
+        "caller": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_004958d0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -112,6 +116,32 @@
     },
     "pcode_op_count": 186
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0047a9d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0047ba60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0049d3d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0046f0a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 20,
     "local_size": 4,
@@ -149,5 +179,30 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(CInputString *)((int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CInputString *)((int)pCVar3 + (uint)bVar4 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 27,
+      "match": "(int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CInputString *)((int)pCVar3 + (uint)bVar4 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 23,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    }
+  ]
 }

@@ -1,0 +1,316 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 118,
+    "complexity_score": 135,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 55,
+    "suspect_count": 6,
+    "suspect_types": [
+      "pointer_cast",
+      "stack_alignment_array",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 173
+  },
+  "cross_references": [
+    {
+      "addr": "004b6c60",
+      "from_addr": "004b6c85",
+      "name": "core_fire.cpp_CFireEffect_createExplosion_FUN_004b6c60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b16d0",
+    "address_range": [
+      [
+        "004b16d0",
+        "004b1812"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CExplosion_activate_FUN_004b16d0",
+    "signature": "void __cdecl core_fire_cpp_CExplosion_activate_FUN_004b16d0(CExplosion *this_ptr,CVector3f *position,float scale,float gore_multiplier)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cc00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00"
+    },
+    {
+      "addr": "0040cd00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_randomChance_FUN_0040cd00"
+    },
+    {
+      "addr": "00468900",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900"
+    },
+    {
+      "addr": "004b5eb0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createRock_FUN_004b5eb0"
+    },
+    {
+      "addr": "00555ab0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_initCameraShake_FUN_00555ab0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005df358",
+      "name": "DAT_005df358",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061c010",
+      "name": "DAT_0061c010",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00622c18",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e82168"
+    },
+    {
+      "addr": "01e82168",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004b6c85",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CFireEffect_createExplosion_FUN_004b6c60",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 4,
+    "declared_stack_bytes": 16,
+    "estimated_params": 4,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.205607476635514,
+    "instruction_count": 107,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "CALL": 6,
+      "CALLOTHER": 4,
+      "CBRANCH": 2,
+      "COPY": 221,
+      "FLOAT2FLOAT": 12,
+      "FLOAT_ADD": 1,
+      "FLOAT_MULT": 5,
+      "INT2FLOAT": 1,
+      "INT_ADD": 45,
+      "INT_AND": 39,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 29,
+      "INT_LEFT": 1,
+      "INT_LESS": 3,
+      "INT_MULT": 7,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 9,
+      "INT_SDIV": 1,
+      "INT_SEXT": 4,
+      "INT_SLESS": 14,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 35,
+      "INT_XOR": 1,
+      "INT_ZEXT": 8,
+      "LOAD": 19,
+      "POPCOUNT": 14,
+      "RETURN": 1,
+      "STORE": 42,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 557
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00498d30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0049c730",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9309
+    },
+    "nocedit.exe": {
+      "addr": "004c3970",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8411
+    },
+    "nocturne.exe": {
+      "addr": "00486e40",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8411
+    }
+  },
+  "stack_frame": {
+    "frame_size": 100,
+    "local_size": 84,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CExplosion *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "scale",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "gore_multiplier",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 16,
+      "match": "afStackY_102c",
+      "severity": "moderate",
+      "text": "float afStackY_102c [1010];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(uint *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)((int)this_ptr + (uint)bVar3 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(uint *)((int)local_44",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_44 + (uint)bVar3 * -8 + 4) = *puVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(uint *)((int)local_44",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_44 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 24,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->position).x = position->x;",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

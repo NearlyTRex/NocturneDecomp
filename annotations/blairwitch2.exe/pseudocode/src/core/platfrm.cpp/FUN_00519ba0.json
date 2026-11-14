@@ -2,27 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 176,
+    "complexity_score": 218,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 51,
-    "suspect_count": 10,
+    "pseudocode_lines": 53,
+    "suspect_count": 14,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "shadow_pointer_walk",
       "stack_alignment_array",
-      "unnamed_field",
-      "unresolved_funcptr",
       "unrolled_memcpy"
     ],
-    "total_lines": 139
+    "total_lines": 141
   },
   "cross_references": [
     {
       "addr": "005184c0",
       "from_addr": "00518fd6",
-      "name": "core_platfrm.cpp_FUN_005184c0",
+      "name": "core_platfrm.cpp_CPlatform_process_FUN_005184c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -45,14 +45,14 @@
       "name": "core_xform.cpp_FUN_00591c10"
     },
     {
-      "addr": "00591de0",
-      "is_variadic": false,
-      "name": "core_xform.cpp_FUN_00591de0"
-    },
-    {
       "addr": "00592720",
       "is_variadic": false,
       "name": "core_xform.cpp_FUN_00592720"
+    },
+    {
+      "addr": "00591de0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_matrixToEulerAngles_FUN_00591de0"
     },
     {
       "addr": "005916b0",
@@ -67,7 +67,7 @@
       {
         "call_addr": "00518fd6",
         "call_type": "direct",
-        "caller": "core_platfrm.cpp_FUN_005184c0",
+        "caller": "core_platfrm.cpp_CPlatform_process_FUN_005184c0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -221,81 +221,113 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 10,
-      "match": "auStackY_1034",
+      "match": "afStackY_1034",
       "severity": "moderate",
-      "text": "uint auStackY_1034 [979];",
+      "text": "float afStackY_1034 [979];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "core_xform_cpp_FUN_00591c10(local_dc,&this_ptr->field_0x20,&this_ptr->field_0x30);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "core_xform_cpp_FUN_00591c10(local_dc,&this_ptr->field_0x20,&this_ptr->field_0x30);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x678",
-      "severity": "mild",
-      "text": "local_14 = &this_ptr->field_0x678;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x678",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x678 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x678",
-      "severity": "mild",
-      "text": "local_1c = *(int *)&this_ptr->field_0x678;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 48,
-      "match": "code *",
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(CMatrix3x4f *)((int)pCVar3",
       "severity": "moderate",
-      "text": "(**(code **)(local_18 + 0x70))(local_1c,auStack_48 + 8);",
-      "type": "unresolved_funcptr"
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "this_ptr = (CPlatform *)&this_ptr->field_0x34;",
-      "type": "unnamed_field"
+      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 34,
+      "match": "(int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_34` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 41,
+      "match": "(int)&local_34",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_34 + (uint)bVar5 * -8 + 4) = afStack_48[(uint)bVar5 * -2 + 3];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_34` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 42,
+      "match": "(int)&local_34",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_34 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 47,
+      "match": "(int)&local_28",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_28 + (uint)bVar5 * -8 + 4) = afStack_48[(uint)bVar5 * -2];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 48,
+      "match": "(int)&local_28",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_28 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 31,
+      "line": 32,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `this_ptr` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&this_ptr->owner`). Replace `this_ptr->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 51,
-      "match": "this_ptr = (T *)&this_ptr->FIELD",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 41,
+      "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "this_ptr = (CPlatform *)&this_ptr->field_0x34;",
+      "text": "*(float *)((int)&local_34 + (uint)bVar5 * -8 + 4) = afStack_48[(uint)bVar5 * -2 + 3];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 42,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_34 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 47,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_28 + (uint)bVar5 * -8 + 4) = afStack_48[(uint)bVar5 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 48,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_28 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 53,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "this_ptr = (CPlatform *)((int)&(this_ptr->base).orient + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `this_ptr` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `this_ptr->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 53,
+      "match": "this_ptr = (T *)((int)&(this_ptr->FIELD).SUBFIELD + CONST)",
+      "severity": "moderate",
+      "text": "this_ptr = (CPlatform *)((int)&(this_ptr->base).orient + 4);",
       "type": "shadow_pointer_walk"
     }
   ]

@@ -11,30 +11,29 @@
 void __cdecl engine_pod_cpp_CPod_dismountPod_FUN_0051bf10(CPod *this_ptr,int index)
 
 {
-  int iVar1;
-  CPodFile *pCVar2;
-  byte *puVar3;
+  CPodFile *pCVar1;
+  CPodFile **ppCVar2;
+  int iVar3;
   
-  if ((index < 0) || (*(int *)this_ptr <= index)) {
+  if ((index < 0) || (this_ptr->pod_file_count <= index)) {
     _DAT_01d046a0 = "..\\engine\\pod.cpp";
     _DAT_01d046a4 = 0x64e;
     core_main_c_FUN_004e4500("CPod::dismountPod - invalid index");
   }
-  if (*(CPodFile **)(&this_ptr->field_0x4 + index * 4) != (CPodFile *)0x0) {
-    pCVar2 = engine_pod_cpp_CPodFile_dtor_FUN_00519ec0
-                       (*(CPodFile **)(&this_ptr->field_0x4 + index * 4),0);
-    FUN_005b7fdc(pCVar2);
+  if (this_ptr->pod_files[index] != (CPodFile *)0x0) {
+    pCVar1 = engine_pod_cpp_CPodFile_dtor_FUN_00519ec0(this_ptr->pod_files[index],0);
+    FUN_005b7fdc(pCVar1);
   }
-  iVar1 = *(int *)this_ptr;
-  *(int *)this_ptr = iVar1 + -1;
-  if (index < iVar1 + -1) {
-    puVar3 = &this_ptr->field_0x0 + index * 4;
+  iVar3 = this_ptr->pod_file_count + -1;
+  this_ptr->pod_file_count = iVar3;
+  if (index < iVar3) {
+    ppCVar2 = this_ptr->pod_files + index + -1;
     do {
-      *(uint *)(puVar3 + 4) = *(uint *)(puVar3 + 8);
+      ppCVar2[1] = ppCVar2[2];
       index = index + 1;
-      puVar3 = puVar3 + 4;
-    } while (index < *(int *)this_ptr);
+      ppCVar2 = ppCVar2 + 1;
+    } while (index < this_ptr->pod_file_count);
   }
-  *(uint *)(&this_ptr->field_0x4 + *(int *)this_ptr * 4) = 0;
+  this_ptr->pod_files[this_ptr->pod_file_count] = (CPodFile *)0x0;
   return;
 }

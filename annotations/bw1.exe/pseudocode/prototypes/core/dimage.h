@@ -5,22 +5,22 @@
 // Function prototypes for core/dimage.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_dimage.cpp_FUN_0045f0a0
+// Original: core_dimage.cpp_CDemonImage_dtor_FUN_0045f080
+// Address: 0045f080
+CDemonImage * __cdecl CDemonImage::dtor(CDemonImage *this_ptr,uint flags);
+
+// Original: core_dimage.cpp_CDemonImage_allocMemory_FUN_0045f0a0
 // Address: 0045f0a0
-void FUN_0045f0a0(int param_1);
+void __cdecl CDemonImage::allocMemory(CDemonImage *this_ptr);
 
-// Original: core_dimage.cpp_FUN_0045f100
+// Original: core_dimage.cpp_CDemonImage_freeMemory_FUN_0045f100
 // Address: 0045f100
-void FUN_0045f100(int param_1);
+void __cdecl CDemonImage::freeMemory(CDemonImage *this_ptr);
 
-// Original: core_dimage.cpp_FUN_0045f12c
-// Address: 0045f12c
-uint FUN_0045f12c(undefined4 param_1,uint param_2,uint param_3,uint param_4);
-
-// Original: core_dimage.cpp_FUN_0045f130
+// Original: core_dimage.cpp_CDemonImage_packColor_FUN_0045f130
 // Address: 0045f130
-uint FUN_0045f130(undefined4 param_1,uint param_2,uint param_3,uint param_4);
+ushort __cdecl CDemonImage::packColor(CDemonImage *this_ptr,uint red,uint green,uint blue);
 
-// Original: core_dimage.cpp_FUN_0045f18e
-// Address: 0045f18e
-void FUN_0045f18e(undefined1 *param_1,char *param_2,undefined4 param_3,undefined4 param_4);
+// Original: core_dimage.cpp_FUN_0045f190
+// Address: 0045f190
+void FUN_0045f190(void);

@@ -45,13 +45,13 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_course.cpp_FUN_00447f00 at 00447f2c
+;   core_course.cpp_CCourse_evaluate_FUN_00447f00 at 00447f2c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d71e6
 ;
 ; Called Functions:
-;   core_xform.cpp_FUN_005b7940
+;   core_xform.cpp_slerpQuaternion_FUN_005b7940
 ;   crt_math.c_floor_FUN_005c0880
 ;   crt_math.c_round_FUN_005c03a0
 ;
@@ -186,8 +186,8 @@ section .text
     PUSH EAX                            ; 00448141
     LEA ESI,[ESP + 0x28]                ; 00448142
     LEA EDI,[ESP + 0x38]                ; 00448146
-    CALL core_xform.cpp_FUN_005b7940    ; 0044814a
-        ;   XREF to: 005b7940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b7940()
+    CALL core_xform.cpp_slerpQuaternion_FUN_005b7940 ; 0044814a
+        ;   XREF to: 005b7940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_slerpQuaternion_FUN_005b7940()
     LEA ESI,[ESP + 0x28]                ; 0044814f
     ADD ESP,0xc                         ; 00448153
     MOVSD ES:EDI,ESI                    ; 00448156

@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 287,
+    "complexity_score": 50,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 37,
-    "suspect_count": 24,
+    "pseudocode_lines": 35,
+    "suspect_count": 1,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "unnamed_field"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 155
+    "total_lines": 153
   },
   "cross_references": [
     {
@@ -132,6 +131,32 @@
     },
     "pcode_op_count": 838
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004b2740",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0049dd20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004c49c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00487e90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 52,
     "local_size": 44,
@@ -178,195 +203,11 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x4,(double)*(float *)&this_ptr->field_0x8,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x4,(double)*(float *)&this_ptr->field_0x8,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "(double)*(float *)&this_ptr->field_0x18);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "(file_handle,\"%f,%f,%f\\n\",(double)*(float *)&this_ptr->field_0xc,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "(double)*(float *)&this_ptr->field_0x10,(double)*(float *)&this_ptr->field_0x14);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "(double)*(float *)&this_ptr->field_0x10,(double)*(float *)&this_ptr->field_0x14);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "puVar1 = &pCVar4->field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "puVar2 = &pCVar4->field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "puVar3 = &pCVar4->field_0x1c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "pCVar4 = (CCrater *)&pCVar4->field_0xc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "} while (pCVar4 != (CCrater *)&this_ptr->field_0x24);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "(file_handle,\"%f,%f,%f\\n\",(double)*(float *)&this_ptr->field_0x40,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "(double)*(float *)&this_ptr->field_0x44,(double)*(float *)&this_ptr->field_0x48);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "(double)*(float *)&this_ptr->field_0x44,(double)*(float *)&this_ptr->field_0x48);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "(file_handle,\"%f,%f,%f\\n\",(double)*(float *)&this_ptr->field_0x4c,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "(double)*(float *)&this_ptr->field_0x50,(double)*(float *)&this_ptr->field_0x54);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x54",
-      "severity": "mild",
-      "text": "(double)*(float *)&this_ptr->field_0x50,(double)*(float *)&this_ptr->field_0x54);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x58",
-      "severity": "mild",
-      "text": "(file_handle,\"%f,%f,%f\\n\",(double)*(float *)&this_ptr->field_0x58,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x5c",
-      "severity": "mild",
-      "text": "(double)*(float *)&this_ptr->field_0x5c,(double)*(float *)&this_ptr->field_0x60);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "(double)*(float *)&this_ptr->field_0x5c,(double)*(float *)&this_ptr->field_0x60);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x64",
-      "severity": "mild",
-      "text": "(file_handle,\"%f,%f,%f\\n\",(double)*(float *)&this_ptr->field_0x64,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "(double)*(float *)&this_ptr->field_0x68,(double)*(float *)&this_ptr->field_0x6c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x6c",
-      "severity": "mild",
-      "text": "(double)*(float *)&this_ptr->field_0x68,(double)*(float *)&this_ptr->field_0x6c);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar4->owner`). Replace `pCVar4->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 22,
+      "line": 21,
       "match": "pCVar4 = (T *)&pCVar4->FIELD",
       "severity": "moderate",
-      "text": "pCVar4 = (CCrater *)&pCVar4->field_0xc;",
+      "text": "pCVar4 = (CCrater *)&pCVar4->center_position;",
       "type": "shadow_pointer_walk"
     }
   ]

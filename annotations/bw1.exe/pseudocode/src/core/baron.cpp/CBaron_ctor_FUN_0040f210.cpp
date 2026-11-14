@@ -14,19 +14,20 @@ CBaron * __cdecl core_baron_cpp_CBaron_ctor_FUN_0040f210(CBaron *this_ptr)
   char *pcVar3;
   char *pcVar4;
   
-  pCVar2 = (CBaron *)core_hero_cpp_FUN_004ea830((CHero *)this_ptr);
-  *(byte ***)&pCVar2->field_0x154 = &g_CBaronVTable;
-  core_skeleton_cpp_FUN_00569f50(&pCVar2->field_0x158,0x5d337e);
-  *(uint *)&pCVar2->field_0x20080 = 0x3f800000;
-  *(uint *)&pCVar2->field_0x2007c = 0;
-  *(uint *)&pCVar2->field_0x20078 = *(uint *)&pCVar2->field_0x2007c;
-  *(uint *)&pCVar2->field_0x20074 = *(uint *)&pCVar2->field_0x20078;
-  *(uint *)&pCVar2->field_0x20084 = 0;
+  pCVar2 = (CBaron *)core_hero_cpp_CHero_ctor_FUN_004ea830(&this_ptr->base);
+  (pCVar2->base).base.base.vtable._ub = &g_CBaronVTable._ub;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
+            (&(pCVar2->base).base.model,(char *)0x5d337e);
+  pCVar2->head_blend_weight = 1.0;
+  (pCVar2->head_rotation).z = 0.0;
+  (pCVar2->head_rotation).y = (pCVar2->head_rotation).z;
+  (pCVar2->head_rotation).x = (pCVar2->head_rotation).y;
+  pCVar2->target_actor = (CDemonActor *)0x0;
   pcVar3 = (char *)0x5d3388;
-  *(uint *)&pCVar2->field_0x20088 = 0;
-  *(uint *)&pCVar2->field_0xfc = 1;
-  pcVar4 = &pCVar2->field_0x1ffac;
-  *(uint *)&pCVar2->field_0x200a4 = 0;
+  pCVar2->new_attack = 0;
+  (pCVar2->base).base.base.is_transparent = 1;
+  pcVar4 = pCVar2->summon_event;
+  pCVar2->summoned = 0;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;
@@ -37,7 +38,7 @@ CBaron * __cdecl core_baron_cpp_CBaron_ctor_FUN_0040f210(CBaron *this_ptr)
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
   pcVar3 = (char *)0x5d338d;
-  pcVar4 = &pCVar2->field_0x20010;
+  pcVar4 = pCVar2->go_away_event;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;
@@ -49,6 +50,6 @@ CBaron * __cdecl core_baron_cpp_CBaron_ctor_FUN_0040f210(CBaron *this_ptr)
   } while (cVar1 != '\0');
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
             ((CKeyFramedModelInstance *)&DAT_007c351c,"baronshell.kfm");
-  *(uint *)&pCVar2->field_0x200a8 = 0;
+  pCVar2->shell_visible = 0;
   return pCVar2;
 }

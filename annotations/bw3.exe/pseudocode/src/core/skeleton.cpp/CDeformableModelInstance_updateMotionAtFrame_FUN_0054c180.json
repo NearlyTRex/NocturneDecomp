@@ -2,21 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 6,
+    "complexity_score": 7,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 6,
+    "pseudocode_lines": 7,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 24
+    "total_lines": 25
   },
   "cross_references": [
     {
       "addr": "00518680",
       "from_addr": "0051890f",
-      "name": "core_prye.cpp_FUN_00518680",
+      "name": "core_prye.cpp_CPrye_setup_FUN_00518680",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -28,7 +28,7 @@
     {
       "addr": "0056c140",
       "from_addr": "0056c554",
-      "name": "core_thehand.cpp_FUN_0056c140",
+      "name": "core_toxhand.cpp_CTheHand_process_FUN_0056c140",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -46,14 +46,14 @@
   },
   "function_calls": [
     {
-      "addr": "0054c1b0",
-      "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_0054c1b0"
-    },
-    {
       "addr": "0054dd10",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_0054dd10"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0054dd10"
+    },
+    {
+      "addr": "0054c1b0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0054c1b0"
     }
   ],
   "globals": [],
@@ -74,7 +74,7 @@
       {
         "call_addr": "0051890f",
         "call_type": "direct",
-        "caller": "core_prye.cpp_FUN_00518680",
+        "caller": "core_prye.cpp_CPrye_setup_FUN_00518680",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -85,7 +85,7 @@
       {
         "call_addr": "0056c554",
         "call_type": "direct",
-        "caller": "core_thehand.cpp_FUN_0056c140",
+        "caller": "core_toxhand.cpp_CTheHand_process_FUN_0056c140",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -119,6 +119,32 @@
       "STORE": 8
     },
     "pcode_op_count": 60
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00544f50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005675f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0059e070",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0051b8f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 16,

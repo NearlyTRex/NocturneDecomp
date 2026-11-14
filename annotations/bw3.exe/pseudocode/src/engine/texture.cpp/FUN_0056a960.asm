@@ -16,8 +16,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
-;   crt_unknown.c_FUN_005a3cb2
-;   unkafter_texlist.cpp_FUN_00569550
+;   core_texlist.cpp_FUN_00569550
+;   crt_memory.c_operator_new_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
 
     PUSH 0x1800c                        ; 0056a960
         ;   Label: engine_texture.cpp_FUN_0056a960
-    CALL crt_unknown.c_FUN_005a3cb2     ; 0056a965
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 0056a965
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
     ADD ESP,0x4                         ; 0056a96a
     TEST EAX,EAX                        ; 0056a96d
     JNZ 0x0056a97b                      ; 0056a96f
@@ -38,8 +38,8 @@ section .text
     RET                                 ; 0056a97a
     PUSH EAX                            ; 0056a97b
         ;   Label: LAB_0056a97b
-    CALL unkafter_texlist.cpp_FUN_00569550 ; 0056a97c
-        ;   XREF to: 00569550 (UNCONDITIONAL_CALL)  ; undefined unkafter_texlist.cpp_FUN_00569550()
+    CALL core_texlist.cpp_FUN_00569550  ; 0056a97c
+        ;   XREF to: 00569550 (UNCONDITIONAL_CALL)  ; undefined core_texlist.cpp_FUN_00569550()
     ADD ESP,0x4                         ; 0056a981
     MOV [0x02cfd0d0],EAX                ; 0056a984 | DAT_02cfd0d0
     TEST EAX,EAX                        ; 0056a989

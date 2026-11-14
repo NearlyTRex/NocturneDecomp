@@ -2,14 +2,58 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CAmmo;
+struct CBoxActor;
+struct CDoor;
+struct CLadder;
+struct CLever;
+struct CLightGun;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCharacter.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CInventory.h"
+#include "types/classes/CPathMap.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CWeapon.h"
+#include "types/enums/EAimMode.h"
+#include "types/enums/EGasMaskState.h"
+#include "types/enums/EHeroControlType.h"
+#include "types/enums/EHeroTask.h"
+#include "types/structs/SPlayerInput.h"
+#include "types/unions/UOrientationVector.h"
 
 // Structure: CHero
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x25640 (153152 bytes)
 #pragma pack(push, 1)
 typedef struct CHero {
+    CCharacter base; // 0x0
+    float invincibility_timer; // 0x10a60
+    EHeroControlType control_type; // 0x10a64
+    SPlayerInput player_input; // 0x10a68
+    CPathMap path_map; // 0x10a9c
+    EAimMode aim_mode; // 0x24378
+    CInventory inventories[3]; // 0x2437c, Added in this build
+    EGasMaskState is_wearing_gas_mask; // 0x255e8
+    int is_wearing_goggles; // 0x255ec, Added in this build
+    int hero_action; // 0x255f0, Added in this build
+    struct CDemonActor* hero_action_actor; // 0x255f4, Added in this build
+    struct CDemonActor* hero_action_target; // 0x255f8, Added in this build
+    int hero_action_data; // 0x255fc, Added in this build
+    float hero_action_range; // 0x25600, Added in this build
+    struct CDoor* door_to_open; // 0x25604
+    struct CDemonActor* object_to_pick_up; // 0x25608
+    struct CBoxActor* pushed_object; // 0x2560c
+    struct CLever* lever_to_pull; // 0x25610
+    struct CLadder* ladder_to_climb; // 0x25614
+    struct CDemonActor* nearby_interactive_actor; // 0x25618
+    struct CDemonActor* target_actor; // 0x2561c
+    CVector3f target_position; // 0x25620
+    UOrientationVector target_orientation; // 0x2562c
+    EHeroTask ai_task; // 0x25638
+    int hero_inventory_index; // 0x2563c, Added in this build
 } CHero;
 #pragma pack(pop)
 

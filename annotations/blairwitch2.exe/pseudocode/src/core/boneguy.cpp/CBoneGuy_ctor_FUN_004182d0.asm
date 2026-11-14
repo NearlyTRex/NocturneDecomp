@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoneGuy * core_boneguy_cpp_CBoneGuy_ctor_FUN_004182d0(CBoneGuy *this_ptr)
+; CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_004182d0(CBoneGuy *this_ptr)
 ;
 ; Parameters:
 ; CBoneGuy *       Stack[0x4]:4   this_ptr
@@ -15,9 +15,9 @@
 ;   undefined4 DAT_005f3834
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cf60
-;   core_actor.cpp_FUN_0040cfc0
-;   core_boneguy.cpp_FUN_00418110
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
+;   core_actor.cpp_getRandomInt_FUN_0040cfc0
+;   core_boneguy.cpp_hsvToRgb_FUN_00418110
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00487db0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;   crt_math.c_round_FUN_005b7ff0
@@ -43,7 +43,7 @@ section .text
     ADD EAX,0x10b78                     ; 004182ea
     PUSH EAX                            ; 004182ef
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 004182f0
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004182f5
     LEA EBX,[EAX + 0xfffef488]          ; 004182f8
     PUSH 0x5cc022                       ; 004182fe
@@ -92,8 +92,8 @@ section .text
     ADD ESP,0xc                         ; 004183b4
     PUSH 0xff                           ; 004183b7
     PUSH 0x0                            ; 004183bc
-    CALL core_actor.cpp_FUN_0040cfc0    ; 004183be
-        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cfc0(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cfc0 ; 004183be
+        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cfc0(int min_value, int max_value)
     MOV dword ptr [EBX + 0x10afc],0x0   ; 004183c3
     MOV dword ptr [EBX + 0x10b00],0x0   ; 004183cd
     MOV dword ptr [EBX + 0x10b04],0x0   ; 004183d7
@@ -103,24 +103,24 @@ section .text
     MOV dword ptr [EBX + 0x10af8],EAX   ; 004183f8
     PUSH 0x437f0000                     ; 004183fe
     PUSH 0x0                            ; 00418403
-    CALL core_actor.cpp_FUN_0040cf60    ; 00418405
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 00418405
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0x2c],EAX      ; 0041840a
     FLD float ptr [ESP + 0x2c]          ; 0041840e
     ADD ESP,0x8                         ; 00418412
     PUSH 0x42200000                     ; 00418415
     PUSH 0x0                            ; 0041841a
     FSTP float ptr [ESP + 0x14]         ; 0041841c
-    CALL core_actor.cpp_FUN_0040cf60    ; 00418420
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 00418420
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0x2c],EAX      ; 00418425
     FLD float ptr [ESP + 0x2c]          ; 00418429
     ADD ESP,0x8                         ; 0041842d
     PUSH 0x43800000                     ; 00418430
     PUSH 0x42d40000                     ; 00418435
     FSTP float ptr [ESP + 0x18]         ; 0041843a
-    CALL core_actor.cpp_FUN_0040cf60    ; 0041843e
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 0041843e
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0x2c],EAX      ; 00418443
     LEA ESI,[ESP + 0x20]                ; 00418447
     FLD float ptr [ESP + 0x2c]          ; 0041844b
@@ -129,8 +129,8 @@ section .text
     MOV EDI,ESP                         ; 00418456
     PUSH EAX                            ; 00418458
     FSTP float ptr [ESP + 0x18]         ; 00418459
-    CALL core_boneguy.cpp_FUN_00418110  ; 0041845d
-        ;   XREF to: 00418110 (UNCONDITIONAL_CALL)  ; undefined core_boneguy.cpp_FUN_00418110()
+    CALL core_boneguy.cpp_hsvToRgb_FUN_00418110 ; 0041845d
+        ;   XREF to: 00418110 (UNCONDITIONAL_CALL)  ; undefined core_boneguy.cpp_hsvToRgb_FUN_00418110()
     LEA ESI,[ESP + 0x1c]                ; 00418462
     ADD ESP,0x4                         ; 00418466
     MOVSD ES:EDI,ESI                    ; 00418469

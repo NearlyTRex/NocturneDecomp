@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   apply_palette_flag
 ;
 ; Called Functions:
+;   cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_00537cb0
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadPBMFile_FUN_00538530
-;   cockpit_pkbitmap.cpp_FUN_00537cb0
 ;   crt_string.c__stricmp_FUN_005c04e0
 ;
 ; *****************************************************************************
@@ -79,8 +79,8 @@ section .text
         ;   Label: LAB_0053811e
     PUSH EDX                            ; 00538122
     PUSH EBX                            ; 00538123
-    CALL cockpit_pkbitmap.cpp_FUN_00537cb0 ; 00538124
-        ;   XREF to: 00537cb0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_FUN_00537cb0(CPackedBitmap * this_ptr, int apply_palette_flag)
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_00537cb0 ; 00538124
+        ;   XREF to: 00537cb0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_00537cb0(CPackedBitmap * this_ptr, int apply_palette_flag)
     ADD ESP,0x8                         ; 00538129
     POP ESI                             ; 0053812c
     POP EBX                             ; 0053812d

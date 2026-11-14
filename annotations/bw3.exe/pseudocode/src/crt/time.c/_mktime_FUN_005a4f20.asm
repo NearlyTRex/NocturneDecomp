@@ -1,16 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_time_c__mktime_FUN_005a4f20(int *param_1)
+; time_t __cdecl crt_time_c__mktime_FUN_005a4f20(_tm *timeptr)
 ;
+; Parameters:
+; _tm *            Stack[0x4]:4   timeptr
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
 ;   crt_unknown.c_FUN_005abe28 at 005abea9
+;   crt_unknown.c_FUN_005aef20 at 005aef85
+;   crt_unknown.c_FUN_005aefa0 at 005aefc0
 ;   engine_dosio.cpp_CFileFinder_convertStruct_FUN_00465cf0 at 00465e32
-;   unkafter_asgaya.cpp_FUN_005aef20 at 005aef85
-;   unkafter_asgaya.cpp_FUN_005aefa0 at 005aefc0
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e8804

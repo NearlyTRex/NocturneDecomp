@@ -8,14 +8,13 @@
 #include "types/structs/SPlayerInput.h"
 
 // Structure: SNetPacket_PlayerInput
-// Ghidra size: 0x35 (53 bytes)
+// sendSimFrameAck 00507fd0: header.size = 0x3d, type 0x10, sim_frame_index at [ESP+5], player_input copied to [ESP+9] (MOVSD.REP 13 dwords)
+// Ghidra size: 0x3d (61 bytes)
 #pragma pack(push, 1)
 typedef struct SNetPacket_PlayerInput {
     SNetPacketHeader header; // 0x0
-    char field_1[4]; // 0x1
-    int sim_frame_index; // 0x5
-    SPlayerInput player_input; // 0x9
-    char field_10[43]; // 0xa
+    int sim_frame_index; // 0x5, sendSimFrameAck 00507fd0: MOV [ESP+5] from SNetPlayer+0x48
+    SPlayerInput player_input; // 0x9, sendSimFrameAck 00507fd0: LEA EDI,[ESP+9]
 } SNetPacket_PlayerInput;
 #pragma pack(pop)
 

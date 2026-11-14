@@ -2,35 +2,33 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 105,
+    "complexity_score": 12,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 10,
-    "suspect_count": 9,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 22
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 24
   },
   "cross_references": [
     {
-      "addr": "00566fd0",
-      "from_addr": "00567001",
-      "name": "core_skeleton.cpp_FUN_00566fd0",
+      "addr": "0056ae70",
+      "from_addr": "0056ae9f",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0056ae70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0056ae70",
-      "from_addr": "0056ae9f",
-      "name": "core_skeleton.cpp_FUN_0056ae70",
+      "addr": "00566fd0",
+      "from_addr": "00567001",
+      "name": "core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_00566fd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00583700",
       "from_addr": "005837a2",
-      "name": "core_spike.cpp_FUN_00583700",
+      "name": "core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_00583700",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -60,7 +58,7 @@
       {
         "call_addr": "00567001",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_00566fd0",
+        "caller": "core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_00566fd0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -71,7 +69,7 @@
       {
         "call_addr": "0056ae9f",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_0056ae70",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0056ae70",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -93,7 +91,7 @@
       {
         "call_addr": "005837a2",
         "call_type": "direct",
-        "caller": "core_spike.cpp_FUN_00583700",
+        "caller": "core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_00583700",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -121,6 +119,32 @@
     },
     "pcode_op_count": 51
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0041b600",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0041e8b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00420fb0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0041dbc0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -137,78 +161,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x8 = 0x7cf0bdc2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x14 = 0xfcf0bdc2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x4 = *(uint *)&this_ptr->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x4 = *(uint *)&this_ptr->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x10 = *(uint *)&this_ptr->field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x10 = *(uint *)&this_ptr->field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)this_ptr = *(uint *)&this_ptr->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xc = *(uint *)&this_ptr->field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xc = *(uint *)&this_ptr->field_0x14;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

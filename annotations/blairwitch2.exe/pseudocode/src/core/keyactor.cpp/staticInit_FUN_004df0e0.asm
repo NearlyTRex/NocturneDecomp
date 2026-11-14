@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_keyactor_cpp_staticInit_FUN_004df0e0(void)
+; void __cdecl core_keyactor_cpp_staticInit_FUN_004df0e0(void)
 ;
 ;
 ; Called Functions:

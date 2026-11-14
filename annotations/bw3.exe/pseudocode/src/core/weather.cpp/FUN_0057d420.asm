@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[1]:
-;   core_storm.cpp_FUN_00568c10 at 00568c41
+;   core_storm.cpp_CStorm_setup_FUN_00568c10 at 00568c41
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f2afc
 ;   undefined4 DAT_005fc5a0
 ;
 ; Called Functions:
-;   core_fire.cpp_FUN_004a4130
+;   core_fire.cpp_CFireEffect_preloadLightningBoltStyle_FUN_004a4130
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
-;   sound_sndmain.cpp_FUN_00556230
+;   sound_sndmain.cpp_preloadSfx_FUN_00556230
 ;
 ; *****************************************************************************
 
@@ -41,34 +41,34 @@ section .text
         ;   XREF to: 0046e5e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 0057d44f
     PUSH 0x5d79ab                       ; 0057d452
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0057d457
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0057d457
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0057d45c
     PUSH 0x5d79b4                       ; 0057d45f
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0057d464
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0057d464
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0057d469
     PUSH 0x5d79bf                       ; 0057d46c
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0057d471
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0057d471
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0057d476
     PUSH 0x5d79ca                       ; 0057d479
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0057d47e
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0057d47e
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0057d483
     PUSH 0x5d79d5                       ; 0057d486
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0057d48b
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0057d48b
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0057d490
     PUSH 0x5d79e0                       ; 0057d493
-    CALL sound_sndmain.cpp_FUN_00556230 ; 0057d498
-        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00556230()
+    CALL sound_sndmain.cpp_preloadSfx_FUN_00556230 ; 0057d498
+        ;   XREF to: 00556230 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_preloadSfx_FUN_00556230(char * filename)
     ADD ESP,0x4                         ; 0057d49d
     PUSH 0x1                            ; 0057d4a0
     MOV ESI,dword ptr [0x005fc5a0]      ; 0057d4a2 | DAT_005fc5a0
     PUSH ESI                            ; 0057d4a8
-    CALL core_fire.cpp_FUN_004a4130     ; 0057d4a9
-        ;   XREF to: 004a4130 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a4130()
+    CALL core_fire.cpp_CFireEffect_preloadLightningBoltStyle_FUN_004a4130 ; 0057d4a9
+        ;   XREF to: 004a4130 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_preloadLightningBoltStyle_FUN_004a4130(CFireEffect * this_ptr, int bolt_style)
     ADD ESP,0x8                         ; 0057d4ae
     POP EBX                             ; 0057d4b1
     POP ESI                             ; 0057d4b2

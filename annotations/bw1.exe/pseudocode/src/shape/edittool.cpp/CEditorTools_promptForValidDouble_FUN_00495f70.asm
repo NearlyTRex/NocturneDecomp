@@ -14,9 +14,9 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c_sscanf_FUN_005c2cac
-;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_sprintf_FUN_005bfb40
+;   shape_edittool.cpp_CEditorTools_showError_FUN_004943a0
 ;   shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00496150
-;   shape_edittool.cpp_FUN_004943a0
 ;
 ; *****************************************************************************
 
@@ -74,8 +74,8 @@ section .text
     PUSH 0x5dbf7b                       ; 00495fd5
     LEA EAX,[ESP + 0x24]                ; 00495fda
     PUSH EAX                            ; 00495fde
-    CALL crt_unknown.c_FUN_005bfb40     ; 00495fdf
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 00495fdf
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x10                        ; 00495fe4
     JMP 0x00495fad                      ; 00495fe7
         ;   XREF to: 00495fad (UNCONDITIONAL_JUMP)  ; LAB_00495fad
@@ -122,8 +122,8 @@ section .text
     PUSH 0x5dbf85                       ; 0049603a
         ;   Label: LAB_0049603a
     PUSH EBX                            ; 0049603f
-    CALL shape_edittool.cpp_FUN_004943a0 ; 00496040
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 00496040
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00496045
     JMP 0x00495fad                      ; 00496048
         ;   XREF to: 00495fad (UNCONDITIONAL_JUMP)  ; LAB_00495fad
@@ -138,8 +138,8 @@ section .text
     PUSH EAX                            ; 00496060
     PUSH 0x5dbfa2                       ; 00496061
     PUSH EBX                            ; 00496066
-    CALL shape_edittool.cpp_FUN_004943a0 ; 00496067
-        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004943a0()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_004943a0 ; 00496067
+        ;   XREF to: 004943a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_004943a0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x18                        ; 0049606c
     JMP 0x00495fad                      ; 0049606f
         ;   XREF to: 00495fad (UNCONDITIONAL_JUMP)  ; LAB_00495fad

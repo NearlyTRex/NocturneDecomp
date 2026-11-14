@@ -1,0 +1,167 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 20,
+    "complexity_score": 28,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 13,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unrolled_memset"
+    ],
+    "total_lines": 33
+  },
+  "cross_references": [
+    {
+      "addr": "004734b0",
+      "from_addr": "004734c8",
+      "name": "core_dtrace.cpp_CDemonRaytrace_dtor_FUN_004734b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00473940",
+      "from_addr": "00473950",
+      "name": "core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_00473940",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00473630",
+    "address_range": [
+      [
+        "00473630",
+        "00473667"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dtrace.cpp_CDemonRaytrace_freeNewCubeList_FUN_00473630",
+    "signature": "void __cdecl core_dtrace_cpp_CDemonRaytrace_freeNewCubeList_FUN_00473630(CDemonRaytrace *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a308f",
+      "is_variadic": false,
+      "name": "crt_memory.c___vec_delete_FUN_005a308f"
+    },
+    {
+      "addr": "005a30b6",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a30b6"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005dee50",
+      "name": "g_CDemonCubeTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00473950",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_00473940",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004734c8",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_dtor_FUN_004734b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.764705882352941,
+    "instruction_count": 17,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 13,
+      "INT_ADD": 11,
+      "INT_AND": 4,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 6,
+      "LOAD": 5,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 10
+    },
+    "pcode_op_count": 64
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004725c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0048aab0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00494400",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.85
+    },
+    "nocturne.exe": {
+      "addr": "004673a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRaytrace *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 11,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(this_ptr->grid_coord).z = 0;",
+      "type": "unrolled_memset"
+    }
+  ]
+}

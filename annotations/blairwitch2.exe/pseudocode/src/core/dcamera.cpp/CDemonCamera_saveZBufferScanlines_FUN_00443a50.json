@@ -2,17 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 47,
+    "complexity_score": 49,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 12,
-    "suspect_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 19,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field"
+      "pointer_cast",
+      "undefined_data"
     ],
-    "total_lines": 46
+    "total_lines": 53
   },
   "cross_references": [
     {
@@ -102,6 +103,32 @@
     },
     "pcode_op_count": 201
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00455100",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00451250",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00454450",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00448310",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7241
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -120,28 +147,20 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x148",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x148) {",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(void *)(iVar1 * 4 + (int)this_ptr",
+      "severity": "moderate",
+      "text": "((void *)(iVar1 * 4 + (int)this_ptr->zbuffer_aligned),",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x144",
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_01c2b64c",
       "severity": "mild",
-      "text": "_memcpy(*(int *)&this_ptr->field_0x144 << 2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x148",
-      "severity": "mild",
-      "text": "} while (iVar1 < *(int *)&this_ptr->field_0x148);",
-      "type": "unnamed_field"
+      "text": "*(void **)(&DAT_01c2b64c + iVar3),this_ptr->framebuffer_width << 2);",
+      "type": "undefined_data"
     }
   ]
 }

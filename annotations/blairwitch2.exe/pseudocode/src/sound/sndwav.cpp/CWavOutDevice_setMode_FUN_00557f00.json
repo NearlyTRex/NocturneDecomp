@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 221,
+    "complexity_score": 132,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 61,
-    "suspect_count": 14,
+    "pseudocode_lines": 67,
+    "suspect_count": 5,
     "suspect_types": [
+      "stack_param",
       "undefined_data",
-      "unknown_field",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 214
+    "total_lines": 220
   },
   "cross_references": [],
   "function": {
@@ -47,14 +46,14 @@
       "name": "GlobalLock"
     },
     {
-      "addr": "005549c0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005549c0"
-    },
-    {
       "addr": "00553600",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_getMaxSwLatency_FUN_00553600"
+    },
+    {
+      "addr": "005549c0",
+      "is_variadic": true,
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005549c0"
     },
     {
       "addr": "EXTERNAL:00000027",
@@ -181,6 +180,32 @@
     },
     "pcode_op_count": 804
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0057a930",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0055da60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005b0a30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0052c460",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9281
+    }
+  },
   "stack_frame": {
     "frame_size": 24,
     "local_size": 4,
@@ -235,108 +260,36 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 15,
-      "match": "code *",
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000018",
       "severity": "moderate",
-      "text": "iVar1 = (*(code *)**(uint **)this_ptr)(this_ptr);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 23,
-      "match": "._16_4_",
-      "severity": "mild",
-      "text": "auStack_24._16_4_ = sound_sndmain_cpp_getMaxSwLatency_FUN_00553600();",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 24,
-      "match": "._16_4_",
-      "severity": "mild",
-      "text": "fVar6 = ((float10)(int)_DAT_0264b0fc * (float10)(float)auStack_24._16_4_) / (float10)_DAT_0264b104",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 50,
-      "match": "._0_2_",
-      "severity": "mild",
-      "text": "auStack_24._0_2_ = 1;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 51,
-      "match": "._14_2_",
-      "severity": "mild",
-      "text": "auStack_24._14_2_ = _DAT_0264b0f4;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 52,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "auStack_24._2_2_ = _DAT_0264b0f8;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 53,
-      "match": "._12_2_",
-      "severity": "mild",
-      "text": "auStack_24._12_2_ = (short)((int)(_DAT_0264b0f4 & 0xffff) >> 3) * _DAT_0264b0f8;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 54,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "auStack_24._4_4_ = _DAT_0264b0fc;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 55,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "auStack_24._8_4_ = _DAT_0264b0fc * (ushort)auStack_24._12_2_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 55,
-      "match": "._12_2_",
-      "severity": "mild",
-      "text": "auStack_24._8_4_ = _DAT_0264b0fc * (ushort)auStack_24._12_2_;",
-      "type": "unknown_field"
+      "text": "uint *in_stack_00000018;",
+      "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 62,
       "match": "DAT_0264b070",
       "severity": "mild",
-      "text": "MVar4 = waveOutOpen((LPHWAVEOUT)&DAT_0264b070,DAT_0061bf84,(LPCWAVEFORMATEX)auStack_24,0,0,0);",
+      "text": "MVar5 = waveOutOpen((LPHWAVEOUT)&DAT_0264b070,DAT_0061bf84,(LPCWAVEFORMATEX)&WStack_20,0,0,0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 62,
       "match": "DAT_0061bf84",
       "severity": "mild",
-      "text": "MVar4 = waveOutOpen((LPHWAVEOUT)&DAT_0264b070,DAT_0061bf84,(LPCWAVEFORMATEX)auStack_24,0,0,0);",
+      "text": "MVar5 = waveOutOpen((LPHWAVEOUT)&DAT_0264b070,DAT_0061bf84,(LPCWAVEFORMATEX)&WStack_20,0,0,0);",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 63,
-      "match": "code *",
+      "description": "Unresolved stack parameter",
+      "line": 64,
+      "match": "in_stack_00000018",
       "severity": "moderate",
-      "text": "(*(code *)**(uint **)this_ptr)(this_ptr);",
-      "type": "unresolved_funcptr"
+      "text": "*in_stack_00000018 = _DAT_0264b100;",
+      "type": "stack_param"
     }
   ],
   "vtable_info": {

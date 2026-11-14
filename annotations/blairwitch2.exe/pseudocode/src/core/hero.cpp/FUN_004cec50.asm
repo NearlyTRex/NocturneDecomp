@@ -8,19 +8,19 @@
 ; undefined        Stack[-0x8c]:1  local_8c
 ;
 ; XREF[7]:
-;   core_colonel.cpp_FUN_00435830 at 00435c7f
-;   core_gabriela.cpp_FUN_004ad640 at 004ae8ee
-;   core_haystack.cpp_FUN_004cc990 at 004cce0d
+;   core_colonel.cpp_CColonel_process_FUN_00435830 at 00435c7f
+;   core_gabriela.cpp_CGabriella_process_FUN_004ad640 at 004ae8ee
+;   core_haystack.cpp_CHaystack_process_FUN_004cc990 at 004cce0d
 ;   core_hero.cpp_FUN_004d0780 at 004d07b0
-;   core_icepick.cpp_FUN_004d4c50 at 004d51ee
-;   core_stranger.cpp_FUN_0056e4d0 at 0056e696
-;   core_svetlana.cpp_FUN_00570510 at 00570a77
+;   core_icepick.cpp_CIcePick_process_FUN_004d4c50 at 004d51ee
+;   core_stranger.cpp_CStranger_handleActionButton_FUN_0056e4d0 at 0056e696
+;   core_svetlana.cpp_CSvetlana_process_FUN_00570510 at 00570a77
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d9c64
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 g_CDemonSetInstance.field1364324_0x14d164
-;   undefined4 g_CDemonSetInstance.field1364328_0x14d168
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;   undefined4 g_CWeaponClassInfo.name_hash
 ;
 ; Called Functions:
@@ -110,7 +110,7 @@ section .text
     XOR ESI,ESI                         ; 004ced38
     MOV EAX,[0x0061b5a8]                ; 004ced3a | g_CDemonSetPtr
         ;   Label: LAB_004ced3a
-    CMP EDI,dword ptr [EAX + 0x14d164]  ; 004ced3f | g_CDemonSetInstance.field1364324_0x14d164
+    CMP EDI,dword ptr [EAX + 0x14d164]  ; 004ced3f | g_CDemonSetInstance.actor_count
     JL 0x004ced5d                       ; 004ced45
         ;   XREF to: 004ced5d (CONDITIONAL_JUMP)  ; LAB_004ced5d
     CMP dword ptr [EBX + 0x255f0],0x1   ; 004ced47
@@ -125,11 +125,11 @@ section .text
     MOV ECX,dword ptr [0x02661f38]      ; 004ced5d | g_CWeaponClassInfo.name_hash
         ;   Label: LAB_004ced5d
     PUSH ECX                            ; 004ced63
-    MOV EAX,dword ptr [ESI + EAX*0x1 + 0x14d168] ; 004ced64 | g_CDemonSetInstance.field1364328_0x14d168
+    MOV EAX,dword ptr [ESI + EAX*0x1 + 0x14d168] ; 004ced64 | g_CDemonSetInstance.actors[0]
     PUSH EAX                            ; 004ced6b
     MOV dword ptr [ESP + 0x90],EAX      ; 004ced6c
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004ced73
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004ced78
     MOV EDX,0xbf800000                  ; 004ced7b
     MOV dword ptr [ESP + 0x8c],EAX      ; 004ced80
@@ -168,7 +168,7 @@ section .text
     MOV dword ptr [ESP + 0x90],EAX      ; 004cedc9
     MOV EAX,[0x0061b5a8]                ; 004cedd0 | g_CDemonSetPtr
     MOV dword ptr [EBX + 0x255f0],0x1   ; 004cedd5
-    MOV EAX,dword ptr [ESI + EAX*0x1 + 0x14d168] ; 004ceddf | g_CDemonSetInstance.field1364328_0x14d168
+    MOV EAX,dword ptr [ESI + EAX*0x1 + 0x14d168] ; 004ceddf | g_CDemonSetInstance.actors[0]
     MOV dword ptr [EBX + 0x255f4],EAX   ; 004cede6
     MOV EAX,dword ptr [ESP + 0x88]      ; 004cedec
     MOV dword ptr [EBX + 0x25600],0x0   ; 004cedf3
@@ -184,7 +184,7 @@ section .text
     LEA ECX,[ESP + 0x5c]                ; 004cee14
     MOV EAX,[0x0061b5a8]                ; 004cee18 | g_CDemonSetPtr
     PUSH ECX                            ; 004cee1d
-    MOV EAX,dword ptr [ESI + EAX*0x1 + 0x14d168] ; 004cee1e | g_CDemonSetInstance.field1364328_0x14d168
+    MOV EAX,dword ptr [ESI + EAX*0x1 + 0x14d168] ; 004cee1e | g_CDemonSetInstance.actors[0]
     PUSH EBX                            ; 004cee25
     MOV EDX,dword ptr [EAX + 0x2b0]     ; 004cee26
     PUSH EAX                            ; 004cee2c
@@ -201,7 +201,7 @@ section .text
     LEA EDX,[ESP + 0x5c]                ; 004cee51
     MOV EAX,[0x0061b5a8]                ; 004cee55 | g_CDemonSetPtr
     PUSH EDX                            ; 004cee5a
-    MOV EAX,dword ptr [ESI + EAX*0x1 + 0x14d168] ; 004cee5b | g_CDemonSetInstance.field1364328_0x14d168
+    MOV EAX,dword ptr [ESI + EAX*0x1 + 0x14d168] ; 004cee5b | g_CDemonSetInstance.actors[0]
     PUSH EBX                            ; 004cee62
     MOV ECX,dword ptr [EAX + 0x2b0]     ; 004cee63
     PUSH EAX                            ; 004cee69

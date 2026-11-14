@@ -1,0 +1,302 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 280,
+    "complexity_score": 165,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 135,
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 415
+  },
+  "cross_references": [
+    {
+      "addr": "0052ddf0",
+      "from_addr": "0052de56",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052f2a0",
+      "from_addr": "0052f58a",
+      "name": "core_set.cpp_FUN_0052f2a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0044a520",
+    "address_range": [
+      [
+        "0044a520",
+        "0044a80c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044a520",
+    "signature": "void __cdecl core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_0044a520(CDemonLight *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0044a210",
+      "is_variadic": false,
+      "name": "core_dlight.cpp_CDemonLight_blitZBuffer_FUN_0044a210"
+    },
+    {
+      "addr": "00470201",
+      "is_variadic": false,
+      "name": "core_dstrendr.cpp_memcpyMMX_FUN_00470201"
+    },
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005cf3f7",
+      "name": "s_core_dlight_cpp_005cf3f7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cf40a",
+      "name": "s_CDemonLight_blitZBuffer_005cf40a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01b13078",
+      "name": "DAT_01b13078",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "0052de56",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0052de89",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0052e71c",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0052f58a",
+        "call_type": "direct",
+        "caller": "core_set.cpp_FUN_0052f2a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.8530805687203795,
+    "instruction_count": 211,
+    "opcode_distribution": {
+      "BOOL_AND": 4,
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 10,
+      "BRANCH": 5,
+      "CALL": 3,
+      "CBRANCH": 31,
+      "COPY": 167,
+      "INT_ADD": 105,
+      "INT_AND": 144,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 144,
+      "INT_LESS": 25,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 20,
+      "INT_SBORROW": 29,
+      "INT_SCARRY": 22,
+      "INT_SEXT": 3,
+      "INT_SLESS": 68,
+      "INT_SUB": 42,
+      "INT_XOR": 9,
+      "LOAD": 61,
+      "POPCOUNT": 68,
+      "RETURN": 2,
+      "STORE": 36,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 1024
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00462d20",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0045ca30",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00472f80",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0044e970",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 60,
+    "local_size": 56,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonLight *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 129,
+      "match": "(void *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "(void *)((int)this_ptr->master_zbuffer + iVar5 * 2),",
+      "type": "pointer_cast"
+    }
+  ]
+}

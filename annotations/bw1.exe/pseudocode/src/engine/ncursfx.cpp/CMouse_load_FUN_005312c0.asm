@@ -11,7 +11,7 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; XREF[1]:
-;   core_main.c_FUN_005032a0 at 00503977
+;   core_main.c_initializeGameSystems_FUN_005032a0 at 00503977
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_crsr_d_005ec6eb
@@ -20,7 +20,7 @@
 ;   TerminatedCString s_crsrskll7_005ec705
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d220
 ;
 ; *****************************************************************************
@@ -41,8 +41,8 @@ section .text
     PUSH 0x5ec6eb                       ; 005312d0 | = "crsr%d"
     LEA EAX,[ESP + 0x28]                ; 005312d5
     PUSH EAX                            ; 005312d9
-    CALL crt_unknown.c_FUN_005bfb40     ; 005312da
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 005312da
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 005312df
     PUSH 0x37                           ; 005312e2
     PUSH 0x36                           ; 005312e4
@@ -64,8 +64,8 @@ section .text
     PUSH 0x5ec6f2                       ; 00531306 | = "flame%d"
     LEA EAX,[ESP + 0x8]                 ; 0053130b
     PUSH EAX                            ; 0053130f
-    CALL crt_unknown.c_FUN_005bfb40     ; 00531310
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 00531310
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 00531315
     PUSH 0x37                           ; 00531318
     PUSH 0x36                           ; 0053131a
@@ -87,8 +87,8 @@ section .text
     PUSH 0x5ec6fa                       ; 0053133c | = "crsrskll%d"
     LEA EAX,[ESP + 0x18]                ; 00531341
     PUSH EAX                            ; 00531345
-    CALL crt_unknown.c_FUN_005bfb40     ; 00531346
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 00531346
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 0053134b
     PUSH 0x37                           ; 0053134e
     PUSH 0x36                           ; 00531350

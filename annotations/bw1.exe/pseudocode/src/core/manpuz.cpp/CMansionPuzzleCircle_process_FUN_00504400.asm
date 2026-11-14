@@ -11,7 +11,7 @@
 ;   CGame* g_CGamePtr = 01ccf390
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_0045f3e0
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
 ;   core_game.cpp_CGame_setFudgeTarget_FUN_004cc9a0
 ;   core_hero.cpp_isAnyHeroWithinRadius_FUN_004ea6f0
 ;   core_manpuz.cpp_CMansionPuzzleCircle_processPanel_FUN_00505560
@@ -32,7 +32,7 @@ section .text
     PUSH 0x41f00000                     ; 00504408
     PUSH EAX                            ; 0050440d
     CALL core_hero.cpp_isAnyHeroWithinRadius_FUN_004ea6f0 ; 0050440e
-        ;   XREF to: 004ea6f0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_isAnyHeroWithinRadius_FUN_004ea6f0()
+        ;   XREF to: 004ea6f0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_isAnyHeroWithinRadius_FUN_004ea6f0(CVector3f * point, float radius)
     ADD ESP,0x8                         ; 00504413
     TEST EAX,EAX                        ; 00504416
     JZ 0x0050450c                       ; 00504418
@@ -127,15 +127,15 @@ section .text
     MOV byte ptr [EBX + 0x13cf],AH      ; 005044cb
     LEA EAX,[EBX + 0x1374]              ; 005044d1
     PUSH EAX                            ; 005044d7
-    CALL core_dirmat.cpp_FUN_0045f3e0   ; 005044d8
-        ;   XREF to: 0045f3e0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_0045f3e0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0 ; 005044d8
+        ;   XREF to: 0045f3e0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 005044dd
     LEA EAX,[EBX + 0x13c8]              ; 005044e0
     PUSH EAX                            ; 005044e6
     ADD EBX,0x13d4                      ; 005044e7
     PUSH EBX                            ; 005044ed
-    CALL core_dirmat.cpp_FUN_0045f3e0   ; 005044ee
-        ;   XREF to: 0045f3e0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_0045f3e0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0 ; 005044ee
+        ;   XREF to: 0045f3e0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 005044f3
     PUSH 0x3c8efa35                     ; 005044f6
     PUSH ESI                            ; 005044fb

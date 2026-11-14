@@ -2,17 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 57,
+    "complexity_score": 158,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 42,
-    "suspect_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 58,
+    "suspect_count": 8,
     "suspect_types": [
+      "negative_offset",
+      "pointer_cast",
+      "pointer_truncation",
       "warning_overlapping_globals"
     ],
-    "total_lines": 111
+    "total_lines": 127
   },
   "cross_references": [
     {
@@ -58,7 +61,7 @@
     {
       "addr": "00569f50",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_00569f50"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50"
     }
   ],
   "globals": [
@@ -121,6 +124,26 @@
     },
     "pcode_op_count": 276
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0056f2c0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005c6a80",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00540b40",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -145,6 +168,62 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 31,
+      "match": "pCVar9[-1].",
+      "severity": "mild",
+      "text": "piVar11 = &pCVar9[-1].models[1].textures[0xe].base.count;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 33,
+      "match": "pCVar9[-4].",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)pCVar9[-4].models[1].textures[0x11].texture_name,",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 47,
+      "match": "pCVar9[-1].",
+      "severity": "mild",
+      "text": "pCVar9[-1].models[1].textures[0xe].base.type = 1;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 58,
+      "match": "(char *)((int)piVar11",
+      "severity": "moderate",
+      "text": "*(char *)((int)piVar11 + 1) = cVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(int *)((int)piVar11",
+      "severity": "moderate",
+      "text": "piVar11 = (int *)((int)piVar11 + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `piVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 58,
+      "match": "(int)piVar11",
+      "severity": "moderate",
+      "text": "*(char *)((int)piVar11 + 1) = cVar2;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 59,
+      "match": "(int)piVar11",
+      "severity": "moderate",
+      "text": "piVar11 = (int *)((int)piVar11 + 2);",
+      "type": "pointer_truncation"
     }
   ],
   "vtable_info": {

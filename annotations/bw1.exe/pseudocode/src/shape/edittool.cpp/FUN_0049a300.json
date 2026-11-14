@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 135,
-    "complexity_score": 195,
+    "complexity_score": 170,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 35,
-    "suspect_count": 15,
+    "suspect_count": 13,
     "suspect_types": [
-      "unknown_field",
       "unnamed_param"
     ],
     "total_lines": 170
@@ -67,6 +66,11 @@
       "name": "engine_dosio.cpp_CFileFinder_openSearch_FUN_00479360"
     },
     {
+      "addr": "00479770",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_FUN_00479770"
+    },
+    {
       "addr": "004994d0",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_add_FUN_004994d0"
@@ -75,11 +79,6 @@
       "addr": "0049dea0",
       "is_variadic": false,
       "name": "shape_edittool.cpp_wildcardStringMatch_FUN_0049dea0"
-    },
-    {
-      "addr": "00479770",
-      "is_variadic": false,
-      "name": "unkafter_dosio.cpp_FUN_00479770"
     }
   ],
   "globals": [],
@@ -133,6 +132,20 @@
     },
     "pcode_op_count": 428
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00481ca0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00482ea0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -179,7 +192,7 @@
       "line": 12,
       "match": "param_3",
       "severity": "mild",
-      "text": "unkafter_dosio_cpp_FUN_00479770(param_3,0x5dc5fd,auStack_218);",
+      "text": "engine_dosio_cpp_FUN_00479770(param_3,0x5dc5fd,auStack_218);",
       "type": "unnamed_param"
     },
     {
@@ -187,31 +200,15 @@
       "line": 13,
       "match": "param_2",
       "severity": "mild",
-      "text": "unkafter_dosio_cpp_FUN_00479770(param_2,auStack_218,acStack_114);",
+      "text": "engine_dosio_cpp_FUN_00479770(param_2,auStack_218,acStack_114);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 16,
-      "match": "._0_1_",
-      "severity": "mild",
-      "text": "while (CStack_534._0_1_ != '\\0') {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 21,
-      "match": "._256_1_",
-      "severity": "mild",
-      "text": "if ((CStack_534._256_1_ & 4) == 0) {",
-      "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 22,
       "match": "param_4",
       "severity": "mild",
-      "text": "iVar1 = shape_edittool_cpp_wildcardStringMatch_FUN_0049dea0(param_4,(char *)&CStack_534,0);",
+      "text": "iVar1 = shape_edittool_cpp_wildcardStringMatch_FUN_0049dea0(param_4,CStack_534.filename,0);",
       "type": "unnamed_param"
     },
     {
@@ -219,7 +216,7 @@
       "line": 24,
       "match": "param_3",
       "severity": "mild",
-      "text": "unkafter_dosio_cpp_FUN_00479770(param_3,&CStack_534,acStack_31c);",
+      "text": "engine_dosio_cpp_FUN_00479770(param_3,&CStack_534,acStack_31c);",
       "type": "unnamed_param"
     },
     {
@@ -235,7 +232,7 @@
       "line": 29,
       "match": "param_3",
       "severity": "mild",
-      "text": "unkafter_dosio_cpp_FUN_00479770(param_3,&CStack_534,auStack_420);",
+      "text": "engine_dosio_cpp_FUN_00479770(param_3,&CStack_534,auStack_420);",
       "type": "unnamed_param"
     },
     {

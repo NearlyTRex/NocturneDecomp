@@ -37,7 +37,7 @@
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
 ;   core_netgame.cpp_CNetGame_send_FUN_0052df50
-;   wincore_winrun.cpp_FUN_005b2420
+;   wincore_winrun.cpp_getTime_FUN_005b2420
 ;
 ; *****************************************************************************
 
@@ -68,8 +68,8 @@ section .text
     CALL core_main.c_FUN_005030e0       ; 0052ea46
         ;   XREF to: 005030e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_005030e0()
     ADD ESP,0x4                         ; 0052ea4b
-    CALL wincore_winrun.cpp_FUN_005b2420 ; 0052ea4e
-        ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005b2420()
+    CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 0052ea4e
+        ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
         ;   Label: LAB_0052ea4e
     MOV EDX,EAX                         ; 0052ea53
     MOV ECX,0x12                        ; 0052ea55

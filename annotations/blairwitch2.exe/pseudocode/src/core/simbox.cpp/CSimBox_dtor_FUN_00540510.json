@@ -10,7 +10,7 @@
     "pseudocode_lines": 19,
     "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field"
+      "negative_offset"
     ],
     "total_lines": 66
   },
@@ -93,6 +93,32 @@
     },
     "pcode_op_count": 153
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00562b00",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00547720",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005893e0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "005170d0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -118,12 +144,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x4b4",
+      "description": "Negative struct offset (wrong base type)",
+      "line": 16,
+      "match": "pCVar1[-3].",
       "severity": "mild",
-      "text": "pCVar1 = core_box_cpp_CBox_dtor_FUN_005b1c70((CBox *)&this_ptr->field_0x4b4,0);",
-      "type": "unnamed_field"
+      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)&pCVar1[-3].is_valid,1);",
+      "type": "negative_offset"
     }
   ],
   "vtable_info": {

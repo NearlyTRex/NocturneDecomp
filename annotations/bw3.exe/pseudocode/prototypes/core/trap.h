@@ -7,19 +7,15 @@
 
 // Original: core_trap.cpp_staticInit_FUN_0056cca0
 // Address: 0056cca0
-void staticInit(void);
-
-// Original: core_trap.cpp_FUN_0056ccaf
-// Address: 0056ccaf
-undefined1 FUN_0056ccaf(void);
+void __cdecl staticInit(void);
 
 // Original: core_trap.cpp_factoryFuncTrap_FUN_0056ccd0
 // Address: 0056ccd0
-void factoryFuncTrap(void);
+CTrap * __cdecl factoryFuncTrap(void);
 
 // Original: core_trap.cpp_CTrap_getActorType_FUN_0056ccf0
 // Address: 0056ccf0
-CDemonActorType * CTrap::getActorType(CTrap *this_ptr);
+CDemonActorType * __cdecl CTrap::getActorType(CTrap *this_ptr);
 
 // Original: core_trap.cpp_CTrap_ctor_FUN_0056cd00
 // Address: 0056cd00
@@ -33,9 +29,9 @@ void __cdecl CTrap::setup(CTrap *this_ptr);
 // Address: 0056cd80
 int __cdecl CTrap::canPickup(CTrap *this_ptr,CDemonActor *picker);
 
-// Original: core_trap.cpp_FUN_0056cd90
+// Original: core_trap.cpp_CTrap_getCollisionType_FUN_0056cd90
 // Address: 0056cd90
-undefined4 FUN_0056cd90(void);
+ECollisionType __cdecl CTrap::getCollisionType(CTrap *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_trap.cpp_CTrap_pickup_FUN_0056cdb0
 // Address: 0056cdb0
@@ -49,21 +45,21 @@ void __cdecl CTrap::onDropped(CTrap *this_ptr,CVector3f *drop_position);
 // Address: 0056cdd0
 CDemonActor * __cdecl CTrap::getCarrier(CTrap *this_ptr);
 
-// Original: core_trap.cpp_FUN_0056cde0
+// Original: core_trap.cpp_CTrap_process_FUN_0056cde0
 // Address: 0056cde0
-void FUN_0056cde0(int param_1);
+void __cdecl CTrap::process(CTrap *this_ptr,float delta_time);
 
-// Original: core_trap.cpp_FUN_0056d000
+// Original: core_trap.cpp_CTrap_renderOpaque_FUN_0056d000
 // Address: 0056d000
-int FUN_0056d000(int param_1);
+int __cdecl CTrap::renderOpaque(CTrap *this_ptr);
 
 // Original: core_trap.cpp_CTrap_archive_FUN_0056d0b0
 // Address: 0056d0b0
 void __cdecl CTrap::archive(CTrap *this_ptr);
 
-// Original: core_trap.cpp_FUN_0056d0f0
+// Original: core_trap.cpp_CTrap_getBoundingBox_FUN_0056d0f0
 // Address: 0056d0f0
-void FUN_0056d0f0(int param_1);
+CBoundingBox3D * __cdecl CTrap::getBoundingBox(CTrap *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_trap.cpp_CTrap_dtor_FUN_0056d130
 // Address: 0056d130

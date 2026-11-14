@@ -2,16 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 131,
+    "complexity_score": 121,
     "cross_reference_count": 11,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 26,
-    "suspect_count": 9,
+    "suspect_count": 8,
     "suspect_types": [
       "extra_output",
-      "unnamed_field",
+      "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
     "total_lines": 61
@@ -20,25 +20,31 @@
     {
       "addr": "0041d020",
       "from_addr": "0041d0f2",
-      "name": "core_boxactor.cpp_FUN_0041d020",
+      "name": "core_boxactor.cpp_CLightActor_process_FUN_0041d020",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a6bc0",
+      "from_addr": "005a6bf6",
+      "name": "core_cross.cpp_CCross_renderTransparent_FUN_005a6bc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00486cb0",
       "from_addr": "00486df0",
-      "name": "core_emitter.cpp_FUN_00486cb0",
+      "name": "core_emitter.cpp_CEmitter_process_FUN_00486cb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00495960",
       "from_addr": "004959c9",
-      "name": "core_fire.cpp_FUN_00495960",
+      "name": "core_fire.cpp_CFireball_process_FUN_00495960",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004969a0",
       "from_addr": "004969b4",
-      "name": "core_fire.cpp_FUN_004969a0",
+      "name": "core_fire.cpp_CMuzzleFlash_init_FUN_004969a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -50,37 +56,31 @@
     {
       "addr": "004df1c0",
       "from_addr": "004df1ea",
-      "name": "core_keyactor.cpp_FUN_004df1c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0053c500",
-      "from_addr": "0053cfe3",
-      "name": "core_shadow.cpp_FUN_0053c500",
+      "name": "core_keyactor.cpp_CKeyActor_process_FUN_004df1c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005ad940",
       "from_addr": "005ad99a",
-      "name": "core_spirmine.cpp_FUN_005ad940",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00589fd0",
-      "from_addr": "0058a1ad",
-      "name": "core_weapon.cpp_FUN_00589fd0",
+      "name": "core_mine.cpp_FUN_005ad940",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0059d360",
       "from_addr": "0059d374",
-      "name": "unkaddr_0059d350.cpp_FUN_0059d360",
+      "name": "core_muzzle.cpp_CMuzzleEffect_init_FUN_0059d360",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005a6bc0",
-      "from_addr": "005a6bf6",
-      "name": "unkafter_cross.cpp_FUN_005a6bc0",
+      "addr": "0053c500",
+      "from_addr": "0053cfe3",
+      "name": "core_shadow.cpp_CShadow_process_FUN_0053c500",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00589fd0",
+      "from_addr": "0058a1ad",
+      "name": "core_weapon.cpp_CWeapon_updateLighting_FUN_00589fd0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -117,7 +117,7 @@
       {
         "call_addr": "00486df0",
         "call_type": "direct",
-        "caller": "core_emitter.cpp_FUN_00486cb0",
+        "caller": "core_emitter.cpp_CEmitter_process_FUN_00486cb0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -128,7 +128,7 @@
       {
         "call_addr": "004874a7",
         "call_type": "direct",
-        "caller": "core_emitter.cpp_FUN_00486cb0",
+        "caller": "core_emitter.cpp_CEmitter_process_FUN_00486cb0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -139,7 +139,7 @@
       {
         "call_addr": "0053cfe3",
         "call_type": "direct",
-        "caller": "core_shadow.cpp_FUN_0053c500",
+        "caller": "core_shadow.cpp_CShadow_process_FUN_0053c500",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -150,7 +150,7 @@
       {
         "call_addr": "0059d374",
         "call_type": "direct",
-        "caller": "unkaddr_0059d350.cpp_FUN_0059d360",
+        "caller": "core_muzzle.cpp_CMuzzleEffect_init_FUN_0059d360",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -161,7 +161,7 @@
       {
         "call_addr": "0058a1ad",
         "call_type": "direct",
-        "caller": "core_weapon.cpp_FUN_00589fd0",
+        "caller": "core_weapon.cpp_CWeapon_updateLighting_FUN_00589fd0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -183,7 +183,7 @@
       {
         "call_addr": "004969b4",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004969a0",
+        "caller": "core_fire.cpp_CMuzzleFlash_init_FUN_004969a0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -194,7 +194,7 @@
       {
         "call_addr": "004959c9",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_00495960",
+        "caller": "core_fire.cpp_CFireball_process_FUN_00495960",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -205,7 +205,7 @@
       {
         "call_addr": "0041d0f2",
         "call_type": "direct",
-        "caller": "core_boxactor.cpp_FUN_0041d020",
+        "caller": "core_boxactor.cpp_CLightActor_process_FUN_0041d020",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -216,7 +216,7 @@
       {
         "call_addr": "004df1ea",
         "call_type": "direct",
-        "caller": "core_keyactor.cpp_FUN_004df1c0",
+        "caller": "core_keyactor.cpp_CKeyActor_process_FUN_004df1c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -257,6 +257,32 @@
       "TRUNC": 3
     },
     "pcode_op_count": 136
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0045e970",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0045aae0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00471310",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0044cd90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 12,
@@ -315,22 +341,6 @@
       "type": "extra_output"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)(this_ptr + 0x28) = *(uint *)&position->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)(this_ptr + 0x2c) = *(uint *)&position->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 22,
       "match": "extraout_ECX",
@@ -353,6 +363,14 @@
       "severity": "moderate",
       "text": "*(int *)(extraout_ECX_01 + 8) = (int)ROUND(fVar2);",
       "type": "extra_output"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 15,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->position).x = position->x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

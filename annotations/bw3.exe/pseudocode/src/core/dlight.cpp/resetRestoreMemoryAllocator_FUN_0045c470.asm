@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
+;   core_set.cpp_CDemonSet_clearLights_FUN_00537520 at 00537590
 ;   core_set.cpp_CDemonSet_initScene_FUN_00534420 at 0053444a
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00534890 at 00534970
-;   core_set.cpp_FUN_00537520 at 00537590
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01b49bdc

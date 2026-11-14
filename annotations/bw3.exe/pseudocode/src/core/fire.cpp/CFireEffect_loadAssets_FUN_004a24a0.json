@@ -1,0 +1,333 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 71,
+    "complexity_score": 163,
+    "cross_reference_count": 1,
+    "function_call_count": 9,
+    "global_count": 9,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 28,
+    "suspect_count": 13,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 99
+  },
+  "cross_references": [
+    {
+      "addr": "004bd430",
+      "from_addr": "004bd447",
+      "name": "core_game.cpp_CGame_loadAssets_FUN_004bd430",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a24a0",
+    "address_range": [
+      [
+        "004a24a0",
+        "004a255b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireEffect_loadAssets_FUN_004a24a0",
+    "signature": "void __cdecl core_fire_cpp_CFireEffect_loadAssets_FUN_004a24a0(CFireEffect *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0049c680",
+      "is_variadic": false,
+      "name": "core_fire.cpp_loadDebrisAssets_FUN_0049c680"
+    },
+    {
+      "addr": "004992f0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_loadFireBallAssets_FUN_004992f0"
+    },
+    {
+      "addr": "0049e170",
+      "is_variadic": false,
+      "name": "core_fire.cpp_loadGunFlameAssets_FUN_0049e170"
+    },
+    {
+      "addr": "0049a630",
+      "is_variadic": false,
+      "name": "core_fire.cpp_loadGunFlashAssets_FUN_0049a630"
+    },
+    {
+      "addr": "0049a170",
+      "is_variadic": false,
+      "name": "core_fire.cpp_loadLeafAssets_FUN_0049a170"
+    },
+    {
+      "addr": "0049f380",
+      "is_variadic": false,
+      "name": "core_fire.cpp_loadLightningBoltAssets_FUN_0049f380"
+    },
+    {
+      "addr": "0049a000",
+      "is_variadic": false,
+      "name": "core_fire.cpp_loadRockAssets_FUN_0049a000"
+    },
+    {
+      "addr": "00497a30",
+      "is_variadic": false,
+      "name": "core_fire.cpp_loadStakeAssets_FUN_00497a30"
+    },
+    {
+      "addr": "0046e5e0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f2afc",
+      "name": "DAT_005f2afc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fc5a4",
+      "name": "DAT_005fc5a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fc5bc",
+      "name": "DAT_005fc5bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fc964",
+      "name": "DAT_005fc964",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fc97c",
+      "name": "DAT_005fc97c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fc994",
+      "name": "DAT_005fc994",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fc9ac",
+      "name": "DAT_005fc9ac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fc9c4",
+      "name": "DAT_005fc9c4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bdd7e4",
+      "name": "DAT_01bdd7e4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004bd447",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_loadAssets_FUN_004bd430",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.7962962962962963,
+    "instruction_count": 54,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 14,
+      "CBRANCH": 1,
+      "COPY": 34,
+      "INT_ADD": 14,
+      "INT_AND": 18,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 18,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 9,
+      "INT_SUB": 32,
+      "LOAD": 5,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 31
+    },
+    "pcode_op_count": 205
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0049d1c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.642
+    },
+    "bw1.exe": {
+      "addr": "004b5ac0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.642
+    },
+    "nocedit.exe": {
+      "addr": "004c7ab0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.65
+    },
+    "nocturne.exe": {
+      "addr": "0048af70",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.65
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,(SMRGLTextureBasic *)&DAT_005fc964);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_005fc964",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,(SMRGLTextureBasic *)&DAT_005fc964);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,(SMRGLTextureBasic *)&DAT_005fc97c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_005fc97c",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,(SMRGLTextureBasic *)&DAT_005fc97c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,(SMRGLTextureBasic *)&DAT_005fc994);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_005fc994",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,(SMRGLTextureBasic *)&DAT_005fc994);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,(SMRGLTextureBasic *)&DAT_005fc9ac);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_005fc9ac",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,(SMRGLTextureBasic *)&DAT_005fc9ac);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_005fc5a4",
+      "severity": "mild",
+      "text": "texture = (SMRGLTextureBasic *)&DAT_005fc5a4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,(SMRGLTextureBasic *)&DAT_005fc9c4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_005fc9c4",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,(SMRGLTextureBasic *)&DAT_005fc9c4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(DAT_005f2afc,texture);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_005fc964",
+      "severity": "mild",
+      "text": "} while (texture != (SMRGLTextureBasic *)&DAT_005fc964);",
+      "type": "undefined_data"
+    }
+  ]
+}

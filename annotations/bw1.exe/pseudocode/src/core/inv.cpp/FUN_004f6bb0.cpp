@@ -22,28 +22,29 @@ void core_inv_cpp_FUN_004f6bb0(void)
   int iVar8;
   int iVar9;
   
-  _DAT_01d06f70 = _DAT_01d06f70 - *(float *)&g_CGamePtr->field_0x294;
+  _DAT_01d06f70 = _DAT_01d06f70 - g_CGamePtr->delta_time_float;
   if (_DAT_01d06f70 <= 0.0) {
-    _DAT_01d06f70 = (float)core_actor_cpp_FUN_0040cc00(0x3dcccccd,0x3ecccccd);
+    _DAT_01d06f70 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.1,0.4);
     iVar8 = 0;
     iVar9 = 0;
     _DAT_01d1bc48 = 0xffffffff;
-    while (iVar8 < *(int *)&g_CDemonSetPtr->field_0x14f0a8) {
-      actor_ptr = *(CDemonActor **)(&g_CDemonSetPtr->field_0x14f0ac + iVar9);
-      if (*(int *)&actor_ptr[0x1d].field_0xb0 == 0) {
+    while (iVar8 < g_CDemonSetPtr->character_count) {
+      actor_ptr = *(CDemonActor **)((int)g_CDemonSetPtr->characters + iVar9);
+      if (*(int *)(actor_ptr[0x1d].create_event + 0x38) == 0) {
 LAB_004f6c34:
         iVar8 = iVar8 + 1;
         iVar9 = iVar9 + 4;
       }
       else {
-        iVar5 = core_actor_cpp_FUN_0040c550(actor_ptr,"CBird");
+        iVar5 = core_actor_cpp_isOfClass_FUN_0040c550(actor_ptr,"CBird");
         if (iVar5 != 0) goto LAB_004f6c34;
-        iVar5 = core_sound_cpp_FUN_0057d9c0(0x02C82A60,*(uint *)&actor_ptr[0x1d].field_0xb4);
+        iVar5 = core_sound_cpp_CSound_isSoundPlaying_FUN_0057d9c0
+                          (0x02C82A60,*(uint *)(actor_ptr[0x1d].create_event + 0x3c));
         if (iVar5 != 0) goto LAB_004f6c34;
         iVar5 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
-        fVar2 = *(float *)(iVar5 + 0x20) - *(float *)&actor_ptr->field_0x20;
-        fVar4 = *(float *)(iVar5 + 0x24) - *(float *)&actor_ptr->field_0x24;
-        fVar3 = *(float *)(iVar5 + 0x28) - *(float *)&actor_ptr->field_0x28;
+        fVar2 = *(float *)(iVar5 + 0x20) - (actor_ptr->location).position.x;
+        fVar4 = *(float *)(iVar5 + 0x24) - (actor_ptr->location).position.y;
+        fVar3 = *(float *)(iVar5 + 0x28) - (actor_ptr->location).position.z;
         fVar2 = fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2;
         dVar1 = (double)fVar2;
         if ((float)_DAT_005e6020 < fVar2) goto LAB_004f6c34;
@@ -53,7 +54,8 @@ LAB_004f6c34:
               _DAT_01d1bc48 = 0;
               iVar5 = 0;
               while( true ) {
-                iVar6 = core_sound_cpp_FUN_0057d9c0(0x02C82A60,*(uint *)(iVar5 + 0x1d1bc4c));
+                iVar6 = core_sound_cpp_CSound_isSoundPlaying_FUN_0057d9c0
+                                  (0x02C82A60,*(uint *)(iVar5 + 0x1d1bc4c));
                 if (iVar6 == 0) break;
                 iVar5 = iVar5 + 4;
                 if (0xf < iVar5) {
@@ -62,7 +64,7 @@ LAB_004f6c34:
               }
               uVar7 = core_sound_cpp_CSound_playSound_FUN_0057d880
                                 (0x02C82A60,(void *)0x0,"sps_full?.wav @ .3");
-              *(uint *)&actor_ptr[0x1d].field_0xb4 = uVar7;
+              *(uint *)(actor_ptr[0x1d].create_event + 0x3c) = uVar7;
               *(uint *)(iVar5 + 0x1d1bc4c) = uVar7;
               iVar8 = iVar8 + 1;
               iVar9 = iVar9 + 4;
@@ -71,7 +73,8 @@ LAB_004f6c34:
               _DAT_01d1bc48 = 1;
               iVar5 = 0;
               while( true ) {
-                iVar6 = core_sound_cpp_FUN_0057d9c0(0x02C82A60,*(uint *)(iVar5 + 0x1d1bc4c));
+                iVar6 = core_sound_cpp_CSound_isSoundPlaying_FUN_0057d9c0
+                                  (0x02C82A60,*(uint *)(iVar5 + 0x1d1bc4c));
                 if (iVar6 == 0) break;
                 iVar5 = iVar5 + 4;
                 if (0xf < iVar5) {
@@ -80,7 +83,7 @@ LAB_004f6c34:
               }
               uVar7 = core_sound_cpp_CSound_playSound_FUN_0057d880
                                 (0x02C82A60,(void *)0x0,"sps_long?.wav @ .3");
-              *(uint *)&actor_ptr[0x1d].field_0xb4 = uVar7;
+              *(uint *)(actor_ptr[0x1d].create_event + 0x3c) = uVar7;
               *(uint *)(iVar5 + 0x1d1bc4c) = uVar7;
               iVar8 = iVar8 + 1;
               iVar9 = iVar9 + 4;
@@ -90,7 +93,8 @@ LAB_004f6c34:
             _DAT_01d1bc48 = 2;
             iVar5 = 0;
             while( true ) {
-              iVar6 = core_sound_cpp_FUN_0057d9c0(0x02C82A60,*(uint *)(iVar5 + 0x1d1bc4c));
+              iVar6 = core_sound_cpp_CSound_isSoundPlaying_FUN_0057d9c0
+                                (0x02C82A60,*(uint *)(iVar5 + 0x1d1bc4c));
               if (iVar6 == 0) break;
               iVar5 = iVar5 + 4;
               if (0xf < iVar5) {
@@ -99,7 +103,7 @@ LAB_004f6c34:
             }
             uVar7 = core_sound_cpp_CSound_playSound_FUN_0057d880
                               (0x02C82A60,(void *)0x0,"sps_med?.wav @ .3");
-            *(uint *)&actor_ptr[0x1d].field_0xb4 = uVar7;
+            *(uint *)(actor_ptr[0x1d].create_event + 0x3c) = uVar7;
             *(uint *)(iVar5 + 0x1d1bc4c) = uVar7;
             iVar8 = iVar8 + 1;
             iVar9 = iVar9 + 4;
@@ -109,7 +113,8 @@ LAB_004f6c34:
           _DAT_01d1bc48 = 3;
           iVar5 = 0;
           while( true ) {
-            iVar6 = core_sound_cpp_FUN_0057d9c0(0x02C82A60,*(uint *)(iVar5 + 0x1d1bc4c));
+            iVar6 = core_sound_cpp_CSound_isSoundPlaying_FUN_0057d9c0
+                              (0x02C82A60,*(uint *)(iVar5 + 0x1d1bc4c));
             if (iVar6 == 0) break;
             iVar5 = iVar5 + 4;
             if (0xf < iVar5) {
@@ -118,7 +123,7 @@ LAB_004f6c34:
           }
           uVar7 = core_sound_cpp_CSound_playSound_FUN_0057d880
                             (0x02C82A60,(void *)0x0,"sps_short?.wav @ .3");
-          *(uint *)&actor_ptr[0x1d].field_0xb4 = uVar7;
+          *(uint *)(actor_ptr[0x1d].create_event + 0x3c) = uVar7;
           *(uint *)(iVar5 + 0x1d1bc4c) = uVar7;
           iVar8 = iVar8 + 1;
           iVar9 = iVar9 + 4;

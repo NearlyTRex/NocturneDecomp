@@ -7,8 +7,8 @@
 ; int              Stack[0x4]:4   cache_index
 ;
 ; XREF[3]:
-;   engine_3d.c_FUN_00407b30 at 00407d65
-;   engine_3d.c_FUN_00407e30 at 0040806f
+;   engine_3d.c_clipAndDrawLine2D_FUN_00407b30 at 00407d65
+;   engine_3d.c_clipAndDrawLine3D_FUN_00407e30 at 0040806f
 ;   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046d550 at 0046d7e2
 ;
 ; Referenced Globals:

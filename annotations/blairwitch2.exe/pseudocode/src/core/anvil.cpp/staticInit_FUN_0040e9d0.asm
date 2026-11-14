@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_anvil_cpp_staticInit_FUN_0040e9d0(void)
+; void __cdecl core_anvil_cpp_staticInit_FUN_0040e9d0(void)
 ;
 ;
 ; Called Functions:

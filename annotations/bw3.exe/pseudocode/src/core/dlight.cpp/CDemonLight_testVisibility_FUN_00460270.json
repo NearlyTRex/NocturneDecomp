@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 96,
+    "complexity_score": 91,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 71,
+    "pseudocode_lines": 66,
     "suspect_count": 2,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 224
+    "total_lines": 219
   },
   "cross_references": [],
   "function": {
@@ -31,7 +31,7 @@
     {
       "addr": "0053b250",
       "is_variadic": false,
-      "name": "core_set.cpp_FUN_0053b250"
+      "name": "core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_0053b250"
     },
     {
       "addr": "0046d460",
@@ -100,6 +100,26 @@
     },
     "pcode_op_count": 401
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0044d9f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004665c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00476a60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -126,7 +146,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 18,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460(DAT_005f2afc,1);",
@@ -134,7 +154,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 72,
+      "line": 67,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460(DAT_005f2afc,0);",

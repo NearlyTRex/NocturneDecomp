@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[6]:
-;   core_dirmat.cpp_FUN_00449280 at 00449298
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280 at 00449298
 ;   core_xform.cpp_FUN_00591ad0 at 00591aed
 ;   core_xform.cpp_FUN_00591c10 at 00591c2d
 ;   core_xform.cpp_FUN_00594380 at 005943a6
 ;   core_xform.cpp_FUN_005944a0 at 005944c6
-;   engine_mini3d.cpp_FUN_004f2be0 at 004f2c45
+;   engine_mini3d.cpp_matrixPushAndTransform_FUN_004f2be0 at 004f2c45
 ;
 ; *****************************************************************************
 

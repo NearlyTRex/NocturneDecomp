@@ -29,15 +29,15 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[15]:
-;   core_batcreat.cpp_FUN_00412500 at 00412668
-;   core_batman.cpp_FUN_00413f40 at 00414025
+;   core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00412500 at 00412668
+;   core_batman.cpp_CBatman_processDismemberment_FUN_00413f40 at 00414025
 ;   core_boneguy.cpp_CBoneGuy_explode_FUN_0041a0c0 at 0041a1eb
 ;   core_bride.cpp_CBride_processDismemberment_FUN_0041e8a0 at 0041e977
-;   core_charactr.cpp_FUN_00427770 at 004277c4
-;   core_construc.cpp_FUN_00438060 at 00438183
+;   core_charactr.cpp_CCharacter_detachBodyPart_FUN_00427770 at 004277c4
+;   core_construc.cpp_CConstruct_explode_FUN_00438060 at 00438183
 ;   core_cow.cpp_CZombieCow_processDismemberment_FUN_004398b0 at 0043996a
-;   core_dracbrid.cpp_FUN_00464a00 at 00464a53
-;   core_gargoyle.cpp_FUN_004c0c00 at 004c0cd5
+;   core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_00464a00 at 00464a53
+;   core_gargoyle.cpp_CGargoyle_processDismemberment_FUN_004c0c00 at 004c0cd5
 ;   core_ghoul.cpp_CGhoul_processDismemberment_FUN_004c3e30 at 004c3f10
 ;   ... and 5 more
 ;
@@ -45,11 +45,11 @@
 ;   undefined4 DAT_007bdb54
 ;
 ; Called Functions:
-;   core_bodypart.cpp_FUN_00417610
-;   core_bodypart.cpp_FUN_00417690
+;   core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_00417610
+;   core_bodypart.cpp_CBodyPart_addFire_FUN_00417690
 ;   core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_00548130
 ;   core_xform.cpp_FUN_00591530
-;   core_xform.cpp_FUN_00591de0
+;   core_xform.cpp_matrixToEulerAngles_FUN_00591de0
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005916b0
 ;
 ; *****************************************************************************
@@ -186,7 +186,7 @@ section .text
     LEA ESI,[EBP + -0x46]               ; 00427949
     LEA EDI,[EBP + -0x16]               ; 0042794c
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_005916b0 ; 0042794f
-        ;   XREF to: 005916b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_005916b0()
+        ;   XREF to: 005916b0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005916b0(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 00427954
     LEA ESI,[EBP + -0x46]               ; 00427959
     LEA EAX,[EBP + -0x16]               ; 0042795c
@@ -194,8 +194,8 @@ section .text
     MOVSD.REP ES:EDI,ESI                ; 00427962
     PUSH EAX                            ; 00427964
     LEA ESI,[EBP + 0x1a]                ; 00427965
-    CALL core_xform.cpp_FUN_00591de0    ; 00427968
-        ;   XREF to: 00591de0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591de0()
+    CALL core_xform.cpp_matrixToEulerAngles_FUN_00591de0 ; 00427968
+        ;   XREF to: 00591de0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_00591de0()
     ADD ESP,0x4                         ; 0042796d
     LEA EAX,[EBP + 0x26]                ; 00427970
     PUSH EAX                            ; 00427973
@@ -220,8 +220,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004279a5
     MOVSD ES:EDI,ESI                    ; 004279a6
     MOVSD ES:EDI,ESI                    ; 004279a7
-    CALL core_bodypart.cpp_FUN_00417610 ; 004279a8
-        ;   XREF to: 00417610 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_00417610(CBodyPart * this_ptr, char * model_name, CVector3f * position_offset, CVector3f * euler_angles)
+    CALL core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_00417610 ; 004279a8
+        ;   XREF to: 00417610 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_00417610(CBodyPart * this_ptr, char * model_name, CVector3f * position_offset, CVector3f * euler_angles)
     ADD ESP,0x10                        ; 004279ad
     JMP 0x0042787b                      ; 004279b0
         ;   XREF to: 0042787b (UNCONDITIONAL_JUMP)  ; LAB_0042787b
@@ -248,8 +248,8 @@ section .text
     PUSH EAX                            ; 004279e2
     MOV ESI,dword ptr [EBP + 0x8a]      ; 004279e3
     PUSH ESI                            ; 004279e9
-    CALL core_bodypart.cpp_FUN_00417690 ; 004279ea
-        ;   XREF to: 00417690 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_00417690(CBodyPart * this_ptr, CVector3f * position)
+    CALL core_bodypart.cpp_CBodyPart_addFire_FUN_00417690 ; 004279ea
+        ;   XREF to: 00417690 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_addFire_FUN_00417690(CBodyPart * this_ptr, CVector3f * position)
     ADD ESP,0x8                         ; 004279ef
     JMP 0x004278cb                      ; 004279f2
         ;   XREF to: 004278cb (UNCONDITIONAL_JUMP)  ; LAB_004278cb

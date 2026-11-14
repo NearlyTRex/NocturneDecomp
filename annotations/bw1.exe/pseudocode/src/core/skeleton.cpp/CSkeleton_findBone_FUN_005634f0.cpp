@@ -13,25 +13,25 @@ int __cdecl core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(CSkeleton *this_pt
 {
   int iVar1;
   int iVar2;
-  char *str1;
+  SBone *str1;
   
   iVar2 = 0;
-  if (0 < *(int *)&this_ptr->field_0x1de78) {
-    str1 = &this_ptr->field_0x1de7c;
+  if (0 < this_ptr->bone_count) {
+    str1 = this_ptr->bone_list;
     do {
-      iVar1 = _stricmp(str1,bone_name);
+      iVar1 = _stricmp(str1->bone_name,bone_name);
       if (iVar1 == 0) {
         return iVar2;
       }
       iVar2 = iVar2 + 1;
-      str1 = str1 + 0x24;
-    } while (iVar2 < *(int *)&this_ptr->field_0x1de78);
+      str1 = str1 + 1;
+    } while (iVar2 < this_ptr->bone_count);
   }
   if (assert_if_not_found == 0) {
     return -1;
   }
   _DAT_01d1d400 = "..\\core\\skeleton.cpp";
   _DAT_01d1d404 = 0x182;
-  core_main_c_FUN_005030e0("Can't find bone %s in skeleton %s!",bone_name,&this_ptr->field_0x1de28);
+  core_main_c_FUN_005030e0("Can't find bone %s in skeleton %s!",bone_name,this_ptr->loaded_filename);
   return -1;
 }

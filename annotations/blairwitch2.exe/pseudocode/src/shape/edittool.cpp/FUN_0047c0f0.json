@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 578,
-    "complexity_score": 475,
+    "complexity_score": 375,
     "cross_reference_count": 3,
     "function_call_count": 23,
     "global_count": 21,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 245,
-    "suspect_count": 20,
+    "suspect_count": 11,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
-      "unresolved_funcptr",
       "unrolled_strchr",
       "unrolled_strcpy",
       "warning_overlapping_globals"
@@ -27,15 +25,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047c7ee",
+      "addr": "0047c7f0",
       "from_addr": "0047c854",
-      "name": "shape_edittool.cpp_FUN_0047c7ee",
+      "name": "shape_edittool.cpp_FUN_0047c7f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047c87e",
+      "addr": "0047c880",
       "from_addr": "0047c908",
-      "name": "shape_edittool.cpp_FUN_0047c87e",
+      "name": "shape_edittool.cpp_FUN_0047c880",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -73,14 +71,14 @@
       "name": "crt_memory.c___vec_new_FUN_005ba2b4"
     },
     {
+      "addr": "005b8df8",
+      "is_variadic": false,
+      "name": "crt_memory.c_operator_new_array_FUN_005b8df8"
+    },
+    {
       "addr": "005b7fce",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005b7fce"
-    },
-    {
-      "addr": "005b8df8",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b8df8"
     },
     {
       "addr": "004032b0",
@@ -88,19 +86,29 @@
       "name": "engine_2d.c_clearInputAndWait_FUN_004032b0"
     },
     {
-      "addr": "004aaf00",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004aaf00"
-    },
-    {
       "addr": "004ab560",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004ab560"
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560"
+    },
+    {
+      "addr": "004aaf00",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00"
     },
     {
       "addr": "004dfea0",
       "is_variadic": false,
       "name": "engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_004dfea0"
+    },
+    {
+      "addr": "00485380",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_calculateButtonHeight_FUN_00485380"
+    },
+    {
+      "addr": "004852f0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_calculateButtonWidth_FUN_004852f0"
     },
     {
       "addr": "00484ed0",
@@ -148,19 +156,9 @@
       "name": "shape_edittool.cpp_FUN_00484f20"
     },
     {
-      "addr": "004852f0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_004852f0"
-    },
-    {
-      "addr": "00485380",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_00485380"
-    },
-    {
       "addr": "00589560",
       "is_variadic": false,
-      "name": "wincore_wddvmem.cpp_FUN_00589560"
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00589560"
     },
     {
       "addr": "0058eb40",
@@ -313,7 +311,7 @@
       {
         "call_addr": "0047c854",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047c7ee",
+        "caller": "shape_edittool.cpp_FUN_0047c7f0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -324,7 +322,7 @@
       {
         "call_addr": "0047c908",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047c87e",
+        "caller": "shape_edittool.cpp_FUN_0047c880",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -559,14 +557,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 81,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "local_20->field_0x4 = pcVar4[1];",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 107,
       "match": "DAT_006141b8",
@@ -613,70 +603,6 @@
       "severity": "mild",
       "text": "DAT_006141cc = 0x7f;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 176,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar5 = (**(code **)(*(int *)0x01D02F84 + 4))(0x01D02F84,0x1c);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 180,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar5 = (*(code *)**(uint **)0x01D02F84)(0x01D02F84,0x2a);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 182,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(iVar5 = (**(code **)(*(int *)0x01D02F84 + 4))(0x01D02F84,0xf), iVar5 != 0)) {",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 185,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar5 = (*(code *)**(uint **)0x01D02F84)(0x01D02F84,0x2a);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 187,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(iVar5 = (**(code **)(*(int *)0x01D02F84 + 4))(0x01D02F84,0xf), iVar5 != 0)) {",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 200,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "cVar1 = local_44->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 203,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "iVar9 = toupper((uint)(byte)pCVar10->field_0x4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 207,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "cVar1 = pCVar10[1].field_0x4;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",

@@ -8,7 +8,7 @@
 ;   core_set.cpp_FUN_0054d3c0 at 0054de4f
 ;   core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_00559440 at 005594b2
 ;   core_setcolid.cpp_CDemonSet_commitVoxelBuffer_FUN_00559580 at 0055958d
-;   core_setcolid.cpp_FUN_005594e0 at 00559552
+;   core_setcolid.cpp_CDemonSet_transferVoxelShadow_FUN_005594e0 at 00559552
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_path_cpp_005ecaa4

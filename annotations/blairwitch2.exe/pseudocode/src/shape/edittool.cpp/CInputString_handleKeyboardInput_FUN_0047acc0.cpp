@@ -16,26 +16,26 @@ void __cdecl shape_edittool_cpp_CInputString_handleKeyboardInput_FUN_0047acc0(CI
   iVar2 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x4b);
   if (iVar2 != 0) {
     bVar1 = true;
-    if (0 < *(int *)(this_ptr + 0x134)) {
-      *(int *)(this_ptr + 0x134) = *(int *)(this_ptr + 0x134) + -1;
+    if (0 < this_ptr->cursor_position) {
+      this_ptr->cursor_position = this_ptr->cursor_position + -1;
     }
   }
   iVar2 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x4d);
   if (iVar2 != 0) {
     bVar1 = true;
-    if (*(int *)(this_ptr + 0x134) < *(int *)(this_ptr + 0x130)) {
-      *(int *)(this_ptr + 0x134) = *(int *)(this_ptr + 0x134) + 1;
+    if (this_ptr->cursor_position < this_ptr->current_length) {
+      this_ptr->cursor_position = this_ptr->cursor_position + 1;
     }
   }
   iVar2 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x47);
   if (iVar2 != 0) {
     bVar1 = true;
-    *(uint *)(this_ptr + 0x134) = 0;
+    this_ptr->cursor_position = 0;
   }
   iVar2 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x4f);
   if (iVar2 != 0) {
     bVar1 = true;
-    *(uint *)(this_ptr + 0x134) = *(uint *)(this_ptr + 0x130);
+    this_ptr->cursor_position = this_ptr->current_length;
   }
   iVar2 = (**(code **)*0x01D02F84)(0x01D02F84,0x1d);
   if (iVar2 == 0) {
@@ -46,8 +46,8 @@ void __cdecl shape_edittool_cpp_CInputString_handleKeyboardInput_FUN_0047acc0(CI
       }
       iVar2 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x53);
       if (iVar2 != 0) {
-        iVar2 = *(int *)(this_ptr + 0x134);
-        if (iVar2 != *(int *)(this_ptr + 0x138)) {
+        iVar2 = this_ptr->cursor_position;
+        if (iVar2 != this_ptr->selection_start) {
           shape_edittool_cpp_CInputString_deleteSelection_FUN_0047ab80(this_ptr);
           return;
         }

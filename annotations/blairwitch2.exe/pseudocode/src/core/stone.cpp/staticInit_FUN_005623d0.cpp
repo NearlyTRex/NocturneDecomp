@@ -1,12 +1,12 @@
 // Name: core_stone.cpp_staticInit_FUN_005623d0
 // Address: 005623d0
 // Address Range: [[005623d0, 005623f3]]
-// Convention: unknown
-// Signature: void core_stone_cpp_staticInit_FUN_005623d0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_stone_cpp_staticInit_FUN_005623d0(void)
 
 #include "nocturne.h"
 
-void core_stone_cpp_staticInit_FUN_005623d0(void)
+void __cdecl core_stone_cpp_staticInit_FUN_005623d0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450

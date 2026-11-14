@@ -1,0 +1,236 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 121,
+    "complexity_score": 43,
+    "cross_reference_count": 0,
+    "function_call_count": 9,
+    "global_count": 12,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 43,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 164
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00599160",
+    "address_range": [
+      [
+        "00599160",
+        "005992a8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_zombie.cpp_CZombie_archive_FUN_00599160",
+    "signature": "void __cdecl core_zombie_cpp_CZombie_archive_FUN_00599160(CZombie *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b9e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveActor_FUN_0040b9e0"
+    },
+    {
+      "addr": "0040bfd0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveClothList_FUN_0040bfd0"
+    },
+    {
+      "addr": "0040bae0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveDeformableModelInstance_FUN_0040bae0"
+    },
+    {
+      "addr": "0040b8e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b8e0"
+    },
+    {
+      "addr": "0040b960",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b960"
+    },
+    {
+      "addr": "0040bb60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040bb60"
+    },
+    {
+      "addr": "0040bc50",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archivePartStatus_FUN_0040bc50"
+    },
+    {
+      "addr": "0040b730",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b730"
+    },
+    {
+      "addr": "00487ec0",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_archive_FUN_00487ec0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ef2cb",
+      "name": "s_speed_005ef2cb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ef2d1",
+      "name": "s_modelName_005ef2d1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ef2db",
+      "name": "s_guardDistance_005ef2db",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ef2e9",
+      "name": "s_motion_state_005ef2e9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ef2f6",
+      "name": "s_partStatus_005ef2f6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ef301",
+      "name": "s_carriedActor_005ef301",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ef30e",
+      "name": "s_riseFromGraveCondition_005ef30e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ef325",
+      "name": "s_graveActor_005ef325",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ef330",
+      "name": "s_clothList_005ef330",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ef33a",
+      "name": "s_isMinerZombie_005ef33a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ef348",
+      "name": "s_alwaysChaseFast_005ef348",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061e998",
+      "name": "g_CZombieClassVersion",
+      "type": "int",
+      "value": "0xb"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.4,
+    "instruction_count": 90,
+    "opcode_distribution": {
+      "CALL": 12,
+      "CBRANCH": 10,
+      "COPY": 57,
+      "INT_ADD": 30,
+      "INT_AND": 46,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 50,
+      "INT_LESS": 10,
+      "INT_NOTEQUAL": 6,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 13,
+      "INT_SLESS": 23,
+      "INT_SUB": 47,
+      "LOAD": 7,
+      "POPCOUNT": 23,
+      "RETURN": 2,
+      "STORE": 37
+    },
+    "pcode_op_count": 396
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005be1e0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0058c060",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9375
+    },
+    "nocedit.exe": {
+      "addr": "005fbfd0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00561aa0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZombie *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 220,
+        "vtable_addr": "005fe334"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

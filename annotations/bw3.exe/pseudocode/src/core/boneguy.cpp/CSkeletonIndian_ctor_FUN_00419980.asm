@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSkeletonIndian * core_boneguy_cpp_CSkeletonIndian_ctor_FUN_00419980(CSkeletonIndian *this_ptr)
+; CSkeletonIndian * __cdecl core_boneguy_cpp_CSkeletonIndian_ctor_FUN_00419980(CSkeletonIndian *this_ptr)
 ;
 ; Parameters:
 ; CSkeletonIndian * Stack[0x4]:4   this_ptr
@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   core_boneguy.cpp_CBoneGuy_ctor_FUN_00417400
-;   core_skeleton.cpp_FUN_0054eae0
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     ADD EAX,0x158                       ; 00419995
     PUSH EAX                            ; 0041999a
     MOV dword ptr [EAX + -0x4],0x5dc414 ; 0041999b
-    CALL core_skeleton.cpp_FUN_0054eae0 ; 004199a2
-        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054eae0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 ; 004199a2
+        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2538],0x41f00000 ; 004199a7
     MOV dword ptr [EBX + 0xce5c],0x41400000 ; 004199b1
     MOV dword ptr [EBX + 0xce60],0x41000000 ; 004199bb

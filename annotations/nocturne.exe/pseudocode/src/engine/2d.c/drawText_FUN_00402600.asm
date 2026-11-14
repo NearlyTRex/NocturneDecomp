@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   y
 ;
 ; XREF[24]:
-;   core_dcube.cpp_FUN_0044b660 at 0044b6be
+;   core_dcube.cpp_showHelpFile_FUN_0044b660 at 0044b6be
 ;   core_event.cpp_CEventList_render_FUN_0047dd80 at 0047ddd0
 ;   core_game.cpp_CGame_processFrame_FUN_0049cc10 at 0049d0f6
 ;   core_game.cpp_captureDebugMovieFrame_FUN_0049a320 at 0049a5fd

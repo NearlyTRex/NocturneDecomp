@@ -1,12 +1,12 @@
 // Name: core_flintlck.cpp_staticInit_FUN_004ae780
 // Address: 004ae780
 // Address Range: [[004ae780, 004ae7a3]]
-// Convention: unknown
-// Signature: void core_flintlck_cpp_staticInit_FUN_004ae780(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_flintlck_cpp_staticInit_FUN_004ae780(void)
 
 #include "nocturne.h"
 
-void core_flintlck_cpp_staticInit_FUN_004ae780(void)
+void __cdecl core_flintlck_cpp_staticInit_FUN_004ae780(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c3a0

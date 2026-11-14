@@ -22,31 +22,31 @@
     {
       "addr": "00410670",
       "from_addr": "004107fe",
-      "name": "core_baron.cpp_FUN_00410670",
+      "name": "core_baron.cpp_CBaron_renderTransparent_FUN_00410670",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00413c70",
       "from_addr": "00413e0f",
-      "name": "core_batman.cpp_FUN_00413c70",
+      "name": "core_batman.cpp_CBatman_renderOpaque_FUN_00413c70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00419b80",
       "from_addr": "00419c2d",
-      "name": "core_boneguy.cpp_FUN_00419b80",
+      "name": "core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_00419b80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00464ac0",
       "from_addr": "00464c6e",
-      "name": "core_dracbrid.cpp_FUN_00464ac0",
+      "name": "core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00464ac0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004dbd80",
       "from_addr": "004dc20a",
-      "name": "core_inv.cpp_FUN_004dbd80",
+      "name": "core_inv.cpp_CInventory_renderItemModel_FUN_004dbd80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -58,13 +58,13 @@
     {
       "addr": "0053e6c0",
       "from_addr": "0053e7c0",
-      "name": "core_shadow.cpp_FUN_0053e6c0",
+      "name": "core_shadow.cpp_CShadow_renderTransparent_FUN_0053e6c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00585810",
       "from_addr": "0058594a",
-      "name": "core_vessel.cpp_FUN_00585810",
+      "name": "core_vessel.cpp_CCryptVessel_renderOpaque_FUN_00585810",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -128,7 +128,7 @@
       {
         "call_addr": "004dc20a",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004dbd80",
+        "caller": "core_inv.cpp_CInventory_renderItemModel_FUN_004dbd80",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -139,7 +139,7 @@
       {
         "call_addr": "004107fe",
         "call_type": "direct",
-        "caller": "core_baron.cpp_FUN_00410670",
+        "caller": "core_baron.cpp_CBaron_renderTransparent_FUN_00410670",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -150,7 +150,7 @@
       {
         "call_addr": "00413e0f",
         "call_type": "direct",
-        "caller": "core_batman.cpp_FUN_00413c70",
+        "caller": "core_batman.cpp_CBatman_renderOpaque_FUN_00413c70",
         "estimated_params": 1,
         "instructions_analyzed": 4,
         "method": "push_count",
@@ -172,7 +172,7 @@
       {
         "call_addr": "00419c2d",
         "call_type": "direct",
-        "caller": "core_boneguy.cpp_FUN_00419b80",
+        "caller": "core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_00419b80",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -183,7 +183,7 @@
       {
         "call_addr": "00464c6e",
         "call_type": "direct",
-        "caller": "core_dracbrid.cpp_FUN_00464ac0",
+        "caller": "core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00464ac0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -194,7 +194,7 @@
       {
         "call_addr": "0053e7c0",
         "call_type": "direct",
-        "caller": "core_shadow.cpp_FUN_0053e6c0",
+        "caller": "core_shadow.cpp_CShadow_renderTransparent_FUN_0053e6c0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -205,7 +205,7 @@
       {
         "call_addr": "0058594a",
         "call_type": "direct",
-        "caller": "core_vessel.cpp_FUN_00585810",
+        "caller": "core_vessel.cpp_CCryptVessel_renderOpaque_FUN_00585810",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -251,6 +251,32 @@
     },
     "pcode_op_count": 359
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00484e00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0046e4e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0048da80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00461db0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -281,7 +307,7 @@
       "line": 13,
       "match": "code *",
       "severity": "moderate",
-      "text": "code *pcVar7;",
+      "text": "code *compar;",
       "type": "unresolved_funcptr"
     },
     {
@@ -313,7 +339,7 @@
       "line": 32,
       "match": "_qsort",
       "severity": "moderate",
-      "text": "_qsort(0x1bccdcc,_DAT_01ba5cc4,4,pcVar7);",
+      "text": "_qsort((void *)0x1bccdcc,_DAT_01ba5cc4,4,compar);",
       "type": "pointer_stride_bytecount"
     }
   ]

@@ -2,56 +2,54 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 196,
+    "complexity_score": 74,
     "cross_reference_count": 6,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 36,
-    "suspect_count": 14,
+    "pseudocode_lines": 34,
+    "suspect_count": 3,
     "suspect_types": [
-      "unknown_field",
-      "unnamed_field",
-      "unresolved_funcptr",
+      "unaffected_reg",
       "unrolled_memcpy"
     ],
-    "total_lines": 104
+    "total_lines": 102
   },
   "cross_references": [
     {
       "addr": "0040a050",
       "from_addr": "0040ad36",
-      "name": "core_actor.cpp_FUN_0040a050",
+      "name": "core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00485b40",
       "from_addr": "004862fe",
-      "name": "core_elephant.cpp_FUN_00485b40",
+      "name": "core_elephant.cpp_CElephantGun_fire_FUN_00485b40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004cbdc0",
       "from_addr": "004cc61e",
-      "name": "core_gun.cpp_FUN_004cbdc0",
+      "name": "core_gun.cpp_CGun_fire_FUN_004cbdc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0053f170",
       "from_addr": "0053f931",
-      "name": "core_shotgun.cpp_FUN_0053f170",
+      "name": "core_shotgun.cpp_CShotgun_fire_FUN_0053f170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00575800",
       "from_addr": "0057609d",
-      "name": "core_tommygun.cpp_FUN_00575800",
+      "name": "core_tommygun.cpp_CTommyGun_fire_FUN_00575800",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0057fc20",
       "from_addr": "0058019b",
-      "name": "core_turret.cpp_FUN_0057fc20",
+      "name": "core_turret.cpp_CTurret_fire_FUN_0057fc20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -76,12 +74,12 @@
     {
       "addr": "004fc7b0",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004fc7b0"
+      "name": "core_mission.cpp_CDemonMission_markActorToDelete_FUN_004fc7b0"
     },
     {
       "addr": "00436710",
       "is_variadic": false,
-      "name": "engine_console.cpp_FUN_00436710"
+      "name": "engine_console.cpp_CConsole_printf_FUN_00436710"
     }
   ],
   "globals": [
@@ -128,7 +126,7 @@
       {
         "call_addr": "0040ad36",
         "call_type": "direct",
-        "caller": "core_actor.cpp_FUN_0040a050",
+        "caller": "core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -139,7 +137,7 @@
       {
         "call_addr": "004862fe",
         "call_type": "direct",
-        "caller": "core_elephant.cpp_FUN_00485b40",
+        "caller": "core_elephant.cpp_CElephantGun_fire_FUN_00485b40",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -150,7 +148,7 @@
       {
         "call_addr": "004cc61e",
         "call_type": "direct",
-        "caller": "core_gun.cpp_FUN_004cbdc0",
+        "caller": "core_gun.cpp_CGun_fire_FUN_004cbdc0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -161,7 +159,7 @@
       {
         "call_addr": "0053f931",
         "call_type": "direct",
-        "caller": "core_shotgun.cpp_FUN_0053f170",
+        "caller": "core_shotgun.cpp_CShotgun_fire_FUN_0053f170",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -172,7 +170,7 @@
       {
         "call_addr": "0057609d",
         "call_type": "direct",
-        "caller": "core_tommygun.cpp_FUN_00575800",
+        "caller": "core_tommygun.cpp_CTommyGun_fire_FUN_00575800",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -183,7 +181,7 @@
       {
         "call_addr": "0058019b",
         "call_type": "direct",
-        "caller": "core_turret.cpp_FUN_0057fc20",
+        "caller": "core_turret.cpp_CTurret_fire_FUN_0057fc20",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -260,115 +258,27 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x70",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x70 != 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 20,
-      "match": "code *",
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x24))(this_ptr);",
-      "type": "unresolved_funcptr"
+      "text": "CBoundingBox3D *unaff_ESI;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Unaffected register variable",
       "line": 20,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x24))(this_ptr);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "if (auStack_10 != &this_ptr->field_0x20) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 29,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "auStack_10._0_4_ = *(uint *)&this_ptr->field_0x20;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "auStack_10._0_4_ = *(uint *)&this_ptr->field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 30,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "auStack_10._4_4_ = *(uint *)&this_ptr->field_0x24;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "auStack_10._4_4_ = *(uint *)&this_ptr->field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 31,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "auStack_10._8_4_ = *(uint *)&this_ptr->field_0x28;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "auStack_10._8_4_ = *(uint *)&this_ptr->field_0x28;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 33,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "auStack_10._4_4_ = (fStack_18 - fStack_24) + (float)auStack_10._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 33,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "auStack_10._4_4_ = (fStack_18 - fStack_24) + (float)auStack_10._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x70",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x70 = 2;",
-      "type": "unnamed_field"
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "(*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,unaff_ESI);",
+      "type": "unaffected_reg"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 23,
+      "line": 24,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
     }
   ]

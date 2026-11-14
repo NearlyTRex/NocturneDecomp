@@ -2,23 +2,23 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 11,
-    "complexity_score": 20,
+    "complexity_score": 21,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 5,
+    "pseudocode_lines": 6,
     "suspect_count": 1,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 16
+    "total_lines": 17
   },
   "cross_references": [
     {
       "addr": "004f5130",
       "from_addr": "004f5333",
-      "name": "core_mirror.cpp_FUN_004f5130",
+      "name": "core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_004f5130",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -55,7 +55,7 @@
       {
         "call_addr": "004f5333",
         "call_type": "direct",
-        "caller": "core_mirror.cpp_FUN_004f5130",
+        "caller": "core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_004f5130",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -98,6 +98,32 @@
     },
     "pcode_op_count": 79
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004e8e90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00507b30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0050cda0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004cd240",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -117,10 +143,10 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 5,
+      "line": 6,
       "match": "DAT_0060b014",
       "severity": "mild",
-      "text": "engine_matrix_c_projectTransformedPoint_FUN_004e5590(&DAT_0060b014 + cacheIndex * 0xc);",
+      "text": "((SProjectedVertex *)(&DAT_0060b014 + cacheIndex * 0xc));",
       "type": "undefined_data"
     }
   ]

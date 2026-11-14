@@ -30,25 +30,25 @@
     {
       "addr": "00537550",
       "from_addr": "00537576",
-      "name": "cockpit_pkbitmap.cpp_FUN_00537550",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00537c30",
-      "from_addr": "00537c7f",
-      "name": "cockpit_pkbitmap.cpp_FUN_00537c30",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00537550",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00537cb0",
       "from_addr": "00537ce1",
-      "name": "cockpit_pkbitmap.cpp_FUN_00537cb0",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_00537cb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00538b2e",
+      "addr": "00537c30",
+      "from_addr": "00537c7f",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_00537c30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00538b30",
       "from_addr": "00538d13",
-      "name": "cockpit_pkbmpset.cpp_FUN_00538b2e",
+      "name": "cockpit_pkbmpset.cpp_FUN_00538b30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -78,19 +78,19 @@
     {
       "addr": "0045dd90",
       "from_addr": "0045dd9f",
-      "name": "core_dfilter.cpp_FUN_0045dd90",
+      "name": "core_dfilter.cpp_CFilterFX_free_FUN_0045dd90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0045f100",
       "from_addr": "0045f112",
-      "name": "core_dimage.cpp_FUN_0045f100",
+      "name": "core_dimage.cpp_CDemonImage_freeMemory_FUN_0045f100",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00462670",
       "from_addr": "00462694",
-      "name": "core_dlight.cpp_FUN_00462670",
+      "name": "core_dlight.cpp_CDemonLight_free_FUN_00462670",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -112,21 +112,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004ba78e",
+      "addr": "004bc250",
+      "from_addr": "004bc2af",
+      "name": "core_fldnotes.cpp_SNotesMap_reset_FUN_004bc250",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ba760",
+      "from_addr": "004ba778",
+      "name": "core_fldnotes.cpp_SPageResource_dtor_FUN_004ba760",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ba790",
       "from_addr": "004ba7ab",
-      "name": "core_fldnotes.cpp_FUN_004ba78e",
+      "name": "core_fldnotes.cpp_SPageResource_setLink_FUN_004ba790",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004bb1c0",
       "from_addr": "004bb1fa",
-      "name": "core_fldnotes.cpp_FUN_004bb1c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004bc250",
-      "from_addr": "004bc2af",
-      "name": "core_fldnotes.cpp_FUN_004bc250",
+      "name": "core_fldnotes.cpp_STextView_reset_FUN_004bb1c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -154,15 +160,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00523910",
+      "from_addr": "00523931",
+      "name": "core_morph.cpp_FUN_00523910",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00543740",
       "from_addr": "00543778",
-      "name": "core_script.cpp_FUN_00543740",
+      "name": "core_script.cpp_CScript_clear_FUN_00543740",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00543790",
       "from_addr": "005437b6",
-      "name": "core_script.cpp_FUN_00543790",
+      "name": "core_script.cpp_CScript_freeParsedLines_FUN_00543790",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -208,9 +220,81 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "005ca9f4",
+      "from_addr": "005caa23",
+      "name": "crt_unknown.c_FUN_005ca9f4",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005cacd8",
+      "from_addr": "005cad10",
+      "name": "crt_unknown.c_FUN_005cacd8",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005caf60",
+      "from_addr": "005cafba",
+      "name": "crt_unknown.c_FUN_005caf60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005cc8b0",
+      "from_addr": "005cc981",
+      "name": "crt_unknown.c_FUN_005cc8b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005cc99c",
+      "from_addr": "005cc9ae",
+      "name": "crt_unknown.c_FUN_005cc99c",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005cce60",
+      "from_addr": "005cce91",
+      "name": "crt_unknown.c_FUN_005cce60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ccecc",
+      "from_addr": "005ccef7",
+      "name": "crt_unknown.c_FUN_005ccecc",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ccf44",
+      "from_addr": "005ccf5d",
+      "name": "crt_unknown.c_FUN_005ccf44",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005cde20",
+      "from_addr": "005cde55",
+      "name": "crt_unknown.c_FUN_005cde20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ce510",
+      "from_addr": "005ce5d0",
+      "name": "crt_unknown.c_FUN_005ce510",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ce880",
+      "from_addr": "005ce90d",
+      "name": "crt_unknown.c_FUN_005ce880",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005cefe4",
+      "from_addr": "005cf076",
+      "name": "crt_unknown.c_FUN_005cefe4",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0040d1c0",
       "from_addr": "0040d1d5",
-      "name": "engine_alphabit.cpp_FUN_0040d1c0",
+      "name": "engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d1c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -228,13 +312,19 @@
     {
       "addr": "00514cf0",
       "from_addr": "00514d04",
-      "name": "engine_mini3d.cpp_FUN_00514cf0",
+      "name": "engine_mini3d.cpp_free32_FUN_00514cf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00511050",
+      "from_addr": "00511089",
+      "name": "engine_mini3d.cpp_kill_FUN_00511050",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0051f8a0",
       "from_addr": "0051f901",
-      "name": "engine_model.c_FUN_0051f8a0",
+      "name": "engine_model.c_freeMRGLData_FUN_0051f8a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -244,15 +334,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005965d0",
-      "from_addr": "00596608",
-      "name": "engine_texture.cpp_FUN_005965d0",
+      "addr": "00596680",
+      "from_addr": "005966cd",
+      "name": "engine_texture.cpp_CTextureCache_findFreeSlot_FUN_00596680",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00596680",
-      "from_addr": "005966cd",
-      "name": "engine_texture.cpp_FUN_00596680",
+      "addr": "005965d0",
+      "from_addr": "00596608",
+      "name": "engine_texture.cpp_FUN_005965d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -268,9 +358,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00597d6e",
+      "addr": "00597d70",
       "from_addr": "005981a2",
-      "name": "engine_texture.cpp_FUN_00597d6e",
+      "name": "engine_texture.cpp_FUN_00597d70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -286,6 +376,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0049c370",
+      "from_addr": "0049c3ab",
+      "name": "shape_edittool.cpp_CPickList_clear_FUN_0049c370",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00499470",
       "from_addr": "00499494",
       "name": "shape_edittool.cpp_CStrList_clear_FUN_00499470",
@@ -295,12 +391,6 @@
       "addr": "00499730",
       "from_addr": "00499791",
       "name": "shape_edittool.cpp_CStrList_remove_FUN_00499730",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0049c370",
-      "from_addr": "0049c3ab",
-      "name": "shape_edittool.cpp_FUN_0049c370",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -322,141 +412,51 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0056f630",
-      "from_addr": "0056f648",
-      "name": "sound_sndmain.cpp_FUN_0056f630",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00570130",
       "from_addr": "00570142",
-      "name": "sound_sndmain.cpp_FUN_00570130",
+      "name": "sound_sndmain.cpp_CSfxSample_freeSampleData_FUN_00570130",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00442fb0",
-      "from_addr": "00442fcb",
-      "name": "support_codec.cpp_FUN_00442fb0",
+      "addr": "0056f630",
+      "from_addr": "0056f648",
+      "name": "sound_sndmain.cpp_freeMixBuffers_FUN_0056f630",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00443f00",
       "from_addr": "00443f7e",
-      "name": "support_codec.cpp_FUN_00443f00",
+      "name": "support_codec.cpp_CInStreamPipe_close_FUN_00443f00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00442fb0",
+      "from_addr": "00442fcb",
+      "name": "support_codec.cpp_CLZWDictionary_free_FUN_00442fb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a0e80",
       "from_addr": "005a0eab",
-      "name": "support_trstream.cpp_FUN_005a0e80",
+      "name": "support_trstream.cpp_CInStreamFile_freeBuffer_FUN_005a0e80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a1400",
       "from_addr": "005a1438",
-      "name": "support_trstream.cpp_FUN_005a1400",
+      "name": "support_trstream.cpp_CInStreamMemory_close_FUN_005a1400",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a1d20",
       "from_addr": "005a1d51",
-      "name": "support_trstream.cpp_FUN_005a1d20",
+      "name": "support_trstream.cpp_COutStreamMemory_close_FUN_005a1d20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004ba760",
-      "from_addr": "004ba778",
-      "name": "unkaddr_004b9ab0.cpp_FUN_004ba760",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005cde20",
-      "from_addr": "005cde55",
-      "name": "unkafter_2d.cpp_FUN_005cde20",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005ce510",
-      "from_addr": "005ce5d0",
-      "name": "unkafter_2d.cpp_FUN_005ce510",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005ce880",
-      "from_addr": "005ce90d",
-      "name": "unkafter_2d.cpp_FUN_005ce880",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005cefe4",
-      "from_addr": "005cf076",
-      "name": "unkafter_2d.cpp_FUN_005cefe4",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00523910",
-      "from_addr": "00523931",
-      "name": "unkafter_box.cpp_FUN_00523910",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0051104e",
-      "from_addr": "00511089",
-      "name": "unkafter_minecar.cpp_FUN_0051104e",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005ca9f4",
-      "from_addr": "005caa23",
-      "name": "unkafter_zombie.cpp_FUN_005ca9f4",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005cacd8",
-      "from_addr": "005cad10",
-      "name": "unkafter_zombie.cpp_FUN_005cacd8",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005caf60",
-      "from_addr": "005cafba",
-      "name": "unkafter_zombie.cpp_FUN_005caf60",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005cc8b0",
-      "from_addr": "005cc981",
-      "name": "unkafter_zombie.cpp_FUN_005cc8b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005cc99c",
-      "from_addr": "005cc9ae",
-      "name": "unkafter_zombie.cpp_FUN_005cc99c",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005cce60",
-      "from_addr": "005cce91",
-      "name": "unkafter_zombie.cpp_FUN_005cce60",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005ccecc",
-      "from_addr": "005ccef7",
-      "name": "unkafter_zombie.cpp_FUN_005ccecc",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005ccf44",
-      "from_addr": "005ccf5d",
-      "name": "unkafter_zombie.cpp_FUN_005ccf44",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005abfec",
+      "addr": "005abff0",
       "from_addr": "005ac00b",
-      "name": "wincore_wddvmem.cpp_FUN_005abfec",
+      "name": "wincore_wddvmem.cpp_FUN_005abff0",
       "type": "UNCONDITIONAL_CALL"
     },
     {

@@ -2,11 +2,11 @@
 // Address: 005c140c
 // Address Range: [[005c140c, 005c151d]]
 // Convention: unknown
-// Signature: int crt_unknown_c_FUN_005c140c(undefined4 param_1,byte param_2,uint param_3,undefined4 param_4,undefined4 param_5,int param_6)
+// Signature: _FILE * crt_unknown_c_FUN_005c140c(undefined4 param_1,byte param_2,uint param_3,char *param_4,undefined4 param_5,_FILE *param_6)
 
 #include "nocturne.h"
 
-int FUN_005c140c(uint param_1,byte param_2,uint param_3,uint param_4,uint param_5,int param_6)
+_FILE * FUN_005c140c(uint param_1,byte param_2,uint param_3,char *param_4,uint param_5,_FILE *param_6)
 
 {
   byte bVar1;
@@ -14,8 +14,8 @@ int FUN_005c140c(uint param_1,byte param_2,uint param_3,uint param_4,uint param_
   int iVar3;
   uint uVar4;
   
-  *(byte *)(param_6 + 0xc) = *(byte *)(param_6 + 0xc) & 0xfc;
-  *(uint *)(param_6 + 0xc) = *(uint *)(param_6 + 0xc) | param_3;
+  *(byte *)&param_6->_flag = (byte)param_6->_flag & 0xfc;
+  param_6->_flag = param_6->_flag | param_3;
   iVar3 = tolower((uint)param_2);
   if ((char)iVar3 == 'r') {
     uVar2 = 0;
@@ -46,18 +46,18 @@ int FUN_005c140c(uint param_1,byte param_2,uint param_3,uint param_4,uint param_
     }
     uVar4 = 0x180;
   }
-  uVar4 = FUN_005c7254(param_1,uVar2,param_5,uVar4);
-  *(uint *)(param_6 + 0x10) = uVar4;
-  if (*(int *)(param_6 + 0x10) == -1) {
+  iVar3 = FUN_005c7254(param_1,uVar2,param_5,uVar4);
+  param_6->_handle = iVar3;
+  if (param_6->_handle == -1) {
     FUN_005c6ae0(param_6);
-    return 0;
+    return (_FILE *)0x0;
   }
-  *(uint *)(param_6 + 4) = 0;
-  *(uint *)(param_6 + 0x14) = 0;
-  *(uint *)(*(int *)(param_6 + 8) + 0xc) = 0;
-  *(uint *)(*(int *)(param_6 + 8) + 0x10) = param_4;
-  *(uint *)(*(int *)(param_6 + 8) + 0x15) = 0;
-  *(uint *)(*(int *)(param_6 + 8) + 8) = 0;
+  param_6->_cnt = 0;
+  param_6->_bufsize = 0;
+  param_6->_link->__get_base = (char *)0x0;
+  param_6->_link->__get_end = param_4;
+  *(uint *)((int)&param_6->_link->__get_ptr + 1) = 0;
+  param_6->_link->__reserve_end = (char *)0x0;
   if ((param_3 & 0x80) != 0) {
     _fseek(param_6,0,2);
   }

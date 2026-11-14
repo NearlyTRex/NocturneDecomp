@@ -1,0 +1,368 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 185,
+    "complexity_score": 137,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 92,
+    "suspect_count": 3,
+    "suspect_types": [
+      "pointer_cast",
+      "stack_alignment_array",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 277
+  },
+  "cross_references": [
+    {
+      "addr": "004d4900",
+      "from_addr": "004d4a48",
+      "name": "core_hero.cpp_FUN_004d4900",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d38b0",
+    "address_range": [
+      [
+        "004d38b0",
+        "004d3ae0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004d38b0",
+    "signature": "int __cdecl core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004d38b0(CHero *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408b80",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408b80"
+    },
+    {
+      "addr": "00408bf0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408bf0"
+    },
+    {
+      "addr": "0040cfa0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0"
+    },
+    {
+      "addr": "00576250",
+      "is_variadic": false,
+      "name": "core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c4db5",
+      "name": "DAT_005c4db5",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c4dbd",
+      "name": "DAT_005c4dbd",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c4dc5",
+      "name": "DAT_005c4dc5",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00603b28",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01ed78c8"
+    },
+    {
+      "addr": "02024a2c",
+      "name": "g_CDemonSetInstance.actor_count",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02024a30",
+      "name": "g_CDemonSetInstance.actors[0]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004d4a48",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_FUN_004d4900",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.259036144578313,
+    "instruction_count": 166,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 9,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CALLIND": 1,
+      "CBRANCH": 9,
+      "COPY": 382,
+      "FLOAT2FLOAT": 25,
+      "FLOAT_ABS": 2,
+      "FLOAT_ADD": 2,
+      "FLOAT_EQUAL": 5,
+      "FLOAT_LESS": 5,
+      "FLOAT_MULT": 4,
+      "FLOAT_NAN": 10,
+      "FLOAT_SQRT": 2,
+      "FLOAT_SUB": 6,
+      "INT2FLOAT": 1,
+      "INT_ADD": 105,
+      "INT_AND": 65,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 39,
+      "INT_LEFT": 20,
+      "INT_LESS": 5,
+      "INT_MULT": 24,
+      "INT_NOTEQUAL": 25,
+      "INT_OR": 25,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 19,
+      "INT_SUB": 45,
+      "INT_XOR": 3,
+      "INT_ZEXT": 44,
+      "LOAD": 59,
+      "POPCOUNT": 19,
+      "RETURN": 2,
+      "STORE": 46
+    },
+    "pcode_op_count": 1039
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004cf890",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004ebc40",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004f33b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7192
+    },
+    "nocturne.exe": {
+      "addr": "004b5750",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7192
+    }
+  },
+  "stack_frame": {
+    "frame_size": 196,
+    "local_size": 192,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_bc",
+        "offset": -188,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHero *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004d38bc",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 11,
+      "match": "afStackY_1080",
+      "severity": "moderate",
+      "text": "float afStackY_1080 [1008];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(CHero **)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "this_ptr_00 = *(CHero **)((int)g_CDemonSetPtr->actors + local_20);",
+      "type": "pointer_cast"
+    }
+  ]
+}

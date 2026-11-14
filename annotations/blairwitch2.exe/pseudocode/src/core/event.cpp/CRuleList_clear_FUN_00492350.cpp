@@ -9,6 +9,6 @@
 void __cdecl core_event_cpp_CRuleList_clear_FUN_00492350(CRuleList *this_ptr)
 
 {
-  *(uint *)this_ptr = 0;
+  this_ptr->list_size = 0;
   return;
 }

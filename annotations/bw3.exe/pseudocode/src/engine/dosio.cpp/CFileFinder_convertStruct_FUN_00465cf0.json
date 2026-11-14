@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 194,
+    "complexity_score": 63,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 54,
-    "suspect_count": 13,
+    "pseudocode_lines": 48,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 180
+    "total_lines": 174
   },
   "cross_references": [
     {
@@ -172,6 +171,32 @@
     },
     "pcode_op_count": 479
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00460fa0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5
+    },
+    "bw1.exe": {
+      "addr": "004794b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5
+    },
+    "nocedit.exe": {
+      "addr": "00481dc0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9852
+    },
+    "nocturne.exe": {
+      "addr": "00456d90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9852
+    }
+  },
   "stack_frame": {
     "frame_size": 88,
     "local_size": 80,
@@ -301,102 +326,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x100",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x100 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x100",
-      "severity": "mild",
-      "text": "this_ptr->field_0x100 = this_ptr->field_0x100 | 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x100",
-      "severity": "mild",
-      "text": "this_ptr->field_0x100 = this_ptr->field_0x100 | 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x100",
-      "severity": "mild",
-      "text": "this_ptr->field_0x100 = this_ptr->field_0x100 | 2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x100",
-      "severity": "mild",
-      "text": "this_ptr->field_0x100 = this_ptr->field_0x100 | 2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x100",
-      "severity": "mild",
-      "text": "this_ptr->field_0x100 = this_ptr->field_0x100 | 4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x100",
-      "severity": "mild",
-      "text": "this_ptr->field_0x100 = this_ptr->field_0x100 | 4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x100",
-      "severity": "mild",
-      "text": "this_ptr->field_0x100 = this_ptr->field_0x100 | 8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x100",
-      "severity": "mild",
-      "text": "this_ptr->field_0x100 = this_ptr->field_0x100 | 8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x104",
-      "severity": "mild",
-      "text": "*(DWORD *)&this_ptr->field_0x104 = find_data->nFileSizeLow;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x108",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x108 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x108",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x108 = uVar2;",
-      "type": "unnamed_field"
     }
   ]
 }

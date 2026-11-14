@@ -7,10 +7,10 @@
 ; CClothList *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
-;   core_charactr.cpp_FUN_0042b0e0 at 0042b26a
-;   core_spirbear.cpp_FUN_0059aba0 at 0059ac06
-;   core_spireagl.cpp_FUN_005992f0 at 00599342
-;   core_spirindi.cpp_FUN_0059a060 at 0059a0c6
+;   core_charactr.cpp_CCharacter_setup_FUN_0042b0e0 at 0042b26a
+;   core_spirbear.cpp_CSpiritBear_setup_FUN_0059aba0 at 0059ac06
+;   core_spireagl.cpp_CSpiritEagle_setup_FUN_005992f0 at 00599342
+;   core_spirindi.cpp_CSpiritIndian_setup_FUN_0059a060 at 0059a0c6
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_005b91e0
@@ -19,12 +19,12 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_cloth.cpp_FUN_0043c220
+;   core_cloth.cpp_CCloth_ctor_FUN_0043c220
+;   core_cloth.cpp_CCloth_load_FUN_0043c330
 ;   core_cloth.cpp_FUN_0043c280
-;   core_cloth.cpp_FUN_0043c330
 ;   core_main.c_FUN_004e4330
+;   crt_memory.c_operator_new_FUN_005a3cb2
 ;   crt_unknown.c_FUN_005a30c4
-;   crt_unknown.c_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -50,15 +50,15 @@ section .text
         ;   XREF to: 0043f9ad (CONDITIONAL_JUMP)  ; LAB_0043f9ad
     PUSH 0x3ab30                        ; 0043f944
         ;   Label: LAB_0043f944
-    CALL crt_unknown.c_FUN_005a3cb2     ; 0043f949
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 0043f949
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
     ADD ESP,0x4                         ; 0043f94e
     TEST EAX,EAX                        ; 0043f951
     JZ 0x0043f95e                       ; 0043f953
         ;   XREF to: 0043f95e (CONDITIONAL_JUMP)  ; LAB_0043f95e
     PUSH EAX                            ; 0043f955
-    CALL core_cloth.cpp_FUN_0043c220    ; 0043f956
-        ;   XREF to: 0043c220 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_FUN_0043c220(CCloth * this_ptr)
+    CALL core_cloth.cpp_CCloth_ctor_FUN_0043c220 ; 0043f956
+        ;   XREF to: 0043c220 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_ctor_FUN_0043c220(CCloth * this_ptr)
     ADD ESP,0x4                         ; 0043f95b
     MOV dword ptr [EBX + 0x194],EAX     ; 0043f95e
         ;   Label: LAB_0043f95e
@@ -79,8 +79,8 @@ section .text
     PUSH ECX                            ; 0043f991
     ADD EBX,0x4                         ; 0043f992
     INC EDI                             ; 0043f995
-    CALL core_cloth.cpp_FUN_0043c330    ; 0043f996
-        ;   XREF to: 0043c330 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_0043c330()
+    CALL core_cloth.cpp_CCloth_load_FUN_0043c330 ; 0043f996
+        ;   XREF to: 0043c330 (UNCONDITIONAL_CALL)  ; int core_cloth.cpp_CCloth_load_FUN_0043c330(CCloth * this_ptr, char * filename)
     ADD ESI,0x28                        ; 0043f99b
     MOV EAX,dword ptr [EBP]             ; 0043f99e
     ADD ESP,0x8                         ; 0043f9a1

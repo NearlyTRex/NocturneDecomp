@@ -26,9 +26,9 @@ void core_weapon_cpp_FUN_005ade40(int param_1)
   float fStack_60;
   float fStack_5c;
   CVector3f CStack_58;
-  CVector3f CStack_4c;
-  float fStack_40;
-  float afStack_3c [2];
+  float fStack_4c;
+  float afStack_48 [4];
+  float fStack_38;
   CVector3f CStack_34;
   float fStack_28;
   float afStack_24 [4];
@@ -45,13 +45,13 @@ void core_weapon_cpp_FUN_005ade40(int param_1)
       puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
       puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
     }
-    fStack_40 = local_7c + fStack_70;
-    afStack_3c[0] = fStack_78 + fStack_6c;
-    afStack_3c[1] = fStack_74 + fStack_68;
+    afStack_48[2] = local_7c + fStack_70;
+    afStack_48[3] = fStack_78 + fStack_6c;
+    fStack_38 = fStack_74 + fStack_68;
     afStack_24[2] = local_7c + fStack_70;
-    afStack_24[(uint)bVar4 * -2 + 3] = afStack_3c[(uint)bVar4 * -2];
+    afStack_24[(uint)bVar4 * -2 + 3] = afStack_48[(uint)bVar4 * -2 + 3];
     afStack_24[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
-         afStack_3c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+         afStack_48[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
     fStack_28 = afStack_24[2] * _DAT_005f9916;
     afStack_24[0] = afStack_24[3] * _DAT_005f9916;
     afStack_24[1] = fStack_14 * _DAT_005f9916;
@@ -60,15 +60,14 @@ void core_weapon_cpp_FUN_005ade40(int param_1)
     afStack_24[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7] =
          afStack_24[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
     core_actor_cpp_FUN_00408b40(param_1,afStack_24 + 5);
-    CStack_34._0_4_ = CStack_4c._0_4_;
-    *(uint *)((int)&CStack_34 + (uint)bVar4 * -8 + 4) =
-         *(uint *)((int)&CStack_4c + (uint)bVar4 * -8 + 4);
-    *(uint *)((int)&CStack_34 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-         *(uint *)((int)&CStack_4c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+    CStack_34.x = fStack_4c;
+    *(float *)((int)&CStack_34 + (uint)bVar4 * -8 + 4) = afStack_48[(uint)bVar4 * -2];
+    *(float *)((int)&CStack_34 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+         afStack_48[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
     fStack_64 = fStack_70 - local_7c;
     fStack_60 = fStack_6c - fStack_78;
     fStack_5c = fStack_68 - fStack_74;
-    CStack_58._0_4_ = fStack_70 - local_7c;
+    CStack_58.x = fStack_70 - local_7c;
     *(uint *)((int)&CStack_58 + (uint)bVar4 * -8 + 4) =
          *(uint *)((int)&stack0xffffffa0 + (uint)bVar4 * -8);
     *(uint *)((int)&CStack_58 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =

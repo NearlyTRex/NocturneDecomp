@@ -1,0 +1,289 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 217,
+    "complexity_score": 134,
+    "cross_reference_count": 2,
+    "function_call_count": 6,
+    "global_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 84,
+    "suspect_count": 4,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 301
+  },
+  "cross_references": [
+    {
+      "addr": "004b6170",
+      "from_addr": "004b6696",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00482250",
+      "from_addr": "004822d6",
+      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00482250",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00482770",
+    "address_range": [
+      [
+        "00482770",
+        "004829f6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "shape_edittool.cpp_CPickList_handleDialogInput_FUN_00482770",
+    "signature": "int __cdecl shape_edittool_cpp_CPickList_handleDialogInput_FUN_00482770(CPickList *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00485240",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEdButton_wasClicked_FUN_00485240"
+    },
+    {
+      "addr": "00484900",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEdScrollBar_handleInput_FUN_00484900"
+    },
+    {
+      "addr": "00483950",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_getItemAtMousePosition_FUN_00483950"
+    },
+    {
+      "addr": "00483aa0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_isItemEnabled_FUN_00483aa0"
+    },
+    {
+      "addr": "004837f0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_validateScrollBounds_FUN_004837f0"
+    },
+    {
+      "addr": "0058e9e0",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_getTime_FUN_0058e9e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d28f7",
+      "name": "DAT_005d28f7",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c26408",
+      "name": "DAT_01c26408",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c2640c",
+      "name": "DAT_01c2640c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c26410",
+      "name": "DAT_01c26410",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c2a37c",
+      "name": "DAT_01c2a37c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c2a380",
+      "name": "DAT_01c2a380",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c2a384",
+      "name": "DAT_01c2a384",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004822d6",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00482250",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b6696",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.711764705882353,
+    "instruction_count": 170,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 22,
+      "BOOL_OR": 3,
+      "BRANCH": 2,
+      "CALL": 9,
+      "CALLIND": 1,
+      "CBRANCH": 20,
+      "COPY": 160,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 72,
+      "INT_AND": 110,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 75,
+      "INT_LEFT": 6,
+      "INT_LESS": 12,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 17,
+      "INT_OR": 15,
+      "INT_SBORROW": 13,
+      "INT_SCARRY": 10,
+      "INT_SDIV": 2,
+      "INT_SEXT": 8,
+      "INT_SLESS": 36,
+      "INT_SREM": 2,
+      "INT_SRIGHT": 4,
+      "INT_SUB": 41,
+      "INT_ZEXT": 8,
+      "LOAD": 44,
+      "POPCOUNT": 36,
+      "RETURN": 3,
+      "STORE": 43,
+      "SUBPIECE": 8
+    },
+    "pcode_op_count": 801
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0049add0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9231
+    },
+    "bw3.exe": {
+      "addr": "00483970",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9231
+    },
+    "nocedit.exe": {
+      "addr": "004a4340",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00475230",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8563
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPickList *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00482779",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 72,
+      "match": "DAT_01c2a384",
+      "severity": "mild",
+      "text": "if ((((DAT_01c2a384 & 1) != 0) && (_DAT_01c26410 == (byte *)0x0)) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 76,
+      "match": "DAT_01c2a384",
+      "severity": "mild",
+      "text": "DAT_01c2a384 = DAT_01c2a384 & 0xfe;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 76,
+      "match": "DAT_01c2a384",
+      "severity": "mild",
+      "text": "DAT_01c2a384 = DAT_01c2a384 & 0xfe;",
+      "type": "undefined_data"
+    }
+  ]
+}

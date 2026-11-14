@@ -30,7 +30,7 @@
 ;
 ; XREF[2]:
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00534890 at 00534f5d
-;   core_set.cpp_FUN_00533e5e at 00534199
+;   core_set.cpp_FUN_00533e60 at 00534199
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b9d7e
@@ -51,10 +51,10 @@
 ;   ... and 7 more
 ;
 ; Called Functions:
+;   core_dcamera.cpp_CDemonCamera_restoreAlphaTransform_FUN_00450820
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_0044f750
+;   core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_00449f80
 ;   core_dcamera.cpp_FUN_00449eb0
-;   core_dcamera.cpp_FUN_00449f80
-;   core_dcamera.cpp_FUN_00450820
 ;
 ; *****************************************************************************
 
@@ -139,8 +139,8 @@ section .text
     PUSH ECX                            ; 0044b156
     LEA ESI,[ESP + 0x3c]                ; 0044b157
     LEA EDI,[ESP + 0x24]                ; 0044b15b
-    CALL core_dcamera.cpp_FUN_00449f80  ; 0044b15f
-        ;   XREF to: 00449f80 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00449f80()
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_00449f80 ; 0044b15f
+        ;   XREF to: 00449f80 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_00449f80(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr)
     LEA ESI,[ESP + 0x3c]                ; 0044b164
     ADD ESP,0x8                         ; 0044b168
     MOVSD ES:EDI,ESI                    ; 0044b16b
@@ -165,8 +165,8 @@ section .text
     PUSH ESI                            ; 0044b195
     LEA ESI,[ESP + 0x1c]                ; 0044b196
     LEA EDI,[ESP + 0x28]                ; 0044b19a
-    CALL core_dcamera.cpp_FUN_00450820  ; 0044b19e
-        ;   XREF to: 00450820 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00450820()
+    CALL core_dcamera.cpp_CDemonCamera_restoreAlphaTransform_FUN_00450820 ; 0044b19e
+        ;   XREF to: 00450820 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_restoreAlphaTransform_FUN_00450820(CDemonCamera * this_ptr, CVector3i * screen_pos, int alpha_index, CVector3i * world_pos)
     LEA ESI,[ESP + 0x1c]                ; 0044b1a3
     ADD ESP,0xc                         ; 0044b1a7
     MOVSD ES:EDI,ESI                    ; 0044b1aa

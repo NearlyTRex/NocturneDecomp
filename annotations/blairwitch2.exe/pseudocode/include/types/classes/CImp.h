@@ -4,13 +4,16 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
 
 // Structure: CImp
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x10b30 (68400 bytes)
 #pragma pack(push, 1)
 typedef struct CImp {
-    char field_0[68400]; // 0x0
+    CEnemy base; // 0x0
+    uint sfx_handles[2]; // 0x10af8
+    float laugh_timer; // 0x10b00
+    int part_indices[11]; // 0x10b04
 } CImp;
 #pragma pack(pop)
 

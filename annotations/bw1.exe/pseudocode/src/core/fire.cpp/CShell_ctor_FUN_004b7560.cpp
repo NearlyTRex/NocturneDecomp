@@ -11,7 +11,7 @@ CShell * __cdecl core_fire_cpp_CShell_ctor_FUN_004b7560(CShell *this_ptr)
 {
   CShell *pCVar1;
   
-  pCVar1 = (CShell *)core_particle_cpp_FUN_00532130((CParticle *)this_ptr);
-  *(byte ***)&pCVar1->field_0x3c = &g_CShellVTable;
+  pCVar1 = (CShell *)core_particle_cpp_CParticle_ctor_FUN_00532130(&this_ptr->base);
+  (pCVar1->base).vtable = (CParticle_vtable *)&g_CShellVTable;
   return pCVar1;
 }

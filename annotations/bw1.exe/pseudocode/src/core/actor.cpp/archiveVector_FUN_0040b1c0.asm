@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archiveVector_FUN_0040b1c0(float *param_1,char *param_2)
+; void __cdecl core_actor_cpp_archiveVector_FUN_0040b1c0(CVector3f *vector_ptr,char *property_name)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   vector_ptr
+; char *           Stack[0x8]:4   property_name
 ; Local Variables:
 ; undefined8       Stack[-0x20]:8  local_20
 ; undefined8       Stack[-0x18]:8  local_18
@@ -13,12 +16,12 @@
 ;   core_batman.cpp_CBatman_archive_FUN_00413b60 at 00413c10
 ;   core_boneguy.cpp_CBoneGuy_archive_FUN_0041d0d0 at 0041d22b
 ;   core_boxactor.cpp_CBoxActor_archive_FUN_00422760 at 004227c0
-;   core_boxactor.cpp_FUN_004231e0 at 0042321c
-;   core_charactr.cpp_FUN_0042c7f0 at 0042ca62
-;   core_constrct.cpp_FUN_00446e30 at 00446ef4
+;   core_boxactor.cpp_CLightActor_archive_FUN_004231e0 at 0042321c
+;   core_charactr.cpp_CCharacter_archive_FUN_0042c7f0 at 0042ca62
+;   core_construc.cpp_CConstruct_archive_FUN_00446e30 at 00446ef4
 ;   core_conveyor.cpp_CConveyor_archive_FUN_00447a40 at 00447a5a
 ;   core_curtain.cpp_CCurtain_archive_FUN_0044c2e0 at 0044c2fd
-;   core_door.cpp_FUN_00478490 at 00478573
+;   core_door.cpp_CDoor_archive_FUN_00478490 at 00478573
 ;   ... and 16 more
 ;
 ; Referenced Globals:
@@ -55,7 +58,7 @@ section .text
     MOV EBX,dword ptr [0x007c3034]      ; 0040b1dd | DAT_007c3034
     PUSH EBX                            ; 0040b1e3
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0040b1e4
-        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005c04b0()
+        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
     ADD ESP,0x14                        ; 0040b1e9
     CMP EAX,0x3                         ; 0040b1ec
     JNZ 0x0040b206                      ; 0040b1ef

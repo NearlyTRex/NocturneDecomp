@@ -2,11 +2,28 @@
 import json
 
 # Local imports
+from pe_helpers import section_va
 import sibling_match
 
 # Puts synthetic programs where sibling_match.Image looks for them: each one's
 # PE on disk and its exported functions under a temporary annotations tree, so
 # Image(name) loads them as it would a real build.
+
+
+# The address `offset` bytes into the first section of an image at the usual base
+def code_at(offset, image_base = 0x400000):
+    return section_va(image_base, 0) + offset
+
+
+# Writes `doc` as JSON at `path` and returns the path as a string, for an argv
+def write_json(path, doc):
+    path.write_text(json.dumps(doc))
+    return str(path)
+
+
+# A `this_ptr` parameter of type `kind`, as an exported function record lists it
+def this_param(kind):
+    return {"name": "this_ptr", "type": kind}
 
 
 # One exported function record, `size` bytes long

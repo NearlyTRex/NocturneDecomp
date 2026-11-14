@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SVDBox * core_set_cpp_SVDBox_ctor_FUN_00534d10(SVDBox *this_ptr)
+; SVDBox * __cdecl core_set_cpp_SVDBox_ctor_FUN_00534d10(SVDBox *this_ptr)
 ;
 ; Parameters:
 ; SVDBox *         Stack[0x4]:4   this_ptr

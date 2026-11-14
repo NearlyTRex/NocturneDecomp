@@ -10,6 +10,6 @@ void __cdecl engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_00483e40(CDemon
 
 {
   DAT_00713a74 = value;
-  *(int *)(this_ptr + 4) = value;
+  this_ptr->shadow_pass_active = value;
   return;
 }

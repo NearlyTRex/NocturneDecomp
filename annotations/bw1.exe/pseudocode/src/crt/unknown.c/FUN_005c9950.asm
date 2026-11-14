@@ -8,7 +8,7 @@
 ;   crt_unknown.c_FUN_005c97c0 at 005c9878
 ;   crt_unknown.c_FUN_005c9988 at 005c99a9
 ;   crt_unknown.c_FUN_005c9ae4 at 005c9b44
-;   unkafter_zombie.cpp_FUN_005cc6e0 at 005cc74b
+;   crt_unknown.c_FUN_005cc6e0 at 005cc74b
 ;
 ; *****************************************************************************
 

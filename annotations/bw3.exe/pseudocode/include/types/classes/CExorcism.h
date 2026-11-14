@@ -2,15 +2,30 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CCharacter;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "system/winnt.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
+#include "types/classes/CWeapon.h"
 
 // Structure: CExorcism
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 1580; ctor 0048a310, process 0048a420, fire 0048b020, setWeaponState 0048b640
 // Ghidra size: 0x62c (1580 bytes)
 #pragma pack(push, 1)
 typedef struct CExorcism {
-    char field_0[1580]; // 0x0
+    CWeapon base; // 0x0, derived
+    int was_firing_prev_frame; // 0x594, process copies is_firing here each frame; fire returns early when it and target are set; setWeaponState zeroes
+    int is_firing; // 0x598, fire sets 1; process moves it to was_firing_prev_frame and clears; setWeaponState zeroes
+    struct CCharacter* target; // 0x59c, fire stores the hit character (health +0x2538 > 0); process damages it via vtable+0x108 and writes its +0x3254/+0x3258
+    float hero_health; // 0x5a0, fire copies the carrying hero +0x2538; process restores it to the hero when the target dies
+    float zap_timer; // 0x5a4, ctor 0; process subtracts dt, re-arms 0.05; fire zeroes
+    float fire_cooldown; // 0x5a8, ctor 0; fire gates on <= 0 and sets 1.0; process subtracts dt, clamps 0
+    CDemonGlobe globes[2]; // 0x5ac, ctor precomputeAttenuation(+0x5ac) and (+0x5ec) with intensity/corona fields inside each; process setPosition + addCoronaGlobe on both
 } CExorcism;
 #pragma pack(pop)
 

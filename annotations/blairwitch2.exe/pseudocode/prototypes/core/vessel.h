@@ -7,71 +7,71 @@
 
 // Original: core_vessel.cpp_staticInit_FUN_00584e70
 // Address: 00584e70
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_vessel.cpp_factoryFuncCryptVessel_FUN_00584ea0
 // Address: 00584ea0
-void factoryFuncCryptVessel(void);
+CCryptVessel * __cdecl factoryFuncCryptVessel(void);
 
 // Original: core_vessel.cpp_CCryptVessel_getActorType_FUN_00584ec0
 // Address: 00584ec0
-CDemonActorType * CCryptVessel::getActorType(CCryptVessel *this_ptr);
+CDemonActorType * __cdecl CCryptVessel::getActorType(CCryptVessel *this_ptr);
 
 // Original: core_vessel.cpp_CCryptVessel_ctor_FUN_00584ed0
 // Address: 00584ed0
 CCryptVessel * __cdecl CCryptVessel::ctor(CCryptVessel *this_ptr);
 
-// Original: core_vessel.cpp_FUN_00585030
+// Original: core_vessel.cpp_CCryptVessel_setup_FUN_00585030
 // Address: 00585030
-void FUN_00585030(CDemonActor *param_1);
+void __cdecl CCryptVessel::setup(CCryptVessel *this_ptr);
 
-// Original: core_vessel.cpp_FUN_00585190
+// Original: core_vessel.cpp_CCryptVessel_canPickup_FUN_00585190
 // Address: 00585190
-undefined4 FUN_00585190(int param_1,CDemonActor *param_2);
+int __cdecl CCryptVessel::canPickup(CCryptVessel *this_ptr,CDemonActor *picker);
 
-// Original: core_vessel.cpp_FUN_005851d0
+// Original: core_vessel.cpp_CCryptVessel_pickup_FUN_005851d0
 // Address: 005851d0
-void FUN_005851d0(int param_1,undefined4 param_2);
+void __cdecl CCryptVessel::pickup(CCryptVessel *this_ptr,CDemonActor *carrier);
 
-// Original: core_vessel.cpp_FUN_005851e0
+// Original: core_vessel.cpp_CCryptVessel_onDropped_FUN_005851e0
 // Address: 005851e0
-void FUN_005851e0(int param_1);
+void __cdecl CCryptVessel::onDropped(CCryptVessel *this_ptr,CVector3f *drop_position);
 
-// Original: core_vessel.cpp_FUN_00585200
+// Original: core_vessel.cpp_CCryptVessel_getCarrier_FUN_00585200
 // Address: 00585200
-undefined4 FUN_00585200(int param_1);
+CDemonActor * __cdecl CCryptVessel::getCarrier(CCryptVessel *this_ptr);
 
 // Original: core_vessel.cpp_isStartLocTriggered_FUN_00585210
 // Address: 00585210
 int __cdecl isStartLocTriggered(CCryptVessel *actor);
 
-// Original: core_vessel.cpp_FUN_00585230
+// Original: core_vessel.cpp_CCryptVessel_process_FUN_00585230
 // Address: 00585230
-void FUN_00585230(int param_1,float param_2);
+void __cdecl CCryptVessel::process(CCryptVessel *this_ptr,float delta_time);
 
-// Original: core_vessel.cpp_FUN_00585810
+// Original: core_vessel.cpp_CCryptVessel_renderOpaque_FUN_00585810
 // Address: 00585810
-undefined4 FUN_00585810(int param_1);
+int __cdecl CCryptVessel::renderOpaque(CCryptVessel *this_ptr);
 
-// Original: core_vessel.cpp_FUN_00585990
+// Original: core_vessel.cpp_CCryptVessel_renderTransparent_FUN_00585990
 // Address: 00585990
-undefined4 FUN_00585990(int param_1);
+int __cdecl CCryptVessel::renderTransparent(CCryptVessel *this_ptr);
 
-// Original: core_vessel.cpp_FUN_00585ae0
+// Original: core_vessel.cpp_CCryptVessel_renderBackground_FUN_00585ae0
 // Address: 00585ae0
-void FUN_00585ae0(void);
+void __cdecl CCryptVessel::renderBackground(CCryptVessel *this_ptr,int layer_flag);
 
-// Original: core_vessel.cpp_FUN_00585b60
+// Original: core_vessel.cpp_CCryptVessel_archive_FUN_00585b60
 // Address: 00585b60
-void FUN_00585b60(CDemonActor *param_1);
+void __cdecl CCryptVessel::archive(CCryptVessel *this_ptr);
 
-// Original: core_vessel.cpp_FUN_00585c70
+// Original: core_vessel.cpp_CCryptVessel_getCollisionType_FUN_00585c70
 // Address: 00585c70
-undefined4 FUN_00585c70(int param_1);
+ECollisionType __cdecl CCryptVessel::getCollisionType(CCryptVessel *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_vessel.cpp_FUN_00585c90
+// Original: core_vessel.cpp_CCryptVessel_getBoundingBox_FUN_00585c90
 // Address: 00585c90
-void FUN_00585c90(int param_1);
+CBoundingBox3D * __cdecl CCryptVessel::getBoundingBox(CCryptVessel *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_vessel.cpp_CCryptVessel_dtor_FUN_00585cd0
 // Address: 00585cd0

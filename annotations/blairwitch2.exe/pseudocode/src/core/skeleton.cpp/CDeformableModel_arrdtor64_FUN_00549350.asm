@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDeformableModel * core_skeleton_cpp_CDeformableModel_arrdtor64_FUN_00549350(CDeformableModel *this_ptr,uint flags)
+; CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModel_arrdtor64_FUN_00549350(CDeformableModel *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr
@@ -20,7 +20,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 00549357
     PUSH EDX                            ; 0054935b
     CALL crt_memory.c___arrfini_FUN_005b854f ; 0054935c
-        ;   XREF to: 005b854f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrfini_FUN_005b854f()
+        ;   XREF to: 005b854f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005b854f(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00549361
     RET                                 ; 00549364
 

@@ -16,7 +16,7 @@
 ;   core_charactr.cpp_CCharacter_renderEthereal_FUN_004270e0 at 00427193
 ;   core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_00499b00 at 00499b1e
 ;   core_moloch.cpp_CMoloch_process_FUN_004ddb20 at 004de0b9
-;   core_stranger.cpp_CStranger_FUN_005396d0 at 005396ea
+;   core_stranger.cpp_CStranger_extractTurnPose_FUN_005396d0 at 005396ea
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0

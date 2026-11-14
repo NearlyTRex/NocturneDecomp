@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 210,
+    "complexity_score": 77,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 35,
-    "suspect_count": 16,
+    "pseudocode_lines": 37,
+    "suspect_count": 3,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 114
+    "total_lines": 116
   },
   "cross_references": [
     {
@@ -36,21 +35,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00527ab0",
-      "from_addr": "00527b8c",
-      "name": "sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00527ab0",
+      "addr": "005260e0",
+      "from_addr": "005262db",
+      "name": "sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_005260e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00525fe0",
       "from_addr": "00525fe7",
-      "name": "sound_mp3.cpp_FUN_00525fe0",
+      "name": "sound_mp3.cpp_CMP3Decoder_readBit_FUN_00525fe0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005260e0",
-      "from_addr": "005262db",
-      "name": "sound_mp3.cpp_FUN_005260e0",
+      "addr": "00527ab0",
+      "from_addr": "00527b8c",
+      "name": "sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00527ab0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -216,7 +215,7 @@
       {
         "call_addr": "005262db",
         "call_type": "direct",
-        "caller": "sound_mp3.cpp_FUN_005260e0",
+        "caller": "sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_005260e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -264,6 +263,32 @@
     },
     "pcode_op_count": 337
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00504d30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004fd810",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0052f170",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004e2cf0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 32,
     "local_size": 24,
@@ -304,124 +329,20 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x1314",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1314 = *(int *)&this_ptr->field_0x1314 + num_bits;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x1314",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1314 = *(int *)&this_ptr->field_0x1314 + num_bits;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x531c",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x531c == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x531c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x531c = 8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x1318",
-      "severity": "mild",
-      "text": "uVar2 = *(int *)&this_ptr->field_0x1318 + 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x1318",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1318 = uVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x1310",
-      "severity": "mild",
-      "text": "if (*(uint *)&this_ptr->field_0x1310 < uVar2) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 23,
       "match": "DAT_01d404c8",
       "severity": "mild",
       "text": "core_main_c_FUN_005030e0(\"Buffer overflow!!  File: %s\",&DAT_01d404c8);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x531c",
-      "severity": "mild",
-      "text": "uVar2 = *(uint *)&this_ptr->field_0x531c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x531c",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)&this_ptr->field_0x531c - uVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x131c",
-      "severity": "mild",
-      "text": "uVar3 = uVar3 | ((*(uint *)(&this_ptr->field_0x131c +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x1318",
-      "severity": "mild",
-      "text": "(*(uint *)&this_ptr->field_0x1318 & 0xfff) * 4) &",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 34,
+      "line": 36,
       "match": "DAT_006206b0",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_006206b0 + *(int *)&this_ptr->field_0x531c * 4)) >>",
+      "text": "*(uint *)(&DAT_006206b0 + uVar1 * 4)) >> (local_14 & 0x1f)) <<",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x531c",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_006206b0 + *(int *)&this_ptr->field_0x531c * 4)) >>",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x531c",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x531c = iVar1;",
-      "type": "unnamed_field"
     }
   ]
 }

@@ -16,13 +16,13 @@
     {
       "addr": "005968a0",
       "from_addr": "00596cd2",
-      "name": "core_baal.cpp_FUN_005968a0",
+      "name": "core_baal.cpp_CBaal_process_FUN_005968a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0046ecf0",
       "from_addr": "0046ee9e",
-      "name": "core_drip.cpp_FUN_0046ecf0",
+      "name": "core_drip.cpp_CDrip_process_FUN_0046ecf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -32,33 +32,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00499eb0",
-      "from_addr": "00499f22",
-      "name": "core_fire.cpp_FUN_00499eb0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0049c730",
       "from_addr": "0049c77c",
-      "name": "core_fire.cpp_FUN_0049c730",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004a3bd0",
-      "from_addr": "004a3c41",
-      "name": "core_fire.cpp_FUN_004a3bd0",
+      "name": "core_fire.cpp_CExplosion_activate_FUN_0049c730",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004a3c50",
       "from_addr": "004a3cd7",
-      "name": "core_fire.cpp_FUN_004a3c50",
+      "name": "core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a3bd0",
+      "from_addr": "004a3c41",
+      "name": "core_fire.cpp_CFireEffect_createLightningBolt_FUN_004a3bd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00499eb0",
+      "from_addr": "00499f22",
+      "name": "core_fire.cpp_CFireball_onCollision_FUN_00499eb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0059b960",
       "from_addr": "0059c0cc",
-      "name": "core_hino.cpp_FUN_0059b960",
+      "name": "core_hino.cpp_CHino_process_FUN_0059b960",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -99,7 +99,7 @@
       {
         "call_addr": "0049c77c",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049c730",
+        "caller": "core_fire.cpp_CExplosion_activate_FUN_0049c730",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -110,7 +110,7 @@
       {
         "call_addr": "004a3cd7",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004a3c50",
+        "caller": "core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_004a3c50",
         "estimated_params": 5,
         "instructions_analyzed": 7,
         "method": "push_count",
@@ -121,7 +121,7 @@
       {
         "call_addr": "004a3c41",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004a3bd0",
+        "caller": "core_fire.cpp_CFireEffect_createLightningBolt_FUN_004a3bd0",
         "estimated_params": 5,
         "instructions_analyzed": 7,
         "method": "push_count",
@@ -132,7 +132,7 @@
       {
         "call_addr": "00596cd2",
         "call_type": "direct",
-        "caller": "core_baal.cpp_FUN_005968a0",
+        "caller": "core_baal.cpp_CBaal_process_FUN_005968a0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -143,7 +143,7 @@
       {
         "call_addr": "0059c0cc",
         "call_type": "direct",
-        "caller": "core_hino.cpp_FUN_0059b960",
+        "caller": "core_hino.cpp_CHino_process_FUN_0059b960",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -154,7 +154,7 @@
       {
         "call_addr": "00499f22",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_00499eb0",
+        "caller": "core_fire.cpp_CFireball_onCollision_FUN_00499eb0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -165,7 +165,7 @@
       {
         "call_addr": "0046ee9e",
         "call_type": "direct",
-        "caller": "core_drip.cpp_FUN_0046ecf0",
+        "caller": "core_drip.cpp_CDrip_process_FUN_0046ecf0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -199,6 +199,32 @@
       "STORE": 6
     },
     "pcode_op_count": 38
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00534800",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00555ab0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00570fa0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0050e660",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6154
+    }
   },
   "stack_frame": {
     "frame_size": 24,

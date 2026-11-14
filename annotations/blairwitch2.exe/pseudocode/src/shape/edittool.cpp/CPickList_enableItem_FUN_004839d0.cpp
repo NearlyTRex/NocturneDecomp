@@ -11,30 +11,30 @@
 void __cdecl shape_edittool_cpp_CPickList_enableItem_FUN_004839d0(CPickList *this_ptr,int item_index,int enable_flag)
 
 {
-  void *pvVar1;
+  int *piVar1;
   
-  if ((item_index < 0) || (*(int *)this_ptr <= item_index)) {
+  if ((item_index < 0) || ((this_ptr->base).item_count <= item_index)) {
     _DAT_01d046a0 = "..\\shape\\edittool.cpp";
     _DAT_01d046a4 = 0x10eb;
     core_main_c_FUN_004e4500("CPickList::enableItem - invalid index");
   }
-  if (*(int *)&this_ptr->field_0x1ac <= item_index) {
+  if (this_ptr->enabled_capacity <= item_index) {
     if (enable_flag != 0) {
       return;
     }
-    pvVar1 = realloc
-                       (*(void **)&this_ptr->field_0x1b0,*(int *)this_ptr << 2);
-    *(void **)&this_ptr->field_0x1b0 = pvVar1;
-    if (pvVar1 == (void *)0x0) {
+    piVar1 = (int *)realloc
+                       (this_ptr->enabled_array,(this_ptr->base).item_count << 2);
+    this_ptr->enabled_array = piVar1;
+    if (piVar1 == (int *)0x0) {
       _DAT_01d046a0 = "..\\shape\\edittool.cpp";
       _DAT_01d046a4 = 0x10f3;
       core_main_c_FUN_004e4500("Out of memory");
     }
-    while (*(int *)&this_ptr->field_0x1ac < *(int *)this_ptr) {
-      *(uint *)(*(int *)&this_ptr->field_0x1b0 + *(int *)&this_ptr->field_0x1ac * 4) = 1;
-      *(int *)&this_ptr->field_0x1ac = *(int *)&this_ptr->field_0x1ac + 1;
+    while (this_ptr->enabled_capacity < (this_ptr->base).item_count) {
+      this_ptr->enabled_array[this_ptr->enabled_capacity] = 1;
+      this_ptr->enabled_capacity = this_ptr->enabled_capacity + 1;
     }
   }
-  *(uint *)(*(int *)&this_ptr->field_0x1b0 + item_index * 4) = (uint)(enable_flag != 0);
+  this_ptr->enabled_array[item_index] = (uint)(enable_flag != 0);
   return;
 }

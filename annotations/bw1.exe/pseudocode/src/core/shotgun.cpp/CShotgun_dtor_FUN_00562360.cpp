@@ -13,11 +13,11 @@ CShotgun * __cdecl core_shotgun_cpp_CShotgun_dtor_FUN_00562360(CShotgun *this_pt
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CShotgunTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CShotgunTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  pCVar1 = (CShotgun *)core_weapon_cpp_CWeapon_dtor_FUN_005ad5d0((CWeapon *)this_ptr,1);
+  pCVar1 = (CShotgun *)core_weapon_cpp_CWeapon_dtor_FUN_005ad5d0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

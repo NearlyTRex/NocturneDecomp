@@ -10,10 +10,10 @@ void __cdecl core_dcube_cpp_staticInit_FUN_00443d00(void)
 
 {
   __arrinit(&DAT_01510850,0x10,&g_CVectorTypeInfo);
-  __arrinit(&DAT_01510914,0x10,&g_CVectorTypeInfo);
-  __arrinit(&DAT_015109d8,0x10,&g_CVectorTypeInfo);
-  __arrinit(&DAT_01510a9c,0x10,&g_CVectorTypeInfo);
-  __arrinit(&DAT_01510b60,0x10,&g_CVectorTypeInfo);
+  __arrinit((void *)0x1510914,0x10,&g_CVectorTypeInfo);
+  __arrinit((void *)0x15109d8,0x10,&g_CVectorTypeInfo);
+  __arrinit((void *)0x1510a9c,0x10,&g_CVectorTypeInfo);
+  __arrinit((void *)0x1510b60,0x10,&g_CVectorTypeInfo);
   __arrinit(&DAT_01510c24,0x10,&g_CVectorTypeInfo);
   __arrinit(&DAT_01510ce8,0x10,&g_CVectorTypeInfo);
   return;

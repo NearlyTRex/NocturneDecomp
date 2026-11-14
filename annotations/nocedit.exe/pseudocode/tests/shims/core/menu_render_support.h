@@ -24,15 +24,16 @@ struct Drawn {
     int y;
     int colour;
     int alpha;
+    float scale = 1.0f; // nocturne_ui_draw_text_f's
 };
 
 struct Stand {
     std::vector<Drawn> drawn;
-    std::set<int> pressed;    // getAndClearKeyState, once each
-    int first_half = 0;       // CMoon::isAnimationFirstHalf
-    std::deque<unsigned> rng; // nocturne_rng_fx, front first; 0 after
-    int alpha = 0;            // the last setRenderAlpha
-    int menu_left = 0;        // nocturne_menu_left
+    std::set<int> pressed;                // getAndClearKeyState, once each
+    int first_half = 0;                   // CMoon::isAnimationFirstHalf
+    std::deque<unsigned> rng;             // nocturne_rng_fx, front first; 0 after
+    int alpha = 0;                        // the last setRenderAlpha
+    NocturneLayout layout = {1.0f, 0, 0}; // nocturne_layout
 
     void reset();
 

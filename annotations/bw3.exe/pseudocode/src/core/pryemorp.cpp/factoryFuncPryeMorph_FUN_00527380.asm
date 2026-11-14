@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_pryemorp_cpp_factoryFuncPryeMorph_FUN_00527380(void)
+; CPryeMorph * __cdecl core_pryemorp_cpp_factoryFuncPryeMorph_FUN_00527380(void)
 ;
 ;
 ; Called Functions:
 ;   core_pryemorp.cpp_CPryeMorph_ctor_FUN_005273b0
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_memory.c_operator_new_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x21448                        ; 00527380
         ;   Label: core_pryemorp.cpp_factoryFuncPryeMorph_FUN_00527380
-    CALL crt_unknown.c_FUN_005a3cb2     ; 00527385
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 00527385
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
     ADD ESP,0x4                         ; 0052738a
     TEST EAX,EAX                        ; 0052738d
     JNZ 0x00527392                      ; 0052738f

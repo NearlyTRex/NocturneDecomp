@@ -104,7 +104,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_0049cc10(CGame *this_ptr)
     engine_force_cpp_CForceFeedback_processEvent_FUN_004940d0(g_CForceFeedback_PTR_005b9284);
   }
   else {
-    core_slew_cpp_CSlew_FUN_0051f930(&local_b0);
+    core_slew_cpp_CSlew_init_FUN_0051f930(&local_b0);
     pCVar4 = g_HeroActors[g_LocalHeroIndex];
     pCVar15 = &(pCVar4->base).base.location;
     if (&local_b0 != (CSlew *)pCVar15) {
@@ -185,7 +185,7 @@ LAB_0049cf70:
   }
   core_inv_cpp_CInventory_renderAllItems_FUN_004c2470(&g_HeroActors[g_LocalHeroIndex]->inventory);
   if (this_ptr->screen_clear_enabled != 0) {
-    core_set_cpp_CDemonSet_FUN_0050aa70(g_CDemonSetPtr);
+    core_set_cpp_CDemonSet_renderLightDebugView_FUN_0050aa70(g_CDemonSetPtr);
   }
   core_game_cpp_CGame_drawScreenBorder_FUN_0049a960(this_ptr);
   if (_DAT_01c78ac8 != 0) {

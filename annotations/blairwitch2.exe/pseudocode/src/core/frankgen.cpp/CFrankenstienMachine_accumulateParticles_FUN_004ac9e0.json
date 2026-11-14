@@ -1,0 +1,158 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 27,
+    "complexity_score": 13,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 40
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004ac9e0",
+    "address_range": [
+      [
+        "004ac9e0",
+        "004aca3b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_frankgen.cpp_CFrankenstienMachine_accumulateParticles_FUN_004ac9e0",
+    "signature": "int __cdecl core_frankgen_cpp_CFrankenstienMachine_accumulateParticles_FUN_004ac9e0(CFrankenstienMachine *this_ptr,float emission_rate,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b84d0",
+      "is_variadic": false,
+      "name": "crt_math.c_floor_FUN_005b84d0"
+    },
+    {
+      "addr": "005b7ff0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005b7ff0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.583333333333333,
+    "instruction_count": 24,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 66,
+      "FLOAT2FLOAT": 8,
+      "FLOAT_ADD": 1,
+      "FLOAT_MULT": 1,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 18,
+      "INT_AND": 8,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 8,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 4,
+      "INT_SUB": 5,
+      "LOAD": 10,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "ROUND": 1,
+      "STORE": 10,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 158
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004c5990",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004d1ec0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00494dd0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFrankenstienMachine *"
+      },
+      {
+        "is_param": true,
+        "name": "emission_rate",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": []
+}

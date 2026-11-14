@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 g_CDemonSetInstance.field1364324_0x14d164
+;   undefined4 g_CDemonSetInstance.actor_count
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_findActorVariable_FUN_004918d0
@@ -48,7 +48,7 @@ section .text
     XOR EBX,EBX                         ; 0049188d
     MOV EAX,[0x0061b5a8]                ; 0049188f | g_CDemonSetPtr
         ;   Label: LAB_0049188f
-    CMP ESI,dword ptr [EAX + 0x14d164]  ; 00491894 | g_CDemonSetInstance.field1364324_0x14d164
+    CMP ESI,dword ptr [EAX + 0x14d164]  ; 00491894 | g_CDemonSetInstance.actor_count
     JL 0x004918a9                       ; 0049189a
         ;   XREF to: 004918a9 (CONDITIONAL_JUMP)  ; LAB_004918a9
     XOR EAX,EAX                         ; 0049189c

@@ -12,7 +12,7 @@
 ; undefined        Stack[-0x8]:1  local_8
 ;
 ; XREF[1]:
-;   core_main.c_FUN_005032a0 at 005039a2
+;   core_main.c_initializeGameSystems_FUN_005032a0 at 005039a2
 ;
 ; Referenced Globals:
 ;   void* PTR_RegCloseKey_005d03e8 = 001d077e

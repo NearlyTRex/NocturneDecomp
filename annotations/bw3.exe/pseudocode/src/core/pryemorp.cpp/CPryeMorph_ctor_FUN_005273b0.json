@@ -2,17 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 89,
+    "complexity_score": 272,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 74,
-    "suspect_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 77,
+    "suspect_count": 17,
     "suspect_types": [
-      "unnamed_field"
+      "derived_field_index_pun",
+      "negative_offset",
+      "pointer_cast",
+      "pointer_truncation",
+      "unrolled_strcpy"
     ],
-    "total_lines": 200
+    "total_lines": 203
   },
   "cross_references": [
     {
@@ -30,15 +34,15 @@
         "005274df"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_pryemorp.cpp_CPryeMorph_ctor_FUN_005273b0",
-    "signature": "CPryeMorph * core_pryemorp_cpp_CPryeMorph_ctor_FUN_005273b0(CPryeMorph *this_ptr)"
+    "signature": "CPryeMorph * __cdecl core_pryemorp_cpp_CPryeMorph_ctor_FUN_005273b0(CPryeMorph *this_ptr)"
   },
   "function_calls": [
     {
       "addr": "0043fa40",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_0043fa40"
+      "name": "core_cloth.cpp_CClothList_add_FUN_0043fa40"
     },
     {
       "addr": "004fa8a0",
@@ -53,7 +57,7 @@
     {
       "addr": "0054eae0",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_0054eae0"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0"
     }
   ],
   "globals": [],
@@ -120,12 +124,139 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x14c",
+      "description": "Negative struct offset (wrong base type)",
+      "line": 15,
+      "match": "pCVar3[-1].",
       "severity": "mild",
-      "text": "pCVar3 = core_morph_cpp_CMorph_ctor_FUN_004fa8a0((CMorph *)&pCVar2[1].field_0x14c);",
-      "type": "unnamed_field"
+      "text": "pcVar5 = pCVar3[-1].models[1].textures[0x11].texture_name + 4;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 27,
+      "match": "pCVar3[-1].",
+      "severity": "mild",
+      "text": "piVar6 = &pCVar3[-1].models[1].textures[0x12].base.count;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(char *)((int)piVar6",
+      "severity": "moderate",
+      "text": "*(char *)((int)piVar6 + 1) = cVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(int *)((int)piVar6",
+      "severity": "moderate",
+      "text": "piVar6 = (int *)((int)piVar6 + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 38,
+      "match": "pCVar3[-1].",
+      "severity": "mild",
+      "text": "pcVar5 = pCVar3[-1].models[1].textures[0x12].texture_name + 0x1c;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 49,
+      "match": "pCVar3[-1].",
+      "severity": "mild",
+      "text": "pcVar5 = pCVar3[-1].models[1].textures[0xf].texture_name + 0x30;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 60,
+      "match": "pCVar3[-1].",
+      "severity": "mild",
+      "text": "pCVar3[-1].rescale_enabled = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 64,
+      "match": "pCVar3[-1].",
+      "severity": "mild",
+      "text": "pcVar5 = pCVar3[-1].models[1].textures[0x11].texture_name + 0x24;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 75,
+      "match": "pCVar3[-1].",
+      "severity": "mild",
+      "text": "pCVar3[-1].models[1].textures[0x12].texture_name[0x3c] = '\\0';",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Pointer value `&g_CPryeMorphVTable` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 16,
+      "match": "(int)&g_CPryeMorphVTable",
+      "severity": "moderate",
+      "text": "pCVar3[-0x2b].models[0].textures[0xf].base.count = (int)&g_CPryeMorphVTable;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 34,
+      "match": "(int)piVar6",
+      "severity": "moderate",
+      "text": "*(char *)((int)piVar6 + 1) = cVar1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 35,
+      "match": "(int)piVar6",
+      "severity": "moderate",
+      "text": "piVar6 = (int *)((int)piVar6 + 2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 17,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 39,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 50,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 66,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "'(CMorph *)&pCVar2[1].base.base.next_actor' walks 1 x sizeof(CNPC) (0x206c8) + offsetof(base.base.next_actor) (0x14c) + 0x0 = 0x20814, which is exactly offsetof(CPryeMorph, morph). Ghidra had no CPryeMorph type here and reached the field by index arithmetic; write it as ((CPryeMorph *)pCVar2)->morph (\u00a7de-pun/\u00a712).",
+      "line": 14,
+      "severity": "moderate",
+      "text": "pCVar3 = core_morph_cpp_CMorph_ctor_FUN_004fa8a0((CMorph *)&pCVar2[1].base.base.next_actor);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

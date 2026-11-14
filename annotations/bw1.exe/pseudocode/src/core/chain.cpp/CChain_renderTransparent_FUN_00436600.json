@@ -1,0 +1,381 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 441,
+    "complexity_score": 406,
+    "cross_reference_count": 0,
+    "function_call_count": 11,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 171,
+    "suspect_count": 22,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 612
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00436600",
+    "address_range": [
+      [
+        "00436600",
+        "00436bd5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_chain.cpp_CChain_renderTransparent_FUN_00436600",
+    "signature": "int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_00436600(CChain *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004087f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0"
+    },
+    {
+      "addr": "004087b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_004087b0"
+    },
+    {
+      "addr": "004207b0",
+      "is_variadic": false,
+      "name": "core_box.cpp_FUN_004207b0"
+    },
+    {
+      "addr": "00552a70",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_computeLighting_FUN_00552a70"
+    },
+    {
+      "addr": "00484f00",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00"
+    },
+    {
+      "addr": "00483e60",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60"
+    },
+    {
+      "addr": "00483050",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_00483050"
+    },
+    {
+      "addr": "00483dd0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00483dd0"
+    },
+    {
+      "addr": "00483de0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0"
+    },
+    {
+      "addr": "00483d80",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00483d80"
+    },
+    {
+      "addr": "0058043c",
+      "is_variadic": false,
+      "name": "engine_special.cpp_FUN_0058043c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fd790",
+      "name": "DAT_005fd790",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00612560",
+      "name": "DAT_00612560",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00622c18",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e82168"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.14390243902439,
+    "instruction_count": 410,
+    "opcode_distribution": {
+      "BRANCH": 2,
+      "CALL": 22,
+      "CALLIND": 1,
+      "CBRANCH": 4,
+      "COPY": 932,
+      "FLOAT2FLOAT": 72,
+      "FLOAT_MULT": 36,
+      "INT_ADD": 180,
+      "INT_AND": 100,
+      "INT_CARRY": 35,
+      "INT_EQUAL": 100,
+      "INT_LESS": 6,
+      "INT_MULT": 2,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 36,
+      "INT_SLESS": 49,
+      "INT_SUB": 91,
+      "INT_XOR": 4,
+      "INT_ZEXT": 2,
+      "LOAD": 145,
+      "POPCOUNT": 49,
+      "RETURN": 2,
+      "ROUND": 36,
+      "STORE": 160,
+      "TRUNC": 36
+    },
+    "pcode_op_count": 2109
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b56c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0042a280",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004308f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9607
+    },
+    "nocturne.exe": {
+      "addr": "0042c4c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.962
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CChain *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 49,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "(DAT_00612560,(SMRGLTextureBasic *)&this_ptr->texture_size);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 60,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,0xffff);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 61,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 69,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "(&DAT_00612560->vertex_buffer_ptr->projected_vertex,&CStack_4c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 74,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "(&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&CStack_7c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 79,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "(&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&CStack_58);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 84,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "(&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&CStack_28);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 85,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "pCVar2 = DAT_00612560;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 86,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "piVar1 = &(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_y;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 116,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_00483050(DAT_00612560,&SStack_d4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 121,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "(&DAT_00612560->vertex_buffer_ptr->projected_vertex,&CStack_64);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 126,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "(&DAT_00612560->vertex_buffer_ptr[1].projected_vertex,&CStack_34);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 131,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "(&DAT_00612560->vertex_buffer_ptr[2].projected_vertex,&CStack_1c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 136,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "(&DAT_00612560->vertex_buffer_ptr[3].projected_vertex,&CStack_40);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 137,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "pCVar2 = DAT_00612560;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 138,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_x =",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 139,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_x + -0x40;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 169,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_00483050(DAT_00612560,&SStack_d4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 39,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CChain",
+        "offset": 20,
+        "vtable_addr": "005fd7b4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

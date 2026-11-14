@@ -12,10 +12,10 @@
 ;
 ; XREF[2]:
 ;   core_dfont.cpp_FUN_00447ea0 at 00447ede
-;   engine_font.cpp_FUN_004a859e at 004a8842
+;   engine_font.cpp_FUN_004a85a0 at 004a8842
 ;
 ; Called Functions:
-;   engine_font.cpp_FUN_004a8560
+;   engine_font.cpp_CBitFont_loadNewBitmap_FUN_004a8560
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     PUSH ESI                            ; 004a7ced
     MOV EDI,dword ptr [ESP + 0x28]      ; 004a7cee
     PUSH EDI                            ; 004a7cf2
-    CALL engine_font.cpp_FUN_004a8560   ; 004a7cf3
-        ;   XREF to: 004a8560 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_FUN_004a8560(CBitFont * this_ptr, char * filename, int width, int height, ...)
+    CALL engine_font.cpp_CBitFont_loadNewBitmap_FUN_004a8560 ; 004a7cf3
+        ;   XREF to: 004a8560 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_loadNewBitmap_FUN_004a8560(CBitFont * this_ptr, char * filename, int width, int height, ...)
     ADD ESP,0x1c                        ; 004a7cf8
     POP EDI                             ; 004a7cfb
     POP ESI                             ; 004a7cfc

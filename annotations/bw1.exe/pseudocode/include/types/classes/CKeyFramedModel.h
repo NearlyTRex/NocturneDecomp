@@ -2,15 +2,46 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonTriangle;
+struct CVector3i;
+struct SMRGLPrimitiveQuad;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CKeyFramedModelPart.h"
+#include "types/classes/CMatrix3x3f.h"
+#include "types/classes/CVector3f.h"
+#include "types/structs/SMRGLHeaderBasic.h"
+#include "types/structs/SMRGLTextureModel.h"
 
 // Structure: CKeyFramedModel
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x398 (920 bytes)
 #pragma pack(push, 1)
 typedef struct CKeyFramedModel {
-    char field_0[920]; // 0x0
+    char model_filename[256]; // 0x0
+    int frame_count; // 0x100
+    int vertex_count; // 0x104, max=2000
+    struct CVector3i* vertex_normal_list; // 0x108
+    struct CVector3i* vertex_list; // 0x10c
+    int poly_count; // 0x110, max=2000
+    struct SMRGLPrimitiveQuad* poly_vert_list; // 0x114
+    int* poly_texture_index_list; // 0x118
+    uchar* env_map_opac_list; // 0x11c
+    int texture_count; // 0x120, max=300
+    SMRGLTextureModel texture_list[4]; // 0x124, Added in this build
+    int part_count; // 0x244, max=30
+    CKeyFramedModelPart part_list[30]; // 0x248
+    CBoundingBox3D bounds; // 0x338
+    struct CBoundingBox3D* frame_bounds; // 0x350
+    int collision_triangle_count; // 0x354
+    struct CDemonTriangle* collision_triangle_list; // 0x358
+    int transparent_pixel_flag; // 0x35c
+    int disable_backface_culling; // 0x360
+    CVector3f transform_vector; // 0x364
+    CMatrix3x3f rotation_matrix_workspace; // 0x370
+    int dead; // 0x394
 } CKeyFramedModel;
 #pragma pack(pop)
 

@@ -2,14 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 9,
+    "complexity_score": 59,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 9,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 4,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation"
+    ],
     "total_lines": 25
   },
   "cross_references": [],
@@ -29,7 +32,7 @@
     {
       "addr": "00510dd0",
       "is_variadic": false,
-      "name": "core_particle.cpp_FUN_00510dd0"
+      "name": "core_particle.cpp_CParticle_ctor_FUN_00510dd0"
     },
     {
       "addr": "005b7f5f",
@@ -69,6 +72,32 @@
     },
     "pcode_op_count": 63
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004b7690",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a4730",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004c9630",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0048cb00",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -85,7 +114,40 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 10,
+      "match": "(byte ***)((int)pvVar2",
+      "severity": "moderate",
+      "text": "*(byte ***)((int)pvVar2 + -0x44) = &g_CGlassParticleVTable;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 11,
+      "match": "(CGlassParticle *)((int)pvVar2",
+      "severity": "moderate",
+      "text": "return (CGlassParticle *)((int)pvVar2 + -0x80);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pvVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 10,
+      "match": "(int)pvVar2",
+      "severity": "moderate",
+      "text": "*(byte ***)((int)pvVar2 + -0x44) = &g_CGlassParticleVTable;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pvVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 11,
+      "match": "(int)pvVar2",
+      "severity": "moderate",
+      "text": "return (CGlassParticle *)((int)pvVar2 + -0x80);",
+      "type": "pointer_truncation"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

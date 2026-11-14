@@ -23,9 +23,9 @@
         "004933b5"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_fire.cpp_staticInit_FUN_004930e0",
-    "signature": "void core_fire_cpp_staticInit_FUN_004930e0(void)"
+    "signature": "void __cdecl core_fire_cpp_staticInit_FUN_004930e0(void)"
   },
   "function_calls": [
     {
@@ -36,7 +36,7 @@
     {
       "addr": "0049c170",
       "is_variadic": false,
-      "name": "core_fire.cpp_FUN_0049c170"
+      "name": "core_fire.cpp_CFireEffect_ctor_FUN_0049c170"
     },
     {
       "addr": "005b7f5f",
@@ -79,6 +79,32 @@
     },
     "pcode_op_count": 762
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004aba90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9853
+    },
+    "bw3.exe": {
+      "addr": "00496930",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9709
+    },
+    "nocedit.exe": {
+      "addr": "004bef20",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3925
+    },
+    "nocturne.exe": {
+      "addr": "004823b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3925
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -93,7 +119,7 @@
       "line": 13,
       "match": "DAT_01c3f8e0",
       "severity": "mild",
-      "text": "__arrinit(&DAT_01c3f8e0,0x800);",
+      "text": "__arrinit(&DAT_01c3f8e0,0x800,&g_CSmokeParticleTypeInfo);",
       "type": "undefined_data"
     },
     {
@@ -101,7 +127,7 @@
       "line": 14,
       "match": "DAT_01c558e8",
       "severity": "mild",
-      "text": "__arrinit(&DAT_01c558e8,0x100);",
+      "text": "__arrinit(&DAT_01c558e8,0x100,&g_CBulletHoleTypeInfo);",
       "type": "undefined_data"
     },
     {
@@ -109,7 +135,7 @@
       "line": 21,
       "match": "DAT_01c85ffc",
       "severity": "mild",
-      "text": "__arrinit(&DAT_01c85ffc,0x14);",
+      "text": "__arrinit(&DAT_01c85ffc,0x14,&g_CMuzzleFlashTypeInfo);",
       "type": "undefined_data"
     },
     {
@@ -117,7 +143,7 @@
       "line": 22,
       "match": "DAT_01c86730",
       "severity": "mild",
-      "text": "__arrinit(&DAT_01c86730,0x14);",
+      "text": "__arrinit(&DAT_01c86730,0x14,&g_CMuzzleEffectTypeInfo);",
       "type": "undefined_data"
     },
     {
@@ -125,7 +151,7 @@
       "line": 37,
       "match": "DAT_01c9cd98",
       "severity": "mild",
-      "text": "__arrinit(&DAT_01c9cd98,500);",
+      "text": "__arrinit(&DAT_01c9cd98,500,&g_CGunFlameTypeInfo);",
       "type": "undefined_data"
     }
   ]

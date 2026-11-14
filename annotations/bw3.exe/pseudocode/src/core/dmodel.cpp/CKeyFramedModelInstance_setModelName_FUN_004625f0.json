@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 58,
+    "complexity_score": 33,
     "cross_reference_count": 71,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 18,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "unrolled_strcpy"
     ],
     "total_lines": 48
@@ -77,6 +76,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00411c30",
+      "from_addr": "00411cf0",
+      "name": "core_bmppuzzl.cpp_CAudioRecPuzzle_reset_FUN_00411c30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004166d0",
       "from_addr": "00416725",
       "name": "core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_004166d0",
@@ -95,6 +100,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00421960",
+      "from_addr": "00421a5f",
+      "name": "core_bugs.cpp_CBugs_archive_FUN_00421960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00420ea0",
       "from_addr": "00420f35",
       "name": "core_bugs.cpp_CBugs_ctor_FUN_00420ea0",
@@ -103,13 +114,7 @@
     {
       "addr": "00421060",
       "from_addr": "00421102",
-      "name": "core_bugs.cpp_FUN_00421060",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00421960",
-      "from_addr": "00421a5f",
-      "name": "core_bugs.cpp_FUN_00421960",
+      "name": "core_bugs.cpp_CBugs_setup_FUN_00421060",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -121,7 +126,7 @@
     {
       "addr": "0042b0e0",
       "from_addr": "0042b118",
-      "name": "core_charactr.cpp_FUN_0042b0e0",
+      "name": "core_charactr.cpp_CCharacter_setup_FUN_0042b0e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -197,45 +202,45 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00497a30",
-      "from_addr": "00497a3a",
-      "name": "core_fire.cpp_FUN_00497a30",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0049a170",
-      "from_addr": "0049a194",
-      "name": "core_fire.cpp_FUN_0049a170",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0049a630",
-      "from_addr": "0049a63a",
-      "name": "core_fire.cpp_FUN_0049a630",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0049c680",
-      "from_addr": "0049c68a",
-      "name": "core_fire.cpp_FUN_0049c680",
+      "addr": "004a4340",
+      "from_addr": "004a43be",
+      "name": "core_fire.cpp_CFireEffect_preloadTossAssets_FUN_004a4340",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0049cee0",
       "from_addr": "0049cf20",
-      "name": "core_fire.cpp_FUN_0049cee0",
+      "name": "core_fire.cpp_CToss_create_FUN_0049cee0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004a4340",
-      "from_addr": "004a43be",
-      "name": "core_fire.cpp_FUN_004a4340",
+      "addr": "0049c680",
+      "from_addr": "0049c68a",
+      "name": "core_fire.cpp_loadDebrisAssets_FUN_0049c680",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004992f0",
       "from_addr": "004992fa",
       "name": "core_fire.cpp_loadFireBallAssets_FUN_004992f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049a630",
+      "from_addr": "0049a63a",
+      "name": "core_fire.cpp_loadGunFlashAssets_FUN_0049a630",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049a170",
+      "from_addr": "0049a194",
+      "name": "core_fire.cpp_loadLeafAssets_FUN_0049a170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00497a30",
+      "from_addr": "00497a3a",
+      "name": "core_fire.cpp_loadStakeAssets_FUN_00497a30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -361,7 +366,7 @@
     {
       "addr": "00518430",
       "from_addr": "005185e6",
-      "name": "core_prye.cpp_FUN_00518430",
+      "name": "core_prye.cpp_CPrye_createDefaultWeapon_FUN_00518430",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -435,12 +440,6 @@
       "from_addr": "0057ae60",
       "name": "core_weapon.cpp_CWeapon_ctor_FUN_0057ad70",
       "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00411c30",
-      "from_addr": "00411cf0",
-      "name": "unkafter_alphabit.cpp_FUN_00411c30",
-      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -469,7 +468,7 @@
       {
         "call_addr": "00497a3a",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_00497a30",
+        "caller": "core_fire.cpp_loadStakeAssets_FUN_00497a30",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -513,7 +512,7 @@
       {
         "call_addr": "0049a194",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049a170",
+        "caller": "core_fire.cpp_loadLeafAssets_FUN_0049a170",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -524,7 +523,7 @@
       {
         "call_addr": "0049a63a",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049a630",
+        "caller": "core_fire.cpp_loadGunFlashAssets_FUN_0049a630",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -535,7 +534,7 @@
       {
         "call_addr": "0049c68a",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049c680",
+        "caller": "core_fire.cpp_loadDebrisAssets_FUN_0049c680",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -546,7 +545,7 @@
       {
         "call_addr": "0049c69c",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049c680",
+        "caller": "core_fire.cpp_loadDebrisAssets_FUN_0049c680",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -557,7 +556,7 @@
       {
         "call_addr": "0049c6ae",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049c680",
+        "caller": "core_fire.cpp_loadDebrisAssets_FUN_0049c680",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -568,7 +567,7 @@
       {
         "call_addr": "0049c6c0",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049c680",
+        "caller": "core_fire.cpp_loadDebrisAssets_FUN_0049c680",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -607,6 +606,32 @@
     },
     "pcode_op_count": 99
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0044fd70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00468950",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00478dd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00454580",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -631,22 +656,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x78",
-      "severity": "mild",
-      "text": "pcVar2 = &this_ptr->field_0x78;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x178 = 0;",
-      "type": "unnamed_field"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 9,

@@ -5,26 +5,26 @@
 ;
 ;
 ; XREF[4]:
+;   core_mission.cpp_CDemonMission_process_FUN_004f70a0 at 004f71e0
 ;   core_mission.cpp_CDemonMission_run_FUN_004f72a0 at 004f72f7
-;   core_mission.cpp_FUN_004f70a0 at 004f71e0
-;   core_mission.cpp_FUN_004f722c at 004f728f
+;   core_mission.cpp_FUN_004f7230 at 004f728f
 ;   core_mission.cpp_FUN_004f7590 at 004f763c
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 g_CGameInstance.field656_0x290
+;   undefined4 g_CGameInstance.new_set_event_pending
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.field1364324_0x14d164
-;   undefined4 g_CDemonSetInstance.field1364328_0x14d168
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
 ;   core_game.cpp_FUN_004c4870
 ;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_004f6bf0
-;   core_mission.cpp_FUN_004f6a80
+;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_004f6a80
 ;   core_mission.cpp_FUN_004f6f80
 ;   core_set.cpp_FUN_00532b80
-;   sound_sndmain.cpp_FUN_00556c60
+;   sound_sndmain.cpp_killAllSfx_FUN_00556c60
 ;
 ; *****************************************************************************
 
@@ -71,10 +71,10 @@ section .text
     POP EDI                             ; 004f6e2c
     MOV EAX,[0x00603b28]                ; 004f6e2d | g_CDemonSetPtr
         ;   Label: LAB_004f6e2d
-    CMP ESI,dword ptr [EAX + 0x14d164]  ; 004f6e32 | g_CDemonSetInstance.field1364324_0x14d164
+    CMP ESI,dword ptr [EAX + 0x14d164]  ; 004f6e32 | g_CDemonSetInstance.actor_count
     JGE 0x004f6e67                      ; 004f6e38
         ;   XREF to: 004f6e67 (CONDITIONAL_JUMP)  ; LAB_004f6e67
-    MOV EAX,dword ptr [EBX + EAX*0x1 + 0x14d168] ; 004f6e3a | g_CDemonSetInstance.field1364328_0x14d168
+    MOV EAX,dword ptr [EBX + EAX*0x1 + 0x14d168] ; 004f6e3a | g_CDemonSetInstance.actors[0]
     PUSH EAX                            ; 004f6e41
     MOV EDX,dword ptr [EAX + 0x154]     ; 004f6e42
     ADD EBX,0x4                         ; 004f6e48
@@ -91,13 +91,13 @@ section .text
         ;   XREF to: 004f6e1a (UNCONDITIONAL_JUMP)  ; LAB_004f6e1a
     PUSH EBX                            ; 004f6e5c
         ;   Label: LAB_004f6e5c
-    CALL core_mission.cpp_FUN_004f6a80  ; 004f6e5d
-        ;   XREF to: 004f6a80 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_FUN_004f6a80(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_prepareAllActors_FUN_004f6a80 ; 004f6e5d
+        ;   XREF to: 004f6a80 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_prepareAllActors_FUN_004f6a80(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004f6e62
     JMP 0x004f6e28                      ; 004f6e65
         ;   XREF to: 004f6e28 (UNCONDITIONAL_JUMP)  ; LAB_004f6e28
-    CALL sound_sndmain.cpp_FUN_00556c60 ; 004f6e67
-        ;   XREF to: 00556c60 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00556c60()
+    CALL sound_sndmain.cpp_killAllSfx_FUN_00556c60 ; 004f6e67
+        ;   XREF to: 00556c60 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_killAllSfx_FUN_00556c60()
         ;   Label: LAB_004f6e67
     MOV EAX,[0x005fe9dc]                ; 004f6e6c | g_CGamePtr
     PUSH EAX                            ; 004f6e71
@@ -105,7 +105,7 @@ section .text
         ;   XREF to: 004c4870 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004c4870()
     MOV EAX,[0x005fe9dc]                ; 004f6e77 | g_CGamePtr
     ADD ESP,0x4                         ; 004f6e7c
-    MOV dword ptr [EAX + 0x290],0x1     ; 004f6e7f | g_CGameInstance.field656_0x290
+    MOV dword ptr [EAX + 0x290],0x1     ; 004f6e7f | g_CGameInstance.new_set_event_pending
     POP ESI                             ; 004f6e89
     POP EBX                             ; 004f6e8a
     RET                                 ; 004f6e8b

@@ -1,14 +1,12 @@
 // Name: core_larva.cpp_CLarva_getActorType_FUN_004fd940
 // Address: 004fd940
 // Address Range: [[004fd940, 004fd945]]
-// Convention: unknown
-// Signature: CDemonActorType * core_larva_cpp_CLarva_getActorType_FUN_004fd940(CLarva *this_ptr)
+// Convention: __cdecl
+// Signature: CDemonActorType * __cdecl core_larva_cpp_CLarva_getActorType_FUN_004fd940(CLarva *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CDemonActorType * core_larva_cpp_CLarva_getActorType_FUN_004fd940(CLarva *this_ptr)
+CDemonActorType * __cdecl core_larva_cpp_CLarva_getActorType_FUN_004fd940(CLarva *this_ptr)
 
 {
   return &g_CLarvaClassInfo;

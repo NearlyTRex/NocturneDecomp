@@ -7,51 +7,51 @@
 
 // Original: core_vehicle.cpp_staticInit_FUN_005a75c0
 // Address: 005a75c0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_vehicle.cpp_factoryFuncVehicle_FUN_005a75f0
 // Address: 005a75f0
-void factoryFuncVehicle(void);
+CVehicle * __cdecl factoryFuncVehicle(void);
 
 // Original: core_vehicle.cpp_CVehicle_getActorType_FUN_005a7610
 // Address: 005a7610
-CDemonActorType * CVehicle::getActorType(CVehicle *this_ptr);
+CDemonActorType * __cdecl CVehicle::getActorType(CVehicle *this_ptr);
 
 // Original: core_vehicle.cpp_CVehicle_ctor_FUN_005a7620
 // Address: 005a7620
 CVehicle * __cdecl CVehicle::ctor(CVehicle *this_ptr);
 
-// Original: core_vehicle.cpp_FUN_005a7870
+// Original: core_vehicle.cpp_CVehicle_setup_FUN_005a7870
 // Address: 005a7870
-void FUN_005a7870(CDemonActor *param_1);
+void __cdecl CVehicle::setup(CVehicle *this_ptr);
 
-// Original: core_vehicle.cpp_FUN_005a7b50
+// Original: core_vehicle.cpp_CVehicle_process_FUN_005a7b50
 // Address: 005a7b50
-uint FUN_005a7b50(CVehicle *param_1,float param_2);
+void __cdecl CVehicle::process(CVehicle *this_ptr,float delta_time);
 
-// Original: core_vehicle.cpp_FUN_005a8490
+// Original: core_vehicle.cpp_CVehicle_getBoundingBox_FUN_005a8490
 // Address: 005a8490
-void FUN_005a8490(int param_1);
+CBoundingBox3D * __cdecl CVehicle::getBoundingBox(CVehicle *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_vehicle.cpp_CVehicle_archive_FUN_005a84d0
 // Address: 005a84d0
 void __cdecl CVehicle::archive(CVehicle *this_ptr);
 
-// Original: core_vehicle.cpp_FUN_005a8660
+// Original: core_vehicle.cpp_CVehicle_getCollisionType_FUN_005a8660
 // Address: 005a8660
-undefined4 FUN_005a8660(void);
+ECollisionType __cdecl CVehicle::getCollisionType(CVehicle *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_vehicle.cpp_FUN_005a8670
+// Original: core_vehicle.cpp_CVehicle_renderOpaque_FUN_005a8670
 // Address: 005a8670
-int FUN_005a8670(CDemonActor *param_1);
+int __cdecl CVehicle::renderOpaque(CVehicle *this_ptr);
 
 // Original: core_vehicle.cpp_CVehicle_renderTransparent_FUN_005a89a0
 // Address: 005a89a0
 int __cdecl CVehicle::renderTransparent(CVehicle *this_ptr);
 
-// Original: core_vehicle.cpp_FUN_005a89b0
+// Original: core_vehicle.cpp_CVehicle_renderBackground_FUN_005a89b0
 // Address: 005a89b0
-void FUN_005a89b0(void);
+void __cdecl CVehicle::renderBackground(CVehicle *this_ptr,int layer_flag);
 
 // Original: core_vehicle.cpp_CVehicle_playTrackedSound_FUN_005a89c0
 // Address: 005a89c0
@@ -59,7 +59,7 @@ uint __cdecl CVehicle::playTrackedSound(CVehicle *this_ptr,char *sound_name);
 
 // Original: core_vehicle.cpp_CVehicle_dtor_FUN_005a8a10
 // Address: 005a8a10
-CVehicle * CVehicle::dtor(CVehicle *this_ptr,uint flags);
+CVehicle * __cdecl CVehicle::dtor(CVehicle *this_ptr,uint flags);
 
 // Original: core_vehicle.cpp_CTire_ctor_FUN_005a8a80
 // Address: 005a8a80

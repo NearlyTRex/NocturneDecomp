@@ -29,8 +29,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   core_water.cpp_FUN_005a9f10 at 005aa22b
-;   core_wateract.cpp_FUN_005ab030 at 005ab181
+;   core_water.cpp_CWater_render_FUN_005a9f10 at 005aa22b
+;   core_wateract.cpp_CWaterActor_renderTransparent_FUN_005ab030 at 005ab181
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f0a06

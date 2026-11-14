@@ -17,19 +17,19 @@ void __cdecl core_dcamera_cpp_CDemonCamera_initCameraFog_FUN_00442bf0(CDemonCame
   float10 fVar4;
   float10 fVar5;
   
-  DAT_00609fa4 = *(uint *)fog_config;
-  DAT_00609fa8 = *(uint *)(fog_config + 4);
-  DAT_00609fac = *(int *)(fog_config + 8);
+  DAT_00609fa4 = (fog_config->color_index).r;
+  DAT_00609fa8 = (fog_config->color_index).g;
+  DAT_00609fac = (fog_config->color_index).b;
   engine_special_cpp_setFogColor_FUN_0055fe90
-            (*(uint *)(&DAT_00b6639c + *(int *)fog_config * 4) & 0xff,
-             *(uint *)(&DAT_00b6639c + *(int *)(fog_config + 4) * 4) & 0xff,
+            (*(uint *)(&DAT_00b6639c + (fog_config->color_index).r * 4) & 0xff,
+             *(uint *)(&DAT_00b6639c + (fog_config->color_index).g * 4) & 0xff,
              *(uint *)(&DAT_00b6639c + DAT_00609fac * 4) & 0xff);
   fVar1 = (float10)_DAT_005ce72e;
-  fVar2 = (float10)*(float *)(fog_config + 0xc) * fVar1;
-  fVar3 = (float10)*(float *)(fog_config + 0x10) * fVar1;
-  fVar4 = (float10)*(float *)(fog_config + 0x14) * fVar1;
-  fVar5 = (float10)*(float *)(fog_config + 0x18) * (float10)_DAT_005ce736;
-  fVar1 = (float10)*(float *)(fog_config + 0x1c) * fVar1;
+  fVar2 = (float10)(fog_config->scroll).x * fVar1;
+  fVar3 = (float10)(fog_config->scroll).y * fVar1;
+  fVar4 = (float10)(fog_config->scroll).z * fVar1;
+  fVar5 = (float10)fog_config->height_threshold * (float10)_DAT_005ce736;
+  fVar1 = (float10)fog_config->density_multiplier * fVar1;
   round();
   round();
   round();

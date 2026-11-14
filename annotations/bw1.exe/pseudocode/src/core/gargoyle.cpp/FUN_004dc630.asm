@@ -25,15 +25,15 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_gargoyle.cpp_FUN_004dc7e0 at 004dcc3f
+;   core_gargoyle.cpp_CGargoyle_process_FUN_004dc7e0 at 004dcc3f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e391c
 ;   undefined4 DAT_005e3920
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cd60
-;   core_vecdir.cpp_FUN_005a7520
+;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
 ;
 ; *****************************************************************************
 
@@ -149,8 +149,8 @@ section .text
     PUSH EAX                            ; 004dc734
     LEA ESI,[ESP + 0x1c]                ; 004dc735
     LEA EDI,[ESP + 0x40]                ; 004dc739
-    CALL core_vecdir.cpp_FUN_005a7520   ; 004dc73d
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005a7520()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 004dc73d
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
     LEA ESI,[ESP + 0x1c]                ; 004dc742
     LEA EAX,[ESP + 0x40]                ; 004dc746
     ADD ESP,0x4                         ; 004dc74a
@@ -173,8 +173,8 @@ section .text
     FSUB float ptr [ESP + 0x10]         ; 004dc779
     SUB ESP,0x4                         ; 004dc77d
     FSTP float ptr [ESP]                ; 004dc780
-    CALL core_actor.cpp_FUN_0040cd60    ; 004dc783
-        ;   XREF to: 0040cd60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cd60()
+    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd60 ; 004dc783
+        ;   XREF to: 0040cd60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040cd60(float angle_radians)
     MOV dword ptr [ESP + 0x50],EAX      ; 004dc788
     FLD float ptr [ESP + 0x50]          ; 004dc78c
     ADD ESP,0x4                         ; 004dc790

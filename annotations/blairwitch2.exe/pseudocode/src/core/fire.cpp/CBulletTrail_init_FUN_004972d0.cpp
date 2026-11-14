@@ -10,17 +10,17 @@ void __cdecl core_fire_cpp_CBulletTrail_init_FUN_004972d0(CBulletTrail *this_ptr
 
 {
   if (this_ptr != (CBulletTrail *)start_position) {
-    *(uint *)this_ptr = *(uint *)start_position;
-    *(uint *)&this_ptr->field_0x4 = *(uint *)&start_position->field_0x4;
-    *(uint *)&this_ptr->field_0x8 = *(uint *)&start_position->field_0x8;
+    (this_ptr->start_position).x = start_position->x;
+    (this_ptr->start_position).y = start_position->y;
+    (this_ptr->start_position).z = start_position->z;
   }
-  if ((CVector3f *)&this_ptr->field_0xc != end_position) {
-    *(uint *)&this_ptr->field_0xc = *(uint *)end_position;
-    *(uint *)&this_ptr->field_0x10 = *(uint *)&end_position->field_0x4;
-    *(uint *)&this_ptr->field_0x14 = *(uint *)&end_position->field_0x8;
+  if (&this_ptr->end_position != end_position) {
+    (this_ptr->end_position).x = end_position->x;
+    (this_ptr->end_position).y = end_position->y;
+    (this_ptr->end_position).z = end_position->z;
   }
-  *(uint *)&this_ptr->field_0x20 = 2;
-  *(CKeyFramedModel **)&this_ptr->field_0x18 = model_ptr;
-  *(float *)&this_ptr->field_0x1c = segment_length;
+  this_ptr->frames_remaining = 2;
+  this_ptr->model_ptr = model_ptr;
+  this_ptr->segment_length = segment_length;
   return;
 }

@@ -7,7 +7,7 @@
 
 // Original: engine_keys.cpp_staticInit_FUN_004fd210
 // Address: 004fd210
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: engine_keys.cpp_CKeys_getKeyState_FUN_004fd220
 // Address: 004fd220

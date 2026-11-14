@@ -10,8 +10,8 @@
 ; int              Stack[0x10]:4   render_flags
 ;
 ; XREF[2]:
-;   core_bodypart.cpp_FUN_004159e0 at 00415a9d
-;   core_set.cpp_FUN_00533ece at 00533f12
+;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_004159e0 at 00415a9d
+;   core_set.cpp_FUN_00533ed0 at 00533f12
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_processVisiblePrimitive_FUN_0046c580

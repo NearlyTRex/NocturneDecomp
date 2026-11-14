@@ -4,12 +4,15 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/enums/ENetPacketType.h"
 
 // Structure: SNetPacketHeader
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Packed 5-byte header as nocedit. CNetGame_sendPacket sends (packet+4, *(int*)packet - 4); processPacket switches on byte packet[4]; every sender stores the size dword at [ESP] and the type byte at [ESP+4] (sendSimFrameAck 00530710: MOV [ESP],0x39/0x3d; MOV byte [ESP+4],0x10). Packet sizes 9/0x29/0x71/0xb1/0x109 equal nocedit's, so the other SNetPacket_* gaps [1,4] close once the header is 5 bytes.
+// Ghidra size: 0x5 (5 bytes)
 #pragma pack(push, 1)
 typedef struct SNetPacketHeader {
+    int size; // 0x0, sendPacket: *(int*)packet - 4 is the payload length
+    ENetPacketType type; // 0x4, processPacket: switch(packet->raw[4]); senders MOV byte [ESP+4],type. ENetPacketType is nocedit's 1-byte enum (absent in the BW DBs)
 } SNetPacketHeader;
 #pragma pack(pop)
 

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_actor_cpp_getActorClassByName_FUN_0040c530(byte *param_1)
+; CDemonActorType * __cdecl core_actor_cpp_getActorClassByName_FUN_0040c530(char *className)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   className
 ;
 ; XREF[2]:
 ;   core_actor.cpp_createActorByName_FUN_0040c5a0 at 0040c5a8

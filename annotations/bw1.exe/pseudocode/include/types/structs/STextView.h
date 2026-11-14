@@ -2,15 +2,38 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CBitFont;
+struct STextPage;
+
 // Dependencies
 #include "system/basetypes.h"
 
 // Structure: STextView
-// Stub: size from Watcom RTTI, fields not yet recovered
+// Watcom RTTI size 584 (static g_STextViewInstance); highest accessed offset is the +0x48 word buffer
 // Ghidra size: 0x248 (584 bytes)
 #pragma pack(push, 1)
 typedef struct STextView {
-    char field_0[584]; // 0x0
+    int rect_left; // 0x0, setRect arg 1 (0x60); reset copies to margin_left
+    int rect_top; // 0x4, setRect arg 2 (0x40); reset copies to margin_top
+    int rect_right; // 0x8, setRect arg 3 (0x1eb); reset copies to margin_right
+    int rect_bottom; // 0xc, setRect arg 4 (0x1b8); reset copies to margin_bottom
+    int page_index; // 0x10, reset zeroes; newPage increments; indexes the page array; copied to entry/section page fields
+    int cursor_x; // 0x14, reset/newLine set it to margin_left; advanced by resource width / word width
+    int cursor_y; // 0x18, reset/newPage set it to margin_top; newLine adds line height
+    int margin_left; // 0x1c, copied from rect_left in reset; newLine target
+    int margin_top; // 0x20, copied from rect_top in reset; newPage target
+    int margin_right; // 0x24, copied from rect_right; fit tests in ensureSpace/wordFits
+    int margin_bottom; // 0x28, copied from rect_bottom; page-full tests in ensureSpace/newLine
+    struct CBitFont* font; // 0x2c, reset sets the default font; passed to Text ctor and getTextWidth/getCharHeight
+    int unknown_0x30; // 0x30, only zeroed in reset
+    int underline; // 0x34, handleTag: ul -> 1, /ul -> 0; flushWord copies it to Text.underlined
+    int page_count; // 0x38, ensurePage grows it; drawPage bounds; UI compares page < page_count - 2
+    struct STextPage* pages; // 0x3c, realloc'd array, stride 0x144; freed in reset
+    int word_x; // 0x40, appendWord records cursor_x when the buffer is empty; flushWord sets Text.x
+    int word_y; // 0x44, appendWord records cursor_y; flushWord sets Text.y
+    char word[256]; // 0x48, pending word text: appendWord strcat's, flushWord passes it to Text ctor (char[256]), wordFits keeps it < 250; 0x148..0x248 never accessed
+    char field_328[256]; // 0x148
 } STextView;
 #pragma pack(pop)
 

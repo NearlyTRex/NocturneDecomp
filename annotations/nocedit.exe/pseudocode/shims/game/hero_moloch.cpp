@@ -50,7 +50,7 @@ int strike_from(CMoloch *moloch, CCharacter *target, const char *bone_name) {
 
     core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&damage);
     damage.damage_amount = kClawDamage;
-    damage.damage_type = DAMAGE_TYPE_MELEE;
+    damage.damage_type = DAMAGE_TYPE_ATTACK_BLADE;
     damage.attacker = (CDemonActor *)moloch;
     damage.wielder = (CDemonActor *)moloch;
     return (*(((target->base).vtable._uc)->_uc).checkCylinderCollisionWorld)(target, &world_point,

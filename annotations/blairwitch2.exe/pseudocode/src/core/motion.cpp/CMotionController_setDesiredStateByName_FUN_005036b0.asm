@@ -9,14 +9,14 @@
 ; int              Stack[0xc]:4   force_immediate
 ;
 ; XREF[4]:
-;   core_charactr.cpp_FUN_004285f0 at 0042864d
-;   core_hero.cpp_FUN_004cea50 at 004ceb26
-;   core_hero.cpp_FUN_004ceb80 at 004cebf5
+;   core_charactr.cpp_CCharacter_setWalkTarget_FUN_004285f0 at 0042864d
+;   core_hero.cpp_CHero_getGrabbed_FUN_004cea50 at 004ceb26
+;   core_hero.cpp_CHero_releaseFromGrab_FUN_004ceb80 at 004cebf5
 ;   core_npc.cpp_CNPC_process_FUN_005105b0 at 00510720
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_00502fa0
+;   core_motion.cpp_CMotionList_findStateIndex_FUN_00502fa0
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     PUSH EDX                            ; 005036bc
     MOV ECX,dword ptr [EAX]             ; 005036bd
     PUSH ECX                            ; 005036bf
-    CALL core_motion.cpp_FUN_00502fa0   ; 005036c0
-        ;   XREF to: 00502fa0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_FUN_00502fa0(CMotionList * this_ptr, char * state_name, int error_on_not_found)
+    CALL core_motion.cpp_CMotionList_findStateIndex_FUN_00502fa0 ; 005036c0
+        ;   XREF to: 00502fa0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_00502fa0(CMotionList * this_ptr, char * state_name, int error_on_not_found)
     ADD ESP,0xc                         ; 005036c5
     MOV EBX,dword ptr [ESP + 0x14]      ; 005036c8
     PUSH EBX                            ; 005036cc

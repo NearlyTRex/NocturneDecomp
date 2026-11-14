@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   layer_flag
 ;
 ; Called Functions:
-;   core_enemy.cpp_FUN_004a0fb0
+;   core_enemy.cpp_CEnemy_renderBackground_FUN_004a0fb0
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 004e0118
     PUSH EBX                            ; 004e011c
     PUSH EAX                            ; 004e011d
-    CALL core_enemy.cpp_FUN_004a0fb0    ; 004e011e
-        ;   XREF to: 004a0fb0 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_FUN_004a0fb0(CEnemy * this_ptr, int layer_flag)
+    CALL core_enemy.cpp_CEnemy_renderBackground_FUN_004a0fb0 ; 004e011e
+        ;   XREF to: 004a0fb0 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_renderBackground_FUN_004a0fb0(CEnemy * this_ptr, int layer_flag)
     ADD ESP,0x8                         ; 004e0123
     POP EBX                             ; 004e0126
     RET                                 ; 004e0127

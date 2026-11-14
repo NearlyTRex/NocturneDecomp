@@ -7,14 +7,14 @@
 ; char *           Stack[0x4]:4   name
 ;
 ; XREF[8]:
+;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b63b4
 ;   core_game.cpp_FUN_004b5190 at 004b5d52
-;   core_game.cpp_FUN_004b6170 at 004b63b4
 ;   core_game.cpp_FUN_004b82e0 at 004b8a82
 ;   core_netgame.cpp_CNetGame_init_FUN_0050b340 at 0050b37a
 ;   crt_unknown.c_FUN_005be9ac at 005be9c4
 ;   crt_unknown.c_FUN_005c1168 at 005c116d
-;   unkafter_2d.cpp_FUN_005c59e0 at 005c59ec
-;   wincore_winrun.cpp_FUN_0058fdec at 0058fe4f
+;   crt_unknown.c_FUN_005c59e0 at 005c59ec
+;   wincore_winrun.cpp_getComputerAndUserName_FUN_0058fdf0 at 0058fe4f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_026807e4

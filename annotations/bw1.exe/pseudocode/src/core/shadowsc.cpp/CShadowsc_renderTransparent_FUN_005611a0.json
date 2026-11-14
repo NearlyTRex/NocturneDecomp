@@ -1,0 +1,244 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 112,
+    "complexity_score": 141,
+    "cross_reference_count": 0,
+    "function_call_count": 11,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 51,
+    "suspect_count": 7,
+    "suspect_types": [
+      "raw_address_constant",
+      "undefined_data",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 163
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005611a0",
+    "address_range": [
+      [
+        "005611a0",
+        "005612c0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_shadowsc.cpp_CShadowsc_renderTransparent_FUN_005611a0",
+    "signature": "int __cdecl core_shadowsc_cpp_CShadowsc_renderTransparent_FUN_005611a0(CShadowsc *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004087f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0"
+    },
+    {
+      "addr": "004087b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_004087b0"
+    },
+    {
+      "addr": "004207b0",
+      "is_variadic": false,
+      "name": "core_box.cpp_FUN_004207b0"
+    },
+    {
+      "addr": "004a6c30",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30"
+    },
+    {
+      "addr": "00524770",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770"
+    },
+    {
+      "addr": "005254b0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_FUN_005254b0"
+    },
+    {
+      "addr": "00569810",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_00569810"
+    },
+    {
+      "addr": "00484e00",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00"
+    },
+    {
+      "addr": "00483dd0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00483dd0"
+    },
+    {
+      "addr": "00483de0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0"
+    },
+    {
+      "addr": "00484a40",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_00484a40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f1946",
+      "name": "s_heroCanSee_005f1946",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00612560",
+      "name": "DAT_00612560",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061b4d0",
+      "name": "DAT_0061b4d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bc120c",
+      "name": "DAT_01bc120c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d39d34",
+      "name": "DAT_01d39d34",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.358695652173913,
+    "instruction_count": 92,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 12,
+      "CALLIND": 1,
+      "CBRANCH": 5,
+      "COPY": 70,
+      "INT_ADD": 38,
+      "INT_AND": 45,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 43,
+      "INT_LESS": 2,
+      "INT_MULT": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 15,
+      "INT_SLESS": 21,
+      "INT_SUB": 45,
+      "INT_XOR": 1,
+      "INT_ZEXT": 2,
+      "LOAD": 15,
+      "POPCOUNT": 21,
+      "RETURN": 2,
+      "STORE": 43
+    },
+    "pcode_op_count": 401
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CShadowsc *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "this_ptr_01 = DAT_00612560;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 42,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_00484a40(DAT_00612560,1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00(DAT_00612560);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Raw hex address 0x1c51d80 assigned to bare local `this_ptr_02`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_02` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 21,
+      "match": "0x1c51d80",
+      "severity": "moderate",
+      "text": "this_ptr_02 = 0x01C51D80;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 31,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CShadowsc",
+        "offset": 20,
+        "vtable_addr": "00605354"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

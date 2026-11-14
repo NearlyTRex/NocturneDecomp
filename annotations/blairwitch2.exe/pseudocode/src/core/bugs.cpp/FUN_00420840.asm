@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_bugs_cpp_FUN_00420840(undefined4 param_1,int *param_2,float param_3,float *param_4)
+; undefined4 core_bugs_cpp_FUN_00420840(CBugs *param_1,int *param_2,float param_3,float *param_4)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xec]:4  local_ec
@@ -57,7 +57,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   core_bugs.cpp_FUN_00420000 at 004200f9
+;   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00420000 at 004200f9
 ;   core_bugs.cpp_FUN_00420e90 at 004216fa
 ;
 ; Referenced Globals:
@@ -71,10 +71,10 @@
 ;   undefined4 DAT_005f3e30
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cf60
-;   core_actor.cpp_FUN_0040d0c0
-;   core_bugs.cpp_FUN_0041feb0
-;   core_vecdir.cpp_FUN_005838f0
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
+;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
+;   core_bugs.cpp_CBugs_sampleGroundHeight_FUN_0041feb0
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 ;
 ; *****************************************************************************
 
@@ -141,8 +141,8 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 0042090e
     PUSH dword ptr [EBX + 0x8]          ; 00420911
     PUSH ECX                            ; 00420914
-    CALL core_bugs.cpp_FUN_0041feb0     ; 00420915
-        ;   XREF to: 0041feb0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_0041feb0()
+    CALL core_bugs.cpp_CBugs_sampleGroundHeight_FUN_0041feb0 ; 00420915
+        ;   XREF to: 0041feb0 (UNCONDITIONAL_CALL)  ; float core_bugs.cpp_CBugs_sampleGroundHeight_FUN_0041feb0(CBugs * this_ptr, float x, float z)
     MOV dword ptr [ESP + 0xdc],EAX      ; 0042091a
     FLD float ptr [ESP + 0xdc]          ; 00420921
     ADD ESP,0xc                         ; 00420928
@@ -167,16 +167,16 @@ section .text
     PUSH dword ptr [ESP + 0x94]         ; 00420968
     FSTP float ptr [ESP + 0xd0]         ; 0042096f
     PUSH dword ptr [ESP + 0xd0]         ; 00420976
-    CALL core_actor.cpp_FUN_0040cf60    ; 0042097d
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 0042097d
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0xd8],EAX      ; 00420982
     FLD float ptr [ESP + 0xd8]          ; 00420989
     ADD ESP,0x8                         ; 00420990
     PUSH dword ptr [ESP + 0x94]         ; 00420993
     PUSH dword ptr [ESP + 0xd0]         ; 0042099a
     FSTP float ptr [EBX + 0x20]         ; 004209a1
-    CALL core_actor.cpp_FUN_0040cf60    ; 004209a4
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 004209a4
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0xd8],EAX      ; 004209a9
     FLD float ptr [ESP + 0xd8]          ; 004209b0
     ADD ESP,0x8                         ; 004209b7
@@ -185,8 +185,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 004209c0
     PUSH dword ptr [EBX + 0x20]         ; 004209c3
     PUSH EAX                            ; 004209c6
-    CALL core_bugs.cpp_FUN_0041feb0     ; 004209c7
-        ;   XREF to: 0041feb0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_0041feb0()
+    CALL core_bugs.cpp_CBugs_sampleGroundHeight_FUN_0041feb0 ; 004209c7
+        ;   XREF to: 0041feb0 (UNCONDITIONAL_CALL)  ; float core_bugs.cpp_CBugs_sampleGroundHeight_FUN_0041feb0(CBugs * this_ptr, float x, float z)
     MOV dword ptr [ESP + 0xdc],EAX      ; 004209cc
     FLD float ptr [ESP + 0xdc]          ; 004209d3
     ADD ESP,0xc                         ; 004209da
@@ -241,8 +241,8 @@ section .text
     PUSH EAX                            ; 00420a7a
     LEA ESI,[ESP + 0x68]                ; 00420a7b
     LEA EDI,[ESP + 0x5c]                ; 00420a7f
-    CALL core_vecdir.cpp_FUN_005838f0   ; 00420a83
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005838f0()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 00420a83
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
     ADD ESP,0x4                         ; 00420a88
     LEA ESI,[ESP + 0x64]                ; 00420a8b
     FLD float ptr [ESP]                 ; 00420a8f
@@ -305,8 +305,8 @@ section .text
     PUSH dword ptr [ESP + 0x44]         ; 00420b51
     PUSH EDX                            ; 00420b55
     MOV dword ptr [ESP + 0xc8],EAX      ; 00420b56
-    CALL core_bugs.cpp_FUN_0041feb0     ; 00420b5d
-        ;   XREF to: 0041feb0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_0041feb0()
+    CALL core_bugs.cpp_CBugs_sampleGroundHeight_FUN_0041feb0 ; 00420b5d
+        ;   XREF to: 0041feb0 (UNCONDITIONAL_CALL)  ; float core_bugs.cpp_CBugs_sampleGroundHeight_FUN_0041feb0(CBugs * this_ptr, float x, float z)
     MOV dword ptr [ESP + 0xdc],EAX      ; 00420b62
     FLD float ptr [ESP + 0xdc]          ; 00420b69
     ADD ESP,0xc                         ; 00420b70
@@ -354,15 +354,15 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00420bee
     MOVSD ES:EDI,ESI                    ; 00420bef
     PUSH dword ptr [ESP + 0x2c]         ; 00420bf0
-    CALL core_actor.cpp_FUN_0040d0c0    ; 00420bf4
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040d0c0()
+    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 00420bf4
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     MOV dword ptr [ESP + 0xd4],EAX      ; 00420bf9
     FLD float ptr [ESP + 0xd4]          ; 00420c00
     ADD ESP,0x4                         ; 00420c07
     PUSH dword ptr [ESP + 0x28]         ; 00420c0a
     FSTP float ptr [ESP + 0xa8]         ; 00420c0e
-    CALL core_actor.cpp_FUN_0040d0c0    ; 00420c15
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040d0c0()
+    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 00420c15
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     MOV dword ptr [ESP + 0xd4],EAX      ; 00420c1a
     FLD float ptr [ESP + 0xd4]          ; 00420c21
     ADD ESP,0x4                         ; 00420c28
@@ -417,8 +417,8 @@ section .text
     FADD float ptr [ESP + 0xa4]         ; 00420cea
     SUB ESP,0x4                         ; 00420cf1
     FSTP float ptr [ESP]                ; 00420cf4
-    CALL core_actor.cpp_FUN_0040d0c0    ; 00420cf7
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040d0c0()
+    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 00420cf7
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     MOV dword ptr [ESP + 0xd4],EAX      ; 00420cfc
     FLD float ptr [EBX + 0x14]          ; 00420d03
     FLD float ptr [ESP + 0xd4]          ; 00420d06
@@ -430,8 +430,8 @@ section .text
     FXCH                                ; 00420d23
     FSTP float ptr [EBX + 0x18]         ; 00420d25
     FSTP float ptr [ESP]                ; 00420d28
-    CALL core_actor.cpp_FUN_0040d0c0    ; 00420d2b
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040d0c0()
+    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 00420d2b
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0(float angle_radians)
     MOV dword ptr [ESP + 0xd4],EAX      ; 00420d30
     FLD float ptr [ESP + 0xd4]          ; 00420d37
     XOR EAX,EAX                         ; 00420d3e

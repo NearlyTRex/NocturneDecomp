@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_wateract.cpp_FUN_00586af0 at 00586dc1
+;   core_wateract.cpp_CWaterActor_setup_FUN_00586af0 at 00586dc1
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_FUN_00449530

@@ -9,7 +9,7 @@
 ; int *            Stack[0xc]:4   out_blood_type
 ;
 ; XREF[1]:
-;   core_actor.cpp_FUN_0040cb60 at 0040cc1c
+;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040cb60 at 0040cc1c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d957a

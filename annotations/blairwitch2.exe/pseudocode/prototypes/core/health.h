@@ -7,59 +7,59 @@
 
 // Original: core_health.cpp_staticInit_FUN_004cda10
 // Address: 004cda10
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_health.cpp_factoryFuncHealthItem_FUN_004cda40
 // Address: 004cda40
-void factoryFuncHealthItem(void);
+CHealthItem * __cdecl factoryFuncHealthItem(void);
 
 // Original: core_health.cpp_CHealthItem_getActorType_FUN_004cda60
 // Address: 004cda60
-CDemonActorType * CHealthItem::getActorType(CHealthItem *this_ptr);
+CDemonActorType * __cdecl CHealthItem::getActorType(CHealthItem *this_ptr);
 
 // Original: core_health.cpp_CHealthItem_ctor_FUN_004cda70
 // Address: 004cda70
-CHealthItem * CHealthItem::ctor(CHealthItem *this_ptr);
+CHealthItem * __cdecl CHealthItem::ctor(CHealthItem *this_ptr);
 
-// Original: core_health.cpp_FUN_004cdae0
+// Original: core_health.cpp_CHealthItem_setup_FUN_004cdae0
 // Address: 004cdae0
-void FUN_004cdae0(CDemonActor *param_1);
+void __cdecl CHealthItem::setup(CHealthItem *this_ptr);
 
 // Original: core_health.cpp_CHealthItem_dtor_FUN_004cdb00
 // Address: 004cdb00
-CHealthItem * CHealthItem::dtor(CHealthItem *this_ptr,uint flags);
+CHealthItem * __cdecl CHealthItem::dtor(CHealthItem *this_ptr,uint flags);
 
-// Original: core_health.cpp_FUN_004cdb60
+// Original: core_health.cpp_CHealthItem_process_FUN_004cdb60
 // Address: 004cdb60
-void FUN_004cdb60(int param_1,float param_2);
+void __cdecl CHealthItem::process(CHealthItem *this_ptr,float delta_time);
 
-// Original: core_health.cpp_FUN_004cdda0
+// Original: core_health.cpp_CHealthItem_renderOpaque_FUN_004cdda0
 // Address: 004cdda0
-int FUN_004cdda0(CDemonActor *param_1);
+int __cdecl CHealthItem::renderOpaque(CHealthItem *this_ptr);
 
-// Original: core_health.cpp_FUN_004cde20
+// Original: core_health.cpp_CHealthItem_renderTransparent_FUN_004cde20
 // Address: 004cde20
-int FUN_004cde20(CDemonActor *param_1);
+int __cdecl CHealthItem::renderTransparent(CHealthItem *this_ptr);
 
-// Original: core_health.cpp_FUN_004cdea0
+// Original: core_health.cpp_CHealthItem_getBoundingBox_FUN_004cdea0
 // Address: 004cdea0
-void FUN_004cdea0(int param_1);
+CBoundingBox3D * __cdecl CHealthItem::getBoundingBox(CHealthItem *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_health.cpp_FUN_004cdee0
+// Original: core_health.cpp_CHealthItem_archive_FUN_004cdee0
 // Address: 004cdee0
-void FUN_004cdee0(CDemonActor *param_1);
+void __cdecl CHealthItem::archive(CHealthItem *this_ptr);
 
-// Original: core_health.cpp_FUN_004cdf60
+// Original: core_health.cpp_CHealthItem_getCollisionType_FUN_004cdf60
 // Address: 004cdf60
-undefined4 FUN_004cdf60(void);
+ECollisionType __cdecl CHealthItem::getCollisionType(CHealthItem *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_health.cpp_CHealthItem_canPickup_FUN_004cdf70
 // Address: 004cdf70
 int __cdecl CHealthItem::canPickup(CHealthItem *this_ptr,CDemonActor *picker);
 
-// Original: core_health.cpp_FUN_004cdf90
+// Original: core_health.cpp_CHealthItem_useItem_FUN_004cdf90
 // Address: 004cdf90
-int __cdecl FUN_004cdf90(CHealthItem *this_ptr,CCharacter *user);
+int __cdecl CHealthItem::useItem(CHealthItem *this_ptr,CCharacter *user);
 
 // Original: core_health.cpp_CHealthItem_onPickup_FUN_004cdfe0
 // Address: 004cdfe0

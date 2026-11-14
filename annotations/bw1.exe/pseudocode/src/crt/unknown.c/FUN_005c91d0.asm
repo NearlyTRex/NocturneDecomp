@@ -1,21 +1,24 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * crt_unknown_c_FUN_005c91d0(undefined4 *param_1,uint param_2)
+; char * __cdecl crt_unknown_c_FUN_005c91d0(char *buffer,SIZE_T size)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   buffer
+; SIZE_T           Stack[0x8]:4   size
 ;
 ; XREF[4]:
 ;   crt_stdlib.c__fullpath_FUN_005c2500 at 005c2549
-;   crt_unknown.c_FUN_005c26ae at 005c26ae
 ;   crt_unknown.c_FUN_005c6c7c at 005c6ce8
 ;   crt_unknown.c_FUN_005c8094 at 005c80e7
+;   crt_unknown.c__getcwd_FUN_005c26ae at 005c26ae
 ;
 ; Referenced Globals:
 ;   void* PTR_GetCurrentDirectoryA_005d0584 = 001d0e28
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_005c6450
-;   crt_unknown.c_FUN_005c08d0
+;   crt_memory.c_malloc_FUN_005c08d0
 ;   crt_unknown.c_FUN_005c862c
 ;   GetCurrentDirectoryA
 ;
@@ -54,8 +57,8 @@ section .text
     MOV EAX,ESI                         ; 005c920e
     PUSH EAX                            ; 005c9210
         ;   Label: LAB_005c9210
-    CALL crt_unknown.c_FUN_005c08d0     ; 005c9211
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
+    CALL crt_memory.c_malloc_FUN_005c08d0 ; 005c9211
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 005c9216
     MOV EBX,EAX                         ; 005c9219
     TEST EAX,EAX                        ; 005c921b

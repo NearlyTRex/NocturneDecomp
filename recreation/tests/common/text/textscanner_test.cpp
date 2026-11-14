@@ -131,5 +131,22 @@ TEST(CTextScanner, ThePositionCountsWhatHasBeenRead) {
     EXPECT_EQ(scanner.getPosition(), 4U);
 }
 
+// Bytes come as they are: whitespace, CR LF and NUL included.
+TEST(CTextScanner, ReadBytesTakesTheNextBytesAsTheyAre) {
+    const std::string_view text("ab\r\n\0 cd", 8);
+    CTextScanner scanner(text);
+    EXPECT_EQ(scanner.readBytes(1), "a");
+    EXPECT_EQ(scanner.readBytes(5), std::string_view("b\r\n\0 ", 5));
+    EXPECT_EQ(scanner.readBytes(0), "");
+    EXPECT_EQ(scanner.readLine(), "cd");
+}
+
+TEST(CTextScanner, ReadBytesPastTheEndReadsNothingAndEndsTheText) {
+    CTextScanner scanner("abc");
+    EXPECT_EQ(scanner.readBytes(4), std::nullopt);
+    EXPECT_TRUE(scanner.atEnd());
+    EXPECT_EQ(scanner.readBytes(0), "");
+}
+
 } // namespace
 } // namespace nocturne::common

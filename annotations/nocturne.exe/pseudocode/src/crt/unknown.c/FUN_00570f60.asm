@@ -5,7 +5,6 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 SUB_00570f50
 ;   undefined4 DAT_005c1d09
 ;   undefined4 DAT_02de54a0
 ;   undefined4 DAT_02de54a4
@@ -14,6 +13,7 @@
 ; Called Functions:
 ;   crt_memory.c_free_FUN_005638d0
 ;   crt_memory.c_memset_FUN_00563cc0
+;   crt_unknown.c_FUN_00570f50
 ;   crt_unknown.c_FUN_00572b70
 ;
 ; *****************************************************************************
@@ -60,8 +60,8 @@ section .text
     MOV EAX,0x1                         ; 00570fa3
     PUSH EAX                            ; 00570fa8
         ;   Label: LAB_00570fa8
-    CALL 0x00570f50                     ; 00570fa9
-        ;   XREF to: 00570f50 (UNCONDITIONAL_CALL)  ; SUB_00570f50
+    CALL crt_unknown.c_FUN_00570f50     ; 00570fa9
+        ;   XREF to: 00570f50 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00570f50()
     MOV EBX,EAX                         ; 00570fae
     ADD ESP,0x4                         ; 00570fb0
     TEST EAX,EAX                        ; 00570fb3
@@ -72,8 +72,8 @@ section .text
     ADD EAX,0x4                         ; 00570fc7
     ADD ESI,EAX                         ; 00570fca
     PUSH ESI                            ; 00570fcc
-    CALL 0x00570f50                     ; 00570fcd
-        ;   XREF to: 00570f50 (UNCONDITIONAL_CALL)  ; SUB_00570f50
+    CALL crt_unknown.c_FUN_00570f50     ; 00570fcd
+        ;   XREF to: 00570f50 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00570f50()
     ADD ESP,0x4                         ; 00570fd2
     TEST EAX,EAX                        ; 00570fd5
     JZ 0x00571030                       ; 00570fd7

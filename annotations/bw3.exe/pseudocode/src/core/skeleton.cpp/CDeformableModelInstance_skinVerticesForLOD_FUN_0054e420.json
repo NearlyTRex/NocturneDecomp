@@ -1,0 +1,310 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 23,
+    "complexity_score": 17,
+    "cross_reference_count": 13,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 40
+  },
+  "cross_references": [
+    {
+      "addr": "00422570",
+      "from_addr": "004226c2",
+      "name": "core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422570",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00423cd0",
+      "from_addr": "00423e1b",
+      "name": "core_bugs.cpp_CBugs_setSwarmTarget_FUN_00423cd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f9d90",
+      "from_addr": "004f9d9b",
+      "name": "core_morph.cpp_CMorphModel_addPartFromDeformableModel_FUN_004f9d90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f9f50",
+      "from_addr": "004f9f62",
+      "name": "core_morph.cpp_CMorphModel_animateFromDeformableModel_FUN_004f9f50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054e850",
+      "from_addr": "0054e899",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_0054e850",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054f360",
+      "from_addr": "0054f3c3",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_0054f360",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054f400",
+      "from_addr": "0054f46c",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_0054f400",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054f7f0",
+      "from_addr": "0054f843",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_shatter_FUN_0054f7f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054e550",
+      "from_addr": "0054e587",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_0054e550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054e500",
+      "from_addr": "0054e537",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndLightVertices_FUN_0054e500",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054e4b0",
+      "from_addr": "0054e4e7",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_0054e4b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054a3c0",
+      "from_addr": "0054a46b",
+      "name": "core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0054a3c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054b5b0",
+      "from_addr": "0054b698",
+      "name": "core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0054b5b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0054e420",
+    "address_range": [
+      [
+        "0054e420",
+        "0054e45c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0054e420",
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0054e420(CDeformableModelInstance *this_ptr,int lod_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "00548850",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModel_skinVertices_FUN_00548850"
+    },
+    {
+      "addr": "0054ea40",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 13,
+    "call_sites": [
+      {
+        "call_addr": "0054e899",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_0054e850",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0054f3c3",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_0054f360",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0054b698",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0054b5b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0054a46b",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0054a3c0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0054f46c",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_0054f400",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004226c2",
+        "call_type": "direct",
+        "caller": "core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422570",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00423e1b",
+        "call_type": "direct",
+        "caller": "core_bugs.cpp_CBugs_setSwarmTarget_FUN_00423cd0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0054e4e7",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_0054e4b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0054e537",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_skinAndLightVertices_FUN_0054e500",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0054e587",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_0054e550",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.55,
+    "instruction_count": 20,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 16,
+      "INT_ADD": 11,
+      "INT_AND": 4,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 9,
+      "LOAD": 6,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 10
+    },
+    "pcode_op_count": 71
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005471f0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00569890",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a01d0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0051da50",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      },
+      {
+        "is_param": true,
+        "name": "lod_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

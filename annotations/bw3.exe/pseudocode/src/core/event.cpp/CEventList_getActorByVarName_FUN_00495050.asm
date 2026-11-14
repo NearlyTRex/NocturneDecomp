@@ -13,8 +13,8 @@
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 g_CDemonSetInstance.field1364324_0x14d164
-;   undefined4 g_CDemonSetInstance.field1364328_0x14d168
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_findActorVariable_FUN_004950c0
@@ -49,7 +49,7 @@ section .text
     XOR EBX,EBX                         ; 0049507d
     MOV EAX,[0x00603b28]                ; 0049507f | g_CDemonSetPtr
         ;   Label: LAB_0049507f
-    CMP ESI,dword ptr [EAX + 0x14d164]  ; 00495084 | g_CDemonSetInstance.field1364324_0x14d164
+    CMP ESI,dword ptr [EAX + 0x14d164]  ; 00495084 | g_CDemonSetInstance.actor_count
     JL 0x00495099                       ; 0049508a
         ;   XREF to: 00495099 (CONDITIONAL_JUMP)  ; LAB_00495099
     XOR EAX,EAX                         ; 0049508c
@@ -66,7 +66,7 @@ section .text
         ;   XREF to: 0049507f (UNCONDITIONAL_JUMP)  ; LAB_0049507f
     PUSH EDI                            ; 00495099
         ;   Label: LAB_00495099
-    MOV EBP,dword ptr [EBX + EAX*0x1 + 0x14d168] ; 0049509a | g_CDemonSetInstance.field1364328_0x14d168
+    MOV EBP,dword ptr [EBX + EAX*0x1 + 0x14d168] ; 0049509a | g_CDemonSetInstance.actors[0]
     PUSH EBP                            ; 004950a1
     CALL crt_string.c__stricmp_FUN_005a3260 ; 004950a2
         ;   XREF to: 005a3260 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005a3260(char * str1, char * str2)
@@ -75,7 +75,7 @@ section .text
     JNZ 0x00495093                      ; 004950ac
         ;   XREF to: 00495093 (CONDITIONAL_JUMP)  ; LAB_00495093
     MOV EAX,[0x00603b28]                ; 004950ae | g_CDemonSetPtr
-    MOV EAX,dword ptr [EBX + EAX*0x1 + 0x14d168] ; 004950b3 | g_CDemonSetInstance.field1364328_0x14d168
+    MOV EAX,dword ptr [EBX + EAX*0x1 + 0x14d168] ; 004950b3 | g_CDemonSetInstance.actors[0]
     POP EBP                             ; 004950ba
     POP EDI                             ; 004950bb
     POP ESI                             ; 004950bc

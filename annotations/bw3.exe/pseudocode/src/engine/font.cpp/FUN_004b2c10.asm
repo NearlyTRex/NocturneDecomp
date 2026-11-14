@@ -18,7 +18,7 @@
 ;   undefined4 DAT_006074b8
 ;
 ; Called Functions:
-;   engine_font.cpp_FUN_004b2a80
+;   engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80
 ;
 ; *****************************************************************************
 
@@ -182,8 +182,8 @@ section .text
     MOV byte ptr [EBP + 0x1],0x0        ; 004b2d8d
     PUSH ECX                            ; 004b2d91
     MOV byte ptr [EBP],AL               ; 004b2d92
-    CALL engine_font.cpp_FUN_004b2a80   ; 004b2d95
-        ;   XREF to: 004b2a80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004b2a80(CBitFont * this_ptr, char * text)
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80 ; 004b2d95
+        ;   XREF to: 004b2a80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 004b2d9a
     CMP EAX,dword ptr [ESP + 0x34]      ; 004b2d9d
     JLE 0x004b2dad                      ; 004b2da1

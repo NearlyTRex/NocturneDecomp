@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CAsciiUnarmor * support_codec_cpp_CAsciiUnarmor_dtor_FUN_00444170(CAsciiUnarmor *this_ptr,uint flags)
+; CAsciiUnarmor * __cdecl support_codec_cpp_CAsciiUnarmor_dtor_FUN_00444170(CAsciiUnarmor *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CAsciiUnarmor *  Stack[0x4]:4   this_ptr
@@ -43,7 +43,7 @@ section .text
         ;   Label: LAB_00444196
     PUSH EBX                            ; 0044419b
     CALL crt_memory.c___vec_delete_FUN_005c030f ; 0044419c
-        ;   XREF to: 005c030f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005c030f()
+        ;   XREF to: 005c030f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005c030f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 004441a1
     PUSH EAX                            ; 004441a4
     CALL crt_unknown.c_FUN_005c0336     ; 004441a5

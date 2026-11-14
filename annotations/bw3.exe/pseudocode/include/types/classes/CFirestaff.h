@@ -4,13 +4,24 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/winnt.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CFlame.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
+#include "types/classes/CWeapon.h"
+#include "types/enums/EFlameType.h"
 
 // Structure: CFirestaff
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 9672; CFirestaff_ctor 004a4ad0: two CDemonGlobe at +0x594/+0x5d4 (precomputeAttenuation), __arrinit(+0x614, 12, CFlame)
 // Ghidra size: 0x25c8 (9672 bytes)
 #pragma pack(push, 1)
 typedef struct CFirestaff {
-    char field_0[9672]; // 0x0
+    CWeapon base; // 0x0, derived
+    CDemonGlobe globes[2]; // 0x594, ctor sets intensity_multiplier(+0x3c)=0x8000, intensity byte +0x1c, precomputeAttenuation, corona_mode(+0x20)=1 on +0x594 and +0x5d4; process setPosition/addCoronaGlobe on both
+    CFlame flames[12]; // 0x614, ctor __arrinit 12 CFlame, sizes set per flame; renderOpaque loop step 0x2a4 to +0x25c4; dtor FUN_004a5930
+    uint sfx_handle; // 0x25c4, process sound handle; setWeaponState/process killSfx
 } CFirestaff;
 #pragma pack(pop)
 

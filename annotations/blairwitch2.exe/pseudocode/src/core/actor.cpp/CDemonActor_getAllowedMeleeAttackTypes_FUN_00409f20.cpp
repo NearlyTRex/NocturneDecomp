@@ -13,48 +13,49 @@ int __cdecl core_actor_cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_00409f20(C
 {
   int iVar1;
   uint uVar2;
+  float unaff_EBP;
   uint *puVar3;
+  float unaff_EDI;
   uint *puVar4;
   byte bVar5;
-  float afStackY_1010 [1001];
-  float fStack_58;
-  float fStack_54;
+  float afStackY_1008 [999];
+  CBoundingBox3D *in_stack_ffffff98;
   float fStack_50;
   float fStack_4c;
   float fStack_48;
   float fStack_44;
-  float fStack_28;
-  float fStack_24;
+  float fStack_40;
+  float fStack_3c;
   float fStack_20;
   float fStack_1c;
   float fStack_18;
   float fStack_14;
   
   bVar5 = 0;
-  (**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x24))(this_ptr);
-  puVar3 = (uint *)&stack0xffffffc0;
-  puVar4 = &stack0xffffffa8;
+  (*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,in_stack_ffffff98);
+  puVar3 = (uint *)&stack0xffffffc8;
+  puVar4 = (uint *)&stack0xffffffa8;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar4 = *puVar3;
     puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
     puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
   }
-  fStack_28 = fStack_4c - fStack_58;
-  fStack_24 = fStack_48 - fStack_54;
   fStack_20 = fStack_44 - fStack_50;
-  fStack_1c = fStack_4c - fStack_58;
-  *(uint *)((int)&stack0xffffffe8 + (uint)bVar5 * -8) =
-       *(uint *)((int)&stack0xffffffdc + (uint)bVar5 * -8);
-  *(uint *)((int)&stack0xffffffec + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
-       *(uint *)((int)&stack0xffffffe0 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+  fStack_1c = fStack_40 - fStack_4c;
+  fStack_18 = fStack_3c - fStack_48;
+  fStack_14 = fStack_44 - fStack_50;
+  *(uint *)(&stack0xfffffff0 + (uint)bVar5 * -8) =
+       *(uint *)((int)&stack0xffffffe4 + (uint)bVar5 * -8);
+  *(uint *)(&stack0xfffffff4 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
+       *(uint *)((int)&stack0xffffffe8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
   uVar2 = 0;
-  if ((((fStack_1c < 1.0) && (fStack_18 < 1.0)) && ((float)_DAT_005ca66e < fStack_14)) &&
-     (((fStack_14 < (float)_DAT_005ca676 && (fStack_1c < fStack_14)) && (fStack_18 < fStack_14)))) {
+  if ((((fStack_14 < 1.0) && (unaff_EBP < 1.0)) && ((float)_DAT_005ca66e < unaff_EDI)) &&
+     (((unaff_EDI < (float)_DAT_005ca676 && (fStack_14 < unaff_EDI)) && (unaff_EBP < unaff_EDI)))) {
     uVar2 = 2;
   }
-  if (((fStack_1c < 1.0) && (fStack_18 < 1.0)) &&
-     ((1.0 < fStack_14 &&
-      (((fStack_14 < (float)_DAT_005ca66e && (fStack_1c < fStack_14)) && (fStack_18 < fStack_14)))))
+  if (((fStack_14 < 1.0) && (unaff_EBP < 1.0)) &&
+     ((1.0 < unaff_EDI &&
+      (((unaff_EDI < (float)_DAT_005ca66e && (fStack_14 < unaff_EDI)) && (unaff_EBP < unaff_EDI)))))
      ) {
     uVar2 = uVar2 | 4;
   }

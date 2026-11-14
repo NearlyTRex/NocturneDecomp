@@ -47,6 +47,10 @@ void nocturne_window_mode_apply(struct SDL_Window *) {
     ++stand.mode_applies;
 }
 
+int nocturne_vsync_get(void) {
+    return stand.vsync;
+}
+
 int g_nocturne_fixed_display = 0;
 
 int nocturne_window_preferred_size(int *width, int *height) {

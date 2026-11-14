@@ -9,6 +9,6 @@
 void __cdecl core_set_cpp_CDemonSet_setCameraEnabled_FUN_0053b340(CDemonSet *this_ptr,int camera_index,int enabled)
 
 {
-  *(int *)(&this_ptr->field_0x1a4 + camera_index * 0x1a4) = enabled;
+  this_ptr->cameras[camera_index].enabled = enabled;
   return;
 }

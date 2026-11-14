@@ -17,7 +17,7 @@
 ;   core_moon.cpp_CMoon_render_FUN_004dec50 at 004dec8b
 ;   core_set.cpp_CDemonSet_renderGogglesView_FUN_0050a260 at 0050a5a1
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190 at 0050e1b4
-;   core_setdir.cpp_CDemonSet_FUN_005125a0 at 00512da8
+;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005125a0 at 00512da8
 ;   ... and 2 more
 ;
 ; Referenced Globals:

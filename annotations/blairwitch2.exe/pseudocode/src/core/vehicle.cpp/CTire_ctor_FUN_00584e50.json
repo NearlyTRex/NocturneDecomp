@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 9,
-    "complexity_score": 47,
+    "complexity_score": 21,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 7,
-    "suspect_count": 3,
+    "pseudocode_lines": 6,
+    "suspect_count": 1,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_field"
+      "negative_offset"
     ],
-    "total_lines": 16
+    "total_lines": 15
   },
   "cross_references": [],
   "function": {
@@ -67,6 +66,26 @@
     },
     "pcode_op_count": 39
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005a8a80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005e8da0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0054f870",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -85,28 +104,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&this_ptr->field_0x14);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 9,
+      "line": 8,
       "match": "pCVar1[-1].",
       "severity": "mild",
-      "text": "return (CTire *)&pCVar1[-1].field_0x168;",
+      "text": "return (CTire *)(pCVar1[-1].model_name + 0xf0);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x168",
-      "severity": "mild",
-      "text": "return (CTire *)&pCVar1[-1].field_0x168;",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

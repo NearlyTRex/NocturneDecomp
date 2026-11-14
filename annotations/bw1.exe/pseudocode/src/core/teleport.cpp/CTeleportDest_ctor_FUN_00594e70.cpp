@@ -11,7 +11,7 @@ CTeleportDest * __cdecl core_teleport_cpp_CTeleportDest_ctor_FUN_00594e70(CTelep
 {
   CDemonActor *pCVar1;
   
-  pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_004085c0((CDemonActor *)this_ptr);
-  *(byte **)&pCVar1->field_0x154 = &g_CTeleportDestVTable;
+  pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_004085c0(&this_ptr->base);
+  (pCVar1->vtable)._ub = &g_CTeleportDestVTable;
   return (CTeleportDest *)pCVar1;
 }

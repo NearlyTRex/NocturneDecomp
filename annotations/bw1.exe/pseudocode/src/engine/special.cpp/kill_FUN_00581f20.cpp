@@ -15,6 +15,6 @@ int __cdecl engine_special_cpp_kill_FUN_00581f20(void)
     return 1;
   }
   (*_DAT_02c8338c)();
-  engine_special_cpp_FUN_00580740();
+  engine_special_cpp_shutdownExternalRenderer_FUN_00580740();
   return 1;
 }

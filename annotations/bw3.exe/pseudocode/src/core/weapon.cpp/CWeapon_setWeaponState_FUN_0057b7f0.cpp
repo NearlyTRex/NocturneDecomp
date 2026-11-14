@@ -9,6 +9,6 @@
 void __cdecl core_weapon_cpp_CWeapon_setWeaponState_FUN_0057b7f0(CWeapon *this_ptr,int weapon_state)
 
 {
-  *(int *)&this_ptr->field_0x2d4 = weapon_state;
+  this_ptr->weapon_state = weapon_state;
   return;
 }

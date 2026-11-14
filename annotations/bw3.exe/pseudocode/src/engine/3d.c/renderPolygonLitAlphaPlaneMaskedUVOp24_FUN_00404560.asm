@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00404560(int param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00404560(SMRGLHeaderPrimitive *primitive)
 ;
+; Parameters:
+; SMRGLHeaderPrimitive * Stack[0x4]:4   primitive
 ;
 ; XREF[1]:
-;   engine_3d.c_FUN_00407860 at 004079f9
+;   engine_3d.c_dispatchMRGLToRenderer_FUN_00407860 at 004079f9
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fba20
@@ -39,7 +41,7 @@ section .text
     LEA EAX,[EDI + 0x8]                 ; 00404570
     PUSH EAX                            ; 00404573
     CALL engine_3d.c_isVisiblePlane_FUN_00403920 ; 00404574
-        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403920()
+        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403920(SClipPlane * plane)
     ADD ESP,0x4                         ; 00404579
     TEST EAX,EAX                        ; 0040457c
     JNZ 0x004045a2                      ; 0040457e
@@ -59,7 +61,7 @@ section .text
     PUSH EDI                            ; 004045a2
         ;   Label: LAB_004045a2
     CALL engine_3d.c_calculatePolygonLighting_FUN_004039d0 ; 004045a3
-        ;   XREF to: 004039d0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_calculatePolygonLighting_FUN_004039d0()
+        ;   XREF to: 004039d0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_calculatePolygonLighting_FUN_004039d0(SMRGLHeaderPrimitive * prim)
     MOV EDX,dword ptr [0x01c6e24c]      ; 004045a8 | DAT_01c6e24c
     ADD ESP,0x4                         ; 004045ae
     TEST EDX,EDX                        ; 004045b1

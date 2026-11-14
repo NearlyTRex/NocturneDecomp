@@ -2,15 +2,45 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
 
 // Structure: CShadow
-// Stub: size from Watcom RTTI, fields not yet recovered
+// CWerewolf-style tail; ctor 0055dad0, setup 0055dbf0, process 0055de50, archive 0055fe00, chain FUN_005601bc
 // Ghidra size: 0xc314 (49940 bytes)
 #pragma pack(push, 1)
 typedef struct CShadow {
-    char field_0[49940]; // 0x0
+    CEnemy base; // 0x0, derived; unchanged
+    int type; // 0xc268, ctor zeroes; setup/process branch on 0 / 2 (EWerewolfType slot)
+    int bone_indices[9]; // 0xc26c, setup findBone; getTargetPoints; process indexes bone matrices +0xfd8
+    int light_up_eyes; // 0xc290, ctor 1; archive "lightUpEyes"
+    char field_49812[4]; // 0xc294
+    float howl_cooldown; // 0xc298, setup random; process counts down
+    uint sfx_handles[7]; // 0xc29c, setup zeroes; processDamage killSfx; FUN_0055f4a0..0055f5e0 sound players
+    struct CDemonActor* chain_anchor; // 0xc2b8, ctor zeroes; FUN_005601bc reads anchor +0x20 position (CWerewolf chain)
+    float chain_length; // 0xc2bc, ctor 5.0; FUN_005601bc FCOMP/FMUL
+    struct CDemonActor* alpha1; // 0xc2c0, ctor zeroes; bw2 archive "alpha1" at the same slot
+    struct CDemonActor* alpha2; // 0xc2c4, ctor zeroes; bw2 archive "alpha2" at the same slot
+    float eye_glow_phase; // 0xc2c8, ctor zeroes; process accumulates and takes sin/cos
+    int phase; // 0xc2cc, ctor zeroes; bw2 archive "phase" at the same slot
+    float phase_timer; // 0xc2d0, ctor global; process counts down when type == 2
+    int is_shadow_beast; // 0xc2d4, setup 1 for SHADOWBEAST.DFM / WERE_HEADLESS.DFM; process picks attack set
+    char field_49880[16]; // 0xc2d8
+    int walk_target; // 0xc2e8, process FUN_00431cc0 target; CShadow_setWalkTarget
+    int walk_status; // 0xc2ec, process out-param of FUN_00431cc0
+    float walk_timeout; // 0xc2f0, ctor zeroes; process counts down while walking
+    float periodic_timer; // 0xc2f4, ctor 10.0; process counts down, resets random(1,2), calls vtable +0x1c
+    int attack_loop_count; // 0xc2f8, process increments, > 2 switches motion
+    int is_opaque; // 0xc2fc, setup 0; process 0/1; renderOpaque tests
+    float fade_scale; // 0xc300, ctor 1.0; process computes, copies to model +0x514
+    int fade_alpha; // 0xc304, process 65000 / ROUND(fade); renderTransparent passes it
+    int corona_added; // 0xc308, process sets 1 after addCoronaGlobe; renderTransparent tests
+    int scared_by_light; // 0xc30c, ctor 1; archive "scaredByLight"
+    float difficulty_speed_scale; // 0xc310, setup 0.75 / 1.0 by COMBATMODEHARD; process FMUL
 } CShadow;
 #pragma pack(pop)
 

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CAngelSpirit * core_hotdemon_cpp_CAngelSpirit_ctor_FUN_004d6390(CAngelSpirit *this_ptr)
+; CAngelSpirit * __cdecl core_hotdemon_cpp_CAngelSpirit_ctor_FUN_004d6390(CAngelSpirit *this_ptr)
 ;
 ; Parameters:
 ; CAngelSpirit *   Stack[0x4]:4   this_ptr
@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   core_hotdemon.cpp_CHotDemon_ctor_FUN_004d5430
-;   core_skeleton.cpp_FUN_0054eae0
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     ADD EAX,0x158                       ; 004d63a5
     PUSH EAX                            ; 004d63aa
     MOV dword ptr [EAX + -0x4],0x5e1bb4 ; 004d63ab
-    CALL core_skeleton.cpp_FUN_0054eae0 ; 004d63b2
-        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054eae0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 ; 004d63b2
+        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2538],0x42480000 ; 004d63b7
     ADD ESP,0x8                         ; 004d63c1
     MOV dword ptr [EBX + 0xce5c],0x41c80000 ; 004d63c4

@@ -15,13 +15,13 @@ void __cdecl core_mission_cpp_CDemonMission_saveActor_FUN_0051b100(CDemonMission
   if (actor_ptr < (CDemonActor *)0xff000000) {
     pcVar1 = "(none)";
     if (actor_ptr != (CDemonActor *)0x0) {
-      pcVar1 = (char *)actor_ptr;
+      pcVar1 = actor_ptr->actor_name;
     }
     puVar2 = &DAT_005e969f;
   }
   else {
     puVar2 = &DAT_005e969a;
-    pcVar1 = (char *)actor_ptr;
+    pcVar1 = actor_ptr->actor_name;
   }
   FUN_005c03c0(file,puVar2,pcVar1);
   if (description != (char *)0x0) {

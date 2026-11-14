@@ -17,11 +17,11 @@
 ; XREF[7]:
 ;   cockpit_ckptutil.c_drawClippedEdges_FUN_00438fa0 at 00439065
 ;   core_game.cpp_CGame_drawScreenBorder_FUN_004cc0c0 at 004cc0d2
-;   engine_2d.c_FUN_00402cf0 at 00402f15
+;   engine_2d.c_clipAndDrawLine_FUN_00402cf0 at 00402f15
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00407af0 at 00407d5e
-;   engine_console.cpp_FUN_00445690 at 00445789
+;   engine_console.cpp_CConsole_render_FUN_00445690 at 00445789
+;   shape_edittool.cpp_CPickList_renderDialog_FUN_0049b830 at 0049b9a6
 ;   shape_edittool.cpp_FUN_004934b0 at 004935c3
-;   shape_edittool.cpp_FUN_0049b830 at 0049b9a6
 ;
 ; Called Functions:
 ;   engine_2d.c_plotPixel_FUN_00401130

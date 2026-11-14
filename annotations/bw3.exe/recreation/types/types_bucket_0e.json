@@ -2,18 +2,461 @@
   {
     "kind":"class",
     "name":"CBlunderbus",
+    "parent":"CWeapon",
     "size":1432
+  },
+  {
+    "kind":"funcdef",
+    "name":"CBoneGuy_reset",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CBoneGuy",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"class",
+    "name":"CCharacter_full_vtable",
+    "size":320,
+    "vtable_slots":[
+      {
+        "name":"_ub",
+        "offset":0
+      },
+      {
+        "name":"_uc",
+        "offset":216
+      }
+    ]
+  },
+  {
+    "kind":"funcdef",
+    "name":"CCharacter_isWalkComplete",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
     "name":"CClothList",
     "rtti_file":"core/cloth.cpp",
-    "size":1
+    "size":444
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_customGetFloorHeight",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"search_radius",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"out_floor_height",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_customIntersectCylinderXZ",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"cylinder",
+        "type":{
+          "kind":"struct",
+          "name":"SIntersectXZCylinder",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_getGroundType",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"enum",
+      "name":"EGroundType",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_playAttackHitEffects",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"attack_flags",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"damage_info",
+        "type":{
+          "kind":"struct",
+          "name":"SDamageInfo",
+          "ptr":1
+        }
+      },
+      {
+        "name":"victim",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"class",
+    "name":"CDemonActor_vtable",
+    "size":216,
+    "vtable_slots":[
+      {
+        "name":"setup",
+        "offset":0
+      },
+      {
+        "name":"markResourcesInUse",
+        "offset":4
+      },
+      {
+        "name":"vfunc2",
+        "offset":8
+      },
+      {
+        "name":"process",
+        "offset":12
+      },
+      {
+        "name":"renderOpaque",
+        "offset":16
+      },
+      {
+        "name":"renderTransparent",
+        "offset":20
+      },
+      {
+        "name":"renderBackground",
+        "offset":24
+      },
+      {
+        "name":"getBoundingBox",
+        "offset":28
+      },
+      {
+        "name":"processFootstep",
+        "offset":32
+      },
+      {
+        "name":"processFootstepAtOffset",
+        "offset":36
+      },
+      {
+        "name":"handleFootstep",
+        "offset":40
+      },
+      {
+        "name":"playSound",
+        "offset":44
+      },
+      {
+        "name":"playAmbientSound",
+        "offset":48
+      },
+      {
+        "name":"playSoundWithDelay",
+        "offset":52
+      },
+      {
+        "name":"playAmbientSoundWithDelay",
+        "offset":56
+      },
+      {
+        "name":"getCollisionType",
+        "offset":60
+      },
+      {
+        "name":"cylinderGroundCheck",
+        "offset":64
+      },
+      {
+        "name":"getGroundType",
+        "offset":68
+      },
+      {
+        "name":"getBlockVirtualDirectorFlag",
+        "offset":72
+      },
+      {
+        "name":"allowBulletHoles",
+        "offset":76
+      },
+      {
+        "name":"updateCollisionData",
+        "offset":80
+      },
+      {
+        "name":"getTargetPoints",
+        "offset":84
+      },
+      {
+        "name":"renderTargetPoints",
+        "offset":88
+      },
+      {
+        "name":"canLookAt",
+        "offset":92
+      },
+      {
+        "name":"evaluateTriggerCondition",
+        "offset":96
+      },
+      {
+        "name":"processActionButton",
+        "offset":100
+      },
+      {
+        "name":"setPositionAndOrientation",
+        "offset":104
+      },
+      {
+        "name":"onPickup",
+        "offset":108
+      },
+      {
+        "name":"shouldIgnoreForTargeting",
+        "offset":112
+      },
+      {
+        "name":"getAllowedMeleeAttackTypes",
+        "offset":116
+      },
+      {
+        "name":"processMeleeHit",
+        "offset":120
+      },
+      {
+        "name":"fillAttackDamageInfo",
+        "offset":124
+      },
+      {
+        "name":"playAttackHitEffects",
+        "offset":128
+      },
+      {
+        "name":"canPickup",
+        "offset":132
+      },
+      {
+        "name":"pickup",
+        "offset":136
+      },
+      {
+        "name":"onDropped",
+        "offset":140
+      },
+      {
+        "name":"drop",
+        "offset":144
+      },
+      {
+        "name":"getCarrier",
+        "offset":148
+      },
+      {
+        "name":"getInteractionInfo",
+        "offset":152
+      },
+      {
+        "name":"startInteraction",
+        "offset":156
+      },
+      {
+        "name":"updateInteraction",
+        "offset":160
+      },
+      {
+        "name":"stopInteraction",
+        "offset":164
+      },
+      {
+        "name":"spawnFlies",
+        "offset":168
+      },
+      {
+        "name":"testCylinderCollision",
+        "offset":172
+      },
+      {
+        "name":"testLineIntersection",
+        "offset":176
+      },
+      {
+        "name":"onLaserHit",
+        "offset":180
+      },
+      {
+        "name":"customRayIntersect",
+        "offset":184
+      },
+      {
+        "name":"customIntersectCylinderXZ",
+        "offset":188
+      },
+      {
+        "name":"customGetFloorHeight",
+        "offset":192
+      },
+      {
+        "name":"getPathMap",
+        "offset":196
+      },
+      {
+        "name":"calculateChecksum",
+        "offset":200
+      },
+      {
+        "name":"getActorType",
+        "offset":204
+      },
+      {
+        "name":"dtor",
+        "offset":208
+      },
+      {
+        "name":"archive",
+        "offset":212
+      }
+    ]
   },
   {
     "kind":"class",
     "name":"CDemonDog",
+    "parent":"CZombieDog",
     "size":53348
+  },
+  {
+    "kind":"funcdef",
+    "name":"CEnemy_randomize",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CEnemy",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -38,17 +481,61 @@
   {
     "kind":"class",
     "name":"CHealthItemSmall",
+    "parent":"CHealthItem",
     "size":740
+  },
+  {
+    "kind":"funcdef",
+    "name":"CHero_reset",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CHero",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CHero_vfunc80",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CHero",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
     "name":"CInventory",
     "rtti_file":"core/inv.cpp",
-    "size":1
+    "size":1136
   },
   {
     "kind":"class",
     "name":"CMattanntote",
+    "parent":"CEnemy",
     "size":61596
   },
   {
@@ -61,24 +548,158 @@
     "kind":"class",
     "name":"CMorph",
     "rtti_file":"core/morph.cpp",
-    "size":1
+    "size":3116
   },
   {
     "kind":"class",
     "name":"CPickList",
+    "parent":"CStrList",
     "rtti_file":"shape/edittool.cpp",
     "size":960
   },
   {
+    "kind":"funcdef",
+    "name":"CPod_dismount",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CPod",
+          "ptr":1
+        }
+      },
+      {
+        "name":"filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CPod_mount",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CPod",
+          "ptr":1
+        }
+      },
+      {
+        "name":"filename",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CShadowsc",
+    "parent":"CEnemy",
     "size":53356
+  },
+  {
+    "kind":"funcdef",
+    "name":"CSoundDevice_getSfxPlaybackPos",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      },
+      {
+        "name":"slot",
+        "type":{
+          "kind":"class",
+          "name":"CSfxSlot",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"double",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CSoundDevice_lockSample",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      },
+      {
+        "name":"buffer_id",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"offset",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"size",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":1
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
     "name":"CSpotView",
     "rtti_file":"core/msnedit.cpp",
-    "size":1
+    "size":60
   },
   {
     "kind":"class",
@@ -86,6 +707,32 @@
     "parent":"CDemonActor",
     "rtti_file":"core/teleport.cpp",
     "size":360
+  },
+  {
+    "kind":"class",
+    "name":"CVector3d",
+    "size":24
+  },
+  {
+    "kind":"funcdef",
+    "name":"CWeapon_getDamage",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CWeapon",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"float",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -97,17 +744,85 @@
   {
     "kind":"class",
     "name":"CZombieIndian",
+    "parent":"CZombie",
     "size":53580
   },
   {
     "kind":"class",
     "name":"CZombiePriest",
+    "parent":"CEnemy",
     "size":53524
   },
   {
     "kind":"class",
     "name":"CZombieSpirit",
+    "parent":"CZombie",
     "size":53580
+  },
+  {
+    "kind":"enum",
+    "name":"EAmmoBoxType",
+    "size":4,
+    "values":[
+      {
+        "name":"AMMOBOX_TYPE_GENERIC",
+        "value":0
+      },
+      {
+        "name":"AMMOBOX_TYPE_HOLY",
+        "value":1
+      },
+      {
+        "name":"AMMOBOX_TYPE_WOOD",
+        "value":2
+      },
+      {
+        "name":"AMMOBOX_TYPE_SILVER",
+        "value":3
+      },
+      {
+        "name":"AMMOBOX_TYPE_GOLD",
+        "value":4
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"EGasMaskState",
+    "size":4,
+    "values":[
+      {
+        "name":"GAS_MASK_AWAY",
+        "value":0
+      },
+      {
+        "name":"GAS_MASK_IN_HAND",
+        "value":1
+      },
+      {
+        "name":"GAS_MASK_ON_FACE",
+        "value":2
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"EWeatherType",
+    "size":4,
+    "values":[
+      {
+        "name":"WEATHER_TYPE_NONE",
+        "value":0
+      },
+      {
+        "name":"WEATHER_TYPE_RAIN",
+        "value":1
+      },
+      {
+        "name":"WEATHER_TYPE_SNOW",
+        "value":2
+      }
+    ]
   },
   {
     "kind":"struct",
@@ -117,17 +832,18 @@
   {
     "kind":"struct",
     "name":"SLaserInfo",
-    "size":1
+    "size":84
   },
   {
     "kind":"struct",
     "name":"SMRGLHeaderPrimitive",
-    "size":1
+    "parent":"SMRGLHeaderBasic",
+    "size":24
   },
   {
     "kind":"struct",
     "name":"SMotionTransition",
-    "size":1
+    "size":24
   },
   {
     "kind":"struct",
@@ -136,12 +852,22 @@
   },
   {
     "kind":"struct",
+    "name":"SPod3Header",
+    "size":288
+  },
+  {
+    "kind":"struct",
     "name":"SSimFrame",
-    "size":1
+    "size":116
   },
   {
     "kind":"struct",
     "name":"SWaterVertex",
     "size":32
+  },
+  {
+    "kind":"union",
+    "name":"UStrListVTable",
+    "size":4
   }
 ]

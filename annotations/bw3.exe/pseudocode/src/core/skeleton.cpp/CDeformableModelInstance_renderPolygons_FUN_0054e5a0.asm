@@ -10,7 +10,7 @@
 ;
 ; XREF[2]:
 ;   core_charactr.cpp_FUN_0042f310 at 0042f459
-;   core_skeleton.cpp_FUN_0054e3a0 at 0054e3db
+;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0 at 0054e3db
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005d203c

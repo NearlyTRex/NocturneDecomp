@@ -4,13 +4,23 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
 
 // Structure: CShadowsc
-// Stub: size from Watcom RTTI, fields not yet recovered
+// ctor 005604a0, setup 00560510, process 00560630, sound players FUN_00560fe0..005610e0
 // Ghidra size: 0xc29c (49820 bytes)
 #pragma pack(push, 1)
 typedef struct CShadowsc {
-    char field_0[49820]; // 0x0
+    CEnemy base; // 0x0, derived; unchanged
+    int bone_indices[5]; // 0xc268, setup findBone; getTargetPoints; process bone matrix +0xfd8
+    uint sfx_handle; // 0xc27c, ctor zeroes; sound players isSfxPlaying then store; process CSound kill
+    char field_49792[4]; // 0xc280
+    float sound_cooldown; // 0xc284, ctor zeroes; sound players set 4/8/15 when they play
+    float difficulty_speed_scale; // 0xc288, setup 0.75 / 1.0; process FMUL
+    int render_mode; // 0xc28c, setup 0; process 3 on fade/death; processDamage tests == 0
+    int unknown_0xc290; // 0xc290, setup zeroes; no reader found
+    int fade_alpha; // 0xc294, process ROUND(fade), clamp 0xffdc; renderTransparent passes it
+    int is_opaque; // 0xc298, process zeroes; renderOpaque tests
 } CShadowsc;
 #pragma pack(pop)
 

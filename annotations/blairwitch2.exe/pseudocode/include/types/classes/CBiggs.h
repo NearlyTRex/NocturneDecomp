@@ -4,13 +4,20 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CMorph.h"
 
 // Structure: CBiggs
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x1190c (71948 bytes)
 #pragma pack(push, 1)
 typedef struct CBiggs {
-    char field_0[71948]; // 0x0
+    CEnemy base; // 0x0
+    CKeyFramedModelInstance model; // 0x10af8
+    int morphing; // 0x10c74
+    float morph_timer; // 0x10c78
+    CMorph morph; // 0x10c7c
+    char morph_event[100]; // 0x118a8
 } CBiggs;
 #pragma pack(pop)
 

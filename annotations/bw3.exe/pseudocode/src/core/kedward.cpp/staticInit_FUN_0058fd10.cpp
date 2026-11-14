@@ -1,12 +1,12 @@
 // Name: core_kedward.cpp_staticInit_FUN_0058fd10
 // Address: 0058fd10
 // Address Range: [[0058fd10, 0058fd33]]
-// Convention: unknown
-// Signature: void core_kedward_cpp_staticInit_FUN_0058fd10(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_kedward_cpp_staticInit_FUN_0058fd10(void)
 
 #include "nocturne.h"
 
-void core_kedward_cpp_staticInit_FUN_0058fd10(void)
+void __cdecl core_kedward_cpp_staticInit_FUN_0058fd10(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c3a0

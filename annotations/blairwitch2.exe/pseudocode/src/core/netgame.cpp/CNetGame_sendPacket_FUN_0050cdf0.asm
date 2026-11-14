@@ -9,10 +9,10 @@
 ; SNetPacketHeader * Stack[0xc]:4   packet
 ;
 ; XREF[4]:
+;   core_netgame.cpp_CNetGame_processPacket_FUN_0050c280 at 0050c435
+;   core_netgame.cpp_CNetGame_removeChatOut_FUN_0050db90 at 0050ded9
 ;   core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_0050f4b0 at 0050f4d7
 ;   core_netgame.cpp_CNetGame_send_FUN_0050cd90 at 0050cdb8
-;   core_netgame.cpp_FUN_0050c280 at 0050c435
-;   core_netgame.cpp_FUN_0050db90 at 0050ded9
 ;
 ; Called Functions:
 ;   support_trisock.cpp_CSocket_sendSocketData_FUN_005792e0

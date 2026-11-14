@@ -12,23 +12,23 @@ void __cdecl core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(CMot
 
 {
   if (desired_state_index < 0) {
-    *(uint *)&this_ptr->field_0x28 = 0xffffffff;
+    this_ptr->state_index = -1;
     return;
   }
-  if (**(int **)this_ptr <= desired_state_index) {
+  if (this_ptr->motion_list_ptr->state_count <= desired_state_index) {
     _DAT_01d046a0 = "..\\core\\motion.cpp";
     _DAT_01d046a4 = 0x2a4;
     core_main_c_FUN_004e4500("CMotionController::setDesiredState - invalid state index");
   }
-  if (desired_state_index != *(int *)&this_ptr->field_0x28) {
-    if (*(int *)&this_ptr->field_0x2c != 0) {
-      if (*(int *)&this_ptr->field_0x20 == 0) {
+  if (desired_state_index != this_ptr->state_index) {
+    if (this_ptr->in_transition != (SMotionTransition *)0x0) {
+      if (this_ptr->tween_direction == 0) {
         core_motion_cpp_CMotionController_reverseTransition_FUN_00503560(this_ptr);
       }
-      *(uint *)&this_ptr->field_0x2c = 0;
+      this_ptr->in_transition = (SMotionTransition *)0x0;
     }
-    *(uint *)&this_ptr->field_0x24 = 0;
-    *(int *)&this_ptr->field_0x28 = desired_state_index;
+    this_ptr->tween_set_new_state = 0;
+    this_ptr->state_index = desired_state_index;
   }
   if (force_immediate == 0) {
     return;

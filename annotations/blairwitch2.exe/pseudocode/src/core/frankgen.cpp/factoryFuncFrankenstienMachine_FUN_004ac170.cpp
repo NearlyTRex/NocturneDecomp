@@ -1,20 +1,20 @@
 // Name: core_frankgen.cpp_factoryFuncFrankenstienMachine_FUN_004ac170
 // Address: 004ac170
 // Address Range: [[004ac170, 004ac18b]]
-// Convention: unknown
-// Signature: void core_frankgen_cpp_factoryFuncFrankenstienMachine_FUN_004ac170(void)
+// Convention: __cdecl
+// Signature: CFrankenstienMachine * __cdecl core_frankgen_cpp_factoryFuncFrankenstienMachine_FUN_004ac170(void)
 
 #include "nocturne.h"
 
-void core_frankgen_cpp_factoryFuncFrankenstienMachine_FUN_004ac170(void)
+CFrankenstienMachine * __cdecl core_frankgen_cpp_factoryFuncFrankenstienMachine_FUN_004ac170(void)
 
 {
-  CFrankenstienMachine *this_ptr;
+  CFrankenstienMachine *pCVar1;
   
-  this_ptr = (CFrankenstienMachine *)FUN_005b8be2(0x5f8);
-  if (this_ptr == (CFrankenstienMachine *)0x0) {
-    return;
+  pCVar1 = (CFrankenstienMachine *)operator_new(0x5f8);
+  if (pCVar1 == (CFrankenstienMachine *)0x0) {
+    return (CFrankenstienMachine *)0x0;
   }
-  core_frankgen_cpp_CFrankenstienMachine_ctor_FUN_004ac1a0(this_ptr);
-  return;
+  pCVar1 = core_frankgen_cpp_CFrankenstienMachine_ctor_FUN_004ac1a0(pCVar1);
+  return pCVar1;
 }

@@ -9,6 +9,6 @@
 void __cdecl core_door_cpp_FUN_0045efc0(CDoor *this_ptr)
 
 {
-  core_event_cpp_CEventList_executeCommands_FUN_004894f0(0x01C38BC0,&this_ptr->field_0x444);
+  core_event_cpp_CEventList_executeCommands_FUN_004894f0(0x01C38BC0,this_ptr->open_condition);
   return;
 }

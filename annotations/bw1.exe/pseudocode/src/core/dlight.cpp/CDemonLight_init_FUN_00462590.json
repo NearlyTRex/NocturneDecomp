@@ -2,31 +2,31 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 154,
+    "complexity_score": 75,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 29,
-    "suspect_count": 11,
+    "pseudocode_lines": 30,
+    "suspect_count": 3,
     "suspect_types": [
-      "unnamed_field",
+      "pointer_cast",
       "warning_overlapping_globals",
       "wrong_global"
     ],
-    "total_lines": 100
+    "total_lines": 101
   },
   "cross_references": [
     {
       "addr": "00422f60",
       "from_addr": "00422f7e",
-      "name": "core_boxactor.cpp_FUN_00422f60",
+      "name": "core_boxactor.cpp_CLightActor_setup_FUN_00422f60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004cf5e0",
       "from_addr": "004cf82e",
-      "name": "core_game.cpp_FUN_004cf5e0",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004cf5e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -57,7 +57,7 @@
     {
       "addr": "00462670",
       "is_variadic": false,
-      "name": "core_dlight.cpp_FUN_00462670"
+      "name": "core_dlight.cpp_CDemonLight_free_FUN_00462670"
     },
     {
       "addr": "005030e0",
@@ -72,7 +72,7 @@
     {
       "addr": "005c08d0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c08d0"
+      "name": "crt_memory.c_malloc_FUN_005c08d0"
     }
   ],
   "globals": [
@@ -119,7 +119,7 @@
       {
         "call_addr": "004cf82e",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004cf5e0",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004cf5e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -141,7 +141,7 @@
       {
         "call_addr": "00422f7e",
         "call_type": "direct",
-        "caller": "core_boxactor.cpp_FUN_00422f60",
+        "caller": "core_boxactor.cpp_CLightActor_setup_FUN_00422f60",
         "estimated_params": 1,
         "instructions_analyzed": 4,
         "method": "push_count",
@@ -196,6 +196,32 @@
     },
     "pcode_op_count": 381
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00449d90",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0045c2a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004727c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9516
+    },
+    "nocturne.exe": {
+      "addr": "0044e1e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 20,
     "local_size": 16,
@@ -229,83 +255,19 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x1cc0",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x1cc0 * *(int *)&this_ptr->field_0x1cc4 * 2 + 0x210)",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x1cc4",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x1cc0 * *(int *)&this_ptr->field_0x1cc4 * 2 + 0x210)",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x2f98",
-      "severity": "mild",
-      "text": "*(void **)&this_ptr->field_0x2f98 = pvVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 22,
-      "match": "field_0x2f94",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2f94 = *(int *)&this_ptr->field_0x2f98 + 0x10U & 0xfffffff0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x2f98",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2f94 = *(int *)&this_ptr->field_0x2f98 + 0x10U & 0xfffffff0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x1cc0",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)&this_ptr->field_0x1cc0 * *(int *)&this_ptr->field_0x1cc4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x1cc4",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)&this_ptr->field_0x1cc0 * *(int *)&this_ptr->field_0x1cc4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x2fa8",
-      "severity": "mild",
-      "text": "fVar4 = (float10)*(float *)&this_ptr->field_0x2fa8 * (float10)_DAT_005d8f2c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x2fa0",
-      "severity": "mild",
-      "text": "*(void **)&this_ptr->field_0x2fa0 = pvVar1;",
-      "type": "unnamed_field"
+      "match": "(ushort *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "this_ptr->shadow_depth_buffer = (ushort *)((int)this_ptr->shadow_buffer_raw + 0x10U & 0xfffffff0);",
+      "type": "pointer_cast"
     },
     {
       "description": "Scalar global g_GlobalFilters accessed via (&g_GlobalFilters)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_PlayerFilters (at 0x00611348, +32 bytes).",
-      "line": 31,
+      "line": 32,
       "match": "g_GlobalFilters",
       "severity": "moderate",
-      "text": "(this_ptr,(&g_GlobalFilters)[(int)ROUND(fVar4)],0,0,iVar2);",
+      "text": "(this_ptr,(&g_GlobalFilters)[(int)ROUND(fVar5)],0,0,iVar3);",
       "type": "wrong_global"
     }
   ]

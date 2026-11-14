@@ -34,13 +34,13 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
-;   core_set.cpp_FUN_0052d0e0
+;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0
 ;   core_setdir.cpp_CZThumb_free_FUN_005386a0
 ;   core_setdir.cpp_CZThumb_popRenderingContext_FUN_00538a30
 ;   core_setdir.cpp_CZThumb_pushRenderingContext_FUN_005389b0
 ;   core_setdir.cpp_CZThumb_setupZBufferScanlines_FUN_00538970
+;   crt_memory.c_malloc_FUN_005b8580
 ;   crt_stdio.c_fread_FUN_005b87c0
-;   crt_unknown.c_FUN_005b8580
 ;   engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0046b280
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960
 ;   engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046b940
@@ -89,8 +89,8 @@ section .text
     IMUL EAX,EDX                        ; 005384c4
     SHL EAX,0x2                         ; 005384c7
     PUSH EAX                            ; 005384ca
-    CALL crt_unknown.c_FUN_005b8580     ; 005384cb
-        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005b8580(ulong size)
+    CALL crt_memory.c_malloc_FUN_005b8580 ; 005384cb
+        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005b8580(ulong size)
     ADD ESP,0x4                         ; 005384d0
     MOV dword ptr [ESI + 0x24],EAX      ; 005384d3
     TEST EAX,EAX                        ; 005384d6
@@ -170,8 +170,8 @@ section .text
     MOV EBP,dword ptr [0x0061b5a8]      ; 005385ad | g_CDemonSetPtr
     PUSH 0x461c3f9a                     ; 005385b3
     PUSH EBP                            ; 005385b8 | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_0052d0e0      ; 005385b9
-        ;   XREF to: 0052d0e0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0052d0e0(CDemonSet * this_ptr, float frustum_param, int render_mode)
+    CALL core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0 ; 005385b9
+        ;   XREF to: 0052d0e0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0(CDemonSet * this_ptr, float frustum_param, int render_mode)
     ADD ESP,0xc                         ; 005385be
     PUSH ESI                            ; 005385c1
     CALL core_setdir.cpp_CZThumb_popRenderingContext_FUN_00538a30 ; 005385c2
@@ -237,7 +237,7 @@ section .text
     MOV ECX,dword ptr [ESI + 0x24]      ; 0053865c
     PUSH ECX                            ; 0053865f
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 00538660
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00538665
     POP EBP                             ; 00538668
     POP EDI                             ; 00538669

@@ -13,11 +13,11 @@ CTrigger * __cdecl core_trigger_cpp_CTrigger_dtor_FUN_0056f410(CTrigger *this_pt
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CTriggerTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CTriggerTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  pCVar1 = (CTrigger *)core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)this_ptr,1);
+  pCVar1 = (CTrigger *)core_actor_cpp_CDemonActor_dtor_FUN_00408770(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

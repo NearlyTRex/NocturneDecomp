@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[3]:
-;   core_carved.cpp_FUN_00428ae0 at 0042996b
+;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 0042996b
 ;   core_carved.cpp_FUN_0042a930 at 0042ab0e
 ;   core_carved.cpp_FUN_0042b330 at 0042b33b
 ;

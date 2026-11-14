@@ -12,7 +12,7 @@
 ; SMRGLTextureBasic * Stack[0x18]:4   texture_ptr
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_0049e850 at 0049e919
+;   core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_0049e850 at 0049e919
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01ca15a4

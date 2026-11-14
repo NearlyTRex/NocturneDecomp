@@ -13,7 +13,7 @@ CBaron * __cdecl core_baron_cpp_CBaron_dtor_FUN_00410780(CBaron *this_ptr,uint f
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CBaronTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CBaronTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

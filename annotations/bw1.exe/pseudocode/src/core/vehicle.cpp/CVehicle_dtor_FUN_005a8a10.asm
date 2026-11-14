@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CVehicle * core_vehicle_cpp_CVehicle_dtor_FUN_005a8a10(CVehicle *this_ptr,uint flags)
+; CVehicle * __cdecl core_vehicle_cpp_CVehicle_dtor_FUN_005a8a10(CVehicle *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CVehicle *       Stack[0x4]:4   this_ptr
@@ -51,7 +51,7 @@ section .text
         ;   Label: LAB_005a8a4d
     PUSH EBX                            ; 005a8a52
     CALL crt_memory.c___vec_delete_FUN_005c030f ; 005a8a53
-        ;   XREF to: 005c030f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005c030f()
+        ;   XREF to: 005c030f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005c030f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 005a8a58
     PUSH EAX                            ; 005a8a5b
     CALL crt_unknown.c_FUN_005c0336     ; 005a8a5c

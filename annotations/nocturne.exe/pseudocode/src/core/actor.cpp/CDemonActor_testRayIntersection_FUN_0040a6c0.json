@@ -1,0 +1,136 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 52,
+    "complexity_score": 15,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 67
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0040a6c0",
+    "address_range": [
+      [
+        "0040a6c0",
+        "0040a73a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_CDemonActor_testRayIntersection_FUN_0040a6c0",
+    "signature": "float __cdecl core_actor_cpp_CDemonActor_testRayIntersection_FUN_0040a6c0(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,int ray_type,CBoundingBox3D *clip_bounds)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040a740",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740"
+    },
+    {
+      "addr": "00511990",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.276595744680851,
+    "instruction_count": 47,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 2,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 57,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 26,
+      "INT_AND": 15,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 14,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 7,
+      "INT_SUB": 17,
+      "LOAD": 17,
+      "POPCOUNT": 7,
+      "RETURN": 2,
+      "STORE": 20
+    },
+    "pcode_op_count": 201
+  },
+  "siblings": {
+    "nocedit.exe": {
+      "addr": "004093f0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "ray_origin",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "ray_direction",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "out_hit",
+        "offset": 16,
+        "size": 4,
+        "type": "SActorRayHit *"
+      },
+      {
+        "is_param": true,
+        "name": "ray_type",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "clip_bounds",
+        "offset": 24,
+        "size": 4,
+        "type": "CBoundingBox3D *"
+      }
+    ]
+  },
+  "suspects": []
+}

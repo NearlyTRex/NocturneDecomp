@@ -1,0 +1,215 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 88,
+    "complexity_score": 46,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 31,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 119
+  },
+  "cross_references": [
+    {
+      "addr": "004ac6b0",
+      "from_addr": "004ac6c5",
+      "name": "core_fldnotes.cpp_CFieldNotes_process_FUN_004ac6b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004aa0b0",
+    "address_range": [
+      [
+        "004aa0b0",
+        "004aa191"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fldnotes.cpp_SNotesMap_revealAtHero_FUN_004aa0b0",
+    "signature": "void __cdecl core_fldnotes_cpp_SNotesMap_revealAtHero_FUN_004aa0b0(SNotesMap *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004aa200",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_SNotesMap_revealCircle_FUN_004aa200"
+    },
+    {
+      "addr": "004aa350",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_SNotesMap_worldToMap_FUN_004aa350"
+    },
+    {
+      "addr": "005a3600",
+      "is_variadic": false,
+      "name": "crt_math.c_floor_FUN_005a3600"
+    },
+    {
+      "addr": "005a3120",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005a3120"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c114f",
+      "name": "DAT_005c114f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c1157",
+      "name": "DAT_005c1157",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d5ba14",
+      "name": "DAT_01d5ba14",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004ac6c5",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_CFieldNotes_process_FUN_004ac6b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.626666666666667,
+    "instruction_count": 75,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 20,
+      "CALL": 4,
+      "CBRANCH": 5,
+      "COPY": 93,
+      "FLOAT2FLOAT": 5,
+      "FLOAT_ADD": 1,
+      "FLOAT_MULT": 1,
+      "INT_ADD": 36,
+      "INT_AND": 82,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 41,
+      "INT_LEFT": 6,
+      "INT_LESS": 5,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 13,
+      "INT_OR": 20,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 7,
+      "INT_SDIV": 2,
+      "INT_SEXT": 8,
+      "INT_SLESS": 22,
+      "INT_SREM": 2,
+      "INT_SRIGHT": 4,
+      "INT_SUB": 25,
+      "INT_XOR": 2,
+      "INT_ZEXT": 4,
+      "LOAD": 23,
+      "POPCOUNT": 18,
+      "RETURN": 2,
+      "ROUND": 1,
+      "STORE": 21,
+      "SUBPIECE": 8,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 497
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a3a60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004bc450",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "SNotesMap *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

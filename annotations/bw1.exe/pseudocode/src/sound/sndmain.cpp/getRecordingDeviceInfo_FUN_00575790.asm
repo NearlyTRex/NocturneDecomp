@@ -1,12 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_sndmain_cpp_getRecordingDeviceInfo_FUN_00575790(int param_1,undefined4 *param_2)
+; void __cdecl sound_sndmain_cpp_getRecordingDeviceInfo_FUN_00575790(int index,SRecordingDeviceInfo *device_info)
 ;
+; Parameters:
+; int              Stack[0x4]:4   index
+; SRecordingDeviceInfo * Stack[0x8]:4   device_info
 ;
 ; XREF[2]:
-;   sound_sndmain.cpp_FUN_005760b0 at 00576144
 ;   sound_sndmain.cpp_findBestRecordingDevice_FUN_005757f0 at 00575813
+;   sound_sndmain.cpp_readIni_FUN_005760b0 at 00576144
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005f42c9

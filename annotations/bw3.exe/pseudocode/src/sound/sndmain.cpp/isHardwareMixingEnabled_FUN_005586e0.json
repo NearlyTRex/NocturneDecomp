@@ -1,0 +1,119 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 3,
+    "complexity_score": 20,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 5,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 8
+  },
+  "cross_references": [
+    {
+      "addr": "004e94f0",
+      "from_addr": "004e9b4a",
+      "name": "core_menu.cpp_FUN_004e94f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055d470",
+      "from_addr": "0055d598",
+      "name": "sound_snddx.cpp_getDirectSoundDevice_FUN_0055d470",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00559220",
+      "from_addr": "0055931a",
+      "name": "sound_sndmain.cpp_readIni_FUN_00559220",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00559520",
+      "from_addr": "00559608",
+      "name": "sound_sndmain.cpp_writeIni_FUN_00559520",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005586e0",
+    "address_range": [
+      [
+        "005586e0",
+        "005586e5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_isHardwareMixingEnabled_FUN_005586e0",
+    "signature": "int __cdecl sound_sndmain_cpp_isHardwareMixingEnabled_FUN_005586e0(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02cf328c",
+      "name": "DAT_02cf328c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.0,
+    "instruction_count": 2,
+    "opcode_distribution": {
+      "COPY": 1,
+      "INT_ADD": 1,
+      "LOAD": 1,
+      "RETURN": 1
+    },
+    "pcode_op_count": 4
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00552b40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00575570",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005ab590",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "005284e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

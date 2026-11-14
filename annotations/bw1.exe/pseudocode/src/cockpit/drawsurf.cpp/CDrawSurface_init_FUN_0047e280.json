@@ -22,9 +22,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047e20e",
+      "addr": "0047e210",
       "from_addr": "0047e22a",
-      "name": "unkafter_dracbrid.cpp_FUN_0047e20e",
+      "name": "core_dracbrid.cpp_FUN_0047e210",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -72,7 +72,7 @@
       {
         "call_addr": "0047e22a",
         "call_type": "direct",
-        "caller": "unkafter_dracbrid.cpp_FUN_0047e20e",
+        "caller": "core_dracbrid.cpp_FUN_0047e210",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -113,6 +113,32 @@
       "STORE": 26
     },
     "pcode_op_count": 423
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00465d70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00467940",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00486ee0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0045b4c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 28,
@@ -171,7 +197,7 @@
       "line": 39,
       "match": "DAT_0061b498",
       "severity": "mild",
-      "text": "if (DAT_0061b498 <= *(int *)(this_ptr + 0x18)) {",
+      "text": "if (DAT_0061b498 <= this_ptr->clip_right) {",
       "type": "undefined_data"
     },
     {
@@ -179,7 +205,7 @@
       "line": 40,
       "match": "DAT_0061b498",
       "severity": "mild",
-      "text": "*(int *)(this_ptr + 0x18) = DAT_0061b498 + -1;",
+      "text": "this_ptr->clip_right = DAT_0061b498 + -1;",
       "type": "undefined_data"
     },
     {
@@ -187,7 +213,7 @@
       "line": 42,
       "match": "DAT_0061b49c",
       "severity": "mild",
-      "text": "if (*(int *)(this_ptr + 0x1c) < DAT_0061b49c) {",
+      "text": "if (this_ptr->clip_bottom < DAT_0061b49c) {",
       "type": "undefined_data"
     },
     {
@@ -195,7 +221,7 @@
       "line": 45,
       "match": "DAT_0061b49c",
       "severity": "mild",
-      "text": "*(int *)(this_ptr + 0x1c) = DAT_0061b49c + -1;",
+      "text": "this_ptr->clip_bottom = DAT_0061b49c + -1;",
       "type": "undefined_data"
     }
   ]

@@ -4,12 +4,18 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/enums/EMotionTransitionCmd.h"
 
 // Structure: SMotionTransition
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x18 (24 bytes)
 #pragma pack(push, 1)
 typedef struct SMotionTransition {
+    int desired_state; // 0x0
+    EMotionTransitionCmd cmd; // 0x4
+    int to_motion_number; // 0x8
+    float to_frame_number; // 0xc
+    float tween_time; // 0x10
+    int set_new_state_as_desired; // 0x14
 } SMotionTransition;
 #pragma pack(pop)
 

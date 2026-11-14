@@ -1,0 +1,258 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 77,
+    "complexity_score": 129,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 39,
+    "suspect_count": 7,
+    "suspect_types": [
+      "bit_int_float_compare",
+      "extra_output",
+      "unrolled_memset",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 116
+  },
+  "cross_references": [
+    {
+      "addr": "005695e0",
+      "from_addr": "0056961a",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_005695e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005b78a0",
+    "address_range": [
+      [
+        "005b78a0",
+        "005b793f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_xform.cpp_quaternionToAxisAngle_FUN_005b78a0",
+    "signature": "void __cdecl core_xform_cpp_quaternionToAxisAngle_FUN_005b78a0(CQuaternion4f *quat_in,float *angle_out,CVector3f *axis_out)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c1d04",
+      "is_variadic": false,
+      "name": "crt_math.c_acos_FUN_005c1d04"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fa16c",
+      "name": "DAT_005fa16c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fa170",
+      "name": "DAT_005fa170",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0056961a",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_005695e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.2063492063492065,
+    "instruction_count": 63,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 3,
+      "BRANCH": 2,
+      "CALL": 1,
+      "CBRANCH": 5,
+      "COPY": 203,
+      "FLOAT2FLOAT": 15,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 5,
+      "FLOAT_NAN": 4,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 3,
+      "INT_ADD": 18,
+      "INT_AND": 23,
+      "INT_EQUAL": 10,
+      "INT_LEFT": 8,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 11,
+      "INT_OR": 10,
+      "INT_SBORROW": 2,
+      "INT_SLESS": 5,
+      "INT_SUB": 5,
+      "INT_ZEXT": 8,
+      "LOAD": 20,
+      "POPCOUNT": 5,
+      "RETURN": 2,
+      "STORE": 13
+    },
+    "pcode_op_count": 391
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00593d50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00585a80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005f7730",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8244
+    },
+    "nocturne.exe": {
+      "addr": "0055d220",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8244
+    }
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "quat_in",
+        "offset": 4,
+        "size": 4,
+        "type": "CQuaternion4f *"
+      },
+      {
+        "is_param": true,
+        "name": "angle_out",
+        "offset": 8,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "axis_out",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005b78a7",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "CQuaternion4f *extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "CVector3f *extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 18,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "quat_in = extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 19,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "axis_out = extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 38,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "axis_out->z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",
+      "line": 14,
+      "match": "(int)quat_in->w < 0x3f800000",
+      "severity": "moderate",
+      "text": "if ((int)quat_in->w < 0x3f800000) {",
+      "type": "bit_int_float_compare"
+    }
+  ]
+}

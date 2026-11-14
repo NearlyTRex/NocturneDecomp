@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl core_mmx_c_getCPUInfo_FUN_0051c54f(uint *param_1)
+; int __cdecl core_mmx_c_getCPUInfo_FUN_0051c54f(SCPUInfo *cpu_info)
 ;
+; Parameters:
+; SCPUInfo *       Stack[0x4]:4   cpu_info
 ;
 ; Referenced Globals:
 ;   undefined1 DAT_0061f7b8

@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 57,
+    "complexity_score": 11,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 12,
-    "suspect_count": 4,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 24
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 23
   },
   "cross_references": [],
   "function": {
@@ -23,15 +21,15 @@
         "0057d51f"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "support_trstream.cpp_CInStreamMemory_ctor_FUN_0057d4f0",
-    "signature": "CInStreamMemory * support_trstream_cpp_CInStreamMemory_ctor_FUN_0057d4f0(CInStreamMemory *this_ptr)"
+    "signature": "CInStreamMemory * __cdecl support_trstream_cpp_CInStreamMemory_ctor_FUN_0057d4f0(CInStreamMemory *this_ptr)"
   },
   "function_calls": [
     {
       "addr": "0057b9c0",
       "is_variadic": false,
-      "name": "unkaddr_0057b9a0.cpp_FUN_0057b9c0"
+      "name": "support_trstream.cpp_CInStream_ctor_FUN_0057b9c0"
     }
   ],
   "globals": [],
@@ -64,6 +62,20 @@
     },
     "pcode_op_count": 35
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005a1130",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00574120",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -80,40 +92,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x8 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0xc = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x10 = 0;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

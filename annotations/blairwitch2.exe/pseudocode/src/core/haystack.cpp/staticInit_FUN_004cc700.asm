@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_haystack_cpp_staticInit_FUN_004cc700(void)
+; void __cdecl core_haystack_cpp_staticInit_FUN_004cc700(void)
 ;
 ;
 ; Called Functions:

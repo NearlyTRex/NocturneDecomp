@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 91,
-    "complexity_score": 175,
+    "complexity_score": 69,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 40,
-    "suspect_count": 12,
+    "pseudocode_lines": 39,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 131
+    "total_lines": 130
   },
   "cross_references": [
     {
@@ -141,6 +140,32 @@
     },
     "pcode_op_count": 395
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004177e0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00416890",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0041af90",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00417c90",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -174,88 +199,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x18c",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x18c) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x198",
-      "severity": "mild",
-      "text": "pcVar4 = &this_ptr->field_0x198;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x18c",
-      "severity": "mild",
-      "text": "} while (iVar3 < *(int *)&this_ptr->field_0x18c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x18c",
-      "severity": "mild",
-      "text": "if (9 < *(int *)&this_ptr->field_0x18c) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x190",
-      "severity": "mild",
-      "text": "(&this_ptr->field_0x190 + *(int *)&this_ptr->field_0x18c * 0x18,0,0x18);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x18c",
-      "severity": "mild",
-      "text": "(&this_ptr->field_0x190 + *(int *)&this_ptr->field_0x18c * 0x18,0,0x18);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x198",
-      "severity": "mild",
-      "text": "pcVar4 = &this_ptr->field_0x198 + *(int *)&this_ptr->field_0x18c * 0x18;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x18c",
-      "severity": "mild",
-      "text": "pcVar4 = &this_ptr->field_0x198 + *(int *)&this_ptr->field_0x18c * 0x18;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x18c",
-      "severity": "mild",
-      "text": "iVar3 = *(int *)&this_ptr->field_0x18c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x18c",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x18c = iVar3 + 1;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 32,
+      "line": 31,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

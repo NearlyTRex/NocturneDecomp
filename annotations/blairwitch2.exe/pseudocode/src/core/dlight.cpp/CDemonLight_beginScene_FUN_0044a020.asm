@@ -8,9 +8,9 @@
 ; int              Stack[0x8]:4   skip_clear_buffers
 ;
 ; XREF[5]:
+;   core_set.cpp_CDemonSet_initScene_FUN_0052d980 at 0052dae0
+;   core_set.cpp_CDemonSet_renderStaticLights_FUN_0052ef80 at 0052f082
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0 at 0052e6e4
-;   core_set.cpp_FUN_0052d980 at 0052dae0
-;   core_set.cpp_FUN_0052ef80 at 0052f082
 ;   core_set.cpp_FUN_0052fad0 at 0052fc35
 ;   core_set.cpp_FUN_0052fea0 at 0052fffa
 ;
@@ -33,11 +33,11 @@
 ;   core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_0043c5d0
 ;   core_main.c_FUN_004e4500
 ;   crt_watcom.c__memset_FUN_00492670
+;   engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046b710
+;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0
+;   engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0
 ;   engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046b940
 ;   engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046b060
-;   engine_drender.cpp_FUN_0046afb0
-;   engine_matrix.c_FUN_0046b4b0
-;   engine_matrix.c_FUN_0046b710
 ;
 ; *****************************************************************************
 
@@ -70,8 +70,8 @@ section .text
     PUSH 0x0                            ; 0044a05f
     MOV EBP,dword ptr [0x0060b280]      ; 0044a061 | DAT_0060b280
     PUSH EBP                            ; 0044a067 | DAT_01ba5c50
-    CALL engine_matrix.c_FUN_0046b710   ; 0044a068
-        ;   XREF to: 0046b710 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_0046b710()
+    CALL engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046b710 ; 0044a068
+        ;   XREF to: 0046b710 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0046b710(CDemonRenderer * this_ptr, int x, int y, int width, ...)
     MOV EAX,dword ptr [EBX + 0x1cc0]    ; 0044a06d
     DEC EAX                             ; 0044a073
     MOV dword ptr [EBX + 0x11dc],EAX    ; 0044a074
@@ -87,14 +87,14 @@ section .text
     MOV dword ptr [EBX + 0x1d0],0x0     ; 0044a0a7
     PUSH EAX                            ; 0044a0b1 | DAT_01ba5c50
     MOV dword ptr [EBX + 0x168],EDI     ; 0044a0b2
-    CALL engine_drender.cpp_FUN_0046afb0 ; 0044a0b8
-        ;   XREF to: 0046afb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_FUN_0046afb0(CDemonRenderer * this_ptr, CVector3f * point_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0 ; 0044a0b8
+        ;   XREF to: 0046afb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0(CDemonRenderer * this_ptr, CVector3f * point_ptr)
     ADD ESP,0x8                         ; 0044a0bd
     MOV EDX,dword ptr [0x0060b280]      ; 0044a0c0 | DAT_0060b280
     PUSH dword ptr [EBX + 0x38]         ; 0044a0c6
     PUSH EDX                            ; 0044a0c9 | DAT_01ba5c50
-    CALL engine_matrix.c_FUN_0046b4b0   ; 0044a0ca
-        ;   XREF to: 0046b4b0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_0046b4b0()
+    CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0 ; 0044a0ca
+        ;   XREF to: 0046b4b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0(CDemonRenderer * this_ptr, float field_of_view)
     ADD ESP,0x8                         ; 0044a0cf
     LEA EAX,[EBX + 0x10]                ; 0044a0d2
     PUSH EAX                            ; 0044a0d5
@@ -186,7 +186,7 @@ section .text
     MOV EDX,0xff                        ; 0044a1e9
     MOV ECX,dword ptr [EBX + 0x2f94]    ; 0044a1ee
     CALL crt_watcom.c__memset_FUN_00492670 ; 0044a1f4
-        ;   XREF to: 00492670 (UNCONDITIONAL_CALL)  ; undefined crt_watcom.c__memset_FUN_00492670()
+        ;   XREF to: 00492670 (UNCONDITIONAL_CALL)  ; void crt_watcom.c__memset_FUN_00492670(void * dest, int fill_byte, uint size)
     JMP 0x0044a132                      ; 0044a1f9
         ;   XREF to: 0044a132 (UNCONDITIONAL_JUMP)  ; LAB_0044a132
     MOV dword ptr [0x01ba5714],ESI      ; 0044a1fe | DAT_01ba5714

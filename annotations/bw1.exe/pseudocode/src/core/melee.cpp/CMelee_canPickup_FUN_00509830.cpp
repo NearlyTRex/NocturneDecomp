@@ -11,8 +11,8 @@ int __cdecl core_melee_cpp_CMelee_canPickup_FUN_00509830(CMelee *this_ptr,CDemon
 {
   int iVar1;
   
-  if (*(int *)&this_ptr->field_0x588 != 0) {
-    iVar1 = core_actor_cpp_FUN_0040c550(picker,"CHero");
+  if (this_ptr->can_go_in_inventory != 0) {
+    iVar1 = core_actor_cpp_isOfClass_FUN_0040c550(picker,"CHero");
     if (iVar1 != 0) {
       return 2;
     }

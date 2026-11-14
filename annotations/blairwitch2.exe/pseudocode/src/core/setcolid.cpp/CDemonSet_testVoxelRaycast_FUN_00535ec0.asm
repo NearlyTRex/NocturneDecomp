@@ -10,7 +10,7 @@
 ;
 ; XREF[2]:
 ;   core_enemy.cpp_FUN_00488320 at 0048842a
-;   core_mimic.cpp_FUN_004f0e10 at 004f11bc
+;   core_mimic.cpp_CMimic_processAnimation_FUN_004f0e10 at 004f11bc
 ;
 ; Referenced Globals:
 ;   CDemonRaytrace g_CDemonRaytraceInstance

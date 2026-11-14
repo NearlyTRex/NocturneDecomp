@@ -21,7 +21,7 @@
     {
       "addr": "00434dd0",
       "from_addr": "00434e0d",
-      "name": "support_codec.cpp_FUN_00434dd0",
+      "name": "support_codec.cpp_CCheesyCipher_process_FUN_00434dd0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -35,7 +35,7 @@
     ],
     "convention": "unknown",
     "name": "support_codec.cpp_FUN_00434d60",
-    "signature": "uint support_codec_cpp_FUN_00434d60(int param_1,byte param_2)"
+    "signature": "uint support_codec_cpp_FUN_00434d60(CCheesyCipher *param_1,byte param_2)"
   },
   "function_calls": [
     {
@@ -46,7 +46,7 @@
     {
       "addr": "00434e50",
       "is_variadic": false,
-      "name": "support_codec.cpp_FUN_00434e50"
+      "name": "support_codec.cpp_CCheesyCipher_advanceKey_FUN_00434e50"
     }
   ],
   "globals": [
@@ -93,7 +93,7 @@
       {
         "call_addr": "00434e0d",
         "call_type": "direct",
-        "caller": "support_codec.cpp_FUN_00434dd0",
+        "caller": "support_codec.cpp_CCheesyCipher_process_FUN_00434dd0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -160,7 +160,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint support_codec_cpp_FUN_00434d60(int param_1,byte param_2)",
+      "text": "uint support_codec_cpp_FUN_00434d60(CCheesyCipher *param_1,byte param_2)",
       "type": "unnamed_param"
     },
     {
@@ -168,7 +168,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint support_codec_cpp_FUN_00434d60(int param_1,byte param_2)",
+      "text": "uint support_codec_cpp_FUN_00434d60(CCheesyCipher *param_1,byte param_2)",
       "type": "unnamed_param"
     },
     {
@@ -176,7 +176,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "support_codec_cpp_FUN_00434e50(param_1);",
+      "text": "support_codec_cpp_CCheesyCipher_advanceKey_FUN_00434e50(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -184,7 +184,7 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 4) == 0) {",
+      "text": "if (param_1->mode == 0) {",
       "type": "unnamed_param"
     },
     {
@@ -192,7 +192,7 @@
       "line": 11,
       "match": "param_2",
       "severity": "mild",
-      "text": "return (uint)(byte)(&DAT_00609b88)[(uint)param_2 + *(int *)(param_1 + 8) & 0xff];",
+      "text": "return (uint)(byte)(&DAT_00609b88)[(uint)param_2 + param_1->key_state & 0xff];",
       "type": "unnamed_param"
     },
     {
@@ -200,7 +200,7 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "return (uint)(byte)(&DAT_00609b88)[(uint)param_2 + *(int *)(param_1 + 8) & 0xff];",
+      "text": "return (uint)(byte)(&DAT_00609b88)[(uint)param_2 + param_1->key_state & 0xff];",
       "type": "unnamed_param"
     },
     {
@@ -208,7 +208,7 @@
       "line": 11,
       "match": "DAT_00609b88",
       "severity": "mild",
-      "text": "return (uint)(byte)(&DAT_00609b88)[(uint)param_2 + *(int *)(param_1 + 8) & 0xff];",
+      "text": "return (uint)(byte)(&DAT_00609b88)[(uint)param_2 + param_1->key_state & 0xff];",
       "type": "undefined_data"
     },
     {
@@ -216,7 +216,7 @@
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 4) == 1) {",
+      "text": "if (param_1->mode == 1) {",
       "type": "unnamed_param"
     },
     {
@@ -224,7 +224,7 @@
       "line": 14,
       "match": "param_2",
       "severity": "mild",
-      "text": "return (uint)(byte)((&DAT_00609c88)[param_2] - *(char *)(param_1 + 8));",
+      "text": "return (uint)(byte)((&DAT_00609c88)[param_2] - (char)param_1->key_state);",
       "type": "unnamed_param"
     },
     {
@@ -232,7 +232,7 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "return (uint)(byte)((&DAT_00609c88)[param_2] - *(char *)(param_1 + 8));",
+      "text": "return (uint)(byte)((&DAT_00609c88)[param_2] - (char)param_1->key_state);",
       "type": "unnamed_param"
     },
     {
@@ -240,7 +240,7 @@
       "line": 14,
       "match": "DAT_00609c88",
       "severity": "mild",
-      "text": "return (uint)(byte)((&DAT_00609c88)[param_2] - *(char *)(param_1 + 8));",
+      "text": "return (uint)(byte)((&DAT_00609c88)[param_2] - (char)param_1->key_state);",
       "type": "undefined_data"
     },
     {

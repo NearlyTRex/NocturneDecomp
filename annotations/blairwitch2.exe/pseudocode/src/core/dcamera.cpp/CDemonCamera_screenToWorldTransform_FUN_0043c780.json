@@ -1,0 +1,359 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 91,
+    "complexity_score": 32,
+    "cross_reference_count": 6,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 32,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 123
+  },
+  "cross_references": [
+    {
+      "addr": "0043d870",
+      "from_addr": "0043d95f",
+      "name": "core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0043d870",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00441ea0",
+      "from_addr": "00441edb",
+      "name": "core_dcamera.cpp_FUN_00441ea0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00443610",
+      "from_addr": "004437f5",
+      "name": "core_dcamera.cpp_FUN_00443610",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b5190",
+      "from_addr": "004b539e",
+      "name": "core_game.cpp_FUN_004b5190",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004be8a0",
+      "from_addr": "004bedcd",
+      "name": "core_game.cpp_FUN_004be8a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00558d50",
+      "from_addr": "00559222",
+      "name": "core_sound.cpp_updateListeners_FUN_00558d50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0043c780",
+    "address_range": [
+      [
+        "0043c780",
+        "0043c882"
+      ]
+    ],
+    "convention": "__stack2_esi",
+    "name": "core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780",
+    "signature": "CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0043c780(CDemonCamera *this_ptr,CVector3i *input_ptr,CVector3i *output_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 9,
+    "call_sites": [
+      {
+        "call_addr": "004b539e",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b5190",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0043d95f",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0043d870",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00559222",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_updateListeners_FUN_00558d50",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004bedcd",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004be8a0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004bef28",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004be8a0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004bf773",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004be8a0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004bf99e",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004be8a0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00441edb",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_FUN_00441ea0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004437f5",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_FUN_00443610",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 8,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.944444444444445,
+    "instruction_count": 90,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 15,
+      "BOOL_OR": 6,
+      "BOOL_XOR": 6,
+      "COPY": 77,
+      "INT_ADD": 69,
+      "INT_AND": 80,
+      "INT_CARRY": 22,
+      "INT_EQUAL": 47,
+      "INT_LEFT": 5,
+      "INT_LESS": 3,
+      "INT_MULT": 17,
+      "INT_NOTEQUAL": 20,
+      "INT_OR": 20,
+      "INT_RIGHT": 6,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 22,
+      "INT_SDIV": 2,
+      "INT_SEXT": 35,
+      "INT_SLESS": 28,
+      "INT_SREM": 2,
+      "INT_SUB": 18,
+      "INT_XOR": 3,
+      "INT_ZEXT": 16,
+      "LOAD": 41,
+      "POPCOUNT": 22,
+      "RETURN": 1,
+      "STORE": 13,
+      "SUBPIECE": 26
+    },
+    "pcode_op_count": 625
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0044de40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00449f80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0044d370",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004411b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "input_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3i *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 3,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0043c7cf",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0043c7ff",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0043c833",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
+}

@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 15,
-    "complexity_score": 131,
-    "cross_reference_count": 2,
+    "complexity_score": 16,
+    "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 16,
-    "suspect_count": 11,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 31
   },
   "cross_references": [
@@ -22,9 +20,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005149bc",
+      "addr": "005149c0",
       "from_addr": "005149e9",
-      "name": "engine_pod.cpp_FUN_005149bc",
+      "name": "engine_pod.cpp_FUN_005149c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00514bb0",
+      "from_addr": "00514bba",
+      "name": "engine_pod.cpp_FUN_00514bb0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -43,7 +47,7 @@
   "function_calls": [],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 3,
     "call_sites": [
       {
         "call_addr": "00514405",
@@ -57,9 +61,20 @@
         "stack_params": 1
       },
       {
+        "call_addr": "00514bba",
+        "call_type": "direct",
+        "caller": "engine_pod.cpp_FUN_00514bb0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
         "call_addr": "005149e9",
         "call_type": "direct",
-        "caller": "engine_pod.cpp_FUN_005149bc",
+        "caller": "engine_pod.cpp_FUN_005149c0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -86,6 +101,32 @@
     },
     "pcode_op_count": 41
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00519e50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0053b1a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0054f5a0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004f7a80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7273
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -102,96 +143,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x414",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x414 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "this_ptr->field_0x4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x108",
-      "severity": "mild",
-      "text": "this_ptr->field_0x108 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x208",
-      "severity": "mild",
-      "text": "this_ptr->field_0x208 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x308",
-      "severity": "mild",
-      "text": "this_ptr->field_0x308 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x41c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x41c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x424",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x424 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x418",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x418 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x408",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x408 = 1000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x40c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x40c = 1000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x410",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x410 = 0;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

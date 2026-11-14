@@ -9,8 +9,8 @@
 ; XREF[4]:
 ;   core_game.cpp_CGame_processHotkeys_FUN_004d1a80 at 004d1bd1
 ;   core_menu.cpp_FUN_0050ba70 at 0050c322
-;   core_menu.cpp_FUN_0050cc90 at 0050cfc1
-;   sound_sndmain.cpp_FUN_005760b0 at 005762c9
+;   core_menu.cpp_showMainGameMenu_FUN_0050cc90 at 0050cfc1
+;   sound_sndmain.cpp_readIni_FUN_005760b0 at 005762c9
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02c8065c

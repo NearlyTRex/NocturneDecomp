@@ -303,7 +303,7 @@ CLightActor * __cdecl core_boxactor_cpp_CLightActor_ctor_FUN_0041f310(CLightActo
 void __cdecl core_boxactor_cpp_CLightActor_setup_FUN_0041f3a0(CLightActor *this_ptr);
 void __cdecl core_boxactor_cpp_CLightActor_process_FUN_0041f3d0(CLightActor *this_ptr,float delta_time);
 void __cdecl core_boxactor_cpp_CLightActor_archive_FUN_0041f600(CLightActor *this_ptr);
-void __cdecl core_boxactor_cpp_CLightActor_FUN_0041f6e0(CLightActor *this_ptr);
+void __cdecl core_boxactor_cpp_CLightActor_setupLightModel_FUN_0041f6e0(CLightActor *this_ptr);
 int __cdecl core_boxactor_cpp_CLightActor_isLightPartVisible_FUN_0041f9f0(CLightActor *this_ptr);
 CLightActor * __cdecl core_boxactor_cpp_CLightActor_dtor_FUN_0041fa10(CLightActor *this_ptr,uint flags);
 CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_dtor_FUN_0041fa90(CBoxActor *this_ptr,uint flags);

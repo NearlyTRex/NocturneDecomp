@@ -19,7 +19,7 @@ void __cdecl core_sound_cpp_filterSoundFilesByPattern_FUN_00558cb0(char *wildcar
   
   index = 0;
   _DAT_0264b460 = 0;
-  if ((int)g_CStrListInstance._0_4_ < 1) {
+  if (g_CStrListInstance.item_count < 1) {
     _DAT_0264b460 = 0;
     return;
   }
@@ -45,7 +45,7 @@ void __cdecl core_sound_cpp_filterSoundFilesByPattern_FUN_00558cb0(char *wildcar
       }
     }
     index = index + 1;
-    if ((int)g_CStrListInstance._0_4_ <= index) {
+    if (g_CStrListInstance.item_count <= index) {
       return;
     }
   } while( true );

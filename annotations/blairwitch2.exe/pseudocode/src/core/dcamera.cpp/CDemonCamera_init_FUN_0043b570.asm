@@ -10,7 +10,7 @@
 ; XREF[3]:
 ;   core_dcamera.cpp_CDemonCamera_initLookupTable_FUN_0043b4c0 at 0043b4ec
 ;   core_game.cpp_CGame_setGameRes_FUN_004b5fd0 at 004b606d
-;   core_set.cpp_FUN_0052e910 at 0052e91a
+;   core_set.cpp_CDemonSet_reinitCamera_FUN_0052e910 at 0052e91a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dcamera_cpp_005ce256
@@ -26,7 +26,7 @@
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_free_FUN_0043b730
 ;   core_main.c_FUN_004e4500
-;   crt_unknown.c_FUN_005b8580
+;   crt_memory.c_malloc_FUN_005b8580
 ;
 ; *****************************************************************************
 
@@ -102,8 +102,8 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0043b669
     ADD EAX,0x1010                      ; 0043b670
     PUSH EAX                            ; 0043b675
-    CALL crt_unknown.c_FUN_005b8580     ; 0043b676
-        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005b8580(ulong size)
+    CALL crt_memory.c_malloc_FUN_005b8580 ; 0043b676
+        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005b8580(ulong size)
     ADD ESP,0x4                         ; 0043b67b
     MOV dword ptr [EBX + 0x160],EAX     ; 0043b67e
     TEST EAX,EAX                        ; 0043b684
@@ -123,8 +123,8 @@ section .text
     LEA EAX,[EDX*0x4 + 0x0]             ; 0043b6b8
     ADD EAX,0x1010                      ; 0043b6bf
     PUSH EAX                            ; 0043b6c4
-    CALL crt_unknown.c_FUN_005b8580     ; 0043b6c5
-        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005b8580(ulong size)
+    CALL crt_memory.c_malloc_FUN_005b8580 ; 0043b6c5
+        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005b8580(ulong size)
     ADD ESP,0x4                         ; 0043b6ca
     MOV dword ptr [EBX + 0x164],EAX     ; 0043b6cd
     TEST EAX,EAX                        ; 0043b6d3

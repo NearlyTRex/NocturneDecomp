@@ -12,7 +12,7 @@
 ; char *           Stack[0x18]:4   format
 ;
 ; XREF[1]:
-;   cockpit_drawsurf.cpp_FUN_00468b80 at 0046914f
+;   cockpit_drawsurf.cpp_testDrawingSurface_FUN_00468b80 at 0046914f
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidth_FUN_00468810
@@ -37,7 +37,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004688a8
     PUSH EAX                            ; 004688ac
     CALL crt_stdio.c_vsprintf_FUN_005b7768 ; 004688ad
-        ;   XREF to: 005b7768 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_005b7768()
+        ;   XREF to: 005b7768 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005b7768(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 004688b2
     MOV EBX,dword ptr [ESP + 0x1028]    ; 004688b5
     PUSH EBX                            ; 004688bc

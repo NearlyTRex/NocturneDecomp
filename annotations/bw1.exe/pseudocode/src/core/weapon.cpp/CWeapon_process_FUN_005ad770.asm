@@ -9,27 +9,27 @@
 ;
 ; XREF[11]:
 ;   core_baron.cpp_CBaronWeapon_process_FUN_004104e0 at 004104f6
-;   core_crossbow.cpp_FUN_00449830 at 0044983f
-;   core_dynamite.cpp_FUN_004926d0 at 004926e6
-;   core_elephant.cpp_FUN_0049e090 at 0049e0b1
-;   core_flamegun.cpp_FUN_004b9710 at 004b9722
-;   core_lightgun.cpp_FUN_00500d20 at 00500d2f
-;   core_lightpis.cpp_FUN_00502480 at 0050248f
-;   core_melee.cpp_FUN_005099a0 at 005099ad
-;   core_rifle.cpp_FUN_00540060 at 00540073
-;   core_shotgun.cpp_FUN_00561650 at 00561671
+;   core_crossbow.cpp_CCrossbow_process_FUN_00449830 at 0044983f
+;   core_dynamite.cpp_CDynamite_process_FUN_004926d0 at 004926e6
+;   core_elephant.cpp_CElephantGun_process_FUN_0049e090 at 0049e0b1
+;   core_flamegun.cpp_CFlameThrower_process_FUN_004b9710 at 004b9722
+;   core_lightgun.cpp_CLightGun_process_FUN_00500d20 at 00500d2f
+;   core_lightpis.cpp_CLightPis_process_FUN_00502480 at 0050248f
+;   core_melee.cpp_CMelee_process_FUN_005099a0 at 005099ad
+;   core_rifle.cpp_CRifle_process_FUN_00540060 at 00540073
+;   core_shotgun.cpp_CShotgun_process_FUN_00561650 at 00561671
 ;   ... and 1 more
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   undefined4 g_CDemonLightInstance.field12200_0x2fa8
+;   undefined4 g_CDemonLightInstance.volumetric_intensity
 ;   undefined4 DAT_01d06ab4
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0
 ;   core_box.cpp_CBox_process_FUN_0041e0d0
-;   core_set.cpp_FUN_005518e0
+;   core_set.cpp_CDemonSet_addDynamicLight_FUN_005518e0
 ;
 ; *****************************************************************************
 
@@ -135,7 +135,7 @@ section .text
         ;   Label: LAB_005ad876
     MOV EAX,dword ptr [EBX + 0x154]     ; 005ad877
     CALL dword ptr [EAX + 0xf4]         ; 005ad87d
-    FLD float ptr [0x01ccf38c]          ; 005ad883 | g_CDemonLightInstance.field12200_0x2fa8
+    FLD float ptr [0x01ccf38c]          ; 005ad883 | g_CDemonLightInstance.volumetric_intensity
     FLDZ                                ; 005ad889
     ADD ESP,0x4                         ; 005ad88b
     FCOMPP                              ; 005ad88e
@@ -146,8 +146,8 @@ section .text
     PUSH 0x1ccc3e4                      ; 005ad895
     MOV EAX,[0x00622c18]                ; 005ad89a | g_CDemonSetPtr
     PUSH EAX                            ; 005ad89f
-    CALL core_set.cpp_FUN_005518e0      ; 005ad8a0
-        ;   XREF to: 005518e0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_005518e0(CDemonSet * this_ptr, CDemonLight * light)
+    CALL core_set.cpp_CDemonSet_addDynamicLight_FUN_005518e0 ; 005ad8a0
+        ;   XREF to: 005518e0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addDynamicLight_FUN_005518e0(CDemonSet * this_ptr, CDemonLight * light)
     ADD ESP,0x8                         ; 005ad8a5
     POP ESI                             ; 005ad8a8
     POP EBX                             ; 005ad8a9

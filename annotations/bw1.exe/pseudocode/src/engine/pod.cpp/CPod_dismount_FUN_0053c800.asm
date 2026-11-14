@@ -44,7 +44,7 @@ section .text
     MOV EAX,ESP                         ; 0053c834
     PUSH EAX                            ; 0053c836
     CALL engine_dosio.cpp_findFileNormally_FUN_00478ef0 ; 0053c837
-        ;   XREF to: 00478ef0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_findFileNormally_FUN_00478ef0()
+        ;   XREF to: 00478ef0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_findFileNormally_FUN_00478ef0(SFoundFileInfo * info)
     ADD ESP,0x4                         ; 0053c83c
     TEST EAX,EAX                        ; 0053c83f
     JZ 0x0053c872                       ; 0053c841

@@ -4,13 +4,16 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CFlame.h"
+#include "types/classes/CWeapon.h"
 
 // Structure: CCrossbow
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0xad8 (2776 bytes)
 #pragma pack(push, 1)
 typedef struct CCrossbow {
-    char field_0[2776]; // 0x0
+    CWeapon base; // 0x0
+    int flame_active; // 0x6d4
+    CFlame bolt_flame; // 0x6d8
 } CCrossbow;
 #pragma pack(pop)
 

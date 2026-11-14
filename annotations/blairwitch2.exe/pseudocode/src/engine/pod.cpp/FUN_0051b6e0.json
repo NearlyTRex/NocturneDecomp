@@ -1,0 +1,229 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 169,
+    "complexity_score": 153,
+    "cross_reference_count": 0,
+    "function_call_count": 13,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 63,
+    "suspect_count": 8,
+    "suspect_types": [
+      "stack_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 232
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0051b6e0",
+    "address_range": [
+      [
+        "0051b6e0",
+        "0051b8c9"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "engine_pod.cpp_FUN_0051b6e0",
+    "signature": "void engine_pod_cpp_FUN_0051b6e0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "005b89c0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_005b89c0"
+    },
+    {
+      "addr": "005b8180",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fgetc_FUN_005b8180"
+    },
+    {
+      "addr": "005b910c",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fopen_FUN_005b910c"
+    },
+    {
+      "addr": "005b929c",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fseek_FUN_005b929c"
+    },
+    {
+      "addr": "005b9690",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fwrite_FUN_005b9690"
+    },
+    {
+      "addr": "00460aa0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFileSize_FUN_00460aa0"
+    },
+    {
+      "addr": "0051a8f0",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPodFile_cleanup_FUN_0051a8f0"
+    },
+    {
+      "addr": "00519e50",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPodFile_ctor_FUN_00519e50"
+    },
+    {
+      "addr": "00519ec0",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPodFile_dtor_FUN_00519ec0"
+    },
+    {
+      "addr": "00519f00",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPodFile_mountFromFile_FUN_00519f00"
+    },
+    {
+      "addr": "00519cb0",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_crc32UpdateByte_FUN_00519cb0"
+    },
+    {
+      "addr": "0047be90",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_0047be90"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006138e0",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c25594"
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.029411764705882,
+    "instruction_count": 136,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 17,
+      "CBRANCH": 6,
+      "COPY": 96,
+      "INT_ADD": 44,
+      "INT_AND": 63,
+      "INT_CARRY": 18,
+      "INT_EQUAL": 60,
+      "INT_LESS": 7,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 19,
+      "INT_SLESS": 30,
+      "INT_SUB": 63,
+      "INT_XOR": 1,
+      "LOAD": 16,
+      "POPCOUNT": 30,
+      "RETURN": 1,
+      "STORE": 62
+    },
+    "pcode_op_count": 548
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "char *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "iVar1 = engine_pod_cpp_CPodFile_mountFromFile_FUN_00519f00(&CStack_44c,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "core_main_c_FUN_004e4500(\"Can't mount %s to check version\",in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 41,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "(\"Invalid pod version for %s: %d\",in_stack_00000008,CStack_44c.pod_format_version);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "iStack_1c = engine_dosio_cpp_getFileSize_FUN_00460aa0((char *)0x5e2403,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "p_Var2 = _fopen(in_stack_00000008,(char *)0x5e2404);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 60,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "p_Var2 = _fopen(in_stack_00000008,(char *)0x5e28e1);",
+      "type": "stack_param"
+    }
+  ]
+}

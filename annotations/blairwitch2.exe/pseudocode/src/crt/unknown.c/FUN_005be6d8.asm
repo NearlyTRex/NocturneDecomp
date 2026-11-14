@@ -5,18 +5,18 @@
 ;
 ;
 ; XREF[1]:
-;   crt_unknown.c_FUN_005b8590 at 005b8652
+;   crt_unknown.c_InternalHeapAlloc_FUN_005b8590 at 005b8652
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005be628
-;   unkafter_morph.cpp_FUN_005c3750
+;   crt_unknown.c_FUN_005c3750
 ;
 ; *****************************************************************************
 
 section .text
 
-    CALL unkafter_morph.cpp_FUN_005c3750 ; 005be6d8
-        ;   XREF to: 005c3750 (UNCONDITIONAL_CALL)  ; undefined unkafter_morph.cpp_FUN_005c3750()
+    CALL crt_unknown.c_FUN_005c3750     ; 005be6d8
+        ;   XREF to: 005c3750 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c3750()
         ;   Label: crt_unknown.c_FUN_005be6d8
     MOV EDX,dword ptr [ESP + 0x4]       ; 005be6dd
     PUSH EDX                            ; 005be6e1

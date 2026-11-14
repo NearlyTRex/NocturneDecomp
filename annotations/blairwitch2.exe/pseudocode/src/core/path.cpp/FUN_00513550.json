@@ -1,0 +1,165 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 81,
+    "complexity_score": 68,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 38,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 119
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00513550",
+    "address_range": [
+      [
+        "00513550",
+        "00513640"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_path.cpp_FUN_00513550",
+    "signature": "void core_path_cpp_FUN_00513550(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
+    },
+    {
+      "addr": "00401fe0",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawText_FUN_00401fe0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006141b8",
+      "name": "DAT_006141b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e501fc",
+      "name": "DAT_01e501fc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e50200",
+      "name": "DAT_01e50200",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e50204",
+      "name": "DAT_01e50204",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e50208",
+      "name": "DAT_01e50208",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.323529411764706,
+    "instruction_count": 68,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 9,
+      "CALL": 2,
+      "CBRANCH": 6,
+      "COPY": 55,
+      "INT_ADD": 28,
+      "INT_AND": 60,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 49,
+      "INT_LESS": 9,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 4,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 24,
+      "INT_SRIGHT": 3,
+      "INT_SUB": 22,
+      "INT_XOR": 4,
+      "LOAD": 12,
+      "POPCOUNT": 24,
+      "RETURN": 1,
+      "STORE": 19
+    },
+    "pcode_op_count": 362
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005348a0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0050c580",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00547c00",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004f1500",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_006141b8",
+      "severity": "mild",
+      "text": "x = DAT_006141b8 / 2 + iVar3;",
+      "type": "undefined_data"
+    }
+  ]
+}

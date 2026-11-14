@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 32,
     "complexity_score": 104,
-    "cross_reference_count": 66,
+    "cross_reference_count": 67,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "moderate",
@@ -32,7 +32,7 @@
     {
       "addr": "0043a040",
       "from_addr": "0043a0d4",
-      "name": "cockpit_ckptutil.c_FUN_0043a040",
+      "name": "cockpit_ckptutil.c_rotateBitmap_FUN_0043a040",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -48,9 +48,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00538b2e",
+      "addr": "00538750",
+      "from_addr": "005387b1",
+      "name": "cockpit_pkbitmap.cpp_FUN_00538750",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00538b30",
       "from_addr": "00538d23",
-      "name": "cockpit_pkbmpset.cpp_FUN_00538b2e",
+      "name": "cockpit_pkbmpset.cpp_FUN_00538b30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -96,9 +102,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0045f18e",
+      "addr": "0045f190",
       "from_addr": "0045f229",
-      "name": "core_dimage.cpp_FUN_0045f18e",
+      "name": "core_dimage.cpp_FUN_0045f190",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -110,7 +116,7 @@
     {
       "addr": "0048afa0",
       "from_addr": "0048afcf",
-      "name": "core_dtrace.cpp_FUN_0048afa0",
+      "name": "core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_0048afa0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -134,7 +140,7 @@
     {
       "addr": "004bcba0",
       "from_addr": "004bccc7",
-      "name": "core_fldnotes.cpp_FUN_004bcba0",
+      "name": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004bcba0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -147,12 +153,6 @@
       "addr": "004d8e50",
       "from_addr": "004d8f22",
       "name": "core_game.cpp_CGame_rollCredits_FUN_004d8e50",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004cb950",
-      "from_addr": "004cbc1c",
-      "name": "core_game.cpp_FUN_004cb950",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -186,6 +186,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004cb950",
+      "from_addr": "004cbc1c",
+      "name": "core_game.cpp_captureDebugMovieFrame_FUN_004cb950",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004e7340",
       "from_addr": "004e7498",
       "name": "core_ground.cpp_CGround_load_FUN_004e7340",
@@ -200,7 +206,7 @@
     {
       "addr": "005032a0",
       "from_addr": "005039b2",
-      "name": "core_main.c_FUN_005032a0",
+      "name": "core_main.c_initializeGameSystems_FUN_005032a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -248,7 +254,7 @@
     {
       "addr": "0055b220",
       "from_addr": "0055b274",
-      "name": "core_setdir.cpp_FUN_0055b220",
+      "name": "core_setdir.cpp_CDemonSet_refreshThumbs_FUN_0055b220",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -278,7 +284,7 @@
     {
       "addr": "00596390",
       "from_addr": "005964a8",
-      "name": "core_texlist.cpp_FUN_00596390",
+      "name": "core_texlist.cpp_CTextureList_save_FUN_00596390",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -290,19 +296,19 @@
     {
       "addr": "00445430",
       "from_addr": "004454e7",
-      "name": "engine_console.cpp_FUN_00445430",
+      "name": "engine_console.cpp_CConsole_printf_FUN_00445430",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f4370",
+      "from_addr": "004f447a",
+      "name": "engine_ini.cpp_CIni_getProfileString_FUN_004f4370",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f4720",
       "from_addr": "004f48e0",
       "name": "engine_ini.cpp_CIni_writeProfileString_FUN_004f4720",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004f4370",
-      "from_addr": "004f447a",
-      "name": "engine_ini.cpp_FUN_004f4370",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -324,12 +330,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00535d80",
-      "from_addr": "00535f16",
-      "name": "engine_pcx.c_FUN_00535d80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00535a10",
       "from_addr": "00535b97",
       "name": "engine_pcx.c_saveScreenRaw16_FUN_00535a10",
@@ -342,15 +342,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00535d80",
+      "from_addr": "00535f16",
+      "name": "engine_pcx.c_saveScreenshotGeneral_FUN_00535d80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0053b110",
       "from_addr": "0053b185",
       "name": "engine_pod.cpp_FUN_0053b110",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0053bfbe",
+      "addr": "0053bfc0",
       "from_addr": "0053c05b",
-      "name": "engine_pod.cpp_FUN_0053bfbe",
+      "name": "engine_pod.cpp_FUN_0053bfc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -372,9 +378,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0053cc5c",
+      "addr": "0053cc60",
       "from_addr": "0053cd88",
-      "name": "engine_pod.cpp_FUN_0053cc5c",
+      "name": "engine_pod.cpp_FUN_0053cc60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -398,19 +404,19 @@
     {
       "addr": "00530bf0",
       "from_addr": "00530d07",
-      "name": "support_newmsg.cpp_FUN_00530bf0",
+      "name": "support_newmsg.cpp_readMessageFile_FUN_00530bf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a19b0",
       "from_addr": "005a19c4",
-      "name": "support_trstream.cpp_FUN_005a19b0",
+      "name": "support_trstream.cpp_COutStreamFile_close_FUN_005a19b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005b4cd0",
       "from_addr": "005b4d21",
-      "name": "wincore_winvideo.cpp_FUN_005b4cd0",
+      "name": "wincore_winvideo.cpp_playMovie_FUN_005b4cd0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -483,6 +489,32 @@
       "STORE": 7
     },
     "pcode_op_count": 89
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b89c0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005a3a90",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00601ea0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00563380",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,

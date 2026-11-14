@@ -1,0 +1,913 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 971,
+    "complexity_score": 515,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 101,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 375,
+    "suspect_count": 13,
+    "suspect_types": [
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 1346
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0044a150",
+    "address_range": [
+      [
+        "0044a150",
+        "0044ab5b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_dcube.cpp_clipTriangleToAABB_FUN_0044a150",
+    "signature": "uint __cdecl core_dcube_cpp_clipTriangleToAABB_FUN_0044a150(CVector3f **triangle_vertices,CVector3f *aabb_min,CVector3f *aabb_max)"
+  },
+  "function_calls": [
+    {
+      "addr": "004484c0",
+      "is_variadic": false,
+      "name": "core_dcube.cpp_clipEdgeToPlane_FUN_004484c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0044a0e8",
+      "name": "switchdataD_0044a0e8",
+      "type": "undefined1*",
+      "value": "0044a3b5"
+    },
+    {
+      "addr": "0044a0ec",
+      "name": "PTR_caseD_1_0044a0ec",
+      "type": "undefined1*",
+      "value": "0044a736"
+    },
+    {
+      "addr": "0044a0f4",
+      "name": "PTR_caseD_3_0044a0f4",
+      "type": "undefined1*",
+      "value": "0044a3dc"
+    },
+    {
+      "addr": "0044a0f8",
+      "name": "switchdataD_0044a0f8",
+      "type": "undefined1*",
+      "value": "0044a457"
+    },
+    {
+      "addr": "0044a0fc",
+      "name": "PTR_caseD_1_0044a0fc",
+      "type": "undefined1*",
+      "value": "0044a7ea"
+    },
+    {
+      "addr": "0044a104",
+      "name": "PTR_caseD_3_0044a104",
+      "type": "undefined1*",
+      "value": "0044a47e"
+    },
+    {
+      "addr": "0044a108",
+      "name": "switchdataD_0044a108",
+      "type": "undefined1*",
+      "value": "0044a4fa"
+    },
+    {
+      "addr": "0044a10c",
+      "name": "PTR_caseD_1_0044a10c",
+      "type": "undefined1*",
+      "value": "0044a898"
+    },
+    {
+      "addr": "0044a114",
+      "name": "PTR_caseD_3_0044a114",
+      "type": "undefined1*",
+      "value": "0044a521"
+    },
+    {
+      "addr": "0044a118",
+      "name": "switchdataD_0044a118",
+      "type": "undefined1*",
+      "value": "0044a59d"
+    },
+    {
+      "addr": "0044a11c",
+      "name": "PTR_caseD_1_0044a11c",
+      "type": "undefined1*",
+      "value": "0044a94c"
+    },
+    {
+      "addr": "0044a124",
+      "name": "PTR_caseD_3_0044a124",
+      "type": "undefined1*",
+      "value": "0044a5c4"
+    },
+    {
+      "addr": "0044a128",
+      "name": "switchdataD_0044a128",
+      "type": "undefined1*",
+      "value": "0044a643"
+    },
+    {
+      "addr": "0044a12c",
+      "name": "PTR_caseD_1_0044a12c",
+      "type": "undefined1*",
+      "value": "0044a9fc"
+    },
+    {
+      "addr": "0044a134",
+      "name": "PTR_caseD_3_0044a134",
+      "type": "undefined1*",
+      "value": "0044a66a"
+    },
+    {
+      "addr": "0044a138",
+      "name": "switchdataD_0044a138",
+      "type": "undefined1*",
+      "value": "0044a6e9"
+    },
+    {
+      "addr": "0044a13c",
+      "name": "PTR_caseD_1_0044a13c",
+      "type": "undefined1*",
+      "value": "0044aaac"
+    },
+    {
+      "addr": "0044a144",
+      "name": "PTR_caseD_3_0044a144",
+      "type": "undefined1*",
+      "value": "0044a710"
+    },
+    {
+      "addr": "014b848c",
+      "name": "DAT_014b848c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8490",
+      "name": "g_CVector3f_ARRAY_014b8490",
+      "type": "CVector3f[16]",
+      "value": null
+    },
+    {
+      "addr": "014b8494",
+      "name": "g_CVector3f_ARRAY_014b8490[0].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8498",
+      "name": "g_CVector3f_ARRAY_014b8490[0].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b849c",
+      "name": "g_CVector3f_ARRAY_014b8490[1].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b84a0",
+      "name": "g_CVector3f_ARRAY_014b8490[1].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b84a4",
+      "name": "g_CVector3f_ARRAY_014b8490[1].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b84a8",
+      "name": "g_CVector3f_ARRAY_014b8490[2].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b84ac",
+      "name": "g_CVector3f_ARRAY_014b8490[2].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b84b0",
+      "name": "g_CVector3f_ARRAY_014b8490[2].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8550",
+      "name": "DAT_014b8550",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8554",
+      "name": "g_CVector3f_ARRAY_014b8554",
+      "type": "CVector3f[16]",
+      "value": null
+    },
+    {
+      "addr": "014b8558",
+      "name": "g_CVector3f_ARRAY_014b8554[0].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b855c",
+      "name": "g_CVector3f_ARRAY_014b8554[0].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8560",
+      "name": "g_CVector3f_ARRAY_014b8554[1].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8564",
+      "name": "g_CVector3f_ARRAY_014b8554[1].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8568",
+      "name": "g_CVector3f_ARRAY_014b8554[1].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8570",
+      "name": "g_CVector3f_ARRAY_014b8554[2].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8614",
+      "name": "DAT_014b8614",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8618",
+      "name": "g_CVector3f_ARRAY_014b8618",
+      "type": "CVector3f[16]",
+      "value": null
+    },
+    {
+      "addr": "014b861c",
+      "name": "g_CVector3f_ARRAY_014b8618[0].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8620",
+      "name": "g_CVector3f_ARRAY_014b8618[0].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8624",
+      "name": "g_CVector3f_ARRAY_014b8618[1].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8628",
+      "name": "g_CVector3f_ARRAY_014b8618[1].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b862c",
+      "name": "g_CVector3f_ARRAY_014b8618[1].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8630",
+      "name": "g_CVector3f_ARRAY_014b8618[2].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b86d8",
+      "name": "DAT_014b86d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b86dc",
+      "name": "g_CVector3f_ARRAY_014b86dc",
+      "type": "CVector3f[16]",
+      "value": null
+    },
+    {
+      "addr": "014b86e0",
+      "name": "g_CVector3f_ARRAY_014b86dc[0].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b86e4",
+      "name": "g_CVector3f_ARRAY_014b86dc[0].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b86e8",
+      "name": "g_CVector3f_ARRAY_014b86dc[1].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b86ec",
+      "name": "g_CVector3f_ARRAY_014b86dc[1].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b86f0",
+      "name": "g_CVector3f_ARRAY_014b86dc[1].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b86f4",
+      "name": "g_CVector3f_ARRAY_014b86dc[2].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b879c",
+      "name": "DAT_014b879c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b87a0",
+      "name": "g_CVector3f_ARRAY_014b87a0",
+      "type": "CVector3f[16]",
+      "value": null
+    },
+    {
+      "addr": "014b87a4",
+      "name": "g_CVector3f_ARRAY_014b87a0[0].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b87a8",
+      "name": "g_CVector3f_ARRAY_014b87a0[0].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b87ac",
+      "name": "g_CVector3f_ARRAY_014b87a0[1].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b87b0",
+      "name": "g_CVector3f_ARRAY_014b87a0[1].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b87b4",
+      "name": "g_CVector3f_ARRAY_014b87a0[1].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b87c0",
+      "name": "g_CVector3f_ARRAY_014b87a0[2].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8834",
+      "name": "g_CVector3f_ARRAY_014b87a0[12].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8848",
+      "name": "g_CVector3f_ARRAY_014b87a0[14].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b884c",
+      "name": "g_CVector3f_ARRAY_014b87a0[14].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8850",
+      "name": "g_CVector3f_ARRAY_014b87a0[14].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8860",
+      "name": "DAT_014b8860",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8864",
+      "name": "g_CVector3f_ARRAY_014b8864",
+      "type": "CVector3f[16]",
+      "value": null
+    },
+    {
+      "addr": "014b8868",
+      "name": "g_CVector3f_ARRAY_014b8864[0].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b886c",
+      "name": "g_CVector3f_ARRAY_014b8864[0].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8870",
+      "name": "g_CVector3f_ARRAY_014b8864[1].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8874",
+      "name": "g_CVector3f_ARRAY_014b8864[1].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8878",
+      "name": "g_CVector3f_ARRAY_014b8864[1].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b887c",
+      "name": "g_CVector3f_ARRAY_014b8864[2].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8884",
+      "name": "g_CVector3f_ARRAY_014b8864[2].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b890c",
+      "name": "g_CVector3f_ARRAY_014b8864[14].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8910",
+      "name": "g_CVector3f_ARRAY_014b8864[14].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8914",
+      "name": "g_CVector3f_ARRAY_014b8864[14].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8924",
+      "name": "DAT_014b8924",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8928",
+      "name": "g_CVector3f_ARRAY_014b8928",
+      "type": "CVector3f[16]",
+      "value": null
+    },
+    {
+      "addr": "014b892c",
+      "name": "g_CVector3f_ARRAY_014b8928[0].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8930",
+      "name": "g_CVector3f_ARRAY_014b8928[0].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8934",
+      "name": "g_CVector3f_ARRAY_014b8928[1].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8938",
+      "name": "g_CVector3f_ARRAY_014b8928[1].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b893c",
+      "name": "g_CVector3f_ARRAY_014b8928[1].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8940",
+      "name": "g_CVector3f_ARRAY_014b8928[2].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8944",
+      "name": "g_CVector3f_ARRAY_014b8928[2].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8948",
+      "name": "g_CVector3f_ARRAY_014b8928[2].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b89d0",
+      "name": "g_CVector3f_ARRAY_014b8928[14].x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b89d4",
+      "name": "g_CVector3f_ARRAY_014b8928[14].y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b89d8",
+      "name": "g_CVector3f_ARRAY_014b8928[14].z",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8a00",
+      "name": "DAT_014b8a00",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8a94",
+      "name": "g_CDemonFilter_ARRAY_014b8a58[0].name[52]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8a98",
+      "name": "g_CDemonFilter_ARRAY_014b8a58[0].name[56]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8a9c",
+      "name": "g_CDemonFilter_ARRAY_014b8a58[0].name[60]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8acc",
+      "name": "g_CDemonFilter_ARRAY_014b8a58[1].name[32]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8b58",
+      "name": "g_CDemonFilter_ARRAY_014b8a58[3].name[20]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8b5c",
+      "name": "g_CDemonFilter_ARRAY_014b8a58[3].name[24]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8b60",
+      "name": "g_CDemonFilter_ARRAY_014b8a58[3].name[28]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8b90",
+      "name": "g_CDemonFilter_ARRAY_014b8a58[4].name[0]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8c1c",
+      "name": "g_CDemonFilter_ARRAY_014b8a58[5].data_buffer",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8c20",
+      "name": "g_CDemonFilter_ARRAY_014b8a58[6].size",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "014b8c24",
+      "name": "g_CDemonFilter_ARRAY_014b8a58[6].count",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.608142493638677,
+    "instruction_count": 786,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 24,
+      "BOOL_OR": 40,
+      "BRANCH": 13,
+      "BRANCHIND": 6,
+      "CALL": 12,
+      "CBRANCH": 70,
+      "COPY": 1314,
+      "FLOAT2FLOAT": 84,
+      "FLOAT_EQUAL": 18,
+      "FLOAT_LESS": 18,
+      "FLOAT_NAN": 36,
+      "FLOAT_NEG": 4,
+      "INT_ADD": 233,
+      "INT_AND": 462,
+      "INT_CARRY": 49,
+      "INT_EQUAL": 363,
+      "INT_LEFT": 72,
+      "INT_LESS": 57,
+      "INT_MULT": 36,
+      "INT_NOTEQUAL": 139,
+      "INT_OR": 102,
+      "INT_SBORROW": 57,
+      "INT_SCARRY": 80,
+      "INT_SEXT": 90,
+      "INT_SLESS": 181,
+      "INT_SUB": 181,
+      "INT_XOR": 22,
+      "INT_ZEXT": 72,
+      "LOAD": 150,
+      "POPCOUNT": 181,
+      "RETURN": 2,
+      "STORE": 180,
+      "SUBPIECE": 60
+    },
+    "pcode_op_count": 4408
+  },
+  "siblings": {
+    "nocedit.exe": {
+      "addr": "00456400",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2612
+    }
+  },
+  "stack_frame": {
+    "frame_size": 72,
+    "local_size": 60,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "triangle_vertices",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3f * *"
+      },
+      {
+        "is_param": true,
+        "name": "aabb_min",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "aabb_max",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0044a159",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 21,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CVector3f_ARRAY_014b8490[0].x = pCVar8->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 27,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CVector3f_ARRAY_014b8490[1].x = pCVar8->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 33,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CVector3f_ARRAY_014b8490[2].x = pCVar8->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 67,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CVector3f_ARRAY_014b8928[0].x = pCVar8->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 73,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CVector3f_ARRAY_014b8928[1].x = pCVar8->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 79,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CVector3f_ARRAY_014b8928[2].x = pCVar8->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 108,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CVector3f_ARRAY_014b8554[_DAT_014b8550].x = pCVar8->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 153,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CVector3f_ARRAY_014b8618[_DAT_014b8614].x = pCVar8->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 200,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CVector3f_ARRAY_014b86dc[_DAT_014b86d8].x = pCVar8->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 247,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CVector3f_ARRAY_014b87a0[_DAT_014b879c].x = pCVar8->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 293,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CVector3f_ARRAY_014b8864[_DAT_014b8860].x = pCVar8->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 339,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CVector3f_ARRAY_014b8928[_DAT_014b8924].x = pCVar8->x;",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

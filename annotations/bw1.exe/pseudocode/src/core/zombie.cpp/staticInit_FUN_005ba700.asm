@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_zombie_cpp_staticInit_FUN_005ba700(void)
+; void __cdecl core_zombie_cpp_staticInit_FUN_005ba700(void)
 ;
 ;
 ; Called Functions:

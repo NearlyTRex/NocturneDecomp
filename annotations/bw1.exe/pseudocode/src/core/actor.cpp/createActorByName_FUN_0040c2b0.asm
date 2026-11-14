@@ -1,19 +1,21 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_actor_cpp_createActorByName_FUN_0040c2b0(undefined4 param_1)
+; CDemonActor * __cdecl core_actor_cpp_createActorByName_FUN_0040c2b0(char *class_name)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   class_name
 ;
 ; XREF[12]:
-;   core_baron.cpp_FUN_00410640 at 0041069c
-;   core_game.cpp_FUN_004d2540 at 004d2549
-;   core_game.cpp_FUN_004d27b0 at 004d322f
+;   core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00410640 at 0041069c
+;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d322f
+;   core_game.cpp_giveHeroWeapon_FUN_004d2540 at 004d2549
 ;   core_hero.cpp_CHero_createDefaultWeapon_FUN_004eafd0 at 004eaff1
 ;   core_hero.cpp_FUN_004ecca0 at 004eccb5
 ;   core_inv.cpp_CInventory_initialize_FUN_004f7050 at 004f70aa
 ;   core_inv.cpp_CInventory_load_FUN_004f97a0 at 004f9a4f
 ;   core_inv.cpp_FUN_004f7690 at 004f7fda
-;   core_mimic.cpp_FUN_0050f290 at 0050f491
+;   core_mimic.cpp_CMimic_setup_FUN_0050f290 at 0050f491
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_0051a4f0 at 0051aa87
 ;   ... and 2 more
 ;
@@ -42,7 +44,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x10]      ; 0040c2b3
     PUSH ESI                            ; 0040c2b7
     CALL core_actor.cpp_getActorClassByName_FUN_0040c240 ; 0040c2b8
-        ;   XREF to: 0040c240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getActorClassByName_FUN_0040c240()
+        ;   XREF to: 0040c240 (UNCONDITIONAL_CALL)  ; CDemonActorType * core_actor.cpp_getActorClassByName_FUN_0040c240(char * className)
     ADD ESP,0x4                         ; 0040c2bd
     MOV EBX,EAX                         ; 0040c2c0
     TEST EAX,EAX                        ; 0040c2c2

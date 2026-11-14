@@ -20,16 +20,16 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[21]:
-;   core_ammo.cpp_FUN_0040ded0 at 0040dfed
-;   core_baron.cpp_FUN_0040f950 at 0040fb1e
+;   core_ammo.cpp_CAmmo_process_FUN_0040ded0 at 0040dfed
+;   core_baron.cpp_CBaron_process_FUN_0040f950 at 0040fb1e
+;   core_boneguy.cpp_CBoneGuy_beginRecombine_FUN_0041a2e0 at 0041a315
 ;   core_boneguy.cpp_CBoneGuy_explode_FUN_0041a0c0 at 0041a255
-;   core_boneguy.cpp_FUN_0041a2e0 at 0041a315
-;   core_colonel.cpp_FUN_00435830 at 00435b2c
-;   core_construc.cpp_FUN_00438060 at 00438200
+;   core_colonel.cpp_CColonel_process_FUN_00435830 at 00435b2c
+;   core_construc.cpp_CConstruct_explode_FUN_00438060 at 00438200
 ;   core_construc.cpp_FUN_004382a0 at 004382d5
-;   core_conveyor.cpp_FUN_00438550 at 0043858b
+;   core_conveyor.cpp_CConveyor_setup_FUN_00438550 at 0043858b
+;   core_cross.cpp_CCross_process_FUN_005a6ed0 at 005a755c
 ;   core_doc.cpp_FUN_00453d80 at 004540a1
-;   core_gabriela.cpp_FUN_004afa20 at 004afa6b
 ;   ... and 11 more
 ;
 ; Referenced Globals:

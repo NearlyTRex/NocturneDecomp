@@ -2,15 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 8,
-    "complexity_score": 7,
+    "complexity_score": 6,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 7,
+    "pseudocode_lines": 6,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 15
+    "total_lines": 14
   },
   "cross_references": [],
   "function": {
@@ -21,15 +21,15 @@
         "004b76cf"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_fire.cpp_CGlassParticle_dtor_FUN_004b76c0",
-    "signature": "CGlassParticle * core_fire_cpp_CGlassParticle_dtor_FUN_004b76c0(CGlassParticle *this_ptr,uint flags)"
+    "signature": "CGlassParticle * __cdecl core_fire_cpp_CGlassParticle_dtor_FUN_004b76c0(CGlassParticle *this_ptr,uint flags)"
   },
   "function_calls": [
     {
       "addr": "00532150",
       "is_variadic": false,
-      "name": "core_particle.cpp_FUN_00532150"
+      "name": "core_particle.cpp_CParticle_dtor_FUN_00532150"
     }
   ],
   "globals": [],
@@ -61,6 +61,32 @@
       "STORE": 3
     },
     "pcode_op_count": 24
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0049edf0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a4760",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004c9660",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5556
+    },
+    "nocturne.exe": {
+      "addr": "0048cb30",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5556
+    }
   },
   "stack_frame": {
     "frame_size": 12,

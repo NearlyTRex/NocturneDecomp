@@ -2,20 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 255,
+    "complexity_score": 147,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
-    "suspect_count": 18,
+    "pseudocode_lines": 52,
+    "suspect_count": 7,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param",
+      "negative_offset",
+      "pointer_cast",
+      "pointer_truncation",
       "unrolled_strcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 128
+    "total_lines": 125
   },
   "cross_references": [
     {
@@ -35,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_sndwav.cpp_enumerateWavInDevice_FUN_0057b460",
-    "signature": "undefined4 __cdecl sound_sndwav_cpp_enumerateWavInDevice_FUN_0057b460(UINT_PTR param_1,char *param_2)"
+    "signature": "int __cdecl sound_sndwav_cpp_enumerateWavInDevice_FUN_0057b460(UINT device_id,SRecordingDeviceInfo *device_info)"
   },
   "function_calls": [
     {
@@ -78,11 +79,11 @@
         "stack_params": 2
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.721311475409836,
@@ -112,11 +113,31 @@
     },
     "pcode_op_count": 288
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00558a30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0055e590",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005b1560",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 60,
+    "frame_size": 68,
     "local_size": 60,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -139,156 +160,79 @@
         "offset": -47,
         "size": 1,
         "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "device_id",
+        "offset": 4,
+        "size": 4,
+        "type": "UINT"
+      },
+      {
+        "is_param": true,
+        "name": "device_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SRecordingDeviceInfo *"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint __cdecl sound_sndwav_cpp_enumerateWavInDevice_FUN_0057b460(UINT_PTR param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uint __cdecl sound_sndwav_cpp_enumerateWavInDevice_FUN_0057b460(UINT_PTR param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "MVar2 = waveInGetDevCapsA(param_1,&local_38,0x30);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[0x100] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[0x101] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[0x102] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[0x103] = '\\0';",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(UINT_PTR *)(param_2 + 0x104) = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(UINT_PTR *)(param_2 + 0x104) = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pcVar6 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Complex pointer cast",
       "line": 38,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pcVar6 = param_2;",
-      "type": "unnamed_param"
+      "match": "(SRecordingDeviceInfo *)((int)device_info",
+      "severity": "moderate",
+      "text": "pSVar6 = (SRecordingDeviceInfo *)((int)device_info + (uint)bVar7 * -2 + 1);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "pcVar6 = param_2 + (uint)bVar7 * -2 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Negative struct offset (wrong base type)",
       "line": 42,
-      "match": "param_2",
+      "match": "pSVar6[-1].",
       "severity": "mild",
-      "text": "cVar1 = *param_2;",
-      "type": "unnamed_param"
+      "text": "pcVar3 = (char *)((int)&pSVar6[-1].device_id + 3);",
+      "type": "negative_offset"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Pointer value `&pSVar6[-1].device_id` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 42,
+      "match": "(int)&pSVar6[-1].device_id",
+      "severity": "moderate",
+      "text": "pcVar3 = (char *)((int)&pSVar6[-1].device_id + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 23,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 43,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = pcVar6;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 26,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
     },
     {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 46,
-      "match": "do {",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 42,
+      "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
+      "text": "pcVar3 = (char *)((int)&pSVar6[-1].device_id + 3);",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 37,
+      "line": 34,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strlen"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   frame_index
 ;
 ; XREF[2]:
-;   core_skeleton.cpp_FUN_00540f30 at 00540f69
-;   core_skeleton.cpp_FUN_00544f80 at 005455c8
+;   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00544f80 at 005455c8
+;   core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_00540f30 at 00540f69
 ;
 ; *****************************************************************************
 

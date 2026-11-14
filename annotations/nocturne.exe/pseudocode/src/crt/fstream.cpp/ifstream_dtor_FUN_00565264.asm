@@ -8,8 +8,8 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[5]:
-;   core_game.cpp_CGame_FUN_004a3b90 at 004a3fbf
-;   core_game.cpp_CGame_FUN_004a4170 at 004a45b7
+;   core_game.cpp_CGame_loadGame_FUN_004a4170 at 004a45b7
+;   core_game.cpp_CGame_saveGame_FUN_004a3b90 at 004a3fbf
 ;   crt_unknown.c_FUN_005650f0 at 005650fd
 ;   crt_unknown.c_FUN_00565106 at 00565115
 ;   support_codec.cpp_CCodec_processFiles_FUN_004391b0 at 00439288

@@ -19,7 +19,7 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_reset_FUN_005583e0(CWavInDevice *this_
   if (_DAT_0264b108 != (HWAVEIN)0x0) {
     MVar1 = waveInReset(_DAT_0264b108);
     if (MVar1 != 0) {
-      sound_sndmain_cpp_FUN_005549c0("waveInReset failed!");
+      sound_sndmain_cpp_logSoundError_FUN_005549c0("waveInReset failed!");
       iVar3 = 0;
     }
   }

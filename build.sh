@@ -5,26 +5,28 @@
 # work BEFORE cmake has ever run, so it lives at the repo root and is
 # hand-maintained.
 #
-# Default preset is `exe-linux-asan-x86_64` (native 64-bit ASan). Override via
-# the first arg or the BUILD_PRESET env var:
+# Default preset is `exe-linux-x86_64` (native 64-bit, without ASan). Override
+# via the first arg or the BUILD_PRESET env var:
 #
-#   ./build.sh                     # build exe-linux-asan-x86_64 (default, 64-bit ASan)
-#   ./build.sh exe-linux-x86_64    # build the non-ASan 64-bit exe
-#   ./build.sh check-linux-x86_64  # fast 64-bit syntax-check lane
-#   BUILD_PRESET=exe-linux-x86_64 ./build.sh
+#   ./build.sh                          # build exe-linux-x86_64 (default)
+#   ./build.sh exe-linux-asan-x86_64    # build the 64-bit ASan exe
+#   ./build.sh check-linux-x86_64       # fast 64-bit syntax-check lane
+#   BUILD_PRESET=exe-linux-asan-x86_64 ./build.sh
 #
 # --vanilla (or VANILLA=1) builds the vanilla lane of that preset instead. A
 # preset with a vanilla twin in CMakePresets.json (exe-linux-x86_64 ->
 # exe-linux-vanilla-x86_64) uses it; any other is configured into
 # build/<preset>-vanilla with -DNOCTURNE_VANILLA=ON:
 #
-#   ./build.sh --vanilla                    # build/exe-linux-asan-x86_64-vanilla
-#   ./build.sh --vanilla exe-linux-x86_64   # the exe-linux-vanilla-x86_64 preset
+#   ./build.sh --vanilla                         # the exe-linux-vanilla-x86_64 preset
+#   ./build.sh --vanilla exe-linux-asan-x86_64   # build/exe-linux-asan-x86_64-vanilla
+#
+# run.sh and debug.sh take the same BUILD_PRESET, so all three agree on a lane.
 #
 # Extra args after the preset get passed through to cmake --build:
 #
-#   ./build.sh exe-linux-asan-x86_64 -j 4
-#   ./build.sh exe-linux-asan-x86_64 --target nocturne_globals
+#   ./build.sh exe-linux-x86_64 -j 4
+#   ./build.sh exe-linux-x86_64 --target nocturne_globals
 #   ./build.sh -j 4                    # the default preset, -j 4 to the build
 #
 # Every run configures from the preset first, which also re-globs the sources
@@ -48,7 +50,7 @@ if [[ "${1:-}" == "--vanilla" ]]; then
 fi
 
 # No preset name starts with '-', so a leading option belongs to the build.
-PRESET="${BUILD_PRESET:-exe-linux-asan-x86_64}"
+PRESET="${BUILD_PRESET:-exe-linux-x86_64}"
 if [[ $# -ge 1 && "$1" != -* ]]; then
     PRESET="$1"
     shift

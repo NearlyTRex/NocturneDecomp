@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[4]:
-;   sound_sndmain.cpp_FUN_00559220 at 005592a2
 ;   sound_sndmain.cpp_findBestRecordingDevice_FUN_00558960 at 00558968
 ;   sound_sndmain.cpp_getRecordingDeviceInfo_FUN_00558900 at 00558907
+;   sound_sndmain.cpp_readIni_FUN_00559220 at 005592a2
 ;   sound_sndmain.cpp_selectRecordingDevice_FUN_005589e0 at 005589f8
 ;
 ; Referenced Globals:
@@ -15,8 +15,8 @@
 ;   undefined4 DAT_00604254
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_00556fd0
-;   sound_sndmain.cpp_FUN_00558e90
+;   sound_sndmain.cpp_lockSound_FUN_00558e90
+;   sound_sndmain.cpp_unlockSound_FUN_00556fd0
 ;   sound_sndwav.cpp_enumerateWavInDevice_FUN_0055e590
 ;
 ; *****************************************************************************
@@ -35,10 +35,10 @@ section .text
     RET                                 ; 005588b4
     PUSH EBX                            ; 005588b5
         ;   Label: LAB_005588b5
-    CALL sound_sndmain.cpp_FUN_00558e90 ; 005588b6
-        ;   XREF to: 00558e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00558e90()
-    CALL sound_sndmain.cpp_FUN_00556fd0 ; 005588bb
-        ;   XREF to: 00556fd0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00556fd0()
+    CALL sound_sndmain.cpp_lockSound_FUN_00558e90 ; 005588b6
+        ;   XREF to: 00558e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00558e90()
+    CALL sound_sndmain.cpp_unlockSound_FUN_00556fd0 ; 005588bb
+        ;   XREF to: 00556fd0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00556fd0()
     XOR ESI,ESI                         ; 005588c0
     XOR EBX,EBX                         ; 005588c2
     IMUL EAX,ESI,0x108                  ; 005588c4
@@ -48,7 +48,7 @@ section .text
     PUSH EBX                            ; 005588d0
     MOV dword ptr [0x00604254],ESI      ; 005588d1 | DAT_00604254
     CALL sound_sndwav.cpp_enumerateWavInDevice_FUN_0055e590 ; 005588d7
-        ;   XREF to: 0055e590 (UNCONDITIONAL_CALL)  ; undefined sound_sndwav.cpp_enumerateWavInDevice_FUN_0055e590()
+        ;   XREF to: 0055e590 (UNCONDITIONAL_CALL)  ; int sound_sndwav.cpp_enumerateWavInDevice_FUN_0055e590(UINT device_id, SRecordingDeviceInfo * device_info)
     MOV ESI,dword ptr [0x00604254]      ; 005588dc | DAT_00604254
     ADD ESP,0x8                         ; 005588e2
     TEST EAX,EAX                        ; 005588e5

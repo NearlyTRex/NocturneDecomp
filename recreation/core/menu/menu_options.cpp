@@ -21,15 +21,17 @@ namespace {
 enum class EOptionsLine : std::uint8_t {
     Gameplay,
     Graphic,
+    Display,
     Sound,
     Control,
     Cheats,
     Credits,
 };
 
-constexpr std::array<std::pair<EOptionsLine, std::string_view>, 6> kOptionsLines{{
+constexpr std::array<std::pair<EOptionsLine, std::string_view>, 7> kOptionsLines{{
     {EOptionsLine::Gameplay, "Gameplay options"},
     {EOptionsLine::Graphic, "Graphic options"},
+    {EOptionsLine::Display, "Display options"},
     {EOptionsLine::Sound, "Sound options"},
     {EOptionsLine::Control, "Control options"},
     {EOptionsLine::Cheats, "Cheats"},
@@ -65,6 +67,9 @@ public:
         case EOptionsLine::Graphic:
             getMenu().configureGraphicsOptions();
             break;
+        case EOptionsLine::Display:
+            getMenu().configureDisplayOptions();
+            break;
         case EOptionsLine::Sound:
             getMenu().configureSoundOptions();
             break;
@@ -98,20 +103,29 @@ private:
 // Escape alone, not on the window closing.
 // deferred: the cheats, which nothing in the original lists (the decomp's cheats.h
 //   nocturne_cheats_menu), with the cheats menu
+// deferred: over the sound the pause menu holds, the menu music started without configure's
+//   reset, and only the menu's own sounds stopped after it in place of reset (the decomp's
+//   PAUSE_SOUND), with the pause menu
 // nocedit 0x00512d30
 void CMenu::showOptionsScreen(int initialize_systems) {
     if (initialize_systems != 0) {
         owners_.sound.configure();
         moon_.init();
     }
+    in_mission_ = initialize_systems != 0;
     owners_.game.saveClockTime();
     COptionsPage page(*this, owners_);
     runPage(page);
+    in_mission_ = false;
     if (initialize_systems != 0) {
         moon_.free();
         owners_.sound.reset();
     }
     writeIniData(owners_.ini, owners_.ini_owners);
+}
+
+bool CMenu::getInMission() const {
+    return in_mission_;
 }
 
 void CMenu::showGameplayOptions() {

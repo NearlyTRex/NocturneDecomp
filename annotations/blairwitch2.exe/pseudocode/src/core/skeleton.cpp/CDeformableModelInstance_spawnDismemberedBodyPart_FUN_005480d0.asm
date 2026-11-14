@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416700
-;   core_bodypart.cpp_FUN_004154f0
+;   core_bodypart.cpp_createBodyPart_FUN_004154f0
 ;   core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_00548130
 ;
 ; *****************************************************************************
@@ -36,8 +36,8 @@ section .text
     PUSH EBX                            ; 005480e8
     MOV ESI,dword ptr [ESP + 0x34]      ; 005480e9
     PUSH ESI                            ; 005480ed
-    CALL core_bodypart.cpp_FUN_004154f0 ; 005480ee
-        ;   XREF to: 004154f0 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_FUN_004154f0(CVector3f * position, UOrientationVector * orientation, CVector3f * initial_velocity, CDemonActor * scale_source, ...)
+    CALL core_bodypart.cpp_createBodyPart_FUN_004154f0 ; 005480ee
+        ;   XREF to: 004154f0 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_createBodyPart_FUN_004154f0(CVector3f * position, UOrientationVector * orientation, CVector3f * initial_velocity, CDemonActor * scale_source, ...)
     ADD ESP,0x1c                        ; 005480f3
     MOV EDI,dword ptr [ESP + 0x18]      ; 005480f6
     PUSH EDI                            ; 005480fa

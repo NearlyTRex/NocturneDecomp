@@ -2,18 +2,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 57,
+    "complexity_score": 58,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 7,
+    "pseudocode_lines": 8,
     "suspect_count": 4,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 21
+    "total_lines": 22
   },
   "cross_references": [],
   "function": {
@@ -32,7 +32,7 @@
     {
       "addr": "00403480",
       "is_variadic": false,
-      "name": "engine_2d.c_FUN_00403480"
+      "name": "engine_2d.c_mapFrameBuffer_FUN_00403480"
     }
   ],
   "globals": [
@@ -78,6 +78,32 @@
     },
     "pcode_op_count": 39
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004036a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004036a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00403650",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00404340",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -97,26 +123,26 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 9,
+      "line": 10,
       "match": "DAT_006141c8",
       "severity": "mild",
-      "text": "iVar1 = engine_2d_c_FUN_00403480(_DAT_01c37770,DAT_006141c8,DAT_006141c8,8,DAT_006141c8);",
+      "text": "(_DAT_01c37770,DAT_006141c8,DAT_006141c8,8,DAT_006141c8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 9,
+      "line": 10,
       "match": "DAT_006141c8",
       "severity": "mild",
-      "text": "iVar1 = engine_2d_c_FUN_00403480(_DAT_01c37770,DAT_006141c8,DAT_006141c8,8,DAT_006141c8);",
+      "text": "(_DAT_01c37770,DAT_006141c8,DAT_006141c8,8,DAT_006141c8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 9,
+      "line": 10,
       "match": "DAT_006141c8",
       "severity": "mild",
-      "text": "iVar1 = engine_2d_c_FUN_00403480(_DAT_01c37770,DAT_006141c8,DAT_006141c8,8,DAT_006141c8);",
+      "text": "(_DAT_01c37770,DAT_006141c8,DAT_006141c8,8,DAT_006141c8);",
       "type": "undefined_data"
     }
   ]

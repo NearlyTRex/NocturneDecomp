@@ -10,13 +10,14 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonSet.h"
-#include "types/classes/CEnemy.h"
 #include "types/classes/CGame.h"
 #include "types/classes/CScat.h"
 #include "types/classes/CScript.h"
 #include "types/classes/CSentinel.h"
+#include "types/classes/CVector3f.h"
 #include "types/enums/ECollisionType.h"
 #include "types/structs/SCollisionInfo.h"
+#include "types/structs/SDamageInfo.h"
 #include "types/structs/SPlayerActionState.h"
 
 // =============================================================================
@@ -25,78 +26,78 @@
 
 void __cdecl core_scat_cpp_FUN_00520140(CScat *this_ptr,int hand_index);
 void core_scat_cpp_FUN_005203c0(int param_1,float param_2,int param_3);
-float core_scat_cpp_FUN_00520a60(CDemonActor *param_1,int param_2,int param_3);
+undefined4 core_scat_cpp_FUN_00520a60(CDemonActor *param_1,CDemonActor *param_2,int param_3);
 void core_scat_cpp_FUN_00520df0(int param_1);
 CScat * __cdecl core_scat_cpp_CScat_dtor_FUN_00520f40(CScat *this_ptr,uint flags);
-void core_script_cpp_staticInit_FUN_00520f90(void);
+void __cdecl core_script_cpp_staticInit_FUN_00520f90(void);
 int __cdecl core_script_cpp_validateActorVariableName_FUN_00520fd0(char *variable_name);
 void __cdecl core_script_cpp_trimLine_FUN_00521070(char *input_line,char *output_buffer);
 void __cdecl core_script_cpp_trimString_FUN_00521110(char *str);
 char * __cdecl core_script_cpp_skipWhitespace_FUN_00521180(char *str);
 char * __cdecl core_script_cpp_parseArgument_FUN_005211a0(char **cursor,char *out_buffer,int max_length);
 char * __cdecl core_script_cpp_parseConditionExpr_FUN_00521250(char **cursor,char *out_buffer);
-CDemonActor * __cdecl core_script_cpp_getActor_FUN_00521290(char *param_1,undefined4 param_2,undefined4 param_3);
-int * __cdecl core_script_cpp_FUN_00521410(SPlayerActionState *action_state,char *action_name);
-int __cdecl core_script_cpp_FUN_00521500(CCharacter *character,char *part_names,int *part_mask);
+CDemonActor * __cdecl core_script_cpp_getActor_FUN_00521290(char *actor_specifier,uint expected_class_hash,CDemonActorType *expected_class);
+int * __cdecl core_script_cpp_getActionState_FUN_00521410(SPlayerActionState *action_state,char *action_name);
+int __cdecl core_script_cpp_parseBodyPartMask_FUN_00521500(CCharacter *character,char *part_names,int *part_mask);
 CScript * __cdecl core_script_cpp_CScript_ctor_FUN_005215c0(CScript *this_ptr);
 CScript * __cdecl core_script_cpp_CScript_dtor_FUN_00521600(CScript *this_ptr,uint flags);
-void core_script_cpp_FUN_00521630(CScript *param_1);
-void __cdecl core_script_cpp_FUN_00521680(CScript *this_ptr);
-void __cdecl core_script_cpp_FUN_005216e0(CScript *this_ptr);
+void __cdecl core_script_cpp_CScript_clear_FUN_00521630(CScript *this_ptr);
+void __cdecl core_script_cpp_CScript_freeParsedLines_FUN_00521680(CScript *this_ptr);
+void __cdecl core_script_cpp_CScript_process_FUN_005216e0(CScript *this_ptr);
 int __cdecl core_script_cpp_CScript_getLetterboxHeight_FUN_00521840(CScript *this_ptr);
-void __cdecl core_script_cpp_FUN_005218a0(CScript *this_ptr);
-void __cdecl core_script_cpp_FUN_00521af0(CScript *this_ptr,int left,int top,int right,int bottom);
+void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_005218a0(CScript *this_ptr);
+void __cdecl core_script_cpp_CScript_renderEditor_FUN_00521af0(CScript *this_ptr,int left,int top,int right,int bottom);
 undefined4 core_script_cpp_FUN_00521cf0(CScript *param_1,char *param_2);
-void __cdecl core_script_cpp_FUN_00521ec0(CScript *this_ptr);
+void __cdecl core_script_cpp_CScript_buildParsedLines_FUN_00521ec0(CScript *this_ptr);
 undefined * core_script_cpp_FUN_00521ff0(CScript *param_1,int *param_2,int param_3);
-void __cdecl core_script_cpp_FUN_00522080(CScript *this_ptr);
-void __cdecl core_script_cpp_FUN_00522200(CScript *this_ptr);
-int core_script_cpp_FUN_00522350(CScript *param_1,float *param_2);
-float core_script_cpp_FUN_00529750(void *param_1,undefined4 param_2,char *param_3,char *param_4);
+void __cdecl core_script_cpp_CScript_initRuntime_FUN_00522080(CScript *this_ptr);
+void __cdecl core_script_cpp_CScript_executeInitSection_FUN_00522200(CScript *this_ptr);
+int __cdecl core_script_cpp_CScript_step_FUN_00522350(CScript *this_ptr,float *param_2);
+float __cdecl core_script_cpp_CScript_startDialogLine_FUN_00529750(CScript *this_ptr,char *actor_specifier,char *sound_name,char *dialog_text);
 int __cdecl core_script_cpp_CScript_processTimer_FUN_00529910(CScript *this_ptr,float delta_time,float *timer_value);
-void __cdecl core_script_cpp_FUN_00529990(CScript *this_ptr,CDemonActor *actor);
-int __cdecl core_script_cpp_FUN_005299b0(CScript *this_ptr,char *label_name);
-int core_script_cpp_FUN_00529a10(int param_1,int param_2,int param_3);
-void core_script_cpp_FUN_00529b00(CScript *param_1);
-int __cdecl core_script_cpp_FUN_00529b30(CScript *this_ptr);
+void __cdecl core_script_cpp_CScript_setSpeaker_FUN_00529990(CScript *this_ptr,CDemonActor *actor);
+int __cdecl core_script_cpp_CScript_findLabelIndex_FUN_005299b0(CScript *this_ptr,char *label_name);
+int __cdecl core_script_cpp_CScript_skipCommands_FUN_00529a10(CScript *this_ptr,int direction,int count);
+void __cdecl core_script_cpp_CScript_resetDialogState_FUN_00529b00(CScript *this_ptr);
+int __cdecl core_script_cpp_CScript_skipCinematic_FUN_00529b30(CScript *this_ptr);
 void __cdecl core_script_cpp_CScript_dbLoad_FUN_00529c10(CScript *this_ptr,char *filename);
-int __cdecl core_script_cpp_FUN_00529f90(CScript *this_ptr,char *path);
-void __cdecl core_script_cpp_readActorReference_FUN_0052a010(undefined4 param_1,undefined4 *param_2);
-void __cdecl core_script_cpp_writeActorReference_FUN_0052a090(undefined4 param_1,int *param_2);
+int __cdecl core_script_cpp_CScript_findDialogEntry_FUN_00529f90(CScript *this_ptr,char *path);
+void __cdecl core_script_cpp_readActorReference_FUN_0052a010(_FILE *file_handle,CDemonActor *actor_out);
+void __cdecl core_script_cpp_writeActorReference_FUN_0052a090(_FILE *file_handle,CDemonActor **actor);
 void __cdecl core_script_cpp_CScript_loadState_FUN_0052a0d0(CScript *this_ptr,_FILE *file_handle);
-void __cdecl core_script_cpp_FUN_0052a400(CScript *this_ptr,_FILE *file_handle);
-uint __cdecl core_script_cpp_FUN_0052a630(CScript *this_ptr);
-char * __cdecl core_script_cpp_FUN_0052a690(CDeformableModel *model_ptr);
-undefined4 unkafter_script_cpp_FUN_0052a6a0(int param_1);
-void core_sentinel_cpp_staticInit_FUN_0052a6c0(void);
-void core_sentinel_cpp_factoryFuncSentinel_FUN_0052a6f0(void);
-CDemonActorType * core_sentinel_cpp_CSentinel_getActorType_FUN_0052a710(CSentinel *this_ptr);
+void __cdecl core_script_cpp_CScript_saveState_FUN_0052a400(CScript *this_ptr,_FILE *file_handle);
+uint __cdecl core_script_cpp_CScript_computeChecksum_FUN_0052a630(CScript *this_ptr);
+char * __cdecl core_script_cpp_getDeformableModelFilename_FUN_0052a690(CDeformableModel *model_ptr);
+undefined4 core_script_cpp_FUN_0052a6a0(int param_1);
+void __cdecl core_sentinel_cpp_staticInit_FUN_0052a6c0(void);
+CSentinel * __cdecl core_sentinel_cpp_factoryFuncSentinel_FUN_0052a6f0(void);
+CDemonActorType * __cdecl core_sentinel_cpp_CSentinel_getActorType_FUN_0052a710(CSentinel *this_ptr);
 CSentinel * __cdecl core_sentinel_cpp_CSentinel_ctor_FUN_0052a720(CSentinel *this_ptr);
-void core_sentinel_cpp_FUN_0052a790(CEnemy *param_1);
-void core_sentinel_cpp_FUN_0052a9a0(CEnemy *param_1,float param_2);
-undefined4 core_sentinel_cpp_FUN_0052b6d0(int param_1,int param_2);
-void core_sentinel_cpp_FUN_0052b830(CEnemy *param_1);
-void core_sentinel_cpp_FUN_0052b890(int param_1,int param_2);
-undefined4 core_sentinel_cpp_FUN_0052b990(int param_1,undefined4 *param_2);
+void __cdecl core_sentinel_cpp_CSentinel_setup_FUN_0052a790(CSentinel *this_ptr);
+void __cdecl core_sentinel_cpp_CSentinel_process_FUN_0052a9a0(CSentinel *this_ptr,float delta_time);
+int __cdecl core_sentinel_cpp_CSentinel_attractActorToward_FUN_0052b6d0(CSentinel *this_ptr,CDemonActor *actor,CVector3f *target_local_point);
+void __cdecl core_sentinel_cpp_CSentinel_archive_FUN_0052b830(CSentinel *this_ptr);
+void __cdecl core_sentinel_cpp_CSentinel_processDamage_FUN_0052b890(CSentinel *this_ptr,SDamageInfo *damage_info);
+int __cdecl core_sentinel_cpp_CSentinel_getTargetPoints_FUN_0052b990(CSentinel *this_ptr,CVector3f *out_points_array);
 ECollisionType __cdecl core_sentinel_cpp_CSentinel_getCollisionType_FUN_0052bb20(CSentinel *this_ptr,SCollisionInfo *collision_info);
-CSentinel * core_sentinel_cpp_CSentinel_dtor_FUN_0052bb40(CSentinel *this_ptr,uint flags);
+CSentinel * __cdecl core_sentinel_cpp_CSentinel_dtor_FUN_0052bb40(CSentinel *this_ptr,uint flags);
 void __cdecl core_set_cpp_staticInit_FUN_0052bbe0(void);
 CGame * core_set_cpp_FUN_0052bc60(void);
 void core_set_cpp_FUN_0052bca0(int param_1);
-CDemonSet * core_set_cpp_CDemonSet_ctor_FUN_0052bd20(CDemonSet *this_ptr);
-CDemonSet * core_set_cpp_CDemonSet_dtor_FUN_0052c060(CDemonSet *this_ptr,uint flags);
+CDemonSet * __cdecl core_set_cpp_CDemonSet_ctor_FUN_0052bd20(CDemonSet *this_ptr);
+CDemonSet * __cdecl core_set_cpp_CDemonSet_dtor_FUN_0052c060(CDemonSet *this_ptr,uint flags);
 void __cdecl core_set_cpp_CDemonSet_clear_FUN_0052c090(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_load_FUN_0052c0e0(CDemonSet *this_ptr,char *filename);
-void __cdecl core_set_cpp_FUN_0052d0e0(CDemonSet *this_ptr,float frustum_param,int render_mode);
-void core_set_cpp_FUN_0052d3be(CDemonSet *param_1,int param_2);
-void core_set_cpp_FUN_0052d980(CDemonSet *param_1);
-void __cdecl core_set_cpp_FUN_0052dc10(CDemonSet *this_ptr,int layer_flag);
-void __cdecl core_set_cpp_FUN_0052dd80(CDemonSet *this_ptr,CDemonActor *actor);
+void __cdecl core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0(CDemonSet *this_ptr,float frustum_param,int render_mode);
+void core_set_cpp_FUN_0052d3c0(void);
+void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0052d980(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_renderBackgroundActors_FUN_0052dc10(CDemonSet *this_ptr,int layer_flag);
+void __cdecl core_set_cpp_CDemonSet_snapshotActorTransformState_FUN_0052dd80(CDemonSet *this_ptr,CDemonActor *actor);
 void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0052ddf0(CDemonSet *this_ptr,int index);
 int __cdecl core_set_cpp_CDemonSet_findCameraByName_FUN_0052e8c0(CDemonSet *this_ptr,char *name);
-void __cdecl core_set_cpp_FUN_0052e910(CDemonSet *this_ptr,int clear_enabled,int is_clearing,int screen_height);
-void __cdecl core_set_cpp_FUN_0052e940(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_FUN_0052ef80(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_reinitCamera_FUN_0052e910(CDemonSet *this_ptr,int clear_enabled,int is_clearing,int screen_height);
+void __cdecl core_set_cpp_CDemonSet_processActors_FUN_0052e940(CDemonSet *this_ptr);
+void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_0052ef80(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_FUN_0052f2a0(CDemonSet *this_ptr,int skip_prerender);
 void __cdecl core_set_cpp_FUN_0052fad0(CDemonSet *this_ptr);
 void core_set_cpp_FUN_0052fea0(CDemonSet *param_1);

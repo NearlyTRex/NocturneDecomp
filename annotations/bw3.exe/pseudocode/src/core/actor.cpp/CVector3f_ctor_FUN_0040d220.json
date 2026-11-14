@@ -2,27 +2,39 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 5,
+    "complexity_score": 4,
     "cross_reference_count": 13,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 5,
+    "pseudocode_lines": 4,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 8
+    "total_lines": 7
   },
   "cross_references": [
     {
-      "addr": "00416f50",
-      "from_addr": "00416f86",
-      "name": "core_boneguy.cpp_FUN_00416f50",
+      "addr": "004186b0",
+      "from_addr": "00418735",
+      "name": "core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004186b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004186b0",
-      "from_addr": "00418735",
-      "name": "core_boneguy.cpp_FUN_004186b0",
+      "addr": "00416f50",
+      "from_addr": "00416f86",
+      "name": "core_boneguy.cpp_getWorldBoundingBoxCenter_FUN_00416f50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00427780",
+      "from_addr": "00427849",
+      "name": "core_carved.cpp_CCarved_getCarryObjToBodyXForm_FUN_00427780",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00425da0",
+      "from_addr": "004271ea",
+      "name": "core_carved.cpp_CCarved_process_FUN_00425da0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -32,27 +44,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00425da0",
-      "from_addr": "004271ea",
-      "name": "core_carved.cpp_FUN_00425da0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00427780",
-      "from_addr": "00427849",
-      "name": "core_carved.cpp_FUN_00427780",
+      "addr": "00457300",
+      "from_addr": "004573c9",
+      "name": "core_demnfolk.cpp_CDemnfolk_getCarryObjToBodyXForm_FUN_00457300",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00455080",
       "from_addr": "004568fe",
-      "name": "core_demnfolk.cpp_FUN_00455080",
+      "name": "core_demnfolk.cpp_CDemnfolk_process_FUN_00455080",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00457300",
-      "from_addr": "004573c9",
-      "name": "core_demnfolk.cpp_FUN_00457300",
+      "addr": "004548e0",
+      "from_addr": "00454916",
+      "name": "core_demnfolk.cpp_FUN_004548e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -62,33 +68,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00588650",
-      "from_addr": "00588686",
-      "name": "core_zombie.cpp_FUN_00588650",
+      "addr": "0058af90",
+      "from_addr": "0058b2af",
+      "name": "core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_0058af90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00588ee0",
       "from_addr": "0058a754",
-      "name": "core_zombie.cpp_FUN_00588ee0",
+      "name": "core_zombie.cpp_CZombie_process_FUN_00588ee0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0058af90",
-      "from_addr": "0058b2af",
-      "name": "core_zombie.cpp_FUN_0058af90",
+      "addr": "00588650",
+      "from_addr": "00588686",
+      "name": "core_zombie.cpp_getObjectGrabPointWorld_FUN_00588650",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0058d3b0",
       "from_addr": "0058d3e6",
-      "name": "core_zombprie.cpp_FUN_0058d3b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004548e0",
-      "from_addr": "00454916",
-      "name": "unkafter_hostage.cpp_FUN_004548e0",
+      "name": "core_zombiepriest.cpp_FUN_0058d3b0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -100,9 +100,9 @@
         "0040d224"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_actor.cpp_CVector3f_ctor_FUN_0040d220",
-    "signature": "CVector3f * core_actor_cpp_CVector3f_ctor_FUN_0040d220(CVector3f *this_ptr)"
+    "signature": "CVector3f * __cdecl core_actor_cpp_CVector3f_ctor_FUN_0040d220(CVector3f *this_ptr)"
   },
   "function_calls": [],
   "globals": [],
@@ -113,148 +113,117 @@
         "call_addr": "0052c1fd",
         "call_type": "direct",
         "caller": "core_script.cpp_CScript_step_FUN_00529a70",
-        "estimated_params": 2,
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "004271ea",
         "call_type": "direct",
-        "caller": "core_carved.cpp_FUN_00425da0",
-        "estimated_params": 3,
+        "caller": "core_carved.cpp_CCarved_process_FUN_00425da0",
+        "estimated_params": 1,
         "instructions_analyzed": 8,
         "method": "push_count",
-        "reg_params": [
-          "EAX",
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "00427677",
         "call_type": "direct",
-        "caller": "core_carved.cpp_FUN_00425da0",
-        "estimated_params": 3,
+        "caller": "core_carved.cpp_CCarved_process_FUN_00425da0",
+        "estimated_params": 1,
         "instructions_analyzed": 8,
         "method": "push_count",
-        "reg_params": [
-          "EAX",
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "004568fe",
         "call_type": "direct",
-        "caller": "core_demnfolk.cpp_FUN_00455080",
-        "estimated_params": 3,
+        "caller": "core_demnfolk.cpp_CDemnfolk_process_FUN_00455080",
+        "estimated_params": 1,
         "instructions_analyzed": 8,
         "method": "push_count",
-        "reg_params": [
-          "EAX",
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "00456d80",
         "call_type": "direct",
-        "caller": "core_demnfolk.cpp_FUN_00455080",
-        "estimated_params": 4,
+        "caller": "core_demnfolk.cpp_CDemnfolk_process_FUN_00455080",
+        "estimated_params": 1,
         "instructions_analyzed": 9,
         "method": "push_count",
-        "reg_params": [
-          "EAX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "0058a754",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_00588ee0",
-        "estimated_params": 3,
+        "caller": "core_zombie.cpp_CZombie_process_FUN_00588ee0",
+        "estimated_params": 1,
         "instructions_analyzed": 8,
         "method": "push_count",
-        "reg_params": [
-          "EAX",
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "0058abcc",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_00588ee0",
-        "estimated_params": 4,
+        "caller": "core_zombie.cpp_CZombie_process_FUN_00588ee0",
+        "estimated_params": 1,
         "instructions_analyzed": 9,
         "method": "push_count",
-        "reg_params": [
-          "EAX",
-          "ECX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "00418735",
         "call_type": "direct",
-        "caller": "core_boneguy.cpp_FUN_004186b0",
-        "estimated_params": 3,
+        "caller": "core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004186b0",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "0041876f",
         "call_type": "direct",
-        "caller": "core_boneguy.cpp_FUN_004186b0",
-        "estimated_params": 3,
+        "caller": "core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004186b0",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "00427849",
         "call_type": "direct",
-        "caller": "core_carved.cpp_FUN_00427780",
-        "estimated_params": 3,
+        "caller": "core_carved.cpp_CCarved_getCarryObjToBodyXForm_FUN_00427780",
+        "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "declared_params": 1,
     "declared_stack_bytes": 4,
-    "estimated_params": 3,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -267,6 +236,32 @@
       "RETURN": 1
     },
     "pcode_op_count": 6
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0040d340",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0040cfe0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00410340",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0040e160",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 8,

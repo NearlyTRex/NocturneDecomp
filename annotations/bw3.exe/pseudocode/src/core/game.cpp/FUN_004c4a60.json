@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 150,
-    "complexity_score": 670,
+    "complexity_score": 672,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
+    "pseudocode_lines": 57,
     "suspect_count": 59,
     "suspect_types": [
       "bitcast_double_pair",
@@ -16,7 +16,7 @@
       "unnamed_param",
       "unrolled_strcpy"
     ],
-    "total_lines": 205
+    "total_lines": 207
   },
   "cross_references": [
     {
@@ -56,49 +56,49 @@
       "name": "crt_string.c__stricmp_FUN_005a3260"
     },
     {
-      "addr": "00555df0",
+      "addr": "00556e30",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00555df0"
-    },
-    {
-      "addr": "00555f20",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00555f20"
-    },
-    {
-      "addr": "00555f60",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00555f60"
-    },
-    {
-      "addr": "00555fd0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00555fd0"
-    },
-    {
-      "addr": "00556050",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00556050"
+      "name": "sound_sndmain.cpp_isSfxChannelEnabled_FUN_00556e30"
     },
     {
       "addr": "00556700",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00556700"
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_00556700"
     },
     {
-      "addr": "00556c10",
+      "addr": "00556050",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00556c10"
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_00556050"
     },
     {
-      "addr": "00556e30",
+      "addr": "00555fd0",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00556e30"
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_00555fd0"
     },
     {
       "addr": "00555e90",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_setNextSfxChannel_FUN_00555e90"
+    },
+    {
+      "addr": "00555f20",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxFlagBits_FUN_00555f20"
+    },
+    {
+      "addr": "00555f60",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxTriggerTime_FUN_00555f60"
+    },
+    {
+      "addr": "00555df0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxVolume_FUN_00555df0"
+    },
+    {
+      "addr": "00556c10",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setSfxFade_FUN_00556c10"
     }
   ],
   "globals": [
@@ -258,7 +258,7 @@
       "line": 14,
       "match": "(uint *)((int)param_1",
       "severity": "moderate",
-      "text": "(iVar2 = sound_sndmain_cpp_FUN_00556700(*(uint *)((int)param_1 + 0x2fc)), iVar2 == 0)) {",
+      "text": "(iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(*(uint *)((int)param_1 + 0x2fc)),",
       "type": "pointer_cast"
     },
     {
@@ -266,12 +266,12 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "(iVar2 = sound_sndmain_cpp_FUN_00556700(*(uint *)((int)param_1 + 0x2fc)), iVar2 == 0)) {",
+      "text": "(iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(*(uint *)((int)param_1 + 0x2fc)),",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 15,
+      "line": 16,
       "match": "(uint *)((int)param_1",
       "severity": "moderate",
       "text": "bVar4 = *(uint *)((int)param_1 + 0x2fc) != 0;",
@@ -279,7 +279,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
       "text": "bVar4 = *(uint *)((int)param_1 + 0x2fc) != 0;",
@@ -287,26 +287,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 17,
-      "match": "(uint *)((int)param_1",
-      "severity": "moderate",
-      "text": "sound_sndmain_cpp_FUN_00556c10(*(uint *)((int)param_1 + 0x2fc),0.0,4.0,1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_00556c10(*(uint *)((int)param_1 + 0x2fc),0.0,4.0,1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 18,
       "match": "(uint *)((int)param_1",
       "severity": "moderate",
-      "text": "*(uint *)((int)param_1 + 0x2fc) = 0;",
+      "text": "sound_sndmain_cpp_setSfxFade_FUN_00556c10(*(uint *)((int)param_1 + 0x2fc),0.0,4.0,1);",
       "type": "pointer_cast"
     },
     {
@@ -314,12 +298,28 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
+      "text": "sound_sndmain_cpp_setSfxFade_FUN_00556c10(*(uint *)((int)param_1 + 0x2fc),0.0,4.0,1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(uint *)((int)param_1",
+      "severity": "moderate",
+      "text": "*(uint *)((int)param_1 + 0x2fc) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
       "text": "*(uint *)((int)param_1 + 0x2fc) = 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 20,
+      "line": 21,
       "match": "(char *)((int)param_1",
       "severity": "moderate",
       "text": "pcVar3 = (char *)((int)param_1 + 0x298);",
@@ -327,7 +327,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
       "text": "pcVar3 = (char *)((int)param_1 + 0x298);",
@@ -335,7 +335,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 23,
       "match": "param_2",
       "severity": "mild",
       "text": "cVar1 = *param_2;",
@@ -343,7 +343,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 26,
       "match": "param_2",
       "severity": "mild",
       "text": "cVar1 = param_2[1];",
@@ -351,7 +351,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 27,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = param_2 + 2;",
@@ -359,7 +359,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 27,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = param_2 + 2;",
@@ -367,7 +367,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 31,
       "match": "(char *)((int)param_1",
       "severity": "moderate",
       "text": "if ((*(char *)((int)param_1 + 0x298) != '\\0') &&",
@@ -375,7 +375,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((*(char *)((int)param_1 + 0x298) != '\\0') &&",
@@ -383,7 +383,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 35,
       "match": "param_4",
       "severity": "mild",
       "text": "if (((param_4 & 0x7fffffff) != 0) || (param_3 != 0)) {",
@@ -391,7 +391,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 35,
       "match": "param_3",
       "severity": "mild",
       "text": "if (((param_4 & 0x7fffffff) != 0) || (param_3 != 0)) {",
@@ -399,31 +399,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 36,
       "match": "param_4",
       "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_00555f60(__BITCAST_DOUBLE(CONCAT44(param_4,param_3)),1);",
+      "text": "sound_sndmain_cpp_setNextSfxTriggerTime_FUN_00555f60(__BITCAST_DOUBLE(CONCAT44(param_4,param_3)),1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 36,
       "match": "param_3",
       "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_00555f60(__BITCAST_DOUBLE(CONCAT44(param_4,param_3)),1);",
+      "text": "sound_sndmain_cpp_setNextSfxTriggerTime_FUN_00555f60(__BITCAST_DOUBLE(CONCAT44(param_4,param_3)),1);",
       "type": "unnamed_param"
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 35,
+      "line": 36,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
-      "text": "sound_sndmain_cpp_FUN_00555f60(__BITCAST_DOUBLE(CONCAT44(param_4,param_3)),1);",
+      "text": "sound_sndmain_cpp_setNextSfxTriggerTime_FUN_00555f60(__BITCAST_DOUBLE(CONCAT44(param_4,param_3)),1);",
       "type": "bitcast_double_pair"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 42,
       "match": "(float *)((int)param_1",
       "severity": "moderate",
       "text": "volume = *(float *)((int)param_1 + 0x308);",
@@ -431,7 +431,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
       "text": "volume = *(float *)((int)param_1 + 0x308);",
@@ -439,7 +439,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 47,
       "match": "(char *)((int)param_1",
       "severity": "moderate",
       "text": "(0x02CF5680,param_1,(char *)((int)param_1 + 0x298));",
@@ -447,7 +447,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
       "text": "(0x02CF5680,param_1,(char *)((int)param_1 + 0x298));",
@@ -455,7 +455,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
       "text": "(0x02CF5680,param_1,(char *)((int)param_1 + 0x298));",
@@ -463,7 +463,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 48,
       "match": "(uint *)((int)param_1",
       "severity": "moderate",
       "text": "*(uint *)((int)param_1 + 0x2fc) = sfx_handle;",
@@ -471,7 +471,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 48,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)((int)param_1 + 0x2fc) = sfx_handle;",
@@ -479,23 +479,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 50,
       "match": "(float *)((int)param_1",
       "severity": "moderate",
-      "text": "sound_sndmain_cpp_FUN_00556c10(sfx_handle,*(float *)((int)param_1 + 0x308),4.0,0);",
+      "text": "sound_sndmain_cpp_setSfxFade_FUN_00556c10(sfx_handle,*(float *)((int)param_1 + 0x308),4.0,0)",
       "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 50,
       "match": "param_1",
       "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_00556c10(sfx_handle,*(float *)((int)param_1 + 0x308),4.0,0);",
+      "text": "sound_sndmain_cpp_setSfxFade_FUN_00556c10(sfx_handle,*(float *)((int)param_1 + 0x308),4.0,0)",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 54,
       "match": "(uint *)((int)param_1",
       "severity": "moderate",
       "text": "*(uint *)((int)param_1 + 0x300) = 0;",
@@ -503,7 +503,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 54,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)((int)param_1 + 0x300) = 0;",
@@ -511,7 +511,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 55,
       "match": "(uint *)((int)param_1",
       "severity": "moderate",
       "text": "*(uint *)((int)param_1 + 0x304) = 0;",
@@ -519,7 +519,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 55,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)((int)param_1 + 0x304) = 0;",
@@ -527,7 +527,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 21,
+      "line": 22,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -554,12 +554,12 @@
       "line": 14,
       "match": "(uint *)((int)param_1 + 0x2fc)",
       "severity": "moderate",
-      "text": "(iVar2 = sound_sndmain_cpp_FUN_00556700(*(uint *)((int)param_1 + 0x2fc)), iVar2 == 0)) {",
+      "text": "(iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(*(uint *)((int)param_1 + 0x2fc)),",
       "type": "pointer_cast"
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 15,
+      "line": 16,
       "match": "(uint *)((int)param_1 + 0x2fc)",
       "severity": "moderate",
       "text": "bVar4 = *(uint *)((int)param_1 + 0x2fc) != 0;",
@@ -567,15 +567,15 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 17,
+      "line": 18,
       "match": "(uint *)((int)param_1 + 0x2fc)",
       "severity": "moderate",
-      "text": "sound_sndmain_cpp_FUN_00556c10(*(uint *)((int)param_1 + 0x2fc),0.0,4.0,1);",
+      "text": "sound_sndmain_cpp_setSfxFade_FUN_00556c10(*(uint *)((int)param_1 + 0x2fc),0.0,4.0,1);",
       "type": "pointer_cast"
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 18,
+      "line": 19,
       "match": "(uint *)((int)param_1 + 0x2fc)",
       "severity": "moderate",
       "text": "*(uint *)((int)param_1 + 0x2fc) = 0;",
@@ -583,7 +583,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 20,
+      "line": 21,
       "match": "(char *)((int)param_1 + 0x298)",
       "severity": "moderate",
       "text": "pcVar3 = (char *)((int)param_1 + 0x298);",
@@ -591,7 +591,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 30,
+      "line": 31,
       "match": "(char *)((int)param_1 + 0x298)",
       "severity": "moderate",
       "text": "if ((*(char *)((int)param_1 + 0x298) != '\\0') &&",
@@ -599,7 +599,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 41,
+      "line": 42,
       "match": "(float *)((int)param_1 + 0x308)",
       "severity": "moderate",
       "text": "volume = *(float *)((int)param_1 + 0x308);",
@@ -607,7 +607,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 46,
+      "line": 47,
       "match": "(char *)((int)param_1 + 0x298)",
       "severity": "moderate",
       "text": "(0x02CF5680,param_1,(char *)((int)param_1 + 0x298));",
@@ -615,7 +615,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 47,
+      "line": 48,
       "match": "(uint *)((int)param_1 + 0x2fc)",
       "severity": "moderate",
       "text": "*(uint *)((int)param_1 + 0x2fc) = sfx_handle;",
@@ -623,15 +623,15 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 49,
+      "line": 50,
       "match": "(float *)((int)param_1 + 0x308)",
       "severity": "moderate",
-      "text": "sound_sndmain_cpp_FUN_00556c10(sfx_handle,*(float *)((int)param_1 + 0x308),4.0,0);",
+      "text": "sound_sndmain_cpp_setSfxFade_FUN_00556c10(sfx_handle,*(float *)((int)param_1 + 0x308),4.0,0)",
       "type": "pointer_cast"
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 52,
+      "line": 54,
       "match": "(uint *)((int)param_1 + 0x300)",
       "severity": "moderate",
       "text": "*(uint *)((int)param_1 + 0x300) = 0;",
@@ -639,7 +639,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 53,
+      "line": 55,
       "match": "(uint *)((int)param_1 + 0x304)",
       "severity": "moderate",
       "text": "*(uint *)((int)param_1 + 0x304) = 0;",

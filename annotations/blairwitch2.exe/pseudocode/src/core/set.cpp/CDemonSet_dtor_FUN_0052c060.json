@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 23,
+    "complexity_score": 7,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 8,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 24
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 23
   },
   "cross_references": [],
   "function": {
@@ -23,9 +21,9 @@
         "0052c080"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_set.cpp_CDemonSet_dtor_FUN_0052c060",
-    "signature": "CDemonSet * core_set_cpp_CDemonSet_dtor_FUN_0052c060(CDemonSet *this_ptr,uint flags)"
+    "signature": "CDemonSet * __cdecl core_set_cpp_CDemonSet_dtor_FUN_0052c060(CDemonSet *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -36,7 +34,7 @@
     {
       "addr": "00534d80",
       "is_variadic": false,
-      "name": "unkafter_box.cpp_FUN_00534d80"
+      "name": "core_set.cpp_FUN_00534d80"
     }
   ],
   "globals": [],
@@ -71,6 +69,32 @@
     },
     "pcode_op_count": 64
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0054d340",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00532b00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00569350",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5909
+    },
+    "nocturne.exe": {
+      "addr": "00506e50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5909
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -94,16 +118,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "iVar1 = unkafter_box_cpp_FUN_00534d80(&this_ptr->field_0x4,0);",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

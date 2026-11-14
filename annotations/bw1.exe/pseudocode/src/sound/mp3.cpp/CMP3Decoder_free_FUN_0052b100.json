@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 102,
+    "complexity_score": 28,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 27,
-    "suspect_count": 7,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 75
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 28,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 76
   },
   "cross_references": [
     {
@@ -28,15 +26,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0056e830",
-      "from_addr": "0056eaad",
-      "name": "sound_sndmain.cpp_FUN_0056e830",
+      "addr": "00574410",
+      "from_addr": "00574638",
+      "name": "sound_sndmain.cpp_getSampleInfo_FUN_00574410",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00574410",
-      "from_addr": "00574638",
-      "name": "sound_sndmain.cpp_FUN_00574410",
+      "addr": "0056e830",
+      "from_addr": "0056eaad",
+      "name": "sound_sndmain.cpp_getSfxSample_FUN_0056e830",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -82,7 +80,7 @@
       {
         "call_addr": "0056eaad",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_0056e830",
+        "caller": "sound_sndmain.cpp_getSfxSample_FUN_0056e830",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -104,7 +102,7 @@
       {
         "call_addr": "00574638",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00574410",
+        "caller": "sound_sndmain.cpp_getSampleInfo_FUN_00574410",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -141,6 +139,32 @@
     },
     "pcode_op_count": 148
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00509f30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00502a10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005349e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9524
+    },
+    "nocturne.exe": {
+      "addr": "004e8260",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -157,62 +181,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x10c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x10c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x108",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x108 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x5320",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)&this_ptr->field_0x5320;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x5324",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)&this_ptr->field_0x5324;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x5320",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x5320 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x5324",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)&this_ptr->field_0x5324;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x5324",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x5324 = 0;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

@@ -1,0 +1,293 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 103,
+    "complexity_score": 418,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 248,
+    "suspect_count": 13,
+    "suspect_types": [
+      "fast_sqrt_inline",
+      "pointer_cast",
+      "raw_address_pointer_store",
+      "stack_alignment_array",
+      "stack_param",
+      "stack_ref",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 351
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0056e230",
+    "address_range": [
+      [
+        "0056e230",
+        "0056e266"
+      ],
+      [
+        "0056e2db",
+        "0056e346"
+      ],
+      [
+        "0056e817",
+        "0056e8a6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_trigger.cpp_CTrigger_process_FUN_0056e230",
+    "signature": "void __cdecl core_trigger_cpp_CTrigger_process_FUN_0056e230(CTrigger *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "0048c150",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_executeCommands_FUN_0048c150"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0056e220",
+      "name": "switchdataD_0056e220",
+      "type": "undefined1*",
+      "value": "0056e2f0"
+    },
+    {
+      "addr": "005fba60",
+      "name": "DAT_005fba60",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.051282051282051,
+    "instruction_count": 78,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 2,
+      "BRANCH": 3,
+      "BRANCHIND": 2,
+      "CALL": 2,
+      "CBRANCH": 9,
+      "COPY": 69,
+      "INT_ADD": 43,
+      "INT_AND": 31,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 28,
+      "INT_LESS": 8,
+      "INT_MULT": 2,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 14,
+      "INT_SUB": 18,
+      "INT_XOR": 1,
+      "LOAD": 31,
+      "POPCOUNT": 14,
+      "RETURN": 2,
+      "STORE": 18
+    },
+    "pcode_op_count": 316
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005779d0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0059b240",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005dfac0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2593
+    },
+    "nocturne.exe": {
+      "addr": "00547b30",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2625
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTrigger *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0056e23c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 19,
+      "match": "afStackY_1068",
+      "severity": "moderate",
+      "text": "float afStackY_1068 [984];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_ffffff10",
+      "severity": "moderate",
+      "text": "CBoundingBox3D *in_stack_ffffff10;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 56,
+      "match": "in_stack_ffffff10",
+      "severity": "moderate",
+      "text": "(*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_ffffff10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 63,
+      "match": "*(CDemonActor **)(iVar10 + 0x1d5ba04",
+      "severity": "moderate",
+      "text": "pCVar5 = *(CDemonActor **)(iVar10 + 0x1d5ba04);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 97,
+      "match": "in_stack_ffffff10",
+      "severity": "moderate",
+      "text": "(*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_ffffff10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 98,
+      "match": "&stack0xffffff50",
+      "severity": "moderate",
+      "text": "puVar8 = (uint *)&stack0xffffff50;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 99,
+      "match": "&stack0xffffff30",
+      "severity": "moderate",
+      "text": "puVar9 = (uint *)&stack0xffffff30;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 124,
+      "match": "&stack0xffffff68",
+      "severity": "moderate",
+      "text": "if (&stack0xffffff68 != afStack_7c + 0xe) {",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 180,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "pCVar5 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 201,
+      "match": "(CTrigger **)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "actor_ptr = *(CTrigger **)((int)g_CDemonSetPtr->actors + iVar10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 100,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Inlined fast sqrt bit-trick (bias `_DAT_01d1a0a4`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01d1a0a4` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
+      "line": 155,
+      "match": "iStack_24 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_004a3790 (0x01C7365",
+      "severity": "moderate",
+      "text": "iStack_24 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_004a3790 (0x01C73654,&pCVar1->position, (float)(((int)fStac",
+      "type": "fast_sqrt_inline"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWayPoint",
+        "offset": 12,
+        "vtable_addr": "005e6124"
+      },
+      {
+        "class_name": "CTrigger",
+        "offset": 12,
+        "vtable_addr": "005e58d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

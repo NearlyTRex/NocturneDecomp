@@ -27,7 +27,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_bugs.cpp_FUN_00421c90 at 00422041
+;   core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_00421c90 at 00422041
 ;   core_setcolid.cpp_FUN_0053bc80 at 0053bcc7
 ;
 ; Referenced Globals:

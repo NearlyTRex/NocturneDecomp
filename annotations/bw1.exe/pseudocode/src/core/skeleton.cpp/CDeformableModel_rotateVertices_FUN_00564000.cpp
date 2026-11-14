@@ -10,7 +10,6 @@ void __cdecl core_skeleton_cpp_CDeformableModel_rotateVertices_FUN_00564000(CDef
 
 {
   core_set_cpp_CDemonSet_rotateVerticies_FUN_00553140
-            (g_CDemonSetPtr,*(int *)(&this_ptr->field_0x2c + lod_index * 4),
-             (CVector3i *)input_vertices);
+            (g_CDemonSetPtr,this_ptr->vertex_count[lod_index],(CVector3i *)input_vertices);
   return;
 }

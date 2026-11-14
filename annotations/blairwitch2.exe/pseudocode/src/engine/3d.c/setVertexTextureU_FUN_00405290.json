@@ -2,16 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 105,
+    "complexity_score": 45,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 15,
-    "suspect_count": 8,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_param"
+      "shadow_pointer_walk",
+      "undefined_data"
     ],
     "total_lines": 46
   },
@@ -26,7 +26,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_3d.c_setVertexTextureU_FUN_00405290",
-    "signature": "int __cdecl engine_3d_c_setVertexTextureU_FUN_00405290(int param_1)"
+    "signature": "SMRGLHeaderExtended * __cdecl engine_3d_c_setVertexTextureU_FUN_00405290(SMRGLHeaderExtended *mrgl)"
   },
   "function_calls": [],
   "globals": [
@@ -41,9 +41,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -77,78 +77,64 @@
     },
     "pcode_op_count": 191
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004050c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004050c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00405270",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00406840",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "mrgl",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderExtended *"
+      }
+    ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int __cdecl engine_3d_c_setVertexTextureU_FUN_00405290(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar2 = (int *)(param_1 + 0xc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (0 < *(int *)(param_1 + 8)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&DAT_0062202c)[(*(int *)(param_1 + 4) + iVar1) * 0xc] = *piVar2 << 0x10;",
-      "type": "unnamed_param"
-    },
     {
       "description": "Undefined global data reference",
       "line": 12,
       "match": "DAT_0062202c",
       "severity": "mild",
-      "text": "(&DAT_0062202c)[(*(int *)(param_1 + 4) + iVar1) * 0xc] = *piVar2 << 0x10;",
+      "text": "(&DAT_0062202c)[((mrgl->base).count + iVar1) * 0xc] = (pSVar2->base).type << 0x10;",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar1 < *(int *)(param_1 + 8));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return param_1 + 0xc + *(int *)(param_1 + 8) * 4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return param_1 + 0xc + *(int *)(param_1 + 8) * 4;",
-      "type": "unnamed_param"
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 14,
+      "match": "pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar2 = (SMRGLHeaderExtended *)&(pSVar2->base).count;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "vtable_info": {

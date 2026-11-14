@@ -5,13 +5,29 @@
 // Function prototypes for cockpit/pkbmpset.cpp
 // Generated from Ghidra function signatures
 
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_005105e0
+// Address: 005105e0
+void __cdecl CPackedBitmapSet::ctor(CPackedBitmapSet *this_ptr);
+
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_init_FUN_00510610
+// Address: 00510610
+void __cdecl CPackedBitmapSet::init(CPackedBitmapSet *this_ptr);
+
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_00510670
+// Address: 00510670
+void __cdecl CPackedBitmapSet::reset(CPackedBitmapSet *this_ptr);
+
 // Original: cockpit_pkbmpset.cpp_FUN_005106a0
 // Address: 005106a0
-void FUN_005106a0(int *param_1,int param_2);
+void __cdecl FUN_005106a0(CPackedBitmapSet *this_ptr,int bitmap_count);
 
-// Original: cockpit_pkbmpset.cpp_FUN_0051080e
-// Address: 0051080e
-void FUN_0051080e(CPackedBitmapSet *param_1,char *param_2,int param_3,int param_4,int param_5,undefined4 param_6,undefined4 param_7,int param_8);
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00510740
+// Address: 00510740
+void __cdecl CPackedBitmapSet::loadBitmapSetFromRange(CPackedBitmapSet *this_ptr,undefined4 param_2,undefined4 param_3,char *param_4,int param_5,int param_6,int param_7,int param_8,int param_9,int param_10);
+
+// Original: cockpit_pkbmpset.cpp_FUN_00510810
+// Address: 00510810
+void FUN_00510810(void);
 
 // Original: cockpit_pkbmpset.cpp_FUN_00510a90
 // Address: 00510a90
@@ -21,9 +37,9 @@ void FUN_00510a90(CPackedBitmapSet *param_1,int param_2,int param_3);
 // Address: 00510de0
 void FUN_00510de0(void);
 
-// Original: cockpit_pkbmpset.cpp_FUN_00510e70
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_00510e70
 // Address: 00510e70
-void FUN_00510e70(undefined4 param_1,char *param_2,CPackedBitmapSet *param_3);
+void __cdecl CPackedBitmapSet::loadACTAndApplyToBitmapSet(CPackedBitmapSet *this_ptr,char *act_filename);
 
 // Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_00510ec0
 // Address: 00510ec0

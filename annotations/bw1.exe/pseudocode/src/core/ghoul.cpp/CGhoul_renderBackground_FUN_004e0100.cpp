@@ -9,8 +9,8 @@
 void __cdecl core_ghoul_cpp_CGhoul_renderBackground_FUN_004e0100(CGhoul *this_ptr,int layer_flag)
 
 {
-  if ((*(int *)&this_ptr->field_0xc288 == 0) && (*(int *)&this_ptr->field_0xc284 < 1)) {
-    core_enemy_cpp_FUN_004a0fb0((CEnemy *)this_ptr,layer_flag);
+  if ((this_ptr->spasm_count == 0) && (this_ptr->lives_left < 1)) {
+    core_enemy_cpp_CEnemy_renderBackground_FUN_004a0fb0(&this_ptr->base,layer_flag);
     return;
   }
   return;

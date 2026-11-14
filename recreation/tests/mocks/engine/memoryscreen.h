@@ -64,7 +64,7 @@ public:
     bool setScreenResolution(int width, int height, int) override {
         requested_width = width;
         requested_height = height;
-        return !refuse_modes;
+        return !refuse_modes && (largest_width == 0 || width <= largest_width);
     }
     void resetGraphicsSystem() override {}
     void setupColorPalette() override {}
@@ -147,6 +147,8 @@ public:
     std::function<void()> on_swap;
     // Every mode change is refused while set.
     bool refuse_modes = false;
+    // Modes wider than this are refused; 0 for none.
+    int largest_width = 0;
     // The last mode asked for; the rows stay as made.
     int requested_width = 0;
     int requested_height = 0;

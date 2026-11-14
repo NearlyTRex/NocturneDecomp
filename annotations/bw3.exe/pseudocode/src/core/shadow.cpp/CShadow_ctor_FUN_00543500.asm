@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CShadow * core_shadow_cpp_CShadow_ctor_FUN_00543500(CShadow *this_ptr)
+; CShadow * __cdecl core_shadow_cpp_CShadow_ctor_FUN_00543500(CShadow *this_ptr)
 ;
 ; Parameters:
 ; CShadow *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
-;   core_setedit.cpp_factoryFuncShadow_FUN_005434d0 at 005434e3
 ;   core_shadow.cpp_CDemonShadow_ctor_FUN_00545fc0 at 00545fc6
 ;   core_shadow.cpp_CShadowForest_ctor_FUN_00545ea0 at 00545ea6
 ;   core_shadow.cpp_CSpiritShadow_ctor_FUN_00545f30 at 00545f36
+;   core_shadow.cpp_factoryFuncShadow_FUN_005434d0 at 005434e3
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e3d54
@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00488fd0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
-;   core_skeleton.cpp_FUN_0054eae0
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     ADD EAX,0x158                       ; 00543518
     PUSH EAX                            ; 0054351d
     MOV dword ptr [EAX + -0x4],0x5e3d74 ; 0054351e
-    CALL core_skeleton.cpp_FUN_0054eae0 ; 00543525
-        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054eae0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 ; 00543525
+        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x326c],0x3f800000 ; 0054352a
     MOV dword ptr [EBX + 0x3270],0x40000000 ; 00543534
     MOV dword ptr [EBX + 0xd0e0],0x1    ; 0054353e

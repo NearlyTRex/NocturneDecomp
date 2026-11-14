@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 109,
+    "complexity_score": 34,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 19,
-    "suspect_count": 8,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 45
@@ -31,9 +30,9 @@
         "00411275"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_batcreat.cpp_CBatCreature_ctor_FUN_00411210",
-    "signature": "CBatCreature * core_batcreat_cpp_CBatCreature_ctor_FUN_00411210(CBatCreature *this_ptr)"
+    "signature": "CBatCreature * __cdecl core_batcreat_cpp_CBatCreature_ctor_FUN_00411210(CBatCreature *this_ptr)"
   },
   "function_calls": [
     {
@@ -44,7 +43,7 @@
     {
       "addr": "00569f50",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_00569f50"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50"
     }
   ],
   "globals": [
@@ -103,6 +102,26 @@
     },
     "pcode_op_count": 117
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00411690",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9778
+    },
+    "nocedit.exe": {
+      "addr": "004150f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9778
+    },
+    "nocturne.exe": {
+      "addr": "00412100",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9778
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -127,62 +146,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "*(byte ***)&pCVar3->field_0x154 = &g_CBatCreatureVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_00569f50(&pCVar3->field_0x158,\"batcreat.dfm\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x2fec",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x2fec = 0x3f19999a;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x2ff0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x2ff0 = 0x3fc00000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0xc268",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0xc268 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x2ff4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x2ff4 = uVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x2ff8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x2ff8 = uVar2;",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

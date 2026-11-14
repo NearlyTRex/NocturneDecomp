@@ -7,15 +7,15 @@
 
 // Original: core_hiram.cpp_staticInit_FUN_004ed130
 // Address: 004ed130
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_hiram.cpp_factoryFuncHiram_FUN_004ed160
 // Address: 004ed160
-void factoryFuncHiram(void);
+CHiram * __cdecl factoryFuncHiram(void);
 
 // Original: core_hiram.cpp_CHiram_getActorType_FUN_004ed180
 // Address: 004ed180
-CDemonActorType * CHiram::getActorType(CHiram *this_ptr);
+CDemonActorType * __cdecl CHiram::getActorType(CHiram *this_ptr);
 
 // Original: core_hiram.cpp_CHiram_ctor_FUN_004ed190
 // Address: 004ed190
@@ -23,15 +23,15 @@ CHiram * __cdecl CHiram::ctor(CHiram *this_ptr);
 
 // Original: core_hiram.cpp_CHiram_dtor_FUN_004ed1f0
 // Address: 004ed1f0
-CHiram * CHiram::dtor(CHiram *this_ptr,uint flags);
+CHiram * __cdecl CHiram::dtor(CHiram *this_ptr,uint flags);
 
-// Original: core_hiram.cpp_FUN_004ed290
+// Original: core_hiram.cpp_CHiram_setup_FUN_004ed290
 // Address: 004ed290
-void FUN_004ed290(int param_1);
+void __cdecl CHiram::setup(CHiram *this_ptr);
 
-// Original: core_hiram.cpp_FUN_004ed2b0
+// Original: core_hiram.cpp_CHiram_process_FUN_004ed2b0
 // Address: 004ed2b0
-void FUN_004ed2b0(CCharacter *param_1,float param_2);
+void __cdecl CHiram::process(CHiram *this_ptr,float delta_time);
 
 // Original: core_hiram.cpp_CHiram_archive_FUN_004ed3f0
 // Address: 004ed3f0
@@ -39,4 +39,4 @@ void __cdecl CHiram::archive(CHiram *this_ptr);
 
 // Original: core_hiram.cpp_CNPC_dtor_FUN_004ed400
 // Address: 004ed400
-CNPC * CNPC::dtor(CNPC *this_ptr,uint flags);
+CNPC * __cdecl CNPC::dtor(CNPC *this_ptr,uint flags);

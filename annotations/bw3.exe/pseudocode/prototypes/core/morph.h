@@ -21,9 +21,9 @@ void __cdecl CMorphModel::free(CMorphModel *this_ptr);
 // Address: 004f9ad0
 void __cdecl CMorphModel::addPartFromPolygon(CMorphModel *this_ptr,int vertex_count,CVector3i *vertex_data,int poly_count,SMRGLHeaderPrimitive *poly_data,int poly_stride,SMRGLTextureModel *texture_list,int *texture_index_list);
 
-// Original: core_morph.cpp_FUN_004f9c40
+// Original: core_morph.cpp_CMorphModel_addPartFromVertexBuffer_FUN_004f9c40
 // Address: 004f9c40
-void __cdecl FUN_004f9c40(CMorphModel *this_ptr,int vertex_count,CVector3i *skinned_vertices,int tri_count,SInputFace *tri_data,STextureSet *texture_sets,int *index_data);
+void __cdecl CMorphModel::addPartFromVertexBuffer(CMorphModel *this_ptr,int vertex_count,CVector3i *skinned_vertices,int tri_count,SInputFace *tri_data,STextureSet *texture_sets,int *index_data);
 
 // Original: core_morph.cpp_CMorphModel_addPartFromDeformableModel_FUN_004f9d90
 // Address: 004f9d90
@@ -37,9 +37,9 @@ void __cdecl CMorphModel::addPartFromKeyFramedModel(CMorphModel *this_ptr,CKeyFr
 // Address: 004f9e40
 void __cdecl CMorphModel::animateFromVertexBuffer(CMorphModel *this_ptr,int part_index,CVector3i *vertex_buffer,int start_offset,int vertex_count);
 
-// Original: core_morph.cpp_FUN_004f9f50
+// Original: core_morph.cpp_CMorphModel_animateFromDeformableModel_FUN_004f9f50
 // Address: 004f9f50
-void __cdecl FUN_004f9f50(CMorphModel *this_ptr,int part_index,CDeformableModelInstance *model_ptr);
+void __cdecl CMorphModel::animateFromDeformableModel(CMorphModel *this_ptr,int part_index,CDeformableModelInstance *model_ptr);
 
 // Original: core_morph.cpp_CMorphModel_setFaceListFromPolygon_FUN_004f9fe0
 // Address: 004f9fe0
@@ -93,9 +93,9 @@ void __cdecl CMorph::setupModelFromDeformable(CMorph *this_ptr,int model_index,C
 // Address: 004fab10
 void __cdecl CMorph::addPartFromKeyframedModel(CMorph *this_ptr,int model_index,CKeyFramedModel *model_ptr,int frame_index);
 
-// Original: core_morph.cpp_FUN_004fab90
+// Original: core_morph.cpp_CMorph_updateModelFromDeformable_FUN_004fab90
 // Address: 004fab90
-void __cdecl FUN_004fab90(CMorph *this_ptr,int model_index,CDeformableModelInstance *model_ptr,int part_index);
+void __cdecl CMorph::updateModelFromDeformable(CMorph *this_ptr,int model_index,CDeformableModelInstance *model_ptr,int part_index);
 
 // Original: core_morph.cpp_CMorph_getReady_FUN_004fac10
 // Address: 004fac10
@@ -104,3 +104,19 @@ void __cdecl CMorph::getReady(CMorph *this_ptr);
 // Original: core_morph.cpp_CMorph_render_FUN_004fb0e0
 // Address: 004fb0e0
 void __cdecl CMorph::render(CMorph *this_ptr,float morph_t);
+
+// Original: core_morph.cpp_FUN_004fb180
+// Address: 004fb180
+CMorphModel * __cdecl FUN_004fb180(CMorphModel *this_ptr,uint flags);
+
+// Original: core_morph.cpp_FUN_004fb1c0
+// Address: 004fb1c0
+undefined4 * FUN_004fb1c0(undefined4 *param_1);
+
+// Original: core_morph.cpp_FUN_004fb1f0
+// Address: 004fb1f0
+undefined4 FUN_004fb1f0(undefined4 param_1);
+
+// Original: core_morph.cpp_FUN_004fb210
+// Address: 004fb210
+void FUN_004fb210(undefined4 *param_1);

@@ -6,7 +6,7 @@
 ; Parameters:
 ; uint             Stack[0x4]:4   error_code
 ;
-; XREF[18]:
+; XREF[19]:
 ;   sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_0052ab60 at 0052acf4
 ;   sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_0052af50 at 0052b122
 ;   sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_0052b880 at 0052b951
@@ -17,7 +17,7 @@
 ;   sound_snddx.cpp_CDirectSoundDevice_poll_FUN_0052a970 at 0052a9f6
 ;   sound_snddx.cpp_CDirectSoundDevice_reset_FUN_0052a0d0 at 0052a196
 ;   sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_0052a450 at 0052a81d
-;   ... and 8 more
+;   ... and 9 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_DSERR_ALLOCATED_The_requ_00593b8f

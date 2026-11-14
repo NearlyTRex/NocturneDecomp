@@ -19,11 +19,11 @@ void __cdecl cockpit_ckptutil_c_loadACTPaletteFile_FUN_0042c780(char *base_filen
   char *pcVar6;
   byte bVar7;
   char acStack_d4 [80];
-  byte auStack_84 [80];
+  char acStack_84 [80];
   CInStreamFile CStack_34;
   
   bVar7 = 0;
-  unkclass_instream_cpp_CInStreamFile_ctor_FUN_0057cd50(&CStack_34);
+  support_trstream_cpp_CInStreamFile_ctor_FUN_0057cd50(&CStack_34);
   pcVar6 = acStack_d4;
   pcVar4 = acStack_d4;
   do {
@@ -69,7 +69,8 @@ LAB_0042c803:
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  iVar2 = support_trstream_cpp_FUN_0057d390(&CStack_34,0x5cd405,acStack_d4);
+  iVar2 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_0057d390
+                    (&CStack_34,(char *)0x5cd405,acStack_d4);
   if (iVar2 == 0) {
     puVar5 = (uchar *)0x1c35b38;
     for (iVar2 = 0xc0; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -84,15 +85,15 @@ LAB_0042c803:
     }
   }
   else {
-    iVar2 = unkaddr_0057b9a0_cpp_FUN_0057cfe0(&CStack_34,output_buffer,0x300);
+    iVar2 = support_trstream_cpp_CInStreamFile_read_FUN_0057cfe0(&CStack_34,output_buffer,0x300);
     if (iVar2 != 0x300) {
-      FUN_005b7790(auStack_84,"Error reading %s.",acStack_d4);
+      _sprintf(acStack_84,"Error reading %s.");
       _DAT_01d046a0 = "..\\cockpit\\ckptutil.c";
       _DAT_01d046a4 = 0x147;
-      core_main_c_FUN_004e4500(auStack_84);
+      core_main_c_FUN_004e4500(acStack_84);
     }
-    unkaddr_0057b9a0_cpp_FUN_0057d180(&CStack_34);
+    support_trstream_cpp_CInStreamFile_close_FUN_0057d180(&CStack_34);
   }
-  unkclass_instream_cpp_CInStreamFile_dtor_FUN_0057cec0(&CStack_34,0);
+  support_trstream_cpp_CInStreamFile_dtor_FUN_0057cec0(&CStack_34,0);
   return;
 }

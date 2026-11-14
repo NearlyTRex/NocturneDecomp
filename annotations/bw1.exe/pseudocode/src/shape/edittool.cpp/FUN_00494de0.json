@@ -26,7 +26,7 @@
     ],
     "convention": "unknown",
     "name": "shape_edittool.cpp_FUN_00494de0",
-    "signature": "bool shape_edittool_cpp_FUN_00494de0(undefined4 param_1,undefined4 param_2)"
+    "signature": "bool shape_edittool_cpp_FUN_00494de0(undefined4 param_1,char *param_2)"
   },
   "function_calls": [
     {
@@ -52,7 +52,7 @@
     {
       "addr": "00494690",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_00494690"
+      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_00494690"
     }
   ],
   "globals": [],
@@ -88,6 +88,14 @@
     },
     "pcode_op_count": 196
   },
+  "siblings": {
+    "bw3.exe": {
+      "addr": "0047d980",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -102,7 +110,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "bool shape_edittool_cpp_FUN_00494de0(uint param_1,uint param_2)",
+      "text": "bool shape_edittool_cpp_FUN_00494de0(uint param_1,char *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -110,7 +118,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "bool shape_edittool_cpp_FUN_00494de0(uint param_1,uint param_2)",
+      "text": "bool shape_edittool_cpp_FUN_00494de0(uint param_1,char *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -126,7 +134,7 @@
       "line": 11,
       "match": "param_2",
       "severity": "mild",
-      "text": "_vsprintf(aCStack_418,param_2,&puStack_8);",
+      "text": "_vsprintf((char *)aCStack_418,param_2,(va_list_t)&puStack_8);",
       "type": "unnamed_param"
     }
   ]

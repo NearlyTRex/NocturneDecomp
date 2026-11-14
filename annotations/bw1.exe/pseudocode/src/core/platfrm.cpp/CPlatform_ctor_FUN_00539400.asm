@@ -8,8 +8,8 @@
 ;
 ; XREF[4]:
 ;   core_conveyor.cpp_CConveyor_ctor_FUN_00447750 at 00447757
-;   core_mimic.cpp_factoryFuncMineCar_FUN_00510dc0 at 00510dd3
 ;   core_minecar.cpp_CMineCar_ctor_FUN_00510e90 at 00510e95
+;   core_minecar.cpp_factoryFuncMineCar_FUN_00510dc0 at 00510dd3
 ;   core_platfrm.cpp_factoryFuncPlatform_FUN_005393d0 at 005393e3
 ;
 ; Called Functions:

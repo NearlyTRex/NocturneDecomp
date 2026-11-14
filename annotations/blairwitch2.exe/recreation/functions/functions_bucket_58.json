@@ -42,7 +42,7 @@
   },
   {
     "addr":"0046ec58",
-    "conv":"unknown",
+    "conv":"__edi_esi_ebx",
     "data_refs":[
       "004696d2",
       "00469782"
@@ -50,10 +50,36 @@
     "instructions":186,
     "method":"renderSolidColorDepth16xUnrolled",
     "name":"core_dstrendr.cpp_renderSolidColorDepth16xUnrolled_FUN_0046ec58",
+    "params":[
+      {
+        "name":"left_edge",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      },
+      {
+        "name":"right_edge",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      },
+      {
+        "name":"scanline_y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/dstrendr.cpp",
@@ -135,7 +161,7 @@
   {
     "addr":"005ba358",
     "callers":[
-      "0047cb1e",
+      "0047cb20",
       "00481620",
       "005c00d0"
     ],
@@ -147,11 +173,23 @@
     "instructions":8,
     "method":"_localtime",
     "name":"crt_time.c__localtime_FUN_005ba358",
+    "params":[
+      {
+        "name":"timer",
+        "type":{
+          "header":"time",
+          "kind":"system",
+          "name":"time_t",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "header":"time",
+      "kind":"system",
+      "name":"_tm",
+      "ptr":1
     },
     "tu":"crt/time.c",
     "variadic":false
@@ -244,14 +282,14 @@
     "conv":"unknown",
     "instructions":37,
     "method":"FUN_005c29d8",
-    "name":"unkafter_morph.cpp_FUN_005c29d8",
+    "name":"crt_unknown.c_FUN_005c29d8",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/morph.cpp",
+    "tu":"crt/unknown.c",
     "variadic":false
   },
   {
@@ -268,14 +306,14 @@
     ],
     "instructions":136,
     "method":"FUN_005c30d8",
-    "name":"unkafter_morph.cpp_FUN_005c30d8",
+    "name":"crt_unknown.c_FUN_005c30d8",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/morph.cpp",
+    "tu":"crt/unknown.c",
     "variadic":false
   }
 ]

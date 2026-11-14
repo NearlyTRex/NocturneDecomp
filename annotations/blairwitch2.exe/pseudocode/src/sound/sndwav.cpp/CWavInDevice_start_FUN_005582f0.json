@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 116,
+    "complexity_score": 91,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 36,
-    "suspect_count": 6,
+    "suspect_count": 4,
     "suspect_types": [
       "raw_address_pointer_store",
       "undefined_data",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
     "total_lines": 128
@@ -38,8 +37,8 @@
     },
     {
       "addr": "005549c0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005549c0"
+      "is_variadic": true,
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005549c0"
     },
     {
       "addr": "00558190",
@@ -153,6 +152,26 @@
     },
     "pcode_op_count": 445
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0057ad20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0055de50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005b0e20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -201,22 +220,6 @@
       "severity": "mild",
       "text": "**(uint **)(iVar3 + 0x264b15c) = *(uint *)(&DAT_0264b1fc + iVar3);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 24,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)this_ptr + 8))(this_ptr);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 38,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)this_ptr + 8))(this_ptr);",
-      "type": "unresolved_funcptr"
     }
   ],
   "vtable_info": {

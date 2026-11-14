@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl crt_stdio_c_fgetc_FUN_005b8180(undefined4 *param_1)
+; int __cdecl crt_stdio_c_fgetc_FUN_005b8180(_FILE *file)
 ;
+; Parameters:
+; _FILE *          Stack[0x4]:4   file
 ;
 ; XREF[28]:
 ;   cockpit_ckptutil.c_FUN_0042f330 at 0042f39b

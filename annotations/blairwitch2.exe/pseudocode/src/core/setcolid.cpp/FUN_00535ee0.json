@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 166,
     "complexity_score": 1097,
-    "cross_reference_count": 20,
+    "cross_reference_count": 21,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
@@ -23,7 +23,7 @@
     {
       "addr": "0040a050",
       "from_addr": "0040a892",
-      "name": "core_actor.cpp_FUN_0040a050",
+      "name": "core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -35,31 +35,43 @@
     {
       "addr": "0043a7a0",
       "from_addr": "0043a9a7",
-      "name": "core_crossbow.cpp_FUN_0043a7a0",
+      "name": "core_crossbow.cpp_CCrossbow_fire_FUN_0043a7a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045ab40",
+      "from_addr": "0045acd0",
+      "name": "core_doc.cpp_FUN_0045ab40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045b510",
+      "from_addr": "0045b87c",
+      "name": "core_doc.cpp_FUN_0045b510",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00485b40",
       "from_addr": "00485e3e",
-      "name": "core_elephant.cpp_FUN_00485b40",
+      "name": "core_elephant.cpp_CElephantGun_fire_FUN_00485b40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0049db20",
       "from_addr": "0049dbc6",
-      "name": "core_fire.cpp_FUN_0049db20",
+      "name": "core_fire.cpp_CFireEffect_traceLaser_FUN_0049db20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b11a0",
+      "from_addr": "004b14b9",
+      "name": "core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_004b11a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004aeb00",
       "from_addr": "004af18b",
       "name": "core_gabriela.cpp_FUN_004aeb00",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004b11a0",
-      "from_addr": "004b14b9",
-      "name": "core_gabriela.cpp_FUN_004b11a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -71,13 +83,13 @@
     {
       "addr": "004cbdc0",
       "from_addr": "004cbfef",
-      "name": "core_gun.cpp_FUN_004cbdc0",
+      "name": "core_gun.cpp_CGun_fire_FUN_004cbdc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e2e70",
       "from_addr": "004e305d",
-      "name": "core_lightgun.cpp_FUN_004e2e70",
+      "name": "core_lightgun.cpp_CLightGun_fire_FUN_004e2e70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -95,7 +107,7 @@
     {
       "addr": "0053f170",
       "from_addr": "0053f44f",
-      "name": "core_shotgun.cpp_FUN_0053f170",
+      "name": "core_shotgun.cpp_CShotgun_fire_FUN_0053f170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -107,19 +119,19 @@
     {
       "addr": "0056d3d0",
       "from_addr": "0056d74a",
-      "name": "core_stranger.cpp_FUN_0056d3d0",
+      "name": "core_stranger.cpp_CStranger_updateArmRecoilBlend_FUN_0056d3d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00575800",
       "from_addr": "00575a66",
-      "name": "core_tommygun.cpp_FUN_00575800",
+      "name": "core_tommygun.cpp_CTommyGun_fire_FUN_00575800",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0057fc20",
       "from_addr": "0057fd54",
-      "name": "core_turret.cpp_FUN_0057fc20",
+      "name": "core_turret.cpp_CTurret_fire_FUN_0057fc20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -132,12 +144,6 @@
       "addr": "0058b4f0",
       "from_addr": "0058b648",
       "name": "core_weather.cpp_CWeather_setOriginAndRotation_FUN_0058b4f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0045b510",
-      "from_addr": "0045b87c",
-      "name": "unkafter_stranger.cpp_FUN_0045b510",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -174,7 +180,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 24,
+    "call_site_count": 25,
     "call_sites": [
       {
         "call_addr": "0058b648",
@@ -221,7 +227,7 @@
       {
         "call_addr": "0045b87c",
         "call_type": "direct",
-        "caller": "unkafter_stranger.cpp_FUN_0045b510",
+        "caller": "core_doc.cpp_FUN_0045b510",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -236,7 +242,7 @@
       {
         "call_addr": "0045ba0a",
         "call_type": "direct",
-        "caller": "unkafter_stranger.cpp_FUN_0045b510",
+        "caller": "core_doc.cpp_FUN_0045b510",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -276,7 +282,7 @@
       {
         "call_addr": "0056d74a",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_FUN_0056d3d0",
+        "caller": "core_stranger.cpp_CStranger_updateArmRecoilBlend_FUN_0056d3d0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -290,7 +296,7 @@
       {
         "call_addr": "0056d8f6",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_FUN_0056d3d0",
+        "caller": "core_stranger.cpp_CStranger_updateArmRecoilBlend_FUN_0056d3d0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -1298,7 +1304,7 @@
       "type": "pointer_cast"
     },
     {
-      "call_site_count": 24,
+      "call_site_count": 25,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 5,

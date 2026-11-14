@@ -9,5 +9,5 @@
 EGroundType __cdecl core_ladder_cpp_CLadder_getGroundType_FUN_004dfbb0(CLadder *this_ptr)
 
 {
-  return *(EGroundType *)&this_ptr->field_0x2fc;
+  return this_ptr->ground_type;
 }

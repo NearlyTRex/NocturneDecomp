@@ -7,16 +7,16 @@
 ; undefined        Stack[-0x14]:1  local_14
 ;
 ; XREF[60]:
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f60 at 0040a03a
 ;   core_actor.cpp_FUN_00408f00 at 00408f96
 ;   core_actor.cpp_FUN_004091b0 at 004093fb
-;   core_actor.cpp_FUN_00409f60 at 0040a03a
-;   core_blundrbs.cpp_FUN_00410490 at 004105e2
-;   core_bodypart.cpp_FUN_004157c0 at 00415a5b
-;   core_boxactor.cpp_FUN_0041f360 at 0041f702
-;   core_burncrss.cpp_FUN_00424550 at 00424645
+;   core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490 at 004105e2
+;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_004157c0 at 00415a5b
+;   core_boxactor.cpp_CBoxActor_process_FUN_0041f360 at 0041f702
+;   core_burncrss.cpp_CBurncross_fire_FUN_00424550 at 00424645
+;   core_charactr.cpp_CCharacter_dropCarriedObject_FUN_00431c40 at 00431c78
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0 at 0042bc04
 ;   core_charactr.cpp_FUN_0042c230 at 0042c298
-;   core_charactr.cpp_FUN_0042fc90 at 0042fd8e
 ;   ... and 50 more
 ;
 ; Called Functions:

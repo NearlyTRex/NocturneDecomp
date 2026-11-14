@@ -20,7 +20,7 @@ uint support_trisock_cpp_FUN_0059ed90(int param_1,int param_2)
     local_c = support_trisock_cpp_FUN_0059ca30((CSocket *)(param_1 + 0xd2c));
   }
   if ((local_c & 4) == 0) {
-    iVar1 = support_trisock_cpp_FUN_0059cb20
+    iVar1 = support_trisock_cpp_CSocket_receiveSocketData_FUN_0059cb20
                       ((CSocket *)(param_1 + 0xd2c),(char *)(param_1 + 0x610),0x200,
                        (SNetworkAddr *)0x0);
     if (iVar1 == -2) {
@@ -33,8 +33,7 @@ uint support_trisock_cpp_FUN_0059ed90(int param_1,int param_2)
       return 0xfffffffc;
     }
   }
-  FUN_005bfb40
-            (param_1 + 0xa18,"Error receiving %s from %s",param_1 + 0x500,param_1 + 0x400);
+  _sprintf((char *)(param_1 + 0xa18),"Error receiving %s from %s");
   *(uint *)(param_1 + 0xd28) = 0xfffffffb;
   return 0xfffffffd;
 }

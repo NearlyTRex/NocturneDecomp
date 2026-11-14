@@ -1,0 +1,337 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 52,
+    "complexity_score": 49,
+    "cross_reference_count": 6,
+    "function_call_count": 3,
+    "global_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 19,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 71
+  },
+  "cross_references": [
+    {
+      "addr": "00482a00",
+      "from_addr": "00482e88",
+      "name": "shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_00482a00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004831d0",
+      "from_addr": "0048330b",
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047c0f0",
+      "from_addr": "0047c2f7",
+      "name": "shape_edittool.cpp_FUN_0047c0f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047eff0",
+      "from_addr": "0047f046",
+      "name": "shape_edittool.cpp_FUN_0047eff0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047b800",
+      "from_addr": "0047b868",
+      "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047b800",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047b1f0",
+      "from_addr": "0047b289",
+      "name": "shape_edittool.cpp_showTextInputDialog_FUN_0047b1f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00485380",
+    "address_range": [
+      [
+        "00485380",
+        "0048540e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_calculateButtonHeight_FUN_00485380",
+    "signature": "int __cdecl shape_edittool_cpp_calculateButtonHeight_FUN_00485380(char *button_text)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "004ab560",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560"
+    },
+    {
+      "addr": "004aafb0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextHeight_FUN_004aafb0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d1e6f",
+      "name": "s_shape_edittool_cpp_005d1e6f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d1e85",
+      "name": "s_gEdFont_must_be_set_by_t_005d1e85",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006141bc",
+      "name": "DAT_006141bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c25590",
+      "name": "DAT_01c25590",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c25f78",
+      "name": "DAT_01c25f78",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c25f7c",
+      "name": "DAT_01c25f7c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 12,
+    "call_sites": [
+      {
+        "call_addr": "0047b868",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047b800",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047b94a",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047b800",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047f046",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047eff0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00482e88",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_00482a00",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0048330b",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047c2f7",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047c0f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047c3e3",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047c0f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047c5c2",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047c0f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047c5dd",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047c0f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047c615",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047c0f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.119047619047619,
+    "instruction_count": 42,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CBRANCH": 2,
+      "COPY": 34,
+      "INT_ADD": 11,
+      "INT_AND": 26,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 15,
+      "INT_LEFT": 1,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 5,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 4,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 7,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 13,
+      "INT_ZEXT": 2,
+      "LOAD": 7,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 11,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 173
+  },
+  "siblings": {
+    "nocedit.exe": {
+      "addr": "004a6970",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00477100",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "button_text",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_006141bc",
+      "severity": "mild",
+      "text": "return DAT_006141bc / 0x50 + iVar1;",
+      "type": "undefined_data"
+    }
+  ]
+}

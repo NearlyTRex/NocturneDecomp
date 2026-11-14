@@ -7,8 +7,60 @@
 
 // Original: core_darkwolf.cpp_staticInit_FUN_00598700
 // Address: 00598700
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_darkwolf.cpp_factoryFuncDarkwolf_FUN_00598750
 // Address: 00598750
-void factoryFuncDarkwolf(void);
+CDarkwolf * __cdecl factoryFuncDarkwolf(void);
+
+// Original: core_darkwolf.cpp_CDarkwolf_getActorType_FUN_00598770
+// Address: 00598770
+CDemonActorType * __cdecl CDarkwolf::getActorType(CDarkwolf *this_ptr);
+
+// Original: core_darkwolf.cpp_CDarkwolf_ctor_FUN_00598780
+// Address: 00598780
+CDarkwolf * __cdecl CDarkwolf::ctor(CDarkwolf *this_ptr);
+
+// Original: core_darkwolf.cpp_CDarkwolf_setup_FUN_00598800
+// Address: 00598800
+void __cdecl CDarkwolf::setup(CDarkwolf *this_ptr);
+
+// Original: core_darkwolf.cpp_CDarkwolf_process_FUN_005989e0
+// Address: 005989e0
+void __cdecl CDarkwolf::process(CDarkwolf *this_ptr,float delta_time);
+
+// Original: core_darkwolf.cpp_CDarkwolf_renderOpaque_FUN_00598e00
+// Address: 00598e00
+int __cdecl CDarkwolf::renderOpaque(CDarkwolf *this_ptr);
+
+// Original: core_darkwolf.cpp_CDarkwolf_isInvulnerable_FUN_00598ef0
+// Address: 00598ef0
+int __cdecl CDarkwolf::isInvulnerable(CDarkwolf *this_ptr);
+
+// Original: core_darkwolf.cpp_CDarkwolf_shouldIgnoreForTargeting_FUN_00598f00
+// Address: 00598f00
+int __cdecl CDarkwolf::shouldIgnoreForTargeting(CDarkwolf *this_ptr);
+
+// Original: core_darkwolf.cpp_CDarkwolf_archive_FUN_00598f30
+// Address: 00598f30
+void __cdecl CDarkwolf::archive(CDarkwolf *this_ptr);
+
+// Original: core_darkwolf.cpp_FUN_00598fb0
+// Address: 00598fb0
+void FUN_00598fb0(void);
+
+// Original: core_darkwolf.cpp_CWhitewolf_getActorType_FUN_00598fd0
+// Address: 00598fd0
+CDemonActorType * __cdecl CWhitewolf::getActorType(CWhitewolf *this_ptr);
+
+// Original: core_darkwolf.cpp_CWhitewolf_ctor_FUN_00598fe0
+// Address: 00598fe0
+CWhitewolf * __cdecl CWhitewolf::ctor(CWhitewolf *this_ptr);
+
+// Original: core_darkwolf.cpp_CWhitewolf_dtor_FUN_00599030
+// Address: 00599030
+CWhitewolf * __cdecl CWhitewolf::dtor(CWhitewolf *this_ptr,uint flags);
+
+// Original: core_darkwolf.cpp_CDarkwolf_dtor_FUN_005990d0
+// Address: 005990d0
+CDarkwolf * __cdecl CDarkwolf::dtor(CDarkwolf *this_ptr,uint flags);

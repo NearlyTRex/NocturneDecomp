@@ -4,13 +4,17 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
 
 // Structure: CYow
-// Stub: size from Watcom RTTI, fields not yet recovered
+// setup FUN_005863e0, process FUN_00586500, processDamage FUN_00586eb0
 // Ghidra size: 0xd078 (53368 bytes)
 #pragma pack(push, 1)
 typedef struct CYow {
-    char field_0[53368]; // 0x0
+    CEnemy base; // 0x0, derived; unchanged
+    int bone_indices[7]; // 0xd054, setup findBone Spine1, Head, Pelvis, Spine, Spine1, Spine2, Head
+    uint sfx_handle; // 0xd070, ctor zeroes; FUN_00586eb0 / FUN_00586500 store and kill
+    float difficulty_speed_scale; // 0xd074, ctor 0.75 / 1.0; process FMUL
 } CYow;
 #pragma pack(pop)
 

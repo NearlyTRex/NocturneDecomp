@@ -24,19 +24,19 @@
     {
       "addr": "004d8950",
       "from_addr": "004d89b4",
-      "name": "engine_ini.cpp_FUN_004d8950",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00582eb0",
-      "from_addr": "00582f90",
-      "name": "wincore_winvideo.cpp_FUN_00582eb0",
+      "name": "engine_ini.cpp_getProfileInteger_FUN_004d8950",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00582bb0",
       "from_addr": "00582c31",
       "name": "wincore_winvideo.cpp_openMovie_FUN_00582bb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00582eb0",
+      "from_addr": "00582f90",
+      "name": "wincore_winvideo.cpp_playMovie_FUN_00582eb0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -78,7 +78,7 @@
       {
         "call_addr": "00582f90",
         "call_type": "direct",
-        "caller": "wincore_winvideo.cpp_FUN_00582eb0",
+        "caller": "wincore_winvideo.cpp_playMovie_FUN_00582eb0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -89,7 +89,7 @@
       {
         "call_addr": "004d89b4",
         "call_type": "direct",
-        "caller": "engine_ini.cpp_FUN_004d8950",
+        "caller": "engine_ini.cpp_getProfileInteger_FUN_004d8950",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -144,6 +144,32 @@
       "SUBPIECE": 2
     },
     "pcode_op_count": 194
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005bad20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005c30e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005ffef0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00566f30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 8,

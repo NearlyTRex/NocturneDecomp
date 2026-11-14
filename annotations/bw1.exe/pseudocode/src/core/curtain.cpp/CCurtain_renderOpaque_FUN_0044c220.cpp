@@ -11,7 +11,7 @@ int __cdecl core_curtain_cpp_CCurtain_renderOpaque_FUN_0044c220(CCurtain *this_p
 {
   int iVar1;
   
-  if (*(int *)&this_ptr->field_0x17c < 0xfde9) {
+  if (this_ptr->opacity < 0xfde9) {
     return 0;
   }
   iVar1 = core_curtain_cpp_CCurtain_renderMesh_FUN_0044bf20(this_ptr);

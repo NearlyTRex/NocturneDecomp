@@ -9,8 +9,8 @@
 SVert * __cdecl core_skeleton_cpp_SVert_ctor_FUN_00549310(SVert *this_ptr)
 
 {
-  int iVar1;
+  void *pvVar1;
   
-  iVar1 = __arrinit(&this_ptr->field_0x10,3,&g_CVectorTypeInfo);
-  return (SVert *)(iVar1 + -0x10);
+  pvVar1 = __arrinit(this_ptr->bone_offsets,3,&g_CVectorTypeInfo);
+  return (SVert *)((int)pvVar1 + -0x10);
 }

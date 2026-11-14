@@ -1,14 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_special_cpp_drawPolygon_FUN_00565c10(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; int __cdecl engine_special_cpp_drawPolygon_FUN_00565c10(SRenderVertex *vertices,int vertex_count,int render_flags)
 ;
+; Parameters:
+; SRenderVertex *  Stack[0x4]:4   vertices
+; int              Stack[0x8]:4   vertex_count
+; int              Stack[0xc]:4   render_flags
 ;
 ; XREF[5]:
 ;   core_asgaya.cpp_FUN_005a1ea0 at 005a2190
-;   engine_mini3d.cpp_FUN_004f1830 at 004f1fb7
-;   engine_prim.c_FUN_00515e80 at 0051606e
-;   engine_prim.c_FUN_00516de0 at 005170b8
+;   engine_mini3d.cpp_rasterizeTriangle_FUN_004f1830 at 004f1fb7
+;   engine_prim.c_renderPolygonSoftware_FUN_00515e80 at 0051606e
+;   engine_prim.c_renderScanlinePolygon_FUN_00516de0 at 005170b8
 ;   engine_special.cpp_drawFullScreenQuad_FUN_00566080 at 0056611d
 ;
 ; Referenced Globals:

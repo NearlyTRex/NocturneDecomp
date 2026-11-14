@@ -7,9 +7,9 @@
 ; SLaserInfo *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_emitter.cpp_FUN_0049fdf0 at 0049fe4c
+;   core_emitter.cpp_CEmitter_renderOpaque_FUN_0049fdf0 at 0049fe4c
 ;   core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_00505bc0 at 00505dbb
-;   core_weapon.cpp_FUN_005adf90 at 005ae091
+;   core_weapon.cpp_CWeapon_renderAimBeam_FUN_005adf90 at 005ae091
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fffac

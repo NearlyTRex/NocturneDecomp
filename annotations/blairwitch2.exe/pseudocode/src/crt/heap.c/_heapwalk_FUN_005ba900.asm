@@ -1,12 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_heap_c__heapwalk_FUN_005ba900(undefined4 param_1)
+; int __cdecl crt_heap_c__heapwalk_FUN_005ba900(WatcomHeapInfo *heap_info)
 ;
+; Parameters:
+; WatcomHeapInfo * Stack[0x4]:4   heap_info
 ;
 ; XREF[2]:
+;   core_melee.cpp_FUN_004eada0 at 004eadbb
 ;   shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004807e0 at 004807ff
-;   unkafter_melee.cpp_FUN_004eada0 at 004eadbb
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005ba9b4

@@ -7,19 +7,19 @@
 
 // Original: core_door.cpp_staticInit_FUN_00477210
 // Address: 00477210
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_door.cpp_factoryFuncDoor_FUN_00477240
 // Address: 00477240
-void factoryFuncDoor(void);
+CDoor * __cdecl factoryFuncDoor(void);
 
 // Original: core_door.cpp_CDoor_getActorType_FUN_00477260
 // Address: 00477260
-CDemonActorType * CDoor::getActorType(CDoor *this_ptr);
+CDemonActorType * __cdecl CDoor::getActorType(CDoor *this_ptr);
 
 // Original: core_door.cpp_CDoor_ctor_FUN_00477270
 // Address: 00477270
-CDoor * CDoor::ctor(CDoor *this_ptr);
+CDoor * __cdecl CDoor::ctor(CDoor *this_ptr);
 
 // Original: core_door.cpp_CDoor_setup_FUN_00477450
 // Address: 00477450
@@ -31,35 +31,35 @@ void __cdecl CDoor::onOpened(CDoor *this_ptr);
 
 // Original: core_door.cpp_FUN_004774f0
 // Address: 004774f0
-void FUN_004774f0(int param_1,int param_2);
+void FUN_004774f0(CDoor *param_1,EDoorState param_2);
 
-// Original: core_door.cpp_FUN_00477540
+// Original: core_door.cpp_CDoor_reposition_FUN_00477540
 // Address: 00477540
-void FUN_00477540(CDemonActor *param_1);
+void __cdecl CDoor::reposition(CDoor *this_ptr);
 
-// Original: core_door.cpp_FUN_00477ab0
+// Original: core_door.cpp_CDoor_process_FUN_00477ab0
 // Address: 00477ab0
-void FUN_00477ab0(CDemonActor *param_1,float param_2);
+void __cdecl CDoor::process(CDoor *this_ptr,float delta_time);
 
-// Original: core_door.cpp_FUN_00478220
+// Original: core_door.cpp_CDoor_renderOpaque_FUN_00478220
 // Address: 00478220
-int FUN_00478220(CDemonActor *param_1);
+int __cdecl CDoor::renderOpaque(CDoor *this_ptr);
 
-// Original: core_door.cpp_FUN_00478300
+// Original: core_door.cpp_CDoor_renderBackground_FUN_00478300
 // Address: 00478300
-void FUN_00478300(CDemonActor *param_1,int param_2);
+void __cdecl CDoor::renderBackground(CDoor *this_ptr,int layer_flag);
 
-// Original: core_door.cpp_FUN_00478390
+// Original: core_door.cpp_CDoor_getBoundingBox_FUN_00478390
 // Address: 00478390
-void FUN_00478390(int param_1);
+CBoundingBox3D * __cdecl CDoor::getBoundingBox(CDoor *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_door.cpp_FUN_004783d0
 // Address: 004783d0
 void FUN_004783d0(int param_1);
 
-// Original: core_door.cpp_FUN_00478490
+// Original: core_door.cpp_CDoor_archive_FUN_00478490
 // Address: 00478490
-void FUN_00478490(CDemonActor *param_1);
+void __cdecl CDoor::archive(CDoor *this_ptr);
 
 // Original: core_door.cpp_CDoor_getCollisionType_FUN_004787d0
 // Address: 004787d0
@@ -81,21 +81,21 @@ int __cdecl CDoor::getBlockVirtualDirectorFlag(CDoor *this_ptr);
 // Address: 00478840
 int __cdecl CDoor::allowBulletHoles(CDoor *this_ptr);
 
-// Original: core_door.cpp_FUN_00478860
+// Original: core_door.cpp_CDoor_getOpenStandPos_FUN_00478860
 // Address: 00478860
-float * FUN_00478860(int param_1,float *param_2,undefined4 param_3);
+float * __cdecl CDoor::getOpenStandPos(CDoor *this_ptr,float *param_2,undefined4 param_3);
 
-// Original: core_door.cpp_FUN_00478af0
+// Original: core_door.cpp_CDoor_updateCollisionData_FUN_00478af0
 // Address: 00478af0
-void FUN_00478af0(CDemonActor *param_1);
+void __cdecl CDoor::updateCollisionData(CDoor *this_ptr);
 
 // Original: core_door.cpp_CDoor_getMoveType_FUN_00478b40
 // Address: 00478b40
 int __cdecl CDoor::getMoveType(CDoor *this_ptr,CDemonActor *opener);
 
-// Original: core_door.cpp_FUN_00478d10
+// Original: core_door.cpp_CDoor_onLocked_FUN_00478d10
 // Address: 00478d10
-uint __cdecl FUN_00478d10(CDoor *this_ptr);
+uint __cdecl CDoor::onLocked(CDoor *this_ptr);
 
 // Original: core_door.cpp_CDoor_dtor_FUN_00478d70
 // Address: 00478d70

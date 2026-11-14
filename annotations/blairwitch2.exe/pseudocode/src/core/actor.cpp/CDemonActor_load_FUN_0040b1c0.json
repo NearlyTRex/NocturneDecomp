@@ -2,18 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 236,
+    "complexity_score": 186,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 61,
-    "suspect_count": 15,
+    "suspect_count": 11,
     "suspect_types": [
-      "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_field",
-      "unresolved_funcptr",
+      "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
     "total_lines": 214
@@ -205,6 +203,32 @@
     },
     "pcode_op_count": 440
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0040aed0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0040b110",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0040b050",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0040c160",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 232,
     "local_size": 224,
@@ -266,22 +290,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x1",
-      "severity": "mild",
-      "text": "pCVar6->field_0x1 = cVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x2",
-      "severity": "mild",
-      "text": "pCVar6 = (CDemonActor *)&pCVar6->field_0x2;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 39,
       "match": "DAT_007bc03c",
@@ -330,22 +338,6 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 45,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x2b0 + 0xdc))(this_ptr);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x2b0 + 0xdc))(this_ptr);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 61,
       "match": "DAT_007bc03c",
@@ -370,12 +362,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar6->owner`). Replace `pCVar6->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 37,
-      "match": "pCVar6 = (T *)&pCVar6->FIELD",
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 30,
+      "match": "do {",
       "severity": "moderate",
-      "text": "pCVar6 = (CDemonActor *)&pCVar6->field_0x2;",
-      "type": "shadow_pointer_walk"
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

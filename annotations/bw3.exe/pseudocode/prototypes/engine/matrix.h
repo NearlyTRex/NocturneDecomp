@@ -5,61 +5,9 @@
 // Function prototypes for engine/matrix.cpp
 // Generated from Ghidra function signatures
 
-// Original: engine_matrix.c_matrixPush_FUN_0046d070
-// Address: 0046d070
-void __cdecl matrixPush(void);
-
-// Original: engine_matrix.c_pop_FUN_0046d080
-// Address: 0046d080
-void __cdecl pop(void);
-
-// Original: engine_matrix.c_FUN_0046d090
-// Address: 0046d090
-void FUN_0046d090(undefined4 param_1,float param_2);
-
-// Original: engine_matrix.c_FUN_0046d0d0
-// Address: 0046d0d0
-void FUN_0046d0d0(undefined4 param_1,float param_2);
-
-// Original: engine_matrix.c_FUN_0046d100
-// Address: 0046d100
-void FUN_0046d100(undefined4 param_1,int *param_2);
-
-// Original: engine_matrix.c_FUN_0046d120
-// Address: 0046d120
-void FUN_0046d120(undefined4 param_1,float *param_2);
-
-// Original: engine_matrix.c_FUN_0046d1a0
-// Address: 0046d1a0
-void FUN_0046d1a0(void);
-
-// Original: engine_matrix.c_FUN_0046d1c0
-// Address: 0046d1c0
-void FUN_0046d1c0(void);
-
-// Original: engine_matrix.c_FUN_0046d230
-// Address: 0046d230
-void FUN_0046d230(void);
-
-// Original: engine_matrix.c_FUN_0046d250
-// Address: 0046d250
-void FUN_0046d250(void);
-
-// Original: engine_matrix.c_FUN_0046d2d0
-// Address: 0046d2d0
-float FUN_0046d2d0(void);
-
-// Original: engine_matrix.c_FUN_0046d2f0
-// Address: 0046d2f0
-void FUN_0046d2f0(undefined4 param_1,int param_2,int param_3,int param_4,int param_5);
-
-// Original: engine_matrix.c_popViewport_FUN_0046d320
-// Address: 0046d320
-void __cdecl popViewport(void);
-
 // Original: engine_matrix.c_FUN_004e4d90
 // Address: 004e4d90
-int FUN_004e4d90(uint param_1);
+int __cdecl FUN_004e4d90(int angle);
 
 // Original: engine_matrix.c_FUN_004e4dd0
 // Address: 004e4dd0
@@ -73,10 +21,6 @@ void __cdecl invertTransformMatrix(void);
 // Address: 004e50f0
 void __cdecl buildRotationMatrix(int pitch,int yaw,int roll);
 
-// Original: engine_matrix.c_FUN_004e553e
-// Address: 004e553e
-void FUN_004e553e(int param_1,CVector3i *param_2);
-
 // Original: engine_matrix.c_transformToCache_FUN_004e5540
 // Address: 004e5540
 void __cdecl transformToCache(int cacheIndex,CVector3i *inputPoint);
@@ -87,7 +31,7 @@ void __cdecl projectCachedPoint(int cacheIndex);
 
 // Original: engine_matrix.c_projectTransformedPoint_FUN_004e5590
 // Address: 004e5590
-void __cdecl projectTransformedPoint(int *param_1);
+void __cdecl projectTransformedPoint(SProjectedVertex *point);
 
 // Original: engine_matrix.c_projectCachedPointUnchecked_FUN_004e5630
 // Address: 004e5630
@@ -129,13 +73,13 @@ int __cdecl vectorLength3DToInt(CVector3i *vector_ptr);
 // Address: 004e6a40
 void __cdecl setCameraOrigin(int x,int y,int z);
 
-// Original: engine_matrix.c_FUN_004e6a90
+// Original: engine_matrix.c_getCameraOrigin_FUN_004e6a90
 // Address: 004e6a90
-void FUN_004e6a90(void);
+void __esi getCameraOrigin(CVector3i *output);
 
 // Original: engine_matrix.c_getCameraRotation_FUN_004e6ac0
 // Address: 004e6ac0
-void getCameraRotation(void);
+void __esi getCameraRotation(CVector3i *output);
 
 // Original: engine_matrix.c_pushViewport_FUN_004e6af0
 // Address: 004e6af0
@@ -145,9 +89,9 @@ void __cdecl pushViewport(int x,int y,int width,int height);
 // Address: 004e6c50
 void __cdecl popViewport(void);
 
-// Original: engine_matrix.c_FUN_004e6e0e
-// Address: 004e6e0e
-void FUN_004e6e0e(int param_1,int param_2,int param_3);
+// Original: engine_matrix.c_FUN_004e6e10
+// Address: 004e6e10
+void FUN_004e6e10(void);
 
 // Original: engine_matrix.c_popMatrixRelativeOffset_FUN_004e6ec0
 // Address: 004e6ec0

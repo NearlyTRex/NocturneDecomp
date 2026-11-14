@@ -7,7 +7,7 @@
 
 // Original: shape_spotview.cpp_staticInit_FUN_00567c50
 // Address: 00567c50
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: shape_spotview.cpp_CSpotView_ctor_FUN_00567c60
 // Address: 00567c60
@@ -17,13 +17,13 @@ CSpotView * __cdecl CSpotView::ctor(CSpotView *this_ptr);
 // Address: 00567cc0
 void __cdecl CSpotView::reset(CSpotView *this_ptr,uint control_flags);
 
-// Original: shape_spotview.cpp_FUN_00567d0e
-// Address: 00567d0e
-void FUN_00567d0e(CSpotView *param_1,uint param_2);
+// Original: shape_spotview.cpp_FUN_00567d10
+// Address: 00567d10
+void FUN_00567d10(void);
 
-// Original: shape_spotview.cpp_FUN_00567ff0
+// Original: shape_spotview.cpp_CSpotView_clampValues_FUN_00567ff0
 // Address: 00567ff0
-void FUN_00567ff0(int param_1);
+void __cdecl CSpotView::clampValues(CSpotView *this_ptr);
 
 // Original: shape_spotview.cpp_FUN_005680b0
 // Address: 005680b0

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_union.cpp_FUN_005a4c50 at 005a4cff
+;   core_union.cpp_CUnion_processStates_FUN_005a4c50 at 005a4cff
 ;
 ; Referenced Globals:
 ;   undefined4 s_BChasing_005f0559+1
@@ -13,13 +13,13 @@
 ;   undefined4 DAT_005ff8f4
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cfc0
+;   core_actor.cpp_getRandomInt_FUN_0040cfc0
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;   core_motion.cpp_FUN_005035c0
 ;   core_motion.cpp_FUN_00503e60
-;   unkaddr_0059d350.cpp_FUN_0059d8e0
-;   unkaddr_0059d350.cpp_FUN_0059dcb0
+;   core_muzzle.cpp_FUN_0059d8e0
+;   core_muzzle.cpp_FUN_0059dcb0
 ;
 ; *****************************************************************************
 
@@ -96,8 +96,8 @@ section .text
         ;   XREF to: 005a50a3 (CONDITIONAL_JUMP)  ; LAB_005a50a3
     PUSH 0x1                            ; 005a5091
     PUSH 0x0                            ; 005a5093
-    CALL core_actor.cpp_FUN_0040cfc0    ; 005a5095
-        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cfc0(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cfc0 ; 005a5095
+        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cfc0(int min_value, int max_value)
     ADD ESP,0x8                         ; 005a509a
     MOV dword ptr [EBX + 0x11860],EAX   ; 005a509d
     LEA ESI,[EBX + 0x2b4]               ; 005a50a3
@@ -120,13 +120,13 @@ section .text
         ;   Label: LAB_005a50c1
     PUSH 0x3f800000                     ; 005a50c7
     PUSH EBX                            ; 005a50cc
-    CALL unkaddr_0059d350.cpp_FUN_0059dcb0 ; 005a50cd
-        ;   XREF to: 0059dcb0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059dcb0()
+    CALL core_muzzle.cpp_FUN_0059dcb0   ; 005a50cd
+        ;   XREF to: 0059dcb0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059dcb0()
     ADD ESP,0x8                         ; 005a50d2
     PUSH 0x5f055a                       ; 005a50d5 | s_BChasing_005f0559+1
     PUSH EBX                            ; 005a50da
-    CALL unkaddr_0059d350.cpp_FUN_0059d8e0 ; 005a50db
-        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d8e0()
+    CALL core_muzzle.cpp_FUN_0059d8e0   ; 005a50db
+        ;   XREF to: 0059d8e0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d8e0()
     ADD ESP,0x8                         ; 005a50e0
     JMP 0x005a50ba                      ; 005a50e3
         ;   XREF to: 005a50ba (UNCONDITIONAL_JUMP)  ; LAB_005a50ba
@@ -148,8 +148,8 @@ section .text
         ;   XREF to: 005a50ba (CONDITIONAL_JUMP)  ; LAB_005a50ba
     PUSH 0x1                            ; 005a510b
     PUSH 0x0                            ; 005a510d
-    CALL core_actor.cpp_FUN_0040cfc0    ; 005a510f
-        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cfc0(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cfc0 ; 005a510f
+        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cfc0(int min_value, int max_value)
     ADD ESP,0x8                         ; 005a5114
     MOV dword ptr [EBX + 0x11860],EAX   ; 005a5117
     ADD ESP,0xc                         ; 005a511d

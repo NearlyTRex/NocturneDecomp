@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 143,
     "complexity_score": 435,
-    "cross_reference_count": 1,
+    "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
@@ -18,9 +18,15 @@
   },
   "cross_references": [
     {
-      "addr": "0059e26e",
+      "addr": "0059cf00",
+      "from_addr": "0059cf40",
+      "name": "support_trisock.cpp_FUN_0059cf00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059e270",
       "from_addr": "0059e2b9",
-      "name": "support_trisock.cpp_FUN_0059e26e",
+      "name": "support_trisock.cpp_FUN_0059e270",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -50,12 +56,28 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 1,
+    "call_site_count": 2,
     "call_sites": [
+      {
+        "call_addr": "0059cf40",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_FUN_0059cf00",
+        "estimated_params": 9,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
       {
         "call_addr": "0059e2b9",
         "call_type": "direct",
-        "caller": "support_trisock.cpp_FUN_0059e26e",
+        "caller": "support_trisock.cpp_FUN_0059e270",
         "estimated_params": 8,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -71,7 +93,7 @@
     "confidence": "low",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 8,
+    "estimated_params": 9,
     "matches_declared": false
   },
   "pcode_summary": {
@@ -103,6 +125,20 @@
       "STORE": 27
     },
     "pcode_op_count": 490
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0057a360",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005709c0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,
@@ -394,14 +430,14 @@
       "type": "unnamed_param"
     },
     {
-      "call_site_count": 1,
+      "call_site_count": 2,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 8,
+      "estimated_params": 9,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:8",
-      "param_delta": 8,
-      "text": "Function declares 0 params but call sites push 8 (8 missing)",
+      "match": "declared:0 vs estimated:9",
+      "param_delta": 9,
+      "text": "Function declares 0 params but call sites push 9 (9 missing)",
       "type": "param_count_too_few"
     }
   ]

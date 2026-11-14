@@ -6,11 +6,13 @@
 #include "system/basetypes.h"
 
 // Structure: SPod1Header
+// POD1 header, 0x54 bytes read by CPodFile_mountFromFile 004f7ed6; the whole-file CRC sits at hdr-4
 // Ghidra size: 0x54 (84 bytes)
 #pragma pack(push, 1)
 typedef struct SPod1Header {
-    int file_count; // 0x0
-    char description[80]; // 0x4
+    int file_count; // 0x0, the entry count
+    char description[76]; // 0x4, strcpy runs into the CRC
+    uint checksum; // 0x50, CRC-32/MPEG-2 of [0x54, EOF)
 } SPod1Header;
 #pragma pack(pop)
 

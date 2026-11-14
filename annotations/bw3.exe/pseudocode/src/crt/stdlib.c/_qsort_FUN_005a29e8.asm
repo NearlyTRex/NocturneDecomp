@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_stdlib_c__qsort_FUN_005a29e8(undefined4 *param_1,uint param_2,uint param_3,code *param_4)
+; void __cdecl crt_stdlib_c__qsort_FUN_005a29e8(void *base,SIZE_T num,SIZE_T size,QSORT_COMPARATOR compar)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   base
+; SIZE_T           Stack[0x8]:4   num
+; SIZE_T           Stack[0xc]:4   size
+; QSORT_COMPARATOR Stack[0x10]:4   compar
 ; Local Variables:
 ; undefined4       Stack[-0x6c]:4  local_6c
 ; undefined4       Stack[-0x68]:4  local_68
@@ -25,7 +30,7 @@
 ; undefined4       Stack[-0x20]:4  local_20
 ;
 ; XREF[5]:
-;   core_set.cpp_FUN_00539f30 at 0053a03e
+;   core_set.cpp_CDemonSet_buildDisplayList_FUN_00539f30 at 0053a03e
 ;   engine_3d.c_flushPremiumRenderBuffer_FUN_00406f30 at 00406f83
 ;   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0 at 0046e53d
 ;   engine_pod.cpp_FUN_00512fb0 at 00513442

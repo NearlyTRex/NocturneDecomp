@@ -22,9 +22,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00465cfe",
+      "addr": "00465d00",
       "from_addr": "00465d1a",
-      "name": "unkafter_dracbrid.cpp_FUN_00465cfe",
+      "name": "core_dracbrid.cpp_FUN_00465d00",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -72,7 +72,7 @@
       {
         "call_addr": "00465d1a",
         "call_type": "direct",
-        "caller": "unkafter_dracbrid.cpp_FUN_00465cfe",
+        "caller": "core_dracbrid.cpp_FUN_00465d00",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -113,6 +113,32 @@
       "STORE": 26
     },
     "pcode_op_count": 423
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0047e280",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00467940",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00486ee0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0045b4c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 28,
@@ -171,7 +197,7 @@
       "line": 39,
       "match": "DAT_006141b8",
       "severity": "mild",
-      "text": "if (DAT_006141b8 <= *(int *)(this_ptr + 0x18)) {",
+      "text": "if (DAT_006141b8 <= this_ptr->clip_right) {",
       "type": "undefined_data"
     },
     {
@@ -179,7 +205,7 @@
       "line": 40,
       "match": "DAT_006141b8",
       "severity": "mild",
-      "text": "*(int *)(this_ptr + 0x18) = DAT_006141b8 + -1;",
+      "text": "this_ptr->clip_right = DAT_006141b8 + -1;",
       "type": "undefined_data"
     },
     {
@@ -187,7 +213,7 @@
       "line": 42,
       "match": "DAT_006141bc",
       "severity": "mild",
-      "text": "if (*(int *)(this_ptr + 0x1c) < DAT_006141bc) {",
+      "text": "if (this_ptr->clip_bottom < DAT_006141bc) {",
       "type": "undefined_data"
     },
     {
@@ -195,7 +221,7 @@
       "line": 45,
       "match": "DAT_006141bc",
       "severity": "mild",
-      "text": "*(int *)(this_ptr + 0x1c) = DAT_006141bc + -1;",
+      "text": "this_ptr->clip_bottom = DAT_006141bc + -1;",
       "type": "undefined_data"
     }
   ]

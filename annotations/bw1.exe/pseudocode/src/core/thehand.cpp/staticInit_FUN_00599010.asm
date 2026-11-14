@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_thehand_cpp_staticInit_FUN_00599010(void)
+; void __cdecl core_thehand_cpp_staticInit_FUN_00599010(void)
 ;
 ;
 ; Called Functions:

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_doc_cpp_FUN_00468b80(undefined4 param_1)
+; float core_doc_cpp_FUN_00468b80(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
@@ -36,7 +36,7 @@ section .text
     PUSH ESI                            ; 00468b91
     XOR EBX,EBX                         ; 00468b92
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 00468b94
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00468b99
     TEST EAX,EAX                        ; 00468b9c
     JNZ 0x00468c03                      ; 00468b9e
@@ -46,7 +46,7 @@ section .text
     PUSH ECX                            ; 00468ba6
     PUSH ESI                            ; 00468ba7
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 00468ba8
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00468bad
     TEST EAX,EAX                        ; 00468bb0
     JZ 0x00468bc4                       ; 00468bb2

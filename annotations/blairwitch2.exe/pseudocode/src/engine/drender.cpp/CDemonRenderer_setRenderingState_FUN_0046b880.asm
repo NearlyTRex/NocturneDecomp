@@ -9,14 +9,14 @@
 ;
 ; XREF[22]:
 ;   core_box.cpp_CBoundingBox3D_render_FUN_0041b700 at 0041b7b5
-;   core_chain.cpp_FUN_005b56c0 at 005b576e
+;   core_chain.cpp_CChain_renderTransparent_FUN_005b56c0 at 005b576e
 ;   core_cloth.cpp_CCloth_render_FUN_005b0fe0 at 005b1015
 ;   core_dcamera.cpp_CDemonCamera_testVisibility_FUN_00443af0 at 00443b6c
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_004468c0 at 0044690b
 ;   core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_0044ac60 at 0044adca
 ;   core_dlight.cpp_CDemonLight_testVisibility_FUN_0044d9f0 at 0044da22
 ;   core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_0044e7d0 at 0044e80f
-;   core_dpart.cpp_FUN_00461a4e at 00461a64
+;   core_dpart.cpp_FUN_00461a50 at 00461a64
 ;   core_dtrace.cpp_FUN_00474020 at 004743ff
 ;   ... and 12 more
 ;

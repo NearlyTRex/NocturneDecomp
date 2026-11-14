@@ -12,11 +12,10 @@ int sound_snddx_cpp_FUN_0055b880(uint param_1,int param_2)
 
 {
   uint uVar1;
-  char *pcVar2;
+  int iVar2;
   int iVar3;
   int iVar4;
   int iVar5;
-  int iVar6;
   int *piStack_1e8;
   uint uStack_50;
   uint uStack_48;
@@ -31,16 +30,16 @@ int sound_snddx_cpp_FUN_0055b880(uint param_1,int param_2)
   ushort uStack_16;
   
   if (_DAT_02cf49c4 != (int *)0x0) {
-    iVar6 = 1;
-    iVar4 = 0x18;
-    iVar3 = _DAT_02cf4a0c;
-    while (iVar3 != 0) {
-      iVar6 = iVar6 + 1;
-      if (0x617 < iVar4 + 0x18) break;
-      iVar3 = *(int *)(&DAT_02cf4a0c + iVar4);
-      iVar4 = iVar4 + 0x18;
+    iVar5 = 1;
+    iVar3 = 0x18;
+    iVar2 = _DAT_02cf4a0c;
+    while (iVar2 != 0) {
+      iVar5 = iVar5 + 1;
+      if (0x617 < iVar3 + 0x18) break;
+      iVar2 = *(int *)(&DAT_02cf4a0c + iVar3);
+      iVar3 = iVar3 + 0x18;
     }
-    if (iVar6 < 0x41) {
+    if (iVar5 < 0x41) {
       piStack_1e8 = (int *)0x55b8e0;
       memset(&uStack_24,0,0x12);
       piStack_1e8 = (int *)0x55b8f9;
@@ -56,9 +55,9 @@ int sound_snddx_cpp_FUN_0055b880(uint param_1,int param_2)
         uStack_24 = 0x20;
         uStack_22 = *(ushort *)(param_2 + 0x108);
         uStack_20 = *(uint *)(param_2 + 0x10c);
-        iVar3 = (uint)uStack_22 * *(int *)(param_2 + 0x104);
-        iVar4 = iVar3 >> 0x1f;
-        uVar1 = (int)((iVar3 + iVar4 * -0x10) - (uint)(iVar4 << 3 < 0)) >> 4;
+        iVar2 = (uint)uStack_22 * *(int *)(param_2 + 0x104);
+        iVar3 = iVar2 >> 0x1f;
+        uVar1 = (int)((iVar2 + iVar3 * -0x10) - (uint)(iVar3 << 3 < 0)) >> 4;
         uStack_18 = (ushort)uVar1;
         iStack_1c = *(int *)(param_2 + 0x10c) * (uVar1 & 0xffff);
         uStack_16 = 4;
@@ -68,9 +67,9 @@ int sound_snddx_cpp_FUN_0055b880(uint param_1,int param_2)
         uStack_24 = 1;
         uStack_22 = *(ushort *)(param_2 + 0x108);
         uStack_20 = *(uint *)(param_2 + 0x10c);
-        iVar3 = (uint)uStack_22 * *(int *)(param_2 + 0x104);
-        iVar4 = iVar3 >> 0x1f;
-        uVar1 = (int)((iVar3 + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3;
+        iVar2 = (uint)uStack_22 * *(int *)(param_2 + 0x104);
+        iVar3 = iVar2 >> 0x1f;
+        uVar1 = (int)((iVar2 + iVar3 * -8) - (uint)(iVar3 << 2 < 0)) >> 3;
         uStack_18 = (ushort)uVar1;
         uVar1 = uVar1 & 0xffff;
         iStack_1c = *(int *)(param_2 + 0x10c) * uVar1;
@@ -78,27 +77,25 @@ int sound_snddx_cpp_FUN_0055b880(uint param_1,int param_2)
         iStack_40 = *(int *)(param_2 + 0x110) * uVar1;
       }
       puStack_38 = &uStack_24;
-      iVar3 = iVar6 * 0x18;
+      iVar2 = iVar5 * 0x18;
       piStack_1e8 = _DAT_02cf49c4;
       uVar1 = (**(code **)(*_DAT_02cf49c4 + 0xc))();
       if (uVar1 == 0) {
-        if (*(int *)(iVar3 + 0x2cf49f4) != 0) {
-          iVar4 = *(int *)(param_2 + 0x104) * 0x100 * *(int *)(param_2 + 0x108);
-          iVar5 = iVar4 >> 0x1f;
-          *(int *)(iVar3 + 0x2cf49fc) = (int)((iVar4 + iVar5 * -8) - (uint)(iVar5 << 2 < 0)) >> 3;
-          *(uint *)(iVar3 + 0x2cf4a04) = 0;
-          *(uint *)(iVar3 + 0x2cf4a00) = uStack_50;
-          return iVar6;
+        if (*(int *)(iVar2 + 0x2cf49f4) != 0) {
+          iVar3 = *(int *)(param_2 + 0x104) * 0x100 * *(int *)(param_2 + 0x108);
+          iVar4 = iVar3 >> 0x1f;
+          *(int *)(iVar2 + 0x2cf49fc) = (int)((iVar3 + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3;
+          *(uint *)(iVar2 + 0x2cf4a04) = 0;
+          *(uint *)(iVar2 + 0x2cf4a00) = uStack_50;
+          return iVar5;
         }
       }
       else {
-        pcVar2 = sound_snddx_cpp_FUN_0055a670(uVar1);
-        FUN_005a28c0
-                  (&piStack_1e8,"DirectSux: Unable to %s.  (%s)",
-                   ">Create secondary buffer" + 1,pcVar2);
-        sound_sndmain_cpp_FUN_0055a560(&piStack_1e8);
+        sound_snddx_cpp_FUN_0055a670(uVar1);
+        _sprintf((char *)&piStack_1e8,"DirectSux: Unable to %s.  (%s)");
+        sound_sndmain_cpp_logSoundError_FUN_0055a560((char *)&piStack_1e8);
       }
-      sound_sndmain_cpp_FUN_0055a560("DirectSoundDevice::allocateSample - access failed\n");
+      sound_sndmain_cpp_logSoundError_FUN_0055a560("DirectSoundDevice::allocateSample - access failed\n");
       return 0;
     }
   }

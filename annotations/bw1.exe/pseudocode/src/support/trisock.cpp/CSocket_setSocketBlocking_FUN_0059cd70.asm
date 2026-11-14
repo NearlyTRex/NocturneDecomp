@@ -9,8 +9,9 @@
 ; Local Variables:
 ; undefined4       Stack[-0x4]:4  local_4
 ;
-; XREF[1]:
-;   core_netgame.cpp_FUN_0052c970 at 0052c9ae
+; XREF[2]:
+;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_0052c970 at 0052c9ae
+;   support_trisock.cpp_FUN_0059cf00 at 0059d040
 ;
 ; Called Functions:
 ;   crt_wsock32.c_ioctlsocket

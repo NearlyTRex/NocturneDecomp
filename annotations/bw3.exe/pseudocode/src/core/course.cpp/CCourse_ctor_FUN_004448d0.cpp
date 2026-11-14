@@ -9,8 +9,8 @@
 CCourse * __cdecl core_course_cpp_CCourse_ctor_FUN_004448d0(CCourse *this_ptr)
 
 {
-  *(uint *)(this_ptr + 4) = 0;
-  *(uint *)(this_ptr + 8) = 1;
-  *(uint *)this_ptr = 0;
+  this_ptr->frames = (CCourseFrame *)0x0;
+  this_ptr->loop = 1;
+  this_ptr->len = 0;
   return this_ptr;
 }

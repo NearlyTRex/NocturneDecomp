@@ -2,14 +2,23 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct SMotionTransition;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/SMotion.h"
+#include "types/structs/SMotionSignal.h"
 
 // Structure: CMotionList
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// ctor 00502760: zeroes +0x0 and +0x1c24, memset(+0x1c28, 0, 0x1b580) = 400 x 280; CSkeleton puts loaded_filename right after it at 0x1d1a8
+// Ghidra size: 0x1d1a8 (119208 bytes)
 #pragma pack(push, 1)
 typedef struct CMotionList {
+    int state_count; // 0x0, findStateIndex (bw1 00524150) loop bound; load reads it
+    char state_names[240][30]; // 0x4, findStateIndex stricmp at +4 stepping 0x1e; load fscanf stepping 0x1e; 0x4..0x1c24 = 240 x 30
+    int motion_count; // 0x1c24, findMotionIndex (bw1 005240c0) and moved typed accesses 0052d46c/0052d48d: 0x964 -> 0x1c24
+    SMotion motions[400]; // 0x1c28, stride 0x118 from +0x1c28 (findMotionIndex, getCurrentMotion, load 00502820)
 } CMotionList;
 #pragma pack(pop)
 

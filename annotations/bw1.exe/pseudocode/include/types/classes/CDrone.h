@@ -4,13 +4,16 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
 
 // Structure: CDrone
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0xc280 (49792 bytes)
 #pragma pack(push, 1)
 typedef struct CDrone {
-    char field_0[49792]; // 0x0
+    CEnemy base; // 0x0
+    int dead; // 0xc268
+    int bone_indices[2]; // 0xc26c
+    uint sfx_handles[3]; // 0xc274
 } CDrone;
 #pragma pack(pop)
 

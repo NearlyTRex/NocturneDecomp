@@ -20,7 +20,7 @@ byte * FUN_005a9890(void)
     dest = &DAT_00607678;
     do {
       if ((dest[0xc] & 3) == 0) {
-        puVar1 = FUN_005a3650(0x1d);
+        puVar1 = (uint *)malloc(0x1d);
         if (puVar1 == (uint *)0x0) goto LAB_005a9938;
         uVar2 = 3;
         goto LAB_005a9909;
@@ -28,7 +28,7 @@ byte * FUN_005a9890(void)
       dest = dest + 0x1a;
     } while (dest < &DAT_00607880);
     uVar2 = 0x4003;
-    puVar1 = FUN_005a3650(0x37);
+    puVar1 = (uint *)malloc(0x37);
     if (puVar1 == (uint *)0x0) {
 LAB_005a9938:
       setErrno(5);

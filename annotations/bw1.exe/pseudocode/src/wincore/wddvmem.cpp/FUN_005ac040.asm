@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   height
 ;
 ; XREF[1]:
-;   engine_2d.c_FUN_00401010 at 00401029
+;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 00401029
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wincore_wddvmem_cpp_005f9478
@@ -31,8 +31,8 @@
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
 ;   crt_ddraw.c_DirectDrawCreate
-;   crt_unknown.c_FUN_005c08d0
-;   engine_special.cpp_FUN_00581310
+;   crt_memory.c_malloc_FUN_005c08d0
+;   engine_special.cpp_loadExternalRenderer_FUN_00581310
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
     SAR EAX,0x3                         ; 005ac060
     IMUL EAX,ECX                        ; 005ac063
     PUSH EAX                            ; 005ac066
-    CALL crt_unknown.c_FUN_005c08d0     ; 005ac067
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
+    CALL crt_memory.c_malloc_FUN_005c08d0 ; 005ac067
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 005ac06c
     MOV [0x00629010],EAX                ; 005ac06f | DAT_00629010
     TEST EAX,EAX                        ; 005ac074
@@ -66,8 +66,8 @@ section .text
     SHL EAX,0x2                         ; 005ac088
     ADD EAX,0x40                        ; 005ac08b
     PUSH EAX                            ; 005ac08e
-    CALL crt_unknown.c_FUN_005c08d0     ; 005ac08f
-        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005c08d0(ulong size)
+    CALL crt_memory.c_malloc_FUN_005c08d0 ; 005ac08f
+        ;   XREF to: 005c08d0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005c08d0(ulong size)
     ADD ESP,0x4                         ; 005ac094
     MOV [0x02c99310],EAX                ; 005ac097 | DAT_02c99310
     TEST EAX,EAX                        ; 005ac09c
@@ -141,8 +141,8 @@ section .text
     MOV EBX,dword ptr [0x02c9be68]      ; 005ac14e | DAT_02c9be68
         ;   Label: LAB_005ac14e
     PUSH EBX                            ; 005ac154
-    CALL engine_special.cpp_FUN_00581310 ; 005ac155
-        ;   XREF to: 00581310 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_00581310(HWND window_handle)
+    CALL engine_special.cpp_loadExternalRenderer_FUN_00581310 ; 005ac155
+        ;   XREF to: 00581310 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_loadExternalRenderer_FUN_00581310(HWND window_handle)
     MOV EAX,0x1                         ; 005ac15a
     ADD ESP,0x4                         ; 005ac15f
     POP EBP                             ; 005ac162

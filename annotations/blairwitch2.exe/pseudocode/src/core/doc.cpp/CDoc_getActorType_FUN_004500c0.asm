@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_doc_cpp_CDoc_getActorType_FUN_004500c0(CDoc *this_ptr)
+; CDemonActorType * __cdecl core_doc_cpp_CDoc_getActorType_FUN_004500c0(CDoc *this_ptr)
 ;
 ; Parameters:
 ; CDoc *           Stack[0x4]:4   this_ptr

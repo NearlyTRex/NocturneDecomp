@@ -17,21 +17,21 @@
   },
   "cross_references": [
     {
-      "addr": "005a4e88",
-      "from_addr": "005a4e90",
-      "name": "crt_unknown.c_FUN_005a4e88",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "005b0f93",
       "from_addr": "005b0f9c",
-      "name": "unkafter_2d.cpp_FUN_005b0f93",
+      "name": "crt_unknown.c_FUN_005b0f93",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005b0ff9",
       "from_addr": "005b1007",
-      "name": "unkafter_2d.cpp_FUN_005b0ff9",
+      "name": "crt_unknown.c_FUN_005b0ff9",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a4e88",
+      "from_addr": "005a4e90",
+      "name": "crt_unknown.c_istream_seekg_FUN_005a4e88",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -51,7 +51,7 @@
     {
       "addr": "005af142",
       "is_variadic": false,
-      "name": "unkafter_asgaya.cpp_FUN_005af142"
+      "name": "crt_unknown.c_FUN_005af142"
     }
   ],
   "globals": [],
@@ -61,7 +61,7 @@
       {
         "call_addr": "005b0f9c",
         "call_type": "direct",
-        "caller": "unkafter_2d.cpp_FUN_005b0f93",
+        "caller": "crt_unknown.c_FUN_005b0f93",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -74,7 +74,7 @@
       {
         "call_addr": "005b1007",
         "call_type": "direct",
-        "caller": "unkafter_2d.cpp_FUN_005b0ff9",
+        "caller": "crt_unknown.c_FUN_005b0ff9",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -87,7 +87,7 @@
       {
         "call_addr": "005a4e90",
         "call_type": "direct",
-        "caller": "crt_unknown.c_FUN_005a4e88",
+        "caller": "crt_unknown.c_istream_seekg_FUN_005a4e88",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -128,6 +128,26 @@
       "STORE": 4
     },
     "pcode_op_count": 113
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005c0c9f",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005c8f5f",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0056ce57",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,
@@ -215,7 +235,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar1 = unkafter_asgaya_cpp_FUN_005af142(param_1,param_2);",
+      "text": "uVar1 = FUN_005af142(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -223,7 +243,7 @@
       "line": 12,
       "match": "param_2",
       "severity": "mild",
-      "text": "uVar1 = unkafter_asgaya_cpp_FUN_005af142(param_1,param_2);",
+      "text": "uVar1 = FUN_005af142(param_1,param_2);",
       "type": "unnamed_param"
     },
     {

@@ -8,18 +8,18 @@
 ; int              Stack[0x8]:4   desired_state_index
 ; int              Stack[0xc]:4   force_immediate
 ;
-; XREF[128]:
+; XREF[130]:
 ;   core_baron.cpp_CBaron_attachToOwner_FUN_0040fa70 at 0040fb7b
 ;   core_baron.cpp_CBaron_detachFromOwner_FUN_0040fbc0 at 0040fbe4
-;   core_baron.cpp_FUN_0040f4d0 at 0040f63a
-;   core_batcreat.cpp_FUN_004115b0 at 00411cbc
-;   core_batcreat.cpp_FUN_004123d0 at 004124bb
+;   core_baron.cpp_CBaron_process_FUN_0040f4d0 at 0040f63a
+;   core_batcreat.cpp_CBatCreature_processDamage_FUN_004123d0 at 004124bb
+;   core_batcreat.cpp_CBatCreature_process_FUN_004115b0 at 00411cbc
 ;   core_batman.cpp_CBatman_pickRandomMovementState_FUN_00412b20 at 00412b40
-;   core_batman.cpp_FUN_00412ba0 at 004132b6
-;   core_batman.cpp_FUN_00413f90 at 0041407b
-;   core_biggs.cpp_FUN_00414b30 at 00414be1
-;   core_biggs.cpp_FUN_00414fc0 at 0041500d
-;   ... and 118 more
+;   core_batman.cpp_CBatman_processDamage_FUN_00413f90 at 0041407b
+;   core_batman.cpp_CBatman_process_FUN_00412ba0 at 004132b6
+;   core_biggs.cpp_CBiggs_processDamage_FUN_00414fc0 at 0041500d
+;   core_biggs.cpp_CBiggs_process_FUN_00414b30 at 00414be1
+;   ... and 120 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_motion_cpp_005eaea3

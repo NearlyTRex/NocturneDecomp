@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 47,
+    "complexity_score": 22,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 7,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_field"
+      "negative_offset"
     ],
     "total_lines": 23
   },
@@ -32,7 +31,7 @@
     {
       "addr": "00528d50",
       "is_variadic": false,
-      "name": "core_script.cpp_FUN_00528d50"
+      "name": "core_script.cpp_CScript_clear_FUN_00528d50"
     },
     {
       "addr": "00481f40",
@@ -72,6 +71,32 @@
     },
     "pcode_op_count": 64
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00521600",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00543710",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00559840",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004fe4d0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -97,28 +122,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "pCVar1 = shape_edittool_cpp_CStrList_dtor_FUN_00481f40((CStrList *)&this_ptr->field_0x34,0);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
       "line": 9,
       "match": "pCVar1[-4].",
       "severity": "mild",
-      "text": "return (CScript *)&pCVar1[-4].field_0xc;",
+      "text": "return (CScript *)&pCVar1[-4].vtable;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "return (CScript *)&pCVar1[-4].field_0xc;",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

@@ -1,11 +1,11 @@
 // =============================================================================
-// OPTIONS MENU — Options, and the Graphic Options and Gameplay pages under it
+// OPTIONS MENU — Options, and the Graphic, Display and Gameplay pages under it
 // =============================================================================
 //
-// The shipped Graphics Options screen's display lines, and a Gameplay page
-// for what is neither display nor device: what each line reads, what a press
-// on it changes, and the cards and renderers the shipped screen pinned to a
-// mode, checked every frame.
+// The shipped Graphics Options screen's lines, split between the renderer's
+// page and the display's, and a Gameplay page for what is neither display nor
+// device: what each line reads, what a press on it changes, and the cards and
+// renderers the shipped screen pinned to a mode, checked every frame on both.
 
 #include "front_support.h"
 #include "game/options_menu.h"
@@ -22,22 +22,16 @@ using front_support::lines_of;
 using front_support::Press;
 using front_support::stand;
 
-enum { OPT_GAMEPLAY, OPT_GRAPHIC, OPT_SOUND, OPT_CONTROL, OPT_CHEATS, OPT_CREDITS };
-enum {
-    G_RESOLUTION,
-    G_WINDOW,
-    G_WIDESCREEN,
-    G_HALO,
-    G_ACCEL,
-    G_API,
-    G_CARD,
-    G_BITS,
-    G_UPSCALER,
-    G_NEXT
-};
+enum { OPT_GAMEPLAY, OPT_GRAPHIC, OPT_DISPLAY, OPT_SOUND, OPT_CONTROL, OPT_CHEATS, OPT_CREDITS };
+// Software with the standard upscaler, where the halo follows it.
+enum { G_ACCEL, G_API, G_CARD, G_BITS, G_UPSCALER, G_NEXT };
+const int G_HALO = G_NEXT;
+// Windowed, where Fullscreen's two lines are not listed.
+enum { D_MONITOR, D_RESOLUTION, D_WINDOW, D_VSYNC, D_WIDESCREEN, D_CALIBRATION };
 enum { P_ALWAYS_RUN, P_AIMING, P_AUTO_HEALTH, P_SUBTITLES, P_FONT, P_MENU_FONT, P_RATING };
 
 const char kGraphic[] = "Graphic Options";
+const char kDisplay[] = "Display Options";
 const char kGameplay[] = "Gameplay";
 
 Press pick(int line, bool left = false) {
@@ -53,6 +47,12 @@ void graphics(std::initializer_list<Press> presses) {
     nocturne_graphics_options_menu();
 }
 
+// Runs Display Options over `presses`, then lets it go.
+void display(std::initializer_list<Press> presses) {
+    stand.presses = presses;
+    nocturne_display_options_menu();
+}
+
 // Runs Gameplay, from Options, over `presses`.
 void gameplay(std::initializer_list<Press> presses) {
     stand.presses = presses;
@@ -63,6 +63,11 @@ void gameplay(std::initializer_list<Press> presses) {
 // The Graphic Options line at `index` on its last frame.
 std::string graphic_line(int index) {
     return lines_of(kGraphic).at((size_t)index);
+}
+
+// The Display Options line at `index` on its last frame.
+std::string display_line(int index) {
+    return lines_of(kDisplay).at((size_t)index);
 }
 
 void accelerate(const char *dll) {
@@ -80,6 +85,18 @@ void cards(std::vector<std::string> names, std::vector<int> vendors, std::vector
 
 // --- Options -------------------------------------------------------------------
 
+// Over the game's sound the pause menu holds, the music starts without a reset
+// and only the menu's own sounds stop after: the game carries on from where it
+// was.
+NOCTURNE_TEST(options_leaves_a_held_game_sound_alone) {
+    stand.reset();
+    stand.pause_held = 1;
+    nocturne_options_menu(1);
+    CHECK(stand.in_order({"pauseMenuMusic", "moonInit", "saveClockTime", "swap", "moonFree",
+                          "pauseQuiet", "writeIni"}));
+    CHECK_EQ(stand.count("soundConfigure") + stand.count("soundReset"), 0);
+}
+
 // From a mission's pause, the music and the moon start and stop with the
 // screen; from the main menu they are already up. Either way the settings
 // are written as it closes.
@@ -96,10 +113,11 @@ NOCTURNE_TEST(options_starts_what_it_needs_and_saves) {
     CHECK_EQ(stand.count("writeIni"), 1);
     CHECK(game->hero_number == HERO_TYPE_STRANGER);
     CHECK_EQ(last().title, std::string("Option Menu"));
-    CHECK_EQ(last().y, NOCTURNE_MENU_TITLE_Y);
-    const std::vector<std::string> lines = {"Gameplay options", "Graphic options", "Sound options",
-                                            "Control options",  "Cheats",          "Credits"};
+    const std::vector<std::string> lines = {
+        "Gameplay options", "Graphic options", "Display options", "Sound options",
+        "Control options",  "Cheats",          "Credits"};
     CHECK(last().lines == lines);
+    CHECK_EQ(last().y, nocturne_menu_titled_y((int)lines.size()));
 }
 
 NOCTURNE_TEST(each_options_line_opens_its_screen) {
@@ -121,6 +139,11 @@ NOCTURNE_TEST(each_options_line_opens_its_screen) {
     stand.presses = {pick(OPT_GRAPHIC)};
     nocturne_options_menu(0);
     CHECK_EQ(stand.frames[1].title, std::string(kGraphic));
+
+    stand.reset();
+    stand.presses = {pick(OPT_DISPLAY)};
+    nocturne_options_menu(0);
+    CHECK_EQ(stand.frames[1].title, std::string(kDisplay));
 
     stand.reset();
     stand.presses = {pick(OPT_GAMEPLAY)};
@@ -158,40 +181,69 @@ NOCTURNE_TEST(a_new_control_mode_goes_on_to_its_keys) {
 
 // --- Graphic Options ---------------------------------------------------------------
 
-NOCTURNE_TEST(graphic_options_reads_the_display) {
+NOCTURNE_TEST(graphic_options_reads_the_renderer) {
     stand.reset();
     g_CurrentGraphicsBoard = 3;
     graphics({});
     CHECK_EQ(g_CurrentGraphicsBoard, 0); // past the cards listed
     CHECK(stand.in_order({"saveClockTime", "buildCardList", "swap"}));
-    const std::vector<std::string> lines = {"Resolution : 640x480",    "Window : Windowed",
-                                            "Widescreen : Pan & scan", "Flashlight halo : Off",
-                                            "Acceleration : Off",      "3D API : None",
+    const std::vector<std::string> lines = {"Acceleration : Off",      "3D API : None",
                                             "No 3D Hardware detected", "Bits per pixel : 16",
-                                            "Upscaler : Standard",     "Monitor calibration"};
+                                            "Upscaler : Standard",     "Flashlight halo : Off"};
     CHECK(lines_of(kGraphic) == lines);
-    CHECK_EQ(last().y, NOCTURNE_MENU_TITLE_Y);
+    CHECK_EQ(last().y, nocturne_menu_titled_y((int)lines.size()));
 
-    // A display the system owns has no Window line; FSR has its sharpness.
+    // FSR has its sharpness, and the halo is still last.
     stand.reset();
-    g_nocturne_fixed_display = 1;
     stand.upscaler = NOCTURNE_UPSCALER_FSR;
     game->halo_mode = 1;
     game->game_bpp = 32;
     cards({"Riva"}, {0x10de}, {0x20});
     graphics({});
-    CHECK_EQ(graphic_line(1), std::string("Widescreen : Pan & scan"));
-    CHECK_EQ(graphic_line(2), std::string("Flashlight halo : Simple"));
-    CHECK_EQ(graphic_line(5), std::string("3D Card : Riva (0)"));
-    CHECK_EQ(graphic_line(6), std::string("Bits per pixel : 32"));
-    CHECK_EQ(graphic_line(7), std::string("Upscaler : FSR"));
-    CHECK_EQ(graphic_line(8), std::string("Sharpness : 50%"));
-    CHECK_EQ(lines_of(kGraphic).size(), (size_t)10);
+    CHECK_EQ(graphic_line(G_CARD), std::string("3D Card : Riva (0)"));
+    CHECK_EQ(graphic_line(G_BITS), std::string("Bits per pixel : 32"));
+    CHECK_EQ(graphic_line(G_UPSCALER), std::string("Upscaler : FSR"));
+    CHECK_EQ(graphic_line(G_NEXT), std::string("Sharpness : 50%"));
+    CHECK_EQ(graphic_line(G_NEXT + 1), std::string("Flashlight halo : Simple"));
+    CHECK_EQ(lines_of(kGraphic).size(), (size_t)7);
 
     stand.reset();
     game->halo_mode = 2;
     graphics({});
     CHECK_EQ(graphic_line(G_HALO), std::string("Flashlight halo : Complex"));
+}
+
+// --- Display Options ---------------------------------------------------------------
+
+NOCTURNE_TEST(display_options_reads_the_display) {
+    stand.reset();
+    g_CurrentGraphicsBoard = 3;
+    display({});
+    CHECK_EQ(g_CurrentGraphicsBoard, 0); // the cards listed here too
+    CHECK(stand.in_order({"saveClockTime", "buildCardList", "swap"}));
+    const std::vector<std::string> lines = {"Display : 1 (Screen)",    "Resolution : 640x480",
+                                            "Window : Windowed",       "Vertical sync : On",
+                                            "Widescreen : Pan & scan", "Monitor calibration"};
+    CHECK(lines_of(kDisplay) == lines);
+    CHECK_EQ(last().y, nocturne_menu_titled_y((int)lines.size()));
+
+    // A display the system owns has no Window or Display line.
+    stand.reset();
+    g_nocturne_fixed_display = 1;
+    stand.vsync = 0;
+    display({});
+    const std::vector<std::string> owned = {"Resolution : 640x480", "Vertical sync : Off",
+                                            "Widescreen : Pan & scan", "Monitor calibration"};
+    CHECK(lines_of(kDisplay) == owned);
+    g_nocturne_fixed_display = 0;
+
+    // Fullscreen has what it asks the display for.
+    stand.reset();
+    stand.window_mode = 1;
+    display({});
+    CHECK_EQ(display_line(D_WINDOW), std::string("Window : Fullscreen"));
+    CHECK_EQ(display_line(3), std::string("Fullscreen size : Game"));
+    CHECK_EQ(display_line(4), std::string("Refresh rate : Auto"));
 }
 
 // The halo cycles through its three modes either way; one past them is taken
@@ -241,27 +293,29 @@ NOCTURNE_TEST(the_api_line_names_the_renderer) {
 NOCTURNE_TEST(the_resolution_steps_and_applies) {
     stand.reset();
     accelerate("trigl.dll");
-    graphics({pick(G_RESOLUTION)});
+    display({pick(D_RESOLUTION)});
     CHECK_EQ(game->game_pixx, 800);
     CHECK_EQ(stand.count("setSize 800x600"), 1);
+    CHECK_EQ(stand.count("resolutionStep filtered"), 1); // what the display offers
 
     stand.reset();
     accelerate("trigl.dll");
-    graphics({pick(G_RESOLUTION, true)});
+    display({pick(D_RESOLUTION, true)});
     CHECK_EQ(game->game_pixx, 1024);
 
     // trid3d.dll, or no acceleration, stops at 640x480.
     stand.reset();
     accelerate("trid3d.dll");
-    graphics({pick(G_RESOLUTION)});
+    display({pick(D_RESOLUTION)});
     CHECK_EQ(game->game_pixx, 640);
     CHECK_EQ(stand.count("setSize 640x480"), 0);
 
-    // And holds a larger mode there, the window following.
+    // And holds a larger mode there, the window following, on either page:
+    // acceleration is turned off on the other one.
     stand.reset();
     game->game_pixx = 800;
     game->game_pixy = 600;
-    graphics({});
+    display({});
     CHECK_EQ(game->game_pixy, 480);
     CHECK_EQ(stand.count("setSize 640x480"), 1);
 
@@ -269,14 +323,56 @@ NOCTURNE_TEST(the_resolution_steps_and_applies) {
     stand.reset();
     game->game_pixy = 600;
     graphics({});
+    CHECK_EQ(game->game_pixy, 480);
     CHECK_EQ(stand.count("setSize 640x480"), 1);
 
     stand.reset();
     accelerate("trigl.dll");
     game->game_pixx = 800;
     game->game_pixy = 600;
-    graphics({});
+    display({});
     CHECK_EQ(game->game_pixy, 600);
+}
+
+// Outside a mission, a mode the front end now calls for is taken at once and
+// an external renderer made again at it; a mode the screen refuses leaves the
+// renderer alone. From a mission's pause only the window follows.
+NOCTURNE_TEST(a_new_front_end_mode_applies_outside_a_mission) {
+    stand.reset();
+    stand.front_end_width = 800;
+    stand.front_end_height = 600;
+    display({});
+    CHECK_EQ(stand.count("frontEndSetMode"), 1); // the next frame finds it taken
+    CHECK_EQ(stand.count("resetGraphics"), 1);
+    CHECK_EQ(g_WindowWidth, 800);
+    CHECK_EQ(g_WindowHeight, 600);
+
+    // A height alone is a new mode too; with no external renderer there is
+    // nothing to make again.
+    stand.reset();
+    g_UseExternalRenderer = 0;
+    stand.front_end_height = 600;
+    graphics({});
+    CHECK_EQ(stand.count("frontEndSetMode"), 1);
+    CHECK_EQ(stand.count("resetGraphics"), 0);
+    CHECK_EQ(g_WindowHeight, 600);
+
+    stand.reset();
+    stand.front_end_width = 800;
+    stand.front_end_height = 600;
+    stand.front_end_takes = 0;
+    display({});
+    CHECK(stand.count("frontEndSetMode") >= 1);
+    CHECK_EQ(stand.count("resetGraphics"), 0);
+    CHECK_EQ(g_WindowWidth, 640);
+
+    stand.reset();
+    stand.front_end_width = 800;
+    stand.front_end_height = 600;
+    stand.presses = {pick(OPT_DISPLAY)};
+    nocturne_options_menu(1);
+    CHECK_EQ(stand.count("frontEndSetMode"), 0);
+    CHECK_EQ(g_WindowWidth, 640);
 }
 
 // Acceleration on loads the renderer, the built-in one where none is named,
@@ -340,23 +436,34 @@ NOCTURNE_TEST(the_card_line_steps_the_card) {
 
 NOCTURNE_TEST(the_other_graphic_lines) {
     stand.reset();
-    graphics({pick(G_BITS), pick(G_WINDOW, true), pick(G_UPSCALER), pick(G_WIDESCREEN, true)});
+    graphics({pick(G_BITS), pick(G_UPSCALER)});
     CHECK_EQ(game->game_bpp, 32);
-    CHECK_EQ(stand.count("windowCycle -1"), 1);
     CHECK_EQ(stand.count("upscalerCycle 1"), 1);
-    CHECK_EQ(stand.count("widescreenCycle -1"), 1);
 
     stand.reset();
     game->game_bpp = 32;
     stand.upscaler = NOCTURNE_UPSCALER_FSR;
-    graphics({pick(G_BITS), pick(G_NEXT, true), pick(G_NEXT + 1)});
+    graphics({pick(G_BITS), pick(G_NEXT, true)});
     CHECK_EQ(game->game_bpp, 16);
     CHECK_EQ(stand.count("sharpnessCycle -1"), 1);
+}
+
+// The display lines each step their setting, and those that change the window
+// push it at once; Fullscreen's refresh rates are those of the size it shows.
+NOCTURNE_TEST(the_display_lines_step_and_apply) {
+    stand.reset();
+    display({pick(D_WINDOW, true), pick(D_MONITOR), pick(D_VSYNC, true), pick(D_WIDESCREEN, true),
+             pick(D_CALIBRATION)});
+    CHECK_EQ(stand.count("windowCycle -1"), 1);
+    CHECK(stand.in_order({"displayCycle 1", "reapply"}));
+    CHECK_EQ(stand.count("vsyncCycle -1"), 1);
+    CHECK_EQ(stand.count("widescreenCycle -1"), 1);
     CHECK_EQ(stand.count("calibration"), 1);
 
     stand.reset();
-    graphics({pick(G_NEXT)});
-    CHECK_EQ(stand.count("calibration"), 1);
+    stand.window_mode = 1;
+    display({pick(3), pick(4, true)}); // the size, then the rate
+    CHECK(stand.in_order({"sizeCycle 1", "reapply", "refreshCycle -1 1920x1080", "reapply"}));
 }
 
 // Anti-aliasing is listed while the renderer is up, after the upscaler, and
@@ -374,7 +481,7 @@ NOCTURNE_TEST(anti_aliasing_is_a_line_with_acceleration) {
     stand.antialias = NOCTURNE_ANTIALIAS_FXAA;
     graphics({});
     CHECK_EQ(graphic_line(G_NEXT), std::string("Anti-aliasing : FXAA"));
-    CHECK_EQ(graphic_line(G_NEXT + 1), std::string("Monitor calibration"));
+    CHECK_EQ(graphic_line(G_NEXT + 1), std::string("Flashlight halo : Off"));
 }
 
 // The cards the shipped screen pinned: early 3dfx parts to tri3dfx.dll at
@@ -428,6 +535,16 @@ NOCTURNE_TEST(the_pinned_cards) {
     game->game_bpp = 32;
     graphics({});
     CHECK_EQ(game->game_bpp, 32);
+
+    // The Display page pins the mode as well, since it picks it.
+    stand.reset();
+    accelerate("trigl.dll");
+    cards({"i740"}, {0x8086}, {0x7800});
+    game->game_pixx = 800;
+    game->game_pixy = 600;
+    display({});
+    CHECK_EQ(game->game_pixy, 480);
+    CHECK_EQ(game->game_bpp, 16);
 }
 
 // --- Gameplay ------------------------------------------------------------------------

@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[9]:
-;   core_game.cpp_FUN_004cf5e0 at 004d034e
-;   core_game.cpp_FUN_004d8a90 at 004d8e1a
+;   core_game.cpp_CGame_finishAct_FUN_004d8a90 at 004d8e1a
+;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004d034e
 ;   core_main.c_FUN_005031c0 at 00503211
 ;   core_menu.cpp_showCalibrationTestPattern_FUN_0050a870 at 0050a9a6
 ;   core_set.cpp_FUN_0054d3c0 at 0054e3a0
-;   engine_2d.c_FUN_0040330e at 00403368
+;   engine_2d.c_getInputWithPrompt_FUN_00403310 at 00403368
 ;   engine_keys.cpp_CKeys_getInputKey_FUN_004fd260 at 004fd260
 ;   engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_004fd270 at 004fd270
 ;   wincore_wddvmem.cpp_resetGraphicsSystem_FUN_005ac830 at 005aca18
@@ -21,7 +21,7 @@
 ;   undefined4 DAT_02c9be70
 ;
 ; Called Functions:
-;   wincore_wddvmem.cpp_FUN_005acff0
+;   wincore_wddvmem.cpp_swapBuffers_FUN_005acff0
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
         ;   Label: LAB_005b2524
     JNZ 0x005b253f                      ; 005b252b
         ;   XREF to: 005b253f (CONDITIONAL_JUMP)  ; LAB_005b253f
-    CALL wincore_wddvmem.cpp_FUN_005acff0 ; 005b252d
-        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_005acff0()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005acff0 ; 005b252d
+        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005acff0()
     MOV EAX,[0x02c9a618]                ; 005b2532 | DAT_02c9a618
     CMP EAX,dword ptr [0x02c9a61c]      ; 005b2537 | DAT_02c9a61c
     JZ 0x005b2524                       ; 005b253d

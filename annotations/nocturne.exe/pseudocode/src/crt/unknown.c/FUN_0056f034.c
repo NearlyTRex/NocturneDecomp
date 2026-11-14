@@ -9,6 +9,6 @@
 void FUN_0056f034(void)
 
 {
-  func_0x005718e0(0);
+  FUN_005718e0(0);
   return;
 }

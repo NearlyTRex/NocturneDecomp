@@ -13,10 +13,7 @@ void __cdecl shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_00481870(CSt
   uint uVar2;
   char *pcVar3;
   byte bVar4;
-  CPodSearchContext local_844 [256];
-  char local_744 [260];
-  int local_640;
-  time_t local_638;
+  CPodSearchContext local_844;
   CFileFinder local_528;
   char local_414 [260];
   char local_310 [256];
@@ -38,12 +35,13 @@ void __cdecl shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_00481870(CSt
     } while (cVar1 != '\0');
   }
   else {
-    FUN_005b7790(local_310,"%s\\%s",directory_path,file_pattern);
+    _sprintf(local_310,"%s\\%s");
   }
   if (g_CDemonPodPtr != (CDemonPod *)0x0) {
-    engine_pod_cpp_CPod_initSearch_FUN_0051b580((CPod *)g_CDemonPodPtr,local_310,local_844);
-    while (local_844[0] != (CPodSearchContext)0x0) {
-      engine_dosio_cpp_FUN_00461070((char *)local_844,(char *)0x0,(char *)0x0,local_110,&local_210);
+    engine_pod_cpp_CPod_initSearch_FUN_0051b580(&g_CDemonPodPtr->base,local_310,&local_844);
+    while (local_844.current_file_info.found_path[0] != '\0') {
+      engine_dosio_cpp_splitPath_FUN_00461070
+                ((char *)&local_844,(char *)0x0,(char *)0x0,local_110,&local_210);
       if (local_210 == '.') {
         uVar2 = 0xffffffff;
         pcVar3 = &local_210;
@@ -55,17 +53,19 @@ void __cdecl shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_00481870(CSt
         } while (cVar1 != '\0');
         memmove(&local_210,local_20f,~uVar2 - 1);
       }
-      engine_dosio_cpp_FUN_004610a0(local_414,(char *)0x0,(char *)0x0,local_110,&local_210);
+      engine_dosio_cpp_makePath_FUN_004610a0(local_414,(char *)0x0,(char *)0x0,local_110,&local_210)
+      ;
       shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_00481620
-                (this_ptr,local_414,local_744,local_640,local_638);
-      engine_pod_cpp_CPod_getNextSearchResult_FUN_0051b5d0((CPod *)g_CDemonPodPtr,local_844);
+                (this_ptr,local_414,local_844.current_file_info.target_path,
+                 local_844.current_file_info.file_size,local_844.current_file_info.timestamp);
+      engine_pod_cpp_CPod_getNextSearchResult_FUN_0051b5d0(&g_CDemonPodPtr->base,&local_844);
     }
   }
   engine_dosio_cpp_CFileFinder_ctor_FUN_00460e10(&local_528);
   engine_dosio_cpp_CFileFinder_openSearch_FUN_00460e50(&local_528,local_310);
-  while (local_528._0_1_ != '\0') {
+  while (local_528.filename[0] != '\0') {
     shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_00481620
-              (this_ptr,(char *)&local_528,(char *)0x0,local_528._260_4_,local_528._264_4_);
+              (this_ptr,local_528.filename,(char *)0x0,local_528.file_size,local_528.timestamp);
     engine_dosio_cpp_CFileFinder_findNext_FUN_00460ed0(&local_528);
   }
   engine_dosio_cpp_CFileFinder_closeSearch_FUN_00460f50(&local_528);

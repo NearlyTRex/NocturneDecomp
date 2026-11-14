@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_lightgun_cpp_staticInit_FUN_004ffe50(void)
+; void __cdecl core_lightgun_cpp_staticInit_FUN_004ffe50(void)
 ;
 ;
 ; Called Functions:

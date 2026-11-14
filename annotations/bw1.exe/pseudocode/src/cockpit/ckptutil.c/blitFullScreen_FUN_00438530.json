@@ -1,0 +1,165 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 19,
+    "complexity_score": 79,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 9,
+    "suspect_count": 6,
+    "suspect_types": [
+      "stack_param",
+      "undefined_data"
+    ],
+    "total_lines": 28
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00438530",
+    "address_range": [
+      [
+        "00438530",
+        "00438558"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "cockpit_ckptutil.c_blitFullScreen_FUN_00438530",
+    "signature": "void cockpit_ckptutil_c_blitFullScreen_FUN_00438530(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004380a0",
+      "is_variadic": false,
+      "name": "cockpit_ckptutil.c_blitDualModeSprite_FUN_004380a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061b498",
+      "name": "DAT_0061b498",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061b49c",
+      "name": "DAT_0061b49c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.235294117647059,
+    "instruction_count": 17,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 16,
+      "INT_ADD": 6,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 9,
+      "LOAD": 5,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 9
+    },
+    "pcode_op_count": 55
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0042d820",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00436140",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00432b30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0042e4f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "void *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "void *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(in_stack_00000004,in_stack_00000008,0,0,DAT_0061b498,DAT_0061b49c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "(in_stack_00000004,in_stack_00000008,0,0,DAT_0061b498,DAT_0061b49c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_0061b498",
+      "severity": "mild",
+      "text": "(in_stack_00000004,in_stack_00000008,0,0,DAT_0061b498,DAT_0061b49c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_0061b49c",
+      "severity": "mild",
+      "text": "(in_stack_00000004,in_stack_00000008,0,0,DAT_0061b498,DAT_0061b49c);",
+      "type": "undefined_data"
+    }
+  ]
+}

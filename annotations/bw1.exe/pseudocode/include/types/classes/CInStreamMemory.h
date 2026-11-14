@@ -4,13 +4,18 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CInStream.h"
 
 // Structure: CInStreamMemory
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI size 20; ctor 005a1130 calls the in-stream base ctor then zeroes +4..+0x10
 // Ghidra size: 0x14 (20 bytes)
 #pragma pack(push, 1)
 typedef struct CInStreamMemory {
-    char field_0[20]; // 0x0
+    CInStream base; // 0x0, derived
+    char* data; // 0x4, open 005a1450 / openOwned 005a1480 store the buffer arg; getChar 005a1240 reads data[position]; close 005a1400 frees it when owns_data
+    int size; // 0x8, open stores the length arg; reads, seek and isEof bound position against it
+    int position; // 0xc, getChar increments it; seek 005a1360 sets it; tell returns it
+    int owns_data; // 0x10, open sets 0, openOwned sets 1; close frees data only when non-zero
 } CInStreamMemory;
 #pragma pack(pop)
 

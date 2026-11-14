@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_goggles_cpp_CGoggles_getActorType_FUN_004cc6b0(CGoggles *this_ptr)
+; CDemonActorType * __cdecl core_goggles_cpp_CGoggles_getActorType_FUN_004cc6b0(CGoggles *this_ptr)
 ;
 ; Parameters:
 ; CGoggles *       Stack[0x4]:4   this_ptr

@@ -1,23 +1,23 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_main_c_FUN_005030e0(undefined4 param_1)
+; void core_main_c_FUN_005030e0(char *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ;
-; XREF[565]:
+; XREF[566]:
 ;   cockpit_ckptutil.c_FUN_004387f0 at 004389af
 ;   cockpit_ckptutil.c_FUN_00438bd0 at 00438c2a
 ;   cockpit_ckptutil.c_FUN_00438e40 at 00438e9e
-;   cockpit_ckptutil.c_FUN_0043908e at 00439128
-;   cockpit_ckptutil.c_FUN_0043a040 at 0043a0f4
+;   cockpit_ckptutil.c_FUN_00439090 at 00439128
 ;   cockpit_ckptutil.c_FUN_0043a200 at 0043a318
-;   cockpit_ckptutil.c_FUN_0043a45e at 0043a58b
 ;   cockpit_ckptutil.c_FUN_0043b090 at 0043b1d3
 ;   cockpit_ckptutil.c_FUN_0043b2e0 at 0043b355
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_00437490 at 004375a3
-;   ... and 555 more
+;   cockpit_ckptutil.c_rotateBitmap_FUN_0043a040 at 0043a0f4
+;   cockpit_ckptutil.c_traceConnectedEdges_FUN_0043a460 at 0043a58b
+;   ... and 556 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006236b8
@@ -25,12 +25,12 @@
 ;   undefined4 DAT_01d1d408
 ;
 ; Called Functions:
+;   core_sound.cpp_shutdownSoundSystem_FUN_0057cb90
 ;   crt_stdio.c_vsprintf_FUN_005bfb18
 ;   crt_watcom.c_notifyAbnormalTermination_FUN_005c3140
 ;   engine_2d.c_cleanupGraphicsSystem_FUN_00401120
-;   sound_sndmain.cpp_shutdownSoundSystem_FUN_0057cb90
+;   wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_005b3080
 ;   wincore_winrun.cpp_endPeriod_FUN_005b2410
-;   wincore_winrun.cpp_FUN_005b3080
 ;
 ; *****************************************************************************
 
@@ -56,7 +56,7 @@ section .text
     MOV dword ptr [0x01d1d408],ECX      ; 0050310f | DAT_01d1d408
     XOR ESI,ESI                         ; 00503115
     CALL crt_stdio.c_vsprintf_FUN_005bfb18 ; 00503117
-        ;   XREF to: 005bfb18 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_005bfb18()
+        ;   XREF to: 005bfb18 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005bfb18(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0050311c
     MOV DH,0x5c                         ; 0050311f
     MOV dword ptr [ESP + 0x4],ESI       ; 00503121
@@ -89,16 +89,16 @@ section .text
         ;   XREF to: 00503180 (CONDITIONAL_JUMP)  ; LAB_00503180
     MOV EDI,dword ptr [0x006236b8]      ; 0050314a | DAT_006236b8
     PUSH EDI                            ; 00503150
-    CALL sound_sndmain.cpp_shutdownSoundSystem_FUN_0057cb90 ; 00503151
-        ;   XREF to: 0057cb90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_shutdownSoundSystem_FUN_0057cb90()
+    CALL core_sound.cpp_shutdownSoundSystem_FUN_0057cb90 ; 00503151
+        ;   XREF to: 0057cb90 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_shutdownSoundSystem_FUN_0057cb90()
     ADD ESP,0x4                         ; 00503156
     CALL engine_2d.c_cleanupGraphicsSystem_FUN_00401120 ; 00503159
         ;   XREF to: 00401120 (UNCONDITIONAL_CALL)  ; void engine_2d.c_cleanupGraphicsSystem_FUN_00401120()
     CALL wincore_winrun.cpp_endPeriod_FUN_005b2410 ; 0050315e
         ;   XREF to: 005b2410 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_endPeriod_FUN_005b2410()
     PUSH 0x1d1c300                      ; 00503163
-    CALL wincore_winrun.cpp_FUN_005b3080 ; 00503168
-        ;   XREF to: 005b3080 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_FUN_005b3080(char * message)
+    CALL wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_005b3080 ; 00503168
+        ;   XREF to: 005b3080 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_005b3080(char * message)
     ADD ESP,0x4                         ; 0050316d
     ADD ESP,0x4                         ; 00503170
     POP EDI                             ; 00503173

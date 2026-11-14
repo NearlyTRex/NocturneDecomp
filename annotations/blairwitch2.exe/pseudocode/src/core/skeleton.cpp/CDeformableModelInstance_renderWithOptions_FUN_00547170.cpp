@@ -13,7 +13,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_00
   CBoundingBox3D *bounding_box;
   
   if (lod_index < 0) {
-    bounding_box = (CBoundingBox3D *)&this_ptr->field_0x2238;
+    bounding_box = &this_ptr->bounding_box;
     this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810(this_ptr);
     lod_index = core_skeleton_cpp_CDeformableModel_selectLOD_FUN_00543d00(this_ptr_00,bounding_box);
   }

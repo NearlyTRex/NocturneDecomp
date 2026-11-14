@@ -10,10 +10,10 @@
 // =============================================================================
 
 // undefined1* constants
-static undefined1* DAT_00559B34 = (undefined1*)0x00559F01; // LAB_00559f01
-static undefined1* DAT_00559B38 = (undefined1*)0x00559F01; // LAB_00559f01
-static undefined1* DAT_00559B3C = (undefined1*)0x00559FEF; // LAB_00559fef
-static undefined1* DAT_00559B40 = (undefined1*)0x00559FEF; // LAB_00559fef
+static undefined1* DAT_00559B34 = (undefined1*)0x00559F01; // DAT_00559f01
+static undefined1* DAT_00559B38 = (undefined1*)0x00559F01; // DAT_00559f01
+static undefined1* DAT_00559B3C = (undefined1*)0x00559FEF; // DAT_00559fef
+static undefined1* DAT_00559B40 = (undefined1*)0x00559FEF; // DAT_00559fef
 static undefined1* DAT_00559B44 = (undefined1*)0x00559E1D; // LAB_00559e1d
 
 // void* constants

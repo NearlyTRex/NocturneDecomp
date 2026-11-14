@@ -1,0 +1,265 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 102,
+    "complexity_score": 125,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 55,
+    "suspect_count": 5,
+    "suspect_types": [
+      "extra_output",
+      "unrolled_strcpy",
+      "unrolled_strlen",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 157
+  },
+  "cross_references": [
+    {
+      "addr": "004aa810",
+      "from_addr": "004aaed8",
+      "name": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a9c80",
+    "address_range": [
+      [
+        "004a9c80",
+        "004a9d85"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fldnotes.cpp_SNotesSection_addEntry_FUN_004a9c80",
+    "signature": "SNotesEntry * __cdecl core_fldnotes_cpp_SNotesSection_addEntry_FUN_004a9c80(SNotesSection *this_ptr,char *name,int kind)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a98f0",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_SNotesEntry_ctor_FUN_004a98f0"
+    },
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "005a3cb2",
+      "is_variadic": false,
+      "name": "crt_memory.c_operator_new_FUN_005a3cb2"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c1081",
+      "name": "s_core_fldnotes_cpp_005c1081",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c1096",
+      "name": "s_Too_many_field_note_entr_005c1096",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c10d1",
+      "name": "s_core_fldnotes_cpp_005c10d1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c10e6",
+      "name": "s_Out_of_memory_005c10e6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c10f5",
+      "name": "s_core_fldnotes_cpp_005c10f5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c110a",
+      "name": "s_Entry_name_s_is_too_long_005c110a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004aaed8",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004ab04b",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004ab188",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0875,
+    "instruction_count": 80,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BRANCH": 2,
+      "CALL": 5,
+      "CBRANCH": 8,
+      "COPY": 60,
+      "INT_ADD": 27,
+      "INT_AND": 40,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 40,
+      "INT_LESS": 6,
+      "INT_MULT": 2,
+      "INT_NEGATE": 1,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 19,
+      "INT_SUB": 28,
+      "INT_XOR": 1,
+      "INT_ZEXT": 1,
+      "LOAD": 17,
+      "POPCOUNT": 19,
+      "RETURN": 1,
+      "STORE": 23
+    },
+    "pcode_op_count": 327
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a3630",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004bc020",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "SNotesSection *"
+      },
+      {
+        "is_param": true,
+        "name": "name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "kind",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "SNotesEntry *extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 25,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "pSVar3 = extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 46,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 34,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    }
+  ]
+}

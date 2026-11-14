@@ -1,0 +1,176 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 78,
+    "complexity_score": 104,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 44,
+    "suspect_count": 5,
+    "suspect_types": [
+      "pointer_cast",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 122
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00574c20",
+    "address_range": [
+      [
+        "00574c20",
+        "00574cae"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_trstream.cpp_COutStreamMemory_write_FUN_00574c20",
+    "signature": "int __cdecl support_trstream_cpp_COutStreamMemory_write_FUN_00574c20(COutStreamMemory *this_ptr,void *data,int size)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a3e50",
+      "is_variadic": false,
+      "name": "crt_memory.c_realloc_FUN_005a3e50"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.8307692307692305,
+    "instruction_count": 65,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 1,
+      "BRANCH": 3,
+      "CALL": 1,
+      "CBRANCH": 7,
+      "COPY": 71,
+      "INT_ADD": 40,
+      "INT_AND": 37,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 25,
+      "INT_LESS": 4,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 12,
+      "INT_SUB": 19,
+      "INT_ZEXT": 4,
+      "LOAD": 29,
+      "POPCOUNT": 11,
+      "RETURN": 3,
+      "STORE": 14
+    },
+    "pcode_op_count": 314
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0057dfe0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9846
+    },
+    "bw1.exe": {
+      "addr": "005a1c30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "COutStreamMemory *"
+      },
+      {
+        "is_param": true,
+        "name": "data",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "size",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(char *)((int)data",
+      "severity": "moderate",
+      "text": "data = (char *)((int)data + (uint)bVar4 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(char *)((int)data",
+      "severity": "moderate",
+      "text": "data = (char *)((int)data + (uint)bVar4 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 31,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar1 = (uint)size >> 2; uVar1 != 0; uVar1 = uVar1 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 36,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar1 = size & 3; uVar1 != 0; uVar1 = uVar1 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 00574c58, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 30,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00574c58: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "COutStreamMemory",
+        "offset": 8,
+        "vtable_addr": "005e5b54"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

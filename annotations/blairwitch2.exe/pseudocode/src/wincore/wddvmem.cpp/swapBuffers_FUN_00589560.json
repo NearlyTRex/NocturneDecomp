@@ -1,0 +1,855 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 227,
+    "complexity_score": 553,
+    "cross_reference_count": 41,
+    "function_call_count": 7,
+    "global_count": 16,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 133,
+    "suspect_count": 39,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data",
+      "unresolved_funcptr",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 360
+  },
+  "cross_references": [
+    {
+      "addr": "00446f50",
+      "from_addr": "00446fc7",
+      "name": "core_dcube.cpp_FUN_00446f50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bdfb0",
+      "from_addr": "004be04f",
+      "name": "core_game.cpp_CGame_finishAct_FUN_004bdfb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004be430",
+      "from_addr": "004be702",
+      "name": "core_game.cpp_CGame_rollCredits_FUN_004be430",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b6170",
+      "from_addr": "004b6d7a",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b60c0",
+      "from_addr": "004b6143",
+      "name": "core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b60c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bcbf0",
+      "from_addr": "004bcdfb",
+      "name": "core_game.cpp_FUN_004bcbf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e1600",
+      "from_addr": "004e1b40",
+      "name": "core_level.cpp_CLevelLoader_update_FUN_004e1600",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e45e0",
+      "from_addr": "004e4627",
+      "name": "core_main.c_FUN_004e45e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e46c0",
+      "from_addr": "004e4c96",
+      "name": "core_main.c_initializeGameSystems_FUN_004e46c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004eba50",
+      "from_addr": "004ebc36",
+      "name": "core_menu.cpp_FUN_004eba50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ebf10",
+      "from_addr": "004ec3e2",
+      "name": "core_menu.cpp_FUN_004ebf10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ecc70",
+      "from_addr": "004ecfb2",
+      "name": "core_menu.cpp_FUN_004ecc70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ed260",
+      "from_addr": "004edb0b",
+      "name": "core_menu.cpp_FUN_004ed260",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ee1a0",
+      "from_addr": "004ee301",
+      "name": "core_menu.cpp_FUN_004ee1a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004eed60",
+      "from_addr": "004ef9d3",
+      "name": "core_menu.cpp_FUN_004eed60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004eb7c0",
+      "from_addr": "004eb9a6",
+      "name": "core_menu.cpp_adjustMouseSensitivity_FUN_004eb7c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004eb490",
+      "from_addr": "004eb576",
+      "name": "core_menu.cpp_calibrateGamepad_FUN_004eb490",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ebce0",
+      "from_addr": "004ebe0c",
+      "name": "core_menu.cpp_showCalibrationTestPattern_FUN_004ebce0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ee3f0",
+      "from_addr": "004ee63e",
+      "name": "core_menu.cpp_showMainGameMenu_FUN_004ee3f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fc940",
+      "from_addr": "004fca30",
+      "name": "core_mission.cpp_CDemonMission_process_FUN_004fc940",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fcb00",
+      "from_addr": "004fcc8a",
+      "name": "core_mission.cpp_CDemonMission_run_FUN_004fcb00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050c130",
+      "from_addr": "0050c15b",
+      "name": "core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_0050c130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050b4d0",
+      "from_addr": "0050b692",
+      "name": "core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0050b4d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050cf50",
+      "from_addr": "0050d3e9",
+      "name": "core_netgame.cpp_CNetGame_runLobby_FUN_0050cf50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050bdb0",
+      "from_addr": "0050bf41",
+      "name": "core_netgame.cpp_CNetGame_syncPlayers_FUN_0050bdb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052c0e0",
+      "from_addr": "0052d0b6",
+      "name": "core_set.cpp_CDemonSet_load_FUN_0052c0e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052d3c0",
+      "from_addr": "0052d61c",
+      "name": "core_set.cpp_FUN_0052d3c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00403310",
+      "from_addr": "00403363",
+      "name": "engine_2d.c_getInputWithPrompt_FUN_00403310",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f2370",
+      "from_addr": "004f2393",
+      "name": "engine_mini3d.cpp_swapBuffers_FUN_004f2370",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047d270",
+      "from_addr": "0047d4c4",
+      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047d270",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00482250",
+      "from_addr": "004822e9",
+      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00482250",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047be90",
+      "from_addr": "0047bf3f",
+      "name": "shape_edittool.cpp_FUN_0047be90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047bf80",
+      "from_addr": "0047c028",
+      "name": "shape_edittool.cpp_FUN_0047bf80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047c0f0",
+      "from_addr": "0047c6fe",
+      "name": "shape_edittool.cpp_FUN_0047c0f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047dc40",
+      "from_addr": "0047e0ed",
+      "name": "shape_edittool.cpp_FUN_0047dc40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047b800",
+      "from_addr": "0047ba76",
+      "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047b800",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047b1f0",
+      "from_addr": "0047b437",
+      "name": "shape_edittool.cpp_showTextInputDialog_FUN_0047b1f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00588a50",
+      "from_addr": "00588d9b",
+      "name": "wincore_wddvmem.cpp_FUN_00588a50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00588de0",
+      "from_addr": "00588fc3",
+      "name": "wincore_wddvmem.cpp_resetGraphicsSystem_FUN_00588de0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058ead0",
+      "from_addr": "0058eaed",
+      "name": "wincore_winrun.cpp_getNextKeypress_FUN_0058ead0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00591190",
+      "from_addr": "005911f5",
+      "name": "wincore_winvideo.cpp_playMovie_FUN_00591190",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00589560",
+    "address_range": [
+      [
+        "00589560",
+        "005897ad"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00589560",
+    "signature": "void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_00589560(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "005b77c0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005b77c0"
+    },
+    {
+      "addr": "0055ff40",
+      "is_variadic": false,
+      "name": "engine_special.cpp_presentToExternalRenderer_FUN_0055ff40"
+    },
+    {
+      "addr": "00589170",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_closeScreenDevice_FUN_00589170"
+    },
+    {
+      "addr": "005890c0",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_openScreenDevice_FUN_005890c0"
+    },
+    {
+      "addr": "005897e0",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_videoRestore_FUN_005897e0"
+    },
+    {
+      "addr": "0058f270",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_processWindowMessages_FUN_0058f270"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ee43c",
+      "name": "s_wincore_wddvmem_cpp_005ee43c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ee453",
+      "name": "s_Unable_to_unlock_front_b_005ee453",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006141b8",
+      "name": "DAT_006141b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006141bc",
+      "name": "DAT_006141bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006141c0",
+      "name": "DAT_006141c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061e98c",
+      "name": "DAT_0061e98c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00622010",
+      "name": "DAT_00622010",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c2a38c",
+      "name": "DAT_01c2a38c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c2a390",
+      "name": "DAT_01c2a390",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c37788",
+      "name": "DAT_01c37788",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38b40",
+      "name": "DAT_01c38b40",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02661ae4",
+      "name": "DAT_02661ae4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02661af4",
+      "name": "DAT_02661af4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02661afc",
+      "name": "DAT_02661afc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.902702702702703,
+    "instruction_count": 185,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 25,
+      "BOOL_OR": 4,
+      "BOOL_XOR": 1,
+      "BRANCH": 3,
+      "CALL": 9,
+      "CALLIND": 3,
+      "CBRANCH": 20,
+      "COPY": 170,
+      "INT_ADD": 68,
+      "INT_AND": 143,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 95,
+      "INT_LEFT": 2,
+      "INT_LESS": 12,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 18,
+      "INT_OR": 18,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 12,
+      "INT_SCARRY": 13,
+      "INT_SEXT": 3,
+      "INT_SLESS": 47,
+      "INT_SRIGHT": 4,
+      "INT_SUB": 54,
+      "INT_XOR": 7,
+      "INT_ZEXT": 5,
+      "LOAD": 55,
+      "POPCOUNT": 44,
+      "RETURN": 3,
+      "STORE": 49,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 907
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005acff0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9581
+    },
+    "bw3.exe": {
+      "addr": "0057a8a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9581
+    },
+    "nocedit.exe": {
+      "addr": "005eda20",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9359
+    },
+    "nocturne.exe": {
+      "addr": "00553910",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8261
+    }
+  },
+  "stack_frame": {
+    "frame_size": 144,
+    "local_size": 144,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_00622010",
+      "severity": "mild",
+      "text": "puVar11 = DAT_00622010;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_0061e98c",
+      "severity": "mild",
+      "text": "if (DAT_0061e98c != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_00622010",
+      "severity": "mild",
+      "text": "local_20 = DAT_00622010;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_006141b8",
+      "severity": "mild",
+      "text": "local_1c = DAT_006141b8 *",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 42,
+      "match": "DAT_006141c0",
+      "severity": "mild",
+      "text": "((int)((DAT_006141c0 + (DAT_006141c0 >> 0x1f) * -8) -",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 42,
+      "match": "DAT_006141c0",
+      "severity": "mild",
+      "text": "((int)((DAT_006141c0 + (DAT_006141c0 >> 0x1f) * -8) -",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_006141c0",
+      "severity": "mild",
+      "text": "(uint)((DAT_006141c0 >> 0x1f) << 2 < 0)) >> 3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 46,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar6 = (**(code **)(*_DAT_02661ae4 + 100))(_DAT_02661ae4,0,local_8c,1,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_006141bc",
+      "severity": "mild",
+      "text": "if (0 < DAT_006141bc) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 58,
+      "match": "(ulonglong *)((int)puVar11",
+      "severity": "moderate",
+      "text": "puVar11 = (ulonglong *)((int)puVar11 + (uint)bVar13 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(ulonglong *)((int)puVar10",
+      "severity": "moderate",
+      "text": "puVar10 = (ulonglong *)((int)puVar10 + (uint)bVar13 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 63,
+      "match": "(ulonglong *)((int)puVar11",
+      "severity": "moderate",
+      "text": "puVar11 = (ulonglong *)((int)puVar11 + (uint)bVar13 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(ulonglong *)((int)puVar10",
+      "severity": "moderate",
+      "text": "puVar10 = (ulonglong *)((int)puVar10 + (uint)bVar13 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 83,
+      "match": "(ulonglong *)((int)local_20",
+      "severity": "moderate",
+      "text": "local_20 = (ulonglong *)((int)local_20 + local_1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 84,
+      "match": "(ulonglong *)((int)local_18",
+      "severity": "moderate",
+      "text": "local_18 = (ulonglong *)((int)local_18 + local_7c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 86,
+      "match": "DAT_006141bc",
+      "severity": "mild",
+      "text": "} while (local_14 < DAT_006141bc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 88,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar12 = (**(code **)(*_DAT_02661ae4 + 0x80))(_DAT_02661ae4,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 103,
+      "match": "DAT_006141bc",
+      "severity": "mild",
+      "text": "if (0 < DAT_006141bc) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 106,
+      "match": "DAT_01c2a38c",
+      "severity": "mild",
+      "text": "puVar5 = *(byte **)(&DAT_01c2a38c + iVar6);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 109,
+      "match": "DAT_006141b8",
+      "severity": "mild",
+      "text": "if (0 < DAT_006141b8) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 112,
+      "match": "(ulonglong *)((int)puVar10",
+      "severity": "moderate",
+      "text": "puVar11 = (ulonglong *)((int)puVar10 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 113,
+      "match": "(byte *)((int)puVar10",
+      "severity": "moderate",
+      "text": "puVar5[1] = *(byte *)((int)puVar10 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 115,
+      "match": "(byte *)((int)puVar10",
+      "severity": "moderate",
+      "text": "puVar5[2] = *(byte *)((int)puVar10 + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 118,
+      "match": "DAT_006141b8",
+      "severity": "mild",
+      "text": "} while (iVar9 < DAT_006141b8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 122,
+      "match": "DAT_006141bc",
+      "severity": "mild",
+      "text": "} while (iVar12 < DAT_006141bc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 128,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(iVar12 = (**(code **)(*_DAT_02661ae4 + 0x2c))(_DAT_02661ae4,0,1), iVar12 != 0)) &&",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer value `puVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 58,
+      "match": "(int)puVar11",
+      "severity": "moderate",
+      "text": "puVar11 = (ulonglong *)((int)puVar11 + (uint)bVar13 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 59,
+      "match": "(int)puVar10",
+      "severity": "moderate",
+      "text": "puVar10 = (ulonglong *)((int)puVar10 + (uint)bVar13 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 63,
+      "match": "(int)puVar11",
+      "severity": "moderate",
+      "text": "puVar11 = (ulonglong *)((int)puVar11 + (uint)bVar13 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 64,
+      "match": "(int)puVar10",
+      "severity": "moderate",
+      "text": "puVar10 = (ulonglong *)((int)puVar10 + (uint)bVar13 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 83,
+      "match": "(int)local_20",
+      "severity": "moderate",
+      "text": "local_20 = (ulonglong *)((int)local_20 + local_1c);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 84,
+      "match": "(int)local_18",
+      "severity": "moderate",
+      "text": "local_18 = (ulonglong *)((int)local_18 + local_7c);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 112,
+      "match": "(int)puVar10",
+      "severity": "moderate",
+      "text": "puVar11 = (ulonglong *)((int)puVar10 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 113,
+      "match": "(int)puVar10",
+      "severity": "moderate",
+      "text": "puVar5[1] = *(byte *)((int)puVar10 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 115,
+      "match": "(int)puVar10",
+      "severity": "moderate",
+      "text": "puVar5[2] = *(byte *)((int)puVar10 + 2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 56,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar8 = local_1c >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 61,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar8 = local_1c & 3; uVar8 != 0; uVar8 = uVar8 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 0058979f, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 221,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0058979f: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

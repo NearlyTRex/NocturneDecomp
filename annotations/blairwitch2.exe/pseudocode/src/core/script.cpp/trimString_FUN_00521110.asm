@@ -8,7 +8,7 @@
 ;
 ; XREF[3]:
 ;   core_script.cpp_CScript_dbLoad_FUN_00529c10 at 00529d5a
-;   core_script.cpp_FUN_00522350 at 00523db9
+;   core_script.cpp_CScript_step_FUN_00522350 at 00523db9
 ;   core_script.cpp_parseArgument_FUN_005211a0 at 00521225
 ;
 ; Referenced Globals:

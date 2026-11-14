@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 98,
+    "complexity_score": 33,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 18,
-    "suspect_count": 7,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 43
@@ -25,7 +24,7 @@
     {
       "addr": "0056f6d0",
       "from_addr": "0056f9c9",
-      "name": "core_succubus.cpp_FUN_0056f6d0",
+      "name": "core_succubus.cpp_CSuccubus_process_FUN_0056f6d0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -75,7 +74,7 @@
     {
       "addr": "005f8874",
       "name": "g_CHotDemonVTable",
-      "type": "undefined4",
+      "type": "CEnemy_full_vtable",
       "value": null
     }
   ],
@@ -85,7 +84,7 @@
       {
         "call_addr": "0056f9c9",
         "call_type": "direct",
-        "caller": "core_succubus.cpp_FUN_0056f6d0",
+        "caller": "core_succubus.cpp_CSuccubus_process_FUN_0056f6d0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -132,6 +131,32 @@
     },
     "pcode_op_count": 114
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004efa10",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004d5430",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004f6ca0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004b8ca0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -156,54 +181,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "*(byte **)&pCVar3->field_0x2b0 = &g_CHotDemonVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)&pCVar3->field_0x2b4,\"hotdemon.dfm\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x3430",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x3430 = 0x3f19999a;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x3434",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x3434 = 0x3f666666;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x3438",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x3438 = uVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x343c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x343c = uVar2;",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

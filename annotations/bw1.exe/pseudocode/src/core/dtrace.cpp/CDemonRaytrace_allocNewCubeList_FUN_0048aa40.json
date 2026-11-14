@@ -2,24 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 42,
-    "complexity_score": 78,
+    "complexity_score": 34,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 18,
-    "suspect_count": 5,
+    "pseudocode_lines": 19,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 60
+    "total_lines": 61
   },
   "cross_references": [
     {
       "addr": "0048adc0",
       "from_addr": "0048aee3",
-      "name": "core_dtrace.cpp_FUN_0048adc0",
+      "name": "core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_0048adc0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -49,7 +48,7 @@
     {
       "addr": "005c1268",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c1268"
+      "name": "crt_memory.c_operator_new_array_FUN_005c1268"
     }
   ],
   "globals": [
@@ -90,7 +89,7 @@
       {
         "call_addr": "0048aee3",
         "call_type": "direct",
-        "caller": "core_dtrace.cpp_FUN_0048adc0",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_0048adc0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -136,6 +135,32 @@
     },
     "pcode_op_count": 223
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00472550",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004735c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00494380",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9459
+    },
+    "nocturne.exe": {
+      "addr": "00467330",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -160,38 +185,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)&this_ptr->field_0x48 *",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x40 * *(int *)&this_ptr->field_0x44;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x40 * *(int *)&this_ptr->field_0x44;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x50 = iVar2;",
-      "type": "unnamed_field"
     }
   ]
 }

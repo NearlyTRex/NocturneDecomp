@@ -5,6 +5,10 @@
 #include "shape/edittool/editortools.h"
 #include "support/newmsg/newmsg.h"
 
+#include <array>
+#include <cmath>
+#include <cstddef>
+
 namespace nocturne::core {
 namespace {
 
@@ -13,6 +17,31 @@ constexpr int kSmallSheetWidth = 0x94;
 constexpr int kSmallSheetHeight = 0xec;
 // The console sheet's transparent index; the others' is 0.
 constexpr int kConsoleTransparent = 0xff;
+
+// An OS font's pixel height and its two vertical offsets.
+struct SOsFontSize {
+    int height;
+    int y_offset1;
+    int y_offset2;
+};
+
+// The medium, theme, tiny and debug fonts', in that order.
+constexpr std::array<SOsFontSize, 4> kOsFontSizes{{
+    {.height = 14, .y_offset1 = 2, .y_offset2 = 2},
+    {.height = 18, .y_offset1 = 0, .y_offset2 = 0},
+    {.height = 12, .y_offset1 = 0, .y_offset2 = 0},
+    {.height = 10, .y_offset1 = 0, .y_offset2 = 0},
+}};
+constexpr std::size_t kMediumOsFont = 0;
+constexpr std::size_t kThemeOsFont = 1;
+constexpr std::size_t kTinyOsFont = 2;
+constexpr std::size_t kDebugOsFont = 3;
+// A scale this close to 1 needs no fonts of its own.
+constexpr float kUnscaledTolerance = 0.001F;
+
+int scaleLength(int length, float scale) {
+    return static_cast<int>(std::lround(static_cast<float>(length) * scale));
+}
 
 // The rest of a font's set-up: how wide a space is and how far its shadow falls.
 void finishFont(engine::CBitFont &font, int space_width, int shadow_offset_x) {
@@ -93,14 +122,38 @@ void CDFont::initFonts() {
     if (!use_os_fonts_) {
         return;
     }
-    medium_win_font_ = makeOsFont(14, 2, 2);
+    const auto make = [this](std::size_t font) {
+        const SOsFontSize &size = kOsFontSizes.at(font);
+        return makeOsFont(size.height, size.y_offset1, size.y_offset2);
+    };
+    medium_win_font_ = make(kMediumOsFont);
     medium_font_->setWinFont(*medium_win_font_);
-    theme_win_font_ = makeOsFont(18, 0, 0);
+    theme_win_font_ = make(kThemeOsFont);
     theme_font_->setWinFont(*theme_win_font_);
-    tiny_win_font_ = makeOsFont(12, 0, 0);
+    tiny_win_font_ = make(kTinyOsFont);
     tiny_font_->setWinFont(*tiny_win_font_);
-    debug_win_font_ = makeOsFont(10, 0, 0);
+    debug_win_font_ = make(kDebugOsFont);
     small_editor_font_->setWinFont(*debug_win_font_);
+}
+
+void CDFont::setOsFontScale(float scale) {
+    const std::array<engine::CBitFont *, 4> fonts{medium_font_.get(), theme_font_.get(),
+                                                  tiny_font_.get(), small_editor_font_.get()};
+    const bool scaled = use_os_fonts_ && std::fabs(scale - 1.0F) >= kUnscaledTolerance;
+    for (std::size_t i = 0; i < fonts.size(); ++i) {
+        std::unique_ptr<engine::CWinFont> &win_font = scaled_win_fonts_.at(i);
+        if (scaled) {
+            const SOsFontSize &size = kOsFontSizes.at(i);
+            win_font =
+                makeOsFont(scaleLength(size.height, scale), scaleLength(size.y_offset1, scale),
+                           scaleLength(size.y_offset2, scale));
+        } else {
+            win_font.reset();
+        }
+        if (fonts.at(i) != nullptr) {
+            fonts.at(i)->setScaledWinFont(win_font.get(), scale);
+        }
+    }
 }
 
 // The dialogs lose their font with the rest.
@@ -117,6 +170,9 @@ void CDFont::freeFonts() {
     tiny_win_font_.reset();
     theme_win_font_.reset();
     debug_win_font_.reset();
+    for (std::unique_ptr<engine::CWinFont> &win_font : scaled_win_fonts_) {
+        win_font.reset();
+    }
 }
 
 EOsFontChoice CDFont::getOsFontChoice() const {

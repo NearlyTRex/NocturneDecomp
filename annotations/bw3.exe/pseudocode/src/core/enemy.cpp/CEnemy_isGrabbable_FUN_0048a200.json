@@ -1,0 +1,181 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 11,
+    "complexity_score": 6,
+    "cross_reference_count": 3,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 17
+  },
+  "cross_references": [
+    {
+      "addr": "00428fc0",
+      "from_addr": "00428fe7",
+      "name": "core_carved.cpp_CCarved_isGrabbable_FUN_00428fc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00458ec0",
+      "from_addr": "00458ee7",
+      "name": "core_demnfolk.cpp_CDemnfolk_isGrabbable_FUN_00458ec0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058caf0",
+      "from_addr": "0058cb17",
+      "name": "core_zombie.cpp_CZombie_isGrabbable_FUN_0058caf0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0048a200",
+    "address_range": [
+      [
+        "0048a200",
+        "0048a21c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_enemy.cpp_CEnemy_isGrabbable_FUN_0048a200",
+    "signature": "int __cdecl core_enemy_cpp_CEnemy_isGrabbable_FUN_0048a200(CEnemy *this_ptr,CDemonActor *grabber)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_isOfClass_FUN_0040c790"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005bdd18",
+      "name": "s_CBugs_005bdd18",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "00428fe7",
+        "call_type": "direct",
+        "caller": "core_carved.cpp_CCarved_isGrabbable_FUN_00428fc0",
+        "estimated_params": 2,
+        "instructions_analyzed": 6,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00458ee7",
+        "call_type": "direct",
+        "caller": "core_demnfolk.cpp_CDemnfolk_isGrabbable_FUN_00458ec0",
+        "estimated_params": 2,
+        "instructions_analyzed": 6,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0058cb17",
+        "call_type": "direct",
+        "caller": "core_zombie.cpp_CZombie_isGrabbable_FUN_0058caf0",
+        "estimated_params": 2,
+        "instructions_analyzed": 6,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.888888888888889,
+    "instruction_count": 9,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "COPY": 8,
+      "INT_ADD": 3,
+      "INT_AND": 8,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 3,
+      "LOAD": 2,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 44
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEnemy *"
+      },
+      {
+        "is_param": true,
+        "name": "grabber",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CConstruct",
+        "offset": 228,
+        "vtable_addr": "005dd704"
+      },
+      {
+        "class_name": "CHotDemon",
+        "offset": 228,
+        "vtable_addr": "005e1d04"
+      },
+      {
+        "class_name": "CImp",
+        "offset": 228,
+        "vtable_addr": "005e1f04"
+      },
+      {
+        "class_name": "CTheHand",
+        "offset": 228,
+        "vtable_addr": "005e5504"
+      },
+      {
+        "class_name": "CKedward",
+        "offset": 228,
+        "vtable_addr": "005e7204"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 42
+  }
+}

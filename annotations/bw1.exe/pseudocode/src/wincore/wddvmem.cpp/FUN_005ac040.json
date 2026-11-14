@@ -20,7 +20,7 @@
     {
       "addr": "00401010",
       "from_addr": "00401029",
-      "name": "engine_2d.c_FUN_00401010",
+      "name": "engine_2d.c_initGraphicsSystem_FUN_00401010",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -50,12 +50,12 @@
     {
       "addr": "005c08d0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c08d0"
+      "name": "crt_memory.c_malloc_FUN_005c08d0"
     },
     {
       "addr": "00581310",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_00581310"
+      "name": "engine_special.cpp_loadExternalRenderer_FUN_00581310"
     }
   ],
   "globals": [
@@ -168,7 +168,7 @@
       {
         "call_addr": "00401029",
         "call_type": "direct",
-        "caller": "engine_2d.c_FUN_00401010",
+        "caller": "engine_2d.c_initGraphicsSystem_FUN_00401010",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -220,6 +220,14 @@
     },
     "pcode_op_count": 536
   },
+  "siblings": {
+    "bw3.exe": {
+      "addr": "005798f0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -257,7 +265,7 @@
       "line": 9,
       "match": "DAT_00629010",
       "severity": "mild",
-      "text": "DAT_00629010 = FUN_005c08d0",
+      "text": "DAT_00629010 = malloc",
       "type": "undefined_data"
     },
     {
@@ -313,7 +321,7 @@
       "line": 18,
       "match": "DAT_0061b498",
       "severity": "mild",
-      "text": "_DAT_02c99310 = FUN_005c08d0(DAT_0061b498 * DAT_0061b49c * 4 + 0x40);",
+      "text": "_DAT_02c99310 = malloc(DAT_0061b498 * DAT_0061b49c * 4 + 0x40);",
       "type": "undefined_data"
     },
     {
@@ -321,7 +329,7 @@
       "line": 18,
       "match": "DAT_0061b49c",
       "severity": "mild",
-      "text": "_DAT_02c99310 = FUN_005c08d0(DAT_0061b498 * DAT_0061b49c * 4 + 0x40);",
+      "text": "_DAT_02c99310 = malloc(DAT_0061b498 * DAT_0061b49c * 4 + 0x40);",
       "type": "undefined_data"
     },
     {

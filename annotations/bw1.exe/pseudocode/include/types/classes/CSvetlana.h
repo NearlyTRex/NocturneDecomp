@@ -4,13 +4,23 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCloth.h"
+#include "types/classes/CHero.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CSvetlana
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x95630 (611888 bytes)
 #pragma pack(push, 1)
 typedef struct CSvetlana {
-    char field_0[611888]; // 0x0
+    CHero base; // 0x0
+    int blades_drawn; // 0x1ffac
+    int attack_hand; // 0x1ffb0
+    CCloth cape_cloth; // 0x1ffb4
+    CCloth hair_cloth; // 0x5aae4
+    uint sfx_handle; // 0x95614
+    CVector3f head_euler_angles; // 0x95618
+    float head_blend_weight; // 0x95624
+    int part_indices[2]; // 0x95628
 } CSvetlana;
 #pragma pack(pop)
 

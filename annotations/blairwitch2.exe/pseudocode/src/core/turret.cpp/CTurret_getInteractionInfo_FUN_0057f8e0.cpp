@@ -1,0 +1,33 @@
+// Name: core_turret.cpp_CTurret_getInteractionInfo_FUN_0057f8e0
+// Address: 0057f8e0
+// Address Range: [[0057f8e0, 0057f948]]
+// Convention: __cdecl
+// Signature: void __cdecl core_turret_cpp_CTurret_getInteractionInfo_FUN_0057f8e0(CTurret *this_ptr,SInteractionInfo *interaction_info)
+
+#include "nocturne.h"
+
+void __cdecl core_turret_cpp_CTurret_getInteractionInfo_FUN_0057f8e0(CTurret *this_ptr,SInteractionInfo *interaction_info)
+
+{
+  float fVar1;
+  CDemonActor *pCVar2;
+  float fVar3;
+  
+  core_actor_cpp_CDemonActor_getInteractionInfo_FUN_00409ed0
+            ((CDemonActor *)this_ptr,interaction_info);
+  if (this_ptr->can_manual_aim == 0) {
+    return;
+  }
+  interaction_info->can_interact = 1;
+  pCVar2 = this_ptr->user;
+  interaction_info->yaw_max = 6.2831855;
+  interaction_info->yaw_min = -6.2831855;
+  interaction_info->interacting_actor = pCVar2;
+  fVar3 = 0xBF060A92;
+  interaction_info->pitch_max = 0x3F9C61AA - (this_ptr->base).base.orient.vec.x;
+  fVar1 = (this_ptr->base).base.orient.vec.x;
+  interaction_info->approach_offset = -4.0;
+  interaction_info->pitch_min = fVar3 - fVar1;
+  interaction_info->distance_max = 0.0;
+  return;
+}

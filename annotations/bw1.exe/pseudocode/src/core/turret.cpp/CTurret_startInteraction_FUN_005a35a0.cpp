@@ -9,9 +9,9 @@
 int __cdecl core_turret_cpp_CTurret_startInteraction_FUN_005a35a0(CTurret *this_ptr,CDemonActor *user)
 
 {
-  if (*(int *)&this_ptr->field_0x85c != 0) {
+  if (this_ptr->user != (CDemonActor *)0x0) {
     return 0;
   }
-  *(CDemonActor **)&this_ptr->field_0x85c = user;
+  this_ptr->user = user;
   return 1;
 }

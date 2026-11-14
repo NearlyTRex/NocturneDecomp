@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBloodSplat * core_gore_cpp_CBloodSplat_dtor_FUN_004ca060(CBloodSplat *this_ptr,uint flags)
+; CBloodSplat * __cdecl core_gore_cpp_CBloodSplat_dtor_FUN_004ca060(CBloodSplat *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CBloodSplat *    Stack[0x4]:4   this_ptr

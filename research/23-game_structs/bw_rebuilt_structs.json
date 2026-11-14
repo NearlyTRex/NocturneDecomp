@@ -1,0 +1,5660 @@
+{
+ "bw1.exe": {
+  "structs": [
+   {
+    "name": "SPlayer",
+    "size": 40,
+    "base": null,
+    "basis": "PGameSettingsChanged's nested player record ($GSPlayer$:PGameSettingsChanged$$): RTTI 40, as in nocedit, whose layout is one 40-character name. Its ctor returns this; the netgame code around it is nocedit's.",
+    "fields": [
+     {"offset": "0x0", "name": "name", "type": "char[40]", "len": 40,
+      "basis": "nocedit's layout; RTTI 40 leaves room for nothing else"}
+    ]
+   },
+   {
+    "name": "CMoon",
+    "size": 2768,
+    "base": null,
+    "basis": "RTTI 2768. The title screen's models: nocedit's CMoon holds one CKeyFramedModel (22,232 bytes there); BW's holds three of 920 from +0x8, 8 + 3 x 920. The ctor constructs them at +0x8, +0x3a0, +0x738 and zeroes +0; the dtor destroys the three in reverse. +0x4 (nocedit's rotation_phase) is never read: the rotation is in globals.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "is_loaded",
+      "type": "int",
+      "len": 4,
+      "basis": "init (00521c50) loads only while 0 and sets 1; free (00521d50) unloads only while set and clears it"
+     },
+     {
+      "offset": "0x8",
+      "name": "models",
+      "type": "CKeyFramedModel[3]",
+      "len": 2760,
+      "basis": "init loads titletwana/b/c.kfm into +0x8, +0x3a0, +0x738 (or taylor_head.kfm into +0x8 alone); render (00521e40) draws the three; free releases them"
+     }
+    ]
+   },
+   {
+    "name": "CDemonMission",
+    "size": 29216,
+    "base": null,
+    "basis": "No RTTI. The static instance at 0x1d2c900 runs to the next global at 0x1d33b20 (0x7220), and the last field, the actor lookup table at +0x1460, holds 6000 (writeFile asserts at 5999), ending there. nocedit's editor fields at +0x10..+0x43 (camera, viewport, selection, editor render flags) are gone; the set names grew from 4 to 16 and moved ahead of the flags.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "current_set_index",
+      "type": "int",
+      "len": 4,
+      "basis": "loadSet (0051b610) returns when the index is already current, else stores it; buildActiveSetActorList compares actors' area_id with it"
+     },
+     {
+      "offset": "0x4",
+      "name": "num_sets",
+      "type": "int",
+      "len": 4,
+      "basis": "readMissionFile scans it, then that many set names; clearMissionData zeroes it"
+     },
+     {
+      "offset": "0x8",
+      "name": "set_names",
+      "type": "char[16][256]",
+      "len": 4096,
+      "basis": "readMissionFile reads each name at +0x8 + i * 0x100; loadSet passes +0x8 + index * 0x100 to CDemonSet load; +0x1008 is the next field"
+     },
+     {
+      "offset": "0x1008",
+      "name": "is_in_editor",
+      "type": "int",
+      "len": 4,
+      "basis": "ctor zeroes it; loadSet builds the full set actor list when set, the active list (buildActiveSetActorList) when not"
+     },
+     {
+      "offset": "0x100c",
+      "name": "mission_version_num",
+      "type": "int",
+      "len": 4,
+      "basis": "readMissionFile scans it first and rejects versions above 7; the ctor sets -1"
+     },
+     {
+      "offset": "0x1010",
+      "name": "has_inventory_actors",
+      "type": "int",
+      "len": 4,
+      "basis": "ctor and clearMissionData zero it, at nocedit's offset + 0x1004 as the other flags"
+     },
+     {
+      "offset": "0x1014",
+      "name": "teleport_requested",
+      "type": "int",
+      "len": 4,
+      "basis": "setTeleportTarget sets 1; process clears it once the hero is moved; the ctor zeroes it. New in BW."
+     },
+     {
+      "offset": "0x1018",
+      "name": "mission_name",
+      "type": "char[256]",
+      "len": 256,
+      "basis": "ctor and clearMissionData clear the first byte; first_actor follows at +0x1118"
+     },
+     {
+      "offset": "0x1118",
+      "name": "first_actor",
+      "type": "CDemonActor *",
+      "len": 4,
+      "basis": "buildActiveSetActorList walks next_actor from it; the ctor zeroes it"
+     },
+     {
+      "offset": "0x111c",
+      "name": "last_actor",
+      "type": "CDemonActor *",
+      "len": 4,
+      "basis": "ctor zeroes it beside first_actor; nocedit's +0x54c + 3024"
+     },
+     {
+      "offset": "0x1120",
+      "name": "pending_teleport",
+      "type": "CLocation",
+      "len": 16,
+      "basis": "process copies +0x1120..+0x112c into the current hero's location when area_id (+0x112c) >= 0, loads that set if it differs, then sets area_id -1 and the position 0"
+     },
+     {
+      "offset": "0x1130",
+      "name": "delete_queue_count",
+      "type": "int",
+      "len": 4,
+      "basis": "markActorToDelete appends at it and asserts below 100; process removes each queued actor and zeroes it"
+     },
+     {
+      "offset": "0x1134",
+      "name": "delete_queue_actors",
+      "type": "CDemonActor *[100]",
+      "len": 400,
+      "basis": "markActorToDelete stores the actor at +0x1134 + count * 4; process passes it to removeActor"
+     },
+     {
+      "offset": "0x12c4",
+      "name": "delete_queue_flags",
+      "type": "uint[100]",
+      "len": 400,
+      "basis": "markActorToDelete stores its second argument at +0x12c4 + count * 4; process passes it to removeActor"
+     },
+     {
+      "offset": "0x1454",
+      "name": "prepared_set_index",
+      "type": "int",
+      "len": 4,
+      "basis": "nocedit's actors_prepared flag, now a set index: prepareAllActors stores current_set_index, loadSet prepares again when they differ, the ctor sets -1"
+     },
+     {
+      "offset": "0x1458",
+      "name": "next_inventory_actor",
+      "type": "CDemonActor *",
+      "len": 4,
+      "basis": "ctor and clearMissionData zero it; nocedit's +0x888 + 3024"
+     },
+     {
+      "offset": "0x145c",
+      "name": "actor_lookup_count",
+      "type": "int",
+      "len": 4,
+      "basis": "writeFile zeroes it, appends to the table at it and asserts below 6000"
+     },
+     {
+      "offset": "0x1460",
+      "name": "actor_lookup_table",
+      "type": "CDemonActor *[6000]",
+      "len": 24000,
+      "basis": "writeFile stores each actor at +0x1460 + count * 4"
+     }
+    ]
+   },
+   {
+    "name": "SCarryHand",
+    "size": 120,
+    "basis": "CCharacter.carry_hands stride 0x78 (ctor loop; FUN_00432690 computes element = hand*0x78 + 0x25a8).",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "bone_index",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x4",
+      "name": "secondary_bone_index",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x8",
+      "name": "carry_actor",
+      "type": "CDemonActor*",
+      "len": 4
+     },
+     {
+      "offset": "0xc",
+      "name": "initial_carry_transform",
+      "type": "CMatrix3x4f",
+      "len": 48,
+      "basis": "computePickup copies the inverse matrix to +0xc; ctor setIdentity(+0xc)"
+     },
+     {
+      "offset": "0x3c",
+      "name": "blend_speed",
+      "type": "float",
+      "len": 4,
+      "basis": "computePickup: 1/blend_time or 0"
+     },
+     {
+      "offset": "0x40",
+      "name": "blend_factor",
+      "type": "float",
+      "len": 4,
+      "basis": "computePickup: 0 or 1.0; ctor 1.0"
+     },
+     {
+      "offset": "0x44",
+      "name": "has_carry_offset",
+      "type": "int",
+      "len": 4,
+      "basis": "computePickup: 1 when its matrix arg is non-null, else 0; updateCarriedObjects tests +0x44"
+     },
+     {
+      "offset": "0x48",
+      "name": "carry_offset",
+      "type": "CMatrix3x4f",
+      "len": 48,
+      "basis": "computePickup copies the 12-dword matrix arg to +0x48; ctor setIdentity(+0x48); updateCarriedObjects uses +0x48"
+     }
+    ]
+   },
+   {
+    "name": "CHeroPlaceholder",
+    "size": 380,
+    "basis": "RTTI 380; CHeroPlaceholder_ctor 004ecba0 zeroes +0x158 and copies \"CDoc\" to +0x15c; archive 004ecd50.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "base",
+      "type": "CDemonActor",
+      "len": 344
+     },
+     {
+      "offset": "0x158",
+      "name": "index",
+      "type": "int",
+      "len": 4,
+      "basis": "archive 'index'"
+     },
+     {
+      "offset": "0x15c",
+      "name": "hero_name",
+      "type": "char[32]",
+      "len": 32,
+      "basis": "archive 'heroName' (archiveString); ctor copies \"CDoc\"; ends at the RTTI size"
+     }
+    ]
+   },
+   {
+    "name": "CFont_vtable",
+    "size": 20,
+    "basis": "vtable 006045b0: 5 slots like nocedit's g_CFontVTable (slot0 dtor engine_palette.cpp, slots 1-3 pure-call stub, slot4 returns 0); type absent from the build",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "ctor",
+      "type": "void*",
+      "len": 4
+     },
+     {
+      "offset": "0x4",
+      "name": "drawText",
+      "type": "void*",
+      "len": 4
+     },
+     {
+      "offset": "0x8",
+      "name": "getStringWidth",
+      "type": "void*",
+      "len": 4
+     },
+     {
+      "offset": "0xc",
+      "name": "getStringHeight",
+      "type": "void*",
+      "len": 4
+     },
+     {
+      "offset": "0x10",
+      "name": "getLineSpacing",
+      "type": "void*",
+      "len": 4,
+      "basis": "bw1 slot4 00532120 returns 0 like nocedit CFont_getLineSpacing"
+     }
+    ]
+   },
+   {
+    "name": "CFont",
+    "size": 27208,
+    "basis": "RTTI CWinFont 27520 minus CWinFont's own 312 bytes (nocedit CWinFont fields 0x4-0x138 sit +27204, ctor 005b1ad0); base ctor 00531eb0 zeroes +0x0 and stores the vtable 006045b0 at +0x6a44 (vtable at the end of the class that introduces it). CFont is a text queue in BW: 00531ee0 (queueText) and 005320b0 (flushQueue).",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "queued_text_count",
+      "type": "int",
+      "len": 4,
+      "basis": "ctor 00531eb0 zeroes; 00531ee0 refuses when 99 < count, writes entry [count] then count++; 005320b0 loops 0..count then zeroes"
+     },
+     {
+      "offset": "0x4",
+      "name": "queued_x",
+      "type": "int[100]",
+      "len": 400,
+      "basis": "00531ee0: +0x4 + i*4 = round(x * scale); 005320b0 passes param_1[1+i] as drawText x"
+     },
+     {
+      "offset": "0x194",
+      "name": "queued_y",
+      "type": "int[100]",
+      "len": 400,
+      "basis": "00531ee0: +0x194 + i*4 = round(y * scale); 005320b0 piVar+0x65 as drawText y"
+     },
+     {
+      "offset": "0x324",
+      "name": "queued_text",
+      "type": "char[100][256]",
+      "len": 25600,
+      "basis": "00531ee0: strcpy to param_1 + 0xc9*4 + count*0x100; 005320b0 text arg, stride 0x40 dwords"
+     },
+     {
+      "offset": "0x6724",
+      "name": "queued_foreground_color",
+      "type": "int[100]",
+      "len": 400,
+      "basis": "00531ee0: param_1[count+0x19c9] = packed colour (or getDefaultTextColor when <0); 005320b0 drawText fg"
+     },
+     {
+      "offset": "0x68b4",
+      "name": "queued_background_color",
+      "type": "int[100]",
+      "len": 400,
+      "basis": "00531ee0: param_1[count+0x1a2d] = param_6; 005320b0 drawText bg"
+     },
+     {
+      "offset": "0x6a44",
+      "name": "vtable",
+      "type": "CFont_vtable*",
+      "len": 4,
+      "basis": "00531eb0 stores 006045b0; 005320b0 calls [param_1[0x1a91]+4] (drawText)"
+     }
+    ]
+   },
+   {
+    "name": "STextureCacheEntry",
+    "size": 96,
+    "basis": "bw1 texture.cpp: entry = cache + 4 + idx*0x60 (loadTexture 005967a0, findFreeSlot 00596680, 00596e60/00596ed0/00596f30/00597000, select 00597620, upload 005976a0); memset(entry,0,0x60). bw2/bw3 texture.cpp use the same stride and displacements.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "dimension",
+      "type": "int",
+      "len": 4,
+      "basis": "loadTexture: 0x20..0x400 from file length; upload passes it"
+     },
+     {
+      "offset": "0x4",
+      "name": "texture_name",
+      "type": "char[64]",
+      "len": 64,
+      "basis": "strcpy of the name to entry+4; name > 0x3f errors; find 005970b0 stricmp at cache+8+i*0x60"
+     },
+     {
+      "offset": "0x44",
+      "name": "texture_data",
+      "type": "uchar*",
+      "len": 4,
+      "basis": "paletted pixels dim*dim, freed in reset/findFreeSlot; upload arg"
+     },
+     {
+      "offset": "0x48",
+      "name": "opacity_data",
+      "type": "uchar*",
+      "len": 4,
+      "basis": "optional opacity map dim*dim"
+     },
+     {
+      "offset": "0x4c",
+      "name": "palette_data",
+      "type": "uchar*",
+      "len": 4,
+      "basis": "malloc(0x300) palette"
+     },
+     {
+      "offset": "0x50",
+      "name": "true_color_data",
+      "type": "uchar*",
+      "len": 4,
+      "basis": "no-palette path: raw file of 4 bytes/pixel; upload 005976a0 uses it when non-null"
+     },
+     {
+      "offset": "0x54",
+      "name": "use_stamp",
+      "type": "uint",
+      "len": 4,
+      "basis": "00597140 stores cache.use_counter here then increments; findFreeSlot picks the smallest among unlocked"
+     },
+     {
+      "offset": "0x58",
+      "name": "is_locked",
+      "type": "int",
+      "len": 4,
+      "basis": "set 1 by 00596e60/00596ed0/00596f30/00597000; findFreeSlot skips entries with it set"
+     },
+     {
+      "offset": "0x5c",
+      "name": "hw_texture_handle",
+      "type": "uint",
+      "len": 4,
+      "basis": "selectTextureByHandle 00597620 passes [cache + idx*0x60 + 0x60] to the renderer select hook"
+     }
+    ]
+   },
+   {
+    "name": "CTextureCache",
+    "size": 98316,
+    "basis": "alloc 0x1800c (g_TextureCacheInstance); ctor (bw1 00596560) zeroes +0x0, +0x18004, +0x18008 and memsets +0x4 for 0x18000; reset 005965d0 frees 4 pointers per 0x60 entry from +0x4 to +0x18004. nocedit's parallel arrays (dims, data, opacity, names, palettes) became an array of 96-byte entries; max_texture_count is gone (findFreeSlot wraps at 0x400).",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "wrap_indicator",
+      "type": "int",
+      "len": 4,
+      "basis": "findFreeSlot 00596680: set 1 when count reaches 0x400; getTextureCacheStats 00597710 tests it"
+     },
+     {
+      "offset": "0x4",
+      "name": "entries",
+      "type": "STextureCacheEntry[1024]",
+      "len": 98304,
+      "basis": "stride 0x60, 0x400 slots (findFreeSlot loop < 0x400)"
+     },
+     {
+      "offset": "0x18004",
+      "name": "current_texture_count",
+      "type": "int",
+      "len": 4,
+      "basis": "findFreeSlot param_1[0x6001]++; find 005970b0 loop bound"
+     },
+     {
+      "offset": "0x18008",
+      "name": "use_counter",
+      "type": "uint",
+      "len": 4,
+      "basis": "00597140: entry.use_stamp = [+0x18008]; [+0x18008]++; reset and ctor zero it"
+     }
+    ]
+   },
+   {
+    "name": "SMotion",
+    "size": 288,
+    "basis": "motion load 00523980 (version <= 3): stride 0x120 (48 dwords); transitions malloc'd (count*0x18); version 3 adds a %d,%d line stored to +0x68/+0x6c (defaults 1 and frame_count)",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "motion_name",
+      "type": "char[32]",
+      "len": 32,
+      "basis": "\"%[^\"]\",%f,%d,%d,%d -> +0,+0x20,+0x24,+0x60,+0x64"
+     },
+     {
+      "offset": "0x20",
+      "name": "fps",
+      "type": "float",
+      "len": 4,
+      "basis": "bw1 00524ba0 advances frame by delta_time * [+0x20]"
+     },
+     {
+      "offset": "0x24",
+      "name": "state_index",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x28",
+      "name": "exit_forward_from_frame",
+      "type": "int",
+      "len": 4,
+      "basis": "%d,%d,%f -> +0x28,+0x34,+0x38"
+     },
+     {
+      "offset": "0x2c",
+      "name": "unused1",
+      "type": "int",
+      "len": 4,
+      "basis": "nocedit padding between pinned fields"
+     },
+     {
+      "offset": "0x30",
+      "name": "exit_forward_cmd",
+      "type": "int",
+      "len": 4,
+      "basis": "%d,%f,%d: first value stored to +0x30; 00524ba0 switch on [+0x30]"
+     },
+     {
+      "offset": "0x34",
+      "name": "exit_forward_to_motion",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x38",
+      "name": "exit_forward_to_frame",
+      "type": "float",
+      "len": 4
+     },
+     {
+      "offset": "0x3c",
+      "name": "exit_forward_tween_time",
+      "type": "float",
+      "len": 4
+     },
+     {
+      "offset": "0x40",
+      "name": "exit_forward_set_new_state",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x44",
+      "name": "unused2",
+      "type": "char[12]",
+      "len": 12,
+      "basis": "nocedit padding between pinned fields"
+     },
+     {
+      "offset": "0x50",
+      "name": "exit_backward_to_motion",
+      "type": "int",
+      "len": 4,
+      "basis": "%d,%f -> +0x50,+0x54"
+     },
+     {
+      "offset": "0x54",
+      "name": "exit_backward_to_frame",
+      "type": "float",
+      "len": 4
+     },
+     {
+      "offset": "0x58",
+      "name": "unused3",
+      "type": "char[8]",
+      "len": 8,
+      "basis": "nocedit padding between pinned fields"
+     },
+     {
+      "offset": "0x60",
+      "name": "frame_start",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x64",
+      "name": "frame_count",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x68",
+      "name": "frame_step",
+      "type": "int",
+      "len": 4,
+      "basis": "bw1 00525240/00524ba0: source frame = frame_start + frame_number / [+0x68]; defaults 1"
+     },
+     {
+      "offset": "0x6c",
+      "name": "stored_frame_count",
+      "type": "int",
+      "len": 4,
+      "basis": "bw1 00525240: last frame = frame_start + [+0x6c] - 1; defaults to frame_count"
+     },
+     {
+      "offset": "0x70",
+      "name": "transition_count",
+      "type": "int",
+      "len": 4,
+      "basis": "read, then malloc(count*0x18) stored at +0x74"
+     },
+     {
+      "offset": "0x74",
+      "name": "transitions",
+      "type": "SMotionTransition*",
+      "len": 4,
+      "basis": "%d,%d,%d,%f,%f,%d per 0x18 element; freed by 00523910 (+0x1c9c from list = motion+0x74)"
+     },
+     {
+      "offset": "0x78",
+      "name": "signal_count",
+      "type": "int",
+      "len": 4,
+      "basis": "00524ba0 loop bound"
+     },
+     {
+      "offset": "0x7c",
+      "name": "signals",
+      "type": "SMotionSignal[15]",
+      "len": 120,
+      "basis": "%d,%d pairs at +0x7c/+0x80 stepping 8; 00524ba0 reads frame +0x7c, value +0x80"
+     },
+     {
+      "offset": "0xf4",
+      "name": "marker_count",
+      "type": "int",
+      "len": 4,
+      "basis": "version>=2; save 00523e2e loop on +0xf4"
+     },
+     {
+      "offset": "0xf8",
+      "name": "markers",
+      "type": "int[10]",
+      "len": 40,
+      "basis": "one %d per marker stepping 4 from +0xf8; ends at 0x120"
+     }
+    ]
+   },
+   {
+    "name": "CMotionList",
+    "size": 122408,
+    "basis": "ctor 005238c0: zeroes +0x0 and +0x1c24, memset(+0x1c28, 0, 0x1c200) = 400 x 288; CSkeleton puts loaded_filename right after it at 0x1de28",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "state_count",
+      "type": "int",
+      "len": 4,
+      "basis": "findStateIndex (bw1 00524150) loop bound; load reads it"
+     },
+     {
+      "offset": "0x4",
+      "name": "state_names",
+      "type": "char[240][30]",
+      "len": 7200,
+      "basis": "findStateIndex stricmp at +4 stepping 0x1e; load fscanf stepping 0x1e; 0x4..0x1c24 = 240 x 30"
+     },
+     {
+      "offset": "0x1c24",
+      "name": "motion_count",
+      "type": "int",
+      "len": 4,
+      "basis": "findMotionIndex (bw1 005240c0) and moved typed accesses 0052d46c/0052d48d: 0x964 -> 0x1c24"
+     },
+     {
+      "offset": "0x1c28",
+      "name": "motions",
+      "type": "SMotion[400]",
+      "len": 115200,
+      "basis": "stride 0x120 from +0x1c28 (findMotionIndex, getCurrentMotion, load 00523980)"
+     }
+    ]
+   },
+   {
+    "name": "STextureSet",
+    "size": 576,
+    "basis": "loadStream 00564ed0: texture name read at +0xc0 + set*0x240 + tex*0x48 + 8 for set < num_texture_sets (+0xb8), tex < num_textures (+0xbc); CDeformableModel texture_sets 0xc0..0xc00 = 5 x 576",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "textures",
+      "type": "SMRGLTextureModel[8]",
+      "len": 576
+     }
+    ]
+   },
+   {
+    "name": "SPart",
+    "size": 96,
+    "basis": "loadStream 00564ed0: parts at +0xc04 stride 0x60; \"%[^\"]\",%d,%d,%d -> +0 name, +0x20 tri_counts, +0x34 cap_tri_counts, +0x48 adj_part_count; adj list %d at +0x4c + i*4 for i < [+0x48]; v<6 format \"%[^\"]\", %d -> +0,+0x48; v>=6 \"%[^\"]\", %d, %d -> +0,+0x48,+0x5c; \"%d,%d\" per lod into +0x20+l*4 / +0x34+l*4",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "part_name",
+      "type": "char[32]",
+      "len": 32
+     },
+     {
+      "offset": "0x20",
+      "name": "tri_counts",
+      "type": "int[5]",
+      "len": 20
+     },
+     {
+      "offset": "0x34",
+      "name": "cap_tri_counts",
+      "type": "int[5]",
+      "len": 20
+     },
+     {
+      "offset": "0x48",
+      "name": "adj_part_count",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x4c",
+      "name": "adj_part_list",
+      "type": "int[4]",
+      "len": 16
+     },
+     {
+      "offset": "0x5c",
+      "name": "dominant_bone",
+      "type": "int",
+      "len": 4
+     }
+    ]
+   },
+   {
+    "name": "SPartInstanceData",
+    "size": 480,
+    "basis": "CDeformableModelInstance+0x2140; bw1 00569ae0 sets +0x2140..+0x2230 to 1 (60 dwords), 00569b00 zeroes +0x2230..+0x2320 (60 dwords; bw3 0054e690 same); dismemberPart 0056a7d0 clears [+0x2140+i*4], reads [+0x2230+i*4]; archivePartStatus 0040b960 reads both arrays",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "visibility_flags",
+      "type": "int[60]",
+      "len": 240
+     },
+     {
+      "offset": "0xf0",
+      "name": "texture_set_indices",
+      "type": "int[60]",
+      "len": 240
+     }
+    ]
+   },
+   {
+    "name": "CFilterCache",
+    "size": 2820,
+    "basis": "RTTI 2820 = nocedit. bw1 findFilter 0045d900: count +0, names strcmp at +4 stepping 0x28, returns [+0xa04 + i*4]; free 0045d770 walks [+0xa04]; getFilter 0045d7c0 CMP [this],0x40 and stores [+0xa04 + i*4]. bw2/bw3 same +0xa04 stores.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "filter_count",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x4",
+      "name": "filter_names",
+      "type": "char[64][40]",
+      "len": 2560
+     },
+     {
+      "offset": "0xa04",
+      "name": "filters",
+      "type": "CDemonFilter*[64]",
+      "len": 256
+     }
+    ]
+   },
+   {
+    "name": "SRaytraceState",
+    "size": 160,
+    "basis": "RTTI 160. pushRaytraceState 00558eb0: entry = stack + depth*0xa0 (EDX*5<<5); stores +0x0..+0x10 (ray_query), +0x14 ignore count, ignore list at +0x1c+i*4, +0x18 collision flag, +0x44/+0x50 ray origin/target, +0x5c, +0x60, +0x64 vec, +0x70, +0x74, +0x78 vec, +0x84, +0x88 vec, +0x94, +0x98, +0x9c; same as nocedit",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "ray_query",
+      "type": "SRayQueryState",
+      "len": 20
+     },
+     {
+      "offset": "0x14",
+      "name": "ignore_list_count",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x18",
+      "name": "collision_flag",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x1c",
+      "name": "ignore_list",
+      "type": "CDemonActor*[10]",
+      "len": 40
+     },
+     {
+      "offset": "0x44",
+      "name": "saved_ray_origin",
+      "type": "CVector3f",
+      "len": 12
+     },
+     {
+      "offset": "0x50",
+      "name": "saved_ray_target",
+      "type": "CVector3f",
+      "len": 12
+     },
+     {
+      "offset": "0x5c",
+      "name": "raycast_distance",
+      "type": "float",
+      "len": 4
+     },
+     {
+      "offset": "0x60",
+      "name": "voxel_distance",
+      "type": "float",
+      "len": 4
+     },
+     {
+      "offset": "0x64",
+      "name": "voxel_hit_point",
+      "type": "CVector3f",
+      "len": 12
+     },
+     {
+      "offset": "0x70",
+      "name": "voxel_surface_type",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x74",
+      "name": "saved_skip_exact_collision",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x78",
+      "name": "saved_collision_normal",
+      "type": "CVector3f",
+      "len": 12
+     },
+     {
+      "offset": "0x84",
+      "name": "saved_ground_type",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x88",
+      "name": "saved_collision_point",
+      "type": "CVector3f",
+      "len": 12
+     },
+     {
+      "offset": "0x94",
+      "name": "saved_collision_actor",
+      "type": "CDemonActor*",
+      "len": 4
+     },
+     {
+      "offset": "0x98",
+      "name": "saved_collision_part_index",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x9c",
+      "name": "saved_collision_bone_index",
+      "type": "int",
+      "len": 4
+     }
+    ]
+   },
+   {
+    "name": "SHardwareEdge",
+    "size": 56,
+    "basis": "type absent from the build. renderTriangleTextured 0047a480 fills the edge table at stride 0x50 writing +0x0..+0x44 (y_min/y_max first, then current/gradient pairs); bw1 setupDepthOnlyEdgeInterpolation 0047a320 writes y_min +0, y_max +4, x_current +8, x_gradient +0xc, depth_current +0x28, depth_gradient +0x2c; typed-access drift: 295 (bw1/bw3) / 256 (bw2) sightings at 0x4..0x44 with delta 0",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "y_min",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x4",
+      "name": "y_max",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x8",
+      "name": "x_current",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0xc",
+      "name": "x_gradient",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x10",
+      "name": "red_current",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x14",
+      "name": "red_gradient",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x18",
+      "name": "u_current",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x1c",
+      "name": "u_gradient",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x20",
+      "name": "v_current",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x24",
+      "name": "v_gradient",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x28",
+      "name": "depth_current",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x2c",
+      "name": "depth_gradient",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x30",
+      "name": "alpha_current",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x34",
+      "name": "alpha_gradient",
+      "type": "int",
+      "len": 4
+     }
+    ]
+   },
+   {
+    "name": "SSoftwareEdge",
+    "size": 80,
+    "basis": "edge table stride 0x50 (bw1 0047a320/0047a43e/0047a480 `count * 0x50`, piVar += 0x14; 0047a480 * 0x50); base and green/blue fields unchanged",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "base",
+      "type": "SHardwareEdge",
+      "len": 56
+     },
+     {
+      "offset": "0x38",
+      "name": "green_current",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x3c",
+      "name": "green_gradient",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x40",
+      "name": "blue_current",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x44",
+      "name": "blue_gradient",
+      "type": "int",
+      "len": 4
+     }
+    ]
+   },
+   {
+    "name": "SMorphPoint",
+    "size": 16,
+    "basis": "CMorphModel_rotatePoints 00522b90: points walked stepping 0x10; [+0] used as index (SHL 4) into ref points, position floats at +4/+8/+0xc",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "vertex_index",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x4",
+      "name": "position",
+      "type": "CVector3f",
+      "len": 12
+     }
+    ]
+   },
+   {
+    "name": "STriangleVertices",
+    "size": 36,
+    "basis": "CGlassParticle init 004af600 (called from CFireEffect_createGlassParticle): reads param floats [0..8] as three vertices (sums [0]+[3]+[6] etc. for the centroid)",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "vertices",
+      "type": "CVector3f[3]",
+      "len": 36
+     }
+    ]
+   },
+   {
+    "name": "SMRGLModelBounds",
+    "size": 52,
+    "basis": "getMRGLBounds pair 0051f920 returns a 13-dword struct (MOV ECX,0xd; MOVSD.REP) built on the stack: min/max read back at +0x4/+0x8/+0x10/+0x14, center at +0x18..+0x20, radius = round(sqrt(sum extent^2)) at +0x24, extent = max(|min|,|max|) per axis at +0x28..+0x30",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "min_scaled",
+      "type": "CVector3i",
+      "len": 12
+     },
+     {
+      "offset": "0xc",
+      "name": "max_scaled",
+      "type": "CVector3i",
+      "len": 12
+     },
+     {
+      "offset": "0x18",
+      "name": "center_scaled",
+      "type": "CVector3i",
+      "len": 12
+     },
+     {
+      "offset": "0x24",
+      "name": "radius_scaled",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x28",
+      "name": "extent",
+      "type": "CVector3i",
+      "len": 12
+     }
+    ]
+   },
+   {
+    "name": "SMovieFrame",
+    "size": 8192,
+    "basis": "CFilterFX_openMovie (bw1 0045ddb0, bw2/bw3 same): malloc(frame_count << 0xd), fread(movie_data, 0x2000, frame_count)",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "pixels",
+      "type": "uchar[8192]",
+      "len": 8192
+     }
+    ]
+   },
+   {
+    "name": "SVoxelCubeMetadata",
+    "size": 88,
+    "basis": "CDemonRaytrace cube_list: freeCubeList (bw1 0048a9b0; bw2/bw3 same) walks stride 0x58, zeroes +0, +4, +0x54, deletes CDemonPart at +0xc; bw1 consolidate 0048aaee sums [+0] (tri count), copies count*0x38 bytes from [+4] and count bytes from [+0x54]; alloc 0048a960 uses element size 0x58",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "triangle_count",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x4",
+      "name": "triangle_list",
+      "type": "CDemonTriangle*",
+      "len": 4
+     },
+     {
+      "offset": "0xc",
+      "name": "part_ptr",
+      "type": "CDemonPart*",
+      "len": 4
+     },
+     {
+      "offset": "0x54",
+      "name": "triangle_flags",
+      "type": "uchar*",
+      "len": 4
+     }
+    ]
+   },
+   {
+    "name": "CCourseFrame",
+    "size": 28,
+    "basis": "CCourse load reads \"%f,%f,%f, %f,%f,%f,%f\" to +0..+0x18 stepping 0x1c; evaluate interpolates frames[i*0x1c] position and slerps frames[i*0x1c + 0xc] (bw1 00447db0/00447fb0, bw3 00444970/00444b70, bw2 course.cpp same format string)",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "pos",
+      "type": "CVector3f",
+      "len": 12
+     },
+     {
+      "offset": "0xc",
+      "name": "orient",
+      "type": "CQuaternion4f",
+      "len": 16
+     }
+    ]
+   },
+   {
+    "name": "SNetPacketHeader",
+    "size": 5,
+    "basis": "Packed 5-byte header as nocedit. CNetGame_sendPacket sends (packet+4, *(int*)packet - 4); processPacket switches on byte packet[4]; every sender stores the size dword at [ESP] and the type byte at [ESP+4] (sendSimFrameAck 00530710: MOV [ESP],0x39/0x3d; MOV byte [ESP+4],0x10). Packet sizes 9/0x29/0x71/0xb1/0x109 equal nocedit's, so the other SNetPacket_* gaps [1,4] close once the header is 5 bytes.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "size",
+      "type": "int",
+      "len": 4,
+      "basis": "sendPacket: *(int*)packet - 4 is the payload length"
+     },
+     {
+      "offset": "0x4",
+      "name": "type",
+      "type": "ENetPacketType",
+      "len": 1,
+      "basis": "processPacket: switch(packet->raw[4]); senders MOV byte [ESP+4],type. ENetPacketType is nocedit's 1-byte enum (absent in the BW DBs)"
+     }
+    ]
+   },
+   {
+    "name": "SPlayerActionState",
+    "size": 36,
+    "basis": "9 dwords: SPlayerInput's speeds start at +0x24 (FUN_004d0ee0 zeroes strafe_speed at +0x24), one more than nocedit's 8 (bw1 typed drift: strafe/turn/look 0x20/0x24/0x28 -> 0x24/0x28/0x2c in processMouseControls).",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "walk",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_004d0ee0 stores the edge of CGame+0x28 (keyWalk, readIniData 004f4f50)"
+     },
+     {
+      "offset": "0x4",
+      "name": "backup",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_004d0ee0 stores the edge of CGame+0x2c (keyBackup, readIniData 004f4f50)"
+     },
+     {
+      "offset": "0x8",
+      "name": "run",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_004d0ee0 stores the edge of CGame+0x30 (keyRun (always_run inverts it), readIniData 004f4f50)"
+     },
+     {
+      "offset": "0xc",
+      "name": "fire",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_004d0ee0 stores the edge of CGame+0x48 (keyFire (zeroed when the hero is dead), readIniData 004f4f50)"
+     },
+     {
+      "offset": "0x10",
+      "name": "use_item",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_004d0ee0 stores the edge of CGame+0x4c (keyUseItem, readIniData 004f4f50)"
+     },
+     {
+      "offset": "0x14",
+      "name": "light",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_004d0ee0 stores the edge of CGame+0x50 (keyLight, readIniData 004f4f50)"
+     },
+     {
+      "offset": "0x18",
+      "name": "draw",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_004d0ee0 stores the edge of CGame+0x68 (keyDraw, readIniData 004f4f50)"
+     },
+     {
+      "offset": "0x1c",
+      "name": "jump",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_004d0ee0 stores CGame+0x6c, read as keyJump by readIniData"
+     },
+     {
+      "offset": "0x20",
+      "name": "quick_turn",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_004d0ee0 stores CGame+0x70, read as keyQuickTurn by readIniData; CDoc FUN_00469550 tests hero+0xc1d8+0x20 (0046b3f4)"
+     }
+    ]
+   },
+   {
+    "name": "SPlayerInput",
+    "size": 48,
+    "basis": "applySimFrameHistory 005305a0 copies 12 dwords per player into hero+player_input; sendSimFrameAck 00530710 copies 12 dwords into the PLAYER_INPUT packet from SNetPlayer+0x4c; getMyControls 00530660: SNetPlayer stride 124 with player_input at +0x4c (124 = 0x4c + 48).",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "action_state",
+      "type": "SPlayerActionState",
+      "len": 36,
+      "basis": "FUN_004d0ee0 writes the action slots"
+     },
+     {
+      "offset": "0x24",
+      "name": "strafe_speed",
+      "type": "float",
+      "len": 4,
+      "basis": "FUN_004d0ee0 zeroes and ramps +0x24 (nocedit +0x20)"
+     },
+     {
+      "offset": "0x28",
+      "name": "turn_speed",
+      "type": "float",
+      "len": 4,
+      "basis": "FUN_004d0ee0 +0x28; processMouseControls clamps it"
+     },
+     {
+      "offset": "0x2c",
+      "name": "look_up_down_speed",
+      "type": "float",
+      "len": 4,
+      "basis": "FUN_004d0ee0 +0x2c"
+     }
+    ]
+   },
+   {
+    "name": "SSimFrame",
+    "size": 108,
+    "basis": "allocSimFrame 0052c32e scans g_SimFrameHistory with stride 0x6c; applySimFrameHistory 005305a0 reads seed +4, dt +8, sequence +0 and copies the inputs from +0xc with stride 0x30.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "sequence_number",
+      "type": "int",
+      "len": 4,
+      "basis": "applySimFrameHistory 005305a0: players[local].sim_frame_index = *(int*)frame + 1"
+     },
+     {
+      "offset": "0x4",
+      "name": "random_seed",
+      "type": "int",
+      "len": 4,
+      "basis": "applySimFrameHistory 005305a0: random_seed = frame+4"
+     },
+     {
+      "offset": "0x8",
+      "name": "delta_time",
+      "type": "float",
+      "len": 4,
+      "basis": "applySimFrameHistory 005305a0: slamDT(frame+8)"
+     },
+     {
+      "offset": "0xc",
+      "name": "player_input",
+      "type": "SPlayerInput[2]",
+      "len": 96,
+      "basis": "applySimFrameHistory 005305a0: copies from frame+0xc, stride 0x30"
+     }
+    ]
+   },
+   {
+    "name": "SNetPacket_PlayerInput",
+    "size": 57,
+    "basis": "sendSimFrameAck 00530710: header.size = 0x39, type 0x10, sim_frame_index at [ESP+5], player_input copied to [ESP+9] (MOVSD.REP 12 dwords)",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "header",
+      "type": "SNetPacketHeader",
+      "len": 5
+     },
+     {
+      "offset": "0x5",
+      "name": "sim_frame_index",
+      "type": "int",
+      "len": 4,
+      "basis": "sendSimFrameAck 00530710: MOV [ESP+5] from SNetPlayer+0x48"
+     },
+     {
+      "offset": "0x9",
+      "name": "player_input",
+      "type": "SPlayerInput",
+      "len": 48,
+      "basis": "sendSimFrameAck 00530710: LEA EDI,[ESP+9]"
+     }
+    ]
+   },
+   {
+    "name": "SNetPacket_SimFrame",
+    "size": 113,
+    "basis": "processServerFrame 0052fee0: header.size = 0x71, type 0xf (nocedit 0x69); the frame follows the 5-byte header",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "header",
+      "type": "SNetPacketHeader",
+      "len": 5
+     },
+     {
+      "offset": "0x5",
+      "name": "frame",
+      "type": "SSimFrame",
+      "len": 108
+     }
+    ]
+   },
+   {
+    "name": "SChatHistory",
+    "size": 288,
+    "basis": "nocedit's layout. addChatHistory (bw1 0052f100): index*0x120 into the 400-entry array; MOVSD x2 copy the sender addr to +0, message_id to +8, sender_name strcpy to +0xc, message strcpy to +0x20; same code in bw2/bw3. RTTI 288.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "sender_addr",
+      "type": "SNetworkAddr",
+      "len": 8
+     },
+     {
+      "offset": "0x8",
+      "name": "message_id",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0xc",
+      "name": "sender_name",
+      "type": "char[20]",
+      "len": 20
+     },
+     {
+      "offset": "0x20",
+      "name": "message",
+      "type": "char[256]",
+      "len": 256
+     }
+    ]
+   },
+   {
+    "name": "SScriptLine",
+    "size": 8,
+    "basis": "CScript_buildParsedLines: realloc((count+1)*8); stores index+1 at +0 and the malloc'd line copy at +4 (all three builds).",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "line_number",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x4",
+      "name": "text",
+      "type": "char *",
+      "len": 4
+     }
+    ]
+   },
+   {
+    "name": "SDialogEntry",
+    "size": 550,
+    "basis": "CScript_dbLoad: realloc(count*0x226), copies the 550-byte stack record with MOVSD.REP 0x89 + MOVSW; CScript_findDialogEntry strides 0x226. The record (at ESP+8 in dbLoad): fscanf \"%[^,], \" into +0, \"%[^,],\" into +0x78, \" %[^\\n]\\n\" into +0x96; \"%s.wav\"/\"%s.mp3\" built from +0 and probed in \"sound\" through +0x3c (ESP+0x44). nocedit types it as an opaque char[550].",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "wav_name",
+      "type": "char[60]",
+      "len": 60,
+      "basis": "dbLoad fscanf into record+0; findDialogEntry stricmp against it"
+     },
+     {
+      "offset": "0x3c",
+      "name": "sound_filename",
+      "type": "char[60]",
+      "len": 60,
+      "basis": "dbLoad: \"%s.wav\" / \"%s.mp3\" of wav_name, passed to getFileSize(\"sound\", ...)"
+     },
+     {
+      "offset": "0x78",
+      "name": "speaker",
+      "type": "char[30]",
+      "len": 30,
+      "basis": "dbLoad fscanf \"%[^,],\" into record+0x78 (nocedit replaces \"stranger\" with \"$\")"
+     },
+     {
+      "offset": "0x96",
+      "name": "text",
+      "type": "char[400]",
+      "len": 400,
+      "basis": "dbLoad fscanf \" %[^\\n]\\n\" into record+0x96; runs to the 550-byte end"
+     }
+    ]
+   },
+   {
+    "name": "CIni",
+    "size": 4,
+    "basis": "nocedit's layout. findLineNumberOfVariable (bw1 FUN_004f4550) sets *this = 1 on entry and 0 on failure; writeProfileString tests *this == 0. g_CIniInstance is passed as this.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "initialized",
+      "type": "int",
+      "len": 4
+     }
+    ]
+   },
+   {
+    "name": "CCodec",
+    "size": 4,
+    "basis": "CCodec_ctor (bw1 00442ba0, bw2 00433e80, bw3 00440800) stores the vtable at +0; derived ctors overwrite it. RTTI 4. Typed void * because BW's vtable slots are not checked against nocedit's CCodec_vtable.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "vtable",
+      "type": "void *",
+      "len": 4
+     }
+    ]
+   },
+   {
+    "name": "CPodDirectoryEntry",
+    "size": 20,
+    "basis": "nocedit's layout. CPodFile_populateFileInfo (bw1 0053bf40) indexes directory_entries with stride 20 (i*5*4) and reads offset +8, size +4, timestamp +0xc; it, CPod_getNextSearchResult and CPodFile_findFileIndex are instruction-identical to nocedit in all three builds. bw1 mountFromFile (FUN_0053b250) stores the checksum at +0x10 (0053b60e, zeroes it 0053bd5a) and verifyChecksum (FUN_0053bfbe) reads it.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "name",
+      "type": "char *",
+      "len": 4
+     },
+     {
+      "offset": "0x4",
+      "name": "size",
+      "type": "uint",
+      "len": 4
+     },
+     {
+      "offset": "0x8",
+      "name": "offset",
+      "type": "uint",
+      "len": 4
+     },
+     {
+      "offset": "0xc",
+      "name": "timestamp",
+      "type": "uint",
+      "len": 4
+     },
+     {
+      "offset": "0x10",
+      "name": "checksum",
+      "type": "uint",
+      "len": 4
+     }
+    ]
+   },
+   {
+    "name": "SInventoryItemInfo",
+    "size": 768,
+    "basis": "nocedit's layout. getItemDisplayName / getItemDescription (bw1 004f62e0/004f6350, bw2 004d9f10/004d9f80, bw3 004d9e40/004d9eb0) walk g_ItemDefinitionArray with stride 0x300, compare the model name at +0 and return +0x100 / +0x200; loadItem fscanf's the three strings; all instruction-identical to nocedit.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "model_name",
+      "type": "char[256]",
+      "len": 256
+     },
+     {
+      "offset": "0x100",
+      "name": "display_name",
+      "type": "char[256]",
+      "len": 256
+     },
+     {
+      "offset": "0x200",
+      "name": "description",
+      "type": "char[256]",
+      "len": 256
+     }
+    ]
+   },
+   {
+    "name": "CSfxOptions",
+    "size": 96,
+    "basis": "CSfxOptions_reset FUN_005726e0 vs nocedit 005a8830; options-stack stride 0x60 (setNextSfxDelay FUN_005729d0: g_SfxLastSlot*0x60); velocity became CVector3f and delay_remaining a float, everything after moves up 12 then 16.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "channel_index",
+      "type": "int",
+      "len": 4,
+      "basis": "reset stores 0 at +0"
+     },
+     {
+      "offset": "0x4",
+      "name": "position",
+      "type": "CVector3d",
+      "len": 24,
+      "basis": "reset zeroes +0x14/+0x18 and FSTP double +0xc, +0x4 as nocedit; FUN_00570a40 reads doubles at +4/+0xc/+0x14"
+     },
+     {
+      "offset": "0x1c",
+      "name": "position_source_ptr",
+      "type": "void*",
+      "len": 4,
+      "basis": "FUN_00570a40 derefs +0x1c by format +0x20"
+     },
+     {
+      "offset": "0x20",
+      "name": "position_format",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_00570a40 compares +0x20 with 1/2"
+     },
+     {
+      "offset": "0x24",
+      "name": "velocity",
+      "type": "CVector3f",
+      "len": 12,
+      "basis": "reset FSTP float +0x28, +0x24 from FLD float +0x2c; FUN_00570a40 stores floats at +0x24/+0x28/+0x2c"
+     },
+     {
+      "offset": "0x30",
+      "name": "velocity_source_ptr",
+      "type": "void*",
+      "len": 4,
+      "basis": "setNextSfxTrackedVelocity1 FUN_00572880 stores param at +0x30; FUN_00570a40 derefs it"
+     },
+     {
+      "offset": "0x34",
+      "name": "velocity_format",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_00572880 stores 1 at +0x34"
+     },
+     {
+      "offset": "0x38",
+      "name": "current_volume",
+      "type": "float",
+      "len": 4,
+      "basis": "reset stores 1.0f (0x3f800000) as nocedit's +0x44"
+     },
+     {
+      "offset": "0x3c",
+      "name": "base_frequency",
+      "type": "float",
+      "len": 4,
+      "basis": "reset stores 1.0f as nocedit's +0x48"
+     },
+     {
+      "offset": "0x40",
+      "name": "delay_remaining",
+      "type": "float",
+      "len": 4,
+      "basis": "reset FSTP float +0x40 (nocedit FSTP double +0x4c); setNextSfxDelay FUN_005729d0 stores a dword at +0x40"
+     },
+     {
+      "offset": "0x44",
+      "name": "userdata",
+      "type": "void*[2]",
+      "len": 8,
+      "basis": "reset memsets 8 at +0x44; setNextSfxUserData FUN_00572920 stores at +0x44+i*4"
+     },
+     {
+      "offset": "0x4c",
+      "name": "flags",
+      "type": "uint",
+      "len": 4,
+      "basis": "setNextSfxFlags FUN_005729f0 stores at +0x4c"
+     },
+     {
+      "offset": "0x50",
+      "name": "playback_position",
+      "type": "double",
+      "len": 8,
+      "basis": "reset zeroes +0x50/+0x54; pollStream FUN_00570460 reads slot+0x50 as double"
+     },
+     {
+      "offset": "0x58",
+      "name": "playback_position_type",
+      "type": "int",
+      "len": 4,
+      "basis": "reset zeroes +0x58 (nocedit +0x68)"
+     },
+     {
+      "offset": "0x5c",
+      "name": "dead",
+      "type": "int",
+      "len": 4,
+      "basis": "reset zeroes +0x5c (nocedit +0x6c)"
+     }
+    ]
+   },
+   {
+    "name": "CParticle",
+    "size": 64,
+    "basis": "setup 00532160 and process FUN_00532250 (vtable slot 4 of every particle vtable); 64 also measured by its derived classes (RTTI +8 each). gravity_acceleration became a vector.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "position",
+      "type": "CVector3f",
+      "len": 12,
+      "basis": "setup copies position to +0x0..+0x8; process adds velocity*dt"
+     },
+     {
+      "offset": "0xc",
+      "name": "velocity",
+      "type": "CVector3f",
+      "len": 12,
+      "basis": "setup copies velocity to +0xc..+0x14; process param_1[3..5] += param_1[6..8]*dt"
+     },
+     {
+      "offset": "0x18",
+      "name": "acceleration",
+      "type": "CVector3f",
+      "len": 12,
+      "basis": "setup +0x18=0, +0x1c=-32.0 (nocedit gravity_acceleration value), +0x20=0; process adds param_1[6..8]*dt to velocity"
+     },
+     {
+      "offset": "0x24",
+      "name": "lifetime_remaining",
+      "type": "float",
+      "len": 4,
+      "basis": "setup +0x24=5.0; process tests 0<param_1[9] and subtracts dt"
+     },
+     {
+      "offset": "0x28",
+      "name": "is_in_solid",
+      "type": "int",
+      "len": 4,
+      "basis": "process stores testVoxelAtCoords result to param_1[10]"
+     },
+     {
+      "offset": "0x2c",
+      "name": "previous_position",
+      "type": "CVector3f",
+      "len": 12,
+      "basis": "process copies position to param_1[0xb..0xd] and traces from it"
+     },
+     {
+      "offset": "0x38",
+      "name": "was_in_solid",
+      "type": "int",
+      "len": 4,
+      "basis": "setup +0x38=0; process param_1[0xe]=param_1[10]"
+     },
+     {
+      "offset": "0x3c",
+      "name": "vtable",
+      "type": "CParticle_vtable *",
+      "len": 4,
+      "basis": "process calls *(param_1[0xf]+0xc) (onCollision); CRock ctor 004b7720 stores g_CRockVTable at +0x3c"
+     }
+    ]
+   },
+   {
+    "name": "CMuzzleFlash",
+    "size": 92,
+    "basis": "init 004af340 (pair of nocedit 004c1940) and process 004af400 match nocedit's code offset for offset; RTTI 92.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "frames_remaining",
+      "type": "int",
+      "len": 4,
+      "basis": "init MOV [EBP],2; process decrements [EAX] and clears it"
+     },
+     {
+      "offset": "0x4",
+      "name": "position",
+      "type": "CVector3f",
+      "len": 12,
+      "basis": "init copies position to LEA [EBP+0x4]"
+     },
+     {
+      "offset": "0x10",
+      "name": "rotation",
+      "type": "CVector3f",
+      "len": 12,
+      "basis": "init stores the euler angles to LEA [EBP+0x10]"
+     },
+     {
+      "offset": "0x1c",
+      "name": "light",
+      "type": "CDemonGlobe",
+      "len": 64,
+      "basis": "init passes LEA [EBP+0x1c] to CDemonGlobe_setPosition/precomputeAttenuation/addCoronaGlobe; [+0x3c] intensity_multiplier=0x8000, [+0x1c] intensity=0x20, [+0x20] corona_mode=0"
+     }
+    ]
+   },
+   {
+    "name": "SFreaky",
+    "size": 84,
+    "basis": "static array DAT_01bc0d54 of 6 (staticInit 0047b000 __arrinit, RTTI 84), walked at stride 0x15 dwords; layout identical to nocedit's in the start (FUN_0047d920) and update (FUN_0047de00) functions.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "sfx_handle",
+      "type": "uint",
+      "len": 4,
+      "basis": "FUN_0047d920 *puVar5=sfx handle; FUN_0047de00 polls *local_28 with the is-playing call"
+     },
+     {
+      "offset": "0x4",
+      "name": "position",
+      "type": "CVector3f",
+      "len": 12,
+      "basis": "FUN_0047d920 puVar5[1..3]; FUN_0047de00 stores the spline point to +1..+3 (console prints it)"
+     },
+     {
+      "offset": "0x10",
+      "name": "tangent",
+      "type": "CVector3f",
+      "len": 12,
+      "basis": "FUN_0047d920 puVar5[4..6]; FUN_0047de00 stores the spline tangent to +4..+6"
+     },
+     {
+      "offset": "0x1c",
+      "name": "t",
+      "type": "float",
+      "len": 4,
+      "basis": "puVar5[7]=0; update adds delta and steps the control points while >1"
+     },
+     {
+      "offset": "0x20",
+      "name": "control_points",
+      "type": "CVector3f[4]",
+      "len": 48,
+      "basis": "puVar5[8..0x13] written in 4 triples; update shifts +0xb->+8, +0xe->+0xb, +0x11->+0xe"
+     },
+     {
+      "offset": "0x50",
+      "name": "owner",
+      "type": "CDraculaBride *",
+      "len": 4,
+      "basis": "update compares this with local_28[0x14] and clears it when the sound ends"
+     }
+    ]
+   }
+  ]
+ },
+ "blairwitch2.exe": {
+  "structs": [
+   {
+    "name": "SPlayer",
+    "size": 40,
+    "base": null,
+    "basis": "PGameSettingsChanged's nested player record ($GSPlayer$:PGameSettingsChanged$$): RTTI 40, as in nocedit, whose layout is one 40-character name. Its ctor returns this; the netgame code around it is nocedit's.",
+    "fields": [
+     {"offset": "0x0", "name": "name", "type": "char[40]", "len": 40,
+      "basis": "nocedit's layout; RTTI 40 leaves room for nothing else"}
+    ]
+   },
+   {
+    "name": "CMoon",
+    "size": 2768,
+    "base": null,
+    "basis": "RTTI 2768. As bw1: the ctor constructs three CKeyFramedModels at +0x8, +0x3a0, +0x738 and zeroes +0, the dtor destroys them in reverse. init loads only bitmaps here, so the models stay empty.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "is_loaded",
+      "type": "int",
+      "len": 4,
+      "basis": "init (005023e0) loads the 75 title bitmaps while 0 and sets 1; free (00502450) clears it"
+     },
+     {
+      "offset": "0x8",
+      "name": "models",
+      "type": "CKeyFramedModel[3]",
+      "len": 2760,
+      "basis": "ctor and dtor at +0x8, +0x3a0, +0x738"
+     }
+    ]
+   },
+   {
+    "name": "CDemonMission",
+    "size": 17212,
+    "base": null,
+    "basis": "No RTTI. bw1's layout without teleport_requested, and a lookup table of 3000 (writeFile asserts at 2999) at +0x145c, ending at +0x433c; the static instance at 0x1d182f0 is followed by the next global 4 bytes later, at 0x1d1c630. Nothing addresses +0x433c.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "current_set_index",
+      "type": "int",
+      "len": 4,
+      "basis": "process compares the pending teleport's area_id with it before loadSet"
+     },
+     {
+      "offset": "0x4",
+      "name": "num_sets",
+      "type": "int",
+      "len": 4,
+      "basis": "clearMissionData zeroes it; the aligned drift puts nocedit's +0x144 here (5 sightings)"
+     },
+     {
+      "offset": "0x8",
+      "name": "set_names",
+      "type": "char[16][256]",
+      "len": 4096,
+      "basis": "as bw1: names at +0x8 + i * 0x100 up to the flags at +0x1008"
+     },
+     {
+      "offset": "0x1008",
+      "name": "is_in_editor",
+      "type": "int",
+      "len": 4,
+      "basis": "nocedit's +0x4 + 0x1004, with the flags after it (32 aligned sightings)"
+     },
+     {
+      "offset": "0x100c",
+      "name": "mission_version_num",
+      "type": "int",
+      "len": 4,
+      "basis": "nocedit's +0x8 + 0x1004"
+     },
+     {
+      "offset": "0x1010",
+      "name": "has_inventory_actors",
+      "type": "int",
+      "len": 4,
+      "basis": "clearMissionData zeroes it"
+     },
+     {
+      "offset": "0x1014",
+      "name": "mission_name",
+      "type": "char[256]",
+      "len": 256,
+      "basis": "clearMissionData clears its first byte"
+     },
+     {
+      "offset": "0x1114",
+      "name": "first_actor",
+      "type": "CDemonActor *",
+      "len": 4,
+      "basis": "nocedit's +0x548 + 3020 (50 sightings, +0x548..+0x88c)"
+     },
+     {
+      "offset": "0x1118",
+      "name": "last_actor",
+      "type": "CDemonActor *",
+      "len": 4,
+      "basis": "nocedit's +0x54c + 3020"
+     },
+     {
+      "offset": "0x111c",
+      "name": "pending_teleport",
+      "type": "CLocation",
+      "len": 16,
+      "basis": "setTeleportTarget copies the target to +0x111c..+0x1128; process moves the hero when area_id (+0x1128) >= 0 and resets it to -1"
+     },
+     {
+      "offset": "0x112c",
+      "name": "delete_queue_count",
+      "type": "int",
+      "len": 4,
+      "basis": "markActorToDelete appends at it; process drains it and zeroes it"
+     },
+     {
+      "offset": "0x1130",
+      "name": "delete_queue_actors",
+      "type": "CDemonActor *[100]",
+      "len": 400,
+      "basis": "markActorToDelete stores the actor at +0x1130 + count * 4"
+     },
+     {
+      "offset": "0x12c0",
+      "name": "delete_queue_flags",
+      "type": "uint[100]",
+      "len": 400,
+      "basis": "markActorToDelete stores its second argument at +0x12c0 + count * 4"
+     },
+     {
+      "offset": "0x1450",
+      "name": "prepared_set_index",
+      "type": "int",
+      "len": 4,
+      "basis": "nocedit's +0x884 + 3020, as bw1's"
+     },
+     {
+      "offset": "0x1454",
+      "name": "next_inventory_actor",
+      "type": "CDemonActor *",
+      "len": 4,
+      "basis": "nocedit's +0x888 + 3020"
+     },
+     {
+      "offset": "0x1458",
+      "name": "actor_lookup_count",
+      "type": "int",
+      "len": 4,
+      "basis": "writeFile zeroes it, appends at it and asserts below 3000"
+     },
+     {
+      "offset": "0x145c",
+      "name": "actor_lookup_table",
+      "type": "CDemonActor *[3000]",
+      "len": 12000,
+      "basis": "writeFile stores each actor at +0x145c + count * 4"
+     }
+    ]
+   },
+   {
+    "name": "SCarryHand",
+    "size": 120,
+    "basis": "CCharacter.carry_hands stride 0x78 (ctor loop; FUN_00428bd0 computes element = hand*0x78 + 0x2618).",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "bone_index",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x4",
+      "name": "secondary_bone_index",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x8",
+      "name": "carry_actor",
+      "type": "CDemonActor*",
+      "len": 4
+     },
+     {
+      "offset": "0xc",
+      "name": "initial_carry_transform",
+      "type": "CMatrix3x4f",
+      "len": 48,
+      "basis": "computePickup copies the inverse matrix to +0xc; ctor setIdentity(+0xc)"
+     },
+     {
+      "offset": "0x3c",
+      "name": "blend_speed",
+      "type": "float",
+      "len": 4,
+      "basis": "computePickup: 1/blend_time or 0"
+     },
+     {
+      "offset": "0x40",
+      "name": "blend_factor",
+      "type": "float",
+      "len": 4,
+      "basis": "computePickup: 0 or 1.0; ctor 1.0"
+     },
+     {
+      "offset": "0x44",
+      "name": "has_carry_offset",
+      "type": "int",
+      "len": 4,
+      "basis": "computePickup: 1 when its matrix arg is non-null, else 0; updateCarriedObjects tests +0x44"
+     },
+     {
+      "offset": "0x48",
+      "name": "carry_offset",
+      "type": "CMatrix3x4f",
+      "len": 48,
+      "basis": "computePickup copies the 12-dword matrix arg to +0x48; ctor setIdentity(+0x48); updateCarriedObjects uses +0x48"
+     }
+    ]
+   },
+   {
+    "name": "CHeroPlaceholder",
+    "size": 728,
+    "basis": "RTTI 728; archive (bw2 hero.cpp) 'index' +0x2b4, 'heroName' +0x2b8.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "base",
+      "type": "CDemonActor",
+      "len": 692
+     },
+     {
+      "offset": "0x2b4",
+      "name": "index",
+      "type": "int",
+      "len": 4,
+      "basis": "archive 'index'"
+     },
+     {
+      "offset": "0x2b8",
+      "name": "hero_name",
+      "type": "char[32]",
+      "len": 32,
+      "basis": "archive 'heroName' (archiveString); ctor copies \"CDoc\"; ends at the RTTI size"
+     }
+    ]
+   },
+   {
+    "name": "CInventory",
+    "size": 1572,
+    "basis": "Current bw2 layout (README: three inventories of 1572, item groups) plus show_sps at +0xc. ctor FUN_004da760 zeroes +0x8, +0xc, +0x10, +0x334, +0x340..+0x34c, +0x454..+0x468 and loops item_groups/selected_* .",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "battery_charge",
+      "type": "float",
+      "len": 4
+     },
+     {
+      "offset": "0x4",
+      "name": "owner",
+      "type": "CDemonActor*",
+      "len": 4
+     },
+     {
+      "offset": "0x8",
+      "name": "show_compass",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0xc",
+      "name": "show_sps",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_00489670 resolves 'sps' to inventory +0xc (CHero +0x24388); ctor FUN_004da760 zeroes it"
+     },
+     {
+      "offset": "0x10",
+      "name": "item_count",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x14",
+      "name": "items",
+      "type": "CDemonActor*[100]",
+      "len": 400
+     },
+     {
+      "offset": "0x1a4",
+      "name": "item_angles",
+      "type": "float[100]",
+      "len": 400
+     },
+     {
+      "offset": "0x334",
+      "name": "save_version",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x340",
+      "name": "weapon_highlight_timer",
+      "type": "float",
+      "len": 4
+     },
+     {
+      "offset": "0x344",
+      "name": "item_highlight_timer",
+      "type": "float",
+      "len": 4
+     },
+     {
+      "offset": "0x348",
+      "name": "inventory_display_timer",
+      "type": "float",
+      "len": 4
+     },
+     {
+      "offset": "0x34c",
+      "name": "message_display_timer",
+      "type": "float",
+      "len": 4
+     },
+     {
+      "offset": "0x350",
+      "name": "ammo_detail_timer",
+      "type": "float",
+      "len": 4
+     },
+     {
+      "offset": "0x354",
+      "name": "message_text",
+      "type": "char[256]",
+      "len": 256
+     },
+     {
+      "offset": "0x454",
+      "name": "render_mode_flag",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x458",
+      "name": "light_gun_ptr",
+      "type": "CLightGun*",
+      "len": 4
+     },
+     {
+      "offset": "0x45c",
+      "name": "cached_ammo_count",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x460",
+      "name": "preserve_items",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x464",
+      "name": "ammo_ptr",
+      "type": "CAmmo*",
+      "len": 4
+     },
+     {
+      "offset": "0x468",
+      "name": "current_group",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x46c",
+      "name": "item_groups",
+      "type": "int[100]",
+      "len": 400
+     },
+     {
+      "offset": "0x5fc",
+      "name": "selected_items",
+      "type": "CDemonActor*[5]",
+      "len": 20
+     },
+     {
+      "offset": "0x610",
+      "name": "selected_weapons",
+      "type": "CWeapon*[5]",
+      "len": 20
+     }
+    ]
+   },
+   {
+    "name": "SFollowFormation",
+    "size": 980,
+    "basis": "CCharacter +0x3058, constructed by FUN_0059ded0 (unkaddr 0059d350.cpp): __arrinit(+4, 16, g_SFollowSlotStructTypeInfo), +0x3c4 = 0, +0x3cc = 0.5, +0x3d0 = 3.0, +0x3c8 = +0x3cc; the CCharacter ctor binds this to +0x0 and stores follow_leader at +0x342c right after (so at most 980); FUN_0059e110 (special.cpp) updates it.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "leader",
+      "type": "CCharacter*",
+      "len": 4,
+      "basis": "bindDllFunction(+0x3058, this) in the CCharacter ctor; FUN_0059e110 compares it with each follower's +0x342c"
+     },
+     {
+      "offset": "0x4",
+      "name": "slots",
+      "type": "SFollowSlotStruct[16]",
+      "len": 960,
+      "basis": "arrinit count 0x10, RTTI 60"
+     },
+     {
+      "offset": "0x3c4",
+      "name": "slot_count",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_0059e110 loops slots below it and decrements it when it drops one"
+     },
+     {
+      "offset": "0x3c8",
+      "name": "update_timer",
+      "type": "float",
+      "len": 4,
+      "basis": "FUN_0059e110 subtracts dt and, at <= 0, reloads it from +0x3cc"
+     },
+     {
+      "offset": "0x3cc",
+      "name": "update_interval",
+      "type": "float",
+      "len": 4,
+      "basis": "ctor 0.5"
+     }
+    ]
+   },
+   {
+    "name": "CFont_vtable",
+    "size": 20,
+    "basis": "vtable 005fa8bc: 5 slots like nocedit's g_CFontVTable (slot0 dtor engine_palette.cpp, slots 1-3 pure-call stub, slot4 returns 0); type absent from the build",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "ctor",
+      "type": "void*",
+      "len": 4
+     },
+     {
+      "offset": "0x4",
+      "name": "drawText",
+      "type": "void*",
+      "len": 4
+     },
+     {
+      "offset": "0x8",
+      "name": "getStringWidth",
+      "type": "void*",
+      "len": 4
+     },
+     {
+      "offset": "0xc",
+      "name": "getStringHeight",
+      "type": "void*",
+      "len": 4
+     },
+     {
+      "offset": "0x10",
+      "name": "getLineSpacing",
+      "type": "void*",
+      "len": 4,
+      "basis": "bw1 slot4 00532120 returns 0 like nocedit CFont_getLineSpacing"
+     }
+    ]
+   },
+   {
+    "name": "CFont",
+    "size": 27208,
+    "basis": "RTTI CWinFont 27520 minus CWinFont's own 312 bytes (nocedit CWinFont fields 0x4-0x138 sit +27204, ctor 0058df90); base ctor 00510ca0 zeroes +0x0 and stores the vtable 005fa8bc at +0x6a44 (vtable at the end of the class that introduces it). CFont is a text queue in BW: 00510cd0 (queueText) and 00510d50 (flushQueue).",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "queued_text_count",
+      "type": "int",
+      "len": 4,
+      "basis": "ctor 00510ca0 zeroes; 00510cd0 refuses when 99 < count, writes entry [count] then count++; 00510d50 loops 0..count then zeroes"
+     },
+     {
+      "offset": "0x4",
+      "name": "queued_x",
+      "type": "int[100]",
+      "len": 400,
+      "basis": "00510cd0: +0x4 + i*4 = round(x * scale); 00510d50 passes param_1[1+i] as drawText x"
+     },
+     {
+      "offset": "0x194",
+      "name": "queued_y",
+      "type": "int[100]",
+      "len": 400,
+      "basis": "00510cd0: +0x194 + i*4 = round(y * scale); 00510d50 piVar+0x65 as drawText y"
+     },
+     {
+      "offset": "0x324",
+      "name": "queued_text",
+      "type": "char[100][256]",
+      "len": 25600,
+      "basis": "00510cd0: strcpy to param_1 + 0xc9*4 + count*0x100; 00510d50 text arg, stride 0x40 dwords"
+     },
+     {
+      "offset": "0x6724",
+      "name": "queued_foreground_color",
+      "type": "int[100]",
+      "len": 400,
+      "basis": "00510cd0: param_1[count+0x19c9] = packed colour (or getDefaultTextColor when <0); 00510d50 drawText fg"
+     },
+     {
+      "offset": "0x68b4",
+      "name": "queued_background_color",
+      "type": "int[100]",
+      "len": 400,
+      "basis": "00510cd0: param_1[count+0x1a2d] = param_6; 00510d50 drawText bg"
+     },
+     {
+      "offset": "0x6a44",
+      "name": "vtable",
+      "type": "CFont_vtable*",
+      "len": 4,
+      "basis": "00510ca0 stores 005fa8bc; 00510d50 calls [param_1[0x1a91]+4] (drawText)"
+     }
+    ]
+   },
+   {
+    "name": "STextureCacheEntry",
+    "size": 96,
+    "basis": "bw1 texture.cpp: entry = cache + 4 + idx*0x60 (loadTexture 005967a0, findFreeSlot 00596680, 00596e60/00596ed0/00596f30/00597000, select 00597620, upload 005976a0); memset(entry,0,0x60). bw2/bw3 texture.cpp use the same stride and displacements.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "dimension",
+      "type": "int",
+      "len": 4,
+      "basis": "loadTexture: 0x20..0x400 from file length; upload passes it"
+     },
+     {
+      "offset": "0x4",
+      "name": "texture_name",
+      "type": "char[64]",
+      "len": 64,
+      "basis": "strcpy of the name to entry+4; name > 0x3f errors; find 005970b0 stricmp at cache+8+i*0x60"
+     },
+     {
+      "offset": "0x44",
+      "name": "texture_data",
+      "type": "uchar*",
+      "len": 4,
+      "basis": "paletted pixels dim*dim, freed in reset/findFreeSlot; upload arg"
+     },
+     {
+      "offset": "0x48",
+      "name": "opacity_data",
+      "type": "uchar*",
+      "len": 4,
+      "basis": "optional opacity map dim*dim"
+     },
+     {
+      "offset": "0x4c",
+      "name": "palette_data",
+      "type": "uchar*",
+      "len": 4,
+      "basis": "malloc(0x300) palette"
+     },
+     {
+      "offset": "0x50",
+      "name": "true_color_data",
+      "type": "uchar*",
+      "len": 4,
+      "basis": "no-palette path: raw file of 4 bytes/pixel; upload 005976a0 uses it when non-null"
+     },
+     {
+      "offset": "0x54",
+      "name": "use_stamp",
+      "type": "uint",
+      "len": 4,
+      "basis": "00597140 stores cache.use_counter here then increments; findFreeSlot picks the smallest among unlocked"
+     },
+     {
+      "offset": "0x58",
+      "name": "is_locked",
+      "type": "int",
+      "len": 4,
+      "basis": "set 1 by 00596e60/00596ed0/00596f30/00597000; findFreeSlot skips entries with it set"
+     },
+     {
+      "offset": "0x5c",
+      "name": "hw_texture_handle",
+      "type": "uint",
+      "len": 4,
+      "basis": "selectTextureByHandle 00597620 passes [cache + idx*0x60 + 0x60] to the renderer select hook"
+     }
+    ]
+   },
+   {
+    "name": "CTextureCache",
+    "size": 98316,
+    "basis": "alloc 0x1800c (g_TextureCacheInstance); ctor (bw1 00596560) zeroes +0x0, +0x18004, +0x18008 and memsets +0x4 for 0x18000; reset 005965d0 frees 4 pointers per 0x60 entry from +0x4 to +0x18004. nocedit's parallel arrays (dims, data, opacity, names, palettes) became an array of 96-byte entries; max_texture_count is gone (findFreeSlot wraps at 0x400).",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "wrap_indicator",
+      "type": "int",
+      "len": 4,
+      "basis": "findFreeSlot 00596680: set 1 when count reaches 0x400; getTextureCacheStats 00597710 tests it"
+     },
+     {
+      "offset": "0x4",
+      "name": "entries",
+      "type": "STextureCacheEntry[1024]",
+      "len": 98304,
+      "basis": "stride 0x60, 0x400 slots (findFreeSlot loop < 0x400)"
+     },
+     {
+      "offset": "0x18004",
+      "name": "current_texture_count",
+      "type": "int",
+      "len": 4,
+      "basis": "findFreeSlot param_1[0x6001]++; find 005970b0 loop bound"
+     },
+     {
+      "offset": "0x18008",
+      "name": "use_counter",
+      "type": "uint",
+      "len": 4,
+      "basis": "00597140: entry.use_stamp = [+0x18008]; [+0x18008]++; reset and ctor zero it"
+     }
+    ]
+   },
+   {
+    "name": "SMotionSignal",
+    "size": 8,
+    "basis": "type absent from bw2; bw2 motion load 00502820 reads \"%d,%d\" into +0x74+i*8 / +0x78+i*8; same as nocedit SMotionSignal",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "frame_number",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x4",
+      "name": "value",
+      "type": "int",
+      "len": 4
+     }
+    ]
+   },
+   {
+    "name": "SMotion",
+    "size": 280,
+    "basis": "bw2 motion load 00502820 (version <= 2): stride 0x118; transitions are a malloc'd array (count*0x18) instead of nocedit's inline [45]",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "motion_name",
+      "type": "char[32]",
+      "len": 32,
+      "basis": "\"%[^\"]\",%f,%d,%d,%d -> +0,+0x20,+0x24,+0x60,+0x64"
+     },
+     {
+      "offset": "0x20",
+      "name": "fps",
+      "type": "float",
+      "len": 4
+     },
+     {
+      "offset": "0x24",
+      "name": "state_index",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x28",
+      "name": "exit_forward_from_frame",
+      "type": "int",
+      "len": 4,
+      "basis": "%d,%d,%f -> +0x28,+0x34,+0x38"
+     },
+     {
+      "offset": "0x2c",
+      "name": "unused1",
+      "type": "int",
+      "len": 4,
+      "basis": "nocedit padding between pinned fields"
+     },
+     {
+      "offset": "0x30",
+      "name": "exit_forward_cmd",
+      "type": "int",
+      "len": 4,
+      "basis": "%d,%f,%d: first value stored to +0x30"
+     },
+     {
+      "offset": "0x34",
+      "name": "exit_forward_to_motion",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x38",
+      "name": "exit_forward_to_frame",
+      "type": "float",
+      "len": 4
+     },
+     {
+      "offset": "0x3c",
+      "name": "exit_forward_tween_time",
+      "type": "float",
+      "len": 4
+     },
+     {
+      "offset": "0x40",
+      "name": "exit_forward_set_new_state",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x44",
+      "name": "unused2",
+      "type": "char[12]",
+      "len": 12,
+      "basis": "nocedit padding between pinned fields"
+     },
+     {
+      "offset": "0x50",
+      "name": "exit_backward_to_motion",
+      "type": "int",
+      "len": 4,
+      "basis": "%d,%f -> +0x50,+0x54"
+     },
+     {
+      "offset": "0x54",
+      "name": "exit_backward_to_frame",
+      "type": "float",
+      "len": 4
+     },
+     {
+      "offset": "0x58",
+      "name": "unused3",
+      "type": "char[8]",
+      "len": 8,
+      "basis": "nocedit padding between pinned fields"
+     },
+     {
+      "offset": "0x60",
+      "name": "frame_start",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x64",
+      "name": "frame_count",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x68",
+      "name": "transition_count",
+      "type": "int",
+      "len": 4,
+      "basis": "read, then malloc(count*0x18) stored at +0x6c"
+     },
+     {
+      "offset": "0x6c",
+      "name": "transitions",
+      "type": "SMotionTransition*",
+      "len": 4,
+      "basis": "%d,%d,%d,%f,%f,%d per 0x18 element"
+     },
+     {
+      "offset": "0x70",
+      "name": "signal_count",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x74",
+      "name": "signals",
+      "type": "SMotionSignal[15]",
+      "len": 120,
+      "basis": "%d,%d pairs at +0x74/+0x78 stepping 8; ends at +0xec"
+     },
+     {
+      "offset": "0xec",
+      "name": "marker_count",
+      "type": "int",
+      "len": 4,
+      "basis": "version>=2"
+     },
+     {
+      "offset": "0xf0",
+      "name": "markers",
+      "type": "int[10]",
+      "len": 40,
+      "basis": "one %d per marker stepping 4 from +0xf0; ends at 0x118"
+     }
+    ]
+   },
+   {
+    "name": "CMotionList",
+    "size": 119208,
+    "basis": "ctor 00502760: zeroes +0x0 and +0x1c24, memset(+0x1c28, 0, 0x1b580) = 400 x 280; CSkeleton puts loaded_filename right after it at 0x1d1a8",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "state_count",
+      "type": "int",
+      "len": 4,
+      "basis": "findStateIndex (bw1 00524150) loop bound; load reads it"
+     },
+     {
+      "offset": "0x4",
+      "name": "state_names",
+      "type": "char[240][30]",
+      "len": 7200,
+      "basis": "findStateIndex stricmp at +4 stepping 0x1e; load fscanf stepping 0x1e; 0x4..0x1c24 = 240 x 30"
+     },
+     {
+      "offset": "0x1c24",
+      "name": "motion_count",
+      "type": "int",
+      "len": 4,
+      "basis": "findMotionIndex (bw1 005240c0) and moved typed accesses 0052d46c/0052d48d: 0x964 -> 0x1c24"
+     },
+     {
+      "offset": "0x1c28",
+      "name": "motions",
+      "type": "SMotion[400]",
+      "len": 112000,
+      "basis": "stride 0x118 from +0x1c28 (findMotionIndex, getCurrentMotion, load 00502820)"
+     }
+    ]
+   },
+   {
+    "name": "STextureSet",
+    "size": 576,
+    "basis": "loadStream 00542850: texture name read at +0xc0 + set*0x240 + tex*0x48 + 8 for set < num_texture_sets (+0xb8), tex < num_textures (+0xbc); CDeformableModel texture_sets 0xc0..0xc00 = 5 x 576",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "textures",
+      "type": "SMRGLTextureModel[8]",
+      "len": 576
+     }
+    ]
+   },
+   {
+    "name": "CFilterCache",
+    "size": 2820,
+    "basis": "RTTI 2820 = nocedit. bw1 findFilter 0045d900: count +0, names strcmp at +4 stepping 0x28, returns [+0xa04 + i*4]; free 0045d770 walks [+0xa04]; getFilter 0045d7c0 CMP [this],0x40 and stores [+0xa04 + i*4]. bw2/bw3 same +0xa04 stores.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "filter_count",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x4",
+      "name": "filter_names",
+      "type": "char[64][40]",
+      "len": 2560
+     },
+     {
+      "offset": "0xa04",
+      "name": "filters",
+      "type": "CDemonFilter*[64]",
+      "len": 256
+     }
+    ]
+   },
+   {
+    "name": "SRaytraceState",
+    "size": 160,
+    "basis": "RTTI 160. pushRaytraceState 00537a90: entry = stack + depth*0xa0 (EDX*5<<5); stores +0x0..+0x10 (ray_query), +0x14 ignore count, ignore list at +0x1c+i*4, +0x18 collision flag, +0x44/+0x50 ray origin/target, +0x5c, +0x60, +0x64 vec, +0x70, +0x74, +0x78 vec, +0x84, +0x88 vec, +0x94, +0x98, +0x9c; same as nocedit",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "ray_query",
+      "type": "SRayQueryState",
+      "len": 20
+     },
+     {
+      "offset": "0x14",
+      "name": "ignore_list_count",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x18",
+      "name": "collision_flag",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x1c",
+      "name": "ignore_list",
+      "type": "CDemonActor*[10]",
+      "len": 40
+     },
+     {
+      "offset": "0x44",
+      "name": "saved_ray_origin",
+      "type": "CVector3f",
+      "len": 12
+     },
+     {
+      "offset": "0x50",
+      "name": "saved_ray_target",
+      "type": "CVector3f",
+      "len": 12
+     },
+     {
+      "offset": "0x5c",
+      "name": "raycast_distance",
+      "type": "float",
+      "len": 4
+     },
+     {
+      "offset": "0x60",
+      "name": "voxel_distance",
+      "type": "float",
+      "len": 4
+     },
+     {
+      "offset": "0x64",
+      "name": "voxel_hit_point",
+      "type": "CVector3f",
+      "len": 12
+     },
+     {
+      "offset": "0x70",
+      "name": "voxel_surface_type",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x74",
+      "name": "saved_skip_exact_collision",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x78",
+      "name": "saved_collision_normal",
+      "type": "CVector3f",
+      "len": 12
+     },
+     {
+      "offset": "0x84",
+      "name": "saved_ground_type",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x88",
+      "name": "saved_collision_point",
+      "type": "CVector3f",
+      "len": 12
+     },
+     {
+      "offset": "0x94",
+      "name": "saved_collision_actor",
+      "type": "CDemonActor*",
+      "len": 4
+     },
+     {
+      "offset": "0x98",
+      "name": "saved_collision_part_index",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x9c",
+      "name": "saved_collision_bone_index",
+      "type": "int",
+      "len": 4
+     }
+    ]
+   },
+   {
+    "name": "SHardwareEdge",
+    "size": 56,
+    "basis": "type absent from the build. renderTriangleTextured 00461f70 fills the edge table at stride 0x50 writing +0x0..+0x44 (y_min/y_max first, then current/gradient pairs); bw1 setupDepthOnlyEdgeInterpolation 0047a320 writes y_min +0, y_max +4, x_current +8, x_gradient +0xc, depth_current +0x28, depth_gradient +0x2c; typed-access drift: 295 (bw1/bw3) / 256 (bw2) sightings at 0x4..0x44 with delta 0",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "y_min",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x4",
+      "name": "y_max",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x8",
+      "name": "x_current",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0xc",
+      "name": "x_gradient",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x10",
+      "name": "red_current",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x14",
+      "name": "red_gradient",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x18",
+      "name": "u_current",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x1c",
+      "name": "u_gradient",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x20",
+      "name": "v_current",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x24",
+      "name": "v_gradient",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x28",
+      "name": "depth_current",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x2c",
+      "name": "depth_gradient",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x30",
+      "name": "alpha_current",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x34",
+      "name": "alpha_gradient",
+      "type": "int",
+      "len": 4
+     }
+    ]
+   },
+   {
+    "name": "SSoftwareEdge",
+    "size": 80,
+    "basis": "edge table stride 0x50 (bw1 0047a320/0047a43e/0047a480 `count * 0x50`, piVar += 0x14; 00461f70 * 0x50); base and green/blue fields unchanged",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "base",
+      "type": "SHardwareEdge",
+      "len": 56
+     },
+     {
+      "offset": "0x38",
+      "name": "green_current",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x3c",
+      "name": "green_gradient",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x40",
+      "name": "blue_current",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x44",
+      "name": "blue_gradient",
+      "type": "int",
+      "len": 4
+     }
+    ]
+   },
+   {
+    "name": "SMorphPoint",
+    "size": 16,
+    "basis": "CMorphModel_rotatePoints 005b6a50: points walked stepping 0x10; [+0] used as index (SHL 4) into ref points, position floats at +4/+8/+0xc",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "vertex_index",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x4",
+      "name": "position",
+      "type": "CVector3f",
+      "len": 12
+     }
+    ]
+   },
+   {
+    "name": "STriangleVertices",
+    "size": 36,
+    "basis": "CGlassParticle init 00496c60 (called from CFireEffect_createGlassParticle): reads param floats [0..8] as three vertices (sums [0]+[3]+[6] etc. for the centroid)",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "vertices",
+      "type": "CVector3f[3]",
+      "len": 36
+     }
+    ]
+   },
+   {
+    "name": "SMRGLModelBounds",
+    "size": 52,
+    "basis": "getMRGLBounds pair 00500970 returns a 13-dword struct (MOV ECX,0xd; MOVSD.REP) built on the stack: min/max read back at +0x4/+0x8/+0x10/+0x14, center at +0x18..+0x20, radius = round(sqrt(sum extent^2)) at +0x24, extent = max(|min|,|max|) per axis at +0x28..+0x30",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "min_scaled",
+      "type": "CVector3i",
+      "len": 12
+     },
+     {
+      "offset": "0xc",
+      "name": "max_scaled",
+      "type": "CVector3i",
+      "len": 12
+     },
+     {
+      "offset": "0x18",
+      "name": "center_scaled",
+      "type": "CVector3i",
+      "len": 12
+     },
+     {
+      "offset": "0x24",
+      "name": "radius_scaled",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x28",
+      "name": "extent",
+      "type": "CVector3i",
+      "len": 12
+     }
+    ]
+   },
+   {
+    "name": "SMovieFrame",
+    "size": 8192,
+    "basis": "CFilterFX_openMovie (bw1 0045ddb0, bw2/bw3 same): malloc(frame_count << 0xd), fread(movie_data, 0x2000, frame_count)",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "pixels",
+      "type": "uchar[8192]",
+      "len": 8192
+     }
+    ]
+   },
+   {
+    "name": "SVoxelCubeMetadata",
+    "size": 88,
+    "basis": "CDemonRaytrace cube_list: freeCubeList (bw1 0048a9b0; bw2/bw3 same) walks stride 0x58, zeroes +0, +4, +0x54, deletes CDemonPart at +0xc; bw1 consolidate 0048aaee sums [+0] (tri count), copies count*0x38 bytes from [+4] and count bytes from [+0x54]; alloc 0048a960 uses element size 0x58",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "triangle_count",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x4",
+      "name": "triangle_list",
+      "type": "CDemonTriangle*",
+      "len": 4
+     },
+     {
+      "offset": "0xc",
+      "name": "part_ptr",
+      "type": "CDemonPart*",
+      "len": 4
+     },
+     {
+      "offset": "0x54",
+      "name": "triangle_flags",
+      "type": "uchar*",
+      "len": 4
+     }
+    ]
+   },
+   {
+    "name": "CCourseFrame",
+    "size": 28,
+    "basis": "CCourse load reads \"%f,%f,%f, %f,%f,%f,%f\" to +0..+0x18 stepping 0x1c; evaluate interpolates frames[i*0x1c] position and slerps frames[i*0x1c + 0xc] (bw1 00447db0/00447fb0, bw3 00444970/00444b70, bw2 course.cpp same format string)",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "pos",
+      "type": "CVector3f",
+      "len": 12
+     },
+     {
+      "offset": "0xc",
+      "name": "orient",
+      "type": "CQuaternion4f",
+      "len": 16
+     }
+    ]
+   },
+   {
+    "name": "SNetPacketHeader",
+    "size": 5,
+    "basis": "Packed 5-byte header as nocedit. CNetGame_sendPacket sends (packet+4, *(int*)packet - 4); processPacket switches on byte packet[4]; every sender stores the size dword at [ESP] and the type byte at [ESP+4] (sendSimFrameAck 0050f4f0: MOV [ESP],0x39/0x3d; MOV byte [ESP+4],0x10). Packet sizes 9/0x29/0x71/0xb1/0x109 equal nocedit's, so the other SNetPacket_* gaps [1,4] close once the header is 5 bytes.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "size",
+      "type": "int",
+      "len": 4,
+      "basis": "sendPacket: *(int*)packet - 4 is the payload length"
+     },
+     {
+      "offset": "0x4",
+      "name": "type",
+      "type": "ENetPacketType",
+      "len": 1,
+      "basis": "processPacket: switch(packet->raw[4]); senders MOV byte [ESP+4],type. ENetPacketType is nocedit's 1-byte enum (absent in the BW DBs)"
+     }
+    ]
+   },
+   {
+    "name": "SPlayerActionState",
+    "size": 36,
+    "basis": "9 dwords: SPlayerInput's speeds start at +0x24 (FUN_004b76c0 zeroes strafe_speed at +0x24), one more than nocedit's 8 (bw1 typed drift: strafe/turn/look 0x20/0x24/0x28 -> 0x24/0x28/0x2c in processMouseControls).",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "walk",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_004b76c0 stores the edge of CGame+0x28 (keyWalk, readIniData 004d8d60)"
+     },
+     {
+      "offset": "0x4",
+      "name": "backup",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_004b76c0 stores the edge of CGame+0x2c (keyBackup, readIniData 004d8d60)"
+     },
+     {
+      "offset": "0x8",
+      "name": "run",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_004b76c0 stores the edge of CGame+0x30 (keyRun (always_run inverts it), readIniData 004d8d60)"
+     },
+     {
+      "offset": "0xc",
+      "name": "fire",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_004b76c0 stores the edge of CGame+0x48 (keyFire (zeroed when the hero is dead), readIniData 004d8d60)"
+     },
+     {
+      "offset": "0x10",
+      "name": "use_item",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_004b76c0 stores the edge of CGame+0x4c (keyUseItem, readIniData 004d8d60)"
+     },
+     {
+      "offset": "0x14",
+      "name": "light",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_004b76c0 stores the edge of CGame+0x50 (keyLight, readIniData 004d8d60)"
+     },
+     {
+      "offset": "0x18",
+      "name": "draw",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_004b76c0 stores the edge of CGame+0x68 (keyDraw, readIniData 004d8d60)"
+     },
+     {
+      "offset": "0x1c",
+      "name": "jump",
+      "type": "int",
+      "len": 4,
+      "basis": "nocedit's jump slot; bw2 has no keyJump and FUN_004b76c0 never writes +0x1c (it skips from +0x18 to +0x20); kept by position"
+     },
+     {
+      "offset": "0x20",
+      "name": "quick_turn",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_004b76c0 stores CGame+0x70, the slot bw1 reads as keyQuickTurn; bw2's ini has no key for it"
+     }
+    ]
+   },
+   {
+    "name": "SPlayerInput",
+    "size": 52,
+    "basis": "applySimFrameHistory 0050f370 copies 13 dwords per player into hero+player_input; sendSimFrameAck 0050f4f0 copies 13 dwords into the PLAYER_INPUT packet from SNetPlayer+0x4c; getMyControls 0050f430: SNetPlayer stride 128 with player_input at +0x4c (128 = 0x4c + 52).",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "action_state",
+      "type": "SPlayerActionState",
+      "len": 36,
+      "basis": "FUN_004b76c0 writes the action slots"
+     },
+     {
+      "offset": "0x24",
+      "name": "strafe_speed",
+      "type": "float",
+      "len": 4,
+      "basis": "FUN_004b76c0 zeroes and ramps +0x24 (nocedit +0x20)"
+     },
+     {
+      "offset": "0x28",
+      "name": "turn_speed",
+      "type": "float",
+      "len": 4,
+      "basis": "FUN_004b76c0 +0x28; processMouseControls clamps it"
+     },
+     {
+      "offset": "0x2c",
+      "name": "look_up_down_speed",
+      "type": "float",
+      "len": 4,
+      "basis": "FUN_004b76c0 +0x2c"
+     },
+     {
+      "offset": "0x30",
+      "name": "drop_item",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_004b76c0 stores the edge of CGame+0xaf0 (keyDrop, readIniData 004d8d60; help text \"Drop Item or Weapon\")"
+     }
+    ]
+   },
+   {
+    "name": "SSimFrame",
+    "size": 116,
+    "basis": "allocSimFrame 0050b160 scans g_SimFrameHistory with stride 0x74; applySimFrameHistory 0050f370 reads seed +4, dt +8, sequence +0 and copies the inputs from +0xc with stride 0x34.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "sequence_number",
+      "type": "int",
+      "len": 4,
+      "basis": "applySimFrameHistory 0050f370: players[local].sim_frame_index = *(int*)frame + 1"
+     },
+     {
+      "offset": "0x4",
+      "name": "random_seed",
+      "type": "int",
+      "len": 4,
+      "basis": "applySimFrameHistory 0050f370: random_seed = frame+4"
+     },
+     {
+      "offset": "0x8",
+      "name": "delta_time",
+      "type": "float",
+      "len": 4,
+      "basis": "applySimFrameHistory 0050f370: slamDT(frame+8)"
+     },
+     {
+      "offset": "0xc",
+      "name": "player_input",
+      "type": "SPlayerInput[2]",
+      "len": 104,
+      "basis": "applySimFrameHistory 0050f370: copies from frame+0xc, stride 0x34"
+     }
+    ]
+   },
+   {
+    "name": "SNetPacket_PlayerInput",
+    "size": 61,
+    "basis": "sendSimFrameAck 0050f4f0: header.size = 0x3d, type 0x10, sim_frame_index at [ESP+5], player_input copied to [ESP+9] (MOVSD.REP 13 dwords)",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "header",
+      "type": "SNetPacketHeader",
+      "len": 5
+     },
+     {
+      "offset": "0x5",
+      "name": "sim_frame_index",
+      "type": "int",
+      "len": 4,
+      "basis": "sendSimFrameAck 0050f4f0: MOV [ESP+5] from SNetPlayer+0x48"
+     },
+     {
+      "offset": "0x9",
+      "name": "player_input",
+      "type": "SPlayerInput",
+      "len": 52,
+      "basis": "sendSimFrameAck 0050f4f0: LEA EDI,[ESP+9]"
+     }
+    ]
+   },
+   {
+    "name": "SNetPacket_SimFrame",
+    "size": 121,
+    "basis": "processServerFrame 0050ecb0: header.size = 0x79, type 0xf (nocedit 0x69); the frame follows the 5-byte header",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "header",
+      "type": "SNetPacketHeader",
+      "len": 5
+     },
+     {
+      "offset": "0x5",
+      "name": "frame",
+      "type": "SSimFrame",
+      "len": 116
+     }
+    ]
+   },
+   {
+    "name": "SChatHistory",
+    "size": 288,
+    "basis": "nocedit's layout. addChatHistory (bw1 0052f100): index*0x120 into the 400-entry array; MOVSD x2 copy the sender addr to +0, message_id to +8, sender_name strcpy to +0xc, message strcpy to +0x20; same code in bw2/bw3. RTTI 288.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "sender_addr",
+      "type": "SNetworkAddr",
+      "len": 8
+     },
+     {
+      "offset": "0x8",
+      "name": "message_id",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0xc",
+      "name": "sender_name",
+      "type": "char[20]",
+      "len": 20
+     },
+     {
+      "offset": "0x20",
+      "name": "message",
+      "type": "char[256]",
+      "len": 256
+     }
+    ]
+   },
+   {
+    "name": "SScriptLine",
+    "size": 8,
+    "basis": "CScript_buildParsedLines: realloc((count+1)*8); stores index+1 at +0 and the malloc'd line copy at +4 (all three builds).",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "line_number",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x4",
+      "name": "text",
+      "type": "char *",
+      "len": 4
+     }
+    ]
+   },
+   {
+    "name": "SDialogEntry",
+    "size": 550,
+    "basis": "CScript_dbLoad: realloc(count*0x226), copies the 550-byte stack record with MOVSD.REP 0x89 + MOVSW; CScript_findDialogEntry strides 0x226. The record (at ESP+8 in dbLoad): fscanf \"%[^,], \" into +0, \"%[^,],\" into +0x78, \" %[^\\n]\\n\" into +0x96; \"%s.wav\"/\"%s.mp3\" built from +0 and probed in \"sound\" through +0x3c (ESP+0x44). nocedit types it as an opaque char[550].",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "wav_name",
+      "type": "char[60]",
+      "len": 60,
+      "basis": "dbLoad fscanf into record+0; findDialogEntry stricmp against it"
+     },
+     {
+      "offset": "0x3c",
+      "name": "sound_filename",
+      "type": "char[60]",
+      "len": 60,
+      "basis": "dbLoad: \"%s.wav\" / \"%s.mp3\" of wav_name, passed to getFileSize(\"sound\", ...)"
+     },
+     {
+      "offset": "0x78",
+      "name": "speaker",
+      "type": "char[30]",
+      "len": 30,
+      "basis": "dbLoad fscanf \"%[^,],\" into record+0x78 (nocedit replaces \"stranger\" with \"$\")"
+     },
+     {
+      "offset": "0x96",
+      "name": "text",
+      "type": "char[400]",
+      "len": 400,
+      "basis": "dbLoad fscanf \" %[^\\n]\\n\" into record+0x96; runs to the 550-byte end"
+     }
+    ]
+   },
+   {
+    "name": "CIni",
+    "size": 4,
+    "basis": "nocedit's layout. findLineNumberOfVariable (bw1 FUN_004f4550) sets *this = 1 on entry and 0 on failure; writeProfileString tests *this == 0. g_CIniInstance is passed as this.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "initialized",
+      "type": "int",
+      "len": 4
+     }
+    ]
+   },
+   {
+    "name": "CCodec",
+    "size": 4,
+    "basis": "CCodec_ctor (bw1 00442ba0, bw2 00433e80, bw3 00440800) stores the vtable at +0; derived ctors overwrite it. RTTI 4. Typed void * because BW's vtable slots are not checked against nocedit's CCodec_vtable.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "vtable",
+      "type": "void *",
+      "len": 4
+     }
+    ]
+   },
+   {
+    "name": "CPodDirectoryEntry",
+    "size": 20,
+    "basis": "nocedit's layout. CPodFile_populateFileInfo (bw1 0053bf40) indexes directory_entries with stride 20 (i*5*4) and reads offset +8, size +4, timestamp +0xc; it, CPod_getNextSearchResult and CPodFile_findFileIndex are instruction-identical to nocedit in all three builds. bw1 mountFromFile (FUN_0053b250) stores the checksum at +0x10 (0053b60e, zeroes it 0053bd5a) and verifyChecksum (FUN_0053bfbe) reads it.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "name",
+      "type": "char *",
+      "len": 4
+     },
+     {
+      "offset": "0x4",
+      "name": "size",
+      "type": "uint",
+      "len": 4
+     },
+     {
+      "offset": "0x8",
+      "name": "offset",
+      "type": "uint",
+      "len": 4
+     },
+     {
+      "offset": "0xc",
+      "name": "timestamp",
+      "type": "uint",
+      "len": 4
+     },
+     {
+      "offset": "0x10",
+      "name": "checksum",
+      "type": "uint",
+      "len": 4
+     }
+    ]
+   },
+   {
+    "name": "SInventoryItemInfo",
+    "size": 768,
+    "basis": "nocedit's layout. getItemDisplayName / getItemDescription (bw1 004f62e0/004f6350, bw2 004d9f10/004d9f80, bw3 004d9e40/004d9eb0) walk g_ItemDefinitionArray with stride 0x300, compare the model name at +0 and return +0x100 / +0x200; loadItem fscanf's the three strings; all instruction-identical to nocedit.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "model_name",
+      "type": "char[256]",
+      "len": 256
+     },
+     {
+      "offset": "0x100",
+      "name": "display_name",
+      "type": "char[256]",
+      "len": 256
+     },
+     {
+      "offset": "0x200",
+      "name": "description",
+      "type": "char[256]",
+      "len": 256
+     }
+    ]
+   },
+   {
+    "name": "CSfxOptions",
+    "size": 96,
+    "basis": "CSfxOptions_reset 00550070 instruction-identical to bw1's FUN_005726e0 (addresses aside); setNextSfxDelay 00550360 stores at options+0x40, setNextSfxFlags 00550380 at +0x4c (options base 0x2641620, stride 0x60). Fields as bw1.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "channel_index",
+      "type": "int",
+      "len": 4,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x4",
+      "name": "position",
+      "type": "CVector3d",
+      "len": 24,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x1c",
+      "name": "position_source_ptr",
+      "type": "void*",
+      "len": 4,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x20",
+      "name": "position_format",
+      "type": "int",
+      "len": 4,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x24",
+      "name": "velocity",
+      "type": "CVector3f",
+      "len": 12,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x30",
+      "name": "velocity_source_ptr",
+      "type": "void*",
+      "len": 4,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x34",
+      "name": "velocity_format",
+      "type": "int",
+      "len": 4,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x38",
+      "name": "current_volume",
+      "type": "float",
+      "len": 4,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x3c",
+      "name": "base_frequency",
+      "type": "float",
+      "len": 4,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x40",
+      "name": "delay_remaining",
+      "type": "float",
+      "len": 4,
+      "basis": "setNextSfxDelay 00550360"
+     },
+     {
+      "offset": "0x44",
+      "name": "userdata",
+      "type": "void*[2]",
+      "len": 8,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x4c",
+      "name": "flags",
+      "type": "uint",
+      "len": 4,
+      "basis": "setNextSfxFlags 00550380"
+     },
+     {
+      "offset": "0x50",
+      "name": "playback_position",
+      "type": "double",
+      "len": 8,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x58",
+      "name": "playback_position_type",
+      "type": "int",
+      "len": 4,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x5c",
+      "name": "dead",
+      "type": "int",
+      "len": 4,
+      "basis": "as bw1"
+     }
+    ]
+   },
+   {
+    "name": "CParticle",
+    "size": 64,
+    "basis": "setup 00510e00 and process FUN_00510ef0 identical to bw1's (stores +0x18/+0x1c=-32/+0x20, +0x24=5.0, +0x38; process param_1[6..8], [9], [10], [0xb..0xd], [0xe], vtable [0xf]+0xc).",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "position",
+      "type": "CVector3f",
+      "len": 12,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0xc",
+      "name": "velocity",
+      "type": "CVector3f",
+      "len": 12,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x18",
+      "name": "acceleration",
+      "type": "CVector3f",
+      "len": 12,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x24",
+      "name": "lifetime_remaining",
+      "type": "float",
+      "len": 4,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x28",
+      "name": "is_in_solid",
+      "type": "int",
+      "len": 4,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x2c",
+      "name": "previous_position",
+      "type": "CVector3f",
+      "len": 12,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x38",
+      "name": "was_in_solid",
+      "type": "int",
+      "len": 4,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x3c",
+      "name": "vtable",
+      "type": "CParticle_vtable *",
+      "len": 4,
+      "basis": "as bw1"
+     }
+    ]
+   },
+   {
+    "name": "CMuzzleFlash",
+    "size": 92,
+    "basis": "init 004969a0 identical to bw1's 004af340; RTTI 92.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "frames_remaining",
+      "type": "int",
+      "len": 4,
+      "basis": "MOV [EBP],2"
+     },
+     {
+      "offset": "0x4",
+      "name": "position",
+      "type": "CVector3f",
+      "len": 12,
+      "basis": "LEA [EBP+0x4] copy"
+     },
+     {
+      "offset": "0x10",
+      "name": "rotation",
+      "type": "CVector3f",
+      "len": 12,
+      "basis": "LEA [EBP+0x10]"
+     },
+     {
+      "offset": "0x1c",
+      "name": "light",
+      "type": "CDemonGlobe",
+      "len": 64,
+      "basis": "LEA [EBP+0x1c] to CDemonGlobe_setPosition; [+0x3c]=0x8000"
+     }
+    ]
+   },
+   {
+    "name": "SFreaky",
+    "size": 84,
+    "basis": "array DAT_01ba5798 of 6 (staticInit 00462af0, RTTI 84); FUN_004658e0 (update) uses [0x14] owner, [7] t, +8/+0xb/+0xe/+0x11 control points, +1 position, +4 tangent, stride 0x15 dwords; FUN_00465400 (start) stores owner at puVar5[0x14].",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "sfx_handle",
+      "type": "uint",
+      "len": 4,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x4",
+      "name": "position",
+      "type": "CVector3f",
+      "len": 12,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x10",
+      "name": "tangent",
+      "type": "CVector3f",
+      "len": 12,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x1c",
+      "name": "t",
+      "type": "float",
+      "len": 4,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x20",
+      "name": "control_points",
+      "type": "CVector3f[4]",
+      "len": 48,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x50",
+      "name": "owner",
+      "type": "CDraculaBride *",
+      "len": 4,
+      "basis": "as bw1"
+     }
+    ]
+   },
+   {
+    "name": "CTire",
+    "size": 436,
+    "basis": "CVehicle.tires CTire[4] at +0xa98, stride 0x1b4 (archive 005848a0 IMUL 0x1b4; setup 00583c40 ADD ESI,0x1b4); setup/process/renderOpaque address the tire fields at nocedit's offsets + 0x15c (+0xa98 static_bpos, +0xaa4 radius, +0xaa8 width, +0xaac model, +0xc28 spin_angle, +0xc34 runtime_position); RTTI 436 = nocedit's.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "static_bpos",
+      "type": "CVector3f",
+      "len": 12,
+      "basis": "[EBX+0xa98]/[0xa9c]/[0xaa0]"
+     },
+     {
+      "offset": "0xc",
+      "name": "radius",
+      "type": "float",
+      "len": 4,
+      "basis": "[EBX+0xaa4], [ESI+0xaa4]"
+     },
+     {
+      "offset": "0x10",
+      "name": "width",
+      "type": "float",
+      "len": 4,
+      "basis": "[EBX+0xaa8]"
+     },
+     {
+      "offset": "0x14",
+      "name": "model",
+      "type": "CKeyFramedModelInstance",
+      "len": 380,
+      "basis": "[EAX+0xaac]/[EBX+0xaac] (nocedit tires[0].model +0x950)"
+     },
+     {
+      "offset": "0x190",
+      "name": "spin_angle",
+      "type": "CVector3f",
+      "len": 12,
+      "basis": "[ESI+0xc28] (nocedit +0xacc)"
+     },
+     {
+      "offset": "0x19c",
+      "name": "runtime_position",
+      "type": "CVector3f",
+      "len": 12,
+      "basis": "nocedit layout; between spin_angle and the 436 end"
+     },
+     {
+      "offset": "0x1a8",
+      "name": "runtime_rotation",
+      "type": "CVector3f",
+      "len": 12,
+      "basis": "nocedit layout; ends at RTTI 436"
+     }
+    ]
+   },
+   {
+    "name": "SWayPointAdjacency",
+    "size": 8,
+    "basis": "CWayPoint setup 00587dc0 walks adjacency with ADD EDX,0x8: waypoint MOV EAX,[EDX+0x4d4] then reads its position, distance FSTP [EDX+0x4d8]; 60 of them span 0x4d4..0x6b4 where pathfind_cost sits.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "waypoint",
+      "type": "CWayPoint *",
+      "len": 4,
+      "basis": "[EDX+0x4d4] dereferenced for +0x20..+0x28 (location)"
+     },
+     {
+      "offset": "0x4",
+      "name": "distance",
+      "type": "float",
+      "len": 4,
+      "basis": "FSTP [EDX+0x4d8] = sqrt of squared distance"
+     }
+    ]
+   },
+   {
+    "name": "CChain",
+    "size": 1400,
+    "basis": "Written whole: no base fits. CChain in bw2 was built against nocedit's 344-byte CDemonActor: ctor 005b4720 calls CDemonActor_ctor, then stores g_CChainVTable (0x601284) at +0x154 (bw2 CDemonActor keeps its vtable at +0x2b0) and initialises vertex_count +0x158=10, chain_length +0x15c=5.0, weight +0x55c, friction +0x560, gravity +0x564, dampen +0x568, target +0x164, target_bone +0x168, texture_size +0x16c, texture_handle +0x170, texture_name +0x174, pull_wav_name +0x1b4, move_wav_name +0x21c, is_visible +0x574, ground_collide_flag +0x288, and __arrinit(+0x28c, 20 SChainVertex); it also writes +0xf8/+0xfc at nocedit's offsets. archive 005b5e10: vertexCount +0x158, chainLength +0x15c, target +0x164, targetBone +0x168, weight +0x55c, dampen +0x568, friction +0x560, gravity +0x564, pullWavName +0x1b4, moveWavName +0x21c, textureName +0x174, groundCollideFlag +0x288. RTTI 1400 (CDemonActor 692), so a 692-byte base cannot be embedded; base is left out.",
+    "fields": [
+     {
+      "offset": "0x154",
+      "name": "vtable",
+      "type": "CDemonActor_vtable *",
+      "len": 4,
+      "basis": "ctor 005b4720 stores g_CChainVTable here"
+     },
+     {
+      "offset": "0x158",
+      "name": "vertex_count",
+      "type": "int",
+      "len": 4,
+      "basis": "nocedit offset; ctor 005b4720 / archive 005b5e10"
+     },
+     {
+      "offset": "0x15c",
+      "name": "chain_length",
+      "type": "float",
+      "len": 4,
+      "basis": "nocedit offset; ctor 005b4720 / archive 005b5e10"
+     },
+     {
+      "offset": "0x160",
+      "name": "segment_length",
+      "type": "float",
+      "len": 4,
+      "basis": "nocedit offset; ctor 005b4720 / archive 005b5e10"
+     },
+     {
+      "offset": "0x164",
+      "name": "target",
+      "type": "CCharacter*",
+      "len": 4,
+      "basis": "nocedit offset; ctor 005b4720 / archive 005b5e10"
+     },
+     {
+      "offset": "0x168",
+      "name": "target_bone",
+      "type": "int",
+      "len": 4,
+      "basis": "nocedit offset; ctor 005b4720 / archive 005b5e10"
+     },
+     {
+      "offset": "0x16c",
+      "name": "texture_size",
+      "type": "int",
+      "len": 4,
+      "basis": "nocedit offset; ctor 005b4720 / archive 005b5e10"
+     },
+     {
+      "offset": "0x170",
+      "name": "texture_handle",
+      "type": "int",
+      "len": 4,
+      "basis": "nocedit offset; ctor 005b4720 / archive 005b5e10"
+     },
+     {
+      "offset": "0x174",
+      "name": "texture_name",
+      "type": "char[64]",
+      "len": 64,
+      "basis": "nocedit offset; ctor 005b4720 / archive 005b5e10"
+     },
+     {
+      "offset": "0x1b4",
+      "name": "pull_wav_name",
+      "type": "char[100]",
+      "len": 100,
+      "basis": "nocedit offset; ctor 005b4720 / archive 005b5e10"
+     },
+     {
+      "offset": "0x218",
+      "name": "pull_wav_handle",
+      "type": "uint",
+      "len": 4,
+      "basis": "nocedit offset; ctor 005b4720 / archive 005b5e10"
+     },
+     {
+      "offset": "0x21c",
+      "name": "move_wav_name",
+      "type": "char[100]",
+      "len": 100,
+      "basis": "nocedit offset; ctor 005b4720 / archive 005b5e10"
+     },
+     {
+      "offset": "0x280",
+      "name": "move_wav_handle",
+      "type": "uint",
+      "len": 4,
+      "basis": "nocedit offset; ctor 005b4720 / archive 005b5e10"
+     },
+     {
+      "offset": "0x284",
+      "name": "sound_cooldown",
+      "type": "float",
+      "len": 4,
+      "basis": "nocedit offset; ctor 005b4720 / archive 005b5e10"
+     },
+     {
+      "offset": "0x288",
+      "name": "ground_collide_flag",
+      "type": "int",
+      "len": 4,
+      "basis": "nocedit offset; ctor 005b4720 / archive 005b5e10"
+     },
+     {
+      "offset": "0x28c",
+      "name": "vertices",
+      "type": "SChainVertex[20]",
+      "len": 720,
+      "basis": "nocedit offset; ctor 005b4720 / archive 005b5e10"
+     },
+     {
+      "offset": "0x55c",
+      "name": "weight",
+      "type": "float",
+      "len": 4,
+      "basis": "nocedit offset; ctor 005b4720 / archive 005b5e10"
+     },
+     {
+      "offset": "0x560",
+      "name": "friction",
+      "type": "float",
+      "len": 4,
+      "basis": "nocedit offset; ctor 005b4720 / archive 005b5e10"
+     },
+     {
+      "offset": "0x564",
+      "name": "gravity",
+      "type": "float",
+      "len": 4,
+      "basis": "nocedit offset; ctor 005b4720 / archive 005b5e10"
+     },
+     {
+      "offset": "0x568",
+      "name": "dampen",
+      "type": "float",
+      "len": 4,
+      "basis": "nocedit offset; ctor 005b4720 / archive 005b5e10"
+     },
+     {
+      "offset": "0x56c",
+      "name": "cached_distance",
+      "type": "float",
+      "len": 4,
+      "basis": "nocedit offset; ctor 005b4720 / archive 005b5e10"
+     },
+     {
+      "offset": "0x570",
+      "name": "inv_delta_time",
+      "type": "float",
+      "len": 4,
+      "basis": "nocedit offset; ctor 005b4720 / archive 005b5e10"
+     },
+     {
+      "offset": "0x574",
+      "name": "is_visible",
+      "type": "int",
+      "len": 4,
+      "basis": "nocedit offset; ctor 005b4720 / archive 005b5e10"
+     }
+    ]
+   }
+  ]
+ },
+ "bw3.exe": {
+  "structs": [
+   {
+    "name": "SPlayer",
+    "size": 40,
+    "base": null,
+    "basis": "PGameSettingsChanged's nested player record ($GSPlayer$:PGameSettingsChanged$$): RTTI 40, as in nocedit, whose layout is one 40-character name. Its ctor returns this; the netgame code around it is nocedit's.",
+    "fields": [
+     {"offset": "0x0", "name": "name", "type": "char[40]", "len": 40,
+      "basis": "nocedit's layout; RTTI 40 leaves room for nothing else"}
+    ]
+   },
+   {
+    "name": "CMoon",
+    "size": 2792,
+    "base": null,
+    "basis": "RTTI 2792: bw1's 2768 and six ints for the main menu's animation. The ctor constructs three CKeyFramedModels at +0x8, +0x3a0, +0x738 and zeroes +0; free (004f9580) releases the three.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "is_loaded",
+      "type": "int",
+      "len": 4,
+      "basis": "init (004f94a0) loads the menu bitmaps and sets 1; free clears it"
+     },
+     {
+      "offset": "0x8",
+      "name": "models",
+      "type": "CKeyFramedModel[3]",
+      "len": 2760,
+      "basis": "ctor and free at +0x8, +0x3a0, +0x738"
+     },
+     {
+      "offset": "0xad0",
+      "name": "scroll_x",
+      "type": "int[2]",
+      "len": 8,
+      "basis": "init sets 320 and -320; render (004f9670) steps each by 2, wraps to -640, and draws bwp3_menu_scroll at each x"
+     },
+     {
+      "offset": "0xad8",
+      "name": "scroll_y",
+      "type": "int[2]",
+      "len": 8,
+      "basis": "init sets 0 and 480; render steps each by -1, wraps to 479, and draws the tile at each y"
+     },
+     {
+      "offset": "0xae0",
+      "name": "hand_alpha",
+      "type": "int",
+      "len": 4,
+      "basis": "init sets 0x10000; render steps it by 500 between 5000 and 0xffff and draws bwp3_hand at (64, 64) with it"
+     },
+     {
+      "offset": "0xae4",
+      "name": "hand_alpha_rising",
+      "type": "int",
+      "len": 4,
+      "basis": "init sets 0; render's direction for hand_alpha, flipped at either bound"
+     }
+    ]
+   },
+   {
+    "name": "CDemonMission",
+    "size": 29216,
+    "base": null,
+    "basis": "No RTTI. bw1's fields with the delete queue moved ahead of mission_name; the lookup table of 6000 (writeFile asserts at 5999) at +0x1460 ends at +0x7220, where the next global after the static instance at 0x1d81080 starts (0x1d882a0).",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "current_set_index",
+      "type": "int",
+      "len": 4,
+      "basis": "process compares the pending teleport's area_id with it"
+     },
+     {
+      "offset": "0x4",
+      "name": "num_sets",
+      "type": "int",
+      "len": 4,
+      "basis": "clearMissionData zeroes it; the aligned drift puts nocedit's +0x144 here (5 sightings)"
+     },
+     {
+      "offset": "0x8",
+      "name": "set_names",
+      "type": "char[16][256]",
+      "len": 4096,
+      "basis": "as bw1: names at +0x8 + i * 0x100 up to the flags at +0x1008"
+     },
+     {
+      "offset": "0x1008",
+      "name": "is_in_editor",
+      "type": "int",
+      "len": 4,
+      "basis": "nocedit's +0x4 + 0x1004, with the flags after it (27 aligned sightings)"
+     },
+     {
+      "offset": "0x100c",
+      "name": "mission_version_num",
+      "type": "int",
+      "len": 4,
+      "basis": "nocedit's +0x8 + 0x1004"
+     },
+     {
+      "offset": "0x1010",
+      "name": "has_inventory_actors",
+      "type": "int",
+      "len": 4,
+      "basis": "clearMissionData zeroes it"
+     },
+     {
+      "offset": "0x1014",
+      "name": "teleport_requested",
+      "type": "int",
+      "len": 4,
+      "basis": "setTeleportTarget sets 1; process clears it"
+     },
+     {
+      "offset": "0x1018",
+      "name": "delete_queue_count",
+      "type": "int",
+      "len": 4,
+      "basis": "markActorToDelete appends at it; process drains it and zeroes it"
+     },
+     {
+      "offset": "0x101c",
+      "name": "delete_queue_actors",
+      "type": "CDemonActor *[100]",
+      "len": 400,
+      "basis": "markActorToDelete stores the actor at +0x101c + count * 4; process passes it to removeActor"
+     },
+     {
+      "offset": "0x11ac",
+      "name": "delete_queue_flags",
+      "type": "uint[100]",
+      "len": 400,
+      "basis": "markActorToDelete stores its second argument at +0x11ac + count * 4"
+     },
+     {
+      "offset": "0x133c",
+      "name": "mission_name",
+      "type": "char[256]",
+      "len": 256,
+      "basis": "clearMissionData clears its first byte"
+     },
+     {
+      "offset": "0x143c",
+      "name": "first_actor",
+      "type": "CDemonActor *",
+      "len": 4,
+      "basis": "nocedit's +0x548 + 3828 (33 sightings, +0x548..+0x55c)"
+     },
+     {
+      "offset": "0x1440",
+      "name": "last_actor",
+      "type": "CDemonActor *",
+      "len": 4,
+      "basis": "nocedit's +0x54c + 3828"
+     },
+     {
+      "offset": "0x1444",
+      "name": "pending_teleport",
+      "type": "CLocation",
+      "len": 16,
+      "basis": "setTeleportTarget copies the target to +0x1444..+0x1450; process moves the hero when area_id (+0x1450) >= 0 and resets it to -1"
+     },
+     {
+      "offset": "0x1454",
+      "name": "prepared_set_index",
+      "type": "int",
+      "len": 4,
+      "basis": "nocedit's +0x884 + 3024, as bw1's"
+     },
+     {
+      "offset": "0x1458",
+      "name": "next_inventory_actor",
+      "type": "CDemonActor *",
+      "len": 4,
+      "basis": "clearMissionData zeroes it; nocedit's +0x888 + 3024 (21 sightings)"
+     },
+     {
+      "offset": "0x145c",
+      "name": "actor_lookup_count",
+      "type": "int",
+      "len": 4,
+      "basis": "clearMissionData zeroes it; writeFile appends at it and asserts below 6000"
+     },
+     {
+      "offset": "0x1460",
+      "name": "actor_lookup_table",
+      "type": "CDemonActor *[6000]",
+      "len": 24000,
+      "basis": "writeFile stores each actor at +0x1460 + count * 4"
+     }
+    ]
+   },
+   {
+    "name": "SCarryHand",
+    "size": 120,
+    "basis": "CCharacter.carry_hands stride 0x78 (ctor loop; FUN_00431ab0 computes element = hand*0x78 + 0x25a8).",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "bone_index",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x4",
+      "name": "secondary_bone_index",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x8",
+      "name": "carry_actor",
+      "type": "CDemonActor*",
+      "len": 4
+     },
+     {
+      "offset": "0xc",
+      "name": "initial_carry_transform",
+      "type": "CMatrix3x4f",
+      "len": 48,
+      "basis": "computePickup copies the inverse matrix to +0xc; ctor setIdentity(+0xc)"
+     },
+     {
+      "offset": "0x3c",
+      "name": "blend_speed",
+      "type": "float",
+      "len": 4,
+      "basis": "computePickup: 1/blend_time or 0"
+     },
+     {
+      "offset": "0x40",
+      "name": "blend_factor",
+      "type": "float",
+      "len": 4,
+      "basis": "computePickup: 0 or 1.0; ctor 1.0"
+     },
+     {
+      "offset": "0x44",
+      "name": "has_carry_offset",
+      "type": "int",
+      "len": 4,
+      "basis": "computePickup: 1 when its matrix arg is non-null, else 0; updateCarriedObjects tests +0x44"
+     },
+     {
+      "offset": "0x48",
+      "name": "carry_offset",
+      "type": "CMatrix3x4f",
+      "len": 48,
+      "basis": "computePickup copies the 12-dword matrix arg to +0x48; ctor setIdentity(+0x48); updateCarriedObjects uses +0x48"
+     }
+    ]
+   },
+   {
+    "name": "CHeroPlaceholder",
+    "size": 380,
+    "basis": "RTTI 380; archive (bw3 hero.cpp) 'index' +0x158, 'heroName' +0x15c.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "base",
+      "type": "CDemonActor",
+      "len": 344
+     },
+     {
+      "offset": "0x158",
+      "name": "index",
+      "type": "int",
+      "len": 4,
+      "basis": "archive 'index'"
+     },
+     {
+      "offset": "0x15c",
+      "name": "hero_name",
+      "type": "char[32]",
+      "len": 32,
+      "basis": "archive 'heroName' (archiveString); ctor copies \"CDoc\"; ends at the RTTI size"
+     }
+    ]
+   },
+   {
+    "name": "CFont_vtable",
+    "size": 20,
+    "basis": "vtable 005e2f74: 5 slots like nocedit's g_CFontVTable (slot0 dtor engine_palette.cpp, slots 1-3 pure-call stub, slot4 returns 0); type absent from the build",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "ctor",
+      "type": "void*",
+      "len": 4
+     },
+     {
+      "offset": "0x4",
+      "name": "drawText",
+      "type": "void*",
+      "len": 4
+     },
+     {
+      "offset": "0x8",
+      "name": "getStringWidth",
+      "type": "void*",
+      "len": 4
+     },
+     {
+      "offset": "0xc",
+      "name": "getStringHeight",
+      "type": "void*",
+      "len": 4
+     },
+     {
+      "offset": "0x10",
+      "name": "getLineSpacing",
+      "type": "void*",
+      "len": 4,
+      "basis": "bw1 slot4 00532120 returns 0 like nocedit CFont_getLineSpacing"
+     }
+    ]
+   },
+   {
+    "name": "CFont",
+    "size": 27208,
+    "basis": "RTTI CWinFont 27520 minus CWinFont's own 312 bytes (nocedit CWinFont fields 0x4-0x138 sit +27204, ctor 0057fd50); base ctor 00509b90 zeroes +0x0 and stores the vtable 005e2f74 at +0x6a44 (vtable at the end of the class that introduces it). CFont is a text queue in BW: 00509bc0 (queueText) and 00509d90 (flushQueue).",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "queued_text_count",
+      "type": "int",
+      "len": 4,
+      "basis": "ctor 00509b90 zeroes; 00509bc0 refuses when 99 < count, writes entry [count] then count++; 00509d90 loops 0..count then zeroes"
+     },
+     {
+      "offset": "0x4",
+      "name": "queued_x",
+      "type": "int[100]",
+      "len": 400,
+      "basis": "00509bc0: +0x4 + i*4 = round(x * scale); 00509d90 passes param_1[1+i] as drawText x"
+     },
+     {
+      "offset": "0x194",
+      "name": "queued_y",
+      "type": "int[100]",
+      "len": 400,
+      "basis": "00509bc0: +0x194 + i*4 = round(y * scale); 00509d90 piVar+0x65 as drawText y"
+     },
+     {
+      "offset": "0x324",
+      "name": "queued_text",
+      "type": "char[100][256]",
+      "len": 25600,
+      "basis": "00509bc0: strcpy to param_1 + 0xc9*4 + count*0x100; 00509d90 text arg, stride 0x40 dwords"
+     },
+     {
+      "offset": "0x6724",
+      "name": "queued_foreground_color",
+      "type": "int[100]",
+      "len": 400,
+      "basis": "00509bc0: param_1[count+0x19c9] = packed colour (or getDefaultTextColor when <0); 00509d90 drawText fg"
+     },
+     {
+      "offset": "0x68b4",
+      "name": "queued_background_color",
+      "type": "int[100]",
+      "len": 400,
+      "basis": "00509bc0: param_1[count+0x1a2d] = param_6; 00509d90 drawText bg"
+     },
+     {
+      "offset": "0x6a44",
+      "name": "vtable",
+      "type": "CFont_vtable*",
+      "len": 4,
+      "basis": "00509b90 stores 005e2f74; 00509d90 calls [param_1[0x1a91]+4] (drawText)"
+     }
+    ]
+   },
+   {
+    "name": "STextureCacheEntry",
+    "size": 96,
+    "basis": "bw1 texture.cpp: entry = cache + 4 + idx*0x60 (loadTexture 005967a0, findFreeSlot 00596680, 00596e60/00596ed0/00596f30/00597000, select 00597620, upload 005976a0); memset(entry,0,0x60). bw2/bw3 texture.cpp use the same stride and displacements.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "dimension",
+      "type": "int",
+      "len": 4,
+      "basis": "loadTexture: 0x20..0x400 from file length; upload passes it"
+     },
+     {
+      "offset": "0x4",
+      "name": "texture_name",
+      "type": "char[64]",
+      "len": 64,
+      "basis": "strcpy of the name to entry+4; name > 0x3f errors; find 005970b0 stricmp at cache+8+i*0x60"
+     },
+     {
+      "offset": "0x44",
+      "name": "texture_data",
+      "type": "uchar*",
+      "len": 4,
+      "basis": "paletted pixels dim*dim, freed in reset/findFreeSlot; upload arg"
+     },
+     {
+      "offset": "0x48",
+      "name": "opacity_data",
+      "type": "uchar*",
+      "len": 4,
+      "basis": "optional opacity map dim*dim"
+     },
+     {
+      "offset": "0x4c",
+      "name": "palette_data",
+      "type": "uchar*",
+      "len": 4,
+      "basis": "malloc(0x300) palette"
+     },
+     {
+      "offset": "0x50",
+      "name": "true_color_data",
+      "type": "uchar*",
+      "len": 4,
+      "basis": "no-palette path: raw file of 4 bytes/pixel; upload 005976a0 uses it when non-null"
+     },
+     {
+      "offset": "0x54",
+      "name": "use_stamp",
+      "type": "uint",
+      "len": 4,
+      "basis": "00597140 stores cache.use_counter here then increments; findFreeSlot picks the smallest among unlocked"
+     },
+     {
+      "offset": "0x58",
+      "name": "is_locked",
+      "type": "int",
+      "len": 4,
+      "basis": "set 1 by 00596e60/00596ed0/00596f30/00597000; findFreeSlot skips entries with it set"
+     },
+     {
+      "offset": "0x5c",
+      "name": "hw_texture_handle",
+      "type": "uint",
+      "len": 4,
+      "basis": "selectTextureByHandle 00597620 passes [cache + idx*0x60 + 0x60] to the renderer select hook"
+     }
+    ]
+   },
+   {
+    "name": "CTextureCache",
+    "size": 98316,
+    "basis": "alloc 0x1800c (g_TextureCacheInstance); ctor (bw1 00596560) zeroes +0x0, +0x18004, +0x18008 and memsets +0x4 for 0x18000; reset 005965d0 frees 4 pointers per 0x60 entry from +0x4 to +0x18004. nocedit's parallel arrays (dims, data, opacity, names, palettes) became an array of 96-byte entries; max_texture_count is gone (findFreeSlot wraps at 0x400).",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "wrap_indicator",
+      "type": "int",
+      "len": 4,
+      "basis": "findFreeSlot 00596680: set 1 when count reaches 0x400; getTextureCacheStats 00597710 tests it"
+     },
+     {
+      "offset": "0x4",
+      "name": "entries",
+      "type": "STextureCacheEntry[1024]",
+      "len": 98304,
+      "basis": "stride 0x60, 0x400 slots (findFreeSlot loop < 0x400)"
+     },
+     {
+      "offset": "0x18004",
+      "name": "current_texture_count",
+      "type": "int",
+      "len": 4,
+      "basis": "findFreeSlot param_1[0x6001]++; find 005970b0 loop bound"
+     },
+     {
+      "offset": "0x18008",
+      "name": "use_counter",
+      "type": "uint",
+      "len": 4,
+      "basis": "00597140: entry.use_stamp = [+0x18008]; [+0x18008]++; reset and ctor zero it"
+     }
+    ]
+   },
+   {
+    "name": "SMotion",
+    "size": 288,
+    "basis": "motion load 004fb280 (version <= 3): stride 0x120 (48 dwords); transitions malloc'd (count*0x18); version 3 adds a %d,%d line stored to +0x68/+0x6c (defaults 1 and frame_count)",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "motion_name",
+      "type": "char[32]",
+      "len": 32,
+      "basis": "\"%[^\"]\",%f,%d,%d,%d -> +0,+0x20,+0x24,+0x60,+0x64"
+     },
+     {
+      "offset": "0x20",
+      "name": "fps",
+      "type": "float",
+      "len": 4,
+      "basis": "bw1 00524ba0 advances frame by delta_time * [+0x20]"
+     },
+     {
+      "offset": "0x24",
+      "name": "state_index",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x28",
+      "name": "exit_forward_from_frame",
+      "type": "int",
+      "len": 4,
+      "basis": "%d,%d,%f -> +0x28,+0x34,+0x38"
+     },
+     {
+      "offset": "0x2c",
+      "name": "unused1",
+      "type": "int",
+      "len": 4,
+      "basis": "nocedit padding between pinned fields"
+     },
+     {
+      "offset": "0x30",
+      "name": "exit_forward_cmd",
+      "type": "int",
+      "len": 4,
+      "basis": "%d,%f,%d: first value stored to +0x30; 00524ba0 switch on [+0x30]"
+     },
+     {
+      "offset": "0x34",
+      "name": "exit_forward_to_motion",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x38",
+      "name": "exit_forward_to_frame",
+      "type": "float",
+      "len": 4
+     },
+     {
+      "offset": "0x3c",
+      "name": "exit_forward_tween_time",
+      "type": "float",
+      "len": 4
+     },
+     {
+      "offset": "0x40",
+      "name": "exit_forward_set_new_state",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x44",
+      "name": "unused2",
+      "type": "char[12]",
+      "len": 12,
+      "basis": "nocedit padding between pinned fields"
+     },
+     {
+      "offset": "0x50",
+      "name": "exit_backward_to_motion",
+      "type": "int",
+      "len": 4,
+      "basis": "%d,%f -> +0x50,+0x54"
+     },
+     {
+      "offset": "0x54",
+      "name": "exit_backward_to_frame",
+      "type": "float",
+      "len": 4
+     },
+     {
+      "offset": "0x58",
+      "name": "unused3",
+      "type": "char[8]",
+      "len": 8,
+      "basis": "nocedit padding between pinned fields"
+     },
+     {
+      "offset": "0x60",
+      "name": "frame_start",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x64",
+      "name": "frame_count",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x68",
+      "name": "frame_step",
+      "type": "int",
+      "len": 4,
+      "basis": "bw1 00525240/00524ba0: source frame = frame_start + frame_number / [+0x68]; defaults 1"
+     },
+     {
+      "offset": "0x6c",
+      "name": "stored_frame_count",
+      "type": "int",
+      "len": 4,
+      "basis": "bw1 00525240: last frame = frame_start + [+0x6c] - 1; defaults to frame_count"
+     },
+     {
+      "offset": "0x70",
+      "name": "transition_count",
+      "type": "int",
+      "len": 4,
+      "basis": "read, then malloc(count*0x18) stored at +0x74"
+     },
+     {
+      "offset": "0x74",
+      "name": "transitions",
+      "type": "SMotionTransition*",
+      "len": 4,
+      "basis": "%d,%d,%d,%f,%f,%d per 0x18 element; freed by 00523910 (+0x1c9c from list = motion+0x74)"
+     },
+     {
+      "offset": "0x78",
+      "name": "signal_count",
+      "type": "int",
+      "len": 4,
+      "basis": "00524ba0 loop bound"
+     },
+     {
+      "offset": "0x7c",
+      "name": "signals",
+      "type": "SMotionSignal[15]",
+      "len": 120,
+      "basis": "%d,%d pairs at +0x7c/+0x80 stepping 8; 00524ba0 reads frame +0x7c, value +0x80"
+     },
+     {
+      "offset": "0xf4",
+      "name": "marker_count",
+      "type": "int",
+      "len": 4,
+      "basis": "version>=2; save 00523e2e loop on +0xf4"
+     },
+     {
+      "offset": "0xf8",
+      "name": "markers",
+      "type": "int[10]",
+      "len": 40,
+      "basis": "one %d per marker stepping 4 from +0xf8; ends at 0x120"
+     }
+    ]
+   },
+   {
+    "name": "CMotionList",
+    "size": 122408,
+    "basis": "ctor 004fb1c0: zeroes +0x0 and +0x1c24, memset(+0x1c28, 0, 0x1c200) = 400 x 288; CSkeleton puts loaded_filename right after it at 0x1de28",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "state_count",
+      "type": "int",
+      "len": 4,
+      "basis": "findStateIndex (bw1 00524150) loop bound; load reads it"
+     },
+     {
+      "offset": "0x4",
+      "name": "state_names",
+      "type": "char[240][30]",
+      "len": 7200,
+      "basis": "findStateIndex stricmp at +4 stepping 0x1e; load fscanf stepping 0x1e; 0x4..0x1c24 = 240 x 30"
+     },
+     {
+      "offset": "0x1c24",
+      "name": "motion_count",
+      "type": "int",
+      "len": 4,
+      "basis": "findMotionIndex (bw1 005240c0) and moved typed accesses 0052d46c/0052d48d: 0x964 -> 0x1c24"
+     },
+     {
+      "offset": "0x1c28",
+      "name": "motions",
+      "type": "SMotion[400]",
+      "len": 115200,
+      "basis": "stride 0x120 from +0x1c28 (findMotionIndex, getCurrentMotion, load 004fb280)"
+     }
+    ]
+   },
+   {
+    "name": "STextureSet",
+    "size": 576,
+    "basis": "loadStream 00549a60: texture name read at +0xc0 + set*0x240 + tex*0x48 + 8 for set < num_texture_sets (+0xb8), tex < num_textures (+0xbc); CDeformableModel texture_sets 0xc0..0xc00 = 5 x 576",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "textures",
+      "type": "SMRGLTextureModel[8]",
+      "len": 576
+     }
+    ]
+   },
+   {
+    "name": "SPart",
+    "size": 96,
+    "basis": "loadStream 00549a60: parts at +0xc04 stride 0x60; \"%[^\"]\",%d,%d,%d -> +0 name, +0x20 tri_counts, +0x34 cap_tri_counts, +0x48 adj_part_count; adj list %d at +0x4c + i*4 for i < [+0x48]; v<6 format \"%[^\"]\", %d -> +0,+0x48; v>=6 \"%[^\"]\", %d, %d -> +0,+0x48,+0x5c; \"%d,%d\" per lod into +0x20+l*4 / +0x34+l*4",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "part_name",
+      "type": "char[32]",
+      "len": 32
+     },
+     {
+      "offset": "0x20",
+      "name": "tri_counts",
+      "type": "int[5]",
+      "len": 20
+     },
+     {
+      "offset": "0x34",
+      "name": "cap_tri_counts",
+      "type": "int[5]",
+      "len": 20
+     },
+     {
+      "offset": "0x48",
+      "name": "adj_part_count",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x4c",
+      "name": "adj_part_list",
+      "type": "int[4]",
+      "len": 16
+     },
+     {
+      "offset": "0x5c",
+      "name": "dominant_bone",
+      "type": "int",
+      "len": 4
+     }
+    ]
+   },
+   {
+    "name": "SPartInstanceData",
+    "size": 480,
+    "basis": "CDeformableModelInstance+0x2140; bw1 00569ae0 sets +0x2140..+0x2230 to 1 (60 dwords), 00569b00 zeroes +0x2230..+0x2320 (60 dwords; bw3 0054e690 same); dismemberPart 0056a7d0 clears [+0x2140+i*4], reads [+0x2230+i*4]; archivePartStatus 0040b960 reads both arrays",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "visibility_flags",
+      "type": "int[60]",
+      "len": 240
+     },
+     {
+      "offset": "0xf0",
+      "name": "texture_set_indices",
+      "type": "int[60]",
+      "len": 240
+     }
+    ]
+   },
+   {
+    "name": "CFilterCache",
+    "size": 2820,
+    "basis": "RTTI 2820 = nocedit. bw1 findFilter 0045d900: count +0, names strcmp at +4 stepping 0x28, returns [+0xa04 + i*4]; free 0045d770 walks [+0xa04]; getFilter 0045d7c0 CMP [this],0x40 and stores [+0xa04 + i*4]. bw2/bw3 same +0xa04 stores.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "filter_count",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x4",
+      "name": "filter_names",
+      "type": "char[64][40]",
+      "len": 2560
+     },
+     {
+      "offset": "0xa04",
+      "name": "filters",
+      "type": "CDemonFilter*[64]",
+      "len": 256
+     }
+    ]
+   },
+   {
+    "name": "SRaytraceState",
+    "size": 160,
+    "basis": "RTTI 160. pushRaytraceState 0053e870: entry = stack + depth*0xa0 (EDX*5<<5); stores +0x0..+0x10 (ray_query), +0x14 ignore count, ignore list at +0x1c+i*4, +0x18 collision flag, +0x44/+0x50 ray origin/target, +0x5c, +0x60, +0x64 vec, +0x70, +0x74, +0x78 vec, +0x84, +0x88 vec, +0x94, +0x98, +0x9c; same as nocedit",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "ray_query",
+      "type": "SRayQueryState",
+      "len": 20
+     },
+     {
+      "offset": "0x14",
+      "name": "ignore_list_count",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x18",
+      "name": "collision_flag",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x1c",
+      "name": "ignore_list",
+      "type": "CDemonActor*[10]",
+      "len": 40
+     },
+     {
+      "offset": "0x44",
+      "name": "saved_ray_origin",
+      "type": "CVector3f",
+      "len": 12
+     },
+     {
+      "offset": "0x50",
+      "name": "saved_ray_target",
+      "type": "CVector3f",
+      "len": 12
+     },
+     {
+      "offset": "0x5c",
+      "name": "raycast_distance",
+      "type": "float",
+      "len": 4
+     },
+     {
+      "offset": "0x60",
+      "name": "voxel_distance",
+      "type": "float",
+      "len": 4
+     },
+     {
+      "offset": "0x64",
+      "name": "voxel_hit_point",
+      "type": "CVector3f",
+      "len": 12
+     },
+     {
+      "offset": "0x70",
+      "name": "voxel_surface_type",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x74",
+      "name": "saved_skip_exact_collision",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x78",
+      "name": "saved_collision_normal",
+      "type": "CVector3f",
+      "len": 12
+     },
+     {
+      "offset": "0x84",
+      "name": "saved_ground_type",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x88",
+      "name": "saved_collision_point",
+      "type": "CVector3f",
+      "len": 12
+     },
+     {
+      "offset": "0x94",
+      "name": "saved_collision_actor",
+      "type": "CDemonActor*",
+      "len": 4
+     },
+     {
+      "offset": "0x98",
+      "name": "saved_collision_part_index",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x9c",
+      "name": "saved_collision_bone_index",
+      "type": "int",
+      "len": 4
+     }
+    ]
+   },
+   {
+    "name": "SHardwareEdge",
+    "size": 56,
+    "basis": "type absent from the build. renderTriangleTextured 00466d50 fills the edge table at stride 0x50 writing +0x0..+0x44 (y_min/y_max first, then current/gradient pairs); bw1 setupDepthOnlyEdgeInterpolation 0047a320 writes y_min +0, y_max +4, x_current +8, x_gradient +0xc, depth_current +0x28, depth_gradient +0x2c; typed-access drift: 295 (bw1/bw3) / 256 (bw2) sightings at 0x4..0x44 with delta 0",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "y_min",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x4",
+      "name": "y_max",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x8",
+      "name": "x_current",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0xc",
+      "name": "x_gradient",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x10",
+      "name": "red_current",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x14",
+      "name": "red_gradient",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x18",
+      "name": "u_current",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x1c",
+      "name": "u_gradient",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x20",
+      "name": "v_current",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x24",
+      "name": "v_gradient",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x28",
+      "name": "depth_current",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x2c",
+      "name": "depth_gradient",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x30",
+      "name": "alpha_current",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x34",
+      "name": "alpha_gradient",
+      "type": "int",
+      "len": 4
+     }
+    ]
+   },
+   {
+    "name": "SSoftwareEdge",
+    "size": 80,
+    "basis": "edge table stride 0x50 (bw1 0047a320/0047a43e/0047a480 `count * 0x50`, piVar += 0x14; 00466d50 * 0x50); base and green/blue fields unchanged",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "base",
+      "type": "SHardwareEdge",
+      "len": 56
+     },
+     {
+      "offset": "0x38",
+      "name": "green_current",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x3c",
+      "name": "green_gradient",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x40",
+      "name": "blue_current",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x44",
+      "name": "blue_gradient",
+      "type": "int",
+      "len": 4
+     }
+    ]
+   },
+   {
+    "name": "SMorphPoint",
+    "size": 16,
+    "basis": "CMorphModel_rotatePoints 004fa490: points walked stepping 0x10; [+0] used as index (SHL 4) into ref points, position floats at +4/+8/+0xc",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "vertex_index",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x4",
+      "name": "position",
+      "type": "CVector3f",
+      "len": 12
+     }
+    ]
+   },
+   {
+    "name": "STriangleVertices",
+    "size": 36,
+    "basis": "CGlassParticle init 0049a650 (called from CFireEffect_createGlassParticle): reads param floats [0..8] as three vertices (sums [0]+[3]+[6] etc. for the centroid)",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "vertices",
+      "type": "CVector3f[3]",
+      "len": 36
+     }
+    ]
+   },
+   {
+    "name": "SMRGLModelBounds",
+    "size": 52,
+    "basis": "getMRGLBounds pair 004f8170 returns a 13-dword struct (MOV ECX,0xd; MOVSD.REP) built on the stack: min/max read back at +0x4/+0x8/+0x10/+0x14, center at +0x18..+0x20, radius = round(sqrt(sum extent^2)) at +0x24, extent = max(|min|,|max|) per axis at +0x28..+0x30",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "min_scaled",
+      "type": "CVector3i",
+      "len": 12
+     },
+     {
+      "offset": "0xc",
+      "name": "max_scaled",
+      "type": "CVector3i",
+      "len": 12
+     },
+     {
+      "offset": "0x18",
+      "name": "center_scaled",
+      "type": "CVector3i",
+      "len": 12
+     },
+     {
+      "offset": "0x24",
+      "name": "radius_scaled",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x28",
+      "name": "extent",
+      "type": "CVector3i",
+      "len": 12
+     }
+    ]
+   },
+   {
+    "name": "SMovieFrame",
+    "size": 8192,
+    "basis": "CFilterFX_openMovie (bw1 0045ddb0, bw2/bw3 same): malloc(frame_count << 0xd), fread(movie_data, 0x2000, frame_count)",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "pixels",
+      "type": "uchar[8192]",
+      "len": 8192
+     }
+    ]
+   },
+   {
+    "name": "SVoxelCubeMetadata",
+    "size": 88,
+    "basis": "CDemonRaytrace cube_list: freeCubeList (bw1 0048a9b0; bw2/bw3 same) walks stride 0x58, zeroes +0, +4, +0x54, deletes CDemonPart at +0xc; bw1 consolidate 0048aaee sums [+0] (tri count), copies count*0x38 bytes from [+4] and count bytes from [+0x54]; alloc 0048a960 uses element size 0x58",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "triangle_count",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x4",
+      "name": "triangle_list",
+      "type": "CDemonTriangle*",
+      "len": 4
+     },
+     {
+      "offset": "0xc",
+      "name": "part_ptr",
+      "type": "CDemonPart*",
+      "len": 4
+     },
+     {
+      "offset": "0x54",
+      "name": "triangle_flags",
+      "type": "uchar*",
+      "len": 4
+     }
+    ]
+   },
+   {
+    "name": "CCourseFrame",
+    "size": 28,
+    "basis": "CCourse load reads \"%f,%f,%f, %f,%f,%f,%f\" to +0..+0x18 stepping 0x1c; evaluate interpolates frames[i*0x1c] position and slerps frames[i*0x1c + 0xc] (bw1 00447db0/00447fb0, bw3 00444970/00444b70, bw2 course.cpp same format string)",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "pos",
+      "type": "CVector3f",
+      "len": 12
+     },
+     {
+      "offset": "0xc",
+      "name": "orient",
+      "type": "CQuaternion4f",
+      "len": 16
+     }
+    ]
+   },
+   {
+    "name": "SNetPacketHeader",
+    "size": 5,
+    "basis": "Packed 5-byte header as nocedit. CNetGame_sendPacket sends (packet+4, *(int*)packet - 4); processPacket switches on byte packet[4]; every sender stores the size dword at [ESP] and the type byte at [ESP+4] (sendSimFrameAck 00507fd0: MOV [ESP],0x39/0x3d; MOV byte [ESP+4],0x10). Packet sizes 9/0x29/0x71/0xb1/0x109 equal nocedit's, so the other SNetPacket_* gaps [1,4] close once the header is 5 bytes.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "size",
+      "type": "int",
+      "len": 4,
+      "basis": "sendPacket: *(int*)packet - 4 is the payload length"
+     },
+     {
+      "offset": "0x4",
+      "name": "type",
+      "type": "ENetPacketType",
+      "len": 1,
+      "basis": "processPacket: switch(packet->raw[4]); senders MOV byte [ESP+4],type. ENetPacketType is nocedit's 1-byte enum (absent in the BW DBs)"
+     }
+    ]
+   },
+   {
+    "name": "SPlayerActionState",
+    "size": 40,
+    "basis": "10 dwords: FUN_004b9960 writes +0x0..+0x24 and zeroes strafe_speed at +0x28. bw3 adds keyAction at +0x10 and quick_turn at the end.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "walk",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_004b9960 stores the edge of CGame+0x28 (keyWalk, readIniData 004d8e70)"
+     },
+     {
+      "offset": "0x4",
+      "name": "backup",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_004b9960 stores the edge of CGame+0x2c (keyBackup, readIniData 004d8e70)"
+     },
+     {
+      "offset": "0x8",
+      "name": "run",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_004b9960 stores the edge of CGame+0x30 (keyRun, readIniData 004d8e70)"
+     },
+     {
+      "offset": "0xc",
+      "name": "fire",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_004b9960 stores the edge of CGame+0x48 (keyFire, zeroed when the hero is dead, readIniData 004d8e70)"
+     },
+     {
+      "offset": "0x10",
+      "name": "action",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_004b9960 stores the edge of CGame+0x4c (keyAction, zeroed with fire when the hero is dead, readIniData 004d8e70)"
+     },
+     {
+      "offset": "0x14",
+      "name": "use_item",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_004b9960 stores the edge of CGame+0x50 (keyUseItem, readIniData 004d8e70)"
+     },
+     {
+      "offset": "0x18",
+      "name": "light",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_004b9960 stores the edge of CGame+0x54 (keyLight, readIniData 004d8e70)"
+     },
+     {
+      "offset": "0x1c",
+      "name": "draw",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_004b9960 stores the edge of CGame+0x6c (keyDraw; also set to 1 when keyWeapon1..5 select a weapon, readIniData 004d8e70)"
+     },
+     {
+      "offset": "0x20",
+      "name": "jump",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_004b9960 stores CGame+0x70; no ini key, but it sits between keyDraw (0x6c) and keyQuickTurn (0x74) as bw1's keyJump does (0x6c between 0x68 and 0x70)"
+     },
+     {
+      "offset": "0x24",
+      "name": "quick_turn",
+      "type": "int",
+      "len": 4,
+      "basis": "FUN_004b9960 stores CGame+0x74 (keyQuickTurn, readIniData 004d8e70)"
+     }
+    ]
+   },
+   {
+    "name": "SPlayerInput",
+    "size": 52,
+    "basis": "applySimFrameHistory 00507e50 copies 13 dwords per player into hero+player_input; sendSimFrameAck 00507fd0 copies 13 dwords into the PLAYER_INPUT packet from SNetPlayer+0x4c; getMyControls 00507f10: SNetPlayer stride 128 with player_input at +0x4c (128 = 0x4c + 52).",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "action_state",
+      "type": "SPlayerActionState",
+      "len": 40,
+      "basis": "FUN_004b9960 writes the action slots"
+     },
+     {
+      "offset": "0x28",
+      "name": "strafe_speed",
+      "type": "float",
+      "len": 4,
+      "basis": "FUN_004b9960 zeroes and ramps +0x28 (nocedit +0x20)"
+     },
+     {
+      "offset": "0x2c",
+      "name": "turn_speed",
+      "type": "float",
+      "len": 4,
+      "basis": "FUN_004b9960 +0x2c; processMouseControls clamps it"
+     },
+     {
+      "offset": "0x30",
+      "name": "look_up_down_speed",
+      "type": "float",
+      "len": 4,
+      "basis": "FUN_004b9960 +0x30"
+     }
+    ]
+   },
+   {
+    "name": "SSimFrame",
+    "size": 116,
+    "basis": "allocSimFrame 00503c40 scans g_SimFrameHistory with stride 0x74; applySimFrameHistory 00507e50 reads seed +4, dt +8, sequence +0 and copies the inputs from +0xc with stride 0x34.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "sequence_number",
+      "type": "int",
+      "len": 4,
+      "basis": "applySimFrameHistory 00507e50: players[local].sim_frame_index = *(int*)frame + 1"
+     },
+     {
+      "offset": "0x4",
+      "name": "random_seed",
+      "type": "int",
+      "len": 4,
+      "basis": "applySimFrameHistory 00507e50: random_seed = frame+4"
+     },
+     {
+      "offset": "0x8",
+      "name": "delta_time",
+      "type": "float",
+      "len": 4,
+      "basis": "applySimFrameHistory 00507e50: slamDT(frame+8)"
+     },
+     {
+      "offset": "0xc",
+      "name": "player_input",
+      "type": "SPlayerInput[2]",
+      "len": 104,
+      "basis": "applySimFrameHistory 00507e50: copies from frame+0xc, stride 0x34"
+     }
+    ]
+   },
+   {
+    "name": "SNetPacket_PlayerInput",
+    "size": 61,
+    "basis": "sendSimFrameAck 00507fd0: header.size = 0x3d, type 0x10, sim_frame_index at [ESP+5], player_input copied to [ESP+9] (MOVSD.REP 13 dwords)",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "header",
+      "type": "SNetPacketHeader",
+      "len": 5
+     },
+     {
+      "offset": "0x5",
+      "name": "sim_frame_index",
+      "type": "int",
+      "len": 4,
+      "basis": "sendSimFrameAck 00507fd0: MOV [ESP+5] from SNetPlayer+0x48"
+     },
+     {
+      "offset": "0x9",
+      "name": "player_input",
+      "type": "SPlayerInput",
+      "len": 52,
+      "basis": "sendSimFrameAck 00507fd0: LEA EDI,[ESP+9]"
+     }
+    ]
+   },
+   {
+    "name": "SNetPacket_SimFrame",
+    "size": 121,
+    "basis": "processServerFrame 00507790: header.size = 0x79, type 0xf (nocedit 0x69); the frame follows the 5-byte header",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "header",
+      "type": "SNetPacketHeader",
+      "len": 5
+     },
+     {
+      "offset": "0x5",
+      "name": "frame",
+      "type": "SSimFrame",
+      "len": 116
+     }
+    ]
+   },
+   {
+    "name": "SChatHistory",
+    "size": 288,
+    "basis": "nocedit's layout. addChatHistory (bw1 0052f100): index*0x120 into the 400-entry array; MOVSD x2 copy the sender addr to +0, message_id to +8, sender_name strcpy to +0xc, message strcpy to +0x20; same code in bw2/bw3. RTTI 288.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "sender_addr",
+      "type": "SNetworkAddr",
+      "len": 8
+     },
+     {
+      "offset": "0x8",
+      "name": "message_id",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0xc",
+      "name": "sender_name",
+      "type": "char[20]",
+      "len": 20
+     },
+     {
+      "offset": "0x20",
+      "name": "message",
+      "type": "char[256]",
+      "len": 256
+     }
+    ]
+   },
+   {
+    "name": "SScriptLine",
+    "size": 8,
+    "basis": "CScript_buildParsedLines: realloc((count+1)*8); stores index+1 at +0 and the malloc'd line copy at +4 (all three builds).",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "line_number",
+      "type": "int",
+      "len": 4
+     },
+     {
+      "offset": "0x4",
+      "name": "text",
+      "type": "char *",
+      "len": 4
+     }
+    ]
+   },
+   {
+    "name": "SDialogEntry",
+    "size": 550,
+    "basis": "CScript_dbLoad: realloc(count*0x226), copies the 550-byte stack record with MOVSD.REP 0x89 + MOVSW; CScript_findDialogEntry strides 0x226. The record (at ESP+8 in dbLoad): fscanf \"%[^,], \" into +0, \"%[^,],\" into +0x78, \" %[^\\n]\\n\" into +0x96; \"%s.wav\"/\"%s.mp3\" built from +0 and probed in \"sound\" through +0x3c (ESP+0x44). nocedit types it as an opaque char[550].",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "wav_name",
+      "type": "char[60]",
+      "len": 60,
+      "basis": "dbLoad fscanf into record+0; findDialogEntry stricmp against it"
+     },
+     {
+      "offset": "0x3c",
+      "name": "sound_filename",
+      "type": "char[60]",
+      "len": 60,
+      "basis": "dbLoad: \"%s.wav\" / \"%s.mp3\" of wav_name, passed to getFileSize(\"sound\", ...)"
+     },
+     {
+      "offset": "0x78",
+      "name": "speaker",
+      "type": "char[30]",
+      "len": 30,
+      "basis": "dbLoad fscanf \"%[^,],\" into record+0x78 (nocedit replaces \"stranger\" with \"$\")"
+     },
+     {
+      "offset": "0x96",
+      "name": "text",
+      "type": "char[400]",
+      "len": 400,
+      "basis": "dbLoad fscanf \" %[^\\n]\\n\" into record+0x96; runs to the 550-byte end"
+     }
+    ]
+   },
+   {
+    "name": "CIni",
+    "size": 4,
+    "basis": "nocedit's layout. findLineNumberOfVariable (bw1 FUN_004f4550) sets *this = 1 on entry and 0 on failure; writeProfileString tests *this == 0. g_CIniInstance is passed as this.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "initialized",
+      "type": "int",
+      "len": 4
+     }
+    ]
+   },
+   {
+    "name": "CCodec",
+    "size": 4,
+    "basis": "CCodec_ctor (bw1 00442ba0, bw2 00433e80, bw3 00440800) stores the vtable at +0; derived ctors overwrite it. RTTI 4. Typed void * because BW's vtable slots are not checked against nocedit's CCodec_vtable.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "vtable",
+      "type": "void *",
+      "len": 4
+     }
+    ]
+   },
+   {
+    "name": "CPodDirectoryEntry",
+    "size": 20,
+    "basis": "nocedit's layout. CPodFile_populateFileInfo (bw1 0053bf40) indexes directory_entries with stride 20 (i*5*4) and reads offset +8, size +4, timestamp +0xc; it, CPod_getNextSearchResult and CPodFile_findFileIndex are instruction-identical to nocedit in all three builds. bw1 mountFromFile (FUN_0053b250) stores the checksum at +0x10 (0053b60e, zeroes it 0053bd5a) and verifyChecksum (FUN_0053bfbe) reads it.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "name",
+      "type": "char *",
+      "len": 4
+     },
+     {
+      "offset": "0x4",
+      "name": "size",
+      "type": "uint",
+      "len": 4
+     },
+     {
+      "offset": "0x8",
+      "name": "offset",
+      "type": "uint",
+      "len": 4
+     },
+     {
+      "offset": "0xc",
+      "name": "timestamp",
+      "type": "uint",
+      "len": 4
+     },
+     {
+      "offset": "0x10",
+      "name": "checksum",
+      "type": "uint",
+      "len": 4
+     }
+    ]
+   },
+   {
+    "name": "SInventoryItemInfo",
+    "size": 768,
+    "basis": "nocedit's layout. getItemDisplayName / getItemDescription (bw1 004f62e0/004f6350, bw2 004d9f10/004d9f80, bw3 004d9e40/004d9eb0) walk g_ItemDefinitionArray with stride 0x300, compare the model name at +0 and return +0x100 / +0x200; loadItem fscanf's the three strings; all instruction-identical to nocedit.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "model_name",
+      "type": "char[256]",
+      "len": 256
+     },
+     {
+      "offset": "0x100",
+      "name": "display_name",
+      "type": "char[256]",
+      "len": 256
+     },
+     {
+      "offset": "0x200",
+      "name": "description",
+      "type": "char[256]",
+      "len": 256
+     }
+    ]
+   },
+   {
+    "name": "CSfxOptions",
+    "size": 96,
+    "basis": "CSfxOptions_reset 00555bf0 instruction-identical to bw1's; setNextSfxDelay 00555ee0 at options+0x40, setNextSfxFlags 00555f00 at +0x4c (base 0x2ceb920, stride 0x60). Fields as bw1.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "channel_index",
+      "type": "int",
+      "len": 4,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x4",
+      "name": "position",
+      "type": "CVector3d",
+      "len": 24,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x1c",
+      "name": "position_source_ptr",
+      "type": "void*",
+      "len": 4,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x20",
+      "name": "position_format",
+      "type": "int",
+      "len": 4,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x24",
+      "name": "velocity",
+      "type": "CVector3f",
+      "len": 12,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x30",
+      "name": "velocity_source_ptr",
+      "type": "void*",
+      "len": 4,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x34",
+      "name": "velocity_format",
+      "type": "int",
+      "len": 4,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x38",
+      "name": "current_volume",
+      "type": "float",
+      "len": 4,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x3c",
+      "name": "base_frequency",
+      "type": "float",
+      "len": 4,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x40",
+      "name": "delay_remaining",
+      "type": "float",
+      "len": 4,
+      "basis": "setNextSfxDelay 00555ee0"
+     },
+     {
+      "offset": "0x44",
+      "name": "userdata",
+      "type": "void*[2]",
+      "len": 8,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x4c",
+      "name": "flags",
+      "type": "uint",
+      "len": 4,
+      "basis": "setNextSfxFlags 00555f00"
+     },
+     {
+      "offset": "0x50",
+      "name": "playback_position",
+      "type": "double",
+      "len": 8,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x58",
+      "name": "playback_position_type",
+      "type": "int",
+      "len": 4,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x5c",
+      "name": "dead",
+      "type": "int",
+      "len": 4,
+      "basis": "as bw1"
+     }
+    ]
+   },
+   {
+    "name": "CParticle",
+    "size": 64,
+    "basis": "setup 00509e40 and process FUN_00509f30 identical to bw1's.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "position",
+      "type": "CVector3f",
+      "len": 12,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0xc",
+      "name": "velocity",
+      "type": "CVector3f",
+      "len": 12,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x18",
+      "name": "acceleration",
+      "type": "CVector3f",
+      "len": 12,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x24",
+      "name": "lifetime_remaining",
+      "type": "float",
+      "len": 4,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x28",
+      "name": "is_in_solid",
+      "type": "int",
+      "len": 4,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x2c",
+      "name": "previous_position",
+      "type": "CVector3f",
+      "len": 12,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x38",
+      "name": "was_in_solid",
+      "type": "int",
+      "len": 4,
+      "basis": "as bw1"
+     },
+     {
+      "offset": "0x3c",
+      "name": "vtable",
+      "type": "CParticle_vtable *",
+      "len": 4,
+      "basis": "as bw1"
+     }
+    ]
+   },
+   {
+    "name": "CMuzzleFlash",
+    "size": 92,
+    "basis": "init 0049a390 and process 0049a450 identical to bw1's; RTTI 92.",
+    "fields": [
+     {
+      "offset": "0x0",
+      "name": "frames_remaining",
+      "type": "int",
+      "len": 4,
+      "basis": "MOV [EBP],2"
+     },
+     {
+      "offset": "0x4",
+      "name": "position",
+      "type": "CVector3f",
+      "len": 12,
+      "basis": "LEA [EBP+0x4] copy"
+     },
+     {
+      "offset": "0x10",
+      "name": "rotation",
+      "type": "CVector3f",
+      "len": 12,
+      "basis": "LEA [EBP+0x10]"
+     },
+     {
+      "offset": "0x1c",
+      "name": "light",
+      "type": "CDemonGlobe",
+      "len": 64,
+      "basis": "LEA [EBP+0x1c] to CDemonGlobe_setPosition; [+0x3c]=0x8000"
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -14,7 +14,7 @@ void __cdecl sound_sndmain_cpp_selectSoundDevice_FUN_005754d0(int device_id)
   uint uVar1;
   int iVar2;
   
-  uVar1 = sound_sndmain_cpp_FUN_00575540();
+  uVar1 = sound_sndmain_cpp_isSoundSystemActive_FUN_00575540();
   if (uVar1 != 0) {
     _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
     _DAT_01d1d404 = 0x1562;
@@ -28,6 +28,6 @@ void __cdecl sound_sndmain_cpp_selectSoundDevice_FUN_005754d0(int device_id)
     DAT_006232fc = device_id;
     return;
   }
-  DAT_006232fc = sound_sndmain_cpp_FUN_005753b0();
+  DAT_006232fc = sound_sndmain_cpp_findBestSoundDevice_FUN_005753b0();
   return;
 }

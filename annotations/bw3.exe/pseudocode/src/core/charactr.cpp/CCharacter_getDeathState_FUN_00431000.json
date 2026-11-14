@@ -1,0 +1,305 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 107,
+    "complexity_score": 77,
+    "cross_reference_count": 3,
+    "function_call_count": 5,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 37,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 144
+  },
+  "cross_references": [
+    {
+      "addr": "00419880",
+      "from_addr": "00419885",
+      "name": "core_boneguy.cpp_CBoneGuy_getDeathState_FUN_00419880",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004444f0",
+      "from_addr": "004444f5",
+      "name": "core_construc.cpp_CConstruct_getDeathState_FUN_004444f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00526fc0",
+      "from_addr": "00526fe0",
+      "name": "core_prye.cpp_CPrye_getDeathState_FUN_00526fc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00431000",
+    "address_range": [
+      [
+        "00431000",
+        "004310d2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_getDeathState_FUN_00431000",
+    "signature": "EDeathState __cdecl core_charactr_cpp_CCharacter_getDeathState_FUN_00431000(CCharacter *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004fc320",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentStateName_FUN_004fc320"
+    },
+    {
+      "addr": "005a3260",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005a3260"
+    },
+    {
+      "addr": "005a3f90",
+      "is_variadic": false,
+      "name": "crt_string.c__strnicmp_FUN_005a3f90"
+    },
+    {
+      "addr": "005a4010",
+      "is_variadic": false,
+      "name": "crt_string.c_strstr_FUN_005a4010"
+    },
+    {
+      "addr": "005a3ff0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a3ff0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b83d7",
+      "name": "DAT_005b83d7",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b83db",
+      "name": "s_DEAD_POSSUM_005b83db",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b83e7",
+      "name": "DAT_005b83e7",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "00419885",
+        "call_type": "direct",
+        "caller": "core_boneguy.cpp_CBoneGuy_getDeathState_FUN_00419880",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004444f5",
+        "call_type": "direct",
+        "caller": "core_construc.cpp_CConstruct_getDeathState_FUN_004444f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00526fe0",
+        "call_type": "direct",
+        "caller": "core_prye.cpp_CPrye_getDeathState_FUN_00526fc0",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.818181818181818,
+    "instruction_count": 88,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 1,
+      "CALL": 5,
+      "CBRANCH": 7,
+      "COPY": 107,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 42,
+      "INT_AND": 48,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 40,
+      "INT_LEFT": 4,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 20,
+      "INT_SUB": 22,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 26,
+      "POPCOUNT": 20,
+      "RETURN": 5,
+      "STORE": 20
+    },
+    "pcode_op_count": 424
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004281d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5547
+    },
+    "bw1.exe": {
+      "addr": "00431c30",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5507
+    },
+    "nocedit.exe": {
+      "addr": "0042c580",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.48
+    },
+    "nocturne.exe": {
+      "addr": "00428710",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.48
+    }
+  },
+  "stack_frame": {
+    "frame_size": 120,
+    "local_size": 116,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_6f",
+        "offset": -111,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "00431019",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_005b83d7",
+      "severity": "mild",
+      "text": "iVar3 = _strnicmp(local_70,&DAT_005b83d7,3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_005b83e7",
+      "severity": "mild",
+      "text": "pcVar2 = strstr(local_70,&DAT_005b83e7);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 14,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CImp",
+        "offset": 268,
+        "vtable_addr": "005e1f04"
+      },
+      {
+        "class_name": "CTheHand",
+        "offset": 268,
+        "vtable_addr": "005e5504"
+      },
+      {
+        "class_name": "CKedward",
+        "offset": 268,
+        "vtable_addr": "005e7204"
+      },
+      {
+        "class_name": "CDarkwolf",
+        "offset": 268,
+        "vtable_addr": "005e7a04"
+      },
+      {
+        "class_name": "CSpiritEagle",
+        "offset": 268,
+        "vtable_addr": "005e7d04"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 41
+  }
+}

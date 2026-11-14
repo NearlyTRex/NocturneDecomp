@@ -4,13 +4,16 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: SFire
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x18 (24 bytes)
 #pragma pack(push, 1)
 typedef struct SFire {
-    char field_0[24]; // 0x0
+    int bone_part; // 0x0
+    int bone_index; // 0x4
+    CVector3f offset; // 0x8
+    float size; // 0x14
 } SFire;
 #pragma pack(pop)
 

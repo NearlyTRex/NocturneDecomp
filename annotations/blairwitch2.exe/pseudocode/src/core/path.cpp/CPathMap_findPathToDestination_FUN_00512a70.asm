@@ -111,14 +111,14 @@
 ;   ... and 7 more
 ;
 ; Called Functions:
-;   core_dtrace.cpp_FUN_00476a50
+;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00476a50
 ;   core_main.c_FUN_004e4500
 ;   core_path.cpp_CPathMap_checkAxisAlignedPath_FUN_005125e0
 ;   core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_005122f0
 ;   core_path.cpp_CPathMap_isLineWalkable_FUN_00512390
 ;   core_path.cpp_CPathMap_searchGrid_FUN_00514140
 ;   core_path.cpp_FUN_00511df0
-;   core_vecdir.cpp_FUN_005838f0
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 ;   crt_math.c_round_FUN_005b7ff0
 ;
 ; *****************************************************************************
@@ -137,8 +137,8 @@ section .text
     PUSH EDX                            ; 00512a8f
     PUSH 0x1fc9c68                      ; 00512a90 | g_CDemonRaytraceInstance
     LEA ESI,[ESP + 0xec]                ; 00512a95
-    CALL core_dtrace.cpp_FUN_00476a50   ; 00512a9c
-        ;   XREF to: 00476a50 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00476a50()
+    CALL core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00476a50 ; 00512a9c
+        ;   XREF to: 00476a50 (UNCONDITIONAL_CALL)  ; CVector3i * core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00476a50(CDemonRaytrace * this_ptr, CVector3f * world_position, CVector3i * output_voxel_coords)
     LEA ESI,[ESP + 0xec]                ; 00512aa1
     ADD ESP,0x8                         ; 00512aa8
     LEA EDI,[EBP + 0x18]                ; 00512aab
@@ -194,8 +194,8 @@ section .text
     PUSH EAX                            ; 00512b45
     LEA ESI,[ESP + 0x40]                ; 00512b46
     LEA EDI,[ESP + 0x124]               ; 00512b4a
-    CALL core_vecdir.cpp_FUN_005838f0   ; 00512b51
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005838f0()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 00512b51
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
     LEA ESI,[ESP + 0x40]                ; 00512b56
     ADD ESP,0x4                         ; 00512b5a
     LEA EAX,[ESP + 0x120]               ; 00512b5d
@@ -297,8 +297,8 @@ section .text
     PUSH EAX                            ; 00512c85
     LEA ESI,[ESP + 0x154]               ; 00512c86
     LEA EDI,[ESP + 0x190]               ; 00512c8d
-    CALL core_vecdir.cpp_FUN_005838f0   ; 00512c94
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005838f0()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 00512c94
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
     LEA ESI,[ESP + 0x154]               ; 00512c99
     ADD ESP,0x4                         ; 00512ca0
     LEA EAX,[ESP + 0x18c]               ; 00512ca3
@@ -366,8 +366,8 @@ section .text
     PUSH EAX                            ; 00512d6d
     LEA ESI,[ESP + 0x19c]               ; 00512d6e
     LEA EDI,[ESP + 0x148]               ; 00512d75
-    CALL core_vecdir.cpp_FUN_005838f0   ; 00512d7c
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005838f0()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 00512d7c
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
     LEA ESI,[ESP + 0x19c]               ; 00512d81
     ADD ESP,0x4                         ; 00512d88
     LEA EAX,[ESP + 0x144]               ; 00512d8b
@@ -473,9 +473,9 @@ section .text
         ;   XREF to: 005130a6 (CONDITIONAL_JUMP)  ; LAB_005130a6
     LEA EDI,[ESP + 0x174]               ; 00512ec3
     MOV ESI,0x1fc9c9c                   ; 00512eca
-    MOVSD ES:EDI,ESI                    ; 00512ecf | g_CDemonRaytraceInstance.field52_0x34
-    MOVSD ES:EDI,ESI                    ; 00512ed0 | g_CDemonRaytraceInstance.field56_0x38
-    MOVSD ES:EDI,ESI                    ; 00512ed1 | g_CDemonRaytraceInstance.field60_0x3c
+    MOVSD ES:EDI,ESI                    ; 00512ecf | g_CDemonRaytraceInstance.adjusted_size.x
+    MOVSD ES:EDI,ESI                    ; 00512ed0 | g_CDemonRaytraceInstance.adjusted_size.y
+    MOVSD ES:EDI,ESI                    ; 00512ed1 | g_CDemonRaytraceInstance.adjusted_size.z
     LEA EDI,[ESP + 0x114]               ; 00512ed2
     LEA ESI,[ESP + 0x174]               ; 00512ed9
     LEA EAX,[ESP + 0xa8]                ; 00512ee0
@@ -531,8 +531,8 @@ section .text
     PUSH EAX                            ; 00512faf
     LEA ESI,[ESP + 0x13c]               ; 00512fb0
     LEA EDI,[ESP + 0x100]               ; 00512fb7
-    CALL core_vecdir.cpp_FUN_005838f0   ; 00512fbe
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005838f0()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 00512fbe
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
     LEA ESI,[ESP + 0x13c]               ; 00512fc3
     ADD ESP,0x4                         ; 00512fca
     MOVSD ES:EDI,ESI                    ; 00512fcd
@@ -582,8 +582,8 @@ section .text
     PUSH EAX                            ; 0051305e
     LEA ESI,[ESP + 0x28]                ; 0051305f
     LEA EDI,[ESP + 0x4]                 ; 00513063
-    CALL core_vecdir.cpp_FUN_005838f0   ; 00513067
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005838f0()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 00513067
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
     LEA ESI,[ESP + 0x28]                ; 0051306c
     ADD ESP,0x4                         ; 00513070
     MOVSD ES:EDI,ESI                    ; 00513073
@@ -733,8 +733,8 @@ section .text
     PUSH EAX                            ; 005131ff
     LEA ESI,[ESP + 0x1c0]               ; 00513200
     LEA EDI,[ESP + 0x184]               ; 00513207
-    CALL core_vecdir.cpp_FUN_005838f0   ; 0051320e
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005838f0()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 0051320e
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
     LEA ESI,[ESP + 0x1c0]               ; 00513213
     ADD ESP,0x4                         ; 0051321a
     LEA EAX,[ESP + 0x180]               ; 0051321d
@@ -882,8 +882,8 @@ section .text
     PUSH EAX                            ; 00513403
     LEA ESI,[ESP + 0x130]               ; 00513404
     LEA EDI,[ESP + 0x1c]                ; 0051340b
-    CALL core_vecdir.cpp_FUN_005838f0   ; 0051340f
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005838f0()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 0051340f
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
     LEA ESI,[ESP + 0x130]               ; 00513414
     ADD ESP,0x4                         ; 0051341b
     LEA EAX,[ESP + 0x18]                ; 0051341e
@@ -932,8 +932,8 @@ section .text
     PUSH EAX                            ; 00513495
     LEA ESI,[ESP + 0x94]                ; 00513496
     LEA EDI,[ESP + 0x88]                ; 0051349d
-    CALL core_vecdir.cpp_FUN_005838f0   ; 005134a4
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005838f0()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 005134a4
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
     LEA ESI,[ESP + 0x94]                ; 005134a9
     ADD ESP,0x4                         ; 005134b0
     LEA EAX,[ESP + 0x84]                ; 005134b3

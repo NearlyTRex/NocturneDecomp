@@ -12,7 +12,7 @@
 ;   core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_00448900 at 00448aab
 ;   core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_0044ac60 at 0044af4f
 ;   core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0044c830 at 0044cedb
-;   core_set.cpp_FUN_00533f40 at 00533fdb
+;   core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_00533f40 at 00533fdb
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_007bee30
@@ -22,8 +22,8 @@
 ;
 ; Called Functions:
 ;   core_xform.cpp_transformAndClipGeometry_FUN_00594f40
+;   core_zombie.cpp_rasterizePolygonCustom_FUN_0059a5d0
 ;   engine_3d.c_isVisiblePlane_FUN_00403970
-;   unkafter_zombie.cpp_FUN_0059a5d0
 ;
 ; *****************************************************************************
 
@@ -53,7 +53,7 @@ section .text
         ;   Label: LAB_0046b771
     PUSH EAX                            ; 0046b774
     CALL engine_3d.c_isVisiblePlane_FUN_00403970 ; 0046b775
-        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403970()
+        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403970(SClipPlane * plane)
     ADD ESP,0x4                         ; 0046b77a
     TEST EAX,EAX                        ; 0046b77d
     JZ 0x0046b76c                       ; 0046b77f
@@ -87,8 +87,8 @@ section .text
     PUSH EDX                            ; 0046b7c4
     PUSH EAX                            ; 0046b7c5
     PUSH 0x7bee34                       ; 0046b7c6 | DAT_007bee34
-    CALL unkafter_zombie.cpp_FUN_0059a5d0 ; 0046b7cb
-        ;   XREF to: 0059a5d0 (UNCONDITIONAL_CALL)  ; void unkafter_zombie.cpp_FUN_0059a5d0(SRenderVertex * vertex_buffer, int vertex_count, CustomScanlineFunc * scanline_renderer)
+    CALL core_zombie.cpp_rasterizePolygonCustom_FUN_0059a5d0 ; 0046b7cb
+        ;   XREF to: 0059a5d0 (UNCONDITIONAL_CALL)  ; void core_zombie.cpp_rasterizePolygonCustom_FUN_0059a5d0(SRenderVertex * vertex_buffer, int vertex_count, CustomScanlineFunc * scanline_renderer)
     ADD ESP,0xc                         ; 0046b7d0
     POP EBP                             ; 0046b7d3
     POP EDI                             ; 0046b7d4

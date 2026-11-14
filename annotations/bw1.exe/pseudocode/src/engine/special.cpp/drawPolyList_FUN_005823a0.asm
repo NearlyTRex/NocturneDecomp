@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_special_cpp_drawPolyList_FUN_005823a0(int param_1,int *param_2,int param_3,undefined4 param_4)
+; int __cdecl engine_special_cpp_drawPolyList_FUN_005823a0(SRenderVertex *vertex_buffer,SMRGLPrimitiveQuad **polygons,int polygon_count,int render_flags)
 ;
+; Parameters:
+; SRenderVertex *  Stack[0x4]:4   vertex_buffer
+; SMRGLPrimitiveQuad * * Stack[0x8]:4   polygons
+; int              Stack[0xc]:4   polygon_count
+; int              Stack[0x10]:4   render_flags
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -10,7 +15,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   engine_3d.c_FUN_00407820 at 004078a8
+;   engine_3d.c_dispatchMRGLToRenderer_FUN_00407820 at 004078a8
 ;   engine_3d.c_flushRenderQueue_FUN_004077b0 at 00407808
 ;   engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_00484280 at 004844d2
 ;

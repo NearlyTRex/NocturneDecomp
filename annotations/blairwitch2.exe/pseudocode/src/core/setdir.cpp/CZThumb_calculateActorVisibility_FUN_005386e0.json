@@ -2,21 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 256,
-    "complexity_score": 357,
+    "complexity_score": 335,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 102,
-    "suspect_count": 23,
+    "pseudocode_lines": 110,
+    "suspect_count": 21,
     "suspect_types": [
       "pointer_cast",
       "undefined_data",
-      "unknown_field",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 358
+    "total_lines": 366
   },
   "cross_references": [
     {
@@ -221,6 +219,14 @@
     },
     "pcode_op_count": 998
   },
+  "siblings": {
+    "nocedit.exe": {
+      "addr": "00574ba0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 104,
     "local_size": 84,
@@ -359,64 +365,8 @@
       "line": 27,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "(DAT_0060b280,(CVector3f *)&actor->field_0x20);",
+      "text": "(DAT_0060b280,&(actor->location).position);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(DAT_0060b280,(CVector3f *)&actor->field_0x20);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 28,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_34._0_4_ = *(uint *)&actor->field_0x30;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "local_34._0_4_ = *(uint *)&actor->field_0x30;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 29,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "local_34._8_4_ = *(uint *)&actor->field_0x38;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x38",
-      "severity": "mild",
-      "text": "local_34._8_4_ = *(uint *)&actor->field_0x38;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 30,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_34._4_4_ = *(uint *)&this_ptr->field_0x18;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "local_34._4_4_ = *(uint *)&this_ptr->field_0x18;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
@@ -428,55 +378,55 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 37,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_0060b280 + iVar8),bounding_box_vertices);",
+      "text": "((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).transformed_x + iVar7),",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 40,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "uVar3 = *(uint *)(iVar8 + 0x10 + *(int *)DAT_0060b280);",
+      "text": "uVar3 = *(uint *)((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).screen_x + iVar7);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 54,
       "match": "(SMRGLHeaderPrimitive **)((int)aiStack_4c",
       "severity": "moderate",
-      "text": "*(SMRGLHeaderPrimitive **)((int)aiStack_4c + iVar8) = primitives;",
+      "text": "*(SMRGLHeaderPrimitive **)((int)aiStack_4c + iVar7) = primitives;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 63,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "piVar7 = (int *)(*(int *)DAT_0060b280 + iVar8);",
+      "text": "((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).transformed_x + iVar7);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 81,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "if ((*(byte *)(*(int *)DAT_0060b280 + iVar8 + 0x13) & 0x80) != 0) {",
+      "text": "if ((*(byte *)((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).screen_x + iVar7 + 3)",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 77,
+      "line": 84,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "if (0 < *(int *)(*(int *)DAT_0060b280 + iVar8 + 8)) {",
+      "text": "if (0 < *(int *)((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).transformed_z +",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 85,
+      "line": 93,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046b880(DAT_0060b280,0);",
@@ -484,7 +434,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 95,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046b880(DAT_0060b280,1);",
@@ -492,7 +442,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 89,
+      "line": 97,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,(uint)((local_24 & 0x80000000) != 0));",
@@ -500,15 +450,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 103,
       "match": "(uint *)((int)aiStack_4c",
       "severity": "moderate",
-      "text": "puVar2 = (uint *)((int)aiStack_4c + iVar9);",
+      "text": "puVar2 = (uint *)((int)aiStack_4c + iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 106,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,(SMRGLPrimitivePoly *)*puVar2);",
@@ -516,7 +466,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 102,
+      "line": 110,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920(DAT_0060b280,1);",
@@ -524,11 +474,51 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 103,
+      "line": 111,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046b880(DAT_0060b280,0);",
       "type": "undefined_data"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 37,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).transformed_x + iVar7),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 40,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "uVar3 = *(uint *)((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).screen_x + iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 63,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).transformed_x + iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 81,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "if ((*(byte *)((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).screen_x + iVar7 + 3)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 84,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "if (0 < *(int *)((int)&(DAT_0060b280->vertex_buffer_ptr->projected_vertex).transformed_z +",
+      "type": "pointer_cast"
     }
   ]
 }

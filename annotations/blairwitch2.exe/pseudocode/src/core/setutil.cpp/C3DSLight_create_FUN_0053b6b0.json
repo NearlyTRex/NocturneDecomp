@@ -2,28 +2,26 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 397,
+    "complexity_score": 128,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 67,
-    "suspect_count": 30,
+    "pseudocode_lines": 68,
+    "suspect_count": 4,
     "suspect_types": [
-      "concat_reconstruction",
-      "param_count_too_few",
-      "unnamed_field",
-      "unnamed_param",
+      "shadow_pointer_walk",
+      "unrolled_memcpy",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 199
+    "total_lines": 200
   },
   "cross_references": [
     {
       "addr": "0052d980",
       "from_addr": "0052dbb2",
-      "name": "core_set.cpp_FUN_0052d980",
+      "name": "core_set.cpp_CDemonSet_initScene_FUN_0052d980",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -37,18 +35,18 @@
     ],
     "convention": "__cdecl",
     "name": "core_setutil.cpp_C3DSLight_create_FUN_0053b6b0",
-    "signature": "undefined8 __cdecl core_setutil_cpp_C3DSLight_create_FUN_0053b6b0(int param_1)"
+    "signature": "CDemonLight * __cdecl core_setutil_cpp_C3DSLight_create_FUN_0053b6b0(C3DSLight *this_ptr)"
   },
   "function_calls": [
     {
       "addr": "00447660",
       "is_variadic": false,
-      "name": "core_dfilter.cpp_FUN_00447660"
+      "name": "core_dfilter.cpp_CFilterCache_getFilter_FUN_00447660"
     },
     {
       "addr": "00449280",
       "is_variadic": false,
-      "name": "core_dirmat.cpp_FUN_00449280"
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280"
     },
     {
       "addr": "00449c70",
@@ -68,7 +66,7 @@
     {
       "addr": "005b8be2",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b8be2"
+      "name": "crt_memory.c_operator_new_FUN_005b8be2"
     }
   ],
   "globals": [
@@ -109,7 +107,7 @@
       {
         "call_addr": "0052dbb2",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_0052d980",
+        "caller": "core_set.cpp_CDemonSet_initScene_FUN_0052d980",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -118,11 +116,11 @@
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.085714285714285,
@@ -152,11 +150,37 @@
     },
     "pcode_op_count": 429
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0055cf80",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00542940",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00586a90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9763
+    },
+    "nocturne.exe": {
+      "addr": "005151f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9808
+    }
+  },
   "stack_frame": {
-    "frame_size": 24,
+    "frame_size": 28,
     "local_size": 24,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -165,6 +189,13 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "C3DSLight *"
       }
     ]
   },
@@ -178,239 +209,28 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "ulonglong __cdecl core_setutil_cpp_C3DSLight_create_FUN_0053b6b0(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(this_ptr,*(int *)(param_1 + 0x1808),*(int *)(param_1 + 0x180c));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(this_ptr,*(int *)(param_1 + 0x1808),*(int *)(param_1 + 0x180c));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x11ec) < 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x1cb8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x1cb8 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x1cb8 = *(uint *)(param_1 + 0x11f0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x1cb8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x1cb8 = *(uint *)(param_1 + 0x11f0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((uint *)&this_ptr_00->field_0x4 != (uint *)(param_1 + 0x104)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "if ((uint *)&this_ptr_00->field_0x4 != (uint *)(param_1 + 0x104)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x4 = *(uint *)(param_1 + 0x104);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x4 = *(uint *)(param_1 + 0x104);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x8 = *(uint *)(param_1 + 0x108);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x8 = *(uint *)(param_1 + 0x108);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0xc = *(uint *)(param_1 + 0x10c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0xc = *(uint *)(param_1 + 0x10c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CMatrix3x3f *)&this_ptr_00->field_0x10,(CVector3f *)(param_1 + 0x110));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "((CMatrix3x3f *)&this_ptr_00->field_0x10,(CVector3f *)(param_1 + 0x110));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x38 = *(uint *)(param_1 + 0x11c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x38",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x38 = *(uint *)(param_1 + 0x11c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = *(int *)(param_1 + 0x11ec);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar7 = param_1 + 0x11f4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar4 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(g_CFilterCachePtr,iVar7,*(uint *)(param_1 + 0x11f0));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = *(int *)(param_1 + 0x11ec);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pcVar6 = (char *)(param_1 + 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 60,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "pcVar8 = &this_ptr_00->field_0x40;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 61,
+      "line": 60,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
     },
     {
-      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 70,
-      "match": "CONCAT44",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 38,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "return CONCAT44(iVar3,this_ptr_00);",
-      "type": "concat_reconstruction"
+      "text": "(pUVar3->f).x = (this_ptr->pos).x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 55,
+      "match": "pCVar4 = (T *)pCVar4->ARRAY",
+      "severity": "moderate",
+      "text": "pCVar4 = (C3DSLight *)pCVar4->name;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

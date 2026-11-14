@@ -246,7 +246,7 @@ section .text
     PUSH ESI                            ; 0043741f
     FSTP float ptr [ESP + 0x20]         ; 00437420
     CALL cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004378b0 ; 00437424
-        ;   XREF to: 004378b0 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004378b0()
+        ;   XREF to: 004378b0 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004378b0(int x, int y, float blend_factor, int palette_index)
     ADD ESP,0x10                        ; 00437429
     MOV EDX,dword ptr [EBP + 0x24]      ; 0043742c
     PUSH EDX                            ; 0043742f
@@ -255,7 +255,7 @@ section .text
     PUSH EAX                            ; 00437437
     PUSH ESI                            ; 00437438
     CALL cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004378b0 ; 00437439
-        ;   XREF to: 004378b0 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004378b0()
+        ;   XREF to: 004378b0 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004378b0(int x, int y, float blend_factor, int palette_index)
     ADD ESP,0x10                        ; 0043743e
     JMP 0x004373bd                      ; 00437441
         ;   XREF to: 004373bd (UNCONDITIONAL_JUMP)  ; LAB_004373bd
@@ -309,7 +309,7 @@ section .text
     PUSH ESI                            ; 004374b7
     FSTP float ptr [ESP + 0x28]         ; 004374b8
     CALL cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004378b0 ; 004374bc
-        ;   XREF to: 004378b0 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004378b0()
+        ;   XREF to: 004378b0 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004378b0(int x, int y, float blend_factor, int palette_index)
     ADD ESP,0x10                        ; 004374c1
     MOV EDX,dword ptr [EBP + 0x24]      ; 004374c4
     PUSH EDX                            ; 004374c7
@@ -319,7 +319,7 @@ section .text
     ADD EAX,ESI                         ; 004374d1
     PUSH EAX                            ; 004374d3
     CALL cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004378b0 ; 004374d4
-        ;   XREF to: 004378b0 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004378b0()
+        ;   XREF to: 004378b0 (UNCONDITIONAL_CALL)  ; void cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004378b0(int x, int y, float blend_factor, int palette_index)
     ADD ESP,0x10                        ; 004374d9
     JMP 0x0043745a                      ; 004374dc
         ;   XREF to: 0043745a (UNCONDITIONAL_JUMP)  ; LAB_0043745a

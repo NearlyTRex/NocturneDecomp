@@ -22,7 +22,7 @@ void __cdecl core_skeleton_cpp_CSkeleton_load_FUN_00540a10(CSkeleton *this_ptr,c
     core_main_c_FUN_004e4500("CSkeleton::load - Can't open %s",filename);
   }
   core_skeleton_cpp_CSkeleton_loadStream_FUN_00540aa0(this_ptr,file_handle);
-  pcVar2 = &this_ptr->field_0x1d1a8;
+  pcVar2 = this_ptr->loaded_filename;
   do {
     cVar1 = *filename;
     *pcVar2 = cVar1;

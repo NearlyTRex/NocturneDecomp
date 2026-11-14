@@ -11,7 +11,7 @@ void core_wateract_cpp_FUN_00578ff0(void)
 {
   CLava *this_ptr;
   
-  this_ptr = (CLava *)FUN_005a3cb2(0x2b23c);
+  this_ptr = (CLava *)operator_new(0x2b23c);
   if (this_ptr == (CLava *)0x0) {
     return;
   }

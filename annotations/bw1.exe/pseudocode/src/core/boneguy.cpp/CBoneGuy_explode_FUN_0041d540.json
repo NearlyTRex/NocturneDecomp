@@ -1,0 +1,433 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 179,
+    "complexity_score": 262,
+    "cross_reference_count": 2,
+    "function_call_count": 8,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 92,
+    "suspect_count": 13,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk",
+      "stack_alignment_array",
+      "stack_ref",
+      "unrolled_memcpy",
+      "warning_overlapping_globals",
+      "warning_type_propagation"
+    ],
+    "total_lines": 271
+  },
+  "cross_references": [
+    {
+      "addr": "0041d330",
+      "from_addr": "0041d36b",
+      "name": "core_boneguy.cpp_CBoneGuy_processDamage_FUN_0041d330",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0041bb40",
+      "from_addr": "0041bb98",
+      "name": "core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0041d540",
+    "address_range": [
+      [
+        "0041d540",
+        "0041d75c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_boneguy.cpp_CBoneGuy_explode_FUN_0041d540",
+    "signature": "void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041d540(CBoneGuy *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cc00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00"
+    },
+    {
+      "addr": "00419b90",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90"
+    },
+    {
+      "addr": "00418940",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_createBodyPart_FUN_00418940"
+    },
+    {
+      "addr": "00431210",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00431210"
+    },
+    {
+      "addr": "004328c0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_004328c0"
+    },
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "00569eb0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0"
+    },
+    {
+      "addr": "005b7ed0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_FUN_005b7ed0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d4908",
+      "name": "s_core_boneguy_cpp_005d4908",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d491c",
+      "name": "s_CBoneGuy_explode_Not_eno_005d491c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d4946",
+      "name": "s_boneguy_fallapart_wav_005d4946",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0041bb98",
+        "call_type": "direct",
+        "caller": "core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0041d36b",
+        "call_type": "direct",
+        "caller": "core_boneguy.cpp_CBoneGuy_processDamage_FUN_0041d330",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.685897435897436,
+    "instruction_count": 156,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 10,
+      "CALLIND": 1,
+      "CBRANCH": 5,
+      "COPY": 177,
+      "FLOAT2FLOAT": 6,
+      "INT_ADD": 98,
+      "INT_AND": 61,
+      "INT_CARRY": 22,
+      "INT_EQUAL": 61,
+      "INT_LESS": 5,
+      "INT_MULT": 9,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 23,
+      "INT_SEXT": 3,
+      "INT_SLESS": 30,
+      "INT_SUB": 52,
+      "INT_XOR": 1,
+      "INT_ZEXT": 8,
+      "LOAD": 46,
+      "POPCOUNT": 30,
+      "RETURN": 1,
+      "STORE": 68,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 731
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0041a0c0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00419550",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9068
+    },
+    "nocedit.exe": {
+      "addr": "0041d680",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0041a0f0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 80,
+    "local_size": 76,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBoneGuy *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0041d6dd",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 18,
+      "match": "afStackY_1824",
+      "severity": "moderate",
+      "text": "float afStackY_1824 [1520];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 81,
+      "match": "(uint *)((int)local_1c",
+      "severity": "moderate",
+      "text": "puVar7 = (uint *)((int)local_1c + (uint)bVar9 * -8 + 0xc314);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 84,
+      "match": "&stack0xffffffbc",
+      "severity": "moderate",
+      "text": "*puVar7 = *(uint *)(&stack0xffffffbc + (uint)bVar9 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 85,
+      "match": "&stack0xffffffc0",
+      "severity": "moderate",
+      "text": "*puVar8 = *(uint *)(&stack0xffffffc0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 88,
+      "match": "&stack0xffffffc0",
+      "severity": "moderate",
+      "text": "((int)(&stack0xffffffc0 + (uint)bVar9 * -8 + (uint)bVar9 * -8) +",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Pointer value `local_1c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 81,
+      "match": "(int)local_1c",
+      "severity": "moderate",
+      "text": "puVar7 = (uint *)((int)local_1c + (uint)bVar9 * -8 + 0xc314);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(&stack0xffffffc0 + (uint)bVar9 * -8 + (uint)bVar9 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 88,
+      "match": "(int)(&stack0xffffffc0 + (uint)bVar9 * -8 + (uint)bVar9 * -8)",
+      "severity": "moderate",
+      "text": "((int)(&stack0xffffffc0 + (uint)bVar9 * -8 + (uint)bVar9 * -8) +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 67,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pSVar3->pos).x = (pCVar5->position).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 73,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar6->x = (pUVar1->vec).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` was initialized to the address of an array element's subfield (`pCVar6 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pCVar6)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pCVar6->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 77,
+      "match": "pCVar6 = pCVar6 + N",
+      "severity": "moderate",
+      "text": "pCVar6 = pCVar6 + 6;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk (two-step form) \u2014 `local_1c` is advanced into scratch `pCVar4`, then rebound via a later `local_1c = pCVar4;`. Functionally identical to the single-line self-update; replace `local_1c->some_field[0]` reads with direct indexing on the original pointer and drop both the advance line and the rebind.",
+      "line": 79,
+      "match": "pCVar4 = (T *)((local_1c->FIELD).SUBFIELD...ARRAY + CONST); ...; local_1c = pCVar4",
+      "severity": "moderate",
+      "text": "pCVar4 = (CBoneGuy *)((local_1c->base).base.base.orient_matrix.m + 1);",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

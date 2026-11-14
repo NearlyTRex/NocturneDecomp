@@ -21,10 +21,10 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawLineBresenham_FUN_00466960(CD
   int iStack_20;
   
   iStack_20 = 1;
-  x = x1 - *(int *)(this_ptr + 8);
-  iVar1 = y1 - *(int *)(this_ptr + 0xc);
-  iVar4 = y2 - *(int *)(this_ptr + 0xc);
-  iVar2 = x2 - *(int *)(this_ptr + 8);
+  x = x1 - this_ptr->x;
+  iVar1 = y1 - this_ptr->y;
+  iVar4 = y2 - this_ptr->y;
+  iVar2 = x2 - this_ptr->x;
   y = iVar1;
   iVar3 = iVar2;
   if (iVar4 < iVar1) {

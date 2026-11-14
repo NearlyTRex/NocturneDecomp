@@ -12,18 +12,18 @@
 ; undefined        Stack[-0x114]:1  local_114
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[23]:
-;   core_bmppuzzl.cpp_FUN_00412320 at 00412351
-;   core_fldnotes.cpp_FUN_004a8680 at 004a86e2
-;   core_fldnotes.cpp_FUN_004a87a0 at 004a881a
-;   core_fldnotes.cpp_FUN_004a8a00 at 004a8b02
-;   core_fldnotes.cpp_FUN_004a9f30 at 004a9f4b
-;   core_fldnotes.cpp_FUN_004abe00 at 004ac3b3
-;   core_game.cpp_CGame_rollCredits_FUN_004c02a0 at 004c02fb
-;   core_game.cpp_FUN_004b7ee0 at 004b7f45
-;   core_game.cpp_FUN_004bfb50 at 004bfb81
-;   core_game.cpp_FUN_004bfee0 at 004bff4b
-;   ... and 13 more
+; XREF[24]:
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_addButton_FUN_00412320 at 00412351
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_load_FUN_00411d70 at 00411dca
+;   core_bmppuzzl.cpp_CChemPuzzle_addButton_FUN_00413cd0 at 00413d00
+;   core_bmppuzzl.cpp_CChemPuzzle_load_FUN_004133c0 at 004134ea
+;   core_flashlit.cpp_FUN_004a7cf0 at 004a7d52
+;   core_flashlit.cpp_FUN_004a7d70 at 004a7e7e
+;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004abe00 at 004ac3b3
+;   core_fldnotes.cpp_SNotesMap_load_FUN_004a9f30 at 004a9f4b
+;   core_fldnotes.cpp_SPageResourceBitmap_ctorFromFile_FUN_004a8680 at 004a86e2
+;   core_fldnotes.cpp_SPageResourceTwanaCharacter_ctor_FUN_004a87a0 at 004a881a
+;   ... and 14 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_raw_005b5feb
@@ -48,8 +48,8 @@
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fgetc_FUN_005a32b0
 ;   crt_stdio.c_fread_FUN_005a3890
-;   crt_unknown.c_FUN_005a28c0
-;   engine_alphabit.cpp_FUN_0040d320
+;   crt_unknown.c_sprintf_FUN_005a28c0
+;   engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d320
 ;   engine_dosio.cpp_FUN_004659c0
 ;
 ; *****************************************************************************
@@ -68,16 +68,16 @@ section .text
     MOV ECX,dword ptr [ESP + 0x124]     ; 0040d479
     PUSH ECX                            ; 0040d480
     PUSH EBX                            ; 0040d481
-    CALL engine_alphabit.cpp_FUN_0040d320 ; 0040d482
-        ;   XREF to: 0040d320 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_FUN_0040d320()
+    CALL engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d320 ; 0040d482
+        ;   XREF to: 0040d320 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d320(CAlphaBitmap * this_ptr, int param_2, int param_3)
     ADD ESP,0xc                         ; 0040d487
     MOV ESI,dword ptr [ESP + 0x11c]     ; 0040d48a
     PUSH ESI                            ; 0040d491
     PUSH 0x5b5feb                       ; 0040d492 | = "%s.raw"
     LEA EAX,[ESP + 0x8]                 ; 0040d497
     PUSH EAX                            ; 0040d49b
-    CALL crt_unknown.c_FUN_005a28c0     ; 0040d49c
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0040d49c
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0040d4a1
     PUSH 0x5b5ff2                       ; 0040d4a4 | DAT_005b5ff2
     LEA EAX,[ESP + 0x4]                 ; 0040d4a9
@@ -100,7 +100,7 @@ section .text
     MOV ESI,dword ptr [EBX]             ; 0040d4e2
     PUSH ESI                            ; 0040d4e4
     CALL crt_stdio.c_fread_FUN_005a3890 ; 0040d4e5
-        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005a3890()
+        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005a3890(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0040d4ea
     MOV EDI,dword ptr [ESP + 0x100]     ; 0040d4ed
     PUSH EDI                            ; 0040d4f4
@@ -112,8 +112,8 @@ section .text
     PUSH 0x5b6033                       ; 0040d505 | = "%s.act"
     LEA EAX,[ESP + 0x8]                 ; 0040d50a
     PUSH EAX                            ; 0040d50e
-    CALL crt_unknown.c_FUN_005a28c0     ; 0040d50f
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0040d50f
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0040d514
     PUSH 0x5b603a                       ; 0040d517 | DAT_005b603a
     LEA EAX,[ESP + 0x4]                 ; 0040d51c
@@ -132,19 +132,19 @@ section .text
         ;   Label: LAB_0040d53f
     PUSH ECX                            ; 0040d546
     CALL crt_stdio.c_fgetc_FUN_005a32b0 ; 0040d547
-        ;   XREF to: 005a32b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005a32b0()
+        ;   XREF to: 005a32b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005a32b0(_FILE * file)
     ADD ESP,0x4                         ; 0040d54c
     MOV EBP,dword ptr [ESP + 0x100]     ; 0040d54f
     PUSH EBP                            ; 0040d556
     MOV EDI,EAX                         ; 0040d557
     CALL crt_stdio.c_fgetc_FUN_005a32b0 ; 0040d559
-        ;   XREF to: 005a32b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005a32b0()
+        ;   XREF to: 005a32b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005a32b0(_FILE * file)
     ADD ESP,0x4                         ; 0040d55e
     MOV EBP,EAX                         ; 0040d561
     MOV EAX,dword ptr [ESP + 0x100]     ; 0040d563
     PUSH EAX                            ; 0040d56a
     CALL crt_stdio.c_fgetc_FUN_005a32b0 ; 0040d56b
-        ;   XREF to: 005a32b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005a32b0()
+        ;   XREF to: 005a32b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005a32b0(_FILE * file)
     MOV EDX,dword ptr [0x005fba20]      ; 0040d570 | DAT_005fba20
     ADD ESP,0x4                         ; 0040d576
     CMP EDX,0x20                        ; 0040d579
@@ -176,8 +176,8 @@ section .text
     PUSH 0x5b607b                       ; 0040d5ca | = "%s.opa"
     LEA EAX,[ESP + 0x8]                 ; 0040d5cf
     PUSH EAX                            ; 0040d5d3
-    CALL crt_unknown.c_FUN_005a28c0     ; 0040d5d4
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0040d5d4
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0040d5d9
     PUSH 0x5b6082                       ; 0040d5dc | DAT_005b6082
     LEA EAX,[ESP + 0x4]                 ; 0040d5e1
@@ -257,7 +257,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x4]       ; 0040d6b4
     PUSH ECX                            ; 0040d6b7
     CALL crt_stdio.c_fread_FUN_005a3890 ; 0040d6b8
-        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005a3890()
+        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005a3890(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0040d6bd
     PUSH EDI                            ; 0040d6c0
     CALL crt_stdio.c_fclose_FUN_005a3a90 ; 0040d6c1

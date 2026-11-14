@@ -7,7 +7,7 @@
 ; CCrossbow *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_crossbow.cpp_FUN_00449920 at 0044997d
+;   core_crossbow.cpp_CCrossbow_renderOpaque_FUN_00449920 at 0044997d
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d73aa

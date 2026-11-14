@@ -2,21 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 9,
+    "complexity_score": 51,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 9,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 36
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 11,
+    "suspect_count": 3,
+    "suspect_types": [
+      "bitcast_double_pair",
+      "unaffected_reg"
+    ],
+    "total_lines": 38
   },
   "cross_references": [
     {
       "addr": "00408cd0",
       "from_addr": "00408cea",
-      "name": "core_actor.cpp_FUN_00408cd0",
+      "name": "core_actor.cpp_CDemonActor_playAmbientSoundWithDelay_FUN_00408cd0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -36,17 +39,17 @@
     {
       "addr": "0055f020",
       "is_variadic": false,
-      "name": "core_sound.cpp_FUN_0055f020"
-    },
-    {
-      "addr": "00555fd0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00555fd0"
+      "name": "core_sound.cpp_playSfxInternal_FUN_0055f020"
     },
     {
       "addr": "00556050",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00556050"
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_00556050"
+    },
+    {
+      "addr": "00555fd0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_00555fd0"
     },
     {
       "addr": "00555ee0",
@@ -61,7 +64,7 @@
       {
         "call_addr": "00408cea",
         "call_type": "direct",
-        "caller": "core_actor.cpp_FUN_00408cd0",
+        "caller": "core_actor.cpp_CDemonActor_playAmbientSoundWithDelay_FUN_00408cd0",
         "estimated_params": 5,
         "instructions_analyzed": 10,
         "method": "push_count",
@@ -95,6 +98,32 @@
       "STORE": 13
     },
     "pcode_op_count": 77
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0055af30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0057d980",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005b3b30",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.913
+    },
+    "nocturne.exe": {
+      "addr": "0052eb50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.913
+    }
   },
   "stack_frame": {
     "frame_size": 24,
@@ -140,5 +169,30 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 6,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "uint unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "sound_sndmain_cpp_setNextSfxDelay_FUN_00555ee0(__BITCAST_DOUBLE(CONCAT44(unaff_EBX,delay)));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 9,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "sound_sndmain_cpp_setNextSfxDelay_FUN_00555ee0(__BITCAST_DOUBLE(CONCAT44(unaff_EBX,delay)));",
+      "type": "bitcast_double_pair"
+    }
+  ]
 }

@@ -114,12 +114,15 @@ int CBitFont::getMaxCharHeight() const {
     return max_char_height_;
 }
 
+int CBitFont::getWinFontTextWidth(CFont &font, std::string_view text) {
+    return widestLine(text, [&font](std::string_view line) { return font.getStringWidth(line); });
+}
+
 // Text an OS font draws isn't scaled.
 // nocedit 0x004cfe80
 int CBitFont::getTextWidth(std::string_view text, int scale) const {
     if (win_font_helper_ != nullptr) {
-        return widestLine(
-            text, [this](std::string_view line) { return win_font_helper_->getStringWidth(line); });
+        return getWinFontTextWidth(*win_font_helper_, text);
     }
     return scale * widestLine(text, [this](std::string_view line) {
                int width = 0;

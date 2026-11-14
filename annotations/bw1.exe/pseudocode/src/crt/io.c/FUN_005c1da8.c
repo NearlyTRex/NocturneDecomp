@@ -15,7 +15,7 @@ int __cdecl FUN_005c1da8(char *filename,WatcomStat *file_info)
   char *pcVar4;
   char *pcVar5;
   HANDLE hFindFile;
-  uint uVar6;
+  time_t tVar6;
   _WIN32_FIND_DATAA _Stack_368;
   char cStack_228;
   char cStack_227;
@@ -29,12 +29,12 @@ int __cdecl FUN_005c1da8(char *filename,WatcomStat *file_info)
   
   bVar1 = false;
   if ((*filename == '\0') ||
-     (iVar3 = unkafter_zombie_cpp_FUN_005cc170(filename,&DAT_005fabc8), iVar3 != 0)) {
+     (iVar3 = FUN_005cc170(filename,&DAT_005fabc8), iVar3 != 0)) {
     setErrno(1);
     iVar3 = -1;
   }
   else {
-    FUN_005c91d0(abStack_124,0x104);
+    FUN_005c91d0((char *)abStack_124,0x104);
     pcVar4 = _fullpath(&cStack_228,filename,0x104);
     if ((pcVar4 != (char *)0x0) &&
        ((((((&DAT_00626114)[(byte)(cStack_228 + 1)] & 0xc0) != 0 && (cStack_227 == ':')) &&
@@ -51,7 +51,7 @@ int __cdecl FUN_005c1da8(char *filename,WatcomStat *file_info)
       if (iVar3 != 0) {
         return -1;
       }
-      FUN_005c26c0(abStack_124);
+      FUN_005c26c0((char *)abStack_124);
       memset(&_Stack_368,0,0x13e);
       _Stack_368.dwFileAttributes = 0x10;
     }
@@ -68,42 +68,42 @@ int __cdecl FUN_005c1da8(char *filename,WatcomStat *file_info)
       abStack_124[0] = *filename;
     }
     iVar3 = tolower((uint)abStack_124[0]);
-    *(int *)file_info = iVar3 + -0x61;
-    iVar3 = *(int *)file_info;
-    *(int *)file_info = iVar3 + -1;
-    *(int *)(file_info + 0x12) = iVar3 + -1;
-    *(DWORD *)(file_info + 0x16) = _Stack_368.nFileSizeLow;
+    file_info->_st_dev = iVar3 + -0x61;
+    iVar3 = file_info->_st_dev + -1;
+    file_info->_st_dev = iVar3;
+    file_info->_st_rdev = iVar3;
+    file_info->_st_size = _Stack_368.nFileSizeLow;
     uVar2 = FUN_005c7f80(_Stack_368.dwFileAttributes,_Stack_368.cFileName);
-    *(ushort *)(file_info + 8) = uVar2;
-    unkafter_zombie_cpp_FUN_005cc1c0(&_Stack_368.ftLastWriteTime,asStack_20,asStack_14);
-    uVar6 = unkafter_zombie_cpp_FUN_005cc2b0(asStack_20[0],asStack_14[0]);
-    *(uint *)(file_info + 0x1e) = uVar6;
-    unkafter_zombie_cpp_FUN_005cc1c0(&_Stack_368.ftCreationTime,&uStack_18,&uStack_1c);
+    file_info->_st_mode = uVar2;
+    FUN_005cc1c0(&_Stack_368.ftLastWriteTime,asStack_20,asStack_14);
+    tVar6 = FUN_005cc2b0(asStack_20[0],asStack_14[0]);
+    file_info->_st_mtime = tVar6;
+    FUN_005cc1c0(&_Stack_368.ftCreationTime,&uStack_18,&uStack_1c);
     if (((short)uStack_18 == asStack_20[0]) && ((short)uStack_1c == asStack_14[0])) {
-      uVar6 = *(uint *)(file_info + 0x1e);
+      tVar6 = file_info->_st_mtime;
     }
     else {
-      uVar6 = unkafter_zombie_cpp_FUN_005cc2b0(uStack_18 & 0xffff,uStack_1c & 0xffff);
+      tVar6 = FUN_005cc2b0(uStack_18 & 0xffff,uStack_1c & 0xffff);
     }
-    *(uint *)(file_info + 0x22) = uVar6;
-    unkafter_zombie_cpp_FUN_005cc1c0(&_Stack_368.ftLastAccessTime,&uStack_18,&uStack_1c);
+    file_info->_st_ctime = tVar6;
+    FUN_005cc1c0(&_Stack_368.ftLastAccessTime,&uStack_18,&uStack_1c);
     if (((short)uStack_18 == asStack_20[0]) && ((short)uStack_1c == asStack_14[0])) {
-      uVar6 = *(uint *)(file_info + 0x1e);
+      tVar6 = file_info->_st_mtime;
     }
     else {
-      uVar6 = unkafter_zombie_cpp_FUN_005cc2b0(uStack_18 & 0xffff,uStack_1c & 0xffff);
+      tVar6 = FUN_005cc2b0(uStack_18 & 0xffff,uStack_1c & 0xffff);
     }
-    *(uint *)(file_info + 0x1a) = uVar6;
-    *(ushort *)(file_info + 0x10) = 0;
-    *(ushort *)(file_info + 10) = 1;
-    *(int *)(file_info + 0xc) = (int)*(short *)(file_info + 0x10);
-    *(int *)(file_info + 4) = (int)*(short *)(file_info + 0x10);
-    *(uint *)(file_info + 0x2e) = 0;
-    *(DWORD *)(file_info + 0x2a) = _Stack_368.dwFileAttributes;
-    *(uint *)(file_info + 0x32) = 0;
-    *(ushort *)(file_info + 0x36) = 0;
-    file_info[0x38] = (WatcomStat)0x0;
-    _strncpy((char *)(file_info + 0x39),_Stack_368.cFileName,0xd);
+    file_info->_st_atime = tVar6;
+    file_info->_st_gid = 0;
+    file_info->_st_nlink = 1;
+    file_info->_st_uid = (int)file_info->_st_gid;
+    file_info->_st_ino = (int)file_info->_st_gid;
+    file_info->_st_archivedID = 0;
+    file_info->_st_attr = _Stack_368.dwFileAttributes;
+    file_info->_st_updatedID = 0;
+    file_info->_st_inheritedRightsMask = 0;
+    file_info->_st_originatingNameSpace = '\0';
+    _strncpy((char *)file_info->_st_name,_Stack_368.cFileName,0xd);
     iVar3 = 0;
   }
   return iVar3;

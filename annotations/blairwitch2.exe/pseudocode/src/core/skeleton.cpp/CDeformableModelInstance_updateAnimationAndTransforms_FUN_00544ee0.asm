@@ -8,15 +8,15 @@
 ;
 ; XREF[10]:
 ;   core_cloth.cpp_FUN_005ae680 at 005af096
-;   core_mimic.cpp_FUN_004f04f0 at 004f076d
-;   core_moloch.cpp_FUN_00501530 at 00501aff
+;   core_mimic.cpp_CMimic_setup_FUN_004f04f0 at 004f076d
+;   core_moloch.cpp_CMoloch_process_FUN_00501530 at 00501aff
 ;   core_morph.cpp_CMorphModel_animateFromDeformableModel_FUN_005b6510 at 005b6517
-;   core_passngr.cpp_FUN_005115e0 at 00511684
+;   core_passngr.cpp_CPassenger_setup_FUN_005115e0 at 00511684
 ;   core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005474b0 at 005475da
-;   core_succubus.cpp_FUN_0056f3a0 at 0056f695
-;   core_succubus.cpp_FUN_0056f6d0 at 0056f980
-;   core_vampboss.cpp_FUN_00581660 at 0058180e
-;   core_vampboss.cpp_FUN_00581910 at 00581971
+;   core_succubus.cpp_CSuccubus_process_FUN_0056f6d0 at 0056f980
+;   core_succubus.cpp_CSuccubus_setup_FUN_0056f3a0 at 0056f695
+;   core_vampboss.cpp_CVampireBoss_process_FUN_00581910 at 00581971
+;   core_vampboss.cpp_CVampireBoss_setup_FUN_00581660 at 0058180e
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00546ae0

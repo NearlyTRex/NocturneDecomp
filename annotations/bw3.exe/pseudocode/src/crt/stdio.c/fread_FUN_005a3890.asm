@@ -1,14 +1,19 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl crt_stdio_c_fread_FUN_005a3890(char *param_1,uint param_2,int param_3,int *param_4)
+; SIZE_T __cdecl crt_stdio_c_fread_FUN_005a3890(void *buffer,SIZE_T size,SIZE_T count,_FILE *file)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   buffer
+; SIZE_T           Stack[0x8]:4   size
+; SIZE_T           Stack[0xc]:4   count
+; _FILE *          Stack[0x10]:4   file
 ;
 ; XREF[26]:
 ;   cockpit_ckptutil.c_FUN_004367e0 at 00436850
-;   cockpit_pkbitmap.cpp_FUN_0050ff60 at 0050ff82
-;   cockpit_pkbitmap.cpp_FUN_005102b0 at 005102c9
-;   cockpit_pkbmpset.cpp_FUN_0051080e at 0051096e
+;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0050ff60 at 0050ff82
+;   cockpit_pkbitmap.cpp_parsePBGFile_FUN_005102b0 at 005102c9
+;   cockpit_pkbmpset.cpp_FUN_00510810 at 0051096e
 ;   cockpit_pkbmpset.cpp_FUN_00510a90 at 00510be3
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044c130 at 0044c1ef
 ;   core_dcube.cpp_CDemonCubeTriangle_readFromFile_FUN_00451fb0 at 00451fc8

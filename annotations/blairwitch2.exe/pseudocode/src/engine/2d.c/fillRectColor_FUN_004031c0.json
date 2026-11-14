@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 70,
     "complexity_score": 43,
-    "cross_reference_count": 17,
+    "cross_reference_count": 18,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "mild",
@@ -16,15 +16,21 @@
   },
   "cross_references": [
     {
+      "addr": "004a16b0",
+      "from_addr": "004a16fb",
+      "name": "core_flashlit.cpp_FUN_004a16b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004a5700",
       "from_addr": "004a5a35",
-      "name": "core_fldnotes.cpp_FUN_004a5700",
+      "name": "core_fldnotes.cpp_CFieldNotes_draw_FUN_004a5700",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004b32c0",
       "from_addr": "004b35f8",
-      "name": "core_game.cpp_FUN_004b32c0",
+      "name": "core_game.cpp_CGame_renderOverlay_FUN_004b32c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -48,7 +54,13 @@
     {
       "addr": "004e1600",
       "from_addr": "004e163a",
-      "name": "core_level.cpp_FUN_004e1600",
+      "name": "core_level.cpp_CLevelLoader_update_FUN_004e1600",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004eba50",
+      "from_addr": "004ebbc5",
+      "name": "core_menu.cpp_FUN_004eba50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -66,13 +78,19 @@
     {
       "addr": "005218a0",
       "from_addr": "0052194c",
-      "name": "core_script.cpp_FUN_005218a0",
+      "name": "core_script.cpp_CScript_renderSubtitles_FUN_005218a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00403250",
       "from_addr": "0040326c",
       "name": "engine_2d.c_fillRectWithBorder_FUN_00403250",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004831d0",
+      "from_addr": "00483719",
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -100,21 +118,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004831d0",
-      "from_addr": "00483719",
-      "name": "shape_edittool.cpp_FUN_004831d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00483ea0",
       "from_addr": "004840d7",
       "name": "shape_edittool.cpp_FUN_00483ea0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004a16b0",
-      "from_addr": "004a16fb",
-      "name": "unkaddr_004a1200.cpp_FUN_004a16b0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -170,7 +176,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 22,
+    "call_site_count": 23,
     "call_sites": [
       {
         "call_addr": "0047efab",
@@ -208,7 +214,7 @@
       {
         "call_addr": "00483719",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_004831d0",
+        "caller": "shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -219,7 +225,7 @@
       {
         "call_addr": "004e163a",
         "call_type": "direct",
-        "caller": "core_level.cpp_FUN_004e1600",
+        "caller": "core_level.cpp_CLevelLoader_update_FUN_004e1600",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -230,7 +236,7 @@
       {
         "call_addr": "004e1651",
         "call_type": "direct",
-        "caller": "core_level.cpp_FUN_004e1600",
+        "caller": "core_level.cpp_CLevelLoader_update_FUN_004e1600",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -241,7 +247,7 @@
       {
         "call_addr": "004e1683",
         "call_type": "direct",
-        "caller": "core_level.cpp_FUN_004e1600",
+        "caller": "core_level.cpp_CLevelLoader_update_FUN_004e1600",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -252,7 +258,7 @@
       {
         "call_addr": "004e1acb",
         "call_type": "direct",
-        "caller": "core_level.cpp_FUN_004e1600",
+        "caller": "core_level.cpp_CLevelLoader_update_FUN_004e1600",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -263,7 +269,7 @@
       {
         "call_addr": "004e1b61",
         "call_type": "direct",
-        "caller": "core_level.cpp_FUN_004e1600",
+        "caller": "core_level.cpp_CLevelLoader_update_FUN_004e1600",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -274,7 +280,7 @@
       {
         "call_addr": "004a5a35",
         "call_type": "direct",
-        "caller": "core_fldnotes.cpp_FUN_004a5700",
+        "caller": "core_fldnotes.cpp_CFieldNotes_draw_FUN_004a5700",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -315,6 +321,32 @@
       "STORE": 9
     },
     "pcode_op_count": 206
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004031c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004031c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00403170",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00403e60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 44,

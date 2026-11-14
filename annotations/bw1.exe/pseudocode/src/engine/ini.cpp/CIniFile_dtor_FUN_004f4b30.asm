@@ -1,17 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CIniFile * engine_ini_cpp_CIniFile_dtor_FUN_004f4b30(CIniFile *this_ptr,uint flags)
+; CIniFile * __cdecl engine_ini_cpp_CIniFile_dtor_FUN_004f4b30(CIniFile *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CIniFile *       Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[5]:
-;   core_game.cpp_FUN_004d27b0 at 004d54d1
+;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d54d1
 ;   core_game.cpp_FUN_004d7250 at 004d7591
-;   core_inivar.cpp_FUN_004f4f50 at 004f5726
-;   core_inivar.cpp_FUN_004f5760 at 004f5ed4
+;   core_inivar.cpp_readIniData_FUN_004f4f50 at 004f5726
+;   core_inivar.cpp_writeIniData_FUN_004f5760 at 004f5ed4
 ;   core_script.cpp_CScript_step_FUN_00544460 at 005475fa
 ;
 ; Referenced Globals:
@@ -45,7 +45,7 @@ section .text
         ;   Label: LAB_004f4b4f
     PUSH EBX                            ; 004f4b54
     CALL crt_memory.c___vec_delete_FUN_005c030f ; 004f4b55
-        ;   XREF to: 005c030f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005c030f()
+        ;   XREF to: 005c030f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005c030f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 004f4b5a
     PUSH EAX                            ; 004f4b5d
     CALL crt_unknown.c_FUN_005c0336     ; 004f4b5e

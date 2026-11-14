@@ -40,7 +40,7 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_00509a80(CDemonSet *this_ptr
     local_40 = wincore_winrun_cpp_getTime_FUN_00558a30();
   }
   if ((skip_prerender != 0) && (this_ptr->use_world_geometry_flag != 0)) {
-    core_set_cpp_CDemonSet_FUN_0050aba0(this_ptr);
+    core_set_cpp_CDemonSet_renderCameraAimedAtHero_FUN_0050aba0(this_ptr);
     return;
   }
   if (skip_prerender == 0) {

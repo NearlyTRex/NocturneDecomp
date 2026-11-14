@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_setcolid_cpp_FUN_005562c0(CDemonSet *param_1,CVector3f *param_2,float param_3)
+; float * core_setcolid_cpp_FUN_005562c0(CDemonSet *param_1,CVector3f *param_2,float param_3,undefined4 param_4,float param_5,undefined4 param_6,CBoundingBox3D *param_7)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x208]:4  local_208
@@ -24,14 +24,14 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[8]:
-;   core_actor.cpp_FUN_00408a00 at 00408a4c
-;   core_actor.cpp_FUN_0040c6a0 at 0040c710
-;   core_actor.cpp_FUN_0040c750 at 0040c7e1
+;   core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408a00 at 00408a4c
+;   core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040c750 at 0040c7e1
+;   core_actor.cpp_CDemonActor_processFootstep_FUN_0040c6a0 at 0040c710
 ;   core_doc.cpp_FUN_004712b0 at 004717df
-;   core_fire.cpp_FUN_004b1fb0 at 004b2006
+;   core_fire.cpp_CCrater_activate_FUN_004b1fb0 at 004b2006
 ;   core_gore.cpp_CBloodPool_init_FUN_004e5570 at 004e559b
-;   core_stranger.cpp_FUN_0058d910 at 0058e093
-;   core_trash.cpp_FUN_0059a370 at 0059aacd
+;   core_stranger.cpp_CStranger_tryPlaceObject_FUN_0058d910 at 0058e093
+;   core_trash.cpp_CTrash_process_FUN_0059a370 at 0059aacd
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setcolid_cpp_005f0d85
@@ -250,7 +250,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x3a4]     ; 0055659a
     PUSH EBP                            ; 005565a1
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 005565a2
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 005565a7
     TEST EAX,EAX                        ; 005565aa
     JNZ 0x00556511                      ; 005565ac
@@ -305,7 +305,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0055665a
     PUSH EAX                            ; 0055665e
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 0055665f
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00556664
     MOV EAX,dword ptr [ESP + 0x3a0]     ; 00556667
     MOV ESI,dword ptr [ESP + 0x3a0]     ; 0055666e

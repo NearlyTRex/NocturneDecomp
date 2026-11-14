@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dracbrid_cpp_staticInit_FUN_0047b000(void)
+; void __cdecl core_dracbrid_cpp_staticInit_FUN_0047b000(void)
 ;
 ;
 ; Referenced Globals:
@@ -51,7 +51,7 @@ section .text
     PUSH 0x6                            ; 0047b06f
     PUSH 0x1bc0d54                      ; 0047b071
     CALL crt_memory.c___arrinit_FUN_005c0357 ; 0047b076
-        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005c0357()
+        ;   XREF to: 005c0357 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005c0357(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0047b07b
     POP ESI                             ; 0047b07e
     RET                                 ; 0047b07f

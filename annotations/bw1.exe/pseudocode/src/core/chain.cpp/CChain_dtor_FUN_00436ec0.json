@@ -2,15 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 17,
+    "complexity_score": 16,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 17,
+    "pseudocode_lines": 16,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 57
+    "total_lines": 56
   },
   "cross_references": [],
   "function": {
@@ -21,9 +21,9 @@
         "00436f0d"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_chain.cpp_CChain_dtor_FUN_00436ec0",
-    "signature": "CChain * core_chain_cpp_CChain_dtor_FUN_00436ec0(CChain *this_ptr,uint flags)"
+    "signature": "CChain * __cdecl core_chain_cpp_CChain_dtor_FUN_00436ec0(CChain *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -86,6 +86,32 @@
     },
     "pcode_op_count": 124
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b5f50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0042ab20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00431360",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9118
+    },
+    "nocturne.exe": {
+      "addr": "0042cd30",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9118
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -113,7 +139,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CChain",
         "offset": 208,
         "vtable_addr": "005fd7b4"
       },

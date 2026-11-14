@@ -10,37 +10,37 @@ float __cdecl core_motion_cpp_FUN_00525020(CMotionController *this_ptr)
 
 {
   int iVar1;
-  int iVar2;
-  int iVar3;
+  SMotion *pSVar2;
+  SMotion *pSVar3;
   int iVar4;
   float local_1c;
   
-  iVar3 = *(int *)&this_ptr->field_0x4 * 0x120 + *(int *)this_ptr + 0x1c28;
-  if (*(float *)&this_ptr->field_0x8 <= 0.0) {
+  pSVar3 = this_ptr->motion_list_ptr->motions + this_ptr->current_motion_index;
+  if (this_ptr->current_frame_number <= 0.0) {
     local_1c = 0.0;
   }
-  else if ((float)*(int *)(iVar3 + 100) <= *(float *)&this_ptr->field_0x8) {
-    local_1c = (float)(*(int *)(iVar3 + 0xf4) + 1);
+  else if ((float)pSVar3->frame_count <= this_ptr->current_frame_number) {
+    local_1c = (float)(pSVar3->marker_count + 1);
   }
   else {
     iVar1 = 0;
     iVar4 = 0;
-    iVar2 = iVar3;
-    if (0 < *(int *)(iVar3 + 0xf4)) {
+    pSVar2 = pSVar3;
+    if (0 < pSVar3->marker_count) {
       do {
-        if (*(float *)&this_ptr->field_0x8 < (float)*(int *)(iVar2 + 0xf8)) {
+        if (this_ptr->current_frame_number < (float)pSVar2->markers[0]) {
           return (float)iVar1 +
-                 (*(float *)&this_ptr->field_0x8 - (float)iVar4) /
-                 (float)(*(int *)(iVar2 + 0xf8) - iVar4);
+                 (this_ptr->current_frame_number - (float)iVar4) /
+                 (float)(pSVar2->markers[0] - iVar4);
         }
         iVar1 = iVar1 + 1;
-        iVar4 = *(int *)(iVar2 + 0xf8);
-        iVar2 = iVar2 + 4;
-      } while (iVar1 < *(int *)(iVar3 + 0xf4));
+        iVar4 = pSVar2->markers[0];
+        pSVar2 = (SMotion *)(pSVar2->motion_name + 4);
+      } while (iVar1 < pSVar3->marker_count);
     }
-    local_1c = (float)*(int *)(iVar3 + 0xf4) +
-               (*(float *)&this_ptr->field_0x8 - (float)iVar4) /
-               (float)(*(int *)(iVar3 + 100) - iVar4);
+    local_1c = (float)pSVar3->marker_count +
+               (this_ptr->current_frame_number - (float)iVar4) /
+               (float)(pSVar3->frame_count - iVar4);
   }
   return local_1c;
 }

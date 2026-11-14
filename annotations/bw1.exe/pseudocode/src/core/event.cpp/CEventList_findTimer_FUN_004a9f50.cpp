@@ -11,19 +11,19 @@ int __cdecl core_event_cpp_CEventList_findTimer_FUN_004a9f50(CEventList *this_pt
 {
   int iVar1;
   int iVar2;
-  CEventList *str1;
+  char (*str1) [32];
   
   iVar2 = 0;
-  if (0 < *(int *)(this_ptr + 0x3210)) {
-    str1 = this_ptr + 0x3214;
+  if (0 < (this_ptr->timers).count) {
+    str1 = (this_ptr->timers).names;
     do {
-      iVar1 = _stricmp((char *)str1,name);
+      iVar1 = _stricmp(*str1,name);
       if (iVar1 == 0) {
         return iVar2;
       }
       iVar2 = iVar2 + 1;
-      str1 = str1 + 0x20;
-    } while (iVar2 < *(int *)(this_ptr + 0x3210));
+      str1 = str1 + 1;
+    } while (iVar2 < (this_ptr->timers).count);
   }
   return -1;
 }

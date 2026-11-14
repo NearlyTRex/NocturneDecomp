@@ -14,19 +14,16 @@ uint core_box_cpp_FUN_004207b0(CBoundingBox3D *param_1,int param_2)
   int iVar1;
   byte bVar2;
   float afStackY_103c [1000];
-  SProjectedVertex local_90 [48];
+  SProjectedVertex local_90 [2];
   float local_60;
   float local_5c;
   float local_58;
   float local_54;
   float local_50 [2];
-  int local_48;
-  int local_44;
-  int local_40;
+  CVector3i local_48;
   float local_3c;
   float local_38 [2];
-  byte local_30 [8];
-  float local_28;
+  CVector3f local_30;
   float local_24;
   float local_20 [4];
   float local_10;
@@ -38,9 +35,9 @@ uint core_box_cpp_FUN_004207b0(CBoundingBox3D *param_1,int param_2)
   }
   iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);
   if (iVar1 == 0) {
-    local_54 = *(float *)param_1 + *(float *)&param_1->field_0xc;
-    local_50[0] = *(float *)&param_1->field_0x4 + *(float *)&param_1->field_0x10;
-    local_50[1] = *(float *)&param_1->field_0x8 + *(float *)&param_1->field_0x14;
+    local_54 = (param_1->min).x + (param_1->max).x;
+    local_50[0] = (param_1->min).y + (param_1->max).y;
+    local_50[1] = (param_1->min).z + (param_1->max).z;
     local_20[2] = local_54;
     local_20[(uint)bVar2 * -2 + 3] = local_50[(uint)bVar2 * -2];
     local_20[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4] =
@@ -57,22 +54,22 @@ uint core_box_cpp_FUN_004207b0(CBoundingBox3D *param_1,int param_2)
       local_5c = local_20[0];
       local_58 = local_20[1];
     }
-    local_30._0_4_ = (float)DAT_00713a88 * _DAT_005fce10;
-    local_30._4_4_ = (float)DAT_00713a8c * _DAT_005fce10;
-    local_28 = (float)DAT_00713a90 * _DAT_005fce10;
-    local_48 = (int)ROUND(local_60 * _DAT_005fce08);
-    local_44 = (int)ROUND(local_5c * _DAT_005fce08);
-    local_40 = (int)ROUND(local_58 * _DAT_005fce08);
-    engine_special_cpp_FUN_00580173(local_90,(CVector3i *)&local_48);
-    local_30._0_4_ = (float)local_30._0_4_ + local_60;
-    local_30._4_4_ = (float)local_30._4_4_ + local_5c;
-    local_28 = local_28 + local_58;
+    local_30.x = (float)DAT_00713a88 * _DAT_005fce10;
+    local_30.y = (float)DAT_00713a8c * _DAT_005fce10;
+    local_30.z = (float)DAT_00713a90 * _DAT_005fce10;
+    local_48.x = (int)ROUND(local_60 * _DAT_005fce08);
+    local_48.y = (int)ROUND(local_5c * _DAT_005fce08);
+    local_48.z = (int)ROUND(local_58 * _DAT_005fce08);
+    engine_special_cpp_FUN_00580173(local_90,&local_48);
+    local_30.x = local_30.x + local_60;
+    local_30.y = local_30.y + local_5c;
+    local_30.z = local_30.z + local_58;
     if (DAT_007c6120 == 0) {
       _DAT_01c51cac = DAT_007c6120;
     }
     else {
       core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00454430
-                (&g_CDemonCameraInstance,(CVector3f *)local_30,local_90);
+                (&g_CDemonCameraInstance,&local_30,local_90);
       if (65000 < _DAT_01c51cac) {
         return 0;
       }

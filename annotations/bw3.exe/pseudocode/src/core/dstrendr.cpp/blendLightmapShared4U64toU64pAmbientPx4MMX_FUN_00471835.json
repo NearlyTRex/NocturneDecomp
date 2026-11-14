@@ -1,0 +1,598 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 87,
+    "complexity_score": 717,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 167,
+    "suspect_count": 53,
+    "suspect_types": [
+      "concat_reconstruction",
+      "nonstandard_int",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 254
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00471835",
+    "address_range": [
+      [
+        "00471835",
+        "00471950"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_dstrendr.cpp_blendLightmapShared4U64toU64pAmbientPx4MMX_FUN_00471835",
+    "signature": "void __cdecl core_dstrendr_cpp_blendLightmapShared4U64toU64pAmbientPx4MMX_FUN_00471835(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005f8b78",
+      "name": "DAT_005f8b78",
+      "type": "undefined8",
+      "value": null
+    },
+    {
+      "addr": "005f8b80",
+      "name": "DAT_005f8b80",
+      "type": "undefined8",
+      "value": null
+    },
+    {
+      "addr": "005fa8d8",
+      "name": "DAT_005fa8d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6e2bc",
+      "name": "DAT_01c6e2bc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.571428571428571,
+    "instruction_count": 84,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 1,
+      "CALLOTHER": 7,
+      "CBRANCH": 1,
+      "COPY": 107,
+      "INT_ADD": 70,
+      "INT_AND": 24,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 23,
+      "INT_LESS": 1,
+      "INT_MULT": 68,
+      "INT_NOTEQUAL": 2,
+      "INT_RIGHT": 20,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 43,
+      "INT_SLESSEQUAL": 16,
+      "INT_SUB": 5,
+      "INT_XOR": 3,
+      "INT_ZEXT": 7,
+      "LOAD": 20,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "STORE": 6,
+      "SUBPIECE": 16
+    },
+    "pcode_op_count": 468
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004707c5",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00488cb5",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004925c5",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0046568b",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "output_buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "ulonglong *"
+      },
+      {
+        "is_param": true,
+        "name": "texture_buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "ulonglong *"
+      },
+      {
+        "is_param": true,
+        "name": "texture_indices",
+        "offset": 12,
+        "size": 4,
+        "type": "byte *"
+      },
+      {
+        "is_param": true,
+        "name": "lightmap_indices",
+        "offset": 16,
+        "size": 4,
+        "type": "byte *"
+      },
+      {
+        "is_param": true,
+        "name": "pixel_count",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 23,
+      "match": "uint5",
+      "severity": "mild",
+      "text": "uint5 uVar17;",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 31,
+      "match": "uint7",
+      "severity": "mild",
+      "text": "CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)((uint)_DAT_01c6e2bc",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 31,
+      "match": "uint7",
+      "severity": "mild",
+      "text": "CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)((uint)_DAT_01c6e2bc",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 39,
+      "match": "DAT_00b9e14c",
+      "severity": "mild",
+      "text": "uVar2 = *(uint *)(&DAT_00b9e14c + (uint)*texture_indices * 4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 40,
+      "match": "uint7",
+      "severity": "mild",
+      "text": "uVar6 = (ushort)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28);",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 41,
+      "match": "int3",
+      "severity": "mild",
+      "text": "uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)uVar2 >> 0x18) << 0x30) >>",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 41,
+      "match": "uint7",
+      "severity": "mild",
+      "text": "uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)uVar2 >> 0x18) << 0x30) >>",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 44,
+      "match": "uint5",
+      "severity": "mild",
+      "text": "uVar17 = (uint5)uVar4 & 0xffffffff00;",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 46,
+      "match": "uint7",
+      "severity": "mild",
+      "text": "uVar8 = (ushort)(((uint7)(byte)(uVar1 >> 0x38) << 0x30) >> 0x28);",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 50,
+      "match": "DAT_005fa0e0",
+      "severity": "mild",
+      "text": "(&DAT_005fa0e0 + ((uint)*lightmap_indices + (uint)(*texture_indices >> 1)) * 2) ^",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 63,
+      "match": "DAT_005fa0e0",
+      "severity": "mild",
+      "text": "(&DAT_005fa0e0 +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 101,
+      "match": "DAT_00b9e14c",
+      "severity": "mild",
+      "text": "uVar2 = *(uint *)(&DAT_00b9e14c + (uint)*texture_indices * 4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 102,
+      "match": "uint7",
+      "severity": "mild",
+      "text": "uVar6 = (ushort)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28);",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 103,
+      "match": "int3",
+      "severity": "mild",
+      "text": "uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)uVar2 >> 0x18) << 0x30) >>",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 103,
+      "match": "uint7",
+      "severity": "mild",
+      "text": "uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)uVar2 >> 0x18) << 0x30) >>",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 106,
+      "match": "uint5",
+      "severity": "mild",
+      "text": "uVar17 = (uint5)uVar4 & 0xffffffff00;",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 110,
+      "match": "uint7",
+      "severity": "mild",
+      "text": "uVar8 = (ushort)(((uint7)(byte)(uVar1 >> 0x38) << 0x30) >> 0x28);",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 114,
+      "match": "DAT_005fa0e0",
+      "severity": "mild",
+      "text": "(&DAT_005fa0e0 + ((uint)*lightmap_indices + (uint)(*texture_indices >> 1)) * 2) ^",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 125,
+      "match": "DAT_005fa0e0",
+      "severity": "mild",
+      "text": "(&DAT_005fa0e0 +",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Ghidra CONCAT52 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 31,
+      "match": "CONCAT52",
+      "severity": "moderate",
+      "text": "CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)((uint)_DAT_01c6e2bc",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT34 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 41,
+      "match": "CONCAT34",
+      "severity": "moderate",
+      "text": "uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)uVar2 >> 0x18) << 0x30) >>",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT14 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 42,
+      "match": "CONCAT14",
+      "severity": "moderate",
+      "text": "0x28),CONCAT14((char)((uint)uVar2 >> 0x10),uVar2)",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT41 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 45,
+      "match": "CONCAT41",
+      "severity": "moderate",
+      "text": "uVar9 = (ushort)CONCAT41(uVar4,(char)((uint)uVar2 >> 8)) & 0xff;",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT26 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 52,
+      "match": "CONCAT26",
+      "severity": "moderate",
+      "text": "uVar7 = pmulhw(CONCAT26((uVar6 >> 8) * sVar19,",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT24 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 53,
+      "match": "CONCAT24",
+      "severity": "moderate",
+      "text": "CONCAT24((short)CONCAT21(uVar6,(char)(uVar1 >> 0x10)) * sVar18,",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 54,
+      "match": "CONCAT22",
+      "severity": "moderate",
+      "text": "CONCAT22((byte)(uVar1 >> 8) * uVar9,",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT26 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 57,
+      "match": "CONCAT26",
+      "severity": "moderate",
+      "text": "uVar12 = pmulhw(CONCAT26((uVar8 >> 8) * sVar19,",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT24 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 58,
+      "match": "CONCAT24",
+      "severity": "moderate",
+      "text": "CONCAT24((short)CONCAT21(uVar8,(char)(uVar1 >> 0x30)) * sVar18,",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 59,
+      "match": "CONCAT22",
+      "severity": "moderate",
+      "text": "CONCAT22((byte)(uVar1 >> 0x28) * uVar9,",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT17 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 83,
+      "match": "CONCAT17",
+      "severity": "moderate",
+      "text": "CONCAT17((uVar15 != 0) * (uVar15 < 0x100) * (char)uVar15 - (0xff < uVar15),",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT16 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 84,
+      "match": "CONCAT16",
+      "severity": "moderate",
+      "text": "CONCAT16((uVar14 != 0) * (uVar14 < 0x100) * (char)uVar14 - (0xff < uVar14),",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT15 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 85,
+      "match": "CONCAT15",
+      "severity": "moderate",
+      "text": "CONCAT15((uVar13 != 0) * (uVar13 < 0x100) * (char)uVar13 -",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT14 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 87,
+      "match": "CONCAT14",
+      "severity": "moderate",
+      "text": "CONCAT14((uVar11 != 0) * (uVar11 < 0x100) * (char)uVar11 -",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT13 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 89,
+      "match": "CONCAT13",
+      "severity": "moderate",
+      "text": "CONCAT13((uVar10 != 0) * (uVar10 < 0x100) *",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT12 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 91,
+      "match": "CONCAT12",
+      "severity": "moderate",
+      "text": "CONCAT12((uVar9 != 0) * (uVar9 < 0x100) *",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 93,
+      "match": "CONCAT11",
+      "severity": "moderate",
+      "text": "CONCAT11((uVar8 != 0) *",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT34 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 103,
+      "match": "CONCAT34",
+      "severity": "moderate",
+      "text": "uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)uVar2 >> 0x18) << 0x30) >>",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT14 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 104,
+      "match": "CONCAT14",
+      "severity": "moderate",
+      "text": "0x28),CONCAT14((char)((uint)uVar2 >> 0x10),uVar2)",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT43 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 107,
+      "match": "CONCAT43",
+      "severity": "moderate",
+      "text": "uVar10 = (ushort)(CONCAT43(uVar4,CONCAT12((char)((uint)uVar2 >> 8),(ushort)uVar2)) >> 0x10) &",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT26 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 116,
+      "match": "CONCAT26",
+      "severity": "moderate",
+      "text": "uVar7 = pmulhw(CONCAT26((uVar6 >> 8) * sVar19,",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT24 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 117,
+      "match": "CONCAT24",
+      "severity": "moderate",
+      "text": "CONCAT24((short)CONCAT21(uVar6,(char)(uVar1 >> 0x10)) * sVar18,",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 118,
+      "match": "CONCAT22",
+      "severity": "moderate",
+      "text": "CONCAT22((byte)(uVar1 >> 8) * uVar10,",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT26 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 120,
+      "match": "CONCAT26",
+      "severity": "moderate",
+      "text": "uVar12 = pmulhw(CONCAT26((uVar8 >> 8) * sVar19,",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT24 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 121,
+      "match": "CONCAT24",
+      "severity": "moderate",
+      "text": "CONCAT24((short)CONCAT21(uVar8,(char)(uVar1 >> 0x30)) * sVar18,",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 122,
+      "match": "CONCAT22",
+      "severity": "moderate",
+      "text": "CONCAT22((byte)(uVar1 >> 0x28) * uVar10,",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT17 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 146,
+      "match": "CONCAT17",
+      "severity": "moderate",
+      "text": "CONCAT17((uVar15 != 0) * (uVar15 < 0x100) * (char)uVar15 - (0xff < uVar15),",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT16 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 147,
+      "match": "CONCAT16",
+      "severity": "moderate",
+      "text": "CONCAT16((uVar14 != 0) * (uVar14 < 0x100) * (char)uVar14 - (0xff < uVar14),",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT15 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 148,
+      "match": "CONCAT15",
+      "severity": "moderate",
+      "text": "CONCAT15((uVar13 != 0) * (uVar13 < 0x100) * (char)uVar13 -",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT14 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 150,
+      "match": "CONCAT14",
+      "severity": "moderate",
+      "text": "CONCAT14((uVar11 != 0) * (uVar11 < 0x100) * (char)uVar11 -",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT13 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 152,
+      "match": "CONCAT13",
+      "severity": "moderate",
+      "text": "CONCAT13((uVar10 != 0) * (uVar10 < 0x100) *",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT12 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 154,
+      "match": "CONCAT12",
+      "severity": "moderate",
+      "text": "CONCAT12((uVar9 != 0) * (uVar9 < 0x100) *",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT11 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 156,
+      "match": "CONCAT11",
+      "severity": "moderate",
+      "text": "CONCAT11((uVar8 != 0) *",
+      "type": "concat_reconstruction"
+    }
+  ]
+}

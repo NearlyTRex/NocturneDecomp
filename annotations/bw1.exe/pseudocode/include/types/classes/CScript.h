@@ -2,15 +2,42 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CCharacter;
+struct CDemonActor;
+struct SDialogEntry;
+struct SScriptLine;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CStrList.h"
 
 // Structure: CScript
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x47c (1148 bytes)
 #pragma pack(push, 1)
 typedef struct CScript {
-    char field_0[1148]; // 0x0
+    int mission_ended; // 0x0
+    struct CDemonActor* who_is_speaking; // 0x4
+    struct CDemonActor* last_speaker; // 0x8
+    struct CDemonActor* focus_actor; // 0xc
+    int focus_actor_changed; // 0x10
+    int focus_actor_locked; // 0x14
+    struct CCharacter* monster_vision_actor; // 0x18, Added in this build
+    int script_state; // 0x1c
+    int dialog_entry_count; // 0x20
+    struct SDialogEntry* dialog_entries; // 0x24
+    uint current_sfx_handle; // 0x28
+    int parsed_line_count; // 0x2c
+    struct SScriptLine* parsed_lines; // 0x30
+    CStrList script_text; // 0x34
+    int next_cmd; // 0x44
+    float cmd_timer; // 0x48
+    float dialog_wav_time; // 0x4c
+    char current_message[1024]; // 0x50
+    float message_duration; // 0x450
+    int saved_cmd_index; // 0x454
+    int call_stack_count; // 0x458
+    int call_stack[8]; // 0x45c
 } CScript;
 #pragma pack(pop)
 

@@ -11,6 +11,6 @@ CShell * __cdecl core_fire_cpp_CShell_dtor_FUN_0049ecb0(CShell *this_ptr,uint fl
 {
   CShell *pCVar1;
   
-  pCVar1 = (CShell *)core_particle_cpp_FUN_00510df0((CParticle *)this_ptr,1);
+  pCVar1 = (CShell *)core_particle_cpp_CParticle_dtor_FUN_00510df0(&this_ptr->base,1);
   return pCVar1;
 }

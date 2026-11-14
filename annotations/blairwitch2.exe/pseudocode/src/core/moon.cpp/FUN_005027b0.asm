@@ -7,7 +7,7 @@
 ; XREF[3]:
 ;   core_moon.cpp_FUN_00502790 at 00502796
 ;   core_motion.cpp_FUN_00502820 at 00502830
-;   core_skeleton.cpp_FUN_00540980 at 005409f9
+;   core_skeleton.cpp_CSkeleton_free_FUN_00540980 at 005409f9
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005b77c0

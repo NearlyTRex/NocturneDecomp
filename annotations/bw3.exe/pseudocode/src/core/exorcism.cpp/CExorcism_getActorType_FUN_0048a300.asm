@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_exorcism_cpp_CExorcism_getActorType_FUN_0048a300(CExorcism *this_ptr)
+; CDemonActorType * __cdecl core_exorcism_cpp_CExorcism_getActorType_FUN_0048a300(CExorcism *this_ptr)
 ;
 ; Parameters:
 ; CExorcism *      Stack[0x4]:4   this_ptr

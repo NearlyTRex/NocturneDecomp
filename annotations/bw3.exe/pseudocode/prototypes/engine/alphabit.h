@@ -13,13 +13,13 @@ CAlphaBitmap * __cdecl CAlphaBitmap::ctor(CAlphaBitmap *this_ptr);
 // Address: 0040d300
 CAlphaBitmap * __cdecl CAlphaBitmap::dtor(CAlphaBitmap *this_ptr,uint flags);
 
-// Original: engine_alphabit.cpp_FUN_0040d320
+// Original: engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d320
 // Address: 0040d320
-void FUN_0040d320(CAlphaBitmap *param_1,int param_2,int param_3);
+void __cdecl CAlphaBitmap::allocate(CAlphaBitmap *this_ptr,int param_2,int param_3);
 
-// Original: engine_alphabit.cpp_FUN_0040d400
+// Original: engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d400
 // Address: 0040d400
-void __cdecl FUN_0040d400(CAlphaBitmap *this_ptr);
+void __cdecl CAlphaBitmap::free(CAlphaBitmap *this_ptr);
 
 // Original: engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460
 // Address: 0040d460
@@ -49,18 +49,10 @@ void FUN_0040dbb0(int param_1,int param_2);
 // Address: 0040dbe0
 void FUN_0040dbe0(CAlphaBitmap *param_1);
 
-// Original: engine_alphabit.cpp_staticInit_FUN_004118e0
-// Address: 004118e0
-void staticInit(void);
-
 // Original: engine_alphabit.cpp_CAlphaBitmap_arrdtor5_FUN_004144e0
 // Address: 004144e0
-CAlphaBitmap * CAlphaBitmap::arrdtor5(CAlphaBitmap *this_ptr,uint flags);
+CAlphaBitmap * __cdecl CAlphaBitmap::arrdtor5(CAlphaBitmap *this_ptr,uint flags);
 
 // Original: engine_alphabit.cpp_CAlphaBitmap_arrdtor4_FUN_00414500
 // Address: 00414500
-CAlphaBitmap * CAlphaBitmap::arrdtor4(CAlphaBitmap *this_ptr,uint flags);
-
-// Original: engine_alphabit.cpp_staticInit_FUN_004d9c90
-// Address: 004d9c90
-void staticInit(void);
+CAlphaBitmap * __cdecl CAlphaBitmap::arrdtor4(CAlphaBitmap *this_ptr,uint flags);

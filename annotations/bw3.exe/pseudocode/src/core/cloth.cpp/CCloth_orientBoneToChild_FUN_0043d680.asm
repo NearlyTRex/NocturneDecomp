@@ -32,8 +32,8 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
-;   core_skeleton.cpp_FUN_00548090
-;   core_vecdir.cpp_FUN_00576250
+;   core_skeleton.cpp_CSkeleton_findBone_FUN_00548090
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250
 ;   core_xform.cpp_FUN_00583800
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005833e0
 ;
@@ -65,8 +65,8 @@ section .text
     PUSH EBX                            ; 0043d6bf
     PUSH ESI                            ; 0043d6c0
     MOV EDI,0xffffffff                  ; 0043d6c1
-    CALL core_skeleton.cpp_FUN_00548090 ; 0043d6c6
-        ;   XREF to: 00548090 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_00548090(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
+    CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00548090 ; 0043d6c6
+        ;   XREF to: 00548090 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00548090(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     MOV dword ptr [EBX + 0x44],0x0      ; 0043d6cb
     MOV dword ptr [EBP + 0x6e],EDI      ; 0043d6d2
     MOV dword ptr [EBX + 0x40],EAX      ; 0043d6d5
@@ -116,8 +116,8 @@ section .text
     ADD EAX,ECX                         ; 0043d758
     PUSH EAX                            ; 0043d75a
     LEA ESI,[EBP + 0x52]                ; 0043d75b
-    CALL core_vecdir.cpp_FUN_00576250   ; 0043d75e
-        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_00576250()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250 ; 0043d75e
+        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250()
     ADD ESP,0x4                         ; 0043d763
     LEA EAX,[EBP + 0x5e]                ; 0043d766
     LEA EDI,[EBP + 0x5e]                ; 0043d769
@@ -151,7 +151,7 @@ section .text
     PUSH ESI                            ; 0043d7a6
     LEA ESI,[EBP + 0x16]                ; 0043d7a7
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_005833e0 ; 0043d7aa
-        ;   XREF to: 005833e0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_005833e0()
+        ;   XREF to: 005833e0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005833e0(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 0043d7af
     LEA ESI,[EBP + 0x16]                ; 0043d7b4
     LEA EDI,[EBX + 0x48]                ; 0043d7b7

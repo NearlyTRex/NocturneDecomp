@@ -9,10 +9,10 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[4]:
-;   core_hero.cpp_FUN_004cec30 at 004cec3a
+;   core_hero.cpp_CHero_createDefaultWeapon_FUN_004cec30 at 004cec3a
 ;   core_inv.cpp_CInventory_load_FUN_004dc4b0 at 004dc4d2
-;   core_scat.cpp_FUN_0051ec20 at 0051ec2e
-;   core_script.cpp_FUN_00522350 at 005268e8
+;   core_scat.cpp_CScat_createDefaultWeapon_FUN_0051ec20 at 0051ec2e
+;   core_script.cpp_CScript_step_FUN_00522350 at 005268e8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CAmmo_005db415
@@ -65,7 +65,7 @@ section .text
     PUSH 0x5db415                       ; 004da955 | = "CAmmo"
         ;   Label: LAB_004da955
     CALL core_actor.cpp_createActorByName_FUN_0040c5a0 ; 004da95a
-        ;   XREF to: 0040c5a0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c5a0()
+        ;   XREF to: 0040c5a0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c5a0(char * class_name)
     ADD ESP,0x4                         ; 004da95f
     MOV dword ptr [EDI + 0x464],EAX     ; 004da962
     PUSH EAX                            ; 004da968

@@ -7,23 +7,23 @@
 
 // Original: core_curtain.cpp_staticInit_FUN_0044a190
 // Address: 0044a190
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_curtain.cpp_factoryFuncCurtain_FUN_0044a1e0
 // Address: 0044a1e0
-void factoryFuncCurtain(void);
+CCurtain * __cdecl factoryFuncCurtain(void);
 
 // Original: core_curtain.cpp_CCurtain_getActorType_FUN_0044a200
 // Address: 0044a200
-CDemonActorType * CCurtain::getActorType(CCurtain *this_ptr);
+CDemonActorType * __cdecl CCurtain::getActorType(CCurtain *this_ptr);
 
 // Original: core_curtain.cpp_CCurtain_ctor_FUN_0044a210
 // Address: 0044a210
 CCurtain * __cdecl CCurtain::ctor(CCurtain *this_ptr);
 
-// Original: core_curtain.cpp_FUN_0044a380
+// Original: core_curtain.cpp_CCurtain_setup_FUN_0044a380
 // Address: 0044a380
-void FUN_0044a380(CDemonActor *param_1);
+void __cdecl CCurtain::setup(CCurtain *this_ptr);
 
 // Original: core_curtain.cpp_FUN_0044aa10
 // Address: 0044aa10
@@ -33,13 +33,13 @@ void FUN_0044aa10(int param_1);
 // Address: 0044ab20
 void FUN_0044ab20(int param_1);
 
-// Original: core_curtain.cpp_FUN_0044ac10
+// Original: core_curtain.cpp_CCurtain_solveConstraints_FUN_0044ac10
 // Address: 0044ac10
-void __cdecl FUN_0044ac10(CCurtain *this_ptr,SCurtainVertex *vertex);
+void __cdecl CCurtain::solveConstraints(CCurtain *this_ptr,SCurtainVertex *vertex);
 
-// Original: core_curtain.cpp_FUN_0044b6f0
+// Original: core_curtain.cpp_CCurtain_process_FUN_0044b6f0
 // Address: 0044b6f0
-void FUN_0044b6f0(CCurtain *param_1,float param_2);
+void __cdecl CCurtain::process(CCurtain *this_ptr,float delta_time);
 
 // Original: core_curtain.cpp_CCurtain_renderMesh_FUN_0044bf20
 // Address: 0044bf20
@@ -53,13 +53,13 @@ int __cdecl CCurtain::renderOpaque(CCurtain *this_ptr);
 // Address: 0044c240
 int __cdecl CCurtain::renderTransparent(CCurtain *this_ptr);
 
-// Original: core_curtain.cpp_FUN_0044c250
+// Original: core_curtain.cpp_CCurtain_getCollisionType_FUN_0044c250
 // Address: 0044c250
-undefined4 FUN_0044c250(void);
+ECollisionType __cdecl CCurtain::getCollisionType(CCurtain *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_curtain.cpp_FUN_0044c260
+// Original: core_curtain.cpp_CCurtain_getBoundingBox_FUN_0044c260
 // Address: 0044c260
-void FUN_0044c260(int param_1);
+CBoundingBox3D * __cdecl CCurtain::getBoundingBox(CCurtain *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_curtain.cpp_CCurtain_archive_FUN_0044c2e0
 // Address: 0044c2e0
@@ -71,12 +71,12 @@ int __cdecl CCurtain::getBlockVirtualDirectorFlag(CCurtain *this_ptr);
 
 // Original: core_curtain.cpp_CCurtain_dtor_FUN_0044c510
 // Address: 0044c510
-CCurtain * CCurtain::dtor(CCurtain *this_ptr,uint flags);
+CCurtain * __cdecl CCurtain::dtor(CCurtain *this_ptr,uint flags);
 
 // Original: core_curtain.cpp_SCurtainVertex_ctor_FUN_0044c560
 // Address: 0044c560
-SCurtainVertex * SCurtainVertex::ctor(SCurtainVertex *this_ptr);
+SCurtainVertex * __cdecl SCurtainVertex::ctor(SCurtainVertex *this_ptr);
 
 // Original: core_curtain.cpp_SCollisionInfo_dtor_FUN_0044c570
 // Address: 0044c570
-SCollisionInfo * SCollisionInfo::dtor(SCollisionInfo *this_ptr,uint flags);
+SCollisionInfo * __cdecl SCollisionInfo::dtor(SCollisionInfo *this_ptr,uint flags);

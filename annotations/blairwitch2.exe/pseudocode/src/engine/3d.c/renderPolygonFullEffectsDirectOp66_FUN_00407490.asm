@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_3d_c_renderPolygonFullEffectsDirectOp66_FUN_00407490(int param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonFullEffectsDirectOp66_FUN_00407490(SMRGLHeaderPrimitive *primitive)
 ;
+; Parameters:
+; SMRGLHeaderPrimitive * Stack[0x4]:4   primitive
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006141c0
@@ -25,7 +27,7 @@
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403970
 ;   engine_clipper.c_clipAndRasterize_FUN_00431d90
-;   engine_texture.cpp_FUN_005750e0
+;   engine_texture.cpp_getCurrentTexture_FUN_005750e0
 ;
 ; *****************************************************************************
 
@@ -43,7 +45,7 @@ section .text
     PUSH EAX                            ; 004074a2
     ADD EBX,0x18                        ; 004074a3
     CALL engine_3d.c_isVisiblePlane_FUN_00403970 ; 004074a6
-        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403970()
+        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403970(SClipPlane * plane)
     ADD ESP,0x4                         ; 004074ab
     TEST EAX,EAX                        ; 004074ae
     JZ 0x004075c8                       ; 004074b0
@@ -114,8 +116,8 @@ section .text
     CMP EDX,ECX                         ; 0040758e
     JL 0x00407564                       ; 00407590
         ;   XREF to: 00407564 (CONDITIONAL_JUMP)  ; LAB_00407564
-    CALL engine_texture.cpp_FUN_005750e0 ; 00407592
-        ;   XREF to: 005750e0 (UNCONDITIONAL_CALL)  ; SMRGLTextureBasic * engine_texture.cpp_FUN_005750e0()
+    CALL engine_texture.cpp_getCurrentTexture_FUN_005750e0 ; 00407592
+        ;   XREF to: 005750e0 (UNCONDITIONAL_CALL)  ; SMRGLTextureBasic * engine_texture.cpp_getCurrentTexture_FUN_005750e0()
         ;   Label: LAB_00407592
     MOV EDI,dword ptr [ESP]             ; 00407597
     MOV ECX,0x12                        ; 0040759a

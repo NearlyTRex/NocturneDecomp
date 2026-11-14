@@ -13,7 +13,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPr
   byte *puStack_14;
   
   puStack_14 = &stack0x0000001c;
-  _vsprintf(acStack_1014,format,&puStack_14);
+  _vsprintf(acStack_1014,format,(va_list_t)&puStack_14);
   puStack_14 = (byte *)0x0;
   cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidth_FUN_00480d20
             (this_ptr,acStack_1014,x,width,y,height);

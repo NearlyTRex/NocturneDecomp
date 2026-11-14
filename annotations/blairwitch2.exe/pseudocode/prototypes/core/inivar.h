@@ -5,10 +5,10 @@
 // Function prototypes for core/inivar.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_inivar.cpp_FUN_004d8d60
+// Original: core_inivar.cpp_readIniData_FUN_004d8d60
 // Address: 004d8d60
-void __cdecl FUN_004d8d60(void);
+void __cdecl readIniData(void);
 
-// Original: core_inivar.cpp_FUN_004d94d0
+// Original: core_inivar.cpp_writeIniData_FUN_004d94d0
 // Address: 004d94d0
-void __cdecl FUN_004d94d0(void);
+void __cdecl writeIniData(void);

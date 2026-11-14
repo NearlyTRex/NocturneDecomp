@@ -13,12 +13,12 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[44]:
-;   core_dcube.cpp_FUN_0044b660 at 0044b6d7
-;   core_game.cpp_CGame_FUN_004a57c0 at 004a5998
+;   core_dcube.cpp_showHelpFile_FUN_0044b660 at 0044b6d7
 ;   core_game.cpp_CGame_finishAct_FUN_004a6a10 at 004a6ab2
 ;   core_game.cpp_CGame_rollCredits_FUN_004a6e90 at 004a7103
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049e516
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960 at 0049d9e0
+;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004a57c0 at 004a5998
 ;   core_level.cpp_CLevelLoader_update_FUN_004c59e0 at 004c5f68
 ;   core_main.c_finalizeGameSystems_FUN_004c90e0 at 004c9207
 ;   core_main.c_initializeGameSystems_FUN_004c85f0 at 004c8c5e

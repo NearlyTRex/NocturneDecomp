@@ -5,6 +5,18 @@
 // Function prototypes for cockpit/pkbmpset.cpp
 // Generated from Ghidra function signatures
 
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_004f5290
+// Address: 004f5290
+void __cdecl CPackedBitmapSet::ctor(CPackedBitmapSet *this_ptr);
+
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_init_FUN_004f52c0
+// Address: 004f52c0
+void __cdecl CPackedBitmapSet::init(CPackedBitmapSet *this_ptr);
+
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_004f5320
+// Address: 004f5320
+void __cdecl CPackedBitmapSet::reset(CPackedBitmapSet *this_ptr);
+
 // Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_004f5350
 // Address: 004f5350
 void __cdecl CPackedBitmapSet::alloc(CPackedBitmapSet *this_ptr,int bitmap_count);
@@ -65,10 +77,10 @@ void __cdecl CPackedBitmapSet::loadStoredACTFile(CPackedBitmapSet *this_ptr);
 // Address: 004f5c80
 void __cdecl CPackedBitmapSet::ensureBitmapLoaded(CPackedBitmapSet *this_ptr,int bitmap_index);
 
-// Original: cockpit_pkbmpset.cpp_FUN_004f5d00
+// Original: cockpit_pkbmpset.cpp_CPackedBitmap_getHeight_FUN_004f5d00
 // Address: 004f5d00
-undefined4 FUN_004f5d00(void);
+int __cdecl CPackedBitmap::getHeight(CPackedBitmap *this_ptr);
 
-// Original: cockpit_pkbmpset.cpp_FUN_004f5d10
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_doNothing1_FUN_004f5d10
 // Address: 004f5d10
-void FUN_004f5d10(void);
+void __cdecl CPackedBitmapSet::doNothing1(CPackedBitmapSet *this_ptr);

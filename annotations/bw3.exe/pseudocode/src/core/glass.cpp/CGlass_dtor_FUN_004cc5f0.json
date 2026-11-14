@@ -10,7 +10,7 @@
     "pseudocode_lines": 20,
     "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field"
+      "negative_offset"
     ],
     "total_lines": 67
   },
@@ -23,9 +23,9 @@
         "004cc654"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_glass.cpp_CGlass_dtor_FUN_004cc5f0",
-    "signature": "CGlass * core_glass_cpp_CGlass_dtor_FUN_004cc5f0(CGlass *this_ptr,uint flags)"
+    "signature": "CGlass * __cdecl core_glass_cpp_CGlass_dtor_FUN_004cc5f0(CGlass *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -93,6 +93,32 @@
     },
     "pcode_op_count": 153
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004c72f0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004e3a60",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004eb820",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9367
+    },
+    "nocturne.exe": {
+      "addr": "004adef0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9367
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -118,12 +144,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x21c",
+      "description": "Negative struct offset (wrong base type)",
+      "line": 17,
+      "match": "pCVar1[-2].",
       "severity": "mild",
-      "text": "pCVar1 = core_mirror_cpp_FUN_004f3fe0((CMirror *)&this_ptr->field_0x21c,0);",
-      "type": "unnamed_field"
+      "text": "((CDemonActor *)&pCVar1[-2].reflection.corner4,1);",
+      "type": "negative_offset"
     }
   ],
   "vtable_info": {
@@ -134,7 +160,7 @@
         "vtable_addr": "005e0cc4"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CGlass",
         "offset": 208,
         "vtable_addr": "005e0be4"
       }

@@ -2,31 +2,30 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 183,
-    "complexity_score": 717,
+    "complexity_score": 652,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 62,
-    "suspect_count": 64,
+    "suspect_count": 58,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "unnamed_param"
     ],
     "total_lines": 245
   },
   "cross_references": [
     {
-      "addr": "004ba930",
-      "from_addr": "004ba9d9",
-      "name": "core_fldnotes.cpp_FUN_004ba930",
+      "addr": "004be0f0",
+      "from_addr": "004be896",
+      "name": "core_fldnotes.cpp_CFieldNotes_draw_FUN_004be0f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004be0f0",
-      "from_addr": "004be896",
-      "name": "core_fldnotes.cpp_FUN_004be0f0",
+      "addr": "004ba930",
+      "from_addr": "004ba9d9",
+      "name": "core_fldnotes.cpp_SPageResourceText_draw_FUN_004ba930",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -129,6 +128,14 @@
       "SUBPIECE": 2
     },
     "pcode_op_count": 809
+  },
+  "siblings": {
+    "bw3.exe": {
+      "addr": "0040d8a0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 48,
@@ -498,7 +505,7 @@
       "line": 34,
       "match": "param_4",
       "severity": "mild",
-      "text": "param_4 = param_4 + param_5 * *(int *)&param_1->field_0xc;",
+      "text": "param_4 = param_4 + param_5 * param_1->width;",
       "type": "unnamed_param"
     },
     {
@@ -506,7 +513,7 @@
       "line": 34,
       "match": "param_4",
       "severity": "mild",
-      "text": "param_4 = param_4 + param_5 * *(int *)&param_1->field_0xc;",
+      "text": "param_4 = param_4 + param_5 * param_1->width;",
       "type": "unnamed_param"
     },
     {
@@ -514,7 +521,7 @@
       "line": 34,
       "match": "param_5",
       "severity": "mild",
-      "text": "param_4 = param_4 + param_5 * *(int *)&param_1->field_0xc;",
+      "text": "param_4 = param_4 + param_5 * param_1->width;",
       "type": "unnamed_param"
     },
     {
@@ -522,23 +529,15 @@
       "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_4 = param_4 + param_5 * *(int *)&param_1->field_0xc;",
+      "text": "param_4 = param_4 + param_5 * param_1->width;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "param_4 = param_4 + param_5 * *(int *)&param_1->field_0xc;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "srcIndices = (uchar *)(*(int *)param_1 + param_4);",
+      "text": "srcIndices = (uchar *)(param_1->raw + param_4);",
       "type": "unnamed_param"
     },
     {
@@ -546,15 +545,7 @@
       "line": 35,
       "match": "param_4",
       "severity": "mild",
-      "text": "srcIndices = (uchar *)(*(int *)param_1 + param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "srcAlpha = (uchar *)(param_4 + *(int *)&param_1->field_0x4);",
+      "text": "srcIndices = (uchar *)(param_1->raw + param_4);",
       "type": "unnamed_param"
     },
     {
@@ -562,16 +553,16 @@
       "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "srcAlpha = (uchar *)(param_4 + *(int *)&param_1->field_0x4);",
+      "text": "srcAlpha = (uchar *)(param_1->opa + param_4);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Unnamed function parameter",
       "line": 36,
-      "match": "field_0x4",
+      "match": "param_4",
       "severity": "mild",
-      "text": "srcAlpha = (uchar *)(param_4 + *(int *)&param_1->field_0x4);",
-      "type": "unnamed_field"
+      "text": "srcAlpha = (uchar *)(param_1->opa + param_4);",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
@@ -618,32 +609,16 @@
       "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "srcIndices = srcIndices + *(int *)&param_1->field_0xc;",
+      "text": "srcIndices = srcIndices + param_1->width;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "srcIndices = srcIndices + *(int *)&param_1->field_0xc;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 48,
       "match": "param_1",
       "severity": "mild",
-      "text": "srcAlpha = srcAlpha + *(int *)&param_1->field_0xc;",
+      "text": "srcAlpha = srcAlpha + param_1->width;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "srcAlpha = srcAlpha + *(int *)&param_1->field_0xc;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -674,32 +649,16 @@
       "line": 57,
       "match": "param_1",
       "severity": "mild",
-      "text": "srcIndices = srcIndices + *(int *)&param_1->field_0xc;",
+      "text": "srcIndices = srcIndices + param_1->width;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 57,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "srcIndices = srcIndices + *(int *)&param_1->field_0xc;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 59,
       "match": "param_1",
       "severity": "mild",
-      "text": "srcAlpha = srcAlpha + *(int *)&param_1->field_0xc;",
+      "text": "srcAlpha = srcAlpha + param_1->width;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 59,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "srcAlpha = srcAlpha + *(int *)&param_1->field_0xc;",
-      "type": "unnamed_field"
     }
   ]
 }

@@ -8,8 +8,8 @@
 ; undefined        Stack[-0x7c]:1  local_7c
 ;
 ; XREF[2]:
-;   core_bodypart.cpp_FUN_00415740 at 00415753
-;   core_bodypart.cpp_FUN_004157c0 at 00415d2f
+;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_004157c0 at 00415d2f
+;   core_bodypart.cpp_CBodyPart_onDropped_FUN_00415740 at 00415753
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b6cd6
@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b80
-;   core_bodypart.cpp_FUN_00414910
+;   core_bodypart.cpp_setCounts_FUN_00414910
 ;   core_box.cpp_CBox_setupCorners_FUN_0041ae00
 ;
 ; *****************************************************************************
@@ -41,8 +41,8 @@ section .text
     PUSH 0x0                            ; 00416992
     PUSH EBX                            ; 00416994
     MOV dword ptr [EBX + 0x70],0x2      ; 00416995
-    CALL core_bodypart.cpp_FUN_00414910 ; 0041699c
-        ;   XREF to: 00414910 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_00414910()
+    CALL core_bodypart.cpp_setCounts_FUN_00414910 ; 0041699c
+        ;   XREF to: 00414910 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_setCounts_FUN_00414910()
     LEA EAX,[EBX + 0x168]               ; 004169a1
     ADD ESP,0xc                         ; 004169a7
     MOV EDX,EAX                         ; 004169aa

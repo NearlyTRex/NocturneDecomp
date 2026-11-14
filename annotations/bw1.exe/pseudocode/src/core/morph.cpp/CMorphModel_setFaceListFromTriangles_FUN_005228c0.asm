@@ -20,7 +20,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_morph.cpp_FUN_00522340 at 00522477
+;   core_morph.cpp_CMorphModel_addPartFromVertexBuffer_FUN_00522340 at 00522477
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_morph_cpp_005ea7c4

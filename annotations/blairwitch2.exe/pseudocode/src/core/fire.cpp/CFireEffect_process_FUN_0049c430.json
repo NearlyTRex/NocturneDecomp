@@ -1,0 +1,783 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 382,
+    "complexity_score": 516,
+    "cross_reference_count": 1,
+    "function_call_count": 14,
+    "global_count": 50,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 181,
+    "suspect_count": 31,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "undefined_data",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 563
+  },
+  "cross_references": [
+    {
+      "addr": "004bd570",
+      "from_addr": "004bd83a",
+      "name": "core_game.cpp_CGame_process_FUN_004bd570",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0049c430",
+    "address_range": [
+      [
+        "0049c430",
+        "0049c77d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_fire.cpp_CFireEffect_process_FUN_0049c430",
+    "signature": "void __cdecl core_fire_cpp_CFireEffect_process_FUN_0049c430(CFireEffect *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00493cf0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CBulletHole_process_FUN_00493cf0"
+    },
+    {
+      "addr": "00497330",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CBulletTrail_process_FUN_00497330"
+    },
+    {
+      "addr": "00499930",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CCrater_process_FUN_00499930"
+    },
+    {
+      "addr": "00498e80",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CExplosion_process_FUN_00498e80"
+    },
+    {
+      "addr": "0049a3a0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CGunFlame_process_FUN_0049a3a0"
+    },
+    {
+      "addr": "0049ab90",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CLightningBolt_process_FUN_0049ab90"
+    },
+    {
+      "addr": "00496a60",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CMuzzleFlash_process_FUN_00496a60"
+    },
+    {
+      "addr": "004935b0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CSmokeParticle_process_FUN_004935b0"
+    },
+    {
+      "addr": "00494580",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CStake_process_FUN_00494580"
+    },
+    {
+      "addr": "004993f0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CToss_process_FUN_004993f0"
+    },
+    {
+      "addr": "0049b330",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CTrail_process_FUN_0049b330"
+    },
+    {
+      "addr": "00499ee0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_initProcess_FUN_00499ee0"
+    },
+    {
+      "addr": "00498c30",
+      "is_variadic": false,
+      "name": "core_fire.cpp_updateTextureAnimCounts_FUN_00498c30"
+    },
+    {
+      "addr": "0059d420",
+      "is_variadic": false,
+      "name": "core_muzzle.cpp_CMuzzleEffect_process_FUN_0059d420"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01c3f8e0",
+      "name": "DAT_01c3f8e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c3f90c",
+      "name": "DAT_01c3f90c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c558e0",
+      "name": "DAT_01c558e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c594e8",
+      "name": "DAT_01c594e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c59748",
+      "name": "g_StakePool[0].physics_box.is_valid",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c599a8",
+      "name": "g_StakePool[1].physics_box.is_valid",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c7f518",
+      "name": "g_SparkPool[0].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c7f530",
+      "name": "g_SparkPool[0].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c7f56c",
+      "name": "g_SparkPool[1].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c7f584",
+      "name": "g_SparkPool[1].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c8491c",
+      "name": "CFirefly_ARRAY_01c848f8[0].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c84934",
+      "name": "CFirefly_ARRAY_01c848f8[0].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c84978",
+      "name": "CFirefly_ARRAY_01c848f8[1].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c84990",
+      "name": "CFirefly_ARRAY_01c848f8[1].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c85ffc",
+      "name": "DAT_01c85ffc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c86058",
+      "name": "DAT_01c86058",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c86730",
+      "name": "DAT_01c86730",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c8678c",
+      "name": "DAT_01c8678c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c86e88",
+      "name": "g_GlassParticlePool[0].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c86ea0",
+      "name": "g_GlassParticlePool[0].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c86f2c",
+      "name": "g_GlassParticlePool[1].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c86f44",
+      "name": "g_GlassParticlePool[1].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c91288",
+      "name": "DAT_01c91288",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c912ac",
+      "name": "DAT_01c912ac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c913f8",
+      "name": "g_FireballPool[0].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c91410",
+      "name": "g_FireballPool[0].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c9149c",
+      "name": "g_FireballPool[1].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c914b4",
+      "name": "g_FireballPool[1].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c93cfc",
+      "name": "g_RockPool[0].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c93d14",
+      "name": "g_RockPool[0].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c93d4c",
+      "name": "g_RockPool[1].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c93d64",
+      "name": "g_RockPool[1].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c95100",
+      "name": "CLeaf_ARRAY_01c950dc[0].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c95118",
+      "name": "CLeaf_ARRAY_01c950dc[0].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c95154",
+      "name": "CLeaf_ARRAY_01c950dc[1].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c9516c",
+      "name": "CLeaf_ARRAY_01c950dc[1].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c965dc",
+      "name": "DAT_01c965dc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c97600",
+      "name": "DAT_01c97600",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c9cd98",
+      "name": "DAT_01c9cd98",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c9cdbc",
+      "name": "DAT_01c9cdbc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ca23f8",
+      "name": "g_ShellPool[0].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ca2458",
+      "name": "g_ShellPool[1].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ca36a4",
+      "name": "g_PopcornPool[0].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ca36bc",
+      "name": "g_PopcornPool[0].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ca36e4",
+      "name": "g_PopcornPool[1].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ca36fc",
+      "name": "g_PopcornPool[1].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ca76a8",
+      "name": "g_RainDropPool[0].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ca76c0",
+      "name": "g_RainDropPool[0].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ca76e8",
+      "name": "g_RainDropPool[1].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ca7700",
+      "name": "g_RainDropPool[1].base.vtable",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004bd83a",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_process_FUN_004bd570",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.090592334494773,
+    "instruction_count": 287,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 30,
+      "BOOL_OR": 11,
+      "BRANCH": 1,
+      "CALL": 14,
+      "CALLIND": 10,
+      "CBRANCH": 39,
+      "COPY": 483,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_EQUAL": 9,
+      "FLOAT_LESS": 9,
+      "FLOAT_NAN": 18,
+      "INT2FLOAT": 9,
+      "INT_ADD": 101,
+      "INT_AND": 217,
+      "INT_CARRY": 44,
+      "INT_EQUAL": 162,
+      "INT_LEFT": 36,
+      "INT_LESS": 21,
+      "INT_NOTEQUAL": 49,
+      "INT_OR": 45,
+      "INT_SBORROW": 21,
+      "INT_SCARRY": 46,
+      "INT_SLESS": 81,
+      "INT_SUB": 71,
+      "INT_XOR": 4,
+      "INT_ZEXT": 36,
+      "LOAD": 40,
+      "POPCOUNT": 81,
+      "RETURN": 1,
+      "STORE": 50
+    },
+    "pcode_op_count": 1748
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004b4dd0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9593
+    },
+    "bw3.exe": {
+      "addr": "004a1760",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9329
+    },
+    "nocedit.exe": {
+      "addr": "004c6ec0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8791
+    },
+    "nocturne.exe": {
+      "addr": "0048a390",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8791
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0049c436",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_01c3f8e0",
+      "severity": "mild",
+      "text": "this_ptr_00 = (CSmokeParticle *)&DAT_01c3f8e0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 39,
+      "match": "DAT_01c558e0",
+      "severity": "mild",
+      "text": "} while (this_ptr_00 != (CSmokeParticle *)&DAT_01c558e0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_01c848f4",
+      "severity": "mild",
+      "text": "} while (this_ptr_01 != (CSpark *)&DAT_01c848f4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 53,
+      "match": "DAT_01c85ff8",
+      "severity": "mild",
+      "text": "} while (pCVar2 != (CFirefly *)&DAT_01c85ff8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 54,
+      "match": "DAT_01c86730",
+      "severity": "mild",
+      "text": "this_ptr_02 = (CMuzzleEffect *)&DAT_01c86730;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_01c85ffc",
+      "severity": "mild",
+      "text": "this_ptr_17 = (CMuzzleFlash *)&DAT_01c85ffc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 65,
+      "match": "DAT_01c86e60",
+      "severity": "mild",
+      "text": "} while (this_ptr_02 != (CMuzzleEffect *)&DAT_01c86e60);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 83,
+      "match": "DAT_01c91264",
+      "severity": "mild",
+      "text": "} while (this_ptr_04 != (CGlassParticle *)&DAT_01c91264);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 90,
+      "match": "DAT_01c913d0",
+      "severity": "mild",
+      "text": "} while (this_ptr_05 != (CBulletTrail *)&DAT_01c913d0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 97,
+      "match": "DAT_01c93cd4",
+      "severity": "mild",
+      "text": "} while (this_ptr_06 != (CFireball *)&DAT_01c93cd4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 104,
+      "match": "DAT_01c950d8",
+      "severity": "mild",
+      "text": "} while (this_ptr_07 != (CRock *)&DAT_01c950d8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 111,
+      "match": "DAT_01c965dc",
+      "severity": "mild",
+      "text": "} while (this_ptr_08 != (CLeaf *)&DAT_01c965dc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 118,
+      "match": "DAT_01c85ff8",
+      "severity": "mild",
+      "text": "} while (pCVar2 != (CFirefly *)&DAT_01c85ff8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 121,
+      "match": "DAT_01c558e8",
+      "severity": "mild",
+      "text": "this_ptr_18 = (CBulletHole *)&DAT_01c558e8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 132,
+      "match": "DAT_01c976fc",
+      "severity": "mild",
+      "text": "} while (this_ptr_09 != (CExplosion *)&DAT_01c976fc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 137,
+      "match": "DAT_01c9c4d0",
+      "severity": "mild",
+      "text": "} while (this_ptr_10 != (CToss *)&DAT_01c9c4d0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 142,
+      "match": "DAT_01c9cd94",
+      "severity": "mild",
+      "text": "} while (this_ptr_11 != (CCrater *)&DAT_01c9cd94);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 143,
+      "match": "DAT_01c9cd98",
+      "severity": "mild",
+      "text": "this_ptr_12 = (CGunFlame *)&DAT_01c9cd98;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 154,
+      "match": "DAT_01ca13e8",
+      "severity": "mild",
+      "text": "} while (this_ptr_12 != (CGunFlame *)&DAT_01ca13e8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 159,
+      "match": "DAT_01ca15a4",
+      "severity": "mild",
+      "text": "} while (this_ptr_13 != (CLightningBolt *)&DAT_01ca15a4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 164,
+      "match": "DAT_01ca23b8",
+      "severity": "mild",
+      "text": "} while (this_ptr_14 != (CTrail *)&DAT_01ca23b8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 169,
+      "match": "DAT_01ca367c",
+      "severity": "mild",
+      "text": "} while (this_ptr_15 != (CShell *)&DAT_01ca367c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 176,
+      "match": "DAT_01ca7680",
+      "severity": "mild",
+      "text": "} while (&this_ptr_16->base != (CParticle *)&DAT_01ca7680);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 180,
+      "match": "(CDemonActorType *)((int)pCVar3",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)((CDemonActorType *)((int)pCVar3 + 0x3c))->class_name + 4))(pCVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 180,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)((CDemonActorType *)((int)pCVar3 + 0x3c))->class_name + 4))(pCVar3);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 182,
+      "match": "(CDemonActorType *)((int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CRainDrop *)(((CDemonActorType *)((int)pCVar3 + 0x3c))->class_name + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 180,
+      "match": "(int)pCVar3",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)((CDemonActorType *)((int)pCVar3 + 0x3c))->class_name + 4))(pCVar3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 182,
+      "match": "(int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CRainDrop *)(((CDemonActorType *)((int)pCVar3 + 0x3c))->class_name + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 180,
+      "match": "(CDemonActorType *)((int)pCVar3 + 0x3c)",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)((CDemonActorType *)((int)pCVar3 + 0x3c))->class_name + 4))(pCVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 182,
+      "match": "(CDemonActorType *)((int)pCVar3 + 0x3c)",
+      "severity": "moderate",
+      "text": "pCVar3 = (CRainDrop *)(((CDemonActorType *)((int)pCVar3 + 0x3c))->class_name + 4);",
+      "type": "pointer_cast"
+    }
+  ]
+}

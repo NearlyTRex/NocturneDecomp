@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_gargoyle_cpp_staticInit_FUN_004c4d80(void)
+; void __cdecl core_gargoyle_cpp_staticInit_FUN_004c4d80(void)
 ;
 ;
 ; Called Functions:

@@ -1,0 +1,319 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 66,
+    "complexity_score": 53,
+    "cross_reference_count": 2,
+    "function_call_count": 5,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 23,
+    "suspect_count": 2,
+    "suspect_types": [
+      "raw_address_pointer_store",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 89
+  },
+  "cross_references": [
+    {
+      "addr": "004d27b0",
+      "from_addr": "004d3533",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d2690",
+      "from_addr": "004d26fc",
+      "name": "core_game.cpp_checkCheatAndGiveWeapon_FUN_004d2690",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d2540",
+    "address_range": [
+      [
+        "004d2540",
+        "004d25f4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_giveHeroWeapon_FUN_004d2540",
+    "signature": "void __cdecl core_game_cpp_giveHeroWeapon_FUN_004d2540(char *class_name)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c600",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c600"
+    },
+    {
+      "addr": "0040c2b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_createActorByName_FUN_0040c2b0"
+    },
+    {
+      "addr": "004f7690",
+      "is_variadic": false,
+      "name": "core_inv.cpp_FUN_004f7690"
+    },
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "0051bd60",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_0051bd60"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e1aec",
+      "name": "s_core_game_cpp_005e1aec",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e1afd",
+      "name": "s_giveHeroWeapon_This_is_n_005e1afd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061f650",
+      "name": "DAT_0061f650",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d06ab4",
+      "name": "DAT_01d06ab4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2c900",
+      "name": "DAT_01d2c900",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c99770",
+      "name": "g_CWeaponClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 17,
+    "call_sites": [
+      {
+        "call_addr": "004d3533",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004d361b",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004d3703",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004d37e9",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004d38d1",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004d39b8",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004d3a9e",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004d3b84",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004d3cd4",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004d3ce1",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.6964285714285716,
+    "instruction_count": 56,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 5,
+      "CALLIND": 2,
+      "CBRANCH": 1,
+      "COPY": 45,
+      "INT_ADD": 20,
+      "INT_AND": 19,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 18,
+      "INT_MULT": 2,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 9,
+      "INT_SUB": 23,
+      "LOAD": 12,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 24
+    },
+    "pcode_op_count": 207
+  },
+  "siblings": {
+    "bw3.exe": {
+      "addr": "004bafd0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004dd870",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004a02e0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "class_name",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 23,
+      "match": "*(CDemonActor **)(_DAT_01d06ab4 * 4 + 0x1d06aa4",
+      "severity": "moderate",
+      "text": "(*((actor->vtable)._ub)->pickup)(actor,*(CDemonActor **)(_DAT_01d06ab4 * 4 + 0x1d06aa4));",
+      "type": "raw_address_pointer_store"
+    }
+  ]
+}

@@ -29,13 +29,13 @@ section .text
     ADD EBX,0x15b414                    ; 00569360
     PUSH EBX                            ; 00569366
     CALL core_set.cpp_SVDBox_arrdtor250_FUN_00571590 ; 00569367
-        ;   XREF to: 00571590 (UNCONDITIONAL_CALL)  ; SVDBox * core_set.cpp_SVDBox_arrdtor250_FUN_00571590(SVDBox * objs, uint flags)
+        ;   XREF to: 00571590 (UNCONDITIONAL_CALL)  ; SVDBox * core_set.cpp_SVDBox_arrdtor250_FUN_00571590(SVDBox * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0056936c
     PUSH 0x0                            ; 0056936f
     SUB EAX,0x554                       ; 00569371
     PUSH EAX                            ; 00569376
     CALL core_set.cpp_SRoom_arrdtor20_FUN_00571570 ; 00569377
-        ;   XREF to: 00571570 (UNCONDITIONAL_CALL)  ; SRoom * core_set.cpp_SRoom_arrdtor20_FUN_00571570(SRoom * objs, uint flags)
+        ;   XREF to: 00571570 (UNCONDITIONAL_CALL)  ; SRoom * core_set.cpp_SRoom_arrdtor20_FUN_00571570(SRoom * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0056937c
     PUSH 0x0                            ; 0056937f
     SUB EAX,0x141490                    ; 00569381

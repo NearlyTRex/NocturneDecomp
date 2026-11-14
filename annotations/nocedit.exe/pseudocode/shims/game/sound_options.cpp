@@ -8,10 +8,12 @@
 
 #include "game/sound_options.h"
 
+#include "core/front_end_layout.h"
 #include "core/menu_page.h"
 #include "nocturne.h"
 
 #include <cmath>
+#include <vector>
 
 #if !NOCTURNE_AUTHENTIC_MENU
 
@@ -71,6 +73,15 @@ void add_channel(Lines &lines, int id, const Channel &channel) {
               ROUND(level * 100.0f / channel.scale + 0.001f), localized("%."));
 }
 
+// The menu's music, started again by CSound::configure's reset; over a game
+// sound the pause menu holds, which the reset would cost, without one.
+void restart_menu_music() {
+    if (nocturne_pause_sound_held() != 0)
+        nocturne_pause_sound_menu_music();
+    else
+        core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
+}
+
 // Off is below the lowest step: back from it is full, on from it the lowest.
 void step_channel(const Channel &channel, int step) {
     float level = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(channel.index) / channel.scale;
@@ -78,7 +89,7 @@ void step_channel(const Channel &channel, int step) {
         sound_sndmain_cpp_enableSfxChannel_FUN_005a9e20(channel.index, 1);
         // The music has to be started again to be heard.
         if (channel.index == kMusic.index)
-            core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
+            restart_menu_music();
         level = step == STEP_BACK ? 1.0f : kVolumeStep;
     } else if (step == STEP_BACK) {
         level -= kVolumeStep;
@@ -223,14 +234,88 @@ void pick_device() {
 
 // --- the spectrum ---------------------------------------------------------------------
 
-// Bars 4 pixels apart, from 200Hz up to fifty times that, across each channel's
-// share of the width less a twentieth either side.
+// Bars 4 pixels apart and 32 wide at 640x480, from 200Hz up to fifty times
+// that, across each channel's share of the width less a twentieth either side.
+// At a larger layout the pitch and width grow with it.
 const int kBarPitch = 4;
+const int kBarHalfWidth = 0x10;
 const double kLowestBand = 200.0;
 const double kBandSpan = 50.0;
 const int kCounterStep = 0x18;
 const int kCounterWrap = 0x80000;
+// The counter is in 16.16 flame frames, eight of them.
+const int kFrameShift = 16;
+const int kFrames = 8;
+// renderAudioSpectrumBar's quad: texels 8 to 248 of a frame, in 16.16, half
+// transparent and added to what is under it.
+const int kTexelLow = 8 << 16;
+const int kTexelHigh = 0xf8 << 16;
+const int kBarAlpha = 0x8000;
+const int kOpaque = 0xffff;
+const int kAddBlend = 1;
+const int kNoBlend = 0;
+const int kBarFlags = 0x23;
 
+struct Bar {
+    int x;           // its centre column
+    int half_width;  // and how far it reaches either side
+    int height_half; // half its height above the screen's foot
+    int frame;       // its flame frame
+};
+
+// At least 1, `length` at the layout's scale.
+int scaled(int length, float scale) {
+    const int at_scale = (int)std::lround((float)length * scale);
+    return at_scale < 1 ? 1 : at_scale;
+}
+
+// renderAudioSpectrumBar, `half_width` either side of its centre rather than 16,
+// in the frame it is given.
+void draw_bar(const Bar &bar, int bottom) {
+    if (bar.height_half <= 0)
+        return;
+    CDemonRenderer *renderer = g_CDemonRendererPtr2;
+    SRenderVertex *vertex = renderer->vertex_buffer_ptr;
+    const int left = (bar.x - bar.half_width) * 0x10000;
+    const int right = (bar.x + bar.half_width) * 0x10000;
+    const int foot = bottom * 0x10000;
+    const int top = (bottom - bar.height_half * 2) * 0x10000;
+    vertex[0].projected_vertex.screen_x = left;
+    vertex[0].projected_vertex.screen_y = foot;
+    vertex[0].u = kTexelLow;
+    vertex[0].v = kTexelHigh;
+    vertex[1].projected_vertex.screen_x = right;
+    vertex[1].projected_vertex.screen_y = foot;
+    vertex[1].u = kTexelHigh;
+    vertex[1].v = kTexelHigh;
+    vertex[2].projected_vertex.screen_x = right;
+    vertex[2].projected_vertex.screen_y = top;
+    vertex[2].u = kTexelHigh;
+    vertex[2].v = kTexelLow;
+    vertex[3].projected_vertex.screen_x = left;
+    vertex[3].projected_vertex.screen_y = top;
+    vertex[3].u = kTexelLow;
+    vertex[3].v = kTexelLow;
+    SMRGLPrimitiveQuadIndex quad = {};
+    quad.base.base.count = 4;
+    quad.vertices[0] = 0;
+    quad.vertices[1] = 1;
+    quad.vertices[2] = 2;
+    quad.vertices[3] = 3;
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(renderer, kBarAlpha);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(renderer, kAddBlend);
+    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(
+        renderer, &g_AudioSpectrumTextures[bar.frame]);
+    engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10(renderer, &quad.base,
+                                                                        kBarFlags);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(renderer, kNoBlend);
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(renderer, kOpaque);
+}
+
+// Each bar picks its frame by the column it would have had at 640x480, so the
+// flames run across it as they shipped. They are drawn a frame at a time,
+// which adds up the same as left to right and changes texture eight times
+// rather than at every bar.
 void draw_spectrum() {
     g_AudioVisualizationCounter += g_GlobalDeltaTimeInt * kCounterStep;
     if (g_AudioVisualizationCounter >= kCounterWrap)
@@ -240,21 +325,34 @@ void draw_spectrum() {
     const int channels = sound_sndmain_cpp_getAudioChannelCount_FUN_005ab270();
     if (channels <= 0)
         return;
+    const float scale = nocturne_layout().scale;
+    const int pitch = scaled(kBarPitch, scale);
+    const int half_width = scaled(kBarHalfWidth, scale);
     const int margin = g_WindowWidth / 20;
     const int per_channel = g_WindowWidth / channels;
-    const int bars = (per_channel - margin * 2) / kBarPitch;
+    const int bars = (per_channel - margin * 2) / pitch;
     const double ratio = pow(kBandSpan, 1.0 / bars);
     const int bottom = g_WindowHeight - 1;
+    std::vector<Bar> drawn;
     for (int channel = 0; channel < channels; channel++) {
         double band = kLowestBand;
         const int left = per_channel * channel + margin;
-        for (int x = left; x < left + bars * kBarPitch; x += kBarPitch) {
+        for (int x = left; x < left + bars * pitch; x += pitch) {
             const double next = band * ratio;
             const float level = sound_sndmain_cpp_analyzeFrequencyBand_FUN_005ac400(
                 channel, (float)band, (float)next);
             const int top = ROUND((float)g_WindowHeight - level * (float)g_WindowHeight * 0.25f);
-            core_menu_cpp_renderAudioSpectrumBar_FUN_0050fe70(x, bottom, bottom - top + 1);
+            const int column = (int)std::lround((float)x / scale);
+            const int frame =
+                ((g_AudioVisualizationCounter >> kFrameShift) + column) & (kFrames - 1);
+            drawn.push_back({x, half_width, bottom - top + 1, frame});
             band = next;
+        }
+    }
+    for (int frame = 0; frame < kFrames; frame++) {
+        for (const Bar &bar : drawn) {
+            if (bar.frame == frame)
+                draw_bar(bar, bottom);
         }
     }
 }
@@ -306,7 +404,7 @@ public:
             sound_sndmain_cpp_setSoundMuted_FUN_005a96c0(
                 (int)(sound_sndmain_cpp_isSoundMuted_FUN_005a96b0() == 0));
             if (sound_sndmain_cpp_isSoundMuted_FUN_005a96b0() == 0)
-                core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
+                restart_menu_music();
             break;
         case SOUND_EFFECTS:
             step_channel(kEffects, step);

@@ -13,7 +13,7 @@
 ;   core_actor.cpp_archiveMotionState_FUN_0040bb60 at 0040bc03
 ;   core_actor.cpp_archivePartStatus_FUN_0040bc50 at 0040bdd3
 ;   core_actor.cpp_archiveRules_FUN_0040c170 at 0040c291
-;   core_inv.cpp_FUN_004dc2c0 at 004dc2e9
+;   core_inv.cpp_CInventory_save_FUN_004dc2c0 at 004dc2e9
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0060958e

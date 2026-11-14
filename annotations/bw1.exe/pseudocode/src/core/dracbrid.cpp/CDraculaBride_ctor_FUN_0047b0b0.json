@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 313,
+    "complexity_score": 84,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 38,
-    "suspect_count": 26,
+    "pseudocode_lines": 39,
+    "suspect_count": 3,
     "suspect_types": [
-      "unnamed_field",
+      "shadow_pointer_walk",
       "unrolled_memset",
       "warning_overlapping_globals"
     ],
-    "total_lines": 90
+    "total_lines": 91
   },
   "cross_references": [
     {
@@ -45,7 +45,7 @@
     {
       "addr": "00569f50",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_00569f50"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50"
     }
   ],
   "globals": [
@@ -108,6 +108,26 @@
     },
     "pcode_op_count": 195
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00462ba0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00483fc0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00458640",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -134,204 +154,20 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "*(byte ***)&pCVar3->field_0x154 = &g_CDraculaBrideVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_00569f50(&pCVar3->field_0x158,0x5dac1b);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x2fec",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x2fec = 0x3f000000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x2ff0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x2ff0 = 0x3f800000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0xc28c",
-      "severity": "mild",
-      "text": "pCVar3->field_0xc28c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x2538",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x2538 = 0x43070000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0xc2f4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0xc2f4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0xc2f8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0xc2f8 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x2ff4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x2ff4 = uVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x2ff8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x2ff8 = uVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0xc30c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0xc30c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
       "line": 27,
-      "match": "field_0xc308",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0xc308 = *(uint *)&pCVar3->field_0xc30c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0xc30c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0xc308 = *(uint *)&pCVar3->field_0xc30c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0xc304",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0xc304 = *(uint *)&pCVar3->field_0xc308;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0xc308",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0xc304 = *(uint *)&pCVar3->field_0xc308;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0xc310",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0xc310 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0xc2f0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0xc2f0 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "puVar5 = &pCVar4->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0xc318",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xc318 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0xf0",
-      "severity": "mild",
-      "text": "} while (puVar5 != &pCVar3->field_0xf0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0xc314",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0xc314 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0xc40c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0xc40c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0xc300",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0xc300 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0xc408",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0xc408 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 26,
       "match": "cascade_constant_fill",
       "severity": "moderate",
-      "text": "*(uint *)&pCVar3->field_0xc30c = 0;",
+      "text": "(pCVar3->new_pos).z = 0.0;",
       "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom shadow-pointer walk (two-step form) \u2014 `pCVar4` is advanced into scratch `pCVar5`, then rebound via a later `pCVar4 = pCVar5;`. Functionally identical to the single-line self-update; replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer and drop both the advance line and the rebind.",
+      "line": 34,
+      "match": "pCVar5 = (T *)((pCVar4->FIELD).SUBFIELD...ARRAY + CONST); ...; pCVar4 = pCVar5",
+      "severity": "moderate",
+      "text": "pCVar5 = (CDraculaBride *)((pCVar4->base).base.base.actor_name + 4);",
+      "type": "shadow_pointer_walk"
     }
   ],
   "vtable_info": {

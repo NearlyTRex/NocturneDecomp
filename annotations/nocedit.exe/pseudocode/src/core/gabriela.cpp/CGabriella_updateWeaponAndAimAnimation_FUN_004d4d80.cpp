@@ -152,12 +152,12 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
       if (0.0 < this_ptr->fire_cooldown_timer) {
         fVar3 = this_ptr->fire_cooldown_timer;
         pCVar1 = &(this_ptr->base).base.model;
-        (this_ptr->base).base.model.bone_update_mode = 2;
+        (this_ptr->base).base.model.bone_update_mode = BONE_UPDATE_HIERARCHICAL_RESTPOSE;
         fVar3 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
                           (&pCVar1->base,iVar6,fVar3);
         core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
                   (pCVar1,g_GabriellaIndices[0xe],fVar3,0);
-        (this_ptr->base).base.model.bone_update_mode = 0;
+        (this_ptr->base).base.model.bone_update_mode = BONE_UPDATE_SIMPLE_FLAT;
       }
     }
     else {
@@ -214,13 +214,13 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
       if (0.0 < this_ptr->fire_cooldown_timer) {
         fVar3 = this_ptr->fire_cooldown_timer;
         fVar1 = (float)0.90000000000000002;
-        (this_ptr->base).base.model.bone_update_mode = 2;
+        (this_ptr->base).base.model.bone_update_mode = BONE_UPDATE_HIERARCHICAL_RESTPOSE;
         pCVar1 = &(this_ptr->base).base.model;
         fVar3 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
                           (&pCVar1->base,g_GabriellaIndices[0xf],1.0 - fVar3 * fVar1);
         core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
                   (pCVar1,g_GabriellaIndices[0xf],fVar3,g_GabriellaIndices[6]);
-        (this_ptr->base).base.model.bone_update_mode = 0;
+        (this_ptr->base).base.model.bone_update_mode = BONE_UPDATE_SIMPLE_FLAT;
       }
     }
   }

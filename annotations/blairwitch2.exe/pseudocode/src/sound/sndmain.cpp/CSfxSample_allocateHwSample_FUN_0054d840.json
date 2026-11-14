@@ -1,0 +1,367 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 143,
+    "complexity_score": 164,
+    "cross_reference_count": 3,
+    "function_call_count": 7,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 79,
+    "suspect_count": 6,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "unresolved_funcptr",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 222
+  },
+  "cross_references": [
+    {
+      "addr": "005516d0",
+      "from_addr": "005517bd",
+      "name": "sound_sndmain.cpp_createUserSample_FUN_005516d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054c1c0",
+      "from_addr": "0054c3ca",
+      "name": "sound_sndmain.cpp_getSfxSample_FUN_0054c1c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054c7f0",
+      "from_addr": "0054c9f8",
+      "name": "sound_sndmain.cpp_loadStreamingSoundFile_FUN_0054c7f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0054d840",
+    "address_range": [
+      [
+        "0054d840",
+        "0054d9a3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_0054d840",
+    "signature": "int __cdecl sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_0054d840(CSfxSample *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b8ce0",
+      "is_variadic": false,
+      "name": "crt_memory.c_realloc_FUN_005b8ce0"
+    },
+    {
+      "addr": "0054d9b0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_freeMemory_FUN_0054d9b0"
+    },
+    {
+      "addr": "0054dac0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_freeSampleData_FUN_0054dac0"
+    },
+    {
+      "addr": "0054da70",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_releaseBufferId_FUN_0054da70"
+    },
+    {
+      "addr": "0054b960",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_0054b960"
+    },
+    {
+      "addr": "00552b30",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_hasHardware3DSound_FUN_00552b30"
+    },
+    {
+      "addr": "005549c0",
+      "is_variadic": true,
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005549c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e7f32",
+      "name": "s_allocateHwSample_failed_005e7f32",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e80ae",
+      "name": "s_Atried_to_use_Yamaha_WAV_005e80ad+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02641920",
+      "name": "DAT_02641920",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02641c20",
+      "name": "g_SfxSamples[1].taken",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02641c24",
+      "name": "g_SfxSamples[1].ref_count",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02641c28",
+      "name": "g_SfxSamples[1].buffer_id",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02641c2c",
+      "name": "g_SfxSamples[1].is_user_sample",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02648e80",
+      "name": "DAT_02648e80",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "0054c3ca",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_getSfxSample_FUN_0054c1c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0054c6b7",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_getSfxSample_FUN_0054c1c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0054c9f8",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_loadStreamingSoundFile_FUN_0054c7f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0054cb38",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_loadStreamingSoundFile_FUN_0054c7f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005517bd",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_createUserSample_FUN_005516d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.962264150943396,
+    "instruction_count": 106,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BRANCH": 4,
+      "CALL": 8,
+      "CALLIND": 1,
+      "CBRANCH": 16,
+      "COPY": 84,
+      "INT_ADD": 44,
+      "INT_AND": 65,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 64,
+      "INT_LESS": 12,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 6,
+      "INT_SBORROW": 12,
+      "INT_SCARRY": 13,
+      "INT_SEXT": 6,
+      "INT_SLESS": 31,
+      "INT_SUB": 41,
+      "INT_XOR": 3,
+      "INT_ZEXT": 4,
+      "LOAD": 25,
+      "POPCOUNT": 31,
+      "RETURN": 2,
+      "STORE": 28,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 526
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0056feb0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005533b0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a6170",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6792
+    },
+    "nocturne.exe": {
+      "addr": "00523910",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6857
+    }
+  },
+  "stack_frame": {
+    "frame_size": 424,
+    "local_size": 420,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1a0",
+        "offset": -416,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_160",
+        "offset": -352,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSfxSample *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0054d885",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0054d89d",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(CSfxSample *)((int)pCVar5",
+      "severity": "moderate",
+      "text": "pCVar5 = (CSfxSample *)((int)pCVar5 + (uint)bVar8 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 53,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar3 = (**(code **)(*_DAT_02648e80 + 0x30))(_DAT_02648e80,local_160);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Pointer value `pCVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 40,
+      "match": "(int)pCVar5",
+      "severity": "moderate",
+      "text": "pCVar5 = (CSfxSample *)((int)pCVar5 + (uint)bVar8 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 38,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar3 = 0x54; iVar3 != 0; iVar3 = iVar3 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 46,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar3 = 0x54; iVar3 != 0; iVar3 = iVar3 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

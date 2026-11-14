@@ -8,14 +8,40 @@
       "00443aa0",
       "00449f70"
     ],
-    "conv":"unknown",
+    "conv":"__fastcall",
     "instructions":48,
     "method":"_memcpy",
     "name":"crt_watcom.c__memcpy_FUN_00492718",
+    "params":[
+      {
+        "name":"dest",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      },
+      {
+        "name":"src",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      },
+      {
+        "name":"size",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"crt/watcom.c",
@@ -30,15 +56,34 @@
       "005c0b85",
       "005c0c9f"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":34,
-    "method":"FUN_005b9c98",
-    "name":"crt_unknown.c_FUN_005b9c98",
+    "method":"istream_seekg",
+    "name":"crt_unknown.c_istream_seekg_FUN_005b9c98",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      },
+      {
+        "name":"offset",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "header":"iostream",
+      "kind":"system",
+      "name":"_istream",
+      "ptr":1
     },
     "tu":"crt/unknown.c",
     "variadic":false
@@ -98,8 +143,8 @@
     ],
     "conv":"unknown",
     "instructions":18,
-    "method":"FUN_005be118",
-    "name":"crt_unknown.c_FUN_005be118",
+    "method":"updateClassNameHash",
+    "name":"crt_unknown.c_updateClassNameHash_FUN_005be118",
     "receiver":false,
     "ret":{
       "kind":"builtin",

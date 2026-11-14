@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_drone_cpp_staticInit_FUN_00485bf0(void)
+; void __cdecl core_drone_cpp_staticInit_FUN_00485bf0(void)
 ;
 ;
 ; Called Functions:

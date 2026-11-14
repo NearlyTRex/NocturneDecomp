@@ -20,7 +20,7 @@ void core_slew_cpp_FUN_005493d0(float *param_1)
   float10 fVar7;
   float local_28;
   
-  local_28 = *(float *)&g_CGamePtr->field_0x284;
+  local_28 = g_CGamePtr->delta_time_float;
   iVar5 = (**(code **)*0x01D02F84)(0x01D02F84,0x38);
   dVar4 = _DAT_005e7621;
   if ((iVar5 != 0) ||

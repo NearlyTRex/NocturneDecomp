@@ -6,15 +6,15 @@
 ;
 ; XREF[16]:
 ;   core_doc.cpp_FUN_0046caa0 at 0046e15e
-;   core_emitter.cpp_FUN_0049f0e0 at 0049f1c3
-;   core_fire.cpp_FUN_004ac3e0 at 004ac4ca
+;   core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_0049f0e0 at 0049f1c3
+;   core_fire.cpp_CBulletHole_init_FUN_004ac3e0 at 004ac4ca
 ;   core_gore.cpp_CBloodSplat_initWallSplat_FUN_004e4830 at 004e486f
-;   core_gore.cpp_FUN_004e6060 at 004e613a
-;   core_larva.cpp_FUN_004fda40 at 004fddb7
+;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004e6060 at 004e613a
+;   core_larva.cpp_CLarva_process_FUN_004fda40 at 004fddb7
 ;   core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0056afe0 at 0056b100
-;   core_stranger.cpp_FUN_00588ad0 at 00589a32
-;   core_tvbat.cpp_FUN_005a4260 at 005a45bf
-;   core_vampboss.cpp_FUN_005a5550 at 005a5934
+;   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00588ad0 at 00589a32
+;   core_tvbat.cpp_CTVBat_process_FUN_005a4260 at 005a45bf
+;   core_vampboss.cpp_CVampireBoss_process_FUN_005a5550 at 005a5934
 ;   ... and 6 more
 ;
 ; Referenced Globals:

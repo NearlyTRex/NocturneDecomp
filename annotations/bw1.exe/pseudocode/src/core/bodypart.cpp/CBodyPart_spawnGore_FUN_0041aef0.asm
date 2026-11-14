@@ -7,14 +7,14 @@
 ; CBodyPart *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_bodypart.cpp_FUN_00419740 at 00419785
+;   core_bodypart.cpp_CBodyPart_process_FUN_00419740 at 00419785
 ;
 ; Referenced Globals:
 ;   CGore* g_CGorePtr = 01cd0e3c
 ;   undefined4 DAT_02c8af28
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cd00
+;   core_actor.cpp_randomChance_FUN_0040cd00
 ;   core_gore.cpp_CGore_spawnBloodParticles_FUN_004e5f40
 ;
 ; *****************************************************************************
@@ -23,8 +23,8 @@ section .text
 
     PUSH 0x3da3d70a                     ; 0041aef0
         ;   Label: core_bodypart.cpp_CBodyPart_spawnGore_FUN_0041aef0
-    CALL core_actor.cpp_FUN_0040cd00    ; 0041aef5
-        ;   XREF to: 0040cd00 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cd00(float probability_threshold)
+    CALL core_actor.cpp_randomChance_FUN_0040cd00 ; 0041aef5
+        ;   XREF to: 0040cd00 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040cd00(float probability_threshold)
     ADD ESP,0x4                         ; 0041aefa
     TEST EAX,EAX                        ; 0041aefd
     JNZ 0x0041af02                      ; 0041aeff

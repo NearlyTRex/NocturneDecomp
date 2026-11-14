@@ -1,0 +1,125 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 12,
+    "complexity_score": 23,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 8,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
+    "total_lines": 20
+  },
+  "cross_references": [
+    {
+      "addr": "00529a70",
+      "from_addr": "0052e16f",
+      "name": "core_script.cpp_CScript_step_FUN_00529a70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00495e40",
+    "address_range": [
+      [
+        "00495e40",
+        "00495e5e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_event.cpp_copyQuaternion_FUN_00495e40",
+    "signature": "CQuaternion4f * __cdecl core_event_cpp_copyQuaternion_FUN_00495e40(CQuaternion4f *dest,CQuaternion4f *src)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0052e16f",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_step_FUN_00529a70",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.8181818181818183,
+    "instruction_count": 11,
+    "opcode_distribution": {
+      "COPY": 10,
+      "INT_ADD": 9,
+      "LOAD": 7,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 31
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00492610",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004aafc0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00520e00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "dest",
+        "offset": 4,
+        "size": 4,
+        "type": "CQuaternion4f *"
+      },
+      {
+        "is_param": true,
+        "name": "src",
+        "offset": 8,
+        "size": 4,
+        "type": "CQuaternion4f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 5,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "dest->w = src->w;",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

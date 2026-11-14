@@ -17,7 +17,7 @@
 ;
 ; XREF[2]:
 ;   core_inv.cpp_loadAssets_FUN_004da570 at 004da778
-;   core_menu.cpp_FUN_004ea4d0 at 004ea51a
+;   core_menu.cpp_showMainGameMenu_FUN_004ea4d0 at 004ea51a
 ;
 ; *****************************************************************************
 

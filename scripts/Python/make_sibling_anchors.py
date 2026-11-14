@@ -32,6 +32,10 @@ import re
 import sys
 
 FUN_SUFFIX = re.compile(r"_FUN_[0-9a-fA-F]+$")
+# A base that is only its unit (core_x.cpp_FUN_<addr>, unkafter_x.cpp_FUN_<addr>)
+# names no function: two units each holding one such function would pair on the
+# file name alone.
+UNIT_ONLY = re.compile(r"^[A-Za-z0-9]+_[A-Za-z0-9_]+?\.(?:cpp|c)$")
 
 
 def load_named(funcs_dir):
@@ -51,11 +55,14 @@ def load_named(funcs_dir):
             name = rec.get("name", "")
             if not name or name.startswith("FUN_") or name.startswith("thunk_"):
                 continue
-            out.setdefault(FUN_SUFFIX.sub("", name), []).append(rec["addr"])
+            base = FUN_SUFFIX.sub("", name)
+            if UNIT_ONLY.match(base):
+                continue
+            out.setdefault(base, []).append(rec["addr"])
     return out
 
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--funcs-a", default="annotations/nocedit.exe/functions")
@@ -63,7 +70,7 @@ def main():
     ap.add_argument("--key-a", default="nocedit", help="field name for the A side")
     ap.add_argument("--key-b", default="nocturne", help="field name for the B side")
     ap.add_argument("--out", required=True)
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
     a = load_named(args.funcs_a)
     b = load_named(args.funcs_b)
@@ -78,7 +85,8 @@ def main():
             continue
         pairs.append({args.key_a: "0x" + addrs_a[0], args.key_b: "0x" + addrs_b[0]})
 
-    json.dump(pairs, open(args.out, "w"))
+    with open(args.out, "w") as fh:
+        json.dump(pairs, fh)
     print(f"{args.key_a}: {len(a)} named bases")
     print(f"{args.key_b}: {len(b)} named bases")
     print(f"unique 1-to-1 pairs: {len(pairs)}  (dropped {ambiguous} ambiguous)")

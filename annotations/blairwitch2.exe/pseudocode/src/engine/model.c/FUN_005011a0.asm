@@ -28,10 +28,10 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
+;   crt_memory.c_malloc_FUN_005b8580
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   crt_stdio.c_fread_FUN_005b87c0
-;   crt_unknown.c_FUN_005b7790
-;   crt_unknown.c_FUN_005b8580
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_dosio.cpp_FUN_00460c70
 ;
 ; *****************************************************************************
@@ -59,8 +59,8 @@ section .text
     LEA EAX,[EDI + 0x4]                 ; 005011cc
         ;   Label: LAB_005011cc
     PUSH EAX                            ; 005011cf
-    CALL crt_unknown.c_FUN_005b8580     ; 005011d0
-        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005b8580(ulong size)
+    CALL crt_memory.c_malloc_FUN_005b8580 ; 005011d0
+        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005b8580(ulong size)
     ADD ESP,0x4                         ; 005011d5
     MOV EBX,EAX                         ; 005011d8
     TEST EAX,EAX                        ; 005011da
@@ -70,8 +70,8 @@ section .text
     PUSH 0x5df102                       ; 005011df | = "Out of partial model mem : %s"
     LEA EAX,[ESP + 0x8]                 ; 005011e4
     PUSH EAX                            ; 005011e8
-    CALL crt_unknown.c_FUN_005b7790     ; 005011e9
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 005011e9
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     MOV EAX,0x2ef                       ; 005011ee
     ADD ESP,0xc                         ; 005011f3
     MOV [0x01d046a4],EAX                ; 005011f6 | DAT_01d046a4
@@ -88,7 +88,7 @@ section .text
     PUSH 0x1                            ; 00501213
     PUSH EBX                            ; 00501215
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 00501216
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0050121b
     CMP EAX,EDI                         ; 0050121e
     JZ 0x00501245                       ; 00501220
@@ -128,8 +128,8 @@ section .text
     PUSH 0x5df0d7                       ; 0050126e | = "Unable to open model: %s"
     LEA EAX,[ESP + 0x8]                 ; 00501273
     PUSH EAX                            ; 00501277
-    CALL crt_unknown.c_FUN_005b7790     ; 00501278
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 00501278
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     MOV EDX,0x5df0f0                    ; 0050127d | = "..\\engine\\model.c"
     ADD ESP,0xc                         ; 00501282
     MOV EAX,ESP                         ; 00501285

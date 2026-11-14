@@ -36,10 +36,10 @@ void FUN_00570f60(void)
     if (iVar2 == 0) {
       iVar2 = 1;
     }
-    pcVar3 = (char *)func_0x00570f50(iVar2);
+    pcVar3 = (char *)FUN_00570f50(iVar2);
     if (pcVar3 != (char *)0x0) {
       _DAT_02de5d60 = pcVar3;
-      iVar6 = func_0x00570f50(iVar6 * 5 + 4);
+      iVar6 = FUN_00570f50(iVar6 * 5 + 4);
       if (iVar6 == 0) {
         free(pcVar3);
       }

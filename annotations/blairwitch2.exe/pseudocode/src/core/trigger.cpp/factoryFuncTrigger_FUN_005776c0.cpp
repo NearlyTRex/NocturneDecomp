@@ -1,20 +1,20 @@
 // Name: core_trigger.cpp_factoryFuncTrigger_FUN_005776c0
 // Address: 005776c0
 // Address Range: [[005776c0, 005776db]]
-// Convention: unknown
-// Signature: void core_trigger_cpp_factoryFuncTrigger_FUN_005776c0(void)
+// Convention: __cdecl
+// Signature: CTrigger * __cdecl core_trigger_cpp_factoryFuncTrigger_FUN_005776c0(void)
 
 #include "nocturne.h"
 
-void core_trigger_cpp_factoryFuncTrigger_FUN_005776c0(void)
+CTrigger * __cdecl core_trigger_cpp_factoryFuncTrigger_FUN_005776c0(void)
 
 {
-  CTrigger *this_ptr;
+  CTrigger *pCVar1;
   
-  this_ptr = (CTrigger *)FUN_005b8be2(0x4d0);
-  if (this_ptr == (CTrigger *)0x0) {
-    return;
+  pCVar1 = (CTrigger *)operator_new(0x4d0);
+  if (pCVar1 == (CTrigger *)0x0) {
+    return (CTrigger *)0x0;
   }
-  core_trigger_cpp_CTrigger_ctor_FUN_005776f0(this_ptr);
-  return;
+  pCVar1 = core_trigger_cpp_CTrigger_ctor_FUN_005776f0(pCVar1);
+  return pCVar1;
 }

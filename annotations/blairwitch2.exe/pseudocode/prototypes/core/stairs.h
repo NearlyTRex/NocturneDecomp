@@ -7,64 +7,64 @@
 
 // Original: core_stairs.cpp_staticInit_FUN_00561e90
 // Address: 00561e90
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_stairs.cpp_factoryFuncStairs_FUN_00561ec0
 // Address: 00561ec0
-void factoryFuncStairs(void);
+CStairs * __cdecl factoryFuncStairs(void);
 
 // Original: core_stairs.cpp_CStairs_getActorType_FUN_00561ee0
 // Address: 00561ee0
-CDemonActorType * CStairs::getActorType(CStairs *this_ptr);
+CDemonActorType * __cdecl CStairs::getActorType(CStairs *this_ptr);
 
 // Original: core_stairs.cpp_CStairs_ctor_FUN_00561ef0
 // Address: 00561ef0
 CStairs * __cdecl CStairs::ctor(CStairs *this_ptr);
 
-// Original: core_stairs.cpp_FUN_00561f60
+// Original: core_stairs.cpp_CStairs_setup_FUN_00561f60
 // Address: 00561f60
-void FUN_00561f60(CStairs *param_1);
+void __cdecl CStairs::setup(CStairs *this_ptr);
 
-// Original: core_stairs.cpp_FUN_00561f80
+// Original: core_stairs.cpp_CStairs_process_FUN_00561f80
 // Address: 00561f80
-void FUN_00561f80(void);
+void __cdecl CStairs::process(CStairs *this_ptr,float delta_time);
 
-// Original: core_stairs.cpp_FUN_00561f90
+// Original: core_stairs.cpp_CStairs_renderOpaque_FUN_00561f90
 // Address: 00561f90
-undefined4 FUN_00561f90(void);
+int __cdecl CStairs::renderOpaque(CStairs *this_ptr);
 
-// Original: core_stairs.cpp_FUN_00561fa0
+// Original: core_stairs.cpp_CStairs_getBoundingBox_FUN_00561fa0
 // Address: 00561fa0
-void FUN_00561fa0(int param_1);
+CBoundingBox3D * __cdecl CStairs::getBoundingBox(CStairs *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_stairs.cpp_FUN_00562010
+// Original: core_stairs.cpp_CStairs_archive_FUN_00562010
 // Address: 00562010
-void FUN_00562010(CDemonActor *param_1);
+void __cdecl CStairs::archive(CStairs *this_ptr);
 
 // Original: core_stairs.cpp_CStairs_getCollisionType_FUN_00562090
 // Address: 00562090
 ECollisionType __cdecl CStairs::getCollisionType(CStairs *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_stairs.cpp_FUN_005620b0
+// Original: core_stairs.cpp_CStairs_customRayIntersect_FUN_005620b0
 // Address: 005620b0
-float FUN_005620b0(int param_1,undefined4 param_2,undefined4 param_3,float *param_4);
+float __cdecl CStairs::customRayIntersect(CStairs *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 
-// Original: core_stairs.cpp_FUN_005621a0
+// Original: core_stairs.cpp_CStairs_customIntersectCylinderXZ_FUN_005621a0
 // Address: 005621a0
-void FUN_005621a0(int param_1,undefined4 param_2);
+void __cdecl CStairs::customIntersectCylinderXZ(CStairs *this_ptr,SIntersectXZCylinder *cylinder);
 
-// Original: core_stairs.cpp_FUN_005621e0
+// Original: core_stairs.cpp_CStairs_customGetFloorHeight_FUN_005621e0
 // Address: 005621e0
-undefined4 FUN_005621e0(int param_1,CVector3f *param_2,float param_3,float *param_4);
+int __cdecl CStairs::customGetFloorHeight(CStairs *this_ptr,CVector3f *position,float search_radius,float *out_floor_height);
 
-// Original: core_stairs.cpp_FUN_00562230
+// Original: core_stairs.cpp_CStairs_getGroundType_FUN_00562230
 // Address: 00562230
-undefined4 FUN_00562230(int param_1);
+EGroundType __cdecl CStairs::getGroundType(CStairs *this_ptr);
 
-// Original: core_stairs.cpp_FUN_00562240
+// Original: core_stairs.cpp_CStairs_buildCollision_FUN_00562240
 // Address: 00562240
-void __cdecl FUN_00562240(CStairs *this_ptr);
+void __cdecl CStairs::buildCollision(CStairs *this_ptr);
 
 // Original: core_stairs.cpp_CStairs_dtor_FUN_00562380
 // Address: 00562380
-CStairs * CStairs::dtor(CStairs *this_ptr,uint flags);
+CStairs * __cdecl CStairs::dtor(CStairs *this_ptr,uint flags);

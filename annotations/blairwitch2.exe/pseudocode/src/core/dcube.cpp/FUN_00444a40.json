@@ -17,15 +17,15 @@
   },
   "cross_references": [
     {
-      "addr": "00445620",
-      "from_addr": "0044585f",
-      "name": "core_dcube.cpp_FUN_00445620",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00446b60",
       "from_addr": "00446b9a",
       "name": "core_dcube.cpp_FUN_00446b60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00445620",
+      "from_addr": "0044585f",
+      "name": "core_dcube.cpp_triangleCylinderCollision_FUN_00445620",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -66,7 +66,7 @@
       {
         "call_addr": "0044585f",
         "call_type": "direct",
-        "caller": "core_dcube.cpp_FUN_00445620",
+        "caller": "core_dcube.cpp_triangleCylinderCollision_FUN_00445620",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -79,7 +79,7 @@
       {
         "call_addr": "00445968",
         "call_type": "direct",
-        "caller": "core_dcube.cpp_FUN_00445620",
+        "caller": "core_dcube.cpp_triangleCylinderCollision_FUN_00445620",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -132,6 +132,20 @@
       "STORE": 27
     },
     "pcode_op_count": 1538
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004560f0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00452240",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 76,

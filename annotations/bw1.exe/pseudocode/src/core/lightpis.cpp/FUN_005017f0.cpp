@@ -12,12 +12,12 @@ void core_lightpis_cpp_FUN_005017f0(int param_1)
 
 {
   byte bVar1;
-  uint auStackY_1024 [1016];
+  float afStackY_1024 [1016];
   uint local_3c;
-  uint uStack_30;
-  uint uStack_24;
-  uint uStack_20;
-  uint uStack_1c;
+  float fStack_30;
+  float fStack_24;
+  float fStack_20;
+  float fStack_1c;
   uint local_18;
   
   bVar1 = 0;
@@ -28,23 +28,23 @@ void core_lightpis_cpp_FUN_005017f0(int param_1)
   *(uint *)(&stack0xffffffcc + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
        *(uint *)(&stack0xfffffff0 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
   core_actor_cpp_FUN_00408b40();
-  g_CDemonLightInstance._7348_4_ = 1;
-  g_CDemonLightInstance._7356_4_ = 1;
-  uStack_24 = uStack_30;
+  g_CDemonLightInstance.light_enabled_flag = 1;
+  g_CDemonLightInstance.volumetric_enabled = 1;
+  fStack_24 = fStack_30;
   *(uint *)((int)&stack0xffffffe0 + (uint)bVar1 * -8) =
        *(uint *)(&stack0xffffffd4 + (uint)bVar1 * -8);
   *(uint *)((int)&stack0xffffffe4 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
        *(uint *)(&stack0xffffffd8 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-  if (&stack0x00000000 != &g_CDemonLightInstance.field_0x28) {
-    g_CDemonLightInstance._4_4_ = uStack_24;
-    g_CDemonLightInstance._8_4_ = uStack_20;
-    g_CDemonLightInstance._12_4_ = uStack_1c;
+  if ((CVector3f *)&stack0x00000000 != g_CDemonLightInstance.base.base.rotation_matrix.m + 2) {
+    g_CDemonLightInstance.base.base.position.f.x = fStack_24;
+    g_CDemonLightInstance.base.base.position.f.y = fStack_20;
+    g_CDemonLightInstance.base.base.position.f.z = fStack_1c;
   }
-  core_dirmat_cpp_FUN_0045f3e0
-            ((CMatrix3x3f *)&g_CDemonLightInstance.field_0x10,(CVector3f *)(param_1 + 0x30));
-  g_CDemonLightInstance._320_4_ = 0x42000000;
-  g_CDemonLightInstance._56_4_ = _DAT_00603174;
-  g_CDemonLightInstance._7376_4_ = 1;
+  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
+            (&g_CDemonLightInstance.base.base.rotation_matrix,(CVector3f *)(param_1 + 0x30));
+  g_CDemonLightInstance.base.max_distance = 32.0;
+  g_CDemonLightInstance.base.base.focal_length = _DAT_00603174;
+  g_CDemonLightInstance.antialiasing_enabled = 1;
   core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00465da0(&g_CDemonLightInstance,1.0);
   return;
 }

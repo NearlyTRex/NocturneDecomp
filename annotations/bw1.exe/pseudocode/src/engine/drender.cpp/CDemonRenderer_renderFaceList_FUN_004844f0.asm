@@ -16,7 +16,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_005552f0 at 00555332
+;   core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_005552f0 at 00555332
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_005db451
@@ -263,7 +263,7 @@ section .text
     PUSH EBX                            ; 00484703
         ;   Label: LAB_00484703
     CALL engine_prim.c_getTriangleWindingFromPackedIndices_FUN_0053e000 ; 00484704
-        ;   XREF to: 0053e000 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_getTriangleWindingFromPackedIndices_FUN_0053e000()
+        ;   XREF to: 0053e000 (UNCONDITIONAL_CALL)  ; int engine_prim.c_getTriangleWindingFromPackedIndices_FUN_0053e000(STrianglePackedIndices * triangle)
     ADD ESP,0x4                         ; 00484709
     TEST EAX,EAX                        ; 0048470c
     JZ 0x0048474d                       ; 0048470e
@@ -304,7 +304,7 @@ section .text
     MOV ECX,dword ptr [ESI]             ; 00484772
     PUSH ECX                            ; 00484774
     CALL engine_special.cpp_drawPolyList2_FUN_005824e0 ; 00484775
-        ;   XREF to: 005824e0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolyList2_FUN_005824e0()
+        ;   XREF to: 005824e0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolyList2_FUN_005824e0(SRenderVertex * vertex_buffer, SInputFace * * polygons, int polygon_count, int render_flags)
     ADD ESP,0x10                        ; 0048477a
     ADD ESP,0x14                        ; 0048477d
     POP EBP                             ; 00484780

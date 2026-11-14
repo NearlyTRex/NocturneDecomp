@@ -4,22 +4,71 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/iostream.h"
 
 // =============================================================================
 // STDIO - System Header
 // =============================================================================
 
+// Forward declarations
+struct scanf_state_t;
+
 // Structure: FileEmbeddedData
-// Stub: no RTTI in this build, size and fields not yet recovered
 #pragma pack(push, 1)
 typedef struct FileEmbeddedData {
+    uint flags;
+    struct _FILE* stream;
+    uint index;
+    uint pos;
+    uint state_field;
+    uint error_mask;
 } FileEmbeddedData;
 #pragma pack(pop)
 
+// Function Definition: SCANF_GETC_FUNC
+typedef int SCANF_GETC_FUNC(struct scanf_state_t* state);
+
+// Function Definition: SCANF_UNGETC_FUNC
+typedef int SCANF_UNGETC_FUNC(int character, struct scanf_state_t* state);
+
+// Structure: StringOutputContext
+typedef struct StringOutputContext {
+    char* buffer_ptr;
+    char unknown[12];
+    int chars_written;
+} StringOutputContext;
+
 // Structure: _FILE
-// Stub: no RTTI in this build, size and fields not yet recovered
 #pragma pack(push, 1)
 typedef struct _FILE {
+    char* _ptr;
+    int _cnt;
+    struct streambuf* _link;
+    uint _flag;
+    int _handle;
+    uint _bufsize;
+    ushort _ungotten;
 } _FILE;
 #pragma pack(pop)
+
+// Structure: scanf_state_t
+typedef struct scanf_state_t {
+    SCANF_GETC_FUNC* getc_func;
+    SCANF_UNGETC_FUNC* ungetc_func;
+    void* input_ptr;
+    int field_width;
+    uchar flags;
+    uchar conversion;
+    uchar base;
+    uchar reserved;
+    int assignments_made;
+    int chars_consumed;
+    int unget_char;
+    uchar* char_table;
+    void* current_arg;
+    char* scan_set;
+    ushort state_flags;
+    uchar input_base;
+    uchar pad;
+} scanf_state_t;
 

@@ -2,15 +2,33 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
+#include "types/classes/CMorph.h"
 
 // Structure: CStylerDemon
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 56600; CStylerDemon_ctor 0059e070: CMorph ctor at +0xd064, zeroes +0xd05c,+0xd060,+0xdc90,+0xdc94,+0xdc9c,+0xdca0
 // Ghidra size: 0xdd18 (56600 bytes)
 #pragma pack(push, 1)
 typedef struct CStylerDemon {
-    char field_0[56600]; // 0x0
+    CEnemy base; // 0x0, derived
+    uint sfx_handle; // 0xd054, CStylerDemon_processDamage killSfx([EBX+0xd054])
+    char field_53336[4]; // 0xd058
+    int is_morph_partner; // 0xd05c, ctor 0; setup creates the CStyler partner only when 0 (same role as CStyler+0x47b90)
+    struct CDemonActor* styler; // 0xd060, setup createActorByName("CStyler") stored, sets its +0x47b90=1; process/renderOpaque use it as morph source; cleared after addActorToList
+    CMorph morph; // 0xd064, ctor CMorph_ctor; setup/renderOpaque CMorph calls; dtor
+    int spell_index; // 0xdc90, FUN_005a0480: printf "Casting %d", switch 0..3 -> motion state, ++ wraps at 3
+    float summon_cooldown; // 0xdc94, process: set 15.0 when entering state 0x19, -= dt, gate >0
+    float morph_time; // 0xdc98, setup 0; process += dt*k, >=1 hands off styler; renderOpaque passes to CMorph
+    float state_timer; // 0xdc9c, process: getRandomFloatFromRange(3,5) stored, -= dt, <=0 -> state 7
+    int exorcism_spawned; // 0xdca0, ctor 0; process creates CExorcism ("Bible") when 0 then sets 1
+    uint sfx_handles[26]; // 0xdca4, process: motion events 0x578..0x591 store sound handles at [EBX+ESI*4+0xc6c4] (= +0xdca4 + (ev-0x578)*4), stydem_*.wav
+    char field_56588[8]; // 0xdd0c
+    struct CDemonActor* exorcism; // 0xdd14, process: createActorByName("CExorcism") stored, position copied each frame, CCharacter attach FUN_004319d0
 } CStylerDemon;
 #pragma pack(pop)
 

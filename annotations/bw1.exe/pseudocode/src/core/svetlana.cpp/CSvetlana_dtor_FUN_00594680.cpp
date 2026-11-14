@@ -14,11 +14,11 @@ CSvetlana * __cdecl core_svetlana_cpp_CSvetlana_dtor_FUN_00594680(CSvetlana *thi
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CSvetlanaTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CSvetlanaTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  iVar1 = core_cloth_cpp_FUN_0043e620(&this_ptr->field_0x5aae4,0);
+  iVar1 = core_cloth_cpp_FUN_0043e620(&this_ptr->hair_cloth,0);
   iVar1 = core_cloth_cpp_FUN_0043e620(iVar1 + -0x3ab30,0);
   pCVar2 = (CSvetlana *)core_hero_cpp_FUN_004ea980(iVar1 + -0x1ffb4,1);
   if ((flags & 2) == 0) {

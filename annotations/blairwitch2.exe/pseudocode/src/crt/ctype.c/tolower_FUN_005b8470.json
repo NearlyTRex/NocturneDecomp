@@ -44,27 +44,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005be118",
-      "from_addr": "005be12b",
-      "name": "crt_unknown.c_FUN_005be118",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "005bfdd4",
       "from_addr": "005bff41",
       "name": "crt_unknown.c_FUN_005bfdd4",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00485840",
-      "from_addr": "004858b8",
-      "name": "shape_edittool.cpp_wildcardStringMatch_FUN_00485840",
+      "addr": "005c61a8",
+      "from_addr": "005c61c3",
+      "name": "crt_unknown.c_FUN_005c61a8",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005c61a8",
-      "from_addr": "005c61c3",
-      "name": "unkafter_2d.cpp_FUN_005c61a8",
+      "addr": "005be118",
+      "from_addr": "005be12b",
+      "name": "crt_unknown.c_updateClassNameHash_FUN_005be118",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00485840",
+      "from_addr": "004858b8",
+      "name": "shape_edittool.cpp_wildcardStringMatch_FUN_00485840",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -154,7 +154,7 @@
       {
         "call_addr": "005be12b",
         "call_type": "direct",
-        "caller": "crt_unknown.c_FUN_005be118",
+        "caller": "crt_unknown.c_updateClassNameHash_FUN_005be118",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -176,7 +176,7 @@
       {
         "call_addr": "005c61c3",
         "call_type": "direct",
-        "caller": "unkafter_2d.cpp_FUN_005c61a8",
+        "caller": "crt_unknown.c_FUN_005c61a8",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -225,6 +225,32 @@
       "RETURN": 1
     },
     "pcode_op_count": 41
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005c0820",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005a35a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005feb30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00564860",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 8,

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_shadow_cpp_FUN_00545710(CCharacter *param_1)
+; int core_shadow_cpp_FUN_00545710(CCharacter *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -16,11 +16,11 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0
 ;   core_box.cpp_FUN_0041daf0
+;   core_charactr.cpp_CCharacter_renderFlames_FUN_0042f6f0
 ;   core_charactr.cpp_FUN_0042f310
-;   core_charactr.cpp_FUN_0042f6f0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
 ;   core_motion.cpp_FUN_004fcdc0
-;   core_skeleton.cpp_FUN_0054e3a0
+;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0
 ;   crt_math.c_round_FUN_005a3120
 ;   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0
@@ -155,8 +155,8 @@ section .text
     PUSH -0x1                           ; 00545882
     LEA ESI,[EBX + 0x158]               ; 00545884
     PUSH ESI                            ; 0054588a
-    CALL core_skeleton.cpp_FUN_0054e3a0 ; 0054588b
-        ;   XREF to: 0054e3a0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_0054e3a0(CDeformableModelInstance * this_ptr, int lod_index, uint render_flags, int lighting_mode, ...)
+    CALL core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0 ; 0054588b
+        ;   XREF to: 0054e3a0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0(CDeformableModelInstance * this_ptr, int lod_index, uint render_flags, int lighting_mode, ...)
     ADD ESP,0x14                        ; 00545890
     MOV ECX,dword ptr [0x005f2afc]      ; 00545893 | DAT_005f2afc
     PUSH ECX                            ; 00545899 | DAT_01bdd7e4
@@ -186,8 +186,8 @@ section .text
     ADD ESP,0x4                         ; 005458cb
     PUSH EBX                            ; 005458ce
         ;   Label: LAB_005458ce
-    CALL core_charactr.cpp_FUN_0042f6f0 ; 005458cf
-        ;   XREF to: 0042f6f0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042f6f0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_renderFlames_FUN_0042f6f0 ; 005458cf
+        ;   XREF to: 0042f6f0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderFlames_FUN_0042f6f0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 005458d4
     PUSH EBX                            ; 005458d7
         ;   Label: LAB_005458d7

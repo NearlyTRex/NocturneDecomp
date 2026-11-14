@@ -1,0 +1,131 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 10,
+    "complexity_score": 21,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 6,
+    "suspect_count": 1,
+    "suspect_types": [
+      "param_count_too_few"
+    ],
+    "total_lines": 16
+  },
+  "cross_references": [
+    {
+      "addr": "004a3570",
+      "from_addr": "004a35c2",
+      "name": "core_fldnotes.cpp_SNotesSection_clear_FUN_004a3570",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a32c0",
+    "address_range": [
+      [
+        "004a32c0",
+        "004a32d9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fldnotes.cpp_SNotesEntry_dtor_FUN_004a32c0",
+    "signature": "char *** __cdecl core_fldnotes_cpp_SNotesEntry_dtor_FUN_004a32c0(SNotesEntry *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00480d40",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_dtor_FUN_00480d40"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004a35c2",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_SNotesSection_clear_FUN_004a3570",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.25,
+    "instruction_count": 8,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 3,
+      "INT_ADD": 4,
+      "INT_AND": 6,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 4,
+      "LOAD": 2,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 42
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004bbcf0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a9930",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "SNotesEntry *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "call_site_count": 1,
+      "declared_params": 1,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:1 vs estimated:2",
+      "param_delta": 1,
+      "text": "Function declares 1 params but call sites push 2 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

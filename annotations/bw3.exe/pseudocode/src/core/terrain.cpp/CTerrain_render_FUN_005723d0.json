@@ -2,20 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 125,
+    "complexity_score": 157,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 45,
-    "suspect_count": 6,
+    "pseudocode_lines": 42,
+    "suspect_count": 9,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "stack_alignment_array",
       "undefined_data",
-      "unknown_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 146
+    "total_lines": 143
   },
   "cross_references": [
     {
@@ -68,12 +69,12 @@
     {
       "addr": "0046cb90",
       "is_variadic": false,
-      "name": "engine_drender.cpp_FUN_0046cb90"
+      "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90"
     },
     {
       "addr": "0046d1c0",
       "is_variadic": false,
-      "name": "engine_matrix.c_FUN_0046d1c0"
+      "name": "engine_drender.cpp_FUN_0046d1c0"
     }
   ],
   "globals": [
@@ -170,6 +171,32 @@
       "TRUNC": 3
     },
     "pcode_op_count": 432
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0057b860",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0059f3e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005e1f50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9545
+    },
+    "nocturne.exe": {
+      "addr": "00549310",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9545
+    }
   },
   "stack_frame": {
     "frame_size": 68,
@@ -279,42 +306,66 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 12,
-      "match": "afStackY_1020",
+      "match": "aiStackY_1020",
       "severity": "moderate",
-      "text": "float afStackY_1020 [1015];",
+      "text": "int aiStackY_1020 [1015];",
       "type": "stack_alignment_array"
     },
     {
       "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "engine_drender_cpp_FUN_0046d1c0(DAT_005f2afc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setCameraOrigin_FUN_0046cb70(DAT_005f2afc,&local_20);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 44,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,&local_38);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `&local_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 25,
+      "match": "(int)&local_38",
+      "severity": "moderate",
+      "text": "*(int *)((int)&local_38 + (uint)bVar2 * -8 + 4) = aiStack_28[(uint)bVar2 * -2];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 26,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_matrix_c_FUN_0046d1c0(DAT_005f2afc);",
-      "type": "undefined_data"
+      "match": "(int)&local_38",
+      "severity": "moderate",
+      "text": "*(int *)((int)&local_38 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 27,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_38 = (byte  [4])local_2c._0_4_;",
-      "type": "unknown_field"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 25,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(int *)((int)&local_38 + (uint)bVar2 * -8 + 4) = aiStack_28[(uint)bVar2 * -2];",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,(CVector3i *)&local_20);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_FUN_0046cb90(DAT_005f2afc,(CVector3f *)local_38);",
-      "type": "undefined_data"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 26,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(int *)((int)&local_38 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =",
+      "type": "pointer_cast"
     }
   ]
 }

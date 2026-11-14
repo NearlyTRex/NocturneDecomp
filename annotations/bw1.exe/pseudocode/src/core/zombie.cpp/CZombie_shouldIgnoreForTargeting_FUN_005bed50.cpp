@@ -13,8 +13,8 @@ int __cdecl core_zombie_cpp_CZombie_shouldIgnoreForTargeting_FUN_005bed50(CZombi
   int iVar2;
   
   pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
-                     ((CMotionController *)&this_ptr->field_0x158);
-  if (*(int *)(pSVar1 + 0x24) == 0xe) {
+                     (&(this_ptr->base).base.model.base);
+  if (pSVar1->state_index == 0xe) {
     return 1;
   }
   iVar2 = core_actor_cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040c5a0((CDemonActor *)this_ptr);

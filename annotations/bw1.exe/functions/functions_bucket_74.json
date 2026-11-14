@@ -13,13 +13,58 @@
         "start":"00486ed0"
       }
     ],
+    "conv":"__edi_esi_ebx",
     "importable":true,
     "name":"core_dstrendr.cpp_renderDepth16BitConditional_FUN_00486e74",
-    "ret":"undefined1",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"left_edge",
+          "storage":{
+            "reg":"EDI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:0000001c",
+                "offset":28,
+                "size":4
+              }
+            ]
+          },
+          "type":"SSoftwareEdge*"
+        },
+        {
+          "name":"right_edge",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"SSoftwareEdge*"
+        },
+        {
+          "name":"scanline_y",
+          "storage":{
+            "reg":"EBX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:0000000c",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -34,6 +79,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005c16f4",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -52,6 +98,7 @@
     "importable":true,
     "name":"crt_math.c_pow_FUN_005c18f4",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "locals":[
         {
@@ -134,8 +181,9 @@
       }
     ],
     "importable":true,
-    "name":"unkafter_zombie.cpp_FUN_005ca9f4",
+    "name":"crt_unknown.c_FUN_005ca9f4",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -152,8 +200,9 @@
       }
     ],
     "importable":true,
-    "name":"unkafter_zombie.cpp_FUN_005cb5f4",
+    "name":"crt_unknown.c_FUN_005cb5f4",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -170,8 +219,9 @@
       }
     ],
     "importable":true,
-    "name":"unkafter_zombie.cpp_FUN_005cd274",
+    "name":"crt_unknown.c_FUN_005cd274",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -191,6 +241,7 @@
     "importable":true,
     "name":"crt_kernel32.c_LocalFileTimeToFileTime",
     "ret":"BOOL",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000083",
     "thunk":true,
     "vars":{
@@ -253,6 +304,7 @@
     "importable":true,
     "name":"crt_user32.c_DefWindowProcA",
     "ret":"LRESULT",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000030",
     "thunk":true,
     "vars":{
@@ -347,6 +399,7 @@
     "importable":true,
     "name":"crt_kernel32.c_SetEnvironmentVariableA",
     "ret":"BOOL",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000090",
     "thunk":true,
     "vars":{

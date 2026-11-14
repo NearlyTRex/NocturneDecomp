@@ -2,15 +2,40 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CTVBat
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x10d30 (68912 bytes)
 #pragma pack(push, 1)
 typedef struct CTVBat {
-    char field_0[68912]; // 0x0
+    CEnemy base; // 0x0
+    float anim_frame; // 0x10af8
+    CKeyFramedModelInstance model; // 0x10afc
+    float speed; // 0x10c78
+    float anim_rate; // 0x10c7c
+    CVector3f home_pos; // 0x10c80
+    float max_distance; // 0x10c8c
+    float max_height; // 0x10c90
+    float rot_speed; // 0x10c94
+    float move_speed; // 0x10c98
+    float height_offset; // 0x10c9c
+    int follow_orders; // 0x10ca0
+    float attack_timer; // 0x10ca4
+    CVector3f velocity; // 0x10ca8
+    int state; // 0x10cb4
+    char periodic_sound[100]; // 0x10cb8
+    float periodic_sound_timer_min; // 0x10d1c
+    float periodic_sound_timer_max; // 0x10d20
+    uint periodic_sound_handle; // 0x10d24
+    float periodic_sound_timer; // 0x10d28
+    struct CDemonActor* boss_actor; // 0x10d2c
 } CTVBat;
 #pragma pack(pop)
 

@@ -6,8 +6,8 @@
 ;
 ; XREF[3]:
 ;   core_game.cpp_CGame_rollCredits_FUN_004d8e50 at 004d8f2f
+;   core_sound.cpp_CSound_configure_FUN_0057d6a0 at 0057d78b
 ;   core_sound.cpp_FUN_0057cc00 at 0057cc63
-;   core_sound.cpp_FUN_0057d6a0 at 0057d78b
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006232e8
@@ -29,14 +29,14 @@
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005bfb70
-;   sound_sndmain.cpp_FUN_00573e70
-;   sound_sndmain.cpp_FUN_00575540
-;   sound_sndmain.cpp_FUN_00575550
+;   sound_sndmain.cpp_isSoundBusy_FUN_00575550
 ;   sound_sndmain.cpp_isSoundMuted_FUN_005735f0
+;   sound_sndmain.cpp_isSoundSystemActive_FUN_00575540
 ;   sound_sndmain.cpp_lockSound_FUN_00575d20
 ;   sound_sndmain.cpp_resetSoundDevice_FUN_005750e0
 ;   sound_sndmain.cpp_setSoundOutputMode_FUN_00575120
-;   wincore_winrun.cpp_FUN_005b2420
+;   sound_sndmain.cpp_unlockSound_FUN_00573e70
+;   wincore_winrun.cpp_getTime_FUN_005b2420
 ;
 ; *****************************************************************************
 
@@ -47,8 +47,8 @@ section .text
     PUSH ESI                            ; 00574ee1
     PUSH EDI                            ; 00574ee2
     PUSH EBP                            ; 00574ee3
-    CALL sound_sndmain.cpp_FUN_00575540 ; 00574ee4
-        ;   XREF to: 00575540 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_FUN_00575540()
+    CALL sound_sndmain.cpp_isSoundSystemActive_FUN_00575540 ; 00574ee4
+        ;   XREF to: 00575540 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_isSoundSystemActive_FUN_00575540()
     TEST EAX,EAX                        ; 00574ee9
     JNZ 0x00574ef2                      ; 00574eeb
         ;   XREF to: 00574ef2 (CONDITIONAL_JUMP)  ; LAB_00574ef2
@@ -63,8 +63,8 @@ section .text
     TEST EAX,EAX                        ; 00574ef7
     JNZ 0x00574f0e                      ; 00574ef9
         ;   XREF to: 00574f0e (CONDITIONAL_JUMP)  ; LAB_00574f0e
-    CALL sound_sndmain.cpp_FUN_00575550 ; 00574efb
-        ;   XREF to: 00575550 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00575550()
+    CALL sound_sndmain.cpp_isSoundBusy_FUN_00575550 ; 00574efb
+        ;   XREF to: 00575550 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundBusy_FUN_00575550()
     TEST EAX,EAX                        ; 00574f00
     JZ 0x00574f18                       ; 00574f02
         ;   XREF to: 00574f18 (CONDITIONAL_JUMP)  ; LAB_00574f18
@@ -185,8 +185,8 @@ section .text
     PUSH EAX                            ; 0057508b
     CALL dword ptr [EBX + 0x2c]         ; 0057508c
     ADD ESP,0x10                        ; 0057508f
-    CALL wincore_winrun.cpp_FUN_005b2420 ; 00575092
-        ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005b2420()
+    CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 00575092
+        ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
     MOV [0x02c807f0],EAX                ; 00575097 | DAT_02c807f0
     MOV EAX,[0x02c80650]                ; 0057509c | DAT_02c80650
     PUSH EAX                            ; 005750a1
@@ -197,16 +197,16 @@ section .text
     JZ 0x005750c7                       ; 005750ac
         ;   XREF to: 005750c7 (CONDITIONAL_JUMP)  ; LAB_005750c7
     MOV dword ptr [0x02c80654],0x1      ; 005750ae | DAT_02c80654
-    CALL sound_sndmain.cpp_FUN_00573e70 ; 005750b8
-        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00573e70()
+    CALL sound_sndmain.cpp_unlockSound_FUN_00573e70 ; 005750b8
+        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00573e70()
     MOV EAX,0x1                         ; 005750bd
     POP EBP                             ; 005750c2
     POP EDI                             ; 005750c3
     POP ESI                             ; 005750c4
     POP EBX                             ; 005750c5
     RET                                 ; 005750c6
-    CALL sound_sndmain.cpp_FUN_00573e70 ; 005750c7
-        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00573e70()
+    CALL sound_sndmain.cpp_unlockSound_FUN_00573e70 ; 005750c7
+        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00573e70()
         ;   Label: LAB_005750c7
     XOR EAX,EAX                         ; 005750cc
     POP EBP                             ; 005750ce

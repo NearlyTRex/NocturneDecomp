@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 23,
     "complexity_score": 117,
-    "cross_reference_count": 12,
+    "cross_reference_count": 13,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
@@ -20,19 +20,19 @@
     {
       "addr": "0042b450",
       "from_addr": "0042b847",
-      "name": "core_charactr.cpp_FUN_0042b450",
+      "name": "core_charactr.cpp_CCharacter_archive_FUN_0042b450",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00431d10",
       "from_addr": "00431e6c",
-      "name": "core_charactr.cpp_FUN_00431d10",
+      "name": "core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00431d10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00497290",
       "from_addr": "0049744f",
-      "name": "core_fire.cpp_FUN_00497290",
+      "name": "core_fire.cpp_CBulletHole_init_FUN_00497290",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -42,51 +42,57 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0051f360",
-      "from_addr": "0051f45f",
-      "name": "core_prye.cpp_FUN_0051f360",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "005220d0",
       "from_addr": "005224aa",
-      "name": "core_prye.cpp_FUN_005220d0",
+      "name": "core_prye.cpp_CPrye_renderOpaque_FUN_005220d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005496bc",
-      "from_addr": "00549717",
-      "name": "core_skeleton.cpp_FUN_005496bc",
+      "addr": "0051f360",
+      "from_addr": "0051f45f",
+      "name": "core_prye.cpp_CPrye_updateWeaponPosition_FUN_0051f360",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005498ce",
+      "addr": "005498d0",
       "from_addr": "00549917",
-      "name": "core_skeleton.cpp_FUN_005498ce",
+      "name": "core_skeleton.cpp_CDeformableModel_renderBones_FUN_005498d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0056c140",
-      "from_addr": "0056c2ac",
-      "name": "core_thehand.cpp_FUN_0056c140",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0056ca00",
-      "from_addr": "0056cb0a",
-      "name": "core_thehand.cpp_FUN_0056ca00",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0057f440",
-      "from_addr": "0057f4f0",
-      "name": "core_werewolf.cpp_FUN_0057f440",
+      "addr": "005496c0",
+      "from_addr": "00549717",
+      "name": "core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_005496c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00595d20",
       "from_addr": "00595dd0",
-      "name": "unkafter_tawiscar.cpp_FUN_00595d20",
+      "name": "core_tawiscara.cpp_CTawiscara_renderTransparent_FUN_00595d20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056ca00",
+      "from_addr": "0056cb0a",
+      "name": "core_toxhand.cpp_CTheHand_attractActorToward_FUN_0056ca00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056c140",
+      "from_addr": "0056c2ac",
+      "name": "core_toxhand.cpp_CTheHand_process_FUN_0056c140",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057f440",
+      "from_addr": "0057f4f0",
+      "name": "core_werewolf.cpp_CWerewolf_renderTransparent_FUN_0057f440",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00584490",
+      "from_addr": "005844c0",
+      "name": "core_xform.cpp_FUN_00584490",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -105,12 +111,12 @@
   "function_calls": [],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 14,
+    "call_site_count": 15,
     "call_sites": [
       {
         "call_addr": "00431e6c",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_00431d10",
+        "caller": "core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00431d10",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -138,7 +144,7 @@
       {
         "call_addr": "0051f45f",
         "call_type": "direct",
-        "caller": "core_prye.cpp_FUN_0051f360",
+        "caller": "core_prye.cpp_CPrye_updateWeaponPosition_FUN_0051f360",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -151,7 +157,7 @@
       {
         "call_addr": "005224aa",
         "call_type": "direct",
-        "caller": "core_prye.cpp_FUN_005220d0",
+        "caller": "core_prye.cpp_CPrye_renderOpaque_FUN_005220d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -164,7 +170,7 @@
       {
         "call_addr": "0052263b",
         "call_type": "direct",
-        "caller": "core_prye.cpp_FUN_005220d0",
+        "caller": "core_prye.cpp_CPrye_renderOpaque_FUN_005220d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -177,7 +183,7 @@
       {
         "call_addr": "0042b847",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_0042b450",
+        "caller": "core_charactr.cpp_CCharacter_archive_FUN_0042b450",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -190,7 +196,7 @@
       {
         "call_addr": "0049744f",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_00497290",
+        "caller": "core_fire.cpp_CBulletHole_init_FUN_00497290",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -205,7 +211,7 @@
       {
         "call_addr": "0056c2ac",
         "call_type": "direct",
-        "caller": "core_thehand.cpp_FUN_0056c140",
+        "caller": "core_toxhand.cpp_CTheHand_process_FUN_0056c140",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -220,7 +226,7 @@
       {
         "call_addr": "0056cb0a",
         "call_type": "direct",
-        "caller": "core_thehand.cpp_FUN_0056ca00",
+        "caller": "core_toxhand.cpp_CTheHand_attractActorToward_FUN_0056ca00",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -235,7 +241,7 @@
       {
         "call_addr": "0057f4f0",
         "call_type": "direct",
-        "caller": "core_werewolf.cpp_FUN_0057f440",
+        "caller": "core_werewolf.cpp_CWerewolf_renderTransparent_FUN_0057f440",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -275,6 +281,20 @@
       "STORE": 9
     },
     "pcode_op_count": 102
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00592720",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005b6270",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 28,
@@ -403,7 +423,7 @@
       "type": "unaffected_reg"
     },
     {
-      "call_site_count": 14,
+      "call_site_count": 15,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 2,

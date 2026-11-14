@@ -1,0 +1,173 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 41,
+    "complexity_score": 54,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 14,
+    "suspect_count": 3,
+    "suspect_types": [
+      "pointer_cast",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 55
+  },
+  "cross_references": [
+    {
+      "addr": "00465a80",
+      "from_addr": "00465b43",
+      "name": "engine_dosio.cpp_reopenFileStream_FUN_00465a80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a4e88",
+    "address_range": [
+      [
+        "005a4e88",
+        "005a4ed6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_unknown.c_istream_seekg_FUN_005a4e88",
+    "signature": "_istream * __cdecl crt_unknown_c_istream_seekg_FUN_005a4e88(void *this_ptr,int offset)"
+  },
+  "function_calls": [
+    {
+      "addr": "005abc85",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005abc85"
+    },
+    {
+      "addr": "005abd9f",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005abd9f"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00465b43",
+        "call_type": "direct",
+        "caller": "engine_dosio.cpp_reopenFileStream_FUN_00465a80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0588235294117645,
+    "instruction_count": 34,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 2,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 27,
+      "INT_ADD": 16,
+      "INT_AND": 13,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 12,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 6,
+      "INT_SUB": 13,
+      "LOAD": 13,
+      "POPCOUNT": 6,
+      "RETURN": 2,
+      "STORE": 12
+    },
+    "pcode_op_count": 138
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b9c98",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005c2078",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00600ee4",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00565f14",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "offset",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 9,
+      "match": "(int *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)this_ptr + *(int *)(*(int *)this_ptr + 4) + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 10,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*(int *)(iVar1 + 0x28) + 0x18))(iVar1,offset,0,1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
+      "line": 10,
+      "match": "(int *)(iVar1 + 0x28)",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*(int *)(iVar1 + 0x28) + 0x18))(iVar1,offset,0,1);",
+      "type": "pointer_cast"
+    }
+  ]
+}

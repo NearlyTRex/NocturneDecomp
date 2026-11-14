@@ -9,7 +9,7 @@
 ;
 ; XREF[3]:
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00534890 at 0053500d
-;   core_set.cpp_FUN_00533e5e at 0053418c
+;   core_set.cpp_FUN_00533e60 at 0053418c
 ;   core_set.cpp_FUN_00535da0 at 00536301
 ;
 ; Referenced Globals:
@@ -27,9 +27,9 @@
 ;   core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_00448fd0
 ;   core_main.c_FUN_004e4330
 ;   crt_watcom.c__memcpy_FUN_00495f68
-;   engine_matrix.c_popViewport_FUN_0046d320
+;   engine_drender.cpp_popViewport_FUN_0046d320
 ;   engine_special.cpp_FUN_005658d0
-;   engine_special.cpp_FUN_00566350
+;   engine_special.cpp_masterZBuffer_FUN_00566350
 ;
 ; *****************************************************************************
 
@@ -81,7 +81,7 @@ section .text
     ADD ECX,EAX                         ; 004497cb
     INC ESI                             ; 004497cd
     CALL crt_watcom.c__memcpy_FUN_00495f68 ; 004497ce
-        ;   XREF to: 00495f68 (UNCONDITIONAL_CALL)  ; undefined crt_watcom.c__memcpy_FUN_00495f68()
+        ;   XREF to: 00495f68 (UNCONDITIONAL_CALL)  ; void crt_watcom.c__memcpy_FUN_00495f68(void * dest, void * src, uint size)
     MOV EBP,dword ptr [EBX + 0x148]     ; 004497d3
     ADD EDI,0x4                         ; 004497d9
     CMP ESI,EBP                         ; 004497dc
@@ -91,8 +91,8 @@ section .text
     MOV EAX,[0x005f2afc]                ; 004497e1 | DAT_005f2afc
         ;   Label: LAB_004497e1
     PUSH EAX                            ; 004497e6 | DAT_01bdd7e4
-    CALL engine_matrix.c_popViewport_FUN_0046d320 ; 004497e7
-        ;   XREF to: 0046d320 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_popViewport_FUN_0046d320()
+    CALL engine_drender.cpp_popViewport_FUN_0046d320 ; 004497e7
+        ;   XREF to: 0046d320 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_popViewport_FUN_0046d320()
     ADD ESP,0x4                         ; 004497ec
     PUSH EBX                            ; 004497ef
     CALL core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_00448fd0 ; 004497f0
@@ -115,8 +115,8 @@ section .text
         ;   XREF to: 0044976e (UNCONDITIONAL_JUMP)  ; LAB_0044976e
     PUSH EBP                            ; 00449824
         ;   Label: LAB_00449824
-    CALL engine_special.cpp_FUN_00566350 ; 00449825
-        ;   XREF to: 00566350 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_00566350(int slot)
+    CALL engine_special.cpp_masterZBuffer_FUN_00566350 ; 00449825
+        ;   XREF to: 00566350 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_masterZBuffer_FUN_00566350(int slot)
     ADD ESP,0x4                         ; 0044982a
     JMP 0x0044979a                      ; 0044982d
         ;   XREF to: 0044979a (UNCONDITIONAL_JUMP)  ; LAB_0044979a

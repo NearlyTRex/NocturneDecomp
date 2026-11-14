@@ -6,10 +6,10 @@
 #include "system/basetypes.h"
 
 // Structure: SMpegSubbandAllocation
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x80 (128 bytes)
 #pragma pack(push, 1)
 typedef struct SMpegSubbandAllocation {
+    int bit_allocations[32]; // 0x0
 } SMpegSubbandAllocation;
 #pragma pack(pop)
 

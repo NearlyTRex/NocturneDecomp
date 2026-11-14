@@ -8,7 +8,7 @@
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044ceb0 at 0044d0da
 ;   core_set.cpp_FUN_00550da0 at 00551108
 ;   core_setdir.cpp_FUN_0055b330 at 0055b408
-;   unkafter_minecar.cpp_FUN_0051119e at 005111ae
+;   engine_mini3d.cpp_clearZBuffer_FUN_005111a0 at 005111ae
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061b498

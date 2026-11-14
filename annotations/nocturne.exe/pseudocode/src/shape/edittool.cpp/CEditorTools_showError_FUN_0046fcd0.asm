@@ -11,10 +11,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[21]:
-;   core_game.cpp_CGame_FUN_004a3b90 at 004a4015
-;   core_game.cpp_CGame_FUN_004a4170 at 004a46be
-;   core_game.cpp_CGame_FUN_004a57c0 at 004a5bd1
+;   core_game.cpp_CGame_loadGame_FUN_004a4170 at 004a46be
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a1e34
+;   core_game.cpp_CGame_saveGame_FUN_004a3b90 at 004a4015
+;   core_game.cpp_CGame_showFullscreenBitmap_FUN_004a57c0 at 004a5bd1
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00 at 004d434b
 ;   core_mission.cpp_CDemonMission_createOneHero_FUN_004d9920 at 004d9a6d
 ;   core_mission.cpp_CDemonMission_loadActor_FUN_004d8aa0 at 004d8bc0

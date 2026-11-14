@@ -1,0 +1,16 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void __cdecl core_fire_cpp_loadRockAssets_FUN_0049a000(void)
+;
+;
+; XREF[1]:
+;   core_fire.cpp_CFireEffect_loadAssets_FUN_004a24a0 at 004a2534
+;
+; *****************************************************************************
+
+section .text
+
+    RET                                 ; 0049a000
+        ;   Label: core_fire.cpp_loadRockAssets_FUN_0049a000
+

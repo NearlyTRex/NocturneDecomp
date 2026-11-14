@@ -2,24 +2,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 97,
+    "complexity_score": 110,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 47,
-    "suspect_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 45,
+    "suspect_count": 5,
     "suspect_types": [
+      "shadow_pointer_walk",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 147
+    "total_lines": 145
   },
   "cross_references": [
     {
       "addr": "004ca940",
       "from_addr": "004caae1",
-      "name": "core_glass.cpp_FUN_004ca940",
+      "name": "core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ca940",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -91,7 +92,7 @@
       {
         "call_addr": "004caae1",
         "call_type": "direct",
-        "caller": "core_glass.cpp_FUN_004ca940",
+        "caller": "core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ca940",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -137,6 +138,32 @@
     },
     "pcode_op_count": 329
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0046a3a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004828b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0048b550",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0045fb00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 24,
     "local_size": 16,
@@ -178,7 +205,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 24,
       "match": "DAT_01bdd818",
       "severity": "mild",
       "text": "*(int *)(&DAT_01bdd818 + iVar4) = iVar1;",
@@ -186,7 +213,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 31,
       "match": "DAT_005fba20",
       "severity": "mild",
       "text": "if (DAT_005fba20 == 0x20) {",
@@ -194,11 +221,19 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 46,
       "match": "DAT_01bdd818",
       "severity": "mild",
-      "text": "(this_ptr,*(int *)(poly + 4),(int *)&DAT_01bdd818);",
+      "text": "(this_ptr,(poly->base).base.count,(int *)&DAT_01bdd818);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 25,
+      "match": "pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar2 = (SMRGLPrimitivePoly *)&(pSVar2->base).surface_normal.B;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

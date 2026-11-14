@@ -244,6 +244,22 @@ TEST_F(CWinRunInputTest, RegainingFocusDropsTheInputAndFlagsTheReturn) {
     EXPECT_FALSE(winrun_.getFocusRegained());
 }
 
+// Mouse-look sets the cursor every frame; unfocused, that must not drag the pointer back.
+TEST_F(CWinRunInputTest, InactiveTheCursorIsNeverWarpedAndMotionIsNotTheGames) {
+    pump({{.type = EWindowEventType::Activate}, {.type = EWindowEventType::Deactivate}});
+    EXPECT_CALL(window_, warpMouse).Times(0);
+    winrun_.setCursorPosition(320, 240);
+    pump({{.type = EWindowEventType::MouseMove, .x = 7, .y = 9}});
+    EXPECT_EQ(winrun_.getMouseX(), 320);
+    EXPECT_EQ(winrun_.getMouseY(), 240);
+    ::testing::Mock::VerifyAndClearExpectations(&window_);
+
+    pump({{.type = EWindowEventType::Activate},
+          {.type = EWindowEventType::MouseMove, .x = 7, .y = 9}});
+    EXPECT_EQ(winrun_.getMouseX(), 7);
+    EXPECT_EQ(winrun_.getMouseY(), 9);
+}
+
 // clearInputAndWait at 0x00403260 reads the clock until its tick >> 16 changes.
 TEST_F(CWinRunInputTest, RegainingFocusWaitsForTheGameClockToTickOver) {
     pump({{.type = EWindowEventType::Activate}, {.type = EWindowEventType::Deactivate}});

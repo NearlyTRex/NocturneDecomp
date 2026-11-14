@@ -1,0 +1,336 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 177,
+    "complexity_score": 235,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 80,
+    "suspect_count": 14,
+    "suspect_types": [
+      "extra_output",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 257
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00513720",
+    "address_range": [
+      [
+        "00513720",
+        "00513942"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_path.cpp_renderGridQuad_FUN_00513720",
+    "signature": "void __cdecl core_path_cpp_renderGridQuad_FUN_00513720(int grid_x,int grid_y,int grid_z,int red,int green,int blue,int alpha)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b7ff0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005b7ff0"
+    },
+    {
+      "addr": "0046aa00",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0046aa00"
+    },
+    {
+      "addr": "0055d723",
+      "is_variadic": false,
+      "name": "engine_special.cpp_FUN_0055d723"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e1829",
+      "name": "DAT_005e1829",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e1831",
+      "name": "DAT_005e1831",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060b280",
+      "name": "DAT_0060b280",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fc9c7c",
+      "name": "g_CDemonRaytraceInstance.bbox_min.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fc9c9c",
+      "name": "g_CDemonRaytraceInstance.adjusted_size.x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fc9ca0",
+      "name": "g_CDemonRaytraceInstance.adjusted_size.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fc9ca4",
+      "name": "g_CDemonRaytraceInstance.adjusted_size.z",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 7,
+    "declared_stack_bytes": 28,
+    "estimated_params": 7,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.7272727272727275,
+    "instruction_count": 165,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 20,
+      "CALL": 11,
+      "COPY": 414,
+      "FLOAT2FLOAT": 15,
+      "FLOAT_ADD": 4,
+      "FLOAT_MULT": 7,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 6,
+      "INT_ADD": 88,
+      "INT_AND": 72,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 32,
+      "INT_LEFT": 8,
+      "INT_LESS": 1,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 20,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 22,
+      "INT_SUB": 36,
+      "INT_XOR": 4,
+      "INT_ZEXT": 6,
+      "LOAD": 59,
+      "POPCOUNT": 14,
+      "RETURN": 1,
+      "ROUND": 6,
+      "STORE": 59,
+      "TRUNC": 6
+    },
+    "pcode_op_count": 945
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00534a70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0050c750",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00547dd0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.819
+    },
+    "nocturne.exe": {
+      "addr": "004f16d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.819
+    }
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "grid_x",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "grid_y",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "grid_z",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "red",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "green",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "blue",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "alpha",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "int extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 13,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "int *extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 14,
+      "match": "extraout_EDX_00",
+      "severity": "moderate",
+      "text": "int *extraout_EDX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 15,
+      "match": "extraout_EDX_01",
+      "severity": "moderate",
+      "text": "int *extraout_EDX_01;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 50,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "engine_special_cpp_FUN_0055d723((SProjectedVertex *)(*extraout_EDX + 0x30),pCVar12);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 56,
+      "match": "extraout_EDX_00",
+      "severity": "moderate",
+      "text": "engine_special_cpp_FUN_0055d723((SProjectedVertex *)(*extraout_EDX_00 + 0x60),pCVar12);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 63,
+      "match": "extraout_EDX_01",
+      "severity": "moderate",
+      "text": "engine_special_cpp_FUN_0055d723((SProjectedVertex *)(*extraout_EDX_01 + 0x90),pCVar12);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 64,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "this_ptr = DAT_0060b280;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 65,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "DAT_0060b280->vertex_buffer_ptr->r = iVar4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 66,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "this_ptr->vertex_buffer_ptr->g = extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 70,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "this_ptr->vertex_buffer_ptr[1].g = extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 74,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "this_ptr->vertex_buffer_ptr[2].g = extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 78,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "this_ptr->vertex_buffer_ptr[3].g = extraout_ECX;",
+      "type": "extra_output"
+    }
+  ]
+}

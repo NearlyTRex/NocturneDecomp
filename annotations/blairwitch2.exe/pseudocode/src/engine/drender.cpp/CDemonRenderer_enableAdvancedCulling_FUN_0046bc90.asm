@@ -10,7 +10,7 @@
 ; XREF[3]:
 ;   core_mimic.cpp_CMimic_renderMirrored_FUN_004f1890 at 004f1948
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_005342e0 at 00534329
-;   core_set.cpp_FUN_005341b0 at 0053429a
+;   core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005341b0 at 0053429a
 ;
 ; *****************************************************************************
 

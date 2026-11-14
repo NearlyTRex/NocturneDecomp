@@ -23,7 +23,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_gabriela.cpp_FUN_004ad640 at 004add66
+;   core_gabriela.cpp_CGabriella_process_FUN_004ad640 at 004add66
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d7033
@@ -31,7 +31,7 @@
 ;   undefined4 DAT_01cb06bc
 ;
 ; Called Functions:
-;   core_skeleton.cpp_FUN_005469a0
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
 ;
 ; *****************************************************************************
 
@@ -50,8 +50,8 @@ section .text
     PUSH EBP                            ; 004af979
     LEA ESI,[ESP + 0x20]                ; 004af97a
     LEA EDI,[ESP + 0x38]                ; 004af97e
-    CALL core_skeleton.cpp_FUN_005469a0 ; 004af982
-        ;   XREF to: 005469a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_005469a0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0 ; 004af982
+        ;   XREF to: 005469a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 004af987
     MOV ECX,dword ptr [0x01cb06b8]      ; 004af98a | DAT_01cb06b8
     LEA ESI,[ESP + 0x18]                ; 004af990
@@ -62,8 +62,8 @@ section .text
     PUSH EBP                            ; 004af998
     LEA ESI,[ESP + 0x2c]                ; 004af999
     LEA EDI,[ESP + 0x8]                 ; 004af99d
-    CALL core_skeleton.cpp_FUN_005469a0 ; 004af9a1
-        ;   XREF to: 005469a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_005469a0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0 ; 004af9a1
+        ;   XREF to: 005469a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     LEA ESI,[ESP + 0x2c]                ; 004af9a6
     ADD ESP,0x8                         ; 004af9aa
     MOVSD ES:EDI,ESI                    ; 004af9ad

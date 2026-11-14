@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 31,
+    "complexity_score": 5,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 6,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 22
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 21
   },
   "cross_references": [
     {
       "addr": "00539c30",
       "from_addr": "00539c98",
-      "name": "core_setdir.cpp_FUN_00539c30",
+      "name": "core_setdir.cpp_CDemonSet_writeThumbs_FUN_00539c30",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -48,7 +46,7 @@
       {
         "call_addr": "00539c98",
         "call_type": "direct",
-        "caller": "core_setdir.cpp_FUN_00539c30",
+        "caller": "core_setdir.cpp_CDemonSet_writeThumbs_FUN_00539c30",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -87,6 +85,14 @@
     },
     "pcode_op_count": 55
   },
+  "siblings": {
+    "nocedit.exe": {
+      "addr": "00574b20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -110,22 +116,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "_fwrite(*(uint *)&this_ptr->field_0x24,*(int *)this_ptr * *(int *)&this_ptr->field_0x4,4,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "_fwrite(*(uint *)&this_ptr->field_0x24,*(int *)this_ptr * *(int *)&this_ptr->field_0x4,4,",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

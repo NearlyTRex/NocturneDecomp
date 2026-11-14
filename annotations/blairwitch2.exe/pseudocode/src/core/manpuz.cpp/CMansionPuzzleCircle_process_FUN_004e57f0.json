@@ -1,0 +1,217 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 123,
+    "complexity_score": 121,
+    "cross_reference_count": 0,
+    "function_call_count": 9,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 56,
+    "suspect_count": 5,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 179
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004e57f0",
+    "address_range": [
+      [
+        "004e57f0",
+        "004e58fd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_004e57f0",
+    "signature": "void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_process_FUN_004e57f0(CMansionPuzzleCircle *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "00449280",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280"
+    },
+    {
+      "addr": "004b39b0",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_setFudgeTarget_FUN_004b39b0"
+    },
+    {
+      "addr": "004ce100",
+      "is_variadic": false,
+      "name": "core_hero.cpp_isAnyHeroWithinRadius_FUN_004ce100"
+    },
+    {
+      "addr": "004e68c0",
+      "is_variadic": false,
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_processPanel_FUN_004e68c0"
+    },
+    {
+      "addr": "004e6c40",
+      "is_variadic": false,
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_004e6c40"
+    },
+    {
+      "addr": "004e6f20",
+      "is_variadic": false,
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_004e6f20"
+    },
+    {
+      "addr": "004e7580",
+      "is_variadic": false,
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_updateReflector_FUN_004e7580"
+    },
+    {
+      "addr": "004e6240",
+      "is_variadic": false,
+      "name": "core_manpuz.cpp_FUN_004e6240"
+    },
+    {
+      "addr": "004e7600",
+      "is_variadic": false,
+      "name": "core_manpuz.cpp_FUN_004e7600"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00616494",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01cb6900"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.90625,
+    "instruction_count": 96,
+    "opcode_distribution": {
+      "CALL": 10,
+      "CBRANCH": 8,
+      "COPY": 70,
+      "INT_ADD": 37,
+      "INT_AND": 65,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 64,
+      "INT_LESS": 7,
+      "INT_NOTEQUAL": 6,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 17,
+      "INT_SLESS": 32,
+      "INT_SUB": 44,
+      "INT_XOR": 7,
+      "LOAD": 12,
+      "POPCOUNT": 32,
+      "RETURN": 1,
+      "STORE": 41
+    },
+    "pcode_op_count": 471
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00504400",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005091d0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004c9cf0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMansionPuzzleCircle *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Pointer value `&this_ptr->reflectors[1].rotation.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 50,
+      "match": "(int)&this_ptr->reflectors[1].rotation.y",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&this_ptr->reflectors[1].rotation.y + 3) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->reflectors[1].rotation.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 51,
+      "match": "(int)&this_ptr->reflectors[1].rotation.y",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&this_ptr->reflectors[1].rotation.y + 3) ^ 0x80;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 45,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar1->x = pCVar2->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 50,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&this_ptr->reflectors[1].rotation.y + 3) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 51,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&this_ptr->reflectors[1].rotation.y + 3) ^ 0x80;",
+      "type": "pointer_cast"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 20,
+        "vtable_addr": "005f98d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

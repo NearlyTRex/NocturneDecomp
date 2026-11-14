@@ -40,7 +40,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_stdio.c_fclose_FUN_005c0e40",
-    "signature": "uint __cdecl crt_stdio_c_fclose_FUN_005c0e40(int param_1,int param_2)"
+    "signature": "uint __cdecl crt_stdio_c_fclose_FUN_005c0e40(_FILE *param_1,int param_2)"
   },
   "function_calls": [
     {
@@ -169,6 +169,32 @@
     },
     "pcode_op_count": 369
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b8af0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005a3bc0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00601fd0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "005634b0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -183,7 +209,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint __cdecl _fclose(int param_1,int param_2)",
+      "text": "uint __cdecl _fclose(_FILE *param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
@@ -191,7 +217,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint __cdecl _fclose(int param_1,int param_2)",
+      "text": "uint __cdecl _fclose(_FILE *param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
@@ -199,7 +225,7 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0xc) == 0) {",
+      "text": "if (param_1->_flag == 0) {",
       "type": "unnamed_param"
     },
     {
@@ -207,7 +233,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(byte *)(param_1 + 0xd) & 0x10) != 0) {",
+      "text": "if ((param_1->_flag & 0x1000) != 0) {",
       "type": "unnamed_param"
     },
     {
@@ -223,7 +249,7 @@
       "line": 18,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626600)(*(uint *)(param_1 + 0x10));",
+      "text": "(*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626600)(param_1->_handle);",
       "type": "unresolved_funcptr"
     },
     {
@@ -231,7 +257,7 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626600)(*(uint *)(param_1 + 0x10));",
+      "text": "(*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626600)(param_1->_handle);",
       "type": "unnamed_param"
     },
     {
@@ -239,7 +265,7 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = _ftell(param_1);",
+      "text": "lVar2 = _ftell(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -247,7 +273,7 @@
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005c6e80(*(uint *)(param_1 + 0x10),iVar2,0);",
+      "text": "FUN_005c6e80(param_1->_handle,lVar2,0);",
       "type": "unnamed_param"
     },
     {
@@ -263,7 +289,7 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar3 = FUN_005c6f10(*(uint *)(param_1 + 0x10));",
+      "text": "uVar3 = FUN_005c6f10(param_1->_handle);",
       "type": "unnamed_param"
     },
     {
@@ -271,7 +297,7 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(byte *)(param_1 + 0xc) & 8) != 0) {",
+      "text": "if ((param_1->_flag & 8) != 0) {",
       "type": "unnamed_param"
     },
     {
@@ -279,7 +305,7 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005c09f0(*(uint *)(*(int *)(param_1 + 8) + 8));",
+      "text": "FUN_005c09f0(param_1->_link->__reserve_end);",
       "type": "unnamed_param"
     },
     {
@@ -287,7 +313,7 @@
       "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(*(int *)(param_1 + 8) + 8) = 0;",
+      "text": "param_1->_link->__reserve_end = (char *)0x0;",
       "type": "unnamed_param"
     },
     {
@@ -295,7 +321,7 @@
       "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(byte *)(param_1 + 0xd) & 8) != 0) {",
+      "text": "if ((param_1->_flag & 0x800) != 0) {",
       "type": "unnamed_param"
     },
     {
@@ -303,7 +329,7 @@
       "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005c0d8c(acStack_124,*(byte *)(*(int *)(param_1 + 8) + 0x14));",
+      "text": "FUN_005c0d8c(acStack_124,*(byte *)&param_1->_link->__get_ptr);",
       "type": "unnamed_param"
     },
     {
@@ -311,7 +337,7 @@
       "line": 35,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626604)(*(uint *)(param_1 + 0x10));",
+      "text": "(*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626604)(param_1->_handle);",
       "type": "unresolved_funcptr"
     },
     {
@@ -319,7 +345,7 @@
       "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626604)(*(uint *)(param_1 + 0x10));",
+      "text": "(*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626604)(param_1->_handle);",
       "type": "unnamed_param"
     },
     {
@@ -335,7 +361,7 @@
       "line": 37,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)PTR_crt_unknown_c_FUN_005c50e8_0062660c)(*(uint *)(param_1 + 0x10));",
+      "text": "(*(code *)PTR_crt_unknown_c_FUN_005c50e8_0062660c)(param_1->_handle);",
       "type": "unresolved_funcptr"
     },
     {
@@ -343,7 +369,7 @@
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(code *)PTR_crt_unknown_c_FUN_005c50e8_0062660c)(*(uint *)(param_1 + 0x10));",
+      "text": "(*(code *)PTR_crt_unknown_c_FUN_005c50e8_0062660c)(param_1->_handle);",
       "type": "unnamed_param"
     },
     {

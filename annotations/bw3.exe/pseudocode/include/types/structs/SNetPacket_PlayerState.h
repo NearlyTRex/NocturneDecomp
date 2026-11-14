@@ -12,7 +12,6 @@
 #pragma pack(push, 1)
 typedef struct SNetPacket_PlayerState {
     SNetPacketHeader header; // 0x0
-    char field_1[4]; // 0x1
     int timestamp; // 0x5
     char name[20]; // 0x9
     int ready_flag; // 0x1d

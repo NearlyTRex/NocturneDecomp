@@ -2,17 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 171,
+    "complexity_score": 21,
     "cross_reference_count": 9,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 21,
-    "suspect_count": 14,
-    "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 53
   },
   "cross_references": [
@@ -25,13 +22,19 @@
     {
       "addr": "005a23c0",
       "from_addr": "005a26a7",
-      "name": "core_asgaya.cpp_FUN_005a23c0",
+      "name": "core_asgaya.cpp_rasterizePolygonCustom_FUN_005a23c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004673d0",
+      "from_addr": "00467747",
+      "name": "core_dpart.cpp_FUN_004673d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004addd0",
       "from_addr": "004ae1bb",
-      "name": "core_flies.cpp_FUN_004addd0",
+      "name": "core_flies.cpp_CFlies_renderOpaque_FUN_004addd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -47,27 +50,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00517480",
+      "from_addr": "005176bf",
+      "name": "engine_prim.c_renderIndexedPolygonAdvanced_FUN_00517480",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00515e80",
       "from_addr": "005160e4",
-      "name": "engine_prim.c_FUN_00515e80",
+      "name": "engine_prim.c_renderPolygonSoftware_FUN_00515e80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00516de0",
       "from_addr": "0051713f",
-      "name": "engine_prim.c_FUN_00516de0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00517480",
-      "from_addr": "005176bf",
-      "name": "engine_prim.c_FUN_00517480",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004673d0",
-      "from_addr": "00467747",
-      "name": "unkafter_dpart.cpp_FUN_004673d0",
+      "name": "engine_prim.c_renderScanlinePolygon_FUN_00516de0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -81,7 +78,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_prim.c_replaceWWithDepth_FUN_00515a80",
-    "signature": "void __cdecl engine_prim_c_replaceWWithDepth_FUN_00515a80(int param_1,int param_2)"
+    "signature": "void __cdecl engine_prim_c_replaceWWithDepth_FUN_00515a80(SRenderVertex *vertices,int vertex_count)"
   },
   "function_calls": [],
   "globals": [],
@@ -91,7 +88,7 @@
       {
         "call_addr": "00467747",
         "call_type": "direct",
-        "caller": "unkafter_dpart.cpp_FUN_004673d0",
+        "caller": "core_dpart.cpp_FUN_004673d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -124,7 +121,7 @@
       {
         "call_addr": "0051713f",
         "call_type": "direct",
-        "caller": "engine_prim.c_FUN_00516de0",
+        "caller": "engine_prim.c_renderScanlinePolygon_FUN_00516de0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -135,7 +132,7 @@
       {
         "call_addr": "005176bf",
         "call_type": "direct",
-        "caller": "engine_prim.c_FUN_00517480",
+        "caller": "engine_prim.c_renderIndexedPolygonAdvanced_FUN_00517480",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -146,7 +143,7 @@
       {
         "call_addr": "005a26a7",
         "call_type": "direct",
-        "caller": "core_asgaya.cpp_FUN_005a23c0",
+        "caller": "core_asgaya.cpp_rasterizePolygonCustom_FUN_005a23c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -157,7 +154,7 @@
       {
         "call_addr": "005160e4",
         "call_type": "direct",
-        "caller": "engine_prim.c_FUN_00515e80",
+        "caller": "engine_prim.c_renderPolygonSoftware_FUN_00515e80",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -179,7 +176,7 @@
       {
         "call_addr": "004ae1bb",
         "call_type": "direct",
-        "caller": "core_flies.cpp_FUN_004addd0",
+        "caller": "core_flies.cpp_CFlies_renderOpaque_FUN_004addd0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -189,10 +186,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.208333333333333,
@@ -220,129 +217,54 @@
     },
     "pcode_op_count": 125
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0051c720",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0053dd20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00552110",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004f99d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "vertices",
+        "offset": 4,
+        "size": 4,
+        "type": "SRenderVertex *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl engine_prim_c_replaceWWithDepth_FUN_00515a80(int param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl engine_prim_c_replaceWWithDepth_FUN_00515a80(int param_1,int param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (0 < param_2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "while (*(int *)(param_1 + 8) != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 8) = *(uint *)(param_1 + 0xc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 8) = *(uint *)(param_1 + 0xc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 0x30;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 0x30;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 <= iVar1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 8) = 0x7fffffff;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 0x30;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 0x30;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "} while (iVar1 < param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 9,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

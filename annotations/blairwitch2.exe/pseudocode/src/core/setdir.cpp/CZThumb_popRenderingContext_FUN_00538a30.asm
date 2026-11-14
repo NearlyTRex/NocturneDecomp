@@ -19,7 +19,7 @@
 ;   undefined4 DAT_020b151c
 ;
 ; Called Functions:
-;   engine_matrix.c_popViewport_FUN_0046b740
+;   engine_drender.cpp_popViewport_FUN_0046b740
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     MOV EDX,dword ptr [0x0060b280]      ; 00538a30 | DAT_0060b280
         ;   Label: core_setdir.cpp_CZThumb_popRenderingContext_FUN_00538a30
     PUSH EDX                            ; 00538a36 | DAT_01ba5c50
-    CALL engine_matrix.c_popViewport_FUN_0046b740 ; 00538a37
-        ;   XREF to: 0046b740 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_popViewport_FUN_0046b740()
+    CALL engine_drender.cpp_popViewport_FUN_0046b740 ; 00538a37
+        ;   XREF to: 0046b740 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_popViewport_FUN_0046b740()
     MOV EAX,[0x020b1518]                ; 00538a3c | DAT_020b1518
     MOV [0x006141b8],EAX                ; 00538a41 | DAT_006141b8
     MOV EAX,[0x020b151c]                ; 00538a46 | DAT_020b151c

@@ -7,16 +7,16 @@
 ; CMirrorReflection * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_mirror.cpp_FUN_004f9990 at 004fa4f4
+;   core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_004f9990 at 004fa4f4
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0060b280
 ;   undefined4 DAT_01ba5c50
 ;
 ; Called Functions:
+;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0
+;   engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0
 ;   engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046b060
-;   engine_drender.cpp_FUN_0046afb0
-;   engine_matrix.c_FUN_0046b4b0
 ;
 ; *****************************************************************************
 
@@ -29,14 +29,14 @@ section .text
     PUSH EAX                            ; 004f9958
     MOV EDX,dword ptr [0x0060b280]      ; 004f9959 | DAT_0060b280
     PUSH EDX                            ; 004f995f | DAT_01ba5c50
-    CALL engine_drender.cpp_FUN_0046afb0 ; 004f9960
-        ;   XREF to: 0046afb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_FUN_0046afb0(CDemonRenderer * this_ptr, CVector3f * point_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0 ; 004f9960
+        ;   XREF to: 0046afb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0(CDemonRenderer * this_ptr, CVector3f * point_ptr)
     ADD ESP,0x8                         ; 004f9965
     MOV ECX,dword ptr [0x0060b280]      ; 004f9968 | DAT_0060b280
     PUSH dword ptr [EBX + 0x6c]         ; 004f996e
     PUSH ECX                            ; 004f9971 | DAT_01ba5c50
-    CALL engine_matrix.c_FUN_0046b4b0   ; 004f9972
-        ;   XREF to: 0046b4b0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_0046b4b0()
+    CALL engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0 ; 004f9972
+        ;   XREF to: 0046b4b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0046b4b0(CDemonRenderer * this_ptr, float field_of_view)
     ADD ESP,0x8                         ; 004f9977
     LEA EAX,[EBX + 0x70]                ; 004f997a
     PUSH EAX                            ; 004f997d

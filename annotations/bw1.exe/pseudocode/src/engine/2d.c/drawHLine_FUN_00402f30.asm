@@ -9,11 +9,11 @@
 ; int              Stack[0xc]:4   x2
 ;
 ; XREF[11]:
-;   core_fldnotes.cpp_FUN_004ba930 at 004ba9fb
+;   core_fldnotes.cpp_SPageResourceText_draw_FUN_004ba930 at 004ba9fb
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_0052e120 at 0052e29e
 ;   engine_2d.c_drawRect_FUN_00403170 at 00403187
 ;   engine_2d.c_fillRectColor_FUN_004031c0 at 00403224
-;   shape_edittool.cpp_FUN_00492dde at 00492e04
+;   shape_edittool.cpp_FUN_00492de0 at 00492e04
 ;   shape_edittool.cpp_FUN_004962b0 at 004967f7
 ;   shape_edittool.cpp_FUN_00496ee0 at 004975f0
 ;   shape_edittool.cpp_FUN_00497660 at 004977d7

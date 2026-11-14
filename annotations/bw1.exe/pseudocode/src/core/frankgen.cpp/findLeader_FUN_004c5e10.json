@@ -1,0 +1,155 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 41,
+    "complexity_score": 54,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 24,
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 65
+  },
+  "cross_references": [
+    {
+      "addr": "004c5470",
+      "from_addr": "004c5489",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_process_FUN_004c5470",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c5a40",
+      "from_addr": "004c5a5d",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_004c5a40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c5e10",
+    "address_range": [
+      [
+        "004c5e10",
+        "004c5e73"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_frankgen.cpp_findLeader_FUN_004c5e10",
+    "signature": "CDemonActor * __cdecl core_frankgen_cpp_findLeader_FUN_004c5e10(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c600",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c600"
+    },
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00622c18",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e82168"
+    },
+    {
+      "addr": "01cc90ac",
+      "name": "g_CFrankenstienMachineClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.393939393939394,
+    "instruction_count": 33,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 2,
+      "COPY": 31,
+      "INT_ADD": 12,
+      "INT_AND": 19,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 19,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 9,
+      "INT_SUB": 10,
+      "INT_XOR": 3,
+      "LOAD": 7,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 9
+    },
+    "pcode_op_count": 145
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004ace60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004d2330",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00495240",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3),",
+      "type": "pointer_cast"
+    }
+  ]
+}

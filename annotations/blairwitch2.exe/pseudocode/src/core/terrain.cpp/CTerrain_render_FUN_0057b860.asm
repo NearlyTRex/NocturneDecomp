@@ -17,7 +17,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_set.cpp_FUN_0052d0e0 at 0052d223
+;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0 at 0052d223
 ;   core_set.cpp_FUN_0052f2a0 at 0052f641
 ;
 ; Referenced Globals:
@@ -31,8 +31,8 @@
 ;   core_ground.cpp_CGround_render_FUN_004cb700
 ;   crt_math.c_round_FUN_005b7ff0
 ;   engine_drender.cpp_CDemonRenderer_setCameraOrigin_FUN_0046af90
-;   engine_drender.cpp_FUN_0046afb0
-;   engine_matrix.c_FUN_0046b5e0
+;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0
+;   engine_drender.cpp_FUN_0046b5e0
 ;
 ; *****************************************************************************
 
@@ -60,8 +60,8 @@ section .text
     PUSH ECX                            ; 0057b882
     LEA ESI,[ESP + 0x10]                ; 0057b883
     LEA EDI,[ESP + 0x4]                 ; 0057b887
-    CALL engine_matrix.c_FUN_0046b5e0   ; 0057b88b
-        ;   XREF to: 0046b5e0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_0046b5e0()
+    CALL engine_drender.cpp_FUN_0046b5e0 ; 0057b88b
+        ;   XREF to: 0046b5e0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046b5e0()
     LEA ESI,[ESP + 0x10]                ; 0057b890
     ADD ESP,0x4                         ; 0057b894
     MOV EBX,0x40800                     ; 0057b897
@@ -130,8 +130,8 @@ section .text
     PUSH EAX                            ; 0057b94d
     MOV EDX,dword ptr [0x0060b280]      ; 0057b94e | DAT_0060b280
     PUSH EDX                            ; 0057b954
-    CALL engine_drender.cpp_FUN_0046afb0 ; 0057b955
-        ;   XREF to: 0046afb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_FUN_0046afb0(CDemonRenderer * this_ptr, CVector3f * point_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0 ; 0057b955
+        ;   XREF to: 0046afb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0(CDemonRenderer * this_ptr, CVector3f * point_ptr)
     ADD ESP,0x8                         ; 0057b95a
     MOV ESP,EBP                         ; 0057b95d
     POP EBP                             ; 0057b95f

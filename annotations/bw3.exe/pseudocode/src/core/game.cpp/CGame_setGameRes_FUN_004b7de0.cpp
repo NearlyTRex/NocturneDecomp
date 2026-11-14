@@ -14,24 +14,21 @@ void __cdecl core_game_cpp_CGame_setGameRes_FUN_004b7de0(CGame *this_ptr)
   int iVar1;
   
   if (_DAT_01d74020 != 0) {
-    engine_special_cpp_FUN_005663e0(_DAT_01d74020);
+    engine_special_cpp_selectCard_FUN_005663e0(_DAT_01d74020);
   }
-  if (((DAT_005fba1c != *(int *)&this_ptr->field_0x4) ||
-      (DAT_005fba20 != *(int *)&this_ptr->field_0x8)) &&
+  if (((DAT_005fba1c != this_ptr->game_pixy) || (DAT_005fba20 != this_ptr->game_bpp)) &&
      (iVar1 = wincore_wddvmem_cpp_FUN_00579bb0
-                        (*(uint *)this_ptr,*(uint *)&this_ptr->field_0x4,
-                         *(uint *)&this_ptr->field_0x8), iVar1 == 0)) {
-    *(uint *)&this_ptr->field_0x4 = 0x1e0;
-    *(uint *)this_ptr = 0x280;
+                        (this_ptr->game_pixx,this_ptr->game_pixy,this_ptr->game_bpp), iVar1 == 0)) {
+    this_ptr->game_pixy = 0x1e0;
+    this_ptr->game_pixx = 0x280;
     iVar1 = wincore_wddvmem_cpp_FUN_00579bb0
-                      (*(uint *)this_ptr,*(uint *)&this_ptr->field_0x4,
-                       *(uint *)&this_ptr->field_0x8);
+                      (this_ptr->game_pixx,this_ptr->game_pixy,this_ptr->game_bpp);
     if (iVar1 == 0) {
       _DAT_01d71de0 = "..\\core\\game.cpp";
       _DAT_01d71de4 = 0x526;
       core_main_c_FUN_004e4330
-                ("CGame::setGameRes - Unable to set the video mode to %dx%dx%d",*(uint *)this_ptr,
-                 *(uint *)&this_ptr->field_0x4,*(uint *)&this_ptr->field_0x8);
+                ("CGame::setGameRes - Unable to set the video mode to %dx%dx%d",this_ptr->game_pixx,this_ptr->game_pixy,
+                 this_ptr->game_bpp);
     }
   }
   engine_2d_c_resetGraphicsSystem_FUN_00402ac0();

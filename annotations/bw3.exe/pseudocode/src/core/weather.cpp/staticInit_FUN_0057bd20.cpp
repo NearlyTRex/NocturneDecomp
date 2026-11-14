@@ -1,12 +1,12 @@
 // Name: core_weather.cpp_staticInit_FUN_0057bd20
 // Address: 0057bd20
 // Address Range: [[0057bd20, 0057bd72]]
-// Convention: unknown
-// Signature: void core_weather_cpp_staticInit_FUN_0057bd20(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_weather_cpp_staticInit_FUN_0057bd20(void)
 
 #include "nocturne.h"
 
-void core_weather_cpp_staticInit_FUN_0057bd20(void)
+void __cdecl core_weather_cpp_staticInit_FUN_0057bd20(void)
 
 {
   core_weather_cpp_FUN_0057bd80(&DAT_02d0c1a0);

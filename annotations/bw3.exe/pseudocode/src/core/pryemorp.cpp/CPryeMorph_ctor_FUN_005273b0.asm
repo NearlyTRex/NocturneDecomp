@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CPryeMorph * core_pryemorp_cpp_CPryeMorph_ctor_FUN_005273b0(CPryeMorph *this_ptr)
+; CPryeMorph * __cdecl core_pryemorp_cpp_CPryeMorph_ctor_FUN_005273b0(CPryeMorph *this_ptr)
 ;
 ; Parameters:
 ; CPryeMorph *     Stack[0x4]:4   this_ptr
@@ -10,10 +10,10 @@
 ;   core_pryemorp.cpp_factoryFuncPryeMorph_FUN_00527380 at 00527393
 ;
 ; Called Functions:
-;   core_cloth.cpp_FUN_0043fa40
+;   core_cloth.cpp_CClothList_add_FUN_0043fa40
 ;   core_morph.cpp_CMorph_ctor_FUN_004fa8a0
 ;   core_npc.cpp_CNPC_ctor_FUN_00508f40
-;   core_skeleton.cpp_FUN_0054eae0
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0
 ;
 ; *****************************************************************************
 
@@ -112,8 +112,8 @@ section .text
     PUSH EAX                            ; 0052747d
     MOV ESI,0x5cda49                    ; 0052747e
     MOV dword ptr [EBX + 0x20810],0x0   ; 00527483
-    CALL core_skeleton.cpp_FUN_0054eae0 ; 0052748d
-        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054eae0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 ; 0052748d
+        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 00527492
     LEA EDI,[EBX + 0x2074c]             ; 00527495
     MOV dword ptr [EBX + 0x21444],0x3f800000 ; 0052749b
@@ -137,8 +137,8 @@ section .text
     LEA EAX,[EBX + 0x2f08]              ; 005274c4
     PUSH EAX                            ; 005274ca
     MOV byte ptr [EBX + 0x207ac],0x0    ; 005274cb
-    CALL core_cloth.cpp_FUN_0043fa40    ; 005274d2
-        ;   XREF to: 0043fa40 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_0043fa40(CClothList * this_ptr, char * filename)
+    CALL core_cloth.cpp_CClothList_add_FUN_0043fa40 ; 005274d2
+        ;   XREF to: 0043fa40 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CClothList_add_FUN_0043fa40(CClothList * this_ptr, char * filename)
     ADD ESP,0x8                         ; 005274d7
     MOV EAX,EBX                         ; 005274da
     POP EDI                             ; 005274dc

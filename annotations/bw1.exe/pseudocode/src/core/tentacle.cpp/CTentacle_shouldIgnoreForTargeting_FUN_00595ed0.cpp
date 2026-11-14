@@ -15,8 +15,8 @@ int __cdecl core_tentacle_cpp_CTentacle_shouldIgnoreForTargeting_FUN_00595ed0(CT
   
   str2 = &DAT_005f77b6;
   str1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
-                   ((CMotionController *)&this_ptr->field_0x158);
-  iVar1 = _stricmp((char *)str1,str2);
+                   (&(this_ptr->base).base.model.base);
+  iVar1 = _stricmp(str1->motion_name,str2);
   if (iVar1 == 0) {
     return 1;
   }

@@ -7,47 +7,51 @@
 
 // Original: core_lightgun.cpp_staticInit_FUN_004ffe50
 // Address: 004ffe50
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_lightgun.cpp_factoryFuncLightGun_FUN_004ffe80
 // Address: 004ffe80
-void factoryFuncLightGun(void);
+CLightGun * __cdecl factoryFuncLightGun(void);
 
 // Original: core_lightgun.cpp_CLightGun_getActorType_FUN_004ffea0
 // Address: 004ffea0
-CDemonActorType * CLightGun::getActorType(CLightGun *this_ptr);
+CDemonActorType * __cdecl CLightGun::getActorType(CLightGun *this_ptr);
 
 // Original: core_lightgun.cpp_CLightGun_ctor_FUN_004ffeb0
 // Address: 004ffeb0
-CLightGun * CLightGun::ctor(CLightGun *this_ptr);
+CLightGun * __cdecl CLightGun::ctor(CLightGun *this_ptr);
 
 // Original: core_lightgun.cpp_FUN_004fff70
 // Address: 004fff70
 undefined4 FUN_004fff70(CDemonActor *param_1);
 
+// Original: core_lightgun.cpp_FUN_004ffff0
+// Address: 004ffff0
+undefined4 FUN_004ffff0(CCharacter *param_1);
+
 // Original: core_lightgun.cpp_FUN_00500090
 // Address: 00500090
 void FUN_00500090(int param_1);
 
-// Original: core_lightgun.cpp_FUN_00500160
+// Original: core_lightgun.cpp_CLightGun_getMuzzlePoint_FUN_00500160
 // Address: 00500160
-void FUN_00500160(int param_1);
+CVector3f * __cdecl CLightGun::getMuzzlePoint(CLightGun *this_ptr,CVector3f *out_point);
 
-// Original: core_lightgun.cpp_FUN_00500310
+// Original: core_lightgun.cpp_CLightGun_fire_FUN_00500310
 // Address: 00500310
-undefined4 FUN_00500310(CWeapon *param_1);
+int __cdecl CLightGun::fire(CLightGun *this_ptr);
 
-// Original: core_lightgun.cpp_FUN_00500d20
+// Original: core_lightgun.cpp_CLightGun_process_FUN_00500d20
 // Address: 00500d20
-void FUN_00500d20(CWeapon *param_1,float param_2);
+void __cdecl CLightGun::process(CLightGun *this_ptr,float delta_time);
 
-// Original: core_lightgun.cpp_FUN_00500f20
+// Original: core_lightgun.cpp_CLightGun_getDamage_FUN_00500f20
 // Address: 00500f20
-float FUN_00500f20(int param_1);
+float __cdecl CLightGun::getDamage(CLightGun *this_ptr);
 
-// Original: core_lightgun.cpp_FUN_00500f90
+// Original: core_lightgun.cpp_CLightGun_renderAimBeam_FUN_00500f90
 // Address: 00500f90
-void FUN_00500f90(CWeapon *param_1);
+void __cdecl CLightGun::renderAimBeam(CLightGun *this_ptr);
 
 // Original: core_lightgun.cpp_CLightGun_dtor_FUN_00501560
 // Address: 00501560

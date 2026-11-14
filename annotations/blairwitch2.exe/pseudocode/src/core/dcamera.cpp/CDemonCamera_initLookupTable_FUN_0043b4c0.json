@@ -18,7 +18,7 @@
     {
       "addr": "0052d980",
       "from_addr": "0052d9da",
-      "name": "core_set.cpp_FUN_0052d980",
+      "name": "core_set.cpp_CDemonSet_initScene_FUN_0052d980",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -36,6 +36,11 @@
   },
   "function_calls": [
     {
+      "addr": "00441f40",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_CDemonCamera_generateFogGrid_FUN_00441f40"
+    },
+    {
       "addr": "00443180",
       "is_variadic": false,
       "name": "core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00443180"
@@ -44,11 +49,6 @@
       "addr": "0043b570",
       "is_variadic": false,
       "name": "core_dcamera.cpp_CDemonCamera_init_FUN_0043b570"
-    },
-    {
-      "addr": "00441f40",
-      "is_variadic": false,
-      "name": "core_dcamera.cpp_FUN_00441f40"
     }
   ],
   "globals": [
@@ -65,7 +65,7 @@
       {
         "call_addr": "0052d9da",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_0052d980",
+        "caller": "core_set.cpp_CDemonSet_initScene_FUN_0052d980",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -114,6 +114,32 @@
       "SUBPIECE": 2
     },
     "pcode_op_count": 505
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0044cb60",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8594
+    },
+    "bw3.exe": {
+      "addr": "00448ca0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8594
+    },
+    "nocedit.exe": {
+      "addr": "0044c0f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.958
+    },
+    "nocturne.exe": {
+      "addr": "0043ff50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9302
+    }
   },
   "stack_frame": {
     "frame_size": 32,

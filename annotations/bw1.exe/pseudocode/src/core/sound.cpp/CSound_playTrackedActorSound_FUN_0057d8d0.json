@@ -2,15 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 6,
+    "complexity_score": 7,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 6,
+    "pseudocode_lines": 7,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 23
+    "total_lines": 24
   },
   "cross_references": [
     {
@@ -22,25 +22,25 @@
     {
       "addr": "00435c70",
       "from_addr": "00436554",
-      "name": "core_chain.cpp_FUN_00435c70",
+      "name": "core_chain.cpp_CChain_process_FUN_00435c70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00536a20",
       "from_addr": "00536f51",
-      "name": "core_pendulum.cpp_FUN_00536a20",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0057c57e",
-      "from_addr": "0057ca01",
-      "name": "core_sound.cpp_FUN_0057c57e",
+      "name": "core_pendulum.cpp_CPendulum_updateSwing_FUN_00536a20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0057ce10",
       "from_addr": "0057d3fa",
-      "name": "core_sound.cpp_FUN_0057ce10",
+      "name": "core_sound.cpp_CSound_process_FUN_0057ce10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057c580",
+      "from_addr": "0057ca01",
+      "name": "core_sound.cpp_FUN_0057c580",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -66,7 +66,7 @@
     {
       "addr": "0057bef0",
       "is_variadic": false,
-      "name": "core_sound.cpp_FUN_0057bef0"
+      "name": "core_sound.cpp_playSfxInternal_FUN_0057bef0"
     }
   ],
   "globals": [],
@@ -76,18 +76,7 @@
       {
         "call_addr": "0057d3fa",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0057ce10",
-        "estimated_params": 4,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 16,
-        "stack_params": 4
-      },
-      {
-        "call_addr": "0057ca01",
-        "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0057c57e",
+        "caller": "core_sound.cpp_CSound_process_FUN_0057ce10",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -120,7 +109,7 @@
       {
         "call_addr": "00536f51",
         "call_type": "direct",
-        "caller": "core_pendulum.cpp_FUN_00536a20",
+        "caller": "core_pendulum.cpp_CPendulum_updateSwing_FUN_00536a20",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -131,7 +120,7 @@
       {
         "call_addr": "00537009",
         "call_type": "direct",
-        "caller": "core_pendulum.cpp_FUN_00536a20",
+        "caller": "core_pendulum.cpp_CPendulum_updateSwing_FUN_00536a20",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -142,7 +131,7 @@
       {
         "call_addr": "00436554",
         "call_type": "direct",
-        "caller": "core_chain.cpp_FUN_00435c70",
+        "caller": "core_chain.cpp_CChain_process_FUN_00435c70",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -153,7 +142,18 @@
       {
         "call_addr": "004365b5",
         "call_type": "direct",
-        "caller": "core_chain.cpp_FUN_00435c70",
+        "caller": "core_chain.cpp_CChain_process_FUN_00435c70",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "0057ca01",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_FUN_0057c580",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -187,6 +187,32 @@
       "STORE": 9
     },
     "pcode_op_count": 52
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0055ae80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00560a00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005b3a70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0052ea90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 20,

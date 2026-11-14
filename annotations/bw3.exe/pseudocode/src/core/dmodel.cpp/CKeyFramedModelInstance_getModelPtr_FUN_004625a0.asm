@@ -8,15 +8,15 @@
 ;
 ; XREF[68]:
 ;   core_actor.cpp_FUN_004091b0 at 004095a7
-;   core_ammo.cpp_FUN_0040dfc0 at 0040dfd5
-;   core_ammo.cpp_FUN_0040e140 at 0040e151
-;   core_ammo.cpp_FUN_0040e2b0 at 0040e2c1
-;   core_ammobox.cpp_FUN_0040e810 at 0040e871
-;   core_ammobox.cpp_FUN_0040e8b0 at 0040e8c5
-;   core_bat.cpp_FUN_0040f010 at 0040f100
-;   core_bat.cpp_FUN_0040f290 at 0040f2b0
-;   core_battery.cpp_FUN_0040f690 at 0040f6a5
-;   core_boxactor.cpp_FUN_0041f130 at 0041f152
+;   core_ammo.cpp_CAmmoManaLarge_process_FUN_0040e2b0 at 0040e2c1
+;   core_ammo.cpp_CAmmoMana_process_FUN_0040e140 at 0040e151
+;   core_ammo.cpp_CAmmo_getBoundingBox_FUN_0040dfc0 at 0040dfd5
+;   core_ammobox.cpp_CAmmoBox_getBoundingBox_FUN_0040e8b0 at 0040e8c5
+;   core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_0040e810 at 0040e871
+;   core_bat.cpp_CBat_getBoundingBox_FUN_0040f290 at 0040f2b0
+;   core_bat.cpp_CBat_process_FUN_0040f010 at 0040f100
+;   core_battery.cpp_CBattery_getBoundingBox_FUN_0040f690 at 0040f6a5
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_00412c50 at 00412d22
 ;   ... and 58 more
 ;
 ; Referenced Globals:

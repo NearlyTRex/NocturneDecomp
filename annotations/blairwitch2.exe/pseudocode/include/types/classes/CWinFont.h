@@ -4,13 +4,29 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/windef.h"
+#include "types/classes/CFont.h"
 
 // Structure: CWinFont
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x6b80 (27520 bytes)
 #pragma pack(push, 1)
 typedef struct CWinFont {
-    char field_0[27520]; // 0x0
+    CFont base; // 0x0
+    HDC device_context_handle; // 0x6a48
+    HBITMAP dib_handle; // 0x6a4c
+    HFONT font_handle; // 0x6a50
+    HGDIOBJ object_handle; // 0x6a54
+    void* ppv_bits; // 0x6a58
+    char text_cache[256]; // 0x6a5c
+    int cached_string_width; // 0x6b5c
+    int cached_string_height; // 0x6b60
+    int right; // 0x6b64
+    int top; // 0x6b68
+    int bpp; // 0x6b6c
+    int cached_foreground_color; // 0x6b70
+    int cached_background_color; // 0x6b74
+    int y_offset1; // 0x6b78
+    int y_offset2; // 0x6b7c
 } CWinFont;
 #pragma pack(pop)
 

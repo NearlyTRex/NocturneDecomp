@@ -19,6 +19,6 @@ void core_manpuz_cpp_FUN_004e6340(int param_1,int param_2)
             (DAT_0060b280,(CVector3f *)(piVar1 + 6),(CVector3f *)(piVar1 + 3));
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
             ((CKeyFramedModelInstance *)(param_1 + 0x2b4),0.0,-1);
-  engine_matrix_c_pop_FUN_0046b4a0();
+  engine_drender_cpp_pop_FUN_0046b4a0();
   return;
 }

@@ -1,0 +1,318 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 112,
+    "complexity_score": 216,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 66,
+    "suspect_count": 12,
+    "suspect_types": [
+      "derived_field_index_pun",
+      "pointer_cast",
+      "pointer_truncation",
+      "stack_alignment_array",
+      "stack_ref",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 178
+  },
+  "cross_references": [
+    {
+      "addr": "004277e0",
+      "from_addr": "004279ea",
+      "name": "core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_004277e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00417690",
+    "address_range": [
+      [
+        "00417690",
+        "004177d7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bodypart.cpp_CBodyPart_addFire_FUN_00417690",
+    "signature": "void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_00417690(CBodyPart *this_ptr,CVector3f *position)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408d70",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408d70"
+    },
+    {
+      "addr": "0040cf60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60"
+    },
+    {
+      "addr": "0049f270",
+      "is_variadic": false,
+      "name": "core_flame.cpp_CFlame_setup_FUN_0049f270"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005cbf7a",
+      "name": "s_GCHAR2_RAW_005cbf79+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cbf7b",
+      "name": "s_GCHAR2_RAW_005cbf79+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cbf7c",
+      "name": "s_GCHAR2_RAW_005cbf79+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cbf7d",
+      "name": "s_GCHAR2_RAW_005cbf79+4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004279ea",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_004277e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.40625,
+    "instruction_count": 96,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 16,
+      "BOOL_OR": 1,
+      "CALL": 3,
+      "CBRANCH": 6,
+      "COPY": 85,
+      "INT_ADD": 58,
+      "INT_AND": 80,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 50,
+      "INT_LEFT": 6,
+      "INT_LESS": 7,
+      "INT_MULT": 7,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 15,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 29,
+      "INT_SUB": 29,
+      "INT_XOR": 5,
+      "INT_ZEXT": 6,
+      "LOAD": 24,
+      "POPCOUNT": 23,
+      "RETURN": 1,
+      "STORE": 34
+    },
+    "pcode_op_count": 519
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0041ab20",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9462
+    },
+    "bw3.exe": {
+      "addr": "00416750",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9462
+    },
+    "nocedit.exe": {
+      "addr": "0041ae50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8324
+    },
+    "nocturne.exe": {
+      "addr": "00417b40",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8211
+    }
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBodyPart *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 13,
+      "match": "afStackY_100c",
+      "severity": "moderate",
+      "text": "float afStackY_100c [1014];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 31,
+      "match": "&stack0xffffffe0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar8 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 32,
+      "match": "&stack0xffffffec",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xffffffec + (uint)bVar8 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 33,
+      "match": "&stack0xffffffe4",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffffe4 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 34,
+      "match": "&stack0xfffffff0",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xfffffff0 + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 60,
+      "match": "(uint *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "*(uint *)((int)this_ptr->face_texture_indices + iVar2) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `&stack0xffffffe0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 31,
+      "match": "(int)&stack0xffffffe0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar8 * -8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&stack0xffffffe4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 33,
+      "match": "(int)&stack0xffffffe4",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffffe4 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 47,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 31,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar8 * -8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 33,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffffe4 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "'(CLocation *)&pCVar5[3].z' walks 3 x sizeof(CVector3f) (0xc) + offsetof(z) (0x8) + 0x0 = 0x2c, which is exactly offsetof(CLaserBeam, color). Ghidra had no CLaserBeam type here and reached the field by index arithmetic; write it as ((CLaserBeam *)pCVar5)->color (\u00a7de-pun/\u00a712). Ambiguous: CParticle::previous_position, CSimpleParticleSystem::fade_duration, SPoseData::bone_rotations[2] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 35,
+      "severity": "moderate",
+      "text": "(((CLocation *)&pCVar5[3].z)->position).x = local_24;",
+      "type": "derived_field_index_pun"
+    }
+  ]
+}

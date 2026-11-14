@@ -11,8 +11,8 @@ int __cdecl core_ammobox_cpp_CAmmoBox_canPickup_FUN_0040e4f0(CAmmoBox *this_ptr,
 {
   int iVar1;
   
-  if (*(int *)&this_ptr->field_0x314 != 0) {
-    iVar1 = core_actor_cpp_FUN_0040c550(carrier,"CHero");
+  if (this_ptr->ammo_count != 0) {
+    iVar1 = core_actor_cpp_isOfClass_FUN_0040c550(carrier,"CHero");
     if (iVar1 != 0) {
       return 1;
     }

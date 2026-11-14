@@ -2,24 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 140,
-    "complexity_score": 297,
+    "complexity_score": 256,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 57,
-    "suspect_count": 20,
+    "pseudocode_lines": 56,
+    "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "suspicious_cast",
-      "unnamed_field",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 197
+    "total_lines": 196
   },
   "cross_references": [
     {
@@ -61,7 +59,7 @@
     {
       "addr": "00576250",
       "is_variadic": false,
-      "name": "core_vecdir.cpp_FUN_00576250"
+      "name": "core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250"
     }
   ],
   "globals": [
@@ -103,13 +101,13 @@
     },
     {
       "addr": "02024a2c",
-      "name": "g_CDemonSetInstance.field1364324_0x14d164",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02024a30",
-      "name": "g_CDemonSetInstance.field1364328_0x14d168",
+      "name": "g_CDemonSetInstance.actors[0]",
       "type": "undefined4",
       "value": null
     }
@@ -316,32 +314,16 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x14d164",
-      "severity": "mild",
-      "text": "for (local_1c = 0; local_1c < *(int *)&g_CDemonSetPtr->field_0x14d164; local_1c = local_1c + 1)",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x14d168",
-      "severity": "mild",
-      "text": "(*(uint *)(&g_CDemonSetPtr->field_0x14d168 + local_18),",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408bf0(this_ptr,&this_ptr_00->field_0x20);",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_18),",
+      "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 36,
+      "line": 35,
       "match": "&stack0xffffffcc",
       "severity": "moderate",
       "text": "(&stack0xffffffcc)[(uint)bVar2 * 0xfffffffe] =",
@@ -349,7 +331,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 37,
+      "line": 36,
       "match": "&stack0xffffffd8",
       "severity": "moderate",
       "text": "(float)*(uint *)(&stack0xffffffd8 + (uint)bVar2 * -8);",
@@ -357,7 +339,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 38,
+      "line": 37,
       "match": "&stack0xffffffd0",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffd0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
@@ -365,7 +347,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 39,
+      "line": 38,
       "match": "&stack0xffffffdc",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffdc + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
@@ -373,15 +355,15 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 43,
+      "line": 42,
       "match": "&stack0xffffffc8",
       "severity": "moderate",
-      "text": "core_vecdir_cpp_FUN_00576250(&stack0xffffffc8);",
+      "text": "core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&stack0xffffffc8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 44,
+      "line": 43,
       "match": "&stack0xffffffc0",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffc0 + (uint)bVar2 * -8) =",
@@ -389,7 +371,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 45,
+      "line": 44,
       "match": "&stack0xffffffb4",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffb4 + (uint)bVar2 * -8);",
@@ -397,7 +379,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 46,
+      "line": 45,
       "match": "&stack0xffffffc4",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffc4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
@@ -405,23 +387,15 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 47,
+      "line": 46,
       "match": "&stack0xffffffb8",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffb8 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
       "type": "stack_ref"
     },
     {
-      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00603b38 (at 0x00603b38, +16 bytes).",
-      "line": 29,
-      "match": "g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "(*(uint *)(&g_CDemonSetPtr->field_0x14d168 + local_18),",
-      "type": "suspicious_cast"
-    },
-    {
       "description": "Pointer value `&stack0xffffffd0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 38,
+      "line": 37,
       "match": "(int)&stack0xffffffd0",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffd0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
@@ -429,7 +403,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffffc0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 44,
+      "line": 43,
       "match": "(int)&stack0xffffffc0",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffc0 + (uint)bVar2 * -8) =",
@@ -437,7 +411,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 38,
+      "line": 37,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffd0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
@@ -445,7 +419,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 44,
+      "line": 43,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffc0 + (uint)bVar2 * -8) =",

@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CNPC.h"
 
 // Structure: CDrummer
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x1fac0 (129728 bytes)
 #pragma pack(push, 1)
 typedef struct CDrummer {
-    char field_0[129728]; // 0x0
+    CNPC base; // 0x0
+    int bone_indices[2]; // 0x1fab8
 } CDrummer;
 #pragma pack(pop)
 

@@ -1,0 +1,149 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 22,
+    "complexity_score": 118,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 28,
+    "suspect_count": 8,
+    "suspect_types": [
+      "suspect_float",
+      "unnamed_param"
+    ],
+    "total_lines": 50
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00517d50",
+    "address_range": [
+      [
+        "00517d50",
+        "00517d6b"
+      ],
+      [
+        "00517d74",
+        "00517d78"
+      ],
+      [
+        "00517db2",
+        "00517db9"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_prye.cpp_FUN_00517d50",
+    "signature": "undefined4 core_prye_cpp_FUN_00517d50(CDemonActor *param_1)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.176470588235294,
+    "instruction_count": 17,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCHIND": 1,
+      "CBRANCH": 2,
+      "COPY": 18,
+      "INT_ADD": 9,
+      "INT_AND": 7,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 3,
+      "INT_XOR": 1,
+      "LOAD": 9,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 2
+    },
+    "pcode_op_count": 71
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint core_prye_cpp_FUN_00517d50(CDemonActor *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == (CDemonActor *)0x0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "switch(param_1[2].orient.vec.x) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 13,
+      "match": "7.00649e-45",
+      "severity": "mild",
+      "text": "case 7.00649e-45:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 18,
+      "match": "9.80909e-45",
+      "severity": "mild",
+      "text": "case 9.80909e-45:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 19,
+      "match": "1.12104e-44",
+      "severity": "mild",
+      "text": "case 1.12104e-44:",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar2 = (CMelee *)core_actor_cpp_castToClassHash_FUN_0040c840(param_1,g_CMeleeClassInfo.name_hash);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar2 = (CHolycross *)core_actor_cpp_castToClassHash_FUN_0040c840(param_1,g_CHolycrossClassInfo.name_hash);",
+      "type": "unnamed_param"
+    }
+  ]
+}

@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_004dfd50(SMRGLHeaderExtended *param_1)
+; void __cdecl engine_keyframe_c_recomputeKeyFrameNormals_FUN_004dfd50(SMRGLPrimitiveTriangle *primitive_list)
 ;
+; Parameters:
+; SMRGLPrimitiveTriangle * Stack[0x4]:4   primitive_list
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d046a0
@@ -71,7 +73,7 @@ section .text
         ;   Label: LAB_004dfdaf
     PUSH ESI                            ; 004dfdb0
     CALL engine_keyframe.c_calculateSurfaceNormal_FUN_004df5f0 ; 004dfdb1
-        ;   XREF to: 004df5f0 (UNCONDITIONAL_CALL)  ; undefined engine_keyframe.c_calculateSurfaceNormal_FUN_004df5f0()
+        ;   XREF to: 004df5f0 (UNCONDITIONAL_CALL)  ; void engine_keyframe.c_calculateSurfaceNormal_FUN_004df5f0(CVector3i * vertex_data, SMRGLPrimitiveTriangle * texture)
     ADD ESP,0x8                         ; 004dfdb6
         ;   Label: LAB_004dfdb6
     PUSH EBX                            ; 004dfdb9
@@ -126,7 +128,7 @@ section .text
         ;   Label: LAB_004dfe27
     PUSH ESI                            ; 004dfe28
     CALL engine_keyframe.c_calculatePackedSurfaceNormal_FUN_004df430 ; 004dfe29
-        ;   XREF to: 004df430 (UNCONDITIONAL_CALL)  ; undefined engine_keyframe.c_calculatePackedSurfaceNormal_FUN_004df430()
+        ;   XREF to: 004df430 (UNCONDITIONAL_CALL)  ; void engine_keyframe.c_calculatePackedSurfaceNormal_FUN_004df430(CVector3i * vertex_data, SMRGLPrimitiveTriangleIndex * texture)
     JMP 0x004dfdb6                      ; 004dfe2e
         ;   XREF to: 004dfdb6 (UNCONDITIONAL_JUMP)  ; LAB_004dfdb6
     JBE 0x004dfe27                      ; 004dfe30

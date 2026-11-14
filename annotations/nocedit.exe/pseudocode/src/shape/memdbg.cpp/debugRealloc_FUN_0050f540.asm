@@ -108,11 +108,11 @@ section .text
     LEA ESI,[EBX + -0x28]               ; 0050f5ce
     PUSH ESI                            ; 0050f5d1
     CALL shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020 ; 0050f5d2
-        ;   XREF to: 0050f020 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020(SMemHead * header, char * filename, int line_number)
+        ;   XREF to: 0050f020 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020(SMemHead * this_ptr, char * filename, int line_number)
     ADD ESP,0xc                         ; 0050f5d7
     PUSH ESI                            ; 0050f5da
     CALL shape_memdbg.cpp_SMemHead_remove_FUN_0050ef20 ; 0050f5db
-        ;   XREF to: 0050ef20 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_remove_FUN_0050ef20(SMemHead * header)
+        ;   XREF to: 0050ef20 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_remove_FUN_0050ef20(SMemHead * this_ptr)
     ADD ESP,0x4                         ; 0050f5e0
     MOV EAX,dword ptr [ESP + 0x18]      ; 0050f5e3
     ADD EAX,0x2c                        ; 0050f5e7
@@ -127,7 +127,7 @@ section .text
         ;   XREF to: 0050f65c (CONDITIONAL_JUMP)  ; LAB_0050f65c
     PUSH ESI                            ; 0050f5fa
     CALL shape_memdbg.cpp_SMemHead_add_FUN_0050eef0 ; 0050f5fb
-        ;   XREF to: 0050eef0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_add_FUN_0050eef0(SMemHead * header)
+        ;   XREF to: 0050eef0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_add_FUN_0050eef0(SMemHead * this_ptr)
     ADD ESP,0x4                         ; 0050f600
     PUSH 0x636136                       ; 0050f603 | = "   !!FAILED!!"
     CALL shape_memdbg.cpp_traceMemory_FUN_0050f150 ; 0050f608
@@ -180,7 +180,7 @@ section .text
     PUSH EBX                            ; 0050f661
     MOV dword ptr [EBX + 0x8],EAX       ; 0050f662
     CALL shape_memdbg.cpp_SMemHead_recordSourceFile_FUN_0050eea0 ; 0050f665
-        ;   XREF to: 0050eea0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_recordSourceFile_FUN_0050eea0(SMemHead * header, char * source_filename)
+        ;   XREF to: 0050eea0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_recordSourceFile_FUN_0050eea0(SMemHead * this_ptr, char * source_filename)
     ADD ESP,0x8                         ; 0050f66a
     MOV dword ptr [EBX + 0x24],0xdeadbeef ; 0050f66d
     LEA ESI,[EBX + 0x28]                ; 0050f674
@@ -189,7 +189,7 @@ section .text
     PUSH EBX                            ; 0050f67d
     MOV dword ptr [ESI + EAX*0x1],0xbeefdead ; 0050f67e
     CALL shape_memdbg.cpp_SMemHead_add_FUN_0050eef0 ; 0050f685
-        ;   XREF to: 0050eef0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_add_FUN_0050eef0(SMemHead * header)
+        ;   XREF to: 0050eef0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_add_FUN_0050eef0(SMemHead * this_ptr)
     ADD ESP,0x4                         ; 0050f68a
     PUSH ESI                            ; 0050f68d
     PUSH 0x636144                       ; 0050f68e | = "   Returns %08X"

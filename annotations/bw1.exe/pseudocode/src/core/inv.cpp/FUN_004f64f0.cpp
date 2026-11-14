@@ -25,7 +25,7 @@ void core_inv_cpp_FUN_004f64f0(void)
   alpha = 0xffff;
   y = 7;
   x = 0x20;
-  iVar2 = core_actor_cpp_FUN_0040cc60(0,3);
+  iVar2 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,3);
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d4b0
             (CAlphaBitmap_ARRAY_01d1bb08 + iVar1 * 4 + iVar2,x,y,alpha);
   return;

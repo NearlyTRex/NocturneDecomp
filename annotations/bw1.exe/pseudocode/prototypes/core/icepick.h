@@ -7,27 +7,27 @@
 
 // Original: core_icepick.cpp_staticInit_FUN_004f0b30
 // Address: 004f0b30
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_icepick.cpp_factoryFuncIcePick_FUN_004f0b60
 // Address: 004f0b60
-void factoryFuncIcePick(void);
+CIcePick * __cdecl factoryFuncIcePick(void);
 
 // Original: core_icepick.cpp_CIcePick_getActorType_FUN_004f0b80
 // Address: 004f0b80
-CDemonActorType * CIcePick::getActorType(CIcePick *this_ptr);
+CDemonActorType * __cdecl CIcePick::getActorType(CIcePick *this_ptr);
 
 // Original: core_icepick.cpp_CIcePick_ctor_FUN_004f0b90
 // Address: 004f0b90
 CIcePick * __cdecl CIcePick::ctor(CIcePick *this_ptr);
 
-// Original: core_icepick.cpp_FUN_004f0c20
+// Original: core_icepick.cpp_CIcePick_setup_FUN_004f0c20
 // Address: 004f0c20
-void FUN_004f0c20(CHero *param_1);
+void __cdecl CIcePick::setup(CIcePick *this_ptr);
 
-// Original: core_icepick.cpp_FUN_004f0e50
+// Original: core_icepick.cpp_CIcePick_process_FUN_004f0e50
 // Address: 004f0e50
-void FUN_004f0e50(CIcePick *param_1,float param_2);
+void __cdecl CIcePick::process(CIcePick *this_ptr,float delta_time);
 
 // Original: core_icepick.cpp_FUN_004f1670
 // Address: 004f1670
@@ -37,25 +37,25 @@ void __cdecl FUN_004f1670(CIcePick *this_ptr,float delta_time);
 // Address: 004f17e0
 int __cdecl FUN_004f17e0(CIcePick *this_ptr);
 
-// Original: core_icepick.cpp_FUN_004f1980
+// Original: core_icepick.cpp_CIcePick_startThrowAttack_FUN_004f1980
 // Address: 004f1980
-int __cdecl FUN_004f1980(CIcePick *this_ptr);
+int __cdecl CIcePick::startThrowAttack(CIcePick *this_ptr);
 
-// Original: core_icepick.cpp_FUN_004f19e0
+// Original: core_icepick.cpp_CIcePick_getCarryObjToBodyXForm_FUN_004f19e0
 // Address: 004f19e0
-void FUN_004f19e0(int param_1,int param_2);
+CMatrix3x4f * __stack2_esi CIcePick::getCarryObjToBodyXForm(CIcePick *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_icepick.cpp_FUN_004f1b50
 // Address: 004f1b50
 void __cdecl FUN_004f1b50(CIcePick *this_ptr,float delta_time);
 
-// Original: core_icepick.cpp_FUN_004f2340
+// Original: core_icepick.cpp_CIcePick_processMotionEvents_FUN_004f2340
 // Address: 004f2340
-void __cdecl FUN_004f2340(CIcePick *this_ptr,float delta_time);
+void __cdecl CIcePick::processMotionEvents(CIcePick *this_ptr,float delta_time);
 
-// Original: core_icepick.cpp_FUN_004f2430
+// Original: core_icepick.cpp_CIcePick_performMeleeAttack_FUN_004f2430
 // Address: 004f2430
-void __cdecl FUN_004f2430(CIcePick *this_ptr,int bone_index);
+void __cdecl CIcePick::performMeleeAttack(CIcePick *this_ptr,int bone_index);
 
 // Original: core_icepick.cpp_CIcePick_archive_FUN_004f2550
 // Address: 004f2550
@@ -65,17 +65,17 @@ void __cdecl CIcePick::archive(CIcePick *this_ptr);
 // Address: 004f2560
 int __cdecl CIcePick::renderOpaque(CIcePick *this_ptr);
 
-// Original: core_icepick.cpp_FUN_004f2570
+// Original: core_icepick.cpp_CIcePick_processDamage_FUN_004f2570
 // Address: 004f2570
-void FUN_004f2570(CDemonActor *param_1,int param_2);
+void __cdecl CIcePick::processDamage(CIcePick *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_icepick.cpp_FUN_004f2720
+// Original: core_icepick.cpp_CIcePick_isWeaponDrawn_FUN_004f2720
 // Address: 004f2720
-undefined4 FUN_004f2720(int param_1);
+int __cdecl CIcePick::isWeaponDrawn(CIcePick *this_ptr);
 
-// Original: core_icepick.cpp_FUN_004f2730
+// Original: core_icepick.cpp_CIcePick_drawWeapon_FUN_004f2730
 // Address: 004f2730
-void FUN_004f2730(int param_1,undefined4 param_2);
+void __cdecl CIcePick::drawWeapon(CIcePick *this_ptr,int drawn);
 
 // Original: core_icepick.cpp_CIcePick_dtor_FUN_004f2740
 // Address: 004f2740

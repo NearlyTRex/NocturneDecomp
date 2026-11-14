@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 249,
-    "complexity_score": 434,
+    "complexity_score": 197,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 84,
-    "suspect_count": 33,
+    "pseudocode_lines": 82,
+    "suspect_count": 10,
     "suspect_types": [
-      "shadow_pointer_walk",
+      "pointer_cast",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 333
+    "total_lines": 331
   },
   "cross_references": [
     {
@@ -42,7 +41,7 @@
     {
       "addr": "005551f0",
       "is_variadic": false,
-      "name": "core_set.cpp_FUN_005551f0"
+      "name": "core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_005551f0"
     },
     {
       "addr": "00484f00",
@@ -164,6 +163,32 @@
       "SUBPIECE": 6
     },
     "pcode_op_count": 1030
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0044e7d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00461050",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00477980",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8466
+    },
+    "nocturne.exe": {
+      "addr": "00453170",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8466
+    }
   },
   "stack_frame": {
     "frame_size": 88,
@@ -321,78 +346,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x110",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x110) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x360",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x360 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x100",
-      "severity": "mild",
-      "text": "if ((0 < *(int *)&this_ptr->field_0x100) ||",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x344",
-      "severity": "mild",
-      "text": "(fVar1 = *(float *)&this_ptr->field_0x344 - *(float *)&this_ptr->field_0x338,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x338",
-      "severity": "mild",
-      "text": "(fVar1 = *(float *)&this_ptr->field_0x344 - *(float *)&this_ptr->field_0x338,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x348",
-      "severity": "mild",
-      "text": "fVar2 = *(float *)&this_ptr->field_0x348 - *(float *)&this_ptr->field_0x33c,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x33c",
-      "severity": "mild",
-      "text": "fVar2 = *(float *)&this_ptr->field_0x348 - *(float *)&this_ptr->field_0x33c,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x34c",
-      "severity": "mild",
-      "text": "fVar3 = *(float *)&this_ptr->field_0x34c - *(float *)&this_ptr->field_0x340,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x340",
-      "severity": "mild",
-      "text": "fVar3 = *(float *)&this_ptr->field_0x34c - *(float *)&this_ptr->field_0x340,",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 27,
       "match": "DAT_00612560",
@@ -425,128 +378,32 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x244",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x244) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x24c",
-      "severity": "mild",
-      "text": "iVar5 = *(int *)&local_28->field_0x24c + iVar9;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x120",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0x120 < 2) || (iVar4 != 0)) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 47,
+      "line": 48,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "(DAT_00612560,(SMRGLTextureBasic *)&this_ptr->field_0x124);",
+      "text": "(DAT_00612560,(SMRGLTextureBasic *)this_ptr->texture_list);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x124",
-      "severity": "mild",
-      "text": "(DAT_00612560,(SMRGLTextureBasic *)&this_ptr->field_0x124);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x114",
-      "severity": "mild",
-      "text": "(SMRGLPrimitiveQuad *)(*(int *)&this_ptr->field_0x114 + iVar9 * 0x48),",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 56,
-      "match": "field_0x118",
-      "severity": "mild",
-      "text": "iVar6 = *(int *)(*(int *)&this_ptr->field_0x118 + iVar9 * 4);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 57,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "(DAT_00612560,(SMRGLTextureBasic *)(&this_ptr->field_0x124 + iVar6 * 0x48)",
+      "text": "(DAT_00612560,",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 59,
-      "match": "field_0x124",
-      "severity": "mild",
-      "text": "(DAT_00612560,(SMRGLTextureBasic *)(&this_ptr->field_0x124 + iVar6 * 0x48)",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 68,
+      "match": "(int *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "} while (iVar8 == *(int *)((int)this_ptr->poly_texture_index_list + iVar6));",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 61,
-      "match": "field_0x118",
-      "severity": "mild",
-      "text": "iVar8 = *(int *)(iVar9 * 4 + *(int *)&this_ptr->field_0x118);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 69,
-      "match": "field_0x118",
-      "severity": "mild",
-      "text": "} while (iVar8 == *(int *)(*(int *)&this_ptr->field_0x118 + iVar6));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 72,
-      "match": "field_0x114",
-      "severity": "mild",
-      "text": "(SMRGLPrimitiveQuad *)(*(int *)&this_ptr->field_0x114 + iVar9 * 0x48),",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 78,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "local_24 = (CKeyFramedModelInstance *)&local_24->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 79,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "local_28 = (CKeyFramedModel *)&local_28->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Undefined global data reference",
       "line": 82,
-      "match": "field_0x244",
-      "severity": "mild",
-      "text": "} while (local_2c < *(int *)&this_ptr->field_0x244);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 84,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,0);",
@@ -554,27 +411,11 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 85,
+      "line": 83,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20(DAT_00612560,1);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `local_24` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_24->owner`). Replace `local_24->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 78,
-      "match": "local_24 = (T *)&local_24->FIELD",
-      "severity": "moderate",
-      "text": "local_24 = (CKeyFramedModelInstance *)&local_24->field_0x4;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `local_28` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_28->owner`). Replace `local_28->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 79,
-      "match": "local_28 = (T *)&local_28->FIELD",
-      "severity": "moderate",
-      "text": "local_28 = (CKeyFramedModel *)&local_28->field_0x8;",
-      "type": "shadow_pointer_walk"
     }
   ]
 }

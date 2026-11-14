@@ -13,12 +13,12 @@ void __cdecl core_game_cpp_CGame_displayMessage_FUN_004b31a0(CGame *this_ptr,cha
   char *pcVar2;
   
   if (message == (char *)0x0) {
-    *(uint *)&this_ptr->field_0x3a4 = 0;
+    this_ptr->message_timer = 0.0;
     return;
   }
   if (*message != '\0') {
-    pcVar2 = &this_ptr->field_0x2a4;
-    *(float *)&this_ptr->field_0x3a4 = duration;
+    pcVar2 = this_ptr->message_text;
+    this_ptr->message_timer = duration;
     do {
       cVar1 = *message;
       *pcVar2 = cVar1;
@@ -32,6 +32,6 @@ void __cdecl core_game_cpp_CGame_displayMessage_FUN_004b31a0(CGame *this_ptr,cha
     } while (cVar1 != '\0');
     return;
   }
-  *(uint *)&this_ptr->field_0x3a4 = 0;
+  this_ptr->message_timer = 0.0;
   return;
 }

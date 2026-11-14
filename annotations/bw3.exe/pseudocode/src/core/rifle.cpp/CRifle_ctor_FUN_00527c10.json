@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 152,
+    "complexity_score": 36,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 22,
-    "suspect_count": 12,
+    "pseudocode_lines": 21,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 50
+    "total_lines": 49
   },
   "cross_references": [
     {
@@ -31,9 +30,9 @@
         "00527c99"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_rifle.cpp_CRifle_ctor_FUN_00527c10",
-    "signature": "CRifle * core_rifle_cpp_CRifle_ctor_FUN_00527c10(CRifle *this_ptr)"
+    "signature": "CRifle * __cdecl core_rifle_cpp_CRifle_ctor_FUN_00527c10(CRifle *this_ptr)"
   },
   "function_calls": [
     {
@@ -97,6 +96,14 @@
     },
     "pcode_op_count": 106
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0053ff20",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -121,94 +128,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "*(byte **)&pCVar2->field_0x154 = &g_CRifleVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&pCVar2->field_0x158,\"delisle.kfm\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x594",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x594 = 0x40400000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x2d8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x2d8 = 2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x2dc",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x2dc = 3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x2e0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x2e0 = 9;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x2e4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x2e4 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x2e8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x2e8 = 0x420c0000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x2ec",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x2ec = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x598",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x598 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x564",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x564 = uVar1;",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

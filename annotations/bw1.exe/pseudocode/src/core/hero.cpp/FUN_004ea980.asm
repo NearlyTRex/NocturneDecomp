@@ -17,15 +17,15 @@
 ;   core_svetlana.cpp_CSvetlana_dtor_FUN_00594680 at 005946b6
 ;
 ; Referenced Globals:
-;   void* PTR_core_hero.cpp_FUN_004eaa10_00601d34 = 004eaa10
+;   void* PTR_core_hero.cpp_CHero_setup_FUN_004eaa10_00601d34 = 004eaa10
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408730
-;   core_cloth.cpp_FUN_00441ca0
-;   core_inv.cpp_FUN_004f6f80
+;   core_armour.cpp_FUN_0040ee30
+;   core_cloth.cpp_CClothList_dtor_FUN_00441ca0
+;   core_inv.cpp_CInventory_dtor_FUN_004f6f80
 ;   core_path.cpp_CPathMap_dtor_FUN_00533060
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_005673f0
-;   unkafter_armour.cpp_FUN_0040ee30
 ;
 ; *****************************************************************************
 
@@ -34,7 +34,7 @@ section .text
     PUSH EBX                            ; 004ea980
         ;   Label: core_hero.cpp_FUN_004ea980
     MOV EDX,dword ptr [ESP + 0x8]       ; 004ea981
-    MOV dword ptr [EDX + 0x154],0x601d34 ; 004ea985 | PTR_core_hero.cpp_FUN_004eaa10_00601d34
+    MOV dword ptr [EDX + 0x154],0x601d34 ; 004ea985 | PTR_core_hero.cpp_CHero_setup_FUN_004eaa10_00601d34
     XOR EAX,EAX                         ; 004ea98f
     CMP EDX,dword ptr [EAX + 0x1d06aa4] ; 004ea991
         ;   Label: LAB_004ea991
@@ -48,8 +48,8 @@ section .text
     PUSH 0x0                            ; 004ea9a1
     ADD EDX,0x1fae8                     ; 004ea9a3
     PUSH EDX                            ; 004ea9a9
-    CALL core_inv.cpp_FUN_004f6f80      ; 004ea9aa
-        ;   XREF to: 004f6f80 (UNCONDITIONAL_CALL)  ; CInventory * core_inv.cpp_FUN_004f6f80(CInventory * this_ptr, uint flags)
+    CALL core_inv.cpp_CInventory_dtor_FUN_004f6f80 ; 004ea9aa
+        ;   XREF to: 004f6f80 (UNCONDITIONAL_CALL)  ; CInventory * core_inv.cpp_CInventory_dtor_FUN_004f6f80(CInventory * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004ea9af
     PUSH 0x0                            ; 004ea9b2
     SUB EAX,0x138e0                     ; 004ea9b4
@@ -60,14 +60,14 @@ section .text
     PUSH 0x0                            ; 004ea9c2
     SUB EAX,0x8c2c                      ; 004ea9c4
     PUSH EAX                            ; 004ea9c9
-    CALL unkafter_armour.cpp_FUN_0040ee30 ; 004ea9ca
-        ;   XREF to: 0040ee30 (UNCONDITIONAL_CALL)  ; undefined unkafter_armour.cpp_FUN_0040ee30()
+    CALL core_armour.cpp_FUN_0040ee30   ; 004ea9ca
+        ;   XREF to: 0040ee30 (UNCONDITIONAL_CALL)  ; undefined core_armour.cpp_FUN_0040ee30()
     ADD ESP,0x8                         ; 004ea9cf
     PUSH 0x0                            ; 004ea9d2
     SUB EAX,0x93c                       ; 004ea9d4
     PUSH EAX                            ; 004ea9d9
-    CALL core_cloth.cpp_FUN_00441ca0    ; 004ea9da
-        ;   XREF to: 00441ca0 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_FUN_00441ca0(CClothList * this_ptr, uint flags)
+    CALL core_cloth.cpp_CClothList_dtor_FUN_00441ca0 ; 004ea9da
+        ;   XREF to: 00441ca0 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_CClothList_dtor_FUN_00441ca0(CClothList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004ea9df
     PUSH 0x0                            ; 004ea9e2
     SUB EAX,0x2b48                      ; 004ea9e4

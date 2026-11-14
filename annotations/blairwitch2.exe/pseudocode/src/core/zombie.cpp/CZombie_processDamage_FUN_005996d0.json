@@ -1,0 +1,226 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 188,
+    "complexity_score": 91,
+    "cross_reference_count": 0,
+    "function_call_count": 9,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 76,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_type_propagation"
+    ],
+    "total_lines": 264
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005996d0",
+    "address_range": [
+      [
+        "005996d0",
+        "005998e6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_zombie.cpp_CZombie_processDamage_FUN_005996d0",
+    "signature": "void __cdecl core_zombie_cpp_CZombie_processDamage_FUN_005996d0(CZombie *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "00488890",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_processDamage_FUN_00488890"
+    },
+    {
+      "addr": "00503860",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_00503860"
+    },
+    {
+      "addr": "00503620",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_00503620"
+    },
+    {
+      "addr": "00502f10",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionList_findMotionIndex_FUN_00502f10"
+    },
+    {
+      "addr": "005035c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_FUN_005035c0"
+    },
+    {
+      "addr": "00598f20",
+      "is_variadic": false,
+      "name": "core_zombie.cpp_CZombie_dropAndClearTarget_FUN_00598f20"
+    },
+    {
+      "addr": "00599400",
+      "is_variadic": false,
+      "name": "core_zombie.cpp_CZombie_processDismemberment_FUN_00599400"
+    },
+    {
+      "addr": "00550b70",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_00550b70"
+    },
+    {
+      "addr": "00551050",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfx_FUN_00551050"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ef382",
+      "name": "s_lookForHead_005ef381+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ef38e",
+      "name": "s_f_zombie_die_wav_005ef38e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ef3a0",
+      "name": "s_zom_d0_wav_005ef3a0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ef3ac",
+      "name": "s_f_zombie_hit_wav_005ef3ac",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ef3be",
+      "name": "s_zom_s0_wav_005ef3be",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.986666666666666,
+    "instruction_count": 150,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 2,
+      "BRANCH": 3,
+      "CALL": 12,
+      "CALLIND": 5,
+      "CBRANCH": 12,
+      "COPY": 196,
+      "FLOAT2FLOAT": 5,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 73,
+      "INT_AND": 69,
+      "INT_CARRY": 17,
+      "INT_EQUAL": 54,
+      "INT_LEFT": 8,
+      "INT_LESS": 5,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 11,
+      "INT_OR": 10,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 17,
+      "INT_SLESS": 27,
+      "INT_SUB": 59,
+      "INT_ZEXT": 8,
+      "LOAD": 42,
+      "POPCOUNT": 27,
+      "RETURN": 3,
+      "STORE": 61
+    },
+    "pcode_op_count": 748
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005be750",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0058c5a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7461
+    },
+    "nocedit.exe": {
+      "addr": "005fc4f0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00561fc0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZombie *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 272,
+        "vtable_addr": "005fe334"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

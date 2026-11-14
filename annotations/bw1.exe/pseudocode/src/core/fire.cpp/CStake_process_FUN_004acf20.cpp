@@ -9,7 +9,7 @@
 void __cdecl core_fire_cpp_CStake_process_FUN_004acf20(CStake *this_ptr)
 
 {
-  core_box_cpp_CBox_processPhysics_FUN_0041e130
-            ((CBox *)&this_ptr->field_0x4,*(float *)&g_CGamePtr->field_0x294);
+  core_box_cpp_CBox_processPhysics_FUN_0041e130(&this_ptr->physics_box,g_CGamePtr->delta_time_float)
+  ;
   return;
 }

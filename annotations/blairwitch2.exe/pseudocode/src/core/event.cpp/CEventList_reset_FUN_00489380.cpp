@@ -9,12 +9,12 @@
 void __cdecl core_event_cpp_CEventList_reset_FUN_00489380(CEventList *this_ptr)
 
 {
-  *(uint *)(this_ptr + 0xc84) = 0;
-  *(uint *)(this_ptr + 0x258c) = 0;
-  *(uint *)(this_ptr + 0x3210) = 0;
-  *(uint *)(this_ptr + 0x337c) = 0;
-  *(uint *)(this_ptr + 0x34e8) = 0;
-  *(uint *)(this_ptr + 0x3ac8) = 0;
-  *(uint *)this_ptr = 0;
+  (this_ptr->current_events).count = 0;
+  (this_ptr->persistent_events).count = 0;
+  (this_ptr->timers).count = 0;
+  (this_ptr->counters).count = 0;
+  (this_ptr->actor_vars).count = 0;
+  (this_ptr->sfx_handles).count = 0;
+  (this_ptr->events).count = 0;
   return;
 }

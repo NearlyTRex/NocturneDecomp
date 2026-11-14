@@ -11,11 +11,10 @@ void __cdecl core_health_cpp_CHealthItem_archive_FUN_004ea480(CHealthItem *this_
 {
   char acStack_104 [256];
   
-  core_actor_cpp_CDemonActor_archive_FUN_0040c040((CDemonActor *)this_ptr);
-  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b770
-            (&this_ptr->field_0x158,"modelName");
-  core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x2d4,"useCount");
-  core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x2d8,"hpRestored");
+  core_actor_cpp_CDemonActor_archive_FUN_0040c040(&this_ptr->base);
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b770(&this_ptr->model,"modelName");
+  core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->use_count,"useCount");
+  core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->hp_restored,"hpRestored");
   if (g_CHealthItemClassVersion != 2) {
     return;
   }

@@ -2,18 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 111,
+    "complexity_score": 83,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 9,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 31,
-    "suspect_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 38,
+    "suspect_count": 3,
     "suspect_types": [
-      "unnamed_field",
+      "pointer_cast",
+      "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 116
+    "total_lines": 123
   },
   "cross_references": [
     {
@@ -23,9 +24,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0052d3be",
+      "addr": "0052d3c0",
       "from_addr": "0052d6ec",
-      "name": "core_set.cpp_FUN_0052d3be",
+      "name": "core_set.cpp_FUN_0052d3c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -66,7 +67,7 @@
     {
       "addr": "0046b740",
       "is_variadic": false,
-      "name": "engine_matrix.c_popViewport_FUN_0046b740"
+      "name": "engine_drender.cpp_popViewport_FUN_0046b740"
     },
     {
       "addr": "0055f5b0",
@@ -76,7 +77,7 @@
     {
       "addr": "00560030",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_00560030"
+      "name": "engine_special.cpp_masterZBuffer_FUN_00560030"
     }
   ],
   "globals": [
@@ -174,7 +175,7 @@
       {
         "call_addr": "0052d6ec",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_0052d3be",
+        "caller": "core_set.cpp_FUN_0052d3c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -185,7 +186,7 @@
       {
         "call_addr": "0052d914",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_0052d3be",
+        "caller": "core_set.cpp_FUN_0052d3c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -233,6 +234,32 @@
     },
     "pcode_op_count": 345
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0044d610",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00449750",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0044cb80",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00440a20",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8548
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -266,52 +293,20 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x11e4",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x11e4 == 0) {",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(void *)(iVar1 * 4 + (int)this_ptr",
+      "severity": "moderate",
+      "text": "((void *)(iVar1 * 4 + (int)this_ptr->zbuffer_aligned),",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x11e4",
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_01c2b64c",
       "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x11e4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x168",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0x168 == 0) && (skip_zbuffer_copy == 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x148",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x148) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x144",
-      "severity": "mild",
-      "text": "_memcpy(*(int *)&this_ptr->field_0x144 << 2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x148",
-      "severity": "mild",
-      "text": "} while (iVar1 < *(int *)&this_ptr->field_0x148);",
-      "type": "unnamed_field"
+      "text": "*(void **)(&DAT_01c2b64c + iVar3),this_ptr->framebuffer_width << 2);",
+      "type": "undefined_data"
     }
   ]
 }

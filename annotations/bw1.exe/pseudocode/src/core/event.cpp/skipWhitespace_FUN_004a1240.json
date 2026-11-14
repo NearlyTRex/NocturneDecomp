@@ -1,0 +1,110 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 12,
+    "complexity_score": 22,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 7,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 19
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004a1240",
+    "address_range": [
+      [
+        "004a1240",
+        "004a1259"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_event.cpp_skipWhitespace_FUN_004a1240",
+    "signature": "char * __cdecl core_event_cpp_skipWhitespace_FUN_004a1240(char *str)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.375,
+    "instruction_count": 8,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CBRANCH": 1,
+      "COPY": 6,
+      "INT_ADD": 4,
+      "INT_AND": 10,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 4,
+      "LOAD": 3,
+      "POPCOUNT": 4
+    },
+    "pcode_op_count": 43
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00488bd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0048b820",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004aa2d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0047a260",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "str",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_00626114",
+      "severity": "mild",
+      "text": "while (((&DAT_00626114)[(byte)(*str + 1)] & 2) != 0) {",
+      "type": "undefined_data"
+    }
+  ]
+}

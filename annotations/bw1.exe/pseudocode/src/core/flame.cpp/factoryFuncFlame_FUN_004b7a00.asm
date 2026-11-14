@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_flame_cpp_factoryFuncFlame_FUN_004b7a00(void)
+; CFlame * __cdecl core_flame_cpp_factoryFuncFlame_FUN_004b7a00(void)
 ;
 ;
 ; Called Functions:
 ;   core_flame.cpp_CFlame_ctor_FUN_004b7a30
-;   crt_unknown.c_FUN_005c0f32
+;   crt_memory.c_operator_new_FUN_005c0f32
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x2a4                          ; 004b7a00
         ;   Label: core_flame.cpp_factoryFuncFlame_FUN_004b7a00
-    CALL crt_unknown.c_FUN_005c0f32     ; 004b7a05
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
+    CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004b7a05
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
     ADD ESP,0x4                         ; 004b7a0a
     TEST EAX,EAX                        ; 004b7a0d
     JNZ 0x004b7a12                      ; 004b7a0f

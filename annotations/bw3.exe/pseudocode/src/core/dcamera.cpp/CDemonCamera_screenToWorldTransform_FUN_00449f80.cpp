@@ -1,0 +1,42 @@
+// Name: core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_00449f80
+// Address: 00449f80
+// Address Range: [[00449f80, 0044a082]]
+// Convention: __stack2_esi
+// Signature: CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_00449f80(CDemonCamera *this_ptr,CVector3i *input_ptr,CVector3i *output_ptr)
+
+#include "nocturne.h"
+
+CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_00449f80(CDemonCamera *this_ptr,CVector3i *input_ptr,CVector3i *output_ptr)
+
+{
+  int iVar1;
+  int iVar2;
+  longlong lVar3;
+  longlong lVar4;
+  longlong lVar5;
+  int iVar6;
+  int iVar7;
+  
+  iVar1 = input_ptr->z;
+  iVar6 = (int)(((longlong)(input_ptr->x - (this_ptr->cached_projection).center_x_fixed) *
+                (longlong)iVar1) / (longlong)(this_ptr->cached_projection).half_width_fixed);
+  iVar7 = (int)(((longlong)(input_ptr->y - (this_ptr->cached_projection).center_y_fixed) *
+                (longlong)iVar1) / (longlong)(this_ptr->cached_projection).neg_half_height_fixed);
+  lVar3 = (longlong)iVar7 * (longlong)(this_ptr->inverted_matrix).m[1].x +
+          (longlong)iVar6 * (longlong)(this_ptr->inverted_matrix).m[0].x +
+          (longlong)iVar1 * (longlong)(this_ptr->inverted_matrix).m[2].x;
+  lVar4 = (longlong)iVar7 * (longlong)(this_ptr->inverted_matrix).m[1].y +
+          (longlong)iVar6 * (longlong)(this_ptr->inverted_matrix).m[0].y +
+          (longlong)iVar1 * (longlong)(this_ptr->inverted_matrix).m[2].y;
+  iVar2 = (this_ptr->camera_origin).y;
+  lVar5 = (longlong)iVar7 * (longlong)(this_ptr->inverted_matrix).m[1].z +
+          (longlong)iVar6 * (longlong)(this_ptr->inverted_matrix).m[0].z +
+          (longlong)iVar1 * (longlong)(this_ptr->inverted_matrix).m[2].z;
+  iVar1 = (this_ptr->camera_origin).z;
+  output_ptr->x =
+       (this_ptr->camera_origin).x + ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10)
+  ;
+  output_ptr->y = iVar2 + ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10);
+  output_ptr->z = iVar1 + ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10);
+  return output_ptr;
+}

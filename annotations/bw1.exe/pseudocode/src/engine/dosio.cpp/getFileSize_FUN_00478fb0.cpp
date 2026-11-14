@@ -10,13 +10,12 @@ int __cdecl engine_dosio_cpp_getFileSize_FUN_00478fb0(char *directory,char *file
 
 {
   int iVar1;
-  byte local_214 [516];
-  int local_10;
+  SFoundFileInfo local_214;
   
-  engine_dosio_cpp_FUN_00478e20(local_214,directory,filename);
-  iVar1 = engine_dosio_cpp_findFile_FUN_00478e90(local_214);
+  engine_dosio_cpp_FUN_00478e20(&local_214,directory,filename);
+  iVar1 = engine_dosio_cpp_findFile_FUN_00478e90(&local_214);
   if (iVar1 != 0) {
-    return local_10;
+    return local_214.file_size;
   }
   return -1;
 }

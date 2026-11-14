@@ -4,13 +4,21 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CMatrix3x3f.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: SDynamicLight
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 76; static array of 50, stride 0x4c; filled by the mini3d add-light function FUN_004ef920 (no callers in this build)
 // Ghidra size: 0x4c (76 bytes)
 #pragma pack(push, 1)
 typedef struct SDynamicLight {
-    char field_0[76]; // 0x0
+    CVector3f position; // 0x0, FUN_004ef920 copies the position arg
+    CMatrix3x3f orientation; // 0xc, FUN_004ef920 buildRotationMatrix(+0xc) and scales two columns by cone_scale
+    char field_48[4]; // 0x30
+    float range; // 0x34, FUN_004ef920 stores arg 3; cull pass compares against it
+    float inverse_range; // 0x38, FUN_004ef920 stores 1/range
+    float cone_scale; // 0x3c, FUN_004ef920 stores arg 4; renderer gets atan(1/cone_scale)
+    uint renderer_args[3]; // 0x40, FUN_004ef920 stores args 5..7 at +0x40/+0x44/+0x48 and passes them unchanged as the last three args of APIDLLaddDynamicLight (meaning set by the DLL; colour likely but not shown)
 } SDynamicLight;
 #pragma pack(pop)
 

@@ -1,0 +1,164 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 55,
+    "complexity_score": 19,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 5,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 19,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 74
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0041e800",
+    "address_range": [
+      [
+        "0041e800",
+        "0041e887"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bride.cpp_CBride_archive_FUN_0041e800",
+    "signature": "void __cdecl core_bride_cpp_CBride_archive_FUN_0041e800(CBride *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040bae0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveDeformableModelInstance_FUN_0040bae0"
+    },
+    {
+      "addr": "0040b8e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b8e0"
+    },
+    {
+      "addr": "0040bb60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040bb60"
+    },
+    {
+      "addr": "00487ec0",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_archive_FUN_00487ec0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005cc889",
+      "name": "s_speed_005cc888+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cc88f",
+      "name": "s_modelName_005cc88f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc899",
+      "name": "s_guardDistance_005cc899",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc8a7",
+      "name": "s_state_005cc8a7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006099a0",
+      "name": "g_CBrideClassVersion",
+      "type": "int",
+      "value": "0x4"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.325,
+    "instruction_count": 40,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 5,
+      "CBRANCH": 4,
+      "COPY": 24,
+      "INT_ADD": 14,
+      "INT_AND": 20,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 22,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 10,
+      "INT_SUB": 19,
+      "LOAD": 5,
+      "POPCOUNT": 10,
+      "RETURN": 2,
+      "STORE": 15
+    },
+    "pcode_op_count": 173
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00424840",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00424560",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00420970",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBride *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 220,
+        "vtable_addr": "005f3c94"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

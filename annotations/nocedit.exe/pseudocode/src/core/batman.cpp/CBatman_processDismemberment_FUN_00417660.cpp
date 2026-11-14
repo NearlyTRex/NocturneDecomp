@@ -119,7 +119,7 @@ switchD_00417696_default:
 LAB_00417851:
   this_ptr_00 = g_CConsolePtr;
   if ((this_ptr->part_indices[1] == damage_info->hit_part_index) &&
-     (damage_info->damage_type == DAMAGE_TYPE_LAUNCH)) {
+     (damage_info->damage_type == DAMAGE_TYPE_ATTACK_STAKE)) {
     damage_info->damage_amount = damage_info->damage_amount * (float)20;
     engine_console_cpp_CConsole_printf_FUN_00441890(this_ptr_00,"Shot thru the heart\n");
     iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);

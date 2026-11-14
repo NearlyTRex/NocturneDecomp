@@ -2,29 +2,29 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 42,
+    "complexity_score": 41,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 27,
+    "pseudocode_lines": 26,
     "suspect_count": 1,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 95
+    "total_lines": 94
   },
   "cross_references": [
     {
       "addr": "0051f330",
       "from_addr": "0051f3d0",
-      "name": "core_mobster.cpp_FUN_0051f330",
+      "name": "core_mobster.cpp_CMobster_playTaunt_FUN_0051f330",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0054aa60",
       "from_addr": "0054aaf0",
-      "name": "core_script.cpp_FUN_0054aa60",
+      "name": "core_script.cpp_CScript_startDialogLine_FUN_0054aa60",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -54,7 +54,7 @@
     {
       "addr": "00574410",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00574410"
+      "name": "sound_sndmain.cpp_getSampleInfo_FUN_00574410"
     }
   ],
   "globals": [
@@ -71,7 +71,7 @@
       {
         "call_addr": "0054aaf0",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_0054aa60",
+        "caller": "core_script.cpp_CScript_startDialogLine_FUN_0054aa60",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -82,7 +82,7 @@
       {
         "call_addr": "0051f3d0",
         "call_type": "direct",
-        "caller": "core_mobster.cpp_FUN_0051f330",
+        "caller": "core_mobster.cpp_CMobster_playTaunt_FUN_0051f330",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -122,6 +122,32 @@
       "STORE": 13
     },
     "pcode_op_count": 251
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0055af90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00560b10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005b3ba0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0052ebc0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 364,
@@ -170,10 +196,10 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 15,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "(CVar1 != (CSampleInfo)0x2a)) && (((&DAT_00626114)[(byte)((char)CVar1 + 1)] & 2) == 0))) {",
+      "text": "(((&DAT_00626114)[(byte)(cVar1 + 1)] & 2) == 0))) {",
       "type": "undefined_data"
     }
   ]

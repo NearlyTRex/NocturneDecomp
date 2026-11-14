@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040d7e0
-;   core_charactr.cpp_CCharacter_isGrabbable_FUN_004280a0
+;   core_charactr.cpp_CCharacter_returnZero_FUN_004280a0
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     PUSH ECX                            ; 00562411
     MOV EBX,dword ptr [ESP + 0xc]       ; 00562412
     PUSH EBX                            ; 00562416
-    CALL core_charactr.cpp_CCharacter_isGrabbable_FUN_004280a0 ; 00562417
-        ;   XREF to: 004280a0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_isGrabbable_FUN_004280a0(CCharacter * this_ptr, CDemonActor * grabber)
+    CALL core_charactr.cpp_CCharacter_returnZero_FUN_004280a0 ; 00562417
+        ;   XREF to: 004280a0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_returnZero_FUN_004280a0(CCharacter * this_ptr, CDemonActor * grabber)
     ADD ESP,0x8                         ; 0056241c
     POP EBX                             ; 0056241f
     RET                                 ; 00562420

@@ -2,28 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 232,
+    "complexity_score": 176,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 52,
-    "suspect_count": 15,
+    "pseudocode_lines": 51,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "undefined_data",
-      "unnamed_field",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 153
+    "total_lines": 152
   },
   "cross_references": [
     {
       "addr": "004b6170",
       "from_addr": "004b65b4",
-      "name": "core_game.cpp_FUN_004b6170",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -46,19 +45,19 @@
       "name": "core_game.cpp_CGame_processJoystickControls_FUN_004b7510"
     },
     {
-      "addr": "004b76c0",
-      "is_variadic": false,
-      "name": "core_game.cpp_FUN_004b76c0"
-    },
-    {
       "addr": "004b80a0",
       "is_variadic": false,
-      "name": "core_game.cpp_FUN_004b80a0"
+      "name": "core_game.cpp_CGame_processMouseControls_FUN_004b80a0"
     },
     {
       "addr": "004b8250",
       "is_variadic": false,
-      "name": "core_game.cpp_FUN_004b8250"
+      "name": "core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004b8250"
+    },
+    {
+      "addr": "004b76c0",
+      "is_variadic": false,
+      "name": "core_game.cpp_FUN_004b76c0"
     },
     {
       "addr": "004be8a0",
@@ -133,7 +132,7 @@
     },
     {
       "addr": "01caf5ac",
-      "name": "g_CFieldNotesInstance.field64_0x40",
+      "name": "g_CFieldNotesInstance.is_displayed",
       "type": "undefined4",
       "value": null
     },
@@ -187,7 +186,7 @@
     },
     {
       "addr": "01fc1070",
-      "name": "g_CDemonSetInstance.field1420984_0x15aeb8",
+      "name": "g_CDemonSetInstance.selected_camera_index",
       "type": "undefined4",
       "value": null
     },
@@ -204,7 +203,7 @@
       {
         "call_addr": "004b65b4",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b6170",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -251,6 +250,32 @@
     },
     "pcode_op_count": 318
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004d0860",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9931
+    },
+    "bw3.exe": {
+      "addr": "004b92e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9931
+    },
+    "nocedit.exe": {
+      "addr": "004dbd80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8
+    },
+    "nocturne.exe": {
+      "addr": "0049e7d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -277,40 +302,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "if (((_DAT_01cb7788 == 0) && (*(int *)&g_CFieldNotesPtr->field_0x40 == 0)) && (_DAT_026677e0 == 0)",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x218",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0x218 == 0) && (*(int *)&this_ptr->field_0x254 == 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x254",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0x218 == 0) && (*(int *)&this_ptr->field_0x254 == 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0xd0",
-      "severity": "mild",
-      "text": "switch(*(uint *)&this_ptr->field_0xd0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 35,
       "match": "DAT_01c37790",
       "severity": "mild",
       "text": "puVar2 = (uint *)&DAT_01c37790;",
@@ -318,7 +311,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 36,
       "match": "DAT_01cb7528",
       "severity": "mild",
       "text": "puVar3 = (uint *)&DAT_01cb7528;",
@@ -326,7 +319,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 44,
       "match": "(uint *)((int)puVar2",
       "severity": "moderate",
       "text": "puVar2 = (uint *)((int)puVar2 + (uint)bVar4 * -2 + 1);",
@@ -334,23 +327,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 45,
       "match": "(uint *)((int)puVar3",
       "severity": "moderate",
       "text": "puVar3 = (uint *)((int)puVar3 + (uint)bVar4 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 49,
-      "match": "field_0x15aeb8",
-      "severity": "mild",
-      "text": "_DAT_01cb7784 = *(uint *)&g_CDemonSetPtr->field_0x15aeb8;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Pointer value `puVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 45,
+      "line": 44,
       "match": "(int)puVar2",
       "severity": "moderate",
       "text": "puVar2 = (uint *)((int)puVar2 + (uint)bVar4 * -2 + 1);",
@@ -358,7 +343,7 @@
     },
     {
       "description": "Pointer value `puVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 46,
+      "line": 45,
       "match": "(int)puVar3",
       "severity": "moderate",
       "text": "puVar3 = (uint *)((int)puVar3 + (uint)bVar4 * -2 + 1);",
@@ -366,7 +351,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 38,
+      "line": 37,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0x96; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -374,7 +359,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 43,
+      "line": 42,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + -1) {",

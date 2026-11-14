@@ -15,10 +15,10 @@ void __cdecl core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00423850(CCharacte
   float fVar2;
   float fVar3;
   byte bVar4;
-  uint auStackY_1038 [1016];
+  float afStackY_1038 [1016];
   uint local_50;
   uint local_44;
-  uint local_40;
+  float local_40;
   uint local_38;
   uint local_2c;
   
@@ -29,18 +29,18 @@ void __cdecl core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00423850(CCharacte
        *(uint *)(&stack0xffffffd8 + (uint)bVar4 * -8);
   *(uint *)(&stack0xffffffd0 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
        *(uint *)(&stack0xffffffdc + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-  core_vecdir_cpp_FUN_005838f0(&stack0xffffffc8);
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&stack0xffffffc8);
   local_44 = local_50;
   *(uint *)((int)&stack0xffffffc0 + (uint)bVar4 * -8) =
        *(uint *)(&stack0xffffffb4 + (uint)bVar4 * -8);
   *(uint *)(&stack0xffffffc4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
        *(uint *)(&stack0xffffffb8 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-  fVar1 = *(float *)&this_ptr->field_0x2598;
-  fVar2 = (float)core_actor_cpp_FUN_0040d0c0(local_40);
+  fVar1 = this_ptr->turn_speed;
+  fVar2 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(local_40);
   fVar3 = -fVar1;
   if ((fVar3 <= fVar2) && (fVar3 = fVar1, fVar2 <= fVar1)) {
     fVar3 = fVar2;
   }
-  *(float *)&this_ptr->field_0x2578 = fVar3;
+  this_ptr->turn_angle_accumulator = fVar3;
   return;
 }

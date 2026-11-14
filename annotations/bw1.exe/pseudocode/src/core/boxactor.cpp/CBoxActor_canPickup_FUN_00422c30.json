@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 36,
+    "complexity_score": 11,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 11,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 31
   },
   "cross_references": [],
@@ -31,7 +29,7 @@
     {
       "addr": "0040c550",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040c550"
+      "name": "core_actor.cpp_isOfClass_FUN_0040c550"
     }
   ],
   "globals": [],
@@ -68,6 +66,32 @@
     },
     "pcode_op_count": 61
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0041ccc0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004200a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6286
+    },
+    "nocedit.exe": {
+      "addr": "004224b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0041f0b0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -91,28 +115,11 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x314",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x314 != 3) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x314",
-      "severity": "mild",
-      "text": "return *(int *)&this_ptr->field_0x314;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CLightActor",
         "offset": 132,
         "vtable_addr": "005fcf34"
       },

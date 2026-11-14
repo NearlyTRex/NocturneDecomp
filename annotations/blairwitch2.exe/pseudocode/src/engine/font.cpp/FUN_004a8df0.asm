@@ -14,18 +14,18 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[23]:
-;   core_fldnotes.cpp_FUN_004a2060 at 004a207e
-;   core_fldnotes.cpp_FUN_004a3e40 at 004a3fa7
-;   core_fldnotes.cpp_FUN_004a5700 at 004a5a5e
-;   core_game.cpp_FUN_004b32c0 at 004b33ce
-;   core_game.cpp_FUN_004b3b0e at 004b3b31
-;   core_game.cpp_FUN_004b3c50 at 004b3cdd
+; XREF[26]:
+;   core_flashlit.cpp_FUN_004a16b0 at 004a1724
+;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004a5700 at 004a5a5e
+;   core_fldnotes.cpp_SNotesMap_draw_FUN_004a3e40 at 004a3fa7
+;   core_fldnotes.cpp_SPageResourceText_draw_FUN_004a2060 at 004a207e
+;   core_game.cpp_CGame_renderOverlay_FUN_004b32c0 at 004b33ce
+;   core_game.cpp_CGame_showCustomizableKeys_FUN_004b3c50 at 004b3cdd
 ;   core_game.cpp_FUN_004b5190 at 004b55a9
+;   core_game.cpp_drawCreditsLine_FUN_004b3b10 at 004b3b31
 ;   core_game.cpp_drawKeyBindingEntry_FUN_004b3b90 at 004b3be3
 ;   core_inv.cpp_FUN_004dd9b0 at 004ddb97
-;   core_level.cpp_FUN_004e1600 at 004e1b38
-;   ... and 13 more
+;   ... and 16 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d69dd
@@ -45,8 +45,8 @@
 ; Called Functions:
 ;   crt_math.c_round_FUN_005b7ff0
 ;   engine_font.cpp_FUN_004a9870
-;   unkafter_font.cpp_FUN_004ab840
-;   unkafter_palette.cpp_FUN_00510cd0
+;   engine_font.cpp_FUN_004ab840
+;   engine_palette.cpp_FUN_00510cd0
 ;
 ; *****************************************************************************
 
@@ -80,8 +80,8 @@ section .text
     PUSH ESI                            ; 004a8e2e
     MOV ESI,dword ptr [EBX + 0x4214]    ; 004a8e2f
     PUSH ESI                            ; 004a8e35
-    CALL unkafter_palette.cpp_FUN_00510cd0 ; 004a8e36
-        ;   XREF to: 00510cd0 (UNCONDITIONAL_CALL)  ; undefined unkafter_palette.cpp_FUN_00510cd0()
+    CALL engine_palette.cpp_FUN_00510cd0 ; 004a8e36
+        ;   XREF to: 00510cd0 (UNCONDITIONAL_CALL)  ; undefined engine_palette.cpp_FUN_00510cd0()
     ADD ESP,0x18                        ; 004a8e3b
     ADD ESP,0x24                        ; 004a8e3e
         ;   Label: LAB_004a8e3e
@@ -97,8 +97,8 @@ section .text
     PUSH EBP                            ; 004a8e4c
     PUSH ESI                            ; 004a8e4d
     PUSH EBX                            ; 004a8e4e
-    CALL unkafter_font.cpp_FUN_004ab840 ; 004a8e4f
-        ;   XREF to: 004ab840 (UNCONDITIONAL_CALL)  ; undefined unkafter_font.cpp_FUN_004ab840()
+    CALL engine_font.cpp_FUN_004ab840   ; 004a8e4f
+        ;   XREF to: 004ab840 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004ab840()
     ADD ESP,0x14                        ; 004a8e54
     JMP 0x004a8e3e                      ; 004a8e57
         ;   XREF to: 004a8e3e (UNCONDITIONAL_JUMP)  ; LAB_004a8e3e

@@ -1,0 +1,329 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 91,
+    "complexity_score": 97,
+    "cross_reference_count": 20,
+    "function_call_count": 7,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 42,
+    "suspect_count": 4,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 133
+  },
+  "cross_references": [
+    {
+      "addr": "00415690",
+      "from_addr": "004156ca",
+      "name": "core_bird.cpp_CBird_renderOpaque_FUN_00415690",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0041cfd0",
+      "from_addr": "0041cfe9",
+      "name": "core_boneguy.cpp_CBoneGuy_renderOpaque_FUN_0041cfd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042b3b0",
+      "from_addr": "0042b3b5",
+      "name": "core_carved.cpp_CCarved_renderOpaque_FUN_0042b3b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004451b0",
+      "from_addr": "004451b5",
+      "name": "core_colonel.cpp_CColonel_renderOpaque_FUN_004451b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00446e20",
+      "from_addr": "00446e25",
+      "name": "core_construc.cpp_CConstruct_renderOpaque_FUN_00446e20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045bfe0",
+      "from_addr": "0045c010",
+      "name": "core_demnfolk.cpp_CDemnfolk_renderOpaque_FUN_0045bfe0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00471af0",
+      "from_addr": "00471b09",
+      "name": "core_doc.cpp_CDoc_renderOpaque_FUN_00471af0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c9fa0",
+      "from_addr": "004c9faa",
+      "name": "core_gabriela.cpp_CGabriella_renderOpaque_FUN_004c9fa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dd2c0",
+      "from_addr": "004dd2c5",
+      "name": "core_gargoyle.cpp_CGargoyle_renderOpaque_FUN_004dd2c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ea130",
+      "from_addr": "004ea135",
+      "name": "core_haystack.cpp_CHaystack_renderOpaque_FUN_004ea130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f2560",
+      "from_addr": "004f2565",
+      "name": "core_icepick.cpp_CIcePick_renderOpaque_FUN_004f2560",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00531b10",
+      "from_addr": "00531b5a",
+      "name": "core_npc.cpp_CNPC_renderOpaque_FUN_00531b10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00541bc0",
+      "from_addr": "00541bc9",
+      "name": "core_scat.cpp_CScat_renderOpaque_FUN_00541bc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055fbf0",
+      "from_addr": "0055fc4b",
+      "name": "core_shadow.cpp_CShadow_renderOpaque_FUN_0055fbf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00561120",
+      "from_addr": "00561186",
+      "name": "core_shadowsc.cpp_CShadowsc_renderOpaque_FUN_00561120",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058e3c0",
+      "from_addr": "0058e3d6",
+      "name": "core_stranger.cpp_CStranger_renderOpaque_FUN_0058e3c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00594340",
+      "from_addr": "00594377",
+      "name": "core_svetlana.cpp_CSvetlana_renderOpaque_FUN_00594340",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00595b80",
+      "from_addr": "00595ba9",
+      "name": "core_tentacle.cpp_CTentacle_renderOpaque_FUN_00595b80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00599890",
+      "from_addr": "005998b9",
+      "name": "core_thehand.cpp_CTheHand_renderOpaque_FUN_00599890",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005bdfe0",
+      "from_addr": "005be010",
+      "name": "core_zombie.cpp_CZombie_renderOpaque_FUN_005bdfe0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0042f240",
+    "address_range": [
+      [
+        "0042f240",
+        "0042f31f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_renderOpaque_FUN_0042f240",
+    "signature": "int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_0042f240(CCharacter *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004087f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0"
+    },
+    {
+      "addr": "004087b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_004087b0"
+    },
+    {
+      "addr": "004207b0",
+      "is_variadic": false,
+      "name": "core_box.cpp_FUN_004207b0"
+    },
+    {
+      "addr": "0042e960",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_renderCharacter_FUN_0042e960"
+    },
+    {
+      "addr": "005254b0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_FUN_005254b0"
+    },
+    {
+      "addr": "00484180",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_00484180"
+    },
+    {
+      "addr": "00483e60",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00612560",
+      "name": "DAT_00612560",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bc120c",
+      "name": "DAT_01bc120c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d39d34",
+      "name": "DAT_01d39d34",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.506849315068493,
+    "instruction_count": 73,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 2,
+      "CALL": 7,
+      "CALLIND": 2,
+      "CBRANCH": 6,
+      "COPY": 59,
+      "INT_ADD": 34,
+      "INT_AND": 40,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 37,
+      "INT_LESS": 2,
+      "INT_MULT": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 18,
+      "INT_SUB": 29,
+      "INT_XOR": 1,
+      "INT_ZEXT": 2,
+      "LOAD": 15,
+      "POPCOUNT": 18,
+      "RETURN": 2,
+      "STORE": 27
+    },
+    "pcode_op_count": 329
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004254b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2136
+    },
+    "bw3.exe": {
+      "addr": "0042e220",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0042a2c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9362
+    },
+    "nocturne.exe": {
+      "addr": "00426440",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9437
+    }
+  },
+  "stack_frame": {
+    "frame_size": 64,
+    "local_size": 60,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_00484180(DAT_00612560);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 25,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

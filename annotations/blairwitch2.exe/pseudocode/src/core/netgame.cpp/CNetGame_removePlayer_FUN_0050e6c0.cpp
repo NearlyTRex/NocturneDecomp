@@ -18,49 +18,49 @@ void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_0050e6c0(CNetGame *this_
   int iVar2;
   void *local_14;
   
-  if ((player_index < 0) || (*(int *)&this_ptr->field_0x1c <= player_index)) {
+  if ((player_index < 0) || (this_ptr->player_count <= player_index)) {
     _DAT_01d046a0 = "..\\core\\netgame.cpp";
     _DAT_01d046a4 = 0x862;
     core_main_c_FUN_004e4500("CNetGame::removePlayer - invalid player index");
   }
-  if (player_index == *(int *)&this_ptr->field_0x124) {
+  if (player_index == this_ptr->local_player_index) {
     _DAT_01d046a0 = "..\\core\\netgame.cpp";
     _DAT_01d046a4 = 0x869;
     core_main_c_FUN_004e4500("CNetGame::removePlayer - tried to remove myself!");
   }
-  if (player_index == *(int *)&this_ptr->field_0x120) {
-    *(uint *)&this_ptr->field_0x120 = 0xffffffff;
+  if (player_index == this_ptr->server_player_index) {
+    this_ptr->server_player_index = -1;
   }
-  if (player_index == *(int *)&this_ptr->field_0x124) {
-    *(uint *)&this_ptr->field_0x124 = 0xffffffff;
+  if (player_index == this_ptr->local_player_index) {
+    this_ptr->local_player_index = -1;
   }
-  iVar1 = *(int *)&this_ptr->field_0x1c + -1;
-  *(int *)&this_ptr->field_0x1c = iVar1;
+  iVar1 = this_ptr->player_count + -1;
+  this_ptr->player_count = iVar1;
   iVar2 = 0;
   memmove
-            (&this_ptr->field_0x20 + player_index * 0x80,&this_ptr->field_0xa0 + player_index * 0x80
-             ,(iVar1 - player_index) * 0x80);
+            (this_ptr->players + player_index,this_ptr->players + player_index + 1,
+             (iVar1 - player_index) * 0x80);
   if (0 < _DAT_01d51050) {
     dest = &DAT_01d5105c + player_index;
     src = &DAT_01d5105d + player_index;
     local_14 = (void *)(player_index * 4 + 0x1d51060);
     src_00 = &DAT_01d51064 + player_index * 4;
     do {
-      memmove(dest,src,*(int *)&this_ptr->field_0x1c - player_index);
+      memmove(dest,src,this_ptr->player_count - player_index);
       iVar2 = iVar2 + 1;
       src = src + 0x114;
-      memmove
-                (local_14,src_00,(*(int *)&this_ptr->field_0x1c - player_index) * 4);
+      memmove(local_14,src_00,(this_ptr->player_count - player_index) * 4)
+      ;
       dest = dest + 0x114;
       src_00 = src_00 + 0x114;
       local_14 = (void *)((int)local_14 + 0x114);
     } while (iVar2 < _DAT_01d51050);
   }
-  if (player_index < *(int *)&this_ptr->field_0x120) {
-    *(int *)&this_ptr->field_0x120 = *(int *)&this_ptr->field_0x120 + -1;
+  if (player_index < this_ptr->server_player_index) {
+    this_ptr->server_player_index = this_ptr->server_player_index + -1;
   }
-  if (player_index < *(int *)&this_ptr->field_0x124) {
-    *(int *)&this_ptr->field_0x124 = *(int *)&this_ptr->field_0x124 + -1;
+  if (player_index < this_ptr->local_player_index) {
+    this_ptr->local_player_index = this_ptr->local_player_index + -1;
     return;
   }
   return;

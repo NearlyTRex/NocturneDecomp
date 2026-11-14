@@ -4,13 +4,22 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CWeapon.h"
 
 // Structure: CLightPis
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 1432; nocedit CLightGun tail (same ctor/fire/process/renderAimBeam use); ctor 00501610, fire 00501a70, process 00502480, renderAimBeam 005026f0
 // Ghidra size: 0x598 (1432 bytes)
 #pragma pack(push, 1)
 typedef struct CLightPis {
-    char field_0[1432]; // 0x0
+    CWeapon base; // 0x0, derived
+    int fire_flash_pending; // 0x578, ctor 0; fire sets 1; process adds the dynamic light while set and clears it
+    uint sfx_handle; // 0x57c, ctor 0; process startSfx("cre-charge.wav")/volume/frequency/killSfx; fire sets its volume
+    float charge_level; // 0x580, ctor = _DAT_00603170 (the max); process charges it up to max; fire tests/zeroes it
+    float charge_ratio; // 0x584, ctor 1.0; process = charge_level / max
+    int hit_enemy; // 0x588, ctor 0; fire sets 1; renderAimBeam tests and clears
+    int unknown_0x58c; // 0x58c, ctor sets 1; nothing reads it
+    char field_1424[4]; // 0x590
+    float beam_length; // 0x594, fire stores +0x2e8 or +0x2e8*hit fraction; renderAimBeam scales the beam by it
 } CLightPis;
 #pragma pack(pop)
 

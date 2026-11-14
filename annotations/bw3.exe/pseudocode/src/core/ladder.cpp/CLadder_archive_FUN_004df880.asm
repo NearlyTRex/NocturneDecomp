@@ -36,19 +36,19 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 004df893
     PUSH EAX                            ; 004df899
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0 ; 004df89a
-        ;   XREF to: 0040b9b0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0()
+        ;   XREF to: 0040b9b0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0(CKeyFramedModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 004df89f
     PUSH 0x5c686b                       ; 004df8a2 | = "ladderSize"
     LEA EAX,[EBX + 0x2d4]               ; 004df8a7
     PUSH EAX                            ; 004df8ad
     CALL core_actor.cpp_archiveVector_FUN_0040b400 ; 004df8ae
-        ;   XREF to: 0040b400 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040b400()
+        ;   XREF to: 0040b400 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040b400(CVector3f * vector_ptr, char * property_name)
     ADD ESP,0x8                         ; 004df8b3
     PUSH 0x5c6876                       ; 004df8b6 | = "masterActor"
     LEA EAX,[EBX + 0x2e0]               ; 004df8bb
     PUSH EAX                            ; 004df8c1
     CALL core_actor.cpp_archiveActor_FUN_0040b930 ; 004df8c2
-        ;   XREF to: 0040b930 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b930()
+        ;   XREF to: 0040b930 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b930(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 004df8c7
     PUSH EBX                            ; 004df8ca
     CALL core_ladder.cpp_CLadder_cacheRelativePosition_FUN_004dfa70 ; 004df8cb

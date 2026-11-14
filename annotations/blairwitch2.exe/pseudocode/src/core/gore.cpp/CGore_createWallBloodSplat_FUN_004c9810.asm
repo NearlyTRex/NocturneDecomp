@@ -10,7 +10,7 @@
 ; EBloodType       Stack[0x10]:4   blood_type
 ;
 ; XREF[1]:
-;   core_gore.cpp_FUN_004c7da0 at 004c7de3
+;   core_gore.cpp_CBloodParticle_onCollision_FUN_004c7da0 at 004c7de3
 ;
 ; Called Functions:
 ;   core_gore.cpp_CBloodSplat_initWallSplat_FUN_004c7ea0

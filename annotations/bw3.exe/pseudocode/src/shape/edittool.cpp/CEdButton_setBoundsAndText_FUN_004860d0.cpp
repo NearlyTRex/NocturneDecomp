@@ -12,7 +12,7 @@ void __cdecl shape_edittool_cpp_CEdButton_setBoundsAndText_FUN_004860d0(CEdButto
   char cVar1;
   char *pcVar2;
   
-  pcVar2 = &this_ptr->field_0x1c;
+  pcVar2 = this_ptr->button_text;
   do {
     cVar1 = *button_text;
     *pcVar2 = cVar1;
@@ -22,9 +22,9 @@ void __cdecl shape_edittool_cpp_CEdButton_setBoundsAndText_FUN_004860d0(CEdButto
     pcVar2[1] = cVar1;
     pcVar2 = pcVar2 + 2;
   } while (cVar1 != '\0');
-  *(int *)&this_ptr->field_0x8 = left;
-  *(int *)&this_ptr->field_0xc = top;
-  *(int *)&this_ptr->field_0x10 = right + 1;
-  *(int *)&this_ptr->field_0x14 = bottom + 1;
+  this_ptr->left = left;
+  this_ptr->top = top;
+  this_ptr->right = right + 1;
+  this_ptr->bottom = bottom + 1;
   return;
 }

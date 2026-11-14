@@ -50,7 +50,7 @@ float core_path_cpp_FUN_0050ae20(float *param_1,int param_2,int param_3,int para
   local_60 = local_78;
   local_5c = fStack_74;
   local_58 = fStack_70;
-  core_vecdir_cpp_FUN_00576250(&stack0xffffff88);
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&stack0xffffff88);
   local_90 = local_48;
   *(uint *)((int)&stack0xffffff74 + (uint)bVar2 * -8) =
        *(uint *)(&stack0xffffffbc + (uint)bVar2 * -8);
@@ -191,7 +191,7 @@ switchD_0050b0f8_default:
        *(uint *)((int)&stack0xffffff5c + (uint)bVar2 * -8);
   *(uint *)(&stack0xffffffb4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
        *(uint *)((int)&stack0xffffff60 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-  core_vecdir_cpp_FUN_00576250(&stack0xffffffac);
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&stack0xffffffac);
   local_9c = local_30;
   *(uint *)((int)&stack0xffffff68 + (uint)bVar2 * -8) =
        *(uint *)(&stack0xffffffd4 + (uint)bVar2 * -8);

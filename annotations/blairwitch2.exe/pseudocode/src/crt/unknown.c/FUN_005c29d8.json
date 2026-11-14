@@ -1,0 +1,225 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 47,
+    "complexity_score": 101,
+    "cross_reference_count": 2,
+    "function_call_count": 4,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 21,
+    "suspect_count": 6,
+    "suspect_types": [
+      "param_count_too_few",
+      "pointer_cast",
+      "undefined_data",
+      "unnamed_param"
+    ],
+    "total_lines": 68
+  },
+  "cross_references": [
+    {
+      "addr": "005c4a50",
+      "from_addr": "005c4a54",
+      "name": "crt_unknown.c_FUN_005c4a50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005c6710",
+      "from_addr": "005c675e",
+      "name": "crt_unknown.c_FUN_005c6710",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005c29d8",
+    "address_range": [
+      [
+        "005c29d8",
+        "005c2a33"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_005c29d8",
+    "signature": "undefined4 crt_unknown_c_FUN_005c29d8(undefined4 param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b86a0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005b86a0"
+    },
+    {
+      "addr": "005c293c",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c293c"
+    },
+    {
+      "addr": "005c4b60",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c4b60"
+    },
+    {
+      "addr": "EXTERNAL:0000009d",
+      "is_variadic": false,
+      "name": "TlsSetValue"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c8658",
+      "name": "PTR_TlsSetValue_005c8658",
+      "type": "void*",
+      "value": "001c9238"
+    },
+    {
+      "addr": "0061f2a0",
+      "name": "DAT_0061f2a0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "005c675e",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005c6710",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005c4a54",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005c4a50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.243243243243243,
+    "instruction_count": 37,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 3,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 35,
+      "INT_ADD": 14,
+      "INT_AND": 18,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 16,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 8,
+      "INT_SUB": 13,
+      "INT_XOR": 2,
+      "LOAD": 11,
+      "POPCOUNT": 8,
+      "RETURN": 3,
+      "STORE": 12
+    },
+    "pcode_op_count": 157
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005cacd8",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005adb48",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0056e608",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint FUN_005c29d8(uint param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_0061f2a0",
+      "severity": "mild",
+      "text": "if (DAT_0061f2a0 == -1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "lpTlsValue = (LPVOID)FUN_005c293c(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(uint *)((int)lpTlsValue",
+      "severity": "moderate",
+      "text": "iVar1 = FUN_005c4b60(*(uint *)((int)lpTlsValue + 0xda),lpTlsValue);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_0061f2a0",
+      "severity": "mild",
+      "text": "TlsSetValue(DAT_0061f2a0,lpTlsValue);",
+      "type": "undefined_data"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   engine_pcx.c_FUN_00535d80 at 00535f35
+;   engine_pcx.c_saveScreenshotGeneral_FUN_00535d80 at 00535f35
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_pcx_c_005ecbb9
@@ -116,7 +116,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00535c41
     PUSH EAX                            ; 00535c45
     CALL crt_stdio.c_fopen_FUN_005c157c ; 00535c46
-        ;   XREF to: 005c157c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_005c157c()
+        ;   XREF to: 005c157c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005c157c(char * filename, char * mode)
     ADD ESP,0x8                         ; 00535c4b
     MOV EDI,EAX                         ; 00535c4e
     TEST EAX,EAX                        ; 00535c50
@@ -166,13 +166,13 @@ section .text
     PUSH EDX                            ; 00535ce5
     MOV dword ptr [ESP + 0x58],EAX      ; 00535ce6
     CALL crt_stdio.c_fputc_FUN_005c2f00 ; 00535cea
-        ;   XREF to: 005c2f00 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fputc_FUN_005c2f00()
+        ;   XREF to: 005c2f00 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005c2f00(int character, _FILE * file)
     ADD ESP,0x8                         ; 00535cef
     PUSH EDI                            ; 00535cf2
     AND EBP,0xff                        ; 00535cf3
     PUSH EBP                            ; 00535cf9
     CALL crt_stdio.c_fputc_FUN_005c2f00 ; 00535cfa
-        ;   XREF to: 005c2f00 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fputc_FUN_005c2f00()
+        ;   XREF to: 005c2f00 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005c2f00(int character, _FILE * file)
     ADD ESP,0x8                         ; 00535cff
     PUSH EDI                            ; 00535d02
     MOV EBP,dword ptr [ESP + 0x54]      ; 00535d03
@@ -180,7 +180,7 @@ section .text
     ADD EBX,0x4                         ; 00535d08
     INC ESI                             ; 00535d0b
     CALL crt_stdio.c_fputc_FUN_005c2f00 ; 00535d0c
-        ;   XREF to: 005c2f00 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fputc_FUN_005c2f00()
+        ;   XREF to: 005c2f00 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005c2f00(int character, _FILE * file)
     MOV EAX,[0x0061b498]                ; 00535d11 | DAT_0061b498
     ADD ESP,0x8                         ; 00535d16
     CMP ESI,EAX                         ; 00535d19

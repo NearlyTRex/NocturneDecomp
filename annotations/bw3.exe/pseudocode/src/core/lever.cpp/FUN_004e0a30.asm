@@ -9,7 +9,7 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; XREF[1]:
-;   core_hero.cpp_FUN_004d32d0 at 004d33f2
+;   core_hero.cpp_CHero_tryPullLever_FUN_004d32d0 at 004d33f2
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408bf0

@@ -1,20 +1,20 @@
 // Name: core_yow.cpp_factoryFuncYow_FUN_005b8130
 // Address: 005b8130
 // Address Range: [[005b8130, 005b814b]]
-// Convention: unknown
-// Signature: void core_yow_cpp_factoryFuncYow_FUN_005b8130(void)
+// Convention: __cdecl
+// Signature: CYow * __cdecl core_yow_cpp_factoryFuncYow_FUN_005b8130(void)
 
 #include "nocturne.h"
 
-void core_yow_cpp_factoryFuncYow_FUN_005b8130(void)
+CYow * __cdecl core_yow_cpp_factoryFuncYow_FUN_005b8130(void)
 
 {
-  CYow *this_ptr;
+  CYow *pCVar1;
   
-  this_ptr = (CYow *)FUN_005c0f32(0xc2b8);
-  if (this_ptr == (CYow *)0x0) {
-    return;
+  pCVar1 = (CYow *)operator_new(0xc2b8);
+  if (pCVar1 == (CYow *)0x0) {
+    return (CYow *)0x0;
   }
-  core_xform_cpp_CYow_ctor_FUN_005b8160(this_ptr);
-  return;
+  pCVar1 = core_yow_cpp_CYow_ctor_FUN_005b8160(pCVar1);
+  return pCVar1;
 }

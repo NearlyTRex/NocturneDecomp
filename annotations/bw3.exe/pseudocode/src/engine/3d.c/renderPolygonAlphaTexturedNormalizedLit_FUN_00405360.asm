@@ -31,7 +31,7 @@ section .text
     LEA EAX,[EBX + 0x8]                 ; 0040536a
     PUSH EAX                            ; 0040536d
     CALL engine_3d.c_isVisiblePlane_FUN_00403920 ; 0040536e
-        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403920()
+        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403920(SClipPlane * plane)
     ADD ESP,0x4                         ; 00405373
     TEST EAX,EAX                        ; 00405376
     JZ 0x004053c4                       ; 00405378
@@ -51,7 +51,7 @@ section .text
     MOV dword ptr [0x01c6e2b4],EDI      ; 004053a2 | DAT_01c6e2b4
     MOV dword ptr [0x01c6e2b8],EBP      ; 004053a8 | DAT_01c6e2b8
     CALL engine_3d.c_calculatePolygonLighting_FUN_004039d0 ; 004053ae
-        ;   XREF to: 004039d0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_calculatePolygonLighting_FUN_004039d0()
+        ;   XREF to: 004039d0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_calculatePolygonLighting_FUN_004039d0(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 004053b3
     PUSH ESI                            ; 004053b6
     MOV EAX,dword ptr [EBX + 0x4]       ; 004053b7

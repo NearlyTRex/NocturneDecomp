@@ -20,21 +20,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004e7220",
+      "from_addr": "004e7231",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004e7220",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004e6c40",
       "from_addr": "004e6ebb",
-      "name": "core_manpuz.cpp_FUN_004e6c40",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_004e6c40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e6f20",
       "from_addr": "004e71ba",
-      "name": "core_manpuz.cpp_FUN_004e6f20",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004e7220",
-      "from_addr": "004e7231",
-      "name": "core_manpuz.cpp_FUN_004e7220",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_004e6f20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -58,7 +58,7 @@
       {
         "call_addr": "004e6ebb",
         "call_type": "direct",
-        "caller": "core_manpuz.cpp_FUN_004e6c40",
+        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_004e6c40",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -69,7 +69,7 @@
       {
         "call_addr": "004e7231",
         "call_type": "direct",
-        "caller": "core_manpuz.cpp_FUN_004e7220",
+        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004e7220",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -91,7 +91,7 @@
       {
         "call_addr": "004e71ba",
         "call_type": "direct",
-        "caller": "core_manpuz.cpp_FUN_004e6f20",
+        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_004e6f20",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -124,6 +124,26 @@
       "RETURN": 2
     },
     "pcode_op_count": 29
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00506210",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0050aef0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004cb8f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 12,

@@ -7,8 +7,60 @@
 
 // Original: core_bird.cpp_staticInit_FUN_00415190
 // Address: 00415190
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_bird.cpp_factoryFuncBird_FUN_004151c0
 // Address: 004151c0
-void factoryFuncBird(void);
+CBird * __cdecl factoryFuncBird(void);
+
+// Original: core_bird.cpp_CBird_getActorType_FUN_004151e0
+// Address: 004151e0
+CDemonActorType * __cdecl CBird::getActorType(CBird *this_ptr);
+
+// Original: core_bird.cpp_CBird_ctor_FUN_004151f0
+// Address: 004151f0
+CBird * __cdecl CBird::ctor(CBird *this_ptr);
+
+// Original: core_bird.cpp_CBird_setup_FUN_004152c0
+// Address: 004152c0
+void __cdecl CBird::setup(CBird *this_ptr);
+
+// Original: core_bird.cpp_CBird_process_FUN_00415340
+// Address: 00415340
+void __cdecl CBird::process(CBird *this_ptr,float delta_time);
+
+// Original: core_bird.cpp_CBird_renderBackground_FUN_00415660
+// Address: 00415660
+void __cdecl CBird::renderBackground(CBird *this_ptr,int layer_flag);
+
+// Original: core_bird.cpp_CBird_renderOpaque_FUN_00415690
+// Address: 00415690
+int __cdecl CBird::renderOpaque(CBird *this_ptr);
+
+// Original: core_bird.cpp_CBird_renderTransparent_FUN_00415730
+// Address: 00415730
+int __cdecl CBird::renderTransparent(CBird *this_ptr);
+
+// Original: core_bird.cpp_CBird_archive_FUN_00415780
+// Address: 00415780
+void __cdecl CBird::archive(CBird *this_ptr);
+
+// Original: core_bird.cpp_FUN_00415830
+// Address: 00415830
+undefined4 FUN_00415830(CMotionController *param_1,char *param_2);
+
+// Original: core_bird.cpp_CBird_processDamage_FUN_00415910
+// Address: 00415910
+void __cdecl CBird::processDamage(CBird *this_ptr,SDamageInfo *damage_info);
+
+// Original: core_bird.cpp_CBird_isInvulnerable_FUN_004159c0
+// Address: 004159c0
+int __cdecl CBird::isInvulnerable(CBird *this_ptr);
+
+// Original: core_bird.cpp_CBird_getPathMap_FUN_004159e0
+// Address: 004159e0
+CPathMap * __cdecl CBird::getPathMap(CBird *this_ptr);
+
+// Original: core_bird.cpp_CBird_dtor_FUN_004159f0
+// Address: 004159f0
+CBird * __cdecl CBird::dtor(CBird *this_ptr,uint flags);

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_game_cpp_staticInit_FUN_004b28b0(void)
+; void __cdecl core_game_cpp_staticInit_FUN_004b28b0(void)
 ;
 ;
 ; Called Functions:
@@ -24,7 +24,7 @@ section .text
     ADD ESP,0xc                         ; 004b28c4
     PUSH 0x6163f0                       ; 004b28c7
     CALL crt_stdlib.c__atexit_FUN_005b8d8c ; 004b28cc
-        ;   XREF to: 005b8d8c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__atexit_FUN_005b8d8c()
+        ;   XREF to: 005b8d8c (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005b8d8c(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 004b28d1
     PUSH 0x1cb6900                      ; 004b28d4
     CALL core_game.cpp_CGame_ctor_FUN_004b2d80 ; 004b28d9
@@ -32,7 +32,7 @@ section .text
     ADD ESP,0x4                         ; 004b28de
     PUSH 0x616400                       ; 004b28e1
     CALL crt_stdlib.c__atexit_FUN_005b8d8c ; 004b28e6
-        ;   XREF to: 005b8d8c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__atexit_FUN_005b8d8c()
+        ;   XREF to: 005b8d8c (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005b8d8c(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 004b28eb
     PUSH 0x1cb778c                      ; 004b28ee
     CALL shape_edittool.cpp_CPickList_ctor_FUN_00481fc0 ; 004b28f3
@@ -40,7 +40,7 @@ section .text
     ADD ESP,0x4                         ; 004b28f8
     PUSH 0x616410                       ; 004b28fb
     CALL crt_stdlib.c__atexit_FUN_005b8d8c ; 004b2900
-        ;   XREF to: 005b8d8c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__atexit_FUN_005b8d8c()
+        ;   XREF to: 005b8d8c (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005b8d8c(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 004b2905
     PUSH 0x1cb8080                      ; 004b2908
     CALL core_dfilter.cpp_CDemonFilter_ctor_FUN_004477f0 ; 004b290d
@@ -48,7 +48,7 @@ section .text
     ADD ESP,0x4                         ; 004b2912
     PUSH 0x616420                       ; 004b2915
     CALL crt_stdlib.c__atexit_FUN_005b8d8c ; 004b291a
-        ;   XREF to: 005b8d8c (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__atexit_FUN_005b8d8c()
+        ;   XREF to: 005b8d8c (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005b8d8c(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 004b291f
     RET                                 ; 004b2922
 

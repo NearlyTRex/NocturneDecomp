@@ -13,7 +13,7 @@
 ;   core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00443180 at 004431b8
 ;   core_menu.cpp_FUN_004ed260 at 004ed9ec
 ;   core_set.cpp_CDemonSet_setGamma_FUN_00534580 at 005345cb
-;   core_shadow.cpp_FUN_0053c500 at 0053d06e
+;   core_shadow.cpp_CShadow_process_FUN_0053c500 at 0053d06e
 ;   sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00508100 at 00508140
 ;   sound_mp3.cpp_requantizeLayer3Samples_FUN_00507910 at 00507b9b
 ;

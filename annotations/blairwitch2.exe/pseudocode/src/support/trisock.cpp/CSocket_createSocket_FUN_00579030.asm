@@ -6,6 +6,9 @@
 ; Parameters:
 ; CSocket *        Stack[0x4]:4   this_ptr
 ;
+; XREF[1]:
+;   support_trisock.cpp_FUN_00579890 at 005799c5
+;
 ; Called Functions:
 ;   crt_wsock32.c_socket
 ;   support_trisock.cpp_CSocket_closeSocket_FUN_00579360

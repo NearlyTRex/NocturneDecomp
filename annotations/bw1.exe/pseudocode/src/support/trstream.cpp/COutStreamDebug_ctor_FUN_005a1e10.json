@@ -2,21 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 8,
-    "complexity_score": 8,
+    "complexity_score": 9,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 8,
+    "pseudocode_lines": 9,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 16
+    "total_lines": 17
   },
   "cross_references": [
     {
       "addr": "0059f520",
       "from_addr": "0059f525",
-      "name": "unkaddr_0059f520.cpp_FUN_0059f520",
+      "name": "support_trstream.cpp_staticInit_FUN_0059f520",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -28,15 +28,15 @@
         "005a1e23"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "support_trstream.cpp_COutStreamDebug_ctor_FUN_005a1e10",
-    "signature": "COutStreamDebug * support_trstream_cpp_COutStreamDebug_ctor_FUN_005a1e10(COutStreamDebug *this_ptr)"
+    "signature": "COutStreamDebug * __cdecl support_trstream_cpp_COutStreamDebug_ctor_FUN_005a1e10(COutStreamDebug *this_ptr)"
   },
   "function_calls": [
     {
       "addr": "005a14b0",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_005a14b0"
+      "name": "support_trstream.cpp_COutStream_dtor_FUN_005a14b0"
     }
   ],
   "globals": [],
@@ -46,7 +46,7 @@
       {
         "call_addr": "0059f525",
         "call_type": "direct",
-        "caller": "unkaddr_0059f520.cpp_FUN_0059f520",
+        "caller": "support_trstream.cpp_staticInit_FUN_0059f520",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -80,6 +80,20 @@
       "STORE": 3
     },
     "pcode_op_count": 23
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0057e1c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00574e00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 8,

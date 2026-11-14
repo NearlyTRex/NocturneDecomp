@@ -1,0 +1,120 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 61,
+    "complexity_score": 25,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 86
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0057df70",
+    "address_range": [
+      [
+        "0057df70",
+        "0057dfde"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_trstream.cpp_COutStreamMemory_putChar_FUN_0057df70",
+    "signature": "int __cdecl support_trstream_cpp_COutStreamMemory_putChar_FUN_0057df70(COutStreamMemory *this_ptr,char ch)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b8ce0",
+      "is_variadic": false,
+      "name": "crt_memory.c_realloc_FUN_005b8ce0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.03921568627451,
+    "instruction_count": 51,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CBRANCH": 4,
+      "COPY": 54,
+      "INT_ADD": 33,
+      "INT_AND": 17,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 16,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 8,
+      "INT_SUB": 10,
+      "INT_XOR": 1,
+      "LOAD": 25,
+      "POPCOUNT": 8,
+      "RETURN": 3,
+      "STORE": 12
+    },
+    "pcode_op_count": 206
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005a1bc0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00574bb0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 9,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 5,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "COutStreamMemory *"
+      },
+      {
+        "is_param": true,
+        "name": "ch",
+        "offset": 8,
+        "size": 1,
+        "type": "char"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "COutStreamMemory",
+        "offset": 4,
+        "vtable_addr": "005fd4b4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

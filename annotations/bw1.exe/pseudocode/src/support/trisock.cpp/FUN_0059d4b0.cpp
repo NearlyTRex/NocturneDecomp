@@ -43,12 +43,12 @@ uint support_trisock_cpp_FUN_0059d4b0(uint param_1,int *param_2,uint param_3,cod
       return 0;
     }
     if (399 < iStack_18) {
-      FUN_005bfb40(acStack_918,"%d: %s",iStack_18,acStack_118);
+      _sprintf(acStack_918,"%d: %s");
       (*param_4)(1,acStack_918);
       return 0;
     }
     if (299 < iStack_18) {
-      FUN_005bfb40(acStack_918,"Not implemented: %d: %s",iStack_18,acStack_118);
+      _sprintf(acStack_918,"Not implemented: %d: %s");
       (*param_4)(1,acStack_918);
       return 0;
     }

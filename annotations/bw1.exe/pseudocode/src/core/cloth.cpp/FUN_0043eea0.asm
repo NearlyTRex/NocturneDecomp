@@ -94,11 +94,11 @@
 ;
 ; XREF[6]:
 ;   core_cloth.cpp_CClothList_setup_FUN_00441f60 at 00441f8c
-;   core_gabriela.cpp_FUN_004c6390 at 004c63db
-;   core_mimic.cpp_FUN_0050f290 at 0050f47b
-;   core_mimic.cpp_FUN_00510530 at 00510556
-;   core_svetlana.cpp_FUN_00592e90 at 00593099
-;   core_vampboss.cpp_FUN_005a52a0 at 005a52fc
+;   core_gabriela.cpp_CGabriella_setup_FUN_004c6390 at 004c63db
+;   core_mimic.cpp_CMimic_setupCloth_FUN_00510530 at 00510556
+;   core_mimic.cpp_CMimic_setup_FUN_0050f290 at 0050f47b
+;   core_svetlana.cpp_CSvetlana_setup_FUN_00592e90 at 00593099
+;   core_vampboss.cpp_CVampireBoss_setup_FUN_005a52a0 at 005a52fc
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fd8d0
@@ -106,11 +106,11 @@
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043fa20
 ;   core_cloth.cpp_FUN_0043ec40
+;   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00563c40
+;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00569180
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0
 ;   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_00567500
-;   core_skeleton.cpp_FUN_00563c40
-;   core_skeleton.cpp_FUN_00567580
-;   core_skeleton.cpp_FUN_00569180
+;   core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_00567580
 ;   core_xform.cpp_FUN_005b5080
 ;
 ; *****************************************************************************
@@ -350,8 +350,8 @@ section .text
     PUSH EAX                            ; 0043f1c8
     MOV EBX,EAX                         ; 0043f1c9
     MOV dword ptr [ESP + 0xcc],EAX      ; 0043f1cb
-    CALL core_skeleton.cpp_FUN_00563c40 ; 0043f1d2
-        ;   XREF to: 00563c40 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_FUN_00563c40(CDeformableModel * this_ptr)
+    CALL core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00563c40 ; 0043f1d2
+        ;   XREF to: 00563c40 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00563c40(CDeformableModel * this_ptr)
     ADD ESP,0x4                         ; 0043f1d7
     MOV EAX,dword ptr [ESP + 0x16c]     ; 0043f1da
     MOV EBP,EDI                         ; 0043f1e1
@@ -424,8 +424,8 @@ section .text
         ;   XREF to: 00567500 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_00567500(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0043f2e4
     PUSH ESI                            ; 0043f2e7
-    CALL core_skeleton.cpp_FUN_00569180 ; 0043f2e8
-        ;   XREF to: 00569180 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_00569180(CDeformableModelInstance * this_ptr)
+    CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00569180 ; 0043f2e8
+        ;   XREF to: 00569180 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00569180(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0043f2ed
     MOV EAX,dword ptr [ESP + 0x16c]     ; 0043f2f0
     XOR EBP,EBP                         ; 0043f2f7
@@ -808,8 +808,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x178]     ; 0043f8ae
         ;   Label: LAB_0043f8ae
     PUSH EBX                            ; 0043f8b5
-    CALL core_skeleton.cpp_FUN_00567580 ; 0043f8b6
-        ;   XREF to: 00567580 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_00567580(CDeformableModelInstance * this_ptr)
+    CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_00567580 ; 0043f8b6
+        ;   XREF to: 00567580 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_00567580(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0043f8bb
     MOV EDX,dword ptr [ESP + 0x16c]     ; 0043f8be
         ;   Label: LAB_0043f8be

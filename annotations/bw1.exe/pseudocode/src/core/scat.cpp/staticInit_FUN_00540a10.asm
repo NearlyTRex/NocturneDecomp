@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_scat_cpp_staticInit_FUN_00540a10(void)
+; void __cdecl core_scat_cpp_staticInit_FUN_00540a10(void)
 ;
 ;
 ; Called Functions:

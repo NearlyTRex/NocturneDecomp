@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 467,
-    "complexity_score": 600,
+    "complexity_score": 555,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 145,
-    "suspect_count": 44,
+    "suspect_count": 40,
     "suspect_types": [
       "unaffected_reg",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 612
@@ -102,6 +101,32 @@
       "SUBPIECE": 16
     },
     "pcode_op_count": 1808
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005125e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0050b610",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00546e90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004f0790",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 132,
@@ -326,14 +351,6 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "(this_ptr,end_z,end_x,*(int *)&this_ptr->field_0x1c);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unaffected register variable",
       "line": 48,
       "match": "unaff_EDI",
@@ -478,28 +495,12 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 90,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "(this_ptr,start_z,start_x,*(int *)&this_ptr->field_0x10),",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 91,
+      "line": 90,
       "match": "unaff_EDI",
       "severity": "moderate",
-      "text": "unaff_EDI == iVar5)) {",
+      "text": "(this_ptr,start_z,start_x,(this_ptr->voxel_coords).y), unaff_EDI == iVar5)",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 98,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "(this_ptr,end_z,end_x,*(int *)&this_ptr->field_0x1c);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",
@@ -646,19 +647,11 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 143,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "(this_ptr,start_z,start_x,*(int *)&this_ptr->field_0x10),",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 144,
+      "line": 143,
       "match": "unaff_EDI",
       "severity": "moderate",
-      "text": "unaff_EDI == iVar5)) {",
+      "text": "(this_ptr,start_z,start_x,(this_ptr->voxel_coords).y), unaff_EDI == iVar5)",
       "type": "unaffected_reg"
     }
   ]

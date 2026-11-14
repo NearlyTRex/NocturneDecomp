@@ -7,7 +7,7 @@
 ; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_004b7f90 at 004b87c4
+;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b87c4
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052b7ee
 ;
 ; Referenced Globals:

@@ -12,8 +12,8 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_00
   int iVar1;
   char local_74 [100];
   
-  cockpit_pkbitmap_cpp_CPackedBitmapSet_FUN_004f5320(this_ptr);
-  cockpit_pkbitmap_cpp_CPackedBitmapSet_FUN_004f5290(this_ptr);
+  cockpit_pkbmpset_cpp_CPackedBitmapSet_reset_FUN_004f5320(this_ptr);
+  cockpit_pkbmpset_cpp_CPackedBitmapSet_ctor_FUN_004f5290(this_ptr);
   cockpit_pkbmpset_cpp_CPackedBitmapSet_alloc_FUN_004f5350(this_ptr,(end_index - start_index) + 1);
   this_ptr->height = height;
   this_ptr->width = width;

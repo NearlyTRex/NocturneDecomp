@@ -19,9 +19,9 @@ void shape_edittool_cpp_FUN_0047a890(int param_1,int param_2,int param_3,int par
     return;
   }
   iVar1 = (param_5 & 0xff) * 3;
-  engine_mini3d_cpp_FUN_004f8e20
+  engine_mini3d_cpp_setColor_FUN_004f8e20
             ((uint)(byte)(&DAT_01c3583a)[iVar1] |
              (uint)(byte)(&DAT_01c35838)[iVar1] << 0x10 | (uint)(byte)(&DAT_01c35839)[iVar1] << 8);
-  engine_mini3d_cpp_FUN_004f90d0(param_1,param_2,param_3,param_4);
+  engine_mini3d_cpp_fillRect_FUN_004f90d0(param_1,param_2,param_3,param_4);
   return;
 }

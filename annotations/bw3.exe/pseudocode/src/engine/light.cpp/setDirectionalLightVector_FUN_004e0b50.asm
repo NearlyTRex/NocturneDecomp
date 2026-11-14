@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   dir_z
 ;
 ; XREF[2]:
-;   engine_matrix.c_FUN_0046d100 at 0046d110
-;   engine_matrix.c_FUN_0046d120 at 0046d16a
+;   engine_drender.cpp_CDemonRenderer_scaleAndSetDirectionalLight_FUN_0046d120 at 0046d16a
+;   engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_0046d100 at 0046d110
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c6e2f0

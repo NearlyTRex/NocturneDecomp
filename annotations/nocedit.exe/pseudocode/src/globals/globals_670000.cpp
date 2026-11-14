@@ -1939,7 +1939,9 @@ char* g_CurrentDebugFilename = (char*)s_unknown_0067d200;
 
 // char[100]
 char g_EventCommandBuffer[100] = "";
+char g_IpAddress[100] = "10.0.0.105";
 char g_DefaultInventoryValue[100] = "";
+char g_DefaultActorTypeClass[100] = "corrupt!";
 
 // char[104]
 char g_DefaultAuditPath[104] = "";
@@ -1956,11 +1958,16 @@ char g_DefaultAuditRecordPath[116] = "";
 
 // char[200]
 char g_DefaultSfxHandleName[200] = "";
+char g_LoadSavefileStatus[200] = "(file corrupt)";
+
+// char[20]
+char g_DefaultMissionIdentifier[20] = "(none)";
 
 // char[256]
 char g_MeshLodIdentifier[256] = "meshlod";
 
 // char[260]
+char g_NetworkModelFilename[260] = "t:\\";
 char g_FilePathBuffer[260] = "";
 
 // char[264]
@@ -1970,6 +1977,9 @@ char g_DefaultCheckOutPath[264] = "";
 char g_DefaultPodDirectoryPath[264] = "";
 char g_DirectoryBufferTemplate[264] = "";
 char g_FilenameBufferTemplate[264] = "";
+
+// char[28]
+char g_ReplayLodFilename[28] = "replay.txt";
 
 // char[512]
 char g_Field1ParseBuffer[512] = "";

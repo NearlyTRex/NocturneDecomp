@@ -30,7 +30,7 @@ int __cdecl core_menu_cpp_FUN_004e7860(char **menu_text_array,int menu_count,int
   local_18 = _DAT_01549aac;
   if (title != (char *)0x0) {
     engine_font_cpp_FUN_004b0a20(_DAT_01549aac,title,0xaf,y_position,0x9a,0);
-    iVar2 = engine_font_cpp_FUN_004b30f0(pCVar1,0x58);
+    iVar2 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(pCVar1,0x58);
     y_position = y_position + iVar2 * 2;
     local_18 = _DAT_01549ab0;
   }
@@ -39,8 +39,8 @@ int __cdecl core_menu_cpp_FUN_004e7860(char **menu_text_array,int menu_count,int
     local_24 = menu_text_array;
     do {
       pCVar1 = local_18;
-      engine_font_cpp_FUN_004b2a80(local_18,*local_24);
-      local_28 = engine_font_cpp_FUN_004b30f0(pCVar1,0x58);
+      engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(local_18,*local_24);
+      local_28 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(pCVar1,0x58);
       if (title == (char *)0x0) {
         if (local_20 == 0) {
           y_position = 0xea;
@@ -91,14 +91,14 @@ int __cdecl core_menu_cpp_FUN_004e7860(char **menu_text_array,int menu_count,int
     } while (local_20 < menu_count);
   }
   engine_3d_c_setRenderAlpha_FUN_00406bf0(0xffff);
-  FUN_005a28c0(local_f0,"Blair Witch Volume III: The Elly Kedward Tale (c) 2000 Ritual Entertainment, Ver %1.2f",0xc28f5c29,0x3ff028f5);
+  _sprintf(local_f0,"Blair Witch Volume III: The Elly Kedward Tale (c) 2000 Ritual Entertainment, Ver %1.2f");
   if (_DAT_01dd4890 == 0) {
-    iVar5 = engine_font_cpp_FUN_004b2a80(_DAT_01549ab4,local_f0);
-    iVar2 = engine_font_cpp_FUN_004b2b30(_DAT_01549ab4,local_f0);
+    iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(_DAT_01549ab4,local_f0);
+    iVar2 = engine_font_cpp_CBitFont_getTextHeight_FUN_004b2b30(_DAT_01549ab4,local_f0);
   }
   else {
-    iVar5 = engine_font_cpp_FUN_004b2a80(_DAT_01549ab4,local_f0);
-    iVar2 = engine_font_cpp_FUN_004b2b30(_DAT_01549ab4,local_f0);
+    iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(_DAT_01549ab4,local_f0);
+    iVar2 = engine_font_cpp_CBitFont_getTextHeight_FUN_004b2b30(_DAT_01549ab4,local_f0);
   }
   engine_font_cpp_FUN_004b0a20(_DAT_01549ab4,local_f0,0x26b - iVar5,0x1df - iVar2,0xf8,0);
   pcVar7 = menu_text_array[*selected_index_ptr];

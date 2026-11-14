@@ -17,17 +17,17 @@ void FUN_00478e10(undefined *param_1);
 // Address: 00478e20
 void FUN_00478e20(undefined4 param_1,undefined4 param_2,undefined4 param_3);
 
-// Original: engine_dosio.cpp_FUN_00478e40
+// Original: engine_dosio.cpp_addGetFileInfoHook_FUN_00478e40
 // Address: 00478e40
-void FUN_00478e40(undefined4 param_1);
+void __cdecl addGetFileInfoHook(FileSearchHandlerFunc *handler);
 
 // Original: engine_dosio.cpp_findFile_FUN_00478e90
 // Address: 00478e90
-undefined4 __cdecl findFile(undefined4 param_1);
+int __cdecl findFile(SFoundFileInfo *context);
 
 // Original: engine_dosio.cpp_findFileNormally_FUN_00478ef0
 // Address: 00478ef0
-undefined4 __cdecl findFileNormally(char *param_1);
+int __cdecl findFileNormally(SFoundFileInfo *info);
 
 // Original: engine_dosio.cpp_getFileSize_FUN_00478fb0
 // Address: 00478fb0
@@ -39,7 +39,7 @@ _FILE * __cdecl FUN_00479180(char *directory,char *filename,char *mode);
 
 // Original: engine_dosio.cpp_reopenFileStream_FUN_00479240
 // Address: 00479240
-void __cdecl reopenFileStream(char *param_1,undefined4 param_2,uint param_3,int *param_4);
+void __cdecl reopenFileStream(char *directory_path,char *filename,uint mode_flags,ifstream *file_stream);
 
 // Original: engine_dosio.cpp_CFileFinder_ctor_FUN_00479320
 // Address: 00479320
@@ -65,17 +65,17 @@ void __cdecl CFileFinder::closeSearch(CFileFinder *this_ptr);
 // Address: 004794a0
 void __cdecl CFileFinder::reset(CFileFinder *this_ptr);
 
-// Original: engine_dosio.cpp_FUN_004794b0
+// Original: engine_dosio.cpp_CFileFinder_convertStruct_FUN_004794b0
 // Address: 004794b0
-void FUN_004794b0(char *param_1,byte *param_2);
+void __cdecl CFileFinder::convertStruct(CFileFinder *this_ptr,byte *param_2);
 
-// Original: engine_dosio.cpp_FUN_00479580
+// Original: engine_dosio.cpp_splitPath_FUN_00479580
 // Address: 00479580
-void __cdecl FUN_00479580(char *full_path,char *drive,char *directory,char *filename,char *extension);
+void __cdecl splitPath(char *full_path,char *drive,char *directory,char *filename,char *extension);
 
-// Original: engine_dosio.cpp_FUN_004795b0
+// Original: engine_dosio.cpp_makePath_FUN_004795b0
 // Address: 004795b0
-void __cdecl FUN_004795b0(char *full_path,char *drive,char *directory,char *filename,char *extension);
+void __cdecl makePath(char *full_path,char *drive,char *directory,char *filename,char *extension);
 
 // Original: engine_dosio.cpp_FUN_004795e0
 // Address: 004795e0
@@ -88,3 +88,15 @@ void __cdecl changeFileExtension(char *path,char *new_extension);
 // Original: engine_dosio.cpp_getFullPath_FUN_00479720
 // Address: 00479720
 int __cdecl getFullPath(char *output_path,char *input_path);
+
+// Original: engine_dosio.cpp_FUN_00479770
+// Address: 00479770
+void FUN_00479770(char *param_1,char *param_2,char *param_3);
+
+// Original: engine_dosio.cpp_FUN_004798c0
+// Address: 004798c0
+bool FUN_004798c0(char *param_1);
+
+// Original: engine_dosio.cpp_FUN_00479950
+// Address: 00479950
+bool FUN_00479950(char *param_1);

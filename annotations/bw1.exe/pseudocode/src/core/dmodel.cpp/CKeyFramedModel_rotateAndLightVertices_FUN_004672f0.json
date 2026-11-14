@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 127,
+    "complexity_score": 21,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 22,
-    "suspect_count": 10,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 95
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 21,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 94
   },
   "cross_references": [
     {
@@ -109,6 +107,32 @@
     },
     "pcode_op_count": 232
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0044e720",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00460fa0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004778d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004530c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -139,86 +163,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x110",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x110 < 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x104",
-      "severity": "mild",
-      "text": "(g_CDemonSetPtr,*(int *)&this_ptr->field_0x104,input_vertices);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x108",
-      "severity": "mild",
-      "text": "if (*(CVector3i **)&this_ptr->field_0x108 != (CVector3i *)0x0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x104",
-      "severity": "mild",
-      "text": "(g_CDemonSetPtr,*(int *)&this_ptr->field_0x104,*(int *)&this_ptr->field_0x110,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x110",
-      "severity": "mild",
-      "text": "(g_CDemonSetPtr,*(int *)&this_ptr->field_0x104,*(int *)&this_ptr->field_0x110,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x114",
-      "severity": "mild",
-      "text": "*(void **)&this_ptr->field_0x114,input_vertices,4,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x108",
-      "severity": "mild",
-      "text": "*(CVector3i **)&this_ptr->field_0x108);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x104",
-      "severity": "mild",
-      "text": "(g_CDemonSetPtr,*(int *)&this_ptr->field_0x104,*(int *)&this_ptr->field_0x110,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x110",
-      "severity": "mild",
-      "text": "(g_CDemonSetPtr,*(int *)&this_ptr->field_0x104,*(int *)&this_ptr->field_0x110,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x114",
-      "severity": "mild",
-      "text": "*(void **)&this_ptr->field_0x114,input_vertices,4,(CVector3i *)0x0);",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

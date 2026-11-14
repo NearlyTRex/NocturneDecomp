@@ -10,10 +10,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
-;   core_boneguy.cpp_FUN_004179b0 at 00417bfb
-;   core_boneguy.cpp_FUN_00419b40 at 00419d4e
+;   core_boneguy.cpp_CBaalSkel_process_FUN_00419b40 at 00419d4e
+;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 00417bfb
 ;   core_charactr.cpp_FUN_0042cd70 at 0042ce43
-;   core_constrct.cpp_FUN_00442a20 at 00443191
+;   core_construc.cpp_CConstruct_process_FUN_00442a20 at 00443191
 ;   core_platfrm.cpp_CPlatform_evaluatePosition_FUN_00511340 at 0051146f
 ;   core_prye.cpp_FUN_0051e280 at 0051e2e5
 ;

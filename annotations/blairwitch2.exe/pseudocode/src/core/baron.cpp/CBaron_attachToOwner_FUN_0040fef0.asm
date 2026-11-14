@@ -67,7 +67,7 @@ section .text
     PUSH EDI                            ; 0040ff1f
     PUSH ESI                            ; 0040ff20
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 0040ff21
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0040ff26
     TEST EAX,EAX                        ; 0040ff29
     JNZ 0x0041001f                      ; 0040ff2b

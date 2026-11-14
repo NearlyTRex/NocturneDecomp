@@ -4,13 +4,18 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCharacter.h"
+#include "types/classes/CPathMap.h"
 
 // Structure: CNPC
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x24348 (148296 bytes)
 #pragma pack(push, 1)
 typedef struct CNPC {
-    char field_0[148296]; // 0x0
+    CCharacter base; // 0x0
+    CPathMap path_map; // 0x10a60
+    int shoot_me; // 0x2433c
+    int pool_me; // 0x24340
+    float speed; // 0x24344, Added in this build
 } CNPC;
 #pragma pack(pop)
 

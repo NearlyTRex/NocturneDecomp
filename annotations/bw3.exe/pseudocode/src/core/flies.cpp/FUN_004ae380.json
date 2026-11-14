@@ -24,15 +24,15 @@
   },
   "cross_references": [
     {
-      "addr": "004ad950",
-      "from_addr": "004adcc3",
-      "name": "core_flies.cpp_FUN_004ad950",
+      "addr": "004ae280",
+      "from_addr": "004ae2ba",
+      "name": "core_flies.cpp_CFlies_initFly_FUN_004ae280",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004ae280",
-      "from_addr": "004ae2ba",
-      "name": "core_flies.cpp_FUN_004ae280",
+      "addr": "004ad950",
+      "from_addr": "004adcc3",
+      "name": "core_flies.cpp_CFlies_process_FUN_004ad950",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -53,7 +53,7 @@
     {
       "addr": "0040ce40",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040ce40"
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40"
     }
   ],
   "globals": [
@@ -88,7 +88,7 @@
       {
         "call_addr": "004ae2ba",
         "call_type": "direct",
-        "caller": "core_flies.cpp_FUN_004ae280",
+        "caller": "core_flies.cpp_CFlies_initFly_FUN_004ae280",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -103,7 +103,7 @@
       {
         "call_addr": "004ae2ff",
         "call_type": "direct",
-        "caller": "core_flies.cpp_FUN_004ae280",
+        "caller": "core_flies.cpp_CFlies_initFly_FUN_004ae280",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -119,7 +119,7 @@
       {
         "call_addr": "004adcc3",
         "call_type": "direct",
-        "caller": "core_flies.cpp_FUN_004ad950",
+        "caller": "core_flies.cpp_CFlies_process_FUN_004ad950",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -178,6 +178,14 @@
       "STORE": 73
     },
     "pcode_op_count": 1627
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004c0630",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 244,

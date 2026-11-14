@@ -29,9 +29,9 @@ CSkeleton * __cdecl CSkeleton::dtor(CSkeleton *this_ptr,uint flags);
 // Address: 005173c0
 void __cdecl CSkeleton::allocMemory(CSkeleton *this_ptr,int bone_count,int frame_count);
 
-// Original: core_skeleton.cpp_CSkeleton_FUN_005174e0
+// Original: core_skeleton.cpp_CSkeleton_free_FUN_005174e0
 // Address: 005174e0
-void __cdecl CSkeleton(CSkeleton *this_ptr);
+void __cdecl CSkeleton::free(CSkeleton *this_ptr);
 
 // Original: core_skeleton.cpp_CSkeleton_load_FUN_00517560
 // Address: 00517560
@@ -209,9 +209,9 @@ CDeformableModelInstance * __cdecl CDeformableModelInstance::dtor(CDeformableMod
 // Address: 0051b750
 void __cdecl CDeformableModelInstance::allocPointList(CDeformableModelInstance *this_ptr);
 
-// Original: core_skeleton.cpp_CDeformableModelInstance_FUN_0051b7d0
+// Original: core_skeleton.cpp_CDeformableModelInstance_free_FUN_0051b7d0
 // Address: 0051b7d0
-void __cdecl CDeformableModelInstance(CDeformableModelInstance *this_ptr);
+void __cdecl CDeformableModelInstance::free(CDeformableModelInstance *this_ptr);
 
 // Original: core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0051b800
 // Address: 0051b800

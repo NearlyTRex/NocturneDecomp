@@ -1,0 +1,207 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 46,
+    "complexity_score": 67,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 27,
+    "suspect_count": 3,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 73
+  },
+  "cross_references": [
+    {
+      "addr": "005a2240",
+      "from_addr": "005a2336",
+      "name": "core_confzomb.cpp_FUN_005a2240",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a2910",
+      "from_addr": "005a29f6",
+      "name": "core_fforest.cpp_FUN_005a2910",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a4330",
+      "from_addr": "005a44c2",
+      "name": "core_unionzom.cpp_FUN_005a4330",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a5c40",
+      "from_addr": "005a5cdf",
+      "name": "core_villain.cpp_FUN_005a5c40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005b1890",
+    "address_range": [
+      [
+        "005b1890",
+        "005b18df"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_cloth.cpp_CClothList_setWindVelocity_FUN_005b1890",
+    "signature": "void __cdecl core_cloth_cpp_CClothList_setWindVelocity_FUN_005b1890(CClothList *this_ptr,CVector3f *wind_velocity)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "005a2336",
+        "call_type": "direct",
+        "caller": "core_confzomb.cpp_FUN_005a2240",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a29f6",
+        "call_type": "direct",
+        "caller": "core_fforest.cpp_FUN_005a2910",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a44c2",
+        "call_type": "direct",
+        "caller": "core_unionzom.cpp_FUN_005a4330",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a5cdf",
+        "call_type": "direct",
+        "caller": "core_villain.cpp_FUN_005a5c40",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5,
+    "instruction_count": 38,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CBRANCH": 4,
+      "COPY": 35,
+      "INT_ADD": 20,
+      "INT_AND": 21,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 20,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 10,
+      "INT_SUB": 6,
+      "INT_XOR": 1,
+      "LOAD": 17,
+      "POPCOUNT": 10,
+      "RETURN": 2,
+      "STORE": 6
+    },
+    "pcode_op_count": 171
+  },
+  "siblings": {
+    "bw3.exe": {
+      "addr": "0043fd10",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0043c3e0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00438660",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CClothList *"
+      },
+      {
+        "is_param": true,
+        "name": "wind_velocity",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 16,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pCVar1->wind_velocity).x = wind_velocity->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 20,
+      "match": "pCVar2 = (T *)pCVar2->ARRAY",
+      "severity": "moderate",
+      "text": "pCVar2 = (CClothList *)pCVar2->filenames;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 26,
+      "match": "pCVar2 = (T *)pCVar2->ARRAY",
+      "severity": "moderate",
+      "text": "pCVar2 = (CClothList *)pCVar2->filenames;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

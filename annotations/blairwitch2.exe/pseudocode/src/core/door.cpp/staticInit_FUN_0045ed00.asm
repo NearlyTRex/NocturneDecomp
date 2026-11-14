@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_door_cpp_staticInit_FUN_0045ed00(void)
+; void __cdecl core_door_cpp_staticInit_FUN_0045ed00(void)
 ;
 ;
 ; Called Functions:

@@ -1,0 +1,264 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 64,
+    "complexity_score": 80,
+    "cross_reference_count": 7,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 35,
+    "suspect_count": 3,
+    "suspect_types": [
+      "pointer_cast",
+      "unknown_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 99
+  },
+  "cross_references": [
+    {
+      "addr": "004a8270",
+      "from_addr": "004a8295",
+      "name": "core_flashlit.cpp_FUN_004a8270",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a82f0",
+      "from_addr": "004a8322",
+      "name": "core_flashlit.cpp_FUN_004a82f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004abe00",
+      "from_addr": "004abe72",
+      "name": "core_fldnotes.cpp_CFieldNotes_draw_FUN_004abe00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004aa7e0",
+      "from_addr": "004aa7fa",
+      "name": "core_fldnotes.cpp_CFieldNotes_dtor_FUN_004aa7e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004aa810",
+      "from_addr": "004aa9be",
+      "name": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004abb90",
+      "from_addr": "004abc01",
+      "name": "core_fldnotes.cpp_CFieldNotes_turnToEntry_FUN_004abb90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a8de0",
+      "from_addr": "004a8de6",
+      "name": "core_fldnotes.cpp_STextView_dtor_FUN_004a8de0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a8e00",
+    "address_range": [
+      [
+        "004a8e00",
+        "004a8ea3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fldnotes.cpp_STextView_reset_FUN_004a8e00",
+    "signature": "void __cdecl core_fldnotes_cpp_STextView_reset_FUN_004a8e00(STextView *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a8cc0",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_STextPage_clear_FUN_004a8cc0"
+    },
+    {
+      "addr": "005a3770",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a3770"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01549ac0",
+      "name": "DAT_01549ac0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 7,
+    "call_sites": [
+      {
+        "call_addr": "004abc01",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_CFieldNotes_turnToEntry_FUN_004abb90",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004aa9be",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004abe72",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_CFieldNotes_draw_FUN_004abe00",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004a8de6",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_STextView_dtor_FUN_004a8de0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004aa7fa",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_CFieldNotes_dtor_FUN_004aa7e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004a8295",
+        "call_type": "direct",
+        "caller": "core_flashlit.cpp_FUN_004a8270",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004a8322",
+        "call_type": "direct",
+        "caller": "core_flashlit.cpp_FUN_004a82f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.109090909090909,
+    "instruction_count": 55,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 51,
+      "INT_ADD": 38,
+      "INT_AND": 21,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 20,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 10,
+      "INT_SUB": 10,
+      "INT_XOR": 2,
+      "LOAD": 19,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 23
+    },
+    "pcode_op_count": 226
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a27e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004bb1c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "STextView *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(STextPage *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "((STextPage *)((int)this_ptr->pages->resources + iVar1 + -4));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Parameter/variable named unknown (needs investigation)",
+      "line": 25,
+      "match": "unknown_0x30",
+      "severity": "mild",
+      "text": "this_ptr->unknown_0x30 = 0;",
+      "type": "unknown_param"
+    }
+  ]
+}

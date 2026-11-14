@@ -16,20 +16,29 @@ CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_ctor_FUN_005a8b00(CCryptVess
   char *pcVar5;
   char *pcVar6;
   
-  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_004085c0((CDemonActor *)this_ptr);
+  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_004085c0(&this_ptr->base);
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00468860
                      ((CKeyFramedModelInstance *)(pCVar2 + 1));
-  pCVar4 = core_flame_cpp_CFlame_ctor_FUN_004b7a30((CFlame *)&pCVar3[1].field_0xf0);
+  pCVar4 = core_flame_cpp_CFlame_ctor_FUN_004b7a30((CFlame *)(pCVar3[1].model_name + 0x78));
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00468860
-                     ((CKeyFramedModelInstance *)&pCVar4[1].field_0x4);
+                     ((CKeyFramedModelInstance *)(pCVar4[1].base.actor_name + 4));
   pcVar5 = (char *)0x5f9118;
-  *(byte **)&pCVar3[-4].field_0xd8 = &g_CCryptVesselVTable;
+  *(CDemonActor_vtable **)(pCVar3[-4].model_name + 0x60) = &g_CCryptVesselVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
-            ((CKeyFramedModelInstance *)&pCVar3[-4].field_0xdc,"vsslbase.kfm");
-  *(uint *)&pCVar3[-3].field_0xdc = 0;
-  *(uint *)&pCVar3[-3].field_0xe0 = 0;
-  pcVar6 = &pCVar3[-3].field_0xe8;
-  *(uint *)&pCVar3[-3].field_0xe4 = 0;
+            ((CKeyFramedModelInstance *)(pCVar3[-4].model_name + 100),"vsslbase.kfm");
+  pCVar3[-0xffffffff00000003].model_name[100] = '\0';
+  pCVar3[-0xffffffff00000003].model_name[0x65] = '\0';
+  pCVar3[-0xffffffff00000003].model_name[0x66] = '\0';
+  pCVar3[-0xffffffff00000003].model_name[0x67] = '\0';
+  pCVar3[-0xffffffff00000003].model_name[0x68] = '\0';
+  pCVar3[-0xffffffff00000003].model_name[0x69] = '\0';
+  pCVar3[-0xffffffff00000003].model_name[0x6a] = '\0';
+  pCVar3[-0xffffffff00000003].model_name[0x6b] = '\0';
+  pcVar6 = pCVar3[-3].model_name + 0x70;
+  pCVar3[-0xffffffff00000003].model_name[0x6c] = '\0';
+  pCVar3[-0xffffffff00000003].model_name[0x6d] = '\0';
+  pCVar3[-0xffffffff00000003].model_name[0x6e] = '\0';
+  pCVar3[-0xffffffff00000003].model_name[0x6f] = '\0';
   do {
     cVar1 = *pcVar5;
     *pcVar6 = cVar1;
@@ -39,12 +48,12 @@ CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_ctor_FUN_005a8b00(CCryptVess
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  *(uint *)&pCVar3[-2].field_0x34 = 0;
-  *(uint *)&pCVar3[-2].field_0x38 = 0;
+  pCVar3[-2].part_visibility_flags[0xd] = 0;
+  pCVar3[-2].part_visibility_flags[0xe] = 0;
   pcVar5 = (char *)0x5f911d;
-  *(uint *)&pCVar3[-2].field_0x48 = 0;
-  pcVar6 = &pCVar3[-3].field_0x14c;
-  *(uint *)&pCVar3[-2].field_0x44 = 0;
+  pCVar3[-2].part_visibility_flags[0x12] = 0;
+  pcVar6 = pCVar3[-3].model_name + 0xd4;
+  pCVar3[-2].part_visibility_flags[0x11] = 0;
   do {
     cVar1 = *pcVar5;
     *pcVar6 = cVar1;
@@ -54,14 +63,17 @@ CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_ctor_FUN_005a8b00(CCryptVess
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  *(uint *)&pCVar3[-2].field_0x3c = 0x41200000;
-  *(uint *)&pCVar3[-2].field_0x4c = 1;
-  *(uint *)&pCVar3[-2].field_0x40 = 0;
-  *(uint *)&pCVar3[-1].field_0x178 = 0;
+  pCVar3[-2].part_visibility_flags[0xf] = 0x41200000;
+  pCVar3[-2].part_visibility_flags[0x13] = 1;
+  pCVar3[-2].part_visibility_flags[0x10] = 0;
+  pCVar3[-1].model_ptr = (CKeyFramedModel *)0x0;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950(pCVar3,(char *)0x5f9122);
-  *(uint *)(pCVar3 + 1) = 1;
-  *(uint *)&pCVar3[-4].field_0x80 = 1;
-  *(uint *)&pCVar3[1].field_0x4 = 0;
-  *(uint *)&pCVar3[1].field_0x8 = 0;
-  return (CCryptVessel *)&pCVar3[-5].field_0x100;
+  pCVar3[1].part_visibility_flags[0] = 1;
+  pCVar3[-0xffffffff00000004].model_name[8] = '\x01';
+  pCVar3[-0xffffffff00000004].model_name[9] = '\0';
+  pCVar3[-0xffffffff00000004].model_name[10] = '\0';
+  pCVar3[-0xffffffff00000004].model_name[0xb] = '\0';
+  pCVar3[1].part_visibility_flags[1] = 0;
+  pCVar3[1].part_visibility_flags[2] = 0;
+  return (CCryptVessel *)(pCVar3[-5].model_name + 0x88);
 }

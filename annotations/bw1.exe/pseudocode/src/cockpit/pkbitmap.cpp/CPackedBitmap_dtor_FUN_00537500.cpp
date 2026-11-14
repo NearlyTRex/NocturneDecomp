@@ -9,6 +9,6 @@
 CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_dtor_FUN_00537500(CPackedBitmap *this_ptr,uint flags)
 
 {
-  cockpit_pkbitmap_cpp_FUN_00537550(this_ptr);
+  cockpit_pkbitmap_cpp_CPackedBitmap_free_FUN_00537550(this_ptr);
   return this_ptr;
 }

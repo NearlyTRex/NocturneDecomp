@@ -6,18 +6,18 @@
 ; Parameters:
 ; void *           Stack[0x4]:4   ptr
 ;
-; XREF[65]:
+; XREF[66]:
 ;   cockpit_ckptutil.c_loadEdgeListFile_FUN_0042eb90 at 0042eced
 ;   cockpit_ckptutil.c_rotateBitmap_FUN_004303d0 at 004304ac
-;   cockpit_pkbitmap.cpp_CPackedBitmap_FUN_004f3f50 at 004f3f76
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_freePackedData_FUN_004f3f80 at 004f3f8f
+;   cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_004f3f50 at 004f3f76
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_004f46b0 at 004f46e1
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_004f4630 at 004f467f
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_004f54c0 at 004f56a3
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_004f5740 at 004f5814
 ;   core_dcamera.cpp_CDemonCamera_free_FUN_004401d0 at 00440220
-;   core_dcube.cpp_CDemonCube_FUN_0044adf0 at 0044ae33
-;   ... and 55 more
+;   core_dcube.cpp_CDemonCube_freeMemory_FUN_0044adf0 at 0044ae33
+;   ... and 56 more
 ;
 ; Called Functions:
 ;   crt_unknown.c_ValidateHeapIntegrity_FUN_005638e0

@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 76,
+    "complexity_score": 21,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 21,
-    "suspect_count": 5,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 65
   },
   "cross_references": [
     {
       "addr": "00427210",
       "from_addr": "0042724d",
-      "name": "core_charactr.cpp_FUN_00427210",
+      "name": "core_charactr.cpp_CCharacter_shatter_FUN_00427210",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -58,7 +56,7 @@
       {
         "call_addr": "0042724d",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_00427210",
+        "caller": "core_charactr.cpp_CCharacter_shatter_FUN_00427210",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -98,6 +96,32 @@
     },
     "pcode_op_count": 134
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0056ac60",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0054f7f0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a14b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0051ed30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 20,
     "local_size": 4,
@@ -135,46 +159,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x2230",
-      "severity": "mild",
-      "text": "if (desired_lod_index != *(int *)&this_ptr->field_0x2230) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x21b8",
-      "severity": "mild",
-      "text": "texture_set_indices = (int *)&this_ptr->field_0x21b8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x2140",
-      "severity": "mild",
-      "text": "part_visibility_flags = (int *)&this_ptr->field_0x2140;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x2234",
-      "severity": "mild",
-      "text": "skinned_vertices = *(CVector3i **)&this_ptr->field_0x2234;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x2230",
-      "severity": "mild",
-      "text": "lod_index = *(int *)&this_ptr->field_0x2230;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

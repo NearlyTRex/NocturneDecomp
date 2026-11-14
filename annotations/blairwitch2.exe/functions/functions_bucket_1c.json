@@ -1,185 +1,5 @@
 [
   {
-    "addr":"0042d81c",
-    "body":[
-      {
-        "end":"0042d848",
-        "size":45,
-        "start":"0042d81c"
-      }
-    ],
-    "importable":true,
-    "name":"cockpit_ckptutil.c_FUN_0042d81c",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
-  },
-  {
-    "addr":"00469f9c",
-    "body":[
-      {
-        "end":"0046a02f",
-        "size":148,
-        "start":"00469f9c"
-      }
-    ],
-    "importable":true,
-    "name":"engine_drender.cpp_FUN_00469f9c",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
-  },
-  {
-    "addr":"0047401c",
-    "body":[
-      {
-        "end":"0047401f",
-        "size":4,
-        "start":"0047401c"
-      }
-    ],
-    "importable":true,
-    "name":"core_dtrace.cpp_FUN_0047401c",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
-  },
-  {
-    "addr":"0047c01c",
-    "body":[
-      {
-        "end":"0047c01f",
-        "size":4,
-        "start":"0047c01c"
-      }
-    ],
-    "importable":true,
-    "name":"shape_edittool.cpp_FUN_0047c01c",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
-  },
-  {
-    "addr":"004f721c",
-    "body":[
-      {
-        "end":"004f7255",
-        "size":58,
-        "start":"004f721c"
-      }
-    ],
-    "importable":true,
-    "name":"engine_mini3d.cpp_FUN_004f721c",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
-  },
-  {
-    "addr":"004f8f9c",
-    "body":[
-      {
-        "end":"004f8fd0",
-        "size":53,
-        "start":"004f8f9c"
-      }
-    ],
-    "importable":true,
-    "name":"engine_mini3d.cpp_FUN_004f8f9c",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
-  },
-  {
-    "addr":"0050b41c",
-    "body":[
-      {
-        "end":"0050b41f",
-        "size":4,
-        "start":"0050b41c"
-      }
-    ],
-    "importable":true,
-    "name":"core_netgame.cpp_FUN_0050b41c",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
-  },
-  {
-    "addr":"0055141c",
-    "body":[
-      {
-        "end":"0055143f",
-        "size":36,
-        "start":"0055141c"
-      }
-    ],
-    "importable":true,
-    "name":"sound_sndmain.cpp_FUN_0055141c",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
-  },
-  {
-    "addr":"0055651c",
-    "body":[
-      {
-        "end":"00556546",
-        "size":43,
-        "start":"0055651c"
-      }
-    ],
-    "importable":true,
-    "name":"sound_snddx.cpp_FUN_0055651c",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
-  },
-  {
-    "addr":"0056029c",
-    "body":[
-      {
-        "end":"005602b2",
-        "size":23,
-        "start":"0056029c"
-      }
-    ],
-    "importable":true,
-    "name":"engine_special.cpp_FUN_0056029c",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
-  },
-  {
     "addr":"005b849c",
     "body":[
       {
@@ -217,6 +37,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005b8f9c",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -235,10 +56,67 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"crt_stdio.c_fseek_FUN_005b929c",
-    "ret":"undefined1",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"file",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"_FILE*"
+        },
+        {
+          "name":"offset",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"long"
+        },
+        {
+          "name":"whence",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -254,6 +132,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005bbf9c",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -272,6 +151,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005be19c",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -288,8 +168,9 @@
       }
     ],
     "importable":true,
-    "name":"unkafter_morph.cpp_FUN_005c289c",
+    "name":"crt_unknown.c_FUN_005c289c",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -306,8 +187,9 @@
       }
     ],
     "importable":true,
-    "name":"unkafter_morph.cpp_FUN_005c349c",
+    "name":"crt_unknown.c_FUN_005c349c",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -324,8 +206,9 @@
       }
     ],
     "importable":true,
-    "name":"unkafter_morph.cpp_FUN_005c469c",
+    "name":"crt_unknown.c_FUN_005c469c",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -342,8 +225,9 @@
       }
     ],
     "importable":true,
-    "name":"unkafter_2d.cpp_FUN_005c599c",
+    "name":"crt_unknown.c_FUN_005c599c",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -363,6 +247,7 @@
     "importable":true,
     "name":"crt_advapi32.c_RegCloseKey",
     "ret":"LSTATUS",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000002",
     "thunk":true,
     "vars":{
@@ -409,6 +294,7 @@
     "importable":true,
     "name":"crt_kernel32.c_CloseHandle",
     "ret":"BOOL",
+    "sig":"imported",
     "thtarget":"EXTERNAL:0000004a",
     "thunk":true,
     "vars":{
@@ -455,6 +341,7 @@
     "importable":true,
     "name":"crt_kernel32.c_DeleteCriticalSection",
     "ret":"void",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000050",
     "thunk":true,
     "vars":{

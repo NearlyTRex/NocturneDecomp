@@ -18,25 +18,25 @@
     {
       "addr": "00419740",
       "from_addr": "00419856",
-      "name": "core_bodypart.cpp_FUN_00419740",
+      "name": "core_bodypart.cpp_CBodyPart_process_FUN_00419740",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00422000",
       "from_addr": "004222b2",
-      "name": "core_boxactor.cpp_FUN_00422000",
+      "name": "core_boxactor.cpp_CBoxActor_process_FUN_00422000",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004b1d90",
       "from_addr": "004b1ef5",
-      "name": "core_fire.cpp_FUN_004b1d90",
+      "name": "core_fire.cpp_CToss_process_FUN_004b1d90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005627a0",
       "from_addr": "0056293a",
-      "name": "core_simbox.cpp_FUN_005627a0",
+      "name": "core_simbox.cpp_CSimBox_process_FUN_005627a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -86,7 +86,7 @@
       {
         "call_addr": "004b1ef5",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004b1d90",
+        "caller": "core_fire.cpp_CToss_process_FUN_004b1d90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -97,7 +97,7 @@
       {
         "call_addr": "00419856",
         "call_type": "direct",
-        "caller": "core_bodypart.cpp_FUN_00419740",
+        "caller": "core_bodypart.cpp_CBodyPart_process_FUN_00419740",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -119,7 +119,7 @@
       {
         "call_addr": "004222b2",
         "call_type": "direct",
-        "caller": "core_boxactor.cpp_FUN_00422000",
+        "caller": "core_boxactor.cpp_CBoxActor_process_FUN_00422000",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -130,7 +130,7 @@
       {
         "call_addr": "0056293a",
         "call_type": "direct",
-        "caller": "core_simbox.cpp_FUN_005627a0",
+        "caller": "core_simbox.cpp_CSimBox_process_FUN_005627a0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -177,6 +177,32 @@
       "STORE": 13
     },
     "pcode_op_count": 195
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b2290",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0041b410",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0041e2f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0041acb0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 36,

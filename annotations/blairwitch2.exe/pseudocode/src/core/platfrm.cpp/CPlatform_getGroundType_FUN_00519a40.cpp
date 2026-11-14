@@ -1,0 +1,13 @@
+// Name: core_platfrm.cpp_CPlatform_getGroundType_FUN_00519a40
+// Address: 00519a40
+// Address Range: [[00519a40, 00519a4a]]
+// Convention: __cdecl
+// Signature: EGroundType __cdecl core_platfrm_cpp_CPlatform_getGroundType_FUN_00519a40(CPlatform *this_ptr)
+
+#include "nocturne.h"
+
+EGroundType __cdecl core_platfrm_cpp_CPlatform_getGroundType_FUN_00519a40(CPlatform *this_ptr)
+
+{
+  return this_ptr->ground_type;
+}

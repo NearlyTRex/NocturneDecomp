@@ -14,7 +14,7 @@ int __cdecl core_fire_cpp_CFireEffect_allocateToss_FUN_004b6ed0(CFireEffect *thi
   int iVar1;
   
   iVar1 = _DAT_01cb0188;
-  core_fire_cpp_FUN_004b1c50
+  core_fire_cpp_CToss_create_FUN_004b1c50
             (g_TossPool + _DAT_01cb0188,toss_type,position,orientation,velocity,fuse_time);
   _DAT_01cb0188 = _DAT_01cb0188 + 1;
   if (_DAT_01cb0188 < 0x14) {

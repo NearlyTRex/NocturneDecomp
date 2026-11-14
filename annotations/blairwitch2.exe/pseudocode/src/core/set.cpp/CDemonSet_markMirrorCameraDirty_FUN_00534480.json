@@ -1,0 +1,113 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 4,
+    "complexity_score": 5,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 9
+  },
+  "cross_references": [
+    {
+      "addr": "004c6d40",
+      "from_addr": "004c7112",
+      "name": "core_glass.cpp_FUN_004c6d40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00534480",
+    "address_range": [
+      [
+        "00534480",
+        "0053448e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_CDemonSet_markMirrorCameraDirty_FUN_00534480",
+    "signature": "void __cdecl core_set_cpp_CDemonSet_markMirrorCameraDirty_FUN_00534480(CDemonSet *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004c7112",
+        "call_type": "direct",
+        "caller": "core_glass.cpp_FUN_004c6d40",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.0,
+    "instruction_count": 3,
+    "opcode_distribution": {
+      "COPY": 2,
+      "INT_ADD": 3,
+      "LOAD": 2,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 9
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00555730",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0053b0c0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00570c60",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0050e300",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      }
+    ]
+  },
+  "suspects": []
+}

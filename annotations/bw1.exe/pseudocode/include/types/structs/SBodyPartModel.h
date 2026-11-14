@@ -4,13 +4,16 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: SBodyPartModel
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x194 (404 bytes)
 #pragma pack(push, 1)
 typedef struct SBodyPartModel {
-    char field_0[404]; // 0x0
+    CVector3f position_offset; // 0x0
+    CVector3f euler_angles; // 0xc
+    CKeyFramedModelInstance model; // 0x18
 } SBodyPartModel;
 #pragma pack(pop)
 

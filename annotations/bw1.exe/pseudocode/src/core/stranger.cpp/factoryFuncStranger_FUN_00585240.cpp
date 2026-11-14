@@ -1,20 +1,20 @@
 // Name: core_stranger.cpp_factoryFuncStranger_FUN_00585240
 // Address: 00585240
 // Address Range: [[00585240, 0058525b]]
-// Convention: unknown
-// Signature: void core_stranger_cpp_factoryFuncStranger_FUN_00585240(void)
+// Convention: __cdecl
+// Signature: CStranger * __cdecl core_stranger_cpp_factoryFuncStranger_FUN_00585240(void)
 
 #include "nocturne.h"
 
-void core_stranger_cpp_factoryFuncStranger_FUN_00585240(void)
+CStranger * __cdecl core_stranger_cpp_factoryFuncStranger_FUN_00585240(void)
 
 {
-  CStranger *this_ptr;
+  CStranger *pCVar1;
   
-  this_ptr = (CStranger *)FUN_005c0f32(0x20244);
-  if (this_ptr == (CStranger *)0x0) {
-    return;
+  pCVar1 = (CStranger *)operator_new(0x20244);
+  if (pCVar1 == (CStranger *)0x0) {
+    return (CStranger *)0x0;
   }
-  core_stranger_cpp_CStranger_ctor_FUN_00585270(this_ptr);
-  return;
+  pCVar1 = core_stranger_cpp_CStranger_ctor_FUN_00585270(pCVar1);
+  return pCVar1;
 }

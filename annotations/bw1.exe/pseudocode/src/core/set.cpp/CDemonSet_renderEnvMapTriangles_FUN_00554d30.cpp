@@ -1,0 +1,159 @@
+// Name: core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_00554d30
+// Address: 00554d30
+// Address Range: [[00554d30, 00555174]]
+// Convention: __cdecl
+// Signature: void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_00554d30(CDemonSet *this_ptr,SInputFace *face_data,int count,int alpha)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_00554d30(CDemonSet *this_ptr,SInputFace *face_data,int count,int alpha)
+
+{
+  short *psVar1;
+  longlong lVar2;
+  int iVar3;
+  int iVar4;
+  int iVar5;
+  byte bVar6;
+  int aiStackY_1020 [960];
+  SMRGLPrimitivePoly SStack_118;
+  uint local_90;
+  uint uStack_8c;
+  int local_50;
+  int local_4c;
+  int local_48;
+  CVector3i local_44;
+  int local_38;
+  int aiStack_34 [4];
+  int local_24;
+  int local_20;
+  int local_1c;
+  int local_18;
+  int local_14;
+  
+  bVar6 = 0;
+  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
+            (DAT_00612560,(SMRGLTextureBasic *)&DAT_00622f34);
+  if (g_CGamePtr->render_mode == 2) {
+    alpha = DAT_0061b4b8 << 8;
+  }
+  else {
+    lVar2 = (longlong)(0xffff - _DAT_01c51cac) * (longlong)alpha;
+    engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0
+              (DAT_00612560,(uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);
+  }
+  engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_00483ac0(DAT_00612560,&local_44);
+  local_20 = 0;
+  if (0 < count) {
+    do {
+      SStack_118.base.surface_normal.D.i = 0;
+      SStack_118.base.surface_normal.C.i = 0;
+      SStack_118.base.surface_normal.B.i = 0;
+      SStack_118.base.surface_normal.A.i = 0;
+      SStack_118.base.base.count = 3;
+      SStack_118.vertices[0].vertex_index = (uint)(face_data->vertex_indices).vertex_index_0;
+      SStack_118.vertices[1].vertex_index = (uint)(face_data->vertex_indices).vertex_index_1;
+      SStack_118.vertices[2].vertex_index = (uint)(face_data->vertex_indices).vertex_index_2;
+      SStack_118.vertices[0].texture_u = (uint)face_data->u_coord_0 << 8;
+      SStack_118.vertices[1].texture_u = (uint)face_data->u_coord_1 << 8;
+      SStack_118.vertices[2].texture_u = (uint)face_data->u_coord_2 << 8;
+      SStack_118.vertices[0].texture_v = (uint)face_data->v_coord_0 << 8;
+      SStack_118.vertices[1].texture_v = (uint)face_data->v_coord_1 << 8;
+      SStack_118.vertices[2].texture_v = (uint)face_data->v_coord_2 << 8;
+      if (this_ptr->skip_normal_normalization != 0) {
+        engine_keyframe_c_calculateSurfaceNormal_FUN_004fc9c0
+                  ((CVector3i *)0x2036428,(SMRGLPrimitiveTriangle *)&SStack_118);
+      }
+      local_18 = 0;
+      if (0 < SStack_118.base.base.count) {
+        local_1c = 0;
+        local_14 = 0;
+        do {
+          iVar4 = *(int *)((int)&SStack_118.vertices[0].vertex_index + local_1c) * 0xc;
+          if ((((this_ptr->skip_normal_normalization == 0) ||
+               (1.0 <= ABS(*(float *)(&DAT_02070da8 + iVar4)))) ||
+              (1.0 <= ABS(*(float *)(&DAT_02070dac + iVar4)))) ||
+             (1.0 <= ABS(*(float *)(&DAT_02070db0 + iVar4)))) {
+            aiStack_34[2] = (int)ROUND(*(float *)(&DAT_02070da8 + iVar4));
+            aiStack_34[3] = (int)ROUND(*(float *)(&DAT_02070dac + iVar4));
+            local_24 = (int)ROUND(*(float *)(&DAT_02070db0 + iVar4));
+          }
+          else {
+            local_50 = (int)ROUND(_DAT_0202a844 * _DAT_00605000) - *(int *)(iVar4 + 0x2036428);
+            local_4c = (int)ROUND(_DAT_0202a848 * _DAT_00605000) - *(int *)(iVar4 + 0x203642c);
+            local_48 = (int)ROUND(_DAT_0202a84c * _DAT_00605000) - *(int *)(iVar4 + 0x2036430);
+            engine_matrix_c_normalizeVector3DFloat_FUN_00508780(&local_50);
+            aiStack_34[2] = local_38;
+            aiStack_34[(uint)bVar6 * -2 + 3] = aiStack_34[(uint)bVar6 * -2];
+            aiStack_34[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
+                 aiStack_34[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+          }
+          iVar5 = local_18 + 1;
+          iVar4 = 0x8000 - aiStack_34[3];
+          *(int *)((int)&SStack_118.vertices[4].vertex_index + local_14) = aiStack_34[2] + 0x8000;
+          *(int *)((int)&local_90 + local_14) = iVar4;
+          local_18 = iVar5;
+          local_14 = local_14 + 4;
+          local_1c = local_1c + 0xc;
+        } while (iVar5 < SStack_118.base.base.count);
+      }
+      if (1 < SStack_118.base.base.count) {
+        iVar4 = 4;
+        do {
+          if ((0x8000 < SStack_118.vertices[4].vertex_index) &&
+             (*(int *)((int)&SStack_118.vertices[4].vertex_index + iVar4) < -0x8000)) {
+            psVar1 = (short *)((int)&SStack_118.vertices[4].vertex_index + iVar4 + 2);
+            *psVar1 = *psVar1 + 1;
+          }
+          if ((SStack_118.vertices[4].vertex_index < -0x8000) &&
+             (iVar5 = *(int *)((int)&SStack_118.vertices[4].vertex_index + iVar4), 0x8000 < iVar5))
+          {
+            *(int *)((int)&SStack_118.vertices[4].vertex_index + iVar4) = iVar5 + -0x10000;
+          }
+          if ((0x8000 < local_90) && (*(int *)((int)&local_90 + iVar4) < -0x8000)) {
+            psVar1 = (short *)((int)&local_90 + iVar4 + 2);
+            *psVar1 = *psVar1 + 1;
+          }
+          if ((local_90 < -0x8000) && (0x8000 < *(int *)((int)&local_90 + iVar4))) {
+            *(int *)((int)&local_90 + iVar4) = *(int *)((int)&local_90 + iVar4) + -0x10000;
+          }
+          iVar4 = iVar4 + 4;
+        } while (iVar4 < SStack_118.base.base.count * 4);
+      }
+      iVar4 = 0;
+      if (0 < SStack_118.base.base.count) {
+        iVar3 = 0;
+        iVar5 = 0;
+        do {
+          *(int *)((int)&SStack_118.vertices[0].texture_u + iVar5) =
+               *(int *)((int)&SStack_118.vertices[4].vertex_index + iVar3) << 8;
+          *(int *)((int)&SStack_118.vertices[0].texture_v + iVar5) =
+               *(int *)((int)&local_90 + iVar3) << 8;
+          iVar4 = iVar4 + 1;
+          iVar3 = iVar3 + 4;
+          iVar5 = iVar5 + 0xc;
+        } while (iVar4 < SStack_118.base.base.count);
+      }
+      if (this_ptr->skip_normal_normalization != 0) {
+        SStack_118.base.surface_normal.C.i = 0;
+        SStack_118.base.surface_normal.B.i = 0;
+        SStack_118.base.surface_normal.A.i = 0;
+        SStack_118.base.surface_normal.D.i = 0;
+      }
+      if (alpha < 0xfde9) {
+        engine_drender_cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_00482cd0
+                  (DAT_00612560,&SStack_118);
+      }
+      else {
+        engine_drender_cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_00482540
+                  (DAT_00612560,&SStack_118);
+      }
+      face_data = face_data + 1;
+      local_20 = local_20 + 1;
+    } while (local_20 < count);
+  }
+  return;
+}

@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_0043ac50(int *param_1,int *param_2,int *param_3)
+; void __cdecl engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_0043ac50(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output)
 ;
+; Parameters:
+; SRenderVertex *  Stack[0x4]:4   v1
+; SRenderVertex *  Stack[0x8]:4   v2
+; SRenderVertex *  Stack[0xc]:4   output
 ;
-; XREF[2]:
-;   engine_clipper.c_FUN_0043b14e at 0043b211
+; XREF[1]:
 ;   engine_clipper.c_clipPolygonToViewport_FUN_0043bac0 at 0043c16c
 ;
 ; *****************************************************************************

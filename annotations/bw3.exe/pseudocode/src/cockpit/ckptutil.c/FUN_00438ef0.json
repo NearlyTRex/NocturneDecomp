@@ -2,36 +2,36 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 65,
+    "complexity_score": 66,
     "cross_reference_count": 3,
     "function_call_count": 8,
     "global_count": 9,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 35,
+    "pseudocode_lines": 36,
     "suspect_count": 2,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 162
+    "total_lines": 163
   },
   "cross_references": [
     {
-      "addr": "0050f910",
-      "from_addr": "0050f93e",
-      "name": "cockpit_pkbitmap.cpp_FUN_0050f910",
+      "addr": "0050f990",
+      "from_addr": "0050f9a1",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0050f990",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0050f990",
-      "from_addr": "0050f9a1",
-      "name": "cockpit_pkbitmap.cpp_FUN_0050f990",
+      "addr": "0050f910",
+      "from_addr": "0050f93e",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0050f910",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004af920",
       "from_addr": "004afa49",
-      "name": "engine_font.cpp_FUN_004af920",
+      "name": "engine_font.cpp_CBitFont_loadBitmap_FUN_004af920",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -54,39 +54,39 @@
       "name": "core_main.c_FUN_004e4330"
     },
     {
-      "addr": "005a28c0",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a28c0"
-    },
-    {
       "addr": "005a3650",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a3650"
+      "name": "crt_memory.c_malloc_FUN_005a3650"
     },
     {
-      "addr": "00573fc0",
+      "addr": "005a28c0",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_00573fc0"
-    },
-    {
-      "addr": "005738c0",
-      "is_variadic": false,
-      "name": "unkafter_turret.cpp_CInStreamFile_ctor_FUN_005738c0"
-    },
-    {
-      "addr": "00573a40",
-      "is_variadic": false,
-      "name": "unkafter_turret.cpp_CInStreamFile_dtor_FUN_00573a40"
-    },
-    {
-      "addr": "00573c00",
-      "is_variadic": false,
-      "name": "unkafter_turret.cpp_FUN_00573c00"
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
     },
     {
       "addr": "00573db0",
       "is_variadic": false,
-      "name": "unkafter_turret.cpp_FUN_00573db0"
+      "name": "support_trstream.cpp_CInStreamFile_close_FUN_00573db0"
+    },
+    {
+      "addr": "005738c0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_ctor_FUN_005738c0"
+    },
+    {
+      "addr": "00573a40",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_dtor_FUN_00573a40"
+    },
+    {
+      "addr": "00573fc0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0"
+    },
+    {
+      "addr": "00573c00",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_read_FUN_00573c00"
     }
   ],
   "globals": [
@@ -151,7 +151,7 @@
       {
         "call_addr": "004afa49",
         "call_type": "direct",
-        "caller": "engine_font.cpp_FUN_004af920",
+        "caller": "engine_font.cpp_CBitFont_loadBitmap_FUN_004af920",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -162,7 +162,7 @@
       {
         "call_addr": "0050f93e",
         "call_type": "direct",
-        "caller": "cockpit_pkbitmap.cpp_FUN_0050f910",
+        "caller": "cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0050f910",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -173,7 +173,7 @@
       {
         "call_addr": "0050f9a1",
         "call_type": "direct",
-        "caller": "cockpit_pkbitmap.cpp_FUN_0050f990",
+        "caller": "cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0050f990",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -212,6 +212,14 @@
       "STORE": 43
     },
     "pcode_op_count": 373
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0043b2e0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 156,
@@ -268,10 +276,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 22,
       "match": "DAT_005b8ed8",
       "severity": "mild",
-      "text": "iVar1 = support_trstream_cpp_FUN_00573fc0(&local_3c,&DAT_005b8ed8,filename,1);",
+      "text": "(&local_3c,&DAT_005b8ed8,filename,1);",
       "type": "undefined_data"
     }
   ]

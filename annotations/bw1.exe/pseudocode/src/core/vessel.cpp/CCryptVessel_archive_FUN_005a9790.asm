@@ -43,19 +43,19 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 005a97a3
     PUSH EAX                            ; 005a97a9
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770 ; 005a97aa
-        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770()
+        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770(CKeyFramedModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 005a97af
     PUSH 0x5f918a                       ; 005a97b2 | DAT_005f918a
     LEA EAX,[EBX + 0x2d8]               ; 005a97b7
     PUSH EAX                            ; 005a97bd
     CALL core_actor.cpp_archiveActor_FUN_0040b6f0 ; 005a97be
-        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b6f0()
+        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b6f0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 005a97c3
     PUSH 0x5f918f                       ; 005a97c6 | = "neutral"
     LEA EAX,[EBX + 0x2dc]               ; 005a97cb
     PUSH EAX                            ; 005a97d1
     CALL core_actor.cpp_archiveActor_FUN_0040b6f0 ; 005a97d2
-        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b6f0()
+        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b6f0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 005a97d7
     PUSH 0x5f9197                       ; 005a97da | = "destroyedEvent"
     LEA EAX,[EBX + 0x2e0]               ; 005a97df
@@ -67,13 +67,13 @@ section .text
     LEA EAX,[EBX + 0x3a8]               ; 005a97f3
     PUSH EAX                            ; 005a97f9
     CALL core_actor.cpp_archiveActor_FUN_0040b6f0 ; 005a97fa
-        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b6f0()
+        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b6f0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 005a97ff
     PUSH 0x5f91af                       ; 005a9802 | = "endLoc"
     LEA EAX,[EBX + 0x3ac]               ; 005a9807
     PUSH EAX                            ; 005a980d
     CALL core_actor.cpp_archiveActor_FUN_0040b6f0 ; 005a980e
-        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b6f0()
+        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b6f0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 005a9813
     PUSH 0x5f91b6                       ; 005a9816 | = "state"
     LEA EAX,[EBX + 0x3b8]               ; 005a981b
@@ -85,7 +85,7 @@ section .text
     LEA EAX,[EBX + 0x3bc]               ; 005a982f
     PUSH EAX                            ; 005a9835
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 005a9836
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     MOV EDX,dword ptr [0x00625c68]      ; 005a983b | g_CCryptVesselClassVersion
     ADD ESP,0x8                         ; 005a9841
     CMP EDX,0x2                         ; 005a9844
@@ -99,7 +99,7 @@ section .text
     LEA EAX,[EBX + 0x3b0]               ; 005a9857
     PUSH EAX                            ; 005a985d
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 005a985e
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 005a9863
     CMP dword ptr [0x00625c68],0x4      ; 005a9866 | g_CCryptVesselClassVersion
         ;   Label: LAB_005a9866

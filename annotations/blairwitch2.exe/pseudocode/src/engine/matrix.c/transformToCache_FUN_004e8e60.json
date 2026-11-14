@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 15,
     "complexity_score": 21,
-    "cross_reference_count": 2,
+    "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
@@ -15,6 +15,12 @@
     "total_lines": 21
   },
   "cross_references": [
+    {
+      "addr": "0047fd00",
+      "from_addr": "0047fdaf",
+      "name": "shape_edittool.cpp_FUN_0047fd00",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "00480000",
       "from_addr": "0048003e",
@@ -49,7 +55,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 8,
+    "call_site_count": 12,
     "call_sites": [
       {
         "call_addr": "0048003e",
@@ -138,6 +144,28 @@
         "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
+      },
+      {
+        "call_addr": "0047fdaf",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047fd00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0047fdce",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047fd00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
       }
     ],
     "confidence": "high",
@@ -173,6 +201,32 @@
       "STORE": 4
     },
     "pcode_op_count": 92
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00507b00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004e5540",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0050cd70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004cd210",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 12,

@@ -1,26 +1,26 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_FUN_0042fbd0(CCharacter *param_1,CVector3f *param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,int param_6,undefined4 param_7)
+; void core_charactr_cpp_FUN_0042fbd0(CCharacter *param_1,CVector3f *param_2,undefined4 param_3,EFlameType param_4,float param_5,int param_6,float param_7)
 ;
 ;
 ; XREF[7]:
-;   core_burncrss.cpp_FUN_00424550 at 00424c18
-;   core_charactr.cpp_FUN_00430d60 at 00430e2d
-;   core_emitter.cpp_FUN_00487eb0 at 004885ce
-;   core_fire.cpp_FUN_0049df60 at 0049e124
-;   core_fire.cpp_FUN_0049fdf0 at 004a0269
-;   core_flame.cpp_FUN_004a5b10 at 004a5e09
-;   core_mattnntt.cpp_FUN_00591f30 at 00593601
+;   core_burncrss.cpp_CBurncross_fire_FUN_00424550 at 00424c18
+;   core_charactr.cpp_CCharacter_processDamage_FUN_00430d60 at 00430e2d
+;   core_emitter.cpp_CEmitter_process_FUN_00487eb0 at 004885ce
+;   core_fire.cpp_CGunFlame_burnNearby_FUN_0049df60 at 0049e124
+;   core_fire.cpp_CRing_process_FUN_0049fdf0 at 004a0269
+;   core_flame.cpp_CFlame_process_FUN_004a5b10 at 004a5e09
+;   core_mattnntt.cpp_CMattanntote_process_FUN_00591f30 at 00593601
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CHero_005b8382
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040c790
+;   core_actor.cpp_isOfClass_FUN_0040c790
 ;   core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042e4b0
+;   core_skeleton.cpp_CDeformableModelInstance_findClosestBone_FUN_0054f480
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
-;   core_skeleton.cpp_FUN_0054f480
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
     PUSH 0x5b8382                       ; 0042fbfe | = "CHero"
         ;   Label: LAB_0042fbfe
     PUSH EBX                            ; 0042fc03
-    CALL core_actor.cpp_FUN_0040c790    ; 0042fc04
-        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c790 ; 0042fc04
+        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 0042fc09
     TEST EAX,EAX                        ; 0042fc0c
     JNZ 0x0042fbf9                      ; 0042fc0e
@@ -65,8 +65,8 @@ section .text
         ;   Label: LAB_0042fc12
     PUSH ESI                            ; 0042fc16
     PUSH EDX                            ; 0042fc17
-    CALL core_skeleton.cpp_FUN_0054f480 ; 0042fc18
-        ;   XREF to: 0054f480 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_0054f480(CDeformableModelInstance * this_ptr, CVector3f * point)
+    CALL core_skeleton.cpp_CDeformableModelInstance_findClosestBone_FUN_0054f480 ; 0042fc18
+        ;   XREF to: 0054f480 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModelInstance_findClosestBone_FUN_0054f480(CDeformableModelInstance * this_ptr, CVector3f * point)
     ADD ESP,0x8                         ; 0042fc1d
     MOV ECX,EAX                         ; 0042fc20
     MOV EDI,dword ptr [EBX + 0x33a0]    ; 0042fc22

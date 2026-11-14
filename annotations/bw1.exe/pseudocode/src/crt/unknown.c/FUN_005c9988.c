@@ -40,7 +40,7 @@ int FUN_005c9988(int param_1,int param_2)
     local_24 = *(uint *)(param_1 + 0x10);
     local_20 = param_2;
     local_14 = 0;
-    unkafter_zombie_cpp_FUN_005cc6e0(&local_34);
+    FUN_005cc6e0(&local_34);
     iVar4 = ((*(int *)(param_1 + 0x18) - local_1c) + 7) % 7;
     if (*(int *)(param_1 + 0xc) == 5) {
       iVar3 = 4;

@@ -13,6 +13,15 @@
 // Unsigned Long Integer (compiler-specific size)
 typedef DWORD ACCESS_MASK;
 
+// Enum: EXCEPTION_DISPOSITION
+enum {
+    ExceptionContinueExecution = 0,
+    ExceptionContinueSearch = 1,
+    ExceptionNestedException = 2,
+    ExceptionCollidedUnwind = 3
+};
+typedef int EXCEPTION_DISPOSITION;
+
 // Typedef: LPCH
 // pointer to CHAR
 typedef CHAR* LPCH;
@@ -36,6 +45,16 @@ typedef struct _RTL_CRITICAL_SECTION* PRTL_CRITICAL_SECTION;
 // Typedef: PRTL_CRITICAL_SECTION_DEBUG
 // pointer to _RTL_CRITICAL_SECTION_DEBUG
 typedef struct _RTL_CRITICAL_SECTION_DEBUG* PRTL_CRITICAL_SECTION_DEBUG;
+
+// Union: _BIT_INTEGER32
+#pragma pack(push, 1)
+typedef union _BIT_INTEGER32 {
+    uint dword;
+    ushort words[2];
+    uchar bytes[4];
+    byte nibs[4];
+} _BIT_INTEGER32;
+#pragma pack(pop)
 
 // Structure: _EXCEPTION_RECORD
 typedef struct _EXCEPTION_RECORD {
@@ -107,6 +126,21 @@ typedef _CONTEXT CONTEXT;
 // Typedef: PCONTEXT
 // pointer to CONTEXT
 typedef CONTEXT* PCONTEXT;
+
+// Function Definition: EXCEPTION_ROUTINE
+typedef EXCEPTION_DISPOSITION EXCEPTION_ROUTINE(EXCEPTION_RECORD* ExceptionRecord, PVOID EstablisherFrame, PCONTEXT ContextRecord, PVOID DispatcherContext);
+
+// Typedef: PEXCEPTION_ROUTINE
+// pointer to EXCEPTION_ROUTINE
+typedef EXCEPTION_ROUTINE* PEXCEPTION_ROUTINE;
+
+// Structure: EXCEPTION_REGISTRATION_RECORD
+#pragma pack(push, 1)
+typedef struct EXCEPTION_REGISTRATION_RECORD {
+    struct EXCEPTION_REGISTRATION_RECORD* Next;
+    PEXCEPTION_ROUTINE Handler;
+} EXCEPTION_REGISTRATION_RECORD;
+#pragma pack(pop)
 
 // Structure: _EXCEPTION_POINTERS
 typedef struct _EXCEPTION_POINTERS {

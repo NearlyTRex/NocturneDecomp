@@ -1,14 +1,14 @@
 // Name: support_newmsg.cpp_readMessageFile_FUN_004edfc0
 // Address: 004edfc0
 // Address Range: [[004edfc0, 004ee2e2]]
-// Convention: unknown
-// Signature: int support_newmsg_cpp_readMessageFile_FUN_004edfc0(char *param_1)
+// Convention: __cdecl
+// Signature: int __cdecl support_newmsg_cpp_readMessageFile_FUN_004edfc0(char *message_file)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int support_newmsg_cpp_readMessageFile_FUN_004edfc0(char *param_1)
+int __cdecl support_newmsg_cpp_readMessageFile_FUN_004edfc0(char *message_file)
 
 {
   char cVar1;
@@ -30,10 +30,11 @@ int support_newmsg_cpp_readMessageFile_FUN_004edfc0(char *param_1)
   int local_14;
   
   local_1c = 0;
-  iVar3 = engine_dosio_cpp_getFileSize_FUN_004568c0(&CHAR_00h_0058c922,param_1);
+  iVar3 = engine_dosio_cpp_getFileSize_FUN_004568c0(&CHAR_00h_0058c922,message_file);
   iVar5 = iVar3;
   if (0 < iVar3) {
-    file_handle = engine_dosio_cpp_getFile_FUN_00456a60(&CHAR_00h_0058c926,param_1,"rt");
+    file_handle = engine_dosio_cpp_getFile_FUN_00456a60
+                            (&CHAR_00h_0058c926,message_file,"rt");
     iVar5 = 0;
     if (file_handle != (_FILE *)0x0) {
       lVar4 = _ftell(file_handle);
@@ -96,12 +97,13 @@ int support_newmsg_cpp_readMessageFile_FUN_004edfc0(char *param_1)
         if (iVar5 != 2) {
           g_CurrentFilename = "..\\support\\newmsg.cpp";
           g_CurrentLineNumber = 99;
-          core_main_c_displayErrorAndQuit_FUN_004c8440("Error reading %s",param_1);
+          core_main_c_displayErrorAndQuit_FUN_004c8440("Error reading %s",message_file);
         }
         if (499 < _DAT_01d16818) {
           g_CurrentFilename = "..\\support\\newmsg.cpp";
           g_CurrentLineNumber = 104;
-          core_main_c_displayErrorAndQuit_FUN_004c8440("Too many messages in %s",param_1);
+          core_main_c_displayErrorAndQuit_FUN_004c8440
+                    ("Too many messages in %s",message_file);
         }
         pcVar9 = local_21c;
         pcVar10 = (char *)(_DAT_01d16818 * 0x80 + 0x1d177c0);

@@ -1,0 +1,180 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 48,
+    "complexity_score": 16,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 6,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 64
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00595bc0",
+    "address_range": [
+      [
+        "00595bc0",
+        "00595c3c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_tentacle.cpp_CTentacle_archive_FUN_00595bc0",
+    "signature": "void __cdecl core_tentacle_cpp_CTentacle_archive_FUN_00595bc0(CTentacle *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b6f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveActor_FUN_0040b6f0"
+    },
+    {
+      "addr": "0040b7f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveDeformableModelInstance_FUN_0040b7f0"
+    },
+    {
+      "addr": "0040b5f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b5f0"
+    },
+    {
+      "addr": "0040b870",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040b870"
+    },
+    {
+      "addr": "0040b960",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archivePartStatus_FUN_0040b960"
+    },
+    {
+      "addr": "004a0520",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_archive_FUN_004a0520"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f776e",
+      "name": "s_s_0_modelName_005f776c+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f7778",
+      "name": "s_guardDistance_005f7778",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f7786",
+      "name": "s_motion_state_005f7786",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f7793",
+      "name": "s_partStatus_005f7793",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f779e",
+      "name": "s_graveActor_005f779e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006259f0",
+      "name": "g_CTentacleClassVersion",
+      "type": "int",
+      "value": "0x2"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.162162162162162,
+    "instruction_count": 37,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 6,
+      "CBRANCH": 1,
+      "COPY": 23,
+      "INT_ADD": 14,
+      "INT_AND": 16,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 16,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 8,
+      "INT_SUB": 20,
+      "LOAD": 4,
+      "POPCOUNT": 8,
+      "RETURN": 1,
+      "STORE": 19
+    },
+    "pcode_op_count": 154
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00572f90",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005db880",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00544470",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTentacle *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CTentacle",
+        "offset": 212,
+        "vtable_addr": "00606ae4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

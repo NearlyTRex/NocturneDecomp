@@ -16,7 +16,7 @@
 ;   crt_unknown.c_FUN_005c0336
 ;   crt_unknown.c_FUN_005c0344
 ;   engine_palette.cpp_FUN_00531ed0
-;   engine_winfont.cpp_FUN_005b2080
+;   engine_winfont.cpp_CWinFont_reset_FUN_005b2080
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
         ;   XREF to: 005b1bc9 (CONDITIONAL_JUMP)  ; LAB_005b1bc9
     PUSH EBX                            ; 005b1b9c
     MOV dword ptr [EBX + 0x6a44],0x608164 ; 005b1b9d | PTR_engine_winfont.cpp_CWinFont_dtor_FUN_005b1b90_00608164
-    CALL engine_winfont.cpp_FUN_005b2080 ; 005b1ba7
-        ;   XREF to: 005b2080 (UNCONDITIONAL_CALL)  ; void engine_winfont.cpp_FUN_005b2080(CWinFont * this_ptr)
+    CALL engine_winfont.cpp_CWinFont_reset_FUN_005b2080 ; 005b1ba7
+        ;   XREF to: 005b2080 (UNCONDITIONAL_CALL)  ; void engine_winfont.cpp_CWinFont_reset_FUN_005b2080(CWinFont * this_ptr)
     ADD ESP,0x4                         ; 005b1bac
     PUSH 0x1                            ; 005b1baf
     PUSH EBX                            ; 005b1bb1
@@ -50,7 +50,7 @@ section .text
         ;   Label: LAB_005b1bc9
     PUSH EBX                            ; 005b1bce
     CALL crt_memory.c___vec_delete_FUN_005c030f ; 005b1bcf
-        ;   XREF to: 005c030f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005c030f()
+        ;   XREF to: 005c030f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005c030f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 005b1bd4
     PUSH EAX                            ; 005b1bd7
     CALL crt_unknown.c_FUN_005c0336     ; 005b1bd8

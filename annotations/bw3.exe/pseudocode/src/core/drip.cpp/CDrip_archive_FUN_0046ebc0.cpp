@@ -10,28 +10,29 @@ void __cdecl core_drip_cpp_CDrip_archive_FUN_0046ebc0(CDrip *this_ptr)
 
 {
   if (1 < g_CDripClassVersion) {
-    core_actor_cpp_CDemonActor_archive_FUN_0040c280((CDemonActor *)this_ptr);
+    core_actor_cpp_CDemonActor_archive_FUN_0040c280(&this_ptr->base);
   }
-  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b9b0
-            (&this_ptr->field_0x158,"modelName");
-  core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x2d4,&DAT_005bc730);
-  core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x2d8,"autoDrop");
-  core_actor_cpp_archiveVector_FUN_0040b400(&this_ptr->field_0x2f8,"homePos");
-  core_actor_cpp_archiveVector_FUN_0040b400(&this_ptr->field_0x304,&DAT_005bc746);
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b9b0(&this_ptr->model,"modelName");
+  core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->type,&DAT_005bc730);
+  core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->auto_drop,"autoDrop");
+  core_actor_cpp_archiveVector_FUN_0040b400(&this_ptr->home_pos,"homePos");
+  core_actor_cpp_archiveVector_FUN_0040b400(&this_ptr->vel,&DAT_005bc746);
   if (2 < g_CDripClassVersion) {
-    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x2e0,"minAutoDripTime");
-    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x2e4,"maxAutoDripTime");
-    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x2e8,"dripRadius");
+    core_actor_cpp_archiveFloat_FUN_0040b830
+              (&this_ptr->min_auto_drip_time,"minAutoDripTime");
+    core_actor_cpp_archiveFloat_FUN_0040b830
+              (&this_ptr->max_auto_drip_time,"maxAutoDripTime");
+    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->drip_radius,"dripRadius");
   }
   if (3 < g_CDripClassVersion) {
-    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x310,"damage");
+    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->damage,"damage");
   }
   if (4 < g_CDripClassVersion) {
-    core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x314,"hitSound");
+    core_actor_cpp_archiveString_FUN_0040b680(this_ptr->hit_sound,"hitSound");
   }
   if (g_CDripClassVersion < 6) {
     return;
   }
-  core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x334,"noRockFlag");
+  core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->no_rock_flag,"noRockFlag");
   return;
 }

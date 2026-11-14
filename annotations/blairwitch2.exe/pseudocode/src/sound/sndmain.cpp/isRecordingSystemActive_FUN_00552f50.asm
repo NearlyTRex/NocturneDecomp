@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[3]:
-;   sound_sndmain.cpp_FUN_00552e40 at 00552e45
 ;   sound_sndmain.cpp_isRecordingStarted_FUN_00552f60 at 00552f60
+;   sound_sndmain.cpp_selectRecordingDevice_FUN_00552e40 at 00552e45
 ;   sound_sndmain.cpp_startRecording_FUN_00553070 at 00553072
 ;
 ; Referenced Globals:

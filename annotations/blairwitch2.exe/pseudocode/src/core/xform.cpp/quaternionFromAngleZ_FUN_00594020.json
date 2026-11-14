@@ -45,19 +45,13 @@
     {
       "addr": "004afa20",
       "from_addr": "004afed3",
-      "name": "core_gabriela.cpp_FUN_004afa20",
+      "name": "core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0059c680",
       "from_addr": "0059c74e",
-      "name": "core_patrpoin.cpp_FUN_0059c680",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005a61f0",
-      "from_addr": "005a63b7",
-      "name": "core_robin.cpp_FUN_005a61f0",
+      "name": "core_hpatrol.cpp_CPatrolPoint_process_FUN_0059c680",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -69,7 +63,13 @@
     {
       "addr": "00567fd0",
       "from_addr": "00568031",
-      "name": "core_stranger.cpp_FUN_00567fd0",
+      "name": "core_stranger.cpp_CStranger_applyArmAimRotation_FUN_00567fd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a61f0",
+      "from_addr": "005a63b7",
+      "name": "core_weaver.cpp_FUN_005a61f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -181,7 +181,7 @@
       {
         "call_addr": "004afed3",
         "call_type": "direct",
-        "caller": "core_gabriela.cpp_FUN_004afa20",
+        "caller": "core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -220,7 +220,7 @@
       {
         "call_addr": "00568031",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_FUN_00567fd0",
+        "caller": "core_stranger.cpp_CStranger_applyArmAimRotation_FUN_00567fd0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -263,6 +263,32 @@
       "STORE": 9
     },
     "pcode_op_count": 157
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005b7b70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00585d50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005f7a30",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7937
+    },
+    "nocturne.exe": {
+      "addr": "0055d520",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 32,

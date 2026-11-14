@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CLava * core_wateract_cpp_CLava_ctor_FUN_00579020(CLava *this_ptr)
+; CLava * __cdecl core_wateract_cpp_CLava_ctor_FUN_00579020(CLava *this_ptr)
 ;
 ; Parameters:
 ; CLava *          Stack[0x4]:4   this_ptr

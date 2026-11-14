@@ -2,464 +2,492 @@
 // Address: 00474400
 // Address Range: [[00474400, 00474ee8]]
 // Convention: unknown
-// Signature: void core_doc_cpp_FUN_00474400(CCharacter *param_1,float param_2)
+// Signature: void core_doc_cpp_FUN_00474400(CHero *param_1,float param_2)
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_doc_cpp_FUN_00474400(CCharacter *param_1,float param_2)
+void core_doc_cpp_FUN_00474400(CHero *param_1,float param_2)
 
 {
-  byte *this_ptr;
-  float fVar1;
-  CGame *pCVar2;
-  CLightGun *pCVar3;
-  int iVar4;
-  uint uVar5;
-  CMotionList *pCVar6;
+  CHero *pCVar1;
+  CInventory *this_ptr;
+  CCharacter *pCVar2;
+  float fVar3;
+  CGame *pCVar4;
+  CLightGun *pCVar5;
+  int iVar6;
+  uint uVar7;
+  CMotionList *pCVar8;
   CDynamite *this_ptr_00;
-  int iVar7;
-  uint *puVar8;
-  byte bVar9;
-  int aiStackY_1068 [1013];
-  uint uVar10;
-  uint local_80;
-  uint local_7c;
-  uint local_78;
-  uint local_74;
-  uint local_68;
-  uint local_5c;
-  int local_48;
+  int iVar9;
+  CDemonActor *pCVar10;
+  CVector3f *pCVar11;
+  byte bVar12;
+  float afStackY_1064 [6];
+  CDemonActor *apCStackY_104c [1007];
+  CDemonActor *in_stack_ffffff84;
+  float in_stack_ffffff88;
+  float local_74;
+  CVector3f CStack_70;
+  float fStack_64;
+  CDemonActor *apCStack_60 [7];
   int local_44;
   int local_40;
-  int local_3c;
-  CMotionController *local_38;
-  int local_34;
-  int local_30;
-  uint local_2c;
+  CCharacter *local_3c;
+  int local_38;
+  CMotionController *local_34;
+  CCharacter *local_30;
+  float local_2c;
   uint local_28;
-  int local_24;
-  int local_20;
-  CInventory *local_1c;
-  float local_18;
+  CWeapon *local_24;
+  CCharacter *local_20;
+  int local_1c;
+  CInventory *local_18;
+  float fStack_14;
   
-  bVar9 = 0;
-  if ((*(int *)&param_1->field_0x2c98 == 0xe) && (*(int *)&param_1->field_0x2628 == 0)) {
-    *(uint *)&param_1->field_0x2c9c = 0;
-    *(uint *)&param_1->field_0x2c98 = 0;
+  bVar12 = 0;
+  if (((param_1->base).layer_action_index == 0xe) &&
+     ((param_1->base).carry_hands[1].carry_actor == (CDemonActor *)0x0)) {
+    (param_1->base).layer_action_t = 0.0;
+    (param_1->base).layer_action_index = 0;
   }
   local_44 = -1;
-  local_24 = 0;
-  if (*(int *)&param_1[2].field_0x7be8 == 0) {
-    if (*(int *)&param_1[2].field_0x7c0c != 0) {
-      if (*(int *)&param_1->field_0x2628 == 0) {
-        local_24 = *(int *)&param_1[2].field_0x7a80;
+  local_24 = (CWeapon *)0x0;
+  if (param_1->nearby_interactive_actor == (CDemonActor *)0x0) {
+    if (*(int *)param_1[1].base.base.actor_name != 0) {
+      pCVar10 = (param_1->base).carry_hands[1].carry_actor;
+      if (pCVar10 == (CDemonActor *)0x0) {
+        local_24 = (param_1->inventory).selected_weapon;
       }
       else {
-        local_24 = core_actor_cpp_castToClassHash_FUN_0040c600
-                             (*(int *)&param_1->field_0x2628,g_CWeaponClassInfo.name_hash);
-        if ((local_24 == 0) &&
-           (uVar5 = (**(code **)(*(int *)(*(int *)&param_1->field_0x2628 + 0x154) + 0x74))
-                              (*(int *)&param_1->field_0x2628), (uVar5 & 0xb) != 0)) {
-          local_44 = 8;
+        local_24 = (CWeapon *)
+                   core_actor_cpp_castToClassHash_FUN_0040c600(pCVar10,g_CWeaponClassInfo.name_hash)
+        ;
+        if ((local_24 == (CWeapon *)0x0) &&
+           (pCVar10 = (param_1->base).carry_hands[1].carry_actor,
+           uVar7 = (*((pCVar10->vtable)._ub)->getAllowedMeleeAttackTypes)(pCVar10),
+           (uVar7 & 0xb) != 0)) {
+          local_40 = 8;
         }
       }
-      if ((local_24 == 0) && (local_44 < 0)) {
-        *(uint *)&param_1[2].field_0x7c0c = 0;
+      if ((local_20 == (CCharacter *)0x0) && (local_40 < 0)) {
+        pCVar1 = param_1 + 1;
+        (pCVar1->base).base.actor_name[0] = '\0';
+        (pCVar1->base).base.actor_name[1] = '\0';
+        (pCVar1->base).base.actor_name[2] = '\0';
+        (pCVar1->base).base.actor_name[3] = '\0';
       }
     }
   }
   else {
-    *(uint *)&param_1[2].field_0x7c0c = 0;
+    pCVar1 = param_1 + 1;
+    (pCVar1->base).base.actor_name[0] = '\0';
+    (pCVar1->base).base.actor_name[1] = '\0';
+    (pCVar1->base).base.actor_name[2] = '\0';
+    (pCVar1->base).base.actor_name[3] = '\0';
   }
-  this_ptr = &param_1[2].field_0x7748;
-  pCVar3 = core_inv_cpp_FUN_004f9ed0((CInventory *)this_ptr);
-  local_2c = (uint)(pCVar3 != (CLightGun *)0x0);
-  iVar4 = core_inv_cpp_FUN_004f9ef0(this_ptr);
-  local_28 = (uint)(iVar4 != 0);
-  local_38 = (CMotionController *)&param_1->field_0x158;
-  local_3c = 0;
-  local_1c = (CInventory *)this_ptr;
+  this_ptr = &param_1->inventory;
+  pCVar5 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004f9ed0(this_ptr);
+  local_28 = (uint)(pCVar5 != (CLightGun *)0x0);
+  iVar6 = core_inv_cpp_FUN_004f9ef0(this_ptr);
+  local_24 = (CWeapon *)(uint)(iVar6 != 0);
+  local_34 = &(param_1->base).model.base;
+  local_38 = 0;
+  local_18 = this_ptr;
   do {
     if (param_2 <= 0.0) {
 LAB_004744a5:
-      if (*(int *)&param_1[2].field_0x7c0c == 0) {
+      if (*(int *)param_1[1].base.base.actor_name == 0) {
         return;
       }
       goto LAB_00474ea4;
     }
-    iVar4 = *(int *)&param_1[2].field_0x7bbc;
-    if ((iVar4 == 1) || (*(int *)&param_1[2].field_0x7bec != 0)) {
+    iVar6 = param_1->action_pending;
+    if ((iVar6 == 1) || (param_1->target_actor != (CDemonActor *)0x0)) {
 LAB_00474546:
-      local_20 = 3;
-      iVar4 = local_20;
+      local_1c = 3;
+      iVar6 = local_1c;
     }
-    else if (iVar4 == 2) {
-      iVar4 = 0;
+    else if (iVar6 == 2) {
+      iVar6 = 0;
     }
-    else if (iVar4 == 3) {
-      local_18 = (float)core_charactr_cpp_FUN_00434590(param_1,6);
-      local_20 = 6;
-      iVar4 = local_20;
-      if ((float)_DAT_005da444 < local_18) {
-        fVar1 = param_2 * (float)_DAT_005da43c + *(float *)&param_1[2].field_0x7c1c;
-        *(float *)&param_1[2].field_0x7c1c = fVar1;
-        if (0x428C0000 < fVar1) {
-          *(float *)&param_1[2].field_0x7c1c = 0x428C0000;
+    else if (iVar6 == 3) {
+      fStack_14 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590
+                            (&param_1->base,6);
+      local_1c = 6;
+      iVar6 = local_1c;
+      if ((float)_DAT_005da444 < fStack_14) {
+        fVar3 = param_2 * (float)_DAT_005da43c + *(float *)(param_1[1].base.base.actor_name + 0x10);
+        *(float *)(param_1[1].base.base.actor_name + 0x10) = fVar3;
+        if (0x428C0000 < fVar3) {
+          *(float *)(param_1[1].base.base.actor_name + 0x10) = 0x428C0000;
         }
-        if (*(int *)&param_1[1].field_0x14 != 0) goto LAB_004744a5;
-        iVar4 = 0;
+        if ((param_1->player_input).action_state.fire != 0) goto LAB_004744a5;
+        iVar6 = 0;
       }
     }
     else {
-      if ((local_2c != 0) && (*(int *)&param_1[2].field_0x7bb4 == 0)) goto LAB_00474546;
-      if ((local_2c == 0) || (*(int *)&param_1[2].field_0x7bb4 != 1)) {
-        if ((local_2c == 0) && (*(int *)&param_1[2].field_0x7bb4 == 2)) {
-          local_20 = 10;
-          iVar4 = local_20;
+      if ((local_28 != 0) && (param_1->is_wearing_gas_mask == GAS_MASK_AWAY)) goto LAB_00474546;
+      if ((local_28 == 0) || (param_1->is_wearing_gas_mask != GAS_MASK_IN_HAND)) {
+        if ((local_28 == 0) && (param_1->is_wearing_gas_mask == GAS_MASK_ON_FACE)) {
+          local_1c = 10;
+          iVar6 = local_1c;
         }
         else {
-          if (((local_2c == 0) && (*(int *)&param_1[2].field_0x7bb4 == 1)) ||
-             ((local_28 != 0 && (*(int *)&param_1[2].field_0x7bb8 == 0)))) goto LAB_00474546;
-          if ((local_28 == 0) || (*(int *)&param_1[2].field_0x7bb8 != 1)) {
-            if ((local_28 == 0) && (*(int *)&param_1[2].field_0x7bb8 == 2)) {
-              local_20 = 0xb;
-              iVar4 = local_20;
+          if (((local_28 == 0) && (param_1->is_wearing_gas_mask == GAS_MASK_IN_HAND)) ||
+             ((local_24 != (CWeapon *)0x0 && (param_1->is_wearing_goggles == 0))))
+          goto LAB_00474546;
+          if ((local_24 == (CWeapon *)0x0) || (param_1->is_wearing_goggles != 1)) {
+            if ((local_24 == (CWeapon *)0x0) && (param_1->is_wearing_goggles == 2)) {
+              local_1c = 0xb;
+              iVar6 = local_1c;
             }
             else {
-              if ((local_28 == 0) && (*(int *)&param_1[2].field_0x7bb8 == 1)) goto LAB_00474546;
-              if (-1 < local_44) {
-                local_20 = local_44;
-                iVar4 = local_20;
+              if ((local_24 == (CWeapon *)0x0) && (param_1->is_wearing_goggles == 1))
+              goto LAB_00474546;
+              if (-1 < local_40) {
+                local_1c = local_40;
+                iVar6 = local_1c;
                 goto LAB_0047454e;
               }
-              iVar4 = *(int *)&param_1[2].field_0x7c64;
-              if (iVar4 != local_24) {
-                if (iVar4 == 0) {
-                  iVar4 = 0;
-                  if (local_24 != 0) {
-                    switch(*(uint *)(local_24 + 0x2e0)) {
-                    case 0:
-                    case 5:
-                      iVar4 = 1;
+              pCVar2 = (CCharacter *)param_1[1].base.base.orient_matrix.m[2].y;
+              if (pCVar2 != local_20) {
+                if (pCVar2 == (CCharacter *)0x0) {
+                  iVar6 = 0;
+                  if (local_20 != (CCharacter *)0x0) {
+                    switch((local_20->model).bone_origins[0x19].y) {
+                    case 0.0:
+                    case 7.00649e-45:
+                      iVar6 = 1;
                       break;
                     default:
 switchD_004749dc_caseD_1:
-                      iVar4 = 3;
+                      iVar6 = 3;
                       break;
-                    case 7:
-                    case 8:
-                      iVar4 = core_actor_cpp_castToClassHash_FUN_0040c600
-                                        (local_24,g_CMeleeClassInfo.name_hash);
-                      if ((iVar4 != 0) && (*(int *)(iVar4 + 0x588) != 0))
-                      goto switchD_004749dc_caseD_1;
-                      iVar4 = 0;
+                    case 9.80909e-45:
+                    case 1.12104e-44:
+                      pCVar10 = core_actor_cpp_castToClassHash_FUN_0040c600
+                                          (&local_20->base,g_CMeleeClassInfo.name_hash);
+                      if ((pCVar10 != (CDemonActor *)0x0) && (pCVar10[4].location.position.z != 0.0)
+                         ) goto switchD_004749dc_caseD_1;
+                      iVar6 = 0;
                     }
                   }
                 }
                 else {
-                  switch(*(uint *)(iVar4 + 0x2e0)) {
-                  case 0:
-                  case 5:
-                    iVar4 = 1;
+                  switch((pCVar2->model).bone_origins[0x19].y) {
+                  case 0.0:
+                  case 7.00649e-45:
+                    iVar6 = 1;
                     break;
                   default:
 switchD_00474a28_caseD_1:
-                    iVar4 = 3;
+                    iVar6 = 3;
                     break;
-                  case 7:
-                  case 8:
-                    iVar4 = core_actor_cpp_castToClassHash_FUN_0040c600
-                                      (iVar4,g_CMeleeClassInfo.name_hash);
-                    if ((iVar4 != 0) && (*(int *)(iVar4 + 0x588) != 0))
+                  case 9.80909e-45:
+                  case 1.12104e-44:
+                    pCVar10 = core_actor_cpp_castToClassHash_FUN_0040c600
+                                        ((CDemonActor *)pCVar2,g_CMeleeClassInfo.name_hash);
+                    if ((pCVar10 != (CDemonActor *)0x0) && (pCVar10[4].location.position.z != 0.0))
                     goto switchD_00474a28_caseD_1;
-                    iVar4 = 0;
+                    iVar6 = 0;
                   }
                 }
                 goto LAB_0047454e;
               }
-              if (*(int *)&param_1[2].field_0x7c64 == 0) {
+              fVar3 = param_1[1].base.base.orient_matrix.m[2].y;
+              if (fVar3 == 0.0) {
 switchD_00474955_caseD_3:
-                iVar4 = 0;
+                iVar6 = 0;
               }
               else {
-                switch(*(uint *)(*(int *)&param_1[2].field_0x7c64 + 0x2e0)) {
+                switch(*(uint *)((int)fVar3 + 0x2e0)) {
                 case 0:
                 case 5:
-                  iVar4 = 2;
+                  iVar6 = 2;
                   break;
                 case 1:
-                  iVar4 = 4;
+                  iVar6 = 4;
                   break;
                 case 2:
-                  iVar4 = 5;
+                  iVar6 = 5;
                   break;
                 default:
                   goto switchD_00474955_caseD_3;
                 case 4:
-                  iVar4 = 7;
+                  iVar6 = 7;
                   break;
                 case 7:
-                  iVar4 = 8;
+                  iVar6 = 8;
                   break;
                 case 9:
                 case 10:
-                  iVar4 = 0xe;
+                  iVar6 = 0xe;
                 }
               }
             }
           }
           else {
-            local_20 = 0xb;
-            iVar4 = local_20;
+            local_1c = 0xb;
+            iVar6 = local_1c;
           }
         }
       }
       else {
-        local_20 = 10;
-        iVar4 = local_20;
+        local_1c = 10;
+        iVar6 = local_1c;
       }
     }
 LAB_0047454e:
-    local_20 = iVar4;
-    local_30 = *(int *)&param_1->field_0x2c9c;
-    local_48 = core_charactr_cpp_CCharacter_advanceLayerAction_FUN_004340b0
-                         (param_1,&param_2,local_20);
-    iVar4 = *(int *)(&param_1->field_0x27f4 + *(int *)&param_1->field_0x2c98 * 0x38) * 0x120;
-    pCVar6 = core_motion_cpp_FUN_00524a00(local_38);
-    switch(*(uint *)&param_1->field_0x2c98) {
+    local_1c = iVar6;
+    local_2c = (param_1->base).layer_action_t;
+    local_44 = core_charactr_cpp_CCharacter_advanceLayerAction_FUN_004340b0
+                         (&param_1->base,&param_2,local_1c);
+    iVar6 = (param_1->base).layer_actions[(param_1->base).layer_action_index].motion_index;
+    pCVar8 = core_motion_cpp_CMotionController_getMotionList_FUN_00524a00(local_34);
+    switch((param_1->base).layer_action_index) {
     case 6:
       this_ptr_00 = (CDynamite *)
                     core_actor_cpp_castToClassHash_FUN_0040c600
-                              (*(uint *)&param_1[2].field_0x7c64,
+                              ((CDemonActor *)param_1[1].base.base.orient_matrix.m[2].y,
                                g_CDynamiteClassInfo.name_hash);
       if (((this_ptr_00 != (CDynamite *)0x0) &&
-          (iVar7 = core_dynamite_cpp_CDynamite_isFuseLit_FUN_00492690(this_ptr_00), iVar7 == 0)) &&
-         (local_18 = (float)(0xb / (longlong)*(int *)(pCVar6 + iVar4 + 0x1c8c)),
-         (float)(int)local_18 <= *(float *)&param_1->field_0x2c9c)) {
-        core_dynamite_cpp_FUN_00492640(this_ptr_00);
+          (iVar9 = core_dynamite_cpp_CDynamite_isFuseLit_FUN_00492690(this_ptr_00), iVar9 == 0)) &&
+         (fStack_14 = (float)(0xb / (longlong)pCVar8->motions[iVar6].frame_count),
+         (float)(int)fStack_14 <= (param_1->base).layer_action_t)) {
+        core_dynamite_cpp_CDynamite_lightFuse_FUN_00492640(this_ptr_00);
       }
       break;
     case 7:
-      if ((*(int *)&param_1[2].field_0x7bbc == 3) &&
-         (local_18 = (float)(0xb / (longlong)*(int *)(pCVar6 + iVar4 + 0x1c8c)),
-         (float)(int)local_18 <= *(float *)&param_1->field_0x2c9c)) {
+      if ((param_1->action_pending == 3) &&
+         (fStack_14 = (float)(0xb / (longlong)pCVar8->motions[iVar6].frame_count),
+         (float)(int)fStack_14 <= (param_1->base).layer_action_t)) {
         core_doc_cpp_FUN_004742a0(param_1);
-        local_74 = local_68;
-        *(uint *)((int)&stack0xffffff90 + (uint)bVar9 * 0xfffffffe * 4) =
-             *(uint *)(&stack0xffffff9c + (uint)bVar9 * -8);
-        *(uint *)(&stack0xffffff94 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =
-             *(uint *)(&stack0xffffffa0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
-        local_40 = core_actor_cpp_castToClassHash_FUN_0040c600
-                             (*(uint *)&param_1[2].field_0x7c64,g_CDynamiteClassInfo.name_hash
-                             );
-        local_34 = local_40;
-        if (local_40 != 0) {
-          core_actor_cpp_FUN_00408ac0(param_1,&stack0xffffff8c);
-          iVar4 = local_34;
-          puVar8 = (uint *)(local_34 + 0x57c);
-          local_80 = local_5c;
-          *(uint *)((int)&stack0xffffff84 + (uint)bVar9 * -8) =
-               *(uint *)(&stack0xffffffa8 + (uint)bVar9 * -8);
-          *(uint *)((int)&stack0xffffff88 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =
-               *(uint *)(&stack0xffffffac + (uint)bVar9 * -8 + (uint)bVar9 * -8);
-          if (puVar8 != &stack0xffffff80) {
-            *puVar8 = local_80;
-            *(uint *)(iVar4 + 0x580) = local_7c;
-            *(uint *)(iVar4 + 0x584) = local_78;
+        CStack_70.x = fStack_64;
+        *(CDemonActor **)((int)&CStack_70 + (uint)bVar12 * -8 + 4) = apCStack_60[(uint)bVar12 * -2];
+        *(CDemonActor **)((int)&CStack_70 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =
+             apCStack_60[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1];
+        local_3c = (CCharacter *)
+                   core_actor_cpp_castToClassHash_FUN_0040c600
+                             ((CDemonActor *)param_1[1].base.base.orient_matrix.m[2].y,
+                              g_CDynamiteClassInfo.name_hash);
+        local_30 = local_3c;
+        if (local_3c != (CCharacter *)0x0) {
+          core_actor_cpp_FUN_00408ac0(param_1,&CStack_70);
+          pCVar2 = local_30;
+          in_stack_ffffff84 = apCStack_60[2];
+          pCVar11 = (local_30->model).bone_origins + 0x51;
+          *(CDemonActor **)(&stack0xffffff88 + (uint)bVar12 * -8) =
+               apCStack_60[(uint)bVar12 * -2 + 3];
+          (&local_74)[(uint)bVar12 * -2 + (uint)bVar12 * -2] =
+               (float)apCStack_60[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 4];
+          if (pCVar11 != (CVector3f *)&stack0xffffff84) {
+            pCVar11->x = (float)in_stack_ffffff84;
+            (pCVar2->model).bone_origins[0x51].y = in_stack_ffffff88;
+            (pCVar2->model).bone_origins[0x51].z = local_74;
           }
-          (**(code **)(*(int *)(local_40 + 0x154) + 0xe4))(local_40);
-          *(uint *)&param_1[2].field_0x7c64 = 0;
+          (*(((local_3c->base).vtable._uc)->_uc).isGrabbable)(local_3c,in_stack_ffffff84);
+          param_1[1].base.base.orient_matrix.m[2].y = 0.0;
         }
-        if (*(int *)&param_1->field_0x2628 != 0) {
-          (**(code **)(*(int *)&param_1->field_0x154 + 0x128))(param_1,1,&stack0xffffff8c);
+        if ((param_1->base).carry_hands[1].carry_actor != (CDemonActor *)0x0) {
+          (*(((param_1->base).base.vtable._uc)->_uc).dropCarriedObject)(&param_1->base,1,&CStack_70)
+          ;
         }
-        *(uint *)&param_1[2].field_0x7bbc = 0;
-        *(uint *)&param_1[2].field_0x7c1c = 0x41200000;
+        param_1->action_pending = 0;
+        *(uint *)(param_1[1].base.base.actor_name + 0x10) = 0x41200000;
       }
-      if (1.0 <= *(float *)&param_1->field_0x2c9c) {
-        *(uint *)&param_1->field_0x2c98 = 0;
-        *(uint *)&param_1->field_0x2c9c = 0;
+      if (1.0 <= (param_1->base).layer_action_t) {
+        (param_1->base).layer_action_index = 0;
+        (param_1->base).layer_action_t = 0.0;
       }
       break;
     case 8:
-      if (((local_30 < 0x3f19999a) && (0x3f199999 < *(int *)&param_1->field_0x2c9c)) &&
-         (iVar4 = core_actor_cpp_FUN_0040c550
-                            (*(CDemonActor **)&param_1[2].field_0x7c64,"CShotgun"),
-         iVar4 != 0)) {
-        (**(code **)(*(int *)(*(int *)&param_1[2].field_0x7c64 + 0x154) + 0xd8))
-                  (*(int *)&param_1[2].field_0x7c64);
+      if ((((int)local_2c < 0x3f19999a) && (0x3f199999 < (int)(param_1->base).layer_action_t)) &&
+         (iVar6 = core_actor_cpp_isOfClass_FUN_0040c550
+                            ((CDemonActor *)param_1[1].base.base.orient_matrix.m[2].y,
+                             "CShotgun"), iVar6 != 0)) {
+        fVar3 = param_1[1].base.base.orient_matrix.m[2].y;
+        (**(code **)(*(int *)((int)fVar3 + 0x154) + 0xd8))(fVar3);
       }
       break;
     case 0xc:
-      if (((local_30 < 0x3ebd70a4) && (0x3ebd70a3 < *(int *)&param_1->field_0x2c9c)) &&
-         ((*(int *)&param_1[2].field_0x7c64 != 0 &&
-          (iVar4 = core_actor_cpp_castToClassHash_FUN_0040c600
-                             (*(int *)&param_1[2].field_0x7c64,g_CWeaponClassInfo.name_hash),
-          iVar4 != 0)))) {
-        if (*(int *)(iVar4 + 0x56c) == 9) {
-          (**(code **)(*(int *)(iVar4 + 0x154) + 0x78))(iVar4,8);
+      if ((((int)local_2c < 0x3ebd70a4) && (0x3ebd70a3 < (int)(param_1->base).layer_action_t)) &&
+         ((pCVar10 = (CDemonActor *)param_1[1].base.base.orient_matrix.m[2].y,
+          pCVar10 != (CDemonActor *)0x0 &&
+          (pCVar10 = core_actor_cpp_castToClassHash_FUN_0040c600
+                               (pCVar10,g_CWeaponClassInfo.name_hash), pCVar10 != (CDemonActor *)0x0
+          )))) {
+        if (*(int *)(pCVar10[4].actor_name + 0xc) == 9) {
+          (*((pCVar10->vtable)._ub)->processMeleeHit)(pCVar10,8);
         }
         else {
-          (**(code **)(*(int *)(iVar4 + 0x154) + 0x78))(iVar4,1);
+          (*((pCVar10->vtable)._ub)->processMeleeHit)(pCVar10,1);
         }
       }
       break;
     case 0xd:
-      if ((local_30 < 0x3f000000) && (0x3effffff < *(int *)&param_1->field_0x2c9c)) {
-        iVar4 = core_actor_cpp_castToClassHash_FUN_0040c600
-                          (*(uint *)&param_1[2].field_0x7c64,g_CWeaponClassInfo.name_hash);
-        if (iVar4 != 0) {
-          if (*(int *)(iVar4 + 0x56c) == 9) {
-            uVar10 = 8;
+      if (((int)local_2c < 0x3f000000) && (0x3effffff < (int)(param_1->base).layer_action_t)) {
+        pCVar10 = core_actor_cpp_castToClassHash_FUN_0040c600
+                            ((CDemonActor *)param_1[1].base.base.orient_matrix.m[2].y,
+                             g_CWeaponClassInfo.name_hash);
+        if (pCVar10 != (CDemonActor *)0x0) {
+          if (*(int *)(pCVar10[4].actor_name + 0xc) == 9) {
+            iVar6 = 8;
           }
           else {
-            uVar10 = 1;
+            iVar6 = 1;
           }
-          (**(code **)(*(int *)(iVar4 + 0x154) + 0x78))(iVar4,uVar10);
+          (*((pCVar10->vtable)._ub)->processMeleeHit)(pCVar10,iVar6);
         }
-        iVar4 = *(int *)&param_1[2].field_0x7c64;
-        if (iVar4 != 0) {
-          (**(code **)(*(int *)(iVar4 + 0x154) + 0x78))(iVar4,2);
+        fVar3 = param_1[1].base.base.orient_matrix.m[2].y;
+        if (fVar3 != 0.0) {
+          (**(code **)(*(int *)((int)fVar3 + 0x154) + 0x78))(fVar3,2);
         }
       }
       break;
     case 0x12:
-      if (((local_30 < 0x3f4ccccd) && (0x3f4ccccc < *(int *)&param_1->field_0x2c9c)) &&
-         (iVar4 = core_actor_cpp_FUN_0040c550
-                            (*(CDemonActor **)&param_1[2].field_0x7c64,"CRifle"),
-         iVar4 != 0)) {
-        (**(code **)(*(int *)(*(int *)&param_1[2].field_0x7c64 + 0x154) + 0xd8))
-                  (*(int *)&param_1[2].field_0x7c64);
+      if ((((int)local_2c < 0x3f4ccccd) && (0x3f4ccccc < (int)(param_1->base).layer_action_t)) &&
+         (iVar6 = core_actor_cpp_isOfClass_FUN_0040c550
+                            ((CDemonActor *)param_1[1].base.base.orient_matrix.m[2].y,
+                             "CRifle"), iVar6 != 0)) {
+        fVar3 = param_1[1].base.base.orient_matrix.m[2].y;
+        (**(code **)(*(int *)((int)fVar3 + 0x154) + 0xd8))(fVar3);
       }
     }
-    if (-1 < local_48) {
-      iVar4 = *(int *)&param_1[2].field_0x7c64;
-      if (iVar4 != local_24) {
-        if (iVar4 != 0) {
-          switch(*(uint *)(iVar4 + 0x2e0)) {
-          case 0:
-          case 5:
-            iVar4 = 1;
+    if (-1 < local_44) {
+      pCVar2 = (CCharacter *)param_1[1].base.base.orient_matrix.m[2].y;
+      if (pCVar2 != local_20) {
+        if (pCVar2 != (CCharacter *)0x0) {
+          switch((pCVar2->model).bone_origins[0x19].y) {
+          case 0.0:
+          case 7.00649e-45:
+            iVar6 = 1;
             break;
           default:
 switchD_00474d6b_caseD_1:
-            iVar4 = 3;
+            iVar6 = 3;
             break;
-          case 7:
-          case 8:
-            iVar4 = (CMelee *)core_actor_cpp_castToClassHash_FUN_0040c600(iVar4,g_CMeleeClassInfo.name_hash);
-            if ((iVar4 != 0) && (*(int *)(iVar4 + 0x588) != 0)) goto switchD_00474d6b_caseD_1;
-            iVar4 = 0;
+          case 9.80909e-45:
+          case 1.12104e-44:
+            pCVar10 = core_actor_cpp_castToClassHash_FUN_0040c600
+                                ((CDemonActor *)pCVar2,g_CMeleeClassInfo.name_hash);
+            if ((pCVar10 != (CDemonActor *)0x0) && (pCVar10[4].location.position.z != 0.0))
+            goto switchD_00474d6b_caseD_1;
+            iVar6 = 0;
           }
-          if (iVar4 == local_48) {
-            (**(code **)(*(int *)(*(int *)&param_1[2].field_0x7c64 + 0x154) + 0xdc))
-                      (*(int *)&param_1[2].field_0x7c64,1);
-            *(uint *)&param_1[2].field_0x7c64 = 0;
+          if (iVar6 == local_44) {
+            fVar3 = param_1[1].base.base.orient_matrix.m[2].y;
+            (**(code **)(*(int *)((int)fVar3 + 0x154) + 0xdc))(fVar3,1);
+            param_1[1].base.base.orient_matrix.m[2].y = 0.0;
           }
         }
-        if (*(int *)&param_1[2].field_0x7c0c != 0) {
-          if (local_24 == 0) {
+        if (*(int *)param_1[1].base.base.actor_name != 0) {
+          if (local_20 == (CCharacter *)0x0) {
 LAB_0047463c:
-            iVar4 = 0;
+            iVar6 = 0;
           }
           else {
-            switch(*(uint *)(local_24 + 0x2e0)) {
-            case 0:
-            case 5:
-              iVar4 = 1;
+            switch((local_20->model).bone_origins[0x19].y) {
+            case 0.0:
+            case 7.00649e-45:
+              iVar6 = 1;
               break;
-            case 7:
-            case 8:
-              iVar4 = core_actor_cpp_castToClassHash_FUN_0040c600
-                                (local_24,g_CMeleeClassInfo.name_hash);
-              if ((iVar4 == 0) || (*(int *)(iVar4 + 0x588) == 0)) goto LAB_0047463c;
+            case 9.80909e-45:
+            case 1.12104e-44:
+              pCVar10 = core_actor_cpp_castToClassHash_FUN_0040c600
+                                  (&local_20->base,g_CMeleeClassInfo.name_hash);
+              if ((pCVar10 == (CDemonActor *)0x0) || (pCVar10[4].location.position.z == 0.0))
+              goto LAB_0047463c;
             default:
-              iVar4 = 3;
+              iVar6 = 3;
             }
           }
-          if ((iVar4 == local_48) && (*(int *)&param_1[2].field_0x7c64 = local_24, local_24 != 0)) {
-            (**(code **)(*(int *)(local_24 + 0x154) + 0xdc))(local_24,2);
+          if ((iVar6 == local_44) &&
+             (param_1[1].base.base.orient_matrix.m[2].y = (float)local_20,
+             local_20 != (CCharacter *)0x0)) {
+            (*(((local_20->base).vtable._uc)->_uc).kill)
+                      (local_20,2,(CVector3f *)in_stack_ffffff84,in_stack_ffffff88);
           }
         }
       }
-      if ((*(int *)&param_1[2].field_0x7bbc == 1) && (local_48 == 3)) {
-        core_hero_cpp_FUN_004ec2c0((CHero *)param_1,1);
-        *(uint *)&param_1[2].field_0x7bbc = 0;
+      if ((param_1->action_pending == 1) && (local_44 == 3)) {
+        core_hero_cpp_CHero_addCarriedItemToInventory_FUN_004ec2c0(param_1,1);
+        param_1->action_pending = 0;
       }
-      if ((*(CDemonActor **)&param_1[2].field_0x7bec != (CDemonActor *)0x0) && (local_48 == 3)) {
-        core_inv_cpp_FUN_004f8d00(local_1c,*(CDemonActor **)&param_1[2].field_0x7bec,0);
+      if ((param_1->target_actor != (CDemonActor *)0x0) && (local_44 == 3)) {
+        core_inv_cpp_FUN_004f8d00(local_18,param_1->target_actor,0);
         core_mission_cpp_CDemonMission_addActorToList_FUN_0051b160
-                  (0x01D2C900,*(CDemonActor **)&param_1[2].field_0x7bec);
-        core_charactr_cpp_FUN_004325b0(param_1,1,*(uint *)&param_1[2].field_0x7bec,0,0);
-        iVar4 = core_actor_cpp_FUN_0040c550
-                          (*(CDemonActor **)&param_1[2].field_0x7bec,"CTrap");
-        if (iVar4 == 0) {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(local_38,0x19,1);
-          if (*(int *)&param_1[2].field_0x7bbc != 0) {
+                  (0x01D2C900,param_1->target_actor);
+        core_charactr_cpp_CCharacter_pickupObjectNow_FUN_004325b0
+                  (&param_1->base,1,(int)param_1->target_actor,0,0);
+        iVar6 = core_actor_cpp_isOfClass_FUN_0040c550(param_1->target_actor,"CTrap");
+        if (iVar6 == 0) {
+          core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(local_34,0x19,1);
+          if (param_1->action_pending != 0) {
             shape_edittool_cpp_FUN_00494340
-                      (g_CEditorToolsPtr,"actionPending = %d\ndoc.cpp line %d",
-                       *(int *)&param_1[2].field_0x7bbc,0x146a);
+                      (g_CEditorToolsPtr,"actionPending = %d\ndoc.cpp line %d",param_1->action_pending,
+                       0x146a);
           }
-          *(uint *)&param_1[2].field_0x7bbc = 2;
+          param_1->action_pending = 2;
         }
         else {
-          core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(local_38,0x17,1);
-          *(uint *)&param_1[2].field_0x7bbc = 6;
+          core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0(local_34,0x17,1);
+          param_1->action_pending = 6;
         }
-        *(uint *)&param_1[2].field_0x7bec = 0;
+        param_1->target_actor = (CDemonActor *)0x0;
       }
-      if (local_48 == 10) {
-        if (local_2c == 0) {
-          *(uint *)&param_1[2].field_0x7bb4 = 1;
-        }
-        else {
-          *(uint *)&param_1[2].field_0x7bb4 = 2;
-        }
-      }
-      else if ((local_48 == 3) && (*(int *)&param_1[2].field_0x7bb4 < 2)) {
-        if (local_2c == 0) {
-          *(uint *)&param_1[2].field_0x7bb4 = 0;
-        }
-        else {
-          *(uint *)&param_1[2].field_0x7bb4 = 1;
-        }
-      }
-      pCVar2 = g_CGamePtr;
-      if (local_48 == 0xb) {
+      if (local_44 == 10) {
         if (local_28 == 0) {
-          *(uint *)&param_1[2].field_0x7bb8 = 1;
+          param_1->is_wearing_gas_mask = GAS_MASK_IN_HAND;
         }
         else {
-          *(uint *)&param_1[2].field_0x7bb8 = 2;
+          param_1->is_wearing_gas_mask = GAS_MASK_ON_FACE;
         }
-        (*(code *)**(uint **)&pCVar2->field_0xb00)(pCVar2,local_28 != 0);
       }
-      else if ((local_48 == 3) && (*(int *)&param_1[2].field_0x7bb8 < 2)) {
+      else if ((local_44 == 3) && ((int)param_1->is_wearing_gas_mask < 2)) {
         if (local_28 == 0) {
-          *(uint *)&param_1[2].field_0x7bb8 = 0;
+          param_1->is_wearing_gas_mask = GAS_MASK_AWAY;
         }
         else {
-          *(uint *)&param_1[2].field_0x7bb8 = 1;
+          param_1->is_wearing_gas_mask = GAS_MASK_IN_HAND;
         }
       }
-      if ((*(int *)&param_1[2].field_0x7bbc == 7) && ((local_48 == 0 || (local_48 == 8)))) {
-        *(uint *)&param_1[2].field_0x7bbc = 0;
+      pCVar4 = g_CGamePtr;
+      if (local_44 == 0xb) {
+        if (local_24 == (CWeapon *)0x0) {
+          param_1->is_wearing_goggles = 1;
+        }
+        else {
+          param_1->is_wearing_goggles = 2;
+        }
+        (**(code **)pCVar4->vtable)(pCVar4,local_24 != (CWeapon *)0x0);
       }
-      core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_00434610(param_1,local_20);
+      else if ((local_44 == 3) && (param_1->is_wearing_goggles < 2)) {
+        if (local_24 == (CWeapon *)0x0) {
+          param_1->is_wearing_goggles = 0;
+        }
+        else {
+          param_1->is_wearing_goggles = 1;
+        }
+      }
+      if ((param_1->action_pending == 7) && ((local_44 == 0 || (local_44 == 8)))) {
+        param_1->action_pending = 0;
+      }
+      core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_00434610(&param_1->base,local_1c);
     }
-    local_3c = local_3c + 1;
-  } while (local_3c < 2);
-  if (*(int *)&param_1[2].field_0x7c0c == 0) {
+    local_38 = local_38 + 1;
+  } while (local_38 < 2);
+  if (*(int *)param_1[1].base.base.actor_name == 0) {
     return;
   }
 LAB_00474ea4:
-  iVar4 = core_actor_cpp_FUN_0040c550
-                    (*(CDemonActor **)&param_1[2].field_0x7c64,"CFlashlight");
-  if ((iVar4 != 0) && (*(int *)&g_CGamePtr->field_0x264 == 0)) {
-    *(uint *)&g_CGamePtr->field_0x264 = 1;
+  iVar6 = core_actor_cpp_isOfClass_FUN_0040c550
+                    ((CDemonActor *)param_1[1].base.base.orient_matrix.m[2].y,"CFlashlight"
+                    );
+  if ((iVar6 != 0) && (g_CGamePtr->flashlight_active == 0)) {
+    g_CGamePtr->flashlight_active = 1;
     return;
   }
   return;

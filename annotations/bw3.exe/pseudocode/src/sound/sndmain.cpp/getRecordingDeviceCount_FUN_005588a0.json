@@ -16,12 +16,6 @@
   },
   "cross_references": [
     {
-      "addr": "00559220",
-      "from_addr": "005592a2",
-      "name": "sound_sndmain.cpp_FUN_00559220",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00558960",
       "from_addr": "00558968",
       "name": "sound_sndmain.cpp_findBestRecordingDevice_FUN_00558960",
@@ -31,6 +25,12 @@
       "addr": "00558900",
       "from_addr": "00558907",
       "name": "sound_sndmain.cpp_getRecordingDeviceInfo_FUN_00558900",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00559220",
+      "from_addr": "005592a2",
+      "name": "sound_sndmain.cpp_readIni_FUN_00559220",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -54,14 +54,14 @@
   },
   "function_calls": [
     {
-      "addr": "00556fd0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00556fd0"
-    },
-    {
       "addr": "00558e90",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00558e90"
+      "name": "sound_sndmain.cpp_lockSound_FUN_00558e90"
+    },
+    {
+      "addr": "00556fd0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_unlockSound_FUN_00556fd0"
     },
     {
       "addr": "0055e590",
@@ -111,6 +111,26 @@
     },
     "pcode_op_count": 139
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00552d00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00575730",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005ab720",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -149,7 +169,7 @@
       "line": 17,
       "match": "DAT_00604254",
       "severity": "mild",
-      "text": "(iVar2,DAT_00604254 * 0x108 + 0x2cf3428);",
+      "text": "(device_id,(SRecordingDeviceInfo *)(DAT_00604254 * 0x108 + 0x2cf3428));",
       "type": "undefined_data"
     },
     {

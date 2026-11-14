@@ -4,13 +4,15 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBoxActor.h"
 
 // Structure: CParticleBox
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 2008
 // Ghidra size: 0x7d8 (2008 bytes)
 #pragma pack(push, 1)
 typedef struct CParticleBox {
-    char field_0[2008]; // 0x0
+    CBoxActor base; // 0x0, derived
+    float emit_timer; // 0x7d4, process 005ac960 counts down by dt, reloads 0.05 and emits particles
 } CParticleBox;
 #pragma pack(pop)
 

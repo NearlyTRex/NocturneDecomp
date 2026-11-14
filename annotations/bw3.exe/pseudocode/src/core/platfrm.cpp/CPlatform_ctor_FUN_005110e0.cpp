@@ -1,93 +1,96 @@
 // Name: core_platfrm.cpp_CPlatform_ctor_FUN_005110e0
 // Address: 005110e0
 // Address Range: [[005110e0, 005112a2]]
-// Convention: unknown
-// Signature: CPlatform * core_platfrm_cpp_CPlatform_ctor_FUN_005110e0(CPlatform *this_ptr)
+// Convention: __cdecl
+// Signature: CPlatform * __cdecl core_platfrm_cpp_CPlatform_ctor_FUN_005110e0(CPlatform *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CPlatform * core_platfrm_cpp_CPlatform_ctor_FUN_005110e0(CPlatform *this_ptr)
+CPlatform * __cdecl core_platfrm_cpp_CPlatform_ctor_FUN_005110e0(CPlatform *this_ptr)
 
 {
-  CDemonActor *pCVar1;
-  CKeyFramedModelInstance *pCVar2;
-  CCourse *pCVar3;
-  CPlatform *pCVar4;
-  CCourse *pCVar6;
-  CCourse *pCVar7;
-  byte bVar8;
+  CCourse *pCVar1;
+  int iVar2;
+  CDemonActor *pCVar3;
+  CKeyFramedModelInstance *pCVar4;
+  CCourse *pCVar5;
+  int *piVar6;
+  uint *puVar7;
+  uint *puVar8;
+  uint *puVar9;
+  uint *puVar10;
+  byte bVar11;
   uint auStackY_17ec [509];
-  uint auStackY_ff8 [1014];
-  uint uStack_10;
-  byte *puVar5;
+  CCourseFrame *apCStackY_ff8 [1014];
+  CCourseFrame *pCStack_10;
   
-  bVar8 = 0;
-  pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_00408600((CDemonActor *)this_ptr);
-  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00462500
-                     ((CKeyFramedModelInstance *)(pCVar1 + 1));
-  pCVar3 = core_course_cpp_CCourse_ctor_FUN_004448d0((CCourse *)&pCVar2[1].field_0x3c);
-  *(byte **)(pCVar3 + -0x1bc) = &g_CPlatformVTable;
+  bVar11 = 0;
+  pCVar3 = core_actor_cpp_CDemonActor_ctor_FUN_00408600(&this_ptr->base);
+  pCVar4 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00462500
+                     ((CKeyFramedModelInstance *)(pCVar3 + 1));
+  pCVar5 = core_course_cpp_CCourse_ctor_FUN_004448d0
+                     ((CCourse *)(pCVar4[1].part_visibility_flags + 0xf));
+  pCVar5[-0x25].len = (int)&g_CPlatformVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
-            ((CKeyFramedModelInstance *)(pCVar3 + -0x1b8),"question.kfm");
-  pCVar3[0x44] = (CCourse)0x0;
-  pCVar3[0xa8] = (CCourse)0x0;
-  pCVar3[0x10c] = (CCourse)0x0;
-  pCVar3[0x170] = (CCourse)0x0;
-  pCVar3[0x184] = (CCourse)0x0;
-  pCVar3[0x198] = (CCourse)0x0;
-  *(uint *)(pCVar3 + -0x3c) = 0;
-  *(uint *)(pCVar3 + -0x34) = 0;
-  *(uint *)(pCVar3 + -0x24) = 0x40000000;
-  *(uint *)(pCVar3 + -0x28) = 0x40000000;
-  *(uint *)(pCVar3 + -0x38) = 0;
-  pCVar6 = pCVar3 + 0x18;
-  pCVar3[-0x20] = (CCourse)0x0;
-  if (pCVar6 != pCVar3 + -0x2f0) {
-    *(uint *)pCVar6 = *(uint *)(pCVar3 + -0x2f0);
-    *(uint *)(pCVar3 + 0x1c) = *(uint *)(pCVar3 + -0x2ec);
-    *(uint *)(pCVar3 + 0x20) = *(uint *)(pCVar3 + -0x2e8);
+            ((CKeyFramedModelInstance *)&pCVar5[-0x25].frames,"question.kfm");
+  *(byte *)&pCVar5[5].loop = 0;
+  *(byte *)&pCVar5[0xe].len = 0;
+  *(byte *)&pCVar5[0x16].frames = 0;
+  *(byte *)&pCVar5[0x1e].loop = 0;
+  *(byte *)&pCVar5[0x20].frames = 0;
+  *(byte *)&pCVar5[0x22].len = 0;
+  pCVar5[-5].len = 0;
+  pCVar5[-5].loop = 0;
+  pCVar5[-3].len = 0x40000000;
+  pCVar5[-4].loop = 0x40000000;
+  pCVar5[-5].frames = (CCourseFrame *)0x0;
+  pCVar1 = pCVar5 + 2;
+  *(byte *)&pCVar5[-3].frames = 0;
+  if (pCVar1 != (CCourse *)&pCVar5[-0x3f].frames) {
+    pCVar1->len = (int)pCVar5[-0x3f].frames;
+    pCVar5[2].frames = (CCourseFrame *)pCVar5[-0x3f].loop;
+    pCVar5[2].loop = pCVar5[-0x3e].len;
   }
-  if (pCVar3 + 0xc != pCVar6) {
-    *(uint *)(pCVar3 + 0xc) = *(uint *)pCVar6;
-    *(uint *)(pCVar3 + 0x10) = *(uint *)(pCVar3 + 0x1c);
-    *(uint *)(pCVar3 + 0x14) = *(uint *)(pCVar3 + 0x20);
+  if (pCVar5 + 1 != pCVar1) {
+    pCVar5[1].len = pCVar1->len;
+    pCVar5[1].frames = pCVar5[2].frames;
+    pCVar5[1].loop = pCVar5[2].loop;
   }
-  core_xform_cpp_FUN_005860b0(pCVar3 + -0x2e0);
-  pCVar6 = pCVar3 + (uint)bVar8 * -8 + 0x38;
-  *(uint *)(pCVar3 + 0x34) = uStack_10;
-  *(uint *)pCVar6 = *(uint *)(&stack0xfffffff4 + (uint)bVar8 * -8);
-  *(uint *)(pCVar6 + (uint)bVar8 * -8 + 4) =
-       *(uint *)(&stack0xfffffff8 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
-  *(uint *)(pCVar6 + (uint)bVar8 * -8 + 4 + (uint)bVar8 * -8 + 4) =
+  core_xform_cpp_FUN_005860b0(&pCVar5[-0x3e].loop);
+  puVar7 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x38);
+  pCVar5[4].frames = pCStack_10;
+  puVar8 = puVar7 + (uint)bVar11 * -2 + 1;
+  *puVar7 = *(uint *)(&stack0xfffffff4 + (uint)bVar11 * -8);
+  *puVar8 = *(uint *)(&stack0xfffffff8 + (uint)bVar11 * -8 + (uint)bVar11 * -8);
+  puVar8[(uint)bVar11 * -2 + 1] =
        *(uint *)
-        ((int)(&stack0xfffffff8 + (uint)bVar8 * -8 + (uint)bVar8 * -8) + ((uint)bVar8 * -2 + 1) * 4)
-  ;
-  pCVar7 = pCVar3 + (uint)bVar8 * -8 + 0x28;
-  pCVar6 = pCVar3 + (uint)bVar8 * -8 + 0x38;
-  *(uint *)(pCVar3 + 0x24) = *(uint *)(pCVar3 + 0x34);
-  *(uint *)pCVar7 = *(uint *)pCVar6;
-  *(uint *)(pCVar7 + (uint)bVar8 * -8 + 4) = *(uint *)(pCVar6 + (uint)bVar8 * -8 + 4);
-  *(uint *)(pCVar7 + (uint)bVar8 * -8 + 4 + (uint)bVar8 * -8 + 4) =
-       *(uint *)(pCVar6 + (uint)bVar8 * -8 + 4 + (uint)bVar8 * -8 + 4);
-  *(uint *)(pCVar3 + 0x1b0) = 0;
-  *(uint *)(pCVar3 + 0x1b4) = 0;
-  *(uint *)(pCVar3 + 0x1b8) = 0;
-  pCVar3[0x1bc] = (CCourse)0x0;
-  *(uint *)(pCVar3 + 0x414) = 0;
-  *(uint *)(pCVar3 + -0x2ac) = 0x32;
-  *(uint *)(pCVar3 + 0x1fc) = 0;
-  *(uint *)(pCVar3 + -0x30) = 0;
-  *(uint *)(pCVar3 + -0x2c) = 0;
-  pCVar4 = (CPlatform *)(pCVar3 + -0x310);
+        ((int)(&stack0xfffffff8 + (uint)bVar11 * -8 + (uint)bVar11 * -8) +
+        ((uint)bVar11 * -2 + 1) * 4);
+  puVar9 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x28);
+  puVar7 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x38);
+  pCVar5[3].len = (int)pCVar5[4].frames;
+  puVar10 = puVar9 + (uint)bVar11 * -2 + 1;
+  puVar8 = puVar7 + (uint)bVar11 * -2 + 1;
+  *puVar9 = *puVar7;
+  *puVar10 = *puVar8;
+  puVar10[(uint)bVar11 * -2 + 1] = puVar8[(uint)bVar11 * -2 + 1];
+  pCVar5[0x24].len = 0;
+  pCVar5[0x24].frames = (CCourseFrame *)0x0;
+  pCVar5[0x24].loop = 0;
+  *(byte *)&pCVar5[0x25].len = 0;
+  pCVar5[0x57].len = 0;
+  pCVar5[-0x39].len = 0x32;
+  pCVar5[0x2a].frames = (CCourseFrame *)0x0;
+  pCVar5[-4].len = 0;
+  pCVar5[-4].frames = (CCourseFrame *)0x0;
+  piVar6 = &pCVar5[-0x42].loop;
   do {
-    puVar5 = &pCVar4->field_0x34;
-    *(uint *)&pCVar4->field_0x51c = 0;
-    pCVar4 = (CPlatform *)puVar5;
-  } while ((CCourse *)puVar5 != pCVar3 + -0x108);
-  *(uint *)(pCVar3 + 0x204) = 0;
-  *(uint *)(pCVar3 + 0x208) = 1;
-  *(uint *)(pCVar3 + 0x200) = 0;
-  return (CPlatform *)(pCVar3 + -0x310);
+    iVar2 = (int)(piVar6 + 0xd);
+    piVar6[0x147] = 0;
+    piVar6 = (int *)iVar2;
+  } while ((CCourse *)iVar2 != pCVar5 + -0x16);
+  pCVar5[0x2b].len = 0;
+  pCVar5[0x2b].frames = (CCourseFrame *)0x1;
+  pCVar5[0x2a].loop = 0;
+  return (CPlatform *)&pCVar5[-0x42].loop;
 }

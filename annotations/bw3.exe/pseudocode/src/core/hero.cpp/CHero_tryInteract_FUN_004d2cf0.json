@@ -1,0 +1,336 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 132,
+    "complexity_score": 264,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 89,
+    "suspect_count": 14,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "stack_alignment_array",
+      "stack_param",
+      "unaffected_reg",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 221
+  },
+  "cross_references": [
+    {
+      "addr": "004c07b0",
+      "from_addr": "004c479f",
+      "name": "core_game.cpp_FUN_004c07b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d4900",
+      "from_addr": "004d497c",
+      "name": "core_hero.cpp_FUN_004d4900",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d2cf0",
+    "address_range": [
+      [
+        "004d2cf0",
+        "004d2e93"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_hero.cpp_CHero_tryInteract_FUN_004d2cf0",
+    "signature": "int __cdecl core_hero_cpp_CHero_tryInteract_FUN_004d2cf0(CHero *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408b80",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408b80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c4d01",
+      "name": "DAT_005c4d01",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00603b28",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01ed78c8"
+    },
+    {
+      "addr": "02024a2c",
+      "name": "g_CDemonSetInstance.actor_count",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02024a30",
+      "name": "g_CDemonSetInstance.actors[0]",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004c479f",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004c07b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004d497c",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_FUN_004d4900",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.170731707317073,
+    "instruction_count": 123,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 3,
+      "BRANCH": 2,
+      "CALL": 1,
+      "CALLIND": 2,
+      "CBRANCH": 4,
+      "COPY": 317,
+      "FLOAT2FLOAT": 20,
+      "FLOAT_ADD": 3,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 4,
+      "INT2FLOAT": 1,
+      "INT_ADD": 85,
+      "INT_AND": 38,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 27,
+      "INT_LEFT": 8,
+      "INT_LESS": 3,
+      "INT_MULT": 22,
+      "INT_NOTEQUAL": 11,
+      "INT_OR": 10,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 13,
+      "INT_SUB": 38,
+      "INT_XOR": 3,
+      "INT_ZEXT": 28,
+      "LOAD": 39,
+      "POPCOUNT": 13,
+      "RETURN": 1,
+      "STORE": 42
+    },
+    "pcode_op_count": 759
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004eb090",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004f2af0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5847
+    },
+    "nocturne.exe": {
+      "addr": "004b4e90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5847
+    }
+  },
+  "stack_frame": {
+    "frame_size": 172,
+    "local_size": 168,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_a4",
+        "offset": -164,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHero *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004d2cfc",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "float unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "CDemonActor *unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 15,
+      "match": "afStackY_1054",
+      "severity": "moderate",
+      "text": "float afStackY_1054 [18];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 16,
+      "match": "apCStackY_100c",
+      "severity": "moderate",
+      "text": "CDemonActor *apCStackY_100c [983];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_ffffff58",
+      "severity": "moderate",
+      "text": "CBoundingBox3D *in_stack_ffffff58;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_ffffff58",
+      "severity": "moderate",
+      "text": "(*((this_ptr->base).base.vtable._ub)->getBoundingBox)((CDemonActor *)this_ptr,in_stack_ffffff58);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 79,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "apCStack_18[0] = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 83,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "if ((0.0 <= fStack_a0) && (fStack_a0 < unaff_EBX)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 85,
+      "match": "(CDemonActor **)((int)pCVar1",
+      "severity": "moderate",
+      "text": "this_ptr->hero_action_actor = *(CDemonActor **)((int)pCVar1->actors + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 87,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "this_ptr->hero_action_target = unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 88,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX = fStack_a0;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Pointer value `pCVar1->actors` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 85,
+      "match": "(int)pCVar1->actors",
+      "severity": "moderate",
+      "text": "this_ptr->hero_action_actor = *(CDemonActor **)((int)pCVar1->actors + iVar2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 48,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

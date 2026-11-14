@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_sndmain_cpp_getMaxSwLatency_FUN_00553600(void)
+; float __cdecl sound_sndmain_cpp_getMaxSwLatency_FUN_00553600(void)
 ;
 ;
 ; XREF[4]:
 ;   sound_snddx.cpp_FUN_00555560 at 00555821
-;   sound_sndmain.cpp_FUN_00553680 at 005537ac
-;   sound_sndmain.cpp_FUN_00553980 at 00553a7c
+;   sound_sndmain.cpp_readIni_FUN_00553680 at 005537ac
+;   sound_sndmain.cpp_writeIni_FUN_00553980 at 00553a7c
 ;   sound_sndwav.cpp_CWavOutDevice_setMode_FUN_00557f00 at 00557f45
 ;
 ; Referenced Globals:

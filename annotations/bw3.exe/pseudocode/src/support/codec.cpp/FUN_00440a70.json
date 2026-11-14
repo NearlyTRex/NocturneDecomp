@@ -2,19 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 200,
+    "complexity_score": 298,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 35,
-    "suspect_count": 15,
+    "pseudocode_lines": 38,
+    "suspect_count": 23,
     "suspect_types": [
+      "concat_reconstruction",
+      "extra_output",
       "undefined_data",
+      "undefined_type",
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 141
+    "total_lines": 144
   },
   "cross_references": [],
   "function": {
@@ -27,38 +30,38 @@
     ],
     "convention": "unknown",
     "name": "support_codec.cpp_FUN_00440a70",
-    "signature": "undefined4 support_codec_cpp_FUN_00440a70(int *param_1,undefined4 param_2,undefined4 param_3)"
+    "signature": "undefined4 support_codec_cpp_FUN_00440a70(int *param_1,char *param_2,char *param_3)"
   },
   "function_calls": [
+    {
+      "addr": "00573920",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_ctorOpen_FUN_00573920"
+    },
+    {
+      "addr": "00573a40",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_dtor_FUN_00573a40"
+    },
+    {
+      "addr": "00573d60",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_isOpen_FUN_00573d60"
+    },
+    {
+      "addr": "005747e0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_COutStreamFile_ctorOpen_FUN_005747e0"
+    },
     {
       "addr": "00574850",
       "is_variadic": false,
       "name": "support_trstream.cpp_COutStreamFile_dtor_FUN_00574850"
     },
     {
-      "addr": "005747e0",
-      "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_005747e0"
-    },
-    {
       "addr": "00574980",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_00574980"
-    },
-    {
-      "addr": "00573a40",
-      "is_variadic": false,
-      "name": "unkafter_turret.cpp_CInStreamFile_dtor_FUN_00573a40"
-    },
-    {
-      "addr": "00573920",
-      "is_variadic": false,
-      "name": "unkafter_turret.cpp_FUN_00573920"
-    },
-    {
-      "addr": "00573d60",
-      "is_variadic": false,
-      "name": "unkafter_turret.cpp_FUN_00573d60"
+      "name": "support_trstream.cpp_COutStreamFile_isOpen_FUN_00574980"
     }
   ],
   "globals": [
@@ -105,6 +108,14 @@
     },
     "pcode_op_count": 369
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00442e10",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -119,7 +130,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint support_codec_cpp_FUN_00440a70(int *param_1,uint param_2,uint param_3)",
+      "text": "uint support_codec_cpp_FUN_00440a70(int *param_1,char *param_2,char *param_3)",
       "type": "unnamed_param"
     },
     {
@@ -127,7 +138,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint support_codec_cpp_FUN_00440a70(int *param_1,uint param_2,uint param_3)",
+      "text": "uint support_codec_cpp_FUN_00440a70(int *param_1,char *param_2,char *param_3)",
       "type": "unnamed_param"
     },
     {
@@ -135,36 +146,84 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "uint support_codec_cpp_FUN_00440a70(int *param_1,uint param_2,uint param_3)",
+      "text": "uint support_codec_cpp_FUN_00440a70(int *param_1,char *param_2,char *param_3)",
       "type": "unnamed_param"
     },
     {
+      "description": "Unresolved type",
+      "line": 6,
+      "match": "undefined3 extraout_var",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 6,
+      "match": "extraout_var",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved type",
+      "line": 7,
+      "match": "undefined3 extraout_var_00",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var_00;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 7,
+      "match": "extraout_var_00",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var_00;",
+      "type": "extra_output"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 13,
       "match": "param_2",
       "severity": "mild",
-      "text": "unkafter_turret_cpp_FUN_00573920(&CStack_38,param_2,1);",
+      "text": "support_trstream_cpp_CInStreamFile_ctorOpen_FUN_00573920(&CStack_38,param_2,1);",
       "type": "unnamed_param"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 15,
+      "match": "extraout_var",
+      "severity": "moderate",
+      "text": "if (CONCAT31(extraout_var,bVar1) == 0) {",
+      "type": "extra_output"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 19,
       "match": "param_3",
       "severity": "mild",
-      "text": "support_trstream_cpp_FUN_005747e0(&CStack_c,param_3,&DAT_005b92c5);",
+      "text": "support_trstream_cpp_COutStreamFile_ctorOpen_FUN_005747e0(&CStack_c,param_3,&DAT_005b92c5);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 19,
       "match": "DAT_005b92c5",
       "severity": "mild",
-      "text": "support_trstream_cpp_FUN_005747e0(&CStack_c,param_3,&DAT_005b92c5);",
+      "text": "support_trstream_cpp_COutStreamFile_ctorOpen_FUN_005747e0(&CStack_c,param_3,&DAT_005b92c5);",
       "type": "undefined_data"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 21,
+      "match": "extraout_var_00",
+      "severity": "moderate",
+      "text": "if (CONCAT31(extraout_var_00,bVar1) == 0) {",
+      "type": "extra_output"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 23,
+      "line": 26,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*param_1 + 4))(param_1);",
@@ -172,7 +231,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*param_1 + 4))(param_1);",
@@ -180,7 +239,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*param_1 + 4))(param_1);",
@@ -188,64 +247,80 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 24,
+      "line": 27,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*param_1 + 8))(param_1,&CStack_38,&CStack_c);",
+      "text": "iVar2 = (**(code **)(*param_1 + 8))(param_1,&CStack_38,&CStack_c);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = (**(code **)(*param_1 + 8))(param_1,&CStack_38,&CStack_c);",
+      "text": "iVar2 = (**(code **)(*param_1 + 8))(param_1,&CStack_38,&CStack_c);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = (**(code **)(*param_1 + 8))(param_1,&CStack_38,&CStack_c);",
+      "text": "iVar2 = (**(code **)(*param_1 + 8))(param_1,&CStack_38,&CStack_c);",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 26,
+      "line": 29,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*param_1 + 0xc))(param_1,&CStack_c);",
+      "text": "iVar2 = (**(code **)(*param_1 + 0xc))(param_1,&CStack_c);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = (**(code **)(*param_1 + 0xc))(param_1,&CStack_c);",
+      "text": "iVar2 = (**(code **)(*param_1 + 0xc))(param_1,&CStack_c);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = (**(code **)(*param_1 + 0xc))(param_1,&CStack_c);",
+      "text": "iVar2 = (**(code **)(*param_1 + 0xc))(param_1,&CStack_c);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 15,
+      "match": "CONCAT31",
+      "severity": "moderate",
+      "text": "if (CONCAT31(extraout_var,bVar1) == 0) {",
+      "type": "concat_reconstruction"
+    },
+    {
+      "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 21,
+      "match": "CONCAT31",
+      "severity": "moderate",
+      "text": "if (CONCAT31(extraout_var_00,bVar1) == 0) {",
+      "type": "concat_reconstruction"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
-        "offset": 20,
-        "vtable_addr": "005dd52c"
+        "class_name": "CCheesyCipher",
+        "offset": 28,
+        "vtable_addr": "005dd524"
       },
       {
-        "class_name": "Unknown",
-        "offset": 20,
-        "vtable_addr": "005dd43c"
+        "class_name": "CCodec",
+        "offset": 28,
+        "vtable_addr": "005dd434"
       },
       {
         "class_name": "CLZWCompress",

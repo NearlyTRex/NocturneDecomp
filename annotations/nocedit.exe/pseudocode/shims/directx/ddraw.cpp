@@ -19,6 +19,7 @@
 
 #include "core/debug_log.h"
 #include "directx/ddraw.h"
+#include "gl/display_settings.h"
 #include "gl/gl_present.h"
 #include "gl/window_mode.h"
 #include "shim_config.h"
@@ -76,6 +77,7 @@ struct DDraw_ShimData {
     IDirectDraw_vtable vtable_data;
     SDL_Window *window;
     SDL_Renderer *renderer;
+    int renderer_vsync; // whether the renderer waits for the display
     HWND cooperative_hwnd;
     DWORD cooperative_level;
     int display_width;
@@ -352,10 +354,14 @@ static HRESULT ddraw_SetDisplayMode(IDirectDraw *this_ptr, DWORD requested_width
         if (nocturne_gl_init(ddraw->window)) {
             nocturne_gl_set_logical_size(width, height);
         } else {
-            ddraw->renderer = SDL_CreateRenderer(
-                ddraw->window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+            const int vsync = nocturne_vsync_get();
+            ddraw->renderer = SDL_CreateRenderer(ddraw->window, -1,
+                                                 SDL_RENDERER_ACCELERATED |
+                                                     (vsync != 0 ? SDL_RENDERER_PRESENTVSYNC : 0u));
+            ddraw->renderer_vsync = vsync;
             if (!ddraw->renderer) {
                 ddraw->renderer = SDL_CreateRenderer(ddraw->window, -1, 0);
+                ddraw->renderer_vsync = 0;
             }
             if (!ddraw->renderer)
                 return DDERR_GENERIC;
@@ -405,6 +411,12 @@ static void present_surface(SDL_Surface *surface, SDL_Texture *texture, DDraw_Sh
         nocturne_gl_present_framebuffer(surface->pixels, surface->w, surface->h, surface->pitch,
                                         surface->format->BitsPerPixel);
     } else if (texture) {
+        // [Graphics] vsync, asked each frame so the Options line takes at once.
+        const int vsync = nocturne_vsync_get();
+        if (vsync != ddraw->renderer_vsync) {
+            SDL_RenderSetVSync(ddraw->renderer, vsync);
+            ddraw->renderer_vsync = vsync;
+        }
         SDL_UpdateTexture(texture, nullptr, surface->pixels, surface->pitch);
         SDL_RenderClear(ddraw->renderer);
         SDL_RenderCopy(ddraw->renderer, texture, nullptr, nullptr);

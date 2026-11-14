@@ -4,13 +4,18 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CHero.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CHaystack
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x1ffc4 (131012 bytes)
 #pragma pack(push, 1)
 typedef struct CHaystack {
-    char field_0[131012]; // 0x0
+    CHero base; // 0x0
+    int guns_drawn; // 0x1ffac
+    int attack_side; // 0x1ffb0
+    CVector3f head_look_euler; // 0x1ffb4
+    float head_look_blend_weight; // 0x1ffc0
 } CHaystack;
 #pragma pack(pop)
 

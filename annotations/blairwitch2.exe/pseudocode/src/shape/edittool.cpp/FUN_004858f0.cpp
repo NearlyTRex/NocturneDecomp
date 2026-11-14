@@ -9,5 +9,5 @@
 int __cdecl shape_edittool_cpp_FUN_004858f0(CStrList *this_ptr)
 
 {
-  return *(int *)this_ptr;
+  return this_ptr->item_count;
 }

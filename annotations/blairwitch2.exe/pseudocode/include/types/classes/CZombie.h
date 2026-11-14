@@ -2,15 +2,38 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+struct CDoor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
 
 // Structure: CZombie
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x10be8 (68584 bytes)
 #pragma pack(push, 1)
 typedef struct CZombie {
-    char field_0[68584]; // 0x0
+    CEnemy base; // 0x0
+    float pickup_range_factor; // 0x10af8
+    int pickup_seed; // 0x10afc
+    float pickup_scan_timer; // 0x10b00
+    float pickup_approach_progress; // 0x10b04
+    struct CDemonActor* pickup_target; // 0x10b08
+    int object_shape_class; // 0x10b0c
+    struct CDemonActor* grave_actor; // 0x10b10
+    struct CDoor* target_door; // 0x10b14
+    char rise_from_grave_condition[100]; // 0x10b18
+    int is_miner_zombie; // 0x10b7c
+    int always_chase_fast; // 0x10b80
+    int is_female; // 0x10b84
+    int bone_indices[11]; // 0x10b88
+    int part_indices[7]; // 0x10bb4
+    float pain_cooldown; // 0x10bd0
+    float bleedout_timer; // 0x10bd4
+    uint sfx_handles[2]; // 0x10bd8
+    float rise_delay; // 0x10be0
+    float buried_timer; // 0x10be4
 } CZombie;
 #pragma pack(pop)
 

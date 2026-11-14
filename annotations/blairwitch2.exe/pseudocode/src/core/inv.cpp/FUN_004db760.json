@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 86,
-    "complexity_score": 214,
+    "complexity_score": 159,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 39,
-    "suspect_count": 15,
+    "suspect_count": 10,
     "suspect_types": [
       "shadow_pointer_walk",
-      "unnamed_field",
       "unnamed_param",
-      "unresolved_funcptr",
+      "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
     "total_lines": 125
@@ -45,7 +44,7 @@
     {
       "addr": "0040e240",
       "is_variadic": false,
-      "name": "core_ammo.cpp_FUN_0040e240"
+      "name": "core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040e240"
     },
     {
       "addr": "004dadb0",
@@ -60,7 +59,7 @@
     {
       "addr": "005b8be2",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b8be2"
+      "name": "crt_memory.c_operator_new_FUN_005b8be2"
     }
   ],
   "globals": [
@@ -157,32 +156,16 @@
       "line": 25,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x470 = *(uint *)(param_2 + 0x6c4);",
+      "text": "this_ptr->ammo_count = *(int *)(param_2 + 0x6c4);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x470",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x470 = *(uint *)(param_2 + 0x6c4);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 26,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x474 = *(uint *)(param_2 + 0x6c8);",
+      "text": "this_ptr->ammo_type = *(EAmmoType *)(param_2 + 0x6c8);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x474",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x474 = *(uint *)(param_2 + 0x6c8);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -193,38 +176,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 29,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x2b0 + 8))(this_ptr);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x2b0 + 8))(this_ptr);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x1",
-      "severity": "mild",
-      "text": "pCVar2->field_0x1 = cVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x2",
-      "severity": "mild",
-      "text": "pCVar2 = (CAmmo *)&pCVar2->field_0x2;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 41,
       "match": "param_1",
@@ -233,11 +184,19 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar2->owner`). Replace `pCVar2->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 39,
-      "match": "pCVar2 = (T *)&pCVar2->FIELD",
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 32,
+      "match": "do {",
       "severity": "moderate",
-      "text": "pCVar2 = (CAmmo *)&pCVar2->field_0x2;",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 39,
+      "match": "pCVar2 = (T *)((pCVar2->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCVar2 = (CAmmo *)((pCVar2->base).actor_name + 2);",
       "type": "shadow_pointer_walk"
     }
   ]

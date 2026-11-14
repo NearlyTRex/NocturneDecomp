@@ -32,11 +32,11 @@
 ;   engine_2d.c_fillRectColor_FUN_004031c0
 ;   engine_2d.c_fillRectWithBorder_FUN_00403250
 ;   engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004a93f0
-;   engine_font.cpp_FUN_004ab560
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047e1d0
 ;   shape_edittool.cpp_FUN_0047e760
 ;   shape_edittool.cpp_FUN_0047e870
-;   wincore_wddvmem.cpp_FUN_00589560
+;   wincore_wddvmem.cpp_swapBuffers_FUN_00589560
 ;   wincore_winrun.cpp_setCursorPosition_FUN_0058ed10
 ;
 ; *****************************************************************************
@@ -196,8 +196,8 @@ section .text
     MOV EBX,dword ptr [0x01c35e54]      ; 004eb96b | DAT_01c35e54
     PUSH EDI                            ; 004eb971
     ADD EBX,EDX                         ; 004eb972
-    CALL engine_font.cpp_FUN_004ab560   ; 004eb974
-        ;   XREF to: 004ab560 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004ab560(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560 ; 004eb974
+        ;   XREF to: 004ab560 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560(CBitFont * this_ptr, int char_code)
     MOV EDX,EBX                         ; 004eb979
     SUB EDX,EAX                         ; 004eb97b
     MOV EAX,EDX                         ; 004eb97d
@@ -215,8 +215,8 @@ section .text
     CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004a93f0 ; 004eb99e
         ;   XREF to: 004a93f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004a93f0(CBitFont * this_ptr, int left_x, int right_x, int y, ...)
     ADD ESP,0x24                        ; 004eb9a3
-    CALL wincore_wddvmem.cpp_FUN_00589560 ; 004eb9a6
-        ;   XREF to: 00589560 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_00589560()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_00589560 ; 004eb9a6
+        ;   XREF to: 00589560 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00589560()
     PUSH 0x1                            ; 004eb9ab
     MOV EAX,[0x00617dd4]                ; 004eb9ad | DAT_00617dd4
     PUSH EAX                            ; 004eb9b2 | DAT_01d02f84

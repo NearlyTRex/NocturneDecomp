@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_passngr_cpp_factoryFuncPassenger_FUN_005113e0(void)
+; CPassenger * __cdecl core_passngr_cpp_factoryFuncPassenger_FUN_005113e0(void)
 ;
 ;
 ; Called Functions:
 ;   core_passngr.cpp_CPassenger_ctor_FUN_00511410
-;   crt_unknown.c_FUN_005b8be2
+;   crt_memory.c_operator_new_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x25088                        ; 005113e0
         ;   Label: core_passngr.cpp_factoryFuncPassenger_FUN_005113e0
-    CALL crt_unknown.c_FUN_005b8be2     ; 005113e5
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 005113e5
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 005113ea
     TEST EAX,EAX                        ; 005113ed
     JNZ 0x005113f2                      ; 005113ef

@@ -2,19 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 6,
-    "complexity_score": 22,
+    "complexity_score": 7,
     "cross_reference_count": 9,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 7,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 13
   },
   "cross_references": [
+    {
+      "addr": "004d8060",
+      "from_addr": "004d856b",
+      "name": "core_game.cpp_CGame_process_FUN_004d8060",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "004d8e50",
       "from_addr": "004d8f87",
@@ -24,25 +28,13 @@
     {
       "addr": "004cf5e0",
       "from_addr": "004cf983",
-      "name": "core_game.cpp_FUN_004cf5e0",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004cf5e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d77d0",
       "from_addr": "004d7d9f",
       "name": "core_game.cpp_FUN_004d77d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004d8060",
-      "from_addr": "004d856b",
-      "name": "core_game.cpp_FUN_004d8060",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0050aa90",
-      "from_addr": "0050aaaa",
-      "name": "core_menu.cpp_FUN_0050aa90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -64,9 +56,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0050aa90",
+      "from_addr": "0050aaaa",
+      "name": "core_menu.cpp_configureGraphicsOptions_FUN_0050aa90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0050cc90",
       "from_addr": "0050cd58",
-      "name": "core_menu.cpp_FUN_0050cc90",
+      "name": "core_menu.cpp_showMainGameMenu_FUN_0050cc90",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -87,7 +85,7 @@
     {
       "addr": "005b2420",
       "is_variadic": false,
-      "name": "wincore_winrun.cpp_FUN_005b2420"
+      "name": "wincore_winrun.cpp_getTime_FUN_005b2420"
     }
   ],
   "globals": [],
@@ -97,7 +95,7 @@
       {
         "call_addr": "0050cd58",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_0050cc90",
+        "caller": "core_menu.cpp_showMainGameMenu_FUN_0050cc90",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -108,7 +106,7 @@
       {
         "call_addr": "004cf983",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004cf5e0",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004cf5e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -119,7 +117,7 @@
       {
         "call_addr": "004cfb46",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004cf5e0",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004cf5e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -141,7 +139,7 @@
       {
         "call_addr": "004d856b",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d8060",
+        "caller": "core_game.cpp_CGame_process_FUN_004d8060",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -174,7 +172,7 @@
       {
         "call_addr": "0050aaaa",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_0050aa90",
+        "caller": "core_menu.cpp_configureGraphicsOptions_FUN_0050aa90",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -225,6 +223,32 @@
     },
     "pcode_op_count": 12
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004b3000",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004b4430",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004d7d80",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0049a890",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -241,14 +265,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x28c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x28c = uVar1;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

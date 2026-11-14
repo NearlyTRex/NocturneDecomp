@@ -18,33 +18,27 @@
   },
   "cross_references": [
     {
-      "addr": "0043554e",
-      "from_addr": "004355af",
-      "name": "cockpit_ckptutil.c_FUN_0043554e",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0043579c",
-      "from_addr": "004357e8",
-      "name": "cockpit_ckptutil.c_FUN_0043579c",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0043590c",
-      "from_addr": "0043594c",
-      "name": "cockpit_ckptutil.c_FUN_0043590c",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00435cb0",
       "from_addr": "00435cd8",
       "name": "cockpit_ckptutil.c_blitDualModeSprite_FUN_00435cb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004357a0",
+      "from_addr": "004357e8",
+      "name": "cockpit_ckptutil.c_blitRectangleClipped_FUN_004357a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00435b50",
       "from_addr": "00435b88",
       "name": "cockpit_ckptutil.c_blitSimpleSprite_FUN_00435b50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00435550",
+      "from_addr": "004355af",
+      "name": "cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00435550",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -57,6 +51,12 @@
       "addr": "00435310",
       "from_addr": "00435367",
       "name": "cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00435310",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00435910",
+      "from_addr": "0043594c",
+      "name": "cockpit_ckptutil.c_blitUnifiedSprite_FUN_00435910",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -148,9 +148,31 @@
         "stack_params": 0
       },
       {
+        "call_addr": "00435b88",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_blitSimpleSprite_FUN_00435b50",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "00435cd8",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_blitDualModeSprite_FUN_00435cb0",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
         "call_addr": "004355af",
         "call_type": "direct",
-        "caller": "cockpit_ckptutil.c_FUN_0043554e",
+        "caller": "cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00435550",
         "estimated_params": 4,
         "instructions_analyzed": 9,
         "method": "push_count",
@@ -166,7 +188,7 @@
       {
         "call_addr": "004357e8",
         "call_type": "direct",
-        "caller": "cockpit_ckptutil.c_FUN_0043579c",
+        "caller": "cockpit_ckptutil.c_blitRectangleClipped_FUN_004357a0",
         "estimated_params": 0,
         "instructions_analyzed": 1,
         "method": "push_count",
@@ -177,29 +199,7 @@
       {
         "call_addr": "0043594c",
         "call_type": "direct",
-        "caller": "cockpit_ckptutil.c_FUN_0043590c",
-        "estimated_params": 0,
-        "instructions_analyzed": 1,
-        "method": "push_count",
-        "reg_params": [],
-        "stack_bytes": 0,
-        "stack_params": 0
-      },
-      {
-        "call_addr": "00435b88",
-        "call_type": "direct",
-        "caller": "cockpit_ckptutil.c_blitSimpleSprite_FUN_00435b50",
-        "estimated_params": 0,
-        "instructions_analyzed": 1,
-        "method": "push_count",
-        "reg_params": [],
-        "stack_bytes": 0,
-        "stack_params": 0
-      },
-      {
-        "call_addr": "00435cd8",
-        "call_type": "direct",
-        "caller": "cockpit_ckptutil.c_blitDualModeSprite_FUN_00435cb0",
+        "caller": "cockpit_ckptutil.c_blitUnifiedSprite_FUN_00435910",
         "estimated_params": 0,
         "instructions_analyzed": 1,
         "method": "push_count",
@@ -232,6 +232,20 @@
       "RETURN": 4
     },
     "pcode_op_count": 50
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0042c410",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00437270",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,

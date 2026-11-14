@@ -2,35 +2,33 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 32,
+    "complexity_score": 7,
     "cross_reference_count": 51,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 7,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 17
   },
   "cross_references": [
     {
-      "addr": "0040dc50",
-      "from_addr": "0040dc5a",
-      "name": "core_ammo.cpp_FUN_0040dc50",
+      "addr": "0040ddd0",
+      "from_addr": "0040df32",
+      "name": "core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ddd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0040ddd0",
-      "from_addr": "0040df32",
-      "name": "core_ammo.cpp_FUN_0040ddd0",
+      "addr": "0040dc50",
+      "from_addr": "0040dc5a",
+      "name": "core_ammo.cpp_CAmmo_setup_FUN_0040dc50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0040e160",
       "from_addr": "0040e16c",
-      "name": "core_ammobox.cpp_FUN_0040e160",
+      "name": "core_ammobox.cpp_CAmmoBox_setup_FUN_0040e160",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -42,13 +40,13 @@
     {
       "addr": "0040ef20",
       "from_addr": "0040ef2c",
-      "name": "core_backgnd.cpp_FUN_0040ef20",
+      "name": "core_backgnd.cpp_CBackgroundActor_setup_FUN_0040ef20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0040f300",
       "from_addr": "0040f4aa",
-      "name": "core_baron.cpp_FUN_0040f300",
+      "name": "core_baron.cpp_CBaron_setup_FUN_0040f300",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -66,7 +64,13 @@
     {
       "addr": "00414ab0",
       "from_addr": "00414ad6",
-      "name": "core_biggs.cpp_FUN_00414ab0",
+      "name": "core_biggs.cpp_CBiggs_setup_FUN_00414ab0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00415fc0",
+      "from_addr": "00415fde",
+      "name": "core_bmppuzzl.cpp_CAudioRecPuzzle_load_FUN_00415fc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -90,19 +94,19 @@
     {
       "addr": "00425120",
       "from_addr": "0042538f",
-      "name": "core_bugs.cpp_FUN_00425120",
+      "name": "core_bugs.cpp_CBugs_setup_FUN_00425120",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0042c510",
       "from_addr": "0042c55e",
-      "name": "core_charactr.cpp_FUN_0042c510",
+      "name": "core_charactr.cpp_CCharacter_setup_FUN_0042c510",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00449070",
       "from_addr": "0044908a",
-      "name": "core_crate.cpp_FUN_00449070",
+      "name": "core_crate.cpp_CCrate_setup_FUN_00449070",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -120,7 +124,7 @@
     {
       "addr": "0049f010",
       "from_addr": "0049f049",
-      "name": "core_emitter.cpp_FUN_0049f010",
+      "name": "core_emitter.cpp_CEmitter_setup_FUN_0049f010",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -132,31 +136,13 @@
     {
       "addr": "004ab340",
       "from_addr": "004ab35a",
-      "name": "core_filmreel.cpp_FUN_004ab340",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004acad0",
-      "from_addr": "004acae7",
-      "name": "core_fire.cpp_FUN_004acad0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004af120",
-      "from_addr": "004af14d",
-      "name": "core_fire.cpp_FUN_004af120",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004af5e0",
-      "from_addr": "004af5f7",
-      "name": "core_fire.cpp_FUN_004af5e0",
+      "name": "core_filmreel.cpp_CFilmReel_setup_FUN_004ab340",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004b1c50",
       "from_addr": "004b1cbf",
-      "name": "core_fire.cpp_FUN_004b1c50",
+      "name": "core_fire.cpp_CToss_create_FUN_004b1c50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -172,21 +158,39 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004af5e0",
+      "from_addr": "004af5f7",
+      "name": "core_fire.cpp_loadGunFlashAssets_FUN_004af5e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004af120",
+      "from_addr": "004af14d",
+      "name": "core_fire.cpp_loadLeafAssets_FUN_004af120",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004acad0",
+      "from_addr": "004acae7",
+      "name": "core_fire.cpp_loadStakeAssets_FUN_004acad0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004b9010",
       "from_addr": "004b902f",
-      "name": "core_flamecan.cpp_FUN_004b9010",
+      "name": "core_flamecan.cpp_CFlameCan_setup_FUN_004b9010",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004c51e0",
       "from_addr": "004c5270",
-      "name": "core_frankgen.cpp_FUN_004c51e0",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004c51e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d27b0",
       "from_addr": "004d50d5",
-      "name": "core_game.cpp_FUN_004d27b0",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -198,7 +202,7 @@
     {
       "addr": "004e3b80",
       "from_addr": "004e3b97",
-      "name": "core_goggles.cpp_FUN_004e3b80",
+      "name": "core_goggles.cpp_CGoggles_setup_FUN_004e3b80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -210,7 +214,7 @@
     {
       "addr": "004ea390",
       "from_addr": "004ea39a",
-      "name": "core_health.cpp_FUN_004ea390",
+      "name": "core_health.cpp_CHealthItem_setup_FUN_004ea390",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -232,21 +236,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00503c90",
+      "from_addr": "00503cbb",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00503c90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "005064a0",
       "from_addr": "005064b7",
       "name": "core_manpuz.cpp_CMirrorHack_setup_FUN_005064a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00503c90",
-      "from_addr": "00503cbb",
-      "name": "core_manpuz.cpp_FUN_00503c90",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00536130",
       "from_addr": "00536144",
-      "name": "core_pendulum.cpp_FUN_00536130",
+      "name": "core_pendulum.cpp_CPendulum_setup_FUN_00536130",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -258,19 +262,19 @@
     {
       "addr": "00562660",
       "from_addr": "00562671",
-      "name": "core_simbox.cpp_FUN_00562660",
+      "name": "core_simbox.cpp_CSimBox_setup_FUN_00562660",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005830d0",
       "from_addr": "005830e1",
-      "name": "core_spike.cpp_FUN_005830d0",
+      "name": "core_spike.cpp_CSpike_setup_FUN_005830d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00585670",
       "from_addr": "00585970",
-      "name": "core_stranger.cpp_FUN_00585670",
+      "name": "core_stranger.cpp_CStranger_setup_FUN_00585670",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -294,31 +298,25 @@
     {
       "addr": "005a40a0",
       "from_addr": "005a40af",
-      "name": "core_tvbat.cpp_FUN_005a40a0",
+      "name": "core_tvbat.cpp_CTVBat_setup_FUN_005a40a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a7870",
       "from_addr": "005a788d",
-      "name": "core_vehicle.cpp_FUN_005a7870",
+      "name": "core_vehicle.cpp_CVehicle_setup_FUN_005a7870",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a8c60",
       "from_addr": "005a8c7f",
-      "name": "core_vessel.cpp_FUN_005a8c60",
+      "name": "core_vessel.cpp_CCryptVessel_setup_FUN_005a8c60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005ad640",
       "from_addr": "005ad655",
       "name": "core_weapon.cpp_CWeapon_setup_FUN_005ad640",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00415fc0",
-      "from_addr": "00415fde",
-      "name": "unkafter_alphabit.cpp_FUN_00415fc0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -362,6 +360,32 @@
     },
     "pcode_op_count": 36
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0044fd00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00462580",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00478d60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00454510",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -378,22 +402,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x78",
-      "severity": "mild",
-      "text": "pCVar1 = (CKeyFramedModel *)core_dmodel_cpp_loadModel_FUN_00468780(&this_ptr->field_0x78);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "*(CKeyFramedModel **)&this_ptr->field_0x178 = pCVar1;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

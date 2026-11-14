@@ -34,9 +34,9 @@
 ;   crt_unknown.c_FUN_005ab978
 ;   crt_unknown.c_FUN_005ab9b0
 ;   crt_unknown.c_FUN_005abbf8
-;   unkafter_asgaya.cpp_FUN_005aea80
-;   unkafter_asgaya.cpp_FUN_005aeac4
-;   unkafter_asgaya.cpp_FUN_005aeb30
+;   crt_unknown.c_FUN_005aea80
+;   crt_unknown.c_FUN_005aeac4
+;   crt_unknown.c_FUN_005aeb30
 ;
 ; *****************************************************************************
 
@@ -69,8 +69,8 @@ section .text
     PUSH EAX                            ; 005aa125
     AND ESI,0x7                         ; 005aa126
     PUSH ESI                            ; 005aa129
-    CALL unkafter_asgaya.cpp_FUN_005aea80 ; 005aa12a
-        ;   XREF to: 005aea80 (UNCONDITIONAL_CALL)  ; undefined unkafter_asgaya.cpp_FUN_005aea80()
+    CALL crt_unknown.c_FUN_005aea80     ; 005aa12a
+        ;   XREF to: 005aea80 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005aea80()
     ADD ESP,0xc                         ; 005aa12f
     LEA EAX,[ESP + 0xc]                 ; 005aa132
     PUSH EAX                            ; 005aa136
@@ -78,8 +78,8 @@ section .text
     OR EAX,ESI                          ; 005aa13b
     PUSH EAX                            ; 005aa13d
     MOV EBP,0x80                        ; 005aa13e
-    CALL unkafter_asgaya.cpp_FUN_005aeac4 ; 005aa143
-        ;   XREF to: 005aeac4 (UNCONDITIONAL_CALL)  ; undefined unkafter_asgaya.cpp_FUN_005aeac4()
+    CALL crt_unknown.c_FUN_005aeac4     ; 005aa143
+        ;   XREF to: 005aeac4 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005aeac4()
     MOV EDX,0xc                         ; 005aa148
     ADD ESP,0x8                         ; 005aa14d
     XOR ECX,ECX                         ; 005aa150
@@ -237,8 +237,8 @@ section .text
     RET                                 ; 005aa2c3
     PUSH EAX                            ; 005aa2c4
         ;   Label: LAB_005aa2c4
-    CALL unkafter_asgaya.cpp_FUN_005aeb30 ; 005aa2c5
-        ;   XREF to: 005aeb30 (UNCONDITIONAL_CALL)  ; undefined unkafter_asgaya.cpp_FUN_005aeb30()
+    CALL crt_unknown.c_FUN_005aeb30     ; 005aa2c5
+        ;   XREF to: 005aeb30 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005aeb30()
     ADD ESP,0x4                         ; 005aa2ca
     TEST EAX,EAX                        ; 005aa2cd
     JZ 0x005aa2d6                       ; 005aa2cf

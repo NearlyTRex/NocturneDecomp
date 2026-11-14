@@ -18,15 +18,15 @@
   },
   "cross_references": [
     {
-      "addr": "0052d450",
-      "from_addr": "0052d915",
-      "name": "core_netgame.cpp_FUN_0052d450",
+      "addr": "0052ebd0",
+      "from_addr": "0052ecfc",
+      "name": "core_netgame.cpp_CNetGame_processChatOut_FUN_0052ebd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0052ebd0",
-      "from_addr": "0052ecfc",
-      "name": "core_netgame.cpp_FUN_0052ebd0",
+      "addr": "0052d450",
+      "from_addr": "0052d915",
+      "name": "core_netgame.cpp_CNetGame_processPacket_FUN_0052d450",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -80,7 +80,7 @@
       {
         "call_addr": "0052d915",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_FUN_0052d450",
+        "caller": "core_netgame.cpp_CNetGame_processPacket_FUN_0052d450",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -91,7 +91,7 @@
       {
         "call_addr": "0052dcfd",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_FUN_0052d450",
+        "caller": "core_netgame.cpp_CNetGame_processPacket_FUN_0052d450",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -102,7 +102,7 @@
       {
         "call_addr": "0052ecfc",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_FUN_0052ebd0",
+        "caller": "core_netgame.cpp_CNetGame_processChatOut_FUN_0052ebd0",
         "estimated_params": 5,
         "instructions_analyzed": 18,
         "method": "push_count",
@@ -147,6 +147,32 @@
       "STORE": 20
     },
     "pcode_op_count": 429
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0050df20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00506a00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00542370",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9325
+    },
+    "nocturne.exe": {
+      "addr": "004ec500",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 24,

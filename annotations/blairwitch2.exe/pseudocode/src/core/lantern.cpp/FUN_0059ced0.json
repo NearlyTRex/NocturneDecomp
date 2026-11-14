@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 377,
+    "complexity_score": 378,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 52,
+    "pseudocode_lines": 53,
     "suspect_count": 30,
     "suspect_types": [
       "param_count_too_few",
@@ -16,19 +16,19 @@
       "unnamed_param",
       "unrolled_memcpy"
     ],
-    "total_lines": 160
+    "total_lines": 161
   },
   "cross_references": [
     {
       "addr": "0059ccf0",
       "from_addr": "0059ce7b",
-      "name": "core_lantern.cpp_FUN_0059ccf0",
+      "name": "core_lantern.cpp_CLantern_process_FUN_0059ccf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0059d000",
       "from_addr": "0059d020",
-      "name": "core_lantern.cpp_FUN_0059d000",
+      "name": "core_lantern.cpp_CLantern_renderOpaque_FUN_0059d000",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -53,7 +53,7 @@
     {
       "addr": "00449280",
       "is_variadic": false,
-      "name": "core_dirmat.cpp_FUN_00449280"
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280"
     },
     {
       "addr": "00449530",
@@ -68,7 +68,7 @@
       {
         "call_addr": "0059ce7b",
         "call_type": "direct",
-        "caller": "core_lantern.cpp_FUN_0059ccf0",
+        "caller": "core_lantern.cpp_CLantern_process_FUN_0059ccf0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -81,7 +81,7 @@
       {
         "call_addr": "0059d020",
         "call_type": "direct",
-        "caller": "core_lantern.cpp_FUN_0059d000",
+        "caller": "core_lantern.cpp_CLantern_renderOpaque_FUN_0059d000",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -270,15 +270,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_dirmat_cpp_FUN_00449280(aCStack_70,(CVector3f *)(param_1 + 0x6e4));",
+      "text": "(&CStack_70,(CVector3f *)(param_1 + 0x6e4));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 39,
       "match": "param_1",
       "severity": "mild",
       "text": "pfVar1 = (float *)(param_1 + 0x6d8);",
@@ -286,15 +286,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x6dc) = *(float *)(param_1 + 0x6dc) + afStack_20[0];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x6dc) = *(float *)(param_1 + 0x6dc) + afStack_20[0];",
@@ -305,12 +297,12 @@
       "line": 45,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x6e0) = *(float *)(param_1 + 0x6e0) + afStack_20[1];",
+      "text": "*(float *)(param_1 + 0x6dc) = *(float *)(param_1 + 0x6dc) + afStack_20[0];",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x6e0) = *(float *)(param_1 + 0x6e0) + afStack_20[1];",
@@ -321,15 +313,15 @@
       "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = *(int *)(param_1 + 0x704);",
+      "text": "*(float *)(param_1 + 0x6e0) = *(float *)(param_1 + 0x6e0) + afStack_20[1];",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(iVar2 + 8) = *(uint *)(param_1 + 0x6dc);",
+      "text": "iVar2 = *(int *)(param_1 + 0x704);",
       "type": "unnamed_param"
     },
     {
@@ -337,12 +329,20 @@
       "line": 50,
       "match": "param_1",
       "severity": "mild",
+      "text": "*(uint *)(iVar2 + 8) = *(uint *)(param_1 + 0x6dc);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_1",
+      "severity": "mild",
       "text": "*(uint *)(iVar2 + 0xc) = *(uint *)(param_1 + 0x6e0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 54,
       "match": "param_1",
       "severity": "mild",
       "text": "((CMatrix3x3f *)(*(int *)(param_1 + 0x704) + 0x10),(CVector3f *)(param_1 + 0x6e4));",
@@ -350,7 +350,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 54,
       "match": "param_1",
       "severity": "mild",
       "text": "((CMatrix3x3f *)(*(int *)(param_1 + 0x704) + 0x10),(CVector3f *)(param_1 + 0x6e4));",

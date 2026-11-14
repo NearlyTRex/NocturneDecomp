@@ -1,14 +1,12 @@
 // Name: core_hotdemon.cpp_CHotDemon_dtor_FUN_004f08a0
 // Address: 004f08a0
 // Address Range: [[004f08a0, 004f0924]]
-// Convention: unknown
-// Signature: CHotDemon * core_hotdemon_cpp_CHotDemon_dtor_FUN_004f08a0(CHotDemon *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CHotDemon * __cdecl core_hotdemon_cpp_CHotDemon_dtor_FUN_004f08a0(CHotDemon *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CHotDemon * core_hotdemon_cpp_CHotDemon_dtor_FUN_004f08a0(CHotDemon *this_ptr,uint flags)
+CHotDemon * __cdecl core_hotdemon_cpp_CHotDemon_dtor_FUN_004f08a0(CHotDemon *this_ptr,uint flags)
 
 {
   int iVar1;
@@ -18,16 +16,17 @@ CHotDemon * core_hotdemon_cpp_CHotDemon_dtor_FUN_004f08a0(CHotDemon *this_ptr,ui
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CHotDemonTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CHotDemonTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  iVar1 = unkafter_armour_cpp_FUN_0040ee30(&this_ptr->field_0x35dc,0);
-  pCVar2 = core_cloth_cpp_FUN_00441ca0((CClothList *)(iVar1 + -0x93c),0);
+  iVar1 = core_armour_cpp_FUN_0040ee30((this_ptr->base).base.flames,0);
+  pCVar2 = core_cloth_cpp_CClothList_dtor_FUN_00441ca0((CClothList *)(iVar1 + -0x93c),0);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_005673f0
-                     ((CDeformableModelInstance *)(pCVar2 + -0x2b48),0);
+                     ((CDeformableModelInstance *)(pCVar2[-0x19].filenames[0] + 0x10),0);
   pCVar4 = (CHotDemon *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)&pCVar3[-1].field_0x224c,1);
+           core_actor_cpp_CDemonActor_dtor_FUN_00408730
+                     ((CDemonActor *)(pCVar3[-1].part_data.texture_set_indices + 7),1);
   if ((flags & 2) == 0) {
     return pCVar4;
   }

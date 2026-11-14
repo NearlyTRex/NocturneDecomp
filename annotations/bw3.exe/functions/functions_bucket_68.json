@@ -28,13 +28,59 @@
         "start":"00495fdc"
       }
     ],
+    "conv":"__fastcall",
     "importable":true,
     "name":"crt_watcom.c__memcpy_FUN_00495f68",
-    "ret":"undefined1",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"dest",
+          "storage":{
+            "reg":"ECX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000004",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
+        },
+        {
+          "name":"src",
+          "storage":{
+            "reg":"EDX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000008",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
+        },
+        {
+          "name":"size",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint"
+        }
+      ]
     }
   },
   {
@@ -49,7 +95,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"crt_stdlib.c__qsort_FUN_005a29e8",
-    "ret":"undefined1",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -357,9 +403,72 @@
           "type":"undefined4"
         }
       ],
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"base",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"void*"
+        },
+        {
+          "name":"num",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SIZE_T"
+        },
+        {
+          "name":"size",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"SIZE_T"
+        },
+        {
+          "name":"compar",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"QSORT_COMPARATOR"
+        }
+      ]
     }
   },
   {
@@ -374,6 +483,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005a3e68",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -392,6 +502,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005a7f68",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -410,6 +521,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005a8ae8",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "locals":[
         {
@@ -654,6 +766,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005a9768",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -673,6 +786,7 @@
     "importable":true,
     "name":"crt_kernel32.c_GlobalMemoryStatus",
     "ret":"void",
+    "sig":"imported",
     "thtarget":"EXTERNAL:0000007e",
     "thunk":true,
     "vars":{
@@ -709,6 +823,7 @@
     "importable":true,
     "name":"crt_winmm.c_waveInAddBuffer",
     "ret":"MMRESULT",
+    "sig":"imported",
     "thtarget":"EXTERNAL:0000001d",
     "thunk":true,
     "vars":{

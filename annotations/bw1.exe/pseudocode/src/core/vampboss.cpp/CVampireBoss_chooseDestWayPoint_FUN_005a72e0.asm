@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ;
 ; XREF[1]:
-;   core_vampboss.cpp_FUN_005a5550 at 005a6809
+;   core_vampboss.cpp_CVampireBoss_process_FUN_005a5550 at 005a6809
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_vampboss_cpp_005f8f2e

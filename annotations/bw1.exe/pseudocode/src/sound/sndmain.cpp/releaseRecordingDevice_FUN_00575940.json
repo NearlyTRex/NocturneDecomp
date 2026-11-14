@@ -17,15 +17,15 @@
   },
   "cross_references": [
     {
-      "addr": "005760b0",
-      "from_addr": "0057612d",
-      "name": "sound_sndmain.cpp_FUN_005760b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "005758e0",
       "from_addr": "005758e0",
       "name": "sound_sndmain.cpp_initializeRecordingDevice_FUN_005758e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005760b0",
+      "from_addr": "0057612d",
+      "name": "sound_sndmain.cpp_readIni_FUN_005760b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -68,7 +68,7 @@
       {
         "call_addr": "0057612d",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_005760b0",
+        "caller": "sound_sndmain.cpp_readIni_FUN_005760b0",
         "estimated_params": 0,
         "instructions_analyzed": 3,
         "method": "push_count",
@@ -128,6 +128,26 @@
       "STORE": 3
     },
     "pcode_op_count": 73
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00552f10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00558ab0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005ab930",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,

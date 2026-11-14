@@ -9,8 +9,8 @@
 CWater * __cdecl core_water_cpp_CWater_ctor_FUN_00585db0(CWater *this_ptr)
 
 {
-  *(uint *)&this_ptr->field_0x8 = 0x42000000;
-  *(uint *)this_ptr = 0;
-  *(uint *)&this_ptr->field_0x4 = 0;
+  this_ptr->tile_size = 32.0;
+  this_ptr->wave_animation_enabled = 0;
+  this_ptr->water_level_y = 0.0;
   return this_ptr;
 }

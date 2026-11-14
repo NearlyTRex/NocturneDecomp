@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 42,
-    "complexity_score": 105,
+    "complexity_score": 8,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 10,
-    "suspect_count": 9,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 52
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 50
   },
   "cross_references": [
     {
@@ -102,6 +100,26 @@
     },
     "pcode_op_count": 132
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004e5600",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004ed160",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004af7c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -125,78 +143,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x4,&this_ptr->field_0x8,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x4,&this_ptr->field_0x8,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "&this_ptr->field_0xc);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,\"%d,%d\\n\",this_ptr,&this_ptr->field_0x10);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "iVar1 = _fscanf(file_handle,\"%d,%f,%d,%d,%d\\n\",&this_ptr->field_0x14,&this_ptr->field_0x18,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "iVar1 = _fscanf(file_handle,\"%d,%f,%d,%d,%d\\n\",&this_ptr->field_0x14,&this_ptr->field_0x18,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "&this_ptr->field_0x1c,&this_ptr->field_0x20,&this_ptr->field_0x24);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "&this_ptr->field_0x1c,&this_ptr->field_0x20,&this_ptr->field_0x24);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "&this_ptr->field_0x1c,&this_ptr->field_0x20,&this_ptr->field_0x24);",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

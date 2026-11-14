@@ -38,6 +38,6 @@ void core_set_cpp_FUN_005326b0(int param_1)
     uStack_18 = (int)ROUND(fVar2);
     uStack_20 = (int)ROUND(fVar1);
   }
-  core_set_cpp_FUN_0053b100(g_CDemonSetPtr,uStack_1c,uStack_18,uStack_20);
+  core_set_cpp_CDemonSet_setFlatColor_FUN_0053b100(g_CDemonSetPtr,uStack_1c,uStack_18,uStack_20);
   return;
 }

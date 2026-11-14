@@ -7,10 +7,10 @@
 ; undefined        Stack[-0x28]:1  local_28
 ;
 ; XREF[4]:
-;   core_game.cpp_FUN_004b6170 at 004b68e4
-;   unkafter_minecar.cpp_FUN_004f236e at 004f2383
-;   wincore_wddvmem.cpp_FUN_00589560 at 0058963a
-;   wincore_winvideo.cpp_FUN_00591190 at 0059147f
+;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b68e4
+;   engine_mini3d.cpp_swapBuffers_FUN_004f2370 at 004f2383
+;   wincore_wddvmem.cpp_swapBuffers_FUN_00589560 at 0058963a
+;   wincore_winvideo.cpp_playMovie_FUN_00591190 at 0059147f
 ;
 ; Referenced Globals:
 ;   void* PTR_DispatchMessageA_005c84a4 = 001c8a98

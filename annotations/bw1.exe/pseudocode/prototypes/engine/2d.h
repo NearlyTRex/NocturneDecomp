@@ -5,9 +5,9 @@
 // Function prototypes for engine/2d.cpp
 // Generated from Ghidra function signatures
 
-// Original: engine_2d.c_FUN_00401010
+// Original: engine_2d.c_initGraphicsSystem_FUN_00401010
 // Address: 00401010
-void __cdecl FUN_00401010(void);
+void __cdecl initGraphicsSystem(void);
 
 // Original: engine_2d.c_cleanupGraphicsSystem_FUN_00401120
 // Address: 00401120
@@ -35,7 +35,7 @@ int __cdecl FUN_00401450(int red,int green,int blue,int start_index,int end_inde
 
 // Original: engine_2d.c_FUN_00401590
 // Address: 00401590
-void FUN_00401590(undefined4 param_1);
+void FUN_00401590(char *param_1);
 
 // Original: engine_2d.c_drawCharacter_FUN_00401620
 // Address: 00401620
@@ -53,9 +53,9 @@ void __cdecl setupViewportAndClipping(int left,int top,int right,int bottom);
 // Address: 004018b0
 int __cdecl getStringWidth(char *text);
 
-// Original: engine_2d.c_FUN_0040190e
-// Address: 0040190e
-int FUN_0040190e(int param_1,int param_2,int param_3);
+// Original: engine_2d.c_drawCharacterMasked_FUN_00401910
+// Address: 00401910
+int drawCharacterMasked(void);
 
 // Original: engine_2d.c_drawCharacterMaskedColor_FUN_00401a20
 // Address: 00401a20
@@ -73,9 +73,9 @@ void __cdecl drawTextWrapped(char *text,int x_start,int y_start,int x_max,int y_
 // Address: 00401d00
 void __cdecl drawTextMultiline(char *text,int x_start,int y_start,int x_max,int y_max);
 
-// Original: engine_2d.c_FUN_00401d8e
-// Address: 00401d8e
-void FUN_00401d8e(char *param_1,int param_2,char *param_3);
+// Original: engine_2d.c_wrapTextToWidth_FUN_00401d90
+// Address: 00401d90
+void wrapTextToWidth(void);
 
 // Original: engine_2d.c_drawTextWrappedColor_FUN_00401ec0
 // Address: 00401ec0
@@ -93,29 +93,33 @@ void __cdecl drawText(char *text,int x,int y);
 // Address: 00402090
 void __cdecl drawString(char *text,int x_pos,int y_pos,int color);
 
-// Original: engine_2d.c_FUN_00402140
+// Original: engine_2d.c_drawTextXY_FUN_00402140
 // Address: 00402140
-void FUN_00402140(int param_1,int param_2,char *param_3);
+void __cdecl drawTextXY(int x,int y,char *text);
+
+// Original: engine_2d.c_drawTextFormatted_FUN_00402160
+// Address: 00402160
+void __cdecl drawTextFormatted(int x,int y,char *format_string);
 
 // Original: engine_2d.c_drawTextColor_FUN_00402440
 // Address: 00402440
 void __cdecl drawTextColor(char *text,int x,int y);
 
-// Original: engine_2d.c_FUN_00402540
+// Original: engine_2d.c_drawTextRightAlignedColor_FUN_00402540
 // Address: 00402540
-void __cdecl FUN_00402540(char *text,int x,int y);
+void __cdecl drawTextRightAlignedColor(char *text,int x,int y);
 
-// Original: engine_2d.c_FUN_00402600
+// Original: engine_2d.c_drawTextCenteredAtColor_FUN_00402600
 // Address: 00402600
-void __cdecl FUN_00402600(char *text,int x,int y);
+void __cdecl drawTextCenteredAtColor(char *text,int x,int y);
 
-// Original: engine_2d.c_FUN_004026d0
+// Original: engine_2d.c_drawTextCenteredColor_FUN_004026d0
 // Address: 004026d0
-void __cdecl FUN_004026d0(char *text,int left_x,int right_x,int y);
+void __cdecl drawTextCenteredColor(char *text,int left_x,int right_x,int y);
 
-// Original: engine_2d.c_FUN_00402710
+// Original: engine_2d.c_drawTextCenteredXYColor_FUN_00402710
 // Address: 00402710
-void __cdecl FUN_00402710(int left_x,int right_x,int y,char *text);
+void __cdecl drawTextCenteredXYColor(int left_x,int right_x,int y,char *text);
 
 // Original: engine_2d.c_FUN_00402800
 // Address: 00402800
@@ -145,9 +149,9 @@ void FUN_00402860(void);
 // Address: 00402880
 void __cdecl buildColorLookupTable(void);
 
-// Original: engine_2d.c_FUN_00402940
+// Original: engine_2d.c_loadOrBuildColorMap_FUN_00402940
 // Address: 00402940
-void __cdecl FUN_00402940(char *filename);
+void __cdecl loadOrBuildColorMap(char *filename);
 
 // Original: engine_2d.c_resetGraphicsSystem_FUN_00402ac0
 // Address: 00402ac0
@@ -157,25 +161,21 @@ void __cdecl resetGraphicsSystem(void);
 // Address: 00402ad0
 void __cdecl reinitializeGraphicsSystem(void);
 
-// Original: engine_2d.c_FUN_00402ade
-// Address: 00402ade
-void FUN_00402ade(int param_1,int param_2,int param_3);
+// Original: engine_2d.c_draw320x200SizeDot_FUN_00402ae0
+// Address: 00402ae0
+void draw320x200SizeDot(void);
 
-// Original: engine_2d.c_FUN_00402c60
+// Original: engine_2d.c_computeOutcode_FUN_00402c60
 // Address: 00402c60
-byte FUN_00402c60(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6);
-
-// Original: engine_2d.c_FUN_00402c9e
-// Address: 00402c9e
-void FUN_00402c9e(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+int __cdecl computeOutcode(int x,int y,int x_min,int y_min,int x_max,int y_max);
 
 // Original: engine_2d.c_clipLineGlobal_FUN_00402ca0
 // Address: 00402ca0
 void __cdecl clipLineGlobal(int x1,int y1,int x2,int y2);
 
-// Original: engine_2d.c_FUN_00402cf0
+// Original: engine_2d.c_clipAndDrawLine_FUN_00402cf0
 // Address: 00402cf0
-void FUN_00402cf0(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8);
+void __cdecl clipAndDrawLine(int x1,int y1,int x2,int y2,int x_min,int y_min,int x_max,int y_max);
 
 // Original: engine_2d.c_drawHLine_FUN_00402f30
 // Address: 00402f30
@@ -201,26 +201,22 @@ void __cdecl fillRectWithBorder(int x1,int y1,int x2,int y2,int fill_color,int b
 // Address: 004032b0
 void __cdecl clearInputAndWait(void);
 
-// Original: engine_2d.c_FUN_0040330e
-// Address: 0040330e
-uint FUN_0040330e(undefined1 *param_1,int param_2,int param_3,int param_4,undefined4 param_5);
+// Original: engine_2d.c_getInputWithPrompt_FUN_00403310
+// Address: 00403310
+uint getInputWithPrompt(void);
 
 // Original: engine_2d.c_setSolidColor_FUN_004033f0
 // Address: 004033f0
 void __cdecl setSolidColor(int red_component,int green_component,int blue_component);
 
-// Original: engine_2d.c_FUN_00403480
+// Original: engine_2d.c_mapFrameBuffer_FUN_00403480
 // Address: 00403480
-int FUN_00403480(int param_1,int param_2,int param_3,int param_4,uint param_5);
+int __cdecl mapFrameBuffer(void *frame_buffer,int width,int height,int bits_per_pixel,int stride);
 
 // Original: engine_2d.c_mapTextureFrameBuffer_FUN_004036a0
 // Address: 004036a0
 int __cdecl mapTextureFrameBuffer(void);
 
-// Original: engine_2d.c_FUN_004036c0
+// Original: engine_2d.c_unmapFrameBuffer_FUN_004036c0
 // Address: 004036c0
-int FUN_004036c0(void);
-
-// Original: engine_2d.c_enableTextWrap_FUN_005cd2ac
-// Address: 005cd2ac
-void __cdecl enableTextWrap(void);
+void __cdecl unmapFrameBuffer(void);

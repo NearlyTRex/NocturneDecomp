@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_script_cpp_readActorReference_FUN_00530a10(undefined4 param_1,undefined4 *param_2)
+; void __cdecl core_script_cpp_readActorReference_FUN_00530a10(_FILE *file_handle,CDemonActor *actor_out)
 ;
+; Parameters:
+; _FILE *          Stack[0x4]:4   file_handle
+; CDemonActor *    Stack[0x8]:4   actor_out
 ; Local Variables:
 ; undefined        Stack[-0xd0]:1  local_d0
 ;
@@ -17,7 +20,7 @@
 ;   undefined4 DAT_006039f4
 ;
 ; Called Functions:
-;   core_mission.cpp_FUN_004f6e90
+;   core_mission.cpp_CDemonMission_findActorByName_FUN_004f6e90
 ;   crt_stdio.c_fscanf_FUN_005a3230
 ;   crt_string.c__stricmp_FUN_005a3260
 ;
@@ -39,7 +42,7 @@ section .text
     PUSH EDX                            ; 00530a35
     MOVSD.REP ES:EDI,ESI                ; 00530a36 | DAT_006039f0 | DAT_006039f4
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 00530a38
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005a3230(_FILE * file, char * format)
     ADD ESP,0xc                         ; 00530a3d
     PUSH 0x6039e8                       ; 00530a40 | = "(none)"
     LEA EAX,[ESP + 0x4]                 ; 00530a45
@@ -61,8 +64,8 @@ section .text
     PUSH EAX                            ; 00530a6e
     MOV ECX,dword ptr [0x00600530]      ; 00530a6f | DAT_00600530
     PUSH ECX                            ; 00530a75
-    CALL core_mission.cpp_FUN_004f6e90  ; 00530a76
-        ;   XREF to: 004f6e90 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_FUN_004f6e90(CDemonMission * this_ptr, char * name)
+    CALL core_mission.cpp_CDemonMission_findActorByName_FUN_004f6e90 ; 00530a76
+        ;   XREF to: 004f6e90 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_004f6e90(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 00530a7b
     MOV EDX,dword ptr [ESP + 0xd8]      ; 00530a7e
     MOV dword ptr [EDX],EAX             ; 00530a85

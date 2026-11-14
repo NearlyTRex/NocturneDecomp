@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 shape_edittool_cpp_FUN_0047da40(undefined4 param_1,undefined4 param_2)
+; undefined4 shape_edittool_cpp_FUN_0047da40(undefined4 param_1,char *param_2)
 ;
 ;
 ; Called Functions:
@@ -9,7 +9,7 @@
 ;   shape_edittool.cpp_CStrList_add_FUN_00482070
 ;   shape_edittool.cpp_CStrList_ctor_FUN_00481f20
 ;   shape_edittool.cpp_CStrList_dtor_FUN_00481f40
-;   shape_edittool.cpp_FUN_0047d230
+;   shape_edittool.cpp_showMultiChoiceDialog_FUN_0047d230
 ;
 ; *****************************************************************************
 
@@ -27,7 +27,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0047da65
     PUSH EAX                            ; 0047da69
     CALL crt_stdio.c_vsprintf_FUN_005a2898 ; 0047da6a
-        ;   XREF to: 005a2898 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_005a2898()
+        ;   XREF to: 005a2898 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005a2898(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0047da6f
     LEA EAX,[ESP + 0x400]               ; 0047da72
     XOR ECX,ECX                         ; 0047da79
@@ -65,8 +65,8 @@ section .text
     PUSH EAX                            ; 0047dae8
     LEA EAX,[ESP + 0x8]                 ; 0047dae9
     PUSH EAX                            ; 0047daed
-    CALL shape_edittool.cpp_FUN_0047d230 ; 0047daee
-        ;   XREF to: 0047d230 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_FUN_0047d230(CStrList * str_list, char * dialog_title, int dialog_mode)
+    CALL shape_edittool.cpp_showMultiChoiceDialog_FUN_0047d230 ; 0047daee
+        ;   XREF to: 0047d230 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_showMultiChoiceDialog_FUN_0047d230(CStrList * str_list, char * dialog_title, int dialog_mode)
     ADD ESP,0xc                         ; 0047daf3
     TEST EAX,EAX                        ; 0047daf6
     JZ 0x0047db21                       ; 0047daf8

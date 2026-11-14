@@ -34,16 +34,14 @@ Usage:
 """
 
 import argparse
+import difflib
 import json
 import os
 import re
 import sys
 from collections import Counter, defaultdict
 
-try:
-    from capstone import Cs, CS_ARCH_X86, CS_MODE_32
-except ImportError:
-    sys.exit("capstone is required: pip install capstone")
+from capstone import Cs, CS_ARCH_X86, CS_MODE_32
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
@@ -59,14 +57,20 @@ _CLASS = re.compile(r"_(C[A-Z][A-Za-z0-9]*)_")
 # these; a bare immediate (`cmp eax, 5`) never is, and counting those was what
 # filled the first version's output with one-observation phantom segments.
 _MEMOP = re.compile(r"\[([^\]]*)\]")
+# One signed term of a memory operand: `eax`, `+ ecx*4`, `- 0x10`.
+_TERM = re.compile(r"([+-]?)\s*([^+-]+)")
+_NUMBER = re.compile(r"0x[0-9a-f]+|\d+")
 
 # Displacements plausibly inside an object. Above this and it is an absolute
 # address that happened to fall outside the image, not a field offset.
 MAX_FIELD_OFFSET = 0x200000
 
 
-def _displacements(op_str):
-    """Numeric displacements appearing inside memory operands, in order.
+def _displacements(op_str, frame=("esp", "ebp")):
+    """Signed numeric displacements inside memory operands, in order.
+
+    A term is read with its sign, so `[ecx - 0x10]` is -16 rather than +16, and
+    an index scale (`ecx*4`) is not a displacement at all.
 
     Stack-relative operands are excluded. Watcom addresses locals off esp with
     no frame pointer, so `[esp + 0x144]` is a stack slot, not a field -- yet it
@@ -74,18 +78,22 @@ def _displacements(op_str):
     pair of functions whose frames happen to match contributes a flood of phantom
     "this offset did not move" evidence, and a pair whose frames differ by N
     contributes a phantom shift of N at every slot. That is where the spurious
-    -0x1c and -0x40 segments came from.
+    -0x1c and -0x40 segments came from. Watcom also uses ebp as an ordinary
+    register, so a caller that can tell a field from a slot passes frame=("esp",).
     """
     out = []
     for mem in _MEMOP.findall(op_str):
-        if "esp" in mem or "ebp" in mem:
+        if any(reg in mem for reg in frame):
             continue
-        out.extend(_NUM.findall(mem))
+        for sign, term in _TERM.findall(mem):
+            term = term.strip()
+            if _NUMBER.fullmatch(term):
+                out.append(-int(term, 0) if sign == "-" else int(term, 0))
     return out
 
 
-def _insns(image, addr):
-    """Linear disassembly of a function as [(mnemonic, op_str)], or None."""
+def _insns_at(image, addr):
+    """Linear disassembly of a function as [(address, mnemonic, op_str)], or None."""
     func = image.by_addr.get(addr)
     if not func:
         return None
@@ -95,9 +103,212 @@ def _insns(image, addr):
         off = image.va2off(start)
         if off is None:
             return None
-        out.extend((i.mnemonic, i.op_str)
+        out.extend((i.address, i.mnemonic, i.op_str)
                    for i in _MD.disasm(image.data[off:off + (end - start + 1)], start))
     return out
+
+
+def _insns(image, addr):
+    """Linear disassembly of a function as [(mnemonic, op_str)], or None."""
+    out = _insns_at(image, addr)
+    return None if out is None else [(m, o) for _, m, o in out]
+
+
+def _shape(insn):
+    """An instruction with its literals blanked: two of one shape differ only in numbers."""
+    return insn[1] + " " + _NUM.sub("#", insn[2])
+
+
+def aligned(a_insns, b_insns, align=False):
+    """[(a, b)] instructions paired in order: zipped when the streams are the same
+    length; otherwise nothing, or with `align` the runs of equal shape difflib
+    finds. Those can pair a run of like stores one slot off where the sibling
+    inserted a store into it, so they are opt-in."""
+    if len(a_insns) == len(b_insns):
+        return list(zip(a_insns, b_insns))
+    if not align:
+        return []
+    matcher = difflib.SequenceMatcher(a=[_shape(i) for i in a_insns],
+                                      b=[_shape(i) for i in b_insns], autojunk=False)
+    return [(a_insns[i + k], b_insns[j + k])
+            for i, j, n in matcher.get_matching_blocks() for k in range(n)]
+
+
+def load_typed(path):
+    """({address: [(struct, offset)]}, {struct: reference length}, {address: [(struct,
+    size, kind)]}) from export_typed_accesses.py's output."""
+    with open(path, encoding="utf-8") as fh:
+        data = json.load(fh)
+    return ({int(a, 16): [tuple(r) for r in roots] for a, roots in data["accesses"].items()},
+            data["sizes"],
+            {int(a, 16): [tuple(r) for r in found] for a, found in data.get("size_uses", {}).items()})
+
+
+def field_delta(segments, offset, tail_delta):
+    """How far a field at the reference's `offset` moved, or None where that is not known.
+
+    Inside an observed segment, or between two that moved alike, the field
+    moved with them: a field inserted between them would show as a change of
+    delta. Between segments that differ, the insertion could lie on either side
+    of it. Before the first segment it is known only if that segment did not
+    move; after the last, only if the class's whole size change (`tail_delta`)
+    is that segment's delta -- otherwise the unexplained bytes could sit before it.
+    Offset 0 never moves: nothing is inserted ahead of a struct's first member,
+    a derived class's base above all.
+    """
+    if offset == 0:
+        return 0
+    prev = next_ = None
+    for s in segments:
+        if s["from_lo"] <= offset <= s["from_hi"]:
+            return s["delta"]
+        if s["from_hi"] < offset:
+            prev = s
+        elif next_ is None:
+            next_ = s
+    if prev and next_:
+        return prev["delta"] if prev["delta"] == next_["delta"] else None
+    if next_:
+        return 0 if next_["delta"] == 0 else None
+    if prev:
+        return prev["delta"] if prev["delta"] == tail_delta else None
+    return None
+
+
+def by_value_members(program):
+    """{struct: [(offset, member struct, count, element length)]}: the structs each of the
+    program's structs holds by value, alone or as an array, from its exported layouts."""
+    path = os.path.join(sm.ANNOTATIONS, program, "data_types", "data_types.json")
+    try:
+        with open(path, encoding="utf-8") as fh:
+            structs = json.load(fh).get("structs", [])
+    except OSError:
+        return {}
+    sizes = {s.get("name"): s.get("len") or 0 for s in structs}
+    out = {}
+    for s in structs:
+        members = []
+        for f in s.get("fields", []):
+            core = (f.get("type") or "").split("[", 1)[0].strip()
+            length = sizes.get(core, 0)
+            if core.endswith("*") or length <= 1 or (f.get("len") or 0) < length:
+                continue
+            members.append((f["offset"], core, f["len"] // length, length))
+        if members:
+            out[s.get("name")] = members
+    return out
+
+
+def nest(obs, members, rounds=6, min_support=3):
+    """(sightings, element sizes): `obs` plus what each struct held by value learns
+    from its container's sightings, and the sibling's size of array elements.
+
+    A container's sighting at offset x inside a member struct S at offset o is a
+    sighting of S itself: inner offset x - o, sibling offset y - o', where o' is
+    o moved by the container's own measured shift (field_delta; unknown there,
+    nothing is passed down). In an array, a sighting in element k > 0 says
+    k * size + inner offset, so with S's own shift at that inner offset known it
+    gives S's sibling size. Each round passes the last round's new sightings one
+    level down (a class's `base`, then its members), with the shifts measured
+    over everything gathered so far.
+    """
+    total = {name: Counter(c) for name, c in obs.items()}
+    sizes = defaultdict(Counter)
+    frontier = obs
+    for _ in range(rounds):
+        shifts = {name: [s for s in segment(c)[0] if s["support"] >= min_support] for name, c in total.items()}
+        found = defaultdict(Counter)
+        for name, counter in frontier.items():
+            for (x, y), n in counter.items():
+                for offset, inner_name, count, length in members.get(name, []):
+                    if not offset <= x < offset + count * length:
+                        continue
+                    base = field_delta(shifts.get(name, []), offset, None)
+                    if base is None:
+                        break
+                    k, inner = divmod(x - offset, length)
+                    rel = y - offset - base
+                    if k == 0:
+                        found[inner_name][(inner, rel)] += n
+                    else:
+                        moved = field_delta(shifts.get(inner_name, []), inner, None)
+                        if moved is not None and (rel - inner - moved) % k == 0:
+                            sizes[inner_name][(rel - inner - moved) // k] += n
+                    break
+        if not found:
+            break
+        for name, c in found.items():
+            total.setdefault(name, Counter()).update(c)
+        frontier = found
+    return total, sizes
+
+
+# How far before an allocator call its size argument may be loaded
+ALLOC_WINDOW = 8
+
+
+def _paired_numbers(o1, o2, value):
+    """The sibling's literals at the places the reference's operand spells `value`."""
+    xs, ys = _NUM.findall(o1), _NUM.findall(o2)
+    return [int(y, 0) for x, y in zip(xs, ys) if int(x, 0) == value]
+
+
+def observe_sizes(a_img, b_img, pairs, uses):
+    """struct -> Counter of the sibling's size, read where the reference spells the
+    struct's size as a constant (export_typed_accesses.py size uses): at an array
+    stride, in that instruction; at an allocation, in the few instructions before
+    the call that load its argument. Only instructions of the same shape are read."""
+    seen = defaultdict(Counter)
+    for p in pairs:
+        A, B = _insns_at(a_img, p["a"]), _insns_at(b_img, p["b"])
+        if not A or not B:
+            continue
+        paired = aligned(A, B)
+        index = {a[0]: i for i, (a, _) in enumerate(paired)}
+        for va, found in ((va, uses[va]) for va in index if va in uses):
+            i = index[va]
+            for name, size, kind in found:
+                window = paired[i:i + 1] if kind == "stride" else paired[max(0, i - ALLOC_WINDOW):i]
+                for (_, m1, o1), (_, m2, o2) in reversed(window):
+                    if m1 != m2 or _NUM.sub("#", o1) != _NUM.sub("#", o2):
+                        continue
+                    got = _paired_numbers(o1, o2, size)
+                    if got:
+                        seen[name][got[0]] += 1
+                        break
+    return seen
+
+
+def observe_typed(a_img, b_img, pairs, typed, sizes, include_unshifted=False, align=False):
+    """observe(), crediting each sighting to the struct the reference's decompiler
+    types the access with (`typed`, from load_typed) rather than to the method's
+    owner. A displacement is credited only where it is the access's recorded
+    offset, which is what makes ebp operands safe to read, and only inside the
+    struct's reference size (`sizes`): past it, the pointer held a derived object
+    its variable's type does not name. Every matched pair counts, methods or not.
+    """
+    obs = defaultdict(Counter)
+    pairs_seen, compared = Counter(), Counter()
+    for p in pairs:
+        A, B = _insns_at(a_img, p["a"]), _insns_at(b_img, p["b"])
+        if not A or not B:
+            continue
+        touched = set()
+        for (va, m1, o1), (_, m2, o2) in aligned(A, B, align):
+            roots = typed.get(va)
+            if not roots or m1 != m2 or m1 in ("call", "jmp") or _NUM.sub("#", o1) != _NUM.sub("#", o2):
+                continue
+            for vx, vy in zip(_displacements(o1, ("esp",)), _displacements(o2, ("esp",))):
+                for name, offset in roots:
+                    if offset != vx or not 0 <= offset < sizes.get(name, 0):
+                        continue
+                    touched.add(name)
+                    if vx != vy or include_unshifted:
+                        obs[name][(vx, vy)] += 1
+        for name in touched:
+            pairs_seen[name] += 1
+            compared[name] += 1
+    return obs, defaultdict(Counter), pairs_seen, compared
 
 
 def observe(a_img, b_img, pairs, include_unshifted=False):
@@ -134,14 +345,11 @@ def observe(a_img, b_img, pairs, include_unshifted=False):
             # move" bound every boundary is open-ended on the low side.
             if o1 == o2 and not include_unshifted:
                 continue
-            # Same instruction shape, differing only in literals.
+            # Same instruction shape, differing only in literals -- which also
+            # means both operands hold their displacements in the same places.
             if _NUM.sub("#", o1) != _NUM.sub("#", o2):
                 continue
-            dx, dy = _displacements(o1), _displacements(o2)
-            if len(dx) != len(dy):
-                continue
-            for x, y in zip(dx, dy):
-                vx, vy = int(x, 0), int(y, 0)
+            for vx, vy in zip(_displacements(o1), _displacements(o2)):
                 if vx == vy and not include_unshifted:
                     continue
                 if a_img.is_mapped_va(vx) and b_img.is_mapped_va(vy):
@@ -196,7 +404,7 @@ def segment(counter, min_support=2):
     return segs, purity
 
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("mapping")
@@ -210,18 +418,37 @@ def main():
                          "class's observations across its subclasses.")
     ap.add_argument("--min-observations", type=int, default=8,
                     help="ignore classes with fewer sightings (default: 8)")
+    ap.add_argument("--typed-accesses", metavar="PATH",
+                    help="export_typed_accesses.py output for the reference build: credit "
+                         "each sighting to the struct the access is typed with")
+    ap.add_argument("--align", action="store_true",
+                    help="with --typed-accesses, also pair the instructions of unequal-length "
+                         "pairs by shape (more sightings, some one slot off)")
     ap.add_argument("--class", dest="only", help="detail one class")
     ap.add_argument("-v", "--verbose", action="store_true",
                     help="list every segment, not just the dominant drift")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
     with open(args.mapping) as fh:
         mapping = json.load(fh)
     a_img = sm.Image(mapping["from"])
     b_img = sm.Image(mapping["to"])
 
-    obs, vobs, methods, compared = observe(a_img, b_img, mapping["pairs"],
-                                           include_unshifted=args.include_unshifted)
+    measured = {}
+    if args.typed_accesses:
+        typed, sizes, uses = load_typed(args.typed_accesses)
+        obs, vobs, methods, compared = observe_typed(a_img, b_img, mapping["pairs"], typed, sizes,
+                                                     include_unshifted=args.include_unshifted,
+                                                     align=args.align)
+        obs, element_sizes = nest(obs, by_value_members(mapping["from"]))
+        spelled = observe_sizes(a_img, b_img, mapping["pairs"], uses)
+        for name, c in element_sizes.items():
+            spelled[name].update(c)
+        measured = {name: {str(size): n for size, n in sorted(c.items())}
+                    for name, c in sorted(spelled.items())}
+    else:
+        obs, vobs, methods, compared = observe(a_img, b_img, mapping["pairs"],
+                                               include_unshifted=args.include_unshifted)
 
     if args.dump_observations:
         with open(args.dump_observations, "w") as fh:
@@ -304,6 +531,9 @@ def main():
             "weak": sorted(c for c, r in results.items()
                            if r["verdict"] == "weak"),
             "drift": {c: r for c, r in sorted(results.items())},
+            # With --typed-accesses: the sibling's size of each struct, as its
+            # allocations and array strides spell it, {struct: {size: sightings}}
+            "sizes": measured,
         }
         with open(args.out, "w") as fh:
             json.dump(payload, fh, indent=1)

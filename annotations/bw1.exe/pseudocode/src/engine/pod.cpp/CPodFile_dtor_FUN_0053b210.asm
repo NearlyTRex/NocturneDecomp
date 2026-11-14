@@ -7,11 +7,12 @@
 ; CPodFile *       Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
-; XREF[4]:
+; XREF[5]:
 ;   engine_pod.cpp_CPod_cleanup_FUN_0053c8f0 at 0053c926
 ;   engine_pod.cpp_CPod_dismountPod_FUN_0053d490 at 0053d4d3
 ;   engine_pod.cpp_FUN_0053c650 at 0053c68c
-;   engine_pod.cpp_FUN_0053cc5c at 0053cde9
+;   engine_pod.cpp_FUN_0053cc60 at 0053cde9
+;   engine_pod.cpp_FUN_0053ce50 at 0053ce91
 ;
 ; Called Functions:
 ;   engine_pod.cpp_CPodFile_cleanup_FUN_0053be30

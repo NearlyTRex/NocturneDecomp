@@ -11,16 +11,15 @@ void __cdecl core_fire_cpp_CMuzzleFlash_process_FUN_0049a450(CMuzzleFlash *this_
 {
   int iVar1;
   
-  iVar1 = *(int *)this_ptr + -1;
-  *(int *)this_ptr = iVar1;
+  iVar1 = this_ptr->frames_remaining + -1;
+  this_ptr->frames_remaining = iVar1;
   if (iVar1 < 0) {
-    *(uint *)this_ptr = 0;
+    this_ptr->frames_remaining = 0;
     return;
   }
   if (iVar1 != 1) {
     return;
   }
-  core_fire_cpp_CFireEffect_createDefaultSmoke_FUN_004a2010
-            (0x01C73654,(CVector3f *)&this_ptr->field_0x4);
+  core_fire_cpp_CFireEffect_createDefaultSmoke_FUN_004a2010(0x01C73654,&this_ptr->position);
   return;
 }

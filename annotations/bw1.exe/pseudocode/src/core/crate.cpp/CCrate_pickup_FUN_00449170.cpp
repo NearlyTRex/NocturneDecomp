@@ -9,6 +9,6 @@
 void __cdecl core_crate_cpp_CCrate_pickup_FUN_00449170(CCrate *this_ptr,CDemonActor *carrier)
 
 {
-  *(CDemonActor **)&this_ptr->field_0x2d4 = carrier;
+  this_ptr->carrier = carrier;
   return;
 }

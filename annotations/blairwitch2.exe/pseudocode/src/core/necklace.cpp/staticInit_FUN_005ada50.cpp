@@ -1,12 +1,12 @@
 // Name: core_necklace.cpp_staticInit_FUN_005ada50
 // Address: 005ada50
 // Address Range: [[005ada50, 005ada73]]
-// Convention: unknown
-// Signature: void core_necklace_cpp_staticInit_FUN_005ada50(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_necklace_cpp_staticInit_FUN_005ada50(void)
 
 #include "nocturne.h"
 
-void core_necklace_cpp_staticInit_FUN_005ada50(void)
+void __cdecl core_necklace_cpp_staticInit_FUN_005ada50(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450

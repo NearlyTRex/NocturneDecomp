@@ -1,0 +1,332 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 190,
+    "complexity_score": 178,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 9,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 88,
+    "suspect_count": 8,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 278
+  },
+  "cross_references": [
+    {
+      "addr": "0047ffd0",
+      "from_addr": "0047ffe2",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_fillFullSurface_FUN_0047ffd0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0047fe30",
+    "address_range": [
+      [
+        "0047fe30",
+        "0047ffc8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FUN_0047fe30",
+    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillRectangle_FUN_0047fe30(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0047e9d0",
+      "is_variadic": false,
+      "name": "cockpit_drawsurf.cpp_drawHorizontalLineWithEffect_FUN_0047e9d0"
+    },
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "005bfb70",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005bfb70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005db1ad",
+      "name": "s_cockpit_drawsurf_cpp_005db1ad",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db1c5",
+      "name": "s_Invalid_bitsPerPixel_005db1c5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061b4a0",
+      "name": "DAT_0061b4a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bc11e4",
+      "name": "DAT_01bc11e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bc11f0",
+      "name": "DAT_01bc11f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4354c",
+      "name": "DAT_01c4354c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c43550",
+      "name": "DAT_01c43550",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0047ffe2",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_fillFullSurface_FUN_0047ffd0",
+        "estimated_params": 5,
+        "instructions_analyzed": 10,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.675862068965517,
+    "instruction_count": 145,
+    "opcode_distribution": {
+      "BOOL_AND": 6,
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 7,
+      "BRANCH": 3,
+      "CALL": 3,
+      "CBRANCH": 19,
+      "COPY": 102,
+      "INT_ADD": 68,
+      "INT_AND": 90,
+      "INT_CARRY": 18,
+      "INT_EQUAL": 98,
+      "INT_LESS": 20,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 6,
+      "INT_SBORROW": 20,
+      "INT_SCARRY": 25,
+      "INT_SLESS": 45,
+      "INT_SUB": 34,
+      "LOAD": 34,
+      "POPCOUNT": 45,
+      "RETURN": 3,
+      "STORE": 21
+    },
+    "pcode_op_count": 678
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00467920",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004694f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00488ad0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0045d110",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 60,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrawSurface *"
+      },
+      {
+        "is_param": true,
+        "name": "x1",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y1",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "x2",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y2",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_0061b4a0",
+      "severity": "mild",
+      "text": "if (DAT_0061b4a0 < 0x10) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_0061b4a0",
+      "severity": "mild",
+      "text": "if (DAT_0061b4a0 == 8) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 39,
+      "match": "DAT_01c4354c",
+      "severity": "mild",
+      "text": "piVar1 = (int *)(&DAT_01c4354c + iVar4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 52,
+      "match": "DAT_0061b4a0",
+      "severity": "mild",
+      "text": "if (DAT_0061b4a0 < 0x11) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 56,
+      "match": "DAT_01c4354c",
+      "severity": "mild",
+      "text": "puVar2 = (ushort *)(start_x * 2 + *(int *)(&DAT_01c4354c + iVar4));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 67,
+      "match": "DAT_0061b4a0",
+      "severity": "mild",
+      "text": "if (DAT_0061b4a0 != 0x20) goto LAB_0047ff9e;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 70,
+      "match": "DAT_01c4354c",
+      "severity": "mild",
+      "text": "piVar1 = (int *)(start_x * 4 + *(int *)(&DAT_01c4354c + iVar4));",
+      "type": "undefined_data"
+    }
+  ]
+}

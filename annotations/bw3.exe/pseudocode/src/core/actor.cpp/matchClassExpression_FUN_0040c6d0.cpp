@@ -2,62 +2,62 @@
 // Address: 0040c6d0
 // Address Range: [[0040c6d0, 0040c781]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_actor_cpp_matchClassExpression_FUN_0040c6d0(undefined4 param_1,undefined4 *param_2)
+// Signature: int __cdecl core_actor_cpp_matchClassExpression_FUN_0040c6d0(CDemonActorType *type_ptr,char **parse_pos)
 
 #include "nocturne.h"
 
-uint __cdecl core_actor_cpp_matchClassExpression_FUN_0040c6d0(uint param_1,uint *param_2)
+int __cdecl core_actor_cpp_matchClassExpression_FUN_0040c6d0(CDemonActorType *type_ptr,char **parse_pos)
 
 {
   char cVar1;
   char *pcVar2;
   int iVar3;
-  uint uVar4;
+  int iVar4;
   
-  uVar4 = 0;
+  iVar4 = 0;
   while( true ) {
     while( true ) {
-      while (((&DAT_006074b8)[(byte)(*(char *)*param_2 + 1)] & 2) != 0) {
-        *param_2 = (char *)*param_2 + 1;
+      while (((&DAT_006074b8)[(byte)(**parse_pos + 1)] & 2) != 0) {
+        *parse_pos = *parse_pos + 1;
       }
-      pcVar2 = (char *)*param_2;
+      pcVar2 = *parse_pos;
       cVar1 = *pcVar2;
       if ((cVar1 == '\0') || (cVar1 == ')')) {
-        return uVar4;
+        return iVar4;
       }
       if (cVar1 == '|') break;
       if (cVar1 == '&') {
-        *param_2 = pcVar2 + 1;
+        *parse_pos = pcVar2 + 1;
         if (pcVar2[1] == '&') {
-          *param_2 = pcVar2 + 2;
+          *parse_pos = pcVar2 + 2;
         }
-        iVar3 = core_actor_cpp_matchClassTerm_FUN_0040c5b0(param_1,param_2);
+        iVar3 = core_actor_cpp_matchClassTerm_FUN_0040c5b0(type_ptr,parse_pos);
         if (iVar3 < 0) {
-          return 0xffffffff;
+          return -1;
         }
         if (iVar3 == 0) {
-          uVar4 = 0;
+          iVar4 = 0;
         }
       }
       else {
-        iVar3 = core_actor_cpp_matchClassTerm_FUN_0040c5b0(param_1,param_2);
+        iVar3 = core_actor_cpp_matchClassTerm_FUN_0040c5b0(type_ptr,parse_pos);
         if (iVar3 < 0) {
-          return 0xffffffff;
+          return -1;
         }
         if (0 < iVar3) {
-          uVar4 = 1;
+          iVar4 = 1;
         }
       }
     }
-    *param_2 = pcVar2 + 1;
+    *parse_pos = pcVar2 + 1;
     if (pcVar2[1] == '|') {
-      *param_2 = pcVar2 + 2;
+      *parse_pos = pcVar2 + 2;
     }
-    iVar3 = core_actor_cpp_matchClassTerm_FUN_0040c5b0(param_1,param_2);
+    iVar3 = core_actor_cpp_matchClassTerm_FUN_0040c5b0(type_ptr,parse_pos);
     if (iVar3 < 0) break;
     if (0 < iVar3) {
-      uVar4 = 1;
+      iVar4 = 1;
     }
   }
-  return 0xffffffff;
+  return -1;
 }

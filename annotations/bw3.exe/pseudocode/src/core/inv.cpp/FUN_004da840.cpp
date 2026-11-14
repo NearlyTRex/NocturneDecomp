@@ -9,8 +9,8 @@
 void core_inv_cpp_FUN_004da840(void)
 
 {
-  engine_alphabit_cpp_FUN_0040d400(&CAlphaBitmap_01d70890);
-  engine_alphabit_cpp_FUN_0040d400(&CAlphaBitmap_01d708a4);
-  engine_alphabit_cpp_FUN_0040d400(&CAlphaBitmap_01d708b8);
+  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(&CAlphaBitmap_01d70890);
+  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(&CAlphaBitmap_01d708a4);
+  engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040d400(&CAlphaBitmap_01d708b8);
   return;
 }

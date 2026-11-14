@@ -12,9 +12,9 @@
 ; XREF[5]:
 ;   core_curtain.cpp_CCurtain_renderMesh_FUN_00448060 at 00448222
 ;   core_fire.cpp_CLaserBeam_render_FUN_0049b1d0 at 0049c186
-;   core_glass.cpp_FUN_004ca5a0 at 004ca73a
-;   core_glass.cpp_FUN_004ca770 at 004ca909
-;   core_water.cpp_FUN_00577760 at 00577bff
+;   core_glass.cpp_CGlass_renderOpaque_FUN_004ca5a0 at 004ca73a
+;   core_glass.cpp_CGlass_renderTransparent_FUN_004ca770 at 004ca909
+;   core_water.cpp_CWater_render_FUN_00577760 at 00577bff
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fba20
@@ -109,7 +109,7 @@ section .text
     ADD EAX,0x8                         ; 0046c8b2
     PUSH EAX                            ; 0046c8b5
     CALL engine_3d.c_isVisiblePlane_FUN_00403920 ; 0046c8b6
-        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403920()
+        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403920(SClipPlane * plane)
     ADD ESP,0x4                         ; 0046c8bb
     TEST EAX,EAX                        ; 0046c8be
     JZ 0x0046c8a6                       ; 0046c8c0

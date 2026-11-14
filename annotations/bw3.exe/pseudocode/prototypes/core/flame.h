@@ -7,51 +7,51 @@
 
 // Original: core_flame.cpp_staticInit_FUN_004a5950
 // Address: 004a5950
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_flame.cpp_factoryFuncFlame_FUN_004a5980
 // Address: 004a5980
-void factoryFuncFlame(void);
+CFlame * __cdecl factoryFuncFlame(void);
 
 // Original: core_flame.cpp_CFlame_getActorType_FUN_004a59a0
 // Address: 004a59a0
-CDemonActorType * CFlame::getActorType(CFlame *this_ptr);
+CDemonActorType * __cdecl CFlame::getActorType(CFlame *this_ptr);
 
 // Original: core_flame.cpp_CFlame_ctor_FUN_004a59b0
 // Address: 004a59b0
 CFlame * __cdecl CFlame::ctor(CFlame *this_ptr);
 
-// Original: core_flame.cpp_FUN_004a5aa0
+// Original: core_flame.cpp_CFlame_setup_FUN_004a5aa0
 // Address: 004a5aa0
-void FUN_004a5aa0(CDemonActor *param_1);
+void __cdecl CFlame::setup(CFlame *this_ptr);
 
 // Original: core_flame.cpp_FUN_004a5ad0
 // Address: 004a5ad0
 void FUN_004a5ad0(int param_1);
 
-// Original: core_flame.cpp_FUN_004a5b10
+// Original: core_flame.cpp_CFlame_process_FUN_004a5b10
 // Address: 004a5b10
-void __cdecl FUN_004a5b10(CFlame *this_ptr,float delta_time);
+void __cdecl CFlame::process(CFlame *this_ptr,float delta_time);
 
-// Original: core_flame.cpp_FUN_004a6090
+// Original: core_flame.cpp_CFlame_renderTransparent_FUN_004a6090
 // Address: 004a6090
-int __cdecl FUN_004a6090(CFlame *this_ptr);
+int __cdecl CFlame::renderTransparent(CFlame *this_ptr);
 
-// Original: core_flame.cpp_FUN_004a6a50
+// Original: core_flame.cpp_CFlame_renderBackground_FUN_004a6a50
 // Address: 004a6a50
-void FUN_004a6a50(CDemonActor *param_1,int param_2);
+void __cdecl CFlame::renderBackground(CFlame *this_ptr,int layer_flag);
 
-// Original: core_flame.cpp_FUN_004a6c20
+// Original: core_flame.cpp_CFlame_getBoundingBox_FUN_004a6c20
 // Address: 004a6c20
-void FUN_004a6c20(int param_1);
+CBoundingBox3D * __cdecl CFlame::getBoundingBox(CFlame *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_flame.cpp_CFlame_archive_FUN_004a6ca0
 // Address: 004a6ca0
 void __cdecl CFlame::archive(CFlame *this_ptr);
 
-// Original: core_flame.cpp_FUN_004a6dc0
+// Original: core_flame.cpp_CFlame_getCollisionType_FUN_004a6dc0
 // Address: 004a6dc0
-undefined4 FUN_004a6dc0(void);
+ECollisionType __cdecl CFlame::getCollisionType(CFlame *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_flame.cpp_FUN_004a6dd0
 // Address: 004a6dd0

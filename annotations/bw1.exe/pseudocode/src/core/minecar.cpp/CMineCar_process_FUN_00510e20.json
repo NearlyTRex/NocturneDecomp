@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 80,
+    "complexity_score": 17,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 15,
-    "suspect_count": 6,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 59
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 61
   },
   "cross_references": [],
   "function": {
@@ -36,7 +34,7 @@
     {
       "addr": "00539810",
       "is_variadic": false,
-      "name": "core_platfrm.cpp_FUN_00539810"
+      "name": "core_platfrm.cpp_CPlatform_process_FUN_00539810"
     }
   ],
   "globals": [
@@ -91,6 +89,26 @@
     },
     "pcode_op_count": 192
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004f2090",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00520eb0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004d6040",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -114,60 +132,11 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x2d4",
-      "severity": "mild",
-      "text": "if (((*(int *)&this_ptr->field_0x2d4 == 3) || (*(int *)&this_ptr->field_0x2d4 == 4)) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x2d4",
-      "severity": "mild",
-      "text": "if (((*(int *)&this_ptr->field_0x2d4 == 3) || (*(int *)&this_ptr->field_0x2d4 == 4)) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x728",
-      "severity": "mild",
-      "text": "(fVar1 = *(float *)&this_ptr->field_0x728 - delta_time,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x728",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x728 = fVar1, fVar1 < 0.0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x728",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x728 = 0x3dcccccd;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(0x01C57074,(CVector3f *)&this_ptr->field_0x20,(CVector3f *)0x0,0x4000,0x10000,0,",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CMineCar",
         "offset": 12,
         "vtable_addr": "00603b74"
       }

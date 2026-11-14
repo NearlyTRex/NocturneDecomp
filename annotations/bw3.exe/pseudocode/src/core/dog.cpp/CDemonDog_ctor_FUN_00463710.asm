@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonDog * core_dog_cpp_CDemonDog_ctor_FUN_00463710(CDemonDog *this_ptr)
+; CDemonDog * __cdecl core_dog_cpp_CDemonDog_ctor_FUN_00463710(CDemonDog *this_ptr)
 ;
 ; Parameters:
 ; CDemonDog *      Stack[0x4]:4   this_ptr
@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   core_dog.cpp_CZombieDog_ctor_FUN_00462710
-;   core_skeleton.cpp_FUN_0054eae0
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     ADD EAX,0x158                       ; 00463725
     PUSH EAX                            ; 0046372a
     MOV dword ptr [EAX + -0x4],0x5de874 ; 0046372b
-    CALL core_skeleton.cpp_FUN_0054eae0 ; 00463732
-        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054eae0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 ; 00463732
+        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2538],0x41f00000 ; 00463737
     MOV dword ptr [EBX + 0xce5c],0x41200000 ; 00463741
     MOV dword ptr [EBX + 0xce60],0x41200000 ; 0046374b

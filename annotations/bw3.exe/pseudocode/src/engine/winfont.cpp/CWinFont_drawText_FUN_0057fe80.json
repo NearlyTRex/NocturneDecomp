@@ -1,0 +1,162 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 41,
+    "complexity_score": 12,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 53
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0057fe80",
+    "address_range": [
+      [
+        "0057fe80",
+        "0057fecb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_winfont.cpp_CWinFont_drawText_FUN_0057fe80",
+    "signature": "int __cdecl engine_winfont_cpp_CWinFont_drawText_FUN_0057fe80(CWinFont *this_ptr,char *text_string,int x,int y,int foreground_color,int background_color)"
+  },
+  "function_calls": [
+    {
+      "addr": "00580110",
+      "is_variadic": false,
+      "name": "engine_winfont.cpp_CWinFont_createTextBackground_FUN_00580110"
+    },
+    {
+      "addr": "0057fed0",
+      "is_variadic": false,
+      "name": "engine_winfont.cpp_FUN_0057fed0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8055555555555554,
+    "instruction_count": 36,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 2,
+      "CBRANCH": 1,
+      "COPY": 37,
+      "INT_ADD": 17,
+      "INT_AND": 9,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 4,
+      "INT_SUB": 16,
+      "INT_XOR": 1,
+      "LOAD": 15,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 16
+    },
+    "pcode_op_count": 137
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0058e0c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005b1c00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005f23f0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00558060",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWinFont *"
+      },
+      {
+        "is_param": true,
+        "name": "text_string",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "foreground_color",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "background_color",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWinFont",
+        "offset": 4,
+        "vtable_addr": "005e6534"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

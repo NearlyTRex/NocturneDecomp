@@ -32,13 +32,13 @@
     {
       "addr": "00558050",
       "from_addr": "005580a2",
-      "name": "sound_sndmain.cpp_FUN_00558050",
+      "name": "sound_sndmain.cpp_enableSoundSystem_FUN_00558050",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00559220",
       "from_addr": "00559405",
-      "name": "sound_sndmain.cpp_FUN_00559220",
+      "name": "sound_sndmain.cpp_readIni_FUN_00559220",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -86,7 +86,7 @@
     {
       "addr": "005586c0",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005586c0"
+      "name": "sound_sndmain.cpp_isSoundBusy_FUN_005586c0"
     }
   ],
   "globals": [
@@ -145,7 +145,7 @@
       {
         "call_addr": "005580a2",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00558050",
+        "caller": "sound_sndmain.cpp_enableSoundSystem_FUN_00558050",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -156,7 +156,7 @@
       {
         "call_addr": "00559405",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00559220",
+        "caller": "sound_sndmain.cpp_readIni_FUN_00559220",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -253,6 +253,32 @@
       "STORE": 15
     },
     "pcode_op_count": 207
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005526f0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00575120",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005ab170",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "005280c0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 16,

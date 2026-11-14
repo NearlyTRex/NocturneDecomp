@@ -9,7 +9,7 @@
 ;   support_trisock.cpp_FUN_0059d4b0 at 0059d61c
 ;
 ; Called Functions:
-;   support_trisock.cpp_FUN_0059cb20
+;   support_trisock.cpp_CSocket_receiveSocketData_FUN_0059cb20
 ;
 ; *****************************************************************************
 
@@ -65,8 +65,8 @@ section .text
     PUSH ESI                            ; 0059d3cf
     MOV EAX,dword ptr [EBX + 0x4]       ; 0059d3d0
     PUSH EAX                            ; 0059d3d3
-    CALL support_trisock.cpp_FUN_0059cb20 ; 0059d3d4
-        ;   XREF to: 0059cb20 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_FUN_0059cb20(CSocket * this_ptr, char * buffer, int length, SNetworkAddr * source_addr)
+    CALL support_trisock.cpp_CSocket_receiveSocketData_FUN_0059cb20 ; 0059d3d4
+        ;   XREF to: 0059cb20 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_CSocket_receiveSocketData_FUN_0059cb20(CSocket * this_ptr, char * buffer, int length, SNetworkAddr * source_addr)
     ADD ESP,0x10                        ; 0059d3d9
     MOV EDX,EAX                         ; 0059d3dc
     CMP EAX,-0x2                        ; 0059d3de

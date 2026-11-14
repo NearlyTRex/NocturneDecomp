@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 267,
+    "complexity_score": 268,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 5,
     "max_suspect_severity": "severe",
-    "pseudocode_lines": 62,
+    "pseudocode_lines": 63,
     "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
@@ -18,7 +18,7 @@
       "warning_overlapping_globals",
       "warning_spacebase"
     ],
-    "total_lines": 133
+    "total_lines": 134
   },
   "cross_references": [
     {
@@ -58,34 +58,34 @@
       "name": "crt_unknown.c_FUN_005c5348"
     },
     {
+      "addr": "005ca454",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005ca454"
+    },
+    {
+      "addr": "005cb630",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005cb630"
+    },
+    {
+      "addr": "005cc370",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005cc370"
+    },
+    {
+      "addr": "005ccb40",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005ccb40"
+    },
+    {
       "addr": "EXTERNAL:00000074",
       "is_variadic": false,
       "name": "GetModuleHandleA"
     },
     {
-      "addr": "005ca454",
-      "is_variadic": false,
-      "name": "unkafter_zombie.cpp_FUN_005ca454"
-    },
-    {
-      "addr": "005cb630",
-      "is_variadic": false,
-      "name": "unkafter_zombie.cpp_FUN_005cb630"
-    },
-    {
-      "addr": "005cc370",
-      "is_variadic": false,
-      "name": "unkafter_zombie.cpp_FUN_005cc370"
-    },
-    {
-      "addr": "005ccb40",
-      "is_variadic": false,
-      "name": "unkafter_zombie.cpp_FUN_005ccb40"
-    },
-    {
       "addr": "005b2e00",
       "is_variadic": false,
-      "name": "wincore_winrun.cpp_FUN_005b2e00"
+      "name": "wincore_winrun.cpp_winMain_FUN_005b2e00"
     }
   ],
   "globals": [
@@ -156,6 +156,32 @@
     },
     "pcode_op_count": 238
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005c2020",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005ad1e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00609e70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0056df10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 20,
     "local_size": 20,
@@ -215,87 +241,87 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 23,
       "match": "(uint *)((int)aiStack_1c",
       "severity": "moderate",
-      "text": "*(uint *)((int)aiStack_1c + iVar1 + 4) = 0;",
+      "text": "*(uint *)((int)aiStack_1c + iVar4 + 4) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 24,
       "match": "(byte **)((int)aiStack_1c",
       "severity": "moderate",
-      "text": "*(byte **)((int)aiStack_1c + iVar1) = local_10 + iVar1;",
+      "text": "*(byte **)((int)aiStack_1c + iVar4) = local_10 + iVar4;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 27,
       "match": "(void **)((int)aiStack_1c",
       "severity": "moderate",
-      "text": "(*(void **)((int)aiStack_1c + iVar1),*(int *)((int)aiStack_1c + iVar1 + 4),",
+      "text": "(*(void **)((int)aiStack_1c + iVar4),*(int *)((int)aiStack_1c + iVar4 + 4),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 27,
       "match": "(int *)((int)aiStack_1c",
       "severity": "moderate",
-      "text": "(*(void **)((int)aiStack_1c + iVar1),*(int *)((int)aiStack_1c + iVar1 + 4),",
+      "text": "(*(void **)((int)aiStack_1c + iVar4),*(int *)((int)aiStack_1c + iVar4 + 4),",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 31,
+      "line": 30,
       "match": "&stack0x000000e0",
       "severity": "moderate",
-      "text": "*(int *)(&stack0x000000e0 + iVar1) = 0x000000F4;",
+      "text": "*(int *)(&stack0x000000e0 + iVar4) = 0x000000F4;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 31,
       "match": "(byte **)((int)aiStack_1c",
       "severity": "moderate",
-      "text": "*(byte **)((int)aiStack_1c + iVar1 + 4) = local_10;",
+      "text": "*(byte **)((int)aiStack_1c + iVar4 + 4) = local_10;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 32,
       "match": "(uint *)((int)aiStack_1c",
       "severity": "moderate",
-      "text": "*(uint *)((int)aiStack_1c + iVar1) = 0x5ca3b6;",
+      "text": "*(uint *)((int)aiStack_1c + iVar4) = 0x5ca3b6;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 35,
       "match": "DAT_006265c0",
       "severity": "mild",
-      "text": "uVar6 = DAT_006265c0 + 3U & 0xfffffffc;",
+      "text": "uVar5 = DAT_006265c0 + 3U & 0xfffffffc;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 40,
       "match": "(uint *)((int)aiStack_1c",
       "severity": "moderate",
-      "text": "*(uint *)((int)aiStack_1c + iVar1 + 4) = 0x5ca3d4;",
+      "text": "*(uint *)((int)aiStack_1c + iVar4 + 4) = 0x5ca3d4;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 42,
       "match": "DAT_006265c0",
       "severity": "mild",
-      "text": "iVar2 = -(DAT_006265c0 + 3U & 0xfffffffc);",
+      "text": "iVar1 = -(DAT_006265c0 + 3U & 0xfffffffc);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 49,
       "match": "DAT_006265c0",
       "severity": "mild",
       "text": "_DAT_006265c4 = _DAT_006265c4 + DAT_006265c0;",
@@ -303,23 +329,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 53,
       "match": "DAT_0062659c",
       "severity": "mild",
-      "text": "*(uint *)(puVar7 + -8) = DAT_0062659c;",
+      "text": "*(uint *)(puVar6 + -8) = DAT_0062659c;",
       "type": "undefined_data"
     },
     {
       "description": "Pointer value `&uStack_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 26,
+      "line": 25,
       "match": "(int)&uStack_20",
       "severity": "moderate",
-      "text": "*(uint *)((int)&uStack_20 + iVar1) = 0x5ca39e;",
+      "text": "*(uint *)((int)&uStack_20 + iVar4) = 0x5ca39e;",
       "type": "pointer_truncation"
     },
     {
       "description": "Raw hex address 0x5ca381 assigned to bare local `uStack_14`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_14` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 20,
+      "line": 19,
       "match": "0x5ca381",
       "severity": "moderate",
       "text": "uStack_14 = 0x5ca381;",
@@ -327,10 +353,10 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 26,
+      "line": 25,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&uStack_20 + iVar1) = 0x5ca39e;",
+      "text": "*(uint *)((int)&uStack_20 + iVar4) = 0x5ca39e;",
       "type": "pointer_cast"
     }
   ]

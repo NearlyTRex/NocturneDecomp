@@ -21,13 +21,13 @@
     {
       "addr": "0042b450",
       "from_addr": "0042b5ae",
-      "name": "core_charactr.cpp_FUN_0042b450",
+      "name": "core_charactr.cpp_CCharacter_archive_FUN_0042b450",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d1fe0",
       "from_addr": "004d2059",
-      "name": "core_health.cpp_FUN_004d1fe0",
+      "name": "core_health.cpp_CHealthItem_archive_FUN_004d1fe0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -39,7 +39,7 @@
     {
       "addr": "0057b2a0",
       "from_addr": "0057b333",
-      "name": "core_weapon.cpp_FUN_0057b2a0",
+      "name": "core_weapon.cpp_CWeapon_archive_FUN_0057b2a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -106,7 +106,7 @@
       {
         "call_addr": "0057b333",
         "call_type": "direct",
-        "caller": "core_weapon.cpp_FUN_0057b2a0",
+        "caller": "core_weapon.cpp_CWeapon_archive_FUN_0057b2a0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -117,7 +117,7 @@
       {
         "call_addr": "0042b5ae",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_0042b450",
+        "caller": "core_charactr.cpp_CCharacter_archive_FUN_0042b450",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -128,7 +128,7 @@
       {
         "call_addr": "004d2059",
         "call_type": "direct",
-        "caller": "core_health.cpp_FUN_004d1fe0",
+        "caller": "core_health.cpp_CHealthItem_archive_FUN_004d1fe0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -180,6 +180,32 @@
       "STORE": 12
     },
     "pcode_op_count": 256
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0040b850",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0040b560",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0040b6e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0040c7f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 320,

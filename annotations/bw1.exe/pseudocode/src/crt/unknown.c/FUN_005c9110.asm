@@ -8,11 +8,11 @@
 ;   crt_file.c_makepath_FUN_005c232c at 005c23d6
 ;   crt_unknown.c_FUN_005c8fb0 at 005c8fcf
 ;   crt_unknown.c_FUN_005c9020 at 005c905f
-;   unkafter_2d.cpp_FUN_005cdb10 at 005cdb2b
-;   unkafter_2d.cpp_FUN_005cdf00 at 005cdf39
-;   unkafter_2d.cpp_FUN_005ce990 at 005ce9a8
-;   unkafter_zombie.cpp_FUN_005cb6f0 at 005cb74e
-;   unkafter_zombie.cpp_FUN_005cc9f0 at 005cca0c
+;   crt_unknown.c_FUN_005cb6f0 at 005cb74e
+;   crt_unknown.c_FUN_005cc9f0 at 005cca0c
+;   crt_unknown.c_FUN_005cdb10 at 005cdb2b
+;   crt_unknown.c_FUN_005cdf00 at 005cdf39
+;   crt_unknown.c_FUN_005ce990 at 005ce9a8
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02c9f6e0

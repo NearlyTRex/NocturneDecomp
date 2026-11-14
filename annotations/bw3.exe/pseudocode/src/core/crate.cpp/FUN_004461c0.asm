@@ -10,12 +10,12 @@
 ; undefined        Stack[-0x28]:1  local_28
 ;
 ; XREF[6]:
-;   core_actor.cpp_FUN_00409f60 at 0040ac63
-;   core_elephant.cpp_FUN_00486d40 at 004874fe
-;   core_exorcism.cpp_FUN_0048b020 at 0048b579
-;   core_gun.cpp_FUN_004d0fc0 at 004d1818
-;   core_rifle.cpp_FUN_00527d70 at 00528482
-;   core_tommygun.cpp_FUN_0056b410 at 0056bcad
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f60 at 0040ac63
+;   core_elephant.cpp_CElephantGun_fire_FUN_00486d40 at 004874fe
+;   core_exorcism.cpp_CExorcism_fire_FUN_0048b020 at 0048b579
+;   core_gun.cpp_CGun_fire_FUN_004d0fc0 at 004d1818
+;   core_rifle.cpp_CRifle_fire_FUN_00527d70 at 00528482
+;   core_tommygun.cpp_CTommyGun_fire_FUN_0056b410 at 0056bcad
 ;
 ; Referenced Globals:
 ;   undefined4 s_s_exploding_005b9a19+1
@@ -26,9 +26,9 @@
 ;   undefined4 DAT_01d81080
 ;
 ; Called Functions:
-;   core_fire.cpp_FUN_004a36e0
-;   core_mission.cpp_FUN_004f6f10
-;   engine_console.cpp_FUN_00441ff0
+;   core_fire.cpp_CFireEffect_createExplosion_FUN_004a36e0
+;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10
+;   engine_console.cpp_CConsole_printf_FUN_00441ff0
 ;
 ; *****************************************************************************
 
@@ -51,8 +51,8 @@ section .text
     PUSH 0x5b9a1a                       ; 004461d6 | s_s_exploding_005b9a19+1
     MOV ECX,dword ptr [0x005f1690]      ; 004461db | g_CConsolePtr
     PUSH ECX                            ; 004461e1 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 004461e2
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 004461e2
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 004461e7
     MOV EAX,dword ptr [EBX + 0x154]     ; 004461ea
     PUSH EBX                            ; 004461f0
@@ -87,15 +87,15 @@ section .text
     FADD float ptr [ESP + 0x50]         ; 0044624d
     PUSH ESI                            ; 00446251
     FSTP float ptr [ESP + 0x54]         ; 00446252
-    CALL core_fire.cpp_FUN_004a36e0     ; 00446256
-        ;   XREF to: 004a36e0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004a36e0()
+    CALL core_fire.cpp_CFireEffect_createExplosion_FUN_004a36e0 ; 00446256
+        ;   XREF to: 004a36e0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createExplosion_FUN_004a36e0(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
     ADD ESP,0x18                        ; 0044625b
     PUSH 0x1                            ; 0044625e
     PUSH EBX                            ; 00446260
     MOV EDI,dword ptr [0x00600530]      ; 00446261 | DAT_00600530
     PUSH EDI                            ; 00446267 | DAT_01d81080
-    CALL core_mission.cpp_FUN_004f6f10  ; 00446268
-        ;   XREF to: 004f6f10 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004f6f10()
+    CALL core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10 ; 00446268
+        ;   XREF to: 004f6f10 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_markActorToDelete_FUN_004f6f10(CDemonMission * this_ptr, undefined4 param_2, undefined4 param_3)
     ADD ESP,0xc                         ; 0044626d
     MOV dword ptr [EBX + 0x70],0x2      ; 00446270
     POP ESI                             ; 00446277

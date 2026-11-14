@@ -7,60 +7,60 @@
 
 // Original: core_spireagl.cpp_staticInit_FUN_00599170
 // Address: 00599170
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_spireagl.cpp_factoryFuncSpiritEagle_FUN_005991a0
 // Address: 005991a0
-void factoryFuncSpiritEagle(void);
+CSpiritEagle * __cdecl factoryFuncSpiritEagle(void);
 
 // Original: core_spireagl.cpp_CSpiritEagle_getActorType_FUN_005991c0
 // Address: 005991c0
-CDemonActorType * CSpiritEagle::getActorType(CSpiritEagle *this_ptr);
+CDemonActorType * __cdecl CSpiritEagle::getActorType(CSpiritEagle *this_ptr);
 
 // Original: core_spireagl.cpp_CSpiritEagle_ctor_FUN_005991d0
 // Address: 005991d0
-CSpiritEagle * CSpiritEagle::ctor(CSpiritEagle *this_ptr);
+CSpiritEagle * __cdecl CSpiritEagle::ctor(CSpiritEagle *this_ptr);
 
-// Original: core_spireagl.cpp_FUN_005992f0
+// Original: core_spireagl.cpp_CSpiritEagle_setup_FUN_005992f0
 // Address: 005992f0
-void FUN_005992f0(int param_1);
+void __cdecl CSpiritEagle::setup(CSpiritEagle *this_ptr);
 
-// Original: core_spireagl.cpp_FUN_00599540
+// Original: core_spireagl.cpp_CSpiritEagle_process_FUN_00599540
 // Address: 00599540
-void FUN_00599540(CCharacter *param_1,float param_2);
+void __cdecl CSpiritEagle::process(CSpiritEagle *this_ptr,float delta_time);
 
-// Original: core_spireagl.cpp_FUN_00599a40
+// Original: core_spireagl.cpp_CSpiritEagle_renderBackground_FUN_00599a40
 // Address: 00599a40
-void FUN_00599a40(int param_1,int param_2);
+void __cdecl CSpiritEagle::renderBackground(CSpiritEagle *this_ptr,int layer_flag);
 
-// Original: core_spireagl.cpp_FUN_00599a70
+// Original: core_spireagl.cpp_CSpiritEagle_renderOpaque_FUN_00599a70
 // Address: 00599a70
-undefined4 FUN_00599a70(CDemonActor *param_1);
+int __cdecl CSpiritEagle::renderOpaque(CSpiritEagle *this_ptr);
 
-// Original: core_spireagl.cpp_FUN_00599b20
+// Original: core_spireagl.cpp_CSpiritEagle_renderTransparent_FUN_00599b20
 // Address: 00599b20
-undefined4 FUN_00599b20(CDemonActor *param_1);
+int __cdecl CSpiritEagle::renderTransparent(CSpiritEagle *this_ptr);
 
-// Original: core_spireagl.cpp_FUN_00599bc0
+// Original: core_spireagl.cpp_CSpiritEagle_archive_FUN_00599bc0
 // Address: 00599bc0
-void FUN_00599bc0(CDemonActor *param_1);
+void __cdecl CSpiritEagle::archive(CSpiritEagle *this_ptr);
 
 // Original: core_spireagl.cpp_FUN_00599c80
 // Address: 00599c80
 undefined4 FUN_00599c80(CMotionController *param_1,char *param_2);
 
-// Original: core_spireagl.cpp_FUN_00599d60
+// Original: core_spireagl.cpp_CSpiritEagle_processDamage_FUN_00599d60
 // Address: 00599d60
-void FUN_00599d60(CCharacter *param_1,int param_2);
+void __cdecl CSpiritEagle::processDamage(CSpiritEagle *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_spireagl.cpp_FUN_00599e10
+// Original: core_spireagl.cpp_CSpiritEagle_isInvulnerable_FUN_00599e10
 // Address: 00599e10
-bool FUN_00599e10(int param_1);
+int __cdecl CSpiritEagle::isInvulnerable(CSpiritEagle *this_ptr);
 
-// Original: core_spireagl.cpp_FUN_00599e30
+// Original: core_spireagl.cpp_CSpiritEagle_getPathMap_FUN_00599e30
 // Address: 00599e30
-int FUN_00599e30(int param_1);
+CPathMap * __cdecl CSpiritEagle::getPathMap(CSpiritEagle *this_ptr);
 
 // Original: core_spireagl.cpp_CSpiritEagle_dtor_FUN_00599e40
 // Address: 00599e40
-CSpiritEagle * CSpiritEagle::dtor(CSpiritEagle *this_ptr,uint flags);
+CSpiritEagle * __cdecl CSpiritEagle::dtor(CSpiritEagle *this_ptr,uint flags);

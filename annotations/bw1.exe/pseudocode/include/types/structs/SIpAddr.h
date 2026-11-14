@@ -6,11 +6,11 @@
 #include "system/basetypes.h"
 
 // Structure: SIpAddr
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 'IpAddr' size 4; copy ctor 00530bd0 copies the single dword
 // Ghidra size: 0x4 (4 bytes)
 #pragma pack(push, 1)
 typedef struct SIpAddr {
-    char field_0[4]; // 0x0
+    uint ip_address; // 0x0, copy ctor copies it whole; trisock IP helpers (copyIPAddress, extractIPOctets) treat the same dword as the four address octets
 } SIpAddr;
 #pragma pack(pop)
 

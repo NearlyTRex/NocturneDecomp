@@ -2,13 +2,13 @@
 // Address: 00406d80
 // Address Range: [[00406d80, 00406d97]]
 // Convention: __cdecl
-// Signature: int __cdecl engine_3d_c_setRenderAlphaFromBlock_FUN_00406d80(int param_1)
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_setRenderAlphaFromBlock_FUN_00406d80(SMRGLHeaderExtended *block)
 
 #include "nocturne.h"
 
-int __cdecl engine_3d_c_setRenderAlphaFromBlock_FUN_00406d80(int param_1)
+SMRGLHeaderExtended * __cdecl engine_3d_c_setRenderAlphaFromBlock_FUN_00406d80(SMRGLHeaderExtended *block)
 
 {
-  engine_3d_c_setRenderAlpha_FUN_00406da0(*(int *)(param_1 + 4));
-  return param_1 + 8;
+  engine_3d_c_setRenderAlpha_FUN_00406da0((block->base).count);
+  return (SMRGLHeaderExtended *)&block->child_count;
 }

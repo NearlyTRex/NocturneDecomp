@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   first_edge_data
 ;
 ; XREF[1]:
-;   core_bugs.cpp_FUN_00425970 at 004259b9
+;   core_bugs.cpp_CBugs_initializeSwarmGraph_FUN_00425970 at 004259b9
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_bugs_cpp_005d50af

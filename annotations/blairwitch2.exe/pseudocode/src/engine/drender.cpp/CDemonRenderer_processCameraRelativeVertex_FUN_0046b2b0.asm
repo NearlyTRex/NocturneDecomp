@@ -13,15 +13,15 @@
 ;
 ; XREF[65]:
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0 at 004089df
-;   core_anvil.cpp_FUN_0040ec10 at 0040ec35
-;   core_baron.cpp_FUN_00410670 at 00410717
-;   core_battery.cpp_FUN_00414810 at 00414825
-;   core_boxactor.cpp_FUN_0041c580 at 0041c5e0
-;   core_boxactor.cpp_FUN_0041c690 at 0041c6c8
+;   core_anvil.cpp_CAnvil_renderOpaque_FUN_0040ec10 at 0040ec35
+;   core_baron.cpp_CBaron_renderTransparent_FUN_00410670 at 00410717
+;   core_battery.cpp_CBattery_renderOpaque_FUN_00414810 at 00414825
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_0059bb60 at 0059bcc9
+;   core_boxactor.cpp_CBoxActor_renderOpaque_FUN_0041c580 at 0041c5e0
+;   core_boxactor.cpp_CBoxActor_renderTransparent_FUN_0041c690 at 0041c6c8
+;   core_bwspart.cpp_FUN_005a86a0 at 005a8731
 ;   core_crate.cpp_FUN_0043a130 at 0043a145
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_004468c0 at 004468d5
-;   core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_00448b00 at 00448b1a
-;   core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_00448900 at 00448919
 ;   ... and 55 more
 ;
 ; Referenced Globals:
@@ -56,7 +56,7 @@ section .text
     PUSH EAX                            ; 0046b2e2
     FISTP dword ptr [ESP + 0x10]        ; 0046b2e3
     CALL engine_3d.c_processCameraRelativePoint_FUN_00403830 ; 0046b2e7
-        ;   XREF to: 00403830 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_processCameraRelativePoint_FUN_00403830()
+        ;   XREF to: 00403830 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_processCameraRelativePoint_FUN_00403830(SMRGLPoint * block)
     ADD ESP,0x4                         ; 0046b2ec
     ADD ESP,0x10                        ; 0046b2ef
     RET                                 ; 0046b2f2

@@ -9,7 +9,7 @@
 ; CVector3i *      Stack[0xc]:4   skinned_vertices
 ;
 ; XREF[1]:
-;   core_skeleton.cpp_FUN_0054e500 at 0054e52a
+;   core_skeleton.cpp_CDeformableModelInstance_skinAndLightVertices_FUN_0054e500 at 0054e52a
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8

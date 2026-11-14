@@ -21,22 +21,19 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_0053a450(CDemonSe
   int iVar8;
   SMRGLPrimitivePoly *pSVar9;
   byte bVar10;
-  SMRGLPrimitivePoly aSStack_f4 [4];
-  int local_f0;
-  int aiStack_dc [12];
-  uint local_ac;
-  uint uStack_a8;
+  SMRGLPrimitivePoly SStack_f4;
   uint local_6c;
   uint uStack_68;
   int local_2c;
   int local_28;
   int local_24;
+  CVector3i local_20;
   int local_14;
   
   bVar10 = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
             (DAT_005f2afc,(SMRGLTextureBasic *)&DAT_00603e44);
-  if (*(int *)&g_CGamePtr->field_0x218 == 2) {
+  if (g_CGamePtr->render_mode == 2) {
     alpha = DAT_005fba38 << 8;
   }
   else {
@@ -45,23 +42,23 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_0053a450(CDemonSe
               (DAT_005f2afc,(uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);
   }
-  engine_matrix_c_FUN_0046d1a0(DAT_005f2afc);
+  engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046d1a0(DAT_005f2afc,&local_20);
   local_14 = 0;
   if (0 < count) {
     do {
       pSVar7 = prims;
-      pSVar9 = aSStack_f4;
+      pSVar9 = &SStack_f4;
       for (iVar5 = 0x12; iVar5 != 0; iVar5 = iVar5 + -1) {
-        *(uint *)pSVar9 = *(uint *)pSVar7;
-        pSVar7 = pSVar7 + (uint)bVar10 * -8 + 4;
+        *(int *)pSVar9 = (pSVar7->base).type;
+        pSVar7 = (SMRGLHeaderPrimitive *)((int)pSVar7 + (uint)bVar10 * -8 + 4);
         pSVar9 = (SMRGLPrimitivePoly *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);
       }
       iVar5 = 0;
-      if (0 < local_f0) {
+      if (0 < SStack_f4.base.base.count) {
         iVar8 = 0;
         iVar6 = 0;
         do {
-          iVar4 = *(int *)((int)aiStack_dc + iVar8) * 0xc;
+          iVar4 = *(int *)((int)&SStack_f4.vertices[0].vertex_index + iVar8) * 0xc;
           iVar8 = iVar8 + 0xc;
           iVar5 = iVar5 + 1;
           local_2c = (int)ROUND(*(float *)(&DAT_020d4f70 + iVar4));
@@ -69,11 +66,11 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_0053a450(CDemonSe
           local_28 = (int)ROUND(fVar2);
           local_24 = (int)ROUND(*(float *)(&DAT_020d4f78 + iVar4));
           *(int *)((int)&local_6c + iVar6) = (int)ROUND(*(float *)(&DAT_020d4f70 + iVar4)) + 0x8000;
-          *(int *)((int)&local_ac + iVar6) = 0x8000 - (int)ROUND(fVar2);
+          *(int *)((int)&SStack_f4.vertices[4].vertex_index + iVar6) = 0x8000 - (int)ROUND(fVar2);
           iVar6 = iVar6 + 4;
-        } while (iVar5 < local_f0);
+        } while (iVar5 < SStack_f4.base.base.count);
       }
-      if (1 < local_f0) {
+      if (1 < SStack_f4.base.base.count) {
         iVar5 = 4;
         do {
           if ((0x8000 < local_6c) && (*(int *)((int)&local_6c + iVar5) < -0x8000)) {
@@ -83,38 +80,42 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_0053a450(CDemonSe
           if ((local_6c < -0x8000) && (0x8000 < *(int *)((int)&local_6c + iVar5))) {
             *(int *)((int)&local_6c + iVar5) = *(int *)((int)&local_6c + iVar5) + -0x10000;
           }
-          if ((0x8000 < local_ac) && (*(int *)((int)&local_ac + iVar5) < -0x8000)) {
-            psVar1 = (short *)((int)&local_ac + iVar5 + 2);
+          if ((0x8000 < SStack_f4.vertices[4].vertex_index) &&
+             (*(int *)((int)&SStack_f4.vertices[4].vertex_index + iVar5) < -0x8000)) {
+            psVar1 = (short *)((int)&SStack_f4.vertices[4].vertex_index + iVar5 + 2);
             *psVar1 = *psVar1 + 1;
           }
-          if ((local_ac < -0x8000) && (0x8000 < *(int *)((int)&local_ac + iVar5))) {
-            *(int *)((int)&local_ac + iVar5) = *(int *)((int)&local_ac + iVar5) + -0x10000;
+          if ((SStack_f4.vertices[4].vertex_index < -0x8000) &&
+             (iVar6 = *(int *)((int)&SStack_f4.vertices[4].vertex_index + iVar5), 0x8000 < iVar6)) {
+            *(int *)((int)&SStack_f4.vertices[4].vertex_index + iVar5) = iVar6 + -0x10000;
           }
           iVar5 = iVar5 + 4;
-        } while (iVar5 < local_f0 * 4);
+        } while (iVar5 < SStack_f4.base.base.count * 4);
       }
       iVar5 = 0;
-      if (0 < local_f0) {
+      if (0 < SStack_f4.base.base.count) {
         iVar8 = 0;
         iVar6 = 0;
         do {
-          *(int *)((int)aiStack_dc + iVar6 + 4) = *(int *)((int)&local_6c + iVar8) << 8;
-          *(int *)((int)aiStack_dc + iVar6 + 8) = *(int *)((int)&local_ac + iVar8) << 8;
+          *(int *)((int)&SStack_f4.vertices[0].texture_u + iVar6) =
+               *(int *)((int)&local_6c + iVar8) << 8;
+          *(int *)((int)&SStack_f4.vertices[0].texture_v + iVar6) =
+               *(int *)((int)&SStack_f4.vertices[4].vertex_index + iVar8) << 8;
           iVar5 = iVar5 + 1;
           iVar8 = iVar8 + 4;
           iVar6 = iVar6 + 0xc;
-        } while (iVar5 < local_f0);
+        } while (iVar5 < SStack_f4.base.base.count);
       }
       if (alpha < 0xfde9) {
         engine_drender_cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0046c3b0
-                  (DAT_005f2afc,aSStack_f4);
+                  (DAT_005f2afc,&SStack_f4);
       }
       else {
         engine_drender_cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0046bc20
-                  (DAT_005f2afc,aSStack_f4);
+                  (DAT_005f2afc,&SStack_f4);
       }
       local_14 = local_14 + 1;
-      prims = prims + stride;
+      prims = (SMRGLHeaderPrimitive *)((int)&(prims->base).type + stride);
     } while (local_14 < count);
   }
   return;

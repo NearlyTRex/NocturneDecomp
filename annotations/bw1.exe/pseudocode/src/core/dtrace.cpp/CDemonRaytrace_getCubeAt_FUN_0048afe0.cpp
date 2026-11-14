@@ -10,13 +10,12 @@ CDemonCube * __cdecl core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_0048afe0(CDemo
 
 {
   int iVar1;
+  int iVar2;
   
   if ((((-1 < grid_x) && (-1 < grid_y)) && (-1 < grid_z)) &&
-     (((grid_x < *(int *)&this_ptr->field_0x40 && (grid_y < *(int *)&this_ptr->field_0x44)) &&
-      (iVar1 = *(int *)&this_ptr->field_0x48, grid_z < iVar1)))) {
-    return (CDemonCube *)
-           (*(int *)&this_ptr->field_0x50 +
-           (grid_y * iVar1 + grid_z + grid_x * *(int *)&this_ptr->field_0x44 * iVar1) * 0x34);
+     (((grid_x < (this_ptr->grid_coord).x && (iVar1 = (this_ptr->grid_coord).y, grid_y < iVar1)) &&
+      (iVar2 = (this_ptr->grid_coord).z, grid_z < iVar2)))) {
+    return this_ptr->cube_data + grid_y * iVar2 + grid_z + grid_x * iVar1 * iVar2;
   }
   return (CDemonCube *)0x0;
 }

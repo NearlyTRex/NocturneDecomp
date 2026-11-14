@@ -7,56 +7,56 @@
 
 // Original: core_batman.cpp_staticInit_FUN_00412ac0
 // Address: 00412ac0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_batman.cpp_factoryFuncBatman_FUN_00412af0
 // Address: 00412af0
-void factoryFuncBatman(void);
+CBatman * __cdecl factoryFuncBatman(void);
 
 // Original: core_batman.cpp_CBatman_getActorType_FUN_00412b10
 // Address: 00412b10
-CDemonActorType * CBatman::getActorType(CBatman *this_ptr);
+CDemonActorType * __cdecl CBatman::getActorType(CBatman *this_ptr);
 
 // Original: core_batman.cpp_CBatman_ctor_FUN_00412b20
 // Address: 00412b20
 CBatman * __cdecl CBatman::ctor(CBatman *this_ptr);
 
-// Original: core_batman.cpp_FUN_00412be0
+// Original: core_batman.cpp_CBatman_setup_FUN_00412be0
 // Address: 00412be0
-void FUN_00412be0(CEnemy *param_1);
+void __cdecl CBatman::setup(CBatman *this_ptr);
 
-// Original: core_batman.cpp_FUN_00412ec0
+// Original: core_batman.cpp_CBatman_pickRandomMovementState_FUN_00412ec0
 // Address: 00412ec0
-void __cdecl FUN_00412ec0(CBatman *this_ptr);
+void __cdecl CBatman::pickRandomMovementState(CBatman *this_ptr);
 
-// Original: core_batman.cpp_FUN_00412f40
+// Original: core_batman.cpp_CBatman_process_FUN_00412f40
 // Address: 00412f40
-void FUN_00412f40(CBatman *param_1,float param_2);
+void __cdecl CBatman::process(CBatman *this_ptr,float delta_time);
 
-// Original: core_batman.cpp_FUN_00413c70
+// Original: core_batman.cpp_CBatman_renderOpaque_FUN_00413c70
 // Address: 00413c70
-int FUN_00413c70(CCharacter *param_1);
+int __cdecl CBatman::renderOpaque(CBatman *this_ptr);
 
-// Original: core_batman.cpp_FUN_00413e60
+// Original: core_batman.cpp_CBatman_archive_FUN_00413e60
 // Address: 00413e60
-void FUN_00413e60(CEnemy *param_1);
+void __cdecl CBatman::archive(CBatman *this_ptr);
 
-// Original: core_batman.cpp_FUN_00413f40
+// Original: core_batman.cpp_CBatman_processDismemberment_FUN_00413f40
 // Address: 00413f40
-void __cdecl FUN_00413f40(CBatman *this_ptr,SDamageInfo *damage_info);
+void __cdecl CBatman::processDismemberment(CBatman *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_batman.cpp_FUN_00414290
+// Original: core_batman.cpp_CBatman_processDamage_FUN_00414290
 // Address: 00414290
-void FUN_00414290(CBatman *param_1,SDamageInfo *param_2);
+void __cdecl CBatman::processDamage(CBatman *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_batman.cpp_FUN_004144c0
+// Original: core_batman.cpp_CBatman_getTargetPoints_FUN_004144c0
 // Address: 004144c0
-int FUN_004144c0(int param_1,undefined4 *param_2);
+int __cdecl CBatman::getTargetPoints(CBatman *this_ptr,CVector3f *out_points_array);
 
-// Original: core_batman.cpp_FUN_00414600
+// Original: core_batman.cpp_CBatman_getCollisionType_FUN_00414600
 // Address: 00414600
-undefined4 FUN_00414600(int param_1,undefined4 param_2);
+ECollisionType __cdecl CBatman::getCollisionType(CBatman *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_batman.cpp_CBatman_dtor_FUN_00414620
 // Address: 00414620
-CBatman * CBatman::dtor(CBatman *this_ptr,uint flags);
+CBatman * __cdecl CBatman::dtor(CBatman *this_ptr,uint flags);

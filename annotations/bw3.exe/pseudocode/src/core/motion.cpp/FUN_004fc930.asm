@@ -11,16 +11,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[21]:
-;   core_asgaya.cpp_FUN_005a0be0 at 005a1104
-;   core_baal.cpp_FUN_005968a0 at 0059752d
-;   core_boneguy.cpp_FUN_004179b0 at 004181e4
-;   core_boneguy.cpp_FUN_00419b40 at 0041a338
-;   core_carved.cpp_FUN_00425da0 at 004276db
+;   core_asgaya.cpp_CAsgaya_process_FUN_005a0be0 at 005a1104
+;   core_baal.cpp_CBaal_process_FUN_005968a0 at 0059752d
+;   core_boneguy.cpp_CBaalSkel_process_FUN_00419b40 at 0041a338
+;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 004181e4
+;   core_carved.cpp_CCarved_process_FUN_00425da0 at 004276db
 ;   core_carved.cpp_FUN_00429090 at 004290c1
-;   core_demnfolk.cpp_FUN_00455080 at 004565d1
-;   core_ghoul.cpp_FUN_004c6eb0 at 004c872a
-;   core_hecaitmx.cpp_FUN_00597f40 at 0059827b
-;   core_hino.cpp_FUN_0059b960 at 0059c84b
+;   core_darkwolf.cpp_CDarkwolf_process_FUN_005989e0 at 00598d26
+;   core_demnfolk.cpp_CDemnfolk_process_FUN_00455080 at 004565d1
+;   core_ghoul.cpp_CGhoul_process_FUN_004c6eb0 at 004c872a
+;   core_hecaitmx.cpp_CHecaitomix_process_FUN_00597f40 at 0059827b
 ;   ... and 11 more
 ;
 ; *****************************************************************************

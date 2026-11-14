@@ -4,9 +4,11 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/fstream.h"
 #include "system/stdio.h"
 #include "system/winbase.h"
 #include "types/classes/CBitFont.h"
+#include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonDog.h"
@@ -17,7 +19,6 @@
 #include "types/classes/CDoor.h"
 #include "types/classes/CDrawSurface.h"
 #include "types/classes/CDrip.h"
-#include "types/classes/CEnemy.h"
 #include "types/classes/CEtherealDog.h"
 #include "types/classes/CFileFinder.h"
 #include "types/classes/CKeyFramedModel.h"
@@ -27,11 +28,16 @@
 #include "types/classes/CVector3i.h"
 #include "types/classes/CZombieDog.h"
 #include "types/enums/ECollisionType.h"
+#include "types/enums/EDoorState.h"
 #include "types/enums/EGroundType.h"
 #include "types/enums/ETextAlignment.h"
 #include "types/funcdefs/CustomScanlineFunc.h"
+#include "types/funcdefs/FileSearchHandlerFunc.h"
 #include "types/structs/SCameraViewportState.h"
 #include "types/structs/SCollisionInfo.h"
+#include "types/structs/SDamageInfo.h"
+#include "types/structs/SFace.h"
+#include "types/structs/SFoundFileInfo.h"
 #include "types/structs/SInputFace.h"
 #include "types/structs/SIntersectXZCylinder.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
@@ -42,6 +48,7 @@
 #include "types/structs/SMRGLTextureBasic.h"
 #include "types/structs/SRGBColorPalette.h"
 #include "types/structs/SRenderVertex.h"
+#include "types/structs/SSoftwareEdge.h"
 #include "types/structs/STrianglePackedIndices.h"
 
 // =============================================================================
@@ -53,8 +60,8 @@ void __cdecl core_dmodel_cpp_staticInit_FUN_00460430(void);
 CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00460490(CKeyFramedModel *this_ptr);
 CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00460530(CKeyFramedModel *this_ptr,uint flags);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_load_FUN_00460550(CKeyFramedModel *this_ptr,char *filename);
-void __cdecl core_dmodel_cpp_FUN_004606a0(CKeyFramedModel *this_ptr,_FILE *file);
-void __cdecl core_dmodel_cpp_FUN_00460890(CKeyFramedModel *this_ptr,_FILE *file);
+void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_004606a0(CKeyFramedModel *this_ptr,_FILE *file);
+void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00460890(CKeyFramedModel *this_ptr,_FILE *file);
 void core_dmodel_cpp_FUN_00460e10(int param_1);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00460f20(CKeyFramedModel *this_ptr,int frame_index,CKeyFramedModelInstance *instance,int render_flags);
 CVector3i * __cdecl core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00460f60(CKeyFramedModel *this_ptr,int frame_index);
@@ -62,77 +69,81 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_rotateAndLightVertices_FUN_00460fa0
 void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00461050(CKeyFramedModel *this_ptr,CKeyFramedModelInstance *instance,int render_flags);
 void core_dmodel_cpp_FUN_00461300(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00461530(CKeyFramedModel *this_ptr);
-void __cdecl core_dmodel_cpp_FUN_004616e0(CKeyFramedModel *this_ptr);
+void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_004616e0(CKeyFramedModel *this_ptr);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_captureTextures_FUN_00461860(CKeyFramedModel *this_ptr);
-float core_dmodel_cpp_FUN_004618a0(CKeyFramedModel *param_1,int param_2,undefined4 param_3,undefined4 param_4,float *param_5);
+float core_dmodel_cpp_FUN_004618a0(CKeyFramedModel *param_1,int param_2,CVector3f *param_3,CVector3f *param_4,float *param_5);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_intersectCylinder_FUN_00461e00(CKeyFramedModel *this_ptr,int frame_index,SIntersectXZCylinder *cylinder,CVector3f *transform_vector);
 int __cdecl core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_00461ef0(CKeyFramedModel *this_ptr,int frame_index,CVector3f *position,float search_radius,float *out_height,CVector3f *transform_vector);
 void __cdecl core_dmodel_cpp_CKeyFramedModel_buildCollisionTriList_FUN_00461fe0(CKeyFramedModel *this_ptr);
-void core_dmodel_cpp_FUN_004620c0(int param_1,undefined4 *param_2);
-CKeyFramedModel * __cdecl core_dmodel_cpp_loadModel_FUN_00462420(char *param_1);
-void __cdecl core_dmodel_cpp_FUN_004624d0(void);
+void __cdecl core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_004620c0(CKeyFramedModel *this_ptr,CVector3f *transform_vector);
+CKeyFramedModel * __cdecl core_dmodel_cpp_loadModel_FUN_00462420(char *filename);
+void __cdecl core_dmodel_cpp_freeAllModels_FUN_004624d0(void);
 CKeyFramedModelInstance * __cdecl core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00462500(CKeyFramedModelInstance *this_ptr);
 CKeyFramedModelInstance * __cdecl core_dmodel_cpp_CKeyFramedModelInstance_init_FUN_00462520(CKeyFramedModelInstance *this_ptr);
 void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540(CKeyFramedModelInstance *this_ptr,float animation_frame,int render_flags);
 CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00462580(CKeyFramedModelInstance *this_ptr);
 CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(CKeyFramedModelInstance *this_ptr);
 void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0(CKeyFramedModelInstance *this_ptr,char *filename);
-CKeyFramedModel * core_dmodel_cpp_CKeyFramedModel_arrdtor256_FUN_00462630(CKeyFramedModel *this_ptr,uint flags);
-void core_dog_cpp_staticInit_FUN_00462650(void);
-void core_dog_cpp_factoryFuncZombieDog_FUN_004626e0(void);
-CDemonActorType * core_dog_cpp_CZombieDog_getActorType_FUN_00462700(CZombieDog *this_ptr);
+CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_arrdtor256_FUN_00462630(CKeyFramedModel *this_ptr,uint flags);
+void __cdecl core_dog_cpp_staticInit_FUN_00462650(void);
+CZombieDog * __cdecl core_dog_cpp_factoryFuncZombieDog_FUN_004626e0(void);
+CDemonActorType * __cdecl core_dog_cpp_CZombieDog_getActorType_FUN_00462700(CZombieDog *this_ptr);
 CZombieDog * __cdecl core_dog_cpp_CZombieDog_ctor_FUN_00462710(CZombieDog *this_ptr);
-void core_dog_cpp_FUN_00462790(CEnemy *param_1);
-void core_dog_cpp_FUN_004628b0(CEnemy *param_1,float param_2);
-void core_dog_cpp_FUN_00463460(int param_1);
-void core_dog_cpp_FUN_004634d0(int param_1,int param_2);
-undefined4 core_dog_cpp_FUN_004635e0(int param_1,undefined4 *param_2);
+void __cdecl core_dog_cpp_CZombieDog_setup_FUN_00462790(CZombieDog *this_ptr);
+void __cdecl core_dog_cpp_CZombieDog_process_FUN_004628b0(CZombieDog *this_ptr,float delta_time);
+void __cdecl core_dog_cpp_CZombieDog_archive_FUN_00463460(CZombieDog *this_ptr);
+void __cdecl core_dog_cpp_CZombieDog_processDamage_FUN_004634d0(CZombieDog *this_ptr,SDamageInfo *damage_info);
+int __cdecl core_dog_cpp_CZombieDog_getTargetPoints_FUN_004635e0(CZombieDog *this_ptr,CVector3f *out_points_array);
 void core_dog_cpp_FUN_00463650(void);
-undefined4 core_dog_cpp_FUN_00463670(void);
-CDogForest * core_dog_cpp_CDogForest_ctor_FUN_00463680(CDogForest *this_ptr);
+CDemonActorType * __cdecl core_dog_cpp_CDogForest_getActorType_FUN_00463670(CDogForest *this_ptr);
+CDogForest * __cdecl core_dog_cpp_CDogForest_ctor_FUN_00463680(CDogForest *this_ptr);
 void core_dog_cpp_FUN_004636e0(void);
-undefined4 core_dog_cpp_FUN_00463700(void);
-CDemonDog * core_dog_cpp_CDemonDog_ctor_FUN_00463710(CDemonDog *this_ptr);
+CDemonActorType * __cdecl core_dog_cpp_CDemonDog_getActorType_FUN_00463700(CDemonDog *this_ptr);
+CDemonDog * __cdecl core_dog_cpp_CDemonDog_ctor_FUN_00463710(CDemonDog *this_ptr);
 void core_dog_cpp_FUN_00463780(void);
-undefined4 core_dog_cpp_FUN_004637a0(void);
-CEtherealDog * core_dog_cpp_CEtherealDog_ctor_FUN_004637b0(CEtherealDog *this_ptr);
-CEtherealDog * core_dog_cpp_CEtherealDog_dtor_FUN_00463810(CEtherealDog *this_ptr,uint flags);
-CDemonDog * core_dog_cpp_CDemonDog_dtor_FUN_004638a0(CDemonDog *this_ptr,uint flags);
-CDogForest * core_dog_cpp_CDogForest_dtor_FUN_00463930(CDogForest *this_ptr,uint flags);
-CZombieDog * core_dog_cpp_CZombieDog_dtor_FUN_004639c0(CZombieDog *this_ptr,uint flags);
-void core_door_cpp_staticInit_FUN_00463a50(void);
-void core_door_cpp_factoryFuncDoor_FUN_00463a80(void);
-CDemonActorType * core_door_cpp_CDoor_getActorType_FUN_00463aa0(CDoor *this_ptr);
-CDoor * core_door_cpp_CDoor_ctor_FUN_00463ab0(CDoor *this_ptr);
+CDemonActorType * __cdecl core_dog_cpp_CEtherealDog_getActorType_FUN_004637a0(CEtherealDog *this_ptr);
+CEtherealDog * __cdecl core_dog_cpp_CEtherealDog_ctor_FUN_004637b0(CEtherealDog *this_ptr);
+CEtherealDog * __cdecl core_dog_cpp_CEtherealDog_dtor_FUN_00463810(CEtherealDog *this_ptr,uint flags);
+CDemonDog * __cdecl core_dog_cpp_CDemonDog_dtor_FUN_004638a0(CDemonDog *this_ptr,uint flags);
+CDogForest * __cdecl core_dog_cpp_CDogForest_dtor_FUN_00463930(CDogForest *this_ptr,uint flags);
+CZombieDog * __cdecl core_dog_cpp_CZombieDog_dtor_FUN_004639c0(CZombieDog *this_ptr,uint flags);
+void __cdecl core_door_cpp_staticInit_FUN_00463a50(void);
+CDoor * __cdecl core_door_cpp_factoryFuncDoor_FUN_00463a80(void);
+CDemonActorType * __cdecl core_door_cpp_CDoor_getActorType_FUN_00463aa0(CDoor *this_ptr);
+CDoor * __cdecl core_door_cpp_CDoor_ctor_FUN_00463ab0(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_setup_FUN_00463c90(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_onOpened_FUN_00463d10(CDoor *this_ptr);
-void core_door_cpp_FUN_00463d30(int param_1,int param_2);
-void core_door_cpp_FUN_00463d80(CDemonActor *param_1);
-void core_door_cpp_FUN_004642f0(CDemonActor *param_1,float param_2);
-int core_door_cpp_FUN_00464a60(CDemonActor *param_1);
-void core_door_cpp_FUN_00464b40(CDemonActor *param_1,int param_2);
-void core_door_cpp_FUN_00464bd0(int param_1);
+void core_door_cpp_FUN_00463d30(CDoor *param_1,EDoorState param_2);
+void __cdecl core_door_cpp_CDoor_reposition_FUN_00463d80(CDoor *this_ptr);
+void __cdecl core_door_cpp_CDoor_process_FUN_004642f0(CDoor *this_ptr,float delta_time);
+int __cdecl core_door_cpp_CDoor_renderOpaque_FUN_00464a60(CDoor *this_ptr);
+void __cdecl core_door_cpp_CDoor_renderBackground_FUN_00464b40(CDoor *this_ptr,int layer_flag);
+CBoundingBox3D * __cdecl core_door_cpp_CDoor_getBoundingBox_FUN_00464bd0(CDoor *this_ptr,CBoundingBox3D *out_box);
 void core_door_cpp_FUN_00464c10(int param_1);
-void core_door_cpp_FUN_00464cd0(CDemonActor *param_1);
+void __cdecl core_door_cpp_CDoor_archive_FUN_00464cd0(CDoor *this_ptr);
 ECollisionType __cdecl core_door_cpp_CDoor_getCollisionType_FUN_00465010(CDoor *this_ptr,SCollisionInfo *collision_info);
 EGroundType __cdecl core_door_cpp_CDoor_getGroundType_FUN_00465050(CDoor *this_ptr);
 void __cdecl core_door_cpp_CDoor_setSwingRange_FUN_00465060(CDoor *this_ptr,float swing_range);
 int __cdecl core_door_cpp_CDoor_getBlockVirtualDirectorFlag_FUN_00465070(CDoor *this_ptr);
 int __cdecl core_door_cpp_CDoor_allowBulletHoles_FUN_00465080(CDoor *this_ptr);
-float * core_door_cpp_FUN_004650a0(int param_1,float *param_2,undefined4 param_3);
-void core_door_cpp_FUN_00465330(CDemonActor *param_1);
+float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_004650a0(CDoor *this_ptr,float *param_2,undefined4 param_3);
+void __cdecl core_door_cpp_CDoor_updateCollisionData_FUN_00465330(CDoor *this_ptr);
 int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00465380(CDoor *this_ptr,CDemonActor *opener);
-uint __cdecl core_door_cpp_FUN_00465550(CDoor *this_ptr);
+uint __cdecl core_door_cpp_CDoor_onLocked_FUN_00465550(CDoor *this_ptr);
 CDoor * __cdecl core_door_cpp_CDoor_dtor_FUN_004655b0(CDoor *this_ptr,uint flags);
 void __cdecl engine_dosio_cpp_getRelativeFilePath_FUN_00465600(char *dest_path,char *directory,char *filename);
 void engine_dosio_cpp_FUN_00465650(undefined *param_1);
 void engine_dosio_cpp_FUN_00465660(undefined4 param_1,undefined4 param_2,undefined4 param_3);
-void engine_dosio_cpp_FUN_00465680(undefined4 param_1);
-undefined4 __cdecl engine_dosio_cpp_findFile_FUN_004656d0(undefined4 param_1);
-undefined4 __cdecl engine_dosio_cpp_findFileNormally_FUN_00465730(char *param_1);
+void __cdecl engine_dosio_cpp_addGetFileInfoHook_FUN_00465680(FileSearchHandlerFunc *handler);
+template<typename T_func0>
+inline void engine_dosio_cpp_addGetFileInfoHook_FUN_00465680(T_func0 handler) {
+    engine_dosio_cpp_addGetFileInfoHook_FUN_00465680((FileSearchHandlerFunc *)handler);
+}
+int __cdecl engine_dosio_cpp_findFile_FUN_004656d0(SFoundFileInfo *context);
+int __cdecl engine_dosio_cpp_findFileNormally_FUN_00465730(SFoundFileInfo *info);
 int __cdecl engine_dosio_cpp_getFileSize_FUN_004657f0(char *directory,char *filename);
 _FILE * __cdecl engine_dosio_cpp_FUN_004659c0(char *directory,char *filename,char *mode);
-void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00465a80(char *param_1,undefined4 param_2,uint param_3,int *param_4);
+void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00465a80(char *directory_path,char *filename,uint mode_flags,ifstream *file_stream);
 CFileFinder * __cdecl engine_dosio_cpp_CFileFinder_ctor_FUN_00465b60(CFileFinder *this_ptr);
 CFileFinder * __cdecl engine_dosio_cpp_CFileFinder_dtor_FUN_00465b80(CFileFinder *this_ptr,uint flags);
 int __cdecl engine_dosio_cpp_CFileFinder_openSearch_FUN_00465ba0(CFileFinder *this_ptr,char *search_pattern);
@@ -140,34 +151,33 @@ int __cdecl engine_dosio_cpp_CFileFinder_findNext_FUN_00465c20(CFileFinder *this
 void __cdecl engine_dosio_cpp_CFileFinder_closeSearch_FUN_00465ca0(CFileFinder *this_ptr);
 void __cdecl engine_dosio_cpp_CFileFinder_reset_FUN_00465ce0(CFileFinder *this_ptr);
 void __cdecl engine_dosio_cpp_CFileFinder_convertStruct_FUN_00465cf0(CFileFinder *this_ptr,LPWIN32_FIND_DATAA find_data);
-void __cdecl engine_dosio_cpp_FUN_00465e50(char *full_path,char *drive,char *directory,char *filename,char *extension);
-void __cdecl engine_dosio_cpp_FUN_00465e80(char *full_path,char *drive,char *directory,char *filename,char *extension);
+void __cdecl engine_dosio_cpp_splitPath_FUN_00465e50(char *full_path,char *drive,char *directory,char *filename,char *extension);
+void __cdecl engine_dosio_cpp_makePath_FUN_00465e80(char *full_path,char *drive,char *directory,char *filename,char *extension);
 void __cdecl engine_dosio_cpp_FUN_00465eb0(char *input_path,char *drive,char *output_path);
 void __cdecl engine_dosio_cpp_changeFileExtension_FUN_00465f80(char *path,char *new_extension);
 int __cdecl engine_dosio_cpp_getFullPath_FUN_00465ff0(char *output_path,char *input_path);
-void unkafter_dosio_cpp_FUN_00466040(char *param_1,char *param_2,char *param_3);
-bool unkafter_dosio_cpp_FUN_00466190(char *param_1);
-bool unkafter_dosio_cpp_FUN_00466220(char *param_1);
-CDemonPart * __cdecl core_dpart_cpp_FUN_00466290(CDemonPart *this_ptr,uint flags);
-void __cdecl core_dpart_cpp_FUN_004662b0(CDemonPart *this_ptr);
+void engine_dosio_cpp_FUN_00466040(char *param_1,char *param_2,char *param_3);
+bool engine_dosio_cpp_FUN_00466190(char *param_1);
+bool engine_dosio_cpp_FUN_00466220(char *param_1);
+CDemonPart * __cdecl core_dpart_cpp_CDemonPart_dtor_FUN_00466290(CDemonPart *this_ptr,uint flags);
+void __cdecl core_dpart_cpp_CDemonPart_alloc_FUN_004662b0(CDemonPart *this_ptr);
 void core_dpart_cpp_FUN_004663b0(int param_1);
 void core_dpart_cpp_FUN_004663f2(void);
-void core_dpart_cpp_FUN_0046640c(void);
+void core_dpart_cpp_FUN_00466410(void);
 void __cdecl core_dpart_cpp_CDemonPart_save_FUN_00466440(CDemonPart *this_ptr);
 void __cdecl core_dpart_cpp_CDemonPart_calculateFaceNormals_FUN_00466470(CDemonPart *this_ptr);
-void core_dpart_cpp_FUN_00466540(CDemonPart *param_1,undefined4 param_2,undefined4 param_3,float *param_4);
-void core_dpart_cpp_FUN_00466790(void);
-void core_dpart_cpp_FUN_0046682e(int param_1);
-void core_dpart_cpp_FUN_00466bf0(int param_1,int param_2);
-int * core_dpart_cpp_FUN_00466d0e(int param_1,int *param_2);
-void __cdecl unkafter_dpart_cpp_FUN_00466d50(int *vertex_indices,int vertex_count);
-void __cdecl unkafter_dpart_cpp_FUN_004673d0(CVector3i *vertex_indices,int vertex_count);
+void core_dpart_cpp_FUN_00466540(CDemonPart *param_1,_FILE *param_2,undefined4 param_3,float *param_4);
+void core_dpart_cpp_FUN_00466830(void);
+void __cdecl core_dpart_cpp_setupDepthOnlyEdgeInterpolation_FUN_00466bf0(SSoftwareEdge *vertex_a,SSoftwareEdge *vertex_b);
+SSoftwareEdge * __cdecl core_dpart_cpp_findEdgeByYStart_FUN_00466d10(int scanline_y,SSoftwareEdge *exclude_edge);
+void __cdecl core_dpart_cpp_FUN_00466d50(int *vertex_indices,int vertex_count);
+void __cdecl core_dpart_cpp_FUN_004673d0(CVector3i *vertex_indices,int vertex_count);
 CDrawSurface * __cdecl cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_00467900(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_init_FUN_00467940(CDrawSurface *this_ptr,int x,int y,int width,int height,CDrawSurface *parent_surface );
-void __cdecl cockpit_drawsurf_cpp_FUN_00467a70(int color_value);
-void cockpit_drawsurf_cpp_FUN_00467c80(uint param_1,uint param_2,uint param_3);
-void __cdecl cockpit_drawsurf_cpp_FUN_00467f20(CBitFont *font_ptr);
-void __cdecl cockpit_drawsurf_cpp_FUN_00467f30(CDrawSurface *this_ptr,int x,int y);
+void __cdecl cockpit_drawsurf_cpp_setColor_FUN_00467a70(int color_value);
+void __cdecl cockpit_drawsurf_cpp_FUN_00467c80(int red,int green,int blue);
+void __cdecl cockpit_drawsurf_cpp_setCurrentFont_FUN_00467f20(CBitFont *font_ptr);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_00467f30(CDrawSurface *this_ptr,int x,int y);
 void __cdecl cockpit_drawsurf_cpp_drawHorizontalLineWithEffect_FUN_00468090(int start_x,int end_x,int y);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawCircle_FUN_00468190(CDrawSurface *this_ptr,int center_x,int center_y,int radius);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawCircleFromTopLeft_FUN_00468280(CDrawSurface *this_ptr,int x,int y,int radius);
@@ -175,98 +185,103 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawCircleFromTopRight_FUN_004682
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawCircleFromBottomLeft_FUN_004682e0(CDrawSurface *this_ptr,int bottom_left_x,int bottom_left_y,int radius);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawCircleFromBottomRight_FUN_00468310(CDrawSurface *this_ptr,int bottom_right_x,int bottom_right_y,int radius);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleCornerPoints_FUN_00468340(CDrawSurface *this_ptr,int x,int y,int width,int height);
-void cockpit_drawsurf_cpp_FUN_004683f0(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawClippedLine_FUN_004683f0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawLineBresenham_FUN_00468530(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void cockpit_drawsurf_cpp_FUN_00468620(CDrawSurface *param_1,int param_2,int param_3,int param_4);
-int __cdecl cockpit_drawsurf_cpp_FUN_00468870(CDrawSurface *this_ptr,int *x1,int *y1,int *x2,int *y2,int clip_left,int clip_top,int clip_right,int clip_bottom);
-void __cdecl cockpit_drawsurf_cpp_FUN_00468b60(CDrawSurface *this_ptr,int start_x,int y,int end_x);
-void __cdecl cockpit_drawsurf_cpp_FUN_00468c80(CDrawSurface *this_ptr,int x,int start_y,int end_y);
+char __cdecl cockpit_drawsurf_cpp_computeCohenSutherlandOutcode_FUN_00468830(int point_x,int point_y,int clip_left,int clip_top,int clip_right,int clip_bottom);
+int __cdecl cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_00468870(CDrawSurface *this_ptr,int *x1,int *y1,int *x2,int *y2,int clip_left,int clip_top,int clip_right,int clip_bottom);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_00468b60(CDrawSurface *this_ptr,int start_x,int y,int end_x);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawVerticalLine_FUN_00468c80(CDrawSurface *this_ptr,int x,int start_y,int end_y);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAntiAliasedLine_FUN_00468e60(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleOutline_FUN_00468f20(CDrawSurface *this_ptr,int x,int y,int width,int height);
-void __cdecl cockpit_drawsurf_cpp_FUN_00468f80(CDrawSurface *this_ptr);
-void cockpit_drawsurf_cpp_FUN_00469080(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
-void cockpit_drawsurf_cpp_FUN_004691e0(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5);
-void cockpit_drawsurf_cpp_FUN_004693b0(int *param_1);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawSurfaceBorder_FUN_00468f80(CDrawSurface *this_ptr);
+void cockpit_drawsurf_cpp_FUN_00469080(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl cockpit_drawsurf_cpp_FUN_004691e0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
+void __cdecl cockpit_drawsurf_cpp_FUN_004693b0(CDrawSurface *this_ptr);
 undefined4 cockpit_drawsurf_cpp_FUN_004694b0(void);
-undefined4 cockpit_drawsurf_cpp_FUN_004694bc(void);
-void cockpit_drawsurf_cpp_FUN_004694cc(undefined4 param_1);
+undefined4 cockpit_drawsurf_cpp_FUN_004694c0(void);
+void cockpit_drawsurf_cpp_FUN_004694d0(void);
 void cockpit_drawsurf_cpp_FUN_004694e0(undefined4 param_1);
-void __cdecl cockpit_drawsurf_cpp_FUN_004694f0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
-void __cdecl cockpit_drawsurf_cpp_FUN_00469690(CDrawSurface *this_ptr);
-void __cdecl cockpit_drawsurf_cpp_FUN_00469b40(CDrawSurface *this_ptr,char *text,int x,int width,int y,int height,ETextAlignment alignment_mode);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillRectangle_FUN_004694f0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_00469690(CDrawSurface *this_ptr);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_00469b40(CDrawSurface *this_ptr,char *text,int x,int width,int y,int height,ETextAlignment alignment_mode);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAligned_FUN_00469e10(CDrawSurface *this_ptr,char *text,int x,int y);
-void cockpit_drawsurf_cpp_FUN_00469e40(CDrawSurface *param_1,int param_2,int param_3,char *param_4);
-void cockpit_drawsurf_cpp_FUN_00469e70(CDrawSurface *param_1,int param_2,int param_3,undefined4 param_4);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedWrapper_FUN_00469e40(CDrawSurface *this_ptr,int x,int y,char *text);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00469e70(CDrawSurface *this_ptr,int x,int y,char *format);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVariant_FUN_00469ee0(CDrawSurface *this_ptr,char *text,int x,int y);
-void cockpit_drawsurf_cpp_FUN_00469f40(CDrawSurface *param_1,int param_2,int param_3,undefined4 param_4);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00469f40(CDrawSurface *this_ptr,int x,int y,char *format);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCentered_FUN_00469fb0(CDrawSurface *this_ptr,char *text,int x,int y);
-void cockpit_drawsurf_cpp_FUN_00469fe0(CDrawSurface *param_1,int param_2,int param_3,char *param_4);
-void cockpit_drawsurf_cpp_FUN_0046a010(CDrawSurface *param_1,int param_2,int param_3,undefined4 param_4);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredWrapper_FUN_00469fe0(CDrawSurface *this_ptr,int x,int y,char *text);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredPrintf_FUN_0046a010(CDrawSurface *this_ptr,int x,int y,char *format);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVCentered_FUN_0046a080(CDrawSurface *this_ptr,char *text,int x,int y);
-void cockpit_drawsurf_cpp_FUN_0046a0e0(CDrawSurface *param_1,int param_2,int param_3,undefined4 param_4);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_0046a0e0(CDrawSurface *this_ptr,int x,int y,char *format);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredBoth_FUN_0046a150(CDrawSurface *this_ptr,char *text,int x,int y);
-void cockpit_drawsurf_cpp_FUN_0046a1b0(CDrawSurface *param_1,int param_2,int param_3,undefined4 param_4);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_0046a1b0(CDrawSurface *this_ptr,int x,int y,char *format);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInBounds_FUN_0046a220(CDrawSurface *this_ptr,char *text,int x,int width,int y);
-void cockpit_drawsurf_cpp_FUN_0046a250(CDrawSurface *param_1,int param_2,int param_3,int param_4,char *param_5);
-void cockpit_drawsurf_cpp_FUN_0046a280(CDrawSurface *param_1,int param_2,int param_3,int param_4,undefined4 param_5);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInBoundsWrapper_FUN_0046a250(CDrawSurface *this_ptr,int x,int y,int width,char *text);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_0046a280(CDrawSurface *this_ptr,int x,int y,int width,char *format);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInArea_FUN_0046a300(CDrawSurface *this_ptr,char *text,int x,int y,int height);
-void cockpit_drawsurf_cpp_FUN_0046a360(CDrawSurface *param_1,int param_2,int param_3,int param_4,undefined4 param_5);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_0046a360(CDrawSurface *this_ptr,int x,int y,int height,char *format);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidth_FUN_0046a3e0(CDrawSurface *this_ptr,char *text,int x,int width,int y,int height);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_0046a450(CDrawSurface *this_ptr,int x,int width,int y,int height,char *format);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_0046a4d0(CDrawSurface *this_ptr,char *param_2,int param_3);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullWidthWrapper_FUN_0046a4f0(CDrawSurface *this_ptr,int y,char *text);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullWidthPrintf_FUN_0046a510(CDrawSurface *this_ptr,int y,char *format);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_0046a640(CDrawSurface *this_ptr,char *text);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_0046a660(CDrawSurface *this_ptr,char *format);
-int cockpit_drawsurf_cpp_FUN_0046a6bc(undefined4 param_1,undefined4 param_2);
-int __cdecl cockpit_drawsurf_cpp_FUN_0046a700(CDrawSurface *this_ptr);
+int cockpit_drawsurf_cpp_FUN_0046a6c0(void);
+int __cdecl cockpit_drawsurf_cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_0046a700(CDrawSurface *this_ptr);
 int __cdecl cockpit_drawsurf_cpp_CDrawSurface_getTextWidth_FUN_0046a720(CDrawSurface *this_ptr,char *text);
-void cockpit_drawsurf_cpp_FUN_0046a750(CBitFont *param_1,undefined4 param_2,CDrawSurface *param_3,undefined4 param_4,int param_5,CDrawSurface *param_6,undefined4 param_7,int param_8,CDrawSurface *param_9,undefined4 param_10,int param_11,CDrawSurface *param_12,undefined4 param_13,CDrawSurface *param_14,CDrawSurface *param_15,undefined4 *param_16,int param_17,int param_18,int param_19,CDrawSurface *param_20,undefined4 param_21,undefined4 param_22,undefined4 param_23);
-void engine_drender_cpp_staticInit_FUN_0046b0d0(void);
+void __cdecl cockpit_drawsurf_cpp_testDrawingSurface_FUN_0046a750(CBitFont *test_font);
+void __cdecl engine_drender_cpp_staticInit_FUN_0046b0d0(void);
 CDemonRenderer * __cdecl engine_drender_cpp_CDemonRenderer_ctor_FUN_0046b0e0(CDemonRenderer *this_ptr);
 void __cdecl engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160(CDemonRenderer *this_ptr,int vertex_count,int *vertex_indices);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0046b240(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0046b2c0(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderZPrepassPoly_FUN_0046b370(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
-int __cdecl engine_drender_cpp_FUN_0046b470(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
+int __cdecl engine_drender_cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0046b470(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 int __cdecl engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0046b580(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 void engine_drender_cpp_FUN_0046b670(CDemonRenderer *param_1,int param_2);
+void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspectiveTextured_FUN_0046b7d0(CDemonRenderer *this_ptr,int param_2);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0046b850(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,int render_flags);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0046b8f0(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly,int render_flags);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedFace_FUN_0046ba70(CDemonRenderer *this_ptr,SInputFace *face,int render_flags);
-void engine_drender_cpp_FUN_0046bb8c(CDemonRenderer *param_1,int param_2);
+void engine_drender_cpp_FUN_0046bb90(void);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0046bc20(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
-void engine_drender_cpp_FUN_0046bd7e(void);
+void engine_drender_cpp_FUN_0046bd80(void);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderDecalPoly_FUN_0046be60(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0046bf90(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderFullEffectsDirect_FUN_0046c090(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
-void engine_drender_cpp_FUN_0046c16e(CDemonRenderer *param_1,int param_2);
-void engine_drender_cpp_FUN_0046c2ce(CDemonRenderer *param_1,int param_2);
+void engine_drender_cpp_FUN_0046c170(void);
+void engine_drender_cpp_FUN_0046c2d0(void);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0046c3b0(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046c510(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0046c5e0(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_0046c800(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
-void engine_drender_cpp_FUN_0046c94e(CDemonRenderer *param_1,int param_2);
+void engine_drender_cpp_FUN_0046c950(void);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderOverlayPoly_FUN_0046ca20(CDemonRenderer *this_ptr,SMRGLPrimitivePoly *poly);
 void __cdecl engine_drender_cpp_CDemonRenderer_setCameraOrigin_FUN_0046cb70(CDemonRenderer *this_ptr,CVector3i *origin);
-void __cdecl engine_drender_cpp_FUN_0046cb90(CDemonRenderer *this_ptr,CVector3f *point_ptr);
+void __cdecl engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90(CDemonRenderer *this_ptr,CVector3f *point_ptr);
 void __cdecl engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0046cc10(CDemonRenderer *this_ptr,CVector3f *euler_angles);
 void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046cc40(CDemonRenderer *this_ptr,CMatrix3x3f *transform_matrix);
 void __cdecl engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0046ce60(CDemonRenderer *this_ptr,CVector3i *input_point);
 void __cdecl engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90(CDemonRenderer *this_ptr,CVector3f *world_position);
 void __cdecl engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0046cee0(CDemonRenderer *this_ptr,CVector3i *position,CVector3i *rotation);
 void __cdecl engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30(CDemonRenderer *this_ptr,CVector3f *euler_angles,CVector3f *translation);
-void __cdecl engine_matrix_c_matrixPush_FUN_0046d070(void);
-void __cdecl engine_matrix_c_pop_FUN_0046d080(void);
-void engine_matrix_c_FUN_0046d090(undefined4 param_1,float param_2);
-void engine_matrix_c_FUN_0046d0d0(undefined4 param_1,float param_2);
-void engine_matrix_c_FUN_0046d100(undefined4 param_1,int *param_2);
-void engine_matrix_c_FUN_0046d120(undefined4 param_1,float *param_2);
-void engine_matrix_c_FUN_0046d1a0(void);
-void engine_matrix_c_FUN_0046d1c0(void);
-void engine_matrix_c_FUN_0046d230(void);
-void engine_matrix_c_FUN_0046d250(void);
-float engine_matrix_c_FUN_0046d2d0(void);
-void engine_matrix_c_FUN_0046d2f0(undefined4 param_1,int param_2,int param_3,int param_4,int param_5);
-void __cdecl engine_matrix_c_popViewport_FUN_0046d320(void);
+void __cdecl engine_drender_cpp_matrixPush_FUN_0046d070(void);
+void __cdecl engine_drender_cpp_pop_FUN_0046d080(void);
+void __cdecl engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0046d090(CDemonRenderer *this_ptr,float field_of_view);
+void __cdecl engine_drender_cpp_CDemonRenderer_setLightIntensity_FUN_0046d0d0(CDemonRenderer *this_ptr,float intensity);
+void __cdecl engine_drender_cpp_CDemonRenderer_setLightDirection_FUN_0046d100(CDemonRenderer *this_ptr,CVector3i *direction);
+void __cdecl engine_drender_cpp_CDemonRenderer_scaleAndSetDirectionalLight_FUN_0046d120(CDemonRenderer *this_ptr,CVector3f *light_direction);
+CVector3i * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046d1a0(CDemonRenderer *this_ptr,CVector3i *output);
+void engine_drender_cpp_FUN_0046d1c0(void);
+CVector3i * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046d230(CDemonRenderer *this_ptr,CVector3i *output);
+void engine_drender_cpp_FUN_0046d250(void);
+float engine_drender_cpp_FUN_0046d2d0(void);
+void __cdecl engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0046d2f0(CDemonRenderer *this_ptr,int x,int y,int width,int height);
+void __cdecl engine_drender_cpp_popViewport_FUN_0046d320(void);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0046d330(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,CustomScanlineFunc *scanline_renderer);
 template<typename T_func0>
 inline void engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0046d330(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,T_func0 scanline_renderer) {
@@ -278,7 +293,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046d4
 void __cdecl engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460(CDemonRenderer *this_ptr,int state_flag);
 void __cdecl engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(CDemonRenderer *this_ptr,int blend_mode);
 int __cdecl engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(CDemonRenderer *this_ptr,int render_alpha);
-void __cdecl engine_drender_cpp_FUN_0046d4d0(CDemonRenderer *this_ptr,float render_alpha);
+void __cdecl engine_drender_cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_0046d4d0(CDemonRenderer *this_ptr,float render_alpha);
 void __cdecl engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500(CDemonRenderer *this_ptr,int enabled);
 void __cdecl engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046d520(CDemonRenderer *this_ptr,int value);
 int __cdecl engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(CDemonRenderer *this_ptr);
@@ -290,40 +305,40 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleBatch_FUN_0046d880(
 void __cdecl engine_drender_cpp_CDemonRenderer_renderQuadBatch_FUN_0046d8f0(CDemonRenderer *this_ptr,SMRGLPrimitiveQuad *primitive_array,int primitive_count,int render_flags);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0046d960(CDemonRenderer *this_ptr,SMRGLPrimitiveQuad *primitive_array,int primitive_count,int primitive_stride,int render_flags);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0046dbd0(CDemonRenderer *this_ptr,SInputFace *face_array,int face_count,int render_flags);
-void engine_drender_cpp_FUN_0046de6e(int *param_1,ushort *param_2,int param_3,int param_4,uint param_5);
+void engine_drender_cpp_FUN_0046de70(void);
 void __cdecl engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e120(CDemonRenderer *this_ptr,int enable_advanced_mode);
 void __cdecl engine_drender_cpp_CDemonRenderer_processVisiblePrimitive_FUN_0046e160(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive,int render_flags);
 void __cdecl engine_drender_cpp_CDemonRenderer_processQuadPrimitive_FUN_0046e200(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *quad_primitive,int render_flags);
 void __cdecl engine_drender_cpp_CDemonRenderer_captureFace_FUN_0046e300(CDemonRenderer *this_ptr,STrianglePackedIndices *triangle_indices,int render_flags);
-undefined4 __cdecl engine_drender_cpp_qsortByCapturedFaceDepthAscending_FUN_0046e480(int *param_1,int *param_2);
-undefined4 __cdecl engine_drender_cpp_qsortByCapturedFaceDepthDescending_FUN_0046e4b0(int *param_1,int *param_2);
+int __cdecl engine_drender_cpp_qsortByCapturedFaceDepthAscending_FUN_0046e480(SFace **face_ptr_a,SFace **face_ptr_b);
+int __cdecl engine_drender_cpp_qsortByCapturedFaceDepthDescending_FUN_0046e4b0(SFace **face_ptr_a,SFace **face_ptr_b);
 void __cdecl engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0(CDemonRenderer *this_ptr);
 void __cdecl engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(CDemonRenderer *this_ptr,SMRGLTextureBasic *texture);
-void __cdecl engine_drender_cpp_FUN_0046e690(CDemonRenderer *this_ptr,SMRGLTextureBasic *texture,SRGBColorPalette *palette);
+void __cdecl engine_drender_cpp_CDemonRenderer_updateTexture_FUN_0046e690(CDemonRenderer *this_ptr,SMRGLTextureBasic *texture,SRGBColorPalette *palette);
 int __cdecl engine_drender_cpp_CDemonRenderer_depthTest_FUN_0046e6b0(CDemonRenderer *this_ptr,SRenderVertex *vertex_ptr);
 void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndViewport_FUN_0046e720(CDemonRenderer *this_ptr,SCameraViewportState *camera_state);
 void __cdecl engine_drender_cpp_CDemonRenderer_getCameraAndViewportState_FUN_0046e880(CDemonRenderer *this_ptr,SCameraViewportState *output_state);
 void __cdecl core_drip_cpp_staticInit_FUN_0046e9e0(void);
-void core_drip_cpp_factoryFuncDrip_FUN_0046ea20(void);
-CDemonActorType * core_drip_cpp_CDrip_getActorType_FUN_0046ea40(CDrip *this_ptr);
+CDrip * __cdecl core_drip_cpp_factoryFuncDrip_FUN_0046ea20(void);
+CDemonActorType * __cdecl core_drip_cpp_CDrip_getActorType_FUN_0046ea40(CDrip *this_ptr);
 CDrip * __cdecl core_drip_cpp_CDrip_ctor_FUN_0046ea50(CDrip *this_ptr);
 void __cdecl core_drip_cpp_CDrip_setup_FUN_0046eb30(CDrip *this_ptr);
 void __cdecl core_drip_cpp_CDrip_archive_FUN_0046ebc0(CDrip *this_ptr);
-void core_drip_cpp_FUN_0046ecf0(int param_1,float param_2);
-int core_drip_cpp_FUN_0046f150(CDemonActor *param_1);
-void core_drip_cpp_FUN_0046f1f0(int param_1);
-undefined4 core_drip_cpp_FUN_0046f270(void);
+void __cdecl core_drip_cpp_CDrip_process_FUN_0046ecf0(CDrip *this_ptr,float delta_time);
+int __cdecl core_drip_cpp_CDrip_renderOpaque_FUN_0046f150(CDrip *this_ptr);
+CBoundingBox3D * __cdecl core_drip_cpp_CDrip_getBoundingBox_FUN_0046f1f0(CDrip *this_ptr,CBoundingBox3D *out_box);
+ECollisionType __cdecl core_drip_cpp_CDrip_getCollisionType_FUN_0046f270(CDrip *this_ptr,SCollisionInfo *collision_info);
 CDrip * __cdecl core_drip_cpp_CDrip_dtor_FUN_0046f280(CDrip *this_ptr,uint flags);
 void __cdecl core_dskybox_cpp_staticInit_FUN_0046f2d0(void);
-int __cdecl core_dskybox_cpp_initializeSkyboxTexture_FUN_0046f300(int param_1);
-void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_0046f340(undefined4 *param_1,int param_2,int param_3);
-void __cdecl core_dskybox_cpp_FUN_0046f480(SMRGLSkyTexture *sky_texture,char *texture_name,int brightness_factor);
-void core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0046f9a6(void);
-void core_dstrendr_cpp_renderDepth16BitConditional_FUN_0046f9f4(void);
-void core_dstrendr_cpp_renderTexturedAlphaMMXScanline_FUN_0046fa57(void);
-uint core_dstrendr_cpp_renderZBufferFill16xUnrolled_FUN_0046fb72(void);
-void core_dstrendr_cpp_renderSolidColorDepth16xUnrolled_FUN_0046fcc8(void);
-void core_dstrendr_cpp_renderDepthInterlacedProfiled_FUN_0046fea7(void);
-void core_dstrendr_cpp_renderScreenDepthTestInterlacedProfiled_FUN_0046ff25(void);
-void core_dstrendr_cpp_renderDepthTestStatistics16xUnrolled_FUN_0046ffa5(void);
+SMRGLSkyTexture * __cdecl core_dskybox_cpp_initializeSkyboxTexture_FUN_0046f300(SMRGLSkyTexture *texture);
+void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_0046f340(SMRGLSkyTexture *sky_texture,int u_coord,int v_coord,int vertex_index);
+void __cdecl core_dskybox_cpp_renderSkyDome_FUN_0046f480(SMRGLSkyTexture *sky_texture,char *texture_name,int brightness_factor);
+void __edi_esi_ebx core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0046f9a6(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __edi_esi_ebx core_dstrendr_cpp_renderDepth16BitConditional_FUN_0046f9f4(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __edi_esi_ebx core_dstrendr_cpp_renderTexturedAlphaMMXScanline_FUN_0046fa57(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __edi_esi_ebx core_dstrendr_cpp_renderZBufferFill16xUnrolled_FUN_0046fb72(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __edi_esi_ebx core_dstrendr_cpp_renderSolidColorDepth16xUnrolled_FUN_0046fcc8(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __edi_esi_ebx core_dstrendr_cpp_renderDepthInterlacedProfiled_FUN_0046fea7(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __edi_esi_ebx core_dstrendr_cpp_renderScreenDepthTestInterlacedProfiled_FUN_0046ff25(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __edi_esi_ebx core_dstrendr_cpp_renderDepthTestStatistics16xUnrolled_FUN_0046ffa5(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 

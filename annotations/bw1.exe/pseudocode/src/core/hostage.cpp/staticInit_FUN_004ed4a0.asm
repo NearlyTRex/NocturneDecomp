@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hostage_cpp_staticInit_FUN_004ed4a0(void)
+; void __cdecl core_hostage_cpp_staticInit_FUN_004ed4a0(void)
 ;
 ;
 ; Called Functions:

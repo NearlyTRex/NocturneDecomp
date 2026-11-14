@@ -6,10 +6,26 @@ from ghidra_annotations.util import (
 MIN_VTABLE_SLOTS = 3
 
 
+def is_shared_return(currentProgram, addr):
+    """Is addr a RET in code, though no function starts there?
+
+    Watcom gives an empty virtual no body of its own: the slot points at a RET
+    that already ends some other function (CPod's slot 1 is its destructor's
+    last RET). Ghidra rightly keeps that byte in the destructor, so the slot
+    targets no function -- and a scan that stopped there started the table
+    after it, one or two slots late.
+    """
+    block = currentProgram.getMemory().getBlock(addr)
+    instruction = currentProgram.getListing().getInstructionAt(addr)
+    return bool(block and block.isExecute() and instruction
+                and instruction.getMnemonicString().upper() == "RET")
+
+
 def scan_for_vtables(currentProgram, addr):
     """The function pointers in the run starting at addr: a vtable's slots, if it is one.
 
-    The run ends at the first pointer that is not to a function, or at the end of memory.
+    The run ends at the first pointer that is not to a function or a shared RET
+    (is_shared_return), or at the end of memory.
     """
     pointer_size = get_pointer_size(currentProgram)
     function_manager = currentProgram.getFunctionManager()
@@ -18,7 +34,8 @@ def scan_for_vtables(currentProgram, addr):
     scan_addr = addr
     while memory.contains(scan_addr) and memory.contains(scan_addr.add(pointer_size - 1)):
         target_addr = read_pointer_at_address(currentProgram, scan_addr)
-        if not target_addr or not is_function_address(currentProgram, target_addr):
+        if not target_addr or not (is_function_address(currentProgram, target_addr)
+                                   or is_shared_return(currentProgram, target_addr)):
             break
         func = function_manager.getFunctionAt(target_addr)
         convention = func.getCallingConventionName() if func else None

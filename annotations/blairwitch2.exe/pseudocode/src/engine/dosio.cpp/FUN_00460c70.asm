@@ -12,18 +12,18 @@
 ; undefined        Stack[-0x120]:1  local_120
 ; undefined4       Stack[-0x20]:4  local_20
 ;
-; XREF[44]:
+; XREF[45]:
 ;   cockpit_ckptutil.c_FUN_0042dec0 at 0042deda
 ;   cockpit_ckptutil.c_FUN_0042e130 at 0042e155
 ;   cockpit_ckptutil.c_FUN_0042f330 at 0042f361
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_00517130 at 0051715b
-;   cockpit_pkbmpset.cpp_FUN_005177de at 0051782a
+;   cockpit_pkbitmap.cpp_FUN_00517400 at 0051742a
+;   cockpit_pkbmpset.cpp_FUN_005177e0 at 0051782a
 ;   cockpit_pkbmpset.cpp_FUN_00517a60 at 00517a7f
 ;   core_cloth.cpp_CCloth_load_FUN_005adeb0 at 005aded3
 ;   core_course.cpp_CCourse_load_FUN_00438af0 at 00438b13
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0043e930 at 0043e9d0
-;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00441f50 at 00441fd8
-;   ... and 34 more
+;   ... and 35 more
 ;
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_005b8e40
@@ -31,7 +31,7 @@
 ;   crt_stdio.c_fseek_FUN_005b929c
 ;   engine_dosio.cpp_findFile_FUN_00460980
 ;   engine_dosio.cpp_FUN_00460910
-;   unkafter_dosio.cpp_FUN_004613b0
+;   engine_dosio.cpp_FUN_004613b0
 ;
 ; *****************************************************************************
 
@@ -71,15 +71,15 @@ section .text
     JZ 0x00460cc4                       ; 00460cb9
         ;   XREF to: 00460cc4 (CONDITIONAL_JUMP)  ; LAB_00460cc4
     PUSH EDI                            ; 00460cbb
-    CALL unkafter_dosio.cpp_FUN_004613b0 ; 00460cbc
-        ;   XREF to: 004613b0 (UNCONDITIONAL_CALL)  ; undefined unkafter_dosio.cpp_FUN_004613b0()
+    CALL engine_dosio.cpp_FUN_004613b0  ; 00460cbc
+        ;   XREF to: 004613b0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_FUN_004613b0()
     ADD ESP,0x4                         ; 00460cc1
     PUSH ESI                            ; 00460cc4
         ;   Label: LAB_00460cc4
     LEA EAX,[ESP + 0x4]                 ; 00460cc5
     PUSH EAX                            ; 00460cc9
     CALL crt_stdio.c_fopen_FUN_005b910c ; 00460cca
-        ;   XREF to: 005b910c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_005b910c()
+        ;   XREF to: 005b910c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005b910c(char * filename, char * mode)
     ADD ESP,0x8                         ; 00460ccf
     ADD ESP,0x214                       ; 00460cd2
         ;   Label: LAB_00460cd2
@@ -97,7 +97,7 @@ section .text
         ;   Label: LAB_00460ce4
     PUSH EAX                            ; 00460ce6
     CALL engine_dosio.cpp_findFile_FUN_00460980 ; 00460ce7
-        ;   XREF to: 00460980 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_findFile_FUN_00460980()
+        ;   XREF to: 00460980 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_findFile_FUN_00460980(SFoundFileInfo * context)
     ADD ESP,0x4                         ; 00460cec
     TEST EAX,EAX                        ; 00460cef
     JZ 0x00460cd2                       ; 00460cf1
@@ -106,7 +106,7 @@ section .text
     LEA EAX,[ESP + 0x104]               ; 00460cf4
     PUSH EAX                            ; 00460cfb
     CALL crt_stdio.c_fopen_FUN_005b910c ; 00460cfc
-        ;   XREF to: 005b910c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_005b910c()
+        ;   XREF to: 005b910c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005b910c(char * filename, char * mode)
     ADD ESP,0x8                         ; 00460d01
     MOV EBX,EAX                         ; 00460d04
     TEST EAX,EAX                        ; 00460d06
@@ -120,7 +120,7 @@ section .text
     PUSH ECX                            ; 00460d17
     PUSH EAX                            ; 00460d18
     CALL crt_stdio.c_fseek_FUN_005b929c ; 00460d19
-        ;   XREF to: 005b929c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fseek_FUN_005b929c()
+        ;   XREF to: 005b929c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005b929c(_FILE * file, long offset, int whence)
     ADD ESP,0xc                         ; 00460d1e
     MOV EAX,EBX                         ; 00460d21
         ;   Label: LAB_00460d21

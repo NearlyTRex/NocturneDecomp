@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 76,
-    "complexity_score": 89,
+    "complexity_score": 23,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 8,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 24,
-    "suspect_count": 6,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 100
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 99
   },
   "cross_references": [
     {
       "addr": "004eaa00",
       "from_addr": "004eaa06",
-      "name": "core_melee.cpp_FUN_004eaa00",
+      "name": "core_melee.cpp_CMelee_archive_FUN_004eaa00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -128,7 +126,7 @@
       {
         "call_addr": "004eaa06",
         "call_type": "direct",
-        "caller": "core_melee.cpp_FUN_004eaa00",
+        "caller": "core_melee.cpp_CMelee_archive_FUN_004eaa00",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -180,6 +178,32 @@
     },
     "pcode_op_count": 259
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005ad8b0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0057b2a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6918
+    },
+    "nocedit.exe": {
+      "addr": "005ee250",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00554170",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 268,
     "local_size": 264,
@@ -203,56 +227,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "(&this_ptr->field_0x2b4,\"modelName\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x460",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->field_0x460,\"carriedByActor\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x430",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->field_0x430,\"weaponState\")",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x6c4",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->field_0x6c4,\"ammoCount\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x6c8",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->field_0x6c8,\"ammoType\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x6cc",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x6cc,\"simTimer\");",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

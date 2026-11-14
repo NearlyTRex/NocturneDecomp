@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 56,
+    "complexity_score": 55,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 16,
+    "pseudocode_lines": 15,
     "suspect_count": 3,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 83
+    "total_lines": 82
   },
   "cross_references": [],
   "function": {
@@ -32,12 +32,12 @@
     {
       "addr": "0050d220",
       "is_variadic": false,
-      "name": "core_menu.cpp_FUN_0050d220"
+      "name": "core_menu.cpp_getKeyDisplayName_FUN_0050d220"
     },
     {
       "addr": "005bfb40",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005bfb40"
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
     },
     {
       "addr": "004c1dd0",
@@ -127,6 +127,32 @@
     },
     "pcode_op_count": 308
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004b3b90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004b50f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8444
+    },
+    "nocedit.exe": {
+      "addr": "004d8910",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0049b420",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -161,7 +187,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 13,
       "match": "DAT_0061b49c",
       "severity": "mild",
       "text": "if (_DAT_01cd0c50 <= DAT_0061b49c + _DAT_01cd0c54 * -4) {",
@@ -169,7 +195,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 18,
+      "line": 17,
       "match": "DAT_0061b498",
       "severity": "mild",
       "text": "_DAT_01cd0c4c = _DAT_01cd0c4c + DAT_0061b498 / 3;",

@@ -18,25 +18,25 @@
     {
       "addr": "0049eb30",
       "from_addr": "0049ed0e",
-      "name": "core_elephant.cpp_FUN_0049eb30",
+      "name": "core_elephant.cpp_CElephantGun_renderAimBeam_FUN_0049eb30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00500f90",
       "from_addr": "0050121c",
-      "name": "core_lightgun.cpp_FUN_00500f90",
+      "name": "core_lightgun.cpp_CLightGun_renderAimBeam_FUN_00500f90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005026f0",
       "from_addr": "0050297c",
-      "name": "core_lightpis.cpp_FUN_005026f0",
+      "name": "core_lightpis.cpp_CLightPis_renderAimBeam_FUN_005026f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00562100",
       "from_addr": "005622de",
-      "name": "core_shotgun.cpp_FUN_00562100",
+      "name": "core_shotgun.cpp_CShotgun_renderAimBeam_FUN_00562100",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -79,7 +79,7 @@
       {
         "call_addr": "0049ed0e",
         "call_type": "direct",
-        "caller": "core_elephant.cpp_FUN_0049eb30",
+        "caller": "core_elephant.cpp_CElephantGun_renderAimBeam_FUN_0049eb30",
         "estimated_params": 8,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -90,7 +90,7 @@
       {
         "call_addr": "0050121c",
         "call_type": "direct",
-        "caller": "core_lightgun.cpp_FUN_00500f90",
+        "caller": "core_lightgun.cpp_CLightGun_renderAimBeam_FUN_00500f90",
         "estimated_params": 8,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -101,7 +101,7 @@
       {
         "call_addr": "00501285",
         "call_type": "direct",
-        "caller": "core_lightgun.cpp_FUN_00500f90",
+        "caller": "core_lightgun.cpp_CLightGun_renderAimBeam_FUN_00500f90",
         "estimated_params": 8,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -112,7 +112,7 @@
       {
         "call_addr": "0050297c",
         "call_type": "direct",
-        "caller": "core_lightpis.cpp_FUN_005026f0",
+        "caller": "core_lightpis.cpp_CLightPis_renderAimBeam_FUN_005026f0",
         "estimated_params": 8,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -123,7 +123,7 @@
       {
         "call_addr": "005029e5",
         "call_type": "direct",
-        "caller": "core_lightpis.cpp_FUN_005026f0",
+        "caller": "core_lightpis.cpp_CLightPis_renderAimBeam_FUN_005026f0",
         "estimated_params": 8,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -134,7 +134,7 @@
       {
         "call_addr": "005622de",
         "call_type": "direct",
-        "caller": "core_shotgun.cpp_FUN_00562100",
+        "caller": "core_shotgun.cpp_CShotgun_renderAimBeam_FUN_00562100",
         "estimated_params": 8,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -176,6 +176,32 @@
       "STORE": 16
     },
     "pcode_op_count": 172
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0049d7e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a2b10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004c7f20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0048b3e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 36,

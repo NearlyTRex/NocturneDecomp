@@ -1,0 +1,190 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 27,
+    "complexity_score": 16,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 43
+  },
+  "cross_references": [
+    {
+      "addr": "0053a610",
+      "from_addr": "0053a673",
+      "name": "core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_0053a610",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053a760",
+      "from_addr": "0053a79a",
+      "name": "core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_0053a760",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053a150",
+      "from_addr": "0053a164",
+      "name": "core_setdir.cpp_CDemonSet_isPointInVdirGroup_FUN_0053a150",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0053a720",
+    "address_range": [
+      [
+        "0053a720",
+        "0053a75a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setdir.cpp_CDemonSet_findVdirBoxRoot_FUN_0053a720",
+    "signature": "int __cdecl core_setdir_cpp_CDemonSet_findVdirBoxRoot_FUN_0053a720(CDemonSet *this_ptr,int box_index)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "0053a673",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_0053a610",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0053a6e0",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_0053a610",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0053a79a",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_0053a760",
+        "estimated_params": 0,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "0053a164",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_CDemonSet_isPointInVdirGroup_FUN_0053a150",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0053a17a",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_CDemonSet_isPointInVdirGroup_FUN_0053a150",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.2105263157894735,
+    "instruction_count": 19,
+    "opcode_distribution": {
+      "BRANCH": 2,
+      "CBRANCH": 2,
+      "COPY": 16,
+      "INT_ADD": 9,
+      "INT_AND": 7,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SEXT": 6,
+      "INT_SLESS": 3,
+      "INT_SUB": 3,
+      "LOAD": 5,
+      "POPCOUNT": 3,
+      "STORE": 3,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 80
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0055c020",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005419e0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00576820",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7273
+    },
+    "nocturne.exe": {
+      "addr": "00514300",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "box_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

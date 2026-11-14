@@ -2,15 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 40,
+    "complexity_score": 155,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 0,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 40,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 113
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 65,
+    "suspect_count": 7,
+    "suspect_types": [
+      "builtin_function",
+      "negative_offset",
+      "pointer_cast",
+      "shadow_pointer_walk"
+    ],
+    "total_lines": 138
   },
   "cross_references": [
     {
@@ -28,15 +33,15 @@
         "0059a05e"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_spirindi.cpp_CSpiritIndian_ctor_FUN_00599f60",
-    "signature": "CSpiritIndian * core_spirindi_cpp_CSpiritIndian_ctor_FUN_00599f60(CSpiritIndian *this_ptr)"
+    "signature": "CSpiritIndian * __cdecl core_spirindi_cpp_CSpiritIndian_ctor_FUN_00599f60(CSpiritIndian *this_ptr)"
   },
   "function_calls": [
     {
       "addr": "0040ce40",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040ce40"
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40"
     },
     {
       "addr": "0043f8c0",
@@ -61,7 +66,7 @@
     {
       "addr": "0054eae0",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_0054eae0"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0"
     }
   ],
   "globals": [],
@@ -127,7 +132,64 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Ghidra builtin function",
+      "line": 22,
+      "match": "builtin_strncpy",
+      "severity": "mild",
+      "text": "builtin_strncpy(pCVar6[-0x41].models[1].textures[6].texture_name,\"fff?\",4);",
+      "type": "builtin_function"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 35,
+      "match": "pCVar6[-1].",
+      "severity": "mild",
+      "text": "*(float *)(pCVar6[-1].dead + 0x10) = fVar7;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 39,
+      "match": "pCVar6[-1].",
+      "severity": "mild",
+      "text": "pSVar9 = pCVar6[-1].models[1].textures + 0xe;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 40,
+      "match": "pCVar6[-1].",
+      "severity": "mild",
+      "text": "pSVar2 = pCVar6[-1].models[1].textures;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 51,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(char *)((int)&(pSVar9->base).type + 1) = cVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 52,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pSVar9 = (SMRGLTextureModel *)((int)&(pSVar9->base).type + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar9` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `pSVar9->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 52,
+      "match": "pSVar9 = (T *)((int)&(pSVar9->FIELD).SUBFIELD + CONST)",
+      "severity": "moderate",
+      "text": "pSVar9 = (SMRGLTextureModel *)((int)&(pSVar9->base).type + 2);",
+      "type": "shadow_pointer_walk"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

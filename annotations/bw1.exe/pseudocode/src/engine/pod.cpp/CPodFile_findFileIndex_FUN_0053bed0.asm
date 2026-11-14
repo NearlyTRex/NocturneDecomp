@@ -7,8 +7,9 @@
 ; CPodFile *       Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename
 ;
-; XREF[2]:
+; XREF[3]:
 ;   engine_pod.cpp_CPod_findFile_FUN_0053cf50 at 0053cf6b
+;   engine_pod.cpp_CPod_locateFile_FUN_0053cec0 at 0053ceff
 ;   engine_pod.cpp_findFilesByExtension_FUN_0053c940 at 0053ca8d
 ;
 ; Called Functions:

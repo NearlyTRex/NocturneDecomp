@@ -2,32 +2,31 @@
 // Address: 00545c10
 // Address Range: [[00545c10, 00545c75]]
 // Convention: unknown
-// Signature: undefined4 core_shadow_cpp_FUN_00545c10(int param_1,undefined4 *param_2)
+// Signature: undefined4 core_shadow_cpp_FUN_00545c10(int param_1,float *param_2)
 
 #include "nocturne.h"
 
-uint core_shadow_cpp_FUN_00545c10(int param_1,uint *param_2)
+uint core_shadow_cpp_FUN_00545c10(int param_1,float *param_2)
 
 {
   byte bVar1;
-  uint auStackY_100c [1016];
-  uint uStack_24;
-  uint uStack_18;
-  uint uStack_14;
-  uint uStack_10;
+  float afStackY_100c [1016];
+  CVector3f CStack_24;
+  float fStack_18;
+  float afStack_14 [2];
   
   bVar1 = 0;
-  core_skeleton_cpp_FUN_0054dcc0(param_1 + 0x158,*(uint *)(param_1 + 0xd058));
-  uStack_18 = uStack_24;
-  *(uint *)((int)&stack0xffffffec + (uint)bVar1 * -8) =
-       *(uint *)(&stack0xffffffe0 + (uint)bVar1 * -8);
-  *(uint *)((int)&stack0xfffffff0 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-       *(uint *)(&stack0xffffffe4 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-  if (param_2 == &stack0xffffffe8) {
+  core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0054dcc0
+            ((CDeformableModelInstance *)(param_1 + 0x158),*(int *)(param_1 + 0xd058),&CStack_24);
+  fStack_18 = CStack_24.x;
+  afStack_14[(uint)bVar1 * -2] = *(float *)((int)&CStack_24 + (uint)bVar1 * -8 + 4);
+  afStack_14[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
+       *(float *)((int)&CStack_24 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
+  if (param_2 == &fStack_18) {
     return 1;
   }
-  *param_2 = uStack_18;
-  param_2[1] = uStack_14;
-  param_2[2] = uStack_10;
+  *param_2 = fStack_18;
+  param_2[1] = afStack_14[0];
+  param_2[2] = afStack_14[1];
   return 1;
 }

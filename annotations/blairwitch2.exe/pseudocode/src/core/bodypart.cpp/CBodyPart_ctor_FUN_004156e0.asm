@@ -7,11 +7,11 @@
 ; CBodyPart *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_bodypart.cpp_FUN_004154f0 at 004155f2
+;   core_bodypart.cpp_createBodyPart_FUN_004154f0 at 004155f2
 ;   core_bodypart.cpp_factoryFuncBodyPart_FUN_004156b0 at 004156c3
 ;
 ; Referenced Globals:
-;   undefined4 g_CBodyPartVTable
+;   CDemonActor_vtable g_CBodyPartVTable
 ;   WatcomTypeInfo g_SBodyPartModelTypeInfo
 ;   WatcomTypeInfo g_SBodyPartFireTypeInfo
 ;
@@ -35,14 +35,14 @@ section .text
     ADD EAX,0x3ec                       ; 004156f4
     PUSH EAX                            ; 004156f9
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 004156fa
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004156ff
     PUSH 0x5f37d0                       ; 00415702 | g_SBodyPartFireTypeInfo
     PUSH 0x2                            ; 00415707
     ADD EAX,0x4c0                       ; 00415709
     PUSH EAX                            ; 0041570e
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 0041570f
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00415714
     ADD EAX,0x834                       ; 00415717
     PUSH EAX                            ; 0041571c

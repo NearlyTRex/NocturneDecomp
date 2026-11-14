@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_sps_cpp_CSps_getActorType_FUN_00568200(CSps *this_ptr)
+; CDemonActorType * __cdecl core_sps_cpp_CSps_getActorType_FUN_00568200(CSps *this_ptr)
 ;
 ; Parameters:
 ; CSps *           Stack[0x4]:4   this_ptr

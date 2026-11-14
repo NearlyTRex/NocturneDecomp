@@ -5,6 +5,6 @@
 // Function prototypes for core/vecdir.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_vecdir.cpp_FUN_00576250
+// Original: core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250
 // Address: 00576250
-float * FUN_00576250(uint *param_1);
+float * convertDirectionVectorToEulerAngles(uint *param_1);

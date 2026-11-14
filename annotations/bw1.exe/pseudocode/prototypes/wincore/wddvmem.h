@@ -13,17 +13,21 @@ void __cdecl populateColorTable(void);
 // Address: 004ecf70
 void __cdecl convertPaletteToDirectColor(void);
 
+// Original: wincore_wddvmem.cpp_cleanupDirectDrawSurfaces_FUN_005abd80
+// Address: 005abd80
+void __cdecl cleanupDirectDrawSurfaces(void);
+
 // Original: wincore_wddvmem.cpp_reinitializeDirectDraw_FUN_005abde0
 // Address: 005abde0
 int __cdecl reinitializeDirectDraw(void);
 
-// Original: wincore_wddvmem.cpp_FUN_005abf1e
-// Address: 005abf1e
-void FUN_005abf1e(void);
+// Original: wincore_wddvmem.cpp_FUN_005abf20
+// Address: 005abf20
+void FUN_005abf20(void);
 
-// Original: wincore_wddvmem.cpp_FUN_005abfec
-// Address: 005abfec
-void FUN_005abfec(void);
+// Original: wincore_wddvmem.cpp_FUN_005abff0
+// Address: 005abff0
+void FUN_005abff0(void);
 
 // Original: wincore_wddvmem.cpp_FUN_005ac040
 // Address: 005ac040
@@ -33,9 +37,9 @@ int __cdecl FUN_005ac040(int width,int height);
 // Address: 005ac1b0
 void __cdecl FUN_005ac1b0(void);
 
-// Original: wincore_wddvmem.cpp_FUN_005ac26e
-// Address: 005ac26e
-void FUN_005ac26e(void);
+// Original: wincore_wddvmem.cpp_FUN_005ac270
+// Address: 005ac270
+void FUN_005ac270(void);
 
 // Original: wincore_wddvmem.cpp_FUN_005ac300
 // Address: 005ac300
@@ -49,25 +53,25 @@ void __cdecl resetGraphicsSystem(void);
 // Address: 005aca40
 void __cdecl reinitializeGraphicsSystem(void);
 
-// Original: wincore_wddvmem.cpp_FUN_005acb10
+// Original: wincore_wddvmem.cpp_openScreenDevice_FUN_005acb10
 // Address: 005acb10
-void FUN_005acb10(void);
+void __cdecl openScreenDevice(void);
 
-// Original: wincore_wddvmem.cpp_FUN_005acc00
+// Original: wincore_wddvmem.cpp_closeScreenDevice_FUN_005acc00
 // Address: 005acc00
-void __cdecl FUN_005acc00(void);
+void __cdecl closeScreenDevice(void);
 
-// Original: wincore_wddvmem.cpp_FUN_005acd00
+// Original: wincore_wddvmem.cpp_analyzePixelFormat_FUN_005acd00
 // Address: 005acd00
-void __cdecl FUN_005acd00(void);
+void __cdecl analyzePixelFormat(void);
 
-// Original: wincore_wddvmem.cpp_FUN_005acec0
+// Original: wincore_wddvmem.cpp_setupColorPalette_FUN_005acec0
 // Address: 005acec0
-void __cdecl FUN_005acec0(void);
+void __cdecl setupColorPalette(void);
 
-// Original: wincore_wddvmem.cpp_FUN_005acff0
+// Original: wincore_wddvmem.cpp_swapBuffers_FUN_005acff0
 // Address: 005acff0
-void __cdecl FUN_005acff0(void);
+void __cdecl swapBuffers(void);
 
 // Original: wincore_wddvmem.cpp_FUN_005ad270
 // Address: 005ad270
@@ -77,17 +81,17 @@ void FUN_005ad270(void);
 // Address: 005ad2c0
 void __cdecl videoRestore(void);
 
-// Original: wincore_wddvmem.cpp_FUN_005ad3d0
+// Original: wincore_wddvmem.cpp_stubFunction_FUN_005ad3d0
 // Address: 005ad3d0
-void __cdecl FUN_005ad3d0(void);
+void __cdecl stubFunction(void);
 
 // Original: wincore_wddvmem.cpp_freeLibrary_FUN_005ad450
 // Address: 005ad450
 BOOL __cdecl freeLibrary(HMODULE hLibModule);
 
-// Original: wincore_wddvmem.cpp_FUN_005ad460
+// Original: wincore_wddvmem.cpp_loadLibrary_FUN_005ad460
 // Address: 005ad460
-HMODULE __cdecl FUN_005ad460(LPCSTR lpLibFileName);
+HMODULE __cdecl loadLibrary(LPCSTR lpLibFileName);
 
 // Original: wincore_wddvmem.cpp_getProcAddress_FUN_005ad470
 // Address: 005ad470

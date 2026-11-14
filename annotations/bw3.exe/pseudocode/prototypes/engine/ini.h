@@ -5,13 +5,13 @@
 // Function prototypes for engine/ini.cpp
 // Generated from Ghidra function signatures
 
-// Original: engine_ini.cpp_FUN_004d8290
+// Original: engine_ini.cpp_CIni_getProfileString_FUN_004d8290
 // Address: 004d8290
-int __cdecl FUN_004d8290(CIni *this_ptr,char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename);
+int __cdecl CIni::getProfileString(CIni *this_ptr,char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename);
 
 // Original: engine_ini.cpp_FUN_004d8470
 // Address: 004d8470
-int FUN_004d8470(undefined4 *param_1,undefined4 param_2,char *param_3,undefined4 param_4,char *param_5);
+int FUN_004d8470(undefined4 *param_1,undefined4 param_2,char *param_3,char *param_4,char *param_5);
 
 // Original: engine_ini.cpp_CIni_writeProfileString_FUN_004d8640
 // Address: 004d8640
@@ -21,9 +21,9 @@ int __cdecl CIni::writeProfileString(CIni *this_ptr,char *section,char *key,char
 // Address: 004d8910
 void __cdecl getProfileString(char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename);
 
-// Original: engine_ini.cpp_FUN_004d8950
+// Original: engine_ini.cpp_getProfileInteger_FUN_004d8950
 // Address: 004d8950
-void FUN_004d8950(char *param_1,char *param_2,undefined4 param_3,char *param_4);
+int __cdecl getProfileInteger(char *section,char *key,int default_value,char *filename);
 
 // Original: engine_ini.cpp_writeProfileString_FUN_004d89f0
 // Address: 004d89f0
@@ -35,7 +35,7 @@ CIniFile * __cdecl FUN_004d8a20(CIniFile *this_ptr,char *filename,char *section)
 
 // Original: engine_ini.cpp_CIniFile_dtor_FUN_004d8a50
 // Address: 004d8a50
-CIniFile * CIniFile::dtor(CIniFile *this_ptr,uint flags);
+CIniFile * __cdecl CIniFile::dtor(CIniFile *this_ptr,uint flags);
 
 // Original: engine_ini.cpp_initIniFile_FUN_004d8aa0
 // Address: 004d8aa0
@@ -45,42 +45,42 @@ void __cdecl initIniFile(char *dest,char *source);
 // Address: 004d8ae0
 void __cdecl CIniFile::readIniHeader(CIniFile *this_ptr,char *section);
 
-// Original: engine_ini.cpp_FUN_004d8b20
+// Original: engine_ini.cpp_CIniFile_getString_FUN_004d8b20
 // Address: 004d8b20
-void FUN_004d8b20(char *param_1,char *param_2,char *param_3,int param_4);
+void __cdecl CIniFile::getString(CIniFile *this_ptr,char *key,char *output_buffer,int buffer_size);
 
-// Original: engine_ini.cpp_FUN_004d8bb0
+// Original: engine_ini.cpp_CIniFile_setString_FUN_004d8bb0
 // Address: 004d8bb0
-void FUN_004d8bb0(char *param_1,char *param_2,char *param_3);
+void __cdecl CIniFile::setString(CIniFile *this_ptr,char *key,char *value);
 
 // Original: engine_ini.cpp_FUN_004d8c30
 // Address: 004d8c30
-void FUN_004d8c30(int param_1,undefined4 param_2,undefined4 *param_3);
+void FUN_004d8c30(int param_1,undefined4 param_2);
 
 // Original: engine_ini.cpp_FUN_004d8c90
 // Address: 004d8c90
-void FUN_004d8c90(int param_1,undefined4 param_2,undefined4 param_3);
+void FUN_004d8c90(int param_1,undefined4 param_2);
 
 // Original: engine_ini.cpp_FUN_004d8cd0
 // Address: 004d8cd0
-void FUN_004d8cd0(int param_1,undefined4 param_2,float *param_3);
+void FUN_004d8cd0(int param_1,undefined4 param_2);
 
 // Original: engine_ini.cpp_FUN_004d8d40
 // Address: 004d8d40
-void FUN_004d8d40(int param_1,undefined4 param_2,float param_3);
+void FUN_004d8d40(int param_1,undefined4 param_2);
 
-// Original: engine_ini.cpp_FUN_004d8d8e
-// Address: 004d8d8e
-void FUN_004d8d8e(int param_1,undefined4 param_2,undefined4 *param_3);
+// Original: engine_ini.cpp_FUN_004d8d90
+// Address: 004d8d90
+void FUN_004d8d90(void);
 
 // Original: engine_ini.cpp_FUN_004d8e00
 // Address: 004d8e00
-void FUN_004d8e00(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+void FUN_004d8e00(int param_1,undefined4 param_2);
 
 // Original: engine_ini.cpp_CIni_ctor_FUN_004d8e50
 // Address: 004d8e50
-CIni * CIni::ctor(CIni *this_ptr);
+CIni * __cdecl CIni::ctor(CIni *this_ptr);
 
 // Original: engine_ini.cpp_CIni_dtor_FUN_004d8e60
 // Address: 004d8e60
-CIni * CIni::dtor(CIni *this_ptr,uint flags);
+CIni * __cdecl CIni::dtor(CIni *this_ptr,uint flags);

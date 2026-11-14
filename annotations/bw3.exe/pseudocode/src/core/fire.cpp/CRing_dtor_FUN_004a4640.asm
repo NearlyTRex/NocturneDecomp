@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CRing * core_fire_cpp_CRing_dtor_FUN_004a4640(CRing *this_ptr,uint flags)
+; CRing * __cdecl core_fire_cpp_CRing_dtor_FUN_004a4640(CRing *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CRing *          Stack[0x4]:4   this_ptr

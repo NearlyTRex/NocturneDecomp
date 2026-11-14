@@ -12,10 +12,10 @@
 ;   core_actor.cpp_matchClassTerm_FUN_0040c370 at 0040c432
 ;   core_actor.cpp_registerActorClass_FUN_0040c160 at 0040c1f2
 ;   crt_unknown.c_FUN_005c140c at 005c142b
-;   crt_unknown.c_FUN_005c63e8 at 005c63fb
 ;   crt_unknown.c_FUN_005c8094 at 005c8201
+;   crt_unknown.c_FUN_005ce4a8 at 005ce4c3
+;   crt_unknown.c_updateClassNameHash_FUN_005c63e8 at 005c63fb
 ;   shape_edittool.cpp_wildcardStringMatch_FUN_0049dea0 at 0049df18
-;   unkafter_2d.cpp_FUN_005ce4a8 at 005ce4c3
 ;
 ; *****************************************************************************
 

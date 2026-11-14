@@ -7,56 +7,64 @@
 
 // Original: core_marquee.cpp_staticInit_FUN_004e7c20
 // Address: 004e7c20
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_marquee.cpp_factoryFuncMarquee_FUN_004e7c50
 // Address: 004e7c50
-void factoryFuncMarquee(void);
+CMarquee * __cdecl factoryFuncMarquee(void);
 
 // Original: core_marquee.cpp_CMarquee_getActorType_FUN_004e7c70
 // Address: 004e7c70
-CDemonActorType * CMarquee::getActorType(CMarquee *this_ptr);
+CDemonActorType * __cdecl CMarquee::getActorType(CMarquee *this_ptr);
 
 // Original: core_marquee.cpp_CMarquee_ctor_FUN_004e7c80
 // Address: 004e7c80
 CMarquee * __cdecl CMarquee::ctor(CMarquee *this_ptr);
 
-// Original: core_marquee.cpp_FUN_004e7d50
+// Original: core_marquee.cpp_CMarquee_computeBoundingBox_FUN_004e7d50
 // Address: 004e7d50
-void __cdecl FUN_004e7d50(CMarquee *this_ptr);
+void __cdecl CMarquee::computeBoundingBox(CMarquee *this_ptr);
 
-// Original: core_marquee.cpp_FUN_004e7e80
+// Original: core_marquee.cpp_CMarquee_setup_FUN_004e7e80
 // Address: 004e7e80
-void FUN_004e7e80(CMarquee *param_1);
+void __cdecl CMarquee::setup(CMarquee *this_ptr);
 
-// Original: core_marquee.cpp_FUN_004e7ec0
+// Original: core_marquee.cpp_CMarquee_process_FUN_004e7ec0
 // Address: 004e7ec0
-void FUN_004e7ec0(int param_1,float param_2);
+void __cdecl CMarquee::process(CMarquee *this_ptr,float delta_time);
 
-// Original: core_marquee.cpp_FUN_004e7f70
+// Original: core_marquee.cpp_CMarquee_renderOpaque_FUN_004e7f70
 // Address: 004e7f70
-undefined4 FUN_004e7f70(CDemonActor *param_1);
+int __cdecl CMarquee::renderOpaque(CMarquee *this_ptr);
 
 // Original: core_marquee.cpp_CMarquee_renderLightBulb_FUN_004e7ff0
 // Address: 004e7ff0
 void __cdecl CMarquee::renderLightBulb(CMarquee *this_ptr,CVector3f *position);
 
-// Original: core_marquee.cpp_FUN_004e8180
+// Original: core_marquee.cpp_CMarquee_renderTransparent_FUN_004e8180
 // Address: 004e8180
-undefined4 FUN_004e8180(CMarquee *param_1);
+int __cdecl CMarquee::renderTransparent(CMarquee *this_ptr);
 
-// Original: core_marquee.cpp_FUN_004e84a0
+// Original: core_marquee.cpp_CMarquee_archive_FUN_004e84a0
 // Address: 004e84a0
-void FUN_004e84a0(CDemonActor *param_1);
+void __cdecl CMarquee::archive(CMarquee *this_ptr);
 
-// Original: core_marquee.cpp_FUN_004e8520
+// Original: core_marquee.cpp_CMarquee_getCollisionType_FUN_004e8520
 // Address: 004e8520
-undefined4 FUN_004e8520(void);
+ECollisionType __cdecl CMarquee::getCollisionType(CMarquee *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_marquee.cpp_FUN_004e8530
+// Original: core_marquee.cpp_CMarquee_getBoundingBox_FUN_004e8530
 // Address: 004e8530
-void FUN_004e8530(int param_1);
+CBoundingBox3D * __cdecl CMarquee::getBoundingBox(CMarquee *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_marquee.cpp_CMarquee_dtor_FUN_004e85b0
 // Address: 004e85b0
-CMarquee * CMarquee::dtor(CMarquee *this_ptr,uint flags);
+CMarquee * __cdecl CMarquee::dtor(CMarquee *this_ptr,uint flags);
+
+// Original: core_marquee.cpp_FUN_004e8620
+// Address: 004e8620
+undefined8 FUN_004e8620(void);
+
+// Original: core_marquee.cpp_FUN_004e86a0
+// Address: 004e86a0
+void FUN_004e86a0(void);

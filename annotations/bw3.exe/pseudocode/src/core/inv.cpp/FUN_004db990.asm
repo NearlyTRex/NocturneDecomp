@@ -9,8 +9,8 @@
 ;
 ; XREF[4]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_00491f40 at 004928e4
+;   core_game.cpp_CGame_processCheatCodes_FUN_004bb100 at 004bbb3a
 ;   core_game.cpp_CGame_processHotkeys_FUN_004ba540 at 004baa2f
-;   core_game.cpp_FUN_004bb100 at 004bbb3a
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052e12f
 ;
 ; Called Functions:

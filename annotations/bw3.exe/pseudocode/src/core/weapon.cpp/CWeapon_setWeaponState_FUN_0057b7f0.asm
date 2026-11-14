@@ -8,12 +8,12 @@
 ; int              Stack[0x8]:4   weapon_state
 ;
 ; XREF[6]:
-;   core_burncrss.cpp_FUN_00425300 at 0042534b
-;   core_exorcism.cpp_FUN_0048b640 at 0048b683
-;   core_firestff.cpp_FUN_004a5770 at 004a57a7
-;   core_melee.cpp_FUN_004e74b0 at 004e74c4
-;   core_tommygun.cpp_FUN_0056bf80 at 0056bf9e
-;   unkafter_lightgun.cpp_FUN_004e3e60 at 004e3ea1
+;   core_burncrss.cpp_CBurncross_setWeaponState_FUN_00425300 at 0042534b
+;   core_exorcism.cpp_CExorcism_setWeaponState_FUN_0048b640 at 0048b683
+;   core_firestff.cpp_CFirestaff_setWeaponState_FUN_004a5770 at 004a57a7
+;   core_lightsta.cpp_CLightStaff_setWeaponState_FUN_004e3e60 at 004e3ea1
+;   core_melee.cpp_CMelee_setWeaponState_FUN_004e74b0 at 004e74c4
+;   core_tommygun.cpp_CTommyGun_setWeaponState_FUN_0056bf80 at 0056bf9e
 ;
 ; *****************************************************************************
 

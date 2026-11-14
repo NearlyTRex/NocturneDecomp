@@ -11,8 +11,8 @@
 ;
 ; XREF[3]:
 ;   core_fire.cpp_CLaserBeam_render_FUN_0049b1d0 at 0049c0c6
-;   core_path.cpp_FUN_0050c750 at 0050c966
-;   core_path.cpp_FUN_0050c980 at 0050cd4c
+;   core_path.cpp_CPathMap_renderPathMap_FUN_0050c980 at 0050cd4c
+;   core_path.cpp_renderGridQuad_FUN_0050c750 at 0050c966
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fba20
@@ -107,7 +107,7 @@ section .text
     ADD EAX,0x8                         ; 0046c692
     PUSH EAX                            ; 0046c695
     CALL engine_3d.c_isVisiblePlane_FUN_00403920 ; 0046c696
-        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403920()
+        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403920(SClipPlane * plane)
     ADD ESP,0x4                         ; 0046c69b
     TEST EAX,EAX                        ; 0046c69e
     JZ 0x0046c686                       ; 0046c6a0

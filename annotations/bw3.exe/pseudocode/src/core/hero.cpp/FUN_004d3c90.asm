@@ -16,11 +16,11 @@
 ;   undefined4 DAT_005fba60
 ;   CFieldNotes* g_CFieldNotesPtr = 01d1a05c
 ;   undefined4 g_CBoxActorClassInfo.name_hash
-;   undefined4 g_CFieldNotesInstance.field64_0x40
+;   undefined4 g_CFieldNotesInstance.is_displayed
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
-;   core_actor.cpp_FUN_0040c790
+;   core_actor.cpp_isOfClass_FUN_0040c790
 ;   core_event.cpp_CEventList_executeCommands_FUN_0048c150
 ;   core_hero.cpp_FUN_004d3b20
 ;   core_inv.cpp_CInventory_select_FUN_004dcb40
@@ -50,8 +50,8 @@ section .text
     PUSH 0x5c4ded                       ; 004d3cae | s_N_CHealthItem_005c4deb+2
         ;   Label: LAB_004d3cae
     PUSH EAX                            ; 004d3cb3
-    CALL core_actor.cpp_FUN_0040c790    ; 004d3cb4
-        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c790 ; 004d3cb4
+        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004d3cb9
     TEST EAX,EAX                        ; 004d3cbc
     JNZ 0x004d3d86                      ; 004d3cbe
@@ -61,7 +61,7 @@ section .text
     MOV EAX,dword ptr [ESI + 0x33c]     ; 004d3ccb
     PUSH EAX                            ; 004d3cd1
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 004d3cd2
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004d3cd7
     TEST EAX,EAX                        ; 004d3cda
     JZ 0x004d3cf9                       ; 004d3cdc
@@ -82,7 +82,7 @@ section .text
     MOV EAX,dword ptr [EAX + 0x33c]     ; 004d3d06
     PUSH EAX                            ; 004d3d0c
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 004d3d0d
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004d3d12
     TEST EAX,EAX                        ; 004d3d15
     JZ 0x004d3d34                       ; 004d3d17
@@ -103,7 +103,7 @@ section .text
     MOV EAX,dword ptr [EAX + 0x33c]     ; 004d3d41
     PUSH EAX                            ; 004d3d47
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 004d3d48
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004d3d4d
     TEST EAX,EAX                        ; 004d3d50
     JZ 0x004d3d6b                       ; 004d3d52
@@ -145,13 +145,13 @@ section .text
     RET                                 ; 004d3d9a
     MOV EAX,[0x005fe4b0]                ; 004d3d9b | g_CFieldNotesPtr
         ;   Label: LAB_004d3d9b
-    MOV EDX,dword ptr [EAX + 0x40]      ; 004d3da0 | g_CFieldNotesInstance.field64_0x40
+    MOV EDX,dword ptr [EAX + 0x40]      ; 004d3da0 | g_CFieldNotesInstance.is_displayed
     XOR EBX,EBX                         ; 004d3da3
     TEST EDX,EDX                        ; 004d3da5
     SETZ AL                             ; 004d3da7
     MOV BL,AL                           ; 004d3daa
     MOV EAX,[0x005fe4b0]                ; 004d3dac | g_CFieldNotesPtr
-    MOV dword ptr [EAX + 0x40],EBX      ; 004d3db1 | g_CFieldNotesInstance.field64_0x40
+    MOV dword ptr [EAX + 0x40],EBX      ; 004d3db1 | g_CFieldNotesInstance.is_displayed
     XOR EAX,EAX                         ; 004d3db4
     POP EBP                             ; 004d3db6
     POP EDI                             ; 004d3db7

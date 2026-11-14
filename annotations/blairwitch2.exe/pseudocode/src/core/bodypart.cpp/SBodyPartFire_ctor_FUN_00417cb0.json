@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 9,
-    "complexity_score": 46,
+    "complexity_score": 21,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 6,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_field"
+      "negative_offset"
     ],
     "total_lines": 15
   },
@@ -67,6 +66,32 @@
     },
     "pcode_op_count": 39
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0041b130",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00416d60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0041b620",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004180a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -85,28 +110,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "pCVar1 = core_flame_cpp_CFlame_ctor_FUN_0049f180((CFlame *)&this_ptr->field_0xc);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
       "line": 8,
       "match": "pCVar1[-1].",
       "severity": "mild",
-      "text": "return (SBodyPartFire *)&pCVar1[-1].field_0x3f4;",
+      "text": "return (SBodyPartFire *)&pCVar1[-1].do_visibility_check;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x3f4",
-      "severity": "mild",
-      "text": "return (SBodyPartFire *)&pCVar1[-1].field_0x3f4;",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

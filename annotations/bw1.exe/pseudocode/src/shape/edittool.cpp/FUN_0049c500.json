@@ -66,24 +66,24 @@
       "name": "engine_2d.c_fillRectColor_FUN_004031c0"
     },
     {
-      "addr": "00517d50",
-      "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_00517d50"
-    },
-    {
-      "addr": "00518010",
-      "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_00518010"
-    },
-    {
       "addr": "005182e0",
       "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_005182e0"
+      "name": "engine_mini3d.cpp_drawHLine_FUN_005182e0"
     },
     {
       "addr": "00518300",
       "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_00518300"
+      "name": "engine_mini3d.cpp_drawVLine_FUN_00518300"
+    },
+    {
+      "addr": "00518010",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_fillRect_FUN_00518010"
+    },
+    {
+      "addr": "00517d50",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_setColor_FUN_00517d50"
     }
   ],
   "globals": [
@@ -280,6 +280,20 @@
     },
     "pcode_op_count": 1040
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00483ea0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004850a0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 32,
     "local_size": 32,
@@ -420,7 +434,7 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_005182e0(param_1,param_2,param_3 + -1);",
+      "text": "engine_mini3d_cpp_drawHLine_FUN_005182e0(param_1,param_2,param_3 + -1);",
       "type": "unnamed_param"
     },
     {
@@ -428,7 +442,7 @@
       "line": 27,
       "match": "param_2",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_005182e0(param_1,param_2,param_3 + -1);",
+      "text": "engine_mini3d_cpp_drawHLine_FUN_005182e0(param_1,param_2,param_3 + -1);",
       "type": "unnamed_param"
     },
     {
@@ -436,7 +450,7 @@
       "line": 27,
       "match": "param_3",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_005182e0(param_1,param_2,param_3 + -1);",
+      "text": "engine_mini3d_cpp_drawHLine_FUN_005182e0(param_1,param_2,param_3 + -1);",
       "type": "unnamed_param"
     },
     {
@@ -468,7 +482,7 @@
       "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_00518300(param_1,param_2,param_4 + -1);",
+      "text": "engine_mini3d_cpp_drawVLine_FUN_00518300(param_1,param_2,param_4 + -1);",
       "type": "unnamed_param"
     },
     {
@@ -476,7 +490,7 @@
       "line": 33,
       "match": "param_2",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_00518300(param_1,param_2,param_4 + -1);",
+      "text": "engine_mini3d_cpp_drawVLine_FUN_00518300(param_1,param_2,param_4 + -1);",
       "type": "unnamed_param"
     },
     {
@@ -484,7 +498,7 @@
       "line": 33,
       "match": "param_4",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_00518300(param_1,param_2,param_4 + -1);",
+      "text": "engine_mini3d_cpp_drawVLine_FUN_00518300(param_1,param_2,param_4 + -1);",
       "type": "unnamed_param"
     },
     {
@@ -548,7 +562,7 @@
       "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_005182e0(param_1,param_4 + -1,param_3 + -1);",
+      "text": "engine_mini3d_cpp_drawHLine_FUN_005182e0(param_1,param_4 + -1,param_3 + -1);",
       "type": "unnamed_param"
     },
     {
@@ -556,7 +570,7 @@
       "line": 52,
       "match": "param_4",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_005182e0(param_1,param_4 + -1,param_3 + -1);",
+      "text": "engine_mini3d_cpp_drawHLine_FUN_005182e0(param_1,param_4 + -1,param_3 + -1);",
       "type": "unnamed_param"
     },
     {
@@ -564,7 +578,7 @@
       "line": 52,
       "match": "param_3",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_005182e0(param_1,param_4 + -1,param_3 + -1);",
+      "text": "engine_mini3d_cpp_drawHLine_FUN_005182e0(param_1,param_4 + -1,param_3 + -1);",
       "type": "unnamed_param"
     },
     {
@@ -596,7 +610,7 @@
       "line": 58,
       "match": "param_3",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_00518300(param_3 + -1,param_2,param_4 + -1);",
+      "text": "engine_mini3d_cpp_drawVLine_FUN_00518300(param_3 + -1,param_2,param_4 + -1);",
       "type": "unnamed_param"
     },
     {
@@ -604,7 +618,7 @@
       "line": 58,
       "match": "param_2",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_00518300(param_3 + -1,param_2,param_4 + -1);",
+      "text": "engine_mini3d_cpp_drawVLine_FUN_00518300(param_3 + -1,param_2,param_4 + -1);",
       "type": "unnamed_param"
     },
     {
@@ -612,7 +626,7 @@
       "line": 58,
       "match": "param_4",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_00518300(param_3 + -1,param_2,param_4 + -1);",
+      "text": "engine_mini3d_cpp_drawVLine_FUN_00518300(param_3 + -1,param_2,param_4 + -1);",
       "type": "unnamed_param"
     },
     {
@@ -676,7 +690,7 @@
       "line": 75,
       "match": "param_1",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_00518010(param_1 + 1,param_2 + 1,param_3 + -2,param_4 + -2);",
+      "text": "engine_mini3d_cpp_fillRect_FUN_00518010(param_1 + 1,param_2 + 1,param_3 + -2,param_4 + -2);",
       "type": "unnamed_param"
     },
     {
@@ -684,7 +698,7 @@
       "line": 75,
       "match": "param_2",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_00518010(param_1 + 1,param_2 + 1,param_3 + -2,param_4 + -2);",
+      "text": "engine_mini3d_cpp_fillRect_FUN_00518010(param_1 + 1,param_2 + 1,param_3 + -2,param_4 + -2);",
       "type": "unnamed_param"
     },
     {
@@ -692,7 +706,7 @@
       "line": 75,
       "match": "param_3",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_00518010(param_1 + 1,param_2 + 1,param_3 + -2,param_4 + -2);",
+      "text": "engine_mini3d_cpp_fillRect_FUN_00518010(param_1 + 1,param_2 + 1,param_3 + -2,param_4 + -2);",
       "type": "unnamed_param"
     },
     {
@@ -700,7 +714,7 @@
       "line": 75,
       "match": "param_4",
       "severity": "mild",
-      "text": "engine_mini3d_cpp_FUN_00518010(param_1 + 1,param_2 + 1,param_3 + -2,param_4 + -2);",
+      "text": "engine_mini3d_cpp_fillRect_FUN_00518010(param_1 + 1,param_2 + 1,param_3 + -2,param_4 + -2);",
       "type": "unnamed_param"
     },
     {

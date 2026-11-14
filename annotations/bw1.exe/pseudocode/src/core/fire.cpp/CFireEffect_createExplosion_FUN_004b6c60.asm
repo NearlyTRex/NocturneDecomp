@@ -14,9 +14,9 @@
 ;   core_charactr.cpp_FUN_00430c90 at 00430d60
 ;   core_crate.cpp_FUN_00449600 at 00449694
 ;   core_event.cpp_FUN_004a1d00 at 004a2cdd
-;   core_fire.cpp_FUN_004b1d90 at 004b1dff
-;   core_flamecan.cpp_FUN_004b91d0 at 004b9285
-;   core_vessel.cpp_FUN_005a8e60 at 005a9350
+;   core_fire.cpp_CToss_process_FUN_004b1d90 at 004b1dff
+;   core_flamecan.cpp_CFlameCan_process_FUN_004b91d0 at 004b9285
+;   core_vessel.cpp_CCryptVessel_process_FUN_005a8e60 at 005a9350
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_xplode_wav_6_0_005df63c
@@ -24,8 +24,8 @@
 ;   undefined4 DAT_01cb006c
 ;
 ; Called Functions:
+;   core_fire.cpp_CExplosion_activate_FUN_004b16d0
 ;   core_fire.cpp_CFireEffect_createCrater_FUN_004b6f30
-;   core_fire.cpp_FUN_004b16d0
 ;   core_sound.cpp_CSound_playActorSound_FUN_0057d8a0
 ;
 ; *****************************************************************************
@@ -47,8 +47,8 @@ section .text
     PUSH EBX                            ; 004b6c7e
     ADD EAX,0x1cb0070                   ; 004b6c7f
     PUSH EAX                            ; 004b6c84
-    CALL core_fire.cpp_FUN_004b16d0     ; 004b6c85
-        ;   XREF to: 004b16d0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004b16d0()
+    CALL core_fire.cpp_CExplosion_activate_FUN_004b16d0 ; 004b6c85
+        ;   XREF to: 004b16d0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CExplosion_activate_FUN_004b16d0(CExplosion * this_ptr, CVector3f * position, float scale, float gore_multiplier)
     MOV EDX,dword ptr [0x01cb006c]      ; 004b6c8a | DAT_01cb006c
     INC EDX                             ; 004b6c90
     ADD ESP,0x10                        ; 004b6c91

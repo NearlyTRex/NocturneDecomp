@@ -11,9 +11,10 @@
 ; int              Stack[0x14]:4   fill_color
 ; int              Stack[0x18]:4   border_color
 ;
-; XREF[8]:
-;   core_game.cpp_FUN_004b32c0 at 004b35a8
+; XREF[9]:
+;   core_game.cpp_CGame_renderOverlay_FUN_004b32c0 at 004b35a8
 ;   core_game.cpp_drawHealthBar_FUN_004b3220 at 004b326c
+;   core_menu.cpp_FUN_004eba50 at 004ebb9a
 ;   core_menu.cpp_FUN_004ebf10 at 004ecaab
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004eb7c0 at 004eb90a
 ;   shape_edittool.cpp_FUN_0047a770 at 0047a880

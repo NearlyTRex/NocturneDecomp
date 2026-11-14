@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_barrier_cpp_staticInit_FUN_0040ea60(void)
+; void __cdecl core_barrier_cpp_staticInit_FUN_0040ea60(void)
 ;
 ;
 ; Called Functions:

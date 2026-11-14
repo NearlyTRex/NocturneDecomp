@@ -7,7 +7,7 @@
 ; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004b6170 at 004b63a7
+;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b63a7
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_game_cpp_005d7673
@@ -24,7 +24,7 @@
 ;   core_dcamera.cpp_CDemonCamera_init_FUN_0043b570
 ;   core_main.c_FUN_004e4500
 ;   engine_2d.c_resetGraphicsSystem_FUN_00402ac0
-;   engine_special.cpp_FUN_005600c0
+;   engine_special.cpp_selectCard_FUN_005600c0
 ;   wincore_wddvmem.cpp_FUN_00588a50
 ;
 ; *****************************************************************************
@@ -107,8 +107,8 @@ section .text
     RET                                 ; 004b6087
     PUSH EDX                            ; 004b6088
         ;   Label: LAB_004b6088
-    CALL engine_special.cpp_FUN_005600c0 ; 004b6089
-        ;   XREF to: 005600c0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_005600c0(int card_index)
+    CALL engine_special.cpp_selectCard_FUN_005600c0 ; 004b6089
+        ;   XREF to: 005600c0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_selectCard_FUN_005600c0(int card_index)
     ADD ESP,0x4                         ; 004b608e
     JMP 0x004b5fe6                      ; 004b6091
         ;   XREF to: 004b5fe6 (UNCONDITIONAL_JUMP)  ; LAB_004b5fe6

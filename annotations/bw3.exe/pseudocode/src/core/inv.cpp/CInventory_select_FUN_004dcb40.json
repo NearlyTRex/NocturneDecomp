@@ -2,21 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 253,
-    "complexity_score": 228,
+    "complexity_score": 244,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 113,
-    "suspect_count": 9,
+    "pseudocode_lines": 114,
+    "suspect_count": 10,
     "suspect_types": [
+      "derived_field_index_pun",
       "undefined_data",
       "unrolled_strcat",
       "unrolled_strcpy",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 366
+    "total_lines": 367
   },
   "cross_references": [
     {
@@ -47,7 +48,7 @@
     {
       "addr": "0040c790",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040c790"
+      "name": "core_actor.cpp_isOfClass_FUN_0040c790"
     },
     {
       "addr": "0048c150",
@@ -67,12 +68,12 @@
     {
       "addr": "004dbaa0",
       "is_variadic": false,
-      "name": "core_inv.cpp_FUN_004dbaa0"
+      "name": "core_inv.cpp_CInventory_removeItem_FUN_004dbaa0"
     },
     {
       "addr": "004dbb40",
       "is_variadic": false,
-      "name": "core_inv.cpp_FUN_004dbb40"
+      "name": "core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40"
     },
     {
       "addr": "004dd2d0",
@@ -285,6 +286,32 @@
     },
     "pcode_op_count": 960
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004dc8c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3358
+    },
+    "bw1.exe": {
+      "addr": "004f9bd0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8103
+    },
+    "nocedit.exe": {
+      "addr": "004ff800",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8838
+    },
+    "nocturne.exe": {
+      "addr": "004c1580",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8838
+    }
+  },
   "stack_frame": {
     "frame_size": 288,
     "local_size": 280,
@@ -371,15 +398,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 78,
+      "line": 79,
       "match": "DAT_005c65c5",
       "severity": "mild",
-      "text": "pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_00508960(&DAT_005c65c5);",
+      "text": "pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_00508960(&DAT_005c65c5);",
       "type": "undefined_data"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 48,
+      "line": 49,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -387,7 +414,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 69,
+      "line": 70,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -395,7 +422,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 90,
+      "line": 91,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -403,7 +430,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 60,
+      "line": 61,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -411,7 +438,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 81,
+      "line": 82,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -419,7 +446,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 60,
+      "line": 61,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -427,11 +454,18 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 81,
+      "line": 82,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcat"
+    },
+    {
+      "description": "'pCVar3[4].create_event + 0x28' walks 4 x sizeof(CDemonActor) (0x158) + offsetof(create_event) (0x78) + 0x28 = 0x600, which is exactly offsetof(CBoxActor, use_event). Ghidra had no CBoxActor type here and reached the field by index arithmetic; write it as ((CBoxActor *)pCVar3)->use_event (\u00a7de-pun/\u00a712). Ambiguous: CWaterActor::vertices[27] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 32,
+      "severity": "moderate",
+      "text": "(0x01C6E360,pCVar3[4].create_event + 0x28);",
+      "type": "derived_field_index_pun"
     }
   ]
 }

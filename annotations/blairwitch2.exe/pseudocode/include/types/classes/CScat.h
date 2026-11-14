@@ -2,15 +2,29 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+struct CWeapon;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CHero.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CScat
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x2566c (153196 bytes)
 #pragma pack(push, 1)
 typedef struct CScat {
-    char field_0[153196]; // 0x0
+    CHero base; // 0x0
+    int guns_drawn; // 0x25640
+    CVector3f head_euler_angles; // 0x25644
+    float head_blend_weight; // 0x25650
+    struct CWeapon* weapon_actor; // 0x25654
+    float aim_pitch; // 0x25658
+    float aim_yaw; // 0x2565c
+    int dead; // 0x25660
+    struct CDemonActor* aim_target; // 0x25664
+    int aim_converged; // 0x25668
 } CScat;
 #pragma pack(pop)
 

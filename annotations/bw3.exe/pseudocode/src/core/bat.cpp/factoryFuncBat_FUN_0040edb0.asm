@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_bat_cpp_factoryFuncBat_FUN_0040edb0(void)
+; CBat * __cdecl core_bat_cpp_factoryFuncBat_FUN_0040edb0(void)
 ;
 ;
 ; Called Functions:
 ;   core_bat.cpp_CBat_ctor_FUN_0040ede0
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_memory.c_operator_new_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x388                          ; 0040edb0
         ;   Label: core_bat.cpp_factoryFuncBat_FUN_0040edb0
-    CALL crt_unknown.c_FUN_005a3cb2     ; 0040edb5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 0040edb5
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
     ADD ESP,0x4                         ; 0040edba
     TEST EAX,EAX                        ; 0040edbd
     JNZ 0x0040edc2                      ; 0040edbf

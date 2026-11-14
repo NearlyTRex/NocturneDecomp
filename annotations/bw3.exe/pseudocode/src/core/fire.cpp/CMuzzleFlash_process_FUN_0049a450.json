@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 31,
+    "complexity_score": 15,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 16,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 42
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 41
   },
   "cross_references": [
     {
       "addr": "004a1760",
       "from_addr": "004a17f4",
-      "name": "core_fire.cpp_FUN_004a1760",
+      "name": "core_fire.cpp_CFireEffect_process_FUN_004a1760",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -55,7 +53,7 @@
       {
         "call_addr": "004a17f4",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004a1760",
+        "caller": "core_fire.cpp_CFireEffect_process_FUN_004a1760",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -94,6 +92,32 @@
     },
     "pcode_op_count": 83
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00496a60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004af400",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004c1a00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00484ed0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -110,14 +134,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "(0x01C73654,(CVector3f *)&this_ptr->field_0x4);",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

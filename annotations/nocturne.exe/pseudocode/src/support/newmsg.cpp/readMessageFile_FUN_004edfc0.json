@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 275,
-    "complexity_score": 307,
+    "complexity_score": 239,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 122,
-    "suspect_count": 15,
+    "pseudocode_lines": 124,
+    "suspect_count": 9,
     "suspect_types": [
-      "param_count_too_few",
       "raw_address_constant",
       "raw_address_pointer_store",
       "undefined_data",
-      "unnamed_param",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 397
+    "total_lines": 399
   },
   "cross_references": [
     {
@@ -36,9 +34,9 @@
         "004ee2e2"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "support_newmsg.cpp_readMessageFile_FUN_004edfc0",
-    "signature": "int support_newmsg_cpp_readMessageFile_FUN_004edfc0(char *param_1)"
+    "signature": "int __cdecl support_newmsg_cpp_readMessageFile_FUN_004edfc0(char *message_file)"
   },
   "function_calls": [
     {
@@ -237,11 +235,11 @@
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.645161290322581,
@@ -275,11 +273,37 @@
     },
     "pcode_op_count": 1008
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0050f9e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7599
+    },
+    "bw1.exe": {
+      "addr": "00530bf0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7599
+    },
+    "bw3.exe": {
+      "addr": "005084c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7599
+    },
+    "nocedit.exe": {
+      "addr": "00543e40",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9931
+    }
+  },
   "stack_frame": {
-    "frame_size": 800,
+    "frame_size": 804,
     "local_size": 800,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -337,6 +361,13 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "message_file",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
       }
     ]
   },
@@ -350,32 +381,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int support_newmsg_cpp_readMessageFile_FUN_004edfc0(char *param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = engine_dosio_cpp_getFileSize_FUN_004568c0(&CHAR_00h_0058c922,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "file_handle = engine_dosio_cpp_getFile_FUN_00456a60(&CHAR_00h_0058c926,param_1,\"rt\");",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 38,
       "match": "DAT_01d16810",
       "severity": "mild",
       "text": "_fscanf(file_handle,\"%d\\n\",&DAT_01d16810);",
@@ -383,7 +390,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 45,
       "match": "DAT_005bdf50",
       "severity": "mild",
       "text": "_fscanf(file_handle,\"\\\"%[^\\\"]\\\"\\n\",&DAT_005bdf50);",
@@ -391,7 +398,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 70,
+      "line": 71,
       "match": "*(char **)(iVar3 + 0x1d1681c",
       "severity": "moderate",
       "text": "(*(char **)(iVar3 + 0x1d1681c),*(char **)(iVar8 + 0x1d1681c));",
@@ -399,31 +406,15 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 70,
+      "line": 71,
       "match": "*(char **)(iVar8 + 0x1d1681c",
       "severity": "moderate",
       "text": "(*(char **)(iVar3 + 0x1d1681c),*(char **)(iVar8 + 0x1d1681c));",
       "type": "raw_address_pointer_store"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 92,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_main_c_displayErrorAndQuit_FUN_004c8440(\"Error reading %s\",param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 97,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_main_c_displayErrorAndQuit_FUN_004c8440(\"Too many messages in %s\",param_1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Raw hex address 0x1d177c0 assigned to bare local `iVar8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 51,
+      "line": 52,
       "match": "0x1d177c0",
       "severity": "moderate",
       "text": "iVar8 = 0x1d177c0;",
@@ -431,7 +422,7 @@
     },
     {
       "description": "Raw hex address 0x1d271c0 assigned to bare local `iVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 52,
+      "line": 53,
       "match": "0x1d271c0",
       "severity": "moderate",
       "text": "iVar3 = 0x1d271c0;",
@@ -439,7 +430,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 101,
+      "line": 103,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -447,22 +438,11 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 112,
+      "line": 114,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

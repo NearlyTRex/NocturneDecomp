@@ -119,7 +119,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_0048a650(CFireEffect *this_ptr
         (*((this_ptr_06->base).vtable)->render)(&this_ptr_06->base);
       }
       this_ptr_06 = this_ptr_06 + 1;
-    } while (this_ptr_06 != (CGlassParticle *)0x1c58c8c);
+    } while (this_ptr_06 != (CGlassParticle *)&DAT_01c58c8c);
     this_ptr_07 = g_CBulletTrail_ARRAY_01c58c90;
     do {
       if (this_ptr_07->frames_remaining != 0) {

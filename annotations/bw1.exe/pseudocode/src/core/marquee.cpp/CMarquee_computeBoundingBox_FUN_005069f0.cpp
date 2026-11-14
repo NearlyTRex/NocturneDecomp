@@ -9,50 +9,47 @@
 void __cdecl core_marquee_cpp_CMarquee_computeBoundingBox_FUN_005069f0(CMarquee *this_ptr)
 
 {
-  byte *this_ptr_00;
+  CCourse *this_ptr_00;
   int iVar1;
   CVector3f CStack_2c;
-  float fStack_20;
-  float fStack_1c;
-  float fStack_18;
+  CVector3f CStack_20;
   float fStack_14;
   int iStack_10;
   
-  *(uint *)&this_ptr->field_0x188 = 0x461c3f9a;
-  *(uint *)&this_ptr->field_0x18c = 0x461c3f9a;
-  *(uint *)&this_ptr->field_0x190 = 0xc61c3f9a;
-  *(uint *)&this_ptr->field_0x194 = 0xc61c3f9a;
-  *(uint *)&this_ptr->field_0x198 = 0xc61c3f9a;
-  this_ptr_00 = &this_ptr->field_0x1a4;
-  *(uint *)&this_ptr->field_0x184 = 0x461c3f9a;
+  (this_ptr->bounding_box).min.y = 9999.9;
+  (this_ptr->bounding_box).min.z = 9999.9;
+  (this_ptr->bounding_box).max.x = -9999.9;
+  (this_ptr->bounding_box).max.y = -9999.9;
+  (this_ptr->bounding_box).max.z = -9999.9;
+  this_ptr_00 = &this_ptr->course;
+  (this_ptr->bounding_box).min.x = 9999.9;
   iVar1 = 0;
-  if (*(int *)this_ptr_00 < 1) {
+  if (this_ptr_00->len < 1) {
     return;
   }
   do {
     fStack_14 = (float)iVar1;
     iStack_10 = iVar1;
-    core_course_cpp_FUN_00447f00
-              ((CCourse *)this_ptr_00,fStack_14,(CVector3f *)&fStack_20,&CStack_2c);
-    if (fStack_20 < *(float *)&this_ptr->field_0x184) {
-      *(float *)&this_ptr->field_0x184 = fStack_20;
+    core_course_cpp_CCourse_evaluate_FUN_00447f00(this_ptr_00,fStack_14,&CStack_20,&CStack_2c);
+    if (CStack_20.x < (this_ptr->bounding_box).min.x) {
+      (this_ptr->bounding_box).min.x = CStack_20.x;
     }
-    if (*(float *)&this_ptr->field_0x190 < fStack_20) {
-      *(float *)&this_ptr->field_0x190 = fStack_20;
+    if ((this_ptr->bounding_box).max.x < CStack_20.x) {
+      (this_ptr->bounding_box).max.x = CStack_20.x;
     }
-    if (fStack_1c < *(float *)&this_ptr->field_0x188) {
-      *(float *)&this_ptr->field_0x188 = fStack_1c;
+    if (CStack_20.y < (this_ptr->bounding_box).min.y) {
+      (this_ptr->bounding_box).min.y = CStack_20.y;
     }
-    if (*(float *)&this_ptr->field_0x194 < fStack_1c) {
-      *(float *)&this_ptr->field_0x194 = fStack_1c;
+    if ((this_ptr->bounding_box).max.y < CStack_20.y) {
+      (this_ptr->bounding_box).max.y = CStack_20.y;
     }
-    if (fStack_18 < *(float *)&this_ptr->field_0x18c) {
-      *(float *)&this_ptr->field_0x18c = fStack_18;
+    if (CStack_20.z < (this_ptr->bounding_box).min.z) {
+      (this_ptr->bounding_box).min.z = CStack_20.z;
     }
-    if (*(float *)&this_ptr->field_0x198 < fStack_18) {
-      *(float *)&this_ptr->field_0x198 = fStack_18;
+    if ((this_ptr->bounding_box).max.z < CStack_20.z) {
+      (this_ptr->bounding_box).max.z = CStack_20.z;
     }
     iVar1 = iVar1 + 1;
-  } while (iVar1 < *(int *)this_ptr_00);
+  } while (iVar1 < this_ptr_00->len);
   return;
 }

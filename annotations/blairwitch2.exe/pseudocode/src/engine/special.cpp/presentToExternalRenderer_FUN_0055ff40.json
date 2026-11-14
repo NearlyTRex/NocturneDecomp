@@ -22,19 +22,19 @@
     {
       "addr": "004b6170",
       "from_addr": "004b6d5f",
-      "name": "core_game.cpp_FUN_004b6170",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004f236e",
+      "addr": "004f2370",
       "from_addr": "004f237b",
-      "name": "unkafter_minecar.cpp_FUN_004f236e",
+      "name": "engine_mini3d.cpp_swapBuffers_FUN_004f2370",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00589560",
       "from_addr": "00589648",
-      "name": "wincore_wddvmem.cpp_FUN_00589560",
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00589560",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -59,17 +59,17 @@
     {
       "addr": "0055f550",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_0055f550"
-    },
-    {
-      "addr": "005890c0",
-      "is_variadic": false,
-      "name": "wincore_wddvmem.cpp_FUN_005890c0"
+      "name": "engine_special.cpp_unlockFrame_FUN_0055f550"
     },
     {
       "addr": "00589170",
       "is_variadic": false,
-      "name": "wincore_wddvmem.cpp_FUN_00589170"
+      "name": "wincore_wddvmem.cpp_closeScreenDevice_FUN_00589170"
+    },
+    {
+      "addr": "005890c0",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_openScreenDevice_FUN_005890c0"
     }
   ],
   "globals": [
@@ -134,7 +134,7 @@
       {
         "call_addr": "004b6d5f",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b6170",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -145,7 +145,7 @@
       {
         "call_addr": "00589648",
         "call_type": "direct",
-        "caller": "wincore_wddvmem.cpp_FUN_00589560",
+        "caller": "wincore_wddvmem.cpp_swapBuffers_FUN_00589560",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -156,7 +156,7 @@
       {
         "call_addr": "004f237b",
         "call_type": "direct",
-        "caller": "unkafter_minecar.cpp_FUN_004f236e",
+        "caller": "engine_mini3d.cpp_swapBuffers_FUN_004f2370",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -208,6 +208,26 @@
       "SUBPIECE": 2
     },
     "pcode_op_count": 525
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00582990",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00566260",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005b7c30",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7883
+    }
   },
   "stack_frame": {
     "frame_size": 4812,

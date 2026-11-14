@@ -1,0 +1,177 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 50,
+    "complexity_score": 13,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 63
+  },
+  "cross_references": [
+    {
+      "addr": "004a2cc0",
+      "from_addr": "004a2e00",
+      "name": "core_fldnotes.cpp_STextView_handleTag_FUN_004a2cc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a2ad0",
+      "from_addr": "004a2aec",
+      "name": "core_fldnotes.cpp_STextView_placeResource_FUN_004a2ad0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a30a0",
+    "address_range": [
+      [
+        "004a30a0",
+        "004a30f1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fldnotes.cpp_STextView_ensureSpace_FUN_004a30a0",
+    "signature": "int __cdecl core_fldnotes_cpp_STextView_ensureSpace_FUN_004a30a0(STextView *this_ptr,int width,int height)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a2bf0",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_STextView_newLine_FUN_004a2bf0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "004a2e00",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_STextView_handleTag_FUN_004a2cc0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004a2f56",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_STextView_handleTag_FUN_004a2cc0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004a302f",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_STextView_handleTag_FUN_004a2cc0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004a2aec",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_STextView_placeResource_FUN_004a2ad0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.410256410256411,
+    "instruction_count": 39,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 4,
+      "COPY": 37,
+      "INT_ADD": 22,
+      "INT_AND": 16,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 17,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 8,
+      "INT_SUB": 10,
+      "INT_XOR": 1,
+      "LOAD": 19,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 6
+    },
+    "pcode_op_count": 172
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004bbad0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a9710",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "STextView *"
+      },
+      {
+        "is_param": true,
+        "name": "width",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "height",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

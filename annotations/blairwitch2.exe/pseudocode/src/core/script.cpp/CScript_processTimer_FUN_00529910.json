@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 110,
+    "complexity_score": 35,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 20,
-    "suspect_count": 8,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 76
@@ -19,7 +18,7 @@
     {
       "addr": "00522350",
       "from_addr": "00524732",
-      "name": "core_script.cpp_FUN_00522350",
+      "name": "core_script.cpp_CScript_step_FUN_00522350",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -74,7 +73,7 @@
       {
         "call_addr": "00524732",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00522350",
+        "caller": "core_script.cpp_CScript_step_FUN_00522350",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -85,7 +84,7 @@
       {
         "call_addr": "00524a92",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00522350",
+        "caller": "core_script.cpp_CScript_step_FUN_00522350",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -96,7 +95,7 @@
       {
         "call_addr": "00526e0b",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00522350",
+        "caller": "core_script.cpp_CScript_step_FUN_00522350",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -107,7 +106,7 @@
       {
         "call_addr": "00529219",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00522350",
+        "caller": "core_script.cpp_CScript_step_FUN_00522350",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -118,7 +117,7 @@
       {
         "call_addr": "005293e4",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00522350",
+        "caller": "core_script.cpp_CScript_step_FUN_00522350",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -168,6 +167,32 @@
     },
     "pcode_op_count": 310
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0054ac20",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00530310",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005600c0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00504b70",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -206,62 +231,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "if (*(float *)&this_ptr->field_0x48 < 0.0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x48 = delta_time;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "if (*(float *)&this_ptr->field_0x48 <= *timer_value) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "*timer_value = *timer_value - *(float *)&this_ptr->field_0x48;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x48 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x48 = *(float *)&this_ptr->field_0x48 - *timer_value;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x48 = *(float *)&this_ptr->field_0x48 - *timer_value;",
-      "type": "unnamed_field"
     }
   ]
 }

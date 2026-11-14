@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_larva_cpp_staticInit_FUN_004e0520(void)
+; void __cdecl core_larva_cpp_staticInit_FUN_004e0520(void)
 ;
 ;
 ; Called Functions:

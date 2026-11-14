@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 95,
+    "complexity_score": 20,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 20,
-    "suspect_count": 7,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 68
   },
   "cross_references": [
@@ -43,19 +41,19 @@
     {
       "addr": "0040e670",
       "is_variadic": false,
-      "name": "core_ammobox.cpp_FUN_0040e670"
+      "name": "core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e670"
     },
     {
       "addr": "0047bdf0",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0047bdf0"
+      "name": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0"
     }
   ],
   "globals": [
     {
       "addr": "005eba7d",
-      "name": "s_actionPending_d_stranger_005eba7c+1",
-      "type": "undefined4",
+      "name": "s_actionPending_d_stranger_005eba7d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -133,62 +131,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x25608",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x25608 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x256a4",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x256a4 != 4) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x256a4",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x256a4,0xd45);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x25608",
-      "severity": "mild",
-      "text": "(*(uint *)&this_ptr->field_0x25608,g_CAmmoBoxClassInfo.name_hash);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x2437c",
-      "severity": "mild",
-      "text": "core_ammobox_cpp_FUN_0040e670(this_ptr_00,(CInventory *)&this_ptr->field_0x2437c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x256a4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x256a4 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x25608",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x25608 = 0;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

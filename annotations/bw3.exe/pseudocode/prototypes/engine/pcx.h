@@ -7,7 +7,7 @@
 
 // Original: engine_pcx.c_writePCXScanline_FUN_0050d620
 // Address: 0050d620
-void __cdecl writePCXScanline(int param_1,int *param_2);
+void __cdecl writePCXScanline(int row_index,_FILE *pcx_file);
 
 // Original: engine_pcx.c_saveScreenRaw16_FUN_0050d6f0
 // Address: 0050d6f0
@@ -17,6 +17,6 @@ void __cdecl saveScreenRaw16(char *filename);
 // Address: 0050d8b0
 void __cdecl saveScreenRaw32(char *filename);
 
-// Original: engine_pcx.c_FUN_0050da60
+// Original: engine_pcx.c_saveScreenshotGeneral_FUN_0050da60
 // Address: 0050da60
-void __cdecl FUN_0050da60(char *filename);
+void __cdecl saveScreenshotGeneral(char *filename);

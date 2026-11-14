@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonSet * core_set_cpp_CDemonSet_ctor_FUN_0052bd20(CDemonSet *this_ptr)
+; CDemonSet * __cdecl core_set_cpp_CDemonSet_ctor_FUN_0052bd20(CDemonSet *this_ptr)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
@@ -31,28 +31,28 @@ section .text
     ADD EBX,0x4                         ; 0052bd39
     PUSH EBX                            ; 0052bd3c
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 0052bd3d
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0052bd42
     PUSH 0x5fb290                       ; 0052bd45
     PUSH 0xc8                           ; 0052bd4a
     ADD EAX,0x19a2c                     ; 0052bd4f
     PUSH EAX                            ; 0052bd54
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 0052bd55
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0052bd5a
     PUSH 0x5fb2b0                       ; 0052bd5d
     PUSH 0x14                           ; 0052bd62
     ADD EAX,0x1414a4                    ; 0052bd64
     PUSH EAX                            ; 0052bd69
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 0052bd6a
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0052bd6f
     PUSH 0x5fb2d0                       ; 0052bd72
     PUSH 0xfa                           ; 0052bd77
     ADD EAX,0x554                       ; 0052bd7c
     PUSH EAX                            ; 0052bd81
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 0052bd82
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     LEA EBX,[EAX + 0xffea4bd8]          ; 0052bd87
     MOV dword ptr [EBX],0x0             ; 0052bd8d
     MOV dword ptr [EBX + 0x19a2c],0x0   ; 0052bd93

@@ -324,7 +324,11 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
             g_ModalDialogActive = 1;
           }
           else {
+#if NOCTURNE_AUTHENTIC_PAUSE_SOUND
             core_sound_cpp_CSound_shutdown_FUN_005b2f70(g_CSoundPtr);
+#else
+            nocturne_pause_sound_hold(g_CSoundPtr);
+#endif
             shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_870);
             pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Return");
             shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_870.base,pcVar10);
@@ -366,6 +370,9 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
               pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Game paused");
               iVar5 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                 (&local_870,pcVar10,iVar5,uVar9);
+#if !NOCTURNE_AUTHENTIC_PAUSE_SOUND
+              nocturne_pause_sound_choice(g_CSoundPtr,iVar5);
+#endif
               if (iVar5 != 1) {
                 break;
               }
@@ -417,9 +424,13 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
               this_ptr->cinematic_skip_in_progress = (uint)(iVar5 == 0);
             }
             engine_2d_c_clearInputAndWait_FUN_00403260();
+#if NOCTURNE_AUTHENTIC_PAUSE_SOUND
             if (this_ptr->cinematic_skip_in_progress == 0) {
               core_sound_cpp_CSound_init_FUN_005b2dd0(g_CSoundPtr);
             }
+#else
+            nocturne_pause_sound_resume(this_ptr,g_CSoundPtr);
+#endif
             g_HeroActors[g_LocalHeroIndex]->aim_mode = this_ptr->aim_mode;
             shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_870,0);
             iVar5 = 1;

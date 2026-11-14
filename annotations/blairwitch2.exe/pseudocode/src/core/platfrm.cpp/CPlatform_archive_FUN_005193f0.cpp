@@ -14,56 +14,61 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_005193f0(CPlatform *this_ptr
   CPlatform *pCVar1;
   int iVar2;
   int local_1c;
-  uint local_18;
+  CDemonActor *local_18;
   int local_14;
   
-  core_actor_cpp_CDemonActor_archive_FUN_0040c330((CDemonActor *)this_ptr);
+  core_actor_cpp_CDemonActor_archive_FUN_0040c330(&this_ptr->base);
   core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ba60
-            (&this_ptr->field_0x2b4,"?modelName" + 1);
-  core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x4b0,"toStartEvent");
-  core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x514,"toEndEvent");
-  core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x578,"stopEvent");
-  core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x5dc,"startSound");
-  core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x5f0,"stopSound");
-  core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x604,"activeSound");
-  core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x44c,"courseFilename");
-  if (this_ptr->field_0x44c == '\0') {
-    core_actor_cpp_archiveVector_FUN_0040b4b0(&this_ptr->field_0x478,"startPos");
-    core_actor_cpp_archiveQuaternion_FUN_0040b690(&this_ptr->field_0x490,"origOrient");
-    core_actor_cpp_archiveVector_FUN_0040b4b0(&this_ptr->field_0x484,"endPos");
-    core_actor_cpp_archiveQuaternion_FUN_0040b690(&this_ptr->field_0x4a0,"endOrient");
+            (&this_ptr->model,"?modelName" + 1);
+  core_actor_cpp_archiveString_FUN_0040b730(this_ptr->to_start_event,"toStartEvent");
+  core_actor_cpp_archiveString_FUN_0040b730(this_ptr->to_end_event,"toEndEvent");
+  core_actor_cpp_archiveString_FUN_0040b730(this_ptr->stop_event,"stopEvent");
+  core_actor_cpp_archiveString_FUN_0040b730(this_ptr->start_sound,"startSound");
+  core_actor_cpp_archiveString_FUN_0040b730(this_ptr->stop_sound,"stopSound");
+  core_actor_cpp_archiveString_FUN_0040b730(this_ptr->active_sound,"activeSound");
+  core_actor_cpp_archiveString_FUN_0040b730(this_ptr->course_filename,"courseFilename");
+  if (this_ptr->course_filename[0] == '\0') {
+    core_actor_cpp_archiveVector_FUN_0040b4b0(&this_ptr->start_pos,"startPos");
+    core_actor_cpp_archiveQuaternion_FUN_0040b690(&this_ptr->orig_orient,"origOrient");
+    core_actor_cpp_archiveVector_FUN_0040b4b0(&this_ptr->end_pos,"endPos");
+    core_actor_cpp_archiveQuaternion_FUN_0040b690(&this_ptr->end_orient,"endOrient");
   }
-  core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->field_0x430,"state");
-  core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x438,"param");
-  core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x448,"travelTimeToStart");
+  core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->state,"state");
+  core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->param,"param");
+  core_actor_cpp_archiveFloat_FUN_0040b8e0
+            (&this_ptr->travel_time_to_start,"travelTimeToStart");
   if (g_CPlatformClassVersion < 7) {
-    *(uint *)&this_ptr->field_0x444 = *(uint *)&this_ptr->field_0x448;
+    this_ptr->travel_time_to_end = this_ptr->travel_time_to_start;
   }
   else {
-    core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x444,"travelTimeToEnd");
+    core_actor_cpp_archiveFloat_FUN_0040b8e0
+              (&this_ptr->travel_time_to_end,"travelTimeToEnd");
   }
-  core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->field_0x434,"groundType");
+  core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->ground_type,"groundType");
   if (1 < g_CPlatformClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->field_0x61c,"oneShot");
+    core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->one_shot,"oneShot");
   }
   if (2 < g_CPlatformClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b960
-              ((int *)&this_ptr->field_0x620,"blockVirtualDirectorFlag");
+              (&this_ptr->block_virtual_director_flag,"blockVirtualDirectorFlag");
   }
   if (3 < g_CPlatformClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b960
-              ((int *)&this_ptr->field_0x624,"renderInBackgroundWhenNotMovingFlag");
+              (&this_ptr->render_in_background_when_not_moving_flag,
+               "renderInBackgroundWhenNotMovingFlag");
   }
   if (4 < g_CPlatformClassVersion) {
-    core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x628,"cameraWhileMoving");
+    core_actor_cpp_archiveString_FUN_0040b730
+              (this_ptr->camera_while_moving,"cameraWhileMoving");
   }
   if (5 < g_CPlatformClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b960
-              ((int *)&this_ptr->field_0x668,"plotAsBoxInShadow");
+              (&this_ptr->plot_as_box_in_shadow,"plotAsBoxInShadow");
   }
   if (7 < g_CPlatformClassVersion) {
-    core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x43c,"goalParam");
-    core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x440,"currentMovementRate");
+    core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->goal_param,"goalParam");
+    core_actor_cpp_archiveFloat_FUN_0040b8e0
+              (&this_ptr->current_movement_rate,"currentMovementRate");
     if (DAT_007bc038 == 1) {
       core_actor_cpp_archiveInteger_FUN_0040b960(&local_1c,"attachCount");
       if (10 < local_1c) {
@@ -76,9 +81,9 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_005193f0(CPlatform *this_ptr
       if (0 < local_1c) {
         do {
           core_actor_cpp_archiveActor_FUN_0040b9e0(&local_18,"attach actor");
-          *(uint *)&pCVar1->field_0x678 = local_18;
+          pCVar1->attach_actors[0].actor = local_18;
           iVar2 = iVar2 + 1;
-          pCVar1 = (CPlatform *)&pCVar1->field_0x34;
+          pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);
         } while (iVar2 < local_1c);
       }
     }
@@ -86,34 +91,33 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_005193f0(CPlatform *this_ptr
       local_14 = 0;
       pCVar1 = this_ptr;
       do {
-        if (*(int *)&pCVar1->field_0x678 != 0) {
+        if (pCVar1->attach_actors[0].actor != (CDemonActor *)0x0) {
           local_14 = local_14 + 1;
         }
-        pCVar1 = (CPlatform *)&pCVar1->field_0x34;
-      } while (pCVar1 != (CPlatform *)&this_ptr->field_0x208);
+        pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);
+      } while (pCVar1 != (CPlatform *)&(this_ptr->base).particle_systems[2].fade_duration);
       iVar2 = 0;
       core_actor_cpp_archiveInteger_FUN_0040b960(&local_14,"attachCount");
       pCVar1 = this_ptr;
       do {
-        if (*(int *)&pCVar1->field_0x678 != 0) {
+        if (pCVar1->attach_actors[0].actor != (CDemonActor *)0x0) {
           core_actor_cpp_archiveActor_FUN_0040b9e0
-                    (&this_ptr->field_0x678 + iVar2 * 0x34,"attach actor");
+                    (&this_ptr->attach_actors[iVar2].actor,"attach actor");
         }
         iVar2 = iVar2 + 1;
-        pCVar1 = (CPlatform *)&pCVar1->field_0x34;
+        pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);
       } while (iVar2 < 10);
     }
   }
   if (8 < g_CPlatformClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->field_0x66c,"pushFlag");
+    core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->push_flag,"pushFlag");
   }
   if (9 < g_CPlatformClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b960
-              ((int *)&this_ptr->field_0x670,"recomputeFog");
+    core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->recompute_fog,"recomputeFog");
   }
   if (10 < g_CPlatformClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b960
-              ((int *)&this_ptr->field_0x674,"plotInShadowFlag");
+              (&this_ptr->plot_in_shadow_flag,"plotInShadowFlag");
     return;
   }
   return;

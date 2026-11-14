@@ -2,18 +2,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 68,
+    "complexity_score": 95,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 12,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 38,
-    "suspect_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 40,
+    "suspect_count": 4,
     "suspect_types": [
+      "pointer_cast",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 159
+    "total_lines": 161
   },
   "cross_references": [
     {
@@ -42,6 +43,11 @@
       "name": "core_main.c_FUN_004e4330"
     },
     {
+      "addr": "005a3650",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005a3650"
+    },
+    {
       "addr": "005a3a90",
       "is_variadic": false,
       "name": "crt_stdio.c_fclose_FUN_005a3a90"
@@ -54,12 +60,7 @@
     {
       "addr": "005a28c0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a28c0"
-    },
-    {
-      "addr": "005a3650",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a3650"
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
     },
     {
       "addr": "004659c0",
@@ -189,6 +190,20 @@
     },
     "pcode_op_count": 363
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005011a0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00520150",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 108,
     "local_size": 100,
@@ -230,11 +245,27 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 12,
+      "line": 13,
       "match": "DAT_005c90c0",
       "severity": "mild",
-      "text": "p_Var1 = engine_dosio_cpp_FUN_004659c0(\"models\",filename,&DAT_005c90c0);",
+      "text": "file = engine_dosio_cpp_FUN_004659c0(\"models\",filename,&DAT_005c90c0);",
       "type": "undefined_data"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 39,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&(buffer->base).type + model_size) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 42,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&(buffer->base).type + model_size) = 0;",
+      "type": "pointer_cast"
     }
   ]
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBoundingBox3D * core_box_cpp_CBoundingBox3D_ctor_FUN_00534d20(CBoundingBox3D *this_ptr)
+; CBoundingBox3D * __cdecl core_box_cpp_CBoundingBox3D_ctor_FUN_00534d20(CBoundingBox3D *this_ptr)
 ;
 ; Parameters:
 ; CBoundingBox3D * Stack[0x4]:4   this_ptr

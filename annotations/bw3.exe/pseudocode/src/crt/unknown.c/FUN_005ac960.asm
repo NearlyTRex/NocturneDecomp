@@ -14,7 +14,7 @@
 ; Called Functions:
 ;   crt_unknown.c_FUN_005aca00
 ;   crt_unknown.c_FUN_005aca50
-;   unkafter_asgaya.cpp_FUN_005af2a0
+;   crt_unknown.c_FUN_005af2a0
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     XOR ESI,ESI                         ; 005ac96b
     PUSH EBX                            ; 005ac96d
         ;   Label: LAB_005ac96d
-    CALL unkafter_asgaya.cpp_FUN_005af2a0 ; 005ac96e
-        ;   XREF to: 005af2a0 (UNCONDITIONAL_CALL)  ; undefined unkafter_asgaya.cpp_FUN_005af2a0()
+    CALL crt_unknown.c_FUN_005af2a0     ; 005ac96e
+        ;   XREF to: 005af2a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005af2a0()
     ADD ESP,0x4                         ; 005ac973
     TEST EAX,EAX                        ; 005ac976
     JNZ 0x005ac9ba                      ; 005ac978

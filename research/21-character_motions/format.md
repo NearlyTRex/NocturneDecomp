@@ -39,13 +39,13 @@ skips unread (`CSkeleton_loadStream_FUN_00599bb0.keep`,
 
 | Section | Contents |
 |---|---|
-| skeleton version | 2..`g_CSkeletonVersion`; every shipped file is 3 |
+| skeleton version | 2..`g_CSkeletonVersion`; every file Nocturne ships is 3; 4 in Blair Witch Volume 1 (below) |
 | bonecount, frameCount | frameCount is the total over all motions |
 | boneList | `"name",parentIndex` |
 | angle list | `w,x,y,z` per frame per bone, frame-major, indexed by global frame |
 | root offset list | per global frame |
 | canceled movement list | per global frame |
-| motion list version | ≤ 2; markers exist from 2 |
+| motion list version | ≤ 2 in Nocturne; markers exist from 2; 3 in Blair Witch (below) |
 | state list | count, then one name per line |
 | motion count | then per motion, below |
 | bone scales | `x,y,z` per bone (skeleton version ≥ 3) |
@@ -57,12 +57,52 @@ Per motion:
 exitForwardFromFrame,exitForwardToMotion,exitForwardToFrame
 exitForwardCmd,exitForwardTweenTime,exitForwardKeepState
 exitBackwardToMotion,exitBackwardToFrame
+frameResolution,storedFrameCount                    (motion list version 3 only)
 transitionCount, then: desiredState,cmd,toMotion,toFrame,tweenTime,keepState
 signalCount, then: frame,value
 markerCount markers...
 ```
 
 Limits: 80 states, 120 motions, 45 transitions, 15 signals, 10 markers per motion.
+
+### Motion list version 3 (Blair Witch)
+
+The Blair Witch games add one line per motion after the backward exit:
+`frameResolution,storedFrameCount`, named by the files' own `//` comments. Over every
+version-3 motion shipped (1,708), `storedFrameCount = ceil(frameCount / frameResolution)`,
+with resolutions of 1, 2, 4 and 8: the motion keeps every Nth pose and `frameCount`
+stays the playback length.
+
+Only the stored poses are in the file. In all 33 skeletons with a version-3 motion list,
+the header's `frameCount` is the sum of `storedFrameCount` over the motions, and each
+motion's `frameStart` is the running total of the stored frames before it, so the angle,
+root offset and canceled movement lists all run in stored frames.
+
+| Game | skeleton 3, motions 2 | skeleton 3, motions 3 | skeleton 4, motions 3 |
+|---|--:|--:|--:|
+| Blair Witch Volume 1 | 8 | 0 | 17 |
+| Blair Witch Volume 2 | 19 | 0 | 0 |
+| Blair Witch Volume 3 | 22 | 16 | 0 |
+
+### Skeleton version 4 (Blair Witch Volume 1)
+
+The section headers are unchanged, but the angle list is binary: `bones × frameCount`
+quaternions of four little-endian float32 (`w,x,y,z`, 16 bytes each, all unit length)
+written directly between the `// angle list` line and `// root offset list`. Every other
+section stays text. Volume 3 went back to version 3 with a text angle list.
+
+Blair Witch Volume 1 opens every skeleton `"rb"` (nocedit uses `"rt"`), which the binary block
+needs; the text sections scan the same either way.
+
+A frame between stored poses is interpolated, not held (Volume 1's
+`getFramesForInterpolation`, `00525240`): its position is `frameStart + frame / frameResolution`,
+blended between the poses either side by the fraction. Past `frameCount − frameResolution` it sits
+on the last stored pose, `frameStart + storedFrameCount − 1`, and a jump exit blends from there
+towards the target's `frameStart + toFrame / its resolution` over one stored step. Root motion
+takes the same positions, through the reciprocal of the resolution (`00524ba0`, `00524d70`).
+With a resolution of 1 every one of these is Nocturne's arithmetic.
+
+`dump_skl_motions.py` reads all three motion list versions; it does not read poses.
 
 The field names come from the authoring importer,
 `skeledit.cpp/CSkeleton_importSkeletonFile_FUN_00592690.keep`. Its script syntax is

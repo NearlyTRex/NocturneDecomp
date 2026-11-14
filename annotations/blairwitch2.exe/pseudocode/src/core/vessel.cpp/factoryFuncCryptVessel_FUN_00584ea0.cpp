@@ -1,20 +1,20 @@
 // Name: core_vessel.cpp_factoryFuncCryptVessel_FUN_00584ea0
 // Address: 00584ea0
 // Address Range: [[00584ea0, 00584ebb]]
-// Convention: unknown
-// Signature: void core_vessel_cpp_factoryFuncCryptVessel_FUN_00584ea0(void)
+// Convention: __cdecl
+// Signature: CCryptVessel * __cdecl core_vessel_cpp_factoryFuncCryptVessel_FUN_00584ea0(void)
 
 #include "nocturne.h"
 
-void core_vessel_cpp_factoryFuncCryptVessel_FUN_00584ea0(void)
+CCryptVessel * __cdecl core_vessel_cpp_factoryFuncCryptVessel_FUN_00584ea0(void)
 
 {
-  CCryptVessel *this_ptr;
+  CCryptVessel *pCVar1;
   
-  this_ptr = (CCryptVessel *)FUN_005b8be2(0xaac);
-  if (this_ptr == (CCryptVessel *)0x0) {
-    return;
+  pCVar1 = (CCryptVessel *)operator_new(0xaac);
+  if (pCVar1 == (CCryptVessel *)0x0) {
+    return (CCryptVessel *)0x0;
   }
-  core_vessel_cpp_CCryptVessel_ctor_FUN_00584ed0(this_ptr);
-  return;
+  pCVar1 = core_vessel_cpp_CCryptVessel_ctor_FUN_00584ed0(pCVar1);
+  return pCVar1;
 }

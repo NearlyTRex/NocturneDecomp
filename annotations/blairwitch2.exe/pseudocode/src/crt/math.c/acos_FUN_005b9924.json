@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 39,
     "complexity_score": 71,
-    "cross_reference_count": 14,
+    "cross_reference_count": 15,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "mild",
@@ -17,15 +17,15 @@
   },
   "cross_references": [
     {
-      "addr": "00449610",
-      "from_addr": "004496c1",
-      "name": "core_dirmat.cpp_FUN_00449610",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004496e0",
       "from_addr": "00449a2c",
       "name": "core_dirmat.cpp_FUN_004496e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00449610",
+      "from_addr": "004496c1",
+      "name": "core_dirmat.cpp_angleFromSinCos_FUN_00449610",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -35,15 +35,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004933bc",
-      "from_addr": "004933ff",
-      "name": "core_fire.cpp_FUN_004933bc",
+      "addr": "0045ab40",
+      "from_addr": "0045b06a",
+      "name": "core_doc.cpp_FUN_0045ab40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00459db0",
+      "from_addr": "00459dfd",
+      "name": "core_doc.cpp_adjustAimAngleForOffset_FUN_00459db0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0049db20",
       "from_addr": "0049e32a",
-      "name": "core_fire.cpp_FUN_0049db20",
+      "name": "core_fire.cpp_CFireEffect_traceLaser_FUN_0049db20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004933c0",
+      "from_addr": "004933ff",
+      "name": "core_fire.cpp_safeAcos_FUN_004933c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -59,39 +71,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0056bcbe",
+      "addr": "0056bcc0",
       "from_addr": "0056bd0d",
-      "name": "core_stranger.cpp_FUN_0056bcbe",
+      "name": "core_stranger.cpp_FUN_0056bcc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0056bd4e",
+      "addr": "0056bd50",
       "from_addr": "0056be10",
-      "name": "core_stranger.cpp_FUN_0056bd4e",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00459db0",
-      "from_addr": "00459dfd",
-      "name": "core_stranger.cpp_adjustAimAngleForOffset_FUN_00459db0",
+      "name": "core_stranger.cpp_FUN_0056bd50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00591d10",
       "from_addr": "00591dc2",
-      "name": "core_xform.cpp_FUN_00591d10",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00591de0",
-      "from_addr": "005921c9",
-      "name": "core_xform.cpp_FUN_00591de0",
+      "name": "core_xform.cpp_angleFromSinCos_FUN_00591d10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00592280",
       "from_addr": "0059266b",
-      "name": "core_xform.cpp_FUN_00592280",
+      "name": "core_xform.cpp_matrixToEulerAnglesZYX_FUN_00592280",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00591de0",
+      "from_addr": "005921c9",
+      "name": "core_xform.cpp_matrixToEulerAngles_FUN_00591de0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -167,6 +173,32 @@
       "STORE": 3
     },
     "pcode_op_count": 184
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005c1d04",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005a4b74",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00600162",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00565ca4",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,

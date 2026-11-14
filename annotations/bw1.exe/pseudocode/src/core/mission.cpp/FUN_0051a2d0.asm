@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_main.c_FUN_005032a0 at 005038d7
+;   core_main.c_initializeGameSystems_FUN_005032a0 at 005038d7
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_fangs_005e9073

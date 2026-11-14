@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_styler_cpp_staticInit_FUN_0059d6f0(void)
+; void __cdecl core_styler_cpp_staticInit_FUN_0059d6f0(void)
 ;
 ;
 ; Called Functions:

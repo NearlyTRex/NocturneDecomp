@@ -1,25 +1,29 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_memory_c___arrinit_FUN_005c0357(int param_1,uint param_2,int param_3)
+; void * __cdecl crt_memory_c___arrinit_FUN_005c0357(void *array_start,int element_count,WatcomTypeInfo *type_info)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   array_start
+; int              Stack[0x8]:4   element_count
+; WatcomTypeInfo * Stack[0xc]:4   type_info
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[91]:
-;   core_actor.cpp_FUN_00409940 at 0040995d
-;   core_baron.cpp_FUN_0040fcf0 at 0040fe9f
+; XREF[92]:
+;   core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409940 at 0040995d
+;   core_baron.cpp_CBaron_performLightningAttack_FUN_0040fcf0 at 0040fe9f
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_ctor_FUN_00415d90 at 00415db4
+;   core_bmppuzzl.cpp_CChemPuzzle_ctor_FUN_004175f0 at 00417614
+;   core_bmppuzzl.cpp_staticInit_FUN_00415b20 at 00415b2c
 ;   core_bodypart.cpp_CBodyPart_ctor_FUN_00418b40 at 00418b5a
 ;   core_boneguy.cpp_CBoneGuy_ctor_FUN_0041b750 at 0041b770
 ;   core_box.cpp_CBox_ctor_FUN_0041da00 at 0041da11
 ;   core_boxactor.cpp_staticInit_FUN_00421c00 at 00421c2f
 ;   core_bugs.cpp_CBugs_ctor_FUN_00424f80 at 00424fa0
-;   core_chain.cpp_CChain_ctor_FUN_00435660 at 0043567c
-;   core_charactr.cpp_CCharacter_ctor_FUN_0042c080 at 0042c0bd
-;   core_cloth.cpp_FUN_0043e5c0 at 0043e5dd
-;   ... and 81 more
+;   ... and 82 more
 ;
 ; *****************************************************************************
 

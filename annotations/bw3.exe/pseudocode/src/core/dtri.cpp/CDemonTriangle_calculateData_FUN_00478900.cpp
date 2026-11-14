@@ -18,43 +18,44 @@ void __cdecl core_dtri_cpp_CDemonTriangle_calculateData_FUN_00478900(CDemonTrian
   float fVar7;
   float local_c;
   
-  fVar2 = *(float *)&this_ptr->field_0x10 - *(float *)&this_ptr->field_0x4;
-  fVar1 = *(float *)&this_ptr->field_0x20 - *(float *)&this_ptr->field_0x14;
-  fVar4 = *(float *)&this_ptr->field_0x14 - *(float *)&this_ptr->field_0x8;
-  fVar7 = *(float *)&this_ptr->field_0x18 - *(float *)&this_ptr->field_0xc;
-  fVar6 = *(float *)&this_ptr->field_0xc - *(float *)this_ptr;
-  fVar5 = *(float *)&this_ptr->field_0x1c - *(float *)&this_ptr->field_0x10;
+  fVar2 = (this_ptr->vertex2).y - (this_ptr->vertex1).y;
+  fVar1 = (this_ptr->vertex3).z - (this_ptr->vertex2).z;
+  fVar4 = (this_ptr->vertex2).z - (this_ptr->vertex1).z;
+  fVar7 = (this_ptr->vertex3).x - (this_ptr->vertex2).x;
+  fVar6 = (this_ptr->vertex2).x - (this_ptr->vertex1).x;
+  fVar5 = (this_ptr->vertex3).y - (this_ptr->vertex2).y;
   fVar3 = fVar2 * fVar1 - fVar5 * fVar4;
   fVar4 = fVar7 * fVar4 - fVar6 * fVar1;
-  *(float *)&this_ptr->field_0x24 = fVar3;
-  *(float *)&this_ptr->field_0x28 = fVar4;
+  (this_ptr->normal).x = fVar3;
+  (this_ptr->normal).y = fVar4;
   fVar1 = fVar6 * fVar5 - fVar7 * fVar2;
-  *(float *)&this_ptr->field_0x2c = fVar1;
-  local_c = SQRT(fVar1 * *(float *)&this_ptr->field_0x2c +
-                 fVar4 * *(float *)&this_ptr->field_0x28 + fVar3 * *(float *)&this_ptr->field_0x24);
+  (this_ptr->normal).z = fVar1;
+  local_c = SQRT(fVar1 * (this_ptr->normal).z +
+                 fVar4 * (this_ptr->normal).y + fVar3 * (this_ptr->normal).x);
   if (ABS(local_c) == 0.0) {
     local_c = 1.0;
   }
   local_c = 1.0 / local_c;
-  fVar2 = -*(float *)&this_ptr->field_0x28 * local_c;
-  *(float *)&this_ptr->field_0x28 = fVar2;
-  fVar1 = -*(float *)&this_ptr->field_0x24 * local_c;
-  *(float *)&this_ptr->field_0x24 = fVar1;
-  fVar1 = ABS(fVar1);
-  *(float *)&this_ptr->field_0x2c = -*(float *)&this_ptr->field_0x2c * local_c;
-  *(float *)&this_ptr->field_0x30 =
-       (-(*(float *)this_ptr * *(float *)&this_ptr->field_0x24) -
-       *(float *)&this_ptr->field_0x4 * *(float *)&this_ptr->field_0x28) -
-       *(float *)&this_ptr->field_0x8 * *(float *)&this_ptr->field_0x2c;
-  if ((ABS(fVar2) < fVar1) && (ABS(*(float *)&this_ptr->field_0x2c) < fVar1)) {
-    *(uint *)&this_ptr->field_0x34 = 0;
+  fVar4 = -(this_ptr->normal).y * local_c;
+  (this_ptr->normal).y = fVar4;
+  fVar3 = -(this_ptr->normal).x * local_c;
+  (this_ptr->normal).x = fVar3;
+  fVar3 = ABS(fVar3);
+  fVar1 = (this_ptr->vertex1).y;
+  fVar2 = (this_ptr->vertex1).x;
+  (this_ptr->normal).z = -(this_ptr->normal).z * local_c;
+  this_ptr->plane_distance =
+       (-(fVar2 * (this_ptr->normal).x) - fVar1 * (this_ptr->normal).y) -
+       (this_ptr->vertex1).z * (this_ptr->normal).z;
+  if ((ABS(fVar4) < fVar3) && (ABS((this_ptr->normal).z) < fVar3)) {
+    this_ptr->dominant_axis = 0;
     return;
   }
-  if ((ABS(*(float *)&this_ptr->field_0x24) < ABS(*(float *)&this_ptr->field_0x28)) &&
-     (ABS(*(float *)&this_ptr->field_0x2c) < ABS(*(float *)&this_ptr->field_0x28))) {
-    *(uint *)&this_ptr->field_0x34 = 1;
+  fVar1 = ABS((this_ptr->normal).y);
+  if ((ABS((this_ptr->normal).x) < fVar1) && (ABS((this_ptr->normal).z) < fVar1)) {
+    this_ptr->dominant_axis = 1;
     return;
   }
-  *(uint *)&this_ptr->field_0x34 = 2;
+  this_ptr->dominant_axis = 2;
   return;
 }

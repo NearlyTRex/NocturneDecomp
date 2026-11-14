@@ -4,13 +4,16 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBasicEnemy.h"
 
 // Structure: CTwigZombie
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 71768
 // Ghidra size: 0x11858 (71768 bytes)
 #pragma pack(push, 1)
 typedef struct CTwigZombie {
-    char field_0[71768]; // 0x0
+    CBasicEnemy base; // 0x0, derived
+    int finger_parent_bone; // 0x11850, setup 005a2820 asm: [skeleton + idx*0x24 + 0x1d21c] = bone_list[finger].parent_index; FUN_005a2ac0
+    int finger_bone; // 0x11854, setup findBone 'Bip01 L Finger0'; FUN_005a2ac0
 } CTwigZombie;
 #pragma pack(pop)
 

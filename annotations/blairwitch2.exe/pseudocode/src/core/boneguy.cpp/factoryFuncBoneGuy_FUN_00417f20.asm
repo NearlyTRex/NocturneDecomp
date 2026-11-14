@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_boneguy_cpp_factoryFuncBoneGuy_FUN_00417f20(void)
+; CBoneGuy * __cdecl core_boneguy_cpp_factoryFuncBoneGuy_FUN_00417f20(void)
 ;
 ;
 ; Called Functions:
 ;   core_boneguy.cpp_CBoneGuy_ctor_FUN_004182d0
-;   crt_unknown.c_FUN_005b8be2
+;   crt_memory.c_operator_new_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x11120                        ; 00417f20
         ;   Label: core_boneguy.cpp_factoryFuncBoneGuy_FUN_00417f20
-    CALL crt_unknown.c_FUN_005b8be2     ; 00417f25
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 00417f25
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 00417f2a
     TEST EAX,EAX                        ; 00417f2d
     JNZ 0x00417f32                      ; 00417f2f

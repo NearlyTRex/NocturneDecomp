@@ -9,9 +9,9 @@
 // Address: 0056f460
 void __cdecl staticInit(void);
 
-// Original: support_trisock.cpp_FUN_0056f4b0
+// Original: support_trisock.cpp_copyIPAddress_FUN_0056f4b0
 // Address: 0056f4b0
-undefined4 * FUN_0056f4b0(undefined4 *param_1,undefined4 *param_2);
+uint * __cdecl copyIPAddress(uint *dest_ip,uint *src_ip);
 
 // Original: support_trisock.cpp_parseIPAddress_FUN_0056f4c0
 // Address: 0056f4c0
@@ -19,7 +19,7 @@ uint * __cdecl parseIPAddress(uint *result_ptr,char *dotted_decimal_string);
 
 // Original: support_trisock.cpp_buildIPAddressOrDie_FUN_0056f510
 // Address: 0056f510
-undefined4 __cdecl buildIPAddressOrDie(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
+uint8_t * __cdecl buildIPAddressOrDie(uchar *dest_ip,int octet1,int octet2,int octet3,int octet4);
 
 // Original: support_trisock.cpp_formatIPAddress_FUN_0056f580
 // Address: 0056f580
@@ -31,7 +31,7 @@ int __cdecl parseIPComponents(uint *result_ptr,char *dotted_decimal_string);
 
 // Original: support_trisock.cpp_buildIPAddress_FUN_0056f630
 // Address: 0056f630
-undefined4 __cdecl buildIPAddress(undefined1 *param_1,int param_2,int param_3,int param_4,int param_5);
+int __cdecl buildIPAddress(uint8_t *dest_ip,int octet1,int octet2,int octet3,int octet4);
 
 // Original: support_trisock.cpp_extractIPOctets_FUN_0056f6a0
 // Address: 0056f6a0
@@ -43,11 +43,11 @@ uint __cdecl getIPAddress(SNetworkAddr *net_addr);
 
 // Original: support_trisock.cpp_createNetworkAddr_FUN_0056f730
 // Address: 0056f730
-void __cdecl createNetworkAddr(undefined4 *param_1,undefined4 param_2,undefined2 param_3);
+void __cdecl createNetworkAddr(SNetworkAddr *dest_addr,uint32_t *ip_address_ptr,uint16_t port);
 
 // Original: support_trisock.cpp_convertSockAddr_FUN_0056f750
 // Address: 0056f750
-undefined4 * __cdecl convertSockAddr(undefined4 *param_1,short *param_2);
+SOCKADDR_IN * __cdecl convertSockAddr(SNetworkAddr *dest_addr,SOCKADDR *src_addr);
 
 // Original: support_trisock.cpp_buildSockaddrIn_FUN_0056f7c0
 // Address: 0056f7c0
@@ -55,11 +55,11 @@ void buildSockaddrIn(SNetworkAddr *param_1);
 
 // Original: support_trisock.cpp_formatSocketAddress_FUN_0056f820
 // Address: 0056f820
-void __cdecl formatSocketAddress(uchar *param_1,char *param_2);
+void __cdecl formatSocketAddress(SNetworkAddr *network_addr,char *output_buffer);
 
 // Original: support_trisock.cpp_Socket_copy_FUN_0056f8a0
 // Address: 0056f8a0
-SSocket * Socket::copy(SSocket *this_ptr,SSocket *other);
+SSocket * __cdecl Socket::copy(SSocket *this_ptr,SSocket *other);
 
 // Original: support_trisock.cpp_CSocket_ctor_FUN_0056f8d0
 // Address: 0056f8d0
@@ -93,9 +93,9 @@ undefined4 FUN_0056f9c0(SOCKET *param_1,undefined4 param_2);
 // Address: 0056fa20
 byte FUN_0056fa20(CSocket *param_1);
 
-// Original: support_trisock.cpp_FUN_0056fb10
+// Original: support_trisock.cpp_CSocket_receiveSocketData_FUN_0056fb10
 // Address: 0056fb10
-int __cdecl FUN_0056fb10(CSocket *this_ptr,char *buffer,int length,SNetworkAddr *source_addr);
+int __cdecl CSocket::receiveSocketData(CSocket *this_ptr,char *buffer,int length,SNetworkAddr *source_addr);
 
 // Original: support_trisock.cpp_CSocket_sendSocketData_FUN_0056fbb0
 // Address: 0056fbb0
@@ -117,6 +117,10 @@ int __cdecl CSocket::setSocketBlocking(CSocket *this_ptr,int blocking_mode);
 // Address: 0056fee0
 bool FUN_0056fee0(int param_1);
 
+// Original: support_trisock.cpp_FUN_0056fef0
+// Address: 0056fef0
+undefined4 FUN_0056fef0(undefined4 param_1,undefined4 param_2,uint16_t *param_3,undefined4 param_4,undefined4 param_5,CSocket *param_6,code *param_7);
+
 // Original: support_trisock.cpp_FUN_00570320
 // Address: 00570320
 void FUN_00570320(undefined4 *param_1,undefined4 param_2);
@@ -133,25 +137,21 @@ undefined4 FUN_00570420(int *param_1,undefined1 *param_2,int param_3,undefined4 
 // Address: 005704a0
 undefined4 FUN_005704a0(undefined4 param_1,int *param_2,undefined4 param_3,code *param_4);
 
-// Original: support_trisock.cpp_FUN_0057074c
-// Address: 0057074c
-void FUN_0057074c(CSocket *param_1,undefined4 param_2,undefined2 param_3,undefined4 param_4,undefined4 param_5,code *param_6);
+// Original: support_trisock.cpp_FUN_00570750
+// Address: 00570750
+void FUN_00570750(void);
 
 // Original: support_trisock.cpp_FUN_00570840
 // Address: 00570840
-undefined4 FUN_00570840(CSocket *param_1,undefined4 param_2,undefined2 param_3,undefined4 param_4,int *param_5,undefined4 param_6,code *param_7);
-
-// Original: support_trisock.cpp_FUN_005709bc
-// Address: 005709bc
-undefined4 FUN_005709bc(char *param_1,char *param_2,undefined2 *param_3,char *param_4,int param_5);
+undefined4 FUN_00570840(CSocket *param_1);
 
 // Original: support_trisock.cpp_FUN_005709c0
 // Address: 005709c0
 undefined4 FUN_005709c0(char *param_1,char *param_2,undefined2 *param_3,char *param_4,int param_5);
 
-// Original: support_trisock.cpp_FUN_00570adc
-// Address: 00570adc
-undefined4 FUN_00570adc(void);
+// Original: support_trisock.cpp_FUN_00570ae0
+// Address: 00570ae0
+undefined4 FUN_00570ae0(void);
 
 // Original: support_trisock.cpp_FUN_00570d30
 // Address: 00570d30
@@ -160,6 +160,10 @@ undefined1 * FUN_00570d30(int param_1);
 // Original: support_trisock.cpp_FUN_00570db0
 // Address: 00570db0
 void FUN_00570db0(char *param_1,char *param_2);
+
+// Original: support_trisock.cpp_FUN_00570df0
+// Address: 00570df0
+void FUN_00570df0(undefined1 *param_1,undefined4 param_2);
 
 // Original: support_trisock.cpp_FUN_00570e20
 // Address: 00570e20
@@ -173,10 +177,6 @@ void FUN_00570e80(int param_1);
 // Address: 00570ea0
 void FUN_00570ea0(int param_1);
 
-// Original: support_trisock.cpp_FUN_00570f00
-// Address: 00570f00
-void FUN_00570f00(void);
-
 // Original: support_trisock.cpp_FUN_00570fb0
 // Address: 00570fb0
 void FUN_00570fb0(int param_1);
@@ -185,13 +185,17 @@ void FUN_00570fb0(int param_1);
 // Address: 00571030
 void * FUN_00571030(int param_1);
 
-// Original: support_trisock.cpp_FUN_0057125e
-// Address: 0057125e
-void FUN_0057125e(int param_1,char *param_2);
+// Original: support_trisock.cpp_FUN_00571260
+// Address: 00571260
+void FUN_00571260(void);
 
 // Original: support_trisock.cpp_FUN_00571340
 // Address: 00571340
 undefined4 FUN_00571340(int param_1,char *param_2);
+
+// Original: support_trisock.cpp_FUN_00571d10
+// Address: 00571d10
+void FUN_00571d10(int param_1);
 
 // Original: support_trisock.cpp_FUN_00571d80
 // Address: 00571d80
@@ -204,3 +208,35 @@ uint FUN_00571e50(int param_1,undefined4 param_2);
 // Original: support_trisock.cpp_FUN_00571ea0
 // Address: 00571ea0
 void FUN_00571ea0(void);
+
+// Original: support_trisock.cpp_FUN_00571f10
+// Address: 00571f10
+int __cdecl FUN_00571f10(void);
+
+// Original: support_trisock.cpp_FUN_00571fc0
+// Address: 00571fc0
+bool FUN_00571fc0(undefined4 *param_1,char *param_2);
+
+// Original: support_trisock.cpp_FUN_00572190
+// Address: 00572190
+undefined4 FUN_00572190(char *param_1,char *param_2);
+
+// Original: support_trisock.cpp_FUN_00572220
+// Address: 00572220
+void FUN_00572220(uchar param_1,undefined1 param_2,undefined1 param_3,undefined1 param_4,undefined4 param_5,undefined4 param_6,uint param_7);
+
+// Original: support_trisock.cpp_FUN_00572290
+// Address: 00572290
+undefined4 FUN_00572290(void *param_1);
+
+// Original: support_trisock.cpp_IpAddr_ctor_FUN_005722f0
+// Address: 005722f0
+SIpAddr * __cdecl IpAddr::ctor(SIpAddr *this_ptr);
+
+// Original: support_trisock.cpp_FUN_00572310
+// Address: 00572310
+int FUN_00572310(int param_1);
+
+// Original: support_trisock.cpp_FUN_00572330
+// Address: 00572330
+void FUN_00572330(undefined4 *param_1,undefined4 *param_2);

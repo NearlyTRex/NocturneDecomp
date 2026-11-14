@@ -7,15 +7,15 @@
 
 // Original: core_moloch.cpp_staticInit_FUN_005012e0
 // Address: 005012e0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_moloch.cpp_factoryFuncMoloch_FUN_00501310
 // Address: 00501310
-void factoryFuncMoloch(void);
+CMoloch * __cdecl factoryFuncMoloch(void);
 
 // Original: core_moloch.cpp_CMoloch_getActorType_FUN_00501330
 // Address: 00501330
-CDemonActorType * CMoloch::getActorType(CMoloch *this_ptr);
+CDemonActorType * __cdecl CMoloch::getActorType(CMoloch *this_ptr);
 
 // Original: core_moloch.cpp_CMoloch_ctor_FUN_00501340
 // Address: 00501340
@@ -25,34 +25,34 @@ CMoloch * __cdecl CMoloch::ctor(CMoloch *this_ptr);
 // Address: 00501400
 CMoloch * __cdecl CMoloch::dtor(CMoloch *this_ptr,uint flags);
 
-// Original: core_moloch.cpp_FUN_00501480
+// Original: core_moloch.cpp_CMoloch_setup_FUN_00501480
 // Address: 00501480
-void FUN_00501480(CHero *param_1);
+void __cdecl CMoloch::setup(CMoloch *this_ptr);
 
-// Original: core_moloch.cpp_FUN_00501530
+// Original: core_moloch.cpp_CMoloch_process_FUN_00501530
 // Address: 00501530
-void FUN_00501530(CMoloch *param_1,float param_2);
+void __cdecl CMoloch::process(CMoloch *this_ptr,float delta_time);
 
-// Original: core_moloch.cpp_FUN_00501c60
+// Original: core_moloch.cpp_CMoloch_processAI_FUN_00501c60
 // Address: 00501c60
-void __cdecl FUN_00501c60(CMoloch *this_ptr,float delta_time);
+void __cdecl CMoloch::processAI(CMoloch *this_ptr,float delta_time);
 
-// Original: core_moloch.cpp_FUN_005020c0
+// Original: core_moloch.cpp_CMoloch_renderOpaque_FUN_005020c0
 // Address: 005020c0
-int FUN_005020c0(CCharacter *param_1);
+int __cdecl CMoloch::renderOpaque(CMoloch *this_ptr);
 
-// Original: core_moloch.cpp_FUN_00502200
+// Original: core_moloch.cpp_CMoloch_archive_FUN_00502200
 // Address: 00502200
-void FUN_00502200(int param_1);
+void __cdecl CMoloch::archive(CMoloch *this_ptr);
 
-// Original: core_moloch.cpp_FUN_00502280
+// Original: core_moloch.cpp_CMoloch_startMorph_FUN_00502280
 // Address: 00502280
-void __cdecl FUN_00502280(CMoloch *this_ptr);
+void __cdecl CMoloch::startMorph(CMoloch *this_ptr);
 
-// Original: core_moloch.cpp_FUN_005022d0
+// Original: core_moloch.cpp_CMoloch_drawWeapon_FUN_005022d0
 // Address: 005022d0
-void FUN_005022d0(void);
+void __cdecl CMoloch::drawWeapon(CMoloch *this_ptr,int drawn);
 
-// Original: core_moloch.cpp_FUN_005022e0
+// Original: core_moloch.cpp_CMoloch_isWeaponDrawn_FUN_005022e0
 // Address: 005022e0
-undefined4 FUN_005022e0(void);
+int __cdecl CMoloch::isWeaponDrawn(CMoloch *this_ptr);

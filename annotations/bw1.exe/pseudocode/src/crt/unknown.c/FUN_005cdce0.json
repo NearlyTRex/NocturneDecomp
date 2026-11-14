@@ -1,0 +1,269 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 170,
+    "complexity_score": 225,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 65,
+    "suspect_count": 15,
+    "suspect_types": [
+      "pointer_truncation",
+      "unrolled_strchr"
+    ],
+    "total_lines": 235
+  },
+  "cross_references": [
+    {
+      "addr": "005cc8b0",
+      "from_addr": "005cc989",
+      "name": "crt_unknown.c_FUN_005cc8b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005cdce0",
+    "address_range": [
+      [
+        "005cdce0",
+        "005cde1d"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_005cdce0",
+    "signature": "void crt_unknown_c_FUN_005cdce0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c3050",
+      "is_variadic": false,
+      "name": "crt_env.c_getenv_FUN_005c3050"
+    },
+    {
+      "addr": "005c20d0",
+      "is_variadic": false,
+      "name": "crt_string.c__strncpy_FUN_005c20d0"
+    },
+    {
+      "addr": "005c8b38",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c8b38"
+    },
+    {
+      "addr": "005c8c4c",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c8c4c"
+    },
+    {
+      "addr": "005ce48c",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005ce48c"
+    },
+    {
+      "addr": "005ce510",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005ce510"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005cc989",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005cc8b0",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.4393939393939394,
+    "instruction_count": 132,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BRANCH": 1,
+      "CALL": 10,
+      "CBRANCH": 14,
+      "COPY": 84,
+      "INT_ADD": 39,
+      "INT_AND": 83,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 82,
+      "INT_LESS": 20,
+      "INT_MULT": 3,
+      "INT_SBORROW": 20,
+      "INT_SCARRY": 17,
+      "INT_SLESS": 41,
+      "INT_SUB": 58,
+      "INT_XOR": 3,
+      "LOAD": 13,
+      "POPCOUNT": 41,
+      "RETURN": 1,
+      "STORE": 42
+    },
+    "pcode_op_count": 586
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005c59e0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005b0a70",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00572b70",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Pointer value `pcVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 28,
+      "match": "(int)pcVar4",
+      "severity": "moderate",
+      "text": "_strncpy(acStack_20,pcVar1,(int)pcVar4 - (int)pcVar1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 28,
+      "match": "(int)pcVar1",
+      "severity": "moderate",
+      "text": "_strncpy(acStack_20,pcVar1,(int)pcVar4 - (int)pcVar1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 29,
+      "match": "(int)pcVar4",
+      "severity": "moderate",
+      "text": "acStack_20[(int)pcVar4 - (int)pcVar1] = '\\0';",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 29,
+      "match": "(int)pcVar1",
+      "severity": "moderate",
+      "text": "acStack_20[(int)pcVar4 - (int)pcVar1] = '\\0';",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 43,
+      "match": "(int)pcVar5",
+      "severity": "moderate",
+      "text": "_strncpy(acStack_20,pcVar4,(int)pcVar5 - (int)pcVar4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 43,
+      "match": "(int)pcVar4",
+      "severity": "moderate",
+      "text": "_strncpy(acStack_20,pcVar4,(int)pcVar5 - (int)pcVar4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 44,
+      "match": "(int)pcVar5",
+      "severity": "moderate",
+      "text": "acStack_20[(int)pcVar5 - (int)pcVar4] = '\\0';",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 44,
+      "match": "(int)pcVar4",
+      "severity": "moderate",
+      "text": "acStack_20[(int)pcVar5 - (int)pcVar4] = '\\0';",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 58,
+      "match": "(int)pcVar1",
+      "severity": "moderate",
+      "text": "_strncpy(acStack_20,pcVar5,(int)pcVar1 - (int)pcVar5);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 58,
+      "match": "(int)pcVar5",
+      "severity": "moderate",
+      "text": "_strncpy(acStack_20,pcVar5,(int)pcVar1 - (int)pcVar5);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 59,
+      "match": "(int)pcVar1",
+      "severity": "moderate",
+      "text": "acStack_20[(int)pcVar1 - (int)pcVar5] = '\\0';",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 59,
+      "match": "(int)pcVar5",
+      "severity": "moderate",
+      "text": "acStack_20[(int)pcVar1 - (int)pcVar5] = '\\0';",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal ':' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, ':') in a .keep.",
+      "line": 18,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal ':' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, ':') in a .keep.",
+      "line": 33,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '*' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '*') in a .keep.",
+      "line": 48,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    }
+  ]
+}

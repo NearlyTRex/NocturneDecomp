@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   crt_stdlib.c__qsort_FUN_005bfc68
-;   engine_3d.c_FUN_00406c20
+;   engine_3d.c_setBlendMode_FUN_00406c20
 ;   engine_clipper.c_clipAndRasterize_FUN_0043cbf0
 ;   engine_texture.cpp_loadTextureAndGetData_FUN_00597aa0
 ;
@@ -56,7 +56,7 @@ section .text
     PUSH EBX                            ; 00406f5d
     PUSH 0x7be960                       ; 00406f5e
     CALL crt_stdlib.c__qsort_FUN_005bfc68 ; 00406f63
-        ;   XREF to: 005bfc68 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__qsort_FUN_005bfc68()
+        ;   XREF to: 005bfc68 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__qsort_FUN_005bfc68(void * base, SIZE_T num, SIZE_T size, QSORT_COMPARATOR compar)
     MOV ESI,dword ptr [0x01c51d00]      ; 00406f68 | DAT_01c51d00
     ADD ESP,0x10                        ; 00406f6e
     TEST ESI,ESI                        ; 00406f71
@@ -113,7 +113,7 @@ section .text
     ADD EAX,0xc4                        ; 0040701a
     PUSH EAX                            ; 0040701f
     CALL engine_texture.cpp_loadTextureAndGetData_FUN_00597aa0 ; 00407020
-        ;   XREF to: 00597aa0 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_loadTextureAndGetData_FUN_00597aa0()
+        ;   XREF to: 00597aa0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_loadTextureAndGetData_FUN_00597aa0(SMRGLTextureBasic * texture_info)
     ADD ESP,0x4                         ; 00407025
     MOV EAX,dword ptr [ESP + 0x14]      ; 00407028
     MOV EAX,dword ptr [EAX + 0x110]     ; 0040702c
@@ -143,8 +143,8 @@ section .text
     PUSH EDI                            ; 0040707e
     MOV dword ptr [0x00713afc],EDI      ; 0040707f | DAT_00713afc
     MOV dword ptr [0x00713af8],EDI      ; 00407085 | DAT_00713af8
-    CALL engine_3d.c_FUN_00406c20       ; 0040708b
-        ;   XREF to: 00406c20 (UNCONDITIONAL_CALL)  ; void engine_3d.c_FUN_00406c20(int blend_mode)
+    CALL engine_3d.c_setBlendMode_FUN_00406c20 ; 0040708b
+        ;   XREF to: 00406c20 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setBlendMode_FUN_00406c20(int blend_mode)
     ADD ESP,0x4                         ; 00407090
     POP EBX                             ; 00407093
     POP ESI                             ; 00407094

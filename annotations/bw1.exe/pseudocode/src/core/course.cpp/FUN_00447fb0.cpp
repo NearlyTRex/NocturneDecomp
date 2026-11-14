@@ -11,172 +11,154 @@
 void __cdecl core_course_cpp_FUN_00447fb0(CCourse *this_ptr,float time,CVector3f *out_pos,CQuaternion4f *out_orient)
 
 {
-  int iVar1;
-  float fVar2;
+  float fVar1;
+  int iVar2;
   int iVar3;
-  int iVar4;
-  int iVar5;
+  CCourseFrame *pCVar4;
+  CQuaternion4f *pCVar5;
   float *pfVar6;
-  uint *puVar7;
-  CQuaternion4f *pCVar9;
-  byte bVar10;
-  float10 fVar11;
-  float10 fVar12;
+  float *pfVar7;
+  byte bVar8;
+  float10 fVar9;
+  float10 fVar10;
   float afStackY_1868 [1513];
   float local_a8;
   float local_a4;
-  uint local_8c;
-  byte local_7c [8];
-  float local_74;
-  float local_70;
-  float local_6c [4];
-  float local_5c;
-  float local_58;
-  float local_54;
+  CQuaternion4f local_9c;
+  float local_8c;
+  float afStack_88 [3];
+  CCourseFrame local_7c;
+  float local_60 [4];
   float local_50;
   float local_4c;
   float local_48;
   float local_44;
-  float local_40;
-  float local_3c;
-  float local_38;
-  float local_34;
-  float local_30;
-  float local_2c;
-  double local_28;
+  byte local_40 [32];
   int local_20;
   float local_1c;
   int local_18;
   int local_14;
-  uint *puVar8;
   
-  bVar10 = 0;
-  if (*(int *)(this_ptr + 8) == 0) {
+  bVar8 = 0;
+  if (this_ptr->loop == 0) {
     if (0.0 < time) {
-      iVar5 = *(int *)this_ptr + -1;
-      local_14 = iVar5;
-      if (time < (float)iVar5) {
-        fVar11 = (float10)time;
-        fVar12 = fVar11;
+      iVar3 = this_ptr->len + -1;
+      local_14 = iVar3;
+      if (time < (float)iVar3) {
+        fVar9 = (float10)time;
+        fVar10 = fVar9;
         round();
-        local_18 = (int)ROUND(fVar11);
+        local_18 = (int)ROUND(fVar9);
         local_14 = local_18;
-        iVar5 = local_18 + 1;
-        local_a4 = (float)(fVar12 - (float10)local_18);
+        iVar3 = local_18 + 1;
+        local_a4 = (float)(fVar10 - (float10)local_18);
       }
       else {
-        local_18 = iVar5;
+        local_18 = iVar3;
         local_a4 = 0.0;
       }
     }
     else {
-      local_18 = *(int *)(this_ptr + 8);
-      iVar5 = 0;
+      local_18 = this_ptr->loop;
+      iVar3 = 0;
       local_a4 = 0.0;
     }
   }
   else {
-    fVar2 = (float)*(int *)this_ptr;
+    fVar1 = (float)this_ptr->len;
     if (0.0 <= time) {
-      local_28 = floor((double)(time / fVar2));
-      local_a8 = time - (float)local_28 * fVar2;
+      local_40._24_8_ = floor((double)(time / fVar1));
+      local_a8 = time - (float)(double)local_40._24_8_ * fVar1;
     }
     else {
-      local_28 = floor((double)(-time / fVar2));
-      local_a8 = (float)local_28 * fVar2 + time;
+      local_40._24_8_ = floor((double)(-time / fVar1));
+      local_a8 = (float)(double)local_40._24_8_ * fVar1 + time;
       if (local_a8 < 0.0) {
-        local_a8 = local_a8 + fVar2;
+        local_a8 = local_a8 + fVar1;
       }
     }
-    fVar11 = (float10)local_a8;
-    fVar12 = fVar11;
+    fVar9 = (float10)local_a8;
+    fVar10 = fVar9;
     round();
-    local_18 = (int)ROUND(fVar11);
+    local_18 = (int)ROUND(fVar9);
     local_14 = local_18;
-    iVar5 = local_18 + 1;
-    local_a4 = (float)(fVar12 - (float10)local_18);
-    if (*(int *)this_ptr <= iVar5) {
-      iVar5 = 0;
+    iVar3 = local_18 + 1;
+    local_a4 = (float)(fVar10 - (float10)local_18);
+    if (this_ptr->len <= iVar3) {
+      iVar3 = 0;
     }
   }
-  iVar4 = local_18 * 0x1c;
-  local_20 = iVar4;
+  iVar2 = local_18;
+  local_20 = local_18 * 0x1c;
   if ((double)local_a4 <= _DAT_005d71e6) {
-    pfVar6 = (float *)(*(int *)(this_ptr + 4) + iVar4);
-    if ((float *)local_7c != pfVar6) {
-      local_7c._0_4_ = *pfVar6;
-      local_7c._4_4_ = pfVar6[1];
-      local_74 = pfVar6[2];
+    pCVar4 = this_ptr->frames + local_18;
+    if (&local_7c != pCVar4) {
+      local_7c.pos.x = (pCVar4->pos).x;
+      local_7c.pos.y = (pCVar4->pos).y;
+      local_7c.pos.z = (pCVar4->pos).z;
     }
-    puVar7 = (uint *)(*(int *)(this_ptr + 4) + 0xc + local_18 * 0x1c);
+    pCVar5 = &this_ptr->frames[local_18].orient;
   }
   else {
-    iVar3 = iVar5 * 0x1c;
-    iVar1 = *(int *)(this_ptr + 4);
-    local_4c = *(float *)(iVar1 + iVar3) * local_a4;
-    fVar2 = 1.0 - local_a4;
-    local_48 = *(float *)(iVar1 + 4 + iVar3) * local_a4;
-    local_44 = *(float *)(iVar1 + 8 + iVar3) * local_a4;
-    local_70 = local_4c;
-    local_6c[(uint)bVar10 * -2] = local_6c[(uint)bVar10 * -2 + 9];
-    local_6c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
-         local_6c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 10];
-    local_1c = fVar2;
-    local_58 = *(float *)(iVar1 + iVar4) * fVar2;
-    local_54 = *(float *)(iVar1 + 4 + iVar4) * fVar2;
-    local_50 = *(float *)(iVar1 + 8 + iVar4) * fVar2;
-    local_34 = local_58;
-    local_6c[(uint)bVar10 * -2 + 0xf] = local_6c[(uint)bVar10 * -2 + 6];
-    local_6c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x10] =
-         local_6c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7];
-    local_6c[2] = local_34 + local_70;
-    local_6c[3] = local_30 + local_6c[0];
-    local_5c = local_2c + local_6c[1];
-    local_40 = local_34 + local_70;
-    local_6c[(uint)bVar10 * -2 + 0xc] = local_6c[(uint)bVar10 * -2 + 3];
-    local_6c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xd] =
-         local_6c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
-    if ((float *)local_7c != local_6c + 0xb) {
-      local_7c._0_4_ = local_40;
-      local_7c._4_4_ = local_3c;
-      local_74 = local_38;
+    pCVar4 = this_ptr->frames;
+    local_4c = pCVar4[iVar3].pos.x * local_a4;
+    fVar1 = 1.0 - local_a4;
+    local_48 = pCVar4[iVar3].pos.y * local_a4;
+    local_44 = pCVar4[iVar3].pos.z * local_a4;
+    local_7c.orient.w = local_4c;
+    local_60[(uint)bVar8 * -2 + -3] = local_60[(uint)bVar8 * -2 + 6];
+    local_60[(uint)bVar8 * -2 + (uint)bVar8 * -2 + -2] =
+         local_60[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 7];
+    local_1c = fVar1;
+    local_60[2] = pCVar4[iVar2].pos.x * fVar1;
+    local_60[3] = pCVar4[iVar2].pos.y * fVar1;
+    local_50 = pCVar4[iVar2].pos.z * fVar1;
+    local_40._12_4_ = local_60[2];
+    local_60[(uint)bVar8 * -2 + 0xc] = local_60[(uint)bVar8 * -2 + 3];
+    local_60[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 0xd] =
+         local_60[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4];
+    local_7c.orient.z = (float)local_40._12_4_ + local_7c.orient.w;
+    local_60[0] = (float)local_40._16_4_ + local_7c.orient.x;
+    local_60[1] = (float)local_40._20_4_ + local_7c.orient.y;
+    local_40._0_4_ = (float)local_40._12_4_ + local_7c.orient.w;
+    local_60[(uint)bVar8 * -2 + 9] = local_60[(uint)bVar8 * -2];
+    local_60[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 10] =
+         local_60[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
+    if (&local_7c != (CCourseFrame *)(local_60 + 8)) {
+      local_7c.pos.x = (float)local_40._0_4_;
+      local_7c.pos.y = (float)local_40._4_4_;
+      local_7c.pos.z = (float)local_40._8_4_;
     }
-    core_xform_cpp_FUN_005b7940
-              (local_18 * 0x1c + *(int *)(this_ptr + 4) + 0xc,
-               iVar5 * 0x1c + *(int *)(this_ptr + 4) + 0xc,local_a4);
-    puVar7 = (uint *)&stack0xffffff64;
+    core_xform_cpp_slerpQuaternion_FUN_005b7940
+              (&this_ptr->frames[local_18].orient,&this_ptr->frames[iVar3].orient,local_a4);
+    pCVar5 = &local_9c;
   }
-  puVar8 = puVar7 + (uint)bVar10 * -2 + 1;
-  local_8c = *puVar7;
-  *(uint *)(&stack0xffffff78 + (uint)bVar10 * -8) = *puVar8;
-  *(uint *)(&stack0xffffff7c + (uint)bVar10 * -8 + (uint)bVar10 * -8) =
-       puVar8[(uint)bVar10 * -2 + 1];
-  *(uint *)
-   ((int)(&stack0xffffff7c + (uint)bVar10 * -8 + (uint)bVar10 * -8) + ((uint)bVar10 * -2 + 1) * 4) =
-       (puVar8 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1];
-  if ((CVector3f *)local_7c != out_pos) {
-    *(uint *)out_pos = local_7c._0_4_;
-    *(uint *)&out_pos->field_0x4 = local_7c._4_4_;
-    *(float *)&out_pos->field_0x8 = local_74;
-    pCVar9 = out_orient + (uint)bVar10 * -8 + 4;
-    *(uint *)out_orient = local_8c;
-    *(uint *)pCVar9 = *(uint *)(&stack0xffffff78 + (uint)bVar10 * -8);
-    *(uint *)(pCVar9 + (uint)bVar10 * -8 + 4) =
-         *(uint *)(&stack0xffffff7c + (uint)bVar10 * -8 + (uint)bVar10 * -8);
-    *(uint *)(pCVar9 + (uint)bVar10 * -8 + 4 + (uint)bVar10 * -8 + 4) =
-         *(uint *)
-          ((int)(&stack0xffffff7c + (uint)bVar10 * -8 + (uint)bVar10 * -8) +
-          ((uint)bVar10 * -2 + 1) * 4);
+  pfVar7 = (float *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);
+  local_8c = pCVar5->w;
+  pfVar6 = pfVar7 + (uint)bVar8 * -2 + 1;
+  afStack_88[(uint)bVar8 * -2] = *pfVar7;
+  afStack_88[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] = *pfVar6;
+  (afStack_88 + (uint)bVar8 * -2 + (uint)bVar8 * -2 + 1)[(uint)bVar8 * -2 + 1] =
+       pfVar6[(uint)bVar8 * -2 + 1];
+  if (&local_7c != (CCourseFrame *)out_pos) {
+    out_pos->x = local_7c.pos.x;
+    out_pos->y = local_7c.pos.y;
+    out_pos->z = local_7c.pos.z;
+    pfVar7 = (float *)((int)out_orient + (uint)bVar8 * -8 + 4);
+    out_orient->w = local_8c;
+    pfVar6 = pfVar7 + (uint)bVar8 * -2 + 1;
+    *pfVar7 = afStack_88[(uint)bVar8 * -2];
+    *pfVar6 = afStack_88[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
+    pfVar6[(uint)bVar8 * -2 + 1] =
+         (afStack_88 + (uint)bVar8 * -2 + (uint)bVar8 * -2 + 1)[(uint)bVar8 * -2 + 1];
     return;
   }
-  pCVar9 = out_orient + (uint)bVar10 * -8 + 4;
-  *(uint *)out_orient = local_8c;
-  *(uint *)pCVar9 = *(uint *)(&stack0xffffff78 + (uint)bVar10 * -8);
-  *(uint *)(pCVar9 + (uint)bVar10 * -8 + 4) =
-       *(uint *)(&stack0xffffff7c + (uint)bVar10 * -8 + (uint)bVar10 * -8);
-  *(uint *)(pCVar9 + (uint)bVar10 * -8 + 4 + (uint)bVar10 * -8 + 4) =
-       *(uint *)
-        ((int)(&stack0xffffff7c + (uint)bVar10 * -8 + (uint)bVar10 * -8) +
-        ((uint)bVar10 * -2 + 1) * 4);
+  pfVar7 = (float *)((int)out_orient + (uint)bVar8 * -8 + 4);
+  out_orient->w = local_8c;
+  pfVar6 = pfVar7 + (uint)bVar8 * -2 + 1;
+  *pfVar7 = afStack_88[(uint)bVar8 * -2];
+  *pfVar6 = afStack_88[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
+  pfVar6[(uint)bVar8 * -2 + 1] =
+       (afStack_88 + (uint)bVar8 * -2 + (uint)bVar8 * -2 + 1)[(uint)bVar8 * -2 + 1];
   return;
 }

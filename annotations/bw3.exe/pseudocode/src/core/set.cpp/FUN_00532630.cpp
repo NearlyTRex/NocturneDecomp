@@ -16,7 +16,7 @@ void core_set_cpp_FUN_00532630(void)
   
   _DAT_0207bab8 = 0;
   _DAT_0207babc = 0;
-  if ((*(int *)&g_CGamePtr->field_0x24c == 0) &&
+  if ((g_CGamePtr->letterbox_mode == 0) &&
      (iVar1 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04), iVar1 != 0)) {
     if (*(int *)(iVar1 + 0x20b68) != 0) {
       _DAT_0207bab8 = *(uint *)(iVar1 + 0x20b70);

@@ -1,0 +1,291 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 327,
+    "complexity_score": 116,
+    "cross_reference_count": 1,
+    "function_call_count": 9,
+    "global_count": 16,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 116,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 443
+  },
+  "cross_references": [
+    {
+      "addr": "0045ca30",
+      "from_addr": "0045cc98",
+      "name": "core_doc.cpp_CDoc_doHeroAction_FUN_0045ca30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d03b0",
+    "address_range": [
+      [
+        "004d03b0",
+        "004d068f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hero.cpp_CHero_doHeroAction_FUN_004d03b0",
+    "signature": "void __cdecl core_hero_cpp_CHero_doHeroAction_FUN_004d03b0(CHero *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c8f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c8f0"
+    },
+    {
+      "addr": "0045efc0",
+      "is_variadic": false,
+      "name": "core_door.cpp_FUN_0045efc0"
+    },
+    {
+      "addr": "004894f0",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_executeCommands_FUN_004894f0"
+    },
+    {
+      "addr": "004925c0",
+      "is_variadic": false,
+      "name": "core_event.cpp_CRuleList_evaluateAndRun_FUN_004925c0"
+    },
+    {
+      "addr": "004cf230",
+      "is_variadic": false,
+      "name": "core_hero.cpp_CHero_tryOpenDoor_FUN_004cf230"
+    },
+    {
+      "addr": "004cf200",
+      "is_variadic": false,
+      "name": "core_hero.cpp_FUN_004cf200"
+    },
+    {
+      "addr": "004cf440",
+      "is_variadic": false,
+      "name": "core_hero.cpp_FUN_004cf440"
+    },
+    {
+      "addr": "00436710",
+      "is_variadic": false,
+      "name": "engine_console.cpp_CConsole_printf_FUN_00436710"
+    },
+    {
+      "addr": "0047be40",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0047be40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "004d0374",
+      "name": "switchdataD_004d0374",
+      "type": "void*",
+      "value": "004d03ca"
+    },
+    {
+      "addr": "005d9de4",
+      "name": "s_CHero_doHeroAction_type_005d9de3+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d9e29",
+      "name": "s_CHero_doHeroAction_type_005d9e29",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9e72",
+      "name": "s_CHero_doHeroAction_pull_005d9e72",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9e94",
+      "name": "s_CHero_doHeroAction_type_005d9e94",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9ee8",
+      "name": "s_CHero_doHeroAction_type_005d9ee8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9f3a",
+      "name": "s_CHero_doHeroAction_type_005d9f3a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9f81",
+      "name": "s_CHero_doHeroAction_type_005d9f81",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9fdf",
+      "name": "s_CHero_doHeroAction_type_005d9fdf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00609ed0",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "007c158c"
+    },
+    {
+      "addr": "006138e0",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c25594"
+    },
+    {
+      "addr": "006141f0",
+      "name": "DAT_006141f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007bdc94",
+      "name": "g_CCharacterClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007c158c",
+      "name": "g_CConsoleInstance",
+      "type": "CConsole",
+      "value": null
+    },
+    {
+      "addr": "01b4d36c",
+      "name": "g_CDoorClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d03500",
+      "name": "g_CLeverClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0045cc98",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_CDoc_doHeroAction_FUN_0045ca30",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.271698113207547,
+    "instruction_count": 265,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 1,
+      "BRANCHIND": 1,
+      "CALL": 32,
+      "CALLIND": 3,
+      "CBRANCH": 13,
+      "COPY": 235,
+      "INT_ADD": 139,
+      "INT_AND": 114,
+      "INT_CARRY": 39,
+      "INT_EQUAL": 104,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 39,
+      "INT_SLESS": 52,
+      "INT_SUB": 92,
+      "LOAD": 94,
+      "POPCOUNT": 52,
+      "RETURN": 15,
+      "STORE": 94
+    },
+    "pcode_op_count": 1132
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004ec640",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004d4520",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHero *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CHero",
+        "offset": 120,
+        "vtable_addr": "005fc300"
+      },
+      {
+        "class_name": "CHero",
+        "offset": 120,
+        "vtable_addr": "005faf20"
+      },
+      {
+        "class_name": "CHero",
+        "offset": 120,
+        "vtable_addr": "005f8360"
+      },
+      {
+        "class_name": "CHero",
+        "offset": 120,
+        "vtable_addr": "005f7470"
+      },
+      {
+        "class_name": "CHero",
+        "offset": 120,
+        "vtable_addr": "005f8070"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 10
+  }
+}

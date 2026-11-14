@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 91,
+    "complexity_score": 67,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 31,
-    "suspect_count": 5,
+    "pseudocode_lines": 32,
+    "suspect_count": 3,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_field"
+      "negative_offset"
     ],
-    "total_lines": 114
+    "total_lines": 115
   },
   "cross_references": [],
   "function": {
@@ -24,9 +23,9 @@
         "00570158"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_succubus.cpp_CSuccubus_dtor_FUN_00570090",
-    "signature": "CSuccubus * core_succubus_cpp_CSuccubus_dtor_FUN_00570090(CSuccubus *this_ptr,uint flags)"
+    "signature": "CSuccubus * __cdecl core_succubus_cpp_CSuccubus_dtor_FUN_00570090(CSuccubus *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -35,14 +34,24 @@
       "name": "core_actor.cpp_CDemonActor_dtor_FUN_00408930"
     },
     {
+      "addr": "0040f2b0",
+      "is_variadic": false,
+      "name": "core_armour.cpp_FUN_0040f2b0"
+    },
+    {
       "addr": "005b1480",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_005b1480"
+      "name": "core_cloth.cpp_CClothList_dtor_FUN_005b1480"
     },
     {
       "addr": "005b6e80",
       "is_variadic": false,
       "name": "core_morph.cpp_CMorph_dtor_FUN_005b6e80"
+    },
+    {
+      "addr": "0059df70",
+      "is_variadic": false,
+      "name": "core_muzzle.cpp_FUN_0059df70"
     },
     {
       "addr": "00544d50",
@@ -63,16 +72,6 @@
       "addr": "005b7fdc",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005b7fdc"
-    },
-    {
-      "addr": "0059df70",
-      "is_variadic": false,
-      "name": "unkaddr_0059d350.cpp_FUN_0059df70"
-    },
-    {
-      "addr": "0040f2b0",
-      "is_variadic": false,
-      "name": "unkafter_armour.cpp_FUN_0040f2b0"
     }
   ],
   "globals": [
@@ -116,6 +115,26 @@
     },
     "pcode_op_count": 315
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00592ce0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9612
+    },
+    "nocedit.exe": {
+      "addr": "005c7820",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9306
+    },
+    "nocturne.exe": {
+      "addr": "00541860",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9306
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -141,44 +160,28 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x12f78",
-      "severity": "mild",
-      "text": "pCVar1 = core_morph_cpp_CMorph_dtor_FUN_005b6e80((CMorph *)&this_ptr->field_0x12f78,0);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 23,
-      "match": "pCVar3[-7].",
+      "line": 19,
+      "match": "pCVar1[-1].",
       "severity": "mild",
-      "text": "iVar4 = unkafter_armour_cpp_FUN_0040f2b0(&pCVar3[-7].field_0x2214,0);",
+      "text": "((CClothList *)(pCVar1[-1].models[1].textures + 0xe),0);",
       "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x2214",
+      "description": "Negative struct offset (wrong base type)",
+      "line": 22,
+      "match": "pCVar3[-7].",
       "severity": "mild",
-      "text": "iVar4 = unkafter_armour_cpp_FUN_0040f2b0(&pCVar3[-7].field_0x2214,0);",
-      "type": "unnamed_field"
+      "text": "iVar4 = core_armour_cpp_FUN_0040f2b0(pCVar3[-7].part_data.texture_set_indices + 0x17,0);",
+      "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 29,
       "match": "pCVar3[-1].",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)&pCVar3[-1].field_0x2000,1);",
+      "text": "((CDemonActor *)(pCVar3[-1].bone_transform.bone_model_matrices[0x5d].m + 1),1);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x2000",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)&pCVar3[-1].field_0x2000,1);",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

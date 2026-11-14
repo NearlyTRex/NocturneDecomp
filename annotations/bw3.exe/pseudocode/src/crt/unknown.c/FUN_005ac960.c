@@ -15,7 +15,7 @@ int FUN_005ac960(byte *param_1,int param_2)
   int iVar2;
   
   iVar2 = 0;
-  for (; (iVar1 = unkafter_asgaya_cpp_FUN_005af2a0(param_1), iVar1 == 0 && (param_2 != 0));
+  for (; (iVar1 = FUN_005af2a0(param_1), iVar1 == 0 && (param_2 != 0));
       param_2 = param_2 + -1) {
     if ((_DAT_02d25930 == 0) || ((*(byte *)(*param_1 + 0x2d25941) & 1) == 0)) {
       iVar2 = iVar2 + 1;

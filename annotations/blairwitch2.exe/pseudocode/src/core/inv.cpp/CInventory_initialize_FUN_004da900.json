@@ -10,7 +10,7 @@
     "pseudocode_lines": 24,
     "suspect_count": 2,
     "suspect_types": [
-      "unresolved_funcptr",
+      "preinc_loop_idiom",
       "warning_overlapping_globals"
     ],
     "total_lines": 73
@@ -19,7 +19,7 @@
     {
       "addr": "004cec30",
       "from_addr": "004cec3a",
-      "name": "core_hero.cpp_FUN_004cec30",
+      "name": "core_hero.cpp_CHero_createDefaultWeapon_FUN_004cec30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -31,13 +31,13 @@
     {
       "addr": "0051ec20",
       "from_addr": "0051ec2e",
-      "name": "core_scat.cpp_FUN_0051ec20",
+      "name": "core_scat.cpp_CScat_createDefaultWeapon_FUN_0051ec20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00522350",
       "from_addr": "005268e8",
-      "name": "core_script.cpp_FUN_00522350",
+      "name": "core_script.cpp_CScript_step_FUN_00522350",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -102,7 +102,7 @@
       {
         "call_addr": "005268e8",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00522350",
+        "caller": "core_script.cpp_CScript_step_FUN_00522350",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -124,7 +124,7 @@
       {
         "call_addr": "004cec3a",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004cec30",
+        "caller": "core_hero.cpp_CHero_createDefaultWeapon_FUN_004cec30",
         "estimated_params": 1,
         "instructions_analyzed": 3,
         "method": "push_count",
@@ -135,7 +135,7 @@
       {
         "call_addr": "0051ec2e",
         "call_type": "direct",
-        "caller": "core_scat.cpp_FUN_0051ec20",
+        "caller": "core_scat.cpp_CScat_createDefaultWeapon_FUN_0051ec20",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -178,6 +178,32 @@
     },
     "pcode_op_count": 200
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004f7050",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004da4e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.988
+    },
+    "nocedit.exe": {
+      "addr": "004fd190",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004bef10",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 24,
     "local_size": 20,
@@ -211,12 +237,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 25,
-      "match": "code *",
+      "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar2` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `pCVar2 = pCVar2;` self-assign, two-var `tmp = &pCVar2->field; pCVar2 = tmp;` ping-pong, or a bare `pCVar2 = pCVar2 + N;` advance followed by a `*pCVar2 =` store \u2014 plus a constant-index store on `pCVar2`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 14,
+      "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar1 + 0x2b0) + 8))(iVar1);",
-      "type": "unresolved_funcptr"
+      "text": "do {",
+      "type": "preinc_loop_idiom"
     }
   ]
 }

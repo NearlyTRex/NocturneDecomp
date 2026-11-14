@@ -1,20 +1,20 @@
 // Name: core_ghoul.cpp_factoryFuncGhoul_FUN_004ddd30
 // Address: 004ddd30
 // Address Range: [[004ddd30, 004ddd4b]]
-// Convention: unknown
-// Signature: void core_ghoul_cpp_factoryFuncGhoul_FUN_004ddd30(void)
+// Convention: __cdecl
+// Signature: CGhoul * __cdecl core_ghoul_cpp_factoryFuncGhoul_FUN_004ddd30(void)
 
 #include "nocturne.h"
 
-void core_ghoul_cpp_factoryFuncGhoul_FUN_004ddd30(void)
+CGhoul * __cdecl core_ghoul_cpp_factoryFuncGhoul_FUN_004ddd30(void)
 
 {
-  CGhoul *this_ptr;
+  CGhoul *pCVar1;
   
-  this_ptr = (CGhoul *)FUN_005c0f32(0xc2e4);
-  if (this_ptr == (CGhoul *)0x0) {
-    return;
+  pCVar1 = (CGhoul *)operator_new(0xc2e4);
+  if (pCVar1 == (CGhoul *)0x0) {
+    return (CGhoul *)0x0;
   }
-  core_ghoul_cpp_CGhoul_ctor_FUN_004ddd60(this_ptr);
-  return;
+  pCVar1 = core_ghoul_cpp_CGhoul_ctor_FUN_004ddd60(pCVar1);
+  return pCVar1;
 }

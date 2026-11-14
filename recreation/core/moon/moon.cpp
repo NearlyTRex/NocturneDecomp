@@ -18,8 +18,6 @@ using common::CExtendedFloat;
 // The cheat that swaps the moon for a head.
 constexpr int kHeadOfHorrorCheat = 666;
 constexpr int kCloudSize = 256;
-constexpr int kAnimationWidth = 640;
-constexpr int kAnimationHeight = 278;
 constexpr float kStartPhase = 0.25F;
 constexpr double kTurnPerSecond = 0.0125;
 constexpr double kRestingPhaseLimit = 0.58;

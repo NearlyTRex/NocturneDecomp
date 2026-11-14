@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSkeleton * core_skeleton_cpp_CSkeleton_arrdtor40_FUN_00550540(CSkeleton *this_ptr,uint flags)
+; CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_arrdtor40_FUN_00550540(CSkeleton *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CSkeleton *      Stack[0x4]:4   this_ptr
@@ -20,7 +20,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 00550547
     PUSH EDX                            ; 0055054b
     CALL crt_memory.c___arrfini_FUN_005a3de6 ; 0055054c
-        ;   XREF to: 005a3de6 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrfini_FUN_005a3de6()
+        ;   XREF to: 005a3de6 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005a3de6(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00550551
     RET                                 ; 00550554
 

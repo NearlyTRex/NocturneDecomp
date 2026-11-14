@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * __cdecl engine_model_c_loadModelFile_FUN_00500720(char *param_1)
+; SMRGLHeaderExtended * __cdecl engine_model_c_loadModelFile_FUN_00500720(char *filename)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
 ; Local Variables:
 ; undefined        Stack[-0x5c]:1  local_5c
 ;
@@ -30,10 +32,10 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
 ;   crt_ctype.c_toupper_FUN_005b8e40
+;   crt_memory.c_malloc_FUN_005b8580
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   crt_stdio.c_fread_FUN_005b87c0
-;   crt_unknown.c_FUN_005b7790
-;   crt_unknown.c_FUN_005b8580
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_boss.c_modelStructNotSupported2_FUN_0041a4b0
 ;   engine_dosio.cpp_FUN_00460c70
 ;   engine_dosio.cpp_getFileSize_FUN_00460aa0
@@ -87,8 +89,8 @@ section .text
     PUSH 0x5def67                       ; 00500763 | = "Unable to get file size: %s"
     LEA EAX,[ESP + 0x8]                 ; 00500768
     PUSH EAX                            ; 0050076c
-    CALL crt_unknown.c_FUN_005b7790     ; 0050076d
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0050076d
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     MOV EDX,0x5def83                    ; 00500772 | = "..\\engine\\model.c"
     ADD ESP,0xc                         ; 00500777
     MOV EAX,ESP                         ; 0050077a
@@ -115,8 +117,8 @@ section .text
     PUSH 0x5def9f                       ; 005007b1 | = "Unable to open model: %s"
     LEA EAX,[ESP + 0xc]                 ; 005007b6
     PUSH EAX                            ; 005007ba
-    CALL crt_unknown.c_FUN_005b7790     ; 005007bb
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 005007bb
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     MOV EAX,0xf5                        ; 005007c0
     ADD ESP,0xc                         ; 005007c5
     MOV [0x01d046a4],EAX                ; 005007c8 | DAT_01d046a4
@@ -129,8 +131,8 @@ section .text
     ADD ESP,0x4                         ; 005007e2
     PUSH ESI                            ; 005007e5
         ;   Label: LAB_005007e5
-    CALL crt_unknown.c_FUN_005b8580     ; 005007e6
-        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005b8580(ulong size)
+    CALL crt_memory.c_malloc_FUN_005b8580 ; 005007e6
+        ;   XREF to: 005b8580 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005b8580(ulong size)
     ADD ESP,0x4                         ; 005007eb
     MOV EDI,EAX                         ; 005007ee
     TEST EAX,EAX                        ; 005007f0
@@ -140,8 +142,8 @@ section .text
     PUSH 0x5defca                       ; 005007f5 | = "Out of model memory: %s"
     LEA EAX,[ESP + 0xc]                 ; 005007fa
     PUSH EAX                            ; 005007fe
-    CALL crt_unknown.c_FUN_005b7790     ; 005007ff
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 005007ff
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     MOV EDX,0x5defe2                    ; 00500804 | = "..\\engine\\model.c"
     ADD ESP,0xc                         ; 00500809
     LEA EAX,[ESP + 0x4]                 ; 0050080c
@@ -158,7 +160,7 @@ section .text
     PUSH 0x1                            ; 0050082c
     PUSH EDI                            ; 0050082e
     CALL crt_stdio.c_fread_FUN_005b87c0 ; 0050082f
-        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005b87c0()
+        ;   XREF to: 005b87c0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005b87c0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00500834
     CMP EAX,ESI                         ; 00500837
     JZ 0x00500870                       ; 00500839
@@ -167,8 +169,8 @@ section .text
     PUSH 0x5deff4                       ; 0050083c | = "Model file read error: %s"
     LEA EAX,[ESP + 0xc]                 ; 00500841
     PUSH EAX                            ; 00500845
-    CALL crt_unknown.c_FUN_005b7790     ; 00500846
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 00500846
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     MOV EAX,0x107                       ; 0050084b
     ADD ESP,0xc                         ; 00500850
     MOV [0x01d046a4],EAX                ; 00500853 | DAT_01d046a4
@@ -195,8 +197,8 @@ section .text
     PUSH 0x5df020                       ; 00500886 | = "Invalid model: %s"
     LEA EAX,[ESP + 0xc]                 ; 0050088b
     PUSH EAX                            ; 0050088f
-    CALL crt_unknown.c_FUN_005b7790     ; 00500890
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 00500890
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     MOV EDX,0x5df032                    ; 00500895 | = "..\\engine\\model.c"
     ADD ESP,0xc                         ; 0050089a
     LEA EAX,[ESP + 0x4]                 ; 0050089d
@@ -227,7 +229,7 @@ section .text
         ;   XREF to: 0050074e (CONDITIONAL_JUMP)  ; LAB_0050074e
     PUSH EBX                            ; 005008dc
     CALL engine_boss.c_modelStructNotSupported2_FUN_0041a4b0 ; 005008dd
-        ;   XREF to: 0041a4b0 (UNCONDITIONAL_CALL)  ; undefined engine_boss.c_modelStructNotSupported2_FUN_0041a4b0()
+        ;   XREF to: 0041a4b0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_boss.c_modelStructNotSupported2_FUN_0041a4b0(char * filename)
     ADD ESP,0x4                         ; 005008e2
     ADD ESP,0x50                        ; 005008e5
     POP EBP                             ; 005008e8

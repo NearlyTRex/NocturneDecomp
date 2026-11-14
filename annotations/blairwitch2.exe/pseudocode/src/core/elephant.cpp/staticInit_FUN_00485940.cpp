@@ -1,12 +1,12 @@
 // Name: core_elephant.cpp_staticInit_FUN_00485940
 // Address: 00485940
 // Address Range: [[00485940, 00485963]]
-// Convention: unknown
-// Signature: void core_elephant_cpp_staticInit_FUN_00485940(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_elephant_cpp_staticInit_FUN_00485940(void)
 
 #include "nocturne.h"
 
-void core_elephant_cpp_staticInit_FUN_00485940(void)
+void __cdecl core_elephant_cpp_staticInit_FUN_00485940(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450

@@ -19,19 +19,19 @@
     {
       "addr": "004448f0",
       "from_addr": "004448f6",
-      "name": "core_course.cpp_FUN_004448f0",
+      "name": "core_course.cpp_CCourse_dtor_FUN_004448f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00444970",
+      "from_addr": "00444980",
+      "name": "core_course.cpp_CCourse_load_FUN_00444970",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00444910",
       "from_addr": "00444916",
       "name": "core_course.cpp_FUN_00444910",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00444970",
-      "from_addr": "00444980",
-      "name": "core_course.cpp_FUN_00444970",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -61,7 +61,7 @@
       {
         "call_addr": "004448f6",
         "call_type": "direct",
-        "caller": "core_course.cpp_FUN_004448f0",
+        "caller": "core_course.cpp_CCourse_dtor_FUN_004448f0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -74,7 +74,7 @@
       {
         "call_addr": "00444980",
         "call_type": "direct",
-        "caller": "core_course.cpp_FUN_00444970",
+        "caller": "core_course.cpp_CCourse_load_FUN_00444970",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -124,6 +124,20 @@
       "STORE": 5
     },
     "pcode_op_count": 36
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00438c20",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00447ee0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,

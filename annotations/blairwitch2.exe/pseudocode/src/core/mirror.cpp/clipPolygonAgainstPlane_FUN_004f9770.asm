@@ -1,13 +1,19 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_mirror_cpp_clipPolygonAgainstPlane_FUN_004f9770(float *param_1,float *param_2,uint param_3,int param_4,int *param_5)
+; void __cdecl core_mirror_cpp_clipPolygonAgainstPlane_FUN_004f9770(SClipPlane *clip_plane,CVector3f *input_vertices,int input_count,CVector3f *output_vertices,int *output_count)
 ;
+; Parameters:
+; SClipPlane *     Stack[0x4]:4   clip_plane
+; CVector3f *      Stack[0x8]:4   input_vertices
+; int              Stack[0xc]:4   input_count
+; CVector3f *      Stack[0x10]:4   output_vertices
+; int *            Stack[0x14]:4   output_count
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_mirror.cpp_FUN_004faa10 at 004faaa0
+;   core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_004faa10 at 004faaa0
 ;
 ; Referenced Globals:
 ;   void* PTR_caseD_1_004f9760 = 004f9845
@@ -127,7 +133,7 @@ section .text
     PUSH EBP                            ; 004f984e
     PUSH ESI                            ; 004f984f
     CALL core_mirror.cpp_computePlaneIntersection_FUN_004f9610 ; 004f9850
-        ;   XREF to: 004f9610 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_computePlaneIntersection_FUN_004f9610()
+        ;   XREF to: 004f9610 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_computePlaneIntersection_FUN_004f9610(SClipPlane * clip_plane, CVector3f * vertex_a, CVector3f * vertex_b, CVector3f * out_intersection)
     MOV EDX,dword ptr [EBX]             ; 004f9855
     INC EDX                             ; 004f9857
     ADD ESP,0x10                        ; 004f9858
@@ -157,7 +163,7 @@ section .text
     PUSH EDX                            ; 004f9888
     PUSH ESI                            ; 004f9889
     CALL core_mirror.cpp_computePlaneIntersection_FUN_004f9610 ; 004f988a
-        ;   XREF to: 004f9610 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_computePlaneIntersection_FUN_004f9610()
+        ;   XREF to: 004f9610 (UNCONDITIONAL_CALL)  ; void core_mirror.cpp_computePlaneIntersection_FUN_004f9610(SClipPlane * clip_plane, CVector3f * vertex_a, CVector3f * vertex_b, CVector3f * out_intersection)
     MOV EDX,dword ptr [EBX]             ; 004f988f
     INC EDX                             ; 004f9891
     ADD ESP,0x10                        ; 004f9892

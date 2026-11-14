@@ -69,7 +69,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_0054fc60(CCryptVessel *thi
       }
       this_ptr->timer = 1.0;
       if (this_ptr->prey == (CCryptVessel *)0x0) {
-        iVar12 = core_vessel_cpp_CCryptVessel_FUN_0054fc40(this_ptr->neutral);
+        iVar12 = core_vessel_cpp_isStartLocTriggered_FUN_0054fc40(this_ptr->neutral);
         if (iVar12 != 0) {
           pCVar3 = this_ptr->start_loc;
           this_ptr->state = 2;
@@ -87,12 +87,13 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_0054fc60(CCryptVessel *thi
         }
       }
       else {
-        iVar12 = core_vessel_cpp_CCryptVessel_FUN_0054fc40(this_ptr->prey);
+        iVar12 = core_vessel_cpp_isStartLocTriggered_FUN_0054fc40(this_ptr->prey);
         if (((iVar12 == 0) ||
-            (iVar12 = core_vessel_cpp_CCryptVessel_FUN_0054fc40(this_ptr->neutral), iVar12 == 0)) &&
-           ((iVar12 = core_vessel_cpp_CCryptVessel_FUN_0054fc40(this_ptr->prey), iVar12 != 0 ||
-            (iVar12 = core_vessel_cpp_CCryptVessel_FUN_0054fc40(this_ptr->neutral), iVar12 != 0))))
-        {
+            (iVar12 = core_vessel_cpp_isStartLocTriggered_FUN_0054fc40(this_ptr->neutral),
+            iVar12 == 0)) &&
+           ((iVar12 = core_vessel_cpp_isStartLocTriggered_FUN_0054fc40(this_ptr->prey), iVar12 != 0
+            || (iVar12 = core_vessel_cpp_isStartLocTriggered_FUN_0054fc40(this_ptr->neutral),
+               iVar12 != 0)))) {
           (this_ptr->base).location.position.y = 9999.9;
           (this_ptr->base).location.position.z = 9999.9;
           (this_ptr->base).location.position.x = 9999.9;

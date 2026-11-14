@@ -19,7 +19,6 @@ int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0047b1f0(char *dialog_tit
   CInputString *pCVar6;
   char *source_string;
   CInputString local_320;
-  char acStack_31f [319];
   CEdButton local_1e0;
   CEdButton local_fc;
   int local_18;
@@ -30,8 +29,8 @@ int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0047b1f0(char *dialog_tit
     _DAT_01d046a4 = 0xa0;
     core_main_c_FUN_004e4500("gEdFont must be set by the application.");
   }
-  _DAT_01c25f78 = *(uint *)(_DAT_01c25590 + 0x41e8);
-  _DAT_01c25f7c = engine_font_cpp_FUN_004ab560(_DAT_01c25590,0x6a);
+  _DAT_01c25f78 = _DAT_01c25590->max_char_width;
+  _DAT_01c25f7c = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(_DAT_01c25590,0x6a);
   engine_2d_c_clearInputAndWait_FUN_004032b0();
   source_string = input_buffer;
   if ((flags & 1U) == 0) {
@@ -42,14 +41,14 @@ int __cdecl shape_edittool_cpp_showTextInputDialog_FUN_0047b1f0(char *dialog_tit
   iVar2 = (int)((DAT_006141b8 + (DAT_006141b8 >> 0x1f) * -0x80) -
                (uint)((DAT_006141b8 >> 0x1f) << 6 < 0)) >> 7;
   iVar3 = DAT_006141bc / 0x60;
-  iVar4 = shape_edittool_cpp_FUN_00485380(0);
+  iVar4 = shape_edittool_cpp_calculateButtonHeight_FUN_00485380((char *)0x0);
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_0047e1d0
             (g_CEditorToolsPtr,(DAT_006141b8 << 2) / 5,iVar4 + iVar3 * 2 + _DAT_01c25f7c,
              dialog_title,0);
-  iVar3 = shape_edittool_cpp_FUN_004852f0("Cancel");
+  iVar3 = shape_edittool_cpp_calculateButtonWidth_FUN_004852f0("Cancel");
   iVar4 = ((_DAT_01c35e48 + _DAT_01c35e50) - iVar2) / 2 - iVar3;
   iVar2 = (_DAT_01c35e48 + _DAT_01c35e50 + iVar2) / 2;
-  iVar5 = shape_edittool_cpp_FUN_00485380(0);
+  iVar5 = shape_edittool_cpp_calculateButtonHeight_FUN_00485380((char *)0x0);
   local_18 = (_DAT_01c35e54 - iVar5) + 1;
   shape_edittool_cpp_CEdButton_ctor_FUN_00484e20(&local_fc);
   shape_edittool_cpp_CEdButton_ctor_FUN_00484e20(&local_1e0);
@@ -67,15 +66,15 @@ LAB_0047b3b6:
   shape_edittool_cpp_FUN_00484f20(&local_fc,iVar2 == 0);
   shape_edittool_cpp_FUN_00484f20(&local_1e0,iVar2 == 1);
   shape_edittool_cpp_FUN_0047f210(g_CEditorToolsPtr,0);
-  wincore_wddvmem_cpp_FUN_00589560();
-  iVar3 = (*(code *)**(uint **)0x01D02F84)(0x01D02F84,0x2a);
+  wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
+  iVar3 = (*0x01D02F84->vtable->getKeyState)(0x01D02F84,DIK_LSHIFT);
   if ((iVar3 == 0) &&
-     (iVar3 = (**(code **)(*(int *)0x01D02F84 + 4))(0x01D02F84,0xf), iVar3 != 0)) {
+     (iVar3 = (*0x01D02F84->vtable->getAndClearKeyState)(0x01D02F84,DIK_TAB), iVar3 != 0)) {
     iVar2 = iVar2 + 1;
   }
-  iVar3 = (*(code *)**(uint **)0x01D02F84)(0x01D02F84,0x2a);
+  iVar3 = (*0x01D02F84->vtable->getKeyState)(0x01D02F84,DIK_LSHIFT);
   if ((iVar3 != 0) &&
-     (iVar3 = (**(code **)(*(int *)0x01D02F84 + 4))(0x01D02F84,0xf), iVar3 != 0)) {
+     (iVar3 = (*0x01D02F84->vtable->getAndClearKeyState)(0x01D02F84,DIK_TAB), iVar3 != 0)) {
     iVar2 = iVar2 + -1;
   }
   pCVar6 = &local_320;
@@ -127,13 +126,13 @@ LAB_0047b56b:
   iVar2 = 0;
   goto LAB_0047b4bc;
   while( true ) {
-    cVar1 = *(char *)(pCVar6 + 1);
-    pCVar6 = pCVar6 + 2;
+    cVar1 = *(char *)((int)pCVar6 + 1);
+    pCVar6 = (CInputString *)((int)pCVar6 + 2);
     input_buffer[1] = cVar1;
     input_buffer = input_buffer + 2;
     if (cVar1 == '\0') break;
 LAB_0047b575:
-    cVar1 = *(char *)pCVar6;
+    cVar1 = pCVar6->string_data[0];
     *input_buffer = cVar1;
     if (cVar1 == '\0') break;
   }

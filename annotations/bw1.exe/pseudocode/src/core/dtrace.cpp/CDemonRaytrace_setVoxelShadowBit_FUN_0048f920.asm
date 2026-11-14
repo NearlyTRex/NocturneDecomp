@@ -17,7 +17,7 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; XREF[1]:
-;   core_dtrace.cpp_FUN_0048f2e0 at 0048f552
+;   core_dtrace.cpp_CDemonRaytrace_markShadowVoxels_FUN_0048f2e0 at 0048f552
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dtrace_cpp_005dbb4c
@@ -29,8 +29,8 @@
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_allocVoxelMemory_FUN_00457bc0
 ;   core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_0048afe0
-;   core_dtrace.cpp_FUN_0048ee90
-;   core_dtrace.cpp_FUN_0048ef40
+;   core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_0048ee90
+;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0048ef40
 ;   core_main.c_FUN_005030e0
 ;
 ; *****************************************************************************
@@ -49,8 +49,8 @@ section .text
     PUSH EBX                            ; 0048f930
     LEA ESI,[ESP + 0x20]                ; 0048f931
     LEA EDI,[ESP + 0x8]                 ; 0048f935
-    CALL core_dtrace.cpp_FUN_0048ee90   ; 0048f939
-        ;   XREF to: 0048ee90 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_0048ee90()
+    CALL core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_0048ee90 ; 0048f939
+        ;   XREF to: 0048ee90 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_0048ee90(CDemonRaytrace * this_ptr, CVector3f * world_position, CVector3i * output_grid_coords)
     LEA ESI,[ESP + 0x20]                ; 0048f93e
     ADD ESP,0x8                         ; 0048f942
     MOVSD ES:EDI,ESI                    ; 0048f945
@@ -90,8 +90,8 @@ section .text
     PUSH EBX                            ; 0048f97b
     LEA ESI,[ESP + 0x2c]                ; 0048f97c
     LEA EDI,[ESP + 0x14]                ; 0048f980
-    CALL core_dtrace.cpp_FUN_0048ef40   ; 0048f984
-        ;   XREF to: 0048ef40 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_0048ef40()
+    CALL core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0048ef40 ; 0048f984
+        ;   XREF to: 0048ef40 (UNCONDITIONAL_CALL)  ; CVector3i * core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0048ef40(CDemonRaytrace * this_ptr, CVector3f * world_position, CVector3i * output_voxel_coords)
     LEA ESI,[ESP + 0x2c]                ; 0048f989
     ADD ESP,0x8                         ; 0048f98d
     MOVSD ES:EDI,ESI                    ; 0048f990

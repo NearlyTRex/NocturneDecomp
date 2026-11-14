@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_spirbear_cpp_CSpiritBear_getActorType_FUN_0059aa90(CSpiritBear *this_ptr)
+; CDemonActorType * __cdecl core_spirbear_cpp_CSpiritBear_getActorType_FUN_0059aa90(CSpiritBear *this_ptr)
 ;
 ; Parameters:
 ; CSpiritBear *    Stack[0x4]:4   this_ptr

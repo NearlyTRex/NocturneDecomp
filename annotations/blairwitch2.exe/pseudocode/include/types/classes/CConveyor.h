@@ -4,13 +4,20 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CPlatform.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CConveyor
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x9b8 (2488 bytes)
 #pragma pack(push, 1)
 typedef struct CConveyor {
-    char field_0[2488]; // 0x0
+    CPlatform base; // 0x0
+    CVector3f size; // 0x884
+    CVector3f direction; // 0x890
+    char start_event[100]; // 0x89c
+    char stop_event[100]; // 0x900
+    int state; // 0x964
+    char actor_class[80]; // 0x968
 } CConveyor;
 #pragma pack(pop)
 

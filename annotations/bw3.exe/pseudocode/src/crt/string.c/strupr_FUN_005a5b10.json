@@ -28,13 +28,19 @@
     {
       "addr": "004af920",
       "from_addr": "004af982",
-      "name": "engine_font.cpp_FUN_004af920",
+      "name": "engine_font.cpp_CBitFont_loadBitmap_FUN_004af920",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004b01ce",
+      "addr": "004b01d0",
       "from_addr": "004b021d",
-      "name": "engine_font.cpp_FUN_004b01ce",
+      "name": "engine_font.cpp_FUN_004b01d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047e470",
+      "from_addr": "0047e56a",
+      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047e470",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -44,15 +50,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047dd1e",
+      "addr": "0047dd20",
       "from_addr": "0047e18e",
-      "name": "shape_edittool.cpp_FUN_0047dd1e",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0047e470",
-      "from_addr": "0047e56a",
-      "name": "shape_edittool.cpp_FUN_0047e470",
+      "name": "shape_edittool.cpp_FUN_0047dd20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -109,7 +109,7 @@
       {
         "call_addr": "004af982",
         "call_type": "direct",
-        "caller": "engine_font.cpp_FUN_004af920",
+        "caller": "engine_font.cpp_CBitFont_loadBitmap_FUN_004af920",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -120,7 +120,7 @@
       {
         "call_addr": "0047e56a",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047e470",
+        "caller": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047e470",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -131,7 +131,7 @@
       {
         "call_addr": "0047e18e",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047dd1e",
+        "caller": "shape_edittool.cpp_FUN_0047dd20",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -142,7 +142,7 @@
       {
         "call_addr": "0047e264",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047dd1e",
+        "caller": "shape_edittool.cpp_FUN_0047dd20",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -153,7 +153,7 @@
       {
         "call_addr": "004b021d",
         "call_type": "direct",
-        "caller": "engine_font.cpp_FUN_004b01ce",
+        "caller": "engine_font.cpp_FUN_004b01d0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -192,6 +192,32 @@
       "STORE": 2
     },
     "pcode_op_count": 68
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005ba840",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005c2c20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00600770",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00566ad0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 8,

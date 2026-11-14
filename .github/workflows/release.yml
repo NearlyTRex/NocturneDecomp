@@ -54,7 +54,9 @@ jobs:
               libxrandr-dev libxss-dev libwayland-dev libxkbcommon-dev
               wayland-protocols libegl-dev libdecor-0-dev libpulse-dev
               libasound2-dev
+          # The mingw lanes are held on 24.04, as in ci.yml's Windows tests build.
           - preset: exe-windows-x86_64
+            os: ubuntu-24.04
             packages: g++-mingw-w64-x86-64 lld
           - preset: exe-linux-vanilla-x86_64
             packages: >-
@@ -63,6 +65,7 @@ jobs:
               wayland-protocols libegl-dev libdecor-0-dev libpulse-dev
               libasound2-dev
           - preset: exe-windows-vanilla-x86_64
+            os: ubuntu-24.04
             packages: g++-mingw-w64-x86-64 lld
           - preset: exe-linux-aarch64
             os: ubuntu-24.04-arm

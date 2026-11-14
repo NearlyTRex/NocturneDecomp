@@ -2,19 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 162,
+    "complexity_score": 105,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 47,
-    "suspect_count": 10,
+    "pseudocode_lines": 45,
+    "suspect_count": 4,
     "suspect_types": [
-      "unnamed_field",
+      "pointer_cast",
+      "pointer_truncation",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 148
+    "total_lines": 146
   },
   "cross_references": [
     {
@@ -185,6 +186,32 @@
     },
     "pcode_op_count": 426
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0050f4f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9419
+    },
+    "bw3.exe": {
+      "addr": "00507fd0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9419
+    },
+    "nocedit.exe": {
+      "addr": "00543970",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004edaf0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 84,
     "local_size": 80,
@@ -239,72 +266,24 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x4 != 3) {",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(SPlayerInput *)((int)pSVar2",
+      "severity": "moderate",
+      "text": "pSVar2 = (SPlayerInput *)((int)pSVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x118",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x118 < 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x11c",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x11c < 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "local_47 = *(uint *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x11c * 0x7c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x11c",
-      "severity": "mild",
-      "text": "local_47 = *(uint *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x11c * 0x7c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x6c",
-      "severity": "mild",
-      "text": "puVar2 = (uint *)(&this_ptr->field_0x6c + *(int *)&this_ptr->field_0x11c * 0x7c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x11c",
-      "severity": "mild",
-      "text": "puVar2 = (uint *)(&this_ptr->field_0x6c + *(int *)&this_ptr->field_0x11c * 0x7c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0x118",
-      "severity": "mild",
-      "text": "(this_ptr,*(int *)&this_ptr->field_0x118,(SNetPacketHeader *)&local_4c);",
-      "type": "unnamed_field"
+      "description": "Pointer value `pSVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 43,
+      "match": "(int)pSVar2",
+      "severity": "moderate",
+      "text": "pSVar2 = (SPlayerInput *)((int)pSVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 42,
+      "line": 41,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",

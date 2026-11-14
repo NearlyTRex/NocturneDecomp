@@ -9,14 +9,14 @@
 ; XREF[14]:
 ;   core_actor.cpp_CDemonActor_testCylinderCollision_FUN_00408d10 at 00408d1b
 ;   core_actor.cpp_CDemonActor_testLineIntersection_FUN_00408da0 at 00408dba
-;   core_door.cpp_FUN_004642f0 at 004646a7
-;   core_flame.cpp_FUN_004a5b10 at 004a5cd1
-;   core_pendulum.cpp_FUN_0050df70 at 0050df85
+;   core_door.cpp_CDoor_process_FUN_004642f0 at 004646a7
+;   core_flame.cpp_CFlame_process_FUN_004a5b10 at 004a5cd1
+;   core_pendulum.cpp_CPendulum_testCollisionWithActor_FUN_0050df70 at 0050df85
 ;   core_platfrm.cpp_CPlatform_isActorOnPlatform_FUN_005127f0 at 00512816
-;   core_platfrm.cpp_FUN_005114f0 at 00511c32
+;   core_platfrm.cpp_CPlatform_process_FUN_005114f0 at 00511c32
+;   core_prye.cpp_CPrye_updateArmRecoilBlend_FUN_00524170 at 0052429f
 ;   core_setcolid.cpp_FUN_0053bc80 at 0053be61
 ;   core_setcolid.cpp_FUN_0053d270 at 0053d40b
-;   core_setcolid.cpp_FUN_0053de10 at 0053df78
 ;   ... and 4 more
 ;
 ; *****************************************************************************

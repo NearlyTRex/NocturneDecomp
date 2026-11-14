@@ -1,0 +1,194 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 115,
+    "complexity_score": 77,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 47,
+    "suspect_count": 2,
+    "suspect_types": [
+      "warning_overlapping_globals",
+      "warning_type_propagation"
+    ],
+    "total_lines": 162
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005a40f0",
+    "address_range": [
+      [
+        "005a40f0",
+        "005a4211"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_unionzom.cpp_CUnionZombie_processVanishAttackState_FUN_005a40f0",
+    "signature": "void __cdecl core_unionzom_cpp_CUnionZombie_processVanishAttackState_FUN_005a40f0(CUnionZombie *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "0059f570",
+      "is_variadic": false,
+      "name": "core_basicene.cpp_FUN_0059f570"
+    },
+    {
+      "addr": "005a01a0",
+      "is_variadic": false,
+      "name": "core_basicene.cpp_FUN_005a01a0"
+    },
+    {
+      "addr": "00423850",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850"
+    },
+    {
+      "addr": "00503620",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_00503620"
+    },
+    {
+      "addr": "005035c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_FUN_005035c0"
+    },
+    {
+      "addr": "0059d7f0",
+      "is_variadic": false,
+      "name": "core_muzzle.cpp_FUN_0059d7f0"
+    },
+    {
+      "addr": "0059d8e0",
+      "is_variadic": false,
+      "name": "core_muzzle.cpp_FUN_0059d8e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f02b5",
+      "name": "s_MeleeAttack_005f02b5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f02c1",
+      "name": "s_ChaseComplete_005f02c1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f02cf",
+      "name": "s_MeleeAttack_005f02cf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f02de",
+      "name": "DAT_005f02de",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ff544",
+      "name": "DAT_005ff544",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.769230769230769,
+    "instruction_count": 91,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 2,
+      "CALL": 10,
+      "CBRANCH": 7,
+      "COPY": 102,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT_ADD": 43,
+      "INT_AND": 38,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 32,
+      "INT_LEFT": 4,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 16,
+      "INT_SUB": 38,
+      "INT_ZEXT": 4,
+      "LOAD": 26,
+      "POPCOUNT": 16,
+      "RETURN": 6,
+      "STORE": 38
+    },
+    "pcode_op_count": 434
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CUnionZombie *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 384,
+        "vtable_addr": "005ff554"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -8,10 +8,10 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
-;   cockpit_pkbitmap.cpp_FUN_005385d0 at 0053871c
+;   cockpit_pkbitmap.cpp_parsePBGFile_FUN_005385d0 at 0053871c
 ;
 ; Called Functions:
-;   cockpit_pkbitmap.cpp_FUN_00537550
+;   cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00537550
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
         ;   Label: cockpit_pkbitmap.cpp_CPackedBitmap_dtor_FUN_00537500
     MOV EBX,dword ptr [ESP + 0x8]       ; 00537501
     PUSH EBX                            ; 00537505
-    CALL cockpit_pkbitmap.cpp_FUN_00537550 ; 00537506
-        ;   XREF to: 00537550 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_FUN_00537550()
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00537550 ; 00537506
+        ;   XREF to: 00537550 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00537550(CPackedBitmap * this_ptr)
     ADD ESP,0x4                         ; 0053750b
     MOV EAX,EBX                         ; 0053750e
     POP EBX                             ; 00537510

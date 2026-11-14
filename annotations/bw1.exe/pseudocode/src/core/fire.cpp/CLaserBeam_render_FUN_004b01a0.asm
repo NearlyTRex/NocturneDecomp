@@ -209,7 +209,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_004b5100 at 004b52ce
+;   core_fire.cpp_CFireEffect_render_FUN_004b5100 at 004b52ce
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005df2cc
@@ -230,11 +230,11 @@
 ;   ... and 6 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cc00
-;   core_dirmat.cpp_FUN_0045f3e0
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
 ;   core_dirmat.cpp_FUN_0045f700
 ;   core_fire.cpp_computeScreenSpaceSize_FUN_004b00b0
-;   core_vecdir.cpp_FUN_005a7520
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
 ;   crt_math.c_round_FUN_005c03a0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00
@@ -288,8 +288,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004b020d
     PUSH EAX                            ; 004b020e
     LEA ESI,[ESP + 0x26c]               ; 004b020f
-    CALL core_vecdir.cpp_FUN_005a7520   ; 004b0216
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005a7520()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 004b0216
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
     ADD ESP,0x4                         ; 004b021b
     FLD float ptr [ESP + 0x218]         ; 004b021e
     FMUL ST0                            ; 004b0225
@@ -310,8 +310,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004b025e
     PUSH EAX                            ; 004b025f
     FSTP float ptr [ESP + 0x30]         ; 004b0260
-    CALL core_dirmat.cpp_FUN_0045f3e0   ; 004b0264
-        ;   XREF to: 0045f3e0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_0045f3e0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0 ; 004b0264
+        ;   XREF to: 0045f3e0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 004b0269
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b026c
     LEA ESI,[ESP + 0x280]               ; 004b026f
@@ -325,8 +325,8 @@ section .text
     MOV EAX,dword ptr [EAX + 0x1c]      ; 004b0290
     MOV dword ptr [ESP + 0x24],ECX      ; 004b0293
     MOV dword ptr [ESP + 0x20],EAX      ; 004b0297
-    CALL engine_matrix.c_FUN_00483ae0   ; 004b029b
-        ;   XREF to: 00483ae0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_00483ae0()
+    CALL engine_drender.cpp_FUN_00483ae0 ; 004b029b
+        ;   XREF to: 00483ae0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00483ae0()
     LEA ESI,[ESP + 0x284]               ; 004b02a0
     ADD ESP,0x4                         ; 004b02a7
     LEA EDX,[ESP + 0x1d8]               ; 004b02aa
@@ -475,7 +475,7 @@ section .text
     JNC 0x004b0a03                      ; 004b049f
         ;   XREF to: 004b0a03 (CONDITIONAL_JUMP)  ; LAB_004b0a03
     MOV EAX,[0x0061d95c]                ; 004b04a5 | g_CGamePtr
-    CMP dword ptr [EAX + 0xc],0x0       ; 004b04aa | g_CGameInstance.field12_0xc
+    CMP dword ptr [EAX + 0xc],0x0       ; 004b04aa | g_CGameInstance.halo_mode
     JZ 0x004b0a03                       ; 004b04ae
         ;   XREF to: 004b0a03 (CONDITIONAL_JUMP)  ; LAB_004b0a03
     FLD double ptr [ESP]                ; 004b04b4
@@ -584,8 +584,8 @@ section .text
     PUSH EDI                            ; 004b0641 | DAT_01bc120c
     LEA ESI,[ESP + 0x128]               ; 004b0642
     LEA EBX,[ESP + 0x278]               ; 004b0649
-    CALL engine_matrix.c_FUN_00483b70   ; 004b0650
-        ;   XREF to: 00483b70 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_00483b70()
+    CALL engine_drender.cpp_FUN_00483b70 ; 004b0650
+        ;   XREF to: 00483b70 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00483b70()
     LEA EDI,[ESP + 0x1c4]               ; 004b0655
     ADD ESP,0x4                         ; 004b065c
     LEA ESI,[ESP + 0x124]               ; 004b065f
@@ -806,8 +806,8 @@ section .text
     ADD ESP,0x8                         ; 004b09c9
     MOV EAX,[0x00612560]                ; 004b09cc | DAT_00612560
     PUSH EAX                            ; 004b09d1 | DAT_01bc120c
-    CALL engine_matrix.c_pop_FUN_004839a0 ; 004b09d2
-        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004839a0()
+    CALL engine_drender.cpp_pop_FUN_004839a0 ; 004b09d2
+        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_004839a0()
     ADD ESP,0x4                         ; 004b09d7
     MOV EDX,dword ptr [ESP + 0x390]     ; 004b09da
     INC EDX                             ; 004b09e1
@@ -878,7 +878,7 @@ section .text
     PUSH dword ptr [EAX + 0x38]         ; 004b0ab2
     PUSH 0x0                            ; 004b0ab5
     CALL core_fire.cpp_computeScreenSpaceSize_FUN_004b00b0 ; 004b0ab7
-        ;   XREF to: 004b00b0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_computeScreenSpaceSize_FUN_004b00b0()
+        ;   XREF to: 004b00b0 (UNCONDITIONAL_CALL)  ; float core_fire.cpp_computeScreenSpaceSize_FUN_004b00b0(float depth, float min_size)
     MOV dword ptr [ESP + 0x3a4],EAX     ; 004b0abc
     FLD float ptr [ESP + 0x3a4]         ; 004b0ac3
     ADD ESP,0x8                         ; 004b0aca
@@ -886,7 +886,7 @@ section .text
     PUSH dword ptr [ESP + 0x2c]         ; 004b0ad4
     FSTP float ptr [ESP + 0x37c]        ; 004b0ad8
     CALL core_fire.cpp_computeScreenSpaceSize_FUN_004b00b0 ; 004b0adf
-        ;   XREF to: 004b00b0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_computeScreenSpaceSize_FUN_004b00b0()
+        ;   XREF to: 004b00b0 (UNCONDITIONAL_CALL)  ; float core_fire.cpp_computeScreenSpaceSize_FUN_004b00b0(float depth, float min_size)
     MOV dword ptr [ESP + 0x3a4],EAX     ; 004b0ae4
     FLD float ptr [ESP + 0x3a4]         ; 004b0aeb
     ADD ESP,0x8                         ; 004b0af2
@@ -1007,8 +1007,8 @@ section .text
     MOV EDI,dword ptr [0x00612560]      ; 004b0cde | DAT_00612560
         ;   Label: LAB_004b0cde
     PUSH EDI                            ; 004b0ce4 | DAT_01bc120c
-    CALL engine_matrix.c_pop_FUN_004839a0 ; 004b0ce5
-        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004839a0()
+    CALL engine_drender.cpp_pop_FUN_004839a0 ; 004b0ce5
+        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_004839a0()
     ADD ESP,0x4                         ; 004b0cea
     FLD float ptr [ESP + 0x1c]          ; 004b0ced
         ;   Label: LAB_004b0ced
@@ -1050,8 +1050,8 @@ section .text
         ;   Label: LAB_004b0d59
     PUSH EDI                            ; 004b0d5f | DAT_01bc120c
     LEA ESI,[ESP + 0x1ac]               ; 004b0d60
-    CALL engine_matrix.c_FUN_00483ae0   ; 004b0d67
-        ;   XREF to: 00483ae0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_00483ae0()
+    CALL engine_drender.cpp_FUN_00483ae0 ; 004b0d67
+        ;   XREF to: 00483ae0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00483ae0()
     LEA EDI,[ESP + 0x14c]               ; 004b0d6c
     LEA ESI,[ESP + 0x1ac]               ; 004b0d73
     ADD ESP,0x4                         ; 004b0d7a
@@ -1360,8 +1360,8 @@ section .text
     PUSH EAX                            ; 004b1237
     LEA ESI,[ESP + 0x224]               ; 004b1238
     LEA EDI,[ESP + 0x290]               ; 004b123f
-    CALL core_vecdir.cpp_FUN_005a7520   ; 004b1246
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005a7520()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 004b1246
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
     LEA ESI,[ESP + 0x224]               ; 004b124b
     LEA EDX,[ESP + 0x290]               ; 004b1252
     ADD ESP,0x4                         ; 004b1259
@@ -1573,8 +1573,8 @@ section .text
     ADD ESP,0x8                         ; 004b155d
     PUSH 0x471fff00                     ; 004b1560
     PUSH 0x47000000                     ; 004b1565
-    CALL core_actor.cpp_FUN_0040cc00    ; 004b156a
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 004b156a
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [ESP + 0x3a4],EAX     ; 004b156f
     FLD float ptr [ESP + 0x3a4]         ; 004b1576
     ADD ESP,0x8                         ; 004b157d
@@ -1598,8 +1598,8 @@ section .text
     ADD ESP,0x8                         ; 004b15b8
     MOV EBX,dword ptr [0x00612560]      ; 004b15bb | DAT_00612560
     PUSH EBX                            ; 004b15c1 | DAT_01bc120c
-    CALL engine_matrix.c_pop_FUN_004839a0 ; 004b15c2
-        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004839a0()
+    CALL engine_drender.cpp_pop_FUN_004839a0 ; 004b15c2
+        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_004839a0()
     ADD ESP,0x4                         ; 004b15c7
     JMP 0x004b0cfe                      ; 004b15ca
         ;   XREF to: 004b0cfe (UNCONDITIONAL_JUMP)  ; LAB_004b0cfe

@@ -7,43 +7,43 @@
 
 // Original: core_barrier.cpp_staticInit_FUN_00410c50
 // Address: 00410c50
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_barrier.cpp_factoryFuncBarrier_FUN_00410c80
 // Address: 00410c80
-void factoryFuncBarrier(void);
+CBarrier * __cdecl factoryFuncBarrier(void);
 
 // Original: core_barrier.cpp_CBarrier_getActorType_FUN_00410ca0
 // Address: 00410ca0
-CDemonActorType * CBarrier::getActorType(CBarrier *this_ptr);
+CDemonActorType * __cdecl CBarrier::getActorType(CBarrier *this_ptr);
 
 // Original: core_barrier.cpp_CBarrier_ctor_FUN_00410cb0
 // Address: 00410cb0
 CBarrier * __cdecl CBarrier::ctor(CBarrier *this_ptr);
 
-// Original: core_barrier.cpp_FUN_00410d00
+// Original: core_barrier.cpp_CBarrier_setup_FUN_00410d00
 // Address: 00410d00
-void FUN_00410d00(CDemonActor *param_1);
+void __cdecl CBarrier::setup(CBarrier *this_ptr);
 
-// Original: core_barrier.cpp_FUN_00410d30
+// Original: core_barrier.cpp_CBarrier_renderTransparent_FUN_00410d30
 // Address: 00410d30
-undefined4 FUN_00410d30(void);
+int __cdecl CBarrier::renderTransparent(CBarrier *this_ptr);
 
-// Original: core_barrier.cpp_FUN_00410d40
+// Original: core_barrier.cpp_CBarrier_getBoundingBox_FUN_00410d40
 // Address: 00410d40
-void FUN_00410d40(int param_1);
+CBoundingBox3D * __cdecl CBarrier::getBoundingBox(CBarrier *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_barrier.cpp_FUN_00410dc0
+// Original: core_barrier.cpp_CBarrier_archive_FUN_00410dc0
 // Address: 00410dc0
-void FUN_00410dc0(CDemonActor *param_1);
+void __cdecl CBarrier::archive(CBarrier *this_ptr);
 
-// Original: core_barrier.cpp_FUN_00410e20
+// Original: core_barrier.cpp_CBarrier_getCollisionType_FUN_00410e20
 // Address: 00410e20
-undefined4 FUN_00410e20(int param_1,int *param_2);
+ECollisionType __cdecl CBarrier::getCollisionType(CBarrier *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_barrier.cpp_FUN_00410e60
+// Original: core_barrier.cpp_CBarrier_updateCollisionData_FUN_00410e60
 // Address: 00410e60
-void FUN_00410e60(CDemonActor *param_1);
+void __cdecl CBarrier::updateCollisionData(CBarrier *this_ptr);
 
 // Original: core_barrier.cpp_CBarrier_dtor_FUN_00410e80
 // Address: 00410e80

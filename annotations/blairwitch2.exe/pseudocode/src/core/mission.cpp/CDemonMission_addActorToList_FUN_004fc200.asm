@@ -8,16 +8,16 @@
 ; CDemonActor *    Stack[0x8]:4   actor
 ;
 ; XREF[14]:
-;   core_baron.cpp_FUN_00410ac0 at 00410b5e
-;   core_bodypart.cpp_FUN_004154f0 at 004155b3
+;   core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00410ac0 at 00410b5e
+;   core_bodypart.cpp_createBodyPart_FUN_004154f0 at 004155b3
+;   core_doc.cpp_FUN_0045bdc0 at 0045c873
 ;   core_gore.cpp_FUN_004c9bd0 at 004c9c9d
 ;   core_mimic.cpp_CMimic_processMorph_FUN_004f1e90 at 004f1f38
 ;   core_mission.cpp_CDemonMission_createOneHero_FUN_004fcf70 at 004fd090
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_004fb590 at 004fbb56
 ;   core_mission.cpp_FUN_004fd280 at 004fd3c5
-;   core_passngr.cpp_FUN_005117a0 at 005118c6
-;   core_script.cpp_FUN_00522350 at 00526a6f
-;   core_stranger.cpp_FUN_0056db50 at 0056dd52
+;   core_passngr.cpp_CPassenger_process_FUN_005117a0 at 005118c6
+;   core_script.cpp_CScript_step_FUN_00522350 at 00526a6f
 ;   ... and 4 more
 ;
 ; Called Functions:

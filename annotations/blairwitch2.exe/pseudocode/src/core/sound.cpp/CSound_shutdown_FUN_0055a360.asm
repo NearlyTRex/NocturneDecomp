@@ -7,7 +7,7 @@
 ; CSound *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_004b6170 at 004b67d9
+;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b67d9
 ;   core_game.cpp_FUN_004b82e0 at 004b836a
 ;
 ; Referenced Globals:

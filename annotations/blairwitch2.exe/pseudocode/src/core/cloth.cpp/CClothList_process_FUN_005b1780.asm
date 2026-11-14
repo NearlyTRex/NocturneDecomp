@@ -12,13 +12,13 @@
 ; CDeformableModelInstance * Stack[0x18]:4   model_ptr
 ;
 ; XREF[7]:
-;   core_charactr.cpp_FUN_00422930 at 00422afa
-;   core_charactr.cpp_FUN_00422ec0 at 00422f2d
-;   core_charactr.cpp_FUN_00429e90 at 00429f0d
-;   core_doc.cpp_FUN_00450620 at 004509a9
-;   core_succubus.cpp_FUN_0056f3a0 at 0056f451
-;   core_succubus.cpp_FUN_0056f6d0 at 0056fb12
-;   unkafter_basicene.cpp_FUN_0059e6a0 at 0059e765
+;   core_basicene.cpp_CBasicEnemy_setup_FUN_0059e6a0 at 0059e765
+;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90 at 00429f0d
+;   core_charactr.cpp_CCharacter_setPositionAndOrientation_FUN_00422ec0 at 00422f2d
+;   core_charactr.cpp_CCharacter_setup_FUN_00422930 at 00422afa
+;   core_doc.cpp_CDoc_setup_FUN_00450620 at 004509a9
+;   core_succubus.cpp_CSuccubus_process_FUN_0056f6d0 at 0056fb12
+;   core_succubus.cpp_CSuccubus_setup_FUN_0056f3a0 at 0056f451
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_process_FUN_005afdf0

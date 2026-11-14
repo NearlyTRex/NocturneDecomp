@@ -39,27 +39,18 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
   int c;
   uint frame_byte;
   uint added;
-  float field_of_view;
-  uint screen_width;
-  int logo_x;
 
-  screen_width = 0x280;
-  logo_x = 0;
 #if !NOCTURNE_AUTHENTIC_MENU
-  screen_width = (uint)g_WindowWidth;
-  logo_x = nocturne_menu_left();
+  nocturne_moon_render(this_ptr);
+  return;
 #endif
   sound_sndmain_cpp_processAudio_FUN_005abe20();
   engine_special_cpp_clearScreen_FUN_005b3e70();
   engine_special_cpp_clearZBufferNative_FUN_005b3ed4();
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
             (g_CDemonRendererPtr2,&g_ZeroVector.f);
-  field_of_view = 112.0;
-#if !NOCTURNE_AUTHENTIC_MENU
-  field_of_view = nocturne_menu_scene_begin(field_of_view);
-#endif
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
-            (g_CDemonRendererPtr2,field_of_view);
+            (g_CDemonRendererPtr2,112.0);
   engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
             (g_CDemonRendererPtr2,&g_ZeroVector.f);
   local_5c.x = (this_ptr->rotation_phase + (float)-0.5) * (float)48;
@@ -123,9 +114,6 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
     } while (iVar5 != 30);
   }
   g_CDemonSetPtr->rendering_mode = 0;
-#if !NOCTURNE_AUTHENTIC_MENU
-  nocturne_menu_scene_end();
-#endif
   engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_00410cf0(&g_MoonCloudTexture);
   pcVar3 = g_MoonCloudTexture.raw;
   iVar4 = g_MoonCloudScrollX >> 0x10;
@@ -168,7 +156,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
 
       puVar6 = puVar6 + 2;
       uVar4 = uVar4 + 2;
-    } while (uVar4 < screen_width);
+    } while (uVar4 < 0x280);
     local_28 = local_28 + 1;
   } while ((int)local_28 < 0x1e0);
   engine_3d_c_setBlendMode_FUN_00406dd0(1);
@@ -177,7 +165,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
     local_1c = 0;
   }
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950
-            (g_MoonAnimTextures + local_1c,logo_x,0,48000);
+            (g_MoonAnimTextures + local_1c,0,0,48000);
   engine_3d_c_setBlendMode_FUN_00406dd0(0);
 #if !NOCTURNE_AUTHENTIC_MENU_LIGHTING
   g_CDemonSetPtr->light_direction = saved_light_direction;

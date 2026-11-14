@@ -1,14 +1,14 @@
 // Name: core_prye.cpp_staticInit_FUN_00517c20
 // Address: 00517c20
 // Address Range: [[00517c20, 00517c8d]]
-// Convention: unknown
-// Signature: void core_prye_cpp_staticInit_FUN_00517c20(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_prye_cpp_staticInit_FUN_00517c20(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_prye_cpp_staticInit_FUN_00517c20(void)
+void __cdecl core_prye_cpp_staticInit_FUN_00517c20(void)
 
 {
   _DAT_01ed36c0 = 0x3f083127;

@@ -10,9 +10,13 @@
 // =============================================================================
 
 // Structure: MathErrorContext
-// Stub: no RTTI in this build, size and fields not yet recovered
 #pragma pack(push, 1)
 typedef struct MathErrorContext {
+    int errorType;
+    char* errorData;
+    double inputValue1;
+    double inputValue2;
+    double resultValue;
 } MathErrorContext;
 #pragma pack(pop)
 

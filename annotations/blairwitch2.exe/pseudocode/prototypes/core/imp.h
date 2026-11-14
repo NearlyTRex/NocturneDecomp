@@ -7,51 +7,51 @@
 
 // Original: core_imp.cpp_staticInit_FUN_004d6590
 // Address: 004d6590
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_imp.cpp_factoryFuncImp_FUN_004d65c0
 // Address: 004d65c0
-void factoryFuncImp(void);
+CImp * __cdecl factoryFuncImp(void);
 
 // Original: core_imp.cpp_CImp_getActorType_FUN_004d65e0
 // Address: 004d65e0
-CDemonActorType * CImp::getActorType(CImp *this_ptr);
+CDemonActorType * __cdecl CImp::getActorType(CImp *this_ptr);
 
 // Original: core_imp.cpp_CImp_ctor_FUN_004d65f0
 // Address: 004d65f0
 CImp * __cdecl CImp::ctor(CImp *this_ptr);
 
-// Original: core_imp.cpp_FUN_004d6660
+// Original: core_imp.cpp_CImp_setup_FUN_004d6660
 // Address: 004d6660
-void FUN_004d6660(CEnemy *param_1);
+void __cdecl CImp::setup(CImp *this_ptr);
 
-// Original: core_imp.cpp_FUN_004d6980
+// Original: core_imp.cpp_CImp_process_FUN_004d6980
 // Address: 004d6980
-void FUN_004d6980(CEnemy *param_1,float param_2);
+void __cdecl CImp::process(CImp *this_ptr,float delta_time);
 
-// Original: core_imp.cpp_FUN_004d7850
+// Original: core_imp.cpp_CImp_getCarryObjToBodyXForm_FUN_004d7850
 // Address: 004d7850
-void FUN_004d7850(int param_1,int param_2);
+CMatrix3x4f * __stack2_esi CImp::getCarryObjToBodyXForm(CImp *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_imp.cpp_CImp_attractActorToward_FUN_004d7a40
 // Address: 004d7a40
 int __cdecl CImp::attractActorToward(CImp *this_ptr,CDemonActor *actor,CVector3f *target_local_point);
 
-// Original: core_imp.cpp_FUN_004d7a50
+// Original: core_imp.cpp_CImp_archive_FUN_004d7a50
 // Address: 004d7a50
-void FUN_004d7a50(CEnemy *param_1);
+void __cdecl CImp::archive(CImp *this_ptr);
 
-// Original: core_imp.cpp_FUN_004d7ab0
+// Original: core_imp.cpp_CImp_processDismemberment_FUN_004d7ab0
 // Address: 004d7ab0
-void __cdecl FUN_004d7ab0(CImp *this_ptr,SDamageInfo *damage_info);
+void __cdecl CImp::processDismemberment(CImp *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_imp.cpp_FUN_004d7d50
+// Original: core_imp.cpp_CImp_processDamage_FUN_004d7d50
 // Address: 004d7d50
-void FUN_004d7d50(CImp *param_1,SDamageInfo *param_2);
+void __cdecl CImp::processDamage(CImp *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_imp.cpp_FUN_004d7e90
+// Original: core_imp.cpp_CImp_getTargetPoints_FUN_004d7e90
 // Address: 004d7e90
-int FUN_004d7e90(int param_1,undefined4 *param_2);
+int __cdecl CImp::getTargetPoints(CImp *this_ptr,CVector3f *out_points_array);
 
 // Original: core_imp.cpp_CImp_getCollisionType_FUN_004d80b0
 // Address: 004d80b0
@@ -59,4 +59,4 @@ ECollisionType __cdecl CImp::getCollisionType(CImp *this_ptr,SCollisionInfo *col
 
 // Original: core_imp.cpp_CImp_dtor_FUN_004d80d0
 // Address: 004d80d0
-CImp * CImp::dtor(CImp *this_ptr,uint flags);
+CImp * __cdecl CImp::dtor(CImp *this_ptr,uint flags);

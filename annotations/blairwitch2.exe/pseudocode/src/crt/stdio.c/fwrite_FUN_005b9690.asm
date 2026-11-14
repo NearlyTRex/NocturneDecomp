@@ -1,16 +1,22 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl crt_stdio_c_fwrite_FUN_005b9690(undefined4 *param_1,uint param_2,int param_3,int *param_4)
+; SIZE_T __cdecl crt_stdio_c_fwrite_FUN_005b9690(void *ptr,SIZE_T size,SIZE_T count,_FILE *file)
 ;
+; Parameters:
+; void *           Stack[0x4]:4   ptr
+; SIZE_T           Stack[0x8]:4   size
+; SIZE_T           Stack[0xc]:4   count
+; _FILE *          Stack[0x10]:4   file
 ;
-; XREF[6]:
-;   cockpit_pkbitmap.cpp_FUN_00516e60 at 00516ebd
-;   cockpit_pkbitmap.cpp_FUN_00517200 at 00517237
+; XREF[7]:
+;   cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_00516e60 at 00516ebd
+;   cockpit_pkbitmap.cpp_writePBGHeader_FUN_00517200 at 00517237
+;   core_dcube.cpp_CDemonCubeTriangle_writeToFile_FUN_00444830 at 00444876
 ;   core_setdir.cpp_CZThumb_write_FUN_00538670 at 00538687
-;   engine_pcx.c_FUN_00514a30 at 00514b44
-;   engine_pod.cpp_FUN_0051b6dc at 0051b851
-;   support_trstream.cpp_FUN_0057dca0 at 0057dcc4
+;   engine_pcx.c_saveScreenshotGeneral_FUN_00514a30 at 00514b44
+;   engine_pod.cpp_FUN_0051b6e0 at 0051b851
+;   support_trstream.cpp_COutStreamFile_write_FUN_0057dca0 at 0057dcc4
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005bcdfc_0061f2a4 = 005bcdfc
@@ -223,7 +229,7 @@ section .text
     PUSH EAX                            ; 005b984c
     INC EBP                             ; 005b984d
     CALL crt_stdio.c_fputc_FUN_005bab40 ; 005b984e
-        ;   XREF to: 005bab40 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fputc_FUN_005bab40()
+        ;   XREF to: 005bab40 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005bab40(int character, _FILE * file)
     MOV DL,byte ptr [EBX + 0xc]         ; 005b9853
     ADD ESP,0x8                         ; 005b9856
     TEST DL,0x30                        ; 005b9859

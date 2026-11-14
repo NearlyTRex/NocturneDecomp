@@ -1,0 +1,179 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 66,
+    "complexity_score": 36,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 21,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 87
+  },
+  "cross_references": [
+    {
+      "addr": "005042e0",
+      "from_addr": "005043b4",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_renderOpaque_FUN_005042e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005054c0",
+    "address_range": [
+      [
+        "005054c0",
+        "0050555d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_manpuz.cpp_CMansionPuzzleCircle_renderReflector_FUN_005054c0",
+    "signature": "void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderReflector_FUN_005054c0(CMansionPuzzleCircle *this_ptr,int reflector_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "00468900",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900"
+    },
+    {
+      "addr": "004688a0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0"
+    },
+    {
+      "addr": "00483850",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850"
+    },
+    {
+      "addr": "004839a0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_pop_FUN_004839a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00612560",
+      "name": "DAT_00612560",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061f650",
+      "name": "DAT_0061f650",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005043b4",
+        "call_type": "direct",
+        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_renderOpaque_FUN_005042e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.793103448275862,
+    "instruction_count": 58,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 1,
+      "CALL": 4,
+      "CBRANCH": 2,
+      "COPY": 93,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 2,
+      "INT_ADD": 26,
+      "INT_AND": 40,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 25,
+      "INT_LEFT": 6,
+      "INT_LESS": 4,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 7,
+      "INT_OR": 10,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 14,
+      "INT_SUB": 20,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 15,
+      "POPCOUNT": 12,
+      "RETURN": 2,
+      "STORE": 16
+    },
+    "pcode_op_count": 336
+  },
+  "siblings": {
+    "nocedit.exe": {
+      "addr": "0050a1f0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004cabf0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMansionPuzzleCircle *"
+      },
+      {
+        "is_param": true,
+        "name": "reflector_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "(DAT_00612560,&this_ptr->reflectors[reflector_index].rotation,",
+      "type": "undefined_data"
+    }
+  ]
+}

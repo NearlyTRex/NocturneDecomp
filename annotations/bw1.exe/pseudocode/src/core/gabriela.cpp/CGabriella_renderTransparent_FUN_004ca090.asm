@@ -7,7 +7,7 @@
 ; CGabriella *     Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_004301e0
+;   core_charactr.cpp_CCharacter_renderTransparent_FUN_004301e0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
     ADD ESP,0x4                         ; 004ca0a4
     MOV EDX,dword ptr [ESP + 0x4]       ; 004ca0a7
     PUSH EDX                            ; 004ca0ab
-    CALL core_charactr.cpp_FUN_004301e0 ; 004ca0ac
-        ;   XREF to: 004301e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004301e0()
+    CALL core_charactr.cpp_CCharacter_renderTransparent_FUN_004301e0 ; 004ca0ac
+        ;   XREF to: 004301e0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_renderTransparent_FUN_004301e0(CCharacter * this_ptr)
     MOV EAX,0x1                         ; 004ca0b1
     ADD ESP,0x4                         ; 004ca0b6
     RET                                 ; 004ca0b9

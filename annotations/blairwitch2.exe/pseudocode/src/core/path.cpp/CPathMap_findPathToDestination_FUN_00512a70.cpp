@@ -11,26 +11,30 @@
 int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00512a70(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles,int direction_hint)
 
 {
-  int iVar1;
+  float *pfVar1;
   int iVar2;
-  uint uVar3;
+  int iVar3;
   uint uVar4;
-  uint uVar5;
-  float *pfVar6;
-  byte bVar7;
-  float10 fVar8;
-  float afStackY_11cc [1011];
+  float fVar5;
+  uint uVar6;
+  uint uVar7;
+  uint *puVar8;
+  byte bVar9;
+  float10 fVar10;
+  int aiStackY_11cc [3];
+  float afStackY_11c0 [6];
+  int aiStackY_11a8 [6];
+  float afStackY_1190 [996];
   CVector3f local_1e4;
   float local_1d8;
   float local_1d4 [2];
   CVector3f local_1cc;
-  CVector3f local_1c0;
-  int local_1b4;
-  uint local_1b0;
-  int local_1ac;
-  CVector3f local_1a8;
-  float local_19c;
-  float local_198 [5];
+  float local_1c0;
+  int aiStack_1bc [5];
+  float local_1a8;
+  float afStack_1a4 [4];
+  float local_194;
+  float local_190 [3];
   float local_184;
   float local_180;
   float local_17c;
@@ -41,9 +45,10 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00512a70(CPathMap *
   float local_168;
   float local_164;
   CVector3f local_160;
-  CVector3f local_154;
-  float local_148;
-  float afStack_144 [4];
+  float local_154;
+  float afStack_150 [5];
+  float local_13c;
+  float local_138;
   float local_134;
   float local_130;
   float local_12c [2];
@@ -52,361 +57,357 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00512a70(CPathMap *
   float local_118;
   float afStack_114 [4];
   float local_104;
-  uint local_100;
-  float local_f4 [3];
+  CVector3i local_100;
+  float local_f4;
+  float afStack_f0 [2];
   CVector3f local_e8;
   float local_dc;
   float afStack_d8 [4];
   float local_c8;
   CVector3f local_c4;
-  CVector3f local_b8;
-  CVector3f local_ac;
+  float local_b8;
+  float afStack_b4 [5];
   CVector3f local_a0;
-  CVector3f local_94;
-  float local_88;
-  float afStack_84 [5];
+  float local_94;
+  float afStack_90 [5];
+  float local_7c [3];
   float local_70;
   CVector3f local_64;
   CVector3f local_58;
-  CVector3f local_4c;
-  float local_40;
-  float afStack_3c [4];
+  float local_4c;
+  float afStack_48 [5];
+  float local_34;
+  float local_30;
   float local_2c;
-  CVector3f local_28;
+  float local_28;
   uint local_1c;
   uint local_18;
   int local_14;
   
-  bVar7 = 0;
-  core_dtrace_cpp_FUN_00476a50(&g_CDemonRaytraceInstance,dest_position);
-  pfVar6 = (float *)((int)this_ptr + (uint)bVar7 * -8 + 0x1c);
-  *(uint *)&this_ptr->field_0x18 = local_100;
-  *pfVar6 = afStack_114[(uint)bVar7 * -2 + 6];
-  pfVar6[(uint)bVar7 * -2 + 1] = afStack_114[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7];
-  local_1b4 = 0;
-  local_1b0 = 0;
-  local_1ac = 0;
+  bVar9 = 0;
+  core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00476a50
+            (&g_CDemonRaytraceInstance,dest_position,&local_100);
+  puVar8 = (uint *)((int)this_ptr + (uint)bVar9 * -8 + 0x1c);
+  (this_ptr->dest_voxel_coords).x = local_100.x;
+  *puVar8 = *(uint *)((int)&local_100 + (uint)bVar9 * -8 + 4);
+  puVar8[(uint)bVar9 * -2 + 1] =
+       *(uint *)((int)&local_100 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
+  aiStack_1bc[2] = 0;
+  aiStack_1bc[3] = 0;
+  aiStack_1bc[4] = 0;
   switch(direction_hint % 9) {
   case 1:
-    local_1b4 = 4;
+    aiStack_1bc[2] = 4;
     break;
   case 2:
-    local_1b4 = -4;
+    aiStack_1bc[2] = -4;
     break;
   case 3:
-    local_1ac = 4;
+    aiStack_1bc[4] = 4;
     break;
   case 4:
-    local_1ac = -4;
+    aiStack_1bc[4] = -4;
     break;
   case 5:
-    local_1ac = 4;
-    local_1b4 = 4;
+    aiStack_1bc[4] = 4;
+    aiStack_1bc[2] = 4;
     break;
   case 6:
-    local_1ac = 4;
-    local_1b4 = -4;
+    aiStack_1bc[4] = 4;
+    aiStack_1bc[2] = -4;
     break;
   case 7:
-    local_1ac = -4;
-    local_1b4 = -4;
+    aiStack_1bc[4] = -4;
+    aiStack_1bc[2] = -4;
     break;
   case 8:
-    local_1ac = -4;
-    local_1b4 = 4;
+    aiStack_1bc[4] = -4;
+    aiStack_1bc[2] = 4;
   }
-  local_124 = *(int *)&this_ptr->field_0xc - *(int *)&this_ptr->field_0x18;
+  local_124 = (this_ptr->voxel_coords).x - (this_ptr->dest_voxel_coords).x;
   if (0x31 < (int)((local_124 ^ (int)local_124 >> 0x1f) - ((int)local_124 >> 0x1f))) {
-    local_130 = *(float *)this_ptr - *(float *)dest_position;
-    local_12c[0] = *(float *)&this_ptr->field_0x4 - *(float *)&dest_position->field_0x4;
-    local_12c[1] = *(float *)&this_ptr->field_0x8 - *(float *)&dest_position->field_0x8;
-    local_dc = *(float *)this_ptr - *(float *)dest_position;
-    afStack_d8[(uint)bVar7 * -2] = local_12c[(uint)bVar7 * -2];
-    afStack_d8[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-         local_12c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-    core_vecdir_cpp_FUN_005838f0(&local_dc);
-    local_c4._0_4_ = local_1a8._0_4_;
-    *(uint *)((int)&local_c4 + (uint)bVar7 * -8 + 4) =
-         *(uint *)((int)&local_1a8 + (uint)bVar7 * -8 + 4);
-    *(uint *)((int)&local_c4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-         *(uint *)((int)&local_1a8 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+    local_130 = (this_ptr->current_position).x - dest_position->x;
+    local_12c[0] = (this_ptr->current_position).y - dest_position->y;
+    local_12c[1] = (this_ptr->current_position).z - dest_position->z;
+    local_dc = local_130;
+    afStack_d8[(uint)bVar9 * -2] = local_12c[(uint)bVar9 * -2];
+    afStack_d8[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
+         local_12c[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&local_dc);
+    local_c4.x = local_1a8;
+    *(float *)((int)&local_c4 + (uint)bVar9 * -8 + 4) = afStack_1a4[(uint)bVar9 * -2];
+    *(float *)((int)&local_c4 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
+         afStack_1a4[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
     if (&local_c4 != out_euler_angles) {
-      *(uint *)out_euler_angles = local_c4._0_4_;
-      *(uint *)&out_euler_angles->field_0x4 = local_c4._4_4_;
-      *(uint *)&out_euler_angles->field_0x8 = local_c4._8_4_;
+      out_euler_angles->x = local_c4.x;
+      out_euler_angles->y = local_c4.y;
+      out_euler_angles->z = local_c4.z;
     }
     return 2;
   }
-  local_11c = *(int *)&this_ptr->field_0x14 - *(int *)&this_ptr->field_0x20;
+  local_11c = (this_ptr->voxel_coords).z - (this_ptr->dest_voxel_coords).z;
   if (0x31 < (int)((local_11c ^ (int)local_11c >> 0x1f) - ((int)local_11c >> 0x1f))) {
-    local_1d8 = *(float *)this_ptr - *(float *)dest_position;
-    local_1d4[0] = *(float *)&this_ptr->field_0x4 - *(float *)&dest_position->field_0x4;
-    local_1d4[1] = *(float *)&this_ptr->field_0x8 - *(float *)&dest_position->field_0x8;
-    local_88 = *(float *)this_ptr - *(float *)dest_position;
-    afStack_84[(uint)bVar7 * -2] = local_1d4[(uint)bVar7 * -2];
-    afStack_84[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-         local_1d4[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-    core_vecdir_cpp_FUN_005838f0(&local_88);
-    local_58._0_4_ = local_94._0_4_;
-    *(uint *)((int)&local_58 + (uint)bVar7 * -8 + 4) =
-         *(uint *)((int)&local_94 + (uint)bVar7 * -8 + 4);
-    *(uint *)((int)&local_58 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-         *(uint *)((int)&local_94 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+    local_1d8 = (this_ptr->current_position).x - dest_position->x;
+    local_1d4[0] = (this_ptr->current_position).y - dest_position->y;
+    local_1d4[1] = (this_ptr->current_position).z - dest_position->z;
+    afStack_90[2] = local_1d8;
+    afStack_90[(uint)bVar9 * -2 + 3] = local_1d4[(uint)bVar9 * -2];
+    afStack_90[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
+         local_1d4[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(afStack_90 + 2);
+    local_58.x = local_94;
+    *(float *)((int)&local_58 + (uint)bVar9 * -8 + 4) = afStack_90[(uint)bVar9 * -2];
+    *(float *)((int)&local_58 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
+         afStack_90[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
     if (&local_58 == out_euler_angles) {
       return 2;
     }
-    *(uint *)out_euler_angles = local_58._0_4_;
-    *(uint *)&out_euler_angles->field_0x4 = local_58._4_4_;
-    *(uint *)&out_euler_angles->field_0x8 = local_58._8_4_;
+    out_euler_angles->x = local_58.x;
+    out_euler_angles->y = local_58.y;
+    out_euler_angles->z = local_58.z;
     return 2;
   }
-  _DAT_01e501fc = *(int *)&this_ptr->field_0x18 - *(int *)&this_ptr->field_0x24;
+  _DAT_01e501fc = (this_ptr->dest_voxel_coords).x - (this_ptr->grid_origin).x;
   _DAT_01e50208 = 0x32;
   _DAT_01e50204 = 0x32;
-  _DAT_01e50200 = *(int *)&this_ptr->field_0x20 - *(int *)&this_ptr->field_0x2c;
+  _DAT_01e50200 = (this_ptr->dest_voxel_coords).z - (this_ptr->grid_origin).z;
   if ((((_DAT_01e501fc < 0) || (99 < _DAT_01e501fc)) || (_DAT_01e50200 < 0)) || (99 < _DAT_01e50200)
      ) {
-    local_16c = *(float *)this_ptr - *(float *)dest_position;
-    local_168 = *(float *)&this_ptr->field_0x4 - *(float *)&dest_position->field_0x4;
-    local_164 = *(float *)&this_ptr->field_0x8 - *(float *)&dest_position->field_0x8;
-    local_148 = *(float *)this_ptr - *(float *)dest_position;
-    afStack_144[(uint)bVar7 * -2] = local_198[(uint)bVar7 * -2 + 0xc];
-    afStack_144[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-         local_198[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 0xd];
-    core_vecdir_cpp_FUN_005838f0(&local_148);
-    local_a0._0_4_ = local_4c._0_4_;
-    *(uint *)((int)&local_a0 + (uint)bVar7 * -8 + 4) =
-         *(uint *)((int)&local_4c + (uint)bVar7 * -8 + 4);
-    *(uint *)((int)&local_a0 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-         *(uint *)((int)&local_4c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+    local_16c = (this_ptr->current_position).x - dest_position->x;
+    local_168 = (this_ptr->current_position).y - dest_position->y;
+    local_164 = (this_ptr->current_position).z - dest_position->z;
+    afStack_150[2] = local_16c;
+    afStack_150[(uint)bVar9 * -2 + 3] = afStack_1a4[(uint)bVar9 * -2 + 0xf];
+    afStack_150[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
+         afStack_1a4[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0x10];
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(afStack_150 + 2);
+    local_a0.x = local_4c;
+    *(float *)((int)&local_a0 + (uint)bVar9 * -8 + 4) = afStack_48[(uint)bVar9 * -2];
+    *(float *)((int)&local_a0 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
+         afStack_48[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
     if (&local_a0 == out_euler_angles) {
       return 2;
     }
-    *(uint *)out_euler_angles = local_a0._0_4_;
-    *(uint *)&out_euler_angles->field_0x4 = local_a0._4_4_;
-    *(uint *)&out_euler_angles->field_0x8 = local_a0._8_4_;
+    out_euler_angles->x = local_a0.x;
+    out_euler_angles->y = local_a0.y;
+    out_euler_angles->z = local_a0.z;
     return 2;
   }
   if ((_DAT_01e501fc == 0x32) && (_DAT_01e50200 == 0x32)) {
-    afStack_3c[2] = *(float *)this_ptr - *(float *)dest_position;
-    afStack_3c[3] = *(float *)&this_ptr->field_0x4 - *(float *)&dest_position->field_0x4;
-    local_2c = *(float *)&this_ptr->field_0x8 - *(float *)&dest_position->field_0x8;
-    local_40 = *(float *)this_ptr - *(float *)dest_position;
-    afStack_3c[(uint)bVar7 * -2] = afStack_3c[(uint)bVar7 * -2 + 3];
-    afStack_3c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-         afStack_3c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
-    core_vecdir_cpp_FUN_005838f0(&local_40);
-    local_1e4._0_4_ = local_1c0._0_4_;
-    *(uint *)((int)&local_1e4 + (uint)bVar7 * -8 + 4) =
-         *(uint *)((int)&local_1c0 + (uint)bVar7 * -8 + 4);
-    *(uint *)((int)&local_1e4 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-         *(uint *)((int)&local_1c0 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+    local_34 = (this_ptr->current_position).x - dest_position->x;
+    local_30 = (this_ptr->current_position).y - dest_position->y;
+    local_2c = (this_ptr->current_position).z - dest_position->z;
+    afStack_48[2] = local_34;
+    afStack_48[(uint)bVar9 * -2 + 3] = afStack_48[(uint)bVar9 * -2 + 6];
+    afStack_48[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
+         afStack_48[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7];
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(afStack_48 + 2);
+    local_1e4.x = local_1c0;
+    *(int *)((int)&local_1e4 + (uint)bVar9 * -8 + 4) = aiStack_1bc[(uint)bVar9 * -2];
+    *(int *)((int)&local_1e4 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
+         aiStack_1bc[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
     if (&local_1e4 != out_euler_angles) {
-      *(uint *)out_euler_angles = local_1e4._0_4_;
-      *(uint *)&out_euler_angles->field_0x4 = local_1e4._4_4_;
-      *(uint *)&out_euler_angles->field_0x8 = local_1e4._8_4_;
+      out_euler_angles->x = local_1e4.x;
+      out_euler_angles->y = local_1e4.y;
+      out_euler_angles->z = local_1e4.z;
     }
     return 1;
   }
-  fVar8 = (float10)*(float *)this_ptr;
-  pfVar6 = (float *)round();
-  local_14 = (int)ROUND(fVar8);
-  fVar8 = (float10)*pfVar6;
+  fVar10 = (float10)(this_ptr->current_position).x;
+  pfVar1 = (float *)round();
+  local_14 = (int)ROUND(fVar10);
+  fVar10 = (float10)*pfVar1;
   round();
-  local_14 = (int)ROUND(fVar8);
-  fVar8 = (float10)*(float *)&this_ptr->field_0x8;
-  iVar1 = round();
-  local_14 = (int)ROUND(fVar8);
-  fVar8 = (float10)*(float *)(iVar1 + 8);
+  local_14 = (int)ROUND(fVar10);
+  fVar10 = (float10)(this_ptr->current_position).z;
+  iVar2 = round();
+  local_14 = (int)ROUND(fVar10);
+  fVar10 = (float10)*(float *)(iVar2 + 8);
   round();
-  local_14 = (int)ROUND(fVar8);
-  iVar1 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_005122f0
-                    (this_ptr,_DAT_01e50200,_DAT_01e501fc,*(int *)&this_ptr->field_0x1c);
+  local_14 = (int)ROUND(fVar10);
   iVar2 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_005122f0
-                    (this_ptr,_DAT_01e50208,_DAT_01e50204,*(int *)&this_ptr->field_0x10);
-  iVar1 = core_path_cpp_CPathMap_isLineWalkable_FUN_00512390
-                    (this_ptr,_DAT_01e501fc,_DAT_01e50200,iVar1,_DAT_01e50204,_DAT_01e50208,iVar2);
-  if (iVar1 != 0) {
-    local_70 = (float)g_CDemonRaytraceInstance._52_4_;
-    afStack_84[(uint)bVar7 * -2 + 6] =
-         *(float *)((int)&g_CDemonRaytraceInstance + (uint)bVar7 * -8 + 0x38);
-    afStack_84[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7] =
-         *(float *)((uint)bVar7 * -8 + 0x1fc9ca4 + (uint)bVar7 * -8);
+                    (this_ptr,_DAT_01e50200,_DAT_01e501fc,(this_ptr->dest_voxel_coords).y);
+  iVar3 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_005122f0
+                    (this_ptr,_DAT_01e50208,_DAT_01e50204,(this_ptr->voxel_coords).y);
+  iVar2 = core_path_cpp_CPathMap_isLineWalkable_FUN_00512390
+                    (this_ptr,_DAT_01e501fc,_DAT_01e50200,iVar2,_DAT_01e50204,_DAT_01e50208,iVar3);
+  if (iVar2 != 0) {
+    local_70 = g_CDemonRaytraceInstance.adjusted_size.x;
+    afStack_90[(uint)bVar9 * -2 + 9] =
+         *(float *)((int)&g_CDemonRaytraceInstance + (uint)bVar9 * -8 + 0x38);
+    afStack_90[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 10] =
+         *(float *)((uint)bVar9 * -8 + 0x1fc9ca4 + (uint)bVar9 * -8);
     afStack_d8[2] = local_70;
-    afStack_d8[(uint)bVar7 * -2 + 3] = afStack_84[(uint)bVar7 * -2 + 6];
-    afStack_d8[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
-         afStack_84[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7];
-    if ((CPathMap *)(afStack_144 + 2) != this_ptr) {
-      afStack_144[2] = *(float *)this_ptr;
-      afStack_144[3] = (float)*(uint *)&this_ptr->field_0x4;
-      local_134 = *(float *)&this_ptr->field_0x8;
+    afStack_d8[(uint)bVar9 * -2 + 3] = afStack_90[(uint)bVar9 * -2 + 9];
+    afStack_d8[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4] =
+         afStack_90[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 10];
+    if ((CPathMap *)(afStack_150 + 5) != this_ptr) {
+      local_13c = (this_ptr->current_position).x;
+      local_138 = (this_ptr->current_position).y;
+      local_134 = (this_ptr->current_position).z;
     }
-    local_14 = local_1ac;
-    afStack_144[2] = (float)local_1b4 * afStack_d8[2] + afStack_144[2];
-    local_134 = (float)local_1ac * local_c8 + local_134;
-    afStack_114[2] = *(float *)this_ptr - *(float *)dest_position;
-    afStack_114[3] = *(float *)&this_ptr->field_0x4 - *(float *)&dest_position->field_0x4;
-    local_104 = *(float *)&this_ptr->field_0x8 - *(float *)&dest_position->field_0x8;
-    local_118 = *(float *)this_ptr - *(float *)dest_position;
-    afStack_114[(uint)bVar7 * -2] = afStack_114[(uint)bVar7 * -2 + 3];
-    afStack_114[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
-         afStack_114[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4];
-    core_vecdir_cpp_FUN_005838f0(&local_118);
-    local_e8._0_4_ = local_ac._0_4_;
-    *(uint *)((int)&local_e8 + (uint)bVar7 * -8 + 4) =
-         *(uint *)((int)&local_ac + (uint)bVar7 * -8 + 4);
-    *(uint *)((int)&local_e8 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-         *(uint *)((int)&local_ac + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+    local_14 = aiStack_1bc[4];
+    local_13c = (float)aiStack_1bc[2] * afStack_d8[2] + local_13c;
+    local_134 = (float)aiStack_1bc[4] * local_c8 + local_134;
+    afStack_114[2] = (this_ptr->current_position).x - dest_position->x;
+    afStack_114[3] = (this_ptr->current_position).y - dest_position->y;
+    local_104 = (this_ptr->current_position).z - dest_position->z;
+    local_118 = afStack_114[2];
+    afStack_114[(uint)bVar9 * -2] = afStack_114[(uint)bVar9 * -2 + 3];
+    afStack_114[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
+         afStack_114[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&local_118);
+    local_e8.x = afStack_b4[2];
+    *(float *)((int)&local_e8 + (uint)bVar9 * -8 + 4) = afStack_b4[(uint)bVar9 * -2 + 3];
+    *(float *)((int)&local_e8 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
+         afStack_b4[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
     if (&local_e8 != out_euler_angles) {
-      *(uint *)out_euler_angles = local_e8._0_4_;
-      *(uint *)&out_euler_angles->field_0x4 = local_e8._4_4_;
-      *(uint *)&out_euler_angles->field_0x8 = local_e8._8_4_;
+      out_euler_angles->x = local_e8.x;
+      out_euler_angles->y = local_e8.y;
+      out_euler_angles->z = local_e8.z;
     }
     return 1;
   }
-  iVar1 = core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_005125e0
+  iVar2 = core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_005125e0
                     (this_ptr,_DAT_01e50204,_DAT_01e50208,_DAT_01e501fc,_DAT_01e50200);
-  if (iVar1 == 0) {
-    uVar4 = core_path_cpp_CPathMap_searchGrid_FUN_00514140(this_ptr,*(int *)&this_ptr->field_0x1c);
-    if (uVar4 != 0) {
-      uVar4 = *(int *)(&this_ptr->field_0x30 + _DAT_01e50204 * 4 + _DAT_01e50208 * 400) -
-              *(int *)&this_ptr->field_0x10;
-      uVar5 = (int)uVar4 >> 0x1f;
-      if (3 < (int)((uVar4 ^ uVar5) - uVar5)) {
-        local_178 = *(float *)this_ptr - *(float *)dest_position;
-        local_174 = *(float *)&this_ptr->field_0x4 - *(float *)&dest_position->field_0x4;
-        local_170 = *(float *)&this_ptr->field_0x8 - *(float *)&dest_position->field_0x8;
-        local_f4[0] = *(float *)this_ptr - *(float *)dest_position;
-        afStack_114[(uint)bVar7 * -2 + 9] = local_198[(uint)bVar7 * -2 + 9];
-        afStack_114[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 10] =
-             local_198[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 10];
-        core_vecdir_cpp_FUN_005838f0(afStack_114 + 8);
-        local_1cc._0_4_ = local_b8._0_4_;
-        *(uint *)((int)&local_1cc + (uint)bVar7 * -8 + 4) =
-             *(uint *)((int)&local_b8 + (uint)bVar7 * -8 + 4);
-        *(uint *)((int)&local_1cc + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-             *(uint *)((int)&local_b8 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+  if (iVar2 == 0) {
+    uVar6 = core_path_cpp_CPathMap_searchGrid_FUN_00514140(this_ptr,(this_ptr->dest_voxel_coords).y)
+    ;
+    if (uVar6 != 0) {
+      uVar6 = this_ptr->height_cache[_DAT_01e50208][_DAT_01e50204] - (this_ptr->voxel_coords).y;
+      uVar7 = (int)uVar6 >> 0x1f;
+      if (3 < (int)((uVar6 ^ uVar7) - uVar7)) {
+        local_178 = (this_ptr->current_position).x - dest_position->x;
+        local_174 = (this_ptr->current_position).y - dest_position->y;
+        local_170 = (this_ptr->current_position).z - dest_position->z;
+        local_f4 = local_178;
+        afStack_f0[(uint)bVar9 * -2] = afStack_1a4[(uint)bVar9 * -2 + 0xc];
+        afStack_f0[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1] =
+             afStack_1a4[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 0xd];
+        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&local_f4);
+        local_1cc.x = local_b8;
+        *(float *)((int)&local_1cc + (uint)bVar9 * -8 + 4) = afStack_b4[(uint)bVar9 * -2];
+        *(float *)((int)&local_1cc + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
+             afStack_b4[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
         if (&local_1cc == out_euler_angles) {
           return 2;
         }
-        *(uint *)out_euler_angles = local_1cc._0_4_;
-        *(uint *)&out_euler_angles->field_0x4 = local_1cc._4_4_;
-        *(uint *)&out_euler_angles->field_0x8 = local_1cc._8_4_;
+        out_euler_angles->x = local_1cc.x;
+        out_euler_angles->y = local_1cc.y;
+        out_euler_angles->z = local_1cc.z;
         return 2;
       }
-      uVar4 = 0xffffffff;
+      uVar6 = 0xffffffff;
       local_18 = 0xffffffff;
-      iVar1 = _DAT_01e50208;
-      iVar2 = _DAT_01e50204;
+      iVar2 = _DAT_01e50208;
+      iVar3 = _DAT_01e50204;
       do {
         local_1c = local_18;
-        local_18 = uVar4;
-        uVar4 = (uint)*(byte *)(iVar2 + 0x1e5ec78 + iVar1 * 100);
-        if (uVar4 == 0) {
-          local_184 = *(float *)this_ptr - *(float *)dest_position;
-          local_180 = *(float *)&this_ptr->field_0x4 - *(float *)&dest_position->field_0x4;
-          local_17c = *(float *)&this_ptr->field_0x8 - *(float *)&dest_position->field_0x8;
-          local_198[2] = *(float *)this_ptr - *(float *)dest_position;
-          local_198[(uint)bVar7 * -2 + 3] = local_198[(uint)bVar7 * -2 + 6];
-          local_198[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
-               local_198[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7];
-          core_vecdir_cpp_FUN_005838f0(local_198 + 2);
-          local_160._0_4_ = local_154._0_4_;
-          *(uint *)((int)&local_160 + (uint)bVar7 * -8 + 4) =
-               *(uint *)((int)&local_154 + (uint)bVar7 * -8 + 4);
-          *(uint *)((int)&local_160 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-               *(uint *)((int)&local_154 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+        local_18 = uVar6;
+        uVar6 = (uint)*(byte *)(iVar3 + 0x1e5ec78 + iVar2 * 100);
+        if (uVar6 == 0) {
+          local_184 = (this_ptr->current_position).x - dest_position->x;
+          local_180 = (this_ptr->current_position).y - dest_position->y;
+          local_17c = (this_ptr->current_position).z - dest_position->z;
+          local_190[0] = local_184;
+          afStack_1a4[(uint)bVar9 * -2 + 6] = afStack_1a4[(uint)bVar9 * -2 + 9];
+          afStack_1a4[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7] =
+               afStack_1a4[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 10];
+          core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(afStack_1a4 + 5);
+          local_160.x = local_154;
+          *(float *)((int)&local_160 + (uint)bVar9 * -8 + 4) = afStack_150[(uint)bVar9 * -2];
+          *(float *)((int)&local_160 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
+               afStack_150[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
           if (&local_160 == out_euler_angles) {
             return 2;
           }
-          *(uint *)out_euler_angles = local_160._0_4_;
-          *(uint *)&out_euler_angles->field_0x4 = local_160._4_4_;
-          *(uint *)&out_euler_angles->field_0x8 = local_160._8_4_;
+          out_euler_angles->x = local_160.x;
+          out_euler_angles->y = local_160.y;
+          out_euler_angles->z = local_160.z;
           return 2;
         }
-        iVar2 = iVar2 - *(int *)(&DAT_0061b328 + uVar4 * 4);
-        iVar1 = iVar1 - *(int *)(&DAT_0061b34c + uVar4 * 4);
-        if (iVar2 < 0) {
+        iVar3 = iVar3 - *(int *)(&DAT_0061b328 + uVar6 * 4);
+        iVar2 = iVar2 - *(int *)(&DAT_0061b34c + uVar6 * 4);
+        if (iVar3 < 0) {
           _DAT_01d046a0 = "..\\core\\path.cpp";
           _DAT_01d046a4 = 0x547;
           core_main_c_FUN_004e4500("Out of bounds1!");
         }
-        if (iVar1 < 0) {
+        if (iVar2 < 0) {
           _DAT_01d046a0 = "..\\core\\path.cpp";
           _DAT_01d046a4 = 0x548;
           core_main_c_FUN_004e4500("Out of bounds2!");
         }
-        if (99 < iVar2) {
+        if (99 < iVar3) {
           _DAT_01d046a0 = "..\\core\\path.cpp";
           _DAT_01d046a4 = 0x549;
           core_main_c_FUN_004e4500("Out of bounds3!");
         }
-        if (99 < iVar1) {
+        if (99 < iVar2) {
           _DAT_01d046a0 = "..\\core\\path.cpp";
           _DAT_01d046a4 = 0x54a;
           core_main_c_FUN_004e4500("Out of bounds4!");
         }
-      } while ((iVar2 != _DAT_01e501fc) || (iVar1 != _DAT_01e50200));
-      *(uint *)out_euler_angles = 0;
-      *(uint *)&out_euler_angles->field_0x8 = 0;
-      uVar3 = core_path_cpp_FUN_00511df0(this_ptr,uVar4,local_18,local_1c,dest_position);
-      *(uint *)&out_euler_angles->field_0x4 = uVar3;
+      } while ((iVar3 != _DAT_01e501fc) || (iVar2 != _DAT_01e50200));
+      out_euler_angles->x = 0.0;
+      out_euler_angles->z = 0.0;
+      fVar5 = (float)core_path_cpp_FUN_00511df0(this_ptr,uVar6,local_18,local_1c,dest_position);
+      out_euler_angles->y = fVar5;
       return 1;
     }
-    local_19c = *(float *)this_ptr - *(float *)dest_position;
-    local_198[0] = *(float *)&this_ptr->field_0x4 - *(float *)&dest_position->field_0x4;
-    local_198[1] = *(float *)&this_ptr->field_0x8 - *(float *)&dest_position->field_0x8;
-    afStack_84[2] = *(float *)this_ptr - *(float *)dest_position;
-    afStack_84[(uint)bVar7 * -2 + 3] = local_198[(uint)bVar7 * -2];
-    afStack_84[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
-         local_198[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
-    core_vecdir_cpp_FUN_005838f0(afStack_84 + 2);
-    local_64._0_4_ = local_28._0_4_;
-    *(uint *)((int)&local_64 + (uint)bVar7 * -8 + 4) =
-         *(uint *)((int)&local_28 + (uint)bVar7 * -8 + 4);
-    *(uint *)((int)&local_64 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-         *(uint *)((int)&local_28 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
+    afStack_1a4[2] = (this_ptr->current_position).x - dest_position->x;
+    afStack_1a4[3] = (this_ptr->current_position).y - dest_position->y;
+    local_194 = (this_ptr->current_position).z - dest_position->z;
+    local_7c[0] = afStack_1a4[2];
+    afStack_90[(uint)bVar9 * -2 + 6] = afStack_1a4[(uint)bVar9 * -2 + 3];
+    afStack_90[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 7] =
+         afStack_1a4[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 4];
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(afStack_90 + 5);
+    local_64.x = local_28;
+    *(float *)((int)&local_64 + (uint)bVar9 * -8 + 4) = afStack_48[(uint)bVar9 * -2 + 9];
+    *(float *)((int)&local_64 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8) =
+         afStack_48[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 10];
     if (&local_64 == out_euler_angles) {
       return 2;
     }
-    *(uint *)out_euler_angles = local_64._0_4_;
-    *(uint *)&out_euler_angles->field_0x4 = local_64._4_4_;
-    *(uint *)&out_euler_angles->field_0x8 = local_64._8_4_;
+    out_euler_angles->x = local_64.x;
+    out_euler_angles->y = local_64.y;
+    out_euler_angles->z = local_64.z;
     return 2;
   }
-  if (iVar1 == 1) {
+  if (iVar2 == 1) {
     if (_DAT_01e50204 <= _DAT_01e501fc) {
       if (_DAT_01e50204 < _DAT_01e501fc) {
-        uVar3 = 4;
+        uVar4 = 4;
       }
       else if (_DAT_01e50200 < _DAT_01e50208) {
-        uVar3 = 1;
+        uVar4 = 1;
       }
       else {
-        uVar3 = 2;
+        uVar4 = 2;
       }
       goto LAB_005130ef;
     }
   }
   else {
     if (_DAT_01e50200 < _DAT_01e50208) {
-      uVar3 = 1;
+      uVar4 = 1;
       goto LAB_005130ef;
     }
     if (_DAT_01e50208 < _DAT_01e50200) {
-      uVar3 = 2;
+      uVar4 = 2;
       goto LAB_005130ef;
     }
     if (_DAT_01e50204 <= _DAT_01e501fc) {
-      uVar3 = 4;
+      uVar4 = 4;
       goto LAB_005130ef;
     }
   }
-  uVar3 = 3;
+  uVar4 = 3;
 LAB_005130ef:
-  *(uint *)out_euler_angles = 0;
-  *(uint *)&out_euler_angles->field_0x8 = 0;
-  uVar3 = core_path_cpp_FUN_00511df0(this_ptr,uVar3,0xffffffff,0xffffffff,dest_position);
-  *(uint *)&out_euler_angles->field_0x4 = uVar3;
+  out_euler_angles->x = 0.0;
+  out_euler_angles->z = 0.0;
+  fVar5 = (float)core_path_cpp_FUN_00511df0(this_ptr,uVar4,0xffffffff,0xffffffff,dest_position);
+  out_euler_angles->y = fVar5;
   return 1;
 }

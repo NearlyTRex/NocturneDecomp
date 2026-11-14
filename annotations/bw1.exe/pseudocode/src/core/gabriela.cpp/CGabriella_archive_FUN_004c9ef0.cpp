@@ -9,18 +9,23 @@
 void __cdecl core_gabriela_cpp_CGabriella_archive_FUN_004c9ef0(CGabriella *this_ptr)
 
 {
-  core_hero_cpp_FUN_004eab00((CHero *)this_ptr);
+  core_hero_cpp_CHero_archive_FUN_004eab00(&this_ptr->base);
   if ((1 < g_CGabriellaClassVersion) && (g_CGabriellaClassVersion < 4)) {
-    core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x1ff78,"?objectToPickUp" + 1)
-    ;
-    core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x1ff74,"doorToOpen");
-    core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x1ff80,"leverToPull");
-    core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x1ff84,"ladderToClimb");
+    core_actor_cpp_archiveActor_FUN_0040b6f0
+              (&(this_ptr->base).object_to_pick_up,"?objectToPickUp" + 1);
+    core_actor_cpp_archiveActor_FUN_0040b6f0
+              ((CDemonActor **)&(this_ptr->base).door_to_open,"doorToOpen");
+    core_actor_cpp_archiveActor_FUN_0040b6f0
+              ((CDemonActor **)&(this_ptr->base).lever_to_pull,"leverToPull");
+    core_actor_cpp_archiveActor_FUN_0040b6f0
+              ((CDemonActor **)&(this_ptr->base).ladder_to_climb,"ladderToClimb");
   }
   if (g_CGabriellaClassVersion != 2) {
     return;
   }
-  core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x25b0,"lhCarryObject");
-  core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x2628,"rhCarryObject");
+  core_actor_cpp_archiveActor_FUN_0040b6f0
+            (&(this_ptr->base).base.carry_hands[0].carry_actor,"lhCarryObject");
+  core_actor_cpp_archiveActor_FUN_0040b6f0
+            (&(this_ptr->base).base.carry_hands[1].carry_actor,"rhCarryObject");
   return;
 }

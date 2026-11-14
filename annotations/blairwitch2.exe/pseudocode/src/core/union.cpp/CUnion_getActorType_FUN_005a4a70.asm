@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_union_cpp_CUnion_getActorType_FUN_005a4a70(CUnion *this_ptr)
+; CDemonActorType * __cdecl core_union_cpp_CUnion_getActorType_FUN_005a4a70(CUnion *this_ptr)
 ;
 ; Parameters:
 ; CUnion *         Stack[0x4]:4   this_ptr

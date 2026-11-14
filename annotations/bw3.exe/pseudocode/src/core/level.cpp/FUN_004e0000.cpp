@@ -23,7 +23,7 @@ void core_level_cpp_FUN_004e0000(int *param_1,uint param_2,int param_3)
       }
       engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d6f0
                 (&CAlphaBitmap_01d70be8,0x4b,0x12a,(*param_1 / param_1[1]) * 0xd8ef + 10000);
-      wincore_wddvmem_cpp_FUN_0057a8a0();
+      wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
     }
   }
   return;

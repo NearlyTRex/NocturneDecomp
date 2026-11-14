@@ -9,16 +9,16 @@
 CGround * __cdecl core_ground_cpp_CGround_ctor_FUN_004ca940(CGround *this_ptr,int width,int height)
 
 {
-  *(uint *)&this_ptr->field_0x10 = 0x1e;
-  *(uint *)&this_ptr->field_0x14 = 0x1e;
-  *(int *)this_ptr = width;
-  *(uint *)&this_ptr->field_0x24 = 0;
-  *(uint *)&this_ptr->field_0x28 = 0;
-  *(uint *)&this_ptr->field_0x1c = 8;
-  *(uint *)&this_ptr->field_0x20 = 1;
-  *(int *)&this_ptr->field_0x4 = height;
-  *(int *)&this_ptr->field_0x18 = *(int *)&this_ptr->field_0x10 * *(int *)&this_ptr->field_0x14;
-  *(int *)&this_ptr->field_0xc = height + -1;
-  *(int *)&this_ptr->field_0x8 = width + -1;
+  this_ptr->grid_width = 0x1e;
+  this_ptr->grid_height = 0x1e;
+  this_ptr->width = width;
+  this_ptr->terrain_data = (SGroundCell *)0x0;
+  this_ptr->texture_list = (CTextureList *)0x0;
+  this_ptr->vertical_scale = 8;
+  this_ptr->height_scale = 1;
+  this_ptr->height = height;
+  this_ptr->total_cells = this_ptr->grid_width * this_ptr->grid_height;
+  this_ptr->height_minus_1 = height + -1;
+  this_ptr->width_minus_1 = width + -1;
   return this_ptr;
 }

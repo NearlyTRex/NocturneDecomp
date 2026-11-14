@@ -7,7 +7,7 @@
 ; XREF[3]:
 ;   core_mimic.cpp_CMimic_renderMirrored_FUN_004f1890 at 004f1950
 ;   core_mimic.cpp_mirrorXTransform_FUN_004f0280 at 004f0283
-;   engine_matrix.c_matrixPush_FUN_0046b490 at 0046b490
+;   engine_drender.cpp_matrixPush_FUN_0046b490 at 0046b490
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_matrix_c_005dc7c2

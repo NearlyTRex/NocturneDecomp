@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   cacheIndex
 ;
 ; XREF[1]:
-;   core_mirror.cpp_FUN_004faa10 at 004fac13
+;   core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_004faa10 at 004fac13
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00622014
@@ -27,7 +27,7 @@ section .text
     ADD EAX,0x622014                    ; 004e8ea0 | DAT_00622014
     PUSH EAX                            ; 004e8ea5
     CALL engine_matrix.c_projectTransformedPoint_FUN_004e8eb0 ; 004e8ea6
-        ;   XREF to: 004e8eb0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_projectTransformedPoint_FUN_004e8eb0()
+        ;   XREF to: 004e8eb0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_projectTransformedPoint_FUN_004e8eb0(SProjectedVertex * point)
     ADD ESP,0x4                         ; 004e8eab
     RET                                 ; 004e8eae
 

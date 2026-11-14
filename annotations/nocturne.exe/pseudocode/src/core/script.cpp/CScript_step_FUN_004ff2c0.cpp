@@ -998,7 +998,7 @@ joined_r0x00504194:
                                                     iVar11 = 
                                                   core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
                                                             (0x01C03A10,local_2d5c);
-                                                  core_set_cpp_CDemonSet_FUN_0050e550
+                                                  core_set_cpp_CDemonSet_setCameraEnabled_FUN_0050e550
                                                             (g_CDemonSetPtr,iVar6,iVar11);
                                                   }
                                                   else {
@@ -1662,7 +1662,7 @@ LAB_005021b8:
                                                       iVar6 = 
                                                   core_event_cpp_getSelectedCameraIndex_FUN_00481920
                                                             (pCVar5);
-                                                  core_setdir_cpp_CDemonSet_FUN_005125a0
+                                                  core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005125a0
                                                             (g_CDemonSetPtr,
                                                              g_CScriptPtr->focus_actor,1);
                                                   pCVar5 = g_CDemonSetPtr;

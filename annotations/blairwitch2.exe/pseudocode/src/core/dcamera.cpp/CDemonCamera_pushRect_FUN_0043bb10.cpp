@@ -9,17 +9,17 @@
 void __cdecl core_dcamera_cpp_CDemonCamera_pushRect_FUN_0043bb10(CDemonCamera *this_ptr,int left,int top,int right,int bottom)
 
 {
-  int *piVar1;
+  CRect *pCVar1;
   
-  if (0xff < *(int *)&this_ptr->field_0x1d0) {
-    *(int *)&this_ptr->field_0x1d0 = *(int *)&this_ptr->field_0x1d0 + 1;
+  if (0xff < this_ptr->rect_array_count) {
+    this_ptr->rect_array_count = this_ptr->rect_array_count + 1;
     return;
   }
-  piVar1 = (int *)(&this_ptr->field_0x1d4 + *(int *)&this_ptr->field_0x1d0 * 0x10);
-  *piVar1 = left;
-  piVar1[1] = top;
-  piVar1[2] = right;
-  piVar1[3] = bottom;
-  *(int *)&this_ptr->field_0x1d0 = *(int *)&this_ptr->field_0x1d0 + 1;
+  pCVar1 = this_ptr->rect_array + this_ptr->rect_array_count;
+  pCVar1->x_min = left;
+  pCVar1->x_max = top;
+  pCVar1->y_min = right;
+  pCVar1->y_max = bottom;
+  this_ptr->rect_array_count = this_ptr->rect_array_count + 1;
   return;
 }

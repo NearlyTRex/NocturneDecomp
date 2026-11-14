@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 34,
+    "complexity_score": 9,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 9,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 47
   },
   "cross_references": [
@@ -32,7 +30,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004a9440",
-    "signature": "int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004a9440(CBitFont *this_ptr,int left_x,int right_x,int y_pos,int color_mode,int color_value,undefined4 format_string,undefined4 param_8)"
+    "signature": "int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004a9440(CBitFont *this_ptr,int left_x,int right_x,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args)"
   },
   "function_calls": [
     {
@@ -90,11 +88,37 @@
     },
     "pcode_op_count": 130
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004c23f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004b1040",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004cdf80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00490e80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4144,
+    "frame_size": 4148,
     "local_size": 4116,
     "param_offset": 4,
-    "param_size": 28,
+    "param_size": 32,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -152,25 +176,15 @@
         "offset": 28,
         "size": 4,
         "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "args",
+        "offset": 32,
+        "size": 4,
+        "type": "va_list_t"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004a9440(CBitFont *this_ptr,int left_x,int right_x,int y_pos,int color_mode,int color_value,uint format_string,uint param_8)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "_vsprintf(local_1010,format_string,param_8);",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }

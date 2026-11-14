@@ -1,15 +1,14 @@
 // Name: core_gabriela.cpp_CGabriella_ctor_FUN_004ad2c0
 // Address: 004ad2c0
 // Address Range: [[004ad2c0, 004ad3de]]
-// Convention: unknown
-// Signature: CGabriella * core_gabriela_cpp_CGabriella_ctor_FUN_004ad2c0(CGabriella *this_ptr)
+// Convention: __cdecl
+// Signature: CGabriella * __cdecl core_gabriela_cpp_CGabriella_ctor_FUN_004ad2c0(CGabriella *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CGabriella * core_gabriela_cpp_CGabriella_ctor_FUN_004ad2c0(CGabriella *this_ptr)
+CGabriella * __cdecl core_gabriela_cpp_CGabriella_ctor_FUN_004ad2c0(CGabriella *this_ptr)
 
 {
   uint uVar1;
@@ -17,7 +16,7 @@ CGabriella * core_gabriela_cpp_CGabriella_ctor_FUN_004ad2c0(CGabriella *this_ptr
   
   iVar2 = core_hero_cpp_FUN_004ce240(this_ptr);
   iVar2 = core_necklace_cpp_FUN_005adda0(iVar2 + 0x25680);
-  *(byte **)(iVar2 + -0x253d0) = &g_CGabriellaVTable;
+  *(CHero_full_vtable **)(iVar2 + -0x253d0) = &g_CGabriellaVTable;
   *(uint *)(iVar2 + -0x40) = 0;
   *(uint *)(iVar2 + -0x3c) = 0;
   *(uint *)(iVar2 + -0x38) = 0;

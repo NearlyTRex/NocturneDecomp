@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_lever_cpp_staticInit_FUN_004e1bc0(void)
+; void __cdecl core_lever_cpp_staticInit_FUN_004e1bc0(void)
 ;
 ;
 ; Called Functions:

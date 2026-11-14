@@ -2,11 +2,11 @@
 // Address: 00471538
 // Address Range: [[00471538, 0047166e]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dstrendr_cpp_blur3x3MMXStride128_FUN_00471538(undefined8 *param_1,undefined8 *param_2,int param_3)
+// Signature: void __cdecl core_dstrendr_cpp_blur3x3MMXStride128_FUN_00471538(ulonglong *output_buffer,ulonglong *input_buffer,int pixel_count)
 
 #include "nocturne.h"
 
-void __cdecl core_dstrendr_cpp_blur3x3MMXStride128_FUN_00471538(ulonglong *param_1,ulonglong *param_2,int param_3)
+void __cdecl core_dstrendr_cpp_blur3x3MMXStride128_FUN_00471538(ulonglong *output_buffer,ulonglong *input_buffer,int pixel_count)
 {
 __asm {
         mov ESI,dword ptr [EBP + 0xc]

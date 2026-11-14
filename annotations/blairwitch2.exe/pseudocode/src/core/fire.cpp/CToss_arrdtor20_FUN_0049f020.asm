@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CToss * core_fire_cpp_CToss_arrdtor20_FUN_0049f020(CToss *this_ptr,uint flags)
+; CToss * __cdecl core_fire_cpp_CToss_arrdtor20_FUN_0049f020(CToss *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CToss *          Stack[0x4]:4   this_ptr
@@ -20,7 +20,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 0049f027
     PUSH EDX                            ; 0049f02b
     CALL crt_memory.c___arrfini_FUN_005b854f ; 0049f02c
-        ;   XREF to: 005b854f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrfini_FUN_005b854f()
+        ;   XREF to: 005b854f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005b854f(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0049f031
     RET                                 ; 0049f034
 

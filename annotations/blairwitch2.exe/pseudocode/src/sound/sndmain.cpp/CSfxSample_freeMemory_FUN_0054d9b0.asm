@@ -7,16 +7,16 @@
 ; CSfxSample *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[12]:
+;   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_0054d840 at 0054d95b
 ;   sound_sndmain.cpp_CSfxSample_dtor_FUN_0054d810 at 0054d816
+;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_0054ddf0 at 0054e0b1
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_0054f700 at 0054f818
-;   sound_sndmain.cpp_FUN_0054b960 at 0054ba0a
-;   sound_sndmain.cpp_FUN_0054c1c0 at 0054c237
-;   sound_sndmain.cpp_FUN_0054c7f0 at 0054cb49
-;   sound_sndmain.cpp_FUN_0054ccf0 at 0054cd7b
-;   sound_sndmain.cpp_FUN_0054d840 at 0054d95b
-;   sound_sndmain.cpp_FUN_0054ddf0 at 0054e0b1
-;   sound_sndmain.cpp_FUN_005516ce at 005517df
-;   sound_sndmain.cpp_FUN_00551950 at 00551984
+;   sound_sndmain.cpp_allocateHwSample_FUN_0054ccf0 at 0054cd7b
+;   sound_sndmain.cpp_closeSoundDevice_FUN_00552c40 at 00552c57
+;   sound_sndmain.cpp_createUserSample_FUN_005516d0 at 005517df
+;   sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_0054b960 at 0054ba0a
+;   sound_sndmain.cpp_freeAllSamples_FUN_00551c70 at 00551c88
+;   sound_sndmain.cpp_freeSampleByName_FUN_00551950 at 00551984
 ;   ... and 2 more
 ;
 ; Referenced Globals:
@@ -29,10 +29,10 @@
 ;   core_main.c_FUN_004e4500
 ;   crt_unknown.c_FUN_005b7fdc
 ;   sound_mp3.cpp_CMP3Decoder_dtor_FUN_00509cb0
-;   sound_sndmain.cpp_FUN_0054da70
-;   sound_sndmain.cpp_FUN_0054dac0
-;   sound_sndmain.cpp_FUN_0054dbf0
-;   unkaddr_0057b9a0.cpp_FUN_0057d180
+;   sound_sndmain.cpp_CSfxSample_freeSampleData_FUN_0054dac0
+;   sound_sndmain.cpp_CSfxSample_releaseBufferId_FUN_0054da70
+;   sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_0054dbf0
+;   support_trstream.cpp_CInStreamFile_close_FUN_0057d180
 ;
 ; *****************************************************************************
 
@@ -56,16 +56,16 @@ section .text
     POP ESI                             ; 0054d9e2
     PUSH EBX                            ; 0054d9e3
         ;   Label: LAB_0054d9e3
-    CALL sound_sndmain.cpp_FUN_0054dbf0 ; 0054d9e4
-        ;   XREF to: 0054dbf0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_0054dbf0(CSfxSample * this_ptr)
+    CALL sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_0054dbf0 ; 0054d9e4
+        ;   XREF to: 0054dbf0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_0054dbf0(CSfxSample * this_ptr)
     ADD ESP,0x4                         ; 0054d9e9
     PUSH EBX                            ; 0054d9ec
-    CALL sound_sndmain.cpp_FUN_0054dac0 ; 0054d9ed
-        ;   XREF to: 0054dac0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_0054dac0(CSfxSample * this_ptr)
+    CALL sound_sndmain.cpp_CSfxSample_freeSampleData_FUN_0054dac0 ; 0054d9ed
+        ;   XREF to: 0054dac0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_freeSampleData_FUN_0054dac0(CSfxSample * this_ptr)
     ADD ESP,0x4                         ; 0054d9f2
     PUSH EBX                            ; 0054d9f5
-    CALL sound_sndmain.cpp_FUN_0054da70 ; 0054d9f6
-        ;   XREF to: 0054da70 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_0054da70(CSfxSample * this_ptr)
+    CALL sound_sndmain.cpp_CSfxSample_releaseBufferId_FUN_0054da70 ; 0054d9f6
+        ;   XREF to: 0054da70 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_releaseBufferId_FUN_0054da70(CSfxSample * this_ptr)
     MOV EAX,dword ptr [EBX + 0x174]     ; 0054d9fb
     ADD ESP,0x4                         ; 0054da01
     TEST EAX,EAX                        ; 0054da04
@@ -75,8 +75,8 @@ section .text
         ;   Label: LAB_0054da08
     PUSH EAX                            ; 0054da0e
     MOV dword ptr [EBX + 0x174],0x0     ; 0054da0f
-    CALL unkaddr_0057b9a0.cpp_FUN_0057d180 ; 0054da19
-        ;   XREF to: 0057d180 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0057b9a0.cpp_FUN_0057d180()
+    CALL support_trstream.cpp_CInStreamFile_close_FUN_0057d180 ; 0054da19
+        ;   XREF to: 0057d180 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_close_FUN_0057d180(CInStreamFile * this_ptr)
     MOV byte ptr [EBX],0x0              ; 0054da1e
     MOV dword ptr [EBX + 0x150],0x0     ; 0054da21
     MOV dword ptr [EBX + 0x15c],0x0     ; 0054da2b

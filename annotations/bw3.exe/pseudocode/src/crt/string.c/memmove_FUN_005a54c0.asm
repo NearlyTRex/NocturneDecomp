@@ -10,15 +10,15 @@
 ;
 ; XREF[44]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_00491f40 at 00492202
+;   core_event.cpp_CEventList_process_FUN_0048c020 at 0048c0de
 ;   core_event.cpp_CEventList_setActorVariable_FUN_00494e70 at 00495016
 ;   core_event.cpp_CEventList_setCounter_FUN_00494bf0 at 00494c4e
 ;   core_event.cpp_CEventList_setTimerEvent_FUN_00494a70 at 00494b2e
 ;   core_event.cpp_CEventList_updateSfxEntries_FUN_00495280 at 004953b9
-;   core_event.cpp_FUN_0048bba0 at 0048bbfb
-;   core_event.cpp_FUN_0048bc10 at 0048bcfd
-;   core_event.cpp_FUN_0048c020 at 0048c0de
 ;   core_event.cpp_FUN_0048c2e0 at 0048c607
 ;   core_event.cpp_FUN_004946f0 at 0049486a
+;   core_event.cpp_FUN_004948e0 at 00494a5a
+;   core_event.cpp_FUN_00495b50 at 00495be0
 ;   ... and 34 more
 ;
 ; *****************************************************************************

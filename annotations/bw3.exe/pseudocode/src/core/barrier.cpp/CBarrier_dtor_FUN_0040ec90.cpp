@@ -13,11 +13,11 @@ CBarrier * __cdecl core_barrier_cpp_CBarrier_dtor_FUN_0040ec90(CBarrier *this_pt
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CBarrierTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CBarrierTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  pCVar1 = (CBarrier *)core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)this_ptr,1);
+  pCVar1 = (CBarrier *)core_actor_cpp_CDemonActor_dtor_FUN_00408770(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

@@ -13,9 +13,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
+;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_0054ddf0 at 0054e050
 ;   sound_sndmain.cpp_CSfxSlot_seek_FUN_0054fbe0 at 0054fca6
-;   sound_sndmain.cpp_FUN_0054c7f0 at 0054ca0d
-;   sound_sndmain.cpp_FUN_0054ddf0 at 0054e050
+;   sound_sndmain.cpp_loadStreamingSoundFile_FUN_0054c7f0 at 0054ca0d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005e81c5
@@ -33,10 +33,10 @@
 ;   core_main.c_FUN_004e4500
 ;   crt_math.c_round_FUN_005b7ff0
 ;   sound_mp3.cpp_CMP3Decoder_seek_FUN_0050a0e0
+;   sound_sndmain.cpp_CSfxSample_framesToBytes_FUN_0054fd90
 ;   sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_0054ff30
-;   sound_sndmain.cpp_FUN_0054fd90
-;   unkaddr_0057b9a0.cpp_FUN_0057d0c0
-;   unkaddr_0057b9a0.cpp_FUN_0057d130
+;   support_trstream.cpp_CInStreamFile_isOpen_FUN_0057d130
+;   support_trstream.cpp_CInStreamFile_seek_FUN_0057d0c0
 ;
 ; *****************************************************************************
 
@@ -148,8 +148,8 @@ section .text
     LEA ESI,[EBX + 0x17c]               ; 0054dd78
         ;   Label: LAB_0054dd78
     PUSH ESI                            ; 0054dd7e
-    CALL unkaddr_0057b9a0.cpp_FUN_0057d130 ; 0054dd7f
-        ;   XREF to: 0057d130 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0057b9a0.cpp_FUN_0057d130()
+    CALL support_trstream.cpp_CInStreamFile_isOpen_FUN_0057d130 ; 0054dd7f
+        ;   XREF to: 0057d130 (UNCONDITIONAL_CALL)  ; bool support_trstream.cpp_CInStreamFile_isOpen_FUN_0057d130(CInStreamFile * this_ptr)
     ADD ESP,0x4                         ; 0054dd84
     TEST EAX,EAX                        ; 0054dd87
     JZ 0x0054ddb7                       ; 0054dd89
@@ -158,15 +158,15 @@ section .text
     MOV EAX,dword ptr [EBX + 0x16c]     ; 0054dd8d
     PUSH EAX                            ; 0054dd93
     PUSH EBX                            ; 0054dd94
-    CALL sound_sndmain.cpp_FUN_0054fd90 ; 0054dd95
-        ;   XREF to: 0054fd90 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_0054fd90()
+    CALL sound_sndmain.cpp_CSfxSample_framesToBytes_FUN_0054fd90 ; 0054dd95
+        ;   XREF to: 0054fd90 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSample_framesToBytes_FUN_0054fd90(CSfxSample * this_ptr, int frame_count)
     MOV EDX,dword ptr [EBX + 0x178]     ; 0054dd9a
     ADD ESP,0x8                         ; 0054dda0
     ADD EAX,EDX                         ; 0054dda3
     PUSH EAX                            ; 0054dda5
     PUSH ESI                            ; 0054dda6
-    CALL unkaddr_0057b9a0.cpp_FUN_0057d0c0 ; 0054dda7
-        ;   XREF to: 0057d0c0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0057b9a0.cpp_FUN_0057d0c0()
+    CALL support_trstream.cpp_CInStreamFile_seek_FUN_0057d0c0 ; 0054dda7
+        ;   XREF to: 0057d0c0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_CInStreamFile_seek_FUN_0057d0c0(CInStreamFile * this_ptr, int offset, int origin)
     ADD ESP,0xc                         ; 0054ddac
     ADD ESP,0xc                         ; 0054ddaf
     POP EBP                             ; 0054ddb2

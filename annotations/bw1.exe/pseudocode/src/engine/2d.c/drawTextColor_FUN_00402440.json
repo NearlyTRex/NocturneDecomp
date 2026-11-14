@@ -19,25 +19,25 @@
     {
       "addr": "00480480",
       "from_addr": "00480699",
-      "name": "cockpit_drawsurf.cpp_FUN_00480480",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00402540",
-      "from_addr": "00402562",
-      "name": "engine_2d.c_FUN_00402540",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00480480",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00402600",
       "from_addr": "0040262b",
-      "name": "engine_2d.c_FUN_00402600",
+      "name": "engine_2d.c_drawTextCenteredAtColor_FUN_00402600",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004026d0",
       "from_addr": "004026ff",
-      "name": "engine_2d.c_FUN_004026d0",
+      "name": "engine_2d.c_drawTextCenteredColor_FUN_004026d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00402540",
+      "from_addr": "00402562",
+      "name": "engine_2d.c_drawTextRightAlignedColor_FUN_00402540",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -97,7 +97,7 @@
       {
         "call_addr": "004026ff",
         "call_type": "direct",
-        "caller": "engine_2d.c_FUN_004026d0",
+        "caller": "engine_2d.c_drawTextCenteredColor_FUN_004026d0",
         "estimated_params": 2,
         "instructions_analyzed": 11,
         "method": "push_count",
@@ -108,7 +108,7 @@
       {
         "call_addr": "00402562",
         "call_type": "direct",
-        "caller": "engine_2d.c_FUN_00402540",
+        "caller": "engine_2d.c_drawTextRightAlignedColor_FUN_00402540",
         "estimated_params": 2,
         "instructions_analyzed": 8,
         "method": "push_count",
@@ -119,7 +119,7 @@
       {
         "call_addr": "0040262b",
         "call_type": "direct",
-        "caller": "engine_2d.c_FUN_00402600",
+        "caller": "engine_2d.c_drawTextCenteredAtColor_FUN_00402600",
         "estimated_params": 2,
         "instructions_analyzed": 12,
         "method": "push_count",
@@ -130,7 +130,7 @@
       {
         "call_addr": "00480699",
         "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_00480480",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00480480",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -167,6 +167,32 @@
       "STORE": 18
     },
     "pcode_op_count": 132
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00402440",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00402440",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00402430",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00402a60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 16,

@@ -17,10 +17,10 @@
 ;   crt_unknown.c_FUN_005c50cc
 ;   crt_unknown.c_FUN_005c50f8
 ;   crt_unknown.c_FUN_005c50fc
+;   crt_unknown.c_FUN_005cb0a0
+;   crt_unknown.c_FUN_005cb5a8
+;   crt_unknown.c_FUN_005cb630
 ;   GetModuleHandleA
-;   unkafter_zombie.cpp_FUN_005cb0a0
-;   unkafter_zombie.cpp_FUN_005cb5a8
-;   unkafter_zombie.cpp_FUN_005cb630
 ;
 ; *****************************************************************************
 
@@ -40,21 +40,21 @@ section .text
     PUSH 0x6265bc                       ; 005c5362 | DAT_006265bc
     CALL dword ptr [0x006265fc]         ; 005c5367 | PTR_crt_unknown.c_FUN_005c50cc_006265fc
     PUSH EAX                            ; 005c536d
-    CALL unkafter_zombie.cpp_FUN_005cb0a0 ; 005c536e
-        ;   XREF to: 005cb0a0 (UNCONDITIONAL_CALL)  ; undefined unkafter_zombie.cpp_FUN_005cb0a0()
+    CALL crt_unknown.c_FUN_005cb0a0     ; 005c536e
+        ;   XREF to: 005cb0a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005cb0a0()
     ADD ESP,0x8                         ; 005c5373
     MOV EBX,dword ptr [ESP + 0x8]       ; 005c5376
     PUSH EBX                            ; 005c537a
-    CALL unkafter_zombie.cpp_FUN_005cb5a8 ; 005c537b
-        ;   XREF to: 005cb5a8 (UNCONDITIONAL_CALL)  ; undefined unkafter_zombie.cpp_FUN_005cb5a8()
+    CALL crt_unknown.c_FUN_005cb5a8     ; 005c537b
+        ;   XREF to: 005cb5a8 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005cb5a8()
     ADD ESP,0x4                         ; 005c5380
     MOV EAX,0x21                        ; 005c5383
-    CALL unkafter_zombie.cpp_FUN_005cb630 ; 005c5388
-        ;   XREF to: 005cb630 (UNCONDITIONAL_CALL)  ; undefined unkafter_zombie.cpp_FUN_005cb630()
+    CALL crt_unknown.c_FUN_005cb630     ; 005c5388
+        ;   XREF to: 005cb630 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005cb630()
     CALL dword ptr [0x0062663c]         ; 005c538d | PTR_crt_unknown.c_FUN_005c50f8_0062663c
     MOV EAX,0xff                        ; 005c5393
-    CALL unkafter_zombie.cpp_FUN_005cb630 ; 005c5398
-        ;   XREF to: 005cb630 (UNCONDITIONAL_CALL)  ; undefined unkafter_zombie.cpp_FUN_005cb630()
+    CALL crt_unknown.c_FUN_005cb630     ; 005c5398
+        ;   XREF to: 005cb630 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005cb630()
     POP EBX                             ; 005c539d
     RET                                 ; 005c539e
 

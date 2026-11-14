@@ -8,7 +8,7 @@
 ; LPCSTR           Stack[0x8]:4   lpProcName
 ;
 ; XREF[1]:
-;   engine_special.cpp_FUN_00564be0 at 00564c47
+;   engine_special.cpp_loadExternalRenderer_FUN_00564be0 at 00564c47
 ;
 ; Referenced Globals:
 ;   void* PTR_GetProcAddress_005b35c8 = 001b3f72

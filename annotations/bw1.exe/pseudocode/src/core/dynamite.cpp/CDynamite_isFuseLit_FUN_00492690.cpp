@@ -9,7 +9,7 @@
 int __cdecl core_dynamite_cpp_CDynamite_isFuseLit_FUN_00492690(CDynamite *this_ptr)
 
 {
-  if (0.0 < *(float *)&this_ptr->field_0x578) {
+  if (0.0 < this_ptr->fuse_timer) {
     return 1;
   }
   return 0;

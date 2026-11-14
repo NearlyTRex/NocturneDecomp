@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_succubus_cpp_staticInit_FUN_0056f260(void)
+; void __cdecl core_succubus_cpp_staticInit_FUN_0056f260(void)
 ;
 ;
 ; Called Functions:

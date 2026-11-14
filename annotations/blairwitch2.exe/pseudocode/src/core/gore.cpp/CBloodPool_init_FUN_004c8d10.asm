@@ -20,7 +20,7 @@
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cfc0
+;   core_actor.cpp_getRandomInt_FUN_0040cfc0
 ;   core_setcolid.cpp_FUN_00534ea0
 ;
 ; *****************************************************************************
@@ -35,8 +35,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 004c8d19
     PUSH 0x3                            ; 004c8d1d
     PUSH 0x0                            ; 004c8d1f
-    CALL core_actor.cpp_FUN_0040cfc0    ; 004c8d21
-        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cfc0(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cfc0 ; 004c8d21
+        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cfc0(int min_value, int max_value)
     ADD ESP,0x8                         ; 004c8d26
     MOV EDX,dword ptr [0x0061b5a8]      ; 004c8d29 | g_CDemonSetPtr
     PUSH 0x0                            ; 004c8d2f

@@ -121,7 +121,7 @@ section .text
     PUSH EAX                            ; 0050f2f8
     MOV dword ptr [EAX + 0x8],ESI       ; 0050f2f9
     CALL shape_memdbg.cpp_SMemHead_recordSourceFile_FUN_0050eea0 ; 0050f2fc
-        ;   XREF to: 0050eea0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_recordSourceFile_FUN_0050eea0(SMemHead * header, char * source_filename)
+        ;   XREF to: 0050eea0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_recordSourceFile_FUN_0050eea0(SMemHead * this_ptr, char * source_filename)
     LEA ESI,[EBX + 0x28]                ; 0050f301
     MOV dword ptr [EBX + 0x24],0xdeadbeef ; 0050f304
     ADD ESP,0x8                         ; 0050f30b
@@ -130,7 +130,7 @@ section .text
     PUSH EBX                            ; 0050f314
     MOV dword ptr [ESI + EAX*0x1],0xbeefdead ; 0050f315
     CALL shape_memdbg.cpp_SMemHead_add_FUN_0050eef0 ; 0050f31c
-        ;   XREF to: 0050eef0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_add_FUN_0050eef0(SMemHead * header)
+        ;   XREF to: 0050eef0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_add_FUN_0050eef0(SMemHead * this_ptr)
     ADD ESP,0x4                         ; 0050f321
     PUSH ESI                            ; 0050f324
     PUSH 0x636068                       ; 0050f325 | = "   Returns %08X"

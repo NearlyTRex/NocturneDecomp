@@ -6,11 +6,14 @@
 #include "system/basetypes.h"
 
 // Structure: CGameHook
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI size 16; ctor 0059c290 zeroes +0..+0xc; single global g_CGameHookInstance via g_CGameHookPtr
 // Ghidra size: 0x10 (16 bytes)
 #pragma pack(push, 1)
 typedef struct CGameHook {
-    char field_0[16]; // 0x0
+    int debug_state_display; // 0x0, showDebugMenu 0059c3d0 lists 'DebugStateDisplay' with *this and toggles it; CBasicEnemy_renderOpaque draws state text when set
+    int debug_barrier_display; // 0x4, showDebugMenu entry 'DebugBarrierDisplay' toggles +4
+    int debug_waypoint_display; // 0x8, showDebugMenu entry 'DebugWayPointDisplay' toggles +8; CWayPoint_renderOpaque draws waypoints when set
+    int debug_follow_slot_display; // 0xc, showDebugMenu entry 'DebugFollowSlotDisplay' toggles +0xc; CCharacter_renderOpaque draws follow slots when set
 } CGameHook;
 #pragma pack(pop)
 

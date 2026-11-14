@@ -12,9 +12,9 @@
 void __cdecl cockpit_ckptutil_c_buildHardwarePalettes_FUN_0042c8f0(SRGBColorPalette *rgb_palette_data)
 
 {
-  SRGBColorPalette *pSVar1;
-  SRGBColorPalette *pSVar2;
-  SRGBColorPalette SVar3;
+  uchar *puVar1;
+  uchar *puVar2;
+  SRGBColor *pSVar3;
   int iVar4;
   int iVar5;
   
@@ -22,29 +22,29 @@ void __cdecl cockpit_ckptutil_c_buildHardwarePalettes_FUN_0042c8f0(SRGBColorPale
   if (DAT_006141c0 != 0x20) {
     iVar4 = 0;
     do {
-      SVar3 = *rgb_palette_data;
-      pSVar1 = rgb_palette_data + 1;
-      pSVar2 = rgb_palette_data + 2;
+      pSVar3 = (SRGBColor *)&rgb_palette_data->colors[0].r;
+      puVar1 = &rgb_palette_data->colors[0].g;
+      puVar2 = &rgb_palette_data->colors[0].b;
       iVar5 = iVar4 + 2;
-      rgb_palette_data = rgb_palette_data + 3;
+      rgb_palette_data = (SRGBColorPalette *)((int)rgb_palette_data + 3);
       *(ushort *)(iVar4 + 0x1c35614) =
-           (ushort)((byte)*pSVar1 / _DAT_01c35824 << (DAT_01c35820 & 0x1f)) |
-           (ushort)((byte)SVar3 / _DAT_01c35818 << (DAT_01c35814 & 0x1f)) |
-           (ushort)((byte)*pSVar2 / _DAT_01c35830 << (DAT_01c3582c & 0x1f));
+           (ushort)(*puVar1 / _DAT_01c35824 << (DAT_01c35820 & 0x1f)) |
+           (ushort)(pSVar3->r / _DAT_01c35818 << (DAT_01c35814 & 0x1f)) |
+           (ushort)(*puVar2 / _DAT_01c35830 << (DAT_01c3582c & 0x1f));
       iVar4 = iVar5;
     } while (iVar5 != 0x200);
     return;
   }
   iVar4 = 0;
   do {
-    pSVar1 = rgb_palette_data + 1;
-    SVar3 = *rgb_palette_data;
-    pSVar2 = rgb_palette_data + 2;
+    puVar1 = &rgb_palette_data->colors[0].g;
+    pSVar3 = (SRGBColor *)&rgb_palette_data->colors[0].r;
+    puVar2 = &rgb_palette_data->colors[0].b;
     iVar5 = iVar4 + 4;
-    rgb_palette_data = rgb_palette_data + 3;
+    rgb_palette_data = (SRGBColorPalette *)((int)rgb_palette_data + 3);
     *(uint *)(&DAT_01c35214 + iVar4) =
-         (uint)(byte)*pSVar2 << (DAT_01c3582c & 0x1f) |
-         (uint)(byte)SVar3 << (DAT_01c35814 & 0x1f) | (uint)(byte)*pSVar1 << (DAT_01c35820 & 0x1f);
+         (uint)*puVar2 << (DAT_01c3582c & 0x1f) |
+         (uint)pSVar3->r << (DAT_01c35814 & 0x1f) | (uint)*puVar1 << (DAT_01c35820 & 0x1f);
     iVar4 = iVar5;
   } while (iVar5 != 0x400);
   return;

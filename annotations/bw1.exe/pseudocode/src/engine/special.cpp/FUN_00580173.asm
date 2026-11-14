@@ -8,12 +8,12 @@
 ; CVector3i *      Stack[0x8]:4   input
 ;
 ; XREF[65]:
-;   core_actor.cpp_FUN_00409940 at 004099cd
+;   core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409940 at 004099cd
 ;   core_box.cpp_FUN_004207b0 at 004208e2
 ;   core_box.cpp_FUN_00420990 at 00420a0a
 ;   core_box.cpp_FUN_00420dc0 at 00420e6d
-;   core_bugs.cpp_FUN_00425650 at 004256ff
-;   core_charactr.cpp_FUN_0042ea10 at 0042ebf9
+;   core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_00425650 at 004256ff
+;   core_charactr.cpp_CCharacter_renderCollision_FUN_0042ea10 at 0042ebf9
 ;   core_cloth.cpp_FUN_00441500 at 004415e6
 ;   core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452de0 at 00452f5d
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457f70 at 0045800c

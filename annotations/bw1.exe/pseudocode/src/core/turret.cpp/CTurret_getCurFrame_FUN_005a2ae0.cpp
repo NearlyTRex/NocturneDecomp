@@ -17,21 +17,21 @@ float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_005a2ae0(CTurret *this_ptr
   float local_14;
   
   local_18 = 0.0;
-  switch(*(uint *)&this_ptr->field_0x700) {
-  case 0:
+  switch(this_ptr->state) {
+  case TURRET_STATE_IDLE:
     break;
-  case 1:
-    if (0.0 < *(float *)&this_ptr->field_0x768) {
-      local_18 = 1.0 - *(float *)&this_ptr->field_0x77c / *(float *)&this_ptr->field_0x768;
+  case TURRET_STATE_CHARGING:
+    if (0.0 < this_ptr->charge_time) {
+      local_18 = 1.0 - this_ptr->timer / this_ptr->charge_time;
     }
     break;
-  case 2:
-  case 3:
+  case TURRET_STATE_ACTIVE:
+  case TURRET_STATE_PATROL:
     local_18 = 1.0;
     break;
-  case 4:
-    if (0.0 < *(float *)&this_ptr->field_0x770) {
-      local_18 = *(float *)&this_ptr->field_0x77c / *(float *)&this_ptr->field_0x770;
+  case TURRET_STATE_POWERING_DOWN:
+    if (0.0 < this_ptr->power_down_time) {
+      local_18 = this_ptr->timer / this_ptr->power_down_time;
     }
     break;
   default:
@@ -47,13 +47,13 @@ float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_005a2ae0(CTurret *this_ptr
       local_18 = 1.0;
     }
     if (model_index == 0) {
-      this_ptr_00 = (CKeyFramedModelInstance *)&this_ptr->field_0x158;
+      this_ptr_00 = &(this_ptr->base).model;
     }
     else {
-      this_ptr_00 = (CKeyFramedModelInstance *)&this_ptr->field_0x584;
+      this_ptr_00 = &this_ptr->model;
     }
     pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900(this_ptr_00);
-    local_14 = (float)(*(int *)&pCVar1->field_0x100 + -1) * local_18;
+    local_14 = (float)(pCVar1->frame_count + -1) * local_18;
   }
   return local_14;
 }

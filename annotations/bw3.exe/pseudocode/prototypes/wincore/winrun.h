@@ -13,9 +13,9 @@ void __cdecl calibrateCPUSpeed(void);
 // Address: 00580690
 void __watcallRegister endPeriod(void);
 
-// Original: wincore_winrun.cpp_FUN_005806a0
+// Original: wincore_winrun.cpp_getTime_FUN_005806a0
 // Address: 005806a0
-int FUN_005806a0(void);
+int __cdecl getTime(void);
 
 // Original: wincore_winrun.cpp_clearKeypresses_FUN_00580770
 // Address: 00580770
@@ -29,9 +29,9 @@ int __cdecl getNextKeypress(void);
 // Address: 00580800
 int __cdecl wasKeyPressed(void);
 
-// Original: wincore_winrun.cpp_FUN_0058081c
-// Address: 0058081c
-undefined1 FUN_0058081c(void);
+// Original: wincore_winrun.cpp_getValue_FUN_00580820
+// Address: 00580820
+char __cdecl getValue(void);
 
 // Original: wincore_winrun.cpp_enqueueInput_FUN_00580830
 // Address: 00580830
@@ -69,17 +69,17 @@ void __cdecl FUN_00580f70(void);
 // Address: 00581010
 void FUN_00581010(void);
 
-// Original: wincore_winrun.cpp_FUN_0058105e
-// Address: 0058105e
-void FUN_0058105e(void);
+// Original: wincore_winrun.cpp_FUN_00581060
+// Address: 00581060
+void FUN_00581060(void);
 
-// Original: wincore_winrun.cpp_FUN_00581080
+// Original: wincore_winrun.cpp_winMain_FUN_00581080
 // Address: 00581080
-void FUN_00581080(HMODULE param_1,undefined4 param_2,undefined4 param_3,int param_4);
+int __stdcall winMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow);
 
-// Original: wincore_winrun.cpp_FUN_00581300
+// Original: wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_00581300
 // Address: 00581300
-void __cdecl FUN_00581300(char *message);
+void __cdecl displayMessageBoxAndQuit(char *message);
 
 // Original: wincore_winrun.cpp_FUN_00581360
 // Address: 00581360
@@ -117,9 +117,9 @@ void FUN_00581a20(HANDLE param_1);
 // Address: 00581a40
 void __cdecl sleep(double seconds);
 
-// Original: wincore_winrun.cpp_FUN_00581a9c
-// Address: 00581a9c
-void FUN_00581a9c(char *param_1);
+// Original: wincore_winrun.cpp_getComputerAndUserName_FUN_00581aa0
+// Address: 00581aa0
+void __cdecl getComputerAndUserName(char *buffer);
 
 // Original: wincore_winrun.cpp_getRegistryStringValue_FUN_00581b70
 // Address: 00581b70
@@ -137,10 +137,66 @@ void FUN_00581c70(LPCSTR param_1);
 // Address: 00581c80
 void __cdecl initJoystick(void);
 
-// Original: wincore_winrun.cpp_FUN_00581cf0
+// Original: wincore_winrun.cpp_doNothing2_FUN_00581cf0
 // Address: 00581cf0
-void __cdecl FUN_00581cf0(void);
+void __cdecl doNothing2(void);
 
 // Original: wincore_winrun.cpp_getJoystickState_FUN_00581d10
 // Address: 00581d10
 void __cdecl getJoystickState(void);
+
+// Original: wincore_winrun.cpp_FUN_00581e70
+// Address: 00581e70
+float FUN_00581e70(int param_1,int *param_2,float param_3,float param_4);
+
+// Original: wincore_winrun.cpp_FUN_00581f50
+// Address: 00581f50
+void FUN_00581f50(int param_1);
+
+// Original: wincore_winrun.cpp_FUN_00582370
+// Address: 00582370
+void FUN_00582370(void);
+
+// Original: wincore_winrun.cpp_FUN_005823a0
+// Address: 005823a0
+void FUN_005823a0(int param_1,int param_2,UINT_PTR param_3);
+
+// Original: wincore_winrun.cpp_FUN_005824b0
+// Address: 005824b0
+void FUN_005824b0(int param_1);
+
+// Original: wincore_winrun.cpp_FUN_005824d0
+// Address: 005824d0
+void FUN_005824d0(void);
+
+// Original: wincore_winrun.cpp_FUN_00582500
+// Address: 00582500
+void FUN_00582500(float param_1);
+
+// Original: wincore_winrun.cpp_FUN_00582580
+// Address: 00582580
+float FUN_00582580(void);
+
+// Original: wincore_winrun.cpp_FUN_005825e0
+// Address: 005825e0
+void FUN_005825e0(int param_1);
+
+// Original: wincore_winrun.cpp_FUN_00582630
+// Address: 00582630
+void FUN_00582630(undefined4 param_1);
+
+// Original: wincore_winrun.cpp_FUN_00582640
+// Address: 00582640
+undefined4 FUN_00582640(undefined4 param_1);
+
+// Original: wincore_winrun.cpp_FUN_00582680
+// Address: 00582680
+void FUN_00582680(undefined4 param_1);
+
+// Original: wincore_winrun.cpp_FUN_00582830
+// Address: 00582830
+void FUN_00582830(void);
+
+// Original: wincore_winrun.cpp_FUN_00582aa0
+// Address: 00582aa0
+void FUN_00582aa0(void);

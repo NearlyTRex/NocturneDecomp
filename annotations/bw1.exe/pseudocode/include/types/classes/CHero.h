@@ -2,14 +2,55 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CBoxActor;
+struct CDemonActor;
+struct CDoor;
+struct CLadder;
+struct CLever;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCharacter.h"
+#include "types/classes/CInventory.h"
+#include "types/classes/CPathMap.h"
+#include "types/classes/CVector3f.h"
+#include "types/enums/EAimMode.h"
+#include "types/enums/EGasMaskState.h"
+#include "types/enums/EHeroControlType.h"
+#include "types/enums/EHeroTask.h"
+#include "types/structs/SPlayerInput.h"
+#include "types/unions/UOrientationVector.h"
 
 // Structure: CHero
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x1ffac (130988 bytes)
 #pragma pack(push, 1)
 typedef struct CHero {
+    CCharacter base; // 0x0
+    float invincibility_timer; // 0xc1d0
+    EHeroControlType control_type; // 0xc1d4
+    SPlayerInput player_input; // 0xc1d8
+    CPathMap path_map; // 0xc208
+    EAimMode aim_mode; // 0x1fae4
+    CInventory inventory; // 0x1fae8
+    EGasMaskState is_wearing_gas_mask; // 0x1ff54
+    int is_wearing_goggles; // 0x1ff58, Added in this build
+    int action_pending; // 0x1ff5c, Added in this build
+    int hero_action; // 0x1ff60, Added in this build
+    struct CDemonActor* hero_action_actor; // 0x1ff64, Added in this build
+    struct CDemonActor* hero_action_target; // 0x1ff68, Added in this build
+    int hero_action_data; // 0x1ff6c, Added in this build
+    float hero_action_range; // 0x1ff70, Added in this build
+    struct CDoor* door_to_open; // 0x1ff74
+    struct CDemonActor* object_to_pick_up; // 0x1ff78
+    struct CBoxActor* pushed_object; // 0x1ff7c
+    struct CLever* lever_to_pull; // 0x1ff80
+    struct CLadder* ladder_to_climb; // 0x1ff84
+    struct CDemonActor* nearby_interactive_actor; // 0x1ff88
+    struct CDemonActor* target_actor; // 0x1ff8c
+    CVector3f target_position; // 0x1ff90
+    UOrientationVector target_orientation; // 0x1ff9c
+    EHeroTask ai_task; // 0x1ffa8
 } CHero;
 #pragma pack(pop)
 

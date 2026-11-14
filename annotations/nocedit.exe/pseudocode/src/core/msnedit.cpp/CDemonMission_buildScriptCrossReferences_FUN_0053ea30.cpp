@@ -30,7 +30,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_buildScriptCrossReferences_FUN_0053e
         switch(this_ptr_01->type) {
         case PROP_CHOICE:
           if (*(this_ptr_01->data).v_int_ptr != 0) {
-            SStack_124.type = 7;
+            SStack_124.type = XREF_ACTOR_REFERENCED;
             core_script_cpp_CScript_addEventXRef_FUN_00567510(g_CScriptPtr,&SStack_124);
           }
           break;

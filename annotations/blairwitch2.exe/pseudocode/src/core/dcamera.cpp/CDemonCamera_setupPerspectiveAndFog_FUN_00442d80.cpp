@@ -13,9 +13,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00442d80(C
 {
   uint uVar1;
   uint uVar2;
-  int local_10;
-  int local_c;
-  int local_8;
+  CVector3i local_10;
   
   if (position == (CVector3f *)0x0) {
     _DAT_01c38aec = position;
@@ -25,12 +23,12 @@ void __cdecl core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00442d80(C
     _DAT_01c38aec = (CVector3f *)0x0;
     return;
   }
-  local_10 = (int)ROUND(*(float *)position * _DAT_005f4dcc);
-  local_c = (int)ROUND(*(float *)&position->field_0x4 * _DAT_005f4dcc);
-  local_8 = (int)ROUND(*(float *)&position->field_0x8 * _DAT_005f4dcc);
+  local_10.x = (int)ROUND(position->x * _DAT_005f4dcc);
+  local_10.y = (int)ROUND(position->y * _DAT_005f4dcc);
+  local_10.z = (int)ROUND(position->z * _DAT_005f4dcc);
   _DAT_01c38aec =
        (CVector3f *)
-       (**(code **)(*(int *)&this_ptr->field_0x3c + 8))(this_ptr,&local_10,projected_vertex);
+       (*((this_ptr->base).vtable)->getFogValueAtPosition)(this_ptr,&local_10,projected_vertex);
   uVar1 = *(uint *)(&DAT_00b6639c + DAT_00609fac * 4) & 0xff;
   if (DAT_006141c0 == 0x20) {
     uVar2 = (*(uint *)(&DAT_00b6639c + DAT_00609fa4 * 4) & 0xff) << (DAT_01c35814 & 0x1f) |

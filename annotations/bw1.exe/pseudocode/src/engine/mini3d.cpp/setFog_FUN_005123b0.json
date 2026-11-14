@@ -1,0 +1,270 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 75,
+    "complexity_score": 97,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 14,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 22,
+    "suspect_count": 6,
+    "suspect_types": [
+      "undefined_data",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 97
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005123b0",
+    "address_range": [
+      [
+        "005123b0",
+        "0051249d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_mini3d.cpp_setFog_FUN_005123b0",
+    "signature": "void __cdecl engine_mini3d_cpp_setFog_FUN_005123b0(int red,int green,int blue,float fog_near,float fog_far)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005e8c8f",
+      "name": "DAT_005e8c8f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061b4a0",
+      "name": "DAT_0061b4a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4e9d4",
+      "name": "DAT_01c4e9d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4e9e0",
+      "name": "DAT_01c4e9e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4e9ec",
+      "name": "DAT_01c4e9ec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c50948",
+      "name": "DAT_01c50948",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d1c",
+      "name": "DAT_01c51d1c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d22564",
+      "name": "DAT_01d22564",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d22568",
+      "name": "DAT_01d22568",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2256c",
+      "name": "DAT_01d2256c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d22570",
+      "name": "DAT_01d22570",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d22574",
+      "name": "DAT_01d22574",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2adb8",
+      "name": "DAT_01d2adb8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c8349c",
+      "name": "DAT_02c8349c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.492307692307692,
+    "instruction_count": 65,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 27,
+      "BRANCH": 2,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 160,
+      "FLOAT2FLOAT": 7,
+      "FLOAT_DIV": 1,
+      "FLOAT_MULT": 3,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 4,
+      "INT_ADD": 15,
+      "INT_AND": 86,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 35,
+      "INT_LEFT": 10,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 29,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 25,
+      "INT_SUB": 15,
+      "INT_XOR": 5,
+      "LOAD": 12,
+      "POPCOUNT": 15,
+      "RETURN": 1,
+      "STORE": 10
+    },
+    "pcode_op_count": 487
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004f3600",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004edb80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "red",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "green",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "blue",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "fog_near",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "fog_far",
+        "offset": 20,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_0061b4a0",
+      "severity": "mild",
+      "text": "if (DAT_0061b4a0 == 0x20) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_01c4e9ec",
+      "severity": "mild",
+      "text": "blue << (DAT_01c4e9ec & 0x1f) |",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_01c4e9d4",
+      "severity": "mild",
+      "text": "red << (DAT_01c4e9d4 & 0x1f) | green << (DAT_01c4e9e0 & 0x1f);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_01c4e9e0",
+      "severity": "mild",
+      "text": "red << (DAT_01c4e9d4 & 0x1f) | green << (DAT_01c4e9e0 & 0x1f);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 20,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if ((_DAT_02c8349c != (code *)0x0) && (_DAT_01c50948 != 0)) {",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

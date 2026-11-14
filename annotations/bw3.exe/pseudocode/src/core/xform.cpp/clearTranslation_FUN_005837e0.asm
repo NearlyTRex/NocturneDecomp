@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_xform_cpp_clearTranslation_FUN_005837e0(int param_1)
+; void __cdecl core_xform_cpp_clearTranslation_FUN_005837e0(CMatrix3x4f *matrix)
 ;
+; Parameters:
+; CMatrix3x4f *    Stack[0x4]:4   matrix
 ;
 ; XREF[1]:
 ;   core_xform.cpp_quaternionToMatrix3x4_FUN_00585740 at 00585762

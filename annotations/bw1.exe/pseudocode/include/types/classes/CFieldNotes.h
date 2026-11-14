@@ -6,11 +6,12 @@
 #include "system/basetypes.h"
 
 // Structure: CFieldNotes
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI size 68; ctor 004bcb60 zeroes byte +0; single global g_CFieldNotesInstance via g_CFieldNotesPtr
 // Ghidra size: 0x44 (68 bytes)
 #pragma pack(push, 1)
 typedef struct CFieldNotes {
-    char field_0[68]; // 0x0
+    char file_name[64]; // 0x0, loadFile 004bcba0 strcpy()s the notes file name into this and passes it to getFileSize/open('world', this); clear 004bdaa0 and the ctor set byte 0 = 0; CScript tests *(char *)g_CFieldNotesPtr == 0; next field bounds it at 64
+    int is_displayed; // 0x40, the field-notes hotkey (CGame_processHotkeys 004d1a80) toggles it; clear and dtor 004bcb70 zero it; game/inventory input code suppresses controls while it is set
 } CFieldNotes;
 #pragma pack(pop)
 

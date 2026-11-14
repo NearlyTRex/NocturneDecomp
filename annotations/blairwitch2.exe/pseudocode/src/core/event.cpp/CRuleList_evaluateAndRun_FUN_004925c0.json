@@ -2,27 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 11,
+    "complexity_score": 10,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 11,
+    "pseudocode_lines": 10,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 40
+    "total_lines": 39
   },
   "cross_references": [
     {
-      "addr": "004d03b0",
-      "from_addr": "004d049a",
-      "name": "core_hero.cpp_FUN_004d03b0",
+      "addr": "0045ca30",
+      "from_addr": "0045cabd",
+      "name": "core_doc.cpp_CDoc_doHeroAction_FUN_0045ca30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0045ca30",
-      "from_addr": "0045cabd",
-      "name": "unkafter_stranger.cpp_FUN_0045ca30",
+      "addr": "004d03b0",
+      "from_addr": "004d049a",
+      "name": "core_hero.cpp_CHero_doHeroAction_FUN_004d03b0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -64,7 +64,7 @@
       {
         "call_addr": "0045cabd",
         "call_type": "direct",
-        "caller": "unkafter_stranger.cpp_FUN_0045ca30",
+        "caller": "core_doc.cpp_CDoc_doHeroAction_FUN_0045ca30",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -75,7 +75,7 @@
       {
         "call_addr": "0045cb4e",
         "call_type": "direct",
-        "caller": "unkafter_stranger.cpp_FUN_0045ca30",
+        "caller": "core_doc.cpp_CDoc_doHeroAction_FUN_0045ca30",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -86,7 +86,7 @@
       {
         "call_addr": "004d049a",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004d03b0",
+        "caller": "core_hero.cpp_CHero_doHeroAction_FUN_004d03b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -97,7 +97,7 @@
       {
         "call_addr": "004d050a",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004d03b0",
+        "caller": "core_hero.cpp_CHero_doHeroAction_FUN_004d03b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -139,6 +139,32 @@
       "STORE": 5
     },
     "pcode_op_count": 215
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004aaf30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00495db0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004b18e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00481890",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 8,

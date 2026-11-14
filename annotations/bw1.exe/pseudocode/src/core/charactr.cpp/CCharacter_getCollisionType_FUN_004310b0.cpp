@@ -10,14 +10,15 @@ ECollisionType __cdecl core_charactr_cpp_CCharacter_getCollisionType_FUN_004310b
 
 {
   int iVar1;
+  EDeathState EVar2;
   
-  iVar1 = *(int *)collision_info;
+  iVar1 = (collision_info->ray_query).ray_type;
   if (iVar1 == 2) {
     return COLLISION_TYPE_NONE;
   }
-  if (*(int *)&this_ptr->field_0x27a8 == 0) {
-    iVar1 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x10c))(this_ptr);
-    if (1 < iVar1) {
+  if (this_ptr->is_spectral == 0) {
+    EVar2 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
+    if (1 < (int)EVar2) {
       return COLLISION_TYPE_NONE;
     }
   }
@@ -27,19 +28,17 @@ ECollisionType __cdecl core_charactr_cpp_CCharacter_getCollisionType_FUN_004310b
     }
     goto LAB_004310db;
   }
-  if ((*(int *)collision_info != 1) && (*(int *)collision_info != 3)) {
-    *(float *)&collision_info->field_0x18 =
-         *(float *)&this_ptr->field_0x3000 * *(float *)&this_ptr->field_0x27b8;
-    *(float *)&collision_info->field_0x14 =
-         *(float *)&this_ptr->field_0x2ffc * *(float *)&this_ptr->field_0x27b8;
-    if (*(float *)&collision_info->field_0x18 < *(float *)&collision_info->field_0x14) {
-      *(uint *)&collision_info->field_0x18 = *(uint *)&this_ptr->field_0x2490;
+  iVar1 = (collision_info->ray_query).ray_type;
+  if ((iVar1 != 1) && (iVar1 != 3)) {
+    collision_info->cylinder_top_y = this_ptr->collision_cylinder_top * this_ptr->size_scale;
+    collision_info->cylinder_bottom_y = this_ptr->collision_cylinder_bottom * this_ptr->size_scale;
+    if (collision_info->cylinder_top_y < collision_info->cylinder_bottom_y) {
+      collision_info->cylinder_top_y = (this_ptr->model).bounding_box.max.y;
     }
-    *(float *)&collision_info->field_0x1c =
-         *(float *)&this_ptr->field_0x2ff0 * *(float *)&this_ptr->field_0x27b8;
+    collision_info->cylinder_radius = this_ptr->collision_cylinder_radius * this_ptr->size_scale;
     return COLLISION_TYPE_CYLINDER;
   }
 LAB_004310db:
-  *(byte **)&collision_info->field_0x20 = &this_ptr->field_0x158;
+  collision_info->deformable_model = &this_ptr->model;
   return COLLISION_TYPE_MESH;
 }

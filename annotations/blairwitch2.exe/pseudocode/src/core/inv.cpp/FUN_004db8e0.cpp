@@ -15,7 +15,7 @@ void * core_inv_cpp_FUN_004db8e0(void *param_1,int param_2,int param_3)
   int iVar4;
   int iVar5;
   
-  engine_console_cpp_FUN_00436710(g_CConsolePtr,"Deleting: %s\n",param_2);
+  engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"Deleting: %s\n");
   if (param_2 == *(int *)((int)param_1 + *(int *)((int)param_1 + 0x468) * 4 + 0x610)) {
     *(uint *)((int)param_1 + *(int *)((int)param_1 + 0x468) * 4 + 0x610) = 0;
   }

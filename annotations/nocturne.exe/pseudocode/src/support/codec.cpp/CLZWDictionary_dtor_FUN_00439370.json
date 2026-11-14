@@ -20,15 +20,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004a3b90",
-      "from_addr": "004a3f8b",
-      "name": "core_game.cpp_CGame_FUN_004a3b90",
+      "addr": "004a4170",
+      "from_addr": "004a4581",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004a4170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004a4170",
-      "from_addr": "004a4581",
-      "name": "core_game.cpp_CGame_FUN_004a4170",
+      "addr": "004a3b90",
+      "from_addr": "004a3f8b",
+      "name": "core_game.cpp_CGame_saveGame_FUN_004a3b90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -70,7 +70,7 @@
       {
         "call_addr": "004a4581",
         "call_type": "direct",
-        "caller": "core_game.cpp_CGame_FUN_004a4170",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004a4170",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -81,7 +81,7 @@
       {
         "call_addr": "004a4767",
         "call_type": "direct",
-        "caller": "core_game.cpp_CGame_FUN_004a4170",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004a4170",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -92,7 +92,7 @@
       {
         "call_addr": "004a3f8b",
         "call_type": "direct",
-        "caller": "core_game.cpp_CGame_FUN_004a3b90",
+        "caller": "core_game.cpp_CGame_saveGame_FUN_004a3b90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -159,6 +159,32 @@
       "STORE": 3
     },
     "pcode_op_count": 29
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00434270",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00442f90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00440bf0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0043edf0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 12,

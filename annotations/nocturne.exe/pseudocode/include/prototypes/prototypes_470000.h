@@ -32,9 +32,9 @@
 
 void __cdecl shape_edittool_cpp_CEditorTools_drawWindowStatusMessage_FUN_004700d0(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
 void __cdecl shape_edittool_cpp_CEditorTools_createCenteredDialog_FUN_004701a0(CEditorTools *this_ptr,char *dialog_text);
-bool shape_edittool_cpp_FUN_00470230(undefined4 param_1,char *param_2);
-bool shape_edittool_cpp_FUN_00470310(undefined4 param_1,char *param_2);
-undefined4 shape_edittool_cpp_FUN_004703f0(undefined4 param_1,char *param_2);
+int __cdecl shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_00470230(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
+int __cdecl shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_00470310(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
+int __cdecl shape_edittool_cpp_CEditorTools_showYesAllNoCancelDialog_FUN_004703f0(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
 int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_00470550(CEditorTools *this_ptr,char *dialog_title,char *search_directory,char *file_pattern,char *output_filename,uint flags);
 int __cdecl shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_00470730(CEditorTools *this_ptr,char *title_text,char *search_pattern,char *initial_path,uint flags);
 int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_00470eb0(CEditorTools *this_ptr,char *dialog_title,char *directory_path,char *file_extension,char *output_buffer,uint flags);
@@ -138,7 +138,7 @@ int __cdecl shape_edittool_cpp_CEdCheck_handleInput_FUN_004774b0(CEdCheck *this_
 int __cdecl shape_edittool_cpp_wildcardStringMatch_FUN_004775b0(char *pattern,char *target_string,int case_sensitive);
 int __cdecl shape_edittool_cpp_CStrList_getItemCount_FUN_00477660(CStrList *this_ptr);
 int __cdecl shape_edittool_cpp_getFontMaxCharHeight_FUN_00477670(CBitFont *font_ptr);
-undefined4 * __cdecl shape_edittool_cpp_FUN_00477680(undefined4 *param_1,undefined4 *param_2);
+int * __cdecl shape_edittool_cpp_assignInt_FUN_00477680(int *dest,int *src);
 CVector3f * __cdecl shape_edittool_cpp_CVector3f_arrdtor8_FUN_00477690(CVector3f *this_ptr,uint flags);
 void __cdecl core_elephant_cpp_staticInit_FUN_004776b0(void);
 CElephantGun * __cdecl core_elephant_cpp_factoryFuncElephantGun_FUN_004776e0(void);

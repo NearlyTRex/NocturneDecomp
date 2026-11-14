@@ -11,65 +11,68 @@
 void __cdecl core_icepick_cpp_FUN_004f1670(CIcePick *this_ptr,float delta_time)
 
 {
+  CDeformableModelInstance *this_ptr_00;
   float fVar1;
-  CMotionList *this_ptr_00;
-  byte bVar2;
-  uint auStackY_1808 [1519];
+  CMotionList *this_ptr_01;
+  uint *puVar2;
+  byte bVar3;
+  float afStackY_1808 [1519];
   char *motion_name;
-  int iVar3;
+  int iVar4;
   code *blend_callback;
-  uint local_2c;
-  uint local_1c;
-  uint auStack_18 [5];
+  float local_2c;
+  CQuaternion4f local_1c;
   
-  bVar2 = 0;
-  if (*(int *)&this_ptr->field_0x1ffcc != 0) {
-    if (*(int *)&this_ptr->field_0x1ffac == 0) {
-      fVar1 = *(float *)&this_ptr->field_0x1ffd4 - delta_time * (float)_DAT_005e53b7;
-      *(float *)&this_ptr->field_0x1ffd4 = fVar1;
+  bVar3 = 0;
+  if (this_ptr->is_armed != 0) {
+    if (this_ptr->guns_drawn == 0) {
+      fVar1 = this_ptr->shoot_blend_weight - delta_time * (float)_DAT_005e53b7;
+      this_ptr->shoot_blend_weight = fVar1;
       if (fVar1 < 0.0) {
-        *(uint *)&this_ptr->field_0x1ffd4 = 0;
+        this_ptr->shoot_blend_weight = 0.0;
       }
     }
     else {
-      fVar1 = delta_time * (float)_DAT_005e53b7 + *(float *)&this_ptr->field_0x1ffd4;
-      *(float *)&this_ptr->field_0x1ffd4 = fVar1;
+      fVar1 = delta_time * (float)_DAT_005e53b7 + this_ptr->shoot_blend_weight;
+      this_ptr->shoot_blend_weight = fVar1;
       if (1.0 < fVar1) {
-        *(uint *)&this_ptr->field_0x1ffd4 = 0x3f800000;
+        this_ptr->shoot_blend_weight = 1.0;
       }
     }
-    iVar3 = 1;
+    iVar4 = 1;
     motion_name = "shoot";
-    this_ptr_00 = core_motion_cpp_FUN_00524a00((CMotionController *)&this_ptr->field_0x158);
-    iVar3 = core_motion_cpp_FUN_005240c0(this_ptr_00,motion_name,iVar3);
-    core_skeleton_cpp_FUN_00568100
-              (&this_ptr->field_0x158,iVar3,0,*(uint *)&this_ptr->field_0x1ffd4,_DAT_01d06cb4,
-               core_skeleton_cpp_FUN_00567360);
-    *(float *)&this_ptr->field_0x1ffd8 =
-         *(float *)&this_ptr->field_0xc204 * _DAT_005e53bf * (float)_DAT_005e53b7 * delta_time +
-         *(float *)&this_ptr->field_0x1ffd8;
-    if (*(int *)&this_ptr->field_0x1ffd8 < 0x3f490fdc) {
-      if (*(float *)&this_ptr->field_0x1ffd8 < _DAT_005e53c3) {
-        *(uint *)&this_ptr->field_0x1ffd8 = 0xbf490fdb;
+    this_ptr_00 = &(this_ptr->base).base.model;
+    this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_00524a00(&this_ptr_00->base);
+    iVar4 = core_motion_cpp_CMotionList_findMotionIndex_FUN_005240c0(this_ptr_01,motion_name,iVar4);
+    core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_00568100
+              (this_ptr_00,iVar4,0.0,this_ptr->shoot_blend_weight,_DAT_01d06cb4,
+               core_skeleton_cpp_blendWeightCallback_FUN_00567360);
+    this_ptr->aim_pitch =
+         (this_ptr->base).player_input.look_up_down_speed * _DAT_005e53bf * (float)_DAT_005e53b7 *
+         delta_time + this_ptr->aim_pitch;
+    if ((int)this_ptr->aim_pitch < 0x3f490fdc) {
+      if (this_ptr->aim_pitch < _DAT_005e53c3) {
+        this_ptr->aim_pitch = -0.7853982;
       }
     }
     else {
-      *(uint *)&this_ptr->field_0x1ffd8 = 0x3f490fdb;
+      this_ptr->aim_pitch = 0.7853982;
     }
-    core_xform_cpp_FUN_005b7af0(*(uint *)&this_ptr->field_0x1ffd8);
-    blend_callback = core_skeleton_cpp_FUN_00567360;
-    local_1c = local_2c;
-    auStack_18[(uint)bVar2 * -2] = *(uint *)(&stack0xffffffd8 + (uint)bVar2 * -8);
-    iVar3 = _DAT_01d06cb4;
-    auStack_18[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
-         *(uint *)(&stack0xffffffdc + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-    (auStack_18 + (uint)bVar2 * -2 + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1] =
+    core_xform_cpp_quaternionFromAngleX_FUN_005b7af0(this_ptr->aim_pitch);
+    blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_00567360;
+    local_1c.w = local_2c;
+    puVar2 = (uint *)((int)&local_1c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+    *(uint *)((int)&local_1c + (uint)bVar3 * -8 + 4) =
+         *(uint *)(&stack0xffffffd8 + (uint)bVar3 * -8);
+    iVar4 = _DAT_01d06cb4;
+    *puVar2 = *(uint *)(&stack0xffffffdc + (uint)bVar3 * -8 + (uint)bVar3 * -8);
+    puVar2[(uint)bVar3 * -2 + 1] =
          *(uint *)
-          ((int)(&stack0xffffffdc + (uint)bVar2 * -8 + (uint)bVar2 * -8) +
-          ((uint)bVar2 * -2 + 1) * 4);
-    core_skeleton_cpp_FUN_005695e0
-              ((CDeformableModelInstance *)&this_ptr->field_0x158,(CQuaternion4f *)&local_1c,
-               *(float *)&this_ptr->field_0x1ffd4,iVar3,blend_callback);
+          ((int)(&stack0xffffffdc + (uint)bVar3 * -8 + (uint)bVar3 * -8) +
+          ((uint)bVar3 * -2 + 1) * 4);
+    core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_005695e0
+              (&(this_ptr->base).base.model,&local_1c,this_ptr->shoot_blend_weight,iVar4,
+               blend_callback);
   }
   return;
 }

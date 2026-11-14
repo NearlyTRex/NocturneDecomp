@@ -15,15 +15,15 @@
 ; undefined        Stack[-0x14]:1  local_14
 ;
 ; XREF[3]:
+;   core_doc.cpp_CDoc_renderOpaque_FUN_00471af0 at 00471d5a
 ;   core_doc.cpp_FUN_00469550 at 0046a2b4
-;   core_doc.cpp_FUN_00471af0 at 00471d5a
 ;   core_doc.cpp_FUN_00475920 at 00475bd0
 ;
 ; Called Functions:
 ;   core_doc.cpp_FUN_0046f740
 ;   core_xform.cpp_FUN_005b5760
-;   core_xform.cpp_FUN_005b5930
 ;   core_xform.cpp_FUN_005b6270
+;   core_xform.cpp_matrixToEulerAngles_FUN_005b5930
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005b5200
 ;
 ; *****************************************************************************
@@ -82,7 +82,7 @@ section .text
     LEA ESI,[ESP + 0xd0]                ; 0046f6a2
     LEA EDI,[ESP + 0x40]                ; 0046f6a9
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_005b5200 ; 0046f6ad
-        ;   XREF to: 005b5200 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_005b5200()
+        ;   XREF to: 005b5200 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005b5200(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 0046f6b2
     LEA ESI,[ESP + 0xd0]                ; 0046f6b7
     ADD ESP,0x8                         ; 0046f6be
@@ -93,8 +93,8 @@ section .text
     PUSH ESI                            ; 0046f6d4
     LEA ESI,[ESP + 0xfc]                ; 0046f6d5
     MOV EBP,dword ptr [EBX + 0x154]     ; 0046f6dc
-    CALL core_xform.cpp_FUN_005b5930    ; 0046f6e2
-        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b5930()
+    CALL core_xform.cpp_matrixToEulerAngles_FUN_005b5930 ; 0046f6e2
+        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_005b5930()
     LEA ESI,[ESP + 0xfc]                ; 0046f6e7
     ADD ESP,0x4                         ; 0046f6ee
     MOVSD ES:EDI,ESI                    ; 0046f6f1

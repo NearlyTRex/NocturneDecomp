@@ -134,13 +134,44 @@ TEST(CMotionList, AVersionOneListHasNoMarkers) {
     EXPECT_EQ(second_scanner.readLine(), "// after");
 }
 
-TEST(CMotionList, AVersionPastTwoOrNoneIsFatal) {
-    common::CTextScanner newer("// v\n3\n");
+// Before version 3 a motion keeps every frame's pose.
+TEST(CMotionList, AnOlderListStoresEveryFrame) {
+    const std::string text = "// v\n2\n// s\n0\n// m\n1\n// m0\n\"a\",1,0,0,20\n" +
+                             motionBody("0\n", "0\n") + "// k\n0\n";
+    common::CTextScanner scanner(text);
+    CMotionList list;
+    list.load(scanner);
+    EXPECT_EQ(list.getMotions()[0].frame_resolution, 1);
+    EXPECT_EQ(list.getMotions()[0].stored_frame_count, 20);
+}
+
+// Blair Witch's version 3: a frame resolution line after the backward exit.
+TEST(CMotionList, AVersionThreeListStoresAPoseEveryFewFrames) {
+    const std::string text =
+        "// motion list version\r\n3\r\n// state list\r\n1\r\nSTAND\r\n// motion count\r\n1\r\n"
+        "// motion 0\r\n\"walk\",30,0,46,49\r\n// exit\r\n49,0,0\r\n// cmd\r\n1,0,0\r\n"
+        "// back\r\n0,0\r\n// motion 0: frameResolution, storedFrameCount\r\n2,25\r\n"
+        "// transitions\r\n1\r\n0,6,0,0,0.1,1\r\n// signals\r\n1\r\n 44,7\r\n// markers\r\n0\r\n"
+        "// after\r\n";
+    common::CTextScanner scanner(text);
+    CMotionList list;
+    list.load(scanner);
+    const SMotion &motion = list.getMotions()[0];
+    EXPECT_EQ(motion.frame_count, 49);
+    EXPECT_EQ(motion.frame_resolution, 2);
+    EXPECT_EQ(motion.stored_frame_count, 25);
+    ASSERT_EQ(motion.transitions.size(), 1U);
+    EXPECT_EQ(motion.signals[0].frame_number, 44);
+    EXPECT_EQ(scanner.readLine(), "// after\r");
+}
+
+TEST(CMotionList, AVersionPastThreeOrNoneIsFatal) {
+    common::CTextScanner newer("// v\n4\n");
     CMotionList list;
     EXPECT_THAT([&] { list.load(newer); },
                 ThrowsMessage<common::CFatalError>(
-                    StrEq("Can't read motion list - it's version 3, and I can only handle up to "
-                          "version 2.  (Probably you have an old .exe)")));
+                    StrEq("Can't read motion list - it's version 4, and I can only handle up to "
+                          "version 3.  (Probably you have an old .exe)")));
     common::CTextScanner unreadable("// v\nnone\n");
     EXPECT_THAT([&] { list.load(unreadable); },
                 ThrowsMessage<common::CFatalError>(StrEq("Error reading motion list.")));

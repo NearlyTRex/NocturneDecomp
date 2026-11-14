@@ -1,20 +1,22 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_actor_cpp_createActorByName_FUN_0040c4f0(undefined4 param_1)
+; CDemonActor * __cdecl core_actor_cpp_createActorByName_FUN_0040c4f0(char *class_name)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   class_name
 ;
 ; XREF[21]:
-;   core_asgaya.cpp_FUN_005a0be0 at 005a0c97
+;   core_asgaya.cpp_CAsgaya_process_FUN_005a0be0 at 005a0c97
+;   core_darkwolf.cpp_CDarkwolf_setup_FUN_00598800 at 0059882d
 ;   core_enemy.cpp_FUN_00489c90 at 00489d24
-;   core_fire.cpp_FUN_0049cca0 at 0049ccb4
-;   core_game.cpp_FUN_004bafd0 at 004bafd9
-;   core_game.cpp_FUN_004bb100 at 004bbb4f
+;   core_fire.cpp_spawnDiseaseBugs_FUN_0049cca0 at 0049ccb4
+;   core_game.cpp_CGame_processCheatCodes_FUN_004bb100 at 004bbb4f
+;   core_game.cpp_giveHeroWeapon_FUN_004bafd0 at 004bafd9
 ;   core_hero.cpp_FUN_004d4be0 at 004d4bf5
+;   core_inv.cpp_CInventory_initialize_FUN_004da4e0 at 004da53a
 ;   core_inv.cpp_CInventory_load_FUN_004dc750 at 004dc9ff
-;   core_inv.cpp_FUN_004da4e0 at 004da53a
 ;   core_inv.cpp_FUN_004da880 at 004db222
-;   core_mission.cpp_CDemonMission_readMissionFile_FUN_004f5cc0 at 004f6257
 ;   ... and 11 more
 ;
 ; Referenced Globals:
@@ -42,7 +44,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x10]      ; 0040c4f3
     PUSH ESI                            ; 0040c4f7
     CALL core_actor.cpp_getActorClassByName_FUN_0040c480 ; 0040c4f8
-        ;   XREF to: 0040c480 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getActorClassByName_FUN_0040c480()
+        ;   XREF to: 0040c480 (UNCONDITIONAL_CALL)  ; CDemonActorType * core_actor.cpp_getActorClassByName_FUN_0040c480(char * className)
     ADD ESP,0x4                         ; 0040c4fd
     MOV EBX,EAX                         ; 0040c500
     TEST EAX,EAX                        ; 0040c502

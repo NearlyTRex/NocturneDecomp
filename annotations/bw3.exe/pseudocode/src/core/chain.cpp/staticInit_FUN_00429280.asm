@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_chain_cpp_staticInit_FUN_00429280(void)
+; void __cdecl core_chain_cpp_staticInit_FUN_00429280(void)
 ;
 ;
 ; Called Functions:

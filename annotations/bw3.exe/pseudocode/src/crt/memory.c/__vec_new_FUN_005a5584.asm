@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[4]:
-;   cockpit_pkbitmap.cpp_FUN_005102b0 at 00510389
+;   cockpit_pkbitmap.cpp_parsePBGFile_FUN_005102b0 at 00510389
 ;   cockpit_pkbmpset.cpp_FUN_005106a0 at 005106ec
 ;   core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_004735c0 at 004735f6
-;   shape_edittool.cpp_FUN_0047d230 at 0047d2c9
+;   shape_edittool.cpp_showMultiChoiceDialog_FUN_0047d230 at 0047d2c9
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005a5544

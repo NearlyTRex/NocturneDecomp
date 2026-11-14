@@ -1,0 +1,152 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 11,
+    "complexity_score": 27,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 12,
+    "suspect_count": 1,
+    "suspect_types": [
+      "preinc_loop_idiom"
+    ],
+    "total_lines": 23
+  },
+  "cross_references": [
+    {
+      "addr": "0040b960",
+      "from_addr": "0040ba15",
+      "name": "core_actor.cpp_archivePartStatus_FUN_0040b960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00569f50",
+      "from_addr": "00569f8f",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00569b00",
+    "address_range": [
+      [
+        "00569b00",
+        "00569b1d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_00569b00",
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_clearAllTextureSetIndices_FUN_00569b00(CDeformableModelInstance *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00569f8f",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0040ba15",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_archivePartStatus_FUN_0040b960",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0,
+    "instruction_count": 8,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CBRANCH": 1,
+      "COPY": 4,
+      "INT_ADD": 5,
+      "INT_AND": 6,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 1,
+      "LOAD": 2,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 40
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00547460",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0054e690",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a0430",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0051dcb0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar1` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `pCVar1 = pCVar1;` self-assign, two-var `tmp = &pCVar1->field; pCVar1 = tmp;` ping-pong, or a bare `pCVar1 = pCVar1 + N;` advance followed by a `*pCVar1 =` store \u2014 plus a constant-index store on `pCVar1`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 9,
+      "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
+    }
+  ]
+}

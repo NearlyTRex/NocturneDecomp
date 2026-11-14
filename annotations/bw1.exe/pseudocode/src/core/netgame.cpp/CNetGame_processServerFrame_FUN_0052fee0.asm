@@ -19,8 +19,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004cf99a
 ;   core_game.cpp_FUN_004ce580 at 004ce615
-;   core_game.cpp_FUN_004cf5e0 at 004cf99a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_005eb62a
@@ -34,7 +34,7 @@
 ;   TerminatedCString s_core_netgame_cpp_005ec253
 ;   TerminatedCString s_CNetGame_processServerFr_005ec267
 ;   CGame* g_CGamePtr = 01ccf390
-;   undefined4 g_CGameInstance.field660_0x294
+;   undefined4 g_CGameInstance.delta_time_float
 ;   undefined4 DAT_01d1d400
 ;   undefined4 DAT_01d1d404
 ;   undefined4 DAT_01d51d9c
@@ -50,7 +50,7 @@
 ;   crt_memory.c_memset_FUN_005bfb70
 ;   crt_stdlib.c_rand_FUN_005c084c
 ;   crt_string.c_memmove_FUN_005c25d0
-;   wincore_winrun.cpp_FUN_005b2420
+;   wincore_winrun.cpp_getTime_FUN_005b2420
 ;
 ; *****************************************************************************
 
@@ -63,8 +63,8 @@ section .text
     PUSH EBP                            ; 0052fee3
     SUB ESP,0x88                        ; 0052fee4
     MOV EBX,dword ptr [ESP + 0x9c]      ; 0052feea
-    CALL wincore_winrun.cpp_FUN_005b2420 ; 0052fef1
-        ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005b2420()
+    CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 0052fef1
+        ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
     MOV EDX,EAX                         ; 0052fef6
     MOV ECX,0x12                        ; 0052fef8
     SAR EDX,0x1f                        ; 0052fefd
@@ -223,7 +223,7 @@ section .text
     MOV dword ptr [EBP + 0x4],EAX       ; 00530092
     MOV EAX,[0x0061d95c]                ; 00530095 | g_CGamePtr
     MOV dword ptr [ESP + 0x7c],EBP      ; 0053009a
-    MOV EDX,dword ptr [EAX + 0x294]     ; 0053009e | g_CGameInstance.field660_0x294
+    MOV EDX,dword ptr [EAX + 0x294]     ; 0053009e | g_CGameInstance.delta_time_float
     MOV dword ptr [EBP + 0x8],EDX       ; 005300a4
     MOV ECX,dword ptr [EBX + 0x1c]      ; 005300a7
     XOR EAX,EAX                         ; 005300aa

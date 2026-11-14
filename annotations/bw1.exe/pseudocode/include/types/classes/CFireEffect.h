@@ -6,10 +6,10 @@
 #include "system/basetypes.h"
 
 // Structure: CFireEffect
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x4 (4 bytes)
 #pragma pack(push, 1)
 typedef struct CFireEffect {
+    int singleton; // 0x0
 } CFireEffect;
 #pragma pack(pop)
 

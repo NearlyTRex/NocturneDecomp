@@ -6,10 +6,12 @@
 #include "system/basetypes.h"
 
 // Structure: COrientation
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0xc (12 bytes)
 #pragma pack(push, 1)
 typedef struct COrientation {
+    float pitch; // 0x0
+    float bank; // 0x4
+    float heading; // 0x8
 } COrientation;
 #pragma pack(pop)
 

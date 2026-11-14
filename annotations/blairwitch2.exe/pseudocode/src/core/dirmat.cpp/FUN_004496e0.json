@@ -50,15 +50,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0044c15e",
+      "addr": "0044c160",
       "from_addr": "0044c1a0",
-      "name": "core_dlight.cpp_FUN_0044c15e",
+      "name": "core_dlight.cpp_FUN_0044c160",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004969a0",
       "from_addr": "00496a11",
-      "name": "core_fire.cpp_FUN_004969a0",
+      "name": "core_fire.cpp_CMuzzleFlash_init_FUN_004969a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059d360",
+      "from_addr": "0059d3d1",
+      "name": "core_muzzle.cpp_CMuzzleEffect_init_FUN_0059d360",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -74,15 +80,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0059d360",
-      "from_addr": "0059d3d1",
-      "name": "unkaddr_0059d350.cpp_FUN_0059d360",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004f24b0",
       "from_addr": "004f24bf",
-      "name": "unkafter_minecar.cpp_FUN_004f24b0",
+      "name": "engine_mini3d.cpp_setCameraMatrix_FUN_004f24b0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -246,7 +246,7 @@
       {
         "call_addr": "0059d3d1",
         "call_type": "direct",
-        "caller": "unkaddr_0059d350.cpp_FUN_0059d360",
+        "caller": "core_muzzle.cpp_CMuzzleEffect_init_FUN_0059d360",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -262,7 +262,7 @@
       {
         "call_addr": "00496a11",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004969a0",
+        "caller": "core_fire.cpp_CMuzzleFlash_init_FUN_004969a0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -276,27 +276,29 @@
         "stack_params": 1
       },
       {
-        "call_addr": "0044c1a0",
-        "call_type": "direct",
-        "caller": "core_dlight.cpp_FUN_0044c15e",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
         "call_addr": "004f24bf",
         "call_type": "direct",
-        "caller": "unkafter_minecar.cpp_FUN_004f24b0",
+        "caller": "engine_mini3d.cpp_setCameraMatrix_FUN_004f24b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
         "reg_params": [
           "EBX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005b0d0c",
+        "call_type": "direct",
+        "caller": "core_cloth.cpp_FUN_005b0ce0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "EDX"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -348,6 +350,20 @@
       "STORE": 67
     },
     "pcode_op_count": 2537
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0045f840",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0045b9b0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 164,

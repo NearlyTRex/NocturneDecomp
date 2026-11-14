@@ -17,9 +17,9 @@
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
 ;   core_manpuz.cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_00506200
-;   sound_sndmain.cpp_FUN_005727e0
-;   sound_sndmain.cpp_FUN_00572ac0
-;   sound_sndmain.cpp_FUN_00572b40
+;   sound_sndmain.cpp_popSfxOptions_FUN_00572b40
+;   sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0
+;   sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005727e0
 ;   sound_sndmain.cpp_startSfx_FUN_00572d20
 ;
 ; *****************************************************************************
@@ -67,18 +67,18 @@ section .text
     MOV dword ptr [EBX + 0x8],0x3f800000 ; 005060bd
         ;   Label: LAB_005060bd
     ADD EBX,0x58                        ; 005060c4
-    CALL sound_sndmain.cpp_FUN_00572ac0 ; 005060c7
-        ;   XREF to: 00572ac0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00572ac0()
+    CALL sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0 ; 005060c7
+        ;   XREF to: 00572ac0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0()
     PUSH EBX                            ; 005060cc
-    CALL sound_sndmain.cpp_FUN_005727e0 ; 005060cd
-        ;   XREF to: 005727e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_005727e0(CVector3f * position_source_ptr)
+    CALL sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005727e0 ; 005060cd
+        ;   XREF to: 005727e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005727e0(CVector3f * position_source_ptr)
     ADD ESP,0x4                         ; 005060d2
     PUSH 0x5e75e1                       ; 005060d5
     CALL sound_sndmain.cpp_startSfx_FUN_00572d20 ; 005060da
         ;   XREF to: 00572d20 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_startSfx_FUN_00572d20(char * filename)
     ADD ESP,0x4                         ; 005060df
-    CALL sound_sndmain.cpp_FUN_00572b40 ; 005060e2
-        ;   XREF to: 00572b40 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00572b40()
+    CALL sound_sndmain.cpp_popSfxOptions_FUN_00572b40 ; 005060e2
+        ;   XREF to: 00572b40 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_00572b40()
     POP EBP                             ; 005060e7
     POP ESI                             ; 005060e8
     POP EBX                             ; 005060e9

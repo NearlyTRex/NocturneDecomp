@@ -8,9 +8,9 @@
 ;
 ; XREF[4]:
 ;   core_dracbrid.cpp_FUN_00465400 at 00465879
-;   core_sound.cpp_FUN_00559b4e at 00559f92
-;   core_sound.cpp_FUN_0055a3c0 at 0055ab3d
-;   core_vehicle.cpp_FUN_00584d90 at 00584dae
+;   core_sound.cpp_CSound_process_FUN_0055a3c0 at 0055ab3d
+;   core_sound.cpp_FUN_00559b50 at 00559f92
+;   core_vehicle.cpp_CVehicle_playTrackedSound_FUN_00584d90 at 00584dae
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0264161c

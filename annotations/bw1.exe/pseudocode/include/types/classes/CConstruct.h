@@ -2,15 +2,37 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CBodyPart;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
+#include "types/classes/CQuaternion4f.h"
+#include "types/classes/CVector3f.h"
+#include "types/structs/SBoneGuyBox.h"
 
 // Structure: CConstruct
-// Stub: size from Watcom RTTI, fields not yet recovered
+// ctor 00445820 __arrinit(this+0xc398, 0x18, SBoneGuyBox); archive 00446e30 keys; setup 004459c0; explode FUN_004472a0
 // Ghidra size: 0xca6c (51820 bytes)
 #pragma pack(push, 1)
 typedef struct CConstruct {
-    char field_0[51820]; // 0x0
+    CEnemy base; // 0x0, derived; unchanged
+    char fall_event[100]; // 0xc268, ctor strcpy; archive "fallEvent"
+    int part_indices[12]; // 0xc2cc, setup 004459c0 findPartByName into +0xc2cc..+0xc2f8 (slot 7 unused); [0] read by explode FUN_004472a0 as the pickable part
+    char field_49916[8]; // 0xc2fc
+    uint sfx_handles[8]; // 0xc304, ctor zeroes +0xc304..+0xc320; process 00445cb0 / processDamage 00447090 isSfxPlaying/killSfx
+    int unknown_0xc324; // 0xc324, ctor stores 2; no reader found
+    char death_event[100]; // 0xc328, ctor strcpy "ConstructDie"; archive "deathEvent"
+    float recombine_time; // 0xc38c, ctor 8.0; archive "recombineTime"; process FCOMP
+    int initial_hit_points; // 0xc390, setup round(hit_points +0x2538); process restores hit_points from it
+    int box_count; // 0xc394, archive "boxCount"; explode stores model num_parts (max 0x18)
+    SBoneGuyBox boxes[24]; // 0xc398, ctor __arrinit count 0x18 stride 0x48; archive boxListPos/Orient/DestOrient/StartOrient/sourcePos/Part
+    int blown_up; // 0xca58, archive "blownUp"; explode sets 1
+    float recombine_interpolation; // 0xca5c, archive "param"; explode zeroes; process FADD
+    int pickable_box_index; // 0xca60, explode stores the part index equal to part_indices[0]; process/FUN_004474d0 index boxes[i].body_part
+    int death_sound_played; // 0xca64, process state 0xb: plays once, sets 1
+    float difficulty_speed_scale; // 0xca68, setup 0.75 / 1.0 by COMBATMODEHARD; process delta*speed*this
 } CConstruct;
 #pragma pack(pop)
 

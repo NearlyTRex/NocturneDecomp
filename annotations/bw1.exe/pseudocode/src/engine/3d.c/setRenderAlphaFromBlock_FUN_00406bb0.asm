@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_3d_c_setRenderAlphaFromBlock_FUN_00406bb0(int param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_setRenderAlphaFromBlock_FUN_00406bb0(SMRGLHeaderExtended *block)
 ;
+; Parameters:
+; SMRGLHeaderExtended * Stack[0x4]:4   block
 ;
 ; Called Functions:
 ;   engine_3d.c_setRenderAlpha_FUN_00406bd0

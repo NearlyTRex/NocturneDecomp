@@ -12,8 +12,8 @@
 ; undefined        Stack[-0x40]:1  local_40
 ;
 ; XREF[2]:
-;   core_platfrm.cpp_FUN_00518280 at 005182fa
-;   core_script.cpp_FUN_00522350 at 005241e9
+;   core_platfrm.cpp_CPlatform_setup_FUN_00518280 at 005182fa
+;   core_script.cpp_CScript_step_FUN_00522350 at 005241e9
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_platfrm_cpp_005e23cc
@@ -106,7 +106,7 @@ section .text
     LEA ESI,[ESP + 0x38]                ; 00519afa
     MOV dword ptr [EDI + 0x678],EBX     ; 00519afe
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_005916b0 ; 00519b04
-        ;   XREF to: 005916b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_005916b0()
+        ;   XREF to: 005916b0 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005916b0(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 00519b09
     LEA ESI,[ESP + 0x38]                ; 00519b0e
     LEA EDI,[EDI + 0x67c]               ; 00519b12

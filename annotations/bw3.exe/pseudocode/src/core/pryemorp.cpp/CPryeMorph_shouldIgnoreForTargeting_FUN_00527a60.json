@@ -1,0 +1,95 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 12,
+    "complexity_score": 7,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 19
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00527a60",
+    "address_range": [
+      [
+        "00527a60",
+        "00527a82"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_pryemorp.cpp_CPryeMorph_shouldIgnoreForTargeting_FUN_00527a60",
+    "signature": "int __cdecl core_pryemorp_cpp_CPryeMorph_shouldIgnoreForTargeting_FUN_00527a60(CPryeMorph *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004fc070",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.2,
+    "instruction_count": 10,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 6,
+      "INT_ADD": 5,
+      "INT_AND": 9,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 4,
+      "INT_SUB": 3,
+      "LOAD": 3,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 52
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPryeMorph *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPryeMorph",
+        "offset": 112,
+        "vtable_addr": "005e36e4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

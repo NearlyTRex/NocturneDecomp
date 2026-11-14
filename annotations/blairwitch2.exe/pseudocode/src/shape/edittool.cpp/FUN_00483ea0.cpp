@@ -20,7 +20,7 @@ void shape_edittool_cpp_FUN_00483ea0(int param_1,int param_2,int param_3,int par
   }
   if (_DAT_01c25f84 != 0) {
     iVar1 = (uVar2 & 0xff) * 3;
-    engine_mini3d_cpp_FUN_004f8e20
+    engine_mini3d_cpp_setColor_FUN_004f8e20
               ((uint)(byte)(&DAT_01c3583a)[iVar1] |
                (uint)(byte)(&DAT_01c35839)[iVar1] << 8 | (uint)(byte)(&DAT_01c35838)[iVar1] << 0x10)
     ;
@@ -31,13 +31,13 @@ void shape_edittool_cpp_FUN_00483ea0(int param_1,int param_2,int param_3,int par
     engine_2d_c_drawHLine_FUN_00402f30(param_1,param_2,param_3 + -1);
   }
   else {
-    engine_mini3d_cpp_FUN_004f9390(param_1,param_2,param_3 + -1);
+    engine_mini3d_cpp_drawHLine_FUN_004f9390(param_1,param_2,param_3 + -1);
   }
   if (_DAT_01c25f84 == 0) {
     engine_2d_c_drawVLine_FUN_00403040(param_1,param_2,param_4 + -1);
   }
   else {
-    engine_mini3d_cpp_FUN_004f93b0(param_1,param_2,param_4 + -1);
+    engine_mini3d_cpp_drawVLine_FUN_004f93b0(param_1,param_2,param_4 + -1);
   }
   uVar2 = _DAT_01c26404;
   if (param_5 != 0) {
@@ -45,7 +45,7 @@ void shape_edittool_cpp_FUN_00483ea0(int param_1,int param_2,int param_3,int par
   }
   if (_DAT_01c25f84 != 0) {
     iVar1 = (uVar2 & 0xff) * 3;
-    engine_mini3d_cpp_FUN_004f8e20
+    engine_mini3d_cpp_setColor_FUN_004f8e20
               ((uint)(byte)(&DAT_01c3583a)[iVar1] |
                (uint)(byte)(&DAT_01c35838)[iVar1] << 0x10 | (uint)(byte)(&DAT_01c35839)[iVar1] << 8)
     ;
@@ -56,13 +56,13 @@ void shape_edittool_cpp_FUN_00483ea0(int param_1,int param_2,int param_3,int par
     engine_2d_c_drawHLine_FUN_00402f30(param_1,param_4 + -1,param_3 + -1);
   }
   else {
-    engine_mini3d_cpp_FUN_004f9390(param_1,param_4 + -1,param_3 + -1);
+    engine_mini3d_cpp_drawHLine_FUN_004f9390(param_1,param_4 + -1,param_3 + -1);
   }
   if (_DAT_01c25f84 == 0) {
     engine_2d_c_drawVLine_FUN_00403040(param_3 + -1,param_2,param_4 + -1);
   }
   else {
-    engine_mini3d_cpp_FUN_004f93b0(param_3 + -1,param_2,param_4 + -1);
+    engine_mini3d_cpp_drawVLine_FUN_004f93b0(param_3 + -1,param_2,param_4 + -1);
   }
   if (_DAT_01c25f84 == 0) {
     engine_2d_c_fillRectColor_FUN_004031c0
@@ -74,11 +74,11 @@ void shape_edittool_cpp_FUN_00483ea0(int param_1,int param_2,int param_3,int par
   }
   else {
     iVar1 = (_DAT_01c263f4 & 0xff) * 3;
-    engine_mini3d_cpp_FUN_004f8e20
+    engine_mini3d_cpp_setColor_FUN_004f8e20
               ((uint)(byte)(&DAT_01c3583a)[iVar1] |
                (uint)(byte)(&DAT_01c35838)[iVar1] << 0x10 | (uint)(byte)(&DAT_01c35839)[iVar1] << 8)
     ;
   }
-  engine_mini3d_cpp_FUN_004f90d0(param_1 + 1,param_2 + 1,param_3 + -2,param_4 + -2);
+  engine_mini3d_cpp_fillRect_FUN_004f90d0(param_1 + 1,param_2 + 1,param_3 + -2,param_4 + -2);
   return;
 }

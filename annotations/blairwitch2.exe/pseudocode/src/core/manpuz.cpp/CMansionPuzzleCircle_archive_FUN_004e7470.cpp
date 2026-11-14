@@ -1,0 +1,41 @@
+// Name: core_manpuz.cpp_CMansionPuzzleCircle_archive_FUN_004e7470
+// Address: 004e7470
+// Address Range: [[004e7470, 004e7552]]
+// Convention: __cdecl
+// Signature: void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_archive_FUN_004e7470(CMansionPuzzleCircle *this_ptr)
+
+#include "nocturne.h"
+
+void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_archive_FUN_004e7470(CMansionPuzzleCircle *this_ptr)
+
+{
+  int iVar1;
+  int *int_ptr;
+  CColor3i *int_ptr_00;
+  int *int_ptr_01;
+  
+  core_actor_cpp_CDemonActor_archive_FUN_0040c330(&this_ptr->base);
+  if (1 < g_CMansionPuzzleCircleClassVersion) {
+    core_actor_cpp_archiveVector_FUN_0040b4b0(&this_ptr->gem_pos,"pGemPos");
+    core_actor_cpp_archiveOrientation_FUN_0040b550
+              (&(this_ptr->gem_orient).orient,"pGemOrient");
+    core_actor_cpp_archiveVector_FUN_0040b4b0(&(this_ptr->emitter_pos).f,"pEmitterPos");
+  }
+  if (2 < g_CMansionPuzzleCircleClassVersion) {
+    int_ptr = &this_ptr->panels[0].color.b;
+    iVar1 = 0;
+    int_ptr_01 = &this_ptr->panels[0].color.g;
+    int_ptr_00 = &this_ptr->panels[0].color;
+    do {
+      core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->panels[iVar1].exists,"exists");
+      core_actor_cpp_archiveInteger_FUN_0040b960(&int_ptr_00->r,&DAT_005dc6cc);
+      core_actor_cpp_archiveInteger_FUN_0040b960(int_ptr_01,&DAT_005dc6ce);
+      iVar1 = iVar1 + 1;
+      int_ptr_00 = (CColor3i *)((int)(int_ptr_00 + 8) + 4);
+      int_ptr_01 = int_ptr_01 + 0x19;
+      core_actor_cpp_archiveInteger_FUN_0040b960(int_ptr,&DAT_005dc6d0);
+      int_ptr = int_ptr + 0x19;
+    } while (iVar1 < 0xc);
+  }
+  return;
+}

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b9b0(CKeyFramedModelInstance *param_1,char *param_2)
+; void __cdecl core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b9b0(CKeyFramedModelInstance *model_ptr,char *property_name)
 ;
+; Parameters:
+; CKeyFramedModelInstance * Stack[0x4]:4   model_ptr
+; char *           Stack[0x8]:4   property_name
 ; Local Variables:
 ; undefined        Stack[-0xd0]:1  local_d0
 ; undefined1       Stack[-0xcf]:1  local_cf
@@ -13,11 +16,11 @@
 ;   core_bat.cpp_CBat_archive_FUN_0040ef20 at 0040ef9e
 ;   core_battery.cpp_CBattery_archive_FUN_0040f630 at 0040f64a
 ;   core_boxactor.cpp_CBoxActor_archive_FUN_0041fb90 at 0041fbb4
-;   core_bugs.cpp_FUN_00421960 at 004219c1
+;   core_bugs.cpp_CBugs_archive_FUN_00421960 at 004219c1
 ;   core_crate.cpp_CCrate_archive_FUN_00446040 at 0044605a
-;   core_door.cpp_FUN_00464cd0 at 00464ceb
+;   core_door.cpp_CDoor_archive_FUN_00464cd0 at 00464ceb
 ;   core_drip.cpp_CDrip_archive_FUN_0046ebc0 at 0046ebde
-;   core_emitter.cpp_FUN_00488bb0 at 00488cc8
+;   core_emitter.cpp_CEmitter_archive_FUN_00488bb0 at 00488cc8
 ;   ... and 18 more
 ;
 ; Referenced Globals:

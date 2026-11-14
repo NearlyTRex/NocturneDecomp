@@ -2,15 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 93,
+    "complexity_score": 83,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 7,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 33,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
-      "unnamed_field",
+      "pointer_cast",
       "warning_overlapping_globals"
     ],
     "total_lines": 116
@@ -23,21 +23,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005226a0",
-      "from_addr": "005226c8",
-      "name": "core_morph.cpp_CMorphModel_animateFromKeyframedModel_FUN_005226a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00522340",
       "from_addr": "0052241b",
-      "name": "core_morph.cpp_FUN_00522340",
+      "name": "core_morph.cpp_CMorphModel_addPartFromVertexBuffer_FUN_00522340",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00522650",
       "from_addr": "00522691",
-      "name": "core_morph.cpp_FUN_00522650",
+      "name": "core_morph.cpp_CMorphModel_animateFromDeformableModel_FUN_00522650",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005226a0",
+      "from_addr": "005226c8",
+      "name": "core_morph.cpp_CMorphModel_animateFromKeyframedModel_FUN_005226a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -110,7 +110,7 @@
       {
         "call_addr": "0052241b",
         "call_type": "direct",
-        "caller": "core_morph.cpp_FUN_00522340",
+        "caller": "core_morph.cpp_CMorphModel_addPartFromVertexBuffer_FUN_00522340",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -132,7 +132,7 @@
       {
         "call_addr": "00522691",
         "call_type": "direct",
-        "caller": "core_morph.cpp_FUN_00522650",
+        "caller": "core_morph.cpp_CMorphModel_animateFromDeformableModel_FUN_00522650",
         "estimated_params": 5,
         "instructions_analyzed": 11,
         "method": "push_count",
@@ -191,6 +191,32 @@
     },
     "pcode_op_count": 403
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b6400",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004f9e40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0052a920",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004df660",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 24,
     "local_size": 4,
@@ -245,36 +271,28 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "iVar3 = start_offset + *(int *)(&this_ptr->field_0xc + part_index * 0x10);",
-      "type": "unnamed_field"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 29,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&(pSVar1->position).x + iVar3) = (float)vertex_buffer->x * _DAT_00604268;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "if (*(int *)(&this_ptr->field_0xc + part_index * 0x10) +",
-      "type": "unnamed_field"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 30,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&(pSVar1->position).y + iVar3) = (float)vertex_buffer->y * _DAT_00604268;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(int *)(&this_ptr->field_0x4 + part_index * 0x10) < iVar3 + vertex_count) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x58",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)&this_ptr->field_0x58 + iVar3;",
-      "type": "unnamed_field"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 31,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&(pSVar1->position).z + iVar3) = (float)vertex_buffer->z * _DAT_00604268;",
+      "type": "pointer_cast"
     }
   ]
 }

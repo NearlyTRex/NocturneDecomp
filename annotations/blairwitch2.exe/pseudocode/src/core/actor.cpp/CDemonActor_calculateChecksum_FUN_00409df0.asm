@@ -33,13 +33,13 @@ section .text
     PUSH EAX                            ; 00409e07
     PUSH ESI                            ; 00409e08
     CALL core_actor.cpp_crc32ProcessVector_FUN_0040d2c0 ; 00409e09
-        ;   XREF to: 0040d2c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_crc32ProcessVector_FUN_0040d2c0()
+        ;   XREF to: 0040d2c0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_crc32ProcessVector_FUN_0040d2c0(uint * crc_state, CVector3f * vector)
     ADD ESP,0x8                         ; 00409e0e
     LEA EAX,[EBX + 0x30]                ; 00409e11
     PUSH EAX                            ; 00409e14
     PUSH ESI                            ; 00409e15
     CALL core_actor.cpp_crc32ProcessVector_FUN_0040d2c0 ; 00409e16
-        ;   XREF to: 0040d2c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_crc32ProcessVector_FUN_0040d2c0()
+        ;   XREF to: 0040d2c0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_crc32ProcessVector_FUN_0040d2c0(uint * crc_state, CVector3f * vector)
     ADD ESP,0x8                         ; 00409e1b
     MOV EDX,dword ptr [EBX + 0x70]      ; 00409e1e
     PUSH EDX                            ; 00409e21

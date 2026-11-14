@@ -13,15 +13,15 @@
 ;
 ; XREF[11]:
 ;   core_actor.cpp_FUN_00408ec0 at 00408f29
+;   core_box.cpp_CBoundingBox3D_render_FUN_00421670 at 0042169c
 ;   core_box.cpp_FUN_00420990 at 004209bd
-;   core_box.cpp_FUN_00421670 at 0042169c
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0 at 0054f4f2
 ;   core_setcolid.cpp_FUN_005562c0 at 005566bb
 ;   core_setcolid.cpp_FUN_005580d0 at 0055810b
 ;   core_setdir.cpp_FUN_00559f80 at 0055a0b2
-;   core_skeleton.cpp_FUN_0056ae70 at 0056af41
-;   core_spike.cpp_FUN_00583700 at 005837e9
-;   core_turret.cpp_FUN_005a28c0 at 005a2a61
+;   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0056ae70 at 0056af41
+;   core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_00583700 at 005837e9
+;   core_turret.cpp_CTurret_getBoundingBox_FUN_005a28c0 at 005a2a61
 ;   ... and 1 more
 ;
 ; *****************************************************************************

@@ -9,13 +9,13 @@
 ; float            Stack[0xc]:4   frame_number
 ;
 ; XREF[3]:
-;   core_asgaya.cpp_FUN_005a0be0 at 005a169f
-;   core_mattnntt.cpp_FUN_00591f30 at 005935c4
-;   core_stranger.cpp_FUN_00526f50 at 00526f9e
+;   core_asgaya.cpp_CAsgaya_process_FUN_005a0be0 at 005a169f
+;   core_mattnntt.cpp_CMattanntote_process_FUN_00591f30 at 005935c4
+;   core_prye.cpp_CPrye_reset_FUN_00526f50 at 00526f9e
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_jumpToMotion_FUN_004fc420
-;   core_motion.cpp_FUN_004fb9c0
+;   core_motion.cpp_CMotionList_findMotionIndex_FUN_004fb9c0
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     PUSH EDX                            ; 004fc3fb
     MOV ECX,dword ptr [EAX]             ; 004fc3fc
     PUSH ECX                            ; 004fc3fe
-    CALL core_motion.cpp_FUN_004fb9c0   ; 004fc3ff
-        ;   XREF to: 004fb9c0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_FUN_004fb9c0(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
+    CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_004fb9c0 ; 004fc3ff
+        ;   XREF to: 004fb9c0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_004fb9c0(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     ADD ESP,0xc                         ; 004fc404
     PUSH dword ptr [ESP + 0x10]         ; 004fc407
     PUSH EAX                            ; 004fc40b

@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 32,
+    "complexity_score": 7,
     "cross_reference_count": 47,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 7,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 19
   },
   "cross_references": [
@@ -61,6 +59,18 @@
       "addr": "00414d10",
       "from_addr": "00414d26",
       "name": "core_biggs.cpp_CBiggs_ctor_FUN_00414d10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059be60",
+      "from_addr": "0059be92",
+      "name": "core_bmppuzzl.cpp_CAudioRecPuzzle_ctor_FUN_0059be60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059aa80",
+      "from_addr": "0059aaf9",
+      "name": "core_bmppuzzl.cpp_staticInit_FUN_0059aa80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -202,6 +212,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0059d350",
+      "from_addr": "0059d355",
+      "name": "core_meleeaxe.cpp_FUN_0059d350",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00514cd0",
       "from_addr": "00514ce6",
       "name": "core_pendulum.cpp_CPendulum_ctor_FUN_00514cd0",
@@ -277,24 +293,6 @@
       "addr": "005899d0",
       "from_addr": "005899e4",
       "name": "core_weapon.cpp_CWeapon_ctor_FUN_005899d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059aa80",
-      "from_addr": "0059aaf9",
-      "name": "unkaddr_0059aa80.cpp_FUN_0059aa80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059d350",
-      "from_addr": "0059d355",
-      "name": "unkaddr_0059d350.cpp_FUN_0059d350",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059be60",
-      "from_addr": "0059be92",
-      "name": "unkafter_superopt.cpp_CAudioRecPuzzle_ctor_FUN_0059be60",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -458,6 +456,32 @@
     },
     "pcode_op_count": 35
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00468860",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00462500",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00478ce0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00454490",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -474,24 +498,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x78",
-      "severity": "mild",
-      "text": "this_ptr->field_0x78 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x178 = 0;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

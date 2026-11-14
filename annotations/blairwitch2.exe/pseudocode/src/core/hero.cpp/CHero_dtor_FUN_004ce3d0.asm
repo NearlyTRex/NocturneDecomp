@@ -24,12 +24,12 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408930
-;   core_cloth.cpp_FUN_005b1480
-;   core_inv.cpp_FUN_004da840
+;   core_armour.cpp_FUN_0040f2b0
+;   core_cloth.cpp_CClothList_dtor_FUN_005b1480
+;   core_inv.cpp_CInventory_dtor_FUN_004da840
+;   core_muzzle.cpp_FUN_0059df70
 ;   core_path.cpp_CPathMap_dtor_FUN_00511d10
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_00544d50
-;   unkaddr_0059d350.cpp_FUN_0059df70
-;   unkafter_armour.cpp_FUN_0040f2b0
 ;
 ; *****************************************************************************
 
@@ -52,20 +52,20 @@ section .text
     PUSH 0x0                            ; 004ce3f5
     ADD EDX,0x24fc4                     ; 004ce3f7
     PUSH EDX                            ; 004ce3fd
-    CALL core_inv.cpp_FUN_004da840      ; 004ce3fe
-        ;   XREF to: 004da840 (UNCONDITIONAL_CALL)  ; CInventory * core_inv.cpp_FUN_004da840(CInventory * this_ptr, uint flags)
+    CALL core_inv.cpp_CInventory_dtor_FUN_004da840 ; 004ce3fe
+        ;   XREF to: 004da840 (UNCONDITIONAL_CALL)  ; CInventory * core_inv.cpp_CInventory_dtor_FUN_004da840(CInventory * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004ce403
     PUSH 0x0                            ; 004ce406
     SUB EAX,0x624                       ; 004ce408
     PUSH EAX                            ; 004ce40d
-    CALL core_inv.cpp_FUN_004da840      ; 004ce40e
-        ;   XREF to: 004da840 (UNCONDITIONAL_CALL)  ; CInventory * core_inv.cpp_FUN_004da840(CInventory * this_ptr, uint flags)
+    CALL core_inv.cpp_CInventory_dtor_FUN_004da840 ; 004ce40e
+        ;   XREF to: 004da840 (UNCONDITIONAL_CALL)  ; CInventory * core_inv.cpp_CInventory_dtor_FUN_004da840(CInventory * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004ce413
     PUSH 0x0                            ; 004ce416
     SUB EAX,0x624                       ; 004ce418
     PUSH EAX                            ; 004ce41d
-    CALL core_inv.cpp_FUN_004da840      ; 004ce41e
-        ;   XREF to: 004da840 (UNCONDITIONAL_CALL)  ; CInventory * core_inv.cpp_FUN_004da840(CInventory * this_ptr, uint flags)
+    CALL core_inv.cpp_CInventory_dtor_FUN_004da840 ; 004ce41e
+        ;   XREF to: 004da840 (UNCONDITIONAL_CALL)  ; CInventory * core_inv.cpp_CInventory_dtor_FUN_004da840(CInventory * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004ce423
     PUSH 0x0                            ; 004ce426
     SUB EAX,0x138e0                     ; 004ce428
@@ -76,20 +76,20 @@ section .text
     PUSH 0x0                            ; 004ce436
     SUB EAX,0xd07c                      ; 004ce438
     PUSH EAX                            ; 004ce43d
-    CALL unkafter_armour.cpp_FUN_0040f2b0 ; 004ce43e
-        ;   XREF to: 0040f2b0 (UNCONDITIONAL_CALL)  ; undefined unkafter_armour.cpp_FUN_0040f2b0()
+    CALL core_armour.cpp_FUN_0040f2b0   ; 004ce43e
+        ;   XREF to: 0040f2b0 (UNCONDITIONAL_CALL)  ; undefined core_armour.cpp_FUN_0040f2b0()
     ADD ESP,0x8                         ; 004ce443
     PUSH 0x0                            ; 004ce446
     SUB EAX,0x9c8                       ; 004ce448
     PUSH EAX                            ; 004ce44d
-    CALL unkaddr_0059d350.cpp_FUN_0059df70 ; 004ce44e
-        ;   XREF to: 0059df70 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059df70()
+    CALL core_muzzle.cpp_FUN_0059df70   ; 004ce44e
+        ;   XREF to: 0059df70 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059df70()
     ADD ESP,0x8                         ; 004ce453
     PUSH 0x0                            ; 004ce456
     SUB EAX,0x34c                       ; 004ce458
     PUSH EAX                            ; 004ce45d
-    CALL core_cloth.cpp_FUN_005b1480    ; 004ce45e
-        ;   XREF to: 005b1480 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_FUN_005b1480(CClothList * this_ptr, uint flags)
+    CALL core_cloth.cpp_CClothList_dtor_FUN_005b1480 ; 004ce45e
+        ;   XREF to: 005b1480 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_CClothList_dtor_FUN_005b1480(CClothList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004ce463
     PUSH 0x0                            ; 004ce466
     SUB EAX,0x2a58                      ; 004ce468

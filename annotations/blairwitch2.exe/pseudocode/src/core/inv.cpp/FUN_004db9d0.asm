@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_inv_cpp_FUN_004db9d0(CInventory *param_1,int param_2,undefined4 param_3,int param_4)
+; void core_inv_cpp_FUN_004db9d0(CInventory *param_1,CWeapon *param_2,undefined4 param_3,int param_4)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
@@ -11,19 +11,19 @@
 ;   core_doc.cpp_FUN_00453250 at 004535a8
 ;   core_game.cpp_FUN_004b76c0 at 004b7ee0
 ;   core_game.cpp_FUN_004be8a0 at 004bf637
+;   core_inv.cpp_CInventory_select_FUN_004dc8c0 at 004dca99
 ;   core_inv.cpp_FUN_004dadb0 at 004db433
-;   core_inv.cpp_FUN_004dc8c0 at 004dca99
-;   core_scat.cpp_FUN_0051ec20 at 0051ec7b
-;   core_script.cpp_FUN_00522350 at 00526fce
+;   core_scat.cpp_CScat_createDefaultWeapon_FUN_0051ec20 at 0051ec7b
+;   core_script.cpp_CScript_step_FUN_00522350 at 00526fce
 ;
 ; Referenced Globals:
 ;   undefined4 g_CWeaponClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
+;   core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004dd270
 ;   core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd020
 ;   core_inv.cpp_FUN_004dd0a0
-;   core_inv.cpp_FUN_004dd270
 ;
 ; *****************************************************************************
 
@@ -52,8 +52,8 @@ section .text
         ;   Label: LAB_004db9fa
     PUSH ESI                            ; 004db9fc
     XOR EBX,EBX                         ; 004db9fd
-    CALL core_inv.cpp_FUN_004dd270      ; 004db9ff
-        ;   XREF to: 004dd270 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004dd270(CInventory * this_ptr, int reset_both)
+    CALL core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004dd270 ; 004db9ff
+        ;   XREF to: 004dd270 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004dd270(CInventory * this_ptr, int reset_both)
     MOV ECX,dword ptr [ESI + 0x10]      ; 004dba04
     ADD ESP,0x8                         ; 004dba07
     TEST ECX,ECX                        ; 004dba0a
@@ -94,7 +94,7 @@ section .text
     MOV EDI,dword ptr [EDI + 0x14]      ; 004dba64
     PUSH EDI                            ; 004dba67
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004dba68
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004dba6d
     MOV EDI,EAX                         ; 004dba70
     MOV dword ptr [ESP + 0x4],EAX       ; 004dba72

@@ -38,7 +38,7 @@
 ; XREF[3]:
 ;   core_dmodel.cpp_CKeyFramedModel_getFloorHeight_FUN_0044f670 at 0044f713
 ;   core_setcolid.cpp_FUN_00534ea0 at 0053534a
-;   core_stairs.cpp_FUN_005621e0 at 00562214
+;   core_stairs.cpp_CStairs_customGetFloorHeight_FUN_005621e0 at 00562214
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d1df3
@@ -212,7 +212,7 @@ section .text
     LEA EAX,[ESP + 0x54]                ; 004786ee
     PUSH EAX                            ; 004786f2
     CALL core_dtri.cpp_rayEdgeHeightTest_FUN_004783e0 ; 004786f3
-        ;   XREF to: 004783e0 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_rayEdgeHeightTest_FUN_004783e0()
+        ;   XREF to: 004783e0 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayEdgeHeightTest_FUN_004783e0(CVector3f * vertex1, CVector3f * vertex2, float ray_radius, float * out_height)
     ADD ESP,0x10                        ; 004786f8
     MOV ECX,dword ptr [EBP + 0x20]      ; 004786fb
     PUSH ECX                            ; 004786fe
@@ -223,7 +223,7 @@ section .text
     LEA EAX,[ESP + 0x48]                ; 00478709
     PUSH EAX                            ; 0047870d
     CALL core_dtri.cpp_rayEdgeHeightTest_FUN_004783e0 ; 0047870e
-        ;   XREF to: 004783e0 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_rayEdgeHeightTest_FUN_004783e0()
+        ;   XREF to: 004783e0 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayEdgeHeightTest_FUN_004783e0(CVector3f * vertex1, CVector3f * vertex2, float ray_radius, float * out_height)
     ADD ESP,0x10                        ; 00478713
     MOV EDI,dword ptr [EBP + 0x20]      ; 00478716
     PUSH EDI                            ; 00478719
@@ -234,7 +234,7 @@ section .text
     LEA EAX,[ESP + 0x18]                ; 00478724
     PUSH EAX                            ; 00478728
     CALL core_dtri.cpp_rayEdgeHeightTest_FUN_004783e0 ; 00478729
-        ;   XREF to: 004783e0 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_rayEdgeHeightTest_FUN_004783e0()
+        ;   XREF to: 004783e0 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_rayEdgeHeightTest_FUN_004783e0(CVector3f * vertex1, CVector3f * vertex2, float ray_radius, float * out_height)
     FLD float ptr [EBX + 0x24]          ; 0047872e
     FMUL ST0                            ; 00478731
     FLD float ptr [EBX + 0x2c]          ; 00478733
@@ -263,7 +263,7 @@ section .text
     PUSH EDI                            ; 00478771
     PUSH EBX                            ; 00478772
     CALL core_dtri.cpp_rayTriangleIntersection_FUN_00477a50 ; 00478773
-        ;   XREF to: 00477a50 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_rayTriangleIntersection_FUN_00477a50()
+        ;   XREF to: 00477a50 (UNCONDITIONAL_CALL)  ; float core_dtri.cpp_rayTriangleIntersection_FUN_00477a50(CDemonTriangle * triangle, CVector3f * rayOrigin, CVector3f * rayDirection)
     MOV dword ptr [ESP + 0x80],EAX      ; 00478778
     FLD float ptr [ESP + 0x80]          ; 0047877f
     FLDZ                                ; 00478786
@@ -365,7 +365,7 @@ section .text
     PUSH EAX                            ; 0047887a
     PUSH EBX                            ; 0047887b
     CALL core_dtri.cpp_rayTriangleIntersection_FUN_00477a50 ; 0047887c
-        ;   XREF to: 00477a50 (UNCONDITIONAL_CALL)  ; undefined core_dtri.cpp_rayTriangleIntersection_FUN_00477a50()
+        ;   XREF to: 00477a50 (UNCONDITIONAL_CALL)  ; float core_dtri.cpp_rayTriangleIntersection_FUN_00477a50(CDemonTriangle * triangle, CVector3f * rayOrigin, CVector3f * rayDirection)
     MOV dword ptr [ESP + 0x80],EAX      ; 00478881
     FLD float ptr [ESP + 0x80]          ; 00478888
     ADD ESP,0xc                         ; 0047888f

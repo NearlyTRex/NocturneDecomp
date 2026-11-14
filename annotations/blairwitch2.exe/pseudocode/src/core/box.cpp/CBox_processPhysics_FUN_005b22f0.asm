@@ -394,7 +394,7 @@
 ;
 ; XREF[2]:
 ;   core_box.cpp_CBox_process_FUN_005b2290 at 005b22de
-;   core_fire.cpp_FUN_00494580 at 00494599
+;   core_fire.cpp_CStake_process_FUN_00494580 at 00494599
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f12e8
@@ -414,7 +414,7 @@
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_00449280
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
 ;   core_dirmat.cpp_FUN_00449530
 ;   core_dirmat.cpp_FUN_004495a0
 ;   core_dirmat.cpp_FUN_004496e0
@@ -766,8 +766,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005b27c9
     MOVSD ES:EDI,ESI                    ; 005b27ca
     MOVSD ES:EDI,ESI                    ; 005b27cb
-    CALL core_dirmat.cpp_FUN_00449280   ; 005b27cc
-        ;   XREF to: 00449280 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_00449280(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280 ; 005b27cc
+        ;   XREF to: 00449280 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 005b27d1
     FLD float ptr [EBX + 0x1c]          ; 005b27d4
     FMUL float ptr [ESP + 0x50]         ; 005b27d7

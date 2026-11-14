@@ -49,11 +49,11 @@
 ; XREF[7]:
 ;   core_box.cpp_CBox_processPhysics_FUN_0041b470 at 0041b50f
 ;   core_dtrace.cpp_FUN_00473bc0 at 00473bdd
-;   core_gore.cpp_FUN_004ce170 at 004ce249
+;   core_gore.cpp_CFootstep_init_FUN_004ce170 at 004ce249
 ;   core_particle.cpp_FUN_00509f30 at 0050a0a7
-;   core_setcolid.cpp_FUN_0053cad0 at 0053cb47
+;   core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_0053cad0 at 0053cb47
 ;   core_setcolid.cpp_FUN_0053ccc0 at 0053cd10
-;   core_tvbat.cpp_FUN_00575380 at 00575bdb
+;   core_tvbat.cpp_CTVBat_process_FUN_00575380 at 00575bdb
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005bca09

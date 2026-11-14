@@ -53,7 +53,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_skeleton.cpp_FUN_0054f7f0 at 0054f834
+;   core_skeleton.cpp_CDeformableModelInstance_shatter_FUN_0054f7f0 at 0054f834
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005d1eda
@@ -72,9 +72,9 @@
 ;   undefined4 DAT_0272af40
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_0045b550
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
 ;   core_dirmat.cpp_FUN_0045b800
-;   core_fire.cpp_FUN_004a2780
+;   core_fire.cpp_CFireEffect_createGlassParticle_FUN_004a2780
 ;   core_main.c_FUN_004e4330
 ;   crt_memory.c___arrinit_FUN_005a30d7
 ;
@@ -94,8 +94,8 @@ section .text
     MOV EDX,0xffff                      ; 0054afc6
     PUSH EAX                            ; 0054afcb
     MOV dword ptr [ESP + 0xec],EDX      ; 0054afcc
-    CALL core_dirmat.cpp_FUN_0045b550   ; 0054afd3
-        ;   XREF to: 0045b550 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_0045b550(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550 ; 0054afd3
+        ;   XREF to: 0045b550 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     MOV AH,byte ptr [0x0272af40]        ; 0054afd8 | DAT_0272af40
     ADD ESP,0x8                         ; 0054afde
     TEST AH,0x1                         ; 0054afe1
@@ -203,7 +203,7 @@ section .text
     LEA EAX,[ESP + 0x30]                ; 0054b14f
     PUSH EAX                            ; 0054b153
     CALL crt_memory.c___arrinit_FUN_005a30d7 ; 0054b154
-        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005a30d7()
+        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005a30d7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0054b159
     MOV EDX,dword ptr [ESP + 0x104]     ; 0054b15c
     XOR EAX,EAX                         ; 0054b163
@@ -300,8 +300,8 @@ section .text
     PUSH EAX                            ; 0054b2d3
     MOV EBX,dword ptr [0x005fc5a0]      ; 0054b2d4 | DAT_005fc5a0
     PUSH EBX                            ; 0054b2da
-    CALL core_fire.cpp_FUN_004a2780     ; 0054b2db
-        ;   XREF to: 004a2780 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_004a2780(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3i * uv_u_per_vertex, CVector3i * uv_v_per_vertex, ...)
+    CALL core_fire.cpp_CFireEffect_createGlassParticle_FUN_004a2780 ; 0054b2db
+        ;   XREF to: 004a2780 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGlassParticle_FUN_004a2780(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3i * uv_u_per_vertex, CVector3i * uv_v_per_vertex, ...)
     ADD ESP,0x18                        ; 0054b2e0
     ADD ESI,0x4                         ; 0054b2e3
     MOV EBP,dword ptr [ESP + 0xe0]      ; 0054b2e6
@@ -393,7 +393,7 @@ section .text
     PUSH 0x27222a0                      ; 0054b45c | DAT_027222a0
     MOV byte ptr [0x0272af40],DL        ; 0054b461 | DAT_0272af40
     CALL crt_memory.c___arrinit_FUN_005a30d7 ; 0054b467
-        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005a30d7()
+        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005a30d7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0054b46c
     JMP 0x0054afea                      ; 0054b46f
         ;   XREF to: 0054afea (UNCONDITIONAL_JUMP)  ; LAB_0054afea
@@ -475,8 +475,8 @@ section .text
     PUSH EAX                            ; 0054b572
     MOV EBP,dword ptr [0x005fc5a0]      ; 0054b573 | DAT_005fc5a0
     PUSH EBP                            ; 0054b579
-    CALL core_fire.cpp_FUN_004a2780     ; 0054b57a
-        ;   XREF to: 004a2780 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_004a2780(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3i * uv_u_per_vertex, CVector3i * uv_v_per_vertex, ...)
+    CALL core_fire.cpp_CFireEffect_createGlassParticle_FUN_004a2780 ; 0054b57a
+        ;   XREF to: 004a2780 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGlassParticle_FUN_004a2780(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3i * uv_u_per_vertex, CVector3i * uv_v_per_vertex, ...)
     ADD ESP,0x18                        ; 0054b57f
     MOV EBP,dword ptr [ESP + 0xec]      ; 0054b582
         ;   Label: LAB_0054b582

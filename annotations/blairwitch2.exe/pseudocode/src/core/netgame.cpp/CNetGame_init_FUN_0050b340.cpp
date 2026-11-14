@@ -17,7 +17,7 @@ void __cdecl core_netgame_cpp_CNetGame_init_FUN_0050b340(CNetGame *this_ptr)
   
   FUN_005ba1e0("netlog.txt");
   _DAT_01d34e38 = 1;
-  _DAT_01d34e34 = wincore_winrun_cpp_FUN_0058e9e0();
+  _DAT_01d34e34 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
   _DAT_01d34e34 = _DAT_01d34e34 / 0x12;
   support_trisock_cpp_startupWinsock_FUN_00579500();
   pcVar2 = getenv("USERNAME");
@@ -27,7 +27,7 @@ void __cdecl core_netgame_cpp_CNetGame_init_FUN_0050b340(CNetGame *this_ptr)
   if (pcVar2 == (char *)0x0) {
     pcVar2 = "MyComputer";
   }
-  pcVar3 = &this_ptr->field_0x8;
+  pcVar3 = this_ptr->player_name;
   do {
     cVar1 = *pcVar2;
     *pcVar3 = cVar1;
@@ -39,6 +39,6 @@ void __cdecl core_netgame_cpp_CNetGame_init_FUN_0050b340(CNetGame *this_ptr)
   } while (cVar1 != '\0');
   _DAT_01d34e4c = 0;
   _DAT_01d51050 = 0;
-  core_netgame_cpp_FUN_0050b8d0(this_ptr,0);
+  core_netgame_cpp_CNetGame_disconnect_FUN_0050b8d0(this_ptr,0);
   return;
 }

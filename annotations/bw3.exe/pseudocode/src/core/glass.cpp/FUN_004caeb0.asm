@@ -227,8 +227,8 @@
 ;   undefined4 DAT_005fc5a0
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cf40
-;   core_fire.cpp_FUN_004a2780
+;   core_actor.cpp_randomChance_FUN_0040cf40
+;   core_fire.cpp_CFireEffect_createGlassParticle_FUN_004a2780
 ;   crt_memory.c___arrinit_FUN_005a30d7
 ;
 ; *****************************************************************************
@@ -248,7 +248,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004caecf
     PUSH EAX                            ; 004caed3
     CALL crt_memory.c___arrinit_FUN_005a30d7 ; 004caed4
-        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005a30d7()
+        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005a30d7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004caed9
     MOV EDX,dword ptr [ESP + 0x374]     ; 004caedc
     MOV ESI,0x1                         ; 004caee3
@@ -261,8 +261,8 @@ section .text
     JLE 0x004cb07d                      ; 004caef7
         ;   XREF to: 004cb07d (CONDITIONAL_JUMP)  ; LAB_004cb07d
     PUSH 0x3f000000                     ; 004caefd
-    CALL core_actor.cpp_FUN_0040cf40    ; 004caf02
-        ;   XREF to: 0040cf40 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cf40(float probability_threshold)
+    CALL core_actor.cpp_randomChance_FUN_0040cf40 ; 004caf02
+        ;   XREF to: 0040cf40 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040cf40(float probability_threshold)
     ADD ESP,0x4                         ; 004caf07
     TEST EAX,EAX                        ; 004caf0a
     JZ 0x004cb07d                       ; 004caf0c
@@ -331,8 +331,8 @@ section .text
     PUSH EAX                            ; 004cafc9
     MOV EAX,[0x005fc5a0]                ; 004cafca | DAT_005fc5a0
     PUSH EAX                            ; 004cafcf
-    CALL core_fire.cpp_FUN_004a2780     ; 004cafd0
-        ;   XREF to: 004a2780 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_004a2780(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3i * uv_u_per_vertex, CVector3i * uv_v_per_vertex, ...)
+    CALL core_fire.cpp_CFireEffect_createGlassParticle_FUN_004a2780 ; 004cafd0
+        ;   XREF to: 004a2780 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGlassParticle_FUN_004a2780(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3i * uv_u_per_vertex, CVector3i * uv_v_per_vertex, ...)
     LEA EAX,[ESP + 0x24]                ; 004cafd5
     LEA EDX,[EBX + 0x18]                ; 004cafd9
     ADD ESP,0x18                        ; 004cafdc
@@ -381,8 +381,8 @@ section .text
     PUSH EAX                            ; 004cb062
     MOV ECX,dword ptr [0x005fc5a0]      ; 004cb063 | DAT_005fc5a0
     PUSH ECX                            ; 004cb069
-    CALL core_fire.cpp_FUN_004a2780     ; 004cb06a
-        ;   XREF to: 004a2780 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_004a2780(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3i * uv_u_per_vertex, CVector3i * uv_v_per_vertex, ...)
+    CALL core_fire.cpp_CFireEffect_createGlassParticle_FUN_004a2780 ; 004cb06a
+        ;   XREF to: 004a2780 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGlassParticle_FUN_004a2780(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3i * uv_u_per_vertex, CVector3i * uv_v_per_vertex, ...)
     ADD ESP,0x18                        ; 004cb06f
     ADD ESP,0x350                       ; 004cb072
     POP EBP                             ; 004cb078

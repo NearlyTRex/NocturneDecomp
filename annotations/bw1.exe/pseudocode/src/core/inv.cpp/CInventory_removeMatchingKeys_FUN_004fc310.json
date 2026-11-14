@@ -2,27 +2,29 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 23,
+    "complexity_score": 39,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 23,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 77
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 24,
+    "suspect_count": 1,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
+    "total_lines": 78
   },
   "cross_references": [
     {
       "addr": "004ec300",
       "from_addr": "004ec30f",
-      "name": "core_hero.cpp_FUN_004ec300",
+      "name": "core_hero.cpp_CHero_removeMatchingKeys_FUN_004ec300",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004ec570",
       "from_addr": "004ec5ce",
-      "name": "core_hero.cpp_FUN_004ec570",
+      "name": "core_hero.cpp_CHero_reset_FUN_004ec570",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -64,7 +66,7 @@
       {
         "call_addr": "004ec30f",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004ec300",
+        "caller": "core_hero.cpp_CHero_removeMatchingKeys_FUN_004ec300",
         "estimated_params": 2,
         "instructions_analyzed": 5,
         "method": "push_count",
@@ -75,7 +77,7 @@
       {
         "call_addr": "004ec5ce",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004ec570",
+        "caller": "core_hero.cpp_CHero_reset_FUN_004ec570",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -116,6 +118,32 @@
     },
     "pcode_op_count": 194
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004def40",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004de6e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005014a0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004c3280",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -139,5 +167,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar2->owner`). Replace `pCVar2->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 18,
+      "match": "pCVar2 = (T *)&pCVar2->FIELD",
+      "severity": "moderate",
+      "text": "pCVar2 = (CInventory *)&pCVar2->owner;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
 }

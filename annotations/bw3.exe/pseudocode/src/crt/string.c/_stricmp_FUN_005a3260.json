@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 42,
     "complexity_score": 19,
-    "cross_reference_count": 107,
+    "cross_reference_count": 108,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -38,15 +38,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0042b0e0",
-      "from_addr": "0042b1df",
-      "name": "core_charactr.cpp_FUN_0042b0e0",
+      "addr": "00431000",
+      "from_addr": "00431081",
+      "name": "core_charactr.cpp_CCharacter_getDeathState_FUN_00431000",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00431000",
-      "from_addr": "00431081",
-      "name": "core_charactr.cpp_FUN_00431000",
+      "addr": "0042b0e0",
+      "from_addr": "0042b1df",
+      "name": "core_charactr.cpp_CCharacter_setup_FUN_0042b0e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00458950",
+      "from_addr": "00458a2b",
+      "name": "core_demnfolk.cpp_CDemnfolk_processDamage_FUN_00458950",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004580a0",
+      "from_addr": "004580ba",
+      "name": "core_demnfolk.cpp_FUN_004580a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -142,43 +154,49 @@
     {
       "addr": "004a0b90",
       "from_addr": "004a0c45",
-      "name": "core_fire.cpp_FUN_004a0b90",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004a8a00",
-      "from_addr": "004a8ad2",
-      "name": "core_fldnotes.cpp_FUN_004a8a00",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004a9330",
-      "from_addr": "004a934e",
-      "name": "core_fldnotes.cpp_FUN_004a9330",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004a9c30",
-      "from_addr": "004a9c52",
-      "name": "core_fldnotes.cpp_FUN_004a9c30",
+      "name": "core_fire.cpp_CShell_onCollision_FUN_004a0b90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004aa1a0",
       "from_addr": "004aa1c6",
-      "name": "core_fldnotes.cpp_FUN_004aa1a0",
+      "name": "core_fldnotes.cpp_SNotesMap_showAnnotation_FUN_004aa1a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004aa350",
       "from_addr": "004aa394",
-      "name": "core_fldnotes.cpp_FUN_004aa350",
+      "name": "core_fldnotes.cpp_SNotesMap_worldToMap_FUN_004aa350",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a9c30",
+      "from_addr": "004a9c52",
+      "name": "core_fldnotes.cpp_SNotesSection_findEntry_FUN_004a9c30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a8a00",
+      "from_addr": "004a8ad2",
+      "name": "core_fldnotes.cpp_SPageResourceTwanaEntry_draw_FUN_004a8a00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a9330",
+      "from_addr": "004a934e",
+      "name": "core_fldnotes.cpp_STextView_handleTag_FUN_004a9330",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bfa40",
+      "from_addr": "004bfa89",
+      "name": "core_game.cpp_CGame_promptLoadGame_FUN_004bfa40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004bd930",
       "from_addr": "004bd96f",
-      "name": "core_game.cpp_FUN_004bd930",
+      "name": "core_game.cpp_CGame_setStatusDisplay_FUN_004bd930",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -200,12 +218,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004bfa40",
-      "from_addr": "004bfa89",
-      "name": "core_game.cpp_FUN_004bfa40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004c4a60",
       "from_addr": "004c4a76",
       "name": "core_game.cpp_FUN_004c4a60",
@@ -214,7 +226,7 @@
     {
       "addr": "004c9ce0",
       "from_addr": "004ca3e2",
-      "name": "core_glass.cpp_FUN_004c9ce0",
+      "name": "core_glass.cpp_CGlass_setup_FUN_004c9ce0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -260,6 +272,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004f6e90",
+      "from_addr": "004f6ea6",
+      "name": "core_mission.cpp_CDemonMission_findActorByName_FUN_004f6e90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004f6330",
       "from_addr": "004f6371",
       "name": "core_mission.cpp_CDemonMission_getNextLoadedInventoryActor_FUN_004f6330",
@@ -269,12 +287,6 @@
       "addr": "004f6770",
       "from_addr": "004f6842",
       "name": "core_mission.cpp_CDemonMission_loadActor_FUN_004f6770",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004f6e90",
-      "from_addr": "004f6ea6",
-      "name": "core_mission.cpp_FUN_004f6e90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -292,19 +304,37 @@
     {
       "addr": "004fb9c0",
       "from_addr": "004fb9e0",
-      "name": "core_motion.cpp_FUN_004fb9c0",
+      "name": "core_motion.cpp_CMotionList_findMotionIndex_FUN_004fb9c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004fba50",
       "from_addr": "004fba69",
-      "name": "core_motion.cpp_FUN_004fba50",
+      "name": "core_motion.cpp_CMotionList_findStateIndex_FUN_004fba50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00509020",
       "from_addr": "00509040",
-      "name": "core_npc.cpp_FUN_00509020",
+      "name": "core_npc.cpp_CNPC_setup_FUN_00509020",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00530990",
+      "from_addr": "005309d0",
+      "name": "core_script.cpp_CScript_findDialogEntry_FUN_00530990",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005303b0",
+      "from_addr": "005303f4",
+      "name": "core_script.cpp_CScript_findLabelIndex_FUN_005303b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005297a0",
+      "from_addr": "00529885",
+      "name": "core_script.cpp_CScript_initRuntime_FUN_005297a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -316,25 +346,7 @@
     {
       "addr": "00528b30",
       "from_addr": "00528b40",
-      "name": "core_script.cpp_FUN_00528b30",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005297a0",
-      "from_addr": "00529885",
-      "name": "core_script.cpp_FUN_005297a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005303b0",
-      "from_addr": "005303f4",
-      "name": "core_script.cpp_FUN_005303b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00530990",
-      "from_addr": "005309d0",
-      "name": "core_script.cpp_FUN_00530990",
+      "name": "core_script.cpp_getActionState_FUN_00528b30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -374,63 +386,63 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00548090",
-      "from_addr": "005480b0",
-      "name": "core_skeleton.cpp_FUN_00548090",
+      "addr": "0054a310",
+      "from_addr": "0054a330",
+      "name": "core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0054a310",
-      "from_addr": "0054a330",
-      "name": "core_skeleton.cpp_FUN_0054a310",
+      "addr": "00548090",
+      "from_addr": "005480b0",
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00548090",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005500b0",
       "from_addr": "005500d5",
-      "name": "core_skeleton.cpp_FUN_005500b0",
+      "name": "core_skeleton.cpp_getDeformableModel_FUN_005500b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005501e0",
       "from_addr": "00550204",
-      "name": "core_skeleton.cpp_FUN_005501e0",
+      "name": "core_skeleton.cpp_loadSkeleton_FUN_005501e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00550450",
       "from_addr": "00550475",
-      "name": "core_skeleton.cpp_FUN_00550450",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0055f6ae",
-      "from_addr": "0055f7d3",
-      "name": "core_sound.cpp_FUN_0055f6ae",
+      "name": "core_skeleton.cpp_markModelInUse_FUN_00550450",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0055ff40",
       "from_addr": "00560245",
-      "name": "core_sound.cpp_FUN_0055ff40",
+      "name": "core_sound.cpp_CSound_process_FUN_0055ff40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055f6b0",
+      "from_addr": "0055f7d3",
+      "name": "core_sound.cpp_FUN_0055f6b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0056cb90",
       "from_addr": "0056cbaa",
-      "name": "core_thehand.cpp_FUN_0056cb90",
+      "name": "core_toxhand.cpp_CTheHand_shouldIgnoreForTargeting_FUN_0056cb90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0056e0f0",
       "from_addr": "0056e18b",
-      "name": "core_trigger.cpp_FUN_0056e0f0",
+      "name": "core_trigger.cpp_CTrigger_setup_FUN_0056e0f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005792b0",
       "from_addr": "00579336",
-      "name": "core_waypoint.cpp_FUN_005792b0",
+      "name": "core_waypoint.cpp_CWayPoint_setup_FUN_005792b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -440,15 +452,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00588a80",
-      "from_addr": "00588c63",
-      "name": "core_zombie.cpp_FUN_00588a80",
+      "addr": "0058bd50",
+      "from_addr": "0058bd6a",
+      "name": "core_zombie.cpp_CZombie_getPickupHandIndex_FUN_0058bd50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0058bd50",
-      "from_addr": "0058bd6a",
-      "name": "core_zombie.cpp_FUN_0058bd50",
+      "addr": "00588a80",
+      "from_addr": "00588c63",
+      "name": "core_zombie.cpp_CZombie_setup_FUN_00588a80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -494,21 +506,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00512f90",
-      "from_addr": "00512f9e",
-      "name": "engine_pod.cpp_FUN_00512f90",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00512fb0",
       "from_addr": "0051311e",
       "name": "engine_pod.cpp_FUN_00512fb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00512f90",
+      "from_addr": "00512f9e",
+      "name": "engine_pod.cpp_qsortByFilename_FUN_00512f90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0056a0a0",
       "from_addr": "0056a0cd",
       "name": "engine_texture.cpp_FUN_0056a0a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047db70",
+      "from_addr": "0047dc35",
+      "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047db70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00483550",
+      "from_addr": "004836e2",
+      "name": "shape_edittool.cpp_CPickList_handleInput_FUN_00483550",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -536,27 +560,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047db70",
-      "from_addr": "0047dc35",
-      "name": "shape_edittool.cpp_FUN_0047db70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0047dd1e",
+      "addr": "0047dd20",
       "from_addr": "0047ded2",
-      "name": "shape_edittool.cpp_FUN_0047dd1e",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004823b0",
-      "from_addr": "004823be",
-      "name": "shape_edittool.cpp_FUN_004823b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00483550",
-      "from_addr": "004836e2",
-      "name": "shape_edittool.cpp_FUN_00483550",
+      "name": "shape_edittool.cpp_FUN_0047dd20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -566,81 +572,81 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004823b0",
+      "from_addr": "004823be",
+      "name": "shape_edittool.cpp_qsortByString_FUN_004823b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00551620",
       "from_addr": "00551c54",
-      "name": "sound_sndmain.cpp_FUN_00551620",
+      "name": "sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00551620",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00551cde",
+      "addr": "00551ce0",
       "from_addr": "00551cf0",
-      "name": "sound_sndmain.cpp_FUN_00551cde",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00551d20",
-      "from_addr": "00551d40",
-      "name": "sound_sndmain.cpp_FUN_00551d20",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005522ce",
-      "from_addr": "00552321",
-      "name": "sound_sndmain.cpp_FUN_005522ce",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00552350",
-      "from_addr": "005523fe",
-      "name": "sound_sndmain.cpp_FUN_00552350",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00556240",
-      "from_addr": "00556367",
-      "name": "sound_sndmain.cpp_FUN_00556240",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00557390",
-      "from_addr": "005573a8",
-      "name": "sound_sndmain.cpp_FUN_00557390",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00557470",
-      "from_addr": "0055749f",
-      "name": "sound_sndmain.cpp_FUN_00557470",
+      "name": "sound_sndmain.cpp_findSfxSampleByName_FUN_00551ce0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005574e0",
       "from_addr": "00557507",
-      "name": "sound_sndmain.cpp_FUN_005574e0",
+      "name": "sound_sndmain.cpp_freeSampleByName_FUN_005574e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00557570",
       "from_addr": "005575ce",
-      "name": "sound_sndmain.cpp_FUN_00557570",
+      "name": "sound_sndmain.cpp_getSampleInfo_FUN_00557570",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00551d20",
+      "from_addr": "00551d40",
+      "name": "sound_sndmain.cpp_getSfxSample_FUN_00551d20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005522d0",
+      "from_addr": "00552321",
+      "name": "sound_sndmain.cpp_isStreamableFile_FUN_005522d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00557470",
+      "from_addr": "0055749f",
+      "name": "sound_sndmain.cpp_killSfxByName_FUN_00557470",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00552350",
+      "from_addr": "005523fe",
+      "name": "sound_sndmain.cpp_loadStreamingSoundFile_FUN_00552350",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00557390",
+      "from_addr": "005573a8",
+      "name": "sound_sndmain.cpp_lockSample_FUN_00557390",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00559220",
       "from_addr": "005592cc",
-      "name": "sound_sndmain.cpp_FUN_00559220",
+      "name": "sound_sndmain.cpp_readIni_FUN_00559220",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004580a0",
-      "from_addr": "004580ba",
-      "name": "unkafter_demnfolk.cpp_FUN_004580a0",
+      "addr": "00556240",
+      "from_addr": "00556367",
+      "name": "sound_sndmain.cpp_startSfx_FUN_00556240",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00458950",
-      "from_addr": "00458a2b",
-      "name": "unkafter_demnfolk.cpp_FUN_00458950",
+      "addr": "00557420",
+      "from_addr": "00557435",
+      "name": "sound_sndmain.cpp_unlockSample_FUN_00557420",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -687,7 +693,7 @@
       {
         "call_addr": "0047dc35",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047db70",
+        "caller": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047db70",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -815,6 +821,32 @@
       "STORE": 1
     },
     "pcode_op_count": 153
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b8130",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005c04e0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005fe7f0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00564520",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 12,

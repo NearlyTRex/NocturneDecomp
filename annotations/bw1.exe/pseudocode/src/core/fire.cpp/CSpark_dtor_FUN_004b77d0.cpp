@@ -11,6 +11,6 @@ CSpark * __cdecl core_fire_cpp_CSpark_dtor_FUN_004b77d0(CSpark *this_ptr,uint fl
 {
   CSpark *pCVar1;
   
-  pCVar1 = (CSpark *)core_particle_cpp_FUN_00532150((CParticle *)this_ptr,1);
+  pCVar1 = (CSpark *)core_particle_cpp_CParticle_dtor_FUN_00532150(&this_ptr->base,1);
   return pCVar1;
 }

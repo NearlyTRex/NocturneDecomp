@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   filename
 ;
 ; XREF[1]:
-;   core_skeleton.cpp_FUN_005501e0 at 0055026e
+;   core_skeleton.cpp_loadSkeleton_FUN_005501e0 at 0055026e
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d166c

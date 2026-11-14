@@ -9,54 +9,55 @@
 void __cdecl core_event_cpp_CEventList_updateSfxEntries_FUN_00495280(CEventList *this_ptr)
 
 {
-  CEventList CVar1;
-  CEventList *dest;
+  char cVar1;
   int iVar2;
-  CEventList *pCVar3;
-  CEventList *pCVar4;
+  SSfxEntry *dest;
+  char *pcVar3;
+  char *pcVar4;
   double dVar5;
-  CEventList local_170 [336];
+  char local_170 [336];
   ulonglong local_20;
-  CEventList *local_18;
+  SSfxEntry *local_18;
   int local_14;
   
   local_14 = 0;
-  if (0 < *(int *)(this_ptr + 0x3ac8)) {
-    dest = this_ptr + 0x3acc;
-    local_18 = this_ptr + 0x3bec;
+  if (0 < (this_ptr->sfx_handles).count) {
+    dest = (this_ptr->sfx_handles).entries;
+    local_18 = (this_ptr->sfx_handles).entries + 1;
     do {
-      dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005567c0(*(uint *)dest,1);
+      dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005567c0(dest->sfx_handle,1);
       local_20._0_4_ = SUB84(__BITCAST_UINT64(dVar5),0);
-      *(uint *)(dest + 0x118) = (uint)local_20;
-      local_20._4_4_ = (uint)((ulonglong)dVar5 >> 0x20);
-      *(uint *)(dest + 0x11c) = local_20._4_4_;
+      *(int *)&dest->playback_position = (int)local_20;
+      local_20._4_4_ = (int)((ulonglong)dVar5 >> 0x20);
+      *(int *)((int)&dest->playback_position + 4) = local_20._4_4_;
       local_20 = dVar5;
-      if (0.0 <= *(double *)(dest + 0x118)) {
+      if (0.0 <= dest->playback_position) {
         sound_sndmain_cpp_CSfxSample_init_FUN_00555840((CSfxSample *)local_170);
-        iVar2 = sound_sndmain_cpp_FUN_00556780(*(uint *)dest,(CSfxSample *)local_170);
+        iVar2 = sound_sndmain_cpp_getSfxSampleInfo_FUN_00556780
+                          (dest->sfx_handle,(CSfxSample *)local_170);
         if (iVar2 == 0) goto LAB_00495300;
-        pCVar4 = dest + 0x18;
-        pCVar3 = local_170;
+        pcVar4 = dest->sound_filename;
+        pcVar3 = local_170;
         do {
-          CVar1 = *pCVar3;
-          *pCVar4 = CVar1;
-          if (CVar1 == (CEventList)0x0) break;
-          CVar1 = pCVar3[1];
-          pCVar3 = pCVar3 + 2;
-          pCVar4[1] = CVar1;
-          pCVar4 = pCVar4 + 2;
-        } while (CVar1 != (CEventList)0x0);
-        dest = dest + 0x120;
-        local_18 = local_18 + 0x120;
+          cVar1 = *pcVar3;
+          *pcVar4 = cVar1;
+          if (cVar1 == '\0') break;
+          cVar1 = pcVar3[1];
+          pcVar3 = pcVar3 + 2;
+          pcVar4[1] = cVar1;
+          pcVar4 = pcVar4 + 2;
+        } while (cVar1 != '\0');
+        dest = dest + 1;
+        local_18 = local_18 + 1;
         local_14 = local_14 + 1;
       }
       else {
 LAB_00495300:
-        iVar2 = *(int *)(this_ptr + 0x3ac8);
-        *(int *)(this_ptr + 0x3ac8) = iVar2 + -1;
-        memmove(dest,local_18,((iVar2 + -1) - local_14) * 0x120);
+        iVar2 = (this_ptr->sfx_handles).count + -1;
+        (this_ptr->sfx_handles).count = iVar2;
+        memmove(dest,local_18,(iVar2 - local_14) * 0x120);
       }
-    } while (local_14 < *(int *)(this_ptr + 0x3ac8));
+    } while (local_14 < (this_ptr->sfx_handles).count);
   }
   return;
 }

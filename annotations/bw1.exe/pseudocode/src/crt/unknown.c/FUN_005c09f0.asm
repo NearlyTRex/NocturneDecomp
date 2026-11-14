@@ -7,10 +7,10 @@
 ; XREF[76]:
 ;   cockpit_ckptutil.c_FUN_00438bd0 at 00438d2d
 ;   cockpit_ckptutil.c_FUN_0043a200 at 0043a2dc
-;   cockpit_pkbitmap.cpp_FUN_00537550 at 00537576
-;   cockpit_pkbitmap.cpp_FUN_00537c30 at 00537c7f
-;   cockpit_pkbitmap.cpp_FUN_00537cb0 at 00537ce1
-;   cockpit_pkbmpset.cpp_FUN_00538b2e at 00538d13
+;   cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00537550 at 00537576
+;   cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_00537cb0 at 00537ce1
+;   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_00537c30 at 00537c7f
+;   cockpit_pkbmpset.cpp_FUN_00538b30 at 00538d13
 ;   cockpit_pkbmpset.cpp_FUN_00538db0 at 00538e84
 ;   core_dcamera.cpp_CDemonCamera_free_FUN_0044cdf0 at 0044ce40
 ;   core_dcube.cpp_FUN_00457d70 at 00457d9d

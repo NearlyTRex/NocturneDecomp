@@ -7,12 +7,12 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[6]:
-;   core_game.cpp_FUN_004b47d0 at 004b48c6
-;   core_game.cpp_FUN_004bfb50 at 004bfe3f
-;   core_game.cpp_FUN_004bfee0 at 004c01f0
+;   core_game.cpp_CGame_displayActStats_FUN_004bfb50 at 004bfe3f
+;   core_game.cpp_CGame_finishAct_FUN_004bfee0 at 004c01f0
+;   core_game.cpp_CGame_renderOverlay_FUN_004b47d0 at 004b48c6
 ;   core_inv.cpp_CInventory_renderAllItems_FUN_004dda90 at 004ddc38
-;   core_script.cpp_FUN_00528fc0 at 0052911e
-;   shape_edittool.cpp_FUN_0047f4c0 at 0047f5ff
+;   core_script.cpp_CScript_renderSubtitles_FUN_00528fc0 at 0052911e
+;   shape_edittool.cpp_CEditorTools_createModalWindow_FUN_0047f4c0 at 0047f5ff
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005a28f0

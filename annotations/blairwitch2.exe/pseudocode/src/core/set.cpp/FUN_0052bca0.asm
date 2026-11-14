@@ -9,7 +9,7 @@
 ;   undefined4 DAT_0200a3a4
 ;
 ; Called Functions:
-;   core_set.cpp_FUN_005344c0
+;   core_set.cpp_CDemonSet_setFlatColor_FUN_005344c0
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
     PUSH ESI                            ; 0052bd00
     MOV ECX,dword ptr [0x0061b5a8]      ; 0052bd01 | g_CDemonSetPtr
     PUSH ECX                            ; 0052bd07
-    CALL core_set.cpp_FUN_005344c0      ; 0052bd08
-        ;   XREF to: 005344c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_005344c0(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
+    CALL core_set.cpp_CDemonSet_setFlatColor_FUN_005344c0 ; 0052bd08
+        ;   XREF to: 005344c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setFlatColor_FUN_005344c0(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
     ADD ESP,0x10                        ; 0052bd0d
     POP ESI                             ; 0052bd10
     POP EBX                             ; 0052bd11

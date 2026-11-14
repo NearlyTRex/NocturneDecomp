@@ -1,37 +1,19 @@
 [
   {
-    "addr":"004ab184",
-    "conv":"unknown",
-    "data_refs":[
-      "0061bf18"
-    ],
-    "instructions":5,
-    "method":"FUN_004ab184",
-    "name":"unkafter_mimic.cpp_FUN_004ab184",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"unkafter/mimic.cpp",
-    "variadic":false
-  },
-  {
     "addr":"005c1d04",
     "callers":[
       "0045f770",
       "0045f840",
       "0046caa0",
-      "0047225e",
-      "004722ee",
+      "00472260",
+      "004722f0",
       "004724a0",
       "00473160",
-      "004abd5e",
+      "004abd60",
       "004b6420",
       "00588ad0",
-      "0058e90e",
-      "0058e99e",
+      "0058e910",
+      "0058e9a0",
       "0058f660",
       "005b5860",
       "005b5930",
@@ -58,7 +40,7 @@
   {
     "addr":"005c2784",
     "callers":[
-      "0049517e",
+      "00495180",
       "00499c80"
     ],
     "calls":[
@@ -70,10 +52,45 @@
     "instructions":336,
     "method":"_strftime",
     "name":"crt_time.c__strftime_FUN_005c2784",
+    "params":[
+      {
+        "name":"dest_buffer",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"buffer_size",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":0
+        }
+      },
+      {
+        "name":"format_string",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"time_ptr",
+        "type":{
+          "header":"time",
+          "kind":"system",
+          "name":"_tm",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"uint",
       "ptr":0
     },
     "tu":"crt/time.c",

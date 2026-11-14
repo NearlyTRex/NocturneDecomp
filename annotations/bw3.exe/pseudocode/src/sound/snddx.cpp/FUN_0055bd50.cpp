@@ -12,7 +12,6 @@ void sound_snddx_cpp_FUN_0055bd50(uint param_1,int param_2)
 
 {
   uint error_code;
-  char *pcVar1;
   int *piStack_1ac;
   char *pcStack_1a8;
   int iStack_1a4;
@@ -33,11 +32,9 @@ void sound_snddx_cpp_FUN_0055bd50(uint param_1,int param_2)
     piStack_1ac = *(int **)(param_2 + 0x2cf49f4);
     error_code = (**(code **)(*piStack_1ac + 0x4c))();
     if (error_code != 0) {
-      pcVar1 = sound_snddx_cpp_FUN_0055a670(error_code);
-      FUN_005a28c0
-                (&piStack_1ac,"DirectSux: Unable to %s.  (%s)","Unlock hw sample buffer",
-                 pcVar1);
-      sound_sndmain_cpp_FUN_0055a560(&piStack_1ac);
+      sound_snddx_cpp_FUN_0055a670(error_code);
+      _sprintf((char *)&piStack_1ac,"DirectSux: Unable to %s.  (%s)");
+      sound_sndmain_cpp_logSoundError_FUN_0055a560((char *)&piStack_1ac);
     }
     *(uint *)(param_2 + 0x2cf4a04) = 0;
   }

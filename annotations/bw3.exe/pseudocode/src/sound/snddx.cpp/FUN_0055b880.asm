@@ -19,9 +19,9 @@
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005a28f0
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   sound_snddx.cpp_FUN_0055a670
-;   sound_sndmain.cpp_FUN_0055a560
+;   sound_sndmain.cpp_logSoundError_FUN_0055a560
 ;
 ; *****************************************************************************
 
@@ -205,18 +205,18 @@ section .text
     PUSH 0x5d452f                       ; 0055bb0c | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0xc]                 ; 0055bb11
     PUSH EAX                            ; 0055bb15
-    CALL crt_unknown.c_FUN_005a28c0     ; 0055bb16
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0055bb16
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0055bb1b
     MOV EAX,ESP                         ; 0055bb1e
     PUSH EAX                            ; 0055bb20
-    CALL sound_sndmain.cpp_FUN_0055a560 ; 0055bb21
-        ;   XREF to: 0055a560 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_0055a560()
+    CALL sound_sndmain.cpp_logSoundError_FUN_0055a560 ; 0055bb21
+        ;   XREF to: 0055a560 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_0055a560(char * format)
     ADD ESP,0x4                         ; 0055bb26
     PUSH 0x5d4709                       ; 0055bb29 | = "DirectSoundDevice::allocateSample - a..."
         ;   Label: LAB_0055bb29
-    CALL sound_sndmain.cpp_FUN_0055a560 ; 0055bb2e
-        ;   XREF to: 0055a560 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_0055a560()
+    CALL sound_sndmain.cpp_logSoundError_FUN_0055a560 ; 0055bb2e
+        ;   XREF to: 0055a560 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_0055a560(char * format)
     ADD ESP,0x4                         ; 0055bb33
     XOR EAX,EAX                         ; 0055bb36
     ADD ESP,0x1c8                       ; 0055bb38

@@ -7,7 +7,7 @@
 
 // Original: core_carved.cpp_staticInit_FUN_00425550
 // Address: 00425550
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_carved.cpp_FUN_00425580
 // Address: 00425580
@@ -27,27 +27,27 @@ undefined4 FUN_004257e0(float *param_1);
 
 // Original: core_carved.cpp_factoryFuncCarved_FUN_00425930
 // Address: 00425930
-void factoryFuncCarved(void);
+CCarved * __cdecl factoryFuncCarved(void);
 
 // Original: core_carved.cpp_CCarved_getActorType_FUN_00425950
 // Address: 00425950
-CDemonActorType * CCarved::getActorType(CCarved *this_ptr);
+CDemonActorType * __cdecl CCarved::getActorType(CCarved *this_ptr);
 
 // Original: core_carved.cpp_CCarved_ctor_FUN_00425960
 // Address: 00425960
-CCarved * CCarved::ctor(CCarved *this_ptr);
+CCarved * __cdecl CCarved::ctor(CCarved *this_ptr);
 
-// Original: core_carved.cpp_FUN_00425ab0
+// Original: core_carved.cpp_CCarved_setup_FUN_00425ab0
 // Address: 00425ab0
-void FUN_00425ab0(CEnemy *param_1);
+void __cdecl CCarved::setup(CCarved *this_ptr);
 
-// Original: core_carved.cpp_FUN_00425da0
+// Original: core_carved.cpp_CCarved_process_FUN_00425da0
 // Address: 00425da0
-void FUN_00425da0(CEnemy *param_1,float param_2);
+void __cdecl CCarved::process(CCarved *this_ptr,float delta_time);
 
-// Original: core_carved.cpp_FUN_00427780
+// Original: core_carved.cpp_CCarved_getCarryObjToBodyXForm_FUN_00427780
 // Address: 00427780
-void FUN_00427780(int param_1,int param_2);
+CMatrix3x4f * __stack2_esi CCarved::getCarryObjToBodyXForm(CCarved *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_carved.cpp_FUN_00427bc0
 // Address: 00427bc0
@@ -65,45 +65,45 @@ undefined4 FUN_004285c0(int param_1,undefined4 param_2);
 // Address: 00428600
 void FUN_00428600(int param_1);
 
-// Original: core_carved.cpp_FUN_00428640
+// Original: core_carved.cpp_CCarved_renderOpaque_FUN_00428640
 // Address: 00428640
-void FUN_00428640(CCharacter *param_1);
+int __cdecl CCarved::renderOpaque(CCarved *this_ptr);
 
-// Original: core_carved.cpp_FUN_00428650
+// Original: core_carved.cpp_CCarved_archive_FUN_00428650
 // Address: 00428650
-void FUN_00428650(int param_1);
+void __cdecl CCarved::archive(CCarved *this_ptr);
 
-// Original: core_carved.cpp_FUN_004286c0
+// Original: core_carved.cpp_CCarved_canBeAttracted_FUN_004286c0
 // Address: 004286c0
-undefined4 FUN_004286c0(int param_1,undefined4 *param_2);
+int __cdecl CCarved::canBeAttracted(CCarved *this_ptr,CDemonActor *grabber);
 
 // Original: core_carved.cpp_FUN_00428810
 // Address: 00428810
-void FUN_00428810(CCharacter *param_1,int *param_2);
+void FUN_00428810(CCharacter *param_1,float *param_2);
 
-// Original: core_carved.cpp_FUN_00428a80
+// Original: core_carved.cpp_CCarved_processDamage_FUN_00428a80
 // Address: 00428a80
-void FUN_00428a80(int param_1,int param_2);
+void __cdecl CCarved::processDamage(CCarved *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_carved.cpp_FUN_00428cb0
+// Original: core_carved.cpp_CCarved_getTargetPoints_FUN_00428cb0
 // Address: 00428cb0
-int FUN_00428cb0(int param_1,float *param_2);
+int __cdecl CCarved::getTargetPoints(CCarved *this_ptr,CVector3f *out_points_array);
 
-// Original: core_carved.cpp_FUN_00428fc0
+// Original: core_carved.cpp_CCarved_isGrabbable_FUN_00428fc0
 // Address: 00428fc0
-undefined4 FUN_00428fc0(undefined4 param_1,CDemonActor *param_2);
+int __cdecl CCarved::isGrabbable(CCarved *this_ptr,CDemonActor *grabber);
 
-// Original: core_carved.cpp_FUN_00429000
+// Original: core_carved.cpp_CCarved_canBeGrabbed_FUN_00429000
 // Address: 00429000
-bool FUN_00429000(undefined4 param_1,undefined4 param_2,int param_3);
+int __cdecl CCarved::canBeGrabbed(CCarved *this_ptr,CDemonActor *grabber,int grab_type);
 
-// Original: core_carved.cpp_FUN_00429010
+// Original: core_carved.cpp_CCarved_getGrabbed_FUN_00429010
 // Address: 00429010
-undefined4 FUN_00429010(int param_1,undefined4 param_2,int param_3);
+int __cdecl CCarved::getGrabbed(CCarved *this_ptr,CDemonActor *grabber,int grab_type);
 
-// Original: core_carved.cpp_FUN_00429080
+// Original: core_carved.cpp_CCarved_shouldIgnoreForTargeting_FUN_00429080
 // Address: 00429080
-void FUN_00429080(CDemonActor *param_1);
+int __cdecl CCarved::shouldIgnoreForTargeting(CCarved *this_ptr);
 
 // Original: core_carved.cpp_FUN_00429090
 // Address: 00429090
@@ -111,4 +111,4 @@ void FUN_00429090(int param_1);
 
 // Original: core_carved.cpp_CCarved_dtor_FUN_004291f0
 // Address: 004291f0
-CCarved * CCarved::dtor(CCarved *this_ptr,uint flags);
+CCarved * __cdecl CCarved::dtor(CCarved *this_ptr,uint flags);

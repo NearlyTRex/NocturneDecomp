@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int engine_matrix_c_FUN_004e4d90(uint param_1)
+; int __cdecl engine_matrix_c_FUN_004e4d90(int angle)
 ;
+; Parameters:
+; int              Stack[0x4]:4   angle
 ;
 ; XREF[3]:
 ;   core_inv.cpp_FUN_004dbe70 at 004dbf55

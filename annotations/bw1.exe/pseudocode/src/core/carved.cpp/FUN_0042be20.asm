@@ -15,14 +15,14 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   core_carved.cpp_FUN_00428ae0 at 00429bf3
+;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 00429bf3
 ;   core_carved.cpp_FUN_0042a930 at 0042ade5
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fd46c
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cc60
+;   core_actor.cpp_getRandomInt_FUN_0040cc60
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
 ;
 ; *****************************************************************************
@@ -88,8 +88,8 @@ section .text
         ;   XREF to: 0042bf18 (CONDITIONAL_JUMP)  ; LAB_0042bf18
     PUSH 0x3                            ; 0042beaf
     PUSH 0x0                            ; 0042beb1
-    CALL core_actor.cpp_FUN_0040cc60    ; 0042beb3
-        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cc60(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cc60 ; 0042beb3
+        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cc60(int min_value, int max_value)
     ADD ESP,0x8                         ; 0042beb8
     CMP EAX,0x1                         ; 0042bebb
     JNZ 0x0042bf18                      ; 0042bebe
@@ -97,8 +97,8 @@ section .text
     PUSH EAX                            ; 0042bec0
     PUSH 0x3                            ; 0042bec1
     PUSH 0x0                            ; 0042bec3
-    CALL core_actor.cpp_FUN_0040cc60    ; 0042bec5
-        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cc60(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cc60 ; 0042bec5
+        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cc60(int min_value, int max_value)
     ADD ESP,0x8                         ; 0042beca
     ADD EAX,0x3                         ; 0042becd
     PUSH EAX                            ; 0042bed0
@@ -119,8 +119,8 @@ section .text
         ;   Label: LAB_0042bee7
     PUSH 0x3                            ; 0042bee9
     PUSH 0x0                            ; 0042beeb
-    CALL core_actor.cpp_FUN_0040cc60    ; 0042beed
-        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cc60(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cc60 ; 0042beed
+        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cc60(int min_value, int max_value)
     ADD ESP,0x8                         ; 0042bef2
     ADD EAX,0x7                         ; 0042bef5
     PUSH EAX                            ; 0042bef8
@@ -140,8 +140,8 @@ section .text
         ;   Label: LAB_0042bf18
     PUSH 0x3                            ; 0042bf1a
     PUSH 0x0                            ; 0042bf1c
-    CALL core_actor.cpp_FUN_0040cc60    ; 0042bf1e
-        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cc60(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cc60 ; 0042bf1e
+        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cc60(int min_value, int max_value)
     ADD ESP,0x8                         ; 0042bf23
     ADD EAX,0x7                         ; 0042bf26
     JMP 0x0042bed0                      ; 0042bf29
@@ -150,8 +150,8 @@ section .text
         ;   Label: LAB_0042bf2b
     PUSH 0x3                            ; 0042bf2d
     PUSH EDX                            ; 0042bf2f
-    CALL core_actor.cpp_FUN_0040cc60    ; 0042bf30
-        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cc60(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cc60 ; 0042bf30
+        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cc60(int min_value, int max_value)
     ADD ESP,0x8                         ; 0042bf35
     ADD EAX,0x3                         ; 0042bf38
     PUSH EAX                            ; 0042bf3b

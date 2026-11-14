@@ -4,13 +4,16 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCodec.h"
+#include "types/structs/SBitBuffer.h"
 
 // Structure: CAsciiArmor
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI size 12; ctor 00443890 calls CCodec ctor 00442ba0 first
 // Ghidra size: 0xc (12 bytes)
 #pragma pack(push, 1)
 typedef struct CAsciiArmor {
-    char field_0[12]; // 0x0
+    CCodec base; // 0x0, ctor calls CCodec ctor 00442ba0 then stores its own vtable at +0
+    SBitBuffer bit_buffer; // 0x4, reset slot 004438b0 calls resetBitBuffer(this+4); encode slot 004438d0 drains it 6 bits at a time via writeBitsToStream(this+4) into the armor alphabet; flush slot 00443920 reads the remaining bits from this+4
 } CAsciiArmor;
 #pragma pack(pop)
 

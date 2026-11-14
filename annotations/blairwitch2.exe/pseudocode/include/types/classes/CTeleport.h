@@ -4,13 +4,16 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CTeleport
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x2c4 (708 bytes)
 #pragma pack(push, 1)
 typedef struct CTeleport {
-    char field_0[708]; // 0x0
+    CDemonActor base; // 0x0
+    CVector3f trigger_extents; // 0x2b4
+    struct CDemonActor* destination; // 0x2c0
 } CTeleport;
 #pragma pack(pop)
 

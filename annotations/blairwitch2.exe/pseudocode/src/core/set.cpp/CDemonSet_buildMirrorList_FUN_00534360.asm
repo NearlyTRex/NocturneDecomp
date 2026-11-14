@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_0052d0e0 at 0052d1ac
+;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0 at 0052d1ac
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_005e5b8a
@@ -28,7 +28,7 @@
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
 ;   core_box.cpp_FUN_0041a840
 ;   core_main.c_FUN_004e4500
-;   engine_matrix.c_pop_FUN_0046b4a0
+;   engine_drender.cpp_pop_FUN_0046b4a0
 ;
 ; *****************************************************************************
 
@@ -56,7 +56,7 @@ section .text
     MOV EAX,dword ptr [EAX + 0x14d168]  ; 00534398
     PUSH EAX                            ; 0053439e
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 0053439f
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     MOV EBX,EAX                         ; 005343a4
     ADD ESP,0x8                         ; 005343a6
     TEST EAX,EAX                        ; 005343a9
@@ -106,8 +106,8 @@ section .text
     MOV EDX,dword ptr [0x0060b280]      ; 0053443b | DAT_0060b280
         ;   Label: LAB_0053443b
     PUSH EDX                            ; 00534441 | DAT_01ba5c50
-    CALL engine_matrix.c_pop_FUN_0046b4a0 ; 00534442
-        ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046b4a0()
+    CALL engine_drender.cpp_pop_FUN_0046b4a0 ; 00534442
+        ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046b4a0()
     ADD ESP,0x4                         ; 00534447
     MOV EBX,dword ptr [ESP + 0x30]      ; 0053444a
         ;   Label: LAB_0053444a

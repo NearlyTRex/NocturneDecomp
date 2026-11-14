@@ -2,23 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 130,
-    "complexity_score": 151,
+    "complexity_score": 146,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 66,
+    "pseudocode_lines": 61,
     "suspect_count": 8,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 196
+    "total_lines": 191
   },
   "cross_references": [
     {
       "addr": "004faaf0",
       "from_addr": "004fac24",
-      "name": "core_inv.cpp_FUN_004faaf0",
+      "name": "core_inv.cpp_CInventory_renderSelectedItems_FUN_004faaf0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -100,7 +100,7 @@
       {
         "call_addr": "004fac24",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004faaf0",
+        "caller": "core_inv.cpp_CInventory_renderSelectedItems_FUN_004faaf0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -111,7 +111,7 @@
       {
         "call_addr": "004fad3f",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004faaf0",
+        "caller": "core_inv.cpp_CInventory_renderSelectedItems_FUN_004faaf0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -161,6 +161,32 @@
       "SUBPIECE": 12
     },
     "pcode_op_count": 461
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004dd4e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.75
+    },
+    "bw3.exe": {
+      "addr": "004dd5b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005001e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.75
+    },
+    "nocturne.exe": {
+      "addr": "004c1f90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 96,
@@ -307,7 +333,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 20,
       "match": "DAT_0061b49c",
       "severity": "mild",
       "text": "if (0x1e0 < DAT_0061b49c) {",
@@ -315,7 +341,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 21,
       "match": "DAT_0061b498",
       "severity": "mild",
       "text": "iVar1 = (int)(0x2800000 / (longlong)DAT_0061b498);",
@@ -323,7 +349,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 22,
       "match": "DAT_0061b49c",
       "severity": "mild",
       "text": "iVar2 = (int)(0x1e00000 / (longlong)DAT_0061b49c);",
@@ -331,7 +357,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 25,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(DAT_00612560,(SMRGLTextureBasic *)&DAT_0061f274);",
@@ -339,7 +365,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 25,
       "match": "DAT_0061f274",
       "severity": "mild",
       "text": "(DAT_00612560,(SMRGLTextureBasic *)&DAT_0061f274);",
@@ -347,7 +373,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 26,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,alpha);",
@@ -355,7 +381,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 27,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "this_ptr = DAT_00612560;",
@@ -363,10 +389,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 28,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "*(int *)(*(int *)DAT_00612560 + 0x10) = x1 * iVar1;",
+      "text": "(DAT_00612560->vertex_buffer_ptr->projected_vertex).screen_x = x1 * iVar1;",
       "type": "undefined_data"
     }
   ]

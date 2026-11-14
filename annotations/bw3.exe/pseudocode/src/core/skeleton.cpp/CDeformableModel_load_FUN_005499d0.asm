@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   filename
 ;
 ; XREF[1]:
-;   core_skeleton.cpp_FUN_005500b0 at 00550131
+;   core_skeleton.cpp_getDeformableModel_FUN_005500b0 at 00550131
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d1b14

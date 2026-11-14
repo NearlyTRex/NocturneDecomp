@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   sound_sndmain.cpp_FUN_005506b0 at 00550830
+;   sound_sndmain.cpp_startSfx_FUN_005506b0 at 00550830
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005e89de

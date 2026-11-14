@@ -35,9 +35,9 @@ void shape_edittool_cpp_FUN_00486120(int param_1,int param_2)
              *(uint *)(param_1 + 0x14),*(uint *)(param_1 + 0x18));
   pcVar8 = (char *)(param_1 + 0x1c);
   _DAT_01c6b5ac = uVar2;
-  iVar3 = engine_font_cpp_FUN_004b2a80(_DAT_01c5b0e0,pcVar8);
-  iVar4 = engine_font_cpp_FUN_004b2b30(_DAT_01c5b0e0,pcVar8);
-  iVar5 = engine_font_cpp_FUN_004b3120(_DAT_01c5b0e0,0x41);
+  iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(_DAT_01c5b0e0,pcVar8);
+  iVar4 = engine_font_cpp_CBitFont_getTextHeight_FUN_004b2b30(_DAT_01c5b0e0,pcVar8);
+  iVar5 = engine_font_cpp_CBitFont_getCharYOffset_FUN_004b3120(_DAT_01c5b0e0,0x41);
   iVar3 = *(int *)(param_1 + 0x18) +
           ((*(int *)(param_1 + 0x10) + *(int *)(param_1 + 8)) - iVar3) / 2;
   local_14 = *(int *)(param_1 + 0x18) +
@@ -48,7 +48,7 @@ void shape_edittool_cpp_FUN_00486120(int param_1,int param_2)
   }
   else {
     iVar4 = (_DAT_01c5bb60 & 0xff) * 3;
-    engine_mini3d_cpp_FUN_004f3520
+    engine_mini3d_cpp_setColor_FUN_004f3520
               ((uint)(byte)(&DAT_01c6af9a)[iVar4] |
                (uint)(byte)(&DAT_01c6af99)[iVar4] << 8 | (uint)(byte)(&DAT_01c6af98)[iVar4] << 0x10)
     ;
@@ -111,32 +111,33 @@ LAB_004862e7:
     pbVar12 = pbVar12 + 2;
   } while (cVar1 != '\0');
   *pcVar8 = '\0';
-  iVar4 = engine_font_cpp_FUN_004b2a80(_DAT_01c5b0e0,(char *)local_dc);
-  uVar6 = iVar4 + *(int *)(_DAT_01c5b0e0 + 0x41f4);
+  iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(_DAT_01c5b0e0,(char *)local_dc);
+  uVar6 = iVar4 + _DAT_01c5b0e0->char_spacing;
   bVar13 = *(byte *)(param_1 + 0x1c);
   uVar7 = toupper((uint)*(byte *)(param_1 + 4));
   if (uVar7 == bVar13) {
     uVar6 = uVar7 ^ bVar13;
   }
   iVar3 = iVar3 + uVar6;
-  iVar4 = engine_font_cpp_FUN_004b30f0(_DAT_01c5b0e0,0x41);
+  iVar4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(_DAT_01c5b0e0,0x41);
   local_14 = local_14 + iVar4 + 1;
   uVar6 = _DAT_01c5bb60;
   if (_DAT_01c5baec != 0) {
     iVar4 = (_DAT_01c5bb60 & 0xff) * 3;
-    engine_mini3d_cpp_FUN_004f3520
+    engine_mini3d_cpp_setColor_FUN_004f3520
               ((uint)(byte)(&DAT_01c6af9a)[iVar4] |
                (uint)(byte)(&DAT_01c6af99)[iVar4] << 8 | (uint)(byte)(&DAT_01c6af98)[iVar4] << 0x10)
     ;
     uVar6 = _DAT_01c6b5c0;
   }
   _DAT_01c6b5c0 = uVar6;
-  iVar4 = engine_font_cpp_FUN_004b30c0(_DAT_01c5b0e0,*(byte *)(param_1 + 4));
+  iVar4 = engine_font_cpp_CBitFont_getCharWidth_FUN_004b30c0
+                    (_DAT_01c5b0e0,(uint)*(byte *)(param_1 + 4));
   iVar4 = iVar4 + iVar3 + -1;
   if (_DAT_01c5baec == 0) {
     engine_2d_c_drawHLine_FUN_00402f30(iVar3,local_14,iVar4);
     return;
   }
-  engine_mini3d_cpp_FUN_004f3ab0(iVar3,local_14,iVar4);
+  engine_mini3d_cpp_drawHLine_FUN_004f3ab0(iVar3,local_14,iVar4);
   return;
 }

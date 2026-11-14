@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SReflector * __cdecl core_manpuz_cpp_SReflector_arrdtor2_FUN_0050bad0(SReflector *objs,uint flags)
+; SReflector * __cdecl core_manpuz_cpp_SReflector_arrdtor2_FUN_0050bad0(SReflector *this_ptr,uint flags)
 ;
 ; Parameters:
-; SReflector *     Stack[0x4]:4   objs
+; SReflector *     Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:

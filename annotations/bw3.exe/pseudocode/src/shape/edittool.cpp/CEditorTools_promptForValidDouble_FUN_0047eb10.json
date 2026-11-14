@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 85,
+    "complexity_score": 74,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 35,
-    "suspect_count": 4,
+    "pseudocode_lines": 34,
+    "suspect_count": 3,
     "suspect_types": [
       "bitcast_double_pair",
       "pointer_cast"
     ],
-    "total_lines": 156
+    "total_lines": 155
   },
   "cross_references": [],
   "function": {
@@ -38,7 +38,7 @@
     {
       "addr": "005a28c0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a28c0"
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
     },
     {
       "addr": "0047cf40",
@@ -95,6 +95,26 @@
       "STORE": 36
     },
     "pcode_op_count": 436
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0047d900",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00495f70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004a01f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 40,
@@ -173,16 +193,8 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 15,
-      "match": "(uint *)((int)result_ptr",
-      "severity": "moderate",
-      "text": "(acStack_30,0x5bd038,*(uint *)result_ptr,*(uint *)((int)result_ptr + 4));",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 30,
+      "line": 29,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "((min_value <= __BITCAST_DOUBLE(CONCAT44(uStack_44,uStack_48)) &&",
@@ -190,7 +202,7 @@
     },
     {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 31,
+      "line": 30,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "(__BITCAST_DOUBLE(CONCAT44(uStack_44,uStack_48)) <= max_value)))) break;",
@@ -198,7 +210,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 35,
       "match": "(uint *)((int)result_ptr",
       "severity": "moderate",
       "text": "*(uint *)((int)result_ptr + 4) = uStack_44;",

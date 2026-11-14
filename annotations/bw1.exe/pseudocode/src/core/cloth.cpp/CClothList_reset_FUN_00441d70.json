@@ -1,0 +1,188 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 52,
+    "complexity_score": 37,
+    "cross_reference_count": 3,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 22,
+    "suspect_count": 1,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
+    "total_lines": 74
+  },
+  "cross_references": [
+    {
+      "addr": "00441ca0",
+      "from_addr": "00441ca6",
+      "name": "core_cloth.cpp_CClothList_dtor_FUN_00441ca0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00471af0",
+      "from_addr": "00472095",
+      "name": "core_doc.cpp_CDoc_renderOpaque_FUN_00471af0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058e3c0",
+      "from_addr": "0058e7e7",
+      "name": "core_stranger.cpp_CStranger_renderOpaque_FUN_0058e3c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00441d70",
+    "address_range": [
+      [
+        "00441d70",
+        "00441dd8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_cloth.cpp_CClothList_reset_FUN_00441d70",
+    "signature": "void __cdecl core_cloth_cpp_CClothList_reset_FUN_00441d70(CClothList *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0043e620",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_FUN_0043e620"
+    },
+    {
+      "addr": "005bfb70",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005bfb70"
+    },
+    {
+      "addr": "005c0344",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c0344"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "00472095",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_CDoc_renderOpaque_FUN_00471af0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0058e7e7",
+        "call_type": "direct",
+        "caller": "core_stranger.cpp_CStranger_renderOpaque_FUN_0058e3c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00441ca6",
+        "call_type": "direct",
+        "caller": "core_cloth.cpp_CClothList_dtor_FUN_00441ca0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.463414634146342,
+    "instruction_count": 41,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 4,
+      "CBRANCH": 3,
+      "COPY": 32,
+      "INT_ADD": 14,
+      "INT_AND": 24,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 22,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 11,
+      "INT_SUB": 17,
+      "INT_XOR": 1,
+      "LOAD": 8,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "STORE": 17
+    },
+    "pcode_op_count": 183
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b1550",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0043f9d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0043c070",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9425
+    },
+    "nocturne.exe": {
+      "addr": "00438320",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CClothList *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 18,
+      "match": "pCVar3 = (T *)pCVar3->ARRAY",
+      "severity": "moderate",
+      "text": "pCVar3 = (CClothList *)pCVar3->filenames;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

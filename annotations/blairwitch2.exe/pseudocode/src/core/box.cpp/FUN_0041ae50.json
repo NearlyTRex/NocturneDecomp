@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 102,
-    "complexity_score": 157,
+    "complexity_score": 79,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 22,
-    "suspect_count": 12,
+    "pseudocode_lines": 19,
+    "suspect_count": 5,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 124
+    "total_lines": 121
   },
   "cross_references": [
     {
@@ -144,6 +143,14 @@
       "TRUNC": 3
     },
     "pcode_op_count": 618
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00420dc0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 96,
@@ -322,51 +329,19 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "local_28 = (int)ROUND((*(float *)this_ptr + *(float *)&this_ptr->field_0xc) * _DAT_005cc4d5 *",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "local_24 = (int)ROUND((*(float *)&this_ptr->field_0x4 + *(float *)&this_ptr->field_0x10) *",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "local_24 = (int)ROUND((*(float *)&this_ptr->field_0x4 + *(float *)&this_ptr->field_0x10) *",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Undefined global data reference",
       "line": 15,
-      "match": "field_0x8",
+      "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "local_20 = (int)ROUND((*(float *)&this_ptr->field_0x8 + *(float *)&this_ptr->field_0x14) *",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "local_20 = (int)ROUND((*(float *)&this_ptr->field_0x8 + *(float *)&this_ptr->field_0x14) *",
-      "type": "unnamed_field"
+      "text": "engine_special_cpp_FUN_0055d723((SProjectedVertex *)(*DAT_0060b280 + 0xea5d0),local_28);",
+      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 18,
+      "line": 16,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*DAT_0060b280 + 0xea5d0),(CVector3i *)&local_28);",
+      "text": "if (0 < *(int *)(*DAT_0060b280 + 0xea5d8)) {",
       "type": "undefined_data"
     },
     {
@@ -374,36 +349,12 @@
       "line": 19,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "if (0 < *(int *)(*DAT_0060b280 + 0xea5d8)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "((*(float *)&this_ptr->field_0x10 - *(float *)&this_ptr->field_0x4) /",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "((*(float *)&this_ptr->field_0x10 - *(float *)&this_ptr->field_0x4) /",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_0060b280",
-      "severity": "mild",
       "text": "((float)*(int *)(*DAT_0060b280 + 0xea5d8) * (float)_DAT_005cc4d9))) /",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 20,
       "match": "DAT_006141e4",
       "severity": "mild",
       "text": "(float)DAT_006141e4);",

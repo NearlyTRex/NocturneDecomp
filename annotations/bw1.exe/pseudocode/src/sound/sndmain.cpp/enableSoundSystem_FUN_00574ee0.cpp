@@ -16,7 +16,7 @@ int __cdecl sound_sndmain_cpp_enableSoundSystem_FUN_00574ee0(void)
   int iVar3;
   int iVar4;
   
-  uVar2 = sound_sndmain_cpp_FUN_00575540();
+  uVar2 = sound_sndmain_cpp_isSoundSystemActive_FUN_00575540();
   if (uVar2 == 0) {
     return 0;
   }
@@ -25,7 +25,7 @@ int __cdecl sound_sndmain_cpp_enableSoundSystem_FUN_00574ee0(void)
     iVar3 = sound_sndmain_cpp_resetSoundDevice_FUN_005750e0();
     return iVar3;
   }
-  iVar3 = sound_sndmain_cpp_FUN_00575550();
+  iVar3 = sound_sndmain_cpp_isSoundBusy_FUN_00575550();
   if (iVar3 != 0) {
     return 1;
   }
@@ -66,14 +66,14 @@ int __cdecl sound_sndmain_cpp_enableSoundSystem_FUN_00574ee0(void)
                *(uint *)(_DAT_02c7fc88 * 4 + 0x2c7fc38));
     (**(code **)(*_DAT_02c80650 + 0x28))(_DAT_02c80650,DAT_00623304);
     (**(code **)(*_DAT_02c80650 + 0x2c))(_DAT_02c80650,_DAT_02c807d0,_DAT_02c807d4,_DAT_02c807d8);
-    _DAT_02c807f0 = wincore_winrun_cpp_FUN_005b2420();
+    _DAT_02c807f0 = wincore_winrun_cpp_getTime_FUN_005b2420();
     iVar3 = (**(code **)(*_DAT_02c80650 + 4))(_DAT_02c80650);
     if (iVar3 != 0) {
       _DAT_02c80654 = 1;
-      sound_sndmain_cpp_FUN_00573e70();
+      sound_sndmain_cpp_unlockSound_FUN_00573e70();
       return 1;
     }
   }
-  sound_sndmain_cpp_FUN_00573e70();
+  sound_sndmain_cpp_unlockSound_FUN_00573e70();
   return 0;
 }

@@ -2,29 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 9,
-    "complexity_score": 31,
+    "complexity_score": 4,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 6,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 15
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 4,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 13
   },
   "cross_references": [
     {
-      "addr": "00540f30",
-      "from_addr": "00540f69",
-      "name": "core_skeleton.cpp_FUN_00540f30",
+      "addr": "00544f80",
+      "from_addr": "005455c8",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00544f80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00544f80",
-      "from_addr": "005455c8",
-      "name": "core_skeleton.cpp_FUN_00544f80",
+      "addr": "00540f30",
+      "from_addr": "00540f69",
+      "name": "core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_00540f30",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -48,7 +46,7 @@
       {
         "call_addr": "005455c8",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_00544f80",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00544f80",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -59,7 +57,7 @@
       {
         "call_addr": "0054568e",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_00544f80",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00544f80",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -70,7 +68,7 @@
       {
         "call_addr": "00540f69",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_00540f30",
+        "caller": "core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_00540f30",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -81,7 +79,7 @@
       {
         "call_addr": "00540f95",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_00540f30",
+        "caller": "core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_00540f30",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -92,7 +90,7 @@
       {
         "call_addr": "00540fa4",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_00540f30",
+        "caller": "core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_00540f30",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -133,6 +131,32 @@
     },
     "pcode_op_count": 81
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00563580",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00548120",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0059a050",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00517a60",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -163,22 +187,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x1d1f8",
-      "severity": "mild",
-      "text": "((frame_index * *(int *)&this_ptr->field_0x1d1f8 + bone_index) * 0x10 +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x1e010",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x1e010);",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

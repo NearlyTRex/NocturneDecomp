@@ -1,20 +1,20 @@
 // Name: core_boneguy.cpp_factoryFuncBoneGuy_FUN_00417050
 // Address: 00417050
 // Address Range: [[00417050, 0041706b]]
-// Convention: unknown
-// Signature: void core_boneguy_cpp_factoryFuncBoneGuy_FUN_00417050(void)
+// Convention: __cdecl
+// Signature: CBoneGuy * __cdecl core_boneguy_cpp_factoryFuncBoneGuy_FUN_00417050(void)
 
 #include "nocturne.h"
 
-void core_boneguy_cpp_factoryFuncBoneGuy_FUN_00417050(void)
+CBoneGuy * __cdecl core_boneguy_cpp_factoryFuncBoneGuy_FUN_00417050(void)
 
 {
-  CBoneGuy *this_ptr;
+  CBoneGuy *pCVar1;
   
-  this_ptr = (CBoneGuy *)FUN_005a3cb2(0xd698);
-  if (this_ptr == (CBoneGuy *)0x0) {
-    return;
+  pCVar1 = (CBoneGuy *)operator_new(0xd698);
+  if (pCVar1 == (CBoneGuy *)0x0) {
+    return (CBoneGuy *)0x0;
   }
-  core_boneguy_cpp_CBoneGuy_ctor_FUN_00417400(this_ptr);
-  return;
+  pCVar1 = core_boneguy_cpp_CBoneGuy_ctor_FUN_00417400(pCVar1);
+  return pCVar1;
 }

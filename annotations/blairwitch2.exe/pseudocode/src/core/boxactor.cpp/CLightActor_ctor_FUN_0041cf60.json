@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 224,
+    "complexity_score": 84,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 19,
-    "suspect_count": 19,
+    "suspect_count": 5,
     "suspect_types": [
+      "derived_field_index_pun",
       "negative_offset",
-      "unnamed_field",
-      "unrolled_memset"
+      "suspect_float"
     ],
     "total_lines": 50
   },
@@ -20,7 +20,7 @@
     {
       "addr": "0041cf30",
       "from_addr": "0041cf43",
-      "name": "core_boxactor.cpp_FUN_0041cf30",
+      "name": "core_boxactor.cpp_factoryFuncLightActor_FUN_0041cf30",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -55,7 +55,7 @@
       {
         "call_addr": "0041cf43",
         "call_type": "direct",
-        "caller": "core_boxactor.cpp_FUN_0041cf30",
+        "caller": "core_boxactor.cpp_factoryFuncLightActor_FUN_0041cf30",
         "estimated_params": 1,
         "instructions_analyzed": 2,
         "method": "push_count",
@@ -92,6 +92,32 @@
     },
     "pcode_op_count": 104
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00422ed0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00420360",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00422990",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0041f310",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -110,156 +136,43 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
+      "description": "Negative struct offset (wrong base type)",
+      "line": 11,
+      "match": "pCVar2[-1].",
+      "severity": "mild",
+      "text": "pCVar2[-1].saved_screen_buffer_rows[0x36d] = &g_CLightActorVTable;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 20,
+      "match": "pCVar2[-1].",
+      "severity": "mild",
+      "text": "pCVar2[-1].bloom_intensity = 1.4013e-45;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 20,
+      "match": "1.4013e-45",
+      "severity": "mild",
+      "text": "pCVar2[-1].bloom_intensity = 1.4013e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 21,
+      "match": "pCVar2[-1].",
+      "severity": "mild",
+      "text": "return (CLightActor *)(pCVar2[-1].saved_screen_buffer_rows + 0x2c1);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "'pCVar1[1].base.actor_name + 4' walks 1 x sizeof(CBoxActor) (0x7d4) + offsetof(base.actor_name) (0x0) + 0x4 = 0x7d8, which is exactly offsetof(CLightActor, light). Ghidra had no CLightActor type here and reached the field by index arithmetic; write it as ((CLightActor *)pCVar1)->light (\u00a7de-pun/\u00a712). Ambiguous: CSpiritMine::unused_7d8 also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 10,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "((CDemonLight *)&pCVar1[1].field_0x4,0x100,0x100);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 11,
-      "match": "pCVar2[-1].",
-      "severity": "mild",
-      "text": "*(byte **)&pCVar2[-1].field_0x2a88 = &g_CLightActorVTable;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x2a88",
-      "severity": "mild",
-      "text": "*(byte **)&pCVar2[-1].field_0x2a88 = &g_CLightActorVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x1cb4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x1cb4 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[1].field_0x8 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[1].field_0x4 = *(uint *)&pCVar2[1].field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[1].field_0x4 = *(uint *)&pCVar2[1].field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)(pCVar2 + 1) = *(uint *)&pCVar2[1].field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[1].field_0x14 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[1].field_0x10 = *(uint *)&pCVar2[1].field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[1].field_0x10 = *(uint *)&pCVar2[1].field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[1].field_0xc = *(uint *)&pCVar2[1].field_0x10;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[1].field_0xc = *(uint *)&pCVar2[1].field_0x10;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[1].field_0x18 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 20,
-      "match": "pCVar2[-1].",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0x2fac = 1;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x2fac",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-1].field_0x2fac = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 21,
-      "match": "pCVar2[-1].",
-      "severity": "mild",
-      "text": "return (CLightActor *)&pCVar2[-1].field_0x27d8;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x27d8",
-      "severity": "mild",
-      "text": "return (CLightActor *)&pCVar2[-1].field_0x27d8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 16,
-      "match": "cascade_constant_fill",
       "severity": "moderate",
-      "text": "*(uint *)&pCVar2[1].field_0x14 = 0;",
-      "type": "unrolled_memset"
+      "text": "((CDemonLight *)(pCVar1[1].base.actor_name + 4),0x100,0x100);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

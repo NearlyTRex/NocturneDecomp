@@ -2,19 +2,21 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 211,
-    "complexity_score": 405,
+    "complexity_score": 347,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 16,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 100,
-    "suspect_count": 29,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 102,
+    "suspect_count": 22,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 311
+    "total_lines": 313
   },
   "cross_references": [],
   "function": {
@@ -27,7 +29,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_00406450",
-    "signature": "int __cdecl engine_3d_c_renderPolygonAdaptiveFogTexturedOp52_FUN_00406450(int param_1)"
+    "signature": "SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveFogTexturedOp52_FUN_00406450(SMRGLHeaderPrimitive *prim)"
   },
   "function_calls": [
     {
@@ -153,9 +155,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -190,13 +192,47 @@
     },
     "pcode_op_count": 571
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00406280",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004062a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00406430",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00407a20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "prim",
+        "offset": 4,
+        "size": 4,
+        "type": "SMRGLHeaderPrimitive *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -206,22 +242,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int __cdecl engine_3d_c_renderPolygonAdaptiveFogTexturedOp52_FUN_00406450(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = engine_3d_c_isVisiblePlane_FUN_00403970(param_1 + 8);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
@@ -288,32 +308,8 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(int *)(param_1 + 8),*(int *)(param_1 + 0xc),*(int *)(param_1 + 0x10));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(int *)(param_1 + 8),*(int *)(param_1 + 0xc),*(int *)(param_1 + 0x10));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 70,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(int *)(param_1 + 8),*(int *)(param_1 + 0xc),*(int *)(param_1 + 0x10));",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 71,
+      "line": 72,
       "match": "DAT_0070ca5c",
       "severity": "mild",
       "text": "_DAT_01c35e60 = engine_3d_c_lookupLitColor_FUN_004039e0(DAT_0070ca5c,_DAT_01c35e64);",
@@ -321,7 +317,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 76,
+      "line": 77,
       "match": "DAT_006141c0",
       "severity": "mild",
       "text": "if (DAT_006141c0 == 0x20) {",
@@ -329,7 +325,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 84,
       "match": "DAT_006141c0",
       "severity": "mild",
       "text": "else if (DAT_006141c0 == 0x20) {",
@@ -337,99 +333,83 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 92,
+      "line": 93,
       "match": "DAT_0070ca98",
       "severity": "mild",
       "text": "piVar3 = &DAT_0070ca98;",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 93,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar2 = (int *)(param_1 + 0x18);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 94,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "for (iVar1 = 0; iVar1 < *(int *)(param_1 + 4) * 3; iVar1 = iVar1 + 3) {",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 95,
+      "line": 96,
       "match": "DAT_0070ca60",
       "severity": "mild",
-      "text": "*piVar3 = *piVar2 + DAT_0070ca60;",
+      "text": "*piVar3 = (pSVar2->base).type + DAT_0070ca60;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 96,
+      "line": 97,
       "match": "DAT_0062202c",
       "severity": "mild",
-      "text": "(&DAT_0062202c)[(*piVar2 + DAT_0070ca60) * 0xc] = piVar2[1];",
+      "text": "(&DAT_0062202c)[((pSVar2->base).type + DAT_0070ca60) * 0xc] = (pSVar2->base).count;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 96,
+      "line": 97,
       "match": "DAT_0070ca60",
       "severity": "mild",
-      "text": "(&DAT_0062202c)[(*piVar2 + DAT_0070ca60) * 0xc] = piVar2[1];",
+      "text": "(&DAT_0062202c)[((pSVar2->base).type + DAT_0070ca60) * 0xc] = (pSVar2->base).count;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 99,
       "match": "DAT_00622030",
       "severity": "mild",
-      "text": "*(int *)(&DAT_00622030 + (*piVar2 + DAT_0070ca60) * 0x30) = piVar2[2];",
+      "text": "*(UIntegerFloat *)(&DAT_00622030 + ((pSVar2->base).type + DAT_0070ca60) * 0x30) =",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 99,
       "match": "DAT_0070ca60",
       "severity": "mild",
-      "text": "*(int *)(&DAT_00622030 + (*piVar2 + DAT_0070ca60) * 0x30) = piVar2[2];",
+      "text": "*(UIntegerFloat *)(&DAT_00622030 + ((pSVar2->base).type + DAT_0070ca60) * 0x30) =",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 101,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "engine_clipper_c_clipAndRasterize_FUN_00431d90(*(int *)(param_1 + 4),&DAT_0070ca98);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 101,
+      "line": 103,
       "match": "DAT_0070ca98",
       "severity": "mild",
-      "text": "engine_clipper_c_clipAndRasterize_FUN_00431d90(*(int *)(param_1 + 4),&DAT_0070ca98);",
+      "text": "engine_clipper_c_clipAndRasterize_FUN_00431d90((prim->base).count,&DAT_0070ca98);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 103,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return *(int *)(param_1 + 4) * 0xc + param_1 + 0x18;",
-      "type": "unnamed_param"
+      "description": "Pointer value `&prim[1].base` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 105,
+      "match": "(int)&prim[1].base",
+      "severity": "moderate",
+      "text": "return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 103,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "return *(int *)(param_1 + 4) * 0xc + param_1 + 0x18;",
-      "type": "unnamed_param"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 105,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 101,
+      "match": "pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "vtable_info": {

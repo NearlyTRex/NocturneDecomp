@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004b7f90 at 004b8ad5
+;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b8ad5
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d22c84

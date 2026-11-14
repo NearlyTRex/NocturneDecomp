@@ -11,7 +11,7 @@ int __cdecl core_mimic_cpp_CMimic_renderOpaque_FUN_004f1b40(CMimic *this_ptr)
 {
   int iVar1;
   
-  if (*(int *)&this_ptr->field_0xfc != 0) {
+  if ((this_ptr->base).base.base.is_transparent != 0) {
     return 0;
   }
   iVar1 = core_mimic_cpp_CMimic_renderMirrored_FUN_004f1890(this_ptr);

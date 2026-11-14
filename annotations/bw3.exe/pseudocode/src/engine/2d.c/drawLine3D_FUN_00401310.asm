@@ -12,7 +12,7 @@
 ; uint             Stack[0x18]:4   z2
 ;
 ; XREF[2]:
-;   engine_3d.c_FUN_00407e30 at 004080cb
+;   engine_3d.c_clipAndDrawLine3D_FUN_00407e30 at 004080cb
 ;   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046d550 at 0046d83d
 ;
 ; Called Functions:

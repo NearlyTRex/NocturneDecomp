@@ -8,7 +8,7 @@
 ;
 ; XREF[3]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_004a70d0 at 004a82c5
-;   core_game.cpp_FUN_004cf5e0 at 004d0323
+;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004d0323
 ;   core_script.cpp_CScript_step_FUN_00544460 at 00547238
 ;
 ; Referenced Globals:

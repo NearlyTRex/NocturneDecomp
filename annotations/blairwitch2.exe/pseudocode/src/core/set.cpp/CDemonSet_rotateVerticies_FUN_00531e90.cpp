@@ -11,7 +11,7 @@
 void __cdecl core_set_cpp_CDemonSet_rotateVerticies_FUN_00531e90(CDemonSet *this_ptr,int vertex_count,CVector3i *input_vertices)
 
 {
-  SProjectedVertex *output;
+  SRenderVertex *output;
   int iVar1;
   int local_14;
   
@@ -23,16 +23,16 @@ void __cdecl core_set_cpp_CDemonSet_rotateVerticies_FUN_00531e90(CDemonSet *this
   engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920(DAT_0060b280,1);
   iVar1 = 0;
   local_14 = 0;
-  output = *(SProjectedVertex **)DAT_0060b280;
+  output = DAT_0060b280->vertex_buffer_ptr;
   if (0 < vertex_count) {
     do {
-      engine_special_cpp_FUN_0055d723(output,input_vertices);
-      if (((byte)output[0x13] & 0x80) == 0) {
+      engine_special_cpp_FUN_0055d723(&output->projected_vertex,input_vertices);
+      if ((int)((output->projected_vertex).screen_x & -0x80000000) == 0) {
         local_14 = local_14 + 1;
       }
-      output = output + 0x30;
+      output = output + 1;
       iVar1 = iVar1 + 1;
-      input_vertices = input_vertices + 0xc;
+      input_vertices = input_vertices + 1;
     } while (iVar1 < vertex_count);
   }
   if (local_14 == vertex_count) {

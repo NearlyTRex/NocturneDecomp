@@ -7,39 +7,39 @@
 
 // Original: core_crossbow.cpp_staticInit_FUN_00449710
 // Address: 00449710
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_crossbow.cpp_factoryFuncCrossbow_FUN_00449740
 // Address: 00449740
-void factoryFuncCrossbow(void);
+CCrossbow * __cdecl factoryFuncCrossbow(void);
 
 // Original: core_crossbow.cpp_CCrossbow_getActorType_FUN_00449760
 // Address: 00449760
-CDemonActorType * CCrossbow::getActorType(CCrossbow *this_ptr);
+CDemonActorType * __cdecl CCrossbow::getActorType(CCrossbow *this_ptr);
 
 // Original: core_crossbow.cpp_CCrossbow_ctor_FUN_00449770
 // Address: 00449770
 CCrossbow * __cdecl CCrossbow::ctor(CCrossbow *this_ptr);
 
-// Original: core_crossbow.cpp_FUN_00449830
+// Original: core_crossbow.cpp_CCrossbow_process_FUN_00449830
 // Address: 00449830
-void FUN_00449830(CWeapon *param_1,float param_2,undefined4 param_3,undefined4 param_4,float param_5);
+void __cdecl CCrossbow::process(CCrossbow *this_ptr,float delta_time);
 
-// Original: core_crossbow.cpp_FUN_00449920
+// Original: core_crossbow.cpp_CCrossbow_renderOpaque_FUN_00449920
 // Address: 00449920
-int FUN_00449920(CCrossbow *param_1);
+int __cdecl CCrossbow::renderOpaque(CCrossbow *this_ptr);
 
 // Original: core_crossbow.cpp_CCrossbow_renderTransparent_FUN_004499c0
 // Address: 004499c0
 int __cdecl CCrossbow::renderTransparent(CCrossbow *this_ptr);
 
-// Original: core_crossbow.cpp_FUN_004499f0
+// Original: core_crossbow.cpp_CCrossbow_getMuzzlePoint_FUN_004499f0
 // Address: 004499f0
-void FUN_004499f0(int param_1);
+CVector3f * __cdecl CCrossbow::getMuzzlePoint(CCrossbow *this_ptr,CVector3f *out_point);
 
-// Original: core_crossbow.cpp_FUN_00449a50
+// Original: core_crossbow.cpp_CCrossbow_fire_FUN_00449a50
 // Address: 00449a50
-undefined4 FUN_00449a50(CWeapon *param_1);
+int __cdecl CCrossbow::fire(CCrossbow *this_ptr);
 
 // Original: core_crossbow.cpp_CCrossbow_getCurFrame_FUN_0044a0c0
 // Address: 0044a0c0

@@ -1,13 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_3d_c_processCameraRelativePoint_FUN_00403830(int param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_processCameraRelativePoint_FUN_00403830(SMRGLPoint *block)
 ;
+; Parameters:
+; SMRGLPoint *     Stack[0x4]:4   block
 ;
 ; XREF[3]:
 ;   engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0046b280 at 0046b29e
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0 at 0046b2e7
-;   shape_edittool.cpp_FUN_0047ff4e at 0047ff83
+;   shape_edittool.cpp_FUN_0047ff50 at 0047ff83
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0070ca88

@@ -2,15 +2,23 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CKeyFramedModel;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CParticle.h"
+#include "types/classes/CVector3i.h"
 
 // Structure: CLeaf
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI size 84; ctor 0049ee20 calls CParticle_ctor then stores the leaf vtable at +0x3c; derived fields start at 0x40; static pool of 64 (arrinit 0x40)
 // Ghidra size: 0x54 (84 bytes)
 #pragma pack(push, 1)
 typedef struct CLeaf {
-    char field_0[84]; // 0x0
+    CParticle base; // 0x0, CParticle ctor runs first; derived vtable stored at +0x3c (CParticle's vptr slot)
+    float drag; // 0x40, init 00496750 stores arg 5; process 004967d0 shrinks the velocity by speed*drag*dt each frame
+    CVector3i rotation; // 0x44, process adds speed-scaled 16.16 steps to +0x44/+0x48; render 004968d0 passes this+0x44 as the CVector3i rotation to applyDirectTransform
+    struct CKeyFramedModel* model; // 0x50, init stores arg 4 (createLeaf 0049d600 picks one of the four leaf%d.kfm models when null); render reads its bounds and calls CKeyFramedModel_prepareForRender on it
 } CLeaf;
 #pragma pack(pop)
 

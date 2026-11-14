@@ -1,19 +1,21 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_sndmain_cpp_getSfxChannelVol_FUN_00556d20(int param_1)
+; float __cdecl sound_sndmain_cpp_getSfxChannelVol_FUN_00556d20(int channel_index)
 ;
+; Parameters:
+; int              Stack[0x4]:4   channel_index
 ;
 ; XREF[9]:
 ;   core_menu.cpp_FUN_004e94f0 at 004e96d5
-;   core_sound.cpp_FUN_0055fcce at 0055fcef
+;   core_sound.cpp_CSound_configure_FUN_005607d0 at 005607d5
+;   core_sound.cpp_CSound_process_FUN_0055ff40 at 005601ab
 ;   core_sound.cpp_FUN_0055fd30 at 0055fddf
-;   core_sound.cpp_FUN_0055ff40 at 005601ab
-;   core_sound.cpp_FUN_005607d0 at 005607d5
+;   core_sound.cpp_syncChannel3WithChannel0_FUN_0055fcd0 at 0055fcef
 ;   sound_snddx.cpp_FUN_0055c0f0 at 0055c5e8
-;   sound_sndmain.cpp_FUN_00554250 at 0055426c
-;   sound_sndmain.cpp_FUN_00559220 at 005594b5
-;   sound_sndmain.cpp_FUN_00559520 at 005596af
+;   sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_00554250 at 0055426c
+;   sound_sndmain.cpp_readIni_FUN_00559220 at 005594b5
+;   sound_sndmain.cpp_writeIni_FUN_00559520 at 005596af
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d389d

@@ -5,9 +5,9 @@
 // Function prototypes for core/path.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_path.cpp_FUN_004efc10
+// Original: core_path.cpp_resetPathfindingQueue_FUN_004efc10
 // Address: 004efc10
-void FUN_004efc10(void);
+void __cdecl resetPathfindingQueue(void);
 
 // Original: core_path.cpp_isPathfindingQueueEmpty_FUN_004efc30
 // Address: 004efc30

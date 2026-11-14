@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_batcreat_cpp_staticInit_FUN_00411630(void)
+; void __cdecl core_batcreat_cpp_staticInit_FUN_00411630(void)
 ;
 ;
 ; Called Functions:

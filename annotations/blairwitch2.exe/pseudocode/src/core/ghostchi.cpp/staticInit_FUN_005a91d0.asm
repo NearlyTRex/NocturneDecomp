@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_ghostchi_cpp_staticInit_FUN_005a91d0(void)
+; void __cdecl core_ghostchi_cpp_staticInit_FUN_005a91d0(void)
 ;
 ;
 ; Called Functions:

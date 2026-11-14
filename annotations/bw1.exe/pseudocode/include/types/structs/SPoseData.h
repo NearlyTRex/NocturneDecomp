@@ -4,12 +4,15 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CQuaternion4f.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: SPoseData
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x64c (1612 bytes)
 #pragma pack(push, 1)
 typedef struct SPoseData {
+    CVector3f root_position; // 0x0
+    CQuaternion4f bone_rotations[100]; // 0xc
 } SPoseData;
 #pragma pack(pop)
 

@@ -2,17 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 7,
-    "complexity_score": 96,
-    "cross_reference_count": 3,
+    "complexity_score": 6,
+    "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 6,
-    "suspect_count": 8,
-    "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 13
   },
   "cross_references": [
@@ -23,15 +20,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00503efc",
-      "from_addr": "00503f58",
-      "name": "core_netgame.cpp_FUN_00503efc",
+      "addr": "00504d60",
+      "from_addr": "0050560c",
+      "name": "core_netgame.cpp_CNetGame_processPacket_FUN_00504d60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00504d60",
-      "from_addr": "0050560c",
-      "name": "core_netgame.cpp_FUN_00504d60",
+      "addr": "00503f00",
+      "from_addr": "00503f58",
+      "name": "core_netgame.cpp_FUN_00503f00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056fef0",
+      "from_addr": "0056ffd3",
+      "name": "support_trisock.cpp_FUN_0056fef0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -45,17 +48,17 @@
     ],
     "convention": "__cdecl",
     "name": "support_trisock.cpp_createNetworkAddr_FUN_0056f730",
-    "signature": "void __cdecl support_trisock_cpp_createNetworkAddr_FUN_0056f730(undefined4 *param_1,undefined4 param_2,undefined2 param_3)"
+    "signature": "void __cdecl support_trisock_cpp_createNetworkAddr_FUN_0056f730(SNetworkAddr *dest_addr,uint32_t *ip_address_ptr,uint16_t port)"
   },
   "function_calls": [],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 4,
+    "call_site_count": 5,
     "call_sites": [
       {
         "call_addr": "0050560c",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_FUN_00504d60",
+        "caller": "core_netgame.cpp_CNetGame_processPacket_FUN_00504d60",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -86,9 +89,20 @@
         "stack_params": 3
       },
       {
+        "call_addr": "0056ffd3",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_FUN_0056fef0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
         "call_addr": "00503f58",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_FUN_00503efc",
+        "caller": "core_netgame.cpp_FUN_00503f00",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -98,10 +112,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
     "estimated_params": 3,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 2.8333333333333335,
@@ -115,81 +129,61 @@
     },
     "pcode_op_count": 17
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00578e60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0059c740",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005e1940",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9231
+    },
+    "nocturne.exe": {
+      "addr": "00548d30",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9231
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 14,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 10,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "dest_addr",
+        "offset": 4,
+        "size": 4,
+        "type": "SNetworkAddr *"
+      },
+      {
+        "is_param": true,
+        "name": "ip_address_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "uint32_t *"
+      },
+      {
+        "is_param": true,
+        "name": "port",
+        "offset": 12,
+        "size": 2,
+        "type": "uint16_t"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl support_trisock_cpp_createNetworkAddr_FUN_0056f730(uint *param_1,uint param_2,ushort param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl support_trisock_cpp_createNetworkAddr_FUN_0056f730(uint *param_1,uint param_2,ushort param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl support_trisock_cpp_createNetworkAddr_FUN_0056f730(uint *param_1,uint param_2,ushort param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_1 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*param_1 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(ushort *)(param_1 + 1) = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(ushort *)(param_1 + 1) = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 4,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

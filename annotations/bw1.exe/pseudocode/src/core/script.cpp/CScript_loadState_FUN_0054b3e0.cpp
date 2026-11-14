@@ -12,66 +12,65 @@ void __cdecl core_script_cpp_CScript_loadState_FUN_0054b3e0(CScript *this_ptr,_F
 
 {
   uint uVar1;
-  byte *puVar2;
-  int iVar3;
-  byte local_118 [256];
+  int iVar2;
+  char local_118 [256];
   int local_18;
   uint local_14;
   
   _fgets(local_118,0xff,file_handle);
-  _fscanf(file_handle,&DAT_005f0062,&local_18);
+  _fscanf(file_handle,&DAT_005f0062);
   if (6 < local_18) {
     _DAT_01d1d400 = "..\\core\\script.cpp";
     _DAT_01d1d404 = 0x10e6;
     core_main_c_FUN_005030e0("CScript::loadState - file version is newer than .EXE");
   }
   _fgets(local_118,0xff,file_handle);
-  _fscanf(file_handle,&DAT_005f00ae,&g_CGamePtr->field_0x244);
+  _fscanf(file_handle,&DAT_005f00ae);
   if (1 < local_18) {
     _fgets(local_118,0xff,file_handle);
-    _fscanf(file_handle,&DAT_005f00b2,&g_CGamePtr->field_0x248);
+    _fscanf(file_handle,&DAT_005f00b2);
   }
   if (2 < local_18) {
     _fgets(local_118,0xff,file_handle);
-    _fscanf(file_handle,&DAT_005f00b6,&g_CGamePtr->field_0x24c);
+    _fscanf(file_handle,&DAT_005f00b6);
   }
   _fgets(local_118,0xff,file_handle);
-  _fscanf(file_handle,&DAT_005f00ba,&DAT_01e818b0);
+  _fscanf(file_handle,&DAT_005f00ba);
   _fgets(local_118,0xff,file_handle);
-  _fscanf(file_handle,&DAT_005f00be,&this_ptr->field_0x44);
+  _fscanf(file_handle,&DAT_005f00be);
   _fgets(local_118,0xff,file_handle);
-  this_ptr->field_0x50 = 0;
-  _fscanf(file_handle,"\"%[^\"]",&this_ptr->field_0x50);
-  _fscanf(file_handle,&DAT_005f00c9,&this_ptr->field_0x50);
+  this_ptr->current_message[0] = '\0';
+  _fscanf(file_handle,"\"%[^\"]");
+  _fscanf(file_handle,&DAT_005f00c9);
   _fgets(local_118,0xff,file_handle);
-  _fscanf(file_handle,&DAT_005f00cc,&this_ptr->field_0x48);
+  _fscanf(file_handle,&DAT_005f00cc);
   _fgets(local_118,0xff,file_handle);
-  _fscanf(file_handle,&DAT_005f00d0,&this_ptr->field_0x4c);
+  _fscanf(file_handle,&DAT_005f00d0);
   _fgets(local_118,0xff,file_handle);
-  core_script_cpp_readActorReference_FUN_0054b320(file_handle,&this_ptr->field_0x4);
+  core_script_cpp_readActorReference_FUN_0054b320
+            (file_handle,(CDemonActor *)&this_ptr->who_is_speaking);
   _fgets(local_118,0xff,file_handle);
-  core_script_cpp_readActorReference_FUN_0054b320(file_handle,&this_ptr->field_0xc);
+  core_script_cpp_readActorReference_FUN_0054b320(file_handle,(CDemonActor *)&this_ptr->focus_actor)
+  ;
   if (4 < local_18) {
     _fgets(local_118,0xff,file_handle);
-    _fscanf(file_handle,&DAT_005f00d4,&this_ptr->field_0x14);
+    _fscanf(file_handle,&DAT_005f00d4);
   }
   if (3 < local_18) {
     _fgets(local_118,0xff,file_handle);
-    iVar3 = 0;
-    _fscanf(file_handle,&DAT_005f00d8,&this_ptr->field_0x458);
-    if (0 < *(int *)&this_ptr->field_0x458) {
-      puVar2 = &this_ptr->field_0x45c;
+    iVar2 = 0;
+    _fscanf(file_handle,&DAT_005f00d8);
+    if (0 < this_ptr->call_stack_count) {
       do {
-        iVar3 = iVar3 + 1;
-        _fscanf(file_handle,&DAT_005f00dc,puVar2);
-        puVar2 = puVar2 + 4;
-      } while (iVar3 < *(int *)&this_ptr->field_0x458);
+        iVar2 = iVar2 + 1;
+        _fscanf(file_handle,&DAT_005f00dc);
+      } while (iVar2 < this_ptr->call_stack_count);
     }
   }
   if (5 < local_18) {
     _fgets(local_118,0xff,file_handle);
-    _fscanf(file_handle,&DAT_005f00e0,&local_14);
-    uVar1 = core_script_cpp_FUN_0054b940(this_ptr);
+    _fscanf(file_handle,&DAT_005f00e0);
+    uVar1 = core_script_cpp_CScript_computeChecksum_FUN_0054b940(this_ptr);
     if (uVar1 != local_14) {
       shape_edittool_cpp_FUN_00494340(g_CEditorToolsPtr,"The script you were using when this game was\nsaved is different from the script currently\nin use.  There may be problems running the script.");
       return;

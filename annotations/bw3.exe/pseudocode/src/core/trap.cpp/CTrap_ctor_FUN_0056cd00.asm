@@ -6,6 +6,9 @@
 ; Parameters:
 ; CTrap *          Stack[0x4]:4   this_ptr
 ;
+; XREF[1]:
+;   core_trap.cpp_factoryFuncTrap_FUN_0056ccd0 at 0056cce3
+;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_ctor_FUN_00408600
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00462500

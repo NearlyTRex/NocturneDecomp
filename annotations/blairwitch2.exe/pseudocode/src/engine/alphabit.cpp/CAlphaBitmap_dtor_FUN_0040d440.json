@@ -14,15 +14,33 @@
   },
   "cross_references": [
     {
+      "addr": "0059bec0",
+      "from_addr": "0059bee0",
+      "name": "core_bmppuzzl.cpp_CAudioRecPuzzle_dtor_FUN_0059bec0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059bf40",
+      "from_addr": "0059bf47",
+      "name": "core_bmppuzzl.cpp_SButtonStruct_dtor_FUN_0059bf40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004a3820",
       "from_addr": "004a3837",
-      "name": "core_fldnotes.cpp_NotesMap_dtor_FUN_004a3820",
+      "name": "core_fldnotes.cpp_SNotesMap_dtor_FUN_004a3820",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004a2200",
       "from_addr": "004a2222",
-      "name": "core_fldnotes.cpp_PageResource_Bitmap_dtor_FUN_004a2200",
+      "name": "core_fldnotes.cpp_SPageResourceBitmap_dtor_FUN_004a2200",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bdfb0",
+      "from_addr": "004be41e",
+      "name": "core_game.cpp_CGame_finishAct_FUN_004bdfb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -34,19 +52,13 @@
     {
       "addr": "004b60c0",
       "from_addr": "004b614f",
-      "name": "core_game.cpp_FUN_004b60c0",
+      "name": "core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b60c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004bdc1e",
+      "addr": "004bdc20",
       "from_addr": "004bdf9b",
-      "name": "core_game.cpp_FUN_004bdc1e",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004bdfb0",
-      "from_addr": "004be41e",
-      "name": "core_game.cpp_FUN_004bdfb0",
+      "name": "core_game.cpp_FUN_004bdc20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -58,25 +70,13 @@
     {
       "addr": "004e46c0",
       "from_addr": "004e4ca5",
-      "name": "core_main.c_FUN_004e46c0",
+      "name": "core_main.c_initializeGameSystems_FUN_004e46c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004fc940",
       "from_addr": "004fca76",
-      "name": "core_mission.cpp_FUN_004fc940",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059bec0",
-      "from_addr": "0059bee0",
-      "name": "unkafter_superopt.cpp_CAudioRecPuzzle_dtor_FUN_0059bec0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059bf40",
-      "from_addr": "0059bf47",
-      "name": "unkafter_superopt.cpp___1hlg6hbuttonStruct_dtor_FUN_0059bf40",
+      "name": "core_mission.cpp_CDemonMission_process_FUN_004fc940",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -96,7 +96,7 @@
     {
       "addr": "0040d540",
       "is_variadic": false,
-      "name": "engine_alphabit.cpp_FUN_0040d540"
+      "name": "engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d540"
     }
   ],
   "globals": [],
@@ -117,7 +117,7 @@
       {
         "call_addr": "004e4ca5",
         "call_type": "direct",
-        "caller": "core_main.c_FUN_004e46c0",
+        "caller": "core_main.c_initializeGameSystems_FUN_004e46c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -128,7 +128,7 @@
       {
         "call_addr": "004b614f",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b60c0",
+        "caller": "core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b60c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -139,7 +139,7 @@
       {
         "call_addr": "004be41e",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bdfb0",
+        "caller": "core_game.cpp_CGame_finishAct_FUN_004bdfb0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -161,7 +161,7 @@
       {
         "call_addr": "004fca76",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_004fc940",
+        "caller": "core_mission.cpp_CDemonMission_process_FUN_004fc940",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -172,7 +172,7 @@
       {
         "call_addr": "004a2222",
         "call_type": "direct",
-        "caller": "core_fldnotes.cpp_PageResource_Bitmap_dtor_FUN_004a2200",
+        "caller": "core_fldnotes.cpp_SPageResourceBitmap_dtor_FUN_004a2200",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -183,7 +183,7 @@
       {
         "call_addr": "0059bee0",
         "call_type": "direct",
-        "caller": "unkafter_superopt.cpp_CAudioRecPuzzle_dtor_FUN_0059bec0",
+        "caller": "core_bmppuzzl.cpp_CAudioRecPuzzle_dtor_FUN_0059bec0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -194,7 +194,7 @@
       {
         "call_addr": "004a3837",
         "call_type": "direct",
-        "caller": "core_fldnotes.cpp_NotesMap_dtor_FUN_004a3820",
+        "caller": "core_fldnotes.cpp_SNotesMap_dtor_FUN_004a3820",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -205,7 +205,7 @@
       {
         "call_addr": "004a3845",
         "call_type": "direct",
-        "caller": "core_fldnotes.cpp_NotesMap_dtor_FUN_004a3820",
+        "caller": "core_fldnotes.cpp_SNotesMap_dtor_FUN_004a3820",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -239,6 +239,32 @@
       "STORE": 3
     },
     "pcode_op_count": 29
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0040d0c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0040d300",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00410540",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0040e340",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 12,

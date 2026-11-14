@@ -7,7 +7,7 @@
 ; CSound *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_main.c_FUN_004e46c0 at 004e4cb4
+;   core_main.c_initializeGameSystems_FUN_004e46c0 at 004e4cb4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wav_005ea6dc
@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_00481a70
-;   sound_sndmain.cpp_FUN_00552b30
+;   sound_sndmain.cpp_hasHardware3DSound_FUN_00552b30
 ;   sound_sndmain.cpp_initializeSoundDevice_FUN_00552b90
 ;   sound_sndmain.cpp_setSoundOutputMode_FUN_005526f0
 ;
@@ -46,8 +46,8 @@ section .text
     CALL sound_sndmain.cpp_initializeSoundDevice_FUN_00552b90 ; 0055a137
         ;   XREF to: 00552b90 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_initializeSoundDevice_FUN_00552b90()
         ;   Label: LAB_0055a137
-    CALL sound_sndmain.cpp_FUN_00552b30 ; 0055a13c
-        ;   XREF to: 00552b30 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00552b30(int enable)
+    CALL sound_sndmain.cpp_hasHardware3DSound_FUN_00552b30 ; 0055a13c
+        ;   XREF to: 00552b30 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_hasHardware3DSound_FUN_00552b30()
     TEST EAX,EAX                        ; 0055a141
     JG 0x0055a146                       ; 0055a143
         ;   XREF to: 0055a146 (CONDITIONAL_JUMP)  ; LAB_0055a146

@@ -20,7 +20,7 @@ void __cdecl core_sound_cpp_FUN_0055fd30(CSound *this_ptr)
   float local_14;
   float local_10;
   float local_c;
-  uint local_8;
+  float local_8;
   
   bVar2 = 0;
   _DAT_02cf5698 = 0;
@@ -29,38 +29,38 @@ void __cdecl core_sound_cpp_FUN_0055fd30(CSound *this_ptr)
   _DAT_02cf568c = 0x501502f9;
   _DAT_02cf5690 = 0x501502f9;
   _DAT_02cf5694 = 0x501502f9;
-  sound_sndmain_cpp_FUN_00557100();
+  sound_sndmain_cpp_set3DListenerVelocity_FUN_00557100(0.0,0.0,0.0);
   core_sound_cpp_updateListeners_FUN_0055e8b0();
   _DAT_02cf569c = 0;
   sound_sndmain_cpp_set3DListenerOrientRight_FUN_00558860(_DAT_02cf56a4,_DAT_02cf56a8,_DAT_02cf56ac)
   ;
-  sound_sndmain_cpp_FUN_00558050();
-  iVar1 = sound_sndmain_cpp_FUN_005586c0();
+  sound_sndmain_cpp_enableSoundSystem_FUN_00558050();
+  iVar1 = sound_sndmain_cpp_isSoundBusy_FUN_005586c0();
   if (iVar1 == 0) {
     return;
   }
-  _DAT_02cf5ec8 = 0x3f800000;
+  _DAT_02cf5ec8 = 1.0;
   _DAT_02cf5ecc = 0x3f800000;
   _DAT_02cf5ed0 = 0;
-  iVar1 = sound_sndmain_cpp_FUN_00556e30(0);
+  iVar1 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_00556e30(0);
   if (iVar1 == 0) {
-    sound_sndmain_cpp_FUN_00556db0(3,0);
+    sound_sndmain_cpp_enableSfxChannel_FUN_00556db0(3,0);
   }
   else {
-    sound_sndmain_cpp_FUN_00556db0(3,1);
-    local_8 = sound_sndmain_cpp_getSfxChannelVol_FUN_00556d20();
-    sound_sndmain_cpp_setSfxChannelVol_FUN_00556c90();
+    sound_sndmain_cpp_enableSfxChannel_FUN_00556db0(3,1);
+    local_8 = sound_sndmain_cpp_getSfxChannelVol_FUN_00556d20(0);
+    sound_sndmain_cpp_setSfxChannelVol_FUN_00556c90(3,local_8 * _DAT_02cf5ec8);
   }
-  sound_sndmain_cpp_FUN_00555fd0();
+  sound_sndmain_cpp_pushSfxOptions_FUN_00555fd0();
   sound_sndmain_cpp_setNextSfxChannel_FUN_00555e90(3);
   _DAT_02cf5ec0 =
        core_sound_cpp_CSound_playSound_FUN_005609b0(this_ptr,g_CDemonSetPtr,&DAT_02cf5e98);
-  sound_sndmain_cpp_FUN_00556050();
-  if (*(int *)&g_CDemonSetPtr->field_0x15acb8 != 0) {
-    local_14 = -*(float *)&g_CDemonSetPtr->field_0x15ac70;
-    local_10 = -*(float *)&g_CDemonSetPtr->field_0x15ac74;
-    local_c = -*(float *)&g_CDemonSetPtr->field_0x15ac78;
-    local_20 = -*(float *)&g_CDemonSetPtr->field_0x15ac70;
+  sound_sndmain_cpp_popSfxOptions_FUN_00556050();
+  if (g_CDemonSetPtr->player_on_train != 0) {
+    local_14 = -(g_CDemonSetPtr->active_fog).scroll.x;
+    local_10 = -(g_CDemonSetPtr->active_fog).scroll.y;
+    local_c = -(g_CDemonSetPtr->active_fog).scroll.z;
+    local_20 = local_14;
     *(uint *)((int)&stack0xffffffe4 + (uint)bVar2 * -8) =
          *(uint *)((int)&stack0xfffffff0 + (uint)bVar2 * -8);
     *(uint *)((int)&stack0xffffffe8 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =

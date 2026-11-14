@@ -18,13 +18,13 @@
     {
       "addr": "0055ff40",
       "from_addr": "00560543",
-      "name": "core_sound.cpp_FUN_0055ff40",
+      "name": "core_sound.cpp_CSound_process_FUN_0055ff40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00559120",
       "from_addr": "0055916f",
-      "name": "sound_sndmain.cpp_FUN_00559120",
+      "name": "sound_sndmain.cpp_processAudio_FUN_00559120",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -45,17 +45,17 @@
     {
       "addr": "00553960",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00553960"
-    },
-    {
-      "addr": "00556fd0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00556fd0"
+      "name": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_00553960"
     },
     {
       "addr": "00558e90",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00558e90"
+      "name": "sound_sndmain.cpp_lockSound_FUN_00558e90"
+    },
+    {
+      "addr": "00556fd0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_unlockSound_FUN_00556fd0"
     }
   ],
   "globals": [
@@ -90,7 +90,7 @@
       {
         "call_addr": "0055916f",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00559120",
+        "caller": "sound_sndmain.cpp_processAudio_FUN_00559120",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -101,7 +101,7 @@
       {
         "call_addr": "00560543",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0055ff40",
+        "caller": "core_sound.cpp_CSound_process_FUN_0055ff40",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -142,6 +142,32 @@
       "STORE": 14
     },
     "pcode_op_count": 203
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00554610",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00577040",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005ace90",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "005298f0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 40,

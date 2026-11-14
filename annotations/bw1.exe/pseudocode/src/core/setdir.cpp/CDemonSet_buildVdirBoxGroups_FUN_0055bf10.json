@@ -1,0 +1,222 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 117,
+    "complexity_score": 80,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 50,
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast",
+      "shadow_pointer_walk"
+    ],
+    "total_lines": 167
+  },
+  "cross_references": [
+    {
+      "addr": "0054ec60",
+      "from_addr": "0054ee37",
+      "name": "core_set.cpp_CDemonSet_initScene_FUN_0054ec60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054d3c0",
+      "from_addr": "0054dd24",
+      "name": "core_set.cpp_FUN_0054d3c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0055bf10",
+    "address_range": [
+      [
+        "0055bf10",
+        "0055c01d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_0055bf10",
+    "signature": "int __cdecl core_setdir_cpp_CDemonSet_buildVdirBoxGroups_FUN_0055bf10(CDemonSet *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0055c020",
+      "is_variadic": false,
+      "name": "core_setdir.cpp_CDemonSet_findVdirBoxRoot_FUN_0055c020"
+    },
+    {
+      "addr": "0055bab0",
+      "is_variadic": false,
+      "name": "core_setdir.cpp_testOBBIntersection_FUN_0055bab0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0054dd24",
+        "call_type": "direct",
+        "caller": "core_set.cpp_FUN_0054d3c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0054ee37",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_initScene_FUN_0054ec60",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.7,
+    "instruction_count": 90,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 2,
+      "BRANCH": 2,
+      "CALL": 4,
+      "CBRANCH": 9,
+      "COPY": 69,
+      "INT_ADD": 44,
+      "INT_AND": 56,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 53,
+      "INT_LESS": 6,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 7,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 14,
+      "INT_SEXT": 6,
+      "INT_SLESS": 26,
+      "INT_SUB": 22,
+      "INT_XOR": 2,
+      "LOAD": 24,
+      "POPCOUNT": 26,
+      "RETURN": 1,
+      "STORE": 26,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 423
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0053a610",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005418d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00576710",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "005141f0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 35,
+      "match": "(SVDBox *)((int)(this_ptr->vdir_boxes[0].rotation_matrix.m + -2) +",
+      "severity": "moderate",
+      "text": "obb_a = (SVDBox *)((int)(this_ptr->vdir_boxes[0].rotation_matrix.m + -2) + local_28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via pointer arithmetic on an array-indexed field reached by an (unparenthesized) arrow deref; the inner sibling array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 21,
+      "match": "pCVar4 = (T *)(pCVar4->FIELD[N].SUBFIELD + CONST)",
+      "severity": "moderate",
+      "text": "pCVar4 = (CDemonSet *)(pCVar4->cameras[0].name + 0x40);",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

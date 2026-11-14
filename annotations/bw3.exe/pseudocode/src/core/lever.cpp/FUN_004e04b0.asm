@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   core_event.cpp_FUN_0048c2e0 at 004902ad
-;   core_lever.cpp_FUN_004e0250 at 004e045c
+;   core_lever.cpp_CLever_process_FUN_004e0250 at 004e045c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fba60
@@ -15,8 +15,8 @@
 ;   undefined4 g_CLeverClassInfo.name_hash
 ;   undefined4 DAT_01d82088
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.field1364324_0x14d164
-;   undefined4 g_CDemonSetInstance.field1364328_0x14d168
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
@@ -59,7 +59,7 @@ section .text
     XOR EBX,EBX                         ; 004e04fb
     MOV EAX,[0x00603b28]                ; 004e04fd | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_004e04fd
-    CMP EBX,dword ptr [EAX + 0x14d164]  ; 004e0502 | g_CDemonSetInstance.field1364324_0x14d164
+    CMP EBX,dword ptr [EAX + 0x14d164]  ; 004e0502 | g_CDemonSetInstance.actor_count
     JL 0x004e05e7                       ; 004e0508
         ;   XREF to: 004e05e7 (CONDITIONAL_JUMP)  ; LAB_004e05e7
     POP EBP                             ; 004e050e
@@ -160,10 +160,10 @@ section .text
     MOV EDX,dword ptr [0x01d70c34]      ; 004e05e7 | g_CLeverClassInfo.name_hash
         ;   Label: LAB_004e05e7
     PUSH EDX                            ; 004e05ed
-    MOV ECX,dword ptr [ESI + EAX*0x1 + 0x14d168] ; 004e05ee | g_CDemonSetInstance.field1364328_0x14d168
+    MOV ECX,dword ptr [ESI + EAX*0x1 + 0x14d168] ; 004e05ee | g_CDemonSetInstance.actors[0]
     PUSH ECX                            ; 004e05f5
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 004e05f6
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004e05fb
     TEST EAX,EAX                        ; 004e05fe
     JZ 0x004e0618                       ; 004e0600

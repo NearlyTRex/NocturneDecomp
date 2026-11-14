@@ -17,6 +17,18 @@
   },
   "cross_references": [
     {
+      "addr": "004123c0",
+      "from_addr": "004123cb",
+      "name": "core_bmppuzzl.cpp_CAudioRecPuzzle_render_FUN_004123c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00413d50",
+      "from_addr": "00413d58",
+      "name": "core_bmppuzzl.cpp_CChemPuzzle_render_FUN_00413d50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00448ff0",
       "from_addr": "00449215",
       "name": "core_dcamera.cpp_CDemonCamera_beginScene_FUN_00448ff0",
@@ -29,9 +41,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004bfb50",
+      "from_addr": "004bfb89",
+      "name": "core_game.cpp_CGame_displayActStats_FUN_004bfb50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bfee0",
+      "from_addr": "004bff53",
+      "name": "core_game.cpp_CGame_finishAct_FUN_004bfee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004c02a0",
       "from_addr": "004c03e6",
       "name": "core_game.cpp_CGame_rollCredits_FUN_004c02a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b7f90",
+      "from_addr": "004b8c53",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b7ee0",
+      "from_addr": "004b7f21",
+      "name": "core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b7ee0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -41,33 +77,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004b7ee0",
-      "from_addr": "004b7f21",
-      "name": "core_game.cpp_FUN_004b7ee0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004b7f90",
-      "from_addr": "004b8c53",
-      "name": "core_game.cpp_FUN_004b7f90",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004bec20",
       "from_addr": "004bede9",
       "name": "core_game.cpp_FUN_004bec20",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004bfb50",
-      "from_addr": "004bfb89",
-      "name": "core_game.cpp_FUN_004bfb50",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004bfee0",
-      "from_addr": "004bff53",
-      "name": "core_game.cpp_FUN_004bfee0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -85,13 +97,7 @@
     {
       "addr": "004e44e0",
       "from_addr": "004e4a41",
-      "name": "core_main.c_FUN_004e44e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004ea4d0",
-      "from_addr": "004ea719",
-      "name": "core_menu.cpp_FUN_004ea4d0",
+      "name": "core_main.c_initializeGameSystems_FUN_004e44e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -107,9 +113,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004ea4d0",
+      "from_addr": "004ea719",
+      "name": "core_menu.cpp_showMainGameMenu_FUN_004ea4d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004f9670",
       "from_addr": "004f9680",
-      "name": "core_moon.cpp_FUN_004f9670",
+      "name": "core_moon.cpp_CMoon_render_FUN_004f9670",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -137,27 +149,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004ec950",
+      "from_addr": "004ec95e",
+      "name": "engine_mini3d.cpp_clear_FUN_004ec950",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0047cfa0",
       "from_addr": "0047d00c",
       "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047cfa0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004123c0",
-      "from_addr": "004123cb",
-      "name": "unkafter_bmppuzzl.cpp_FUN_004123c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004ec94e",
-      "from_addr": "004ec95e",
-      "name": "unkafter_minecar.cpp_FUN_004ec94e",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00413d50",
-      "from_addr": "00413d58",
-      "name": "unkafter_superopt.cpp_FUN_00413d50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -169,7 +169,7 @@
     {
       "addr": "00582eb0",
       "from_addr": "00582f10",
-      "name": "wincore_winvideo.cpp_FUN_00582eb0",
+      "name": "wincore_winvideo.cpp_playMovie_FUN_00582eb0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -273,6 +273,32 @@
       "SUBPIECE": 2
     },
     "pcode_op_count": 219
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0055b1f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0057dc40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005b3e70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0052ee70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,

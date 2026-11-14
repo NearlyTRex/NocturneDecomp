@@ -17,27 +17,27 @@
   },
   "cross_references": [
     {
-      "addr": "004bc2d0",
-      "from_addr": "004bc382",
-      "name": "core_fldnotes.cpp_FUN_004bc2d0",
+      "addr": "004ba130",
+      "from_addr": "004ba257",
+      "name": "core_flashlit.cpp_FUN_004ba130",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004be0f0",
       "from_addr": "004be680",
-      "name": "core_fldnotes.cpp_FUN_004be0f0",
+      "name": "core_fldnotes.cpp_CFieldNotes_draw_FUN_004be0f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004bebc0",
       "from_addr": "004bf16c",
-      "name": "core_fldnotes.cpp_FUN_004bebc0",
+      "name": "core_fldnotes.cpp_CFieldNotes_loadState_FUN_004bebc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004ba130",
-      "from_addr": "004ba257",
-      "name": "unkaddr_004b9ab0.cpp_FUN_004ba130",
+      "addr": "004bc2d0",
+      "from_addr": "004bc382",
+      "name": "core_fldnotes.cpp_SNotesMap_load_FUN_004bc2d0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -67,7 +67,7 @@
       {
         "call_addr": "004bf16c",
         "call_type": "direct",
-        "caller": "core_fldnotes.cpp_FUN_004bebc0",
+        "caller": "core_fldnotes.cpp_CFieldNotes_loadState_FUN_004bebc0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -80,7 +80,7 @@
       {
         "call_addr": "004bc382",
         "call_type": "direct",
-        "caller": "core_fldnotes.cpp_FUN_004bc2d0",
+        "caller": "core_fldnotes.cpp_SNotesMap_load_FUN_004bc2d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -91,7 +91,7 @@
       {
         "call_addr": "004be680",
         "call_type": "direct",
-        "caller": "core_fldnotes.cpp_FUN_004be0f0",
+        "caller": "core_fldnotes.cpp_CFieldNotes_draw_FUN_004be0f0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -104,7 +104,7 @@
       {
         "call_addr": "004be81d",
         "call_type": "direct",
-        "caller": "core_fldnotes.cpp_FUN_004be0f0",
+        "caller": "core_fldnotes.cpp_CFieldNotes_draw_FUN_004be0f0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -115,7 +115,7 @@
       {
         "call_addr": "004ba257",
         "call_type": "direct",
-        "caller": "unkaddr_004b9ab0.cpp_FUN_004ba130",
+        "caller": "core_flashlit.cpp_FUN_004ba130",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -128,7 +128,7 @@
       {
         "call_addr": "004ba3fd",
         "call_type": "direct",
-        "caller": "unkaddr_004b9ab0.cpp_FUN_004ba130",
+        "caller": "core_flashlit.cpp_FUN_004ba130",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -166,6 +166,20 @@
       "SUBPIECE": 2
     },
     "pcode_op_count": 60
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0040dd20",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0040dbb0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,

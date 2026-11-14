@@ -11,9 +11,9 @@
 ; XREF[5]:
 ;   core_event.cpp_FUN_00489670 at 0048b3d5
 ;   core_hero.cpp_FUN_004cff90 at 004cfffc
-;   core_hostage.cpp_FUN_004d1660 at 004d2541
-;   core_inv.cpp_FUN_004dc8c0 at 004dcc93
-;   core_schngeis.cpp_FUN_005a3ba0 at 005a3bd4
+;   core_hostage.cpp_CHostage_process_FUN_004d1660 at 004d2541
+;   core_inv.cpp_CInventory_select_FUN_004dc8c0 at 004dcc93
+;   core_schngeis.cpp_CSchnellGeist_processDamage_FUN_005a3ba0 at 005a3bd4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_event_cpp_005d4cbb

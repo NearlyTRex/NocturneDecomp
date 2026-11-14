@@ -16,31 +16,31 @@
     {
       "addr": "00469b40",
       "from_addr": "00469cd4",
-      "name": "cockpit_drawsurf.cpp_FUN_00469b40",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00469b40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bfb50",
+      "from_addr": "004bfe87",
+      "name": "core_game.cpp_CGame_displayActStats_FUN_004bfb50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bfee0",
+      "from_addr": "004c0238",
+      "name": "core_game.cpp_CGame_finishAct_FUN_004bfee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b47d0",
+      "from_addr": "004b4d25",
+      "name": "core_game.cpp_CGame_renderOverlay_FUN_004b47d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004c02a0",
       "from_addr": "004c0725",
       "name": "core_game.cpp_CGame_rollCredits_FUN_004c02a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004b47d0",
-      "from_addr": "004b4d25",
-      "name": "core_game.cpp_FUN_004b47d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004bfb50",
-      "from_addr": "004bfe87",
-      "name": "core_game.cpp_FUN_004bfb50",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004bfee0",
-      "from_addr": "004c0238",
-      "name": "core_game.cpp_FUN_004bfee0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -66,12 +66,12 @@
     {
       "addr": "004b0cb0",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004b0cb0"
+      "name": "engine_font.cpp_CBitFont_drawTextWrapper_FUN_004b0cb0"
     },
     {
       "addr": "004b2a80",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004b2a80"
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80"
     }
   ],
   "globals": [],
@@ -81,7 +81,7 @@
       {
         "call_addr": "004b4d25",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b47d0",
+        "caller": "core_game.cpp_CGame_renderOverlay_FUN_004b47d0",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -92,7 +92,7 @@
       {
         "call_addr": "004bfe87",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bfb50",
+        "caller": "core_game.cpp_CGame_displayActStats_FUN_004bfb50",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -103,7 +103,7 @@
       {
         "call_addr": "004c0238",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bfee0",
+        "caller": "core_game.cpp_CGame_finishAct_FUN_004bfee0",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -136,7 +136,7 @@
       {
         "call_addr": "00469cd4",
         "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_00469b40",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00469b40",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -147,7 +147,7 @@
       {
         "call_addr": "00469d32",
         "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_00469b40",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00469b40",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -187,6 +187,32 @@
       "STORE": 13
     },
     "pcode_op_count": 167
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a93a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004c2350",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004cdee0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00490de0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 32,

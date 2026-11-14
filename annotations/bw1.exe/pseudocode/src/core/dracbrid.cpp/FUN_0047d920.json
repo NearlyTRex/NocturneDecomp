@@ -2,36 +2,34 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 346,
-    "complexity_score": 308,
+    "complexity_score": 309,
     "cross_reference_count": 2,
     "function_call_count": 15,
     "global_count": 27,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 178,
-    "suspect_count": 9,
+    "pseudocode_lines": 179,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "undefined_data",
-      "unknown_field",
-      "unnamed_field",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 524
+    "total_lines": 525
   },
   "cross_references": [
     {
-      "addr": "0047b510",
-      "from_addr": "0047ba9d",
-      "name": "core_dracbrid.cpp_FUN_0047b510",
+      "addr": "0047d480",
+      "from_addr": "0047d644",
+      "name": "core_dracbrid.cpp_CDraculaBride_processDamage_FUN_0047d480",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047d480",
-      "from_addr": "0047d644",
-      "name": "core_dracbrid.cpp_FUN_0047d480",
+      "addr": "0047b510",
+      "from_addr": "0047ba9d",
+      "name": "core_dracbrid.cpp_CDraculaBride_process_FUN_0047b510",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -56,17 +54,17 @@
     {
       "addr": "0040cc00",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cc00"
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00"
     },
     {
       "addr": "00569130",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_00569130"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_00569130"
     },
     {
       "addr": "0057be00",
       "is_variadic": false,
-      "name": "core_sound.cpp_FUN_0057be00"
+      "name": "core_sound.cpp_CSound_findRandomSoundFile_FUN_0057be00"
     },
     {
       "addr": "00583d60",
@@ -84,39 +82,39 @@
       "name": "core_spline.cpp_FUN_005841d0"
     },
     {
-      "addr": "005727e0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005727e0"
-    },
-    {
-      "addr": "00572880",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00572880"
-    },
-    {
-      "addr": "005728e0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005728e0"
-    },
-    {
-      "addr": "00572ac0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00572ac0"
-    },
-    {
-      "addr": "00572b40",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00572b40"
-    },
-    {
       "addr": "005735a0",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005735a0"
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005735a0"
     },
     {
       "addr": "00575550",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00575550"
+      "name": "sound_sndmain.cpp_isSoundBusy_FUN_00575550"
+    },
+    {
+      "addr": "00572b40",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_00572b40"
+    },
+    {
+      "addr": "00572ac0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0"
+    },
+    {
+      "addr": "005727e0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005727e0"
+    },
+    {
+      "addr": "00572880",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_00572880"
+    },
+    {
+      "addr": "005728e0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxVolume_FUN_005728e0"
     },
     {
       "addr": "00572d20",
@@ -271,19 +269,19 @@
     },
     {
       "addr": "01fe37f0",
-      "name": "g_CDemonCameraInstance.field4_0x4",
+      "name": "g_CDemonCameraInstance.base.position",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fe37f4",
-      "name": "g_CDemonCameraInstance.field8_0x8",
+      "name": "g_CDemonCameraInstance.base.position+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fe37f8",
-      "name": "g_CDemonCameraInstance.field12_0xc",
+      "name": "g_CDemonCameraInstance.base.position+8",
       "type": "undefined4",
       "value": null
     }
@@ -294,7 +292,7 @@
       {
         "call_addr": "0047ba9d",
         "call_type": "direct",
-        "caller": "core_dracbrid.cpp_FUN_0047b510",
+        "caller": "core_dracbrid.cpp_CDraculaBride_process_FUN_0047b510",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -305,7 +303,7 @@
       {
         "call_addr": "0047bac3",
         "call_type": "direct",
-        "caller": "core_dracbrid.cpp_FUN_0047b510",
+        "caller": "core_dracbrid.cpp_CDraculaBride_process_FUN_0047b510",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -316,7 +314,7 @@
       {
         "call_addr": "0047c529",
         "call_type": "direct",
-        "caller": "core_dracbrid.cpp_FUN_0047b510",
+        "caller": "core_dracbrid.cpp_CDraculaBride_process_FUN_0047b510",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -327,7 +325,7 @@
       {
         "call_addr": "0047c54f",
         "call_type": "direct",
-        "caller": "core_dracbrid.cpp_FUN_0047b510",
+        "caller": "core_dracbrid.cpp_CDraculaBride_process_FUN_0047b510",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -338,7 +336,7 @@
       {
         "call_addr": "0047c9a4",
         "call_type": "direct",
-        "caller": "core_dracbrid.cpp_FUN_0047b510",
+        "caller": "core_dracbrid.cpp_CDraculaBride_process_FUN_0047b510",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -349,7 +347,7 @@
       {
         "call_addr": "0047ca44",
         "call_type": "direct",
-        "caller": "core_dracbrid.cpp_FUN_0047b510",
+        "caller": "core_dracbrid.cpp_CDraculaBride_process_FUN_0047b510",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -360,7 +358,7 @@
       {
         "call_addr": "0047ca6a",
         "call_type": "direct",
-        "caller": "core_dracbrid.cpp_FUN_0047b510",
+        "caller": "core_dracbrid.cpp_CDraculaBride_process_FUN_0047b510",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -371,7 +369,7 @@
       {
         "call_addr": "0047d644",
         "call_type": "direct",
-        "caller": "core_dracbrid.cpp_FUN_0047d480",
+        "caller": "core_dracbrid.cpp_CDraculaBride_processDamage_FUN_0047d480",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -382,7 +380,7 @@
       {
         "call_addr": "0047d695",
         "call_type": "direct",
-        "caller": "core_dracbrid.cpp_FUN_0047d480",
+        "caller": "core_dracbrid.cpp_CDraculaBride_processDamage_FUN_0047d480",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -734,51 +732,59 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0xc2fc",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0xc2fc = local_10;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 54,
       "match": "DAT_01bc0d54",
       "severity": "mild",
-      "text": "puVar5 = (uint *)&DAT_01bc0d54;",
+      "text": "puVar4 = (uint *)&DAT_01bc0d54;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 61,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_00569130(&this_ptr->field_0x158,uVar7);",
-      "type": "unnamed_field"
+      "description": "Pointer value `&local_94` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 64,
+      "match": "(int)&local_94",
+      "severity": "moderate",
+      "text": "afStack_84[(uint)bVar5 * -2 + 3] = *(float *)((int)&local_94 + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 120,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_3c[2] = (float)g_CDemonCameraInstance._4_4_;",
-      "type": "unknown_field"
+      "description": "Pointer value `&local_94` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 66,
+      "match": "(int)&local_94",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_94 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&g_CDemonCameraInstance` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 122,
+      "line": 123,
       "match": "(int)&g_CDemonCameraInstance",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_CDemonCameraInstance + (uint)bVar6 * -8 + 8);",
+      "text": "*(float *)((int)&g_CDemonCameraInstance + (uint)bVar5 * -8 + 8);",
       "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 122,
+      "line": 64,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&g_CDemonCameraInstance + (uint)bVar6 * -8 + 8);",
+      "text": "afStack_84[(uint)bVar5 * -2 + 3] = *(float *)((int)&local_94 + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 66,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_94 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 123,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_CDemonCameraInstance + (uint)bVar5 * -8 + 8);",
       "type": "pointer_cast"
     }
   ]

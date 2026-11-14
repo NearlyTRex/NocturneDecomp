@@ -17,15 +17,15 @@
   },
   "cross_references": [
     {
-      "addr": "0052ddf0",
-      "from_addr": "0052e443",
-      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0",
+      "addr": "0052d980",
+      "from_addr": "0052d9f0",
+      "name": "core_set.cpp_CDemonSet_initScene_FUN_0052d980",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0052d980",
-      "from_addr": "0052d9f0",
-      "name": "core_set.cpp_FUN_0052d980",
+      "addr": "0052ddf0",
+      "from_addr": "0052e443",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -128,7 +128,7 @@
       {
         "call_addr": "0052d9f0",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_0052d980",
+        "caller": "core_set.cpp_CDemonSet_initScene_FUN_0052d980",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -179,6 +179,32 @@
     },
     "pcode_op_count": 288
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004542a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004503f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00453640",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004474e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -216,7 +242,7 @@
       "line": 13,
       "match": "DAT_00609fa4",
       "severity": "mild",
-      "text": "DAT_00609fa4 = *(uint *)fog_config;",
+      "text": "DAT_00609fa4 = (fog_config->color_index).r;",
       "type": "undefined_data"
     },
     {
@@ -224,7 +250,7 @@
       "line": 14,
       "match": "DAT_00609fa8",
       "severity": "mild",
-      "text": "DAT_00609fa8 = *(uint *)(fog_config + 4);",
+      "text": "DAT_00609fa8 = (fog_config->color_index).g;",
       "type": "undefined_data"
     },
     {
@@ -232,7 +258,7 @@
       "line": 15,
       "match": "DAT_00609fac",
       "severity": "mild",
-      "text": "DAT_00609fac = *(int *)(fog_config + 8);",
+      "text": "DAT_00609fac = (fog_config->color_index).b;",
       "type": "undefined_data"
     },
     {
@@ -240,7 +266,7 @@
       "line": 17,
       "match": "DAT_00b6639c",
       "severity": "mild",
-      "text": "(*(uint *)(&DAT_00b6639c + *(int *)fog_config * 4) & 0xff,",
+      "text": "(*(uint *)(&DAT_00b6639c + (fog_config->color_index).r * 4) & 0xff,",
       "type": "undefined_data"
     },
     {
@@ -248,7 +274,7 @@
       "line": 18,
       "match": "DAT_00b6639c",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_00b6639c + *(int *)(fog_config + 4) * 4) & 0xff,",
+      "text": "*(uint *)(&DAT_00b6639c + (fog_config->color_index).g * 4) & 0xff,",
       "type": "undefined_data"
     },
     {

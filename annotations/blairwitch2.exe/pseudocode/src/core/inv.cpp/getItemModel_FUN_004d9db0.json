@@ -1,0 +1,307 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 147,
+    "complexity_score": 48,
+    "cross_reference_count": 3,
+    "function_call_count": 3,
+    "global_count": 22,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 33,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 180
+  },
+  "cross_references": [
+    {
+      "addr": "004dbd80",
+      "from_addr": "004dbecd",
+      "name": "core_inv.cpp_CInventory_renderItemModel_FUN_004dbd80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d9f80",
+      "from_addr": "004d9f91",
+      "name": "core_inv.cpp_getItemDescription_FUN_004d9f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d9f10",
+      "from_addr": "004d9f21",
+      "name": "core_inv.cpp_getItemDisplayName_FUN_004d9f10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d9db0",
+    "address_range": [
+      [
+        "004d9db0",
+        "004d9f04"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inv.cpp_getItemModel_FUN_004d9db0",
+    "signature": "CKeyFramedModelInstance * __cdecl core_inv_cpp_getItemModel_FUN_004d9db0(CDemonActor *actor_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c8f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c8f0"
+    },
+    {
+      "addr": "0040c840",
+      "is_variadic": false,
+      "name": "core_actor.cpp_isOfClass_FUN_0040c840"
+    },
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005db34a",
+      "name": "s_CWeapon_005db34a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db352",
+      "name": "s_CAmmo_005db352",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db358",
+      "name": "s_CKeyActor_005db358",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db362",
+      "name": "s_CBoxActor_005db362",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db36c",
+      "name": "s_CHealthItem_005db36c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db378",
+      "name": "s_CGasMask_005db378",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db381",
+      "name": "s_CFilmReel_005db381",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db38b",
+      "name": "s_CTrap_005db38b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db391",
+      "name": "s_CBattery_005db391",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db39a",
+      "name": "s_core_inv_cpp_005db39a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db3aa",
+      "name": "s_getModel_Can_t_classify_005db3aa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "007bc3a4",
+      "name": "g_CAmmoClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007bc85c",
+      "name": "g_CBatteryClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007bc9e8",
+      "name": "g_CBoxActorClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c3de74",
+      "name": "g_CFilmReelClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb81c4",
+      "name": "g_CGasMaskClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ceded8",
+      "name": "g_CHealthItemClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d02f80",
+      "name": "g_CKeyActorClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "026535b0",
+      "name": "g_CTrapClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02661f38",
+      "name": "g_CWeaponClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004d9f21",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_getItemDisplayName_FUN_004d9f10",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004d9f91",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_getItemDescription_FUN_004d9f80",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004dbecd",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_renderItemModel_FUN_004dbd80",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.822429906542056,
+    "instruction_count": 107,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 8,
+      "BRANCH": 8,
+      "CALL": 11,
+      "CBRANCH": 9,
+      "COPY": 83,
+      "INT_ADD": 23,
+      "INT_AND": 53,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 44,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 22,
+      "INT_SUB": 44,
+      "INT_XOR": 1,
+      "LOAD": 11,
+      "POPCOUNT": 22,
+      "RETURN": 2,
+      "STORE": 44
+    },
+    "pcode_op_count": 409
+  },
+  "siblings": {
+    "nocedit.exe": {
+      "addr": "004fcda0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004beb40",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "actor_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

@@ -2,11 +2,11 @@
 // Address: 004ab090
 // Address Range: [[004ab090, 004ab2ac]]
 // Convention: unknown
-// Signature: undefined4 engine_font_cpp_FUN_004ab090(undefined4 param_1,char *param_2,char *param_3,int param_4,int param_5,byte param_6,int *param_7)
+// Signature: undefined4 engine_font_cpp_FUN_004ab090(CBitFont *param_1,char *param_2,char *param_3,int param_4,int param_5,byte param_6,int *param_7)
 
 #include "nocturne.h"
 
-uint engine_font_cpp_FUN_004ab090(uint param_1,char *param_2,char *param_3,int param_4,int param_5,byte param_6,int *param_7)
+uint engine_font_cpp_FUN_004ab090(CBitFont *param_1,char *param_2,char *param_3,int param_4,int param_5,byte param_6,int *param_7)
 
 {
   char cVar1;
@@ -93,7 +93,7 @@ LAB_004ab113:
   }
   if (iVar9 < param_4 + -1) {
     *pcVar8 = '\0';
-    iVar3 = engine_font_cpp_FUN_004aaf00(param_1,param_3);
+    iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(param_1,param_3);
     if (iVar3 <= param_5) {
       pcVar7 = pcVar8 + 1;
       iVar9 = iVar9 + 1;

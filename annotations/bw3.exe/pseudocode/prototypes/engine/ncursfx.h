@@ -7,7 +7,7 @@
 
 // Original: engine_ncursfx.cpp_staticInit_FUN_00508ad0
 // Address: 00508ad0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: engine_ncursfx.cpp_CMouse_ctor_FUN_00508af0
 // Address: 00508af0
@@ -21,9 +21,9 @@ CMouse * __cdecl CMouse::dtor(CMouse *this_ptr,uint flags);
 // Address: 00508b90
 void __cdecl CMouse::load(CMouse *this_ptr);
 
-// Original: engine_ncursfx.cpp_FUN_00508c70
+// Original: engine_ncursfx.cpp_CMouse_reset_FUN_00508c70
 // Address: 00508c70
-void __cdecl FUN_00508c70(CMouse *this_ptr);
+void __cdecl CMouse::reset(CMouse *this_ptr);
 
 // Original: engine_ncursfx.cpp_CMouse_startEffect_FUN_00508c80
 // Address: 00508c80
@@ -45,6 +45,6 @@ void __cdecl CMouse::render(CMouse *this_ptr);
 // Address: 00508ea0
 CAlphaBitmap * __cdecl CAlphaBitmap::arrdtor7(CAlphaBitmap *this_ptr,uint flags);
 
-// Original: engine_ncursfx.cpp_FUN_00508ec0
+// Original: engine_ncursfx.cpp_CAlphaBitmap_arrdtor15_FUN_00508ec0
 // Address: 00508ec0
-CAlphaBitmap * __cdecl FUN_00508ec0(CAlphaBitmap *this_ptr,uint flags);
+CAlphaBitmap * __cdecl CAlphaBitmap::arrdtor15(CAlphaBitmap *this_ptr,uint flags);

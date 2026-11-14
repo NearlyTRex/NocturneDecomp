@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_pendulum_cpp_CPendulum_getActorType_FUN_0050dcf0(CPendulum *this_ptr)
+; CDemonActorType * __cdecl core_pendulum_cpp_CPendulum_getActorType_FUN_0050dcf0(CPendulum *this_ptr)
 ;
 ; Parameters:
 ; CPendulum *      Stack[0x4]:4   this_ptr

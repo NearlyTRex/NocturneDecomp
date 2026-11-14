@@ -78,7 +78,7 @@ SCollisionReturnInfo * __cdecl core_setcolid_cpp_SCollisionReturnInfo_ctor_FUN_0
 SCollisionReturnInfo * __cdecl core_setcolid_cpp_SCollisionReturnInfo_dtor_FUN_00511d30(SCollisionReturnInfo *this_ptr,uint flags);
 void __cdecl core_setdir_cpp_staticInit_FUN_00511d60(void);
 float __cdecl core_setdir_cpp_testCameraVisibility_FUN_00511d80(CDemonActor *actor,CVector3i *bbox_vertices,SMRGLHeaderPrimitive *primitives,int camera_index,C3DSCamera *camera,float radius);
-int __cdecl core_setdir_cpp_CDemonSet_FUN_005125a0(CDemonSet *this_ptr,CDemonActor *param_2,int param_3);
+int __cdecl core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005125a0(CDemonSet *this_ptr,CDemonActor *actor,int force_evaluation_mode);
 void __cdecl core_setdir_cpp_CDemonSet_setPendingCamera_FUN_005135d0(CDemonSet *this_ptr,int camera_index,float hold_time);
 void __cdecl core_setdir_cpp_CDemonSet_clearCameraSwitchCooldown_FUN_005135f0(CDemonSet *this_ptr);
 void __cdecl core_setdir_cpp_CDemonSet_refreshThumbs_FUN_00513610(CDemonSet *this_ptr,char *filename);
@@ -92,9 +92,9 @@ int __cdecl core_setdir_cpp_testOBBIntersection_FUN_00513e80(SVDBox *obb_a,SVDBo
 int __cdecl core_setdir_cpp_CDemonSet_buildVdirBoxGroups_FUN_005141f0(CDemonSet *this_ptr);
 int __cdecl core_setdir_cpp_CDemonSet_findVdirBoxRoot_FUN_00514300(CDemonSet *this_ptr,int box_index);
 int __cdecl core_setdir_cpp_CDemonSet_findVdirBoxAtPosition_FUN_00514340(CDemonSet *this_ptr,CVector3f *position);
-undefined4 * core_setdir_cpp_FUN_00514390(void);
-undefined4 * core_setdir_cpp_FUN_005143a0(void);
-undefined4 * core_setdir_cpp_FUN_005143b0(void);
+int * __cdecl core_setdir_cpp_assignInt_FUN_00514390(int *dest,int *src);
+int * __cdecl core_setdir_cpp_assignInt1_FUN_005143a0(int *dest,int *src);
+int * __cdecl core_setdir_cpp_assignInt2_FUN_005143b0(int *dest,int *src);
 CBoundingBox3D * __cdecl core_setdir_cpp_CBoundingBox3D_arrdtor2000_FUN_005143c0(CBoundingBox3D *this_ptr,uint flags);
 C3DSCamera * __cdecl core_setutil_cpp_C3DSCamera_ctor_FUN_005143e0(C3DSCamera *this_ptr);
 C3DSCamera * __cdecl core_setutil_cpp_C3DSCamera_dtor_FUN_00514410(C3DSCamera *this_ptr,uint flags);
@@ -153,7 +153,7 @@ float __cdecl core_skeleton_cpp_distancePointToLineSegment_FUN_005171b0(CVector3
 CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_ctor_FUN_00517350(CSkeleton *this_ptr);
 CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_dtor_FUN_005173a0(CSkeleton *this_ptr,uint flags);
 void __cdecl core_skeleton_cpp_CSkeleton_allocMemory_FUN_005173c0(CSkeleton *this_ptr,int bone_count,int frame_count);
-void __cdecl core_skeleton_cpp_CSkeleton_FUN_005174e0(CSkeleton *this_ptr);
+void __cdecl core_skeleton_cpp_CSkeleton_free_FUN_005174e0(CSkeleton *this_ptr);
 void __cdecl core_skeleton_cpp_CSkeleton_load_FUN_00517560(CSkeleton *this_ptr,char *filename);
 void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_005175f0(CSkeleton *this_ptr,_FILE *file_handle);
 int __cdecl core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(CSkeleton *this_ptr,char *bone_name,int assert_if_not_found);
@@ -198,7 +198,7 @@ float __cdecl core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650(int current_b
 CDeformableModelInstance * __cdecl core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0051b660(CDeformableModelInstance *this_ptr);
 CDeformableModelInstance * __cdecl core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0051b6e0(CDeformableModelInstance *this_ptr,uint flags);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_allocPointList_FUN_0051b750(CDeformableModelInstance *this_ptr);
-void __cdecl core_skeleton_cpp_CDeformableModelInstance_FUN_0051b7d0(CDeformableModelInstance *this_ptr);
+void __cdecl core_skeleton_cpp_CDeformableModelInstance_free_FUN_0051b7d0(CDeformableModelInstance *this_ptr);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0051b800(CDeformableModelInstance *this_ptr);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0051b880(CDeformableModelInstance *this_ptr);
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(CDeformableModelInstance *this_ptr);
@@ -287,7 +287,7 @@ CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_arrdtor40_FUN_0051f880(CSkeleton
 CDeformableModel * __cdecl core_skeleton_cpp_CDeformableModel_arrdtor64_FUN_0051f8a0(CDeformableModel *this_ptr,uint flags);
 CBoundingBox3D * __cdecl core_skeleton_cpp_CBoundingBox3D_arrdtor100_FUN_0051f900(CBoundingBox3D *this_ptr,uint flags);
 void __cdecl core_slew_cpp_staticInit_FUN_0051f920(void);
-void __cdecl core_slew_cpp_CSlew_FUN_0051f930(CSlew *this_ptr);
+void __cdecl core_slew_cpp_CSlew_init_FUN_0051f930(CSlew *this_ptr);
 void __cdecl core_slew_cpp_CSlew_processInput_FUN_0051f980(CSlew *this_ptr);
 void __cdecl core_smiley_cpp_staticInit_FUN_0051fc90(void);
 CSmiley * __cdecl core_smiley_cpp_factoryFuncSmiley_FUN_0051fcc0(void);

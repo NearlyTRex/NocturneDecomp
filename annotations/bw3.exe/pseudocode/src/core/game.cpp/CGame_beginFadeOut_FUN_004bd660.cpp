@@ -11,34 +11,37 @@
 void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004bd660(CGame *this_ptr)
 
 {
+  CDemonActor *this_ptr_00;
   int iVar1;
+  float unaff_EBP;
   uint *puVar2;
   uint *puVar3;
+  float unaff_EDI;
   byte bVar4;
-  float afStackY_1058 [1001];
-  float *pfVar5;
-  float fStack_ac;
-  float fStack_a8;
+  float afStackY_1050 [3];
+  int aiStackY_1044 [3];
+  float afStackY_1038 [12];
+  int aiStackY_1008 [3];
+  float afStackY_ffc [979];
+  CBoundingBox3D *in_stack_ffffff54;
   float fStack_a4;
   float fStack_a0;
   float fStack_9c;
   float fStack_98;
-  int iStack_7c;
-  int iStack_78;
-  int iStack_74;
-  float fStack_70;
-  float afStack_6c [2];
-  int iStack_64;
-  float fStack_60;
+  float fStack_94;
+  float fStack_90;
+  CVector3i CStack_74;
+  float fStack_68;
+  float afStack_64 [2];
   int iStack_5c;
-  float fStack_58;
-  float afStack_54 [5];
-  float fStack_40;
-  float fStack_3c;
+  int aiStack_58 [2];
+  float fStack_50;
+  float afStack_4c [5];
   float fStack_38;
   float fStack_34;
-  int iStack_28;
-  float afStack_24 [4];
+  float fStack_30;
+  float fStack_2c;
+  CVector3i CStack_20;
   float fStack_14;
   
   bVar4 = 0;
@@ -46,51 +49,51 @@ void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004bd660(CGame *this_ptr)
   _DAT_01d22c8c = DAT_005fba18 / 2;
   _DAT_01d22c90 = DAT_005fba1c / 2;
   _DAT_01d22c88 = (float)DAT_005fba18;
-  iVar1 = *(int *)&g_CScriptPtr->field_0xc;
-  if (iVar1 != 0) {
-    (**(code **)(*(int *)(iVar1 + 0x154) + 0x1c))(iVar1);
-    puVar2 = (uint *)&stack0xffffff6c;
-    puVar3 = &stack0xffffff54;
+  this_ptr_00 = g_CScriptPtr->focus_actor;
+  if (this_ptr_00 != (CDemonActor *)0x0) {
+    (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,in_stack_ffffff54);
+    puVar2 = (uint *)&stack0xffffff74;
+    puVar3 = (uint *)&stack0xffffff54;
     for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
       *puVar3 = *puVar2;
       puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
       puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
     }
-    fStack_40 = fStack_ac + fStack_a0;
-    fStack_3c = fStack_a8 + fStack_9c;
     fStack_38 = fStack_a4 + fStack_98;
-    afStack_24[2] = fStack_ac + fStack_a0;
-    afStack_24[(uint)bVar4 * -2 + 3] = afStack_54[(uint)bVar4 * -2 + 6];
-    afStack_24[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
-         afStack_54[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7];
-    pfVar5 = afStack_54 + 2;
-    fStack_58 = afStack_24[2] * _DAT_005c3540;
-    afStack_54[0] = afStack_24[3] * _DAT_005c3540;
-    afStack_54[1] = fStack_14 * _DAT_005c3540;
-    afStack_54[2] = afStack_24[2] * _DAT_005c3540;
-    afStack_54[(uint)bVar4 * -2 + 3] = afStack_54[(uint)bVar4 * -2];
-    afStack_54[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
-         afStack_54[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-    core_actor_cpp_FUN_00408b80(*(uint *)&g_CScriptPtr->field_0xc,pfVar5);
-    fStack_70 = fStack_34;
-    afStack_6c[(uint)bVar4 * -2] = afStack_54[(uint)bVar4 * -2 + 9];
-    afStack_6c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-         afStack_54[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 10];
-    iStack_7c = (int)ROUND(fStack_70 * _DAT_005e06dc);
-    iStack_78 = (int)ROUND(afStack_6c[0] * _DAT_005e06dc);
-    iStack_74 = (int)ROUND(afStack_6c[1] * _DAT_005e06dc);
-    core_dcamera_cpp_FUN_0044a3e0(&g_CDemonCameraInstance,&iStack_7c);
-    iStack_64 = iStack_28;
-    (&fStack_60)[(uint)bVar4 * -2] = afStack_24[(uint)bVar4 * -2];
-    (&fStack_60)[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-         afStack_24[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-    if (iStack_5c != 0) {
+    fStack_34 = fStack_a0 + fStack_94;
+    fStack_30 = fStack_9c + fStack_90;
+    fStack_14 = fStack_a4 + fStack_98;
+    *(float *)(&stack0xfffffff0 + (uint)bVar4 * -8) = afStack_4c[(uint)bVar4 * -2 + 6];
+    *(float *)(&stack0xfffffff4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
+         afStack_4c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7];
+    fStack_50 = fStack_14 * _DAT_005c3540;
+    afStack_4c[0] = unaff_EBP * _DAT_005c3540;
+    afStack_4c[1] = unaff_EDI * _DAT_005c3540;
+    afStack_4c[2] = fStack_14 * _DAT_005c3540;
+    afStack_4c[(uint)bVar4 * -2 + 3] = afStack_4c[(uint)bVar4 * -2];
+    afStack_4c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
+         afStack_4c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+    core_actor_cpp_FUN_00408b80();
+    fStack_68 = fStack_2c;
+    afStack_64[(uint)bVar4 * -2] = afStack_4c[(uint)bVar4 * -2 + 9];
+    afStack_64[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
+         afStack_4c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 10];
+    CStack_74.x = (int)ROUND(fStack_68 * _DAT_005e06dc);
+    CStack_74.y = (int)ROUND(afStack_64[0] * _DAT_005e06dc);
+    CStack_74.z = (int)ROUND(afStack_64[1] * _DAT_005e06dc);
+    core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044a3e0
+              (&g_CDemonCameraInstance,&CStack_74,&CStack_20);
+    iStack_5c = CStack_20.x;
+    aiStack_58[(uint)bVar4 * -2] = *(int *)((int)&CStack_20 + (uint)bVar4 * -8 + 4);
+    aiStack_58[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
+         *(int *)((int)&CStack_20 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+    if (aiStack_58[1] != 0) {
       _DAT_01d22c8c =
-           (int)((iStack_64 + (iStack_64 >> 0x1f) * -0x10000) -
-                (uint)((iStack_64 >> 0x1f) << 0xf < 0)) >> 0x10;
+           (int)((iStack_5c + (iStack_5c >> 0x1f) * -0x10000) -
+                (uint)((iStack_5c >> 0x1f) << 0xf < 0)) >> 0x10;
       _DAT_01d22c90 =
-           (int)(((int)fStack_60 + ((int)fStack_60 >> 0x1f) * -0x10000) -
-                (uint)(((int)fStack_60 >> 0x1f) << 0xf < 0)) >> 0x10;
+           (int)((aiStack_58[0] + (aiStack_58[0] >> 0x1f) * -0x10000) -
+                (uint)((aiStack_58[0] >> 0x1f) << 0xf < 0)) >> 0x10;
       if (0x1e0 < DAT_005fba1c) {
         _DAT_01d22c8c = (_DAT_01d22c8c * DAT_005fba18) / 0x280;
         _DAT_01d22c90 = (_DAT_01d22c90 * DAT_005fba1c) / 0x1e0;

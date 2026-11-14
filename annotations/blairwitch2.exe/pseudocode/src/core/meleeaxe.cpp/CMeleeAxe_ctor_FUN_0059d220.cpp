@@ -1,14 +1,12 @@
 // Name: core_meleeaxe.cpp_CMeleeAxe_ctor_FUN_0059d220
 // Address: 0059d220
 // Address Range: [[0059d220, 0059d2f6]]
-// Convention: unknown
-// Signature: CMeleeAxe * core_meleeaxe_cpp_CMeleeAxe_ctor_FUN_0059d220(CMeleeAxe *this_ptr)
+// Convention: __cdecl
+// Signature: CMeleeAxe * __cdecl core_meleeaxe_cpp_CMeleeAxe_ctor_FUN_0059d220(CMeleeAxe *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CMeleeAxe * core_meleeaxe_cpp_CMeleeAxe_ctor_FUN_0059d220(CMeleeAxe *this_ptr)
+CMeleeAxe * __cdecl core_meleeaxe_cpp_CMeleeAxe_ctor_FUN_0059d220(CMeleeAxe *this_ptr)
 
 {
   char cVar1;
@@ -16,17 +14,17 @@ CMeleeAxe * core_meleeaxe_cpp_CMeleeAxe_ctor_FUN_0059d220(CMeleeAxe *this_ptr)
   char *pcVar3;
   char *pcVar4;
   
-  pCVar2 = core_melee_cpp_CMelee_ctor_FUN_004ea8b0((CMelee *)this_ptr);
-  *(byte **)&pCVar2->field_0x2b0 = &g_CMeleeAxeVTable;
+  pCVar2 = core_melee_cpp_CMelee_ctor_FUN_004ea8b0(&this_ptr->base);
+  (pCVar2->base).base.vtable._ub = &g_CMeleeAxeVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
-            ((CKeyFramedModelInstance *)&pCVar2->field_0x2b4,(char *)0x5ef7fb);
-  *(uint *)&pCVar2->field_0x43c = 8;
-  *(uint *)&pCVar2->field_0x6d8 = 0x41c80000;
+            (&(pCVar2->base).model,(char *)0x5ef7fb);
+  (pCVar2->base).weapon_type = WEAPON_TYPE_BARON;
+  pCVar2->strength_lo = 25.0;
   pcVar3 = "axeimpactflesh0?.wav";
-  *(uint *)&pCVar2->field_0x6dc = 0x42480000;
-  *(uint *)&pCVar2->field_0x6e0 = 0;
-  pcVar4 = &pCVar2->field_0x6fc;
-  *(uint *)&pCVar2->field_0x6e4 = 1;
+  pCVar2->strength_hi = 50.0;
+  pCVar2->dismember_prob = 0.0;
+  pcVar4 = pCVar2->thrust_hit_character_sound;
+  pCVar2->can_go_in_inventory = 1;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;
@@ -37,7 +35,7 @@ CMeleeAxe * core_meleeaxe_cpp_CMeleeAxe_ctor_FUN_0059d220(CMeleeAxe *this_ptr)
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
   pcVar3 = "axeimpactflesh0?.wav";
-  pcVar4 = &pCVar2->field_0x760;
+  pcVar4 = pCVar2->swing_hit_character_sound;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;
@@ -48,7 +46,7 @@ CMeleeAxe * core_meleeaxe_cpp_CMeleeAxe_ctor_FUN_0059d220(CMeleeAxe *this_ptr)
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
   pcVar3 = "axeimpactwood0?.wav";
-  pcVar4 = &pCVar2->field_0x7c4;
+  pcVar4 = pCVar2->hit_other_sound;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;

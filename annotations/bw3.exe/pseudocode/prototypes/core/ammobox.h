@@ -7,43 +7,43 @@
 
 // Original: core_ammobox.cpp_staticInit_FUN_0040e560
 // Address: 0040e560
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_ammobox.cpp_factoryFuncAmmoBox_FUN_0040e590
 // Address: 0040e590
-void factoryFuncAmmoBox(void);
+CAmmoBox * __cdecl factoryFuncAmmoBox(void);
 
 // Original: core_ammobox.cpp_CAmmoBox_getActorType_FUN_0040e5b0
 // Address: 0040e5b0
-CDemonActorType * CAmmoBox::getActorType(CAmmoBox *this_ptr);
+CDemonActorType * __cdecl CAmmoBox::getActorType(CAmmoBox *this_ptr);
 
 // Original: core_ammobox.cpp_CAmmoBox_ctor_FUN_0040e5c0
 // Address: 0040e5c0
 CAmmoBox * __cdecl CAmmoBox::ctor(CAmmoBox *this_ptr);
 
-// Original: core_ammobox.cpp_FUN_0040e670
+// Original: core_ammobox.cpp_CAmmoBox_setup_FUN_0040e670
 // Address: 0040e670
-void FUN_0040e670(CDemonActor *param_1);
+void __cdecl CAmmoBox::setup(CAmmoBox *this_ptr);
 
-// Original: core_ammobox.cpp_FUN_0040e6a0
+// Original: core_ammobox.cpp_CAmmoBox_process_FUN_0040e6a0
 // Address: 0040e6a0
-void FUN_0040e6a0(void);
+void __cdecl CAmmoBox::process(CAmmoBox *this_ptr,float delta_time);
 
-// Original: core_ammobox.cpp_FUN_0040e6b0
+// Original: core_ammobox.cpp_CAmmoBox_openBox_FUN_0040e6b0
 // Address: 0040e6b0
-void __cdecl FUN_0040e6b0(CAmmoBox *this_ptr,float open_pct);
+void __cdecl CAmmoBox::openBox(CAmmoBox *this_ptr,float open_pct);
 
-// Original: core_ammobox.cpp_FUN_0040e720
+// Original: core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e720
 // Address: 0040e720
-void __cdecl FUN_0040e720(CAmmoBox *this_ptr,CInventory *inventory);
+void __cdecl CAmmoBox::addToInventory(CAmmoBox *this_ptr,CInventory *inventory);
 
-// Original: core_ammobox.cpp_FUN_0040e810
+// Original: core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_0040e810
 // Address: 0040e810
-int FUN_0040e810(CDemonActor *param_1);
+int __cdecl CAmmoBox::renderOpaque(CAmmoBox *this_ptr);
 
-// Original: core_ammobox.cpp_FUN_0040e8b0
+// Original: core_ammobox.cpp_CAmmoBox_getBoundingBox_FUN_0040e8b0
 // Address: 0040e8b0
-void FUN_0040e8b0(int param_1);
+CBoundingBox3D * __cdecl CAmmoBox::getBoundingBox(CAmmoBox *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_ammobox.cpp_CAmmoBox_archive_FUN_0040e8f0
 // Address: 0040e8f0

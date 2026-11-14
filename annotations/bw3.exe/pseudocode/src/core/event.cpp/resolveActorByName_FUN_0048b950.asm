@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_0048b950(char *param_1,undefined4 param_2,undefined4 param_3)
+; CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_0048b950(char *name,uint class_hash,char *class_name)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   name
+; uint             Stack[0x8]:4   class_hash
+; char *           Stack[0xc]:4   class_name
 ;
 ; XREF[3]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_00491f40 at 0049269f
@@ -28,12 +32,12 @@
 ;   ... and 3 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408870
+;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870
 ;   core_actor.cpp_isOfClassHash_FUN_0040c810
 ;   core_event.cpp_CEventList_getActorByVarName_FUN_00495050
-;   core_mission.cpp_FUN_004f6e90
+;   core_mission.cpp_CDemonMission_findActorByName_FUN_004f6e90
 ;   crt_string.c__stricmp_FUN_005a3260
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;
 ; *****************************************************************************
 
@@ -120,7 +124,7 @@ section .text
     PUSH EDI                            ; 0048b9e3
     PUSH ESI                            ; 0048b9e4
     CALL core_actor.cpp_isOfClassHash_FUN_0040c810 ; 0048b9e5
-        ;   XREF to: 0040c810 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClassHash_FUN_0040c810()
+        ;   XREF to: 0040c810 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClassHash_FUN_0040c810(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0048b9ea
     TEST EAX,EAX                        ; 0048b9ed
     JNZ 0x0048ba76                      ; 0048b9ef
@@ -137,8 +141,8 @@ section .text
     PUSH 0x5bdde5                       ; 0048ba04 | = "Can't use '$' actor specifier in mult..."
         ;   Label: LAB_0048ba04
     PUSH 0x1c734b0                      ; 0048ba09 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048ba0e
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048ba0e
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048ba13
     XOR EAX,EAX                         ; 0048ba16
     POP EBP                             ; 0048ba18
@@ -150,8 +154,8 @@ section .text
         ;   Label: LAB_0048ba1d
     MOV EDX,dword ptr [0x00600530]      ; 0048ba1e | DAT_00600530
     PUSH EDX                            ; 0048ba24
-    CALL core_mission.cpp_FUN_004f6e90  ; 0048ba25
-        ;   XREF to: 004f6e90 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_FUN_004f6e90(CDemonMission * this_ptr, char * name)
+    CALL core_mission.cpp_CDemonMission_findActorByName_FUN_004f6e90 ; 0048ba25
+        ;   XREF to: 004f6e90 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_004f6e90(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 0048ba2a
     MOV ESI,EAX                         ; 0048ba2d
     TEST EAX,EAX                        ; 0048ba2f
@@ -160,8 +164,8 @@ section .text
     PUSH EBX                            ; 0048ba33
     PUSH 0x5bde13                       ; 0048ba34 | = "Actor \"%s\" does not exist."
     PUSH 0x1c734b0                      ; 0048ba39 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048ba3e
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048ba3e
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0048ba43
     XOR EAX,EAX                         ; 0048ba46
     POP EBP                             ; 0048ba48
@@ -173,15 +177,15 @@ section .text
         ;   Label: LAB_0048ba4d
     PUSH EBP                            ; 0048ba51
     PUSH ESI                            ; 0048ba52
-    CALL core_actor.cpp_FUN_00408870    ; 0048ba53
-        ;   XREF to: 00408870 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_FUN_00408870(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870 ; 0048ba53
+        ;   XREF to: 00408870 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0048ba58
     PUSH EAX                            ; 0048ba5b
     PUSH EBX                            ; 0048ba5c
     PUSH 0x5bde2e                       ; 0048ba5d | = "Actor \"%s\" is of type %s, this comm..."
     PUSH 0x1c734b0                      ; 0048ba62 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048ba67
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048ba67
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x14                        ; 0048ba6c
     XOR EAX,EAX                         ; 0048ba6f
     POP EBP                             ; 0048ba71

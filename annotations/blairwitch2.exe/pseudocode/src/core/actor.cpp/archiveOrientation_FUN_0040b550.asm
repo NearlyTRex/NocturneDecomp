@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archiveOrientation_FUN_0040b550(float *param_1,char *param_2)
+; void __cdecl core_actor_cpp_archiveOrientation_FUN_0040b550(COrientation *orient_ptr,char *property_name)
 ;
+; Parameters:
+; COrientation *   Stack[0x4]:4   orient_ptr
+; char *           Stack[0x8]:4   property_name
 ; Local Variables:
 ; undefined8       Stack[-0x20]:8  local_20
 ; undefined8       Stack[-0x18]:8  local_18
@@ -10,9 +13,9 @@
 ;
 ; XREF[5]:
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040c330 at 0040c352
-;   core_boxactor.cpp_FUN_0041c7f0 at 0041cacc
-;   core_boxactor.cpp_FUN_0041d270 at 0041d2c6
-;   core_manpuz.cpp_FUN_004e7470 at 004e7532
+;   core_boxactor.cpp_CBoxActor_archive_FUN_0041c7f0 at 0041cacc
+;   core_boxactor.cpp_CLightActor_archive_FUN_0041d270 at 0041d2c6
+;   core_manpuz.cpp_CMansionPuzzleCircle_archive_FUN_004e7470 at 004e7532
 ;   core_turret.cpp_CTurret_archive_FUN_0057efa0 at 0057efba
 ;
 ; Referenced Globals:
@@ -49,7 +52,7 @@ section .text
     MOV EBX,dword ptr [0x007bc034]      ; 0040b56d | DAT_007bc034
     PUSH EBX                            ; 0040b573
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0040b574
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0x14                        ; 0040b579
     CMP EAX,0x3                         ; 0040b57c
     JNZ 0x0040b596                      ; 0040b57f

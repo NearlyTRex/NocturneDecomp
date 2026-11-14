@@ -1,20 +1,20 @@
 // Name: core_beast.cpp_factoryFuncBeast_FUN_004146c0
 // Address: 004146c0
 // Address Range: [[004146c0, 004146db]]
-// Convention: unknown
-// Signature: void core_beast_cpp_factoryFuncBeast_FUN_004146c0(void)
+// Convention: __cdecl
+// Signature: CBeast * __cdecl core_beast_cpp_factoryFuncBeast_FUN_004146c0(void)
 
 #include "nocturne.h"
 
-void core_beast_cpp_factoryFuncBeast_FUN_004146c0(void)
+CBeast * __cdecl core_beast_cpp_factoryFuncBeast_FUN_004146c0(void)
 
 {
-  CBeast *this_ptr;
+  CBeast *pCVar1;
   
-  this_ptr = (CBeast *)FUN_005c0f32(0xc268);
-  if (this_ptr == (CBeast *)0x0) {
-    return;
+  pCVar1 = (CBeast *)operator_new(0xc268);
+  if (pCVar1 == (CBeast *)0x0) {
+    return (CBeast *)0x0;
   }
-  core_beast_cpp_CBeast_ctor_FUN_004146f0(this_ptr);
-  return;
+  pCVar1 = core_beast_cpp_CBeast_ctor_FUN_004146f0(pCVar1);
+  return pCVar1;
 }

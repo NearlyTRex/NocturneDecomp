@@ -1,0 +1,273 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 19,
+    "complexity_score": 12,
+    "cross_reference_count": 9,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 31
+  },
+  "cross_references": [
+    {
+      "addr": "00410110",
+      "from_addr": "004101a3",
+      "name": "core_bird.cpp_CBird_processDamage_FUN_00410110",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00419550",
+      "from_addr": "0041955c",
+      "name": "core_boneguy.cpp_CBoneGuy_explode_FUN_00419550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042c0d0",
+      "from_addr": "0042c16b",
+      "name": "core_charactr.cpp_CCharacter_kill_FUN_0042c0d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00430d60",
+      "from_addr": "00430fe7",
+      "name": "core_charactr.cpp_CCharacter_processDamage_FUN_00430d60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00444110",
+      "from_addr": "0044411c",
+      "name": "core_construc.cpp_CConstruct_explode_FUN_00444110",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00442a20",
+      "from_addr": "00442d5b",
+      "name": "core_construc.cpp_CConstruct_process_FUN_00442a20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c07b0",
+      "from_addr": "004c16c5",
+      "name": "core_game.cpp_FUN_004c07b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005099e0",
+      "from_addr": "00509a89",
+      "name": "core_npc.cpp_CNPC_processDamage_FUN_005099e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00599d60",
+      "from_addr": "00599df3",
+      "name": "core_spireagl.cpp_CSpiritEagle_processDamage_FUN_00599d60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00431ce0",
+    "address_range": [
+      [
+        "00431ce0",
+        "00431d03"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00431ce0",
+    "signature": "void __cdecl core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_00431ce0(CCharacter *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 10,
+    "call_sites": [
+      {
+        "call_addr": "004c16c5",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004c07b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004101a3",
+        "call_type": "direct",
+        "caller": "core_bird.cpp_CBird_processDamage_FUN_00410110",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00430fe7",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_processDamage_FUN_00430d60",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0042c16b",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_kill_FUN_0042c0d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0041955c",
+        "call_type": "direct",
+        "caller": "core_boneguy.cpp_CBoneGuy_explode_FUN_00419550",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00442d5b",
+        "call_type": "direct",
+        "caller": "core_construc.cpp_CConstruct_process_FUN_00442a20",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0044303b",
+        "call_type": "direct",
+        "caller": "core_construc.cpp_CConstruct_process_FUN_00442a20",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0044411c",
+        "call_type": "direct",
+        "caller": "core_construc.cpp_CConstruct_explode_FUN_00444110",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00509a89",
+        "call_type": "direct",
+        "caller": "core_npc.cpp_CNPC_processDamage_FUN_005099e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00599df3",
+        "call_type": "direct",
+        "caller": "core_spireagl.cpp_CSpiritEagle_processDamage_FUN_00599d60",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.75,
+    "instruction_count": 16,
+    "opcode_distribution": {
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 15,
+      "INT_ADD": 8,
+      "INT_AND": 8,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 4,
+      "INT_SUB": 7,
+      "INT_XOR": 1,
+      "LOAD": 6,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 76
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00428e00",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004328c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0042d060",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004291f0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      }
+    ]
+  },
+  "suspects": []
+}

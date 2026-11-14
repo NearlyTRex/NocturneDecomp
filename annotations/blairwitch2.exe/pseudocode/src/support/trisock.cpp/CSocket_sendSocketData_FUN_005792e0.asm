@@ -14,7 +14,7 @@
 ;
 ; XREF[3]:
 ;   core_netgame.cpp_CNetGame_sendPacket_FUN_0050cdf0 at 0050ce0d
-;   support_trisock.cpp_FUN_0057a0ec at 0057a18f
+;   support_trisock.cpp_FUN_0057a0f0 at 0057a18f
 ;   support_trisock.cpp_FUN_0057a1e0 at 0057a2b0
 ;
 ; Called Functions:

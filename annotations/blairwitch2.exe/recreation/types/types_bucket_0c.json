@@ -14,11 +14,88 @@
     "size":68444
   },
   {
+    "kind":"funcdef",
+    "name":"CBasicEnemy_advanceMotion",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CBasicEnemy",
+          "ptr":1
+        }
+      },
+      {
+        "name":"delta_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CBasicEnemy_vfunc95",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CBasicEnemy",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CBoxActor",
     "parent":"CDemonActor",
     "rtti_file":"core/boxactor.cpp",
     "size":2004
+  },
+  {
+    "kind":"class",
+    "name":"CCameraView_vtable",
+    "size":20,
+    "vtable_slots":[
+      {
+        "name":"dtor",
+        "offset":0
+      },
+      {
+        "name":"setupPerspectiveAndFog",
+        "offset":4
+      },
+      {
+        "name":"getFogValueAtPosition",
+        "offset":8
+      },
+      {
+        "name":"testVisibility",
+        "offset":12
+      },
+      {
+        "name":"saveAlphaTransform",
+        "offset":16
+      }
+    ]
   },
   {
     "kind":"class",
@@ -28,10 +105,254 @@
     "size":68192
   },
   {
+    "kind":"funcdef",
+    "name":"CCharacter_getDeathState",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"enum",
+      "name":"EDeathState",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CCharacter_releaseVictim",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"class",
+    "name":"CConfederateZombie_full_vtable",
+    "size":392,
+    "vtable_slots":[
+      {
+        "name":"_ub",
+        "offset":0
+      },
+      {
+        "name":"_uc",
+        "offset":224
+      },
+      {
+        "name":"_ue",
+        "offset":332
+      },
+      {
+        "name":"_ubasicenemy",
+        "offset":340
+      },
+      {
+        "name":"_uconfederatezombie",
+        "offset":384
+      }
+    ]
+  },
+  {
     "kind":"class",
     "name":"CDeformableModelInstance",
+    "parent":"CMotionController",
     "rtti_file":"core/skeleton.cpp",
     "size":8884
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_getAllowedMeleeAttackTypes",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_getTargetPoints",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_points_array",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_onPickup",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"owner",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_processFootstepAtOffset",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"location",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"volume",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"uint",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_spawnFlies",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"fly_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"spawn_radius",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDog_vfunc98",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDog",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -39,6 +360,21 @@
     "parent":"CEnemy",
     "rtti_file":"core/drone.cpp",
     "size":68368
+  },
+  {
+    "kind":"class",
+    "name":"CEnemy_vtable",
+    "size":8,
+    "vtable_slots":[
+      {
+        "name":"getTargetPoint",
+        "offset":0
+      },
+      {
+        "name":"updateVictim",
+        "offset":4
+      }
+    ]
   },
   {
     "kind":"class",
@@ -55,6 +391,70 @@
     "size":728
   },
   {
+    "kind":"funcdef",
+    "name":"CHero_vfunc88",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CHero",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"class",
+    "name":"CHero_vtable",
+    "size":36,
+    "vtable_slots":[
+      {
+        "name":"createDefaultWeapon",
+        "offset":0
+      },
+      {
+        "name":"drawWeapon",
+        "offset":4
+      },
+      {
+        "name":"isWeaponDrawn",
+        "offset":8
+      },
+      {
+        "name":"reset",
+        "offset":12
+      },
+      {
+        "name":"vfunc87",
+        "offset":16
+      },
+      {
+        "name":"canReachPickup",
+        "offset":20
+      },
+      {
+        "name":"doHeroAction",
+        "offset":24
+      },
+      {
+        "name":"canDoHeroAction",
+        "offset":28
+      },
+      {
+        "name":"setInventoryIndex",
+        "offset":32
+      }
+    ]
+  },
+  {
     "kind":"class",
     "name":"CKeyActor",
     "parent":"CDemonActor",
@@ -64,7 +464,7 @@
   {
     "kind":"class",
     "name":"CMatrix3x4f",
-    "size":1
+    "size":48
   },
   {
     "kind":"class",
@@ -75,13 +475,36 @@
   },
   {
     "kind":"class",
+    "name":"CParticle_vtable",
+    "size":16,
+    "vtable_slots":[
+      {
+        "name":"setup",
+        "offset":0
+      },
+      {
+        "name":"process",
+        "offset":4
+      },
+      {
+        "name":"render",
+        "offset":8
+      },
+      {
+        "name":"onCollision",
+        "offset":12
+      }
+    ]
+  },
+  {
+    "kind":"class",
     "name":"CPodSearchContext",
-    "size":1
+    "size":796
   },
   {
     "kind":"class",
     "name":"CQuaternion4f",
-    "size":1
+    "size":16
   },
   {
     "kind":"class",
@@ -94,7 +517,44 @@
     "kind":"class",
     "name":"CSound",
     "rtti_file":"core/sound.cpp",
-    "size":1
+    "size":4
+  },
+  {
+    "kind":"funcdef",
+    "name":"CStrList_insert",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CStrList",
+          "ptr":1
+        }
+      },
+      {
+        "name":"insert_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"string_data",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -106,8 +566,53 @@
   {
     "kind":"class",
     "name":"CWavInDevice",
+    "parent":"CSoundDevice",
     "rtti_file":"sound/snddx.cpp",
-    "size":1
+    "size":4
+  },
+  {
+    "kind":"class",
+    "name":"CWeapon_full_vtable",
+    "size":256,
+    "vtable_slots":[
+      {
+        "name":"_ub",
+        "offset":0
+      },
+      {
+        "name":"_uw",
+        "offset":224
+      }
+    ]
+  },
+  {
+    "kind":"funcdef",
+    "name":"CWeapon_setWeaponState",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CWeapon",
+          "ptr":1
+        }
+      },
+      {
+        "name":"weapon_state",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -180,9 +685,148 @@
     ]
   },
   {
+    "kind":"enum",
+    "name":"ELightActorType",
+    "size":4,
+    "values":[
+      {
+        "name":"LIGHT_TYPE_CUSTOM",
+        "value":0
+      },
+      {
+        "name":"LIGHT_TYPE_FLASHLIGHT",
+        "value":1
+      },
+      {
+        "name":"LIGHT_TYPE_LANTERN",
+        "value":2
+      },
+      {
+        "name":"LIGHT_TYPE_GLOBE",
+        "value":3
+      },
+      {
+        "name":"LIGHT_TYPE_UNKNOWN",
+        "value":4
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"ENetPacketType",
+    "size":1,
+    "values":[
+      {
+        "name":"PACKET_NONE",
+        "value":0
+      },
+      {
+        "name":"PACKET_PLAYER_ANNOUNCE",
+        "value":1
+      },
+      {
+        "name":"PACKET_SERVER_ACCEPT",
+        "value":2
+      },
+      {
+        "name":"PACKET_GAME_START",
+        "value":3
+      },
+      {
+        "name":"PACKET_PING",
+        "value":4
+      },
+      {
+        "name":"PACKET_PING_RESPONSE",
+        "value":5
+      },
+      {
+        "name":"PACKET_CHAT_MESSAGE",
+        "value":6
+      },
+      {
+        "name":"PACKET_CHAT_ACK",
+        "value":7
+      },
+      {
+        "name":"PACKET_SYNC_STAGE_REQ",
+        "value":8
+      },
+      {
+        "name":"PACKET_SYNC_STAGE_RESP",
+        "value":9
+      },
+      {
+        "name":"PACKET_PLAYER_STATE",
+        "value":10
+      },
+      {
+        "name":"PACKET_GAME_SETTINGS",
+        "value":11
+      },
+      {
+        "name":"PACKET_SETTINGS_ACK",
+        "value":12
+      },
+      {
+        "name":"PACKET_DISCONNECT",
+        "value":13
+      },
+      {
+        "name":"PACKET_UNUSED",
+        "value":14
+      },
+      {
+        "name":"PACKET_SIM_FRAME",
+        "value":15
+      },
+      {
+        "name":"PACKET_PLAYER_INPUT",
+        "value":16
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"ETurretState",
+    "size":4,
+    "values":[
+      {
+        "name":"TURRET_STATE_IDLE",
+        "value":0
+      },
+      {
+        "name":"TURRET_STATE_CHARGING",
+        "value":1
+      },
+      {
+        "name":"TURRET_STATE_ACTIVE",
+        "value":2
+      },
+      {
+        "name":"TURRET_STATE_PATROL",
+        "value":3
+      },
+      {
+        "name":"TURRET_STATE_POWERING_DOWN",
+        "value":4
+      }
+    ]
+  },
+  {
+    "kind":"struct",
+    "name":"SArmAimData",
+    "size":32
+  },
+  {
     "kind":"struct",
     "name":"SButtonStruct",
     "size":44
+  },
+  {
+    "kind":"struct",
+    "name":"SMRGLKeyframe",
+    "size":20
   },
   {
     "kind":"struct",
@@ -197,6 +841,6 @@
   {
     "kind":"struct",
     "name":"STriangleRef",
-    "size":1
+    "size":28
   }
 ]

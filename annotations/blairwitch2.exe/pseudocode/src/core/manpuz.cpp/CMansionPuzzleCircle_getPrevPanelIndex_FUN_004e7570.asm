@@ -9,9 +9,9 @@
 ;
 ; XREF[4]:
 ;   core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_004e76f0 at 004e774b
-;   core_manpuz.cpp_FUN_004e6c40 at 004e6ebb
-;   core_manpuz.cpp_FUN_004e6f20 at 004e71ba
-;   core_manpuz.cpp_FUN_004e7220 at 004e7231
+;   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004e7220 at 004e7231
+;   core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_004e6c40 at 004e6ebb
+;   core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_004e6f20 at 004e71ba
 ;
 ; *****************************************************************************
 

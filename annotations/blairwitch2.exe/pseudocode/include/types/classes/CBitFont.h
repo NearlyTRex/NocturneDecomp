@@ -2,14 +2,52 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CWinFont;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/SMRGLTextureBasic.h"
 
 // Structure: CBitFont
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x4220 (16928 bytes)
 #pragma pack(push, 1)
 typedef struct CBitFont {
+    int bitmap_count; // 0x0
+    char bitmap_files[4][80]; // 0x4
+    char font_filename[80]; // 0x144, Added in this build
+    void* bitmap_data[4]; // 0x194
+    int bitmap_widths[4]; // 0x1a4
+    char palette_data[3072]; // 0x1b4
+    uint palettes_display[4][256]; // 0xdb4
+    SMRGLTextureBasic accel_texture; // 0x1db4, Added in this build
+    void* accel_vertex_alloc; // 0x1dcc, Added in this build
+    void* accel_vertices; // 0x1dd0, Added in this build
+    void* accel_indices; // 0x1dd4, Added in this build
+    int accel_vertex_count; // 0x1dd8, Added in this build
+    int accel_index_count; // 0x1ddc, Added in this build
+    uint accel_color; // 0x1de0, Added in this build
+    int is_initialized; // 0x1de4
+    uchar* char_positions[256]; // 0x1de8
+    int char_bitmap_index[256]; // 0x21e8
+    float char_uv_rects[256][4]; // 0x25e8, Added in this build
+    int char_widths[256]; // 0x35e8
+    int char_heights[256]; // 0x39e8
+    int char_y_offsets[256]; // 0x3de8
+    int max_char_width; // 0x41e8
+    int max_char_height; // 0x41ec
+    int current_line_height; // 0x41f0
+    int char_spacing; // 0x41f4
+    int line_spacing; // 0x41f8
+    int shadow_offset_x; // 0x41fc
+    int shadow_offset_y; // 0x4200
+    int rendering_ready; // 0x4204
+    int load_flags; // 0x4208
+    int use_3d_rendering; // 0x420c
+    int win_font_enabled; // 0x4210
+    struct CWinFont* win_font_helper; // 0x4214
+    float accel_scale; // 0x4218, Added in this build
+    float accel_inv_scale; // 0x421c, Added in this build
 } CBitFont;
 #pragma pack(pop)
 

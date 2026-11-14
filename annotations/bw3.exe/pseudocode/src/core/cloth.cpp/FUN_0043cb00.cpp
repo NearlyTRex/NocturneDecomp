@@ -2,35 +2,41 @@
 // Address: 0043cb00
 // Address Range: [[0043cb00, 0043d675]]
 // Convention: unknown
-// Signature: void core_cloth_cpp_FUN_0043cb00(CCloth *param_1,CCloth *param_2,CCloth *param_3,CDeformableModelInstance *param_4)
+// Signature: void core_cloth_cpp_FUN_0043cb00(CCloth *param_1,float *param_2,float *param_3,CDeformableModelInstance *param_4)
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_cloth_cpp_FUN_0043cb00(CCloth *param_1,CCloth *param_2,CCloth *param_3,CDeformableModelInstance *param_4)
+void core_cloth_cpp_FUN_0043cb00(CCloth *param_1,float *param_2,float *param_3,CDeformableModelInstance *param_4)
 
 {
-  byte bVar1;
-  int iVar2;
+  float fVar1;
+  byte bVar2;
   int iVar3;
-  uint uVar4;
-  int iVar5;
-  uint *puVar6;
-  CCloth *pCVar7;
+  int iVar4;
+  CVector3i *pCVar5;
+  uint uVar6;
+  uint uVar7;
+  int iVar8;
+  CVector3i *pCVar9;
+  CVector3f *pCVar10;
   CDeformableModel *this_ptr;
-  CCloth *pCVar8;
-  int iVar9;
-  int *piVar10;
-  uint uVar11;
-  uint uVar12;
-  CCloth *pCVar13;
-  float *pfVar14;
-  float *pfVar15;
-  CCloth *pCVar16;
-  byte *pbVar17;
-  byte *pbVar18;
-  byte bVar19;
+  CVector3f *pCVar11;
+  CVector3f *pCVar12;
+  int iVar13;
+  int *piVar14;
+  uint uVar15;
+  uint uVar16;
+  SClothVertex *pSVar17;
+  uchar *puVar18;
+  float *pfVar19;
+  SVert *pSVar20;
+  CCloth *pCVar21;
+  float *pfVar22;
+  SVert *pSVar23;
+  byte bVar24;
   float afStackY_1150 [1015];
   float local_168;
   float local_164;
@@ -68,41 +74,44 @@ void core_cloth_cpp_FUN_0043cb00(CCloth *param_1,CCloth *param_2,CCloth *param_3
   float local_dc;
   float local_d8;
   float local_cc;
-  float local_c8 [4];
+  float local_c8;
+  float local_c4;
+  float local_c0;
+  float local_bc;
   float local_b8;
   float local_b4;
   float local_b0;
   float local_ac;
   int local_a8;
-  int local_a4;
+  CVector3i *local_a4;
   CDeformableModel *local_a0;
-  float *local_9c;
-  CCloth *local_98;
+  CVector3f *local_9c;
+  SClothVertex *local_98;
   float local_94;
-  CCloth *local_90;
-  float *local_8c;
-  byte *local_88;
+  SClothVertex *local_90;
+  uchar *local_8c;
+  CMatrix3x4f *local_88;
   int local_84;
   int local_80;
   float local_7c;
-  CCloth *local_78;
-  CCloth *local_74;
+  SClothVertex *local_78;
+  SClothVertex *local_74;
   int local_70;
   float local_6c;
   float *local_68;
-  byte *local_64;
+  CMatrix3x4f *local_64;
   int local_60;
   float local_5c;
   int local_58;
   int local_54;
   float *local_50;
-  float *local_4c;
+  uchar *local_4c;
   int local_48;
   CCloth *local_44;
   float *local_40;
   int local_3c;
   int local_38;
-  CCloth *local_34;
+  char *local_34;
   int local_30;
   CCloth *local_2c;
   int local_28;
@@ -112,175 +121,179 @@ void core_cloth_cpp_FUN_0043cb00(CCloth *param_1,CCloth *param_2,CCloth *param_3
   int local_18;
   int local_14;
   
-  bVar19 = 0;
-  iVar5 = 0;
-  if (0 < *(int *)(param_1 + 0x104)) {
-    iVar9 = 0;
+  bVar24 = 0;
+  iVar8 = 0;
+  if (0 < (param_1->model).vertex_count) {
+    iVar13 = 0;
     do {
-      *(int *)(*(int *)(param_1 + 0x3aafc) + iVar9) = iVar5;
-      iVar5 = iVar5 + 1;
-      iVar9 = iVar9 + 4;
-    } while (iVar5 < *(int *)(param_1 + 0x104));
+      *(int *)((int)param_1->vertex_sort_buffer + iVar13) = iVar8;
+      iVar8 = iVar8 + 1;
+      iVar13 = iVar13 + 4;
+    } while (iVar8 < (param_1->model).vertex_count);
   }
-  for (local_20 = 0; local_20 < *(int *)(param_1 + 0x104) + -1; local_20 = local_20 + 1) {
-    iVar5 = local_20 + 1;
-    if (iVar5 < *(int *)(param_1 + 0x104)) {
+  for (local_20 = 0; local_20 < (param_1->model).vertex_count + -1; local_20 = local_20 + 1) {
+    iVar8 = local_20 + 1;
+    if (iVar8 < (param_1->model).vertex_count) {
       local_80 = local_20 * 4;
-      iVar9 = iVar5 * 4;
+      iVar13 = iVar8 * 4;
       do {
-        piVar10 = (int *)(local_80 + *(int *)(param_1 + 0x3aafc));
-        iVar2 = *piVar10;
-        iVar3 = *(int *)(iVar9 + *(int *)(param_1 + 0x3aafc));
-        local_a4 = iVar2 * 0xc + *(int *)(param_1 + 0x10c);
-        if (*(int *)(local_a4 + 4) < *(int *)(iVar3 * 0xc + *(int *)(param_1 + 0x10c) + 4)) {
-          *piVar10 = iVar3;
-          *(int *)(iVar9 + *(int *)(param_1 + 0x3aafc)) = iVar2;
+        piVar14 = param_1->vertex_sort_buffer + local_20;
+        iVar3 = *piVar14;
+        iVar4 = *(int *)(iVar13 + (int)param_1->vertex_sort_buffer);
+        pCVar5 = (param_1->model).vertex_list;
+        local_a4 = pCVar5 + iVar3;
+        if (local_a4->y < pCVar5[iVar4].y) {
+          *piVar14 = iVar4;
+          *(int *)(iVar13 + (int)param_1->vertex_sort_buffer) = iVar3;
         }
-        local_60 = iVar3 * 0xc;
-        puVar6 = (uint *)(iVar2 * 0xc + *(int *)(param_1 + 0x10c));
-        if ((puVar6[1] == *(uint *)(*(int *)(param_1 + 0x10c) + local_60 + 4)) &&
-           (uVar4 = *puVar6, uVar11 = (int)uVar4 >> 0x1f,
-           uVar12 = (int)*(uint *)(*(int *)(param_1 + 0x10c) + local_60) >> 0x1f,
-           (int)((*(uint *)(*(int *)(param_1 + 0x10c) + local_60) ^ uVar12) - uVar12) <
-           (int)((uVar4 ^ uVar11) - uVar11))) {
-          *(int *)(*(int *)(param_1 + 0x3aafc) + local_80) = iVar3;
-          *(int *)(iVar9 + *(int *)(param_1 + 0x3aafc)) = iVar2;
+        local_60 = iVar4 * 0xc;
+        pCVar5 = (param_1->model).vertex_list;
+        pCVar9 = pCVar5 + iVar3;
+        if ((pCVar9->y == pCVar5[iVar4].y) &&
+           (uVar6 = pCVar9->x, uVar15 = (int)uVar6 >> 0x1f,
+           uVar7 = (param_1->model).vertex_list[iVar4].x, uVar16 = (int)uVar7 >> 0x1f,
+           (int)((uVar7 ^ uVar16) - uVar16) < (int)((uVar6 ^ uVar15) - uVar15))) {
+          param_1->vertex_sort_buffer[local_20] = iVar4;
+          *(int *)(iVar13 + (int)param_1->vertex_sort_buffer) = iVar3;
         }
-        iVar5 = iVar5 + 1;
-        iVar9 = iVar9 + 4;
-      } while (iVar5 < *(int *)(param_1 + 0x104));
+        iVar8 = iVar8 + 1;
+        iVar13 = iVar13 + 4;
+      } while (iVar8 < (param_1->model).vertex_count);
     }
   }
-  if (param_1 + 0x3ab08 != param_2) {
-    *(uint *)(param_1 + 0x3ab08) = *(uint *)param_2;
-    *(uint *)(param_1 + 0x3ab0c) = *(uint *)(param_2 + 4);
-    *(uint *)(param_1 + 0x3ab10) = *(uint *)(param_2 + 8);
+  if (&param_1->last_position != (CVector3f *)param_2) {
+    (param_1->last_position).x = *param_2;
+    (param_1->last_position).y = param_2[1];
+    (param_1->last_position).z = param_2[2];
   }
-  if (param_1 + 0x3ab14 != param_3) {
-    *(uint *)(param_1 + 0x3ab14) = *(uint *)param_3;
-    *(uint *)(param_1 + 0x3ab18) = *(uint *)(param_3 + 4);
-    *(uint *)(param_1 + 0x3ab1c) = *(uint *)(param_3 + 8);
+  if (&param_1->last_euler != (CVector3f *)param_3) {
+    (param_1->last_euler).x = *param_3;
+    (param_1->last_euler).y = param_3[1];
+    (param_1->last_euler).z = param_3[2];
   }
-  iVar5 = 0;
-  if (0 < *(int *)(param_1 + 0x104)) {
-    pCVar8 = param_1 + 0x458;
-    pCVar13 = param_1 + 0x3a4;
-    pCVar7 = param_1 + 0x3b0;
+  iVar8 = 0;
+  if (0 < (param_1->model).vertex_count) {
+    pCVar12 = &param_1->vertices[0].offset_pos;
+    pCVar11 = &param_1->vertices[0].force;
+    pCVar10 = &param_1->vertices[0].velocity;
     do {
-      pCVar16 = param_1 + iVar5 * 0x11c + 0x398;
-      if (pCVar16 != pCVar8) {
-        *(uint *)pCVar16 = *(uint *)pCVar8;
-        *(uint *)(pCVar16 + 4) = *(uint *)(pCVar8 + 4);
-        *(uint *)(pCVar16 + 8) = *(uint *)(pCVar8 + 8);
+      pSVar17 = param_1->vertices + iVar8;
+      if (pSVar17 != (SClothVertex *)pCVar12) {
+        (pSVar17->position).x = pCVar12->x;
+        (pSVar17->position).y = pCVar12->y;
+        (pSVar17->position).z = pCVar12->z;
       }
-      *(uint *)(pCVar13 + 8) = 0;
-      *(uint *)(pCVar13 + 4) = *(uint *)(pCVar13 + 8);
-      *(uint *)pCVar13 = *(uint *)(pCVar13 + 4);
-      *(uint *)(pCVar7 + 8) = 0;
-      pCVar8 = pCVar8 + 0x11c;
-      *(uint *)(pCVar7 + 0x14) = 0;
-      iVar5 = iVar5 + 1;
-      *(uint *)(pCVar7 + 4) = *(uint *)(pCVar7 + 8);
-      *(uint *)(pCVar7 + 0x10) = *(uint *)(pCVar7 + 0x14);
-      *(uint *)pCVar7 = *(uint *)(pCVar7 + 4);
-      *(uint *)(pCVar7 + 0xc) = *(uint *)(pCVar7 + 0x14);
-      pCVar13 = pCVar13 + 0x11c;
-      pCVar7 = pCVar7 + 0x11c;
-    } while (iVar5 < *(int *)(param_1 + 0x104));
+      pCVar11->z = 0.0;
+      pCVar11->y = pCVar11->z;
+      pCVar11->x = pCVar11->y;
+      pCVar10->z = 0.0;
+      pCVar12 = (CVector3f *)((int)(pCVar12 + 0x17) + 8);
+      pCVar10[1].z = 0.0;
+      iVar8 = iVar8 + 1;
+      fVar1 = pCVar10[1].z;
+      pCVar10->y = pCVar10->z;
+      pCVar10[1].y = fVar1;
+      pCVar10->x = pCVar10->y;
+      pCVar10[1].x = fVar1;
+      pCVar11 = (CVector3f *)((int)(pCVar11 + 0x17) + 8);
+      pCVar10 = (CVector3f *)((int)(pCVar10 + 0x17) + 8);
+    } while (iVar8 < (param_1->model).vertex_count);
   }
   core_cloth_cpp_FUN_0043c8a0(param_1);
-  iVar5 = 0;
-  pCVar13 = param_1;
-  if (0 < *(int *)(param_1 + 0x39ce8)) {
+  iVar8 = 0;
+  pCVar21 = param_1;
+  if (0 < param_1->locked_vertex_count) {
     do {
-      *(uint *)(param_1 + *(int *)(pCVar13 + 0x39cec) * 0x11c + 0x40c) = 1;
-      iVar5 = iVar5 + 1;
-      pCVar13 = pCVar13 + 4;
-    } while (iVar5 < *(int *)(param_1 + 0x39ce8));
+      param_1->vertices[pCVar21->locked_vertex_indices[0]].locked = 1;
+      iVar8 = iVar8 + 1;
+      pCVar21 = (CCloth *)((pCVar21->model).model_filename + 4);
+    } while (iVar8 < param_1->locked_vertex_count);
   }
   if (param_4 != (CDeformableModelInstance *)0x0) {
     this_ptr = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40(param_4);
     local_a0 = this_ptr;
-    core_skeleton_cpp_FUN_005487e0(this_ptr);
-    iVar5 = 0;
-    if (0 < *(int *)(param_1 + 0x104)) {
-      pCVar13 = param_1 + 0x398;
-      local_9c = (float *)&this_ptr->field_0x2740;
-      pCVar8 = param_1 + 0x458;
+    core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_005487e0(this_ptr);
+    iVar8 = 0;
+    if (0 < (param_1->model).vertex_count) {
+      pSVar17 = param_1->vertices;
+      local_9c = &this_ptr->bias_used;
+      pCVar11 = &param_1->vertices[0].offset_pos;
       local_54 = 0;
       do {
-        local_f0 = *(float *)pCVar8 + *local_9c;
-        local_ec = *(float *)(pCVar8 + 4) + local_9c[1];
-        local_e8 = *(float *)(pCVar8 + 8) + local_9c[2];
-        local_cc = *(float *)pCVar8 + *local_9c;
-        local_c8[(uint)bVar19 * -2] = *(float *)((int)&stack0xffffff14 + (uint)bVar19 * -8);
-        local_c8[(uint)bVar19 * -2 + (uint)bVar19 * -2 + 1] =
-             *(float *)((int)&stack0xffffff18 + (uint)bVar19 * -8 + (uint)bVar19 * -8);
-        if (pCVar13 != (CCloth *)&local_cc) {
-          *(float *)pCVar13 = local_cc;
-          *(float *)(pCVar13 + 4) = local_c8[0];
-          *(float *)(pCVar13 + 8) = local_c8[1];
+        local_f0 = pCVar11->x + local_9c->x;
+        local_ec = pCVar11->y + local_9c->y;
+        local_e8 = pCVar11->z + local_9c->z;
+        local_cc = local_f0;
+        (&stack0xffffff38)[(uint)bVar24 * 0xfffffffe] =
+             (float)*(uint *)((int)&stack0xffffff14 + (uint)bVar24 * -8);
+        *(uint *)((int)&stack0xffffff3c + (uint)bVar24 * -8 + (uint)bVar24 * -8) =
+             *(uint *)((int)&stack0xffffff18 + (uint)bVar24 * -8 + (uint)bVar24 * -8);
+        if (pSVar17 != (SClothVertex *)&stack0xffffff34) {
+          (pSVar17->position).x = local_cc;
+          (pSVar17->position).y = local_c8;
+          (pSVar17->position).z = local_c4;
         }
-        pCVar8 = pCVar8 + 0x11c;
-        piVar10 = (int *)(*(int *)(param_1 + 0x10c) + local_54);
-        iVar5 = iVar5 + 1;
-        *piVar10 = (int)ROUND(*(float *)pCVar13 * _DAT_005dd3b0);
-        piVar10[1] = (int)ROUND(*(float *)(pCVar13 + 4) * _DAT_005dd3b0);
-        piVar10[2] = (int)ROUND(*(float *)(pCVar13 + 8) * _DAT_005dd3b0);
-        pCVar13 = pCVar13 + 0x11c;
+        pCVar11 = (CVector3f *)((int)(pCVar11 + 0x17) + 8);
+        piVar14 = (int *)((int)&((param_1->model).vertex_list)->x + local_54);
+        iVar8 = iVar8 + 1;
+        *piVar14 = (int)ROUND((pSVar17->position).x * _DAT_005dd3b0);
+        piVar14[1] = (int)ROUND((pSVar17->position).y * _DAT_005dd3b0);
+        piVar14[2] = (int)ROUND((pSVar17->position).z * _DAT_005dd3b0);
+        pSVar17 = pSVar17 + 1;
         local_54 = local_54 + 0xc;
-      } while (iVar5 < *(int *)(param_1 + 0x104));
+      } while (iVar8 < (param_1->model).vertex_count);
     }
     core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0054c090(param_4);
-    core_skeleton_cpp_FUN_0054dd10(param_4);
+    core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0054dd10(param_4);
     local_24 = 0;
-    if (0 < *(int *)(param_1 + 0x39ce8)) {
-      local_88 = &param_4->field_0xe80;
-      local_90 = param_1 + 0x398;
+    if (0 < param_1->locked_vertex_count) {
+      local_88 = (param_4->bone_transform).bone_model_matrices;
+      local_90 = param_1->vertices;
       local_44 = param_1;
       do {
         local_94 = 1e+30;
         local_18 = 0;
-        local_98 = local_90 + *(int *)(local_44 + 0x39cec) * 0x11c;
-        if (0 < *(int *)&local_a0->field_0x2c) {
+        local_98 = local_90 + local_44->locked_vertex_indices[0];
+        if (0 < local_a0->vertex_count[0]) {
           local_48 = 0;
           do {
             local_12c = 0.0;
             local_128 = 0.0;
-            pfVar14 = (float *)(local_48 + *(int *)&local_a0->field_0x40);
+            puVar18 = local_a0->vertex_data_ptr[0]->bone_indices + local_48 + -1;
             local_124 = 0.0;
-            local_8c = pfVar14;
-            local_50 = pfVar14 + 4;
-            local_4c = pfVar14;
-            for (iVar5 = 0; pfVar14 = pfVar14 + 1, iVar5 < (int)(uint)*(byte *)local_8c;
-                iVar5 = iVar5 + 1) {
-              core_xform_cpp_FUN_00583260
-                        (local_50,local_88 + (uint)*(byte *)((int)local_4c + 1) * 0x30);
-              local_c8[2] = local_144;
-              local_c8[(uint)bVar19 * -2 + 3] = *(float *)(&stack0xfffffec0 + (uint)bVar19 * -8);
-              local_c8[(uint)bVar19 * -2 + (uint)bVar19 * -2 + 4] =
-                   *(float *)(&stack0xfffffec4 + (uint)bVar19 * -8 + (uint)bVar19 * -8);
-              local_168 = local_c8[2] * *pfVar14;
-              local_164 = local_c8[3] * *pfVar14;
-              local_160 = local_b8 * *pfVar14;
-              local_120 = local_c8[2] * *pfVar14;
-              *(uint *)((int)&stack0xfffffee4 + (uint)bVar19 * -8) =
-                   *(uint *)((int)&stack0xfffffe9c + (uint)bVar19 * -8);
-              *(uint *)((int)&stack0xfffffee8 + (uint)bVar19 * -8 + (uint)bVar19 * -8) =
-                   *(uint *)((int)&stack0xfffffea0 + (uint)bVar19 * -8 + (uint)bVar19 * -8);
+            local_8c = puVar18;
+            local_50 = (float *)(puVar18 + 0x10);
+            local_4c = puVar18;
+            for (iVar8 = 0; puVar18 = puVar18 + 4, iVar8 < (int)(uint)*local_8c; iVar8 = iVar8 + 1)
+            {
+              core_xform_cpp_FUN_00583260(local_50,local_88 + local_4c[1]);
+              local_c0 = local_144;
+              *(uint *)((int)&stack0xffffff44 + (uint)bVar24 * -8) =
+                   *(uint *)(&stack0xfffffec0 + (uint)bVar24 * -8);
+              *(uint *)((int)&stack0xffffff48 + (uint)bVar24 * -8 + (uint)bVar24 * -8) =
+                   *(uint *)(&stack0xfffffec4 + (uint)bVar24 * -8 + (uint)bVar24 * -8);
+              local_168 = local_c0 * *(float *)puVar18;
+              local_164 = local_bc * *(float *)puVar18;
+              local_160 = local_b8 * *(float *)puVar18;
+              local_120 = local_c0 * *(float *)puVar18;
+              *(uint *)((int)&stack0xfffffee4 + (uint)bVar24 * -8) =
+                   *(uint *)((int)&stack0xfffffe9c + (uint)bVar24 * -8);
+              *(uint *)((int)&stack0xfffffee8 + (uint)bVar24 * -8 + (uint)bVar24 * -8) =
+                   *(uint *)((int)&stack0xfffffea0 + (uint)bVar24 * -8 + (uint)bVar24 * -8);
               local_12c = local_12c + local_120;
               local_128 = local_128 + local_11c;
               local_124 = local_124 + local_118;
               local_50 = local_50 + 3;
-              local_4c = (float *)((int)local_4c + 1);
+              local_4c = local_4c + 1;
             }
-            local_b4 = *(float *)local_98 - local_12c;
-            local_b0 = *(float *)(local_98 + 4) - local_128;
-            local_ac = *(float *)(local_98 + 8) - local_124;
-            local_fc = *(float *)local_98 - local_12c;
-            *(float *)((int)&stack0xffffff08 + (uint)bVar19 * -8) = local_c8[(uint)bVar19 * -2 + 6];
-            *(float *)((int)&stack0xffffff0c + (uint)bVar19 * -8 + (uint)bVar19 * -8) =
-                 local_c8[(uint)bVar19 * -2 + (uint)bVar19 * -2 + 7];
+            local_b4 = (local_98->position).x - local_12c;
+            local_b0 = (local_98->position).y - local_128;
+            local_ac = (local_98->position).z - local_124;
+            local_fc = local_b4;
+            *(uint *)((int)&stack0xffffff08 + (uint)bVar24 * -8) =
+                 *(uint *)((int)&stack0xffffff50 + (uint)bVar24 * -8);
+            *(uint *)((int)&stack0xffffff0c + (uint)bVar24 * -8 + (uint)bVar24 * -8) =
+                 *(uint *)((int)&stack0xffffff54 + (uint)bVar24 * -8 + (uint)bVar24 * -8);
             local_7c = local_f4 * local_f4 + local_fc * local_fc + local_f8 * local_f8;
             if (local_7c < local_94) {
               local_94 = local_7c;
@@ -288,99 +301,98 @@ void core_cloth_cpp_FUN_0043cb00(CCloth *param_1,CCloth *param_2,CCloth *param_3
             }
             local_18 = local_18 + 1;
             local_48 = local_48 + 0x34;
-          } while (local_18 < *(int *)&local_a0->field_0x2c);
+          } while (local_18 < local_a0->vertex_count[0]);
         }
-        pbVar17 = (byte *)(local_84 * 0x34 + *(int *)&local_a0->field_0x40);
-        bVar1 = *pbVar17;
-        iVar5 = 0;
-        *(uint *)(local_98 + 0xdc) = (uint)bVar1;
-        if ((float)(uint)bVar1 != 0.0) {
-          pCVar8 = local_98 + 0xec;
-          pCVar13 = (CCloth *)(pbVar17 + 0x10);
-          pCVar7 = local_98;
-          pbVar18 = pbVar17;
+        pSVar20 = local_a0->vertex_data_ptr[0] + local_84;
+        bVar2 = pSVar20->num_bone_influences;
+        iVar8 = 0;
+        local_98->bone_influence_count = (uint)bVar2;
+        if (bVar2 != 0) {
+          pCVar12 = local_98->bone_positions;
+          pCVar11 = pSVar20->bone_offsets;
+          pSVar17 = local_98;
+          pSVar23 = pSVar20;
           do {
-            *(uint *)(pCVar7 + 0xe0) = (uint)pbVar17[1];
-            if (pCVar8 != pCVar13) {
-              *(float *)pCVar8 = *(float *)pCVar13;
-              *(float *)(pCVar8 + 4) = *(float *)(pCVar13 + 4);
-              *(float *)(pCVar8 + 8) = *(float *)(pCVar13 + 8);
+            pSVar17->bone_index[0] = (uint)pSVar20->bone_indices[0];
+            if (pCVar12 != pCVar11) {
+              pCVar12->x = pCVar11->x;
+              pCVar12->y = pCVar11->y;
+              pCVar12->z = pCVar11->z;
             }
-            pfVar14 = (float *)(pbVar18 + 4);
-            pCVar8 = pCVar8 + 0xc;
-            pCVar13 = pCVar13 + 0xc;
-            pbVar17 = pbVar17 + 1;
-            pbVar18 = pbVar18 + 4;
-            iVar5 = iVar5 + 1;
-            *(float *)(pCVar7 + 0x110) = *pfVar14;
-            pCVar7 = pCVar7 + 4;
-          } while (iVar5 < (int)*(float *)(local_98 + 0xdc));
+            pfVar22 = pSVar23->bone_weights;
+            pCVar12 = pCVar12 + 1;
+            pCVar11 = pCVar11 + 1;
+            pSVar20 = (SVert *)pSVar20->bone_indices;
+            pSVar23 = (SVert *)pSVar23->bone_weights;
+            iVar8 = iVar8 + 1;
+            pSVar17->bone_weights[0] = *pfVar22;
+            pSVar17 = (SClothVertex *)&(pSVar17->position).y;
+          } while (iVar8 < local_98->bone_influence_count);
         }
         local_24 = local_24 + 1;
-        local_44 = local_44 + 4;
-      } while (local_24 < *(int *)(param_1 + 0x39ce8));
+        local_44 = (CCloth *)((local_44->model).model_filename + 4);
+      } while (local_24 < param_1->locked_vertex_count);
     }
-    iVar5 = 0;
-    if (0 < *(int *)(param_1 + 0x37b4c)) {
+    iVar8 = 0;
+    if (0 < param_1->collide_bone_count) {
       do {
-        core_cloth_cpp_CCloth_orientBoneToChild_FUN_0043d680(param_1,iVar5,param_4);
-        iVar5 = iVar5 + 1;
-      } while (iVar5 < *(int *)(param_1 + 0x37b4c));
+        core_cloth_cpp_CCloth_orientBoneToChild_FUN_0043d680(param_1,iVar8,param_4);
+        iVar8 = iVar8 + 1;
+      } while (iVar8 < param_1->collide_bone_count);
     }
     local_a8 = 0;
-    if (0 < *(int *)(param_1 + 0x39ce8)) {
-      local_64 = &param_4->field_0xe80;
-      local_74 = param_1 + 0x398;
+    if (0 < param_1->locked_vertex_count) {
+      local_64 = (param_4->bone_transform).bone_model_matrices;
+      local_74 = param_1->vertices;
       local_30 = 0;
       local_2c = param_1;
       do {
-        local_78 = local_74 + *(int *)(local_2c + 0x39cec) * 0x11c;
+        local_78 = local_74 + local_2c->locked_vertex_indices[0];
         local_38 = 0;
-        local_34 = param_1 + local_30;
-        for (local_28 = 0; local_28 < *(int *)local_a0; local_28 = local_28 + 1) {
+        local_34 = (param_1->model).model_filename + local_30;
+        for (local_28 = 0; local_28 < local_a0->num_lods; local_28 = local_28 + 1) {
           local_6c = 1e+30;
           local_58 = local_38;
           local_3c = 0;
-          for (local_1c = 0; local_1c < *(int *)(&local_a0->field_0x2c + local_58);
+          for (local_1c = 0; local_1c < *(int *)((int)local_a0->vertex_count + local_58);
               local_1c = local_1c + 1) {
             local_15c = 0.0;
-            pfVar15 = (float *)(local_3c + *(int *)(&local_a0->field_0x40 + local_58));
+            pfVar19 = (float *)(local_3c + *(int *)((int)local_a0->vertex_data_ptr + local_58));
             local_158 = 0.0;
-            local_68 = pfVar15;
+            local_68 = pfVar19;
             local_154 = 0.0;
-            local_40 = pfVar15 + 4;
-            pfVar14 = pfVar15;
-            for (local_14 = 0; pfVar14 = pfVar14 + 1, local_14 < (int)(uint)*(byte *)local_68;
+            local_40 = pfVar19 + 4;
+            pfVar22 = pfVar19;
+            for (local_14 = 0; pfVar22 = pfVar22 + 1, local_14 < (int)(uint)*(byte *)local_68;
                 local_14 = local_14 + 1) {
-              core_xform_cpp_FUN_00583260
-                        (local_40,local_64 + (uint)*(byte *)((int)pfVar15 + 1) * 0x30);
+              core_xform_cpp_FUN_00583260(local_40,local_64 + *(byte *)((int)pfVar19 + 1));
               local_114 = local_d8;
-              *(uint *)((int)&stack0xfffffef0 + (uint)bVar19 * -8) =
-                   *(uint *)(&stack0xffffff2c + (uint)bVar19 * -8);
-              *(uint *)((int)&stack0xfffffef4 + (uint)bVar19 * -8 + (uint)bVar19 * -8) =
-                   *(uint *)(&stack0xffffff30 + (uint)bVar19 * -8 + (uint)bVar19 * -8);
-              local_e4 = local_114 * *pfVar14;
-              local_e0 = local_110 * *pfVar14;
-              pfVar15 = (float *)((int)pfVar15 + 1);
-              local_dc = local_10c * *pfVar14;
-              local_108 = local_114 * *pfVar14;
-              *(uint *)((int)&stack0xfffffefc + (uint)bVar19 * -8) =
-                   *(uint *)((int)&stack0xffffff20 + (uint)bVar19 * -8);
-              *(uint *)((int)&stack0xffffff00 + (uint)bVar19 * -8 + (uint)bVar19 * -8) =
-                   *(uint *)((int)&stack0xffffff24 + (uint)bVar19 * -8 + (uint)bVar19 * -8);
+              *(uint *)((int)&stack0xfffffef0 + (uint)bVar24 * -8) =
+                   *(uint *)(&stack0xffffff2c + (uint)bVar24 * -8);
+              *(uint *)((int)&stack0xfffffef4 + (uint)bVar24 * -8 + (uint)bVar24 * -8) =
+                   *(uint *)(&stack0xffffff30 + (uint)bVar24 * -8 + (uint)bVar24 * -8);
+              local_e4 = local_114 * *pfVar22;
+              local_e0 = local_110 * *pfVar22;
+              pfVar19 = (float *)((int)pfVar19 + 1);
+              local_dc = local_10c * *pfVar22;
+              local_108 = local_114 * *pfVar22;
+              *(uint *)((int)&stack0xfffffefc + (uint)bVar24 * -8) =
+                   *(uint *)((int)&stack0xffffff20 + (uint)bVar24 * -8);
+              *(uint *)((int)&stack0xffffff00 + (uint)bVar24 * -8 + (uint)bVar24 * -8) =
+                   *(uint *)((int)&stack0xffffff24 + (uint)bVar24 * -8 + (uint)bVar24 * -8);
               local_15c = local_15c + local_108;
               local_158 = local_158 + local_104;
               local_154 = local_154 + local_100;
               local_40 = local_40 + 3;
             }
-            local_150 = *(float *)local_78 - local_15c;
-            local_14c = *(float *)(local_78 + 4) - local_158;
-            local_148 = *(float *)(local_78 + 8) - local_154;
-            local_138 = *(float *)local_78 - local_15c;
-            *(uint *)((int)&stack0xfffffecc + (uint)bVar19 * -8) =
-                 *(uint *)((int)&stack0xfffffeb4 + (uint)bVar19 * -8);
-            *(uint *)((int)&stack0xfffffed0 + (uint)bVar19 * -8 + (uint)bVar19 * -8) =
-                 *(uint *)((int)&stack0xfffffeb8 + (uint)bVar19 * -8 + (uint)bVar19 * -8);
+            local_150 = (local_78->position).x - local_15c;
+            local_14c = (local_78->position).y - local_158;
+            local_148 = (local_78->position).z - local_154;
+            local_138 = local_150;
+            *(uint *)((int)&stack0xfffffecc + (uint)bVar24 * -8) =
+                 *(uint *)((int)&stack0xfffffeb4 + (uint)bVar24 * -8);
+            *(uint *)((int)&stack0xfffffed0 + (uint)bVar24 * -8 + (uint)bVar24 * -8) =
+                 *(uint *)((int)&stack0xfffffeb8 + (uint)bVar24 * -8 + (uint)bVar24 * -8);
             local_5c = local_130 * local_130 + local_138 * local_138 + local_134 * local_134;
             if (local_5c < local_6c) {
               local_6c = local_5c;
@@ -393,23 +405,23 @@ void core_cloth_cpp_FUN_0043cb00(CCloth *param_1,CCloth *param_2,CCloth *param_3
           local_34 = local_34 + 400;
         }
         local_a8 = local_a8 + 1;
-        local_2c = local_2c + 4;
+        local_2c = (CCloth *)((local_2c->model).model_filename + 4);
         local_30 = local_30 + 4;
-      } while (local_a8 < *(int *)(param_1 + 0x39ce8));
+      } while (local_a8 < param_1->locked_vertex_count);
     }
-    core_skeleton_cpp_FUN_0054c110(param_4);
+    core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0054c110(param_4);
   }
-  iVar5 = 0;
-  pCVar13 = param_1;
-  if (0 < *(int *)(param_1 + 0x104)) {
+  iVar8 = 0;
+  pCVar21 = param_1;
+  if (0 < (param_1->model).vertex_count) {
     do {
-      *(uint *)(pCVar13 + 0x470) = 0xffffffff;
-      iVar5 = iVar5 + 1;
-      pCVar13 = pCVar13 + 0x11c;
-    } while (iVar5 < *(int *)(param_1 + 0x104));
+      pCVar21->vertices[0].collide_bone_index = -1;
+      iVar8 = iVar8 + 1;
+      pCVar21 = (CCloth *)&(pCVar21->model).env_map_opac_list;
+    } while (iVar8 < (param_1->model).vertex_count);
   }
-  *(uint *)(param_1 + 0x3ab2c) = 0;
-  *(uint *)(param_1 + 0x3ab28) = *(uint *)(param_1 + 0x3ab2c);
-  *(uint *)(param_1 + 0x3ab24) = *(uint *)(param_1 + 0x3ab28);
+  (param_1->wind_velocity).z = 0.0;
+  (param_1->wind_velocity).y = (param_1->wind_velocity).z;
+  (param_1->wind_velocity).x = (param_1->wind_velocity).y;
   return;
 }

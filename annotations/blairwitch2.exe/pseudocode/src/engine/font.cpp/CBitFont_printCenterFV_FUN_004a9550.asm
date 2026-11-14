@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_font_cpp_CBitFont_printCenterFV_FUN_004a9550(CBitFont *this_ptr,int y,int color_mode,int color_value,undefined4 format_string,undefined4 param_6)
+; int __cdecl engine_font_cpp_CBitFont_printCenterFV_FUN_004a9550(CBitFont *this_ptr,int y,int color_mode,int color_value,char *format_string,va_list_t args)
 ;
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr
@@ -9,6 +9,7 @@
 ; int              Stack[0xc]:4   color_mode
 ; int              Stack[0x10]:4   color_value
 ; char *           Stack[0x14]:4   format_string
+; va_list_t        Stack[0x18]:4   args
 ;
 ; Called Functions:
 ;   crt_stdio.c_vsprintf_FUN_005b7768
@@ -31,7 +32,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004a956a
     PUSH EAX                            ; 004a956e
     CALL crt_stdio.c_vsprintf_FUN_005b7768 ; 004a956f
-        ;   XREF to: 005b7768 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_005b7768()
+        ;   XREF to: 005b7768 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005b7768(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 004a9574
     MOV EAX,ESP                         ; 004a9577
     PUSH EAX                            ; 004a9579

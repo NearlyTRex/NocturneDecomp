@@ -2,15 +2,152 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CVector3f;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/enums/EAimMode.h"
+#include "types/enums/EControlMode.h"
+#include "types/enums/EHeroType.h"
 
 // Structure: CGame
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0xb20 (2848 bytes)
 #pragma pack(push, 1)
 typedef struct CGame {
-    char field_0[2848]; // 0x0
+    int game_pixx; // 0x0
+    int game_pixy; // 0x4
+    int game_bpp; // 0x8
+    int halo_mode; // 0xc
+    int subtitle_mode; // 0x10
+    int blood_flag; // 0x14
+    int nudity_flag; // 0x18
+    int foul_language_flag; // 0x1c
+    int quimby_flag; // 0x20
+    int shadow_flag; // 0x24
+    int key_walk; // 0x28
+    int key_backup; // 0x2c
+    int key_run; // 0x30
+    int key_strafe; // 0x34
+    int key_strafe_left; // 0x38
+    int key_strafe_right; // 0x3c
+    int key_right; // 0x40
+    int key_left; // 0x44
+    int key_fire; // 0x48
+    int key_use_item; // 0x4c
+    int key_light; // 0x50
+    int key_infrared; // 0x54
+    int key_field_notes; // 0x58, Added in this build
+    int key_map; // 0x5c, Added in this build
+    int key_compass; // 0x60, Added in this build
+    int key_sps; // 0x64, Added in this build
+    int key_draw; // 0x68
+    int key_jump; // 0x6c
+    int key_quick_turn; // 0x70, Added in this build
+    int key_point_up; // 0x74
+    int key_point_down; // 0x78
+    int key_weapon_1; // 0x7c
+    int key_weapon_2; // 0x80
+    int key_weapon_3; // 0x84
+    int key_weapon_4; // 0x88
+    int key_weapon_5; // 0x8c
+    int key_next_weapon; // 0x90
+    int key_prev_weapon; // 0x94
+    int key_next_item; // 0x98
+    int key_prev_item; // 0x9c
+    int key_item_desc; // 0xa0
+    int key_next_ammo; // 0xa4
+    int invert_mouse_y_axis; // 0xa8
+    int always_run; // 0xac
+    int x_mouse_sensitivity; // 0xb0
+    int y_mouse_sensitivity; // 0xb4
+    int x_center; // 0xb8
+    int y_center; // 0xbc
+    int x_stick_min; // 0xc0
+    int x_stick_max; // 0xc4
+    int y_stick_min; // 0xc8
+    int y_stick_max; // 0xcc
+    EControlMode game_control; // 0xd0
+    EHeroType hero_number; // 0xd4
+    EAimMode aim_mode; // 0xd8
+    int auto_use_health; // 0xdc
+    int cinematic_skip_in_progress; // 0xe0
+    int puzzle_difficulty_mode; // 0xe4, Added in this build
+    int combat_difficulty_mode; // 0xe8, Added in this build
+    char debug_info_string[256]; // 0xec
+    int god_mode_enabled; // 0x1ec
+    int freeze_enemies_enabled; // 0x1f0
+    int event_processing_enabled; // 0x1f4
+    int subtitle_system_enabled; // 0x1f8
+    int gratuitous_dismemberment; // 0x1fc
+    int camera_debug_enabled; // 0x200
+    int debug_toggle_flag; // 0x204
+    float time_scale_factor; // 0x208
+    int suppress_set_geometry; // 0x20c
+    int render_mode; // 0x210
+    int editor_tools_enabled; // 0x214
+    int is_paused; // 0x218
+    int wait_for_keypress; // 0x21c
+    int big_hat_cheat; // 0x220
+    int skip_frame_render; // 0x224
+    int profile_mode; // 0x228
+    int developer_mode_enabled; // 0x22c
+    int head_of_horror_cheat; // 0x230
+    int geometry_debug_enabled; // 0x234
+    int collision_render_enabled; // 0x238
+    int player_hit_flag; // 0x23c
+    int gamma; // 0x240
+    int letterbox_mode; // 0x244
+    int allow_damage_flag; // 0x248
+    int allow_enemy_attack_flag; // 0x24c
+    int is_loading; // 0x250
+    int hero_controls_blocked; // 0x254
+    int is_processing; // 0x258
+    int goggles_active; // 0x25c
+    int special_view_active; // 0x260, Added in this build
+    int flashlight_active; // 0x264
+    float total_game_time; // 0x268
+    int damageable_enemy_count; // 0x26c
+    float total_play_time; // 0x270
+    int total_kill_count; // 0x274
+    int act_completion_state; // 0x278
+    int clocktime; // 0x27c
+    int delta_time_int; // 0x280
+    float delta_time_float; // 0x284
+    int timing_related_flag; // 0x288
+    int frame_counter; // 0x28c
+    int camera_view_index; // 0x290
+    int is_game_active; // 0x294
+    int screen_clear_enabled; // 0x298
+    int screen_clear_condition; // 0x29c
+    int console_enabled; // 0x2a0
+    char message_text[256]; // 0x2a4
+    float message_timer; // 0x3a4
+    float bitmap_display_time; // 0x3a8, Added in this build
+    int status_display_count; // 0x3ac
+    char status_bar_names[5][256]; // 0x3b0
+    float status_bar_values[5]; // 0x8b0
+    float status_bar_timers[5]; // 0x8c4
+    char bitmap_filename[256]; // 0x8d8
+    int bitmap_width; // 0x9d8
+    int bitmap_height; // 0x9dc
+    struct CVector3f* debug_fudge_target; // 0x9e0
+    float debug_fudge_step; // 0x9e4
+    int need_chapter_reload; // 0x9e8
+    char chapter_reload_filename[256]; // 0x9ec
+    int show_customizable_keys; // 0xaec
+    int key_drop; // 0xaf0, Added in this build
+    float alpha_fade_alpha; // 0xaf4, Added in this build
+    float alpha_fade_start; // 0xaf8, Added in this build
+    float alpha_fade_end; // 0xafc, Added in this build
+    float alpha_fade_duration; // 0xb00, Added in this build
+    float alpha_fade_time_left; // 0xb04, Added in this build
+    float alpha_fade_red; // 0xb08, Added in this build
+    float alpha_fade_green; // 0xb0c, Added in this build
+    float alpha_fade_blue; // 0xb10, Added in this build
+    int alpha_fade_active; // 0xb14, Added in this build
+    int alpha_fade_texture; // 0xb18, Added in this build
+    void* vtable; // 0xb1c, Added in this build
 } CGame;
 #pragma pack(pop)
 

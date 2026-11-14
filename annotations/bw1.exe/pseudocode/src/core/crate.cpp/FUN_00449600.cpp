@@ -9,38 +9,36 @@
 void __cdecl core_crate_cpp_FUN_00449600(CCrate *this_ptr)
 
 {
-  int iVar1;
-  uint *puVar2;
+  CLocation *pCVar1;
+  int iVar2;
+  CBoundingBox3D *unaff_ESI;
   uint *puVar3;
-  byte bVar4;
-  uint local_40 [6];
-  uint local_28;
-  float fStack_24;
-  float fStack_18;
-  byte auStack_10 [12];
+  uint *puVar4;
+  byte bVar5;
+  uint auStack_38 [4];
+  uint local_28 [8];
+  float fStack_8;
   
-  bVar4 = 0;
-  if (*(int *)&this_ptr->field_0x70 != 1) {
+  bVar5 = 0;
+  if ((this_ptr->base).lifecycle_state != ACTOR_CREATED) {
     return;
   }
-  engine_console_cpp_FUN_00445430(g_CConsolePtr,"?%s exploding!\n" + 1,this_ptr);
-  (**(code **)(*(int *)&this_ptr->field_0x154 + 0x1c))(this_ptr);
-  puVar2 = local_40;
-  puVar3 = &local_28;
-  for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+  engine_console_cpp_CConsole_printf_FUN_00445430(g_CConsolePtr,"?%s exploding!\n" + 1);
+  (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,unaff_ESI);
+  pCVar1 = &(this_ptr->base).location;
+  puVar3 = auStack_38;
+  puVar4 = local_28;
+  for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *puVar4 = *puVar3;
+    puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
+    puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
   }
-  if (auStack_10 != &this_ptr->field_0x20) {
-    auStack_10._0_4_ = *(uint *)&this_ptr->field_0x20;
-    auStack_10._4_4_ = *(uint *)&this_ptr->field_0x24;
-    auStack_10._8_4_ = *(uint *)&this_ptr->field_0x28;
+  if ((CLocation *)&fStack_8 != pCVar1) {
+    fStack_8 = (pCVar1->position).x;
   }
-  auStack_10._4_4_ = (fStack_18 - fStack_24) + (float)auStack_10._4_4_;
   core_fire_cpp_CFireEffect_createExplosion_FUN_004b6c60
-            (0x01C57074,(CVector3f *)auStack_10,32.0,1500.0,4.0);
-  core_mission_cpp_FUN_0051b740(0x01D2C900,this_ptr,1);
-  *(uint *)&this_ptr->field_0x70 = 2;
+            (0x01C57074,(CVector3f *)&fStack_8,32.0,1500.0,4.0);
+  core_mission_cpp_CDemonMission_markActorToDelete_FUN_0051b740(0x01D2C900,this_ptr,1);
+  (this_ptr->base).lifecycle_state = ACTOR_DESTROYED;
   return;
 }

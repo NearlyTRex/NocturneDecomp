@@ -8,8 +8,8 @@
 ; char *           Stack[0x8]:4   section
 ;
 ; XREF[3]:
-;   core_inivar.cpp_FUN_004d8e70 at 004d8eb2
-;   core_inivar.cpp_FUN_004d95c0 at 004d95e8
+;   core_inivar.cpp_readIniData_FUN_004d8e70 at 004d8eb2
+;   core_inivar.cpp_writeIniData_FUN_004d95c0 at 004d95e8
 ;   engine_ini.cpp_FUN_004d8a20 at 004d8a43
 ;
 ; *****************************************************************************

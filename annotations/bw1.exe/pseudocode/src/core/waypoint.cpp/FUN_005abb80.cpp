@@ -31,8 +31,8 @@ int core_waypoint_cpp_FUN_005abb80(uint param_1,int param_2,uint param_3)
     }
     if (0 < *(int *)(param_2 + 0x374)) {
       iVar4 = 0;
-      for (iVar8 = 0; iVar8 < *(int *)&g_CDemonSetPtr->field_0x154e74; iVar8 = iVar8 + 1) {
-        piVar1 = (int *)(&g_CDemonSetPtr->field_0x154e78 + iVar4);
+      for (iVar8 = 0; iVar8 < g_CDemonSetPtr->waypoint_count; iVar8 = iVar8 + 1) {
+        piVar1 = (int *)((int)g_CDemonSetPtr->waypoints + iVar4);
         iVar4 = iVar4 + 4;
         *(uint *)(*piVar1 + 0x558) = 0x7149f2ca;
       }
@@ -77,8 +77,8 @@ int core_waypoint_cpp_FUN_005abb80(uint param_1,int param_2,uint param_3)
           iVar4 = 0;
           local_18 = 1e+29;
           iVar8 = 0;
-          for (iVar9 = 0; iVar9 < *(int *)&g_CDemonSetPtr->field_0x154e74; iVar9 = iVar9 + 1) {
-            iVar2 = *(int *)(&g_CDemonSetPtr->field_0x154e78 + iVar8);
+          for (iVar9 = 0; iVar9 < g_CDemonSetPtr->waypoint_count; iVar9 = iVar9 + 1) {
+            iVar2 = *(int *)((int)g_CDemonSetPtr->waypoints + iVar8);
             if ((*(float *)(iVar2 + 0x558) < local_18) &&
                (iVar6 = core_waypoint_cpp_FUN_005ab880(param_1,iVar2 + 0x20,0,param_3), iVar6 != 0))
             {

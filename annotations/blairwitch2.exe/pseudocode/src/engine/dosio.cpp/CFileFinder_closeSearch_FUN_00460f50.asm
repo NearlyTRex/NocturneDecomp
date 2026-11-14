@@ -7,7 +7,7 @@
 ; CFileFinder *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[7]:
-;   core_podmain.cpp_FUN_0051c000 at 0051c073
+;   core_podmain.cpp_CDemonPod_load_FUN_0051c000 at 0051c073
 ;   engine_dosio.cpp_CFileFinder_dtor_FUN_00460e30 at 00460e36
 ;   engine_dosio.cpp_CFileFinder_openSearch_FUN_00460e50 at 00460e5f
 ;   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00481870 at 00481a18

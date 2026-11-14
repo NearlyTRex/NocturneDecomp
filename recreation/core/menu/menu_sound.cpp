@@ -1,4 +1,5 @@
 #include "common/render/renderstate.h"
+#include "core/frontend.h"
 #include "core/game/game.h"
 #include "core/menu/menu.h"
 #include "core/menu/soundoptionspage.h"
@@ -9,6 +10,7 @@
 #include "platform/rendervertex.h"
 #include "sound/sndmain/sndmain.h"
 
+#include <algorithm>
 #include <cmath>
 #include <cstddef>
 #include <cstdint>
@@ -43,13 +45,12 @@ constexpr int kBarFlags =
     static_cast<int>(common::kRenderTextured | common::kRenderBlend | common::kRenderSourceAlpha);
 constexpr int kFixedShift = 16;
 
-struct SSpectrumBar {
-    int x_center = 0;
-    int height_half = 0;
-};
-
 } // namespace
 
+// deferred: over the sound the pause menu holds, the music started again (channel back on,
+//   unmuted) without configure's reset; a change that reopens the output still loses the held
+//   sounds, which the pause menu starts again where they were (the decomp's PAUSE_SOUND), with
+//   the pause menu
 // nocedit 0x00511e50
 void CMenu::configureSoundOptions() {
     owners_.game.saveClockTime();
@@ -60,7 +61,9 @@ void CMenu::configureSoundOptions() {
 // The frame counter advances even while nothing plays; the original sized the bars from
 // g_WindowWidth and g_WindowHeight, the screen's. It drew them left to right, each in another
 // flame frame from the last; drawn a frame at a time, which adds up the same, the hardware
-// renderer takes them in a handful of batches instead of one each.
+// renderer takes them in a handful of batches instead of one each. The enhanced front end runs
+// at the game's resolution, so the bars' pitch and width grow with its layout, and each picks
+// its frame by the column it would have had at 640x480.
 void CMenu::drawAudioSpectrum() {
     audio_visualization_counter_ += owners_.game.getDeltaTimeInt() * kVisualizationFramesPerSecond;
     if (audio_visualization_counter_ >= kVisualizationWrap) {
@@ -70,53 +73,63 @@ void CMenu::drawAudioSpectrum() {
     if (!sound_main.isSoundBusy()) {
         return;
     }
+    const float scale = getScreenLayout().scale;
+    const int pitch =
+        std::max(1, static_cast<int>(std::lround(static_cast<float>(kBarPitch) * scale)));
+    const int half_width =
+        std::max(1, static_cast<int>(std::lround(static_cast<float>(kBarHalfWidth) * scale)));
     const int channels = sound_main.getAudioChannelCount();
     const int width = owners_.screen.getWindowWidth();
     const int height = owners_.screen.getWindowHeight();
     const int margin = width / kMarginDivisor;
     const int per_channel = width / channels;
-    const int bar_count = (per_channel - (2 * margin)) / kBarPitch;
+    const int bar_count = (per_channel - (2 * margin)) / pitch;
     const double band_ratio = std::pow(kBandSpan, 1.0 / bar_count);
     const int bottom = height - 1;
-    std::vector<SSpectrumBar> bars;
+    std::vector<SAudioSpectrumBar> bars;
     for (int channel = 0; channel < channels; ++channel) {
         double band_hz = kLowestBandHz;
         const int left = (per_channel * channel) + margin;
-        for (int x = left; x < left + (bar_count * kBarPitch); x += kBarPitch) {
+        for (int x = left; x < left + (bar_count * pitch); x += pitch) {
             const double next_hz = band_hz * band_ratio;
             const float level = sound_main.analyzeFrequencyBand(
                 channel, static_cast<float>(band_hz), static_cast<float>(next_hz));
             const auto top = static_cast<int>(
                 std::lround(static_cast<float>(height) -
                             (level * static_cast<float>(height) * kFullLevelShare)));
-            bars.push_back({.x_center = x, .height_half = bottom - top + 1});
+            const auto column = static_cast<int>(std::lround(static_cast<float>(x) / scale));
+            bars.push_back({.x_center = x,
+                            .half_width = half_width,
+                            .height_half = bottom - top + 1,
+                            .frame = getAudioSpectrumFrame(column)});
             band_hz = next_hz;
         }
     }
     for (int frame = 0; frame < kVisualizationFrameCount; ++frame) {
-        for (const SSpectrumBar &bar : bars) {
-            if (getAudioSpectrumFrame(bar.x_center) == frame) {
-                renderAudioSpectrumBar(bar.x_center, bottom, bar.height_half);
+        for (const SAudioSpectrumBar &bar : bars) {
+            if (bar.frame == frame) {
+                renderAudioSpectrumBar(bar, bottom);
             }
         }
     }
 }
 
-int CMenu::getAudioSpectrumFrame(int x_center) const {
-    return ((audio_visualization_counter_ >> kVisualizationFrameShift) + x_center) &
+int CMenu::getAudioSpectrumFrame(int column) const {
+    return ((audio_visualization_counter_ >> kVisualizationFrameShift) + column) &
            (kVisualizationFrameCount - 1);
 }
 
-// Half transparent and added to what is under it, in the flame frame the counter and its x pick.
+// Half transparent and added to what is under it.
 // nocedit 0x0050fe70
-void CMenu::renderAudioSpectrumBar(int x_center, int y_top, int height_half) {
+void CMenu::renderAudioSpectrumBar(const SAudioSpectrumBar &bar, int y_top) {
+    const int height_half = bar.height_half;
     if (height_half <= 0) {
         return;
     }
     engine::CDemonRenderer &renderer = owners_.renderer;
     const std::span<platform::SRenderVertex> buffer = renderer.getVertexBuffer();
-    const int left = (x_center - kBarHalfWidth) << kFixedShift;
-    const int right = (x_center + kBarHalfWidth) << kFixedShift;
+    const int left = (bar.x_center - bar.half_width) << kFixedShift;
+    const int right = (bar.x_center + bar.half_width) << kFixedShift;
     const int bottom = y_top << kFixedShift;
     const int top = (y_top - (2 * height_half)) << kFixedShift;
     buffer[0].projected_vertex.screen_x = left;
@@ -137,8 +150,7 @@ void CMenu::renderAudioSpectrumBar(int x_center, int y_top, int height_half) {
     buffer[3].v = kTextureInsetLow;
     renderer.setRenderAlpha(kBarAlpha);
     renderer.setBlendMode(kAddBlend);
-    renderer.captureTexture(
-        audio_spectrum_textures_.at(static_cast<std::size_t>(getAudioSpectrumFrame(x_center))));
+    renderer.captureTexture(audio_spectrum_textures_.at(static_cast<std::size_t>(bar.frame)));
     renderer.renderTexturedDirect({.surface_normal = {}, .vertex_indices = {0, 1, 2, 3}},
                                   kBarFlags);
     renderer.setBlendMode(kNoBlend);

@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 90,
+    "complexity_score": 54,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 40,
-    "suspect_count": 4,
+    "pseudocode_lines": 39,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_field"
+      "undefined_data"
     ],
-    "total_lines": 152
+    "total_lines": 151
   },
   "cross_references": [
     {
@@ -103,6 +102,32 @@
     },
     "pcode_op_count": 805
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00476c30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00477ca0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00499a50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0046b8d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 36,
     "local_size": 28,
@@ -142,35 +167,11 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "((iVar4 < *(int *)&this_ptr->field_0x40 && (iVar5 < *(int *)&this_ptr->field_0x44)))) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "((iVar4 < *(int *)&this_ptr->field_0x40 && (iVar5 < *(int *)&this_ptr->field_0x44)))) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "(iVar6 < *(int *)&this_ptr->field_0x48)) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 32,
       "match": "DAT_0061ab68",
       "severity": "mild",
-      "text": "((*(byte *)(*(int *)pCVar3 + (uVar2 & 7) * 8 + uVar7) & (&DAT_0061ab68)[uVar1 & 7]) != 0)",
+      "text": "((pCVar3->voxel_buffer1->voxels[uVar2 & 7][uVar7] & (&DAT_0061ab68)[uVar1 & 7]) != 0)) {",
       "type": "undefined_data"
     }
   ]

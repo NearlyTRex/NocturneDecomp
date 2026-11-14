@@ -7,7 +7,7 @@
 ; CLightActor *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_boxactor.cpp_FUN_00422ea0 at 00422eb3
+;   core_boxactor.cpp_factoryFuncLightActor_FUN_00422ea0 at 00422eb3
 ;
 ; Called Functions:
 ;   core_boxactor.cpp_CBoxActor_ctor_FUN_00421ca0

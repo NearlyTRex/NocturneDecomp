@@ -2,13 +2,13 @@
 // Address: 0055bab0
 // Address Range: [[0055bab0, 0055bf00]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl core_setdir_cpp_testOBBIntersection_FUN_0055bab0(float *param_1,float *param_2)
+// Signature: int __cdecl core_setdir_cpp_testOBBIntersection_FUN_0055bab0(SVDBox *obb_a,SVDBox *obb_b)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-uint __cdecl core_setdir_cpp_testOBBIntersection_FUN_0055bab0(float *param_1,float *param_2)
+int __cdecl core_setdir_cpp_testOBBIntersection_FUN_0055bab0(SVDBox *obb_a,SVDBox *obb_b)
 
 {
   uint uVar1;
@@ -61,54 +61,54 @@ uint __cdecl core_setdir_cpp_testOBBIntersection_FUN_0055bab0(float *param_1,flo
   double local_48;
   double local_40;
   uint local_38;
-  float *local_34;
+  CMatrix3x3f *local_34;
   float local_30;
   float local_2c;
   float local_28;
   float *local_24;
   uint local_20;
-  float *local_1c;
+  CMatrix3x3f *local_1c;
   float local_18;
   float local_14;
   
   bVar3 = 0;
-  local_bc = -param_2[3];
-  local_b8 = -param_2[4];
-  local_b4 = -param_2[5];
+  local_bc = -(obb_b->extents).x;
+  local_b8 = -(obb_b->extents).y;
+  local_b4 = -(obb_b->extents).z;
   if (&local_134 != &local_bc) {
     local_134 = local_bc;
     local_130 = local_b8;
     local_12c = local_b4;
   }
-  if (&local_128 != param_2 + 3) {
-    local_128 = param_2[3];
-    local_124 = param_2[4];
-    local_120 = param_2[5];
+  if ((CVector3f *)&local_128 != &obb_b->extents) {
+    local_128 = (obb_b->extents).x;
+    local_124 = (obb_b->extents).y;
+    local_120 = (obb_b->extents).z;
   }
   local_80 = local_bc;
   local_7c = local_b8;
   local_78 = local_b4;
   __arrinit(local_194,8,&g_CVectorTypeInfo);
-  local_1c = param_2 + 6;
-  local_34 = param_1 + 6;
+  local_1c = &obb_b->rotation_matrix;
+  local_34 = &obb_a->rotation_matrix;
   local_20 = 0;
   do {
-    local_30 = param_1[3];
+    local_30 = (obb_a->extents).x;
     local_24 = (float *)((int)local_194 + local_20 * 0xc);
     while( true ) {
       local_e0 = local_30;
       if ((local_20 & 2) == 0) {
-        local_2c = param_1[4];
+        local_2c = (obb_a->extents).y;
       }
       else {
-        local_2c = -param_1[4];
+        local_2c = -(obb_a->extents).y;
       }
       local_dc = local_2c;
       if ((local_20 & 4) == 0) {
-        local_28 = param_1[5];
+        local_28 = (obb_a->extents).z;
       }
       else {
-        local_28 = -param_1[5];
+        local_28 = -(obb_a->extents).z;
       }
       local_d8 = local_28;
       core_dirmat_cpp_FUN_0045f690(local_34,&local_e0);
@@ -117,10 +117,10 @@ uint __cdecl core_setdir_cpp_testOBBIntersection_FUN_0055bab0(float *param_1,flo
            *(uint *)((int)afStack_70 + ((uint)bVar3 * -2 + 3) * 4);
       *(uint *)((int)local_d0 + ((uint)bVar3 * -2 + (uint)bVar3 * -2 + 4) * 4) =
            *(uint *)((int)afStack_70 + ((uint)bVar3 * -2 + (uint)bVar3 * -2 + 4) * 4);
-      local_b0 = local_d0[2] + *param_1;
-      local_ac[0] = local_d0[3] + param_1[1];
-      local_ac[1] = local_c0 + param_1[2];
-      local_104 = local_d0[2] + *param_1;
+      local_b0 = local_d0[2] + (obb_a->position).x;
+      local_ac[0] = local_d0[3] + (obb_a->position).y;
+      local_ac[1] = local_c0 + (obb_a->position).z;
+      local_104 = local_b0;
       *(uint *)((int)local_100 + (uint)bVar3 * 0xfffffff8) =
            *(uint *)((int)local_ac + (uint)bVar3 * 0xfffffff8);
       *(uint *)((int)local_100 + ((uint)bVar3 * -2 + (uint)bVar3 * -2 + 1) * 4) =
@@ -130,10 +130,10 @@ uint __cdecl core_setdir_cpp_testOBBIntersection_FUN_0055bab0(float *param_1,flo
         local_dc = local_100[0];
         local_d8 = local_100[1];
       }
-      local_ac[2] = local_e0 - *param_2;
-      local_ac[3] = local_dc - param_2[1];
-      local_9c = local_d8 - param_2[2];
-      local_110 = local_e0 - *param_2;
+      local_ac[2] = local_e0 - (obb_b->position).x;
+      local_ac[3] = local_dc - (obb_b->position).y;
+      local_9c = local_d8 - (obb_b->position).z;
+      local_110 = local_ac[2];
       *(uint *)((int)auStack_10c + (uint)bVar3 * 0xfffffff8) =
            *(uint *)((int)local_ac + ((uint)bVar3 * -2 + 3) * 4);
       *(uint *)((int)auStack_10c + ((uint)bVar3 * -2 + (uint)bVar3 * -2 + 1) * 4) =
@@ -227,7 +227,7 @@ uint __cdecl core_setdir_cpp_testOBBIntersection_FUN_0055bab0(float *param_1,flo
         return 1;
       }
       if ((local_20 & 1) == 0) break;
-      local_30 = -param_1[3];
+      local_30 = -(obb_a->extents).x;
     }
   } while( true );
 }

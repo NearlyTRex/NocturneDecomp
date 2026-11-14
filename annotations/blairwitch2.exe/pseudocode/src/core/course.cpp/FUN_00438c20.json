@@ -17,6 +17,12 @@
   },
   "cross_references": [
     {
+      "addr": "00438a90",
+      "from_addr": "00438a96",
+      "name": "core_course.cpp_CCourse_allocMemory_FUN_00438a90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00438a70",
       "from_addr": "00438a76",
       "name": "core_course.cpp_CCourse_dtor_FUN_00438a70",
@@ -26,12 +32,6 @@
       "addr": "00438af0",
       "from_addr": "00438b00",
       "name": "core_course.cpp_CCourse_load_FUN_00438af0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00438a90",
-      "from_addr": "00438a96",
-      "name": "core_course.cpp_FUN_00438a90",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -75,7 +75,7 @@
       {
         "call_addr": "00438a96",
         "call_type": "direct",
-        "caller": "core_course.cpp_FUN_00438a90",
+        "caller": "core_course.cpp_CCourse_allocMemory_FUN_00438a90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -124,6 +124,20 @@
       "STORE": 5
     },
     "pcode_op_count": 36
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00447ee0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00444aa0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,

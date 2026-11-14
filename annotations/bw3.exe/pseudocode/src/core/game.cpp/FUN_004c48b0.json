@@ -20,7 +20,7 @@
     {
       "addr": "004b7f90",
       "from_addr": "004b81ef",
-      "name": "core_game.cpp_FUN_004b7f90",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -38,14 +38,14 @@
   },
   "function_calls": [
     {
+      "addr": "0040d400",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040d400"
+    },
+    {
       "addr": "0040d460",
       "is_variadic": false,
       "name": "engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460"
-    },
-    {
-      "addr": "0040d400",
-      "is_variadic": false,
-      "name": "engine_alphabit.cpp_FUN_0040d400"
     }
   ],
   "globals": [
@@ -200,7 +200,7 @@
       {
         "call_addr": "004b81ef",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b7f90",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -241,6 +241,14 @@
       "STORE": 45
     },
     "pcode_op_count": 282
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004dc040",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,

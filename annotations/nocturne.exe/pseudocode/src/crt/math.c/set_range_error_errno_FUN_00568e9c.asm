@@ -4,7 +4,8 @@
 ; void __cdecl crt_math_c_set_range_error_errno_FUN_00568e9c(void)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
+;   crt_fstream.cpp_FUN_00572809 at 00573608
 ;   crt_math.c_report_math_error_FUN_00572a35 at 00572a6b
 ;   crt_string.c_strtod_main_FUN_0056f852 at 0056f892
 ;

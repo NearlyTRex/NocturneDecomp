@@ -69,16 +69,16 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; XREF[11]:
-;   core_actor.cpp_FUN_00409f60 at 0040a659
-;   core_blundrbs.cpp_FUN_00410490 at 004113e9
-;   core_burncrss.cpp_FUN_00424550 at 00424d8d
-;   core_elephant.cpp_FUN_00486d40 at 004874d2
-;   core_exorcism.cpp_FUN_0048b020 at 0048b50e
-;   core_flintlck.cpp_FUN_004ae850 at 004af370
-;   core_glass.cpp_FUN_004ca550 at 004ca589
-;   core_gun.cpp_FUN_004d0fc0 at 004d17b1
-;   core_rifle.cpp_FUN_00527d70 at 00528431
-;   core_set.cpp_FUN_005353e0 at 00535783
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f60 at 0040a659
+;   core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490 at 004113e9
+;   core_burncrss.cpp_CBurncross_fire_FUN_00424550 at 00424d8d
+;   core_elephant.cpp_CElephantGun_fire_FUN_00486d40 at 004874d2
+;   core_exorcism.cpp_CExorcism_fire_FUN_0048b020 at 0048b50e
+;   core_flintlck.cpp_CFlintlock_fire_FUN_004ae850 at 004af370
+;   core_glass.cpp_CGlass_process_FUN_004ca550 at 004ca589
+;   core_gun.cpp_CGun_fire_FUN_004d0fc0 at 004d17b1
+;   core_rifle.cpp_CRifle_fire_FUN_00527d70 at 00528431
+;   core_set.cpp_CDemonSet_processActors_FUN_005353e0 at 00535783
 ;   ... and 1 more
 ;
 ; Referenced Globals:
@@ -98,8 +98,8 @@
 ; Called Functions:
 ;   core_dirmat.cpp_FUN_0045b800
 ;   core_glass.cpp_FUN_004caeb0
-;   core_set.cpp_FUN_00534820
-;   core_set.cpp_FUN_0053b0c0
+;   core_set.cpp_CDemonSet_markMirrorCameraDirty_FUN_0053b0c0
+;   core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_00534820
 ;   crt_memory.c___arrinit_FUN_005a30d7
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
 ;
@@ -128,7 +128,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004cc07d
     PUSH EAX                            ; 004cc081
     CALL crt_memory.c___arrinit_FUN_005a30d7 ; 004cc082
-        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005a30d7()
+        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005a30d7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     FLD float ptr [EBX + 0x158]         ; 004cc087
     FMUL double ptr [0x005c45e0]        ; 004cc08d | DAT_005c45e0
     LEA ESI,[ESP + 0xa4]                ; 004cc093
@@ -393,8 +393,8 @@ section .text
         ;   Label: LAB_004cc40a
     MOV ESI,dword ptr [0x00603b28]      ; 004cc40b | g_CDemonSetPtr
     PUSH ESI                            ; 004cc411 | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_0053b0c0      ; 004cc412
-        ;   XREF to: 0053b0c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0053b0c0(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_markMirrorCameraDirty_FUN_0053b0c0 ; 004cc412
+        ;   XREF to: 0053b0c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_markMirrorCameraDirty_FUN_0053b0c0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004cc417
     JMP 0x004cc076                      ; 004cc41a
         ;   XREF to: 004cc076 (UNCONDITIONAL_JUMP)  ; LAB_004cc076
@@ -415,8 +415,8 @@ section .text
         ;   Label: LAB_004cc44e
     MOV ECX,dword ptr [0x00603b28]      ; 004cc44f | g_CDemonSetPtr
     PUSH ECX                            ; 004cc455 | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_00534820      ; 004cc456
-        ;   XREF to: 00534820 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00534820(CDemonSet * this_ptr, CDemonActor * actor)
+    CALL core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_00534820 ; 004cc456
+        ;   XREF to: 00534820 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_00534820(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004cc45b
     MOV dword ptr [EBX + 0xb6c],0x1     ; 004cc45e
     ADD ESP,0x11c                       ; 004cc468

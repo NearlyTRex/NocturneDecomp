@@ -2,32 +2,31 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 182,
-    "complexity_score": 180,
+    "complexity_score": 133,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 60,
-    "suspect_count": 10,
+    "pseudocode_lines": 58,
+    "suspect_count": 6,
     "suspect_types": [
       "fast_sqrt_inline",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 242
+    "total_lines": 240
   },
   "cross_references": [
     {
       "addr": "005a9f10",
       "from_addr": "005aa22b",
-      "name": "core_water.cpp_FUN_005a9f10",
+      "name": "core_water.cpp_CWater_render_FUN_005a9f10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005ab030",
       "from_addr": "005ab181",
-      "name": "core_wateract.cpp_FUN_005ab030",
+      "name": "core_wateract.cpp_CWaterActor_renderTransparent_FUN_005ab030",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -101,7 +100,7 @@
       {
         "call_addr": "005aa22b",
         "call_type": "direct",
-        "caller": "core_water.cpp_FUN_005a9f10",
+        "caller": "core_water.cpp_CWater_render_FUN_005a9f10",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -112,7 +111,7 @@
       {
         "call_addr": "005aa2d3",
         "call_type": "direct",
-        "caller": "core_water.cpp_FUN_005a9f10",
+        "caller": "core_water.cpp_CWater_render_FUN_005a9f10",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -123,7 +122,7 @@
       {
         "call_addr": "005aa37e",
         "call_type": "direct",
-        "caller": "core_water.cpp_FUN_005a9f10",
+        "caller": "core_water.cpp_CWater_render_FUN_005a9f10",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -134,7 +133,7 @@
       {
         "call_addr": "005aa420",
         "call_type": "direct",
-        "caller": "core_water.cpp_FUN_005a9f10",
+        "caller": "core_water.cpp_CWater_render_FUN_005a9f10",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -145,7 +144,7 @@
       {
         "call_addr": "005ab181",
         "call_type": "direct",
-        "caller": "core_wateract.cpp_FUN_005ab030",
+        "caller": "core_wateract.cpp_CWaterActor_renderTransparent_FUN_005ab030",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -203,6 +202,20 @@
       "TRUNC": 3
     },
     "pcode_op_count": 1209
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00531a90",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005386d0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 116,
@@ -402,40 +415,8 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "(*(float *)&vertex_position->field_0x4 + *(float *)&position_offset->field_0x4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "(*(float *)&vertex_position->field_0x4 + *(float *)&position_offset->field_0x4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "(*(float *)&vertex_position->field_0x8 + *(float *)&position_offset->field_0x8);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "(*(float *)&vertex_position->field_0x8 + *(float *)&position_offset->field_0x8);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 57,
       "match": "DAT_00629034",
       "severity": "mild",
       "text": "(&DAT_00629034)[vertex_index * 0xc] = iVar5 << 8;",
@@ -443,7 +424,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 61,
+      "line": 59,
       "match": "DAT_00629038",
       "severity": "mild",
       "text": "(&DAT_00629038)[vertex_index * 0xc] = iVar5 << 8;",
@@ -451,7 +432,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 62,
+      "line": 60,
       "match": "DAT_0062903c",
       "severity": "mild",
       "text": "(&DAT_0062903c)[vertex_index * 0xc] = (int)ROUND(fVar6) << 8;",
@@ -459,7 +440,7 @@
     },
     {
       "description": "Inlined fast sqrt bit-trick (bias `_DAT_01cc804c`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01cc804c` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
-      "line": 30,
+      "line": 28,
       "match": "fVar4 = (float)(((int)(fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2) >> 1) + _D",
       "severity": "moderate",
       "text": "fVar4 = (float)(((int)(fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2) >> 1) + _DAT_01cc804c) ;",

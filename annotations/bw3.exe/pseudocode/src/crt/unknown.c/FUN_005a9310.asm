@@ -11,10 +11,10 @@
 ;   crt_stdio.c_ungetc_FUN_005a3480 at 005a3516
 ;   crt_unknown.c_FUN_005a33b0 at 005a33c2
 ;   crt_unknown.c_FUN_005a7e50 at 005a7ea9
-;   unkafter_2d.cpp_FUN_005b0ee0 at 005b0f07
+;   crt_unknown.c_FUN_005b0ee0 at 005b0f07
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005a3650
+;   crt_memory.c_malloc_FUN_005a3650
 ;   crt_unknown.c_FUN_005aa340
 ;
 ; *****************************************************************************
@@ -52,8 +52,8 @@ section .text
     MOV ECX,dword ptr [EBX + 0x14]      ; 005a934c
         ;   Label: LAB_005a934c
     PUSH ECX                            ; 005a934f
-    CALL crt_unknown.c_FUN_005a3650     ; 005a9350
-        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005a3650(ulong size)
+    CALL crt_memory.c_malloc_FUN_005a3650 ; 005a9350
+        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005a3650(ulong size)
     MOV EDX,dword ptr [EBX + 0x8]       ; 005a9355
     MOV dword ptr [EDX + 0x8],EAX       ; 005a9358
     MOV EAX,dword ptr [EBX + 0x8]       ; 005a935b

@@ -17,9 +17,9 @@ void __cdecl renderAudioSpectrumBar(int x_center,int y_top,int height_half);
 // Address: 004e7860
 int __cdecl FUN_004e7860(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,char *title);
 
-// Original: core_menu.cpp_FUN_004e7dc0
+// Original: core_menu.cpp_calibrateGamepad_FUN_004e7dc0
 // Address: 004e7dc0
-undefined4 FUN_004e7dc0(void);
+int __cdecl calibrateGamepad(void);
 
 // Original: core_menu.cpp_adjustMouseSensitivity_FUN_004e80f0
 // Address: 004e80f0
@@ -37,9 +37,9 @@ void __cdecl showCalibrationTest(void);
 // Address: 004e85a0
 void __cdecl FUN_004e85a0(void);
 
-// Original: core_menu.cpp_FUN_004e8f2e
-// Address: 004e8f2e
-undefined4 FUN_004e8f2e(void);
+// Original: core_menu.cpp_FUN_004e8f30
+// Address: 004e8f30
+undefined4 FUN_004e8f30(void);
 
 // Original: core_menu.cpp_FUN_004e8f80
 // Address: 004e8f80
@@ -53,21 +53,25 @@ void __cdecl FUN_004e94f0(void);
 // Address: 004ea280
 void __cdecl FUN_004ea280(int initialize_systems);
 
-// Original: core_menu.cpp_FUN_004ea4d0
+// Original: core_menu.cpp_showMainGameMenu_FUN_004ea4d0
 // Address: 004ea4d0
-int __cdecl FUN_004ea4d0(void);
+int __cdecl showMainGameMenu(void);
 
-// Original: core_menu.cpp_FUN_004ea9e0
+// Original: core_menu.cpp_addCustomKeyBinding_FUN_004ea9e0
 // Address: 004ea9e0
-void FUN_004ea9e0(undefined4 param_1,char *param_2);
+void __cdecl addCustomKeyBinding(int *key_code_ptr,char *key_name);
 
-// Original: core_menu.cpp_FUN_004eaa60
+// Original: core_menu.cpp_getKeyDisplayName_FUN_004eaa60
 // Address: 004eaa60
-char * __cdecl FUN_004eaa60(EInputCodeType key_code);
+char * __cdecl getKeyDisplayName(EInputCodeType key_code);
 
-// Original: core_menu.cpp_FUN_004eacb0
+// Original: core_menu.cpp_isKeyCodeValidForMode_FUN_004eacb0
 // Address: 004eacb0
-int __cdecl FUN_004eacb0(EInputCodeType *key_code_ptr,char *description);
+int __cdecl isKeyCodeValidForMode(EInputCodeType *key_code_ptr,char *description);
+
+// Original: core_menu.cpp_FUN_004eadf0
+// Address: 004eadf0
+int FUN_004eadf0(void);
 
 // Original: core_menu.cpp_FUN_004eae80
 // Address: 004eae80

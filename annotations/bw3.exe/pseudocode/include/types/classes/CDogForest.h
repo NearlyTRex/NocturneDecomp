@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CZombieDog.h"
 
 // Structure: CDogForest
-// Stub: size from Watcom RTTI, fields not yet recovered
+// registered under CZombieDog (registerActorClass); size 53348 from its new; no fields of its own
 // Ghidra size: 0xd064 (53348 bytes)
 #pragma pack(push, 1)
 typedef struct CDogForest {
-    char field_0[53348]; // 0x0
+    CZombieDog base; // 0x0, parent class
 } CDogForest;
 #pragma pack(pop)
 

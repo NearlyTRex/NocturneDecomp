@@ -11,6 +11,181 @@ from the wrong vtable struct, producing misleading pseudocode.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Total mismatches found: 0
+  Total mismatches found: 56
 
-  No mismatches detected.
+  By union member used:
+    _uc (CCharacter_vtable): 44
+    _ue (CEnemy_vtable): 2
+    _uh (CHero_vtable): 10
+
+  By source file:
+    core/demnfolk.cpp                        9
+    core/lightgun.cpp                        6
+    core/lightpis.cpp                        6
+    core/turret.cpp                          6
+    core/crossbow.cpp                        4
+    core/elephant.cpp                        4
+    core/shotgun.cpp                         4
+    core/weapon.cpp                          4
+    core/gun.cpp                             3
+    core/rifle.cpp                           3
+    core/tommygun.cpp                        2
+    core/djien.cpp                           1
+    core/flamegun.cpp                        1
+    core/hero.cpp                            1
+    core/melee.cpp                           1
+    core/scat.cpp                            1
+
+  By object type:
+    CDemnfolk                 9  (CDemnfolk -> CEnemy -> CCharacter -> CDemonActor)
+    CLightGun                 6  (CLightGun -> CWeapon -> CDemonActor)
+    CLightPis                 6  (CLightPis -> CWeapon -> CDemonActor)
+    CTurret                   6  (CTurret -> CWeapon -> CDemonActor)
+    CCrossbow                 4  (CCrossbow -> CWeapon -> CDemonActor)
+    CElephantGun              4  (CElephantGun -> CWeapon -> CDemonActor)
+    CShotgun                  4  (CShotgun -> CWeapon -> CDemonActor)
+    CWeapon                   4  (CWeapon -> CDemonActor)
+    CGun                      3  (CGun -> CWeapon -> CDemonActor)
+    CRifle                    3  (CRifle -> CWeapon -> CDemonActor)
+    CTommyGun                 2  (CTommyGun -> CWeapon -> CDemonActor)
+    CDjien                    1  (CDjien -> CEnemy -> CCharacter -> CDemonActor)
+    CFlameThrower             1  (CFlameThrower -> CWeapon -> CDemonActor)
+    CHero                     1  (CHero -> CCharacter -> CDemonActor)
+    CMelee                    1  (CMelee -> CWeapon -> CDemonActor)
+    CScat                     1  (CScat -> CHero -> CCharacter -> CDemonActor)
+
+====================================================================================================
+DETAILED FINDINGS
+====================================================================================================
+
+  core/demnfolk.cpp (9)
+    CDemnfolk_processDamage_FUN_0045c7b0                this_ptr on CDemnfolk        used _uh, need _ue  reset -> ?
+    CDemnfolk_processDamage_FUN_0045c7b0                this_ptr on CDemnfolk        used _uh, need _ue  toggleGoggles -> ?
+    CDemnfolk_process_FUN_00459100                      this_ptr on CDemnfolk        used _uh, need _ue  canReachPickup -> ?
+    CDemnfolk_process_FUN_00459100                      this_ptr on CDemnfolk        used _uh, need _ue  isWeaponDrawn -> ?
+    CDemnfolk_process_FUN_00459100                      this_ptr on CDemnfolk        used _uh, need _ue  isWeaponDrawn -> ?
+    CDemnfolk_process_FUN_00459100                      this_ptr on CDemnfolk        used _uh, need _ue  canReachPickup -> ?
+    CDemnfolk_process_FUN_00459100                      this_ptr on CDemnfolk        used _uh, need _ue  isWeaponDrawn -> ?
+    CDemnfolk_process_FUN_00459100                      this_ptr on CDemnfolk        used _uh, need _ue  isWeaponDrawn -> ?
+    CDemnfolk_process_FUN_00459100                      this_ptr on CDemnfolk        used _uh, need _ue  isWeaponDrawn -> ?
+
+  core/lightgun.cpp (6)
+    CLightGun_fire_FUN_00500310                         this_ptr on CLightGun        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightGun_fire_FUN_00500310                         this_ptr on CLightGun        used _uc, need _uw  getGrabbed -> getDamage
+    CLightGun_fire_FUN_00500310                         this_ptr on CLightGun        used _uc, need _uw  getGrabbed -> getDamage
+    CLightGun_fire_FUN_00500310                         this_ptr on CLightGun        used _uc, need _uw  getGrabbed -> getDamage
+    CLightGun_renderAimBeam_FUN_00500f90                this_ptr on CLightGun        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightGun_renderAimBeam_FUN_00500f90                this_ptr on CLightGun        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+
+  core/lightpis.cpp (6)
+    CLightPis_fire_FUN_00501a70                         this_ptr on CLightPis        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightPis_fire_FUN_00501a70                         this_ptr on CLightPis        used _uc, need _uw  getGrabbed -> getDamage
+    CLightPis_fire_FUN_00501a70                         this_ptr on CLightPis        used _uc, need _uw  getGrabbed -> getDamage
+    CLightPis_fire_FUN_00501a70                         this_ptr on CLightPis        used _uc, need _uw  getGrabbed -> getDamage
+    CLightPis_renderAimBeam_FUN_005026f0                this_ptr on CLightPis        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightPis_renderAimBeam_FUN_005026f0                this_ptr on CLightPis        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+
+  core/turret.cpp (6)
+    CTurret_fire_FUN_005a3870                           this_ptr on CTurret          used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CTurret_fire_FUN_005a3870                           this_ptr on CTurret          used _uc, need _uw  getGrabbed -> getDamage
+    CTurret_fire_FUN_005a3870                           this_ptr on CTurret          used _uc, need _uw  getGrabbed -> getDamage
+    CTurret_process_FUN_005a23b0                        this_ptr on CTurret          used _uc, need _uw  releaseFromGrab -> renderAimBeam
+    CTurret_updateInteraction_FUN_005a35c0              this_ptr on CTurret          used _uc, need _uw  isGrabbable -> fire
+    CTurret_updatePatrol_FUN_005a3650                   this_ptr on CTurret          used _uc, need _uw  isGrabbable -> fire
+
+  core/crossbow.cpp (4)
+    CCrossbow_fire_FUN_00449a50                         this_ptr on CCrossbow        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CCrossbow_fire_FUN_00449a50                         this_ptr on CCrossbow        used _uc, need _uw  getGrabbed -> getDamage
+    CCrossbow_fire_FUN_00449a50                         this_ptr on CCrossbow        used _uc, need _uw  getGrabbed -> getDamage
+    CCrossbow_process_FUN_00449830                      this_ptr on CCrossbow        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+
+  core/elephant.cpp (4)
+    CElephantGun_fire_FUN_0049e1a0                      this_ptr on CElephantGun     used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CElephantGun_fire_FUN_0049e1a0                      this_ptr on CElephantGun     used _uc, need _uw  getGrabbed -> getDamage
+    CElephantGun_process_FUN_0049e090                   this_ptr on CElephantGun     used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CElephantGun_renderAimBeam_FUN_0049eb30             this_ptr on CElephantGun     used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+
+  core/shotgun.cpp (4)
+    CShotgun_fire_FUN_00561760                          this_ptr on CShotgun         used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CShotgun_fire_FUN_00561760                          this_ptr on CShotgun         used _uc, need _uw  getGrabbed -> getDamage
+    CShotgun_process_FUN_00561650                       this_ptr on CShotgun         used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CShotgun_renderAimBeam_FUN_00562100                 this_ptr on CShotgun         used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+
+  core/weapon.cpp (4)
+    CWeapon_onDropped_FUN_005ada60                      this_ptr on CWeapon          used _uc, need _uw  kill -> setWeaponState
+    CWeapon_process_FUN_005ad770                        this_ptr on CWeapon          used _uc, need _uw  getGrabber -> updateLighting
+    CWeapon_renderAimBeam_FUN_005adf90                  this_ptr on CWeapon          used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CWeapon_updateLighting_FUN_005adb20                 this_ptr on CWeapon          used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+
+  core/gun.cpp (3)
+    CGun_fire_FUN_004e8630                              this_ptr on CGun             used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CGun_fire_FUN_004e8630                              this_ptr on CGun             used _uc, need _uw  getGrabbed -> getDamage
+    CGun_fire_FUN_004e8630                              this_ptr on CGun             used _uc, need _uw  getGrabbed -> getDamage
+
+  core/rifle.cpp (3)
+    CRifle_fire_FUN_00540080                            this_ptr on CRifle           used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CRifle_fire_FUN_00540080                            this_ptr on CRifle           used _uc, need _uw  getGrabbed -> getDamage
+    CRifle_fire_FUN_00540080                            this_ptr on CRifle           used _uc, need _uw  getGrabbed -> getDamage
+
+  core/tommygun.cpp (2)
+    CTommyGun_fire_FUN_00598420                         this_ptr on CTommyGun        used _uc, need _uw  getGrabbed -> getDamage
+    CTommyGun_fire_FUN_00598420                         this_ptr on CTommyGun        used _uc, need _uw  getGrabbed -> getDamage
+
+  core/djien.cpp (1)
+    CDjien_damageSack_FUN_00460f90                      this_ptr on CDjien           used _uh, need _ue  reset -> ?
+
+  core/flamegun.cpp (1)
+    CFlameThrower_fire_FUN_004b9660                     this_ptr on CFlameThrower    used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+
+  core/hero.cpp (1)
+    CHero_reset_FUN_004ec570                            this_ptr on CHero            used _ue, need _uh  updateVictim -> drawWeapon
+
+  core/melee.cpp (1)
+    CMelee_fillAttackDamageInfo_FUN_00509870            this_ptr on CMelee           used _uc, need _uw  getGrabbed -> getDamage
+
+  core/scat.cpp (1)
+    CScat_process_FUN_00540df0                          this_ptr on CScat            used _ue, need _uh  updateVictim -> drawWeapon
+
+====================================================================================================
+OFFSET COLLISION REFERENCE
+====================================================================================================
+
+  Offset    CCharacter (_uc)                CWeapon (_uw)                 
+  ------------------------------------------------------------------------
+  0xec      applyDamage                     onFired                       
+  0xf0      kill                            setWeaponState                
+  0xf4      isInvulnerable                  getMuzzlePoint                
+  0xf8      isGrabbable                     fire                          
+  0xfc      canBeGrabbed                    isReadyToFire                 
+  0x100     getGrabbed                      getDamage                     
+  0x104     releaseFromGrab                 renderAimBeam                 
+  0x108     getGrabber                      updateLighting                
+  0x10c     releaseVictim                   -                             
+  0x110     onVictimLost                    -                             
+  0x114     checkCylinderCollisionWorld     -                             
+  0x118     testDamageLine                  -                             
+  0x11c     processDamage                   -                             
+  0x120     getDeathState                   -                             
+  0x124     attractActorToward              -                             
+  0x128     canBeAttracted                  -                             
+  0x12c     getPartDominantBone             -                             
+  0x130     setDoorTarget                   -                             
+  0x134     clearDoorTarget                 -                             
+  0x138     hasDoorTarget                   -                             
+  0x13c     dropCarriedObject               -                             
+  0x140     getCarryObjToBodyXForm          -                             
+  0x144     setWalkTarget                   -                             
+  0x148     setWalkTargetImmediate          -                             
+  0x14c     setWalkTimeout                  -                             
+  0x150     isWalkComplete                  -                             
+
+  Offset    CEnemy (_ue)                    CHero (_uh)                   
+  ------------------------------------------------------------------------
+  0x154     getTargetPoint                  createDefaultWeapon           
+  0x158     updateVictim                    drawWeapon                    
+  0x15c     -                               isWeaponDrawn                 
+  0x160     -                               reset                         
+  0x164     -                               toggleGoggles                 
+  0x168     -                               canReachPickup                
+  0x16c     -                               doHeroAction                  
+  0x170     -                               canDoHeroAction               

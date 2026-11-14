@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_event_cpp_FUN_004a9870(CEventList *param_1,CEventList *param_2,int param_3)
+; void core_event_cpp_FUN_004a9870(CEventList *param_1,char *param_2,int param_3)
 ;
 ;
 ; XREF[3]:
 ;   core_event.cpp_FUN_004a1d00 at 004a3ae0
-;   core_game.cpp_FUN_004cf5e0 at 004d03ce
-;   core_hostage.cpp_FUN_004ed890 at 004ee76f
+;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004d03ce
+;   core_hostage.cpp_CHostage_process_FUN_004ed890 at 004ee76f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005deab4
@@ -132,7 +132,7 @@ section .text
         ;   Label: LAB_004a994a
     PUSH 0x5deab7                       ; 004a994f | = "events.txt"
     CALL crt_stdio.c_fopen_FUN_005c157c ; 004a9954
-        ;   XREF to: 005c157c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_005c157c()
+        ;   XREF to: 005c157c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005c157c(char * filename, char * mode)
     ADD ESP,0x8                         ; 004a9959
     MOV EDI,EAX                         ; 004a995c
     TEST EAX,EAX                        ; 004a995e

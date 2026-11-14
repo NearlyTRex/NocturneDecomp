@@ -7,7 +7,7 @@
 
 // Original: core_waypoint.cpp_staticInit_FUN_00579100
 // Address: 00579100
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_waypoint.cpp_FUN_00579130
 // Address: 00579130
@@ -15,27 +15,27 @@ bool FUN_00579130(float *param_1,CLocation *param_2,int param_3,int param_4);
 
 // Original: core_waypoint.cpp_factoryFuncWayPoint_FUN_00579240
 // Address: 00579240
-void factoryFuncWayPoint(void);
+CWayPoint * __cdecl factoryFuncWayPoint(void);
 
 // Original: core_waypoint.cpp_CWayPoint_getActorType_FUN_00579260
 // Address: 00579260
-CDemonActorType * CWayPoint::getActorType(CWayPoint *this_ptr);
+CDemonActorType * __cdecl CWayPoint::getActorType(CWayPoint *this_ptr);
 
 // Original: core_waypoint.cpp_CWayPoint_ctor_FUN_00579270
 // Address: 00579270
 CWayPoint * __cdecl CWayPoint::ctor(CWayPoint *this_ptr);
 
-// Original: core_waypoint.cpp_FUN_005792b0
+// Original: core_waypoint.cpp_CWayPoint_setup_FUN_005792b0
 // Address: 005792b0
-void FUN_005792b0(CTrigger *param_1);
+void __cdecl CWayPoint::setup(CWayPoint *this_ptr);
 
-// Original: core_waypoint.cpp_FUN_00579380
+// Original: core_waypoint.cpp_CWayPoint_renderOpaque_FUN_00579380
 // Address: 00579380
-undefined4 FUN_00579380(void);
+int __cdecl CWayPoint::renderOpaque(CWayPoint *this_ptr);
 
-// Original: core_waypoint.cpp_FUN_00579390
+// Original: core_waypoint.cpp_CWayPoint_archive_FUN_00579390
 // Address: 00579390
-void FUN_00579390(CTrigger *param_1);
+void __cdecl CWayPoint::archive(CWayPoint *this_ptr);
 
 // Original: core_waypoint.cpp_FUN_00579430
 // Address: 00579430

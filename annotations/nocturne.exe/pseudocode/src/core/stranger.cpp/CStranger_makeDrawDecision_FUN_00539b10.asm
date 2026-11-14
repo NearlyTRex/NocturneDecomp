@@ -34,7 +34,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_stranger.cpp_CStranger_FUN_005384d0 at 005385b3
+;   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005384d0 at 005385b3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_stranger_cpp_005958e7

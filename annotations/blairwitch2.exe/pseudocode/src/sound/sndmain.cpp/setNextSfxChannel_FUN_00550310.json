@@ -30,31 +30,31 @@
     {
       "addr": "00529750",
       "from_addr": "005298b6",
-      "name": "core_script.cpp_FUN_00529750",
+      "name": "core_script.cpp_CScript_startDialogLine_FUN_00529750",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00559b4e",
-      "from_addr": "00559f85",
-      "name": "core_sound.cpp_FUN_00559b4e",
+      "addr": "0055ac50",
+      "from_addr": "0055ad47",
+      "name": "core_sound.cpp_CSound_configure_FUN_0055ac50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055a3c0",
+      "from_addr": "0055a765",
+      "name": "core_sound.cpp_CSound_process_FUN_0055a3c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00559b50",
+      "from_addr": "00559c5f",
+      "name": "core_sound.cpp_FUN_00559b50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0055a1d0",
       "from_addr": "0055a2ad",
       "name": "core_sound.cpp_FUN_0055a1d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0055a3c0",
-      "from_addr": "0055a765",
-      "name": "core_sound.cpp_FUN_0055a3c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0055ac50",
-      "from_addr": "0055ad47",
-      "name": "core_sound.cpp_FUN_0055ac50",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -137,7 +137,7 @@
       {
         "call_addr": "005298b6",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00529750",
+        "caller": "core_script.cpp_CScript_startDialogLine_FUN_00529750",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -159,7 +159,7 @@
       {
         "call_addr": "0055a765",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0055a3c0",
+        "caller": "core_sound.cpp_CSound_process_FUN_0055a3c0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -170,7 +170,7 @@
       {
         "call_addr": "0055ab30",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0055a3c0",
+        "caller": "core_sound.cpp_CSound_process_FUN_0055a3c0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -181,18 +181,7 @@
       {
         "call_addr": "0055ad47",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0055ac50",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "00559f85",
-        "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_00559b4e",
+        "caller": "core_sound.cpp_CSound_configure_FUN_0055ac50",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -203,7 +192,18 @@
       {
         "call_addr": "00559c5f",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_00559b4e",
+        "caller": "core_sound.cpp_FUN_00559b50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00559f85",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_FUN_00559b50",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -247,6 +247,32 @@
       "STORE": 5
     },
     "pcode_op_count": 112
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00572980",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00555e90",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a8af0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8889
+    },
+    "nocturne.exe": {
+      "addr": "005261b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9778
+    }
   },
   "stack_frame": {
     "frame_size": 8,

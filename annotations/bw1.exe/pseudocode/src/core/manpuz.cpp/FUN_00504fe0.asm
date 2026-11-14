@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_manpuz.cpp_FUN_005042e0 at 00504385
+;   core_manpuz.cpp_CMansionPuzzleCircle_renderOpaque_FUN_005042e0 at 00504385
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00612560
@@ -13,7 +13,7 @@
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
-;   engine_matrix.c_pop_FUN_004839a0
+;   engine_drender.cpp_pop_FUN_004839a0
 ;
 ; *****************************************************************************
 
@@ -54,8 +54,8 @@ section .text
     ADD ESP,0xc                         ; 00505031
     MOV EBX,dword ptr [0x00612560]      ; 00505034 | DAT_00612560
     PUSH EBX                            ; 0050503a
-    CALL engine_matrix.c_pop_FUN_004839a0 ; 0050503b
-        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004839a0()
+    CALL engine_drender.cpp_pop_FUN_004839a0 ; 0050503b
+        ;   XREF to: 004839a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_004839a0()
     ADD ESP,0x4                         ; 00505040
     POP EBX                             ; 00505043
     LEA EAX,[EAX]                       ; 00505044

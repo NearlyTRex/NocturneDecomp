@@ -16,13 +16,13 @@
     {
       "addr": "00409c80",
       "from_addr": "00409cb3",
-      "name": "core_actor.cpp_FUN_00409c80",
+      "name": "core_actor.cpp_CDemonActor_calculateChecksum_FUN_00409c80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00433130",
       "from_addr": "00433158",
-      "name": "core_charactr.cpp_FUN_00433130",
+      "name": "core_charactr.cpp_CCharacter_calculateChecksum_FUN_00433130",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -52,7 +52,7 @@
       {
         "call_addr": "00409cb3",
         "call_type": "direct",
-        "caller": "core_actor.cpp_FUN_00409c80",
+        "caller": "core_actor.cpp_CDemonActor_calculateChecksum_FUN_00409c80",
         "estimated_params": 2,
         "instructions_analyzed": 5,
         "method": "push_count",
@@ -63,7 +63,7 @@
       {
         "call_addr": "00433158",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_00433130",
+        "caller": "core_charactr.cpp_CCharacter_calculateChecksum_FUN_00433130",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -74,7 +74,7 @@
       {
         "call_addr": "00433191",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_00433130",
+        "caller": "core_charactr.cpp_CCharacter_calculateChecksum_FUN_00433130",
         "estimated_params": 1,
         "instructions_analyzed": 4,
         "method": "push_count",
@@ -108,6 +108,32 @@
       "STORE": 4
     },
     "pcode_op_count": 29
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0040d2a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0040cf40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0040cf50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0040e0e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 12,

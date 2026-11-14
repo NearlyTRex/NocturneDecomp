@@ -11,16 +11,15 @@ void __cdecl core_trigger_cpp_CTrigger_applyDamage_FUN_005785b0(CTrigger *this_p
 {
   float fVar1;
   
-  if ((*(int *)&this_ptr->field_0x2d0 == 7) && (*(float *)&this_ptr->field_0x4cc <= 0.0)) {
-    fVar1 = *(float *)&this_ptr->field_0x454 - hit_points;
-    *(float *)&this_ptr->field_0x454 = fVar1;
+  if ((this_ptr->trigger_cause == TRIGGER_CAUSE_DAMAGE) && (this_ptr->damage_cooldown <= 0.0)) {
+    fVar1 = this_ptr->hit_points - hit_points;
+    this_ptr->hit_points = fVar1;
     if (fVar1 < 0.0) {
-      *(uint *)&this_ptr->field_0x454 = 0;
+      this_ptr->hit_points = 0.0;
     }
-    engine_console_cpp_FUN_00436710
-              (g_CConsolePtr,"%s received %g damage, hitpoints %g\n",this_ptr,(double)hit_points,
-               (double)*(float *)&this_ptr->field_0x454);
-    *(uint *)&this_ptr->field_0x4cc = 0x3f800000;
+    engine_console_cpp_CConsole_printf_FUN_00436710
+              (g_CConsolePtr,"%s received %g damage, hitpoints %g\n");
+    this_ptr->damage_cooldown = 1.0;
   }
   return;
 }

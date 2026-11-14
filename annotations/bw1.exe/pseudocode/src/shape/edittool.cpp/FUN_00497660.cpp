@@ -34,7 +34,7 @@ void shape_edittool_cpp_FUN_00497660(uint param_1,int param_2)
   uVar3 = _DAT_01c3f54c;
   if (_DAT_01c3f544 != 0) {
     iVar5 = (_DAT_01c3f54c & 0xff) * 3;
-    engine_mini3d_cpp_FUN_00517d50
+    engine_mini3d_cpp_setColor_FUN_00517d50
               ((uint)(byte)(&DAT_01c4e9fa)[iVar5] |
                (uint)(byte)(&DAT_01c4e9f8)[iVar5] << 0x10 | (uint)(byte)(&DAT_01c4e9f9)[iVar5] << 8)
     ;
@@ -47,7 +47,7 @@ void shape_edittool_cpp_FUN_00497660(uint param_1,int param_2)
     engine_2d_c_drawHLine_FUN_00402f30(iVar5,iVar4,x2);
   }
   else {
-    engine_mini3d_cpp_FUN_005182e0(iVar5,iVar4,x2);
+    engine_mini3d_cpp_drawHLine_FUN_005182e0(iVar5,iVar4,x2);
   }
   if (_DAT_01c3f550 != _DAT_01c3f54c) {
     if (_DAT_01c3f544 == 0) {
@@ -55,7 +55,7 @@ void shape_edittool_cpp_FUN_00497660(uint param_1,int param_2)
     }
     else {
       iVar5 = (_DAT_01c3f550 & 0xff) * 3;
-      engine_mini3d_cpp_FUN_00517d50
+      engine_mini3d_cpp_setColor_FUN_00517d50
                 ((uint)(byte)(&DAT_01c4e9f9)[iVar5] << 8 |
                  (uint)(byte)(&DAT_01c4e9f8)[iVar5] << 0x10 | (uint)(byte)(&DAT_01c4e9fa)[iVar5]);
     }
@@ -65,7 +65,7 @@ void shape_edittool_cpp_FUN_00497660(uint param_1,int param_2)
       engine_2d_c_drawHLine_FUN_00402f30(iVar5,iVar4 + -1,iVar6);
     }
     else {
-      engine_mini3d_cpp_FUN_005182e0(iVar5,iVar4 + -1,iVar6);
+      engine_mini3d_cpp_drawHLine_FUN_005182e0(iVar5,iVar4 + -1,iVar6);
     }
   }
   _DAT_01c4f020 = uVar2;

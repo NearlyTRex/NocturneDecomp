@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_burncrss_cpp_staticInit_FUN_004243d0(void)
+; void __cdecl core_burncrss_cpp_staticInit_FUN_004243d0(void)
 ;
 ;
 ; Called Functions:

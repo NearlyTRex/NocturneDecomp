@@ -11,7 +11,7 @@
 ;   core_podmain.cpp_FUN_005152e0 at 00515322
 ;   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00482a70 at 00482bc1
 ;   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_00482c70 at 00482db4
-;   shape_edittool.cpp_FUN_0047dd1e at 0047de09
+;   shape_edittool.cpp_FUN_0047dd20 at 0047de09
 ;   shape_edittool.cpp_FUN_00482ea0 at 00482f0d
 ;   shape_edittool.cpp_FUN_00483020 at 004830f4
 ;

@@ -4,13 +4,20 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBasicEnemy.h"
 
 // Structure: CConfederate
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 71784
 // Ghidra size: 0x11868 (71784 bytes)
 #pragma pack(push, 1)
 typedef struct CConfederate {
-    char field_0[71784]; // 0x0
+    CBasicEnemy base; // 0x0, derived
+    float fire_timer; // 0x11850, ctor 0; FUN_005a1030 (range attack) stores 0 after a shot; same slot is the shot countdown in CUnion FUN_005a5130
+    int ammo_count; // 0x11854, ctor 1; FUN_005a1030 decrements per shot and switches ChaseComplete to MeleeAttack at 0
+    int gun_bone; // 0x11858, setup findBone 'Bip01 gun1'; processMotionEvent attack bone; FUN_005a14e0
+    int gun2_bone; // 0x1185c, setup findBone 'Bip01 gun12'; processMotionEvent; FUN_005a14e0
+    int spine_bone; // 0x11860, setup findBone 'Bip01 Spine'; FUN_005a0bd0 bone matrix index
+    int melee_variant; // 0x11864, ctor 0; FUN_005a1180 picks motion 5/9 by it, re-rolls getRandomInt(0,1)
 } CConfederate;
 #pragma pack(pop)
 

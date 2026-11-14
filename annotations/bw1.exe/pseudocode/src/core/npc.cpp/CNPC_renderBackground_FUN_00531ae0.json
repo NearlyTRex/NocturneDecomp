@@ -1,0 +1,116 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 18,
+    "complexity_score": 10,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 28
+  },
+  "cross_references": [
+    {
+      "addr": "004eefd0",
+      "from_addr": "004ef015",
+      "name": "core_hostage.cpp_CHostage_renderBackground_FUN_004eefd0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00531ae0",
+    "address_range": [
+      [
+        "00531ae0",
+        "00531b09"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_npc.cpp_CNPC_renderBackground_FUN_00531ae0",
+    "signature": "void __cdecl core_npc_cpp_CNPC_renderBackground_FUN_00531ae0(CNPC *this_ptr,int layer_flag)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042f320",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_renderBackground_FUN_0042f320"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.416666666666667,
+    "instruction_count": 12,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 8,
+      "INT_ADD": 6,
+      "INT_AND": 7,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 4,
+      "LOAD": 4,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 4
+    },
+    "pcode_op_count": 53
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005108d0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00509530",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00544b70",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004eece0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNPC *"
+      },
+      {
+        "is_param": true,
+        "name": "layer_flag",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

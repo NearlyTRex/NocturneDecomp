@@ -1,0 +1,188 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 37,
+    "complexity_score": 99,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 19,
+    "suspect_count": 7,
+    "suspect_types": [
+      "sign_compare_idiom",
+      "undefined_data"
+    ],
+    "total_lines": 56
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005c3a30",
+    "address_range": [
+      [
+        "005c3a30",
+        "005c3aa9"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_005c3a30",
+    "signature": "void crt_unknown_c_FUN_005c3a30(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c51be",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c51be"
+    },
+    {
+      "addr": "005c53c4",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c53c4"
+    },
+    {
+      "addr": "005c571e",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c571e"
+    },
+    {
+      "addr": "005c5581",
+      "is_variadic": false,
+      "name": "crt_unknown.c_ldexp_FUN_005c5581"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061ee9d",
+      "name": "DAT_0061ee9d",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061f458",
+      "name": "DAT_0061f458",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.4482758620689653,
+    "instruction_count": 29,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 4,
+      "CBRANCH": 2,
+      "COPY": 22,
+      "INT_ADD": 12,
+      "INT_AND": 8,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 8,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 1,
+      "INT_OR": 1,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 4,
+      "INT_SUB": 7,
+      "LOAD": 10,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 9
+    },
+    "pcode_op_count": 100
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005cbd30",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005aeba0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00570630",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
+      "line": 9,
+      "match": "SBORROW1",
+      "severity": "moderate",
+      "text": "cVar3 = SBORROW1(DAT_0061ee9d,'\\x03');",
+      "type": "sign_compare_idiom"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_0061ee9d",
+      "severity": "mild",
+      "text": "cVar3 = SBORROW1(DAT_0061ee9d,'\\x03');",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_0061ee9d",
+      "severity": "mild",
+      "text": "cVar2 = (char)(DAT_0061ee9d - 3) < '\\0';",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_0061ee9d",
+      "severity": "mild",
+      "text": "uVar1 = DAT_0061ee9d == 3;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_0061ee9d",
+      "severity": "mild",
+      "text": "if (2 < DAT_0061ee9d) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_0061f458",
+      "severity": "mild",
+      "text": "DAT_0061f458 = DAT_0061f458 | 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_0061f458",
+      "severity": "mild",
+      "text": "DAT_0061f458 = DAT_0061f458 | 1;",
+      "type": "undefined_data"
+    }
+  ]
+}

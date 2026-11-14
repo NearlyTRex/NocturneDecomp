@@ -16,21 +16,22 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_loadByFileExtension_FUN_00516d70
   pCVar2 = this_ptr;
   do {
     str1 = pCVar2;
-    if (*(char *)pCVar2 == '.') goto LAB_00516d92;
-    if (*(char *)pCVar2 == '\0') break;
-    str1 = (CPackedBitmap *)&pCVar2->field_0x1;
-    if (*(char *)str1 == '.') goto LAB_00516d92;
-    pCVar2 = (CPackedBitmap *)&pCVar2->field_0x2;
-  } while (*(char *)str1 != '\0');
+    if (pCVar2->filename[0] == '.') goto LAB_00516d92;
+    if (pCVar2->filename[0] == '\0') break;
+    str1 = (CPackedBitmap *)(pCVar2->filename + 1);
+    if (str1->filename[0] == '.') goto LAB_00516d92;
+    pCVar2 = (CPackedBitmap *)(pCVar2->filename + 2);
+  } while (str1->filename[0] != '\0');
   str1 = (CPackedBitmap *)0x0;
 LAB_00516d92:
   if (str1 != (CPackedBitmap *)0x0) {
-    iVar1 = _stricmp((char *)str1,(char *)0x5e1c41);
+    iVar1 = _stricmp(str1->filename,(char *)0x5e1c41);
     if (iVar1 == 0) {
-      cockpit_pkbitmap_cpp_FUN_00516960(this_ptr,apply_palette_flag);
+      cockpit_pkbitmap_cpp_CPackedBitmap_loadAndCompressBitmap_FUN_00516960
+                (this_ptr,apply_palette_flag);
       return;
     }
-    iVar1 = _stricmp((char *)str1,(char *)0x5e1c46);
+    iVar1 = _stricmp(str1->filename,(char *)0x5e1c46);
     if (iVar1 == 0) {
       cockpit_pkbitmap_cpp_CPackedBitmap_loadPBMFile_FUN_005171e0(this_ptr,apply_palette_flag);
       return;

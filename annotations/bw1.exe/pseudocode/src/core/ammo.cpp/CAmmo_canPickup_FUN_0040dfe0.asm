@@ -8,7 +8,7 @@
 ; CDemonActor *    Stack[0x8]:4   picker
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040c550
+;   core_actor.cpp_isOfClass_FUN_0040c550
 ;
 ; *****************************************************************************
 
@@ -18,8 +18,8 @@ section .text
         ;   Label: core_ammo.cpp_CAmmo_canPickup_FUN_0040dfe0
     MOV EDX,dword ptr [ESP + 0xc]       ; 0040dfe5
     PUSH EDX                            ; 0040dfe9
-    CALL core_actor.cpp_FUN_0040c550    ; 0040dfea
-        ;   XREF to: 0040c550 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c550(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c550 ; 0040dfea
+        ;   XREF to: 0040c550 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c550(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 0040dfef
     TEST EAX,EAX                        ; 0040dff2
     JZ 0x0040dffb                       ; 0040dff4

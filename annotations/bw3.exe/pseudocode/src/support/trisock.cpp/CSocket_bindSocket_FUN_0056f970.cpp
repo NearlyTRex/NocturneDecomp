@@ -18,6 +18,6 @@ int __cdecl support_trisock_cpp_CSocket_bindSocket_FUN_0056f970(CSocket *this_pt
   local_10.sa_data[3] = '\0';
   local_10.sa_data[4] = '\0';
   local_10.sa_data[5] = '\0';
-  iVar1 = bind(*(SOCKET *)this_ptr,&local_10,0x10);
+  iVar1 = bind(this_ptr->handle,&local_10,0x10);
   return (uint)(iVar1 == 0);
 }

@@ -7,17 +7,17 @@
 ; CZombie *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_zombie.cpp_FUN_00588ee0 at 00589e92
-;   core_zombie.cpp_FUN_0058b3f0 at 0058b89c
+;   core_zombie.cpp_CZombie_processPickup_FUN_0058b3f0 at 0058b89c
+;   core_zombie.cpp_CZombie_process_FUN_00588ee0 at 00589e92
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CHASE_FAST_005d8979
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
+;   core_motion.cpp_CMotionController_getMotionList_FUN_004fc310
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
-;   core_motion.cpp_FUN_004fba50
-;   core_motion.cpp_FUN_004fc310
+;   core_motion.cpp_CMotionList_findStateIndex_FUN_004fba50
 ;
 ; *****************************************************************************
 
@@ -30,12 +30,12 @@ section .text
     PUSH 0x5d8979                       ; 0058cc27 | = "CHASE_FAST"
     ADD EBX,0x158                       ; 0058cc2c
     PUSH EBX                            ; 0058cc32
-    CALL core_motion.cpp_FUN_004fc310   ; 0058cc33
-        ;   XREF to: 004fc310 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_FUN_004fc310(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_getMotionList_FUN_004fc310 ; 0058cc33
+        ;   XREF to: 004fc310 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_004fc310(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 0058cc38
     PUSH EAX                            ; 0058cc3b
-    CALL core_motion.cpp_FUN_004fba50   ; 0058cc3c
-        ;   XREF to: 004fba50 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_FUN_004fba50(CMotionList * this_ptr, char * state_name, int error_on_not_found)
+    CALL core_motion.cpp_CMotionList_findStateIndex_FUN_004fba50 ; 0058cc3c
+        ;   XREF to: 004fba50 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_004fba50(CMotionList * this_ptr, char * state_name, int error_on_not_found)
     ADD ESP,0xc                         ; 0058cc41
     CMP EAX,0x2                         ; 0058cc44
     JNZ 0x0058cc77                      ; 0058cc47

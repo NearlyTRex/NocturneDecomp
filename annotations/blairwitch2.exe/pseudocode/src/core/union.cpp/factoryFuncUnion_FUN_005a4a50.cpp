@@ -1,20 +1,20 @@
 // Name: core_union.cpp_factoryFuncUnion_FUN_005a4a50
 // Address: 005a4a50
 // Address Range: [[005a4a50, 005a4a6b]]
-// Convention: unknown
-// Signature: void core_union_cpp_factoryFuncUnion_FUN_005a4a50(void)
+// Convention: __cdecl
+// Signature: CUnion * __cdecl core_union_cpp_factoryFuncUnion_FUN_005a4a50(void)
 
 #include "nocturne.h"
 
-void core_union_cpp_factoryFuncUnion_FUN_005a4a50(void)
+CUnion * __cdecl core_union_cpp_factoryFuncUnion_FUN_005a4a50(void)
 
 {
-  CUnion *this_ptr;
+  CUnion *pCVar1;
   
-  this_ptr = (CUnion *)FUN_005b8be2(0x11864);
-  if (this_ptr == (CUnion *)0x0) {
-    return;
+  pCVar1 = (CUnion *)operator_new(0x11864);
+  if (pCVar1 == (CUnion *)0x0) {
+    return (CUnion *)0x0;
   }
-  core_union_cpp_CUnion_ctor_FUN_005a4a80(this_ptr);
-  return;
+  pCVar1 = core_union_cpp_CUnion_ctor_FUN_005a4a80(pCVar1);
+  return pCVar1;
 }

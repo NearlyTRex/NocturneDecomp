@@ -18,7 +18,7 @@
     {
       "addr": "0042a4f0",
       "from_addr": "0042a54f",
-      "name": "core_carved.cpp_FUN_0042a4f0",
+      "name": "core_carved.cpp_CCarved_getCarryObjToBodyXForm_FUN_0042a4f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -28,15 +28,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0042d750",
-      "from_addr": "0042dd25",
-      "name": "core_charactr.cpp_FUN_0042d750",
+      "addr": "00431c30",
+      "from_addr": "00431c58",
+      "name": "core_charactr.cpp_CCharacter_getDeathState_FUN_00431c30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00431c30",
-      "from_addr": "00431c58",
-      "name": "core_charactr.cpp_FUN_00431c30",
+      "addr": "0042d750",
+      "from_addr": "0042dd25",
+      "name": "core_charactr.cpp_FUN_0042d750",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -48,13 +48,19 @@
     {
       "addr": "0045b120",
       "from_addr": "0045b17f",
-      "name": "core_demnfolk.cpp_FUN_0045b120",
+      "name": "core_demnfolk.cpp_CDemnfolk_getCarryObjToBodyXForm_FUN_0045b120",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045bec0",
+      "from_addr": "0045bef6",
+      "name": "core_demnfolk.cpp_FUN_0045bec0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0049f310",
       "from_addr": "0049f57e",
-      "name": "core_emitter.cpp_FUN_0049f310",
+      "name": "core_emitter.cpp_CEmitter_process_FUN_0049f310",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -66,7 +72,7 @@
     {
       "addr": "004bb6f0",
       "from_addr": "004bb7c4",
-      "name": "core_fldnotes.cpp_FUN_004bb6f0",
+      "name": "core_fldnotes.cpp_STextView_handleTag_FUN_004bb6f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -82,15 +88,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0054ad20",
+      "from_addr": "0054ad9f",
+      "name": "core_script.cpp_CScript_skipCommands_FUN_0054ad20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00544460",
       "from_addr": "00544686",
       "name": "core_script.cpp_CScript_step_FUN_00544460",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0054ad20",
-      "from_addr": "0054ad9f",
-      "name": "core_script.cpp_FUN_0054ad20",
+      "addr": "005542c0",
+      "from_addr": "005543dd",
+      "name": "core_set.cpp_CDemonSet_process_FUN_005542c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -100,15 +112,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005542c0",
-      "from_addr": "005543dd",
-      "name": "core_set.cpp_FUN_005542c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0057ce10",
       "from_addr": "0057cf24",
-      "name": "core_sound.cpp_FUN_0057ce10",
+      "name": "core_sound.cpp_CSound_process_FUN_0057ce10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -120,13 +126,13 @@
     {
       "addr": "005bd120",
       "from_addr": "005bd17f",
-      "name": "core_zombie.cpp_FUN_005bd120",
+      "name": "core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005bd120",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005bdec0",
       "from_addr": "005bdef6",
-      "name": "core_zombie.cpp_FUN_005bdec0",
+      "name": "core_zombie.cpp_CZombie_getPickupHandIndex_FUN_005bdec0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -139,12 +145,6 @@
       "addr": "0059d9d0",
       "from_addr": "0059d9fb",
       "name": "support_trisock.cpp_FUN_0059d9d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0045bec0",
-      "from_addr": "0045bef6",
-      "name": "unkafter_demnfolk.cpp_FUN_0045bec0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -179,7 +179,7 @@
       {
         "call_addr": "004bb7c4",
         "call_type": "direct",
-        "caller": "core_fldnotes.cpp_FUN_004bb6f0",
+        "caller": "core_fldnotes.cpp_STextView_handleTag_FUN_004bb6f0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -190,7 +190,7 @@
       {
         "call_addr": "004bb8f3",
         "call_type": "direct",
-        "caller": "core_fldnotes.cpp_FUN_004bb6f0",
+        "caller": "core_fldnotes.cpp_STextView_handleTag_FUN_004bb6f0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -307,6 +307,32 @@
       "STORE": 2
     },
     "pcode_op_count": 223
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b8da0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005a3f90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005ff070",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00564bc0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 16,

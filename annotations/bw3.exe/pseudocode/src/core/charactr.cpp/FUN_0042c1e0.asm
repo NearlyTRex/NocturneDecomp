@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[34]:
-;   core_asgaya.cpp_FUN_005a0be0 at 005a0f1e
-;   core_baal.cpp_FUN_005968a0 at 00596b6b
-;   core_boneguy.cpp_FUN_004179b0 at 00417f34
-;   core_boneguy.cpp_FUN_00419b40 at 0041a08c
-;   core_carved.cpp_FUN_00425da0 at 00426a2b
-;   core_constrct.cpp_FUN_00442a20 at 0044349d
-;   core_cow.cpp_FUN_00445130 at 004452a0
-;   core_demnfolk.cpp_FUN_00455080 at 00456ff9
-;   core_dog.cpp_FUN_004628b0 at 00462a77
-;   core_gargoyle.cpp_FUN_004c5350 at 004c54cd
+;   core_asgaya.cpp_CAsgaya_process_FUN_005a0be0 at 005a0f1e
+;   core_baal.cpp_CBaal_process_FUN_005968a0 at 00596b6b
+;   core_bird.cpp_CBird_process_FUN_0040fb40 at 0040fcc7
+;   core_boneguy.cpp_CBaalSkel_process_FUN_00419b40 at 0041a08c
+;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 00417f34
+;   core_carved.cpp_CCarved_process_FUN_00425da0 at 00426a2b
+;   core_construc.cpp_CConstruct_process_FUN_00442a20 at 0044349d
+;   core_cow.cpp_CZombieCow_process_FUN_00445130 at 004452a0
+;   core_darkwolf.cpp_CDarkwolf_process_FUN_005989e0 at 00598b2e
+;   core_demnfolk.cpp_CDemnfolk_process_FUN_00455080 at 00456ff9
 ;   ... and 24 more
 ;
 ; Referenced Globals:

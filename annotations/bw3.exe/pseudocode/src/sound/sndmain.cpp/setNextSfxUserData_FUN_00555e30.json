@@ -1,0 +1,195 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 30,
+    "complexity_score": 41,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 11,
+    "suspect_count": 2,
+    "suspect_types": [
+      "raw_address_pointer_store",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 41
+  },
+  "cross_references": [
+    {
+      "addr": "0055f020",
+      "from_addr": "0055f230",
+      "name": "core_sound.cpp_playSfxInternal_FUN_0055f020",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00555e30",
+    "address_range": [
+      [
+        "00555e30",
+        "00555e82"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_setNextSfxUserData_FUN_00555e30",
+    "signature": "void __cdecl sound_sndmain_cpp_setNextSfxUserData_FUN_00555e30(int index,void *userdata)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d367d",
+      "name": "s_sound_sndmain_cpp_005d367d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d3692",
+      "name": "s_setNextSfxUserData_inval_005d3692",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02ceb91c",
+      "name": "DAT_02ceb91c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0055f230",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_playSfxInternal_FUN_0055f020",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.086956521739131,
+    "instruction_count": 23,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 18,
+      "INT_ADD": 8,
+      "INT_AND": 22,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 12,
+      "INT_LEFT": 2,
+      "INT_LESS": 2,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 7,
+      "INT_SUB": 7,
+      "INT_XOR": 1,
+      "LOAD": 4,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 117
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005502b0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00572920",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a8aa0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8936
+    },
+    "nocturne.exe": {
+      "addr": "00526150",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9388
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "index",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "userdata",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 12,
+      "match": "*(void **)(_DAT_02ceb91c * 0x60 + 0x2ceb964",
+      "severity": "moderate",
+      "text": "*(void **)(_DAT_02ceb91c * 0x60 + 0x2ceb964 + index * 4) = userdata;",
+      "type": "raw_address_pointer_store"
+    }
+  ]
+}

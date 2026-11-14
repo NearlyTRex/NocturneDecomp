@@ -2,63 +2,68 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 282,
-    "complexity_score": 811,
-    "cross_reference_count": 23,
+    "complexity_score": 796,
+    "cross_reference_count": 26,
     "function_call_count": 4,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 76,
-    "suspect_count": 71,
+    "suspect_count": 70,
     "suspect_types": [
       "extra_output",
       "param_count_too_few",
       "unnamed_param",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
     "total_lines": 358
   },
   "cross_references": [
     {
-      "addr": "004a2060",
-      "from_addr": "004a207e",
-      "name": "core_fldnotes.cpp_FUN_004a2060",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004a3e40",
-      "from_addr": "004a3fa7",
-      "name": "core_fldnotes.cpp_FUN_004a3e40",
+      "addr": "004a16b0",
+      "from_addr": "004a1724",
+      "name": "core_flashlit.cpp_FUN_004a16b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004a5700",
       "from_addr": "004a5a5e",
-      "name": "core_fldnotes.cpp_FUN_004a5700",
+      "name": "core_fldnotes.cpp_CFieldNotes_draw_FUN_004a5700",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a3e40",
+      "from_addr": "004a3fa7",
+      "name": "core_fldnotes.cpp_SNotesMap_draw_FUN_004a3e40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a2060",
+      "from_addr": "004a207e",
+      "name": "core_fldnotes.cpp_SPageResourceText_draw_FUN_004a2060",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004b32c0",
       "from_addr": "004b33ce",
-      "name": "core_game.cpp_FUN_004b32c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004b3b0e",
-      "from_addr": "004b3b31",
-      "name": "core_game.cpp_FUN_004b3b0e",
+      "name": "core_game.cpp_CGame_renderOverlay_FUN_004b32c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004b3c50",
       "from_addr": "004b3cdd",
-      "name": "core_game.cpp_FUN_004b3c50",
+      "name": "core_game.cpp_CGame_showCustomizableKeys_FUN_004b3c50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004b5190",
       "from_addr": "004b55a9",
       "name": "core_game.cpp_FUN_004b5190",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b3b10",
+      "from_addr": "004b3b31",
+      "name": "core_game.cpp_drawCreditsLine_FUN_004b3b10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -76,7 +81,7 @@
     {
       "addr": "004e1600",
       "from_addr": "004e1b38",
-      "name": "core_level.cpp_FUN_004e1600",
+      "name": "core_level.cpp_CLevelLoader_update_FUN_004e1600",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -86,15 +91,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004eb3ce",
-      "from_addr": "004eb437",
-      "name": "core_menu.cpp_FUN_004eb3ce",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004eb490",
       "from_addr": "004eb522",
-      "name": "core_menu.cpp_FUN_004eb490",
+      "name": "core_menu.cpp_calibrateGamepad_FUN_004eb490",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -104,15 +103,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004eb3d0",
+      "from_addr": "004eb437",
+      "name": "core_menu.cpp_showJoystickCalibrationScreen_FUN_004eb3d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "005218a0",
       "from_addr": "00521a91",
-      "name": "core_script.cpp_FUN_005218a0",
+      "name": "core_script.cpp_CScript_renderSubtitles_FUN_005218a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004a90b0",
       "from_addr": "004a90d2",
-      "name": "engine_font.cpp_FUN_004a90b0",
+      "name": "engine_font.cpp_CBitFont_drawTextWrapper_FUN_004a90b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047d270",
+      "from_addr": "0047d415",
+      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047d270",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004831d0",
+      "from_addr": "004836c2",
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -122,9 +139,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047d270",
-      "from_addr": "0047d415",
-      "name": "shape_edittool.cpp_FUN_0047d270",
+      "addr": "0047bf80",
+      "from_addr": "0047c020",
+      "name": "shape_edittool.cpp_FUN_0047bf80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -134,9 +151,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004831d0",
-      "from_addr": "004836c2",
-      "name": "shape_edittool.cpp_FUN_004831d0",
+      "addr": "0047fd00",
+      "from_addr": "0047ff3e",
+      "name": "shape_edittool.cpp_FUN_0047fd00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -146,15 +163,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047b800",
-      "from_addr": "0047ba4e",
-      "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047b800",
+      "addr": "00485610",
+      "from_addr": "004856a2",
+      "name": "shape_edittool.cpp_FUN_00485610",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004a16b0",
-      "from_addr": "004a1724",
-      "name": "unkaddr_004a1200.cpp_FUN_004a16b0",
+      "addr": "0047b800",
+      "from_addr": "0047ba4e",
+      "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047b800",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -184,12 +201,12 @@
     {
       "addr": "004ab840",
       "is_variadic": false,
-      "name": "unkafter_font.cpp_FUN_004ab840"
+      "name": "engine_font.cpp_FUN_004ab840"
     },
     {
       "addr": "00510cd0",
       "is_variadic": false,
-      "name": "unkafter_palette.cpp_FUN_00510cd0"
+      "name": "engine_palette.cpp_FUN_00510cd0"
     }
   ],
   "globals": [
@@ -323,7 +340,7 @@
       {
         "call_addr": "004836c2",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_004831d0",
+        "caller": "shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0",
         "estimated_params": 9,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -603,7 +620,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x420c) != 0) && (_DAT_01c37788 != 0)) {",
+      "text": "if ((param_1->use_3d_rendering != 0) && (_DAT_01c37788 != 0)) {",
       "type": "unnamed_param"
     },
     {
@@ -611,7 +628,7 @@
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x4210) == 0) {",
+      "text": "if (param_1->win_font_enabled == 0) {",
       "type": "unnamed_param"
     },
     {
@@ -619,7 +636,7 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = unkafter_font_cpp_FUN_004ab840(param_1,param_2,param_3,param_4,param_5);",
+      "text": "iVar1 = engine_font_cpp_FUN_004ab840(param_1,param_2,param_3,param_4,param_5);",
       "type": "unnamed_param"
     },
     {
@@ -627,7 +644,7 @@
       "line": 17,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar1 = unkafter_font_cpp_FUN_004ab840(param_1,param_2,param_3,param_4,param_5);",
+      "text": "iVar1 = engine_font_cpp_FUN_004ab840(param_1,param_2,param_3,param_4,param_5);",
       "type": "unnamed_param"
     },
     {
@@ -635,7 +652,7 @@
       "line": 17,
       "match": "param_3",
       "severity": "mild",
-      "text": "iVar1 = unkafter_font_cpp_FUN_004ab840(param_1,param_2,param_3,param_4,param_5);",
+      "text": "iVar1 = engine_font_cpp_FUN_004ab840(param_1,param_2,param_3,param_4,param_5);",
       "type": "unnamed_param"
     },
     {
@@ -643,7 +660,7 @@
       "line": 17,
       "match": "param_4",
       "severity": "mild",
-      "text": "iVar1 = unkafter_font_cpp_FUN_004ab840(param_1,param_2,param_3,param_4,param_5);",
+      "text": "iVar1 = engine_font_cpp_FUN_004ab840(param_1,param_2,param_3,param_4,param_5);",
       "type": "unnamed_param"
     },
     {
@@ -651,7 +668,7 @@
       "line": 17,
       "match": "param_5",
       "severity": "mild",
-      "text": "iVar1 = unkafter_font_cpp_FUN_004ab840(param_1,param_2,param_3,param_4,param_5);",
+      "text": "iVar1 = engine_font_cpp_FUN_004ab840(param_1,param_2,param_3,param_4,param_5);",
       "type": "unnamed_param"
     },
     {
@@ -659,7 +676,7 @@
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x4214),param_2,param_3,param_4,param_5,param_6);",
+      "text": "(param_1->win_font_helper,param_2,param_3,param_4,param_5,param_6);",
       "type": "unnamed_param"
     },
     {
@@ -667,7 +684,7 @@
       "line": 21,
       "match": "param_2",
       "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x4214),param_2,param_3,param_4,param_5,param_6);",
+      "text": "(param_1->win_font_helper,param_2,param_3,param_4,param_5,param_6);",
       "type": "unnamed_param"
     },
     {
@@ -675,7 +692,7 @@
       "line": 21,
       "match": "param_3",
       "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x4214),param_2,param_3,param_4,param_5,param_6);",
+      "text": "(param_1->win_font_helper,param_2,param_3,param_4,param_5,param_6);",
       "type": "unnamed_param"
     },
     {
@@ -683,7 +700,7 @@
       "line": 21,
       "match": "param_4",
       "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x4214),param_2,param_3,param_4,param_5,param_6);",
+      "text": "(param_1->win_font_helper,param_2,param_3,param_4,param_5,param_6);",
       "type": "unnamed_param"
     },
     {
@@ -691,7 +708,7 @@
       "line": 21,
       "match": "param_5",
       "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x4214),param_2,param_3,param_4,param_5,param_6);",
+      "text": "(param_1->win_font_helper,param_2,param_3,param_4,param_5,param_6);",
       "type": "unnamed_param"
     },
     {
@@ -699,7 +716,7 @@
       "line": 21,
       "match": "param_6",
       "severity": "mild",
-      "text": "(*(uint *)(param_1 + 0x4214),param_2,param_3,param_4,param_5,param_6);",
+      "text": "(param_1->win_font_helper,param_2,param_3,param_4,param_5,param_6);",
       "type": "unnamed_param"
     },
     {
@@ -707,7 +724,7 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x4210) == 0) {",
+      "text": "if (param_1->win_font_enabled == 0) {",
       "type": "unnamed_param"
     },
     {
@@ -723,7 +740,7 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x420c) != 0) {",
+      "text": "if (param_1->use_3d_rendering != 0) {",
       "type": "unnamed_param"
     },
     {
@@ -731,7 +748,7 @@
       "line": 30,
       "match": "extraout_ECX",
       "severity": "moderate",
-      "text": "*(uint *)(param_1 + 0x1de0) = extraout_ECX | (int)ROUND(fVar4) << 0x18;",
+      "text": "param_1->accel_color = extraout_ECX | (int)ROUND(fVar4) << 0x18;",
       "type": "extra_output"
     },
     {
@@ -739,7 +756,7 @@
       "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x1de0) = extraout_ECX | (int)ROUND(fVar4) << 0x18;",
+      "text": "param_1->accel_color = extraout_ECX | (int)ROUND(fVar4) << 0x18;",
       "type": "unnamed_param"
     },
     {
@@ -771,7 +788,7 @@
       "line": 37,
       "match": "param_4",
       "severity": "mild",
-      "text": "param_4 = param_4 + *(int *)(param_1 + 0x41f0) + *(int *)(param_1 + 0x41f8);",
+      "text": "param_4 = param_4 + param_1->current_line_height + param_1->line_spacing;",
       "type": "unnamed_param"
     },
     {
@@ -779,7 +796,7 @@
       "line": 37,
       "match": "param_4",
       "severity": "mild",
-      "text": "param_4 = param_4 + *(int *)(param_1 + 0x41f0) + *(int *)(param_1 + 0x41f8);",
+      "text": "param_4 = param_4 + param_1->current_line_height + param_1->line_spacing;",
       "type": "unnamed_param"
     },
     {
@@ -787,7 +804,7 @@
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_4 = param_4 + *(int *)(param_1 + 0x41f0) + *(int *)(param_1 + 0x41f8);",
+      "text": "param_4 = param_4 + param_1->current_line_height + param_1->line_spacing;",
       "type": "unnamed_param"
     },
     {
@@ -795,7 +812,7 @@
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_4 = param_4 + *(int *)(param_1 + 0x41f0) + *(int *)(param_1 + 0x41f8);",
+      "text": "param_4 = param_4 + param_1->current_line_height + param_1->line_spacing;",
       "type": "unnamed_param"
     },
     {
@@ -935,19 +952,11 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 64,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*(int *)(*(int *)(param_1 + 0x4214) + 0x6a44) + 4))",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 64,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = (**(code **)(*(int *)(*(int *)(param_1 + 0x4214) + 0x6a44) + 4))",
+      "text": "iVar1 = (*((param_1->win_font_helper->base).vtable)->drawText)",
       "type": "unnamed_param"
     },
     {
@@ -955,7 +964,7 @@
       "line": 65,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(int *)(param_1 + 0x4214),local_14,param_3,param_4,param_5,param_6);",
+      "text": "(param_1->win_font_helper,local_14,param_3,param_4,param_5,param_6);",
       "type": "unnamed_param"
     },
     {
@@ -963,7 +972,7 @@
       "line": 65,
       "match": "param_3",
       "severity": "mild",
-      "text": "(*(int *)(param_1 + 0x4214),local_14,param_3,param_4,param_5,param_6);",
+      "text": "(param_1->win_font_helper,local_14,param_3,param_4,param_5,param_6);",
       "type": "unnamed_param"
     },
     {
@@ -971,7 +980,7 @@
       "line": 65,
       "match": "param_4",
       "severity": "mild",
-      "text": "(*(int *)(param_1 + 0x4214),local_14,param_3,param_4,param_5,param_6);",
+      "text": "(param_1->win_font_helper,local_14,param_3,param_4,param_5,param_6);",
       "type": "unnamed_param"
     },
     {
@@ -979,7 +988,7 @@
       "line": 65,
       "match": "param_5",
       "severity": "mild",
-      "text": "(*(int *)(param_1 + 0x4214),local_14,param_3,param_4,param_5,param_6);",
+      "text": "(param_1->win_font_helper,local_14,param_3,param_4,param_5,param_6);",
       "type": "unnamed_param"
     },
     {
@@ -987,7 +996,7 @@
       "line": 65,
       "match": "param_6",
       "severity": "mild",
-      "text": "(*(int *)(param_1 + 0x4214),local_14,param_3,param_4,param_5,param_6);",
+      "text": "(param_1->win_font_helper,local_14,param_3,param_4,param_5,param_6);",
       "type": "unnamed_param"
     },
     {
@@ -995,7 +1004,7 @@
       "line": 67,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x4210) = 0;",
+      "text": "param_1->win_font_enabled = 0;",
       "type": "unnamed_param"
     },
     {
@@ -1043,7 +1052,7 @@
       "line": 69,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x4210) = 1;",
+      "text": "param_1->win_font_enabled = 1;",
       "type": "unnamed_param"
     },
     {
@@ -1059,7 +1068,7 @@
       "line": 76,
       "match": "param_4",
       "severity": "mild",
-      "text": "param_4 = param_4 + *(int *)(param_1 + 0x41f0) + *(int *)(param_1 + 0x41f8);",
+      "text": "param_4 = param_4 + param_1->current_line_height + param_1->line_spacing;",
       "type": "unnamed_param"
     },
     {
@@ -1067,7 +1076,7 @@
       "line": 76,
       "match": "param_4",
       "severity": "mild",
-      "text": "param_4 = param_4 + *(int *)(param_1 + 0x41f0) + *(int *)(param_1 + 0x41f8);",
+      "text": "param_4 = param_4 + param_1->current_line_height + param_1->line_spacing;",
       "type": "unnamed_param"
     },
     {
@@ -1075,7 +1084,7 @@
       "line": 76,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_4 = param_4 + *(int *)(param_1 + 0x41f0) + *(int *)(param_1 + 0x41f8);",
+      "text": "param_4 = param_4 + param_1->current_line_height + param_1->line_spacing;",
       "type": "unnamed_param"
     },
     {
@@ -1083,7 +1092,7 @@
       "line": 76,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_4 = param_4 + *(int *)(param_1 + 0x41f0) + *(int *)(param_1 + 0x41f8);",
+      "text": "param_4 = param_4 + param_1->current_line_height + param_1->line_spacing;",
       "type": "unnamed_param"
     },
     {

@@ -51,9 +51,9 @@
 ;   core_dtrace.cpp_FUN_00472b50 at 00472b6d
 ;   core_gore.cpp_CFootstep_init_FUN_004c8e80 at 004c8f57
 ;   core_particle.cpp_FUN_00510ef0 at 00511067
-;   core_setcolid.cpp_FUN_00535cf0 at 00535d67
+;   core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_00535cf0 at 00535d67
 ;   core_setcolid.cpp_FUN_00535ee0 at 00535f30
-;   core_tvbat.cpp_FUN_00580610 at 00580e6b
+;   core_tvbat.cpp_CTVBat_process_FUN_00580610 at 00580e6b
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d1b53

@@ -1,0 +1,150 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 33,
+    "complexity_score": 18,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 18,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 51
+  },
+  "cross_references": [
+    {
+      "addr": "005057c0",
+      "from_addr": "0050584b",
+      "name": "core_manpuz.cpp_updateGemHumChannel_FUN_005057c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00573760",
+    "address_range": [
+      [
+        "00573760",
+        "005737c5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_setSfxPosition_FUN_00573760",
+    "signature": "int __cdecl sound_sndmain_cpp_setSfxPosition_FUN_00573760(uint sfx_handle,double pos_x,double pos_y,double pos_z)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056fa10",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getSfxSlotFromHandle_FUN_0056fa10"
+    },
+    {
+      "addr": "00573e70",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_unlockSound_FUN_00573e70"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0050584b",
+        "call_type": "direct",
+        "caller": "core_manpuz.cpp_updateGemHumChannel_FUN_005057c0",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 4,
+    "declared_stack_bytes": 28,
+    "estimated_params": 7,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.5357142857142856,
+    "instruction_count": 28,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 2,
+      "CBRANCH": 1,
+      "COPY": 24,
+      "INT_ADD": 20,
+      "INT_AND": 7,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 6,
+      "INT_OR": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 4,
+      "LOAD": 10,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 13
+    },
+    "pcode_op_count": 99
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00550d30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a9820",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5823
+    },
+    "nocturne.exe": {
+      "addr": "00526e10",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5823
+    }
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "sfx_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "pos_x",
+        "offset": 8,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "pos_y",
+        "offset": 16,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "pos_z",
+        "offset": 24,
+        "size": 8,
+        "type": "double"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -13,10 +13,10 @@ void core_event_cpp_FUN_00494880(int param_1)
   
   pCVar1 = g_CGamePtr;
   *(uint *)(param_1 + 0x1908) = 0;
-  if (*(int *)&pCVar1->field_0xec == 1) {
+  if (pCVar1->puzzle_difficulty_mode == 1) {
     core_event_cpp_FUN_004948e0(param_1,"puzzleModeHard",1);
   }
-  if (*(int *)&g_CGamePtr->field_0xf0 != 1) {
+  if (g_CGamePtr->combat_difficulty_mode != 1) {
     return;
   }
   core_event_cpp_FUN_004948e0(param_1,"combatModeHard",1);

@@ -13,13 +13,58 @@
         "start":"0046e9e0"
       }
     ],
+    "conv":"__edi_esi_ebx",
     "importable":true,
     "name":"core_dstrendr.cpp_renderDepth16BitConditional_FUN_0046e984",
-    "ret":"undefined1",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"left_edge",
+          "storage":{
+            "reg":"EDI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:0000001c",
+                "offset":28,
+                "size":4
+              }
+            ]
+          },
+          "type":"SSoftwareEdge*"
+        },
+        {
+          "name":"right_edge",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"SSoftwareEdge*"
+        },
+        {
+          "name":"scanline_y",
+          "storage":{
+            "reg":"EBX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:0000000c",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -34,6 +79,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_00492704",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -52,6 +98,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005b8a04",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -70,6 +117,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005b9284",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -88,6 +136,7 @@
     "importable":true,
     "name":"crt_math.c_pow_FUN_005b9484",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "locals":[
         {
@@ -186,6 +235,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005bd584",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "locals":[
         {
@@ -254,6 +304,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005bfc84",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "locals":[
         {
@@ -323,6 +374,7 @@
     "importable":true,
     "name":"crt_kernel32.c_GetModuleHandleA",
     "ret":"HMODULE",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000073",
     "thunk":true,
     "vars":{
@@ -369,6 +421,7 @@
     "importable":true,
     "name":"crt_user32.c_ShowWindow",
     "ret":"BOOL",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000047",
     "thunk":true,
     "vars":{
@@ -431,6 +484,7 @@
     "importable":true,
     "name":"crt_kernel32.c_TlsGetValue",
     "ret":"LPVOID",
+    "sig":"imported",
     "thtarget":"EXTERNAL:0000009c",
     "thunk":true,
     "vars":{

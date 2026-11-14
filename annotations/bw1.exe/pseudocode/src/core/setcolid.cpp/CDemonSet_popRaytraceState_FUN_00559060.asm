@@ -7,10 +7,10 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[4]:
-;   core_actor.cpp_FUN_00408a00 at 00408aa9
-;   core_fire.cpp_FUN_004b6420 at 004b69f0
-;   core_lightgun.cpp_FUN_00500310 at 0050057c
-;   core_lightpis.cpp_FUN_00501a70 at 00501cdc
+;   core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408a00 at 00408aa9
+;   core_fire.cpp_CFireEffect_traceLaser_FUN_004b6420 at 004b69f0
+;   core_lightgun.cpp_CLightGun_fire_FUN_00500310 at 0050057c
+;   core_lightpis.cpp_CLightPis_fire_FUN_00501a70 at 00501cdc
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setcolid_cpp_005f0f0c

@@ -2,24 +2,39 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 97,
-    "cross_reference_count": 27,
+    "complexity_score": 7,
+    "cross_reference_count": 30,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 7,
-    "suspect_count": 8,
-    "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 23
   },
   "cross_references": [
     {
+      "addr": "00480af0",
+      "from_addr": "00480b1c",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00480af0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00480fa0",
       "from_addr": "00480fca",
       "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00480fa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00480e50",
+      "from_addr": "00480e7b",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthPrintf_FUN_00480e50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00480ca0",
+      "from_addr": "00480ccd",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00480ca0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -29,45 +44,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004807b0",
-      "from_addr": "004807dc",
-      "name": "cockpit_drawsurf.cpp_FUN_004807b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00480880",
-      "from_addr": "004808ac",
-      "name": "cockpit_drawsurf.cpp_FUN_00480880",
+      "addr": "00480bc0",
+      "from_addr": "00480bed",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00480bc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00480950",
       "from_addr": "0048097c",
-      "name": "cockpit_drawsurf.cpp_FUN_00480950",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_00480950",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004807b0",
+      "from_addr": "004807dc",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_004807b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00480a20",
       "from_addr": "00480a4c",
-      "name": "cockpit_drawsurf.cpp_FUN_00480a20",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_00480a20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00480af0",
-      "from_addr": "00480b1c",
-      "name": "cockpit_drawsurf.cpp_FUN_00480af0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00480bc0",
-      "from_addr": "00480bed",
-      "name": "cockpit_drawsurf.cpp_FUN_00480bc0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00480ca0",
-      "from_addr": "00480ccd",
-      "name": "cockpit_drawsurf.cpp_FUN_00480ca0",
+      "addr": "00480880",
+      "from_addr": "004808ac",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00480880",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -85,13 +88,25 @@
     {
       "addr": "005bfb40",
       "from_addr": "005bfb58",
-      "name": "crt_unknown.c_FUN_005bfb40",
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00402160",
+      "from_addr": "0040218b",
+      "name": "engine_2d.c_drawTextFormatted_FUN_00402160",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00445430",
       "from_addr": "00445468",
-      "name": "engine_console.cpp_FUN_00445430",
+      "name": "engine_console.cpp_CConsole_printf_FUN_00445430",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c22e0",
+      "from_addr": "004c22ff",
+      "name": "engine_font.cpp_CBitFont_drawTextCenterFV_FUN_004c22e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -101,27 +116,39 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004c20e0",
+      "from_addr": "004c20ff",
+      "name": "engine_font.cpp_CBitFont_drawTextFV_FUN_004c20e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004c2500",
       "from_addr": "004c251f",
       "name": "engine_font.cpp_CBitFont_printCenterFV_FUN_004c2500",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004c20e0",
-      "from_addr": "004c20ff",
-      "name": "engine_font.cpp_FUN_004c20e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004c22e0",
-      "from_addr": "004c22ff",
-      "name": "engine_font.cpp_FUN_004c22e0",
+      "addr": "004c21e0",
+      "from_addr": "004c21ff",
+      "name": "engine_font.cpp_CBitFont_printFV_FUN_004c21e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00494400",
       "from_addr": "0049445d",
       "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_00494400",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00494d20",
+      "from_addr": "00494d4a",
+      "name": "shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_00494d20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004943a0",
+      "from_addr": "004943ca",
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_004943a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -137,21 +164,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004943a0",
-      "from_addr": "004943ca",
-      "name": "shape_edittool.cpp_FUN_004943a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004944fe",
+      "addr": "00494500",
       "from_addr": "0049455b",
-      "name": "shape_edittool.cpp_FUN_004944fe",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00494d20",
-      "from_addr": "00494d4a",
-      "name": "shape_edittool.cpp_FUN_00494d20",
+      "name": "shape_edittool.cpp_FUN_00494500",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -169,13 +184,13 @@
     {
       "addr": "005773f0",
       "from_addr": "00577419",
-      "name": "sound_sndmain.cpp_FUN_005773f0",
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005773f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a14f0",
       "from_addr": "005a157c",
-      "name": "support_trstream.cpp_FUN_005a14f0",
+      "name": "support_trstream.cpp_COutStream_vprintf_FUN_005a14f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -189,7 +204,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_stdio.c_vsprintf_FUN_005bfb18",
-    "signature": "void __cdecl crt_stdio_c_vsprintf_FUN_005bfb18(int param_1,undefined4 param_2,undefined4 param_3)"
+    "signature": "int __cdecl crt_stdio_c_vsprintf_FUN_005bfb18(char *buffer,char *format,va_list_t args)"
   },
   "function_calls": [
     {
@@ -200,7 +215,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 27,
+    "call_site_count": 30,
     "call_sites": [
       {
         "call_addr": "00503117",
@@ -227,7 +242,7 @@
       {
         "call_addr": "004943ca",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_004943a0",
+        "caller": "shape_edittool.cpp_CEditorTools_showError_FUN_004943a0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -249,7 +264,7 @@
       {
         "call_addr": "00445468",
         "call_type": "direct",
-        "caller": "engine_console.cpp_FUN_00445430",
+        "caller": "engine_console.cpp_CConsole_printf_FUN_00445430",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -260,7 +275,7 @@
       {
         "call_addr": "00494d4a",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00494d20",
+        "caller": "shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_00494d20",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -293,7 +308,7 @@
       {
         "call_addr": "00577419",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_005773f0",
+        "caller": "sound_sndmain.cpp_logSoundError_FUN_005773f0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -304,7 +319,7 @@
       {
         "call_addr": "005bfb58",
         "call_type": "direct",
-        "caller": "crt_unknown.c_FUN_005bfb40",
+        "caller": "crt_unknown.c_sprintf_FUN_005bfb40",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -314,10 +329,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
     "estimated_params": 3,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.5714285714285716,
@@ -340,81 +355,61 @@
     },
     "pcode_op_count": 50
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b7768",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005a2898",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005fdba8",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00563a08",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "format",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "args",
+        "offset": 12,
+        "size": 4,
+        "type": "va_list_t"
+      }
+    ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl _vsprintf(int param_1,uint param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl _vsprintf(int param_1,uint param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl _vsprintf(int param_1,uint param_2,uint param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = FUN_005c3320(param_1,param_2,param_3,FUN_005bfb00);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar1 = FUN_005c3320(param_1,param_2,param_3,FUN_005bfb00);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iVar1 = FUN_005c3320(param_1,param_2,param_3,FUN_005bfb00);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(byte *)(param_1 + iVar1) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 27,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

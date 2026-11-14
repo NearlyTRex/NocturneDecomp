@@ -1,8 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl crt_time_c__strftime_FUN_005a5674(int param_1,uint param_2,char *param_3,undefined4 *param_4)
+; uint __cdecl crt_time_c__strftime_FUN_005a5674(char *dest_buffer,uint buffer_size,char *format_string,_tm *time_ptr)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   dest_buffer
+; uint             Stack[0x8]:4   buffer_size
+; char *           Stack[0xc]:4   format_string
+; _tm *            Stack[0x10]:4   time_ptr
 ; Local Variables:
 ; undefined1       Stack[-0xa0]:1  local_a0
 ; undefined1       Stack[-0x9f]:1  local_9f
@@ -12,7 +17,7 @@
 ;
 ; XREF[2]:
 ;   shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00482820 at 0048292d
-;   shape_edittool.cpp_FUN_0047dd1e at 0047e149
+;   shape_edittool.cpp_FUN_0047dd20 at 0047e149
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_a_b_d_H_M_S_Y_005da78c

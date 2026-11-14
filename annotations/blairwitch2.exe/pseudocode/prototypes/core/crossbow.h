@@ -5,45 +5,45 @@
 // Function prototypes for core/crossbow.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_crossbow.cpp_staticInit_FUN_00439d00
-// Address: 00439d00
-void staticInit(void);
+// Original: core_crossbow.cpp_staticInit_FUN_0043a460
+// Address: 0043a460
+void __cdecl staticInit(void);
 
-// Original: core_crossbow.cpp_factoryFuncCrate_FUN_00439d30
-// Address: 00439d30
-void factoryFuncCrate(void);
+// Original: core_crossbow.cpp_factoryFuncCrossbow_FUN_0043a490
+// Address: 0043a490
+CCrossbow * __cdecl factoryFuncCrossbow(void);
 
 // Original: core_crossbow.cpp_CCrossbow_getActorType_FUN_0043a4b0
 // Address: 0043a4b0
-CDemonActorType * CCrossbow::getActorType(CCrossbow *this_ptr);
+CDemonActorType * __cdecl CCrossbow::getActorType(CCrossbow *this_ptr);
 
 // Original: core_crossbow.cpp_CCrossbow_ctor_FUN_0043a4c0
 // Address: 0043a4c0
 CCrossbow * __cdecl CCrossbow::ctor(CCrossbow *this_ptr);
 
-// Original: core_crossbow.cpp_FUN_0043a580
+// Original: core_crossbow.cpp_CCrossbow_process_FUN_0043a580
 // Address: 0043a580
-void FUN_0043a580(int param_1,undefined4 param_2,float param_3);
+void __cdecl CCrossbow::process(CCrossbow *this_ptr,float delta_time);
 
-// Original: core_crossbow.cpp_FUN_0043a670
+// Original: core_crossbow.cpp_CCrossbow_renderOpaque_FUN_0043a670
 // Address: 0043a670
-int FUN_0043a670(CDemonActor *param_1);
+int __cdecl CCrossbow::renderOpaque(CCrossbow *this_ptr);
 
-// Original: core_crossbow.cpp_FUN_0043a710
+// Original: core_crossbow.cpp_CCrossbow_renderTransparent_FUN_0043a710
 // Address: 0043a710
-undefined4 FUN_0043a710(int param_1);
+int __cdecl CCrossbow::renderTransparent(CCrossbow *this_ptr);
 
-// Original: core_crossbow.cpp_FUN_0043a740
+// Original: core_crossbow.cpp_CCrossbow_getMuzzlePoint_FUN_0043a740
 // Address: 0043a740
-void FUN_0043a740(int param_1);
+void __cdecl CCrossbow::getMuzzlePoint(CCrossbow *this_ptr);
 
-// Original: core_crossbow.cpp_FUN_0043a7a0
+// Original: core_crossbow.cpp_CCrossbow_fire_FUN_0043a7a0
 // Address: 0043a7a0
-undefined4 FUN_0043a7a0(CWeapon *param_1);
+int __cdecl CCrossbow::fire(CCrossbow *this_ptr);
 
-// Original: core_crossbow.cpp_FUN_0043ae10
+// Original: core_crossbow.cpp_CCrossbow_getCurFrame_FUN_0043ae10
 // Address: 0043ae10
-float FUN_0043ae10(int param_1);
+float __cdecl CCrossbow::getCurFrame(CCrossbow *this_ptr);
 
 // Original: core_crossbow.cpp_CCrossbow_getDamage_FUN_0043ae40
 // Address: 0043ae40

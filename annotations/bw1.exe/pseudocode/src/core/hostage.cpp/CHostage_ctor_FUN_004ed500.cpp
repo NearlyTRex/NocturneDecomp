@@ -14,16 +14,17 @@ CHostage * __cdecl core_hostage_cpp_CHostage_ctor_FUN_004ed500(CHostage *this_pt
   char *pcVar3;
   char *pcVar4;
   
-  pCVar2 = (CHostage *)core_npc_cpp_CNPC_ctor_FUN_00531670((CNPC *)this_ptr);
-  *(byte ***)&pCVar2->field_0x154 = &g_CHostageVTable;
-  core_skeleton_cpp_FUN_00569f50(&pCVar2->field_0x158,"hickdad.dfm");
-  *(uint *)&pCVar2->field_0x1fe64 = 0;
-  *(uint *)&pCVar2->field_0x1fe6c = 0;
+  pCVar2 = (CHostage *)core_npc_cpp_CNPC_ctor_FUN_00531670(&this_ptr->base);
+  (pCVar2->base).base.base.vtable._ub = &g_CHostageVTable._ub;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
+            (&(pCVar2->base).base.model,"hickdad.dfm");
+  pCVar2->follow_state = 0;
+  pCVar2->hostage_state = 0;
   pcVar3 = "true";
-  *(uint *)&pCVar2->field_0x1fe70 = 0;
-  *(uint *)&pCVar2->field_0x1fe74 = 0;
-  pcVar4 = &pCVar2->field_0x1fabc;
-  *(uint *)&pCVar2->field_0x1fab8 = 0x40a00000;
+  pCVar2->goal_way_point = (CDemonActor *)0x0;
+  pCVar2->sit_down_way_point = (CDemonActor *)0x0;
+  pcVar4 = pCVar2->rescue_condition;
+  pCVar2->rescue_distance = 5.0;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;
@@ -33,23 +34,23 @@ CHostage * __cdecl core_hostage_cpp_CHostage_ctor_FUN_004ed500(CHostage *this_pt
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  *(uint *)&pCVar2->field_0x1fe78 = 0;
-  *(uint *)&pCVar2->field_0x26fc = 0;
-  *(uint *)&pCVar2->field_0x1fe90 = 0;
-  *(uint *)&pCVar2->field_0x1fe94 = 0;
-  pCVar2->field_0x1fb20 = 0;
-  pCVar2->field_0x1fb40 = 0;
-  pCVar2->field_0x1fba4 = 0;
-  pCVar2->field_0x1fc08 = 0;
-  pCVar2->field_0x1fc6c = 0;
-  pCVar2->field_0x1fcd0 = 0;
-  pCVar2->field_0x1fd34 = 0;
-  *(uint *)&pCVar2->field_0x1fe98 = 0;
-  *(uint *)&pCVar2->field_0x1fe9c = 0;
-  *(uint *)&pCVar2->field_0x1fe8c = 0;
-  pCVar2->field_0x2544 = 0;
-  pCVar2->field_0x1fd98 = 0;
-  pCVar2->field_0x1fdfc = 0;
-  *(uint *)&pCVar2->field_0x2540 = 1;
+  pCVar2->next_way_point = (CDemonActor *)0x0;
+  (pCVar2->base).base.grabbed_by = (CDemonActor *)0x0;
+  pCVar2->gun_raise_progress = 0.0;
+  pCVar2->gun_blend_weight = 0.0;
+  pCVar2->rescue_event[0] = '\0';
+  pCVar2->hero_found_me_event[0] = '\0';
+  pCVar2->hero_left_me_event[0] = '\0';
+  pCVar2->hero_came_back_event[0] = '\0';
+  pCVar2->get_eaten_event[0] = '\0';
+  pCVar2->going_to_sit_down_event[0] = '\0';
+  pCVar2->sit_down_event[0] = '\0';
+  pCVar2->grabber = (CDemonActor *)0x0;
+  pCVar2->grabber_flee_timer = 0.0;
+  pCVar2->no_shadows_when_saved = 0;
+  (pCVar2->base).base.descriptive_name[0] = '\0';
+  pCVar2->damage_sound[0] = '\0';
+  pCVar2->die_sound[0] = '\0';
+  (pCVar2->base).base.health_bar_mode = HEALTH_BAR_WHEN_HURT;
   return pCVar2;
 }

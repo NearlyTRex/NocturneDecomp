@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CInStreamPipe * support_codec_cpp_CInStreamPipe_dtor_FUN_004418c0(CInStreamPipe *this_ptr,uint flags)
+; CInStreamPipe * __cdecl support_codec_cpp_CInStreamPipe_dtor_FUN_004418c0(CInStreamPipe *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CInStreamPipe *  Stack[0x4]:4   this_ptr
@@ -15,8 +15,8 @@
 ;   crt_memory.c___vec_delete_FUN_005a308f
 ;   crt_unknown.c_FUN_005a30b6
 ;   crt_unknown.c_FUN_005a30c4
-;   support_codec.cpp_FUN_00441b60
-;   unkafter_turret.cpp_FUN_00572540
+;   support_codec.cpp_CInStreamPipe_close_FUN_00441b60
+;   support_trstream.cpp_CInStream_dtor_FUN_00572540
 ;
 ; *****************************************************************************
 
@@ -30,13 +30,13 @@ section .text
         ;   XREF to: 004418f5 (CONDITIONAL_JUMP)  ; LAB_004418f5
     PUSH EBX                            ; 004418cc
     MOV dword ptr [EBX],0x5dd554        ; 004418cd | g_CInStreamPipeVTable
-    CALL support_codec.cpp_FUN_00441b60 ; 004418d3
-        ;   XREF to: 00441b60 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_00441b60()
+    CALL support_codec.cpp_CInStreamPipe_close_FUN_00441b60 ; 004418d3
+        ;   XREF to: 00441b60 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CInStreamPipe_close_FUN_00441b60(CInStreamPipe * this_ptr)
     ADD ESP,0x4                         ; 004418d8
     PUSH 0x1                            ; 004418db
     PUSH EBX                            ; 004418dd
-    CALL unkafter_turret.cpp_FUN_00572540 ; 004418de
-        ;   XREF to: 00572540 (UNCONDITIONAL_CALL)  ; undefined unkafter_turret.cpp_FUN_00572540()
+    CALL support_trstream.cpp_CInStream_dtor_FUN_00572540 ; 004418de
+        ;   XREF to: 00572540 (UNCONDITIONAL_CALL)  ; CInStream * support_trstream.cpp_CInStream_dtor_FUN_00572540(CInStream * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004418e3
     MOV DL,byte ptr [ESP + 0xc]         ; 004418e6
     MOV EBX,EAX                         ; 004418ea
@@ -50,7 +50,7 @@ section .text
         ;   Label: LAB_004418f5
     PUSH EBX                            ; 004418fa
     CALL crt_memory.c___vec_delete_FUN_005a308f ; 004418fb
-        ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005a308f()
+        ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005a308f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00441900
     PUSH EAX                            ; 00441903
     CALL crt_unknown.c_FUN_005a30b6     ; 00441904

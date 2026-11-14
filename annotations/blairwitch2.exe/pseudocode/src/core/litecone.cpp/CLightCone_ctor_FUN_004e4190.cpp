@@ -14,14 +14,14 @@ CLightCone * __cdecl core_litecone_cpp_CLightCone_ctor_FUN_004e4190(CLightCone *
   char *pcVar3;
   char *pcVar4;
   
-  pCVar2 = (CLightCone *)core_actor_cpp_CDemonActor_ctor_FUN_00408790((CDemonActor *)this_ptr);
-  *(byte **)&pCVar2->field_0x2b0 = &g_CLightConeVTable;
+  pCVar2 = (CLightCone *)core_actor_cpp_CDemonActor_ctor_FUN_00408790(&this_ptr->base);
+  (pCVar2->base).vtable._ub = &g_CLightConeVTable;
   pcVar3 = (char *)0x5dc105;
-  *(uint *)&pCVar2->field_0x2b4 = 0x42600000;
-  *(uint *)&pCVar2->field_0x2b8 = 0x40c00000;
-  *(uint *)&pCVar2->field_0xfc = 1;
-  pcVar4 = &pCVar2->field_0x2c0;
-  *(uint *)&pCVar2->field_0x2bc = 1;
+  pCVar2->fov = 56.0;
+  pCVar2->falloff = 6.0;
+  (pCVar2->base).is_transparent = 1;
+  pcVar4 = pCVar2->on_event;
+  pCVar2->state = 1;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;
@@ -32,7 +32,7 @@ CLightCone * __cdecl core_litecone_cpp_CLightCone_ctor_FUN_004e4190(CLightCone *
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
   pcVar3 = (char *)0x5dc10a;
-  pcVar4 = &pCVar2->field_0x324;
+  pcVar4 = pCVar2->off_event;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;

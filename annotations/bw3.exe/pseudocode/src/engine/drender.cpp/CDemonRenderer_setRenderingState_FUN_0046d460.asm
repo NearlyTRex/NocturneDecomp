@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   state_flag
 ;
 ; XREF[21]:
-;   core_box.cpp_FUN_0041e9b0 at 0041ea65
-;   core_chain.cpp_FUN_0042a280 at 0042a32e
+;   core_box.cpp_CBoundingBox3D_render_FUN_0041e9b0 at 0041ea65
+;   core_chain.cpp_CChain_renderTransparent_FUN_0042a280 at 0042a32e
 ;   core_cloth.cpp_CCloth_render_FUN_0043f460 at 0043f495
 ;   core_curtain.cpp_CCurtain_renderMesh_FUN_00448060 at 00448180
 ;   core_dcamera.cpp_CDemonCamera_testVisibility_FUN_004512f0 at 0045136c
@@ -17,7 +17,7 @@
 ;   core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_0045d170 at 0045d2da
 ;   core_dlight.cpp_CDemonLight_testVisibility_FUN_00460270 at 004602a2
 ;   core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00461050 at 0046108f
-;   core_dpart.cpp_FUN_0046682e at 00466844
+;   core_dpart.cpp_FUN_00466830 at 00466844
 ;   ... and 11 more
 ;
 ; Called Functions:

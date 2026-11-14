@@ -31,7 +31,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[2]:
+; XREF[3]:
+;   core_actor.cpp_CDemonActor_testRayIntersection_FUN_0040a6c0 at 0040a71c
 ;   core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0 at 0051025e
 ;   core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_00533750 at 00533b29
 ;

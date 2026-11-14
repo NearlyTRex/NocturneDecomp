@@ -5,10 +5,177 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "system/watcom.h"
+#include "types/classes/CBasicEnemy_full_vtable.h"
+#include "types/classes/CBoneGuy_full_vtable.h"
+#include "types/classes/CCharacter_full_vtable.h"
+#include "types/classes/CConfederateZombie_full_vtable.h"
+#include "types/classes/CDemonActor_vtable.h"
+#include "types/classes/CEnemy_full_vtable.h"
+#include "types/classes/CHero_full_vtable.h"
+#include "types/classes/CMobster_full_vtable.h"
+#include "types/classes/CRobin_full_vtable.h"
+#include "types/classes/CSchnellGeist_full_vtable.h"
+#include "types/classes/CSmiley_full_vtable.h"
+#include "types/classes/CUnionZombie_full_vtable.h"
+#include "types/classes/CWeapon_full_vtable.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x5F0000
 // =============================================================================
+
+// CBasicEnemy_full_vtable
+extern CBasicEnemy_full_vtable g_CConfederateVTable;
+extern CBasicEnemy_full_vtable g_CTwigZombieVTable;
+extern CBasicEnemy_full_vtable g_CBasicNPCVTable;
+extern CBasicEnemy_full_vtable g_CUnionVTable;
+extern CBasicEnemy_full_vtable g_CSteubenVTable;
+
+// CBoneGuy_full_vtable
+extern CBoneGuy_full_vtable g_CBoneGuyVTable;
+
+// CCharacter_full_vtable
+extern CCharacter_full_vtable g_CCharacterVTable;
+extern CCharacter_full_vtable g_CHiramVTable;
+extern CCharacter_full_vtable g_CHostageVTable;
+extern CCharacter_full_vtable g_CHighPriestOfGardathVTable;
+extern CCharacter_full_vtable g_CNPCVTable;
+extern CCharacter_full_vtable g_CPassengerVTable;
+extern CCharacter_full_vtable g_CBassPlayerVTable;
+extern CCharacter_full_vtable g_CDrummerVTable;
+
+// CConfederateZombie_full_vtable
+extern CConfederateZombie_full_vtable g_CConfederateZombieVTable;
+
+// CDemonActor_vtable
+extern CDemonActor_vtable g_CDemonActorVTable;
+extern CDemonActor_vtable g_CAmmoVTable;
+extern CDemonActor_vtable g_CAmmoBoxVTable;
+extern CDemonActor_vtable g_CAnvilVTable;
+extern CDemonActor_vtable g_CBackgroundActorVTable;
+extern CDemonActor_vtable g_CBarrierVTable;
+extern CDemonActor_vtable g_CBatVTable;
+extern CDemonActor_vtable g_CBatteryVTable;
+extern CDemonActor_vtable g_CBodyPartVTable;
+extern CDemonActor_vtable g_CBoxActorVTable;
+extern CDemonActor_vtable g_CLightActorVTable;
+extern CDemonActor_vtable g_CConveyorVTable;
+extern CDemonActor_vtable g_CCrateVTable;
+extern CDemonActor_vtable g_CActorDestinationVTable;
+extern CDemonActor_vtable g_CDoorVTable;
+extern CDemonActor_vtable g_CDripVTable;
+extern CDemonActor_vtable g_CEmitterVTable;
+extern CDemonActor_vtable g_CFilmReelVTable;
+extern CDemonActor_vtable g_CFilmProjectorVTable;
+extern CDemonActor_vtable g_CFlameVTable;
+extern CDemonActor_vtable g_CFlameCanVTable;
+extern CDemonActor_vtable g_CFliesVTable;
+extern CDemonActor_vtable g_CFrankenstienMachineVTable;
+extern CDemonActor_vtable g_CGasMaskVTable;
+extern CDemonActor_vtable g_CGlassVTable;
+extern CDemonActor_vtable g_CGraveVTable;
+extern CDemonActor_vtable g_CHealthItemVTable;
+extern CDemonActor_vtable g_CHeroPlaceholderVTable;
+extern CDemonActor_vtable g_CKeyActorVTable;
+extern CDemonActor_vtable g_CLadderVTable;
+extern CDemonActor_vtable g_CLeverVTable;
+extern CDemonActor_vtable g_CLightConeVTable;
+extern CDemonActor_vtable g_CMansionPuzzleCircleVTable;
+extern CDemonActor_vtable g_CMirrorHackVTable;
+extern CDemonActor_vtable g_CMarqueeVTable;
+extern CDemonActor_vtable g_CMineCarVTable;
+extern CDemonActor_vtable g_CPendulumVTable;
+extern CDemonActor_vtable g_CPlatformVTable;
+extern CDemonActor_vtable g_CSimBoxVTable;
+extern CDemonActor_vtable g_CSpikeVTable;
+extern CDemonActor_vtable g_CStairsVTable;
+extern CDemonActor_vtable g_CTempleStoneVTable;
+extern CDemonActor_vtable g_CTeleportDestVTable;
+extern CDemonActor_vtable g_CTeleportVTable;
+extern CDemonActor_vtable g_CTrapVTable;
+extern CDemonActor_vtable g_CTrashVTable;
+extern CDemonActor_vtable g_CTriggerVTable;
+extern CDemonActor_vtable g_CVehicleVTable;
+extern CDemonActor_vtable g_CCryptVesselVTable;
+extern CDemonActor_vtable g_CWaterActorVTable;
+extern CDemonActor_vtable g_CWayPointVTable;
+extern CDemonActor_vtable g_CGogglesVTable;
+extern CDemonActor_vtable g_CPatrolPointVTable;
+
+// CEnemy_full_vtable
+extern CEnemy_full_vtable g_CArmourVTable;
+extern CEnemy_full_vtable g_CBatCreatureVTable;
+extern CEnemy_full_vtable g_CBatmanVTable;
+extern CEnemy_full_vtable g_CBeastVTable;
+extern CEnemy_full_vtable g_CBiggsVTable;
+extern CEnemy_full_vtable g_CBrideVTable;
+extern CEnemy_full_vtable g_CBugsVTable;
+extern CEnemy_full_vtable g_CConstructVTable;
+extern CEnemy_full_vtable g_CZombieCowVTable;
+extern CEnemy_full_vtable g_CZombieDogVTable;
+extern CEnemy_full_vtable g_CDraculaBrideVTable;
+extern CEnemy_full_vtable g_CDroneVTable;
+extern CEnemy_full_vtable g_CEnemyVTable;
+extern CEnemy_full_vtable g_CGargoyleVTable;
+extern CEnemy_full_vtable g_CGhoulVTable;
+extern CEnemy_full_vtable g_CHotDemonVTable;
+extern CEnemy_full_vtable g_CImpVTable;
+extern CEnemy_full_vtable g_CLarvaVTable;
+extern CEnemy_full_vtable g_CMimicVTable;
+extern CEnemy_full_vtable g_CSentinelVTable;
+extern CEnemy_full_vtable g_CShadowVTable;
+extern CEnemy_full_vtable g_CSuccubusVTable;
+extern CEnemy_full_vtable g_CTentacleVTable;
+extern CEnemy_full_vtable g_CTVBatVTable;
+extern CEnemy_full_vtable g_CVampireBossVTable;
+extern CEnemy_full_vtable g_CWerewolfVTable;
+extern CEnemy_full_vtable g_CZombieVTable;
+
+// CHero_full_vtable
+extern CHero_full_vtable g_CBaronVTable;
+extern CHero_full_vtable g_CColonelVTable;
+extern CHero_full_vtable g_CDocVTable;
+extern CHero_full_vtable g_CGabriellaVTable;
+extern CHero_full_vtable g_CHaystackVTable;
+extern CHero_full_vtable g_CIcePickVTable;
+extern CHero_full_vtable g_CMolochVTable;
+extern CHero_full_vtable g_CScatVTable;
+extern CHero_full_vtable g_CStrangerVTable;
+extern CHero_full_vtable g_CSvetlanaVTable;
+
+// CMobster_full_vtable
+extern CMobster_full_vtable g_CMobsterVTable;
+
+// CRobin_full_vtable
+extern CRobin_full_vtable g_CRobinVTable;
+
+// CSchnellGeist_full_vtable
+extern CSchnellGeist_full_vtable g_CSchnellGeistVTable;
+
+// CSmiley_full_vtable
+extern CSmiley_full_vtable g_CSmileyVTable;
+
+// CUnionZombie_full_vtable
+extern CUnionZombie_full_vtable g_CUnionZombieVTable;
+
+// CWeapon_full_vtable
+extern CWeapon_full_vtable g_CBaronWeaponVTable;
+extern CWeapon_full_vtable g_CCrossbowVTable;
+extern CWeapon_full_vtable g_CDynamiteVTable;
+extern CWeapon_full_vtable g_CElephantGunVTable;
+extern CWeapon_full_vtable g_CFlameThrowerVTable;
+extern CWeapon_full_vtable g_CFlashlightVTable;
+extern CWeapon_full_vtable g_CGunVTable;
+extern CWeapon_full_vtable g_CLightGunVTable;
+extern CWeapon_full_vtable g_CMeleeVTable;
+extern CWeapon_full_vtable g_CShotgunVTable;
+extern CWeapon_full_vtable g_CShovelVTable;
+extern CWeapon_full_vtable g_CTommyGunVTable;
+extern CWeapon_full_vtable g_CTurretVTable;
+extern CWeapon_full_vtable g_CWeaponVTable;
+extern CWeapon_full_vtable g_CLanternVTable;
+extern CWeapon_full_vtable g_CMeleeAxeVTable;
+extern CWeapon_full_vtable g_CCrossVTable;
+extern CWeapon_full_vtable g_CSimpleCrossVTable;
 
 // WatcomDestructorCall
 extern WatcomDestructorCall DAT_005F39F0;
@@ -393,14 +560,12 @@ extern undefined1* g_COutStreamDebugVTable;
 extern undefined1* g_CAudioRecPuzzleVTable;
 
 // void*
-extern void* g_CBrideVTable;
-extern void* g_CBugsVTable;
-extern void* g_CCharacterVTable;
 extern void* g_CCodecVTable;
-extern void* g_CColonelVTable;
-extern void* g_CConstructVTable;
-extern void* g_CConveyorVTable;
-extern void* g_PageResource_BitmapVTable;
-extern void* g_PageResource_TwanaEntryVTable;
+extern void* g_SPageResourceVTable;
+extern void* g_SPageResourceTextVTable;
+extern void* g_SPageResourceBitmapVTable;
+extern void* g_SPageResourceTwanaCharacterVTable;
+extern void* g_SPageResourceTwanaEntryVTable;
+extern void* g_SPageResourceMapVTable;
 extern void* g_CDeformableModelInstanceVTable;
 

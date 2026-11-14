@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; COutStreamMemory * support_trstream_cpp_COutStreamMemory_ctor_FUN_00574a80(COutStreamMemory *this_ptr)
+; COutStreamMemory * __cdecl support_trstream_cpp_COutStreamMemory_ctor_FUN_00574a80(COutStreamMemory *this_ptr)
 ;
 ; Parameters:
 ; COutStreamMemory * Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   support_trstream.cpp_FUN_005744a0
+;   support_trstream.cpp_COutStream_dtor_FUN_005744a0
 ;
 ; *****************************************************************************
 
@@ -16,8 +16,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 00574a80
         ;   Label: support_trstream.cpp_COutStreamMemory_ctor_FUN_00574a80
     PUSH EDX                            ; 00574a84
-    CALL support_trstream.cpp_FUN_005744a0 ; 00574a85
-        ;   XREF to: 005744a0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005744a0()
+    CALL support_trstream.cpp_COutStream_dtor_FUN_005744a0 ; 00574a85
+        ;   XREF to: 005744a0 (UNCONDITIONAL_CALL)  ; COutStream * support_trstream.cpp_COutStream_dtor_FUN_005744a0(COutStream * this_ptr, uint flags)
     MOV dword ptr [EAX],0x5e5b54        ; 00574a8a
     MOV dword ptr [EAX + 0x4],0x0       ; 00574a90
     MOV dword ptr [EAX + 0x8],0x0       ; 00574a97

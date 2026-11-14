@@ -16,7 +16,7 @@
 ; XREF[3]:
 ;   core_game.cpp_CGame_playerControls_FUN_004b7050 at 004b7097
 ;   core_game.cpp_CGame_processJoystickControls_FUN_004b7510 at 004b7528
-;   core_game.cpp_FUN_004b80a0 at 004b80b4
+;   core_game.cpp_CGame_processMouseControls_FUN_004b80a0 at 004b80b4
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d78c3
@@ -32,16 +32,16 @@
 ;   undefined4 DAT_00617dd4
 ;   undefined4 g_CDocClassInfo.name_hash
 ;   undefined4 DAT_01c37790
-;   undefined4 g_CGameInstance.field644_0x284
+;   undefined4 g_CGameInstance.delta_time_float
 ;   undefined4 DAT_01cb7528
 ;   ... and 2 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
+;   core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbc60
+;   core_inv.cpp_CInventory_selectItem_FUN_004dbb50
+;   core_inv.cpp_CInventory_toggleDetailView_FUN_004defa0
 ;   core_inv.cpp_FUN_004db9d0
-;   core_inv.cpp_FUN_004dbb50
-;   core_inv.cpp_FUN_004dbc60
-;   core_inv.cpp_FUN_004defa0
 ;
 ; *****************************************************************************
 
@@ -73,7 +73,7 @@ section .text
     JBE 0x004b772c                      ; 004b7704
         ;   XREF to: 004b772c (CONDITIONAL_JUMP)  ; LAB_004b772c
     MOV EAX,[0x00616494]                ; 004b7706 | g_CGamePtr
-    FLD float ptr [EAX + 0x284]         ; 004b770b | g_CGameInstance.field644_0x284
+    FLD float ptr [EAX + 0x284]         ; 004b770b | g_CGameInstance.delta_time_float
     FDIV float ptr [0x005d78c3]         ; 004b7711 | DAT_005d78c3
     FSUBR float ptr [EDX]               ; 004b7717
     FST float ptr [EDX]                 ; 004b7719
@@ -101,7 +101,7 @@ section .text
     JBE 0x004b7785                      ; 004b775d
         ;   XREF to: 004b7785 (CONDITIONAL_JUMP)  ; LAB_004b7785
     MOV EAX,[0x00616494]                ; 004b775f | g_CGamePtr
-    FLD float ptr [EAX + 0x284]         ; 004b7764 | g_CGameInstance.field644_0x284
+    FLD float ptr [EAX + 0x284]         ; 004b7764 | g_CGameInstance.delta_time_float
     FDIV float ptr [0x005d78c3]         ; 004b776a | DAT_005d78c3
     FSUBR float ptr [EDX]               ; 004b7770
     FST float ptr [EDX]                 ; 004b7772
@@ -113,7 +113,7 @@ section .text
     MOV dword ptr [EDX],0xbf800000      ; 004b777f
     MOV EAX,[0x00616494]                ; 004b7785 | g_CGamePtr
         ;   Label: LAB_004b7785
-    FLD float ptr [EAX + 0x284]         ; 004b778a | g_CGameInstance.field644_0x284
+    FLD float ptr [EAX + 0x284]         ; 004b778a | g_CGameInstance.delta_time_float
     FMUL float ptr [0x005d78cb]         ; 004b7790 | DAT_005d78cb
     FDIV float ptr [0x005d78cf]         ; 004b7796 | DAT_005d78cf
     FLDZ                                ; 004b779c
@@ -161,7 +161,7 @@ section .text
     JBE 0x004b783c                      ; 004b7811
         ;   XREF to: 004b783c (CONDITIONAL_JUMP)  ; LAB_004b783c
     MOV EAX,[0x00616494]                ; 004b7813 | g_CGamePtr
-    FLD float ptr [EAX + 0x284]         ; 004b7818 | g_CGameInstance.field644_0x284
+    FLD float ptr [EAX + 0x284]         ; 004b7818 | g_CGameInstance.delta_time_float
     FMUL float ptr [0x005d78cb]         ; 004b781e | DAT_005d78cb
     FDIV float ptr [ESP]                ; 004b7824
     FSUBR float ptr [EDX]               ; 004b7827
@@ -294,7 +294,7 @@ section .text
     MOV EDI,dword ptr [EAX*0x4 + 0x1cedee4] ; 004b79b3
     PUSH EDI                            ; 004b79ba
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004b79bb
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004b79c0
     TEST EAX,EAX                        ; 004b79c3
     JZ 0x004b7ec8                       ; 004b79c5
@@ -323,7 +323,7 @@ section .text
     MOV EDX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004b7a02
     PUSH EDX                            ; 004b7a09
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004b7a0a
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004b7a0f
     TEST EAX,EAX                        ; 004b7a12
     JZ 0x004b7eed                       ; 004b7a14
@@ -351,8 +351,8 @@ section .text
     PUSH 0x1                            ; 004b7a52
     ADD EAX,0x2437c                     ; 004b7a54
     PUSH EAX                            ; 004b7a59
-    CALL core_inv.cpp_FUN_004dbb50      ; 004b7a5a
-        ;   XREF to: 004dbb50 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004dbb50(CInventory * this_ptr, int direction)
+    CALL core_inv.cpp_CInventory_selectItem_FUN_004dbb50 ; 004b7a5a
+        ;   XREF to: 004dbb50 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectItem_FUN_004dbb50(CInventory * this_ptr, int direction)
     ADD ESP,0x8                         ; 004b7a5f
     MOV ESI,dword ptr [EBX + 0x9c]      ; 004b7a62
         ;   Label: LAB_004b7a62
@@ -370,8 +370,8 @@ section .text
     PUSH -0x1                           ; 004b7a87
     ADD EAX,0x2437c                     ; 004b7a89
     PUSH EAX                            ; 004b7a8e
-    CALL core_inv.cpp_FUN_004dbb50      ; 004b7a8f
-        ;   XREF to: 004dbb50 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004dbb50(CInventory * this_ptr, int direction)
+    CALL core_inv.cpp_CInventory_selectItem_FUN_004dbb50 ; 004b7a8f
+        ;   XREF to: 004dbb50 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectItem_FUN_004dbb50(CInventory * this_ptr, int direction)
     ADD ESP,0x8                         ; 004b7a94
     MOV EDI,dword ptr [EBX + 0xa4]      ; 004b7a97
         ;   Label: LAB_004b7a97
@@ -389,8 +389,8 @@ section .text
     PUSH 0x1                            ; 004b7abc
     ADD EAX,0x2437c                     ; 004b7abe
     PUSH EAX                            ; 004b7ac3
-    CALL core_inv.cpp_FUN_004dbc60      ; 004b7ac4
-        ;   XREF to: 004dbc60 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004dbc60(CInventory * this_ptr, int direction)
+    CALL core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbc60 ; 004b7ac4
+        ;   XREF to: 004dbc60 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbc60(CInventory * this_ptr, int direction)
     ADD ESP,0x8                         ; 004b7ac9
     MOV EBP,dword ptr [EBX + 0xa0]      ; 004b7acc
         ;   Label: LAB_004b7acc
@@ -407,8 +407,8 @@ section .text
     MOV EAX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004b7aea
     ADD EAX,0x2437c                     ; 004b7af1
     PUSH EAX                            ; 004b7af6
-    CALL core_inv.cpp_FUN_004defa0      ; 004b7af7
-        ;   XREF to: 004defa0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004defa0(CInventory * this_ptr)
+    CALL core_inv.cpp_CInventory_toggleDetailView_FUN_004defa0 ; 004b7af7
+        ;   XREF to: 004defa0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_toggleDetailView_FUN_004defa0(CInventory * this_ptr)
     ADD ESP,0x4                         ; 004b7afc
     MOV ECX,dword ptr [EBX + 0x7c]      ; 004b7aff
         ;   Label: LAB_004b7aff
@@ -427,7 +427,7 @@ section .text
     MOV EDI,dword ptr [EAX*0x4 + 0x1cedee4] ; 004b7b21
     PUSH EDI                            ; 004b7b28
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004b7b29
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004b7b2e
     TEST EAX,EAX                        ; 004b7b31
     JZ 0x004b7f12                       ; 004b7b33
@@ -456,7 +456,7 @@ section .text
     MOV EDX,dword ptr [EAX*0x4 + 0x1cedee4] ; 004b7b70
     PUSH EDX                            ; 004b7b77
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004b7b78
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004b7b7d
     TEST EAX,EAX                        ; 004b7b80
     JZ 0x004b7f37                       ; 004b7b82
@@ -509,7 +509,7 @@ section .text
     JGE 0x004b772c                      ; 004b7bfe
         ;   XREF to: 004b772c (CONDITIONAL_JUMP)  ; LAB_004b772c
     MOV EAX,[0x00616494]                ; 004b7c04 | g_CGamePtr
-    FLD float ptr [EAX + 0x284]         ; 004b7c09 | g_CGameInstance.field644_0x284
+    FLD float ptr [EAX + 0x284]         ; 004b7c09 | g_CGameInstance.delta_time_float
     FDIV float ptr [0x005d78c3]         ; 004b7c0f | DAT_005d78c3
     FADD float ptr [EDX]                ; 004b7c15
     FSTP float ptr [EDX]                ; 004b7c17
@@ -527,7 +527,7 @@ section .text
     JGE 0x004b7785                      ; 004b7c43
         ;   XREF to: 004b7785 (CONDITIONAL_JUMP)  ; LAB_004b7785
     MOV EAX,[0x00616494]                ; 004b7c49 | g_CGamePtr
-    FLD float ptr [EAX + 0x284]         ; 004b7c4e | g_CGameInstance.field644_0x284
+    FLD float ptr [EAX + 0x284]         ; 004b7c4e | g_CGameInstance.delta_time_float
     FDIV float ptr [0x005d78c3]         ; 004b7c54 | DAT_005d78c3
     FADD float ptr [EDX]                ; 004b7c5a
     FSTP float ptr [EDX]                ; 004b7c5c
@@ -573,7 +573,7 @@ section .text
     JBE 0x004b77cb                      ; 004b7cd4
         ;   XREF to: 004b77cb (CONDITIONAL_JUMP)  ; LAB_004b77cb
     MOV EAX,[0x00616494]                ; 004b7cda | g_CGamePtr
-    FLD float ptr [EAX + 0x284]         ; 004b7cdf | g_CGameInstance.field644_0x284
+    FLD float ptr [EAX + 0x284]         ; 004b7cdf | g_CGameInstance.delta_time_float
     FMUL float ptr [0x005d78cb]         ; 004b7ce5 | DAT_005d78cb
     FDIV float ptr [ESP + 0xc]          ; 004b7ceb
     FSUBR float ptr [EDX]               ; 004b7cef
@@ -592,7 +592,7 @@ section .text
     JNZ 0x004b7c9d                      ; 004b7d17
         ;   XREF to: 004b7c9d (CONDITIONAL_JUMP)  ; LAB_004b7c9d
     MOV EAX,[0x00616494]                ; 004b7d19 | g_CGamePtr
-    FLD float ptr [EAX + 0x284]         ; 004b7d1e | g_CGameInstance.field644_0x284
+    FLD float ptr [EAX + 0x284]         ; 004b7d1e | g_CGameInstance.delta_time_float
     FMUL float ptr [0x005d78cb]         ; 004b7d24 | DAT_005d78cb
     FDIV float ptr [0x005d78cf]         ; 004b7d2a | DAT_005d78cf
     FLDZ                                ; 004b7d30
@@ -616,7 +616,7 @@ section .text
     JGE 0x004b77cb                      ; 004b7d60
         ;   XREF to: 004b77cb (CONDITIONAL_JUMP)  ; LAB_004b77cb
     MOV EAX,[0x00616494]                ; 004b7d66 | g_CGamePtr
-    FLD float ptr [EAX + 0x284]         ; 004b7d6b | g_CGameInstance.field644_0x284
+    FLD float ptr [EAX + 0x284]         ; 004b7d6b | g_CGameInstance.delta_time_float
     FMUL float ptr [0x005d78cb]         ; 004b7d71 | DAT_005d78cb
     FDIV float ptr [ESP + 0xc]          ; 004b7d77
     FADD float ptr [EDX]                ; 004b7d7b
@@ -646,7 +646,7 @@ section .text
     JNZ 0x004b77db                      ; 004b7dbc
         ;   XREF to: 004b77db (CONDITIONAL_JUMP)  ; LAB_004b77db
     MOV EAX,[0x00616494]                ; 004b7dc2 | g_CGamePtr
-    FLD float ptr [EAX + 0x284]         ; 004b7dc7 | g_CGameInstance.field644_0x284
+    FLD float ptr [EAX + 0x284]         ; 004b7dc7 | g_CGameInstance.delta_time_float
     FMUL float ptr [0x005d78cb]         ; 004b7dcd | DAT_005d78cb
     FDIV float ptr [0x005d78e7]         ; 004b7dd3 | DAT_005d78e7
     FLDZ                                ; 004b7dd9
@@ -679,7 +679,7 @@ section .text
     JGE 0x004b783c                      ; 004b7e20
         ;   XREF to: 004b783c (CONDITIONAL_JUMP)  ; LAB_004b783c
     MOV EAX,[0x00616494]                ; 004b7e26 | g_CGamePtr
-    FLD float ptr [EAX + 0x284]         ; 004b7e2b | g_CGameInstance.field644_0x284
+    FLD float ptr [EAX + 0x284]         ; 004b7e2b | g_CGameInstance.delta_time_float
     FMUL float ptr [0x005d78cb]         ; 004b7e31 | DAT_005d78cb
     FDIV float ptr [ESP]                ; 004b7e37
     FADD float ptr [EDX]                ; 004b7e3a
@@ -792,7 +792,7 @@ section .text
     MOV ESI,dword ptr [EAX*0x4 + 0x1cedee4] ; 004b7f68
     PUSH ESI                            ; 004b7f6f
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004b7f70
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004b7f75
     TEST EAX,EAX                        ; 004b7f78
     JZ 0x004b7f8f                       ; 004b7f7a

@@ -1,0 +1,209 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 61,
+    "complexity_score": 153,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 33,
+    "suspect_count": 11,
+    "suspect_types": [
+      "stack_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 94
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00503f00",
+    "address_range": [
+      [
+        "00503f00",
+        "00503fa2"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_netgame.cpp_FUN_00503f00",
+    "signature": "undefined4 core_netgame_cpp_FUN_00503f00(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00505950",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_addPlayer_FUN_00505950"
+    },
+    {
+      "addr": "005043b0",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_disconnect_FUN_005043b0"
+    },
+    {
+      "addr": "00504270",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_initializeNetwork_FUN_00504270"
+    },
+    {
+      "addr": "0047cfa0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047cfa0"
+    },
+    {
+      "addr": "0056f730",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_createNetworkAddr_FUN_0056f730"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fb140",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c5b0e4"
+    },
+    {
+      "addr": "005fe9dc",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01d2130c"
+    },
+    {
+      "addr": "02cfd89c",
+      "name": "DAT_02cfd89c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9056603773584904,
+    "instruction_count": 53,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 5,
+      "CBRANCH": 1,
+      "COPY": 44,
+      "INT_ADD": 24,
+      "INT_AND": 19,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 18,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 9,
+      "INT_SUB": 22,
+      "LOAD": 11,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 26
+    },
+    "pcode_op_count": 207
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "CNetGame *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "core_netgame_cpp_CNetGame_disconnect_FUN_005043b0(in_stack_00000004,0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004->player_count = 0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "name = in_stack_00000004->player_name;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "(in_stack_00000004,addr,name,hero_number,aim_mode);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004->local_player_index = iVar2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004->server_player_index = iVar2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "iVar2 = core_netgame_cpp_CNetGame_initializeNetwork_FUN_00504270(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004->network_mode = NET_MODE_LOBBY;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004->connection_type = CONNECTION_HOST;",
+      "type": "stack_param"
+    }
+  ]
+}

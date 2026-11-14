@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SClothBone * core_cloth_cpp_SClothBone_ctor_FUN_00442440(SClothBone *this_ptr)
+; SClothBone * __cdecl core_cloth_cpp_SClothBone_ctor_FUN_00442440(SClothBone *this_ptr)
 ;
 ; Parameters:
 ; SClothBone *     Stack[0x4]:4   this_ptr

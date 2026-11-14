@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   wincore_winrun.cpp_FUN_005b2e00 at 005b2fd4
+;   wincore_winrun.cpp_winMain_FUN_005b2e00 at 005b2fd4
 ;
 ; Referenced Globals:
 ;   void* PTR_CreateWindowExA_005d04a8 = 001d0a8c

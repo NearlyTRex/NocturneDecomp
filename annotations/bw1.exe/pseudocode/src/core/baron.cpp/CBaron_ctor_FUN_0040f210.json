@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 254,
+    "complexity_score": 100,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 44,
-    "suspect_count": 19,
+    "pseudocode_lines": 45,
+    "suspect_count": 4,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "unrolled_memset",
       "unrolled_strcpy"
     ],
-    "total_lines": 119
+    "total_lines": 120
   },
   "cross_references": [
     {
@@ -46,12 +45,12 @@
     {
       "addr": "004ea830",
       "is_variadic": false,
-      "name": "core_hero.cpp_FUN_004ea830"
+      "name": "core_hero.cpp_CHero_ctor_FUN_004ea830"
     },
     {
       "addr": "00569f50",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_00569f50"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50"
     }
   ],
   "globals": [],
@@ -100,6 +99,26 @@
     },
     "pcode_op_count": 244
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0040f690",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00412bc0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004101d0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -118,136 +137,16 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "*(byte ***)&pCVar2->field_0x154 = &g_CBaronVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_00569f50(&pCVar2->field_0x158,0x5d337e);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x20080",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x20080 = 0x3f800000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x2007c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x2007c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x20078",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x20078 = *(uint *)&pCVar2->field_0x2007c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x2007c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x20078 = *(uint *)&pCVar2->field_0x2007c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x20074",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x20074 = *(uint *)&pCVar2->field_0x20078;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x20078",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x20074 = *(uint *)&pCVar2->field_0x20078;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x20084",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x20084 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x20088",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x20088 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0xfc",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0xfc = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x1ffac",
-      "severity": "mild",
-      "text": "pcVar4 = &pCVar2->field_0x1ffac;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x200a4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x200a4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x20010",
-      "severity": "mild",
-      "text": "pcVar4 = &pCVar2->field_0x20010;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 45,
       "match": "DAT_007c351c",
       "severity": "mild",
       "text": "((CKeyFramedModelInstance *)&DAT_007c351c,\"baronshell.kfm\");",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x200a8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x200a8 = 0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 23,
+      "line": 24,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -255,18 +154,18 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 34,
+      "line": 35,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
     },
     {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 14,
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 15,
       "match": "cascade_constant_fill",
       "severity": "moderate",
-      "text": "*(uint *)&pCVar2->field_0x2007c = 0;",
+      "text": "(pCVar2->head_rotation).z = 0.0;",
       "type": "unrolled_memset"
     }
   ],

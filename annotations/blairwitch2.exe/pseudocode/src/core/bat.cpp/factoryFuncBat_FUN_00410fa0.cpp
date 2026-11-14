@@ -1,20 +1,20 @@
 // Name: core_bat.cpp_factoryFuncBat_FUN_00410fa0
 // Address: 00410fa0
 // Address Range: [[00410fa0, 00410fbb]]
-// Convention: unknown
-// Signature: void core_bat_cpp_factoryFuncBat_FUN_00410fa0(void)
+// Convention: __cdecl
+// Signature: CBat * __cdecl core_bat_cpp_factoryFuncBat_FUN_00410fa0(void)
 
 #include "nocturne.h"
 
-void core_bat_cpp_factoryFuncBat_FUN_00410fa0(void)
+CBat * __cdecl core_bat_cpp_factoryFuncBat_FUN_00410fa0(void)
 
 {
-  CBat *this_ptr;
+  CBat *pCVar1;
   
-  this_ptr = (CBat *)FUN_005b8be2(0x4e4);
-  if (this_ptr == (CBat *)0x0) {
-    return;
+  pCVar1 = (CBat *)operator_new(0x4e4);
+  if (pCVar1 == (CBat *)0x0) {
+    return (CBat *)0x0;
   }
-  core_bat_cpp_CBat_ctor_FUN_00410fd0(this_ptr);
-  return;
+  pCVar1 = core_bat_cpp_CBat_ctor_FUN_00410fd0(pCVar1);
+  return pCVar1;
 }

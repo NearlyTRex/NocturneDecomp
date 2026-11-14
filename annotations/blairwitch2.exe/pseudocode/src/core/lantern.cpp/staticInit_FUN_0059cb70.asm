@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_lantern_cpp_staticInit_FUN_0059cb70(void)
+; void __cdecl core_lantern_cpp_staticInit_FUN_0059cb70(void)
 ;
 ;
 ; Called Functions:

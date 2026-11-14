@@ -4,6 +4,8 @@
 
 #include "front_support.h"
 
+#include "gl/display_settings.h"
+
 #include <cctype>
 #include <cstdarg>
 #include <cstdio>
@@ -41,7 +43,15 @@ char g_RendererDllPath[256];
 int g_nocturne_fixed_display = 0;
 int g_WindowWidth = 640;
 int g_AudioVisualizationCounter = 0;
+SMRGLTextureBasic g_AudioSpectrumTextures[8];
 int g_GlobalDeltaTimeInt = 0;
+
+// The renderer the spectrum draws its bars through, and the frame it took last.
+namespace {
+SRenderVertex s_vertices[4];
+CDemonRenderer s_renderer;
+int s_frame = -1;
+} // namespace
 char g_StringBuffers[10][256];
 int g_StringBufferIndex = 0;
 
@@ -103,6 +113,7 @@ void Stand::reset() {
     g_InputDisabled = 0;
     g_WindowHeight = 480;
     g_UseDirect3D = 0;
+    g_UseExternalRenderer = 1;
     g_MenuLeftRightPressed = 0;
     g_GraphicsCardCount = 0;
     std::memset(g_GraphicsCardVendorIDs, 0, sizeof(g_GraphicsCardVendorIDs));
@@ -115,6 +126,9 @@ void Stand::reset() {
     g_AudioVisualizationCounter = 0;
     g_GlobalDeltaTimeInt = 0;
     g_StringBufferIndex = 0;
+    s_renderer.vertex_buffer_ptr = s_vertices;
+    g_CDemonRendererPtr2 = &s_renderer;
+    s_frame = -1;
 }
 
 int Stand::count(const std::string &call) const {
@@ -446,11 +460,81 @@ const char *nocturne_window_mode_name(int mode) {
 }
 
 int nocturne_window_mode_get(void) {
-    return 0;
+    return stand.window_mode;
 }
 
 int nocturne_window_mode_cycle(int step) {
     front_support::log("windowCycle " + std::to_string(step));
+    return 0;
+}
+
+void nocturne_window_mode_reapply(void) {
+    front_support::log("reapply");
+}
+
+void nocturne_window_fullscreen_size(int *width, int *height) {
+    *width = 1920;
+    *height = 1080;
+}
+
+// Only handed on, to the step below.
+int nocturne_display_offers(int, int) {
+    return 1;
+}
+
+void nocturne_resolution_step_where(int current_width, int current_height, int step, int max_height,
+                                    int (*accept)(int, int), int *out_width, int *out_height) {
+    front_support::log(std::string("resolutionStep") + (accept != nullptr ? " filtered" : ""));
+    nocturne_resolution_step(current_width, current_height, step, max_height, out_width,
+                             out_height);
+}
+
+int nocturne_display_index(void) {
+    return 0;
+}
+
+int nocturne_display_index_cycle(int step) {
+    front_support::log("displayCycle " + std::to_string(step));
+    return 0;
+}
+
+const char *nocturne_display_label(int index) {
+    return index == 0 ? "1 (Screen)" : "?";
+}
+
+int nocturne_fullscreen_size_get(void) {
+    return 0;
+}
+
+int nocturne_fullscreen_size_cycle(int step) {
+    front_support::log("sizeCycle " + std::to_string(step));
+    return 0;
+}
+
+const char *nocturne_fullscreen_size_name(int size) {
+    return size == 0 ? "Game" : "Desktop";
+}
+
+int nocturne_refresh_rate_get(void) {
+    return 0;
+}
+
+int nocturne_refresh_rate_cycle(int step, int width, int height) {
+    front_support::log("refreshCycle " + std::to_string(step) + " " + std::to_string(width) + "x" +
+                       std::to_string(height));
+    return 0;
+}
+
+const char *nocturne_refresh_rate_label(int hz) {
+    return hz == 0 ? "Auto" : "?";
+}
+
+int nocturne_vsync_get(void) {
+    return stand.vsync;
+}
+
+int nocturne_vsync_cycle(int step) {
+    front_support::log("vsyncCycle " + std::to_string(step));
     return 0;
 }
 
@@ -629,6 +713,18 @@ int __cdecl sound_sndmain_cpp_isHardwareMixingEnabled_FUN_005ab590(void) {
     return stand.mixing;
 }
 
+extern "C" int nocturne_pause_sound_held(void) {
+    return stand.pause_held;
+}
+
+extern "C" void nocturne_pause_sound_menu_music(void) {
+    front_support::log("pauseMenuMusic");
+}
+
+extern "C" void nocturne_pause_sound_quiet(void) {
+    front_support::log("pauseQuiet");
+}
+
 void __cdecl sound_sndmain_cpp_enableHwSoundMixing_FUN_005ab550(int enable) {
     stand.mixing = enable;
 }
@@ -661,11 +757,43 @@ int __cdecl sound_sndmain_cpp_isSoundBusy_FUN_005ab540(void) {
 }
 
 float __cdecl sound_sndmain_cpp_analyzeFrequencyBand_FUN_005ac400(int, float, float) {
-    return 0.5f;
+    return stand.level;
 }
 
-void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_0050fe70(int, int, int) {
-    stand.bars++;
+// --- the spectrum's bars, through the renderer ------------------------------------------
+
+int __cdecl engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer *,
+                                                                          int render_alpha) {
+    stand.render_alpha = render_alpha;
+    return 0;
+}
+
+void __cdecl engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(CDemonRenderer *,
+                                                                         int blend_mode) {
+    stand.blend = blend_mode;
+}
+
+void __cdecl engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(
+    CDemonRenderer *, SMRGLTextureBasic *texture) {
+    s_frame = (int)(texture - g_AudioSpectrumTextures);
+}
+
+// The quad's corners as the bar's edges, checked to be the rectangle they draw,
+// and only while it is half transparent and added.
+void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0048ae10(
+    CDemonRenderer *renderer, SMRGLHeaderPrimitive *prim, int render_flags) {
+    const SRenderVertex *v = renderer->vertex_buffer_ptr;
+    const bool square = v[1].projected_vertex.screen_x == v[2].projected_vertex.screen_x &&
+                        v[0].projected_vertex.screen_x == v[3].projected_vertex.screen_x &&
+                        v[0].projected_vertex.screen_y == v[1].projected_vertex.screen_y &&
+                        v[2].projected_vertex.screen_y == v[3].projected_vertex.screen_y &&
+                        v[0].u == 8 << 16 && v[2].u == 0xf8 << 16 && prim->base.count == 4 &&
+                        render_flags == 0x23 && stand.render_alpha == 0x8000 && stand.blend == 1;
+    char bar[96];
+    snprintf(bar, sizeof(bar), "%d %d %d %d %d%s", v[0].projected_vertex.screen_x >> 16,
+             v[1].projected_vertex.screen_x >> 16, v[0].projected_vertex.screen_y >> 16,
+             v[2].projected_vertex.screen_y >> 16, s_frame, square ? "" : " skewed");
+    stand.bars.emplace_back(bar);
 }
 
 // --- the pick list ------------------------------------------------------------------
@@ -802,4 +930,32 @@ char *__cdecl wincore_winrun_cpp_getKeyName_FUN_005f3980(EInputCodeType keycode)
     static char name[32];
     snprintf(name, sizeof(name), "Key %d", keycode);
     return name;
+}
+
+// The front end's layout as the test sets it, and its fangs, which the pages
+// never show.
+NocturneLayout nocturne_layout(void) {
+    return stand.layout;
+}
+void nocturne_front_end_mode(int *width, int *height) {
+    *width = stand.front_end_width != 0 ? stand.front_end_width : g_WindowWidth;
+    *height = stand.front_end_height != 0 ? stand.front_end_height : g_WindowHeight;
+}
+int nocturne_front_end_set_mode(void) {
+    front_support::log("frontEndSetMode");
+    if (stand.front_end_takes != 0)
+        nocturne_front_end_mode(&g_WindowWidth, &g_WindowHeight);
+    return stand.front_end_takes;
+}
+void __cdecl engine_2d_c_resetGraphicsSystem_FUN_00402a70(void) {
+    front_support::log("resetGraphics");
+}
+void nocturne_layout_display(struct CAlphaBitmap *, int, int, int) {}
+void __cdecl engine_2d_c_reinitializeGraphicsSystem_FUN_00402a80(void) {}
+CAlphaBitmap *__cdecl engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(CAlphaBitmap *bitmap) {
+    return bitmap;
+}
+CAlphaBitmap *__cdecl engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(CAlphaBitmap *bitmap,
+                                                                         uint) {
+    return bitmap;
 }

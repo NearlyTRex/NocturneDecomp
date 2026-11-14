@@ -16,13 +16,13 @@ int __cdecl engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0046
   
   uVar1 = _DAT_01ed3198;
   _DAT_01bdd810 = 0;
-  if (*(int *)(this_ptr + 0xc) != 0) {
-    iVar2 = engine_3d_c_isVisiblePlane_FUN_00403920(prim + 8);
+  if (this_ptr->plane_culling_enabled != 0) {
+    iVar2 = engine_3d_c_isVisiblePlane_FUN_00403920(&prim->surface_normal);
     if (iVar2 == 0) {
       return 0;
     }
   }
-  if (*(int *)(this_ptr + 4) == 0) {
+  if (this_ptr->shadow_pass_active == 0) {
     _DAT_01c6e2b4 = 0xc0;
     _DAT_01c6e2b8 = 6;
     _DAT_01c6b5cc = core_dstrendr_cpp_renderDepthInterlacedProfiled_FUN_0046fea7;
@@ -32,12 +32,12 @@ int __cdecl engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0046
     _DAT_01c6e2b8 = 0;
     _DAT_01c6b5cc = core_dstrendr_cpp_renderScreenDepthTestInterlacedProfiled_FUN_0046ff25;
   }
-  iVar2 = *(int *)(this_ptr + 4);
+  iVar2 = this_ptr->shadow_pass_active;
   if (_DAT_01c6cee8 != 0) {
     engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046d520(this_ptr,1);
   }
   engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160
-            (this_ptr,*(int *)(prim + 4),(int *)(prim + 0x18));
+            (this_ptr,(prim->base).count,(int *)(prim + 1));
   if (_DAT_01c6cee8 != 0) {
     engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046d520(this_ptr,iVar2);
   }

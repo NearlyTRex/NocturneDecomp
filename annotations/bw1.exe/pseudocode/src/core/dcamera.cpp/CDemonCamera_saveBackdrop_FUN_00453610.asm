@@ -36,6 +36,7 @@
 ;   core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044ef30 at 0044f177
 ;
 ; Referenced Globals:
+;   undefined4 caseD_4+4
 ;   TerminatedCString s_s_fog_005d790f
 ;   undefined4 DAT_005d7916
 ;   TerminatedCString s_backdrop_005d7919
@@ -50,24 +51,23 @@
 ;   TerminatedCString s_core_dcamera_cpp_005d79b8
 ;   TerminatedCString s_Error_writing_compressed_005d79cc
 ;   undefined4 DAT_005d79ef
-;   undefined4 DAT_00611298
-;   ... and 20 more
+;   ... and 21 more
 ;
 ; Called Functions:
-;   core_dcamera.cpp_FUN_00453c90
+;   core_dcamera.cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453c90
 ;   core_dcamera.cpp_resetFogSamplingOffset_FUN_0044c5e0
 ;   core_dcamera.cpp_sampleFogAlongRay_FUN_0044c840
 ;   core_dcamera.cpp_updateFogScrollOffset_FUN_0044ca20
 ;   core_main.c_FUN_005030e0
 ;   crt_math.c_round_FUN_005c03a0
 ;   crt_stdio.c_fclose_FUN_005c0d10
-;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   engine_dosio.cpp_FUN_00479180
 ;   support_codec.cpp_CCodec_dtor_FUN_00442bb0
 ;   support_codec.cpp_CLZWCompress_ctor_FUN_00443490
+;   support_codec.cpp_CLZWCompress_init_FUN_004434e0
 ;   support_codec.cpp_CLZWDictionary_dtor_FUN_00442f90
 ;   support_codec.cpp_FUN_00442d10
-;   support_codec.cpp_FUN_004434e0
 ;   support_codec.cpp_FUN_00443630
 ;   ... and 4 more
 ;
@@ -89,7 +89,7 @@ section .text
     MOV dword ptr [0x01480e20],ECX      ; 00453631 | DAT_01480e20
     MOV dword ptr [0x01480e24],ECX      ; 00453637 | DAT_01480e24
     CALL core_dcamera.cpp_resetFogSamplingOffset_FUN_0044c5e0 ; 0045363d
-        ;   XREF to: 0044c5e0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_resetFogSamplingOffset_FUN_0044c5e0()
+        ;   XREF to: 0044c5e0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_resetFogSamplingOffset_FUN_0044c5e0(SFogGrid * fog)
     MOV EAX,[0x01481e38]                ; 00453642 | DAT_01481e38
     MOV EDI,dword ptr [0x01481e3c]      ; 00453647 | DAT_01481e3c
     MOV EBP,dword ptr [0x01481e40]      ; 0045364d | DAT_01481e40
@@ -107,8 +107,8 @@ section .text
     PUSH 0x5d790f                       ; 00453677 | = "%s.fog"
     LEA EAX,[ESP + 0x8]                 ; 0045367c
     PUSH EAX                            ; 00453680
-    CALL crt_unknown.c_FUN_005bfb40     ; 00453681
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 00453681
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 00453686
     PUSH 0x5d7916                       ; 00453689 | DAT_005d7916
     LEA EAX,[ESP + 0x4]                 ; 0045368e
@@ -125,21 +125,21 @@ section .text
     PUSH 0x5d7922                       ; 004536ab | = "backdrop\\%s"
     LEA EAX,[ESP + 0x108]               ; 004536b0
     PUSH EAX                            ; 004536b7
-    CALL crt_unknown.c_FUN_005bfb40     ; 004536b8
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004536b8
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 004536bd
     PUSH 0x5d792e                       ; 004536c0 | DAT_005d792e
     LEA EAX,[ESP + 0x104]               ; 004536c5
     PUSH EAX                            ; 004536cc
     LEA EAX,[ESP + 0x1b8]               ; 004536cd
     PUSH EAX                            ; 004536d4
-    CALL support_trstream.cpp_FUN_005a17f0 ; 004536d5
-        ;   XREF to: 005a17f0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005a17f0()
+    CALL support_trstream.cpp_COutStreamFile_ctorOpen_FUN_005a17f0 ; 004536d5
+        ;   XREF to: 005a17f0 (UNCONDITIONAL_CALL)  ; COutStreamFile * support_trstream.cpp_COutStreamFile_ctorOpen_FUN_005a17f0(COutStreamFile * this_ptr, char * path, char * mode)
     ADD ESP,0xc                         ; 004536da
     LEA EAX,[ESP + 0x1b0]               ; 004536dd
     PUSH EAX                            ; 004536e4
-    CALL support_trstream.cpp_FUN_005a1990 ; 004536e5
-        ;   XREF to: 005a1990 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005a1990()
+    CALL support_trstream.cpp_COutStreamFile_isOpen_FUN_005a1990 ; 004536e5
+        ;   XREF to: 005a1990 (UNCONDITIONAL_CALL)  ; bool support_trstream.cpp_COutStreamFile_isOpen_FUN_005a1990(COutStreamFile * this_ptr)
     ADD ESP,0x4                         ; 004536ea
     TEST EAX,EAX                        ; 004536ed
     JNZ 0x0045371c                      ; 004536ef
@@ -159,8 +159,8 @@ section .text
     PUSH 0x1480e2c                      ; 00453721
     LEA EAX,[ESP + 0x1b8]               ; 00453726
     PUSH EAX                            ; 0045372d
-    CALL support_trstream.cpp_FUN_005a18f0 ; 0045372e
-        ;   XREF to: 005a18f0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005a18f0()
+    CALL support_trstream.cpp_COutStreamFile_write_FUN_005a18f0 ; 0045372e
+        ;   XREF to: 005a18f0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_COutStreamFile_write_FUN_005a18f0(COutStreamFile * this_ptr, undefined4 param_2, int param_3)
     MOV EBX,dword ptr [0x01481e48]      ; 00453733 | DAT_01481e48
     ADD ESP,0xc                         ; 00453739
     TEST EBX,EBX                        ; 0045373c
@@ -168,13 +168,13 @@ section .text
         ;   XREF to: 00453c0d (CONDITIONAL_JUMP)  ; LAB_00453c0d
     MOV EAX,[0x00611298]                ; 00453744 | DAT_00611298
     PUSH 0x3                            ; 00453749
-    MOV dword ptr [ESP + 0x1bc],EAX     ; 0045374b | LAB_00444645
+    MOV dword ptr [ESP + 0x1bc],EAX     ; 0045374b | caseD_4+4
     LEA EAX,[ESP + 0x1bc]               ; 00453752
     PUSH EAX                            ; 00453759
     LEA EAX,[ESP + 0x1b8]               ; 0045375a
     PUSH EAX                            ; 00453761
-    CALL support_trstream.cpp_FUN_005a18f0 ; 00453762
-        ;   XREF to: 005a18f0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005a18f0()
+    CALL support_trstream.cpp_COutStreamFile_write_FUN_005a18f0 ; 00453762
+        ;   XREF to: 005a18f0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_COutStreamFile_write_FUN_005a18f0(COutStreamFile * this_ptr, undefined4 param_2, int param_3)
     ADD ESP,0xc                         ; 00453767
     MOV EAX,dword ptr [ESP + 0x210]     ; 0045376a
     FLD double ptr [0x005d79ef]         ; 00453771 | DAT_005d79ef
@@ -202,8 +202,8 @@ section .text
     LEA EAX,[ESP + 0x164]               ; 004537bf
     PUSH EAX                            ; 004537c6
     XOR ESI,ESI                         ; 004537c7
-    CALL support_codec.cpp_FUN_004434e0 ; 004537c9
-        ;   XREF to: 004434e0 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_FUN_004434e0(CLZWCompress * this_ptr)
+    CALL support_codec.cpp_CLZWCompress_init_FUN_004434e0 ; 004537c9
+        ;   XREF to: 004434e0 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWCompress_init_FUN_004434e0(CLZWCompress * this_ptr)
     ADD ESP,0x4                         ; 004537ce
     MOV EDI,dword ptr [0x01480e28]      ; 004537d1 | DAT_01480e28
     MOV dword ptr [ESP + 0x1f4],ESI     ; 004537d7
@@ -218,7 +218,7 @@ section .text
     PUSH EDI                            ; 00453801
     PUSH 0x1480e2c                      ; 00453802
     CALL core_dcamera.cpp_updateFogScrollOffset_FUN_0044ca20 ; 00453807
-        ;   XREF to: 0044ca20 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_updateFogScrollOffset_FUN_0044ca20()
+        ;   XREF to: 0044ca20 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_updateFogScrollOffset_FUN_0044ca20(SFogGrid * fog_ptr, int time_major, int time_minor)
     ADD ESP,0xc                         ; 0045380c
     MOV EAX,dword ptr [ESP + 0x210]     ; 0045380f
     MOV EBP,0x1                         ; 00453816
@@ -260,7 +260,7 @@ section .text
     PUSH EAX                            ; 004538aa
     PUSH 0x1480e2c                      ; 004538ab
     CALL core_dcamera.cpp_sampleFogAlongRay_FUN_0044c840 ; 004538b0
-        ;   XREF to: 0044c840 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_sampleFogAlongRay_FUN_0044c840()
+        ;   XREF to: 0044c840 (UNCONDITIONAL_CALL)  ; uint core_dcamera.cpp_sampleFogAlongRay_FUN_0044c840(SFogGrid * fog_ptr, CVector3i * start_pos, CVector3i * end_pos, int ray_length)
     IMUL EAX,EAX,0xff                   ; 004538b5
     SHR EAX,0xe                         ; 004538bb
     ADD ESP,0x10                        ; 004538be
@@ -303,8 +303,8 @@ section .text
     PUSH EAX                            ; 0045394f
     MOV EDX,dword ptr [ESP + 0x214]     ; 00453950
     PUSH EDX                            ; 00453957
-    CALL core_dcamera.cpp_FUN_00453c90  ; 00453958
-        ;   XREF to: 00453c90 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_FUN_00453c90(CDemonCamera * this_ptr, int plane_index)
+    CALL core_dcamera.cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453c90 ; 00453958
+        ;   XREF to: 00453c90 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453c90(CDemonCamera * this_ptr, int plane_index)
     ADD ESP,0x8                         ; 0045395d
     MOV EAX,dword ptr [ESP + 0x210]     ; 00453960
     XOR ECX,ECX                         ; 00453967
@@ -425,8 +425,8 @@ section .text
     LEA EAX,[ESP + 0x1b0]               ; 00453b44
         ;   Label: LAB_00453b44
     PUSH EAX                            ; 00453b4b
-    CALL support_trstream.cpp_FUN_005a1990 ; 00453b4c
-        ;   XREF to: 005a1990 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005a1990()
+    CALL support_trstream.cpp_COutStreamFile_isOpen_FUN_005a1990 ; 00453b4c
+        ;   XREF to: 005a1990 (UNCONDITIONAL_CALL)  ; bool support_trstream.cpp_COutStreamFile_isOpen_FUN_005a1990(COutStreamFile * this_ptr)
     ADD ESP,0x4                         ; 00453b51
     TEST EAX,EAX                        ; 00453b54
     JZ 0x00453c5a                       ; 00453b56

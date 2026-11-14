@@ -16,7 +16,7 @@
 ; XREF[3]:
 ;   core_game.cpp_CGame_playerControls_FUN_004b92e0 at 004b9331
 ;   core_game.cpp_CGame_processJoystickControls_FUN_004b97b0 at 004b97c8
-;   core_game.cpp_FUN_004ba2e0 at 004ba2f4
+;   core_game.cpp_CGame_processMouseControls_FUN_004ba2e0 at 004ba2f4
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c2800
@@ -30,13 +30,13 @@
 ;   undefined4 DAT_005c2828
 ;   CGame* g_CGamePtr = 01d2130c
 ;   undefined4 DAT_00600284
-;   undefined4 g_CGameInstance.field788_0x314
+;   undefined4 g_CGameInstance.delta_time_float
 ;   undefined4 DAT_01d5ba14
 ;   undefined4 DAT_01d70a78
 ;
 ; Called Functions:
-;   core_inv.cpp_FUN_004dbb40
-;   core_inv.cpp_FUN_004dbc40
+;   core_inv.cpp_CInventory_selectItem_FUN_004dbc40
+;   core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40
 ;
 ; *****************************************************************************
 
@@ -69,7 +69,7 @@ section .text
     JBE 0x004b99cd                      ; 004b99a5
         ;   XREF to: 004b99cd (CONDITIONAL_JUMP)  ; LAB_004b99cd
     MOV EAX,[0x005fe9dc]                ; 004b99a7 | g_CGamePtr
-    FLD float ptr [EAX + 0x314]         ; 004b99ac | g_CGameInstance.field788_0x314
+    FLD float ptr [EAX + 0x314]         ; 004b99ac | g_CGameInstance.delta_time_float
     FDIV float ptr [0x005c2800]         ; 004b99b2 | DAT_005c2800
     FSUBR float ptr [EDX]               ; 004b99b8
     FST float ptr [EDX]                 ; 004b99ba
@@ -98,7 +98,7 @@ section .text
     JBE 0x004b9a27                      ; 004b99ff
         ;   XREF to: 004b9a27 (CONDITIONAL_JUMP)  ; LAB_004b9a27
     MOV EAX,[0x005fe9dc]                ; 004b9a01 | g_CGamePtr
-    FLD float ptr [EAX + 0x314]         ; 004b9a06 | g_CGameInstance.field788_0x314
+    FLD float ptr [EAX + 0x314]         ; 004b9a06 | g_CGameInstance.delta_time_float
     FDIV float ptr [0x005c2800]         ; 004b9a0c | DAT_005c2800
     FSUBR float ptr [EDX]               ; 004b9a12
     FST float ptr [EDX]                 ; 004b9a14
@@ -110,7 +110,7 @@ section .text
     MOV dword ptr [EDX],0xbf800000      ; 004b9a21
     MOV EAX,[0x005fe9dc]                ; 004b9a27 | g_CGamePtr
         ;   Label: LAB_004b9a27
-    FLD float ptr [EAX + 0x314]         ; 004b9a2c | g_CGameInstance.field788_0x314
+    FLD float ptr [EAX + 0x314]         ; 004b9a2c | g_CGameInstance.delta_time_float
     FMUL float ptr [0x005c2808]         ; 004b9a32 | DAT_005c2808
     FDIV float ptr [0x005c280c]         ; 004b9a38 | DAT_005c280c
     FLDZ                                ; 004b9a3e
@@ -159,7 +159,7 @@ section .text
     JBE 0x004b9ae1                      ; 004b9ab5
         ;   XREF to: 004b9ae1 (CONDITIONAL_JUMP)  ; LAB_004b9ae1
     MOV EAX,[0x005fe9dc]                ; 004b9ab7 | g_CGamePtr
-    FLD float ptr [EAX + 0x314]         ; 004b9abc | g_CGameInstance.field788_0x314
+    FLD float ptr [EAX + 0x314]         ; 004b9abc | g_CGameInstance.delta_time_float
     FMUL float ptr [0x005c2808]         ; 004b9ac2 | DAT_005c2808
     FDIV float ptr [ESP + 0x10]         ; 004b9ac8
     FSUBR float ptr [EDX]               ; 004b9acc
@@ -304,8 +304,8 @@ section .text
     PUSH 0x0                            ; 004b9c75
     ADD EAX,0x206e8                     ; 004b9c77
     PUSH EAX                            ; 004b9c7c
-    CALL core_inv.cpp_FUN_004dbb40      ; 004b9c7d
-        ;   XREF to: 004dbb40 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004dbb40(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
+    CALL core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40 ; 004b9c7d
+        ;   XREF to: 004dbb40 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 004b9c82
     MOV EDI,dword ptr [EBX + 0x98]      ; 004b9c85
         ;   Label: LAB_004b9c85
@@ -325,8 +325,8 @@ section .text
     PUSH 0x0                            ; 004b9cae
     ADD EAX,0x206e8                     ; 004b9cb0
     PUSH EAX                            ; 004b9cb5
-    CALL core_inv.cpp_FUN_004dbb40      ; 004b9cb6
-        ;   XREF to: 004dbb40 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004dbb40(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
+    CALL core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40 ; 004b9cb6
+        ;   XREF to: 004dbb40 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 004b9cbb
     MOV EBP,dword ptr [EBX + 0x9c]      ; 004b9cbe
         ;   Label: LAB_004b9cbe
@@ -344,8 +344,8 @@ section .text
     PUSH 0x1                            ; 004b9ce3
     ADD EAX,0x206e8                     ; 004b9ce5
     PUSH EAX                            ; 004b9cea
-    CALL core_inv.cpp_FUN_004dbc40      ; 004b9ceb
-        ;   XREF to: 004dbc40 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004dbc40(CInventory * this_ptr, int direction)
+    CALL core_inv.cpp_CInventory_selectItem_FUN_004dbc40 ; 004b9ceb
+        ;   XREF to: 004dbc40 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectItem_FUN_004dbc40(CInventory * this_ptr, int direction)
     ADD ESP,0x8                         ; 004b9cf0
     MOV ECX,dword ptr [EBX + 0xa0]      ; 004b9cf3
         ;   Label: LAB_004b9cf3
@@ -363,8 +363,8 @@ section .text
     PUSH -0x1                           ; 004b9d18
     ADD EAX,0x206e8                     ; 004b9d1a
     PUSH EAX                            ; 004b9d1f
-    CALL core_inv.cpp_FUN_004dbc40      ; 004b9d20
-        ;   XREF to: 004dbc40 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004dbc40(CInventory * this_ptr, int direction)
+    CALL core_inv.cpp_CInventory_selectItem_FUN_004dbc40 ; 004b9d20
+        ;   XREF to: 004dbc40 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectItem_FUN_004dbc40(CInventory * this_ptr, int direction)
     ADD ESP,0x8                         ; 004b9d25
     MOV EAX,[0x01d5ba14]                ; 004b9d28 | DAT_01d5ba14
         ;   Label: LAB_004b9d28
@@ -392,8 +392,8 @@ section .text
     PUSH 0x0                            ; 004b9d71
     ADD EAX,0x206e8                     ; 004b9d73
     PUSH EAX                            ; 004b9d78
-    CALL core_inv.cpp_FUN_004dbb40      ; 004b9d79
-        ;   XREF to: 004dbb40 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004dbb40(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
+    CALL core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40 ; 004b9d79
+        ;   XREF to: 004dbb40 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 004b9d7e
     TEST EBP,EBP                        ; 004b9d81
     JZ 0x004ba1c0                       ; 004b9d83
@@ -416,8 +416,8 @@ section .text
     PUSH 0x0                            ; 004b9db2
     ADD EAX,0x206e8                     ; 004b9db4
     PUSH EAX                            ; 004b9db9
-    CALL core_inv.cpp_FUN_004dbb40      ; 004b9dba
-        ;   XREF to: 004dbb40 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004dbb40(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
+    CALL core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40 ; 004b9dba
+        ;   XREF to: 004dbb40 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 004b9dbf
     TEST EDI,EDI                        ; 004b9dc2
     JZ 0x004ba1cc                       ; 004b9dc4
@@ -440,8 +440,8 @@ section .text
     PUSH 0x0                            ; 004b9df3
     ADD EAX,0x206e8                     ; 004b9df5
     PUSH EAX                            ; 004b9dfa
-    CALL core_inv.cpp_FUN_004dbb40      ; 004b9dfb
-        ;   XREF to: 004dbb40 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004dbb40(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
+    CALL core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40 ; 004b9dfb
+        ;   XREF to: 004dbb40 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 004b9e00
     TEST EDI,EDI                        ; 004b9e03
     JZ 0x004ba1d8                       ; 004b9e05
@@ -464,8 +464,8 @@ section .text
     PUSH 0x0                            ; 004b9e34
     ADD EAX,0x206e8                     ; 004b9e36
     PUSH EAX                            ; 004b9e3b
-    CALL core_inv.cpp_FUN_004dbb40      ; 004b9e3c
-        ;   XREF to: 004dbb40 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004dbb40(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
+    CALL core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40 ; 004b9e3c
+        ;   XREF to: 004dbb40 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 004b9e41
     TEST EDI,EDI                        ; 004b9e44
     JZ 0x004ba1e4                       ; 004b9e46
@@ -488,8 +488,8 @@ section .text
     PUSH 0x0                            ; 004b9e75
     ADD EAX,0x206e8                     ; 004b9e77
     PUSH EAX                            ; 004b9e7c
-    CALL core_inv.cpp_FUN_004dbb40      ; 004b9e7d
-        ;   XREF to: 004dbb40 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004dbb40(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
+    CALL core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40 ; 004b9e7d
+        ;   XREF to: 004dbb40 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 004b9e82
     TEST EDI,EDI                        ; 004b9e85
     JNZ 0x004b9e90                      ; 004b9e87
@@ -535,7 +535,7 @@ section .text
     JGE 0x004b99cd                      ; 004b9ef0
         ;   XREF to: 004b99cd (CONDITIONAL_JUMP)  ; LAB_004b99cd
     MOV EAX,[0x005fe9dc]                ; 004b9ef6 | g_CGamePtr
-    FLD float ptr [EAX + 0x314]         ; 004b9efb | g_CGameInstance.field788_0x314
+    FLD float ptr [EAX + 0x314]         ; 004b9efb | g_CGameInstance.delta_time_float
     FDIV float ptr [0x005c2800]         ; 004b9f01 | DAT_005c2800
     FADD float ptr [EDX]                ; 004b9f07
     FSTP float ptr [EDX]                ; 004b9f09
@@ -553,7 +553,7 @@ section .text
     JGE 0x004b9a27                      ; 004b9f35
         ;   XREF to: 004b9a27 (CONDITIONAL_JUMP)  ; LAB_004b9a27
     MOV EAX,[0x005fe9dc]                ; 004b9f3b | g_CGamePtr
-    FLD float ptr [EAX + 0x314]         ; 004b9f40 | g_CGameInstance.field788_0x314
+    FLD float ptr [EAX + 0x314]         ; 004b9f40 | g_CGameInstance.delta_time_float
     FDIV float ptr [0x005c2800]         ; 004b9f46 | DAT_005c2800
     FADD float ptr [EDX]                ; 004b9f4c
     FSTP float ptr [EDX]                ; 004b9f4e
@@ -600,7 +600,7 @@ section .text
     JBE 0x004b9a6d                      ; 004b9fc7
         ;   XREF to: 004b9a6d (CONDITIONAL_JUMP)  ; LAB_004b9a6d
     MOV EAX,[0x005fe9dc]                ; 004b9fcd | g_CGamePtr
-    FLD float ptr [EAX + 0x314]         ; 004b9fd2 | g_CGameInstance.field788_0x314
+    FLD float ptr [EAX + 0x314]         ; 004b9fd2 | g_CGameInstance.delta_time_float
     FMUL float ptr [0x005c2808]         ; 004b9fd8 | DAT_005c2808
     FDIV float ptr [ESP + 0x8]          ; 004b9fde
     FSUBR float ptr [EDX]               ; 004b9fe2
@@ -619,7 +619,7 @@ section .text
     JNZ 0x004b9f8f                      ; 004ba00a
         ;   XREF to: 004b9f8f (CONDITIONAL_JUMP)  ; LAB_004b9f8f
     MOV EAX,[0x005fe9dc]                ; 004ba00c | g_CGamePtr
-    FLD float ptr [EAX + 0x314]         ; 004ba011 | g_CGameInstance.field788_0x314
+    FLD float ptr [EAX + 0x314]         ; 004ba011 | g_CGameInstance.delta_time_float
     FMUL float ptr [0x005c2808]         ; 004ba017 | DAT_005c2808
     FDIV float ptr [0x005c280c]         ; 004ba01d | DAT_005c280c
     FLDZ                                ; 004ba023
@@ -643,7 +643,7 @@ section .text
     JGE 0x004b9a6d                      ; 004ba051
         ;   XREF to: 004b9a6d (CONDITIONAL_JUMP)  ; LAB_004b9a6d
     MOV EAX,[0x005fe9dc]                ; 004ba057 | g_CGamePtr
-    FLD float ptr [EAX + 0x314]         ; 004ba05c | g_CGameInstance.field788_0x314
+    FLD float ptr [EAX + 0x314]         ; 004ba05c | g_CGameInstance.delta_time_float
     FMUL float ptr [0x005c2808]         ; 004ba062 | DAT_005c2808
     FDIV float ptr [ESP + 0x8]          ; 004ba068
     FADD float ptr [EDX]                ; 004ba06c
@@ -673,7 +673,7 @@ section .text
     JNZ 0x004b9a7d                      ; 004ba0ac
         ;   XREF to: 004b9a7d (CONDITIONAL_JUMP)  ; LAB_004b9a7d
     MOV EAX,[0x005fe9dc]                ; 004ba0b2 | g_CGamePtr
-    FLD float ptr [EAX + 0x314]         ; 004ba0b7 | g_CGameInstance.field788_0x314
+    FLD float ptr [EAX + 0x314]         ; 004ba0b7 | g_CGameInstance.delta_time_float
     FMUL float ptr [0x005c2808]         ; 004ba0bd | DAT_005c2808
     FDIV float ptr [0x005c2824]         ; 004ba0c3 | DAT_005c2824
     FLDZ                                ; 004ba0c9
@@ -706,7 +706,7 @@ section .text
     JGE 0x004b9ae1                      ; 004ba110
         ;   XREF to: 004b9ae1 (CONDITIONAL_JUMP)  ; LAB_004b9ae1
     MOV EAX,[0x005fe9dc]                ; 004ba116 | g_CGamePtr
-    FLD float ptr [EAX + 0x314]         ; 004ba11b | g_CGameInstance.field788_0x314
+    FLD float ptr [EAX + 0x314]         ; 004ba11b | g_CGameInstance.delta_time_float
     FMUL float ptr [0x005c2808]         ; 004ba121 | DAT_005c2808
     FDIV float ptr [ESP + 0x10]         ; 004ba127
     FADD float ptr [EDX]                ; 004ba12b

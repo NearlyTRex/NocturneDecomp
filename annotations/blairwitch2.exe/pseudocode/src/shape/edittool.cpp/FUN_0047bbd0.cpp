@@ -57,7 +57,7 @@ void shape_edittool_cpp_FUN_0047bbd0(void)
           iVar1 = iVar1 + 4;
         } while (iVar2 < DAT_006141bc);
       }
-      engine_special_cpp_FUN_0055f550(1);
+      engine_special_cpp_unlockFrame_FUN_0055f550(1);
     }
   }
   return;

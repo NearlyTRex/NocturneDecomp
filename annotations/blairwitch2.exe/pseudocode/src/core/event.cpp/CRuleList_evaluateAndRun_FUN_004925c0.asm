@@ -7,8 +7,8 @@
 ; CRuleList *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_hero.cpp_FUN_004d03b0 at 004d049a
-;   unkafter_stranger.cpp_FUN_0045ca30 at 0045cabd
+;   core_doc.cpp_CDoc_doHeroAction_FUN_0045ca30 at 0045cabd
+;   core_hero.cpp_CHero_doHeroAction_FUN_004d03b0 at 004d049a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006141f0

@@ -9,6 +9,6 @@
 void __cdecl core_scat_cpp_CScat_archive_FUN_00541b80(CScat *this_ptr)
 
 {
-  core_hero_cpp_FUN_004eab00((CHero *)this_ptr);
+  core_hero_cpp_CHero_archive_FUN_004eab00(&this_ptr->base);
   return;
 }

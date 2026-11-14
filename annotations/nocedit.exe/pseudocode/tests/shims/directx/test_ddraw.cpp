@@ -310,6 +310,53 @@ NOCTURNE_TEST(the_accelerated_renderer_is_asked_for_first) {
     SDL_SetHint(SDL_HINT_RENDER_DRIVER, "");
 }
 
+// The renderer follows the vsync setting from the next Flip, off and on again.
+// (SDL's software renderer reports vsync however it was made, so only a
+// change shows.) One made with vsync off is asked for without it.
+NOCTURNE_TEST(the_renderer_follows_the_vsync_setting) {
+    SDL_SetHint(SDL_HINT_RENDER_DRIVER, "software");
+    {
+        Screen screen;
+        CHECK_EQ(screen.set_mode(64, 48, 32), kOk);
+        SDL_Renderer *renderer = nocturne_ddraw_present_renderer();
+        IDirectDrawSurface *primary = nullptr;
+        CHECK_EQ(screen.flip_chain(&primary, kFlipChainInSystemMemory), kOk);
+        IDirectDrawSurface *back = back_buffer_of(primary);
+        SDL_RendererInfo info;
+        stand.vsync = 0;
+        CHECK_EQ((*primary->vtable->Flip)(primary, nullptr, 1), kOk);
+        CHECK_EQ(SDL_GetRendererInfo(renderer, &info), 0);
+        CHECK((info.flags & SDL_RENDERER_PRESENTVSYNC) == 0);
+        stand.vsync = 1;
+        CHECK_EQ((*primary->vtable->Flip)(primary, nullptr, 1), kOk);
+        CHECK_EQ(SDL_GetRendererInfo(renderer, &info), 0);
+        CHECK((info.flags & SDL_RENDERER_PRESENTVSYNC) != 0);
+        release(back);
+        release(primary);
+    }
+    {
+        // Made with vsync off, it is known to be off: a Flip with vsync still
+        // off leaves it be, so the flag it was made reporting stays.
+        Screen screen; // resets the stand, so vsync is set after it
+        stand.vsync = 0;
+        CHECK_EQ(screen.set_mode(64, 48, 32), kOk);
+        SDL_Renderer *renderer = nocturne_ddraw_present_renderer();
+        SDL_RendererInfo made;
+        CHECK_EQ(SDL_GetRendererInfo(renderer, &made), 0);
+        IDirectDrawSurface *primary = nullptr;
+        CHECK_EQ(screen.flip_chain(&primary, kFlipChainInSystemMemory), kOk);
+        IDirectDrawSurface *back = back_buffer_of(primary);
+        CHECK_EQ((*primary->vtable->Flip)(primary, nullptr, 1), kOk);
+        SDL_RendererInfo info;
+        CHECK_EQ(SDL_GetRendererInfo(renderer, &info), 0);
+        CHECK_EQ(info.flags & SDL_RENDERER_PRESENTVSYNC, made.flags & SDL_RENDERER_PRESENTVSYNC);
+        release(back);
+        release(primary);
+    }
+    stand.vsync = 1;
+    SDL_SetHint(SDL_HINT_RENDER_DRIVER, "");
+}
+
 // The newest DirectDraw object is the one presenting; releasing an older one,
 // as a restart of the graphics can, leaves it so.
 NOCTURNE_TEST(releasing_an_older_directdraw_keeps_the_newest_presenting) {

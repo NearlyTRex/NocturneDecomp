@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_water_cpp_staticInit_FUN_005771c0(void)
+; void __cdecl core_water_cpp_staticInit_FUN_005771c0(void)
 ;
 ;
 ; Called Functions:
@@ -19,7 +19,7 @@ section .text
     ADD ESP,0x4                         ; 005771ca
     PUSH 0x606b10                       ; 005771cd
     CALL crt_stdlib.c__atexit_FUN_005a3e13 ; 005771d2
-        ;   XREF to: 005a3e13 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__atexit_FUN_005a3e13()
+        ;   XREF to: 005a3e13 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005a3e13(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 005771d7
     RET                                 ; 005771da
 

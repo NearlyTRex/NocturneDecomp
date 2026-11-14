@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_enemy_cpp_staticInit_FUN_00488fa0(void)
+; void __cdecl core_enemy_cpp_staticInit_FUN_00488fa0(void)
 ;
 ;
 ; Called Functions:

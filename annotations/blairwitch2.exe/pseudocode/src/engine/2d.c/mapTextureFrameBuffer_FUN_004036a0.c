@@ -13,6 +13,7 @@ int __cdecl engine_2d_c_mapTextureFrameBuffer_FUN_004036a0(void)
 {
   int iVar1;
   
-  iVar1 = engine_2d_c_FUN_00403480(_DAT_01c37770,DAT_006141c8,DAT_006141c8,8,DAT_006141c8);
+  iVar1 = engine_2d_c_mapFrameBuffer_FUN_00403480
+                    (_DAT_01c37770,DAT_006141c8,DAT_006141c8,8,DAT_006141c8);
   return iVar1;
 }

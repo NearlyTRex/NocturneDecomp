@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 35,
+    "complexity_score": 19,
     "cross_reference_count": 50,
     "function_call_count": 5,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 20,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 65
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 19,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 64
   },
   "cross_references": [
     {
@@ -49,6 +47,12 @@
       "addr": "004150f0",
       "from_addr": "00415135",
       "name": "core_biggs.cpp_CBiggs_dtor_FUN_004150f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004159f0",
+      "from_addr": "00415a35",
+      "name": "core_bird.cpp_CBird_dtor_FUN_004159f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -94,6 +98,18 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0045d0e0",
+      "from_addr": "0045d115",
+      "name": "core_demnfolk.cpp_CDemnfolk_dtor_FUN_0045d0e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004623b0",
+      "from_addr": "004623e5",
+      "name": "core_djien.cpp_CDjien_dtor_FUN_004623b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00477180",
       "from_addr": "004771b5",
       "name": "core_dog.cpp_CZombieDog_dtor_FUN_00477180",
@@ -114,7 +130,7 @@
     {
       "addr": "004b99c0",
       "from_addr": "004b9a46",
-      "name": "core_flashlit.cpp_FUN_004b99c0",
+      "name": "core_flashlit.cpp_CFlashlight_getMuzzlePoint_FUN_004b99c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -210,7 +226,7 @@
     {
       "addr": "0053ffb0",
       "from_addr": "0054003d",
-      "name": "core_rifle.cpp_FUN_0053ffb0",
+      "name": "core_rifle.cpp_CRifle_getMuzzlePoint_FUN_0053ffb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -288,31 +304,13 @@
     {
       "addr": "005b95a0",
       "from_addr": "005b95d5",
-      "name": "core_xform.cpp_CYow_dtor_FUN_005b95a0",
+      "name": "core_yow.cpp_CYow_dtor_FUN_005b95a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005bedf0",
       "from_addr": "005bee25",
       "name": "core_zombie.cpp_CZombie_dtor_FUN_005bedf0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004159f0",
-      "from_addr": "00415a35",
-      "name": "unkafter_bird.cpp_CBird_dtor_FUN_004159f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0045d0e0",
-      "from_addr": "0045d115",
-      "name": "unkafter_demnfolk.cpp_CDemnfolk_dtor_FUN_0045d0e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004623b0",
-      "from_addr": "004623e5",
-      "name": "unkafter_djien.cpp_CDjien_dtor_FUN_004623b0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -337,7 +335,7 @@
     {
       "addr": "005674d0",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_005674d0"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_free_FUN_005674d0"
     },
     {
       "addr": "005c030f",
@@ -441,7 +439,7 @@
       {
         "call_addr": "00415a35",
         "call_type": "direct",
-        "caller": "unkafter_bird.cpp_CBird_dtor_FUN_004159f0",
+        "caller": "core_bird.cpp_CBird_dtor_FUN_004159f0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -511,6 +509,32 @@
     },
     "pcode_op_count": 142
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00544d50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0054bf80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0059de40",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9211
+    },
+    "nocturne.exe": {
+      "addr": "0051b6e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9211
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -534,16 +558,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "*(byte ***)&this_ptr->field_0x50 = &g_CDeformableModelInstanceVTable;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -2,13 +2,13 @@
 // Address: 004ee960
 // Address Range: [[004ee960, 004eeb98]]
 // Convention: __cdecl
-// Signature: char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_004ee960(int param_1)
+// Signature: char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_004ee960(int param_1)
+char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_004ee960(EInputCodeType key_code)
 
 {
   char cVar1;
@@ -17,68 +17,68 @@ char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_004ee960(int param_1)
   char *pcVar4;
   
   pcVar3 = (char *)0x0;
-  if (param_1 == 599) {
+  if (key_code == INPUT_NONE) {
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("(none)");
   }
-  if (param_1 == 0x255) {
+  if (key_code == DIM_XAXIS) {
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Mouse X-Axis");
   }
-  if (param_1 == 0x256) {
+  if (key_code == DIM_YAXIS) {
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Mouse Y-Axis");
   }
-  if (param_1 == 0x200) {
+  if (key_code == DIM_LBUTTON) {
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Mouse B1");
   }
-  if (param_1 == 0x201) {
+  if (key_code == DIM_RBUTTON) {
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Mouse B2");
   }
-  if (param_1 == 0x20c) {
+  if (key_code == DIM_MBUTTON) {
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Mouse B3");
   }
-  if (param_1 == 0x202) {
+  if (key_code == DIJ_BUTTON1) {
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Button 1");
   }
-  if (param_1 == 0x203) {
+  if (key_code == DIJ_BUTTON2) {
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Button 2");
   }
-  if (param_1 == 0x204) {
+  if (key_code == DIJ_BUTTON3) {
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Button 3");
   }
-  if (param_1 == 0x205) {
+  if (key_code == DIJ_BUTTON4) {
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Button 4");
   }
-  if (param_1 == 0x206) {
+  if (key_code == DIJ_BUTTON5) {
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Button 5");
   }
-  if (param_1 == 0x207) {
+  if (key_code == DIJ_BUTTON6) {
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Button 6");
   }
-  if (param_1 == 0x208) {
+  if (key_code == DIJ_BUTTON7) {
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Button 7");
   }
-  if (param_1 == 0x209) {
+  if (key_code == DIJ_BUTTON8) {
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Button 8");
   }
-  if (param_1 == 0x20a) {
+  if (key_code == DIJ_BUTTON9) {
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Button 9");
   }
-  if (param_1 == 0x20b) {
+  if (key_code == DIJ_BUTTON10) {
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Button 10");
   }
-  if (param_1 == 0x251) {
+  if (key_code == DIJ_LEFT) {
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Gamepad left");
   }
-  if (param_1 == 0x252) {
+  if (key_code == DIJ_RIGHT) {
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Gamepad right");
   }
-  if (param_1 == 0x253) {
+  if (key_code == DIJ_UP) {
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Gamepad forward");
   }
-  if (param_1 == 0x254) {
+  if (key_code == DIJ_DOWN) {
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Gamepad back");
   }
   if (pcVar3 == (char *)0x0) {
-    pcVar3 = (char *)wincore_winrun_cpp_getKeyName_FUN_0058f630(param_1);
+    pcVar3 = wincore_winrun_cpp_getKeyName_FUN_0058f630(key_code);
   }
   pcVar2 = (char *)(_DAT_01d08d80 * 0x100 + 0x1d08d88);
   pcVar4 = pcVar2;

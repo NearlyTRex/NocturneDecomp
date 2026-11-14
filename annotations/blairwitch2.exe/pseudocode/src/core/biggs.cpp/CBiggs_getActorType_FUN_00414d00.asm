@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_biggs_cpp_CBiggs_getActorType_FUN_00414d00(CBiggs *this_ptr)
+; CDemonActorType * __cdecl core_biggs_cpp_CBiggs_getActorType_FUN_00414d00(CBiggs *this_ptr)
 ;
 ; Parameters:
 ; CBiggs *         Stack[0x4]:4   this_ptr

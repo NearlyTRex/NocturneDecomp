@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_crc32ProcessVector_FUN_0040cf60(uint *param_1,byte *param_2)
+; void __cdecl core_actor_cpp_crc32ProcessVector_FUN_0040cf60(uint *crc_state,CVector3f *vector)
 ;
+; Parameters:
+; uint *           Stack[0x4]:4   crc_state
+; CVector3f *      Stack[0x8]:4   vector
 ;
 ; XREF[1]:
-;   core_actor.cpp_FUN_00409c40 at 00409c59
+;   core_actor.cpp_CDemonActor_calculateChecksum_FUN_00409c40 at 00409c59
 ;
 ; Called Functions:
 ;   core_actor.cpp_crc32ProcessBuffer_FUN_0040cf00

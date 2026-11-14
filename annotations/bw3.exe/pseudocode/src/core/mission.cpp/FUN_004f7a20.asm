@@ -25,20 +25,20 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
-;   core_actor.cpp_FUN_0040c790
+;   core_actor.cpp_isOfClass_FUN_0040c790
 ;   core_hero.cpp_CHeroPlaceholder_ctor_FUN_004d4ae0
 ;   core_main.c_FUN_004e4330
+;   core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930
+;   core_mission.cpp_CDemonMission_findActorByName_FUN_004f6e90
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004f7530
 ;   core_mission.cpp_CDemonMission_removeActor_FUN_004f6ca0
-;   core_mission.cpp_FUN_004f6930
-;   core_mission.cpp_FUN_004f6e90
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_memory.c_operator_new_FUN_005a3cb2
 ;   shape_edittool.cpp_CEditorTools_showMessage_FUN_0047ce80
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004831c0
+;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00483450
 ;   shape_edittool.cpp_CPickList_dtor_FUN_004832b0
 ;   shape_edittool.cpp_CStrList_add_FUN_00482070
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_00482440
-;   shape_edittool.cpp_FUN_00483450
 ;
 ; *****************************************************************************
 
@@ -62,8 +62,8 @@ section .text
     PUSH 0x5c8dac                       ; 004f7a45 | = "CHero"
         ;   Label: LAB_004f7a45
     PUSH EBX                            ; 004f7a4a
-    CALL core_actor.cpp_FUN_0040c790    ; 004f7a4b
-        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c790 ; 004f7a4b
+        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004f7a50
     TEST EAX,EAX                        ; 004f7a53
     JZ 0x004f7a65                       ; 004f7a55
@@ -79,7 +79,7 @@ section .text
     PUSH EBP                            ; 004f7a6b
     PUSH EBX                            ; 004f7a6c
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 004f7a6d
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c840(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004f7a72
     TEST EAX,EAX                        ; 004f7a75
     JNZ 0x004f7b9b                      ; 004f7a77
@@ -98,8 +98,8 @@ section .text
     PUSH 0x5c8deb                       ; 004f7a95 | = "Mission has no hero placeholders.\n\n..."
     LEA EAX,[ESP + 0xc]                 ; 004f7a9a
     PUSH EAX                            ; 004f7a9e
-    CALL shape_edittool.cpp_FUN_00483450 ; 004f7a9f
-        ;   XREF to: 00483450 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_FUN_00483450(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
+    CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00483450 ; 004f7a9f
+        ;   XREF to: 00483450 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00483450(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     ADD ESP,0x10                        ; 004f7aa4
     TEST EAX,EAX                        ; 004f7aa7
     JL 0x004f7bd5                       ; 004f7aa9
@@ -113,8 +113,8 @@ section .text
     ADD ESP,0x8                         ; 004f7abb
     PUSH EAX                            ; 004f7abe
     PUSH EDI                            ; 004f7abf
-    CALL core_mission.cpp_FUN_004f6e90  ; 004f7ac0
-        ;   XREF to: 004f6e90 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_FUN_004f6e90(CDemonMission * this_ptr, char * name)
+    CALL core_mission.cpp_CDemonMission_findActorByName_FUN_004f6e90 ; 004f7ac0
+        ;   XREF to: 004f6e90 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_004f6e90(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 004f7ac5
     MOV ESI,EAX                         ; 004f7ac8
     TEST EAX,EAX                        ; 004f7aca
@@ -130,8 +130,8 @@ section .text
     ADD ESP,0x4                         ; 004f7aee
     PUSH 0x17c                          ; 004f7af1
         ;   Label: LAB_004f7af1
-    CALL crt_unknown.c_FUN_005a3cb2     ; 004f7af6
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 004f7af6
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
     ADD ESP,0x4                         ; 004f7afb
     TEST EAX,EAX                        ; 004f7afe
     JZ 0x004f7b0b                       ; 004f7b00
@@ -178,8 +178,8 @@ section .text
     ADD ESP,0xc                         ; 004f7b60
     PUSH EBP                            ; 004f7b63
     PUSH EDI                            ; 004f7b64
-    CALL core_mission.cpp_FUN_004f6930  ; 004f7b65
-        ;   XREF to: 004f6930 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_FUN_004f6930(CDemonMission * this_ptr, CDemonActor * actor)
+    CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930 ; 004f7b65
+        ;   XREF to: 004f6930 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004f7b6a
     PUSH 0x5c8eda                       ; 004f7b6d | = "Replaced hero OK.  You will need to s..."
     MOV ESI,dword ptr [0x005fb140]      ; 004f7b72 | g_CEditorToolsPtr

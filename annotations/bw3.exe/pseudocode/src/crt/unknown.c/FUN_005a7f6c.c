@@ -21,7 +21,7 @@ uint FUN_005a7f6c(int param_1,uint param_2,HMODULE param_3)
   uint uVar8;
   
   _DAT_02d252b0 = param_1;
-  _DAT_02d252bc = unkafter_asgaya_cpp_FUN_005adaac(param_2);
+  _DAT_02d252bc = FUN_005adaac(param_2);
   if (_DAT_02d252bc == 0) {
     uVar8 = 0;
     if (param_1 == 0) {
@@ -43,10 +43,10 @@ uint FUN_005a7f6c(int param_1,uint param_2,HMODULE param_3)
     _DAT_00607993 = DAT_0060798b << 8 | DAT_0060798f;
     GetModuleFileNameA((HMODULE)0x0,&DAT_02d252c0,0x104);
     _DAT_00607944 = &DAT_02d252c0;
-    unkafter_asgaya_cpp_FUN_005addd0(0,0x2d253c4,0x208);
+    FUN_005addd0(0,0x2d253c4,0x208);
     _DAT_00607950 = 0x2d253c4;
     pCVar4 = GetCommandLineA();
-    _DAT_02d252b4 = (char *)unkafter_asgaya_cpp_FUN_005ade80(pCVar4);
+    _DAT_02d252b4 = (char *)FUN_005ade80(pCVar4);
     DAT_00607940 = _DAT_02d252b4;
     if (*_DAT_02d252b4 == '\"') {
       cVar1 = _DAT_02d252b4[1];
@@ -72,7 +72,7 @@ uint FUN_005a7f6c(int param_1,uint param_2,HMODULE param_3)
       _DAT_0060794c = (short *)&DAT_005da848;
     }
     else {
-      _DAT_02d252b8 = (short *)unkafter_asgaya_cpp_FUN_005aded0(pWVar6);
+      _DAT_02d252b8 = (short *)FUN_005aded0(pWVar6);
       _DAT_0060794c = _DAT_02d252b8;
       if (*_DAT_02d252b8 == 0x22) {
         sVar2 = _DAT_02d252b8[1];
@@ -97,7 +97,7 @@ uint FUN_005a7f6c(int param_1,uint param_2,HMODULE param_3)
     if (param_1 != 0) {
       GetModuleFileNameA(param_3,&DAT_02d255cc,0x104);
       _DAT_00607948 = &DAT_02d255cc;
-      unkafter_asgaya_cpp_FUN_005addd0(param_3,0x2d256d0,0x208);
+      FUN_005addd0(param_3,0x2d256d0,0x208);
       _DAT_00607954 = 0x2d256d0;
     }
     uVar8 = 1;

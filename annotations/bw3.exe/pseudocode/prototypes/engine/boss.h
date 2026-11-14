@@ -7,15 +7,11 @@
 
 // Original: engine_boss.c_modelStructNotSupported1_FUN_0041ac30
 // Address: 0041ac30
-undefined4 __cdecl modelStructNotSupported1(void);
+SMRGLHeaderExtended * __cdecl modelStructNotSupported1(SMRGLHeaderExtended *mrgl_data);
 
 // Original: engine_boss.c_modelStructNotSupported2_FUN_0041ac60
 // Address: 0041ac60
-undefined4 __cdecl modelStructNotSupported2(void);
-
-// Original: engine_boss.c_FUN_0041ac8c
-// Address: 0041ac8c
-void FUN_0041ac8c(void);
+SMRGLHeaderExtended * __cdecl modelStructNotSupported2(char *filename);
 
 // Original: engine_boss.c_modelStructNotSupported3_FUN_0041ac90
 // Address: 0041ac90

@@ -20,7 +20,7 @@
 ;   core_ground.cpp_CGround_renderVisibleTerrain_FUN_004d07f0
 ;   core_ground.cpp_CGround_transformAndStoreVertices_FUN_004d0110
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0046d460
-;   engine_matrix.c_FUN_004e6a90
+;   engine_matrix.c_getCameraOrigin_FUN_004e6a90
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     SUB ESP,0xc                         ; 004d0913
     MOV EBX,dword ptr [ESP + 0x1c]      ; 004d0916
     MOV ESI,ESP                         ; 004d091a
-    CALL engine_matrix.c_FUN_004e6a90   ; 004d091c
-        ;   XREF to: 004e6a90 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_004e6a90()
+    CALL engine_matrix.c_getCameraOrigin_FUN_004e6a90 ; 004d091c
+        ;   XREF to: 004e6a90 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_getCameraOrigin_FUN_004e6a90(CVector3i * output)
     MOV EAX,dword ptr [ESP]             ; 004d0921
     MOV ESI,dword ptr [EBX + 0x1c]      ; 004d0924
     MOV EDX,EAX                         ; 004d0927

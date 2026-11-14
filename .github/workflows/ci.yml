@@ -36,8 +36,11 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          # Held on 24.04, whose clang-format 18 is the one the shims are
+          # formatted with; 26.04's clang-format 21 lays out long signatures
+          # and trailing comments differently, and neither accepts the other's.
           - preset: exe-linux-x86_64
-            os: ubuntu-latest
+            os: ubuntu-24.04
             coverage: "ON"
           - preset: exe-linux-aarch64
             os: ubuntu-24.04-arm
@@ -168,6 +171,10 @@ jobs:
     permissions:
       contents: read
     with:
+      # Held on 24.04: on the 26.04 image clang 21's MinGW driver finds neither
+      # the mingw-w64 import libraries nor libgcc, so even CMake's compiler
+      # check fails to link.
+      runs-on: ubuntu-24.04
       apt-packages: cmake clang lld ninja-build pkg-config python3 g++-mingw-w64-x86-64
       cache-paths: |
         build/exe-windows-x86_64/_deps

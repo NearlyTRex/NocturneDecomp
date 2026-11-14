@@ -16,6 +16,6 @@ void sound_snddx_cpp_FUN_00557500(uint param_1,int param_2)
     sound_snddx_cpp_FUN_00554e50(iVar1);
     return;
   }
-  sound_sndmain_cpp_FUN_005549c0("DirectSoundDevice::killSfx - handle wasn't valid, call ignored");
+  sound_sndmain_cpp_logSoundError_FUN_005549c0("DirectSoundDevice::killSfx - handle wasn't valid, call ignored");
   return;
 }

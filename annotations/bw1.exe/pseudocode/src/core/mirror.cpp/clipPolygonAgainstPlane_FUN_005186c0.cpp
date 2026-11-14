@@ -2,67 +2,69 @@
 // Address: 005186c0
 // Address Range: [[005186c0, 005187e8]]
 // Convention: __cdecl
-// Signature: void __cdecl core_mirror_cpp_clipPolygonAgainstPlane_FUN_005186c0(float *param_1,float *param_2,uint param_3,int param_4,int *param_5)
+// Signature: void __cdecl core_mirror_cpp_clipPolygonAgainstPlane_FUN_005186c0(SClipPlane *clip_plane,CVector3f *input_vertices,int input_count,CVector3f *output_vertices,int *output_count)
 
 #include "nocturne.h"
 
-void __cdecl core_mirror_cpp_clipPolygonAgainstPlane_FUN_005186c0(float *param_1,float *param_2,uint param_3,int param_4,int *param_5)
+void __cdecl core_mirror_cpp_clipPolygonAgainstPlane_FUN_005186c0(SClipPlane *clip_plane,CVector3f *input_vertices,int input_count,CVector3f *output_vertices,int *output_count)
 
 {
   int iVar1;
   byte bVar2;
   uint uVar3;
-  float *pfVar4;
-  float *pfVar5;
-  float *pfVar6;
+  CVector3f *pCVar4;
+  CVector3f *pCVar5;
+  CVector3f *vertex_a;
   int local_14;
   
-  *param_5 = 0;
+  *output_count = 0;
   local_14 = 0;
-  pfVar6 = param_2;
-  if (0 < (int)param_3) {
+  vertex_a = input_vertices;
+  if (0 < input_count) {
     do {
       uVar3 = local_14 + 1;
-      if (uVar3 == param_3) {
-        uVar3 = uVar3 ^ param_3;
+      if (uVar3 == input_count) {
+        uVar3 = uVar3 ^ input_count;
       }
-      pfVar4 = param_2 + uVar3 * 3;
-      bVar2 = 0.0 < param_1[2] * pfVar6[2] + *param_1 * *pfVar6 + param_1[1] * pfVar6[1] +
-                    param_1[3];
-      if (0.0 < param_1[2] * pfVar4[2] + *param_1 * *pfVar4 + param_1[1] * pfVar4[1] + param_1[3]) {
+      pCVar5 = input_vertices + uVar3;
+      bVar2 = 0.0 < (clip_plane->C).f * vertex_a->z +
+                    (clip_plane->A).f * vertex_a->x + (clip_plane->B).f * vertex_a->y +
+                    (clip_plane->D).f;
+      if (0.0 < (clip_plane->C).f * pCVar5->z +
+                (clip_plane->A).f * pCVar5->x + (clip_plane->B).f * pCVar5->y + (clip_plane->D).f) {
         bVar2 = bVar2 | 2;
       }
       switch(bVar2) {
       case 0:
-        pfVar4 = (float *)(*param_5 * 0xc + param_4);
-        if (pfVar4 != pfVar6) {
-          *pfVar4 = *pfVar6;
-          pfVar4[1] = pfVar6[1];
-          pfVar4[2] = pfVar6[2];
+        pCVar5 = output_vertices + *output_count;
+        if (pCVar5 != vertex_a) {
+          pCVar5->x = vertex_a->x;
+          pCVar5->y = vertex_a->y;
+          pCVar5->z = vertex_a->z;
         }
-        *param_5 = *param_5 + 1;
+        *output_count = *output_count + 1;
         break;
       case 1:
         core_mirror_cpp_computePlaneIntersection_FUN_00518560
-                  (param_1,pfVar4,pfVar6,*param_5 * 0xc + param_4);
-        *param_5 = *param_5 + 1;
+                  (clip_plane,pCVar5,vertex_a,output_vertices + *output_count);
+        *output_count = *output_count + 1;
         break;
       case 2:
-        pfVar5 = (float *)(*param_5 * 0xc + param_4);
-        if (pfVar5 != pfVar6) {
-          *pfVar5 = *pfVar6;
-          pfVar5[1] = pfVar6[1];
-          pfVar5[2] = pfVar6[2];
+        pCVar4 = output_vertices + *output_count;
+        if (pCVar4 != vertex_a) {
+          pCVar4->x = vertex_a->x;
+          pCVar4->y = vertex_a->y;
+          pCVar4->z = vertex_a->z;
         }
-        iVar1 = *param_5;
-        *param_5 = iVar1 + 1;
+        iVar1 = *output_count;
+        *output_count = iVar1 + 1;
         core_mirror_cpp_computePlaneIntersection_FUN_00518560
-                  (param_1,pfVar6,pfVar4,(iVar1 + 1) * 0xc + param_4);
-        *param_5 = *param_5 + 1;
+                  (clip_plane,vertex_a,pCVar5,output_vertices + iVar1 + 1);
+        *output_count = *output_count + 1;
       }
       local_14 = local_14 + 1;
-      pfVar6 = pfVar6 + 3;
-    } while (local_14 < (int)param_3);
+      vertex_a = vertex_a + 1;
+    } while (local_14 < input_count);
   }
   return;
 }

@@ -1,0 +1,222 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 61,
+    "complexity_score": 84,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 29,
+    "suspect_count": 4,
+    "suspect_types": [
+      "stack_param",
+      "stack_ref",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 90
+  },
+  "cross_references": [
+    {
+      "addr": "0045f5a0",
+      "from_addr": "0045f633",
+      "name": "core_door.cpp_CDoor_process_FUN_0045f5a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005380c0",
+    "address_range": [
+      [
+        "005380c0",
+        "00538156"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setcolid.cpp_CDemonSet_transferVoxelShadow_FUN_005380c0",
+    "signature": "void __cdecl core_setcolid_cpp_CDemonSet_transferVoxelShadow_FUN_005380c0(CDemonSet *this_ptr,CDemonActor *actor)"
+  },
+  "function_calls": [
+    {
+      "addr": "00477160",
+      "is_variadic": false,
+      "name": "core_dtrace.cpp_CDemonRaytrace_transferShadowVoxels_FUN_00477160"
+    },
+    {
+      "addr": "00513f30",
+      "is_variadic": false,
+      "name": "core_path.cpp_resetAllPathMaps_FUN_00513f30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01fc9c68",
+      "name": "g_CDemonRaytraceInstance",
+      "type": "CDemonRaytrace",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0045f633",
+        "call_type": "direct",
+        "caller": "core_door.cpp_CDoor_process_FUN_0045f5a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8461538461538463,
+    "instruction_count": 52,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 2,
+      "CALL": 2,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 46,
+      "INT_ADD": 32,
+      "INT_AND": 14,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 15,
+      "INT_LESS": 3,
+      "INT_MULT": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 7,
+      "INT_SUB": 18,
+      "INT_ZEXT": 2,
+      "LOAD": 14,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 19
+    },
+    "pcode_op_count": 200
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005594e0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0053eea0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005744d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8571
+    },
+    "nocturne.exe": {
+      "addr": "00511aa0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8571
+    }
+  },
+  "stack_frame": {
+    "frame_size": 96,
+    "local_size": 88,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "005380ee",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_ffffffac",
+      "severity": "moderate",
+      "text": "CBoundingBox3D *in_stack_ffffffac;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_ffffffac",
+      "severity": "moderate",
+      "text": "(*((actor->vtable)._ub)->getBoundingBox)(actor,in_stack_ffffffac);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 18,
+      "match": "&stack0xffffffac",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)&stack0xffffffac;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 19,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

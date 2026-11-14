@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBurncross * core_burncrss_cpp_CBurncross_dtor_FUN_00425420(CBurncross *this_ptr,uint flags)
+; CBurncross * __cdecl core_burncrss_cpp_CBurncross_dtor_FUN_00425420(CBurncross *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CBurncross *     Stack[0x4]:4   this_ptr
@@ -51,7 +51,7 @@ section .text
         ;   Label: LAB_0042545d
     PUSH EBX                            ; 00425462
     CALL crt_memory.c___vec_delete_FUN_005a308f ; 00425463
-        ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005a308f()
+        ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005a308f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00425468
     PUSH EAX                            ; 0042546b
     CALL crt_unknown.c_FUN_005a30b6     ; 0042546c

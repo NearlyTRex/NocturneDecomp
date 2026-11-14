@@ -30,7 +30,7 @@ section .text
     ADD EAX,0xb4                        ; 0041dd06
     PUSH EAX                            ; 0041dd0b
     CALL core_box.cpp_SScrape_arrdtor8_FUN_00420220 ; 0041dd0c
-        ;   XREF to: 00420220 (UNCONDITIONAL_CALL)  ; SScrape * core_box.cpp_SScrape_arrdtor8_FUN_00420220(SScrape * objs, uint flags)
+        ;   XREF to: 00420220 (UNCONDITIONAL_CALL)  ; SScrape * core_box.cpp_SScrape_arrdtor8_FUN_00420220(SScrape * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0041dd11
     SUB EAX,0xb4                        ; 0041dd14
     RET                                 ; 0041dd19

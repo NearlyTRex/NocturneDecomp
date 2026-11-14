@@ -12,16 +12,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[10]:
+;   core_doc.cpp_CDoc_makeDrawDecision_FUN_0046ea80 at 0046ed3f
 ;   core_doc.cpp_FUN_0046caa0 at 0046e5ea
-;   core_doc.cpp_FUN_0046ea80 at 0046ed3f
 ;   core_doc.cpp_FUN_0046f200 at 0046f30f
-;   core_gabriela.cpp_FUN_004c89c0 at 004c8d18
-;   core_ghoul.cpp_FUN_004de330 at 004de640
-;   core_hostage.cpp_FUN_004ed890 at 004eed61
-;   core_scat.cpp_FUN_00542090 at 00542201
+;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0 at 004c8d18
+;   core_ghoul.cpp_CGhoul_process_FUN_004de330 at 004de640
+;   core_hostage.cpp_CHostage_process_FUN_004ed890 at 004eed61
+;   core_scat.cpp_CScat_blendLayerAction_FUN_00542090 at 00542201
 ;   core_stranger.cpp_CStranger_applyArmAimRotation_FUN_0058aab0 at 0058abb3
 ;   core_stranger.cpp_CStranger_makeDrawDecision_FUN_0058a360 at 0058a5a9
-;   core_stranger.cpp_FUN_00588ad0 at 00589ec6
+;   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00588ad0 at 00589ec6
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005c03a0

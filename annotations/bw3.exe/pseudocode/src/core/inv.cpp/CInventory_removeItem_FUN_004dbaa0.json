@@ -1,0 +1,231 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 73,
+    "complexity_score": 64,
+    "cross_reference_count": 5,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 34,
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_stride_bytecount",
+      "shadow_pointer_walk"
+    ],
+    "total_lines": 107
+  },
+  "cross_references": [
+    {
+      "addr": "004da440",
+      "from_addr": "004da463",
+      "name": "core_inv.cpp_CInventory_clear_FUN_004da440",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004de6e0",
+      "from_addr": "004de71c",
+      "name": "core_inv.cpp_CInventory_removeMatchingKeys_FUN_004de6e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dcb40",
+      "from_addr": "004dcd3d",
+      "name": "core_inv.cpp_CInventory_select_FUN_004dcb40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00524940",
+      "from_addr": "00524c0c",
+      "name": "core_prye.cpp_FUN_00524940",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00529a70",
+      "from_addr": "0052e150",
+      "name": "core_script.cpp_CScript_step_FUN_00529a70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004dbaa0",
+    "address_range": [
+      [
+        "004dbaa0",
+        "004dbb36"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inv.cpp_CInventory_removeItem_FUN_004dbaa0",
+    "signature": "void __cdecl core_inv_cpp_CInventory_removeItem_FUN_004dbaa0(CInventory *this_ptr,CDemonActor *item_to_remove,int should_delete_actor)"
+  },
+  "function_calls": [
+    {
+      "addr": "004085a0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_004085a0"
+    },
+    {
+      "addr": "005a54c0",
+      "is_variadic": false,
+      "name": "crt_string.c_memmove_FUN_005a54c0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "0052e150",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_step_FUN_00529a70",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004da463",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_clear_FUN_004da440",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004de71c",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_removeMatchingKeys_FUN_004de6e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004dcd3d",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_select_FUN_004dcb40",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00524c0c",
+        "call_type": "direct",
+        "caller": "core_prye.cpp_FUN_00524940",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.719298245614035,
+    "instruction_count": 57,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 6,
+      "COPY": 47,
+      "INT_ADD": 32,
+      "INT_AND": 33,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 32,
+      "INT_LESS": 6,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 16,
+      "INT_SUB": 17,
+      "INT_XOR": 1,
+      "LOAD": 19,
+      "POPCOUNT": 16,
+      "RETURN": 2,
+      "STORE": 13
+    },
+    "pcode_op_count": 269
+  },
+  "siblings": {
+    "nocedit.exe": {
+      "addr": "004fea70",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004c07b0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInventory *"
+      },
+      {
+        "is_param": true,
+        "name": "item_to_remove",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "should_delete_actor",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar3->owner`). Replace `pCVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 33,
+      "match": "pCVar3 = (T *)&pCVar3->FIELD",
+      "severity": "moderate",
+      "text": "pCVar3 = (CInventory *)&pCVar3->owner;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride ((iVar4 - iVar2) * 4) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 24,
+      "match": "memmove",
+      "severity": "moderate",
+      "text": "memmove",
+      "type": "pointer_stride_bytecount"
+    }
+  ]
+}

@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 5,
-    "complexity_score": 20,
+    "complexity_score": 5,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 5,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 10
   },
   "cross_references": [],
@@ -24,6 +22,7 @@
       ]
     ],
     "convention": "__cdecl",
+    "is_ebp_frame": true,
     "name": "core_charactr.cpp_setActorXPos_FUN_00434a30",
     "signature": "void __cdecl core_charactr_cpp_setActorXPos_FUN_00434a30(CDemonActor *actor,float x)"
   },
@@ -50,6 +49,32 @@
     },
     "pcode_op_count": 12
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0042bf20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00435500",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0042f920",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0042b500",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -73,14 +98,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "*(float *)&actor->field_0x20 = x;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

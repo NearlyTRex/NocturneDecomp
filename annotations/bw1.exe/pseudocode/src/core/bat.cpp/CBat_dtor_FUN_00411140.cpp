@@ -14,12 +14,13 @@ CBat * __cdecl core_bat_cpp_CBat_dtor_FUN_00411140(CBat *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CBatTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CBatTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  pCVar1 = core_course_cpp_CCourse_dtor_FUN_00447d30((CCourse *)&this_ptr->field_0x178,0);
-  pCVar2 = (CBat *)core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)(pCVar1 + -0x178),1);
+  pCVar1 = core_course_cpp_CCourse_dtor_FUN_00447d30(&this_ptr->course,0);
+  pCVar2 = (CBat *)core_actor_cpp_CDemonActor_dtor_FUN_00408730
+                             ((CDemonActor *)&pCVar1[-0x20].loop,1);
   if ((flags & 2) == 0) {
     return pCVar2;
   }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_batman_cpp_staticInit_FUN_00412720(void)
+; void __cdecl core_batman_cpp_staticInit_FUN_00412720(void)
 ;
 ;
 ; Called Functions:

@@ -1,0 +1,597 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 104,
+    "complexity_score": 620,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 90,
+    "suspect_count": 48,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "raw_address_constant",
+      "stack_alignment_array",
+      "stack_param",
+      "stack_ref",
+      "suspect_float",
+      "undefined_data",
+      "unknown_field",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 194
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004889b0",
+    "address_range": [
+      [
+        "004889b0",
+        "00488ab2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_emitter.cpp_CEmitter_renderOpaque_FUN_004889b0",
+    "signature": "int __cdecl core_emitter_cpp_CEmitter_renderOpaque_FUN_004889b0(CEmitter *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408b00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408b00"
+    },
+    {
+      "addr": "004a2e20",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_traceLaser_FUN_004a2e20"
+    },
+    {
+      "addr": "004a2de0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_SLaserInfo_ctor_FUN_004a2de0"
+    },
+    {
+      "addr": "0053ec10",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_ignore_FUN_0053ec10"
+    },
+    {
+      "addr": "0053ebe0",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_init_FUN_0053ebe0"
+    },
+    {
+      "addr": "0046d540",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f2afc",
+      "name": "DAT_005f2afc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fc5a0",
+      "name": "DAT_005fc5a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00603b28",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01ed78c8"
+    },
+    {
+      "addr": "01bdd7e4",
+      "name": "DAT_01bdd7e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ed78c8",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.2967032967032965,
+    "instruction_count": 91,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BRANCH": 1,
+      "CALL": 7,
+      "CBRANCH": 4,
+      "COPY": 89,
+      "INT_ADD": 50,
+      "INT_AND": 33,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 33,
+      "INT_LESS": 4,
+      "INT_MULT": 8,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 16,
+      "INT_SUB": 36,
+      "INT_XOR": 3,
+      "INT_ZEXT": 8,
+      "LOAD": 21,
+      "POPCOUNT": 16,
+      "RETURN": 2,
+      "STORE": 37
+    },
+    "pcode_op_count": 391
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00487790",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0049fdf0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004a8860",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5581
+    },
+    "nocturne.exe": {
+      "addr": "00478f80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6667
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEmitter *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "00488a43",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 10,
+      "match": "afStackY_101c",
+      "severity": "moderate",
+      "text": "float afStackY_101c [972];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_ffffff20",
+      "severity": "moderate",
+      "text": "byte in_stack_ffffff20 [76];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 34,
+      "match": "6.661685e-39",
+      "severity": "mild",
+      "text": "fVar10 = 6.661685e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 45,
+      "match": "&stack0xffffff20",
+      "severity": "moderate",
+      "text": "pfVar3 = (float *)&stack0xffffff20;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(SLaserInfo *)((int)pSVar2",
+      "severity": "moderate",
+      "text": "pSVar2 = (SLaserInfo *)((int)pSVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 63,
+      "match": "in_stack_ffffff20",
+      "severity": "moderate",
+      "text": "auVar5 = in_stack_ffffff20._12_12_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 63,
+      "match": "._12_12_",
+      "severity": "mild",
+      "text": "auVar5 = in_stack_ffffff20._12_12_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 64,
+      "match": "in_stack_ffffff20",
+      "severity": "moderate",
+      "text": "auVar6 = in_stack_ffffff20._32_12_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 64,
+      "match": "._32_12_",
+      "severity": "mild",
+      "text": "auVar6 = in_stack_ffffff20._32_12_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 65,
+      "match": "in_stack_ffffff20",
+      "severity": "moderate",
+      "text": "auVar7 = in_stack_ffffff20._44_12_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 65,
+      "match": "._44_12_",
+      "severity": "mild",
+      "text": "auVar7 = in_stack_ffffff20._44_12_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 66,
+      "match": "in_stack_ffffff20",
+      "severity": "moderate",
+      "text": "auVar8 = in_stack_ffffff20._56_12_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 66,
+      "match": "._56_12_",
+      "severity": "mild",
+      "text": "auVar8 = in_stack_ffffff20._56_12_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 67,
+      "match": "in_stack_ffffff20",
+      "severity": "moderate",
+      "text": "laser_info.intensity = (float)in_stack_ffffff20._0_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 67,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "laser_info.intensity = (float)in_stack_ffffff20._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 68,
+      "match": "in_stack_ffffff20",
+      "severity": "moderate",
+      "text": "laser_info.beam_width = (float)in_stack_ffffff20._4_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 68,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "laser_info.beam_width = (float)in_stack_ffffff20._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 69,
+      "match": "in_stack_ffffff20",
+      "severity": "moderate",
+      "text": "laser_info.laser_type = in_stack_ffffff20._8_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 69,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "laser_info.laser_type = in_stack_ffffff20._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 70,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "laser_info.color.r = auVar5._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 71,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "laser_info.color.g = auVar5._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 72,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "laser_info.color.b = auVar5._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 73,
+      "match": "in_stack_ffffff20",
+      "severity": "moderate",
+      "text": "laser_info.is_hero_weapon = in_stack_ffffff20._24_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 73,
+      "match": "._24_4_",
+      "severity": "mild",
+      "text": "laser_info.is_hero_weapon = in_stack_ffffff20._24_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 74,
+      "match": "in_stack_ffffff20",
+      "severity": "moderate",
+      "text": "laser_info.is_damaging = in_stack_ffffff20._28_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 74,
+      "match": "._28_4_",
+      "severity": "mild",
+      "text": "laser_info.is_damaging = in_stack_ffffff20._28_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 75,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "laser_info.local_origin.x = (float)auVar6._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 76,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "laser_info.local_origin.y = (float)auVar6._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 77,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "laser_info.local_origin.z = (float)auVar6._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 78,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "laser_info.local_hit_position.x = (float)auVar7._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 79,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "laser_info.local_hit_position.y = (float)auVar7._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 80,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "laser_info.local_hit_position.z = (float)auVar7._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 81,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "laser_info.local_normal.x = (float)auVar8._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 82,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "laser_info.local_normal.y = (float)auVar8._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 83,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "laser_info.local_normal.z = (float)auVar8._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 84,
+      "match": "in_stack_ffffff20",
+      "severity": "moderate",
+      "text": "laser_info.incidence_angle = (float)in_stack_ffffff20._68_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 84,
+      "match": "._68_4_",
+      "severity": "mild",
+      "text": "laser_info.incidence_angle = (float)in_stack_ffffff20._68_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 85,
+      "match": "in_stack_ffffff20",
+      "severity": "moderate",
+      "text": "laser_info.reflectivity = (float)in_stack_ffffff20._72_4_;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 85,
+      "match": "._72_4_",
+      "severity": "mild",
+      "text": "laser_info.reflectivity = (float)in_stack_ffffff20._72_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Pointer value `pSVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 48,
+      "match": "(int)pSVar2",
+      "severity": "moderate",
+      "text": "pSVar2 = (SLaserInfo *)((int)pSVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_1c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 58,
+      "match": "(int)&CStack_1c",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_1c + (uint)bVar4 * -8 + 4) = afStack_30[(uint)bVar4 * -2];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_1c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 60,
+      "match": "(int)&CStack_1c",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_1c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Raw hex address 0x488a05 assigned to bare local `uVar9`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar9` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 32,
+      "match": "0x488a05",
+      "severity": "moderate",
+      "text": "uVar9 = 0x488a05;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x1c73654 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 59,
+      "match": "0x1c73654",
+      "severity": "moderate",
+      "text": "this_ptr_00 = 0x01C73654;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 46,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0x15; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 58,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_1c + (uint)bVar4 * -8 + 4) = afStack_30[(uint)bVar4 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 60,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_1c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =",
+      "type": "pointer_cast"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CEmitter",
+        "offset": 16,
+        "vtable_addr": "005df244"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

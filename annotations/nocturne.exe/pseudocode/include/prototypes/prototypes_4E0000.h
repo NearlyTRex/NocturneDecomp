@@ -76,7 +76,7 @@ void __cdecl core_morph_cpp_CMorph_render_FUN_004e0820(CMorph *this_ptr,float mo
 int __cdecl core_morph_cpp_addInts_FUN_004e0890(int a,int b);
 CBoundingBox3D * __cdecl core_morph_cpp_CBoundingBox3D_arrdtor2_FUN_004e08a0(CBoundingBox3D *this_ptr,uint flags);
 CMorphModel * __cdecl core_morph_cpp_CMorphModel_arrdtor2_FUN_004e08c0(CMorphModel *this_ptr,uint flags);
-void core_motion_cpp_FUN_004e08e0(_FILE *param_1);
+void __cdecl core_motion_cpp_skipLine_FUN_004e08e0(_FILE *file_handle);
 CMotionList * __cdecl core_motion_cpp_CMotionList_ctor_FUN_004e0900(CMotionList *this_ptr);
 void __cdecl core_motion_cpp_CMotionList_load_FUN_004e0920(CMotionList *this_ptr,_FILE *file_handle);
 void __cdecl core_motion_cpp_CMotionList_save_FUN_004e0d20(CMotionList *this_ptr,_FILE *file_handle);
@@ -229,7 +229,7 @@ void __cdecl core_netgame_cpp_copyPlayerInput_FUN_004edf30(SPlayerInput *dest,SP
 void __cdecl core_netgame_cpp_copyNetAddr_FUN_004edf80(SNetworkAddr *dest,SNetworkAddr *src);
 int * __cdecl core_netgame_cpp_assignInt1_FUN_004edfa0(int *dest,int *src);
 int * __cdecl core_netgame_cpp_assignInt2_FUN_004edfb0(int *dest,int *src);
-int support_newmsg_cpp_readMessageFile_FUN_004edfc0(char *param_1);
+int __cdecl support_newmsg_cpp_readMessageFile_FUN_004edfc0(char *message_file);
 char * __cdecl support_newmsg_cpp_findLocalizedString_FUN_004ee2f0(char *key,int lower_bound,int upper_bound);
 char * __cdecl support_newmsg_cpp_getLocalizedString_FUN_004ee370(char *key);
 char * __cdecl support_newmsg_cpp_decryptMessage_FUN_004ee3f0(char *encrypted_msg);
@@ -275,7 +275,7 @@ void __cdecl core_passngr_cpp_CPassenger_setup_FUN_004ef6d0(CPassenger *this_ptr
 void __cdecl core_passngr_cpp_CPassenger_process_FUN_004ef890(CPassenger *this_ptr,float delta_time);
 int __cdecl core_passngr_cpp_CPassenger_renderOpaque_FUN_004efa60(CPassenger *this_ptr);
 void __cdecl core_passngr_cpp_CPassenger_archive_FUN_004efb30(CPassenger *this_ptr);
-void core_path_cpp_FUN_004efc10(void);
+void __cdecl core_path_cpp_resetPathfindingQueue_FUN_004efc10(void);
 int __cdecl core_path_cpp_isPathfindingQueueEmpty_FUN_004efc30(void);
 void __cdecl core_path_cpp_queuePush_FUN_004efc50(int grid_x,int cost,int grid_z,char direction);
 void __cdecl core_path_cpp_queuePop_FUN_004efcd0(int *out_x,int *out_cost,int *out_z);

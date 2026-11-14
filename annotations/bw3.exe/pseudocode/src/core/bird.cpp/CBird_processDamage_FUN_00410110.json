@@ -1,0 +1,173 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 64,
+    "complexity_score": 53,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 28,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 92
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00410110",
+    "address_range": [
+      [
+        "00410110",
+        "004101b1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bird.cpp_CBird_processDamage_FUN_00410110",
+    "signature": "void __cdecl core_bird_cpp_CBird_processDamage_FUN_00410110(CBird *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "00410030",
+      "is_variadic": false,
+      "name": "core_bird.cpp_FUN_00410030"
+    },
+    {
+      "addr": "00431ce0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00431ce0"
+    },
+    {
+      "addr": "00430d60",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processDamage_FUN_00430d60"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b6452",
+      "name": "DAT_005b6452",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b6456",
+      "name": "DAT_005b6456",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007dff10",
+      "name": "g_CBirdClassInfo",
+      "type": "CDemonActorType",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.0,
+    "instruction_count": 52,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CALLIND": 2,
+      "CBRANCH": 4,
+      "COPY": 102,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 22,
+      "INT_AND": 24,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 14,
+      "INT_LEFT": 8,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 7,
+      "INT_SUB": 20,
+      "INT_ZEXT": 8,
+      "LOAD": 14,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 20
+    },
+    "pcode_op_count": 312
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00415910",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBird *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_005b6452",
+      "severity": "mild",
+      "text": "puVar4 = &DAT_005b6452;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_005b6456",
+      "severity": "mild",
+      "text": "puVar4 = &DAT_005b6456;",
+      "type": "undefined_data"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBird",
+        "offset": 264,
+        "vtable_addr": "005dbb14"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

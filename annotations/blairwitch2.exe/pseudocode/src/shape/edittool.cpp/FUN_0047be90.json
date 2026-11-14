@@ -25,6 +25,18 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0050b4d0",
+      "from_addr": "0050b5a6",
+      "name": "core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0050b4d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050b790",
+      "from_addr": "0050b7a3",
+      "name": "core_netgame.cpp_CNetGame_initializeNetwork_FUN_0050b790",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0050cf50",
       "from_addr": "0050d538",
       "name": "core_netgame.cpp_CNetGame_runLobby_FUN_0050cf50",
@@ -37,27 +49,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0050b4d0",
-      "from_addr": "0050b5a6",
-      "name": "core_netgame.cpp_FUN_0050b4d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0050b790",
-      "from_addr": "0050b7a3",
-      "name": "core_netgame.cpp_FUN_0050b790",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0051aa7e",
+      "addr": "0051aa80",
       "from_addr": "0051aad6",
-      "name": "engine_pod.cpp_FUN_0051aa7e",
+      "name": "engine_pod.cpp_FUN_0051aa80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0051b6dc",
+      "addr": "0051b6e0",
       "from_addr": "0051b6fe",
-      "name": "engine_pod.cpp_FUN_0051b6dc",
+      "name": "engine_pod.cpp_FUN_0051b6e0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -71,7 +71,7 @@
     ],
     "convention": "unknown",
     "name": "shape_edittool.cpp_FUN_0047be90",
-    "signature": "void shape_edittool_cpp_FUN_0047be90(undefined4 param_1,undefined4 param_2)"
+    "signature": "void shape_edittool_cpp_FUN_0047be90(undefined4 param_1,char *param_2)"
   },
   "function_calls": [
     {
@@ -97,12 +97,12 @@
     {
       "addr": "004ab560",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004ab560"
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560"
     },
     {
       "addr": "004f3570",
       "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_004f3570"
+      "name": "engine_mini3d.cpp_setAlpha_FUN_004f3570"
     },
     {
       "addr": "0055b1f0",
@@ -112,7 +112,7 @@
     {
       "addr": "00589560",
       "is_variadic": false,
-      "name": "wincore_wddvmem.cpp_FUN_00589560"
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00589560"
     }
   ],
   "globals": [
@@ -236,7 +236,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void shape_edittool_cpp_FUN_0047be90(uint param_1,uint param_2)",
+      "text": "void shape_edittool_cpp_FUN_0047be90(uint param_1,char *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -244,7 +244,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void shape_edittool_cpp_FUN_0047be90(uint param_1,uint param_2)",
+      "text": "void shape_edittool_cpp_FUN_0047be90(uint param_1,char *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -260,7 +260,7 @@
       "line": 17,
       "match": "param_2",
       "severity": "mild",
-      "text": "_vsprintf(0x1c231f0,param_2,&local_14);",
+      "text": "_vsprintf((char *)0x1c231f0,param_2,(va_list_t)&local_14);",
       "type": "unnamed_param"
     },
     {

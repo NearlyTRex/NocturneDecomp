@@ -563,7 +563,7 @@ void __cdecl set3DListenerOrientRight(float orient_right_x,float orient_right_y,
 
 // Original: sound_sndmain.cpp_audioThreadProc_FUN_00528670
 // Address: 00528670
-DWORD __stdcall audioThreadProc(LPVOID lpThreadParam);
+DWORD __cdecl audioThreadProc(LPVOID lpThreadParam);
 
 // Original: sound_sndmain.cpp_startSoundThread_FUN_005286d0
 // Address: 005286d0

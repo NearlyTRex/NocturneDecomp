@@ -49,9 +49,12 @@ struct Stand {
     std::deque<int> attract;     // nocturne_attract_tick; 0 after
     bool continue_found = true;  // nocturne_save_continue_target
     int muted = 0;               // isSoundMuted
+    int pause_held = 0;          // nocturne_pause_sound_held
     int upscaler = NOCTURNE_UPSCALER_STANDARD;
     int antialias = NOCTURNE_ANTIALIAS_OFF;
     const char *gl_version = "";
+    int window_mode = 0; // nocturne_window_mode_get
+    int vsync = 1;       // nocturne_vsync_get
 
     // What the renderer does when it is loaded: g_UseDirect3D after.
     int renderer_loads = 1;
@@ -73,7 +76,19 @@ struct Stand {
     int device_mixes = 0; // the device's has_hardware_mixing
     int mixing = 0;       // isHardwareMixingEnabled
     int busy = 0;         // isSoundBusy
-    int bars = 0;         // renderAudioSpectrumBar calls
+    float level = 0.5f;   // analyzeFrequencyBand
+    // The spectrum's bars as drawn, each "left right foot top frame", in screen
+    // pixels; and the renderer's alpha and blend after the last.
+    std::vector<std::string> bars;
+    int render_alpha = 0;
+    int blend = -1;
+    NocturneLayout layout = {1.0f, 0, 0}; // nocturne_layout
+    // The mode nocturne_front_end_mode calls for, the screen's own size where
+    // 0; and whether nocturne_front_end_set_mode takes it, the screen then
+    // being that size.
+    int front_end_width = 0;
+    int front_end_height = 0;
+    int front_end_takes = 1;
 
     // --- the pick list ---------------------------------------------------------
     std::vector<std::string> rows; // CStrList_add, for the last list built

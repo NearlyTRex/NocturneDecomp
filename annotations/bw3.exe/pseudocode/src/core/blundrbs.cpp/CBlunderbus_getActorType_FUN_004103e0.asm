@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_blundrbs_cpp_CBlunderbus_getActorType_FUN_004103e0(CBlunderbus *this_ptr)
+; CDemonActorType * __cdecl core_blundrbs_cpp_CBlunderbus_getActorType_FUN_004103e0(CBlunderbus *this_ptr)
 ;
 ; Parameters:
 ; CBlunderbus *    Stack[0x4]:4   this_ptr

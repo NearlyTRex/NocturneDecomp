@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBugs * core_bugs_cpp_CBugs_ctor_FUN_00420ea0(CBugs *this_ptr)
+; CBugs * __cdecl core_bugs_cpp_CBugs_ctor_FUN_00420ea0(CBugs *this_ptr)
 ;
 ; Parameters:
 ; CBugs *          Stack[0x4]:4   this_ptr
@@ -13,7 +13,7 @@
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00488fd0
-;   core_skeleton.cpp_FUN_0054eae0
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0
 ;   crt_memory.c___arrinit_FUN_005a30d7
 ;   crt_memory.c_memset_FUN_005a28f0
 ;
@@ -35,14 +35,14 @@ section .text
     ADD EAX,0xd05c                      ; 00420eba
     PUSH EAX                            ; 00420ebf
     CALL crt_memory.c___arrinit_FUN_005a30d7 ; 00420ec0
-        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005a30d7()
+        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005a30d7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00420ec5
     PUSH 0x5dcd50                       ; 00420ec8
     PUSH 0x1                            ; 00420ecd
     ADD EAX,0x6404                      ; 00420ecf
     PUSH EAX                            ; 00420ed4
     CALL crt_memory.c___arrinit_FUN_005a30d7 ; 00420ed5
-        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005a30d7()
+        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005a30d7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00420eda
     LEA EBX,[EAX + 0xfffecba0]          ; 00420edd
     PUSH 0x2d                           ; 00420ee3
@@ -70,8 +70,8 @@ section .text
     PUSH 0x5b7710                       ; 00420f3d
     LEA EAX,[EBX + 0x158]               ; 00420f42
     PUSH EAX                            ; 00420f48
-    CALL core_skeleton.cpp_FUN_0054eae0 ; 00420f49
-        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054eae0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 ; 00420f49
+        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x1381c],0x0   ; 00420f4e
     MOV ESI,0x5b7719                    ; 00420f58
     MOV dword ptr [EBX + 0x13820],0x0   ; 00420f5d

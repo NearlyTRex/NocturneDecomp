@@ -1,14 +1,12 @@
 // Name: core_baal.cpp_CBaal_dtor_FUN_00597d00
 // Address: 00597d00
 // Address Range: [[00597d00, 00597d84]]
-// Convention: unknown
-// Signature: CBaal * core_baal_cpp_CBaal_dtor_FUN_00597d00(CBaal *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CBaal * __cdecl core_baal_cpp_CBaal_dtor_FUN_00597d00(CBaal *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CBaal * core_baal_cpp_CBaal_dtor_FUN_00597d00(CBaal *this_ptr,uint flags)
+CBaal * __cdecl core_baal_cpp_CBaal_dtor_FUN_00597d00(CBaal *this_ptr,uint flags)
 
 {
   int iVar1;
@@ -18,16 +16,16 @@ CBaal * core_baal_cpp_CBaal_dtor_FUN_00597d00(CBaal *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CBaalTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CBaalTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  iVar1 = unkafter_armour_cpp_FUN_00410370(&this_ptr->field_0x385c,0);
-  pCVar2 = core_cloth_cpp_FUN_0043f900((CClothList *)(iVar1 + -0x954),0);
+  iVar1 = core_armour_cpp_FUN_00410370((this_ptr->base).base.flames,0);
+  pCVar2 = core_cloth_cpp_CClothList_dtor_FUN_0043f900((CClothList *)(iVar1 + -0x954),0);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0054bf80
-                     ((CDeformableModelInstance *)(pCVar2 + -0x2db0),0);
+                     ((CDeformableModelInstance *)(pCVar2[-0x1b].filenames[7] + 8),0);
   pCVar4 = (CBaal *)core_actor_cpp_CDemonActor_dtor_FUN_00408770
-                              ((CDemonActor *)&pCVar3[-1].field_0x224c,1);
+                              ((CDemonActor *)(pCVar3[-1].part_data.texture_set_indices + 7),1);
   if ((flags & 2) == 0) {
     return pCVar4;
   }

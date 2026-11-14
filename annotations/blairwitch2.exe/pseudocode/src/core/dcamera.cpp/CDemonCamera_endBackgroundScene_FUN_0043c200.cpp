@@ -24,12 +24,12 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0043c200(CDemo
   bVar8 = 0;
   _DAT_01467158 = _DAT_01467158 + -1;
   if (_DAT_01467158 == 0) {
-    engine_matrix_c_popViewport_FUN_0046b740();
-    *(uint *)&this_ptr->field_0x1c0 = _DAT_01c35e38;
-    *(uint *)&this_ptr->field_0x1c4 = _DAT_01c35e3c;
-    *(uint *)&this_ptr->field_0x1c8 = _DAT_01c35e40;
+    engine_drender_cpp_popViewport_FUN_0046b740();
+    (this_ptr->cached_projection).half_width_fixed = _DAT_01c35e38;
+    (this_ptr->cached_projection).neg_half_height_fixed = _DAT_01c35e3c;
+    (this_ptr->cached_projection).center_x_fixed = _DAT_01c35e40;
     uVar2 = DAT_006141bc;
-    *(uint *)&this_ptr->field_0x1cc = _DAT_01c35e44;
+    (this_ptr->cached_projection).center_y_fixed = _DAT_01c35e44;
     DAT_006141c0 = _DAT_0146715c;
     _DAT_01c37788 = _DAT_01467160;
     puVar5 = (uint *)&DAT_01467164;
@@ -49,21 +49,21 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0043c200(CDemo
     _DAT_01c3582c = _DAT_0146842c;
     if (restore_zbuffer != 0) {
       iVar3 = 0;
-      if (0 < *(int *)&this_ptr->field_0x148) {
+      if (0 < this_ptr->framebuffer_height) {
         iVar7 = 0;
         do {
-          iVar4 = *(int *)&this_ptr->field_0x144 * iVar3;
+          iVar4 = this_ptr->framebuffer_width * iVar3;
           piVar1 = (int *)(&DAT_01c2b64c + iVar7);
-          byte_count = *(int *)&this_ptr->field_0x144 * 4;
+          byte_count = this_ptr->framebuffer_width * 4;
           iVar7 = iVar7 + 4;
           iVar3 = iVar3 + 1;
           core_dstrendr_cpp_memcpyMMX_FUN_00470201
-                    ((void *)(iVar4 * 4 + *(int *)&this_ptr->field_0x15c),
+                    ((void *)(iVar4 * 4 + (int)this_ptr->zbuffer_aligned),
                      (void *)(*piVar1 + byte_count),byte_count);
-        } while (iVar3 < *(int *)&this_ptr->field_0x148);
+        } while (iVar3 < this_ptr->framebuffer_height);
       }
       if (_DAT_01c37788 != 0) {
-        engine_special_cpp_FUN_00560030(0);
+        engine_special_cpp_masterZBuffer_FUN_00560030(0);
         return;
       }
     }

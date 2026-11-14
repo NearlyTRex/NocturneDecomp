@@ -14,7 +14,7 @@ uint * engine_model_c_FUN_00500970(int *param_1)
   int *piVar1;
   uint uVar2;
   uint uVar3;
-  uint uVar4;
+  SMRGLHeaderExtended *pSVar4;
   int iVar5;
   int extraout_ECX;
   int iVar6;
@@ -29,7 +29,7 @@ uint * engine_model_c_FUN_00500970(int *param_1)
   float10 fVar14;
   float10 fVar15;
   float10 fVar16;
-  byte auStack_160 [80];
+  char acStack_160 [80];
   uint auStack_110 [13];
   uint auStack_dc [13];
   uint uStack_a8;
@@ -55,8 +55,8 @@ uint * engine_model_c_FUN_00500970(int *param_1)
   
   bVar13 = 0;
   if (*param_1 == 0x20) {
-    uVar4 = engine_model_c_loadModelFile_FUN_00500720(param_1 + 6);
-    engine_model_c_FUN_00500970(uVar4);
+    pSVar4 = engine_model_c_loadModelFile_FUN_00500720((char *)(param_1 + 6));
+    engine_model_c_FUN_00500970(pSVar4);
     puVar11 = auStack_74;
     puVar10 = &uStack_a8;
     for (iVar6 = 0xd; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -64,7 +64,7 @@ uint * engine_model_c_FUN_00500970(int *param_1)
       puVar11 = puVar11 + (uint)bVar13 * -2 + 1;
       puVar10 = puVar10 + (uint)bVar13 * -2 + 1;
     }
-    engine_model_c_FUN_005008f0(uVar4);
+    engine_model_c_freeMRGLData_FUN_005008f0(pSVar4);
     iVar6 = 0xd;
     puVar11 = auStack_110;
     puVar10 = &uStack_a8;
@@ -84,10 +84,10 @@ uint * engine_model_c_FUN_00500970(int *param_1)
     }
     iVar6 = (int)(0x7fffffff / (longlong)param_1[1]) * 2;
     if (param_1[2] != 2) {
-      FUN_005b7790(auStack_160,"Unable to read verticies in model!");
+      _sprintf(acStack_160,"Unable to read verticies in model!");
       _DAT_01d046a0 = "..\\engine\\model.c";
       _DAT_01d046a4 = 0x177;
-      core_main_c_FUN_004e4500(auStack_160);
+      core_main_c_FUN_004e4500(acStack_160);
     }
     iVar7 = 0;
     iVar12 = -0x80000000;

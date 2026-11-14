@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 302,
+    "complexity_score": 172,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 67,
-    "suspect_count": 21,
+    "pseudocode_lines": 62,
+    "suspect_count": 9,
     "suspect_types": [
       "extra_output",
       "undefined_data",
-      "unnamed_field",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 266
+    "total_lines": 261
   },
   "cross_references": [
     {
@@ -28,13 +27,13 @@
     {
       "addr": "00447660",
       "from_addr": "00447731",
-      "name": "core_dfilter.cpp_FUN_00447660",
+      "name": "core_dfilter.cpp_CFilterCache_getFilter_FUN_00447660",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00447c50",
       "from_addr": "00447d8b",
-      "name": "core_dfilter.cpp_FUN_00447c50",
+      "name": "core_dfilter.cpp_CFilterFX_openMovie_FUN_00447c50",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -197,7 +196,7 @@
       {
         "call_addr": "00447731",
         "call_type": "direct",
-        "caller": "core_dfilter.cpp_FUN_00447660",
+        "caller": "core_dfilter.cpp_CFilterCache_getFilter_FUN_00447660",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -219,7 +218,7 @@
       {
         "call_addr": "00447d8b",
         "call_type": "direct",
-        "caller": "core_dfilter.cpp_FUN_00447c50",
+        "caller": "core_dfilter.cpp_CFilterFX_openMovie_FUN_00447c50",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -276,6 +275,32 @@
       "TRUNC": 1
     },
     "pcode_op_count": 740
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0045da30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00459980",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004702f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9873
+    },
+    "nocturne.exe": {
+      "addr": "0044bf90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 32,
@@ -353,60 +378,12 @@
       "line": 25,
       "match": "extraout_EDX",
       "severity": "moderate",
-      "text": "*(int *)&this_ptr->field_0x4 = extraout_EDX / *(int *)this_ptr;",
+      "text": "this_ptr->count = extraout_EDX / this_ptr->size;",
       "type": "extra_output"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x4 = extraout_EDX / *(int *)this_ptr;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "if (*(int *)this_ptr != *(int *)&this_ptr->field_0x4) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0x4 < 0x40) || (0x100 < *(int *)&this_ptr->field_0x4)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0x4 < 0x40) || (0x100 < *(int *)&this_ptr->field_0x4)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "(\"CDemonFilter::load - Bad filter size %d\",*(uint *)&this_ptr->field_0x4);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 45,
+      "line": 42,
       "match": "DAT_005cec6b",
       "severity": "mild",
       "text": "p_Var2 = engine_dosio_cpp_FUN_00460c70(&DAT_005cec6b,filename,&DAT_005cec68);",
@@ -414,63 +391,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 45,
+      "line": 42,
       "match": "DAT_005cec68",
       "severity": "mild",
       "text": "p_Var2 = engine_dosio_cpp_FUN_00460c70(&DAT_005cec6b,filename,&DAT_005cec68);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "_fread(*(uint *)&this_ptr->field_0x48,*(uint *)this_ptr,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 52,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x4,p_Var2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "for (iVar3 = 0; iVar3 < *(int *)this_ptr * *(int *)&this_ptr->field_0x4; iVar3 = iVar3 + 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 55,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "*(char *)(iVar3 + *(int *)&this_ptr->field_0x48) =",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 56,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "(char)((int)(uint)*(byte *)(iVar3 + *(int *)&this_ptr->field_0x48) >> 2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 58,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "pcVar4 = &this_ptr->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 59,
+      "line": 54,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

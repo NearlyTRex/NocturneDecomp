@@ -1,13 +1,19 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl support_trisock_cpp_buildIPAddress_FUN_0059c640(undefined1 *param_1,int param_2,int param_3,int param_4,int param_5)
+; int __cdecl support_trisock_cpp_buildIPAddress_FUN_0059c640(uint8_t *dest_ip,int octet1,int octet2,int octet3,int octet4)
 ;
+; Parameters:
+; uint8_t *        Stack[0x4]:4   dest_ip
+; int              Stack[0x8]:4   octet1
+; int              Stack[0xc]:4   octet2
+; int              Stack[0x10]:4   octet3
+; int              Stack[0x14]:4   octet4
 ;
 ; XREF[3]:
+;   support_trisock.cpp_FUN_0059efd0 at 0059f152
 ;   support_trisock.cpp_buildIPAddressOrDie_FUN_0059c520 at 0059c53d
 ;   support_trisock.cpp_parseIPComponents_FUN_0059c5d0 at 0059c622
-;   unkafter_trisock.cpp_FUN_0059efd0 at 0059f152
 ;
 ; *****************************************************************************
 

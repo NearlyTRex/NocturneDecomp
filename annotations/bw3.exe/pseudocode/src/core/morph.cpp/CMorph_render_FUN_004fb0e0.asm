@@ -10,14 +10,14 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[8]:
-;   core_passngr.cpp_FUN_0050a9b0 at 0050aa78
-;   core_pryemorp.cpp_FUN_00527970 at 00527a38
-;   core_spirbear.cpp_FUN_0059b2e0 at 0059b3a8
-;   core_spireagl.cpp_FUN_00599a70 at 00599afc
-;   core_spirindi.cpp_FUN_0059a760 at 0059a828
-;   core_styldemo.cpp_FUN_005a01c0 at 005a0288
-;   core_styler.cpp_FUN_0059ddb0 at 0059de80
-;   unkafter_darkwolf.cpp_FUN_00598e00 at 00598ec8
+;   core_darkwolf.cpp_CDarkwolf_renderOpaque_FUN_00598e00 at 00598ec8
+;   core_passngr.cpp_CPassenger_renderOpaque_FUN_0050a9b0 at 0050aa78
+;   core_pryemorp.cpp_CPryeMorph_renderOpaque_FUN_00527970 at 00527a38
+;   core_spirbear.cpp_CSpiritBear_renderOpaque_FUN_0059b2e0 at 0059b3a8
+;   core_spireagl.cpp_CSpiritEagle_renderOpaque_FUN_00599a70 at 00599afc
+;   core_spirindi.cpp_CSpiritIndian_renderOpaque_FUN_0059a760 at 0059a828
+;   core_styldemo.cpp_CStylerDemon_renderOpaque_FUN_005a01c0 at 005a0288
+;   core_styler.cpp_CStyler_renderOpaque_FUN_0059ddb0 at 0059de80
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorphModel_render_FUN_004fa450

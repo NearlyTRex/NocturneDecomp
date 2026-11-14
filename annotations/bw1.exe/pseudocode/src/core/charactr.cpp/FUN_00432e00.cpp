@@ -9,16 +9,16 @@
 void core_charactr_cpp_FUN_00432e00(int param_1,float param_2)
 
 {
-  CMotionList *pCVar1;
-  int iVar2;
+  int iVar1;
+  CMotionList *pCVar2;
   
-  iVar2 = *(int *)(param_1 + 0x2754);
-  if (-1 < iVar2) {
-    pCVar1 = core_motion_cpp_FUN_00524a00((CMotionController *)(param_1 + 0x158));
-    iVar2 = iVar2 * 0x120;
+  iVar1 = *(int *)(param_1 + 0x2754);
+  if (-1 < iVar1) {
+    pCVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_00524a00
+                       ((CMotionController *)(param_1 + 0x158));
     *(float *)(param_1 + 0x2758) =
-         param_2 * *(float *)(pCVar1 + iVar2 + 0x1c48) + *(float *)(param_1 + 0x2758);
-    if ((float)*(int *)(pCVar1 + iVar2 + 0x1c8c) <= *(float *)(param_1 + 0x2758)) {
+         param_2 * pCVar2->motions[iVar1].fps + *(float *)(param_1 + 0x2758);
+    if ((float)pCVar2->motions[iVar1].frame_count <= *(float *)(param_1 + 0x2758)) {
       if (*(int *)(param_1 + 0x275c) != 1) {
         *(uint *)(param_1 + 0x2754) = 0xffffffff;
         return;

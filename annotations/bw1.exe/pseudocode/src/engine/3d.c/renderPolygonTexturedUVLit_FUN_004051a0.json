@@ -127,6 +127,32 @@
     },
     "pcode_op_count": 301
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00405370",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004051a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00405350",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9143
+    },
+    "nocturne.exe": {
+      "addr": "00406920",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -163,9 +189,9 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 10,
-      "match": "auStackY_1010",
+      "match": "aUStackY_1010",
       "severity": "moderate",
-      "text": "uint auStackY_1010 [1016];",
+      "text": "UIntegerFloat aUStackY_1010 [1016];",
       "type": "stack_alignment_array"
     },
     {
@@ -189,7 +215,7 @@
       "line": 23,
       "match": "&stack0xffffffe8",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffe8 + (uint)bVar2 * -8);",
+      "text": "(UIntegerFloat)*(uint *)(&stack0xffffffe8 + (uint)bVar2 * -8);",
       "type": "stack_ref"
     },
     {

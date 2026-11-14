@@ -31,6 +31,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004555c0",
+      "from_addr": "00455a27",
+      "name": "core_doc.cpp_CDoc_makeDrawDecision_FUN_004555c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00450c60",
       "from_addr": "00451749",
       "name": "core_doc.cpp_FUN_00450c60",
@@ -40,12 +46,6 @@
       "addr": "00453d80",
       "from_addr": "00453fa3",
       "name": "core_doc.cpp_FUN_00453d80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004555c0",
-      "from_addr": "00455a27",
-      "name": "core_doc.cpp_FUN_004555c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -63,7 +63,13 @@
     {
       "addr": "004afa20",
       "from_addr": "004afbb5",
-      "name": "core_gabriela.cpp_FUN_004afa20",
+      "name": "core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059c680",
+      "from_addr": "0059c78c",
+      "name": "core_hpatrol.cpp_CPatrolPoint_process_FUN_0059c680",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -79,18 +85,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0059c680",
-      "from_addr": "0059c78c",
-      "name": "core_patrpoin.cpp_FUN_0059c680",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005a61f0",
-      "from_addr": "005a6407",
-      "name": "core_robin.cpp_FUN_005a61f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00520140",
       "from_addr": "0052026a",
       "name": "core_scat.cpp_FUN_00520140",
@@ -99,7 +93,13 @@
     {
       "addr": "00546da0",
       "from_addr": "00546e89",
-      "name": "core_skeleton.cpp_FUN_00546da0",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_00546da0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00567fd0",
+      "from_addr": "00568151",
+      "name": "core_stranger.cpp_CStranger_applyArmAimRotation_FUN_00567fd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -115,9 +115,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00567fd0",
-      "from_addr": "00568151",
-      "name": "core_stranger.cpp_FUN_00567fd0",
+      "addr": "005a61f0",
+      "from_addr": "005a6407",
+      "name": "core_weaver.cpp_FUN_005a61f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -250,7 +250,7 @@
       {
         "call_addr": "00455a27",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_004555c0",
+        "caller": "core_doc.cpp_CDoc_makeDrawDecision_FUN_004555c0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -261,7 +261,7 @@
       {
         "call_addr": "00455a74",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_004555c0",
+        "caller": "core_doc.cpp_CDoc_makeDrawDecision_FUN_004555c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -304,6 +304,32 @@
       "STORE": 9
     },
     "pcode_op_count": 157
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005b7af0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00585cd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005f79b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7937
+    },
+    "nocturne.exe": {
+      "addr": "0055d4a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 32,

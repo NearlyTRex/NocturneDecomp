@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   mode
 ;
 ; XREF[2]:
-;   core_inivar.cpp_FUN_004d8d60 at 004d8d73
-;   core_main.c_FUN_004e46c0 at 004e4db4
+;   core_inivar.cpp_readIniData_FUN_004d8d60 at 004d8d73
+;   core_main.c_initializeGameSystems_FUN_004e46c0 at 004e4db4
 ;
 ; Referenced Globals:
 ;   void* PTR_SetFileAttributesA_005c8628 = 001c916c

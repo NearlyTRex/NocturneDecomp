@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_beast_cpp_staticInit_FUN_004149a0(void)
+; void __cdecl core_beast_cpp_staticInit_FUN_004149a0(void)
 ;
 ;
 ; Called Functions:

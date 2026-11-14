@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_litecone_cpp_staticInit_FUN_004e3f60(void)
+; void __cdecl core_litecone_cpp_staticInit_FUN_004e3f60(void)
 ;
 ;
 ; Called Functions:

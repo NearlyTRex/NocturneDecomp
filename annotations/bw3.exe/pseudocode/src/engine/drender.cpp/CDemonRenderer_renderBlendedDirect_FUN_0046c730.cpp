@@ -15,20 +15,20 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730(
   uint uVar2;
   int iVar3;
   
-  if ((*(int *)(this_ptr + 0xc) == 0) ||
-     (iVar3 = engine_3d_c_isVisiblePlane_FUN_00403920(prim + 8), iVar3 != 0)) {
+  if ((this_ptr->plane_culling_enabled == 0) ||
+     (iVar3 = engine_3d_c_isVisiblePlane_FUN_00403920(&prim->surface_normal), iVar3 != 0)) {
     uVar2 = 0xffffffff;
     iVar3 = 0;
-    if (0 < *(int *)(prim + 4)) {
+    if (0 < (prim->base).count) {
       pSVar1 = prim;
       do {
         iVar3 = iVar3 + 1;
-        uVar2 = uVar2 & *(uint *)(*(int *)this_ptr + 0x10 + *(int *)(pSVar1 + 0x18) * 0x30);
-        pSVar1 = pSVar1 + 4;
-      } while (iVar3 < *(int *)(prim + 4));
+        uVar2 = uVar2 & this_ptr->vertex_buffer_ptr[pSVar1[1].base.type].projected_vertex.screen_x;
+        pSVar1 = (SMRGLHeaderPrimitive *)&(pSVar1->base).count;
+      } while (iVar3 < (prim->base).count);
     }
     if (((uVar2 & 0x80000000) == 0) || ((uVar2 & 0x1f) == 0)) {
-      if (*(int *)(this_ptr + 4) == 0) {
+      if (this_ptr->shadow_pass_active == 0) {
         if (DAT_005fba20 == 0x20) {
           _DAT_01c6b5cc = engine_special_cpp_FUN_00560f31;
         }
@@ -44,7 +44,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730(
         _DAT_01c6b5cc = core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0046f9a6;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160
-                (this_ptr,*(int *)(prim + 4),(int *)(prim + 0x18));
+                (this_ptr,(prim->base).count,(int *)(prim + 1));
     }
   }
   return;

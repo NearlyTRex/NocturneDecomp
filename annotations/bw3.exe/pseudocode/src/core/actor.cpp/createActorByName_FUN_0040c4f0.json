@@ -2,26 +2,29 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 124,
+    "complexity_score": 40,
     "cross_reference_count": 21,
     "function_call_count": 2,
     "global_count": 8,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 24,
-    "suspect_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 25,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 88
+    "total_lines": 89
   },
   "cross_references": [
     {
       "addr": "005a0be0",
       "from_addr": "005a0c97",
-      "name": "core_asgaya.cpp_FUN_005a0be0",
+      "name": "core_asgaya.cpp_CAsgaya_process_FUN_005a0be0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00598800",
+      "from_addr": "0059882d",
+      "name": "core_darkwolf.cpp_CDarkwolf_setup_FUN_00598800",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -33,19 +36,19 @@
     {
       "addr": "0049cca0",
       "from_addr": "0049ccb4",
-      "name": "core_fire.cpp_FUN_0049cca0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004bafd0",
-      "from_addr": "004bafd9",
-      "name": "core_game.cpp_FUN_004bafd0",
+      "name": "core_fire.cpp_spawnDiseaseBugs_FUN_0049cca0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004bb100",
       "from_addr": "004bbb4f",
-      "name": "core_game.cpp_FUN_004bb100",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004bb100",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bafd0",
+      "from_addr": "004bafd9",
+      "name": "core_game.cpp_giveHeroWeapon_FUN_004bafd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -55,15 +58,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004dc750",
-      "from_addr": "004dc9ff",
-      "name": "core_inv.cpp_CInventory_load_FUN_004dc750",
+      "addr": "004da4e0",
+      "from_addr": "004da53a",
+      "name": "core_inv.cpp_CInventory_initialize_FUN_004da4e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004da4e0",
-      "from_addr": "004da53a",
-      "name": "core_inv.cpp_FUN_004da4e0",
+      "addr": "004dc750",
+      "from_addr": "004dc9ff",
+      "name": "core_inv.cpp_CInventory_load_FUN_004dc750",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -81,67 +84,61 @@
     {
       "addr": "0050a610",
       "from_addr": "0050a6d9",
-      "name": "core_passngr.cpp_FUN_0050a610",
+      "name": "core_passngr.cpp_CPassenger_setup_FUN_0050a610",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00518430",
       "from_addr": "00518453",
-      "name": "core_prye.cpp_FUN_00518430",
+      "name": "core_prye.cpp_CPrye_createDefaultWeapon_FUN_00518430",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005275c0",
       "from_addr": "005275d7",
-      "name": "core_pryemorp.cpp_FUN_005275c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059aba0",
-      "from_addr": "0059abca",
-      "name": "core_spirbear.cpp_FUN_0059aba0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005992f0",
-      "from_addr": "00599306",
-      "name": "core_spireagl.cpp_FUN_005992f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059a060",
-      "from_addr": "0059a08a",
-      "name": "core_spirindi.cpp_FUN_0059a060",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059e130",
-      "from_addr": "0059e246",
-      "name": "core_styldemo.cpp_FUN_0059e130",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059e600",
-      "from_addr": "0059e645",
-      "name": "core_styldemo.cpp_FUN_0059e600",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059d7f0",
-      "from_addr": "0059d82b",
-      "name": "core_styler.cpp_FUN_0059d7f0",
+      "name": "core_pryemorp.cpp_CPryeMorph_setup_FUN_005275c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00563970",
       "from_addr": "00563b9a",
-      "name": "engine_special.cpp_FUN_00563970",
+      "name": "core_spawner.cpp_CSpawner_process_FUN_00563970",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00598800",
-      "from_addr": "0059882d",
-      "name": "unkafter_darkwolf.cpp_FUN_00598800",
+      "addr": "0059aba0",
+      "from_addr": "0059abca",
+      "name": "core_spirbear.cpp_CSpiritBear_setup_FUN_0059aba0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005992f0",
+      "from_addr": "00599306",
+      "name": "core_spireagl.cpp_CSpiritEagle_setup_FUN_005992f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059a060",
+      "from_addr": "0059a08a",
+      "name": "core_spirindi.cpp_CSpiritIndian_setup_FUN_0059a060",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059e600",
+      "from_addr": "0059e645",
+      "name": "core_styldemo.cpp_CStylerDemon_process_FUN_0059e600",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059e130",
+      "from_addr": "0059e246",
+      "name": "core_styldemo.cpp_CStylerDemon_setup_FUN_0059e130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059d7f0",
+      "from_addr": "0059d82b",
+      "name": "core_styler.cpp_CStyler_setup_FUN_0059d7f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -155,7 +152,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_createActorByName_FUN_0040c4f0",
-    "signature": "int __cdecl core_actor_cpp_createActorByName_FUN_0040c4f0(undefined4 param_1)"
+    "signature": "CDemonActor * __cdecl core_actor_cpp_createActorByName_FUN_0040c4f0(char *class_name)"
   },
   "function_calls": [
     {
@@ -236,7 +233,7 @@
       {
         "call_addr": "0049ccb4",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049cca0",
+        "caller": "core_fire.cpp_spawnDiseaseBugs_FUN_0049cca0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -247,7 +244,7 @@
       {
         "call_addr": "004bbb4f",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bb100",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004bb100",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -258,7 +255,7 @@
       {
         "call_addr": "004bafd9",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bafd0",
+        "caller": "core_game.cpp_giveHeroWeapon_FUN_004bafd0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -302,7 +299,7 @@
       {
         "call_addr": "004da53a",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004da4e0",
+        "caller": "core_inv.cpp_CInventory_initialize_FUN_004da4e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -334,10 +331,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.2941176470588234,
@@ -365,13 +362,47 @@
     },
     "pcode_op_count": 168
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0040c5a0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0040c2b0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0040c430",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0040d540",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "class_name",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -381,65 +412,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int __cdecl core_actor_cpp_createActorByName_FUN_0040c4f0(uint param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = core_actor_cpp_getActorClassByName_FUN_0040c480(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004e4330(\"Can't create actor of unknown class type: %s\",param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004e4330(\"Can't create instance of abstract type %s\",param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 20,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(iVar1 + 0x2c))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004e4330(\"Not enough memory to create %s\",param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 32,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

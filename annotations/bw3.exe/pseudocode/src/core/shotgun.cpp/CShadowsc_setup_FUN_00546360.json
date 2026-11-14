@@ -1,0 +1,141 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 49,
+    "complexity_score": 21,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 4,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 21,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 70
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00546360",
+    "address_range": [
+      [
+        "00546360",
+        "005463e3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_shotgun.cpp_CShadowsc_setup_FUN_00546360",
+    "signature": "void __cdecl core_shotgun_cpp_CShadowsc_setup_FUN_00546360(CShadowsc *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00489110",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_setup_FUN_00489110"
+    },
+    {
+      "addr": "0054eac0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0"
+    },
+    {
+      "addr": "0054e6b0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0054e6b0"
+    },
+    {
+      "addr": "00548090",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00548090"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d143f",
+      "name": "s_Bip01_Spine1_005d143f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d144c",
+      "name": "s_Bip01_Head_005d144c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d1457",
+      "name": "s_Bip01_R_Finger0_005d1457",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d1467",
+      "name": "s_Bip01_L_Finger0_005d1467",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0,
+    "instruction_count": 41,
+    "opcode_distribution": {
+      "CALL": 7,
+      "COPY": 28,
+      "INT_ADD": 16,
+      "INT_AND": 14,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 14,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 7,
+      "INT_SUB": 24,
+      "LOAD": 4,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 28
+    },
+    "pcode_op_count": 164
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00560510",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7961
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CShadowsc *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CShadowsc",
+        "offset": 0,
+        "vtable_addr": "005e4364"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

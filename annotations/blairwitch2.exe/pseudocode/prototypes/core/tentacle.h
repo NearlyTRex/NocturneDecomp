@@ -7,47 +7,47 @@
 
 // Original: core_tentacle.cpp_staticInit_FUN_00572570
 // Address: 00572570
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_tentacle.cpp_factoryFuncTentacle_FUN_005725a0
 // Address: 005725a0
-void factoryFuncTentacle(void);
+CTentacle * __cdecl factoryFuncTentacle(void);
 
 // Original: core_tentacle.cpp_CTentacle_getActorType_FUN_005725c0
 // Address: 005725c0
-CDemonActorType * CTentacle::getActorType(CTentacle *this_ptr);
+CDemonActorType * __cdecl CTentacle::getActorType(CTentacle *this_ptr);
 
 // Original: core_tentacle.cpp_CTentacle_ctor_FUN_005725d0
 // Address: 005725d0
 CTentacle * __cdecl CTentacle::ctor(CTentacle *this_ptr);
 
-// Original: core_tentacle.cpp_FUN_00572630
+// Original: core_tentacle.cpp_CTentacle_setup_FUN_00572630
 // Address: 00572630
-void FUN_00572630(CEnemy *param_1);
+void __cdecl CTentacle::setup(CTentacle *this_ptr);
 
-// Original: core_tentacle.cpp_FUN_005726c0
+// Original: core_tentacle.cpp_CTentacle_process_FUN_005726c0
 // Address: 005726c0
-void FUN_005726c0(CTentacle *param_1,float param_2);
+void __cdecl CTentacle::process(CTentacle *this_ptr,float delta_time);
 
-// Original: core_tentacle.cpp_FUN_00572f50
+// Original: core_tentacle.cpp_CTentacle_renderOpaque_FUN_00572f50
 // Address: 00572f50
-undefined4 FUN_00572f50(int param_1);
+int __cdecl CTentacle::renderOpaque(CTentacle *this_ptr);
 
-// Original: core_tentacle.cpp_FUN_00572f90
+// Original: core_tentacle.cpp_CTentacle_archive_FUN_00572f90
 // Address: 00572f90
-void FUN_00572f90(CEnemy *param_1);
+void __cdecl CTentacle::archive(CTentacle *this_ptr);
 
 // Original: core_tentacle.cpp_CTentacle_findNearbyTarget_FUN_00573010
 // Address: 00573010
 int __cdecl CTentacle::findNearbyTarget(CTentacle *this_ptr,char *class_name);
 
-// Original: core_tentacle.cpp_FUN_00573110
+// Original: core_tentacle.cpp_CTentacle_attractActorToward_FUN_00573110
 // Address: 00573110
-undefined4 FUN_00573110(int param_1,int param_2);
+int __cdecl CTentacle::attractActorToward(CTentacle *this_ptr,CDemonActor *actor,CVector3f *target_local_point);
 
-// Original: core_tentacle.cpp_FUN_005732a0
+// Original: core_tentacle.cpp_CTentacle_shouldIgnoreForTargeting_FUN_005732a0
 // Address: 005732a0
-int FUN_005732a0(CDemonActor *param_1);
+int __cdecl CTentacle::shouldIgnoreForTargeting(CTentacle *this_ptr);
 
 // Original: core_tentacle.cpp_FUN_005732e0
 // Address: 005732e0
@@ -55,4 +55,4 @@ void FUN_005732e0(int param_1);
 
 // Original: core_tentacle.cpp_CTentacle_dtor_FUN_005733d0
 // Address: 005733d0
-CTentacle * CTentacle::dtor(CTentacle *this_ptr,uint flags);
+CTentacle * __cdecl CTentacle::dtor(CTentacle *this_ptr,uint flags);

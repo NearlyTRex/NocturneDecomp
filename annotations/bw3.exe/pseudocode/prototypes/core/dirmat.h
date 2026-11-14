@@ -5,13 +5,13 @@
 // Function prototypes for core/dirmat.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_dirmat.cpp_FUN_0045b550
+// Original: core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
 // Address: 0045b550
-void __cdecl FUN_0045b550(CMatrix3x3f *this_ptr,CVector3f *euler_angles);
+void __cdecl CMatrix3x3f::buildRotationMatrix(CMatrix3x3f *this_ptr,CVector3f *euler_angles);
 
-// Original: core_dirmat.cpp_FUN_0045b640
+// Original: core_dirmat.cpp_CMatrix3x3f_invert_FUN_0045b640
 // Address: 0045b640
-void FUN_0045b640(float *param_1);
+void __cdecl CMatrix3x3f::invert(CMatrix3x3f *this_ptr);
 
 // Original: core_dirmat.cpp_FUN_0045b800
 // Address: 0045b800
@@ -21,9 +21,9 @@ void FUN_0045b800(float *param_1,float *param_2);
 // Address: 0045b870
 void FUN_0045b870(float *param_1,float *param_2);
 
-// Original: core_dirmat.cpp_FUN_0045b8e0
+// Original: core_dirmat.cpp_angleFromSinCos_FUN_0045b8e0
 // Address: 0045b8e0
-float FUN_0045b8e0(double param_1,double param_2);
+float __cdecl angleFromSinCos(double y,double x);
 
 // Original: core_dirmat.cpp_FUN_0045b9b0
 // Address: 0045b9b0

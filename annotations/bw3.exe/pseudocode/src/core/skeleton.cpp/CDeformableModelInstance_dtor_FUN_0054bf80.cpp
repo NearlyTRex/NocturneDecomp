@@ -13,15 +13,14 @@ CDeformableModelInstance * __cdecl core_skeleton_cpp_CDeformableModelInstance_dt
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete
-                            (this_ptr,&g_CDeformableModelInstanceTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CDeformableModelInstanceTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  *(byte ***)&this_ptr->field_0x50 = &g_CDeformableModelInstanceVTable;
-  core_skeleton_cpp_FUN_0054c060(this_ptr);
+  (this_ptr->base).vtable = (CMotionController_vtable *)&g_CDeformableModelInstanceVTable;
+  core_skeleton_cpp_CDeformableModelInstance_free_FUN_0054c060(this_ptr);
   pCVar1 = (CDeformableModelInstance *)
-           core_motion_cpp_CMotionController_dtor_FUN_004fbb00((CMotionController *)this_ptr,1);
+           core_motion_cpp_CMotionController_dtor_FUN_004fbb00(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

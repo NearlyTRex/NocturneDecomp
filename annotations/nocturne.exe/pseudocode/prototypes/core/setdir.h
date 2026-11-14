@@ -13,9 +13,9 @@ void __cdecl staticInit(void);
 // Address: 00511d80
 float __cdecl testCameraVisibility(CDemonActor *actor,CVector3i *bbox_vertices,SMRGLHeaderPrimitive *primitives,int camera_index,C3DSCamera *camera,float radius);
 
-// Original: core_setdir.cpp_CDemonSet_FUN_005125a0
+// Original: core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005125a0
 // Address: 005125a0
-int __cdecl CDemonSet(CDemonSet *this_ptr,CDemonActor *param_2,int param_3);
+int __cdecl CDemonSet::evaluateVirtualDirector(CDemonSet *this_ptr,CDemonActor *actor,int force_evaluation_mode);
 
 // Original: core_setdir.cpp_CDemonSet_setPendingCamera_FUN_005135d0
 // Address: 005135d0
@@ -69,17 +69,17 @@ int __cdecl CDemonSet::findVdirBoxRoot(CDemonSet *this_ptr,int box_index);
 // Address: 00514340
 int __cdecl CDemonSet::findVdirBoxAtPosition(CDemonSet *this_ptr,CVector3f *position);
 
-// Original: core_setdir.cpp_FUN_00514390
+// Original: core_setdir.cpp_assignInt_FUN_00514390
 // Address: 00514390
-undefined4 * FUN_00514390(void);
+int * __cdecl assignInt(int *dest,int *src);
 
-// Original: core_setdir.cpp_FUN_005143a0
+// Original: core_setdir.cpp_assignInt1_FUN_005143a0
 // Address: 005143a0
-undefined4 * FUN_005143a0(void);
+int * __cdecl assignInt1(int *dest,int *src);
 
-// Original: core_setdir.cpp_FUN_005143b0
+// Original: core_setdir.cpp_assignInt2_FUN_005143b0
 // Address: 005143b0
-undefined4 * FUN_005143b0(void);
+int * __cdecl assignInt2(int *dest,int *src);
 
 // Original: core_setdir.cpp_CBoundingBox3D_arrdtor2000_FUN_005143c0
 // Address: 005143c0

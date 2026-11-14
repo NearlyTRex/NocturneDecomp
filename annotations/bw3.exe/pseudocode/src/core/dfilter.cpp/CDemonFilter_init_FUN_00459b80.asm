@@ -13,8 +13,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   core_dfilter.cpp_FUN_00459710 at 004597fe
-;   core_main.c_FUN_004e44e0 at 004e4b4c
+;   core_dfilter.cpp_CFilterCache_getFilter_FUN_00459710 at 004597fe
+;   core_main.c_initializeGameSystems_FUN_004e44e0 at 004e4b4c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005babfa

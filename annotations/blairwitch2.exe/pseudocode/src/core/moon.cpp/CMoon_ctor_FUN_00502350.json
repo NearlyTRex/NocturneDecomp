@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 71,
+    "complexity_score": 26,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 11,
-    "suspect_count": 5,
+    "suspect_count": 1,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_field"
+      "negative_offset"
     ],
     "total_lines": 31
   },
@@ -31,9 +30,9 @@
         "00502387"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_moon.cpp_CMoon_ctor_FUN_00502350",
-    "signature": "CMoon * core_moon_cpp_CMoon_ctor_FUN_00502350(CMoon *this_ptr)"
+    "signature": "CMoon * __cdecl core_moon_cpp_CMoon_ctor_FUN_00502350(CMoon *this_ptr)"
   },
   "function_calls": [
     {
@@ -86,6 +85,32 @@
     },
     "pcode_op_count": 89
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00521bc0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004f9410",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00529a80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.64
+    },
+    "nocturne.exe": {
+      "addr": "004de800",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.64
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -104,44 +129,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "((CKeyFramedModel *)&this_ptr->field_0x8);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 13,
+      "line": 11,
       "match": "pCVar1[-3].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1[-3].field_0x390 = 0;",
+      "text": "pfVar2 = &pCVar1[-3].rotation_matrix_workspace.m[2].z;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x390",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1[-3].field_0x390 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 14,
-      "match": "pCVar1[-3].",
-      "severity": "mild",
-      "text": "return (CMoon *)&pCVar1[-3].field_0x390;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x390",
-      "severity": "mild",
-      "text": "return (CMoon *)&pCVar1[-3].field_0x390;",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

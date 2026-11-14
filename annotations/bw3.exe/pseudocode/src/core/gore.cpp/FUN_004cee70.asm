@@ -5,14 +5,14 @@
 ;
 ;
 ; XREF[1]:
-;   core_actor.cpp_FUN_0040cab0 at 0040cbad
+;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040cab0 at 0040cbad
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d4aec4
 ;   undefined4 DAT_01d4aec8
 ;
 ; Called Functions:
-;   core_gore.cpp_FUN_004ce170
+;   core_gore.cpp_CFootstep_init_FUN_004ce170
 ;
 ; *****************************************************************************
 
@@ -59,8 +59,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x18]      ; 004ceed3
     PUSH EAX                            ; 004ceed6
     PUSH EDX                            ; 004ceed7
-    CALL core_gore.cpp_FUN_004ce170     ; 004ceed8
-        ;   XREF to: 004ce170 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ce170(CFootstep * this_ptr, CVector3f * position, UOrientationVector * orientation, int is_bloody, ...)
+    CALL core_gore.cpp_CFootstep_init_FUN_004ce170 ; 004ceed8
+        ;   XREF to: 004ce170 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CFootstep_init_FUN_004ce170(CFootstep * this_ptr, CVector3f * position, UOrientationVector * orientation, int is_bloody, ...)
     ADD ESP,0x18                        ; 004ceedd
     POP EBP                             ; 004ceee0
     POP EDI                             ; 004ceee1

@@ -7,32 +7,32 @@
 
 // Original: core_flintlck.cpp_staticInit_FUN_004ae780
 // Address: 004ae780
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_flintlck.cpp_factoryFuncFlintlock_FUN_004ae7b0
 // Address: 004ae7b0
-void factoryFuncFlintlock(void);
+CFlintlock * __cdecl factoryFuncFlintlock(void);
 
 // Original: core_flintlck.cpp_CFlintlock_getActorType_FUN_004ae7d0
 // Address: 004ae7d0
-CDemonActorType * CFlintlock::getActorType(CFlintlock *this_ptr);
+CDemonActorType * __cdecl CFlintlock::getActorType(CFlintlock *this_ptr);
 
 // Original: core_flintlck.cpp_CFlintlock_ctor_FUN_004ae7e0
 // Address: 004ae7e0
-CFlintlock * CFlintlock::ctor(CFlintlock *this_ptr);
+CFlintlock * __cdecl CFlintlock::ctor(CFlintlock *this_ptr);
 
-// Original: core_flintlck.cpp_FUN_004ae850
+// Original: core_flintlck.cpp_CFlintlock_fire_FUN_004ae850
 // Address: 004ae850
-undefined4 FUN_004ae850(CDemonActor *param_1);
+int __cdecl CFlintlock::fire(CFlintlock *this_ptr);
 
-// Original: core_flintlck.cpp_FUN_004af580
+// Original: core_flintlck.cpp_CFlintlock_getDamage_FUN_004af580
 // Address: 004af580
-undefined4 FUN_004af580(void);
+float __cdecl CFlintlock::getDamage(CFlintlock *this_ptr);
 
-// Original: core_flintlck.cpp_FUN_004af5b0
+// Original: core_flintlck.cpp_CFlintlock_setup_FUN_004af5b0
 // Address: 004af5b0
-void FUN_004af5b0(CWeapon *param_1);
+void __cdecl CFlintlock::setup(CFlintlock *this_ptr);
 
 // Original: core_flintlck.cpp_CFlintlock_dtor_FUN_004af630
 // Address: 004af630
-CFlintlock * CFlintlock::dtor(CFlintlock *this_ptr,uint flags);
+CFlintlock * __cdecl CFlintlock::dtor(CFlintlock *this_ptr,uint flags);

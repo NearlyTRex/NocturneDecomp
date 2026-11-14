@@ -28,7 +28,7 @@
 ;   undefined4 s_tr_005d239a+1
 ;   undefined4 s_r_005d239a+2
 ;   undefined4 s__005d239a+3
-;   void* g_CDemonActorVTable = 00408850
+;   CDemonActor_vtable g_CDemonActorVTable
 ;   undefined4 DAT_0078a123
 ;
 ; Called Functions:
@@ -47,7 +47,7 @@ section .text
     ADD EBX,0x12c                       ; 004085c7
     PUSH EBX                            ; 004085cd
     CALL core_actor.cpp_initTransformCache_FUN_00408580 ; 004085ce
-        ;   XREF to: 00408580 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_initTransformCache_FUN_00408580()
+        ;   XREF to: 00408580 (UNCONDITIONAL_CALL)  ; CDemonActorTransformState * core_actor.cpp_initTransformCache_FUN_00408580(CDemonActorTransformState * transform_cache)
     LEA EBX,[EAX + 0xfffffed4]          ; 004085d3
     MOV dword ptr [EBX + 0x154],0x5fb334 ; 004085d9 | g_CDemonActorVTable
     MOV byte ptr [EBX],0x0              ; 004085e3

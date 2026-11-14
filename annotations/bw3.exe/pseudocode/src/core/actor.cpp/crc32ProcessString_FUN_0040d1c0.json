@@ -16,13 +16,13 @@
     {
       "addr": "00409c80",
       "from_addr": "00409c8c",
-      "name": "core_actor.cpp_FUN_00409c80",
+      "name": "core_actor.cpp_CDemonActor_calculateChecksum_FUN_00409c80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00433130",
       "from_addr": "0043316c",
-      "name": "core_charactr.cpp_FUN_00433130",
+      "name": "core_charactr.cpp_CCharacter_calculateChecksum_FUN_00433130",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -42,7 +42,7 @@
     {
       "addr": "0040d060",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040d060"
+      "name": "core_actor.cpp_crc32ProcessByte_FUN_0040d060"
     }
   ],
   "globals": [],
@@ -52,7 +52,7 @@
       {
         "call_addr": "00409c8c",
         "call_type": "direct",
-        "caller": "core_actor.cpp_FUN_00409c80",
+        "caller": "core_actor.cpp_CDemonActor_calculateChecksum_FUN_00409c80",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -63,7 +63,7 @@
       {
         "call_addr": "0043316c",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_00433130",
+        "caller": "core_charactr.cpp_CCharacter_calculateChecksum_FUN_00433130",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -74,7 +74,7 @@
       {
         "call_addr": "0043317f",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_00433130",
+        "caller": "core_charactr.cpp_CCharacter_calculateChecksum_FUN_00433130",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -111,6 +111,32 @@
       "STORE": 5
     },
     "pcode_op_count": 88
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0040d2e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0040cf80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0040cf90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9167
+    },
+    "nocturne.exe": {
+      "addr": "0040e120",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 12,

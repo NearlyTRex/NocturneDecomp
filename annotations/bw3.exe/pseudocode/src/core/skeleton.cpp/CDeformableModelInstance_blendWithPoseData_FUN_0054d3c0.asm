@@ -14,7 +14,7 @@
 ;   core_prye.cpp_FUN_0051c1c0 at 0051c2a9
 ;
 ; Called Functions:
-;   core_skeleton.cpp_FUN_0054d3f0
+;   core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0054d3f0
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     PUSH EAX                            ; 0054d3d7
     MOV EBX,dword ptr [ESP + 0x1c]      ; 0054d3d8
     PUSH EBX                            ; 0054d3dc
-    CALL core_skeleton.cpp_FUN_0054d3f0 ; 0054d3dd
-        ;   XREF to: 0054d3f0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_0054d3f0(CDeformableModelInstance * this_ptr, CQuaternion4f * source_quaternions, CVector3f * source_position, float blend_weight, ...)
+    CALL core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0054d3f0 ; 0054d3dd
+        ;   XREF to: 0054d3f0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0054d3f0(CDeformableModelInstance * this_ptr, CQuaternion4f * source_quaternions, CVector3f * source_position, float blend_weight, ...)
     ADD ESP,0x18                        ; 0054d3e2
     POP EBX                             ; 0054d3e5
     RET                                 ; 0054d3e6

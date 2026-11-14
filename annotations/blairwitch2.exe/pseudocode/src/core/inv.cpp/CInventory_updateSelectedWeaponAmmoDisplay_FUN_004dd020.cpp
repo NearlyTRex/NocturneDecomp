@@ -11,16 +11,13 @@ void __cdecl core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd02
 {
   char *weapon_class_name;
   
-  if (*(int *)(this_ptr + *(int *)(this_ptr + 0x468) * 4 + 0x610) == 0) {
+  if (this_ptr->selected_weapons[this_ptr->current_group] == (CWeapon *)0x0) {
     return;
   }
-  *(uint *)(*(int *)(this_ptr + 0x464) + 0x470) =
-       *(uint *)(*(int *)(this_ptr + *(int *)(this_ptr + 0x468) * 4 + 0x610) + 0x6c4);
-  *(uint *)(*(int *)(this_ptr + 0x464) + 0x474) =
-       *(uint *)(*(int *)(this_ptr + *(int *)(this_ptr + 0x468) * 4 + 0x610) + 0x6c8);
+  this_ptr->ammo_ptr->ammo_count = this_ptr->selected_weapons[this_ptr->current_group]->ammo_count;
+  this_ptr->ammo_ptr->ammo_type = this_ptr->selected_weapons[this_ptr->current_group]->ammo_type;
   weapon_class_name =
-       (char *)core_actor_cpp_FUN_00408a50
-                         (*(uint *)(this_ptr + *(int *)(this_ptr + 0x468) * 4 + 0x610));
-  core_ammo_cpp_FUN_0040e240(*(CAmmo **)(this_ptr + 0x464),weapon_class_name);
+       (char *)core_actor_cpp_FUN_00408a50(this_ptr->selected_weapons[this_ptr->current_group]);
+  core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040e240(this_ptr->ammo_ptr,weapon_class_name);
   return;
 }

@@ -1,0 +1,378 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 61,
+    "complexity_score": 41,
+    "cross_reference_count": 16,
+    "function_call_count": 2,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 26,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 87
+  },
+  "cross_references": [
+    {
+      "addr": "005a0be0",
+      "from_addr": "005a10c3",
+      "name": "core_asgaya.cpp_CAsgaya_process_FUN_005a0be0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00410030",
+      "from_addr": "00410075",
+      "name": "core_bird.cpp_FUN_00410030",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004331a0",
+      "from_addr": "004331ee",
+      "name": "core_charactr.cpp_CCharacter_canLookAt_FUN_004331a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00431470",
+      "from_addr": "004314b9",
+      "name": "core_charactr.cpp_CCharacter_setWalkTarget_FUN_00431470",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0048c2e0",
+      "from_addr": "00490485",
+      "name": "core_event.cpp_FUN_0048c2e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d2aa0",
+      "from_addr": "004d2acf",
+      "name": "core_hero.cpp_CHero_canBeGrabbed_FUN_004d2aa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d2af0",
+      "from_addr": "004d2b67",
+      "name": "core_hero.cpp_CHero_getGrabbed_FUN_004d2af0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d2c20",
+      "from_addr": "004d2c66",
+      "name": "core_hero.cpp_CHero_releaseFromGrab_FUN_004d2c20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fc160",
+      "from_addr": "004fc170",
+      "name": "core_motion.cpp_CMotionController_setDesiredStateByName_FUN_004fc160",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00509120",
+      "from_addr": "00509457",
+      "name": "core_npc.cpp_CNPC_process_FUN_00509120",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00509900",
+      "from_addr": "00509945",
+      "name": "core_npc.cpp_CNPC_setRandomMotionVariant_FUN_00509900",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059ae00",
+      "from_addr": "0059b105",
+      "name": "core_spirbear.cpp_CSpiritBear_process_FUN_0059ae00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00599c80",
+      "from_addr": "00599cc5",
+      "name": "core_spireagl.cpp_FUN_00599c80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059a2b0",
+      "from_addr": "0059a5b5",
+      "name": "core_spirindi.cpp_CSpiritIndian_process_FUN_0059a2b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00588ee0",
+      "from_addr": "00588f56",
+      "name": "core_zombie.cpp_CZombie_process_FUN_00588ee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058cc20",
+      "from_addr": "0058cc3c",
+      "name": "core_zombie.cpp_FUN_0058cc20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004fba50",
+    "address_range": [
+      [
+        "004fba50",
+        "004fbac4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_motion.cpp_CMotionList_findStateIndex_FUN_004fba50",
+    "signature": "int __cdecl core_motion_cpp_CMotionList_findStateIndex_FUN_004fba50(CMotionList *this_ptr,char *state_name,int error_on_not_found)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "005a3260",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005a3260"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c9b9a",
+      "name": "s_core_motion_cpp_005c9b9a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c9bad",
+      "name": "s_Can_t_find_state_s_in_mo_005c9bad",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 20,
+    "call_sites": [
+      {
+        "call_addr": "00490485",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_0048c2e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0058cc3c",
+        "call_type": "direct",
+        "caller": "core_zombie.cpp_FUN_0058cc20",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004fc170",
+        "call_type": "direct",
+        "caller": "core_motion.cpp_CMotionController_setDesiredStateByName_FUN_004fc160",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004331ee",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_canLookAt_FUN_004331a0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00410075",
+        "call_type": "direct",
+        "caller": "core_bird.cpp_FUN_00410030",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004100af",
+        "call_type": "direct",
+        "caller": "core_bird.cpp_FUN_00410030",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004314b9",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_setWalkTarget_FUN_00431470",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004d2acf",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_CHero_canBeGrabbed_FUN_004d2aa0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004d2b67",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_CHero_getGrabbed_FUN_004d2af0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004d2b83",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_CHero_getGrabbed_FUN_004d2af0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.96,
+    "instruction_count": 50,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CALL": 2,
+      "CBRANCH": 4,
+      "COPY": 52,
+      "INT_ADD": 23,
+      "INT_AND": 20,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 18,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 9,
+      "INT_SUB": 12,
+      "INT_XOR": 1,
+      "LOAD": 20,
+      "POPCOUNT": 9,
+      "RETURN": 3,
+      "STORE": 10
+    },
+    "pcode_op_count": 198
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00502fa0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00524150",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0052d4f0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004e10a0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMotionList *"
+      },
+      {
+        "is_param": true,
+        "name": "state_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "error_on_not_found",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

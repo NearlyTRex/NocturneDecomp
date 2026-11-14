@@ -1,14 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dpart_cpp_FUN_00466540(CDemonPart *param_1,undefined4 param_2,undefined4 param_3,float *param_4)
+; void core_dpart_cpp_FUN_00466540(CDemonPart *param_1,_FILE *param_2,undefined4 param_3,float *param_4)
 ;
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005bc174
+;   undefined4 DAT_005bc17c
 ;
 ; Called Functions:
-;   core_dpart.cpp_FUN_004662b0
+;   core_dpart.cpp_CDemonPart_alloc_FUN_004662b0
+;   core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_00466470
 ;   crt_math.c_round_FUN_005a3120
 ;   crt_stdio.c_fread_FUN_005a3890
 ;   crt_string.c__strcmp_FUN_005a3d00
@@ -30,7 +32,7 @@ section .text
     PUSH 0x20                           ; 00466552
     PUSH EBX                            ; 00466554
     CALL crt_stdio.c_fread_FUN_005a3890 ; 00466555
-        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005a3890()
+        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005a3890(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0046655a
     PUSH EBP                            ; 0046655d
     PUSH 0x1                            ; 0046655e
@@ -38,7 +40,7 @@ section .text
     LEA EAX,[EBX + 0x20]                ; 00466562
     PUSH EAX                            ; 00466565
     CALL crt_stdio.c_fread_FUN_005a3890 ; 00466566
-        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005a3890()
+        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005a3890(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0046656b
     PUSH EBP                            ; 0046656e
     PUSH 0x1                            ; 0046656f
@@ -46,11 +48,11 @@ section .text
     LEA EAX,[EBX + 0x24]                ; 00466573
     PUSH EAX                            ; 00466576
     CALL crt_stdio.c_fread_FUN_005a3890 ; 00466577
-        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005a3890()
+        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005a3890(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0046657c
     PUSH EBX                            ; 0046657f
-    CALL core_dpart.cpp_FUN_004662b0    ; 00466580
-        ;   XREF to: 004662b0 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_FUN_004662b0(CDemonPart * this_ptr)
+    CALL core_dpart.cpp_CDemonPart_alloc_FUN_004662b0 ; 00466580
+        ;   XREF to: 004662b0 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_CDemonPart_alloc_FUN_004662b0(CDemonPart * this_ptr)
     ADD ESP,0x4                         ; 00466585
     PUSH EBP                            ; 00466588
     PUSH 0x1                            ; 00466589
@@ -58,7 +60,7 @@ section .text
     LEA EAX,[EBX + 0x33c]               ; 0046658d
     PUSH EAX                            ; 00466593
     CALL crt_stdio.c_fread_FUN_005a3890 ; 00466594
-        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005a3890()
+        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005a3890(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00466599
     PUSH EBP                            ; 0046659c
     PUSH 0x1                            ; 0046659d
@@ -66,7 +68,7 @@ section .text
     LEA EAX,[EBX + 0x348]               ; 004665a1
     PUSH EAX                            ; 004665a7
     CALL crt_stdio.c_fread_FUN_005a3890 ; 004665a8
-        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005a3890()
+        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005a3890(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004665ad
     PUSH EBP                            ; 004665b0
     PUSH 0x1                            ; 004665b1
@@ -74,7 +76,7 @@ section .text
     LEA EAX,[EBX + 0x354]               ; 004665b5
     PUSH EAX                            ; 004665bb
     CALL crt_stdio.c_fread_FUN_005a3890 ; 004665bc
-        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005a3890()
+        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005a3890(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004665c1
     PUSH EBP                            ; 004665c4
     PUSH 0x1                            ; 004665c5
@@ -82,7 +84,7 @@ section .text
     LEA EAX,[EBX + 0x360]               ; 004665c9
     PUSH EAX                            ; 004665cf
     CALL crt_stdio.c_fread_FUN_005a3890 ; 004665d0
-        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005a3890()
+        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005a3890(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004665d5
     PUSH EBP                            ; 004665d8
     PUSH 0x1                            ; 004665d9
@@ -91,7 +93,7 @@ section .text
     PUSH EAX                            ; 004665e0
     XOR ESI,ESI                         ; 004665e1
     CALL crt_stdio.c_fread_FUN_005a3890 ; 004665e3
-        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005a3890()
+        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005a3890(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     MOV EDX,dword ptr [EBX + 0x38]      ; 004665e8
     ADD ESP,0x10                        ; 004665eb
     TEST EDX,EDX                        ; 004665ee
@@ -105,7 +107,7 @@ section .text
     PUSH EDI                            ; 004665fa
     INC ESI                             ; 004665fb
     CALL crt_stdio.c_fread_FUN_005a3890 ; 004665fc
-        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005a3890()
+        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005a3890(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00466601
     MOV ECX,dword ptr [EBX + 0x38]      ; 00466604
     ADD EDI,0x18                        ; 00466607
@@ -120,7 +122,7 @@ section .text
     LEA EAX,[EBX + 0x28]                ; 00466615
     PUSH EAX                            ; 00466618
     CALL crt_stdio.c_fread_FUN_005a3890 ; 00466619
-        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005a3890()
+        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005a3890(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 0046661e
     PUSH EBP                            ; 00466621
     MOV ESI,dword ptr [EBX + 0x20]      ; 00466622
@@ -129,7 +131,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0x2c]      ; 00466628
     PUSH EDI                            ; 0046662b
     CALL crt_stdio.c_fread_FUN_005a3890 ; 0046662c
-        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005a3890()
+        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005a3890(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00466631
     PUSH EBP                            ; 00466634
     MOV EAX,dword ptr [EBX + 0x20]      ; 00466635
@@ -138,7 +140,7 @@ section .text
     MOV EDX,dword ptr [EBX + 0x30]      ; 0046663b
     PUSH EDX                            ; 0046663e
     CALL crt_stdio.c_fread_FUN_005a3890 ; 0046663f
-        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005a3890()
+        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005a3890(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00466644
     PUSH 0x5bc167                       ; 00466647
     PUSH EBX                            ; 0046664c
@@ -155,7 +157,7 @@ section .text
     PUSH 0x1b85194                      ; 00466664
     XOR EDI,EDI                         ; 00466669
     CALL crt_stdio.c_fread_FUN_005a3890 ; 0046666b
-        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005a3890()
+        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005a3890(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     MOV EBP,dword ptr [EBX + 0x24]      ; 00466670
     ADD ESP,0x10                        ; 00466673
     TEST EBP,EBP                        ; 00466676
@@ -204,7 +206,7 @@ section .text
         ;   Label: LAB_0046670a
     TEST EDI,EDI                        ; 0046670e
     JZ 0x00466790                       ; 00466710
-        ;   XREF to: 00466790 (CONDITIONAL_JUMP)
+        ;   XREF to: 00466790 (CONDITIONAL_JUMP)  ; LAB_00466790
     FLD double ptr [0x005bc174]         ; 00466716 | DAT_005bc174
     FLD float ptr [EDI]                 ; 0046671c
     FMUL ST1                            ; 0046671e
@@ -230,7 +232,7 @@ section .text
     FISTP dword ptr [ESP]               ; 00466750
     TEST EBP,EBP                        ; 00466753
     JLE 0x00466790                      ; 00466755
-        ;   XREF to: 00466790 (CONDITIONAL_JUMP)
+        ;   XREF to: 00466790 (CONDITIONAL_JUMP)  ; LAB_00466790
     XOR EDX,EDX                         ; 00466757
     MOV EDI,dword ptr [EBX + 0x2c]      ; 00466759
         ;   Label: LAB_00466759
@@ -251,6 +253,38 @@ section .text
     LEA EAX,[EAX]                       ; 00466783
     LEA EDX,[EDX]                       ; 00466789
     NOP                                 ; 0046678f
+    PUSH EBX                            ; 00466790
+        ;   Label: LAB_00466790
+    CALL core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_00466470 ; 00466791
+        ;   XREF to: 00466470 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_00466470(CDemonPart * this_ptr)
+    FLD double ptr [0x005bc17c]         ; 00466796 | DAT_005bc17c
+    FILD dword ptr [EBX + 0x354]        ; 0046679c
+    FMUL ST1                            ; 004667a2
+    FILD dword ptr [EBX + 0x358]        ; 004667a4
+    FMUL ST2                            ; 004667aa
+    FILD dword ptr [EBX + 0x35c]        ; 004667ac
+    FMUL ST3                            ; 004667b2
+    FILD dword ptr [EBX + 0x360]        ; 004667b4
+    FMUL ST4                            ; 004667ba
+    FILD dword ptr [EBX + 0x364]        ; 004667bc
+    FMUL ST5                            ; 004667c2
+    FILD dword ptr [EBX + 0x368]        ; 004667c4
+    FMULP ST6                           ; 004667ca
+    ADD ESP,0x4                         ; 004667cc
+    FXCH ST4                            ; 004667cf
+    FSTP float ptr [EBX + 0x36c]        ; 004667d1
+    FXCH ST2                            ; 004667d7
+    FSTP float ptr [EBX + 0x370]        ; 004667d9
+    FSTP float ptr [EBX + 0x374]        ; 004667df
+    FSTP float ptr [EBX + 0x378]        ; 004667e5
+    FSTP float ptr [EBX + 0x37c]        ; 004667eb
+    FSTP float ptr [EBX + 0x380]        ; 004667f1
+    ADD ESP,0xc                         ; 004667f7
+    POP EBP                             ; 004667fa
+    POP EDI                             ; 004667fb
+    POP ESI                             ; 004667fc
+    POP EBX                             ; 004667fd
+    RET                                 ; 004667fe
     MOV ESI,dword ptr [EBX + 0x34]      ; 004667ff
         ;   Label: LAB_004667ff
     LEA ECX,[ESI + EAX*0x1]             ; 00466802
@@ -266,7 +300,7 @@ section .text
     MOV ESI,dword ptr [EBX + 0x34]      ; 0046681a
     PUSH ESI                            ; 0046681d
     CALL crt_stdio.c_fread_FUN_005a3890 ; 0046681e
-        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005a3890()
+        ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005a3890(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00466823
     JMP 0x0046670a                      ; 00466826
         ;   XREF to: 0046670a (UNCONDITIONAL_JUMP)  ; LAB_0046670a

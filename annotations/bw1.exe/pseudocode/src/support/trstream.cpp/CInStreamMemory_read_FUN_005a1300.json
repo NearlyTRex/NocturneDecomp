@@ -1,0 +1,153 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 53,
+    "complexity_score": 68,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 28,
+    "suspect_count": 3,
+    "suspect_types": [
+      "pointer_cast",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 81
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005a1300",
+    "address_range": [
+      [
+        "005a1300",
+        "005a135e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_trstream.cpp_CInStreamMemory_read_FUN_005a1300",
+    "signature": "int __cdecl support_trstream_cpp_CInStreamMemory_read_FUN_005a1300(CInStreamMemory *this_ptr,void *buffer,int count)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.521739130434782,
+    "instruction_count": 46,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 2,
+      "BRANCH": 2,
+      "CBRANCH": 5,
+      "COPY": 53,
+      "INT_ADD": 30,
+      "INT_AND": 29,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 19,
+      "INT_LESS": 4,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 9,
+      "INT_SUB": 16,
+      "INT_ZEXT": 4,
+      "LOAD": 33,
+      "POPCOUNT": 8,
+      "RETURN": 3,
+      "STORE": 8
+    },
+    "pcode_op_count": 254
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0057d6b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005742f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInStreamMemory *"
+      },
+      {
+        "is_param": true,
+        "name": "buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(char *)((int)buffer",
+      "severity": "moderate",
+      "text": "buffer = (char *)((int)buffer + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(char *)((int)buffer",
+      "severity": "moderate",
+      "text": "buffer = (char *)((int)buffer + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 005a1339, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 30,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005a1339: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CInStreamMemory",
+        "offset": 16,
+        "vtable_addr": "006073c4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

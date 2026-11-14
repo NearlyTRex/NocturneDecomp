@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_union_cpp_staticInit_FUN_005a4a20(void)
+; void __cdecl core_union_cpp_staticInit_FUN_005a4a20(void)
 ;
 ;
 ; Called Functions:

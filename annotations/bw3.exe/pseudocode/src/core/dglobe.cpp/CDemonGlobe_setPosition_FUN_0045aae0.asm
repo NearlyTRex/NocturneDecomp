@@ -8,16 +8,16 @@
 ; CVector3f *      Stack[0x8]:4   position
 ;
 ; XREF[12]:
-;   core_boxactor.cpp_FUN_00420420 at 004204f6
-;   core_charactr.cpp_FUN_0042f510 at 0042f5ec
-;   core_emitter.cpp_FUN_00487eb0 at 00487ff0
-;   core_exorcism.cpp_FUN_0048a420 at 0048acc1
-;   core_fire.cpp_FUN_00499350 at 004993b9
-;   core_fire.cpp_FUN_0049a390 at 0049a3a4
-;   core_firestff.cpp_FUN_004a4dc0 at 004a5637
+;   core_boxactor.cpp_CLightActor_process_FUN_00420420 at 004204f6
+;   core_charactr.cpp_CCharacter_renderTransparent_FUN_0042f510 at 0042f5ec
+;   core_emitter.cpp_CEmitter_process_FUN_00487eb0 at 00487ff0
+;   core_exorcism.cpp_CExorcism_process_FUN_0048a420 at 0048acc1
+;   core_fire.cpp_CFireball_process_FUN_00499350 at 004993b9
+;   core_fire.cpp_CMuzzleFlash_init_FUN_0049a390 at 0049a3a4
+;   core_firestff.cpp_CFirestaff_process_FUN_004a4dc0 at 004a5637
 ;   core_flame.cpp_FUN_004a6dd0 at 004a6e0b
-;   core_keyactor.cpp_FUN_004de8b0 at 004de8da
-;   core_shadow.cpp_FUN_005438d0 at 00544449
+;   core_keyactor.cpp_CKeyActor_process_FUN_004de8b0 at 004de8da
+;   core_lightsta.cpp_CLightStaff_process_FUN_004e2050 at 004e2252
 ;   ... and 2 more
 ;
 ; Referenced Globals:

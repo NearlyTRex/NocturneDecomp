@@ -23,15 +23,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00553680",
-      "from_addr": "00553764",
-      "name": "sound_sndmain.cpp_FUN_00553680",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00552b90",
       "from_addr": "00552ba3",
       "name": "sound_sndmain.cpp_initializeSoundDevice_FUN_00552b90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00553680",
+      "from_addr": "00553764",
+      "name": "sound_sndmain.cpp_readIni_FUN_00553680",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -62,17 +62,17 @@
     {
       "addr": "00552980",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00552980"
-    },
-    {
-      "addr": "00552b10",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00552b10"
+      "name": "sound_sndmain.cpp_findBestSoundDevice_FUN_00552980"
     },
     {
       "addr": "00552890",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_getSoundDeviceCount_FUN_00552890"
+    },
+    {
+      "addr": "00552b10",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSoundSystemActive_FUN_00552b10"
     }
   ],
   "globals": [
@@ -113,7 +113,7 @@
       {
         "call_addr": "00553764",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00553680",
+        "caller": "sound_sndmain.cpp_readIni_FUN_00553680",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -187,6 +187,32 @@
     },
     "pcode_op_count": 98
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005754d0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00558640",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005ab4c0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00528410",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -233,7 +259,7 @@
       "line": 24,
       "match": "DAT_0061bcac",
       "severity": "mild",
-      "text": "DAT_0061bcac = sound_sndmain_cpp_FUN_00552980();",
+      "text": "DAT_0061bcac = sound_sndmain_cpp_findBestSoundDevice_FUN_00552980();",
       "type": "undefined_data"
     }
   ]

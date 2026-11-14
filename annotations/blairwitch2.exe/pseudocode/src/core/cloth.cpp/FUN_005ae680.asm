@@ -94,11 +94,11 @@
 ;
 ; XREF[6]:
 ;   core_cloth.cpp_CClothList_setup_FUN_005b1740 at 005b176c
-;   core_gabriela.cpp_FUN_004ad3e0 at 004ad42b
-;   core_mimic.cpp_FUN_004f04f0 at 004f06db
-;   core_mimic.cpp_FUN_004f17a0 at 004f17c6
-;   core_svetlana.cpp_FUN_00570250 at 00570459
-;   core_vampboss.cpp_FUN_00581660 at 005816bc
+;   core_gabriela.cpp_CGabriella_setup_FUN_004ad3e0 at 004ad42b
+;   core_mimic.cpp_CMimic_setupCloth_FUN_004f17a0 at 004f17c6
+;   core_mimic.cpp_CMimic_setup_FUN_004f04f0 at 004f06db
+;   core_svetlana.cpp_CSvetlana_setup_FUN_00570250 at 00570459
+;   core_vampboss.cpp_CVampireBoss_setup_FUN_00581660 at 005816bc
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006011a0
@@ -106,11 +106,11 @@
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_orientBoneToChild_FUN_005af200
 ;   core_cloth.cpp_FUN_005ae420
+;   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_005415d0
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00546ae0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00547810
 ;   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_00544e60
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_00544ee0
-;   core_skeleton.cpp_FUN_005415d0
 ;   core_xform.cpp_FUN_00591530
 ;
 ; *****************************************************************************
@@ -350,8 +350,8 @@ section .text
     PUSH EAX                            ; 005ae9a8
     MOV EBX,EAX                         ; 005ae9a9
     MOV dword ptr [ESP + 0xcc],EAX      ; 005ae9ab
-    CALL core_skeleton.cpp_FUN_005415d0 ; 005ae9b2
-        ;   XREF to: 005415d0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_FUN_005415d0(CDeformableModel * this_ptr)
+    CALL core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_005415d0 ; 005ae9b2
+        ;   XREF to: 005415d0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_005415d0(CDeformableModel * this_ptr)
     ADD ESP,0x4                         ; 005ae9b7
     MOV EAX,dword ptr [ESP + 0x16c]     ; 005ae9ba
     MOV EBP,EDI                         ; 005ae9c1

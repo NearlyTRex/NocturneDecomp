@@ -1,0 +1,202 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 82,
+    "complexity_score": 35,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 12,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 20,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 102
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00595e90",
+    "address_range": [
+      [
+        "00595e90",
+        "00595f8b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_tawiscara.cpp_CTawiscara_archive_FUN_00595e90",
+    "signature": "void __cdecl core_tawiscara_cpp_CTawiscara_archive_FUN_00595e90(CTawiscara *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b930",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveActor_FUN_0040b930"
+    },
+    {
+      "addr": "0040ba30",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveDeformableModelInstance_FUN_0040ba30"
+    },
+    {
+      "addr": "0040b830",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b830"
+    },
+    {
+      "addr": "0040b8b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b8b0"
+    },
+    {
+      "addr": "0040bab0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040bab0"
+    },
+    {
+      "addr": "00489120",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_archive_FUN_00489120"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d93b9",
+      "name": "s_speed_005d93b8+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d93bf",
+      "name": "s_modelName_005d93bf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d93c9",
+      "name": "s_guardDistance_005d93c9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d93d7",
+      "name": "s_motion_state_005d93d7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d93e4",
+      "name": "s_lightUpEyes_005d93e4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d93f0",
+      "name": "s_chainAnchor_005d93f0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d93fc",
+      "name": "s_chainLength_005d93fc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9408",
+      "name": "DAT_005d9408",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d940d",
+      "name": "s_phase_005d940d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9413",
+      "name": "s_phaseTimer_005d9413",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d941e",
+      "name": "s_alpha1_005d941e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9425",
+      "name": "s_alpha2_005d9425",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.117647058823529,
+    "instruction_count": 68,
+    "opcode_distribution": {
+      "CALL": 13,
+      "COPY": 42,
+      "INT_ADD": 28,
+      "INT_AND": 28,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 28,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 14,
+      "INT_SUB": 40,
+      "LOAD": 4,
+      "POPCOUNT": 14,
+      "RETURN": 1,
+      "STORE": 40
+    },
+    "pcode_op_count": 280
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTawiscara *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_005d9408",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->type,&DAT_005d9408);",
+      "type": "undefined_data"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CTawiscara",
+        "offset": 212,
+        "vtable_addr": "005e7544"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -7,75 +7,75 @@
 
 // Original: core_scat.cpp_staticInit_FUN_00540a10
 // Address: 00540a10
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_scat.cpp_factoryFuncScat_FUN_00540aa0
 // Address: 00540aa0
-void factoryFuncScat(void);
+CScat * __cdecl factoryFuncScat(void);
 
 // Original: core_scat.cpp_CScat_getActorType_FUN_00540ac0
 // Address: 00540ac0
-CDemonActorType * CScat::getActorType(CScat *this_ptr);
+CDemonActorType * __cdecl CScat::getActorType(CScat *this_ptr);
 
 // Original: core_scat.cpp_CScat_ctor_FUN_00540ad0
 // Address: 00540ad0
 CScat * __cdecl CScat::ctor(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_00540b90
+// Original: core_scat.cpp_CScat_setup_FUN_00540b90
 // Address: 00540b90
-void FUN_00540b90(CHero *param_1);
+void __cdecl CScat::setup(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_00540d50
+// Original: core_scat.cpp_CScat_createDefaultWeapon_FUN_00540d50
 // Address: 00540d50
-void __cdecl FUN_00540d50(CScat *this_ptr);
+void __cdecl CScat::createDefaultWeapon(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_00540df0
+// Original: core_scat.cpp_CScat_process_FUN_00540df0
 // Address: 00540df0
-void FUN_00540df0(CScat *param_1,float param_2);
+void __cdecl CScat::process(CScat *this_ptr,float delta_time);
 
-// Original: core_scat.cpp_FUN_005415c0
+// Original: core_scat.cpp_CScat_updateAI_FUN_005415c0
 // Address: 005415c0
-void __cdecl FUN_005415c0(CScat *this_ptr,float delta_time);
+void __cdecl CScat::updateAI(CScat *this_ptr,float delta_time);
 
-// Original: core_scat.cpp_FUN_00541af0
+// Original: core_scat.cpp_CScat_advanceMotionWithGrabDamage_FUN_00541af0
 // Address: 00541af0
-void __cdecl FUN_00541af0(CScat *this_ptr,float delta_time);
+void __cdecl CScat::advanceMotionWithGrabDamage(CScat *this_ptr,float delta_time);
 
 // Original: core_scat.cpp_CScat_archive_FUN_00541b80
 // Address: 00541b80
 void __cdecl CScat::archive(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_00541bc0
+// Original: core_scat.cpp_CScat_renderOpaque_FUN_00541bc0
 // Address: 00541bc0
-undefined4 FUN_00541bc0(CCharacter *param_1);
+int __cdecl CScat::renderOpaque(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_00541c70
+// Original: core_scat.cpp_CScat_processDamage_FUN_00541c70
 // Address: 00541c70
-void FUN_00541c70(CScat *param_1,int param_2);
+void __cdecl CScat::processDamage(CScat *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_scat.cpp_FUN_00541dc0
+// Original: core_scat.cpp_CScat_isWeaponDrawn_FUN_00541dc0
 // Address: 00541dc0
-undefined4 FUN_00541dc0(int param_1);
+int __cdecl CScat::isWeaponDrawn(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_00541dd0
+// Original: core_scat.cpp_CScat_drawWeapon_FUN_00541dd0
 // Address: 00541dd0
-void FUN_00541dd0(int param_1,undefined4 param_2);
+void __cdecl CScat::drawWeapon(CScat *this_ptr,int drawn);
 
-// Original: core_scat.cpp_FUN_00541de0
+// Original: core_scat.cpp_CScat_isWeaponReady_FUN_00541de0
 // Address: 00541de0
-int __cdecl FUN_00541de0(CScat *this_ptr);
+int __cdecl CScat::isWeaponReady(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_00541e30
+// Original: core_scat.cpp_CScat_updateWeaponState_FUN_00541e30
 // Address: 00541e30
-void __cdecl FUN_00541e30(CScat *this_ptr,float delta_time);
+void __cdecl CScat::updateWeaponState(CScat *this_ptr,float delta_time);
 
-// Original: core_scat.cpp_FUN_00542090
+// Original: core_scat.cpp_CScat_blendLayerAction_FUN_00542090
 // Address: 00542090
-void __cdecl FUN_00542090(CScat *this_ptr);
+void __cdecl CScat::blendLayerAction(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_00542270
+// Original: core_scat.cpp_CScat_blendAimBones_FUN_00542270
 // Address: 00542270
-void __cdecl FUN_00542270(CScat *this_ptr,int hand_index);
+void __cdecl CScat::blendAimBones(CScat *this_ptr,int hand_index);
 
 // Original: core_scat.cpp_FUN_005424f0
 // Address: 005424f0
@@ -83,7 +83,7 @@ void FUN_005424f0(int param_1,float param_2,int param_3);
 
 // Original: core_scat.cpp_FUN_00542b90
 // Address: 00542b90
-float FUN_00542b90(CDemonActor *param_1,int param_2,int param_3);
+undefined4 FUN_00542b90(CDemonActor *param_1,CDemonActor *param_2,int param_3);
 
 // Original: core_scat.cpp_FUN_00542f20
 // Address: 00542f20

@@ -11,7 +11,7 @@
 // =============================================================================
 
 // TerminatedCString constants
-static TerminatedCString s_actionPending_d_doc_cpp_005d000a = "<actionPending = %d\ndoc.cpp line %d";
+static TerminatedCString s_actionPending_d_doc_cpp_005d000b = "actionPending = %d\ndoc.cpp line %d";
 static TerminatedCString s_actionPending_d_doc_cpp_005d002e = "actionPending = %d\ndoc.cpp line %d";
 static TerminatedCString s_Object_to_pick_up_is_now_005d0051 = "Object to pick up is now NULL\ndoc.cpp line %d";
 static TerminatedCString s_actionPending_d_doc_cpp_005d007f = "actionPending = %d\ndoc.cpp line %d";
@@ -28,10 +28,10 @@ static TerminatedCString s_Don_t_know_how_to_carry_005d029f = "Don't know how to
 static TerminatedCString s_SHOVEL_KFM_005d02c0 = "SHOVEL.KFM";
 static TerminatedCString s_WOOD_BOWL_KFM_005d02cb = "WOOD_BOWL.KFM";
 static TerminatedCString s_JOURNAL_KFM_005d02d9 = "JOURNAL.KFM";
-static TerminatedCString s_actionPending_d_doc_cpp_005d030e = "?actionPending = %d\ndoc.cpp line %d";
+static TerminatedCString s_actionPending_d_doc_cpp_005d030f = "actionPending = %d\ndoc.cpp line %d";
 static TerminatedCString s_Climbing_ladder_s_005d0332 = "Climbing ladder %s\n";
 static TerminatedCString s_Ladder_dot_f_005d0376 = "?Ladder dot : %f\n";
-static TerminatedCString s_actionPending_d_doc_cpp_005d03be = "?actionPending = %d\ndoc.cpp line %d";
+static TerminatedCString s_actionPending_d_doc_cpp_005d03bf = "actionPending = %d\ndoc.cpp line %d";
 static TerminatedCString s_Delta_to_dest_3_2f_3_2f_005d03e2 = "Delta to dest : %3.2f,%3.2f,%3.2f\n";
 static TerminatedCString s_objectToPickUp_005d0426 = "@objectToPickUp";
 static TerminatedCString s_doorToOpen_005d0436 = "doorToOpen";

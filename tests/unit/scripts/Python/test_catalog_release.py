@@ -64,6 +64,16 @@ def test_every_other_file_is_listed_by_its_path_but_hidden_and_excluded_ones(tmp
         {"path": "WORLD/camp.txt", "size": 7, "xxh3": HASH_OF_POD_TWO}]
 
 
+def test_an_ini_is_listed_by_its_path_alone(tmp_path, capsys):
+    folder = install(tmp_path, {"A.POD": b"POD one", "pod.ini": b"A.POD"})
+    (tmp_path / "SYSTEM").mkdir()
+    (tmp_path / "SYSTEM" / "RENDER.INI").write_bytes(b"[render]")
+    text = run_main(capsys, *RELEASE, str(folder))
+    assert tomllib.loads(text)["release"][0]["file"] == [{"path": "pod.ini"},
+                                                         {"path": "SYSTEM/RENDER.INI"}]
+    assert text.endswith('[[release.file]]\npath = "SYSTEM/RENDER.INI"\n')
+
+
 def test_the_entry_is_laid_out_as_the_catalogues_are(tmp_path, capsys):
     folder = install(tmp_path, {"A.POD": b"POD one"})
     assert run_main(capsys, *RELEASE, str(folder)) == (

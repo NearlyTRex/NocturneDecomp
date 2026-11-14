@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_emitter_cpp_CEmitter_getActorType_FUN_0049ee30(CEmitter *this_ptr)
+; CDemonActorType * __cdecl core_emitter_cpp_CEmitter_getActorType_FUN_0049ee30(CEmitter *this_ptr)
 ;
 ; Parameters:
 ; CEmitter *       Stack[0x4]:4   this_ptr

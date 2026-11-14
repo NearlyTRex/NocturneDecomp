@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_mobster.cpp_factoryFuncMobster_FUN_0051c7a0 at 0051c7b3
-;   core_vehicle.cpp_FUN_005a7b50 at 005a81f2
+;   core_vehicle.cpp_CVehicle_process_FUN_005a7b50 at 005a81f2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_mobster1_dfm_005e9c5a
@@ -18,12 +18,12 @@
 ;   undefined4 s_e_005e9c67+3
 ;   undefined4 DAT_00603d60
 ;   undefined4 DAT_00603d64
-;   undefined1* g_CMobsterVTable = 0051c910
+;   CMobster_full_vtable g_CMobsterVTable
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cc60
+;   core_actor.cpp_getRandomInt_FUN_0040cc60
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a0410
-;   core_skeleton.cpp_FUN_00569f50
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50
 ;
 ; *****************************************************************************
 
@@ -43,8 +43,8 @@ section .text
     ADD EAX,0x158                       ; 0051c7e7
     PUSH EAX                            ; 0051c7ec
     MOV dword ptr [EAX + -0x4],0x603d74 ; 0051c7ed | g_CMobsterVTable
-    CALL core_skeleton.cpp_FUN_00569f50 ; 0051c7f4
-        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569f50()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 0051c7f4
+        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
     FLD float ptr [0x00603d60]          ; 0051c7f9 | DAT_00603d60
     ADD ESP,0x8                         ; 0051c7ff
     MOV dword ptr [EBX + 0x2fec],0x3f19999a ; 0051c802
@@ -55,8 +55,8 @@ section .text
     FSTP float ptr [EBX + 0x2ff4]       ; 0051c823
     PUSH 0x0                            ; 0051c829
     FSTP float ptr [EBX + 0x2ff8]       ; 0051c82b
-    CALL core_actor.cpp_FUN_0040cc60    ; 0051c831
-        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cc60(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cc60 ; 0051c831
+        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cc60(int min_value, int max_value)
     MOV dword ptr [EBX + 0xc26c],0x0    ; 0051c836
     MOV dword ptr [EBX + 0xc270],0x0    ; 0051c840
     MOV dword ptr [EBX + 0xc274],0x0    ; 0051c84a
@@ -67,8 +67,8 @@ section .text
     MOV dword ptr [EBX + 0xc25c],0x42200000 ; 0051c86d
     PUSH 0x62                           ; 0051c877
     MOV dword ptr [EBX + 0xc268],EAX    ; 0051c879
-    CALL core_actor.cpp_FUN_0040cc60    ; 0051c87f
-        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cc60(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cc60 ; 0051c87f
+        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cc60(int min_value, int max_value)
     MOV dword ptr [EBX + 0xc280],0x0    ; 0051c884
     MOV dword ptr [EBX + 0xc278],0x0    ; 0051c88e
     MOV dword ptr [EBX + 0xc284],0x0    ; 0051c898

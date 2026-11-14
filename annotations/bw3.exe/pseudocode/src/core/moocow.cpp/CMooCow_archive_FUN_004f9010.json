@@ -1,0 +1,124 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 20,
+    "complexity_score": 9,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 2,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 29
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004f9010",
+    "address_range": [
+      [
+        "004f9010",
+        "004f9041"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_moocow.cpp_CMooCow_archive_FUN_004f9010",
+    "signature": "void __cdecl core_moocow_cpp_CMooCow_archive_FUN_004f9010(CMooCow *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ba30",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveDeformableModelInstance_FUN_0040ba30"
+    },
+    {
+      "addr": "0040bab0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040bab0"
+    },
+    {
+      "addr": "0042b450",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_archive_FUN_0042b450"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c91fc",
+      "name": "s_modelName_005c91fb+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c9206",
+      "name": "s_motion_state_005c9206",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5625,
+    "instruction_count": 16,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 9,
+      "INT_ADD": 7,
+      "INT_AND": 8,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 4,
+      "INT_SUB": 9,
+      "LOAD": 3,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 9
+    },
+    "pcode_op_count": 73
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005217d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMooCow *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CMooCow",
+        "offset": 212,
+        "vtable_addr": "005e2a44"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

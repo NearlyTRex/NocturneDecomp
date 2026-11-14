@@ -14,7 +14,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460(CD
   if (state_flag == 0) {
     culling_mode = 0;
   }
-  else if (*(int *)(this_ptr + 0x18) == 0) {
+  else if (this_ptr->advanced_culling_enabled == 0) {
     culling_mode = 1;
   }
   else {

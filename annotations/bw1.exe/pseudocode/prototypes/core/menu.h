@@ -21,9 +21,9 @@ int __cdecl renderMenuAndGetChoice(char **menu_text_array,int menu_count,int *se
 // Address: 0050a1f0
 void __cdecl showJoystickCalibrationScreen(char *instruction_text,char *message_text);
 
-// Original: core_menu.cpp_FUN_0050a2b0
+// Original: core_menu.cpp_calibrateGamepad_FUN_0050a2b0
 // Address: 0050a2b0
-int __cdecl FUN_0050a2b0(void);
+int __cdecl calibrateGamepad(void);
 
 // Original: core_menu.cpp_adjustMouseSensitivity_FUN_0050a5e0
 // Address: 0050a5e0
@@ -37,13 +37,13 @@ void __cdecl showCalibrationTestPattern(char *message_text);
 // Address: 0050a9c0
 void __cdecl showCalibrationTest(void);
 
-// Original: core_menu.cpp_FUN_0050aa90
+// Original: core_menu.cpp_configureGraphicsOptions_FUN_0050aa90
 // Address: 0050aa90
-void __cdecl FUN_0050aa90(void);
+void __cdecl configureGraphicsOptions(void);
 
-// Original: core_menu.cpp_FUN_0050b410
+// Original: core_menu.cpp_checkAndCalibrateGamepad_FUN_0050b410
 // Address: 0050b410
-undefined4 FUN_0050b410(void);
+int __cdecl checkAndCalibrateGamepad(void);
 
 // Original: core_menu.cpp_FUN_0050b470
 // Address: 0050b470
@@ -57,21 +57,25 @@ void __cdecl FUN_0050ba70(void);
 // Address: 0050c990
 void FUN_0050c990(int param_1);
 
-// Original: core_menu.cpp_FUN_0050cc90
+// Original: core_menu.cpp_showMainGameMenu_FUN_0050cc90
 // Address: 0050cc90
-int __cdecl FUN_0050cc90(void);
+int __cdecl showMainGameMenu(void);
 
-// Original: core_menu.cpp_FUN_0050d1a0
+// Original: core_menu.cpp_addCustomKeyBinding_FUN_0050d1a0
 // Address: 0050d1a0
-void FUN_0050d1a0(undefined4 param_1,char *param_2);
+void __cdecl addCustomKeyBinding(int *key_code_ptr,char *key_name);
 
-// Original: core_menu.cpp_FUN_0050d220
+// Original: core_menu.cpp_getKeyDisplayName_FUN_0050d220
 // Address: 0050d220
-char * __cdecl FUN_0050d220(EInputCodeType key_code);
+char * __cdecl getKeyDisplayName(EInputCodeType key_code);
 
-// Original: core_menu.cpp_FUN_0050d470
+// Original: core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470
 // Address: 0050d470
-int __cdecl FUN_0050d470(EInputCodeType *key_code_ptr,char *description);
+int __cdecl isKeyCodeValidForMode(EInputCodeType *key_code_ptr,char *description);
+
+// Original: core_menu.cpp_FUN_0050d5b0
+// Address: 0050d5b0
+int FUN_0050d5b0(void);
 
 // Original: core_menu.cpp_FUN_0050d640
 // Address: 0050d640

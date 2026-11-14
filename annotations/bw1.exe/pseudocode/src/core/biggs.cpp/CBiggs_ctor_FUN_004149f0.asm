@@ -18,7 +18,7 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a0410
 ;   core_morph.cpp_CMorph_ctor_FUN_00522fa0
-;   core_skeleton.cpp_FUN_00569f50
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50
 ;
 ; *****************************************************************************
 
@@ -48,8 +48,8 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 00414a27
     PUSH EAX                            ; 00414a2d
     MOV dword ptr [EBX + 0x154],0x5fc5d4 ; 00414a2e
-    CALL core_skeleton.cpp_FUN_00569f50 ; 00414a38
-        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569f50()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 00414a38
+        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 00414a3d
     PUSH 0x5d3c11                       ; 00414a40
     LEA EAX,[EBX + 0xc268]              ; 00414a45

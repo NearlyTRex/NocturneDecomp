@@ -2,15 +2,25 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CActorDestination.h"
+#include "types/classes/CKeyFramedModelInstance.h"
 
 // Structure: CFilmProjector
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x540 (1344 bytes)
 #pragma pack(push, 1)
 typedef struct CFilmProjector {
-    char field_0[1344]; // 0x0
+    CActorDestination base; // 0x0
+    CKeyFramedModelInstance model; // 0x350
+    struct CDemonActor* key_reel; // 0x4cc
+    char key_event[100]; // 0x4d0
+    float reel_rotation; // 0x534
+    int prev_dest_state; // 0x538
+    uint sfx_handle; // 0x53c
 } CFilmProjector;
 #pragma pack(pop)
 

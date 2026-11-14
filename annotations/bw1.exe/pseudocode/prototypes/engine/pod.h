@@ -21,9 +21,9 @@ CPodFile * __cdecl CPodFile::ctor(CPodFile *this_ptr);
 // Address: 0053b210
 CPodFile * __cdecl CPodFile::dtor(CPodFile *this_ptr,uint flags);
 
-// Original: engine_pod.cpp_FUN_0053b230
+// Original: engine_pod.cpp_qsortByFilename_FUN_0053b230
 // Address: 0053b230
-void FUN_0053b230(undefined4 *param_1,undefined4 *param_2);
+int __cdecl qsortByFilename(char **filename1_ptr,char **filename2_ptr);
 
 // Original: engine_pod.cpp_FUN_0053b250
 // Address: 0053b250
@@ -41,9 +41,9 @@ int __cdecl CPodFile::findFileIndex(CPodFile *this_ptr,char *filename);
 // Address: 0053bf40
 void __cdecl CPodFile::populateFileInfo(CPodFile *this_ptr,int file_index,SFoundFileInfo *output_info);
 
-// Original: engine_pod.cpp_FUN_0053bfbe
-// Address: 0053bfbe
-bool FUN_0053bfbe(int *param_1);
+// Original: engine_pod.cpp_FUN_0053bfc0
+// Address: 0053bfc0
+bool FUN_0053bfc0(int *param_1);
 
 // Original: engine_pod.cpp_FUN_0053c290
 // Address: 0053c290
@@ -87,7 +87,7 @@ void __cdecl CPod::cleanup(CPod *this_ptr);
 
 // Original: engine_pod.cpp_findFilesByExtension_FUN_0053c940
 // Address: 0053c940
-int __cdecl findFilesByExtension(int *param_1,byte *param_2,int param_3,int param_4,int param_5);
+int __cdecl findFilesByExtension(CPod *pod,char *extension,char *output_buffer,int max_results,int result_string_length);
 
 // Original: engine_pod.cpp_CPod_initSearch_FUN_0053cb00
 // Address: 0053cb00
@@ -97,9 +97,17 @@ void __cdecl CPod::initSearch(CPod *this_ptr,char *search_pattern,CPodSearchCont
 // Address: 0053cb50
 int __cdecl CPod::getNextSearchResult(CPod *this_ptr,CPodSearchContext *search_context);
 
-// Original: engine_pod.cpp_FUN_0053cc5c
-// Address: 0053cc5c
-void FUN_0053cc5c(undefined4 param_1,char *param_2);
+// Original: engine_pod.cpp_FUN_0053cc60
+// Address: 0053cc60
+void FUN_0053cc60(void);
+
+// Original: engine_pod.cpp_FUN_0053ce50
+// Address: 0053ce50
+undefined4 FUN_0053ce50(undefined4 param_1,undefined4 param_2);
+
+// Original: engine_pod.cpp_CPod_locateFile_FUN_0053cec0
+// Address: 0053cec0
+int __cdecl CPod::locateFile(CPod *this_ptr,undefined4 param_2,undefined4 param_3,int *param_4);
 
 // Original: engine_pod.cpp_CPod_findFile_FUN_0053cf50
 // Address: 0053cf50

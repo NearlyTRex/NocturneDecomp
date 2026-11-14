@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_darkwolf_cpp_staticInit_FUN_00598700(void)
+; void __cdecl core_darkwolf_cpp_staticInit_FUN_00598700(void)
 ;
 ;
 ; Called Functions:

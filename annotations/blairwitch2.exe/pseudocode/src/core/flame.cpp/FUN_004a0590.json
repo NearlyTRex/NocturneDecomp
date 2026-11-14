@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 227,
+    "complexity_score": 45,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 32,
-    "suspect_count": 18,
+    "pseudocode_lines": 30,
+    "suspect_count": 1,
     "suspect_types": [
-      "unknown_field",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 104
+    "total_lines": 102
   },
   "cross_references": [
     {
@@ -41,7 +39,7 @@
     {
       "addr": "0040cf60",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cf60"
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60"
     },
     {
       "addr": "00448860",
@@ -215,142 +213,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 13,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "auStack_28._0_4_ = *(uint *)&this_ptr->field_0x20;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "auStack_28._0_4_ = *(uint *)&this_ptr->field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 14,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "auStack_28._8_4_ = *(uint *)&this_ptr->field_0x28;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "auStack_28._8_4_ = *(uint *)&this_ptr->field_0x28;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 15,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "auStack_28._4_4_ =",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x2b8",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x2b8 * (float)_DAT_005d591d + *(float *)&this_ptr->field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x2b8 * (float)_DAT_005d591d + *(float *)&this_ptr->field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x2c4",
-      "severity": "mild",
-      "text": "((CDemonGlobe *)&this_ptr->field_0x2c4,(CVector3f *)auStack_28);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x3e0",
-      "severity": "mild",
-      "text": "(-*(float *)&this_ptr->field_0x3e0,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x3e0",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x3e0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x3dc",
-      "severity": "mild",
-      "text": "fVar3 = ((float10)local_14 + (float10)*(float *)&this_ptr->field_0x3dc) * (float10)_DAT_005d5925;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x300",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x300 = local_14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x2e0",
-      "severity": "mild",
-      "text": "this_ptr->field_0x2e0 = (char)((int)(((iVar1 >> 8) + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x2c4",
-      "severity": "mild",
-      "text": "((CDemonGlobe *)&this_ptr->field_0x2c4,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x2b8",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x2b8 * *(float *)&this_ptr->field_0x308 *",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x308",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x2b8 * *(float *)&this_ptr->field_0x308 *",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x2e4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2e4 = 2;",
-      "type": "unnamed_field"
     }
   ]
 }

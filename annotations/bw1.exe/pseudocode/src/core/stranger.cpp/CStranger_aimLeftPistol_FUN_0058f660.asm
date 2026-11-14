@@ -9,7 +9,7 @@
 ; undefined        Stack[-0x6c]:1  local_6c
 ;
 ; XREF[1]:
-;   core_stranger.cpp_FUN_00585b00 at 0058667f
+;   core_stranger.cpp_CStranger_processFrame_FUN_00585b00 at 0058667f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_stranger_cpp_005f6f19
@@ -27,14 +27,14 @@
 ;   core_actor.cpp_FUN_00408ac0
 ;   core_actor.cpp_FUN_00408b40
 ;   core_actor.cpp_FUN_00408bb0
-;   core_actor.cpp_FUN_0040cd60
+;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
 ;   core_main.c_FUN_005030e0
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00559250
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00559220
 ;   core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_00559310
 ;   core_setcolid.cpp_FUN_00557300
-;   core_skeleton.cpp_FUN_00569040
-;   core_vecdir.cpp_FUN_005a7520
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
 ;   crt_math.c_acos_FUN_005c1d04
 ;
 ; *****************************************************************************
@@ -228,8 +228,8 @@ section .text
     PUSH EAX                            ; 0058f91b
     LEA ESI,[ESP + 0xa8]                ; 0058f91c
     LEA EDI,[ESP + 0x6c]                ; 0058f923
-    CALL core_skeleton.cpp_FUN_00569040 ; 0058f927
-        ;   XREF to: 00569040 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569040()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040 ; 0058f927
+        ;   XREF to: 00569040 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_00569040(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 0058f92c
     LEA EAX,[ESP + 0x118]               ; 0058f92f
     LEA ESI,[ESP + 0xa0]                ; 0058f936
@@ -269,8 +269,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0058f9b9
     PUSH EAX                            ; 0058f9ba
     LEA ESI,[ESP + 0x80]                ; 0058f9bb
-    CALL core_vecdir.cpp_FUN_005a7520   ; 0058f9c2
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005a7520()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 0058f9c2
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
     ADD ESP,0x4                         ; 0058f9c7
     FLD float ptr [ESP + 0xb0]          ; 0058f9ca
     FMUL ST0                            ; 0058f9d1
@@ -426,8 +426,8 @@ section .text
     FSTP float ptr [ESP + 0xec]         ; 0058fbb4
         ;   Label: LAB_0058fbb4
     PUSH dword ptr [ESP + 0xec]         ; 0058fbbb
-    CALL core_actor.cpp_FUN_0040cd60    ; 0058fbc2
-        ;   XREF to: 0040cd60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cd60()
+    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd60 ; 0058fbc2
+        ;   XREF to: 0040cd60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040cd60(float angle_radians)
     MOV dword ptr [ESP + 0x164],EAX     ; 0058fbc7
     FLD float ptr [ESP + 0x164]         ; 0058fbce
     ADD ESP,0x4                         ; 0058fbd5
@@ -477,8 +477,8 @@ section .text
     FSTP float ptr [ESP + 0xe8]         ; 0058fc53
         ;   Label: LAB_0058fc53
     PUSH dword ptr [ESP + 0xe8]         ; 0058fc5a
-    CALL core_actor.cpp_FUN_0040cd60    ; 0058fc61
-        ;   XREF to: 0040cd60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cd60()
+    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd60 ; 0058fc61
+        ;   XREF to: 0040cd60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040cd60(float angle_radians)
     MOV dword ptr [ESP + 0x164],EAX     ; 0058fc66
     FLD float ptr [ESP + 0x164]         ; 0058fc6d
     ADD ESP,0x4                         ; 0058fc74

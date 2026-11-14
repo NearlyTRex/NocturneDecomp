@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 100,
+    "complexity_score": 25,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 25,
-    "suspect_count": 7,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 100
   },
   "cross_references": [
@@ -119,6 +117,32 @@
     },
     "pcode_op_count": 257
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0056a7d0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0054f360",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a1040",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0051e8c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -149,62 +173,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x2140",
-      "severity": "mild",
-      "text": "*(uint *)(&this_ptr->field_0x2140 + part_index * 4) = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x0",
-      "severity": "mild",
-      "text": "for (puVar1 = &this_ptr_00->field_0x0 + lod_index * 8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x2230",
-      "severity": "mild",
-      "text": "if (lod_index != *(uint *)&this_ptr->field_0x2230) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x2230",
-      "severity": "mild",
-      "text": "(this_ptr_00,*(int *)&this_ptr->field_0x2230,body_part,part_index,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x2234",
-      "severity": "mild",
-      "text": "*(CVector3i **)&this_ptr->field_0x2234,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x21b8",
-      "severity": "mild",
-      "text": "*(int *)(&this_ptr->field_0x21b8 + part_index * 4));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x2140",
-      "severity": "mild",
-      "text": "*(uint *)(&this_ptr->field_0x2140 + part_index * 4) = 0;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

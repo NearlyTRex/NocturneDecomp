@@ -4,13 +4,19 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/enums/EGroundType.h"
 
 // Structure: CBackgroundActor
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x2e0 (736 bytes)
 #pragma pack(push, 1)
 typedef struct CBackgroundActor {
-    char field_0[736]; // 0x0
+    CDemonActor base; // 0x0
+    int cast_shadows_flag; // 0x158, Added in this build
+    CKeyFramedModelInstance model; // 0x15c
+    int collide_with_me; // 0x2d8
+    EGroundType ground_type; // 0x2dc
 } CBackgroundActor;
 #pragma pack(pop)
 

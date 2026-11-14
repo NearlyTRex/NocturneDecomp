@@ -19,19 +19,19 @@ void __cdecl core_actor_cpp_archiveDescription_FUN_0040b350(char *property_descr
                   (property_description,property_name);
       }
     } while (iVar1 != 10);
-    if ((*(byte *)(DAT_007df9b4 + 0xc) & 0x20) == 0) {
+    if ((DAT_007df9b4->_flag & 0x20) == 0) {
       return;
     }
   }
   else if ((DAT_007df9c0 == 0) && (property_name != (char *)0x0)) {
     FUN_005a3140(DAT_007df9b4,"    // %s\n",property_name);
-    if ((*(byte *)(DAT_007df9b4 + 0xc) & 0x20) == 0) {
+    if ((DAT_007df9b4->_flag & 0x20) == 0) {
       return;
     }
   }
   else {
     FUN_005a3140(DAT_007df9b4,&DAT_005b5a76);
-    if ((*(byte *)(DAT_007df9b4 + 0xc) & 0x20) == 0) {
+    if ((DAT_007df9b4->_flag & 0x20) == 0) {
       return;
     }
   }

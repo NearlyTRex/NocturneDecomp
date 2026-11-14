@@ -1,0 +1,297 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 172,
+    "complexity_score": 166,
+    "cross_reference_count": 0,
+    "function_call_count": 10,
+    "global_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 66,
+    "suspect_count": 9,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 238
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00585990",
+    "address_range": [
+      [
+        "00585990",
+        "00585adf"
+      ],
+      [
+        "00585ae1",
+        "00585b59"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_vessel.cpp_CCryptVessel_renderTransparent_FUN_00585990",
+    "signature": "int __cdecl core_vessel_cpp_CCryptVessel_renderTransparent_FUN_00585990(CCryptVessel *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0044fd20",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20"
+    },
+    {
+      "addr": "0044fcc0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0"
+    },
+    {
+      "addr": "0049f850",
+      "is_variadic": false,
+      "name": "core_flame.cpp_CFlame_renderTransparent_FUN_0049f850"
+    },
+    {
+      "addr": "005b7ff0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005b7ff0"
+    },
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
+    },
+    {
+      "addr": "0046b350",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350"
+    },
+    {
+      "addr": "0046b2b0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0"
+    },
+    {
+      "addr": "0046b8d0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0"
+    },
+    {
+      "addr": "0046b8e0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0"
+    },
+    {
+      "addr": "0046b4a0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_pop_FUN_0046b4a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ede0a",
+      "name": "s_MENUCLD2_RAW_005ede09+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ede0b",
+      "name": "s_MENUCLD2_RAW_005ede09+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ede0c",
+      "name": "s_MENUCLD2_RAW_005ede09+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ede0d",
+      "name": "s_MENUCLD2_RAW_005ede09+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ede17",
+      "name": "s_BWATER_d_RAW_005ede17",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0060b280",
+      "name": "DAT_0060b280",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ba5c50",
+      "name": "DAT_01ba5c50",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.108695652173913,
+    "instruction_count": 138,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 3,
+      "CALL": 16,
+      "CBRANCH": 6,
+      "COPY": 122,
+      "FLOAT2FLOAT": 1,
+      "INT_ADD": 51,
+      "INT_AND": 59,
+      "INT_CARRY": 17,
+      "INT_EQUAL": 58,
+      "INT_LESS": 7,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 17,
+      "INT_SLESS": 29,
+      "INT_SUB": 57,
+      "INT_XOR": 4,
+      "LOAD": 20,
+      "POPCOUNT": 29,
+      "RETURN": 1,
+      "ROUND": 1,
+      "STORE": 59,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 567
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005a95c0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00576e10",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005e98b0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00550370",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCryptVessel *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "(DAT_0060b280,&(this_ptr->base).location.position);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "(DAT_0060b280,&(this_ptr->base).orient.vec,(CVector3f *)0x0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "(DAT_0060b280,&CStack_20,&CStack_2c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0xffff);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,48000);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 57,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 60,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0x4000);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 65,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 47,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 28,
+        "vtable_addr": "005fdb44"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

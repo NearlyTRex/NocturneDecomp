@@ -1,0 +1,131 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 27,
+    "complexity_score": 9,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 36
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00585190",
+    "address_range": [
+      [
+        "00585190",
+        "005851c7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_vessel.cpp_CCryptVessel_canPickup_FUN_00585190",
+    "signature": "int __cdecl core_vessel_cpp_CCryptVessel_canPickup_FUN_00585190(CCryptVessel *this_ptr,CDemonActor *picker)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c840",
+      "is_variadic": false,
+      "name": "core_actor.cpp_isOfClass_FUN_0040c840"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.631578947368421,
+    "instruction_count": 19,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 16,
+      "INT_ADD": 9,
+      "INT_AND": 11,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 10,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 5,
+      "INT_SUB": 6,
+      "INT_XOR": 1,
+      "LOAD": 8,
+      "POPCOUNT": 5,
+      "RETURN": 2,
+      "STORE": 4
+    },
+    "pcode_op_count": 88
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005a8dc0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00576610",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005e9100",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0054fbc0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCryptVessel *"
+      },
+      {
+        "is_param": true,
+        "name": "picker",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 140,
+        "vtable_addr": "005fdb44"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

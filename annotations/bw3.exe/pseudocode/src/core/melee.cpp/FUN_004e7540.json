@@ -1,0 +1,183 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 59,
+    "complexity_score": 140,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 40,
+    "suspect_count": 9,
+    "suspect_types": [
+      "raw_address_constant",
+      "unnamed_param"
+    ],
+    "total_lines": 99
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004e7540",
+    "address_range": [
+      [
+        "004e7540",
+        "004e7573"
+      ],
+      [
+        "004e7582",
+        "004e75bb"
+      ]
+    ],
+    "convention": "unknown",
+    "is_ebp_frame": true,
+    "name": "core_melee.cpp_FUN_004e7540",
+    "signature": "void core_melee_cpp_FUN_004e7540(COutStream *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a5bd0",
+      "is_variadic": false,
+      "name": "crt_heap.c__heapwalk_FUN_005a5bd0"
+    },
+    {
+      "addr": "005744b0",
+      "is_variadic": true,
+      "name": "support_trstream.cpp_COutStream_printf_FUN_005744b0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.043478260869565,
+    "instruction_count": 46,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "BRANCHIND": 1,
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 42,
+      "INT_ADD": 16,
+      "INT_AND": 22,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 20,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 10,
+      "INT_SUB": 16,
+      "INT_XOR": 3,
+      "LOAD": 11,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 15
+    },
+    "pcode_op_count": 186
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004eada0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00509b00",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_melee_cpp_FUN_004e7540(COutStream *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,\"%08X %4s %d\\n\",uStack_20,(uint)uStack_1c,uVar2,uStack_1a);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "support_trstream_cpp_COutStream_printf_FUN_005744b0(param_1,\"OK - empty heap\\n\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "support_trstream_cpp_COutStream_printf_FUN_005744b0(param_1,\"ERROR - bad start of heap\\n\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "support_trstream_cpp_COutStream_printf_FUN_005744b0(param_1,\"ERROR - bad node in heap\\n\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "support_trstream_cpp_COutStream_printf_FUN_005744b0(param_1,\"OK - end of heap\\n\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 38,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "support_trstream_cpp_COutStream_printf_FUN_005744b0(param_1,\"ERROR - bad pointer to heap\\n\")",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Raw hex address 0x5c716f assigned to bare local `uVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 16,
+      "match": "0x5c716f",
+      "severity": "moderate",
+      "text": "uVar2 = 0x5c716f;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x5c716a assigned to bare local `uVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 19,
+      "match": "0x5c716a",
+      "severity": "moderate",
+      "text": "uVar2 = 0x5c716a;",
+      "type": "raw_address_constant"
+    }
+  ]
+}

@@ -29,24 +29,24 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[7]:
-;   core_colonel.cpp_FUN_00435830 at 00435ca7
-;   core_gabriela.cpp_FUN_004ad640 at 004ae93d
-;   core_haystack.cpp_FUN_004cc990 at 004cce39
+;   core_colonel.cpp_CColonel_process_FUN_00435830 at 00435ca7
+;   core_gabriela.cpp_CGabriella_process_FUN_004ad640 at 004ae93d
+;   core_haystack.cpp_CHaystack_process_FUN_004cc990 at 004cce39
 ;   core_hero.cpp_FUN_004d0780 at 004d07d7
-;   core_icepick.cpp_FUN_004d4c50 at 004d521e
-;   core_stranger.cpp_FUN_0056e4d0 at 0056e6a7
-;   core_svetlana.cpp_FUN_00570510 at 00570aa3
+;   core_icepick.cpp_CIcePick_process_FUN_004d4c50 at 004d521e
+;   core_stranger.cpp_CStranger_handleActionButton_FUN_0056e4d0 at 0056e6a7
+;   core_svetlana.cpp_CSvetlana_process_FUN_00570510 at 00570aa3
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d9c6c
 ;   undefined4 DAT_005d9c74
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 g_CDemonSetInstance.field1372328_0x14f0a8
+;   undefined4 g_CDemonSetInstance.character_count
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408d30
 ;   core_actor.cpp_FUN_00408d70
-;   core_vecdir.cpp_FUN_005838f0
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 ;
 ; *****************************************************************************
 
@@ -84,7 +84,7 @@ section .text
     MOV EAX,[0x0061b5a8]                ; 004ceee0 | g_CDemonSetPtr
         ;   Label: LAB_004ceee0
     MOV ESI,dword ptr [ESP + 0x70]      ; 004ceee5
-    CMP ESI,dword ptr [EAX + 0x14f0a8]  ; 004ceee9 | g_CDemonSetInstance.field1372328_0x14f0a8
+    CMP ESI,dword ptr [EAX + 0x14f0a8]  ; 004ceee9 | g_CDemonSetInstance.character_count
     JGE 0x004cf014                      ; 004ceeef
         ;   XREF to: 004cf014 (CONDITIONAL_JUMP)  ; LAB_004cf014
     ADD EAX,dword ptr [ESP + 0x6c]      ; 004ceef5
@@ -164,8 +164,8 @@ section .text
     PUSH EAX                            ; 004cefb6
     LEA ESI,[ESP + 0x4]                 ; 004cefb7
     LEA EDI,[ESP + 0x58]                ; 004cefbb
-    CALL core_vecdir.cpp_FUN_005838f0   ; 004cefbf
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005838f0()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 004cefbf
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
     LEA ESI,[ESP + 0x4]                 ; 004cefc4
     ADD ESP,0x4                         ; 004cefc8
     MOVSD ES:EDI,ESI                    ; 004cefcb

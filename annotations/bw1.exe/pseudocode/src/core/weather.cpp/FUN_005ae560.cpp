@@ -2,13 +2,12 @@
 // Address: 005ae560
 // Address Range: [[005ae560, 005ae578]]
 // Convention: unknown
-// Signature: undefined4 core_weather_cpp_FUN_005ae560(void)
+// Signature: float core_weather_cpp_FUN_005ae560(void)
 
 #include "nocturne.h"
 
-uint core_weather_cpp_FUN_005ae560(void)
+float core_weather_cpp_FUN_005ae560(void)
 
 {
-  return *(uint *)
-          (&g_CDemonSetPtr->field_0x14c + *(int *)&g_CDemonSetPtr->field_0x15aeb8 * 0x1a4);
+  return g_CDemonSetPtr->cameras[g_CDemonSetPtr->selected_camera_index].ambient_value;
 }

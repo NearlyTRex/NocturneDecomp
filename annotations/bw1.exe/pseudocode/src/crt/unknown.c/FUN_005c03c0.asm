@@ -9,14 +9,14 @@
 ; XREF[45]:
 ;   cockpit_ckptutil.c_FUN_00438e40 at 00438ead
 ;   core_actor.cpp_CDemonActor_save_FUN_0040adb0 at 0040ae06
-;   core_actor.cpp_FUN_0040b870 at 0040b909
-;   core_actor.cpp_FUN_0040b960 at 0040bad9
-;   core_actor.cpp_FUN_0040bbf0 at 0040bc89
 ;   core_actor.cpp_archiveActor_FUN_0040b6f0 at 0040b73a
+;   core_actor.cpp_archiveBox_FUN_0040bbf0 at 0040bc89
 ;   core_actor.cpp_archiveClothList_FUN_0040bce0 at 0040bde8
 ;   core_actor.cpp_archiveDescription_FUN_0040b110 at 0040b174
 ;   core_actor.cpp_archiveFloat_FUN_0040b5f0 at 0040b65d
 ;   core_actor.cpp_archiveInteger_FUN_0040b670 at 0040b6d9
+;   core_actor.cpp_archiveLocation_FUN_0040b300 at 0040b390
+;   core_actor.cpp_archiveMotionState_FUN_0040b870 at 0040b909
 ;   ... and 35 more
 ;
 ; Called Functions:

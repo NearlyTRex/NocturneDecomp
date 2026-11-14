@@ -13,11 +13,11 @@ CGasMask * __cdecl core_gasmask_cpp_CGasMask_dtor_FUN_004c6800(CGasMask *this_pt
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CGasMaskTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CGasMaskTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  pCVar1 = (CGasMask *)core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)this_ptr,1);
+  pCVar1 = (CGasMask *)core_actor_cpp_CDemonActor_dtor_FUN_00408770(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

@@ -414,7 +414,7 @@
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_0045f3e0
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
 ;   core_dirmat.cpp_FUN_0045f690
 ;   core_dirmat.cpp_FUN_0045f700
 ;   core_dirmat.cpp_FUN_0045f840
@@ -766,8 +766,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0041e609
     MOVSD ES:EDI,ESI                    ; 0041e60a
     MOVSD ES:EDI,ESI                    ; 0041e60b
-    CALL core_dirmat.cpp_FUN_0045f3e0   ; 0041e60c
-        ;   XREF to: 0045f3e0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_0045f3e0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0 ; 0041e60c
+        ;   XREF to: 0045f3e0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 0041e611
     FLD float ptr [EBX + 0x1c]          ; 0041e614
     FMUL float ptr [ESP + 0x50]         ; 0041e617

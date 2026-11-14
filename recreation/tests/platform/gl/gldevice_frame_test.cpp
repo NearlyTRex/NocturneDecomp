@@ -24,8 +24,12 @@ constexpr int kWidth = 8;
 constexpr int kHeight = 4;
 constexpr int kPitch = kWidth * 4;
 
+// Geometry drawn before the 2D asks whether to smooth it; Off unless a test says otherwise.
 struct SFixture {
     SFixture() {
+        EXPECT_CALL(presenter, getAntialias())
+            .Times(::testing::AnyNumber())
+            .WillRepeatedly(Return(EAntialias::Off));
         EXPECT_TRUE(device.setMode(kWidth, kHeight, 32, scanlines));
         gl.read_pixels.assign(static_cast<std::size_t>(kPitch) * kHeight, std::byte{0x5A});
     }
@@ -263,14 +267,57 @@ TEST(CGlDeviceFrame, AReframeThatCannotCopyTheSceneLeavesIt) {
     EXPECT_EQ(f.device.getPipeline().getEpoch(), epoch);
 }
 
-// The engine's own 2D screens never go through the hold buffer.
-TEST(CGlDeviceFrame, GeometryDrawnStraightToTheFrameIsNotAntialiased) {
+// A screen below the hold buffer's size, the menu's moon among them, draws its 3D straight to
+// the frame: smoothed at the lock before its 2D, not reframed, and not again after the 2D
+// until the next frame.
+TEST(CGlDeviceFrame, GeometryDrawnStraightToTheFrameIsAntialiasedBeforeTheTwoD) {
     SFixture f;
+    EXPECT_CALL(f.presenter, getAntialias()).WillRepeatedly(Return(EAntialias::Fxaa));
+    EXPECT_CALL(f.presenter, presentScene(::testing::_, kWidth, kHeight)).Times(1);
     f.drawTriangle();
     f.gl.clear();
     ASSERT_TRUE(f.device.lockFrame());
-    EXPECT_EQ(f.gl.count("ReadPixels"), 1U);
+    EXPECT_EQ(f.gl.count("DrawArrays"), 1U);
+    const std::vector<std::string> names = callNames(f.gl);
+    EXPECT_LT(std::ranges::find(names, "DrawArrays"), std::ranges::find(names, "ReadPixels"));
+    ASSERT_TRUE(f.device.unlockFrame());
+
+    f.drawTriangle();
+    f.gl.clear();
+    ASSERT_TRUE(f.device.lockFrame());
     EXPECT_EQ(f.gl.count("DrawArrays"), 0U);
+    ASSERT_TRUE(f.device.unlockFrame());
+
+    f.device.present();
+    f.drawTriangle();
+    f.gl.clear();
+    ASSERT_TRUE(f.device.lockFrame());
+    EXPECT_EQ(f.gl.count("DrawArrays"), 1U);
+}
+
+// The menu's moon is drawn in an overlay before the 2D, so it is smoothed too; geometry after a
+// scene already smoothed this frame is not, so the scene isn't smoothed twice.
+TEST(CGlDeviceFrame, AnOverlaysGeometryBeforeTheTwoDIsAntialiasedOnce) {
+    SFixture f;
+    EXPECT_CALL(f.presenter, getAntialias()).WillRepeatedly(Return(EAntialias::Fxaa));
+    ASSERT_TRUE(f.device.beginOverlay({}));
+    EXPECT_EQ(f.device.getBatch().addPolygon(3).size(), 3U);
+    f.device.endOverlay();
+    f.gl.clear();
+    ASSERT_TRUE(f.device.lockFrame());
+    EXPECT_EQ(f.gl.count("DrawArrays"), 1U);
+    ASSERT_TRUE(f.device.unlockFrame());
+
+    EXPECT_CALL(f.presenter, presentScene(::testing::_, kWidth, kHeight)).Times(1);
+    f.device.present();
+    f.drawTriangle();
+    f.gl.clear();
+    ASSERT_TRUE(f.device.beginOverlay({}));
+    EXPECT_EQ(f.gl.count("DrawArrays"), 1U);
+    EXPECT_EQ(f.device.getBatch().addPolygon(3).size(), 3U);
+    f.device.endOverlay();
+    ASSERT_TRUE(f.device.lockFrame());
+    EXPECT_EQ(f.gl.count("DrawArrays"), 1U);
 }
 
 TEST(CGlDeviceFrame, AnOverlayNeedsAMode) {

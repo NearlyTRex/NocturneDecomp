@@ -141,6 +141,10 @@ int __cdecl CDemonActor::testLineIntersection(CDemonActor *this_ptr,CVector3f *l
 // Address: 0040a540
 CBoundingBox3D * __cdecl CDemonActor::getWorldBoundingBox(CDemonActor *this_ptr,CBoundingBox3D *output_bbox,SCollisionInfo *collision_info,int bounding_box_type);
 
+// Original: core_actor.cpp_CDemonActor_testRayIntersection_FUN_0040a6c0
+// Address: 0040a6c0
+float __cdecl CDemonActor::testRayIntersection(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,int ray_type,CBoundingBox3D *clip_bounds);
+
 // Original: core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740
 // Address: 0040a740
 float __cdecl CDemonActor::rayIntersect(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,SCollisionInfo *collision_info,int bbox_type,CBoundingBox3D *ray_bbox);

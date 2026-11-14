@@ -13,7 +13,7 @@ void __cdecl core_morph_cpp_CMorphModel_animateFromKeyframedModel_FUN_005b6560(C
   int start_offset;
   int vertex_count;
   
-  vertex_count = *(int *)&model_ptr->field_0x104;
+  vertex_count = model_ptr->vertex_count;
   start_offset = 0;
   vertex_buffer =
        core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_0044e6e0(model_ptr,frame_index);

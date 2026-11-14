@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_platfrm_cpp_staticInit_FUN_005393a0(void)
+; void __cdecl core_platfrm_cpp_staticInit_FUN_005393a0(void)
 ;
 ;
 ; Called Functions:

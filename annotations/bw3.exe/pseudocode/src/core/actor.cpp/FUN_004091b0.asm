@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_actor_cpp_FUN_004091b0(int param_1,float *param_2,float *param_3,float *param_4,int param_5,uint param_6,CBoundingBox3D *param_7)
+; float core_actor_cpp_FUN_004091b0(int param_1,CBoundingBox3D *param_2,float *param_3,float *param_4,int param_5,uint param_6,CBoundingBox3D *param_7)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x120]:8  local_120
@@ -30,7 +30,7 @@
 ;
 ; XREF[2]:
 ;   core_setcolid.cpp_FUN_0053d270 at 0053d567
-;   core_spike.cpp_FUN_00566fd0 at 00567440
+;   core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_00566fd0 at 00567440
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_005b5558
@@ -38,7 +38,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 DAT_01d71de0
 ;   undefined4 DAT_01d71de4
-;   undefined4 g_CDemonSetInstance.field1439476_0x15f6f4
+;   undefined4 g_CDemonSetInstance.skip_exact_collisions
 ;   undefined4 DAT_0272af44
 ;   undefined4 DAT_0272af48
 ;   undefined4 DAT_0272af4c
@@ -60,7 +60,7 @@
 ;   core_main.c_FUN_004e4330
 ;   core_skeleton.cpp_CDeformableModel_findMaxWeightBone_FUN_0054bde0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
-;   core_skeleton.cpp_FUN_0054f400
+;   core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_0054f400
 ;
 ; *****************************************************************************
 
@@ -250,7 +250,7 @@ section .text
     JC 0x004091c9                       ; 004093cf
         ;   XREF to: 004091c9 (CONDITIONAL_JUMP)  ; LAB_004091c9
     MOV EAX,[0x00603b28]                ; 004093d5 | g_CDemonSetPtr
-    MOV EAX,dword ptr [EAX + 0x15f6f4]  ; 004093da | g_CDemonSetInstance.field1439476_0x15f6f4
+    MOV EAX,dword ptr [EAX + 0x15f6f4]  ; 004093da | g_CDemonSetInstance.skip_exact_collisions
     TEST EAX,EAX                        ; 004093e0
     JZ 0x00409573                       ; 004093e2
         ;   XREF to: 00409573 (CONDITIONAL_JUMP)  ; LAB_00409573
@@ -424,8 +424,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x24]      ; 00409603
     MOV EDI,dword ptr [EAX + 0x20]      ; 00409606
     PUSH EDI                            ; 00409609
-    CALL core_skeleton.cpp_FUN_0054f400 ; 0040960a
-        ;   XREF to: 0054f400 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054f400()
+    CALL core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_0054f400 ; 0040960a
+        ;   XREF to: 0054f400 (UNCONDITIONAL_CALL)  ; float core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_0054f400(CDeformableModelInstance * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction)
     MOV dword ptr [ESP + 0x128],EAX     ; 0040960f
     FLD float ptr [ESP + 0x128]         ; 00409616
     ADD ESP,0xc                         ; 0040961d

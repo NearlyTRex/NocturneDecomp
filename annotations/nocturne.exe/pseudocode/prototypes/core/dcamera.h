@@ -41,9 +41,9 @@ void __cdecl CDemonCamera::initLookupTable(CDemonCamera *this_ptr);
 // Address: 00440010
 void __cdecl CDemonCamera::init(CDemonCamera *this_ptr,int screen_height);
 
-// Original: core_dcamera.cpp_CDemonCamera_FUN_004401b0
+// Original: core_dcamera.cpp_CDemonCamera_setFramebufferSize_FUN_004401b0
 // Address: 004401b0
-void __cdecl CDemonCamera(CDemonCamera *this_ptr,int param_2,int param_3);
+void __cdecl CDemonCamera::setFramebufferSize(CDemonCamera *this_ptr,int width,int height);
 
 // Original: core_dcamera.cpp_CDemonCamera_free_FUN_004401d0
 // Address: 004401d0
@@ -137,9 +137,9 @@ void __cdecl CDemonCamera::precomputeLight(CDemonCamera *this_ptr,CDemonLight *l
 // Address: 004421b0
 void __cdecl CDemonCamera::precomputeNormals(CDemonCamera *this_ptr);
 
-// Original: core_dcamera.cpp_FUN_004425d0
+// Original: core_dcamera.cpp_shadeScreenPixel_FUN_004425d0
 // Address: 004425d0
-void FUN_004425d0(undefined4 param_1,int param_2,int param_3);
+void __cdecl shadeScreenPixel(uint unused,int x,int y);
 
 // Original: core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_004425f0
 // Address: 004425f0
@@ -149,8 +149,8 @@ int __cdecl CDemonCamera::sampleLightingAntialiased(CDemonCamera *this_ptr,CVect
 // Address: 00442c50
 int __cdecl CDemonCamera::calculateAttenuatedDirectionalLight(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,CVector3i *light_direction);
 
-// Original: core_dcamera.cpp_CDemonCamera_saveCameraTransform_FUN_00442d9c
-// Address: 00442d9c
+// Original: core_dcamera.cpp_CDemonCamera_saveCameraTransform_FUN_00442d90
+// Address: 00442d90
 void __cdecl CDemonCamera::saveCameraTransform(CDemonCamera *this_ptr,CVector3f *new_position,CMatrix3x3f *rotation_matrix,CMatrix3x3f *transform_matrix);
 
 // Original: core_dcamera.cpp_CDemonCamera_restoreTransform_FUN_00443050
@@ -333,9 +333,9 @@ void __cdecl saveCameraFog(SFog *fog,_FILE *file_handle);
 // Address: 00447e80
 void __cdecl CDemonCamera::initCameraShake(CDemonCamera *this_ptr,float peak_intensity,float attack_time,float sustain_duration ,float decay_time);
 
-// Original: core_dcamera.cpp_CDemonCamera_FUN_00447f20
+// Original: core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00447f20
 // Address: 00447f20
-CVector3f * __cdecl CDemonCamera(CDemonCamera *this_ptr,CVector3f *output_bounds);
+CVector3f * __cdecl CDemonCamera::computeVisibleFrustumBounds(CDemonCamera *this_ptr,CVector3f *output_bounds);
 
 // Original: core_dcamera.cpp_CDemonCamera_saveZBufferScanlines_FUN_00448310
 // Address: 00448310

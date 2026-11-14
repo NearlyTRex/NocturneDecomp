@@ -14,29 +14,29 @@ void __cdecl core_charactr_cpp_CCharacter_igniteBone_FUN_00426e70(CCharacter *th
   CSkeleton *skeleton;
   CCharacter *pCVar3;
   
-  if ((*(int *)&this_ptr->field_0x3564 < 0x32) &&
+  if ((this_ptr->fire_count < 0x32) &&
      (((include_hero != 0 ||
-       (iVar1 = core_actor_cpp_FUN_0040c840((CDemonActor *)this_ptr,"KCHero" + 1),
-       iVar1 == 0)) && (this_ptr->field_0x2514 != '\0')))) {
-    iVar1 = core_skeleton_cpp_FUN_00548250
-                      ((CDeformableModelInstance *)&this_ptr->field_0x2b4,position);
+       (iVar1 = core_actor_cpp_isOfClass_FUN_0040c840(&this_ptr->base,"KCHero" + 1),
+       iVar1 == 0)) && ((this_ptr->model).model_name[0] != '\0')))) {
+    iVar1 = core_skeleton_cpp_CDeformableModelInstance_findClosestBone_FUN_00548250
+                      (&this_ptr->model,position);
     iVar2 = 0;
     pCVar3 = this_ptr;
-    if (0 < *(int *)&this_ptr->field_0x3564) {
+    if (0 < this_ptr->fire_count) {
       do {
-        if (iVar1 == *(int *)&pCVar3->field_0x3574) {
+        if (iVar1 == pCVar3->fires[0].bone_index) {
           return;
         }
         iVar2 = iVar2 + 1;
-        pCVar3 = (CCharacter *)&pCVar3->field_0x18;
-      } while (iVar2 < *(int *)&this_ptr->field_0x3564);
+        pCVar3 = (CCharacter *)((pCVar3->base).actor_name + 0x18);
+      } while (iVar2 < this_ptr->fire_count);
     }
-    *(int *)&this_ptr->field_0x3568 = flame_type;
-    *(float *)&this_ptr->field_0x356c = flame_scale;
+    this_ptr->pending_flame_type = flame_type;
+    this_ptr->flame_scale = flame_scale;
     skeleton = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
-                         ((CDeformableModelInstance *)&this_ptr->field_0x2b4);
-    core_charactr_cpp_FUN_00425bb0(this_ptr,skeleton,iVar1);
-    *(uint *)&this_ptr->field_0xfc = 1;
+                         (&this_ptr->model);
+    core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_00425bb0(this_ptr,skeleton,iVar1);
+    (this_ptr->base).is_transparent = 1;
     return;
   }
   return;

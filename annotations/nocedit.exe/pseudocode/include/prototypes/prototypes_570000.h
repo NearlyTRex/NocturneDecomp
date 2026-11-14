@@ -72,8 +72,8 @@ CBoundingBox3D * __cdecl core_set_cpp_CBoundingBox3D_assign_FUN_005714c0(CBoundi
 CVector3f * __cdecl core_set_cpp_CVector3f_arrdtor4000_FUN_00571510(CVector3f *this_ptr,uint flags);
 C3DSCamera * __cdecl core_set_cpp_C3DSCamera_arrdtor250_FUN_00571530(C3DSCamera *objs,uint flags);
 C3DSLight * __cdecl core_set_cpp_C3DSLight_arrdtor200_FUN_00571550(C3DSLight *objs,uint flags);
-SRoom * __cdecl core_set_cpp_SRoom_arrdtor20_FUN_00571570(SRoom *objs,uint flags);
-SVDBox * __cdecl core_set_cpp_SVDBox_arrdtor250_FUN_00571590(SVDBox *objs,uint flags);
+SRoom * __cdecl core_set_cpp_SRoom_arrdtor20_FUN_00571570(SRoom *this_ptr,uint flags);
+SVDBox * __cdecl core_set_cpp_SVDBox_arrdtor250_FUN_00571590(SVDBox *this_ptr,uint flags);
 void __cdecl core_setcolid_cpp_staticInit_FUN_005715b0(void);
 int __cdecl core_setcolid_cpp_rayTestQuadFloor_FUN_005715d0(CVector3f *position,float search_radius,CVector3f *out_height,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3,CVector3f *vertex4,CVector3f *out_transformed_normal);
 float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDemonSet *this_ptr,CVector3f *position,float radius);
@@ -113,7 +113,7 @@ SIntersectXZCylinder * __cdecl core_setcolid_cpp_SIntersectXZCylinder_dtor_FUN_0
 void __cdecl core_setcolid_cpp_SDamageInfo_copy_FUN_005746d0(SDamageInfo *this_ptr,SDamageInfo *other);
 SCollisionReturnInfo * __cdecl core_setcolid_cpp_SCollisionReturnInfo_ctor_FUN_00574750(SCollisionReturnInfo *this_ptr);
 SCollisionReturnInfo * __cdecl core_setcolid_cpp_SCollisionReturnInfo_dtor_FUN_00574760(SCollisionReturnInfo *this_ptr,uint flags);
-SRaytraceState * __cdecl core_setcolid_cpp_SRaytraceState_arrdtor5_FUN_00574770(SRaytraceState *objs,uint flags);
+SRaytraceState * __cdecl core_setcolid_cpp_SRaytraceState_arrdtor5_FUN_00574770(SRaytraceState *this_ptr,uint flags);
 void __cdecl core_setdir_cpp_staticInit_FUN_00574790(void);
 void __cdecl core_setdir_cpp_backupZBufferScanlines_FUN_005747d0(int count);
 void __cdecl core_setdir_cpp_restoreZBufferTable_FUN_00574830(int count);

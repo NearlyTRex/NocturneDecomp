@@ -72,8 +72,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
+;   core_sound.cpp_CSound_process_FUN_0055ff40 at 0055ff7f
 ;   core_sound.cpp_FUN_0055fd30 at 0055fd6d
-;   core_sound.cpp_FUN_0055ff40 at 0055ff7f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_castle_005d5147
@@ -90,17 +90,17 @@
 ;   undefined4 DAT_005d5197
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 g_CDemonLightInstance.field4_0x4
+;   undefined4 g_CDemonLightInstance.base.base.position
 ;   ... and 16 more
 ;
 ; Called Functions:
+;   core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_00449f80
 ;   core_dcamera.cpp_FUN_00449eb0
-;   core_dcamera.cpp_FUN_00449f80
 ;   core_dirmat.cpp_FUN_0045b800
-;   core_setcolid.cpp_FUN_0053cad0
+;   core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_0053cad0
 ;   crt_string.c__strnicmp_FUN_005a3f90
-;   sound_sndmain.cpp_FUN_00557020
-;   sound_sndmain.cpp_FUN_00557080
+;   sound_sndmain.cpp_set3DListenerOrient_FUN_00557080
+;   sound_sndmain.cpp_set3DListenerPos_FUN_00557020
 ;
 ; *****************************************************************************
 
@@ -115,14 +115,14 @@ section .text
     SUB ESP,0x1b4                       ; 0055e8b6
     AND ESP,0xfffffff8                  ; 0055e8bc
     MOV EAX,[0x005fe9dc]                ; 0055e8bf | g_CGamePtr
-    CMP dword ptr [EAX + 0x264],0x0     ; 0055e8c4 | g_CGameInstance.field612_0x264
+    CMP dword ptr [EAX + 0x264],0x0     ; 0055e8c4 | g_CGameInstance.goggles_active
     JNZ 0x0055eb52                      ; 0055e8cb
         ;   XREF to: 0055eb52 (CONDITIONAL_JUMP)  ; LAB_0055eb52
     LEA EDI,[ESP + 0xd4]                ; 0055e8d1
     MOV ESI,0x2038f50                   ; 0055e8d8
-    MOVSD ES:EDI,ESI                    ; 0055e8dd | g_CDemonCameraInstance.field4_0x4
-    MOVSD ES:EDI,ESI                    ; 0055e8de | g_CDemonCameraInstance.field8_0x8
-    MOVSD ES:EDI,ESI                    ; 0055e8df | g_CDemonCameraInstance.field12_0xc
+    MOVSD ES:EDI,ESI                    ; 0055e8dd | g_CDemonCameraInstance.base.position
+    MOVSD ES:EDI,ESI                    ; 0055e8de | g_CDemonCameraInstance.base.position+4
+    MOVSD ES:EDI,ESI                    ; 0055e8df | g_CDemonCameraInstance.base.position+8
     LEA EDI,[ESP + 0x17c]               ; 0055e8e0
     LEA ESI,[ESP + 0xd4]                ; 0055e8e7
     LEA EAX,[ESP + 0x17c]               ; 0055e8ee
@@ -176,7 +176,7 @@ section .text
     MOV ECX,0xa                         ; 0055e9b4
     LEA EDI,[ESP + 0x14]                ; 0055e9b9
     MOV ESI,0x2038f5c                   ; 0055e9bd
-    MOVSD.REP ES:EDI,ESI                ; 0055e9c2 | g_CDemonCameraInstance.field16_0x10 | g_CDemonCameraInstance.field20_0x14
+    MOVSD.REP ES:EDI,ESI                ; 0055e9c2 | g_CDemonCameraInstance.base.rotation_matrix.m[0].x | g_CDemonCameraInstance.base.rotation_matrix.m[0].y
     MOV ECX,0xa                         ; 0055e9c4
     LEA EDI,[ESP + 0x64]                ; 0055e9c9
     LEA ESI,[ESP + 0x14]                ; 0055e9cd
@@ -194,8 +194,8 @@ section .text
     LEA EDI,[ESP + 0x128]               ; 0055e9fe
     FSTP double ptr [ESP]               ; 0055ea05
     XOR EBX,EBX                         ; 0055ea08
-    CALL sound_sndmain.cpp_FUN_00557020 ; 0055ea0a
-        ;   XREF to: 00557020 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00557020()
+    CALL sound_sndmain.cpp_set3DListenerPos_FUN_00557020 ; 0055ea0a
+        ;   XREF to: 00557020 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_set3DListenerPos_FUN_00557020(double pos_x, double pos_y, double pos_z)
     ADD ESP,0x18                        ; 0055ea0f
     LEA EAX,[ESP + 0xe0]                ; 0055ea12
     MOV ECX,0x3f800000                  ; 0055ea19
@@ -255,11 +255,11 @@ section .text
     PUSH dword ptr [ESP + 0x130]        ; 0055eb03
     PUSH dword ptr [ESP + 0x130]        ; 0055eb0a
     PUSH dword ptr [ESP + 0x130]        ; 0055eb11
-    CALL sound_sndmain.cpp_FUN_00557080 ; 0055eb18
-        ;   XREF to: 00557080 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00557080()
+    CALL sound_sndmain.cpp_set3DListenerOrient_FUN_00557080 ; 0055eb18
+        ;   XREF to: 00557080 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_set3DListenerOrient_FUN_00557080(float front_x, float front_y, float front_z, float up_x, ...)
     MOV EAX,[0x005fe9dc]                ; 0055eb1d | g_CGamePtr
     ADD ESP,0x24                        ; 0055eb22
-    MOV EDX,dword ptr [EAX + 0x264]     ; 0055eb25 | g_CGameInstance.field612_0x264
+    MOV EDX,dword ptr [EAX + 0x264]     ; 0055eb25 | g_CGameInstance.goggles_active
     MOV dword ptr [0x02cf5698],EBX      ; 0055eb2b | DAT_02cf5698
     TEST EDX,EDX                        ; 0055eb31
     JZ 0x0055ebd0                       ; 0055eb33
@@ -279,9 +279,9 @@ section .text
     LEA EDI,[ESP + 0x128]               ; 0055eb52
         ;   Label: LAB_0055eb52
     MOV ESI,0x1d1e364                   ; 0055eb59
-    MOVSD ES:EDI,ESI                    ; 0055eb5e | g_CDemonLightInstance.field4_0x4
-    MOVSD ES:EDI,ESI                    ; 0055eb5f | g_CDemonLightInstance.field8_0x8
-    MOVSD ES:EDI,ESI                    ; 0055eb60 | g_CDemonLightInstance.field12_0xc
+    MOVSD ES:EDI,ESI                    ; 0055eb5e | g_CDemonLightInstance.base.base.position
+    MOVSD ES:EDI,ESI                    ; 0055eb5f | g_CDemonLightInstance.base.base.position+4
+    MOVSD ES:EDI,ESI                    ; 0055eb60 | g_CDemonLightInstance.base.base.position+8
     LEA EDI,[ESP + 0x8c]                ; 0055eb61
     LEA ESI,[ESP + 0x128]               ; 0055eb68
     LEA EDX,[ESP + 0x8c]                ; 0055eb6f
@@ -302,7 +302,7 @@ section .text
         ;   Label: LAB_0055ebae
     LEA EDI,[ESP + 0x3c]                ; 0055ebb3
     MOV ESI,0x1d1e370                   ; 0055ebb7
-    MOVSD.REP ES:EDI,ESI                ; 0055ebbc | g_CDemonLightInstance.field16_0x10 | g_CDemonLightInstance.field20_0x14
+    MOVSD.REP ES:EDI,ESI                ; 0055ebbc | g_CDemonLightInstance.base.base.rotation_matrix.m[0].x | g_CDemonLightInstance.base.base.rotation_matrix.m[0].y
     MOV ECX,0xa                         ; 0055ebbe
     LEA EDI,[ESP + 0x64]                ; 0055ebc3
     LEA ESI,[ESP + 0x3c]                ; 0055ebc7
@@ -325,7 +325,7 @@ section .text
         ;   Label: LAB_0055ebfd
     MOV EBX,0x1                         ; 0055ec04
     MOV dword ptr [ESP + 0x1ac],EAX     ; 0055ec09
-    MOV EDX,dword ptr [0x02039090]      ; 0055ec10 | g_CDemonCameraInstance.field324_0x144
+    MOV EDX,dword ptr [0x02039090]      ; 0055ec10 | g_CDemonCameraInstance.framebuffer_width
         ;   Label: LAB_0055ec10
     IMUL EDX,EBX                        ; 0055ec16
     MOV EAX,EDX                         ; 0055ec19
@@ -334,7 +334,7 @@ section .text
     SBB EAX,EDX                         ; 0055ec21
     SAR EAX,0x5                         ; 0055ec23
     MOV EDI,dword ptr [ESP + 0x1ac]     ; 0055ec26
-    MOV EDX,dword ptr [0x02039094]      ; 0055ec2d | g_CDemonCameraInstance.field328_0x148
+    MOV EDX,dword ptr [0x02039094]      ; 0055ec2d | g_CDemonCameraInstance.framebuffer_height
     IMUL EDX,EDI                        ; 0055ec33
     MOV ESI,EAX                         ; 0055ec36
     MOV EAX,EDX                         ; 0055ec38
@@ -435,8 +435,8 @@ section .text
     PUSH 0x2038f4c                      ; 0055ed6f
     LEA ESI,[ESP + 0x19c]               ; 0055ed74
     LEA EDI,[ESP + 0xb8]                ; 0055ed7b
-    CALL core_dcamera.cpp_FUN_00449f80  ; 0055ed82
-        ;   XREF to: 00449f80 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00449f80()
+    CALL core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_00449f80 ; 0055ed82
+        ;   XREF to: 00449f80 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_00449f80(CDemonCamera * this_ptr, CVector3i * input_ptr, CVector3i * output_ptr)
     LEA ESI,[ESP + 0x19c]               ; 0055ed87
     ADD ESP,0x8                         ; 0055ed8e
     MOVSD ES:EDI,ESI                    ; 0055ed91
@@ -505,8 +505,8 @@ section .text
     FADD float ptr [ESP + 0x124]        ; 0055eea0
     PUSH EAX                            ; 0055eea7
     FSTP float ptr [ESP + 0x128]        ; 0055eea8
-    CALL core_setcolid.cpp_FUN_0053cad0 ; 0055eeaf
-        ;   XREF to: 0053cad0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_0053cad0()
+    CALL core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_0053cad0 ; 0055eeaf
+        ;   XREF to: 0053cad0 (UNCONDITIONAL_CALL)  ; float core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_0053cad0(CDemonSet * this_ptr, CVector3f * position)
     MOV dword ptr [ESP + 0x1b8],EAX     ; 0055eeb4
     FLD float ptr [ESP + 0x1b8]         ; 0055eebb
     ADD ESP,0x8                         ; 0055eec2

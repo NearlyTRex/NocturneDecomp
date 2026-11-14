@@ -13,21 +13,21 @@ void __cdecl staticInit(void);
 // Address: 0058a640
 CWeather * __cdecl CWeather::ctor(CWeather *this_ptr);
 
-// Original: core_weather.cpp_FUN_0058a660
+// Original: core_weather.cpp_CWeather_update_FUN_0058a660
 // Address: 0058a660
-void __cdecl FUN_0058a660(CWeather *this_ptr);
+void __cdecl CWeather::update(CWeather *this_ptr);
 
-// Original: core_weather.cpp_FUN_0058aa30
+// Original: core_weather.cpp_CWeather_createLightningStrike_FUN_0058aa30
 // Address: 0058aa30
-void __cdecl FUN_0058aa30(CWeather *this_ptr,float flash_timer,int play_sound);
+void __cdecl CWeather::createLightningStrike(CWeather *this_ptr,float flash_timer,int play_sound);
 
 // Original: core_weather.cpp_CWeather_createThunder_FUN_0058acf0
 // Address: 0058acf0
 void __cdecl CWeather::createThunder(CWeather *this_ptr);
 
-// Original: core_weather.cpp_FUN_0058ad40
+// Original: core_weather.cpp_CWeather_renderParticles_FUN_0058ad40
 // Address: 0058ad40
-void __cdecl FUN_0058ad40(CWeather *this_ptr);
+void __cdecl CWeather::renderParticles(CWeather *this_ptr);
 
 // Original: core_weather.cpp_CWeather_setWeatherType_FUN_0058b470
 // Address: 0058b470

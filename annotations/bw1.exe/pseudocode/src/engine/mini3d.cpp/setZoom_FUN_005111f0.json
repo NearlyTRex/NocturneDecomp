@@ -1,0 +1,107 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 5,
+    "complexity_score": 21,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 6,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 11
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005111f0",
+    "address_range": [
+      [
+        "005111f0",
+        "00511200"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_mini3d.cpp_setZoom_FUN_005111f0",
+    "signature": "void __cdecl engine_mini3d_cpp_setZoom_FUN_005111f0(float value)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005e8b63",
+      "name": "DAT_005e8b63",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d22528",
+      "name": "DAT_01d22528",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.0,
+    "instruction_count": 4,
+    "opcode_distribution": {
+      "COPY": 19,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_MULT": 1,
+      "INT_ADD": 2,
+      "LOAD": 2,
+      "RETURN": 1
+    },
+    "pcode_op_count": 28
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004f2460",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004ec9c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "value",
+        "offset": 4,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

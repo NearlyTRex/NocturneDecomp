@@ -2,18 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 71,
+    "complexity_score": 135,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 41,
-    "suspect_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 55,
+    "suspect_count": 6,
     "suspect_types": [
-      "unnamed_field",
+      "negative_offset",
+      "pointer_cast",
+      "pointer_truncation",
       "warning_overlapping_globals"
     ],
-    "total_lines": 104
+    "total_lines": 118
   },
   "cross_references": [
     {
@@ -122,6 +124,26 @@
     },
     "pcode_op_count": 249
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004149f0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004185c0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00415370",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -148,12 +170,44 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x8",
+      "description": "Negative struct offset (wrong base type)",
+      "line": 31,
+      "match": "pCVar8[-1].",
       "severity": "mild",
-      "text": "pCVar6 = core_morph_cpp_CMorph_ctor_FUN_005b6e60((CMorph *)&pCVar5[1].field_0x8);",
-      "type": "unnamed_field"
+      "text": "((CKeyFramedModelInstance *)(pCVar8[-1].models[1].textures + 0xf),",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Pointer value `&pCVar10->models[0].part_count` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 55,
+      "match": "(int)&pCVar10->models[0].part_count",
+      "severity": "moderate",
+      "text": "*(char *)((int)&pCVar10->models[0].part_count + 1) = cVar2;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&pCVar10->models[0].part_count` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 56,
+      "match": "(int)&pCVar10->models[0].part_count",
+      "severity": "moderate",
+      "text": "pCVar10 = (CMorph *)((int)&pCVar10->models[0].part_count + 2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 55,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(char *)((int)&pCVar10->models[0].part_count + 1) = cVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 56,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pCVar10 = (CMorph *)((int)&pCVar10->models[0].part_count + 2);",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

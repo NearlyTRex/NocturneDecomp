@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 101,
+    "complexity_score": 15,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 16,
-    "suspect_count": 8,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 40
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 39
   },
   "cross_references": [
     {
@@ -30,9 +28,9 @@
         "004cbdb9"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_gun.cpp_CGun_ctor_FUN_004cbd50",
-    "signature": "CGun * core_gun_cpp_CGun_ctor_FUN_004cbd50(CGun *this_ptr)"
+    "signature": "CGun * __cdecl core_gun_cpp_CGun_ctor_FUN_004cbd50(CGun *this_ptr)"
   },
   "function_calls": [
     {
@@ -88,6 +86,32 @@
     },
     "pcode_op_count": 78
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004e85d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9756
+    },
+    "bw3.exe": {
+      "addr": "004d0f60",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9756
+    },
+    "nocedit.exe": {
+      "addr": "004f02f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9756
+    },
+    "nocturne.exe": {
+      "addr": "004b2760",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9756
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -104,72 +128,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "*(byte **)&pCVar1->field_0x2b0 = &g_CGunVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&pCVar1->field_0x2b4,\"revolver.kfm\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x434",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x434 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x438",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x438 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x440",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x440 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x444",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x444 = 0x42480000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x448",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x448 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x6c4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x6c4 = 6;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

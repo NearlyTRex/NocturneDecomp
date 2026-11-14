@@ -7,47 +7,47 @@
 
 // Original: core_spike.cpp_staticInit_FUN_00566800
 // Address: 00566800
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_spike.cpp_factoryFuncSpike_FUN_00566830
 // Address: 00566830
-void factoryFuncSpike(void);
+CSpike * __cdecl factoryFuncSpike(void);
 
 // Original: core_spike.cpp_CSpike_getActorType_FUN_00566850
 // Address: 00566850
-CDemonActorType * CSpike::getActorType(CSpike *this_ptr);
+CDemonActorType * __cdecl CSpike::getActorType(CSpike *this_ptr);
 
 // Original: core_spike.cpp_CSpike_ctor_FUN_00566860
 // Address: 00566860
 CSpike * __cdecl CSpike::ctor(CSpike *this_ptr);
 
-// Original: core_spike.cpp_FUN_005669a0
+// Original: core_spike.cpp_CSpike_setup_FUN_005669a0
 // Address: 005669a0
-void FUN_005669a0(CDemonActor *param_1);
+void __cdecl CSpike::setup(CSpike *this_ptr);
 
-// Original: core_spike.cpp_FUN_00566a80
+// Original: core_spike.cpp_CSpike_process_FUN_00566a80
 // Address: 00566a80
-void FUN_00566a80(CSpike *param_1,float param_2);
+void __cdecl CSpike::process(CSpike *this_ptr,float delta_time);
 
-// Original: core_spike.cpp_FUN_00566db0
+// Original: core_spike.cpp_CSpike_renderOpaque_FUN_00566db0
 // Address: 00566db0
-int FUN_00566db0(CDemonActor *param_1);
+int __cdecl CSpike::renderOpaque(CSpike *this_ptr);
 
-// Original: core_spike.cpp_FUN_00566e30
+// Original: core_spike.cpp_CSpike_getBoundingBox_FUN_00566e30
 // Address: 00566e30
-void FUN_00566e30(int param_1);
+CBoundingBox3D * __cdecl CSpike::getBoundingBox(CSpike *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_spike.cpp_CSpike_archive_FUN_00566e70
 // Address: 00566e70
 void __cdecl CSpike::archive(CSpike *this_ptr);
 
-// Original: core_spike.cpp_FUN_00566fc0
+// Original: core_spike.cpp_CSpike_getCollisionType_FUN_00566fc0
 // Address: 00566fc0
-undefined4 FUN_00566fc0(void);
+ECollisionType __cdecl CSpike::getCollisionType(CSpike *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_spike.cpp_FUN_00566fd0
+// Original: core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_00566fd0
 // Address: 00566fd0
-void __cdecl FUN_00566fd0(CSpike *this_ptr);
+void __cdecl CSpike::testCollisionWithCharacters(CSpike *this_ptr);
 
 // Original: core_spike.cpp_CSpike_dtor_FUN_005675e0
 // Address: 005675e0

@@ -78,7 +78,7 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)engine_alphabit_cpp_staticInit_FUN_004118e0
+        .func = (RUNTIME_HANDLER_FUNC *)core_bmppuzzl_cpp_staticInit_FUN_004118e0
     },
     {
         .status = 0x00,
@@ -128,7 +128,7 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_constrct_cpp_staticInit_FUN_00442380
+        .func = (RUNTIME_HANDLER_FUNC *)core_construc_cpp_staticInit_FUN_00442380
     },
     {
         .status = 0x00,
@@ -158,7 +158,7 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_hostage_cpp_staticInit_FUN_00454750
+        .func = (RUNTIME_HANDLER_FUNC *)core_demnfolk_cpp_staticInit_FUN_00454750
     },
     {
         .status = 0x00,
@@ -178,7 +178,7 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)unkaddr_0045c160_cpp_FUN_0045c160
+        .func = (RUNTIME_HANDLER_FUNC *)core_disease_cpp_FUN_0045c160
     },
     {
         .status = 0x00,
@@ -288,7 +288,7 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)unkaddr_004a76f0_cpp_FUN_004a76f0
+        .func = (RUNTIME_HANDLER_FUNC *)core_flashlit_cpp_FUN_004a76f0
     },
     {
         .status = 0x00,
@@ -388,12 +388,12 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)unkaddr_004d8280_cpp_FUN_004d8280
+        .func = (RUNTIME_HANDLER_FUNC *)core_imp_cpp_FUN_004d8280
     },
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)engine_alphabit_cpp_staticInit_FUN_004d9c90
+        .func = (RUNTIME_HANDLER_FUNC *)core_inv_cpp_staticInit_FUN_004d9c90
     },
     {
         .status = 0x00,
@@ -433,7 +433,7 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_script_cpp_staticInit_FUN_004e42c0
+        .func = (RUNTIME_HANDLER_FUNC *)core_main_c_staticInit_FUN_004e42c0
     },
     {
         .status = 0x00,
@@ -448,7 +448,7 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_minecar_cpp_staticInit_FUN_004ec6f0
+        .func = (RUNTIME_HANDLER_FUNC *)engine_mini3d_cpp_staticInit_FUN_004ec6f0
     },
     {
         .status = 0x00,
@@ -458,7 +458,7 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)unkaddr_004f5a70_cpp_FUN_004f5a70
+        .func = (RUNTIME_HANDLER_FUNC *)core_mirror_cpp_FUN_004f5a70
     },
     {
         .status = 0x00,
@@ -548,7 +548,7 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_setedit_cpp_staticInit_FUN_00543400
+        .func = (RUNTIME_HANDLER_FUNC *)core_shadow_cpp_staticInit_FUN_00543400
     },
     {
         .status = 0x00,
@@ -573,7 +573,7 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)unkaddr_00550580_cpp_FUN_00550580
+        .func = (RUNTIME_HANDLER_FUNC *)core_skeleton_cpp_FUN_00550580
     },
     {
         .status = 0x00,
@@ -583,7 +583,7 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)unkaddr_0055a660_cpp_FUN_0055a660
+        .func = (RUNTIME_HANDLER_FUNC *)sound_sndmain_cpp_staticInit_FUN_0055a660
     },
     {
         .status = 0x00,
@@ -648,7 +648,7 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_thehand_cpp_staticInit_FUN_0056c000
+        .func = (RUNTIME_HANDLER_FUNC *)core_toxhand_cpp_staticInit_FUN_0056c000
     },
     {
         .status = 0x00,
@@ -673,7 +673,7 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_turret_cpp_staticInit_FUN_00572510
+        .func = (RUNTIME_HANDLER_FUNC *)support_trstream_cpp_staticInit_FUN_00572510
     },
     {
         .status = 0x00,
@@ -683,7 +683,7 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)unkaddr_00576230_cpp_FUN_00576230
+        .func = (RUNTIME_HANDLER_FUNC *)core_tvbat_cpp_FUN_00576230
     },
     {
         .status = 0x00,
@@ -733,7 +733,7 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_zombprie_cpp_staticInit_FUN_0058d2c0
+        .func = (RUNTIME_HANDLER_FUNC *)core_zombiepriest_cpp_staticInit_FUN_0058d2c0
     },
     {
         .status = 0x00,
@@ -748,7 +748,7 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_tawiscar_cpp_staticInit_FUN_00593d40
+        .func = (RUNTIME_HANDLER_FUNC *)core_tawiscara_cpp_staticInit_FUN_00593d40
     },
     {
         .status = 0x00,
@@ -838,22 +838,22 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x20,
-        .func = (RUNTIME_HANDLER_FUNC *)unkafter_asgaya_cpp_FUN_005af560
+        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_FUN_005af560
     },
     {
         .status = 0x00,
         .priority = 0x20,
-        .func = (RUNTIME_HANDLER_FUNC *)unkafter_asgaya_cpp_FUN_005ad524
+        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_FUN_005ad524
     },
     {
         .status = 0x00,
         .priority = 0x03,
-        .func = (RUNTIME_HANDLER_FUNC *)unkafter_asgaya_cpp_FUN_005aeba0
+        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_FUN_005aeba0
     },
     {
         .status = 0x00,
         .priority = 0x20,
-        .func = (RUNTIME_HANDLER_FUNC *)unkafter_2d_cpp_FUN_005b0234
+        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_FUN_005b0234
     },
     {
         .status = 0x00,
@@ -883,12 +883,12 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x20,
-        .func = (RUNTIME_HANDLER_FUNC *)unkafter_asgaya_cpp_FUN_005af64c
+        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_FUN_005af64c
     },
     {
         .status = 0x00,
         .priority = 0x0A,
-        .func = (RUNTIME_HANDLER_FUNC *)unkafter_asgaya_cpp_FUN_005add3c
+        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_FUN_005add3c
     }
 };
 
@@ -896,46 +896,246 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
 TerminatedCString s_d3d_dll_00606733 = "d3d.dll";
 
 // WatcomStaticDestructorNode
-WatcomStaticDestructorNode DAT_00600130 = {};
-WatcomStaticDestructorNode DAT_00600140 = {};
-WatcomStaticDestructorNode DAT_00600150 = {};
-WatcomStaticDestructorNode DAT_00600160 = {};
-WatcomStaticDestructorNode DAT_00600170 = {};
-WatcomStaticDestructorNode DAT_0060029C = {};
-WatcomStaticDestructorNode DAT_00600302 = {};
-WatcomStaticDestructorNode DAT_00600312 = {};
-WatcomStaticDestructorNode DAT_00600322 = {};
-WatcomStaticDestructorNode DAT_00600332 = {};
-WatcomStaticDestructorNode DAT_00600358 = {};
-WatcomStaticDestructorNode DAT_00600368 = {};
-WatcomStaticDestructorNode DAT_00600378 = {};
-WatcomStaticDestructorNode DAT_00600388 = {};
-WatcomStaticDestructorNode DAT_00600398 = {};
-WatcomStaticDestructorNode DAT_006003A8 = {};
-WatcomStaticDestructorNode DAT_006004A8 = {};
-WatcomStaticDestructorNode DAT_006006B8 = {};
-WatcomStaticDestructorNode DAT_006006C8 = {};
-WatcomStaticDestructorNode DAT_006006D8 = {};
-WatcomStaticDestructorNode DAT_006006E8 = {};
-WatcomStaticDestructorNode g_CNetGameInstanceDestructorNode = {};
-WatcomStaticDestructorNode g_CMouseDestructorNode = {};
-WatcomStaticDestructorNode g_PathMapCacheDestructorNode = {};
-WatcomStaticDestructorNode g_CDemonPodMainDestructorNode = {};
-WatcomStaticDestructorNode DAT_006039C0 = {};
-WatcomStaticDestructorNode DAT_006039D0 = {};
-WatcomStaticDestructorNode g_CDemonSetDestructorNode = {};
-WatcomStaticDestructorNode g_CDemonCameraDestructorNode = {};
-WatcomStaticDestructorNode g_CDemonRaytraceDestructorNode = {};
-WatcomStaticDestructorNode g_CKeyFramedModelDestructorNode = {};
-WatcomStaticDestructorNode g_DeformableModelPoolDestructorNode = {};
-WatcomStaticDestructorNode g_SkeletonPoolDestructorNode = {};
-WatcomStaticDestructorNode g_SfxSamplesDestructorNode = {};
-WatcomStaticDestructorNode g_CMP3DecoderDestructorNode1 = {};
-WatcomStaticDestructorNode g_CMP3DecoderDestructorNode2 = {};
-WatcomStaticDestructorNode DAT_006045E0 = {};
-WatcomStaticDestructorNode g_CTextureListDestructorNode = {};
-WatcomStaticDestructorNode DAT_00606ABC = {};
-WatcomStaticDestructorNode g_CWaterDestructorNode = {};
+WatcomStaticDestructorNode DAT_00600130 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E20C0,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CAlphaBitmap_01d70890
+};
+WatcomStaticDestructorNode DAT_00600140 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E20CC,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CAlphaBitmap_01d708a4
+};
+WatcomStaticDestructorNode DAT_00600150 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E20D8,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CAlphaBitmap_01d708b8
+};
+WatcomStaticDestructorNode DAT_00600160 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E20E4,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CAlphaBitmap_01d708cc
+};
+WatcomStaticDestructorNode DAT_00600170 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E20F0,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CAlphaBitmap_ARRAY_01d708e0
+};
+WatcomStaticDestructorNode DAT_0060029C = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E2380,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CAlphaBitmap_01d70be8
+};
+WatcomStaticDestructorNode DAT_00600302 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E2730,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CAlphaBitmap_01d71dec
+};
+WatcomStaticDestructorNode DAT_00600312 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E273C,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CAlphaBitmap_01d71e00
+};
+WatcomStaticDestructorNode DAT_00600322 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E2748,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CAlphaBitmap_01d71e14
+};
+WatcomStaticDestructorNode DAT_00600332 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E2754,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CAlphaBitmap_01d71e28
+};
+WatcomStaticDestructorNode DAT_00600358 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E28C0,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_MenuBitmaps
+};
+WatcomStaticDestructorNode DAT_00600368 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E28CC,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CMoonInstance
+};
+WatcomStaticDestructorNode DAT_00600378 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E28D8,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_MenuBlurLeft
+};
+WatcomStaticDestructorNode DAT_00600388 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E28E4,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_MenuBlurMiddle
+};
+WatcomStaticDestructorNode DAT_00600398 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E28F0,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_MenuBlurRight
+};
+WatcomStaticDestructorNode DAT_006003A8 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E28FC,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CalibrationBitmap
+};
+WatcomStaticDestructorNode DAT_006004A8 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E2950,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CMini3DInstance
+};
+WatcomStaticDestructorNode DAT_006006B8 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E2BB0,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CAlphaBitmap_01d883a8
+};
+WatcomStaticDestructorNode DAT_006006C8 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E2BBC,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_MoonAnimTextures
+};
+WatcomStaticDestructorNode DAT_006006D8 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E2BC8,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CAlphaBitmap_01d88614
+};
+WatcomStaticDestructorNode DAT_006006E8 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E2BD4,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&CAlphaBitmap_01d88628
+};
+WatcomStaticDestructorNode g_CNetGameInstanceDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E2CD0,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CNetGameInstance
+};
+WatcomStaticDestructorNode g_CMouseDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E2D80,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CMouseInstance
+};
+WatcomStaticDestructorNode g_PathMapCacheDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E3150,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_PathMapCache
+};
+WatcomStaticDestructorNode g_CDemonPodMainDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)&g_CDemonPodDestructorNode,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CDemonPodInstance
+};
+WatcomStaticDestructorNode DAT_006039C0 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E3990,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_ScriptPickList
+};
+WatcomStaticDestructorNode DAT_006039D0 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E399C,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CScriptInstance
+};
+WatcomStaticDestructorNode g_CDemonSetDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E3B90,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CDemonSetInstance
+};
+WatcomStaticDestructorNode g_CDemonCameraDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E3B9C,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CDemonCameraInstance
+};
+WatcomStaticDestructorNode g_CDemonRaytraceDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E3BA8,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CDemonRaytraceInstance
+};
+WatcomStaticDestructorNode g_CKeyFramedModelDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E3BB4,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CKeyFramedModelInstance
+};
+WatcomStaticDestructorNode g_DeformableModelPoolDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E4740,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_DeformableModelPool
+};
+WatcomStaticDestructorNode g_SkeletonPoolDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E474C,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_SkeletonPool
+};
+WatcomStaticDestructorNode g_SfxSamplesDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E4800,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_SfxSamples
+};
+WatcomStaticDestructorNode g_CMP3DecoderDestructorNode1 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E480C,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CMP3DecoderInstance
+};
+WatcomStaticDestructorNode g_CMP3DecoderDestructorNode2 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E4818,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CMP3DecoderInstanceOther
+};
+WatcomStaticDestructorNode DAT_006045E0 = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E49B0,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CStrListInstance
+};
+WatcomStaticDestructorNode g_CTextureListDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E5350,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CTextureListInstance
+};
+WatcomStaticDestructorNode DAT_00606ABC = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E5A40,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_COutStreamDebugInstance
+};
+WatcomStaticDestructorNode g_CWaterDestructorNode = {
+    .next = nullptr,
+    .destructor_info = (WatcomDestructorCall *)0x005E5E70,
+    .registration_type = 0x00000001,
+    .object_instance = (void *)&g_CWaterInstance
+};
 
 // int
 int g_CHolycrossClassVersion = 0x1;

@@ -2,15 +2,29 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonTriangle;
+struct CVector3i;
+struct SMRGLPrimitiveQuad;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CKeyFramedModel.h"
+#include "types/classes/CKeyFramedModelPart.h"
+#include "types/classes/CMatrix3x3f.h"
+#include "types/classes/CVector3f.h"
+#include "types/structs/SMRGLHeaderBasic.h"
+#include "types/structs/SMRGLTextureModel.h"
 
 // Structure: CMoon
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 2768. As bw1: the ctor constructs three CKeyFramedModels at +0x8, +0x3a0, +0x738 and zeroes +0, the dtor destroys them in reverse. init loads only bitmaps here, so the models stay empty.
 // Ghidra size: 0xad0 (2768 bytes)
 #pragma pack(push, 1)
 typedef struct CMoon {
-    char field_0[2768]; // 0x0
+    int is_loaded; // 0x0, init (005023e0) loads the 75 title bitmaps while 0 and sets 1; free (00502450) clears it
+    char field_4[4]; // 0x4
+    CKeyFramedModel models[3]; // 0x8, ctor and dtor at +0x8, +0x3a0, +0x738
 } CMoon;
 #pragma pack(pop)
 

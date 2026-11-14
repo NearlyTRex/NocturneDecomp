@@ -26,10 +26,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_inv.cpp_FUN_004dd670 at 004dd7aa
+;   core_inv.cpp_CInventory_renderSelectedItems_FUN_004dd670 at 004dd7aa
 ;
 ; Referenced Globals:
-;   void* PTR_core_actor.cpp_FUN_00409e40_00600000 = 00409e40
+;   undefined4 g_CSimpleCrossVTable._ub.processActionButton
 ;   undefined4 DAT_0060b280
 ;   undefined4 DAT_00617da4
 ;   undefined4 DAT_01ba5c50
@@ -101,7 +101,7 @@ section .text
     MOV EBX,dword ptr [EAX]             ; 004dd58d | DAT_01ba5c50
     MOV dword ptr [EBX + 0x78],0xf00000 ; 004dd58f
     MOV EBX,dword ptr [EAX]             ; 004dd596 | DAT_01ba5c50
-    MOV dword ptr [EBX + 0x7c],0x600000 ; 004dd598 | PTR_core_actor.cpp_FUN_00409e40_00600000
+    MOV dword ptr [EBX + 0x7c],0x600000 ; 004dd598 | g_CSimpleCrossVTable._ub.processActionButton
     MOV EBX,dword ptr [EAX]             ; 004dd59f | DAT_01ba5c50
     MOV dword ptr [EBX + 0xa0],ECX      ; 004dd5a1
     MOV ECX,dword ptr [EAX]             ; 004dd5a7 | DAT_01ba5c50
@@ -115,7 +115,7 @@ section .text
     MOV EDX,dword ptr [EAX]             ; 004dd5d1 | DAT_01ba5c50
     PUSH 0xa3                           ; 004dd5d3
     XOR EDI,EDI                         ; 004dd5d8
-    MOV dword ptr [EDX + 0xac],0x600000 ; 004dd5da | PTR_core_actor.cpp_FUN_00409e40_00600000
+    MOV dword ptr [EDX + 0xac],0x600000 ; 004dd5da | g_CSimpleCrossVTable._ub.processActionButton
     LEA EDX,[ESP + 0x4]                 ; 004dd5e4
     MOV dword ptr [ESP + 0x8],ESI       ; 004dd5e8
     MOV dword ptr [ESP + 0x18],EDI      ; 004dd5ec

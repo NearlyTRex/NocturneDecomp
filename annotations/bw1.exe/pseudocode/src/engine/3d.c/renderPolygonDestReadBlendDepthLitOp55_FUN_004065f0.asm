@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_3d_c_renderPolygonDestReadBlendDepthLitOp55_FUN_004065f0(int param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonDestReadBlendDepthLitOp55_FUN_004065f0(SMRGLHeaderPrimitive *prim)
 ;
+; Parameters:
+; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061b4a0
@@ -30,7 +32,7 @@ section .text
     LEA EAX,[EBX + 0x8]                 ; 004065fa
     PUSH EAX                            ; 004065fd
     CALL engine_3d.c_isVisiblePlane_FUN_00403920 ; 004065fe
-        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403920()
+        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403920(SClipPlane * plane)
     ADD ESP,0x4                         ; 00406603
     TEST EAX,EAX                        ; 00406606
     JZ 0x00406670                       ; 00406608
@@ -56,7 +58,7 @@ section .text
     PUSH EBX                            ; 00406653
     MOV dword ptr [0x01c51d18],EDX      ; 00406654 | DAT_01c51d18
     CALL engine_3d.c_calculatePolygonLighting_FUN_004039d0 ; 0040665a
-        ;   XREF to: 004039d0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_calculatePolygonLighting_FUN_004039d0()
+        ;   XREF to: 004039d0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_calculatePolygonLighting_FUN_004039d0(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 0040665f
     PUSH ESI                            ; 00406662
     MOV ECX,dword ptr [EBX + 0x4]       ; 00406663

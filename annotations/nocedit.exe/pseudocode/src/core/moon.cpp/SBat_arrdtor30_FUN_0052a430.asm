@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SBat * __cdecl core_moon_cpp_SBat_arrdtor30_FUN_0052a430(SBat *objs,uint flags)
+; SBat * __cdecl core_moon_cpp_SBat_arrdtor30_FUN_0052a430(SBat *this_ptr,uint flags)
 ;
 ; Parameters:
-; SBat *           Stack[0x4]:4   objs
+; SBat *           Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:

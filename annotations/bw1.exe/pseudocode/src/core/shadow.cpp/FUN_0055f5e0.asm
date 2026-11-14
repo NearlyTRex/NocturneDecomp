@@ -5,14 +5,14 @@
 ;
 ;
 ; XREF[1]:
-;   core_shadow.cpp_FUN_0055de50 at 0055e873
+;   core_shadow.cpp_CShadow_process_FUN_0055de50 at 0055e873
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shb_emerge_wav_005f1712
 ;   TerminatedCString s_child_laugh_wav_005f1723
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_005735a0
+;   sound_sndmain.cpp_isSfxPlaying_FUN_005735a0
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 0055f5e1
     MOV EDX,dword ptr [EBX + 0xc2b0]    ; 0055f5e5
     PUSH EDX                            ; 0055f5eb
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 0055f5ec
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 0055f5ec
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 0055f5f1
     TEST EAX,EAX                        ; 0055f5f4
     JNZ 0x0055f623                      ; 0055f5f6

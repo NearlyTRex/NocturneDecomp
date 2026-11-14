@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 137,
+    "complexity_score": 72,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 42,
-    "suspect_count": 8,
+    "suspect_count": 2,
     "suspect_types": [
       "shadow_pointer_walk",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 143
@@ -171,6 +170,32 @@
     },
     "pcode_op_count": 291
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00541250",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005638c0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0059a3f0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00517da0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 24,
     "local_size": 4,
@@ -225,59 +250,11 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0xbc",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0xbc = num_textures;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0xc00",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0xc00 = num_parts;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0xb8",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0xb8 = num_texture_sets;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x4 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x8 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar1->vertices[0].a`). Replace `pCVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 42,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "pCVar1 = (CDeformableModel *)&pCVar1->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar1->owner`). Replace `pCVar1->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 42,
-      "match": "pCVar1 = (T *)&pCVar1->FIELD",
+      "match": "pCVar1 = (T *)&pCVar1->FIELD[N].SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar1 = (CDeformableModel *)&pCVar1->field_0x8;",
+      "text": "pCVar1 = (CDeformableModel *)&pCVar1->lod_info[0].shadow_only_flag;",
       "type": "shadow_pointer_walk"
     }
   ]

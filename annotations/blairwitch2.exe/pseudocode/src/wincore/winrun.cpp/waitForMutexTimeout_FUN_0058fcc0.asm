@@ -10,8 +10,8 @@
 ; undefined8       Stack[-0x8]:8  local_8
 ;
 ; XREF[2]:
-;   sound_sndmain.cpp_FUN_00553580 at 005535a3
-;   support_trisock.cpp_FUN_0057a47c at 0057a4d2
+;   sound_sndmain.cpp_processAudio_FUN_00553580 at 005535a3
+;   support_trisock.cpp_FUN_0057a480 at 0057a4d2
 ;
 ; Referenced Globals:
 ;   void* PTR_WaitForSingleObject_005c866c = 001c9290

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_chain_cpp_CChain_getActorType_FUN_00435650(CChain *this_ptr)
+; CDemonActorType * __cdecl core_chain_cpp_CChain_getActorType_FUN_00435650(CChain *this_ptr)
 ;
 ; Parameters:
 ; CChain *         Stack[0x4]:4   this_ptr

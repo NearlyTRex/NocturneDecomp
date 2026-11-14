@@ -14,10 +14,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
-;   core_bodypart.cpp_FUN_00419b10 at 00419b63
+;   core_bodypart.cpp_CBodyPart_onDropped_FUN_00419b10 at 00419b63
 ;   core_boxactor.cpp_CBoxActor_onDropped_FUN_00422c70 at 00422cb9
 ;   core_fire.cpp_CStake_spawn_FUN_004acb60 at 004ace1c
-;   core_fire.cpp_FUN_004b1c50 at 004b1d52
+;   core_fire.cpp_CToss_create_FUN_004b1c50 at 004b1d52
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_FUN_0045f700

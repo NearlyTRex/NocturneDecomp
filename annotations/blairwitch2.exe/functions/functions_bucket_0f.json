@@ -1,23 +1,5 @@
 [
   {
-    "addr":"004cc78f",
-    "body":[
-      {
-        "end":"004cc7c3",
-        "size":53,
-        "start":"004cc78f"
-      }
-    ],
-    "importable":true,
-    "name":"core_haystack.cpp_FUN_004cc78f",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
-  },
-  {
     "addr":"004fd58f",
     "body":[
       {
@@ -29,10 +11,35 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_mmx.c_getCPUInfo_FUN_004fd58f",
-    "ret":"undefined1",
+    "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"cpu_info",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SCPUInfo*"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -48,6 +55,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005bf78f",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -66,6 +74,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005bf98f",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true

@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 93,
+    "complexity_score": 6,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 8,
-    "suspect_count": 8,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 40
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 38
   },
   "cross_references": [],
   "function": {
@@ -69,6 +67,32 @@
     },
     "pcode_op_count": 92
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00477730",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0048fc20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0049a4e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0046c300",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -92,70 +116,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,0x5bcc51,this_ptr,&this_ptr->field_0x4,&this_ptr->field_0x8,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,0x5bcc51,this_ptr,&this_ptr->field_0x4,&this_ptr->field_0x8,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "&this_ptr->field_0xc,&this_ptr->field_0x10,&this_ptr->field_0x14,&this_ptr->field_0x18,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "&this_ptr->field_0xc,&this_ptr->field_0x10,&this_ptr->field_0x14,&this_ptr->field_0x18,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "&this_ptr->field_0xc,&this_ptr->field_0x10,&this_ptr->field_0x14,&this_ptr->field_0x18,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "&this_ptr->field_0xc,&this_ptr->field_0x10,&this_ptr->field_0x14,&this_ptr->field_0x18,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "&this_ptr->field_0x1c,&this_ptr->field_0x20);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "&this_ptr->field_0x1c,&this_ptr->field_0x20);",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

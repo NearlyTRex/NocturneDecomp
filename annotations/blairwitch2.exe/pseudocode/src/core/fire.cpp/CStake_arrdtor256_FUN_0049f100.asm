@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CStake * core_fire_cpp_CStake_arrdtor256_FUN_0049f100(CStake *this_ptr,uint flags)
+; CStake * __cdecl core_fire_cpp_CStake_arrdtor256_FUN_0049f100(CStake *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CStake *         Stack[0x4]:4   this_ptr
@@ -20,7 +20,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 0049f10a
     PUSH EDX                            ; 0049f10e
     CALL crt_memory.c___arrfini_FUN_005b854f ; 0049f10f
-        ;   XREF to: 005b854f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrfini_FUN_005b854f()
+        ;   XREF to: 005b854f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005b854f(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0049f114
     RET                                 ; 0049f117
 

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_kedward.cpp_FUN_00590010 at 00590b79
+;   core_kedward.cpp_CKedward_process_FUN_00590010 at 00590b79
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0

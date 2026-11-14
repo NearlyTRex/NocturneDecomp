@@ -5,34 +5,38 @@
 // Function prototypes for engine/winfont.cpp
 // Generated from Ghidra function signatures
 
-// Original: engine_winfont.cpp_FUN_005b1ad0
+// Original: engine_winfont.cpp_CWinFont_ctor_FUN_005b1ad0
 // Address: 005b1ad0
-CWinFont * __cdecl FUN_005b1ad0(CWinFont *this_ptr,char *font_name,int font_height,int y_offset1,int y_offset2);
+CWinFont * __cdecl CWinFont::ctor(CWinFont *this_ptr,char *font_name,int font_height,int y_offset1,int y_offset2);
 
 // Original: engine_winfont.cpp_CWinFont_dtor_FUN_005b1b90
 // Address: 005b1b90
 CWinFont * __cdecl CWinFont::dtor(CWinFont *this_ptr,uint flags);
 
-// Original: engine_winfont.cpp_FUN_005b1c00
+// Original: engine_winfont.cpp_CWinFont_drawText_FUN_005b1c00
 // Address: 005b1c00
-undefined4 FUN_005b1c00(CWinFont *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
+int __cdecl CWinFont::drawText(CWinFont *this_ptr,char *text_string,int x,int y,int foreground_color,int background_color);
 
 // Original: engine_winfont.cpp_FUN_005b1c50
 // Address: 005b1c50
 void FUN_005b1c50(int param_1,undefined4 param_2,LPCSTR param_3,int param_4,int param_5,undefined4 param_6);
 
-// Original: engine_winfont.cpp_FUN_005b1e90
+// Original: engine_winfont.cpp_CWinFont_createTextBackground_FUN_005b1e90
 // Address: 005b1e90
-int __cdecl FUN_005b1e90(CWinFont *this_ptr,int width,int height);
+int __cdecl CWinFont::createTextBackground(CWinFont *this_ptr,int width,int height);
 
-// Original: engine_winfont.cpp_FUN_005b2080
+// Original: engine_winfont.cpp_CWinFont_reset_FUN_005b2080
 // Address: 005b2080
-void __cdecl FUN_005b2080(CWinFont *this_ptr);
+void __cdecl CWinFont::reset(CWinFont *this_ptr);
 
-// Original: engine_winfont.cpp_FUN_005b2100
+// Original: engine_winfont.cpp_CWinFont_getStringWidth_FUN_005b2100
 // Address: 005b2100
-undefined4 FUN_005b2100(CWinFont *param_1,LPCSTR param_2);
+int __cdecl CWinFont::getStringWidth(CWinFont *this_ptr,char *text_string);
 
-// Original: engine_winfont.cpp_FUN_005b2160
+// Original: engine_winfont.cpp_CWinFont_getStringHeight_FUN_005b2160
 // Address: 005b2160
-int FUN_005b2160(CWinFont *param_1,LPCSTR param_2);
+int __cdecl CWinFont::getStringHeight(CWinFont *this_ptr,char *text_string);
+
+// Original: engine_winfont.cpp_FUN_005b21d0
+// Address: 005b21d0
+undefined4 FUN_005b21d0(void);

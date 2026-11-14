@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 173,
-    "complexity_score": 375,
+    "complexity_score": 108,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 65,
-    "suspect_count": 30,
+    "pseudocode_lines": 63,
+    "suspect_count": 4,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_field"
+      "undefined_data"
     ],
-    "total_lines": 238
+    "total_lines": 236
   },
   "cross_references": [
     {
@@ -143,6 +142,32 @@
     },
     "pcode_op_count": 792
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004cb400",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004d0610",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004ef990",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004b1e10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 144,
     "local_size": 132,
@@ -245,244 +270,36 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "row_00 = (world_column - *(int *)&this_ptr->field_0x2c) + *(int *)&this_ptr->field_0x10;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "row_00 = (world_column - *(int *)&this_ptr->field_0x2c) + *(int *)&this_ptr->field_0x10;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "column = (world_row - *(int *)&this_ptr->field_0x30) + *(int *)&this_ptr->field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "column = (world_row - *(int *)&this_ptr->field_0x30) + *(int *)&this_ptr->field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "row = world_row & *(uint *)&this_ptr->field_0xc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "column_00 = world_column & *(uint *)&this_ptr->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x4c = iVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x50 = iVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x54",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x54 = iVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Undefined global data reference",
       "line": 35,
-      "match": "field_0x58",
+      "match": "DAT_00629024",
       "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x58 = iVar1;",
-      "type": "unnamed_field"
+      "text": "uVar2 = (&DAT_00629024)[this_ptr->vertex_indices[3] * 0xc] &",
+      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 36,
       "match": "DAT_00629024",
       "severity": "mild",
-      "text": "uVar2 = (&DAT_00629024)[*(int *)&this_ptr->field_0x58 * 0xc] &",
+      "text": "(&DAT_00629024)[iVar1 * 0xc] & (&DAT_00629024)[this_ptr->vertex_indices[1] * 0xc] &",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Undefined global data reference",
       "line": 36,
-      "match": "field_0x58",
+      "match": "DAT_00629024",
       "severity": "mild",
-      "text": "uVar2 = (&DAT_00629024)[*(int *)&this_ptr->field_0x58 * 0xc] &",
-      "type": "unnamed_field"
+      "text": "(&DAT_00629024)[iVar1 * 0xc] & (&DAT_00629024)[this_ptr->vertex_indices[1] * 0xc] &",
+      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 37,
       "match": "DAT_00629024",
       "severity": "mild",
-      "text": "(&DAT_00629024)[*(int *)&this_ptr->field_0x4c * 0xc] &",
+      "text": "(&DAT_00629024)[this_ptr->vertex_indices[2] * 0xc];",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "(&DAT_00629024)[*(int *)&this_ptr->field_0x4c * 0xc] &",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_00629024",
-      "severity": "mild",
-      "text": "(&DAT_00629024)[*(int *)&this_ptr->field_0x50 * 0xc] &",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "(&DAT_00629024)[*(int *)&this_ptr->field_0x50 * 0xc] &",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_00629024",
-      "severity": "mild",
-      "text": "(&DAT_00629024)[*(int *)&this_ptr->field_0x54 * 0xc];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x54",
-      "severity": "mild",
-      "text": "(&DAT_00629024)[*(int *)&this_ptr->field_0x54 * 0xc];",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "local_64 = *(uint *)&this_ptr->field_0x4c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "local_68 = *(uint *)&this_ptr->field_0x50;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0x54",
-      "severity": "mild",
-      "text": "local_6c = *(uint *)&this_ptr->field_0x54;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "local_2c = *(uint *)&this_ptr->field_0x4c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 52,
-      "match": "field_0x54",
-      "severity": "mild",
-      "text": "local_30 = *(uint *)&this_ptr->field_0x54;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x58",
-      "severity": "mild",
-      "text": "local_34 = *(uint *)&this_ptr->field_0x58;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 58,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "local_64 = *(uint *)&this_ptr->field_0x4c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 59,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "local_68 = *(uint *)&this_ptr->field_0x50;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 60,
-      "match": "field_0x58",
-      "severity": "mild",
-      "text": "local_6c = *(uint *)&this_ptr->field_0x58;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 63,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "local_2c = *(uint *)&this_ptr->field_0x50;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 64,
-      "match": "field_0x54",
-      "severity": "mild",
-      "text": "local_30 = *(uint *)&this_ptr->field_0x54;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 65,
-      "match": "field_0x58",
-      "severity": "mild",
-      "text": "local_34 = *(uint *)&this_ptr->field_0x58;",
-      "type": "unnamed_field"
     }
   ]
 }

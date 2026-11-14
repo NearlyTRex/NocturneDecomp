@@ -7,7 +7,7 @@
 ; CAnvil *         Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408850
+;   core_actor.cpp_CDemonActor_setup_FUN_00408850
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_004688e0
 ;
 ; *****************************************************************************
@@ -17,8 +17,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 0040e660
         ;   Label: core_anvil.cpp_CAnvil_setup_FUN_0040e660
     PUSH EDX                            ; 0040e664
-    CALL core_actor.cpp_FUN_00408850    ; 0040e665
-        ;   XREF to: 00408850 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_00408850(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_setup_FUN_00408850 ; 0040e665
+        ;   XREF to: 00408850 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408850(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0040e66a
     MOV EAX,dword ptr [ESP + 0x4]       ; 0040e66d
     ADD EAX,0x158                       ; 0040e671

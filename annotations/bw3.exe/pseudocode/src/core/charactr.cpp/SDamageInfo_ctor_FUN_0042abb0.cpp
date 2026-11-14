@@ -9,19 +9,19 @@
 SDamageInfo * __cdecl core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(SDamageInfo *this_ptr)
 
 {
-  *(uint *)(this_ptr + 0x28) = 0;
-  *(uint *)(this_ptr + 0x2c) = 0;
-  *(uint *)this_ptr = 0xffffffff;
-  *(uint *)(this_ptr + 8) = 0;
-  *(uint *)(this_ptr + 0x14) = 0;
-  *(uint *)(this_ptr + 0x10) = *(uint *)(this_ptr + 0x14);
-  *(uint *)(this_ptr + 0xc) = *(uint *)(this_ptr + 0x10);
-  *(uint *)(this_ptr + 0x18) = 0x41a00000;
-  *(uint *)(this_ptr + 0x24) = 0;
-  *(uint *)(this_ptr + 0x20) = *(uint *)(this_ptr + 0x24);
-  *(uint *)(this_ptr + 0x1c) = *(uint *)(this_ptr + 0x20);
-  *(uint *)(this_ptr + 0x30) = 100;
-  *(uint *)(this_ptr + 0x34) = 0;
-  *(uint *)(this_ptr + 0x38) = 0;
+  this_ptr->ammo_type = AMMO_TYPE_GENERIC;
+  this_ptr->dismember_prob = 0.0;
+  this_ptr->hit_part_index = -1;
+  this_ptr->gore_multiplier = 0.0;
+  (this_ptr->impact_point).z = 0.0;
+  (this_ptr->impact_point).y = (this_ptr->impact_point).z;
+  (this_ptr->impact_point).x = (this_ptr->impact_point).y;
+  this_ptr->impact_force = 20.0;
+  (this_ptr->impact_direction).z = 0.0;
+  (this_ptr->impact_direction).y = (this_ptr->impact_direction).z;
+  (this_ptr->impact_direction).x = (this_ptr->impact_direction).y;
+  this_ptr->damage_type = DAMAGE_TYPE_ATTACK_GENERIC;
+  this_ptr->attacker = (CDemonActor *)0x0;
+  this_ptr->wielder = (CDemonActor *)0x0;
   return this_ptr;
 }

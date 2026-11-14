@@ -1,14 +1,12 @@
 // Name: core_hero.cpp_CHeroPlaceholder_ctor_FUN_004d0940
 // Address: 004d0940
 // Address Range: [[004d0940, 004d0998]]
-// Convention: unknown
-// Signature: CHeroPlaceholder * core_hero_cpp_CHeroPlaceholder_ctor_FUN_004d0940(CHeroPlaceholder *this_ptr)
+// Convention: __cdecl
+// Signature: CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_ctor_FUN_004d0940(CHeroPlaceholder *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CHeroPlaceholder * core_hero_cpp_CHeroPlaceholder_ctor_FUN_004d0940(CHeroPlaceholder *this_ptr)
+CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_ctor_FUN_004d0940(CHeroPlaceholder *this_ptr)
 
 {
   char cVar1;
@@ -17,12 +15,11 @@ CHeroPlaceholder * core_hero_cpp_CHeroPlaceholder_ctor_FUN_004d0940(CHeroPlaceho
   char *pcVar4;
   
   pcVar3 = &DAT_005da037;
-  pCVar2 = (CHeroPlaceholder *)core_actor_cpp_CDemonActor_ctor_FUN_00408790((CDemonActor *)this_ptr)
-  ;
-  *(byte **)&pCVar2->field_0x2b0 = &g_CHeroPlaceholderVTable;
-  *(uint *)&pCVar2->field_0xfc = 1;
-  pcVar4 = &pCVar2->field_0x2b8;
-  *(uint *)&pCVar2->field_0x2b4 = 0;
+  pCVar2 = (CHeroPlaceholder *)core_actor_cpp_CDemonActor_ctor_FUN_00408790(&this_ptr->base);
+  (pCVar2->base).vtable._ub = &g_CHeroPlaceholderVTable;
+  (pCVar2->base).is_transparent = 1;
+  pcVar4 = pCVar2->hero_name;
+  pCVar2->index = 0;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;

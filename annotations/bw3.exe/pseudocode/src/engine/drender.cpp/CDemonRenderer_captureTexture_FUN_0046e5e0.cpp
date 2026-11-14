@@ -11,13 +11,13 @@
 void __cdecl engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(CDemonRenderer *this_ptr,SMRGLTextureBasic *texture)
 
 {
-  SMRGLTextureBasic SVar1;
+  char cVar1;
   int iVar2;
-  SMRGLTextureBasic *pSVar3;
-  SMRGLTextureBasic *pSVar4;
+  char *pcVar3;
+  char *pcVar4;
   
   engine_texture_cpp_FUN_0056aa10(texture);
-  if (*(int *)(this_ptr + 0x1c) != 0) {
+  if (this_ptr->texture_capture_enabled != 0) {
     _DAT_01bdd85c = _DAT_01bdd85c + 1;
     if (100 < _DAT_01bdd85c) {
       _DAT_01d71de0 = "..\\engine\\drender.cpp";
@@ -25,20 +25,20 @@ void __cdecl engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(CDemo
       core_main_c_FUN_004e4330("CDR::texture - Too many captured textures");
     }
     iVar2 = _DAT_01bdd85c * 0x48;
-    *(uint *)(iVar2 + 0x1c09784) = *(uint *)(texture + 4);
-    pSVar3 = texture + 8;
-    pSVar4 = (SMRGLTextureBasic *)(iVar2 + 0x1c09788);
+    *(int *)(iVar2 + 0x1c09784) = (texture->base).count;
+    pcVar3 = texture->texture_name;
+    pcVar4 = (char *)(iVar2 + 0x1c09788);
     do {
-      SVar1 = *pSVar3;
-      *pSVar4 = SVar1;
-      if (SVar1 == (SMRGLTextureBasic)0x0) {
+      cVar1 = *pcVar3;
+      *pcVar4 = cVar1;
+      if (cVar1 == '\0') {
         return;
       }
-      SVar1 = pSVar3[1];
-      pSVar3 = pSVar3 + 2;
-      pSVar4[1] = SVar1;
-      pSVar4 = pSVar4 + 2;
-    } while (SVar1 != (SMRGLTextureBasic)0x0);
+      cVar1 = pcVar3[1];
+      pcVar3 = pcVar3 + 2;
+      pcVar4[1] = cVar1;
+      pcVar4 = pcVar4 + 2;
+    } while (cVar1 != '\0');
   }
   return;
 }

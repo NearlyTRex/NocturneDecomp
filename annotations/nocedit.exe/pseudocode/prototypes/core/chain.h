@@ -87,4 +87,4 @@ SChainVertex * __cdecl SChainVertex::dtor(SChainVertex *this_ptr,uint flags);
 
 // Original: core_chain.cpp_SChainVertex_arrdtor20_FUN_004313f0
 // Address: 004313f0
-SChainVertex * __cdecl SChainVertex::arrdtor20(SChainVertex *objs,uint flags);
+SChainVertex * __cdecl SChainVertex::arrdtor20(SChainVertex *this_ptr,uint flags);

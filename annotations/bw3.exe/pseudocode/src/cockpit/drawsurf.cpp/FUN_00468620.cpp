@@ -66,7 +66,7 @@ void cockpit_drawsurf_cpp_FUN_00468620(CDrawSurface *param_1,int param_2,int par
       do {
         if ((int)((uStack_18 ^ (int)uStack_18 >> 0x1f) - ((int)uStack_18 >> 0x1f)) %
             (_DAT_005f2aec * 2) < _DAT_005f2aec) {
-          cockpit_drawsurf_cpp_FUN_00467f30(param_1,x,y);
+          cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_00467f30(param_1,x,y);
         }
         if (0 < iVar2) {
           y = y + 1;
@@ -86,7 +86,7 @@ void cockpit_drawsurf_cpp_FUN_00468620(CDrawSurface *param_1,int param_2,int par
       do {
         if ((int)((uStack_18 ^ (int)uStack_18 >> 0x1f) - ((int)uStack_18 >> 0x1f)) %
             (_DAT_005f2aec * 2) < _DAT_005f2aec) {
-          cockpit_drawsurf_cpp_FUN_00467f30(param_1,x,y);
+          cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_00467f30(param_1,x,y);
         }
         if (0 < iVar2) {
           iVar2 = iVar2 - iVar1;

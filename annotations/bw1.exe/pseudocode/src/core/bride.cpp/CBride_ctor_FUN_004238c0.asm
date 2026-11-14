@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBride * core_bride_cpp_CBride_ctor_FUN_004238c0(CBride *this_ptr)
+; CBride * __cdecl core_bride_cpp_CBride_ctor_FUN_004238c0(CBride *this_ptr)
 ;
 ; Parameters:
 ; CBride *         Stack[0x4]:4   this_ptr
@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a0410
-;   core_skeleton.cpp_FUN_00569f50
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     ADD EAX,0x158                       ; 004238d5
     PUSH EAX                            ; 004238da
     MOV dword ptr [EAX + -0x4],0x5fd0a4 ; 004238db
-    CALL core_skeleton.cpp_FUN_00569f50 ; 004238e2
-        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569f50()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 004238e2
+        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2fec],0x3f400000 ; 004238e7
     MOV dword ptr [EBX + 0x2ff0],0x3fc00000 ; 004238f1
     FLD float ptr [0x005fd090]          ; 004238fb | DAT_005fd090

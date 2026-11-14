@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl core_actor_cpp_matchClassTerm_FUN_0040c370(CDemonActorType *param_1,int *param_2)
+; int __cdecl core_actor_cpp_matchClassTerm_FUN_0040c370(CDemonActorType *type_ptr,char **parse_pos)
 ;
+; Parameters:
+; CDemonActorType * Stack[0x4]:4   type_ptr
+; char * *         Stack[0x8]:4   parse_pos
 ;
 ; XREF[1]:
 ;   core_actor.cpp_matchClassExpression_FUN_0040c490 at 0040c4d3
@@ -11,7 +14,7 @@
 ;   undefined4 DAT_00626114
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040c580
+;   core_actor.cpp_checkNameHash_FUN_0040c580
 ;   core_actor.cpp_matchClassExpression_FUN_0040c490
 ;   crt_ctype.c_tolower_FUN_005c0820
 ;
@@ -48,7 +51,7 @@ section .text
     PUSH EBP                            ; 0040c3a7
     MOV dword ptr [EBX],EDI             ; 0040c3a8
     CALL core_actor.cpp_matchClassTerm_FUN_0040c370 ; 0040c3aa
-        ;   XREF to: 0040c370 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_matchClassTerm_FUN_0040c370()
+        ;   XREF to: 0040c370 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_matchClassTerm_FUN_0040c370(CDemonActorType * type_ptr, char * * parse_pos)
     ADD ESP,0x8                         ; 0040c3af
     MOV EDI,EAX                         ; 0040c3b2
     TEST EAX,EAX                        ; 0040c3b4
@@ -74,7 +77,7 @@ section .text
     PUSH EBP                            ; 0040c3cc
     MOV dword ptr [EBX],EDI             ; 0040c3cd
     CALL core_actor.cpp_matchClassExpression_FUN_0040c490 ; 0040c3cf
-        ;   XREF to: 0040c490 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_matchClassExpression_FUN_0040c490()
+        ;   XREF to: 0040c490 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_matchClassExpression_FUN_0040c490(CDemonActorType * type_ptr, char * * parse_pos)
     ADD ESP,0x8                         ; 0040c3d4
     MOV EDI,EAX                         ; 0040c3d7
     TEST EAX,EAX                        ; 0040c3d9
@@ -149,8 +152,8 @@ section .text
         ;   XREF to: 0040c428 (CONDITIONAL_JUMP)  ; LAB_0040c428
     PUSH EAX                            ; 0040c467
     PUSH EBP                            ; 0040c468
-    CALL core_actor.cpp_FUN_0040c580    ; 0040c469
-        ;   XREF to: 0040c580 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c580(CDemonActorType * type_ptr, uint name_hash)
+    CALL core_actor.cpp_checkNameHash_FUN_0040c580 ; 0040c469
+        ;   XREF to: 0040c580 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_checkNameHash_FUN_0040c580(CDemonActorType * type_ptr, uint name_hash)
     ADD ESP,0x8                         ; 0040c46e
     MOV EDI,EAX                         ; 0040c471
     MOV EAX,EDI                         ; 0040c473

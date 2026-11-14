@@ -7,7 +7,7 @@
 ; CNetGame *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_main.c_FUN_004e46c0 at 004e4d76
+;   core_main.c_initializeGameSystems_FUN_004e46c0 at 004e4d76
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_netlog_txt_005e0414
@@ -23,11 +23,11 @@
 ;   undefined4 DAT_01d51050
 ;
 ; Called Functions:
-;   core_netgame.cpp_FUN_0050b8d0
+;   core_netgame.cpp_CNetGame_disconnect_FUN_0050b8d0
 ;   crt_env.c_getenv_FUN_005bac90
 ;   crt_unknown.c_FUN_005ba1e0
 ;   support_trisock.cpp_startupWinsock_FUN_00579500
-;   wincore_winrun.cpp_FUN_0058e9e0
+;   wincore_winrun.cpp_getTime_FUN_0058e9e0
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     MOV EDX,0x1                         ; 0050b34c
     ADD ESP,0x4                         ; 0050b351
     MOV dword ptr [0x01d34e38],EDX      ; 0050b354 | DAT_01d34e38
-    CALL wincore_winrun.cpp_FUN_0058e9e0 ; 0050b35a
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_0058e9e0()
+    CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 0050b35a
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_0058e9e0()
     MOV EDX,EAX                         ; 0050b35f
     MOV ESI,0x12                        ; 0050b361
     SAR EDX,0x1f                        ; 0050b366
@@ -89,8 +89,8 @@ section .text
     PUSH ESI                            ; 0050b3b9
     MOV dword ptr [0x01d34e4c],ECX      ; 0050b3ba | DAT_01d34e4c
     MOV dword ptr [0x01d51050],ECX      ; 0050b3c0 | DAT_01d51050
-    CALL core_netgame.cpp_FUN_0050b8d0  ; 0050b3c6
-        ;   XREF to: 0050b8d0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_FUN_0050b8d0(CNetGame * this_ptr, int perform_handshake)
+    CALL core_netgame.cpp_CNetGame_disconnect_FUN_0050b8d0 ; 0050b3c6
+        ;   XREF to: 0050b8d0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_disconnect_FUN_0050b8d0(CNetGame * this_ptr, int perform_handshake)
     ADD ESP,0x8                         ; 0050b3cb
     POP EDI                             ; 0050b3ce
     POP ESI                             ; 0050b3cf

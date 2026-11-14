@@ -10,6 +10,6 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_0
 
 {
   cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidth_FUN_00480d20
-            (this_ptr,text,0,*(int *)this_ptr + -1,0,*(int *)(this_ptr + 4) + -1);
+            (this_ptr,text,0,this_ptr->width + -1,0,this_ptr->height + -1);
   return;
 }

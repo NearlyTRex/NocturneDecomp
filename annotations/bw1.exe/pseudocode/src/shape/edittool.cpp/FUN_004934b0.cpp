@@ -17,17 +17,17 @@ void shape_edittool_cpp_FUN_004934b0(CInputString *param_1,int param_2,int param
   int iVar3;
   int y2;
   CInputString *pCVar4;
-  CInputString local_420 [1024];
+  CInputString local_420 [3];
   int local_20;
   int local_1c;
   int local_18;
   int local_14;
   
   y2 = _DAT_01c3f53c + param_3;
-  if (*(int *)(param_1 + 0x138) != *(int *)(param_1 + 0x134)) {
-    iVar2 = shape_edittool_cpp_CInputString_calcX_FUN_004933e0(param_1,*(int *)(param_1 + 0x138));
+  if (param_1->selection_start != param_1->cursor_position) {
+    iVar2 = shape_edittool_cpp_CInputString_calcX_FUN_004933e0(param_1,param_1->selection_start);
     iVar2 = param_2 + iVar2;
-    iVar3 = shape_edittool_cpp_CInputString_calcX_FUN_004933e0(param_1,*(int *)(param_1 + 0x134));
+    iVar3 = shape_edittool_cpp_CInputString_calcX_FUN_004933e0(param_1,param_1->cursor_position);
     iVar3 = iVar3 + param_2;
     local_18 = iVar3;
     local_1c = iVar2;
@@ -42,39 +42,39 @@ void shape_edittool_cpp_FUN_004934b0(CInputString *param_1,int param_2,int param
     }
     else {
       iVar2 = (_DAT_01c3f568 & 0xff) * 3;
-      engine_mini3d_cpp_FUN_00517d50
+      engine_mini3d_cpp_setColor_FUN_00517d50
                 ((uint)(byte)(&DAT_01c4e9f8)[iVar2] << 0x10 |
                  (uint)(byte)(&DAT_01c4e9f9)[iVar2] << 8 | (uint)(byte)(&DAT_01c4e9fa)[iVar2]);
-      engine_mini3d_cpp_FUN_00518010(local_1c,local_14,local_18,local_20);
+      engine_mini3d_cpp_fillRect_FUN_00518010(local_1c,local_14,local_18,local_20);
     }
   }
   engine_3d_c_setRenderAlpha_FUN_00406bd0(0xffff);
-  engine_mini3d_cpp_FUN_00512320(0x3f800000);
+  engine_mini3d_cpp_setAlpha_FUN_00512320(1.0);
   pCVar4 = param_1;
-  if (*(int *)(param_1 + 0x13c) != 0) {
-    if (0x3ff < *(uint *)(param_1 + 0x130)) {
+  if (param_1->mask_mode != 0) {
+    if (0x3ff < (uint)param_1->current_length) {
       _DAT_01d1d400 = "..\\shape\\edittool.cpp";
       _DAT_01d1d404 = 0x22e;
       core_main_c_FUN_005030e0("CInputString::draw - string too big for hidden text!");
     }
-    memset(local_420,0x2a,*(ulong *)(param_1 + 0x130));
-    local_420[*(int *)(param_1 + 0x130)] = (CInputString)0x0;
+    memset(local_420,0x2a,param_1->current_length);
+    local_420[0].string_data[param_1->current_length] = '\0';
     pCVar4 = local_420;
   }
   engine_font_cpp_FUN_004c1dd0(_DAT_01c3eb50,pCVar4,param_2,param_3,_DAT_01c3f56c,0xffffffff);
-  uVar1 = wincore_winrun_cpp_FUN_005b2420();
+  uVar1 = wincore_winrun_cpp_getTime_FUN_005b2420();
   if ((uVar1 & 0x40000) != 0) {
     if (_DAT_01c3f544 == 0) {
       _DAT_01c4f020 = _DAT_01c3f570;
     }
     else {
       iVar2 = (_DAT_01c3f570 & 0xff) * 3;
-      engine_mini3d_cpp_FUN_00517d50
+      engine_mini3d_cpp_setColor_FUN_00517d50
                 ((uint)(byte)(&DAT_01c4e9fa)[iVar2] |
                  (uint)(byte)(&DAT_01c4e9f8)[iVar2] << 0x10 |
                  (uint)(byte)(&DAT_01c4e9f9)[iVar2] << 8);
     }
-    iVar2 = shape_edittool_cpp_CInputString_calcX_FUN_004933e0(param_1,*(int *)(param_1 + 0x134));
+    iVar2 = shape_edittool_cpp_CInputString_calcX_FUN_004933e0(param_1,param_1->cursor_position);
     engine_2d_c_drawLine_FUN_004011a0(iVar2 + param_2,param_3,iVar2 + param_2,y2);
   }
   return;

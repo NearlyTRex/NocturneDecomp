@@ -15,7 +15,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(CKeyFramedMod
   int *piVar4;
   CBoundingBox3D *pCVar5;
   
-  core_dmodel_cpp_CKeyFramedModel_FUN_00452f10(this_ptr);
+  core_dmodel_cpp_CKeyFramedModel_free_FUN_00452f10(this_ptr);
   this_ptr->vertex_count = vertex_count;
   this_ptr->poly_count = poly_count;
   this_ptr->texture_count = texture_count;
@@ -50,7 +50,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(CKeyFramedMod
        ((0 < this_ptr->poly_count && (this_ptr->poly_vert_list == (SMRGLPrimitiveQuad *)0x0)))) ||
       ((0 < this_ptr->poly_count && (this_ptr->poly_texture_index_list == (int *)0x0)))) ||
      (this_ptr->frame_bounds == (CBoundingBox3D *)0x0)) {
-    core_dmodel_cpp_CKeyFramedModel_FUN_00452f10(this_ptr);
+    core_dmodel_cpp_CKeyFramedModel_free_FUN_00452f10(this_ptr);
     g_CurrentLineNumber = 723;
     g_CurrentFilename = "..\\core\\dmodel.cpp";
     core_main_c_displayErrorAndQuit_FUN_004c8440

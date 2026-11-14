@@ -61,13 +61,13 @@
 ;   core_main.c_FUN_004e4330
 ;   crt_math.c_round_FUN_005a3120
 ;   crt_stdio.c_fclose_FUN_005a3a90
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   engine_dosio.cpp_FUN_004659c0
 ;   support_codec.cpp_CCodec_dtor_FUN_00440810
 ;   support_codec.cpp_CLZWCompress_ctor_FUN_004410f0
+;   support_codec.cpp_CLZWCompress_init_FUN_00441140
 ;   support_codec.cpp_CLZWDictionary_dtor_FUN_00440bf0
 ;   support_codec.cpp_FUN_00440970
-;   support_codec.cpp_FUN_00441140
 ;   support_codec.cpp_FUN_00441290
 ;   ... and 4 more
 ;
@@ -89,7 +89,7 @@ section .text
     MOV dword ptr [0x0149d6d0],ECX      ; 0044f771 | DAT_0149d6d0
     MOV dword ptr [0x0149d6d4],ECX      ; 0044f777 | DAT_0149d6d4
     CALL core_dcamera.cpp_resetFogSamplingOffset_FUN_00448720 ; 0044f77d
-        ;   XREF to: 00448720 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_resetFogSamplingOffset_FUN_00448720()
+        ;   XREF to: 00448720 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_resetFogSamplingOffset_FUN_00448720(SFogGrid * fog)
     MOV EAX,[0x0149e6e8]                ; 0044f782 | DAT_0149e6e8
     MOV EDI,dword ptr [0x0149e6ec]      ; 0044f787 | DAT_0149e6ec
     MOV EBP,dword ptr [0x0149e6f0]      ; 0044f78d | DAT_0149e6f0
@@ -107,8 +107,8 @@ section .text
     PUSH 0x5b9f76                       ; 0044f7b7 | = "%s.fog"
     LEA EAX,[ESP + 0x8]                 ; 0044f7bc
     PUSH EAX                            ; 0044f7c0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0044f7c1
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0044f7c1
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0044f7c6
     PUSH 0x5b9f7d                       ; 0044f7c9 | DAT_005b9f7d
     LEA EAX,[ESP + 0x4]                 ; 0044f7ce
@@ -125,21 +125,21 @@ section .text
     PUSH 0x5b9f89                       ; 0044f7eb | = "backdrop\\%s"
     LEA EAX,[ESP + 0x108]               ; 0044f7f0
     PUSH EAX                            ; 0044f7f7
-    CALL crt_unknown.c_FUN_005a28c0     ; 0044f7f8
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0044f7f8
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0044f7fd
     PUSH 0x5b9f95                       ; 0044f800 | DAT_005b9f95
     LEA EAX,[ESP + 0x104]               ; 0044f805
     PUSH EAX                            ; 0044f80c
     LEA EAX,[ESP + 0x1b8]               ; 0044f80d
     PUSH EAX                            ; 0044f814
-    CALL support_trstream.cpp_FUN_005747e0 ; 0044f815
-        ;   XREF to: 005747e0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005747e0()
+    CALL support_trstream.cpp_COutStreamFile_ctorOpen_FUN_005747e0 ; 0044f815
+        ;   XREF to: 005747e0 (UNCONDITIONAL_CALL)  ; COutStreamFile * support_trstream.cpp_COutStreamFile_ctorOpen_FUN_005747e0(COutStreamFile * this_ptr, char * path, char * mode)
     ADD ESP,0xc                         ; 0044f81a
     LEA EAX,[ESP + 0x1b0]               ; 0044f81d
     PUSH EAX                            ; 0044f824
-    CALL support_trstream.cpp_FUN_00574980 ; 0044f825
-        ;   XREF to: 00574980 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_00574980()
+    CALL support_trstream.cpp_COutStreamFile_isOpen_FUN_00574980 ; 0044f825
+        ;   XREF to: 00574980 (UNCONDITIONAL_CALL)  ; bool support_trstream.cpp_COutStreamFile_isOpen_FUN_00574980(COutStreamFile * this_ptr)
     ADD ESP,0x4                         ; 0044f82a
     TEST EAX,EAX                        ; 0044f82d
     JNZ 0x0044f85c                      ; 0044f82f
@@ -159,8 +159,8 @@ section .text
     PUSH 0x149d6dc                      ; 0044f861
     LEA EAX,[ESP + 0x1b8]               ; 0044f866
     PUSH EAX                            ; 0044f86d
-    CALL support_trstream.cpp_FUN_005748e0 ; 0044f86e
-        ;   XREF to: 005748e0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005748e0()
+    CALL support_trstream.cpp_COutStreamFile_write_FUN_005748e0 ; 0044f86e
+        ;   XREF to: 005748e0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_COutStreamFile_write_FUN_005748e0(COutStreamFile * this_ptr, undefined4 param_2, int param_3)
     MOV EBX,dword ptr [0x0149e6f8]      ; 0044f873 | DAT_0149e6f8
     ADD ESP,0xc                         ; 0044f879
     TEST EBX,EBX                        ; 0044f87c
@@ -173,8 +173,8 @@ section .text
     PUSH EAX                            ; 0044f899
     LEA EAX,[ESP + 0x1b8]               ; 0044f89a
     PUSH EAX                            ; 0044f8a1
-    CALL support_trstream.cpp_FUN_005748e0 ; 0044f8a2
-        ;   XREF to: 005748e0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_005748e0()
+    CALL support_trstream.cpp_COutStreamFile_write_FUN_005748e0 ; 0044f8a2
+        ;   XREF to: 005748e0 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_COutStreamFile_write_FUN_005748e0(COutStreamFile * this_ptr, undefined4 param_2, int param_3)
     ADD ESP,0xc                         ; 0044f8a7
     MOV EAX,dword ptr [ESP + 0x210]     ; 0044f8aa
     FLD double ptr [0x005ba056]         ; 0044f8b1 | DAT_005ba056
@@ -202,8 +202,8 @@ section .text
     LEA EAX,[ESP + 0x164]               ; 0044f8ff
     PUSH EAX                            ; 0044f906
     XOR ESI,ESI                         ; 0044f907
-    CALL support_codec.cpp_FUN_00441140 ; 0044f909
-        ;   XREF to: 00441140 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_FUN_00441140(CLZWCompress * this_ptr)
+    CALL support_codec.cpp_CLZWCompress_init_FUN_00441140 ; 0044f909
+        ;   XREF to: 00441140 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWCompress_init_FUN_00441140(CLZWCompress * this_ptr)
     ADD ESP,0x4                         ; 0044f90e
     MOV EDI,dword ptr [0x0149d6d8]      ; 0044f911 | DAT_0149d6d8
     MOV dword ptr [ESP + 0x1f4],ESI     ; 0044f917
@@ -218,7 +218,7 @@ section .text
     PUSH EDI                            ; 0044f941
     PUSH 0x149d6dc                      ; 0044f942
     CALL core_dcamera.cpp_updateFogScrollOffset_FUN_00448b60 ; 0044f947
-        ;   XREF to: 00448b60 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_updateFogScrollOffset_FUN_00448b60()
+        ;   XREF to: 00448b60 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_updateFogScrollOffset_FUN_00448b60(SFogGrid * fog_ptr, int time_major, int time_minor)
     ADD ESP,0xc                         ; 0044f94c
     MOV EAX,dword ptr [ESP + 0x210]     ; 0044f94f
     MOV EBP,0x1                         ; 0044f956
@@ -260,7 +260,7 @@ section .text
     PUSH EAX                            ; 0044f9ea
     PUSH 0x149d6dc                      ; 0044f9eb
     CALL core_dcamera.cpp_sampleFogAlongRay_FUN_00448980 ; 0044f9f0
-        ;   XREF to: 00448980 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_sampleFogAlongRay_FUN_00448980()
+        ;   XREF to: 00448980 (UNCONDITIONAL_CALL)  ; uint core_dcamera.cpp_sampleFogAlongRay_FUN_00448980(SFogGrid * fog_ptr, CVector3i * start_pos, CVector3i * end_pos, int ray_length)
     IMUL EAX,EAX,0xff                   ; 0044f9f5
     SHR EAX,0xe                         ; 0044f9fb
     ADD ESP,0x10                        ; 0044f9fe
@@ -425,8 +425,8 @@ section .text
     LEA EAX,[ESP + 0x1b0]               ; 0044fc84
         ;   Label: LAB_0044fc84
     PUSH EAX                            ; 0044fc8b
-    CALL support_trstream.cpp_FUN_00574980 ; 0044fc8c
-        ;   XREF to: 00574980 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_00574980()
+    CALL support_trstream.cpp_COutStreamFile_isOpen_FUN_00574980 ; 0044fc8c
+        ;   XREF to: 00574980 (UNCONDITIONAL_CALL)  ; bool support_trstream.cpp_COutStreamFile_isOpen_FUN_00574980(COutStreamFile * this_ptr)
     ADD ESP,0x4                         ; 0044fc91
     TEST EAX,EAX                        ; 0044fc94
     JZ 0x0044fd9a                       ; 0044fc96

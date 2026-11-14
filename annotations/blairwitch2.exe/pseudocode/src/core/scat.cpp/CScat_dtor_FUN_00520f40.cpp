@@ -13,11 +13,11 @@ CScat * __cdecl core_scat_cpp_CScat_dtor_FUN_00520f40(CScat *this_ptr,uint flags
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CScatTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CScatTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  pCVar1 = (CScat *)core_hero_cpp_CHero_dtor_FUN_004ce3d0((CHero *)this_ptr,1);
+  pCVar1 = (CScat *)core_hero_cpp_CHero_dtor_FUN_004ce3d0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

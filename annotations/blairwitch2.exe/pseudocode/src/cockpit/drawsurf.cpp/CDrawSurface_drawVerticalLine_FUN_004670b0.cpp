@@ -18,15 +18,15 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawVerticalLine_FUN_004670b0(CDr
   int iVar5;
   uint *puVar6;
   
-  iVar5 = x + *(int *)(this_ptr + 8);
-  iVar3 = start_y + *(int *)(this_ptr + 0xc);
-  iVar4 = end_y + *(int *)(this_ptr + 0xc);
-  if ((*(int *)(this_ptr + 0x10) <= iVar5) && (iVar5 <= *(int *)(this_ptr + 0x18))) {
-    if (iVar3 < *(int *)(this_ptr + 0x14)) {
-      iVar3 = *(int *)(this_ptr + 0x14);
+  iVar5 = x + this_ptr->x;
+  iVar3 = start_y + this_ptr->y;
+  iVar4 = end_y + this_ptr->y;
+  if ((this_ptr->clip_left <= iVar5) && (iVar5 <= this_ptr->clip_right)) {
+    if (iVar3 < this_ptr->clip_top) {
+      iVar3 = this_ptr->clip_top;
     }
-    if (*(int *)(this_ptr + 0x1c) < iVar4) {
-      iVar4 = *(int *)(this_ptr + 0x1c);
+    if (this_ptr->clip_bottom < iVar4) {
+      iVar4 = this_ptr->clip_bottom;
     }
     if (iVar3 <= iVar4) {
       iVar2 = iVar5 * 2;

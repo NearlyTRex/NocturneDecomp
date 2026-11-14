@@ -16,7 +16,7 @@ void __cdecl shape_edittool_cpp_CPickList_setCancelButtonText_FUN_004833c0(CPick
   char *pcVar3;
   
   if (text == (char *)0x0) {
-    this_ptr->field_0xc0 = 0;
+    this_ptr->cancel_button_text[0] = '\0';
     return;
   }
   uVar2 = 0xffffffff;
@@ -32,7 +32,7 @@ void __cdecl shape_edittool_cpp_CPickList_setCancelButtonText_FUN_004833c0(CPick
     _DAT_01d71de4 = 0xec7;
     core_main_c_FUN_004e4330("CPickList::setCancelButtonText - too long!");
   }
-  pcVar3 = &this_ptr->field_0xc0;
+  pcVar3 = this_ptr->cancel_button_text;
   do {
     cVar1 = *text;
     *pcVar3 = cVar1;

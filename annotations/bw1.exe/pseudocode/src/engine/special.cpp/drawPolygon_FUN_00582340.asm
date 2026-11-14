@@ -1,15 +1,19 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_special_cpp_drawPolygon_FUN_00582340(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; int __cdecl engine_special_cpp_drawPolygon_FUN_00582340(SRenderVertex *vertices,int vertex_count,int render_flags)
 ;
+; Parameters:
+; SRenderVertex *  Stack[0x4]:4   vertices
+; int              Stack[0x8]:4   vertex_count
+; int              Stack[0xc]:4   render_flags
 ;
 ; XREF[5]:
-;   engine_mini3d.cpp_FUN_00516060 at 005167e7
-;   engine_prim.c_FUN_0053e120 at 0053e30e
-;   engine_prim.c_FUN_0053f080 at 0053f358
+;   core_zombie.cpp_FUN_005bf120 at 005bf410
+;   engine_mini3d.cpp_rasterizeTriangle_FUN_00516060 at 005167e7
+;   engine_prim.c_renderPolygonSoftware_FUN_0053e120 at 0053e30e
+;   engine_prim.c_renderScanlinePolygon_FUN_0053f080 at 0053f358
 ;   engine_special.cpp_drawFullScreenQuad_FUN_005827b0 at 0058284d
-;   unkafter_zombie.cpp_FUN_005bf120 at 005bf410
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c50948

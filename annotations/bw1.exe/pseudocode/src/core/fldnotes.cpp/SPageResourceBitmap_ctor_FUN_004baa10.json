@@ -1,0 +1,185 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 14,
+    "complexity_score": 75,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 10,
+    "suspect_count": 5,
+    "suspect_types": [
+      "extra_output",
+      "negative_offset",
+      "pointer_truncation"
+    ],
+    "total_lines": 24
+  },
+  "cross_references": [
+    {
+      "addr": "004bab60",
+      "from_addr": "004bab71",
+      "name": "core_fldnotes.cpp_SPageResourceTwanaCharacter_ctor_FUN_004bab60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004baa10",
+    "address_range": [
+      [
+        "004baa10",
+        "004baa33"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fldnotes.cpp_SPageResourceBitmap_ctor_FUN_004baa10",
+    "signature": "SPageResourceBitmap * __cdecl core_fldnotes_cpp_SPageResourceBitmap_ctor_FUN_004baa10(SPageResourceBitmap *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004ba730",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_SPageResource_ctor_FUN_004ba730"
+    },
+    {
+      "addr": "0040d0a0",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_0040d0a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00600944",
+      "name": "g_SPageResourceBitmapVTable",
+      "type": "void*",
+      "value": "004baad0"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004bab71",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_SPageResourceTwanaCharacter_ctor_FUN_004bab60",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.181818181818182,
+    "instruction_count": 11,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 4,
+      "INT_ADD": 6,
+      "INT_AND": 8,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 5,
+      "LOAD": 2,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 57
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a2140",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a8650",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "SPageResourceBitmap *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 5,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "pCVar1 = engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d0a0((CAlphaBitmap *)(extraout_EAX + 0x18))",
+      "type": "extra_output"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 11,
+      "match": "pCVar1[-1].",
+      "severity": "mild",
+      "text": "pCVar1[-1].height = (int)&g_SPageResourceBitmapVTable;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 12,
+      "match": "pCVar1[-2].",
+      "severity": "mild",
+      "text": "return (SPageResourceBitmap *)&pCVar1[-2].height;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Pointer value `&g_SPageResourceBitmapVTable` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 11,
+      "match": "(int)&g_SPageResourceBitmapVTable",
+      "severity": "moderate",
+      "text": "pCVar1[-1].height = (int)&g_SPageResourceBitmapVTable;",
+      "type": "pointer_truncation"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 0,
+        "vtable_addr": "00600a04"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

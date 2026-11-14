@@ -1,14 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_prim_c_adjustNearPlaneTextureCoords_FUN_0051c6b0(int param_1,int param_2)
+; void __cdecl engine_prim_c_adjustNearPlaneTextureCoords_FUN_0051c6b0(SRenderVertex *vertices,int vertex_count)
 ;
+; Parameters:
+; SRenderVertex *  Stack[0x4]:4   vertices
+; int              Stack[0x8]:4   vertex_count
 ;
 ; XREF[4]:
-;   engine_prim.c_FUN_0051cb20 at 0051cd56
+;   core_zombie.cpp_rasterizePolygonCustom_FUN_0059a5d0 at 0059a889
 ;   engine_prim.c_FUN_0051da80 at 0051ddc7
-;   engine_prim.c_FUN_0051e130 at 0051e30e
-;   unkafter_zombie.cpp_FUN_0059a5d0 at 0059a889
+;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_0051e130 at 0051e30e
+;   engine_prim.c_renderPolygonSoftware_FUN_0051cb20 at 0051cd56
 ;
 ; *****************************************************************************
 

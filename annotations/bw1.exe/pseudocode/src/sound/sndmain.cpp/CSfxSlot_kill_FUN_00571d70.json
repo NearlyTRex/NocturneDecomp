@@ -2,22 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 285,
+    "complexity_score": 96,
     "cross_reference_count": 11,
     "function_call_count": 4,
     "global_count": 16,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
-    "suspect_count": 21,
+    "pseudocode_lines": 51,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_truncation",
-      "unnamed_field",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 186
+    "total_lines": 182
   },
   "cross_references": [
+    {
+      "addr": "00570460",
+      "from_addr": "00570718",
+      "name": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_00570460",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "00570f30",
       "from_addr": "00571213",
@@ -25,51 +30,45 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0056fa10",
-      "from_addr": "0056fa9b",
-      "name": "sound_sndmain.cpp_FUN_0056fa10",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00570460",
-      "from_addr": "00570718",
-      "name": "sound_sndmain.cpp_FUN_00570460",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00571420",
       "from_addr": "00571565",
-      "name": "sound_sndmain.cpp_FUN_00571420",
+      "name": "sound_sndmain.cpp_CSfxSlot_mix_FUN_00571420",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00571f10",
       "from_addr": "00571f89",
-      "name": "sound_sndmain.cpp_FUN_00571f10",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00573b00",
-      "from_addr": "00573b13",
-      "name": "sound_sndmain.cpp_FUN_00573b00",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00574310",
-      "from_addr": "00574353",
-      "name": "sound_sndmain.cpp_FUN_00574310",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00575db0",
-      "from_addr": "00575f64",
-      "name": "sound_sndmain.cpp_FUN_00575db0",
+      "name": "sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_00571f10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00573c50",
       "from_addr": "00573ca7",
       "name": "sound_sndmain.cpp_enableSfxChannel_FUN_00573c50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00575db0",
+      "from_addr": "00575f64",
+      "name": "sound_sndmain.cpp_flushSoundChanges_FUN_00575db0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056fa10",
+      "from_addr": "0056fa9b",
+      "name": "sound_sndmain.cpp_getSfxSlotFromHandle_FUN_0056fa10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00573b00",
+      "from_addr": "00573b13",
+      "name": "sound_sndmain.cpp_killAllSfx_FUN_00573b00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00574310",
+      "from_addr": "00574353",
+      "name": "sound_sndmain.cpp_killSfxByName_FUN_00574310",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -106,7 +105,7 @@
     {
       "addr": "00445430",
       "is_variadic": false,
-      "name": "engine_console.cpp_FUN_00445430"
+      "name": "engine_console.cpp_CConsole_printf_FUN_00445430"
     },
     {
       "addr": "00570020",
@@ -116,7 +115,7 @@
     {
       "addr": "0056dfd0",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_0056dfd0"
+      "name": "sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_0056dfd0"
     }
   ],
   "globals": [
@@ -234,7 +233,7 @@
       {
         "call_addr": "00570718",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00570460",
+        "caller": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_00570460",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -256,7 +255,7 @@
       {
         "call_addr": "0056fa9b",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_0056fa10",
+        "caller": "sound_sndmain.cpp_getSfxSlotFromHandle_FUN_0056fa10",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -267,7 +266,7 @@
       {
         "call_addr": "0056fabc",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_0056fa10",
+        "caller": "sound_sndmain.cpp_getSfxSlotFromHandle_FUN_0056fa10",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -289,7 +288,7 @@
       {
         "call_addr": "00573b13",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00573b00",
+        "caller": "sound_sndmain.cpp_killAllSfx_FUN_00573b00",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -300,7 +299,7 @@
       {
         "call_addr": "00575f64",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00575db0",
+        "caller": "sound_sndmain.cpp_flushSoundChanges_FUN_00575db0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -322,7 +321,7 @@
       {
         "call_addr": "00571565",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00571420",
+        "caller": "sound_sndmain.cpp_CSfxSlot_mix_FUN_00571420",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -373,6 +372,32 @@
     },
     "pcode_op_count": 419
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0054f700",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00555270",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a7e60",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9898
+    },
+    "nocturne.exe": {
+      "addr": "00525570",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9898
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -399,163 +424,19 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x108",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x108 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "if (*(char **)&this_ptr->field_0x68 != (char *)0x0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "pcVar2 = *(char **)&this_ptr->field_0x68;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x60 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 25,
+      "line": 20,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02c80650 + 0x50))(_DAT_02c80650,this_ptr);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x60 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x108",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x108 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x64",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x64 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x68 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "if (*(int *)(*(int *)&this_ptr->field_0x68 + 0x154) < 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "piVar1 = (int *)(*(int *)&this_ptr->field_0x68 + 0x154);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "this_ptr_00 = *(CSfxSample **)&this_ptr->field_0x68;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x68 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x160",
-      "severity": "mild",
-      "text": "if (-1 < *(int *)&this_ptr_00->field_0x160) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Pointer value `&this_ptr[-0x28126].options.base_frequency` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 42,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr_00->field_0x154 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "if ((int)&this_ptr[-0x28126].field_0x3c / 0x11c != *(int *)&this_ptr_00->field_0x160) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x160",
-      "severity": "mild",
-      "text": "if ((int)&this_ptr[-0x28126].field_0x3c / 0x11c != *(int *)&this_ptr_00->field_0x160) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 55,
-      "match": "field_0x160",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x160 = 0xffffffff;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 57,
-      "match": "field_0x118",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x118 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Pointer value `&this_ptr[-0x28126].field_0x3c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 47,
-      "match": "(int)&this_ptr[-0x28126].field_0x3c",
+      "match": "(int)&this_ptr[-0x28126].options.base_frequency",
       "severity": "moderate",
-      "text": "if ((int)&this_ptr[-0x28126].field_0x3c / 0x11c != *(int *)&this_ptr_00->field_0x160) {",
+      "text": "if ((int)&this_ptr[-0x28126].options.base_frequency / 0x11c !=",
       "type": "pointer_truncation"
     }
   ]

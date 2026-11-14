@@ -99,4 +99,8 @@ const char *sdl_gl_support_SDL_GetError(void) {
     return "stand";
 }
 
+int nocturne_vsync_get(void) {
+    return stand.vsync;
+}
+
 } // extern "C"

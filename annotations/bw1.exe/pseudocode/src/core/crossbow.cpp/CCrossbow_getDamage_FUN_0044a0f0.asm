@@ -7,7 +7,7 @@
 ; CCrossbow *      Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cc00
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;
 ; *****************************************************************************
 
@@ -17,8 +17,8 @@ section .text
         ;   Label: core_crossbow.cpp_CCrossbow_getDamage_FUN_0044a0f0
     PUSH 0x41700000                     ; 0044a0f3
     PUSH 0x41200000                     ; 0044a0f8
-    CALL core_actor.cpp_FUN_0040cc00    ; 0044a0fd
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 0044a0fd
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [ESP + 0xc],EAX       ; 0044a102
     FLD float ptr [ESP + 0xc]           ; 0044a106
     ADD ESP,0x8                         ; 0044a10a

@@ -18,13 +18,13 @@
     {
       "addr": "0046d080",
       "from_addr": "0046d080",
-      "name": "engine_matrix.c_pop_FUN_0046d080",
+      "name": "engine_drender.cpp_pop_FUN_0046d080",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0048114e",
+      "addr": "00481150",
       "from_addr": "004811e8",
-      "name": "shape_edittool.cpp_FUN_0048114e",
+      "name": "shape_edittool.cpp_FUN_00481150",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -173,22 +173,22 @@
     "call_site_count": 2,
     "call_sites": [
       {
-        "call_addr": "004811e8",
+        "call_addr": "0046d080",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0048114e",
+        "caller": "engine_drender.cpp_pop_FUN_0046d080",
         "estimated_params": 0,
-        "instructions_analyzed": 2,
+        "instructions_analyzed": 0,
         "method": "push_count",
         "reg_params": [],
         "stack_bytes": 0,
         "stack_params": 0
       },
       {
-        "call_addr": "0046d080",
+        "call_addr": "004811e8",
         "call_type": "direct",
-        "caller": "engine_matrix.c_pop_FUN_0046d080",
+        "caller": "shape_edittool.cpp_FUN_00481150",
         "estimated_params": 0,
-        "instructions_analyzed": 0,
+        "instructions_analyzed": 2,
         "method": "push_count",
         "reg_params": [],
         "stack_bytes": 0,
@@ -225,6 +225,32 @@
       "STORE": 4
     },
     "pcode_op_count": 134
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004e9810",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005084b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0050d720",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004cdbc0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,

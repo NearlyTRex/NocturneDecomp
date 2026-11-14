@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_boneguy_cpp_staticInit_FUN_00416de0(void)
+; void __cdecl core_boneguy_cpp_staticInit_FUN_00416de0(void)
 ;
 ;
 ; Called Functions:

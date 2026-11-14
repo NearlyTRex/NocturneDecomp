@@ -1,0 +1,681 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 407,
+    "complexity_score": 503,
+    "cross_reference_count": 2,
+    "function_call_count": 12,
+    "global_count": 25,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 168,
+    "suspect_count": 29,
+    "suspect_types": [
+      "derived_field_index_pun",
+      "raw_address_pointer_store",
+      "undefined_data",
+      "unnamed_param",
+      "unresolved_funcptr",
+      "unrolled_strcat",
+      "unrolled_strcpy",
+      "unrolled_strlen",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 575
+  },
+  "cross_references": [
+    {
+      "addr": "004cfc80",
+      "from_addr": "004cfd22",
+      "name": "core_hero.cpp_FUN_004cfc80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004df010",
+      "from_addr": "004df0aa",
+      "name": "core_inv.cpp_CInventory_autoUseHealthItem_FUN_004df010",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004dc8c0",
+    "address_range": [
+      [
+        "004dc8c0",
+        "004dcca3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_inv.cpp_CInventory_select_FUN_004dc8c0",
+    "signature": "undefined4 __cdecl core_inv_cpp_CInventory_select_FUN_004dc8c0(CInventory *this_ptr,CDemonActor *param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c8f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c8f0"
+    },
+    {
+      "addr": "0040c840",
+      "is_variadic": false,
+      "name": "core_actor.cpp_isOfClass_FUN_0040c840"
+    },
+    {
+      "addr": "0040e450",
+      "is_variadic": false,
+      "name": "core_ammo.cpp_FUN_0040e450"
+    },
+    {
+      "addr": "0045d260",
+      "is_variadic": false,
+      "name": "core_doc.cpp_FUN_0045d260"
+    },
+    {
+      "addr": "00490f80",
+      "is_variadic": false,
+      "name": "core_event.cpp_FUN_00490f80"
+    },
+    {
+      "addr": "004b31a0",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_displayMessage_FUN_004b31a0"
+    },
+    {
+      "addr": "004cdf90",
+      "is_variadic": false,
+      "name": "core_health.cpp_CHealthItem_useItem_FUN_004cdf90"
+    },
+    {
+      "addr": "004db8e0",
+      "is_variadic": false,
+      "name": "core_inv.cpp_FUN_004db8e0"
+    },
+    {
+      "addr": "004db9d0",
+      "is_variadic": false,
+      "name": "core_inv.cpp_FUN_004db9d0"
+    },
+    {
+      "addr": "004d9f10",
+      "is_variadic": false,
+      "name": "core_inv.cpp_getItemDisplayName_FUN_004d9f10"
+    },
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "0050fe80",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_0050fe80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005db929",
+      "name": "s_CAmmo_005db929",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db92f",
+      "name": "s_core_inv_cpp_005db92f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db93f",
+      "name": "s_CInventory_select_Catch_005db93f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db95d",
+      "name": "DAT_005db95d",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005db962",
+      "name": "s_Reloading_Revolver_005db962",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db977",
+      "name": "s_CWeapon_005db977",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db97f",
+      "name": "s_CHealthItem_005db97f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db98b",
+      "name": "s_core_inv_cpp_005db98b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db99b",
+      "name": "s_CInventory_select_Catch_005db99b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db9b9",
+      "name": "s_You_have_used_005db9b9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db9ca",
+      "name": "DAT_005db9ca",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005db9cc",
+      "name": "s_CGasMask_005db9cc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db9d5",
+      "name": "s_CBoxActor_005db9d5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005db9e2",
+      "name": "DAT_005db9e2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006141f0",
+      "name": "DAT_006141f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00616494",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01cb6900"
+    },
+    {
+      "addr": "007bc3a4",
+      "name": "g_CAmmoClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007bc9e8",
+      "name": "g_CBoxActorClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01b4d2ec",
+      "name": "g_CDocClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6900",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "01cb81c4",
+      "name": "g_CGasMaskClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ceded8",
+      "name": "g_CHealthItemClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cedef4",
+      "name": "DAT_01cedef4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "004cfd22",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_FUN_004cfc80",
+        "estimated_params": 2,
+        "instructions_analyzed": 6,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004cfd50",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_FUN_004cfc80",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004df0aa",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_autoUseHealthItem_FUN_004df010",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004df0b7",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_autoUseHealthItem_FUN_004df010",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.3104477611940295,
+    "instruction_count": 335,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 11,
+      "BOOL_OR": 2,
+      "CALL": 26,
+      "CALLIND": 1,
+      "CBRANCH": 28,
+      "COPY": 300,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT_ADD": 137,
+      "INT_AND": 169,
+      "INT_CARRY": 36,
+      "INT_EQUAL": 153,
+      "INT_LEFT": 4,
+      "INT_LESS": 16,
+      "INT_MULT": 13,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 5,
+      "INT_SBORROW": 20,
+      "INT_SCARRY": 36,
+      "INT_SLESS": 75,
+      "INT_SUB": 112,
+      "INT_XOR": 5,
+      "INT_ZEXT": 6,
+      "LOAD": 91,
+      "POPCOUNT": 75,
+      "RETURN": 9,
+      "STORE": 101
+    },
+    "pcode_op_count": 1444
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004f9bd0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3649
+    },
+    "bw3.exe": {
+      "addr": "004dcb40",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3432
+    },
+    "nocedit.exe": {
+      "addr": "004ff800",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3986
+    },
+    "nocturne.exe": {
+      "addr": "004c1580",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3986
+    }
+  },
+  "stack_frame": {
+    "frame_size": 548,
+    "local_size": 540,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_218",
+        "offset": -536,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_217",
+        "offset": -535,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_118",
+        "offset": -280,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_117",
+        "offset": -279,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInventory *"
+      },
+      {
+        "is_param": true,
+        "name": "param_2",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint __cdecl core_inv_cpp_CInventory_select_FUN_004dc8c0(CInventory *this_ptr,CDemonActor *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040c840(param_2,\"CAmmo\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040c840(param_2,\"CWeapon\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_inv_cpp_FUN_004db9d0(this_ptr,param_2,5,1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040c840(param_2,\"CHealthItem\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040c840(param_2,\"CGasMask\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_actor_cpp_castToClassHash_FUN_0040c8f0(param_2,g_CGasMaskClassInfo.name_hash);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040c840(param_2,\"CBoxActor\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "pCVar5 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040c8f0(param_2,g_CBoxActorClassInfo.name_hash)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 52,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_2,g_CHealthItemClassInfo.name_hash);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 72,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "pcVar3 = core_inv_cpp_getItemDisplayName_FUN_004d9f10(param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 93,
+      "match": "DAT_005db9ca",
+      "severity": "mild",
+      "text": "pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80(&DAT_005db9ca);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 116,
+      "match": "*(CCharacter **)(_DAT_01cedef4 * 4 + 0x1cedee4",
+      "severity": "moderate",
+      "text": "(local_18,*(CCharacter **)(_DAT_01cedef4 * 4 + 0x1cedee4));",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 118,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_inv_cpp_FUN_004db8e0(this_ptr,param_2,1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 124,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_14 = (CAmmo *)core_actor_cpp_castToClassHash_FUN_0040c8f0(param_2,g_CAmmoClassInfo.name_hash);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 131,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar2 = (**(code **)(*(int *)(iVar2 + 0x2b0) + 0x154))(iVar2);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 136,
+      "match": "DAT_005db95d",
+      "severity": "mild",
+      "text": "(iVar2 = core_actor_cpp_isOfClass_FUN_0040c840(pCVar5,&DAT_005db95d), iVar2 == 0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 163,
+      "match": "*(CDemonActor **)(iVar2 * 4 + 0x1cedee4",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)(iVar2 * 4 + 0x1cedee4),g_CDocClassInfo.name_hash);",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 170,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_inv_cpp_FUN_004db8e0(this_ptr,param_2,1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 63,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 84,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 105,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 145,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 75,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 96,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 75,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 96,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    },
+    {
+      "description": "'(char *)&pCVar5[2].particle_systems[2].max_particles' walks 2 x sizeof(CDemonActor) (0x2b4) + offsetof(particle_systems[2].max_particles) (0x1f4) + 0x0 = 0x75c, which is exactly offsetof(CBoxActor, use_event). Ghidra had no CBoxActor type here and reached the field by index arithmetic; write it as ((CBoxActor *)pCVar5)->use_event (\u00a7de-pun/\u00a712). Ambiguous: CGlass::texture_u[7] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 45,
+      "severity": "moderate",
+      "text": "(0x01C38BC0,(char *)&pCVar5[2].particle_systems[2].max_particles,1);",
+      "type": "derived_field_index_pun"
+    }
+  ]
+}

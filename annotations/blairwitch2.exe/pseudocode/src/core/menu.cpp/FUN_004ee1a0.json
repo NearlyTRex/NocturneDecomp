@@ -2,19 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 241,
+    "complexity_score": 116,
     "cross_reference_count": 2,
     "function_call_count": 19,
     "global_count": 17,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 71,
-    "suspect_count": 14,
+    "suspect_count": 3,
     "suspect_types": [
-      "param_count_too_few",
       "raw_address_constant",
       "raw_address_pointer_store",
-      "unnamed_field",
-      "unnamed_param",
       "unresolved_funcptr"
     ],
     "total_lines": 271
@@ -23,13 +20,13 @@
     {
       "addr": "004b6170",
       "from_addr": "004b6b21",
-      "name": "core_game.cpp_FUN_004b6170",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004ee3f0",
       "from_addr": "004ee8a8",
-      "name": "core_menu.cpp_FUN_004ee3f0",
+      "name": "core_menu.cpp_showMainGameMenu_FUN_004ee3f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -41,9 +38,9 @@
         "004ee3dc"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_menu.cpp_FUN_004ee1a0",
-    "signature": "void core_menu_cpp_FUN_004ee1a0(int param_1)"
+    "signature": "void __cdecl core_menu_cpp_FUN_004ee1a0(int initialize_systems)"
   },
   "function_calls": [
     {
@@ -54,17 +51,17 @@
     {
       "addr": "004b3000",
       "is_variadic": false,
-      "name": "core_game.cpp_FUN_004b3000"
+      "name": "core_game.cpp_CGame_saveClockTime_FUN_004b3000"
     },
     {
       "addr": "004b3010",
       "is_variadic": false,
-      "name": "core_game.cpp_FUN_004b3010"
+      "name": "core_game.cpp_CGame_updateDT_FUN_004b3010"
     },
     {
       "addr": "004d94d0",
       "is_variadic": false,
-      "name": "core_inivar.cpp_FUN_004d94d0"
+      "name": "core_inivar.cpp_writeIniData_FUN_004d94d0"
     },
     {
       "addr": "004eb0e0",
@@ -92,44 +89,44 @@
       "name": "core_menu.cpp_FUN_004eed60"
     },
     {
-      "addr": "005023e0",
-      "is_variadic": false,
-      "name": "core_moon.cpp_FUN_005023e0"
-    },
-    {
       "addr": "00502450",
       "is_variadic": false,
-      "name": "core_moon.cpp_FUN_00502450"
+      "name": "core_moon.cpp_CMoon_free_FUN_00502450"
     },
     {
-      "addr": "005024a0",
+      "addr": "005023e0",
       "is_variadic": false,
-      "name": "core_moon.cpp_FUN_005024a0"
+      "name": "core_moon.cpp_CMoon_init_FUN_005023e0"
     },
     {
       "addr": "00502510",
       "is_variadic": false,
-      "name": "core_moon.cpp_FUN_00502510"
+      "name": "core_moon.cpp_CMoon_render_FUN_00502510"
+    },
+    {
+      "addr": "005024a0",
+      "is_variadic": false,
+      "name": "core_moon.cpp_CMoon_update_FUN_005024a0"
     },
     {
       "addr": "005344c0",
       "is_variadic": false,
-      "name": "core_set.cpp_FUN_005344c0"
+      "name": "core_set.cpp_CDemonSet_setFlatColor_FUN_005344c0"
     },
     {
       "addr": "0055ac50",
       "is_variadic": false,
-      "name": "core_sound.cpp_FUN_0055ac50"
+      "name": "core_sound.cpp_CSound_configure_FUN_0055ac50"
     },
     {
       "addr": "0055adb0",
       "is_variadic": false,
-      "name": "core_sound.cpp_FUN_0055adb0"
+      "name": "core_sound.cpp_CSound_reset_FUN_0055adb0"
     },
     {
       "addr": "005b7790",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7790"
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
     },
     {
       "addr": "0050fe80",
@@ -139,7 +136,7 @@
     {
       "addr": "00589560",
       "is_variadic": false,
-      "name": "wincore_wddvmem.cpp_FUN_00589560"
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00589560"
     }
   ],
   "globals": [
@@ -211,19 +208,19 @@
     },
     {
       "addr": "01cb69d0",
-      "name": "g_CGameInstance.field208_0xd0",
+      "name": "g_CGameInstance.game_control",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb69d4",
-      "name": "g_CGameInstance.field212_0xd4",
+      "name": "g_CGameInstance.hero_number",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb6b84",
-      "name": "g_CGameInstance.field644_0x284",
+      "name": "g_CGameInstance.delta_time_float",
       "type": "undefined4",
       "value": null
     },
@@ -235,13 +232,13 @@
     },
     {
       "addr": "01fc103c",
-      "name": "g_CDemonSetInstance.field1420932_0x15ae84",
+      "name": "g_CDemonSetInstance.rendering_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fc104c",
-      "name": "g_CDemonSetInstance.field1420948_0x15ae94",
+      "name": "g_CDemonSetInstance.ambient_base_quick",
       "type": "undefined4",
       "value": null
     }
@@ -252,7 +249,7 @@
       {
         "call_addr": "004b6b21",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b6170",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -263,7 +260,7 @@
       {
         "call_addr": "004ee8a8",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004ee3f0",
+        "caller": "core_menu.cpp_showMainGameMenu_FUN_004ee3f0",
         "estimated_params": 1,
         "instructions_analyzed": 2,
         "method": "push_count",
@@ -272,11 +269,11 @@
         "stack_params": 1
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.193333333333333,
@@ -309,10 +306,10 @@
     "pcode_op_count": 629
   },
   "stack_frame": {
-    "frame_size": 20,
+    "frame_size": 24,
     "local_size": 20,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -321,88 +318,23 @@
         "offset": -16,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "initialize_systems",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void core_menu_cpp_FUN_004ee1a0(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1 != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x15ae84",
-      "severity": "mild",
-      "text": "*(uint *)&g_CDemonSetPtr->field_0x15ae84 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x15ae94",
-      "severity": "mild",
-      "text": "*(uint *)&g_CDemonSetPtr->field_0x15ae94 = 0xdac;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x284",
-      "severity": "mild",
-      "text": "core_moon_cpp_FUN_005024a0(&g_CMoonInstance,*(uint *)&g_CGamePtr->field_0x284);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x15ae84",
-      "severity": "mild",
-      "text": "*(uint *)&g_CDemonSetPtr->field_0x15ae84 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0xd4",
-      "severity": "mild",
-      "text": "*(uint *)&g_CGamePtr->field_0xd4 = 9;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0xd0",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)&g_CGamePtr->field_0xd0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 56,
-      "match": "field_0xd0",
-      "severity": "mild",
-      "text": "if (iVar1 != *(int *)&g_CGamePtr->field_0xd0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
       "line": 64,
       "match": "*(code **)(*0x01D02F84",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,1);",
+      "text": "iVar2 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,1);",
       "type": "raw_address_pointer_store"
     },
     {
@@ -410,16 +342,8 @@
       "line": 64,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,1);",
+      "text": "iVar2 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,1);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 66,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1 != 0) {",
-      "type": "unnamed_param"
     },
     {
       "description": "Raw hex address 0x1d07ed0 assigned to bare local `iVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
@@ -428,17 +352,6 @@
       "severity": "moderate",
       "text": "iVar4 = 0x1d07ed0;",
       "type": "raw_address_constant"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 86,
+    "complexity_score": 71,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 26,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
@@ -21,7 +20,7 @@
     {
       "addr": "005500b0",
       "from_addr": "00550131",
-      "name": "core_skeleton.cpp_FUN_005500b0",
+      "name": "core_skeleton.cpp_getDeformableModel_FUN_005500b0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -103,7 +102,7 @@
       {
         "call_addr": "00550131",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_005500b0",
+        "caller": "core_skeleton.cpp_getDeformableModel_FUN_005500b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -142,6 +141,32 @@
       "STORE": 18
     },
     "pcode_op_count": 183
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005427c0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00564e40",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0059b8d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7292
+    },
+    "nocturne.exe": {
+      "addr": "005191f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7447
+    }
   },
   "stack_frame": {
     "frame_size": 12,
@@ -182,14 +207,6 @@
       "severity": "mild",
       "text": "file_handle = engine_dosio_cpp_FUN_004659c0(\"models\",filename,&DAT_005d1b14);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x35b0",
-      "severity": "mild",
-      "text": "pcVar2 = &this_ptr->field_0x35b0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

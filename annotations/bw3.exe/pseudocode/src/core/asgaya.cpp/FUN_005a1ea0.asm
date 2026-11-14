@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_asgaya_cpp_FUN_005a1ea0(int *param_1,int param_2)
+; void core_asgaya_cpp_FUN_005a1ea0(SRenderVertex *param_1,int param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30
@@ -15,7 +15,7 @@
 ;
 ; XREF[2]:
 ;   engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160 at 0046b21c
-;   engine_drender.cpp_FUN_0046de6e at 0046df4c
+;   engine_drender.cpp_FUN_0046de70 at 0046df4c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fba40
@@ -299,7 +299,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x3c]      ; 005a215c
     PUSH EDX                            ; 005a2160
     CALL engine_prim.c_calculateTriangleWindingOrder_FUN_00515ac0 ; 005a2161
-        ;   XREF to: 00515ac0 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_calculateTriangleWindingOrder_FUN_00515ac0()
+        ;   XREF to: 00515ac0 (UNCONDITIONAL_CALL)  ; int engine_prim.c_calculateTriangleWindingOrder_FUN_00515ac0(SRenderVertex * v0, SRenderVertex * v1, SRenderVertex * v2)
     ADD ESP,0xc                         ; 005a2166
     TEST EAX,EAX                        ; 005a2169
     JNZ 0x005a1f76                      ; 005a216b
@@ -319,7 +319,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x3c]      ; 005a218b
     PUSH EDX                            ; 005a218f
     CALL engine_special.cpp_drawPolygon_FUN_00565c10 ; 005a2190
-        ;   XREF to: 00565c10 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolygon_FUN_00565c10()
+        ;   XREF to: 00565c10 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon_FUN_00565c10(SRenderVertex * vertices, int vertex_count, int render_flags)
     ADD ESP,0xc                         ; 005a2195
     MOV EBP,dword ptr [0x02d24d80]      ; 005a2198 | DAT_02d24d80
     ADD ESP,0x20                        ; 005a219e
@@ -334,7 +334,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x38]      ; 005a21ab
     PUSH EDX                            ; 005a21af
     CALL engine_prim.c_prepareDepthBuffer_FUN_00515920 ; 005a21b0
-        ;   XREF to: 00515920 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_prepareDepthBuffer_FUN_00515920()
+        ;   XREF to: 00515920 (UNCONDITIONAL_CALL)  ; void engine_prim.c_prepareDepthBuffer_FUN_00515920(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 005a21b5
     JMP 0x005a1fae                      ; 005a21b8
         ;   XREF to: 005a1fae (UNCONDITIONAL_JUMP)  ; LAB_005a1fae
@@ -344,7 +344,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x38]      ; 005a21c2
     PUSH EBP                            ; 005a21c6
     CALL engine_prim.c_replaceWWithDepth_FUN_00515a80 ; 005a21c7
-        ;   XREF to: 00515a80 (UNCONDITIONAL_CALL)  ; undefined engine_prim.c_replaceWWithDepth_FUN_00515a80()
+        ;   XREF to: 00515a80 (UNCONDITIONAL_CALL)  ; void engine_prim.c_replaceWWithDepth_FUN_00515a80(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 005a21cc
     JMP 0x005a1fae                      ; 005a21cf
         ;   XREF to: 005a1fae (UNCONDITIONAL_JUMP)  ; LAB_005a1fae

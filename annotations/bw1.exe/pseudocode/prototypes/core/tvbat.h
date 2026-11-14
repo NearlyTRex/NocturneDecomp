@@ -7,60 +7,60 @@
 
 // Original: core_tvbat.cpp_staticInit_FUN_005a3eb0
 // Address: 005a3eb0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_tvbat.cpp_factoryFuncTVBat_FUN_005a3ee0
 // Address: 005a3ee0
-void factoryFuncTVBat(void);
+CTVBat * __cdecl factoryFuncTVBat(void);
 
 // Original: core_tvbat.cpp_CTVBat_getActorType_FUN_005a3f00
 // Address: 005a3f00
-CDemonActorType * CTVBat::getActorType(CTVBat *this_ptr);
+CDemonActorType * __cdecl CTVBat::getActorType(CTVBat *this_ptr);
 
 // Original: core_tvbat.cpp_CTVBat_ctor_FUN_005a3f40
 // Address: 005a3f40
 CTVBat * __cdecl CTVBat::ctor(CTVBat *this_ptr);
 
-// Original: core_tvbat.cpp_FUN_005a40a0
+// Original: core_tvbat.cpp_CTVBat_setup_FUN_005a40a0
 // Address: 005a40a0
-void FUN_005a40a0(CEnemy *param_1);
+void __cdecl CTVBat::setup(CTVBat *this_ptr);
 
-// Original: core_tvbat.cpp_FUN_005a4110
+// Original: core_tvbat.cpp_CTVBat_archive_FUN_005a4110
 // Address: 005a4110
-void FUN_005a4110(CEnemy *param_1);
+void __cdecl CTVBat::archive(CTVBat *this_ptr);
 
-// Original: core_tvbat.cpp_FUN_005a4260
+// Original: core_tvbat.cpp_CTVBat_process_FUN_005a4260
 // Address: 005a4260
-void FUN_005a4260(int param_1,float param_2);
+void __cdecl CTVBat::process(CTVBat *this_ptr,float delta_time);
 
-// Original: core_tvbat.cpp_FUN_005a4eb0
+// Original: core_tvbat.cpp_CTVBat_orderAttack_FUN_005a4eb0
 // Address: 005a4eb0
-void __cdecl FUN_005a4eb0(CTVBat *this_ptr);
+void __cdecl CTVBat::orderAttack(CTVBat *this_ptr);
 
-// Original: core_tvbat.cpp_FUN_005a4ec0
+// Original: core_tvbat.cpp_CTVBat_renderOpaque_FUN_005a4ec0
 // Address: 005a4ec0
-int FUN_005a4ec0(CDemonActor *param_1);
+int __cdecl CTVBat::renderOpaque(CTVBat *this_ptr);
 
-// Original: core_tvbat.cpp_FUN_005a4f50
+// Original: core_tvbat.cpp_CTVBat_getBoundingBox_FUN_005a4f50
 // Address: 005a4f50
-void FUN_005a4f50(int param_1);
+CBoundingBox3D * __cdecl CTVBat::getBoundingBox(CTVBat *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_tvbat.cpp_FUN_005a4fb0
+// Original: core_tvbat.cpp_CTVBat_getCollisionType_FUN_005a4fb0
 // Address: 005a4fb0
-undefined4 FUN_005a4fb0(int param_1);
+ECollisionType __cdecl CTVBat::getCollisionType(CTVBat *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_tvbat.cpp_FUN_005a4fd0
+// Original: core_tvbat.cpp_CTVBat_getTargetPoints_FUN_005a4fd0
 // Address: 005a4fd0
-undefined4 FUN_005a4fd0(void);
+int __cdecl CTVBat::getTargetPoints(CTVBat *this_ptr,CVector3f *out_points_array);
 
-// Original: core_tvbat.cpp_FUN_005a4fe0
+// Original: core_tvbat.cpp_CTVBat_getDeathState_FUN_005a4fe0
 // Address: 005a4fe0
-int FUN_005a4fe0(int param_1);
+EDeathState __cdecl CTVBat::getDeathState(CTVBat *this_ptr);
 
-// Original: core_tvbat.cpp_FUN_005a5010
+// Original: core_tvbat.cpp_CTVBat_processDamage_FUN_005a5010
 // Address: 005a5010
-void FUN_005a5010(int param_1,int param_2);
+void __cdecl CTVBat::processDamage(CTVBat *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_tvbat.cpp_CTVBat_dtor_FUN_005a5080
 // Address: 005a5080
-CTVBat * CTVBat::dtor(CTVBat *this_ptr,uint flags);
+CTVBat * __cdecl CTVBat::dtor(CTVBat *this_ptr,uint flags);

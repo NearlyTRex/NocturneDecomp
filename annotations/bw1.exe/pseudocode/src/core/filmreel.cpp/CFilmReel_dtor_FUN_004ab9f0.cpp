@@ -13,11 +13,11 @@ CFilmReel * __cdecl core_filmreel_cpp_CFilmReel_dtor_FUN_004ab9f0(CFilmReel *thi
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CFilmReelTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CFilmReelTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  pCVar1 = (CFilmReel *)core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)this_ptr,1);
+  pCVar1 = (CFilmReel *)core_actor_cpp_CDemonActor_dtor_FUN_00408730(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_event_cpp_FUN_004948e0(CEventList *param_1,CEventList *param_2,int param_3)
+; void core_event_cpp_FUN_004948e0(CEventList *param_1,char *param_2,int param_3)
 ;
 ;
 ; XREF[2]:
@@ -131,7 +131,7 @@ section .text
         ;   Label: LAB_004949ba
     PUSH 0x5bfe8d                       ; 004949bf | = "events.txt"
     CALL crt_stdio.c_fopen_FUN_005a43ec ; 004949c4
-        ;   XREF to: 005a43ec (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_005a43ec()
+        ;   XREF to: 005a43ec (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005a43ec(char * filename, char * mode)
     ADD ESP,0x8                         ; 004949c9
     MOV EDI,EAX                         ; 004949cc
     TEST EAX,EAX                        ; 004949ce

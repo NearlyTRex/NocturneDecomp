@@ -1,0 +1,39 @@
+# CTVBat
+
+Category `/Nocturne/Class/Game`.
+
+| build | size | state | RTTI size |
+|---|---:|---|---:|
+| nocedit | 49396 | fields | 49396 |
+| nocturne | 48988 | fields | 48988 |
+| bw1 | 50336 | fields | 50336 |
+| blairwitch2 | 68912 | fields | 68912 |
+| bw3 | 53900 | fields | 53900 |
+
+## Fields
+
+Offsets in hex; blank where the build's layout does not have the field.
+
+| field | type | nocedit | nocturne | bw1 | blairwitch2 | bw3 |
+|---|---|---:|---:|---:|---:|---:|
+| `base` | `CEnemy` | 0x0 | 0x0 | 0x0 | 0x0 | 0x0 |
+| `anim_frame` | `float` | 0xbebc | 0xbd24 | 0xc268 | 0x10af8 | 0xd054 |
+| `model` | `CKeyFramedModelInstance` | 0xbec0 | 0xbd28 | 0xc26c | 0x10afc | 0xd058 |
+| `speed` | `float` | 0xc03c | 0xbea4 | 0xc3e8 | 0x10c78 | 0xd1d4 |
+| `anim_rate` | `float` | 0xc040 | 0xbea8 | 0xc3ec | 0x10c7c | 0xd1d8 |
+| `home_pos` | `CVector3f` | 0xc044 | 0xbeac | 0xc3f0 | 0x10c80 | 0xd1dc |
+| `max_distance` | `float` | 0xc050 | 0xbeb8 | 0xc3fc | 0x10c8c | 0xd1e8 |
+| `max_height` | `float` | 0xc054 | 0xbebc | 0xc400 | 0x10c90 | 0xd1ec |
+| `rot_speed` | `float` | 0xc058 | 0xbec0 | 0xc404 | 0x10c94 | 0xd1f0 |
+| `move_speed` | `float` | 0xc05c | 0xbec4 | 0xc408 | 0x10c98 | 0xd1f4 |
+| `height_offset` | `float` | 0xc060 | 0xbec8 | 0xc40c | 0x10c9c | 0xd1f8 |
+| `follow_orders` | `int` | 0xc064 | 0xbecc | 0xc410 | 0x10ca0 | 0xd1fc |
+| `attack_timer` | `float` | 0xc068 | 0xbed0 | 0xc414 | 0x10ca4 | 0xd200 |
+| `velocity` | `CVector3f` | 0xc06c | 0xbed4 | 0xc418 | 0x10ca8 | 0xd204 |
+| `state` | `int` | 0xc078 | 0xbee0 | 0xc424 | 0x10cb4 | 0xd210 |
+| `periodic_sound` | `char[100]` | 0xc07c | 0xbee4 | 0xc428 | 0x10cb8 | 0xd214 |
+| `periodic_sound_timer_min` | `float` | 0xc0e0 | 0xbf48 | 0xc48c | 0x10d1c | 0xd278 |
+| `periodic_sound_timer_max` | `float` | 0xc0e4 | 0xbf4c | 0xc490 | 0x10d20 | 0xd27c |
+| `periodic_sound_handle` | `uint` | 0xc0e8 | 0xbf50 | 0xc494 | 0x10d24 | 0xd280 |
+| `periodic_sound_timer` | `float` | 0xc0ec | 0xbf54 | 0xc498 | 0x10d28 | 0xd284 |
+| `boss_actor` | `CDemonActor*` | 0xc0f0 | 0xbf58 | 0xc49c | 0x10d2c | 0xd288 |

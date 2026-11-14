@@ -7,23 +7,23 @@
 
 // Original: core_filmreel.cpp_staticInit_FUN_004960f0
 // Address: 004960f0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_filmreel.cpp_factoryFuncFilmReel_FUN_00496140
 // Address: 00496140
-void factoryFuncFilmReel(void);
+CFilmReel * __cdecl factoryFuncFilmReel(void);
 
 // Original: core_filmreel.cpp_CFilmReel_getActorType_FUN_00496160
 // Address: 00496160
-CDemonActorType * CFilmReel::getActorType(CFilmReel *this_ptr);
+CDemonActorType * __cdecl CFilmReel::getActorType(CFilmReel *this_ptr);
 
 // Original: core_filmreel.cpp_CFilmReel_ctor_FUN_00496170
 // Address: 00496170
 CFilmReel * __cdecl CFilmReel::ctor(CFilmReel *this_ptr);
 
-// Original: core_filmreel.cpp_FUN_004961e0
+// Original: core_filmreel.cpp_CFilmReel_setup_FUN_004961e0
 // Address: 004961e0
-void FUN_004961e0(CDemonActor *param_1);
+void __cdecl CFilmReel::setup(CFilmReel *this_ptr);
 
 // Original: core_filmreel.cpp_CFilmReel_canPickup_FUN_00496280
 // Address: 00496280
@@ -41,17 +41,17 @@ void __cdecl CFilmReel::onDropped(CFilmReel *this_ptr,CVector3f *drop_position);
 // Address: 004962c0
 CDemonActor * __cdecl CFilmReel::getCarrier(CFilmReel *this_ptr);
 
-// Original: core_filmreel.cpp_FUN_004962d0
+// Original: core_filmreel.cpp_CFilmReel_process_FUN_004962d0
 // Address: 004962d0
-void FUN_004962d0(void);
+void __cdecl CFilmReel::process(CFilmReel *this_ptr,float delta_time);
 
-// Original: core_filmreel.cpp_FUN_004962e0
+// Original: core_filmreel.cpp_CFilmReel_renderOpaque_FUN_004962e0
 // Address: 004962e0
-int FUN_004962e0(int param_1);
+int __cdecl CFilmReel::renderOpaque(CFilmReel *this_ptr);
 
-// Original: core_filmreel.cpp_FUN_00496360
+// Original: core_filmreel.cpp_CFilmReel_renderBackground_FUN_00496360
 // Address: 00496360
-void FUN_00496360(void);
+void __cdecl CFilmReel::renderBackground(CFilmReel *this_ptr,int layer_flag);
 
 // Original: core_filmreel.cpp_CFilmReel_archive_FUN_00496380
 // Address: 00496380
@@ -61,17 +61,17 @@ void __cdecl CFilmReel::archive(CFilmReel *this_ptr);
 // Address: 004963d0
 ECollisionType __cdecl CFilmReel::getCollisionType(CFilmReel *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_filmreel.cpp_FUN_004963f0
+// Original: core_filmreel.cpp_CFilmReel_getBoundingBox_FUN_004963f0
 // Address: 004963f0
-void FUN_004963f0(int param_1);
+CBoundingBox3D * __cdecl CFilmReel::getBoundingBox(CFilmReel *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_filmreel.cpp_FUN_00496430
+// Original: core_filmreel.cpp_factoryFuncFilmProjector_FUN_00496430
 // Address: 00496430
-void FUN_00496430(void);
+CFilmProjector * __cdecl factoryFuncFilmProjector(void);
 
-// Original: core_filmreel.cpp_FUN_00496450
+// Original: core_filmreel.cpp_CFilmProjector_getActorType_FUN_00496450
 // Address: 00496450
-undefined4 FUN_00496450(void);
+CDemonActorType * __cdecl CFilmProjector::getActorType(CFilmProjector *this_ptr);
 
 // Original: core_filmreel.cpp_CFilmProjector_ctor_FUN_00496460
 // Address: 00496460
@@ -81,17 +81,17 @@ CFilmProjector * __cdecl CFilmProjector::ctor(CFilmProjector *this_ptr);
 // Address: 00496520
 void __cdecl CFilmProjector::setup(CFilmProjector *this_ptr);
 
-// Original: core_filmreel.cpp_FUN_00496560
+// Original: core_filmreel.cpp_CFilmProjector_process_FUN_00496560
 // Address: 00496560
-void FUN_00496560(CActorDestination *param_1,float param_2);
+void __cdecl CFilmProjector::process(CFilmProjector *this_ptr,float delta_time);
 
-// Original: core_filmreel.cpp_FUN_004966f0
+// Original: core_filmreel.cpp_CFilmProjector_getBoundingBox_FUN_004966f0
 // Address: 004966f0
-void FUN_004966f0(void);
+CBoundingBox3D * __cdecl CFilmProjector::getBoundingBox(CFilmProjector *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_filmreel.cpp_FUN_00496740
+// Original: core_filmreel.cpp_CFilmProjector_renderOpaque_FUN_00496740
 // Address: 00496740
-int FUN_00496740(CDemonActor *param_1);
+int __cdecl CFilmProjector::renderOpaque(CFilmProjector *this_ptr);
 
 // Original: core_filmreel.cpp_CFilmProjector_archive_FUN_00496840
 // Address: 00496840

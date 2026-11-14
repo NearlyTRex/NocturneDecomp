@@ -17,7 +17,7 @@
 ;   undefined4 DAT_00607b68
 ;
 ; Called Functions:
-;   unkafter_asgaya.cpp_FUN_005aed4b
+;   crt_unknown.c_FUN_005aed4b
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
     FSTP double ptr [EBP + -0x10]       ; 005aa4ab
     MOV dword ptr [EBP + -0x8],EAX      ; 005aa4ae
     MOV dword ptr [EBP + -0x4],EDX      ; 005aa4b1
-    CALL unkafter_asgaya.cpp_FUN_005aed4b ; 005aa4b4
-        ;   XREF to: 005aed4b (UNCONDITIONAL_CALL)  ; undefined unkafter_asgaya.cpp_FUN_005aed4b()
+    CALL crt_unknown.c_FUN_005aed4b     ; 005aa4b4
+        ;   XREF to: 005aed4b (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005aed4b()
     PUSH EDX                            ; 005aa4b9
     PUSH EAX                            ; 005aa4ba
     FLD double ptr [ESP]                ; 005aa4bb

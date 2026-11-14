@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 144,
+    "complexity_score": 33,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 19,
-    "suspect_count": 12,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 18,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field"
+      "unrolled_memcpy"
     ],
-    "total_lines": 58
+    "total_lines": 57
   },
   "cross_references": [],
   "function": {
@@ -31,7 +31,7 @@
     {
       "addr": "0040cc00",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cc00"
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00"
     },
     {
       "addr": "004688e0",
@@ -77,6 +77,32 @@
     },
     "pcode_op_count": 156
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0046cf50",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0046eb30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0048e0e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00462140",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -95,100 +121,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&this_ptr->field_0x158);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
       "line": 9,
-      "match": "field_0x2ec",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2ec = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x20 = *(uint *)&this_ptr->field_0x2f8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x2f8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x20 = *(uint *)&this_ptr->field_0x2f8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x24 = *(uint *)&this_ptr->field_0x2fc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x2fc",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x24 = *(uint *)&this_ptr->field_0x2fc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x28 = *(uint *)&this_ptr->field_0x300;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x300",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x28 = *(uint *)&this_ptr->field_0x300;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x2e0",
-      "severity": "mild",
-      "text": "(*(uint *)&this_ptr->field_0x2e0,*(uint *)&this_ptr->field_0x2e4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x2e4",
-      "severity": "mild",
-      "text": "(*(uint *)&this_ptr->field_0x2e0,*(uint *)&this_ptr->field_0x2e4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x2dc",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2dc = uVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x338",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x338 = 0;",
-      "type": "unnamed_field"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->base).location.position.x = (this_ptr->home_pos).x;",
+      "type": "unrolled_memcpy"
     }
   ],
   "vtable_info": {

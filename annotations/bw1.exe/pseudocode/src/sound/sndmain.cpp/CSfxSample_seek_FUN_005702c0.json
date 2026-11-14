@@ -2,30 +2,32 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 148,
-    "complexity_score": 209,
+    "complexity_score": 124,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 10,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 49,
-    "suspect_count": 15,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 54,
+    "suspect_count": 5,
     "suspect_types": [
-      "unnamed_field",
+      "concat_reconstruction",
+      "extra_output",
+      "undefined_type",
       "warning_overlapping_globals"
     ],
-    "total_lines": 197
+    "total_lines": 202
   },
   "cross_references": [
+    {
+      "addr": "00570460",
+      "from_addr": "005706c0",
+      "name": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_00570460",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "00572250",
       "from_addr": "00572316",
       "name": "sound_sndmain.cpp_CSfxSlot_seek_FUN_00572250",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00570460",
-      "from_addr": "005706c0",
-      "name": "sound_sndmain.cpp_FUN_00570460",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -64,24 +66,24 @@
       "name": "sound_mp3.cpp_CMP3Decoder_seek_FUN_0052b2b0"
     },
     {
+      "addr": "00572400",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_framesToBytes_FUN_00572400"
+    },
+    {
       "addr": "005725a0",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_005725a0"
     },
     {
-      "addr": "00572400",
+      "addr": "005a0d70",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00572400"
+      "name": "support_trstream.cpp_CInStreamFile_isOpen_FUN_005a0d70"
     },
     {
       "addr": "005a0d00",
       "is_variadic": false,
-      "name": "unkaddr_0059f520.cpp_FUN_005a0d00"
-    },
-    {
-      "addr": "005a0d70",
-      "is_variadic": false,
-      "name": "unkaddr_0059f520.cpp_FUN_005a0d70"
+      "name": "support_trstream.cpp_CInStreamFile_seek_FUN_005a0d00"
     }
   ],
   "globals": [
@@ -163,7 +165,7 @@
       {
         "call_addr": "005706c0",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00570460",
+        "caller": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_00570460",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -217,6 +219,32 @@
       "TRUNC": 1
     },
     "pcode_op_count": 506
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0054dc50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005537c0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a65a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.807
+    },
+    "nocturne.exe": {
+      "addr": "00523d10",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.807
+    }
   },
   "stack_frame": {
     "frame_size": 56,
@@ -279,116 +307,36 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x160",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x160 < 0) {",
-      "type": "unnamed_field"
+      "description": "Unresolved type",
+      "line": 9,
+      "match": "undefined3 extraout_var",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var;",
+      "type": "undefined_type"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x16c",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x16c = (int)ROUND(fVar2);",
-      "type": "unnamed_field"
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_var",
+      "severity": "moderate",
+      "text": "undefined3 extraout_var;",
+      "type": "extra_output"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x16c",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x16c < 0) {",
-      "type": "unnamed_field"
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 46,
+      "match": "extraout_var",
+      "severity": "moderate",
+      "text": "if (CONCAT31(extraout_var,bVar1) != 0) {",
+      "type": "extra_output"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x16c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x16c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x164",
-      "severity": "mild",
-      "text": "if ((dest_buffer_offset < 0) || (*(int *)&this_ptr->field_0x164 <= dest_buffer_offset)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x170",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x170 = dest_buffer_offset;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x174",
-      "severity": "mild",
-      "text": "if (*(CMP3Decoder **)&this_ptr->field_0x174 != (CMP3Decoder *)0x0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x174",
-      "severity": "mild",
-      "text": "(*(CMP3Decoder **)&this_ptr->field_0x174,*(int *)&this_ptr->field_0x16c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x16c",
-      "severity": "mild",
-      "text": "(*(CMP3Decoder **)&this_ptr->field_0x174,*(int *)&this_ptr->field_0x16c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x16c",
-      "severity": "mild",
-      "text": "(\"Error seeking %s to %d\",this_ptr,*(uint *)&this_ptr->field_0x16c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x17c",
-      "severity": "mild",
-      "text": "iVar1 = unkaddr_0059f520_cpp_FUN_005a0d70(&this_ptr->field_0x17c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x16c",
-      "severity": "mild",
-      "text": "iVar1 = sound_sndmain_cpp_FUN_00572400(this_ptr,*(uint *)&this_ptr->field_0x16c,0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x17c",
-      "severity": "mild",
-      "text": "unkaddr_0059f520_cpp_FUN_005a0d00(&this_ptr->field_0x17c,iVar1 + *(int *)&this_ptr->field_0x178)",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "unkaddr_0059f520_cpp_FUN_005a0d00(&this_ptr->field_0x17c,iVar1 + *(int *)&this_ptr->field_0x178)",
-      "type": "unnamed_field"
+      "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
+      "line": 46,
+      "match": "CONCAT31",
+      "severity": "moderate",
+      "text": "if (CONCAT31(extraout_var,bVar1) != 0) {",
+      "type": "concat_reconstruction"
     }
   ]
 }

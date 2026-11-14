@@ -9,5 +9,5 @@
 CDemonActor * __cdecl core_filmreel_cpp_CFilmReel_getCarrier_FUN_004ab420(CFilmReel *this_ptr)
 
 {
-  return *(CDemonActor **)&this_ptr->field_0x2d4;
+  return this_ptr->carrier;
 }

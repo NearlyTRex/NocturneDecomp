@@ -7,51 +7,51 @@
 
 // Original: core_backgnd.cpp_staticInit_FUN_0040f2d0
 // Address: 0040f2d0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_backgnd.cpp_factoryFuncBackgroundActor_FUN_0040f300
 // Address: 0040f300
-void factoryFuncBackgroundActor(void);
+CBackgroundActor * __cdecl factoryFuncBackgroundActor(void);
 
 // Original: core_backgnd.cpp_CBackgroundActor_getActorType_FUN_0040f320
 // Address: 0040f320
-CDemonActorType * CBackgroundActor::getActorType(CBackgroundActor *this_ptr);
+CDemonActorType * __cdecl CBackgroundActor::getActorType(CBackgroundActor *this_ptr);
 
 // Original: core_backgnd.cpp_CBackgroundActor_ctor_FUN_0040f330
 // Address: 0040f330
-CBackgroundActor * CBackgroundActor::ctor(CBackgroundActor *this_ptr);
+CBackgroundActor * __cdecl CBackgroundActor::ctor(CBackgroundActor *this_ptr);
 
-// Original: core_backgnd.cpp_FUN_0040f3a0
+// Original: core_backgnd.cpp_CBackgroundActor_setup_FUN_0040f3a0
 // Address: 0040f3a0
-undefined8 FUN_0040f3a0(CDemonActor *param_1);
+void __cdecl CBackgroundActor::setup(CBackgroundActor *this_ptr);
 
-// Original: core_backgnd.cpp_FUN_0040f3e0
+// Original: core_backgnd.cpp_CBackgroundActor_process_FUN_0040f3e0
 // Address: 0040f3e0
-void FUN_0040f3e0(void);
+void __cdecl CBackgroundActor::process(CBackgroundActor *this_ptr,float delta_time);
 
-// Original: core_backgnd.cpp_FUN_0040f3f0
+// Original: core_backgnd.cpp_CBackgroundActor_renderBackground_FUN_0040f3f0
 // Address: 0040f3f0
-void FUN_0040f3f0(CDemonActor *param_1,int param_2);
+void __cdecl CBackgroundActor::renderBackground(CBackgroundActor *this_ptr,int layer_flag);
 
-// Original: core_backgnd.cpp_FUN_0040f480
+// Original: core_backgnd.cpp_CBackgroundActor_renderOpaque_FUN_0040f480
 // Address: 0040f480
-undefined4 FUN_0040f480(void);
+int __cdecl CBackgroundActor::renderOpaque(CBackgroundActor *this_ptr);
 
-// Original: core_backgnd.cpp_FUN_0040f490
+// Original: core_backgnd.cpp_CBackgroundActor_getBoundingBox_FUN_0040f490
 // Address: 0040f490
-void FUN_0040f490(int param_1);
+CBoundingBox3D * __cdecl CBackgroundActor::getBoundingBox(CBackgroundActor *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_backgnd.cpp_FUN_0040f4d0
+// Original: core_backgnd.cpp_CBackgroundActor_archive_FUN_0040f4d0
 // Address: 0040f4d0
-void FUN_0040f4d0(CDemonActor *param_1);
+void __cdecl CBackgroundActor::archive(CBackgroundActor *this_ptr);
 
-// Original: core_backgnd.cpp_FUN_0040f560
+// Original: core_backgnd.cpp_CBackgroundActor_getCollisionType_FUN_0040f560
 // Address: 0040f560
-undefined4 FUN_0040f560(int param_1,int param_2);
+ECollisionType __cdecl CBackgroundActor::getCollisionType(CBackgroundActor *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_backgnd.cpp_FUN_0040f5a0
+// Original: core_backgnd.cpp_CBackgroundActor_getGroundType_FUN_0040f5a0
 // Address: 0040f5a0
-undefined4 FUN_0040f5a0(int param_1);
+EGroundType __cdecl CBackgroundActor::getGroundType(CBackgroundActor *this_ptr);
 
 // Original: core_backgnd.cpp_CBackgroundActor_dtor_FUN_0040f5b0
 // Address: 0040f5b0

@@ -9,12 +9,14 @@
 CMouse * __cdecl engine_ncursfx_cpp_CMouse_ctor_FUN_00510010(CMouse *this_ptr)
 
 {
-  int iVar1;
+  void *pvVar1;
   
-  iVar1 = __arrinit(this_ptr,8,&g_CAlphaBitmapTypeInfo);
-  iVar1 = __arrinit(iVar1 + 0xa0,7,&g_CAlphaBitmapTypeInfo);
-  iVar1 = __arrinit(iVar1 + 0x8c,0xf,&g_CAlphaBitmapTypeInfo);
-  *(uint *)(iVar1 + 300) = 0;
-  *(uint *)(iVar1 + 0x130) = 0;
-  return (CMouse *)(iVar1 + -300);
+  pvVar1 = __arrinit(this_ptr,8,&g_CAlphaBitmapTypeInfo);
+  pvVar1 = __arrinit
+                     ((void *)((int)pvVar1 + 0xa0),7,&g_CAlphaBitmapTypeInfo);
+  pvVar1 = __arrinit
+                     ((void *)((int)pvVar1 + 0x8c),0xf,&g_CAlphaBitmapTypeInfo);
+  *(uint *)((int)pvVar1 + 300) = 0;
+  *(uint *)((int)pvVar1 + 0x130) = 0;
+  return (CMouse *)((int)pvVar1 + -300);
 }

@@ -33,6 +33,12 @@ void nocturne_gl_present_framebuffer(const void *pixels, int width, int height, 
     stand.present_width = width;
     stand.present_height = height;
     stand.present_bpp = bpp;
+    stand.present_own_shape = 0;
+}
+
+void nocturne_gl_present_picture(const void *pixels, int width, int height, int pitch, int bpp) {
+    nocturne_gl_present_framebuffer(pixels, width, height, pitch, bpp);
+    stand.present_own_shape = 1;
 }
 
 float nocturne_movie_audio_gain(void) {
@@ -53,6 +59,16 @@ int g_nocturne_fixed_display = 0;
 void nocturne_gl_window_to_logical(int window_x, int window_y, int *out_x, int *out_y) {
     *out_x = window_x / stand.logical_scale;
     *out_y = window_y / stand.logical_scale;
+}
+
+void nocturne_gl_logical_to_window(int logical_x, int logical_y, int *out_x, int *out_y) {
+    *out_x = logical_x * stand.logical_scale;
+    *out_y = logical_y * stand.logical_scale;
+}
+
+// DirectDraw's presenter asks; these cases do not present through it.
+int nocturne_vsync_get(void) {
+    return 1;
 }
 
 void nocturne_apply_window_icon(struct SDL_Window *) {

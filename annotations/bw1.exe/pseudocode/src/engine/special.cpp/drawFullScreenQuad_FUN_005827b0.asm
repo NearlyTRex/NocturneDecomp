@@ -66,7 +66,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00582848
     PUSH EAX                            ; 0058284c
     CALL engine_special.cpp_drawPolygon_FUN_00582340 ; 0058284d
-        ;   XREF to: 00582340 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolygon_FUN_00582340()
+        ;   XREF to: 00582340 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolygon_FUN_00582340(SRenderVertex * vertices, int vertex_count, int render_flags)
     MOV EAX,0x1                         ; 00582852
     ADD ESP,0xc                         ; 00582857
     ADD ESP,0xc0                        ; 0058285a

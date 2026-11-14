@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CNPC.h"
 
 // Structure: CHiram
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x243ac (148396 bytes)
 #pragma pack(push, 1)
 typedef struct CHiram {
-    char field_0[148396]; // 0x0
+    CNPC base; // 0x0
+    char kill_event[100]; // 0x24348
 } CHiram;
 #pragma pack(pop)
 

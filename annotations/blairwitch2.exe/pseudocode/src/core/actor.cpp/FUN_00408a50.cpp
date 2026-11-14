@@ -9,7 +9,7 @@
 void core_actor_cpp_FUN_00408a50(int param_1)
 
 {
-  engine_console_cpp_FUN_00436710(g_CConsolePtr,"%s::getClassName()\n",param_1);
+  engine_console_cpp_CConsole_printf_FUN_00436710(g_CConsolePtr,"%s::getClassName()\n");
   (**(code **)(*(int *)(param_1 + 0x2b0) + 0xd4))(param_1);
   return;
 }

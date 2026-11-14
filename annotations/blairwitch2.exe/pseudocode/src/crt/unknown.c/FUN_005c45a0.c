@@ -1,0 +1,14 @@
+// Name: crt_unknown.c_FUN_005c45a0
+// Address: 005c45a0
+// Address Range: [[005c45a0, 005c45ad]]
+// Convention: unknown
+// Signature: void crt_unknown_c_FUN_005c45a0(ulong param_1)
+
+#include "nocturne.h"
+
+void FUN_005c45a0(ulong param_1)
+
+{
+  malloc(param_1);
+  return;
+}

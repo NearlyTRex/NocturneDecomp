@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_snddx_cpp_enumerateDirectSoundDevice_FUN_0057a290(int param_1,int param_2)
+; int __cdecl sound_snddx_cpp_enumerateDirectSoundDevice_FUN_0057a290(UINT device_id,SSoundDeviceInfo *device_info)
 ;
+; Parameters:
+; UINT             Stack[0x4]:4   device_id
+; SSoundDeviceInfo * Stack[0x8]:4   device_info
 ;
 ; XREF[2]:
 ;   sound_snddx.cpp_getDirectSoundDevice_FUN_0057a340 at 0057a374
@@ -14,7 +17,7 @@
 ;
 ; Called Functions:
 ;   crt_dsound.c_DirectSoundEnumerateA
-;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;
 ; *****************************************************************************
 
@@ -43,7 +46,7 @@ section .text
     XOR ECX,ECX                         ; 0057a2b4
         ;   Label: LAB_0057a2b4
     PUSH ECX                            ; 0057a2b6
-    PUSH 0x579f70                       ; 0057a2b7 | LAB_00579f70
+    PUSH 0x579f70                       ; 0057a2b7
     MOV dword ptr [0x006235d0],ECX      ; 0057a2bc | DAT_006235d0
     CALL crt_dsound.c_DirectSoundEnumerateA ; 0057a2c2
         ;   XREF to: 005cf85c (UNCONDITIONAL_CALL)  ; HRESULT crt_dsound.c_DirectSoundEnumerateA(LPDSENUMCALLBACKA lp_ds_enum_callback, LPVOID lp_context)
@@ -69,8 +72,8 @@ section .text
     PUSH 0x5f5693                       ; 0057a31b | = "DirectSound: %s"
     PUSH EBX                            ; 0057a320
     MOV dword ptr [EBX + 0x110],EDX     ; 0057a321
-    CALL crt_unknown.c_FUN_005bfb40     ; 0057a327
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0057a327
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EAX,0x1                         ; 0057a32c
     ADD ESP,0xc                         ; 0057a331
     POP ESI                             ; 0057a334

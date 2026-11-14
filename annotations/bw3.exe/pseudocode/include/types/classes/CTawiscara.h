@@ -2,15 +2,33 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
+#include "types/enums/EWerewolfType.h"
 
 // Structure: CTawiscara
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 53404; same 72-byte tail as nocedit CWerewolf (archive keys lightUpEyes/chainAnchor/chainLength/phase/phaseTimer/alpha1/alpha2 match); ctor 00593dd0, archive 00595e90, processDamage 00595f90, renderTransparent 00595d20, FUN_00593e80/FUN_00594000/FUN_00595710/FUN_00596380
 // Ghidra size: 0xd09c (53404 bytes)
 #pragma pack(push, 1)
 typedef struct CTawiscara {
-    char field_0[53404]; // 0x0
+    CEnemy base; // 0x0, derived
+    EWerewolfType type; // 0xd054, ctor 0; archive; processDamage compares 0 / 2 (nocedit CWerewolf.type)
+    int bone_indices[5]; // 0xd058, FUN_00593e80 stores five bone indices +0xd058..+0xd068; getTargetPoints reads +0xd058; renderTransparent indexes bone matrices by +0xd068
+    int light_up_eyes; // 0xd06c, ctor 1; archive "lightUpEyes"
+    uint sfx_handle; // 0xd070, processDamage killSfx(+0xd070)
+    float howl_cooldown; // 0xd074, FLD/FSTP float in FUN_00593e80/FUN_00594000/FUN_00595710 (nocedit howl_cooldown)
+    uint sfx_handles[2]; // 0xd078, processDamage kill/play/isPlaying on +0xd078; +0xd07c used in FUN_00593e80/FUN_00594000
+    struct CDemonActor* chain_anchor; // 0xd080, ctor 0; archive archiveActor "chainAnchor"
+    float chain_length; // 0xd084, ctor 5.0; archive "chainLength"
+    struct CDemonActor* alpha1; // 0xd088, ctor 0; archive archiveActor "alpha1"
+    struct CDemonActor* alpha2; // 0xd08c, ctor 0; archive archiveActor "alpha2"
+    int phase; // 0xd090, ctor 0; archive "phase"
+    float phase_timer; // 0xd094, ctor; archive "phaseTimer"
+    float eye_glow_phase; // 0xd098, renderTransparent steps it and tests > 1.0 (nocedit eye_glow_phase)
 } CTawiscara;
 #pragma pack(pop)
 

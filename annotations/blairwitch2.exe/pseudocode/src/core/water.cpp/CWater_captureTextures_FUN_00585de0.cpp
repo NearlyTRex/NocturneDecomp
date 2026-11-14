@@ -14,7 +14,7 @@ void __cdecl core_water_cpp_CWater_captureTextures_FUN_00585de0(CWater *this_ptr
   texture = (SMRGLTextureBasic *)&DAT_0061e52c;
   do {
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00(DAT_0060b280,texture);
-    texture = texture + 0x18;
+    texture = texture + 1;
   } while (texture != (SMRGLTextureBasic *)&DAT_0061e6ac);
   return;
 }

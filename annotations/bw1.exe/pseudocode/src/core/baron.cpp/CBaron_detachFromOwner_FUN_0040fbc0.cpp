@@ -9,11 +9,10 @@
 void __cdecl core_baron_cpp_CBaron_detachFromOwner_FUN_0040fbc0(CBaron *this_ptr,CDemonActor *target)
 
 {
-  if ((target == *(CDemonActor **)&this_ptr->field_0x20084) &&
-     (*(CDemonActor **)&this_ptr->field_0x20084 != (CDemonActor *)0x0)) {
+  if ((target == this_ptr->target_actor) && (this_ptr->target_actor != (CDemonActor *)0x0)) {
     core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
-              ((CMotionController *)&this_ptr->field_0x158,7,1);
-    *(uint *)&this_ptr->field_0x20084 = 0;
+              (&(this_ptr->base).base.model.base,7,1);
+    this_ptr->target_actor = (CDemonActor *)0x0;
     return;
   }
   return;

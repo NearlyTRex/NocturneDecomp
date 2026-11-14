@@ -18,13 +18,7 @@
     {
       "addr": "00575bb0",
       "from_addr": "00575bee",
-      "name": "sound_sndmain.cpp_FUN_00575bb0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00575c00",
-      "from_addr": "00575c7d",
-      "name": "sound_sndmain.cpp_FUN_00575c00",
+      "name": "sound_sndmain.cpp_audioThreadProc_FUN_00575bb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -34,9 +28,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0059daec",
+      "addr": "00575c00",
+      "from_addr": "00575c7d",
+      "name": "sound_sndmain.cpp_startSoundThread_FUN_00575c00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059daf0",
       "from_addr": "0059dc41",
-      "name": "support_trisock.cpp_FUN_0059daec",
+      "name": "support_trisock.cpp_FUN_0059daf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -46,15 +46,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0059df10",
+      "addr": "0059deb0",
       "from_addr": "0059df32",
-      "name": "support_trisock.cpp_FUN_0059df10",
+      "name": "support_trisock.cpp_FUN_0059deb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0059ef20",
       "from_addr": "0059efa4",
-      "name": "unkafter_trisock.cpp_FUN_0059ef20",
+      "name": "support_trisock.cpp_FUN_0059ef20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -107,7 +107,7 @@
       {
         "call_addr": "0059efa4",
         "call_type": "direct",
-        "caller": "unkafter_trisock.cpp_FUN_0059ef20",
+        "caller": "support_trisock.cpp_FUN_0059ef20",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -129,7 +129,7 @@
       {
         "call_addr": "00575c7d",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00575c00",
+        "caller": "sound_sndmain.cpp_startSoundThread_FUN_00575c00",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -151,18 +151,7 @@
       {
         "call_addr": "00575bee",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00575bb0",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
-      },
-      {
-        "call_addr": "0059dc41",
-        "call_type": "direct",
-        "caller": "support_trisock.cpp_FUN_0059daec",
+        "caller": "sound_sndmain.cpp_audioThreadProc_FUN_00575bb0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -173,7 +162,7 @@
       {
         "call_addr": "0059df32",
         "call_type": "direct",
-        "caller": "support_trisock.cpp_FUN_0059df10",
+        "caller": "support_trisock.cpp_FUN_0059deb0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -184,7 +173,18 @@
       {
         "call_addr": "0059df89",
         "call_type": "direct",
-        "caller": "support_trisock.cpp_FUN_0059df10",
+        "caller": "support_trisock.cpp_FUN_0059deb0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0059dc41",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_FUN_0059daf0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -235,6 +235,32 @@
       "TRUNC": 1
     },
     "pcode_op_count": 181
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0058fd90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00581a40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005f40e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00559cc0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 28,

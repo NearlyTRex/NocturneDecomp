@@ -7,8 +7,8 @@
 ; char *           Stack[0x4]:4   str
 ;
 ; XREF[3]:
+;   core_script.cpp_CScript_findLabelIndex_FUN_0054acc0 at 0054acfb
 ;   core_script.cpp_CScript_step_FUN_00544460 at 00544576
-;   core_script.cpp_FUN_0054acc0 at 0054acfb
 ;   core_script.cpp_parseArgument_FUN_005432d0 at 005432df
 ;
 ; Referenced Globals:

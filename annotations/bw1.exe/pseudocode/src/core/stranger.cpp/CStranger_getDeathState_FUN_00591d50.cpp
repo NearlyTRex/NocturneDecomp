@@ -17,6 +17,6 @@ EDeathState __cdecl core_stranger_cpp_CStranger_getDeathState_FUN_00591d50(CStra
   if (iVar1 != 0) {
     return DEATH_STATE_ALIVE;
   }
-  EVar2 = core_charactr_cpp_FUN_00431c30(this_ptr);
+  EVar2 = core_charactr_cpp_CCharacter_getDeathState_FUN_00431c30((CCharacter *)this_ptr);
   return EVar2;
 }

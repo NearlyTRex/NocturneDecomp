@@ -14,11 +14,11 @@ void __cdecl core_dcamera_cpp_CDemonCamera_processCorona_FUN_004406d0(CDemonCame
   int iVar1;
   int iVar2;
   
-  iVar1 = *(int *)&this_ptr->field_0x11e8 >> 0x1f;
-  iVar1 = (*(int *)&this_ptr->field_0x11e8 + iVar1 * -0x100) - (uint)(iVar1 << 7 < 0);
+  iVar1 = this_ptr->corona_blend_factor >> 0x1f;
+  iVar1 = (this_ptr->corona_blend_factor + iVar1 * -0x100) - (uint)(iVar1 << 7 < 0);
   iVar2 = iVar1 >> 0x1f;
   _DAT_00b65f98 = (int)(((iVar1 >> 8) + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
-  _memset(0x12c00);
+  _memset((void *)0xaf5218,_DAT_00b65f98 & 0xff,0x12c00);
   if (1 < _DAT_01465928) {
     core_dcamera_cpp_CDemonCamera_blendFogPlanes_FUN_00442710(this_ptr,_DAT_01465920,_DAT_01465924);
     return;
@@ -26,7 +26,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_processCorona_FUN_004406d0(CDemonCame
   if (_DAT_013083cc == 0) {
     return;
   }
-  _memcpy(0x12c00);
+  _memcpy(&DAT_01326d20,(void *)0x1339920,0x12c00);
   _DAT_013083cc = 0;
   return;
 }

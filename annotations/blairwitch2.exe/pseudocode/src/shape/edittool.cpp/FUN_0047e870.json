@@ -2,21 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 710,
-    "complexity_score": 552,
-    "cross_reference_count": 8,
+    "complexity_score": 557,
+    "cross_reference_count": 10,
     "function_call_count": 21,
     "global_count": 22,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 237,
+    "pseudocode_lines": 242,
     "suspect_count": 30,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 947
+    "total_lines": 952
   },
   "cross_references": [
+    {
+      "addr": "004eba50",
+      "from_addr": "004ebaef",
+      "name": "core_menu.cpp_FUN_004eba50",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "004ebf10",
       "from_addr": "004ec9f1",
@@ -30,27 +36,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0047d270",
+      "from_addr": "0047d35a",
+      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047d270",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004831d0",
+      "from_addr": "004831e1",
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047bf80",
+      "from_addr": "0047bfdc",
+      "name": "shape_edittool.cpp_FUN_0047bf80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0047c0f0",
       "from_addr": "0047c6b4",
       "name": "shape_edittool.cpp_FUN_0047c0f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047d270",
-      "from_addr": "0047d35a",
-      "name": "shape_edittool.cpp_FUN_0047d270",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0047dc40",
       "from_addr": "0047dceb",
       "name": "shape_edittool.cpp_FUN_0047dc40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004831d0",
-      "from_addr": "004831e1",
-      "name": "shape_edittool.cpp_FUN_004831d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -110,24 +122,24 @@
       "name": "engine_3d.c_setRenderAlpha_FUN_00406da0"
     },
     {
-      "addr": "004a8df0",
+      "addr": "004ab560",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004a8df0"
-    },
-    {
-      "addr": "004aaf00",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004aaf00"
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560"
     },
     {
       "addr": "004aafb0",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004aafb0"
+      "name": "engine_font.cpp_CBitFont_getTextHeight_FUN_004aafb0"
     },
     {
-      "addr": "004ab560",
+      "addr": "004aaf00",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004ab560"
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004aaf00"
+    },
+    {
+      "addr": "004a8df0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_FUN_004a8df0"
     },
     {
       "addr": "004ea570",
@@ -140,49 +152,49 @@
       "name": "engine_matrix.c_pushViewport_FUN_004ea410"
     },
     {
-      "addr": "004f3570",
+      "addr": "004f9390",
       "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_004f3570"
-    },
-    {
-      "addr": "004f8e20",
-      "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_004f8e20"
-    },
-    {
-      "addr": "004f90d0",
-      "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_004f90d0"
+      "name": "engine_mini3d.cpp_drawHLine_FUN_004f9390"
     },
     {
       "addr": "004f9340",
       "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_004f9340"
-    },
-    {
-      "addr": "004f9390",
-      "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_004f9390"
+      "name": "engine_mini3d.cpp_drawRect_FUN_004f9340"
     },
     {
       "addr": "004f93b0",
       "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_004f93b0"
+      "name": "engine_mini3d.cpp_drawVLine_FUN_004f93b0"
     },
     {
-      "addr": "0047bca0",
+      "addr": "004f90d0",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0047bca0"
-    },
-    {
-      "addr": "004f2ac0",
-      "is_variadic": false,
-      "name": "unkafter_minecar.cpp_FUN_004f2ac0"
+      "name": "engine_mini3d.cpp_fillRect_FUN_004f90d0"
     },
     {
       "addr": "004f2ba0",
       "is_variadic": false,
-      "name": "unkafter_minecar.cpp_FUN_004f2ba0"
+      "name": "engine_mini3d.cpp_getRenderViewport_FUN_004f2ba0"
+    },
+    {
+      "addr": "004f3570",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_setAlpha_FUN_004f3570"
+    },
+    {
+      "addr": "004f8e20",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_setColor_FUN_004f8e20"
+    },
+    {
+      "addr": "004f2ac0",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_setRenderViewport_FUN_004f2ac0"
+    },
+    {
+      "addr": "0047bca0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_paintWindowBackground_FUN_0047bca0"
     }
   ],
   "globals": [
@@ -320,7 +332,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 8,
+    "call_site_count": 10,
     "call_sites": [
       {
         "call_addr": "0047b9d5",
@@ -338,7 +350,7 @@
       {
         "call_addr": "004831e1",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_004831d0",
+        "caller": "shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -365,7 +377,7 @@
       {
         "call_addr": "0047d35a",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047d270",
+        "caller": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047d270",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -430,12 +442,40 @@
         ],
         "stack_bytes": 4,
         "stack_params": 1
+      },
+      {
+        "call_addr": "004ebaef",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004eba50",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047bfdc",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047bf80",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
       }
     ],
     "confidence": "low",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 2,
+    "estimated_params": 3,
     "matches_declared": false
   },
   "pcode_summary": {
@@ -613,7 +653,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 64,
+      "line": 67,
       "match": "DAT_01c3583a",
       "severity": "mild",
       "text": "((uint)(byte)(&DAT_01c3583a)[iVar2] |",
@@ -621,7 +661,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 68,
       "match": "DAT_01c35838",
       "severity": "mild",
       "text": "(uint)(byte)(&DAT_01c35838)[iVar2] << 0x10 |",
@@ -629,7 +669,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 66,
+      "line": 69,
       "match": "DAT_01c35839",
       "severity": "mild",
       "text": "(uint)(byte)(&DAT_01c35839)[iVar2] << 8);",
@@ -637,213 +677,213 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 74,
+      "line": 77,
       "match": "DAT_01c3583a",
       "severity": "mild",
-      "text": "((uint)(byte)(&DAT_01c3583a)[iVar3] |",
+      "text": "((uint)(byte)(&DAT_01c3583a)[iVar4] |",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 78,
       "match": "DAT_01c35838",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c35838)[iVar3] << 0x10 |",
+      "text": "(uint)(byte)(&DAT_01c35838)[iVar4] << 0x10 |",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 76,
+      "line": 79,
       "match": "DAT_01c35839",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c35839)[iVar3] << 8);",
+      "text": "(uint)(byte)(&DAT_01c35839)[iVar4] << 8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 86,
+      "line": 89,
       "match": "DAT_01c3583a",
       "severity": "mild",
-      "text": "((uint)(byte)(&DAT_01c3583a)[iVar3] |",
+      "text": "((uint)(byte)(&DAT_01c3583a)[iVar4] |",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 90,
       "match": "DAT_01c35838",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c35838)[iVar3] << 0x10 |",
+      "text": "(uint)(byte)(&DAT_01c35838)[iVar4] << 0x10 |",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 88,
+      "line": 91,
       "match": "DAT_01c35839",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c35839)[iVar3] << 8);",
+      "text": "(uint)(byte)(&DAT_01c35839)[iVar4] << 8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 121,
+      "line": 124,
       "match": "DAT_01c3583a",
       "severity": "mild",
-      "text": "((uint)(byte)(&DAT_01c3583a)[iVar3] |",
+      "text": "((uint)(byte)(&DAT_01c3583a)[iVar4] |",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 122,
+      "line": 125,
       "match": "DAT_01c35838",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c35838)[iVar3] << 0x10 |",
+      "text": "(uint)(byte)(&DAT_01c35838)[iVar4] << 0x10 |",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 123,
+      "line": 126,
       "match": "DAT_01c35839",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c35839)[iVar3] << 8);",
+      "text": "(uint)(byte)(&DAT_01c35839)[iVar4] << 8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 134,
+      "line": 137,
       "match": "DAT_01c3583a",
       "severity": "mild",
-      "text": "((uint)(byte)(&DAT_01c3583a)[iVar3] |",
+      "text": "((uint)(byte)(&DAT_01c3583a)[iVar4] |",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 135,
+      "line": 138,
       "match": "DAT_01c35839",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c35839)[iVar3] << 8 |",
+      "text": "(uint)(byte)(&DAT_01c35839)[iVar4] << 8 |",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 136,
+      "line": 139,
       "match": "DAT_01c35838",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c35838)[iVar3] << 0x10);",
+      "text": "(uint)(byte)(&DAT_01c35838)[iVar4] << 0x10);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 147,
+      "line": 150,
       "match": "DAT_01c3583a",
       "severity": "mild",
-      "text": "((uint)(byte)(&DAT_01c3583a)[iVar3] |",
+      "text": "((uint)(byte)(&DAT_01c3583a)[iVar4] |",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 148,
+      "line": 151,
       "match": "DAT_01c35838",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c35838)[iVar3] << 0x10 |",
+      "text": "(uint)(byte)(&DAT_01c35838)[iVar4] << 0x10 |",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 149,
+      "line": 152,
       "match": "DAT_01c35839",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c35839)[iVar3] << 8);",
+      "text": "(uint)(byte)(&DAT_01c35839)[iVar4] << 8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 177,
+      "line": 180,
       "match": "DAT_01c3583a",
       "severity": "mild",
-      "text": "((uint)(byte)(&DAT_01c3583a)[iVar3] |",
+      "text": "((uint)(byte)(&DAT_01c3583a)[iVar4] |",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 178,
+      "line": 181,
       "match": "DAT_01c35838",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c35838)[iVar3] << 0x10 |",
+      "text": "(uint)(byte)(&DAT_01c35838)[iVar4] << 0x10 |",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 179,
+      "line": 182,
       "match": "DAT_01c35839",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c35839)[iVar3] << 8);",
+      "text": "(uint)(byte)(&DAT_01c35839)[iVar4] << 8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 196,
+      "line": 201,
       "match": "DAT_005d2432",
       "severity": "mild",
-      "text": "iVar6 = engine_font_cpp_FUN_004aafb0(_DAT_01c25590,&DAT_005d2432);",
+      "text": "iVar7 = engine_font_cpp_CBitFont_getTextHeight_FUN_004aafb0(_DAT_01c25590,&DAT_005d2432);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 205,
+      "line": 210,
       "match": "DAT_01c3583a",
       "severity": "mild",
-      "text": "((uint)(byte)(&DAT_01c3583a)[iVar6] |",
+      "text": "((uint)(byte)(&DAT_01c3583a)[iVar7] |",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 206,
+      "line": 211,
       "match": "DAT_01c35839",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c35839)[iVar6] << 8 |",
+      "text": "(uint)(byte)(&DAT_01c35839)[iVar7] << 8 |",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 207,
+      "line": 212,
       "match": "DAT_01c35838",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c35838)[iVar6] << 0x10);",
+      "text": "(uint)(byte)(&DAT_01c35838)[iVar7] << 0x10);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 223,
+      "line": 228,
       "match": "DAT_01c3583a",
       "severity": "mild",
-      "text": "((uint)(byte)(&DAT_01c3583a)[iVar6] |",
+      "text": "((uint)(byte)(&DAT_01c3583a)[iVar7] |",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 224,
+      "line": 229,
       "match": "DAT_01c35838",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c35838)[iVar6] << 0x10 |",
+      "text": "(uint)(byte)(&DAT_01c35838)[iVar7] << 0x10 |",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 225,
+      "line": 230,
       "match": "DAT_01c35839",
       "severity": "mild",
-      "text": "(uint)(byte)(&DAT_01c35839)[iVar6] << 8);",
+      "text": "(uint)(byte)(&DAT_01c35839)[iVar7] << 8);",
       "type": "undefined_data"
     },
     {
-      "call_site_count": 8,
+      "call_site_count": 10,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
+      "estimated_params": 3,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
       "type": "param_count_too_few"
     }
   ]

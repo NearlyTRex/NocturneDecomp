@@ -11,16 +11,16 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[56]:
-;   core_ammo.cpp_FUN_0040e0f0 at 0040e155
-;   core_ammobox.cpp_FUN_0040e780 at 0040e803
-;   core_anvil.cpp_FUN_0040ec10 at 0040ec92
-;   core_backgnd.cpp_FUN_0040f3f0 at 0040f451
-;   core_baron.cpp_FUN_00410670 at 00410750
-;   core_bat.cpp_FUN_004113f0 at 00411459
-;   core_battery.cpp_FUN_00414810 at 0041489a
-;   core_bodypart.cpp_FUN_00415b60 at 00415c47
-;   core_boxactor.cpp_FUN_0041c580 at 0041c641
-;   core_boxactor.cpp_FUN_0041c690 at 0041c756
+;   core_ammo.cpp_CAmmo_renderOpaque_FUN_0040e0f0 at 0040e155
+;   core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_0040e780 at 0040e803
+;   core_anvil.cpp_CAnvil_renderOpaque_FUN_0040ec10 at 0040ec92
+;   core_backgnd.cpp_CBackgroundActor_renderBackground_FUN_0040f3f0 at 0040f451
+;   core_baron.cpp_CBaron_renderTransparent_FUN_00410670 at 00410750
+;   core_bat.cpp_CBat_renderOpaque_FUN_004113f0 at 00411459
+;   core_battery.cpp_CBattery_renderOpaque_FUN_00414810 at 0041489a
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_renderReel_FUN_0059bb60 at 0059bd8e
+;   core_bodypart.cpp_CBodyPart_renderOpaque_FUN_00415b60 at 00415c47
+;   core_boxactor.cpp_CBoxActor_renderOpaque_FUN_0041c580 at 0041c641
 ;   ... and 46 more
 ;
 ; Called Functions:

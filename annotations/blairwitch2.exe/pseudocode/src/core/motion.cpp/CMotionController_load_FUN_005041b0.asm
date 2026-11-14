@@ -37,7 +37,7 @@ section .text
     PUSH 0x5dfd30                       ; 005041bb | DAT_005dfd30
     PUSH EDI                            ; 005041c0
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 005041c1
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0x8                         ; 005041c6
     LEA ESI,[EBX + 0x8]                 ; 005041c9
     PUSH ESI                            ; 005041cc
@@ -48,7 +48,7 @@ section .text
     PUSH EDI                            ; 005041da
     MOV dword ptr [EBX + 0x4],0xffffffff ; 005041db
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 005041e2
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0x10                        ; 005041e7
     CMP EAX,0x2                         ; 005041ea
     JNZ 0x00504207                      ; 005041ed
@@ -59,7 +59,7 @@ section .text
     PUSH EBX                            ; 005041f2
         ;   Label: LAB_005041f2
     CALL crt_stdio.c_fgetc_FUN_005b8180 ; 005041f3
-        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005b8180()
+        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005b8180(_FILE * file)
     ADD ESP,0x4                         ; 005041f8
     TEST EAX,EAX                        ; 005041fb
     JL 0x00504204                       ; 005041fd
@@ -78,7 +78,7 @@ section .text
     PUSH 0x5dfd38                       ; 0050420c | = "\"%[^\"]\" , %f"
     PUSH EDI                            ; 00504211
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 00504212
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0x10                        ; 00504217
     CMP EAX,0x2                         ; 0050421a
     JZ 0x005041ef                       ; 0050421d

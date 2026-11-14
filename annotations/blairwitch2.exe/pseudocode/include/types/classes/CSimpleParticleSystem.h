@@ -2,15 +2,33 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CSimpleParticleSystem
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI size 68; ctor 005a7ef0 initialises +0xc..+0x3c and stores the vtable at +0x40 (vptr after the fields, no base); global g_CSimpleParticleSystemInstance built by ctorCapacity 005a7f50(this, 0x2000)
 // Ghidra size: 0x44 (68 bytes)
 #pragma pack(push, 1)
 typedef struct CSimpleParticleSystem {
-    char field_0[68]; // 0x0
+    CVector3f position; // 0x0, attach 005a8050 copies owner+0x20; emit 005a8300 refreshes it from the owner (or a global position) and copies it into each new particle
+    float fade_current; // 0xc, ctor sets 1.0; resetFade 005a8160 copies fade_start; updateFade 005a8250 lerps fade_start->fade_end by fade_timer/fade_duration and returns it
+    int active; // 0x10, ctor 0; ctorCapacity/start 005a80d0 set 1; stop 005a8100 clears it; process 005a8180 and render 005a8290 run only when set
+    struct CDemonActor* owner; // 0x14, attach stores it (only when unset) and reads its +0x20 position; release 005a8220 clears it; start/stop require it
+    int max_particles; // 0x18, ctor sets 0x40, ctorCapacity stores arg 2; setMaxParticles 005a8030 changes it before allocation; particles = malloc(max_particles*0x60)
+    int next_particle; // 0x1c, ctor 0; emit fills particles[next_particle] and wraps it at max_particles
+    char field_32[4]; // 0x20
+    float fade_start; // 0x24, ctor 1.0; setFade 005a8140 arg 1
+    float fade_end; // 0x28, ctor 1.0; setFade arg 2
+    float fade_duration; // 0x2c, ctor 1.0; setFade arg 3; resetFade copies it to fade_timer
+    float fade_timer; // 0x30, process counts it down by dt and calls stop when it reaches 0 with stop_after_fade set
+    int stop_after_fade; // 0x34, stop(1) sets it and restarts the fade; stop(0) clears it
+    int standalone; // 0x38, ctorCapacity sets 1, ctor 0; process/render also run with no owner when set; emit keeps the owner-less position; dtor frees particles only when set
+    void* particles; // 0x3c, malloc(max_particles*0x60) in ctorCapacity/attach, each slot initialised by FUN_005a84c0; process/render walk it with stride 0x60; dtor/release free it
+    void* vtable; // 0x40, ctor, ctorCapacity and dtor store the vtable 0x6002e4 here
 } CSimpleParticleSystem;
 #pragma pack(pop)
 

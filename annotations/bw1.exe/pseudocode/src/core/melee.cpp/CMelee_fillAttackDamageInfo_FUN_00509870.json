@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 60,
+    "complexity_score": 64,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 10,
+    "pseudocode_lines": 14,
     "suspect_count": 4,
     "suspect_types": [
-      "unnamed_field",
-      "unresolved_funcptr"
+      "stack_param",
+      "unaffected_reg"
     ],
-    "total_lines": 40
+    "total_lines": 44
   },
   "cross_references": [],
   "function": {
@@ -32,7 +32,7 @@
     {
       "addr": "0040aa60",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040aa60"
+      "name": "core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040aa60"
     }
   ],
   "globals": [],
@@ -67,6 +67,32 @@
       "STORE": 13
     },
     "pcode_op_count": 113
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004eabd0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004e72b0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0050eaf0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004cef80",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 20,
@@ -107,36 +133,36 @@
   },
   "suspects": [
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 8,
-      "match": "code *",
+      "description": "Unaffected register variable",
+      "line": 6,
+      "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "uVar1 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0xec))(this_ptr);",
-      "type": "unresolved_funcptr"
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "uVar1 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0xec))(this_ptr);",
-      "type": "unnamed_field"
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_fffffff4",
+      "severity": "moderate",
+      "text": "CDemonActor *in_stack_fffffff4;",
+      "type": "stack_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x584",
-      "severity": "mild",
-      "text": "*(uint *)(out_damage_info + 0x2c) = *(uint *)&this_ptr->field_0x584;",
-      "type": "unnamed_field"
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_fffffff4",
+      "severity": "moderate",
+      "text": "((CCharacter *)this_ptr,in_stack_fffffff4,unaff_ESI);",
+      "type": "stack_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x59c",
-      "severity": "mild",
-      "text": "*(uint *)(out_damage_info + 0x28) = *(uint *)&this_ptr->field_0x59c;",
-      "type": "unnamed_field"
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "((CCharacter *)this_ptr,in_stack_fffffff4,unaff_ESI);",
+      "type": "unaffected_reg"
     }
   ],
   "vtable_info": {

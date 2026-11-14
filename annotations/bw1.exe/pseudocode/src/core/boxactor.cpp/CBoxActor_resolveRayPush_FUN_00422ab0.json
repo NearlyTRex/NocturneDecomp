@@ -1,0 +1,375 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 140,
+    "complexity_score": 182,
+    "cross_reference_count": 3,
+    "function_call_count": 5,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 72,
+    "suspect_count": 8,
+    "suspect_types": [
+      "pointer_cast",
+      "stack_alignment_array",
+      "stack_param",
+      "unrolled_memcpy",
+      "warning_overlapping_globals",
+      "warning_type_propagation"
+    ],
+    "total_lines": 212
+  },
+  "cross_references": [
+    {
+      "addr": "00469550",
+      "from_addr": "0046a46a",
+      "name": "core_doc.cpp_FUN_00469550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c65f0",
+      "from_addr": "004c6dd7",
+      "name": "core_gabriela.cpp_CGabriella_process_FUN_004c65f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00585b00",
+      "from_addr": "0058682c",
+      "name": "core_stranger.cpp_CStranger_processFrame_FUN_00585b00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00422ab0",
+    "address_range": [
+      [
+        "00422ab0",
+        "00422c24"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_00422ab0",
+    "signature": "void __cdecl core_boxactor_cpp_CBoxActor_resolveRayPush_FUN_00422ab0(CBoxActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408b00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408b00"
+    },
+    {
+      "addr": "00408bb0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408bb0"
+    },
+    {
+      "addr": "00420ee0",
+      "is_variadic": false,
+      "name": "core_box.cpp_FUN_00420ee0"
+    },
+    {
+      "addr": "00421e80",
+      "is_variadic": false,
+      "name": "core_boxactor.cpp_FUN_00421e80"
+    },
+    {
+      "addr": "00422d10",
+      "is_variadic": false,
+      "name": "core_boxactor.cpp_FUN_00422d10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d4d60",
+      "name": "DAT_005d4d60",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "0046a46a",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_00469550",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004c6dd7",
+        "call_type": "direct",
+        "caller": "core_gabriela.cpp_CGabriella_process_FUN_004c65f0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0058682c",
+        "call_type": "direct",
+        "caller": "core_stranger.cpp_CStranger_processFrame_FUN_00585b00",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.596899224806202,
+    "instruction_count": 129,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 6,
+      "BRANCH": 1,
+      "CALL": 5,
+      "CALLIND": 1,
+      "CBRANCH": 4,
+      "COPY": 386,
+      "FLOAT2FLOAT": 31,
+      "FLOAT_ADD": 5,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_MULT": 6,
+      "FLOAT_NAN": 6,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 3,
+      "INT_ADD": 82,
+      "INT_AND": 32,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 17,
+      "INT_LEFT": 12,
+      "INT_LESS": 1,
+      "INT_MULT": 20,
+      "INT_NOTEQUAL": 15,
+      "INT_OR": 15,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 8,
+      "INT_SUB": 43,
+      "INT_ZEXT": 32,
+      "LOAD": 48,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 40
+    },
+    "pcode_op_count": 851
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0041cb40",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0041ff20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00422390",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7607
+    },
+    "nocturne.exe": {
+      "addr": "0041ef90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7607
+    }
+  },
+  "stack_frame": {
+    "frame_size": 152,
+    "local_size": 140,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBoxActor *"
+      },
+      {
+        "is_param": true,
+        "name": "ray_origin",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "ray_direction",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00422abc",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 15,
+      "match": "afStackY_1058",
+      "severity": "moderate",
+      "text": "float afStackY_1058 [1002];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_ffffff58",
+      "severity": "moderate",
+      "text": "CBoundingBox3D *in_stack_ffffff58;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(float *)((int)local_68",
+      "severity": "moderate",
+      "text": "*(float *)((int)local_68 + ((uint)bVar7 * -2 + -1) * 4) = afStack_54[(uint)bVar7 * -2 + 6];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(float *)((int)local_68",
+      "severity": "moderate",
+      "text": "*(float *)((int)local_68 + ((uint)bVar7 * -2 + (uint)bVar7 * -2) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 46,
+      "match": "in_stack_ffffff58",
+      "severity": "moderate",
+      "text": "(*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_ffffff58);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 49,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

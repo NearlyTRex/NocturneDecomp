@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 140,
+    "complexity_score": 130,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 25,
-    "suspect_count": 10,
+    "suspect_count": 9,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_field",
-      "unnamed_param"
+      "unnamed_param",
+      "unrolled_strcpy"
     ],
     "total_lines": 68
   },
@@ -91,6 +91,20 @@
     },
     "pcode_op_count": 137
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00503810",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004fc2c0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -113,7 +127,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)param_1 != 0) {",
+      "text": "if (param_1->motion_list_ptr != (CMotionList *)0x0) {",
       "type": "unnamed_param"
     },
     {
@@ -121,16 +135,8 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_1->field_0x30 == '\\0') {",
+      "text": "if (param_1->current_motion_name[0] == '\\0') {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "if (param_1->field_0x30 == '\\0') {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -145,23 +151,15 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "pSVar3 = (SMotion *)&param_1->field_0x30;",
+      "text": "pcVar3 = param_1->current_motion_name;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "pSVar3 = (SMotion *)&param_1->field_0x30;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)param_1 = 0;",
+      "text": "param_1->motion_list_ptr = (CMotionList *)0x0;",
       "type": "unnamed_param"
     },
     {
@@ -169,8 +167,16 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)param_1 = 0;",
+      "text": "param_1->motion_list_ptr = (CMotionList *)0x0;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 13,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     },
     {
       "call_site_count": 1,

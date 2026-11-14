@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CRifle * core_rifle_cpp_CRifle_dtor_FUN_005409c0(CRifle *this_ptr,uint flags)
+; CRifle * __cdecl core_rifle_cpp_CRifle_dtor_FUN_005409c0(CRifle *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CRifle *         Stack[0x4]:4   this_ptr
@@ -43,7 +43,7 @@ section .text
         ;   Label: LAB_005409e6
     PUSH EBX                            ; 005409eb
     CALL crt_memory.c___vec_delete_FUN_005c030f ; 005409ec
-        ;   XREF to: 005c030f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005c030f()
+        ;   XREF to: 005c030f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005c030f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 005409f1
     PUSH EAX                            ; 005409f4
     CALL crt_unknown.c_FUN_005c0336     ; 005409f5

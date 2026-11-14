@@ -241,7 +241,7 @@ void __cdecl core_wateract_cpp_CWaterActor_addFilesToExtract_FUN_005ebc50(CWater
 CWaterActor * __cdecl core_wateract_cpp_CWaterActor_dtor_FUN_005ebc60(CWaterActor *this_ptr,uint flags);
 SWaterVertex * __cdecl core_wateract_cpp_SWaterVertex_ctor_FUN_005ebcd0(SWaterVertex *this_ptr);
 SWaterVertex * __cdecl core_wateract_cpp_SWaterVertex_dtor_FUN_005ebce0(SWaterVertex *this_ptr,uint flags);
-SWaterVertex * __cdecl core_wateract_cpp_SWaterVertex_arrdtor1000_FUN_005ebcf0(SWaterVertex *objs,uint flags);
+SWaterVertex * __cdecl core_wateract_cpp_SWaterVertex_arrdtor1000_FUN_005ebcf0(SWaterVertex *this_ptr,uint flags);
 void __cdecl core_waypoint_cpp_staticInit_FUN_005ebd10(void);
 int __cdecl core_waypoint_cpp_CWayPoint_isReachable_FUN_005ebd40(CWayPoint *this_ptr,CLocation *from_location,int use_tight_bounds);
 CWayPoint * __cdecl core_waypoint_cpp_factoryFuncWayPoint_FUN_005ebe30(void);

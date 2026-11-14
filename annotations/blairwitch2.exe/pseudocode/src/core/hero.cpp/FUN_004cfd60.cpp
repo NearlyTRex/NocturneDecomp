@@ -2,44 +2,47 @@
 // Address: 004cfd60
 // Address Range: [[004cfd60, 004cfe7c]]
 // Convention: unknown
-// Signature: bool core_hero_cpp_FUN_004cfd60(CDemonActor *param_1,char *param_2)
+// Signature: bool core_hero_cpp_FUN_004cfd60(CHero *param_1,char *param_2)
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-bool core_hero_cpp_FUN_004cfd60(CDemonActor *param_1,char *param_2)
+bool core_hero_cpp_FUN_004cfd60(CHero *param_1,char *param_2)
 
 {
-  CDemonActor *actor_ptr;
-  int iVar1;
+  CHero *this_ptr;
+  CDemonActor *pCVar1;
   int iVar2;
-  uint local_20;
+  int iVar3;
+  float local_20;
   int local_1c;
   int local_18;
   
-  local_20 = 0x7149f2ca;
+  local_20 = 1e+30;
   local_1c = 0;
-  for (local_18 = 0; local_18 < *(int *)&g_CDemonSetPtr->field_0x14d164; local_18 = local_18 + 1) {
-    actor_ptr = *(CDemonActor **)(&g_CDemonSetPtr->field_0x14d168 + local_1c);
-    if ((((ABS(*(float *)&actor_ptr->field_0x20 - *(float *)&param_1->field_0x20) <=
-           (float)_DAT_005d9d74) &&
-         (ABS(*(float *)&actor_ptr->field_0x24 - *(float *)&param_1->field_0x24) <=
-          (float)_DAT_005d9d74)) &&
-        (ABS(*(float *)&actor_ptr->field_0x28 - *(float *)&param_1->field_0x28) <=
-         (float)_DAT_005d9d74)) && (actor_ptr != param_1)) {
-      iVar1 = (**(code **)(*(int *)&actor_ptr->field_0x2b0 + 0x9c))(actor_ptr);
-      if (iVar1 == 0) {
-        iVar1 = (**(code **)(*(int *)&actor_ptr->field_0x2b0 + 0x8c))(actor_ptr,param_1);
-        if (iVar1 != 0) {
-          iVar2 = core_actor_cpp_FUN_0040c840(actor_ptr,param_2);
-          if (iVar2 != 0) {
-            iVar1 = (**(code **)(*(int *)&param_1->field_0x2b0 + 0x160))
-                              (param_1,actor_ptr,iVar1,&local_20);
-            if (iVar1 != 0) {
-              *(uint *)&param_1[0xdd].field_0x8c = 4;
-              *(CDemonActor **)&param_1[0xdd].field_0x90 = actor_ptr;
-              *(CDemonActor **)&param_1[0xdd].field_0x94 = actor_ptr;
+  for (local_18 = 0; local_18 < g_CDemonSetPtr->actor_count; local_18 = local_18 + 1) {
+    this_ptr = *(CHero **)((int)g_CDemonSetPtr->actors + local_1c);
+    if ((((ABS((this_ptr->base).base.location.position.x - (param_1->base).base.location.position.x)
+           <= (float)_DAT_005d9d74) &&
+         (ABS((this_ptr->base).base.location.position.y - (param_1->base).base.location.position.y)
+          <= (float)_DAT_005d9d74)) &&
+        (ABS((this_ptr->base).base.location.position.z - (param_1->base).base.location.position.z)
+         <= (float)_DAT_005d9d74)) && (this_ptr != param_1)) {
+      pCVar1 = (*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
+      if (pCVar1 == (CDemonActor *)0x0) {
+        iVar2 = (*((this_ptr->base).base.vtable._ub)->canPickup)
+                          ((CDemonActor *)this_ptr,(CDemonActor *)param_1);
+        if (iVar2 != 0) {
+          iVar3 = core_actor_cpp_isOfClass_FUN_0040c840((CDemonActor *)this_ptr,param_2);
+          if (iVar3 != 0) {
+            iVar2 = (*(((param_1->base).base.vtable._uh)->_uh).canReachPickup)
+                              (param_1,(CDemonActor *)this_ptr,iVar2,&local_20);
+            if (iVar2 != 0) {
+              param_1->hero_action = 4;
+              param_1->hero_action_actor = (CDemonActor *)this_ptr;
+              param_1->hero_action_target = (CDemonActor *)this_ptr;
             }
           }
         }
@@ -47,5 +50,5 @@ bool core_hero_cpp_FUN_004cfd60(CDemonActor *param_1,char *param_2)
     }
     local_1c = local_1c + 4;
   }
-  return *(int *)&param_1[0xdd].field_0x8c == 4;
+  return param_1->hero_action == 4;
 }

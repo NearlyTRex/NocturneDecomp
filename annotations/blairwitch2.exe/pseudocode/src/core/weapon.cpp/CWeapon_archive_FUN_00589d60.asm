@@ -9,7 +9,7 @@
 ; undefined        Stack[-0x104]:1  local_104
 ;
 ; XREF[2]:
-;   core_melee.cpp_FUN_004eaa00 at 004eaa06
+;   core_melee.cpp_CMelee_archive_FUN_004eaa00 at 004eaa06
 ;   core_turret.cpp_CTurret_archive_FUN_0057efa0 at 0057efa6
 ;
 ; Referenced Globals:
@@ -46,7 +46,7 @@ section .text
     LEA EAX,[EBX + 0x2b4]               ; 00589d7c
     PUSH EAX                            ; 00589d82
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60 ; 00589d83
-        ;   XREF to: 0040ba60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60()
+        ;   XREF to: 0040ba60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60(CKeyFramedModelInstance * model_ptr, char * property_name)
     MOV EDX,dword ptr [0x0061e8e0]      ; 00589d88 | g_CWeaponClassVersion
     ADD ESP,0x8                         ; 00589d8e
     CMP EDX,0x3                         ; 00589d91
@@ -96,7 +96,7 @@ section .text
     LEA EAX,[EBX + 0x460]               ; 00589e0c
     PUSH EAX                            ; 00589e12
     CALL core_actor.cpp_archiveActor_FUN_0040b9e0 ; 00589e13
-        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b9e0()
+        ;   XREF to: 0040b9e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b9e0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 00589e18
     JMP 0x00589d96                      ; 00589e1b
         ;   XREF to: 00589d96 (UNCONDITIONAL_JUMP)  ; LAB_00589d96
@@ -105,7 +105,7 @@ section .text
     ADD EBX,0x6cc                       ; 00589e25
     PUSH EBX                            ; 00589e2b
     CALL core_actor.cpp_archiveFloat_FUN_0040b8e0 ; 00589e2c
-        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b8e0()
+        ;   XREF to: 0040b8e0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b8e0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 00589e31
     ADD ESP,0x100                       ; 00589e34
     POP EBX                             ; 00589e3a

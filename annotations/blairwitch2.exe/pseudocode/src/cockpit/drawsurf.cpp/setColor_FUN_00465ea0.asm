@@ -9,8 +9,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   cockpit_drawsurf.cpp_FUN_00468b80 at 00468c41
-;   core_script.cpp_FUN_00521af0 at 00521b38
+;   cockpit_drawsurf.cpp_testDrawingSurface_FUN_00468b80 at 00468c41
+;   core_script.cpp_CScript_renderEditor_FUN_00521af0 at 00521b38
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_drawsurf_cpp_005d11f4

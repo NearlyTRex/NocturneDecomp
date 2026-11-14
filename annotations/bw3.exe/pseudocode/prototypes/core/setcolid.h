@@ -11,11 +11,11 @@ void __cdecl staticInit(void);
 
 // Original: core_setcolid.cpp_FUN_0053bc80
 // Address: 0053bc80
-float FUN_0053bc80(CDemonSet *param_1,CVector3f *param_2,float param_3);
+float * FUN_0053bc80(CDemonSet *param_1,CVector3f *param_2,float param_3,undefined4 param_4,float param_5,undefined4 param_6,CBoundingBox3D *param_7);
 
-// Original: core_setcolid.cpp_FUN_0053cad0
+// Original: core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_0053cad0
 // Address: 0053cad0
-float FUN_0053cad0(int param_1,undefined4 *param_2);
+float __cdecl CDemonSet::rayVoxelHeightQuery(CDemonSet *this_ptr,CVector3f *position);
 
 // Original: core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_0053cbf0
 // Address: 0053cbf0
@@ -43,11 +43,15 @@ float FUN_0053cff0(undefined4 param_1,float *param_2,float *param_3);
 
 // Original: core_setcolid.cpp_FUN_0053d270
 // Address: 0053d270
-float FUN_0053d270(CDemonSet *param_1,float param_2,float *param_3,float *param_4,float param_5);
+float FUN_0053d270(CDemonSet *param_1,float param_2,CBoundingBox3D *param_3,float *param_4,float param_5);
 
 // Original: core_setcolid.cpp_CDemonSet_isActorIgnored_FUN_0053d770
 // Address: 0053d770
 int __cdecl CDemonSet::isActorIgnored(CDemonSet *this_ptr,CDemonActor *actor);
+
+// Original: core_setcolid.cpp_intersectXZCylinder_FUN_0053d7d0
+// Address: 0053d7d0
+int __cdecl intersectXZCylinder(SIntersectXZCylinder *cylinder,float obstacle_x,float obstacle_y,SCollisionInfo *collision_info);
 
 // Original: core_setcolid.cpp_FUN_0053da90
 // Address: 0053da90
@@ -55,7 +59,7 @@ int __cdecl FUN_0053da90(CDemonSet *this_ptr,SIntersectXZCylinder *cylinder,CBou
 
 // Original: core_setcolid.cpp_FUN_0053de10
 // Address: 0053de10
-float FUN_0053de10(CDemonSet *param_1,undefined4 param_2,undefined4 param_3,uint param_4,uint param_5,undefined4 param_6,float param_7,float param_8);
+float FUN_0053de10(CDemonSet *param_1,float param_2,float param_3,float param_4,float param_5,float param_6,float param_7,float param_8);
 
 // Original: core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_0053e870
 // Address: 0053e870
@@ -65,9 +69,9 @@ void __cdecl CDemonSet::pushRaytraceState(CDemonSet *this_ptr);
 // Address: 0053ea20
 void __cdecl CDemonSet::popRaytraceState(CDemonSet *this_ptr);
 
-// Original: core_setcolid.cpp_FUN_0053ebd0
+// Original: core_setcolid.cpp_CDemonSet_skipExactCollisions_FUN_0053ebd0
 // Address: 0053ebd0
-void __cdecl FUN_0053ebd0(CDemonSet *this_ptr);
+void __cdecl CDemonSet::skipExactCollisions(CDemonSet *this_ptr);
 
 // Original: core_setcolid.cpp_CDemonSet_init_FUN_0053ebe0
 // Address: 0053ebe0
@@ -77,21 +81,21 @@ void __cdecl CDemonSet::init(CDemonSet *this_ptr);
 // Address: 0053ec10
 void __cdecl CDemonSet::ignore(CDemonSet *this_ptr,CDemonActor *actor);
 
-// Original: core_setcolid.cpp_FUN_0053ec70
+// Original: core_setcolid.cpp_CDemonSet_disableIgnore_FUN_0053ec70
 // Address: 0053ec70
-void __cdecl FUN_0053ec70(CDemonSet *this_ptr);
+void __cdecl CDemonSet::disableIgnore(CDemonSet *this_ptr);
 
-// Original: core_setcolid.cpp_FUN_0053ec80
+// Original: core_setcolid.cpp_CDemonSet_enableCollision_FUN_0053ec80
 // Address: 0053ec80
-void __cdecl FUN_0053ec80(CDemonSet *this_ptr);
+void __cdecl CDemonSet::enableCollision(CDemonSet *this_ptr);
 
 // Original: core_setcolid.cpp_CDemonSet_setRayType_FUN_0053ec90
 // Address: 0053ec90
 void __cdecl CDemonSet::setRayType(CDemonSet *this_ptr,int ray_type);
 
-// Original: core_setcolid.cpp_FUN_0053ecd0
+// Original: core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_0053ecd0
 // Address: 0053ecd0
-void __cdecl FUN_0053ecd0(CDemonSet *this_ptr,int laser_type,int color_r,int color_g,int color_b);
+void __cdecl CDemonSet::setRayTypeLaser(CDemonSet *this_ptr,int laser_type,int color_r,int color_g,int color_b);
 
 // Original: core_setcolid.cpp_FUN_0053ed10
 // Address: 0053ed10
@@ -101,30 +105,30 @@ void FUN_0053ed10(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *
 // Address: 0053ed80
 SCollisionInfo * __cdecl SCollisionInfo::ctor(SCollisionInfo *this_ptr);
 
-// Original: core_setcolid.cpp_FUN_0053eda0
+// Original: core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_0053eda0
 // Address: 0053eda0
-void __cdecl FUN_0053eda0(CDemonSet *this_ptr);
+void __cdecl CDemonSet::buildCollidableActorList(CDemonSet *this_ptr);
 
 // Original: core_setcolid.cpp_CDemonSet_castVoxelShadow_FUN_0053ee00
 // Address: 0053ee00
 void __cdecl CDemonSet::castVoxelShadow(CDemonSet *this_ptr,CDemonActor *actor);
 
-// Original: core_setcolid.cpp_FUN_0053eea0
+// Original: core_setcolid.cpp_CDemonSet_transferVoxelShadow_FUN_0053eea0
 // Address: 0053eea0
-void __cdecl FUN_0053eea0(CDemonSet *this_ptr,CDemonActor *actor);
+void __cdecl CDemonSet::transferVoxelShadow(CDemonSet *this_ptr,CDemonActor *actor);
 
 // Original: core_setcolid.cpp_CDemonSet_commitVoxelBuffer_FUN_0053ef40
 // Address: 0053ef40
 void __cdecl CDemonSet::commitVoxelBuffer(CDemonSet *this_ptr);
 
-// Original: core_setcolid.cpp_FUN_0053ef60
+// Original: core_setcolid.cpp_CDemonSet_isPointInWater_FUN_0053ef60
 // Address: 0053ef60
-int __cdecl FUN_0053ef60(CDemonSet *this_ptr,CVector3f *point);
+int __cdecl CDemonSet::isPointInWater(CDemonSet *this_ptr,CVector3f *point);
 
 // Original: core_setcolid.cpp_SRaytraceState_ctor_FUN_0053f0b0
 // Address: 0053f0b0
-SRaytraceState * SRaytraceState::ctor(SRaytraceState *this_ptr);
+SRaytraceState * __cdecl SRaytraceState::ctor(SRaytraceState *this_ptr);
 
 // Original: core_setcolid.cpp_SRaytraceState_dtor_FUN_0053f0c0
 // Address: 0053f0c0
-SRaytraceState * SRaytraceState::dtor(SRaytraceState *this_ptr,uint flags);
+SRaytraceState * __cdecl SRaytraceState::dtor(SRaytraceState *this_ptr,uint flags);

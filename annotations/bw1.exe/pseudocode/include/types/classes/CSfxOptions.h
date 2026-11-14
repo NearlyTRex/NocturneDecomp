@@ -4,13 +4,29 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3d.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CSfxOptions
-// Stub: size from Watcom RTTI, fields not yet recovered
+// CSfxOptions_reset FUN_005726e0 vs nocedit 005a8830; options-stack stride 0x60 (setNextSfxDelay FUN_005729d0: g_SfxLastSlot*0x60); velocity became CVector3f and delay_remaining a float, everything after moves up 12 then 16.
 // Ghidra size: 0x60 (96 bytes)
 #pragma pack(push, 1)
 typedef struct CSfxOptions {
-    char field_0[96]; // 0x0
+    int channel_index; // 0x0, reset stores 0 at +0
+    CVector3d position; // 0x4, reset zeroes +0x14/+0x18 and FSTP double +0xc, +0x4 as nocedit; FUN_00570a40 reads doubles at +4/+0xc/+0x14
+    void* position_source_ptr; // 0x1c, FUN_00570a40 derefs +0x1c by format +0x20
+    int position_format; // 0x20, FUN_00570a40 compares +0x20 with 1/2
+    CVector3f velocity; // 0x24, reset FSTP float +0x28, +0x24 from FLD float +0x2c; FUN_00570a40 stores floats at +0x24/+0x28/+0x2c
+    void* velocity_source_ptr; // 0x30, setNextSfxTrackedVelocity1 FUN_00572880 stores param at +0x30; FUN_00570a40 derefs it
+    int velocity_format; // 0x34, FUN_00572880 stores 1 at +0x34
+    float current_volume; // 0x38, reset stores 1.0f (0x3f800000) as nocedit's +0x44
+    float base_frequency; // 0x3c, reset stores 1.0f as nocedit's +0x48
+    float delay_remaining; // 0x40, reset FSTP float +0x40 (nocedit FSTP double +0x4c); setNextSfxDelay FUN_005729d0 stores a dword at +0x40
+    void* userdata[2]; // 0x44, reset memsets 8 at +0x44; setNextSfxUserData FUN_00572920 stores at +0x44+i*4
+    uint flags; // 0x4c, setNextSfxFlags FUN_005729f0 stores at +0x4c
+    double playback_position; // 0x50, reset zeroes +0x50/+0x54; pollStream FUN_00570460 reads slot+0x50 as double
+    int playback_position_type; // 0x58, reset zeroes +0x58 (nocedit +0x68)
+    int dead; // 0x5c, reset zeroes +0x5c (nocedit +0x6c)
 } CSfxOptions;
 #pragma pack(pop)
 

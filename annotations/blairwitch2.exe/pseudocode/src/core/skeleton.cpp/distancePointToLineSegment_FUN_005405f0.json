@@ -1,0 +1,152 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 182,
+    "complexity_score": 41,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 41,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 223
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005405f0",
+    "address_range": [
+      [
+        "005405f0",
+        "005407d3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_skeleton.cpp_distancePointToLineSegment_FUN_005405f0",
+    "signature": "float __cdecl core_skeleton_cpp_distancePointToLineSegment_FUN_005405f0(CVector3f *line_start,CVector3f *line_end,CVector3f *test_point)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.554913294797688,
+    "instruction_count": 173,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 3,
+      "BRANCH": 2,
+      "CBRANCH": 3,
+      "COPY": 803,
+      "FLOAT2FLOAT": 78,
+      "FLOAT_ADD": 13,
+      "FLOAT_DIV": 1,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_MULT": 22,
+      "FLOAT_NAN": 6,
+      "FLOAT_SQRT": 2,
+      "FLOAT_SUB": 13,
+      "INT2FLOAT": 3,
+      "INT_ADD": 97,
+      "INT_AND": 20,
+      "INT_EQUAL": 4,
+      "INT_LEFT": 12,
+      "INT_LESS": 1,
+      "INT_MULT": 18,
+      "INT_NOTEQUAL": 15,
+      "INT_OR": 15,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 23,
+      "INT_ZEXT": 30,
+      "LOAD": 79,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 30
+    },
+    "pcode_op_count": 1307
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00562be0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00547800",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005996e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7578
+    },
+    "nocturne.exe": {
+      "addr": "005171b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7578
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "line_start",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "line_end",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "test_point",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005405fc",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
+}

@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 8,
-    "complexity_score": 23,
+    "complexity_score": 7,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 8,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 16
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 15
   },
   "cross_references": [],
   "function": {
@@ -23,15 +21,15 @@
         "004b7794"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_fire.cpp_CFirefly_ctor_FUN_004b7780",
-    "signature": "CFirefly * core_fire_cpp_CFirefly_ctor_FUN_004b7780(CFirefly *this_ptr)"
+    "signature": "CFirefly * __cdecl core_fire_cpp_CFirefly_ctor_FUN_004b7780(CFirefly *this_ptr)"
   },
   "function_calls": [
     {
       "addr": "00532130",
       "is_variadic": false,
-      "name": "core_particle.cpp_FUN_00532130"
+      "name": "core_particle.cpp_CParticle_ctor_FUN_00532130"
     }
   ],
   "globals": [],
@@ -64,6 +62,20 @@
     },
     "pcode_op_count": 24
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0049eeb0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a4820",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -80,16 +92,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "*(byte ***)&pCVar1->field_0x3c = &g_CFireflyVTable;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

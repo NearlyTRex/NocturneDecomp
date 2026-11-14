@@ -25,21 +25,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00494690",
-      "from_addr": "00494cf7",
-      "name": "shape_edittool.cpp_FUN_00494690",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0049b830",
       "from_addr": "0049be32",
-      "name": "shape_edittool.cpp_FUN_0049b830",
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_0049b830",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00493d40",
       "from_addr": "00493fba",
       "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_00493d40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00494690",
+      "from_addr": "00494cf7",
+      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_00494690",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -73,19 +73,19 @@
       "name": "engine_2d.c_plotPixel_FUN_00401130"
     },
     {
-      "addr": "00517d50",
-      "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_00517d50"
-    },
-    {
       "addr": "00517f10",
       "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_00517f10"
+      "name": "engine_mini3d.cpp_drawPixel_FUN_00517f10"
+    },
+    {
+      "addr": "00517d50",
+      "is_variadic": false,
+      "name": "engine_mini3d.cpp_setColor_FUN_00517d50"
     },
     {
       "addr": "00497830",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_00497830"
+      "name": "shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_00497830"
     }
   ],
   "globals": [
@@ -229,7 +229,7 @@
       {
         "call_addr": "0049be32",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0049b830",
+        "caller": "shape_edittool.cpp_CPickList_renderDialog_FUN_0049b830",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -240,7 +240,7 @@
       {
         "call_addr": "00494cf7",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00494690",
+        "caller": "shape_edittool.cpp_showMultiChoiceDialog_FUN_00494690",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -383,7 +383,7 @@
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar1 = shape_edittool_cpp_FUN_00497830(param_1);",
+      "text": "uVar1 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_00497830(param_1);",
       "type": "unnamed_param"
     },
     {

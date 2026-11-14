@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archiveOrientation_FUN_0040b4a0(float *param_1,char *param_2)
+; void __cdecl core_actor_cpp_archiveOrientation_FUN_0040b4a0(COrientation *orient_ptr,char *property_name)
 ;
+; Parameters:
+; COrientation *   Stack[0x4]:4   orient_ptr
+; char *           Stack[0x8]:4   property_name
 ; Local Variables:
 ; undefined8       Stack[-0x20]:8  local_20
 ; undefined8       Stack[-0x18]:8  local_18
@@ -11,8 +14,8 @@
 ; XREF[4]:
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040c280 at 0040c2a2
 ;   core_boxactor.cpp_CBoxActor_archive_FUN_0041fb90 at 0041fdfc
-;   core_boxactor.cpp_FUN_004207f0 at 00420846
-;   core_charactr.cpp_FUN_0042b450 at 0042b7be
+;   core_boxactor.cpp_CLightActor_archive_FUN_004207f0 at 00420846
+;   core_charactr.cpp_CCharacter_archive_FUN_0042b450 at 0042b7be
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_f_f_f_005b5a8c
@@ -48,7 +51,7 @@ section .text
     MOV EBX,dword ptr [0x007df9b4]      ; 0040b4bd | DAT_007df9b4
     PUSH EBX                            ; 0040b4c3
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 0040b4c4
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005a3230(_FILE * file, char * format)
     ADD ESP,0x14                        ; 0040b4c9
     CMP EAX,0x3                         ; 0040b4cc
     JNZ 0x0040b4e6                      ; 0040b4cf

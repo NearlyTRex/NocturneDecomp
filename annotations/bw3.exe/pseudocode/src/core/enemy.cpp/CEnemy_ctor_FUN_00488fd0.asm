@@ -11,16 +11,16 @@
 ;   core_boneguy.cpp_CBoneGuy_ctor_FUN_00417400 at 0041740b
 ;   core_bugs.cpp_CBugs_ctor_FUN_00420ea0 at 00420ea8
 ;   core_carved.cpp_CCarved_ctor_FUN_00425960 at 0042596a
-;   core_constrct.cpp_CConstruct_ctor_FUN_00442420 at 00442428
+;   core_construc.cpp_CConstruct_ctor_FUN_00442420 at 00442428
 ;   core_cow.cpp_CZombieCow_ctor_FUN_00444f60 at 00444f66
+;   core_darkwolf.cpp_CDarkwolf_ctor_FUN_00598780 at 00598786
 ;   core_demnfolk.cpp_CDemnfolk_ctor_FUN_00454b60 at 00454b6c
 ;   core_dog.cpp_CZombieDog_ctor_FUN_00462710 at 00462716
 ;   core_gargoyle.cpp_CGargoyle_ctor_FUN_004c4de0 at 004c4de6
-;   core_ghoul.cpp_CGhoul_ctor_FUN_004c68e0 at 004c68e9
 ;   ... and 19 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040ce40
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_charactr.cpp_CCharacter_ctor_FUN_0042ac20
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00462500
 ;
@@ -47,8 +47,8 @@ section .text
     LEA EBX,[EAX + 0xffff3130]          ; 00488ff6
     PUSH 0x3f666666                     ; 00488ffc
     MOV dword ptr [EBX + 0x154],0x5df364 ; 00489001
-    CALL core_actor.cpp_FUN_0040ce40    ; 0048900b
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 0048900b
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [EBX + 0xcdd0],0x0    ; 00489010
     MOV dword ptr [EBX + 0xce54],0x0    ; 0048901a
     MOV dword ptr [EBX + 0xcde4],0x0    ; 00489024

@@ -10,14 +10,14 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[8]:
-;   core_game.cpp_FUN_004b296e at 004b2a35
+;   core_game.cpp_FUN_004b2970 at 004b2a35
 ;   core_game.cpp_FUN_004b90d0 at 004b9934
 ;   core_game.cpp_FUN_004bbf70 at 004bc3b9
 ;   core_main.c_FUN_004e45e0 at 004e4692
 ;   core_mission.cpp_FUN_004fd280 at 004fd3d9
+;   core_netgame.cpp_CNetGame_disconnect_FUN_0050b8d0 at 0050ba39
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_0050cf50 at 0050d27d
-;   core_netgame.cpp_FUN_0050b8d0 at 0050ba39
-;   core_script.cpp_FUN_00522350 at 00524b5a
+;   core_script.cpp_CScript_step_FUN_00522350 at 00524b5a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Message_005d1fb9
@@ -42,7 +42,7 @@ section .text
     PUSH EDX                            ; 0047bdb2
     PUSH 0x1c225f0                      ; 0047bdb3
     CALL crt_stdio.c_vsprintf_FUN_005b7768 ; 0047bdb8
-        ;   XREF to: 005b7768 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_vsprintf_FUN_005b7768()
+        ;   XREF to: 005b7768 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005b7768(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0047bdbd
     MOV EBX,dword ptr [0x01c2639c]      ; 0047bdc0 | DAT_01c2639c
     PUSH EBX                            ; 0047bdc6

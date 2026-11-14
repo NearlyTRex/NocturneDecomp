@@ -19,7 +19,7 @@
     {
       "addr": "00449280",
       "from_addr": "00449298",
-      "name": "core_dirmat.cpp_FUN_00449280",
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -49,7 +49,7 @@
     {
       "addr": "004f2be0",
       "from_addr": "004f2c45",
-      "name": "engine_mini3d.cpp_FUN_004f2be0",
+      "name": "engine_mini3d.cpp_matrixPushAndTransform_FUN_004f2be0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -74,7 +74,7 @@
       {
         "call_addr": "00449298",
         "call_type": "direct",
-        "caller": "core_dirmat.cpp_FUN_00449280",
+        "caller": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -88,7 +88,7 @@
       {
         "call_addr": "004492ae",
         "call_type": "direct",
-        "caller": "core_dirmat.cpp_FUN_00449280",
+        "caller": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -101,7 +101,7 @@
       {
         "call_addr": "004492c4",
         "call_type": "direct",
-        "caller": "core_dirmat.cpp_FUN_00449280",
+        "caller": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -228,6 +228,20 @@
       "STORE": 6
     },
     "pcode_op_count": 85
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0045fd80",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0045bef0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,

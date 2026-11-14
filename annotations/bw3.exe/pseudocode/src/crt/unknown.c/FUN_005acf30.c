@@ -105,7 +105,7 @@ LAB_005acfb8:
   }
   else {
     local_40[iVar6] = 0;
-    unkafter_asgaya_cpp_FUN_005af71c();
+    FUN_005af71c();
     if (iVar7 != 0) {
       FUN_005a7360(&local_2c,iVar7);
     }

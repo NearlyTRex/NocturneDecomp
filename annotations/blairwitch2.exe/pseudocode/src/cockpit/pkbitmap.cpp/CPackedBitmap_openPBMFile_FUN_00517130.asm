@@ -17,12 +17,12 @@
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_00516d60
+;   cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00516200
+;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_00516f30
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_00516270
-;   cockpit_pkbitmap.cpp_FUN_00516200
-;   cockpit_pkbitmap.cpp_FUN_00516f30
 ;   core_main.c_FUN_004e4500
 ;   crt_stdio.c_fclose_FUN_005b89c0
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_dosio.cpp_FUN_00460c70
 ;
 ; *****************************************************************************
@@ -35,8 +35,8 @@ section .text
     SUB ESP,0x64                        ; 00517132
     MOV EBX,dword ptr [ESP + 0x70]      ; 00517135
     PUSH EBX                            ; 00517139
-    CALL cockpit_pkbitmap.cpp_FUN_00516200 ; 0051713a
-        ;   XREF to: 00516200 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_FUN_00516200()
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00516200 ; 0051713a
+        ;   XREF to: 00516200 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00516200(CPackedBitmap * this_ptr)
     ADD ESP,0x4                         ; 0051713f
     MOV EDX,dword ptr [ESP + 0x74]      ; 00517142
     PUSH EDX                            ; 00517146
@@ -60,8 +60,8 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 00517170
     PUSH EAX                            ; 00517174
     MOV EDI,0x51a                       ; 00517175
-    CALL crt_unknown.c_FUN_005b7790     ; 0051717a
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0051717a
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0xc                         ; 0051717f
     LEA EAX,[ESP + 0x4]                 ; 00517182
     MOV ECX,0x5e1d82                    ; 00517186
@@ -76,8 +76,8 @@ section .text
         ;   Label: LAB_005171a1
     PUSH ESI                            ; 005171a3
     PUSH EBX                            ; 005171a4
-    CALL cockpit_pkbitmap.cpp_FUN_00516f30 ; 005171a5
-        ;   XREF to: 00516f30 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_FUN_00516f30(CPackedBitmap * this_ptr, _FILE * file_handle, int skip_data_load)
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_00516f30 ; 005171a5
+        ;   XREF to: 00516f30 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_00516f30(CPackedBitmap * this_ptr, _FILE * file_handle, int skip_data_load)
     ADD ESP,0xc                         ; 005171aa
     PUSH ESI                            ; 005171ad
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 005171ae

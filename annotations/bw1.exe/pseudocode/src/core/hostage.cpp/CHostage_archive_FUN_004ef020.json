@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 187,
-    "complexity_score": 269,
+    "complexity_score": 55,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 22,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 54,
-    "suspect_count": 21,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 241
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 55,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 242
   },
   "cross_references": [],
   "function": {
@@ -39,6 +37,11 @@
       "name": "core_actor.cpp_archiveClothList_FUN_0040bce0"
     },
     {
+      "addr": "0040b7f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveDeformableModelInstance_FUN_0040b7f0"
+    },
+    {
       "addr": "0040b5f0",
       "is_variadic": false,
       "name": "core_actor.cpp_archiveFloat_FUN_0040b5f0"
@@ -54,29 +57,24 @@
       "name": "core_actor.cpp_archiveLocalizedString_FUN_0040b560"
     },
     {
+      "addr": "0040b870",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040b870"
+    },
+    {
+      "addr": "0040b960",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archivePartStatus_FUN_0040b960"
+    },
+    {
       "addr": "0040b440",
       "is_variadic": false,
       "name": "core_actor.cpp_archiveString_FUN_0040b440"
     },
     {
-      "addr": "0040b7f0",
-      "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040b7f0"
-    },
-    {
-      "addr": "0040b870",
-      "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040b870"
-    },
-    {
-      "addr": "0040b960",
-      "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040b960"
-    },
-    {
       "addr": "00531bf0",
       "is_variadic": false,
-      "name": "core_npc.cpp_FUN_00531bf0"
+      "name": "core_npc.cpp_CNPC_archive_FUN_00531bf0"
     }
   ],
   "globals": [
@@ -247,6 +245,26 @@
     },
     "pcode_op_count": 607
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004d2df0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004f6170",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004b8320",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -263,180 +281,11 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x1fe64",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x1fe64,\"followState\")",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x1fe6c",
-      "severity": "mild",
-      "text": "((int *)&this_ptr->field_0x1fe6c,\"hostageState\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x1fe70",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x1fe70,\"goalWayPoint\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)&this_ptr->field_0x158,\"modelName\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_actor_cpp_FUN_0040b870((CMotionController *)&this_ptr->field_0x158,\"motion state\")",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)&this_ptr->field_0x158,\"partStatus\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x1fab8",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x1fab8,\"rescueDistance\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x1fabc",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x1fabc,\"rescueCondition\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x2ca0",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveClothList_FUN_0040bce0(&this_ptr->field_0x2ca0,\"clothList\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x1fb20",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x1fb20,\"rescueEvent\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x1fb40",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x1fb40,\"heroFoundMeEvent\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x1fba4",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x1fba4,\"heroLeftMeEvent\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x1fc08",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x1fc08,\"heroCameBackEvent\")",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x1fcd0",
-      "severity": "mild",
-      "text": "(&this_ptr->field_0x1fcd0,\"goingToSitDownEvent\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x1fd34",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x1fd34,\"sitDownEvent\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x1fe8c",
-      "severity": "mild",
-      "text": "((int *)&this_ptr->field_0x1fe8c,\"noShadowsWhenSaved\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x1fc6c",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x1fc6c,\"getEatenEvent\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x2544",
-      "severity": "mild",
-      "text": "(&this_ptr->field_0x2544,\"descriptiveName\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0x1fe74",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x1fe74,\"sitDownWayPoint\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x1fd98",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x1fd98,\"damageSound\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x1fdfc",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x1fdfc,\"dieSound\");",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CHostage",
         "offset": 212,
         "vtable_addr": "00602174"
       }

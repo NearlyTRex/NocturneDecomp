@@ -1,12 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setutil_cpp_C3DSCamera_apply_FUN_0053ad20(char *param_1,CDemonCamera *param_2)
+; void __cdecl core_setutil_cpp_C3DSCamera_apply_FUN_0053ad20(C3DSCamera *this_ptr,CDemonCamera *camera)
 ;
+; Parameters:
+; C3DSCamera *     Stack[0x4]:4   this_ptr
+; CDemonCamera *   Stack[0x8]:4   camera
 ;
 ; XREF[2]:
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0 at 0052e3b1
-;   core_set.cpp_FUN_0052d3be at 0052d6af
+;   core_set.cpp_FUN_0052d3c0 at 0052d6af
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setutil_cpp_005e6181
@@ -19,12 +22,12 @@
 ;   CConsole g_CConsoleInstance
 ;   undefined4 DAT_01d046a0
 ;   undefined4 DAT_01d046a4
-;   undefined4 g_CDemonSetInstance.field1364304_0x14d150
+;   undefined4 g_CDemonSetInstance.min_ambient_value
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00441e80
 ;   core_main.c_FUN_004e4500
-;   engine_console.cpp_FUN_00436710
+;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;
 ; *****************************************************************************
 
@@ -84,7 +87,7 @@ section .text
     MOV EAX,[0x0061b5a8]                ; 0053ad9a | g_CDemonSetPtr
     FLD float ptr [EBX + 0x148]         ; 0053ad9f
     ADD ESP,0x8                         ; 0053ada5
-    FCOMP float ptr [EAX + 0x14d150]    ; 0053ada8 | g_CDemonSetInstance.field1364304_0x14d150
+    FCOMP float ptr [EAX + 0x14d150]    ; 0053ada8 | g_CDemonSetInstance.min_ambient_value
     FNSTSW AX                           ; 0053adae
     SAHF                                ; 0053adb0
     JNC 0x0053adc7                      ; 0053adb1
@@ -92,8 +95,8 @@ section .text
     PUSH 0x5e61d8                       ; 0053adb3 | = "Ambient set low by script\n"
     MOV EDI,dword ptr [0x00609ed0]      ; 0053adb8 | g_CConsolePtr
     PUSH EDI                            ; 0053adbe | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00436710 ; 0053adbf
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 0053adbf
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 0053adc4
     FLD float ptr [EBX + 0x148]         ; 0053adc7
         ;   Label: LAB_0053adc7
@@ -123,8 +126,8 @@ section .text
         ;   Label: LAB_0053ae06
     MOV EBP,dword ptr [0x00609ed0]      ; 0053ae0b | g_CConsolePtr
     PUSH EBP                            ; 0053ae11 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00436710 ; 0053ae12
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 0053ae12
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     ADD ESP,0x8                         ; 0053ae17
     POP EBP                             ; 0053ae1a
     POP EDI                             ; 0053ae1b

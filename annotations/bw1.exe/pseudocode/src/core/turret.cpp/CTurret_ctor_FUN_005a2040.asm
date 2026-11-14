@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CTurret * core_turret_cpp_CTurret_ctor_FUN_005a2040(CTurret *this_ptr)
+; CTurret * __cdecl core_turret_cpp_CTurret_ctor_FUN_005a2040(CTurret *this_ptr)
 ;
 ; Parameters:
 ; CTurret *        Stack[0x4]:4   this_ptr

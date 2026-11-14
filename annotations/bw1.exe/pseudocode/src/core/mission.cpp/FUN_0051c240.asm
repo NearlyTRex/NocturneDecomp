@@ -25,20 +25,20 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
-;   core_actor.cpp_FUN_0040c550
+;   core_actor.cpp_isOfClass_FUN_0040c550
 ;   core_hero.cpp_CHeroPlaceholder_ctor_FUN_004ecba0
 ;   core_main.c_FUN_005030e0
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_0051b160
+;   core_mission.cpp_CDemonMission_findActorByName_FUN_0051b6c0
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_0051bd60
 ;   core_mission.cpp_CDemonMission_removeActor_FUN_0051b4d0
-;   core_mission.cpp_FUN_0051b6c0
-;   crt_unknown.c_FUN_005c0f32
+;   crt_memory.c_operator_new_FUN_005c0f32
 ;   shape_edittool.cpp_CEditorTools_showMessage_FUN_004942e0
 ;   shape_edittool.cpp_CPickList_ctor_FUN_0049a620
+;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_0049a8b0
 ;   shape_edittool.cpp_CPickList_dtor_FUN_0049a710
 ;   shape_edittool.cpp_CStrList_add_FUN_004994d0
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_004998a0
-;   shape_edittool.cpp_FUN_0049a8b0
 ;
 ; *****************************************************************************
 
@@ -62,8 +62,8 @@ section .text
     PUSH 0x5e9aaa                       ; 0051c265 | = "CHero"
         ;   Label: LAB_0051c265
     PUSH EBX                            ; 0051c26a
-    CALL core_actor.cpp_FUN_0040c550    ; 0051c26b
-        ;   XREF to: 0040c550 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c550(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c550 ; 0051c26b
+        ;   XREF to: 0040c550 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c550(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 0051c270
     TEST EAX,EAX                        ; 0051c273
     JZ 0x0051c285                       ; 0051c275
@@ -79,7 +79,7 @@ section .text
     PUSH EBP                            ; 0051c28b
     PUSH EBX                            ; 0051c28c
     CALL core_actor.cpp_castToClassHash_FUN_0040c600 ; 0051c28d
-        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c600()
+        ;   XREF to: 0040c600 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c600(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0051c292
     TEST EAX,EAX                        ; 0051c295
     JNZ 0x0051c3bb                      ; 0051c297
@@ -98,8 +98,8 @@ section .text
     PUSH 0x5e9ae9                       ; 0051c2b5 | = "Mission has no hero placeholders.\n\n..."
     LEA EAX,[ESP + 0xc]                 ; 0051c2ba
     PUSH EAX                            ; 0051c2be
-    CALL shape_edittool.cpp_FUN_0049a8b0 ; 0051c2bf
-        ;   XREF to: 0049a8b0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_FUN_0049a8b0(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
+    CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_0049a8b0 ; 0051c2bf
+        ;   XREF to: 0049a8b0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_0049a8b0(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     ADD ESP,0x10                        ; 0051c2c4
     TEST EAX,EAX                        ; 0051c2c7
     JL 0x0051c3f5                       ; 0051c2c9
@@ -113,8 +113,8 @@ section .text
     ADD ESP,0x8                         ; 0051c2db
     PUSH EAX                            ; 0051c2de
     PUSH EDI                            ; 0051c2df
-    CALL core_mission.cpp_FUN_0051b6c0  ; 0051c2e0
-        ;   XREF to: 0051b6c0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_FUN_0051b6c0(CDemonMission * this_ptr, char * name)
+    CALL core_mission.cpp_CDemonMission_findActorByName_FUN_0051b6c0 ; 0051c2e0
+        ;   XREF to: 0051b6c0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_0051b6c0(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 0051c2e5
     MOV ESI,EAX                         ; 0051c2e8
     TEST EAX,EAX                        ; 0051c2ea
@@ -130,8 +130,8 @@ section .text
     ADD ESP,0x4                         ; 0051c30e
     PUSH 0x17c                          ; 0051c311
         ;   Label: LAB_0051c311
-    CALL crt_unknown.c_FUN_005c0f32     ; 0051c316
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
+    CALL crt_memory.c_operator_new_FUN_005c0f32 ; 0051c316
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
     ADD ESP,0x4                         ; 0051c31b
     TEST EAX,EAX                        ; 0051c31e
     JZ 0x0051c32b                       ; 0051c320

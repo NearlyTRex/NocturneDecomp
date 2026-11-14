@@ -1,0 +1,22 @@
+// Name: core_charactr.cpp_CCharacter_setWalkTargetImmediate_FUN_004315c0
+// Address: 004315c0
+// Address Range: [[004315c0, 0043160d]]
+// Convention: __cdecl
+// Signature: void __cdecl core_charactr_cpp_CCharacter_setWalkTargetImmediate_FUN_004315c0(CCharacter *this_ptr,CDemonActor *target)
+
+#include "nocturne.h"
+
+void __cdecl core_charactr_cpp_CCharacter_setWalkTargetImmediate_FUN_004315c0(CCharacter *this_ptr,CDemonActor *target)
+
+{
+  CCharacter_full_vtable *pCVar1;
+  
+  this_ptr->walk_state = WALK_STATE_WALKING;
+  this_ptr->walk_min_distance = -1.0;
+  this_ptr->walk_to_target = target;
+  pCVar1 = (this_ptr->base).vtable._uc;
+  this_ptr->walk_max_distance = 1e+30;
+  (*(pCVar1->_uc).setWalkTimeout)(this_ptr,2.0);
+  this_ptr->walk_immediate_pending = 1;
+  return;
+}

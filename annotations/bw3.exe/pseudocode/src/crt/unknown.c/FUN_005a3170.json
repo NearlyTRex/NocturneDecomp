@@ -76,6 +76,32 @@
     },
     "pcode_op_count": 60
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b8040",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005c03f0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005fe700",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00563290",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -98,7 +124,7 @@
       "line": 7,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = _fgetc(*(uint *)(param_1 + 8));",
+      "text": "iVar1 = _fgetc(*(_FILE **)(param_1 + 8));",
       "type": "unnamed_param"
     },
     {

@@ -46,7 +46,7 @@ section .text
     ADD EAX,0x158                       ; 005a84eb
     PUSH EAX                            ; 005a84f0
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770 ; 005a84f1
-        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770()
+        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770(CKeyFramedModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 005a84f6
     MOV EAX,dword ptr [ESP + 0x14]      ; 005a84f9
     PUSH 0x5f909d                       ; 005a84fd | = "tireCount"
@@ -79,23 +79,23 @@ section .text
     PUSH EDI                            ; 005a855b
     MOV dword ptr [ESP + 0x10],EDX      ; 005a855c
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770 ; 005a8560
-        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770()
+        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770(CKeyFramedModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 005a8565
     PUSH 0x5f90a7                       ; 005a8568 | = "static_bpos"
     MOV EAX,dword ptr [ESP + 0xc]       ; 005a856d
     PUSH EAX                            ; 005a8571
     CALL core_actor.cpp_archiveVector_FUN_0040b1c0 ; 005a8572
-        ;   XREF to: 0040b1c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040b1c0()
+        ;   XREF to: 0040b1c0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveVector_FUN_0040b1c0(CVector3f * vector_ptr, char * property_name)
     ADD ESP,0x8                         ; 005a8577
     PUSH 0x5f90b3                       ; 005a857a | = "radius"
     PUSH EBP                            ; 005a857f
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 005a8580
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 005a8585
     PUSH 0x5f90ba                       ; 005a8588 | = "width"
     PUSH ESI                            ; 005a858d
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 005a858e
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 005a8593
     ADD EDI,0x1b4                       ; 005a8596
     MOV EAX,dword ptr [ESP + 0x1c]      ; 005a859c
@@ -125,14 +125,14 @@ section .text
     ADD EAX,0x102c                      ; 005a85da
     PUSH EAX                            ; 005a85df
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 005a85e0
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 005a85e5
     MOV EAX,dword ptr [ESP + 0x14]      ; 005a85e8
     PUSH 0x5f90c8                       ; 005a85ec | = "totalTime"
     ADD EAX,0x1030                      ; 005a85f1
     PUSH EAX                            ; 005a85f6
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 005a85f7
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 005a85fc
     MOV EAX,dword ptr [ESP + 0x14]      ; 005a85ff
     PUSH 0x5f90d2                       ; 005a8603 | = "courseName"
@@ -154,12 +154,12 @@ section .text
     ADD EBX,0x1070                      ; 005a862e
     PUSH EBX                            ; 005a8634
     CALL core_actor.cpp_archiveActor_FUN_0040b6f0 ; 005a8635
-        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b6f0()
+        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b6f0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 005a863a
     PUSH 0x5f90ed                       ; 005a863d | = "lastMobsterRight"
     PUSH EBX                            ; 005a8642
     CALL core_actor.cpp_archiveActor_FUN_0040b6f0 ; 005a8643
-        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b6f0()
+        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b6f0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 005a8648
     ADD ESP,0x8                         ; 005a864b
     POP EBP                             ; 005a864e

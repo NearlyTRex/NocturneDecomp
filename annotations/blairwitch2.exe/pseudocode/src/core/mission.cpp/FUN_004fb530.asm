@@ -10,7 +10,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
-;   core_mission.cpp_FUN_004fbce0
+;   core_mission.cpp_CDemonMission_writeFile_FUN_004fbce0
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   engine_dosio.cpp_FUN_00460c70
 ;
@@ -36,8 +36,8 @@ section .text
         ;   Label: LAB_004fb54f
     MOV EDI,dword ptr [ESP + 0x10]      ; 004fb550
     PUSH EDI                            ; 004fb554
-    CALL core_mission.cpp_FUN_004fbce0  ; 004fb555
-        ;   XREF to: 004fbce0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_FUN_004fbce0(CDemonMission * this_ptr, _FILE * file_handle)
+    CALL core_mission.cpp_CDemonMission_writeFile_FUN_004fbce0 ; 004fb555
+        ;   XREF to: 004fbce0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_writeFile_FUN_004fbce0(CDemonMission * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004fb55a
     PUSH EBX                            ; 004fb55d
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 004fb55e

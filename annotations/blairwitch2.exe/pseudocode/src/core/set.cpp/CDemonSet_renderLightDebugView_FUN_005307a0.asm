@@ -27,7 +27,7 @@
 ;
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_renderShadowMapDebugView_FUN_0044a930
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_2d.c_drawText_FUN_00401fe0
 ;
 ; *****************************************************************************
@@ -102,8 +102,8 @@ section .text
     MOV ECX,dword ptr [0x01fc9608]      ; 00530856 | DAT_01fc9608
     PUSH ESI                            ; 0053085c
     ADD EBX,ECX                         ; 0053085d
-    CALL crt_unknown.c_FUN_005b7790     ; 0053085f
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0053085f
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0xc                         ; 00530864
     MOV EDI,dword ptr [EBX*0x4 + 0x61b73c] ; 00530867 | DAT_0061b73c
     PUSH EDI                            ; 0053086e
@@ -119,8 +119,8 @@ section .text
     PUSH 0x5e5962                       ; 0053088a | = "%d spot lights"
     LEA ESI,[ESP + 0x8]                 ; 0053088f
     PUSH ESI                            ; 00530893
-    CALL crt_unknown.c_FUN_005b7790     ; 00530894
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 00530894
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     MOV ESI,dword ptr [EBX*0x4 + 0x61b73c] ; 00530899 | DAT_0061b73c
     ADD ESP,0xc                         ; 005308a0
     ADD ESI,0xb                         ; 005308a3

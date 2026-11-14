@@ -20,15 +20,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004a3b90",
-      "from_addr": "004a3f9d",
-      "name": "core_game.cpp_CGame_FUN_004a3b90",
+      "addr": "004a4170",
+      "from_addr": "004a4593",
+      "name": "core_game.cpp_CGame_loadGame_FUN_004a4170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004a4170",
-      "from_addr": "004a4593",
-      "name": "core_game.cpp_CGame_FUN_004a4170",
+      "addr": "004a3b90",
+      "from_addr": "004a3f9d",
+      "name": "core_game.cpp_CGame_saveGame_FUN_004a3b90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -97,7 +97,7 @@
       {
         "call_addr": "004a4593",
         "call_type": "direct",
-        "caller": "core_game.cpp_CGame_FUN_004a4170",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004a4170",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -108,7 +108,7 @@
       {
         "call_addr": "004a4779",
         "call_type": "direct",
-        "caller": "core_game.cpp_CGame_FUN_004a4170",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004a4170",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -119,7 +119,7 @@
       {
         "call_addr": "004a3f9d",
         "call_type": "direct",
-        "caller": "core_game.cpp_CGame_FUN_004a3b90",
+        "caller": "core_game.cpp_CGame_saveGame_FUN_004a3b90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -188,6 +188,32 @@
       "STORE": 9
     },
     "pcode_op_count": 103
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00433e90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00442bb0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9818
+    },
+    "bw3.exe": {
+      "addr": "00440810",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9818
+    },
+    "nocedit.exe": {
+      "addr": "0043e9b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 12,

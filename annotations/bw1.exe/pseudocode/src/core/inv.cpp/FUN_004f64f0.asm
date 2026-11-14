@@ -8,7 +8,7 @@
 ;   undefined4 DAT_01d1bc48
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cc60
+;   core_actor.cpp_getRandomInt_FUN_0040cc60
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d4b0
 ;
 ; *****************************************************************************
@@ -40,8 +40,8 @@ section .text
     SHL EAX,0x4                         ; 004f652c
     PUSH 0x0                            ; 004f652f
     ADD EBX,EAX                         ; 004f6531
-    CALL core_actor.cpp_FUN_0040cc60    ; 004f6533
-        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cc60(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cc60 ; 004f6533
+        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cc60(int min_value, int max_value)
     MOV EDX,EAX                         ; 004f6538
     SHL EAX,0x2                         ; 004f653a
     ADD EAX,EDX                         ; 004f653d

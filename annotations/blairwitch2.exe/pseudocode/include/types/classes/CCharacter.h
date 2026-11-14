@@ -2,15 +2,143 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDoor;
+struct CWayPoint;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CClothList.h"
+#include "types/classes/CDeformableModelInstance.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CFlame.h"
+#include "types/classes/CMatrix3x4f.h"
+#include "types/classes/CVector3f.h"
+#include "types/enums/EBloodType.h"
+#include "types/enums/EFlameType.h"
+#include "types/enums/EHealthBarMode.h"
+#include "types/enums/EWalkState.h"
+#include "types/structs/SCarryHand.h"
+#include "types/structs/SDamageDecal.h"
+#include "types/structs/SFire.h"
+#include "types/structs/SFollowFormation.h"
+#include "types/structs/SLayerAction.h"
 
 // Structure: CCharacter
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x10a60 (68192 bytes)
 #pragma pack(push, 1)
 typedef struct CCharacter {
-    char field_0[68192]; // 0x0
+    CDemonActor base; // 0x0
+    CDeformableModelInstance model; // 0x2b4
+    int render_active; // 0x2568
+    int gravity_enabled; // 0x256c, Added in this build
+    int is_on_ground; // 0x2570
+    float closest_distance_threshold; // 0x2574
+    float turn_angle_accumulator; // 0x2578
+    CVector3f position_delta; // 0x257c
+    CVector3f velocity; // 0x2588
+    float walk_step_speed; // 0x2594
+    float turn_speed; // 0x2598
+    float turn_rate; // 0x259c, Added in this build
+    float cutscene_turn_rate; // 0x25a0, Added in this build
+    float ghost_turn_rate; // 0x25a4, Added in this build
+    float hit_points; // 0x25a8
+    float max_hit_points; // 0x25ac
+    EHealthBarMode health_bar_mode; // 0x25b0
+    char descriptive_name[100]; // 0x25b4
+    SCarryHand carry_hands[2]; // 0x2618
+    char talk_to_me_event[100]; // 0x2708
+    struct CDemonActor* grabbed_by; // 0x276c
+    int grabbed_type; // 0x2770
+    struct CDemonActor* walk_to_target; // 0x2774
+    float walk_min_distance; // 0x2778
+    float walk_max_distance; // 0x277c
+    float walk_timeout; // 0x2780
+    char field_10116[40]; // 0x2784
+    EWalkState walk_state; // 0x27ac
+    struct CDoor* door_target; // 0x27b0
+    CVector3f look_offset; // 0x27b4
+    int gesture_branch_root; // 0x27c0
+    int gesture_motion_index; // 0x27c4
+    float gesture_frame; // 0x27c8
+    struct CCharacter* look_at_candidate; // 0x27cc
+    struct CCharacter* look_at_target; // 0x27d0
+    float look_at_yaw; // 0x27d4
+    float look_at_pitch; // 0x27d8
+    float look_at_weight; // 0x27dc
+    int look_at_head_bone; // 0x27e0
+    float look_at_search_timer; // 0x27e4
+    struct CWayPoint* wander_target; // 0x27e8
+    struct CWayPoint* wander_nearest_waypoint; // 0x27ec
+    float wander_cooldown; // 0x27f0
+    CBoundingBox3D cached_bounding_box; // 0x27f4
+    EBloodType blood_type; // 0x280c
+    int is_ethereal; // 0x2810
+    int is_spectral; // 0x2814, Added in this build
+    char field_10264[4]; // 0x2818
+    int is_invulnerable; // 0x281c, Added in this build
+    float speech_timer; // 0x2820
+    float size_scale; // 0x2824
+    int was_rendered_opaque; // 0x2828
+    int gun_flame_ignitable; // 0x282c
+    int layer_action_count; // 0x2830
+    SLayerAction layer_actions[22]; // 0x2834, Added in this build
+    int layer_action_index; // 0x2d04
+    float layer_action_t; // 0x2d08
+    CClothList cloth_list; // 0x2d0c
+    float smoke_emit_timer; // 0x2ec8
+    float smoke_check_timer; // 0x2ecc
+    int smoke_occluded; // 0x2ed0
+    CVector3f collision_test_points[15]; // 0x2ed4
+    CVector3f collision_test_normals[15]; // 0x2f88
+    float hero_proximity_timer; // 0x303c
+    CVector3f move_away_target; // 0x3040
+    float walk_stuck_timer; // 0x304c
+    float sound_cooldown; // 0x3050
+    char field_12372[4]; // 0x3054
+    SFollowFormation follow_formation; // 0x3058, Added in this build
+    struct CCharacter* follow_leader; // 0x342c, Added in this build
+    float collision_cylinder_height; // 0x3430
+    float collision_cylinder_radius; // 0x3434
+    float ai_detection_range_min; // 0x3438
+    float ai_detection_range_max; // 0x343c
+    float collision_cylinder_bottom; // 0x3440
+    float collision_cylinder_top; // 0x3444
+    int damage_decal_count; // 0x3448
+    SDamageDecal damage_decals[5]; // 0x344c
+    int fire_count; // 0x3564
+    EFlameType pending_flame_type; // 0x3568
+    float flame_scale; // 0x356c
+    SFire fires[50]; // 0x3570
+    CFlame flames[50]; // 0x3a20
+    uint sfx_handle; // 0x10220
+    int is_fully_burned; // 0x10224
+    float burn_alpha; // 0x10228
+    float stagger_amount; // 0x1022c
+    float motion_transition_costs[22][22]; // 0x10230, Added in this build
+    int left_eye_frame; // 0x109c0, Added in this build
+    int right_eye_frame; // 0x109c4, Added in this build
+    int mouth_frame; // 0x109c8, Added in this build
+    int is_blinking; // 0x109cc, Added in this build
+    float blink_timer; // 0x109d0, Added in this build
+    float mouth_timer; // 0x109d4, Added in this build
+    int head_part_index; // 0x109d8, Added in this build
+    int left_eye_parts[4]; // 0x109dc, Added in this build
+    int right_eye_parts[4]; // 0x109ec, Added in this build
+    int mouth_parts[4]; // 0x109fc, Added in this build
+    CVector3f eye_glow_left_offset; // 0x10a0c, Added in this build
+    CVector3f eye_glow_right_offset; // 0x10a18, Added in this build
+    int eye_glow_bone; // 0x10a24, Added in this build
+    int eye_glow_enabled; // 0x10a28, Added in this build
+    float eye_glow_from; // 0x10a2c, Added in this build
+    float eye_glow_to; // 0x10a30, Added in this build
+    float eye_glow_duration; // 0x10a34, Added in this build
+    float eye_glow_timer; // 0x10a38, Added in this build
+    CVector3f eye_glow_color; // 0x10a3c, Added in this build
+    CVector3f eye_glow_left_angles; // 0x10a48, Added in this build
+    CVector3f eye_glow_right_angles; // 0x10a54, Added in this build
 } CCharacter;
 #pragma pack(pop)
 

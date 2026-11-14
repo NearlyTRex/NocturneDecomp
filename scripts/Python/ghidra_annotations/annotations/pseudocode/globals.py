@@ -6,6 +6,7 @@ import re
 from ghidra_annotations.util import resolve_data_type_name, load_json_files
 from ghidra_annotations.util.string import is_string_data_type_obj
 from ghidra_annotations.util.log import log_info
+from ghidra_annotations.annotations.pseudocode.char_buffer import is_char_buffer
 from ghidra_annotations.annotations.pseudocode.basetypes import (
     get_types_needing_basetypes, is_primitive_type, bytes_to_int_le, format_int_by_size
 )
@@ -2101,7 +2102,8 @@ def extract_globals_and_constants(currentProgram, string_map=None, write_xref_ad
         elif has_nonzero_bytes:
             if is_initialized and data_type.getLength() <= 8 and name.startswith("DAT_"):
                 is_constant = True
-            elif "char" in type_name.lower() and "[" in type_name and is_initialized:
+            elif ("char" in type_name.lower() and "[" in type_name and is_initialized
+                  and not is_char_buffer(type_name, raw_bytes)):
                 is_constant = True
             elif is_initialized and ("float" in type_name.lower() or "double" in type_name.lower()):
                 is_constant = True

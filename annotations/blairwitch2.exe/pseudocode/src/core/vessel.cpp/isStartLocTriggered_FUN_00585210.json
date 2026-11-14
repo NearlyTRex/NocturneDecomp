@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 5,
-    "complexity_score": 19,
+    "complexity_score": 4,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 4,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 9
   },
   "cross_references": [
     {
       "addr": "00585230",
       "from_addr": "005852d6",
-      "name": "core_vessel.cpp_FUN_00585230",
+      "name": "core_vessel.cpp_CCryptVessel_process_FUN_00585230",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -43,7 +41,7 @@
       {
         "call_addr": "005852d6",
         "call_type": "direct",
-        "caller": "core_vessel.cpp_FUN_00585230",
+        "caller": "core_vessel.cpp_CCryptVessel_process_FUN_00585230",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -54,7 +52,7 @@
       {
         "call_addr": "005855bd",
         "call_type": "direct",
-        "caller": "core_vessel.cpp_FUN_00585230",
+        "caller": "core_vessel.cpp_CCryptVessel_process_FUN_00585230",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -65,7 +63,7 @@
       {
         "call_addr": "005855d0",
         "call_type": "direct",
-        "caller": "core_vessel.cpp_FUN_00585230",
+        "caller": "core_vessel.cpp_CCryptVessel_process_FUN_00585230",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -76,7 +74,7 @@
       {
         "call_addr": "00585636",
         "call_type": "direct",
-        "caller": "core_vessel.cpp_FUN_00585230",
+        "caller": "core_vessel.cpp_CCryptVessel_process_FUN_00585230",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -87,7 +85,7 @@
       {
         "call_addr": "00585663",
         "call_type": "direct",
-        "caller": "core_vessel.cpp_FUN_00585230",
+        "caller": "core_vessel.cpp_CCryptVessel_process_FUN_00585230",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -113,6 +111,32 @@
     },
     "pcode_op_count": 12
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005a8e40",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00576690",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005e9180",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0054fc40",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -129,14 +153,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x504",
-      "severity": "mild",
-      "text": "return *(int *)(*(int *)&actor->field_0x504 + 0x2e0);",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

@@ -16,6 +16,7 @@
 #if NOCTURNE_GL_PRESENT
 
 #include "gl/antialias.h"
+#include "gl/display_settings.h"
 #include "gl/gl_api.h"
 #include "gl/gl_blit.h"
 #include "gl/gl_pixels.h"
@@ -45,6 +46,7 @@ struct GLPresentState {
     int logical_width = 0;
     int logical_height = 0;
     bool active = false;
+    int vsync = -1; // the [Graphics] vsync the swap interval was last set for
 
     // Scene target. A DirectDraw back buffer and its Z buffer are persistent
     // memory that the renderer DLL clears only when it chooses; GL's default
@@ -65,6 +67,19 @@ struct GLPresentState {
 };
 
 GLPresentState g_gl;
+
+// Adaptive vsync where available, plain vsync otherwise, or none, as
+// [Graphics] vsync says; asked each swap, so the Options line takes at once.
+void apply_vsync() {
+    const int vsync = nocturne_vsync_get();
+    if (vsync == g_gl.vsync)
+        return;
+    g_gl.vsync = vsync;
+    if (vsync == 0)
+        SDL_GL_SetSwapInterval(0);
+    else if (SDL_GL_SetSwapInterval(-1) != 0)
+        SDL_GL_SetSwapInterval(1);
+}
 
 // Leading "major.minor" of GL_VERSION, cached at context creation. Empty until
 // then, and read by nocturne_gl_version_short() for the 3D API menu line.
@@ -233,11 +248,8 @@ extern "C" int nocturne_gl_init(SDL_Window *window) {
         return 0;
     }
 
-    // Adaptive vsync where available, plain vsync otherwise. Matches the
-    // SDL_RENDERER_PRESENTVSYNC the SDL_Renderer path requested.
-    if (SDL_GL_SetSwapInterval(-1) != 0) {
-        SDL_GL_SetSwapInterval(1);
-    }
+    g_gl.vsync = -1;
+    apply_vsync();
 
     g_gl.window = window;
     g_gl.active = true;
@@ -519,8 +531,10 @@ void restore_scene_target() {
 
 // Draws `texture` to the WINDOW, letterboxed to the logical size (or, with no
 // logical size set, `fallback_w` x `fallback_h`), swaps, and goes back to the
-// scene target. `flipped` samples it bottom-up, as a render target is drawn.
-void present_to_window(GLuint texture, int fallback_w, int fallback_h, bool flipped) {
+// scene target. `flipped` samples it bottom-up, as a render target is drawn;
+// `own_shape` letterboxes it to its own size instead of the logical one.
+void present_to_window(GLuint texture, int fallback_w, int fallback_h, bool flipped,
+                       bool own_shape) {
     // When a scene FBO is in use it is still bound at this point (the DLL
     // renders into it), so switch to the default framebuffer for the blit.
     if (g_gl.scene_fbo != 0) {
@@ -530,8 +544,10 @@ void present_to_window(GLuint texture, int fallback_w, int fallback_h, bool flip
     int drawable_w = 0, drawable_h = 0;
     SDL_GL_GetDrawableSize(g_gl.window, &drawable_w, &drawable_h);
 
-    const int logical_w = (g_gl.logical_width > 0) ? g_gl.logical_width : fallback_w;
-    const int logical_h = (g_gl.logical_height > 0) ? g_gl.logical_height : fallback_h;
+    const int set_w = own_shape ? 0 : g_gl.logical_width;
+    const int set_h = own_shape ? 0 : g_gl.logical_height;
+    const int logical_w = (set_w > 0) ? set_w : fallback_w;
+    const int logical_h = (set_h > 0) ? set_h : fallback_h;
     int vp_x = 0, vp_y = 0, vp_w = 0, vp_h = 0;
     compute_viewport(drawable_w, drawable_h, logical_w, logical_h, &vp_x, &vp_y, &vp_w, &vp_h);
 
@@ -547,19 +563,24 @@ void present_to_window(GLuint texture, int fallback_w, int fallback_h, bool flip
     gl.Disable(GL_DEPTH_TEST);
     gl.Disable(GL_BLEND);
     gl.Disable(GL_CULL_FACE);
-    // Nearest keeps whole-multiple scaling crisp; at a fractional scale it makes
-    // pixel sizes visibly uneven (some source pixels land on 1 screen pixel,
-    // their neighbours on 2), so blend instead.
-    const GLint standard_filter =
-        viewport_is_integer_scale(vp_w, logical_w) ? GL_NEAREST : GL_LINEAR;
+    // Standard: nearest keeps whole-multiple scaling crisp; at a fractional
+    // scale it makes pixel sizes visibly uneven (some source pixels land on 1
+    // screen pixel, their neighbours on 2), so blend instead. Nearest and Smooth
+    // take one or the other at any scale.
+    const int upscaler = nocturne_upscaler_get();
+    GLint standard_filter = viewport_is_integer_scale(vp_w, logical_w) ? GL_NEAREST : GL_LINEAR;
+    if (upscaler == NOCTURNE_UPSCALER_NEAREST)
+        standard_filter = GL_NEAREST;
+    if (upscaler == NOCTURNE_UPSCALER_SMOOTH)
+        standard_filter = GL_LINEAR;
 
     // An upscaler only enlarges: the texture is `fallback_w` x `fallback_h`, and
     // a picture shown at that size or smaller takes the standard filter. Each
     // reads the texture filtered as it asks; one that cannot be had puts the
     // standard filter back.
     int drawn = 0;
-    const int upscaler = nocturne_upscaler_get();
-    if (upscaler != NOCTURNE_UPSCALER_STANDARD && (vp_w > fallback_w || vp_h > fallback_h)) {
+    if (nocturne_upscale_fragment_source(upscaler) != nullptr &&
+        (vp_w > fallback_w || vp_h > fallback_h)) {
         set_sampling(texture, nocturne_upscale_wants_nearest(upscaler) ? GL_NEAREST : GL_LINEAR);
         drawn = nocturne_gl_blit_quad_upscaled(
             upscaler, texture, flipped ? 1 : 0, fallback_w, fallback_h,
@@ -578,16 +599,14 @@ void present_to_window(GLuint texture, int fallback_w, int fallback_h, bool flip
         DLOG_RL("render", 1, 600, "gl_present: present quad unavailable — frame not drawn");
     }
 
+    apply_vsync();
     const Uint64 swap_start = SDL_GetPerformanceCounter();
     SDL_GL_SwapWindow(g_gl.window);
     s_swap_ticks += SDL_GetPerformanceCounter() - swap_start;
     restore_scene_target();
 }
 
-} // namespace
-
-extern "C" void nocturne_gl_present_framebuffer(const void *pixels, int width, int height,
-                                                int pitch, int bpp) {
+void present_frame(const void *pixels, int width, int height, int pitch, int bpp, bool own_shape) {
     if (!g_gl.active || pixels == nullptr || width <= 0 || height <= 0)
         return;
 
@@ -600,7 +619,19 @@ extern "C" void nocturne_gl_present_framebuffer(const void *pixels, int width, i
         return;
 
     upload_frame(pixels, width, height, pitch, bpp, format, type);
-    present_to_window(g_gl.framebuffer_texture, width, height, false);
+    present_to_window(g_gl.framebuffer_texture, width, height, false, own_shape);
+}
+
+} // namespace
+
+extern "C" void nocturne_gl_present_framebuffer(const void *pixels, int width, int height,
+                                                int pitch, int bpp) {
+    present_frame(pixels, width, height, pitch, bpp, false);
+}
+
+extern "C" void nocturne_gl_present_picture(const void *pixels, int width, int height, int pitch,
+                                            int bpp) {
+    present_frame(pixels, width, height, pitch, bpp, true);
 }
 
 extern "C" void nocturne_gl_scene_upload(const void *pixels, int width, int height, int pitch,
@@ -689,7 +720,7 @@ extern "C" void nocturne_gl_present_scene(void) {
 
     // A render target is drawn bottom-up, unlike an uploaded CPU image, so the
     // quad samples it the other way round.
-    present_to_window(g_gl.scene_color, g_gl.scene_width, g_gl.scene_height, true);
+    present_to_window(g_gl.scene_color, g_gl.scene_width, g_gl.scene_height, true, false);
 }
 
 extern "C" int nocturne_gl_read_front(unsigned char **out_rgb, int *out_width, int *out_height) {
@@ -771,6 +802,32 @@ extern "C" void nocturne_gl_window_to_logical(int window_x, int window_y, int *o
     *out_y = (int)ly;
 }
 
+extern "C" void nocturne_gl_logical_to_window(int logical_x, int logical_y, int *out_x,
+                                              int *out_y) {
+    *out_x = logical_x;
+    *out_y = logical_y;
+    if (!g_gl.active)
+        return;
+
+    int win_w = 0, win_h = 0, drawable_w = 0, drawable_h = 0;
+    SDL_GetWindowSize(g_gl.window, &win_w, &win_h);
+    SDL_GL_GetDrawableSize(g_gl.window, &drawable_w, &drawable_h);
+    if (win_w <= 0 || win_h <= 0 || drawable_w <= 0 || drawable_h <= 0)
+        return;
+
+    const int logical_w = (g_gl.logical_width > 0) ? g_gl.logical_width : drawable_w;
+    const int logical_h = (g_gl.logical_height > 0) ? g_gl.logical_height : drawable_h;
+
+    int vp_x = 0, vp_y = 0, vp_w = 0, vp_h = 0;
+    compute_viewport(drawable_w, drawable_h, logical_w, logical_h, &vp_x, &vp_y, &vp_w, &vp_h);
+
+    // The middle of the game's pixel, so the window point maps back onto it.
+    const double px = (double)vp_x + ((double)logical_x + 0.5) * (double)vp_w / (double)logical_w;
+    const double py = (double)vp_y + ((double)logical_y + 0.5) * (double)vp_h / (double)logical_h;
+    *out_x = (int)(px * (double)win_w / (double)drawable_w);
+    *out_y = (int)(py * (double)win_h / (double)drawable_h);
+}
+
 // The scene target goes with everything else: its names are the old context's,
 // and one left behind would be bound again as if it were the new one's. GL
 // ignores the name 0, so what was never made needs no check.
@@ -834,9 +891,20 @@ extern "C" void nocturne_gl_present_framebuffer(const void *p, int w, int h, int
     (void)pitch;
     (void)bpp;
 }
+extern "C" void nocturne_gl_present_picture(const void *p, int w, int h, int pitch, int bpp) {
+    (void)p;
+    (void)w;
+    (void)h;
+    (void)pitch;
+    (void)bpp;
+}
 extern "C" void nocturne_gl_window_to_logical(int wx, int wy, int *ox, int *oy) {
     *ox = wx;
     *oy = wy;
+}
+extern "C" void nocturne_gl_logical_to_window(int lx, int ly, int *ox, int *oy) {
+    *ox = lx;
+    *oy = ly;
 }
 extern "C" int nocturne_gl_read_front(unsigned char **rgb, int *w, int *h) {
     (void)rgb;

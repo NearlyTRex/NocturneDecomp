@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float __cdecl core_netgame_cpp_getElapsedSeconds_FUN_0052c1d0(int param_1)
+; float __cdecl core_netgame_cpp_getElapsedSeconds_FUN_0052c1d0(uint timestamp)
 ;
+; Parameters:
+; uint             Stack[0x4]:4   timestamp
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005eb5e8

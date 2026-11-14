@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint core_dstrendr_cpp_renderZBufferFill16xUnrolled_FUN_00486ff2(void)
+; void __edi_esi_ebx core_dstrendr_cpp_renderZBufferFill16xUnrolled_FUN_00486ff2(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 ;
 ;
 ; XREF[1]:

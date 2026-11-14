@@ -9,9 +9,9 @@
 void __cdecl core_trap_cpp_CTrap_archive_FUN_0059a0c0(CTrap *this_ptr)
 
 {
-  core_actor_cpp_CDemonActor_archive_FUN_0040c040((CDemonActor *)this_ptr);
-  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b770
-            (&this_ptr->field_0x158,"modelName");
-  core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x2d8,"wolfInTrap");
+  core_actor_cpp_CDemonActor_archive_FUN_0040c040(&this_ptr->base);
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b770(&this_ptr->model,"modelName");
+  core_actor_cpp_archiveActor_FUN_0040b6f0
+            ((CDemonActor **)&this_ptr->wolf_in_trap,"wolfInTrap");
   return;
 }

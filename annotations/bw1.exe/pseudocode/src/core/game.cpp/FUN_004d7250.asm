@@ -15,7 +15,7 @@
 ;
 ; XREF[2]:
 ;   core_main.c_FUN_005031c0 at 0050324c
-;   core_menu.cpp_FUN_0050cc90 at 0050cf43
+;   core_menu.cpp_showMainGameMenu_FUN_0050cc90 at 0050cf43
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e3104
@@ -37,7 +37,7 @@
 ;
 ; Called Functions:
 ;   core_event.cpp_FUN_004a9a00
-;   core_fldnotes.cpp_FUN_004bdaa0
+;   core_fldnotes.cpp_CFieldNotes_clear_FUN_004bdaa0
 ;   core_game.cpp_FUN_004d6990
 ;   core_level.cpp_FUN_004fe840
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_0051c0a0
@@ -88,7 +88,7 @@ section .text
     XOR EBX,EBX                         ; 004d72d2
     MOV [0x01c3eb50],EAX                ; 004d72d4 | DAT_01c3eb50
     CALL crt_stdio.c_fopen_FUN_005c157c ; 004d72d9
-        ;   XREF to: 005c157c (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_005c157c()
+        ;   XREF to: 005c157c (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005c157c(char * filename, char * mode)
     ADD ESP,0x8                         ; 004d72de
     TEST EAX,EAX                        ; 004d72e1
     JZ 0x004d72f3                       ; 004d72e3
@@ -226,8 +226,8 @@ section .text
     MOV ECX,dword ptr [0x0061d418]      ; 004d7483 | g_CFieldNotesPtr
         ;   Label: LAB_004d7483
     PUSH ECX                            ; 004d7489 | g_CFieldNotesInstance
-    CALL core_fldnotes.cpp_FUN_004bdaa0 ; 004d748a
-        ;   XREF to: 004bdaa0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004bdaa0()
+    CALL core_fldnotes.cpp_CFieldNotes_clear_FUN_004bdaa0 ; 004d748a
+        ;   XREF to: 004bdaa0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_clear_FUN_004bdaa0(CFieldNotes * this_ptr)
     ADD ESP,0x4                         ; 004d748f
     MOV EBX,dword ptr [0x0061b4d0]      ; 004d7492 | DAT_0061b4d0
     PUSH EBX                            ; 004d7498
@@ -362,8 +362,8 @@ section .text
     PUSH EAX                            ; 004d75e9
     LEA EAX,[ESP + 0xc]                 ; 004d75ea
     PUSH EAX                            ; 004d75ee
-    CALL shape_edittool.cpp_FUN_0049a8b0 ; 004d75ef
-        ;   XREF to: 0049a8b0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_FUN_0049a8b0(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
+    CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_0049a8b0 ; 004d75ef
+        ;   XREF to: 0049a8b0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_0049a8b0(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     ADD ESP,0x10                        ; 004d75f4
     MOV EBX,EAX                         ; 004d75f7
     MOV dword ptr [ESP + 0x6e4],EAX     ; 004d75f9
@@ -372,8 +372,8 @@ section .text
         ;   XREF to: 004d76b9 (CONDITIONAL_JUMP)  ; LAB_004d76b9
     MOV EAX,ESP                         ; 004d7608
     PUSH EAX                            ; 004d760a
-    CALL shape_edittool.cpp_FUN_0049c370 ; 004d760b
-        ;   XREF to: 0049c370 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_FUN_0049c370(CPickList * this_ptr)
+    CALL shape_edittool.cpp_CPickList_clear_FUN_0049c370 ; 004d760b
+        ;   XREF to: 0049c370 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_clear_FUN_0049c370(CPickList * this_ptr)
     ADD ESP,0x4                         ; 004d7610
     TEST EBX,EBX                        ; 004d7613
     JNZ 0x004d76a6                      ; 004d7615
@@ -427,8 +427,8 @@ section .text
     PUSH EAX                            ; 004d7696
     LEA EAX,[ESP + 0xc]                 ; 004d7697
     PUSH EAX                            ; 004d769b
-    CALL shape_edittool.cpp_FUN_0049a8b0 ; 004d769c
-        ;   XREF to: 0049a8b0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_FUN_0049a8b0(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
+    CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_0049a8b0 ; 004d769c
+        ;   XREF to: 0049a8b0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_0049a8b0(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     ADD ESP,0x10                        ; 004d76a1
     MOV EBP,EAX                         ; 004d76a4
     PUSH ESI                            ; 004d76a6
@@ -461,8 +461,8 @@ section .text
     PUSH 0x5e323b                       ; 004d76ef | = "Select mission to play"
     MOV EDI,dword ptr [0x0061abc0]      ; 004d76f4 | g_CEditorToolsPtr
     PUSH EDI                            ; 004d76fa
-    CALL shape_edittool.cpp_FUN_00494fd0 ; 004d76fb
-        ;   XREF to: 00494fd0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_FUN_00494fd0(CEditorTools * this_ptr, char * dialog_title, char * search_directory, char * file_pattern, ...)
+    CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00494fd0 ; 004d76fb
+        ;   XREF to: 00494fd0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00494fd0(CEditorTools * this_ptr, char * dialog_title, char * search_directory, char * file_pattern, ...)
     ADD ESP,0x18                        ; 004d7700
     TEST EAX,EAX                        ; 004d7703
     JZ 0x004d757b                       ; 004d7705

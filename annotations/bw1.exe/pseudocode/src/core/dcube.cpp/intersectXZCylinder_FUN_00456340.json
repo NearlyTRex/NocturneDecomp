@@ -1,0 +1,322 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 284,
+    "complexity_score": 102,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 87,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 371
+  },
+  "cross_references": [
+    {
+      "addr": "004566c0",
+      "from_addr": "00456976",
+      "name": "core_dcube.cpp_intersectTriangleWithXZCylinder_FUN_004566c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00456620",
+      "from_addr": "00456649",
+      "name": "core_dcube.cpp_intersectXZCylinderWithHeight_FUN_00456620",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00456340",
+    "address_range": [
+      [
+        "00456340",
+        "00456611"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_dcube.cpp_intersectXZCylinder_FUN_00456340",
+    "signature": "int __cdecl core_dcube_cpp_intersectXZCylinder_FUN_00456340(SIntersectXZCylinder *cylinder)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005d7aa3",
+      "name": "DAT_005d7aa3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d7aa7",
+      "name": "DAT_005d7aa7",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d7aab",
+      "name": "DAT_005d7aab",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "00456976",
+        "call_type": "direct",
+        "caller": "core_dcube.cpp_intersectTriangleWithXZCylinder_FUN_004566c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00456a74",
+        "call_type": "direct",
+        "caller": "core_dcube.cpp_intersectTriangleWithXZCylinder_FUN_004566c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00456649",
+        "call_type": "direct",
+        "caller": "core_dcube.cpp_intersectXZCylinderWithHeight_FUN_00456620",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.9296875,
+    "instruction_count": 256,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 9,
+      "BOOL_OR": 20,
+      "BRANCH": 3,
+      "CBRANCH": 14,
+      "COPY": 1153,
+      "FLOAT2FLOAT": 100,
+      "FLOAT_ABS": 2,
+      "FLOAT_ADD": 13,
+      "FLOAT_DIV": 5,
+      "FLOAT_EQUAL": 14,
+      "FLOAT_LESS": 14,
+      "FLOAT_MULT": 30,
+      "FLOAT_NAN": 28,
+      "FLOAT_NEG": 2,
+      "FLOAT_SQRT": 2,
+      "FLOAT_SUB": 12,
+      "INT2FLOAT": 10,
+      "INT_ADD": 111,
+      "INT_AND": 83,
+      "INT_EQUAL": 12,
+      "INT_LEFT": 56,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 70,
+      "INT_OR": 70,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 6,
+      "INT_SUB": 3,
+      "INT_XOR": 4,
+      "INT_ZEXT": 56,
+      "LOAD": 87,
+      "POPCOUNT": 6,
+      "RETURN": 2,
+      "STORE": 31
+    },
+    "pcode_op_count": 2030
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00444c90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00452490",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004556b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004493a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 104,
+    "local_size": 100,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "cylinder",
+        "offset": 4,
+        "size": 4,
+        "type": "SIntersectXZCylinder *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00456347",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

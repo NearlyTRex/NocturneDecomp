@@ -51,6 +51,14 @@ def pin_index(image, pins):
     return out
 
 
+def lines_by_file(pins):
+    """source file -> set(line) over a build's pins."""
+    out = defaultdict(set)
+    for p in pins:
+        out[p["file"]].add(p["line"])
+    return out
+
+
 def tu_shifts(pins_a, pins_b, min_support=2):
     """source file -> set of plausible line deltas between the builds.
 
@@ -63,13 +71,7 @@ def tu_shifts(pins_a, pins_b, min_support=2):
     accept a pair whose lines align under any of them. Requiring real support
     keeps this from degenerating into "any line matches any line".
     """
-    def by_file(pins):
-        d = defaultdict(set)
-        for p in pins:
-            d[p["file"]].add(p["line"])
-        return d
-
-    A, B = by_file(pins_a), by_file(pins_b)
+    A, B = lines_by_file(pins_a), lines_by_file(pins_b)
     out = {}
     for f in set(A) & set(B):
         hist = Counter(y - x for x in A[f] for y in B[f])
@@ -79,18 +81,12 @@ def tu_shifts(pins_a, pins_b, min_support=2):
 
 def tu_classes(pins_a, pins_b):
     """source file -> divergence verdict, via diff_line_pins.classify."""
-    def by_file(pins):
-        d = defaultdict(set)
-        for p in pins:
-            d[p["file"]].add(p["line"])
-        return d
-
-    A, B = by_file(pins_a), by_file(pins_b)
+    A, B = lines_by_file(pins_a), lines_by_file(pins_b)
     return {f: classify(A.get(f, set()), B.get(f, set()))[0]
             for f in set(A) | set(B)}
 
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("mapping")
@@ -99,7 +95,7 @@ def main():
     ap.add_argument("--list-conflicts", action="store_true",
                     help="print every conflicting pair")
     ap.add_argument("--out", help="write the per-pair verdicts as JSON")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
     with open(args.mapping) as fh:
         mapping = json.load(fh)

@@ -12,11 +12,11 @@ CGasMask * __cdecl core_gasmask_cpp_CGasMask_ctor_FUN_004c6640(CGasMask *this_pt
   CDemonActor *pCVar1;
   CKeyFramedModelInstance *this_ptr_00;
   
-  pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_00408600((CDemonActor *)this_ptr);
+  pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_00408600(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00462500
                           ((CKeyFramedModelInstance *)(pCVar1 + 1));
-  *(byte **)&this_ptr_00[-1].field_0x178 = &g_CGasMaskVTable;
+  this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CGasMaskVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0(this_ptr_00,(char *)0x5c4031);
-  *(uint *)(this_ptr_00 + 1) = 0;
-  return (CGasMask *)&this_ptr_00[-1].field_0x24;
+  this_ptr_00[1].part_visibility_flags[0] = 0;
+  return (CGasMask *)(this_ptr_00[-1].part_visibility_flags + 9);
 }

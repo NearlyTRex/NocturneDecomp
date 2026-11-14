@@ -11,8 +11,8 @@ void FUN_005c4f0a(uint param_1,uint param_2,int param_3,int *param_4,uint param_
 {
   uint uVar1;
   
-  uVar1 = unkafter_zombie_cpp_FUN_005cccc0();
-  uVar1 = unkafter_zombie_cpp_FUN_005ccccc(param_1,param_2,param_3,param_4,param_5,0x46,uVar1);
-  unkafter_zombie_cpp_FUN_005ca82a(uVar1,param_3 + *param_4);
+  uVar1 = FUN_005cccc0();
+  uVar1 = FUN_005ccccc(param_1,param_2,param_3,param_4,param_5,0x46,uVar1);
+  FUN_005ca82a(uVar1,param_3 + *param_4);
   return;
 }

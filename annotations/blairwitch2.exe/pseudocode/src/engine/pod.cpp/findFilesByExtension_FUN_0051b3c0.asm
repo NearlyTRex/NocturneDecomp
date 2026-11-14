@@ -1,8 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_pod_cpp_findFilesByExtension_FUN_0051b3c0(int *param_1,byte *param_2,int param_3,int param_4,int param_5)
+; int __cdecl engine_pod_cpp_findFilesByExtension_FUN_0051b3c0(CPod *pod,char *extension,char *output_buffer,int max_results,int result_string_length)
 ;
+; Parameters:
+; CPod *           Stack[0x4]:4   pod
+; char *           Stack[0x8]:4   extension
+; char *           Stack[0xc]:4   output_buffer
+; int              Stack[0x10]:4   max_results
+; int              Stack[0x14]:4   result_string_length
 ;
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_005b8e40

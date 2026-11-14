@@ -1,18 +1,18 @@
 {
   "compile_source": "cpp",
   "complexity": {
-    "assembly_lines": 0,
-    "complexity_score": 641,
+    "assembly_lines": 74,
+    "complexity_score": 50,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 36,
-    "suspect_count": 60,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 35,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field"
+      "unrolled_memcpy"
     ],
-    "total_lines": 36
+    "total_lines": 109
   },
   "cross_references": [],
   "function": {
@@ -20,12 +20,12 @@
     "address_range": [
       [
         "00530a90",
-        "00530a90"
+        "00530b53"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_netgame.cpp_SNetPlayer_copy_FUN_00530a90",
-    "signature": "SNetPlayer * core_netgame_cpp_SNetPlayer_copy_FUN_00530a90(SNetPlayer *this_ptr,SNetPlayer *other)"
+    "signature": "SNetPlayer * __cdecl core_netgame_cpp_SNetPlayer_copy_FUN_00530a90(SNetPlayer *this_ptr,SNetPlayer *other)"
   },
   "function_calls": [],
   "globals": [],
@@ -37,6 +37,55 @@
     "declared_stack_bytes": 8,
     "estimated_params": 2,
     "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9726027397260273,
+    "instruction_count": 73,
+    "opcode_distribution": {
+      "COPY": 81,
+      "INT_ADD": 70,
+      "INT_AND": 8,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 8,
+      "INT_LESS": 2,
+      "INT_MULT": 10,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 4,
+      "INT_SUB": 15,
+      "INT_ZEXT": 10,
+      "LOAD": 37,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 34
+    },
+    "pcode_op_count": 290
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0050f870",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9865
+    },
+    "bw3.exe": {
+      "addr": "00508350",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9865
+    },
+    "nocedit.exe": {
+      "addr": "00543cf0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9281
+    },
+    "nocturne.exe": {
+      "addr": "004ede70",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9861
+    }
   },
   "stack_frame": {
     "frame_size": 12,
@@ -63,484 +112,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x4 = *(uint *)&other->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x4 = *(uint *)&other->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x8 = *(uint *)&other->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x8 = *(uint *)&other->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Watcom field-by-field struct copy (26 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
       "line": 10,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xc = *(uint *)&other->field_0xc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xc = *(uint *)&other->field_0xc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x10 = *(uint *)&other->field_0x10;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x10 = *(uint *)&other->field_0x10;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x14 = *(uint *)&other->field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x14 = *(uint *)&other->field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x18 = *(uint *)&other->field_0x18;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x18 = *(uint *)&other->field_0x18;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1c = *(uint *)&other->field_0x1c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1c = *(uint *)&other->field_0x1c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "*(ushort *)&this_ptr->field_0x20 = *(ushort *)&other->field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "*(ushort *)&this_ptr->field_0x20 = *(ushort *)&other->field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x24 = *(uint *)&other->field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x24 = *(uint *)&other->field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x28 = *(uint *)&other->field_0x28;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x28 = *(uint *)&other->field_0x28;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2c = *(uint *)&other->field_0x2c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2c = *(uint *)&other->field_0x2c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x30 = *(uint *)&other->field_0x30;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x30 = *(uint *)&other->field_0x30;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x34 = *(uint *)&other->field_0x34;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x34 = *(uint *)&other->field_0x34;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x38",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x38 = *(uint *)&other->field_0x38;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x38",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x38 = *(uint *)&other->field_0x38;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x3c = *(uint *)&other->field_0x3c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x3c = *(uint *)&other->field_0x3c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x40 = *(uint *)&other->field_0x40;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x40 = *(uint *)&other->field_0x40;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x44 = *(uint *)&other->field_0x44;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x44 = *(uint *)&other->field_0x44;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x48 = *(uint *)&other->field_0x48;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x48 = *(uint *)&other->field_0x48;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x4c = *(uint *)&other->field_0x4c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x4c = *(uint *)&other->field_0x4c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x50 = *(uint *)&other->field_0x50;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x50 = *(uint *)&other->field_0x50;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x54",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x54 = *(uint *)&other->field_0x54;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x54",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x54 = *(uint *)&other->field_0x54;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x58",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x58 = *(uint *)&other->field_0x58;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x58",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x58 = *(uint *)&other->field_0x58;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x5c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x5c = *(uint *)&other->field_0x5c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x5c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x5c = *(uint *)&other->field_0x5c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x60 = *(uint *)&other->field_0x60;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x60 = *(uint *)&other->field_0x60;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x64",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x64 = *(uint *)&other->field_0x64;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x64",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x64 = *(uint *)&other->field_0x64;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x68 = *(uint *)&other->field_0x68;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x68 = *(uint *)&other->field_0x68;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x6c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x6c = *(uint *)&other->field_0x6c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x6c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x6c = *(uint *)&other->field_0x6c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x70",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x70 = *(uint *)&other->field_0x70;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x70",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x70 = *(uint *)&other->field_0x70;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x74",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x74 = *(uint *)&other->field_0x74;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x74",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x74 = *(uint *)&other->field_0x74;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x78",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x78 = *(uint *)&other->field_0x78;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x78",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x78 = *(uint *)&other->field_0x78;",
-      "type": "unnamed_field"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "this_ptr->hero_number = other->hero_number;",
+      "type": "unrolled_memcpy"
     }
   ],
   "vtable_info": {

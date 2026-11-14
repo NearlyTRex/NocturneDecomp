@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   core_actor.cpp_CDemonActor_save_FUN_0040aff0 at 0040afff
-;   core_mission.cpp_FUN_004f6410 at 004f64fb
+;   core_mission.cpp_CDemonMission_writeFile_FUN_004f6410 at 004f64fb
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_007df9c4

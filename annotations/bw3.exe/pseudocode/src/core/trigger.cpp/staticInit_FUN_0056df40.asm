@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_trigger_cpp_staticInit_FUN_0056df40(void)
+; void __cdecl core_trigger_cpp_staticInit_FUN_0056df40(void)
 ;
 ;
 ; Called Functions:

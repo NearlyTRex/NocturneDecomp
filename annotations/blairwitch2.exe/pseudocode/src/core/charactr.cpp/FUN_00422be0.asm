@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408ac0
-;   core_skeleton.cpp_FUN_00549210
+;   core_skeleton.cpp_markModelInUse_FUN_00549210
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     RET                                 ; 00422c00
     PUSH EAX                            ; 00422c01
         ;   Label: LAB_00422c01
-    CALL core_skeleton.cpp_FUN_00549210 ; 00422c02
-        ;   XREF to: 00549210 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00549210()
+    CALL core_skeleton.cpp_markModelInUse_FUN_00549210 ; 00422c02
+        ;   XREF to: 00549210 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_markModelInUse_FUN_00549210(char * model_filename)
     ADD ESP,0x4                         ; 00422c07
     RET                                 ; 00422c0a
 

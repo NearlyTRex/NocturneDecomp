@@ -4,13 +4,21 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBasicEnemy.h"
 
 // Structure: CHand
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 71788
 // Ghidra size: 0x1186c (71788 bytes)
 #pragma pack(push, 1)
 typedef struct CHand {
-    char field_0[71788]; // 0x0
+    CBasicEnemy base; // 0x0, derived
+    int hand_bone; // 0x11850, setup findBone 'Bip01 R Hand' (also head_bone); getTargetPoints; processMotionEvent
+    int unused_11854; // 0x11854, ctor 005a9c00 stores 0; no reader found
+    int unused_11858; // 0x11858, ctor 005a9c00 stores 0; no reader found
+    int attack_variant; // 0x1185c, ctor 0; processMeleeAttackState motion 3/4 by it, re-rolls getRandomInt(0,1)
+    float sleep_time; // 0x11860, ctor 5.0; archive SleepTime; processDamage copies to sleep_timer
+    float sleep_timer; // 0x11864, processSleepingState counts down to 0
+    float giveup_timer; // 0x11868, ctor 5.0; processSleepingState counts down with no victim then motion 0; reset 5.0 with a victim
 } CHand;
 #pragma pack(pop)
 

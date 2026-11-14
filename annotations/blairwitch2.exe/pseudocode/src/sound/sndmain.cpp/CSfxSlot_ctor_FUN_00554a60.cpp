@@ -9,6 +9,6 @@
 CSfxSlot * __cdecl sound_sndmain_cpp_CSfxSlot_ctor_FUN_00554a60(CSfxSlot *this_ptr)
 
 {
-  sound_sndmain_cpp_FUN_00550070((CSfxOptions *)this_ptr);
+  sound_sndmain_cpp_CSfxOptions_reset_FUN_00550070(&this_ptr->options);
   return this_ptr;
 }

@@ -13,6 +13,6 @@ int __cdecl support_trisock_cpp_CSocket_setSocketBlocking_FUN_00579490(CSocket *
   uint local_4;
   
   local_4 = (uint)(blocking_mode == 0);
-  iVar1 = ioctlsocket(*(_SOCKET *)this_ptr,-0x7ffb9982,&local_4);
+  iVar1 = ioctlsocket(this_ptr->handle,-0x7ffb9982,&local_4);
   return (uint)(iVar1 == 0);
 }

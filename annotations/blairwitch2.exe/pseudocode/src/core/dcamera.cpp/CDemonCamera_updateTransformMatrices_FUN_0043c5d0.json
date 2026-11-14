@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 262,
+    "complexity_score": 137,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 32,
-    "suspect_count": 20,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
+      "pointer_truncation",
       "stack_alignment_array",
-      "stack_ref",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 84
@@ -54,7 +53,7 @@
     {
       "addr": "0046b5c0",
       "is_variadic": false,
-      "name": "engine_matrix.c_FUN_0046b5c0"
+      "name": "engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046b5c0"
     }
   ],
   "globals": [
@@ -205,6 +204,32 @@
     },
     "pcode_op_count": 173
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0044dc90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00449dd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0044d1c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.875
+    },
+    "nocturne.exe": {
+      "addr": "00440fe0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 32,
     "local_size": 28,
@@ -240,154 +265,58 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 10,
-      "match": "auStackY_1000",
+      "match": "aiStackY_1000",
       "severity": "moderate",
-      "text": "uint auStackY_1000 [1017];",
+      "text": "int aiStackY_1000 [1017];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x178 = _DAT_01c38b9c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x17c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x17c = _DAT_01c38ba0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x180",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x180 = _DAT_01c38ba4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x184",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x184 = _DAT_01c38ba8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x188",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x188 = _DAT_01c38bac;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x18c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x18c = _DAT_01c38bb0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x190",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x190 = _DAT_01c38bb4;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 21,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "uVar1 = DAT_0060b280;",
+      "text": "this_ptr_00 = DAT_0060b280;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x194",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x194 = _DAT_01c38bb8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x198",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x198 = _DAT_01c38bbc;",
-      "type": "unnamed_field"
     },
     {
       "description": "Complex pointer cast",
       "line": 25,
       "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
-      "text": "puVar2 = (uint *)((int)this_ptr + (uint)bVar3 * -8 + 0x170);",
+      "text": "puVar1 = (uint *)((int)this_ptr + (uint)bVar2 * -8 + 0x170);",
       "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x16c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x16c = local_18;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Direct stack address reference",
+      "description": "Pointer value `&local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 27,
-      "match": "&stack0xffffffec",
+      "match": "(int)&local_18",
       "severity": "moderate",
-      "text": "*puVar2 = *(uint *)(&stack0xffffffec + (uint)bVar3 * -8);",
-      "type": "stack_ref"
+      "text": "*puVar1 = *(uint *)((int)&local_18 + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Direct stack address reference",
+      "description": "Pointer value `&local_18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 29,
-      "match": "&stack0xfffffff0",
+      "match": "(int)&local_18",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xfffffff0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
-      "type": "stack_ref"
+      "text": "*(uint *)((int)&local_18 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x1c0",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1c0 = _DAT_01c35e38;",
-      "type": "unnamed_field"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 27,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*puVar1 = *(uint *)((int)&local_18 + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x1c4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1c4 = _DAT_01c35e3c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x1c8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1c8 = _DAT_01c35e40;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x1cc",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1cc = _DAT_01c35e44;",
-      "type": "unnamed_field"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 29,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_18 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
+      "type": "pointer_cast"
     }
   ]
 }

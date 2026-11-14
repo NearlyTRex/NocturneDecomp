@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_spawner_cpp_staticInit_FUN_00563840(void)
+; void __cdecl core_spawner_cpp_staticInit_FUN_00563840(void)
 ;
 ;
 ; Called Functions:

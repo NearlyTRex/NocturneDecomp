@@ -2,17 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 123,
-    "complexity_score": 215,
+    "complexity_score": 121,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 50,
-    "suspect_count": 16,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 56,
+    "suspect_count": 5,
     "suspect_types": [
-      "unnamed_field"
+      "pointer_cast",
+      "pointer_truncation",
+      "unrolled_memcpy"
     ],
-    "total_lines": 173
+    "total_lines": 179
   },
   "cross_references": [],
   "function": {
@@ -31,7 +33,7 @@
     {
       "addr": "0045f3e0",
       "is_variadic": false,
-      "name": "core_dirmat.cpp_FUN_0045f3e0"
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0"
     },
     {
       "addr": "004cc9a0",
@@ -116,6 +118,26 @@
     },
     "pcode_op_count": 471
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004e57f0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005091d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004c9cf0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -141,138 +163,50 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "iVar1 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004ea6f0(&this_ptr->field_0x20,0x41f00000);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x13c8",
-      "severity": "mild",
-      "text": "if (&this_ptr->field_0x13c8 != &this_ptr->field_0x1368) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x1368",
-      "severity": "mild",
-      "text": "if (&this_ptr->field_0x13c8 != &this_ptr->field_0x1368) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x13c8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x13c8 = *(uint *)&this_ptr->field_0x1368;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x1368",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x13c8 = *(uint *)&this_ptr->field_0x1368;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x13cc",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x13cc = *(uint *)&this_ptr->field_0x136c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x136c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x13cc = *(uint *)&this_ptr->field_0x136c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x13d0",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x13d0 = *(uint *)&this_ptr->field_0x1370;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x1370",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x13d0 = *(uint *)&this_ptr->field_0x1370;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x13cf",
-      "severity": "mild",
-      "text": "this_ptr->field_0x13cf = this_ptr->field_0x13cf ^ 0x80;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x13cf",
-      "severity": "mild",
-      "text": "this_ptr->field_0x13cf = this_ptr->field_0x13cf ^ 0x80;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x1374",
-      "severity": "mild",
-      "text": "((CMatrix3x3f *)&this_ptr->field_0x1374,(CVector3f *)&this_ptr->field_0x1368);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x1368",
-      "severity": "mild",
-      "text": "((CMatrix3x3f *)&this_ptr->field_0x1374,(CVector3f *)&this_ptr->field_0x1368);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0x13d4",
-      "severity": "mild",
-      "text": "((CMatrix3x3f *)&this_ptr->field_0x13d4,(CVector3f *)&this_ptr->field_0x13c8);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0x13c8",
-      "severity": "mild",
-      "text": "((CMatrix3x3f *)&this_ptr->field_0x13d4,(CVector3f *)&this_ptr->field_0x13c8);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Pointer value `&this_ptr->reflectors[1].rotation.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 50,
-      "match": "field_0x1368",
-      "severity": "mild",
-      "text": "(g_CGamePtr,(CVector3f *)&this_ptr->field_0x1368,0.017453292);",
-      "type": "unnamed_field"
+      "match": "(int)&this_ptr->reflectors[1].rotation.y",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&this_ptr->reflectors[1].rotation.y + 3) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&this_ptr->reflectors[1].rotation.y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 51,
+      "match": "(int)&this_ptr->reflectors[1].rotation.y",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&this_ptr->reflectors[1].rotation.y + 3) ^ 0x80;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 45,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar1->x = pCVar2->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 50,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&this_ptr->reflectors[1].rotation.y + 3) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 51,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&this_ptr->reflectors[1].rotation.y + 3) ^ 0x80;",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CMansionPuzzleCircle",
         "offset": 12,
         "vtable_addr": "00603454"
       }

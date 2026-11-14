@@ -9,8 +9,8 @@
 ; XREF[4]:
 ;   core_game.cpp_FUN_004b82e0 at 004b8440
 ;   core_menu.cpp_FUN_004ed260 at 004edb33
-;   core_menu.cpp_FUN_004ee3f0 at 004ee724
-;   sound_sndmain.cpp_FUN_00553680 at 00553899
+;   core_menu.cpp_showMainGameMenu_FUN_004ee3f0 at 004ee724
+;   sound_sndmain.cpp_readIni_FUN_00553680 at 00553899
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02648e8c

@@ -8,7 +8,7 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
-;   core_actor.cpp_FUN_0040b870 at 0040b8a9
+;   core_actor.cpp_archiveMotionState_FUN_0040b870 at 0040b8a9
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005eaf8b
@@ -37,7 +37,7 @@ section .text
     PUSH 0x5eaf8b                       ; 0052538b | DAT_005eaf8b
     PUSH EDI                            ; 00525390
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 00525391
-        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005c04b0()
+        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 00525396
     LEA ESI,[EBX + 0x8]                 ; 00525399
     PUSH ESI                            ; 0052539c
@@ -48,7 +48,7 @@ section .text
     PUSH EDI                            ; 005253aa
     MOV dword ptr [EBX + 0x4],0xffffffff ; 005253ab
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 005253b2
-        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005c04b0()
+        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 005253b7
     CMP EAX,0x2                         ; 005253ba
     JNZ 0x005253d7                      ; 005253bd
@@ -59,7 +59,7 @@ section .text
     PUSH EBX                            ; 005253c2
         ;   Label: LAB_005253c2
     CALL crt_stdio.c_fgetc_FUN_005c0530 ; 005253c3
-        ;   XREF to: 005c0530 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005c0530()
+        ;   XREF to: 005c0530 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005c0530(_FILE * file)
     ADD ESP,0x4                         ; 005253c8
     TEST EAX,EAX                        ; 005253cb
     JL 0x005253d4                       ; 005253cd
@@ -78,7 +78,7 @@ section .text
     PUSH 0x5eaf93                       ; 005253dc | = "\"%[^\"]\" , %f"
     PUSH EDI                            ; 005253e1
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 005253e2
-        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005c04b0()
+        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 005253e7
     CMP EAX,0x2                         ; 005253ea
     JZ 0x005253bf                       ; 005253ed

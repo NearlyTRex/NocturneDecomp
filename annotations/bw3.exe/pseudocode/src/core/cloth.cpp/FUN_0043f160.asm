@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_cloth.cpp_FUN_0043f10c at 0043f13b
+;   core_cloth.cpp_FUN_0043f110 at 0043f13b
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b9144
@@ -18,9 +18,9 @@
 ;   core_dirmat.cpp_FUN_0045b9b0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
 ;   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046d550
-;   engine_matrix.c_pop_FUN_0046d080
+;   engine_drender.cpp_pop_FUN_0046d080
 ;   engine_special.cpp_FUN_005632a3
-;   shape_edittool.cpp_FUN_004803d0
+;   shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004803d0
 ;   shape_edittool.cpp_FUN_00480f00
 ;
 ; *****************************************************************************
@@ -155,8 +155,8 @@ section .text
     MOV ESI,dword ptr [0x005f2afc]      ; 0043f2dc | DAT_005f2afc
         ;   Label: LAB_0043f2dc
     PUSH ESI                            ; 0043f2e2
-    CALL engine_matrix.c_pop_FUN_0046d080 ; 0043f2e3
-        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046d080()
+    CALL engine_drender.cpp_pop_FUN_0046d080 ; 0043f2e3
+        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046d080()
     ADD ESP,0x4                         ; 0043f2e8
     ADD ESP,0x60                        ; 0043f2eb
     POP EBP                             ; 0043f2ee
@@ -195,8 +195,8 @@ section .text
     MOV ECX,dword ptr [0x005fb140]      ; 0043f33a | g_CEditorToolsPtr
         ;   Label: LAB_0043f33a
     PUSH ECX                            ; 0043f340
-    CALL shape_edittool.cpp_FUN_004803d0 ; 0043f341
-        ;   XREF to: 004803d0 (UNCONDITIONAL_CALL)  ; uint shape_edittool.cpp_FUN_004803d0(CEditorTools * this_ptr)
+    CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004803d0 ; 0043f341
+        ;   XREF to: 004803d0 (UNCONDITIONAL_CALL)  ; uint shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004803d0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0043f346
     FLD float ptr [EBP + 0x14]          ; 0043f349
     PUSH EAX                            ; 0043f34c
@@ -206,7 +206,7 @@ section .text
     FSTP float ptr [ESP]                ; 0043f359
     PUSH EBX                            ; 0043f35c
     CALL shape_edittool.cpp_FUN_00480f00 ; 0043f35d
-        ;   XREF to: 00480f00 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00480f00()
+        ;   XREF to: 00480f00 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_FUN_00480f00(CEditorTools * this_ptr, float scale_factor, int text_color)
     ADD ESP,0xc                         ; 0043f362
     JMP 0x0043f2dc                      ; 0043f365
         ;   XREF to: 0043f2dc (UNCONDITIONAL_JUMP)  ; LAB_0043f2dc

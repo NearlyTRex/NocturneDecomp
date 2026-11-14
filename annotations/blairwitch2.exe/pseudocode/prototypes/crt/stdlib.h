@@ -7,7 +7,7 @@
 
 // Original: crt_stdlib.c__qsort_FUN_005b78b8
 // Address: 005b78b8
-void __cdecl ::qsort(undefined4 *param_1,uint param_2,uint param_3,code *param_4);
+void __cdecl ::qsort(void *base,SIZE_T num,SIZE_T size,QSORT_COMPARATOR compar);
 
 // Original: crt_stdlib.c_rand_FUN_005b849c
 // Address: 005b849c
@@ -19,7 +19,7 @@ void __cdecl srand(uint seed);
 
 // Original: crt_stdlib.c__atexit_FUN_005b8d8c
 // Address: 005b8d8c
-void __cdecl ::atexit(undefined4 param_1);
+void __cdecl ::atexit(WatcomStaticDestructorNode *exit_node);
 
 // Original: crt_stdlib.c__fullpath_FUN_005ba120
 // Address: 005ba120

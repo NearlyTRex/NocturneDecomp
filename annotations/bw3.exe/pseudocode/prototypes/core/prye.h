@@ -7,35 +7,59 @@
 
 // Original: core_prye.cpp_staticInit_FUN_00517c20
 // Address: 00517c20
-void staticInit(void);
+void __cdecl staticInit(void);
+
+// Original: core_prye.cpp_FUN_00517c90
+// Address: 00517c90
+float FUN_00517c90(undefined4 param_1,undefined4 param_2,float param_3,int param_4);
+
+// Original: core_prye.cpp_FUN_00517ce0
+// Address: 00517ce0
+float FUN_00517ce0(undefined4 param_1,undefined4 param_2,float param_3,int param_4);
+
+// Original: core_prye.cpp_FUN_00517d50
+// Address: 00517d50
+undefined4 FUN_00517d50(CDemonActor *param_1);
+
+// Original: core_prye.cpp_getCarriedObjectVerticalOffset_FUN_00517e80
+// Address: 00517e80
+float __cdecl getCarriedObjectVerticalOffset(CDemonActor *object);
 
 // Original: core_prye.cpp_factoryFuncPrye_FUN_00517f50
 // Address: 00517f50
-void factoryFuncPrye(void);
+CPrye * __cdecl factoryFuncPrye(void);
 
-// Original: core_prye.cpp_FUN_00518430
+// Original: core_prye.cpp_CPrye_getActorType_FUN_00517f70
+// Address: 00517f70
+CDemonActorType * __cdecl CPrye::getActorType(CPrye *this_ptr);
+
+// Original: core_prye.cpp_CPrye_ctor_FUN_00517f80
+// Address: 00517f80
+CPrye * __cdecl CPrye::ctor(CPrye *this_ptr);
+
+// Original: core_prye.cpp_CPrye_createDefaultWeapon_FUN_00518430
 // Address: 00518430
-void FUN_00518430(int param_1);
+void __cdecl CPrye::createDefaultWeapon(CPrye *this_ptr);
 
-// Original: core_prye.cpp_FUN_00518680
+// Original: core_prye.cpp_CPrye_setup_FUN_00518680
 // Address: 00518680
-void FUN_00518680(int param_1);
+void __cdecl CPrye::setup(CPrye *this_ptr);
 
-// Original: core_prye.cpp_FUN_00518ab0
+// Original: core_prye.cpp_CPrye_process_FUN_00518ab0
 // Address: 00518ab0
-void FUN_00518ab0(int param_1,float param_2);
+void __cdecl CPrye::process(CPrye *this_ptr,float delta_time);
 
 // Original: core_prye.cpp_FUN_00518cd0
 // Address: 00518cd0
-void FUN_00518cd0(CCharacter *param_1,float param_2);
+void FUN_00518cd0(UOrientationVector *param_1,float param_2);
 
 // Original: core_prye.cpp_FUN_0051b550
 // Address: 0051b550
-void FUN_0051b550(CCharacter *param_1,float param_2);
+void FUN_0051b550(CHero *param_1,float param_2);
 
-// Original: core_prye.cpp_FUN_0051c0a0
+// Original: core_prye.cpp_CPrye_getFlashlightMinAngle_FUN_0051c0a0
 // Address: 0051c0a0
-undefined4 FUN_0051c0a0(int param_1);
+float __cdecl CPrye::getFlashlightMinAngle(CPrye *this_ptr);
 
 // Original: core_prye.cpp_FUN_0051c0f0
 // Address: 0051c0f0
@@ -47,35 +71,35 @@ void FUN_0051c100(int param_1);
 
 // Original: core_prye.cpp_FUN_0051c1c0
 // Address: 0051c1c0
-void FUN_0051c1c0(int param_1);
+void FUN_0051c1c0(CPrye *param_1);
 
 // Original: core_prye.cpp_FUN_0051e280
 // Address: 0051e280
 void FUN_0051e280(int param_1,SPose *param_2);
 
-// Original: core_prye.cpp_FUN_0051e380
+// Original: core_prye.cpp_CPrye_updateTurnBlending_FUN_0051e380
 // Address: 0051e380
-void FUN_0051e380(int param_1,float param_2);
+void __cdecl CPrye::updateTurnBlending(CPrye *this_ptr,float delta_time);
 
-// Original: core_prye.cpp_FUN_0051e690
+// Original: core_prye.cpp_CPrye_setPositionAndOrientation_FUN_0051e690
 // Address: 0051e690
-void FUN_0051e690(CCharacter *param_1,CVector3f *param_2,int param_3);
+void __cdecl CPrye::setPositionAndOrientation(CPrye *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
 
-// Original: core_prye.cpp_FUN_0051e6d0
+// Original: core_prye.cpp_CPrye_makeDrawDecision_FUN_0051e6d0
 // Address: 0051e6d0
-void FUN_0051e6d0(int param_1);
+void __cdecl CPrye::makeDrawDecision(CPrye *this_ptr);
 
 // Original: core_prye.cpp_FUN_0051ee10
 // Address: 0051ee10
 void FUN_0051ee10(int param_1,int param_2);
 
-// Original: core_prye.cpp_FUN_0051f360
+// Original: core_prye.cpp_CPrye_updateWeaponPosition_FUN_0051f360
 // Address: 0051f360
-void FUN_0051f360(int param_1,int param_2);
+void __cdecl CPrye::updateWeaponPosition(CPrye *this_ptr,int hand_index);
 
 // Original: core_prye.cpp_FUN_0051f490
 // Address: 0051f490
-float * FUN_0051f490(int param_1,int param_2,float param_3);
+float * FUN_0051f490(CCharacter *param_1,CDemonActor *param_2,float param_3);
 
 // Original: core_prye.cpp_FUN_00520d20
 // Address: 00520d20
@@ -85,38 +109,138 @@ void FUN_00520d20(int param_1);
 // Address: 00520da0
 void FUN_00520da0(int param_1);
 
-// Original: core_prye.cpp_FUN_00520dec
-// Address: 00520dec
-undefined4 FUN_00520dec(int param_1);
+// Original: core_prye.cpp_FUN_00520df0
+// Address: 00520df0
+undefined4 FUN_00520df0(void);
 
 // Original: core_prye.cpp_FUN_00521880
 // Address: 00521880
-undefined4 FUN_00521880(CDemonActor *param_1);
+undefined4 FUN_00521880(CCharacter *param_1);
 
-// Original: core_prye.cpp_FUN_00521f40
+// Original: core_prye.cpp_CPrye_archive_FUN_00521f40
 // Address: 00521f40
-void FUN_00521f40(CHero *param_1);
+void __cdecl CPrye::archive(CPrye *this_ptr);
 
-// Original: core_prye.cpp_FUN_005220d0
+// Original: core_prye.cpp_CPrye_renderOpaque_FUN_005220d0
 // Address: 005220d0
-undefined4 FUN_005220d0(CCharacter *param_1);
+int __cdecl CPrye::renderOpaque(CPrye *this_ptr);
 
-// Original: core_prye.cpp_FUN_00522880
+// Original: core_prye.cpp_CPrye_renderTransparent_FUN_00522880
 // Address: 00522880
-undefined4 FUN_00522880(int param_1);
+int __cdecl CPrye::renderTransparent(CPrye *this_ptr);
 
-// Original: core_prye.cpp_FUN_005228be
-// Address: 005228be
-void FUN_005228be(float *param_1,float param_2,float param_3);
+// Original: core_prye.cpp_FUN_005228c0
+// Address: 005228c0
+void FUN_005228c0(void);
 
-// Original: core_prye.cpp_FUN_0052294e
-// Address: 0052294e
-float * FUN_0052294e(float *param_1,float *param_2);
+// Original: core_prye.cpp_FUN_00522950
+// Address: 00522950
+float * FUN_00522950(void);
 
 // Original: core_prye.cpp_FUN_00522b00
 // Address: 00522b00
 void FUN_00522b00(CDemonActor *param_1,int param_2,float param_3);
 
-// Original: core_prye.cpp_FUN_00523800
+// Original: core_prye.cpp_CPrye_aimLeftPistol_FUN_00523800
 // Address: 00523800
-void FUN_00523800(CDemonActor *param_1);
+void __cdecl CPrye::aimLeftPistol(CPrye *this_ptr);
+
+// Original: core_prye.cpp_CPrye_processDamage_FUN_00523e50
+// Address: 00523e50
+void __cdecl CPrye::processDamage(CPrye *this_ptr,SDamageInfo *damage_info);
+
+// Original: core_prye.cpp_CPrye_updateArmRecoilBlend_FUN_00524170
+// Address: 00524170
+void __cdecl CPrye::updateArmRecoilBlend(CPrye *this_ptr,float delta_time,int is_weapon_active);
+
+// Original: core_prye.cpp_CPrye_getCarryObjToBodyXForm_FUN_005247b0
+// Address: 005247b0
+CMatrix3x4f * __stack2_esi CPrye::getCarryObjToBodyXForm(CPrye *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+
+// Original: core_prye.cpp_FUN_00524800
+// Address: 00524800
+void FUN_00524800(int param_1);
+
+// Original: core_prye.cpp_FUN_00524940
+// Address: 00524940
+void FUN_00524940(CHero *param_1,float param_2);
+
+// Original: core_prye.cpp_FUN_00525930
+// Address: 00525930
+void FUN_00525930(int param_1);
+
+// Original: core_prye.cpp_CPrye_doHeroAction_FUN_00525a20
+// Address: 00525a20
+void __cdecl CPrye::doHeroAction(CPrye *this_ptr);
+
+// Original: core_prye.cpp_CPrye_canDoHeroAction_FUN_005260b0
+// Address: 005260b0
+int __cdecl CPrye::canDoHeroAction(CPrye *this_ptr,int action_type);
+
+// Original: core_prye.cpp_FUN_005262f0
+// Address: 005262f0
+undefined4 FUN_005262f0(int param_1);
+
+// Original: core_prye.cpp_FUN_005263c0
+// Address: 005263c0
+void FUN_005263c0(CPrye *param_1);
+
+// Original: core_prye.cpp_CPrye_canReachPickup_FUN_005267c0
+// Address: 005267c0
+int __cdecl CPrye::canReachPickup(CPrye *this_ptr,CDemonActor *item,int pickup_type,float *best_distance);
+
+// Original: core_prye.cpp_FUN_00526cf0
+// Address: 00526cf0
+void FUN_00526cf0(int param_1);
+
+// Original: core_prye.cpp_FUN_00526dc0
+// Address: 00526dc0
+void FUN_00526dc0(int param_1,undefined4 param_2);
+
+// Original: core_prye.cpp_CPrye_isWeaponDrawn_FUN_00526df0
+// Address: 00526df0
+int __cdecl CPrye::isWeaponDrawn(CPrye *this_ptr);
+
+// Original: core_prye.cpp_CPrye_drawWeapon_FUN_00526e00
+// Address: 00526e00
+void __cdecl CPrye::drawWeapon(CPrye *this_ptr,int drawn);
+
+// Original: core_prye.cpp_CPrye_getGrabbed_FUN_00526e30
+// Address: 00526e30
+int __cdecl CPrye::getGrabbed(CPrye *this_ptr,CDemonActor *grabber,int grab_type);
+
+// Original: core_prye.cpp_CPrye_reset_FUN_00526f50
+// Address: 00526f50
+void __cdecl CPrye::reset(CPrye *this_ptr);
+
+// Original: core_prye.cpp_CPrye_getDeathState_FUN_00526fc0
+// Address: 00526fc0
+EDeathState __cdecl CPrye::getDeathState(CPrye *this_ptr);
+
+// Original: core_prye.cpp_CPrye_dropCarriedObject_FUN_00526ff0
+// Address: 00526ff0
+void __cdecl CPrye::dropCarriedObject(CPrye *this_ptr,int hand_index,CVector3f *drop_direction);
+
+// Original: core_prye.cpp_CPrye_drop_FUN_00527050
+// Address: 00527050
+void __cdecl CPrye::drop(CPrye *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
+
+// Original: core_prye.cpp_CPrye_toggleGoggles_FUN_005270a0
+// Address: 005270a0
+void __cdecl CPrye::toggleGoggles(CPrye *this_ptr);
+
+// Original: core_prye.cpp_FUN_00527110
+// Address: 00527110
+undefined4 FUN_00527110(int param_1);
+
+// Original: core_prye.cpp_FUN_005271d0
+// Address: 005271d0
+void FUN_005271d0(float *param_1,float *param_2);
+
+// Original: core_prye.cpp_FUN_00527200
+// Address: 00527200
+void FUN_00527200(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+
+// Original: core_prye.cpp_CPrye_dtor_FUN_00527300
+// Address: 00527300
+CPrye * __cdecl CPrye::dtor(CPrye *this_ptr,uint flags);

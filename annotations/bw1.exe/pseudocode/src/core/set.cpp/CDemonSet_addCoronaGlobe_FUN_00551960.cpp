@@ -11,7 +11,7 @@
 void __cdecl core_set_cpp_CDemonSet_addCoronaGlobe_FUN_00551960(CDemonSet *this_ptr,CDemonGlobe *globe)
 
 {
-  if ((0xff < *(int *)(globe + 0xc)) && (_DAT_01fe55d0 < 100)) {
+  if ((0xff < globe->linear_radius_scaled) && (_DAT_01fe55d0 < 100)) {
     *(CDemonGlobe **)(&DAT_01fe55d0 + (_DAT_01fe55d0 + 1) * 4) = globe;
     _DAT_01fe55d0 = _DAT_01fe55d0 + 1;
     return;

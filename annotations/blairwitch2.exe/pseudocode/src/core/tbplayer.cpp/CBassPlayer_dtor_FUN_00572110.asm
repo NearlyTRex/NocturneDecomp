@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBassPlayer * core_tbplayer_cpp_CBassPlayer_dtor_FUN_00572110(CBassPlayer *this_ptr,uint flags)
+; CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_dtor_FUN_00572110(CBassPlayer *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CBassPlayer *    Stack[0x4]:4   this_ptr
@@ -12,14 +12,14 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408930
-;   core_cloth.cpp_FUN_005b1480
+;   core_armour.cpp_FUN_0040f2b0
+;   core_cloth.cpp_CClothList_dtor_FUN_005b1480
+;   core_muzzle.cpp_FUN_0059df70
 ;   core_path.cpp_CPathMap_dtor_FUN_00511d10
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_00544d50
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
 ;   crt_unknown.c_FUN_005b7fce
 ;   crt_unknown.c_FUN_005b7fdc
-;   unkaddr_0059d350.cpp_FUN_0059df70
-;   unkafter_armour.cpp_FUN_0040f2b0
 ;
 ; *****************************************************************************
 
@@ -40,20 +40,20 @@ section .text
     PUSH 0x0                            ; 0057212d
     SUB EAX,0xd040                      ; 0057212f
     PUSH EAX                            ; 00572134
-    CALL unkafter_armour.cpp_FUN_0040f2b0 ; 00572135
-        ;   XREF to: 0040f2b0 (UNCONDITIONAL_CALL)  ; undefined unkafter_armour.cpp_FUN_0040f2b0()
+    CALL core_armour.cpp_FUN_0040f2b0   ; 00572135
+        ;   XREF to: 0040f2b0 (UNCONDITIONAL_CALL)  ; undefined core_armour.cpp_FUN_0040f2b0()
     ADD ESP,0x8                         ; 0057213a
     PUSH 0x0                            ; 0057213d
     SUB EAX,0x9c8                       ; 0057213f
     PUSH EAX                            ; 00572144
-    CALL unkaddr_0059d350.cpp_FUN_0059df70 ; 00572145
-        ;   XREF to: 0059df70 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059df70()
+    CALL core_muzzle.cpp_FUN_0059df70   ; 00572145
+        ;   XREF to: 0059df70 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059df70()
     ADD ESP,0x8                         ; 0057214a
     PUSH 0x0                            ; 0057214d
     SUB EAX,0x34c                       ; 0057214f
     PUSH EAX                            ; 00572154
-    CALL core_cloth.cpp_FUN_005b1480    ; 00572155
-        ;   XREF to: 005b1480 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_FUN_005b1480(CClothList * this_ptr, uint flags)
+    CALL core_cloth.cpp_CClothList_dtor_FUN_005b1480 ; 00572155
+        ;   XREF to: 005b1480 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_CClothList_dtor_FUN_005b1480(CClothList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0057215a
     PUSH 0x0                            ; 0057215d
     SUB EAX,0x2a58                      ; 0057215f
@@ -79,7 +79,7 @@ section .text
         ;   Label: LAB_0057218d
     PUSH EBX                            ; 00572192
     CALL crt_memory.c___vec_delete_FUN_005b7fa7 ; 00572193
-        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005b7fa7()
+        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005b7fa7(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00572198
     PUSH EAX                            ; 0057219b
     CALL crt_unknown.c_FUN_005b7fce     ; 0057219c

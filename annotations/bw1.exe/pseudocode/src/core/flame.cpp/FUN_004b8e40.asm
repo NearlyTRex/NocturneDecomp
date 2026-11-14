@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_flame.cpp_FUN_004b7b90 at 004b7d05
+;   core_flame.cpp_CFlame_process_FUN_004b7b90 at 004b7d05
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005df75f
@@ -20,7 +20,7 @@
 ;   undefined4 DAT_005df76f
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cc00
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_0045e9c0
 ;   core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0045e970
 ;   crt_math.c_round_FUN_005c03a0
@@ -62,8 +62,8 @@ section .text
     SUB ESP,0x4                         ; 004b8e8f
     FCHS                                ; 004b8e92
     FSTP float ptr [ESP]                ; 004b8e94
-    CALL core_actor.cpp_FUN_0040cc00    ; 004b8e97
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 004b8e97
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [ESP + 0x1c],EAX      ; 004b8e9c
     FLD float ptr [ESP + 0x1c]          ; 004b8ea0
     FADD float ptr [EBX + 0x280]        ; 004b8ea4

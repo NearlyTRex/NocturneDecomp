@@ -1,0 +1,423 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 458,
+    "complexity_score": 232,
+    "cross_reference_count": 9,
+    "function_call_count": 7,
+    "global_count": 15,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 177,
+    "suspect_count": 4,
+    "suspect_types": [
+      "bit_int_float_compare",
+      "shadow_pointer_walk",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 635
+  },
+  "cross_references": [
+    {
+      "addr": "004b6170",
+      "from_addr": "004b66dc",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bd2f0",
+      "from_addr": "004bd36a",
+      "name": "core_game.cpp_hostNetworkGame_FUN_004bd2f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bd3a0",
+      "from_addr": "004bd437",
+      "name": "core_game.cpp_joinNetworkGame_FUN_004bd3a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050b340",
+      "from_addr": "0050b3c6",
+      "name": "core_netgame.cpp_CNetGame_init_FUN_0050b340",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050b4d0",
+      "from_addr": "0050b4e2",
+      "name": "core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_0050b4d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050c280",
+      "from_addr": "0050cb07",
+      "name": "core_netgame.cpp_CNetGame_processPacket_FUN_0050c280",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050cf50",
+      "from_addr": "0050d290",
+      "name": "core_netgame.cpp_CNetGame_runLobby_FUN_0050cf50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050b3f0",
+      "from_addr": "0050b3f7",
+      "name": "core_netgame.cpp_CNetGame_shutdown_FUN_0050b3f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050b420",
+      "from_addr": "0050b441",
+      "name": "core_netgame.cpp_FUN_0050b420",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0050b8d0",
+    "address_range": [
+      [
+        "0050b8d0",
+        "0050bdac"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_netgame.cpp_CNetGame_disconnect_FUN_0050b8d0",
+    "signature": "void __cdecl core_netgame_cpp_CNetGame_disconnect_FUN_0050b8d0(CNetGame *this_ptr,int perform_handshake)"
+  },
+  "function_calls": [
+    {
+      "addr": "0050c190",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_receivePackets_FUN_0050c190"
+    },
+    {
+      "addr": "0050f4b0",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_0050f4b0"
+    },
+    {
+      "addr": "0047db40",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_0047db40"
+    },
+    {
+      "addr": "0047bda0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0047bda0"
+    },
+    {
+      "addr": "0047dc40",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_0047dc40"
+    },
+    {
+      "addr": "0047e760",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_0047e760"
+    },
+    {
+      "addr": "0058e9e0",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_getTime_FUN_0058e9e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e05ff",
+      "name": "s_Disconnecting_from_serve_005e05ff",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e061c",
+      "name": "s_Couldn_t_contact_server_005e061c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e0643",
+      "name": "s_Disconnecting_005e0643",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e0654",
+      "name": "s_Couldn_t_connect_to_all_005e0654",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e0685",
+      "name": "DAT_005e0685",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e068d",
+      "name": "DAT_005e068d",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e0695",
+      "name": "DAT_005e0695",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e069d",
+      "name": "DAT_005e069d",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006138e0",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c25594"
+    },
+    {
+      "addr": "01d34e34",
+      "name": "DAT_01d34e34",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d34e38",
+      "name": "DAT_01d34e38",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d34e40",
+      "name": "DAT_01d34e40",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d34e44",
+      "name": "DAT_01d34e44",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d34e4c",
+      "name": "DAT_01d34e4c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d51050",
+      "name": "DAT_01d51050",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.925714285714286,
+    "instruction_count": 350,
+    "opcode_distribution": {
+      "BOOL_AND": 5,
+      "BOOL_NEGATE": 42,
+      "BOOL_OR": 24,
+      "BRANCH": 14,
+      "CALL": 20,
+      "CBRANCH": 34,
+      "COPY": 511,
+      "FLOAT2FLOAT": 26,
+      "FLOAT_EQUAL": 10,
+      "FLOAT_LESS": 10,
+      "FLOAT_MULT": 6,
+      "FLOAT_NAN": 20,
+      "INT2FLOAT": 8,
+      "INT_ADD": 79,
+      "INT_AND": 301,
+      "INT_CARRY": 24,
+      "INT_EQUAL": 177,
+      "INT_LEFT": 48,
+      "INT_LESS": 28,
+      "INT_NOTEQUAL": 84,
+      "INT_OR": 85,
+      "INT_SBORROW": 28,
+      "INT_SCARRY": 25,
+      "INT_SDIV": 6,
+      "INT_SEXT": 6,
+      "INT_SLESS": 84,
+      "INT_SREM": 6,
+      "INT_SRIGHT": 12,
+      "INT_SUB": 83,
+      "INT_XOR": 13,
+      "INT_ZEXT": 52,
+      "LOAD": 34,
+      "POPCOUNT": 82,
+      "RETURN": 1,
+      "STORE": 74,
+      "SUBPIECE": 12
+    },
+    "pcode_op_count": 2074
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0052cab0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8739
+    },
+    "bw3.exe": {
+      "addr": "005043b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0053fd00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8739
+    },
+    "nocturne.exe": {
+      "addr": "004e9e90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8739
+    }
+  },
+  "stack_frame": {
+    "frame_size": 68,
+    "local_size": 60,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNetGame *"
+      },
+      {
+        "is_param": true,
+        "name": "perform_handshake",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0050b8d9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `dest_addr` was initialized to the address of an array element's subfield (`dest_addr = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*dest_addr)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `dest_addr->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 159,
+      "match": "dest_addr = dest_addr + N",
+      "severity": "moderate",
+      "text": "dest_addr = dest_addr + 0x10;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40400000 is the IEEE 754 bit pattern of 3f. Rewrite in a .keep as a plain float compare against 3f.",
+      "line": 54,
+      "match": "0x40400000 < (int)local_30))",
+      "severity": "moderate",
+      "text": "if (((float)_DAT_005e0695 < local_30) || (0x40400000 < (int)local_30)) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40a00000 is the IEEE 754 bit pattern of 5f. Rewrite in a .keep as a plain float compare against 5f.",
+      "line": 125,
+      "match": "0x40a00000 < (int)local_2c))",
+      "severity": "moderate",
+      "text": "if (((float)_DAT_005e0695 < local_2c) || (0x40a00000 < (int)local_2c)) {",
+      "type": "bit_int_float_compare"
+    }
+  ]
+}

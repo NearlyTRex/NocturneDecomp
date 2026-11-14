@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_pendulum_cpp_staticInit_FUN_00514c70(void)
+; void __cdecl core_pendulum_cpp_staticInit_FUN_00514c70(void)
 ;
 ;
 ; Called Functions:

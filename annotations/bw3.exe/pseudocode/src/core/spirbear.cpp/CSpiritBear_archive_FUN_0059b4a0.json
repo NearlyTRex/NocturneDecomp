@@ -1,0 +1,144 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 40,
+    "complexity_score": 12,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 5,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 52
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0059b4a0",
+    "address_range": [
+      [
+        "0059b4a0",
+        "0059b50f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_spirbear.cpp_CSpiritBear_archive_FUN_0059b4a0",
+    "signature": "void __cdecl core_spirbear_cpp_CSpiritBear_archive_FUN_0059b4a0(CSpiritBear *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ba30",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveDeformableModelInstance_FUN_0040ba30"
+    },
+    {
+      "addr": "0040b830",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b830"
+    },
+    {
+      "addr": "0040b8b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b8b0"
+    },
+    {
+      "addr": "0040bab0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040bab0"
+    },
+    {
+      "addr": "00509800",
+      "is_variadic": false,
+      "name": "core_npc.cpp_CNPC_archive_FUN_00509800"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d9b98",
+      "name": "s_modelName_005d9b97+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d9ba2",
+      "name": "s_motion_state_005d9ba2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9baf",
+      "name": "s_shootMe_005d9baf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9bb7",
+      "name": "s_poolMe_005d9bb7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9bbe",
+      "name": "s_speed_005d9bbe",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.242424242424242,
+    "instruction_count": 33,
+    "opcode_distribution": {
+      "CALL": 6,
+      "COPY": 21,
+      "INT_ADD": 14,
+      "INT_AND": 14,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 14,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 7,
+      "INT_SUB": 19,
+      "LOAD": 4,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 19
+    },
+    "pcode_op_count": 140
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSpiritBear *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CSpiritBear",
+        "offset": 212,
+        "vtable_addr": "005e8024"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

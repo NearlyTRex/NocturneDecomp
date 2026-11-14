@@ -1,0 +1,719 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 538,
+    "complexity_score": 346,
+    "cross_reference_count": 3,
+    "function_call_count": 12,
+    "global_count": 39,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 211,
+    "suspect_count": 11,
+    "suspect_types": [
+      "bit_int_float_compare",
+      "shadow_pointer_walk",
+      "undefined_data",
+      "unrolled_strlen",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 749
+  },
+  "cross_references": [
+    {
+      "addr": "00574410",
+      "from_addr": "00574569",
+      "name": "sound_sndmain.cpp_getSampleInfo_FUN_00574410",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056e830",
+      "from_addr": "0056e9d9",
+      "name": "sound_sndmain.cpp_getSfxSample_FUN_0056e830",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00572d20",
+      "from_addr": "00573237",
+      "name": "sound_sndmain.cpp_startSfx_FUN_00572d20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056e130",
+    "address_range": [
+      [
+        "0056e130",
+        "0056e7ea"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_0056e130",
+    "signature": "void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_0056e130(CSfxSample *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "005c2cac",
+      "is_variadic": false,
+      "name": "crt_stdio.c_sscanf_FUN_005c2cac"
+    },
+    {
+      "addr": "005c04e0",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005c04e0"
+    },
+    {
+      "addr": "005c25d0",
+      "is_variadic": false,
+      "name": "crt_string.c_memmove_FUN_005c25d0"
+    },
+    {
+      "addr": "005c2dc0",
+      "is_variadic": false,
+      "name": "crt_string.c_strstr_FUN_005c2dc0"
+    },
+    {
+      "addr": "00478fb0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFileSize_FUN_00478fb0"
+    },
+    {
+      "addr": "004795b0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_makePath_FUN_004795b0"
+    },
+    {
+      "addr": "00479580",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_splitPath_FUN_00479580"
+    },
+    {
+      "addr": "005a07a0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStream_readLine_FUN_005a07a0"
+    },
+    {
+      "addr": "005a08d0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_ctor_FUN_005a08d0"
+    },
+    {
+      "addr": "005a0a50",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_dtor_FUN_005a0a50"
+    },
+    {
+      "addr": "005a0fd0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_openInDirectory_FUN_005a0fd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f2c52",
+      "name": "DAT_005f2c52",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f2c55",
+      "name": "DAT_005f2c55",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f2c59",
+      "name": "s_sound_005f2c59",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2c5f",
+      "name": "DAT_005f2c5f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f2c63",
+      "name": "s_sound_005f2c63",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2c69",
+      "name": "s_refDist_f_005f2c69",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2c75",
+      "name": "s_sound_sndmain_cpp_005f2c75",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2c8a",
+      "name": "s_Reference_distance_speci_005f2c8a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2ccf",
+      "name": "s_sound_sndmain_cpp_005f2ccf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2ce4",
+      "name": "s_Reference_volume_distanc_005f2ce4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2d1d",
+      "name": "s_minDist_f_005f2d1d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2d29",
+      "name": "s_sound_sndmain_cpp_005f2d29",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2d3e",
+      "name": "s_Minimum_distance_specifi_005f2d3e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2d81",
+      "name": "s_sound_sndmain_cpp_005f2d81",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2d96",
+      "name": "s_Reference_volume_distanc_005f2d96",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2dcf",
+      "name": "s_maxDist_f_005f2dcf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2ddb",
+      "name": "s_maxVol_f_005f2ddb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2de6",
+      "name": "s_sound_sndmain_cpp_005f2de6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2dfb",
+      "name": "s_s_specified_maxVol_on_li_005f2dfb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2e46",
+      "name": "s_sound_sndmain_cpp_005f2e46",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2e5b",
+      "name": "s_Minimum_distance_specifi_005f2e5b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2e9e",
+      "name": "s_sound_sndmain_cpp_005f2e9e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2eb3",
+      "name": "s_maxVol_g_is_too_small_in_005f2eb3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2ed9",
+      "name": "s_length_d_005f2ed9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2ee4",
+      "name": "s_sound_sndmain_cpp_005f2ee4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2ef9",
+      "name": "s_Length_for_s_already_kno_005f2ef9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2f39",
+      "name": "s_sound_sndmain_cpp_005f2f39",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2f4e",
+      "name": "s_Invalid_length_d_in_s_li_005f2f4e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2f6e",
+      "name": "DAT_005f2f6e",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f2f73",
+      "name": "s_sound_sndmain_cpp_005f2f73",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2f88",
+      "name": "s_Error_parsing_s_line_d_s_005f2f88",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00605b04",
+      "name": "DAT_00605b04",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00605b08",
+      "name": "DAT_00605b08",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00605b0c",
+      "name": "DAT_00605b0c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00623308",
+      "name": "DAT_00623308",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00626114",
+      "name": "DAT_00626114",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c745e0",
+      "name": "DAT_02c745e0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "00573237",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_startSfx_FUN_00572d20",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00573390",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_startSfx_FUN_00572d20",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0056e9d9",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_getSfxSample_FUN_0056e830",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0056ec8f",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_getSfxSample_FUN_0056e830",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00574569",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_getSampleInfo_FUN_00574410",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.176744186046512,
+    "instruction_count": 430,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 11,
+      "BOOL_OR": 5,
+      "BRANCH": 14,
+      "CALL": 26,
+      "CBRANCH": 34,
+      "COPY": 479,
+      "FLOAT2FLOAT": 19,
+      "FLOAT_DIV": 2,
+      "FLOAT_MULT": 3,
+      "INT_ADD": 164,
+      "INT_AND": 185,
+      "INT_CARRY": 30,
+      "INT_EQUAL": 174,
+      "INT_LESS": 27,
+      "INT_MULT": 1,
+      "INT_NEGATE": 1,
+      "INT_NOTEQUAL": 7,
+      "INT_SBORROW": 30,
+      "INT_SCARRY": 36,
+      "INT_SLESS": 85,
+      "INT_SUB": 148,
+      "INT_XOR": 4,
+      "INT_ZEXT": 1,
+      "LOAD": 77,
+      "POPCOUNT": 85,
+      "RETURN": 1,
+      "STORE": 147
+    },
+    "pcode_op_count": 1796
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0054bac0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9988
+    },
+    "bw3.exe": {
+      "addr": "00551620",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a45c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4174
+    },
+    "nocturne.exe": {
+      "addr": "00521e10",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3516
+    }
+  },
+  "stack_frame": {
+    "frame_size": 1184,
+    "local_size": 1180,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_498",
+        "offset": -1176,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_488",
+        "offset": -1160,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_484",
+        "offset": -1156,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_483",
+        "offset": -1155,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_482",
+        "offset": -1154,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_481",
+        "offset": -1153,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_358",
+        "offset": -856,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_258",
+        "offset": -600,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_158",
+        "offset": -344,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSfxSample *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0056e13c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_005f2c55",
+      "severity": "mild",
+      "text": "engine_dosio_cpp_makePath_FUN_004795b0(local_258,(char *)0x0,(char *)0x0,local_158,&DAT_005f2c55);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 51,
+      "match": "DAT_005f2c5f",
+      "severity": "mild",
+      "text": "engine_dosio_cpp_makePath_FUN_004795b0(local_358,(char *)0x0,(char *)0x0,local_158,&DAT_005f2c5f);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 65,
+      "match": "DAT_005f2c52",
+      "severity": "mild",
+      "text": "pcVar7 = strstr(local_484,&DAT_005f2c52);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 80,
+      "match": "DAT_00626114",
+      "severity": "mild",
+      "text": "while ((local_484 < pcVar7 && (((&DAT_00626114)[(byte)(pcVar7[-1] + 1)] & 2) != 0))) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 84,
+      "match": "DAT_00626114",
+      "severity": "mild",
+      "text": "while (((&DAT_00626114)[(byte)(local_484[0] + 1)] & 2) != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 181,
+      "match": "DAT_005f2f6e",
+      "severity": "mild",
+      "text": "iVar5 = _stricmp(local_484,&DAT_005f2f6e);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 209,
+      "match": "pCVar6 = (T *)((pCVar6->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCVar6 = (CSfxSample *)((pCVar6->sample_info).name + 4);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 87,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3dcccccd is the IEEE 754 bit pattern of 0.1f. Rewrite in a .keep as a plain float compare against 0.1f.",
+      "line": 105,
+      "match": "(int)(this_ptr->sample_info).reference_distance < 0x3dcccccd",
+      "severity": "moderate",
+      "text": "if ((int)(this_ptr->sample_info).reference_distance < 0x3dcccccd) {",
+      "type": "bit_int_float_compare"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3dcccccd is the IEEE 754 bit pattern of 0.1f. Rewrite in a .keep as a plain float compare against 0.1f.",
+      "line": 127,
+      "match": "(int)(this_ptr->sample_info).reference_volume_distance < 0x3dcccccd",
+      "severity": "moderate",
+      "text": "if ((int)(this_ptr->sample_info).reference_volume_distance < 0x3dcccccd) {",
+      "type": "bit_int_float_compare"
+    }
+  ]
+}

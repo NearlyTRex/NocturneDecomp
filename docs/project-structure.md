@@ -107,6 +107,7 @@ also fetches SDL3 and SDL3_net, builds them from source with the adapters, and l
 | `netplay_test.sh` | Two-instance netplay harness |
 | `generate_keep_files.sh` | Bulk `.keep` preparation |
 | `regen_struct_layout_checks.sh` | Regenerate the struct-layout assertions |
+| `export_bw.sh` | Export chosen annotation categories of the Blair Witch builds (default `functions`), one program at a time |
 
 `scripts/Python/` — Ghidra automation (PyGhidra headless) and analysis: annotation import/export,
 pseudocode export with suspect detection, report/SVG generation, hidden-function discovery,

@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
+;   crt_unknown.c_processSignal_FUN_005b0148 at 005b0180
 ;   crt_watcom.c_notifyAbnormalTermination_FUN_005a5fb0 at 005a5fb0
-;   unkafter_2d.cpp_FUN_005b0148 at 005b0180
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_ABNORMAL_TERMINATION_005da7e8

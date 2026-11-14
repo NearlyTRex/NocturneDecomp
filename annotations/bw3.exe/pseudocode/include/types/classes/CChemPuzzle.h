@@ -4,13 +4,34 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CAlphaBitmap.h"
+#include "types/classes/CPuzzle.h"
+#include "types/structs/SButtonStruct.h"
 
 // Structure: CChemPuzzle
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI size 2372; ctor 00413200: puzzle base ctor 00411960, CAlphaBitmap ctor at +4, arrinit 50 buttonStructs at +0x70, then the CChemPuzzle vtable at +0; every method uses the same offsets as bw1 (process logic differs)
 // Ghidra size: 0x944 (2372 bytes)
 #pragma pack(push, 1)
 typedef struct CChemPuzzle {
-    char field_0[2372]; // 0x0
+    CPuzzle base; // 0x0, derived
+    CAlphaBitmap background; // 0x4, load 004133c0 loads 'chembackground' 640x480 into this+4; render 00413d50 displays it first
+    int dropper_level; // 0x18, render displays dropper bitmap [dropper_level] at the cursor; process copies selection_count into it
+    int selection_count; // 0x1c, process 00413e30 appends to selected_chemicals while it is < 3 and clears it after mixing
+    int button_count; // 0x20, addButton 00413cd0 increments it; render/hit-test loop over button_count+1 entries
+    int selected_button; // 0x24, hitTestButtons 004143a0 stores the hit index; process compares it with 0x25..0x2c (chemicals, exit 0x2b, reset 0x2c)
+    int mouse_button; // 0x28, onMouse 00414420 stores the new button state
+    int previous_mouse_button; // 0x2c, onMouse moves the old mouse_button here; process clears the selection on release
+    int click_handled; // 0x30, onMouse zeroes it; process sets 1 after handling one click
+    int hovering; // 0x34, process sets 1 when any visible button is under the cursor (isButtonHovered 00414330); render then draws the highlight dropper
+    int selected_chemicals[3]; // 0x38, reset 004132c0/load set -1; process appends the chosen chemical index (button - 0x25)
+    int coin_design[4]; // 0x44, reset/load store random(0,2) per coin; process shows button coin_design[i]*3 + base + coin_reaction[i]
+    int score; // 0x54, process adds/subtracts per applied chemical; solved when 3 chemicals were used and score == 3
+    int chemical_applied[6]; // 0x58, process sets entry n to 1 the first time chemical n is mixed and adjusts score once
+    SButtonStruct buttons[50]; // 0x70, ctor arrinit 0x32 buttonStructs at +0x70; addButton writes this+0x70+i*0x2c
+    int cursor_offset_x[5]; // 0x908, load sets 0x1e; render subtracts [dropper_level] (and [4] for the highlight) from the cursor x
+    int cursor_offset_y[5]; // 0x91c, load sets 0x1d; render subtracts it from the cursor y
+    int result; // 0x930, reset/load set -1; process sets 2 (failed mix) or 1 (solved, fires 'SolvedChemistryPuzzle'); exit with 2 fires 'FailedChemistryPuzzle'
+    int coin_reaction[4]; // 0x934, load zeroes it; process sets 1/2 per coin from the mixed chemicals; selects the plain/cor/wet coin frame
 } CChemPuzzle;
 #pragma pack(pop)
 

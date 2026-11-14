@@ -1,0 +1,360 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 558,
+    "complexity_score": 317,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 11,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 172,
+    "suspect_count": 12,
+    "suspect_types": [
+      "inline_exp_idiom",
+      "stack_alignment_array",
+      "stack_ref",
+      "warning_overlapping_globals",
+      "warning_type_propagation"
+    ],
+    "total_lines": 730
+  },
+  "cross_references": [
+    {
+      "addr": "00515cd0",
+      "from_addr": "00515d24",
+      "name": "core_pendulum.cpp_CPendulum_process_FUN_00515cd0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005156d0",
+    "address_range": [
+      [
+        "005156d0",
+        "00515cc7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_pendulum.cpp_CPendulum_updateSwing_FUN_005156d0",
+    "signature": "void __cdecl core_pendulum_cpp_CPendulum_updateSwing_FUN_005156d0(CPendulum *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ae0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0"
+    },
+    {
+      "addr": "00408d70",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408d70"
+    },
+    {
+      "addr": "0055ae80",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_playTrackedActorSound_FUN_0055ae80"
+    },
+    {
+      "addr": "005b84d0",
+      "is_variadic": false,
+      "name": "crt_math.c_floor_FUN_005b84d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e1a3e",
+      "name": "DAT_005e1a3e",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e1a42",
+      "name": "DAT_005e1a42",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e1a4a",
+      "name": "DAT_005e1a4a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e1a52",
+      "name": "DAT_005e1a52",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e1a5a",
+      "name": "DAT_005e1a5a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e1a62",
+      "name": "DAT_005e1a62",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e1a6a",
+      "name": "DAT_005e1a6a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e1a72",
+      "name": "DAT_005e1a72",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e1a7a",
+      "name": "DAT_005e1a7a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e1a82",
+      "name": "DAT_005e1a82",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061c068",
+      "name": "DAT_0061c068",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00515d24",
+        "call_type": "direct",
+        "caller": "core_pendulum.cpp_CPendulum_process_FUN_00515cd0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.353684210526316,
+    "instruction_count": 475,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 18,
+      "BOOL_OR": 57,
+      "BRANCH": 4,
+      "CALL": 6,
+      "CALLIND": 2,
+      "CALLOTHER": 5,
+      "CBRANCH": 37,
+      "COPY": 2016,
+      "FLOAT2FLOAT": 171,
+      "FLOAT_ADD": 45,
+      "FLOAT_DIV": 3,
+      "FLOAT_EQUAL": 35,
+      "FLOAT_LESS": 35,
+      "FLOAT_MULT": 12,
+      "FLOAT_NAN": 70,
+      "FLOAT_SUB": 4,
+      "INT2FLOAT": 25,
+      "INT_ADD": 202,
+      "INT_AND": 217,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 36,
+      "INT_LEFT": 140,
+      "INT_LESS": 3,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 175,
+      "INT_OR": 175,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 18,
+      "INT_SUB": 38,
+      "INT_XOR": 1,
+      "INT_ZEXT": 146,
+      "LOAD": 141,
+      "POPCOUNT": 18,
+      "RETURN": 2,
+      "STORE": 86
+    },
+    "pcode_op_count": 3968
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00536a20",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0050e700",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00549b90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.982
+    },
+    "nocturne.exe": {
+      "addr": "004f3430",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.982
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPendulum *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005156d9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 13,
+      "match": "afStackY_1028",
+      "severity": "moderate",
+      "text": "float afStackY_1028 [1002];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 52,
+      "match": "&stack0xffffffc4",
+      "severity": "moderate",
+      "text": "(&stack0xffffffc4)[(uint)bVar1 * 0xfffffffe] = (&stack0xffffffc4)[(uint)bVar1 * -2 + 3];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 52,
+      "match": "&stack0xffffffc4",
+      "severity": "moderate",
+      "text": "(&stack0xffffffc4)[(uint)bVar1 * 0xfffffffe] = (&stack0xffffffc4)[(uint)bVar1 * -2 + 3];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 53,
+      "match": "&stack0xffffffc4",
+      "severity": "moderate",
+      "text": "(&stack0xffffffc4)[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 54,
+      "match": "&stack0xffffffc4",
+      "severity": "moderate",
+      "text": "(&stack0xffffffc4)[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 4];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 55,
+      "match": "&stack0xffffffc0",
+      "severity": "moderate",
+      "text": "if (&this_ptr->swing_tip_world != (CVector3f *)&stack0xffffffc0) {",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Inline x87 exp() with the FPREM reduction dropped: `fVar5 - (fVar5 / fVar2) * fVar2` is identically zero, so this compiles to `fscale(1.0, x)` == `2^trunc(x)` -- a staircase in powers of two, not an exponential. It is silently correct whenever the exponent is 0. Read the FMUL feeding FLDL2E in the .asm for the sign and operands, then write the real call in a .keep, e.g. `exp(-decay * decay_timer)`.",
+      "line": 46,
+      "match": "fVar4 = (float10)f2xm1(fVar5 - (fVar5 / fVar2) * fVar2);",
+      "severity": "major",
+      "text": "fVar4 = (float10)f2xm1(fVar5 - (fVar5 / fVar2) * fVar2);",
+      "type": "inline_exp_idiom"
+    },
+    {
+      "description": "Raw x87 `f2xm1`/`fscale` intrinsic. These are compile escape hatches for Ghidra's rendering of an inline exp()/pow() and should not remain in a finished reconstruction; note `fscale` is `ldexp`, which truncates its exponent to `int`. Confirm the sequence against the .asm (FLDL2E / FPREM / F2XM1 / FSCALE) and name the operation in a .keep.",
+      "line": 47,
+      "match": "fVar2 = (float10)fscale(fVar4 + fVar2,fVar5);",
+      "severity": "moderate",
+      "text": "fVar2 = (float10)fscale(fVar4 + fVar2,fVar5);",
+      "type": "inline_exp_idiom"
+    },
+    {
+      "description": "Inline x87 exp() with the FPREM reduction dropped: `fVar5 - (fVar5 / fVar2) * fVar2` is identically zero, so this compiles to `fscale(1.0, x)` == `2^trunc(x)` -- a staircase in powers of two, not an exponential. It is silently correct whenever the exponent is 0. Read the FMUL feeding FLDL2E in the .asm for the sign and operands, then write the real call in a .keep, e.g. `exp(-decay * decay_timer)`.",
+      "line": 63,
+      "match": "fVar3 = (float10)f2xm1(fVar5 - (fVar5 / fVar2) * fVar2);",
+      "severity": "major",
+      "text": "fVar3 = (float10)f2xm1(fVar5 - (fVar5 / fVar2) * fVar2);",
+      "type": "inline_exp_idiom"
+    },
+    {
+      "description": "Raw x87 `f2xm1`/`fscale` intrinsic. These are compile escape hatches for Ghidra's rendering of an inline exp()/pow() and should not remain in a finished reconstruction; note `fscale` is `ldexp`, which truncates its exponent to `int`. Confirm the sequence against the .asm (FLDL2E / FPREM / F2XM1 / FSCALE) and name the operation in a .keep.",
+      "line": 64,
+      "match": "fVar2 = (float10)fscale(fVar3 + fVar2,fVar5);",
+      "severity": "moderate",
+      "text": "fVar2 = (float10)fscale(fVar3 + fVar2,fVar5);",
+      "type": "inline_exp_idiom"
+    }
+  ]
+}

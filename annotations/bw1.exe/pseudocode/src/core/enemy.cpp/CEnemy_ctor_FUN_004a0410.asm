@@ -18,7 +18,7 @@
 ;   core_bride.cpp_CBride_ctor_FUN_004238c0 at 004238c6
 ;   core_bugs.cpp_CBugs_ctor_FUN_00424f80 at 00424f88
 ;   core_carved.cpp_CCarved_ctor_FUN_004286d0 at 004286d9
-;   core_constrct.cpp_CConstruct_ctor_FUN_00445820 at 00445828
+;   core_construc.cpp_CConstruct_ctor_FUN_00445820 at 00445828
 ;   ... and 25 more
 ;
 ; Referenced Globals:
@@ -26,10 +26,10 @@
 ;   undefined1 DAT_005dcac2
 ;   undefined1 DAT_005dcac3
 ;   undefined1 DAT_005dcac4
-;   void* g_CEnemyVTable = 004a0510
+;   CEnemy_full_vtable g_CEnemyVTable
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cc00
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_charactr.cpp_CCharacter_ctor_FUN_0042c080
 ;
 ; *****************************************************************************
@@ -50,8 +50,8 @@ section .text
     MOV EBX,EAX                         ; 004a0428
     PUSH 0x3f666666                     ; 004a042a
     MOV dword ptr [EAX + 0x154],0x5ffb54 ; 004a042f | g_CEnemyVTable
-    CALL core_actor.cpp_FUN_0040cc00    ; 004a0439
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 004a0439
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [EBX + 0xc1d4],0x0    ; 004a043e
     MOV dword ptr [EBX + 0xc258],0x0    ; 004a0448
     MOV dword ptr [EBX + 0xc1e8],0x0    ; 004a0452

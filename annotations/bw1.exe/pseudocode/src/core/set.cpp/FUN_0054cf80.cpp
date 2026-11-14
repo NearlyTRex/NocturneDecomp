@@ -23,6 +23,7 @@ void core_set_cpp_FUN_0054cf80(int param_1)
     color_scale = (color_scale * 3) / 2;
     fog_scale = (fog_scale * 3) / 2;
   }
-  core_set_cpp_FUN_00555770(g_CDemonSetPtr,light_scale,color_scale,fog_scale);
+  core_set_cpp_CDemonSet_setFlatColor_FUN_00555770(g_CDemonSetPtr,light_scale,color_scale,fog_scale)
+  ;
   return;
 }

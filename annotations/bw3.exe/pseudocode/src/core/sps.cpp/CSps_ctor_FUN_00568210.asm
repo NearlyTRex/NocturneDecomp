@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSps * core_sps_cpp_CSps_ctor_FUN_00568210(CSps *this_ptr)
+; CSps * __cdecl core_sps_cpp_CSps_ctor_FUN_00568210(CSps *this_ptr)
 ;
 ; Parameters:
 ; CSps *           Stack[0x4]:4   this_ptr

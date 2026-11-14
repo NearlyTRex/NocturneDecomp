@@ -29,7 +29,7 @@
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_restoreZBufferRect_FUN_0043bb50
 ;   core_dstrendr.cpp_memcpyMMX_FUN_00470201
-;   engine_special.cpp_FUN_00560050
+;   engine_special.cpp_restoreZBuffer_FUN_00560050
 ;
 ; *****************************************************************************
 
@@ -260,8 +260,8 @@ section .text
     PUSH 0x0                            ; 0043be7e
     PUSH 0x0                            ; 0043be80
     PUSH 0x0                            ; 0043be82
-    CALL engine_special.cpp_FUN_00560050 ; 0043be84
-        ;   XREF to: 00560050 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_00560050(int slot, int left, int top, int right, ...)
+    CALL engine_special.cpp_restoreZBuffer_FUN_00560050 ; 0043be84
+        ;   XREF to: 00560050 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_restoreZBuffer_FUN_00560050(int slot, int left, int top, int right, ...)
     ADD ESP,0x14                        ; 0043be89
     ADD ESP,0x24                        ; 0043be8c
     POP EBP                             ; 0043be8f

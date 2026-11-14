@@ -2,15 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 102,
+    "complexity_score": 57,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 27,
-    "suspect_count": 7,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field"
+      "pointer_cast",
+      "pointer_truncation"
     ],
     "total_lines": 89
   },
@@ -38,7 +39,7 @@
     {
       "addr": "00466290",
       "is_variadic": false,
-      "name": "core_dpart.cpp_FUN_00466290"
+      "name": "core_dpart.cpp_CDemonPart_dtor_FUN_00466290"
     },
     {
       "addr": "005a30c4",
@@ -103,6 +104,32 @@
     },
     "pcode_op_count": 213
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004724c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0048a9b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004942d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.94
+    },
+    "nocturne.exe": {
+      "addr": "004672a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -121,60 +148,20 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x4c != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "iVar3 < *(int *)&this_ptr->field_0x48 *",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x40 * *(int *)&this_ptr->field_0x44; iVar3 = iVar3 + 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x40 * *(int *)&this_ptr->field_0x44; iVar3 = iVar3 + 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Pointer value `&this_ptr->cube_list->triangle_count` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 15,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "puVar2 = (uint *)(*(int *)&this_ptr->field_0x4c + iVar4);",
-      "type": "unnamed_field"
+      "match": "(int)&this_ptr->cube_list->triangle_count",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)((int)&this_ptr->cube_list->triangle_count + iVar4);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "FUN_005a3770(*(uint *)&this_ptr->field_0x4c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x4c = 0;",
-      "type": "unnamed_field"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 15,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)((int)&this_ptr->cube_list->triangle_count + iVar4);",
+      "type": "pointer_cast"
     }
   ]
 }

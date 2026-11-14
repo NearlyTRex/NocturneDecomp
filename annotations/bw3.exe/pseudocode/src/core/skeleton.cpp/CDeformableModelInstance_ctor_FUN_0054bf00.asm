@@ -8,12 +8,12 @@
 ;
 ; XREF[7]:
 ;   core_charactr.cpp_CCharacter_ctor_FUN_0042ac20 at 0042ac3a
-;   core_fire.cpp_FUN_004a4340 at 004a4361
-;   core_flashlit.cpp_FUN_004a7600 at 004a760d
-;   core_rifle.cpp_FUN_00527ca0 at 00527cb4
+;   core_fire.cpp_CFireEffect_preloadTossAssets_FUN_004a4340 at 004a4361
+;   core_flashlit.cpp_CFlashlight_getMuzzlePoint_FUN_004a7600 at 004a760d
+;   core_rifle.cpp_CRifle_getMuzzlePoint_FUN_00527ca0 at 00527cb4
 ;   core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0054a3c0 at 0054a40e
 ;   core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0054b5b0 at 0054b62b
-;   engine_special.cpp_CSpawner_ctor_FUN_005638a0 at 005638b3
+;   core_spawner.cpp_CSpawner_ctor_FUN_005638a0 at 005638b3
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CVectorTypeInfo
@@ -38,7 +38,7 @@ section .text
     ADD EAX,0x58                        ; 0054bf14
     PUSH EAX                            ; 0054bf17
     CALL crt_memory.c___arrinit_FUN_005a30d7 ; 0054bf18
-        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005a30d7()
+        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005a30d7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     SUB EAX,0x58                        ; 0054bf1d
     MOV dword ptr [EAX + 0x50],0x5e4784 ; 0054bf20 | g_CDeformableModelInstanceVTable
     MOV byte ptr [EAX + 0x2350],0x0     ; 0054bf27

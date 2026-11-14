@@ -4,15 +4,18 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDoc.h"
 #include "types/classes/CDoor.h"
-#include "types/classes/CEnemy.h"
 #include "types/classes/CHero.h"
+#include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CZombieDog.h"
+#include "types/enums/EDeathState.h"
+#include "types/enums/EDoorState.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SPose.h"
 
@@ -20,85 +23,86 @@
 // FUNCTION PROTOTYPES - Range 0x450000
 // =============================================================================
 
-void core_doc_cpp_factoryFuncDoc_FUN_004500a0(void);
-CDemonActorType * core_doc_cpp_CDoc_getActorType_FUN_004500c0(CDoc *this_ptr);
-CDoc * core_doc_cpp_CDoc_ctor_FUN_004500d0(CDoc *this_ptr);
-void core_doc_cpp_FUN_004501a2(void);
-CDoc * core_doc_cpp_CDoc_dtor_FUN_00450580(CDoc *this_ptr,uint flags);
-void core_doc_cpp_FUN_00450620(CHero *param_1);
-void core_doc_cpp_FUN_00450a60(int param_1,char *param_2,char *param_3);
-void core_doc_cpp_FUN_00450b20(CCharacter *param_1,float param_2);
-void core_doc_cpp_FUN_00450c60(CCharacter *param_1,float param_2);
-void core_doc_cpp_FUN_00453250(CCharacter *param_1,float param_2);
-undefined4 core_doc_cpp_FUN_00453c5e(int param_1);
+CDoc * __cdecl core_doc_cpp_factoryFuncDoc_FUN_004500a0(void);
+CDemonActorType * __cdecl core_doc_cpp_CDoc_getActorType_FUN_004500c0(CDoc *this_ptr);
+CDoc * __cdecl core_doc_cpp_CDoc_ctor_FUN_004500d0(CDoc *this_ptr);
+CDoc * __cdecl core_doc_cpp_CDoc_dtor_FUN_00450580(CDoc *this_ptr,uint flags);
+void __cdecl core_doc_cpp_CDoc_setup_FUN_00450620(CDoc *this_ptr);
+void __cdecl core_doc_cpp_CDoc_setCharacterModel_FUN_00450a60(CDoc *this_ptr,char *model_name,char *cloth_name);
+void __cdecl core_doc_cpp_CDoc_process_FUN_00450b20(CDoc *this_ptr,float delta_time);
+void core_doc_cpp_FUN_00450c60(CHero *param_1,float param_2);
+void core_doc_cpp_FUN_00453250(CHero *param_1,float param_2);
+undefined4 core_doc_cpp_FUN_00453c60(void);
 void core_doc_cpp_FUN_00453cc0(int param_1);
-void core_doc_cpp_FUN_00453d80(int param_1);
+void core_doc_cpp_FUN_00453d80(CDoc *param_1);
 void core_doc_cpp_FUN_00455170(int param_1,SPose *param_2);
 void core_doc_cpp_FUN_00455270(int param_1,float param_2);
-void core_doc_cpp_FUN_00455580(undefined4 param_1,undefined4 param_2,int param_3);
-void core_doc_cpp_FUN_004555c0(int param_1);
+void __cdecl core_doc_cpp_CDoc_setPositionAndOrientation_FUN_00455580(CDoc *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
+void __cdecl core_doc_cpp_CDoc_makeDrawDecision_FUN_004555c0(CDoc *this_ptr);
 void core_doc_cpp_FUN_00455d10(CDemonActor *param_1,float param_2);
 void core_doc_cpp_FUN_004562a0(int param_1,int param_2);
 void core_doc_cpp_FUN_004567c0(int param_1,int param_2);
-float * core_doc_cpp_FUN_004568e0(int param_1,int param_2,float param_3);
+float * core_doc_cpp_FUN_004568e0(CCharacter *param_1,CDemonActor *param_2,float param_3);
 void core_doc_cpp_FUN_00458320(int param_1);
 void core_doc_cpp_FUN_004583a0(int param_1);
-undefined4 core_doc_cpp_FUN_004583ec(int param_1);
+undefined4 core_doc_cpp_FUN_004583f0(void);
 undefined4 core_doc_cpp_FUN_00459555(void);
-void core_doc_cpp_FUN_004597a0(int param_1);
-undefined4 core_doc_cpp_FUN_004599a0(CDemonActor *param_1);
-undefined4 unkafter_doc_cpp_FUN_00459d40(int param_1);
-void __cdecl core_stranger_cpp_adjustAimAngleForOffset_FUN_00459db0(float *angle,float distance,float offset);
-void unkafter_stranger_cpp_FUN_00459ff0(CDemonActor *param_1,int param_2,float param_3);
-void unkafter_stranger_cpp_FUN_0045b190(CCharacter *param_1,SDamageInfo *param_2);
-void unkafter_stranger_cpp_FUN_0045b510(CDemonActor *param_1,float param_2,int param_3);
-void unkafter_stranger_cpp_FUN_0045bb50(int param_1,int param_2);
-void unkafter_stranger_cpp_FUN_0045bba0(int param_1);
-void unkafter_stranger_cpp_FUN_0045bdc0(CCharacter *param_1,float param_2);
-void unkafter_stranger_cpp_FUN_0045c960(int param_1);
-void unkafter_stranger_cpp_FUN_0045ca30(CHero *param_1);
-undefined4 unkafter_stranger_cpp_FUN_0045d0c0(int param_1,undefined4 param_2);
-undefined4 unkafter_stranger_cpp_FUN_0045d1f0(int param_1);
-void unkafter_stranger_cpp_FUN_0045d260(int param_1);
-void unkafter_stranger_cpp_FUN_0045d2c0(CDemonActor *param_1);
-undefined4 unkafter_stranger_cpp_FUN_0045d6d0(int param_1,int param_2,undefined4 param_3,float *param_4);
-void unkafter_stranger_cpp_FUN_0045db40(int param_1);
-void unkafter_stranger_cpp_FUN_0045dbf0(int param_1,undefined4 param_2);
-undefined4 unkafter_stranger_cpp_FUN_0045dc20(int param_1);
-void unkafter_stranger_cpp_FUN_0045dc30(int param_1,undefined4 param_2);
-int unkafter_stranger_cpp_FUN_0045dc40(int param_1,int param_2,undefined4 param_3);
-void unkafter_stranger_cpp_FUN_0045dd30(int param_1);
-undefined4 unkafter_stranger_cpp_FUN_0045dda0(undefined4 param_1);
-void unkafter_stranger_cpp_FUN_0045ddd0(CCharacter *param_1,int param_2,CVector3f *param_3);
-void unkafter_stranger_cpp_FUN_0045de30(CCharacter *param_1,CDemonActor *param_2,CVector3f *param_3);
-undefined4 unkafter_stranger_cpp_FUN_0045de80(int param_1,undefined4 *param_2);
-void unkafter_stranger_cpp_FUN_0045def0(int param_1,undefined4 param_2);
-undefined4 unkafter_stranger_cpp_FUN_0045df30(int param_1);
-void unkafter_stranger_cpp_FUN_0045e040(float *param_1,float *param_2);
-float __cdecl core_event_cpp_getVectorDistance_FUN_0045e070(float *param_1,float *param_2);
-undefined4 unkafter_event_cpp_FUN_0045e1b0(int param_1);
-void core_dog_cpp_staticInit_FUN_0045e210(void);
-void core_dog_cpp_factoryFuncZombieDog_FUN_0045e240(void);
-CDemonActorType * core_dog_cpp_CZombieDog_getActorType_FUN_0045e260(CZombieDog *this_ptr);
+void __cdecl core_doc_cpp_CDoc_archive_FUN_004597a0(CDoc *this_ptr);
+int __cdecl core_doc_cpp_CDoc_renderOpaque_FUN_004599a0(CDoc *this_ptr);
+int __cdecl core_doc_cpp_CDoc_renderTransparent_FUN_00459d40(CDoc *this_ptr);
+void __cdecl core_doc_cpp_adjustAimAngleForOffset_FUN_00459db0(float *angle,float distance,float offset);
+void core_doc_cpp_FUN_00459ff0(CDemonActor *param_1,int param_2,float param_3);
+void core_doc_cpp_FUN_0045ab40(CDemonActor *param_1);
+void __cdecl core_doc_cpp_CDoc_processDamage_FUN_0045b190(CDoc *this_ptr,SDamageInfo *damage_info);
+void core_doc_cpp_FUN_0045b510(CCharacter *param_1,float param_2,int param_3);
+CMatrix3x4f * __stack2_esi core_doc_cpp_CDoc_getCarryObjToBodyXForm_FUN_0045bb50(CDoc *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+void core_doc_cpp_FUN_0045bba0(int param_1);
+void core_doc_cpp_FUN_0045bdc0(CCharacter *param_1,float param_2);
+void core_doc_cpp_FUN_0045c960(int param_1);
+void __cdecl core_doc_cpp_CDoc_doHeroAction_FUN_0045ca30(CDoc *this_ptr);
+int __cdecl core_doc_cpp_CDoc_canDoHeroAction_FUN_0045d0c0(CDoc *this_ptr,int action_type);
+undefined4 core_doc_cpp_FUN_0045d1f0(int param_1);
+void core_doc_cpp_FUN_0045d260(int param_1);
+void core_doc_cpp_FUN_0045d2c0(CCharacter *param_1);
+int __cdecl core_doc_cpp_CDoc_canReachPickup_FUN_0045d6d0(CDoc *this_ptr,CDemonActor *item,int pickup_type,float *best_distance);
+void core_doc_cpp_FUN_0045db40(int param_1);
+void core_doc_cpp_FUN_0045dbf0(int param_1,undefined4 param_2);
+int __cdecl core_doc_cpp_CDoc_isWeaponDrawn_FUN_0045dc20(CDoc *this_ptr);
+void __cdecl core_doc_cpp_CDoc_drawWeapon_FUN_0045dc30(CDoc *this_ptr,int param_2);
+int __cdecl core_doc_cpp_CDoc_getGrabbed_FUN_0045dc40(CDoc *this_ptr,CDemonActor *grabber,int grab_type);
+void __cdecl core_doc_cpp_CDoc_reset_FUN_0045dd30(CDoc *this_ptr);
+EDeathState __cdecl core_doc_cpp_CDoc_getDeathState_FUN_0045dda0(CDoc *this_ptr);
+void __cdecl core_doc_cpp_CDoc_dropCarriedObject_FUN_0045ddd0(CDoc *this_ptr,int hand_index,CVector3f *drop_direction);
+void __cdecl core_doc_cpp_CDoc_drop_FUN_0045de30(CDoc *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
+int __cdecl core_doc_cpp_CDoc_getTargetPoints_FUN_0045de80(CDoc *this_ptr,CVector3f *out_points_array);
+void __cdecl core_doc_cpp_CDoc_setInventoryIndex_FUN_0045def0(CDoc *this_ptr,int index);
+undefined4 core_doc_cpp_FUN_0045df30(CCharacter *param_1);
+float core_doc_cpp_FUN_0045e010(float *param_1,float *param_2);
+void core_doc_cpp_FUN_0045e040(float *param_1,float *param_2);
+float __cdecl core_doc_cpp_getVectorDistance_FUN_0045e070(CVector3f *a,CVector3f *b);
+undefined4 core_doc_cpp_FUN_0045e1b0(int param_1);
+void __cdecl core_dog_cpp_staticInit_FUN_0045e210(void);
+CZombieDog * __cdecl core_dog_cpp_factoryFuncZombieDog_FUN_0045e240(void);
+CDemonActorType * __cdecl core_dog_cpp_CZombieDog_getActorType_FUN_0045e260(CZombieDog *this_ptr);
 CZombieDog * __cdecl core_dog_cpp_CZombieDog_ctor_FUN_0045e270(CZombieDog *this_ptr);
-void core_dog_cpp_FUN_0045e2e0(CEnemy *param_1);
-void core_dog_cpp_FUN_0045e360(CEnemy *param_1,float param_2);
-void core_dog_cpp_FUN_0045eab0(CEnemy *param_1);
-void core_dog_cpp_FUN_0045eb20(int param_1,int param_2);
-undefined4 core_dog_cpp_FUN_0045ebd0(int param_1,undefined4 *param_2);
-CZombieDog * core_dog_cpp_CZombieDog_dtor_FUN_0045ec60(CZombieDog *this_ptr,uint flags);
-void core_door_cpp_staticInit_FUN_0045ed00(void);
-void core_door_cpp_factoryFuncDoor_FUN_0045ed30(void);
-CDemonActorType * core_door_cpp_CDoor_getActorType_FUN_0045ed50(CDoor *this_ptr);
-CDoor * core_door_cpp_CDoor_ctor_FUN_0045ed60(CDoor *this_ptr);
-void core_door_cpp_FUN_0045ef40(CDemonActor *param_1);
+void __cdecl core_dog_cpp_CZombieDog_setup_FUN_0045e2e0(CZombieDog *this_ptr);
+void __cdecl core_dog_cpp_CZombieDog_process_FUN_0045e360(CZombieDog *this_ptr,float delta_time);
+void __cdecl core_dog_cpp_CZombieDog_archive_FUN_0045eab0(CZombieDog *this_ptr);
+void __cdecl core_dog_cpp_CZombieDog_processDamage_FUN_0045eb20(CZombieDog *this_ptr,SDamageInfo *damage_info);
+int __cdecl core_dog_cpp_CZombieDog_getTargetPoints_FUN_0045ebd0(CZombieDog *this_ptr,CVector3f *out_points_array);
+CZombieDog * __cdecl core_dog_cpp_CZombieDog_dtor_FUN_0045ec60(CZombieDog *this_ptr,uint flags);
+void __cdecl core_door_cpp_staticInit_FUN_0045ed00(void);
+CDoor * __cdecl core_door_cpp_factoryFuncDoor_FUN_0045ed30(void);
+CDemonActorType * __cdecl core_door_cpp_CDoor_getActorType_FUN_0045ed50(CDoor *this_ptr);
+CDoor * __cdecl core_door_cpp_CDoor_ctor_FUN_0045ed60(CDoor *this_ptr);
+void __cdecl core_door_cpp_CDoor_setup_FUN_0045ef40(CDoor *this_ptr);
 void __cdecl core_door_cpp_FUN_0045efc0(CDoor *this_ptr);
-void core_door_cpp_FUN_0045efe0(int param_1,int param_2);
-void core_door_cpp_FUN_0045f030(CDemonActor *param_1);
-void core_door_cpp_FUN_0045f5a0(CDemonActor *param_1,float param_2);
-int core_door_cpp_FUN_0045fd10(CDemonActor *param_1);
-void core_door_cpp_FUN_0045fdf0(CDemonActor *param_1,int param_2);
-void core_door_cpp_FUN_0045fe80(int param_1);
+void core_door_cpp_FUN_0045efe0(CDoor *param_1,EDoorState param_2);
+void __cdecl core_door_cpp_CDoor_reposition_FUN_0045f030(CDoor *this_ptr);
+void __cdecl core_door_cpp_CDoor_process_FUN_0045f5a0(CDoor *this_ptr,float delta_time);
+int __cdecl core_door_cpp_CDoor_renderOpaque_FUN_0045fd10(CDoor *this_ptr);
+void __cdecl core_door_cpp_CDoor_renderBackground_FUN_0045fdf0(CDoor *this_ptr,int layer_flag);
+CBoundingBox3D * __cdecl core_door_cpp_CDoor_getBoundingBox_FUN_0045fe80(CDoor *this_ptr,CBoundingBox3D *out_box);
 void core_door_cpp_FUN_0045fec0(int param_1);
-void core_door_cpp_FUN_0045ff80(CDemonActor *param_1);
+void __cdecl core_door_cpp_CDoor_archive_FUN_0045ff80(CDoor *this_ptr);
 

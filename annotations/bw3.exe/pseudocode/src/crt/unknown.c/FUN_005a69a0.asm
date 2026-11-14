@@ -8,10 +8,10 @@
 ;   crt_unknown.c_FUN_005a6a78 at 005a6d0c
 ;
 ; Referenced Globals:
-;   void* PTR_unkafter_asgaya.cpp_FUN_005ad360_00607d80 = 005ad360
+;   void* PTR_crt_unknown.c_FUN_005ad360_00607d80 = 005ad360
 ;
 ; Called Functions:
-;   unkafter_asgaya.cpp_FUN_005ad360
+;   crt_unknown.c_FUN_005ad360
 ;
 ; *****************************************************************************
 
@@ -25,7 +25,7 @@ section .text
     PUSH EBX                            ; 005a69aa
     MOV ECX,dword ptr [ESP + 0x10]      ; 005a69ab
     PUSH ECX                            ; 005a69af
-    CALL dword ptr [0x00607d80]         ; 005a69b0 | PTR_unkafter_asgaya.cpp_FUN_005ad360_00607d80
+    CALL dword ptr [0x00607d80]         ; 005a69b0 | PTR_crt_unknown.c_FUN_005ad360_00607d80
     ADD ESP,0xc                         ; 005a69b6
     POP EBX                             ; 005a69b9
     RET                                 ; 005a69ba

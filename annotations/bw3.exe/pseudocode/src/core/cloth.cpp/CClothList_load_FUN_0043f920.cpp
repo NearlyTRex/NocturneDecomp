@@ -11,40 +11,40 @@
 void __cdecl core_cloth_cpp_CClothList_load_FUN_0043f920(CClothList *this_ptr)
 
 {
-  CClothList *pCVar1;
+  CCloth **ppCVar1;
   CCloth *this_ptr_00;
   CCloth *pCVar2;
   uint uVar3;
   CClothList *pCVar4;
-  CClothList *pCVar5;
-  int iVar6;
+  char (*filename) [40];
+  int iVar5;
   
-  iVar6 = 0;
-  if (0 < *(int *)this_ptr) {
-    pCVar5 = this_ptr + 4;
+  iVar5 = 0;
+  if (0 < this_ptr->count) {
+    filename = this_ptr->filenames;
     pCVar4 = this_ptr;
     do {
-      if (*(int *)(pCVar4 + 0x194) != 0) {
-        uVar3 = core_cloth_cpp_FUN_0043c280(*(int *)(pCVar4 + 0x194),0);
+      if (pCVar4->cloths[0] != (CCloth *)0x0) {
+        uVar3 = core_cloth_cpp_FUN_0043c280(pCVar4->cloths[0],0);
         FUN_005a30c4(uVar3);
       }
-      this_ptr_00 = (CCloth *)FUN_005a3cb2(0x3ab30);
+      this_ptr_00 = (CCloth *)operator_new(0x3ab30);
       pCVar2 = (CCloth *)0x0;
       if (this_ptr_00 != (CCloth *)0x0) {
-        pCVar2 = core_cloth_cpp_FUN_0043c220(this_ptr_00);
+        pCVar2 = core_cloth_cpp_CCloth_ctor_FUN_0043c220(this_ptr_00);
       }
-      *(CCloth **)(pCVar4 + 0x194) = pCVar2;
+      pCVar4->cloths[0] = pCVar2;
       if (pCVar2 == (CCloth *)0x0) {
         _DAT_01d71de0 = "..\\core\\cloth.cpp";
         _DAT_01d71de4 = 0x5b6;
         core_main_c_FUN_004e4330("CClothList::load - out of memory for CCloth object.");
       }
-      pCVar1 = pCVar4 + 0x194;
-      pCVar4 = pCVar4 + 4;
-      iVar6 = iVar6 + 1;
-      core_cloth_cpp_FUN_0043c330(*(uint *)pCVar1,pCVar5);
-      pCVar5 = pCVar5 + 0x28;
-    } while (iVar6 < *(int *)this_ptr);
+      ppCVar1 = pCVar4->cloths;
+      pCVar4 = (CClothList *)pCVar4->filenames;
+      iVar5 = iVar5 + 1;
+      core_cloth_cpp_CCloth_load_FUN_0043c330(*ppCVar1,*filename);
+      filename = filename + 1;
+    } while (iVar5 < this_ptr->count);
   }
   return;
 }

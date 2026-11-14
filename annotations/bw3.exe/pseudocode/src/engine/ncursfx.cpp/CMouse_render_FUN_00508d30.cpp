@@ -14,45 +14,43 @@ void __cdecl engine_ncursfx_cpp_CMouse_render_FUN_00508d30(CMouse *this_ptr)
   int iVar1;
   CMouse *this_ptr_00;
   
-  if (*(int *)&this_ptr->field_0x25c == 1) {
-    iVar1 = *(int *)&this_ptr->field_0x258 >> 0x1f;
+  if (this_ptr->effect_mode == 1) {
+    iVar1 = this_ptr->anim_timer >> 0x1f;
     this_ptr_00 = (CMouse *)
-                  (&this_ptr->field_0x14 +
-                  ((int)((*(int *)&this_ptr->field_0x258 + iVar1 * -0x10000) -
-                        (uint)(iVar1 << 0xf < 0)) >> 0x10) * 0x14);
+                  (this_ptr->cursors +
+                  ((int)((this_ptr->anim_timer + iVar1 * -0x10000) - (uint)(iVar1 << 0xf < 0)) >>
+                  0x10) + 1);
   }
   else {
     this_ptr_00 = this_ptr;
-    if (*(int *)&this_ptr->field_0x25c == 2) {
-      iVar1 = *(int *)&this_ptr->field_0x258 >> 0x1f;
+    if (this_ptr->effect_mode == 2) {
+      iVar1 = this_ptr->anim_timer >> 0x1f;
       this_ptr_00 = (CMouse *)
-                    (&this_ptr->field_0x12c +
-                    ((int)((*(int *)&this_ptr->field_0x258 + iVar1 * -0x10000) -
-                          (uint)(iVar1 << 0xf < 0)) >> 0x10) * 0x14);
+                    (this_ptr->skulls +
+                    ((int)((this_ptr->anim_timer + iVar1 * -0x10000) - (uint)(iVar1 << 0xf < 0)) >>
+                    0x10));
     }
   }
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d6f0
-            ((CAlphaBitmap *)this_ptr_00,_DAT_01c5fadc + -0xd,_DAT_01c5fae0 + -0xc,0xffff);
-  if (*(int *)&this_ptr->field_0x25c != 0) {
-    if (*(int *)&this_ptr->field_0x25c != 2) {
-      engine_3d_c_FUN_00406c40(1);
-      iVar1 = *(int *)&this_ptr->field_0x258 >> 0x1f;
+            (this_ptr_00->cursors,_DAT_01c5fadc + -0xd,_DAT_01c5fae0 + -0xc,0xffff);
+  if (this_ptr->effect_mode != 0) {
+    if (this_ptr->effect_mode != 2) {
+      engine_3d_c_setBlendMode_FUN_00406c40(1);
+      iVar1 = this_ptr->anim_timer >> 0x1f;
       engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d6f0
-                ((CAlphaBitmap *)
-                 (&this_ptr->field_0xa0 +
-                 ((int)((*(int *)&this_ptr->field_0x258 + iVar1 * -0x10000) -
-                       (uint)(iVar1 << 0xf < 0)) >> 0x10) * 0x14),_DAT_01c5fadc + -0xd,
-                 _DAT_01c5fae0 + -0xc,0x8000);
-      engine_3d_c_FUN_00406c40(0);
+                (this_ptr->flames +
+                 ((int)((this_ptr->anim_timer + iVar1 * -0x10000) - (uint)(iVar1 << 0xf < 0)) >>
+                 0x10),_DAT_01c5fadc + -0xd,_DAT_01c5fae0 + -0xc,0x8000);
+      engine_3d_c_setBlendMode_FUN_00406c40(0);
     }
     iVar1 = 7;
-    *(int *)&this_ptr->field_0x258 = *(int *)&this_ptr->field_0x258 + _DAT_01c5fad0 * 0x20;
-    if (*(int *)&this_ptr->field_0x25c == 2) {
+    this_ptr->anim_timer = this_ptr->anim_timer + _DAT_01c5fad0 * 0x20;
+    if (this_ptr->effect_mode == 2) {
       iVar1 = 0xf;
     }
-    if (iVar1 * 0x10000 <= *(int *)&this_ptr->field_0x258) {
-      *(uint *)&this_ptr->field_0x25c = 0;
-      *(uint *)&this_ptr->field_0x258 = 0;
+    if (iVar1 * 0x10000 <= this_ptr->anim_timer) {
+      this_ptr->effect_mode = 0;
+      this_ptr->anim_timer = 0;
       return;
     }
   }

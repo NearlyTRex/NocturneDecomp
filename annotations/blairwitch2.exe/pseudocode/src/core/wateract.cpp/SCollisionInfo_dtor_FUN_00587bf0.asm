@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SCollisionInfo * core_wateract_cpp_SCollisionInfo_dtor_FUN_00587bf0(SCollisionInfo *this_ptr,uint flags)
+; SCollisionInfo * __cdecl core_wateract_cpp_SCollisionInfo_dtor_FUN_00587bf0(SCollisionInfo *this_ptr,uint flags)
 ;
 ; Parameters:
 ; SCollisionInfo * Stack[0x4]:4   this_ptr

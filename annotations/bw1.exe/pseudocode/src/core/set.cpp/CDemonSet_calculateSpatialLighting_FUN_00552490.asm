@@ -18,7 +18,7 @@
 ; XREF[3]:
 ;   core_set.cpp_CDemonSet_lightVertexColor_FUN_00552710 at 005528b8
 ;   core_set.cpp_FUN_00550da0 at 00551020
-;   core_shadow.cpp_FUN_0055de50 at 0055e416
+;   core_shadow.cpp_CShadow_process_FUN_0055de50 at 0055e416
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01fe55bc
@@ -43,7 +43,7 @@
 ;   core_dglobe.cpp_FUN_0045ef00
 ;   core_mirror.cpp_FUN_00519ff0
 ;   core_mirror.cpp_FUN_0051a0a0
-;   core_set.cpp_FUN_00551d50
+;   core_set.cpp_CDemonSet_gatherVisibleLights_FUN_00551d50
 ;
 ; *****************************************************************************
 
@@ -70,8 +70,8 @@ section .text
     PUSH 0x0                            ; 005524b6
     MOV ESI,dword ptr [ESP + 0x60]      ; 005524b8
     PUSH ESI                            ; 005524bc
-    CALL core_set.cpp_FUN_00551d50      ; 005524bd
-        ;   XREF to: 00551d50 (UNCONDITIONAL_CALL)  ; int core_set.cpp_FUN_00551d50(CDemonSet * this_ptr, CVector3f * position, CVector3f * orientation, CVector3f * aabb_min, ...)
+    CALL core_set.cpp_CDemonSet_gatherVisibleLights_FUN_00551d50 ; 005524bd
+        ;   XREF to: 00551d50 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_gatherVisibleLights_FUN_00551d50(CDemonSet * this_ptr, CVector3f * position, CVector3f * orientation, CVector3f * aabb_min, ...)
         ;   Label: LAB_005524bd
     ADD ESP,0x18                        ; 005524c2
     XOR EDI,EDI                         ; 005524c5

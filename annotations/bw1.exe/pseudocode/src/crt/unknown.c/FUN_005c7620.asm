@@ -17,7 +17,7 @@
 ;   undefined4 DAT_006267c4
 ;
 ; Called Functions:
-;   unkafter_zombie.cpp_FUN_005cbedb
+;   crt_unknown.c_FUN_005cbedb
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
     FSTP double ptr [EBP + -0x10]       ; 005c763b
     MOV dword ptr [EBP + -0x8],EAX      ; 005c763e
     MOV dword ptr [EBP + -0x4],EDX      ; 005c7641
-    CALL unkafter_zombie.cpp_FUN_005cbedb ; 005c7644
-        ;   XREF to: 005cbedb (UNCONDITIONAL_CALL)  ; undefined unkafter_zombie.cpp_FUN_005cbedb()
+    CALL crt_unknown.c_FUN_005cbedb     ; 005c7644
+        ;   XREF to: 005cbedb (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005cbedb()
     PUSH EDX                            ; 005c7649
     PUSH EAX                            ; 005c764a
     FLD double ptr [ESP]                ; 005c764b

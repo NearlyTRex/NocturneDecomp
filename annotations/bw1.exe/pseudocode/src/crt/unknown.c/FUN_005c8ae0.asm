@@ -17,7 +17,7 @@
 ;   void* PTR_DAT_00626834 = 006267e4
 ;
 ; Called Functions:
-;   unkafter_zombie.cpp_FUN_005cbcc0
+;   crt_unknown.c_FUN_005cbcc0
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
     OR DH,0x40                          ; 005c8b10
     PUSH EBX                            ; 005c8b13
     MOV byte ptr [EAX + 0x1],DH         ; 005c8b14 | DAT_006267e5
-    CALL unkafter_zombie.cpp_FUN_005cbcc0 ; 005c8b17
-        ;   XREF to: 005cbcc0 (UNCONDITIONAL_CALL)  ; undefined unkafter_zombie.cpp_FUN_005cbcc0()
+    CALL crt_unknown.c_FUN_005cbcc0     ; 005c8b17
+        ;   XREF to: 005cbcc0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005cbcc0()
     ADD ESP,0x4                         ; 005c8b1c
     TEST EAX,EAX                        ; 005c8b1f
     JZ 0x005c8b2d                       ; 005c8b21

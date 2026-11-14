@@ -17,7 +17,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   cockpit_drawsurf.cpp_FUN_00467ac0 at 00467ad2
+;   cockpit_drawsurf.cpp_CDrawSurface_fillFullSurface_FUN_00467ac0 at 00467ad2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_drawsurf_cpp_005d13b4

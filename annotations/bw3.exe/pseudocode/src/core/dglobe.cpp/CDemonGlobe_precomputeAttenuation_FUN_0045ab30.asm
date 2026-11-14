@@ -11,16 +11,16 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[14]:
-;   core_boxactor.cpp_FUN_00420420 at 00420531
-;   core_charactr.cpp_FUN_0042f510 at 0042f611
-;   core_emitter.cpp_FUN_00487eb0 at 0048802d
+;   core_boxactor.cpp_CLightActor_process_FUN_00420420 at 00420531
+;   core_charactr.cpp_CCharacter_renderTransparent_FUN_0042f510 at 0042f611
+;   core_emitter.cpp_CEmitter_process_FUN_00487eb0 at 0048802d
 ;   core_exorcism.cpp_CExorcism_ctor_FUN_0048a310 at 0048a3ce
-;   core_fire.cpp_FUN_00499350 at 004993ea
-;   core_fire.cpp_FUN_0049a390 at 0049a3bd
+;   core_fire.cpp_CFireball_process_FUN_00499350 at 004993ea
+;   core_fire.cpp_CMuzzleFlash_init_FUN_0049a390 at 0049a3bd
 ;   core_firestff.cpp_CFirestaff_ctor_FUN_004a4ad0 at 004a4ba5
-;   core_firestff.cpp_FUN_004a4dc0 at 004a5666
+;   core_firestff.cpp_CFirestaff_process_FUN_004a4dc0 at 004a5666
 ;   core_flame.cpp_FUN_004a6dd0 at 004a6e89
-;   core_keyactor.cpp_FUN_004de8b0 at 004de927
+;   core_keyactor.cpp_CKeyActor_process_FUN_004de8b0 at 004de927
 ;   ... and 4 more
 ;
 ; Referenced Globals:

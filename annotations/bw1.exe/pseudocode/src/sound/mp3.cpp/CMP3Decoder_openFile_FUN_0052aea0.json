@@ -1,0 +1,286 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 92,
+    "complexity_score": 82,
+    "cross_reference_count": 3,
+    "function_call_count": 4,
+    "global_count": 11,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 37,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 129
+  },
+  "cross_references": [
+    {
+      "addr": "00574410",
+      "from_addr": "00574601",
+      "name": "sound_sndmain.cpp_getSampleInfo_FUN_00574410",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056e830",
+      "from_addr": "0056ec5c",
+      "name": "sound_sndmain.cpp_getSfxSample_FUN_0056e830",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00572d20",
+      "from_addr": "005731c9",
+      "name": "sound_sndmain.cpp_startSfx_FUN_00572d20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0052aea0",
+    "address_range": [
+      [
+        "0052aea0",
+        "0052af78"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_CMP3Decoder_openFile_FUN_0052aea0",
+    "signature": "void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_0052aea0(CMP3Decoder *this_ptr,char *filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "00479180",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_FUN_00479180"
+    },
+    {
+      "addr": "00478fb0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getFileSize_FUN_00478fb0"
+    },
+    {
+      "addr": "0052af80",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_FUN_0052af80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005eb50e",
+      "name": "s_sound_005eb50d+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005eb514",
+      "name": "s_sound_mp3_cpp_005eb514",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eb525",
+      "name": "s_Can_t_open_s_005eb525",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eb533",
+      "name": "DAT_005eb533",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005eb536",
+      "name": "s_sound_005eb536",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eb53c",
+      "name": "s_sound_mp3_cpp_005eb53c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eb54d",
+      "name": "s_Can_t_open_s_005eb54d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eb55b",
+      "name": "s_sound_mp3_cpp_005eb55b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eb56c",
+      "name": "s_Error_preparing_to_decod_005eb56c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "005731c9",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_startSfx_FUN_00572d20",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0056ec5c",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_getSfxSample_FUN_0056e830",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00574601",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_getSampleInfo_FUN_00574410",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.6056338028169015,
+    "instruction_count": 71,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 6,
+      "CBRANCH": 5,
+      "COPY": 55,
+      "INT_ADD": 18,
+      "INT_AND": 29,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 26,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 13,
+      "INT_SUB": 27,
+      "LOAD": 10,
+      "POPCOUNT": 13,
+      "RETURN": 1,
+      "STORE": 27
+    },
+    "pcode_op_count": 256
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00509cd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005027b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00534550",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004e7df0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMP3Decoder *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_005eb533",
+      "severity": "mild",
+      "text": "p_Var3 = engine_dosio_cpp_FUN_00479180(\"sound\",filename,&DAT_005eb533);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 29,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

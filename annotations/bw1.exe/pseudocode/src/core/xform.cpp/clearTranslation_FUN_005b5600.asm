@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_xform_cpp_clearTranslation_FUN_005b5600(int param_1)
+; void __cdecl core_xform_cpp_clearTranslation_FUN_005b5600(CMatrix3x4f *matrix)
 ;
+; Parameters:
+; CMatrix3x4f *    Stack[0x4]:4   matrix
 ;
 ; XREF[2]:
-;   core_tentacle.cpp_FUN_005952f0 at 0059569e
+;   core_tentacle.cpp_CTentacle_process_FUN_005952f0 at 0059569e
 ;   core_xform.cpp_quaternionToMatrix3x4_FUN_005b7560 at 005b7582
 ;
 ; *****************************************************************************

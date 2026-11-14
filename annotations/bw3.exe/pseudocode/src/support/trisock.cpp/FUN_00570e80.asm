@@ -4,9 +4,11 @@
 ; void support_trisock_cpp_FUN_00570e80(int param_1)
 ;
 ;
-; XREF[2]:
+; XREF[4]:
 ;   support_trisock.cpp_FUN_00570db0 at 00570db8
-;   unkafter_trisock.cpp_FUN_00571f10 at 00571f5f
+;   support_trisock.cpp_FUN_00570df0 at 00570df6
+;   support_trisock.cpp_FUN_00571d10 at 00571d71
+;   support_trisock.cpp_FUN_00571f10 at 00571f5f
 ;
 ; Called Functions:
 ;   support_trisock.cpp_FUN_00570fb0

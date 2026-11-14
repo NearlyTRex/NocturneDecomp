@@ -1,20 +1,20 @@
 // Name: core_litecone.cpp_factoryFuncLightCone_FUN_00502d40
 // Address: 00502d40
 // Address Range: [[00502d40, 00502d5b]]
-// Convention: unknown
-// Signature: void core_litecone_cpp_factoryFuncLightCone_FUN_00502d40(void)
+// Convention: __cdecl
+// Signature: CLightCone * __cdecl core_litecone_cpp_factoryFuncLightCone_FUN_00502d40(void)
 
 #include "nocturne.h"
 
-void core_litecone_cpp_factoryFuncLightCone_FUN_00502d40(void)
+CLightCone * __cdecl core_litecone_cpp_factoryFuncLightCone_FUN_00502d40(void)
 
 {
-  CLightCone *this_ptr;
+  CLightCone *pCVar1;
   
-  this_ptr = (CLightCone *)FUN_005c0f32(0x22c);
-  if (this_ptr == (CLightCone *)0x0) {
-    return;
+  pCVar1 = (CLightCone *)operator_new(0x22c);
+  if (pCVar1 == (CLightCone *)0x0) {
+    return (CLightCone *)0x0;
   }
-  core_litecone_cpp_CLightCone_ctor_FUN_00502d70(this_ptr);
-  return;
+  pCVar1 = core_litecone_cpp_CLightCone_ctor_FUN_00502d70(pCVar1);
+  return pCVar1;
 }

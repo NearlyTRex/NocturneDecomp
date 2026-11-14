@@ -11,26 +11,26 @@
 int __cdecl shape_edittool_cpp_CInputString_calcX_FUN_0047aef0(CInputString *this_ptr,int char_index)
 
 {
-  CInputString CVar1;
-  uint uVar2;
-  int iVar3;
-  CInputString *pCVar4;
+  char cVar1;
+  CBitFont *this_ptr_00;
+  int iVar2;
+  char *pcVar3;
   
-  uVar2 = _DAT_01c25590;
+  this_ptr_00 = _DAT_01c25590;
   if (char_index < 0) {
-    iVar3 = 0;
+    iVar2 = 0;
   }
   else {
-    if ((int)*(uint *)(this_ptr + 0x130) < char_index) {
-      char_index = *(uint *)(this_ptr + 0x130);
+    if (this_ptr->current_length < char_index) {
+      char_index = this_ptr->current_length;
     }
-    if (*(int *)(this_ptr + 0x13c) == 0) {
-      pCVar4 = this_ptr + char_index;
-      CVar1 = *pCVar4;
-      *pCVar4 = (CInputString)0x0;
-      iVar3 = engine_font_cpp_FUN_004aaf00(uVar2,this_ptr);
-      *pCVar4 = CVar1;
-      return iVar3;
+    if (this_ptr->mask_mode == 0) {
+      pcVar3 = this_ptr->string_data + char_index;
+      cVar1 = *pcVar3;
+      *pcVar3 = '\0';
+      iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(this_ptr_00,this_ptr->string_data);
+      *pcVar3 = cVar1;
+      return iVar2;
     }
     if (0x3ff < (uint)char_index) {
       _DAT_01d046a0 = "..\\shape\\edittool.cpp";
@@ -39,7 +39,7 @@ int __cdecl shape_edittool_cpp_CInputString_calcX_FUN_0047aef0(CInputString *thi
     }
     memset((void *)0x1c25f88,0x2a,char_index);
     *(byte *)(char_index + 0x1c25f88) = 0;
-    iVar3 = engine_font_cpp_FUN_004aaf00(_DAT_01c25590,0x1c25f88);
+    iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004aaf00(_DAT_01c25590,(char *)0x1c25f88);
   }
-  return iVar3;
+  return iVar2;
 }

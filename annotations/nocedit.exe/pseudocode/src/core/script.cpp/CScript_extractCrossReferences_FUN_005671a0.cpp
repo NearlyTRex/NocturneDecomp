@@ -76,7 +76,7 @@ LAB_00567250:
               pSVar5->name[1] = cVar2;
               pSVar5 = (SScriptXRef *)(pSVar5->name + 2);
             } while (cVar2 != '\0');
-            local_134.type = 0;
+            local_134.type = XREF_EVENT_TESTED;
             core_script_cpp_CScript_addEventXRef_FUN_00567510(this_ptr,&local_134);
           }
         }

@@ -15,7 +15,7 @@
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00502d60 at 00502e1e
 ;
 ; Called Functions:
-;   sound_mp3.cpp_FUN_004fd5e0
+;   sound_mp3.cpp_CFileBitStream_readBits_FUN_004fd5e0
 ;
 ; *****************************************************************************
 
@@ -71,8 +71,8 @@ section .text
         ;   Label: LAB_004fdf50
     MOV ECX,dword ptr [ESP + 0x1c]      ; 004fdf52
     PUSH ECX                            ; 004fdf56
-    CALL sound_mp3.cpp_FUN_004fd5e0     ; 004fdf57
-        ;   XREF to: 004fd5e0 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_FUN_004fd5e0(CFileBitStream * this_ptr, int num_bits)
+    CALL sound_mp3.cpp_CFileBitStream_readBits_FUN_004fd5e0 ; 004fdf57
+        ;   XREF to: 004fd5e0 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CFileBitStream_readBits_FUN_004fd5e0(CFileBitStream * this_ptr, int num_bits)
     ADD ESP,0x8                         ; 004fdf5c
     MOV dword ptr [EBX],EAX             ; 004fdf5f
     JMP 0x004fdf26                      ; 004fdf61

@@ -9,6 +9,7 @@
 #include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CBulletHole.h"
 #include "types/classes/CBulletTrail.h"
+#include "types/classes/CCharacter.h"
 #include "types/classes/CCrater.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
@@ -86,12 +87,13 @@ int __cdecl core_event_cpp_CRuleList_findFirst_FUN_00481840(CRuleList *this_ptr)
 int __cdecl core_event_cpp_CRuleList_evaluateAndRun_FUN_00481890(CRuleList *this_ptr);
 float __cdecl core_event_cpp_getVectorDistance_FUN_004818e0(CVector3f *a,CVector3f *b);
 int __cdecl core_event_cpp_getSelectedCameraIndex_FUN_00481920(CDemonSet *set_ptr);
-undefined4 core_event_cpp_FUN_00481930(void);
-undefined4 * core_event_cpp_FUN_00481950(undefined4 *param_1,undefined4 *param_2);
-undefined4 * core_event_cpp_FUN_00481960(void);
-undefined4 * core_event_cpp_FUN_00481970(void);
+int __cdecl core_event_cpp_isCharacterSpeaking_FUN_00481930(CCharacter *char_ptr);
+int * __cdecl core_event_cpp_assignInt_FUN_00481950(int *dest,int *src);
+int * __cdecl core_event_cpp_assignInt1_FUN_00481960(int *dest,int *src);
+int * __cdecl core_event_cpp_assignInt2_FUN_00481970(int *dest,int *src);
 void __fastcall crt_watcom_c__memset_FUN_00481980(void *dest,int fill_byte,uint size);
 void __fastcall crt_watcom_c__memcpy_FUN_00481a28(void *dest,void *src,uint size);
+void crt_watcom_c_FUN_00481b0c(void);
 void __cdecl core_filmreel_cpp_staticInit_FUN_00481bb0(void);
 CFilmReel * __cdecl core_filmreel_cpp_factoryFuncFilmReel_FUN_00481c00(void);
 CDemonActorType * __cdecl core_filmreel_cpp_CFilmReel_getActorType_FUN_00481c20(CFilmReel *this_ptr);
@@ -216,6 +218,7 @@ void __cdecl core_fire_cpp_CFireEffect_loadAssets_FUN_0048af70(CFireEffect *this
 void __cdecl core_fire_cpp_CFireEffect_createSmokeParticle_FUN_0048afe0(CFireEffect *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence,int alpha_value);
 void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_0048b070(CFireEffect *this_ptr,CVector3f *impact_position,CVector3f *orientation_angles,CVector3f *surface_normal,int ground_type);
 void __cdecl core_fire_cpp_CFireEffect_createGlassParticle_FUN_0048b1c0(CFireEffect *this_ptr,STriangleVertices *triangle_vertices,CVector3i *uv_u_per_vertex,CVector3i *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime);
+void __cdecl core_fire_cpp_CFireEffect_createBulletTrail_FUN_0048b220(CFireEffect *this_ptr,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4 ,float param_5);
 void __cdecl core_fire_cpp_CFireEffect_createFireball_FUN_0048b270(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int lighting_active,uint sfx_handle);
 void __cdecl core_fire_cpp_CFireEffect_createRock_FUN_0048b320(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr);
 void __cdecl core_fire_cpp_CFireEffect_createLaserSegment_FUN_0048b370(CFireEffect *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,float reticle_intensity,CVector3f *reflection_normal,int red,int green,int blue,float halo_spread);

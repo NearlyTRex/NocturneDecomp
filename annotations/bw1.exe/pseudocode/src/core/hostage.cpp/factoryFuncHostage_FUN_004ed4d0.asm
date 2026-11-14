@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hostage_cpp_factoryFuncHostage_FUN_004ed4d0(void)
+; CHostage * __cdecl core_hostage_cpp_factoryFuncHostage_FUN_004ed4d0(void)
 ;
 ;
 ; Called Functions:
 ;   core_hostage.cpp_CHostage_ctor_FUN_004ed500
-;   crt_unknown.c_FUN_005c0f32
+;   crt_memory.c_operator_new_FUN_005c0f32
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x1fea0                        ; 004ed4d0
         ;   Label: core_hostage.cpp_factoryFuncHostage_FUN_004ed4d0
-    CALL crt_unknown.c_FUN_005c0f32     ; 004ed4d5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
+    CALL crt_memory.c_operator_new_FUN_005c0f32 ; 004ed4d5
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
     ADD ESP,0x4                         ; 004ed4da
     TEST EAX,EAX                        ; 004ed4dd
     JNZ 0x004ed4e2                      ; 004ed4df

@@ -11,7 +11,7 @@
 void FUN_0057104c(void)
 
 {
-  func_0x00572cb0();
+  FUN_00572cb0();
   if (_DAT_02de54a4 != (void *)0x0) {
     free(_DAT_02de54a4);
     _DAT_02de54a4 = (void *)0x0;

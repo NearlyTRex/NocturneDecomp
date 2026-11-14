@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CSps * core_sps_cpp_CSps_dtor_FUN_00568300(CSps *this_ptr,uint flags)
+; CSps * __cdecl core_sps_cpp_CSps_dtor_FUN_00568300(CSps *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CSps *           Stack[0x4]:4   this_ptr
@@ -43,7 +43,7 @@ section .text
         ;   Label: LAB_00568326
     PUSH EBX                            ; 0056832b
     CALL crt_memory.c___vec_delete_FUN_005a308f ; 0056832c
-        ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005a308f()
+        ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005a308f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00568331
     PUSH EAX                            ; 00568334
     CALL crt_unknown.c_FUN_005a30b6     ; 00568335

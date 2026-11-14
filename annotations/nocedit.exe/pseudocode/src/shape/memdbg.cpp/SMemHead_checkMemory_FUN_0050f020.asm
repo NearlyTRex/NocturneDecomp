@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_memdbg_cpp_SMemHead_checkMemory_FUN_0050f020(SMemHead *header,char *filename,int line_number)
+; void __cdecl shape_memdbg_cpp_SMemHead_checkMemory_FUN_0050f020(SMemHead *this_ptr,char *filename,int line_number)
 ;
 ; Parameters:
-; SMemHead *       Stack[0x4]:4   header
+; SMemHead *       Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename
 ; int              Stack[0xc]:4   line_number
 ;

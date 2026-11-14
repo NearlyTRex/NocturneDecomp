@@ -1,0 +1,371 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 52,
+    "complexity_score": 12,
+    "cross_reference_count": 19,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 12,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 64
+  },
+  "cross_references": [
+    {
+      "addr": "00475650",
+      "from_addr": "00475838",
+      "name": "core_doc.cpp_CDoc_canDoHeroAction_FUN_00475650",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046ea80",
+      "from_addr": "0046ef54",
+      "name": "core_doc.cpp_CDoc_makeDrawDecision_FUN_0046ea80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00471af0",
+      "from_addr": "00471cf4",
+      "name": "core_doc.cpp_CDoc_renderOpaque_FUN_00471af0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046f740",
+      "from_addr": "0046f9d6",
+      "name": "core_doc.cpp_FUN_0046f740",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00470820",
+      "from_addr": "0047083f",
+      "name": "core_doc.cpp_FUN_00470820",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004712b0",
+      "from_addr": "004712e8",
+      "name": "core_doc.cpp_FUN_004712b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00474400",
+      "from_addr": "00474807",
+      "name": "core_doc.cpp_FUN_00474400",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00475920",
+      "from_addr": "00475a19",
+      "name": "core_doc.cpp_FUN_00475920",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00541bc0",
+      "from_addr": "00541c1d",
+      "name": "core_scat.cpp_CScat_renderOpaque_FUN_00541bc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00591120",
+      "from_addr": "00591358",
+      "name": "core_stranger.cpp_CStranger_handleActionButton_FUN_00591120",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005914a0",
+      "from_addr": "0059159b",
+      "name": "core_stranger.cpp_CStranger_handleFireButton_FUN_005914a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058a360",
+      "from_addr": "0058a7bd",
+      "name": "core_stranger.cpp_CStranger_makeDrawDecision_FUN_0058a360",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058e3c0",
+      "from_addr": "0058e5ad",
+      "name": "core_stranger.cpp_CStranger_renderOpaque_FUN_0058e3c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058ce80",
+      "from_addr": "0058ce9f",
+      "name": "core_stranger.cpp_CStranger_tryClimbLadder_FUN_0058ce80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058d3c0",
+      "from_addr": "0058d3df",
+      "name": "core_stranger.cpp_CStranger_tryDescendLadder_FUN_0058d3c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058c260",
+      "from_addr": "0058c299",
+      "name": "core_stranger.cpp_CStranger_tryPickupObject_FUN_0058c260",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058d910",
+      "from_addr": "0058d948",
+      "name": "core_stranger.cpp_CStranger_tryPlaceObject_FUN_0058d910",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005907a0",
+      "from_addr": "00590b1d",
+      "name": "core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005907a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058afe0",
+      "from_addr": "0058b283",
+      "name": "core_stranger.cpp_FUN_0058afe0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00434590",
+    "address_range": [
+      [
+        "00434590",
+        "00434607"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590",
+    "signature": "float __cdecl core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_00434590(CCharacter *this_ptr,int state_index)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 35,
+    "call_sites": [
+      {
+        "call_addr": "0046ef54",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_CDoc_makeDrawDecision_FUN_0046ea80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0046efd1",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_CDoc_makeDrawDecision_FUN_0046ea80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0046f134",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_CDoc_makeDrawDecision_FUN_0046ea80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0046f9d6",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_0046f740",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0046fb07",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_0046f740",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0046fc50",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_0046f740",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0046fd8d",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_0046f740",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0046ffe6",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_0046f740",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00470388",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_0046f740",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00474807",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_00474400",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.555555555555555,
+    "instruction_count": 45,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 20,
+      "BRANCH": 1,
+      "CBRANCH": 2,
+      "COPY": 76,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_ADD": 1,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 19,
+      "INT_AND": 67,
+      "INT_EQUAL": 26,
+      "INT_LEFT": 8,
+      "INT_LESS": 5,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 20,
+      "INT_SBORROW": 5,
+      "INT_SLESS": 19,
+      "INT_SUB": 12,
+      "INT_XOR": 5,
+      "LOAD": 20,
+      "POPCOUNT": 11,
+      "RETURN": 2,
+      "STORE": 6
+    },
+    "pcode_op_count": 340
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0042a5a0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00433a60",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0042e840",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0042a9d0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "state_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00434598",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
+}

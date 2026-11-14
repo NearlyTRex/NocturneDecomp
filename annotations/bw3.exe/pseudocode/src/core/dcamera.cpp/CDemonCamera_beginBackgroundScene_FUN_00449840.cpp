@@ -20,7 +20,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00449840(CDe
   byte bVar6;
   
   bVar6 = 0;
-  if (*(int *)&this_ptr->field_0x11e4 == 0) {
+  if (this_ptr->scene_open_flag == 0) {
     _DAT_01d71de0 = "..\\core\\dcamera.cpp";
     _DAT_01d71de4 = 0x436;
     core_main_c_FUN_004e4330("CDemonCamera::beginBackgroundScene - Scene not open");
@@ -50,29 +50,30 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00449840(CDe
     _DAT_01c6af8c = 0;
     _DAT_01c6af74 = 0x10;
     iVar2 = 0;
-    if (0 < *(int *)&this_ptr->field_0x148) {
+    if (0 < this_ptr->framebuffer_height) {
       iVar3 = 0;
       do {
-        *(int *)(&DAT_01c5faec + iVar3) =
-             *(int *)&this_ptr->field_0x158 + *(int *)&this_ptr->field_0x144 * iVar2 * 4;
+        *(void **)(&DAT_01c5faec + iVar3) =
+             (void *)((int)this_ptr->framebuffer_aligned + this_ptr->framebuffer_width * iVar2 * 4);
         iVar2 = iVar2 + 1;
         iVar3 = iVar3 + 4;
-      } while (iVar2 < *(int *)&this_ptr->field_0x148);
+      } while (iVar2 < this_ptr->framebuffer_height);
     }
-    engine_matrix_c_FUN_0046d2f0
-              (DAT_005f2afc,0,0,*(int *)&this_ptr->field_0x144 + -1,
-               *(int *)&this_ptr->field_0x148 + -1);
+    engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0046d2f0
+              (DAT_005f2afc,0,0,this_ptr->framebuffer_width + -1,this_ptr->framebuffer_height + -1);
     this_ptr_00 = DAT_005f2afc;
-    *(uint *)&this_ptr->field_0x1c0 = _DAT_01c6b598;
-    *(uint *)&this_ptr->field_0x1c4 = _DAT_01c6b59c;
-    *(uint *)&this_ptr->field_0x1c8 = _DAT_01c6b5a0;
-    *(uint *)&this_ptr->field_0x1cc = _DAT_01c6b5a4;
+    (this_ptr->cached_projection).half_width_fixed = _DAT_01c6b598;
+    (this_ptr->cached_projection).neg_half_height_fixed = _DAT_01c6b59c;
+    (this_ptr->cached_projection).center_x_fixed = _DAT_01c6b5a0;
+    (this_ptr->cached_projection).center_y_fixed = _DAT_01c6b5a4;
     engine_drender_cpp_CDemonRenderer_getCameraAndViewportState_FUN_0046e880
               (this_ptr_00,(SCameraViewportState *)0x14a01f0);
-    engine_drender_cpp_FUN_0046cb90(DAT_005f2afc,(CVector3f *)&this_ptr->field_0x4);
-    engine_matrix_c_FUN_0046d090(DAT_005f2afc,*(uint *)&this_ptr->field_0x38);
+    engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90
+              (DAT_005f2afc,&(this_ptr->base).position.f);
+    engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0046d090
+              (DAT_005f2afc,(this_ptr->base).focal_length);
     engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046cc40
-              (DAT_005f2afc,(CMatrix3x3f *)&this_ptr->field_0x10);
+              (DAT_005f2afc,&(this_ptr->base).rotation_matrix);
   }
   return;
 }

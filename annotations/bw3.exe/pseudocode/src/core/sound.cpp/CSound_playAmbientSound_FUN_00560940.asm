@@ -8,8 +8,8 @@
 ; char *           Stack[0x8]:4   sound_name
 ;
 ; XREF[2]:
+;   core_script.cpp_CScript_initRuntime_FUN_005297a0 at 005298da
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052e890
-;   core_script.cpp_FUN_005297a0 at 005298da
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
@@ -21,8 +21,8 @@
 ;   undefined4 DAT_02cf5ec4
 ;
 ; Called Functions:
+;   core_sound.cpp_CSound_killSound_FUN_00560b00
 ;   core_sound.cpp_CSound_playSound_FUN_005609b0
-;   core_sound.cpp_FUN_00560b00
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     PUSH EDX                            ; 00560948
     MOV ECX,dword ptr [ESP + 0x10]      ; 00560949
     PUSH ECX                            ; 0056094d
-    CALL core_sound.cpp_FUN_00560b00    ; 0056094e
-        ;   XREF to: 00560b00 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_00560b00(CSound * this_ptr, uint sfx_handle)
+    CALL core_sound.cpp_CSound_killSound_FUN_00560b00 ; 0056094e
+        ;   XREF to: 00560b00 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_killSound_FUN_00560b00(CSound * this_ptr, uint sfx_handle)
     ADD ESP,0x8                         ; 00560953
     MOV EDI,0x2cf5e98                   ; 00560956
     MOV ESI,dword ptr [ESP + 0x10]      ; 0056095b

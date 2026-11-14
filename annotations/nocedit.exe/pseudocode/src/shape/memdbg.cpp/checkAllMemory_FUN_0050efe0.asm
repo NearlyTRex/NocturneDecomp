@@ -45,7 +45,7 @@ section .text
     PUSH ESI                            ; 0050eff6
     PUSH EBX                            ; 0050eff7
     CALL shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020 ; 0050eff8
-        ;   XREF to: 0050f020 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020(SMemHead * header, char * filename, int line_number)
+        ;   XREF to: 0050f020 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020(SMemHead * this_ptr, char * filename, int line_number)
     MOV EBX,dword ptr [EBX + 0x4]       ; 0050effd
     ADD ESP,0xc                         ; 0050f000
     TEST EBX,EBX                        ; 0050f003

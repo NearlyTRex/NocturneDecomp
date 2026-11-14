@@ -8,14 +8,14 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; XREF[8]:
-;   core_doc.cpp_FUN_004693e0 at 004694c4
+;   core_doc.cpp_CDoc_process_FUN_004693e0 at 004694c4
 ;   core_doc.cpp_FUN_00469550 at 00469738
-;   core_fire.cpp_FUN_004acf50 at 004acf9f
-;   core_fire.cpp_FUN_004ad860 at 004ad8b4
+;   core_fire.cpp_CFirefly_process_FUN_004ad860 at 004ad8b4
+;   core_fire.cpp_CSpark_process_FUN_004acf50 at 004acf9f
 ;   core_game.cpp_FUN_004ce580 at 004ce606
 ;   core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_005305a0 at 005305d0
-;   core_stranger.cpp_FUN_00585a10 at 00585a8d
-;   core_stranger.cpp_FUN_00585b00 at 00585cf4
+;   core_stranger.cpp_CStranger_processFrame_FUN_00585b00 at 00585cf4
+;   core_stranger.cpp_CStranger_process_FUN_00585a10 at 00585a8d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_game_cpp_005e337a

@@ -2,7 +2,7 @@
 import struct
 
 # Local imports
-from ghidra_program import Address, Program
+from ghidra_program import Address, Instruction, Program
 from ghidra_annotations.annotations.vtables import export_vtables
 from ghidra_annotations.util import load_json_file, load_json_files
 
@@ -58,6 +58,20 @@ def test_uninitialized_and_executable_blocks_are_not_scanned(tmp_path, capsys):
     assert load_json_files(str(tmp_path), "vtables") == []
     assert load_json_file(str(tmp_path), "vtable_conventions") == {"non_cdecl_count": 0}
     assert "No vtables found." in capsys.readouterr().out
+
+
+def test_a_slot_at_a_ret_another_function_ends_with_is_an_empty_method(tmp_path):
+    # Watcom points an empty virtual at an existing RET: the table starts there,
+    # not one slot later. Any other instruction, or a RET outside code, ends it.
+    shared, other, outside = 0x401080, 0x401090, 0x500100
+    program = program_with_tables(pointers(shared, *METHODS[:2]) + pointers(0) + pointers(other, *METHODS[:3])
+                                  + pointers(0) + pointers(outside, *METHODS[:3]))
+    for at, mnemonic in ((shared, "RET"), (other, "NOP"), (outside, "RET")):
+        program.getListing().add_instruction(at, Instruction(mnemonic))
+    export_vtables(program, str(tmp_path))
+    tables = sorted(load_json_files(str(tmp_path), "vtables"), key = lambda t: t["addr"])
+    assert [(t["addr"], t["count"]) for t in tables] == [("00500000", 3), ("00500014", 3), ("00500028", 3)]
+    assert tables[0]["functions"][0]["func_addr"] == "00401080"
 
 
 def test_a_slot_at_the_end_of_memory_ends_the_table(tmp_path):

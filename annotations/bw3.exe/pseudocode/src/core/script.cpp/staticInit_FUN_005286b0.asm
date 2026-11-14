@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_script_cpp_staticInit_FUN_005286b0(void)
+; void __cdecl core_script_cpp_staticInit_FUN_005286b0(void)
 ;
 ;
 ; Called Functions:
@@ -20,7 +20,7 @@ section .text
     ADD ESP,0x4                         ; 005286ba
     PUSH 0x6039c0                       ; 005286bd
     CALL crt_stdlib.c__atexit_FUN_005a3e13 ; 005286c2
-        ;   XREF to: 005a3e13 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__atexit_FUN_005a3e13()
+        ;   XREF to: 005a3e13 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005a3e13(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 005286c7
     PUSH 0x1ed73e0                      ; 005286ca
     CALL core_script.cpp_CScript_ctor_FUN_00528ce0 ; 005286cf
@@ -28,7 +28,7 @@ section .text
     ADD ESP,0x4                         ; 005286d4
     PUSH 0x6039d0                       ; 005286d7
     CALL crt_stdlib.c__atexit_FUN_005a3e13 ; 005286dc
-        ;   XREF to: 005a3e13 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__atexit_FUN_005a3e13()
+        ;   XREF to: 005a3e13 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005a3e13(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 005286e1
     RET                                 ; 005286e4
 

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_00431000 at 0043103a
+;   core_charactr.cpp_CCharacter_getDeathState_FUN_00431000 at 0043103a
 ;
 ; *****************************************************************************
 

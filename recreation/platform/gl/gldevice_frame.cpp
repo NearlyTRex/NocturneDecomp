@@ -17,6 +17,7 @@ bool CGlDevice::lockFrame() {
         target_ahead_ = false;
     }
     scene_stretched_ = false;
+    geometry_drawn_ = false;
     frame_locked_ = true;
     return true;
 }
@@ -29,6 +30,7 @@ bool CGlDevice::unlockFrame() {
     // The image is now the composite: the 3D read back at lock with the engine's 2D over it.
     scene_.upload(image_, layout_, width_, height_, pitch_);
     invalidate();
+    frame_has_2d_ = true;
     return true;
 }
 
@@ -88,12 +90,19 @@ const std::optional<SOverlayPlacement> &CGlDevice::getOverlay() const {
 // Smoothed at the scene's own pixels, then reframed for a wide screen, before anything is drawn
 // over it.
 void CGlDevice::filterScene() {
-    if (!std::exchange(scene_stretched_, false)) {
+    const bool stretched = std::exchange(scene_stretched_, false);
+    const bool geometry =
+        std::exchange(geometry_drawn_, false) && !frame_has_2d_ && !frame_filtered_;
+    if (!stretched && !geometry) {
         return;
     }
+    frame_filtered_ = true;
     const GLuint scene = scene_.getFramebuffer();
     if (filter_.antialias(scene, width_, height_, presenter_.getAntialias())) {
         invalidate();
+    }
+    if (!stretched) {
+        return;
     }
     const std::optional<common::SSceneReframe> reframe =
         presenter_.getSceneReframe(width_, height_);

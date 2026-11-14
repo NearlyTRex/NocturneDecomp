@@ -7,10 +7,10 @@
 ; CInputString *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[5]:
+;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_004958d0 at 00495cbb
 ;   shape_edittool.cpp_CInputString_backspace_FUN_004930c0 at 004930d0
 ;   shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_004931b0 at 00493390
 ;   shape_edittool.cpp_CInputString_pasteFromClipboard_FUN_00493150 at 0049319e
-;   shape_edittool.cpp_FUN_004958d0 at 00495cbb
 ;   shape_edittool.cpp_showTextInputDialog_FUN_00493720 at 00493b0d
 ;
 ; *****************************************************************************

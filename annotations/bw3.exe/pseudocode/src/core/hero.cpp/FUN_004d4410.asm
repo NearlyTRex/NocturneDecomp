@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[1]:
-;   core_stranger.cpp_FUN_00526f50 at 00526f5c
+;   core_prye.cpp_CPrye_reset_FUN_00526f50 at 00526f5c
 ;
 ; Called Functions:
-;   core_inv.cpp_FUN_004de6e0
+;   core_inv.cpp_CInventory_removeMatchingKeys_FUN_004de6e0
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     MOV dword ptr [EBX + 0x20bac],0x0   ; 004d4459
     PUSH EAX                            ; 004d4463
     MOV dword ptr [EBX + 0x26fc],0x0    ; 004d4464
-    CALL core_inv.cpp_FUN_004de6e0      ; 004d446e
-        ;   XREF to: 004de6e0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004de6e0(CInventory * this_ptr, uint key_mask)
+    CALL core_inv.cpp_CInventory_removeMatchingKeys_FUN_004de6e0 ; 004d446e
+        ;   XREF to: 004de6e0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_removeMatchingKeys_FUN_004de6e0(CInventory * this_ptr, uint key_mask)
     ADD ESP,0x8                         ; 004d4473
     PUSH 0x0                            ; 004d4476
     MOV EAX,dword ptr [EBX + 0x154]     ; 004d4478

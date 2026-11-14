@@ -9,11 +9,11 @@
 ;
 ; XREF[6]:
 ;   core_game.cpp_FUN_004b90d0 at 004ba7af
-;   core_set.cpp_FUN_0052d980 at 0052da4e
-;   core_set.cpp_FUN_00534640 at 0053466d
+;   core_set.cpp_CDemonSet_initScene_FUN_0052d980 at 0052da4e
+;   core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_00534640 at 0053466d
 ;   core_setutil.cpp_C3DSCamera_apply_FUN_0053ad20 at 0053ad95
-;   core_weather.cpp_FUN_0058a660 at 0058a8d7
-;   core_weather.cpp_FUN_0058aa30 at 0058acae
+;   core_weather.cpp_CWeather_createLightningStrike_FUN_0058aa30 at 0058acae
+;   core_weather.cpp_CWeather_update_FUN_0058a660 at 0058a8d7
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ce636

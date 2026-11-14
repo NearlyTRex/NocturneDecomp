@@ -18,15 +18,15 @@
   },
   "cross_references": [
     {
-      "addr": "00544460",
-      "from_addr": "005491a0",
-      "name": "core_script.cpp_CScript_step_FUN_00544460",
+      "addr": "00544190",
+      "from_addr": "005442ca",
+      "name": "core_script.cpp_CScript_initRuntime_FUN_00544190",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00544190",
-      "from_addr": "005442ca",
-      "name": "core_script.cpp_FUN_00544190",
+      "addr": "00544460",
+      "from_addr": "005491a0",
+      "name": "core_script.cpp_CScript_step_FUN_00544460",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -44,14 +44,14 @@
   },
   "function_calls": [
     {
+      "addr": "0057d9d0",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_killSound_FUN_0057d9d0"
+    },
+    {
       "addr": "0057d880",
       "is_variadic": false,
       "name": "core_sound.cpp_CSound_playSound_FUN_0057d880"
-    },
-    {
-      "addr": "0057d9d0",
-      "is_variadic": false,
-      "name": "core_sound.cpp_FUN_0057d9d0"
     }
   ],
   "globals": [
@@ -104,7 +104,7 @@
       {
         "call_addr": "005442ca",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00544190",
+        "caller": "core_script.cpp_CScript_initRuntime_FUN_00544190",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -153,6 +153,32 @@
       "STORE": 12
     },
     "pcode_op_count": 148
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0055adc0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00560940",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005b39b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0052e9d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 12,

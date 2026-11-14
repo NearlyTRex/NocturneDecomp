@@ -2,22 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 284,
-    "complexity_score": 574,
+    "complexity_score": 590,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 26,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 114,
-    "suspect_count": 43,
+    "pseudocode_lines": 115,
+    "suspect_count": 44,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
+      "stack_param",
       "undefined_data",
       "unknown_field",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 398
+    "total_lines": 399
   },
   "cross_references": [],
   "function": {
@@ -45,8 +46,8 @@
     },
     {
       "addr": "0055a560",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_0055a560"
+      "is_variadic": true,
+      "name": "sound_sndmain.cpp_logSoundError_FUN_0055a560"
     },
     {
       "addr": "EXTERNAL:0000001f",
@@ -266,6 +267,26 @@
     },
     "pcode_op_count": 1336
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00558440",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0057ae70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005b0f70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 24,
     "local_size": 4,
@@ -320,51 +341,51 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 19,
-      "match": "code *",
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000018",
       "severity": "moderate",
-      "text": "iVar2 = (*(code *)**(uint **)this_ptr)(this_ptr);",
-      "type": "unresolved_funcptr"
+      "text": "int in_stack_00000018;",
+      "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 24,
       "match": "DAT_00604518",
       "severity": "mild",
-      "text": "MVar3 = waveInGetDevCapsA(DAT_00604518,&tStack_58,0x30);",
+      "text": "MVar3 = waveInGetDevCapsA(DAT_00604518,&tStack_54,0x30);",
       "type": "undefined_data"
     },
     {
-      "description": "Unknown/mangled field access",
+      "description": "Unresolved stack parameter",
       "line": 29,
+      "match": "in_stack_00000018",
+      "severity": "moderate",
+      "text": "_DAT_02cf566c = (uint)(in_stack_00000018 != 0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 30,
       "match": "._16_4_",
       "severity": "mild",
-      "text": "auStack_28._16_4_ = tStack_58.dwFormats;",
+      "text": "auStack_24._16_4_ = tStack_54.dwFormats;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 36,
+      "line": 37,
       "match": "._16_4_",
       "severity": "mild",
-      "text": "if ((*(uint *)((int)&DAT_0060451c + iVar7) & auStack_28._16_4_) != 0) {",
+      "text": "if ((*(uint *)((int)&DAT_0060451c + iVar8) & auStack_24._16_4_) != 0) {",
       "type": "unknown_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_0060451c",
-      "severity": "mild",
-      "text": "if ((*(uint *)((int)&DAT_0060451c + iVar7) & auStack_28._16_4_) != 0) {",
-      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 37,
-      "match": "DAT_00604520",
+      "match": "DAT_0060451c",
       "severity": "mild",
-      "text": "uVar4 = (uint)(bits_per_sample < *(int *)((int)&DAT_00604520 + iVar7));",
+      "text": "if ((*(uint *)((int)&DAT_0060451c + iVar8) & auStack_24._16_4_) != 0) {",
       "type": "undefined_data"
     },
     {
@@ -372,191 +393,191 @@
       "line": 38,
       "match": "DAT_00604520",
       "severity": "mild",
-      "text": "if (*(int *)((int)&DAT_00604520 + iVar7) < bits_per_sample) {",
+      "text": "uVar4 = (uint)(channels < *(int *)((int)&DAT_00604520 + iVar8));",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_00604528",
-      "severity": "mild",
-      "text": "if (_DAT_02cf5668 < *(int *)((int)&DAT_00604528 + iVar7)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_00604528",
-      "severity": "mild",
-      "text": "if (*(int *)((int)&DAT_00604528 + iVar7) < _DAT_02cf5668) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_00604524",
-      "severity": "mild",
-      "text": "if (channels < *(int *)((int)&DAT_00604524 + iVar7)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 50,
-      "match": "DAT_00604524",
-      "severity": "mild",
-      "text": "if (*(int *)((int)&DAT_00604524 + iVar7) < channels) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 67,
+      "line": 39,
       "match": "DAT_00604520",
       "severity": "mild",
-      "text": "_DAT_02cf5648 = (&DAT_00604520)[iStack_14 * 4];",
+      "text": "if (*(int *)((int)&DAT_00604520 + iVar8) < channels) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 42,
+      "match": "DAT_00604528",
+      "severity": "mild",
+      "text": "if (_DAT_02cf5668 < *(int *)((int)&DAT_00604528 + iVar8)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_00604528",
+      "severity": "mild",
+      "text": "if (*(int *)((int)&DAT_00604528 + iVar8) < _DAT_02cf5668) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 48,
+      "match": "DAT_00604524",
+      "severity": "mild",
+      "text": "if (sample_rate < *(int *)((int)&DAT_00604524 + iVar8)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 51,
+      "match": "DAT_00604524",
+      "severity": "mild",
+      "text": "if (*(int *)((int)&DAT_00604524 + iVar8) < sample_rate) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 68,
-      "match": "DAT_00604524",
+      "match": "DAT_00604520",
       "severity": "mild",
-      "text": "_DAT_02cf564c = (&DAT_00604524)[iStack_14 * 4];",
+      "text": "_DAT_02cf5648 = (&DAT_00604520)[iVar2 * 4];",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 69,
-      "match": "DAT_00604528",
+      "match": "DAT_00604524",
       "severity": "mild",
-      "text": "_DAT_02cf5650 = (&DAT_00604528)[iStack_14 * 4];",
+      "text": "_DAT_02cf564c = (&DAT_00604524)[iVar2 * 4];",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 86,
+      "line": 70,
+      "match": "DAT_00604528",
+      "severity": "mild",
+      "text": "_DAT_02cf5650 = (&DAT_00604528)[iVar2 * 4];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 87,
       "match": "DAT_02cf55f8",
       "severity": "mild",
-      "text": "*(LPVOID *)(&DAT_02cf55f8 + iVar7) = pvVar6;",
+      "text": "*(LPVOID *)(&DAT_02cf55f8 + iVar8) = pvVar6;",
       "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 99,
+      "line": 100,
       "match": "._0_2_",
       "severity": "mild",
-      "text": "auStack_28._0_2_ = 1;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 100,
-      "match": "._14_2_",
-      "severity": "mild",
-      "text": "auStack_28._14_2_ = _DAT_02cf5648;",
+      "text": "auStack_24._0_2_ = 1;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 101,
-      "match": "._2_2_",
+      "match": "._14_2_",
       "severity": "mild",
-      "text": "auStack_28._2_2_ = _DAT_02cf564c;",
+      "text": "auStack_24._14_2_ = _DAT_02cf5648;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 102,
-      "match": "._12_2_",
+      "match": "._2_2_",
       "severity": "mild",
-      "text": "auStack_28._12_2_ = (short)((int)(_DAT_02cf5648 & 0xffff) >> 3) * _DAT_02cf564c;",
+      "text": "auStack_24._2_2_ = _DAT_02cf564c;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 103,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "auStack_28._4_4_ = _DAT_02cf5650;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 104,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "auStack_28._8_4_ = _DAT_02cf5650 * (ushort)auStack_28._12_2_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 104,
       "match": "._12_2_",
       "severity": "mild",
-      "text": "auStack_28._8_4_ = _DAT_02cf5650 * (ushort)auStack_28._12_2_;",
+      "text": "auStack_24._12_2_ = (short)((int)(_DAT_02cf5648 & 0xffff) >> 3) * _DAT_02cf564c;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 104,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "auStack_24._4_4_ = _DAT_02cf5650;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 105,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "auStack_24._8_4_ = _DAT_02cf5650 * (ushort)auStack_24._12_2_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 105,
+      "match": "._12_2_",
+      "severity": "mild",
+      "text": "auStack_24._8_4_ = _DAT_02cf5650 * (ushort)auStack_24._12_2_;",
       "type": "unknown_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 105,
+      "line": 106,
       "match": "DAT_02cf5504",
       "severity": "mild",
-      "text": "MVar3 = waveInOpen((LPHWAVEIN)&DAT_02cf5504,DAT_00604514,(LPCWAVEFORMATEX)auStack_28,0,0,0);",
+      "text": "MVar3 = waveInOpen((LPHWAVEIN)&DAT_02cf5504,DAT_00604514,(LPCWAVEFORMATEX)auStack_24,0,0,0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 105,
+      "line": 106,
       "match": "DAT_00604514",
       "severity": "mild",
-      "text": "MVar3 = waveInOpen((LPHWAVEIN)&DAT_02cf5504,DAT_00604514,(LPCWAVEFORMATEX)auStack_28,0,0,0);",
+      "text": "MVar3 = waveInOpen((LPHWAVEIN)&DAT_02cf5504,DAT_00604514,(LPCWAVEFORMATEX)auStack_24,0,0,0);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 110,
+      "line": 111,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar2 = (*(code *)**(uint **)this_ptr)(this_ptr);",
+      "text": "iVar7 = (*(code *)**(uint **)bits_per_sample)(bits_per_sample);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 114,
+      "line": 115,
       "match": "._16_4_",
       "severity": "mild",
-      "text": "auStack_28._16_4_ = auStack_28._16_4_ & ~(&DAT_0060451c)[iStack_14 * 4];",
+      "text": "auStack_24._16_4_ = auStack_24._16_4_ & ~(&DAT_0060451c)[iVar2 * 4];",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 114,
+      "line": 115,
       "match": "._16_4_",
       "severity": "mild",
-      "text": "auStack_28._16_4_ = auStack_28._16_4_ & ~(&DAT_0060451c)[iStack_14 * 4];",
+      "text": "auStack_24._16_4_ = auStack_24._16_4_ & ~(&DAT_0060451c)[iVar2 * 4];",
       "type": "unknown_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 114,
+      "line": 115,
       "match": "DAT_0060451c",
       "severity": "mild",
-      "text": "auStack_28._16_4_ = auStack_28._16_4_ & ~(&DAT_0060451c)[iStack_14 * 4];",
+      "text": "auStack_24._16_4_ = auStack_24._16_4_ & ~(&DAT_0060451c)[iVar2 * 4];",
       "type": "undefined_data"
     },
     {
       "description": "Pointer value `&DAT_0060451c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 36,
+      "line": 37,
       "match": "(int)&DAT_0060451c",
       "severity": "moderate",
-      "text": "if ((*(uint *)((int)&DAT_0060451c + iVar7) & auStack_28._16_4_) != 0) {",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&DAT_00604520` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 37,
-      "match": "(int)&DAT_00604520",
-      "severity": "moderate",
-      "text": "uVar4 = (uint)(bits_per_sample < *(int *)((int)&DAT_00604520 + iVar7));",
+      "text": "if ((*(uint *)((int)&DAT_0060451c + iVar8) & auStack_24._16_4_) != 0) {",
       "type": "pointer_truncation"
     },
     {
@@ -564,55 +585,55 @@
       "line": 38,
       "match": "(int)&DAT_00604520",
       "severity": "moderate",
-      "text": "if (*(int *)((int)&DAT_00604520 + iVar7) < bits_per_sample) {",
+      "text": "uVar4 = (uint)(channels < *(int *)((int)&DAT_00604520 + iVar8));",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_00604520` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 39,
+      "match": "(int)&DAT_00604520",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)&DAT_00604520 + iVar8) < channels) {",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&DAT_00604528` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 41,
+      "line": 42,
       "match": "(int)&DAT_00604528",
       "severity": "moderate",
-      "text": "if (_DAT_02cf5668 < *(int *)((int)&DAT_00604528 + iVar7)) {",
+      "text": "if (_DAT_02cf5668 < *(int *)((int)&DAT_00604528 + iVar8)) {",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&DAT_00604528` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 44,
+      "line": 45,
       "match": "(int)&DAT_00604528",
       "severity": "moderate",
-      "text": "if (*(int *)((int)&DAT_00604528 + iVar7) < _DAT_02cf5668) {",
+      "text": "if (*(int *)((int)&DAT_00604528 + iVar8) < _DAT_02cf5668) {",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&DAT_00604524` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 47,
+      "line": 48,
       "match": "(int)&DAT_00604524",
       "severity": "moderate",
-      "text": "if (channels < *(int *)((int)&DAT_00604524 + iVar7)) {",
+      "text": "if (sample_rate < *(int *)((int)&DAT_00604524 + iVar8)) {",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&DAT_00604524` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 50,
+      "line": 51,
       "match": "(int)&DAT_00604524",
       "severity": "moderate",
-      "text": "if (*(int *)((int)&DAT_00604524 + iVar7) < channels) {",
+      "text": "if (*(int *)((int)&DAT_00604524 + iVar8) < sample_rate) {",
       "type": "pointer_truncation"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 36,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "if ((*(uint *)((int)&DAT_0060451c + iVar7) & auStack_28._16_4_) != 0) {",
-      "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 37,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "uVar4 = (uint)(bits_per_sample < *(int *)((int)&DAT_00604520 + iVar7));",
+      "text": "if ((*(uint *)((int)&DAT_0060451c + iVar8) & auStack_24._16_4_) != 0) {",
       "type": "pointer_cast"
     },
     {
@@ -620,39 +641,47 @@
       "line": 38,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "if (*(int *)((int)&DAT_00604520 + iVar7) < bits_per_sample) {",
+      "text": "uVar4 = (uint)(channels < *(int *)((int)&DAT_00604520 + iVar8));",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 41,
+      "line": 39,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "if (_DAT_02cf5668 < *(int *)((int)&DAT_00604528 + iVar7)) {",
+      "text": "if (*(int *)((int)&DAT_00604520 + iVar8) < channels) {",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 44,
+      "line": 42,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "if (*(int *)((int)&DAT_00604528 + iVar7) < _DAT_02cf5668) {",
+      "text": "if (_DAT_02cf5668 < *(int *)((int)&DAT_00604528 + iVar8)) {",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 47,
+      "line": 45,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "if (channels < *(int *)((int)&DAT_00604524 + iVar7)) {",
+      "text": "if (*(int *)((int)&DAT_00604528 + iVar8) < _DAT_02cf5668) {",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 50,
+      "line": 48,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "if (*(int *)((int)&DAT_00604524 + iVar7) < channels) {",
+      "text": "if (sample_rate < *(int *)((int)&DAT_00604524 + iVar8)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 51,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)&DAT_00604524 + iVar8) < sample_rate) {",
       "type": "pointer_cast"
     }
   ],

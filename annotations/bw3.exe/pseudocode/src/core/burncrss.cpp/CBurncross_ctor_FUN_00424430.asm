@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBurncross * core_burncrss_cpp_CBurncross_ctor_FUN_00424430(CBurncross *this_ptr)
+; CBurncross * __cdecl core_burncrss_cpp_CBurncross_ctor_FUN_00424430(CBurncross *this_ptr)
 ;
 ; Parameters:
 ; CBurncross *     Stack[0x4]:4   this_ptr
@@ -30,7 +30,7 @@ section .text
     ADD EAX,0x5a8                       ; 00424445
     PUSH EAX                            ; 0042444a
     CALL crt_memory.c___arrinit_FUN_005a30d7 ; 0042444b
-        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005a30d7()
+        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005a30d7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00424450
     LEA EBX,[EAX + 0xfffffa58]          ; 00424453
     PUSH 0x5b78d9                       ; 00424459

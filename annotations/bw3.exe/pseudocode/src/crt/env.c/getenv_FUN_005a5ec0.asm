@@ -8,13 +8,13 @@
 ;
 ; XREF[8]:
 ;   core_game.cpp_CGame_processHotkeys_FUN_004ba540 at 004babc8
+;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b81c0
 ;   core_game.cpp_FUN_004b6f30 at 004b7adc
-;   core_game.cpp_FUN_004b7f90 at 004b81c0
 ;   core_netgame.cpp_CNetGame_init_FUN_00503e20 at 00503e5a
 ;   crt_unknown.c_FUN_005a9aec at 005a9b04
 ;   crt_unknown.c_FUN_005ac558 at 005ac55d
-;   unkafter_2d.cpp_FUN_005b0a70 at 005b0a7c
-;   wincore_winrun.cpp_FUN_00581a9c at 00581aff
+;   crt_unknown.c_FUN_005b0a70 at 005b0a7c
+;   wincore_winrun.cpp_getComputerAndUserName_FUN_00581aa0 at 00581aff
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02d25924

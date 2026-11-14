@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_carved.cpp_FUN_00428a80 at 00428b24
+;   core_carved.cpp_CCarved_processDamage_FUN_00428a80 at 00428b24
 ;
 ; *****************************************************************************
 

@@ -7,7 +7,7 @@
 ; CCryptVessel *   Stack[0x4]:4   actor
 ;
 ; XREF[1]:
-;   core_vessel.cpp_FUN_00585230 at 005852d6
+;   core_vessel.cpp_CCryptVessel_process_FUN_00585230 at 005852d6
 ;
 ; *****************************************************************************
 

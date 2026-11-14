@@ -26,7 +26,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408de0
-;   core_door.cpp_FUN_00460800
+;   core_door.cpp_CDoor_onLocked_FUN_00460800
 ;   core_game.cpp_CGame_displayMessage_FUN_004b31a0
 ;   core_main.c_FUN_004e4500
 ;   support_newmsg.cpp_getLocalizedString_FUN_0050fe80
@@ -121,8 +121,8 @@ section .text
     RET                                 ; 004606e7
     PUSH EBX                            ; 004606e8
         ;   Label: LAB_004606e8
-    CALL core_door.cpp_FUN_00460800     ; 004606e9
-        ;   XREF to: 00460800 (UNCONDITIONAL_CALL)  ; uint core_door.cpp_FUN_00460800(CDoor * this_ptr)
+    CALL core_door.cpp_CDoor_onLocked_FUN_00460800 ; 004606e9
+        ;   XREF to: 00460800 (UNCONDITIONAL_CALL)  ; uint core_door.cpp_CDoor_onLocked_FUN_00460800(CDoor * this_ptr)
     ADD ESP,0x4                         ; 004606ee
     PUSH 0x40a00000                     ; 004606f1
     PUSH ESI                            ; 004606f6
@@ -149,8 +149,8 @@ section .text
     RET                                 ; 00460725
     PUSH EBX                            ; 00460726
         ;   Label: LAB_00460726
-    CALL core_door.cpp_FUN_00460800     ; 00460727
-        ;   XREF to: 00460800 (UNCONDITIONAL_CALL)  ; uint core_door.cpp_FUN_00460800(CDoor * this_ptr)
+    CALL core_door.cpp_CDoor_onLocked_FUN_00460800 ; 00460727
+        ;   XREF to: 00460800 (UNCONDITIONAL_CALL)  ; uint core_door.cpp_CDoor_onLocked_FUN_00460800(CDoor * this_ptr)
     ADD ESP,0x4                         ; 0046072c
     PUSH 0x40a00000                     ; 0046072f
     PUSH ESI                            ; 00460734

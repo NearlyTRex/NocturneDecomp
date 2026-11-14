@@ -17,16 +17,16 @@
 ;   CGame* g_CGamePtr = 01cb6900
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 DAT_01ba5c50
-;   undefined4 g_CGameInstance.field580_0x244
+;   undefined4 g_CGameInstance.letterbox_mode
 ;   undefined4 DAT_01cedef4
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 DAT_0200a3a4
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_005342e0
+;   core_set.cpp_CDemonSet_setFlatColor_FUN_005344c0
 ;   core_set.cpp_CDemonSet_setLightingParameters_FUN_00530980
-;   core_set.cpp_FUN_005341b0
-;   core_set.cpp_FUN_005344c0
+;   core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005341b0
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920
 ;
 ; *****************************************************************************
@@ -42,7 +42,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x64]      ; 00530417
     MOV EAX,[0x00616494]                ; 0053041b | g_CGamePtr
     XOR EDX,EDX                         ; 00530420
-    MOV ECX,dword ptr [EAX + 0x244]     ; 00530422 | g_CGameInstance.field580_0x244
+    MOV ECX,dword ptr [EAX + 0x244]     ; 00530422 | g_CGameInstance.letterbox_mode
     MOV dword ptr [0x0200a3a4],EDX      ; 00530428 | DAT_0200a3a4
     TEST ECX,ECX                        ; 0053042e
     JNZ 0x0053045b                      ; 00530430
@@ -173,8 +173,8 @@ section .text
     PUSH ESI                            ; 00530573
     MOV EDX,dword ptr [0x0061b5a8]      ; 00530574 | g_CDemonSetPtr
     PUSH EDX                            ; 0053057a | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_005344c0      ; 0053057b
-        ;   XREF to: 005344c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_005344c0(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
+    CALL core_set.cpp_CDemonSet_setFlatColor_FUN_005344c0 ; 0053057b
+        ;   XREF to: 005344c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setFlatColor_FUN_005344c0(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
     ADD ESP,0x10                        ; 00530580
     MOV EAX,dword ptr [EBX + 0x2b0]     ; 00530583
     PUSH EBX                            ; 00530589
@@ -200,8 +200,8 @@ section .text
         ;   Label: LAB_005305bc
     PUSH ESI                            ; 005305be
     PUSH EBP                            ; 005305bf
-    CALL core_set.cpp_FUN_005341b0      ; 005305c0
-        ;   XREF to: 005341b0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_005341b0(CDemonSet * this_ptr, int mirror_index, int enable_flag)
+    CALL core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005341b0 ; 005305c0
+        ;   XREF to: 005341b0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005341b0(CDemonSet * this_ptr, int mirror_index, int enable_flag)
     ADD ESP,0xc                         ; 005305c5
     MOV EAX,dword ptr [EBX + 0x2b0]     ; 005305c8
     PUSH EBX                            ; 005305ce
@@ -232,8 +232,8 @@ section .text
     PUSH 0x10000                        ; 00530609
     PUSH 0x10000                        ; 0053060e
     PUSH EBP                            ; 00530613
-    CALL core_set.cpp_FUN_005344c0      ; 00530614
-        ;   XREF to: 005344c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_005344c0(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
+    CALL core_set.cpp_CDemonSet_setFlatColor_FUN_005344c0 ; 00530614
+        ;   XREF to: 005344c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setFlatColor_FUN_005344c0(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
     ADD ESP,0x10                        ; 00530619
     JMP 0x0053048d                      ; 0053061c
         ;   XREF to: 0053048d (UNCONDITIONAL_JUMP)  ; LAB_0053048d

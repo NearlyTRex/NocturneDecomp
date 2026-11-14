@@ -13,7 +13,7 @@ globals so the sentinel never matches. See `docs/decompiler-artifacts.md` §16.
 
 ## Rewrites by function
 
-### `core_dmodel.cpp_FUN_004624d0`
+### `core_dmodel.cpp_freeAllModels_FUN_004624d0`
 
 - Pool `g_CKeyFramedModelPool` sentinel `g_CZombieDogClassInfo` (count 256)
   - Before: `while (pCVar1 != (CKeyFramedModel *)&g_CZombieDogClassInfo)`

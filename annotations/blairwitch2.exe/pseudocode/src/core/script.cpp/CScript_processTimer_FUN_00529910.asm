@@ -9,7 +9,7 @@
 ; float *          Stack[0xc]:4   timer_value
 ;
 ; XREF[1]:
-;   core_script.cpp_FUN_00522350 at 00524732
+;   core_script.cpp_CScript_step_FUN_00522350 at 00524732
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_script_cpp_005e4db3

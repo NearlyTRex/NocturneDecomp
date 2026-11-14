@@ -1,12 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_sndmain_cpp_setNextSfxDelay_FUN_00555ee0(undefined4 param_1)
+; void __cdecl sound_sndmain_cpp_setNextSfxDelay_FUN_00555ee0(double delay_seconds)
 ;
+; Parameters:
+; double           Stack[0x4]:8   delay_seconds
 ;
 ; XREF[2]:
+;   core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70 at 00560a7e
 ;   core_sound.cpp_CSound_playTrackedActorSoundWithDelay_FUN_00560ab0 at 00560aba
-;   core_sound.cpp_FUN_00560a70 at 00560a7e
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02ceb91c

@@ -43,7 +43,7 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
-;   core_skeleton.cpp_FUN_00540fc0
+;   core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00540fc0
 ;   core_xform.cpp_multiplyQuaternion_FUN_00593c60
 ;   core_xform.cpp_negateFirstComponent_FUN_00593c00
 ;   core_xform.cpp_slerpQuaternion_FUN_00593df0
@@ -100,8 +100,8 @@ section .text
     PUSH EBX                            ; 00546254
     MOV ESI,dword ptr [ESP + 0xf8]      ; 00546255
     PUSH ESI                            ; 0054625c
-    CALL core_skeleton.cpp_FUN_00540fc0 ; 0054625d
-        ;   XREF to: 00540fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_00540fc0(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
+    CALL core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00540fc0 ; 0054625d
+        ;   XREF to: 00540fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00540fc0(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
     ADD ESP,0xc                         ; 00546262
     TEST EAX,EAX                        ; 00546265
     JL 0x005462c8                       ; 00546267
@@ -261,8 +261,8 @@ section .text
     PUSH EBP                            ; 005464e3
     MOV ESI,dword ptr [ESP + 0xf8]      ; 005464e4
     PUSH ESI                            ; 005464eb
-    CALL core_skeleton.cpp_FUN_00540fc0 ; 005464ec
-        ;   XREF to: 00540fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_00540fc0(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
+    CALL core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00540fc0 ; 005464ec
+        ;   XREF to: 00540fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00540fc0(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
     ADD ESP,0xc                         ; 005464f1
     TEST EAX,EAX                        ; 005464f4
     JL 0x0054654c                       ; 005464f6

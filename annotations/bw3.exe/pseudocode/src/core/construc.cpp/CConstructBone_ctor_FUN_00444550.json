@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 114,
+    "complexity_score": 19,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 19,
-    "suspect_count": 9,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 46
   },
   "cross_references": [
@@ -30,20 +28,20 @@
         "004445c0"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_construc.cpp_CConstructBone_ctor_FUN_00444550",
-    "signature": "CConstructBone * core_construc_cpp_CConstructBone_ctor_FUN_00444550(CConstructBone *this_ptr)"
+    "signature": "CConstructBone * __cdecl core_construc_cpp_CConstructBone_ctor_FUN_00444550(CConstructBone *this_ptr)"
   },
   "function_calls": [
     {
       "addr": "00442420",
       "is_variadic": false,
-      "name": "core_constrct.cpp_CConstruct_ctor_FUN_00442420"
+      "name": "core_construc.cpp_CConstruct_ctor_FUN_00442420"
     },
     {
       "addr": "0054eae0",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_0054eae0"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0"
     },
     {
       "addr": "005a3120",
@@ -112,80 +110,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "*(byte ***)&pCVar1->field_0x154 = &g_CConstruct_BoneVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0054eae0(&pCVar1->field_0x158,\"bonestruct.dfm\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x2538",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x2538 = 0x425c0000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0xce5c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0xce5c = 0x41700000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0xce60",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0xce60 = 0x41200000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0xd84c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0xd84c = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0xd85c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0xd85c = 3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x2538",
-      "severity": "mild",
-      "text": "fVar3 = (float10)*(float *)&pCVar1->field_0x2538;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0xd17c",
-      "severity": "mild",
-      "text": "*(int *)&pCVar1->field_0xd17c = (int)ROUND(fVar3);",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   blue
 ;
 ; XREF[1]:
-;   cockpit_drawsurf.cpp_FUN_00468b80 at 00468c2a
+;   cockpit_drawsurf.cpp_testDrawingSurface_FUN_00468b80 at 00468c2a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006141c0

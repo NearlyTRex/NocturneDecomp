@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 507,
-    "complexity_score": 379,
+    "complexity_score": 346,
     "cross_reference_count": 2,
     "function_call_count": 33,
     "global_count": 45,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 159,
-    "suspect_count": 20,
+    "pseudocode_lines": 161,
+    "suspect_count": 17,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 666
+    "total_lines": 668
   },
   "cross_references": [
     {
@@ -27,7 +26,7 @@
     {
       "addr": "004cf5e0",
       "from_addr": "004d00ca",
-      "name": "core_game.cpp_FUN_004cf5e0",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004cf5e0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -57,17 +56,17 @@
     {
       "addr": "004bf1c0",
       "is_variadic": false,
-      "name": "core_fldnotes.cpp_FUN_004bf1c0"
+      "name": "core_fldnotes.cpp_CFieldNotes_saveState_FUN_004bf1c0"
     },
     {
       "addr": "0051ac40",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_0051ac40"
+      "name": "core_mission.cpp_CDemonMission_writeFile_FUN_0051ac40"
     },
     {
       "addr": "0054b710",
       "is_variadic": false,
-      "name": "core_script.cpp_FUN_0054b710"
+      "name": "core_script.cpp_CScript_saveState_FUN_0054b710"
     },
     {
       "addr": "00555ce0",
@@ -100,11 +99,6 @@
       "name": "crt_string.c_splitpath_FUN_005c2238"
     },
     {
-      "addr": "005bfb40",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005bfb40"
-    },
-    {
       "addr": "005c03c0",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005c03c0"
@@ -115,6 +109,11 @@
       "name": "crt_unknown.c_FUN_005c25c0"
     },
     {
+      "addr": "005bfb40",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
+    },
+    {
       "addr": "005c2000",
       "is_variadic": false,
       "name": "crt_watcom.c__mkdir_FUN_005c2000"
@@ -122,12 +121,12 @@
     {
       "addr": "004943a0",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_004943a0"
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_004943a0"
     },
     {
       "addr": "004958d0",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_004958d0"
+      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_004958d0"
     },
     {
       "addr": "00442bb0",
@@ -140,14 +139,14 @@
       "name": "support_codec.cpp_CLZWCompress_ctor_FUN_00443490"
     },
     {
+      "addr": "004434e0",
+      "is_variadic": false,
+      "name": "support_codec.cpp_CLZWCompress_init_FUN_004434e0"
+    },
+    {
       "addr": "00442f90",
       "is_variadic": false,
       "name": "support_codec.cpp_CLZWDictionary_dtor_FUN_00442f90"
-    },
-    {
-      "addr": "004434e0",
-      "is_variadic": false,
-      "name": "support_codec.cpp_FUN_004434e0"
     },
     {
       "addr": "00443530",
@@ -165,6 +164,31 @@
       "name": "support_newmsg.cpp_getLocalizedString_FUN_00531090"
     },
     {
+      "addr": "005a0dc0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_close_FUN_005a0dc0"
+    },
+    {
+      "addr": "005a08d0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_ctor_FUN_005a08d0"
+    },
+    {
+      "addr": "005a0a50",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_dtor_FUN_005a0a50"
+    },
+    {
+      "addr": "005a0f60",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_open_FUN_005a0f60"
+    },
+    {
+      "addr": "005a19b0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_COutStreamFile_close_FUN_005a19b0"
+    },
+    {
       "addr": "005a17d0",
       "is_variadic": false,
       "name": "support_trstream.cpp_COutStreamFile_ctor_FUN_005a17d0"
@@ -175,39 +199,14 @@
       "name": "support_trstream.cpp_COutStreamFile_dtor_FUN_005a1860"
     },
     {
-      "addr": "005a0f60",
+      "addr": "005a19e0",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_005a0f60"
+      "name": "support_trstream.cpp_COutStreamFile_open_FUN_005a19e0"
     },
     {
       "addr": "005a18f0",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_005a18f0"
-    },
-    {
-      "addr": "005a19b0",
-      "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_005a19b0"
-    },
-    {
-      "addr": "005a19e0",
-      "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_005a19e0"
-    },
-    {
-      "addr": "005a0dc0",
-      "is_variadic": false,
-      "name": "unkaddr_0059f520.cpp_FUN_005a0dc0"
-    },
-    {
-      "addr": "005a08d0",
-      "is_variadic": false,
-      "name": "unkclass_instream.cpp_CInStreamFile_ctor_FUN_005a08d0"
-    },
-    {
-      "addr": "005a0a50",
-      "is_variadic": false,
-      "name": "unkclass_instream.cpp_CInStreamFile_dtor_FUN_005a0a50"
+      "name": "support_trstream.cpp_COutStreamFile_write_FUN_005a18f0"
     }
   ],
   "globals": [
@@ -488,7 +487,7 @@
       {
         "call_addr": "004d00ca",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004cf5e0",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004cf5e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -796,38 +795,6 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 110,
-      "match": "field_0x270",
-      "severity": "mild",
-      "text": "(file_handle,\"%f,%f,%d,%d\\n\",(double)*(float *)&this_ptr->field_0x270,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 111,
-      "match": "field_0x268",
-      "severity": "mild",
-      "text": "(double)*(float *)&this_ptr->field_0x268,*(uint *)&this_ptr->field_0x26c,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 111,
-      "match": "field_0x26c",
-      "severity": "mild",
-      "text": "(double)*(float *)&this_ptr->field_0x268,*(uint *)&this_ptr->field_0x26c,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 112,
-      "match": "field_0x274",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x274);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 116,
       "match": "DAT_007c3040",
@@ -837,15 +804,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 129,
-      "match": "DAT_005e2fa1",
+      "line": 131,
+      "match": "DAT_005e2fac",
       "severity": "mild",
-      "text": "FUN_005bfb40(local_390,\"%s\\\\%s\",&DAT_005e2fa1,local_494);",
+      "text": "iVar2 = support_trstream_cpp_COutStreamFile_open_FUN_005a19e0(&local_1c,local_390,&DAT_005e2fac)",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 150,
+      "line": 139,
+      "match": "DAT_0061d98c",
+      "severity": "mild",
+      "text": "support_trstream_cpp_COutStreamFile_write_FUN_005a18f0(&local_1c,&DAT_0061d98c,4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 152,
       "match": "DAT_01cd05c0",
       "severity": "mild",
       "text": "pcVar3 = &DAT_01cd05c0;",
@@ -869,7 +844,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 151,
+      "line": 153,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

@@ -14,7 +14,7 @@ CSvetlana * __cdecl core_svetlana_cpp_CSvetlana_ctor_FUN_005701c0(CSvetlana *thi
   iVar1 = core_hero_cpp_FUN_004ce240(this_ptr);
   iVar1 = core_necklace_cpp_FUN_005adda0(iVar1 + 0x25648);
   iVar1 = core_necklace_cpp_FUN_005adda0(iVar1 + 0x3ab30);
-  *(byte **)(iVar1 + -0x5fec8) = &g_CSvetlanaVTable;
+  *(CHero_full_vtable **)(iVar1 + -0x5fec8) = &g_CSvetlanaVTable;
   *(uint *)(iVar1 + -0x3ab38) = 0;
   *(uint *)(iVar1 + -0x3ab34) = 0;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0

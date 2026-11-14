@@ -1,0 +1,284 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 82,
+    "complexity_score": 170,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 45,
+    "suspect_count": 10,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "raw_address_pointer_store",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 127
+  },
+  "cross_references": [
+    {
+      "addr": "004f08a0",
+      "from_addr": "004f09fb",
+      "name": "core_mimic.cpp_CMimic_process_FUN_004f08a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f17a0",
+    "address_range": [
+      [
+        "004f17a0",
+        "004f1888"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mimic.cpp_CMimic_setupCloth_FUN_004f17a0",
+    "signature": "void __cdecl core_mimic_cpp_CMimic_setupCloth_FUN_004f17a0(CMimic *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c8f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c8f0"
+    },
+    {
+      "addr": "005ae680",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_FUN_005ae680"
+    },
+    {
+      "addr": "00503950",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_jumpToMotionByName_FUN_00503950"
+    },
+    {
+      "addr": "00503620",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_00503620"
+    },
+    {
+      "addr": "005035c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_FUN_005035c0"
+    },
+    {
+      "addr": "00436710",
+      "is_variadic": false,
+      "name": "engine_console.cpp_CConsole_printf_FUN_00436710"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005dd979",
+      "name": "s_s_attacking_hero_005dd977+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00609ed0",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "007c158c"
+    },
+    {
+      "addr": "007c158c",
+      "name": "g_CConsoleInstance",
+      "type": "CConsole",
+      "value": null
+    },
+    {
+      "addr": "01cb0700",
+      "name": "g_CGabriellaClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cedef4",
+      "name": "DAT_01cedef4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004f09fb",
+        "call_type": "direct",
+        "caller": "core_mimic.cpp_CMimic_process_FUN_004f08a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.352112676056338,
+    "instruction_count": 71,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 11,
+      "BRANCH": 3,
+      "CALL": 6,
+      "CBRANCH": 3,
+      "COPY": 78,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 32,
+      "INT_AND": 53,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 32,
+      "INT_LEFT": 2,
+      "INT_LESS": 2,
+      "INT_MULT": 8,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 10,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 17,
+      "INT_SUB": 35,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 12,
+      "POPCOUNT": 14,
+      "RETURN": 1,
+      "STORE": 29
+    },
+    "pcode_op_count": 380
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00510530",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00520500",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004d5770",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMimic *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 23,
+      "match": "*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4),",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(SClothVertex *)((int)pSVar5",
+      "severity": "moderate",
+      "text": "pSVar5 = (SClothVertex *)((int)pSVar5 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(float *)((int)pfVar4",
+      "severity": "moderate",
+      "text": "pfVar4 = (float *)((int)pfVar4 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(SClothVertex *)((int)pSVar5",
+      "severity": "moderate",
+      "text": "pSVar5 = (SClothVertex *)((int)pSVar5 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pSVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 32,
+      "match": "(int)pSVar5",
+      "severity": "moderate",
+      "text": "pSVar5 = (SClothVertex *)((int)pSVar5 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pfVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 36,
+      "match": "(int)pfVar4",
+      "severity": "moderate",
+      "text": "pfVar4 = (float *)((int)pfVar4 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 37,
+      "match": "(int)pSVar5",
+      "severity": "moderate",
+      "text": "pSVar5 = (SClothVertex *)((int)pSVar5 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 34,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 004f1879, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 75,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004f1879: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

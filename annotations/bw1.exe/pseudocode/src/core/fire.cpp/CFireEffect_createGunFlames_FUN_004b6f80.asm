@@ -11,16 +11,16 @@
 ; int              Stack[0x14]:4   flame_type
 ;
 ; XREF[3]:
-;   core_dracbrid.cpp_FUN_0047b510 at 0047bf28
-;   core_emitter.cpp_FUN_0049f310 at 0049f95a
-;   core_flamegun.cpp_FUN_004b9660 at 004b96ca
+;   core_dracbrid.cpp_CDraculaBride_process_FUN_0047b510 at 0047bf28
+;   core_emitter.cpp_CEmitter_process_FUN_0049f310 at 0049f95a
+;   core_flamegun.cpp_CFlameThrower_fire_FUN_004b9660 at 004b96ca
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01cb5820
 ;   undefined4 DAT_01cb5824
 ;
 ; Called Functions:
-;   core_fire.cpp_FUN_004b2b50
+;   core_fire.cpp_CGunFlame_activate_FUN_004b2b50
 ;
 ; *****************************************************************************
 
@@ -47,8 +47,8 @@ section .text
     ADD EAX,0x1cb5824                   ; 004b6fa4
     PUSH EAX                            ; 004b6fa9 | DAT_01cb5824
     MOV dword ptr [0x01cb5820],ESI      ; 004b6faa | DAT_01cb5820
-    CALL core_fire.cpp_FUN_004b2b50     ; 004b6fb0
-        ;   XREF to: 004b2b50 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_004b2b50()
+    CALL core_fire.cpp_CGunFlame_activate_FUN_004b2b50 ; 004b6fb0
+        ;   XREF to: 004b2b50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CGunFlame_activate_FUN_004b2b50(CGunFlame * this_ptr, CVector3f * position, CVector3f * euler_angles, int flame_type)
     MOV ESI,dword ptr [0x01cb5820]      ; 004b6fb5 | DAT_01cb5820
     INC ESI                             ; 004b6fbb
     ADD ESP,0x10                        ; 004b6fbc

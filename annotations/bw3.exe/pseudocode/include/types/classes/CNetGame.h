@@ -4,13 +4,29 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CSocket.h"
+#include "types/enums/EConnectionType.h"
+#include "types/enums/EHeroType.h"
+#include "types/enums/ENetworkMode.h"
+#include "types/structs/SNetPlayer.h"
+#include "types/structs/SNetworkAddr.h"
+#include "types/structs/SPlayerInput.h"
 
 // Structure: CNetGame
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x184 (388 bytes)
 #pragma pack(push, 1)
 typedef struct CNetGame {
-    char field_0[388]; // 0x0
+    EConnectionType connection_type; // 0x0, 0=none,1=server,2=client
+    ENetworkMode network_mode; // 0x4, 0=disconnected,1=lobby,2=syncing,3=in-game
+    char player_name[20]; // 0x8
+    int player_count; // 0x1c
+    SNetPlayer players[2]; // 0x20
+    int server_player_index; // 0x120
+    int local_player_index; // 0x124
+    char mission_name[80]; // 0x128
+    int has_pending_sim_frame; // 0x178
+    uint random_seed; // 0x17c
+    CSocket socket; // 0x180
 } CNetGame;
 #pragma pack(pop)
 

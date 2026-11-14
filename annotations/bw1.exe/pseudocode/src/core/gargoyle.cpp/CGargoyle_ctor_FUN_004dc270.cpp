@@ -11,33 +11,34 @@
 CGargoyle * __cdecl core_gargoyle_cpp_CGargoyle_ctor_FUN_004dc270(CGargoyle *this_ptr)
 
 {
-  uint uVar1;
-  uint uVar2;
+  float fVar1;
+  float fVar2;
   CGargoyle *pCVar3;
   
-  pCVar3 = (CGargoyle *)core_enemy_cpp_CEnemy_ctor_FUN_004a0410((CEnemy *)this_ptr);
-  *(byte ***)&pCVar3->field_0x154 = &g_CGargoyleVTable;
-  core_skeleton_cpp_FUN_00569f50(&pCVar3->field_0x158,"gargoyle.dfm");
-  *(uint *)&pCVar3->field_0x2fec = 0x3f19999a;
-  *(uint *)&pCVar3->field_0x2ff0 = 0x3f19999a;
-  *(uint *)&pCVar3->field_0x27a0 = 2;
-  *(uint *)&pCVar3->field_0x2538 = 0x41f00000;
-  *(uint *)&pCVar3->field_0x108 = 0xffff;
-  *(uint *)&pCVar3->field_0x10c = 0xffff;
-  *(uint *)&pCVar3->field_0x110 = 0xffff;
-  *(uint *)&pCVar3->field_0xc2b0 = 0xffff;
-  *(uint *)&pCVar3->field_0xc2b4 = 0xffff;
-  *(uint *)&pCVar3->field_0xc2b8 = 0xffff;
-  *(uint *)&pCVar3->field_0xc298 = 0x80;
-  *(uint *)&pCVar3->field_0xc29c = 0x80;
-  *(uint *)&pCVar3->field_0xc2a0 = 0x80;
-  *(uint *)&pCVar3->field_0xc2a4 = 0;
-  uVar1 = _DAT_00601000;
-  *(uint *)&pCVar3->field_0xc2bc = 0;
-  uVar2 = _DAT_00601004;
-  *(uint *)&pCVar3->field_0xc2c0 = 0;
-  *(uint *)&pCVar3->field_0x27c0 = 0;
-  *(uint *)&pCVar3->field_0x2ff4 = uVar1;
-  *(uint *)&pCVar3->field_0x2ff8 = uVar2;
+  pCVar3 = (CGargoyle *)core_enemy_cpp_CEnemy_ctor_FUN_004a0410(&this_ptr->base);
+  (pCVar3->base).base.base.vtable._ub = &g_CGargoyleVTable._ub;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
+            (&(pCVar3->base).base.model,"gargoyle.dfm");
+  (pCVar3->base).base.collision_cylinder_height = 0.6;
+  (pCVar3->base).base.collision_cylinder_radius = 0.6;
+  (pCVar3->base).base.blood_type = BLOOD_TYPE_NONE;
+  (pCVar3->base).base.hit_points = 30.0;
+  (pCVar3->base).base.base.scale.x = 0xffff;
+  (pCVar3->base).base.base.scale.y = 0xffff;
+  (pCVar3->base).base.base.scale.z = 0xffff;
+  (pCVar3->target_scale).x = 0xffff;
+  (pCVar3->target_scale).y = 0xffff;
+  (pCVar3->target_scale).z = 0xffff;
+  pCVar3->stone_red = 0x80;
+  pCVar3->stone_green = 0x80;
+  pCVar3->stone_blue = 0x80;
+  pCVar3->home_base = (CDemonActor *)0x0;
+  fVar1 = _DAT_00601000;
+  pCVar3->returning_home = 0;
+  fVar2 = _DAT_00601004;
+  pCVar3->petrify_timer = 0.0;
+  (pCVar3->base).base.gun_flame_ignitable = 0;
+  (pCVar3->base).base.ai_detection_range_min = fVar1;
+  (pCVar3->base).base.ai_detection_range_max = fVar2;
   return pCVar3;
 }

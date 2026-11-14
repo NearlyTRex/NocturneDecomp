@@ -2,15 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 36,
+    "complexity_score": 54,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 0,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 36,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 101
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 39,
+    "suspect_count": 1,
+    "suspect_types": [
+      "negative_offset"
+    ],
+    "total_lines": 104
   },
   "cross_references": [
     {
@@ -101,6 +103,26 @@
     },
     "pcode_op_count": 242
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005a5170",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005e5590",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0054c2b0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -117,7 +139,16 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 30,
+      "match": "pCVar4[-1].",
+      "severity": "mild",
+      "text": "pCVar4[-1].rescale_enabled = 0;",
+      "type": "negative_offset"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

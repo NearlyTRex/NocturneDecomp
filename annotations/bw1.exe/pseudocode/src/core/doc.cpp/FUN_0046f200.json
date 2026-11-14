@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 326,
-    "complexity_score": 1235,
+    "complexity_score": 1310,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 225,
-    "suspect_count": 97,
+    "pseudocode_lines": 230,
+    "suspect_count": 104,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -19,13 +19,13 @@
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 551
+    "total_lines": 556
   },
   "cross_references": [
     {
       "addr": "0046ea80",
       "from_addr": "0046f044",
-      "name": "core_doc.cpp_FUN_0046ea80",
+      "name": "core_doc.cpp_CDoc_makeDrawDecision_FUN_0046ea80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -46,7 +46,7 @@
     {
       "addr": "005240c0",
       "is_variadic": false,
-      "name": "core_motion.cpp_FUN_005240c0"
+      "name": "core_motion.cpp_CMotionList_findMotionIndex_FUN_005240c0"
     },
     {
       "addr": "00525110",
@@ -54,34 +54,19 @@
       "name": "core_motion.cpp_FUN_00525110"
     },
     {
-      "addr": "00569f30",
+      "addr": "005695e0",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_005695e0"
     },
     {
       "addr": "00568100",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_00568100"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00568100"
     },
     {
-      "addr": "005695e0",
+      "addr": "00569f30",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_005695e0"
-    },
-    {
-      "addr": "005b7940",
-      "is_variadic": false,
-      "name": "core_xform.cpp_FUN_005b7940"
-    },
-    {
-      "addr": "005b7af0",
-      "is_variadic": false,
-      "name": "core_xform.cpp_FUN_005b7af0"
-    },
-    {
-      "addr": "005b7b30",
-      "is_variadic": false,
-      "name": "core_xform.cpp_FUN_005b7b30"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30"
     },
     {
       "addr": "005b77b0",
@@ -94,9 +79,24 @@
       "name": "core_xform.cpp_negateFirstComponent_FUN_005b7750"
     },
     {
+      "addr": "005b7af0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_quaternionFromAngleX_FUN_005b7af0"
+    },
+    {
+      "addr": "005b7b30",
+      "is_variadic": false,
+      "name": "core_xform.cpp_quaternionFromAngleY_FUN_005b7b30"
+    },
+    {
       "addr": "005b7b70",
       "is_variadic": false,
       "name": "core_xform.cpp_quaternionFromAngleZ_FUN_005b7b70"
+    },
+    {
+      "addr": "005b7940",
+      "is_variadic": false,
+      "name": "core_xform.cpp_slerpQuaternion_FUN_005b7940"
     }
   ],
   "globals": [
@@ -161,7 +161,7 @@
       {
         "call_addr": "0046f044",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_0046ea80",
+        "caller": "core_doc.cpp_CDoc_makeDrawDecision_FUN_0046ea80",
         "estimated_params": 2,
         "instructions_analyzed": 4,
         "method": "push_count",
@@ -730,15 +730,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 115,
+      "line": 116,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_28 = core_motion_cpp_FUN_00525110(local_18,iVar5,*(uint *)(param_1 + 0x2c9c));",
+      "text": "local_28 = (float)core_motion_cpp_FUN_00525110(local_18,iVar5,*(uint *)(param_1 + 0x2c9c))",
       "type": "unnamed_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 130,
+      "line": 133,
       "match": "&stack0xfffffe90",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffe90 + (uint)bVar2 * 0xfffffffe * 4) =",
@@ -746,7 +746,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 132,
+      "line": 135,
       "match": "&stack0xfffffe94",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xfffffe94 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
@@ -754,7 +754,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 135,
+      "line": 138,
       "match": "&stack0xfffffe94",
       "severity": "moderate",
       "text": "((int)(&stack0xfffffe94 + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4) =",
@@ -762,7 +762,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 137,
+      "line": 140,
       "match": "&stack0xfffffe8c",
       "severity": "moderate",
       "text": "core_xform_cpp_multiplyQuaternion_FUN_005b77b0(&stack0xfffffe8c);",
@@ -770,7 +770,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 138,
+      "line": 141,
       "match": "&stack0xfffffe2c",
       "severity": "moderate",
       "text": "puVar3 = &stack0xfffffe2c;",
@@ -778,7 +778,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 141,
+      "line": 144,
       "match": "&stack0xfffffe80",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffe80 + (uint)bVar2 * 0xfffffffe * 4) =",
@@ -786,7 +786,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 143,
+      "line": 146,
       "match": "&stack0xfffffe84",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xfffffe84 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
@@ -794,7 +794,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 146,
+      "line": 149,
       "match": "&stack0xfffffe84",
       "severity": "moderate",
       "text": "((int)(&stack0xfffffe84 + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4) =",
@@ -802,15 +802,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 148,
+      "line": 151,
       "match": "DAT_006081e0",
       "severity": "mild",
-      "text": "core_xform_cpp_FUN_005b7940(&DAT_006081e0,puVar3,uVar6);",
+      "text": "core_xform_cpp_slerpQuaternion_FUN_005b7940(&DAT_006081e0,puVar3,uVar6);",
       "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",
-      "line": 149,
+      "line": 152,
       "match": "&stack0xfffffe7c",
       "severity": "moderate",
       "text": "puVar3 = &stack0xfffffe7c;",
@@ -818,7 +818,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 150,
+      "line": 153,
       "match": "&stack0xfffffe3c",
       "severity": "moderate",
       "text": "puVar4 = &stack0xfffffe3c;",
@@ -826,7 +826,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 152,
+      "line": 155,
       "match": "&stack0xfffffeb0",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffeb0 + (uint)bVar2 * 0xfffffffe * 4) =",
@@ -834,7 +834,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 154,
+      "line": 157,
       "match": "&stack0xfffffeb4",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xfffffeb4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
@@ -842,7 +842,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 157,
+      "line": 160,
       "match": "&stack0xfffffeb4",
       "severity": "moderate",
       "text": "((int)(&stack0xfffffeb4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4) =",
@@ -850,7 +850,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 159,
+      "line": 162,
       "match": "&stack0xfffffe2c",
       "severity": "moderate",
       "text": "core_xform_cpp_multiplyQuaternion_FUN_005b77b0(&stack0xfffffe2c,puVar4,puVar3);",
@@ -858,7 +858,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 161,
+      "line": 164,
       "match": "&stack0xfffffed0",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffed0 + (uint)bVar2 * 0xfffffffe * 4) =",
@@ -866,7 +866,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 167,
+      "line": 170,
       "match": "&stack0xfffffecc",
       "severity": "moderate",
       "text": "core_xform_cpp_multiplyQuaternion_FUN_005b77b0(&stack0xfffffecc);",
@@ -874,15 +874,31 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 169,
+      "line": 172,
       "match": "&stack0xfffffec0",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffec0 + (uint)bVar2 * 0xfffffffe * 4) =",
       "type": "stack_ref"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 174,
+      "match": "&stack0xfffffec4",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xfffffec4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 177,
+      "match": "&stack0xfffffec4",
+      "severity": "moderate",
+      "text": "((int)(&stack0xfffffec4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4) =",
+      "type": "stack_ref"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 175,
+      "line": 179,
       "match": "param_1",
       "severity": "mild",
       "text": "local_24 = param_1 + 0x808;",
@@ -890,7 +906,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 176,
+      "line": 180,
       "match": "&stack0xfffffebc",
       "severity": "moderate",
       "text": "core_xform_cpp_negateFirstComponent_FUN_005b7750(local_20 * 0x10 + local_24,&stack0xfffffebc);",
@@ -898,7 +914,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 178,
+      "line": 182,
       "match": "&stack0xfffffe20",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffe20 + (uint)bVar2 * 0xfffffffe * 4) =",
@@ -906,7 +922,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 179,
+      "line": 183,
       "match": "&stack0xfffffe60",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xfffffe60 + (uint)bVar2 * -8);",
@@ -914,7 +930,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 180,
+      "line": 184,
       "match": "&stack0xfffffe24",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xfffffe24 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
@@ -922,7 +938,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 181,
+      "line": 185,
       "match": "&stack0xfffffe64",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xfffffe64 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
@@ -930,7 +946,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 183,
+      "line": 187,
       "match": "&stack0xfffffe24",
       "severity": "moderate",
       "text": "((int)(&stack0xfffffe24 + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4) =",
@@ -938,7 +954,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 185,
+      "line": 189,
       "match": "&stack0xfffffe64",
       "severity": "moderate",
       "text": "((int)(&stack0xfffffe64 + (uint)bVar2 * -8 + (uint)bVar2 * -8) +",
@@ -946,7 +962,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 187,
+      "line": 191,
       "match": "&stack0xfffffe1c",
       "severity": "moderate",
       "text": "core_xform_cpp_multiplyQuaternion_FUN_005b77b0(&stack0xfffffe1c);",
@@ -954,23 +970,23 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 189,
+      "line": 195,
       "match": "&stack0xfffffe70",
       "severity": "moderate",
-      "text": "auStack_120[(uint)bVar2 * -2] = *(uint *)(&stack0xfffffe70 + (uint)bVar2 * -8);",
+      "text": "*(uint *)(&stack0xfffffe70 + (uint)bVar2 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 191,
+      "line": 196,
       "match": "&stack0xfffffe74",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xfffffe74 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "text": "*puVar3 = *(uint *)(&stack0xfffffe74 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 194,
+      "line": 199,
       "match": "&stack0xfffffe74",
       "severity": "moderate",
       "text": "((int)(&stack0xfffffe74 + (uint)bVar2 * -8 + (uint)bVar2 * -8) +",
@@ -978,7 +994,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 199,
+      "line": 204,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((float)_DAT_005da0ac < *(float *)(param_1 + 0x20060)) {",
@@ -986,7 +1002,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 208,
+      "line": 213,
       "match": "&stack0xfffffeac",
       "severity": "moderate",
       "text": "core_xform_cpp_multiplyQuaternion_FUN_005b77b0(&stack0xfffffeac,puVar3);",
@@ -994,15 +1010,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 217,
+      "line": 222,
       "match": "param_1",
       "severity": "mild",
-      "text": "(local_24 + iVar1,auStack_120 + 0x23,*(uint *)(param_1 + 0x20060));",
+      "text": "(local_24 + iVar1,auStack_110 + 0x1f,*(uint *)(param_1 + 0x20060));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 218,
+      "line": 223,
       "match": "param_1",
       "severity": "mild",
       "text": "puVar3 = (uint *)(iVar1 + 0x808 + param_1);",
@@ -1090,7 +1106,7 @@
     },
     {
       "description": "Pointer value `&stack0xfffffe90` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 130,
+      "line": 133,
       "match": "(int)&stack0xfffffe90",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffe90 + (uint)bVar2 * 0xfffffffe * 4) =",
@@ -1098,7 +1114,7 @@
     },
     {
       "description": "Pointer value `(&stack0xfffffe94 + (uint)bVar2 * -8 + (uint)bVar2 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 135,
+      "line": 138,
       "match": "(int)(&stack0xfffffe94 + (uint)bVar2 * -8 + (uint)bVar2 * -8)",
       "severity": "moderate",
       "text": "((int)(&stack0xfffffe94 + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4) =",
@@ -1106,7 +1122,7 @@
     },
     {
       "description": "Pointer value `&stack0xfffffe80` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 141,
+      "line": 144,
       "match": "(int)&stack0xfffffe80",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffe80 + (uint)bVar2 * 0xfffffffe * 4) =",
@@ -1114,7 +1130,7 @@
     },
     {
       "description": "Pointer value `(&stack0xfffffe84 + (uint)bVar2 * -8 + (uint)bVar2 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 146,
+      "line": 149,
       "match": "(int)(&stack0xfffffe84 + (uint)bVar2 * -8 + (uint)bVar2 * -8)",
       "severity": "moderate",
       "text": "((int)(&stack0xfffffe84 + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4) =",
@@ -1122,7 +1138,7 @@
     },
     {
       "description": "Pointer value `&stack0xfffffeb0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 152,
+      "line": 155,
       "match": "(int)&stack0xfffffeb0",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffeb0 + (uint)bVar2 * 0xfffffffe * 4) =",
@@ -1130,7 +1146,7 @@
     },
     {
       "description": "Pointer value `(&stack0xfffffeb4 + (uint)bVar2 * -8 + (uint)bVar2 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 157,
+      "line": 160,
       "match": "(int)(&stack0xfffffeb4 + (uint)bVar2 * -8 + (uint)bVar2 * -8)",
       "severity": "moderate",
       "text": "((int)(&stack0xfffffeb4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4) =",
@@ -1138,7 +1154,7 @@
     },
     {
       "description": "Pointer value `&stack0xfffffed0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 161,
+      "line": 164,
       "match": "(int)&stack0xfffffed0",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffed0 + (uint)bVar2 * 0xfffffffe * 4) =",
@@ -1146,15 +1162,23 @@
     },
     {
       "description": "Pointer value `&stack0xfffffec0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 169,
+      "line": 172,
       "match": "(int)&stack0xfffffec0",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffec0 + (uint)bVar2 * 0xfffffffe * 4) =",
       "type": "pointer_truncation"
     },
     {
+      "description": "Pointer value `(&stack0xfffffec4 + (uint)bVar2 * -8 + (uint)bVar2 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 177,
+      "match": "(int)(&stack0xfffffec4 + (uint)bVar2 * -8 + (uint)bVar2 * -8)",
+      "severity": "moderate",
+      "text": "((int)(&stack0xfffffec4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4) =",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Pointer value `&stack0xfffffe20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 178,
+      "line": 182,
       "match": "(int)&stack0xfffffe20",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffe20 + (uint)bVar2 * 0xfffffffe * 4) =",
@@ -1162,7 +1186,7 @@
     },
     {
       "description": "Pointer value `(&stack0xfffffe24 + (uint)bVar2 * -8 + (uint)bVar2 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 183,
+      "line": 187,
       "match": "(int)(&stack0xfffffe24 + (uint)bVar2 * -8 + (uint)bVar2 * -8)",
       "severity": "moderate",
       "text": "((int)(&stack0xfffffe24 + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4) =",
@@ -1170,15 +1194,31 @@
     },
     {
       "description": "Pointer value `(&stack0xfffffe64 + (uint)bVar2 * -8 + (uint)bVar2 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 185,
+      "line": 189,
       "match": "(int)(&stack0xfffffe64 + (uint)bVar2 * -8 + (uint)bVar2 * -8)",
       "severity": "moderate",
       "text": "((int)(&stack0xfffffe64 + (uint)bVar2 * -8 + (uint)bVar2 * -8) +",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `(&stack0xfffffe74 + (uint)bVar2 * -8 + (uint)bVar2 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&local_124` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 193,
+      "match": "(int)&local_124",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)((int)&local_124 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_124` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 194,
+      "match": "(int)&local_124",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_124 + (uint)bVar2 * -8 + 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `(&stack0xfffffe74 + (uint)bVar2 * -8 + (uint)bVar2 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 199,
       "match": "(int)(&stack0xfffffe74 + (uint)bVar2 * -8 + (uint)bVar2 * -8)",
       "severity": "moderate",
       "text": "((int)(&stack0xfffffe74 + (uint)bVar2 * -8 + (uint)bVar2 * -8) +",
@@ -1218,7 +1258,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 130,
+      "line": 133,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffe90 + (uint)bVar2 * 0xfffffffe * 4) =",
@@ -1226,7 +1266,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 141,
+      "line": 144,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffe80 + (uint)bVar2 * 0xfffffffe * 4) =",
@@ -1234,7 +1274,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 152,
+      "line": 155,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffeb0 + (uint)bVar2 * 0xfffffffe * 4) =",
@@ -1242,7 +1282,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 161,
+      "line": 164,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffed0 + (uint)bVar2 * 0xfffffffe * 4) =",
@@ -1250,7 +1290,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 169,
+      "line": 172,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffec0 + (uint)bVar2 * 0xfffffffe * 4) =",
@@ -1258,10 +1298,26 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 178,
+      "line": 182,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xfffffe20 + (uint)bVar2 * 0xfffffffe * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 193,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)((int)&local_124 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 194,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_124 + (uint)bVar2 * -8 + 4) =",
       "type": "pointer_cast"
     }
   ]

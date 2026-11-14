@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SBug * __cdecl core_bugs_cpp_SBug_arrdtor400_FUN_00427cc0(SBug *objs,uint flags)
+; SBug * __cdecl core_bugs_cpp_SBug_arrdtor400_FUN_00427cc0(SBug *this_ptr,uint flags)
 ;
 ; Parameters:
-; SBug *           Stack[0x4]:4   objs
+; SBug *           Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:

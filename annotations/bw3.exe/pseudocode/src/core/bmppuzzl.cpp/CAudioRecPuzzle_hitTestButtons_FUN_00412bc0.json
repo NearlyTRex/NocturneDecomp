@@ -1,0 +1,133 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 57,
+    "complexity_score": 40,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 25,
+    "suspect_count": 1,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
+    "total_lines": 82
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00412bc0",
+    "address_range": [
+      [
+        "00412bc0",
+        "00412c21"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bmppuzzl.cpp_CAudioRecPuzzle_hitTestButtons_FUN_00412bc0",
+    "signature": "int __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_hitTestButtons_FUN_00412bc0(CAudioRecPuzzle *this_ptr,int x,int y)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.977777777777778,
+    "instruction_count": 45,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 2,
+      "BRANCH": 1,
+      "CBRANCH": 6,
+      "COPY": 41,
+      "INT_ADD": 28,
+      "INT_AND": 26,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 29,
+      "INT_LESS": 6,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 13,
+      "INT_SUB": 10,
+      "INT_XOR": 2,
+      "LOAD": 22,
+      "POPCOUNT": 13,
+      "RETURN": 2,
+      "STORE": 5
+    },
+    "pcode_op_count": 224
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0059bad0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5652
+    },
+    "bw1.exe": {
+      "addr": "00416f10",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CAudioRecPuzzle *"
+      },
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar3->owner`). Replace `pCVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 26,
+      "match": "pCVar3 = (T *)&pCVar3->FIELD",
+      "severity": "moderate",
+      "text": "pCVar3 = (CAudioRecPuzzle *)&pCVar3->click_handled;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CAudioRecPuzzle",
+        "offset": 44,
+        "vtable_addr": "005dbe84"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

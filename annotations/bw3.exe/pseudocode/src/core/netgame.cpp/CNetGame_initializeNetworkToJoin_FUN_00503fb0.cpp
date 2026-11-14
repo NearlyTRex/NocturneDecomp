@@ -13,55 +13,61 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_00503fb0(CNetG
 {
   char cVar1;
   CGame *pCVar2;
-  uint uVar3;
+  SNetworkAddr *addr;
+  int iVar3;
   int iVar4;
-  int iVar5;
+  char *pcVar5;
   char *pcVar6;
-  char *pcVar7;
-  byte bVar8;
+  byte bVar7;
+  EHeroType hero_number;
+  EAimMode aim_mode;
   float fStack_5c;
-  uint uStack_58;
-  byte uStack_54;
+  SNetPacketHeader SStack_58;
   uint uStack_53;
   uint uStack_4f;
   char acStack_4b [20];
-  uint uStack_37;
-  uint uStack_33;
-  uint uStack_2c;
-  uint auStack_28 [4];
+  EHeroType EStack_37;
+  int iStack_33;
+  byte auStack_2c [16];
+  uint uStack_1c;
   char *pcStack_18;
   int iStack_14;
   
-  bVar8 = 0;
+  bVar7 = 0;
   core_netgame_cpp_CNetGame_disconnect_FUN_005043b0(this_ptr,0);
   pCVar2 = g_CGamePtr;
-  *(uint *)&this_ptr->field_0x1c = 0;
-  uVar3 = support_trisock_cpp_createNetworkAddr_FUN_0056f730
-                    (auStack_28,_DAT_02cfd89c,0x1ddf,&this_ptr->field_0x8,
-                     *(uint *)&pCVar2->field_0xd8,*(uint *)&pCVar2->field_0xdc);
-  uVar3 = core_netgame_cpp_FUN_00505950(this_ptr,uVar3);
-  *(uint *)&this_ptr->field_0x124 = uVar3;
-  iVar4 = core_netgame_cpp_FUN_00504270(this_ptr);
-  if (iVar4 == 0) {
+  this_ptr->player_count = 0;
+  aim_mode = pCVar2->aim_mode;
+  hero_number = pCVar2->hero_number;
+  pcVar6 = this_ptr->player_name;
+  support_trisock_cpp_createNetworkAddr_FUN_0056f730
+            ((SNetworkAddr *)(auStack_2c + 4),_DAT_02cfd89c,0x1ddf);
+  iVar3 = core_netgame_cpp_CNetGame_addPlayer_FUN_00505950
+                    (this_ptr,addr,pcVar6,hero_number,aim_mode);
+  this_ptr->local_player_index = iVar3;
+  iVar3 = core_netgame_cpp_CNetGame_initializeNetwork_FUN_00504270(this_ptr);
+  if (iVar3 == 0) {
     return 0;
   }
-  support_trisock_cpp_createNetworkAddr_FUN_0056f730(&uStack_2c,*server_ip,0x1ddf);
-  uVar3 = core_netgame_cpp_FUN_00505950(this_ptr,&uStack_2c,"TheServer",0,0);
-  *(uint *)this_ptr = 2;
-  *(uint *)&this_ptr->field_0x4 = 1;
-  iVar4 = _DAT_01da6478;
-  *(uint *)&this_ptr->field_0x120 = uVar3;
+  support_trisock_cpp_createNetworkAddr_FUN_0056f730
+            ((SNetworkAddr *)auStack_2c,(uint32_t *)*server_ip,0x1ddf);
+  iVar4 = core_netgame_cpp_CNetGame_addPlayer_FUN_00505950
+                    (this_ptr,(SNetworkAddr *)auStack_2c,"TheServer",0,0);
+  this_ptr->connection_type = CONNECTION_CLIENT;
+  this_ptr->network_mode = NET_MODE_LOBBY;
+  iVar3 = _DAT_01da6478;
+  this_ptr->server_player_index = iVar4;
   _DAT_01da647c = 0;
-  iVar4 = iVar4 + -0x50000;
+  iVar3 = iVar3 + -0x50000;
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047cfa0
             (g_CEditorToolsPtr,"Contacting server.  Press ESC to give up...");
-  auStack_28[3] = DAT_0060728c;
+  uStack_1c = DAT_0060728c;
   DAT_0060728c = 0;
-  if (-1 < *(int *)&this_ptr->field_0x120) {
-    pcStack_18 = &this_ptr->field_0x8;
+  if (-1 < this_ptr->server_player_index) {
+    pcStack_18 = this_ptr->player_name;
     do {
-      iStack_14 = _DAT_01da6478 - iVar4;
-      fStack_5c = (float)(_DAT_01da6478 - iVar4) * (float)_DAT_005ca5a1;
+      iStack_14 = _DAT_01da6478 - iVar3;
+      fStack_5c = (float)(_DAT_01da6478 - iVar3) * (float)_DAT_005ca5a1;
       if (fStack_5c < 0.0) {
         fStack_5c = 0.0;
       }
@@ -69,31 +75,31 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_00503fb0(CNetG
         fStack_5c = 30.0;
       }
       if ((float)_DAT_005ca5b1 < fStack_5c) {
-        uStack_58 = 0x29;
-        uStack_54 = 1;
-        uStack_53 = uStack_2c;
-        (&uStack_4f)[(uint)bVar8 * -2] = auStack_28[(uint)bVar8 * -2];
-        uStack_37 = *(uint *)(&this_ptr->field_0x34 + *(int *)&this_ptr->field_0x124 * 0x80);
-        uStack_33 = *(uint *)(&this_ptr->field_0x38 + *(int *)&this_ptr->field_0x124 * 0x80);
-        pcVar7 = acStack_4b;
-        pcVar6 = pcStack_18;
+        SStack_58.size = 0x29;
+        SStack_58.type = PACKET_PLAYER_ANNOUNCE;
+        uStack_53 = auStack_2c._0_4_;
+        (&uStack_4f)[(uint)bVar7 * -2] = *(uint *)(auStack_2c + (uint)bVar7 * -8 + 4);
+        EStack_37 = this_ptr->players[this_ptr->local_player_index].hero_number;
+        iStack_33 = this_ptr->players[this_ptr->local_player_index].aim_mode;
+        pcVar6 = acStack_4b;
+        pcVar5 = pcStack_18;
         do {
-          cVar1 = *pcVar6;
-          *pcVar7 = cVar1;
+          cVar1 = *pcVar5;
+          *pcVar6 = cVar1;
           if (cVar1 == '\0') break;
-          cVar1 = pcVar6[1];
+          cVar1 = pcVar5[1];
+          pcVar5 = pcVar5 + 2;
+          pcVar6[1] = cVar1;
           pcVar6 = pcVar6 + 2;
-          pcVar7[1] = cVar1;
-          pcVar7 = pcVar7 + 2;
         } while (cVar1 != '\0');
         core_netgame_cpp_CNetGame_send_FUN_00505870
-                  (this_ptr,*(int *)&this_ptr->field_0x120,(SNetPacketHeader *)&uStack_58);
-        iVar4 = _DAT_01da6478;
+                  (this_ptr,this_ptr->server_player_index,&SStack_58);
+        iVar3 = _DAT_01da6478;
       }
-      wincore_wddvmem_cpp_FUN_0057a8a0();
+      wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
       core_netgame_cpp_CNetGame_receivePackets_FUN_00504c70(this_ptr);
       if (_DAT_01da647c == 1) {
-        DAT_0060728c = auStack_28[3];
+        DAT_0060728c = uStack_1c;
         return 1;
       }
       if (_DAT_01da647c < 3) {
@@ -117,13 +123,13 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_00503fb0(CNetG
           goto LAB_00504239;
         }
       }
-      iVar5 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,1);
-      if (iVar5 != 0) {
+      iVar4 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,1);
+      if (iVar4 != 0) {
 LAB_00504239:
         core_netgame_cpp_CNetGame_disconnect_FUN_005043b0(this_ptr,0);
         return 0;
       }
-    } while (-1 < *(int *)&this_ptr->field_0x120);
+    } while (-1 < this_ptr->server_player_index);
   }
   core_netgame_cpp_CNetGame_disconnect_FUN_005043b0(this_ptr,1);
   return 0;

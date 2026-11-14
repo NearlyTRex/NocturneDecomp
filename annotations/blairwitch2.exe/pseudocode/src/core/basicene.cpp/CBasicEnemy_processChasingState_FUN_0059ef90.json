@@ -1,0 +1,177 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 130,
+    "complexity_score": 68,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 53,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_type_propagation"
+    ],
+    "total_lines": 183
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0059ef90",
+    "address_range": [
+      [
+        "0059ef90",
+        "0059f0d3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_basicene.cpp_CBasicEnemy_processChasingState_FUN_0059ef90",
+    "signature": "void __cdecl core_basicene_cpp_CBasicEnemy_processChasingState_FUN_0059ef90(CBasicEnemy *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "00423000",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_walkToPoint_FUN_00423000"
+    },
+    {
+      "addr": "00503620",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_00503620"
+    },
+    {
+      "addr": "0059d880",
+      "is_variadic": false,
+      "name": "core_muzzle.cpp_FUN_0059d880"
+    },
+    {
+      "addr": "0059d8e0",
+      "is_variadic": false,
+      "name": "core_muzzle.cpp_FUN_0059d8e0"
+    },
+    {
+      "addr": "0059db90",
+      "is_variadic": false,
+      "name": "core_muzzle.cpp_FUN_0059db90"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ef970",
+      "name": "s_ChaseComplete_005ef970",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.128440366972477,
+    "instruction_count": 109,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 3,
+      "CALL": 5,
+      "CALLIND": 3,
+      "CBRANCH": 8,
+      "COPY": 155,
+      "FLOAT2FLOAT": 10,
+      "FLOAT_ADD": 2,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 4,
+      "FLOAT_NAN": 4,
+      "FLOAT_SQRT": 2,
+      "FLOAT_SUB": 4,
+      "INT_ADD": 53,
+      "INT_AND": 52,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 39,
+      "INT_LEFT": 8,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 19,
+      "INT_SUB": 31,
+      "INT_ZEXT": 8,
+      "LOAD": 39,
+      "POPCOUNT": 19,
+      "RETURN": 4,
+      "STORE": 29
+    },
+    "pcode_op_count": 559
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBasicEnemy *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 376,
+        "vtable_addr": "005fec04"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 376,
+        "vtable_addr": "005ff904"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 376,
+        "vtable_addr": "00600104"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 376,
+        "vtable_addr": "00600314"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 376,
+        "vtable_addr": "005ff724"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 17
+  }
+}

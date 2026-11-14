@@ -44,11 +44,11 @@
 ;   core_main.c_FUN_004e4500
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00546ae0
 ;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_00544cd0
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0
 ;   core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005474b0
 ;   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_00544e60
 ;   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005471f0
-;   core_skeleton.cpp_FUN_005469a0
-;   crt_unknown.c_FUN_005b8be2
+;   crt_memory.c_operator_new_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -79,8 +79,8 @@ section .text
     RET                                 ; 005431eb
     PUSH 0x22b4                         ; 005431ec
         ;   Label: LAB_005431ec
-    CALL crt_unknown.c_FUN_005b8be2     ; 005431f1
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 005431f1
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 005431f6
     TEST EAX,EAX                        ; 005431f9
     JZ 0x00543206                       ; 005431fb
@@ -128,8 +128,8 @@ section .text
     PUSH EBX                            ; 00543264
     LEA ESI,[ESP + 0x18]                ; 00543265
     LEA EDI,[ESP + 0xc]                 ; 00543269
-    CALL core_skeleton.cpp_FUN_005469a0 ; 0054326d
-        ;   XREF to: 005469a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_005469a0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0 ; 0054326d
+        ;   XREF to: 005469a0 (UNCONDITIONAL_CALL)  ; CVector3f * core_skeleton.cpp_CDeformableModelInstance_getBoneModelPosition_FUN_005469a0(CDeformableModelInstance * this_ptr, int bone_index, CVector3f * out_position)
     ADD ESP,0x8                         ; 00543272
     LEA ESI,[ESP + 0x10]                ; 00543275
     MOV EAX,dword ptr [ESP + 0x80]      ; 00543279

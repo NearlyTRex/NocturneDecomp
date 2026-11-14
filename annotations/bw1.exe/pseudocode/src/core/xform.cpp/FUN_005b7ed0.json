@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 98,
     "complexity_score": 293,
-    "cross_reference_count": 15,
+    "cross_reference_count": 16,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
@@ -25,25 +25,31 @@
     {
       "addr": "0040f4d0",
       "from_addr": "0040f69e",
-      "name": "core_baron.cpp_FUN_0040f4d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0041d540",
-      "from_addr": "0041d6d5",
-      "name": "core_boneguy.cpp_FUN_0041d540",
+      "name": "core_baron.cpp_CBaron_process_FUN_0040f4d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0041d760",
       "from_addr": "0041d795",
-      "name": "core_boneguy.cpp_FUN_0041d760",
+      "name": "core_boneguy.cpp_CBoneGuy_beginRecombine_FUN_0041d760",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0041d540",
+      "from_addr": "0041d6d5",
+      "name": "core_boneguy.cpp_CBoneGuy_explode_FUN_0041d540",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00444550",
+      "from_addr": "0044484c",
+      "name": "core_colonel.cpp_CColonel_process_FUN_00444550",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004472a0",
       "from_addr": "0044743a",
-      "name": "core_construc.cpp_FUN_004472a0",
+      "name": "core_construc.cpp_CConstruct_explode_FUN_004472a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -59,6 +65,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00460cb0",
+      "from_addr": "00460e11",
+      "name": "core_djien.cpp_FUN_00460cb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0046caa0",
       "from_addr": "0046d42e",
       "name": "core_doc.cpp_FUN_0046caa0",
@@ -67,19 +79,19 @@
     {
       "addr": "004c89c0",
       "from_addr": "004c8a0b",
-      "name": "core_gabriela.cpp_FUN_004c89c0",
+      "name": "core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e9250",
       "from_addr": "004e9537",
-      "name": "core_haystack.cpp_FUN_004e9250",
+      "name": "core_haystack.cpp_CHaystack_process_FUN_004e9250",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f0e50",
       "from_addr": "004f11ac",
-      "name": "core_icepick.cpp_FUN_004f0e50",
+      "name": "core_icepick.cpp_CIcePick_process_FUN_004f0e50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -91,25 +103,19 @@
     {
       "addr": "00540df0",
       "from_addr": "00541221",
-      "name": "core_scat.cpp_FUN_00540df0",
+      "name": "core_scat.cpp_CScat_process_FUN_00540df0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00588ad0",
       "from_addr": "00588de6",
-      "name": "core_stranger.cpp_FUN_00588ad0",
+      "name": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00588ad0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00593150",
       "from_addr": "005934b0",
-      "name": "core_svetlana.cpp_FUN_00593150",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00460cb0",
-      "from_addr": "00460e11",
-      "name": "unkafter_djien.cpp_FUN_00460cb0",
+      "name": "core_svetlana.cpp_CSvetlana_process_FUN_00593150",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -141,12 +147,12 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 17,
+    "call_site_count": 18,
     "call_sites": [
       {
         "call_addr": "0040f69e",
         "call_type": "direct",
-        "caller": "core_baron.cpp_FUN_0040f4d0",
+        "caller": "core_baron.cpp_CBaron_process_FUN_0040f4d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -173,7 +179,7 @@
       {
         "call_addr": "004c8a0b",
         "call_type": "direct",
-        "caller": "core_gabriela.cpp_FUN_004c89c0",
+        "caller": "core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -187,7 +193,7 @@
       {
         "call_addr": "004c8ab4",
         "call_type": "direct",
-        "caller": "core_gabriela.cpp_FUN_004c89c0",
+        "caller": "core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -200,7 +206,7 @@
       {
         "call_addr": "004c9094",
         "call_type": "direct",
-        "caller": "core_gabriela.cpp_FUN_004c89c0",
+        "caller": "core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -214,7 +220,7 @@
       {
         "call_addr": "004e9537",
         "call_type": "direct",
-        "caller": "core_haystack.cpp_FUN_004e9250",
+        "caller": "core_haystack.cpp_CHaystack_process_FUN_004e9250",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -228,7 +234,7 @@
       {
         "call_addr": "004f11ac",
         "call_type": "direct",
-        "caller": "core_icepick.cpp_FUN_004f0e50",
+        "caller": "core_icepick.cpp_CIcePick_process_FUN_004f0e50",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -241,7 +247,7 @@
       {
         "call_addr": "00541221",
         "call_type": "direct",
-        "caller": "core_scat.cpp_FUN_00540df0",
+        "caller": "core_scat.cpp_CScat_process_FUN_00540df0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -254,7 +260,7 @@
       {
         "call_addr": "00588de6",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_FUN_00588ad0",
+        "caller": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00588ad0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -268,7 +274,7 @@
       {
         "call_addr": "005934b0",
         "call_type": "direct",
-        "caller": "core_svetlana.cpp_FUN_00593150",
+        "caller": "core_svetlana.cpp_CSvetlana_process_FUN_00593150",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -314,6 +320,20 @@
       "STORE": 26
     },
     "pcode_op_count": 567
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00594380",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005860b0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 68,
@@ -601,7 +621,7 @@
       "type": "pointer_cast"
     },
     {
-      "call_site_count": 17,
+      "call_site_count": 18,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 3,

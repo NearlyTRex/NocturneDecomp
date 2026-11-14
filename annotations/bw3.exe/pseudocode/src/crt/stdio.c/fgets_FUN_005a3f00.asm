@@ -1,19 +1,23 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * __cdecl crt_stdio_c_fgets_FUN_005a3f00(char *param_1,int param_2,int param_3)
+; char * __cdecl crt_stdio_c_fgets_FUN_005a3f00(char *str,int num,_FILE *stream)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   str
+; int              Stack[0x8]:4   num
+; _FILE *          Stack[0xc]:4   stream
 ;
 ; XREF[19]:
-;   core_box.cpp_FUN_0041d480 at 0041d4a2
-;   core_cloth.cpp_FUN_0043c330 at 0043c37f
+;   core_box.cpp_CBox_loadFromFile_FUN_0041d480 at 0041d4a2
+;   core_cloth.cpp_CCloth_load_FUN_0043c330 at 0043c37f
 ;   core_dcamera.cpp_loadCameraFog_FUN_00450c00 at 00450c21
 ;   core_event.cpp_CEventList_loadState_FUN_00495490 at 004954bc
 ;   core_fire.cpp_CFireEffect_load_FUN_004a4030 at 004a4064
-;   core_fldnotes.cpp_FUN_004aa810 at 004aa921
+;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004aa810 at 004aa921
 ;   core_game.cpp_CGame_rollCredits_FUN_004c02a0 at 004c0635
 ;   core_game.cpp_FUN_004bdfb0 at 004be3dd
-;   core_gore.cpp_FUN_004cf010 at 004cf02c
+;   core_gore.cpp_CGore_load_FUN_004cf010 at 004cf02c
 ;   core_inv.cpp_CInventory_load_FUN_004dc750 at 004dc78c
 ;   ... and 9 more
 ;
@@ -56,7 +60,7 @@ section .text
         ;   XREF to: 005a3f56 (CONDITIONAL_JUMP)  ; LAB_005a3f56
     PUSH EDI                            ; 005a3f3a
     CALL crt_stdio.c_fgetc_FUN_005a32b0 ; 005a3f3b
-        ;   XREF to: 005a32b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005a32b0()
+        ;   XREF to: 005a32b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005a32b0(_FILE * file)
     ADD ESP,0x4                         ; 005a3f40
     MOV dword ptr [ESP],EAX             ; 005a3f43
     CMP EAX,-0x1                        ; 005a3f46

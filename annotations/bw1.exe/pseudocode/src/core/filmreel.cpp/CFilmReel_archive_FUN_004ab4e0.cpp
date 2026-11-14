@@ -9,12 +9,11 @@
 void __cdecl core_filmreel_cpp_CFilmReel_archive_FUN_004ab4e0(CFilmReel *this_ptr)
 
 {
-  core_actor_cpp_CDemonActor_archive_FUN_0040c040((CDemonActor *)this_ptr);
-  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b770
-            (&this_ptr->field_0x158,"modelName");
+  core_actor_cpp_CDemonActor_archive_FUN_0040c040(&this_ptr->base);
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b770(&this_ptr->model,"modelName");
   if (g_CFilmReelClassVersion < 2) {
     return;
   }
-  core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x2d8,"movieName");
+  core_actor_cpp_archiveString_FUN_0040b440(this_ptr->movie_name,"movieName");
   return;
 }

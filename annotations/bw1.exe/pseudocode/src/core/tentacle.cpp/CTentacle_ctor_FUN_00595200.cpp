@@ -11,13 +11,14 @@ CTentacle * __cdecl core_tentacle_cpp_CTentacle_ctor_FUN_00595200(CTentacle *thi
 {
   CTentacle *pCVar1;
   
-  pCVar1 = (CTentacle *)core_enemy_cpp_CEnemy_ctor_FUN_004a0410((CEnemy *)this_ptr);
-  *(byte ***)&pCVar1->field_0x154 = &g_CTentacleVTable;
-  core_skeleton_cpp_FUN_00569f50(&pCVar1->field_0x158,"tentacle.dfm");
-  *(uint *)&pCVar1->field_0x2ff4 = 0x42480000;
-  *(uint *)&pCVar1->field_0x2ff8 = 0x42c80000;
-  *(uint *)&pCVar1->field_0xc268 = 0;
-  *(uint *)&pCVar1->field_0xc26c = 0;
-  *(uint *)&pCVar1->field_0xc270 = 0;
+  pCVar1 = (CTentacle *)core_enemy_cpp_CEnemy_ctor_FUN_004a0410(&this_ptr->base);
+  (pCVar1->base).base.base.vtable._ub = &g_CTentacleVTable._ub;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
+            (&(pCVar1->base).base.model,"tentacle.dfm");
+  (pCVar1->base).base.ai_detection_range_min = 50.0;
+  (pCVar1->base).base.ai_detection_range_max = 100.0;
+  pCVar1->wait_timer = 0.0;
+  pCVar1->chase_timer = 0.0;
+  pCVar1->grave_actor = (CDemonActor *)0x0;
   return pCVar1;
 }

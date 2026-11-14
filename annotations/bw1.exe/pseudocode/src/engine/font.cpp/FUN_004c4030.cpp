@@ -93,7 +93,7 @@ LAB_004c40b3:
   if (iVar8 < param_4 + -1) {
     pcVar7[1] = '\0';
     *pcVar7 = cVar1;
-    iVar3 = engine_font_cpp_FUN_004c3ea0(param_1,param_3);
+    iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(param_1,param_3);
     if (iVar3 <= param_5) {
       iVar8 = iVar8 + 1;
       pcVar7 = pcVar7 + 1;

@@ -7,16 +7,16 @@
 ; CSfxSlot *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[11]:
+;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00553960 at 00553c18
 ;   sound_sndmain.cpp_CSfxSlot_compute_FUN_00554430 at 00554713
-;   sound_sndmain.cpp_FUN_00552f10 at 00552f9b
-;   sound_sndmain.cpp_FUN_00553960 at 00553c18
-;   sound_sndmain.cpp_FUN_00554920 at 00554a65
-;   sound_sndmain.cpp_FUN_00555410 at 00555489
-;   sound_sndmain.cpp_FUN_00556240 at 005564bb
-;   sound_sndmain.cpp_FUN_00556c60 at 00556c73
-;   sound_sndmain.cpp_FUN_00556db0 at 00556e07
-;   sound_sndmain.cpp_FUN_00557470 at 005574b3
-;   sound_sndmain.cpp_FUN_00558f20 at 005590d4
+;   sound_sndmain.cpp_CSfxSlot_mix_FUN_00554920 at 00554a65
+;   sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_00555410 at 00555489
+;   sound_sndmain.cpp_enableSfxChannel_FUN_00556db0 at 00556e07
+;   sound_sndmain.cpp_flushSoundChanges_FUN_00558f20 at 005590d4
+;   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_00552f10 at 00552f9b
+;   sound_sndmain.cpp_killAllSfx_FUN_00556c60 at 00556c73
+;   sound_sndmain.cpp_killSfxByName_FUN_00557470 at 005574b3
+;   sound_sndmain.cpp_killSfx_FUN_00556be0 at 00556bf5
 ;   ... and 1 more
 ;
 ; Referenced Globals:
@@ -39,9 +39,9 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
-;   engine_console.cpp_FUN_00441ff0
+;   engine_console.cpp_CConsole_printf_FUN_00441ff0
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00553520
-;   sound_sndmain.cpp_FUN_005514c0
+;   sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_005514c0
 ;
 ; *****************************************************************************
 
@@ -70,8 +70,8 @@ section .text
     PUSH 0x5d328b                       ; 0055529c | = "Killing sfx %s\n"
     MOV EAX,[0x005f1690]                ; 005552a1 | g_CConsolePtr
     PUSH EAX                            ; 005552a6 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 005552a7
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 005552a7
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 005552ac
     CMP dword ptr [EBX + 0x60],0x0      ; 005552af
         ;   Label: LAB_005552af
@@ -146,8 +146,8 @@ section .text
     ADD ESP,0x4                         ; 0055538d
     PUSH 0x0                            ; 00555390
         ;   Label: LAB_00555390
-    CALL sound_sndmain.cpp_FUN_005514c0 ; 00555392
-        ;   XREF to: 005514c0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005514c0(int requested_bytes)
+    CALL sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_005514c0 ; 00555392
+        ;   XREF to: 005514c0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_005514c0(int requested_bytes)
     ADD ESP,0x4                         ; 00555397
     MOV dword ptr [ESI + 0x160],0xffffffff ; 0055539a
     MOV dword ptr [EBX + 0x118],0x0     ; 005553a4

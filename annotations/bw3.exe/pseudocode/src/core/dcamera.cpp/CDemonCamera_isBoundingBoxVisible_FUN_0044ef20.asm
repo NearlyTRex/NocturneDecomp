@@ -84,7 +84,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_005376e0 at 0053782a
+;   core_set.cpp_CDemonSet_gatherVisibleLights_FUN_005376e0 at 0053782a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b9f5e
@@ -107,8 +107,8 @@
 ; Called Functions:
 ;   crt_math.c_round_FUN_005a3120
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
-;   engine_matrix.c_matrixPush_FUN_0046d070
-;   engine_matrix.c_pop_FUN_0046d080
+;   engine_drender.cpp_matrixPush_FUN_0046d070
+;   engine_drender.cpp_pop_FUN_0046d080
 ;   engine_special.cpp_FUN_005632a3
 ;
 ; *****************************************************************************
@@ -127,8 +127,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x144]     ; 0044ef3f
     MOV EDX,dword ptr [0x005f2afc]      ; 0044ef46 | DAT_005f2afc
     PUSH EDX                            ; 0044ef4c | DAT_01bdd7e4
-    CALL engine_matrix.c_matrixPush_FUN_0046d070 ; 0044ef4d
-        ;   XREF to: 0046d070 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_matrixPush_FUN_0046d070()
+    CALL engine_drender.cpp_matrixPush_FUN_0046d070 ; 0044ef4d
+        ;   XREF to: 0046d070 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_matrixPush_FUN_0046d070()
     FLD float ptr [EBX + 0x4]           ; 0044ef52
     FSUB float ptr [EBP]                ; 0044ef55
     FLD double ptr [0x005b9f5e]         ; 0044ef58 | DAT_005b9f5e
@@ -462,13 +462,13 @@ section .text
     MOV EDI,dword ptr [0x005f2afc]      ; 0044f49c | DAT_005f2afc
         ;   Label: LAB_0044f49c
     PUSH EDI                            ; 0044f4a2 | DAT_01bdd7e4
-    CALL engine_matrix.c_pop_FUN_0046d080 ; 0044f4a3
-        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046d080()
+    CALL engine_drender.cpp_pop_FUN_0046d080 ; 0044f4a3
+        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046d080()
     ADD ESP,0x4                         ; 0044f4a8
     MOV EBP,dword ptr [0x005f2afc]      ; 0044f4ab | DAT_005f2afc
     PUSH EBP                            ; 0044f4b1 | DAT_01bdd7e4
-    CALL engine_matrix.c_pop_FUN_0046d080 ; 0044f4b2
-        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046d080()
+    CALL engine_drender.cpp_pop_FUN_0046d080 ; 0044f4b2
+        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046d080()
     ADD ESP,0x4                         ; 0044f4b7
     MOV EAX,EBX                         ; 0044f4ba
     ADD ESP,0x120                       ; 0044f4bc

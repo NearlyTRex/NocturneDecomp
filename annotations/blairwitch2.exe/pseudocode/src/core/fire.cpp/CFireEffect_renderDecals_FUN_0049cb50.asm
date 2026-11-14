@@ -17,14 +17,14 @@
 ; Referenced Globals:
 ;   undefined4 DAT_01c558e0
 ;   undefined4 DAT_01c594e8
-;   undefined4 g_StakePool[0].field600_0x258
-;   undefined4 g_StakePool[1].field600_0x258
+;   undefined4 g_StakePool[0].physics_box.is_valid
+;   undefined4 g_StakePool[1].physics_box.is_valid
 ;
 ; Called Functions:
 ;   core_fire.cpp_CBulletHole_render_FUN_00493dd0
 ;   core_fire.cpp_CBulletHole_setupRenderState_FUN_00493d50
 ;   core_fire.cpp_CCrater_render_FUN_00499a00
-;   core_fire.cpp_FUN_004944c0
+;   core_fire.cpp_CStake_render_FUN_004944c0
 ;
 ; *****************************************************************************
 
@@ -77,7 +77,7 @@ section .text
         ;   XREF to: 0049cbfc (CONDITIONAL_JUMP)  ; LAB_0049cbfc
     MOV EDI,0x1c594f0                   ; 0049cbb7
     XOR EBX,EBX                         ; 0049cbbc
-    MOV EAX,dword ptr [EDI + 0x258]     ; 0049cbbe | g_StakePool[0].field600_0x258 | g_StakePool[1].field600_0x258
+    MOV EAX,dword ptr [EDI + 0x258]     ; 0049cbbe | g_StakePool[0].physics_box.is_valid | g_StakePool[1].physics_box.is_valid
         ;   Label: LAB_0049cbbe
     TEST EAX,EAX                        ; 0049cbc4
     JZ 0x0049cc87                       ; 0049cbc6
@@ -89,8 +89,8 @@ section .text
         ;   Label: LAB_0049cbd5
     ADD EAX,EBX                         ; 0049cbda
     PUSH EAX                            ; 0049cbdc
-    CALL core_fire.cpp_FUN_004944c0     ; 0049cbdd
-        ;   XREF to: 004944c0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_004944c0(CStake * this_ptr)
+    CALL core_fire.cpp_CStake_render_FUN_004944c0 ; 0049cbdd
+        ;   XREF to: 004944c0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CStake_render_FUN_004944c0(CStake * this_ptr)
     ADD ESP,0x4                         ; 0049cbe2
     MOV ECX,dword ptr [0x01c594e8]      ; 0049cbe5 | DAT_01c594e8
         ;   Label: LAB_0049cbe5

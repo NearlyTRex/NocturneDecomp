@@ -11,9 +11,9 @@
 ;   undefined4 DAT_02d252a4
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005a3650
-;   crt_unknown.c_FUN_005a3660
+;   crt_memory.c_malloc_FUN_005a3650
 ;   crt_unknown.c_FUN_005acde0
+;   crt_unknown.c_InternalHeapAlloc_FUN_005a3660
 ;
 ; *****************************************************************************
 
@@ -35,15 +35,15 @@ section .text
         ;   XREF to: 005acea1 (CONDITIONAL_JUMP)  ; LAB_005acea1
     PUSH 0x1d                           ; 005ace3b
         ;   Label: LAB_005ace3b
-    CALL crt_unknown.c_FUN_005a3660     ; 005ace3d
-        ;   XREF to: 005a3660 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3660()
+    CALL crt_unknown.c_InternalHeapAlloc_FUN_005a3660 ; 005ace3d
+        ;   XREF to: 005a3660 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_InternalHeapAlloc_FUN_005a3660(ulong size)
     ADD ESP,0x4                         ; 005ace42
     TEST EAX,EAX                        ; 005ace45
     JNZ 0x005ace6a                      ; 005ace47
         ;   XREF to: 005ace6a (CONDITIONAL_JUMP)  ; LAB_005ace6a
     PUSH 0x1d                           ; 005ace49
-    CALL crt_unknown.c_FUN_005a3650     ; 005ace4b
-        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_FUN_005a3650(ulong size)
+    CALL crt_memory.c_malloc_FUN_005a3650 ; 005ace4b
+        ;   XREF to: 005a3650 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_malloc_FUN_005a3650(ulong size)
     ADD ESP,0x4                         ; 005ace50
     MOV ESI,EAX                         ; 005ace53
     TEST EAX,EAX                        ; 005ace55

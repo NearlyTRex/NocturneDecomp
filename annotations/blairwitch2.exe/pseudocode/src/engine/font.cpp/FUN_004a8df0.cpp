@@ -19,29 +19,29 @@ int engine_font_cpp_FUN_004a8df0(CBitFont *param_1,byte *param_2,int param_3,int
   float10 fVar4;
   byte *local_14;
   
-  if ((*(int *)(param_1 + 0x420c) != 0) && (_DAT_01c37788 != 0)) {
-    if (*(int *)(param_1 + 0x4210) == 0) {
-      iVar1 = unkafter_font_cpp_FUN_004ab840(param_1,param_2,param_3,param_4,param_5);
+  if ((param_1->use_3d_rendering != 0) && (_DAT_01c37788 != 0)) {
+    if (param_1->win_font_enabled == 0) {
+      iVar1 = engine_font_cpp_FUN_004ab840(param_1,param_2,param_3,param_4,param_5);
     }
     else {
-      iVar1 = unkafter_palette_cpp_FUN_00510cd0
-                        (*(uint *)(param_1 + 0x4214),param_2,param_3,param_4,param_5,param_6);
+      iVar1 = engine_palette_cpp_FUN_00510cd0
+                        (param_1->win_font_helper,param_2,param_3,param_4,param_5,param_6);
     }
     return iVar1;
   }
-  if (*(int *)(param_1 + 0x4210) == 0) {
+  if (param_1->win_font_enabled == 0) {
     iVar1 = param_3;
-    if (*(int *)(param_1 + 0x420c) != 0) {
+    if (param_1->use_3d_rendering != 0) {
       fVar4 = (float10)_DAT_01d09860 * (float10)_DAT_005d69dd;
       round();
-      *(uint *)(param_1 + 0x1de0) = extraout_ECX | (int)ROUND(fVar4) << 0x18;
+      param_1->accel_color = extraout_ECX | (int)ROUND(fVar4) << 0x18;
     }
     while (character_code = (uint)*param_2, character_code != 0) {
       if (character_code == 0xd) {
         param_2 = param_2 + 1;
       }
       else if (character_code == 10) {
-        param_4 = param_4 + *(int *)(param_1 + 0x41f0) + *(int *)(param_1 + 0x41f8);
+        param_4 = param_4 + param_1->current_line_height + param_1->line_spacing;
         param_2 = param_2 + 1;
         iVar1 = param_3;
       }
@@ -68,19 +68,19 @@ LAB_004a8e88:
       if (pbVar3 != (byte *)0x0) {
         *pbVar3 = 0;
       }
-      iVar1 = (**(code **)(*(int *)(*(int *)(param_1 + 0x4214) + 0x6a44) + 4))
-                        (*(int *)(param_1 + 0x4214),local_14,param_3,param_4,param_5,param_6);
+      iVar1 = (*((param_1->win_font_helper->base).vtable)->drawText)
+                        (param_1->win_font_helper,local_14,param_3,param_4,param_5,param_6);
       if (iVar1 == -1) {
-        *(uint *)(param_1 + 0x4210) = 0;
+        param_1->win_font_enabled = 0;
         iVar1 = engine_font_cpp_FUN_004a8df0(param_1,local_14,param_3,param_4,param_5,param_6);
-        *(uint *)(param_1 + 0x4210) = 1;
+        param_1->win_font_enabled = 1;
       }
       if (pbVar3 == (byte *)0x0) {
         return iVar1;
       }
       param_2 = pbVar3 + 1;
       *pbVar3 = 10;
-      param_4 = param_4 + *(int *)(param_1 + 0x41f0) + *(int *)(param_1 + 0x41f8);
+      param_4 = param_4 + param_1->current_line_height + param_1->line_spacing;
       local_14 = param_2;
     }
   } while( true );

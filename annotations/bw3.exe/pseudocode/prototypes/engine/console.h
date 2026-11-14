@@ -15,11 +15,11 @@ CConsole * __cdecl CConsole::ctor(CConsole *this_ptr,int width,int height,int sc
 
 // Original: engine_console.cpp_CConsole_dtor_FUN_00441fe0
 // Address: 00441fe0
-CConsole * CConsole::dtor(CConsole *this_ptr,uint flags);
+CConsole * __cdecl CConsole::dtor(CConsole *this_ptr,uint flags);
 
-// Original: engine_console.cpp_FUN_00441ff0
+// Original: engine_console.cpp_CConsole_printf_FUN_00441ff0
 // Address: 00441ff0
-void FUN_00441ff0(CConsole *param_1,undefined4 param_2);
+void __cdecl CConsole::printf(CConsole *this_ptr,char *format);
 
 // Original: engine_console.cpp_CConsole_writeChar_FUN_004420c0
 // Address: 004420c0
@@ -29,10 +29,10 @@ void __cdecl CConsole::writeChar(CConsole *this_ptr,char character);
 // Address: 00442190
 void __cdecl CConsole::reset(CConsole *this_ptr);
 
-// Original: engine_console.cpp_FUN_004421d0
+// Original: engine_console.cpp_CConsole_scrollUp_FUN_004421d0
 // Address: 004421d0
-void __cdecl FUN_004421d0(CConsole *this_ptr);
+void __cdecl CConsole::scrollUp(CConsole *this_ptr);
 
-// Original: engine_console.cpp_FUN_00442250
+// Original: engine_console.cpp_CConsole_render_FUN_00442250
 // Address: 00442250
-void __cdecl FUN_00442250(CConsole *this_ptr);
+void __cdecl CConsole::render(CConsole *this_ptr);

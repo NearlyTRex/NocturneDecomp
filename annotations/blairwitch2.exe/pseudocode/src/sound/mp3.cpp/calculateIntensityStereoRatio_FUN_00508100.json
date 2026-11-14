@@ -2,17 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 164,
+    "complexity_score": 24,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 24,
-    "suspect_count": 13,
-    "suspect_types": [
-      "param_count_too_few",
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 81
   },
   "cross_references": [
@@ -33,7 +30,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00508100",
-    "signature": "void __cdecl sound_mp3_cpp_calculateIntensityStereoRatio_FUN_00508100(int param_1,double param_2,int param_3,int param_4)"
+    "signature": "void __cdecl sound_mp3_cpp_calculateIntensityStereoRatio_FUN_00508100(int intensity_position,double ratio,int sample_index,float *ratio_buffer)"
   },
   "function_calls": [
     {
@@ -92,10 +89,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 4,
+    "declared_stack_bytes": 20,
     "estimated_params": 5,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.666666666666667,
@@ -134,11 +131,37 @@
     },
     "pcode_op_count": 368
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005292d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00500be0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00532540",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004e60c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 16,
+    "frame_size": 36,
     "local_size": 16,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -147,116 +170,36 @@
         "offset": -12,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "intensity_position",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "ratio",
+        "offset": 8,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "sample_index",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "ratio_buffer",
+        "offset": 20,
+        "size": 4,
+        "type": "float *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl sound_mp3_cpp_calculateIntensityStereoRatio_FUN_00508100(int param_1,double param_2,int param_3,int param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl sound_mp3_cpp_calculateIntensityStereoRatio_FUN_00508100(int param_1,double param_2,int param_3,int param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl sound_mp3_cpp_calculateIntensityStereoRatio_FUN_00508100(int param_1,double param_2,int param_3,int param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void __cdecl sound_mp3_cpp_calculateIntensityStereoRatio_FUN_00508100(int param_1,double param_2,int param_3,int param_4)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "pfVar1 = (float *)(param_3 * 4 + param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "pfVar1 = (float *)(param_3 * 4 + param_4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1 == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (param_1 % 2 != 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar2 = (float10)param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pow(param_1 / 2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar2 = (float10)param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pow((param_1 + 1) / 2);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 4,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:5",
-      "param_delta": 5,
-      "text": "Function declares 0 params but call sites push 5 (5 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

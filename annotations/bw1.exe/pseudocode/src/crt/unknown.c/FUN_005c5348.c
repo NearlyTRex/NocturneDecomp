@@ -15,10 +15,10 @@ void FUN_005c5348(uint param_1,uint param_2)
   pHVar1 = GetModuleHandleA((LPCSTR)0x0);
   FUN_005c50fc(0,param_2,pHVar1);
   uVar2 = (*(code *)PTR_crt_unknown_c_FUN_005c50cc_006265fc)(&DAT_006265bc);
-  unkafter_zombie_cpp_FUN_005cb0a0(uVar2);
-  unkafter_zombie_cpp_FUN_005cb5a8(param_1);
-  unkafter_zombie_cpp_FUN_005cb630();
+  FUN_005cb0a0(uVar2);
+  FUN_005cb5a8(param_1);
+  FUN_005cb630();
   (*(code *)PTR_crt_unknown_c_FUN_005c50f8_0062663c)();
-  unkafter_zombie_cpp_FUN_005cb630();
+  FUN_005cb630();
   return;
 }

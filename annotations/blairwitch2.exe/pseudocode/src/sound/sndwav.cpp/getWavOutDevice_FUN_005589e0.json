@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 101,
+    "complexity_score": 51,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 16,
-    "suspect_count": 7,
+    "suspect_count": 3,
     "suspect_types": [
-      "param_count_too_few",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
     "total_lines": 46
   },
@@ -34,7 +32,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_sndwav.cpp_getWavOutDevice_FUN_005589e0",
-    "signature": "undefined * __cdecl sound_sndwav_cpp_getWavOutDevice_FUN_005589e0(UINT_PTR param_1)"
+    "signature": "CWavOutDevice * __cdecl sound_sndwav_cpp_getWavOutDevice_FUN_005589e0(UINT device_id)"
   },
   "function_calls": [
     {
@@ -77,11 +75,11 @@
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.708333333333333,
@@ -109,11 +107,37 @@
     },
     "pcode_op_count": 113
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0057b410",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0055e540",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005b1510",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0052c760",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 56,
+    "frame_size": 60,
     "local_size": 56,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -122,18 +146,17 @@
         "offset": -52,
         "size": 1,
         "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "device_id",
+        "offset": 4,
+        "size": 4,
+        "type": "UINT"
       }
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "byte * __cdecl sound_sndwav_cpp_getWavOutDevice_FUN_005589e0(UINT_PTR param_1)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Undefined global data reference",
       "line": 9,
@@ -143,27 +166,11 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "MVar2 = waveOutGetDevCapsA(param_1,&local_34,0x34);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "DAT_0061bf84 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 17,
       "match": "DAT_0061bf84",
       "severity": "mild",
-      "text": "DAT_0061bf84 = param_1;",
+      "text": "DAT_0061bf84 = device_id;",
       "type": "undefined_data"
     },
     {
@@ -171,19 +178,8 @@
       "line": 18,
       "match": "DAT_0264b27c",
       "severity": "mild",
-      "text": "return &DAT_0264b27c;",
+      "text": "return (CWavOutDevice *)&DAT_0264b27c;",
       "type": "undefined_data"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

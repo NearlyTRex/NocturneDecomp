@@ -34,6 +34,11 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot *this_ptr,f
   if (this_ptr->sample == (CSfxSample *)0x0) {
     return 0;
   }
+#if !NOCTURNE_AUTHENTIC_PAUSE_SOUND
+  if (nocturne_pause_sound_slot_held(this_ptr) != 0) {
+    return 0;
+  }
+#endif
   local_18 = 0;
   if (this_ptr->is_active == 1) {
     engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"SFXDBG: sample = %s\n",(this_ptr->sample->sample_info).name);

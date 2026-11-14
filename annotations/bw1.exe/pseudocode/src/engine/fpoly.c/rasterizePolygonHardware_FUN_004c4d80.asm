@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_fpoly_c_rasterizePolygonHardware_FUN_004c4d80(int *param_1,int param_2)
+; void __cdecl engine_fpoly_c_rasterizePolygonHardware_FUN_004c4d80(SRenderVertex **vertices,int vertex_count)
 ;
+; Parameters:
+; SRenderVertex * * Stack[0x4]:4   vertices
+; int              Stack[0x8]:4   vertex_count
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20

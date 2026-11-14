@@ -37,7 +37,7 @@ section .text
     PUSH 0x5d9472                       ; 004c86d6 | = "%f,%f,%f\n"
     PUSH ESI                            ; 004c86db
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 004c86dc
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0x14                        ; 004c86e1
     PUSH EBX                            ; 004c86e4
     LEA EAX,[EBX + 0x14]                ; 004c86e5
@@ -47,7 +47,7 @@ section .text
     PUSH 0x5d947c                       ; 004c86ed | = "%d,%d,%d\n"
     PUSH ESI                            ; 004c86f2
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 004c86f3
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0x14                        ; 004c86f8
     LEA EAX,[EBX + 0x1c]                ; 004c86fb
     PUSH EAX                            ; 004c86fe
@@ -58,7 +58,7 @@ section .text
     PUSH 0x5d9486                       ; 004c8707 | = "%f,%f,%f\n"
     PUSH ESI                            ; 004c870c
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 004c870d
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0x14                        ; 004c8712
     LEA EAX,[EBX + 0x40]                ; 004c8715
     PUSH EAX                            ; 004c8718
@@ -77,7 +77,7 @@ section .text
     PUSH 0x5d9490                       ; 004c8731 | = "%d,%d,%d,%d,%d,%d,%d\n"
     PUSH ESI                            ; 004c8736
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 004c8737
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0x24                        ; 004c873c
     POP ESI                             ; 004c873f
     POP EBX                             ; 004c8740

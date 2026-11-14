@@ -1,0 +1,262 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 139,
+    "complexity_score": 259,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 189,
+    "suspect_count": 5,
+    "suspect_types": [
+      "raw_address_constant",
+      "stack_alignment_array",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 328
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0057e760",
+    "address_range": [
+      [
+        "0057e760",
+        "0057e791"
+      ],
+      [
+        "0057e80a",
+        "0057e8b5"
+      ],
+      [
+        "0057eba4",
+        "0057ec60"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_turret.cpp_CTurret_process_FUN_0057e760",
+    "signature": "void __cdecl core_turret_cpp_CTurret_process_FUN_0057e760(CTurret *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cf60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60"
+    },
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
+    },
+    {
+      "addr": "00550c30",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00550c30"
+    },
+    {
+      "addr": "00551050",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfx_FUN_00551050"
+    },
+    {
+      "addr": "00550f50",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setSfxBaseFrequency_FUN_00550f50"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ed6e0",
+      "name": "s_turret_loop_wav_f_005ed6e0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed6f5",
+      "name": "s_turret_tail_wav_005ed6f5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.52542372881356,
+    "instruction_count": 118,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 4,
+      "BRANCH": 1,
+      "BRANCHIND": 1,
+      "CALL": 6,
+      "CALLIND": 3,
+      "CBRANCH": 6,
+      "COPY": 255,
+      "FLOAT2FLOAT": 11,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 2,
+      "INT2FLOAT": 2,
+      "INT_ADD": 55,
+      "INT_AND": 47,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 35,
+      "INT_LEFT": 8,
+      "INT_LESS": 4,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 11,
+      "INT_OR": 10,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 17,
+      "INT_SUB": 33,
+      "INT_ZEXT": 8,
+      "LOAD": 38,
+      "POPCOUNT": 17,
+      "RETURN": 3,
+      "STORE": 38
+    },
+    "pcode_op_count": 652
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005a23b0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005e2430",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4957
+    },
+    "nocturne.exe": {
+      "addr": "005497f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.5463
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTurret *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0057e76c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 14,
+      "match": "afStackY_187c",
+      "severity": "moderate",
+      "text": "float afStackY_187c [1497];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Raw hex address 0x1c38bc0 assigned to bare local `pCVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 67,
+      "match": "0x1c38bc0",
+      "severity": "moderate",
+      "text": "pCVar4 = 0x01C38BC0;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x1c38bc0 assigned to bare local `pCVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 83,
+      "match": "0x1c38bc0",
+      "severity": "moderate",
+      "text": "pCVar4 = 0x01C38BC0;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 40,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pUVar1->vec).x = (this_ptr->home_orient).vec.x;",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 20,
+        "vtable_addr": "005fd544"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

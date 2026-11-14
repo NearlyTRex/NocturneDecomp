@@ -2,19 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 87,
+    "complexity_score": 115,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 32,
-    "suspect_count": 4,
+    "pseudocode_lines": 35,
+    "suspect_count": 6,
     "suspect_types": [
+      "bitcast_double_pair",
       "raw_address_pointer_store",
-      "unresolved_funcptr",
+      "unaffected_reg",
       "warning_overlapping_globals"
     ],
-    "total_lines": 109
+    "total_lines": 112
   },
   "cross_references": [],
   "function": {
@@ -38,7 +39,7 @@
     {
       "addr": "00558d70",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00558d70"
+      "name": "sound_sndmain.cpp_startSoundThread_FUN_00558d70"
     },
     {
       "addr": "0055d6f0",
@@ -133,6 +134,32 @@
     },
     "pcode_op_count": 419
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00557dc0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0057a7f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005b08f0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0052c340",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8976
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -159,8 +186,16 @@
       "type": "warning_overlapping_globals"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "uint unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 15,
+      "line": 16,
       "match": "*(void **)(iVar2 + 0x2cf5490",
       "severity": "moderate",
       "text": "memset(*(void **)(iVar2 + 0x2cf5490),0,0x20);",
@@ -168,19 +203,27 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 16,
+      "line": 17,
       "match": "*(uint **)(iVar2 + 0x2cf5490",
       "severity": "moderate",
       "text": "**(uint **)(iVar2 + 0x2cf5490) = *(uint *)(iVar2 + 0x2cf54d0);",
       "type": "raw_address_pointer_store"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 34,
-      "match": "code *",
+      "description": "Unaffected register variable",
+      "line": 30,
+      "match": "unaff_EDI",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)this_ptr + 8))(this_ptr);",
-      "type": "unresolved_funcptr"
+      "text": "(__BITCAST_DOUBLE(CONCAT44(unaff_EDI,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 30,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "(__BITCAST_DOUBLE(CONCAT44(unaff_EDI,",
+      "type": "bitcast_double_pair"
     }
   ],
   "vtable_info": {

@@ -13,13 +13,12 @@ CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_dtor_FUN_004d4b40(CHer
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CHeroPlaceholderTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CHeroPlaceholderTypeInfo);
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  *(byte ***)&this_ptr->field_0x154 = &g_CHeroPlaceholderVTable;
-  pCVar1 = (CHeroPlaceholder *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)this_ptr,1);
+  (this_ptr->base).vtable._ub = &g_CHeroPlaceholderVTable;
+  pCVar1 = (CHeroPlaceholder *)core_actor_cpp_CDemonActor_dtor_FUN_00408770(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

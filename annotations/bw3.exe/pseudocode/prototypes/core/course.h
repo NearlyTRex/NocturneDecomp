@@ -9,25 +9,25 @@
 // Address: 004448d0
 CCourse * __cdecl CCourse::ctor(CCourse *this_ptr);
 
-// Original: core_course.cpp_FUN_004448f0
+// Original: core_course.cpp_CCourse_dtor_FUN_004448f0
 // Address: 004448f0
-CCourse * __cdecl FUN_004448f0(CCourse *this_ptr,uint flags);
+CCourse * __cdecl CCourse::dtor(CCourse *this_ptr,uint flags);
 
 // Original: core_course.cpp_FUN_00444910
 // Address: 00444910
 void FUN_00444910(int *param_1,int param_2);
 
-// Original: core_course.cpp_FUN_00444970
+// Original: core_course.cpp_CCourse_load_FUN_00444970
 // Address: 00444970
-void __cdecl FUN_00444970(CCourse *this_ptr,char *filename);
+void __cdecl CCourse::load(CCourse *this_ptr,char *filename);
 
 // Original: core_course.cpp_FUN_00444aa0
 // Address: 00444aa0
 void FUN_00444aa0(undefined4 *param_1);
 
-// Original: core_course.cpp_FUN_00444ac0
+// Original: core_course.cpp_CCourse_evaluate_FUN_00444ac0
 // Address: 00444ac0
-void __cdecl FUN_00444ac0(CCourse *this_ptr,float time,CVector3f *out_pos,CVector3f *out_euler);
+void __cdecl CCourse::evaluate(CCourse *this_ptr,float time,CVector3f *out_pos,CVector3f *out_euler);
 
 // Original: core_course.cpp_FUN_00444b70
 // Address: 00444b70

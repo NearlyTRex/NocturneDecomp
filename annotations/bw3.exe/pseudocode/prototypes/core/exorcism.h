@@ -7,44 +7,44 @@
 
 // Original: core_exorcism.cpp_staticInit_FUN_0048a2b0
 // Address: 0048a2b0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_exorcism.cpp_factoryFuncExorcism_FUN_0048a2e0
 // Address: 0048a2e0
-void factoryFuncExorcism(void);
+CExorcism * __cdecl factoryFuncExorcism(void);
 
 // Original: core_exorcism.cpp_CExorcism_getActorType_FUN_0048a300
 // Address: 0048a300
-CDemonActorType * CExorcism::getActorType(CExorcism *this_ptr);
+CDemonActorType * __cdecl CExorcism::getActorType(CExorcism *this_ptr);
 
 // Original: core_exorcism.cpp_CExorcism_ctor_FUN_0048a310
 // Address: 0048a310
-CExorcism * CExorcism::ctor(CExorcism *this_ptr);
+CExorcism * __cdecl CExorcism::ctor(CExorcism *this_ptr);
 
-// Original: core_exorcism.cpp_FUN_0048a420
+// Original: core_exorcism.cpp_CExorcism_process_FUN_0048a420
 // Address: 0048a420
-void FUN_0048a420(CWeapon *param_1,float param_2,undefined4 param_3,float param_4);
+void __cdecl CExorcism::process(CExorcism *this_ptr,float delta_time);
 
-// Original: core_exorcism.cpp_FUN_0048b020
+// Original: core_exorcism.cpp_CExorcism_fire_FUN_0048b020
 // Address: 0048b020
-undefined4 FUN_0048b020(CDemonActor *param_1);
+int __cdecl CExorcism::fire(CExorcism *this_ptr);
 
-// Original: core_exorcism.cpp_FUN_0048b5a0
+// Original: core_exorcism.cpp_CExorcism_getDamage_FUN_0048b5a0
 // Address: 0048b5a0
-undefined4 FUN_0048b5a0(void);
+float __cdecl CExorcism::getDamage(CExorcism *this_ptr);
 
-// Original: core_exorcism.cpp_FUN_0048b5d0
+// Original: core_exorcism.cpp_CExorcism_getMuzzlePoint_FUN_0048b5d0
 // Address: 0048b5d0
-void FUN_0048b5d0(undefined4 param_1);
+CVector3f * __cdecl CExorcism::getMuzzlePoint(CExorcism *this_ptr,CVector3f *out_point);
 
-// Original: core_exorcism.cpp_FUN_0048b640
+// Original: core_exorcism.cpp_CExorcism_setWeaponState_FUN_0048b640
 // Address: 0048b640
-void FUN_0048b640(CWeapon *param_1,int param_2);
+void __cdecl CExorcism::setWeaponState(CExorcism *this_ptr,int weapon_state);
 
-// Original: core_exorcism.cpp_FUN_0048b690
+// Original: core_exorcism.cpp_CExorcism_setup_FUN_0048b690
 // Address: 0048b690
-void FUN_0048b690(CWeapon *param_1);
+void __cdecl CExorcism::setup(CExorcism *this_ptr);
 
 // Original: core_exorcism.cpp_CExorcism_dtor_FUN_0048b730
 // Address: 0048b730
-CExorcism * CExorcism::dtor(CExorcism *this_ptr,uint flags);
+CExorcism * __cdecl CExorcism::dtor(CExorcism *this_ptr,uint flags);

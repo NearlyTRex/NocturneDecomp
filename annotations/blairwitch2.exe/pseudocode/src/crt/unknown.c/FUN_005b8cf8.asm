@@ -1,17 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * crt_unknown_c_FUN_005b8cf8(undefined4 *param_1,int param_2)
+; undefined4 * crt_unknown_c_FUN_005b8cf8(undefined4 *param_1,ulong param_2)
 ;
 ;
 ; XREF[1]:
 ;   crt_memory.c_realloc_FUN_005b8ce0 at 005b8ceb
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005b8590
 ;   crt_unknown.c_FUN_005b86b0
 ;   crt_unknown.c_FUN_005becf0
 ;   crt_unknown.c_FUN_005beed4
+;   crt_unknown.c_InternalHeapAlloc_FUN_005b8590
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     JNZ 0x005b8d16                      ; 005b8d06
         ;   XREF to: 005b8d16 (CONDITIONAL_JUMP)  ; LAB_005b8d16
     PUSH EDI                            ; 005b8d08
-    CALL crt_unknown.c_FUN_005b8590     ; 005b8d09
-        ;   XREF to: 005b8590 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8590()
+    CALL crt_unknown.c_InternalHeapAlloc_FUN_005b8590 ; 005b8d09
+        ;   XREF to: 005b8590 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_InternalHeapAlloc_FUN_005b8590(ulong size)
     ADD ESP,0x4                         ; 005b8d0e
     POP EBP                             ; 005b8d11
     POP EDI                             ; 005b8d12
@@ -66,8 +66,8 @@ section .text
     JNZ 0x005b8d85                      ; 005b8d43
         ;   XREF to: 005b8d85 (CONDITIONAL_JUMP)  ; LAB_005b8d85
     PUSH EDI                            ; 005b8d45
-    CALL crt_unknown.c_FUN_005b8590     ; 005b8d46
-        ;   XREF to: 005b8590 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8590()
+    CALL crt_unknown.c_InternalHeapAlloc_FUN_005b8590 ; 005b8d46
+        ;   XREF to: 005b8590 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_InternalHeapAlloc_FUN_005b8590(ulong size)
     ADD ESP,0x4                         ; 005b8d4b
     MOV EBP,EAX                         ; 005b8d4e
     TEST EAX,EAX                        ; 005b8d50

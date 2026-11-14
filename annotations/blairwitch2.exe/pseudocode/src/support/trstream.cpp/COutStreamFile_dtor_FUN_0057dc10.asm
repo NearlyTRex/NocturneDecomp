@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; COutStreamFile * support_trstream_cpp_COutStreamFile_dtor_FUN_0057dc10(COutStreamFile *this_ptr,uint flags)
+; COutStreamFile * __cdecl support_trstream_cpp_COutStreamFile_dtor_FUN_0057dc10(COutStreamFile *this_ptr,uint flags)
 ;
 ; Parameters:
 ; COutStreamFile * Stack[0x4]:4   this_ptr
@@ -11,7 +11,7 @@
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00441f50 at 00442526
 ;   core_game.cpp_FUN_004bb9b0 at 004bbdaa
 ;   core_game.cpp_FUN_004bbf70 at 004bc352
-;   engine_2d.c_FUN_00402940 at 00402a70
+;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 00402a70
 ;   support_codec.cpp_FUN_004340f0 at 00434184
 ;
 ; Referenced Globals:
@@ -22,8 +22,8 @@
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
 ;   crt_unknown.c_FUN_005b7fce
 ;   crt_unknown.c_FUN_005b7fdc
-;   support_trstream.cpp_FUN_0057d860
-;   support_trstream.cpp_FUN_0057dd60
+;   support_trstream.cpp_COutStream_dtor_FUN_0057d860
+;   support_trstream.cpp_COutStreamFile_close_FUN_0057dd60
 ;
 ; *****************************************************************************
 
@@ -37,13 +37,13 @@ section .text
         ;   XREF to: 0057dc45 (CONDITIONAL_JUMP)  ; LAB_0057dc45
     PUSH EBX                            ; 0057dc1c
     MOV dword ptr [EBX],0x5fd484        ; 0057dc1d | g_COutStreamFileVTable
-    CALL support_trstream.cpp_FUN_0057dd60 ; 0057dc23
-        ;   XREF to: 0057dd60 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_0057dd60()
+    CALL support_trstream.cpp_COutStreamFile_close_FUN_0057dd60 ; 0057dc23
+        ;   XREF to: 0057dd60 (UNCONDITIONAL_CALL)  ; int support_trstream.cpp_COutStreamFile_close_FUN_0057dd60(COutStreamFile * this_ptr)
     ADD ESP,0x4                         ; 0057dc28
     PUSH 0x1                            ; 0057dc2b
     PUSH EBX                            ; 0057dc2d
-    CALL support_trstream.cpp_FUN_0057d860 ; 0057dc2e
-        ;   XREF to: 0057d860 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_0057d860()
+    CALL support_trstream.cpp_COutStream_dtor_FUN_0057d860 ; 0057dc2e
+        ;   XREF to: 0057d860 (UNCONDITIONAL_CALL)  ; COutStream * support_trstream.cpp_COutStream_dtor_FUN_0057d860(COutStream * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0057dc33
     MOV DL,byte ptr [ESP + 0xc]         ; 0057dc36
     MOV EBX,EAX                         ; 0057dc3a
@@ -57,7 +57,7 @@ section .text
         ;   Label: LAB_0057dc45
     PUSH EBX                            ; 0057dc4a
     CALL crt_memory.c___vec_delete_FUN_005b7fa7 ; 0057dc4b
-        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005b7fa7()
+        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005b7fa7(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 0057dc50
     PUSH EAX                            ; 0057dc53
     CALL crt_unknown.c_FUN_005b7fce     ; 0057dc54

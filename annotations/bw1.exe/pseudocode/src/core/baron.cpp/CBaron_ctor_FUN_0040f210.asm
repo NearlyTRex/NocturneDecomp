@@ -11,8 +11,8 @@
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
-;   core_hero.cpp_FUN_004ea830
-;   core_skeleton.cpp_FUN_00569f50
+;   core_hero.cpp_CHero_ctor_FUN_004ea830
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50
 ;
 ; *****************************************************************************
 
@@ -24,16 +24,16 @@ section .text
     PUSH EDI                            ; 0040f212
     MOV EDX,dword ptr [ESP + 0x10]      ; 0040f213
     PUSH EDX                            ; 0040f217
-    CALL core_hero.cpp_FUN_004ea830     ; 0040f218
-        ;   XREF to: 004ea830 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_FUN_004ea830(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_ctor_FUN_004ea830 ; 0040f218
+        ;   XREF to: 004ea830 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHero_ctor_FUN_004ea830(CHero * this_ptr)
     ADD ESP,0x4                         ; 0040f21d
     PUSH 0x5d337e                       ; 0040f220
     MOV EBX,EAX                         ; 0040f225
     ADD EAX,0x158                       ; 0040f227
     PUSH EAX                            ; 0040f22c
     MOV dword ptr [EAX + -0x4],0x5fbac4 ; 0040f22d
-    CALL core_skeleton.cpp_FUN_00569f50 ; 0040f234
-        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569f50()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 0040f234
+        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
     LEA EAX,[EBX + 0x20074]             ; 0040f239
     MOV dword ptr [EBX + 0x20080],0x3f800000 ; 0040f23f
     MOV dword ptr [EAX + 0x8],0x0       ; 0040f249

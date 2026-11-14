@@ -28,6 +28,18 @@ TEST(IDisplay, PublicInterface) {
     static_assert(
         std::is_same_v<decltype(&IDisplay::getWindowMode), EWindowMode (IDisplay::*)() const>);
     static_assert(std::is_same_v<decltype(&IDisplay::setWindowSize), void (IDisplay::*)(int, int)>);
+    static_assert(std::is_same_v<decltype(&IDisplay::setDisplayIndex), void (IDisplay::*)(int)>);
+    static_assert(std::is_same_v<decltype(&IDisplay::getDisplayIndex), int (IDisplay::*)() const>);
+    static_assert(std::is_same_v<decltype(&IDisplay::setFullscreenSize),
+                                 void (IDisplay::*)(EFullscreenSize)>);
+    static_assert(std::is_same_v<decltype(&IDisplay::getFullscreenSize),
+                                 EFullscreenSize (IDisplay::*)() const>);
+    static_assert(std::is_same_v<decltype(&IDisplay::setRefreshRate), void (IDisplay::*)(int)>);
+    static_assert(std::is_same_v<decltype(&IDisplay::getRefreshRate), int (IDisplay::*)() const>);
+    static_assert(std::is_same_v<decltype(&IDisplay::setVsync), void (IDisplay::*)(bool)>);
+    static_assert(std::is_same_v<decltype(&IDisplay::getVsync), bool (IDisplay::*)() const>);
+    static_assert(std::is_same_v<decltype(&IDisplay::getDisplays),
+                                 std::vector<SDisplayInfo> (IDisplay::*)() const>);
     static_assert(std::is_same_v<decltype(&IDisplay::setUpscaler), void (IDisplay::*)(EUpscaler)>);
     static_assert(
         std::is_same_v<decltype(&IDisplay::getUpscaler), EUpscaler (IDisplay::*)() const>);
@@ -53,12 +65,14 @@ TEST(EAntialias, KeepsThePersistedValues) {
 
 TEST(EUpscaler, KeepsThePersistedValues) {
     static_assert(static_cast<int>(EUpscaler::Standard) == 0);
-    static_assert(static_cast<int>(EUpscaler::Fsr) == 1);
-    static_assert(static_cast<int>(EUpscaler::Lanczos) == 2);
-    static_assert(static_cast<int>(EUpscaler::Gsr) == 3);
-    static_assert(static_cast<int>(EUpscaler::Nis) == 4);
-    static_assert(static_cast<int>(EUpscaler::Xbr) == 5);
-    static_assert(kUpscalerCount == 6);
+    static_assert(static_cast<int>(EUpscaler::Nearest) == 1);
+    static_assert(static_cast<int>(EUpscaler::Smooth) == 2);
+    static_assert(static_cast<int>(EUpscaler::Fsr) == 3);
+    static_assert(static_cast<int>(EUpscaler::Lanczos) == 4);
+    static_assert(static_cast<int>(EUpscaler::Gsr) == 5);
+    static_assert(static_cast<int>(EUpscaler::Nis) == 6);
+    static_assert(static_cast<int>(EUpscaler::Xbr) == 7);
+    static_assert(kUpscalerCount == 8);
 }
 
 TEST(EUpscaler, FsrGsrAndNisSharpen) {

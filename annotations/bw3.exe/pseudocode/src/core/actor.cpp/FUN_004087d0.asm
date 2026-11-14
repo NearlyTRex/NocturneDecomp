@@ -7,7 +7,7 @@
 ; CDemonActor *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_weapon.cpp_FUN_0057b040 at 0057b0fa
+;   core_weapon.cpp_CWeapon_renderTransparent_FUN_0057b040 at 0057b0fa
 ;
 ; *****************************************************************************
 

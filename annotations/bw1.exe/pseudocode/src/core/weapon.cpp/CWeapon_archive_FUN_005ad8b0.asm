@@ -46,7 +46,7 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 005ad8cc
     PUSH EAX                            ; 005ad8d2
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770 ; 005ad8d3
-        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770()
+        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770(CKeyFramedModelInstance * model_ptr, char * property_name)
     MOV EDX,dword ptr [0x00626038]      ; 005ad8d8 | g_CWeaponClassVersion
     ADD ESP,0x8                         ; 005ad8de
     CMP EDX,0x3                         ; 005ad8e1
@@ -96,7 +96,7 @@ section .text
     LEA EAX,[EBX + 0x304]               ; 005ad95c
     PUSH EAX                            ; 005ad962
     CALL core_actor.cpp_archiveActor_FUN_0040b6f0 ; 005ad963
-        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b6f0()
+        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b6f0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 005ad968
     JMP 0x005ad8e6                      ; 005ad96b
         ;   XREF to: 005ad8e6 (UNCONDITIONAL_JUMP)  ; LAB_005ad8e6
@@ -105,7 +105,7 @@ section .text
     ADD EBX,0x570                       ; 005ad975
     PUSH EBX                            ; 005ad97b
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 005ad97c
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 005ad981
     ADD ESP,0x100                       ; 005ad984
     POP EBX                             ; 005ad98a

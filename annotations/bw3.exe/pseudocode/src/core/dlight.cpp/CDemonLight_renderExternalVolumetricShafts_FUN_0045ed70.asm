@@ -111,11 +111,11 @@
 ;   core_dirmat.cpp_FUN_0045b9b0
 ;   crt_math.c_round_FUN_005a3120
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
+;   engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046d1a0
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
 ;   engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0046d330
-;   engine_matrix.c_FUN_0046d1a0
-;   engine_matrix.c_FUN_0046d1c0
-;   engine_matrix.c_pop_FUN_0046d080
+;   engine_drender.cpp_FUN_0046d1c0
+;   engine_drender.cpp_pop_FUN_0046d080
 ;   engine_special.cpp_FUN_005632a3
 ;
 ; *****************************************************************************
@@ -135,14 +135,14 @@ section .text
     JZ 0x0045edaf                       ; 0045ed8c
         ;   XREF to: 0045edaf (CONDITIONAL_JUMP)  ; LAB_0045edaf
     MOV EAX,[0x00603b28]                ; 0045ed8e | g_CDemonSetPtr
-    FLD float ptr [EAX + 0x15ac80]      ; 0045ed93 | g_CDemonSetInstance.field1420416_0x15ac80
+    FLD float ptr [EAX + 0x15ac80]      ; 0045ed93 | g_CDemonSetInstance.active_fog.density_multiplier
     FCOMP double ptr [0x005bb544]       ; 0045ed99 | DAT_005bb544
     FNSTSW AX                           ; 0045ed9f
     SAHF                                ; 0045eda1
     JC 0x0045edaf                       ; 0045eda2
         ;   XREF to: 0045edaf (CONDITIONAL_JUMP)  ; LAB_0045edaf
     MOV EAX,[0x005fe9dc]                ; 0045eda4 | g_CGamePtr
-    CMP dword ptr [EAX + 0xc],0x0       ; 0045eda9 | g_CGameInstance.field12_0xc
+    CMP dword ptr [EAX + 0xc],0x0       ; 0045eda9 | g_CGameInstance.halo_mode
     JNZ 0x0045edb7                      ; 0045edad
         ;   XREF to: 0045edb7 (CONDITIONAL_JUMP)  ; LAB_0045edb7
     LEA ESP,[EBP + 0x7e]                ; 0045edaf
@@ -157,8 +157,8 @@ section .text
     PUSH EBX                            ; 0045edbd | DAT_01bdd7e4
     LEA ESI,[EBP + -0x2e]               ; 0045edbe
     LEA EDI,[EBP + -0x16]               ; 0045edc1
-    CALL engine_matrix.c_FUN_0046d1a0   ; 0045edc4
-        ;   XREF to: 0046d1a0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_0046d1a0()
+    CALL engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046d1a0 ; 0045edc4
+        ;   XREF to: 0046d1a0 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_0046d1a0(CDemonRenderer * this_ptr, CVector3i * output)
     LEA ESI,[EBP + -0x2e]               ; 0045edc9
     LEA EAX,[EBP + -0x16]               ; 0045edcc
     LEA EBX,[EBP + 0xffffff42]          ; 0045edcf
@@ -229,8 +229,8 @@ section .text
     PUSH ECX                            ; 0045ee90 | DAT_01bdd7e4
     LEA ESI,[EBP + 0xffffff4e]          ; 0045ee91
     LEA EDI,[EBP + 0xffffff72]          ; 0045ee97
-    CALL engine_matrix.c_FUN_0046d1c0   ; 0045ee9d
-        ;   XREF to: 0046d1c0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_0046d1c0()
+    CALL engine_drender.cpp_FUN_0046d1c0 ; 0045ee9d
+        ;   XREF to: 0046d1c0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_0046d1c0()
     LEA ESI,[EBP + 0xffffff4e]          ; 0045eea2
     LEA EAX,[EBP + 0xffffff72]          ; 0045eea8
     ADD ESP,0x4                         ; 0045eeae
@@ -650,7 +650,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x26]      ; 0045f3a5
     MOV dword ptr [EBX + 0x80],EAX      ; 0045f3a8
     MOV EBX,dword ptr [EDX]             ; 0045f3ae | DAT_01bdd7e4
-    PUSH 0x44d180                       ; 0045f3b0 | LAB_0044d180
+    PUSH 0x44d180                       ; 0045f3b0
     MOV EAX,dword ptr [EBP + 0x26]      ; 0045f3b5
     MOV EDI,0x4                         ; 0045f3b8
     MOV ECX,0x1                         ; 0045f3bd
@@ -694,8 +694,8 @@ section .text
         ;   XREF to: 0045efe7 (CONDITIONAL_JUMP)  ; LAB_0045efe7
     MOV ESI,dword ptr [0x005f2afc]      ; 0045f44c | DAT_005f2afc
     PUSH ESI                            ; 0045f452 | DAT_01bdd7e4
-    CALL engine_matrix.c_pop_FUN_0046d080 ; 0045f453
-        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046d080()
+    CALL engine_drender.cpp_pop_FUN_0046d080 ; 0045f453
+        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046d080()
     ADD ESP,0x4                         ; 0045f458
     LEA ESP,[EBP + 0x7e]                ; 0045f45b
     POP EBP                             ; 0045f45e

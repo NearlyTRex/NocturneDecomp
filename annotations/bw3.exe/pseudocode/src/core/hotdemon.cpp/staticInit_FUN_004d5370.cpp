@@ -1,12 +1,12 @@
 // Name: core_hotdemon.cpp_staticInit_FUN_004d5370
 // Address: 004d5370
 // Address Range: [[004d5370, 004d53fc]]
-// Convention: unknown
-// Signature: void core_hotdemon_cpp_staticInit_FUN_004d5370(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_hotdemon_cpp_staticInit_FUN_004d5370(void)
 
 #include "nocturne.h"
 
-void core_hotdemon_cpp_staticInit_FUN_004d5370(void)
+void __cdecl core_hotdemon_cpp_staticInit_FUN_004d5370(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c3a0

@@ -31,19 +31,19 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 004145b3
     PUSH EAX                            ; 004145b9
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770 ; 004145ba
-        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770()
+        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770(CKeyFramedModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 004145bf
     PUSH 0x5d3bb7                       ; 004145c2 | = "rechargeTime"
     LEA EAX,[EBX + 0x2d8]               ; 004145c7
     PUSH EAX                            ; 004145cd
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 004145ce
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004145d3
     PUSH 0x5d3bc4                       ; 004145d6 | = "dischargeTime"
     ADD EBX,0x2dc                       ; 004145db
     PUSH EBX                            ; 004145e1
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 004145e2
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004145e7
     POP EBX                             ; 004145ea
     RET                                 ; 004145eb

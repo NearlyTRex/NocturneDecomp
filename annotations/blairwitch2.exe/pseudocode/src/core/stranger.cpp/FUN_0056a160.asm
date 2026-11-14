@@ -10,14 +10,14 @@
 ;   core_stranger.cpp_FUN_005656f0 at 00565d6a
 ;
 ; Referenced Globals:
-;   undefined4 s_actionPending_d_stranger_005eba7c+1
+;   TerminatedCString s_actionPending_d_stranger_005eba7d
 ;   CEditorTools* g_CEditorToolsPtr = 01c25594
 ;   undefined4 g_CAmmoBoxClassInfo.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
-;   core_ammobox.cpp_FUN_0040e670
-;   shape_edittool.cpp_FUN_0047bdf0
+;   core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e670
+;   shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0
 ;
 ; *****************************************************************************
 
@@ -40,7 +40,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x25608]   ; 0056a181
     PUSH EAX                            ; 0056a187
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 0056a188
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0056a18d
     TEST EAX,EAX                        ; 0056a190
     JZ 0x0056a1a4                       ; 0056a192
@@ -48,8 +48,8 @@ section .text
     LEA EDX,[EBX + 0x2437c]             ; 0056a194
     PUSH EDX                            ; 0056a19a
     PUSH EAX                            ; 0056a19b
-    CALL core_ammobox.cpp_FUN_0040e670  ; 0056a19c
-        ;   XREF to: 0040e670 (UNCONDITIONAL_CALL)  ; void core_ammobox.cpp_FUN_0040e670(CAmmoBox * this_ptr, CInventory * inventory)
+    CALL core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e670 ; 0056a19c
+        ;   XREF to: 0040e670 (UNCONDITIONAL_CALL)  ; void core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e670(CAmmoBox * this_ptr, CInventory * inventory)
     ADD ESP,0x8                         ; 0056a1a1
     MOV dword ptr [EBX + 0x256a4],0x1   ; 0056a1a4
         ;   Label: LAB_0056a1a4
@@ -62,11 +62,11 @@ section .text
         ;   Label: LAB_0056a1bb
     PUSH 0xd45                          ; 0056a1bc
     PUSH ECX                            ; 0056a1c1
-    PUSH 0x5eba7d                       ; 0056a1c2 | s_actionPending_d_stranger_005eba7c+1
+    PUSH 0x5eba7d                       ; 0056a1c2 | = "actionPending = %d\nstranger.cpp line %d"
     MOV EDI,dword ptr [0x006138e0]      ; 0056a1c7 | g_CEditorToolsPtr
     PUSH EDI                            ; 0056a1cd
-    CALL shape_edittool.cpp_FUN_0047bdf0 ; 0056a1ce
-        ;   XREF to: 0047bdf0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047bdf0()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0 ; 0056a1ce
+        ;   XREF to: 0047bdf0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 0056a1d3
     POP EDI                             ; 0056a1d6
     JMP 0x0056a17a                      ; 0056a1d7

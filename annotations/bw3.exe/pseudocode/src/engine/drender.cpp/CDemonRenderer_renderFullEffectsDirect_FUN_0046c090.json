@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 70,
+    "complexity_score": 85,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 40,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "shadow_pointer_walk",
       "undefined_data",
       "warning_overlapping_globals"
     ],
@@ -106,6 +107,32 @@
     },
     "pcode_op_count": 258
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0046a4a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004829b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0048b650",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0045fc00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -145,6 +172,14 @@
       "severity": "mild",
       "text": "if (DAT_005fba20 == 0x20) {",
       "type": "undefined_data"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar1` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 20,
+      "match": "pSVar1 = (T *)&(pSVar1->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar1 = (SMRGLHeaderPrimitive *)&(pSVar1->base).count;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

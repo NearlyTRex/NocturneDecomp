@@ -9,14 +9,14 @@
 ; CDeformableModelInstance * Stack[0xc]:4   model_ptr
 ;
 ; XREF[8]:
-;   core_passngr.cpp_FUN_0050a610 at 0050a681
-;   core_pryemorp.cpp_FUN_005275c0 at 00527716
-;   core_spirbear.cpp_FUN_0059aba0 at 0059ad90
-;   core_spireagl.cpp_FUN_005992f0 at 005994cc
-;   core_spirindi.cpp_FUN_0059a060 at 0059a250
-;   core_styldemo.cpp_FUN_0059e130 at 0059e392
-;   core_styler.cpp_FUN_0059d7f0 at 0059d99b
-;   unkafter_darkwolf.cpp_FUN_00598800 at 00598977
+;   core_darkwolf.cpp_CDarkwolf_setup_FUN_00598800 at 00598977
+;   core_passngr.cpp_CPassenger_setup_FUN_0050a610 at 0050a681
+;   core_pryemorp.cpp_CPryeMorph_setup_FUN_005275c0 at 00527716
+;   core_spirbear.cpp_CSpiritBear_setup_FUN_0059aba0 at 0059ad90
+;   core_spireagl.cpp_CSpiritEagle_setup_FUN_005992f0 at 005994cc
+;   core_spirindi.cpp_CSpiritIndian_setup_FUN_0059a060 at 0059a250
+;   core_styldemo.cpp_CStylerDemon_setup_FUN_0059e130 at 0059e392
+;   core_styler.cpp_CStyler_setup_FUN_0059d7f0 at 0059d99b
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorphModel_addPartFromDeformableModel_FUN_004f9d90

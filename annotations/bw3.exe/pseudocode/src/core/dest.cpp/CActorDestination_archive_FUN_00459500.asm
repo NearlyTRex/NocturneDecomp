@@ -56,7 +56,7 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 00459546
     PUSH EAX                            ; 0045954c
     CALL core_actor.cpp_archiveActor_FUN_0040b930 ; 0045954d
-        ;   XREF to: 0040b930 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b930()
+        ;   XREF to: 0040b930 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b930(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 00459552
     CMP dword ptr [0x005f187c],0x3      ; 00459555 | g_CActorDestinationClassVersion
         ;   Label: LAB_00459555

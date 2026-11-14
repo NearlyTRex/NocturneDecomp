@@ -1,0 +1,185 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 41,
+    "complexity_score": 14,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 5,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 55
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00463460",
+    "address_range": [
+      [
+        "00463460",
+        "004634cc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dog.cpp_CZombieDog_archive_FUN_00463460",
+    "signature": "void __cdecl core_dog_cpp_CZombieDog_archive_FUN_00463460(CZombieDog *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ba30",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveDeformableModelInstance_FUN_0040ba30"
+    },
+    {
+      "addr": "0040b830",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b830"
+    },
+    {
+      "addr": "0040bab0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040bab0"
+    },
+    {
+      "addr": "00489120",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_archive_FUN_00489120"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005bbc64",
+      "name": "s_speed_005bbc63+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bbc6a",
+      "name": "s_modelName_005bbc6a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbc74",
+      "name": "s_guardDistance_005bbc74",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbc82",
+      "name": "s_motion_state_005bbc82",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2a5c",
+      "name": "g_CZombieDogClassVersion",
+      "type": "int",
+      "value": "0x2"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.161290322580645,
+    "instruction_count": 31,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 5,
+      "CBRANCH": 1,
+      "COPY": 18,
+      "INT_ADD": 12,
+      "INT_AND": 14,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 14,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 7,
+      "INT_SUB": 16,
+      "LOAD": 3,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 15
+    },
+    "pcode_op_count": 129
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0045eab0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00476ff0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0047f7b0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00454dc0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZombieDog *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CZombieDog",
+        "offset": 212,
+        "vtable_addr": "005de724"
+      },
+      {
+        "class_name": "CZombieDog",
+        "offset": 212,
+        "vtable_addr": "005de874"
+      },
+      {
+        "class_name": "CZombieDog",
+        "offset": 212,
+        "vtable_addr": "005de9c4"
+      },
+      {
+        "class_name": "CZombieDog",
+        "offset": 212,
+        "vtable_addr": "005de5d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 4
+  }
+}

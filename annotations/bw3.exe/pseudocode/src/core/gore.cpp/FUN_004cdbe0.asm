@@ -9,7 +9,7 @@
 ; undefined8       Stack[-0x1c]:8  local_1c
 ;
 ; XREF[1]:
-;   core_gore.cpp_FUN_004cf0c0 at 004cf148
+;   core_gore.cpp_CGore_save_FUN_004cf0c0 at 004cf148
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_f_f_f_d_005c46a0

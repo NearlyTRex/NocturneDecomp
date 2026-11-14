@@ -29,11 +29,9 @@ void __cdecl core_set_cpp_FUN_00531a90(CDemonSet *this_ptr,CVector3f *vertex_pos
     do {
       iVar1 = *(int *)(&DAT_01fc9cd8 + iVar5);
       if ((*(uint *)(iVar1 + 0x11d4) & 0x7fffffff) != 0) {
-        fVar4 = *(float *)(iVar1 + 0x104) - (*(float *)vertex_position + *(float *)position_offset);
-        fVar2 = *(float *)(iVar1 + 0x108) -
-                (*(float *)&vertex_position->field_0x4 + *(float *)&position_offset->field_0x4);
-        fVar3 = *(float *)(iVar1 + 0x10c) -
-                (*(float *)&vertex_position->field_0x8 + *(float *)&position_offset->field_0x8);
+        fVar4 = *(float *)(iVar1 + 0x104) - (vertex_position->x + position_offset->x);
+        fVar2 = *(float *)(iVar1 + 0x108) - (vertex_position->y + position_offset->y);
+        fVar3 = *(float *)(iVar1 + 0x10c) - (vertex_position->z + position_offset->z);
         fVar4 = (float)(((int)(fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2) >> 1) + _DAT_01caf5b4)
         ;
         if (fVar4 <= *(float *)(iVar1 + 0x11d4)) {

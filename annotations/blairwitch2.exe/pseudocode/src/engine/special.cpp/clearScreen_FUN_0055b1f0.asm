@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[29]:
+;   core_bmppuzzl.cpp_CAudioRecPuzzle_render_FUN_0059b430 at 0059b43b
+;   core_bmppuzzl.cpp_CExamplePuzzle_render_FUN_0059ada0 at 0059ada8
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_0043b7f0 at 0043ba15
+;   core_dcube.cpp_FUN_00446f50 at 00446f89
+;   core_game.cpp_CGame_finishAct_FUN_004bdfb0 at 004be011
 ;   core_game.cpp_CGame_rollCredits_FUN_004be430 at 004be5d0
+;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b60c0 at 004b6101
 ;   core_game.cpp_FUN_004b5190 at 004b5284
-;   core_game.cpp_FUN_004b60c0 at 004b6101
 ;   core_game.cpp_FUN_004bbf70 at 004bc0cf
 ;   core_game.cpp_FUN_004bcbf0 at 004bcde7
-;   core_game.cpp_FUN_004bdc1e at 004bdc59
-;   core_game.cpp_FUN_004bdfb0 at 004be011
-;   core_level.cpp_FUN_004e1480 at 004e15c3
-;   core_main.c_FUN_004e45e0 at 004e45f0
 ;   ... and 19 more
 ;
 ; Referenced Globals:

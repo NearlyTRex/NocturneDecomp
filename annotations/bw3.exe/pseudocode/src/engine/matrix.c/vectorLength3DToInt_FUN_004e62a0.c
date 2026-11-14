@@ -11,9 +11,9 @@ int __cdecl engine_matrix_c_vectorLength3DToInt_FUN_004e62a0(CVector3i *vector_p
 {
   float10 fVar1;
   
-  fVar1 = SQRT((float10)*(int *)(vector_ptr + 8) * (float10)*(int *)(vector_ptr + 8) +
-               (float10)*(int *)(vector_ptr + 4) * (float10)*(int *)(vector_ptr + 4) +
-               (float10)*(int *)vector_ptr * (float10)*(int *)vector_ptr);
+  fVar1 = SQRT((float10)vector_ptr->z * (float10)vector_ptr->z +
+               (float10)vector_ptr->y * (float10)vector_ptr->y +
+               (float10)vector_ptr->x * (float10)vector_ptr->x);
   round();
   return (int)ROUND(fVar1);
 }

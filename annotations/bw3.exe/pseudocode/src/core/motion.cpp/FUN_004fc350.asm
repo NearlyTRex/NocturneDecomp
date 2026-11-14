@@ -8,16 +8,16 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[15]:
-;   core_carved.cpp_FUN_004286c0 at 004286d5
-;   core_charactr.cpp_FUN_004331a0 at 004331fc
-;   core_ghoul.cpp_FUN_004c6eb0 at 004c6f29
-;   core_ghoul.cpp_FUN_004c8dd0 at 004c8def
-;   core_hero.cpp_FUN_004d2c20 at 004d2c74
+;   core_carved.cpp_CCarved_canBeAttracted_FUN_004286c0 at 004286d5
+;   core_charactr.cpp_CCharacter_canLookAt_FUN_004331a0 at 004331fc
+;   core_demnfolk.cpp_CDemnfolk_canBeAttracted_FUN_00458530 at 00458545
+;   core_ghoul.cpp_CGhoul_canBeAttracted_FUN_004c8dd0 at 004c8def
+;   core_ghoul.cpp_CGhoul_process_FUN_004c6eb0 at 004c6f29
+;   core_hero.cpp_CHero_releaseFromGrab_FUN_004d2c20 at 004d2c74
+;   core_prye.cpp_CPrye_canDoHeroAction_FUN_005260b0 at 005260db
+;   core_prye.cpp_CPrye_makeDrawDecision_FUN_0051e6d0 at 0051e775
+;   core_prye.cpp_CPrye_updateTurnBlending_FUN_0051e380 at 0051e3b0
 ;   core_prye.cpp_FUN_00518cd0 at 005190ba
-;   core_prye.cpp_FUN_0051b550 at 0051b8ad
-;   core_prye.cpp_FUN_0051c1c0 at 0051c1e4
-;   core_prye.cpp_FUN_0051e380 at 0051e3b0
-;   core_prye.cpp_FUN_0051e6d0 at 0051e775
 ;   ... and 5 more
 ;
 ; *****************************************************************************

@@ -175,7 +175,8 @@ protected:
                           .fonts = fonts_,
                           .crt_random = crt_random_,
                           .console = console_,
-                          .content = content_}};
+                          .content = content_,
+                          .display = display_}};
 };
 
 TEST_F(CLevelLoaderTest, CleanupStopsTheScreenAndReportsItsUpdates) {

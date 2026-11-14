@@ -43,7 +43,7 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_00522b90(CMorphModel *t
   int local_14;
   
   bVar4 = 0;
-  if (2000 < *(int *)&this_ptr->field_0x54) {
+  if (2000 < this_ptr->num_points) {
     _DAT_01d1d400 = "..\\core\\morph.cpp";
     _DAT_01d1d404 = 0x1f8;
     core_main_c_FUN_005030e0("CMorphModel::rotatePoints - too many points!");
@@ -52,17 +52,17 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_00522b90(CMorphModel *t
   local_18 = 0xff;
   local_24 = 0;
   local_1c = 1.0 - blend_factor;
-  if (0 < *(int *)&this_ptr->field_0x54) {
+  if (0 < this_ptr->num_points) {
     input = (CVector3i *)&DAT_01d33f70;
     local_20 = 0;
     local_14 = 0;
     do {
-      piVar3 = (int *)(*(int *)&this_ptr->field_0x58 + local_20);
+      piVar3 = (int *)((int)&this_ptr->points->vertex_index + local_20);
       iVar1 = *piVar3;
-      local_34 = *(float *)(ref_points + iVar1 * 0x10 + 4) * local_1c;
-      local_30 = *(float *)(ref_points + iVar1 * 0x10 + 8) * local_1c;
-      local_2c = *(float *)(ref_points + iVar1 * 0x10 + 0xc) * local_1c;
-      local_64 = *(float *)(ref_points + iVar1 * 0x10 + 4) * local_1c;
+      local_34 = ref_points[iVar1].position.x * local_1c;
+      local_30 = ref_points[iVar1].position.y * local_1c;
+      local_2c = ref_points[iVar1].position.z * local_1c;
+      local_64 = local_34;
       *(uint *)((int)&stack0xffffffa0 + (uint)bVar4 * -8) =
            *(uint *)((int)&stack0xffffffd0 + (uint)bVar4 * -8);
       *(uint *)((int)&stack0xffffffa4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
@@ -83,11 +83,15 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_00522b90(CMorphModel *t
            *(uint *)((int)&stack0xffffffb8 + (uint)bVar4 * -8);
       *(uint *)((int)&stack0xffffffb0 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
            *(uint *)((int)&stack0xffffffbc + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-      *(int *)input = (int)ROUND(local_58 * _DAT_00604260);
-      *(int *)(input + 4) = (int)ROUND(local_54 * _DAT_00604260);
-      *(int *)(input + 8) = (int)ROUND(local_50 * _DAT_00604260);
-      engine_special_cpp_FUN_00580173((SProjectedVertex *)(*(int *)DAT_00612560 + local_14),input);
-      uVar2 = *(uint *)(*(int *)DAT_00612560 + local_14 + 0x10);
+      input->x = (int)ROUND(local_58 * _DAT_00604260);
+      input->y = (int)ROUND(local_54 * _DAT_00604260);
+      input->z = (int)ROUND(local_50 * _DAT_00604260);
+      engine_special_cpp_FUN_00580173
+                ((SProjectedVertex *)
+                 ((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).transformed_x + local_14
+                 ),input);
+      uVar2 = *(uint *)((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).screen_x +
+                       local_14);
       if ((uVar2 & 0x80000000) == 0) {
         local_18 = 0;
       }
@@ -95,20 +99,19 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_00522b90(CMorphModel *t
         local_28 = 1;
         local_18 = local_18 & uVar2;
       }
-      input = input + 0xc;
+      input = input + 1;
       local_24 = local_24 + 1;
       local_14 = local_14 + 0x30;
       local_20 = local_20 + 0x10;
-    } while (local_24 < *(int *)&this_ptr->field_0x54);
+    } while (local_24 < this_ptr->num_points);
   }
   if (local_18 != 0) {
     return;
   }
-  core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_00552f50
-            (g_CDemonSetPtr,*(int *)&this_ptr->field_0x54);
+  core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_00552f50(g_CDemonSetPtr,this_ptr->num_points);
   core_set_cpp_CDemonSet_lightVerticies_FUN_00553440
-            (g_CDemonSetPtr,*(int *)&this_ptr->field_0x54,*(int *)&this_ptr->field_0x5c,
-             *(void **)&this_ptr->field_0x60,(CVector3i *)&DAT_01d33f70,3,(CVector3i *)0x0);
+            (g_CDemonSetPtr,this_ptr->num_points,this_ptr->num_faces,this_ptr->faces,
+             (CVector3i *)&DAT_01d33f70,3,(CVector3i *)0x0);
   engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20(DAT_00612560,local_28);
   return;
 }

@@ -42,7 +42,7 @@
   },
   {
     "addr":"0046fcc8",
-    "conv":"unknown",
+    "conv":"__edi_esi_ebx",
     "data_refs":[
       "0046b2a2",
       "0046b352"
@@ -50,10 +50,36 @@
     "instructions":186,
     "method":"renderSolidColorDepth16xUnrolled",
     "name":"core_dstrendr.cpp_renderSolidColorDepth16xUnrolled_FUN_0046fcc8",
+    "params":[
+      {
+        "name":"left_edge",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      },
+      {
+        "name":"right_edge",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      },
+      {
+        "name":"scanline_y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/dstrendr.cpp",
@@ -139,14 +165,14 @@
     "conv":"unknown",
     "instructions":37,
     "method":"FUN_005adb48",
-    "name":"unkafter_asgaya.cpp_FUN_005adb48",
+    "name":"crt_unknown.c_FUN_005adb48",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/asgaya.cpp",
+    "tu":"crt/unknown.c",
     "variadic":false
   },
   {
@@ -163,14 +189,14 @@
     ],
     "instructions":136,
     "method":"FUN_005ae248",
-    "name":"unkafter_asgaya.cpp_FUN_005ae248",
+    "name":"crt_unknown.c_FUN_005ae248",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/asgaya.cpp",
+    "tu":"crt/unknown.c",
     "variadic":false
   },
   {
@@ -181,14 +207,14 @@
     ],
     "instructions":8,
     "method":"FUN_005af4c8",
-    "name":"unkafter_asgaya.cpp_FUN_005af4c8",
+    "name":"crt_unknown.c_FUN_005af4c8",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/asgaya.cpp",
+    "tu":"crt/unknown.c",
     "variadic":false
   },
   {
@@ -204,14 +230,14 @@
     "conv":"unknown",
     "instructions":26,
     "method":"FUN_005b0048",
-    "name":"unkafter_2d.cpp_FUN_005b0048",
+    "name":"crt_unknown.c_FUN_005b0048",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/2d.cpp",
+    "tu":"crt/unknown.c",
     "variadic":false
   },
   {
@@ -228,17 +254,27 @@
       "005b0004",
       "005b0048"
     ],
-    "conv":"unknown",
+    "conv":"__watcallStack",
     "instructions":50,
-    "method":"FUN_005b0148",
-    "name":"unkafter_2d.cpp_FUN_005b0148",
+    "method":"processSignal",
+    "name":"crt_unknown.c_processSignal_FUN_005b0148",
+    "params":[
+      {
+        "name":"signal_number",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"int",
       "ptr":0
     },
-    "tu":"unkafter/2d.cpp",
+    "tu":"crt/unknown.c",
     "variadic":false
   },
   {
@@ -246,14 +282,14 @@
     "conv":"unknown",
     "instructions":25,
     "method":"FUN_005b01c8",
-    "name":"unkafter_2d.cpp_FUN_005b01c8",
+    "name":"crt_unknown.c_FUN_005b01c8",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/2d.cpp",
+    "tu":"crt/unknown.c",
     "variadic":false
   }
 ]

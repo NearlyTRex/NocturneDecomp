@@ -1,0 +1,269 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 110,
+    "complexity_score": 137,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 9,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 52,
+    "suspect_count": 7,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals",
+      "warning_unreachable"
+    ],
+    "total_lines": 162
+  },
+  "cross_references": [
+    {
+      "addr": "004a1d00",
+      "from_addr": "004a251b",
+      "name": "core_event.cpp_FUN_004a1d00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004bdd00",
+    "address_range": [
+      [
+        "004bdd00",
+        "004bde12"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fldnotes.cpp_CFieldNotes_enableEntry_FUN_004bdd00",
+    "signature": "void __cdecl core_fldnotes_cpp_CFieldNotes_enableEntry_FUN_004bdd00(CFieldNotes *this_ptr,char *entry_name)"
+  },
+  "function_calls": [
+    {
+      "addr": "004bbfd0",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_SNotesSection_findEntry_FUN_004bbfd0"
+    },
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "004943a0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_004943a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "004bdcdc",
+      "name": "switchdataD_004bdcdc",
+      "type": "void*",
+      "value": "004bdd51"
+    },
+    {
+      "addr": "005e0190",
+      "name": "s_CFieldNotes_enableEntry_005e0190",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e01c0",
+      "name": "s_core_fldnotes_cpp_005e01c0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e01d5",
+      "name": "s_Field_note_s_has_invalid_005e01d5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061abc0",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c3eb54"
+    },
+    {
+      "addr": "0061d2e4",
+      "name": "DAT_0061d2e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc4470",
+      "name": "DAT_01cc4470",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004a251b",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_004a1d00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a35be",
+        "call_type": "direct",
+        "caller": "core_event.cpp_FUN_004a1d00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.793103448275862,
+    "instruction_count": 87,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "BRANCHIND": 1,
+      "CALL": 3,
+      "CBRANCH": 6,
+      "COPY": 92,
+      "INT_ADD": 39,
+      "INT_AND": 34,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 30,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 15,
+      "INT_SUB": 17,
+      "INT_XOR": 3,
+      "LOAD": 30,
+      "POPCOUNT": 15,
+      "RETURN": 5,
+      "STORE": 19
+    },
+    "pcode_op_count": 330
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a5310",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004aba10",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFieldNotes *"
+      },
+      {
+        "is_param": true,
+        "name": "entry_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004bdd33) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_0061d2e4",
+      "severity": "mild",
+      "text": "DAT_0061d2e4 = 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_0061d2e4",
+      "severity": "mild",
+      "text": "DAT_0061d2e4 = 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_0061d2e4",
+      "severity": "mild",
+      "text": "DAT_0061d2e4 = 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 48,
+      "match": "DAT_0061d2e4",
+      "severity": "mild",
+      "text": "DAT_0061d2e4 = 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 54,
+      "match": "DAT_0061d2e4",
+      "severity": "mild",
+      "text": "DAT_0061d2e4 = 1;",
+      "type": "undefined_data"
+    }
+  ]
+}

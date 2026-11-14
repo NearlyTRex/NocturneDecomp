@@ -17,6 +17,10 @@ CBox * __cdecl CBox::dtor(CBox *this_ptr,uint flags);
 // Address: 0041dac0
 void __cdecl CBox::setupCorners(CBox *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *extents,float volume);
 
+// Original: core_box.cpp_FUN_0041dcf0
+// Address: 0041dcf0
+void FUN_0041dcf0(CBox *param_1,CVector3f *param_2,CVector3f *param_3,int param_4,float *param_5,float param_6);
+
 // Original: core_box.cpp_FUN_0041de90
 // Address: 0041de90
 void __cdecl FUN_0041de90(CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed);
@@ -29,9 +33,9 @@ void __cdecl CBox::process(CBox *this_ptr,float delta_time);
 // Address: 0041e130
 void __cdecl CBox::processPhysics(CBox *this_ptr,float delta_time);
 
-// Original: core_box.cpp_FUN_00420140
+// Original: core_box.cpp_CBox_loadFromFile_FUN_00420140
 // Address: 00420140
-void __cdecl FUN_00420140(CBox *this_ptr,_FILE *file_handle);
+void __cdecl CBox::loadFromFile(CBox *this_ptr,_FILE *file_handle);
 
 // Original: core_box.cpp_CBox_saveToFile_FUN_004202f0
 // Address: 004202f0
@@ -43,7 +47,7 @@ void __cdecl CBox::setupVelocities(CBox *this_ptr,CVector3f *linear_velocity,CVe
 
 // Original: core_box.cpp_SScrape_ctor_FUN_004204f0
 // Address: 004204f0
-SScrape * SScrape::ctor(SScrape *this_ptr);
+SScrape * __cdecl SScrape::ctor(SScrape *this_ptr);
 
 // Original: core_box.cpp_CBoundingBox3D_expand_FUN_00420500
 // Address: 00420500
@@ -85,9 +89,9 @@ int __cdecl FUN_004215d0(CBoundingBox3D *this_ptr,CBoundingBox3D *other);
 // Address: 00421620
 float __cdecl CBoundingBox3D::getMaximumBound(CBoundingBox3D *this_ptr);
 
-// Original: core_box.cpp_FUN_00421670
+// Original: core_box.cpp_CBoundingBox3D_render_FUN_00421670
 // Address: 00421670
-void __cdecl FUN_00421670(CBoundingBox3D *this_ptr);
+void __cdecl CBoundingBox3D::render(CBoundingBox3D *this_ptr);
 
 // Original: core_box.cpp_FUN_00421af0
 // Address: 00421af0
@@ -99,8 +103,8 @@ bool FUN_00421b90(undefined4 param_1,float *param_2,float param_3);
 
 // Original: core_box.cpp_CBoundingBox3D_ctor_FUN_00523860
 // Address: 00523860
-CBoundingBox3D * CBoundingBox3D::ctor(CBoundingBox3D *this_ptr);
+CBoundingBox3D * __cdecl CBoundingBox3D::ctor(CBoundingBox3D *this_ptr);
 
 // Original: core_box.cpp_CBoundingBox3D_dtor_FUN_00523870
 // Address: 00523870
-CBoundingBox3D * CBoundingBox3D::dtor(CBoundingBox3D *this_ptr,uint flags);
+CBoundingBox3D * __cdecl CBoundingBox3D::dtor(CBoundingBox3D *this_ptr,uint flags);

@@ -12,12 +12,11 @@
 void core_door_cpp_FUN_00464c10(int param_1)
 
 {
-  int iVar1;
-  CKeyFramedModel *pCVar2;
-  int *piVar3;
+  CKeyFramedModel *pCVar1;
+  CVector3i *pCVar2;
   uint *unaff_ESI;
-  byte bVar4;
-  float10 fVar5;
+  byte bVar3;
+  float10 fVar4;
   float afStackY_1008 [1013];
   CKeyFramedModelInstance *this_ptr;
   float local_2c;
@@ -27,26 +26,25 @@ void core_door_cpp_FUN_00464c10(int param_1)
   int local_14;
   int local_10;
   
-  bVar4 = 0;
+  bVar3 = 0;
   this_ptr = (CKeyFramedModelInstance *)(param_1 + 0x158);
-  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(this_ptr);
-  iVar1 = *(int *)&pCVar2->field_0x10c;
-  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(this_ptr);
-  local_10 = *(int *)&pCVar2->field_0x100 + -1;
-  fVar5 = (float10)local_10 * (float10)*(float *)(param_1 + 0x9ac);
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(this_ptr);
+  pCVar2 = pCVar1->vertex_list;
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(this_ptr);
+  local_10 = pCVar1->frame_count + -1;
+  fVar4 = (float10)local_10 * (float10)*(float *)(param_1 + 0x9ac);
   round();
-  local_14 = (int)ROUND(fVar5);
-  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(this_ptr);
-  piVar3 = (int *)((*(int *)(param_1 + 0xa48) + *(int *)&pCVar2->field_0x104 * local_14) * 0xc +
-                  iVar1);
-  local_2c = (float)*piVar3 * _DAT_005deb98;
-  local_28 = (float)piVar3[1] * _DAT_005deb98;
-  local_24 = (float)piVar3[2] * _DAT_005deb98;
+  local_14 = (int)ROUND(fVar4);
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0(this_ptr);
+  pCVar2 = pCVar2 + *(int *)(param_1 + 0xa48) + pCVar1->vertex_count * local_14;
+  local_2c = (float)pCVar2->x * _DAT_005deb98;
+  local_28 = (float)pCVar2->y * _DAT_005deb98;
+  local_24 = (float)pCVar2->z * _DAT_005deb98;
   core_actor_cpp_FUN_00408b80(param_1,&stack0xffffffd4);
   *unaff_ESI = local_20;
-  unaff_ESI[(uint)bVar4 * -2 + 1] =
-       *(uint *)((int)&stack0xffffffe4 + (uint)bVar4 * 0xfffffffe * 4);
-  (unaff_ESI + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1] =
-       *(uint *)(&stack0xffffffe8 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+  unaff_ESI[(uint)bVar3 * -2 + 1] =
+       *(uint *)((int)&stack0xffffffe4 + (uint)bVar3 * 0xfffffffe * 4);
+  (unaff_ESI + (uint)bVar3 * -2 + 1)[(uint)bVar3 * -2 + 1] =
+       *(uint *)(&stack0xffffffe8 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
   return;
 }

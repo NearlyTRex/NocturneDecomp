@@ -7,43 +7,43 @@
 
 // Original: core_confedrt.cpp_staticInit_FUN_005a07e0
 // Address: 005a07e0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_confedrt.cpp_factoryFuncConfederate_FUN_005a0810
 // Address: 005a0810
-void factoryFuncConfederate(void);
+CConfederate * __cdecl factoryFuncConfederate(void);
 
 // Original: core_confedrt.cpp_CConfederate_getActorType_FUN_005a0830
 // Address: 005a0830
-CDemonActorType * CConfederate::getActorType(CConfederate *this_ptr);
+CDemonActorType * __cdecl CConfederate::getActorType(CConfederate *this_ptr);
 
 // Original: core_confedrt.cpp_CConfederate_ctor_FUN_005a0840
 // Address: 005a0840
-CConfederate * CConfederate::ctor(CConfederate *this_ptr);
+CConfederate * __cdecl CConfederate::ctor(CConfederate *this_ptr);
 
 // Original: core_confedrt.cpp_CConfederate_dtor_FUN_005a09c0
 // Address: 005a09c0
-CConfederate * CConfederate::dtor(CConfederate *this_ptr,uint flags);
+CConfederate * __cdecl CConfederate::dtor(CConfederate *this_ptr,uint flags);
 
-// Original: core_confedrt.cpp_FUN_005a0a90
+// Original: core_confedrt.cpp_CConfederate_setup_FUN_005a0a90
 // Address: 005a0a90
-void FUN_005a0a90(int param_1);
+void __cdecl CConfederate::setup(CConfederate *this_ptr);
 
-// Original: core_confedrt.cpp_FUN_005a0b20
+// Original: core_confedrt.cpp_CConfederate_processStates_FUN_005a0b20
 // Address: 005a0b20
-void FUN_005a0b20(int param_1,undefined4 param_2,int param_3);
+void __cdecl CConfederate::processStates(CConfederate *this_ptr,float delta_time,int mode);
 
 // Original: core_confedrt.cpp_FUN_005a0bd0
 // Address: 005a0bd0
 void FUN_005a0bd0(int param_1,float param_2);
 
-// Original: core_confedrt.cpp_FUN_005a0fd0
+// Original: core_confedrt.cpp_CConfederate_processAnimationState_FUN_005a0fd0
 // Address: 005a0fd0
-void FUN_005a0fd0(int param_1);
+void __cdecl CConfederate::processAnimationState(CConfederate *this_ptr,float delta_time);
 
-// Original: core_confedrt.cpp_FUN_005a1000
+// Original: core_confedrt.cpp_CConfederate_processDeathState_FUN_005a1000
 // Address: 005a1000
-void FUN_005a1000(int param_1);
+void __cdecl CConfederate::processDeathState(CConfederate *this_ptr,float delta_time);
 
 // Original: core_confedrt.cpp_FUN_005a1030
 // Address: 005a1030
@@ -53,33 +53,33 @@ void FUN_005a1030(CCharacter *param_1);
 // Address: 005a1180
 void FUN_005a1180(CCharacter *param_1);
 
-// Original: core_confedrt.cpp_FUN_005a12d0
+// Original: core_confedrt.cpp_CConfederate_getDeathState_FUN_005a12d0
 // Address: 005a12d0
-undefined4 FUN_005a12d0(int param_1);
+EDeathState __cdecl CConfederate::getDeathState(CConfederate *this_ptr);
 
-// Original: core_confedrt.cpp_FUN_005a1350
+// Original: core_confedrt.cpp_CConfederate_processMotionEvent_FUN_005a1350
 // Address: 005a1350
-void FUN_005a1350(CDemonActor *param_1,undefined4 param_2);
+void __cdecl CConfederate::processMotionEvent(CConfederate *this_ptr,int event_id);
 
-// Original: core_confedrt.cpp_FUN_005a1490
+// Original: core_confedrt.cpp_CConfederate_renderOpaque_FUN_005a1490
 // Address: 005a1490
-void FUN_005a1490(undefined4 param_1);
+int __cdecl CConfederate::renderOpaque(CConfederate *this_ptr);
 
-// Original: core_confedrt.cpp_FUN_005a14a0
+// Original: core_confedrt.cpp_CConfederate_renderTransparent_FUN_005a14a0
 // Address: 005a14a0
-undefined4 FUN_005a14a0(int param_1);
+int __cdecl CConfederate::renderTransparent(CConfederate *this_ptr);
 
-// Original: core_confedrt.cpp_FUN_005a14d0
+// Original: core_confedrt.cpp_CConfederate_archive_FUN_005a14d0
 // Address: 005a14d0
-void FUN_005a14d0(undefined4 param_1);
+void __cdecl CConfederate::archive(CConfederate *this_ptr);
 
 // Original: core_confedrt.cpp_FUN_005a14e0
 // Address: 005a14e0
 void FUN_005a14e0(CDemonActor *param_1);
 
-// Original: core_confedrt.cpp_FUN_005a1a70
+// Original: core_confedrt.cpp_CConfederate_processDamage_FUN_005a1a70
 // Address: 005a1a70
-void FUN_005a1a70(undefined4 param_1,int param_2);
+void __cdecl CConfederate::processDamage(CConfederate *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_confedrt.cpp_FUN_005a1ab0
 // Address: 005a1ab0

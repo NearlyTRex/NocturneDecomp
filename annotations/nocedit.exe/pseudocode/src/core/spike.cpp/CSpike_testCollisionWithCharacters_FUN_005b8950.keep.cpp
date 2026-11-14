@@ -112,7 +112,7 @@ void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_005b8950(CSpi
                     (&this_ptr_01->base,&CStack_a4,&CStack_b0);
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_16c);
           SStack_16c.damage_amount = this_ptr->damage_strength;
-          SStack_16c.damage_type = DAMAGE_TYPE_MELEE;
+          SStack_16c.damage_type = DAMAGE_TYPE_ATTACK_BLADE;
           SStack_16c.impact_direction = CStack_a4;
           SStack_16c.attacker = &this_ptr->base;
           SStack_16c.wielder = &this_ptr->base;

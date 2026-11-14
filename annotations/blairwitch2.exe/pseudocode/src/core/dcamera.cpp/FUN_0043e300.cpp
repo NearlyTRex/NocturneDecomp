@@ -24,9 +24,9 @@ int core_dcamera_cpp_FUN_0043e300(CDemonCamera *param_1,CVector3i *param_2,CDemo
     iVar7 = 0xaaaa;
   }
   else {
-    fVar4 = (float)*(int *)param_2 * _DAT_005f4dd4 - *(float *)&param_3->field_0x4;
-    fVar5 = (float)*(int *)(param_2 + 4) * _DAT_005f4dd4 - *(float *)&param_3->field_0x8;
-    fVar6 = (float)*(int *)(param_2 + 8) * _DAT_005f4dd4 - *(float *)&param_3->field_0xc;
+    fVar4 = (float)param_2->x * _DAT_005f4dd4 - (param_3->base).base.position.f.x;
+    fVar5 = (float)param_2->y * _DAT_005f4dd4 - (param_3->base).base.position.f.y;
+    fVar6 = (float)param_2->z * _DAT_005f4dd4 - (param_3->base).base.position.f.z;
     fVar8 = (float)(_DAT_01caf5b8 - ((int)(fVar6 * fVar6 + fVar4 * fVar4 + fVar5 * fVar5) >> 1));
     lVar1 = (longlong)(int)ROUND(fVar4 * fVar8 * _DAT_005f4dd0) * (longlong)*param_4;
     lVar2 = (longlong)(int)ROUND(fVar5 * fVar8 * _DAT_005f4dd0) * (longlong)param_4[1];

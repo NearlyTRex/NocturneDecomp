@@ -1,14 +1,12 @@
 // Name: engine_alphabit.cpp_CAlphaBitmap_arrdtor4_FUN_004188f0
 // Address: 004188f0
 // Address Range: [[004188f0, 00418904]]
-// Convention: unknown
-// Signature: CAlphaBitmap * engine_alphabit_cpp_CAlphaBitmap_arrdtor4_FUN_004188f0(CAlphaBitmap *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_arrdtor4_FUN_004188f0(CAlphaBitmap *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CAlphaBitmap * engine_alphabit_cpp_CAlphaBitmap_arrdtor4_FUN_004188f0(CAlphaBitmap *this_ptr,uint flags)
+CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_arrdtor4_FUN_004188f0(CAlphaBitmap *this_ptr,uint flags)
 
 {
   CAlphaBitmap *pCVar1;

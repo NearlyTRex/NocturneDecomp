@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 125,
-    "complexity_score": 151,
+    "complexity_score": 146,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 61,
+    "pseudocode_lines": 56,
     "suspect_count": 8,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 186
+    "total_lines": 181
   },
   "cross_references": [],
   "function": {
@@ -106,6 +106,26 @@
     },
     "pcode_op_count": 675
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00509c90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0050fe70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004cf2b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -147,7 +167,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 16,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "this_ptr = DAT_005f2afc;",
@@ -155,15 +175,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 19,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "*(int *)(*(int *)DAT_005f2afc + 0x10) = iVar1;",
+      "text": "(DAT_005f2afc->vertex_buffer_ptr->projected_vertex).screen_x = iVar1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 47,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,1);",
@@ -171,7 +191,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 49,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(DAT_005f2afc,",
@@ -179,15 +199,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 55,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "(DAT_005f2afc,aSStack_2c,0x23);",
+      "text": "(DAT_005f2afc,&SStack_2c,0x23);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 61,
+      "line": 56,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);",
@@ -195,7 +215,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 62,
+      "line": 57,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,0xffff);",

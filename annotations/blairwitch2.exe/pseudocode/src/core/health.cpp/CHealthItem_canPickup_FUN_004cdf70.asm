@@ -8,7 +8,7 @@
 ; CDemonActor *    Stack[0x8]:4   picker
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040c840
+;   core_actor.cpp_isOfClass_FUN_0040c840
 ;
 ; *****************************************************************************
 
@@ -18,8 +18,8 @@ section .text
         ;   Label: core_health.cpp_CHealthItem_canPickup_FUN_004cdf70
     MOV EDX,dword ptr [ESP + 0xc]       ; 004cdf75
     PUSH EDX                            ; 004cdf79
-    CALL core_actor.cpp_FUN_0040c840    ; 004cdf7a
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c840 ; 004cdf7a
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004cdf7f
     TEST EAX,EAX                        ; 004cdf82
     JZ 0x004cdf8b                       ; 004cdf84

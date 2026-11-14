@@ -34,12 +34,12 @@
 ;   core_mission.cpp_FUN_0051bdc0
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_0052cab0
 ;   core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_0052fa80
+;   core_netgame.cpp_CNetGame_processChatOut_FUN_0052ebd0
 ;   core_netgame.cpp_CNetGame_receivePackets_FUN_0052d360
+;   core_netgame.cpp_CNetGame_sendGameSetting_FUN_0052fb60
 ;   core_netgame.cpp_CNetGame_sendMyStateChanged_FUN_0052fd80
 ;   core_netgame.cpp_CNetGame_syncPlayers_FUN_0052cf90
 ;   core_netgame.cpp_CNetGame_updatePing_FUN_0052ea10
-;   core_netgame.cpp_FUN_0052ebd0
-;   core_netgame.cpp_FUN_0052fb60
 ;   crt_math.c_round_FUN_005c03a0
 ;   crt_stdlib.c_rand_FUN_005c084c
 ;   crt_stdlib.c_srand_FUN_005c0870
@@ -106,8 +106,8 @@ section .text
     PUSH 0x5ebd60                       ; 0052e1c6
     LEA EAX,[ESP + 0x10]                ; 0052e1cb
     PUSH EAX                            ; 0052e1cf
-    CALL crt_unknown.c_FUN_005bfb40     ; 0052e1d0
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0052e1d0
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 0052e1d5
     PUSH 0xb                            ; 0052e1d8
     PUSH 0x0                            ; 0052e1da
@@ -121,8 +121,8 @@ section .text
     PUSH 0x5ebd6c                       ; 0052e1f0
     LEA EAX,[ESP + 0x10]                ; 0052e1f5
     PUSH EAX                            ; 0052e1f9
-    CALL crt_unknown.c_FUN_005bfb40     ; 0052e1fa
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0052e1fa
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 0052e1ff
     PUSH 0xb                            ; 0052e202
     PUSH 0x190                          ; 0052e204
@@ -298,8 +298,8 @@ section .text
     PUSH 0x5ebdd2                       ; 0052e3dd
     LEA EAX,[ESP + 0x10]                ; 0052e3e2
     PUSH EAX                            ; 0052e3e6
-    CALL crt_unknown.c_FUN_005bfb40     ; 0052e3e7
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0052e3e7
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 0052e3ec
     PUSH EBX                            ; 0052e3ef
     PUSH 0x190                          ; 0052e3f0
@@ -388,8 +388,8 @@ section .text
     PUSH 0x5ebdbb                       ; 0052e4d7
     LEA EAX,[ESP + 0x10]                ; 0052e4dc
     PUSH EAX                            ; 0052e4e0
-    CALL crt_unknown.c_FUN_005bfb40     ; 0052e4e1
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0052e4e1
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 0052e4e6
     JMP 0x0052e378                      ; 0052e4e9
         ;   XREF to: 0052e378 (UNCONDITIONAL_JUMP)  ; LAB_0052e378
@@ -408,8 +408,8 @@ section .text
     PUSH 0x5ebdd5                       ; 0052e50d
     LEA EAX,[ESP + 0x10]                ; 0052e512
     PUSH EAX                            ; 0052e516
-    CALL crt_unknown.c_FUN_005bfb40     ; 0052e517
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0052e517
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 0052e51c
     PUSH EBX                            ; 0052e51f
     PUSH 0x1f4                          ; 0052e520
@@ -470,8 +470,8 @@ section .text
         ;   Label: LAB_0052e5c0
     JMP 0x0052e55b                      ; 0052e5c2
         ;   XREF to: 0052e55b (UNCONDITIONAL_JUMP)  ; LAB_0052e55b
-    CALL wincore_wddvmem.cpp_FUN_005acff0 ; 0052e5c4
-        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_005acff0()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005acff0 ; 0052e5c4
+        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005acff0()
         ;   Label: LAB_0052e5c4
     MOV ECX,dword ptr [EBP + 0x14]      ; 0052e5c9
     PUSH ECX                            ; 0052e5cc
@@ -556,8 +556,8 @@ section .text
     PUSH ESI                            ; 0052e6a5
     MOV EAX,dword ptr [EBP + 0x14]      ; 0052e6a6
     PUSH EAX                            ; 0052e6a9
-    CALL core_netgame.cpp_FUN_0052fb60  ; 0052e6aa
-        ;   XREF to: 0052fb60 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_FUN_0052fb60(CNetGame * this_ptr, int player_index)
+    CALL core_netgame.cpp_CNetGame_sendGameSetting_FUN_0052fb60 ; 0052e6aa
+        ;   XREF to: 0052fb60 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_sendGameSetting_FUN_0052fb60(CNetGame * this_ptr, int player_index)
     ADD ESP,0x8                         ; 0052e6af
     XOR EAX,EAX                         ; 0052e6b2
         ;   Label: LAB_0052e6b2
@@ -819,8 +819,8 @@ section .text
     TEST EAX,EAX                        ; 0052e950
     JZ 0x0052e9ae                       ; 0052e952
         ;   XREF to: 0052e9ae (CONDITIONAL_JUMP)  ; LAB_0052e9ae
-    CALL wincore_winrun.cpp_FUN_005b2420 ; 0052e954
-        ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005b2420()
+    CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 0052e954
+        ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
     MOV EDX,EAX                         ; 0052e959
     MOV EBX,0x12                        ; 0052e95b
     SAR EDX,0x1f                        ; 0052e960
@@ -881,8 +881,8 @@ section .text
     PUSH 0x1d51b20                      ; 0052e9f1
     MOV EDX,dword ptr [EBP + 0x14]      ; 0052e9f6
     PUSH EDX                            ; 0052e9f9
-    CALL core_netgame.cpp_FUN_0052ebd0  ; 0052e9fa
-        ;   XREF to: 0052ebd0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_FUN_0052ebd0(CNetGame * this_ptr, char * message, int target_player)
+    CALL core_netgame.cpp_CNetGame_processChatOut_FUN_0052ebd0 ; 0052e9fa
+        ;   XREF to: 0052ebd0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_processChatOut_FUN_0052ebd0(CNetGame * this_ptr, char * message, int target_player)
     ADD ESP,0xc                         ; 0052e9ff
     JMP 0x0052e892                      ; 0052ea02
         ;   XREF to: 0052e892 (UNCONDITIONAL_JUMP)  ; LAB_0052e892

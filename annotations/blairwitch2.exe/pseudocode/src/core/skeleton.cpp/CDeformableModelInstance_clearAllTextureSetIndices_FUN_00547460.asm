@@ -8,7 +8,7 @@
 ;
 ; XREF[3]:
 ;   core_actor.cpp_archivePartStatus_FUN_0040bc50 at 0040bd05
-;   core_charactr.cpp_FUN_0042b440 at 0042b482
+;   core_charactr.cpp_CCharacter_setCharacterModel_FUN_0042b440 at 0042b482
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0 at 005478ef
 ;
 ; *****************************************************************************

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_sps_cpp_staticInit_FUN_005681b0(void)
+; void __cdecl core_sps_cpp_staticInit_FUN_005681b0(void)
 ;
 ;
 ; Called Functions:

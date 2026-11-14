@@ -2,15 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 78,
+    "complexity_score": 58,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 6,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 28,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field",
+      "alloc_magic_size",
       "warning_overlapping_globals"
     ],
     "total_lines": 91
@@ -54,12 +54,12 @@
     {
       "addr": "005b8580",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b8580"
+      "name": "crt_memory.c_malloc_FUN_005b8580"
     },
     {
       "addr": "005b8be2",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b8be2"
+      "name": "crt_memory.c_operator_new_FUN_005b8be2"
     }
   ],
   "globals": [
@@ -151,6 +151,32 @@
     },
     "pcode_op_count": 218
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004e7240",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004cfbd0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004eef00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.96
+    },
+    "nocturne.exe": {
+      "addr": "004b13d0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -177,28 +203,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Allocation size hardcodes 0x4 == sizeof(SGroundCell). Replace the magic with sizeof(SGroundCell) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
       "line": 12,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "pvVar1 = FUN_005b8580(*(int *)this_ptr * *(int *)&this_ptr->field_0x4 * 4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(void **)&this_ptr->field_0x24 = pvVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(CTextureList **)&this_ptr->field_0x28 = pCVar2;",
-      "type": "unnamed_field"
+      "match": "(SGroundCell*) alloc stride 0x4",
+      "severity": "moderate",
+      "text": "(SGroundCell *)malloc(this_ptr->width * this_ptr->height * 4)",
+      "type": "alloc_magic_size"
     }
   ]
 }

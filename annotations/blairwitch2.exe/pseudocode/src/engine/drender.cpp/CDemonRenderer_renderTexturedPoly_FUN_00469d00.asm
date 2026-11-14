@@ -11,14 +11,14 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[9]:
-;   core_bodypart.cpp_FUN_004159e0 at 00415b32
-;   core_dskybox.cpp_FUN_0046e410 at 0046e73b
-;   core_flies.cpp_FUN_004a70b0 at 004a748b
-;   core_glass.cpp_FUN_004c5840 at 004c5993
+;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_004159e0 at 00415b32
+;   core_dskybox.cpp_renderSkyDome_FUN_0046e410 at 0046e73b
+;   core_flies.cpp_CFlies_renderOpaque_FUN_004a70b0 at 004a748b
+;   core_glass.cpp_CGlass_renderBackground_FUN_004c5840 at 004c5993
 ;   core_inv.cpp_FUN_004da130 at 004da6da
 ;   core_inv.cpp_FUN_004dd9b0 at 004de9a1
 ;   core_morph.cpp_CMorphModel_renderFaces_FUN_005b6c90 at 005b6d59
-;   core_wateract.cpp_FUN_00587400 at 0058762f
+;   core_wateract.cpp_CWaterActor_renderTransparent_FUN_00587400 at 0058762f
 ;   engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0046bd80 at 0046bda7
 ;
 ; Referenced Globals:
@@ -126,7 +126,7 @@ section .text
     ADD EAX,0x8                         ; 00469dca
     PUSH EAX                            ; 00469dcd
     CALL engine_3d.c_isVisiblePlane_FUN_00403970 ; 00469dce
-        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403970()
+        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403970(SClipPlane * plane)
     ADD ESP,0x4                         ; 00469dd3
     TEST EAX,EAX                        ; 00469dd6
     JZ 0x00469d98                       ; 00469dd8

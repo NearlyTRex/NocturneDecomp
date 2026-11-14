@@ -6,10 +6,19 @@
 #include "system/basetypes.h"
 
 // Structure: SPlayerActionState
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// 9 dwords: SPlayerInput's speeds start at +0x24 (FUN_004d0ee0 zeroes strafe_speed at +0x24), one more than nocedit's 8 (bw1 typed drift: strafe/turn/look 0x20/0x24/0x28 -> 0x24/0x28/0x2c in processMouseControls).
+// Ghidra size: 0x24 (36 bytes)
 #pragma pack(push, 1)
 typedef struct SPlayerActionState {
+    int walk; // 0x0, FUN_004d0ee0 stores the edge of CGame+0x28 (keyWalk, readIniData 004f4f50)
+    int backup; // 0x4, FUN_004d0ee0 stores the edge of CGame+0x2c (keyBackup, readIniData 004f4f50)
+    int run; // 0x8, FUN_004d0ee0 stores the edge of CGame+0x30 (keyRun (always_run inverts it), readIniData 004f4f50)
+    int fire; // 0xc, FUN_004d0ee0 stores the edge of CGame+0x48 (keyFire (zeroed when the hero is dead), readIniData 004f4f50)
+    int use_item; // 0x10, FUN_004d0ee0 stores the edge of CGame+0x4c (keyUseItem, readIniData 004f4f50)
+    int light; // 0x14, FUN_004d0ee0 stores the edge of CGame+0x50 (keyLight, readIniData 004f4f50)
+    int draw; // 0x18, FUN_004d0ee0 stores the edge of CGame+0x68 (keyDraw, readIniData 004f4f50)
+    int jump; // 0x1c, FUN_004d0ee0 stores CGame+0x6c, read as keyJump by readIniData
+    int quick_turn; // 0x20, FUN_004d0ee0 stores CGame+0x70, read as keyQuickTurn by readIniData; CDoc FUN_00469550 tests hero+0xc1d8+0x20 (0046b3f4)
 } SPlayerActionState;
 #pragma pack(pop)
 

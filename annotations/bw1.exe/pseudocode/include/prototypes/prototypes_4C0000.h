@@ -4,7 +4,9 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/stdarg.h"
 #include "types/classes/CBitFont.h"
+#include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CDeformableModelInstance.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
@@ -12,145 +14,151 @@
 #include "types/classes/CFrankenstienMachine.h"
 #include "types/classes/CGabriella.h"
 #include "types/classes/CGame.h"
-#include "types/classes/CHero.h"
+#include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CVector3f.h"
+#include "types/enums/ECollisionType.h"
 #include "types/enums/EInputCodeType.h"
+#include "types/structs/SCollisionInfo.h"
+#include "types/structs/SDamageInfo.h"
 #include "types/structs/SFly.h"
+#include "types/structs/SRenderVertex.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x4C0000
 // =============================================================================
 
 void __cdecl core_flies_cpp_drawFlyPixelClipped_FUN_004c0040(int screen_x,int screen_y,int z_depth);
-int core_flies_cpp_FUN_004c0080(CDemonActor *param_1);
-void core_flies_cpp_FUN_004c04b0(int param_1);
-undefined4 core_flies_cpp_FUN_004c0520(void);
-void __cdecl core_flies_cpp_FUN_004c0530(CFlies *this_ptr,int fly_index);
+int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004c0080(CFlies *this_ptr);
+CBoundingBox3D * __cdecl core_flies_cpp_CFlies_getBoundingBox_FUN_004c04b0(CFlies *this_ptr,CBoundingBox3D *out_box);
+ECollisionType __cdecl core_flies_cpp_CFlies_getCollisionType_FUN_004c0520(CFlies *this_ptr,SCollisionInfo *collision_info);
+void __cdecl core_flies_cpp_CFlies_initFly_FUN_004c0530(CFlies *this_ptr,int fly_index);
 float * core_flies_cpp_FUN_004c0630(int param_1,float *param_2);
-CFlies * __cdecl core_flies_cpp_FUN_004c0970(CDemonActor *actor);
-CFlies * core_flies_cpp_CFlies_dtor_FUN_004c09c0(CFlies *this_ptr,uint flags);
+CFlies * __cdecl core_flies_cpp_findFliesByFollowActor_FUN_004c0970(CDemonActor *actor);
+CFlies * __cdecl core_flies_cpp_CFlies_dtor_FUN_004c09c0(CFlies *this_ptr,uint flags);
 SFly * __cdecl core_flies_cpp_SFly_ctor_FUN_004c0a10(SFly *this_ptr);
 int __cdecl engine_font_cpp_clipCharacter_FUN_004c0a80(int *bitmap_offset,int *left_x,int *top_y,int *right_x,int *bottom_y,int bitmap_width );
-CBitFont * __cdecl engine_font_cpp_FUN_004c0b40(CBitFont *this_ptr);
-CBitFont * __cdecl engine_font_cpp_FUN_004c0b60(CBitFont *this_ptr,uint flags);
-void __cdecl engine_font_cpp_FUN_004c0b80(CBitFont *this_ptr);
+CBitFont * __cdecl engine_font_cpp_CBitFont_ctor_FUN_004c0b40(CBitFont *this_ptr);
+CBitFont * __cdecl engine_font_cpp_CBitFont_dtor_FUN_004c0b60(CBitFont *this_ptr,uint flags);
+void __cdecl engine_font_cpp_CBitFont_reset_FUN_004c0b80(CBitFont *this_ptr);
 void __cdecl engine_font_cpp_CBitFont_openFontFile_FUN_004c0ca0(CBitFont *this_ptr,char *filename,int width,int height,int load_flags);
-void __cdecl engine_font_cpp_FUN_004c0cd0(CBitFont *this_ptr,char *filename,int width,int height,int first_char);
+void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004c0cd0(CBitFont *this_ptr,char *filename,int width,int height,int first_char);
 void engine_font_cpp_FUN_004c0fa0(int param_1,int param_2);
 void engine_font_cpp_FUN_004c1520(int param_1,float param_2);
-void __cdecl engine_font_cpp_FUN_004c1540(CBitFont *this_ptr,char *filename,int width,int height,int first_char,int last_char,int load_flags);
-void engine_font_cpp_FUN_004c157e(CBitFont *param_1,CBitFont *param_2);
+void __cdecl engine_font_cpp_CBitFont_loadNewBitmap_FUN_004c1540(CBitFont *this_ptr,char *filename,int width,int height,int first_char,int last_char,int load_flags);
+void engine_font_cpp_FUN_004c1580(void);
 void engine_font_cpp_FUN_004c1830(CBitFont *param_1);
-void __cdecl engine_font_cpp_FUN_004c18b0(CBitFont *this_ptr);
-void engine_font_cpp_FUN_004c18c0(int param_1,int param_2,int param_3,int param_4,int param_5);
-int engine_font_cpp_FUN_004c1d70(int param_1,byte *param_2,int param_3,int param_4,int param_5);
+void __cdecl engine_font_cpp_CBitFont_setInitializedFlag_FUN_004c18b0(CBitFont *this_ptr);
+void engine_font_cpp_FUN_004c18c0(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5);
+int __cdecl engine_font_cpp_CBitFont_calculateCharacterHeight_FUN_004c1d70(CBitFont *this_ptr,uchar *char_bitmap,int char_width,int char_height,int bitmap_stride);
 int engine_font_cpp_FUN_004c1dd0(CBitFont *param_1,byte *param_2,int param_3,int param_4,int param_5,int param_6);
-int __cdecl engine_font_cpp_FUN_004c2060(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
-void engine_font_cpp_FUN_004c2090(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
-int __cdecl engine_font_cpp_FUN_004c20e0(CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,undefined4 format_string,undefined4 param_7);
+int __cdecl engine_font_cpp_CBitFont_drawTextWrapper_FUN_004c2060(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
+int __cdecl engine_font_cpp_CBitFont_drawTextF_FUN_004c2090(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format_string);
+int __cdecl engine_font_cpp_CBitFont_drawTextFV_FUN_004c20e0(CBitFont *this_ptr,int x_pos,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
 int __cdecl engine_font_cpp_CBitFont_drawTextRight_FUN_004c2150(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
+void __cdecl engine_font_cpp_CBitFont_printF_FUN_004c2190(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format);
+void __cdecl engine_font_cpp_CBitFont_printFV_FUN_004c21e0(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format,va_list_t args);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenter_FUN_004c2250(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *text);
-void engine_font_cpp_FUN_004c2290(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
-int __cdecl engine_font_cpp_FUN_004c22e0(CBitFont *this_ptr,int center_x,int y_pos,int color_mode,int color_value,undefined4 format_string,undefined4 param_7);
+int __cdecl engine_font_cpp_CBitFont_drawTextCenterF_FUN_004c2290(CBitFont *this_ptr,int x,int y,int color_mode,int color_value,char *format_string);
+int __cdecl engine_font_cpp_CBitFont_drawTextCenterFV_FUN_004c22e0(CBitFont *this_ptr,int center_x,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004c2350(CBitFont *this_ptr,int left_x,int right_x,int y,int color_mode,int color_value,char *text);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_004c23a0(CBitFont *this_ptr,int left_x,int right_x,int y,int color_mode,int color_value,char *format_string);
-int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004c23f0(CBitFont *this_ptr,int left_x,int right_x,int y_pos,int color_mode,int color_value,undefined4 format_string,undefined4 param_8);
+int __cdecl engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004c23f0(CBitFont *this_ptr,int left_x,int right_x,int y_pos,int color_mode,int color_value,char *format_string,va_list_t args);
 int __cdecl engine_font_cpp_CBitFont_drawTextCenterInClip_FUN_004c2460(CBitFont *this_ptr,int y,int color_mode,int color_value,char *text);
-int __cdecl engine_font_cpp_CBitFont_printCenterFV_FUN_004c2500(CBitFont *this_ptr,int y,int color_mode,int color_value,undefined4 format_string,undefined4 param_6);
-void engine_font_cpp_FUN_004c2560(uint param_1,uint param_2,uint param_3);
-int __cdecl engine_font_cpp_FUN_004c2690(void);
-void __cdecl engine_font_cpp_FUN_004c26b0(int text_color);
+int __cdecl engine_font_cpp_CBitFont_printCenterFV_FUN_004c2500(CBitFont *this_ptr,int y,int color_mode,int color_value,char *format_string,va_list_t args);
+void __cdecl engine_font_cpp_setShadowColor_FUN_004c2560(uint red,uint green,uint blue);
+int __cdecl engine_font_cpp_getDefaultTextColor_FUN_004c2690(void);
+void __cdecl engine_font_cpp_setDefaultTextColor_FUN_004c26b0(int text_color);
 void __cdecl engine_font_cpp_drawAlphaBlendedPixels_FUN_004c26c0(uint *dest_buffer,uchar *src_indices,uint *color_table,int pixel_count,uint blend_color);
 void engine_font_cpp_FUN_004c2750(int param_1);
 int __cdecl engine_font_cpp_FUN_004c2810(CBitFont *this_ptr,int character_code,int x,int y,int color_mode,int color_value);
-int __cdecl engine_font_cpp_FUN_004c3ea0(CBitFont *this_ptr,char *text);
-int __cdecl engine_font_cpp_FUN_004c3f50(CBitFont *this_ptr,char *text_string);
+int __cdecl engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(CBitFont *this_ptr,char *text);
+int __cdecl engine_font_cpp_CBitFont_getTextHeight_FUN_004c3f50(CBitFont *this_ptr,char *text_string);
 undefined4 engine_font_cpp_FUN_004c4030(CBitFont *param_1,char *param_2,char *param_3,int param_4,int param_5,byte param_6,int *param_7);
 int engine_font_cpp_FUN_004c4260(undefined4 param_1,int param_2,void *param_3,int param_4,int param_5,undefined4 param_6);
-int engine_font_cpp_FUN_004c430e(CBitFont *param_1,char *param_2,char *param_3,int param_4,int param_5,int param_6,int param_7,int param_8);
-int __cdecl engine_font_cpp_FUN_004c44e0(CBitFont *this_ptr,int char_code);
-int __cdecl engine_font_cpp_FUN_004c4510(CBitFont *this_ptr,int char_code);
-undefined4 engine_font_cpp_FUN_004c4540(int param_1,int param_2);
-void __cdecl engine_font_cpp_FUN_004c4570(CBitFont *this_ptr,int offset_value,int start_char,int end_char);
-void __cdecl engine_font_cpp_FUN_004c45d0(CBitFont *this_ptr,int value);
+int engine_font_cpp_FUN_004c4310(void);
+int __cdecl engine_font_cpp_CBitFont_getCharWidth_FUN_004c44e0(CBitFont *this_ptr,int char_code);
+int __cdecl engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(CBitFont *this_ptr,int char_code);
+int __cdecl engine_font_cpp_CBitFont_getCharYOffset_FUN_004c4540(CBitFont *this_ptr,int char_code);
+void __cdecl engine_font_cpp_CBitFont_setCharYOffsetRange_FUN_004c4570(CBitFont *this_ptr,int offset_value,int start_char,int end_char);
+void __cdecl engine_font_cpp_CBitFont_setFontReady_FUN_004c45d0(CBitFont *this_ptr,int value);
 void __cdecl engine_font_cpp_CBitFont_remapPalette_FUN_004c45e0(CBitFont *this_ptr);
-int unkafter_font_cpp_FUN_004c47f0(int param_1,byte *param_2,int param_3,int param_4,int param_5);
-uint unkafter_font_cpp_FUN_004c4b9e(int param_1,int param_2,uint param_3);
-undefined4 unkafter_font_cpp_FUN_004c4bf0(void);
-void unkafter_font_cpp_FUN_004c4c51(void);
-int * unkafter_font_cpp_FUN_004c4d3e(int param_1,int *param_2);
-void __cdecl engine_fpoly_c_rasterizePolygonHardware_FUN_004c4d80(int *param_1,int param_2);
-void core_frankgen_cpp_staticInit_FUN_004c50f0(void);
-void core_frankgen_cpp_factoryFuncFrankenstienMachine_FUN_004c5120(void);
-CDemonActorType * core_frankgen_cpp_CFrankenstienMachine_getActorType_FUN_004c5140(CFrankenstienMachine *this_ptr);
+int engine_font_cpp_FUN_004c47f0(int param_1,byte *param_2,int param_3,int param_4,int param_5);
+uint engine_font_cpp_FUN_004c4ba0(void);
+undefined4 engine_font_cpp_FUN_004c4bf0(void);
+void engine_font_cpp_FUN_004c4c51(void);
+int * engine_font_cpp_FUN_004c4d40(void);
+void __cdecl engine_fpoly_c_rasterizePolygonHardware_FUN_004c4d80(SRenderVertex **vertices,int vertex_count);
+void __cdecl core_frankgen_cpp_staticInit_FUN_004c50f0(void);
+CFrankenstienMachine * __cdecl core_frankgen_cpp_factoryFuncFrankenstienMachine_FUN_004c5120(void);
+CDemonActorType * __cdecl core_frankgen_cpp_CFrankenstienMachine_getActorType_FUN_004c5140(CFrankenstienMachine *this_ptr);
 CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_ctor_FUN_004c5150(CFrankenstienMachine *this_ptr);
-void core_frankgen_cpp_FUN_004c51e0(CFrankenstienMachine *param_1);
+void __cdecl core_frankgen_cpp_CFrankenstienMachine_setup_FUN_004c51e0(CFrankenstienMachine *this_ptr);
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_archive_FUN_004c5410(CFrankenstienMachine *this_ptr);
-void core_frankgen_cpp_FUN_004c5470(CFrankenstienMachine *param_1,float param_2);
+void __cdecl core_frankgen_cpp_CFrankenstienMachine_process_FUN_004c5470(CFrankenstienMachine *this_ptr,float delta_time);
 int __cdecl core_frankgen_cpp_CFrankenstienMachine_accumulateParticles_FUN_004c5990(CFrankenstienMachine *this_ptr,float emission_rate,float delta_time);
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004c59f0(CFrankenstienMachine *this_ptr,float trigger_frame,char *sfx_filename);
-int core_frankgen_cpp_FUN_004c5a40(CFrankenstienMachine *param_1);
-void core_frankgen_cpp_FUN_004c5bd0(int param_1);
-CVector3f * __cdecl core_frankgen_cpp_FUN_004c5c60(CFrankenstienMachine *this_ptr);
-CDemonActor * __cdecl core_frankgen_cpp_FUN_004c5e10(void);
+int __cdecl core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_004c5a40(CFrankenstienMachine *this_ptr);
+CBoundingBox3D * __cdecl core_frankgen_cpp_CFrankenstienMachine_getBoundingBox_FUN_004c5bd0(CFrankenstienMachine *this_ptr,CBoundingBox3D *out_box);
+CVector3f * __cdecl core_frankgen_cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004c5c60(CFrankenstienMachine *this_ptr);
+CDemonActor * __cdecl core_frankgen_cpp_findLeader_FUN_004c5e10(void);
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004c5e80(CFrankenstienMachine *this_ptr,float start_frame,float end_frame);
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004c5f10(CFrankenstienMachine *this_ptr,float start_frame,float end_frame);
-undefined4 core_frankgen_cpp_FUN_004c5fd0(void);
+ECollisionType __cdecl core_frankgen_cpp_CFrankenstienMachine_getCollisionType_FUN_004c5fd0(CFrankenstienMachine *this_ptr,SCollisionInfo *collision_info);
 CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_004c6000(CFrankenstienMachine *this_ptr,uint flags);
 void __cdecl core_gabriela_cpp_staticInit_FUN_004c6070(void);
 float core_gabriela_cpp_FUN_004c6150(undefined4 param_1,undefined4 param_2,float param_3,int param_4);
 float __cdecl core_gabriela_cpp_flashlightBlendWeightCallback_FUN_004c6190(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *instance);
 float __cdecl core_gabriela_cpp_aimRotationBlendWeightCallback_FUN_004c61e0(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *model_ptr);
-void core_gabriela_cpp_factoryFuncGabriella_FUN_004c6240(void);
-CDemonActorType * core_gabriela_cpp_CGabriella_getActorType_FUN_004c6260(CGabriella *this_ptr);
+CGabriella * __cdecl core_gabriela_cpp_factoryFuncGabriella_FUN_004c6240(void);
+CDemonActorType * __cdecl core_gabriela_cpp_CGabriella_getActorType_FUN_004c6260(CGabriella *this_ptr);
 CGabriella * __cdecl core_gabriela_cpp_CGabriella_ctor_FUN_004c6270(CGabriella *this_ptr);
-void core_gabriela_cpp_FUN_004c6390(CHero *param_1);
-void core_gabriela_cpp_FUN_004c65f0(CGabriella *param_1,float param_2);
+void __cdecl core_gabriela_cpp_CGabriella_setup_FUN_004c6390(CGabriella *this_ptr);
+void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004c65f0(CGabriella *this_ptr,float delta_time);
 void core_gabriela_cpp_FUN_004c7aa0(CDemonActor *param_1);
 void core_gabriela_cpp_FUN_004c83b0(CGabriella *param_1,float param_2);
-undefined4 core_gabriela_cpp_FUN_004c88a0(int param_1);
-undefined4 core_gabriela_cpp_FUN_004c88f0(void);
+float __cdecl core_gabriela_cpp_CGabriella_getFlashlightMinAngle_FUN_004c88a0(CGabriella *this_ptr);
+float __cdecl core_gabriela_cpp_CGabriella_getFlashlightMaxAngle_FUN_004c88f0(CGabriella *this_ptr);
 void core_gabriela_cpp_FUN_004c8900(int param_1);
-void __cdecl core_gabriela_cpp_FUN_004c89c0(CGabriella *this_ptr);
-void __cdecl core_gabriela_cpp_FUN_004c91b0(CGabriella *this_ptr,float delta_time);
-int __cdecl core_gabriela_cpp_FUN_004c9500(CGabriella *this_ptr);
-void __cdecl core_gabriela_cpp_FUN_004c9990(CGabriella *this_ptr);
-int __cdecl core_gabriela_cpp_FUN_004c99e0(CGabriella *this_ptr);
-int __cdecl core_gabriela_cpp_FUN_004c9dd0(CGabriella *this_ptr);
-void core_gabriela_cpp_FUN_004c9e40(CDemonActor *param_1);
-int __cdecl core_gabriela_cpp_FUN_004c9eb0(CGabriella *this_ptr);
+void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0(CGabriella *this_ptr);
+void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004c91b0(CGabriella *this_ptr,float delta_time);
+int __cdecl core_gabriela_cpp_CGabriella_findAndPickupNearbyObject_FUN_004c9500(CGabriella *this_ptr);
+void __cdecl core_gabriela_cpp_CGabriella_collectAmmo_FUN_004c9990(CGabriella *this_ptr);
+int __cdecl core_gabriela_cpp_CGabriella_tryClimbLadder_FUN_004c99e0(CGabriella *this_ptr);
+int __cdecl core_gabriela_cpp_CGabriella_canFireWeapon_FUN_004c9dd0(CGabriella *this_ptr);
+void __cdecl core_gabriela_cpp_CGabriella_tryFireWeapon_FUN_004c9e40(CGabriella *this_ptr);
+int __cdecl core_gabriela_cpp_CGabriella_tryThrowObject_FUN_004c9eb0(CGabriella *this_ptr);
 void __cdecl core_gabriela_cpp_CGabriella_archive_FUN_004c9ef0(CGabriella *this_ptr);
 int __cdecl core_gabriela_cpp_CGabriella_renderOpaque_FUN_004c9fa0(CGabriella *this_ptr);
 int __cdecl core_gabriela_cpp_CGabriella_renderTransparent_FUN_004ca090(CGabriella *this_ptr);
-float __cdecl core_gabriela_cpp_FUN_004ca0c0(CGabriella *this_ptr,CDemonActor *target_actor,int use_wider_fov);
-void __cdecl core_gabriela_cpp_FUN_004ca450(CGabriella *this_ptr,float delta_time,int is_holstering);
-void core_gabriela_cpp_FUN_004cab10(CDemonActor *param_1,int param_2);
-void __cdecl core_gabriela_cpp_FUN_004cad20(CGabriella *this_ptr,float delta_time,int has_carried_objects);
-void core_gabriela_cpp_FUN_004caff0(int param_1,float param_2,float *param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
-void core_gabriela_cpp_FUN_004cb1e0(int param_1,float param_2);
-bool core_gabriela_cpp_FUN_004cb710(int param_1);
-void core_gabriela_cpp_FUN_004cb730(int param_1,int param_2);
+float __cdecl core_gabriela_cpp_CGabriella_scoreTargetVisibility_FUN_004ca0c0(CGabriella *this_ptr,CDemonActor *target_actor,int use_wider_fov);
+void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004ca450(CGabriella *this_ptr,float delta_time,int is_holstering);
+void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004cab10(CGabriella *this_ptr,SDamageInfo *damage_info);
+void __cdecl core_gabriela_cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004cad20(CGabriella *this_ptr,float delta_time,int has_carried_objects);
+void core_gabriela_cpp_FUN_004caff0(int param_1,float param_2,float *param_3,int param_4,int param_5,undefined4 param_6);
+CMatrix3x4f * __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004cb1e0(CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+int __cdecl core_gabriela_cpp_CGabriella_isWeaponDrawn_FUN_004cb710(CGabriella *this_ptr);
+void __cdecl core_gabriela_cpp_CGabriella_drawWeapon_FUN_004cb730(CGabriella *this_ptr,int drawn);
 CGabriella * __cdecl core_gabriela_cpp_CGabriella_dtor_FUN_004cb760(CGabriella *this_ptr,uint flags);
-void core_game_cpp_staticInit_FUN_004cb7d0(void);
+void __cdecl core_game_cpp_staticInit_FUN_004cb7d0(void);
 void __cdecl core_game_cpp_setupMovieRecording_FUN_004cb870(void);
-void core_game_cpp_FUN_004cb950(void);
+void __cdecl core_game_cpp_captureDebugMovieFrame_FUN_004cb950(void);
 CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004cbc80(CGame *this_ptr);
-CGame * core_game_cpp_CGame_dtor_FUN_004cbf00(CGame *this_ptr,uint flags);
+CGame * __cdecl core_game_cpp_CGame_dtor_FUN_004cbf00(CGame *this_ptr,uint flags);
 void __cdecl core_game_cpp_CGame_saveClockTime_FUN_004cbf10(CGame *this_ptr);
 void core_game_cpp_FUN_004cbf20(int param_1);
 void __cdecl core_game_cpp_CGame_drawScreenBorder_FUN_004cc0c0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_displayMessage_FUN_004cc190(CGame *this_ptr,char *message,float duration);
-void __cdecl core_game_cpp_FUN_004cc1f0(CGame *this_ptr);
-void __cdecl core_game_cpp_drawHealthBar_FUN_004cc210(int param_1,int param_2,int param_3,int param_4,float param_5);
-void __cdecl core_game_cpp_FUN_004cc2b0(CGame *this_ptr);
-void __cdecl core_game_cpp_FUN_004cc810(CGame *this_ptr);
+void __cdecl core_game_cpp_CGame_clearOverlay_FUN_004cc1f0(CGame *this_ptr);
+void __cdecl core_game_cpp_drawHealthBar_FUN_004cc210(int x1,int y1,int x2,int y2,float fill_percent);
+void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004cc2b0(CGame *this_ptr);
+void __cdecl core_game_cpp_CGame_updateStatusDisplays_FUN_004cc810(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_setFudgeTarget_FUN_004cc9a0(CGame *this_ptr,CVector3f *fudge_target,float fudge_step);
-void __cdecl core_game_cpp_FUN_004cc9c0(CGame *this_ptr);
-void core_game_cpp_FUN_004ccafe(undefined4 param_1);
+void __cdecl core_game_cpp_CGame_processFudge_FUN_004cc9c0(CGame *this_ptr);
+void __cdecl core_game_cpp_drawCreditsLine_FUN_004ccb00(char *text_string);
 void __cdecl core_game_cpp_drawKeyBindingEntry_FUN_004ccb80(EInputCodeType key_code,char *action_name);
-void __cdecl core_game_cpp_FUN_004ccc40(CGame *this_ptr);
+void __cdecl core_game_cpp_CGame_showCustomizableKeys_FUN_004ccc40(CGame *this_ptr);
 void core_game_cpp_FUN_004ce580(CGame *param_1);
 void __cdecl core_game_cpp_CGame_setGameRes_FUN_004cf430(CGame *this_ptr);
-void __cdecl core_game_cpp_FUN_004cf530(CGame *this_ptr);
-int __cdecl core_game_cpp_FUN_004cf5e0(CGame *this_ptr);
+void __cdecl core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004cf530(CGame *this_ptr);
+int __cdecl core_game_cpp_CGame_runGameSession_FUN_004cf5e0(CGame *this_ptr);
 

@@ -1,0 +1,149 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 27,
+    "complexity_score": 10,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 37
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0058a320",
+    "address_range": [
+      [
+        "0058a320",
+        "0058a354"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_stranger.cpp_CStranger_setPositionAndOrientation_FUN_0058a320",
+    "signature": "void __cdecl core_stranger_cpp_CStranger_setPositionAndOrientation_FUN_0058a320(CStranger *this_ptr,CVector3f *new_position,CVector3f *new_orientation)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042cbe0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_setPositionAndOrientation_FUN_0042cbe0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.12,
+    "instruction_count": 25,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 30,
+      "INT_ADD": 17,
+      "INT_AND": 8,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_MULT": 6,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 4,
+      "INT_SUB": 14,
+      "INT_XOR": 1,
+      "INT_ZEXT": 6,
+      "LOAD": 10,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 12
+    },
+    "pcode_op_count": 128
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00567840",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005bfb10",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6538
+    },
+    "nocturne.exe": {
+      "addr": "00539ac0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6538
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStranger *"
+      },
+      {
+        "is_param": true,
+        "name": "new_position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "new_orientation",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0058a326",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CStranger",
+        "offset": 104,
+        "vtable_addr": "006060c4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

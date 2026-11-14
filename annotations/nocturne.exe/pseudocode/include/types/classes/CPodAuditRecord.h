@@ -15,8 +15,8 @@ typedef struct CPodAuditRecord {
     char filename[256]; // 0x28
     int original_timestamp; // 0x128
     int original_file_size; // 0x12c
-    int file_offset; // 0x130
-    int compressed_size; // 0x134
+    int new_timestamp; // 0x130
+    int new_file_size; // 0x134
 } CPodAuditRecord;
 #pragma pack(pop)
 

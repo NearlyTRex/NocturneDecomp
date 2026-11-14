@@ -2,37 +2,35 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 192,
+    "complexity_score": 63,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 17,
-    "suspect_count": 16,
+    "pseudocode_lines": 18,
+    "suspect_count": 4,
     "suspect_types": [
-      "param_count_too_few",
-      "undefined_data",
-      "unnamed_param"
+      "undefined_data"
     ],
-    "total_lines": 83
+    "total_lines": 84
   },
   "cross_references": [
     {
       "addr": "00419c50",
       "from_addr": "00419dc7",
-      "name": "core_boneguy.cpp_FUN_00419c50",
+      "name": "core_boneguy.cpp_CBoneGuy_archive_FUN_00419c50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00437b80",
+      "from_addr": "00437d6b",
+      "name": "core_construc.cpp_CConstruct_archive_FUN_00437b80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005193f0",
       "from_addr": "005196cf",
       "name": "core_platfrm.cpp_CPlatform_archive_FUN_005193f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00437b80",
-      "from_addr": "00437d6b",
-      "name": "unkafter_conveyor.cpp_FUN_00437b80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -46,7 +44,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_archiveQuaternion_FUN_0040b690",
-    "signature": "void __cdecl core_actor_cpp_archiveQuaternion_FUN_0040b690(float *param_1,char *param_2)"
+    "signature": "void __cdecl core_actor_cpp_archiveQuaternion_FUN_0040b690(CQuaternion4f *quat_ptr,char *property_type)"
   },
   "function_calls": [
     {
@@ -114,7 +112,7 @@
       {
         "call_addr": "00419dc7",
         "call_type": "direct",
-        "caller": "core_boneguy.cpp_FUN_00419c50",
+        "caller": "core_boneguy.cpp_CBoneGuy_archive_FUN_00419c50",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -125,7 +123,7 @@
       {
         "call_addr": "00419dd9",
         "call_type": "direct",
-        "caller": "core_boneguy.cpp_FUN_00419c50",
+        "caller": "core_boneguy.cpp_CBoneGuy_archive_FUN_00419c50",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -136,7 +134,7 @@
       {
         "call_addr": "00437d6b",
         "call_type": "direct",
-        "caller": "unkafter_conveyor.cpp_FUN_00437b80",
+        "caller": "core_construc.cpp_CConstruct_archive_FUN_00437b80",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -147,7 +145,7 @@
       {
         "call_addr": "00437d79",
         "call_type": "direct",
-        "caller": "unkafter_conveyor.cpp_FUN_00437b80",
+        "caller": "core_construc.cpp_CConstruct_archive_FUN_00437b80",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -179,10 +177,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.203703703703703,
@@ -210,11 +208,37 @@
     },
     "pcode_op_count": 281
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0040b3a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0040b5e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0040b520",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0040c630",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 44,
+    "frame_size": 52,
     "local_size": 44,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -244,26 +268,24 @@
         "offset": -16,
         "size": 8,
         "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "quat_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CQuaternion4f *"
+      },
+      {
+        "is_param": true,
+        "name": "property_type",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
       }
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_actor_cpp_archiveQuaternion_FUN_0040b690(float *param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_actor_cpp_archiveQuaternion_FUN_0040b690(float *param_1,char *param_2)",
-      "type": "unnamed_param"
-    },
     {
       "description": "Undefined global data reference",
       "line": 7,
@@ -273,111 +295,28 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = _fscanf(DAT_007bc034,\"%f,%f,%f,%f\",param_1,param_1 + 1,param_1 + 2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = _fscanf(DAT_007bc034,\"%f,%f,%f,%f\",param_1,param_1 + 1,param_1 + 2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 8,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = _fscanf(DAT_007bc034,\"%f,%f,%f,%f\",param_1,param_1 + 1,param_1 + 2);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 8,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "iVar1 = _fscanf(DAT_007bc034,\"%f,%f,%f,%f\",param_1,param_1 + 1,param_1 + 2);",
+      "text": "iVar1 = _fscanf(DAT_007bc034,\"%f,%f,%f,%f\");",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_actor_cpp_handleActorPropertyParseError_FUN_0040b380(\"Quaternion\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(DAT_007bc034,\"%s%g,%g,%g,%g\",&DAT_00609590,(double)*param_1,(double)param_1[1],",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(DAT_007bc034,\"%s%g,%g,%g,%g\",&DAT_00609590,(double)*param_1,(double)param_1[1],",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 16,
       "match": "DAT_007bc034",
       "severity": "mild",
-      "text": "(DAT_007bc034,\"%s%g,%g,%g,%g\",&DAT_00609590,(double)*param_1,(double)param_1[1],",
+      "text": "(DAT_007bc034,\"%s%g,%g,%g,%g\",&DAT_00609590,(double)quat_ptr->w,",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 16,
       "match": "DAT_00609590",
       "severity": "mild",
-      "text": "(DAT_007bc034,\"%s%g,%g,%g,%g\",&DAT_00609590,(double)*param_1,(double)param_1[1],",
+      "text": "(DAT_007bc034,\"%s%g,%g,%g,%g\",&DAT_00609590,(double)quat_ptr->w,",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(double)param_1[2],(double)param_1[3]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(double)param_1[2],(double)param_1[3]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveDescription_FUN_0040b400(\"Quaternion\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 6,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

@@ -15,27 +15,23 @@ void __cdecl FUN_004eaf30(int x_center,int y_top,int height_half);
 
 // Original: core_menu.cpp_FUN_004eb0e0
 // Address: 004eb0e0
-int FUN_004eb0e0(undefined4 *param_1,int param_2,int *param_3,int param_4,int param_5);
+int __cdecl FUN_004eb0e0(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,char *title);
 
-// Original: core_menu.cpp_FUN_004eb3ce
-// Address: 004eb3ce
-void FUN_004eb3ce(undefined4 param_1);
+// Original: core_menu.cpp_showJoystickCalibrationScreen_FUN_004eb3d0
+// Address: 004eb3d0
+void showJoystickCalibrationScreen(void);
 
-// Original: core_menu.cpp_FUN_004eb490
+// Original: core_menu.cpp_calibrateGamepad_FUN_004eb490
 // Address: 004eb490
-undefined4 FUN_004eb490(void);
+int __cdecl calibrateGamepad(void);
 
 // Original: core_menu.cpp_adjustMouseSensitivity_FUN_004eb7c0
 // Address: 004eb7c0
 void __cdecl adjustMouseSensitivity(int *sensitivity_value_ptr,char *window_title);
 
-// Original: core_menu.cpp_FUN_004ebbf8
-// Address: 004ebbf8
-void FUN_004ebbf8(void);
-
-// Original: core_menu.cpp_FUN_004ebc2a
-// Address: 004ebc2a
-void FUN_004ebc2a(void);
+// Original: core_menu.cpp_FUN_004eba50
+// Address: 004eba50
+void FUN_004eba50(int *param_1,char *param_2);
 
 // Original: core_menu.cpp_showCalibrationTestPattern_FUN_004ebce0
 // Address: 004ebce0
@@ -59,23 +55,27 @@ void __cdecl FUN_004ed260(void);
 
 // Original: core_menu.cpp_FUN_004ee1a0
 // Address: 004ee1a0
-void FUN_004ee1a0(int param_1);
+void __cdecl FUN_004ee1a0(int initialize_systems);
 
-// Original: core_menu.cpp_FUN_004ee3f0
+// Original: core_menu.cpp_showMainGameMenu_FUN_004ee3f0
 // Address: 004ee3f0
-int __cdecl FUN_004ee3f0(void);
+int __cdecl showMainGameMenu(void);
 
-// Original: core_menu.cpp_FUN_004ee8e0
+// Original: core_menu.cpp_addCustomKeyBinding_FUN_004ee8e0
 // Address: 004ee8e0
-void FUN_004ee8e0(undefined4 param_1,char *param_2);
+void __cdecl addCustomKeyBinding(int *key_code_ptr,char *key_name);
 
 // Original: core_menu.cpp_getKeyDisplayName_FUN_004ee960
 // Address: 004ee960
-char * __cdecl getKeyDisplayName(int param_1);
+char * __cdecl getKeyDisplayName(EInputCodeType key_code);
 
-// Original: core_menu.cpp_FUN_004eeba0
+// Original: core_menu.cpp_isKeyCodeValidForMode_FUN_004eeba0
 // Address: 004eeba0
-int __cdecl FUN_004eeba0(EInputCodeType *key_code_ptr,char *description);
+int __cdecl isKeyCodeValidForMode(EInputCodeType *key_code_ptr,char *description);
+
+// Original: core_menu.cpp_getSinglePressedKey_FUN_004eece0
+// Address: 004eece0
+int __cdecl getSinglePressedKey(void);
 
 // Original: core_menu.cpp_FUN_004eed60
 // Address: 004eed60

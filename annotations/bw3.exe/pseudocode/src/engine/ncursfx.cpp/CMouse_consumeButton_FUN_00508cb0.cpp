@@ -12,12 +12,12 @@ int __cdecl engine_ncursfx_cpp_CMouse_consumeButton_FUN_00508cb0(CMouse *this_pt
 
 {
   if ((_DAT_01c5fae4 & button_mask) != 0) {
-    if (*(int *)&this_ptr->field_0x25c == 0) {
+    if (this_ptr->effect_mode == 0) {
       if (use_skull_effect == 0) {
-        *(uint *)&this_ptr->field_0x25c = 1;
+        this_ptr->effect_mode = 1;
       }
       else {
-        *(uint *)&this_ptr->field_0x25c = 2;
+        this_ptr->effect_mode = 2;
       }
     }
     _DAT_01c5fae4 = _DAT_01c5fae4 & (button_mask ^ 0xff);

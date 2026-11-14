@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_flashlit_cpp_staticInit_FUN_004a1000(void)
+; void __cdecl core_flashlit_cpp_staticInit_FUN_004a1000(void)
 ;
 ;
 ; Called Functions:

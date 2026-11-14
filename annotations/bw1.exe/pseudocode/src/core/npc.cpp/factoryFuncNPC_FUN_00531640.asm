@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_npc_cpp_factoryFuncNPC_FUN_00531640(void)
+; CNPC * __cdecl core_npc_cpp_factoryFuncNPC_FUN_00531640(void)
 ;
 ;
 ; Called Functions:
 ;   core_npc.cpp_CNPC_ctor_FUN_00531670
-;   crt_unknown.c_FUN_005c0f32
+;   crt_memory.c_operator_new_FUN_005c0f32
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x1fab8                        ; 00531640
         ;   Label: core_npc.cpp_factoryFuncNPC_FUN_00531640
-    CALL crt_unknown.c_FUN_005c0f32     ; 00531645
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
+    CALL crt_memory.c_operator_new_FUN_005c0f32 ; 00531645
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
     ADD ESP,0x4                         ; 0053164a
     TEST EAX,EAX                        ; 0053164d
     JNZ 0x00531652                      ; 0053164f

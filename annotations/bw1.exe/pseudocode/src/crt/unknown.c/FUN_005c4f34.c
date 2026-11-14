@@ -15,6 +15,6 @@ void FUN_005c4f34(void)
     _DAT_00626a34 = FUN_005c4f20;
     _DAT_00626a38 = FUN_005c4f2c;
   }
-  unkafter_zombie_cpp_FUN_005ca8f0();
+  FUN_005ca8f0();
   return;
 }

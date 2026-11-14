@@ -18,8 +18,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidDouble_FUN_00495f70(CE
     acStack_30[0] = '\0';
   }
   else {
-    FUN_005bfb40
-              (acStack_30,0x5dbf7b,*(uint *)result_ptr,*(uint *)((int)result_ptr + 4));
+    _sprintf(acStack_30,(char *)0x5dbf7b);
   }
   while( true ) {
     while( true ) {
@@ -30,13 +29,14 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidDouble_FUN_00495f70(CE
       }
       iVar1 = sscanf(acStack_30,(char *)0x5dbf81);
       if (iVar1 == 1) break;
-      shape_edittool_cpp_FUN_004943a0(this_ptr,"Please enter a valid number.");
+      shape_edittool_cpp_CEditorTools_showError_FUN_004943a0
+                (this_ptr,"Please enter a valid number.");
     }
     if ((enable_range_check == 0) ||
        ((min_value <= __BITCAST_DOUBLE(CONCAT44(uStack_44,uStack_48)) &&
         (__BITCAST_DOUBLE(CONCAT44(uStack_44,uStack_48)) <= max_value)))) break;
-    shape_edittool_cpp_FUN_004943a0
-              (this_ptr,"Please enter a valid integer between %.15g and %.15g.",min_value,max_value);
+    shape_edittool_cpp_CEditorTools_showError_FUN_004943a0
+              (this_ptr,"Please enter a valid integer between %.15g and %.15g.");
   }
   *(uint *)result_ptr = uStack_48;
   *(uint *)((int)result_ptr + 4) = uStack_44;

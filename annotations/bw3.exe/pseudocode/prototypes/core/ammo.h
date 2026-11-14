@@ -7,107 +7,107 @@
 
 // Original: core_ammo.cpp_staticInit_FUN_0040dda0
 // Address: 0040dda0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_ammo.cpp_factoryFuncAmmo_FUN_0040de30
 // Address: 0040de30
-void factoryFuncAmmo(void);
+CAmmo * __cdecl factoryFuncAmmo(void);
 
 // Original: core_ammo.cpp_CAmmo_getActorType_FUN_0040de50
 // Address: 0040de50
-CDemonActorType * CAmmo::getActorType(CAmmo *this_ptr);
+CDemonActorType * __cdecl CAmmo::getActorType(CAmmo *this_ptr);
 
 // Original: core_ammo.cpp_CAmmo_ctor_FUN_0040de60
 // Address: 0040de60
 CAmmo * __cdecl CAmmo::ctor(CAmmo *this_ptr);
 
-// Original: core_ammo.cpp_FUN_0040def0
+// Original: core_ammo.cpp_CAmmo_setup_FUN_0040def0
 // Address: 0040def0
-void FUN_0040def0(CDemonActor *param_1);
+void __cdecl CAmmo::setup(CAmmo *this_ptr);
 
-// Original: core_ammo.cpp_FUN_0040df10
+// Original: core_ammo.cpp_CAmmo_process_FUN_0040df10
 // Address: 0040df10
-void FUN_0040df10(void);
+void __cdecl CAmmo::process(CAmmo *this_ptr,float delta_time);
 
-// Original: core_ammo.cpp_FUN_0040df20
+// Original: core_ammo.cpp_CAmmo_renderOpaque_FUN_0040df20
 // Address: 0040df20
-int FUN_0040df20(CDemonActor *param_1);
+int __cdecl CAmmo::renderOpaque(CAmmo *this_ptr);
 
-// Original: core_ammo.cpp_FUN_0040dfc0
+// Original: core_ammo.cpp_CAmmo_getBoundingBox_FUN_0040dfc0
 // Address: 0040dfc0
-void FUN_0040dfc0(int param_1);
+CBoundingBox3D * __cdecl CAmmo::getBoundingBox(CAmmo *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_ammo.cpp_CAmmo_archive_FUN_0040e000
 // Address: 0040e000
 void __cdecl CAmmo::archive(CAmmo *this_ptr);
 
-// Original: core_ammo.cpp_FUN_0040e060
+// Original: core_ammo.cpp_CAmmo_getCollisionType_FUN_0040e060
 // Address: 0040e060
-bool FUN_0040e060(undefined4 param_1,int *param_2);
+ECollisionType __cdecl CAmmo::getCollisionType(CAmmo *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_ammo.cpp_CAmmo_setAmmoCount_FUN_0040e070
 // Address: 0040e070
 void __cdecl CAmmo::setAmmoCount(CAmmo *this_ptr,int ammo_count);
 
-// Original: core_ammo.cpp_FUN_0040e080
+// Original: core_ammo.cpp_CAmmo_canPickup_FUN_0040e080
 // Address: 0040e080
-undefined4 FUN_0040e080(int param_1,CDemonActor *param_2);
+int __cdecl CAmmo::canPickup(CAmmo *this_ptr,CDemonActor *picker);
 
 // Original: core_ammo.cpp_FUN_0040e0c0
 // Address: 0040e0c0
 void FUN_0040e0c0(void);
 
-// Original: core_ammo.cpp_FUN_0040e0e0
+// Original: core_ammo.cpp_CAmmoMana_getActorType_FUN_0040e0e0
 // Address: 0040e0e0
-undefined * FUN_0040e0e0(void);
+CDemonActorType * __cdecl CAmmoMana::getActorType(CAmmoMana *this_ptr);
 
 // Original: core_ammo.cpp_CAmmoMana_ctor_FUN_0040e0f0
 // Address: 0040e0f0
-CAmmoMana * CAmmoMana::ctor(CAmmoMana *this_ptr);
+CAmmoMana * __cdecl CAmmoMana::ctor(CAmmoMana *this_ptr);
 
-// Original: core_ammo.cpp_FUN_0040e140
+// Original: core_ammo.cpp_CAmmoMana_process_FUN_0040e140
 // Address: 0040e140
-void FUN_0040e140(int param_1,float param_2);
+void __cdecl CAmmoMana::process(CAmmoMana *this_ptr,float delta_time);
 
 // Original: core_ammo.cpp_FUN_0040e230
 // Address: 0040e230
 void FUN_0040e230(void);
 
-// Original: core_ammo.cpp_FUN_0040e250
+// Original: core_ammo.cpp_CAmmoManaLarge_getActorType_FUN_0040e250
 // Address: 0040e250
-undefined * FUN_0040e250(void);
+CDemonActorType * __cdecl CAmmoManaLarge::getActorType(CAmmoManaLarge *this_ptr);
 
 // Original: core_ammo.cpp_CAmmoManaLarge_ctor_FUN_0040e260
 // Address: 0040e260
-CAmmoManaLarge * CAmmoManaLarge::ctor(CAmmoManaLarge *this_ptr);
+CAmmoManaLarge * __cdecl CAmmoManaLarge::ctor(CAmmoManaLarge *this_ptr);
 
-// Original: core_ammo.cpp_FUN_0040e2b0
+// Original: core_ammo.cpp_CAmmoManaLarge_process_FUN_0040e2b0
 // Address: 0040e2b0
-void FUN_0040e2b0(int param_1,float param_2);
+void __cdecl CAmmoManaLarge::process(CAmmoManaLarge *this_ptr,float delta_time);
 
 // Original: core_ammo.cpp_FUN_0040e3a0
 // Address: 0040e3a0
 void FUN_0040e3a0(void);
 
-// Original: core_ammo.cpp_FUN_0040e3c0
+// Original: core_ammo.cpp_CAmmoBullet_getActorType_FUN_0040e3c0
 // Address: 0040e3c0
-undefined * FUN_0040e3c0(void);
+CDemonActorType * __cdecl CAmmoBullet::getActorType(CAmmoBullet *this_ptr);
 
 // Original: core_ammo.cpp_CAmmoBullet_ctor_FUN_0040e3d0
 // Address: 0040e3d0
-CAmmoBullet * CAmmoBullet::ctor(CAmmoBullet *this_ptr);
+CAmmoBullet * __cdecl CAmmoBullet::ctor(CAmmoBullet *this_ptr);
 
 // Original: core_ammo.cpp_CAmmoBullet_dtor_FUN_0040e420
 // Address: 0040e420
-CAmmoBullet * CAmmoBullet::dtor(CAmmoBullet *this_ptr,uint flags);
+CAmmoBullet * __cdecl CAmmoBullet::dtor(CAmmoBullet *this_ptr,uint flags);
 
 // Original: core_ammo.cpp_CAmmoManaLarge_dtor_FUN_0040e470
 // Address: 0040e470
-CAmmoManaLarge * CAmmoManaLarge::dtor(CAmmoManaLarge *this_ptr,uint flags);
+CAmmoManaLarge * __cdecl CAmmoManaLarge::dtor(CAmmoManaLarge *this_ptr,uint flags);
 
 // Original: core_ammo.cpp_CAmmoMana_dtor_FUN_0040e4c0
 // Address: 0040e4c0
-CAmmoMana * CAmmoMana::dtor(CAmmoMana *this_ptr,uint flags);
+CAmmoMana * __cdecl CAmmoMana::dtor(CAmmoMana *this_ptr,uint flags);
 
 // Original: core_ammo.cpp_CAmmo_dtor_FUN_0040e510
 // Address: 0040e510

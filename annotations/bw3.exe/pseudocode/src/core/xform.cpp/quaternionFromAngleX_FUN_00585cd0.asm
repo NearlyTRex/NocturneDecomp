@@ -12,12 +12,12 @@
 ; XREF[8]:
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_00433000 at 0043303e
 ;   core_charactr.cpp_FUN_0042cd70 at 0042cf34
+;   core_prye.cpp_CPrye_makeDrawDecision_FUN_0051e6d0 at 0051eb78
 ;   core_prye.cpp_FUN_0051c1c0 at 0051c5bc
-;   core_prye.cpp_FUN_0051e6d0 at 0051eb78
 ;   core_prye.cpp_FUN_0051ee10 at 0051ef9a
-;   core_skeleton.cpp_FUN_0054dfd0 at 0054e0b9
-;   core_thehand.cpp_FUN_0056c140 at 0056c7d0
-;   core_zombprie.cpp_FUN_0058e8d0 at 0058eb8a
+;   core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0054dfd0 at 0054e0b9
+;   core_toxhand.cpp_CTheHand_process_FUN_0056c140 at 0056c7d0
+;   core_zombiepriest.cpp_FUN_0058e8d0 at 0058eb8a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d81a7

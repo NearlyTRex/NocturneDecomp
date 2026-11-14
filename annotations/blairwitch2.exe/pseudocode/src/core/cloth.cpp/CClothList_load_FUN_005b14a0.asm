@@ -7,9 +7,9 @@
 ; CClothList *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_charactr.cpp_FUN_00422930 at 00422aba
-;   core_charactr.cpp_FUN_0042b440 at 0042b51f
-;   core_succubus.cpp_FUN_0056f3a0 at 0056f412
+;   core_charactr.cpp_CCharacter_setCharacterModel_FUN_0042b440 at 0042b51f
+;   core_charactr.cpp_CCharacter_setup_FUN_00422930 at 00422aba
+;   core_succubus.cpp_CSuccubus_setup_FUN_0056f3a0 at 0056f412
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_005f11a3
@@ -22,8 +22,8 @@
 ;   core_main.c_FUN_004e4500
 ;   core_necklace.cpp_FUN_005adda0
 ;   core_necklace.cpp_FUN_005ade00
+;   crt_memory.c_operator_new_FUN_005b8be2
 ;   crt_unknown.c_FUN_005b7fdc
-;   crt_unknown.c_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
         ;   XREF to: 005b152d (CONDITIONAL_JUMP)  ; LAB_005b152d
     PUSH 0x3ab30                        ; 005b14c4
         ;   Label: LAB_005b14c4
-    CALL crt_unknown.c_FUN_005b8be2     ; 005b14c9
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 005b14c9
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 005b14ce
     TEST EAX,EAX                        ; 005b14d1
     JZ 0x005b14de                       ; 005b14d3

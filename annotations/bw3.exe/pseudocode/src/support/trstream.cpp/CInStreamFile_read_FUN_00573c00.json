@@ -1,0 +1,362 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 113,
+    "complexity_score": 101,
+    "cross_reference_count": 11,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 51,
+    "suspect_count": 4,
+    "suspect_types": [
+      "pointer_cast",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 164
+  },
+  "cross_references": [
+    {
+      "addr": "00438ef0",
+      "from_addr": "00438f74",
+      "name": "cockpit_ckptutil.c_FUN_00438ef0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004350a0",
+      "from_addr": "00435174",
+      "name": "cockpit_ckptutil.c_loadACTPaletteFile_FUN_004350a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00401590",
+      "from_addr": "004015ca",
+      "name": "engine_2d.c_FUN_00401590",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00401010",
+      "from_addr": "004010ef",
+      "name": "engine_2d.c_initGraphicsSystem_FUN_00401010",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00402940",
+      "from_addr": "00402aa6",
+      "name": "engine_2d.c_loadOrBuildColorMap_FUN_00402940",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004afbf0",
+      "from_addr": "004afda4",
+      "name": "engine_font.cpp_FUN_004afbf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00512fb0",
+      "from_addr": "0051315c",
+      "name": "engine_pod.cpp_FUN_00512fb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00569790",
+      "from_addr": "00569aa3",
+      "name": "engine_texture.cpp_CTextureCache_loadTexture_FUN_00569790",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056ad60",
+      "from_addr": "0056ae86",
+      "name": "engine_texture.cpp_FUN_0056ad60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00553960",
+      "from_addr": "00553e94",
+      "name": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_00553960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00551d20",
+      "from_addr": "00552079",
+      "name": "sound_sndmain.cpp_getSfxSample_FUN_00551d20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00573c00",
+    "address_range": [
+      [
+        "00573c00",
+        "00573ce2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_trstream.cpp_CInStreamFile_read_FUN_00573c00",
+    "signature": "int __cdecl support_trstream_cpp_CInStreamFile_read_FUN_00573c00(CInStreamFile *this_ptr,void *buffer,int count)"
+  },
+  "function_calls": [
+    {
+      "addr": "00573eb0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamFile_fillBuffer_FUN_00573eb0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 27,
+    "call_sites": [
+      {
+        "call_addr": "004010ef",
+        "call_type": "direct",
+        "caller": "engine_2d.c_initGraphicsSystem_FUN_00401010",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004015ca",
+        "call_type": "direct",
+        "caller": "engine_2d.c_FUN_00401590",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00402aa6",
+        "call_type": "direct",
+        "caller": "engine_2d.c_loadOrBuildColorMap_FUN_00402940",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00438f74",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_FUN_00438ef0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00553e94",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_00553960",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00552079",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_getSfxSample_FUN_00551d20",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00569aa3",
+        "call_type": "direct",
+        "caller": "engine_texture.cpp_CTextureCache_loadTexture_FUN_00569790",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00569af5",
+        "call_type": "direct",
+        "caller": "engine_texture.cpp_CTextureCache_loadTexture_FUN_00569790",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00569b43",
+        "call_type": "direct",
+        "caller": "engine_texture.cpp_CTextureCache_loadTexture_FUN_00569790",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00569d5d",
+        "call_type": "direct",
+        "caller": "engine_texture.cpp_CTextureCache_loadTexture_FUN_00569790",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.297872340425532,
+    "instruction_count": 94,
+    "opcode_distribution": {
+      "BOOL_AND": 3,
+      "BOOL_NEGATE": 8,
+      "BOOL_OR": 4,
+      "BRANCH": 2,
+      "CALL": 1,
+      "CBRANCH": 11,
+      "COPY": 89,
+      "INT_ADD": 52,
+      "INT_AND": 68,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 58,
+      "INT_LESS": 11,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 7,
+      "INT_OR": 5,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 11,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 27,
+      "INT_SUB": 26,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 41,
+      "POPCOUNT": 26,
+      "RETURN": 3,
+      "STORE": 15
+    },
+    "pcode_op_count": 498
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0057cfe0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9892
+    },
+    "bw1.exe": {
+      "addr": "005a0c10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInStreamFile *"
+      },
+      {
+        "is_param": true,
+        "name": "buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(void *)((int)buffer",
+      "severity": "moderate",
+      "text": "buffer = (void *)((int)buffer + uVar1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 38,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar3 = uVar1 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 43,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar3 = uVar1 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 00573c9a, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 74,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00573c9a: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CInStreamFile",
+        "offset": 16,
+        "vtable_addr": "005e5a84"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

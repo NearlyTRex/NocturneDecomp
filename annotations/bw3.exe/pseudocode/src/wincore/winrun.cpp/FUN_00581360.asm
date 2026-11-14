@@ -7,7 +7,7 @@
 ; EInputCodeType   Stack[0x4]:4   keycode
 ;
 ; XREF[1]:
-;   core_menu.cpp_FUN_004eaa60 at 004eac9f
+;   core_menu.cpp_getKeyDisplayName_FUN_004eaa60 at 004eac9f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d7cb1

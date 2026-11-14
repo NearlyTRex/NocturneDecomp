@@ -7,47 +7,47 @@
 
 // Original: core_dstrendr.cpp_renderDepthOnlyStandard_FUN_00486e26
 // Address: 00486e26
-void renderDepthOnlyStandard(void);
+void __edi_esi_ebx renderDepthOnlyStandard(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrendr.cpp_renderDepth16BitConditional_FUN_00486e74
 // Address: 00486e74
-void renderDepth16BitConditional(void);
+void __edi_esi_ebx renderDepth16BitConditional(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrendr.cpp_renderTexturedAlphaMMXScanline_FUN_00486ed7
 // Address: 00486ed7
-void renderTexturedAlphaMMXScanline(void);
+void __edi_esi_ebx renderTexturedAlphaMMXScanline(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrendr.cpp_renderZBufferFill16xUnrolled_FUN_00486ff2
 // Address: 00486ff2
-uint renderZBufferFill16xUnrolled(void);
+void __edi_esi_ebx renderZBufferFill16xUnrolled(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrendr.cpp_renderSolidColorDepth16xUnrolled_FUN_00487148
 // Address: 00487148
-void renderSolidColorDepth16xUnrolled(void);
+void __edi_esi_ebx renderSolidColorDepth16xUnrolled(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrendr.cpp_renderDepthInterlacedProfiled_FUN_00487327
 // Address: 00487327
-void renderDepthInterlacedProfiled(void);
+void __edi_esi_ebx renderDepthInterlacedProfiled(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrendr.cpp_renderScreenDepthTestInterlacedProfiled_FUN_004873a5
 // Address: 004873a5
-void renderScreenDepthTestInterlacedProfiled(void);
+void __edi_esi_ebx renderScreenDepthTestInterlacedProfiled(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrendr.cpp_renderDepthTestStatistics16xUnrolled_FUN_00487425
 // Address: 00487425
-void renderDepthTestStatistics16xUnrolled(void);
+void __edi_esi_ebx renderDepthTestStatistics16xUnrolled(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrendr.cpp_renderTexturedDecalMMXScanline_FUN_00487d8d
 // Address: 00487d8d
-void renderTexturedDecalMMXScanline(void);
+void __edi_esi_ebx renderTexturedDecalMMXScanline(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrendr.cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_00487eac
 // Address: 00487eac
-void __cdecl blendHBilerpLightmapSharedU64toU64pBB12Px2MMX(undefined8 *param_1,undefined8 *param_2,byte *param_3,byte *param_4,int param_5);
+void __cdecl blendHBilerpLightmapSharedU64toU64pBB12Px2MMX(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
 // Original: core_dstrendr.cpp_blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX_FUN_0048838a
 // Address: 0048838a
-void __cdecl blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX(undefined8 *param_1,undefined8 *param_2,byte *param_3,byte *param_4,int param_5);
+void __cdecl blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
 // Original: core_dstrendr.cpp_blendLightmapSharedU32toU32NoBiasPx1MMX_FUN_00488680
 // Address: 00488680
@@ -59,27 +59,27 @@ void __cdecl memcpyMMX(void *dest,void *src,int byte_count);
 
 // Original: core_dstrendr.cpp_verticalBlur3TapMMXStride320_FUN_00488732
 // Address: 00488732
-void __cdecl verticalBlur3TapMMXStride320(undefined8 *param_1,undefined8 *param_2,int param_3);
+void __cdecl verticalBlur3TapMMXStride320(ulonglong *output_buffer,ulonglong *input_buffer,int pixel_count);
 
 // Original: core_dstrendr.cpp_verticalBlur3TapMMXStride256_FUN_00488875
 // Address: 00488875
-void __cdecl verticalBlur3TapMMXStride256(undefined8 *param_1,undefined8 *param_2,int param_3);
+void __cdecl verticalBlur3TapMMXStride256(ulonglong *output_buffer,ulonglong *input_buffer,int pixel_count);
 
 // Original: core_dstrendr.cpp_blur3x3MMXStride128_FUN_004889b8
 // Address: 004889b8
-void __cdecl blur3x3MMXStride128(undefined8 *param_1,undefined8 *param_2,int param_3);
+void __cdecl blur3x3MMXStride128(ulonglong *output_buffer,ulonglong *input_buffer,int pixel_count);
 
 // Original: core_dstrendr.cpp_spatialFilter9TapMMX_FUN_00488aef
 // Address: 00488aef
 void __cdecl spatialFilter9TapMMX(uint *output_buffer,uint *input_buffer,int pixel_count);
 
-// Original: core_dstrendr.cpp_FUN_00488b99
+// Original: core_dstrendr.cpp_blendLightmapShared4U64toU64pBB12Px4MMX_FUN_00488b99
 // Address: 00488b99
-void FUN_00488b99(undefined8 *param_1,undefined8 *param_2,byte *param_3,byte *param_4,int param_5);
+void __cdecl blendLightmapShared4U64toU64pBB12Px4MMX(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
-// Original: core_dstrendr.cpp_FUN_00488cb5
+// Original: core_dstrendr.cpp_blendLightmapShared4U64toU64pAmbientPx4MMX_FUN_00488cb5
 // Address: 00488cb5
-void FUN_00488cb5(undefined8 *param_1,undefined8 *param_2,byte *param_3,byte *param_4,int param_5);
+void __cdecl blendLightmapShared4U64toU64pAmbientPx4MMX(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
 // Original: core_dstrendr.cpp_blendLightmapPerPxU32toU32BB12Px2MMX_FUN_00488dd1
 // Address: 00488dd1
@@ -87,7 +87,7 @@ void __cdecl blendLightmapPerPxU32toU32BB12Px2MMX(uint *output_buffer,uint *text
 
 // Original: core_dstrendr.cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_004892c5
 // Address: 004892c5
-void __cdecl blendLightmapPerPxU64toU32AmbientPx2MMX(undefined4 *param_1,undefined8 *param_2,byte *param_3,byte *param_4,int param_5);
+void __cdecl blendLightmapPerPxU64toU32AmbientPx2MMX(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
 // Original: core_dstrendr.cpp_alphaBlendPixelsMMX_FUN_0048957a
 // Address: 0048957a
@@ -95,11 +95,11 @@ void __cdecl alphaBlendPixelsMMX(uint *output_buffer,uint *source1_buffer,uint *
 
 // Original: core_dstrendr.cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_004895f3
 // Address: 004895f3
-void __cdecl blendHBilerpLightmapSharedU64toU16pBB56Px2MMX(uint *param_1,undefined8 *param_2,byte *param_3,byte *param_4,int param_5);
+void __cdecl blendHBilerpLightmapSharedU64toU16pBB56Px2MMX(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
 // Original: core_dstrendr.cpp_blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX_FUN_00489b40
 // Address: 00489b40
-void __cdecl blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX(uint *param_1,undefined8 *param_2,byte *param_3,byte *param_4,int param_5);
+void __cdecl blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
 // Original: core_dstrendr.cpp_blendLightmapSharedU32toU16pNoBiasPx1MMX_FUN_00489ea6
 // Address: 00489ea6
@@ -111,8 +111,8 @@ void __cdecl blendLightmapPerPxU32toU16pBB12Px2MMX(uint *output_buffer,uint *tex
 
 // Original: core_dstrendr.cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_0048a4b4
 // Address: 0048a4b4
-void __cdecl blendLightmapPerPxU64toU16pAmbientPx2MMX(uint *param_1,undefined8 *param_2,byte *param_3,byte *param_4,int param_5);
+void __cdecl blendLightmapPerPxU64toU16pAmbientPx2MMX(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
 // Original: core_dstrendr.cpp_renderPerspectiveTexturedScanline_FUN_0048a7d9
 // Address: 0048a7d9
-uint renderPerspectiveTexturedScanline(void);
+void __edi_esi_ebx renderPerspectiveTexturedScanline(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);

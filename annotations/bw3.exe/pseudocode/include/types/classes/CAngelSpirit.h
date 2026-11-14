@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CHotDemon.h"
 
 // Structure: CAngelSpirit
-// Stub: size from Watcom RTTI, fields not yet recovered
+// registered under CHotDemon (registerActorClass); size 53384 from its new; no fields of its own
 // Ghidra size: 0xd088 (53384 bytes)
 #pragma pack(push, 1)
 typedef struct CAngelSpirit {
-    char field_0[53384]; // 0x0
+    CHotDemon base; // 0x0, parent class
 } CAngelSpirit;
 #pragma pack(pop)
 

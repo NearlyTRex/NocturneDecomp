@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 100,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 20,
-    "suspect_count": 7,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_field"
+      "undefined_data"
     ],
     "total_lines": 67
   },
@@ -32,7 +31,7 @@
     {
       "addr": "00408890",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408890"
+      "name": "core_actor.cpp_CDemonActor_setup_FUN_00408890"
     },
     {
       "addr": "0046e5e0",
@@ -90,6 +89,32 @@
     },
     "pcode_op_count": 172
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00415ee0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00419350",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00419810",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00416500",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -108,60 +133,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x18c",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x18c) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x190",
-      "severity": "mild",
-      "text": "texture = (SMRGLTextureBasic *)&this_ptr->field_0x190;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 14,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(DAT_005f2afc,texture);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x18c",
-      "severity": "mild",
-      "text": "} while (iVar1 < *(int *)&this_ptr->field_0x18c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0xcb4",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0xcb4 == 0) && (*(int *)&this_ptr->field_0x74c == 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x74c",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0xcb4 == 0) && (*(int *)&this_ptr->field_0x74c == 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0xfc",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xfc = 1;",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

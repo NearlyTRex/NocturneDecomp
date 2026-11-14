@@ -28,15 +28,15 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[9]:
-;   core_armour.cpp_FUN_0040ef00 at 0040f031
-;   core_armour.cpp_FUN_0040f0a0 at 0040f0ba
-;   core_batman.cpp_FUN_00413f40 at 00414272
+;   core_armour.cpp_CArmour_processDamage_FUN_0040f0a0 at 0040f0ba
+;   core_armour.cpp_CArmour_process_FUN_0040ef00 at 0040f031
+;   core_batman.cpp_CBatman_processDismemberment_FUN_00413f40 at 00414272
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00427fb0 at 00428168
-;   core_charactr.cpp_FUN_00425fb0 at 0042636a
+;   core_charactr.cpp_CCharacter_processFire_FUN_00425fb0 at 0042636a
 ;   core_charactr.cpp_FUN_00427260 at 0042734a
-;   core_gargoyle.cpp_FUN_004c0ea0 at 004c0f96
-;   core_hpriest.cpp_FUN_004d4810 at 004d4848
-;   core_vampboss.cpp_FUN_00581910 at 005827c2
+;   core_gargoyle.cpp_CGargoyle_processDamage_FUN_004c0ea0 at 004c0f96
+;   core_hpriest.cpp_CHighPriestOfGardath_process_FUN_004d4810 at 004d4848
+;   core_vampboss.cpp_CVampireBoss_process_FUN_00581910 at 005827c2
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ccdc6
@@ -44,13 +44,13 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408d70
-;   core_actor.cpp_FUN_0040cf60
-;   core_charactr.cpp_FUN_00427770
-;   core_dirmat.cpp_FUN_00449280
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
+;   core_charactr.cpp_CCharacter_detachBodyPart_FUN_00427770
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
 ;   core_dirmat.cpp_FUN_00449530
-;   core_gore.cpp_FUN_004c9850
+;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004c9850
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00547810
-;   core_vecdir.cpp_FUN_005838f0
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
 ;
 ; *****************************************************************************
@@ -117,8 +117,8 @@ section .text
     PUSH ESI                            ; 004273f9
     MOV EDI,dword ptr [EBP + 0x14]      ; 004273fa
     PUSH EDI                            ; 004273fd
-    CALL core_charactr.cpp_FUN_00427770 ; 004273fe
-        ;   XREF to: 00427770 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00427770(CCharacter * this_ptr, int part_index, CVector3f * initial_velocity, int render_in_background)
+    CALL core_charactr.cpp_CCharacter_detachBodyPart_FUN_00427770 ; 004273fe
+        ;   XREF to: 00427770 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_detachBodyPart_FUN_00427770(CCharacter * this_ptr, int part_index, CVector3f * initial_velocity, int render_in_background)
         ;   Label: LAB_004273fe
     ADD ESP,0x10                        ; 00427403
     MOV EAX,dword ptr [ESP + 0xec]      ; 00427406
@@ -213,8 +213,8 @@ section .text
     PUSH EBX                            ; 00427527
     LEA ESI,[ESP + 0x6c]                ; 00427528
     LEA EDI,[ESP + 0xb4]                ; 0042752c
-    CALL core_vecdir.cpp_FUN_005838f0   ; 00427533
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005838f0()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 00427533
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
     ADD ESP,0x4                         ; 00427538
     LEA ESI,[ESP + 0x68]                ; 0042753b
     PUSH dword ptr [ESP]                ; 0042753f
@@ -225,8 +225,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00427556
     MOVSD ES:EDI,ESI                    ; 00427557
     MOVSD ES:EDI,ESI                    ; 00427558
-    CALL core_actor.cpp_FUN_0040cf60    ; 00427559
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 00427559
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0xf8],EAX      ; 0042755e
     FLD float ptr [ESP + 0xf8]          ; 00427565
     ADD ESP,0x8                         ; 0042756c
@@ -234,8 +234,8 @@ section .text
     FADD float ptr [ESP + 0xb8]         ; 00427572
     PUSH dword ptr [ESP + 0xe8]         ; 00427579
     FSTP float ptr [ESP + 0xbc]         ; 00427580
-    CALL core_actor.cpp_FUN_0040cf60    ; 00427587
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 00427587
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0xf8],EAX      ; 0042758c
     FLD float ptr [ESP + 0xf8]          ; 00427593
     ADD ESP,0x8                         ; 0042759a
@@ -245,8 +245,8 @@ section .text
     FADD float ptr [ESP + 0xb4]         ; 004275a9
     PUSH ESI                            ; 004275b0
     FSTP float ptr [ESP + 0xb8]         ; 004275b1
-    CALL core_dirmat.cpp_FUN_00449280   ; 004275b8
-        ;   XREF to: 00449280 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_00449280(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280 ; 004275b8
+        ;   XREF to: 00449280 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     FLD float ptr [EBX + 0x4]           ; 004275bd
     FMUL ST0                            ; 004275c0
     FLD float ptr [EBX]                 ; 004275c2
@@ -295,8 +295,8 @@ section .text
     PUSH EAX                            ; 00427654
     MOV EAX,[0x006167e0]                ; 00427655 | g_CGorePtr
     PUSH EAX                            ; 0042765a
-    CALL core_gore.cpp_FUN_004c9850     ; 0042765b
-        ;   XREF to: 004c9850 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004c9850(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
+    CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004c9850 ; 0042765b
+        ;   XREF to: 004c9850 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004c9850(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
     ADD ESP,0x14                        ; 00427660
     MOV EAX,dword ptr [EBP + 0x14]      ; 00427663
     MOV dword ptr [EAX + 0x70],0x2      ; 00427666

@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   clear_color
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004d27b0 at 004d4917
+;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d4917
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01342360

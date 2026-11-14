@@ -2,29 +2,33 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 64,
-    "cross_reference_count": 3,
+    "complexity_score": 9,
+    "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 9,
-    "suspect_count": 5,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 21
   },
   "cross_references": [
     {
+      "addr": "0045ab40",
+      "from_addr": "0045ac8c",
+      "name": "core_doc.cpp_FUN_0045ab40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0049db20",
       "from_addr": "0049db66",
-      "name": "core_fire.cpp_FUN_0049db20",
+      "name": "core_fire.cpp_CFireEffect_traceLaser_FUN_0049db20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e2e70",
       "from_addr": "004e2ffd",
-      "name": "core_lightgun.cpp_FUN_004e2e70",
+      "name": "core_lightgun.cpp_CLightGun_fire_FUN_004e2e70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -49,7 +53,7 @@
   "function_calls": [],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 3,
+    "call_site_count": 4,
     "call_sites": [
       {
         "call_addr": "0056cb5c",
@@ -65,7 +69,7 @@
       {
         "call_addr": "0049db66",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049db20",
+        "caller": "core_fire.cpp_CFireEffect_traceLaser_FUN_0049db20",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -76,7 +80,18 @@
       {
         "call_addr": "004e2ffd",
         "call_type": "direct",
-        "caller": "core_lightgun.cpp_FUN_004e2e70",
+        "caller": "core_lightgun.cpp_CLightGun_fire_FUN_004e2e70",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0045ac8c",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_0045ab40",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -102,6 +117,32 @@
       "STORE": 5
     },
     "pcode_op_count": 33
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00559310",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0053ecd0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00574270",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00511840",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 24,
@@ -147,46 +188,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x15f694",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x15f694 = 3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x15f698",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x15f698 = laser_type;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x15f69c",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x15f69c = color_r;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x15f6a0",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x15f6a0 = color_g;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x15f6a4",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x15f6a4 = color_b;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

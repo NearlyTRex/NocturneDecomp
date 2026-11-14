@@ -5,13 +5,13 @@
 // Function prototypes for core/dpart.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_dpart.cpp_FUN_004799c0
+// Original: core_dpart.cpp_CDemonPart_dtor_FUN_004799c0
 // Address: 004799c0
-CDemonPart * __cdecl FUN_004799c0(CDemonPart *this_ptr,uint flags);
+CDemonPart * __cdecl CDemonPart::dtor(CDemonPart *this_ptr,uint flags);
 
-// Original: core_dpart.cpp_FUN_004799e0
+// Original: core_dpart.cpp_CDemonPart_alloc_FUN_004799e0
 // Address: 004799e0
-void __cdecl FUN_004799e0(CDemonPart *this_ptr);
+void __cdecl CDemonPart::alloc(CDemonPart *this_ptr);
 
 // Original: core_dpart.cpp_FUN_00479ae0
 // Address: 00479ae0
@@ -21,9 +21,9 @@ void FUN_00479ae0(int param_1);
 // Address: 00479b22
 void FUN_00479b22(void);
 
-// Original: core_dpart.cpp_FUN_00479b3c
-// Address: 00479b3c
-void FUN_00479b3c(void);
+// Original: core_dpart.cpp_FUN_00479b40
+// Address: 00479b40
+void FUN_00479b40(void);
 
 // Original: core_dpart.cpp_CDemonPart_save_FUN_00479b70
 // Address: 00479b70
@@ -35,23 +35,19 @@ void __cdecl CDemonPart::calculateFaceNormals(CDemonPart *this_ptr);
 
 // Original: core_dpart.cpp_FUN_00479c70
 // Address: 00479c70
-void FUN_00479c70(CDemonPart *param_1,undefined4 param_2,undefined4 param_3,float *param_4);
+void FUN_00479c70(CDemonPart *param_1,_FILE *param_2,undefined4 param_3,float *param_4);
 
-// Original: core_dpart.cpp_FUN_00479ec0
-// Address: 00479ec0
-void FUN_00479ec0(void);
+// Original: core_dpart.cpp_FUN_00479f60
+// Address: 00479f60
+void FUN_00479f60(void);
 
-// Original: core_dpart.cpp_FUN_00479f5e
-// Address: 00479f5e
-void FUN_00479f5e(int param_1);
-
-// Original: core_dpart.cpp_FUN_0047a320
+// Original: core_dpart.cpp_setupDepthOnlyEdgeInterpolation_FUN_0047a320
 // Address: 0047a320
-void FUN_0047a320(int param_1,int param_2);
+void __cdecl setupDepthOnlyEdgeInterpolation(SSoftwareEdge *vertex_a,SSoftwareEdge *vertex_b);
 
-// Original: core_dpart.cpp_FUN_0047a43e
-// Address: 0047a43e
-int * FUN_0047a43e(int param_1,int *param_2);
+// Original: core_dpart.cpp_findEdgeByYStart_FUN_0047a440
+// Address: 0047a440
+SSoftwareEdge * __cdecl findEdgeByYStart(int scanline_y,SSoftwareEdge *exclude_edge);
 
 // Original: core_dpart.cpp_FUN_0047a480
 // Address: 0047a480

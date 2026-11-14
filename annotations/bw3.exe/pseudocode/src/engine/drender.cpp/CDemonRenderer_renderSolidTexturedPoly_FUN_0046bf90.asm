@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   core_glass.cpp_FUN_004ca940 at 004caae1
+;   core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ca940 at 004caae1
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fba20
@@ -105,7 +105,7 @@ section .text
     ADD EAX,0x8                         ; 0046c03e
     PUSH EAX                            ; 0046c041
     CALL engine_3d.c_isVisiblePlane_FUN_00403920 ; 0046c042
-        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403920()
+        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403920(SClipPlane * plane)
     ADD ESP,0x4                         ; 0046c047
     TEST EAX,EAX                        ; 0046c04a
     JZ 0x0046c034                       ; 0046c04c

@@ -1,0 +1,178 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 87,
+    "complexity_score": 30,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 3,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 30,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 117
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0057b930",
+    "address_range": [
+      [
+        "0057b930",
+        "0057b9fc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_weapon.cpp_CWeapon_isReadyToFire_FUN_0057b930",
+    "signature": "int __cdecl core_weapon_cpp_CWeapon_isReadyToFire_FUN_0057b930(CWeapon *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c840",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c840"
+    },
+    {
+      "addr": "005609d0",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_playActorSound_FUN_005609d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d78df",
+      "name": "s_wp_nomana_wav_005d78de+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006045f8",
+      "name": "DAT_006045f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d5ba70",
+      "name": "g_CHeroClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.940298507462686,
+    "instruction_count": 67,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 1,
+      "CALL": 3,
+      "CBRANCH": 10,
+      "COPY": 75,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 30,
+      "INT_AND": 37,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 31,
+      "INT_LEFT": 4,
+      "INT_LESS": 7,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 5,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 15,
+      "INT_SUB": 20,
+      "INT_XOR": 3,
+      "INT_ZEXT": 4,
+      "LOAD": 25,
+      "POPCOUNT": 15,
+      "RETURN": 4,
+      "STORE": 14
+    },
+    "pcode_op_count": 331
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0058a2c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0556
+    },
+    "bw1.exe": {
+      "addr": "005ade10",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0556
+    },
+    "nocedit.exe": {
+      "addr": "005ee710",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0556
+    },
+    "nocturne.exe": {
+      "addr": "00554630",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.0556
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWeapon *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 232,
+        "vtable_addr": "005df104"
+      },
+      {
+        "class_name": "CStorm",
+        "offset": 232,
+        "vtable_addr": "005e5014"
+      },
+      {
+        "class_name": "CFirestaff",
+        "offset": 232,
+        "vtable_addr": "005dfd34"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 232,
+        "vtable_addr": "005e6244"
+      },
+      {
+        "class_name": "CFlintlock",
+        "offset": 232,
+        "vtable_addr": "005e0564"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 21
+  }
+}

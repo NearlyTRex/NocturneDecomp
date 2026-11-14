@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_ghoul_cpp_factoryFuncGhoul_FUN_004c68b0(void)
+; CGhoul * __cdecl core_ghoul_cpp_factoryFuncGhoul_FUN_004c68b0(void)
 ;
 ;
 ; Called Functions:
 ;   core_ghoul.cpp_CGhoul_ctor_FUN_004c68e0
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_memory.c_operator_new_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xd0d0                         ; 004c68b0
         ;   Label: core_ghoul.cpp_factoryFuncGhoul_FUN_004c68b0
-    CALL crt_unknown.c_FUN_005a3cb2     ; 004c68b5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 004c68b5
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
     ADD ESP,0x4                         ; 004c68ba
     TEST EAX,EAX                        ; 004c68bd
     JNZ 0x004c68c2                      ; 004c68bf

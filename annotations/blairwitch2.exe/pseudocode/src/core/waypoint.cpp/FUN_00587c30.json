@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 237,
+    "complexity_score": 234,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 42,
+    "pseudocode_lines": 39,
     "suspect_count": 18,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 166
+    "total_lines": 163
   },
   "cross_references": [
     {
@@ -152,6 +152,20 @@
     },
     "pcode_op_count": 717
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005ab880",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00579130",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 68,
     "local_size": 68,
@@ -285,10 +299,42 @@
     },
     {
       "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_28 = *param_1 - (param_2->position).x;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_28 = *param_1 - (param_2->position).x;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_24 = param_1[1] - (param_2->position).y;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_24 = param_1[1] - (param_2->position).y;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_28 = *param_1 - *(float *)param_2;",
+      "text": "local_20 = param_1[2] - (param_2->position).z;",
       "type": "unnamed_param"
     },
     {
@@ -296,44 +342,12 @@
       "line": 20,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_28 = *param_1 - *(float *)param_2;",
+      "text": "local_20 = param_1[2] - (param_2->position).z;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_24 = param_1[1] - *(float *)(param_2 + 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_24 = param_1[1] - *(float *)(param_2 + 4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_20 = param_1[2] - *(float *)(param_2 + 8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_20 = param_1[2] - *(float *)(param_2 + 8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 == 0) {",
@@ -341,7 +355,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 31,
       "match": "param_4",
       "severity": "mild",
       "text": "if (param_4 != 0) {",
@@ -349,31 +363,31 @@
     },
     {
       "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_40.x = *param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_40.y = param_1[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_40 = *param_1;",
+      "text": "local_40.z = param_1[2];",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fStack_3c = param_1[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fStack_38 = param_1[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 40,
       "match": "param_2",
       "severity": "mild",
       "text": "this_ptr = core_path_cpp_getPathMap_FUN_00513ea0(param_2);",

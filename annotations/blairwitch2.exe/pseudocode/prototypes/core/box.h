@@ -59,7 +59,7 @@ bool FUN_0041bc20(undefined4 param_1,float *param_2,float param_3);
 
 // Original: core_box.cpp_CBoundingBox3D_ctor_FUN_00534d20
 // Address: 00534d20
-CBoundingBox3D * CBoundingBox3D::ctor(CBoundingBox3D *this_ptr);
+CBoundingBox3D * __cdecl CBoundingBox3D::ctor(CBoundingBox3D *this_ptr);
 
 // Original: core_box.cpp_CBox_ctor_FUN_005b1bc0
 // Address: 005b1bc0
@@ -73,6 +73,10 @@ CBox * __cdecl CBox::dtor(CBox *this_ptr,uint flags);
 // Address: 005b1c80
 void __cdecl CBox::setupCorners(CBox *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *extents,float volume);
 
+// Original: core_box.cpp_FUN_005b1eb0
+// Address: 005b1eb0
+void FUN_005b1eb0(CBox *param_1,CVector3f *param_2,CVector3f *param_3,int param_4,float *param_5,float param_6);
+
 // Original: core_box.cpp_FUN_005b2050
 // Address: 005b2050
 void __cdecl FUN_005b2050(CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed);
@@ -85,9 +89,9 @@ void __cdecl CBox::process(CBox *this_ptr,float delta_time);
 // Address: 005b22f0
 void __cdecl CBox::processPhysics(CBox *this_ptr,float delta_time);
 
-// Original: core_box.cpp_FUN_005b4300
+// Original: core_box.cpp_CBox_loadFromFile_FUN_005b4300
 // Address: 005b4300
-void __cdecl FUN_005b4300(CBox *this_ptr,_FILE *file_handle);
+void __cdecl CBox::loadFromFile(CBox *this_ptr,_FILE *file_handle);
 
 // Original: core_box.cpp_CBox_saveToFile_FUN_005b44b0
 // Address: 005b44b0
@@ -99,4 +103,4 @@ void __cdecl CBox::setupVelocities(CBox *this_ptr,CVector3f *linear_velocity,CVe
 
 // Original: core_box.cpp_SScrape_ctor_FUN_005b46b0
 // Address: 005b46b0
-SScrape * SScrape::ctor(SScrape *this_ptr);
+SScrape * __cdecl SScrape::ctor(SScrape *this_ptr);

@@ -11,6 +11,7 @@ uint __cdecl core_sound_cpp_CSound_playTrackedActorSound_FUN_00560a00(CSound *th
 {
   uint uVar1;
   
-  uVar1 = core_sound_cpp_FUN_0055f020(actor,sound_name,0.0,0.0,0.0,position_tracker,0);
+  uVar1 = core_sound_cpp_playSfxInternal_FUN_0055f020
+                    (actor,sound_name,0.0,0.0,0.0,position_tracker,0);
   return uVar1;
 }

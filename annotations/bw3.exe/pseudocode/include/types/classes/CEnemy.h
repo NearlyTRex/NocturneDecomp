@@ -4,13 +4,34 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCharacter.h"
+#include "types/classes/CKeyFramedModelInstance.h"
 
 // Structure: CEnemy
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0xd054 (53332 bytes)
 #pragma pack(push, 1)
 typedef struct CEnemy {
-    char field_0[53332]; // 0x0
+    CCharacter base; // 0x0
+    float speed; // 0xcdcc
+    int pool_me; // 0xcdd0
+    int randomize_me; // 0xcdd4
+    int is_in_combat; // 0xcdd8
+    float guard_distance; // 0xcddc
+    float attack_cooldown; // 0xcde0
+    struct CCharacter* victim; // 0xcde4
+    float victim_search_timer; // 0xcde8
+    float victim_search_radius; // 0xcdec
+    char patrol_name_pattern[100]; // 0xcdf0
+    int special_form_flag; // 0xce54
+    float victim_height; // 0xce58
+    float attack_damage; // 0xce5c, Added in this build
+    float pain_threshold; // 0xce60, Added in this build
+    int spawn_amount; // 0xce64, Added in this build
+    char spawn_item_class[100]; // 0xce68, Added in this build
+    int spawned_item_already; // 0xcecc, Added in this build
+    CKeyFramedModelInstance spawn_model; // 0xced0, Added in this build
+    struct CCharacter* script_victim; // 0xd04c
+    int allow_pathfind_to_new_targets; // 0xd050
 } CEnemy;
 #pragma pack(pop)
 

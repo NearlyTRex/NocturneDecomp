@@ -4,13 +4,21 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/SNotesEntry.h"
 
 // Structure: SNotesSection
-// Stub: size from Watcom RTTI, fields not yet recovered
+// static array of 6, stride 0x2e4; RTTI size 740; 0x154 + 100*4 = 0x2e4
 // Ghidra size: 0x2e4 (740 bytes)
 #pragma pack(push, 1)
 typedef struct SNotesSection {
-    char field_0[740]; // 0x0
+    char name[64]; // 0x0, \section copies the name; ctor zeroes byte 0
+    char title[256]; // 0x40, \title outside an entry copies here; ctor zeroes byte 0
+    int first_page; // 0x140, layout stores view page_index; tab click jumps to it; page-in-section tests
+    int page_count; // 0x144, layout: view page_index - first_page; page-in-section tests
+    int tab_x; // 0x148, set to 0x215 when tab bitmaps load; tab hit test/draw x
+    int tab_y; // 0x14c, accumulated tab bitmap heights; tab hit test/draw y
+    int entry_count; // 0x150, addEntry asserts <= 99 and increments; clear zeroes
+    struct SNotesEntry* entries[100]; // 0x154, addEntry stores the new entry; findEntry/layout/clear iterate
 } SNotesSection;
 #pragma pack(pop)
 

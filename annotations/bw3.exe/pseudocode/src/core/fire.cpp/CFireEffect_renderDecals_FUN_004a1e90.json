@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 176,
+    "complexity_score": 168,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 71,
-    "suspect_count": 9,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 73,
+    "suspect_count": 8,
     "suspect_types": [
+      "pointer_cast",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 227
+    "total_lines": 229
   },
   "cross_references": [
     {
@@ -56,24 +56,24 @@
   },
   "function_calls": [
     {
+      "addr": "00497610",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CBulletHole_render_FUN_00497610"
+    },
+    {
+      "addr": "004975a0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CBulletHole_setupRenderState_FUN_004975a0"
+    },
+    {
       "addr": "0049d980",
       "is_variadic": false,
       "name": "core_fire.cpp_CCrater_render_FUN_0049d980"
     },
     {
-      "addr": "004975a0",
-      "is_variadic": false,
-      "name": "core_fire.cpp_FUN_004975a0"
-    },
-    {
-      "addr": "00497610",
-      "is_variadic": false,
-      "name": "core_fire.cpp_FUN_00497610"
-    },
-    {
       "addr": "00497dc0",
       "is_variadic": false,
-      "name": "core_fire.cpp_FUN_00497dc0"
+      "name": "core_fire.cpp_CStake_render_FUN_00497dc0"
     }
   ],
   "globals": [
@@ -91,13 +91,13 @@
     },
     {
       "addr": "01c8f108",
-      "name": "g_StakePool[0].field600_0x258",
+      "name": "g_StakePool[0].physics_box.is_valid",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01c8f368",
-      "name": "g_StakePool[1].field600_0x258",
+      "name": "g_StakePool[1].physics_box.is_valid",
       "type": "undefined4",
       "value": null
     }
@@ -184,6 +184,32 @@
     },
     "pcode_op_count": 572
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0049cb50",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004b54a0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004c74a0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0048a970",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9493
+    }
+  },
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -228,7 +254,7 @@
       "line": 12,
       "match": "DAT_01c8aea8",
       "severity": "mild",
-      "text": "core_fire_cpp_FUN_004975a0(&DAT_01c8aea8);",
+      "text": "core_fire_cpp_CBulletHole_setupRenderState_FUN_004975a0((CBulletHole *)&DAT_01c8aea8);",
       "type": "undefined_data"
     },
     {
@@ -236,7 +262,7 @@
       "line": 19,
       "match": "DAT_01c8aea8",
       "severity": "mild",
-      "text": "(core_fire_cpp_FUN_00497610((CBulletHole *)(&DAT_01c8aea8 + iVar1)),",
+      "text": "(core_fire_cpp_CBulletHole_render_FUN_00497610((CBulletHole *)(&DAT_01c8aea8 + iVar1)),",
       "type": "undefined_data"
     },
     {
@@ -244,44 +270,36 @@
       "line": 34,
       "match": "DAT_01c8aea8",
       "severity": "mild",
-      "text": "core_fire_cpp_FUN_00497610((CBulletHole *)(&DAT_01c8aea8 + iVar1));",
+      "text": "core_fire_cpp_CBulletHole_render_FUN_00497610((CBulletHole *)(&DAT_01c8aea8 + iVar1));",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x258",
-      "severity": "mild",
-      "text": "if (*(int *)&pCVar3->field_0x258 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 46,
-      "match": "field_0x0",
-      "severity": "mild",
-      "text": "*(uint *)(&g_StakePool[0].field_0x0 + iVar1) = 1;",
-      "type": "unnamed_field"
+      "match": "(uint *)((int)g_StakePool",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c) = 1;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0x0",
-      "severity": "mild",
-      "text": "core_fire_cpp_FUN_00497dc0((CStake *)(&g_StakePool[0].field_0x0 + iVar1));",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(CStake *)((int)g_StakePool",
+      "severity": "moderate",
+      "text": "((CStake *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c));",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 50,
-      "match": "field_0x0",
-      "severity": "mild",
-      "text": "else if (*(int *)(&g_StakePool[0].field_0x0 + iVar1) != 0) goto LAB_004a1f15;",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(int *)((int)g_StakePool",
+      "severity": "moderate",
+      "text": "else if (*(int *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c) != 0)",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 72,
+      "line": 74,
       "match": "DAT_01cfb8b8",
       "severity": "mild",
       "text": "} while (this_ptr_00 != (CCrater *)&DAT_01cfb8b8);",

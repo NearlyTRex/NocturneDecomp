@@ -2,21 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 120,
+    "complexity_score": 69,
     "cross_reference_count": 5,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 25,
-    "suspect_count": 7,
+    "pseudocode_lines": 24,
+    "suspect_count": 3,
     "suspect_types": [
-      "param_count_too_few",
       "raw_address_pointer_store",
-      "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 78
+    "total_lines": 77
   },
   "cross_references": [
     {
@@ -46,7 +44,7 @@
     {
       "addr": "00573fc0",
       "from_addr": "00573ffe",
-      "name": "support_trstream.cpp_FUN_00573fc0",
+      "name": "support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -60,7 +58,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_dosio.cpp_findFile_FUN_004656d0",
-    "signature": "undefined4 __cdecl engine_dosio_cpp_findFile_FUN_004656d0(undefined4 param_1)"
+    "signature": "int __cdecl engine_dosio_cpp_findFile_FUN_004656d0(SFoundFileInfo *context)"
   },
   "function_calls": [
     {
@@ -138,7 +136,7 @@
       {
         "call_addr": "00573ffe",
         "call_type": "direct",
-        "caller": "support_trstream.cpp_FUN_00573fc0",
+        "caller": "support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -159,10 +157,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.651162790697675,
@@ -192,13 +190,47 @@
     },
     "pcode_op_count": 200
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00460980",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00478e90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00481760",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004567a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "context",
+        "offset": 4,
+        "size": 4,
+        "type": "SFoundFileInfo *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -210,55 +242,20 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint __cdecl engine_dosio_cpp_findFile_FUN_004656d0(uint param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar2 = engine_dosio_cpp_findFileNormally_FUN_00465730(param_1);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 20,
-      "match": "*(code **)(iVar3 + 0x1b85180",
+      "line": 19,
+      "match": "*(code **)(iVar2 + 0x1b85180",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)(iVar3 + 0x1b85180))(param_1);",
+      "text": "iVar1 = (**(code **)(iVar2 + 0x1b85180))(context);",
       "type": "raw_address_pointer_store"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 20,
+      "line": 19,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)(iVar3 + 0x1b85180))(param_1);",
+      "text": "iVar1 = (**(code **)(iVar2 + 0x1b85180))(context);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)(iVar3 + 0x1b85180))(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "call_site_count": 7,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

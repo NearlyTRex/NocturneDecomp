@@ -1,0 +1,157 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 70,
+    "complexity_score": 23,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 93
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004e7310",
+    "address_range": [
+      [
+        "004e7310",
+        "004e73a1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_melee.cpp_CMelee_playAttackHitEffects_FUN_004e7310",
+    "signature": "void __cdecl core_melee_cpp_CMelee_playAttackHitEffects_FUN_004e7310(CMelee *this_ptr,int attack_flags,SDamageInfo *damage_info,CDemonActor *victim)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c840",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c840"
+    },
+    {
+      "addr": "004e73b0",
+      "is_variadic": false,
+      "name": "core_melee.cpp_CMelee_initBloodSpurtEffects_FUN_004e73b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "007e2cec",
+      "name": "g_CCharacterClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 4,
+    "declared_stack_bytes": 16,
+    "estimated_params": 4,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.186440677966102,
+    "instruction_count": 59,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "CALL": 2,
+      "CALLIND": 3,
+      "CBRANCH": 4,
+      "COPY": 57,
+      "INT_ADD": 35,
+      "INT_AND": 19,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 18,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 9,
+      "INT_SUB": 22,
+      "LOAD": 27,
+      "POPCOUNT": 9,
+      "RETURN": 4,
+      "STORE": 19
+    },
+    "pcode_op_count": 247
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004eac30",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9091
+    },
+    "bw1.exe": {
+      "addr": "005098d0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0050eb50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9091
+    },
+    "nocturne.exe": {
+      "addr": "004cefe0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8438
+    }
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMelee *"
+      },
+      {
+        "is_param": true,
+        "name": "attack_flags",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 12,
+        "size": 4,
+        "type": "SDamageInfo *"
+      },
+      {
+        "is_param": true,
+        "name": "victim",
+        "offset": 16,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 128,
+        "vtable_addr": "005e27a4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

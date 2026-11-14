@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   crt_unknown.c_FUN_005a427c at 005a4311
-;   unkafter_asgaya.cpp_FUN_005af050 at 005af134
+;   crt_unknown.c_FUN_005af050 at 005af134
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005aa0f0

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_lantern_cpp_CLantern_getActorType_FUN_0059cbc0(CLantern *this_ptr)
+; CDemonActorType * __cdecl core_lantern_cpp_CLantern_getActorType_FUN_0059cbc0(CLantern *this_ptr)
 ;
 ; Parameters:
 ; CLantern *       Stack[0x4]:4   this_ptr

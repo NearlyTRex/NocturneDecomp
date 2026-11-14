@@ -1,20 +1,20 @@
 // Name: core_wateract.cpp_factoryFuncWaterActor_FUN_00577d60
 // Address: 00577d60
 // Address Range: [[00577d60, 00577d7b]]
-// Convention: unknown
-// Signature: void core_wateract_cpp_factoryFuncWaterActor_FUN_00577d60(void)
+// Convention: __cdecl
+// Signature: CWaterActor * __cdecl core_wateract_cpp_factoryFuncWaterActor_FUN_00577d60(void)
 
 #include "nocturne.h"
 
-void core_wateract_cpp_factoryFuncWaterActor_FUN_00577d60(void)
+CWaterActor * __cdecl core_wateract_cpp_factoryFuncWaterActor_FUN_00577d60(void)
 
 {
-  CWaterActor *this_ptr;
+  CWaterActor *pCVar1;
   
-  this_ptr = (CWaterActor *)FUN_005a3cb2(0x2b23c);
-  if (this_ptr == (CWaterActor *)0x0) {
-    return;
+  pCVar1 = (CWaterActor *)operator_new(0x2b23c);
+  if (pCVar1 == (CWaterActor *)0x0) {
+    return (CWaterActor *)0x0;
   }
-  core_wateract_cpp_CWaterActor_ctor_FUN_00577d90(this_ptr);
-  return;
+  pCVar1 = core_wateract_cpp_CWaterActor_ctor_FUN_00577d90(pCVar1);
+  return pCVar1;
 }

@@ -37,7 +37,7 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
-;   core_werewolf.cpp_FUN_0058b950 at 0058bdd6
+;   core_werewolf.cpp_CWerewolf_process_FUN_0058b950 at 0058bdd6
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Chain_stretched_to_f_005ee812
@@ -49,7 +49,7 @@
 ;   core_actor.cpp_FUN_00408de0
 ;   core_charactr.cpp_FUN_00423a60
 ;   core_xform.cpp_FUN_00591530
-;   engine_console.cpp_FUN_00436710
+;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;
 ; *****************************************************************************
 
@@ -156,8 +156,8 @@ section .text
     PUSH 0x5ee812                       ; 0058ddf5 | = "Chain stretched to %f\n"
     MOV EDX,dword ptr [0x00609ed0]      ; 0058ddfa | g_CConsolePtr
     PUSH EDX                            ; 0058de00 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00436710 ; 0058de01
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 0058de01
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     FLD float ptr [EBP + 0x66]          ; 0058de06
     ADD ESP,0x10                        ; 0058de09
     FCOMP float ptr [EBX + 0x10b28]     ; 0058de0c

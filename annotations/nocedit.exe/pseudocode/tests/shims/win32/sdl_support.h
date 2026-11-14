@@ -13,14 +13,17 @@ struct Stand {
     int gl_active = 0;       // nocturne_gl_is_active
     float movie_gain = 1.0f; // nocturne_movie_audio_gain
 
-    // nocturne_gl_present_framebuffer
+    // nocturne_gl_present_framebuffer, and nocturne_gl_present_picture, which
+    // sets present_own_shape
     int presents = 0;
+    int present_own_shape = 0;
     int present_width = 0;
     int present_height = 0;
     int present_bpp = 0;
     int present_first_byte = -1; // of the pixels
 
-    // The window side: what nocturne_gl_window_to_logical scales by, and how
+    // The window side: what nocturne_gl_window_to_logical divides by and
+    // nocturne_gl_logical_to_window multiplies by, and how
     // often the icon was set, the focus trace armed and the gamepad sampled.
     int logical_scale = 1;
     int icons = 0;

@@ -15,16 +15,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_baal.cpp_FUN_005968a0 at 00597165
+;   core_baal.cpp_CBaal_process_FUN_005968a0 at 00597165
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d9689
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cfa0
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
+;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
-;   core_vecdir.cpp_FUN_00576250
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250
 ;
 ; *****************************************************************************
 
@@ -70,8 +70,8 @@ section .text
     PUSH EAX                            ; 00597763
     LEA ESI,[ESP + 0x10]                ; 00597764
     LEA EDI,[ESP + 0x4]                 ; 00597768
-    CALL core_vecdir.cpp_FUN_00576250   ; 0059776c
-        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_00576250()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250 ; 0059776c
+        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250()
     LEA ESI,[ESP + 0x10]                ; 00597771
     ADD ESP,0x4                         ; 00597775
     MOVSD ES:EDI,ESI                    ; 00597778
@@ -81,8 +81,8 @@ section .text
     FSUB float ptr [EBX + 0x34]         ; 0059777f
     SUB ESP,0x4                         ; 00597782
     FSTP float ptr [ESP]                ; 00597785
-    CALL core_actor.cpp_FUN_0040cfa0    ; 00597788
-        ;   XREF to: 0040cfa0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cfa0()
+    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0 ; 00597788
+        ;   XREF to: 0040cfa0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0(float angle_radians)
     MOV dword ptr [ESP + 0x34],EAX      ; 0059778d
     FLD float ptr [ESP + 0x34]          ; 00597791
     FABS                                ; 00597795

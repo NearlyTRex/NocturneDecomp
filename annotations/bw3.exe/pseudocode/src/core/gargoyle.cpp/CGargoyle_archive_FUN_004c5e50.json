@@ -1,0 +1,196 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 60,
+    "complexity_score": 17,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 8,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 77
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004c5e50",
+    "address_range": [
+      [
+        "004c5e50",
+        "004c5ef5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gargoyle.cpp_CGargoyle_archive_FUN_004c5e50",
+    "signature": "void __cdecl core_gargoyle_cpp_CGargoyle_archive_FUN_004c5e50(CGargoyle *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b930",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveActor_FUN_0040b930"
+    },
+    {
+      "addr": "0040ba30",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveDeformableModelInstance_FUN_0040ba30"
+    },
+    {
+      "addr": "0040b830",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b830"
+    },
+    {
+      "addr": "0040b8b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b8b0"
+    },
+    {
+      "addr": "0040bab0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040bab0"
+    },
+    {
+      "addr": "00489120",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_archive_FUN_00489120"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c3fa0",
+      "name": "s_speed_005c3f9f+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c3fa6",
+      "name": "s_modelName_005c3fa6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c3fb0",
+      "name": "s_motion_state_005c3fb0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c3fbd",
+      "name": "s_stoneRed_005c3fbd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c3fc6",
+      "name": "s_stoneGreen_005c3fc6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c3fd1",
+      "name": "s_stoneBlue_005c3fd1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c3fdb",
+      "name": "s_homeBase_005c3fdb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fec80",
+      "name": "g_CGargoyleClassVersion",
+      "type": "int",
+      "value": "0x2"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.163265306122449,
+    "instruction_count": 49,
+    "opcode_distribution": {
+      "CALL": 8,
+      "CBRANCH": 1,
+      "COPY": 33,
+      "INT_ADD": 21,
+      "INT_AND": 20,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 21,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 10,
+      "INT_SUB": 26,
+      "LOAD": 7,
+      "POPCOUNT": 10,
+      "RETURN": 2,
+      "STORE": 25
+    },
+    "pcode_op_count": 204
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004c0b40",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004dd2d0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004e5470",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004a8270",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGargoyle *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CGargoyle",
+        "offset": 212,
+        "vtable_addr": "005e0784"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

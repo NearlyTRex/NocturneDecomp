@@ -1,14 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_prim_c_adjustNearPlaneTextureCoords_FUN_00515a10(int param_1,int param_2)
+; void __cdecl engine_prim_c_adjustNearPlaneTextureCoords_FUN_00515a10(SRenderVertex *vertices,int vertex_count)
 ;
+; Parameters:
+; SRenderVertex *  Stack[0x4]:4   vertices
+; int              Stack[0x8]:4   vertex_count
 ;
 ; XREF[4]:
-;   core_asgaya.cpp_FUN_005a23c0 at 005a2679
-;   engine_prim.c_FUN_00515e80 at 005160b6
-;   engine_prim.c_FUN_00516de0 at 00517111
-;   engine_prim.c_FUN_00517480 at 0051765e
+;   core_asgaya.cpp_rasterizePolygonCustom_FUN_005a23c0 at 005a2679
+;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_00517480 at 0051765e
+;   engine_prim.c_renderPolygonSoftware_FUN_00515e80 at 005160b6
+;   engine_prim.c_renderScanlinePolygon_FUN_00516de0 at 00517111
 ;
 ; *****************************************************************************
 

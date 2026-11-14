@@ -16,15 +16,15 @@ int __cdecl core_script_cpp_CScript_processTimer_FUN_0054ac20(CScript *this_ptr,
     _DAT_01d1d404 = 0xf7d;
     core_main_c_FUN_005030e0("CScript::processTimer - invalidTimeToWait");
   }
-  if (*(float *)&this_ptr->field_0x48 < 0.0) {
-    *(float *)&this_ptr->field_0x48 = delta_time;
+  if (this_ptr->cmd_timer < 0.0) {
+    this_ptr->cmd_timer = delta_time;
   }
-  if (*(float *)&this_ptr->field_0x48 <= *timer_value) {
-    *timer_value = *timer_value - *(float *)&this_ptr->field_0x48;
-    *(uint *)&this_ptr->field_0x48 = 0;
+  if (this_ptr->cmd_timer <= *timer_value) {
+    *timer_value = *timer_value - this_ptr->cmd_timer;
+    this_ptr->cmd_timer = 0.0;
     return 1;
   }
-  *(float *)&this_ptr->field_0x48 = *(float *)&this_ptr->field_0x48 - *timer_value;
+  this_ptr->cmd_timer = this_ptr->cmd_timer - *timer_value;
   *timer_value = 0.0;
   return 0;
 }

@@ -7,43 +7,43 @@
 
 // Original: core_biggs.cpp_staticInit_FUN_00414990
 // Address: 00414990
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_biggs.cpp_factoryFuncBiggs_FUN_004149c0
 // Address: 004149c0
-void factoryFuncBiggs(void);
+CBiggs * __cdecl factoryFuncBiggs(void);
 
 // Original: core_biggs.cpp_CBiggs_getActorType_FUN_004149e0
 // Address: 004149e0
-CDemonActorType * CBiggs::getActorType(CBiggs *this_ptr);
+CDemonActorType * __cdecl CBiggs::getActorType(CBiggs *this_ptr);
 
 // Original: core_biggs.cpp_CBiggs_ctor_FUN_004149f0
 // Address: 004149f0
 CBiggs * __cdecl CBiggs::ctor(CBiggs *this_ptr);
 
-// Original: core_biggs.cpp_FUN_00414ab0
+// Original: core_biggs.cpp_CBiggs_setup_FUN_00414ab0
 // Address: 00414ab0
-void FUN_00414ab0(CEnemy *param_1);
+void __cdecl CBiggs::setup(CBiggs *this_ptr);
 
-// Original: core_biggs.cpp_FUN_00414b30
+// Original: core_biggs.cpp_CBiggs_process_FUN_00414b30
 // Address: 00414b30
-void FUN_00414b30(CCharacter *param_1,float param_2);
+void __cdecl CBiggs::process(CBiggs *this_ptr,float delta_time);
 
-// Original: core_biggs.cpp_FUN_00414e00
+// Original: core_biggs.cpp_CBiggs_renderOpaque_FUN_00414e00
 // Address: 00414e00
-int FUN_00414e00(CCharacter *param_1);
+int __cdecl CBiggs::renderOpaque(CBiggs *this_ptr);
 
-// Original: core_biggs.cpp_FUN_00414f30
+// Original: core_biggs.cpp_CBiggs_archive_FUN_00414f30
 // Address: 00414f30
-void FUN_00414f30(CEnemy *param_1);
+void __cdecl CBiggs::archive(CBiggs *this_ptr);
 
-// Original: core_biggs.cpp_FUN_00414fc0
+// Original: core_biggs.cpp_CBiggs_processDamage_FUN_00414fc0
 // Address: 00414fc0
-void FUN_00414fc0(int param_1,int param_2);
+void __cdecl CBiggs::processDamage(CBiggs *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_biggs.cpp_FUN_00415070
+// Original: core_biggs.cpp_CBiggs_getTargetPoints_FUN_00415070
 // Address: 00415070
-undefined4 FUN_00415070(int param_1,undefined4 *param_2);
+int __cdecl CBiggs::getTargetPoints(CBiggs *this_ptr,CVector3f *out_points_array);
 
 // Original: core_biggs.cpp_CBiggs_getCollisionType_FUN_004150d0
 // Address: 004150d0
@@ -51,4 +51,4 @@ ECollisionType __cdecl CBiggs::getCollisionType(CBiggs *this_ptr,SCollisionInfo 
 
 // Original: core_biggs.cpp_CBiggs_dtor_FUN_004150f0
 // Address: 004150f0
-CBiggs * CBiggs::dtor(CBiggs *this_ptr,uint flags);
+CBiggs * __cdecl CBiggs::dtor(CBiggs *this_ptr,uint flags);

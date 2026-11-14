@@ -24,7 +24,7 @@
     {
       "addr": "005af050",
       "from_addr": "005af0c4",
-      "name": "unkafter_asgaya.cpp_FUN_005af050",
+      "name": "crt_unknown.c_FUN_005af050",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -92,6 +92,21 @@
       "name": "crt_unknown.c_FUN_005acb10"
     },
     {
+      "addr": "005aede0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005aede0"
+    },
+    {
+      "addr": "005aee30",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005aee30"
+    },
+    {
+      "addr": "005aef20",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005aef20"
+    },
+    {
       "addr": "EXTERNAL:00000059",
       "is_variadic": false,
       "name": "FindClose"
@@ -100,21 +115,6 @@
       "addr": "EXTERNAL:0000005a",
       "is_variadic": false,
       "name": "FindFirstFileA"
-    },
-    {
-      "addr": "005aede0",
-      "is_variadic": false,
-      "name": "unkafter_asgaya.cpp_FUN_005aede0"
-    },
-    {
-      "addr": "005aee30",
-      "is_variadic": false,
-      "name": "unkafter_asgaya.cpp_FUN_005aee30"
-    },
-    {
-      "addr": "005aef20",
-      "is_variadic": false,
-      "name": "unkafter_asgaya.cpp_FUN_005aef20"
     }
   ],
   "globals": [
@@ -149,7 +149,7 @@
       {
         "call_addr": "005af0c4",
         "call_type": "direct",
-        "caller": "unkafter_asgaya.cpp_FUN_005af050",
+        "caller": "crt_unknown.c_FUN_005af050",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -191,6 +191,32 @@
       "STORE": 82
     },
     "pcode_op_count": 980
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005bfdd4",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005c8094",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00607e64",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0056c864",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 884,
@@ -326,7 +352,7 @@
       "line": 25,
       "match": "DAT_005da884",
       "severity": "mild",
-      "text": "(iVar3 = unkafter_asgaya_cpp_FUN_005aede0(filename,&DAT_005da884), iVar3 != 0)) {",
+      "text": "(iVar3 = FUN_005aede0(filename,&DAT_005da884), iVar3 != 0)) {",
       "type": "undefined_data"
     },
     {

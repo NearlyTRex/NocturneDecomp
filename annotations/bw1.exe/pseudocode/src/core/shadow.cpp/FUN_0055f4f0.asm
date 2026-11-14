@@ -5,14 +5,14 @@
 ;
 ;
 ; XREF[1]:
-;   core_shadow.cpp_FUN_0055fea0 at 0055ff53
+;   core_shadow.cpp_CShadow_processDamage_FUN_0055fea0 at 0055ff53
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shb_damage_wav_005f16b3
 ;   TerminatedCString s_child_cry_wav_005f16c4
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_005735a0
+;   sound_sndmain.cpp_isSfxPlaying_FUN_005735a0
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 0055f4f1
     MOV EDX,dword ptr [EBX + 0xc29c]    ; 0055f4f5
     PUSH EDX                            ; 0055f4fb
-    CALL sound_sndmain.cpp_FUN_005735a0 ; 0055f4fc
-        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005735a0(uint sfx_handle)
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005735a0 ; 0055f4fc
+        ;   XREF to: 005735a0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxPlaying_FUN_005735a0(uint sfx_handle)
     ADD ESP,0x4                         ; 0055f501
     TEST EAX,EAX                        ; 0055f504
     JNZ 0x0055f533                      ; 0055f506

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int * engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_00562c33(void)
+; void __edi_esi_ebx engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_00562c33(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y)
 ;
 ;
 ; XREF[47]:

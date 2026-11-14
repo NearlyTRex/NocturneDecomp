@@ -2,15 +2,19 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBoxActor.h"
 
 // Structure: CTempleStone
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x7d8 (2008 bytes)
 #pragma pack(push, 1)
 typedef struct CTempleStone {
-    char field_0[2008]; // 0x0
+    CBoxActor base; // 0x0
+    struct CDemonActor* dest_actor; // 0x7d4
 } CTempleStone;
 #pragma pack(pop)
 

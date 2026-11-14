@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 183,
+    "complexity_score": 82,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 15,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 68,
-    "suspect_count": 10,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 67,
+    "suspect_count": 1,
     "suspect_types": [
-      "suspicious_cast",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 210
+    "total_lines": 209
   },
   "cross_references": [
     {
@@ -52,7 +50,7 @@
     {
       "addr": "0040c550",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040c550"
+      "name": "core_actor.cpp_isOfClass_FUN_0040c550"
     },
     {
       "addr": "005030e0",
@@ -108,13 +106,13 @@
     },
     {
       "addr": "01ccf464",
-      "name": "g_CGameInstance.field212_0xd4",
+      "name": "g_CGameInstance.hero_number",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccf468",
-      "name": "g_CGameInstance.field216_0xd8",
+      "name": "g_CGameInstance.aim_mode",
       "type": "undefined4",
       "value": null
     },
@@ -150,19 +148,19 @@
     },
     {
       "addr": "01d51c3c",
-      "name": "g_CNetGameInstance.field28_0x1c",
+      "name": "g_CNetGameInstance.player_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d51c58",
-      "name": "g_CNetGameInstance.field56_0x38",
+      "name": "g_CNetGameInstance.players[0].aim_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d51d3c",
-      "name": "g_CNetGameInstance.field284_0x11c",
+      "name": "g_CNetGameInstance.local_player_index",
       "type": "undefined4",
       "value": null
     }
@@ -250,6 +248,32 @@
     },
     "pcode_op_count": 429
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004fd0e0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004f7880",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00524a80",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004d9a80",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -281,78 +305,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0xd4",
-      "severity": "mild",
-      "text": "(this_ptr,0,*(int *)&g_CGamePtr->field_0xd4,existing_hero);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0xd8",
-      "severity": "mild",
-      "text": "*(uint *)&g_CGamePtr->field_0xd8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "_DAT_01d06aa0 = *(int *)&g_CNetGamePtr->field_0x1c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "(this_ptr,iVar4,*(int *)(&g_CNetGamePtr->field_0x34 + iVar3),",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x38",
-      "severity": "mild",
-      "text": "*(uint *)(&g_CNetGamePtr->field_0x38 + iVar3);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 56,
-      "match": "field_0x11c",
-      "severity": "mild",
-      "text": "_DAT_01d06ab4 = *(int *)&g_CNetGamePtr->field_0x11c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 63,
-      "match": "field_0x14c",
-      "severity": "mild",
-      "text": "actor_ptr = *(CDemonActor **)&actor_ptr->field_0x14c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Cast-and-add on &g_CNetGamePtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00622584 (at 0x00622584, +4 bytes).",
-      "line": 43,
-      "match": "g_CNetGamePtr",
-      "severity": "moderate",
-      "text": "(this_ptr,iVar4,*(int *)(&g_CNetGamePtr->field_0x34 + iVar3),",
-      "type": "suspicious_cast"
-    },
-    {
-      "description": "Cast-and-add on &g_CNetGamePtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00622584 (at 0x00622584, +4 bytes).",
-      "line": 51,
-      "match": "g_CNetGamePtr",
-      "severity": "moderate",
-      "text": "*(uint *)(&g_CNetGamePtr->field_0x38 + iVar3);",
-      "type": "suspicious_cast"
     }
   ]
 }

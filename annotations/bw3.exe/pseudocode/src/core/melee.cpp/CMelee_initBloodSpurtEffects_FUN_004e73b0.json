@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 63,
+    "complexity_score": 8,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 8,
-    "suspect_count": 5,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 18
   },
   "cross_references": [
     {
       "addr": "004e7310",
       "from_addr": "004e7344",
-      "name": "core_melee.cpp_FUN_004e7310",
+      "name": "core_melee.cpp_CMelee_playAttackHitEffects_FUN_004e7310",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -42,7 +40,7 @@
       {
         "call_addr": "004e7344",
         "call_type": "direct",
-        "caller": "core_melee.cpp_FUN_004e7310",
+        "caller": "core_melee.cpp_CMelee_playAttackHitEffects_FUN_004e7310",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -69,6 +67,32 @@
       "STORE": 4
     },
     "pcode_op_count": 45
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004eacc0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00509970",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0050ebe0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004cf090",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 16,
@@ -100,46 +124,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x5b4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x5b4 = 0x3f800000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x5a8",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x5a8 = blood_gore_type;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x5b0",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x5b0 = *(uint *)&this_ptr->field_0x5b4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x5b4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x5b0 = *(uint *)&this_ptr->field_0x5b4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x5ac",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x5ac = blood_spurt_count;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

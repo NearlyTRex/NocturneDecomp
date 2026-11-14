@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 94,
-    "complexity_score": 195,
+    "complexity_score": 165,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 35,
-    "suspect_count": 14,
+    "suspect_count": 12,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
     "total_lines": 129
@@ -21,13 +19,13 @@
     {
       "addr": "004dc560",
       "from_addr": "004dc6a3",
-      "name": "core_inv.cpp_FUN_004dc560",
+      "name": "core_inv.cpp_CInventory_save_FUN_004dc560",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f6410",
       "from_addr": "004f66f1",
-      "name": "core_mission.cpp_FUN_004f6410",
+      "name": "core_mission.cpp_CDemonMission_writeFile_FUN_004f6410",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -52,7 +50,7 @@
     {
       "addr": "00408870",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408870"
+      "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870"
     },
     {
       "addr": "0040c870",
@@ -150,7 +148,7 @@
       {
         "call_addr": "004f66f1",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_004f6410",
+        "caller": "core_mission.cpp_CDemonMission_writeFile_FUN_004f6410",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -161,7 +159,7 @@
       {
         "call_addr": "004dc6a3",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004dc560",
+        "caller": "core_inv.cpp_CInventory_save_FUN_004dc560",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -201,6 +199,32 @@
       "STORE": 33
     },
     "pcode_op_count": 272
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0040b0a0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0040adb0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0040af30",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0040c040",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 36,
@@ -303,22 +327,6 @@
       "severity": "mild",
       "text": "DAT_007df9b8 = 2;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 27,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0xd4))(this_ptr);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0xd4))(this_ptr);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",

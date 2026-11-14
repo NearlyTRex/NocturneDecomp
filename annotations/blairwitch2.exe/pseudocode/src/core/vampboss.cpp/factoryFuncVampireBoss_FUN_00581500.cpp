@@ -1,20 +1,20 @@
 // Name: core_vampboss.cpp_factoryFuncVampireBoss_FUN_00581500
 // Address: 00581500
 // Address Range: [[00581500, 0058151b]]
-// Convention: unknown
-// Signature: void core_vampboss_cpp_factoryFuncVampireBoss_FUN_00581500(void)
+// Convention: __cdecl
+// Signature: CVampireBoss * __cdecl core_vampboss_cpp_factoryFuncVampireBoss_FUN_00581500(void)
 
 #include "nocturne.h"
 
-void core_vampboss_cpp_factoryFuncVampireBoss_FUN_00581500(void)
+CVampireBoss * __cdecl core_vampboss_cpp_factoryFuncVampireBoss_FUN_00581500(void)
 
 {
-  CVampireBoss *this_ptr;
+  CVampireBoss *pCVar1;
   
-  this_ptr = (CVampireBoss *)FUN_005b8be2(0xc3b9c);
-  if (this_ptr == (CVampireBoss *)0x0) {
-    return;
+  pCVar1 = (CVampireBoss *)operator_new(0xc3b9c);
+  if (pCVar1 == (CVampireBoss *)0x0) {
+    return (CVampireBoss *)0x0;
   }
-  core_vampboss_cpp_CVampireBoss_ctor_FUN_00581530(this_ptr);
-  return;
+  pCVar1 = core_vampboss_cpp_CVampireBoss_ctor_FUN_00581530(pCVar1);
+  return pCVar1;
 }

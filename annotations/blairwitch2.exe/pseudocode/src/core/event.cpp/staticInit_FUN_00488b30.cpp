@@ -1,14 +1,14 @@
 // Name: core_event.cpp_staticInit_FUN_00488b30
 // Address: 00488b30
 // Address Range: [[00488b30, 00488b62]]
-// Convention: unknown
-// Signature: void core_event_cpp_staticInit_FUN_00488b30(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_event_cpp_staticInit_FUN_00488b30(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_event_cpp_staticInit_FUN_00488b30(void)
+void __cdecl core_event_cpp_staticInit_FUN_00488b30(void)
 
 {
   core_event_cpp_CEventList_ctor_FUN_00489360((CEventList *)0x1c38bc0);

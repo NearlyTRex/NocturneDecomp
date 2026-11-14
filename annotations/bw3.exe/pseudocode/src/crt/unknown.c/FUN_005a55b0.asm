@@ -1,12 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 crt_unknown_c_FUN_005a55b0(LPCSTR param_1)
+; int __cdecl crt_unknown_c_FUN_005a55b0(char *path)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   path
 ;
 ; XREF[2]:
 ;   crt_unknown.c_FUN_005aaed4 at 005aafaf
-;   shape_edittool.cpp_FUN_0047dd1e at 0047e090
+;   shape_edittool.cpp_FUN_0047dd20 at 0047e090
 ;
 ; Referenced Globals:
 ;   void* PTR_SetCurrentDirectoryA_005b3628 = 001b4146

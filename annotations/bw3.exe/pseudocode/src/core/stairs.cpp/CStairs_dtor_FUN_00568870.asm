@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CStairs * core_stairs_cpp_CStairs_dtor_FUN_00568870(CStairs *this_ptr,uint flags)
+; CStairs * __cdecl core_stairs_cpp_CStairs_dtor_FUN_00568870(CStairs *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CStairs *        Stack[0x4]:4   this_ptr
@@ -43,7 +43,7 @@ section .text
         ;   Label: LAB_00568896
     PUSH EBX                            ; 0056889b
     CALL crt_memory.c___vec_delete_FUN_005a308f ; 0056889c
-        ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005a308f()
+        ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005a308f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 005688a1
     PUSH EAX                            ; 005688a4
     CALL crt_unknown.c_FUN_005a30b6     ; 005688a5

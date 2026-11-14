@@ -100,15 +100,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00579f6e",
-      "from_addr": "00579fd2",
-      "name": "sound_snddx.cpp_FUN_00579f6e",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0057a230",
       "from_addr": "0057a254",
       "name": "sound_snddx.cpp_FUN_0057a230",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00579f70",
+      "from_addr": "00579fd2",
+      "name": "sound_snddx.cpp_directSoundEnumerationCallback_FUN_00579f70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -295,28 +295,6 @@
         "stack_params": 1
       },
       {
-        "call_addr": "00579fd2",
-        "call_type": "direct",
-        "caller": "sound_snddx.cpp_FUN_00579f6e",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "0057a08d",
-        "call_type": "direct",
-        "caller": "sound_snddx.cpp_FUN_00579f6e",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
         "call_addr": "00577c2c",
         "call_type": "direct",
         "caller": "sound_snddx.cpp_FUN_00577b60",
@@ -359,6 +337,28 @@
         "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
+      },
+      {
+        "call_addr": "00577d31",
+        "call_type": "direct",
+        "caller": "sound_snddx.cpp_FUN_00577cd0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00577d76",
+        "call_type": "direct",
+        "caller": "sound_snddx.cpp_FUN_00577cd0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
       }
     ],
     "confidence": "high",
@@ -388,6 +388,20 @@
       "RETURN": 22
     },
     "pcode_op_count": 290
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00554ad0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0055a670",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 8,

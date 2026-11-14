@@ -2,42 +2,43 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 150,
-    "complexity_score": 130,
+    "complexity_score": 154,
     "cross_reference_count": 9,
     "function_call_count": 3,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 70,
-    "suspect_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 69,
+    "suspect_count": 7,
     "suspect_types": [
+      "shadow_pointer_walk",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 220
+    "total_lines": 219
   },
   "cross_references": [
     {
       "addr": "004159e0",
       "from_addr": "00415b32",
-      "name": "core_bodypart.cpp_FUN_004159e0",
+      "name": "core_bodypart.cpp_CBodyPart_renderGeometry_FUN_004159e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0046e410",
       "from_addr": "0046e73b",
-      "name": "core_dskybox.cpp_FUN_0046e410",
+      "name": "core_dskybox.cpp_renderSkyDome_FUN_0046e410",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004a70b0",
       "from_addr": "004a748b",
-      "name": "core_flies.cpp_FUN_004a70b0",
+      "name": "core_flies.cpp_CFlies_renderOpaque_FUN_004a70b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004c5840",
       "from_addr": "004c5993",
-      "name": "core_glass.cpp_FUN_004c5840",
+      "name": "core_glass.cpp_CGlass_renderBackground_FUN_004c5840",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -61,7 +62,7 @@
     {
       "addr": "00587400",
       "from_addr": "0058762f",
-      "name": "core_wateract.cpp_FUN_00587400",
+      "name": "core_wateract.cpp_CWaterActor_renderTransparent_FUN_00587400",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -155,7 +156,7 @@
       {
         "call_addr": "0046e73b",
         "call_type": "direct",
-        "caller": "core_dskybox.cpp_FUN_0046e410",
+        "caller": "core_dskybox.cpp_renderSkyDome_FUN_0046e410",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -166,7 +167,7 @@
       {
         "call_addr": "0046e899",
         "call_type": "direct",
-        "caller": "core_dskybox.cpp_FUN_0046e410",
+        "caller": "core_dskybox.cpp_renderSkyDome_FUN_0046e410",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -199,7 +200,7 @@
       {
         "call_addr": "00415b32",
         "call_type": "direct",
-        "caller": "core_bodypart.cpp_FUN_004159e0",
+        "caller": "core_bodypart.cpp_CBodyPart_renderGeometry_FUN_004159e0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -210,7 +211,7 @@
       {
         "call_addr": "004c5993",
         "call_type": "direct",
-        "caller": "core_glass.cpp_FUN_004c5840",
+        "caller": "core_glass.cpp_CGlass_renderBackground_FUN_004c5840",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -221,7 +222,7 @@
       {
         "call_addr": "004a748b",
         "call_type": "direct",
-        "caller": "core_flies.cpp_FUN_004a70b0",
+        "caller": "core_flies.cpp_CFlies_renderOpaque_FUN_004a70b0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -232,7 +233,7 @@
       {
         "call_addr": "0058762f",
         "call_type": "direct",
-        "caller": "core_wateract.cpp_FUN_00587400",
+        "caller": "core_wateract.cpp_CWaterActor_renderTransparent_FUN_00587400",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -289,6 +290,32 @@
     },
     "pcode_op_count": 503
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00482210",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0046b8f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0048aeb0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0045f460",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 32,
     "local_size": 20,
@@ -337,7 +364,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 30,
       "match": "DAT_01ba5c84",
       "severity": "mild",
       "text": "*(int *)(&DAT_01ba5c84 + iVar4) = iVar1;",
@@ -345,15 +372,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 43,
       "match": "DAT_01ba5c84",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_01ba5c84 + iVar4) = *(uint *)(pSVar2 + 0x18);",
+      "text": "*(int *)(&DAT_01ba5c84 + iVar4) = pSVar2->vertices[0].vertex_index;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 51,
       "match": "DAT_006141c0",
       "severity": "mild",
       "text": "if (DAT_006141c0 == 0x20) {",
@@ -361,11 +388,27 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 66,
       "match": "DAT_01ba5c84",
       "severity": "mild",
-      "text": "(this_ptr,*(int *)(poly + 4),(int *)&DAT_01ba5c84);",
+      "text": "(this_ptr,(poly->base).base.count,(int *)&DAT_01ba5c84);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 31,
+      "match": "pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar2 = (SMRGLPrimitivePoly *)&(pSVar2->base).surface_normal.B;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 46,
+      "match": "pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar2 = (SMRGLPrimitivePoly *)&(pSVar2->base).surface_normal.B;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

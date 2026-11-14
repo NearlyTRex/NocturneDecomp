@@ -17,8 +17,8 @@ void engine_drender_cpp_FUN_0046ae40(CDemonRenderer *param_1,int param_2)
   int iVar4;
   uint uStack_14;
   
-  if ((*(int *)(param_1 + 0xc) == 0) ||
-     (iVar3 = engine_3d_c_isVisiblePlane_FUN_00403970(param_2 + 8), iVar3 != 0)) {
+  if ((param_1->plane_culling_enabled == 0) ||
+     (iVar3 = engine_3d_c_isVisiblePlane_FUN_00403970((SClipPlane *)(param_2 + 8)), iVar3 != 0)) {
     uStack_14 = 0xffffffff;
     iVar3 = 0;
     if (0 < *(int *)(param_2 + 4)) {
@@ -28,13 +28,13 @@ void engine_drender_cpp_FUN_0046ae40(CDemonRenderer *param_1,int param_2)
         iVar1 = *(int *)(iVar4 + 0x18);
         *(int *)(&DAT_01ba5c84 + iVar2) = iVar1;
         iVar2 = iVar2 + 4;
-        uStack_14 = uStack_14 & *(uint *)(*(int *)param_1 + 0x10 + iVar1 * 0x30);
+        uStack_14 = uStack_14 & param_1->vertex_buffer_ptr[iVar1].projected_vertex.screen_x;
         iVar4 = iVar4 + 0xc;
         iVar3 = iVar3 + 1;
       } while (iVar3 < *(int *)(param_2 + 4));
     }
     if (((uStack_14 & 0x80000000) == 0) || ((uStack_14 & 0x1f) == 0)) {
-      if (*(int *)(param_1 + 4) == 0) {
+      if (param_1->shadow_pass_active == 0) {
         if (DAT_006141c0 == 0x20) {
           _DAT_01c35e6c = engine_special_cpp_FUN_0055b3b1;
         }
@@ -43,13 +43,13 @@ void engine_drender_cpp_FUN_0046ae40(CDemonRenderer *param_1,int param_2)
         }
         _DAT_01c38b58 = 0;
         _DAT_01c38b54 = 0x327;
-        if ((*(int *)(param_1 + 0x20) == 0) && (iVar3 = 0, 0 < *(int *)(param_2 + 4))) {
+        if ((param_1->skip_uv_extraction == 0) && (iVar3 = 0, 0 < *(int *)(param_2 + 4))) {
           iVar2 = 0;
           iVar4 = param_2;
           do {
             iVar1 = *(int *)(&DAT_01ba5c84 + iVar2);
-            *(uint *)(iVar1 * 0x30 + 0x18 + *(int *)param_1) = *(uint *)(iVar4 + 0x1c);
-            *(uint *)(*(int *)param_1 + iVar1 * 0x30 + 0x1c) = *(uint *)(iVar4 + 0x20);
+            param_1->vertex_buffer_ptr[iVar1].u = *(int *)(iVar4 + 0x1c);
+            param_1->vertex_buffer_ptr[iVar1].v = *(int *)(iVar4 + 0x20);
             iVar4 = iVar4 + 0xc;
             iVar3 = iVar3 + 1;
             iVar2 = iVar2 + 4;

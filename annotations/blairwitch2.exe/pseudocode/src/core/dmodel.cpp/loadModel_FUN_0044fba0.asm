@@ -1,16 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CKeyFramedModel * __cdecl core_dmodel_cpp_loadModel_FUN_0044fba0(char *param_1)
+; CKeyFramedModel * __cdecl core_dmodel_cpp_loadModel_FUN_0044fba0(char *filename)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
 ;
 ; XREF[6]:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00 at 0044fd08
-;   core_elephant.cpp_FUN_00486360 at 00486444
-;   core_fire.cpp_FUN_004995e0 at 004995e5
-;   core_gun.cpp_FUN_004cbdc0 at 004cc1a9
-;   core_shotgun.cpp_FUN_0053f990 at 0053fa8f
-;   core_tommygun.cpp_FUN_00575800 at 00575c13
+;   core_elephant.cpp_CElephantGun_onFired_FUN_00486360 at 00486444
+;   core_fire.cpp_loadDynamiteAssets_FUN_004995e0 at 004995e5
+;   core_gun.cpp_CGun_fire_FUN_004cbdc0 at 004cc1a9
+;   core_shotgun.cpp_CShotgun_onFired_FUN_0053f990 at 0053fa8f
+;   core_tommygun.cpp_CTommyGun_fire_FUN_00575800 at 00575c13
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_005cfa8a

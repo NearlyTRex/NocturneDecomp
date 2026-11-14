@@ -1,0 +1,226 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 98,
+    "complexity_score": 55,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 10,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 30,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 128
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0041f7c0",
+    "address_range": [
+      [
+        "0041f7c0",
+        "0041f8d8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bugs.cpp_CBugs_archive_FUN_0041f7c0",
+    "signature": "void __cdecl core_bugs_cpp_CBugs_archive_FUN_0041f7c0(CBugs *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b960",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b960"
+    },
+    {
+      "addr": "0040ba60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60"
+    },
+    {
+      "addr": "0040b730",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b730"
+    },
+    {
+      "addr": "0044fd70",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70"
+    },
+    {
+      "addr": "00487ec0",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_archive_FUN_00487ec0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005cc961",
+      "name": "s_count_005cc960+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cc967",
+      "name": "s_modelCount_005cc967",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc972",
+      "name": "DAT_005cc972",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cc973",
+      "name": "s_modelName_005cc973",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc97d",
+      "name": "s_allowChase_005cc97d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc988",
+      "name": "s_allowSwarm_005cc988",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc993",
+      "name": "s_allowChaseEvent_005cc993",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc9a3",
+      "name": "s_allowSwarmEvent_005cc9a3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc9b3",
+      "name": "s_animateEvent_005cc9b3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "007bc038",
+      "name": "DAT_007bc038",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.30379746835443,
+    "instruction_count": 79,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "CALL": 10,
+      "CBRANCH": 4,
+      "COPY": 55,
+      "INT_ADD": 31,
+      "INT_AND": 41,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 40,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 15,
+      "INT_SLESS": 20,
+      "INT_SUB": 36,
+      "INT_XOR": 1,
+      "LOAD": 8,
+      "POPCOUNT": 20,
+      "RETURN": 1,
+      "STORE": 33
+    },
+    "pcode_op_count": 340
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004257f0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00421960",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7647
+    },
+    "nocedit.exe": {
+      "addr": "004254f0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00421880",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBugs *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_007bc038",
+      "severity": "mild",
+      "text": "if (DAT_007bc038 == 1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_005cc972",
+      "severity": "mild",
+      "text": "core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70(pCVar1,&DAT_005cc972);",
+      "type": "undefined_data"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 220,
+        "vtable_addr": "005f3e44"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

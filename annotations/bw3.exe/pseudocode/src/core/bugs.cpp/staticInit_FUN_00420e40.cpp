@@ -1,12 +1,12 @@
 // Name: core_bugs.cpp_staticInit_FUN_00420e40
 // Address: 00420e40
 // Address Range: [[00420e40, 00420e63]]
-// Convention: unknown
-// Signature: void core_bugs_cpp_staticInit_FUN_00420e40(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_bugs_cpp_staticInit_FUN_00420e40(void)
 
 #include "nocturne.h"
 
-void core_bugs_cpp_staticInit_FUN_00420e40(void)
+void __cdecl core_bugs_cpp_staticInit_FUN_00420e40(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c3a0

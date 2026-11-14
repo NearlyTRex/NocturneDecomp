@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 35,
+    "complexity_score": 10,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 10,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 28
   },
   "cross_references": [
@@ -38,7 +36,7 @@
     {
       "addr": "00425a00",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_00425a00"
+      "name": "core_charactr.cpp_CCharacter_renderBackground_FUN_00425a00"
     }
   ],
   "globals": [],
@@ -86,6 +84,32 @@
     },
     "pcode_op_count": 53
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004a0fb0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00489fc0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004a9fa0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0047a000",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -109,24 +133,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x10a64",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x10a64 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x2568",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2568 = 1;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

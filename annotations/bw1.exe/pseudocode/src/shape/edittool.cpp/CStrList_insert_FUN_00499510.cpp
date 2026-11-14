@@ -13,55 +13,52 @@ void __cdecl shape_edittool_cpp_CStrList_insert_FUN_00499510(CStrList *this_ptr,
 {
   char cVar1;
   int iVar2;
-  void *pvVar3;
+  char *pcVar3;
   uint uVar4;
   int iVar5;
-  char *pcVar6;
-  byte bVar7;
+  byte bVar6;
   
-  bVar7 = 0;
-  if ((insert_index < 0) || (*(int *)this_ptr < insert_index)) {
+  bVar6 = 0;
+  if ((insert_index < 0) || (this_ptr->item_count < insert_index)) {
     _DAT_01d1d400 = "..\\shape\\edittool.cpp";
     _DAT_01d1d404 = 0xc2b;
     core_main_c_FUN_005030e0("CStrList::insert - invalid index");
   }
-  iVar2 = *(int *)this_ptr;
+  iVar2 = this_ptr->item_count;
   iVar5 = iVar2 + 1;
-  *(int *)this_ptr = iVar5;
-  if (*(int *)&this_ptr->field_0x4 < iVar5) {
+  this_ptr->item_count = iVar5;
+  if (this_ptr->capacity < iVar5) {
     shape_edittool_cpp_CStrList_allocate_FUN_00499600(this_ptr,iVar2 + 0x15);
   }
-  iVar2 = insert_index * 4;
   memmove
-            ((void *)(*(int *)&this_ptr->field_0x8 + iVar2 + 4),
-             (void *)(*(int *)&this_ptr->field_0x8 + iVar2),
-             (*(int *)this_ptr - insert_index) * 4 - 4);
+            (this_ptr->data_array + insert_index + 1,this_ptr->data_array + insert_index,
+             (this_ptr->item_count - insert_index) * 4 - 4);
   uVar4 = 0xffffffff;
-  pcVar6 = string_data;
+  pcVar3 = string_data;
   do {
     if (uVar4 == 0) break;
     uVar4 = uVar4 - 1;
-    cVar1 = *pcVar6;
-    pcVar6 = pcVar6 + (uint)bVar7 * -2 + 1;
+    cVar1 = *pcVar3;
+    pcVar3 = pcVar3 + (uint)bVar6 * -2 + 1;
   } while (cVar1 != '\0');
-  pvVar3 = FUN_005c08d0(~uVar4);
-  *(void **)(*(int *)&this_ptr->field_0x8 + iVar2) = pvVar3;
-  if (*(int *)(iVar2 + *(int *)&this_ptr->field_0x8) == 0) {
+  pcVar3 = (char *)malloc(~uVar4);
+  this_ptr->data_array[insert_index] = pcVar3;
+  if (this_ptr->data_array[insert_index] == (char *)0x0) {
     _DAT_01d1d400 = "..\\shape\\edittool.cpp";
     _DAT_01d1d404 = 0xc39;
     core_main_c_FUN_005030e0("CStrList::insert - out of memory");
   }
-  pcVar6 = *(char **)(*(int *)&this_ptr->field_0x8 + insert_index * 4);
+  pcVar3 = this_ptr->data_array[insert_index];
   do {
     cVar1 = *string_data;
-    *pcVar6 = cVar1;
+    *pcVar3 = cVar1;
     if (cVar1 == '\0') {
       return;
     }
     cVar1 = string_data[1];
     string_data = string_data + 2;
-    pcVar6[1] = cVar1;
-    pcVar6 = pcVar6 + 2;
+    pcVar3[1] = cVar1;
+    pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
   return;
 }

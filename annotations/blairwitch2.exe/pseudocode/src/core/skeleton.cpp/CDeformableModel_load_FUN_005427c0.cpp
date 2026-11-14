@@ -22,7 +22,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_load_FUN_005427c0(CDeformableMod
     core_main_c_FUN_004e4500("CDeformableModel::load - Can't open %s",filename);
   }
   core_skeleton_cpp_CDeformableModel_loadStream_FUN_00542850(this_ptr,file_handle);
-  pcVar2 = &this_ptr->field_0x2a70;
+  pcVar2 = this_ptr->model_filename;
   do {
     cVar1 = *filename;
     *pcVar2 = cVar1;

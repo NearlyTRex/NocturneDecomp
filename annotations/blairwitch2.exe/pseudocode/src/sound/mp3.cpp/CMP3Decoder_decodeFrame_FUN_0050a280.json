@@ -2,23 +2,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 925,
-    "complexity_score": 727,
+    "complexity_score": 961,
     "cross_reference_count": 2,
     "function_call_count": 31,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 402,
-    "suspect_count": 29,
+    "pseudocode_lines": 446,
+    "suspect_count": 47,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
+      "raw_address_constant",
+      "shadow_pointer_walk",
+      "stack_param",
       "stack_ref",
       "undefined_data",
-      "unnamed_field",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1327
+    "total_lines": 1371
   },
   "cross_references": [
     {
@@ -74,6 +76,11 @@
       "name": "sound_mp3.cpp_calculateMainDataSize_FUN_005096b0"
     },
     {
+      "addr": "00504670",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_calculateMpegFrame_FUN_00504670"
+    },
+    {
       "addr": "00505360",
       "is_variadic": false,
       "name": "sound_mp3.cpp_CFileBitStream_readAllocationTable_FUN_00505360"
@@ -87,6 +94,11 @@
       "addr": "00504a10",
       "is_variadic": false,
       "name": "sound_mp3.cpp_CFileBitStream_readBit_FUN_00504a10"
+    },
+    {
+      "addr": "00504b00",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CFileBitStream_readBits_FUN_00504b00"
     },
     {
       "addr": "00505170",
@@ -129,6 +141,11 @@
       "name": "sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00507240"
     },
     {
+      "addr": "00504e20",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_putByte_FUN_00504e20"
+    },
+    {
       "addr": "00504d30",
       "is_variadic": false,
       "name": "sound_mp3.cpp_CMP3Decoder_readBits_FUN_00504d30"
@@ -144,6 +161,11 @@
       "name": "sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00507040"
     },
     {
+      "addr": "00506360",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_readLayer3SideInfo_FUN_00506360"
+    },
+    {
       "addr": "00504ee0",
       "is_variadic": false,
       "name": "sound_mp3.cpp_CMP3Decoder_rewindBytes_FUN_00504ee0"
@@ -157,26 +179,6 @@
       "addr": "00509600",
       "is_variadic": false,
       "name": "sound_mp3.cpp_CMP3Decoder_synthesisPoly_FUN_00509600"
-    },
-    {
-      "addr": "00504670",
-      "is_variadic": false,
-      "name": "sound_mp3.cpp_FUN_00504670"
-    },
-    {
-      "addr": "00504b00",
-      "is_variadic": false,
-      "name": "sound_mp3.cpp_FUN_00504b00"
-    },
-    {
-      "addr": "00504e20",
-      "is_variadic": false,
-      "name": "sound_mp3.cpp_FUN_00504e20"
-    },
-    {
-      "addr": "00506360",
-      "is_variadic": false,
-      "name": "sound_mp3.cpp_FUN_00506360"
     },
     {
       "addr": "005081a0",
@@ -349,6 +351,32 @@
       "TRUNC": 1
     },
     "pcode_op_count": 3875
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0052b450",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00502d60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00534d40",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4628
+    },
+    "nocturne.exe": {
+      "addr": "004e85b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4747
+    }
   },
   "stack_frame": {
     "frame_size": 24764,
@@ -870,228 +898,372 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 88,
-      "match": "field_0x5320",
-      "severity": "mild",
-      "text": "this_ptr_01 = &this_ptr->field_0x5320;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 92,
-      "match": "field_0x533c",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x533c != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 100,
-      "match": "field_0x532c",
-      "severity": "mild",
-      "text": "local_24 = *(int *)&this_ptr->field_0x532c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 126,
-      "match": "(float *)((int)local_88",
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_ffff9f34",
       "severity": "moderate",
-      "text": "pfVar5 = (float *)((int)local_88 + local_60);",
-      "type": "pointer_cast"
+      "text": "int in_stack_ffff9f34;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_ffff9f38",
+      "severity": "moderate",
+      "text": "uint in_stack_ffff9f38;",
+      "type": "stack_param"
     },
     {
       "description": "Undefined global data reference",
       "line": 131,
       "match": "DAT_00619030",
       "severity": "mild",
-      "text": "*pfVar5 = *pfVar5 * (float)*(double *)(&DAT_00619030 + iVar3 * 8);",
+      "text": "*pfVar6 = *pfVar6 * (float)*(double *)(&DAT_00619030 + iVar4 * 8);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 174,
-      "match": "(float *)((int)local_9a8",
+      "line": 178,
+      "match": "(short *)((int)local_3ca8",
       "severity": "moderate",
-      "text": "local_14 = (float *)((int)local_9a8 + local_34);",
+      "text": "psVar8 = (short *)((int)local_3ca8 + local_30);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 175,
+      "line": 202,
       "match": "(short *)((int)local_3ca8",
       "severity": "moderate",
-      "text": "psVar7 = (short *)((int)local_3ca8 + local_30);",
+      "text": "*psVar8 = *(short *)((int)local_3ca8 + iVar12);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 199,
-      "match": "(short *)((int)local_3ca8",
-      "severity": "moderate",
-      "text": "*psVar7 = *(short *)((int)local_3ca8 + iVar9);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 220,
-      "match": "field_0x5320",
-      "severity": "mild",
-      "text": "local_74 = (CFileBitStream *)&this_ptr->field_0x5320;",
-      "type": "unnamed_field"
     },
     {
       "description": "Direct stack address reference",
-      "line": 224,
+      "line": 232,
       "match": "&stack0xffff9f34",
       "severity": "moderate",
-      "text": "puVar10 = (uint *)&stack0xffff9f34;",
+      "text": "piVar7 = (int *)&stack0xffff9f34;",
       "type": "stack_ref"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 244,
-      "match": "field_0x534c",
-      "severity": "mild",
-      "text": "local_78 = (*(int *)&this_ptr->field_0x534c - uVar2) - local_4b8[0];",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 235,
+      "match": "(SMpegFrameHeader *)((int)pSVar10",
+      "severity": "moderate",
+      "text": "pSVar10 = (SMpegFrameHeader *)((int)pSVar10 + ((uint)bVar14 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 246,
-      "match": "field_0x534c",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x534c = *(int *)&this_ptr->field_0x534c + -0x1000;",
-      "type": "unnamed_field"
+      "description": "Unresolved stack parameter",
+      "line": 238,
+      "match": "in_stack_ffff9f38",
+      "severity": "moderate",
+      "text": "frame_info.channel_mode = in_stack_ffff9f38;",
+      "type": "stack_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 246,
-      "match": "field_0x534c",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x534c = *(int *)&this_ptr->field_0x534c + -0x1000;",
-      "type": "unnamed_field"
+      "description": "Unresolved stack parameter",
+      "line": 239,
+      "match": "in_stack_ffff9f34",
+      "severity": "moderate",
+      "text": "frame_info.header = (SMpegFrameHeader *)in_stack_ffff9f34;",
+      "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 250,
+      "line": 275,
       "match": "&stack0xffff9f34",
       "severity": "moderate",
-      "text": "puVar10 = (uint *)&stack0xffff9f34;",
+      "text": "piVar7 = (int *)&stack0xffff9f34;",
       "type": "stack_ref"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 257,
-      "match": "field_0x534c",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x534c = *(int *)&this_ptr->field_0x534c + iVar1;",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 278,
+      "match": "(SMpegFrameHeader *)((int)pSVar11",
+      "severity": "moderate",
+      "text": "pSVar11 = (SMpegFrameHeader *)((int)pSVar11 + ((uint)bVar14 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 257,
-      "match": "field_0x534c",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x534c = *(int *)&this_ptr->field_0x534c + iVar1;",
-      "type": "unnamed_field"
+      "description": "Unresolved stack parameter",
+      "line": 281,
+      "match": "in_stack_ffff9f38",
+      "severity": "moderate",
+      "text": "frame_info_00.channel_mode = in_stack_ffff9f38;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 282,
+      "match": "in_stack_ffff9f34",
+      "severity": "moderate",
+      "text": "frame_info_00.header = (SMpegFrameHeader *)in_stack_ffff9f34;",
+      "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 323,
+      "line": 364,
       "match": "(float *)((int)local_21a8",
       "severity": "moderate",
-      "text": "*(float *)((int)local_21a8 + iVar1) = -*(float *)((int)local_21a8 + iVar1);",
+      "text": "*(float *)((int)local_21a8 + iVar2) = -*(float *)((int)local_21a8 + iVar2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 323,
+      "line": 364,
       "match": "(float *)((int)local_21a8",
       "severity": "moderate",
-      "text": "*(float *)((int)local_21a8 + iVar1) = -*(float *)((int)local_21a8 + iVar1);",
+      "text": "*(float *)((int)local_21a8 + iVar2) = -*(float *)((int)local_21a8 + iVar2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 339,
+      "line": 380,
       "match": "(uint *)((int)local_21a8",
       "severity": "moderate",
-      "text": "puVar10 = (uint *)((int)local_21a8 + iVar9);",
+      "text": "puVar1 = (uint *)((int)local_21a8 + iVar12);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 341,
+      "line": 382,
       "match": "(uint *)((int)local_170",
       "severity": "moderate",
-      "text": "*(uint *)((int)local_170 + iVar3) = *puVar10;",
+      "text": "*(uint *)((int)local_170 + iVar4) = *puVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 367,
+      "line": 408,
       "match": "(short *)((int)local_3ca8",
       "severity": "moderate",
-      "text": "*psVar7 = *(short *)((int)local_3ca8 + iVar9);",
+      "text": "*psVar8 = *(short *)((int)local_3ca8 + iVar12);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 386,
+      "line": 428,
       "match": "DAT_00618e88",
       "severity": "mild",
-      "text": "(float10)*(double *)(&DAT_00618e88 + local_f0 * 0x20 + local_e0 * 8)) *",
+      "text": "(&DAT_00618e88 +",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 387,
+      "line": 430,
       "match": "DAT_00618ec8",
       "severity": "mild",
       "text": "(float10)*(int *)(&DAT_00618ec8 +",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 395,
-      "match": "field_0x532c",
-      "severity": "mild",
-      "text": "local_68 = local_68 * local_60ac - ((*(int *)&this_ptr->field_0x532c - local_24) + 0xc);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 399,
-      "match": "field_0x5320",
-      "severity": "mild",
-      "text": "sound_mp3_cpp_CFileBitStream_readBit_FUN_00504a10((CFileBitStream *)&this_ptr->field_0x5320)",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Pointer value `local_88` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 126,
-      "match": "(int)local_88",
+      "description": "Pointer value `&local_f0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 87,
+      "match": "(int)&local_f0",
       "severity": "moderate",
-      "text": "pfVar5 = (float *)((int)local_88 + local_60);",
+      "text": "local_c0.mpeg_version = (int)&local_f0;",
       "type": "pointer_truncation"
     },
     {
+      "description": "Pointer value `&local_84->codes` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 125,
+      "match": "(int)&local_84->codes",
+      "severity": "moderate",
+      "text": "piVar7 = (int *)((int)&local_84->codes + local_60);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_88->codes` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 126,
+      "match": "(int)&local_88->codes",
+      "severity": "moderate",
+      "text": "pfVar6 = (float *)((int)&local_88->codes + local_60);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_9a8[0].codes` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 177,
+      "match": "(int)&local_9a8[0].codes",
+      "severity": "moderate",
+      "text": "local_14 = (float *)((int)&local_9a8[0].codes + local_34);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 235,
+      "match": "(int)pSVar10",
+      "severity": "moderate",
+      "text": "pSVar10 = (SMpegFrameHeader *)((int)pSVar10 + ((uint)bVar14 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar17` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 241,
+      "match": "(int)pCVar17",
+      "severity": "moderate",
+      "text": "frame_info.table_index = (int)pCVar17;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `bit_stream` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 242,
+      "match": "(int)bit_stream",
+      "severity": "moderate",
+      "text": "frame_info.channel_count = (int)bit_stream;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `side_info_array` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 243,
+      "match": "(int)side_info_array",
+      "severity": "moderate",
+      "text": "frame_info.js_bound = (int)side_info_array;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 244,
+      "match": "(int)pSVar11",
+      "severity": "moderate",
+      "text": "frame_info.sblimit = (int)pSVar11;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `num_bits` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 264,
+      "match": "(uint)num_bits",
+      "severity": "moderate",
+      "text": "sound_mp3_cpp_CMP3Decoder_readBits_FUN_00504d30(this_ptr,(uint)num_bits);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pSVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 278,
+      "match": "(int)pSVar11",
+      "severity": "moderate",
+      "text": "pSVar11 = (SMpegFrameHeader *)((int)pSVar11 + ((uint)bVar14 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar17` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 284,
+      "match": "(int)pCVar17",
+      "severity": "moderate",
+      "text": "frame_info_00.table_index = (int)pCVar17;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `bit_stream` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 285,
+      "match": "(int)bit_stream",
+      "severity": "moderate",
+      "text": "frame_info_00.channel_count = (int)bit_stream;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar18` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 286,
+      "match": "(int)pCVar18",
+      "severity": "moderate",
+      "text": "frame_info_00.js_bound = (int)pCVar18;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `num_bits` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 287,
+      "match": "(int)num_bits",
+      "severity": "moderate",
+      "text": "frame_info_00.sblimit = (int)num_bits;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Raw hex address 0x50a835 assigned to bare local `uVar16`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar16` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 226,
+      "match": "0x50a835",
+      "severity": "moderate",
+      "text": "uVar16 = 0x50a835;",
+      "type": "raw_address_constant"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 225,
+      "line": 233,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar1 = 7; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "text": "for (iVar2 = 7; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 251,
+      "line": 276,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar1 = 7; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "text": "for (iVar2 = 7; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 306,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "severity": "moderate",
+      "text": "pSVar13 = (SMpegLayer3GranuleInfo *)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 335,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "severity": "moderate",
+      "text": "local_4c = (SMpegLayer3GranuleInfo *)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 125,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "piVar7 = (int *)((int)&local_84->codes + local_60);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 126,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar6 = (float *)((int)&local_88->codes + local_60);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 177,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_14 = (float *)((int)&local_9a8[0].codes + local_34);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar13` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*pSVar13) + offsetof(subfield)` equals the real array stride. Replace `pSVar13->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 327,
+      "match": "pSVar13 = (T *)&pSVar13[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar13 = (SMpegLayer3GranuleInfo *)&pSVar13[2].window_switching_flag;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_4c` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*local_4c) + offsetof(subfield)` equals the real array stride. Replace `local_4c->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 391,
+      "match": "local_4c = (T *)&local_4c[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "local_4c = (SMpegLayer3GranuleInfo *)&local_4c[2].window_switching_flag;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_44` self-updates via the address of a constant index into itself plus a subfield path, where `N*sizeof(*local_44) + offsetof(subfield)` equals the real array stride. Replace `local_44->some_field[0]` (or the zero-index access) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 393,
+      "match": "local_44 = (T *)&local_44[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "local_44 = (SMpegLayer3GranuleInfo *)&local_44[2].window_switching_flag;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

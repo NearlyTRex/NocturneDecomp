@@ -2,23 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 43,
+    "complexity_score": 45,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 8,
+    "pseudocode_lines": 10,
     "suspect_count": 3,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 33
+    "total_lines": 35
   },
   "cross_references": [
     {
       "addr": "005188e0",
       "from_addr": "00519444",
-      "name": "core_mirror.cpp_FUN_005188e0",
+      "name": "core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005188e0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -36,19 +36,19 @@
   },
   "function_calls": [
     {
-      "addr": "00483560",
-      "is_variadic": false,
-      "name": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_00483560"
-    },
-    {
       "addr": "004834b0",
       "is_variadic": false,
-      "name": "engine_drender.cpp_FUN_004834b0"
+      "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0"
     },
     {
       "addr": "004839b0",
       "is_variadic": false,
-      "name": "engine_matrix.c_FUN_004839b0"
+      "name": "engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_004839b0"
+    },
+    {
+      "addr": "00483560",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_00483560"
     }
   ],
   "globals": [
@@ -71,7 +71,7 @@
       {
         "call_addr": "00519444",
         "call_type": "direct",
-        "caller": "core_mirror.cpp_FUN_005188e0",
+        "caller": "core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005188e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -106,6 +106,32 @@
     },
     "pcode_op_count": 76
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004f9950",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004f4070",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00521480",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004d6610",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -125,18 +151,10 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 5,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_drender_cpp_FUN_004834b0(DAT_00612560,(CVector3f *)(this_ptr + 0x60));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 6,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "engine_matrix_c_FUN_004839b0(DAT_00612560,*(uint *)(this_ptr + 0x6c));",
+      "text": "(DAT_00612560,&this_ptr->camera_origin);",
       "type": "undefined_data"
     },
     {
@@ -144,7 +162,15 @@
       "line": 8,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "(DAT_00612560,(CMatrix3x3f *)(this_ptr + 0x70));",
+      "text": "(DAT_00612560,this_ptr->projection_scale);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "(DAT_00612560,&this_ptr->reflection_matrix);",
       "type": "undefined_data"
     }
   ]

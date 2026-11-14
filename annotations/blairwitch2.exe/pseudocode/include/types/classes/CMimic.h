@@ -2,15 +2,29 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCloth.h"
+#include "types/classes/CEnemy.h"
+#include "types/classes/CMorph.h"
 
 // Structure: CMimic
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x4c354 (312148 bytes)
 #pragma pack(push, 1)
 typedef struct CMimic {
-    char field_0[312148]; // 0x0
+    CEnemy base; // 0x0
+    char mirror_condition[100]; // 0x10af8
+    char attack_condition[100]; // 0x10b5c
+    CCloth cloth; // 0x10bc0
+    int attack_mode; // 0x4b6f0
+    struct CDemonActor* mirror_plane_actor; // 0x4b6f4
+    char morph_actor_type[40]; // 0x4b6f8
+    CMorph morph; // 0x4b720
+    float morph_blend; // 0x4c34c
+    struct CDemonActor* morph_target_actor; // 0x4c350
 } CMimic;
 #pragma pack(pop)
 

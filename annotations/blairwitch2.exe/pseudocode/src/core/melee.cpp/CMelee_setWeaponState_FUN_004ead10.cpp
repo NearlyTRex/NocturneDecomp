@@ -9,7 +9,7 @@
 void __cdecl core_melee_cpp_CMelee_setWeaponState_FUN_004ead10(CMelee *this_ptr,int weapon_state)
 
 {
-  *(uint *)&this_ptr->field_0x6ec = 0;
-  core_weapon_cpp_FUN_0058a200((CWeapon *)this_ptr,weapon_state);
+  this_ptr->blood_spurt_count = 0;
+  core_weapon_cpp_CWeapon_setWeaponState_FUN_0058a200(&this_ptr->base,weapon_state);
   return;
 }

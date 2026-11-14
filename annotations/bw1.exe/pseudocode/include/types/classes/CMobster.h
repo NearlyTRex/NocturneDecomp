@@ -2,15 +2,38 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "system/winnt.h"
+#include "types/classes/CEnemy.h"
 
 // Structure: CMobster
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0xc340 (49984 bytes)
 #pragma pack(push, 1)
 typedef struct CMobster {
-    char field_0[49984]; // 0x0
+    CEnemy base; // 0x0
+    int ai_idle_counter; // 0xc268
+    float idle_timer; // 0xc26c
+    float weapon_approach_timer; // 0xc270
+    struct CDemonActor* target_weapon; // 0xc274
+    int weapon_search_count; // 0xc278
+    _BIT_INTEGER32 sound_variant; // 0xc27c
+    float taunt_timer; // 0xc280
+    int post_mode; // 0xc284
+    struct CDemonActor* our_post; // 0xc288
+    struct CDemonActor* vehicle; // 0xc28c
+    int side_of_car; // 0xc290
+    int hold_pos_flag; // 0xc294
+    char hold_pos_condition[100]; // 0xc298
+    uint sfx_handles[2]; // 0xc2fc
+    int death_sound_played; // 0xc304
+    uint sfx_handle; // 0xc308
+    int part_indices[11]; // 0xc30c
+    float firing_blend; // 0xc338
+    float firing_cooldown; // 0xc33c
 } CMobster;
 #pragma pack(pop)
 

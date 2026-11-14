@@ -83,9 +83,6 @@ static TerminatedCString s_CFilterCache_0066efec = "$CFilterCache$$";
 // char*[4] constants
 static char* g_CourseAxisLabels[4] = {nullptr, "x", "y", "z"};
 
-// char[28] constants
-static char g_ConsoleLogFilename[28] = "console.txt";
-
 // char[5][32] constants
 static char g_EditorTextureModeNames[5][32] = {
     0x54, 0x65, 0x78, 0x74, 0x75, 0x72, 0x65, 0x20, 0x6D, 0x61, 0x70, 0x00, 0x00, 0x00, 0x00, 0x00,

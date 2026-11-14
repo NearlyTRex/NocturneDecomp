@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 61,
+    "complexity_score": 48,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 21,
-    "suspect_count": 3,
+    "pseudocode_lines": 23,
+    "suspect_count": 2,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_field"
+      "negative_offset"
     ],
-    "total_lines": 74
+    "total_lines": 76
   },
   "cross_references": [],
   "function": {
@@ -101,6 +100,32 @@
     },
     "pcode_op_count": 180
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00423720",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00420d30",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004235f0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0041fa10",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -126,28 +151,20 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x7d8",
-      "severity": "mild",
-      "text": "pCVar1 = core_dlight_cpp_CDemonLight_dtor_FUN_00449d30((CDemonLight *)&this_ptr->field_0x7d8,0);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 16,
+      "line": 17,
       "match": "pCVar1[-1].",
       "severity": "mild",
-      "text": "pCVar2 = core_box_cpp_CBox_dtor_FUN_005b1c70((CBox *)&pCVar1[-1].field_0x2cc8,0);",
+      "text": "((CBox *)(pCVar1[-1].saved_screen_buffer_rows + 0x3fd),0);",
       "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x2cc8",
+      "description": "Negative struct offset (wrong base type)",
+      "line": 20,
+      "match": "pCVar2[-3].",
       "severity": "mild",
-      "text": "pCVar2 = core_box_cpp_CBox_dtor_FUN_005b1c70((CBox *)&pCVar1[-1].field_0x2cc8,0);",
-      "type": "unnamed_field"
+      "text": "((CDemonActor *)&pCVar2[-3].scrape_points[6].raytrace_normal.y,1);",
+      "type": "negative_offset"
     }
   ],
   "vtable_info": {

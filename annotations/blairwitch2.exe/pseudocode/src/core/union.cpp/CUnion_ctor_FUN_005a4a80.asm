@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CUnion * core_union_cpp_CUnion_ctor_FUN_005a4a80(CUnion *this_ptr)
+; CUnion * __cdecl core_union_cpp_CUnion_ctor_FUN_005a4a80(CUnion *this_ptr)
 ;
 ; Parameters:
 ; CUnion *         Stack[0x4]:4   this_ptr
@@ -15,11 +15,11 @@
 ;
 ; Called Functions:
 ;   core_basicnpc.cpp_CBasicNPC_ctor_FUN_005a47b0
+;   core_muzzle.cpp_FUN_0059d7f0
+;   core_muzzle.cpp_FUN_0059d990
+;   core_muzzle.cpp_FUN_0059dc80
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
-;   core_union.cpp_FUN_005a4c50
-;   unkaddr_0059d350.cpp_FUN_0059d7f0
-;   unkaddr_0059d350.cpp_FUN_0059d990
-;   unkaddr_0059d350.cpp_FUN_0059dc80
+;   core_union.cpp_CUnion_processStates_FUN_005a4c50
 ;
 ; *****************************************************************************
 
@@ -80,24 +80,24 @@ section .text
     PUSH 0x0                            ; 005a4b67
     PUSH 0x0                            ; 005a4b69
     PUSH EBX                            ; 005a4b6b
-    CALL core_union.cpp_FUN_005a4c50    ; 005a4b6c
-        ;   XREF to: 005a4c50 (UNCONDITIONAL_CALL)  ; undefined core_union.cpp_FUN_005a4c50()
+    CALL core_union.cpp_CUnion_processStates_FUN_005a4c50 ; 005a4b6c
+        ;   XREF to: 005a4c50 (UNCONDITIONAL_CALL)  ; void core_union.cpp_CUnion_processStates_FUN_005a4c50(CUnion * this_ptr, float delta_time, int mode)
     ADD ESP,0xc                         ; 005a4b71
     PUSH 0x5f0438                       ; 005a4b74
     PUSH 0x5f0444                       ; 005a4b79
     LEA ESI,[EBX + 0x10af8]             ; 005a4b7e
     PUSH ESI                            ; 005a4b84
-    CALL unkaddr_0059d350.cpp_FUN_0059d7f0 ; 005a4b85
-        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d7f0()
+    CALL core_muzzle.cpp_FUN_0059d7f0   ; 005a4b85
+        ;   XREF to: 0059d7f0 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d7f0()
     ADD ESP,0xc                         ; 005a4b8a
     PUSH 0x5f0452                       ; 005a4b8d
     PUSH ESI                            ; 005a4b92
-    CALL unkaddr_0059d350.cpp_FUN_0059d990 ; 005a4b93
-        ;   XREF to: 0059d990 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059d990()
+    CALL core_muzzle.cpp_FUN_0059d990   ; 005a4b93
+        ;   XREF to: 0059d990 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059d990()
     ADD ESP,0x8                         ; 005a4b98
     PUSH ESI                            ; 005a4b9b
-    CALL unkaddr_0059d350.cpp_FUN_0059dc80 ; 005a4b9c
-        ;   XREF to: 0059dc80 (UNCONDITIONAL_CALL)  ; undefined unkaddr_0059d350.cpp_FUN_0059dc80()
+    CALL core_muzzle.cpp_FUN_0059dc80   ; 005a4b9c
+        ;   XREF to: 0059dc80 (UNCONDITIONAL_CALL)  ; undefined core_muzzle.cpp_FUN_0059dc80()
     ADD ESP,0x4                         ; 005a4ba1
     LEA EDI,[EBX + 0x11444]             ; 005a4ba4
     MOV ESI,0x5f0458                    ; 005a4baa

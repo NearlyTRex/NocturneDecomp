@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_snddx_cpp_enumerateDirectSoundDevice_FUN_00557860(int param_1,int param_2)
+; int __cdecl sound_snddx_cpp_enumerateDirectSoundDevice_FUN_00557860(UINT device_id,SSoundDeviceInfo *device_info)
 ;
+; Parameters:
+; UINT             Stack[0x4]:4   device_id
+; SSoundDeviceInfo * Stack[0x8]:4   device_info
 ;
 ; XREF[2]:
 ;   sound_snddx.cpp_getDirectSoundDevice_FUN_00557910 at 00557944
@@ -14,7 +17,7 @@
 ;
 ; Called Functions:
 ;   crt_dsound.c_DirectSoundEnumerateA
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;
 ; *****************************************************************************
 
@@ -43,7 +46,7 @@ section .text
     XOR ECX,ECX                         ; 00557884
         ;   Label: LAB_00557884
     PUSH ECX                            ; 00557886
-    PUSH 0x557540                       ; 00557887 | LAB_00557540
+    PUSH 0x557540                       ; 00557887
     MOV dword ptr [0x0061bf80],ECX      ; 0055788c | DAT_0061bf80
     CALL crt_dsound.c_DirectSoundEnumerateA ; 00557892
         ;   XREF to: 005c754a (UNCONDITIONAL_CALL)  ; HRESULT crt_dsound.c_DirectSoundEnumerateA(LPDSENUMCALLBACKA lp_ds_enum_callback, LPVOID lp_context)
@@ -69,8 +72,8 @@ section .text
     PUSH 0x5ea499                       ; 005578eb | = "DirectSound: %s"
     PUSH EBX                            ; 005578f0
     MOV dword ptr [EBX + 0x110],EDX     ; 005578f1
-    CALL crt_unknown.c_FUN_005b7790     ; 005578f7
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 005578f7
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     MOV EAX,0x1                         ; 005578fc
     ADD ESP,0xc                         ; 00557901
     POP ESI                             ; 00557904

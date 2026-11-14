@@ -2,26 +2,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 179,
-    "complexity_score": 293,
+    "complexity_score": 236,
     "cross_reference_count": 7,
     "function_call_count": 14,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 63,
-    "suspect_count": 21,
+    "pseudocode_lines": 61,
+    "suspect_count": 16,
     "suspect_types": [
       "raw_address_pointer_store",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 242
+    "total_lines": 240
   },
   "cross_references": [
     {
       "addr": "00418f90",
       "from_addr": "00419055",
-      "name": "core_boneguy.cpp_FUN_00418f90",
+      "name": "core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_00418f90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -33,25 +32,25 @@
     {
       "addr": "00598480",
       "from_addr": "0059856a",
-      "name": "core_hecaitmx.cpp_FUN_00598480",
+      "name": "core_hecaitmx.cpp_CHecaitomix_renderTransparent_FUN_00598480",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0059d120",
       "from_addr": "0059d303",
-      "name": "core_hino.cpp_FUN_0059d120",
+      "name": "core_hino.cpp_CHino_renderTransparent_FUN_0059d120",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00591680",
       "from_addr": "005917ed",
-      "name": "core_kedward.cpp_FUN_00591680",
+      "name": "core_kedward.cpp_CKedward_renderTransparent_FUN_00591680",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00593710",
       "from_addr": "005938d0",
-      "name": "core_mattnntt.cpp_FUN_00593710",
+      "name": "core_mattnntt.cpp_CMattanntote_renderTransparent_FUN_00593710",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -75,6 +74,16 @@
   },
   "function_calls": [
     {
+      "addr": "0054af10",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0054af10"
+    },
+    {
+      "addr": "0054dd10",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0054dd10"
+    },
+    {
       "addr": "0054fb70",
       "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0054fb70"
@@ -95,29 +104,19 @@
       "name": "core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_0054e5a0"
     },
     {
+      "addr": "0054e340",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_0054e340"
+    },
+    {
       "addr": "0054f920",
       "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_0054f920"
     },
     {
-      "addr": "0054af10",
-      "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_0054af10"
-    },
-    {
-      "addr": "0054dd10",
-      "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_0054dd10"
-    },
-    {
-      "addr": "0054e340",
-      "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_0054e340"
-    },
-    {
       "addr": "0054e4b0",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_0054e4b0"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_0054e4b0"
     },
     {
       "addr": "005a3120",
@@ -226,7 +225,7 @@
     },
     {
       "addr": "01d21620",
-      "name": "g_CGameInstance.field788_0x314",
+      "name": "g_CGameInstance.delta_time_float",
       "type": "undefined4",
       "value": null
     },
@@ -265,7 +264,7 @@
       {
         "call_addr": "00419055",
         "call_type": "direct",
-        "caller": "core_boneguy.cpp_FUN_00418f90",
+        "caller": "core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_00418f90",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -287,7 +286,7 @@
       {
         "call_addr": "005917ed",
         "call_type": "direct",
-        "caller": "core_kedward.cpp_FUN_00591680",
+        "caller": "core_kedward.cpp_CKedward_renderTransparent_FUN_00591680",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -298,7 +297,7 @@
       {
         "call_addr": "005938d0",
         "call_type": "direct",
-        "caller": "core_mattnntt.cpp_FUN_00593710",
+        "caller": "core_mattnntt.cpp_CMattanntote_renderTransparent_FUN_00593710",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -309,7 +308,7 @@
       {
         "call_addr": "0059856a",
         "call_type": "direct",
-        "caller": "core_hecaitmx.cpp_FUN_00598480",
+        "caller": "core_hecaitmx.cpp_CHecaitomix_renderTransparent_FUN_00598480",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -320,7 +319,7 @@
       {
         "call_addr": "0059d303",
         "call_type": "direct",
-        "caller": "core_hino.cpp_FUN_0059d120",
+        "caller": "core_hino.cpp_CHino_renderTransparent_FUN_0059d120",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -430,20 +429,12 @@
       "line": 18,
       "match": "DAT_007e2ae8",
       "severity": "mild",
-      "text": "fVar3 = (float10)DAT_007e2ae8 +",
+      "text": "fVar3 = (float10)DAT_007e2ae8 + (float10)g_CGamePtr->delta_time_float * (float10)_DAT_005b8376;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x314",
-      "severity": "mild",
-      "text": "(float10)*(float *)&g_CGamePtr->field_0x314 * (float10)_DAT_005b8376;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 20,
       "match": "DAT_007e2ae8",
       "severity": "mild",
       "text": "DAT_007e2ae8 = (int)ROUND(fVar3);",
@@ -451,39 +442,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 24,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "*(uint *)(DAT_005f2afc + 0x20) = 1;",
+      "text": "DAT_005f2afc->skip_uv_extraction = 1;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x3254",
-      "severity": "mild",
-      "text": "if ((*(uint *)&this_ptr->field_0x3254 & 0x7fffffff) == 0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 28,
+      "line": 27,
       "match": "DAT_005f0f74",
       "severity": "mild",
       "text": "engine_texture_cpp_FUN_0056aa10(&DAT_005f0f74 + iVar2);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x3258",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)&this_ptr->field_0x3258;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 32,
       "match": "DAT_005f1124",
       "severity": "mild",
       "text": "engine_texture_cpp_FUN_0056aa10(&DAT_005f1124 + iVar2);",
@@ -491,7 +466,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 35,
       "match": "DAT_005f1004",
       "severity": "mild",
       "text": "engine_texture_cpp_FUN_0056aa10(&DAT_005f1004 + iVar2);",
@@ -499,7 +474,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 38,
       "match": "DAT_005f1094",
       "severity": "mild",
       "text": "engine_texture_cpp_FUN_0056aa10(&DAT_005f1094 + iVar2);",
@@ -507,7 +482,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 42,
+      "line": 41,
       "match": "DAT_005f11b4",
       "severity": "mild",
       "text": "engine_texture_cpp_FUN_0056aa10(&DAT_005f11b4 + iVar2);",
@@ -515,47 +490,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 45,
+      "line": 44,
       "match": "DAT_005f1244",
       "severity": "mild",
       "text": "engine_texture_cpp_FUN_0056aa10(&DAT_005f1244 + iVar2);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "this_ptr_00 = &this_ptr->field_0x158;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x2480",
-      "severity": "mild",
-      "text": "bounding_box = (CBoundingBox3D *)&this_ptr->field_0x2480;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 58,
       "match": "DAT_007e2ae8",
       "severity": "mild",
-      "text": "((CDeformableModelInstance *)this_ptr_00,DAT_007e2ae8,0);",
+      "text": "(this_ptr_00,DAT_007e2ae8,0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 62,
+      "line": 60,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "*(uint *)(DAT_005f2afc + 0x20) = 0;",
+      "text": "DAT_005f2afc->skip_uv_extraction = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 63,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);",

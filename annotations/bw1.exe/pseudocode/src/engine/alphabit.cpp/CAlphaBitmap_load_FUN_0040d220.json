@@ -2,55 +2,97 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 226,
-    "complexity_score": 245,
-    "cross_reference_count": 23,
+    "complexity_score": 204,
+    "cross_reference_count": 24,
     "function_call_count": 7,
     "global_count": 19,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 70,
-    "suspect_count": 16,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 69,
+    "suspect_count": 12,
     "suspect_types": [
+      "pointer_cast",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 296
+    "total_lines": 295
   },
   "cross_references": [
     {
       "addr": "00416570",
       "from_addr": "004165a1",
-      "name": "core_bmppuzzl.cpp_FUN_00416570",
+      "name": "core_bmppuzzl.cpp_CAudioRecPuzzle_addButton_FUN_00416570",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004baa40",
-      "from_addr": "004baaa2",
-      "name": "core_fldnotes.cpp_FUN_004baa40",
+      "addr": "00415fc0",
+      "from_addr": "0041601a",
+      "name": "core_bmppuzzl.cpp_CAudioRecPuzzle_load_FUN_00415fc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004bab60",
-      "from_addr": "004babda",
-      "name": "core_fldnotes.cpp_FUN_004bab60",
+      "addr": "004180c0",
+      "from_addr": "004180f0",
+      "name": "core_bmppuzzl.cpp_CChemPuzzle_addButton_FUN_004180c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004badc0",
-      "from_addr": "004baec2",
-      "name": "core_fldnotes.cpp_FUN_004badc0",
+      "addr": "004177b0",
+      "from_addr": "004178da",
+      "name": "core_bmppuzzl.cpp_CChemPuzzle_load_FUN_004177b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004bc2d0",
-      "from_addr": "004bc2eb",
-      "name": "core_fldnotes.cpp_FUN_004bc2d0",
+      "addr": "004ba0b0",
+      "from_addr": "004ba112",
+      "name": "core_flashlit.cpp_FUN_004ba0b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ba130",
+      "from_addr": "004ba23e",
+      "name": "core_flashlit.cpp_FUN_004ba130",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004be0f0",
       "from_addr": "004be667",
-      "name": "core_fldnotes.cpp_FUN_004be0f0",
+      "name": "core_fldnotes.cpp_CFieldNotes_draw_FUN_004be0f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bc2d0",
+      "from_addr": "004bc2eb",
+      "name": "core_fldnotes.cpp_SNotesMap_load_FUN_004bc2d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004baa40",
+      "from_addr": "004baaa2",
+      "name": "core_fldnotes.cpp_SPageResourceBitmap_ctorFromFile_FUN_004baa40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bab60",
+      "from_addr": "004babda",
+      "name": "core_fldnotes.cpp_SPageResourceTwanaCharacter_ctor_FUN_004bab60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004badc0",
+      "from_addr": "004baec2",
+      "name": "core_fldnotes.cpp_SPageResourceTwanaEntry_draw_FUN_004badc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d8700",
+      "from_addr": "004d8731",
+      "name": "core_game.cpp_CGame_displayActStats_FUN_004d8700",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d8a90",
+      "from_addr": "004d8afb",
+      "name": "core_game.cpp_CGame_finishAct_FUN_004d8a90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -62,19 +104,7 @@
     {
       "addr": "004cf530",
       "from_addr": "004cf595",
-      "name": "core_game.cpp_FUN_004cf530",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004d8700",
-      "from_addr": "004d8731",
-      "name": "core_game.cpp_FUN_004d8700",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004d8a90",
-      "from_addr": "004d8afb",
-      "name": "core_game.cpp_FUN_004d8a90",
+      "name": "core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004cf530",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -98,13 +128,7 @@
     {
       "addr": "005032a0",
       "from_addr": "00503885",
-      "name": "core_main.c_FUN_005032a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0050cc90",
-      "from_addr": "0050ccca",
-      "name": "core_menu.cpp_FUN_0050cc90",
+      "name": "core_main.c_initializeGameSystems_FUN_005032a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -114,45 +138,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0050cc90",
+      "from_addr": "0050ccca",
+      "name": "core_menu.cpp_showMainGameMenu_FUN_0050cc90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0051b8d0",
       "from_addr": "0051b9d9",
-      "name": "core_mission.cpp_FUN_0051b8d0",
+      "name": "core_mission.cpp_CDemonMission_process_FUN_0051b8d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00521c50",
       "from_addr": "00521cc6",
-      "name": "core_moon.cpp_FUN_00521c50",
+      "name": "core_moon.cpp_CMoon_init_FUN_00521c50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005312c0",
       "from_addr": "005312ec",
       "name": "engine_ncursfx.cpp_CMouse_load_FUN_005312c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004ba130",
-      "from_addr": "004ba23e",
-      "name": "unkaddr_004b9ab0.cpp_FUN_004ba130",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00415fc0",
-      "from_addr": "0041601a",
-      "name": "unkafter_alphabit.cpp_FUN_00415fc0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004177b0",
-      "from_addr": "004178da",
-      "name": "unkafter_superopt.cpp_FUN_004177b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004180c0",
-      "from_addr": "004180f0",
-      "name": "unkafter_superopt.cpp_FUN_004180c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -192,12 +198,12 @@
     {
       "addr": "005bfb40",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005bfb40"
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
     },
     {
       "addr": "0040d0e0",
       "is_variadic": false,
-      "name": "engine_alphabit.cpp_FUN_0040d0e0"
+      "name": "engine_alphabit.cpp_CAlphaBitmap_allocate_FUN_0040d0e0"
     },
     {
       "addr": "00479180",
@@ -327,7 +333,7 @@
       {
         "call_addr": "0050ccca",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_0050cc90",
+        "caller": "core_menu.cpp_showMainGameMenu_FUN_0050cc90",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -338,7 +344,7 @@
       {
         "call_addr": "0050ccf8",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_0050cc90",
+        "caller": "core_menu.cpp_showMainGameMenu_FUN_0050cc90",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -349,7 +355,7 @@
       {
         "call_addr": "0050cd0d",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_0050cc90",
+        "caller": "core_menu.cpp_showMainGameMenu_FUN_0050cc90",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -360,7 +366,7 @@
       {
         "call_addr": "0050cd23",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_0050cc90",
+        "caller": "core_menu.cpp_showMainGameMenu_FUN_0050cc90",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -371,7 +377,7 @@
       {
         "call_addr": "004baaa2",
         "call_type": "direct",
-        "caller": "core_fldnotes.cpp_FUN_004baa40",
+        "caller": "core_fldnotes.cpp_SPageResourceBitmap_ctorFromFile_FUN_004baa40",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -382,7 +388,7 @@
       {
         "call_addr": "004babda",
         "call_type": "direct",
-        "caller": "core_fldnotes.cpp_FUN_004bab60",
+        "caller": "core_fldnotes.cpp_SPageResourceTwanaCharacter_ctor_FUN_004bab60",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -393,7 +399,7 @@
       {
         "call_addr": "004bc2eb",
         "call_type": "direct",
-        "caller": "core_fldnotes.cpp_FUN_004bc2d0",
+        "caller": "core_fldnotes.cpp_SNotesMap_load_FUN_004bc2d0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -415,7 +421,7 @@
       {
         "call_addr": "00503885",
         "call_type": "direct",
-        "caller": "core_main.c_FUN_005032a0",
+        "caller": "core_main.c_initializeGameSystems_FUN_005032a0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -473,6 +479,32 @@
       "SUBPIECE": 2
     },
     "pcode_op_count": 923
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0040d5a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.777
+    },
+    "bw3.exe": {
+      "addr": "0040d460",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004105d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6667
+    },
+    "nocturne.exe": {
+      "addr": "0040e3c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.686
+    }
   },
   "stack_frame": {
     "frame_size": 296,
@@ -579,7 +611,7 @@
       "line": 39,
       "match": "DAT_01c4e9d4",
       "severity": "mild",
-      "text": "uVar6 = iVar1 << (DAT_01c4e9d4 & 0x1f) | iVar2 << (DAT_01c4e9e0 & 0x1f);",
+      "text": "uVar5 = iVar1 << (DAT_01c4e9d4 & 0x1f) | iVar2 << (DAT_01c4e9e0 & 0x1f);",
       "type": "undefined_data"
     },
     {
@@ -587,7 +619,7 @@
       "line": 39,
       "match": "DAT_01c4e9e0",
       "severity": "mild",
-      "text": "uVar6 = iVar1 << (DAT_01c4e9d4 & 0x1f) | iVar2 << (DAT_01c4e9e0 & 0x1f);",
+      "text": "uVar5 = iVar1 << (DAT_01c4e9d4 & 0x1f) | iVar2 << (DAT_01c4e9e0 & 0x1f);",
       "type": "undefined_data"
     },
     {
@@ -599,19 +631,19 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 46,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)(iVar5 + *(int *)&this_ptr->field_0x8) = uVar6 | uVar3;",
-      "type": "unnamed_field"
+      "match": "(uint *)(iVar4 + (int)this_ptr",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar4 + (int)this_ptr->act) = uVar5 | uVar3;",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
       "line": 51,
       "match": "DAT_005d3035",
       "severity": "mild",
-      "text": "p_Var4 = engine_dosio_cpp_FUN_00479180(&DAT_005d3035,local_114,&DAT_005d3032);",
+      "text": "file = engine_dosio_cpp_FUN_00479180(&DAT_005d3035,local_114,&DAT_005d3032);",
       "type": "undefined_data"
     },
     {
@@ -619,40 +651,8 @@
       "line": 51,
       "match": "DAT_005d3032",
       "severity": "mild",
-      "text": "p_Var4 = engine_dosio_cpp_FUN_00479180(&DAT_005d3035,local_114,&DAT_005d3032);",
+      "text": "file = engine_dosio_cpp_FUN_00479180(&DAT_005d3035,local_114,&DAT_005d3032);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 57,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "while (*(int *)(*(int *)&this_ptr->field_0x8 + (uint)*(byte *)(*(int *)this_ptr + iVar5) * 4",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 59,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(byte *)(*(int *)&this_ptr->field_0x4 + iVar5) = 0xff;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 65,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(byte *)(*(int *)&this_ptr->field_0x4 + iVar5) = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 71,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "_fread(*(uint *)&this_ptr->field_0x4,width,height,p_Var4);",
-      "type": "unnamed_field"
     }
   ]
 }

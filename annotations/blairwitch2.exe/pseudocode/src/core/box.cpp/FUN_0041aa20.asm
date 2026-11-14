@@ -42,7 +42,7 @@
 ;
 ; Called Functions:
 ;   core_box.cpp_FUN_0041a600
-;   core_set.cpp_FUN_00534610
+;   core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_00534610
 ;   engine_3d.c_isVisiblePlane_FUN_00403970
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920
 ;   engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046b870
@@ -169,7 +169,7 @@ section .text
     MOV dword ptr [ESP + 0xc],EBX       ; 0041ab84
     MOV dword ptr [ESP + 0x18],EDX      ; 0041ab88
     CALL engine_3d.c_isVisiblePlane_FUN_00403970 ; 0041ab8c
-        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403970()
+        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403970(SClipPlane * plane)
     ADD ESP,0x4                         ; 0041ab91
     TEST EAX,EAX                        ; 0041ab94
     JZ 0x0041abd2                       ; 0041ab96
@@ -185,8 +185,8 @@ section .text
     PUSH EAX                            ; 0041abb7
     MOV dword ptr [ESP + 0x28],ESI      ; 0041abb8
     MOV dword ptr [ESP + 0x2c],EDI      ; 0041abbc
-    CALL core_set.cpp_FUN_00534610      ; 0041abc0
-        ;   XREF to: 00534610 (UNCONDITIONAL_CALL)  ; int core_set.cpp_FUN_00534610(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_00534610 ; 0041abc0
+        ;   XREF to: 00534610 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_00534610(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 0041abc5
     TEST EAX,EAX                        ; 0041abc8
     JNZ 0x0041adec                      ; 0041abca
@@ -203,7 +203,7 @@ section .text
     MOV dword ptr [ESP + 0x10],ECX      ; 0041abea
     MOV dword ptr [ESP + 0x14],ECX      ; 0041abee
     CALL engine_3d.c_isVisiblePlane_FUN_00403970 ; 0041abf2
-        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403970()
+        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403970(SClipPlane * plane)
     ADD ESP,0x4                         ; 0041abf7
     TEST EAX,EAX                        ; 0041abfa
     JZ 0x0041ac3e                       ; 0041abfc
@@ -220,8 +220,8 @@ section .text
     PUSH ECX                            ; 0041ac23
     MOV dword ptr [ESP + 0x24],EDI      ; 0041ac24
     MOV dword ptr [ESP + 0x2c],EDX      ; 0041ac28
-    CALL core_set.cpp_FUN_00534610      ; 0041ac2c
-        ;   XREF to: 00534610 (UNCONDITIONAL_CALL)  ; int core_set.cpp_FUN_00534610(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_00534610 ; 0041ac2c
+        ;   XREF to: 00534610 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_00534610(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 0041ac31
     TEST EAX,EAX                        ; 0041ac34
     JNZ 0x0041adec                      ; 0041ac36
@@ -241,7 +241,7 @@ section .text
     MOV dword ptr [ESP + 0x14],EBX      ; 0041ac5e
     MOV dword ptr [ESP + 0x18],EDX      ; 0041ac62
     CALL engine_3d.c_isVisiblePlane_FUN_00403970 ; 0041ac66
-        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403970()
+        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403970(SClipPlane * plane)
     ADD ESP,0x4                         ; 0041ac6b
     TEST EAX,EAX                        ; 0041ac6e
     JZ 0x0041acac                       ; 0041ac70
@@ -257,8 +257,8 @@ section .text
     PUSH EAX                            ; 0041ac91
     MOV dword ptr [ESP + 0x2c],EDI      ; 0041ac92
     MOV dword ptr [ESP + 0x24],EBX      ; 0041ac96
-    CALL core_set.cpp_FUN_00534610      ; 0041ac9a
-        ;   XREF to: 00534610 (UNCONDITIONAL_CALL)  ; int core_set.cpp_FUN_00534610(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_00534610 ; 0041ac9a
+        ;   XREF to: 00534610 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_00534610(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 0041ac9f
     TEST EAX,EAX                        ; 0041aca2
     JNZ 0x0041adec                      ; 0041aca4
@@ -275,7 +275,7 @@ section .text
     MOV dword ptr [ESP + 0x10],ECX      ; 0041acc4
     MOV dword ptr [ESP + 0x14],EDX      ; 0041acc8
     CALL engine_3d.c_isVisiblePlane_FUN_00403970 ; 0041accc
-        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403970()
+        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403970(SClipPlane * plane)
     ADD ESP,0x4                         ; 0041acd1
     TEST EAX,EAX                        ; 0041acd4
     JZ 0x0041ad18                       ; 0041acd6
@@ -292,8 +292,8 @@ section .text
     PUSH ECX                            ; 0041acfd
     MOV dword ptr [ESP + 0x24],EDI      ; 0041acfe
     MOV dword ptr [ESP + 0x2c],EDX      ; 0041ad02
-    CALL core_set.cpp_FUN_00534610      ; 0041ad06
-        ;   XREF to: 00534610 (UNCONDITIONAL_CALL)  ; int core_set.cpp_FUN_00534610(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_00534610 ; 0041ad06
+        ;   XREF to: 00534610 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_00534610(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 0041ad0b
     TEST EAX,EAX                        ; 0041ad0e
     JNZ 0x0041adec                      ; 0041ad10
@@ -313,7 +313,7 @@ section .text
     MOV dword ptr [ESP + 0x10],EBX      ; 0041ad38
     MOV dword ptr [ESP + 0x18],EDX      ; 0041ad3c
     CALL engine_3d.c_isVisiblePlane_FUN_00403970 ; 0041ad40
-        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403970()
+        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403970(SClipPlane * plane)
     ADD ESP,0x4                         ; 0041ad45
     TEST EAX,EAX                        ; 0041ad48
     JZ 0x0041ad82                       ; 0041ad4a
@@ -329,8 +329,8 @@ section .text
     PUSH EAX                            ; 0041ad6b
     MOV dword ptr [ESP + 0x2c],EDI      ; 0041ad6c
     MOV dword ptr [ESP + 0x24],EBX      ; 0041ad70
-    CALL core_set.cpp_FUN_00534610      ; 0041ad74
-        ;   XREF to: 00534610 (UNCONDITIONAL_CALL)  ; int core_set.cpp_FUN_00534610(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_00534610 ; 0041ad74
+        ;   XREF to: 00534610 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_00534610(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 0041ad79
     TEST EAX,EAX                        ; 0041ad7c
     JNZ 0x0041adec                      ; 0041ad7e
@@ -347,7 +347,7 @@ section .text
     MOV dword ptr [ESP + 0x10],EDX      ; 0041ad9a
     MOV dword ptr [ESP + 0x14],EBX      ; 0041ad9e
     CALL engine_3d.c_isVisiblePlane_FUN_00403970 ; 0041ada2
-        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403970()
+        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403970(SClipPlane * plane)
     ADD ESP,0x4                         ; 0041ada7
     TEST EAX,EAX                        ; 0041adaa
     JZ 0x0041adea                       ; 0041adac
@@ -364,8 +364,8 @@ section .text
     PUSH ECX                            ; 0041add3
     MOV dword ptr [ESP + 0x24],EDI      ; 0041add4
     MOV dword ptr [ESP + 0x2c],EDX      ; 0041add8
-    CALL core_set.cpp_FUN_00534610      ; 0041addc
-        ;   XREF to: 00534610 (UNCONDITIONAL_CALL)  ; int core_set.cpp_FUN_00534610(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prim)
+    CALL core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_00534610 ; 0041addc
+        ;   XREF to: 00534610 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_00534610(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prim)
     ADD ESP,0x8                         ; 0041ade1
     TEST EAX,EAX                        ; 0041ade4
     JNZ 0x0041adec                      ; 0041ade6

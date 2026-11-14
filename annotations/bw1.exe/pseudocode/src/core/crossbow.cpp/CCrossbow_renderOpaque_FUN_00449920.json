@@ -1,0 +1,187 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 64,
+    "complexity_score": 96,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 31,
+    "suspect_count": 5,
+    "suspect_types": [
+      "stack_param",
+      "stack_ref",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 95
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00449920",
+    "address_range": [
+      [
+        "00449920",
+        "004499b3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_crossbow.cpp_CCrossbow_renderOpaque_FUN_00449920",
+    "signature": "int __cdecl core_crossbow_cpp_CCrossbow_renderOpaque_FUN_00449920(CCrossbow *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004087f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0"
+    },
+    {
+      "addr": "004087b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_004087b0"
+    },
+    {
+      "addr": "004207b0",
+      "is_variadic": false,
+      "name": "core_box.cpp_FUN_004207b0"
+    },
+    {
+      "addr": "0044a0c0",
+      "is_variadic": false,
+      "name": "core_crossbow.cpp_CCrossbow_getCurFrame_FUN_0044a0c0"
+    },
+    {
+      "addr": "004688a0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.781818181818182,
+    "instruction_count": 55,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 6,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 60,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 29,
+      "INT_AND": 25,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 25,
+      "INT_LESS": 2,
+      "INT_MULT": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 12,
+      "INT_SUB": 24,
+      "INT_ZEXT": 2,
+      "LOAD": 13,
+      "POPCOUNT": 12,
+      "RETURN": 2,
+      "STORE": 22
+    },
+    "pcode_op_count": 263
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0043a670",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00448e00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8824
+    },
+    "nocturne.exe": {
+      "addr": "0043d0a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8932
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCrossbow *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_ffffffc0",
+      "severity": "moderate",
+      "text": "int in_stack_ffffffc0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 18,
+      "match": "&stack0xffffffc0",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)&stack0xffffffc0;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 24,
+      "match": "&stack0xffffffc0",
+      "severity": "moderate",
+      "text": "iVar1 = core_box_cpp_FUN_004207b0(&stack0xffffffc0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_ffffffc0",
+      "severity": "moderate",
+      "text": "(&(this_ptr->base).model,animation_frame,in_stack_ffffffc0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 19,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 16,
+        "vtable_addr": "005fe374"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

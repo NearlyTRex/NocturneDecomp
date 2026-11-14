@@ -1,11 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setutil_cpp_C3DSLight_process_FUN_0053b8d0(int param_1,CDemonLight *param_2,int param_3)
+; void __cdecl core_setutil_cpp_C3DSLight_process_FUN_0053b8d0(C3DSLight *this_ptr,CDemonLight *light,int apply_filter_flag)
 ;
+; Parameters:
+; C3DSLight *      Stack[0x4]:4   this_ptr
+; CDemonLight *    Stack[0x8]:4   light
+; int              Stack[0xc]:4   apply_filter_flag
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_00533010 at 005330af
+;   core_set.cpp_CDemonSet_process_FUN_00533010 at 005330af
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setutil_cpp_005e6341
@@ -13,10 +17,10 @@
 ;   CGame* g_CGamePtr = 01cb6900
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 DAT_01c2a370
-;   undefined4 g_CGameInstance.field644_0x284
+;   undefined4 g_CGameInstance.delta_time_float
 ;   undefined4 DAT_01d046a0
 ;   undefined4 DAT_01d046a4
-;   undefined4 g_CDemonSetInstance.field1420980_0x15aeb4
+;   undefined4 g_CDemonSetInstance.camera_enabled_flag
 ;
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_applyFilter_FUN_0044b600
@@ -50,7 +54,7 @@ section .text
         ;   XREF to: 0053b96c (CONDITIONAL_JUMP)  ; LAB_0053b96c
     MOV EDX,dword ptr [0x00616494]      ; 0053b907 | g_CGamePtr
     LEA EAX,[EBX + 0x1894]              ; 0053b90d
-    FLD float ptr [EDX + 0x284]         ; 0053b913 | g_CGameInstance.field644_0x284
+    FLD float ptr [EDX + 0x284]         ; 0053b913 | g_CGameInstance.delta_time_float
     FADD float ptr [EAX]                ; 0053b919
     FSTP float ptr [EAX]                ; 0053b91b
     MOV EDX,dword ptr [EBX + 0x1890]    ; 0053b91d
@@ -114,7 +118,7 @@ section .text
         ;   XREF to: 0053ba3c (CONDITIONAL_JUMP)  ; LAB_0053ba3c
     MOV EDX,dword ptr [0x00616494]      ; 0053b9e8 | g_CGamePtr
     LEA EAX,[EBX + 0x11e8]              ; 0053b9ee
-    FLD float ptr [EDX + 0x284]         ; 0053b9f4 | g_CGameInstance.field644_0x284
+    FLD float ptr [EDX + 0x284]         ; 0053b9f4 | g_CGameInstance.delta_time_float
     FADD float ptr [EAX]                ; 0053b9fa
     FSTP float ptr [EAX]                ; 0053b9fc
     FLD float ptr [EBX + 0x11e8]        ; 0053b9fe
@@ -136,7 +140,7 @@ section .text
     MOV dword ptr [ESI + 0x1cb4],0x0    ; 0053ba32
     MOV EAX,[0x0061b5a8]                ; 0053ba3c | g_CDemonSetPtr
         ;   Label: LAB_0053ba3c
-    MOV EAX,dword ptr [EAX + 0x15aeb4]  ; 0053ba41 | g_CDemonSetInstance.field1420980_0x15aeb4
+    MOV EAX,dword ptr [EAX + 0x15aeb4]  ; 0053ba41 | g_CDemonSetInstance.camera_enabled_flag
     TEST EAX,EAX                        ; 0053ba47
     JZ 0x0053ba84                       ; 0053ba49
         ;   XREF to: 0053ba84 (CONDITIONAL_JUMP)  ; LAB_0053ba84

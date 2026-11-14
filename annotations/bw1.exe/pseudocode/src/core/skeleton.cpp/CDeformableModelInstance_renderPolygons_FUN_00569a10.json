@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 81,
+    "complexity_score": 36,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 21,
-    "suspect_count": 5,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 65
@@ -19,7 +18,7 @@
     {
       "addr": "00430060",
       "from_addr": "004301a5",
-      "name": "core_charactr.cpp_FUN_00430060",
+      "name": "core_charactr.cpp_CCharacter_renderEthereal_FUN_00430060",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -109,6 +108,32 @@
     },
     "pcode_op_count": 126
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00547370",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0054e5a0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a0340",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0051dbc0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -147,38 +172,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x2320",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x2320 < 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x2230",
-      "severity": "mild",
-      "text": "texture_set_indices = (int *)&this_ptr->field_0x2230;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x2140",
-      "severity": "mild",
-      "text": "part_visibility_flags = (int *)&this_ptr->field_0x2140;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x2320",
-      "severity": "mild",
-      "text": "lod_index = *(int *)&this_ptr->field_0x2320;",
-      "type": "unnamed_field"
     }
   ]
 }

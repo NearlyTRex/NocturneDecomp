@@ -8,9 +8,9 @@
 ;
 ; XREF[4]:
 ;   core_actor.cpp_archivePartStatus_FUN_0040bc50 at 0040bca2
-;   core_boneguy.cpp_FUN_004186c0 at 004189c5
+;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 004189c5
+;   core_construc.cpp_CConstruct_process_FUN_00436e80 at 0043728c
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0 at 005478e6
-;   unkafter_conveyor.cpp_FUN_00436e80 at 0043728c
 ;
 ; *****************************************************************************
 

@@ -2,30 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 11,
-    "complexity_score": 35,
+    "complexity_score": 5,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 5,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_field",
-      "unresolved_funcptr"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 16
   },
   "cross_references": [
     {
       "addr": "0047c970",
       "from_addr": "0047c9b6",
-      "name": "shape_edittool.cpp_FUN_0047c970",
+      "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047c970",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047cb1e",
+      "addr": "0047cb20",
       "from_addr": "0047cc48",
-      "name": "shape_edittool.cpp_FUN_0047cb1e",
+      "name": "shape_edittool.cpp_FUN_0047cb20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -49,7 +46,7 @@
       {
         "call_addr": "0047c9b6",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047c970",
+        "caller": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047c970",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -60,7 +57,7 @@
       {
         "call_addr": "0047cc48",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047cb1e",
+        "caller": "shape_edittool.cpp_FUN_0047cb20",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -96,6 +93,32 @@
     },
     "pcode_op_count": 43
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004997f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00482390",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004a2ec0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00473fd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -112,22 +135,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 5,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0xc + 8))(this_ptr,0,*(int *)this_ptr + -1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0xc + 8))(this_ptr,0,*(int *)this_ptr + -1);",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

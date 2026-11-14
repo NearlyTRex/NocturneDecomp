@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_basicnpc_cpp_CBasicNPC_getActorType_FUN_005a47a0(CBasicNPC *this_ptr)
+; CDemonActorType * __cdecl core_basicnpc_cpp_CBasicNPC_getActorType_FUN_005a47a0(CBasicNPC *this_ptr)
 ;
 ; Parameters:
 ; CBasicNPC *      Stack[0x4]:4   this_ptr

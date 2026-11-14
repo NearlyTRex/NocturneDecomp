@@ -9,23 +9,24 @@
 void __cdecl core_motion_cpp_CMotionController_reverseTransition_FUN_00524710(CMotionController *this_ptr)
 
 {
-  uint uVar1;
+  int iVar1;
+  float fVar2;
   
-  *(uint *)&this_ptr->field_0x20 = 1;
-  uVar1 = *(uint *)&this_ptr->field_0x4;
-  *(uint *)&this_ptr->field_0x4 = *(uint *)&this_ptr->field_0x18;
-  *(uint *)&this_ptr->field_0x18 = uVar1;
-  uVar1 = *(uint *)&this_ptr->field_0x8;
-  *(uint *)&this_ptr->field_0x8 = *(uint *)&this_ptr->field_0x1c;
-  *(uint *)&this_ptr->field_0x1c = uVar1;
-  if (*(int *)&this_ptr->field_0xc == 5) {
-    *(uint *)&this_ptr->field_0xc = 4;
+  this_ptr->tween_direction = 1;
+  iVar1 = this_ptr->current_motion_index;
+  this_ptr->current_motion_index = this_ptr->tween_target_motion;
+  this_ptr->tween_target_motion = iVar1;
+  fVar2 = this_ptr->current_frame_number;
+  this_ptr->current_frame_number = this_ptr->tween_target_frame;
+  this_ptr->tween_target_frame = fVar2;
+  if (this_ptr->tween_type == MOTION_CMD_TWEEN_ADVANCE_BOTH) {
+    this_ptr->tween_type = MOTION_CMD_TWEEN_ADVANCE;
   }
-  else if (*(int *)&this_ptr->field_0xc == 4) {
-    *(uint *)&this_ptr->field_0xc = 5;
-    *(float *)&this_ptr->field_0x14 = 1.0 - *(float *)&this_ptr->field_0x14;
+  else if (this_ptr->tween_type == MOTION_CMD_TWEEN_ADVANCE) {
+    this_ptr->tween_type = MOTION_CMD_TWEEN_ADVANCE_BOTH;
+    this_ptr->tween_progress = 1.0 - this_ptr->tween_progress;
     return;
   }
-  *(float *)&this_ptr->field_0x14 = 1.0 - *(float *)&this_ptr->field_0x14;
+  this_ptr->tween_progress = 1.0 - this_ptr->tween_progress;
   return;
 }

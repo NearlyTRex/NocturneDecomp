@@ -1,0 +1,189 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 84,
+    "complexity_score": 86,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 41,
+    "suspect_count": 3,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "warning_overlapping_globals",
+      "warning_type_propagation"
+    ],
+    "total_lines": 125
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005aba00",
+    "address_range": [
+      [
+        "005aba00",
+        "005abacb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_waypoint.cpp_CWayPoint_setup_FUN_005aba00",
+    "signature": "void __cdecl core_waypoint_cpp_CWayPoint_setup_FUN_005aba00(CWayPoint *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "0059b100",
+      "is_variadic": false,
+      "name": "core_trigger.cpp_CTrigger_setup_FUN_0059b100"
+    },
+    {
+      "addr": "005c04e0",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005c04e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061f650",
+      "name": "DAT_0061f650",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.9714285714285715,
+    "instruction_count": 70,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CALL": 4,
+      "CBRANCH": 5,
+      "COPY": 110,
+      "FLOAT2FLOAT": 7,
+      "FLOAT_ADD": 2,
+      "FLOAT_MULT": 3,
+      "FLOAT_SQRT": 1,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 31,
+      "INT_AND": 35,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 32,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 16,
+      "INT_SUB": 17,
+      "INT_XOR": 1,
+      "LOAD": 20,
+      "POPCOUNT": 16,
+      "RETURN": 2,
+      "STORE": 16
+    },
+    "pcode_op_count": 348
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00587dc0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9209
+    },
+    "bw3.exe": {
+      "addr": "005792b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005ebeb0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9275
+    },
+    "nocturne.exe": {
+      "addr": "00552510",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9275
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWayPoint *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar7` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 30,
+      "match": "pCVar7 = (T *)((pCVar7->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCVar7 = (CWayPoint *)((pCVar7->base).base.actor_name + 8);",
+      "type": "shadow_pointer_walk"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWayPoint",
+        "offset": 0,
+        "vtable_addr": "00607d54"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

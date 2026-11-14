@@ -12,14 +12,14 @@
 ;
 ; XREF[3]:
 ;   core_barrier.cpp_CBarrier_updateCollisionData_FUN_0040ec70 at 0040ec86
-;   core_door.cpp_FUN_004642f0 at 004645f6
-;   core_door.cpp_FUN_00465330 at 0046535f
+;   core_door.cpp_CDoor_process_FUN_004642f0 at 004645f6
+;   core_door.cpp_CDoor_updateCollisionData_FUN_00465330 at 0046535f
 ;
 ; Referenced Globals:
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
-;   core_dtrace.cpp_FUN_00477e60
+;   core_dtrace.cpp_CDemonRaytrace_markShadowVoxels_FUN_00477e60
 ;   core_path.cpp_resetAllPathMaps_FUN_0050cf60
 ;
 ; *****************************************************************************
@@ -68,8 +68,8 @@ section .text
     ADD EBX,0x20                        ; 0053ee61
     PUSH EBX                            ; 0053ee64
     PUSH 0x203b37c                      ; 0053ee65 | g_CDemonRaytraceInstance
-    CALL core_dtrace.cpp_FUN_00477e60   ; 0053ee6a
-        ;   XREF to: 00477e60 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_FUN_00477e60(CDemonRaytrace * this_ptr, CVector3f * offset, CVector3f * rotation, CVector3f * extent, ...)
+    CALL core_dtrace.cpp_CDemonRaytrace_markShadowVoxels_FUN_00477e60 ; 0053ee6a
+        ;   XREF to: 00477e60 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_markShadowVoxels_FUN_00477e60(CDemonRaytrace * this_ptr, CVector3f * offset, CVector3f * rotation, CVector3f * extent, ...)
     ADD ESP,0x14                        ; 0053ee6f
     CALL core_path.cpp_resetAllPathMaps_FUN_0050cf60 ; 0053ee72
         ;   XREF to: 0050cf60 (UNCONDITIONAL_CALL)  ; void core_path.cpp_resetAllPathMaps_FUN_0050cf60()

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBloodParticle * core_gore_cpp_CBloodParticle_arrdtor256_FUN_004cf240(CBloodParticle *this_ptr,uint flags)
+; CBloodParticle * __cdecl core_gore_cpp_CBloodParticle_arrdtor256_FUN_004cf240(CBloodParticle *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CBloodParticle * Stack[0x4]:4   this_ptr
@@ -20,7 +20,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004cf24a
     PUSH EDX                            ; 004cf24e
     CALL crt_memory.c___arrfini_FUN_005a3de6 ; 004cf24f
-        ;   XREF to: 005a3de6 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrfini_FUN_005a3de6()
+        ;   XREF to: 005a3de6 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005a3de6(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004cf254
     RET                                 ; 004cf257
 

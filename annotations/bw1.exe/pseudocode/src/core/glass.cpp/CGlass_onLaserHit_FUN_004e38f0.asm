@@ -16,7 +16,7 @@
 ;   undefined4 DAT_01c50930
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409680
+;   core_actor.cpp_CDemonActor_onLaserHit_FUN_00409680
 ;   crt_math.c_round_FUN_005c03a0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00
 ;
@@ -34,8 +34,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x2c]      ; 004e38fb
     PUSH ESI                            ; 004e38ff
     PUSH EBX                            ; 004e3900
-    CALL core_actor.cpp_FUN_00409680    ; 004e3901
-        ;   XREF to: 00409680 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409680()
+    CALL core_actor.cpp_CDemonActor_onLaserHit_FUN_00409680 ; 004e3901
+        ;   XREF to: 00409680 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_onLaserHit_FUN_00409680(CDemonActor * this_ptr, SLaserInfo * laser_info)
     MOV EDX,dword ptr [EBX + 0x1e8]     ; 004e3906
     ADD ESP,0x8                         ; 004e390c
     TEST EDX,EDX                        ; 004e390f

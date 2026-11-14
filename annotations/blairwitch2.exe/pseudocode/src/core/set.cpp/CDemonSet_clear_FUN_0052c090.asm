@@ -37,7 +37,7 @@ section .text
     PUSH EBX                            ; 0052c0ae
         ;   Label: LAB_0052c0ae
     CALL core_setutil.cpp_C3DSCamera_free_FUN_0053a830 ; 0052c0af
-        ;   XREF to: 0053a830 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_C3DSCamera_free_FUN_0053a830()
+        ;   XREF to: 0053a830 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSCamera_free_FUN_0053a830(C3DSCamera * this_ptr)
     ADD EBX,0x1a4                       ; 0052c0b4
     ADD ESP,0x4                         ; 0052c0ba
     CMP EBX,ESI                         ; 0052c0bd

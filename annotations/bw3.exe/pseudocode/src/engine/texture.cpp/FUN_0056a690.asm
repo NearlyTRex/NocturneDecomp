@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   engine_texture.cpp_FUN_0056ac50 at 0056ac6a
 ;   engine_texture.cpp_FUN_0056ac80 at 0056ac9a
+;   engine_texture.cpp_updateTextureWithPalette_FUN_0056ac50 at 0056ac6a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c6cee8

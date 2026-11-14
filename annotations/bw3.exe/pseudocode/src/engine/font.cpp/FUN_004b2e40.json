@@ -18,21 +18,21 @@
   },
   "cross_references": [
     {
-      "addr": "004b47d0",
-      "from_addr": "004b48c6",
-      "name": "core_game.cpp_FUN_004b47d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004bfb50",
       "from_addr": "004bfe3f",
-      "name": "core_game.cpp_FUN_004bfb50",
+      "name": "core_game.cpp_CGame_displayActStats_FUN_004bfb50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004bfee0",
       "from_addr": "004c01f0",
-      "name": "core_game.cpp_FUN_004bfee0",
+      "name": "core_game.cpp_CGame_finishAct_FUN_004bfee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b47d0",
+      "from_addr": "004b48c6",
+      "name": "core_game.cpp_CGame_renderOverlay_FUN_004b47d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -44,13 +44,13 @@
     {
       "addr": "00528fc0",
       "from_addr": "0052911e",
-      "name": "core_script.cpp_FUN_00528fc0",
+      "name": "core_script.cpp_CScript_renderSubtitles_FUN_00528fc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0047f4c0",
       "from_addr": "0047f5ff",
-      "name": "shape_edittool.cpp_FUN_0047f4c0",
+      "name": "shape_edittool.cpp_CEditorTools_createModalWindow_FUN_0047f4c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -85,7 +85,7 @@
       {
         "call_addr": "0047f5ff",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047f4c0",
+        "caller": "shape_edittool.cpp_CEditorTools_createModalWindow_FUN_0047f4c0",
         "estimated_params": 10,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -101,7 +101,7 @@
       {
         "call_addr": "004b48c6",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b47d0",
+        "caller": "core_game.cpp_CGame_renderOverlay_FUN_004b47d0",
         "estimated_params": 9,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -116,7 +116,7 @@
       {
         "call_addr": "004bfe3f",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bfb50",
+        "caller": "core_game.cpp_CGame_displayActStats_FUN_004bfb50",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -129,7 +129,7 @@
       {
         "call_addr": "004c01f0",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bfee0",
+        "caller": "core_game.cpp_CGame_finishAct_FUN_004bfee0",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -185,7 +185,7 @@
       {
         "call_addr": "0052911e",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00528fc0",
+        "caller": "core_script.cpp_CScript_renderSubtitles_FUN_00528fc0",
         "estimated_params": 10,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -235,6 +235,20 @@
       "SUBPIECE": 4
     },
     "pcode_op_count": 369
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004ab2b0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004c4260",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 16,

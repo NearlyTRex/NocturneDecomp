@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 77,
+    "complexity_score": 78,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 27,
+    "pseudocode_lines": 28,
     "suspect_count": 4,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 93
+    "total_lines": 94
   },
   "cross_references": [
     {
@@ -37,7 +37,7 @@
     {
       "addr": "0053ab80",
       "from_addr": "0053ac1b",
-      "name": "core_set.cpp_FUN_0053ab80",
+      "name": "core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0053ab80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -57,7 +57,7 @@
     {
       "addr": "005a23c0",
       "is_variadic": false,
-      "name": "core_asgaya.cpp_FUN_005a23c0"
+      "name": "core_asgaya.cpp_rasterizePolygonCustom_FUN_005a23c0"
     },
     {
       "addr": "00587cd0",
@@ -146,7 +146,7 @@
       {
         "call_addr": "0053ac1b",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_0053ab80",
+        "caller": "core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0053ab80",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -186,6 +186,32 @@
       "STORE": 13
     },
     "pcode_op_count": 213
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0046b750",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00483c50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0048c8d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00460e80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 16,
@@ -236,18 +262,18 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 30,
       "match": "DAT_007e3e8c",
       "severity": "mild",
-      "text": "core_asgaya_cpp_FUN_005a23c0(&DAT_007e3e8c,DAT_007e3e88,scanline_renderer);",
+      "text": "((SRenderVertex *)&DAT_007e3e8c,DAT_007e3e88,scanline_renderer);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 30,
       "match": "DAT_007e3e88",
       "severity": "mild",
-      "text": "core_asgaya_cpp_FUN_005a23c0(&DAT_007e3e8c,DAT_007e3e88,scanline_renderer);",
+      "text": "((SRenderVertex *)&DAT_007e3e8c,DAT_007e3e88,scanline_renderer);",
       "type": "undefined_data"
     }
   ]

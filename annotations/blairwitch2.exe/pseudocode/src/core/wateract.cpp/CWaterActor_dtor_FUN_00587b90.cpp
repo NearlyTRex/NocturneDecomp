@@ -1,25 +1,23 @@
 // Name: core_wateract.cpp_CWaterActor_dtor_FUN_00587b90
 // Address: 00587b90
 // Address Range: [[00587b90, 00587bdd]]
-// Convention: unknown
-// Signature: CWaterActor * core_wateract_cpp_CWaterActor_dtor_FUN_00587b90(CWaterActor *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CWaterActor * __cdecl core_wateract_cpp_CWaterActor_dtor_FUN_00587b90(CWaterActor *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CWaterActor * core_wateract_cpp_CWaterActor_dtor_FUN_00587b90(CWaterActor *this_ptr,uint flags)
+CWaterActor * __cdecl core_wateract_cpp_CWaterActor_dtor_FUN_00587b90(CWaterActor *this_ptr,uint flags)
 
 {
   CWaterActor *pCVar1;
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CWaterActorTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CWaterActorTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  pCVar1 = (CWaterActor *)core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)this_ptr,1);
+  pCVar1 = (CWaterActor *)core_actor_cpp_CDemonActor_dtor_FUN_00408930(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_melee_cpp_staticInit_FUN_004ea850(void)
+; void __cdecl core_melee_cpp_staticInit_FUN_004ea850(void)
 ;
 ;
 ; Called Functions:

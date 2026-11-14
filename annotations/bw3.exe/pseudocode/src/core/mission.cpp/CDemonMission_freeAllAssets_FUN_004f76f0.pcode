@@ -1,0 +1,39 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    core_mission.cpp_CDemonMission_freeAllAssets_FUN_004f76f0
+# Entry:       004f76f0
+# Signature:   void __cdecl core_mission_cpp_CDemonMission_freeAllAssets_FUN_004f76f0(CDemonMission *this_ptr)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
+#
+# ============================================================================
+
+@004f76f0 [ESP:+0](-4)  # CALL 0x0056ac20
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x4f76f5,4)
+CALL (ram,0x56ac20,4)
+
+@004f76f5 [ESP:+0](-4)  # CALL 0x004624d0
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x4f76fa,4)
+CALL (ram,0x4624d0,4)
+
+@004f76fa [ESP:+0](-4)  # CALL 0x005501a0
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x4f76ff,4)
+CALL (ram,0x5501a0,4)
+
+@004f76ff [ESP:+0]  # JMP 0x005502d0
+BRANCH (ram,0x5502d0,4)
+
+# ============================================================================
+# Summary: 4 instructions, 10 P-code ops
+# ============================================================================

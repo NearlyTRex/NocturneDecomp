@@ -1,12 +1,12 @@
 // Name: core_smiley.cpp_staticInit_FUN_0056bdf0
 // Address: 0056bdf0
 // Address Range: [[0056bdf0, 0056be13]]
-// Convention: unknown
-// Signature: void core_smiley_cpp_staticInit_FUN_0056bdf0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_smiley_cpp_staticInit_FUN_0056bdf0(void)
 
 #include "nocturne.h"
 
-void core_smiley_cpp_staticInit_FUN_0056bdf0(void)
+void __cdecl core_smiley_cpp_staticInit_FUN_0056bdf0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c160

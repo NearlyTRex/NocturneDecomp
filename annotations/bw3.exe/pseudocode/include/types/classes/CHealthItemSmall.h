@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CHealthItem.h"
 
 // Structure: CHealthItemSmall
-// Stub: size from Watcom RTTI, fields not yet recovered
+// registered under CHealthItem (registerActorClass); size 740 from RTTI; no fields of its own
 // Ghidra size: 0x2e4 (740 bytes)
 #pragma pack(push, 1)
 typedef struct CHealthItemSmall {
-    char field_0[740]; // 0x0
+    CHealthItem base; // 0x0, parent class
 } CHealthItemSmall;
 #pragma pack(pop)
 

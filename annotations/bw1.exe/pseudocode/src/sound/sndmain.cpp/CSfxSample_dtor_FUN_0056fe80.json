@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 49,
+    "complexity_score": 22,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 9,
-    "suspect_count": 3,
+    "pseudocode_lines": 7,
+    "suspect_count": 1,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_field"
+      "negative_offset"
     ],
-    "total_lines": 25
+    "total_lines": 23
   },
   "cross_references": [],
   "function": {
@@ -24,9 +23,9 @@
         "0056fea5"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "sound_sndmain.cpp_CSfxSample_dtor_FUN_0056fe80",
-    "signature": "CSfxSample * sound_sndmain_cpp_CSfxSample_dtor_FUN_0056fe80(CSfxSample *this_ptr,uint flags)"
+    "signature": "CSfxSample * __cdecl sound_sndmain_cpp_CSfxSample_dtor_FUN_0056fe80(CSfxSample *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -37,7 +36,7 @@
     {
       "addr": "005a0a50",
       "is_variadic": false,
-      "name": "unkclass_instream.cpp_CInStreamFile_dtor_FUN_005a0a50"
+      "name": "support_trstream.cpp_CInStreamFile_dtor_FUN_005a0a50"
     }
   ],
   "globals": [],
@@ -72,6 +71,32 @@
     },
     "pcode_op_count": 64
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0054d810",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00553380",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a6150",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6667
+    },
+    "nocturne.exe": {
+      "addr": "005238f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.6667
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -97,28 +122,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x17c",
-      "severity": "mild",
-      "text": "((CInStreamFile *)&this_ptr->field_0x17c,0);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 12,
+      "line": 9,
       "match": "pCVar1[-9].",
       "severity": "mild",
-      "text": "return (CSfxSample *)&pCVar1[-9].field_0x10;",
+      "text": "return (CSfxSample *)&pCVar1[-9].position;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "return (CSfxSample *)&pCVar1[-9].field_0x10;",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

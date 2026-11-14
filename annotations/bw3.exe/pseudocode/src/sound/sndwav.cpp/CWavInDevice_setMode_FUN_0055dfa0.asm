@@ -31,7 +31,7 @@
 ; Called Functions:
 ;   GlobalAlloc
 ;   GlobalLock
-;   sound_sndmain.cpp_FUN_0055a560
+;   sound_sndmain.cpp_logSoundError_FUN_0055a560
 ;   waveInGetDevCapsA
 ;   waveInOpen
 ;
@@ -241,8 +241,8 @@ section .text
     RET                                 ; 0055e1ef
     PUSH 0x5d50b7                       ; 0055e1f0 | = "WavInDevice::setMode - Can't set any ..."
         ;   Label: LAB_0055e1f0
-    CALL sound_sndmain.cpp_FUN_0055a560 ; 0055e1f5
-        ;   XREF to: 0055a560 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_0055a560()
+    CALL sound_sndmain.cpp_logSoundError_FUN_0055a560 ; 0055e1f5
+        ;   XREF to: 0055a560 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_logSoundError_FUN_0055a560(char * format)
     ADD ESP,0x4                         ; 0055e1fa
     XOR EAX,EAX                         ; 0055e1fd
     MOV EDI,dword ptr [0x02cf5664]      ; 0055e1ff | DAT_02cf5664

@@ -1,0 +1,380 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 102,
+    "complexity_score": 114,
+    "cross_reference_count": 11,
+    "function_call_count": 3,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 39,
+    "suspect_count": 6,
+    "suspect_types": [
+      "undefined_data",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 141
+  },
+  "cross_references": [
+    {
+      "addr": "00573660",
+      "from_addr": "00573672",
+      "name": "sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00573660",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00573620",
+      "from_addr": "00573627",
+      "name": "sound_sndmain.cpp_getSfxSampleInfo_FUN_00573620",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005735a0",
+      "from_addr": "005735b1",
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005735a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00573a80",
+      "from_addr": "00573a87",
+      "name": "sound_sndmain.cpp_killSfx_FUN_00573a80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00573980",
+      "from_addr": "00573987",
+      "name": "sound_sndmain.cpp_setSfxBaseFrequency_FUN_00573980",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00573ab0",
+      "from_addr": "00573aba",
+      "name": "sound_sndmain.cpp_setSfxFade_FUN_00573ab0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00573760",
+      "from_addr": "00573767",
+      "name": "sound_sndmain.cpp_setSfxPosition_FUN_00573760",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005737d0",
+      "from_addr": "005737d7",
+      "name": "sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_005737d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005738d0",
+      "from_addr": "005738d7",
+      "name": "sound_sndmain.cpp_setSfxTrackedFloatVelocity_FUN_005738d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005739e0",
+      "from_addr": "00573a1a",
+      "name": "sound_sndmain.cpp_setSfxUserData_FUN_005739e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00573950",
+      "from_addr": "00573957",
+      "name": "sound_sndmain.cpp_setSfxVolume_FUN_00573950",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056fa10",
+    "address_range": [
+      [
+        "0056fa10",
+        "0056facd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_getSfxSlotFromHandle_FUN_0056fa10",
+    "signature": "CSfxSlot * __cdecl sound_sndmain_cpp_getSfxSlotFromHandle_FUN_0056fa10(uint sfx_handle,int check_hardware_playback)"
+  },
+  "function_calls": [
+    {
+      "addr": "00571d70",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSlot_kill_FUN_00571d70"
+    },
+    {
+      "addr": "00575d20",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_lockSound_FUN_00575d20"
+    },
+    {
+      "addr": "00573e70",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_unlockSound_FUN_00573e70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02c74650",
+      "name": "DAT_02c74650",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c80650",
+      "name": "DAT_02c80650",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 12,
+    "call_sites": [
+      {
+        "call_addr": "005735b1",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_isSfxPlaying_FUN_005735a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005735d0",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_isSfxPlaying_FUN_005735a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00573627",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_getSfxSampleInfo_FUN_00573620",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00573672",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00573660",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00573957",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_setSfxVolume_FUN_00573950",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00573a87",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_killSfx_FUN_00573a80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00573aba",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_setSfxFade_FUN_00573ab0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00573987",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_setSfxBaseFrequency_FUN_00573980",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005737d7",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_005737d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005738d7",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_setSfxTrackedFloatVelocity_FUN_005738d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.220779220779221,
+    "instruction_count": 77,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 19,
+      "CALL": 6,
+      "CALLIND": 1,
+      "CBRANCH": 12,
+      "COPY": 68,
+      "INT_ADD": 32,
+      "INT_AND": 91,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 57,
+      "INT_LEFT": 4,
+      "INT_LESS": 9,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 9,
+      "INT_OR": 15,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 31,
+      "INT_SUB": 25,
+      "INT_XOR": 6,
+      "LOAD": 27,
+      "POPCOUNT": 26,
+      "RETURN": 6,
+      "STORE": 13
+    },
+    "pcode_op_count": 479
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0054d3a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00552f10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a5d00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8333
+    },
+    "nocturne.exe": {
+      "addr": "005234b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8112
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "sfx_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "check_hardware_playback",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_02c74650",
+      "severity": "mild",
+      "text": "if (uVar2 == *(uint *)(&DAT_02c74650 + iVar1)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_02c74650",
+      "severity": "mild",
+      "text": "if ((uVar2 != *(uint *)(&DAT_02c74650 + iVar1)) || (*(int *)(&DAT_02c74654 + iVar1) == 0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_02c74654",
+      "severity": "mild",
+      "text": "if ((uVar2 != *(uint *)(&DAT_02c74650 + iVar1)) || (*(int *)(&DAT_02c74654 + iVar1) == 0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_02c7464c",
+      "severity": "mild",
+      "text": "if (*(int *)(&DAT_02c7464c + iVar1) != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 31,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*_DAT_02c80650 + 0x54))(_DAT_02c80650,this_ptr);",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_ncursfx_cpp_staticInit_FUN_00508ad0(void)
+; void __cdecl engine_ncursfx_cpp_staticInit_FUN_00508ad0(void)
 ;
 ;
 ; Called Functions:
@@ -19,7 +19,7 @@ section .text
     ADD ESP,0x4                         ; 00508ada
     PUSH 0x6035c0                       ; 00508add
     CALL crt_stdlib.c__atexit_FUN_005a3e13 ; 00508ae2
-        ;   XREF to: 005a3e13 (UNCONDITIONAL_CALL)  ; undefined crt_stdlib.c__atexit_FUN_005a3e13()
+        ;   XREF to: 005a3e13 (UNCONDITIONAL_CALL)  ; void crt_stdlib.c__atexit_FUN_005a3e13(WatcomStaticDestructorNode * exit_node)
     ADD ESP,0x4                         ; 00508ae7
     RET                                 ; 00508aea
 

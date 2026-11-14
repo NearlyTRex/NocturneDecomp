@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archiveQuaternion_FUN_0040b3a0(float *param_1,char *param_2)
+; void __cdecl core_actor_cpp_archiveQuaternion_FUN_0040b3a0(CQuaternion4f *quat_ptr,char *property_type)
 ;
+; Parameters:
+; CQuaternion4f *  Stack[0x4]:4   quat_ptr
+; char *           Stack[0x8]:4   property_type
 ; Local Variables:
 ; undefined8       Stack[-0x28]:8  local_28
 ; undefined8       Stack[-0x20]:8  local_20
@@ -11,7 +14,7 @@
 ;
 ; XREF[3]:
 ;   core_boneguy.cpp_CBoneGuy_archive_FUN_0041d0d0 at 0041d247
-;   core_constrct.cpp_FUN_00446e30 at 0044701b
+;   core_construc.cpp_CConstruct_archive_FUN_00446e30 at 0044701b
 ;   core_platfrm.cpp_CPlatform_archive_FUN_0053a740 at 0053aa1f
 ;
 ; Referenced Globals:
@@ -50,7 +53,7 @@ section .text
     MOV EBX,dword ptr [0x007c3034]      ; 0040b3c1 | DAT_007c3034
     PUSH EBX                            ; 0040b3c7
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0040b3c8
-        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005c04b0()
+        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
     ADD ESP,0x18                        ; 0040b3cd
     CMP EAX,0x4                         ; 0040b3d0
     JNZ 0x0040b3ea                      ; 0040b3d3

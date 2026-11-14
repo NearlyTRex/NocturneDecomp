@@ -12,7 +12,7 @@
 ; undefined        Stack[-0x47]:1  local_47
 ;
 ; XREF[1]:
-;   core_netgame.cpp_FUN_0050f120 at 0050f1cd
+;   core_netgame.cpp_CNetGame_processClientFrame_FUN_0050f120 at 0050f1cd
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_005e1160

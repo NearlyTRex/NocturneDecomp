@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBindEvil * core_bindevil_cpp_CBindEvil_ctor_FUN_0040f780(CBindEvil *this_ptr)
+; CBindEvil * __cdecl core_bindevil_cpp_CBindEvil_ctor_FUN_0040f780(CBindEvil *this_ptr)
 ;
 ; Parameters:
 ; CBindEvil *      Stack[0x4]:4   this_ptr

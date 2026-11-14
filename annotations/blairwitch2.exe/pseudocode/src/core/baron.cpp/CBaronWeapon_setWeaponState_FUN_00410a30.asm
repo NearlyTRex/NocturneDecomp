@@ -16,9 +16,9 @@
 ; Called Functions:
 ;   core_baron.cpp_CBaron_attachToOwner_FUN_0040fef0
 ;   core_baron.cpp_CBaron_detachFromOwner_FUN_00410040
-;   core_baron.cpp_FUN_00410ac0
+;   core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00410ac0
 ;   core_main.c_FUN_004e4500
-;   core_weapon.cpp_FUN_0058a200
+;   core_weapon.cpp_CWeapon_setWeaponState_FUN_0058a200
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 00410a37
     PUSH EDX                            ; 00410a3b
     PUSH EBX                            ; 00410a3c
-    CALL core_weapon.cpp_FUN_0058a200   ; 00410a3d
-        ;   XREF to: 0058a200 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_FUN_0058a200(CWeapon * this_ptr, int weapon_state)
+    CALL core_weapon.cpp_CWeapon_setWeaponState_FUN_0058a200 ; 00410a3d
+        ;   XREF to: 0058a200 (UNCONDITIONAL_CALL)  ; void core_weapon.cpp_CWeapon_setWeaponState_FUN_0058a200(CWeapon * this_ptr, int weapon_state)
     ADD ESP,0x8                         ; 00410a42
     MOV EAX,dword ptr [EBX + 0x2b0]     ; 00410a45
     PUSH EBX                            ; 00410a4b
@@ -57,8 +57,8 @@ section .text
     ADD ESP,0x4                         ; 00410a85
     PUSH EBX                            ; 00410a88
         ;   Label: LAB_00410a88
-    CALL core_baron.cpp_FUN_00410ac0    ; 00410a89
-        ;   XREF to: 00410ac0 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_FUN_00410ac0(CBaronWeapon * this_ptr)
+    CALL core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00410ac0 ; 00410a89
+        ;   XREF to: 00410ac0 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00410ac0(CBaronWeapon * this_ptr)
     ADD ESP,0x4                         ; 00410a8e
     PUSH ESI                            ; 00410a91
     MOV EDX,dword ptr [EBX + 0x6d4]     ; 00410a92

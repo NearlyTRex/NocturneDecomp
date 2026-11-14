@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 21,
+    "complexity_score": 6,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 6,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 16
   },
   "cross_references": [],
@@ -31,7 +29,7 @@
     {
       "addr": "0058a200",
       "is_variadic": false,
-      "name": "core_weapon.cpp_FUN_0058a200"
+      "name": "core_weapon.cpp_CWeapon_setWeaponState_FUN_0058a200"
     }
   ],
   "globals": [],
@@ -64,6 +62,32 @@
     },
     "pcode_op_count": 30
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00509a70",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004e74b0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0050ecd0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004cf180",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -87,16 +111,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x6ec",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x6ec = 0;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
@@ -106,8 +121,8 @@
       },
       {
         "class_name": "Unknown",
-        "offset": 220,
-        "vtable_addr": "005ffe8c"
+        "offset": 228,
+        "vtable_addr": "005ffe84"
       },
       {
         "class_name": "Unknown",

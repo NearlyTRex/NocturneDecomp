@@ -7,35 +7,35 @@
 
 // Original: core_tommygun.cpp_staticInit_FUN_0056b310
 // Address: 0056b310
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_tommygun.cpp_factoryFuncTommyGun_FUN_0056b340
 // Address: 0056b340
-void factoryFuncTommyGun(void);
+CTommyGun * __cdecl factoryFuncTommyGun(void);
 
 // Original: core_tommygun.cpp_CTommyGun_getActorType_FUN_0056b360
 // Address: 0056b360
-CDemonActorType * CTommyGun::getActorType(CTommyGun *this_ptr);
+CDemonActorType * __cdecl CTommyGun::getActorType(CTommyGun *this_ptr);
 
 // Original: core_tommygun.cpp_CTommyGun_ctor_FUN_0056b370
 // Address: 0056b370
 CTommyGun * __cdecl CTommyGun::ctor(CTommyGun *this_ptr);
 
-// Original: core_tommygun.cpp_FUN_0056b410
+// Original: core_tommygun.cpp_CTommyGun_fire_FUN_0056b410
 // Address: 0056b410
-undefined4 FUN_0056b410(CDemonActor *param_1);
+int __cdecl CTommyGun::fire(CTommyGun *this_ptr);
 
 // Original: core_tommygun.cpp_CTommyGun_getDamage_FUN_0056bd10
 // Address: 0056bd10
 float __cdecl CTommyGun::getDamage(CTommyGun *this_ptr);
 
-// Original: core_tommygun.cpp_FUN_0056bd40
+// Original: core_tommygun.cpp_CTommyGun_process_FUN_0056bd40
 // Address: 0056bd40
-void FUN_0056bd40(CWeapon *param_1,float param_2);
+void __cdecl CTommyGun::process(CTommyGun *this_ptr,float delta_time);
 
-// Original: core_tommygun.cpp_FUN_0056bf80
+// Original: core_tommygun.cpp_CTommyGun_setWeaponState_FUN_0056bf80
 // Address: 0056bf80
-void FUN_0056bf80(CWeapon *param_1,int param_2);
+void __cdecl CTommyGun::setWeaponState(CTommyGun *this_ptr,int weapon_state);
 
 // Original: core_tommygun.cpp_CTommyGun_dtor_FUN_0056bfb0
 // Address: 0056bfb0

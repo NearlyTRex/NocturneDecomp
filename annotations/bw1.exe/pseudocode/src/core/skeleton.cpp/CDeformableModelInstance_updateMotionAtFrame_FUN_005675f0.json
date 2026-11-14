@@ -2,21 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 6,
+    "complexity_score": 7,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 6,
+    "pseudocode_lines": 7,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 24
+    "total_lines": 25
   },
   "cross_references": [
     {
       "addr": "00469060",
       "from_addr": "0046929b",
-      "name": "core_doc.cpp_FUN_00469060",
+      "name": "core_doc.cpp_CDoc_setup_FUN_00469060",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -28,13 +28,13 @@
     {
       "addr": "00585670",
       "from_addr": "005858ab",
-      "name": "core_stranger.cpp_FUN_00585670",
+      "name": "core_stranger.cpp_CStranger_setup_FUN_00585670",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00599150",
       "from_addr": "0059955d",
-      "name": "core_thehand.cpp_FUN_00599150",
+      "name": "core_thehand.cpp_CTheHand_process_FUN_00599150",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -52,14 +52,14 @@
   },
   "function_calls": [
     {
-      "addr": "00567620",
-      "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_00567620"
-    },
-    {
       "addr": "00569180",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_00569180"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00569180"
+    },
+    {
+      "addr": "00567620",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00567620"
     }
   ],
   "globals": [],
@@ -80,7 +80,7 @@
       {
         "call_addr": "0046929b",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_00469060",
+        "caller": "core_doc.cpp_CDoc_setup_FUN_00469060",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -91,7 +91,7 @@
       {
         "call_addr": "005858ab",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_FUN_00585670",
+        "caller": "core_stranger.cpp_CStranger_setup_FUN_00585670",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -102,7 +102,7 @@
       {
         "call_addr": "0059955d",
         "call_type": "direct",
-        "caller": "core_thehand.cpp_FUN_00599150",
+        "caller": "core_thehand.cpp_CTheHand_process_FUN_00599150",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -136,6 +136,32 @@
       "STORE": 8
     },
     "pcode_op_count": 60
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00544f50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0054c180",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0059e070",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0051b8f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 16,

@@ -11,6 +11,7 @@
     "importable":true,
     "name":"core_dpart.cpp_FUN_004663f2",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "ret_storage":{
         "invalid":true
@@ -26,13 +27,58 @@
         "start":"0046fb72"
       }
     ],
+    "conv":"__edi_esi_ebx",
     "importable":true,
     "name":"core_dstrendr.cpp_renderZBufferFill16xUnrolled_FUN_0046fb72",
-    "ret":"undefined1",
+    "ret":"void",
     "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
+      "params":[
+        {
+          "name":"left_edge",
+          "storage":{
+            "reg":"EDI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:0000001c",
+                "offset":28,
+                "size":4
+              }
+            ]
+          },
+          "type":"SSoftwareEdge*"
+        },
+        {
+          "name":"right_edge",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"SSoftwareEdge*"
+        },
+        {
+          "name":"scanline_y",
+          "storage":{
+            "reg":"EBX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:0000000c",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ]
     }
   },
   {
@@ -47,6 +93,7 @@
     "importable":true,
     "name":"crt_unknown.c_FUN_005ad0f2",
     "ret":"undefined1",
+    "sig":"default",
     "vars":{
       "locals":[
         {
@@ -164,6 +211,7 @@
     "importable":true,
     "name":"crt_kernel32.c_GetStdHandle",
     "ret":"HANDLE",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000077",
     "thunk":true,
     "vars":{
@@ -210,6 +258,7 @@
     "importable":true,
     "name":"crt_kernel32.c_SetThreadPriority",
     "ret":"BOOL",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000098",
     "thunk":true,
     "vars":{
@@ -273,6 +322,7 @@
     "name":"crt_kernel32.c_ExitThread",
     "noreturn":true,
     "ret":"void",
+    "sig":"imported",
     "thtarget":"EXTERNAL:00000055",
     "thunk":true,
     "vars":{

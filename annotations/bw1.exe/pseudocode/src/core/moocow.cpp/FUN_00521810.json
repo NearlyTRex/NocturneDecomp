@@ -2,26 +2,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 605,
+    "complexity_score": 457,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 45,
-    "suspect_count": 54,
+    "pseudocode_lines": 52,
+    "suspect_count": 39,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 204
+    "total_lines": 211
   },
   "cross_references": [
     {
       "addr": "00521990",
       "from_addr": "0052199d",
-      "name": "core_moocow.cpp_FUN_00521990",
+      "name": "core_moocow.cpp_CMooCow_processDamage_FUN_00521990",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -35,38 +34,38 @@
     ],
     "convention": "unknown",
     "name": "core_moocow.cpp_FUN_00521810",
-    "signature": "void core_moocow_cpp_FUN_00521810(CCharacter *param_1,int *param_2)"
+    "signature": "void core_moocow_cpp_FUN_00521810(CCharacter *param_1,float *param_2)"
   },
   "function_calls": [
     {
       "addr": "0040cd00",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cd00"
-    },
-    {
-      "addr": "00418940",
-      "is_variadic": false,
-      "name": "core_bodypart.cpp_FUN_00418940"
+      "name": "core_actor.cpp_randomChance_FUN_0040cd00"
     },
     {
       "addr": "00419b90",
       "is_variadic": false,
-      "name": "core_bodypart.cpp_FUN_00419b90"
+      "name": "core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90"
+    },
+    {
+      "addr": "00418940",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_createBodyPart_FUN_00418940"
     },
     {
       "addr": "004311a0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_004311a0"
+      "name": "core_charactr.cpp_CCharacter_detachBodyPart_FUN_004311a0"
     },
     {
       "addr": "00431210",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_00431210"
+      "name": "core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00431210"
     },
     {
       "addr": "004352e0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_004352e0"
+      "name": "core_charactr.cpp_CCharacter_playSoundWithCooldown_FUN_004352e0"
     }
   ],
   "globals": [
@@ -102,13 +101,13 @@
     },
     {
       "addr": "01ccf3a4",
-      "name": "g_CGameInstance.field20_0x14",
+      "name": "g_CGameInstance.blood_flag",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccf58c",
-      "name": "g_CGameInstance.field508_0x1fc",
+      "name": "g_CGameInstance.gratuitous_dismemberment",
       "type": "undefined4",
       "value": null
     }
@@ -119,7 +118,7 @@
       {
         "call_addr": "0052199d",
         "call_type": "direct",
-        "caller": "core_moocow.cpp_FUN_00521990",
+        "caller": "core_moocow.cpp_CMooCow_processDamage_FUN_00521990",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -195,7 +194,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_moocow_cpp_FUN_00521810(CCharacter *param_1,int *param_2)",
+      "text": "void core_moocow_cpp_FUN_00521810(CCharacter *param_1,float *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -203,7 +202,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_moocow_cpp_FUN_00521810(CCharacter *param_1,int *param_2)",
+      "text": "void core_moocow_cpp_FUN_00521810(CCharacter *param_1,float *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -211,7 +210,7 @@
       "line": 12,
       "match": "param_2",
       "severity": "mild",
-      "text": "if ((*param_2 == *(int *)&param_1[1].field_0xc) || (*param_2 == *(int *)&param_1[1].field_0x20)) {",
+      "text": "if ((*param_2 == *(float *)(param_1[1].base.actor_name + 0xc)) ||",
       "type": "unnamed_param"
     },
     {
@@ -219,68 +218,36 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*param_2 == *(int *)&param_1[1].field_0xc) || (*param_2 == *(int *)&param_1[1].field_0x20)) {",
+      "text": "if ((*param_2 == *(float *)(param_1[1].base.actor_name + 0xc)) ||",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((*param_2 == *(int *)&param_1[1].field_0xc) || (*param_2 == *(int *)&param_1[1].field_0x20)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*param_2 == *(int *)&param_1[1].field_0xc) || (*param_2 == *(int *)&param_1[1].field_0x20)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "if ((*param_2 == *(int *)&param_1[1].field_0xc) || (*param_2 == *(int *)&param_1[1].field_0x20)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "if ((*param_2 == *(int *)&param_1[1].field_0xc) || (*param_2 == *(int *)&param_1[1].field_0x20)) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 13,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_14 = (float)param_2[0xb];",
+      "text": "(*param_2 == param_1[1].base.location.position.x)) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x1fc",
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x1fc != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x14 == 0) {",
-      "type": "unnamed_field"
+      "text": "(*param_2 == param_1[1].base.location.position.x)) {",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 14,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_14 = param_2[0xb];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
       "match": "param_2",
       "severity": "mild",
       "text": "initial_velocity = (CVector3f *)(param_2 + 3);",
@@ -288,58 +255,34 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CVector3f *)&param_1->field_0x20,",
+      "text": "(&(param_1->base).location.position,&(param_1->base).orient,",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "((CVector3f *)&param_1->field_0x20,",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "(UOrientationVector *)&param_1->field_0x30,initial_velocity,",
+      "text": "(&(param_1->base).location.position,&(param_1->base).orient,",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "(UOrientationVector *)&param_1->field_0x30,initial_velocity,",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "(CDemonActor *)param_1,0,0,BLOOD_TYPE_RED);",
+      "text": "initial_velocity,&param_1->base,0,0,BLOOD_TYPE_RED);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_charactr_cpp_FUN_00431210(param_1,body_part,*param_2,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "core_charactr_cpp_FUN_00431210(param_1,body_part,*param_2,0);",
+      "text": "(param_1,body_part,(int)*param_2,0);",
       "type": "unnamed_param"
     },
     {
@@ -347,31 +290,15 @@
       "line": 28,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (*param_2 == *(int *)&param_1[1].field_0x20) {",
+      "text": "(param_1,body_part,(int)*param_2,0);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*param_2 == *(int *)&param_1[1].field_0x20) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "if (*param_2 == *(int *)&param_1[1].field_0x20) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 29,
-      "match": "param_1",
+      "match": "param_2",
       "severity": "mild",
-      "text": "core_charactr_cpp_FUN_004311a0(param_1,*(int *)&param_1[1].field_0xc,initial_velocity,0);",
+      "text": "if (*param_2 == param_1[1].base.location.position.x) {",
       "type": "unnamed_param"
     },
     {
@@ -379,47 +306,7 @@
       "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_charactr_cpp_FUN_004311a0(param_1,*(int *)&param_1[1].field_0xc,initial_velocity,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "core_charactr_cpp_FUN_004311a0(param_1,*(int *)&param_1[1].field_0xc,initial_velocity,0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_charactr_cpp_FUN_004311a0(param_1,*(int *)&param_1[1].field_0x10,initial_velocity,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_charactr_cpp_FUN_004311a0(param_1,*(int *)&param_1[1].field_0x10,initial_velocity,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "core_charactr_cpp_FUN_004311a0(param_1,*(int *)&param_1[1].field_0x10,initial_velocity,0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_charactr_cpp_FUN_004311a0(param_1,*(int *)&param_1[1].field_0x14,initial_velocity,0);",
+      "text": "if (*param_2 == param_1[1].base.location.position.x) {",
       "type": "unnamed_param"
     },
     {
@@ -427,47 +314,15 @@
       "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_charactr_cpp_FUN_004311a0(param_1,*(int *)&param_1[1].field_0x14,initial_velocity,0);",
+      "text": "(param_1,*(int *)(param_1[1].base.actor_name + 0xc),initial_velocity,0);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Unnamed function parameter",
       "line": 31,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "core_charactr_cpp_FUN_004311a0(param_1,*(int *)&param_1[1].field_0x14,initial_velocity,0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_charactr_cpp_FUN_004311a0(param_1,*(int *)&param_1[1].field_0x18,initial_velocity,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_charactr_cpp_FUN_004311a0(param_1,*(int *)&param_1[1].field_0x18,initial_velocity,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "core_charactr_cpp_FUN_004311a0(param_1,*(int *)&param_1[1].field_0x18,initial_velocity,0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_charactr_cpp_FUN_004311a0(param_1,*(int *)&param_1[1].field_0x1c,initial_velocity,0);",
+      "text": "(param_1,*(int *)(param_1[1].base.actor_name + 0xc),initial_velocity,0);",
       "type": "unnamed_param"
     },
     {
@@ -475,23 +330,31 @@
       "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_charactr_cpp_FUN_004311a0(param_1,*(int *)&param_1[1].field_0x1c,initial_velocity,0);",
+      "text": "(param_1,*(int *)(param_1[1].base.actor_name + 0x10),initial_velocity,0);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Unnamed function parameter",
       "line": 33,
-      "match": "field_0x1c",
+      "match": "param_1",
       "severity": "mild",
-      "text": "core_charactr_cpp_FUN_004311a0(param_1,*(int *)&param_1[1].field_0x1c,initial_velocity,0);",
-      "type": "unnamed_field"
+      "text": "(param_1,*(int *)(param_1[1].base.actor_name + 0x10),initial_velocity,0);",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_charactr_cpp_FUN_004352e0(param_1,\"limb?.wav\");",
+      "text": "(param_1,*(int *)(param_1[1].base.actor_name + 0x14),initial_velocity,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,*(int *)(param_1[1].base.actor_name + 0x14),initial_velocity,0);",
       "type": "unnamed_param"
     },
     {
@@ -499,7 +362,7 @@
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(&param_1->field_0x2298 + *(int *)&param_1[1].field_0xc * 4) == 0) {",
+      "text": "(param_1,*(int *)(param_1[1].base.actor_name + 0x18),initial_velocity,0);",
       "type": "unnamed_param"
     },
     {
@@ -507,47 +370,31 @@
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(&param_1->field_0x2298 + *(int *)&param_1[1].field_0xc * 4) == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x2298",
-      "severity": "mild",
-      "text": "if (*(int *)(&param_1->field_0x2298 + *(int *)&param_1[1].field_0xc * 4) == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "if (*(int *)(&param_1->field_0x2298 + *(int *)&param_1[1].field_0xc * 4) == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[1] = 0x461c3c00;",
+      "text": "(param_1,*(int *)(param_1[1].base.actor_name + 0x18),initial_velocity,0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_2",
+      "line": 39,
+      "match": "param_1",
       "severity": "mild",
-      "text": "param_2[2] = (int)((float)param_2[2] * (float)_DAT_005ea3ea);",
+      "text": "(param_1,*(int *)(param_1[1].base.actor_name + 0x1c),initial_velocity,0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_2",
+      "line": 39,
+      "match": "param_1",
       "severity": "mild",
-      "text": "param_2[2] = (int)((float)param_2[2] * (float)_DAT_005ea3ea);",
+      "text": "(param_1,*(int *)(param_1[1].base.actor_name + 0x1c),initial_velocity,0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_004352e0(param_1,\"limb?.wav\");",
       "type": "unnamed_param"
     },
     {
@@ -555,39 +402,23 @@
       "line": 43,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1[1].field_0xc == *param_2) {",
+      "text": "if ((param_1->model).part_data.visibility_flags[*(int *)(param_1[1].base.actor_name + 0xc)] ==",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 43,
-      "match": "param_2",
+      "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1[1].field_0xc == *param_2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1[1].field_0xc == *param_2) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2[1] = (int)((float)param_2[1] * (float)_DAT_005ea3fa);",
+      "text": "if ((param_1->model).part_data.visibility_flags[*(int *)(param_1[1].base.actor_name + 0xc)] ==",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 45,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[1] = (int)((float)param_2[1] * (float)_DAT_005ea3fa);",
+      "text": "param_2[1] = 9999.0;",
       "type": "unnamed_param"
     },
     {
@@ -595,7 +426,7 @@
       "line": 47,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[1] = (int)((float)param_2[1] * (float)_DAT_005ea3f2);",
+      "text": "param_2[2] = param_2[2] * (float)_DAT_005ea3ea;",
       "type": "unnamed_param"
     },
     {
@@ -603,7 +434,55 @@
       "line": 47,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2[1] = (int)((float)param_2[1] * (float)_DAT_005ea3f2);",
+      "text": "param_2[2] = param_2[2] * (float)_DAT_005ea3ea;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*(float *)(param_1[1].base.actor_name + 0xc) == *param_2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (*(float *)(param_1[1].base.actor_name + 0xc) == *param_2) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2[1] = param_2[1] * (float)_DAT_005ea3fa;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2[1] = param_2[1] * (float)_DAT_005ea3fa;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2[1] = param_2[1] * (float)_DAT_005ea3f2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "param_2[1] = param_2[1] * (float)_DAT_005ea3f2;",
       "type": "unnamed_param"
     },
     {

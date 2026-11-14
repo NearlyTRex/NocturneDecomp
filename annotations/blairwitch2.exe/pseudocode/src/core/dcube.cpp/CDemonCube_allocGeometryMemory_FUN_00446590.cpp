@@ -11,40 +11,43 @@
 void __cdecl core_dcube_cpp_CDemonCube_allocGeometryMemory_FUN_00446590(CDemonCube *this_ptr)
 
 {
-  int iVar1;
-  void *pvVar2;
+  CVector3f *pCVar1;
+  CDemonCubeTriangle *pCVar2;
+  void *pvVar3;
+  SVoxelGrid *pSVar4;
   
-  iVar1 = FUN_005b8df8(*(int *)&this_ptr->field_0x20 * 0xc);
-  *(int *)&this_ptr->field_0x24 = iVar1;
-  if (iVar1 == 0) {
+  pCVar1 = (CVector3f *)operator_new_array(this_ptr->vertex_count * 0xc);
+  this_ptr->vertex_buffer = pCVar1;
+  if (pCVar1 == (CVector3f *)0x0) {
     _DAT_01d046a0 = "..\\core\\dcube.cpp";
     _DAT_01d046a4 = 0x600;
     core_main_c_FUN_004e4500("CDemonCube::allocMemory - Out of vertex memory");
   }
-  iVar1 = FUN_005b8df8(*(int *)&this_ptr->field_0x28 << 5);
-  *(int *)&this_ptr->field_0x2c = iVar1;
-  if (iVar1 == 0) {
+  pCVar2 = (CDemonCubeTriangle *)
+           operator_new_array(this_ptr->triangle_count << 5);
+  this_ptr->triangle_buffer = pCVar2;
+  if (pCVar2 == (CDemonCubeTriangle *)0x0) {
     _DAT_01d046a0 = "..\\core\\dcube.cpp";
     _DAT_01d046a4 = 0x602;
     core_main_c_FUN_004e4500("CDemonCube::allocMemory - Out of tri memory");
   }
-  pvVar2 = FUN_005b8580(*(ulong *)&this_ptr->field_0x28);
-  *(void **)&this_ptr->field_0x30 = pvVar2;
-  if (pvVar2 == (void *)0x0) {
+  pvVar3 = malloc(this_ptr->triangle_count);
+  this_ptr->ground_type_memory = pvVar3;
+  if (pvVar3 == (void *)0x0) {
     _DAT_01d046a0 = "..\\core\\dcube.cpp";
     _DAT_01d046a4 = 0x604;
     core_main_c_FUN_004e4500("CDemonCube::allocMemory - Out of ground type memory");
   }
-  pvVar2 = FUN_005b8580(0x40);
-  *(void **)this_ptr = pvVar2;
-  if (pvVar2 == (void *)0x0) {
+  pSVar4 = (SVoxelGrid *)malloc(0x40);
+  this_ptr->voxel_buffer1 = pSVar4;
+  if (pSVar4 == (SVoxelGrid *)0x0) {
     _DAT_01d046a0 = "..\\core\\dcube.cpp";
     _DAT_01d046a4 = 0x606;
     core_main_c_FUN_004e4500("CDemonCube::allocMemory - Out of voxel memory");
   }
-  pvVar2 = FUN_005b8580(0x40);
-  *(void **)&this_ptr->field_0x4 = pvVar2;
-  if (pvVar2 != (void *)0x0) {
+  pSVar4 = (SVoxelGrid *)malloc(0x40);
+  this_ptr->voxel_buffer2 = pSVar4;
+  if (pSVar4 != (SVoxelGrid *)0x0) {
     return;
   }
   _DAT_01d046a0 = "..\\core\\dcube.cpp";

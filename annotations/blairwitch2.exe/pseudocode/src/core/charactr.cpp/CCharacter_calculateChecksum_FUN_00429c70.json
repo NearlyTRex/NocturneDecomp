@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 69,
+    "complexity_score": 16,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 14,
-    "suspect_count": 5,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 66
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 68
   },
   "cross_references": [],
   "function": {
@@ -83,6 +81,32 @@
     },
     "pcode_op_count": 187
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00433c60",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00433130",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0042dde0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00429f70",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -106,48 +130,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x25a8",
-      "severity": "mild",
-      "text": "core_actor_cpp_crc32ProcessInt_FUN_0040d2a0(out_crc,*(int *)&this_ptr->field_0x25a8);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x2514",
-      "severity": "mild",
-      "text": "if (this_ptr->field_0x2514 == '\\0') {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x2514",
-      "severity": "mild",
-      "text": "core_actor_cpp_crc32ProcessString_FUN_0040d2e0(out_crc,&this_ptr->field_0x2514);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "string = (char *)core_motion_cpp_FUN_005035c0(&this_ptr->field_0x2b4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x2bc",
-      "severity": "mild",
-      "text": "core_actor_cpp_crc32ProcessInt_FUN_0040d2a0(out_crc,*(int *)&this_ptr->field_0x2bc);",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -11,11 +11,11 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[5]:
-;   core_bodypart.cpp_FUN_00415350 at 00415466
-;   core_boxactor.cpp_FUN_0041f360 at 0041f5c3
-;   core_fire.cpp_FUN_0049d090 at 0049d24d
-;   core_simbox.cpp_FUN_005473c0 at 0054755a
-;   core_weapon.cpp_FUN_0057b160 at 0057b1c9
+;   core_bodypart.cpp_CBodyPart_process_FUN_00415350 at 00415466
+;   core_boxactor.cpp_CBoxActor_process_FUN_0041f360 at 0041f5c3
+;   core_fire.cpp_CToss_process_FUN_0049d090 at 0049d24d
+;   core_simbox.cpp_CSimBox_process_FUN_005473c0 at 0054755a
+;   core_weapon.cpp_CWeapon_process_FUN_0057b160 at 0057b1c9
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7381

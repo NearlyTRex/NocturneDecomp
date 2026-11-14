@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 65,
+    "complexity_score": 40,
     "cross_reference_count": 13,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 25,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "unnamed_field"
+      "unrolled_strcpy"
     ],
     "total_lines": 73
   },
@@ -19,31 +18,31 @@
     {
       "addr": "00410640",
       "from_addr": "004106b2",
-      "name": "core_baron.cpp_FUN_00410640",
+      "name": "core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00410640",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00418940",
       "from_addr": "00418a01",
-      "name": "core_bodypart.cpp_FUN_00418940",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004d2540",
-      "from_addr": "004d255d",
-      "name": "core_game.cpp_FUN_004d2540",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004d25fe",
-      "from_addr": "004d2633",
-      "name": "core_game.cpp_FUN_004d25fe",
+      "name": "core_bodypart.cpp_createBodyPart_FUN_00418940",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d27b0",
       "from_addr": "004d413d",
-      "name": "core_game.cpp_FUN_004d27b0",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d2600",
+      "from_addr": "004d2633",
+      "name": "core_game.cpp_giveHeroWeaponAmmo_FUN_004d2600",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d2540",
+      "from_addr": "004d255d",
+      "name": "core_game.cpp_giveHeroWeapon_FUN_004d2540",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -85,13 +84,13 @@
     {
       "addr": "00592320",
       "from_addr": "0059263d",
-      "name": "core_succubus.cpp_FUN_00592320",
+      "name": "core_succubus.cpp_CSuccubus_process_FUN_00592320",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a7b50",
       "from_addr": "005a8295",
-      "name": "core_vehicle.cpp_FUN_005a7b50",
+      "name": "core_vehicle.cpp_CVehicle_process_FUN_005a7b50",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -111,7 +110,7 @@
     {
       "addr": "00408830",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408830"
+      "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408830"
     },
     {
       "addr": "0051bcc0",
@@ -137,7 +136,7 @@
       {
         "call_addr": "004d413d",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d27b0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -148,7 +147,7 @@
       {
         "call_addr": "004d4195",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d27b0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -159,7 +158,7 @@
       {
         "call_addr": "004d41ed",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d27b0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -170,7 +169,7 @@
       {
         "call_addr": "004d4244",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d27b0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -181,7 +180,7 @@
       {
         "call_addr": "004d5237",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d27b0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -192,7 +191,7 @@
       {
         "call_addr": "004d5331",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d27b0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -203,7 +202,7 @@
       {
         "call_addr": "004d5d31",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d27b0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -214,7 +213,7 @@
       {
         "call_addr": "004d5d88",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d27b0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -225,7 +224,7 @@
       {
         "call_addr": "004d5ddf",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d27b0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -263,6 +262,32 @@
       "STORE": 13
     },
     "pcode_op_count": 162
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004fcda0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004f7530",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00524700",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004d9720",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 56,
@@ -320,28 +345,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x1",
-      "severity": "mild",
-      "text": "actor->field_0x1 = cVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x2",
-      "severity": "mild",
-      "text": "actor = (CDemonActor *)&actor->field_0x2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `actor` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&actor->owner`). Replace `actor->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 25,
-      "match": "actor = (T *)&actor->FIELD",
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 16,
+      "match": "do {",
       "severity": "moderate",
-      "text": "actor = (CDemonActor *)&actor->field_0x2;",
-      "type": "shadow_pointer_walk"
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

@@ -12,14 +12,15 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_004735c0(CDemon
 
 {
   uint uVar1;
-  int iVar2;
+  CDemonCube *pCVar2;
+  int iVar3;
   
-  iVar2 = *(int *)&this_ptr->field_0x48 *
-          *(int *)&this_ptr->field_0x40 * *(int *)&this_ptr->field_0x44;
-  uVar1 = FUN_005a40df(iVar2 * 0x34 + 4,iVar2,&g_CDemonCubeTypeInfo);
-  iVar2 = __vec_new(uVar1);
-  *(int *)&this_ptr->field_0x50 = iVar2;
-  if (iVar2 != 0) {
+  iVar3 = (this_ptr->grid_coord).z * (this_ptr->grid_coord).x * (this_ptr->grid_coord).y;
+  uVar1 = operator_new_array(iVar3 * 0x34 + 4,iVar3,&g_CDemonCubeTypeInfo)
+  ;
+  pCVar2 = (CDemonCube *)__vec_new(uVar1);
+  this_ptr->cube_data = pCVar2;
+  if (pCVar2 != (CDemonCube *)0x0) {
     return;
   }
   _DAT_01d71de0 = "..\\core\\dtrace.cpp";

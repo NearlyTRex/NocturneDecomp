@@ -1,76 +1,5 @@
 [
   {
-    "addr":"0043852c",
-    "calls":[
-      "004380a0"
-    ],
-    "conv":"unknown",
-    "instructions":18,
-    "method":"FUN_0043852c",
-    "name":"cockpit_ckptutil.c_FUN_0043852c",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"cockpit/ckptutil.c",
-    "variadic":false
-  },
-  {
-    "addr":"004414ac",
-    "calls":[
-      "00441500",
-      "00483ce0"
-    ],
-    "conv":"unknown",
-    "instructions":27,
-    "method":"FUN_004414ac",
-    "name":"core_cloth.cpp_FUN_004414ac",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"core/cloth.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"0045f12c",
-    "conv":"unknown",
-    "instructions":1,
-    "method":"FUN_0045f12c",
-    "name":"core_dimage.cpp_FUN_0045f12c",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"core/dimage.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"004824ac",
-    "calls":[
-      "00403920",
-      "00481aa0"
-    ],
-    "conv":"unknown",
-    "instructions":45,
-    "method":"FUN_004824ac",
-    "name":"engine_drender.cpp_FUN_004824ac",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"engine/drender.cpp",
-    "variadic":false
-  },
-  {
     "addr":"00487eac",
     "callers":[
       "00453ed0"
@@ -79,10 +8,52 @@
     "instructions":256,
     "method":"blendHBilerpLightmapSharedU64toU64pBB12Px2MMX",
     "name":"core_dstrendr.cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_00487eac",
+    "params":[
+      {
+        "name":"output_buffer",
+        "type":{
+          "kind":"builtin",
+          "name":"ulonglong",
+          "ptr":1
+        }
+      },
+      {
+        "name":"texture_buffer",
+        "type":{
+          "kind":"builtin",
+          "name":"ulonglong",
+          "ptr":1
+        }
+      },
+      {
+        "name":"texture_indices",
+        "type":{
+          "kind":"builtin",
+          "name":"byte",
+          "ptr":1
+        }
+      },
+      {
+        "name":"lightmap_indices",
+        "type":{
+          "kind":"builtin",
+          "name":"byte",
+          "ptr":1
+        }
+      },
+      {
+        "name":"pixel_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/dstrendr.cpp",
@@ -93,62 +64,14 @@
     "conv":"unknown",
     "instructions":58,
     "method":"FUN_004ab1ac",
-    "name":"unkafter_mimic.cpp_FUN_004ab1ac",
+    "name":"crt_watcom.c_FUN_004ab1ac",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/mimic.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"0051202c",
-    "calls":[
-      "005030e0"
-    ],
-    "conv":"unknown",
-    "instructions":31,
-    "method":"FUN_0051202c",
-    "name":"engine_mini3d.cpp_FUN_0051202c",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"engine/mini3d.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"005145ac",
-    "conv":"unknown",
-    "instructions":1,
-    "method":"FUN_005145ac",
-    "name":"engine_mini3d.cpp_FUN_005145ac",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"engine/mini3d.cpp",
-    "variadic":false
-  },
-  {
-    "addr":"0057daac",
-    "conv":"unknown",
-    "instructions":11,
-    "method":"FUN_0057daac",
-    "name":"core_sound.cpp_FUN_0057daac",
-    "receiver":false,
-    "ret":{
-      "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
-    },
-    "tu":"core/sound.cpp",
+    "tu":"crt/watcom.c",
     "variadic":false
   },
   {
@@ -273,7 +196,7 @@
       "004bcba0",
       "004f4d10",
       "004f4db0",
-      "004f4e6e",
+      "004f4e70",
       "0051bcc0",
       "00528410",
       "00543610",
@@ -471,14 +394,14 @@
     ],
     "instructions":4,
     "method":"FUN_005cabac",
-    "name":"unkafter_zombie.cpp_FUN_005cabac",
+    "name":"crt_unknown.c_FUN_005cabac",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/zombie.cpp",
+    "tu":"crt/unknown.c",
     "variadic":false
   },
   {
@@ -488,15 +411,15 @@
     ],
     "conv":"__cdecl",
     "instructions":4,
-    "method":"enableTextWrap",
-    "name":"engine_2d.c_enableTextWrap_FUN_005cd2ac",
+    "method":"FUN_005cd2ac",
+    "name":"crt_signal.c_FUN_005cd2ac",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"void",
       "ptr":0
     },
-    "tu":"engine/2d.c",
+    "tu":"crt/signal.c",
     "variadic":false
   }
 ]

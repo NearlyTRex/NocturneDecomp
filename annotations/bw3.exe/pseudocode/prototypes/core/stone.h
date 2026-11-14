@@ -7,27 +7,27 @@
 
 // Original: core_stone.cpp_staticInit_FUN_005688c0
 // Address: 005688c0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_stone.cpp_factoryFuncTempleStone_FUN_005688f0
 // Address: 005688f0
-void factoryFuncTempleStone(void);
+CTempleStone * __cdecl factoryFuncTempleStone(void);
 
 // Original: core_stone.cpp_CTempleStone_getActorType_FUN_00568910
 // Address: 00568910
-CDemonActorType * CTempleStone::getActorType(CTempleStone *this_ptr);
+CDemonActorType * __cdecl CTempleStone::getActorType(CTempleStone *this_ptr);
 
 // Original: core_stone.cpp_CTempleStone_ctor_FUN_00568920
 // Address: 00568920
 CTempleStone * __cdecl CTempleStone::ctor(CTempleStone *this_ptr);
 
-// Original: core_stone.cpp_FUN_00568950
+// Original: core_stone.cpp_CTempleStone_archive_FUN_00568950
 // Address: 00568950
-void FUN_00568950(CBoxActor *param_1);
+void __cdecl CTempleStone::archive(CTempleStone *this_ptr);
 
-// Original: core_stone.cpp_FUN_00568980
+// Original: core_stone.cpp_CTempleStone_canPickup_FUN_00568980
 // Address: 00568980
-undefined4 FUN_00568980(int param_1,CDemonActor *param_2);
+int __cdecl CTempleStone::canPickup(CTempleStone *this_ptr,CDemonActor *picker);
 
 // Original: core_stone.cpp_CTempleStone_dtor_FUN_005689e0
 // Address: 005689e0

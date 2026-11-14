@@ -4,13 +4,44 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CColor3i.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CVector3f.h"
+#include "types/enums/EWaterActorState.h"
+#include "types/structs/SMRGLHeaderPrimitive.h"
+#include "types/structs/SMRGLPrimitiveQuad.h"
+#include "types/structs/SMRGLVertex.h"
+#include "types/structs/SWaterVertex.h"
 
 // Structure: CWaterActor
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x2b394 (177044 bytes)
 #pragma pack(push, 1)
 typedef struct CWaterActor {
-    char field_0[177044]; // 0x0
+    CDemonActor base; // 0x0
+    CVector3f size; // 0x2b4
+    int opacity; // 0x2c0
+    float height_delta; // 0x2c4
+    float time_to_move; // 0x2c8
+    float time_to_move_down; // 0x2cc
+    char move_sound[32]; // 0x2d0
+    char move_down_sound[32]; // 0x2f0
+    char move_event[100]; // 0x310
+    char move_down_event[100]; // 0x374
+    float param; // 0x3d8
+    EWaterActorState state; // 0x3dc
+    float patch_size; // 0x3e0
+    int round_flag; // 0x3e4
+    CColor3i color; // 0x3e8
+    int vertex_count; // 0x3f4
+    SWaterVertex vertices[1000]; // 0x3f8
+    float inv_delta_time; // 0x80f8
+    int grid_cols; // 0x80fc
+    int grid_rows; // 0x8100
+    SMRGLPrimitiveQuad primitives[2000]; // 0x8104
+    int texture_frame; // 0x2b384
+    int texture_anim_accum; // 0x2b388
+    float base_y; // 0x2b38c
+    int primitive_count; // 0x2b390
 } CWaterActor;
 #pragma pack(pop)
 

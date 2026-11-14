@@ -1,20 +1,20 @@
 // Name: core_firestff.cpp_factoryFuncFirestaff_FUN_004a4aa0
 // Address: 004a4aa0
 // Address Range: [[004a4aa0, 004a4abb]]
-// Convention: unknown
-// Signature: void core_firestff_cpp_factoryFuncFirestaff_FUN_004a4aa0(void)
+// Convention: __cdecl
+// Signature: CFirestaff * __cdecl core_firestff_cpp_factoryFuncFirestaff_FUN_004a4aa0(void)
 
 #include "nocturne.h"
 
-void core_firestff_cpp_factoryFuncFirestaff_FUN_004a4aa0(void)
+CFirestaff * __cdecl core_firestff_cpp_factoryFuncFirestaff_FUN_004a4aa0(void)
 
 {
-  CFirestaff *this_ptr;
+  CFirestaff *pCVar1;
   
-  this_ptr = (CFirestaff *)FUN_005a3cb2(0x25c8);
-  if (this_ptr == (CFirestaff *)0x0) {
-    return;
+  pCVar1 = (CFirestaff *)operator_new(0x25c8);
+  if (pCVar1 == (CFirestaff *)0x0) {
+    return (CFirestaff *)0x0;
   }
-  core_firestff_cpp_CFirestaff_ctor_FUN_004a4ad0(this_ptr);
-  return;
+  pCVar1 = core_firestff_cpp_CFirestaff_ctor_FUN_004a4ad0(pCVar1);
+  return pCVar1;
 }

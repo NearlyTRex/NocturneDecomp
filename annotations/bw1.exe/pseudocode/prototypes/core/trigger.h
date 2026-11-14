@@ -7,47 +7,47 @@
 
 // Original: core_trigger.cpp_staticInit_FUN_0059af50
 // Address: 0059af50
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_trigger.cpp_factoryFuncTrigger_FUN_0059af80
 // Address: 0059af80
-void factoryFuncTrigger(void);
+CTrigger * __cdecl factoryFuncTrigger(void);
 
 // Original: core_trigger.cpp_CTrigger_getActorType_FUN_0059afa0
 // Address: 0059afa0
-CDemonActorType * CTrigger::getActorType(CTrigger *this_ptr);
+CDemonActorType * __cdecl CTrigger::getActorType(CTrigger *this_ptr);
 
 // Original: core_trigger.cpp_CTrigger_ctor_FUN_0059afb0
 // Address: 0059afb0
 CTrigger * __cdecl CTrigger::ctor(CTrigger *this_ptr);
 
-// Original: core_trigger.cpp_FUN_0059b100
+// Original: core_trigger.cpp_CTrigger_setup_FUN_0059b100
 // Address: 0059b100
-void __cdecl FUN_0059b100(CTrigger *this_ptr);
+void __cdecl CTrigger::setup(CTrigger *this_ptr);
 
-// Original: core_trigger.cpp_FUN_0059b240
+// Original: core_trigger.cpp_CTrigger_process_FUN_0059b240
 // Address: 0059b240
-void FUN_0059b240(CDemonActor *param_1,float param_2);
+void __cdecl CTrigger::process(CTrigger *this_ptr,float delta_time);
 
-// Original: core_trigger.cpp_FUN_0059b8c0
+// Original: core_trigger.cpp_CTrigger_renderTransparent_FUN_0059b8c0
 // Address: 0059b8c0
-undefined4 FUN_0059b8c0(void);
+int __cdecl CTrigger::renderTransparent(CTrigger *this_ptr);
 
-// Original: core_trigger.cpp_FUN_0059b8d0
+// Original: core_trigger.cpp_CTrigger_getBoundingBox_FUN_0059b8d0
 // Address: 0059b8d0
-void FUN_0059b8d0(int param_1);
+CBoundingBox3D * __cdecl CTrigger::getBoundingBox(CTrigger *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_trigger.cpp_CTrigger_archive_FUN_0059b950
 // Address: 0059b950
 void __cdecl CTrigger::archive(CTrigger *this_ptr);
 
-// Original: core_trigger.cpp_FUN_0059bc10
+// Original: core_trigger.cpp_CTrigger_getCollisionType_FUN_0059bc10
 // Address: 0059bc10
-undefined4 FUN_0059bc10(int param_1,int *param_2);
+ECollisionType __cdecl CTrigger::getCollisionType(CTrigger *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_trigger.cpp_FUN_0059bc70
+// Original: core_trigger.cpp_CTrigger_evaluateTriggerCondition_FUN_0059bc70
 // Address: 0059bc70
-undefined4 FUN_0059bc70(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4);
+float __cdecl CTrigger::evaluateTriggerCondition(CTrigger *this_ptr,CDemonActor *querying_actor,CVector3f *query_position);
 
 // Original: core_trigger.cpp_CTrigger_processActionButton_FUN_0059bd50
 // Address: 0059bd50
@@ -61,25 +61,25 @@ void __cdecl CTrigger::onLaserHit(CTrigger *this_ptr,SLaserInfo *laser_info);
 // Address: 0059bdd0
 void __cdecl CTrigger::onProjectileHit(CTrigger *this_ptr);
 
-// Original: core_trigger.cpp_FUN_0059bdf0
+// Original: core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_0059bdf0
 // Address: 0059bdf0
-int __cdecl FUN_0059bdf0(CTrigger *this_ptr,CDemonActor *actor);
+int __cdecl CTrigger::acceptsDamageFrom(CTrigger *this_ptr,CDemonActor *actor);
 
-// Original: core_trigger.cpp_FUN_0059be30
+// Original: core_trigger.cpp_CTrigger_applyDamage_FUN_0059be30
 // Address: 0059be30
-void __cdecl FUN_0059be30(CTrigger *this_ptr,float hit_points);
+void __cdecl CTrigger::applyDamage(CTrigger *this_ptr,float hit_points);
 
 // Original: core_trigger.cpp_FUN_0059bee0
 // Address: 0059bee0
 void FUN_0059bee0(int param_1);
 
-// Original: core_trigger.cpp_FUN_0059bfb0
+// Original: core_trigger.cpp_CTrigger_getTargetPoints_FUN_0059bfb0
 // Address: 0059bfb0
-undefined4 FUN_0059bfb0(int param_1,float *param_2);
+int __cdecl CTrigger::getTargetPoints(CTrigger *this_ptr,CVector3f *out_points_array);
 
 // Original: core_trigger.cpp_FUN_0059c090
 // Address: 0059c090
-undefined4 FUN_0059c090(int param_1,int param_2);
+undefined4 FUN_0059c090(int param_1,CDemonActor *param_2);
 
 // Original: core_trigger.cpp_CTrigger_dtor_FUN_0059c420
 // Address: 0059c420

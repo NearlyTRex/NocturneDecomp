@@ -7,11 +7,11 @@
 ; CBoneGuy *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[5]:
+;   core_boneguy.cpp_CBaalSkel_ctor_FUN_00419ac0 at 00419ac6
 ;   core_boneguy.cpp_CSkeletonDemon_ctor_FUN_00419a20 at 00419a26
 ;   core_boneguy.cpp_CSkeletonForest_ctor_FUN_004198e0 at 004198e6
 ;   core_boneguy.cpp_CSkeletonIndian_ctor_FUN_00419980 at 00419986
 ;   core_boneguy.cpp_factoryFuncBoneGuy_FUN_00417050 at 00417063
-;   unkafter_boneguy.cpp_CBaalSkel_ctor_FUN_00419ac0 at 00419ac6
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b6d92
@@ -19,11 +19,11 @@
 ;   undefined4 DAT_005dc140
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040ce40
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
-;   core_boneguy.cpp_FUN_00417240
+;   core_boneguy.cpp_hsvToRgb_FUN_00417240
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00488fd0
-;   core_skeleton.cpp_FUN_0054eae0
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0
 ;   crt_math.c_round_FUN_005a3120
 ;   crt_memory.c___arrinit_FUN_005a30d7
 ;   crt_memory.c_memset_FUN_005a28f0
@@ -47,15 +47,15 @@ section .text
     ADD EAX,0xd0f0                      ; 0041741a
     PUSH EAX                            ; 0041741f
     CALL crt_memory.c___arrinit_FUN_005a30d7 ; 00417420
-        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005a30d7()
+        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005a30d7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00417425
     LEA EBX,[EAX + 0xffff2f10]          ; 00417428
     PUSH 0x5b6d7a                       ; 0041742e
     LEA EAX,[EBX + 0x158]               ; 00417433
     PUSH EAX                            ; 00417439
     MOV dword ptr [EBX + 0x154],0x5dc154 ; 0041743a
-    CALL core_skeleton.cpp_FUN_0054eae0 ; 00417444
-        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054eae0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 ; 00417444
+        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x326c],0x3f19999a ; 00417449
     MOV dword ptr [EBX + 0x3270],0x3f666666 ; 00417453
     MOV ESI,0x5b6d86                    ; 0041745d
@@ -109,24 +109,24 @@ section .text
     MOV dword ptr [EBX + 0xd054],EAX    ; 0041753c
     PUSH 0x437f0000                     ; 00417542
     PUSH 0x0                            ; 00417547
-    CALL core_actor.cpp_FUN_0040ce40    ; 00417549
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 00417549
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x2c],EAX      ; 0041754e
     FLD float ptr [ESP + 0x2c]          ; 00417552
     ADD ESP,0x8                         ; 00417556
     PUSH 0x42200000                     ; 00417559
     PUSH 0x0                            ; 0041755e
     FSTP float ptr [ESP + 0x14]         ; 00417560
-    CALL core_actor.cpp_FUN_0040ce40    ; 00417564
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 00417564
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x2c],EAX      ; 00417569
     FLD float ptr [ESP + 0x2c]          ; 0041756d
     ADD ESP,0x8                         ; 00417571
     PUSH 0x43800000                     ; 00417574
     PUSH 0x42d40000                     ; 00417579
     FSTP float ptr [ESP + 0x18]         ; 0041757e
-    CALL core_actor.cpp_FUN_0040ce40    ; 00417582
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 00417582
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x2c],EAX      ; 00417587
     LEA ESI,[ESP + 0x20]                ; 0041758b
     FLD float ptr [ESP + 0x2c]          ; 0041758f
@@ -135,8 +135,8 @@ section .text
     MOV EDI,ESP                         ; 0041759a
     PUSH EAX                            ; 0041759c
     FSTP float ptr [ESP + 0x18]         ; 0041759d
-    CALL core_boneguy.cpp_FUN_00417240  ; 004175a1
-        ;   XREF to: 00417240 (UNCONDITIONAL_CALL)  ; undefined core_boneguy.cpp_FUN_00417240()
+    CALL core_boneguy.cpp_hsvToRgb_FUN_00417240 ; 004175a1
+        ;   XREF to: 00417240 (UNCONDITIONAL_CALL)  ; undefined core_boneguy.cpp_hsvToRgb_FUN_00417240()
     LEA ESI,[ESP + 0x1c]                ; 004175a6
     ADD ESP,0x4                         ; 004175aa
     MOVSD ES:EDI,ESI                    ; 004175ad

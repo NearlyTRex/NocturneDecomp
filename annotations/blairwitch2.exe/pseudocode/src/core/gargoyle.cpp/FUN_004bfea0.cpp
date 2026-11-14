@@ -41,7 +41,7 @@ uint core_gargoyle_cpp_FUN_004bfea0(int param_1)
       local_54 = local_60;
       local_50 = local_5c;
       local_4c = local_58;
-      core_vecdir_cpp_FUN_005838f0(&stack0xffffffac);
+      core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&stack0xffffffac);
       local_24 = local_48;
       (&stack0xffffffe0)[(uint)bVar5 * 0xfffffffe] =
            (float)*(uint *)((int)&stack0xffffffbc + (uint)bVar5 * 0xfffffffe * 4);
@@ -52,8 +52,8 @@ uint core_gargoyle_cpp_FUN_004bfea0(int param_1)
         local_50 = local_20;
         local_4c = local_1c;
       }
-      fVar4 = (float)core_actor_cpp_FUN_0040d0c0
-                               (*(float *)(*(int *)(param_1 + 0x10a78) + 0x34) - local_50);
+      fVar4 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0
+                        (*(float *)(*(int *)(param_1 + 0x10a78) + 0x34) - local_50);
       if ((fVar4 < _DAT_005d8d62) || (_DAT_005d8d66 < fVar4)) {
         return 1;
       }

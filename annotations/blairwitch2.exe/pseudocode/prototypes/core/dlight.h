@@ -7,7 +7,7 @@
 
 // Original: core_dlight.cpp_staticInit_FUN_00449c50
 // Address: 00449c50
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_dlight.cpp_CDemonLight_ctor_FUN_00449c70
 // Address: 00449c70
@@ -21,9 +21,9 @@ CDemonLight * __cdecl CDemonLight::dtor(CDemonLight *this_ptr,uint flags);
 // Address: 00449d90
 void __cdecl CDemonLight::init(CDemonLight *this_ptr);
 
-// Original: core_dlight.cpp_FUN_00449e70
+// Original: core_dlight.cpp_CDemonLight_free_FUN_00449e70
 // Address: 00449e70
-void FUN_00449e70(CDemonLight *param_1);
+void __cdecl CDemonLight::free(CDemonLight *this_ptr);
 
 // Original: core_dlight.cpp_getRestoreMemory_FUN_00449ef0
 // Address: 00449ef0
@@ -45,9 +45,9 @@ void __cdecl CDemonLight::freeMasterZBuffer(CDemonLight *this_ptr);
 // Address: 0044a020
 void __cdecl CDemonLight::beginScene(CDemonLight *this_ptr,int skip_clear_buffers);
 
-// Original: core_dlight.cpp_FUN_0044a210
+// Original: core_dlight.cpp_CDemonLight_blitZBuffer_FUN_0044a210
 // Address: 0044a210
-void __cdecl FUN_0044a210(CDemonLight *this_ptr,CRect *source_rect);
+void __cdecl CDemonLight::blitZBuffer(CDemonLight *this_ptr,CRect *source_rect);
 
 // Original: core_dlight.cpp_CDemonLight_endScene_FUN_0044a2d0
 // Address: 0044a2d0
@@ -61,17 +61,17 @@ void __cdecl CDemonLight::beginBackgroundScene(CDemonLight *this_ptr);
 // Address: 0044a4d0
 void __cdecl CDemonLight::endBackgroundScene(CDemonLight *this_ptr);
 
-// Original: core_dlight.cpp_FUN_0044a520
+// Original: core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044a520
 // Address: 0044a520
-void FUN_0044a520(CDemonLight *param_1);
+void __cdecl CDemonLight::restoreDirtyRegions(CDemonLight *this_ptr);
 
 // Original: core_dlight.cpp_CDemonLight_projectLightAndMarkVisibility_FUN_0044a810
 // Address: 0044a810
 ushort * __cdecl CDemonLight::projectLightAndMarkVisibility(CDemonLight *this_ptr,CVector3i *projected_coord,uchar x_round_flag,uchar y_round_flag);
 
-// Original: core_dlight.cpp_FUN_0044a900
+// Original: core_dlight.cpp_drawGrayscalePixel_FUN_0044a900
 // Address: 0044a900
-void FUN_0044a900(int param_1,int param_2,int param_3);
+void __cdecl drawGrayscalePixel(int x,int y,int grayscale_value);
 
 // Original: core_dlight.cpp_CDemonLight_renderShadowMapDebugView_FUN_0044a930
 // Address: 0044a930
@@ -105,13 +105,13 @@ void __cdecl CDemonLight::applyFilter(CDemonLight *this_ptr,CDemonFilter *filter
 // Address: 0044b920
 void __cdecl captureLightTextures(void);
 
-// Original: core_dlight.cpp_FUN_0044b960
+// Original: core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_0044b960
 // Address: 0044b960
-void __cdecl FUN_0044b960(CDemonLight *this_ptr);
+void __cdecl CDemonLight::renderVolumetricLightShaft(CDemonLight *this_ptr);
 
-// Original: core_dlight.cpp_FUN_0044c15e
-// Address: 0044c15e
-void FUN_0044c15e(int param_1);
+// Original: core_dlight.cpp_FUN_0044c160
+// Address: 0044c160
+void FUN_0044c160(void);
 
 // Original: core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0044c830
 // Address: 0044c830
@@ -125,9 +125,9 @@ void __cdecl CDemonLight::initializeVisibilityBuffer(CDemonLight *this_ptr);
 // Address: 0044cf90
 int __cdecl CDemonLight::testShadowMapRegion(CDemonLight *this_ptr,CRect *rect);
 
-// Original: core_dlight.cpp_FUN_0044d060
+// Original: core_dlight.cpp_renderConeLightGeometry_FUN_0044d060
 // Address: 0044d060
-void __cdecl FUN_0044d060(CVector3f *position,CVector3f *rotation,float fov,float falloff);
+void __cdecl renderConeLightGeometry(CVector3f *position,CVector3f *rotation,float fov,float falloff);
 
 // Original: core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_0044d570
 // Address: 0044d570

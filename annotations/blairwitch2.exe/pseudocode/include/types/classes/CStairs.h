@@ -4,13 +4,24 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CDemonTriangle.h"
+#include "types/classes/CVector3f.h"
+#include "types/enums/EGroundType.h"
 
 // Structure: CStairs
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0xb90 (2960 bytes)
 #pragma pack(push, 1)
 typedef struct CStairs {
-    char field_0[2960]; // 0x0
+    CDemonActor base; // 0x0
+    float rise; // 0x2b4
+    float run; // 0x2b8
+    float width; // 0x2bc
+    float bevel_y; // 0x2c0
+    float bevel_z; // 0x2c4
+    int stair_count; // 0x2c8
+    CDemonTriangle collision_triangles[40]; // 0x2cc
+    EGroundType ground_type; // 0xb8c
 } CStairs;
 #pragma pack(pop)
 

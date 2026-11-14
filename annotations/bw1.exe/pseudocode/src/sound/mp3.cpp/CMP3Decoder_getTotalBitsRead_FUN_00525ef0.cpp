@@ -9,5 +9,5 @@
 uint __cdecl sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_00525ef0(CMP3Decoder *this_ptr)
 
 {
-  return *(uint *)&this_ptr->field_0x1314;
+  return (this_ptr->memory_bitstream).total_bits_read;
 }

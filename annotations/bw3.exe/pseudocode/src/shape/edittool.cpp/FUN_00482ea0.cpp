@@ -16,24 +16,24 @@ void shape_edittool_cpp_FUN_00482ea0(CStrList *param_1,uint param_2,uint param_3
   byte auStack_218 [260];
   char acStack_114 [260];
   
-  unkafter_dosio_cpp_FUN_00466040(param_3,0x5bd6ba,auStack_218);
-  unkafter_dosio_cpp_FUN_00466040(param_2,auStack_218,acStack_114);
+  engine_dosio_cpp_FUN_00466040(param_3,0x5bd6ba,auStack_218);
+  engine_dosio_cpp_FUN_00466040(param_2,auStack_218,acStack_114);
   engine_dosio_cpp_CFileFinder_ctor_FUN_00465b60(&CStack_534);
   engine_dosio_cpp_CFileFinder_openSearch_FUN_00465ba0(&CStack_534,acStack_114);
-  while (CStack_534._0_1_ != '\0') {
-    iVar1 = _strcmp((char *)&CStack_534,(char *)0x5bd6bc);
+  while (CStack_534.filename[0] != '\0') {
+    iVar1 = _strcmp(CStack_534.filename,(char *)0x5bd6bc);
     if ((iVar1 != 0) &&
-       (iVar1 = _strcmp((char *)&CStack_534,(char *)0x5bd6be), iVar1 != 0)
+       (iVar1 = _strcmp(CStack_534.filename,(char *)0x5bd6be), iVar1 != 0)
        ) {
-      if ((CStack_534._256_1_ & 4) == 0) {
-        iVar1 = shape_edittool_cpp_wildcardStringMatch_FUN_00486a40(param_4,(char *)&CStack_534,0);
+      if (((byte)CStack_534.attributes & 4) == 0) {
+        iVar1 = shape_edittool_cpp_wildcardStringMatch_FUN_00486a40(param_4,CStack_534.filename,0);
         if (iVar1 != 0) {
-          unkafter_dosio_cpp_FUN_00466040(param_3,&CStack_534,acStack_31c);
+          engine_dosio_cpp_FUN_00466040(param_3,&CStack_534,acStack_31c);
           shape_edittool_cpp_CStrList_add_FUN_00482070(param_1,acStack_31c);
         }
       }
       else {
-        unkafter_dosio_cpp_FUN_00466040(param_3,&CStack_534,auStack_420);
+        engine_dosio_cpp_FUN_00466040(param_3,&CStack_534,auStack_420);
         shape_edittool_cpp_FUN_00482ea0(param_1,param_2,auStack_420,param_4);
       }
     }

@@ -7,15 +7,15 @@
 
 // Original: core_keyactor.cpp_staticInit_FUN_004fc4b0
 // Address: 004fc4b0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_keyactor.cpp_factoryFuncKeyActor_FUN_004fc4e0
 // Address: 004fc4e0
-void factoryFuncKeyActor(void);
+CKeyActor * __cdecl factoryFuncKeyActor(void);
 
 // Original: core_keyactor.cpp_CKeyActor_getActorType_FUN_004fc500
 // Address: 004fc500
-CDemonActorType * CKeyActor::getActorType(CKeyActor *this_ptr);
+CDemonActorType * __cdecl CKeyActor::getActorType(CKeyActor *this_ptr);
 
 // Original: core_keyactor.cpp_CKeyActor_ctor_FUN_004fc510
 // Address: 004fc510
@@ -25,25 +25,25 @@ CKeyActor * __cdecl CKeyActor::ctor(CKeyActor *this_ptr);
 // Address: 004fc570
 void __cdecl CKeyActor::setup(CKeyActor *this_ptr);
 
-// Original: core_keyactor.cpp_FUN_004fc590
+// Original: core_keyactor.cpp_CKeyActor_process_FUN_004fc590
 // Address: 004fc590
-void FUN_004fc590(int param_1,float param_2);
+void __cdecl CKeyActor::process(CKeyActor *this_ptr,float delta_time);
 
-// Original: core_keyactor.cpp_FUN_004fc630
+// Original: core_keyactor.cpp_CKeyActor_renderOpaque_FUN_004fc630
 // Address: 004fc630
-int FUN_004fc630(CDemonActor *param_1);
+int __cdecl CKeyActor::renderOpaque(CKeyActor *this_ptr);
 
-// Original: core_keyactor.cpp_FUN_004fc6b0
+// Original: core_keyactor.cpp_CKeyActor_getBoundingBox_FUN_004fc6b0
 // Address: 004fc6b0
-void FUN_004fc6b0(int param_1);
+CBoundingBox3D * __cdecl CKeyActor::getBoundingBox(CKeyActor *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_keyactor.cpp_CKeyActor_archive_FUN_004fc6f0
 // Address: 004fc6f0
 void __cdecl CKeyActor::archive(CKeyActor *this_ptr);
 
-// Original: core_keyactor.cpp_FUN_004fc760
+// Original: core_keyactor.cpp_CKeyActor_getCollisionType_FUN_004fc760
 // Address: 004fc760
-undefined4 FUN_004fc760(void);
+ECollisionType __cdecl CKeyActor::getCollisionType(CKeyActor *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_keyactor.cpp_CKeyActor_canPickup_FUN_004fc770
 // Address: 004fc770

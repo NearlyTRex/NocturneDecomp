@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_scat_cpp_FUN_00520a60(CDemonActor *param_1,int param_2,int param_3)
+; undefined4 core_scat_cpp_FUN_00520a60(CDemonActor *param_1,CDemonActor *param_2,int param_3)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x15c]:1  local_15c
@@ -20,7 +20,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 g_CEnemyClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.field1364292_0x14d144
+;   undefined4 g_CDemonSetInstance.collision_actor
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
@@ -30,7 +30,7 @@
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00537e00
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_00537eb0
 ;   core_setcolid.cpp_FUN_00535ee0
-;   core_vecdir.cpp_FUN_005838f0
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 ;   crt_memory.c___arrinit_FUN_005b7f5f
 ;
 ; *****************************************************************************
@@ -50,7 +50,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x18]      ; 00520a76
     PUSH ECX                            ; 00520a79
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 00520a7a
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 00520a7f
     PUSH 0x5f22b0                       ; 00520a82 | g_CVectorTypeInfo
     PUSH 0xa                            ; 00520a87
@@ -58,7 +58,7 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 00520a8b
     PUSH EAX                            ; 00520a8f
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 00520a90
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00520a95
     LEA EAX,[ESP + 0xc]                 ; 00520a98
     PUSH EAX                            ; 00520a9c
@@ -128,8 +128,8 @@ section .text
     PUSH EAX                            ; 00520b57
     LEA ESI,[ESP + 0x100]               ; 00520b58
     LEA EDI,[ESP + 0x10c]               ; 00520b5f
-    CALL core_vecdir.cpp_FUN_005838f0   ; 00520b66
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005838f0()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 00520b66
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
     ADD ESP,0x4                         ; 00520b6b
     LEA ESI,[ESP + 0xfc]                ; 00520b6e
     MOV EDX,dword ptr [EBP + 0x1c]      ; 00520b75
@@ -296,7 +296,7 @@ section .text
         ;   XREF to: 00520acc (CONDITIONAL_JUMP)  ; LAB_00520acc
     MOV EAX,[0x0061b5a8]                ; 00520db9 | g_CDemonSetPtr
     MOV ECX,dword ptr [EBP + 0x18]      ; 00520dbe
-    CMP ECX,dword ptr [EAX + 0x14d144]  ; 00520dc1 | g_CDemonSetInstance.field1364292_0x14d144
+    CMP ECX,dword ptr [EAX + 0x14d144]  ; 00520dc1 | g_CDemonSetInstance.collision_actor
     JNZ 0x00520acc                      ; 00520dc7
         ;   XREF to: 00520acc (CONDITIONAL_JUMP)  ; LAB_00520acc
     MOV EAX,dword ptr [ESP + 0x148]     ; 00520dcd

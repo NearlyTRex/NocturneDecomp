@@ -2,30 +2,30 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 94,
-    "complexity_score": 260,
+    "complexity_score": 69,
     "cross_reference_count": 7,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 30,
-    "suspect_count": 22,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 29,
+    "suspect_count": 3,
     "suspect_types": [
-      "unnamed_field",
+      "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 124
+    "total_lines": 123
   },
   "cross_references": [
     {
-      "addr": "004221c0",
-      "from_addr": "0042233e",
-      "name": "core_bugs.cpp_FUN_004221c0",
+      "addr": "00422570",
+      "from_addr": "004228b1",
+      "name": "core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422570",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00422570",
-      "from_addr": "004228b1",
-      "name": "core_bugs.cpp_FUN_00422570",
+      "addr": "004221c0",
+      "from_addr": "0042233e",
+      "name": "core_bugs.cpp_CBugs_updateBugsBehavior_FUN_004221c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -37,7 +37,7 @@
     {
       "addr": "00489730",
       "from_addr": "00489994",
-      "name": "core_enemy.cpp_FUN_00489730",
+      "name": "core_enemy.cpp_CEnemy_updateVictim_FUN_00489730",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -125,7 +125,7 @@
       {
         "call_addr": "0042233e",
         "call_type": "direct",
-        "caller": "core_bugs.cpp_FUN_004221c0",
+        "caller": "core_bugs.cpp_CBugs_updateBugsBehavior_FUN_004221c0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -136,7 +136,7 @@
       {
         "call_addr": "004228b1",
         "call_type": "direct",
-        "caller": "core_bugs.cpp_FUN_00422570",
+        "caller": "core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422570",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -158,7 +158,7 @@
       {
         "call_addr": "00489994",
         "call_type": "direct",
-        "caller": "core_enemy.cpp_FUN_00489730",
+        "caller": "core_enemy.cpp_CEnemy_updateVictim_FUN_00489730",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -207,6 +207,32 @@
     },
     "pcode_op_count": 363
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00513650",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005349a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00547d00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004f1600",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 20,
     "local_size": 4,
@@ -254,172 +280,20 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x138c0",
-      "severity": "mild",
-      "text": "if (((*(float *)&this_ptr->field_0x138c0 != *(float *)dest_position) ||",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x138c4",
-      "severity": "mild",
-      "text": "(*(float *)&this_ptr->field_0x138c4 != *(float *)&dest_position->field_0x4)) ||",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "(*(float *)&this_ptr->field_0x138c4 != *(float *)&dest_position->field_0x4)) ||",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x138c8",
-      "severity": "mild",
-      "text": "(*(float *)&this_ptr->field_0x138c8 != *(float *)&dest_position->field_0x8)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "(*(float *)&this_ptr->field_0x138c8 != *(float *)&dest_position->field_0x8)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x138c0",
-      "severity": "mild",
-      "text": "if ((CVector3f *)&this_ptr->field_0x138c0 != dest_position) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
       "line": 13,
-      "match": "field_0x138c0",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x138c0 = *(uint *)dest_position;",
-      "type": "unnamed_field"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->cached_world_position).x = dest_position->x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x138c4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x138c4 = *(uint *)&dest_position->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x138c4 = *(uint *)&dest_position->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x138c8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x138c8 = *(uint *)&dest_position->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x138c8 = *(uint *)&dest_position->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x138cc",
-      "severity": "mild",
-      "text": "(this_ptr,dest_position,(CVector3f *)&this_ptr->field_0x138cc,direction_hint",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x138bc",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x138bc = iVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
       "line": 27,
-      "match": "field_0x138cc",
-      "severity": "mild",
-      "text": "if ((CVector3f *)&this_ptr->field_0x138cc != out_euler_angles) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x138cc",
-      "severity": "mild",
-      "text": "*(uint *)out_euler_angles = *(uint *)&this_ptr->field_0x138cc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&out_euler_angles->field_0x4 = *(uint *)&this_ptr->field_0x138d0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x138d0",
-      "severity": "mild",
-      "text": "*(uint *)&out_euler_angles->field_0x4 = *(uint *)&this_ptr->field_0x138d0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&out_euler_angles->field_0x8 = *(uint *)&this_ptr->field_0x138d4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x138d4",
-      "severity": "mild",
-      "text": "*(uint *)&out_euler_angles->field_0x8 = *(uint *)&this_ptr->field_0x138d4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x138bc",
-      "severity": "mild",
-      "text": "return *(int *)&this_ptr->field_0x138bc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x138bc",
-      "severity": "mild",
-      "text": "return *(int *)&this_ptr->field_0x138bc;",
-      "type": "unnamed_field"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "out_euler_angles->x = (this_ptr->path_heading).x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

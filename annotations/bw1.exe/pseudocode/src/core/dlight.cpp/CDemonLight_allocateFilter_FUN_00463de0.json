@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 44,
+    "complexity_score": 29,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 14,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 37
@@ -44,7 +43,7 @@
     {
       "addr": "005c08d0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c08d0"
+      "name": "crt_memory.c_malloc_FUN_005c08d0"
     }
   ],
   "globals": [
@@ -115,6 +114,32 @@
     },
     "pcode_op_count": 63
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0044b5b0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0045daf0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00474720",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9474
+    },
+    "nocturne.exe": {
+      "addr": "00450170",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -139,14 +164,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x1c6c",
-      "severity": "mild",
-      "text": "*(void **)&this_ptr->field_0x1c6c = pvVar1;",
-      "type": "unnamed_field"
     }
   ]
 }

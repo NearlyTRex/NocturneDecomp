@@ -18,13 +18,13 @@
     {
       "addr": "0049d840",
       "from_addr": "0049d9f0",
-      "name": "core_fire.cpp_FUN_0049d840",
+      "name": "core_fire.cpp_CFireEffect_createLaserPath_FUN_0049d840",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0049db20",
       "from_addr": "0049e1de",
-      "name": "core_fire.cpp_FUN_0049db20",
+      "name": "core_fire.cpp_CFireEffect_traceLaser_FUN_0049db20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -61,7 +61,7 @@
       {
         "call_addr": "0049e1de",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049db20",
+        "caller": "core_fire.cpp_CFireEffect_traceLaser_FUN_0049db20",
         "estimated_params": 10,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -72,7 +72,7 @@
       {
         "call_addr": "0049d9f0",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049d840",
+        "caller": "core_fire.cpp_CFireEffect_createLaserPath_FUN_0049d840",
         "estimated_params": 10,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -83,7 +83,7 @@
       {
         "call_addr": "0049dac5",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049d840",
+        "caller": "core_fire.cpp_CFireEffect_createLaserPath_FUN_0049d840",
         "estimated_params": 10,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -125,6 +125,32 @@
       "STORE": 16
     },
     "pcode_op_count": 177
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004b6070",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a2aa0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004c7eb0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0048b370",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 44,

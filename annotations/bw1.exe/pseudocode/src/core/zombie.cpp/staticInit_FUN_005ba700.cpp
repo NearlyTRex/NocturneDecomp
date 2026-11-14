@@ -1,12 +1,12 @@
 // Name: core_zombie.cpp_staticInit_FUN_005ba700
 // Address: 005ba700
 // Address Range: [[005ba700, 005ba723]]
-// Convention: unknown
-// Signature: void core_zombie_cpp_staticInit_FUN_005ba700(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_zombie_cpp_staticInit_FUN_005ba700(void)
 
 #include "nocturne.h"
 
-void core_zombie_cpp_staticInit_FUN_005ba700(void)
+void __cdecl core_zombie_cpp_staticInit_FUN_005ba700(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c160

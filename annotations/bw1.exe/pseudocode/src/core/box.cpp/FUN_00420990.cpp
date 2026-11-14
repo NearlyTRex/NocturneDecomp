@@ -17,28 +17,21 @@ uint core_box_cpp_FUN_00420990(float *param_1)
   uint uVar4;
   byte bVar5;
   float afStackY_1034 [1003];
-  SMRGLHeaderPrimitive aSStack_80 [4];
-  uint local_7c;
-  uint local_78;
-  uint local_74;
-  uint local_70;
-  int local_6c;
+  SMRGLHeaderPrimitive SStack_80;
   uint local_68;
   uint local_64;
   uint local_60;
   uint local_5c;
   int local_58;
-  int local_54;
-  int local_50;
+  UIntegerFloat local_54;
+  UIntegerFloat local_50;
   float local_4c;
   float afStack_48 [4];
   float local_38;
   int local_34;
   int local_30;
   int local_2c;
-  int local_28;
-  int local_24;
-  int local_20;
+  CVector3i local_28;
   int local_1c;
   uint local_18;
   int local_14;
@@ -54,12 +47,12 @@ uint core_box_cpp_FUN_00420990(float *param_1)
     afStack_48[(uint)bVar5 * -2 + 3] = afStack_48[(uint)bVar5 * -2];
     afStack_48[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
          afStack_48[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-    local_28 = (int)ROUND(afStack_48[2] * _DAT_005fce08);
-    local_24 = (int)ROUND(afStack_48[3] * _DAT_005fce08);
-    local_20 = (int)ROUND(local_38 * _DAT_005fce08);
-    engine_special_cpp_FUN_00580173
-              ((SProjectedVertex *)(*0x01BC120C + iVar2),(CVector3i *)&local_28);
-    if ((*(byte *)(*(int *)DAT_00612560 + 0x13 + iVar2) & 0x80) == 0) {
+    local_28.x = (int)ROUND(afStack_48[2] * _DAT_005fce08);
+    local_28.y = (int)ROUND(afStack_48[3] * _DAT_005fce08);
+    local_28.z = (int)ROUND(local_38 * _DAT_005fce08);
+    engine_special_cpp_FUN_00580173((SProjectedVertex *)(*0x01BC120C + iVar2),&local_28);
+    if ((*(byte *)((int)&(DAT_00612560->vertex_buffer_ptr->projected_vertex).screen_x + iVar2 + 3) &
+        0x80) == 0) {
       local_18 = 0;
     }
     else {
@@ -74,7 +67,7 @@ uint core_box_cpp_FUN_00420990(float *param_1)
     return 0;
   }
   engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20(DAT_00612560,local_1c);
-  local_7c = 4;
+  SStack_80.base.count = 4;
   engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70(DAT_00612560,0);
   uVar4 = 1;
   local_34 = (int)ROUND(*param_1 * _DAT_005fce08);
@@ -82,94 +75,94 @@ uint core_box_cpp_FUN_00420990(float *param_1)
   local_2c = (int)ROUND(param_1[2] * _DAT_005fce08);
   uVar3 = 1;
   local_58 = (int)ROUND(param_1[3] * _DAT_005fce08);
-  local_54 = (int)ROUND(param_1[4] * _DAT_005fce08);
-  local_50 = (int)ROUND(param_1[5] * _DAT_005fce08);
-  local_74 = uVar1;
-  local_70 = uVar1;
-  local_6c = -local_34;
-  local_78 = 0xffffffff;
-  iVar2 = engine_3d_c_isVisiblePlane_FUN_00403920(&local_78);
+  local_54.i = (int)ROUND(param_1[4] * _DAT_005fce08);
+  local_50.i = (int)ROUND(param_1[5] * _DAT_005fce08);
+  SStack_80.surface_normal.B.i = uVar1;
+  SStack_80.surface_normal.C.i = uVar1;
+  SStack_80.surface_normal.D.i = -local_34;
+  SStack_80.surface_normal.A.i = -1;
+  iVar2 = engine_3d_c_isVisiblePlane_FUN_00403920(&SStack_80.surface_normal);
   if (iVar2 != 0) {
     local_68 = uVar1;
     local_64 = 4;
     local_60 = 6;
     local_5c = 2;
-    iVar2 = core_set_cpp_FUN_005558c0(g_CDemonSetPtr,aSStack_80);
+    iVar2 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_005558c0(g_CDemonSetPtr,&SStack_80);
     uVar4 = uVar3;
     if (iVar2 != 0) goto LAB_00420d5c;
     uVar4 = 0;
   }
-  local_6c = local_58;
-  local_78 = 1;
-  local_74 = 0;
-  local_70 = 0;
-  iVar2 = engine_3d_c_isVisiblePlane_FUN_00403920(&local_78);
+  SStack_80.surface_normal.D.i = local_58;
+  SStack_80.surface_normal.A.i = 1;
+  SStack_80.surface_normal.B.i = 0;
+  SStack_80.surface_normal.C.i = 0;
+  iVar2 = engine_3d_c_isVisiblePlane_FUN_00403920(&SStack_80.surface_normal);
   if (iVar2 != 0) {
     local_60 = 7;
     local_68 = 1;
     local_64 = 3;
     local_5c = 5;
-    iVar2 = core_set_cpp_FUN_005558c0(g_CDemonSetPtr,aSStack_80);
+    iVar2 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_005558c0(g_CDemonSetPtr,&SStack_80);
     uVar4 = uVar3;
     if (iVar2 != 0) goto LAB_00420d5c;
     uVar4 = 0;
   }
-  local_78 = 0;
-  local_74 = 0xffffffff;
-  local_6c = -local_30;
-  local_70 = 0;
-  iVar2 = engine_3d_c_isVisiblePlane_FUN_00403920(&local_78);
+  SStack_80.surface_normal.A.i = 0;
+  SStack_80.surface_normal.B.i = 0xffffffff;
+  SStack_80.surface_normal.D.i = -local_30;
+  SStack_80.surface_normal.C.i = 0;
+  iVar2 = engine_3d_c_isVisiblePlane_FUN_00403920(&SStack_80.surface_normal);
   if (iVar2 != 0) {
     local_68 = 0;
     local_60 = 5;
     local_5c = 4;
     local_64 = 1;
-    iVar2 = core_set_cpp_FUN_005558c0(g_CDemonSetPtr,aSStack_80);
+    iVar2 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_005558c0(g_CDemonSetPtr,&SStack_80);
     uVar4 = uVar3;
     if (iVar2 != 0) goto LAB_00420d5c;
     uVar4 = 0;
   }
-  local_6c = local_54;
-  local_78 = 0;
-  local_74 = 1;
-  local_70 = 0;
-  iVar2 = engine_3d_c_isVisiblePlane_FUN_00403920(&local_78);
+  SStack_80.surface_normal.D = local_54;
+  SStack_80.surface_normal.A.i = 0;
+  SStack_80.surface_normal.B.i = 1;
+  SStack_80.surface_normal.C.i = 0;
+  iVar2 = engine_3d_c_isVisiblePlane_FUN_00403920(&SStack_80.surface_normal);
   if (iVar2 != 0) {
     local_60 = 7;
     local_68 = 2;
     local_64 = 6;
     local_5c = 3;
-    iVar2 = core_set_cpp_FUN_005558c0(g_CDemonSetPtr,aSStack_80);
+    iVar2 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_005558c0(g_CDemonSetPtr,&SStack_80);
     uVar4 = uVar3;
     if (iVar2 != 0) goto LAB_00420d5c;
     uVar4 = 0;
   }
-  local_70 = 0xffffffff;
-  local_78 = 0;
-  local_6c = -local_2c;
-  local_74 = 0;
-  iVar2 = engine_3d_c_isVisiblePlane_FUN_00403920(&local_78);
+  SStack_80.surface_normal.C.i = 0xffffffff;
+  SStack_80.surface_normal.A.i = 0;
+  SStack_80.surface_normal.D.i = -local_2c;
+  SStack_80.surface_normal.B.i = 0;
+  iVar2 = engine_3d_c_isVisiblePlane_FUN_00403920(&SStack_80.surface_normal);
   if (iVar2 != 0) {
     local_68 = 0;
     local_60 = 3;
     local_5c = 1;
     local_64 = 2;
-    iVar2 = core_set_cpp_FUN_005558c0(g_CDemonSetPtr,aSStack_80);
+    iVar2 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_005558c0(g_CDemonSetPtr,&SStack_80);
     uVar4 = uVar3;
     if (iVar2 != 0) goto LAB_00420d5c;
     uVar4 = 0;
   }
-  local_6c = local_50;
-  local_78 = 0;
-  local_74 = 0;
-  local_70 = 1;
-  iVar2 = engine_3d_c_isVisiblePlane_FUN_00403920(&local_78);
+  SStack_80.surface_normal.D = local_50;
+  SStack_80.surface_normal.A.i = 0;
+  SStack_80.surface_normal.B.i = 0;
+  SStack_80.surface_normal.C.i = 1;
+  iVar2 = engine_3d_c_isVisiblePlane_FUN_00403920(&SStack_80.surface_normal);
   if (iVar2 != 0) {
     local_60 = 7;
     local_68 = 4;
     local_64 = 5;
     local_5c = 6;
-    iVar2 = core_set_cpp_FUN_005558c0(g_CDemonSetPtr,aSStack_80);
+    iVar2 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_005558c0(g_CDemonSetPtr,&SStack_80);
     uVar4 = uVar3;
     if (iVar2 == 0) {
       uVar4 = 0;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_tommygun_cpp_staticInit_FUN_00575700(void)
+; void __cdecl core_tommygun_cpp_staticInit_FUN_00575700(void)
 ;
 ;
 ; Called Functions:

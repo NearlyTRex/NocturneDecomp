@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_frankgen_cpp_staticInit_FUN_004c50f0(void)
+; void __cdecl core_frankgen_cpp_staticInit_FUN_004c50f0(void)
 ;
 ;
 ; Called Functions:

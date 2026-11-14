@@ -2,15 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 11,
-    "complexity_score": 47,
+    "complexity_score": 27,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 12,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field"
+      "preinc_loop_idiom"
     ],
     "total_lines": 23
   },
@@ -24,19 +24,19 @@
     {
       "addr": "004186c0",
       "from_addr": "004189c5",
-      "name": "core_boneguy.cpp_FUN_004186c0",
+      "name": "core_boneguy.cpp_CBoneGuy_process_FUN_004186c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00436e80",
+      "from_addr": "0043728c",
+      "name": "core_construc.cpp_CConstruct_process_FUN_00436e80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005478b0",
       "from_addr": "005478e6",
       "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00436e80",
-      "from_addr": "0043728c",
-      "name": "unkafter_conveyor.cpp_FUN_00436e80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -82,7 +82,7 @@
       {
         "call_addr": "004189c5",
         "call_type": "direct",
-        "caller": "core_boneguy.cpp_FUN_004186c0",
+        "caller": "core_boneguy.cpp_CBoneGuy_process_FUN_004186c0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -93,7 +93,7 @@
       {
         "call_addr": "0043728c",
         "call_type": "direct",
-        "caller": "unkafter_conveyor.cpp_FUN_00436e80",
+        "caller": "core_construc.cpp_CConstruct_process_FUN_00436e80",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -131,6 +131,32 @@
     },
     "pcode_op_count": 40
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00569ae0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0054e670",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a0410",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0051dc90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -149,28 +175,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "puVar2 = &pCVar1->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x2140",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x2140 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x78",
-      "severity": "mild",
-      "text": "} while (puVar2 != &this_ptr->field_0x78);",
-      "type": "unnamed_field"
+      "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar1` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `pCVar1 = pCVar1;` self-assign, two-var `tmp = &pCVar1->field; pCVar1 = tmp;` ping-pong, or a bare `pCVar1 = pCVar1 + N;` advance followed by a `*pCVar1 =` store \u2014 plus a constant-index store on `pCVar1`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 9,
+      "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
     }
   ]
 }

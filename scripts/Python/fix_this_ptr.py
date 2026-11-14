@@ -2,45 +2,50 @@
 """
 fix_this_ptr.py
 
-Repair every class method whose receiver contradicts its own name, in both
-game binaries. This is the write side of check_this_ptr.py: that tool reports
-against exported annotations, this one diffs and mutates the live Ghidra
-database, so it can never act on a stale export.
+Repair every class method whose receiver contradicts its own name. This is the
+write side of check_this_ptr.py: that tool reports against exported
+annotations, this one diffs and mutates the live Ghidra database, so it can
+never act on a stale export.
 
 THE SCHEMA IS AN ASSERTION
 --------------------------
-`<tu>_<Class>_<method>_FUN_<addr>` says the function is a member of `Class`.
-That makes two claims about parameter 0 which nothing was enforcing: it is the
-`this` pointer, and its type is `Class *`. Three failure modes exist, and they
-need three different repairs.
+`<tu>_<Class>_<method>_FUN_<addr>` says the function is a member of `Class`
+(C-prefixed classes and S-prefixed structs alike). That makes two claims about
+parameter 0: it is the `this` pointer, and its type is `Class *`. The failure
+modes need different repairs.
 
-  NAME       type is right, the name is not. 110 functions, of which 62 are
-             Watcom array destructors carrying `objs`. The receiver of an
-             array destructor is still the object being destroyed, so it is
-             `this_ptr` like any other member function - these are NOT exempt.
-             Repair: rename parameter 0 IN PLACE. Nothing else is touched.
+  NAME       type is right, the name is not (Watcom array destructors carry
+             `objs`; their receiver is still `this`). Repair: rename parameter
+             0 IN PLACE. Nothing else is touched.
 
   TYPE       the name spells the class one way and the parameter another:
-             CMinecar/CMineCar, CWaypoint/CWayPoint, CVector/CVector3f. In
-             every instance the PARAMETER is right - its spelling exists in the
-             type database and the name's does not. Two spellings of one class
-             splits greps and invites a second, divergent struct.
-             Repair: rename the FUNCTION. The signature is already correct and
-             is deliberately left alone.
+             CMinecar/CMineCar, CWaypoint/CWayPoint. The PARAMETER wins when
+             its spelling is a type and the name's is not. Repair: rename the
+             FUNCTION.
 
-  NO_PARAMS  a member function declaring no parameters at all cannot receive
-             `this`, so its prototype is simply wrong and every caller
-             decompiles against it. These cannot be derived - each one needed
-             its assembly read - so they live in the curated table below with
-             the evidence that resolved them.
+  DERIVE     no parameters at all, and the decompiler infers a prototype whose
+             first parameter is the first stack argument -- where Watcom's
+             cdecl passes `this`. Repair: write the inferred prototype as
+             __cdecl with parameter 0 made `Class *this_ptr`. The other
+             parameters keep the decompiler's names and types; the return type
+             is the decompiler's only when the function's is still undefined.
+
+             A stub that reads no argument at all (a virtual returning a
+             constant) shows nothing; it is still a member when a slot of the
+             class's own labelled vtable (`g_<Class>VTable`) holds it, and gets
+             `Class *this_ptr` alone.
+
+  NO_PARAMS  a member with no parameters whose receiver could not be derived
+             needs its assembly read. Its repair goes in a --fixes file with
+             the evidence that resolved it. A curated entry wins over DERIVE.
 
 WHY PARAMETER RENAMES ARE DONE IN PLACE
 ---------------------------------------
 `Function.updateFunction(..., DYNAMIC_STORAGE_FORMAL_PARAMS)` rewrites the
-WHOLE signature. Using it to change one parameter's name would re-derive
-storage for the other parameters, silently discarding hand-tuned custom
-storage - which this codebase genuinely has (`__stack2_esi`, the Watcom FPU
-conventions). `Parameter.setName()` touches one field and cannot do that.
+WHOLE signature, re-deriving storage for every parameter and discarding custom
+storage (`__stack2_esi`, the Watcom FPU conventions). `Parameter.setName()`
+touches one field. DERIVE and curated entries rewrite whole signatures, but
+only of functions that had none, or one read from the assembly.
 
 Report-first. --apply mutates and saves; it takes a .gar snapshot first unless
 --no-snapshot. Headless mutations persist only via DomainFile.save().
@@ -48,202 +53,69 @@ Report-first. --apply mutates and saves; it takes a .gar snapshot first unless
 Usage:
     GHIDRA_INSTALL_DIR=$HOME/Tools/Ghidra/lib \
     python3 -u fix_this_ptr.py <ABS_project_path> <project_name> \
-            [program ...] [--show N] [--apply] [--no-snapshot]
+            [program ...] [--show N] [--apply] [--no-snapshot] [--fixes FILE]
 """
 
 import argparse
+import json
 import os
 import re
+import subprocess
 import sys
 
 RECEIVER = "this_ptr"
 
 METHOD_RE = re.compile(
-    r'^(?P<tu>[A-Za-z0-9_]+\.c(?:pp)?)_(?P<cls>C[A-Z][A-Za-z0-9]*)_'
+    r'^(?P<tu>[A-Za-z0-9_]+\.c(?:pp)?)_(?P<cls>[CS][A-Z][A-Za-z0-9]*)_'
     r'(?P<method>.+)_FUN_(?P<addr>[0-9a-fA-F]+)$')
 
+# Watcom cdecl: `this` is the first stack argument, just above the return address
+THIS_STACK_OFFSET = 4
+DERIVABLE_CONVENTIONS = ("unknown", "__cdecl")
+DECOMPILE_TIMEOUT = 60
+VTABLE_LABEL = re.compile(r"^g_([A-Z]\w*)VTable$")
+# How far back from a slot to look for its table's label
+MAX_VTABLE_SLOTS = 256
+
 
 # ---------------------------------------------------------------------------
-# NO_PARAMS: curated, because each one needed its assembly read
+# Curated repairs: a JSON file passed with --fixes
 # ---------------------------------------------------------------------------
-# Keyed (program, entry address). `expect` is the staleness guard: if the
-# function is no longer called that, somebody has moved since the analysis and
-# the entry is skipped rather than applied over.
+# {"prototypes": [{"program", "addr", "expect", "name", "ret", "conv",
+#                  "params": [[name, type], ...], "note"}, ...],
+#  "local_renames": [{"program", "addr", "func", "renames": [[old, new], ...],
+#                     "note"}, ...]}
 #
-# Seven of these carried the name `handlePureVirtualCall`, which is wrong in
-# every instance. There is exactly ONE real pure-virtual handler in either
-# binary - nocedit's crt_cpp.c_handlePureVirtualCall_FUN_006015f1, the CRT's
-# __purecall. The seven are unrelated one-line weapon-state accessors that a
-# bulk rename landed on. Each is resolved three ways: byte-identical body shape
-# against an accessor already named in nocturne itself, the nocedit
-# counterpart's prototype, and position (every build emits the pair in the
-# order drawWeapon, isWeaponDrawn at a 0x10 stride).
-#
-# The field they touch is already named: guns_drawn at 0x1fa3c, and these
-# classes really are ~0x1fa54 bytes, so `this_ptr` typing is sound.
+# A prototype entry is for a member whose receiver needed its assembly read.
+# It is keyed (program, entry address); `expect` is the staleness guard: a
+# function no longer called that (or `name`) is reported, not written over.
+# A local entry moves a local off `this_ptr` first, since Parameter.setName()
+# throws DuplicateNameException while a local holds the name.
 
-NO_PARAM_FIXES = [
-    # Not a NO_PARAMS case -- a wrong-CLASS receiver, the fourth mode. The
-    # classifier blocks it ("neither side is provably right") because the body
-    # is `xor eax,eax; ret` and never touches `this`, so the assembly cannot
-    # settle the type on its own. The surrounding evidence does:
-    #   - nocedit's counterpart 005da7c0 is byte-identical (xor eax,eax; ret)
-    #     and typed CTeleportDest *this_ptr;
-    #   - both sit in core/teleport.cpp between CTeleportDest_getBoundingBox
-    #     and factoryFuncTeleport, and every nocedit function in between
-    #     (renderOpaque, matchesTeleportDestination, processInEditor,
-    #     showEditorHelp) is editor-only, so the slot corresponds exactly;
-    #   - CTeleportDest derives from CDemonActor, so this narrows the receiver
-    #     rather than contradicting it.
-    # Left as CDemonActor* it aborts the whole nocturne export with
-    # ThisPtrMismatchError, because the transferred NAME asserts the class.
-    dict(program="nocturne.exe", addr="00543890",
-         expect="core_teleport.cpp_CTeleportDest_getCollisionType_FUN_00543890",
-         name="core_teleport.cpp_CTeleportDest_getCollisionType_FUN_00543890",
-         ret="ECollisionType", conv="__cdecl",
-         params=[("this_ptr", "CTeleportDest *"),
-                 ("collision_info", "SCollisionInfo *")],
-         note="receiver narrowed CDemonActor* -> CTeleportDest* to match the "
-              "transferred name and nocedit's prototype; body is a 3-byte stub "
-              "that never dereferences this."),
-    dict(program="nocturne.exe", addr="00411310",
-         expect="core_baron.cpp_CBaron_handlePureVirtualCall_FUN_00411310",
-         name="core_baron.cpp_CBaron_drawWeapon_FUN_00411310",
-         ret="void", conv="__cdecl",
-         params=[("this_ptr", "CBaron *"), ("drawn", "int")],
-         note="bare RET, identical to nocedit CBaron_drawWeapon_FUN_00413cf0. "
-              "drawWeapon is the only game-side method nocturne's baron.cpp "
-              "lacks, and the processDamage->this 0x20 stride matches nocedit "
-              "exactly (00413cd0->00413cf0 vs 004112f0->00411310)."),
-    dict(program="nocturne.exe", addr="0049a110",
-         expect="core_gabriela.cpp_CGabriella_handlePureVirtualCall_FUN_0049a110",
-         name="core_gabriela.cpp_CGabriella_isWeaponDrawn_FUN_0049a110",
-         ret="int", conv="__cdecl",
-         params=[("this_ptr", "CGabriella *")],
-         note="CMP [this+0x1fa3c],0 / SETNZ AL - reads weapon_state_flags. "
-              "nocedit CGabriella_isWeaponDrawn_FUN_004d7590 is int(CGabriella*). "
-              "Body diverges (nocturne normalises to 0/1, nocedit returns the "
-              "raw field) - a real build difference, same method."),
-    dict(program="nocturne.exe", addr="004d6010",
-         expect="core_minecar.cpp_CMineCar_getActorType_FUN_004d6010",
-         name="core_minecar.cpp_CMineCar_getActorType_FUN_004d6010",
-         ret="CDemonActorType *", conv="__cdecl",
-         params=[("this_ptr", "CMineCar *")],
-         note="MOV EAX,0x1cc90e4 = &g_CMineCarActorType_01cc90e4, already "
-              "declared as CDemonActorType and referenced by minecar.cpp "
-              "staticInit. Name was right; return type and receiver were not."),
-    dict(program="nocturne.exe", addr="004fcd20",
-         expect="core_scat.cpp_CScat_handlePureVirtualCall_FUN_004fcd20",
-         name="core_scat.cpp_CScat_isWeaponDrawn_FUN_004fcd20",
-         ret="int", conv="__cdecl",
-         params=[("this_ptr", "CScat *")],
-         note="MOV EAX,[this+0x1fa3c] - byte-identical to nocturne's own "
-              "CHaystack_isWeaponDrawn_FUN_004b4120. nocedit "
-              "CScat_isWeaponDrawn_FUN_00557ff0 is int(CScat*)."),
-    dict(program="nocturne.exe", addr="004fcd30",
-         expect="core_scat.cpp_CScat_handlePureVirtualCall_FUN_004fcd30",
-         name="core_scat.cpp_CScat_drawWeapon_FUN_004fcd30",
-         ret="void", conv="__cdecl",
-         params=[("this_ptr", "CScat *"), ("drawn", "int")],
-         note="MOV [this+0x1fa3c],arg2 - byte-identical to nocturne's own "
-              "CHaystack_drawWeapon_FUN_004b4130. nocedit "
-              "CScat_drawWeapon_FUN_00558000 is void(CScat*,int)."),
-    dict(program="nocturne.exe", addr="00540720",
-         expect="core_stranger.cpp_CStranger_handlePureVirtualCall_FUN_00540720",
-         name="core_stranger.cpp_CStranger_isWeaponDrawn_FUN_00540720",
-         ret="int", conv="__cdecl",
-         params=[("this_ptr", "CStranger *")],
-         note="MOV EAX,[this+0x1fa3c]. Decisive: CStranger_drawWeapon already "
-              "exists at the adjacent 00540730, so this is the getter half of "
-              "the pair. nocedit CStranger_isWeaponDrawn_FUN_005c6650."),
-    dict(program="nocturne.exe", addr="00428bb0",
-         expect="core_charactr.cpp_CCharacter_setWalkTimeout_FUN_00428bb0",
-         name="core_charactr.cpp_CCharacter_setWalkTimeout_FUN_00428bb0",
-         ret="void", conv="__cdecl",
-         params=[("this_ptr", "CCharacter *"), ("timeout", "float")],
-         note="MOV [this+0x25a4],arg2. Name already right; transferred from "
-              "nocedit CCharacter_setWalkTimeout_FUN_0042ca20."),
-    dict(program="nocturne.exe", addr="004c41b0",
-         expect="engine_keys.cpp_CKeys_clearKeypresses_FUN_004c41b0",
-         name="engine_keys.cpp_clearKeypresses_FUN_004c41b0",
-         ret="void", conv="__cdecl", params=[],
-         note="NOT a class method - a bare JMP thunk to "
-              "wincore_winrun.cpp_clearKeypresses_FUN_00558ae0, and Ghidra "
-              "already records it as thunk=True. nocedit's counterpart is the "
-              "free function engine_keys.cpp_clearKeypresses_FUN_00502450. "
-              "There is no CKeys class; dropping the class component takes it "
-              "out of the schema entirely, which is the correct repair."),
-    dict(program="nocturne.exe", addr="004c47c0",
-         expect="core_ladder.cpp_CLadder_getGroundType_FUN_004c47c0",
-         name="core_ladder.cpp_CLadder_getGroundType_FUN_004c47c0",
-         ret="EGroundType", conv="__cdecl",
-         params=[("this_ptr", "CLadder *")],
-         note="MOV EAX,[this+0x2f4]. Name already right; transferred from "
-              "nocedit CLadder_getGroundType_FUN_00502c90."),
-    dict(program="nocturne.exe", addr="004de750",
-         expect="core_moloch.cpp_CMoloch_handlePureVirtualCall_FUN_004de750",
-         name="core_moloch.cpp_CMoloch_drawWeapon_FUN_004de750",
-         ret="void", conv="__cdecl",
-         params=[("this_ptr", "CMoloch *"), ("drawn", "int")],
-         note="bare RET, identical to nocedit CMoloch_drawWeapon_FUN_005299d0. "
-              "Moloch never draws a weapon, so both halves are stubs - which is "
-              "exactly why the pair carried no evidence in isolation."),
-    dict(program="nocturne.exe", addr="004de760",
-         expect="core_moloch.cpp_CMoloch_handlePureVirtualCall_FUN_004de760",
-         name="core_moloch.cpp_CMoloch_isWeaponDrawn_FUN_004de760",
-         ret="int", conv="__cdecl",
-         params=[("this_ptr", "CMoloch *")],
-         note="XOR EAX,EAX / RET, identical to nocedit "
-              "CMoloch_isWeaponDrawn_FUN_005299e0, and the 0x10 stride after "
-              "drawWeapon matches nocedit's 005299d0/005299e0 pair."),
-    dict(program="nocturne.exe", addr="005525d0",
-         expect="core_waypoint.cpp_CWayPoint_renderOpaque_FUN_005525d0",
-         name="core_waypoint.cpp_CWayPoint_renderOpaque_FUN_005525d0",
-         ret="int", conv="__cdecl",
-         params=[("this_ptr", "CWayPoint *")],
-         note="XOR EAX,EAX / RET - waypoints are invisible at runtime. Name "
-              "already right; transferred from nocedit "
-              "CWayPoint_renderOpaque_FUN_005ebf70."),
-    # Blocked on a type that does not exist in nocturne yet. Left in the table
-    # so it is reported every run rather than quietly forgotten.
-    dict(program="nocturne.exe", addr="004f8570",
-         expect="engine_pod.cpp_CPodFile_getAuditRecord_FUN_004f8570",
-         name="engine_pod.cpp_CPodFile_getAuditRecord_FUN_004f8570",
-         ret="CPodAuditRecord *", conv="__stack2_esi",
-         params=[("this_ptr", "CPodFile *"), ("record_index", "int"),
-                 ("out_record", "CPodAuditRecord *")],
-         note="Assert string 'CPodFile::getAuditRecord - invalid in...' names "
-              "it outright. SUB ESP,0x138 matches sizeof(CPodAuditRecord)=312 "
-              "exactly. Two stack args plus an incoming ESI (MOV EBX,ESI before "
-              "any write) = __stack2_esi, as nocedit has it. Needs "
-              "CPodAuditRecord created in nocturne's type database first."),
-]
+NO_FIXES = {"prototypes": [], "local_renames": []}
 
 
-# ---------------------------------------------------------------------------
-# Locals squatting on the receiver's name
-# ---------------------------------------------------------------------------
-# Parameter.setName() throws DuplicateNameException if a LOCAL already holds
-# `this_ptr`, so the local has to move first. Both entries below are decompiler
-# artefacts rather than anything a human chose, and both are actively
-# misleading - neither variable is a receiver of anything.
-LOCAL_RENAMES = [
-    dict(program="nocedit.exe", addr="00478010",
-         func="core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010",
-         renames=[("this_ptr", "bounds_ptr_bits"),
-                  ("this_ptr_00", "frame_bounds_ptr")],
-         note="`float this_ptr` has unassigned HASH storage and holds "
-              "local_28.max.z, which line 21 loaded with (float)&model_ptr->"
-              "bounds - a pointer punned through a float field, so the name is "
-              "wrong twice over. `this_ptr_00` is a CBoundingBox3D* that only "
-              "carries the _00 suffix because of that collision."),
-]
+def load_fixes(path):
+    """The curated repairs in `path` (see above), or none when `path` is None."""
+    if path is None:
+        return NO_FIXES
+    with open(path, encoding="utf-8") as fh:
+        data = json.load(fh)
+    return {
+        "prototypes": [dict(f, params=[tuple(p) for p in f["params"]])
+                       for f in data.get("prototypes", [])],
+        "local_renames": [dict(r, renames=[tuple(p) for p in r["renames"]])
+                          for r in data.get("local_renames", [])],
+    }
+
+
+ROW_KINDS = ("local_rename", "param_rename", "func_rename", "derive", "proto", "blocked")
 
 
 def load_skip(path):
     skip = set()
     if os.path.exists(path):
-        with open(path) as fh:
+        with open(path, encoding="utf-8") as fh:
             for line in fh:
                 line = line.split("#", 1)[0].strip()
                 if line:
@@ -284,6 +156,10 @@ def norm(t):
     return (t or "").replace(" ", "")
 
 
+def type_text(data_type):
+    return str(data_type.getDisplayName())
+
+
 def proto_diffs(f, fix):
     """-> list of (field, current, desired) for a curated entry, empty if the
     live function already matches. Without this the run is not idempotent: the
@@ -292,11 +168,11 @@ def proto_diffs(f, fix):
     diffs = []
     if f.getName() != fix["name"]:
         diffs.append(("name", f.getName(), fix["name"]))
-    if norm(str(f.getReturnType().getDisplayName())) != norm(fix["ret"]):
-        diffs.append(("ret", str(f.getReturnType().getDisplayName()), fix["ret"]))
+    if norm(type_text(f.getReturnType())) != norm(fix["ret"]):
+        diffs.append(("ret", type_text(f.getReturnType()), fix["ret"]))
     if str(f.getCallingConventionName() or "") != fix["conv"]:
         diffs.append(("conv", str(f.getCallingConventionName()), fix["conv"]))
-    live = [(p.getName(), norm(str(p.getDataType().getDisplayName())))
+    live = [(p.getName(), norm(type_text(p.getDataType())))
             for p in f.getParameters()]
     want = [(n, norm(t)) for n, t in fix["params"]]
     if live != want:
@@ -304,184 +180,220 @@ def proto_diffs(f, fix):
     return diffs
 
 
-def plan(program, prog_name, skip):
-    """Build the change list. Pure analysis - no mutation."""
-    resolve = make_resolver(program)
-    rows = {"local_rename": [], "param_rename": [], "func_rename": [],
-            "proto": [], "blocked": []}
-    total = 0
+def vtable_owners(program):
+    """owners(function) -> the classes whose labelled vtable (`g_<Class>VTable`)
+    has a slot holding it: from each reference to it, back slot by slot to the
+    first label, which must be a vtable's."""
+    refs, symbols = program.getReferenceManager(), program.getSymbolTable()
 
-    fm0 = program.getFunctionManager()
-    af0 = program.getAddressFactory().getDefaultAddressSpace()
-    for lr in LOCAL_RENAMES:
+    def owners(f):
+        out = set()
+        for ref in refs.getReferencesTo(f.getEntryPoint()):
+            at = ref.getFromAddress()
+            for _ in range(MAX_VTABLE_SLOTS):
+                symbol = symbols.getPrimarySymbol(at)
+                if symbol is not None:
+                    m = VTABLE_LABEL.match(symbol.getName())
+                    if m:
+                        out.add(m.group(1))
+                    break
+                at = at.add(-4)
+        return out
+
+    return owners
+
+
+def derive(f, cls, inferred, resolve, in_vtable=False):
+    """(params, return type) for a parameterless member from the decompiler's
+    inferred prototype, or (None, why) when it does not show `this` arriving
+    where Watcom's cdecl puts it. `inferred` is ([(name, type, stack offset or
+    None)], return type), or None when the decompiler failed. A member that
+    reads no argument takes `this` alone when its class's vtable holds it
+    (`in_vtable`)."""
+    conv = str(f.getCallingConventionName() or "unknown")
+    if conv not in DERIVABLE_CONVENTIONS:
+        return None, "convention %s is not cdecl, so the first stack slot proves nothing" % conv
+    receiver = resolve(cls + " *")
+    if receiver is None:
+        return None, "%s is not a type in this program" % cls
+    if inferred is None:
+        return None, "the decompiler could not infer its parameters"
+    params, ret = inferred
+    if not params and not in_vtable:
+        return None, "it reads no arguments, so nothing shows where `this` arrives"
+    if not params:
+        params = [(RECEIVER, receiver, THIS_STACK_OFFSET)]
+    offsets = [offset for _name, _type, offset in params]
+    if None in offsets or offsets[0] != THIS_STACK_OFFSET or offsets != sorted(set(offsets)):
+        return None, ("inferred parameters are not consecutive stack arguments from "
+                      "Stack[%#x]: %s" % (THIS_STACK_OFFSET, offsets))
+    have_ret = f.getReturnType()
+    if have_ret is not None and not type_text(have_ret).startswith("undefined"):
+        ret = have_ret
+    return [(RECEIVER, receiver)] + [(n, t) for n, t, _o in params[1:]], ret
+
+
+def plan_locals(program, prog_name, local_renames):
+    rows = []
+    fm = program.getFunctionManager()
+    af = program.getAddressFactory()
+    for lr in local_renames:
         if lr["program"] != prog_name:
             continue
-        f = fm0.getFunctionAt(af0.getAddress(lr["addr"]))
+        f = fm.getFunctionAt(af.getAddress(lr["addr"]))
         if f is None:
             continue
         live = {v.getName() for v in f.getLocalVariables()}
         todo = [(a, b) for a, b in lr["renames"] if a in live and b not in live]
         if todo:
-            rows["local_rename"].append(
-                {"addr": lr["addr"], "name": f.getName(), "renames": todo})
+            rows.append({"addr": lr["addr"], "name": f.getName(), "renames": todo})
+    return rows
 
-    curated = {(f["program"], f["addr"].lower()): f for f in NO_PARAM_FIXES}
 
-    fm = program.getFunctionManager()
-    it = fm.getFunctions(True)
-    while it.hasNext():
-        f = it.next()
+def plan_curated(f, fix, resolve):
+    """(row kind, row) for a function a curated entry names, or None when it
+    already says what the entry wants."""
+    addr, name = fix["addr"], f.getName()
+    if name not in (fix["expect"], fix["name"]):
+        return "blocked", {"addr": addr, "name": name,
+                           "why": "STALE: expected %s" % fix["expect"]}
+    missing = [t for _n, t in fix["params"] if resolve(t) is None]
+    if resolve(fix["ret"]) is None:
+        missing.append(fix["ret"])
+    if missing:
+        return "blocked", {"addr": addr, "name": name, "fix": fix,
+                           "why": "type(s) not in this program's database: %s"
+                                  % ", ".join(sorted(set(missing)))}
+    if not proto_diffs(f, fix):
+        return None
+    return "proto", {"addr": addr, "have": name, "fix": fix}
+
+
+def plan_method(f, cls, resolve, infer, owners=None):
+    """(row kind, row) for a schema-named function, or None when its receiver
+    is already right. `owners` is vtable_owners'."""
+    name = f.getName()
+    addr = "%08x" % f.getEntryPoint().getOffset()
+    params = list(f.getParameters())
+    if not params:
+        in_vtable = owners is not None and cls in owners(f)
+        derived, ret = derive(f, cls, infer(f) if infer else None, resolve, in_vtable)
+        if derived is None:
+            return "blocked", {"addr": addr, "name": name,
+                               "why": "declares no parameters: %s" % ret}
+        return "derive", {"addr": addr, "name": name, "params": derived, "ret": ret}
+
+    p0 = params[0]
+    have_name = p0.getName()
+    have_type = type_text(p0.getDataType())
+    name_ok = have_name == RECEIVER
+    type_ok = norm(have_type) == norm(cls + "*")
+    if name_ok and type_ok:
+        return None
+    if type_ok:
+        # receiver proven by its type; only the label is wrong
+        return "param_rename", {"addr": addr, "name": name, "from": have_name,
+                                "type": have_type}
+    # the name's class and the parameter's class disagree. The parameter wins
+    # only when its spelling is a real type and the name's is not.
+    have_cls = have_type.rstrip(" *")
+    if name_ok and resolve(cls) is None and resolve(have_cls) is not None:
+        want = name.replace("_%s_" % cls, "_%s_" % have_cls, 1)
+        return "func_rename", {"addr": addr, "name": name, "want": want,
+                               "cls": cls, "have_cls": have_cls}
+    return "blocked", {"addr": addr, "name": name,
+                       "why": "name says %s, parameter 0 is %s %s - neither side is "
+                              "provably right; read the assembly"
+                              % (cls, have_type, have_name)}
+
+
+def plan(program, prog_name, skip, infer=None, fixes=None):
+    """Build the change list. Pure analysis - no mutation. `infer(function)` is
+    the decompiler's prototype for a parameterless member (see derive); `fixes`
+    is load_fixes'."""
+    fixes = fixes or NO_FIXES
+    resolve = make_resolver(program)
+    rows = {k: [] for k in ROW_KINDS}
+    rows["local_rename"] = plan_locals(program, prog_name, fixes["local_renames"])
+    curated = {(f["program"], f["addr"].lower()): f for f in fixes["prototypes"]}
+    owners = vtable_owners(program)
+    total = 0
+
+    for f in program.getFunctionManager().getFunctions(True):
         name = f.getName()
-        addr = ("%08x" % f.getEntryPoint().getOffset()).lower()
-
-        # curated prototype repairs are keyed by address, and one of them
-        # deliberately drops the class component, so they are checked before
-        # the schema match.
+        addr = "%08x" % f.getEntryPoint().getOffset()
+        # curated repairs are keyed by address, and one deliberately drops the
+        # class component, so they are checked before the schema match
         fix = curated.get((prog_name, addr))
-        if fix is not None:
-            if name not in (fix["expect"], fix["name"]):
-                rows["blocked"].append(
-                    {"addr": addr, "name": name,
-                     "why": "STALE: expected %s" % fix["expect"]})
-                continue
-            missing = [t for _n, t in fix["params"] if resolve(t) is None]
-            if resolve(fix["ret"]) is None:
-                missing.append(fix["ret"])
-            if missing:
-                rows["blocked"].append(
-                    {"addr": addr, "name": name, "fix": fix,
-                     "why": "type(s) not in this program's database: %s"
-                            % ", ".join(sorted(set(missing)))})
-                continue
-            if not proto_diffs(f, fix):
-                continue        # already says what the table wants
-            rows["proto"].append({"addr": addr, "have": name, "fix": fix})
-            continue
-
         m = METHOD_RE.match(name)
-        if not m:
+        if fix is not None:
+            found = plan_curated(f, fix, resolve)
+        elif not m:
             continue
-        total += 1
-        if name in skip or ("%s:%s" % (prog_name, name)) in skip:
+        elif name in skip or ("%s:%s" % (prog_name, name)) in skip:
+            total += 1
             continue
-
-        cls = m.group("cls")
-        params = list(f.getParameters())
-        if not params:
-            rows["blocked"].append(
-                {"addr": addr, "name": name,
-                 "why": "declares no parameters and is not in the curated table"})
-            continue
-
-        p0 = params[0]
-        have_name = p0.getName()
-        have_type = str(p0.getDataType().getDisplayName())
-        name_ok = have_name == RECEIVER
-        type_ok = norm(have_type) == norm(cls + "*")
-        if name_ok and type_ok:
-            continue
-
-        if type_ok:
-            # receiver proven by its type; only the label is wrong
-            rows["param_rename"].append(
-                {"addr": addr, "name": name, "from": have_name,
-                 "type": have_type})
-            continue
-
-        # the name's class and the parameter's class disagree. The parameter
-        # wins only when its spelling is a real type and the name's is not.
-        have_cls = have_type.rstrip(" *")
-        if name_ok and resolve(cls) is None and resolve(have_cls) is not None:
-            want = name.replace("_%s_" % cls, "_%s_" % have_cls, 1)
-            rows["func_rename"].append(
-                {"addr": addr, "name": name, "want": want,
-                 "cls": cls, "have_cls": have_cls})
         else:
-            rows["blocked"].append(
-                {"addr": addr, "name": name,
-                 "why": "name says %s, parameter 0 is %s %s - neither side is "
-                        "provably right; read the assembly"
-                        % (cls, have_type, have_name)})
-
+            total += 1
+            found = plan_method(f, m.group("cls"), resolve, infer, owners)
+        if found is not None:
+            rows[found[0]].append(found[1])
     return total, rows
+
+
+def signature(ret, name, params, conv):
+    return "%s %s(%s) [%s]" % (ret, name, ", ".join("%s %s" % (t, n) for n, t in params) or "void", conv)
+
+
+def print_rows(title, rows, show, line):
+    if not rows:
+        return
+    print("\n-- %s --  %d" % (title, len(rows)))
+    for r in rows[:show]:
+        print(line(r))
+    if len(rows) > show:
+        print("  ... %d more" % (len(rows) - show))
 
 
 def report(prog_name, total, rows, show):
     print("=" * 78)
     print("%s   %d function(s) match the class-method schema" % (prog_name, total))
     print("=" * 78)
-    for k in ("local_rename", "param_rename", "func_rename", "proto", "blocked"):
+    for k in ROW_KINDS:
         print("   %-14s %d" % (k, len(rows[k])))
 
-    if rows["local_rename"]:
-        print("\n-- LOCAL RENAME (local squatting on the receiver's name) --  %d"
-              % len(rows["local_rename"]))
-        for r in rows["local_rename"]:
-            print("  %s  %s" % (r["addr"], r["name"]))
-            for a, b in r["renames"]:
-                print("        %s  ->  %s" % (a, b))
-
-    if rows["param_rename"]:
-        print("\n-- PARAMETER RENAME (receiver typed right, named wrong) --  %d"
-              % len(rows["param_rename"]))
-        for r in rows["param_rename"][:show]:
-            print("  %s  %s" % (r["addr"], r["name"]))
-            print("        %s %s  ->  %s %s"
-                  % (r["type"], r["from"], r["type"], RECEIVER))
-        if len(rows["param_rename"]) > show:
-            print("  ... %d more" % (len(rows["param_rename"]) - show))
-
-    if rows["func_rename"]:
-        print("\n-- FUNCTION RENAME (class spelled two ways) --  %d"
-              % len(rows["func_rename"]))
-        for r in rows["func_rename"][:show]:
-            print("  %s  %s" % (r["addr"], r["name"]))
-            print("        -> %s   (%s is not a type, %s is)"
-                  % (r["want"], r["cls"], r["have_cls"]))
-        if len(rows["func_rename"]) > show:
-            print("  ... %d more" % (len(rows["func_rename"]) - show))
-
-    if rows["proto"]:
-        print("\n-- PROTOTYPE REPAIR (curated) --  %d" % len(rows["proto"]))
-        for r in rows["proto"]:
-            fx = r["fix"]
-            sig = "%s %s(%s) [%s]" % (
-                fx["ret"], fx["name"],
-                ", ".join("%s %s" % (t, n) for n, t in fx["params"]) or "void",
-                fx["conv"])
-            print("  %s  %s" % (r["addr"], r["have"]))
-            print("        -> %s" % sig)
-
-    if rows["blocked"]:
-        print("\n-- BLOCKED --  %d" % len(rows["blocked"]))
-        for r in rows["blocked"][:show]:
-            print("  %s  %s\n        %s" % (r["addr"], r["name"], r["why"]))
-        if len(rows["blocked"]) > show:
-            print("  ... %d more" % (len(rows["blocked"]) - show))
+    print_rows("LOCAL RENAME (local squatting on the receiver's name)", rows["local_rename"], show,
+               lambda r: "  %s  %s\n%s" % (r["addr"], r["name"], "\n".join(
+                   "        %s  ->  %s" % ab for ab in r["renames"])))
+    print_rows("PARAMETER RENAME (receiver typed right, named wrong)", rows["param_rename"], show,
+               lambda r: "  %s  %s\n        %s %s  ->  %s %s"
+               % (r["addr"], r["name"], r["type"], r["from"], r["type"], RECEIVER))
+    print_rows("FUNCTION RENAME (class spelled two ways)", rows["func_rename"], show,
+               lambda r: "  %s  %s\n        -> %s   (%s is not a type, %s is)"
+               % (r["addr"], r["name"], r["want"], r["cls"], r["have_cls"]))
+    print_rows("DERIVED PROTOTYPE (decompiler's, receiver in the first stack slot)", rows["derive"], show,
+               lambda r: "  %s  %s\n        -> %s" % (r["addr"], r["name"], signature(
+                   type_text(r["ret"]), r["name"], [(n, type_text(t)) for n, t in r["params"]], "__cdecl")))
+    print_rows("PROTOTYPE REPAIR (curated)", rows["proto"], len(rows["proto"]),
+               lambda r: "  %s  %s\n        -> %s" % (r["addr"], r["have"], signature(
+                   r["fix"]["ret"], r["fix"]["name"], r["fix"]["params"], r["fix"]["conv"])))
+    print_rows("BLOCKED", rows["blocked"], show,
+               lambda r: "  %s  %s\n        %s" % (r["addr"], r["name"], r["why"]))
 
 
 def apply_plan(program, rows):
-    from ghidra.program.model.listing import ParameterImpl, ReturnParameterImpl
+    """Apply every row in one transaction. True when anything changed."""
     from ghidra.program.model.symbol import SourceType
-    from java.util import ArrayList
 
-    src = SourceType.USER_DEFINED
-    resolve = make_resolver(program)
-    fm = program.getFunctionManager()
-    af = program.getAddressFactory().getDefaultAddressSpace()
     stats = {"local_renamed": 0, "param_renamed": 0, "func_renamed": 0,
-             "proto_applied": 0, "failed": 0}
-
-    def func_at(addr_s):
-        return fm.getFunctionAt(af.getAddress(addr_s))
-
+             "derived": 0, "proto_applied": 0, "failed": 0}
     # Committed even on a partial failure: each row is an independent edit, so
     # discarding the whole transaction would throw away good work to punish one
     # bad row. Failures are printed and counted, and the run is idempotent, so
     # a re-run picks up whatever did not land.
     tx = program.startTransaction("Fix class-method receivers")
     try:
-        _apply_rows(program, rows, resolve, func_at, src, stats)
+        _apply_rows(program, rows, make_resolver(program), SourceType.USER_DEFINED, stats)
     finally:
         program.endTransaction(tx, True)
 
@@ -489,72 +401,127 @@ def apply_plan(program, rows):
     return any(v for k, v in stats.items() if k != "failed")
 
 
-def _apply_rows(program, rows, resolve, func_at, src, stats):
-    from ghidra.program.model.listing import ParameterImpl, ReturnParameterImpl
+def write_prototype(program, f, conv, ret, params, src):
+    from ghidra.program.model.listing import Function, ParameterImpl, ReturnParameterImpl
     from java.util import ArrayList
+    plist = ArrayList()
+    for pname, ptype in params:
+        plist.add(ParameterImpl(pname, ptype, program))
+    f.updateFunction(conv, ReturnParameterImpl(ret, program), plist,
+                     Function.FunctionUpdateType.DYNAMIC_STORAGE_FORMAL_PARAMS, True, src)
+
+
+def _attempt(stats, key, what, action):
+    try:
+        action()
+        stats[key] += 1
+    except Exception as e:  # pylint: disable=broad-except
+        print("  !! %s: %s" % (what, e))
+        stats["failed"] += 1
+
+
+def _rename_local(f, old, new, src):
+    for v in f.getLocalVariables():
+        if v.getName() == old:
+            v.setName(new, src)
+            return
+    raise ValueError("no local %s" % old)
+
+
+def _apply_rows(program, rows, resolve, src, stats):
+    fm = program.getFunctionManager()
+    af = program.getAddressFactory()
+
+    def func_at(addr_s):
+        return fm.getFunctionAt(af.getAddress(addr_s))
 
     # first, because a local holding `this_ptr` makes the parameter rename throw
     for r in rows["local_rename"]:
         f = func_at(r["addr"])
         for old, new in r["renames"]:
-            try:
-                for v in f.getLocalVariables():
-                    if v.getName() == old:
-                        v.setName(new, src)
-                        stats["local_renamed"] += 1
-                        break
-            except Exception as e:
-                print("  !! %s local %s: %s" % (r["name"], old, e))
-                stats["failed"] += 1
+            _attempt(stats, "local_renamed", "%s local %s" % (r["name"], old),
+                     lambda f=f, old=old, new=new: _rename_local(f, old, new, src))
 
+    # in place: touches one field, so custom storage on the other parameters
+    # cannot be re-derived away
     for r in rows["param_rename"]:
         f = func_at(r["addr"])
-        try:
-            # in place: touches one field, so custom storage on the other
-            # parameters cannot be re-derived away
-            list(f.getParameters())[0].setName(RECEIVER, src)
-            stats["param_renamed"] += 1
-        except Exception as e:
-            print("  !! %s param rename: %s" % (r["name"], e))
-            stats["failed"] += 1
+        _attempt(stats, "param_renamed", "%s param rename" % r["name"],
+                 lambda f=f: f.getParameters()[0].setName(RECEIVER, src))
 
     for r in rows["func_rename"]:
         f = func_at(r["addr"])
-        try:
-            f.setName(r["want"], src)
-            stats["func_renamed"] += 1
-        except Exception as e:
-            print("  !! %s func rename: %s" % (r["name"], e))
-            stats["failed"] += 1
+        _attempt(stats, "func_renamed", "%s func rename" % r["name"],
+                 lambda f=f, r=r: f.setName(r["want"], src))
+
+    for r in rows["derive"]:
+        f = func_at(r["addr"])
+        _attempt(stats, "derived", "%s derived prototype" % r["name"],
+                 lambda f=f, r=r: write_prototype(program, f, "__cdecl", r["ret"], r["params"], src))
+
+    def curated(f, fx):
+        write_prototype(program, f, fx["conv"], resolve(fx["ret"]),
+                        [(n, resolve(t)) for n, t in fx["params"]], src)
+        if f.getName() != fx["name"]:
+            f.setName(fx["name"], src)
 
     for r in rows["proto"]:
-        fx = r["fix"]
         f = func_at(r["addr"])
-        try:
-            params = ArrayList()
-            for pname, ptype in fx["params"]:
-                params.add(ParameterImpl(pname, resolve(ptype), program))
-            f.updateFunction(fx["conv"],
-                             ReturnParameterImpl(resolve(fx["ret"]), program),
-                             params,
-                             f.FunctionUpdateType.DYNAMIC_STORAGE_FORMAL_PARAMS,
-                             True, src)
-            if f.getName() != fx["name"]:
-                f.setName(fx["name"], src)
-            stats["proto_applied"] += 1
-        except Exception as e:
-            print("  !! %s prototype: %s" % (r["have"], e))
-            stats["failed"] += 1
+        _attempt(stats, "proto_applied", "%s prototype" % r["have"],
+                 lambda f=f, fx=r["fix"]: curated(f, fx))
+
+
+def decompiler_inference(program):
+    """(infer, dispose): infer(function) -> the decompiler's prototype as
+    ([(name, type, stack offset or None)], return type), or None."""
+    from ghidra.app.decompiler import DecompInterface
+    from ghidra.util.task import ConsoleTaskMonitor
+    ifc = DecompInterface()
+    ifc.openProgram(program)
+    monitor = ConsoleTaskMonitor()
+
+    def infer(f):
+        high = ifc.decompileFunction(f, DECOMPILE_TIMEOUT, monitor).getHighFunction()
+        if high is None:
+            return None
+        symbols = high.getLocalSymbolMap()
+        params = []
+        for i in range(symbols.getNumParams()):
+            p = symbols.getParamSymbol(i)
+            storage = p.getStorage()
+            offset = storage.getStackOffset() if storage.isStackStorage() else None
+            params.append((p.getName(), p.getDataType(), offset))
+        return params, high.getFunctionPrototype().getReturnType()
+
+    return infer, ifc.dispose
 
 
 def snapshot(args):
-    import subprocess
     here = os.path.dirname(os.path.abspath(__file__))
     tool = os.path.join(here, "snapshot_project.py")
     cmd = [sys.executable, tool, os.path.abspath(args.project_path),
            args.project_name, "--tag", "pre-this-ptr"]
     print("Snapshot: %s" % " ".join(cmd))
     return subprocess.call(cmd) == 0
+
+
+def run_program(program, prog_name, args, skip, fixes=None):
+    infer, dispose = decompiler_inference(program)
+    try:
+        total, rows = plan(program, prog_name, skip, infer, fixes)
+    finally:
+        dispose()
+    report(prog_name, total, rows, args.show)
+    if not args.apply:
+        print("\n  [dry-run] re-run with --apply to execute.")
+    elif apply_plan(program, rows):
+        from ghidra.util.task import ConsoleTaskMonitor
+        print("  saving %s ..." % prog_name)
+        program.getDomainFile().save(ConsoleTaskMonitor())
+        print("  saved.")
+    else:
+        print("  nothing written for %s" % prog_name)
+    print()
 
 
 def main():
@@ -568,14 +535,16 @@ def main():
     ap.add_argument("--no-snapshot", action="store_true")
     ap.add_argument("--skip-file", default=os.path.join(
         os.path.dirname(os.path.abspath(__file__)), "check_this_ptr_skip.txt"))
+    ap.add_argument("--fixes", help="JSON file of curated repairs (prototypes, local renames)")
     args = ap.parse_args()
 
     skip = load_skip(args.skip_file)
     if skip:
         print("%s: %d exemption(s)\n" % (os.path.basename(args.skip_file), len(skip)))
+    fixes = load_fixes(args.fixes)
 
     if args.apply and not args.no_snapshot and not snapshot(args):
-        print("Snapshot failed - refusing to mutate.")
+        print("Snapshot failed - refusing to mutate.", flush=True)
         os._exit(1)
 
     import pyghidra
@@ -586,25 +555,15 @@ def main():
     try:
         for prog_name in args.programs:
             with pyghidra.program_context(project, "/" + prog_name) as program:
-                total, rows = plan(program, prog_name, skip)
-                report(prog_name, total, rows, args.show)
-                if args.apply:
-                    if apply_plan(program, rows):
-                        from ghidra.util.task import ConsoleTaskMonitor
-                        print("  saving %s ..." % prog_name)
-                        program.getDomainFile().save(ConsoleTaskMonitor())
-                        print("  saved.")
-                    else:
-                        print("  nothing written for %s" % prog_name)
-                else:
-                    print("\n  [dry-run] re-run with --apply to execute.")
-                print()
+                run_program(program, prog_name, args, skip, fixes)
         project.close()
-    except Exception as e:
+    except Exception as e:  # pylint: disable=broad-except
         print("ERROR: %s" % e)
         import traceback
         traceback.print_exc()
         code = 1
+    # os._exit skips the buffer flush, which loses the report when stdout is a file
+    sys.stdout.flush()
     os._exit(code)
 
 

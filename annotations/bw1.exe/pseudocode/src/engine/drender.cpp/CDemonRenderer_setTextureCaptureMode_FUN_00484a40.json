@@ -18,31 +18,31 @@
     {
       "addr": "004101f0",
       "from_addr": "00410356",
-      "name": "core_baron.cpp_FUN_004101f0",
+      "name": "core_baron.cpp_CBaron_renderTransparent_FUN_004101f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00413970",
       "from_addr": "00413ad9",
-      "name": "core_batman.cpp_FUN_00413970",
+      "name": "core_batman.cpp_CBatman_renderOpaque_FUN_00413970",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0041d000",
       "from_addr": "0041d063",
-      "name": "core_boneguy.cpp_FUN_0041d000",
+      "name": "core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_0041d000",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0047cfe0",
       "from_addr": "0047d158",
-      "name": "core_dracbrid.cpp_FUN_0047cfe0",
+      "name": "core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_0047cfe0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f90d0",
       "from_addr": "004f94dd",
-      "name": "core_inv.cpp_FUN_004f90d0",
+      "name": "core_inv.cpp_CInventory_renderItemModel_FUN_004f90d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -54,19 +54,19 @@
     {
       "addr": "0055fc60",
       "from_addr": "0055fd37",
-      "name": "core_shadow.cpp_FUN_0055fc60",
+      "name": "core_shadow.cpp_CShadow_renderTransparent_FUN_0055fc60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005611a0",
       "from_addr": "0056126b",
-      "name": "core_shadowsc.cpp_FUN_005611a0",
+      "name": "core_shadowsc.cpp_CShadowsc_renderTransparent_FUN_005611a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a9440",
       "from_addr": "005a9555",
-      "name": "core_vessel.cpp_FUN_005a9440",
+      "name": "core_vessel.cpp_CCryptVessel_renderOpaque_FUN_005a9440",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -103,7 +103,7 @@
       {
         "call_addr": "004f94dd",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004f90d0",
+        "caller": "core_inv.cpp_CInventory_renderItemModel_FUN_004f90d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -114,7 +114,7 @@
       {
         "call_addr": "00410356",
         "call_type": "direct",
-        "caller": "core_baron.cpp_FUN_004101f0",
+        "caller": "core_baron.cpp_CBaron_renderTransparent_FUN_004101f0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -125,7 +125,7 @@
       {
         "call_addr": "00413ad9",
         "call_type": "direct",
-        "caller": "core_batman.cpp_FUN_00413970",
+        "caller": "core_batman.cpp_CBatman_renderOpaque_FUN_00413970",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -147,7 +147,7 @@
       {
         "call_addr": "0041d063",
         "call_type": "direct",
-        "caller": "core_boneguy.cpp_FUN_0041d000",
+        "caller": "core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_0041d000",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -158,7 +158,7 @@
       {
         "call_addr": "0047d158",
         "call_type": "direct",
-        "caller": "core_dracbrid.cpp_FUN_0047cfe0",
+        "caller": "core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_0047cfe0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -169,7 +169,7 @@
       {
         "call_addr": "0055fd37",
         "call_type": "direct",
-        "caller": "core_shadow.cpp_FUN_0055fc60",
+        "caller": "core_shadow.cpp_CShadow_renderTransparent_FUN_0055fc60",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -180,7 +180,7 @@
       {
         "call_addr": "0056126b",
         "call_type": "direct",
-        "caller": "core_shadowsc.cpp_FUN_005611a0",
+        "caller": "core_shadowsc.cpp_CShadowsc_renderTransparent_FUN_005611a0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -191,7 +191,7 @@
       {
         "call_addr": "005a9555",
         "call_type": "direct",
-        "caller": "core_vessel.cpp_FUN_005a9440",
+        "caller": "core_vessel.cpp_CCryptVessel_renderOpaque_FUN_005a9440",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -227,6 +227,32 @@
       "STORE": 3
     },
     "pcode_op_count": 69
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0046c540",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0046e120",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0048d6c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004619f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 12,

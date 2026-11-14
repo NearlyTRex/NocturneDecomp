@@ -9,20 +9,20 @@
 int __cdecl core_zombie_cpp_CZombie_getGrabbed_FUN_00599c60(CZombie *this_ptr,CDemonActor *grabber,int grab_type)
 
 {
-  int iVar1;
+  CCharacter *pCVar1;
   CZombie *pCVar2;
   
   if (grab_type == 1) {
-    iVar1 = *(int *)&this_ptr->field_0x10a78;
-    if (iVar1 != 0) {
-      pCVar2 = (CZombie *)(**(code **)(*(int *)(iVar1 + 0x2b0) + 0xfc))(iVar1);
+    pCVar1 = (this_ptr->base).victim;
+    if (pCVar1 != (CCharacter *)0x0) {
+      pCVar2 = (CZombie *)(*(((pCVar1->base).vtable._uc)->_uc).getGrabber)(pCVar1);
       if (pCVar2 == this_ptr) {
-        (**(code **)(*(int *)(*(int *)&this_ptr->field_0x10a78 + 0x2b0) + 0xf8))
-                  (*(int *)&this_ptr->field_0x10a78);
+        pCVar1 = (this_ptr->base).victim;
+        (*(((pCVar1->base).vtable._uc)->_uc).releaseFromGrab)(pCVar1);
       }
     }
-    *(CDemonActor **)&this_ptr->field_0x276c = grabber;
-    *(uint *)&this_ptr->field_0x2770 = 1;
+    (this_ptr->base).base.grabbed_by = grabber;
+    (this_ptr->base).base.grabbed_type = 1;
     return 1;
   }
   return 0;

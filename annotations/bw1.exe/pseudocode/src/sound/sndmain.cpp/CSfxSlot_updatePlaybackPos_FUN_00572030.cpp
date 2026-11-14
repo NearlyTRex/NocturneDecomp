@@ -17,55 +17,55 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_00572030(CSfxSlot 
   double dVar3;
   ulonglong local_28;
   
-  if (*(int *)&this_ptr->field_0x68 == 0) {
+  if (this_ptr->sample == (CSfxSample *)0x0) {
     _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
     _DAT_01d1d404 = 0xd34;
     core_main_c_FUN_005030e0();
   }
   if ((hardware_playback_pos < 0.0) ||
-     ((double)*(int *)(*(int *)&this_ptr->field_0x68 + 0x164) < hardware_playback_pos)) {
+     ((double)this_ptr->sample->streaming_buffer_size < hardware_playback_pos)) {
     _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
     _DAT_01d1d404 = 0xd3a;
     core_main_c_FUN_005030e0();
   }
-  local_28 = hardware_playback_pos - *(double *)&this_ptr->field_0x10c;
+  local_28 = hardware_playback_pos - this_ptr->prev_hardware_playback_pos;
   if (local_28 < 0.0) {
-    local_28 = (double)*(int *)(*(int *)&this_ptr->field_0x68 + 0x164) + local_28;
+    local_28 = (double)this_ptr->sample->streaming_buffer_size + local_28;
   }
   if ((local_28 < 0.0) ||
-     ((double)*(int *)(*(int *)&this_ptr->field_0x68 + 0x164) + _DAT_005f3bd0 < local_28)) {
+     ((double)this_ptr->sample->streaming_buffer_size + _DAT_005f3bd0 < local_28)) {
     _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
     _DAT_01d1d404 = 0xd48;
     core_main_c_FUN_005030e0
               ("SfxSlot::updatePlaybackPos - stepped too much: %f-%f=%f, sample=%d (%s)",hardware_playback_pos,
-               *(uint *)&this_ptr->field_0x10c,*(uint *)&this_ptr->field_0x110,
-               (uint)local_28,local_28._4_4_,
-               *(uint *)(*(int *)&this_ptr->field_0x68 + 0x164));
+               *(uint *)&this_ptr->prev_hardware_playback_pos,
+               *(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4),(uint)local_28,
+               local_28._4_4_,this_ptr->sample->streaming_buffer_size);
   }
-  if ((*(double *)&this_ptr->field_0x50 != *(double *)&this_ptr->field_0x10c) ||
-     (hardware_playback_pos < *(double *)&this_ptr->field_0x50)) {
-    *(double *)&this_ptr->field_0x50 = *(double *)&this_ptr->field_0x50 + local_28;
+  if (((this_ptr->options).playback_position != this_ptr->prev_hardware_playback_pos) ||
+     (hardware_playback_pos < (this_ptr->options).playback_position)) {
+    (this_ptr->options).playback_position = (this_ptr->options).playback_position + local_28;
   }
   else {
-    *(double *)&this_ptr->field_0x50 = hardware_playback_pos;
+    (this_ptr->options).playback_position = hardware_playback_pos;
   }
-  if (*(double *)&this_ptr->field_0x50 < 0.0) {
-    *(uint *)&this_ptr->field_0x50 = 0;
-    *(uint *)&this_ptr->field_0x54 = 0;
+  if ((this_ptr->options).playback_position < 0.0) {
+    *(uint *)&(this_ptr->options).playback_position = 0;
+    *(uint *)((int)&(this_ptr->options).playback_position + 4) = 0;
   }
-  this_ptr_00 = *(CSfxSample **)&this_ptr->field_0x68;
-  if ((-1 < *(int *)&this_ptr_00->field_0x110) &&
-     ((double)*(int *)&this_ptr_00->field_0x110 <= *(double *)&this_ptr->field_0x50)) {
+  this_ptr_00 = this_ptr->sample;
+  if ((-1 < (this_ptr_00->sample_info).sample_count) &&
+     ((double)(this_ptr_00->sample_info).sample_count <= (this_ptr->options).playback_position)) {
     iVar2 = sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_00572680(this_ptr_00);
     if (iVar2 == 0) {
-      *(double *)&this_ptr->field_0x50 = (double)*(int *)(*(int *)&this_ptr->field_0x68 + 0x110);
+      (this_ptr->options).playback_position = (double)(this_ptr->sample->sample_info).sample_count;
     }
     else {
-      dVar1 = (double)*(int *)(*(int *)&this_ptr->field_0x68 + 0x110);
-      dVar3 = floor(*(double *)&this_ptr->field_0x50 / dVar1);
-      *(double *)&this_ptr->field_0x50 = *(double *)&this_ptr->field_0x50 - dVar3 * dVar1;
+      dVar1 = (double)(this_ptr->sample->sample_info).sample_count;
+      dVar3 = floor((this_ptr->options).playback_position / dVar1);
+      (this_ptr->options).playback_position = (this_ptr->options).playback_position - dVar3 * dVar1;
     }
   }
-  *(double *)&this_ptr->field_0x10c = hardware_playback_pos;
+  this_ptr->prev_hardware_playback_pos = hardware_playback_pos;
   return;
 }

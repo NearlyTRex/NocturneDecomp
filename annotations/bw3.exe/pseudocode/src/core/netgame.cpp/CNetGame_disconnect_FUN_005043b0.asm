@@ -18,14 +18,14 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[8]:
-;   core_game.cpp_FUN_004b7f90 at 004b858c
+;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b858c
 ;   core_game.cpp_joinNetworkGame_FUN_004bf2e0 at 004bf377
 ;   core_netgame.cpp_CNetGame_init_FUN_00503e20 at 00503ea6
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_00503fb0 at 00503fc2
+;   core_netgame.cpp_CNetGame_processPacket_FUN_00504d60 at 005055e7
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_00505a30 at 00505d70
-;   core_netgame.cpp_FUN_00503ed0 at 00503ed7
-;   core_netgame.cpp_FUN_00503efc at 00503f21
-;   core_netgame.cpp_FUN_00504d60 at 005055e7
+;   core_netgame.cpp_CNetGame_shutdown_FUN_00503ed0 at 00503ed7
+;   core_netgame.cpp_FUN_00503f00 at 00503f21
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Disconnecting_from_serve_005ca66b
@@ -47,11 +47,11 @@
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_receivePackets_FUN_00504c70
 ;   core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_00507f90
+;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_0047ed50
 ;   shape_edittool.cpp_CEditorTools_showMessage_FUN_0047ce80
-;   shape_edittool.cpp_FUN_0047ed50
 ;   shape_edittool.cpp_FUN_0047ee50
 ;   shape_edittool.cpp_FUN_0047f970
-;   wincore_winrun.cpp_FUN_005806a0
+;   wincore_winrun.cpp_getTime_FUN_005806a0
 ;
 ; *****************************************************************************
 
@@ -99,11 +99,11 @@ section .text
         ;   Label: LAB_00504425
     MOV EBX,dword ptr [0x005fb140]      ; 0050442a | g_CEditorToolsPtr
     PUSH EBX                            ; 00504430
-    CALL shape_edittool.cpp_FUN_0047ed50 ; 00504431
-        ;   XREF to: 0047ed50 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_FUN_0047ed50(CEditorTools * this_ptr, char * message_text)
+    CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_0047ed50 ; 00504431
+        ;   XREF to: 0047ed50 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_0047ed50(CEditorTools * this_ptr, char * message_text)
     ADD ESP,0x8                         ; 00504436
-    CALL wincore_winrun.cpp_FUN_005806a0 ; 00504439
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005806a0()
+    CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 00504439
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV EDX,EAX                         ; 0050443e
     MOV EBX,0x12                        ; 00504440
     SAR EDX,0x1f                        ; 00504445
@@ -131,8 +131,8 @@ section .text
         ;   XREF to: 00504521 (CONDITIONAL_JUMP)  ; LAB_00504521
     LEA EAX,[ESI + 0x20]                ; 00504492
     MOV dword ptr [ESP + 0x14],EAX      ; 00504495
-    CALL wincore_winrun.cpp_FUN_005806a0 ; 00504499
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005806a0()
+    CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 00504499
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
         ;   Label: LAB_00504499
     MOV EDX,EAX                         ; 0050449e
     MOV ECX,0x12                        ; 005044a0
@@ -241,8 +241,8 @@ section .text
     SAHF                                ; 005045b7
     JNC 0x005045fc                      ; 005045b8
         ;   XREF to: 005045fc (CONDITIONAL_JUMP)  ; LAB_005045fc
-    CALL wincore_winrun.cpp_FUN_005806a0 ; 005045ba
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005806a0()
+    CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 005045ba
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV EDX,EAX                         ; 005045bf
     MOV ECX,0x12                        ; 005045c1
     SAR EDX,0x1f                        ; 005045c6
@@ -301,11 +301,11 @@ section .text
         ;   Label: LAB_0050464b
     MOV ECX,dword ptr [0x005fb140]      ; 00504650 | g_CEditorToolsPtr
     PUSH ECX                            ; 00504656
-    CALL shape_edittool.cpp_FUN_0047ed50 ; 00504657
-        ;   XREF to: 0047ed50 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_FUN_0047ed50(CEditorTools * this_ptr, char * message_text)
+    CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_0047ed50 ; 00504657
+        ;   XREF to: 0047ed50 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_0047ed50(CEditorTools * this_ptr, char * message_text)
     ADD ESP,0x8                         ; 0050465c
-    CALL wincore_winrun.cpp_FUN_005806a0 ; 0050465f
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005806a0()
+    CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 0050465f
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV EDX,EAX                         ; 00504664
     MOV EBX,0x12                        ; 00504666
     SAR EDX,0x1f                        ; 0050466b
@@ -333,8 +333,8 @@ section .text
         ;   XREF to: 0050474e (CONDITIONAL_JUMP)  ; LAB_0050474e
     LEA EAX,[ESI + 0x20]                ; 005046b8
     MOV dword ptr [ESP + 0x10],EAX      ; 005046bb
-    CALL wincore_winrun.cpp_FUN_005806a0 ; 005046bf
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005806a0()
+    CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 005046bf
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
         ;   Label: LAB_005046bf
     MOV EDX,EAX                         ; 005046c4
     MOV ECX,0x12                        ; 005046c6
@@ -445,8 +445,8 @@ section .text
     SAHF                                ; 005047ea
     JNC 0x0050482c                      ; 005047eb
         ;   XREF to: 0050482c (CONDITIONAL_JUMP)  ; LAB_0050482c
-    CALL wincore_winrun.cpp_FUN_005806a0 ; 005047ed
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005806a0()
+    CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 005047ed
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV EDX,EAX                         ; 005047f2
     MOV ECX,0x12                        ; 005047f4
     SAR EDX,0x1f                        ; 005047f9

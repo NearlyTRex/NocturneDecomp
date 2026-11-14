@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_holycrss_cpp_staticInit_FUN_004d5070(void)
+; void __cdecl core_holycrss_cpp_staticInit_FUN_004d5070(void)
 ;
 ;
 ; Called Functions:

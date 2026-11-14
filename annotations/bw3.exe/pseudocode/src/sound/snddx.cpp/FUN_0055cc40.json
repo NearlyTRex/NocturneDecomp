@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 389,
-    "complexity_score": 519,
+    "complexity_score": 504,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 16,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 149,
+    "pseudocode_lines": 134,
     "suspect_count": 35,
     "suspect_types": [
       "raw_address_pointer_store",
@@ -15,7 +15,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 538
+    "total_lines": 523
   },
   "cross_references": [],
   "function": {
@@ -39,7 +39,7 @@
     {
       "addr": "005a28c0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a28c0"
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
     },
     {
       "addr": "0055a670",
@@ -53,8 +53,8 @@
     },
     {
       "addr": "0055a560",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_0055a560"
+      "is_variadic": true,
+      "name": "sound_sndmain.cpp_logSoundError_FUN_0055a560"
     }
   ],
   "globals": [
@@ -235,7 +235,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 26,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar1 = *(int *)(param_2 + 0x60);",
@@ -243,7 +243,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 36,
       "match": "param_2",
       "severity": "mild",
       "text": "pcStack_b0c = (char *)param_2;",
@@ -251,7 +251,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
       "text": "piStack_b10 = param_1;",
@@ -259,7 +259,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 40,
+      "line": 39,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar3 = (**(code **)(*param_1 + 0x44))();",
@@ -267,7 +267,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 39,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar3 = (**(code **)(*param_1 + 0x44))();",
@@ -275,7 +275,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 43,
       "match": "param_2",
       "severity": "mild",
       "text": "if (*(int *)(param_2 + 0x68) == 0) {",
@@ -283,7 +283,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 50,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((1 < *(int *)(*(int *)(param_2 + 0x68) + 0x124)) ||",
@@ -291,7 +291,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 51,
       "match": "param_2",
       "severity": "mild",
       "text": "(0 < *(int *)(*(int *)(param_2 + 0x68) + 0x13c))) {",
@@ -299,7 +299,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 58,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((*(int *)(*(int *)(param_2 + 0x68) + 0x124) == 1) &&",
@@ -307,7 +307,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 59,
       "match": "param_2",
       "severity": "mild",
       "text": "(-1 < *(int *)(*(int *)(param_2 + 0x68) + 0x13c))) {",
@@ -315,7 +315,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 62,
       "match": "param_2",
       "severity": "mild",
       "text": "if (*(int *)(*(int *)(param_2 + 0x68) + 0x164) != *(int *)(*(int *)(param_2 + 0x68) + 0x110)) {",
@@ -323,7 +323,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 62,
       "match": "param_2",
       "severity": "mild",
       "text": "if (*(int *)(*(int *)(param_2 + 0x68) + 0x164) != *(int *)(*(int *)(param_2 + 0x68) + 0x110)) {",
@@ -331,7 +331,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 69,
+      "line": 68,
       "match": "*(int **)(iVar1 * 0x24 + 0x2cf500c",
       "severity": "moderate",
       "text": "piStack_b14 = *(int **)(iVar1 * 0x24 + 0x2cf500c);",
@@ -339,7 +339,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 70,
+      "line": 69,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar4 = (**(code **)(*piStack_b14 + 0x30))();",
@@ -347,7 +347,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 72,
+      "line": 71,
       "match": "*(int **)(iVar1 * 0x24 + 0x2cf500c",
       "severity": "moderate",
       "text": "piVar2 = *(int **)(iVar1 * 0x24 + 0x2cf500c);",
@@ -355,7 +355,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 73,
+      "line": 72,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar4 = (**(code **)(*piVar2 + 0x44))(piVar2,0);",
@@ -363,7 +363,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 82,
+      "line": 79,
       "match": "*(int **)(iVar1 * 0x24 + 0x2cf500c",
       "severity": "moderate",
       "text": "piVar2 = *(int **)(iVar1 * 0x24 + 0x2cf500c);",
@@ -371,7 +371,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 83,
+      "line": 80,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar4 = (**(code **)(*piVar2 + 0x3c))(piVar2,0xffffd8f0);",
@@ -379,7 +379,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 92,
+      "line": 87,
       "match": "*(int **)(iVar1 * 0x24 + 0x2cf500c",
       "severity": "moderate",
       "text": "piVar2 = *(int **)(iVar1 * 0x24 + 0x2cf500c);",
@@ -387,7 +387,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 93,
+      "line": 88,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar4 = (**(code **)(*piVar2 + 0x30))(piVar2,0,0,uStack_34);",
@@ -395,7 +395,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 104,
+      "line": 97,
       "match": "param_2",
       "severity": "mild",
       "text": "(*(int *)(iVar3 + 0x2cf5028) != *(int *)(*(int *)(param_2 + 0x68) + 0x10c))) &&",
@@ -403,7 +403,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 106,
+      "line": 99,
       "match": "param_2",
       "severity": "mild",
       "text": "((float)*(int *)(*(int *)(param_2 + 0x68) + 0x10c) *",
@@ -411,7 +411,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 107,
+      "line": 100,
       "match": "param_2",
       "severity": "mild",
       "text": "*(float *)(param_2 + 0x3c)),",
@@ -419,7 +419,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 109,
+      "line": 102,
       "match": "*(int **)(iVar3 + 0x2cf500c",
       "severity": "moderate",
       "text": "uVar4 = (**(code **)(**(int **)(iVar3 + 0x2cf500c) + 0x44))",
@@ -427,7 +427,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 109,
+      "line": 102,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar4 = (**(code **)(**(int **)(iVar3 + 0x2cf500c) + 0x44))",
@@ -435,7 +435,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 110,
+      "line": 103,
       "match": "*(int **)(iVar3 + 0x2cf500c",
       "severity": "moderate",
       "text": "(*(int **)(iVar3 + 0x2cf500c),iVar6);",
@@ -443,7 +443,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 120,
+      "line": 111,
       "match": "*(int **)(iVar1 * 0x24 + 0x2cf500c",
       "severity": "moderate",
       "text": "piVar2 = *(int **)(iVar1 * 0x24 + 0x2cf500c);",
@@ -451,7 +451,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 121,
+      "line": 112,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar4 = (**(code **)(*piVar2 + 0x34))(piVar2,0);",
@@ -459,7 +459,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 130,
+      "line": 119,
       "match": "*(int **)(iVar1 * 0x24 + 0x2cf500c",
       "severity": "moderate",
       "text": "piVar2 = *(int **)(iVar1 * 0x24 + 0x2cf500c);",
@@ -467,7 +467,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 131,
+      "line": 120,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar4 = (**(code **)(*piVar2 + 0x3c))(piVar2,*(uint *)(iVar1 * 0x24 + 0x2cf5020));",
@@ -475,7 +475,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 150,
+      "line": 135,
       "match": "param_2",
       "severity": "mild",
       "text": "*(byte *)(param_2 + 0x11b) = *(byte *)(param_2 + 0x11b) & 0xbf;",
@@ -483,7 +483,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 150,
+      "line": 135,
       "match": "param_2",
       "severity": "mild",
       "text": "*(byte *)(param_2 + 0x11b) = *(byte *)(param_2 + 0x11b) & 0xbf;",
@@ -493,7 +493,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDirectSoundDevice",
         "offset": 76,
         "vtable_addr": "005e48dc"
       }

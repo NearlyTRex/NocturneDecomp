@@ -38,7 +38,7 @@ void __cdecl core_game_cpp_checkCheatAndGiveWeapon_FUN_004d2690(char *cheat_code
     return;
   }
   DAT_01cd0c68 = 0;
-  core_game_cpp_FUN_004d2540(class_name);
+  core_game_cpp_giveHeroWeapon_FUN_004d2540(class_name);
   core_game_cpp_CGame_displayMessage_FUN_004cc190(g_CGamePtr,message,5.0);
   core_sound_cpp_CSound_playSound_FUN_0057d880(0x02C82A60,(void *)0x0,"cheat-1.wav");
   return;

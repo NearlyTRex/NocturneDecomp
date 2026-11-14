@@ -12,7 +12,7 @@ void __cdecl core_actor_cpp_archiveInteger_FUN_0040b960(int *int_ptr,char *prope
   int iVar1;
   
   if (DAT_007bc038 == 1) {
-    iVar1 = _fscanf(DAT_007bc034,&DAT_005cab46,int_ptr);
+    iVar1 = _fscanf(DAT_007bc034,&DAT_005cab46);
     if (iVar1 != 1) {
       core_actor_cpp_handleActorPropertyParseError_FUN_0040b380
                 ("Integer value",property_name);

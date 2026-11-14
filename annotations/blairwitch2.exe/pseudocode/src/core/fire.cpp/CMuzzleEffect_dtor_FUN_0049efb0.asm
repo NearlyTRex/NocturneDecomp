@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CMuzzleEffect * core_fire_cpp_CMuzzleEffect_dtor_FUN_0049efb0(CMuzzleEffect *this_ptr,uint flags)
+; CMuzzleEffect * __cdecl core_fire_cpp_CMuzzleEffect_dtor_FUN_0049efb0(CMuzzleEffect *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CMuzzleEffect *  Stack[0x4]:4   this_ptr

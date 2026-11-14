@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool __cdecl engine_prim_c_calculateTriangleWindingOrder_FUN_00515ac0(int param_1,int param_2,int param_3)
+; int __cdecl engine_prim_c_calculateTriangleWindingOrder_FUN_00515ac0(SRenderVertex *v0,SRenderVertex *v1,SRenderVertex *v2)
 ;
+; Parameters:
+; SRenderVertex *  Stack[0x4]:4   v0
+; SRenderVertex *  Stack[0x8]:4   v1
+; SRenderVertex *  Stack[0xc]:4   v2
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
@@ -12,15 +16,15 @@
 ;
 ; XREF[12]:
 ;   core_asgaya.cpp_FUN_005a1ea0 at 005a2161
-;   core_asgaya.cpp_FUN_005a23c0 at 005a2623
-;   engine_clipper.c_FUN_0043b3bc at 0043b3fc
+;   core_asgaya.cpp_rasterizePolygonCustom_FUN_005a23c0 at 005a2623
+;   core_dpart.cpp_FUN_00466d50 at 00466e31
+;   core_dpart.cpp_FUN_004673d0 at 004674ad
+;   engine_clipper.c_FUN_0043b3c0 at 0043b3fc
 ;   engine_clipper.c_clipPolygonToViewFrustum_FUN_00439da0 at 00439e94
 ;   engine_clipper.c_clipPolygonToViewport_FUN_0043bac0 at 0043bb8c
-;   engine_drender.cpp_FUN_0046de6e at 0046df85
-;   engine_prim.c_FUN_00515e80 at 00515f33
-;   engine_prim.c_FUN_005163b0 at 005163fd
-;   engine_prim.c_FUN_00516de0 at 00516e93
-;   engine_prim.c_FUN_00517480 at 005174cd
+;   engine_drender.cpp_FUN_0046de70 at 0046df85
+;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_00517480 at 005174cd
+;   engine_prim.c_renderIndexedPolygonSoftware_FUN_005163b0 at 005163fd
 ;   ... and 2 more
 ;
 ; Referenced Globals:

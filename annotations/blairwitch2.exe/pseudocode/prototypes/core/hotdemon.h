@@ -7,43 +7,43 @@
 
 // Original: core_hotdemon.cpp_staticInit_FUN_004d3790
 // Address: 004d3790
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_hotdemon.cpp_factoryFuncHotDemon_FUN_004d37c0
 // Address: 004d37c0
-void factoryFuncHotDemon(void);
+CHotDemon * __cdecl factoryFuncHotDemon(void);
 
 // Original: core_hotdemon.cpp_CHotDemon_getActorType_FUN_004d37e0
 // Address: 004d37e0
-CDemonActorType * CHotDemon::getActorType(CHotDemon *this_ptr);
+CDemonActorType * __cdecl CHotDemon::getActorType(CHotDemon *this_ptr);
 
 // Original: core_hotdemon.cpp_CHotDemon_ctor_FUN_004d37f0
 // Address: 004d37f0
 CHotDemon * __cdecl CHotDemon::ctor(CHotDemon *this_ptr);
 
-// Original: core_hotdemon.cpp_FUN_004d3850
+// Original: core_hotdemon.cpp_CHotDemon_setup_FUN_004d3850
 // Address: 004d3850
-void FUN_004d3850(CEnemy *param_1);
+void __cdecl CHotDemon::setup(CHotDemon *this_ptr);
 
-// Original: core_hotdemon.cpp_FUN_004d3a70
+// Original: core_hotdemon.cpp_CHotDemon_process_FUN_004d3a70
 // Address: 004d3a70
-void FUN_004d3a70(CEnemy *param_1,float param_2);
+void __cdecl CHotDemon::process(CHotDemon *this_ptr,float delta_time);
 
-// Original: core_hotdemon.cpp_FUN_004d42f0
+// Original: core_hotdemon.cpp_CHotDemon_getDeathState_FUN_004d42f0
 // Address: 004d42f0
-undefined4 FUN_004d42f0(int param_1);
+EDeathState __cdecl CHotDemon::getDeathState(CHotDemon *this_ptr);
 
-// Original: core_hotdemon.cpp_FUN_004d4330
+// Original: core_hotdemon.cpp_CHotDemon_archive_FUN_004d4330
 // Address: 004d4330
-undefined4 FUN_004d4330(CEnemy *param_1);
+void __cdecl CHotDemon::archive(CHotDemon *this_ptr);
 
-// Original: core_hotdemon.cpp_FUN_004d4390
+// Original: core_hotdemon.cpp_CHotDemon_processDamage_FUN_004d4390
 // Address: 004d4390
-void FUN_004d4390(int param_1,int param_2);
+void __cdecl CHotDemon::processDamage(CHotDemon *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_hotdemon.cpp_FUN_004d4560
+// Original: core_hotdemon.cpp_CHotDemon_getTargetPoints_FUN_004d4560
 // Address: 004d4560
-undefined4 FUN_004d4560(int param_1,undefined4 *param_2);
+int __cdecl CHotDemon::getTargetPoints(CHotDemon *this_ptr,CVector3f *out_points_array);
 
 // Original: core_hotdemon.cpp_CHotDemon_getCollisionType_FUN_004d4660
 // Address: 004d4660
@@ -51,4 +51,4 @@ ECollisionType __cdecl CHotDemon::getCollisionType(CHotDemon *this_ptr,SCollisio
 
 // Original: core_hotdemon.cpp_CHotDemon_dtor_FUN_004d4680
 // Address: 004d4680
-CHotDemon * CHotDemon::dtor(CHotDemon *this_ptr,uint flags);
+CHotDemon * __cdecl CHotDemon::dtor(CHotDemon *this_ptr,uint flags);

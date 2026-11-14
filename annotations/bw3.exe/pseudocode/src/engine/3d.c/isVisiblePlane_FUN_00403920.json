@@ -2,18 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 218,
-    "cross_reference_count": 80,
+    "complexity_score": 98,
+    "cross_reference_count": 81,
     "function_call_count": 0,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 23,
-    "suspect_count": 17,
+    "suspect_count": 6,
     "suspect_types": [
-      "param_count_too_few",
       "sign_compare_idiom",
       "undefined_data",
-      "unnamed_param",
       "warning_overlapping_globals"
     ],
     "total_lines": 64
@@ -26,39 +24,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0046682e",
+      "addr": "00466830",
       "from_addr": "004668b5",
-      "name": "core_dpart.cpp_FUN_0046682e",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00404dd0",
-      "from_addr": "00404dde",
-      "name": "engine_3d.c_FUN_00404dd0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00404e70",
-      "from_addr": "00404e7e",
-      "name": "engine_3d.c_FUN_00404e70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00405280",
-      "from_addr": "004052c0",
-      "name": "engine_3d.c_FUN_00405280",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004075b0",
-      "from_addr": "004075c0",
-      "name": "engine_3d.c_FUN_004075b0",
+      "name": "core_dpart.cpp_FUN_00466830",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00407860",
       "from_addr": "004079a0",
-      "name": "engine_3d.c_FUN_00407860",
+      "name": "engine_3d.c_dispatchMRGLToRenderer_FUN_00407860",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -110,9 +84,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00404e70",
+      "from_addr": "00404e7e",
+      "name": "engine_3d.c_renderPolygonAlphaTexturedNormalized2_FUN_00404e70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00405360",
       "from_addr": "0040536e",
       "name": "engine_3d.c_renderPolygonAlphaTexturedNormalizedLit_FUN_00405360",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00404dd0",
+      "from_addr": "00404dde",
+      "name": "engine_3d.c_renderPolygonAlphaTexturedNormalized_FUN_00404dd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -308,6 +294,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00405280",
+      "from_addr": "004052c0",
+      "name": "engine_3d.c_renderPolygonTexturedNormalizedUVLit2_FUN_00405280",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00403e70",
       "from_addr": "00403e7d",
       "name": "engine_3d.c_renderPolygonTexturedNormalizedUVLitOp14_FUN_00403e70",
@@ -344,9 +336,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004075b0",
+      "from_addr": "004075c0",
+      "name": "engine_3d.c_renderPolygonWithRenderFlagsUV_FUN_004075b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004074b0",
       "from_addr": "004074bc",
       "name": "engine_3d.c_renderPolygonWithRenderFlags_FUN_004074b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046b470",
+      "from_addr": "0046b538",
+      "name": "engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0046b470",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -416,6 +420,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0046b7d0",
+      "from_addr": "0046b819",
+      "name": "engine_drender.cpp_CDemonRenderer_renderPerspectiveTextured_FUN_0046b7d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0046b240",
       "from_addr": "0046b289",
       "name": "engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0046b240",
@@ -464,39 +474,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0046b470",
-      "from_addr": "0046b538",
-      "name": "engine_drender.cpp_FUN_0046b470",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0046b670",
       "from_addr": "0046b749",
       "name": "engine_drender.cpp_FUN_0046b670",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0046bb8c",
+      "addr": "0046bb90",
       "from_addr": "0046bbdb",
-      "name": "engine_drender.cpp_FUN_0046bb8c",
+      "name": "engine_drender.cpp_FUN_0046bb90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0046c16e",
+      "addr": "0046c170",
       "from_addr": "0046c236",
-      "name": "engine_drender.cpp_FUN_0046c16e",
+      "name": "engine_drender.cpp_FUN_0046c170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0046c2ce",
+      "addr": "0046c2d0",
       "from_addr": "0046c35a",
-      "name": "engine_drender.cpp_FUN_0046c2ce",
+      "name": "engine_drender.cpp_FUN_0046c2d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0046c94e",
+      "addr": "0046c950",
       "from_addr": "0046c9d5",
-      "name": "engine_drender.cpp_FUN_0046c94e",
+      "name": "engine_drender.cpp_FUN_0046c950",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -510,7 +514,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_3d.c_isVisiblePlane_FUN_00403920",
-    "signature": "undefined4 __cdecl engine_3d_c_isVisiblePlane_FUN_00403920(int *param_1)"
+    "signature": "int __cdecl engine_3d_c_isVisiblePlane_FUN_00403920(SClipPlane *plane)"
   },
   "function_calls": [],
   "globals": [
@@ -660,10 +664,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.388888888888889,
@@ -696,13 +700,47 @@
     },
     "pcode_op_count": 194
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00403970",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00403920",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00403950",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00404610",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 4,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 4,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": true,
+        "name": "plane",
+        "offset": 4,
+        "size": 4,
+        "type": "SClipPlane *"
+      }
+    ]
   },
   "suspects": [
     {
@@ -712,14 +750,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uint __cdecl engine_3d_c_isVisiblePlane_FUN_00403920(int *param_1)",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
@@ -746,78 +776,6 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(((*param_1 != 0 || param_1[1] != 0) || param_1[2] != 0) || param_1[3] != 0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(((*param_1 != 0 || param_1[1] != 0) || param_1[2] != 0) || param_1[3] != 0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(((*param_1 != 0 || param_1[1] != 0) || param_1[2] != 0) || param_1[3] != 0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(((*param_1 != 0 || param_1[1] != 0) || param_1[2] != 0) || param_1[3] != 0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(lVar3 = (longlong)param_1[1] * (longlong)_DAT_01c6e2d0 +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(longlong)*param_1 * (longlong)_DAT_01c6e2cc +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(longlong)param_1[2] * (longlong)_DAT_01c6e2d4,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar5 = (int)((ulonglong)lVar3 >> 0x20), iVar6 = param_1[3] >> 0x1f,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar1 = (uint)((uint)param_1[3] < (uint)lVar3), iVar2 = iVar6 - iVar5, uVar4 = 1,",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
       "line": 23,
       "match": "SBORROW4",
@@ -832,17 +790,6 @@
       "severity": "moderate",
       "text": "(SBORROW4(iVar6,iVar5) != SBORROW4(iVar2,uVar1)) == (int)(iVar2 - uVar1) < 0)) {",
       "type": "sign_compare_idiom"
-    },
-    {
-      "call_site_count": 50,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

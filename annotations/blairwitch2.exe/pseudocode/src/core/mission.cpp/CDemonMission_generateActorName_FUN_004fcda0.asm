@@ -11,11 +11,11 @@
 ; undefined1       Stack[-0x2b]:1  local_2b
 ;
 ; XREF[13]:
-;   core_baron.cpp_FUN_00410ac0 at 00410b32
-;   core_bodypart.cpp_FUN_004154f0 at 004155a3
+;   core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00410ac0 at 00410b32
+;   core_bodypart.cpp_createBodyPart_FUN_004154f0 at 004155a3
 ;   core_game.cpp_FUN_004b8e10 at 004b8fb8
-;   core_game.cpp_FUN_004b8fce at 004b9003
 ;   core_game.cpp_FUN_004b90d0 at 004ba0c4
+;   core_game.cpp_giveHeroWeaponAmmo_FUN_004b8fd0 at 004b9003
 ;   core_gore.cpp_FUN_004c9bd0 at 004c9c8d
 ;   core_hero.cpp_FUN_004d0a40 at 004d0a99
 ;   core_inv.cpp_FUN_004dadb0 at 004db51a

@@ -18,7 +18,7 @@ int FUN_005abc3c(int param_1)
     uVar1 = *(uint *)(param_1 + 0x2c);
     *(uint *)(param_1 + 0x2c) = 0xffffffff;
     *(byte *)(param_1 + 0x39) = *(byte *)(param_1 + 0x39) & 0xfe;
-    iVar3 = unkafter_asgaya_cpp_FUN_005aeff0(uVar1);
+    iVar3 = FUN_005aeff0(uVar1);
     if ((iVar3 == 0) && (iVar2 != -1)) {
       return param_1;
     }

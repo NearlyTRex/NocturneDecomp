@@ -7,19 +7,19 @@
 
 // Original: core_level.cpp_staticInit_FUN_004fe800
 // Address: 004fe800
-void staticInit(void);
+void __cdecl staticInit(void);
 
-// Original: core_level.cpp_FUN_004fe830
+// Original: core_level.cpp_CLevelLoader_reset_FUN_004fe830
 // Address: 004fe830
-void FUN_004fe830(int param_1);
+void __cdecl CLevelLoader::reset(CLevelLoader *this_ptr);
 
 // Original: core_level.cpp_FUN_004fe840
 // Address: 004fe840
 void FUN_004fe840(undefined4 *param_1,undefined4 param_2,int param_3);
 
-// Original: core_level.cpp_FUN_004fe9c0
+// Original: core_level.cpp_CLevelLoader_update_FUN_004fe9c0
 // Address: 004fe9c0
-void __cdecl FUN_004fe9c0(CLevelLoader *this_ptr,char *text,int clear_screen);
+void __cdecl CLevelLoader::update(CLevelLoader *this_ptr,char *text,int clear_screen);
 
 // Original: core_level.cpp_CLevelLoader_cleanup_FUN_004fefa0
 // Address: 004fefa0

@@ -11,7 +11,7 @@
 ; XREF[4]:
 ;   core_hero.cpp_CHero_createDefaultWeapon_FUN_004eafd0 at 004eafdd
 ;   core_inv.cpp_CInventory_load_FUN_004f97a0 at 004f97c2
-;   core_scat.cpp_FUN_00540d50 at 00540d5e
+;   core_scat.cpp_CScat_createDefaultWeapon_FUN_00540d50 at 00540d5e
 ;   core_script.cpp_CScript_step_FUN_00544460 at 00548908
 ;
 ; Referenced Globals:
@@ -65,7 +65,7 @@ section .text
     PUSH 0x5e605b                       ; 004f70a5 | = "CAmmo"
         ;   Label: LAB_004f70a5
     CALL core_actor.cpp_createActorByName_FUN_0040c2b0 ; 004f70aa
-        ;   XREF to: 0040c2b0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_createActorByName_FUN_0040c2b0()
+        ;   XREF to: 0040c2b0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_createActorByName_FUN_0040c2b0(char * class_name)
     ADD ESP,0x4                         ; 004f70af
     MOV dword ptr [EDI + 0x464],EAX     ; 004f70b2
     PUSH EAX                            ; 004f70b8

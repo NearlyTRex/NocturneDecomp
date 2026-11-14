@@ -7,13 +7,13 @@
 ; CStrList *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[7]:
-;   core_fldnotes.cpp_FUN_004a3280 at 004a328a
+;   core_fldnotes.cpp_SNotesEntry_ctor_FUN_004a3280 at 004a328a
 ;   core_script.cpp_CScript_ctor_FUN_005215c0 at 005215c8
 ;   core_sound.cpp_staticInit_FUN_00558c40 at 00558c52
 ;   shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0047c760 at 0047c78c
 ;   shape_edittool.cpp_CPickList_ctor_FUN_00481fc0 at 00481fc8
-;   shape_edittool.cpp_FUN_0047c7ee at 0047c81c
-;   shape_edittool.cpp_FUN_0047c87e at 0047c8ac
+;   shape_edittool.cpp_FUN_0047c7f0 at 0047c81c
+;   shape_edittool.cpp_FUN_0047c880 at 0047c8ac
 ;
 ; Referenced Globals:
 ;   undefined1* g_CStrListVTable = 00480d40

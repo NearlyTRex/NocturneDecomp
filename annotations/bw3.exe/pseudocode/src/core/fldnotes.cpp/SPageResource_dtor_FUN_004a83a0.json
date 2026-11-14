@@ -1,0 +1,186 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 20,
+    "complexity_score": 10,
+    "cross_reference_count": 4,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 30
+  },
+  "cross_references": [
+    {
+      "addr": "004a8710",
+      "from_addr": "004a8740",
+      "name": "core_fldnotes.cpp_SPageResourceBitmap_dtor_FUN_004a8710",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ad3c0",
+      "from_addr": "004ad3cf",
+      "name": "core_fldnotes.cpp_SPageResourceMap_dtor_FUN_004ad3c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a8510",
+      "from_addr": "004a8526",
+      "name": "core_fldnotes.cpp_SPageResourceText_dtor_FUN_004a8510",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a8980",
+      "from_addr": "004a89bf",
+      "name": "core_fldnotes.cpp_SPageResourceTwanaEntry_dtor_FUN_004a8980",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a83a0",
+    "address_range": [
+      [
+        "004a83a0",
+        "004a83ca"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fldnotes.cpp_SPageResource_dtor_FUN_004a83a0",
+    "signature": "int __cdecl core_fldnotes_cpp_SPageResource_dtor_FUN_004a83a0(SPageResource *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a3770",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005a3770"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e0284",
+      "name": "g_SPageResourceVTable",
+      "type": "void*",
+      "value": "004a83a0"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "004a8526",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_SPageResourceText_dtor_FUN_004a8510",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a8740",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_SPageResourceBitmap_dtor_FUN_004a8710",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a89bf",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_SPageResourceTwanaEntry_dtor_FUN_004a8980",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004ad3cf",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_SPageResourceMap_dtor_FUN_004ad3c0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.5625,
+    "instruction_count": 16,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 14,
+      "INT_ADD": 9,
+      "INT_AND": 5,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 3,
+      "LOAD": 6,
+      "POPCOUNT": 2,
+      "RETURN": 2,
+      "STORE": 5
+    },
+    "pcode_op_count": 57
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a1e90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004ba760",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "SPageResource *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 0,
+        "vtable_addr": "005e0284"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

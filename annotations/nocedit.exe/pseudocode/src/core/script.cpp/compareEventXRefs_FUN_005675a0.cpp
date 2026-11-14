@@ -18,10 +18,10 @@ int __cdecl core_script_cpp_compareEventXRefs_FUN_005675a0(SScriptXRef *a,SScrip
   
   iVar4 = _stricmp(a->name,b->name);
   if (iVar4 == 0) {
-    if (a->type < b->type) {
+    if ((int)a->type < (int)b->type) {
       return -1;
     }
-    if (a->type <= b->type) {
+    if ((int)a->type <= (int)b->type) {
       pCVar1 = a->actor;
       if (pCVar1 < b->actor) {
         return -1;

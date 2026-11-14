@@ -12,6 +12,6 @@ uint FUN_005c0d30(uint param_1,uint param_2,uint param_3)
   int iVar1;
   
   iVar1 = FUN_005c0d60(param_2,param_3);
-  unkafter_morph_cpp_FUN_005c42a0(param_1,param_2,iVar1 + 1);
+  FUN_005c42a0(param_1,param_2,iVar1 + 1);
   return param_1;
 }

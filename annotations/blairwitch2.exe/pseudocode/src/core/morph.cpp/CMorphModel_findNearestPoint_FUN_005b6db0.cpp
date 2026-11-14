@@ -9,30 +9,33 @@
 int __cdecl core_morph_cpp_CMorphModel_findNearestPoint_FUN_005b6db0(CMorphModel *this_ptr,CVector3f *position)
 
 {
-  float fVar1;
+  SMorphPoint *pSVar1;
   float fVar2;
-  int iVar3;
-  float *pfVar4;
+  float fVar3;
+  float fVar4;
   int iVar5;
+  CVector3f *pCVar6;
+  int iVar7;
   float local_14;
   
+  iVar7 = 0;
   iVar5 = 0;
-  iVar3 = 0;
   local_14 = 1e+30;
-  if (0 < *(int *)&this_ptr->field_0x54) {
-    pfVar4 = (float *)(*(int *)&this_ptr->field_0x58 + 4);
+  if (0 < this_ptr->num_points) {
+    pSVar1 = this_ptr->points;
     do {
-      fVar1 = *(float *)&position->field_0x4 - pfVar4[1];
-      fVar2 = *(float *)&position->field_0x8 - pfVar4[2];
-      fVar1 = fVar2 * fVar2 +
-              (*(float *)position - *pfVar4) * (*(float *)position - *pfVar4) + fVar1 * fVar1;
-      if (fVar1 < local_14) {
-        iVar5 = iVar3;
-        local_14 = fVar1;
+      pCVar6 = &pSVar1->position;
+      fVar2 = position->x - pCVar6->x;
+      fVar3 = position->y - pCVar6->y;
+      fVar4 = position->z - pCVar6->z;
+      fVar2 = fVar4 * fVar4 + fVar2 * fVar2 + fVar3 * fVar3;
+      if (fVar2 < local_14) {
+        iVar7 = iVar5;
+        local_14 = fVar2;
       }
-      iVar3 = iVar3 + 1;
-      pfVar4 = pfVar4 + 4;
-    } while (iVar3 < *(int *)&this_ptr->field_0x54);
+      iVar5 = iVar5 + 1;
+      pSVar1 = (SMorphPoint *)(pCVar6 + 1);
+    } while (iVar5 < this_ptr->num_points);
   }
-  return iVar5;
+  return iVar7;
 }

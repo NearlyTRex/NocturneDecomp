@@ -15,6 +15,6 @@ void FUN_005a7da4(void)
     _DAT_00607dd8 = FUN_005a7d90;
     _DAT_00607ddc = FUN_005a7d9c;
   }
-  unkafter_asgaya_cpp_FUN_005ad760();
+  FUN_005ad760();
   return;
 }

@@ -7,16 +7,44 @@
 
 // Original: core_lightsta.cpp_staticInit_FUN_004e0f10
 // Address: 004e0f10
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_lightsta.cpp_factoryFuncLightStaff_FUN_004e0f40
 // Address: 004e0f40
-void factoryFuncLightStaff(void);
+CLightStaff * __cdecl factoryFuncLightStaff(void);
 
 // Original: core_lightsta.cpp_CLightStaff_getActorType_FUN_004e0f60
 // Address: 004e0f60
-CDemonActorType * CLightStaff::getActorType(CLightStaff *this_ptr);
+CDemonActorType * __cdecl CLightStaff::getActorType(CLightStaff *this_ptr);
 
 // Original: core_lightsta.cpp_CLightStaff_ctor_FUN_004e0f70
 // Address: 004e0f70
-CLightStaff * CLightStaff::ctor(CLightStaff *this_ptr);
+CLightStaff * __cdecl CLightStaff::ctor(CLightStaff *this_ptr);
+
+// Original: core_lightsta.cpp_CLightStaff_fire_FUN_004e1070
+// Address: 004e1070
+undefined4 __cdecl CLightStaff::fire(CLightStaff *this_ptr);
+
+// Original: core_lightsta.cpp_CLightStaff_process_FUN_004e2050
+// Address: 004e2050
+void __cdecl CLightStaff::process(CLightStaff *this_ptr,float delta_time);
+
+// Original: core_lightsta.cpp_CLightStaff_getDamage_FUN_004e3db0
+// Address: 004e3db0
+float __cdecl CLightStaff::getDamage(CLightStaff *this_ptr);
+
+// Original: core_lightsta.cpp_CLightStaff_getMuzzlePoint_FUN_004e3de0
+// Address: 004e3de0
+CVector3f * __cdecl CLightStaff::getMuzzlePoint(CLightStaff *this_ptr,CVector3f *out_point);
+
+// Original: core_lightsta.cpp_CLightStaff_setWeaponState_FUN_004e3e60
+// Address: 004e3e60
+void __cdecl CLightStaff::setWeaponState(CLightStaff *this_ptr,int weapon_state);
+
+// Original: core_lightsta.cpp_CLightStaff_setup_FUN_004e3eb0
+// Address: 004e3eb0
+void __cdecl CLightStaff::setup(CLightStaff *this_ptr);
+
+// Original: core_lightsta.cpp_CLightStaff_dtor_FUN_004e3f10
+// Address: 004e3f10
+CLightStaff * __cdecl CLightStaff::dtor(CLightStaff *this_ptr,uint flags);

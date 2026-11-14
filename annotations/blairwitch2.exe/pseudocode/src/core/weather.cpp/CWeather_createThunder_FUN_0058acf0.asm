@@ -9,14 +9,14 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   core_weather.cpp_FUN_0058a660 at 0058a94e
+;   core_weather.cpp_CWeather_update_FUN_0058a660 at 0058a94e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_thndr_wav_005ee5c6
 ;   undefined4 DAT_0061c068
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cf60
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_sound.cpp_CSound_playSound_FUN_0055ae30
 ;
 ; *****************************************************************************
@@ -29,8 +29,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 0058acf4
     PUSH 0x41a00000                     ; 0058acf8
     PUSH 0x41200000                     ; 0058acfd
-    CALL core_actor.cpp_FUN_0040cf60    ; 0058ad02
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 0058ad02
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0x8],EAX       ; 0058ad07
     FLD float ptr [ESP + 0x8]           ; 0058ad0b
     ADD ESP,0x8                         ; 0058ad0f

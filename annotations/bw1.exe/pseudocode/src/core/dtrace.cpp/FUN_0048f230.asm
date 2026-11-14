@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[3]:
-;   core_dskybox.cpp_FUN_00486900 at 00486968
+;   core_dskybox.cpp_renderSkyDome_FUN_00486900 at 00486968
 ;   core_water.cpp_CWater_calculateVisibleTiles_FUN_005a9a40 at 005a9ac4
 ;   core_weather.cpp_CWeather_createLightningStrike_FUN_005ae580 at 005ae60c
 ;

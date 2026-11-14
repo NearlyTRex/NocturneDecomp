@@ -2,17 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 6,
+    "complexity_score": 7,
     "cross_reference_count": 12,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 6,
+    "pseudocode_lines": 7,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 20
+    "total_lines": 21
   },
   "cross_references": [
+    {
+      "addr": "00412ee0",
+      "from_addr": "00413167",
+      "name": "core_bmppuzzl.cpp_CAudioRecPuzzle_playClip_FUN_00412ee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "0048c2e0",
       "from_addr": "0048f261",
@@ -22,7 +28,7 @@
     {
       "addr": "004bb100",
       "from_addr": "004bb17f",
-      "name": "core_game.cpp_FUN_004bb100",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004bb100",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -52,7 +58,7 @@
     {
       "addr": "00530150",
       "from_addr": "005302ca",
-      "name": "core_script.cpp_FUN_00530150",
+      "name": "core_script.cpp_CScript_startDialogLine_FUN_00530150",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -78,12 +84,6 @@
       "from_addr": "0057c084",
       "name": "core_weather.cpp_FUN_0057bda0",
       "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00412ee0",
-      "from_addr": "00413167",
-      "name": "unkafter_bmppuzzl.cpp_FUN_00412ee0",
-      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -102,7 +102,7 @@
     {
       "addr": "0055f020",
       "is_variadic": false,
-      "name": "core_sound.cpp_FUN_0055f020"
+      "name": "core_sound.cpp_playSfxInternal_FUN_0055f020"
     }
   ],
   "globals": [],
@@ -145,7 +145,7 @@
       {
         "call_addr": "004bb17f",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bb100",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004bb100",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -156,7 +156,7 @@
       {
         "call_addr": "004bb4e6",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bb100",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004bb100",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -167,7 +167,7 @@
       {
         "call_addr": "004bb5ef",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bb100",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004bb100",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -178,7 +178,7 @@
       {
         "call_addr": "004bb6d6",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bb100",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004bb100",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -189,7 +189,7 @@
       {
         "call_addr": "004bb793",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bb100",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004bb100",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -200,7 +200,7 @@
       {
         "call_addr": "004bb868",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bb100",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004bb100",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -211,7 +211,7 @@
       {
         "call_addr": "004bbb9e",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bb100",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004bb100",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -245,6 +245,32 @@
       "STORE": 8
     },
     "pcode_op_count": 42
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0055ae30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0057d880",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005b3a20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0052ea40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 16,

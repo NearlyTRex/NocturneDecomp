@@ -1,0 +1,150 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 48,
+    "complexity_score": 16,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 16,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 64
+  },
+  "cross_references": [
+    {
+      "addr": "004aa6d0",
+      "from_addr": "004aa712",
+      "name": "core_fldnotes.cpp_SNotesMap_paginate_FUN_004aa6d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a9150",
+    "address_range": [
+      [
+        "004a9150",
+        "004a91af"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fldnotes.cpp_STextView_placeResource_FUN_004a9150",
+    "signature": "int __cdecl core_fldnotes_cpp_STextView_placeResource_FUN_004a9150(STextView *this_ptr,SPageResource *resource)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a9230",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_STextView_addResource_FUN_004a9230"
+    },
+    {
+      "addr": "004a9710",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_STextView_ensureSpace_FUN_004a9710"
+    },
+    {
+      "addr": "004a91b0",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_STextView_flushWord_FUN_004a91b0"
+    },
+    {
+      "addr": "004a9300",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_STextView_newPage_FUN_004a9300"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004aa712",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_SNotesMap_paginate_FUN_004aa6d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004aa747",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_SNotesMap_paginate_FUN_004aa6d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.024390243902439,
+    "instruction_count": 41,
+    "opcode_distribution": {
+      "CALL": 4,
+      "CBRANCH": 1,
+      "COPY": 36,
+      "INT_ADD": 22,
+      "INT_AND": 15,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 14,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 7,
+      "INT_SUB": 14,
+      "INT_XOR": 1,
+      "LOAD": 15,
+      "POPCOUNT": 7,
+      "RETURN": 2,
+      "STORE": 17
+    },
+    "pcode_op_count": 165
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a2ad0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004bb510",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "STextView *"
+      },
+      {
+        "is_param": true,
+        "name": "resource",
+        "offset": 8,
+        "size": 4,
+        "type": "SPageResource *"
+      }
+    ]
+  },
+  "suspects": []
+}

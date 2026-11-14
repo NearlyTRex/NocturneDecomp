@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 67,
+    "complexity_score": 12,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 12,
-    "suspect_count": 5,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 40
   },
   "cross_references": [
@@ -22,21 +20,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00572030",
-      "from_addr": "005721e9",
-      "name": "sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00572030",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00570460",
       "from_addr": "00570525",
-      "name": "sound_sndmain.cpp_FUN_00570460",
+      "name": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_00570460",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00571f10",
       "from_addr": "00571f6b",
-      "name": "sound_sndmain.cpp_FUN_00571f10",
+      "name": "sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_00571f10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00572030",
+      "from_addr": "005721e9",
+      "name": "sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00572030",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -60,7 +58,7 @@
       {
         "call_addr": "00570525",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00570460",
+        "caller": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_00570460",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -71,7 +69,7 @@
       {
         "call_addr": "0057068e",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00570460",
+        "caller": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_00570460",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -104,7 +102,7 @@
       {
         "call_addr": "00571f6b",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00571f10",
+        "caller": "sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_00571f10",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -144,6 +142,26 @@
     },
     "pcode_op_count": 88
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00550010",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00555b80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8182
+    },
+    "nocedit.exe": {
+      "addr": "005a87d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -160,46 +178,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x124",
-      "severity": "mild",
-      "text": "if (((*(int *)&this_ptr->field_0x124 < 2) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x110",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x110 == *(int *)&this_ptr->field_0x128)) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x128",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x110 == *(int *)&this_ptr->field_0x128)) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x13c",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x13c < 1)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x13c",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x13c == 0) {",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

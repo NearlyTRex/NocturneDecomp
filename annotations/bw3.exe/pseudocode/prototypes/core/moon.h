@@ -7,31 +7,31 @@
 
 // Original: core_moon.cpp_staticInit_FUN_004f93a0
 // Address: 004f93a0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_moon.cpp_CMoon_ctor_FUN_004f9410
 // Address: 004f9410
-CMoon * CMoon::ctor(CMoon *this_ptr);
+CMoon * __cdecl CMoon::ctor(CMoon *this_ptr);
 
 // Original: core_moon.cpp_CMoon_dtor_FUN_004f9450
 // Address: 004f9450
-CMoon * CMoon::dtor(CMoon *this_ptr,uint flags);
+CMoon * __cdecl CMoon::dtor(CMoon *this_ptr,uint flags);
 
-// Original: core_moon.cpp_FUN_004f94a0
+// Original: core_moon.cpp_CMoon_init_FUN_004f94a0
 // Address: 004f94a0
-void FUN_004f94a0(int *param_1);
+void __cdecl CMoon::init(CMoon *this_ptr);
 
-// Original: core_moon.cpp_FUN_004f9580
+// Original: core_moon.cpp_CMoon_free_FUN_004f9580
 // Address: 004f9580
-void FUN_004f9580(int *param_1);
+void __cdecl CMoon::free(CMoon *this_ptr);
 
-// Original: core_moon.cpp_FUN_004f9600
+// Original: core_moon.cpp_CMoon_update_FUN_004f9600
 // Address: 004f9600
-void FUN_004f9600(undefined4 param_1,float param_2);
+void __cdecl CMoon::update(CMoon *this_ptr,float param_2);
 
-// Original: core_moon.cpp_FUN_004f9670
+// Original: core_moon.cpp_CMoon_render_FUN_004f9670
 // Address: 004f9670
-void FUN_004f9670(int param_1);
+void __cdecl CMoon::render(CMoon *this_ptr);
 
 // Original: core_moon.cpp_CMoon_isAnimationFirstHalf_FUN_004f99b0
 // Address: 004f99b0
@@ -39,4 +39,4 @@ int __cdecl CMoon::isAnimationFirstHalf(CMoon *this_ptr);
 
 // Original: core_moon.cpp_CAlphaBitmap_arrdtor30_FUN_004f99d0
 // Address: 004f99d0
-CAlphaBitmap * CAlphaBitmap::arrdtor30(CAlphaBitmap *this_ptr,uint flags);
+CAlphaBitmap * __cdecl CAlphaBitmap::arrdtor30(CAlphaBitmap *this_ptr,uint flags);

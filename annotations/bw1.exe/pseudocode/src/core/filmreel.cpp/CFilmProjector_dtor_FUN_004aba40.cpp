@@ -13,7 +13,7 @@ CFilmProjector * __cdecl core_filmreel_cpp_CFilmProjector_dtor_FUN_004aba40(CFil
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CFilmProjectorTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CFilmProjectorTypeInfo);
     FUN_005c0336(ptr);
     return this_ptr;
   }

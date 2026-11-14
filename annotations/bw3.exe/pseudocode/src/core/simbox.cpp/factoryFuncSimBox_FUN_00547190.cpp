@@ -1,20 +1,20 @@
 // Name: core_simbox.cpp_factoryFuncSimBox_FUN_00547190
 // Address: 00547190
 // Address Range: [[00547190, 005471ab]]
-// Convention: unknown
-// Signature: void core_simbox_cpp_factoryFuncSimBox_FUN_00547190(void)
+// Convention: __cdecl
+// Signature: CSimBox * __cdecl core_simbox_cpp_factoryFuncSimBox_FUN_00547190(void)
 
 #include "nocturne.h"
 
-void core_simbox_cpp_factoryFuncSimBox_FUN_00547190(void)
+CSimBox * __cdecl core_simbox_cpp_factoryFuncSimBox_FUN_00547190(void)
 
 {
-  CSimBox *this_ptr;
+  CSimBox *pCVar1;
   
-  this_ptr = (CSimBox *)FUN_005a3cb2(0x5cc);
-  if (this_ptr == (CSimBox *)0x0) {
-    return;
+  pCVar1 = (CSimBox *)operator_new(0x5cc);
+  if (pCVar1 == (CSimBox *)0x0) {
+    return (CSimBox *)0x0;
   }
-  core_simbox_cpp_CSimBox_ctor_FUN_005471c0(this_ptr);
-  return;
+  pCVar1 = core_simbox_cpp_CSimBox_ctor_FUN_005471c0(pCVar1);
+  return pCVar1;
 }

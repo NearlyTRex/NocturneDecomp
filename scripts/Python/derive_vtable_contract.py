@@ -31,21 +31,17 @@
 #@category Annotations
 
 import argparse
-import glob
 import json
 import os
 import re
-import sys
-from collections import OrderedDict
+from collections import Counter
 
-THIS_DIR = os.path.dirname(os.path.abspath(__file__))
-if THIS_DIR not in sys.path:
-    sys.path.insert(0, THIS_DIR)
-
+import actor_class_tree as act
 import sibling_match as sm
+import watcom_type_info as wti
 from map_vtable_slots import lcs_anchors, load_labels
 
-REPO_ROOT = os.path.dirname(os.path.dirname(THIS_DIR))
+PTR = 4
 
 
 def tables_by_class(img, lab):
@@ -70,7 +66,54 @@ def slots_of(t):
     return [(e.get("func_addr") or "").lower() for e in t.get("functions", [])]
 
 
-def align_class(cls, TA, TB, A, B, a2b):
+def data_types(program):
+    """The program's exported data types, or {} when it has none exported."""
+    path = os.path.join(sm.ANNOTATIONS, program, "data_types", "data_types.json")
+    try:
+        with open(path, encoding="utf-8") as fh:
+            return json.load(fh)
+    except OSError:
+        return {}
+
+
+def struct_slot_names(program):
+    """table address -> {slot: method}, from the vtable struct applied to each table.
+
+    The struct's field names are the per-slot method names. A function's own
+    name cannot be: a stub the compiler folded into several slots carries one
+    name for all of them -- nocedit's CCharacter fills isGrabbable,
+    canBeGrabbed, getGrabbed and canBeAttracted with one `return 0`. Embedded
+    part structs (`_ub`, `_uc`...) are flattened.
+    """
+    structs = {s["name"]: s for s in data_types(program).get("structs", []) if s.get("name")}
+
+    def flatten(name, base, seen):
+        out = {}
+        for f in structs.get(name, {}).get("fields", []):
+            kind, at = f.get("type", ""), base + int(f.get("offset", 0))
+            if kind in structs and kind not in seen:
+                out.update(flatten(kind, at, seen | {kind}))
+            elif f.get("name"):
+                out[at // PTR] = f["name"]
+        return out
+
+    return {(r.get("addr") or "").lower(): flatten(r.get("name"), 0, {r.get("name")})
+            for r in sm._load_buckets(program, "applied_structs")
+            if isinstance(r, dict) and r.get("name") in structs}
+
+
+def slot_method(img, funcs, slot, names):
+    """(declaring class, method) for a table's slot: the struct's name for it when it has one."""
+    declarer, method = method_of(img, funcs[slot])
+    return declarer, names.get(slot) or method
+
+
+def align_class(cls, TA, TB, A, B, a2b, names=None):
+    """Rows for each of the target's slots, and the sibling's slots it lacks.
+
+    `names` is the sibling table's {slot: method} from its applied struct.
+    """
+    names = names or {}
     sa, sb = slots_of(TA[cls]), slots_of(TB[cls])
     anch = lcs_anchors([a2b.get(x) for x in sa], sb)
     amap = {j: i for i, j in anch}
@@ -93,7 +136,7 @@ def align_class(cls, TA, TB, A, B, a2b):
     rows = []
     for j in range(len(sb)):
         i = amap.get(j)
-        declarer, meth = method_of(A, sa[i]) if i is not None else (None, None)
+        declarer, meth = slot_method(A, sa, i, names) if i is not None else (None, None)
         rows.append({"slot": j, "sibling_slot": i, "status": status.get(j, "AMBIGUOUS"),
                      "declarer": declarer, "method": meth,
                      "target_func": sb[j],
@@ -102,7 +145,7 @@ def align_class(cls, TA, TB, A, B, a2b):
     editor = []
     for i in range(len(sa)):
         if i not in used:
-            c, m = method_of(A, sa[i])
+            c, m = slot_method(A, sa, i, names)
             editor.append({"sibling_slot": i, "declarer": c, "method": m,
                            "func": sa[i]})
     return rows, editor
@@ -117,7 +160,6 @@ def resolve_by_structure(per_class, chain):
     too small to carry a shape.
     """
     # editor block = sibling slots excluded in a majority of classes
-    from collections import Counter
     blk = Counter()
     for c in chain:
         for e in per_class[c][1]:
@@ -137,7 +179,10 @@ def resolve_by_structure(per_class, chain):
                 continue
             cand = [i for i in range(prev["sibling_slot"] + 1, nxt["sibling_slot"])
                     if i not in common]
-            if len(cand) != 1:
+            # One candidate is only forced onto a gap of one target slot; with
+            # more target slots than candidates the gap holds methods the
+            # sibling does not have, and which slot gets the candidate is a guess.
+            if len(cand) != 1 or nxt["slot"] - prev["slot"] != 2:
                 continue
             i = cand[0]
             hit = next((e for e in editor if e["sibling_slot"] == i), None)
@@ -150,14 +195,101 @@ def resolve_by_structure(per_class, chain):
     return fixed
 
 
-def main():
+def tabled_parents(tree, chain):
+    """Each class's nearest ancestor that is itself in `chain`.
+
+    A registered class with no labelled table on both sides drops out of the
+    chain; its children then inherit from whatever tabled class is above it,
+    which is the table their inherited slots were copied from.
+    """
+    inside = set(chain)
+    out = {}
+    for c in chain:
+        for a in act.ancestry(tree, tree.get(c)):
+            if a in inside:
+                out[c] = a
+                break
+    return out
+
+
+def base_first(tree, classes):
+    """Classes ordered so every ancestor comes before its descendants."""
+    return sorted(classes, key=lambda c: (len(act.ancestry(tree, c)), c))
+
+
+def stale_layouts(per, parents):
+    """Classes whose table is shorter than their parent's.
+
+    A derived table copies its parent's slots before adding its own, so one
+    that is shorter was compiled against an older declaration of the parent --
+    BW2's chain.cpp still has BW1's CDemonActor, two slots short. Its slot
+    numbers mean something else, so it must not vote on the parent's slots.
+    """
+    return {c for c in per
+            if parents.get(c) in per and len(per[c][0]) < len(per[parents[c]][0])}
+
+
+def resolve_by_hierarchy(per, chain, parents, sibling_slots, A, sibling_names=None):
+    """Fill AMBIGUOUS slots from the classes that share them.
+
+    A slot means the same method in every class below the one that introduced
+    it, so a slot a base cannot place -- its table is all folded stubs there --
+    is placed by its descendants, whose overrides anchor. Filled only when every
+    class that maps the slot names the same method; one dissent leaves it
+    ambiguous.
+    """
+    def ancestry(c):
+        out = [c]
+        while out[-1] in parents and parents[out[-1]] not in out:
+            out.append(parents[out[-1]])
+        return out
+
+    def introducer(c, j):
+        return [a for a in ancestry(c) if j < len(per[a][0])][-1]
+
+    votes = {}
+    for c in chain:
+        if c in stale_layouts(per, parents):
+            continue
+        for r in per[c][0]:
+            if r["status"] != "AMBIGUOUS" and r["method"]:
+                votes.setdefault((introducer(c, r["slot"]), r["slot"]), set()).add(
+                    (r["sibling_slot"], r["method"]))
+
+    fixed = 0
+    for c in chain:
+        rows, editor = per[c]
+        for r in rows:
+            if r["status"] != "AMBIGUOUS":
+                continue
+            vote = votes.get((introducer(c, r["slot"]), r["slot"]), set())
+            if len(vote) != 1:
+                continue
+            i, method = next(iter(vote))
+            # A sibling slot the class already placed elsewhere outvotes the
+            # others: one table whose label sits a few slots off (or whose class
+            # really does differ) must not put a method in two slots.
+            if i >= len(sibling_slots[c]) or any(x["sibling_slot"] == i for x in rows):
+                continue
+            declarer, own = slot_method(A, sibling_slots[c], i, (sibling_names or {}).get(c, {}))
+            if own != method:
+                continue
+            r.update({"sibling_slot": i, "status": "MAPPED-BY-HIERARCHY",
+                      "declarer": declarer, "method": method})
+            editor[:] = [e for e in editor if e["sibling_slot"] != i]
+            fixed += 1
+    return fixed
+
+
+def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--mapping", required=True)
-    ap.add_argument("--classes", required=True,
-                    help="base-first, comma separated")
-    ap.add_argument("--parents", default="",
-                    help="Child=Parent,... . Without this the classes are "
-                         "treated as one linear chain, which silently "
+    ap.add_argument("--classes",
+                    help="base-first, comma separated (default: every "
+                         "registered actor class with a table on both sides)")
+    ap.add_argument("--parents",
+                    help="Child=Parent,... (default: the target's own "
+                         "registerActorClass tree). A linear chain silently "
                          "misattributes sibling branches: CEnemy and CHero both "
                          "derive from CCharacter and both add their own slot 78, "
                          "so a chain lets whichever comes first claim it.")
@@ -165,24 +297,48 @@ def main():
     ap.add_argument("--program", default="nocturne.exe")
     ap.add_argument("--out-md")
     ap.add_argument("--out-json")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
-    chain = [c.strip() for c in args.classes.split(",") if c.strip()]
-    with open(args.mapping) as fh:
+    with open(args.mapping, encoding="utf-8") as fh:
         mapping = json.load(fh)
     a2b = {p["a"].lower(): p["b"].lower() for p in mapping["pairs"]}
 
     A, B = sm.Image(args.from_program), sm.Image(args.program)
     TA = tables_by_class(A, load_labels(args.from_program))
     TB = tables_by_class(B, load_labels(args.program))
+    tree, _ = act.load(args.program)
+    # Tables are labelled by type name; a class registers under its own
+    # spelling, which bw3 underscores (CAmmo_Mana is g_CAmmoManaVTable).
+    for table_map in (TA, TB):
+        for c in tree:
+            if c not in table_map and wti.type_name(c) in table_map:
+                table_map[c] = table_map[wti.type_name(c)]
+
+    if args.classes:
+        chain = [c.strip() for c in args.classes.split(",") if c.strip()]
+    else:
+        chain = base_first(tree, [c for c in tree if c in TA and c in TB])
 
     missing = [c for c in chain if c not in TA or c not in TB]
     if missing:
         print("no vtable for: %s" % ", ".join(missing))
         chain = [c for c in chain if c not in missing]
 
-    per = {c: align_class(c, TA, TB, A, B, a2b) for c in chain}
+    if args.parents is None:
+        parents = tabled_parents(tree, chain)
+    else:
+        parents = {}
+        for bit in args.parents.split(","):
+            if "=" in bit:
+                k, v = bit.split("=", 1)
+                parents[k.strip()] = v.strip()
+
+    struct_names = struct_slot_names(args.from_program)
+    names = {c: struct_names.get((TA[c].get("addr") or "").lower(), {}) for c in chain}
+    per = {c: align_class(c, TA, TB, A, B, a2b, names[c]) for c in chain}
     fixed = resolve_by_structure(per, chain)
+    placed = resolve_by_hierarchy(per, chain, parents,
+                                  {c: slots_of(TA[c]) for c in chain}, A, names)
 
     print("=== alignment ===")
     for c in chain:
@@ -190,24 +346,27 @@ def main():
         named = sum(1 for r in rows if r["method"])
         amb = sum(1 for r in rows if r["status"] == "AMBIGUOUS")
         own = sum(1 for r in rows if r["declarer"] == c)
-        print("  %-14s %3d slots  named=%-3d ambiguous=%-2d own-impl=%-3d editor-only=%d"
+        print("  %-14s %3d slots  named=%-3d ambiguous=%-2d own-impl=%-3d unplaced=%d"
               % (c, len(rows), named, amb, own, len(editor)))
     if fixed:
         print("  (%d slot(s) resolved by hierarchy structure)" % fixed)
+    if placed:
+        print("  (%d slot(s) placed by the classes sharing them)" % placed)
+    stale = stale_layouts(per, parents)
+    for c in sorted(stale):
+        print("  STALE LAYOUT %s: %d slots under %s's %d -- built against an older "
+              "%s declaration" % (c, len(per[c][0]), parents[c],
+                                  len(per[parents[c]][0]), parents[c]))
 
-    print("\n=== editor-only methods (in %s, absent from %s) ==="
+    # Editor-only methods land here, and so does anything else the sibling has
+    # and the target lacks -- methods the sibling's build added later included.
+    print("\n=== methods of %s with no slot in %s ==="
           % (args.from_program, args.program))
     for c in chain:
         ed = per[c][1]
         if ed:
             print("  %s: %s" % (c, ", ".join(
                 "%s::%s" % (e["declarer"] or "?", e["method"] or "?") for e in ed)))
-
-    parents = {}
-    for bit in args.parents.split(","):
-        if "=" in bit:
-            k, v = bit.split("=", 1)
-            parents[k.strip()] = v.strip()
 
     def ancestry(c):
         out = [c]
@@ -261,7 +420,8 @@ def main():
         with open(args.out_json, "w") as fh:
             json.dump({c: {"target_vtable": TB[c]["addr"],
                            "sibling_vtable": TA[c]["addr"],
-                           "slots": per[c][0], "editor_only": per[c][1]}
+                           "slots": per[c][0], "editor_only": per[c][1],
+                           "stale_layout": c in stale}
                        for c in chain}, fh, indent=1)
         print("wrote %s" % args.out_json)
 

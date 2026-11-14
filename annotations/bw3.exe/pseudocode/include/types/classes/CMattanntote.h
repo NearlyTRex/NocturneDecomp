@@ -4,13 +4,43 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CEnemy.h"
+#include "types/classes/CFlame.h"
+#include "types/classes/CVector3f.h"
+#include "types/enums/EFlameType.h"
 
 // Structure: CMattanntote
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 61596; CMattanntote_ctor 00591ba0: __arrinit(+0xd0b8, 12, CFlame) (CFlame 0x2a4), loop zeroes 13 dwords +0xf068..+0xf098
 // Ghidra size: 0xf09c (61596 bytes)
 #pragma pack(push, 1)
 typedef struct CMattanntote {
-    char field_0[61596]; // 0x0
+    CEnemy base; // 0x0, derived
+    float pain_cooldown; // 0xd054, ctor 0; processDamage sets 2.0 when <=0; process -= dt
+    char field_53336[8]; // 0xd058
+    int opacity; // 0xd060, ctor 0x10000; renderTransparent computes it from fade and passes to actor vfunc +0xf8; ==0x10000 renders flames
+    float fade_timer; // 0xd064, ctor = max_fade_time; process += dt clamped to +0xd06c; motion states 0xe/0xf reset to 0
+    int fading_out; // 0xd068, ctor 1; process state 0xe sets 1 (disappear), 0xf sets 0 (appear); renderTransparent picks fade direction
+    float max_fade_time; // 0xd06c, archive "maxFadeTime"; ctor 2.0
+    int fade_out_opacity; // 0xd070, archive "fadeOutOpacity" (archiveInteger); ctor 0x4b; renderTransparent FILD
+    int bone_r_hand; // 0xd074, setup findBone("Bip01 R Hand"); copied to +0x25a8
+    int bone_l_hand; // 0xd078, setup findBone("Bip01 L Hand"); copied to +0x2620
+    int bone_l_foot; // 0xd07c, setup findBone("Bip01 L Foot"); process bone xform
+    int bone_r_foot; // 0xd080, setup findBone("Bip01 R Foot"); process bone xform
+    int bone_l_toe; // 0xd084, setup findBone("Bip01 L Toe0"); process bone xform
+    int bone_r_toe; // 0xd088, setup findBone("Bip01 R Toe0"); process bone xform
+    int wander_mode; // 0xd08c, ctor 0; process state 0xf sets 1, cleared when wander_timer runs out; nonzero -> walk to random point near player
+    float wander_timer; // 0xd090, ctor 0; process set 4.0 / 0.5, -= dt
+    float wander_retarget_timer; // 0xd094, ctor -1.0; process: when <=0 picks new wander_target and sets 1.0; -= dt
+    int run_mode; // 0xd098, ctor 0; process sets 1 with speed boost, 0 on timer; FUN_00593a90 picks state 1 vs 2 on it
+    int speed_boosted; // 0xd09c, ctor 0; process: when 0 and fade done, sets 1 and adds to speed +0xcdcc; reset 0
+    int fade_done; // 0xd0a0, ctor 1; renderTransparent sets 1 when fade_timer==max_fade_time else -1
+    int alerted; // 0xd0a4, ctor 0; process sets 1 once when player check (vfunc +0x10c) passes, state 0xd
+    int attack_committed; // 0xd0a8, ctor 0; process sets 1 when choosing attack state 3/4/5, 0 on re-evaluate; FUN_00593a90 clears
+    CVector3f wander_target; // 0xd0ac, process LEA [EBX+0xd0ac] used as CVector3f*: random offset normalised, scaled, added to player position
+    CFlame flames[12]; // 0xd0b8, ctor __arrinit(+0xd0b8,12,CFlame); process loop vfunc +0xc per 0x2a4 to +0xf068; dtor FUN_004a5930
+    uint sfx_handles[13]; // 0xf068, ctor zeroes 13 dwords; process motion events 0x44c..0x457 store handles at [EBX+EDI*4+0xdf38] (= +0xf068+(ev-0x44c)*4), mann_*.wav; 13 sounds precached in setup
 } CMattanntote;
 #pragma pack(pop)
 

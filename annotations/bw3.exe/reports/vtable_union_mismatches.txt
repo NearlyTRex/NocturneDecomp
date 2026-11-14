@@ -11,6 +11,189 @@ from the wrong vtable struct, producing misleading pseudocode.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Total mismatches found: 0
+  Total mismatches found: 77
 
-  No mismatches detected.
+  By union member used:
+    _uc (CCharacter_vtable): 76
+    _ue (CEnemy_vtable): 1
+
+  By source file:
+    core/blundrbs.cpp                        22
+    core/lightsta.cpp                        22
+    core/flintlck.cpp                        6
+    core/exorcism.cpp                        5
+    core/elephant.cpp                        4
+    core/weapon.cpp                          4
+    core/burncrss.cpp                        3
+    core/gun.cpp                             3
+    core/rifle.cpp                           3
+    core/tommygun.cpp                        2
+    core/charactr.cpp                        1
+    core/holycrss.cpp                        1
+    core/melee.cpp                           1
+
+  By object type:
+    CBlunderbus               22  (CBlunderbus -> CWeapon -> CDemonActor)
+    CLightStaff               22  (CLightStaff -> CWeapon -> CDemonActor)
+    CFlintlock                6  (CFlintlock -> CWeapon -> CDemonActor)
+    CExorcism                 5  (CExorcism -> CWeapon -> CDemonActor)
+    CElephantGun              4  (CElephantGun -> CWeapon -> CDemonActor)
+    CWeapon                   4  (CWeapon -> CDemonActor)
+    CBurncross                3  (CBurncross -> CWeapon -> CDemonActor)
+    CGun                      3  (CGun -> CWeapon -> CDemonActor)
+    CRifle                    3  (CRifle -> CWeapon -> CDemonActor)
+    CTommyGun                 2  (CTommyGun -> CWeapon -> CDemonActor)
+    CHero                     1  (CHero -> CCharacter -> CDemonActor)
+    CHolycross                1  (CHolycross -> CWeapon -> CDemonActor)
+    CMelee                    1  (CMelee -> CWeapon -> CDemonActor)
+
+====================================================================================================
+DETAILED FINDINGS
+====================================================================================================
+
+  core/blundrbs.cpp (22)
+    CBlunderbus_fire_FUN_00410490                       this_ptr on CBlunderbus      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CBlunderbus_fire_FUN_00410490                       this_ptr on CBlunderbus      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CBlunderbus_fire_FUN_00410490                       this_ptr on CBlunderbus      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CBlunderbus_fire_FUN_00410490                       this_ptr on CBlunderbus      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CBlunderbus_fire_FUN_00410490                       this_ptr on CBlunderbus      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CBlunderbus_fire_FUN_00410490                       this_ptr on CBlunderbus      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CBlunderbus_fire_FUN_00410490                       this_ptr on CBlunderbus      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CBlunderbus_fire_FUN_00410490                       this_ptr on CBlunderbus      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CBlunderbus_fire_FUN_00410490                       this_ptr on CBlunderbus      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CBlunderbus_fire_FUN_00410490                       this_ptr on CBlunderbus      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CBlunderbus_fire_FUN_00410490                       this_ptr on CBlunderbus      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CBlunderbus_fire_FUN_00410490                       this_ptr on CBlunderbus      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CBlunderbus_fire_FUN_00410490                       this_ptr on CBlunderbus      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CBlunderbus_fire_FUN_00410490                       this_ptr on CBlunderbus      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CBlunderbus_fire_FUN_00410490                       this_ptr on CBlunderbus      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CBlunderbus_fire_FUN_00410490                       this_ptr on CBlunderbus      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CBlunderbus_fire_FUN_00410490                       this_ptr on CBlunderbus      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CBlunderbus_fire_FUN_00410490                       this_ptr on CBlunderbus      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CBlunderbus_fire_FUN_00410490                       this_ptr on CBlunderbus      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CBlunderbus_fire_FUN_00410490                       this_ptr on CBlunderbus      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CBlunderbus_fire_FUN_00410490                       this_ptr on CBlunderbus      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CBlunderbus_fire_FUN_00410490                       this_ptr on CBlunderbus      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+
+  core/lightsta.cpp (22)
+    CLightStaff_fire_FUN_004e1070                       this_ptr on CLightStaff      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightStaff_fire_FUN_004e1070                       this_ptr on CLightStaff      used _uc, need _uw  getGrabbed -> getDamage
+    CLightStaff_process_FUN_004e2050                    this_ptr on CLightStaff      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightStaff_process_FUN_004e2050                    this_ptr on CLightStaff      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightStaff_process_FUN_004e2050                    this_ptr on CLightStaff      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightStaff_process_FUN_004e2050                    this_ptr on CLightStaff      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightStaff_process_FUN_004e2050                    this_ptr on CLightStaff      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightStaff_process_FUN_004e2050                    this_ptr on CLightStaff      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightStaff_process_FUN_004e2050                    this_ptr on CLightStaff      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightStaff_process_FUN_004e2050                    this_ptr on CLightStaff      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightStaff_process_FUN_004e2050                    this_ptr on CLightStaff      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightStaff_process_FUN_004e2050                    this_ptr on CLightStaff      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightStaff_process_FUN_004e2050                    this_ptr on CLightStaff      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightStaff_process_FUN_004e2050                    this_ptr on CLightStaff      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightStaff_process_FUN_004e2050                    this_ptr on CLightStaff      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightStaff_process_FUN_004e2050                    this_ptr on CLightStaff      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightStaff_process_FUN_004e2050                    this_ptr on CLightStaff      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightStaff_process_FUN_004e2050                    this_ptr on CLightStaff      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightStaff_process_FUN_004e2050                    this_ptr on CLightStaff      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightStaff_process_FUN_004e2050                    this_ptr on CLightStaff      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightStaff_process_FUN_004e2050                    this_ptr on CLightStaff      used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CLightStaff_process_FUN_004e2050                    this_ptr on CLightStaff      used _uc, need _uw  getGrabbed -> getDamage
+
+  core/flintlck.cpp (6)
+    CFlintlock_fire_FUN_004ae850                        this_ptr on CFlintlock       used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CFlintlock_fire_FUN_004ae850                        this_ptr on CFlintlock       used _uc, need _uw  getGrabbed -> getDamage
+    CFlintlock_fire_FUN_004ae850                        this_ptr on CFlintlock       used _uc, need _uw  getGrabbed -> getDamage
+    CFlintlock_fire_FUN_004ae850                        this_ptr on CFlintlock       used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CFlintlock_fire_FUN_004ae850                        this_ptr on CFlintlock       used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CFlintlock_fire_FUN_004ae850                        this_ptr on CFlintlock       used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+
+  core/exorcism.cpp (5)
+    CExorcism_fire_FUN_0048b020                         this_ptr on CExorcism        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CExorcism_fire_FUN_0048b020                         this_ptr on CExorcism        used _uc, need _uw  getGrabbed -> getDamage
+    CExorcism_process_FUN_0048a420                      this_ptr on CExorcism        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CExorcism_process_FUN_0048a420                      this_ptr on CExorcism        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CExorcism_process_FUN_0048a420                      this_ptr on CExorcism        used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+
+  core/elephant.cpp (4)
+    CElephantGun_fire_FUN_00486d40                      this_ptr on CElephantGun     used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CElephantGun_fire_FUN_00486d40                      this_ptr on CElephantGun     used _uc, need _uw  getGrabbed -> getDamage
+    CElephantGun_process_FUN_00486c30                   this_ptr on CElephantGun     used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CElephantGun_renderAimBeam_FUN_004876d0             this_ptr on CElephantGun     used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+
+  core/weapon.cpp (4)
+    CWeapon_onDropped_FUN_0057b500                      this_ptr on CWeapon          used _uc, need _uw  kill -> setWeaponState
+    CWeapon_process_FUN_0057b160                        this_ptr on CWeapon          used _uc, need _uw  getGrabber -> updateLighting
+    CWeapon_renderAimBeam_FUN_0057bb60                  this_ptr on CWeapon          used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CWeapon_updateLighting_FUN_0057b5c0                 this_ptr on CWeapon          used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+
+  core/burncrss.cpp (3)
+    CBurncross_fire_FUN_00424550                        this_ptr on CBurncross       used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CBurncross_fire_FUN_00424550                        this_ptr on CBurncross       used _uc, need _uw  getGrabbed -> getDamage
+    CBurncross_fire_FUN_00424550                        this_ptr on CBurncross       used _uc, need _uw  getGrabbed -> getDamage
+
+  core/gun.cpp (3)
+    CGun_fire_FUN_004d0fc0                              this_ptr on CGun             used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CGun_fire_FUN_004d0fc0                              this_ptr on CGun             used _uc, need _uw  getGrabbed -> getDamage
+    CGun_fire_FUN_004d0fc0                              this_ptr on CGun             used _uc, need _uw  getGrabbed -> getDamage
+
+  core/rifle.cpp (3)
+    CRifle_fire_FUN_00527d70                            this_ptr on CRifle           used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CRifle_fire_FUN_00527d70                            this_ptr on CRifle           used _uc, need _uw  getGrabbed -> getDamage
+    CRifle_fire_FUN_00527d70                            this_ptr on CRifle           used _uc, need _uw  getGrabbed -> getDamage
+
+  core/tommygun.cpp (2)
+    CTommyGun_fire_FUN_0056b410                         this_ptr on CTommyGun        used _uc, need _uw  getGrabbed -> getDamage
+    CTommyGun_fire_FUN_0056b410                         this_ptr on CTommyGun        used _uc, need _uw  getGrabbed -> getDamage
+
+  core/charactr.cpp (1)
+    FUN_00434190                                        this_ptr on CHero            used _ue, need _uh  randomize -> isWeaponDrawn
+
+  core/holycrss.cpp (1)
+    CHolycross_fillAttackDamageInfo_FUN_004d51d0        this_ptr on CHolycross       used _uc, need _uw  getGrabbed -> getDamage
+
+  core/melee.cpp (1)
+    CMelee_fillAttackDamageInfo_FUN_004e72b0            this_ptr on CMelee           used _uc, need _uw  getGrabbed -> getDamage
+
+====================================================================================================
+OFFSET COLLISION REFERENCE
+====================================================================================================
+
+  Offset    CCharacter (_uc)                CWeapon (_uw)                 
+  ------------------------------------------------------------------------
+  0xec      applyDamage                     onFired                       
+  0xf0      kill                            setWeaponState                
+  0xf4      isInvulnerable                  getMuzzlePoint                
+  0xf8      isGrabbable                     fire                          
+  0xfc      canBeGrabbed                    isReadyToFire                 
+  0x100     getGrabbed                      getDamage                     
+  0x104     releaseFromGrab                 renderAimBeam                 
+  0x108     getGrabber                      updateLighting                
+  0x10c     releaseVictim                   vfunc62                       
+  0x110     onVictimLost                    -                             
+  0x114     checkCylinderCollisionWorld     -                             
+  0x118     testDamageLine                  -                             
+  0x11c     processDamage                   -                             
+  0x120     getDeathState                   -                             
+  0x124     attractActorToward              -                             
+  0x128     canBeAttracted                  -                             
+  0x12c     getPartDominantBone             -                             
+  0x130     setDoorTarget                   -                             
+  0x134     clearDoorTarget                 -                             
+  0x138     hasDoorTarget                   -                             
+  0x13c     dropCarriedObject               -                             
+  0x140     getCarryObjToBodyXForm          -                             
+  0x144     setWalkTarget                   -                             
+  0x148     setWalkTargetImmediate          -                             
+  0x14c     setWalkTimeout                  -                             
+  0x150     isWalkComplete                  -                             
+
+  Offset    CEnemy (_ue)                    CHero (_uh)                   
+  ------------------------------------------------------------------------
+  0x154     getTargetPoint                  createDefaultWeapon           
+  0x158     updateVictim                    drawWeapon                    
+  0x15c     randomize                       isWeaponDrawn                 
+  0x160     -                               reset                         
+  0x164     -                               toggleGoggles                 
+  0x168     -                               canReachPickup                
+  0x16c     -                               doHeroAction                  
+  0x170     -                               canDoHeroAction               

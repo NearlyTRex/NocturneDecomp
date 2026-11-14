@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 76,
-    "complexity_score": 168,
+    "complexity_score": 148,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 23,
-    "suspect_count": 13,
+    "suspect_count": 11,
     "suspect_types": [
       "extra_output",
       "unnamed_param",
@@ -102,6 +102,20 @@
     },
     "pcode_op_count": 500
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00454360",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004504b0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -155,14 +169,6 @@
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 9,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "uint extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "int extraout_EDX;",
@@ -170,10 +176,26 @@
     },
     {
       "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fVar2 = (float10)((float)(param_2[1] - *(int *)(param_1 + 0x170)) * _DAT_005f4dd4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar2 = (float10)((float)(param_2[1] - *(int *)(param_1 + 0x170)) * _DAT_005f4dd4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 15,
       "match": "param_2",
       "severity": "mild",
-      "text": "fVar3 = (float10)((float)(param_2[1] - *(int *)(param_1 + 0x170)) * _DAT_005f4dd4);",
+      "text": "fVar3 = (float10)((float)(*param_2 - *(int *)(param_1 + 0x16c)) * _DAT_005f4dd4);",
       "type": "unnamed_param"
     },
     {
@@ -181,7 +203,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar3 = (float10)((float)(param_2[1] - *(int *)(param_1 + 0x170)) * _DAT_005f4dd4);",
+      "text": "fVar3 = (float10)((float)(*param_2 - *(int *)(param_1 + 0x16c)) * _DAT_005f4dd4);",
       "type": "unnamed_param"
     },
     {
@@ -189,7 +211,7 @@
       "line": 16,
       "match": "param_2",
       "severity": "mild",
-      "text": "fVar4 = (float10)((float)(*param_2 - *(int *)(param_1 + 0x16c)) * _DAT_005f4dd4);",
+      "text": "fVar4 = (float10)((float)(param_2[2] - *(int *)(param_1 + 0x174)) * _DAT_005f4dd4);",
       "type": "unnamed_param"
     },
     {
@@ -197,39 +219,15 @@
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar4 = (float10)((float)(*param_2 - *(int *)(param_1 + 0x16c)) * _DAT_005f4dd4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar5 = (float10)((float)(param_2[2] - *(int *)(param_1 + 0x174)) * _DAT_005f4dd4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar5 = (float10)((float)(param_2[2] - *(int *)(param_1 + 0x174)) * _DAT_005f4dd4);",
+      "text": "fVar4 = (float10)((float)(param_2[2] - *(int *)(param_1 + 0x174)) * _DAT_005f4dd4);",
       "type": "unnamed_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 21,
+      "line": 20,
       "match": "extraout_EDX",
       "severity": "moderate",
-      "text": "(0x146592c,extraout_EDX + 0x16c,extraout_ECX,(int)ROUND(fVar3));",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 21,
-      "match": "extraout_ECX",
-      "severity": "moderate",
-      "text": "(0x146592c,extraout_EDX + 0x16c,extraout_ECX,(int)ROUND(fVar3));",
+      "text": "((SFogGrid *)0x146592c,(CVector3i *)(extraout_EDX + 0x16c),end_pos,",
       "type": "extra_output"
     }
   ],

@@ -1,20 +1,22 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_actor_cpp_createActorByName_FUN_0040c5a0(undefined4 param_1)
+; CDemonActor * __cdecl core_actor_cpp_createActorByName_FUN_0040c5a0(char *class_name)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   class_name
 ;
 ; XREF[11]:
-;   core_baron.cpp_FUN_00410ac0 at 00410b1c
+;   core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00410ac0 at 00410b1c
 ;   core_game.cpp_FUN_004b8e10 at 004b8e1c
 ;   core_game.cpp_FUN_004b90d0 at 004b9a9d
 ;   core_hero.cpp_FUN_004d0a40 at 004d0a55
 ;   core_inv.cpp_CInventory_initialize_FUN_004da900 at 004da95a
 ;   core_inv.cpp_CInventory_load_FUN_004dc4b0 at 004dc76a
 ;   core_inv.cpp_FUN_004dadb0 at 004db508
-;   core_mimic.cpp_FUN_004f04f0 at 004f06f1
+;   core_mimic.cpp_CMimic_setup_FUN_004f04f0 at 004f06f1
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_004fb590 at 004fbb27
-;   core_passngr.cpp_FUN_005115e0 at 005116a9
+;   core_passngr.cpp_CPassenger_setup_FUN_005115e0 at 005116a9
 ;   ... and 1 more
 ;
 ; Referenced Globals:
@@ -42,7 +44,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x10]      ; 0040c5a3
     PUSH ESI                            ; 0040c5a7
     CALL core_actor.cpp_getActorClassByName_FUN_0040c530 ; 0040c5a8
-        ;   XREF to: 0040c530 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_getActorClassByName_FUN_0040c530()
+        ;   XREF to: 0040c530 (UNCONDITIONAL_CALL)  ; CDemonActorType * core_actor.cpp_getActorClassByName_FUN_0040c530(char * className)
     ADD ESP,0x4                         ; 0040c5ad
     MOV EBX,EAX                         ; 0040c5b0
     TEST EAX,EAX                        ; 0040c5b2

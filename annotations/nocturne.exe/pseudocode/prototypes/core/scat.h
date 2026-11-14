@@ -9,13 +9,13 @@
 // Address: 004fbb40
 void __cdecl staticInit(void);
 
-// Original: core_scat.cpp_FUN_004fbb70
+// Original: core_scat.cpp_getWeaponInteractionType_FUN_004fbb70
 // Address: 004fbb70
-undefined4 FUN_004fbb70(void);
+int __cdecl getWeaponInteractionType(CWeapon *weapon);
 
-// Original: core_scat.cpp_FUN_004fbbb0
+// Original: core_scat.cpp_getWeaponHoldType_FUN_004fbbb0
 // Address: 004fbbb0
-undefined4 FUN_004fbbb0(int param_1);
+int __cdecl getWeaponHoldType(CWeapon *weapon);
 
 // Original: core_scat.cpp_factoryFuncScat_FUN_004fbbd0
 // Address: 004fbbd0
@@ -93,9 +93,9 @@ void __cdecl CScat::updateAiming(CScat *this_ptr,float delta_time,int is_holster
 // Address: 004fda20
 float __cdecl CScat::scoreAimTarget(CScat *this_ptr,CDemonActor *target,int is_current_target);
 
-// Original: core_scat.cpp_CScat_FUN_004fdd00
+// Original: core_scat.cpp_CScat_updateWeaponAttachment_FUN_004fdd00
 // Address: 004fdd00
-void __cdecl CScat(CScat *this_ptr);
+void __cdecl CScat::updateWeaponAttachment(CScat *this_ptr);
 
 // Original: core_scat.cpp_CScat_dtor_FUN_004fde30
 // Address: 004fde30

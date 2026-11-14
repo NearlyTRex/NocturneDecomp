@@ -1,0 +1,236 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 242,
+    "complexity_score": 123,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 93,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 335
+  },
+  "cross_references": [
+    {
+      "addr": "004a9d90",
+      "from_addr": "004a9dbb",
+      "name": "core_fldnotes.cpp_SNotesSection_layout_FUN_004a9d90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a9950",
+    "address_range": [
+      [
+        "004a9950",
+        "004a9b64"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fldnotes.cpp_SNotesEntry_layout_FUN_004a9950",
+    "signature": "int __cdecl core_fldnotes_cpp_SNotesEntry_layout_FUN_004a9950(SNotesEntry *this_ptr,STextView *view)"
+  },
+  "function_calls": [
+    {
+      "addr": "004aa6d0",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_SNotesMap_paginate_FUN_004aa6d0"
+    },
+    {
+      "addr": "004a8ed0",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_STextView_addText_FUN_004a8ed0"
+    },
+    {
+      "addr": "004a8f30",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_STextView_layoutChunk_FUN_004a8f30"
+    },
+    {
+      "addr": "00482440",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_00482440"
+    },
+    {
+      "addr": "00508960",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_00508960"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c102a",
+      "name": "s_image_box_32_32_005c102a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c103c",
+      "name": "s_image_check_32_32_005c103c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c1050",
+      "name": "DAT_005c1050",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c1055",
+      "name": "s_cont_005c1055",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c105d",
+      "name": "s_ul_br_005c105d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c1067",
+      "name": "s_ERROR_item_won_t_fit_br_005c1067",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d0d008",
+      "name": "DAT_01d0d008",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004a9dbb",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_SNotesSection_layout_FUN_004a9d90",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.456521739130435,
+    "instruction_count": 184,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 27,
+      "BOOL_OR": 2,
+      "BRANCH": 2,
+      "CALL": 11,
+      "CBRANCH": 24,
+      "COPY": 156,
+      "INT_ADD": 82,
+      "INT_AND": 173,
+      "INT_CARRY": 24,
+      "INT_EQUAL": 121,
+      "INT_LEFT": 8,
+      "INT_LESS": 12,
+      "INT_NOTEQUAL": 12,
+      "INT_OR": 20,
+      "INT_SBORROW": 12,
+      "INT_SCARRY": 26,
+      "INT_SLESS": 66,
+      "INT_SUB": 52,
+      "INT_XOR": 7,
+      "LOAD": 61,
+      "POPCOUNT": 58,
+      "RETURN": 7,
+      "STORE": 41
+    },
+    "pcode_op_count": 1004
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a32e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2791
+    },
+    "bw1.exe": {
+      "addr": "004bbd10",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9524
+    }
+  },
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "SNotesEntry *"
+      },
+      {
+        "is_param": true,
+        "name": "view",
+        "offset": 8,
+        "size": 4,
+        "type": "STextView *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 57,
+      "match": "DAT_005c1050",
+      "severity": "mild",
+      "text": "iVar2 = core_fldnotes_cpp_STextView_addText_FUN_004a8ed0(view,&DAT_005c1050);",
+      "type": "undefined_data"
+    }
+  ]
+}

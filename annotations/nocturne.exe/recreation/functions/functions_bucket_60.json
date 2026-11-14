@@ -3013,21 +3013,12 @@
       "00454580",
       "00563c90"
     ],
+    "cls":"CLightActor",
     "conv":"__cdecl",
     "instructions":205,
-    "method":"CLightActor",
-    "name":"core_boxactor.cpp_CLightActor_FUN_0041f6e0",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CLightActor",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"setupLightModel",
+    "name":"core_boxactor.cpp_CLightActor_setupLightModel_FUN_0041f6e0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -3628,8 +3619,8 @@
       "005a2e38"
     ],
     "instructions":1,
-    "method":"releaseVictim",
-    "name":"core_charactr.cpp_CCharacter_releaseVictim_FUN_004280e0",
+    "method":"doNothing",
+    "name":"core_charactr.cpp_CCharacter_doNothing_FUN_004280e0",
     "receiver":true,
     "ret":{
       "kind":"builtin",
@@ -3940,8 +3931,8 @@
       "005a4668"
     ],
     "instructions":4,
-    "method":"setWalkTimeout",
-    "name":"core_charactr.cpp_CCharacter_setWalkTimeout_FUN_00428ee0",
+    "method":"setDoorTarget",
+    "name":"core_charactr.cpp_CCharacter_setDoorTarget_FUN_00428ee0",
     "params":[
       {
         "name":"timeout",
@@ -4270,15 +4261,33 @@
   },
   {
     "addr":"0042b6e0",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":6,
-    "method":"FUN_0042b6e0",
-    "name":"core_charactr.cpp_FUN_0042b6e0",
+    "method":"copyFloat3",
+    "name":"core_charactr.cpp_copyFloat3_FUN_0042b6e0",
+    "params":[
+      {
+        "name":"dst",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      },
+      {
+        "name":"src",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "name":"float",
+      "ptr":1
     },
     "tu":"core/charactr.cpp",
     "variadic":false
@@ -6030,8 +6039,8 @@
     ],
     "conv":"__cdecl",
     "instructions":60,
-    "method":"FUN_0044b660",
-    "name":"core_dcube.cpp_FUN_0044b660",
+    "method":"showHelpFile",
+    "name":"core_dcube.cpp_showHelpFile_FUN_0044b660",
     "params":[
       {
         "name":"filename",
@@ -9761,15 +9770,33 @@
   },
   {
     "addr":"00481960",
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":6,
-    "method":"FUN_00481960",
-    "name":"core_event.cpp_FUN_00481960",
+    "method":"assignInt1",
+    "name":"core_event.cpp_assignInt1_FUN_00481960",
+    "params":[
+      {
+        "name":"dest",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      },
+      {
+        "name":"src",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "name":"int",
+      "ptr":1
     },
     "tu":"core/event.cpp",
     "variadic":false
@@ -14679,14 +14706,25 @@
     "calls":[
       "00564570"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":11,
-    "method":"FUN_004e08e0",
-    "name":"core_motion.cpp_FUN_004e08e0",
+    "method":"skipLine",
+    "name":"core_motion.cpp_skipLine_FUN_004e08e0",
+    "params":[
+      {
+        "name":"file_handle",
+        "type":{
+          "header":"stdio",
+          "kind":"system",
+          "name":"_FILE",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/motion.cpp",
@@ -17282,21 +17320,12 @@
     "calls":[
       "00564486"
     ],
+    "cls":"CSkeleton",
     "conv":"__cdecl",
     "instructions":29,
-    "method":"CSkeleton",
-    "name":"core_skeleton.cpp_CSkeleton_FUN_005174e0",
-    "params":[
-      {
-        "name":"this_ptr",
-        "type":{
-          "kind":"class",
-          "name":"CSkeleton",
-          "ptr":1
-        }
-      }
-    ],
-    "receiver":false,
+    "method":"free",
+    "name":"core_skeleton.cpp_CSkeleton_free_FUN_005174e0",
+    "receiver":true,
     "ret":{
       "kind":"builtin",
       "name":"void",
@@ -22446,6 +22475,7 @@
     "calls":[
       "005638d0",
       "00563cc0",
+      "00570f50",
       "00572b70"
     ],
     "conv":"unknown",
@@ -22520,6 +22550,27 @@
       "header":"winnt",
       "kind":"system",
       "name":"HANDLE",
+      "ptr":0
+    },
+    "tu":"crt/unknown.c",
+    "variadic":false
+  },
+  {
+    "addr":"005718e0",
+    "callers":[
+      "0056f034"
+    ],
+    "calls":[
+      "00563cc0"
+    ],
+    "conv":"unknown",
+    "instructions":113,
+    "method":"FUN_005718e0",
+    "name":"crt_unknown.c_FUN_005718e0",
+    "receiver":false,
+    "ret":{
+      "kind":"builtin",
+      "name":"undefined",
       "ptr":0
     },
     "tu":"crt/unknown.c",

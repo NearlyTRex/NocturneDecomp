@@ -11,8 +11,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_inv.cpp_FUN_004dc560 at 004dc6a3
-;   core_mission.cpp_FUN_004f6410 at 004f66f1
+;   core_inv.cpp_CInventory_save_FUN_004dc560 at 004dc6a3
+;   core_mission.cpp_CDemonMission_writeFile_FUN_004f6410 at 004f66f1
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_005b584d
@@ -30,7 +30,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_adjustIndentationLevel_FUN_0040afa0
-;   core_actor.cpp_FUN_00408870
+;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870
 ;   core_actor.cpp_syncActorTypeIDs_FUN_0040c870
 ;   core_main.c_FUN_004e4330
 ;   crt_unknown.c_FUN_005a3140
@@ -50,8 +50,8 @@ section .text
     CALL core_actor.cpp_syncActorTypeIDs_FUN_0040c870 ; 0040afff
         ;   XREF to: 0040c870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_syncActorTypeIDs_FUN_0040c870()
     PUSH EBX                            ; 0040b004
-    CALL core_actor.cpp_FUN_00408870    ; 0040b005
-        ;   XREF to: 00408870 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_FUN_00408870(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870 ; 0040b005
+        ;   XREF to: 00408870 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0040b00a
     MOV DL,byte ptr [EBX]               ; 0040b00d
     MOV ESI,EAX                         ; 0040b00f

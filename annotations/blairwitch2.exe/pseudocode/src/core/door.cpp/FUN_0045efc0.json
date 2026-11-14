@@ -2,35 +2,33 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 20,
+    "complexity_score": 5,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 5,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 15
   },
   "cross_references": [
     {
       "addr": "00428ac0",
       "from_addr": "00428ad2",
-      "name": "core_charactr.cpp_FUN_00428ac0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004cf230",
-      "from_addr": "004cf271",
-      "name": "core_hero.cpp_FUN_004cf230",
+      "name": "core_charactr.cpp_CCharacter_clearDoorTarget_FUN_00428ac0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d03b0",
       "from_addr": "004d0524",
-      "name": "core_hero.cpp_FUN_004d03b0",
+      "name": "core_hero.cpp_CHero_doHeroAction_FUN_004d03b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cf230",
+      "from_addr": "004cf271",
+      "name": "core_hero.cpp_CHero_tryOpenDoor_FUN_004cf230",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -67,7 +65,7 @@
       {
         "call_addr": "004cf271",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004cf230",
+        "caller": "core_hero.cpp_CHero_tryOpenDoor_FUN_004cf230",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -78,7 +76,7 @@
       {
         "call_addr": "004d0524",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004d03b0",
+        "caller": "core_hero.cpp_CHero_doHeroAction_FUN_004d03b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -89,7 +87,7 @@
       {
         "call_addr": "00428ad2",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_00428ac0",
+        "caller": "core_charactr.cpp_CCharacter_clearDoorTarget_FUN_00428ac0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -140,14 +138,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x444",
-      "severity": "mild",
-      "text": "core_event_cpp_CEventList_executeCommands_FUN_004894f0(0x01C38BC0,&this_ptr->field_0x444);",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

@@ -19,17 +19,19 @@ void shape_edittool_cpp_FUN_00483020(CStrList *param_1,char *param_2,char *param
   char acStack_108 [256];
   char acStack_8 [4];
   
-  engine_dosio_cpp_FUN_00465e50(param_2,acStack_8,acStack_108,acStack_308,acStack_408);
-  engine_dosio_cpp_FUN_00465e80(acStack_208,(char *)0x0,acStack_108,acStack_308,acStack_408);
-  engine_dosio_cpp_FUN_00465e50(param_3,(char *)0x0,(char *)0x0,acStack_308,acStack_408);
-  engine_dosio_cpp_FUN_00465e80(acStack_50c,acStack_8,acStack_208,acStack_308,acStack_408);
+  engine_dosio_cpp_splitPath_FUN_00465e50(param_2,acStack_8,acStack_108,acStack_308,acStack_408);
+  engine_dosio_cpp_makePath_FUN_00465e80
+            (acStack_208,(char *)0x0,acStack_108,acStack_308,acStack_408);
+  engine_dosio_cpp_splitPath_FUN_00465e50(param_3,(char *)0x0,(char *)0x0,acStack_308,acStack_408);
+  engine_dosio_cpp_makePath_FUN_00465e80(acStack_50c,acStack_8,acStack_208,acStack_308,acStack_408);
   engine_dosio_cpp_CFileFinder_ctor_FUN_00465b60(&CStack_828);
   engine_dosio_cpp_CFileFinder_openSearch_FUN_00465ba0(&CStack_828,acStack_50c);
-  while (CStack_828._0_1_ != '\0') {
-    if ((CStack_828._256_1_ & 4) == 0) {
-      engine_dosio_cpp_FUN_00465e50
-                ((char *)&CStack_828,(char *)0x0,(char *)0x0,acStack_308,acStack_408);
-      engine_dosio_cpp_FUN_00465e80(acStack_714,acStack_8,acStack_208,acStack_308,acStack_408);
+  while (CStack_828.filename[0] != '\0') {
+    if (((byte)CStack_828.attributes & 4) == 0) {
+      engine_dosio_cpp_splitPath_FUN_00465e50
+                (CStack_828.filename,(char *)0x0,(char *)0x0,acStack_308,acStack_408);
+      engine_dosio_cpp_makePath_FUN_00465e80
+                (acStack_714,acStack_8,acStack_208,acStack_308,acStack_408);
       engine_dosio_cpp_getFullPath_FUN_00465ff0(acStack_610,acStack_714);
       shape_edittool_cpp_CStrList_add_FUN_00482070(param_1,acStack_610);
     }

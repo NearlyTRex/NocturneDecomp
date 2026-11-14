@@ -10,13 +10,20 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveZBufferScanlines_FUN_00443a50(CDe
 
 {
   int iVar1;
+  int iVar2;
+  int iVar3;
   
-  iVar1 = 0;
-  if (0 < *(int *)&this_ptr->field_0x148) {
+  iVar2 = 0;
+  if (0 < this_ptr->framebuffer_height) {
+    iVar3 = 0;
     do {
-      iVar1 = iVar1 + 1;
-      _memcpy(*(int *)&this_ptr->field_0x144 << 2);
-    } while (iVar1 < *(int *)&this_ptr->field_0x148);
+      iVar1 = this_ptr->framebuffer_width * iVar2;
+      iVar2 = iVar2 + 1;
+      _memcpy
+                ((void *)(iVar1 * 4 + (int)this_ptr->zbuffer_aligned),
+                 *(void **)(&DAT_01c2b64c + iVar3),this_ptr->framebuffer_width << 2);
+      iVar3 = iVar3 + 4;
+    } while (iVar2 < this_ptr->framebuffer_height);
   }
   return;
 }

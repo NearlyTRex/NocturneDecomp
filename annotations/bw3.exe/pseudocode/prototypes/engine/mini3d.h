@@ -5,458 +5,510 @@
 // Function prototypes for engine/mini3d.cpp
 // Generated from Ghidra function signatures
 
-// Original: engine_mini3d.cpp_FUN_004ed1de
-// Address: 004ed1de
-void FUN_004ed1de(int param_1,float *param_2);
+// Original: engine_mini3d.cpp_staticInit_FUN_004ec6f0
+// Address: 004ec6f0
+void __cdecl staticInit(void);
 
-// Original: engine_mini3d.cpp_FUN_004ed520
+// Original: engine_mini3d.cpp_CMini3D_ctor_FUN_004ec730
+// Address: 004ec730
+CMini3D * __cdecl CMini3D::ctor(CMini3D *this_ptr);
+
+// Original: engine_mini3d.cpp_CMini3D_dtor_FUN_004ec7f0
+// Address: 004ec7f0
+CMini3D * __cdecl CMini3D::dtor(CMini3D *this_ptr,uint flags);
+
+// Original: engine_mini3d.cpp_init_FUN_004ec800
+// Address: 004ec800
+int __cdecl init(void);
+
+// Original: engine_mini3d.cpp_kill_FUN_004ec820
+// Address: 004ec820
+void __cdecl kill(void);
+
+// Original: engine_mini3d.cpp_swapBuffers_FUN_004ec8d0
+// Address: 004ec8d0
+void __cdecl swapBuffers(void);
+
+// Original: engine_mini3d.cpp_lockFrame_FUN_004ec930
+// Address: 004ec930
+void __cdecl lockFrame(void);
+
+// Original: engine_mini3d.cpp_unlockFrame_FUN_004ec940
+// Address: 004ec940
+void __cdecl unlockFrame(void);
+
+// Original: engine_mini3d.cpp_clear_FUN_004ec950
+// Address: 004ec950
+int __cdecl clear(void);
+
+// Original: engine_mini3d.cpp_clearZBuffer_FUN_004ec970
+// Address: 004ec970
+int __cdecl clearZBuffer(void);
+
+// Original: engine_mini3d.cpp_setCameraOrigin_FUN_004ec990
+// Address: 004ec990
+void __cdecl setCameraOrigin(CVector3f *origin);
+
+// Original: engine_mini3d.cpp_setProjectionScale_FUN_004ec9b0
+// Address: 004ec9b0
+void __cdecl setProjectionScale(float scale);
+
+// Original: engine_mini3d.cpp_setZoom_FUN_004ec9c0
+// Address: 004ec9c0
+void __cdecl setZoom(float value);
+
+// Original: engine_mini3d.cpp_setCameraMatrix_FUN_004eca10
+// Address: 004eca10
+void __cdecl setCameraMatrix(CMatrix3x3f *rotation);
+
+// Original: engine_mini3d.cpp_setFrameTranslation_FUN_004eceb0
+// Address: 004eceb0
+void __cdecl setFrameTranslation(CVector3f *position);
+
+// Original: engine_mini3d.cpp_getCameraRotation_FUN_004ecf60
+// Address: 004ecf60
+void __esi getCameraRotation(CVector3f *output);
+
+// Original: engine_mini3d.cpp_getZoom_FUN_004ecf90
+// Address: 004ecf90
+float __cdecl getZoom(void);
+
+// Original: engine_mini3d.cpp_setRenderViewport_FUN_004ed020
+// Address: 004ed020
+void __cdecl setRenderViewport(float left,float top,float right,float bottom);
+
+// Original: engine_mini3d.cpp_getRenderViewport_FUN_004ed150
+// Address: 004ed150
+void __cdecl getRenderViewport(float *left,float *top,float *right,float *bottom);
+
+// Original: engine_mini3d.cpp_matrixPushAndTransform_FUN_004ed1e0
+// Address: 004ed1e0
+void __cdecl matrixPushAndTransform(CVector3f *angles,CVector3f *position);
+
+// Original: engine_mini3d.cpp_matrixPushAndTransformMatrix_FUN_004ed520
 // Address: 004ed520
-void FUN_004ed520(float *param_1,float *param_2);
+void __cdecl matrixPushAndTransformMatrix(CMatrix3x3f *rotation,CVector3f *position);
 
-// Original: engine_mini3d.cpp_FUN_004ed71e
-// Address: 004ed71e
-void FUN_004ed71e(undefined4 *param_1);
+// Original: engine_mini3d.cpp_matrixPushLoad_FUN_004ed720
+// Address: 004ed720
+void __cdecl matrixPushLoad(float *frame);
 
-// Original: engine_mini3d.cpp_FUN_004ed790
+// Original: engine_mini3d.cpp_matrixPush_FUN_004ed790
 // Address: 004ed790
-void FUN_004ed790(void);
+void __cdecl matrixPush(void);
 
-// Original: engine_mini3d.cpp_FUN_004ed7fc
-// Address: 004ed7fc
-void FUN_004ed7fc(void);
+// Original: engine_mini3d.cpp_pop_FUN_004ed800
+// Address: 004ed800
+void __cdecl pop(void);
 
-// Original: engine_mini3d.cpp_FUN_004ed870
+// Original: engine_mini3d.cpp_pushMatrixRelativeOffset_FUN_004ed870
 // Address: 004ed870
-void FUN_004ed870(float *param_1);
+void __cdecl pushMatrixRelativeOffset(CVector3f *offset);
 
-// Original: engine_mini3d.cpp_FUN_004ed910
+// Original: engine_mini3d.cpp_popMatrixRelativeOffset_FUN_004ed910
 // Address: 004ed910
-void FUN_004ed910(void);
+void __cdecl popMatrixRelativeOffset(void);
 
-// Original: engine_mini3d.cpp_FUN_004ed980
+// Original: engine_mini3d.cpp_useTexture_FUN_004ed980
 // Address: 004ed980
-void FUN_004ed980(undefined4 param_1);
+void __cdecl useTexture(int texture);
 
-// Original: engine_mini3d.cpp_FUN_004ed9d0
+// Original: engine_mini3d.cpp_loadTexture_FUN_004ed9d0
 // Address: 004ed9d0
-void FUN_004ed9d0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
+void __cdecl loadTexture(int arg1,int arg2,int arg3,int arg4,int arg5);
 
-// Original: engine_mini3d.cpp_FUN_004eda20
+// Original: engine_mini3d.cpp_resetTextureCache_FUN_004eda20
 // Address: 004eda20
-void FUN_004eda20(void);
+void __cdecl resetTextureCache(void);
 
-// Original: engine_mini3d.cpp_FUN_004eda40
+// Original: engine_mini3d.cpp_setTextureClamp_FUN_004eda40
 // Address: 004eda40
-void FUN_004eda40(undefined4 param_1,undefined4 param_2);
+void __cdecl setTextureClamp(int clamp_u,int clamp_v);
 
-// Original: engine_mini3d.cpp_FUN_004eda6e
-// Address: 004eda6e
-void FUN_004eda6e(undefined4 param_1);
+// Original: engine_mini3d.cpp_setRendererOption_FUN_004eda70
+// Address: 004eda70
+void __cdecl setRendererOption(int value);
 
-// Original: engine_mini3d.cpp_FUN_004eda80
+// Original: engine_mini3d.cpp_getTextureHandle_FUN_004eda80
 // Address: 004eda80
-undefined4 FUN_004eda80(void);
+int __cdecl getTextureHandle(void);
 
-// Original: engine_mini3d.cpp_FUN_004edad0
+// Original: engine_mini3d.cpp_setRenderFlags_FUN_004edad0
 // Address: 004edad0
-void FUN_004edad0(undefined4 param_1);
+void __cdecl setRenderFlags(int flags);
 
-// Original: engine_mini3d.cpp_FUN_004edae0
+// Original: engine_mini3d.cpp_setExtraRenderFlags_FUN_004edae0
 // Address: 004edae0
-void FUN_004edae0(undefined4 param_1);
+void __cdecl setExtraRenderFlags(int value);
 
-// Original: engine_mini3d.cpp_FUN_004edaf0
+// Original: engine_mini3d.cpp_setAlpha_FUN_004edaf0
 // Address: 004edaf0
-void FUN_004edaf0(float param_1);
+void __cdecl setAlpha(float alpha);
 
-// Original: engine_mini3d.cpp_FUN_004edb80
+// Original: engine_mini3d.cpp_setFog_FUN_004edb80
 // Address: 004edb80
-void FUN_004edb80(int param_1,int param_2,uint param_3,float param_4,float param_5);
+void __cdecl setFog(int red,int green,int blue,float fog_near,float fog_far);
 
-// Original: engine_mini3d.cpp_FUN_004edc90
+// Original: engine_mini3d.cpp_disableFog_FUN_004edc90
 // Address: 004edc90
-void FUN_004edc90(void);
+void __cdecl disableFog(void);
 
-// Original: engine_mini3d.cpp_FUN_004edca0
+// Original: engine_mini3d.cpp_enableExtraRenderState_FUN_004edca0
 // Address: 004edca0
-void FUN_004edca0(void);
+void __cdecl enableExtraRenderState(void);
 
-// Original: engine_mini3d.cpp_FUN_004edcb0
+// Original: engine_mini3d.cpp_disableExtraRenderState_FUN_004edcb0
 // Address: 004edcb0
-void FUN_004edcb0(void);
+void __cdecl disableExtraRenderState(void);
 
-// Original: engine_mini3d.cpp_FUN_004edcc0
+// Original: engine_mini3d.cpp_updateTransform_FUN_004edcc0
 // Address: 004edcc0
-void FUN_004edcc0(void);
+void __cdecl updateTransform(void);
 
-// Original: engine_mini3d.cpp_FUN_004ede40
+// Original: engine_mini3d.cpp_allocVertexList_FUN_004ede40
 // Address: 004ede40
-void FUN_004ede40(void);
+void __cdecl allocVertexList(void);
 
-// Original: engine_mini3d.cpp_FUN_004edea0
+// Original: engine_mini3d.cpp_polyList_FUN_004edea0
 // Address: 004edea0
-void FUN_004edea0(int param_1,int param_2,undefined4 param_3,int param_4);
+void __cdecl polyList(float *vertices,int vertex_count,ushort *indices,int triangle_count);
 
-// Original: engine_mini3d.cpp_FUN_004ee110
+// Original: engine_mini3d.cpp_polyList2_FUN_004ee110
 // Address: 004ee110
-void FUN_004ee110(undefined4 param_1,int param_2,undefined4 param_3,int param_4);
+void __cdecl polyList2(float *vertices,int vertex_count,ushort *indices,int triangle_count);
 
-// Original: engine_mini3d.cpp_FUN_004ee1a0
+// Original: engine_mini3d.cpp_polyListD3DL_FUN_004ee1a0
 // Address: 004ee1a0
-void FUN_004ee1a0(int param_1,int param_2,undefined4 param_3,int param_4);
+void __cdecl polyListD3DL(float *vertices,int vertex_count,ushort *indices,int triangle_count);
 
-// Original: engine_mini3d.cpp_FUN_004ee39e
-// Address: 004ee39e
-void FUN_004ee39e(undefined4 param_1,int param_2,undefined4 param_3,int param_4);
+// Original: engine_mini3d.cpp_polyListD3DL2_FUN_004ee3a0
+// Address: 004ee3a0
+void __cdecl polyListD3DL2(float *vertices,int vertex_count,ushort *indices,int triangle_count);
 
-// Original: engine_mini3d.cpp_FUN_004ee430
+// Original: engine_mini3d.cpp_polyListL_FUN_004ee430
 // Address: 004ee430
-void FUN_004ee430(int param_1,int param_2,undefined4 param_3,int param_4);
+void __cdecl polyListL(float *vertices,int vertex_count,ushort *indices,int triangle_count);
 
-// Original: engine_mini3d.cpp_FUN_004ee51e
-// Address: 004ee51e
-void FUN_004ee51e(void);
-
-// Original: engine_mini3d.cpp_FUN_004ee5b0
+// Original: engine_mini3d.cpp_polyListD3DTL_FUN_004ee5b0
 // Address: 004ee5b0
-void FUN_004ee5b0(float *param_1,int param_2,ushort *param_3,int param_4);
+void __cdecl polyListD3DTL(float *vertices,int vertex_count,ushort *indices,int triangle_count);
 
-// Original: engine_mini3d.cpp_FUN_004ee9f0
+// Original: engine_mini3d.cpp_lineListD3DTL_FUN_004ee9f0
 // Address: 004ee9f0
-void FUN_004ee9f0(undefined4 param_1,undefined4 param_2);
+void __cdecl lineListD3DTL(float *vertices,int vertex_count);
 
-// Original: engine_mini3d.cpp_FUN_004eea30
+// Original: engine_mini3d.cpp_transformVertex_FUN_004eea30
 // Address: 004eea30
-void FUN_004eea30(float *param_1,float *param_2);
+void __cdecl transformVertex(CVector3f *point,float *out);
 
-// Original: engine_mini3d.cpp_FUN_004eeb40
+// Original: engine_mini3d.cpp_transformVertexSurface_FUN_004eeb40
 // Address: 004eeb40
-void FUN_004eeb40(float *param_1,float *param_2);
+void __cdecl transformVertexSurface(CVector3f *point,float *out);
 
-// Original: engine_mini3d.cpp_FUN_004eec50
+// Original: engine_mini3d.cpp_transformVertexOrtho_FUN_004eec50
 // Address: 004eec50
-void FUN_004eec50(float *param_1,float *param_2);
+void __cdecl transformVertexOrtho(CVector3f *point,float *out);
 
-// Original: engine_mini3d.cpp_FUN_004eedd0
+// Original: engine_mini3d.cpp_getClipFlags_FUN_004eedd0
 // Address: 004eedd0
-undefined4 FUN_004eedd0(float *param_1);
+int __cdecl getClipFlags(CVector3f *point);
 
-// Original: engine_mini3d.cpp_FUN_004eeeb0
+// Original: engine_mini3d.cpp_getBehindClipFlag_FUN_004eeeb0
 // Address: 004eeeb0
-int FUN_004eeeb0(float *param_1);
+int __cdecl getBehindClipFlag(CVector3f *point);
 
-// Original: engine_mini3d.cpp_FUN_004eef00
+// Original: engine_mini3d.cpp_rotateByView_FUN_004eef00
 // Address: 004eef00
-void FUN_004eef00(float *param_1,float *param_2);
+void __cdecl rotateByView(CVector3f *input,CVector3f *output);
 
-// Original: engine_mini3d.cpp_FUN_004eef80
+// Original: engine_mini3d.cpp_getTransformMatrix_FUN_004eef80
 // Address: 004eef80
-undefined * FUN_004eef80(void);
+float * __cdecl getTransformMatrix(void);
 
-// Original: engine_mini3d.cpp_FUN_004eef8e
-// Address: 004eef8e
-float FUN_004eef8e(float param_1,float *param_2);
+// Original: engine_mini3d.cpp_getProjectedSize_FUN_004eef90
+// Address: 004eef90
+float __cdecl getProjectedSize(float size,CVector3f *point);
 
-// Original: engine_mini3d.cpp_FUN_004ef020
+// Original: engine_mini3d.cpp_screenToWorldRay_FUN_004ef020
 // Address: 004ef020
-void FUN_004ef020(float param_1,float param_2,float *param_3);
+void __cdecl screenToWorldRay(float screen_x,float screen_y,CVector3f *output);
 
-// Original: engine_mini3d.cpp_FUN_004ef0ce
-// Address: 004ef0ce
-float FUN_004ef0ce(float *param_1);
+// Original: engine_mini3d.cpp_getViewDepth_FUN_004ef0d0
+// Address: 004ef0d0
+float __cdecl getViewDepth(CVector3f *point);
 
-// Original: engine_mini3d.cpp_FUN_004ef110
+// Original: engine_mini3d.cpp_isSphereVisible_FUN_004ef110
 // Address: 004ef110
-undefined4 FUN_004ef110(float *param_1,float param_2);
+int __cdecl isSphereVisible(CVector3f *center,float radius);
 
-// Original: engine_mini3d.cpp_FUN_004ef22e
-// Address: 004ef22e
-void FUN_004ef22e(float *param_1,float *param_2);
+// Original: engine_mini3d.cpp_rotateByInverseCamera_FUN_004ef230
+// Address: 004ef230
+void __cdecl rotateByInverseCamera(CVector3f *input,CVector3f *output);
 
-// Original: engine_mini3d.cpp_FUN_004ef29e
-// Address: 004ef29e
-void FUN_004ef29e(float *param_1,float *param_2);
+// Original: engine_mini3d.cpp_unprojectPoint_FUN_004ef2a0
+// Address: 004ef2a0
+void __cdecl unprojectPoint(float *screen_point,CVector3f *output);
 
-// Original: engine_mini3d.cpp_FUN_004ef360
+// Original: engine_mini3d.cpp_setAmbientLight_FUN_004ef360
 // Address: 004ef360
-void FUN_004ef360(undefined4 param_1);
+void __cdecl setAmbientLight(float ambient);
 
-// Original: engine_mini3d.cpp_FUN_004ef38e
-// Address: 004ef38e
-void FUN_004ef38e(float *param_1,float param_2);
+// Original: engine_mini3d.cpp_setLightVector_FUN_004ef390
+// Address: 004ef390
+void __cdecl setLightVector(CVector3f *direction,float intensity);
 
-// Original: engine_mini3d.cpp_FUN_004ef46e
-// Address: 004ef46e
-void FUN_004ef46e(float *param_1,float *param_2);
-
-// Original: engine_mini3d.cpp_FUN_004ef470
+// Original: engine_mini3d.cpp_lightVertex_FUN_004ef470
 // Address: 004ef470
-void FUN_004ef470(float *param_1,float *param_2);
+void __cdecl lightVertex(float *vertex,float *out_color);
 
-// Original: engine_mini3d.cpp_FUN_004ef890
+// Original: engine_mini3d.cpp_computeVertexFog_FUN_004ef890
 // Address: 004ef890
-void FUN_004ef890(int param_1);
+void __cdecl computeVertexFog(float *vertex);
 
-// Original: engine_mini3d.cpp_FUN_004ef8f0
+// Original: engine_mini3d.cpp_resetDynamicLight_FUN_004ef8f0
 // Address: 004ef8f0
-void FUN_004ef8f0(void);
+void __cdecl resetDynamicLight(void);
 
-// Original: engine_mini3d.cpp_FUN_004ef920
+// Original: engine_mini3d.cpp_addDynamicLight_FUN_004ef920
 // Address: 004ef920
-void FUN_004ef920(undefined4 *param_1,CVector3f *param_2,float param_3,float param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7);
+void __cdecl addDynamicLight(CVector3f *position,CVector3f *rotation,float range,float cone_scale,uint arg5,uint arg6,uint arg7);
 
-// Original: engine_mini3d.cpp_FUN_004efa90
+// Original: engine_mini3d.cpp_dynamicLightHint_FUN_004efa90
 // Address: 004efa90
-void FUN_004efa90(float *param_1,float *param_2,float *param_3,float *param_4);
+void __cdecl dynamicLightHint(float *arg1,float *arg2,float *arg3,float *arg4);
 
-// Original: engine_mini3d.cpp_FUN_004efd7c
-// Address: 004efd7c
-void FUN_004efd7c(float *param_1);
-
-// Original: engine_mini3d.cpp_FUN_004efd80
+// Original: engine_mini3d.cpp_projectVertex_FUN_004efd80
 // Address: 004efd80
-void FUN_004efd80(float *param_1);
+void __cdecl projectVertex(float *vertex);
 
-// Original: engine_mini3d.cpp_FUN_004efe20
+// Original: engine_mini3d.cpp_buildLightMatrix_FUN_004efe20
 // Address: 004efe20
-void FUN_004efe20(void);
+void __cdecl buildLightMatrix(void);
 
-// Original: engine_mini3d.cpp_FUN_004f016e
-// Address: 004f016e
-void FUN_004f016e(undefined4 *param_1,undefined4 *param_2);
-
-// Original: engine_mini3d.cpp_FUN_004f0170
+// Original: engine_mini3d.cpp_convertVertexD3DL_FUN_004f0170
 // Address: 004f0170
-void FUN_004f0170(undefined4 *param_1,undefined4 *param_2);
+void __cdecl convertVertexD3DL(float *out,float *in);
 
-// Original: engine_mini3d.cpp_FUN_004f0270
+// Original: engine_mini3d.cpp_convertVertexL_FUN_004f0270
 // Address: 004f0270
-void FUN_004f0270(undefined4 *param_1,undefined4 *param_2);
+void __cdecl convertVertexL(float *out,float *in);
 
-// Original: engine_mini3d.cpp_FUN_004f02b0
+// Original: engine_mini3d.cpp_disableClipping_FUN_004f02b0
 // Address: 004f02b0
-void FUN_004f02b0(void);
+void __cdecl disableClipping(void);
 
-// Original: engine_mini3d.cpp_FUN_004f02e0
+// Original: engine_mini3d.cpp_enableClipping_FUN_004f02e0
 // Address: 004f02e0
-void FUN_004f02e0(void);
+void __cdecl enableClipping(void);
 
-// Original: engine_mini3d.cpp_FUN_004f0300
+// Original: engine_mini3d.cpp_isClippingEnabled_FUN_004f0300
 // Address: 004f0300
-undefined4 FUN_004f0300(void);
+int __cdecl isClippingEnabled(void);
 
-// Original: engine_mini3d.cpp_FUN_004f030c
-// Address: 004f030c
-void FUN_004f030c(undefined4 param_1);
+// Original: engine_mini3d.cpp_FUN_004f0310
+// Address: 004f0310
+void FUN_004f0310(void);
 
-// Original: engine_mini3d.cpp_FUN_004f033e
-// Address: 004f033e
-void FUN_004f033e(int param_1,int param_2,int param_3,int param_4);
+// Original: engine_mini3d.cpp_setRenderSurface_FUN_004f0340
+// Address: 004f0340
+void __cdecl setRenderSurface(int width,int height,void *pixels,int mode);
 
-// Original: engine_mini3d.cpp_FUN_004f0410
+// Original: engine_mini3d.cpp_setClipPlane_FUN_004f0410
 // Address: 004f0410
-void FUN_004f0410(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+void __cdecl setClipPlane(float a,float b,float c,float d);
 
-// Original: engine_mini3d.cpp_FUN_004f043e
-// Address: 004f043e
-void FUN_004f043e(void);
+// Original: engine_mini3d.cpp_enableUserClip_FUN_004f0440
+// Address: 004f0440
+void __cdecl enableUserClip(void);
 
-// Original: engine_mini3d.cpp_FUN_004f044e
-// Address: 004f044e
-void FUN_004f044e(void);
+// Original: engine_mini3d.cpp_disableUserClip_FUN_004f0450
+// Address: 004f0450
+void __cdecl disableUserClip(void);
 
-// Original: engine_mini3d.cpp_FUN_004f0460
+// Original: engine_mini3d.cpp_allocVertexBuffer_FUN_004f0460
 // Address: 004f0460
-void FUN_004f0460(int param_1);
+void * __cdecl allocVertexBuffer(int vertex_count);
 
-// Original: engine_mini3d.cpp_FUN_004f04c0
+// Original: engine_mini3d.cpp_free32_FUN_004f04c0
 // Address: 004f04c0
-void FUN_004f04c0(int param_1);
+void __cdecl free32(void *ptr);
 
-// Original: engine_mini3d.cpp_FUN_004f0510
+// Original: engine_mini3d.cpp_intersectClipPlane0_FUN_004f0510
 // Address: 004f0510
-void FUN_004f0510(float *param_1,float *param_2,float *param_3);
+void __cdecl intersectClipPlane0(float *from,float *to,float *out);
 
-// Original: engine_mini3d.cpp_FUN_004f05e0
+// Original: engine_mini3d.cpp_intersectClipPlane1_FUN_004f05e0
 // Address: 004f05e0
-void FUN_004f05e0(float *param_1,float *param_2,float *param_3);
+void __cdecl intersectClipPlane1(float *from,float *to,float *out);
 
-// Original: engine_mini3d.cpp_FUN_004f06a0
+// Original: engine_mini3d.cpp_intersectClipPlane2_FUN_004f06a0
 // Address: 004f06a0
-void FUN_004f06a0(float *param_1,float *param_2,float *param_3);
+void __cdecl intersectClipPlane2(float *from,float *to,float *out);
 
-// Original: engine_mini3d.cpp_FUN_004f0770
+// Original: engine_mini3d.cpp_intersectClipPlane3_FUN_004f0770
 // Address: 004f0770
-void FUN_004f0770(float *param_1,float *param_2,float *param_3);
+void __cdecl intersectClipPlane3(float *from,float *to,float *out);
 
-// Original: engine_mini3d.cpp_FUN_004f0850
+// Original: engine_mini3d.cpp_clipAgainstPlane0_FUN_004f0850
 // Address: 004f0850
-void FUN_004f0850(void);
+void __cdecl clipAgainstPlane0(void);
 
-// Original: engine_mini3d.cpp_FUN_004f0980
+// Original: engine_mini3d.cpp_clipAgainstPlane1_FUN_004f0980
 // Address: 004f0980
-void FUN_004f0980(void);
+void __cdecl clipAgainstPlane1(void);
 
-// Original: engine_mini3d.cpp_FUN_004f0ab0
+// Original: engine_mini3d.cpp_clipAgainstPlane2_FUN_004f0ab0
 // Address: 004f0ab0
-void FUN_004f0ab0(void);
+void __cdecl clipAgainstPlane2(void);
 
-// Original: engine_mini3d.cpp_FUN_004f0be0
+// Original: engine_mini3d.cpp_clipAgainstPlane3_FUN_004f0be0
 // Address: 004f0be0
-void FUN_004f0be0(void);
+void __cdecl clipAgainstPlane3(void);
 
-// Original: engine_mini3d.cpp_FUN_004f0d00
+// Original: engine_mini3d.cpp_clampClippedPolygon_FUN_004f0d00
 // Address: 004f0d00
-void FUN_004f0d00(void);
+void __cdecl clampClippedPolygon(void);
 
-// Original: engine_mini3d.cpp_FUN_004f0da0
+// Original: engine_mini3d.cpp_beginTriangleBatch_FUN_004f0da0
 // Address: 004f0da0
-void FUN_004f0da0(undefined4 param_1);
+void __cdecl beginTriangleBatch(int base_vertex);
 
-// Original: engine_mini3d.cpp_FUN_004f0dc0
+// Original: engine_mini3d.cpp_addBatchTriangle_FUN_004f0dc0
 // Address: 004f0dc0
-void FUN_004f0dc0(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3);
+void __cdecl addBatchTriangle(float *v0,float *v1,float *v2);
 
-// Original: engine_mini3d.cpp_FUN_004f0f20
+// Original: engine_mini3d.cpp_flushTriangleBatch_FUN_004f0f20
 // Address: 004f0f20
-void FUN_004f0f20(void);
+void __cdecl flushTriangleBatch(void);
 
-// Original: engine_mini3d.cpp_FUN_004f1020
+// Original: engine_mini3d.cpp_clipBatchTriangle_FUN_004f1020
 // Address: 004f1020
-void FUN_004f1020(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3);
+void __cdecl clipBatchTriangle(float *v0,float *v1,float *v2);
 
-// Original: engine_mini3d.cpp_FUN_004f1190
+// Original: engine_mini3d.cpp_clipAndFillPolygon_FUN_004f1190
 // Address: 004f1190
-void FUN_004f1190(undefined4 *param_1,int param_2);
+void __cdecl clipAndFillPolygon(float *vertices,int vertex_count);
 
-// Original: engine_mini3d.cpp_FUN_004f12b0
+// Original: engine_mini3d.cpp_drawTransformedList_FUN_004f12b0
 // Address: 004f12b0
-void FUN_004f12b0(undefined4 param_1,undefined4 param_2,ushort *param_3,int param_4,int param_5);
+void __cdecl drawTransformedList(float *vertices,int vertex_count,ushort *indices,int triangle_count,int clip_flags);
 
-// Original: engine_mini3d.cpp_FUN_004f13a0
+// Original: engine_mini3d.cpp_setupScanEdge_FUN_004f13a0
 // Address: 004f13a0
-void FUN_004f13a0(int param_1,int param_2);
+void __cdecl setupScanEdge(float *v0,float *v1);
 
-// Original: engine_mini3d.cpp_FUN_004f17cc
-// Address: 004f17cc
-int * FUN_004f17cc(int param_1,int *param_2);
+// Original: engine_mini3d.cpp_findScanEdge_FUN_004f17d0
+// Address: 004f17d0
+int * __cdecl findScanEdge(int y,int *exclude);
 
-// Original: engine_mini3d.cpp_FUN_004f1810
+// Original: engine_mini3d.cpp_roundFloat_FUN_004f1810
 // Address: 004f1810
-int FUN_004f1810(float param_1);
+int __cdecl roundFloat(float value);
 
-// Original: engine_mini3d.cpp_FUN_004f1830
+// Original: engine_mini3d.cpp_rasterizeTriangle_FUN_004f1830
 // Address: 004f1830
-void FUN_004f1830(float *param_1,float *param_2,float *param_3);
+void __cdecl rasterizeTriangle(float *v0,float *v1,float *v2);
 
-// Original: engine_mini3d.cpp_FUN_004f2090
+// Original: engine_mini3d.cpp_fillPolygon_FUN_004f2090
 // Address: 004f2090
-void FUN_004f2090(int param_1,int param_2);
+void __cdecl fillPolygon(float *vertices,int vertex_count);
 
-// Original: engine_mini3d.cpp_FUN_004f2430
+// Original: engine_mini3d.cpp_updateRenderState_FUN_004f2430
 // Address: 004f2430
-void FUN_004f2430(void);
+void __cdecl updateRenderState(void);
 
-// Original: engine_mini3d.cpp_FUN_004f2490
+// Original: engine_mini3d.cpp_polyListSurface_FUN_004f2490
 // Address: 004f2490
-uint FUN_004f2490(int param_1,int param_2,ushort *param_3,uint param_4);
+int __cdecl polyListSurface(float *vertices,int vertex_count,ushort *indices,int triangle_count);
 
-// Original: engine_mini3d.cpp_FUN_004f2610
+// Original: engine_mini3d.cpp_setupSurfaceEdge_FUN_004f2610
 // Address: 004f2610
-void FUN_004f2610(int param_1,int param_2);
+void __cdecl setupSurfaceEdge(float *v0,float *v1);
 
-// Original: engine_mini3d.cpp_FUN_004f2750
+// Original: engine_mini3d.cpp_fillSurfaceSpan_FUN_004f2750
 // Address: 004f2750
-void FUN_004f2750(int param_1,int param_2,int param_3);
+void __cdecl fillSurfaceSpan(int row,int x0,int x1);
 
-// Original: engine_mini3d.cpp_FUN_004f27a0
+// Original: engine_mini3d.cpp_fillSurfaceTriangle_FUN_004f27a0
 // Address: 004f27a0
-void FUN_004f27a0(int param_1,int param_2,int param_3);
+void __cdecl fillSurfaceTriangle(float *v0,float *v1,float *v2);
 
-// Original: engine_mini3d.cpp_FUN_004f2a10
+// Original: engine_mini3d.cpp_drawSurfaceTriangle_FUN_004f2a10
 // Address: 004f2a10
-void FUN_004f2a10(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3);
+void __cdecl drawSurfaceTriangle(float *v0,float *v1,float *v2);
 
-// Original: engine_mini3d.cpp_FUN_004f2bb0
+// Original: engine_mini3d.cpp_intersectUserClipPlane_FUN_004f2bb0
 // Address: 004f2bb0
-void FUN_004f2bb0(float *param_1,float *param_2,float *param_3);
+void __cdecl intersectUserClipPlane(float *from,float *to,float *out);
 
-// Original: engine_mini3d.cpp_FUN_004f2cee
-// Address: 004f2cee
-void FUN_004f2cee(float *param_1,uint param_2,int param_3,int *param_4);
-
-// Original: engine_mini3d.cpp_FUN_004f2cf0
+// Original: engine_mini3d.cpp_clipToUserPlane_FUN_004f2cf0
 // Address: 004f2cf0
-void FUN_004f2cf0(float *param_1,uint param_2,int param_3,int *param_4);
+void __cdecl clipToUserPlane(float *vertices,int vertex_count,float *out,int *out_count);
 
-// Original: engine_mini3d.cpp_FUN_004f2e2e
-// Address: 004f2e2e
-int FUN_004f2e2e(float *param_1,int param_2,int param_3,int param_4);
-
-// Original: engine_mini3d.cpp_FUN_004f2e30
+// Original: engine_mini3d.cpp_userClipPolyList_FUN_004f2e30
 // Address: 004f2e30
-int FUN_004f2e30(float *param_1,int param_2,int param_3,int param_4);
+int __cdecl userClipPolyList(float *vertices,int vertex_count,ushort *indices,int triangle_count);
 
-// Original: engine_mini3d.cpp_FUN_004f33a0
+// Original: engine_mini3d.cpp_setColor3f_FUN_004f33a0
 // Address: 004f33a0
-void FUN_004f33a0(float param_1,float param_2,float param_3);
+void __cdecl setColor3f(float red,float green,float blue);
 
-// Original: engine_mini3d.cpp_FUN_004f3440
+// Original: engine_mini3d.cpp_setColor4f_FUN_004f3440
 // Address: 004f3440
-void FUN_004f3440(float param_1,float param_2,float param_3,float param_4);
+void __cdecl setColor4f(float alpha,float red,float green,float blue);
 
-// Original: engine_mini3d.cpp_FUN_004f3520
+// Original: engine_mini3d.cpp_setColor_FUN_004f3520
 // Address: 004f3520
-void FUN_004f3520(uint param_1);
+void __cdecl setColor(uint rgb);
 
-// Original: engine_mini3d.cpp_FUN_004f35ae
-// Address: 004f35ae
-void FUN_004f35ae(uint param_1);
+// Original: engine_mini3d.cpp_setColorARGB_FUN_004f35b0
+// Address: 004f35b0
+void __cdecl setColorARGB(uint argb);
 
-// Original: engine_mini3d.cpp_FUN_004f3690
+// Original: engine_mini3d.cpp_getColor_FUN_004f3690
 // Address: 004f3690
-undefined4 FUN_004f3690(void);
+uint __cdecl getColor(void);
 
-// Original: engine_mini3d.cpp_FUN_004f369c
-// Address: 004f369c
-void FUN_004f369c(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4);
+// Original: engine_mini3d.cpp_getColor4f_FUN_004f36a0
+// Address: 004f36a0
+void __cdecl getColor4f(float *alpha,float *red,float *green,float *blue);
 
-// Original: engine_mini3d.cpp_FUN_004f36e0
+// Original: engine_mini3d.cpp_drawPixel_FUN_004f36e0
 // Address: 004f36e0
-void FUN_004f36e0(undefined4 param_1,undefined4 param_2);
+void __cdecl drawPixel(int x,int y);
 
-// Original: engine_mini3d.cpp_FUN_004f36fe
-// Address: 004f36fe
-void FUN_004f36fe(int param_1,int param_2,int param_3,int param_4);
+// Original: engine_mini3d.cpp_drawLine_FUN_004f3700
+// Address: 004f3700
+void __cdecl drawLine(int x1,int y1,int x2,int y2);
 
-// Original: engine_mini3d.cpp_FUN_004f37e0
+// Original: engine_mini3d.cpp_fillRect_FUN_004f37e0
 // Address: 004f37e0
-void FUN_004f37e0(int param_1,int param_2,int param_3,int param_4);
+void __cdecl fillRect(int x1,int y1,int x2,int y2);
 
-// Original: engine_mini3d.cpp_FUN_004f3a4e
-// Address: 004f3a4e
-void FUN_004f3a4e(void);
+// Original: engine_mini3d.cpp_useDefaultTexture_FUN_004f3a50
+// Address: 004f3a50
+void __cdecl useDefaultTexture(void);
 
-// Original: engine_mini3d.cpp_FUN_004f3a60
+// Original: engine_mini3d.cpp_drawRect_FUN_004f3a60
 // Address: 004f3a60
-void FUN_004f3a60(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+void __cdecl drawRect(int x1,int y1,int x2,int y2);
 
-// Original: engine_mini3d.cpp_FUN_004f3ab0
+// Original: engine_mini3d.cpp_drawHLine_FUN_004f3ab0
 // Address: 004f3ab0
-void FUN_004f3ab0(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+void __cdecl drawHLine(int x1,int y,int x2);
 
-// Original: engine_mini3d.cpp_FUN_004f3ad0
+// Original: engine_mini3d.cpp_drawVLine_FUN_004f3ad0
 // Address: 004f3ad0
-void FUN_004f3ad0(int param_1,undefined4 param_2,undefined4 param_3);
+void __cdecl drawVLine(int x,int y1,int y2);
 
-// Original: engine_mini3d.cpp_FUN_004f3af0
+// Original: engine_mini3d.cpp_nextDepth2D_FUN_004f3af0
 // Address: 004f3af0
-float FUN_004f3af0(void);
+float __cdecl nextDepth2D(void);
 
 // Original: engine_mini3d.cpp_SDynamicLight_ctor_FUN_004f3b30
 // Address: 004f3b30
-SDynamicLight * SDynamicLight::ctor(SDynamicLight *this_ptr);
+SDynamicLight * __cdecl SDynamicLight::ctor(SDynamicLight *this_ptr);
 
 // Original: engine_mini3d.cpp_SDynamicLight_dtor_FUN_004f3b40
 // Address: 004f3b40
-SDynamicLight * SDynamicLight::dtor(SDynamicLight *this_ptr,uint flags);
+SDynamicLight * __cdecl SDynamicLight::dtor(SDynamicLight *this_ptr,uint flags);

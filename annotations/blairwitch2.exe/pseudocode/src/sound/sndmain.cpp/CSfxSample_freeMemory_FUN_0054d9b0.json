@@ -2,24 +2,35 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 146,
+    "complexity_score": 41,
     "cross_reference_count": 12,
     "function_call_count": 7,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 26,
-    "suspect_count": 11,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 86
   },
   "cross_references": [
     {
+      "addr": "0054d840",
+      "from_addr": "0054d95b",
+      "name": "sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_0054d840",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0054d810",
       "from_addr": "0054d816",
       "name": "sound_sndmain.cpp_CSfxSample_dtor_FUN_0054d810",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054ddf0",
+      "from_addr": "0054e0b1",
+      "name": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_0054ddf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -29,63 +40,51 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0054b960",
-      "from_addr": "0054ba0a",
-      "name": "sound_sndmain.cpp_FUN_0054b960",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0054c1c0",
-      "from_addr": "0054c237",
-      "name": "sound_sndmain.cpp_FUN_0054c1c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0054c7f0",
-      "from_addr": "0054cb49",
-      "name": "sound_sndmain.cpp_FUN_0054c7f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0054ccf0",
       "from_addr": "0054cd7b",
-      "name": "sound_sndmain.cpp_FUN_0054ccf0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0054d840",
-      "from_addr": "0054d95b",
-      "name": "sound_sndmain.cpp_FUN_0054d840",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0054ddf0",
-      "from_addr": "0054e0b1",
-      "name": "sound_sndmain.cpp_FUN_0054ddf0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005516ce",
-      "from_addr": "005517df",
-      "name": "sound_sndmain.cpp_FUN_005516ce",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00551950",
-      "from_addr": "00551984",
-      "name": "sound_sndmain.cpp_FUN_00551950",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00551c70",
-      "from_addr": "00551c88",
-      "name": "sound_sndmain.cpp_FUN_00551c70",
+      "name": "sound_sndmain.cpp_allocateHwSample_FUN_0054ccf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00552c40",
       "from_addr": "00552c57",
       "name": "sound_sndmain.cpp_closeSoundDevice_FUN_00552c40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005516d0",
+      "from_addr": "005517df",
+      "name": "sound_sndmain.cpp_createUserSample_FUN_005516d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054b960",
+      "from_addr": "0054ba0a",
+      "name": "sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_0054b960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00551c70",
+      "from_addr": "00551c88",
+      "name": "sound_sndmain.cpp_freeAllSamples_FUN_00551c70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00551950",
+      "from_addr": "00551984",
+      "name": "sound_sndmain.cpp_freeSampleByName_FUN_00551950",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054c1c0",
+      "from_addr": "0054c237",
+      "name": "sound_sndmain.cpp_getSfxSample_FUN_0054c1c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054c7f0",
+      "from_addr": "0054cb49",
+      "name": "sound_sndmain.cpp_loadStreamingSoundFile_FUN_0054c7f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -118,24 +117,24 @@
       "name": "sound_mp3.cpp_CMP3Decoder_dtor_FUN_00509cb0"
     },
     {
-      "addr": "0054da70",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_0054da70"
-    },
-    {
       "addr": "0054dac0",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_0054dac0"
+      "name": "sound_sndmain.cpp_CSfxSample_freeSampleData_FUN_0054dac0"
+    },
+    {
+      "addr": "0054da70",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_releaseBufferId_FUN_0054da70"
     },
     {
       "addr": "0054dbf0",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_0054dbf0"
+      "name": "sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_0054dbf0"
     },
     {
       "addr": "0057d180",
       "is_variadic": false,
-      "name": "unkaddr_0057b9a0.cpp_FUN_0057d180"
+      "name": "support_trstream.cpp_CInStreamFile_close_FUN_0057d180"
     }
   ],
   "globals": [
@@ -170,7 +169,7 @@
       {
         "call_addr": "0054c237",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_0054c1c0",
+        "caller": "sound_sndmain.cpp_getSfxSample_FUN_0054c1c0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -181,7 +180,7 @@
       {
         "call_addr": "0054c444",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_0054c1c0",
+        "caller": "sound_sndmain.cpp_getSfxSample_FUN_0054c1c0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -192,7 +191,7 @@
       {
         "call_addr": "0054cb49",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_0054c7f0",
+        "caller": "sound_sndmain.cpp_loadStreamingSoundFile_FUN_0054c7f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -203,7 +202,7 @@
       {
         "call_addr": "0054d95b",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_0054d840",
+        "caller": "sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_0054d840",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -214,7 +213,7 @@
       {
         "call_addr": "0054ba0a",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_0054b960",
+        "caller": "sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_0054b960",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -225,7 +224,7 @@
       {
         "call_addr": "0054e0b1",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_0054ddf0",
+        "caller": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_0054ddf0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -258,7 +257,7 @@
       {
         "call_addr": "00551c88",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00551c70",
+        "caller": "sound_sndmain.cpp_freeAllSamples_FUN_00551c70",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -269,7 +268,7 @@
       {
         "call_addr": "0054cd7b",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_0054ccf0",
+        "caller": "sound_sndmain.cpp_allocateHwSample_FUN_0054ccf0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -309,6 +308,32 @@
     },
     "pcode_op_count": 182
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00570020",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00553520",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a62c0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3462
+    },
+    "nocturne.exe": {
+      "addr": "00523a60",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4583
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -333,86 +358,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x154 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x174",
-      "severity": "mild",
-      "text": "if (*(CMP3Decoder **)&this_ptr->field_0x174 != (CMP3Decoder *)0x0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x174",
-      "severity": "mild",
-      "text": "pCVar1 = sound_mp3_cpp_CMP3Decoder_dtor_FUN_00509cb0(*(CMP3Decoder **)&this_ptr->field_0x174,0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x174",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x174 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x17c",
-      "severity": "mild",
-      "text": "unkaddr_0057b9a0_cpp_FUN_0057d180(&this_ptr->field_0x17c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x150",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x150 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x15c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x15c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x164",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x164 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x168",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x168 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x160",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x160 = 0xffffffff;",
-      "type": "unnamed_field"
     }
   ]
 }

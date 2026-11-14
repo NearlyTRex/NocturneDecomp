@@ -1,12 +1,12 @@
 // Name: core_bindevil.cpp_staticInit_FUN_0040f720
 // Address: 0040f720
 // Address Range: [[0040f720, 0040f743]]
-// Convention: unknown
-// Signature: void core_bindevil_cpp_staticInit_FUN_0040f720(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_bindevil_cpp_staticInit_FUN_0040f720(void)
 
 #include "nocturne.h"
 
-void core_bindevil_cpp_staticInit_FUN_0040f720(void)
+void __cdecl core_bindevil_cpp_staticInit_FUN_0040f720(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c3a0

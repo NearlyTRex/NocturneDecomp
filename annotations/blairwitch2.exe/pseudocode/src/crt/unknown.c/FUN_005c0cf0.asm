@@ -9,7 +9,7 @@
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c0e50
-;   unkafter_morph.cpp_FUN_005c4260
+;   crt_unknown.c_FUN_005c4260
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
     XOR EDI,EDI                         ; 005c0cfb
     PUSH EBX                            ; 005c0cfd
         ;   Label: LAB_005c0cfd
-    CALL unkafter_morph.cpp_FUN_005c4260 ; 005c0cfe
-        ;   XREF to: 005c4260 (UNCONDITIONAL_CALL)  ; undefined unkafter_morph.cpp_FUN_005c4260()
+    CALL crt_unknown.c_FUN_005c4260     ; 005c0cfe
+        ;   XREF to: 005c4260 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c4260()
     ADD ESP,0x4                         ; 005c0d03
     TEST EAX,EAX                        ; 005c0d06
     JNZ 0x005c0d22                      ; 005c0d08

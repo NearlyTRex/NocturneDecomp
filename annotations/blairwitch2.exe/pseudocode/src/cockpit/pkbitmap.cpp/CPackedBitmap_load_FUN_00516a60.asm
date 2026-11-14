@@ -12,19 +12,19 @@
 ; int              Stack[0x18]:4   row_stride
 ;
 ; XREF[2]:
-;   cockpit_pkbitmap.cpp_FUN_005168e0 at 00516926
-;   cockpit_pkbmpset.cpp_FUN_005177de at 005179ad
+;   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_005168e0 at 00516926
+;   cockpit_pkbmpset.cpp_FUN_005177e0 at 005179ad
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d046a0
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   cockpit_pkbitmap.cpp_FUN_00516200
+;   cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00516200
 ;   core_main.c_FUN_004e4500
+;   crt_memory.c_operator_new_array_FUN_005b8df8
 ;   crt_memory.c_realloc_FUN_005b8ce0
-;   crt_unknown.c_FUN_005b7790
-;   crt_unknown.c_FUN_005b8df8
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     SUB ESP,0x144                       ; 00516a64
     MOV EBP,dword ptr [ESP + 0x158]     ; 00516a6a
     PUSH EBP                            ; 00516a71
-    CALL cockpit_pkbitmap.cpp_FUN_00516200 ; 00516a72
-        ;   XREF to: 00516200 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_FUN_00516200()
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00516200 ; 00516a72
+        ;   XREF to: 00516200 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_00516200(CPackedBitmap * this_ptr)
     ADD ESP,0x4                         ; 00516a77
     MOV EAX,dword ptr [ESP + 0x160]     ; 00516a7a
     MOV dword ptr [EBP + 0x18],EAX      ; 00516a81
@@ -56,8 +56,8 @@ section .text
     INC EAX                             ; 00516aa6
     SHL EAX,0x2                         ; 00516aa7
     PUSH EAX                            ; 00516aaa
-    CALL crt_unknown.c_FUN_005b8df8     ; 00516aab
-        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8df8()
+    CALL crt_memory.c_operator_new_array_FUN_005b8df8 ; 00516aab
+        ;   XREF to: 005b8df8 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005b8df8()
     ADD ESP,0x4                         ; 00516ab0
     MOV dword ptr [EBP + 0x20],EAX      ; 00516ab3
     TEST EAX,EAX                        ; 00516ab6
@@ -141,8 +141,8 @@ section .text
     PUSH 0x5e1be8                       ; 00516ba3
     LEA EAX,[ESP + 0x10]                ; 00516ba8
     PUSH EAX                            ; 00516bac
-    CALL crt_unknown.c_FUN_005b7790     ; 00516bad
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 00516bad
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     MOV EDX,0x5e1c29                    ; 00516bb2
     ADD ESP,0x14                        ; 00516bb7
     MOV EAX,ESP                         ; 00516bba

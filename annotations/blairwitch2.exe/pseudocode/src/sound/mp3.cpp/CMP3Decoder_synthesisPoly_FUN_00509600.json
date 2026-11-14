@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 42,
+    "complexity_score": 27,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 27,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 85
   },
   "cross_references": [
@@ -95,6 +93,32 @@
     },
     "pcode_op_count": 331
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0052a7d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005020e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00533ba0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004e7720",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 180,
     "local_size": 152,
@@ -167,14 +191,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x7430",
-      "severity": "mild",
-      "text": "pfVar4 = (float *)(&this_ptr->field_0x7430 + subband_index * 0x48 + channel * 0x900);",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

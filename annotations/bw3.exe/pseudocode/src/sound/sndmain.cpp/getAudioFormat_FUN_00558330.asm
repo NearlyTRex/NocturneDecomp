@@ -9,11 +9,11 @@
 ; int *            Stack[0xc]:4   sample_rate
 ;
 ; XREF[5]:
-;   sound_sndmain.cpp_FUN_00558370 at 00558379
-;   sound_sndmain.cpp_FUN_00558390 at 00558399
-;   sound_sndmain.cpp_FUN_005583b0 at 005583b9
-;   sound_sndmain.cpp_FUN_00559220 at 005593a3
-;   sound_sndmain.cpp_FUN_00559520 at 005595be
+;   sound_sndmain.cpp_getAudioBitDepth_FUN_00558370 at 00558379
+;   sound_sndmain.cpp_getAudioChannelCount_FUN_005583b0 at 005583b9
+;   sound_sndmain.cpp_getAudioSampleRate_FUN_00558390 at 00558399
+;   sound_sndmain.cpp_readIni_FUN_00559220 at 005593a3
+;   sound_sndmain.cpp_writeIni_FUN_00559520 at 005595be
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00604228

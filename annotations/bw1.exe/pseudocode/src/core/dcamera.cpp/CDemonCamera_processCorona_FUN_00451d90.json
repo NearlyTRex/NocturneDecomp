@@ -2,15 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 61,
+    "complexity_score": 51,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 21,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field",
+      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 75
@@ -138,6 +138,32 @@
     },
     "pcode_op_count": 371
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004406d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0044ded0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00451130",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00444f90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -164,20 +190,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x11e8",
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_01342220",
       "severity": "mild",
-      "text": "iVar1 = *(int *)&this_ptr->field_0x11e8 >> 0x1f;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x11e8",
-      "severity": "mild",
-      "text": "iVar1 = (*(int *)&this_ptr->field_0x11e8 + iVar1 * -0x100) - (uint)(iVar1 << 7 < 0);",
-      "type": "unnamed_field"
+      "text": "_memcpy(&DAT_01342220,(void *)0x1354e20,0x12c00);",
+      "type": "undefined_data"
     }
   ]
 }

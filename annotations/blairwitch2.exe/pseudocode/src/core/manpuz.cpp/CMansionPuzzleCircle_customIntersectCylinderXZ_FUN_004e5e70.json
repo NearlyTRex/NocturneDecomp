@@ -1,0 +1,190 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 56,
+    "complexity_score": 98,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 33,
+    "suspect_count": 5,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 89
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004e5e70",
+    "address_range": [
+      [
+        "004e5e70",
+        "004e5eeb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_manpuz.cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_004e5e70",
+    "signature": "void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_004e5e70(CMansionPuzzleCircle *this_ptr,SIntersectXZCylinder *cylinder)"
+  },
+  "function_calls": [
+    {
+      "addr": "0044fd20",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20"
+    },
+    {
+      "addr": "00536cb0",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_FUN_00536cb0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061b5a8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e661b8"
+    },
+    {
+      "addr": "01e661b8",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5625,
+    "instruction_count": 48,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 4,
+      "COPY": 42,
+      "INT_ADD": 27,
+      "INT_AND": 22,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 23,
+      "INT_LESS": 4,
+      "INT_MULT": 2,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 11,
+      "INT_SUB": 19,
+      "INT_ZEXT": 2,
+      "LOAD": 13,
+      "POPCOUNT": 11,
+      "RETURN": 2,
+      "STORE": 13
+    },
+    "pcode_op_count": 219
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00504b10",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00509720",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7963
+    },
+    "nocturne.exe": {
+      "addr": "004ca240",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7963
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMansionPuzzleCircle *"
+      },
+      {
+        "is_param": true,
+        "name": "cylinder",
+        "offset": 8,
+        "size": 4,
+        "type": "SIntersectXZCylinder *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(CBoundingBox3D *)((int)pCVar4",
+      "severity": "moderate",
+      "text": "pCVar4 = (CBoundingBox3D *)((int)pCVar4 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(CBoundingBox3D *)((int)pCVar5",
+      "severity": "moderate",
+      "text": "pCVar5 = (CBoundingBox3D *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 19,
+      "match": "(int)pCVar4",
+      "severity": "moderate",
+      "text": "pCVar4 = (CBoundingBox3D *)((int)pCVar4 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 20,
+      "match": "(int)pCVar5",
+      "severity": "moderate",
+      "text": "pCVar5 = (CBoundingBox3D *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 17,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 196,
+        "vtable_addr": "005f98d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

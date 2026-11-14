@@ -2,25 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 118,
+    "complexity_score": 52,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 23,
-    "suspect_count": 8,
+    "pseudocode_lines": 22,
+    "suspect_count": 2,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 88
+    "total_lines": 87
   },
   "cross_references": [
     {
       "addr": "0040bab0",
       "from_addr": "0040bae9",
-      "name": "core_actor.cpp_FUN_0040bab0",
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040bab0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -103,7 +102,7 @@
       {
         "call_addr": "0040bae9",
         "call_type": "direct",
-        "caller": "core_actor.cpp_FUN_0040bab0",
+        "caller": "core_actor.cpp_archiveMotionState_FUN_0040bab0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -144,6 +143,32 @@
     },
     "pcode_op_count": 197
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005041b0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00525380",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0052e5d0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004e2180",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -183,54 +208,6 @@
       "severity": "mild",
       "text": "_fscanf(file_handle,&DAT_005c9d9c);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "this_ptr->field_0x30 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x4 = 0xffffffff;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "iVar1 = _fscanf(file_handle,\"%d,%f\",&this_ptr->field_0x4,&this_ptr->field_0x8);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "iVar1 = _fscanf(file_handle,\"%d,%f\",&this_ptr->field_0x4,&this_ptr->field_0x8);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "(iVar1 = _fscanf(file_handle,\"\\\"%[^\\\"]\\\" , %f\",&this_ptr->field_0x30,&this_ptr->field_0x8),",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "(iVar1 = _fscanf(file_handle,\"\\\"%[^\\\"]\\\" , %f\",&this_ptr->field_0x30,&this_ptr->field_0x8),",
-      "type": "unnamed_field"
     }
   ]
 }

@@ -11,44 +11,45 @@
 void __cdecl core_dcube_cpp_CDemonCube_testCylinderCollision_FUN_004583d0(CDemonCube *this_ptr,SIntersectXZCylinder *cylinder)
 
 {
-  uint *puVar1;
-  int iVar2;
+  CVector3f *pCVar1;
+  uint uVar2;
   int iVar3;
   int iVar4;
   int iVar5;
   
   iVar4 = -1;
   iVar3 = 0;
-  if (0 < *(int *)&this_ptr->field_0x28) {
+  if (0 < this_ptr->triangle_count) {
     iVar5 = 0;
     do {
-      iVar2 = core_dcube_cpp_intersectTriangleWithXZCylinder_FUN_004566c0
-                        (*(int *)&this_ptr->field_0x2c + iVar5,cylinder);
-      if (iVar2 != 0) {
+      uVar2 = core_dcube_cpp_intersectTriangleWithXZCylinder_FUN_004566c0
+                        ((STriangleRef *)
+                         ((int)(this_ptr->triangle_buffer->triangle).vertices + iVar5),cylinder);
+      if (uVar2 != 0) {
         iVar4 = iVar3;
       }
       iVar3 = iVar3 + 1;
       iVar5 = iVar5 + 0x20;
-    } while (iVar3 < *(int *)&this_ptr->field_0x28);
+    } while (iVar3 < this_ptr->triangle_count);
   }
   if (-1 < iVar4) {
-    puVar1 = *(uint **)(iVar4 * 0x20 + *(int *)&this_ptr->field_0x2c);
-    if (puVar1 != (uint *)&DAT_0152c2a8) {
-      _DAT_0152c2a8 = *puVar1;
-      _DAT_0152c2b0 = puVar1[2];
-      _DAT_0152c2ac = puVar1[1];
+    pCVar1 = this_ptr->triangle_buffer[iVar4].triangle.vertices[0];
+    if (pCVar1 != (CVector3f *)&DAT_0152c2a8) {
+      _DAT_0152c2a8 = pCVar1->x;
+      _DAT_0152c2b0 = pCVar1->z;
+      _DAT_0152c2ac = pCVar1->y;
     }
-    puVar1 = *(uint **)(iVar4 * 0x20 + 4 + *(int *)&this_ptr->field_0x2c);
-    if (puVar1 != (uint *)&DAT_0152c2b4) {
-      _DAT_0152c2b4 = *puVar1;
-      _DAT_0152c2bc = puVar1[2];
-      _DAT_0152c2b8 = puVar1[1];
+    pCVar1 = this_ptr->triangle_buffer[iVar4].triangle.vertices[1];
+    if (pCVar1 != (CVector3f *)&DAT_0152c2b4) {
+      _DAT_0152c2b4 = pCVar1->x;
+      _DAT_0152c2bc = pCVar1->z;
+      _DAT_0152c2b8 = pCVar1->y;
     }
-    puVar1 = *(uint **)(*(int *)&this_ptr->field_0x2c + 8 + iVar4 * 0x20);
-    if (puVar1 != (uint *)&DAT_0152c2c0) {
-      _DAT_0152c2c4 = puVar1[1];
-      _DAT_0152c2c8 = puVar1[2];
-      _DAT_0152c2c0 = *puVar1;
+    pCVar1 = this_ptr->triangle_buffer[iVar4].triangle.vertices[2];
+    if (pCVar1 != (CVector3f *)&DAT_0152c2c0) {
+      _DAT_0152c2c4 = pCVar1->y;
+      _DAT_0152c2c8 = pCVar1->z;
+      _DAT_0152c2c0 = pCVar1->x;
       return;
     }
   }

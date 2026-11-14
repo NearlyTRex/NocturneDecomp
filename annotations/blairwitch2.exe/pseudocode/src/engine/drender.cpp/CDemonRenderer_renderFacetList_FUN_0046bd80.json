@@ -2,18 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 245,
-    "complexity_score": 174,
+    "complexity_score": 213,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 11,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 114,
-    "suspect_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 118,
+    "suspect_count": 8,
     "suspect_types": [
+      "pointer_cast",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 359
+    "total_lines": 363
   },
   "cross_references": [
     {
@@ -65,7 +66,7 @@
     {
       "addr": "0051c820",
       "is_variadic": false,
-      "name": "engine_prim.c_FUN_0051c820"
+      "name": "engine_prim.c_calculateTriangleWindingOrderFromIndices_FUN_0051c820"
     },
     {
       "addr": "0055f950",
@@ -205,6 +206,32 @@
     },
     "pcode_op_count": 880
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00484280",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0046d960",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0048cf00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004614b0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 64,
     "local_size": 44,
@@ -302,15 +329,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 17,
+      "line": 16,
       "match": "DAT_0070ca7c",
       "severity": "mild",
-      "text": "if (((*(int *)(this_ptr + 0x10) == 0) && (*(int *)(this_ptr + 0xc) == 0)) && (DAT_0070ca7c != 0))",
+      "text": "(DAT_0070ca7c != 0)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 20,
+      "line": 18,
       "match": "DAT_006141c0",
       "severity": "mild",
       "text": "if (DAT_006141c0 == 0x20) {",
@@ -318,7 +345,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 70,
+      "line": 64,
       "match": "DAT_0060b288",
       "severity": "mild",
       "text": "*(SMRGLPrimitiveQuad **)(&DAT_0060b288 + local_18) = primitive_array;",
@@ -326,11 +353,35 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 84,
+      "line": 81,
       "match": "DAT_0060b288",
       "severity": "mild",
-      "text": "(*(uint *)this_ptr,&DAT_0060b288,iVar3,_DAT_01c38b54);",
+      "text": "(this_ptr->vertex_buffer_ptr,(SMRGLPrimitiveQuad **)&DAT_0060b288,iVar3,",
       "type": "undefined_data"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 49,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((int)&(((SMRGLPrimitiveQuad *)(primitive_array->vertices + -2))->base).base.type +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 101,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((int)&(((SMRGLPrimitiveQuad *)(primitive_array->vertices + -2))->base).base.type +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
+      "line": 75,
+      "match": "(int)&NAME byte-offset arithmetic split across lines",
+      "severity": "moderate",
+      "text": "((int)&(((SMRGLPrimitiveTriangle *)(primitive_array->vertices + -2))->base).base.",
+      "type": "pointer_cast"
     }
   ]
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDoor * core_door_cpp_CDoor_ctor_FUN_0045ed60(CDoor *this_ptr)
+; CDoor * __cdecl core_door_cpp_CDoor_ctor_FUN_0045ed60(CDoor *this_ptr)
 ;
 ; Parameters:
 ; CDoor *          Stack[0x4]:4   this_ptr

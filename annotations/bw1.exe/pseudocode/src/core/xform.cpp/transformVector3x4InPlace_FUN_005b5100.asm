@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * __cdecl core_xform_cpp_transformVector3x4InPlace_FUN_005b5100(float *param_1,float *param_2)
+; CVector3f * __cdecl core_xform_cpp_transformVector3x4InPlace_FUN_005b5100(CVector3f *input_output_vector,CMatrix3x4f *matrix)
 ;
+; Parameters:
+; CVector3f *      Stack[0x4]:4   input_output_vector
+; CMatrix3x4f *    Stack[0x8]:4   matrix
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ; undefined4       Stack[-0x8]:4  local_8
@@ -11,8 +14,8 @@
 ; XREF[5]:
 ;   core_bugs.cpp_FUN_00426ec0 at 00427711
 ;   core_doc.cpp_FUN_0046f740 at 0047049c
-;   core_gabriela.cpp_FUN_004cb1e0 at 004cb2d8
-;   core_skeleton.cpp_FUN_005695e0 at 0056979f
+;   core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004cb1e0 at 004cb2d8
+;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_005695e0 at 0056979f
 ;   core_stranger.cpp_FUN_0058afe0 at 0058bd66
 ;
 ; *****************************************************************************

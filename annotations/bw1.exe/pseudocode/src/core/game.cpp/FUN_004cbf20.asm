@@ -10,11 +10,11 @@
 ;   core_game.cpp_CGame_rollCredits_FUN_004d8e50 at 004d90e7
 ;   core_game.cpp_FUN_004ce580 at 004ce636
 ;   core_game.cpp_FUN_004d77d0 at 004d7d33
-;   core_menu.cpp_FUN_0050aa90 at 0050ab43
 ;   core_menu.cpp_FUN_0050b470 at 0050b4b4
 ;   core_menu.cpp_FUN_0050ba70 at 0050bab9
 ;   core_menu.cpp_FUN_0050c990 at 0050c9e0
-;   core_menu.cpp_FUN_0050cc90 at 0050cd67
+;   core_menu.cpp_configureGraphicsOptions_FUN_0050aa90 at 0050ab43
+;   core_menu.cpp_showMainGameMenu_FUN_0050cc90 at 0050cd67
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e136c
@@ -27,7 +27,7 @@
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005c03a0
-;   wincore_winrun.cpp_FUN_005b2420
+;   wincore_winrun.cpp_getTime_FUN_005b2420
 ;
 ; *****************************************************************************
 
@@ -82,8 +82,8 @@ section .text
         ;   XREF to: 004cbfc5 (CONDITIONAL_JUMP)  ; LAB_004cbfc5
     MOV dword ptr [EBX + 0x280],0x0     ; 004cbfb1
     MOV dword ptr [EBX + 0x208],0x3f800000 ; 004cbfbb
-    CALL wincore_winrun.cpp_FUN_005b2420 ; 004cbfc5
-        ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005b2420()
+    CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 004cbfc5
+        ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_005b2420()
         ;   Label: LAB_004cbfc5
     MOV EDX,EAX                         ; 004cbfca
     MOV EDI,dword ptr [EBX + 0x28c]     ; 004cbfcc

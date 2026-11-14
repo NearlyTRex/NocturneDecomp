@@ -1,0 +1,351 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 68,
+    "complexity_score": 23,
+    "cross_reference_count": 12,
+    "function_call_count": 6,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 91
+  },
+  "cross_references": [
+    {
+      "addr": "005a17e0",
+      "from_addr": "005a190f",
+      "name": "core_asgaya.cpp_CAsgaya_renderTransparent_FUN_005a17e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00597970",
+      "from_addr": "00597ab2",
+      "name": "core_baal.cpp_CBaal_renderTransparent_FUN_00597970",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042d8e0",
+      "from_addr": "0042d92b",
+      "name": "core_charactr.cpp_FUN_0042d8e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042f010",
+      "from_addr": "0042f1d0",
+      "name": "core_charactr.cpp_FUN_0042f010",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00598480",
+      "from_addr": "00598530",
+      "name": "core_hecaitmx.cpp_CHecaitomix_renderTransparent_FUN_00598480",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059d120",
+      "from_addr": "0059d2c4",
+      "name": "core_hino.cpp_CHino_renderTransparent_FUN_0059d120",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00591680",
+      "from_addr": "005917b6",
+      "name": "core_kedward.cpp_CKedward_renderTransparent_FUN_00591680",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00593710",
+      "from_addr": "00593896",
+      "name": "core_mattnntt.cpp_CMattanntote_renderTransparent_FUN_00593710",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005095f0",
+      "from_addr": "0050974f",
+      "name": "core_npc.cpp_CNPC_renderTransparent_FUN_005095f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00545710",
+      "from_addr": "0054588b",
+      "name": "core_shadow.cpp_FUN_00545710",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059b3d0",
+      "from_addr": "0059b433",
+      "name": "core_spirbear.cpp_CSpiritBear_renderTransparent_FUN_0059b3d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00599b20",
+      "from_addr": "00599b83",
+      "name": "core_spireagl.cpp_CSpiritEagle_renderTransparent_FUN_00599b20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0054e3a0",
+    "address_range": [
+      [
+        "0054e3a0",
+        "0054e41b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0",
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0(CDeformableModelInstance *this_ptr,int lod_index,uint render_flags,int lighting_mode ,int render_pass)"
+  },
+  "function_calls": [
+    {
+      "addr": "0054af10",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0054af10"
+    },
+    {
+      "addr": "0054ea40",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40"
+    },
+    {
+      "addr": "0054e5a0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_0054e5a0"
+    },
+    {
+      "addr": "0054e550",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_0054e550"
+    },
+    {
+      "addr": "0054e500",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndLightVertices_FUN_0054e500"
+    },
+    {
+      "addr": "0054e4b0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_0054e4b0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 14,
+    "call_sites": [
+      {
+        "call_addr": "0042d92b",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_FUN_0042d8e0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0042d9cf",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_FUN_0042d8e0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0042f1d0",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_FUN_0042f010",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0042f26c",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_FUN_0042f010",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0050974f",
+        "call_type": "direct",
+        "caller": "core_npc.cpp_CNPC_renderTransparent_FUN_005095f0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0054588b",
+        "call_type": "direct",
+        "caller": "core_shadow.cpp_FUN_00545710",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "005917b6",
+        "call_type": "direct",
+        "caller": "core_kedward.cpp_CKedward_renderTransparent_FUN_00591680",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00593896",
+        "call_type": "direct",
+        "caller": "core_mattnntt.cpp_CMattanntote_renderTransparent_FUN_00593710",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00597ab2",
+        "call_type": "direct",
+        "caller": "core_baal.cpp_CBaal_renderTransparent_FUN_00597970",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00598530",
+        "call_type": "direct",
+        "caller": "core_hecaitmx.cpp_CHecaitomix_renderTransparent_FUN_00598480",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.122448979591836,
+    "instruction_count": 49,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 3,
+      "CALL": 6,
+      "CBRANCH": 4,
+      "COPY": 34,
+      "INT_ADD": 18,
+      "INT_AND": 22,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 20,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 10,
+      "INT_SUB": 23,
+      "LOAD": 11,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 21
+    },
+    "pcode_op_count": 202
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00547170",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00569810",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a0150",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0051d9d0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      },
+      {
+        "is_param": true,
+        "name": "lod_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "render_flags",
+        "offset": 12,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "lighting_mode",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "render_pass",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

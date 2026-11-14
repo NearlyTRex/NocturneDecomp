@@ -1,12 +1,12 @@
 // Name: core_barrier.cpp_staticInit_FUN_004107d0
 // Address: 004107d0
 // Address Range: [[004107d0, 004107f3]]
-// Convention: unknown
-// Signature: void core_barrier_cpp_staticInit_FUN_004107d0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_barrier_cpp_staticInit_FUN_004107d0(void)
 
 #include "nocturne.h"
 
-void core_barrier_cpp_staticInit_FUN_004107d0(void)
+void __cdecl core_barrier_cpp_staticInit_FUN_004107d0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c160

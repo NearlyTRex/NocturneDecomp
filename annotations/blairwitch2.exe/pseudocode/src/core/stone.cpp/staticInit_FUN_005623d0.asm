@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_stone_cpp_staticInit_FUN_005623d0(void)
+; void __cdecl core_stone_cpp_staticInit_FUN_005623d0(void)
 ;
 ;
 ; Called Functions:

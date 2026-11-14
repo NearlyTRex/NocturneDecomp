@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   new_num_bits
 ;
 ; XREF[2]:
-;   support_codec.cpp_FUN_00441140 at 00441155
-;   support_codec.cpp_FUN_00441350 at 00441365
+;   support_codec.cpp_CLZWCompress_init_FUN_00441140 at 00441155
+;   support_codec.cpp_CLZWDecompress_init_FUN_00441350 at 00441365
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_support_codec_cpp_005b92c8

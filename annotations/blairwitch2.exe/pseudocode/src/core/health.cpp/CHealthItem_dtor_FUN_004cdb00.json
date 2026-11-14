@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 33,
+    "complexity_score": 17,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 18,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 59
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 58
   },
   "cross_references": [],
   "function": {
@@ -23,9 +21,9 @@
         "004cdb57"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_health.cpp_CHealthItem_dtor_FUN_004cdb00",
-    "signature": "CHealthItem * core_health_cpp_CHealthItem_dtor_FUN_004cdb00(CHealthItem *this_ptr,uint flags)"
+    "signature": "CHealthItem * __cdecl core_health_cpp_CHealthItem_dtor_FUN_004cdb00(CHealthItem *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -53,7 +51,7 @@
     {
       "addr": "005f8144",
       "name": "g_CHealthItemVTable",
-      "type": "undefined4",
+      "type": "CDemonActor_vtable",
       "value": null
     },
     {
@@ -94,6 +92,32 @@
     },
     "pcode_op_count": 127
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004ea5a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9841
+    },
+    "bw3.exe": {
+      "addr": "004d2220",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9841
+    },
+    "nocedit.exe": {
+      "addr": "004f20d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9841
+    },
+    "nocturne.exe": {
+      "addr": "004b4460",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9841
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -117,16 +141,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "*(byte **)&this_ptr->field_0x2b0 = &g_CHealthItemVTable;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

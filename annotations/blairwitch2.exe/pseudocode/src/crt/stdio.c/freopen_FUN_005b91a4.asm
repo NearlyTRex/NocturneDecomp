@@ -1,11 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl crt_stdio_c_freopen_FUN_005b91a4(undefined4 param_1,undefined1 *param_2,int param_3)
+; _FILE * __cdecl crt_stdio_c_freopen_FUN_005b91a4(char *filename,char *mode,_FILE *stream)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   filename
+; char *           Stack[0x8]:4   mode
+; _FILE *          Stack[0xc]:4   stream
 ;
 ; XREF[1]:
-;   core_main.c_FUN_004e46c0 at 004e4716
+;   core_main.c_initializeGameSystems_FUN_004e46c0 at 004e4716
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2a8 = 005bce04

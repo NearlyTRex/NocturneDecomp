@@ -2,21 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 7,
-    "cross_reference_count": 1,
+    "complexity_score": 8,
+    "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 7,
+    "pseudocode_lines": 8,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 35
+    "total_lines": 36
   },
   "cross_references": [
     {
       "addr": "00480480",
       "from_addr": "00480599",
-      "name": "cockpit_drawsurf.cpp_FUN_00480480",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00480480",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c21e0",
+      "from_addr": "004c2232",
+      "name": "engine_font.cpp_CBitFont_printFV_FUN_004c21e0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -36,28 +42,39 @@
     {
       "addr": "004c2060",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004c2060"
+      "name": "engine_font.cpp_CBitFont_drawTextWrapper_FUN_004c2060"
     },
     {
       "addr": "004c3ea0",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004c3ea0"
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0"
     }
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 1,
+    "call_site_count": 2,
     "call_sites": [
       {
         "call_addr": "00480599",
         "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_00480480",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00480480",
         "estimated_params": 5,
         "instructions_analyzed": 8,
         "method": "push_count",
         "reg_params": [],
         "stack_bytes": 20,
         "stack_params": 5
+      },
+      {
+        "call_addr": "004c2232",
+        "call_type": "direct",
+        "caller": "engine_font.cpp_CBitFont_printFV_FUN_004c21e0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
       }
     ],
     "confidence": "low",
@@ -87,6 +104,32 @@
       "STORE": 12
     },
     "pcode_op_count": 94
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a91a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004b0da0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004cdce0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00490be0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 28,

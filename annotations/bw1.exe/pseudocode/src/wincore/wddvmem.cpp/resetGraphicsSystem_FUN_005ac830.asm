@@ -29,9 +29,9 @@
 ;   crt_ddraw.c_DirectDrawCreate
 ;   engine_2d.c_drawText_FUN_00401fe0
 ;   engine_special.cpp_clearScreen_FUN_0057dc40
-;   engine_special.cpp_FUN_005821c0
+;   engine_special.cpp_setResolutionAndColorTable_FUN_005821c0
 ;   wincore_wddvmem.cpp_FUN_005ac300
-;   wincore_wddvmem.cpp_FUN_005acff0
+;   wincore_wddvmem.cpp_swapBuffers_FUN_005acff0
 ;   wincore_winrun.cpp_getNextKeypress_FUN_005b2510
 ;
 ; *****************************************************************************
@@ -106,8 +106,8 @@ section .text
     PUSH EDX                            ; 005ac8d8
     MOV ECX,dword ptr [0x0061b498]      ; 005ac8d9 | DAT_0061b498
     PUSH ECX                            ; 005ac8df
-    CALL engine_special.cpp_FUN_005821c0 ; 005ac8e0
-        ;   XREF to: 005821c0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_005821c0(int width, int height, int bits_per_pixel)
+    CALL engine_special.cpp_setResolutionAndColorTable_FUN_005821c0 ; 005ac8e0
+        ;   XREF to: 005821c0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_setResolutionAndColorTable_FUN_005821c0(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 005ac8e5
     TEST EAX,EAX                        ; 005ac8e8
     JNZ 0x005ac99c                      ; 005ac8ea
@@ -225,8 +225,8 @@ section .text
     CALL engine_2d.c_drawText_FUN_00401fe0 ; 005aca0b
         ;   XREF to: 00401fe0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fe0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005aca10
-    CALL wincore_wddvmem.cpp_FUN_005acff0 ; 005aca13
-        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_005acff0()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005acff0 ; 005aca13
+        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005acff0()
     CALL wincore_winrun.cpp_getNextKeypress_FUN_005b2510 ; 005aca18
         ;   XREF to: 005b2510 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getNextKeypress_FUN_005b2510()
     JMP 0x005ac85a                      ; 005aca1d

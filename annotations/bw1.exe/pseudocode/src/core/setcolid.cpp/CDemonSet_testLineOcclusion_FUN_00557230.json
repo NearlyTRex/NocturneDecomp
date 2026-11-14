@@ -16,7 +16,7 @@
     {
       "addr": "00428ae0",
       "from_addr": "00428df8",
-      "name": "core_carved.cpp_FUN_00428ae0",
+      "name": "core_carved.cpp_CCarved_process_FUN_00428ae0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -28,7 +28,7 @@
     {
       "addr": "00459100",
       "from_addr": "00459470",
-      "name": "core_demnfolk.cpp_FUN_00459100",
+      "name": "core_demnfolk.cpp_CDemnfolk_process_FUN_00459100",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -44,27 +44,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0057c57e",
-      "from_addr": "0057c645",
-      "name": "core_sound.cpp_FUN_0057c57e",
+      "addr": "0057ce10",
+      "from_addr": "0057d553",
+      "name": "core_sound.cpp_CSound_process_FUN_0057ce10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0057ce10",
-      "from_addr": "0057d553",
-      "name": "core_sound.cpp_FUN_0057ce10",
+      "addr": "0057c580",
+      "from_addr": "0057c645",
+      "name": "core_sound.cpp_FUN_0057c580",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0058eb50",
       "from_addr": "0058f3d8",
-      "name": "core_stranger.cpp_FUN_0058eb50",
+      "name": "core_stranger.cpp_CStranger_autoAimAtThreat_FUN_0058eb50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005bafb0",
       "from_addr": "005bb291",
-      "name": "core_zombie.cpp_FUN_005bafb0",
+      "name": "core_zombie.cpp_CZombie_process_FUN_005bafb0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -107,7 +107,7 @@
       {
         "call_addr": "0057d553",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0057ce10",
+        "caller": "core_sound.cpp_CSound_process_FUN_0057ce10",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -151,7 +151,7 @@
       {
         "call_addr": "0058f3d8",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_FUN_0058eb50",
+        "caller": "core_stranger.cpp_CStranger_autoAimAtThreat_FUN_0058eb50",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -162,7 +162,7 @@
       {
         "call_addr": "00428df8",
         "call_type": "direct",
-        "caller": "core_carved.cpp_FUN_00428ae0",
+        "caller": "core_carved.cpp_CCarved_process_FUN_00428ae0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -173,7 +173,7 @@
       {
         "call_addr": "00459470",
         "call_type": "direct",
-        "caller": "core_demnfolk.cpp_FUN_00459100",
+        "caller": "core_demnfolk.cpp_CDemnfolk_process_FUN_00459100",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -184,7 +184,7 @@
       {
         "call_addr": "005bb291",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_005bafb0",
+        "caller": "core_zombie.cpp_CZombie_process_FUN_005bafb0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -195,7 +195,7 @@
       {
         "call_addr": "0057c645",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0057c57e",
+        "caller": "core_sound.cpp_FUN_0057c580",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -244,6 +244,32 @@
       "STORE": 16
     },
     "pcode_op_count": 289
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00535e10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0053cbf0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00572460",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0050fa30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 48,

@@ -1,0 +1,223 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 81,
+    "complexity_score": 65,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 35,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 116
+  },
+  "cross_references": [
+    {
+      "addr": "004bd570",
+      "from_addr": "004bd79d",
+      "name": "core_game.cpp_CGame_process_FUN_004bd570",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c9670",
+    "address_range": [
+      [
+        "004c9670",
+        "004c9725"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_gore.cpp_CGore_process_FUN_004c9670",
+    "signature": "void __cdecl core_gore_cpp_CGore_process_FUN_004c9670(CGore *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c8ce0",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CBloodPool_processAge_FUN_004c8ce0"
+    },
+    {
+      "addr": "004c8800",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CBloodPool_setupRenderState_FUN_004c8800"
+    },
+    {
+      "addr": "004c8690",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CBloodSplat_processAge_FUN_004c8690"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01cb8318",
+      "name": "g_BloodParticles[0].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb8360",
+      "name": "g_BloodParticles[1].base.lifetime_remaining",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb8378",
+      "name": "g_BloodParticles[1].base.vtable",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cbcaf8",
+      "name": "DAT_01cbcaf8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cdde40",
+      "name": "DAT_01cdde40",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004bd79d",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_process_FUN_004bd570",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.968253968253968,
+    "instruction_count": 63,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 3,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CALLIND": 1,
+      "CBRANCH": 6,
+      "COPY": 82,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 18,
+      "INT_AND": 42,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 34,
+      "INT_LEFT": 4,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 9,
+      "INT_OR": 5,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 17,
+      "INT_SUB": 15,
+      "INT_XOR": 2,
+      "INT_ZEXT": 4,
+      "LOAD": 8,
+      "POPCOUNT": 17,
+      "RETURN": 1,
+      "STORE": 12
+    },
+    "pcode_op_count": 313
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004e5e80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004ce7e0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004ed9e0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004b0030",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGore *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004c9676",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_01cbcaf4",
+      "severity": "mild",
+      "text": "} while (this_ptr_00 != (CBloodParticle *)&DAT_01cbcaf4);",
+      "type": "undefined_data"
+    }
+  ]
+}

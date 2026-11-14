@@ -7,48 +7,60 @@
 
 // Original: core_npc.cpp_staticInit_FUN_00510400
 // Address: 00510400
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_npc.cpp_factoryFuncNPC_FUN_00510430
 // Address: 00510430
-void factoryFuncNPC(void);
+CNPC * __cdecl factoryFuncNPC(void);
 
 // Original: core_npc.cpp_CNPC_getActorType_FUN_00510450
 // Address: 00510450
-CDemonActorType * CNPC::getActorType(CNPC *this_ptr);
+CDemonActorType * __cdecl CNPC::getActorType(CNPC *this_ptr);
 
 // Original: core_npc.cpp_CNPC_ctor_FUN_00510460
 // Address: 00510460
-CNPC * CNPC::ctor(CNPC *this_ptr);
+CNPC * __cdecl CNPC::ctor(CNPC *this_ptr);
 
-// Original: core_npc.cpp_FUN_00510510
+// Original: core_npc.cpp_CNPC_setup_FUN_00510510
 // Address: 00510510
-void FUN_00510510(CCharacter *param_1);
+void __cdecl CNPC::setup(CNPC *this_ptr);
 
 // Original: core_npc.cpp_CNPC_process_FUN_005105b0
 // Address: 005105b0
 void __cdecl CNPC::process(CNPC *this_ptr,float delta_time);
 
-// Original: core_npc.cpp_FUN_005108d0
+// Original: core_npc.cpp_CNPC_renderBackground_FUN_005108d0
 // Address: 005108d0
-void __cdecl FUN_005108d0(CNPC *this_ptr,int layer_flag);
+void __cdecl CNPC::renderBackground(CNPC *this_ptr,int layer_flag);
 
-// Original: core_npc.cpp_FUN_00510900
+// Original: core_npc.cpp_CNPC_renderOpaque_FUN_00510900
 // Address: 00510900
-undefined4 FUN_00510900(int param_1);
+int __cdecl CNPC::renderOpaque(CNPC *this_ptr);
 
-// Original: core_npc.cpp_FUN_00510990
+// Original: core_npc.cpp_CNPC_renderTransparent_FUN_00510990
 // Address: 00510990
-undefined4 FUN_00510990(int param_1);
+int __cdecl CNPC::renderTransparent(CNPC *this_ptr);
 
-// Original: core_npc.cpp_FUN_005109e0
+// Original: core_npc.cpp_CNPC_archive_FUN_005109e0
 // Address: 005109e0
-void __cdecl FUN_005109e0(CNPC *this_ptr);
+void __cdecl CNPC::archive(CNPC *this_ptr);
 
 // Original: core_npc.cpp_CNPC_setRandomMotionVariant_FUN_00510ab0
 // Address: 00510ab0
 int __cdecl CNPC::setRandomMotionVariant(CNPC *this_ptr,char *motion_name);
 
-// Original: core_npc.cpp_FUN_00510b90
+// Original: core_npc.cpp_CNPC_processDamage_FUN_00510b90
 // Address: 00510b90
-void __cdecl FUN_00510b90(CNPC *this_ptr,SDamageInfo *damage_info);
+void __cdecl CNPC::processDamage(CNPC *this_ptr,SDamageInfo *damage_info);
+
+// Original: core_npc.cpp_CNPC_isInvulnerable_FUN_00510c70
+// Address: 00510c70
+int __cdecl CNPC::isInvulnerable(CNPC *this_ptr);
+
+// Original: core_npc.cpp_CNPC_getPathMap_FUN_00510c90
+// Address: 00510c90
+CPathMap * __cdecl CNPC::getPathMap(CNPC *this_ptr);
+
+// Original: core_npc.cpp_FUN_00510ca0
+// Address: 00510ca0
+CFont * __cdecl FUN_00510ca0(CFont *this_ptr);

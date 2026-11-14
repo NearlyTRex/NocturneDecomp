@@ -1,0 +1,160 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 4,
+    "complexity_score": 5,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 9
+  },
+  "cross_references": [
+    {
+      "addr": "004418c0",
+      "from_addr": "004418de",
+      "name": "support_codec.cpp_CInStreamPipe_dtor_FUN_004418c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00573a40",
+      "from_addr": "00573a5e",
+      "name": "support_trstream.cpp_CInStreamFile_dtor_FUN_00573a40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005741d0",
+      "from_addr": "005741ee",
+      "name": "support_trstream.cpp_CInStreamMemory_dtor_FUN_005741d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00572540",
+    "address_range": [
+      [
+        "00572540",
+        "0057254a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_trstream.cpp_CInStream_dtor_FUN_00572540",
+    "signature": "CInStream * __cdecl support_trstream_cpp_CInStream_dtor_FUN_00572540(CInStream *this_ptr,uint flags)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005e5a54",
+      "name": "PTR_support_trstream.cpp_CInStream_dtor_FUN_00572540_005e5a54",
+      "type": "undefined1*",
+      "value": "00572540"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "00573a5e",
+        "call_type": "direct",
+        "caller": "support_trstream.cpp_CInStreamFile_dtor_FUN_00573a40",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005741ee",
+        "call_type": "direct",
+        "caller": "support_trstream.cpp_CInStreamMemory_dtor_FUN_005741d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004418de",
+        "call_type": "direct",
+        "caller": "support_codec.cpp_CInStreamPipe_dtor_FUN_004418c0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.6666666666666665,
+    "instruction_count": 3,
+    "opcode_distribution": {
+      "COPY": 2,
+      "INT_ADD": 2,
+      "LOAD": 2,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 8
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0057b9d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0059f550",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInStream *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 8,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CInStream",
+        "offset": 0,
+        "vtable_addr": "005e5a54"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

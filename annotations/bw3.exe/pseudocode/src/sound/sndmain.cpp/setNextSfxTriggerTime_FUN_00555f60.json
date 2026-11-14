@@ -1,0 +1,253 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 12,
+    "complexity_score": 24,
+    "cross_reference_count": 7,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 9,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 21
+  },
+  "cross_references": [
+    {
+      "addr": "00419b40",
+      "from_addr": "0041a1f2",
+      "name": "core_boneguy.cpp_CBaalSkel_process_FUN_00419b40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004179b0",
+      "from_addr": "004180a0",
+      "name": "core_boneguy.cpp_CBoneGuy_process_FUN_004179b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0041f360",
+      "from_addr": "0041f8a1",
+      "name": "core_boxactor.cpp_CBoxActor_process_FUN_0041f360",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004953d0",
+      "from_addr": "00495416",
+      "name": "core_event.cpp_CEventList_restartSfxEntries_FUN_004953d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a5b10",
+      "from_addr": "004a5ebf",
+      "name": "core_flame.cpp_CFlame_process_FUN_004a5b10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c4a60",
+      "from_addr": "004c4ba4",
+      "name": "core_game.cpp_FUN_004c4a60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056bd40",
+      "from_addr": "0056bf20",
+      "name": "core_tommygun.cpp_CTommyGun_process_FUN_0056bd40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00555f60",
+    "address_range": [
+      [
+        "00555f60",
+        "00555f90"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_setNextSfxTriggerTime_FUN_00555f60",
+    "signature": "void __cdecl sound_sndmain_cpp_setNextSfxTriggerTime_FUN_00555f60(double trigger_time,int trigger_id)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02ceb91c",
+      "name": "DAT_02ceb91c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 7,
+    "call_sites": [
+      {
+        "call_addr": "004c4ba4",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004c4a60",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00495416",
+        "call_type": "direct",
+        "caller": "core_event.cpp_CEventList_restartSfxEntries_FUN_004953d0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004180a0",
+        "call_type": "direct",
+        "caller": "core_boneguy.cpp_CBoneGuy_process_FUN_004179b0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0041a1f2",
+        "call_type": "direct",
+        "caller": "core_boneguy.cpp_CBaalSkel_process_FUN_00419b40",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004a5ebf",
+        "call_type": "direct",
+        "caller": "core_flame.cpp_CFlame_process_FUN_004a5b10",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0041f8a1",
+        "call_type": "direct",
+        "caller": "core_boxactor.cpp_CBoxActor_process_FUN_0041f360",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0056bf20",
+        "call_type": "direct",
+        "caller": "core_tommygun.cpp_CTommyGun_process_FUN_0056bd40",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.454545454545454,
+    "instruction_count": 11,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "COPY": 9,
+      "INT_ADD": 8,
+      "INT_AND": 15,
+      "INT_EQUAL": 5,
+      "INT_LEFT": 2,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_OR": 5,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 4,
+      "INT_SUB": 2,
+      "INT_XOR": 1,
+      "LOAD": 4,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 71
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005503e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00572a50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005a8be0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7826
+    },
+    "nocturne.exe": {
+      "addr": "005262d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.88
+    }
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "trigger_time",
+        "offset": 4,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "trigger_id",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

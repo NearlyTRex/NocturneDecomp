@@ -1,0 +1,216 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 86,
+    "complexity_score": 64,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 39,
+    "suspect_count": 2,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
+    "total_lines": 125
+  },
+  "cross_references": [
+    {
+      "addr": "00565730",
+      "from_addr": "00565749",
+      "name": "core_skeleton.cpp_CDeformableModel_bindSkeleton_FUN_00565730",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00567180",
+    "address_range": [
+      [
+        "00567180",
+        "0056724a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_skeleton.cpp_CDeformableModel_computeFarthestChildBones_FUN_00567180",
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModel_computeFarthestChildBones_FUN_00567180(CDeformableModel *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00563c40",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00563c40"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00565749",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModel_bindSkeleton_FUN_00565730",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.183098591549296,
+    "instruction_count": 71,
+    "opcode_distribution": {
+      "BOOL_OR": 4,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 6,
+      "COPY": 113,
+      "FLOAT2FLOAT": 5,
+      "FLOAT_ADD": 2,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 2,
+      "FLOAT_SQRT": 1,
+      "INT_ADD": 34,
+      "INT_AND": 40,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 32,
+      "INT_LEFT": 4,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 9,
+      "INT_OR": 5,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 16,
+      "INT_SUB": 10,
+      "INT_XOR": 3,
+      "INT_ZEXT": 4,
+      "LOAD": 21,
+      "POPCOUNT": 16,
+      "RETURN": 1,
+      "STORE": 15
+    },
+    "pcode_op_count": 368
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00544ae0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0054bd10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0059dbe0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9565
+    },
+    "nocturne.exe": {
+      "addr": "0051b480",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9565
+    }
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModel *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00567189",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar5->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 34,
+      "match": "pCVar5 = (T *)((pCVar5->FIELD).ARRAY[N] + CONST)",
+      "severity": "moderate",
+      "text": "pCVar5 = (CSkeleton *)((pCVar5->motion_list).state_names[1] + 2);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_24` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_24->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 38,
+      "match": "local_24 = (T *)local_24->ARRAY",
+      "severity": "moderate",
+      "text": "local_24 = (CDeformableModel *)local_24->lod_info;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   reflector_index
 ;
 ; XREF[1]:
-;   core_manpuz.cpp_FUN_004e56d0 at 004e57a4
+;   core_manpuz.cpp_CMansionPuzzleCircle_renderOpaque_FUN_004e56d0 at 004e57a4
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0060b280
@@ -18,7 +18,7 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
-;   engine_matrix.c_pop_FUN_0046b4a0
+;   engine_drender.cpp_pop_FUN_0046b4a0
 ;
 ; *****************************************************************************
 
@@ -82,8 +82,8 @@ section .text
     ADD ESP,0xc                         ; 004e68a6
     MOV EBX,dword ptr [0x0060b280]      ; 004e68a9 | DAT_0060b280
     PUSH EBX                            ; 004e68af
-    CALL engine_matrix.c_pop_FUN_0046b4a0 ; 004e68b0
-        ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046b4a0()
+    CALL engine_drender.cpp_pop_FUN_0046b4a0 ; 004e68b0
+        ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046b4a0()
     ADD ESP,0x4                         ; 004e68b5
     MOV ESP,EBP                         ; 004e68b8
     POP EBP                             ; 004e68ba

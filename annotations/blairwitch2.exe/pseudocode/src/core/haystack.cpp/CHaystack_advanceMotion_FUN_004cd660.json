@@ -1,0 +1,247 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 124,
+    "complexity_score": 65,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 50,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 174
+  },
+  "cross_references": [
+    {
+      "addr": "004cc990",
+      "from_addr": "004cca1c",
+      "name": "core_haystack.cpp_CHaystack_process_FUN_004cc990",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004cd660",
+    "address_range": [
+      [
+        "004cd660",
+        "004cd791"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_haystack.cpp_CHaystack_advanceMotion_FUN_004cd660",
+    "signature": "void __cdecl core_haystack_cpp_CHaystack_advanceMotion_FUN_004cd660(CHaystack *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d060",
+      "is_variadic": false,
+      "name": "core_actor.cpp_randomChance_FUN_0040d060"
+    },
+    {
+      "addr": "0042aa00",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processMotion_FUN_0042aa00"
+    },
+    {
+      "addr": "004cd7a0",
+      "is_variadic": false,
+      "name": "core_haystack.cpp_CHaystack_checkMeleeHit_FUN_004cd7a0"
+    },
+    {
+      "addr": "005030c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_advance_FUN_005030c0"
+    },
+    {
+      "addr": "005515e0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isWithinListenerRadius_FUN_005515e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "004cd638",
+      "name": "switchdataD_004cd638",
+      "type": "undefined1*",
+      "value": "004cd694"
+    },
+    {
+      "addr": "005d9986",
+      "name": "s_box_swing_wav_005d9986",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9995",
+      "name": "s_box_punch_wav_005d9995",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01cede54",
+      "name": "DAT_01cede54",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cede58",
+      "name": "DAT_01cede58",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004cca1c",
+        "call_type": "direct",
+        "caller": "core_haystack.cpp_CHaystack_process_FUN_004cc990",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.86734693877551,
+    "instruction_count": 98,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 2,
+      "BRANCH": 4,
+      "BRANCHIND": 1,
+      "CALL": 7,
+      "CALLIND": 2,
+      "CBRANCH": 5,
+      "COPY": 202,
+      "FLOAT2FLOAT": 13,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 32,
+      "INT_AND": 60,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 48,
+      "INT_LEFT": 4,
+      "INT_LESS": 8,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 24,
+      "INT_SUB": 36,
+      "INT_ZEXT": 4,
+      "LOAD": 20,
+      "POPCOUNT": 24,
+      "RETURN": 1,
+      "STORE": 35
+    },
+    "pcode_op_count": 575
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004e9f20",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004f1970",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9899
+    },
+    "nocturne.exe": {
+      "addr": "004b3e00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9899
+    }
+  },
+  "stack_frame": {
+    "frame_size": 56,
+    "local_size": 48,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHaystack *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004cd666",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

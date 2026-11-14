@@ -11,7 +11,7 @@
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_0048e7e0 at 0048eda4
 ;   core_event.cpp_FUN_00489670 at 0048b8a8
 ;   core_event.cpp_parseIntOrCounter_FUN_00488cc0 at 00488cf1
-;   core_script.cpp_FUN_00522350 at 00525645
+;   core_script.cpp_CScript_step_FUN_00522350 at 00525645
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_findCounter_FUN_00491630

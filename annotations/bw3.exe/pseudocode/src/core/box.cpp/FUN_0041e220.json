@@ -26,7 +26,7 @@
     {
       "addr": "0041ff20",
       "from_addr": "0041ffca",
-      "name": "core_boxactor.cpp_FUN_0041ff20",
+      "name": "core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_0041ff20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -44,7 +44,7 @@
     {
       "addr": "00578d30",
       "from_addr": "00578d74",
-      "name": "core_wateract.cpp_FUN_00578d30",
+      "name": "core_wateract.cpp_CWaterActor_customRayIntersect_FUN_00578d30",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -142,7 +142,7 @@
       {
         "call_addr": "0041ffca",
         "call_type": "direct",
-        "caller": "core_boxactor.cpp_FUN_0041ff20",
+        "caller": "core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_0041ff20",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -157,7 +157,7 @@
       {
         "call_addr": "00578d74",
         "call_type": "direct",
-        "caller": "core_wateract.cpp_FUN_00578d30",
+        "caller": "core_wateract.cpp_CWaterActor_customRayIntersect_FUN_00578d30",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -214,6 +214,20 @@
       "STORE": 62
     },
     "pcode_op_count": 2622
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0041af70",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00420ee0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 108,

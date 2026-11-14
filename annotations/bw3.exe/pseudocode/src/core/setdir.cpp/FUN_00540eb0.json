@@ -2,20 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 292,
-    "complexity_score": 386,
+    "complexity_score": 375,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 146,
-    "suspect_count": 22,
+    "pseudocode_lines": 145,
+    "suspect_count": 21,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 438
+    "total_lines": 437
   },
   "cross_references": [
     {
@@ -41,7 +41,7 @@
     {
       "addr": "005a28c0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a28c0"
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
     },
     {
       "addr": "00401fe0",
@@ -180,6 +180,14 @@
       "SUBPIECE": 8
     },
     "pcode_op_count": 1488
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0055b4f0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 208,
@@ -483,23 +491,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 128,
+      "line": 127,
       "match": "DAT_005d0d15",
       "severity": "mild",
-      "text": "(local_c4,&DAT_005d0d15,(double)*(float *)(&DAT_02701528 + local_3c * 4));",
+      "text": "_sprintf(local_c4,&DAT_005d0d15);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 128,
-      "match": "DAT_02701528",
-      "severity": "mild",
-      "text": "(local_c4,&DAT_005d0d15,(double)*(float *)(&DAT_02701528 + local_3c * 4));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 133,
+      "line": 132,
       "match": "DAT_005fba18",
       "severity": "mild",
       "text": "if (DAT_005fba18 < iVar6 + 0x81) {",
@@ -507,7 +507,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 140,
+      "line": 139,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "bVar2 = DAT_005fba1c < local_54;",

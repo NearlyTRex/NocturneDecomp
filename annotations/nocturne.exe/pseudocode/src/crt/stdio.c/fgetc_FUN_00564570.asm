@@ -16,7 +16,7 @@
 ;   core_actor.cpp_archiveRules_FUN_0040d110 at 0040d12c
 ;   core_actor.cpp_archiveString_FUN_0040c6d0 at 0040c6f0
 ;   core_course.cpp_CCourse_load_FUN_0043b690 at 0043b6c8
-;   core_course.cpp_FUN_0043b5b0 at 0043b5b6
+;   core_course.cpp_skipLine_FUN_0043b5b0 at 0043b5b6
 ;   ... and 18 more
 ;
 ; Referenced Globals:

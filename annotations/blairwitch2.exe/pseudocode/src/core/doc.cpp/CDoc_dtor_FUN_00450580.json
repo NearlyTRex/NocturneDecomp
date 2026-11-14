@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 79,
+    "complexity_score": 42,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 24,
-    "suspect_count": 5,
+    "pseudocode_lines": 27,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field"
+      "negative_offset"
     ],
-    "total_lines": 92
+    "total_lines": 95
   },
   "cross_references": [],
   "function": {
@@ -23,9 +23,9 @@
         "0045061c"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_doc.cpp_CDoc_dtor_FUN_00450580",
-    "signature": "CDoc * core_doc_cpp_CDoc_dtor_FUN_00450580(CDoc *this_ptr,uint flags)"
+    "signature": "CDoc * __cdecl core_doc_cpp_CDoc_dtor_FUN_00450580(CDoc *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -37,6 +37,16 @@
       "addr": "005b1c70",
       "is_variadic": false,
       "name": "core_box.cpp_CBox_dtor_FUN_005b1c70"
+    },
+    {
+      "addr": "005a8220",
+      "is_variadic": false,
+      "name": "core_bwspart.cpp_CSimpleParticleSystem_release_FUN_005a8220"
+    },
+    {
+      "addr": "005a8100",
+      "is_variadic": false,
+      "name": "core_bwspart.cpp_CSimpleParticleSystem_stop_FUN_005a8100"
     },
     {
       "addr": "004ce3d0",
@@ -57,23 +67,13 @@
       "addr": "005b7fdc",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005b7fdc"
-    },
-    {
-      "addr": "005a8100",
-      "is_variadic": false,
-      "name": "unkaddr_005a7eb0.cpp_FUN_005a8100"
-    },
-    {
-      "addr": "005a8220",
-      "is_variadic": false,
-      "name": "unkafter_superopt.cpp_FUN_005a8220"
     }
   ],
   "globals": [
     {
       "addr": "005f5174",
       "name": "g_CDocVTable",
-      "type": "undefined4",
+      "type": "CHero_full_vtable",
       "value": null
     },
     {
@@ -116,6 +116,14 @@
     },
     "pcode_op_count": 233
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00476700",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7209
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -141,44 +149,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "*(byte **)&this_ptr->field_0x2b0 = &g_CDocVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "unkaddr_005a7eb0_cpp_FUN_005a8100(&this_ptr->field_0x154,0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "unkafter_superopt_cpp_FUN_005a8220(&this_ptr->field_0x154);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x25ea4",
-      "severity": "mild",
-      "text": "pCVar1 = core_box_cpp_CBox_dtor_FUN_005b1c70((CBox *)&this_ptr->field_0x25ea4,0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Negative struct offset (wrong base type)",
       "line": 22,
-      "match": "field_0x118",
+      "match": "pCVar1[-3].",
       "severity": "mild",
-      "text": "pCVar3 = (CDoc *)core_hero_cpp_CHero_dtor_FUN_004ce3d0((CHero *)&pCVar2[-0xdf].field_0x118,1);",
-      "type": "unnamed_field"
+      "text": "((CDemonActor *)&pCVar1[-3].scrape_points[6].raytrace_normal.y,1);",
+      "type": "negative_offset"
     }
   ],
   "vtable_info": {

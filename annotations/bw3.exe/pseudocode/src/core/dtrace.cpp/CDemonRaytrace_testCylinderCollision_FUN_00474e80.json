@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 202,
-    "complexity_score": 226,
+    "complexity_score": 89,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 12,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 76,
-    "suspect_count": 14,
+    "pseudocode_lines": 74,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 278
+    "total_lines": 276
   },
   "cross_references": [
     {
@@ -189,6 +188,32 @@
     },
     "pcode_op_count": 993
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00473e10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0048c300",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00496c60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00468af0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 52,
     "local_size": 44,
@@ -262,110 +287,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "(float10)*(float *)&this_ptr->field_0x10) - (float10)*(float *)(cylinder + 0x20);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "fVar2 = (float10)1 / (float10)*(float *)&this_ptr->field_0x28;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "fVar1 = ((float10)*(float *)(cylinder + 0x10) - (float10)*(float *)&this_ptr->field_0x10) -",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "fVar2 = (float10)1 / (float10)*(float *)&this_ptr->field_0x28;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "fVar2 = ((fVar3 - (float10)*(float *)&this_ptr->field_0x10) + (float10)*(float *)(cylinder + 0x20)",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "fVar4 = (float10)1 / (float10)*(float *)&this_ptr->field_0x2c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "fVar1 = ((float10)*(float *)(cylinder + 0x28) - (float10)*(float *)&this_ptr->field_0x14) * fVar4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "fVar4 = ((float10)*(float *)(cylinder + 0x24) - (float10)*(float *)&this_ptr->field_0x14) * fVar4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "(float10)*(float *)&this_ptr->field_0x18) - (float10)*(float *)(cylinder + 0x20);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "fVar6 = (float10)1 / (float10)*(float *)&this_ptr->field_0x30;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 58,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "fVar5 = ((float10)*(float *)(cylinder + 0x14) - (float10)*(float *)&this_ptr->field_0x18) -",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 60,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "fVar6 = (float10)1 / (float10)*(float *)&this_ptr->field_0x30;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 64,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "fVar6 = ((fVar3 - (float10)*(float *)&this_ptr->field_0x18) + (float10)*(float *)(cylinder + 0x20)",
-      "type": "unnamed_field"
     }
   ]
 }

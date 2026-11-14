@@ -44,9 +44,12 @@ Reads exported annotations only. No Ghidra, no project lock.
     python3 scripts/Python/check_tu_alignment.py nocturne.exe
     python3 scripts/Python/check_tu_alignment.py --show 40
 
-Exit status is 1 only when CONTIGUITY reports an INTRUDER, so this can gate a
-build. TRAILER findings and the whole ORDER section are informational and never
-fail the run -- see check_order() for why the ordering signal was downgraded.
+  4. FOLDER. A TU's folder is a source directory. `unkafter_`, `unkaddr_` and
+     `unkclass_` are placeholders a naming pass used, never a directory.
+
+Exit status is 1 on a CONTIGUITY INTRUDER, a DOS 8.3 violation or a placeholder
+FOLDER. TRAILER and ORDER findings are informational. The functions export
+enforces the last two through gate().
 """
 
 import argparse
@@ -66,7 +69,11 @@ SKIP_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                          "check_tu_alignment_skip.txt")
 
 
-CHECKS = ("contiguity", "order", "dos83")
+CHECKS = ("contiguity", "order", "dos83", "folder")
+
+# Folders the placeholder passes invent. A TU's folder is a source directory the
+# build had (core, engine, shape, ...): a run in one of these still needs a unit.
+PLACEHOLDER_FOLDER = re.compile(r"^unk")
 
 
 def load_skip(path):
@@ -78,6 +85,7 @@ def load_skip(path):
     """
     out = {c: set() for c in CHECKS}
     out["all"] = set()
+    out["appended"] = {}
     if not os.path.exists(path):
         return out
     with open(path) as fh:
@@ -88,6 +96,9 @@ def load_skip(path):
             check, sep, tu = line.partition(":")
             if not sep:
                 out["all"].add(line)
+            elif check == "appended":
+                program, _, last = tu.strip().partition(":")
+                out["appended"][program] = last
             elif check in CHECKS:
                 out[check].add(tu.strip())
             else:
@@ -282,6 +293,12 @@ def check_dos83(spans, exempt):
     return findings
 
 
+def check_folders(tus, exempt):
+    """TUs whose folder is a placeholder (`unkafter_`, `unkaddr_`, `unkclass_`), not a directory."""
+    return [{"tu": tu, "folder": tu.rpartition("_")[0]} for tu in sorted(tus)
+            if tu not in exempt and PLACEHOLDER_FOLDER.match(tu.rpartition("_")[0])]
+
+
 def stem(path):
     """`engine/dosio.c` -> `dosio`. Extension is not part of the identity.
 
@@ -295,13 +312,13 @@ def stem(path):
 def check_order(spans, program, largest, order_skip=()):
     """TUs out of basename-alphabetical position, with the window they occupy.
 
-    INFORMATIONAL ONLY -- this never fails a run. The ordering regularity turned
-    out to be far weaker evidence than it first looked: the same four TUs are
-    out of position in *both* independently-linked builds, and two of them
-    (`core/chain.cpp`, `sound/snddx.cpp`) are proven correct by `__FILE__`. So
-    displacement is a property of this project's link order, not proof of a bad
-    name, and the check has yet to produce a single confirmed defect. Contiguity
-    is the check that earns its keep.
+    An UNPROVEN finding (an inferred name, with a body, out of position) fails
+    the run. A name the binary asserts outranks the rule, and so does a TU with
+    no body in this build (contiguity speaks for it). The same four TUs sit out
+    of position in both nocturne builds, two of them proven by `__FILE__`, so
+    the link order is a ~98% regularity: a real exception goes in the skip file
+    with its reason. In the Blair Witch builds it caught misnamed units (a
+    `staticInit` filed under the next unit, a stray `alphabit` init).
 
     Uses an LCS against the sorted sequence so that one displaced TU is
     reported once, rather than shifting every TU after it.
@@ -352,7 +369,21 @@ def check_order(spans, program, largest, order_skip=()):
     return findings
 
 
-def report(program, runs, spans_count, contiguity, order, dos83, show):
+def sorted_part(spans, last):
+    """The spans the link sorted: all of them, or those up to `last` when the
+    build appends its own files, unsorted, after that unit."""
+    if not last or last not in spans:
+        return spans
+    end = spans[last][1]
+    return {tu: span for tu, span in spans.items() if span[0] <= end}
+
+
+def unproven(order):
+    """The order findings that fail: inferred names, with a body, out of position."""
+    return [f for f in order if not f["proven"] and not f["no_body"]]
+
+
+def report(program, runs, spans_count, contiguity, order, dos83, show, folders=()):
     print("=" * 78)
     print("%s   %d checked TUs, %d runs (crt included for context only)" %
           (program, len(spans_count), len(runs)))
@@ -375,10 +406,10 @@ def report(program, runs, spans_count, contiguity, order, dos83, show):
         if len(f["names"]) > show:
             print("        ... %d more" % (len(f["names"]) - show))
 
-    suspect = [f for f in order if not f["proven"] and not f["no_body"]]
+    suspect = unproven(order)
     nobody = [f for f in order if f["no_body"]]
     proven = [f for f in order if f["proven"] and not f["no_body"]]
-    print("\n-- LINK ORDER (informational, never fails) --  %d out of position:"
+    print("\n-- LINK ORDER (informational) --  %d out of position:"
           " %d unproven, %d asserted by the binary, %d with no body here"
           % (len(order), len(suspect), len(proven), len(nobody)))
     for f in order:
@@ -410,7 +441,36 @@ def report(program, runs, spans_count, contiguity, order, dos83, show):
         for w in f["why"]:
             print("        %s" % w)
 
-    return len(high) + len(dos83)
+    print("\n-- FOLDER --  %d TU(s) in a placeholder folder" % len(folders))
+    for f in folders:
+        print("  %s   folder %s is not a source directory" % (f["tu"], f["folder"]))
+
+    return len(high) + len(dos83) + len(folders)
+
+
+def gate(program, functions, skip_path=SKIP_PATH):
+    """The TU-name rules an export enforces, as one message per violation.
+
+    Folder and DOS 8.3: each says a name cannot be the original file's. Link
+    order and contiguity are left to this script's own run: the order is a
+    regularity, not a guarantee, and contiguity's known findings (an inline
+    accessor's out-of-line copy) are layout, not naming.
+    """
+    ex = load_skip(skip_path)
+    skip = ex["all"]
+    tus = {tu for tu, _lo, _hi, _n in tu_runs(Functions(functions)) if tu not in skip}
+    messages = ["%s: folder %s is a placeholder, not a source directory" % (f["tu"], f["folder"])
+                for f in check_folders(tus, skip | ex["folder"])]
+    messages += ["%s: %s" % (f["tu"], "; ".join(f["why"]))
+                 for f in check_dos83(tus, skip | ex["dos83"])]
+    return messages
+
+
+class Functions:
+    """The one attribute tu_runs reads from an Image: its function records."""
+
+    def __init__(self, functions):
+        self.functions = functions
 
 
 def main():
@@ -444,10 +504,11 @@ def main():
         all_tus = {tu for tu, _lo, _hi, _n in runs if tu not in skip}
         failures += report(program, runs, spans,
                            check_contiguity(runs, spans, checkable),
-                           check_order(spans, program, largest_run(runs),
-                                       skip | ex["order"]),
+                           check_order(sorted_part(spans, ex["appended"].get(program)),
+                                       program, largest_run(runs), skip | ex["order"]),
                            check_dos83(all_tus, skip | ex["dos83"]),
-                           args.show)
+                           args.show,
+                           check_folders(all_tus, skip | ex["folder"]))
         print()
 
     if failures:

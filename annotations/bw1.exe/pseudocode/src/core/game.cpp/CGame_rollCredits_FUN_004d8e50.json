@@ -2,30 +2,29 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 358,
-    "complexity_score": 345,
+    "complexity_score": 331,
     "cross_reference_count": 2,
     "function_call_count": 30,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 155,
-    "suspect_count": 15,
+    "pseudocode_lines": 156,
+    "suspect_count": 14,
     "suspect_types": [
       "extra_output",
       "pointer_cast",
       "undefined_data",
-      "unnamed_field",
       "unresolved_funcptr",
       "unrolled_strcpy",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 513
+    "total_lines": 514
   },
   "cross_references": [
     {
       "addr": "004d8a90",
       "from_addr": "004d8c87",
-      "name": "core_game.cpp_FUN_004d8a90",
+      "name": "core_game.cpp_CGame_finishAct_FUN_004d8a90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -69,6 +68,11 @@
       "name": "crt_math.c_round_FUN_005c03a0"
     },
     {
+      "addr": "005c08d0",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005c08d0"
+    },
+    {
       "addr": "005c0d10",
       "is_variadic": false,
       "name": "crt_stdio.c_fclose_FUN_005c0d10"
@@ -82,11 +86,6 @@
       "addr": "005c0f80",
       "is_variadic": false,
       "name": "crt_string.c__strcmp_FUN_005c0f80"
-    },
-    {
-      "addr": "005c08d0",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c08d0"
     },
     {
       "addr": "005c09f0",
@@ -141,7 +140,7 @@
     {
       "addr": "004c4510",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004c4510"
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510"
     },
     {
       "addr": "0057dc40",
@@ -154,39 +153,39 @@
       "name": "sound_sndmain.cpp_enableSoundSystem_FUN_00574ee0"
     },
     {
-      "addr": "00572980",
+      "addr": "00573cd0",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00572980"
-    },
-    {
-      "addr": "005729f0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005729f0"
-    },
-    {
-      "addr": "00572ac0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00572ac0"
-    },
-    {
-      "addr": "00572b40",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00572b40"
+      "name": "sound_sndmain.cpp_isSfxChannelEnabled_FUN_00573cd0"
     },
     {
       "addr": "005735a0",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005735a0"
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005735a0"
     },
     {
-      "addr": "00573cd0",
+      "addr": "00572b40",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00573cd0"
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_00572b40"
+    },
+    {
+      "addr": "00572ac0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0"
     },
     {
       "addr": "005750e0",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_resetSoundDevice_FUN_005750e0"
+    },
+    {
+      "addr": "00572980",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxChannel_FUN_00572980"
+    },
+    {
+      "addr": "005729f0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxFlags_FUN_005729f0"
     },
     {
       "addr": "00572d20",
@@ -196,7 +195,7 @@
     {
       "addr": "005acff0",
       "is_variadic": false,
-      "name": "wincore_wddvmem.cpp_FUN_005acff0"
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005acff0"
     }
   ],
   "globals": [
@@ -297,7 +296,7 @@
       {
         "call_addr": "004d8c87",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d8a90",
+        "caller": "core_game.cpp_CGame_finishAct_FUN_004d8a90",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -361,6 +360,32 @@
       "TRUNC": 1
     },
     "pcode_op_count": 1316
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004be430",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.2847
+    },
+    "bw3.exe": {
+      "addr": "004c02a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3306
+    },
+    "nocedit.exe": {
+      "addr": "004e4010",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9042
+    },
+    "nocturne.exe": {
+      "addr": "004a6e90",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4412,
@@ -470,7 +495,7 @@
       "line": 39,
       "match": "(uint *)((int)local_1134",
       "severity": "moderate",
-      "text": "*(uint *)((int)local_1134 + iVar8) = 0;",
+      "text": "*(uint *)((int)local_1134 + iVar7) = 0;",
       "type": "pointer_cast"
     },
     {
@@ -478,7 +503,7 @@
       "line": 44,
       "match": "DAT_005e3599",
       "severity": "mild",
-      "text": "p_Var4 = engine_dosio_cpp_FUN_00479180(&DAT_005e3599,\"credits.txt\",&DAT_005e358a);",
+      "text": "stream = engine_dosio_cpp_FUN_00479180(&DAT_005e3599,\"credits.txt\",&DAT_005e358a);",
       "type": "undefined_data"
     },
     {
@@ -486,7 +511,7 @@
       "line": 44,
       "match": "DAT_005e358a",
       "severity": "mild",
-      "text": "p_Var4 = engine_dosio_cpp_FUN_00479180(&DAT_005e3599,\"credits.txt\",&DAT_005e358a);",
+      "text": "stream = engine_dosio_cpp_FUN_00479180(&DAT_005e3599,\"credits.txt\",&DAT_005e358a);",
       "type": "undefined_data"
     },
     {
@@ -502,7 +527,7 @@
       "line": 63,
       "match": "(void **)((int)local_1134",
       "severity": "moderate",
-      "text": "*(void **)((int)local_1134 + iVar8) = pvVar6;",
+      "text": "*(void **)((int)local_1134 + iVar7) = pvVar5;",
       "type": "pointer_cast"
     },
     {
@@ -510,7 +535,7 @@
       "line": 70,
       "match": "(char **)((int)local_1134",
       "severity": "moderate",
-      "text": "pcVar10 = *(char **)((int)local_1134 + iVar8);",
+      "text": "pcVar9 = *(char **)((int)local_1134 + iVar7);",
       "type": "pointer_cast"
     },
     {
@@ -526,32 +551,24 @@
       "line": 114,
       "match": "(char **)((int)local_1134",
       "severity": "moderate",
-      "text": "pcVar5 = *(char **)((int)local_1134 + iVar9);",
+      "text": "pcVar4 = *(char **)((int)local_1134 + iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 142,
+      "line": 143,
       "match": "(uint *)((int)local_1134",
       "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)local_1134 + iVar8);",
+      "text": "puVar1 = (uint *)((int)local_1134 + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 154,
+      "line": 155,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar3 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,1);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 157,
-      "match": "field_0x294",
-      "severity": "mild",
-      "text": "local_14 = local_14 - *(float *)&this_ptr->field_0x294 * _DAT_005e35ec;",
-      "type": "unnamed_field"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

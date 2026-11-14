@@ -21,7 +21,7 @@
     {
       "addr": "0050da60",
       "from_addr": "0050dc15",
-      "name": "engine_pcx.c_FUN_0050da60",
+      "name": "engine_pcx.c_saveScreenshotGeneral_FUN_0050da60",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -193,7 +193,7 @@
       {
         "call_addr": "0050dc15",
         "call_type": "direct",
-        "caller": "engine_pcx.c_FUN_0050da60",
+        "caller": "engine_pcx.c_saveScreenshotGeneral_FUN_0050da60",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -240,6 +240,32 @@
       "SUBPIECE": 6
     },
     "pcode_op_count": 697
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00514880",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00535bd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00548f00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9822
+    },
+    "nocturne.exe": {
+      "addr": "004f27e0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 116,
@@ -337,7 +363,7 @@
       "line": 46,
       "match": "DAT_005cba50",
       "severity": "mild",
-      "text": "pcVar5 = &DAT_005cba50;",
+      "text": "pcVar4 = &DAT_005cba50;",
       "type": "undefined_data"
     },
     {
@@ -345,7 +371,7 @@
       "line": 56,
       "match": "DAT_005cba55",
       "severity": "mild",
-      "text": "iVar2 = _fopen(local_6c,&DAT_005cba55);",
+      "text": "file = _fopen(local_6c,&DAT_005cba55);",
       "type": "undefined_data"
     },
     {
@@ -361,7 +387,7 @@
       "line": 67,
       "match": "DAT_01c5faec",
       "severity": "mild",
-      "text": "puVar3 = *(uint **)(&DAT_01c5faec + local_18);",
+      "text": "puVar2 = *(uint **)(&DAT_01c5faec + local_18);",
       "type": "undefined_data"
     },
     {
@@ -377,7 +403,7 @@
       "line": 70,
       "match": "DAT_01c6af80",
       "severity": "mild",
-      "text": "uVar4 = (*puVar3 >> (DAT_01c6af80 & 0x1f)) * _DAT_01c6af84;",
+      "text": "uVar3 = (*puVar2 >> (DAT_01c6af80 & 0x1f)) * _DAT_01c6af84;",
       "type": "undefined_data"
     },
     {
@@ -385,7 +411,7 @@
       "line": 71,
       "match": "DAT_01c6af8c",
       "severity": "mild",
-      "text": "local_1c = (*puVar3 >> (DAT_01c6af8c & 0x1f)) * _DAT_01c6af90 & 0xff;",
+      "text": "local_1c = (*puVar2 >> (DAT_01c6af8c & 0x1f)) * _DAT_01c6af90 & 0xff;",
       "type": "undefined_data"
     },
     {
@@ -393,7 +419,7 @@
       "line": 72,
       "match": "DAT_01c6af74",
       "severity": "mild",
-      "text": "_fputc(_DAT_01c6af78 * (*puVar3 >> (DAT_01c6af74 & 0x1f)) & 0xff,iVar2);",
+      "text": "_fputc(_DAT_01c6af78 * (*puVar2 >> (DAT_01c6af74 & 0x1f)) & 0xff,file);",
       "type": "undefined_data"
     },
     {
@@ -401,7 +427,7 @@
       "line": 77,
       "match": "DAT_005fba18",
       "severity": "mild",
-      "text": "} while (iVar6 < DAT_005fba18);",
+      "text": "} while (iVar5 < DAT_005fba18);",
       "type": "undefined_data"
     },
     {

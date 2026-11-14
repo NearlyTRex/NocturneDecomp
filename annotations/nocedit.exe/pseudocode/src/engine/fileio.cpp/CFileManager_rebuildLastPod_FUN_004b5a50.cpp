@@ -262,8 +262,8 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
                 pcVar17[1] = cVar2;
                 pcVar17 = pcVar17 + 2;
               } while (cVar2 != '\0');
-              g_WorkingAuditRecord.file_offset = 0;
-              g_WorkingAuditRecord.compressed_size = 0;
+              g_WorkingAuditRecord.new_timestamp = 0;
+              g_WorkingAuditRecord.new_file_size = 0;
               g_WorkingAuditRecord.original_timestamp =
                    *(int *)((int)&(local_1838.directory_entries)->timestamp + local_2c);
               g_WorkingAuditRecord.original_file_size =
@@ -463,8 +463,8 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
                 pcVar11[1] = cVar2;
                 pcVar11 = pcVar11 + 2;
               } while (cVar2 != '\0');
-              g_WorkingAuditRecord.file_offset = local_28[3];
-              g_WorkingAuditRecord.compressed_size = local_28[1];
+              g_WorkingAuditRecord.new_timestamp = local_28[3];
+              g_WorkingAuditRecord.new_file_size = local_28[1];
               iVar3 = engine_pod_cpp_CPodFile_findFileIndex_FUN_00550140(&local_1838,*pacVar10);
               iVar7 = g_AuditRecordCount + 1;
               if (iVar3 < 0) {

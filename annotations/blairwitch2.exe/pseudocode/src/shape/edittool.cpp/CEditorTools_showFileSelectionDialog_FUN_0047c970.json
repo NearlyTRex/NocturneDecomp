@@ -1,0 +1,301 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 168,
+    "complexity_score": 54,
+    "cross_reference_count": 4,
+    "function_call_count": 10,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 54,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 222
+  },
+  "cross_references": [
+    {
+      "addr": "004bdb10",
+      "from_addr": "004bdbc5",
+      "name": "core_game.cpp_CGame_promptLoadGame_FUN_004bdb10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bbf70",
+      "from_addr": "004bc405",
+      "name": "core_game.cpp_FUN_004bbf70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bc840",
+      "from_addr": "004bc96f",
+      "name": "core_game.cpp_FUN_004bc840",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bd2f0",
+      "from_addr": "004bd329",
+      "name": "core_game.cpp_hostNetworkGame_FUN_004bd2f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0047c970",
+    "address_range": [
+      [
+        "0047c970",
+        "0047cb1a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047c970",
+    "signature": "int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0047c970(CEditorTools *this_ptr,char *dialog_title,char *search_directory,char *file_pattern,char *output_filename,uint flags)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b8130",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005b8130"
+    },
+    {
+      "addr": "004610a0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_makePath_FUN_004610a0"
+    },
+    {
+      "addr": "0047be40",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0047be40"
+    },
+    {
+      "addr": "00481fc0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_ctor_FUN_00481fc0"
+    },
+    {
+      "addr": "00482250",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00482250"
+    },
+    {
+      "addr": "004820b0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_dtor_FUN_004820b0"
+    },
+    {
+      "addr": "00481250",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_getFieldAt_FUN_00481250"
+    },
+    {
+      "addr": "00481870",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00481870"
+    },
+    {
+      "addr": "00481190",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CStrList_sortAll_FUN_00481190"
+    },
+    {
+      "addr": "0050fe80",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_0050fe80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d2067",
+      "name": "s_No_files_found_005d2067",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "004bc96f",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004bc840",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "004bc405",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004bbf70",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "004bdbc5",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_promptLoadGame_FUN_004bdb10",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "004bd329",
+        "call_type": "direct",
+        "caller": "core_game.cpp_hostNetworkGame_FUN_004bd2f0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8333333333333335,
+    "instruction_count": 138,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 3,
+      "CALL": 14,
+      "CBRANCH": 6,
+      "COPY": 108,
+      "INT_ADD": 46,
+      "INT_AND": 56,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 52,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 16,
+      "INT_SLESS": 26,
+      "INT_SUB": 67,
+      "INT_XOR": 3,
+      "LOAD": 14,
+      "POPCOUNT": 26,
+      "RETURN": 1,
+      "STORE": 64
+    },
+    "pcode_op_count": 529
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00494fd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0047db70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0049f270",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00470550",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9818
+    }
+  },
+  "stack_frame": {
+    "frame_size": 2288,
+    "local_size": 2264,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_8d4",
+        "offset": -2260,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_514",
+        "offset": -1300,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_314",
+        "offset": -788,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_114",
+        "offset": -276,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEditorTools *"
+      },
+      {
+        "is_param": true,
+        "name": "dialog_title",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "search_directory",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "file_pattern",
+        "offset": 16,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "output_filename",
+        "offset": 20,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "flags",
+        "offset": 24,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": []
+}

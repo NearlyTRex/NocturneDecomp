@@ -1,14 +1,12 @@
 // Name: core_fire.cpp_CPopcorn_arrdtor256_FUN_004a4930
 // Address: 004a4930
 // Address Range: [[004a4930, 004a4947]]
-// Convention: unknown
-// Signature: CPopcorn * core_fire_cpp_CPopcorn_arrdtor256_FUN_004a4930(CPopcorn *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CPopcorn * __cdecl core_fire_cpp_CPopcorn_arrdtor256_FUN_004a4930(CPopcorn *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CPopcorn * core_fire_cpp_CPopcorn_arrdtor256_FUN_004a4930(CPopcorn *this_ptr,uint flags)
+CPopcorn * __cdecl core_fire_cpp_CPopcorn_arrdtor256_FUN_004a4930(CPopcorn *this_ptr,uint flags)
 
 {
   CPopcorn *pCVar1;

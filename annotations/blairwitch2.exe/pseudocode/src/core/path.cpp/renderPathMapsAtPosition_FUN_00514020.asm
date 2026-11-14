@@ -16,9 +16,9 @@
 ;   undefined4 DAT_01e4fed8
 ;
 ; Called Functions:
-;   core_dtrace.cpp_FUN_00476a50
+;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00476a50
 ;   core_main.c_FUN_004e4500
-;   core_path.cpp_FUN_00513950
+;   core_path.cpp_CPathMap_renderPathMap_FUN_00513950
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     PUSH 0x1fc9c68                      ; 00514030
     LEA ESI,[ESP + 0x14]                ; 00514035
     LEA EDI,[ESP + 0x8]                 ; 00514039
-    CALL core_dtrace.cpp_FUN_00476a50   ; 0051403d
-        ;   XREF to: 00476a50 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00476a50()
+    CALL core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00476a50 ; 0051403d
+        ;   XREF to: 00476a50 (UNCONDITIONAL_CALL)  ; CVector3i * core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00476a50(CDemonRaytrace * this_ptr, CVector3f * world_position, CVector3i * output_voxel_coords)
     LEA ESI,[ESP + 0x14]                ; 00514042
     ADD ESP,0x8                         ; 00514046
     MOVSD ES:EDI,ESI                    ; 00514049
@@ -104,8 +104,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x3c]      ; 005140d5
     PUSH ECX                            ; 005140d9
     PUSH EDX                            ; 005140da
-    CALL core_path.cpp_FUN_00513950     ; 005140db
-        ;   XREF to: 00513950 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_FUN_00513950()
+    CALL core_path.cpp_CPathMap_renderPathMap_FUN_00513950 ; 005140db
+        ;   XREF to: 00513950 (UNCONDITIONAL_CALL)  ; void core_path.cpp_CPathMap_renderPathMap_FUN_00513950(CPathMap * this_ptr, int depth, int red, int green, ...)
     ADD ESP,0x14                        ; 005140e0
     JMP 0x00514075                      ; 005140e3
         ;   XREF to: 00514075 (UNCONDITIONAL_JUMP)  ; LAB_00514075

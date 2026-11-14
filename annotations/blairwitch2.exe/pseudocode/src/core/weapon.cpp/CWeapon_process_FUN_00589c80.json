@@ -1,0 +1,345 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 82,
+    "complexity_score": 47,
+    "cross_reference_count": 10,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 32,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
+    "total_lines": 114
+  },
+  "cross_references": [
+    {
+      "addr": "00410960",
+      "from_addr": "00410976",
+      "name": "core_baron.cpp_CBaronWeapon_process_FUN_00410960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0043a580",
+      "from_addr": "0043a58f",
+      "name": "core_crossbow.cpp_CCrossbow_process_FUN_0043a580",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047a1e0",
+      "from_addr": "0047a1f6",
+      "name": "core_dynamite.cpp_CDynamite_process_FUN_0047a1e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00485a30",
+      "from_addr": "00485a51",
+      "name": "core_elephant.cpp_CElephantGun_process_FUN_00485a30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a0e60",
+      "from_addr": "004a0e72",
+      "name": "core_flamegun.cpp_CFlameThrower_process_FUN_004a0e60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059ccf0",
+      "from_addr": "0059ccfd",
+      "name": "core_lantern.cpp_CLantern_process_FUN_0059ccf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e38d0",
+      "from_addr": "004e38df",
+      "name": "core_lightgun.cpp_CLightGun_process_FUN_004e38d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004eacf0",
+      "from_addr": "004eacf9",
+      "name": "core_melee.cpp_CMelee_process_FUN_004eacf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053f060",
+      "from_addr": "0053f081",
+      "name": "core_shotgun.cpp_CShotgun_process_FUN_0053f060",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00576130",
+      "from_addr": "00576146",
+      "name": "core_tommygun.cpp_CTommyGun_process_FUN_00576130",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00589c80",
+    "address_range": [
+      [
+        "00589c80",
+        "00589d58"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_weapon.cpp_CWeapon_process_FUN_00589c80",
+    "signature": "void __cdecl core_weapon_cpp_CWeapon_process_FUN_00589c80(CWeapon *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408ae0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0"
+    },
+    {
+      "addr": "005b2290",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBox_process_FUN_005b2290"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 10,
+    "call_sites": [
+      {
+        "call_addr": "0059ccfd",
+        "call_type": "direct",
+        "caller": "core_lantern.cpp_CLantern_process_FUN_0059ccf0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00410976",
+        "call_type": "direct",
+        "caller": "core_baron.cpp_CBaronWeapon_process_FUN_00410960",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0043a58f",
+        "call_type": "direct",
+        "caller": "core_crossbow.cpp_CCrossbow_process_FUN_0043a580",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0047a1f6",
+        "call_type": "direct",
+        "caller": "core_dynamite.cpp_CDynamite_process_FUN_0047a1e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00485a51",
+        "call_type": "direct",
+        "caller": "core_elephant.cpp_CElephantGun_process_FUN_00485a30",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a0e72",
+        "call_type": "direct",
+        "caller": "core_flamegun.cpp_CFlameThrower_process_FUN_004a0e60",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004e38df",
+        "call_type": "direct",
+        "caller": "core_lightgun.cpp_CLightGun_process_FUN_004e38d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004eacf9",
+        "call_type": "direct",
+        "caller": "core_melee.cpp_CMelee_process_FUN_004eacf0",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0053f081",
+        "call_type": "direct",
+        "caller": "core_shotgun.cpp_CShotgun_process_FUN_0053f060",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00576146",
+        "call_type": "direct",
+        "caller": "core_tommygun.cpp_CTommyGun_process_FUN_00576130",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.8059701492537314,
+    "instruction_count": 67,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 6,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 7,
+      "COPY": 197,
+      "FLOAT2FLOAT": 10,
+      "FLOAT_EQUAL": 4,
+      "FLOAT_LESS": 4,
+      "FLOAT_NAN": 8,
+      "FLOAT_SUB": 2,
+      "INT2FLOAT": 4,
+      "INT_ADD": 31,
+      "INT_AND": 31,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 10,
+      "INT_LEFT": 16,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 20,
+      "INT_OR": 20,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 5,
+      "INT_SUB": 9,
+      "INT_ZEXT": 16,
+      "LOAD": 19,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 17
+    },
+    "pcode_op_count": 456
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005ad770",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8025
+    },
+    "bw3.exe": {
+      "addr": "0057b160",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8025
+    },
+    "nocedit.exe": {
+      "addr": "005ee110",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8025
+    },
+    "nocturne.exe": {
+      "addr": "00554030",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8025
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWeapon *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 28,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pUVar1->vec).x = pCVar2->x;",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 20,
+        "vtable_addr": "005fb714"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 20,
+        "vtable_addr": "005f7e34"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 20,
+        "vtable_addr": "005fdf64"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 20,
+        "vtable_addr": "005f6cb4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 4
+  }
+}

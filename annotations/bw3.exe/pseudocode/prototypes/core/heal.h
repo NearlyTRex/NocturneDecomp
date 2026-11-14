@@ -7,32 +7,32 @@
 
 // Original: core_heal.cpp_staticInit_FUN_004d1900
 // Address: 004d1900
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_heal.cpp_factoryFuncHeal_FUN_004d1930
 // Address: 004d1930
-void factoryFuncHeal(void);
+CHeal * __cdecl factoryFuncHeal(void);
 
 // Original: core_heal.cpp_CHeal_getActorType_FUN_004d1950
 // Address: 004d1950
-CDemonActorType * CHeal::getActorType(CHeal *this_ptr);
+CDemonActorType * __cdecl CHeal::getActorType(CHeal *this_ptr);
 
 // Original: core_heal.cpp_CHeal_ctor_FUN_004d1960
 // Address: 004d1960
-CHeal * CHeal::ctor(CHeal *this_ptr);
+CHeal * __cdecl CHeal::ctor(CHeal *this_ptr);
 
-// Original: core_heal.cpp_FUN_004d1a10
+// Original: core_heal.cpp_CHeal_fire_FUN_004d1a10
 // Address: 004d1a10
-undefined4 FUN_004d1a10(CDemonActor *param_1);
+int __cdecl CHeal::fire(CHeal *this_ptr);
 
-// Original: core_heal.cpp_FUN_004d1c50
+// Original: core_heal.cpp_CHeal_process_FUN_004d1c50
 // Address: 004d1c50
-void FUN_004d1c50(CWeapon *param_1,float param_2);
+void __cdecl CHeal::process(CHeal *this_ptr,float delta_time);
 
-// Original: core_heal.cpp_FUN_004d1c80
+// Original: core_heal.cpp_CHeal_setup_FUN_004d1c80
 // Address: 004d1c80
-void FUN_004d1c80(CWeapon *param_1);
+void __cdecl CHeal::setup(CHeal *this_ptr);
 
 // Original: core_heal.cpp_CHeal_dtor_FUN_004d1cb0
 // Address: 004d1cb0
-CHeal * CHeal::dtor(CHeal *this_ptr,uint flags);
+CHeal * __cdecl CHeal::dtor(CHeal *this_ptr,uint flags);

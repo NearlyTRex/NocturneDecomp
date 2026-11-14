@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 268,
-    "complexity_score": 151,
+    "complexity_score": 153,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 91,
+    "pseudocode_lines": 93,
     "suspect_count": 4,
     "suspect_types": [
       "preinc_loop_idiom",
@@ -15,7 +15,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 359
+    "total_lines": 361
   },
   "cross_references": [
     {
@@ -69,11 +69,6 @@
       "name": "crt_string.c__strcmp_FUN_005c0f80"
     },
     {
-      "addr": "005bfb40",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005bfb40"
-    },
-    {
       "addr": "005c03c0",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005c03c0"
@@ -82,6 +77,11 @@
       "addr": "005c25c0",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005c25c0"
+    },
+    {
+      "addr": "005bfb40",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
     },
     {
       "addr": "004f4550",
@@ -214,6 +214,32 @@
     },
     "pcode_op_count": 886
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004d8530",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004d8640",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004fb660",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9635
+    },
+    "nocturne.exe": {
+      "addr": "004bd480",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 812,
     "local_size": 792,
@@ -319,7 +345,7 @@
       "type": "unrolled_strlen"
     },
     {
-      "description": "Ghidra pre-increment-array-walk loop artifact on `pcVar7` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `pcVar7 = pcVar7;` self-assign, two-var `tmp = &pcVar7->field; pcVar7 = tmp;` ping-pong, or a bare `pcVar7 = pcVar7 + N;` advance followed by a `*pcVar7 =` store \u2014 plus a constant-index store on `pcVar7`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "description": "Ghidra pre-increment-array-walk loop artifact on `pcVar4` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `pcVar4 = pcVar4;` self-assign, two-var `tmp = &pcVar4->field; pcVar4 = tmp;` ping-pong, or a bare `pcVar4 = pcVar4 + N;` advance followed by a `*pcVar4 =` store \u2014 plus a constant-index store on `pcVar4`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
       "line": 34,
       "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
       "severity": "moderate",

@@ -1,0 +1,330 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 259,
+    "complexity_score": 131,
+    "cross_reference_count": 0,
+    "function_call_count": 8,
+    "global_count": 23,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 101,
+    "suspect_count": 2,
+    "suspect_types": [
+      "warning_overlapping_globals",
+      "warning_type_propagation"
+    ],
+    "total_lines": 360
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005bac80",
+    "address_range": [
+      [
+        "005bac80",
+        "005bafa2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_zombie.cpp_CZombie_setup_FUN_005bac80",
+    "signature": "void __cdecl core_zombie_cpp_CZombie_setup_FUN_005bac80(CZombie *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cc00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00"
+    },
+    {
+      "addr": "004a0510",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_setup_FUN_004a0510"
+    },
+    {
+      "addr": "00565780",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModel_findPartByName_FUN_00565780"
+    },
+    {
+      "addr": "00569eb0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0"
+    },
+    {
+      "addr": "00569f30",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30"
+    },
+    {
+      "addr": "00569b20",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00569b20"
+    },
+    {
+      "addr": "005634f0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0"
+    },
+    {
+      "addr": "005c04e0",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005c04e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fa42e",
+      "name": "s_Bip01_Head_005fa42e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa439",
+      "name": "s_Bip01_L_ForeArm_005fa439",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa449",
+      "name": "s_Bip01_R_ForeArm_005fa449",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa459",
+      "name": "s_Bip01_L_UpperArm_005fa459",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa46a",
+      "name": "s_Bip01_R_UpperArm_005fa46a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa47b",
+      "name": "s_Bip01_L_Foot_005fa47b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa488",
+      "name": "s_Bip01_R_Foot_005fa488",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa495",
+      "name": "s_Bip01_L_Hand_005fa495",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa4a2",
+      "name": "s_Bip01_R_Hand_005fa4a2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa4af",
+      "name": "s_Bip01_Spine_005fa4af",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa4bb",
+      "name": "s_Bip01_Spine2_005fa4bb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa4c8",
+      "name": "s_larm01_005fa4c8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa4cf",
+      "name": "s_l4arm01_005fa4cf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa4d7",
+      "name": "s_rarm01_005fa4d7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa4de",
+      "name": "s_r4arm01_005fa4de",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa4e6",
+      "name": "s_waist01_005fa4e6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa4ee",
+      "name": "s_torso01_005fa4ee",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa4f6",
+      "name": "s_head01_005fa4f6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa4fd",
+      "name": "s_newzomb1_dfm_005fa4fd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa50a",
+      "name": "s_newzchik_dfm_005fa50a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa517",
+      "name": "s_zombho1_dfm_005fa517",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa523",
+      "name": "s_zombho2_dfm_005fa523",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fa534",
+      "name": "DAT_005fa534",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.170506912442396,
+    "instruction_count": 217,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 27,
+      "CBRANCH": 7,
+      "COPY": 212,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_ADD": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 82,
+      "INT_AND": 85,
+      "INT_CARRY": 27,
+      "INT_EQUAL": 73,
+      "INT_LEFT": 4,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 5,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 27,
+      "INT_SLESS": 36,
+      "INT_SUB": 100,
+      "INT_ZEXT": 4,
+      "LOAD": 19,
+      "POPCOUNT": 36,
+      "RETURN": 1,
+      "STORE": 136
+    },
+    "pcode_op_count": 905
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00595c00",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00588a80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8067
+    },
+    "nocedit.exe": {
+      "addr": "005f9140",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0055ec20",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZombie *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CZombie",
+        "offset": 0,
+        "vtable_addr": "006083c4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

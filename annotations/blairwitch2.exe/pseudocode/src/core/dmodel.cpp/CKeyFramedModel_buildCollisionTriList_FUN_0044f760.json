@@ -2,31 +2,31 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 197,
+    "complexity_score": 80,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 5,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 32,
-    "suspect_count": 15,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 35,
+    "suspect_count": 3,
     "suspect_types": [
+      "pointer_cast",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 103
+    "total_lines": 106
   },
   "cross_references": [
     {
       "addr": "0044de20",
       "from_addr": "0044dffa",
-      "name": "core_dmodel.cpp_FUN_0044de20",
+      "name": "core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_0044de20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0044e010",
       "from_addr": "0044e572",
-      "name": "core_dmodel.cpp_FUN_0044e010",
+      "name": "core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_0044e010",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -46,7 +46,7 @@
     {
       "addr": "0044f840",
       "is_variadic": false,
-      "name": "core_dmodel.cpp_FUN_0044f840"
+      "name": "core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_0044f840"
     },
     {
       "addr": "004e4500",
@@ -54,14 +54,14 @@
       "name": "core_main.c_FUN_004e4500"
     },
     {
+      "addr": "005b8df8",
+      "is_variadic": false,
+      "name": "crt_memory.c_operator_new_array_FUN_005b8df8"
+    },
+    {
       "addr": "005b7fce",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005b7fce"
-    },
-    {
-      "addr": "005b8df8",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b8df8"
     }
   ],
   "globals": [
@@ -102,7 +102,7 @@
       {
         "call_addr": "0044dffa",
         "call_type": "direct",
-        "caller": "core_dmodel.cpp_FUN_0044de20",
+        "caller": "core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_0044de20",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -113,7 +113,7 @@
       {
         "call_addr": "0044e572",
         "call_type": "direct",
-        "caller": "core_dmodel.cpp_FUN_0044e010",
+        "caller": "core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_0044e010",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -160,6 +160,32 @@
     },
     "pcode_op_count": 332
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00468340",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00461fe0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00478830",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7907
+    },
+    "nocturne.exe": {
+      "addr": "00453ff0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8346
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -186,115 +212,19 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x358",
-      "severity": "mild",
-      "text": "FUN_005b7fce(*(void **)&this_ptr->field_0x358);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x358",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x358 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x354",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x354 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x110",
-      "severity": "mild",
-      "text": "if ((0 < *(int *)&this_ptr->field_0x110) && (0 < *(int *)&this_ptr->field_0x100)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x100",
-      "severity": "mild",
-      "text": "if ((0 < *(int *)&this_ptr->field_0x110) && (0 < *(int *)&this_ptr->field_0x100)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x110",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x110) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x354",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x354 =",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x354",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x354 +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 22,
-      "match": "field_0x114",
-      "severity": "mild",
-      "text": "*(int *)(*(int *)&this_ptr->field_0x114 + -0x44 + iVar2) + -2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x110",
-      "severity": "mild",
-      "text": "} while (iVar1 < *(int *)&this_ptr->field_0x110);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x100",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x100 * *(int *)&this_ptr->field_0x354 * 0x38);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x354",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x100 * *(int *)&this_ptr->field_0x354 * 0x38);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x358",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x358 = iVar1;",
-      "type": "unnamed_field"
+      "match": "(int *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "*(int *)((int)this_ptr->poly_vert_list->vertices + iVar3 + -0x14) + -2;",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 36,
       "match": "DAT_0265370c",
       "severity": "mild",
-      "text": "core_dmodel_cpp_FUN_0044f840(this_ptr,&DAT_0265370c);",
+      "text": "(this_ptr,(CVector3f *)&DAT_0265370c);",
       "type": "undefined_data"
     }
   ]

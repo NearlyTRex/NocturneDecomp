@@ -7,9 +7,9 @@
 ; CMP3Decoder *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   sound_sndmain.cpp_FUN_00551d20 at 00551dba
-;   sound_sndmain.cpp_FUN_00552350 at 00552436
-;   sound_sndmain.cpp_FUN_00557570 at 00557746
+;   sound_sndmain.cpp_getSampleInfo_FUN_00557570 at 00557746
+;   sound_sndmain.cpp_getSfxSample_FUN_00551d20 at 00551dba
+;   sound_sndmain.cpp_loadStreamingSoundFile_FUN_00552350 at 00552436
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005a28f0

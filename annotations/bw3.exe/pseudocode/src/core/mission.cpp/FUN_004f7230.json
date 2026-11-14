@@ -1,0 +1,222 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 48,
+    "complexity_score": 166,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 26,
+    "suspect_count": 13,
+    "suspect_types": [
+      "stack_param",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 74
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004f7230",
+    "address_range": [
+      [
+        "004f7230",
+        "004f729a"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_mission.cpp_FUN_004f7230",
+    "signature": "void core_mission_cpp_FUN_004f7230(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004f6a80",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_prepareAllActors_FUN_004f6a80"
+    },
+    {
+      "addr": "004f6d70",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_removeAllActors_FUN_004f6d70"
+    },
+    {
+      "addr": "004f6de0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_FUN_004f6de0"
+    },
+    {
+      "addr": "00528d50",
+      "is_variadic": false,
+      "name": "core_script.cpp_CScript_clear_FUN_00528d50"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006039e0",
+      "name": "g_CScriptPtr",
+      "type": "CScript*",
+      "value": "01ed73e0"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.076923076923077,
+    "instruction_count": 39,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 4,
+      "CBRANCH": 2,
+      "COPY": 28,
+      "INT_ADD": 17,
+      "INT_AND": 16,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 16,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 8,
+      "INT_SUB": 15,
+      "LOAD": 9,
+      "POPCOUNT": 8,
+      "RETURN": 1,
+      "STORE": 18
+    },
+    "pcode_op_count": 159
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004fca90",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0051ba60",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "CDemonMission *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "char *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "pacVar2 = in_stack_00000004->set_names;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004->num_sets = 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "cVar1 = *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "cVar1 = in_stack_00000008[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "in_stack_00000008 = in_stack_00000008 + 2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "in_stack_00000008 = in_stack_00000008 + 2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004->current_set_index = 0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "core_mission_cpp_CDemonMission_removeAllActors_FUN_004f6d70(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "core_mission_cpp_CDemonMission_prepareAllActors_FUN_004f6a80(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "in_stack_00000004->current_set_index = -1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 14,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

@@ -32,7 +32,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408870
+;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870
 ;   core_main.c_FUN_004e4330
 ;   crt_stdio.c_fscanf_FUN_005a3230
 ;   crt_string.c__stricmp_FUN_005a3260
@@ -49,8 +49,8 @@ section .text
     SUB ESP,0xcc                        ; 0040b114
     MOV EBX,dword ptr [ESP + 0xe0]      ; 0040b11a
     PUSH EBX                            ; 0040b121
-    CALL core_actor.cpp_FUN_00408870    ; 0040b122
-        ;   XREF to: 00408870 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_FUN_00408870(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870 ; 0040b122
+        ;   XREF to: 00408870 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870(CDemonActor * this_ptr)
     MOV ESI,EAX                         ; 0040b127
     ADD ESP,0x4                         ; 0040b129
     MOV EBP,EAX                         ; 0040b12c
@@ -65,7 +65,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xf0]      ; 0040b146
     PUSH EDX                            ; 0040b14d
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 0040b14e
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005a3230(_FILE * file, char * format)
     ADD ESP,0x10                        ; 0040b153
     MOV EAX,ESP                         ; 0040b156
     PUSH EAX                            ; 0040b158
@@ -119,7 +119,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xf0]      ; 0040b1e7
     PUSH EDX                            ; 0040b1ee
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 0040b1ef
-        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
+        ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005a3230(_FILE * file, char * format)
     ADD ESP,0x10                        ; 0040b1f4
     MOV EAX,ESP                         ; 0040b1f7
     PUSH EAX                            ; 0040b1f9

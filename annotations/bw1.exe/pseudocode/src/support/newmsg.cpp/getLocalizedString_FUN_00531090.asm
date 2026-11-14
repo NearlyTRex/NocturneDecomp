@@ -8,15 +8,15 @@
 ;
 ; XREF[41]:
 ;   core_door.cpp_CDoor_getMoveType_FUN_00478b40 at 00478bc6
-;   core_fldnotes.cpp_FUN_004bbd10 at 004bbeac
-;   core_fldnotes.cpp_FUN_004be0f0 at 004be8d8
+;   core_fldnotes.cpp_CFieldNotes_draw_FUN_004be0f0 at 004be8d8
+;   core_fldnotes.cpp_SNotesEntry_layout_FUN_004bbd10 at 004bbeac
+;   core_game.cpp_CGame_displayActStats_FUN_004d8700 at 004d883d
+;   core_game.cpp_CGame_finishAct_FUN_004d8a90 at 004d8bd3
+;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d280c
 ;   core_game.cpp_CGame_processHotkeys_FUN_004d1a80 at 004d2225
-;   core_game.cpp_FUN_004ccc40 at 004cccac
-;   core_game.cpp_FUN_004ce580 at 004cef37
-;   core_game.cpp_FUN_004cf5e0 at 004cfc20
-;   core_game.cpp_FUN_004d27b0 at 004d280c
-;   core_game.cpp_FUN_004d6420 at 004d66ed
-;   core_game.cpp_FUN_004d6990 at 004d6e12
+;   core_game.cpp_CGame_promptLoadGame_FUN_004d85f0 at 004d8695
+;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004cfc20
+;   core_game.cpp_CGame_showCustomizableKeys_FUN_004ccc40 at 004cccac
 ;   ... and 31 more
 ;
 ; Referenced Globals:

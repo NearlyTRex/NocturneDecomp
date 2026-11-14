@@ -16,13 +16,13 @@ void __cdecl core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00507370(CNetGame
   int iVar3;
   CNetGame *pCVar4;
   
-  if (*(int *)this_ptr != 1) {
+  if (this_ptr->connection_type != CONNECTION_HOST) {
     _DAT_01d71de0 = "..\\core\\netgame.cpp";
     _DAT_01d71de4 = 0x88c;
     core_main_c_FUN_004e4330("CNetGame::gameSettingsChanged - should only call this in server mode");
   }
   _DAT_01da6484 = _DAT_01da6484 + 1;
-  iVar1 = wincore_winrun_cpp_FUN_005806a0();
+  iVar1 = wincore_winrun_cpp_getTime_FUN_005806a0();
   iVar1 = iVar1 / 0x12;
   iVar2 = iVar1 - _DAT_01da6474;
   if (iVar2 < 0) {
@@ -34,17 +34,17 @@ void __cdecl core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_00507370(CNetGame
   iVar3 = 0;
   pCVar4 = this_ptr;
   _DAT_01da6474 = iVar1;
-  if (0 < *(int *)&this_ptr->field_0x1c) {
+  if (0 < this_ptr->player_count) {
     do {
-      if (iVar3 == *(int *)&this_ptr->field_0x124) {
-        *(int *)&pCVar4->field_0x54 = _DAT_01da6484;
+      if (iVar3 == this_ptr->local_player_index) {
+        pCVar4->players[0].player_id = _DAT_01da6484;
       }
       else {
-        *(int *)&pCVar4->field_0x58 = _DAT_01da6478 + iVar2 + -0x1e0000;
+        pCVar4->players[0].last_update_time = (_DAT_01da6478 + iVar2) - 0x1e0000;
       }
       iVar3 = iVar3 + 1;
-      pCVar4 = (CNetGame *)&pCVar4->field_0x80;
-    } while (iVar3 < *(int *)&this_ptr->field_0x1c);
+      pCVar4 = (CNetGame *)&pCVar4->players[0].player_input.action_state.use_item;
+    } while (iVar3 < this_ptr->player_count);
   }
   _DAT_01da6478 = _DAT_01da6478 + iVar2;
   return;

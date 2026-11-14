@@ -21,7 +21,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_baron.cpp_FUN_0040f950 at 0040fc1c
+;   core_baron.cpp_CBaron_process_FUN_0040f950 at 0040fc1c
 ;
 ; Referenced Globals:
 ;   undefined4 g_CCharacterClassInfo.name_hash
@@ -106,7 +106,7 @@ section .text
     MOV ECX,dword ptr [EBX + 0x25718]   ; 0041011e
     PUSH ECX                            ; 00410124
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 00410125
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 0041012a
     TEST EAX,EAX                        ; 0041012d
     JZ 0x00410096                       ; 0041012f

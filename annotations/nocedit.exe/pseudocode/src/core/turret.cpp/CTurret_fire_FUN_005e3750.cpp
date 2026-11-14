@@ -147,7 +147,7 @@ int __cdecl core_turret_cpp_CTurret_fire_FUN_005e3750(CTurret *this_ptr)
       SStack_e0.ammo_type = (this_ptr->base).ammo_type;
       SStack_e0.dismember_prob = 1.0;
       SStack_e0.attacker = (CDemonActor *)this_ptr;
-      SStack_e0.damage_type = DAMAGE_TYPE_IMMUNE|DAMAGE_TYPE_DROWN;
+      SStack_e0.damage_type = DAMAGE_TYPE_ATTACK_BULLET;
       SStack_e0.wielder = (*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr)
       ;
       (*(((this_ptr_00->base).vtable._uc)->_uc).processDamage)(this_ptr_00,&SStack_e0);

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CShadowsc * core_shotgun_cpp_CShadowsc_ctor_FUN_005462c0(CShadowsc *this_ptr)
+; CShadowsc * __cdecl core_shotgun_cpp_CShadowsc_ctor_FUN_005462c0(CShadowsc *this_ptr)
 ;
 ; Parameters:
 ; CShadowsc *      Stack[0x4]:4   this_ptr
@@ -17,7 +17,7 @@
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00488fd0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
-;   core_skeleton.cpp_FUN_0054eae0
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     ADD EAX,0x158                       ; 005462d8
     PUSH EAX                            ; 005462dd
     MOV dword ptr [EAX + -0x4],0x5e4364 ; 005462de
-    CALL core_skeleton.cpp_FUN_0054eae0 ; 005462e5
-        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054eae0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 ; 005462e5
+        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance * this_ptr, char * model_name)
     FLD float ptr [0x005e4350]          ; 005462ea | DAT_005e4350
     FLD float ptr [0x005e4354]          ; 005462f0 | DAT_005e4354
     MOV dword ptr [EBX + 0x326c],0x3f400000 ; 005462f6

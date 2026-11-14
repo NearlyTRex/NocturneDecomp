@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hand_cpp_factoryFuncHand_FUN_005a9bd0(void)
+; CHand * __cdecl core_hand_cpp_factoryFuncHand_FUN_005a9bd0(void)
 ;
 ;
 ; Called Functions:
 ;   core_hand.cpp_CHand_ctor_FUN_005a9c00
-;   crt_unknown.c_FUN_005b8be2
+;   crt_memory.c_operator_new_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x1186c                        ; 005a9bd0
         ;   Label: core_hand.cpp_factoryFuncHand_FUN_005a9bd0
-    CALL crt_unknown.c_FUN_005b8be2     ; 005a9bd5
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 005a9bd5
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 005a9bda
     TEST EAX,EAX                        ; 005a9bdd
     JNZ 0x005a9be2                      ; 005a9bdf

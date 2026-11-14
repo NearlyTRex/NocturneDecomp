@@ -1,0 +1,143 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 19,
+    "complexity_score": 23,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 8,
+    "suspect_count": 1,
+    "suspect_types": [
+      "stack_ref"
+    ],
+    "total_lines": 27
+  },
+  "cross_references": [
+    {
+      "addr": "004eada0",
+      "from_addr": "004eae0b",
+      "name": "core_melee.cpp_FUN_004eada0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0057d870",
+    "address_range": [
+      [
+        "0057d870",
+        "0057d899"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "support_trstream.cpp_COutStream_printf_FUN_0057d870",
+    "signature": "int __cdecl support_trstream_cpp_COutStream_printf_FUN_0057d870(COutStream *this_ptr,char *format,...)"
+  },
+  "function_calls": [
+    {
+      "addr": "0057d8a0",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_COutStream_vprintf_FUN_0057d8a0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004eae0b",
+        "call_type": "direct",
+        "caller": "core_melee.cpp_FUN_004eada0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 6,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.176470588235294,
+    "instruction_count": 17,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 14,
+      "INT_ADD": 7,
+      "INT_AND": 8,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 4,
+      "INT_SUB": 6,
+      "INT_XOR": 1,
+      "LOAD": 4,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 71
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005a14c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005744b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 12,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "COutStream *"
+      },
+      {
+        "is_param": true,
+        "name": "format",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 8,
+      "match": "&stack0x0000000c",
+      "severity": "moderate",
+      "text": "local_8 = &stack0x0000000c;",
+      "type": "stack_ref"
+    }
+  ]
+}

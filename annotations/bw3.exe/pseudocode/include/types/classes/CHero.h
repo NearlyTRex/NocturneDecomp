@@ -2,14 +2,62 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CBoxActor;
+struct CDemonActor;
+struct CDoor;
+struct CLadder;
+struct CLever;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCharacter.h"
+#include "types/classes/CInventory.h"
+#include "types/classes/CPathMap.h"
+#include "types/classes/CVector3f.h"
+#include "types/enums/EAimMode.h"
+#include "types/enums/EGasMaskState.h"
+#include "types/enums/EHeroControlType.h"
+#include "types/enums/EHeroTask.h"
+#include "types/structs/SPlayerInput.h"
+#include "types/unions/UOrientationVector.h"
 
 // Structure: CHero
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x20bcc (134092 bytes)
 #pragma pack(push, 1)
 typedef struct CHero {
+    CCharacter base; // 0x0
+    float invincibility_timer; // 0xcdcc
+    EHeroControlType control_type; // 0xcdd0
+    SPlayerInput player_input; // 0xcdd4
+    CPathMap path_map; // 0xce08
+    EAimMode aim_mode; // 0x206e4
+    CInventory inventory; // 0x206e8
+    EGasMaskState is_wearing_gas_mask; // 0x20b58
+    int is_wearing_goggles; // 0x20b5c, Added in this build
+    int staff_blocked; // 0x20b60, Added in this build
+    int action_pending; // 0x20b64, Added in this build
+    int hero_action; // 0x20b68, Added in this build
+    struct CDemonActor* hero_action_actor; // 0x20b6c, Added in this build
+    struct CDemonActor* hero_action_target; // 0x20b70, Added in this build
+    int hero_action_data; // 0x20b74, Added in this build
+    int hero_action_started; // 0x20b78, Added in this build
+    float hero_action_range; // 0x20b7c, Added in this build
+    int mana; // 0x20b80, Added in this build
+    int bullets; // 0x20b84, Added in this build
+    float light_radius; // 0x20b88, Added in this build
+    struct CDemonActor* aim_target_actor; // 0x20b8c, Added in this build
+    float aim_target_pulse; // 0x20b90, Added in this build
+    struct CDoor* door_to_open; // 0x20b94
+    struct CDemonActor* object_to_pick_up; // 0x20b98
+    struct CBoxActor* pushed_object; // 0x20b9c
+    struct CLever* lever_to_pull; // 0x20ba0
+    struct CLadder* ladder_to_climb; // 0x20ba4
+    struct CDemonActor* nearby_interactive_actor; // 0x20ba8
+    struct CDemonActor* target_actor; // 0x20bac
+    CVector3f target_position; // 0x20bb0
+    UOrientationVector target_orientation; // 0x20bbc
+    EHeroTask ai_task; // 0x20bc8
 } CHero;
 #pragma pack(pop)
 

@@ -16,7 +16,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_0052d0e0 at 0052d2b9
+;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0 at 0052d2b9
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dtrace_cpp_005d1bdb

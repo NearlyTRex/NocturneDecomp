@@ -9,7 +9,7 @@
 void __cdecl support_trisock_cpp_staticInit_FUN_0056f460(void)
 
 {
-  support_trisock_cpp_buildIPAddressOrDie_FUN_0056f510(0x2cfd898,0xff,0xff,0xff,0xff);
+  support_trisock_cpp_buildIPAddressOrDie_FUN_0056f510((uchar *)0x2cfd898,0xff,0xff,0xff,0xff);
   support_trisock_cpp_buildIPAddressOrDie_FUN_0056f510(&DAT_02cfd89c,0,0,0,0);
   return;
 }

@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 106,
+    "complexity_score": 65,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 16,
-    "suspect_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 15,
+    "suspect_count": 4,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_field"
+      "derived_field_index_pun",
+      "negative_offset"
     ],
-    "total_lines": 42
+    "total_lines": 41
   },
   "cross_references": [
     {
@@ -31,9 +31,9 @@
         "0040f391"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_backgnd.cpp_CBackgroundActor_ctor_FUN_0040f330",
-    "signature": "CBackgroundActor * core_backgnd_cpp_CBackgroundActor_ctor_FUN_0040f330(CBackgroundActor *this_ptr)"
+    "signature": "CBackgroundActor * __cdecl core_backgnd_cpp_CBackgroundActor_ctor_FUN_0040f330(CBackgroundActor *this_ptr)"
   },
   "function_calls": [
     {
@@ -94,6 +94,26 @@
     },
     "pcode_op_count": 87
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0040eeb0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004127b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9767
+    },
+    "nocturne.exe": {
+      "addr": "0040fed0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9767
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -112,68 +132,35 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&pCVar1[1].field_0x4);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 13,
+      "line": 11,
       "match": "this_ptr_00[-1].",
       "severity": "mild",
-      "text": "*(byte **)&this_ptr_00[-1].field_0x174 = &g_CBackgroundActorVTable;",
+      "text": "*(CDemonActor_vtable **)(this_ptr_00[-1].model_name + 0xfc) = &g_CBackgroundActorVTable;",
       "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x174",
+      "description": "Negative struct offset (wrong base type)",
+      "line": 16,
+      "match": "this_ptr_00[-1].",
       "severity": "mild",
-      "text": "*(byte **)&this_ptr_00[-1].field_0x174 = &g_CBackgroundActorVTable;",
-      "type": "unnamed_field"
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)0x1;",
+      "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Negative struct offset (wrong base type)",
       "line": 17,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 18,
-      "match": "this_ptr_00[-1].",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[-1].field_0x178 = 1;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[-1].field_0x178 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 19,
       "match": "this_ptr_00[-2].",
       "severity": "mild",
-      "text": "return (CBackgroundActor *)&this_ptr_00[-2].field_0x40;",
+      "text": "return (CBackgroundActor *)(this_ptr_00[-2].part_visibility_flags + 0x10);",
       "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "return (CBackgroundActor *)&this_ptr_00[-2].field_0x40;",
-      "type": "unnamed_field"
+      "description": "'pCVar1[1].actor_name + 4' walks 1 x sizeof(CDemonActor) (0x2b4) + offsetof(actor_name) (0x0) + 0x4 = 0x2b8, which is exactly offsetof(CActorDestination, dest_class). Ghidra had no CActorDestination type here and reached the field by index arithmetic; write it as ((CActorDestination *)pCVar1)->dest_class (\u00a7de-pun/\u00a712). Ambiguous: CBackgroundActor::model, CBat::course_filename[4], CBodyPart::bounding_box also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 10,
+      "severity": "moderate",
+      "text": "((CKeyFramedModelInstance *)(pCVar1[1].actor_name + 4));",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

@@ -16,18 +16,18 @@ CBat * __cdecl core_bat_cpp_CBat_ctor_FUN_00410fd0(CBat *this_ptr)
   char *pcVar4;
   char *pcVar5;
   
-  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00408790((CDemonActor *)this_ptr);
-  pCVar3 = core_course_cpp_CCourse_ctor_FUN_00438a50((CCourse *)&pCVar2[1].field_0x20);
+  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00408790(&this_ptr->base);
+  pCVar3 = core_course_cpp_CCourse_ctor_FUN_00438a50((CCourse *)&pCVar2[1].location);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80
-                          ((CKeyFramedModelInstance *)(pCVar3 + 0x10));
-  *(byte **)&this_ptr_00[-1].field_0x148 = &g_CBatVTable;
-  *(uint *)&this_ptr_00[-1].field_0x178 = 0;
-  *(uint *)(this_ptr_00 + 1) = 0;
+                          ((CKeyFramedModelInstance *)&pCVar3[1].frames);
+  *(CDemonActor_vtable **)(this_ptr_00[-1].model_name + 0xd0) = &g_CBatVTable;
+  this_ptr_00[-1].model_ptr = (CKeyFramedModel *)0x0;
+  this_ptr_00[1].part_visibility_flags[0] = 0;
   pcVar4 = "batpath.pth";
-  *(uint *)&this_ptr_00[1].field_0x4 = 0x41f00000;
-  *(uint *)&this_ptr_00[1].field_0x8 = 0x3f800000;
-  pcVar5 = &this_ptr_00[-1].field_0x14c;
-  *(uint *)&this_ptr_00[1].field_0xc = 0x41f00000;
+  this_ptr_00[1].part_visibility_flags[1] = 0x41f00000;
+  this_ptr_00[1].part_visibility_flags[2] = 0x3f800000;
+  pcVar5 = this_ptr_00[-1].model_name + 0xd4;
+  this_ptr_00[1].part_visibility_flags[3] = 0x41f00000;
   do {
     cVar1 = *pcVar4;
     *pcVar5 = cVar1;
@@ -38,9 +38,15 @@ CBat * __cdecl core_bat_cpp_CBat_ctor_FUN_00410fd0(CBat *this_ptr)
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70(this_ptr_00,(char *)0x5cb667);
-  this_ptr_00[1].field_0x10 = 0;
-  *(uint *)&this_ptr_00[1].field_0x74 = 0x41700000;
-  *(uint *)&this_ptr_00[1].field_0x78 = 0x41f00000;
-  *(uint *)&this_ptr_00[1].field_0x80 = 0;
-  return (CBat *)&this_ptr_00[-2].field_0x14;
+  *(byte *)(this_ptr_00[1].part_visibility_flags + 4) = 0;
+  this_ptr_00[1].part_visibility_flags[0x1d] = 0x41700000;
+  this_ptr_00[1].model_name[0] = '\0';
+  this_ptr_00[1].model_name[1] = '\0';
+  this_ptr_00[1].model_name[2] = -0x10;
+  this_ptr_00[1].model_name[3] = 'A';
+  this_ptr_00[1].model_name[8] = '\0';
+  this_ptr_00[1].model_name[9] = '\0';
+  this_ptr_00[1].model_name[10] = '\0';
+  this_ptr_00[1].model_name[0xb] = '\0';
+  return (CBat *)(this_ptr_00[-2].part_visibility_flags + 5);
 }

@@ -105,7 +105,7 @@ LAB_005ca148:
   }
   else {
     local_40[iVar6] = 0;
-    unkafter_zombie_cpp_FUN_005cca6c();
+    FUN_005cca6c();
     if (iVar7 != 0) {
       FUN_005c44f0(&local_2c,iVar7);
     }

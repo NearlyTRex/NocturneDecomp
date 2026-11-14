@@ -18,7 +18,7 @@
     {
       "addr": "00436600",
       "from_addr": "00436923",
-      "name": "core_chain.cpp_FUN_00436600",
+      "name": "core_chain.cpp_CChain_renderTransparent_FUN_00436600",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -28,27 +28,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004af9f0",
+      "from_addr": "004afb7d",
+      "name": "core_fire.cpp_CGlassParticle_render_FUN_004af9f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004b4370",
       "from_addr": "004b4645",
       "name": "core_fire.cpp_CPopcorn_render_FUN_004b4370",
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004b46e0",
+      "from_addr": "004b49ef",
+      "name": "core_fire.cpp_CRainDrop_render_FUN_004b46e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004ac0b0",
       "from_addr": "004ac374",
       "name": "core_fire.cpp_CSmokeParticle_render_FUN_004ac0b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004af9f0",
-      "from_addr": "004afb7d",
-      "name": "core_fire.cpp_FUN_004af9f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004b46e0",
-      "from_addr": "004b49ef",
-      "name": "core_fire.cpp_FUN_004b46e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -60,7 +60,7 @@
     {
       "addr": "005ae890",
       "from_addr": "005aeabb",
-      "name": "core_weather.cpp_FUN_005ae890",
+      "name": "core_weather.cpp_CWeather_renderParticles_FUN_005ae890",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -173,7 +173,7 @@
       {
         "call_addr": "005aeabb",
         "call_type": "direct",
-        "caller": "core_weather.cpp_FUN_005ae890",
+        "caller": "core_weather.cpp_CWeather_renderParticles_FUN_005ae890",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -184,7 +184,7 @@
       {
         "call_addr": "004b49ef",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004b46e0",
+        "caller": "core_fire.cpp_CRainDrop_render_FUN_004b46e0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -206,7 +206,7 @@
       {
         "call_addr": "004afb7d",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004af9f0",
+        "caller": "core_fire.cpp_CGlassParticle_render_FUN_004af9f0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -239,7 +239,7 @@
       {
         "call_addr": "00436923",
         "call_type": "direct",
-        "caller": "core_chain.cpp_FUN_00436600",
+        "caller": "core_chain.cpp_CChain_renderTransparent_FUN_00436600",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -250,7 +250,7 @@
       {
         "call_addr": "00436964",
         "call_type": "direct",
-        "caller": "core_chain.cpp_FUN_00436600",
+        "caller": "core_chain.cpp_CChain_renderTransparent_FUN_00436600",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -295,6 +295,32 @@
       "STORE": 12
     },
     "pcode_op_count": 199
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005317c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00538400",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0056e110",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0050bb50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 24,

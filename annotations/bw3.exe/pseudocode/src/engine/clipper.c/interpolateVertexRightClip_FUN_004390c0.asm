@@ -1,12 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_clipper_c_interpolateVertexRightClip_FUN_004390c0(int *param_1,int *param_2,int *param_3)
+; void __cdecl engine_clipper_c_interpolateVertexRightClip_FUN_004390c0(SRenderVertex *v1,SRenderVertex *v2,SRenderVertex *output)
 ;
+; Parameters:
+; SRenderVertex *  Stack[0x4]:4   v1
+; SRenderVertex *  Stack[0x8]:4   v2
+; SRenderVertex *  Stack[0xc]:4   output
 ;
 ; XREF[5]:
-;   engine_3d.c_FUN_00407b30 at 00407b71
-;   engine_3d.c_FUN_00407e30 at 00407e71
+;   engine_3d.c_clipAndDrawLine2D_FUN_00407b30 at 00407b71
+;   engine_3d.c_clipAndDrawLine3D_FUN_00407e30 at 00407e71
 ;   engine_clipper.c_clipPolygonRightPlane_FUN_004395e0 at 004396a1
 ;   engine_clipper.c_clipPolygonToViewFrustum_FUN_00439da0 at 0043a361
 ;   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046d550 at 0046d5e4

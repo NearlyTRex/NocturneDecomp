@@ -19,7 +19,7 @@ int engine_3d_c_renderPolygonSolidTexturedClampedOp51_FUN_004060e0(int param_1)
   int iStack_c;
   
   piVar4 = (int *)(param_1 + 0x18);
-  iVar1 = engine_3d_c_isVisiblePlane_FUN_00403920(param_1 + 8);
+  iVar1 = engine_3d_c_isVisiblePlane_FUN_00403920((SClipPlane *)(param_1 + 8));
   if (iVar1 != 0) {
     if (_DAT_01c6e2a0 == 0) {
       if (DAT_005fba20 == 0x20) {

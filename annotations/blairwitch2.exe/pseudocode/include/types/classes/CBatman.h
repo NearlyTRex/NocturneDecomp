@@ -4,13 +4,20 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CBatman
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x10bb4 (68532 bytes)
 #pragma pack(push, 1)
 typedef struct CBatman {
-    char field_0[68532]; // 0x0
+    CEnemy base; // 0x0
+    char fall_event[100]; // 0x10af8
+    int part_indices[14]; // 0x10b5c
+    int mist_state; // 0x10b94
+    float vanish_timer; // 0x10b98
+    CVector3f new_pos; // 0x10b9c
+    uint sfx_handles[3]; // 0x10ba8
 } CBatman;
 #pragma pack(pop)
 

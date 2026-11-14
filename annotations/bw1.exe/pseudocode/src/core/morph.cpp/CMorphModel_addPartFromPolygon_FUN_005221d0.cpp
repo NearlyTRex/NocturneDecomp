@@ -11,55 +11,51 @@
 void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_005221d0(CMorphModel *this_ptr,int vertex_count,CVector3i *vertex_data,int poly_count,SMRGLHeaderPrimitive *poly_data,int poly_stride,SMRGLTextureModel *texture_list,int *texture_index_list)
 
 {
-  SMRGLHeaderPrimitive *pSVar1;
+  SMRGLHeaderBasic *pSVar1;
   int iVar2;
-  void *pvVar3;
-  int iVar4;
-  SMRGLHeaderPrimitive *pSVar5;
+  SMorphPoint *pSVar3;
+  SMRGLPrimitiveTriangle *pSVar4;
+  int iVar5;
+  SMRGLHeaderPrimitive *pSVar6;
   
-  if (4 < *(int *)this_ptr) {
+  if (4 < this_ptr->part_count) {
     _DAT_01d1d400 = "..\\core\\morph.cpp";
     _DAT_01d1d404 = 0x77;
     core_main_c_FUN_005030e0("CMorphModel::addPart - too many parts!");
   }
-  iVar4 = 0;
-  pSVar5 = poly_data;
+  iVar5 = 0;
+  pSVar6 = poly_data;
   for (iVar2 = poly_count; 0 < iVar2; iVar2 = iVar2 + -1) {
-    pSVar1 = pSVar5 + 4;
-    pSVar5 = pSVar5 + poly_stride;
-    iVar4 = iVar4 + *(int *)pSVar1 + -2;
+    pSVar1 = &pSVar6->base;
+    pSVar6 = (SMRGLHeaderPrimitive *)((int)&(pSVar6->base).type + poly_stride);
+    iVar5 = iVar5 + pSVar1->count + -2;
   }
-  *(uint *)(&this_ptr->field_0xc + *(int *)this_ptr * 0x10) =
-       *(uint *)&this_ptr->field_0x54;
-  *(int *)(&this_ptr->field_0x4 + *(int *)this_ptr * 0x10) = vertex_count;
-  *(uint *)(&this_ptr->field_0x10 + *(int *)this_ptr * 0x10) =
-       *(uint *)&this_ptr->field_0x5c;
-  *(int *)(&this_ptr->field_0x8 + *(int *)this_ptr * 0x10) = iVar4;
-  *(int *)&this_ptr->field_0x54 =
-       *(int *)&this_ptr->field_0x54 + *(int *)(&this_ptr->field_0x4 + *(int *)this_ptr * 0x10);
-  *(int *)&this_ptr->field_0x5c =
-       *(int *)&this_ptr->field_0x5c + *(int *)(&this_ptr->field_0x8 + *(int *)this_ptr * 0x10);
-  pvVar3 = realloc
-                     (*(void **)&this_ptr->field_0x58,*(int *)&this_ptr->field_0x54 << 4);
-  *(void **)&this_ptr->field_0x58 = pvVar3;
-  pvVar3 = realloc
-                     (*(void **)&this_ptr->field_0x60,*(int *)&this_ptr->field_0x5c * 0x3c);
-  *(void **)&this_ptr->field_0x60 = pvVar3;
-  *(int *)this_ptr = *(int *)this_ptr + 1;
-  if ((*(int *)&this_ptr->field_0x58 == 0) || (*(int *)&this_ptr->field_0x60 == 0)) {
+  this_ptr->parts[this_ptr->part_count].start_vertex = this_ptr->num_points;
+  this_ptr->parts[this_ptr->part_count].vertex_count = vertex_count;
+  this_ptr->parts[this_ptr->part_count].start_face = this_ptr->num_faces;
+  this_ptr->parts[this_ptr->part_count].face_count = iVar5;
+  this_ptr->num_points = this_ptr->num_points + this_ptr->parts[this_ptr->part_count].vertex_count;
+  this_ptr->num_faces = this_ptr->num_faces + this_ptr->parts[this_ptr->part_count].face_count;
+  pSVar3 = (SMorphPoint *)realloc(this_ptr->points,this_ptr->num_points << 4);
+  this_ptr->points = pSVar3;
+  pSVar4 = (SMRGLPrimitiveTriangle *)realloc(this_ptr->faces,this_ptr->num_faces * 0x3c);
+  this_ptr->faces = pSVar4;
+  this_ptr->part_count = this_ptr->part_count + 1;
+  if ((this_ptr->points == (SMorphPoint *)0x0) || (this_ptr->faces == (SMRGLPrimitiveTriangle *)0x0)
+     ) {
     _DAT_01d1d400 = "..\\core\\morph.cpp";
     _DAT_01d1d404 = 0x90;
     core_main_c_FUN_005030e0("CMorphModel::setup - out of memory!");
   }
   if (vertex_data != (CVector3i *)0x0) {
     core_morph_cpp_CMorphModel_animateFromVertexBuffer_FUN_00522540
-              (this_ptr,*(int *)this_ptr + -1,vertex_data,0,vertex_count);
+              (this_ptr,this_ptr->part_count + -1,vertex_data,0,vertex_count);
   }
   if (poly_data == (SMRGLHeaderPrimitive *)0x0) {
     return;
   }
   core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_005226e0
-            (this_ptr,*(int *)this_ptr + -1,poly_data,poly_stride,texture_list,texture_index_list,0,
-             poly_count);
+            (this_ptr,this_ptr->part_count + -1,poly_data,poly_stride,texture_list,
+             texture_index_list,0,poly_count);
   return;
 }

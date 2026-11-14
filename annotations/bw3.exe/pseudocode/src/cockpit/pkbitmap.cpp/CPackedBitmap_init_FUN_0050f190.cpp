@@ -13,7 +13,7 @@ CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_init_FUN_0050f190(CPa
   
   cockpit_pkbitmap_cpp_CPackedBitmap_reset_FUN_0050f200(this_ptr);
   memset(this_ptr,0,0x14);
-  cockpit_pkbitmap_cpp_FUN_0050f910
+  cockpit_pkbitmap_cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0050f910
             (this_ptr,(char *)width,height,transparency_color,apply_palette_flag,in_stack_0000001c);
   return this_ptr;
 }

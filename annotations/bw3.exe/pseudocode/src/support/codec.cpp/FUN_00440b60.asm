@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool support_codec_cpp_FUN_00440b60(int *param_1,undefined4 param_2,int *param_3)
+; bool support_codec_cpp_FUN_00440b60(int *param_1,char *param_2,int *param_3)
 ;
 ;
 ; Called Functions:
+;   support_trstream.cpp_COutStreamMemory_ctorOpen_FUN_00574ac0
 ;   support_trstream.cpp_COutStreamMemory_dtor_FUN_00574b50
-;   support_trstream.cpp_FUN_00574ac0
-;   support_trstream.cpp_FUN_00574d00
+;   support_trstream.cpp_COutStreamMemory_tell_FUN_00574d00
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     PUSH ECX                            ; 00440b72
     LEA EAX,[ESP + 0x8]                 ; 00440b73
     PUSH EAX                            ; 00440b77
-    CALL support_trstream.cpp_FUN_00574ac0 ; 00440b78
-        ;   XREF to: 00574ac0 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_00574ac0()
+    CALL support_trstream.cpp_COutStreamMemory_ctorOpen_FUN_00574ac0 ; 00440b78
+        ;   XREF to: 00574ac0 (UNCONDITIONAL_CALL)  ; COutStreamMemory * support_trstream.cpp_COutStreamMemory_ctorOpen_FUN_00574ac0(COutStreamMemory * this_ptr, char * buffer, int capacity)
     ADD ESP,0xc                         ; 00440b7d
     MOV EAX,ESP                         ; 00440b80
     PUSH EAX                            ; 00440b82
@@ -40,8 +40,8 @@ section .text
     MOV EBX,EAX                         ; 00440b94
     MOV EAX,ESP                         ; 00440b96
     PUSH EAX                            ; 00440b98
-    CALL support_trstream.cpp_FUN_00574d00 ; 00440b99
-        ;   XREF to: 00574d00 (UNCONDITIONAL_CALL)  ; undefined support_trstream.cpp_FUN_00574d00()
+    CALL support_trstream.cpp_COutStreamMemory_tell_FUN_00574d00 ; 00440b99
+        ;   XREF to: 00574d00 (UNCONDITIONAL_CALL)  ; undefined4 support_trstream.cpp_COutStreamMemory_tell_FUN_00574d00(COutStreamMemory * this_ptr)
     MOV EBP,dword ptr [ESI]             ; 00440b9e
     SUB EBP,EAX                         ; 00440ba0
     ADD ESP,0x4                         ; 00440ba2

@@ -1,12 +1,12 @@
 // Name: core_trap.cpp_staticInit_FUN_005763f0
 // Address: 005763f0
 // Address Range: [[005763f0, 00576413]]
-// Convention: unknown
-// Signature: void core_trap_cpp_staticInit_FUN_005763f0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_trap_cpp_staticInit_FUN_005763f0(void)
 
 #include "nocturne.h"
 
-void core_trap_cpp_staticInit_FUN_005763f0(void)
+void __cdecl core_trap_cpp_staticInit_FUN_005763f0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450

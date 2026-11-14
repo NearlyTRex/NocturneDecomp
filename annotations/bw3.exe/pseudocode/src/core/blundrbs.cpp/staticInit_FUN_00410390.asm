@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_blundrbs_cpp_staticInit_FUN_00410390(void)
+; void __cdecl core_blundrbs_cpp_staticInit_FUN_00410390(void)
 ;
 ;
 ; Called Functions:

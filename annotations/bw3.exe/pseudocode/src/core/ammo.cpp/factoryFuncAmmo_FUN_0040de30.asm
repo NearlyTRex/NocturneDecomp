@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_ammo_cpp_factoryFuncAmmo_FUN_0040de30(void)
+; CAmmo * __cdecl core_ammo_cpp_factoryFuncAmmo_FUN_0040de30(void)
 ;
 ;
 ; XREF[1]:
@@ -9,7 +9,7 @@
 ;
 ; Called Functions:
 ;   core_ammo.cpp_CAmmo_ctor_FUN_0040de60
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_memory.c_operator_new_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -17,8 +17,8 @@ section .text
 
     PUSH 0x320                          ; 0040de30
         ;   Label: core_ammo.cpp_factoryFuncAmmo_FUN_0040de30
-    CALL crt_unknown.c_FUN_005a3cb2     ; 0040de35
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_memory.c_operator_new_FUN_005a3cb2 ; 0040de35
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005a3cb2()
     ADD ESP,0x4                         ; 0040de3a
     TEST EAX,EAX                        ; 0040de3d
     JNZ 0x0040de42                      ; 0040de3f

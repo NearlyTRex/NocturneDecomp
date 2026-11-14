@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 65,
+    "complexity_score": 40,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 25,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_field"
+      "negative_offset"
     ],
     "total_lines": 84
   },
@@ -24,9 +23,9 @@
         "0051f534"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_mobster.cpp_CMobster_dtor_FUN_0051f4b0",
-    "signature": "CMobster * core_mobster_cpp_CMobster_dtor_FUN_0051f4b0(CMobster *this_ptr,uint flags)"
+    "signature": "CMobster * __cdecl core_mobster_cpp_CMobster_dtor_FUN_0051f4b0(CMobster *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -35,9 +34,14 @@
       "name": "core_actor.cpp_CDemonActor_dtor_FUN_00408730"
     },
     {
+      "addr": "0040ee30",
+      "is_variadic": false,
+      "name": "core_armour.cpp_FUN_0040ee30"
+    },
+    {
       "addr": "00441ca0",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_00441ca0"
+      "name": "core_cloth.cpp_CClothList_dtor_FUN_00441ca0"
     },
     {
       "addr": "005673f0",
@@ -58,11 +62,6 @@
       "addr": "005c0344",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005c0344"
-    },
-    {
-      "addr": "0040ee30",
-      "is_variadic": false,
-      "name": "unkafter_armour.cpp_FUN_0040ee30"
     }
   ],
   "globals": [
@@ -106,6 +105,26 @@
     },
     "pcode_op_count": 207
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005004f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9495
+    },
+    "nocedit.exe": {
+      "addr": "00527c70",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8624
+    },
+    "nocturne.exe": {
+      "addr": "004dcac0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8624
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -131,34 +150,18 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x35dc",
-      "severity": "mild",
-      "text": "iVar1 = unkafter_armour_cpp_FUN_0040ee30(&this_ptr->field_0x35dc,0);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 23,
+      "line": 22,
       "match": "pCVar3[-1].",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)&pCVar3[-1].field_0x224c,1);",
+      "text": "((CDemonActor *)(pCVar3[-1].part_data.texture_set_indices + 7),1);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x224c",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)&pCVar3[-1].field_0x224c,1);",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CMobster",
         "offset": 208,
         "vtable_addr": "00603d74"
       },

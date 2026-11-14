@@ -2,28 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 324,
-    "complexity_score": 368,
+    "complexity_score": 231,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 128,
-    "suspect_count": 21,
+    "pseudocode_lines": 126,
+    "suspect_count": 8,
     "suspect_types": [
       "raw_address_pointer_store",
       "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_field",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 452
+    "total_lines": 450
   },
   "cross_references": [
     {
       "addr": "004b6170",
       "from_addr": "004b64dc",
-      "name": "core_game.cpp_FUN_004b6170",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -70,7 +69,7 @@
     {
       "addr": "005b7790",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7790"
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
     },
     {
       "addr": "004032b0",
@@ -90,12 +89,12 @@
     {
       "addr": "00589560",
       "is_variadic": false,
-      "name": "wincore_wddvmem.cpp_FUN_00589560"
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00589560"
     },
     {
       "addr": "0058e9e0",
       "is_variadic": false,
-      "name": "wincore_winrun.cpp_FUN_0058e9e0"
+      "name": "wincore_winrun.cpp_getTime_FUN_0058e9e0"
     }
   ],
   "globals": [
@@ -214,7 +213,7 @@
       {
         "call_addr": "004b64dc",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b6170",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -225,7 +224,7 @@
       {
         "call_addr": "004b64f5",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b6170",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -316,6 +315,32 @@
       "SUBPIECE": 2
     },
     "pcode_op_count": 1252
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0052cf90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8178
+    },
+    "bw3.exe": {
+      "addr": "00504890",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005401e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8178
+    },
+    "nocturne.exe": {
+      "addr": "004ea370",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8178
+    }
   },
   "stack_frame": {
     "frame_size": 420,
@@ -444,120 +469,16 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x4 = 2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x5c",
-      "severity": "mild",
-      "text": "*(int *)(&this_ptr->field_0x5c + *(int *)&this_ptr->field_0x124 * 0x80) = sync_stage;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x124",
-      "severity": "mild",
-      "text": "*(int *)(&this_ptr->field_0x5c + *(int *)&this_ptr->field_0x124 * 0x80) = sync_stage;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "local_1c = &this_ptr->field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 55,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x1c) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 58,
-      "match": "field_0x5c",
-      "severity": "mild",
-      "text": "if (*(int *)&pCVar3->field_0x5c < sync_stage) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 61,
+      "line": 60,
       "match": "DAT_005e070f",
       "severity": "mild",
-      "text": "FUN_005b7790(local_194,&DAT_005e070f,*(uint *)&pCVar3->field_0x5c);",
+      "text": "_sprintf(local_194,&DAT_005e070f);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 61,
-      "match": "field_0x5c",
-      "severity": "mild",
-      "text": "FUN_005b7790(local_194,&DAT_005e070f,*(uint *)&pCVar3->field_0x5c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 67,
-      "match": "field_0x80",
-      "severity": "mild",
-      "text": "pCVar3 = (CNetGame *)&pCVar3->field_0x80;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 68,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "} while (local_14 < *(int *)&this_ptr->field_0x1c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 88,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x1c) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 90,
-      "match": "field_0x5c",
-      "severity": "mild",
-      "text": "if (*(int *)&pCVar3->field_0x5c < sync_stage) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 98,
-      "match": "field_0x80",
-      "severity": "mild",
-      "text": "pCVar3 = (CNetGame *)&pCVar3->field_0x80;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 99,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "} while (iVar1 < *(int *)&this_ptr->field_0x1c);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 102,
+      "line": 100,
       "match": "*(code **)(*0x01D02F84",
       "severity": "moderate",
       "text": "iVar1 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,1);",
@@ -565,7 +486,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 102,
+      "line": 100,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar1 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,1);",
@@ -573,7 +494,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 119,
+      "line": 117,
       "match": "*(code **)(*0x01D02F84",
       "severity": "moderate",
       "text": "iVar1 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,1);",
@@ -581,26 +502,26 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 119,
+      "line": 117,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar1 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,1);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar3->owner`). Replace `pCVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 67,
-      "match": "pCVar3 = (T *)&pCVar3->FIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar3->vertices[0].a`). Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 66,
+      "match": "pCVar3 = (T *)&pCVar3->FIELD[N].SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar3 = (CNetGame *)&pCVar3->field_0x80;",
+      "text": "pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.light;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar3->owner`). Replace `pCVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 98,
-      "match": "pCVar3 = (T *)&pCVar3->FIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar3->vertices[0].a`). Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 96,
+      "match": "pCVar3 = (T *)&pCVar3->FIELD[N].SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar3 = (CNetGame *)&pCVar3->field_0x80;",
+      "text": "pCVar3 = (CNetGame *)&pCVar3->players[0].player_input.action_state.light;",
       "type": "shadow_pointer_walk"
     }
   ]

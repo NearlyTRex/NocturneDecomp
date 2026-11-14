@@ -7,8 +7,8 @@
 ; CScript *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_script.cpp_CScript_FUN_004fe500 at 004fe512
 ;   core_script.cpp_CScript_buildParsedLines_FUN_004fee30 at 004fee3c
+;   core_script.cpp_CScript_clear_FUN_004fe500 at 004fe512
 ;
 ; Called Functions:
 ;   crt_memory.c_free_FUN_005638d0

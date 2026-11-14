@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 128,
     "complexity_score": 73,
-    "cross_reference_count": 18,
+    "cross_reference_count": 19,
     "function_call_count": 0,
     "global_count": 16,
     "max_suspect_severity": "clean",
@@ -95,6 +95,12 @@
       "addr": "0052ae90",
       "from_addr": "0052af1a",
       "name": "sound_snddx.cpp_CDirectSoundDevice_unlockSample_FUN_0052ae90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00529bb0",
+      "from_addr": "00529bce",
+      "name": "sound_snddx.cpp_checkDirectSoundError_FUN_00529bb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -234,7 +240,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 39,
+    "call_site_count": 40,
     "call_sites": [
       {
         "call_addr": "0052bf67",
@@ -374,6 +380,14 @@
       "RETURN": 20
     },
     "pcode_op_count": 258
+  },
+  "siblings": {
+    "nocedit.exe": {
+      "addr": "005ade70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 8,

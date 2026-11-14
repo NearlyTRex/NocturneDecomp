@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 57,
+    "complexity_score": 11,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 12,
-    "suspect_count": 4,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 32
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 31
   },
   "cross_references": [
     {
@@ -30,9 +28,9 @@
         "0040e2a1"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_ammo.cpp_CAmmoManaLarge_ctor_FUN_0040e260",
-    "signature": "CAmmoManaLarge * core_ammo_cpp_CAmmoManaLarge_ctor_FUN_0040e260(CAmmoManaLarge *this_ptr)"
+    "signature": "CAmmoManaLarge * __cdecl core_ammo_cpp_CAmmoManaLarge_ctor_FUN_0040e260(CAmmoManaLarge *this_ptr)"
   },
   "function_calls": [
     {
@@ -55,9 +53,9 @@
     },
     {
       "addr": "005db2f4",
-      "name": "g_CAmmo_ManaLargeVTable",
-      "type": "void*",
-      "value": "0040def0"
+      "name": "g_CAmmoManaLargeVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -117,40 +115,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "*(byte ***)&pCVar1->field_0x154 = &g_CAmmo_ManaLargeVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&pCVar1->field_0x158,\"mana_lg.kfm\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x318",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x318 = 10;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x314",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x314 = 0x32;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

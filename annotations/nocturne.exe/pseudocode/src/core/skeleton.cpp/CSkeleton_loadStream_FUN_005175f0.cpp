@@ -22,7 +22,7 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_005175f0(CSkeleton *this
   int local_18;
   float *local_14;
   
-  core_skeleton_cpp_CSkeleton_FUN_005174e0(this_ptr);
+  core_skeleton_cpp_CSkeleton_free_FUN_005174e0(this_ptr);
   local_24 = -1;
   do {
     iVar1 = _fgetc(file_handle);

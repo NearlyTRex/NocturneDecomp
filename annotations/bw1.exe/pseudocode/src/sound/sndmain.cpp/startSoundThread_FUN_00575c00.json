@@ -1,0 +1,244 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 72,
+    "complexity_score": 70,
+    "cross_reference_count": 2,
+    "function_call_count": 4,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 30,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unknown_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 102
+  },
+  "cross_references": [
+    {
+      "addr": "00577b60",
+      "from_addr": "00577be9",
+      "name": "sound_snddx.cpp_FUN_00577b60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057a7f0",
+      "from_addr": "0057a88b",
+      "name": "sound_sndwav.cpp_CWavOutDevice_start_FUN_0057a7f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00575c00",
+    "address_range": [
+      [
+        "00575c00",
+        "00575c9d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "sound_sndmain.cpp_startSoundThread_FUN_00575c00",
+    "signature": "int __cdecl sound_sndmain_cpp_startSoundThread_FUN_00575c00(double latency_seconds)"
+  },
+  "function_calls": [
+    {
+      "addr": "00575ca0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSoundThread_FUN_00575ca0"
+    },
+    {
+      "addr": "005b37d0",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_createThread_FUN_005b37d0"
+    },
+    {
+      "addr": "005b3800",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_setThreadPriority_FUN_005b3800"
+    },
+    {
+      "addr": "005b3860",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_sleep_FUN_005b3860"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f4398",
+      "name": "DAT_005f4398",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c807dc",
+      "name": "DAT_02c807dc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c807e0",
+      "name": "DAT_02c807e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c807e4",
+      "name": "DAT_02c807e4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00577be9",
+        "call_type": "direct",
+        "caller": "sound_snddx.cpp_FUN_00577b60",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0057a88b",
+        "call_type": "direct",
+        "caller": "sound_sndwav.cpp_CWavOutDevice_start_FUN_0057a7f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 8,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.763636363636364,
+    "instruction_count": 55,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 1,
+      "CALL": 4,
+      "CBRANCH": 7,
+      "COPY": 67,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT_ADD": 14,
+      "INT_AND": 36,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 27,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 13,
+      "INT_SUB": 15,
+      "INT_XOR": 2,
+      "INT_ZEXT": 4,
+      "LOAD": 10,
+      "POPCOUNT": 13,
+      "RETURN": 2,
+      "STORE": 13
+    },
+    "pcode_op_count": 262
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005531d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00558d70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005abc00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8727
+    },
+    "nocturne.exe": {
+      "addr": "005286d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8727
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "latency_seconds",
+        "offset": 4,
+        "size": 8,
+        "type": "double"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00575c05",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 12,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "_DAT_02c807dc = latency_seconds._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 13,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "if (latency_seconds._0_4_ < (float)_DAT_005f4398) {",
+      "type": "unknown_field"
+    }
+  ]
+}

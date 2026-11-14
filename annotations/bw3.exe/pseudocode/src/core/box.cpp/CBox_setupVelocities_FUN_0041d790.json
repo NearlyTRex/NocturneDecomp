@@ -2,25 +2,28 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 119,
+    "complexity_score": 176,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 34,
-    "suspect_count": 7,
+    "pseudocode_lines": 36,
+    "suspect_count": 11,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_field"
+      "unrolled_memcpy",
+      "warning_type_propagation"
     ],
-    "total_lines": 109
+    "total_lines": 111
   },
   "cross_references": [
     {
       "addr": "00415740",
       "from_addr": "00415793",
-      "name": "core_bodypart.cpp_FUN_00415740",
+      "name": "core_bodypart.cpp_CBodyPart_onDropped_FUN_00415740",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -38,7 +41,7 @@
     {
       "addr": "0049cee0",
       "from_addr": "0049cfe9",
-      "name": "core_fire.cpp_FUN_0049cee0",
+      "name": "core_fire.cpp_CToss_create_FUN_0049cee0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -68,7 +71,7 @@
       {
         "call_addr": "0049cfe9",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049cee0",
+        "caller": "core_fire.cpp_CToss_create_FUN_0049cee0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -90,7 +93,7 @@
       {
         "call_addr": "00415793",
         "call_type": "direct",
-        "caller": "core_bodypart.cpp_FUN_00415740",
+        "caller": "core_bodypart.cpp_CBodyPart_onDropped_FUN_00415740",
         "estimated_params": 3,
         "instructions_analyzed": 12,
         "method": "push_count",
@@ -141,6 +144,32 @@
       "STORE": 19
     },
     "pcode_op_count": 264
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "005b4610",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00420450",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00420180",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8889
+    },
+    "nocturne.exe": {
+      "addr": "0041cb40",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8889
+    }
   },
   "stack_frame": {
     "frame_size": 56,
@@ -202,60 +231,92 @@
   },
   "suspects": [
     {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 6,
-      "match": "auStackY_1010",
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
       "severity": "moderate",
-      "text": "uint auStackY_1010 [1016];",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 8,
+      "match": "afStackY_1010",
+      "severity": "moderate",
+      "text": "float afStackY_1010 [1016];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)(this_ptr + 0x44) = *(uint *)&linear_velocity->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)(this_ptr + 0x48) = *(uint *)&linear_velocity->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 20,
-      "match": "&stack0xffffffdc",
+      "line": 23,
+      "match": "&stack0xffffffe8",
       "severity": "moderate",
-      "text": "local_18[(uint)bVar1 * -2] = *(uint *)(&stack0xffffffdc + (uint)bVar1 * -8);",
+      "text": "(&stack0xffffffe8)[(uint)bVar1 * 0xfffffffe] =",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 22,
+      "line": 24,
+      "match": "&stack0xffffffdc",
+      "severity": "moderate",
+      "text": "(float)*(uint *)(&stack0xffffffdc + (uint)bVar1 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 25,
+      "match": "&stack0xffffffec",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar1 * -8 + (uint)bVar1 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 26,
       "match": "&stack0xffffffe0",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar1 * -8 + (uint)bVar1 * -8);",
       "type": "stack_ref"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)(this_ptr + 0x74) = *(uint *)&angular_velocity->field_0x4;",
-      "type": "unnamed_field"
+      "description": "Direct stack address reference",
+      "line": 27,
+      "match": "&stack0xffffffe4",
+      "severity": "moderate",
+      "text": "if (&this_ptr->linear_velocity_local != (CVector3f *)&stack0xffffffe4) {",
+      "type": "stack_ref"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)(this_ptr + 0x78) = *(uint *)&angular_velocity->field_0x8;",
-      "type": "unnamed_field"
+      "description": "Pointer value `&stack0xffffffec` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 25,
+      "match": "(int)&stack0xffffffec",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar1 * -8 + (uint)bVar1 * -8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 17,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->linear_velocity).x = linear_velocity->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 34,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->angular_velocity).x = angular_velocity->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 25,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar1 * -8 + (uint)bVar1 * -8) =",
+      "type": "pointer_cast"
     }
   ]
 }

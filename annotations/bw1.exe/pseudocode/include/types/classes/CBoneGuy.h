@@ -2,15 +2,33 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CBodyPart;
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
+#include "types/classes/CQuaternion4f.h"
+#include "types/classes/CVector3f.h"
+#include "types/structs/SBoneGuyBox.h"
 
 // Structure: CBoneGuy
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0xc890 (51344 bytes)
 #pragma pack(push, 1)
 typedef struct CBoneGuy {
-    char field_0[51344]; // 0x0
+    CEnemy base; // 0x0
+    int pickup_attempt_count; // 0xc268
+    float search_timer; // 0xc26c
+    float pickup_cooldown; // 0xc270
+    struct CDemonActor* pickup_target; // 0xc274
+    uint sfx_handle; // 0xc278
+    char death_event[100]; // 0xc27c
+    float recombine_time; // 0xc2e0
+    int box_count; // 0xc2e4
+    SBoneGuyBox boxes[20]; // 0xc2e8
+    int blown_up; // 0xc888
+    float recombine_interpolation; // 0xc88c
 } CBoneGuy;
 #pragma pack(pop)
 

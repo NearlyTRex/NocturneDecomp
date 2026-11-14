@@ -1,0 +1,240 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 181,
+    "complexity_score": 145,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 90,
+    "suspect_count": 5,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
+    "total_lines": 271
+  },
+  "cross_references": [
+    {
+      "addr": "005430b0",
+      "from_addr": "005430c0",
+      "name": "core_skeleton.cpp_CDeformableModel_bindSkeleton_FUN_005430b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00544930",
+    "address_range": [
+      [
+        "00544930",
+        "00544ad4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_00544930",
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_00544930(CDeformableModel *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0041a590",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBoundingBox3D_expand_FUN_0041a590"
+    },
+    {
+      "addr": "0041b600",
+      "is_variadic": false,
+      "name": "core_box.cpp_CBoundingBox3D_reset_FUN_0041b600"
+    },
+    {
+      "addr": "005415d0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_005415d0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005430c0",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModel_bindSkeleton_FUN_005430b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.079710144927536,
+    "instruction_count": 138,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 4,
+      "BRANCH": 4,
+      "CALL": 3,
+      "CBRANCH": 18,
+      "COPY": 107,
+      "INT_ADD": 69,
+      "INT_AND": 105,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 101,
+      "INT_LESS": 14,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 15,
+      "INT_SBORROW": 14,
+      "INT_SCARRY": 22,
+      "INT_SEXT": 6,
+      "INT_SLESS": 50,
+      "INT_SUB": 25,
+      "INT_XOR": 9,
+      "LOAD": 35,
+      "POPCOUNT": 50,
+      "RETURN": 1,
+      "STORE": 24,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 701
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00566fd0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0054bb60",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0059d9e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9247
+    },
+    "nocturne.exe": {
+      "addr": "0051b280",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9247
+    }
+  },
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 48,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModel *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 33,
+      "match": "pCVar6 = (T *)pCVar6->ARRAY",
+      "severity": "moderate",
+      "text": "pCVar6 = (CDeformableModel *)pCVar6->lod_info;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar9->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 69,
+      "match": "pCVar9 = (T *)((pCVar9->FIELD).ARRAY[N] + CONST)",
+      "severity": "moderate",
+      "text": "pCVar9 = (CSkeleton *)((pCVar9->motion_list).state_names[1] + 2);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar11` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar11->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 70,
+      "match": "pCVar11 = (T *)pCVar11->ARRAY",
+      "severity": "moderate",
+      "text": "pCVar11 = (CDeformableModel *)pCVar11->lod_info;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 88,
+      "match": "pCVar6 = (T *)pCVar6->ARRAY",
+      "severity": "moderate",
+      "text": "pCVar6 = (CDeformableModel *)pCVar6->lod_info;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_2c` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `local_2c->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 89,
+      "match": "local_2c = (T *)((local_2c->FIELD).ARRAY[N] + CONST)",
+      "severity": "moderate",
+      "text": "local_2c = (CSkeleton *)((local_2c->motion_list).state_names[1] + 2);",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

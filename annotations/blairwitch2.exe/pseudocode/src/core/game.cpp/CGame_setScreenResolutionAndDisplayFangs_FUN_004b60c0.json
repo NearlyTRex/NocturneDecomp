@@ -1,0 +1,242 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 64,
+    "complexity_score": 49,
+    "cross_reference_count": 1,
+    "function_call_count": 8,
+    "global_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 19,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 83
+  },
+  "cross_references": [
+    {
+      "addr": "004b6170",
+      "from_addr": "004b67ea",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b60c0",
+    "address_range": [
+      [
+        "004b60c0",
+        "004b6167"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b60c0",
+    "signature": "void __cdecl core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b60c0(CGame *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00402ad0",
+      "is_variadic": false,
+      "name": "engine_2d.c_reinitializeGraphicsSystem_FUN_00402ad0"
+    },
+    {
+      "addr": "0040d420",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_0040d420"
+    },
+    {
+      "addr": "0040d900",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d900"
+    },
+    {
+      "addr": "0040d440",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040d440"
+    },
+    {
+      "addr": "0040d5a0",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d5a0"
+    },
+    {
+      "addr": "0055b1f0",
+      "is_variadic": false,
+      "name": "engine_special.cpp_clearScreen_FUN_0055b1f0"
+    },
+    {
+      "addr": "00588a50",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_FUN_00588a50"
+    },
+    {
+      "addr": "00589560",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00589560"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d76c1",
+      "name": "s_test_logo_005d76c1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006141bc",
+      "name": "DAT_006141bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00618170",
+      "name": "DAT_00618170",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01511cc0",
+      "name": "DAT_01511cc0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c25590",
+      "name": "DAT_01c25590",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d192f8",
+      "name": "DAT_01d192f8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004b67ea",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b6b18",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0638297872340425,
+    "instruction_count": 47,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 8,
+      "CBRANCH": 3,
+      "COPY": 28,
+      "INT_ADD": 14,
+      "INT_AND": 20,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 20,
+      "INT_LESS": 4,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 10,
+      "INT_SUB": 27,
+      "LOAD": 5,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 23
+    },
+    "pcode_op_count": 191
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004cf530",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004b7ee0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004daed0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0049d960",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_006141bc",
+      "severity": "mild",
+      "text": "if ((DAT_006141bc != 0x1e0) || (this_ptr->game_bpp != 0x20)) {",
+      "type": "undefined_data"
+    }
+  ]
+}

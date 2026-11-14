@@ -4,13 +4,23 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CClothList.h"
+#include "types/classes/CDeformableModelInstance.h"
+#include "types/classes/CEnemy.h"
+#include "types/classes/CMorph.h"
 
 // Structure: CSuccubus
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x13ba4 (80804 bytes)
 #pragma pack(push, 1)
 typedef struct CSuccubus {
-    char field_0[80804]; // 0x0
+    CEnemy base; // 0x0
+    CDeformableModelInstance hotdemon_model; // 0x10af8
+    CClothList hotdemon_cloth_list; // 0x12dac
+    uint sfx_handle; // 0x12f68
+    float ambient_sfx_cooldown; // 0x12f6c
+    int morph_started; // 0x12f70
+    float morph_timer; // 0x12f74
+    CMorph morph; // 0x12f78
 } CSuccubus;
 #pragma pack(pop)
 

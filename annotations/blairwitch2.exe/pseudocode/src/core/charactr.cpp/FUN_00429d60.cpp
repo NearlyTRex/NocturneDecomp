@@ -2,73 +2,72 @@
 // Address: 00429d60
 // Address Range: [[00429d60, 00429e5b]]
 // Convention: unknown
-// Signature: void core_charactr_cpp_FUN_00429d60(CDemonActor *param_1,undefined4 *param_2)
+// Signature: void core_charactr_cpp_FUN_00429d60(CDemonActor *param_1,float *param_2)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-void core_charactr_cpp_FUN_00429d60(CDemonActor *param_1,uint *param_2)
+void core_charactr_cpp_FUN_00429d60(CDemonActor *param_1,float *param_2)
 
 {
-  byte bVar1;
-  uint auStackY_1058 [1016];
-  byte *puVar2;
-  uint local_70;
-  uint local_64;
-  uint local_60;
-  uint local_5c;
-  uint local_58;
-  uint local_4c;
+  float *pfVar1;
+  byte bVar2;
+  int aiStackY_1058 [15];
+  void *apvStackY_101c [1001];
+  int *piVar3;
+  float local_70;
+  float fStack_6c;
+  int iStack_68;
+  float local_64;
+  float local_60;
+  int local_5c [4];
+  int local_4c [3];
   uint local_40;
-  uint local_34;
-  uint local_30;
-  uint local_2c;
-  uint local_28;
-  uint local_1c;
+  int local_34;
+  void *local_30 [2];
+  int local_28;
+  uint auStack_24 [5];
   
-  bVar1 = 0;
-  core_actor_cpp_FUN_00408cf0(param_1,&param_1[0xd].field_0x1e4);
-  puVar2 = &param_1[0xd].field_0x258;
-  local_58 = local_1c;
-  *(uint *)((int)&stack0xffffffac + (uint)bVar1 * 0xfffffffe * 4) =
-       *(uint *)(&stack0xffffffe8 + (uint)bVar1 * -8);
-  *(uint *)(&stack0xffffffb0 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-       *(uint *)(&stack0xffffffec + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-  core_actor_cpp_FUN_00408cf0(param_1,puVar2);
-  local_4c = local_40;
-  *(uint *)((int)&stack0xffffffb8 + (uint)bVar1 * 0xfffffffe * 4) =
-       *(uint *)(&stack0xffffffc4 + (uint)bVar1 * -8);
-  *(uint *)(&stack0xffffffbc + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-       *(uint *)(&stack0xffffffc8 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-  if ((uint *)&param_1->field_0x30 != param_2) {
-    *(uint *)&param_1->field_0x30 = *param_2;
-    *(uint *)&param_1->field_0x34 = param_2[1];
-    *(uint *)&param_1->field_0x38 = param_2[2];
+  bVar2 = 0;
+  core_actor_cpp_FUN_00408cf0(param_1,&param_1[0xd].particle_systems[2].position.z);
+  piVar3 = &param_1[0xd].particle_systems[3].standalone;
+  local_5c[1] = auStack_24[2];
+  local_5c[(uint)bVar2 * 0xfffffffe + 2] = auStack_24[(uint)bVar2 * -2 + 3];
+  local_5c[(uint)bVar2 * 0xfffffffe + (uint)bVar2 * 0xfffffffe + 3] =
+       auStack_24[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4];
+  core_actor_cpp_FUN_00408cf0(param_1,piVar3);
+  local_4c[0] = local_40;
+  local_5c[(uint)bVar2 * 0xfffffffe + 5] = local_5c[(uint)bVar2 * 0xfffffffe + 8];
+  local_5c[(uint)bVar2 * 0xfffffffe + (uint)bVar2 * 0xfffffffe + 6] =
+       local_5c[(uint)bVar2 * 0xfffffffe + (uint)bVar2 * 0xfffffffe + 9];
+  if (&param_1->orient != (UOrientationVector *)param_2) {
+    (param_1->orient).vec.x = *param_2;
+    (param_1->orient).vec.y = param_2[1];
+    (param_1->orient).vec.z = param_2[2];
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0(param_1);
-  core_actor_cpp_FUN_00408d30(param_1,&stack0xffffffa8);
+  core_actor_cpp_FUN_00408d30(param_1,local_5c + 1);
+  pfVar1 = &param_1[0xd].particle_systems[2].position.z;
   local_64 = local_70;
-  (&stack0xffffffa0)[(uint)bVar1 * 0xfffffffe] =
-       *(uint *)(&stack0xffffff94 + (uint)bVar1 * -8);
-  *(uint *)((int)&stack0xffffffa4 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-       *(uint *)(&stack0xffffff98 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-  if ((uint *)&param_1[0xd].field_0x1e4 != &stack0xffffff9c) {
-    *(uint *)&param_1[0xd].field_0x1e4 = local_64;
-    *(uint *)&param_1[0xd].field_0x1e8 = local_60;
-    *(uint *)&param_1[0xd].field_0x1ec = local_5c;
+  (&local_60)[(uint)bVar2 * -2] = (&fStack_6c)[(uint)bVar2 * -2];
+  local_5c[(uint)bVar2 * -2 + (uint)bVar2 * -2] = (&iStack_68)[(uint)bVar2 * -2 + (uint)bVar2 * -2];
+  if (pfVar1 != &local_64) {
+    *pfVar1 = local_64;
+    param_1[0xd].particle_systems[2].fade_current = local_60;
+    param_1[0xd].particle_systems[2].active = local_5c[0];
   }
-  core_actor_cpp_FUN_00408d30(param_1,&stack0xffffffb4);
+  core_actor_cpp_FUN_00408d30(param_1,local_5c + 4);
+  piVar3 = &param_1[0xd].particle_systems[3].standalone;
   local_34 = local_28;
-  (&stack0xffffffd0)[(uint)bVar1 * 0xfffffffe] =
-       *(uint *)(&stack0xffffffdc + (uint)bVar1 * -8);
-  *(uint *)((int)&stack0xffffffd4 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-       *(uint *)(&stack0xffffffe0 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-  if ((uint *)&param_1[0xd].field_0x258 == &stack0xffffffcc) {
+  local_30[(uint)bVar2 * -2] = (void *)auStack_24[(uint)bVar2 * -2];
+  local_30[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
+       (void *)auStack_24[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
+  if (piVar3 == local_5c + 10) {
     return;
   }
-  *(uint *)&param_1[0xd].field_0x258 = local_34;
-  *(uint *)&param_1[0xd].field_0x25c = local_30;
-  *(uint *)&param_1[0xd].field_0x260 = local_2c;
+  *piVar3 = local_34;
+  param_1[0xd].particle_systems[3].particles = local_30[0];
+  param_1[0xd].particle_systems[3].vtable = local_30[1];
   return;
 }

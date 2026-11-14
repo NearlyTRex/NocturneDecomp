@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 332,
-    "complexity_score": 521,
+    "complexity_score": 522,
     "cross_reference_count": 4,
     "function_call_count": 12,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 131,
+    "pseudocode_lines": 132,
     "suspect_count": 36,
     "suspect_types": [
       "param_count_too_few",
@@ -17,25 +17,25 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 463
+    "total_lines": 464
   },
   "cross_references": [
     {
-      "addr": "0047d230",
-      "from_addr": "0047d87c",
-      "name": "shape_edittool.cpp_FUN_0047d230",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004843d0",
       "from_addr": "00484612",
-      "name": "shape_edittool.cpp_FUN_004843d0",
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004843d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0047c8e0",
       "from_addr": "0047cb49",
       "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047c8e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047d230",
+      "from_addr": "0047d87c",
+      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0047d230",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -69,44 +69,44 @@
       "name": "engine_2d.c_drawHLine_FUN_00402f30"
     },
     {
+      "addr": "004b30f0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0"
+    },
+    {
+      "addr": "004b30c0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004b30c0"
+    },
+    {
+      "addr": "004b3120",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharYOffset_FUN_004b3120"
+    },
+    {
+      "addr": "004b2b30",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextHeight_FUN_004b2b30"
+    },
+    {
+      "addr": "004b2a80",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80"
+    },
+    {
       "addr": "004b0a20",
       "is_variadic": false,
       "name": "engine_font.cpp_FUN_004b0a20"
     },
     {
-      "addr": "004b2a80",
+      "addr": "004f3ab0",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004b2a80"
-    },
-    {
-      "addr": "004b2b30",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004b2b30"
-    },
-    {
-      "addr": "004b30c0",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004b30c0"
-    },
-    {
-      "addr": "004b30f0",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004b30f0"
-    },
-    {
-      "addr": "004b3120",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004b3120"
+      "name": "engine_mini3d.cpp_drawHLine_FUN_004f3ab0"
     },
     {
       "addr": "004f3520",
       "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_004f3520"
-    },
-    {
-      "addr": "004f3ab0",
-      "is_variadic": false,
-      "name": "engine_mini3d.cpp_FUN_004f3ab0"
+      "name": "engine_mini3d.cpp_setColor_FUN_004f3520"
     },
     {
       "addr": "0047b5e0",
@@ -188,7 +188,7 @@
       {
         "call_addr": "00484612",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_004843d0",
+        "caller": "shape_edittool.cpp_CPickList_renderDialog_FUN_004843d0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -201,7 +201,7 @@
       {
         "call_addr": "00484647",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_004843d0",
+        "caller": "shape_edittool.cpp_CPickList_renderDialog_FUN_004843d0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -214,7 +214,7 @@
       {
         "call_addr": "0047d87c",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047d230",
+        "caller": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0047d230",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -289,6 +289,20 @@
       "STORE": 69
     },
     "pcode_op_count": 1548
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00484f20",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0049d580",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 224,
@@ -609,10 +623,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 127,
+      "line": 128,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = engine_font_cpp_FUN_004b30c0(_DAT_01c5b0e0,*(byte *)(param_1 + 4));",
+      "text": "(_DAT_01c5b0e0,(uint)*(byte *)(param_1 + 4));",
       "type": "unnamed_param"
     },
     {

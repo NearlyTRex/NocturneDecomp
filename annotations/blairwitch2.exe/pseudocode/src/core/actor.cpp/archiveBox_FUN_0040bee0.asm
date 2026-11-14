@@ -1,12 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archiveBox_FUN_0040bee0(CBox *param_1,char *param_2)
+; void __cdecl core_actor_cpp_archiveBox_FUN_0040bee0(CBox *box_ptr,char *property_name)
 ;
+; Parameters:
+; CBox *           Stack[0x4]:4   box_ptr
+; char *           Stack[0x8]:4   property_name
 ;
 ; XREF[2]:
 ;   core_bodypart.cpp_CBodyPart_archive_FUN_00415f50 at 004160d5
-;   core_boxactor.cpp_FUN_0041c7f0 at 0041c920
+;   core_boxactor.cpp_CBoxActor_archive_FUN_0041c7f0 at 0041c920
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sim_box_state_info_openi_005cac4c
@@ -20,8 +23,8 @@
 ; Called Functions:
 ;   core_actor.cpp_adjustIndentationLevel_FUN_0040b050
 ;   core_actor.cpp_handleActorPropertyParseError_FUN_0040b380
+;   core_box.cpp_CBox_loadFromFile_FUN_005b4300
 ;   core_box.cpp_CBox_saveToFile_FUN_005b44b0
-;   core_box.cpp_FUN_005b4300
 ;   crt_stdio.c_fgetc_FUN_005b8180
 ;   crt_unknown.c_FUN_005b8010
 ;
@@ -41,7 +44,7 @@ section .text
         ;   Label: LAB_0040bef4
     PUSH EBP                            ; 0040befa
     CALL crt_stdio.c_fgetc_FUN_005b8180 ; 0040befb
-        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005b8180()
+        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005b8180(_FILE * file)
     ADD ESP,0x4                         ; 0040bf00
     MOV ESI,EAX                         ; 0040bf03
     TEST EAX,EAX                        ; 0040bf05
@@ -55,14 +58,14 @@ section .text
     PUSH EAX                            ; 0040bf13
     MOV EDX,dword ptr [ESP + 0x14]      ; 0040bf14
     PUSH EDX                            ; 0040bf18
-    CALL core_box.cpp_FUN_005b4300      ; 0040bf19
-        ;   XREF to: 005b4300 (UNCONDITIONAL_CALL)  ; void core_box.cpp_FUN_005b4300(CBox * this_ptr, _FILE * file_handle)
+    CALL core_box.cpp_CBox_loadFromFile_FUN_005b4300 ; 0040bf19
+        ;   XREF to: 005b4300 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBox_loadFromFile_FUN_005b4300(CBox * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0040bf1e
     MOV ECX,dword ptr [0x007bc034]      ; 0040bf21 | DAT_007bc034
         ;   Label: LAB_0040bf21
     PUSH ECX                            ; 0040bf27
     CALL crt_stdio.c_fgetc_FUN_005b8180 ; 0040bf28
-        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgetc_FUN_005b8180()
+        ;   XREF to: 005b8180 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fgetc_FUN_005b8180(_FILE * file)
     ADD ESP,0x4                         ; 0040bf2d
     MOV ESI,EAX                         ; 0040bf30
     TEST EAX,EAX                        ; 0040bf32

@@ -27,7 +27,7 @@
     {
       "addr": "005c2180",
       "from_addr": "005c21a1",
-      "name": "unkafter_morph.cpp_FUN_005c2180",
+      "name": "crt_unknown.c_FUN_005c2180",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -50,19 +50,19 @@
       "name": "crt_unknown.c_FUN_005bce04"
     },
     {
-      "addr": "EXTERNAL:00000054",
-      "is_variadic": false,
-      "name": "ExitProcess"
-    },
-    {
       "addr": "005c32f4",
       "is_variadic": false,
-      "name": "unkafter_morph.cpp_FUN_005c32f4"
+      "name": "crt_unknown.c_FUN_005c32f4"
     },
     {
       "addr": "005c3388",
       "is_variadic": false,
-      "name": "unkafter_morph.cpp_FUN_005c3388"
+      "name": "crt_unknown.c_FUN_005c3388"
+    },
+    {
+      "addr": "EXTERNAL:00000054",
+      "is_variadic": false,
+      "name": "ExitProcess"
     }
   ],
   "globals": [
@@ -110,7 +110,7 @@
       {
         "call_addr": "005c21a1",
         "call_type": "direct",
-        "caller": "unkafter_morph.cpp_FUN_005c2180",
+        "caller": "crt_unknown.c_FUN_005c2180",
         "estimated_params": 2,
         "instructions_analyzed": 3,
         "method": "push_count",
@@ -151,6 +151,32 @@
       "STORE": 8
     },
     "pcode_op_count": 71
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005c53a0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005a8210",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00602700",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "005674b0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,

@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 445,
-    "complexity_score": 389,
+    "complexity_score": 272,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 21,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 154,
-    "suspect_count": 22,
+    "pseudocode_lines": 107,
+    "suspect_count": 15,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
-      "warning_overlapping_globals"
+      "warning_overlapping_globals",
+      "warning_unreachable"
     ],
-    "total_lines": 599
+    "total_lines": 552
   },
   "cross_references": [
     {
@@ -45,7 +45,7 @@
     {
       "addr": "00523980",
       "is_variadic": false,
-      "name": "core_motion.cpp_FUN_00523980"
+      "name": "core_motion.cpp_CMotionList_load_FUN_00523980"
     },
     {
       "addr": "00562e60",
@@ -55,7 +55,7 @@
     {
       "addr": "00562f70",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_00562f70"
+      "name": "core_skeleton.cpp_CSkeleton_free_FUN_00562f70"
     },
     {
       "addr": "005c0530",
@@ -256,6 +256,32 @@
     },
     "pcode_op_count": 1521
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00540aa0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8043
+    },
+    "bw3.exe": {
+      "addr": "00547cb0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8043
+    },
+    "nocedit.exe": {
+      "addr": "00599bb0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7273
+    },
+    "nocturne.exe": {
+      "addr": "005175f0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.7747
+    }
+  },
   "stack_frame": {
     "frame_size": 48,
     "local_size": 40,
@@ -316,8 +342,112 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Unreachable code block removed",
       "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00563210) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 3,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005633fd) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 4,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00563248) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 5,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0056324c) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 6,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00563259) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 7,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00563374) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 8,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00563378) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 9,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00563385) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 10,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0056338a) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 11,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0056339a) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 12,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0056339e) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 13,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005633ab) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 14,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005633b0) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 15,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
@@ -325,171 +455,11 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 30,
       "match": "DAT_005f1b7e",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005f1b7e,&local_24);",
+      "text": "_fscanf(file_handle,&DAT_005f1b7e);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x1de78",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x1de78) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 52,
-      "match": "field_0x1de9c",
-      "severity": "mild",
-      "text": "puVar4 = &this_ptr->field_0x1de9c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x1de7c",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,\"\\\"%[^\\\"]\\\",%d\\n\",&this_ptr->field_0x1de7c + iVar1 * 0x24,puVar4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 57,
-      "match": "field_0x1de78",
-      "severity": "mild",
-      "text": "} while (iVar1 < *(int *)&this_ptr->field_0x1de78);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 65,
-      "match": "field_0x1ec90",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)&this_ptr->field_0x1ec90;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 66,
-      "match": "field_0x1ec8c",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x1ec8c) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 69,
-      "match": "field_0x1de78",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x1de78) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 80,
-      "match": "field_0x1de78",
-      "severity": "mild",
-      "text": "} while (iVar3 < *(int *)&this_ptr->field_0x1de78);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 83,
-      "match": "field_0x1ec8c",
-      "severity": "mild",
-      "text": "} while (local_18 < *(int *)&this_ptr->field_0x1ec8c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 87,
-      "match": "field_0x1ec90",
-      "severity": "mild",
-      "text": "iVar1 = _fread(*(uint *)&this_ptr->field_0x1ec90,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 88,
-      "match": "field_0x1ec8c",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x1ec8c * *(int *)&this_ptr->field_0x1de78 * 0x10,1,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 88,
-      "match": "field_0x1de78",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x1ec8c * *(int *)&this_ptr->field_0x1de78 * 0x10,1,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 105,
-      "match": "field_0x1ec8c",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x1ec8c) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 108,
-      "match": "field_0x1ec94",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)&this_ptr->field_0x1ec94 + iVar3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 112,
-      "match": "field_0x1ec8c",
-      "severity": "mild",
-      "text": "} while (iVar1 < *(int *)&this_ptr->field_0x1ec8c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 119,
-      "match": "field_0x1ec8c",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x1ec8c) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 122,
-      "match": "field_0x1ec98",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)&this_ptr->field_0x1ec98 + iVar3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 126,
-      "match": "field_0x1ec8c",
-      "severity": "mild",
-      "text": "} while (iVar1 < *(int *)&this_ptr->field_0x1ec8c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 140,
-      "match": "field_0x1de78",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x1de78) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 148,
-      "match": "field_0x1de78",
-      "severity": "mild",
-      "text": "} while (iVar1 < *(int *)&this_ptr->field_0x1de78);",
-      "type": "unnamed_field"
     }
   ]
 }

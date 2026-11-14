@@ -38,14 +38,14 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0055b907
     PUSH EAX                            ; 0055b90b
     CALL crt_stdio.c_fgets_FUN_005c1180 ; 0055b90c
-        ;   XREF to: 005c1180 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_005c1180()
+        ;   XREF to: 005c1180 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005c1180(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 0055b911
     LEA EAX,[ESP + 0x100]               ; 0055b914
     PUSH EAX                            ; 0055b91b
     PUSH 0x5f106f                       ; 0055b91c | DAT_005f106f
     PUSH ESI                            ; 0055b921
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0055b922
-        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005c04b0()
+        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0055b927
     MOV EDX,dword ptr [ESP + 0x100]     ; 0055b92a
     XOR EDI,EDI                         ; 0055b931
@@ -58,7 +58,7 @@ section .text
     PUSH 0x5f1073                       ; 0055b93f | = "\"%*[^\"]\", %d\n"
     PUSH ESI                            ; 0055b944
     CALL crt_stdio.c_fscanf_FUN_005c04b0 ; 0055b945
-        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005c04b0()
+        ;   XREF to: 005c04b0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005c04b0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0055b94a
     MOV EBP,dword ptr [ESP + 0x104]     ; 0055b94d
     XOR EBX,EBX                         ; 0055b954
@@ -71,7 +71,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0055b960
     PUSH EAX                            ; 0055b964
     CALL crt_stdio.c_fgets_FUN_005c1180 ; 0055b965
-        ;   XREF to: 005c1180 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fgets_FUN_005c1180()
+        ;   XREF to: 005c1180 (UNCONDITIONAL_CALL)  ; char * crt_stdio.c_fgets_FUN_005c1180(char * str, int num, _FILE * stream)
     ADD ESP,0xc                         ; 0055b96a
     INC EBX                             ; 0055b96d
     CMP EBX,dword ptr [ESP + 0x104]     ; 0055b96e

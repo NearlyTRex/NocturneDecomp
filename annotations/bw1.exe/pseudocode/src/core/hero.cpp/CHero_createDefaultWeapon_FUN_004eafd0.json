@@ -2,26 +2,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 112,
+    "complexity_score": 81,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 32,
-    "suspect_count": 6,
+    "pseudocode_lines": 36,
+    "suspect_count": 3,
     "suspect_types": [
-      "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_field",
+      "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 106
+    "total_lines": 110
   },
   "cross_references": [
     {
       "addr": "004ea830",
       "from_addr": "004ea942",
-      "name": "core_hero.cpp_FUN_004ea830",
+      "name": "core_hero.cpp_CHero_ctor_FUN_004ea830",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -54,14 +53,14 @@
       "name": "core_inv.cpp_CInventory_initialize_FUN_004f7050"
     },
     {
+      "addr": "004f8dc0",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_selectWeapon_FUN_004f8dc0"
+    },
+    {
       "addr": "004f7690",
       "is_variadic": false,
       "name": "core_inv.cpp_FUN_004f7690"
-    },
-    {
-      "addr": "004f8dc0",
-      "is_variadic": false,
-      "name": "core_inv.cpp_FUN_004f8dc0"
     },
     {
       "addr": "005030e0",
@@ -137,7 +136,7 @@
       {
         "call_addr": "004ea942",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004ea830",
+        "caller": "core_hero.cpp_CHero_ctor_FUN_004ea830",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -177,6 +176,26 @@
     },
     "pcode_op_count": 234
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004cec30",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1846
+    },
+    "nocedit.exe": {
+      "addr": "004f2a30",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004b4dd0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -204,69 +223,45 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 15,
       "match": "DAT_005e4800",
       "severity": "mild",
-      "text": "uVar2 = core_actor_cpp_createActorByName_FUN_0040c2b0(&DAT_005e4800,g_CWeaponClassInfo.name_hash);",
+      "text": "pCVar2 = core_actor_cpp_createActorByName_FUN_0040c2b0(&DAT_005e4800);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x1",
-      "severity": "mild",
-      "text": "pCVar4->field_0x1 = cVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x2",
-      "severity": "mild",
-      "text": "pCVar4 = (CDemonActor *)&pCVar4->field_0x2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&item_actor[4].field_0x8 = 100;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar4->owner`). Replace `pCVar4->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 30,
-      "match": "pCVar4 = (T *)&pCVar4->FIELD",
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 24,
+      "match": "do {",
       "severity": "moderate",
-      "text": "pCVar4 = (CDemonActor *)&pCVar4->field_0x2;",
-      "type": "shadow_pointer_walk"
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CMoloch",
         "offset": 320,
         "vtable_addr": "00603f04"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CSvetlana",
         "offset": 320,
         "vtable_addr": "00606414"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CHero",
         "offset": 320,
         "vtable_addr": "00601d34"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CIcePick",
         "offset": 320,
         "vtable_addr": "00602634"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CHaystack",
         "offset": 320,
         "vtable_addr": "00601a64"
       }

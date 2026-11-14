@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CFireball * core_fire_cpp_CFireball_arrdtor64_FUN_0049f080(CFireball *this_ptr,uint flags)
+; CFireball * __cdecl core_fire_cpp_CFireball_arrdtor64_FUN_0049f080(CFireball *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CFireball *      Stack[0x4]:4   this_ptr
@@ -20,7 +20,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 0049f087
     PUSH EDX                            ; 0049f08b
     CALL crt_memory.c___arrfini_FUN_005b854f ; 0049f08c
-        ;   XREF to: 005b854f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrfini_FUN_005b854f()
+        ;   XREF to: 005b854f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005b854f(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0049f091
     RET                                 ; 0049f094
 

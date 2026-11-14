@@ -7,8 +7,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   support_codec.cpp_CAsciiUnarmor_decode_FUN_00434c90 at 00434cca
 ;   support_codec.cpp_FUN_00434570 at 004345d4
-;   support_codec.cpp_FUN_00434c90 at 00434cca
 ;
 ; Called Functions:
 ;   support_codec.cpp_FUN_00433a90

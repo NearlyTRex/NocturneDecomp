@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_3d_c_renderPolygonAlphaBlendedDepthWritePlaneMaskedOp58_FUN_00406c50(int param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAlphaBlendedDepthWritePlaneMaskedOp58_FUN_00406c50(SMRGLHeaderPrimitive *prim)
 ;
+; Parameters:
+; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fba20
@@ -35,7 +37,7 @@ section .text
     LEA EAX,[EBX + 0x8]                 ; 00406c66
     PUSH EAX                            ; 00406c69
     CALL engine_3d.c_isVisiblePlane_FUN_00403920 ; 00406c6a
-        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403920()
+        ;   XREF to: 00403920 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403920(SClipPlane * plane)
     ADD ESP,0x4                         ; 00406c6f
     TEST EAX,EAX                        ; 00406c72
     JZ 0x00406cc1                       ; 00406c74
@@ -128,11 +130,11 @@ section .text
     PUSH EBX                            ; 00406d72
         ;   Label: LAB_00406d72
     CALL engine_3d.c_renderPolygonDepthWritePass_FUN_004057b0 ; 00406d73
-        ;   XREF to: 004057b0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_renderPolygonDepthWritePass_FUN_004057b0()
+        ;   XREF to: 004057b0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonDepthWritePass_FUN_004057b0(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 00406d78
     PUSH EBX                            ; 00406d7b
     CALL engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_004054e0 ; 00406d7c
-        ;   XREF to: 004054e0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_004054e0()
+        ;   XREF to: 004054e0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_004054e0(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 00406d81
     POP EBX                             ; 00406d84
     RET                                 ; 00406d85

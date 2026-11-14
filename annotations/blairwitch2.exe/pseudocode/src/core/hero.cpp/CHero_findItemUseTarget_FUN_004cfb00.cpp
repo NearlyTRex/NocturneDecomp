@@ -26,18 +26,18 @@ int __cdecl core_hero_cpp_CHero_findItemUseTarget_FUN_004cfb00(CHero *this_ptr)
   int local_18;
   
   bVar2 = 0;
-  local_20 = *(CDemonActor **)(this_ptr + *(int *)(this_ptr + 0x247e4) * 4 + 0x24978);
+  local_20 = this_ptr->inventories[0].selected_items[this_ptr->inventories[0].current_group];
   if (local_20 != (CDemonActor *)0x0) {
     local_18 = 0;
-    for (local_1c = 0; local_1c < *(int *)&g_CDemonSetPtr->field_0x14d164; local_1c = local_1c + 1)
-    {
+    for (local_1c = 0; local_1c < g_CDemonSetPtr->actor_count; local_1c = local_1c + 1) {
       this_ptr_00 = (CActorDestination *)
                     core_actor_cpp_castToClassHash_FUN_0040c8f0
-                              (*(uint *)(&g_CDemonSetPtr->field_0x14d168 + local_18),
+                              (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_18),
                                g_CActorDestinationClassInfo.name_hash);
       if ((this_ptr_00 != (CActorDestination *)0x0) &&
-         (iVar1 = core_dest_cpp_FUN_004473f0(this_ptr_00,local_20), iVar1 != 0)) {
-        core_actor_cpp_FUN_00408de0(this_ptr,&this_ptr_00->field_0x20);
+         (iVar1 = core_dest_cpp_CActorDestination_acceptsActor_FUN_004473f0(this_ptr_00,local_20),
+         iVar1 != 0)) {
+        core_actor_cpp_FUN_00408de0(this_ptr,&(this_ptr_00->base).location);
         local_44 = local_2c;
         (&stack0xffffffc0)[(uint)bVar2 * 0xfffffffe] =
              (float)*(uint *)(&stack0xffffffd8 + (uint)bVar2 * -8);
@@ -46,16 +46,16 @@ int __cdecl core_hero_cpp_CHero_findItemUseTarget_FUN_004cfb00(CHero *this_ptr)
         if (((1.0 <= (double)local_40) &&
             ((((double)local_40 <= _DAT_005d9d34 && ((float)_DAT_005d9d3c <= local_3c)) &&
              ((double)local_3c <= _DAT_005d9d44)))) && (ABS(local_44) <= (float)_DAT_005d9d44)) {
-          core_vecdir_cpp_FUN_005838f0(&stack0xffffffbc);
+          core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&stack0xffffffbc);
           *(uint *)((int)&stack0xffffffcc + (uint)bVar2 * -8) =
                *(uint *)(&stack0xffffffb4 + (uint)bVar2 * -8);
           *(uint *)(&stack0xffffffd0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
                *(uint *)(&stack0xffffffb8 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
           if (ABS(local_34) <= (float)_DAT_005d9d4c) {
-            *(uint *)(this_ptr + 0x25600) = 0;
-            *(uint *)(this_ptr + 0x255f0) = 5;
-            *(CDemonActor **)(this_ptr + 0x255f4) = local_20;
-            *(CDemonActor **)(this_ptr + 0x255f8) = local_20;
+            this_ptr->hero_action_range = 0.0;
+            this_ptr->hero_action = 5;
+            this_ptr->hero_action_actor = local_20;
+            this_ptr->hero_action_target = local_20;
             return 1;
           }
         }

@@ -8,18 +8,18 @@
 ; int              Stack[0x8]:4   x
 ; int              Stack[0xc]:4   y
 ;
-; XREF[17]:
+; XREF[18]:
 ;   core_event.cpp_CEventList_render_FUN_00491bf0 at 00491c40
-;   core_game.cpp_FUN_004b3e50 at 004b412d
 ;   core_game.cpp_FUN_004b6f30 at 004b7456
+;   core_game.cpp_captureDebugMovieFrame_FUN_004b3e50 at 004b412d
 ;   core_main.c_FUN_004e4400 at 004e4417
-;   core_menu.cpp_FUN_004e7dc0 at 004e7e8f
+;   core_menu.cpp_calibrateGamepad_FUN_004e7dc0 at 004e7e8f
 ;   core_motion.cpp_FUN_004fcdc0 at 004fcea6
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_00505a30 at 00505ae3
 ;   core_netgame.cpp_CNetGame_syncPlayers_FUN_00504890 at 0050495a
-;   core_path.cpp_FUN_0050c57e at 0050c627
+;   core_path.cpp_FUN_0050c580 at 0050c627
 ;   core_set.cpp_CDemonSet_renderLightDebugView_FUN_005373e0 at 005374bc
-;   ... and 7 more
+;   ... and 8 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f076c

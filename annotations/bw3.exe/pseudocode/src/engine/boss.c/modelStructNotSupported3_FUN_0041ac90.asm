@@ -7,7 +7,7 @@
 ; SMRGLHeaderExtended * Stack[0x4]:4   mrgl_data
 ;
 ; XREF[1]:
-;   engine_model.c_FUN_004f80f0 at 004f810a
+;   engine_model.c_freeMRGLData_FUN_004f80f0 at 004f810a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d71de0

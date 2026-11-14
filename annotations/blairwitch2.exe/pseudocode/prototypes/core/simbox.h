@@ -7,43 +7,43 @@
 
 // Original: core_simbox.cpp_staticInit_FUN_0053ff50
 // Address: 0053ff50
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_simbox.cpp_factoryFuncSimBox_FUN_0053ff80
 // Address: 0053ff80
-void factoryFuncSimBox(void);
+CSimBox * __cdecl factoryFuncSimBox(void);
 
 // Original: core_simbox.cpp_CSimBox_getActorType_FUN_0053ffa0
 // Address: 0053ffa0
-CDemonActorType * CSimBox::getActorType(CSimBox *this_ptr);
+CDemonActorType * __cdecl CSimBox::getActorType(CSimBox *this_ptr);
 
 // Original: core_simbox.cpp_CSimBox_ctor_FUN_0053ffb0
 // Address: 0053ffb0
 CSimBox * __cdecl CSimBox::ctor(CSimBox *this_ptr);
 
-// Original: core_simbox.cpp_FUN_00540070
+// Original: core_simbox.cpp_CSimBox_setup_FUN_00540070
 // Address: 00540070
-void FUN_00540070(CDemonActor *param_1);
+void __cdecl CSimBox::setup(CSimBox *this_ptr);
 
-// Original: core_simbox.cpp_FUN_005401b0
+// Original: core_simbox.cpp_CSimBox_process_FUN_005401b0
 // Address: 005401b0
-void FUN_005401b0(int param_1,float param_2);
+void __cdecl CSimBox::process(CSimBox *this_ptr,float delta_time);
 
-// Original: core_simbox.cpp_FUN_00540390
+// Original: core_simbox.cpp_CSimBox_renderOpaque_FUN_00540390
 // Address: 00540390
-int FUN_00540390(CDemonActor *param_1);
+int __cdecl CSimBox::renderOpaque(CSimBox *this_ptr);
 
-// Original: core_simbox.cpp_FUN_00540410
+// Original: core_simbox.cpp_CSimBox_getBoundingBox_FUN_00540410
 // Address: 00540410
-void FUN_00540410(int param_1);
+CBoundingBox3D * __cdecl CSimBox::getBoundingBox(CSimBox *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_simbox.cpp_FUN_00540450
+// Original: core_simbox.cpp_CSimBox_archive_FUN_00540450
 // Address: 00540450
-void FUN_00540450(CDemonActor *param_1);
+void __cdecl CSimBox::archive(CSimBox *this_ptr);
 
-// Original: core_simbox.cpp_FUN_00540500
+// Original: core_simbox.cpp_CSimBox_getCollisionType_FUN_00540500
 // Address: 00540500
-undefined4 FUN_00540500(void);
+ECollisionType __cdecl CSimBox::getCollisionType(CSimBox *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_simbox.cpp_CSimBox_dtor_FUN_00540510
 // Address: 00540510

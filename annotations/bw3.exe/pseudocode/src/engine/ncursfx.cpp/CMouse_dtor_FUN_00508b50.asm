@@ -9,8 +9,8 @@
 ;
 ; Called Functions:
 ;   core_game.cpp_CAlphaBitmap_arrdtor8_FUN_004c4d60
+;   engine_ncursfx.cpp_CAlphaBitmap_arrdtor15_FUN_00508ec0
 ;   engine_ncursfx.cpp_CAlphaBitmap_arrdtor7_FUN_00508ea0
-;   engine_ncursfx.cpp_FUN_00508ec0
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
     PUSH 0x0                            ; 00508b54
     ADD EAX,0x12c                       ; 00508b56
     PUSH EAX                            ; 00508b5b
-    CALL engine_ncursfx.cpp_FUN_00508ec0 ; 00508b5c
-        ;   XREF to: 00508ec0 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_ncursfx.cpp_FUN_00508ec0(CAlphaBitmap * this_ptr, uint flags)
+    CALL engine_ncursfx.cpp_CAlphaBitmap_arrdtor15_FUN_00508ec0 ; 00508b5c
+        ;   XREF to: 00508ec0 (UNCONDITIONAL_CALL)  ; CAlphaBitmap * engine_ncursfx.cpp_CAlphaBitmap_arrdtor15_FUN_00508ec0(CAlphaBitmap * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00508b61
     PUSH 0x0                            ; 00508b64
     SUB EAX,0x8c                        ; 00508b66

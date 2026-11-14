@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004fcb40(int param_1)
+; void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004fcb40(SMRGLKeyframeModel *keyframe_model)
 ;
+; Parameters:
+; SMRGLKeyframeModel * Stack[0x4]:4   keyframe_model
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
@@ -169,7 +171,7 @@ section .text
         ;   Label: LAB_004fcc8e
     PUSH EAX                            ; 004fcc91
     CALL engine_model.c_loadModelFile_FUN_0051f6d0 ; 004fcc92
-        ;   XREF to: 0051f6d0 (UNCONDITIONAL_CALL)  ; undefined engine_model.c_loadModelFile_FUN_0051f6d0()
+        ;   XREF to: 0051f6d0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_model.c_loadModelFile_FUN_0051f6d0(char * filename)
     ADD ESP,0x4                         ; 004fcc97
     MOV EDX,dword ptr [ESP + 0x1c]      ; 004fcc9a
     MOV dword ptr [EDX + 0x14],EAX      ; 004fcc9e

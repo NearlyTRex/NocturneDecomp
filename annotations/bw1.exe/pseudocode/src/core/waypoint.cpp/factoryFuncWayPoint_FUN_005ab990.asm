@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_waypoint_cpp_factoryFuncWayPoint_FUN_005ab990(void)
+; CWayPoint * __cdecl core_waypoint_cpp_factoryFuncWayPoint_FUN_005ab990(void)
 ;
 ;
 ; Called Functions:
 ;   core_waypoint.cpp_CWayPoint_ctor_FUN_005ab9c0
-;   crt_unknown.c_FUN_005c0f32
+;   crt_memory.c_operator_new_FUN_005c0f32
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x55c                          ; 005ab990
         ;   Label: core_waypoint.cpp_factoryFuncWayPoint_FUN_005ab990
-    CALL crt_unknown.c_FUN_005c0f32     ; 005ab995
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
+    CALL crt_memory.c_operator_new_FUN_005c0f32 ; 005ab995
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005c0f32()
     ADD ESP,0x4                         ; 005ab99a
     TEST EAX,EAX                        ; 005ab99d
     JNZ 0x005ab9a2                      ; 005ab99f

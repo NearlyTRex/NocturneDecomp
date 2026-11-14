@@ -8,8 +8,8 @@
 ;
 ; XREF[3]:
 ;   core_baron.cpp_CBaronWeapon_renderOpaque_FUN_00410980 at 00410985
-;   core_lantern.cpp_FUN_0059d000 at 0059d015
-;   unkafter_cross.cpp_FUN_005a6ba0 at 005a6ba5
+;   core_cross.cpp_CCross_renderOpaque_FUN_005a6ba0 at 005a6ba5
+;   core_lantern.cpp_CLantern_renderOpaque_FUN_0059d000 at 0059d015
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0060b280

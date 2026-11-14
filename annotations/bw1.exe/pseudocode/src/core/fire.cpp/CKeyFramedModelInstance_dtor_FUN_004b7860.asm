@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CKeyFramedModelInstance * core_fire_cpp_CKeyFramedModelInstance_dtor_FUN_004b7860(CKeyFramedModelInstance *this_ptr,uint flags)
+; CKeyFramedModelInstance * __cdecl core_fire_cpp_CKeyFramedModelInstance_dtor_FUN_004b7860(CKeyFramedModelInstance *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CKeyFramedModelInstance * Stack[0x4]:4   this_ptr

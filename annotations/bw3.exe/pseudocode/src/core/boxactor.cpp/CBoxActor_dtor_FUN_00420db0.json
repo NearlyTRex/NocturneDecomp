@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 34,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 19,
+    "pseudocode_lines": 20,
     "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field"
+      "negative_offset"
     ],
-    "total_lines": 66
+    "total_lines": 67
   },
   "cross_references": [],
   "function": {
@@ -93,6 +93,32 @@
     },
     "pcode_op_count": 153
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0041d830",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004237a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00423670",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0041fa90",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -118,18 +144,18 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x394",
+      "description": "Negative struct offset (wrong base type)",
+      "line": 17,
+      "match": "pCVar1[-2].",
       "severity": "mild",
-      "text": "pCVar1 = core_box_cpp_CBox_dtor_FUN_0041adf0((CBox *)&this_ptr->field_0x394,0);",
-      "type": "unnamed_field"
+      "text": "((CDemonActor *)(pCVar1[-2].scrape_points + 2),1);",
+      "type": "negative_offset"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CBoxActor",
         "offset": 208,
         "vtable_addr": "005dc994"
       },

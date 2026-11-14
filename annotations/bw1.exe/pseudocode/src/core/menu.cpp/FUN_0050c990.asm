@@ -7,8 +7,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_004cf5e0 at 004d004c
-;   core_menu.cpp_FUN_0050cc90 at 0050d169
+;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004d004c
+;   core_menu.cpp_showMainGameMenu_FUN_0050cc90 at 0050d169
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0050c970 = 0050cb3e
@@ -25,25 +25,25 @@
 ;   undefined4 DAT_0061f2a4
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 DAT_006236b8
-;   undefined4 g_CGameInstance.field208_0xd0
+;   undefined4 g_CGameInstance.game_control
 ;   ... and 7 more
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_rollCredits_FUN_004d8e50
 ;   core_game.cpp_CGame_saveClockTime_FUN_004cbf10
 ;   core_game.cpp_FUN_004cbf20
-;   core_inivar.cpp_FUN_004f5760
-;   core_menu.cpp_FUN_0050aa90
+;   core_inivar.cpp_writeIniData_FUN_004f5760
+;   core_menu.cpp_configureGraphicsOptions_FUN_0050aa90
 ;   core_menu.cpp_FUN_0050b470
 ;   core_menu.cpp_FUN_0050ba70
 ;   core_menu.cpp_FUN_0050d640
 ;   core_menu.cpp_renderMenuAndGetChoice_FUN_00509e20
-;   core_moon.cpp_FUN_00521c50
-;   core_moon.cpp_FUN_00521d50
-;   core_moon.cpp_FUN_00521e40
-;   core_set.cpp_FUN_00555770
-;   core_sound.cpp_FUN_0057d6a0
-;   core_sound.cpp_FUN_0057d800
+;   core_moon.cpp_CMoon_free_FUN_00521d50
+;   core_moon.cpp_CMoon_init_FUN_00521c50
+;   core_moon.cpp_CMoon_render_FUN_00521e40
+;   core_set.cpp_CDemonSet_setFlatColor_FUN_00555770
+;   core_sound.cpp_CSound_configure_FUN_0057d6a0
+;   core_sound.cpp_CSound_reset_FUN_0057d800
 ;   ... and 3 more
 ;
 ; *****************************************************************************
@@ -90,26 +90,26 @@ section .text
     PUSH 0xc350                         ; 0050c9f2
     MOV EAX,[0x00622c18]                ; 0050c9f7 | g_CDemonSetPtr
     PUSH EAX                            ; 0050c9fc
-    MOV dword ptr [EAX + 0x15ae84],EDI  ; 0050c9fd | g_CDemonSetInstance.field1420932_0x15ae84
-    CALL core_set.cpp_FUN_00555770      ; 0050ca03
-        ;   XREF to: 00555770 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00555770(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
+    MOV dword ptr [EAX + 0x15ae84],EDI  ; 0050c9fd | g_CDemonSetInstance.rendering_mode
+    CALL core_set.cpp_CDemonSet_setFlatColor_FUN_00555770 ; 0050ca03
+        ;   XREF to: 00555770 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setFlatColor_FUN_00555770(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
     ADD ESP,0x10                        ; 0050ca08
     MOV EAX,[0x00622c18]                ; 0050ca0b | g_CDemonSetPtr
     PUSH 0x1d1e380                      ; 0050ca10
-    MOV dword ptr [EAX + 0x15ae94],0xdac ; 0050ca15 | g_CDemonSetInstance.field1420948_0x15ae94
-    CALL core_moon.cpp_FUN_00521e40     ; 0050ca1f
-        ;   XREF to: 00521e40 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_00521e40()
+    MOV dword ptr [EAX + 0x15ae94],0xdac ; 0050ca15 | g_CDemonSetInstance.ambient_base_quick
+    CALL core_moon.cpp_CMoon_render_FUN_00521e40 ; 0050ca1f
+        ;   XREF to: 00521e40 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_render_FUN_00521e40(CMoon * this_ptr)
     ADD ESP,0x4                         ; 0050ca24
     MOV EAX,[0x00622c18]                ; 0050ca27 | g_CDemonSetPtr
     PUSH 0x5e819a                       ; 0050ca2c | = "Graphic options"
-    MOV dword ptr [EAX + 0x15ae84],ESI  ; 0050ca31 | g_CDemonSetInstance.field1420932_0x15ae84
+    MOV dword ptr [EAX + 0x15ae84],ESI  ; 0050ca31 | g_CDemonSetInstance.rendering_mode
     CALL support_newmsg.cpp_getLocalizedString_FUN_00531090 ; 0050ca37
         ;   XREF to: 00531090 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00531090(char * key)
     ADD ESP,0x4                         ; 0050ca3c
     PUSH EAX                            ; 0050ca3f
     PUSH 0x1d20a30                      ; 0050ca40
-    CALL crt_unknown.c_FUN_005bfb40     ; 0050ca45
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0050ca45
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x8                         ; 0050ca4a
     PUSH 0x5e81aa                       ; 0050ca4d | = "Sound options"
     CALL support_newmsg.cpp_getLocalizedString_FUN_00531090 ; 0050ca52
@@ -117,8 +117,8 @@ section .text
     ADD ESP,0x4                         ; 0050ca57
     PUSH EAX                            ; 0050ca5a
     PUSH 0x1d20b30                      ; 0050ca5b
-    CALL crt_unknown.c_FUN_005bfb40     ; 0050ca60
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0050ca60
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x8                         ; 0050ca65
     PUSH 0x5e81b8                       ; 0050ca68 | = "Control options"
     CALL support_newmsg.cpp_getLocalizedString_FUN_00531090 ; 0050ca6d
@@ -126,10 +126,10 @@ section .text
     ADD ESP,0x4                         ; 0050ca72
     PUSH EAX                            ; 0050ca75
     PUSH 0x1d20c30                      ; 0050ca76
-    CALL crt_unknown.c_FUN_005bfb40     ; 0050ca7b
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0050ca7b
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EAX,[0x0061d95c]                ; 0050ca80 | g_CGamePtr
-    MOV EDX,dword ptr [EAX + 0xe4]      ; 0050ca85 | g_CGameInstance.field228_0xe4
+    MOV EDX,dword ptr [EAX + 0xe4]      ; 0050ca85 | g_CGameInstance.puzzle_difficulty_mode
     ADD ESP,0x8                         ; 0050ca8b
     CMP EDI,EDX                         ; 0050ca8e
     JNZ 0x0050cb93                      ; 0050ca90
@@ -140,12 +140,12 @@ section .text
     ADD ESP,0x4                         ; 0050caa0
     PUSH EAX                            ; 0050caa3
     PUSH 0x1d20d30                      ; 0050caa4
-    CALL crt_unknown.c_FUN_005bfb40     ; 0050caa9
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0050caa9
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x8                         ; 0050caae
     MOV EAX,[0x0061d95c]                ; 0050cab1 | g_CGamePtr
         ;   Label: LAB_0050cab1
-    CMP EDI,dword ptr [EAX + 0xe8]      ; 0050cab6 | g_CGameInstance.field232_0xe8
+    CMP EDI,dword ptr [EAX + 0xe8]      ; 0050cab6 | g_CGameInstance.combat_difficulty_mode
     JNZ 0x0050cbbe                      ; 0050cabc
         ;   XREF to: 0050cbbe (CONDITIONAL_JUMP)  ; LAB_0050cbbe
     PUSH 0x5e81fa                       ; 0050cac2 | = "Combat difficulty: Hard"
@@ -154,8 +154,8 @@ section .text
     ADD ESP,0x4                         ; 0050cacc
     PUSH EAX                            ; 0050cacf
     PUSH 0x1d20e30                      ; 0050cad0
-    CALL crt_unknown.c_FUN_005bfb40     ; 0050cad5
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0050cad5
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x8                         ; 0050cada
     PUSH 0x5e822c                       ; 0050cadd | = "Credits"
         ;   Label: LAB_0050cadd
@@ -164,12 +164,12 @@ section .text
     ADD ESP,0x4                         ; 0050cae7
     PUSH EAX                            ; 0050caea
     PUSH 0x1d20f30                      ; 0050caeb
-    CALL crt_unknown.c_FUN_005bfb40     ; 0050caf0
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0050caf0
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x8                         ; 0050caf5
     MOV EAX,[0x0061d95c]                ; 0050caf8 | g_CGamePtr
     PUSH 0x5e8234                       ; 0050cafd | = "Option Menu"
-    MOV dword ptr [EAX + 0xd4],0x9      ; 0050cb02 | g_CGameInstance.field212_0xd4
+    MOV dword ptr [EAX + 0xd4],0x9      ; 0050cb02 | g_CGameInstance.hero_number
     CALL support_newmsg.cpp_getLocalizedString_FUN_00531090 ; 0050cb0c
         ;   XREF to: 00531090 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_00531090(char * key)
     ADD ESP,0x4                         ; 0050cb11
@@ -183,15 +183,15 @@ section .text
         ;   XREF to: 00509e20 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_renderMenuAndGetChoice_FUN_00509e20(char * * menu_text_array, int menu_count, int * selected_index_ptr, int y_position, ...)
     ADD ESP,0x14                        ; 0050cb28
     MOV EBX,EAX                         ; 0050cb2b
-    CALL wincore_wddvmem.cpp_FUN_005acff0 ; 0050cb2d
-        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_005acff0()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005acff0 ; 0050cb2d
+        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005acff0()
     CMP EBX,0x5                         ; 0050cb32
     JA 0x0050cb43                       ; 0050cb35
         ;   XREF to: 0050cb43 (CONDITIONAL_JUMP)  ; caseD_4
     JMP dword ptr [EBX*0x4 + 0x50c970]  ; 0050cb37 | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
-    CALL core_menu.cpp_FUN_0050aa90     ; 0050cb3e
-        ;   XREF to: 0050aa90 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_FUN_0050aa90()
+    CALL core_menu.cpp_configureGraphicsOptions_FUN_0050aa90 ; 0050cb3e
+        ;   XREF to: 0050aa90 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_configureGraphicsOptions_FUN_0050aa90()
         ;   Label: caseD_0
     PUSH EDI                            ; 0050cb43
         ;   Label: caseD_3
@@ -206,8 +206,8 @@ section .text
     CMP dword ptr [ESP + 0x18],0x0      ; 0050cb5a
     JNZ 0x0050cc4c                      ; 0050cb5f
         ;   XREF to: 0050cc4c (CONDITIONAL_JUMP)  ; LAB_0050cc4c
-    CALL core_inivar.cpp_FUN_004f5760   ; 0050cb65
-        ;   XREF to: 004f5760 (UNCONDITIONAL_CALL)  ; void core_inivar.cpp_FUN_004f5760()
+    CALL core_inivar.cpp_writeIniData_FUN_004f5760 ; 0050cb65
+        ;   XREF to: 004f5760 (UNCONDITIONAL_CALL)  ; void core_inivar.cpp_writeIniData_FUN_004f5760()
     ADD ESP,0x4                         ; 0050cb6a
     POP EBP                             ; 0050cb6d
     POP EDI                             ; 0050cb6e
@@ -217,12 +217,12 @@ section .text
     MOV EBX,dword ptr [0x006236b8]      ; 0050cb72 | DAT_006236b8
         ;   Label: LAB_0050cb72
     PUSH EBX                            ; 0050cb78
-    CALL core_sound.cpp_FUN_0057d6a0    ; 0050cb79
-        ;   XREF to: 0057d6a0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0057d6a0(CSound * this_ptr)
+    CALL core_sound.cpp_CSound_configure_FUN_0057d6a0 ; 0050cb79
+        ;   XREF to: 0057d6a0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_configure_FUN_0057d6a0(CSound * this_ptr)
     ADD ESP,0x4                         ; 0050cb7e
     PUSH 0x1d1e380                      ; 0050cb81
-    CALL core_moon.cpp_FUN_00521c50     ; 0050cb86
-        ;   XREF to: 00521c50 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_00521c50()
+    CALL core_moon.cpp_CMoon_init_FUN_00521c50 ; 0050cb86
+        ;   XREF to: 00521c50 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_init_FUN_00521c50(CMoon * this_ptr)
     ADD ESP,0x4                         ; 0050cb8b
     JMP 0x0050c9a8                      ; 0050cb8e
         ;   XREF to: 0050c9a8 (UNCONDITIONAL_JUMP)  ; LAB_0050c9a8
@@ -233,11 +233,11 @@ section .text
     ADD ESP,0x4                         ; 0050cb9d
     PUSH EAX                            ; 0050cba0
     PUSH 0x1d20d30                      ; 0050cba1
-    CALL crt_unknown.c_FUN_005bfb40     ; 0050cba6
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0050cba6
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EAX,[0x0061d95c]                ; 0050cbab | g_CGamePtr
     ADD ESP,0x8                         ; 0050cbb0
-    MOV dword ptr [EAX + 0xe4],ESI      ; 0050cbb3 | g_CGameInstance.field228_0xe4
+    MOV dword ptr [EAX + 0xe4],ESI      ; 0050cbb3 | g_CGameInstance.puzzle_difficulty_mode
     JMP 0x0050cab1                      ; 0050cbb9
         ;   XREF to: 0050cab1 (UNCONDITIONAL_JUMP)  ; LAB_0050cab1
     PUSH 0x5e8212                       ; 0050cbbe | = "Combat difficulty: Normal"
@@ -247,11 +247,11 @@ section .text
     ADD ESP,0x4                         ; 0050cbc8
     PUSH EAX                            ; 0050cbcb
     PUSH 0x1d20e30                      ; 0050cbcc
-    CALL crt_unknown.c_FUN_005bfb40     ; 0050cbd1
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0050cbd1
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EAX,[0x0061d95c]                ; 0050cbd6 | g_CGamePtr
     ADD ESP,0x8                         ; 0050cbdb
-    MOV dword ptr [EAX + 0xe8],ESI      ; 0050cbde | g_CGameInstance.field232_0xe8
+    MOV dword ptr [EAX + 0xe8],ESI      ; 0050cbde | g_CGameInstance.combat_difficulty_mode
     JMP 0x0050cadd                      ; 0050cbe4
         ;   XREF to: 0050cadd (UNCONDITIONAL_JUMP)  ; LAB_0050cadd
     CALL core_menu.cpp_FUN_0050ba70     ; 0050cbe9
@@ -261,13 +261,13 @@ section .text
         ;   XREF to: 0050cb43 (UNCONDITIONAL_JUMP)  ; caseD_4
     MOV EAX,[0x0061d95c]                ; 0050cbf3 | g_CGamePtr
         ;   Label: caseD_2
-    MOV EAX,dword ptr [EAX + 0xd0]      ; 0050cbf8 | g_CGameInstance.field208_0xd0
+    MOV EAX,dword ptr [EAX + 0xd0]      ; 0050cbf8 | g_CGameInstance.game_control
     MOV [0x01d1ee90],EAX                ; 0050cbfe | DAT_01d1ee90
     CALL core_menu.cpp_FUN_0050b470     ; 0050cc03
         ;   XREF to: 0050b470 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_FUN_0050b470()
     MOV EBX,dword ptr [0x0061d95c]      ; 0050cc08 | g_CGamePtr
     MOV EAX,[0x01d1ee90]                ; 0050cc0e | DAT_01d1ee90
-    CMP EAX,dword ptr [EBX + 0xd0]      ; 0050cc13 | g_CGameInstance.field208_0xd0
+    CMP EAX,dword ptr [EBX + 0xd0]      ; 0050cc13 | g_CGameInstance.game_control
     JZ 0x0050cb43                       ; 0050cc19
         ;   XREF to: 0050cb43 (CONDITIONAL_JUMP)  ; caseD_4
     CALL core_menu.cpp_FUN_0050d640     ; 0050cc1f
@@ -282,23 +282,23 @@ section .text
     ADD ESP,0x4                         ; 0050cc35
     MOV EBP,dword ptr [0x006236b8]      ; 0050cc38 | DAT_006236b8
     PUSH EBP                            ; 0050cc3e
-    CALL core_sound.cpp_FUN_0057d6a0    ; 0050cc3f
-        ;   XREF to: 0057d6a0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0057d6a0(CSound * this_ptr)
+    CALL core_sound.cpp_CSound_configure_FUN_0057d6a0 ; 0050cc3f
+        ;   XREF to: 0057d6a0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_configure_FUN_0057d6a0(CSound * this_ptr)
     ADD ESP,0x4                         ; 0050cc44
     JMP 0x0050cb43                      ; 0050cc47
         ;   XREF to: 0050cb43 (UNCONDITIONAL_JUMP)  ; caseD_4
     PUSH 0x1d1e380                      ; 0050cc4c
         ;   Label: LAB_0050cc4c
-    CALL core_moon.cpp_FUN_00521d50     ; 0050cc51
-        ;   XREF to: 00521d50 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_00521d50()
+    CALL core_moon.cpp_CMoon_free_FUN_00521d50 ; 0050cc51
+        ;   XREF to: 00521d50 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_free_FUN_00521d50(CMoon * this_ptr)
     ADD ESP,0x4                         ; 0050cc56
     MOV EBX,dword ptr [0x006236b8]      ; 0050cc59 | DAT_006236b8
     PUSH EBX                            ; 0050cc5f
-    CALL core_sound.cpp_FUN_0057d800    ; 0050cc60
-        ;   XREF to: 0057d800 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0057d800(CSound * this_ptr)
+    CALL core_sound.cpp_CSound_reset_FUN_0057d800 ; 0050cc60
+        ;   XREF to: 0057d800 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_reset_FUN_0057d800(CSound * this_ptr)
     ADD ESP,0x4                         ; 0050cc65
-    CALL core_inivar.cpp_FUN_004f5760   ; 0050cc68
-        ;   XREF to: 004f5760 (UNCONDITIONAL_CALL)  ; void core_inivar.cpp_FUN_004f5760()
+    CALL core_inivar.cpp_writeIniData_FUN_004f5760 ; 0050cc68
+        ;   XREF to: 004f5760 (UNCONDITIONAL_CALL)  ; void core_inivar.cpp_writeIniData_FUN_004f5760()
     ADD ESP,0x4                         ; 0050cc6d
     POP EBP                             ; 0050cc70
     POP EDI                             ; 0050cc71

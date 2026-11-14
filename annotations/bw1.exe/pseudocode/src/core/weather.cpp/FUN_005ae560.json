@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 6,
-    "complexity_score": 30,
+    "complexity_score": 4,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 5,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 11
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 4,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 10
   },
   "cross_references": [
     {
@@ -33,7 +31,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_weather.cpp_FUN_005ae560",
-    "signature": "undefined4 core_weather_cpp_FUN_005ae560(void)"
+    "signature": "float core_weather_cpp_FUN_005ae560(void)"
   },
   "function_calls": [],
   "globals": [
@@ -45,7 +43,7 @@
     },
     {
       "addr": "01fdd020",
-      "name": "g_CDemonSetInstance.field1420984_0x15aeb8",
+      "name": "g_CDemonSetInstance.selected_camera_index",
       "type": "undefined4",
       "value": null
     }
@@ -86,6 +84,14 @@
     },
     "pcode_op_count": 20
   },
+  "siblings": {
+    "bw3.exe": {
+      "addr": "0057c2c0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -94,22 +100,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x14c",
-      "severity": "mild",
-      "text": "(&g_CDemonSetPtr->field_0x14c + *(int *)&g_CDemonSetPtr->field_0x15aeb8 * 0x1a4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x15aeb8",
-      "severity": "mild",
-      "text": "(&g_CDemonSetPtr->field_0x14c + *(int *)&g_CDemonSetPtr->field_0x15aeb8 * 0x1a4);",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

@@ -19,12 +19,12 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_scat.cpp_FUN_005415c0 at 00541ab7
+;   core_scat.cpp_CScat_updateAI_FUN_005415c0 at 00541ab7
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408bb0
-;   core_actor.cpp_FUN_0040cd60
-;   core_vecdir.cpp_FUN_005a7520
+;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
 ;
 ; *****************************************************************************
 
@@ -52,8 +52,8 @@ section .text
     PUSH ESI                            ; 0042d56b
     LEA ESI,[ESP + 0x4]                 ; 0042d56c
     LEA EDI,[ESP + 0x10]                ; 0042d570
-    CALL core_vecdir.cpp_FUN_005a7520   ; 0042d574
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005a7520()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 0042d574
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
     LEA ESI,[ESP + 0x4]                 ; 0042d579
     ADD ESP,0x4                         ; 0042d57d
     MOVSD ES:EDI,ESI                    ; 0042d580
@@ -61,8 +61,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0042d582
     PUSH dword ptr [ESP + 0x10]         ; 0042d583
     MOV ESI,dword ptr [EBX + 0x2528]    ; 0042d587
-    CALL core_actor.cpp_FUN_0040cd60    ; 0042d58d
-        ;   XREF to: 0040cd60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cd60()
+    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd60 ; 0042d58d
+        ;   XREF to: 0040cd60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_normalizeAngleToPi_FUN_0040cd60(float angle_radians)
     MOV dword ptr [ESP + 0x44],EAX      ; 0042d592
     MOV dword ptr [ESP + 0x3c],ESI      ; 0042d596
     FLD float ptr [ESP + 0x44]          ; 0042d59a

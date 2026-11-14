@@ -8,8 +8,8 @@
 ;   undefined4 DAT_006045f8
 ;
 ; Called Functions:
+;   core_sound.cpp_CSound_isSoundPlaying_FUN_00560af0
 ;   core_sound.cpp_CSound_playSound_FUN_005609b0
-;   core_sound.cpp_FUN_00560af0
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
     PUSH EDX                            ; 004d9fc9
     MOV ECX,dword ptr [0x006045f8]      ; 004d9fca | DAT_006045f8
     PUSH ECX                            ; 004d9fd0
-    CALL core_sound.cpp_FUN_00560af0    ; 004d9fd1
-        ;   XREF to: 00560af0 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_FUN_00560af0(CSound * this_ptr, uint sfx_handle)
+    CALL core_sound.cpp_CSound_isSoundPlaying_FUN_00560af0 ; 004d9fd1
+        ;   XREF to: 00560af0 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_00560af0(CSound * this_ptr, uint sfx_handle)
     ADD ESP,0x8                         ; 004d9fd6
     TEST EAX,EAX                        ; 004d9fd9
     JZ 0x004d9fe9                       ; 004d9fdb

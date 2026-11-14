@@ -4,12 +4,19 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/SHardwareEdge.h"
 
 // Structure: SSoftwareEdge
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// edge table stride 0x50 (bw1 0047a320/0047a43e/0047a480 `count * 0x50`, piVar += 0x14; 00466d50 * 0x50); base and green/blue fields unchanged
+// Ghidra size: 0x50 (80 bytes)
 #pragma pack(push, 1)
 typedef struct SSoftwareEdge {
+    SHardwareEdge base; // 0x0
+    int green_current; // 0x38
+    int green_gradient; // 0x3c
+    int blue_current; // 0x40
+    int blue_gradient; // 0x44
+    char field_72[8]; // 0x48
 } SSoftwareEdge;
 #pragma pack(pop)
 

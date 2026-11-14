@@ -1,12 +1,12 @@
 // Name: core_shovel.cpp_staticInit_FUN_0053fdc0
 // Address: 0053fdc0
 // Address Range: [[0053fdc0, 0053fde3]]
-// Convention: unknown
-// Signature: void core_shovel_cpp_staticInit_FUN_0053fdc0(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_shovel_cpp_staticInit_FUN_0053fdc0(void)
 
 #include "nocturne.h"
 
-void core_shovel_cpp_staticInit_FUN_0053fdc0(void)
+void __cdecl core_shovel_cpp_staticInit_FUN_0053fdc0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450

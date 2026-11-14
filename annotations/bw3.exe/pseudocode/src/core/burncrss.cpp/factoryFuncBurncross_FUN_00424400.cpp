@@ -1,20 +1,20 @@
 // Name: core_burncrss.cpp_factoryFuncBurncross_FUN_00424400
 // Address: 00424400
 // Address Range: [[00424400, 0042441b]]
-// Convention: unknown
-// Signature: void core_burncrss_cpp_factoryFuncBurncross_FUN_00424400(void)
+// Convention: __cdecl
+// Signature: CBurncross * __cdecl core_burncrss_cpp_factoryFuncBurncross_FUN_00424400(void)
 
 #include "nocturne.h"
 
-void core_burncrss_cpp_factoryFuncBurncross_FUN_00424400(void)
+CBurncross * __cdecl core_burncrss_cpp_factoryFuncBurncross_FUN_00424400(void)
 
 {
-  CBurncross *this_ptr;
+  CBurncross *pCVar1;
   
-  this_ptr = (CBurncross *)FUN_005a3cb2(0x1acc);
-  if (this_ptr == (CBurncross *)0x0) {
-    return;
+  pCVar1 = (CBurncross *)operator_new(0x1acc);
+  if (pCVar1 == (CBurncross *)0x0) {
+    return (CBurncross *)0x0;
   }
-  core_burncrss_cpp_CBurncross_ctor_FUN_00424430(this_ptr);
-  return;
+  pCVar1 = core_burncrss_cpp_CBurncross_ctor_FUN_00424430(pCVar1);
+  return pCVar1;
 }

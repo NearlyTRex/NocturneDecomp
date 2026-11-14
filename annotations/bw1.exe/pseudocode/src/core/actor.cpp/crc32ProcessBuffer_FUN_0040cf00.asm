@@ -13,7 +13,7 @@
 ;   core_actor.cpp_crc32ProcessVector_FUN_0040cf60 at 0040cf6c
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040ce20
+;   core_actor.cpp_crc32ProcessByte_FUN_0040ce20
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     PUSH EDI                            ; 0040cf18
     INC EBX                             ; 0040cf19
     DEC ESI                             ; 0040cf1a
-    CALL core_actor.cpp_FUN_0040ce20    ; 0040cf1b
-        ;   XREF to: 0040ce20 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce20()
+    CALL core_actor.cpp_crc32ProcessByte_FUN_0040ce20 ; 0040cf1b
+        ;   XREF to: 0040ce20 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_crc32ProcessByte_FUN_0040ce20(uint * crc_state, byte input_byte)
     ADD ESP,0x8                         ; 0040cf20
     TEST ESI,ESI                        ; 0040cf23
     JG 0x0040cf13                       ; 0040cf25

@@ -13,8 +13,9 @@
 ; undefined1       Stack[-0x18]:1  local_18
 ; undefined1       Stack[-0x14]:1  local_14
 ;
-; XREF[1]:
+; XREF[2]:
 ;   crt_stdlib.c_strtol_FUN_005738ac at 005738be
+;   crt_stdlib.c_strtoul_FUN_00573890 at 005738a2
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_00568e80

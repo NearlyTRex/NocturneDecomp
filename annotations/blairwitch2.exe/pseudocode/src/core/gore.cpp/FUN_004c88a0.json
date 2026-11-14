@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 331,
-    "complexity_score": 743,
+    "complexity_score": 732,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 17,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 153,
+    "pseudocode_lines": 142,
     "suspect_count": 57,
     "suspect_types": [
       "param_count_too_few",
@@ -15,7 +15,7 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 484
+    "total_lines": 473
   },
   "cross_references": [
     {
@@ -41,7 +41,7 @@
     {
       "addr": "0040cfc0",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cfc0"
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cfc0"
     },
     {
       "addr": "005b7ff0",
@@ -415,7 +415,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar2 = (float10)(float)param_1[6] * (float10)_DAT_005d94da;",
@@ -423,7 +423,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 27,
       "match": "param_2",
       "severity": "mild",
       "text": "else if ((0x1c < local_14) && (local_14 = 0x1c, param_2 != 0)) {",
@@ -431,7 +431,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
       "text": "*param_1 = 1;",
@@ -439,7 +439,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "(DAT_0060b280,(CVector3f *)(param_1 + 1));",
@@ -447,7 +447,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 31,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,(CVector3f *)(param_1 + 1));",
@@ -455,7 +455,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 33,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,",
@@ -463,7 +463,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
       "text": "(SMRGLTextureBasic *)(&DAT_00616e68 + local_14 * 0x18 + param_1[5] * 0x2b8));",
@@ -471,7 +471,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 42,
+      "line": 34,
       "match": "DAT_00616e68",
       "severity": "mild",
       "text": "(SMRGLTextureBasic *)(&DAT_00616e68 + local_14 * 0x18 + param_1[5] * 0x2b8));",
@@ -479,39 +479,39 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 41,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_0055d723(*(SProjectedVertex **)DAT_0060b280,(CVector3i *)&local_50);",
+      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_50);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 48,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x30),(CVector3i *)&local_5c);",
+      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_5c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 65,
+      "line": 55,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x60),(CVector3i *)&local_38);",
+      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_38);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 73,
+      "line": 62,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x90),(CVector3i *)&local_2c);",
+      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_2c);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 74,
+      "line": 63,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar1 = param_1[4];",
@@ -519,7 +519,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 64,
       "match": "DAT_00622038",
       "severity": "mild",
       "text": "local_20 = &DAT_00622038;",
@@ -527,7 +527,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 79,
+      "line": 68,
       "match": "DAT_00622034",
       "severity": "mild",
       "text": "DAT_00622034 = 0x2000;",
@@ -535,7 +535,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 81,
+      "line": 70,
       "match": "DAT_0062203c",
       "severity": "mild",
       "text": "DAT_0062203c = 0;",
@@ -543,7 +543,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 84,
+      "line": 73,
       "match": "DAT_00622038",
       "severity": "mild",
       "text": "DAT_00622038 = 0x9a80;",
@@ -551,7 +551,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 85,
+      "line": 74,
       "match": "DAT_0062203c",
       "severity": "mild",
       "text": "DAT_0062203c = 0xb100;",
@@ -559,7 +559,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 86,
+      "line": 75,
       "match": "DAT_00622034",
       "severity": "mild",
       "text": "DAT_00622034 = 0x9000;",
@@ -567,7 +567,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 90,
+      "line": 79,
       "match": "DAT_00622038",
       "severity": "mild",
       "text": "DAT_00622038 = 0;",
@@ -575,7 +575,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 91,
+      "line": 80,
       "match": "DAT_0062203c",
       "severity": "mild",
       "text": "DAT_0062203c = 0;",
@@ -583,7 +583,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 92,
+      "line": 81,
       "match": "DAT_00622034",
       "severity": "mild",
       "text": "DAT_00622034 = 0;",
@@ -591,7 +591,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 94,
+      "line": 83,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar1 = param_1[4];",
@@ -599,7 +599,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 95,
+      "line": 84,
       "match": "DAT_0062206c",
       "severity": "mild",
       "text": "local_18 = &DAT_0062206c;",
@@ -607,7 +607,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 99,
+      "line": 88,
       "match": "DAT_00622064",
       "severity": "mild",
       "text": "DAT_00622064 = 0x2000;",
@@ -615,7 +615,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 100,
+      "line": 89,
       "match": "DAT_00622068",
       "severity": "mild",
       "text": "DAT_00622068 = 0;",
@@ -623,7 +623,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 104,
+      "line": 93,
       "match": "DAT_00622068",
       "severity": "mild",
       "text": "DAT_00622068 = 0x9a80;",
@@ -631,7 +631,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 105,
+      "line": 94,
       "match": "DAT_0062206c",
       "severity": "mild",
       "text": "DAT_0062206c = 0xb100;",
@@ -639,7 +639,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 106,
+      "line": 95,
       "match": "DAT_00622064",
       "severity": "mild",
       "text": "DAT_00622064 = 0x9000;",
@@ -647,7 +647,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 110,
+      "line": 99,
       "match": "DAT_00622068",
       "severity": "mild",
       "text": "DAT_00622068 = 0;",
@@ -655,7 +655,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 111,
+      "line": 100,
       "match": "DAT_0062206c",
       "severity": "mild",
       "text": "DAT_0062206c = 0;",
@@ -663,7 +663,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 112,
+      "line": 101,
       "match": "DAT_00622064",
       "severity": "mild",
       "text": "DAT_00622064 = 0;",
@@ -671,7 +671,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 114,
+      "line": 103,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar1 = param_1[4];",
@@ -679,7 +679,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 115,
+      "line": 104,
       "match": "DAT_00622098",
       "severity": "mild",
       "text": "local_1c = &DAT_00622098;",
@@ -687,7 +687,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 119,
+      "line": 108,
       "match": "DAT_00622094",
       "severity": "mild",
       "text": "DAT_00622094 = 0x2000;",
@@ -695,7 +695,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 121,
+      "line": 110,
       "match": "DAT_0062209c",
       "severity": "mild",
       "text": "DAT_0062209c = 0;",
@@ -703,7 +703,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 124,
+      "line": 113,
       "match": "DAT_00622098",
       "severity": "mild",
       "text": "DAT_00622098 = 0x9a80;",
@@ -711,7 +711,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 125,
+      "line": 114,
       "match": "DAT_0062209c",
       "severity": "mild",
       "text": "DAT_0062209c = 0xb100;",
@@ -719,7 +719,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 126,
+      "line": 115,
       "match": "DAT_00622094",
       "severity": "mild",
       "text": "DAT_00622094 = 0x9000;",
@@ -727,7 +727,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 130,
+      "line": 119,
       "match": "DAT_00622098",
       "severity": "mild",
       "text": "DAT_00622098 = 0;",
@@ -735,7 +735,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 131,
+      "line": 120,
       "match": "DAT_0062209c",
       "severity": "mild",
       "text": "DAT_0062209c = 0;",
@@ -743,7 +743,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 132,
+      "line": 121,
       "match": "DAT_00622094",
       "severity": "mild",
       "text": "DAT_00622094 = 0;",
@@ -751,7 +751,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 134,
+      "line": 123,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar1 = param_1[4];",
@@ -759,7 +759,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 138,
+      "line": 127,
       "match": "DAT_006220c8",
       "severity": "mild",
       "text": "DAT_006220c8 = 0x9a80;",
@@ -767,7 +767,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 139,
+      "line": 128,
       "match": "DAT_006220cc",
       "severity": "mild",
       "text": "DAT_006220cc = 0xb100;",
@@ -775,7 +775,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 140,
+      "line": 129,
       "match": "DAT_006220c4",
       "severity": "mild",
       "text": "DAT_006220c4 = 0x9000;",
@@ -783,7 +783,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 144,
+      "line": 133,
       "match": "DAT_006220c8",
       "severity": "mild",
       "text": "DAT_006220c8 = 0;",
@@ -791,7 +791,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 145,
+      "line": 134,
       "match": "DAT_006220cc",
       "severity": "mild",
       "text": "DAT_006220cc = 0;",
@@ -799,7 +799,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 146,
+      "line": 135,
       "match": "DAT_006220c4",
       "severity": "mild",
       "text": "DAT_006220c4 = 0;",
@@ -807,7 +807,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 150,
+      "line": 139,
       "match": "DAT_006220c4",
       "severity": "mild",
       "text": "DAT_006220c4 = 0x2000;",
@@ -815,7 +815,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 151,
+      "line": 140,
       "match": "DAT_006220c8",
       "severity": "mild",
       "text": "DAT_006220c8 = 0;",
@@ -823,7 +823,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 152,
+      "line": 141,
       "match": "DAT_006220cc",
       "severity": "mild",
       "text": "DAT_006220cc = 0;",
@@ -831,7 +831,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 155,
+      "line": 144,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,(SMRGLHeaderPrimitive *)0x1cb8288);",

@@ -11,22 +11,22 @@
 CShotgun * __cdecl core_shotgun_cpp_CShotgun_ctor_FUN_0053efd0(CShotgun *this_ptr)
 
 {
-  uint uVar1;
+  float fVar1;
   CShotgun *pCVar2;
   
-  pCVar2 = (CShotgun *)core_weapon_cpp_CWeapon_ctor_FUN_005899d0((CWeapon *)this_ptr);
-  *(byte **)&pCVar2->field_0x2b0 = &g_CShotgunVTable;
+  pCVar2 = (CShotgun *)core_weapon_cpp_CWeapon_ctor_FUN_005899d0(&this_ptr->base);
+  (pCVar2->base).base.vtable._ub = &g_CShotgunVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
-            ((CKeyFramedModelInstance *)&pCVar2->field_0x2b4,(char *)0x5e67c6);
-  *(uint *)&pCVar2->field_0x6d4 = 0x41200000;
-  *(uint *)&pCVar2->field_0x434 = 1;
-  *(uint *)&pCVar2->field_0x438 = 2;
-  *(uint *)&pCVar2->field_0x43c = 1;
-  *(uint *)&pCVar2->field_0x440 = 1;
-  *(uint *)&pCVar2->field_0x444 = 0x41700000;
-  uVar1 = _DAT_005fb5bc;
-  *(uint *)&pCVar2->field_0x448 = 0;
-  *(uint *)&pCVar2->field_0x6d8 = 0;
-  *(uint *)&pCVar2->field_0x6c0 = uVar1;
+            (&(pCVar2->base).model,(char *)0x5e67c6);
+  pCVar2->spread_angle = 10.0;
+  (pCVar2->base).is_spread_weapon = 1;
+  (pCVar2->base).fire_mode = FIRE_MODE_PUMP;
+  (pCVar2->base).weapon_type = WEAPON_TYPE_SHOTGUN;
+  (pCVar2->base).can_penetrate = 1;
+  (pCVar2->base).bolt_velocity = 15.0;
+  fVar1 = _DAT_005fb5bc;
+  (pCVar2->base).fire_cooldown = 0;
+  pCVar2->muzzle_flash_active = 0;
+  (pCVar2->base).weight = fVar1;
   return pCVar2;
 }

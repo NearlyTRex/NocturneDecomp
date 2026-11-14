@@ -1,12 +1,12 @@
 // Name: core_simbox.cpp_staticInit_FUN_0053ff50
 // Address: 0053ff50
 // Address Range: [[0053ff50, 0053ff73]]
-// Convention: unknown
-// Signature: void core_simbox_cpp_staticInit_FUN_0053ff50(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_simbox_cpp_staticInit_FUN_0053ff50(void)
 
 #include "nocturne.h"
 
-void core_simbox_cpp_staticInit_FUN_0053ff50(void)
+void __cdecl core_simbox_cpp_staticInit_FUN_0053ff50(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c450

@@ -2,27 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 19,
+    "complexity_score": 18,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 2,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 19,
+    "pseudocode_lines": 18,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 64
+    "total_lines": 63
   },
   "cross_references": [
+    {
+      "addr": "00442d90",
+      "from_addr": "00442def",
+      "name": "support_codec.cpp_CCodec_processBuffer_FUN_00442d90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "00442d10",
       "from_addr": "00442d6f",
       "name": "support_codec.cpp_FUN_00442d10",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00442d90",
-      "from_addr": "00442def",
-      "name": "support_codec.cpp_FUN_00442d90",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -34,9 +34,9 @@
         "005a123c"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "support_trstream.cpp_CInStreamMemory_dtor_FUN_005a11e0",
-    "signature": "CInStreamMemory * support_trstream_cpp_CInStreamMemory_dtor_FUN_005a11e0(CInStreamMemory *this_ptr,uint flags)"
+    "signature": "CInStreamMemory * __cdecl support_trstream_cpp_CInStreamMemory_dtor_FUN_005a11e0(CInStreamMemory *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -55,14 +55,14 @@
       "name": "crt_unknown.c_FUN_005c0344"
     },
     {
-      "addr": "005a1400",
-      "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_005a1400"
-    },
-    {
       "addr": "0059f550",
       "is_variadic": false,
-      "name": "unkaddr_0059f520.cpp_FUN_0059f550"
+      "name": "support_trstream.cpp_CInStream_dtor_FUN_0059f550"
+    },
+    {
+      "addr": "005a1400",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamMemory_close_FUN_005a1400"
     }
   ],
   "globals": [
@@ -85,14 +85,11 @@
       {
         "call_addr": "00442def",
         "call_type": "direct",
-        "caller": "support_codec.cpp_FUN_00442d90",
-        "estimated_params": 4,
+        "caller": "support_codec.cpp_CCodec_processBuffer_FUN_00442d90",
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "ECX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -100,13 +97,10 @@
         "call_addr": "00442d6f",
         "call_type": "direct",
         "caller": "support_codec.cpp_FUN_00442d10",
-        "estimated_params": 4,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EBX"
-        ],
+        "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2
       }
@@ -114,7 +108,7 @@
     "confidence": "high",
     "declared_params": 2,
     "declared_stack_bytes": 8,
-    "estimated_params": 4,
+    "estimated_params": 2,
     "matches_declared": true
   },
   "pcode_summary": {
@@ -138,6 +132,20 @@
       "STORE": 14
     },
     "pcode_op_count": 141
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0057d5a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005741d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 12,

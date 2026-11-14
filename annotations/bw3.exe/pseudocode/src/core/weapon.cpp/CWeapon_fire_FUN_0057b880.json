@@ -1,0 +1,351 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 79,
+    "complexity_score": 34,
+    "cross_reference_count": 15,
+    "function_call_count": 2,
+    "global_count": 3,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 34,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 113
+  },
+  "cross_references": [
+    {
+      "addr": "0040f840",
+      "from_addr": "0040f847",
+      "name": "core_bindevil.cpp_CBindEvil_fire_FUN_0040f840",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00410490",
+      "from_addr": "004104fd",
+      "name": "core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00424550",
+      "from_addr": "004245dd",
+      "name": "core_burncrss.cpp_CBurncross_fire_FUN_00424550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045c040",
+      "from_addr": "0045c047",
+      "name": "core_disease.cpp_CDisease_fire_FUN_0045c040",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047b130",
+      "from_addr": "0047b136",
+      "name": "core_dynamite.cpp_CDynamite_fire_FUN_0047b130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00486d40",
+      "from_addr": "00486da4",
+      "name": "core_elephant.cpp_CElephantGun_fire_FUN_00486d40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0048b020",
+      "from_addr": "0048b43a",
+      "name": "core_exorcism.cpp_CExorcism_fire_FUN_0048b020",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a4d00",
+      "from_addr": "004a4d31",
+      "name": "core_firestff.cpp_CFirestaff_fire_FUN_004a4d00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ae850",
+      "from_addr": "004ae8b4",
+      "name": "core_flintlck.cpp_CFlintlock_fire_FUN_004ae850",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d0fc0",
+      "from_addr": "004d101e",
+      "name": "core_gun.cpp_CGun_fire_FUN_004d0fc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d1a10",
+      "from_addr": "004d1a47",
+      "name": "core_heal.cpp_CHeal_fire_FUN_004d1a10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e1070",
+      "from_addr": "004e10dd",
+      "name": "core_lightsta.cpp_CLightStaff_fire_FUN_004e1070",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00527d70",
+      "from_addr": "00527dce",
+      "name": "core_rifle.cpp_CRifle_fire_FUN_00527d70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00568b50",
+      "from_addr": "00568b5a",
+      "name": "core_storm.cpp_CStorm_fire_FUN_00568b50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056b410",
+      "from_addr": "0056b4a8",
+      "name": "core_tommygun.cpp_CTommyGun_fire_FUN_0056b410",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0057b880",
+    "address_range": [
+      [
+        "0057b880",
+        "0057b92e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_weapon.cpp_CWeapon_fire_FUN_0057b880",
+    "signature": "int __cdecl core_weapon_cpp_CWeapon_fire_FUN_0057b880(CWeapon *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c840",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c840"
+    },
+    {
+      "addr": "004bd910",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_resetInventoryDisplayTimer_FUN_004bd910"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fe9dc",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01d2130c"
+    },
+    {
+      "addr": "01d2130c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "01d5ba70",
+      "name": "g_CHeroClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 15,
+    "call_sites": [
+      {
+        "call_addr": "0040f847",
+        "call_type": "direct",
+        "caller": "core_bindevil.cpp_CBindEvil_fire_FUN_0040f840",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004104fd",
+        "call_type": "direct",
+        "caller": "core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004245dd",
+        "call_type": "direct",
+        "caller": "core_burncrss.cpp_CBurncross_fire_FUN_00424550",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0045c047",
+        "call_type": "direct",
+        "caller": "core_disease.cpp_CDisease_fire_FUN_0045c040",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0047b136",
+        "call_type": "direct",
+        "caller": "core_dynamite.cpp_CDynamite_fire_FUN_0047b130",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00486da4",
+        "call_type": "direct",
+        "caller": "core_elephant.cpp_CElephantGun_fire_FUN_00486d40",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0048b43a",
+        "call_type": "direct",
+        "caller": "core_exorcism.cpp_CExorcism_fire_FUN_0048b020",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004a4d31",
+        "call_type": "direct",
+        "caller": "core_firestff.cpp_CFirestaff_fire_FUN_004a4d00",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004ae8b4",
+        "call_type": "direct",
+        "caller": "core_flintlck.cpp_CFlintlock_fire_FUN_004ae850",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004d101e",
+        "call_type": "direct",
+        "caller": "core_gun.cpp_CGun_fire_FUN_004d0fc0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.081967213114754,
+    "instruction_count": 61,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CBRANCH": 6,
+      "COPY": 58,
+      "INT_ADD": 31,
+      "INT_AND": 23,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 23,
+      "INT_LESS": 6,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 11,
+      "INT_SUB": 17,
+      "INT_XOR": 1,
+      "LOAD": 26,
+      "POPCOUNT": 11,
+      "RETURN": 4,
+      "STORE": 13
+    },
+    "pcode_op_count": 249
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0058a290",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1111
+    },
+    "bw1.exe": {
+      "addr": "005adde0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1622
+    },
+    "nocedit.exe": {
+      "addr": "005ee6e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1111
+    },
+    "nocturne.exe": {
+      "addr": "00554600",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.1111
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWeapon *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 228,
+        "vtable_addr": "005e6244"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

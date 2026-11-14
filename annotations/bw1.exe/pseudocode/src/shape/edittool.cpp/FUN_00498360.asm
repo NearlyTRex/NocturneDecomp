@@ -1,13 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_FUN_00498360(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; void __cdecl shape_edittool_cpp_FUN_00498360(CEditorTools *this_ptr,float scale_factor,int text_color)
 ;
+; Parameters:
+; CEditorTools *   Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   scale_factor
+; int              Stack[0xc]:4   text_color
 ;
 ; XREF[3]:
 ;   core_cloth.cpp_FUN_00441500 at 004416fd
-;   core_skeleton.cpp_FUN_00564b1c at 00564cf6
-;   shape_edittool.cpp_FUN_004985ae at 00498640
+;   core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_00564b20 at 00564cf6
+;   shape_edittool.cpp_FUN_004985b0 at 00498640
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005dc278
@@ -23,14 +27,14 @@
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
 ;   crt_math.c_round_FUN_005c03a0
-;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00407af0
 ;   engine_3d.c_setRenderAlpha_FUN_00406bd0
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510
 ;   engine_font.cpp_FUN_004c1dd0
-;   engine_font.cpp_FUN_004c4510
 ;   engine_matrix.c_transformToCache_FUN_00507b00
-;   engine_mini3d.cpp_FUN_00512320
-;   engine_mini3d.cpp_FUN_00517d50
+;   engine_mini3d.cpp_setAlpha_FUN_00512320
+;   engine_mini3d.cpp_setColor_FUN_00517d50
 ;
 ; *****************************************************************************
 
@@ -52,8 +56,8 @@ section .text
     MOV EBX,dword ptr [EAX + 0x41e8]    ; 0049837f
     PUSH EAX                            ; 00498385
     MOV dword ptr [0x01c3f538],EBX      ; 00498386 | DAT_01c3f538
-    CALL engine_font.cpp_FUN_004c4510   ; 0049838c
-        ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004c4510(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510 ; 0049838c
+        ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00498391
     FLD float ptr [ESP + 0x3c]          ; 00498394
     FMUL double ptr [0x005dc278]        ; 00498398 | DAT_005dc278
@@ -81,8 +85,8 @@ section .text
     AND EAX,0xff                        ; 004983eb
     OR EBX,EAX                          ; 004983f0
     PUSH EBX                            ; 004983f2
-    CALL engine_mini3d.cpp_FUN_00517d50 ; 004983f3
-        ;   XREF to: 00517d50 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_00517d50()
+    CALL engine_mini3d.cpp_setColor_FUN_00517d50 ; 004983f3
+        ;   XREF to: 00517d50 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setColor_FUN_00517d50(uint rgb)
     ADD ESP,0x4                         ; 004983f8
     LEA EAX,[ESP + 0x14]                ; 004983fb
         ;   Label: LAB_004983fb
@@ -116,7 +120,7 @@ section .text
     MOV EDI,ESP                         ; 00498454
     MOVSD.REP ES:EDI,ESI                ; 00498456
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407af0 ; 00498458
-        ;   XREF to: 00407af0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_clipAndDrawLine2D_FUN_00407af0()
+        ;   XREF to: 00407af0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407af0(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 0049845d
     MOV EAX,dword ptr [ESP + 0x20]      ; 00498460
     MOV dword ptr [ESP + 0x18],EAX      ; 00498464
@@ -139,7 +143,7 @@ section .text
     MOV EDI,ESP                         ; 0049849d
     MOVSD.REP ES:EDI,ESI                ; 0049849f
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407af0 ; 004984a1
-        ;   XREF to: 00407af0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_clipAndDrawLine2D_FUN_00407af0()
+        ;   XREF to: 00407af0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407af0(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 004984a6
     MOV EAX,dword ptr [ESP + 0x20]      ; 004984a9
     MOV dword ptr [ESP + 0x1c],EAX      ; 004984ad
@@ -164,7 +168,7 @@ section .text
     ADD EBX,0x30                        ; 004984ed
     MOVSD.REP ES:EDI,ESI                ; 004984f0
     CALL engine_3d.c_clipAndDrawLine2D_FUN_00407af0 ; 004984f2
-        ;   XREF to: 00407af0 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_clipAndDrawLine2D_FUN_00407af0()
+        ;   XREF to: 00407af0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407af0(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 004984f7
     XOR ESI,ESI                         ; 004984fa
     TEST byte ptr [EBX + 0x13],0x80     ; 004984fc
@@ -207,16 +211,16 @@ section .text
     PUSH EAX                            ; 00498558
     MOV EDI,dword ptr [EBX + 0x10]      ; 00498559
     MOV EBP,dword ptr [EBX + 0x14]      ; 0049855c
-    CALL crt_unknown.c_FUN_005bfb40     ; 0049855f
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0049855f
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 00498564
     PUSH 0xffff                         ; 00498567
     CALL engine_3d.c_setRenderAlpha_FUN_00406bd0 ; 0049856c
         ;   XREF to: 00406bd0 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406bd0(int alpha_color_value)
     ADD ESP,0x4                         ; 00498571
     PUSH 0x3f800000                     ; 00498574
-    CALL engine_mini3d.cpp_FUN_00512320 ; 00498579
-        ;   XREF to: 00512320 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_00512320()
+    CALL engine_mini3d.cpp_setAlpha_FUN_00512320 ; 00498579
+        ;   XREF to: 00512320 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setAlpha_FUN_00512320(float alpha)
     ADD ESP,0x4                         ; 0049857e
     PUSH -0x1                           ; 00498581
     MOV EDX,dword ptr [0x01c3f594]      ; 00498583 | DAT_01c3f594

@@ -22,7 +22,7 @@ void __cdecl core_gore_cpp_CGore_reset_FUN_004c93f0(CGore *this_ptr)
   pCVar1 = g_BloodParticles;
   do {
     pCVar2 = pCVar1 + 1;
-    *(uint *)&pCVar1->field_0x24 = 0;
+    (pCVar1->base).lifetime_remaining = 0.0;
     pCVar1 = pCVar2;
   } while (pCVar2 != (CBloodParticle *)&DAT_01cbcaf4);
   _DAT_01cde348 = 0;

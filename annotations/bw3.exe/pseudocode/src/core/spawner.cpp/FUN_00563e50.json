@@ -1,0 +1,307 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 97,
+    "complexity_score": 192,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 12,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 32,
+    "suspect_count": 15,
+    "suspect_types": [
+      "primitive_walker_cast",
+      "unnamed_param"
+    ],
+    "total_lines": 129
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00563e50",
+    "address_range": [
+      [
+        "00563e50",
+        "00563f68"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_spawner.cpp_FUN_00563e50",
+    "signature": "void core_spawner_cpp_FUN_00563e50(CDemonActor *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ba30",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveDeformableModelInstance_FUN_0040ba30"
+    },
+    {
+      "addr": "0040b830",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b830"
+    },
+    {
+      "addr": "0040b8b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b8b0"
+    },
+    {
+      "addr": "0040b680",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b680"
+    },
+    {
+      "addr": "0040c280",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c280"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d54bf",
+      "name": "s_spawn_name_005d54bd+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d54ca",
+      "name": "s_actor_class_name_005d54ca",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d54db",
+      "name": "s_spawn_timer_005d54db",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d54e7",
+      "name": "s_spawn_time_005d54e7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d54f2",
+      "name": "s_number_of_spawns_005d54f2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5503",
+      "name": "s_max_number_of_spawns_005d5503",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5518",
+      "name": "s_starting_state_005d5518",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5527",
+      "name": "s_spawnmodelName_005d5527",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5536",
+      "name": "s_reset_timer_005d5536",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5542",
+      "name": "s_dont_spawn_when_in_view_005d5542",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d555a",
+      "name": "s_startGuardDist_005d555a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00606710",
+      "name": "g_CSpawnerClassVersion",
+      "type": "int",
+      "value": "0x5"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.216216216216216,
+    "instruction_count": 74,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 12,
+      "CBRANCH": 4,
+      "COPY": 44,
+      "INT_ADD": 28,
+      "INT_AND": 34,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 36,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 13,
+      "INT_SLESS": 17,
+      "INT_SUB": 40,
+      "LOAD": 5,
+      "POPCOUNT": 17,
+      "RETURN": 2,
+      "STORE": 36
+    },
+    "pcode_op_count": 312
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_spawner_cpp_FUN_00563e50(CDemonActor *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_CDemonActor_archive_FUN_0040c280(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 6,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b680(param_1[1].actor_name,\"@@spawn_name\" + 2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1[1].actor_name + 0x1e,\"actor_class_name\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&param_1[1].orient_matrix.m[2].z,\"spawn_timer\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830((float *)&param_1[1].health,\"spawn_time\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
+      "line": 13,
+      "match": "(int *)&param_1[",
+      "severity": "moderate",
+      "text": "((int *)&param_1[1].validation_magic,\"number_of_spawns\");",
+      "type": "primitive_walker_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((int *)&param_1[1].validation_magic,\"number_of_spawns\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&param_1[1].direction_hint,\"max_number_of_spawns\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((char *)&param_1[1].orient_matrix,\"starting_state\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)param_1[1].create_event,\"spawnmodelName\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((float *)&param_1[1].runtime_state,\"reset_timer\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Primitive-pointer cast hiding struct field walk \u2014 retype to element type",
+      "line": 27,
+      "match": "(int *)&param_1[",
+      "severity": "moderate",
+      "text": "((int *)&param_1[1].lifecycle_state,\"dont_spawn_when_in_view\");",
+      "type": "primitive_walker_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 27,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((int *)&param_1[1].lifecycle_state,\"dont_spawn_when_in_view\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&param_1[1].create_prob,\"startGuardDist\");",
+      "type": "unnamed_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CSpawner",
+        "offset": 212,
+        "vtable_addr": "005e4a24"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 96,
+    "complexity_score": 32,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 16,
-    "suspect_count": 7,
+    "pseudocode_lines": 17,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 56
+    "total_lines": 57
   },
   "cross_references": [
     {
@@ -128,6 +127,32 @@
     },
     "pcode_op_count": 127
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00462770",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0045c480",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004729d0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0044e3c0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -152,54 +177,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x164",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x164 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x1cc0",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x1cc0 * *(int *)&this_ptr->field_0x1cc4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x1cc4",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x1cc0 * *(int *)&this_ptr->field_0x1cc4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x2f9c",
-      "severity": "mild",
-      "text": "*(void **)&this_ptr->field_0x2f9c = pvVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x1cc0",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x1cc0 * *(int *)&this_ptr->field_0x1cc4 * 2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x1cc4",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x1cc0 * *(int *)&this_ptr->field_0x1cc4 * 2);",
-      "type": "unnamed_field"
     }
   ]
 }

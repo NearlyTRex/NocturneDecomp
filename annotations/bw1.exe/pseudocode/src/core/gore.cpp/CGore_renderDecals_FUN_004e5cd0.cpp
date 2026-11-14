@@ -17,7 +17,7 @@ void __cdecl core_gore_cpp_CGore_renderDecals_FUN_004e5cd0(CGore *this_ptr,int r
   CBloodPool *this_ptr_01;
   CFootstep *this_ptr_02;
   
-  if (*(int *)&g_CGamePtr->field_0x14 != 0) {
+  if (g_CGamePtr->blood_flag != 0) {
     core_gore_cpp_CBloodSplat_setupRenderState_FUN_004e4910((CBloodSplat *)0x1cd56b4);
     if (render_all == 0) {
       iVar2 = 0;

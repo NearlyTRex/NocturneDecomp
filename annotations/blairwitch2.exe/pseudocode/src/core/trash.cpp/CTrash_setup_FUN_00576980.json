@@ -1,0 +1,159 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 47,
+    "complexity_score": 58,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 23,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unrolled_memset"
+    ],
+    "total_lines": 70
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00576980",
+    "address_range": [
+      [
+        "00576980",
+        "00576a3e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_trash.cpp_CTrash_setup_FUN_00576980",
+    "signature": "void __cdecl core_trash_cpp_CTrash_setup_FUN_00576980(CTrash *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408a80",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setup_FUN_00408a80"
+    },
+    {
+      "addr": "0040cf60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60"
+    },
+    {
+      "addr": "0044fd00",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9767441860465116,
+    "instruction_count": 43,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 51,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 31,
+      "INT_AND": 10,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 10,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 5,
+      "INT_SUB": 9,
+      "LOAD": 10,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 24
+    },
+    "pcode_op_count": 171
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0059a240",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0056d230",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005debc0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00546ce0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTrash *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 9,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(this_ptr->drift).z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 12,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(this_ptr->velocity).z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 21,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(this_ptr->drift_target).z = 0.0;",
+      "type": "unrolled_memset"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "005fd0f4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -6,10 +6,12 @@
 #include "system/basetypes.h"
 
 // Structure: SPartInstanceData
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// CDeformableModelInstance+0x2140; bw1 00569ae0 sets +0x2140..+0x2230 to 1 (60 dwords), 00569b00 zeroes +0x2230..+0x2320 (60 dwords; bw3 0054e690 same); dismemberPart 0056a7d0 clears [+0x2140+i*4], reads [+0x2230+i*4]; archivePartStatus 0040b960 reads both arrays
+// Ghidra size: 0x1e0 (480 bytes)
 #pragma pack(push, 1)
 typedef struct SPartInstanceData {
+    int visibility_flags[60]; // 0x0
+    int texture_set_indices[60]; // 0xf0
 } SPartInstanceData;
 #pragma pack(pop)
 

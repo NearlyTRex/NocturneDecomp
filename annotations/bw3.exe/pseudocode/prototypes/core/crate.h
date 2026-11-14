@@ -7,23 +7,23 @@
 
 // Original: core_crate.cpp_staticInit_FUN_00445b70
 // Address: 00445b70
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_crate.cpp_factoryFuncCrate_FUN_00445ba0
 // Address: 00445ba0
-void factoryFuncCrate(void);
+CCrate * __cdecl factoryFuncCrate(void);
 
 // Original: core_crate.cpp_CCrate_getActorType_FUN_00445bc0
 // Address: 00445bc0
-CDemonActorType * CCrate::getActorType(CCrate *this_ptr);
+CDemonActorType * __cdecl CCrate::getActorType(CCrate *this_ptr);
 
 // Original: core_crate.cpp_CCrate_ctor_FUN_00445bd0
 // Address: 00445bd0
 CCrate * __cdecl CCrate::ctor(CCrate *this_ptr);
 
-// Original: core_crate.cpp_FUN_00445c30
+// Original: core_crate.cpp_CCrate_setup_FUN_00445c30
 // Address: 00445c30
-void FUN_00445c30(CDemonActor *param_1);
+void __cdecl CCrate::setup(CCrate *this_ptr);
 
 // Original: core_crate.cpp_CCrate_canPickup_FUN_00445d10
 // Address: 00445d10
@@ -41,17 +41,17 @@ void __cdecl CCrate::onDropped(CCrate *this_ptr,CVector3f *drop_position);
 // Address: 00445d60
 CDemonActor * __cdecl CCrate::getCarrier(CCrate *this_ptr);
 
-// Original: core_crate.cpp_FUN_00445d70
+// Original: core_crate.cpp_CCrate_process_FUN_00445d70
 // Address: 00445d70
-void FUN_00445d70(CDemonActor *param_1);
+void __cdecl CCrate::process(CCrate *this_ptr,float delta_time);
 
-// Original: core_crate.cpp_FUN_00445fa0
+// Original: core_crate.cpp_CCrate_renderOpaque_FUN_00445fa0
 // Address: 00445fa0
-int FUN_00445fa0(int param_1);
+int __cdecl CCrate::renderOpaque(CCrate *this_ptr);
 
-// Original: core_crate.cpp_FUN_00446020
+// Original: core_crate.cpp_CCrate_renderBackground_FUN_00446020
 // Address: 00446020
-void FUN_00446020(void);
+void __cdecl CCrate::renderBackground(CCrate *this_ptr,int layer_flag);
 
 // Original: core_crate.cpp_CCrate_archive_FUN_00446040
 // Address: 00446040
@@ -61,13 +61,13 @@ void __cdecl CCrate::archive(CCrate *this_ptr);
 // Address: 00446090
 ECollisionType __cdecl CCrate::getCollisionType(CCrate *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_crate.cpp_FUN_004460b0
+// Original: core_crate.cpp_CCrate_getBoundingBox_FUN_004460b0
 // Address: 004460b0
-void FUN_004460b0(int param_1);
+CBoundingBox3D * __cdecl CCrate::getBoundingBox(CCrate *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_crate.cpp_FUN_004460f0
+// Original: core_crate.cpp_CCrate_getTargetPoints_FUN_004460f0
 // Address: 004460f0
-undefined4 FUN_004460f0(int param_1,float *param_2);
+int __cdecl CCrate::getTargetPoints(CCrate *this_ptr,CVector3f *out_points_array);
 
 // Original: core_crate.cpp_FUN_004461c0
 // Address: 004461c0

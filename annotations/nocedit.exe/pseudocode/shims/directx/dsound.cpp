@@ -15,6 +15,7 @@
 #include "system/dsound.h"
 
 #include "core/debug_log.h"
+#include "directx/sound_hold.h"
 
 #include <SDL.h>
 #include <cmath>
@@ -93,6 +94,7 @@ struct DSoundBuffer_ShimData {
     WAVEFORMATEX format;
     DSound3DBuffer_ShimData *d3d; // 3D view of this buffer, if the game made one
     double play_pos_frames;       // fractional read position, for rate conversion
+    int held;                     // 1 while the hold keeps it where it is
 };
 
 struct DSound3DBuffer_ShimData {
@@ -292,6 +294,16 @@ static void mix_voice(DSoundBuffer_ShimData *buf, int *acc, int frames) {
     buf->play_cursor = (DWORD)(cur * frame_bytes);
 }
 
+// A voice held (sound_hold.h) is skipped by the mixer, so its cursor stays put.
+// Marked under the audio lock the mixer reads it under.
+extern "C" void nocturne_audio_hold_voice(void *voice, int held) {
+    DSoundBuffer_ShimData *buf = (DSoundBuffer_ShimData *)voice;
+    SDL_AudioDeviceID dev = buf->dsound->device_id;
+    SDL_LockAudioDevice(dev);
+    buf->held = held;
+    SDL_UnlockAudioDevice(dev);
+}
+
 static void dsound_mix_callback(void *userdata, Uint8 *stream, int len) {
     DSound_ShimData *ds = (DSound_ShimData *)userdata;
     const int slots = len / 2; // device is S16
@@ -302,6 +314,8 @@ static void dsound_mix_callback(void *userdata, Uint8 *stream, int len) {
     int active = 0;
     for (int i = 0; i < g_voice_count; i++) {
         DSoundBuffer_ShimData *buf = g_voices[i];
+        if (buf->held != 0)
+            continue;
         if (buf->is_playing)
             active++;
         mix_voice(buf, acc, frames);

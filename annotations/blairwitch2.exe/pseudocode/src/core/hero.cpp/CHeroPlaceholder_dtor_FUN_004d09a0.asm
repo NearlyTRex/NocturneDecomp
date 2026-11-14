@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   undefined4 g_CHeroPlaceholderVTable
+;   CDemonActor_vtable g_CHeroPlaceholderVTable
 ;   WatcomTypeInfo g_CHeroPlaceholderTypeInfo
 ;
 ; Called Functions:
@@ -45,7 +45,7 @@ section .text
         ;   Label: LAB_004d09d0
     PUSH EBX                            ; 004d09d5
     CALL crt_memory.c___vec_delete_FUN_005b7fa7 ; 004d09d6
-        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005b7fa7()
+        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005b7fa7(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 004d09db
     PUSH EAX                            ; 004d09de
     CALL crt_unknown.c_FUN_005b7fce     ; 004d09df

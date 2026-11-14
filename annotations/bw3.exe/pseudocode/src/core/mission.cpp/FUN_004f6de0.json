@@ -2,16 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 240,
+    "complexity_score": 220,
     "cross_reference_count": 4,
     "function_call_count": 6,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 30,
-    "suspect_count": 19,
+    "suspect_count": 17,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_field",
+      "pointer_cast",
       "unnamed_param",
       "unresolved_funcptr"
     ],
@@ -19,21 +19,21 @@
   },
   "cross_references": [
     {
+      "addr": "004f70a0",
+      "from_addr": "004f71e0",
+      "name": "core_mission.cpp_CDemonMission_process_FUN_004f70a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004f72a0",
       "from_addr": "004f72f7",
       "name": "core_mission.cpp_CDemonMission_run_FUN_004f72a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004f70a0",
-      "from_addr": "004f71e0",
-      "name": "core_mission.cpp_FUN_004f70a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004f722c",
+      "addr": "004f7230",
       "from_addr": "004f728f",
-      "name": "core_mission.cpp_FUN_004f722c",
+      "name": "core_mission.cpp_FUN_004f7230",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -69,7 +69,7 @@
     {
       "addr": "004f6a80",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004f6a80"
+      "name": "core_mission.cpp_CDemonMission_prepareAllActors_FUN_004f6a80"
     },
     {
       "addr": "004f6f80",
@@ -84,7 +84,7 @@
     {
       "addr": "00556c60",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00556c60"
+      "name": "sound_sndmain.cpp_killAllSfx_FUN_00556c60"
     }
   ],
   "globals": [
@@ -102,7 +102,7 @@
     },
     {
       "addr": "01d2159c",
-      "name": "g_CGameInstance.field656_0x290",
+      "name": "g_CGameInstance.new_set_event_pending",
       "type": "undefined4",
       "value": null
     },
@@ -114,13 +114,13 @@
     },
     {
       "addr": "02024a2c",
-      "name": "g_CDemonSetInstance.field1364324_0x14d164",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02024a30",
-      "name": "g_CDemonSetInstance.field1364328_0x14d168",
+      "name": "g_CDemonSetInstance.actors[0]",
       "type": "undefined4",
       "value": null
     }
@@ -145,7 +145,7 @@
       {
         "call_addr": "004f71e0",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_004f70a0",
+        "caller": "core_mission.cpp_CDemonMission_process_FUN_004f70a0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -172,7 +172,7 @@
       {
         "call_addr": "004f728f",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_004f722c",
+        "caller": "core_mission.cpp_FUN_004f7230",
         "estimated_params": 2,
         "instructions_analyzed": 5,
         "method": "push_count",
@@ -248,7 +248,7 @@
       "line": 9,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (param_2 == *(int *)param_1) {",
+      "text": "if (param_2 == param_1->current_set_index) {",
       "type": "unnamed_param"
     },
     {
@@ -256,7 +256,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (param_2 == *(int *)param_1) {",
+      "text": "if (param_2 == param_1->current_set_index) {",
       "type": "unnamed_param"
     },
     {
@@ -264,7 +264,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)param_1 = param_2;",
+      "text": "param_1->current_set_index = param_2;",
       "type": "unnamed_param"
     },
     {
@@ -272,7 +272,7 @@
       "line": 12,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(int *)param_1 = param_2;",
+      "text": "param_1->current_set_index = param_2;",
       "type": "unnamed_param"
     },
     {
@@ -280,7 +280,7 @@
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_set_cpp_FUN_00532b80(g_CDemonSetPtr,param_1 + param_2 * 0x100 + 8);",
+      "text": "core_set_cpp_FUN_00532b80(g_CDemonSetPtr,param_1->set_names + param_2);",
       "type": "unnamed_param"
     },
     {
@@ -288,7 +288,7 @@
       "line": 13,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_set_cpp_FUN_00532b80(g_CDemonSetPtr,param_1 + param_2 * 0x100 + 8);",
+      "text": "core_set_cpp_FUN_00532b80(g_CDemonSetPtr,param_1->set_names + param_2);",
       "type": "unnamed_param"
     },
     {
@@ -296,7 +296,7 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x1008) == 0) {",
+      "text": "if (param_1->is_in_editor == 0) {",
       "type": "unnamed_param"
     },
     {
@@ -320,7 +320,7 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)param_1 != *(int *)(param_1 + 0x1454)) {",
+      "text": "if (param_1->current_set_index != param_1->prepared_set_index) {",
       "type": "unnamed_param"
     },
     {
@@ -328,7 +328,7 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)param_1 != *(int *)(param_1 + 0x1454)) {",
+      "text": "if (param_1->current_set_index != param_1->prepared_set_index) {",
       "type": "unnamed_param"
     },
     {
@@ -336,40 +336,24 @@
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_mission_cpp_FUN_004f6a80(param_1);",
+      "text": "core_mission_cpp_CDemonMission_prepareAllActors_FUN_004f6a80(param_1);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x14d164",
-      "severity": "mild",
-      "text": "for (iVar3 = 0; iVar3 < *(int *)&g_CDemonSetPtr->field_0x14d164; iVar3 = iVar3 + 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 25,
-      "match": "field_0x14d168",
-      "severity": "mild",
-      "text": "piVar1 = (int *)(&g_CDemonSetPtr->field_0x14d168 + iVar2);",
-      "type": "unnamed_field"
+      "match": "(int *)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)g_CDemonSetPtr->actors + iVar2);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 27,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(*piVar1 + 0x154) + 0x50))(*piVar1);",
+      "text": "(**(code **)(*(int *)(iVar1 + 0x154) + 0x50))(iVar1);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x290",
-      "severity": "mild",
-      "text": "*(uint *)&g_CGamePtr->field_0x290 = 1;",
-      "type": "unnamed_field"
     },
     {
       "call_site_count": 4,

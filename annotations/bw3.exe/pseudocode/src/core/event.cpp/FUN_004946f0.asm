@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_event_cpp_FUN_004946f0(CEventList *param_1,CEventList *param_2,int param_3)
+; void core_event_cpp_FUN_004946f0(CEventList *param_1,char *param_2,int param_3)
 ;
 ;
 ; XREF[3]:
 ;   core_event.cpp_FUN_0048c2e0 at 0048e0dc
-;   core_game.cpp_FUN_004b7f90 at 004b8d88
-;   core_styldemo.cpp_FUN_005a0330 at 005a03f0
+;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b8d88
+;   core_styldemo.cpp_CStylerDemon_processDamage_FUN_005a0330 at 005a03f0
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005bfdf0
@@ -132,7 +132,7 @@ section .text
         ;   Label: LAB_004947ca
     PUSH 0x5bfdf3                       ; 004947cf | = "events.txt"
     CALL crt_stdio.c_fopen_FUN_005a43ec ; 004947d4
-        ;   XREF to: 005a43ec (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_005a43ec()
+        ;   XREF to: 005a43ec (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005a43ec(char * filename, char * mode)
     ADD ESP,0x8                         ; 004947d9
     MOV EDI,EAX                         ; 004947dc
     TEST EAX,EAX                        ; 004947de

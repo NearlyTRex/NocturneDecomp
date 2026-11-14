@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonShadow * core_shadow_cpp_CDemonShadow_ctor_FUN_00545fc0(CDemonShadow *this_ptr)
+; CDemonShadow * __cdecl core_shadow_cpp_CDemonShadow_ctor_FUN_00545fc0(CDemonShadow *this_ptr)
 ;
 ; Parameters:
 ; CDemonShadow *   Stack[0x4]:4   this_ptr
@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   core_shadow.cpp_CShadow_ctor_FUN_00543500
-;   core_skeleton.cpp_FUN_0054eae0
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     ADD EAX,0x158                       ; 00545fd5
     PUSH EAX                            ; 00545fda
     MOV dword ptr [EAX + -0x4],0x5e4164 ; 00545fdb
-    CALL core_skeleton.cpp_FUN_0054eae0 ; 00545fe2
-        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054eae0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 ; 00545fe2
+        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2538],0x42700000 ; 00545fe7
     MOV dword ptr [EBX + 0xce5c],0x41f00000 ; 00545ff1
     ADD ESP,0x8                         ; 00545ffb

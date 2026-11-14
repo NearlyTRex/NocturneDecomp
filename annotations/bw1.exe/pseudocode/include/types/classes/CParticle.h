@@ -2,14 +2,26 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CParticle_vtable;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CParticle
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// setup 00532160 and process FUN_00532250 (vtable slot 4 of every particle vtable); 64 also measured by its derived classes (RTTI +8 each). gravity_acceleration became a vector.
+// Ghidra size: 0x40 (64 bytes)
 #pragma pack(push, 1)
 typedef struct CParticle {
+    CVector3f position; // 0x0, setup copies position to +0x0..+0x8; process adds velocity*dt
+    CVector3f velocity; // 0xc, setup copies velocity to +0xc..+0x14; process param_1[3..5] += param_1[6..8]*dt
+    CVector3f acceleration; // 0x18, setup +0x18=0, +0x1c=-32.0 (nocedit gravity_acceleration value), +0x20=0; process adds param_1[6..8]*dt to velocity
+    float lifetime_remaining; // 0x24, setup +0x24=5.0; process tests 0<param_1[9] and subtracts dt
+    int is_in_solid; // 0x28, process stores testVoxelAtCoords result to param_1[10]
+    CVector3f previous_position; // 0x2c, process copies position to param_1[0xb..0xd] and traces from it
+    int was_in_solid; // 0x38, setup +0x38=0; process param_1[0xe]=param_1[10]
+    struct CParticle_vtable* vtable; // 0x3c, process calls *(param_1[0xf]+0xc) (onCollision); CRock ctor 004b7720 stores g_CRockVTable at +0x3c
 } CParticle;
 #pragma pack(pop)
 

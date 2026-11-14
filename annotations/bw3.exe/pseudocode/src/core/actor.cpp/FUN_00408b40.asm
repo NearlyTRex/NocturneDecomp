@@ -8,15 +8,15 @@
 ;
 ; XREF[17]:
 ;   core_actor.cpp_FUN_004091b0 at 00409307
-;   core_boxactor.cpp_FUN_0041ff20 at 0041ff5b
-;   core_carved.cpp_FUN_00425da0 at 00426723
+;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_0041ff20 at 0041ff5b
+;   core_carved.cpp_CCarved_process_FUN_00425da0 at 00426723
 ;   core_charactr.cpp_FUN_004310e0 at 0043124c
 ;   core_charactr.cpp_FUN_00432330 at 00432835
 ;   core_charactr.cpp_FUN_00433220 at 0043329c
-;   core_demnfolk.cpp_FUN_00455080 at 00455a29
-;   core_fire.cpp_FUN_00497290 at 004974f2
-;   core_fire.cpp_FUN_004a2e20 at 004a34c9
-;   core_flies.cpp_FUN_004ad950 at 004ad9f1
+;   core_demnfolk.cpp_CDemnfolk_process_FUN_00455080 at 00455a29
+;   core_fire.cpp_CBulletHole_init_FUN_00497290 at 004974f2
+;   core_fire.cpp_CFireEffect_traceLaser_FUN_004a2e20 at 004a34c9
+;   core_flies.cpp_CFlies_process_FUN_004ad950 at 004ad9f1
 ;   ... and 7 more
 ;
 ; Called Functions:

@@ -4,18 +4,18 @@
 ; void __cdecl sound_sndmain_cpp_lockSound_FUN_005532f0(void)
 ;
 ;
-; XREF[25]:
-;   core_tommygun.cpp_FUN_00576130 at 0057623d
-;   sound_sndmain.cpp_FUN_0054d3a0 at 0054d3f2
-;   sound_sndmain.cpp_FUN_005506b0 at 00550756
-;   sound_sndmain.cpp_FUN_005510d0 at 005510d7
-;   sound_sndmain.cpp_FUN_00551220 at 00551262
-;   sound_sndmain.cpp_FUN_0055141c at 00551420
-;   sound_sndmain.cpp_FUN_0055147e at 00551480
-;   sound_sndmain.cpp_FUN_00551490 at 00551490
-;   sound_sndmain.cpp_FUN_005514f0 at 005514f0
-;   sound_sndmain.cpp_FUN_00551570 at 00551570
-;   ... and 15 more
+; XREF[27]:
+;   core_tommygun.cpp_CTommyGun_process_FUN_00576130 at 0057623d
+;   sound_sndmain.cpp_createUserSample_FUN_005516d0 at 005516de
+;   sound_sndmain.cpp_enableSfxChannel_FUN_00551220 at 00551262
+;   sound_sndmain.cpp_enableSoundSystem_FUN_005524b0 at 005524e8
+;   sound_sndmain.cpp_freeAllSamples_FUN_00551c70 at 00551c72
+;   sound_sndmain.cpp_freeSampleByName_FUN_00551950 at 00551957
+;   sound_sndmain.cpp_getChannelLevels_FUN_005540f0 at 00554137
+;   sound_sndmain.cpp_getRecordingDeviceCount_FUN_00552d00 at 00552d16
+;   sound_sndmain.cpp_getSampleInfo_FUN_005519e0 at 005519f1
+;   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_0054d3a0 at 0054d3f2
+;   ... and 17 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005e91c1

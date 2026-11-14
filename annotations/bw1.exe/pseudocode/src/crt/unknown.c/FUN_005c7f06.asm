@@ -14,7 +14,7 @@
 ;   crt_math.c_asin_FUN_005c1cd6 at 005c1ce0
 ;
 ; Called Functions:
-;   unkafter_zombie.cpp_FUN_005cbedb
+;   crt_unknown.c_FUN_005cbedb
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     FSTP double ptr [EBP + -0x10]       ; 005c7f24
     MOV dword ptr [EBP + -0x4],EDX      ; 005c7f27
         ;   Label: LAB_005c7f27
-    CALL unkafter_zombie.cpp_FUN_005cbedb ; 005c7f2a
-        ;   XREF to: 005cbedb (UNCONDITIONAL_CALL)  ; undefined unkafter_zombie.cpp_FUN_005cbedb()
+    CALL crt_unknown.c_FUN_005cbedb     ; 005c7f2a
+        ;   XREF to: 005cbedb (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005cbedb()
     PUSH EDX                            ; 005c7f2f
     PUSH EAX                            ; 005c7f30
     FLD double ptr [ESP]                ; 005c7f31

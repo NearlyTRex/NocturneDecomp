@@ -201,12 +201,14 @@ NOCTURNE_TEST(an_upscaler_draws_through_its_own_program_and_puts_the_pipeline_ba
 // Each filter has a program of its own, built on its first use and kept.
 NOCTURNE_TEST(each_filter_builds_its_own_program_once) {
     gl_recorder::State &s = start();
-    for (int mode = NOCTURNE_UPSCALER_FSR; mode < NOCTURNE_UPSCALER_COUNT; mode++)
+    for (int mode = NOCTURNE_UPSCALER_FSR; mode <= NOCTURNE_UPSCALER_XBR; mode++)
         CHECK_EQ_AT(nocturne_gl_blit_quad_upscaled(mode, 1, 0, 640, 480, 0.5f), 1,
                     std::to_string(mode));
-    CHECK_EQ(s.count("CreateProgram"), NOCTURNE_UPSCALER_COUNT);
+    // One each, and the plain quad's.
+    const int programs = NOCTURNE_UPSCALER_XBR - NOCTURNE_UPSCALER_FSR + 2;
+    CHECK_EQ(s.count("CreateProgram"), programs);
     CHECK_EQ(nocturne_gl_blit_quad_upscaled(NOCTURNE_UPSCALER_NIS, 1, 0, 640, 480, 0.5f), 1);
-    CHECK_EQ(s.count("CreateProgram"), NOCTURNE_UPSCALER_COUNT);
+    CHECK_EQ(s.count("CreateProgram"), programs);
 }
 
 // Standard has no program, and nor has a mode that does not exist: nothing is

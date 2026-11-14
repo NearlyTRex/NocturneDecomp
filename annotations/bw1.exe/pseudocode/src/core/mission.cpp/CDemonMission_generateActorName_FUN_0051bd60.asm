@@ -11,11 +11,11 @@
 ; undefined1       Stack[-0x2b]:1  local_2b
 ;
 ; XREF[13]:
-;   core_baron.cpp_FUN_00410640 at 004106b2
-;   core_bodypart.cpp_FUN_00418940 at 00418a01
-;   core_game.cpp_FUN_004d2540 at 004d255d
-;   core_game.cpp_FUN_004d25fe at 004d2633
-;   core_game.cpp_FUN_004d27b0 at 004d413d
+;   core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00410640 at 004106b2
+;   core_bodypart.cpp_createBodyPart_FUN_00418940 at 00418a01
+;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d413d
+;   core_game.cpp_giveHeroWeaponAmmo_FUN_004d2600 at 004d2633
+;   core_game.cpp_giveHeroWeapon_FUN_004d2540 at 004d255d
 ;   core_gore.cpp_FUN_004e63e0 at 004e649c
 ;   core_hero.cpp_FUN_004ecca0 at 004eccf9
 ;   core_inv.cpp_FUN_004f7690 at 004f8535
@@ -24,7 +24,7 @@
 ;   ... and 3 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408830
+;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408830
 ;   core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_0051bcc0
 ;
 ; *****************************************************************************
@@ -39,8 +39,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x34]      ; 0051bd66
     PUSH EDI                            ; 0051bd6a
     MOV byte ptr [EDI],0x0              ; 0051bd6b
-    CALL core_actor.cpp_FUN_00408830    ; 0051bd6e
-        ;   XREF to: 00408830 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_FUN_00408830(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408830 ; 0051bd6e
+        ;   XREF to: 00408830 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408830(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0051bd73
     MOV BL,byte ptr [EAX]               ; 0051bd76
     MOV EDX,EAX                         ; 0051bd78

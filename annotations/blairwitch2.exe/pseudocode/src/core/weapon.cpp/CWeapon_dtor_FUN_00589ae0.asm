@@ -9,6 +9,8 @@
 ;
 ; XREF[17]:
 ;   core_baron.cpp_CBaronWeapon_dtor_FUN_00410bb0 at 00410bbf
+;   core_cross.cpp_CCross_dtor_FUN_005a6b30 at 005a6b49
+;   core_cross.cpp_CSimpleCross_dtor_FUN_005a7a60 at 005a7a6f
 ;   core_crossbow.cpp_CCrossbow_dtor_FUN_0043ae70 at 0043ae96
 ;   core_dynamite.cpp_CDynamite_dtor_FUN_0047a3e0 at 0047a3ef
 ;   core_elephant.cpp_CElephantGun_dtor_FUN_00486730 at 0048673f
@@ -16,12 +18,10 @@
 ;   core_flashlit.cpp_CFlashlight_dtor_FUN_004a11b0 at 004a11bf
 ;   core_gun.cpp_CGun_dtor_FUN_004cc6b0 at 004cc6bf
 ;   core_lantern.cpp_CLantern_dtor_FUN_0059d170 at 0059d17f
-;   core_lightgun.cpp_CLightGun_dtor_FUN_004e40e0 at 004e40ef
-;   core_melee.cpp_CMelee_dtor_FUN_004ead30 at 004ead3f
 ;   ... and 7 more
 ;
 ; Referenced Globals:
-;   undefined4 g_CWeaponVTable
+;   CWeapon_full_vtable g_CWeaponVTable
 ;   WatcomTypeInfo g_CWeaponTypeInfo
 ;
 ; Called Functions:
@@ -66,7 +66,7 @@ section .text
         ;   Label: LAB_00589b27
     PUSH EBX                            ; 00589b2c
     CALL crt_memory.c___vec_delete_FUN_005b7fa7 ; 00589b2d
-        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005b7fa7()
+        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005b7fa7(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 00589b32
     PUSH EAX                            ; 00589b35
     CALL crt_unknown.c_FUN_005b7fce     ; 00589b36

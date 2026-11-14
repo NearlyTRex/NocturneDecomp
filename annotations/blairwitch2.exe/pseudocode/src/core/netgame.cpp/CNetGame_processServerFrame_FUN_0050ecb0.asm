@@ -19,8 +19,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b652c
 ;   core_game.cpp_FUN_004b5190 at 004b5234
-;   core_game.cpp_FUN_004b6170 at 004b652c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_005e03cf
@@ -34,14 +34,14 @@
 ;   TerminatedCString s_core_netgame_cpp_005e0ff8
 ;   TerminatedCString s_CNetGame_processServerFr_005e100c
 ;   CGame* g_CGamePtr = 01cb6900
-;   undefined4 g_CGameInstance.field644_0x284
+;   undefined4 g_CGameInstance.delta_time_float
 ;   undefined4 DAT_01d046a0
 ;   undefined4 DAT_01d046a4
 ;   undefined4 DAT_01d34e34
 ;   ... and 8 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cee0
+;   core_actor.cpp_setRandomSeed_FUN_0040cee0
 ;   core_main.c_FUN_004e4500
 ;   core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_0050f370
 ;   core_netgame.cpp_CNetGame_receivePackets_FUN_0050c190
@@ -50,7 +50,7 @@
 ;   crt_memory.c_memset_FUN_005b77c0
 ;   crt_stdlib.c_rand_FUN_005b849c
 ;   crt_string.c_memmove_FUN_005ba1f0
-;   wincore_winrun.cpp_FUN_0058e9e0
+;   wincore_winrun.cpp_getTime_FUN_0058e9e0
 ;
 ; *****************************************************************************
 
@@ -63,8 +63,8 @@ section .text
     PUSH EBP                            ; 0050ecb3
     SUB ESP,0x90                        ; 0050ecb4
     MOV EBX,dword ptr [ESP + 0xa4]      ; 0050ecba
-    CALL wincore_winrun.cpp_FUN_0058e9e0 ; 0050ecc1
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_0058e9e0()
+    CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 0050ecc1
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_0058e9e0()
     MOV EDX,EAX                         ; 0050ecc6
     MOV ECX,0x12                        ; 0050ecc8
     SAR EDX,0x1f                        ; 0050eccd
@@ -218,7 +218,7 @@ section .text
     MOV dword ptr [ESI + 0x4],EAX       ; 0050ee5a
     MOV EAX,[0x00616494]                ; 0050ee5d | g_CGamePtr
     MOV dword ptr [ESP + 0x7c],ESI      ; 0050ee62
-    MOV EDX,dword ptr [EAX + 0x284]     ; 0050ee66 | g_CGameInstance.field644_0x284
+    MOV EDX,dword ptr [EAX + 0x284]     ; 0050ee66 | g_CGameInstance.delta_time_float
     MOV dword ptr [ESI + 0x8],EDX       ; 0050ee6c
     MOV ECX,dword ptr [EBX + 0x1c]      ; 0050ee6f
     XOR EBP,EBP                         ; 0050ee72
@@ -289,8 +289,8 @@ section .text
         ;   Label: LAB_0050ef19
     PUSH EAX                            ; 0050ef1e
     MOV dword ptr [EBX + 0x17c],EAX     ; 0050ef1f
-    CALL core_actor.cpp_FUN_0040cee0    ; 0050ef25
-        ;   XREF to: 0040cee0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040cee0(uint seed_value)
+    CALL core_actor.cpp_setRandomSeed_FUN_0040cee0 ; 0050ef25
+        ;   XREF to: 0040cee0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_setRandomSeed_FUN_0040cee0(uint seed_value)
     ADD ESP,0x4                         ; 0050ef2a
     ADD ESP,0x90                        ; 0050ef2d
     POP EBP                             ; 0050ef33

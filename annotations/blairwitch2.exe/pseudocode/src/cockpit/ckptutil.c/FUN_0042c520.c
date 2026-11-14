@@ -12,35 +12,36 @@ void * __cdecl cockpit_ckptutil_c_FUN_0042c520(char *filename,void *buffer,int s
 
 {
   int iVar1;
-  byte local_88 [80];
+  char local_88 [80];
   CInStreamFile local_38;
   
   if (buffer == (void *)0x0) {
-    buffer = FUN_005b8580(size);
+    buffer = malloc(size);
     if (buffer == (void *)0x0) {
-      FUN_005b7790(local_88,"@Unable to allocate %u bytes for bitmap file (%s)." + 1,size,filename);
+      _sprintf(local_88,"@Unable to allocate %u bytes for bitmap file (%s)." + 1);
       _DAT_01d046a0 = "..\\cockpit\\ckptutil.c";
       _DAT_01d046a4 = 0xe8;
       core_main_c_FUN_004e4500(local_88);
     }
   }
-  unkclass_instream_cpp_CInStreamFile_ctor_FUN_0057cd50(&local_38);
-  iVar1 = support_trstream_cpp_FUN_0057d390(&local_38,&DAT_005cd38e,filename);
+  support_trstream_cpp_CInStreamFile_ctor_FUN_0057cd50(&local_38);
+  iVar1 = support_trstream_cpp_CInStreamFile_openInDirectory_FUN_0057d390
+                    (&local_38,&DAT_005cd38e,filename);
   if (iVar1 == 0) {
-    FUN_005b7790(local_88,"Unable to open bitmap file (%s).",filename);
+    _sprintf(local_88,"Unable to open bitmap file (%s).");
     _DAT_01d046a4 = 0xf1;
     _DAT_01d046a0 = "..\\cockpit\\ckptutil.c";
     core_main_c_FUN_004e4500(local_88);
   }
-  iVar1 = unkaddr_0057b9a0_cpp_FUN_0057cfe0(&local_38,buffer,size);
+  iVar1 = support_trstream_cpp_CInStreamFile_read_FUN_0057cfe0(&local_38,buffer,size);
   if (iVar1 != size) {
-    FUN_005b7790(local_88,"Unable to read bitmap file (%s).",filename);
-    unkaddr_0057b9a0_cpp_FUN_0057d180(&local_38);
+    _sprintf(local_88,"Unable to read bitmap file (%s).");
+    support_trstream_cpp_CInStreamFile_close_FUN_0057d180(&local_38);
     _DAT_01d046a0 = "..\\cockpit\\ckptutil.c";
     _DAT_01d046a4 = 0xf9;
     core_main_c_FUN_004e4500(local_88);
   }
-  unkaddr_0057b9a0_cpp_FUN_0057d180(&local_38);
-  unkclass_instream_cpp_CInStreamFile_dtor_FUN_0057cec0(&local_38,0);
+  support_trstream_cpp_CInStreamFile_close_FUN_0057d180(&local_38);
+  support_trstream_cpp_CInStreamFile_dtor_FUN_0057cec0(&local_38,0);
   return buffer;
 }

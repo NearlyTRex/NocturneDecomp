@@ -7,9 +7,9 @@
 ; CDoor *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_charactr.cpp_FUN_00428ac0 at 00428ad2
-;   core_hero.cpp_FUN_004cf230 at 004cf271
-;   core_hero.cpp_FUN_004d03b0 at 004d0524
+;   core_charactr.cpp_CCharacter_clearDoorTarget_FUN_00428ac0 at 00428ad2
+;   core_hero.cpp_CHero_doHeroAction_FUN_004d03b0 at 004d0524
+;   core_hero.cpp_CHero_tryOpenDoor_FUN_004cf230 at 004cf271
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006141f0

@@ -9,9 +9,9 @@
 void __cdecl core_game_cpp_CGame_saveClockTime_FUN_004cbf10(CGame *this_ptr)
 
 {
-  uint uVar1;
+  int iVar1;
   
-  uVar1 = wincore_winrun_cpp_FUN_005b2420();
-  *(uint *)&this_ptr->field_0x28c = uVar1;
+  iVar1 = wincore_winrun_cpp_getTime_FUN_005b2420();
+  this_ptr->clocktime = iVar1;
   return;
 }

@@ -7,16 +7,16 @@
 ; CEnemy *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[35]:
-;   core_armour.cpp_FUN_0040ebe0 at 0040ebe7
-;   core_batcreat.cpp_FUN_00412110 at 00412117
+;   core_armour.cpp_CArmour_archive_FUN_0040ebe0 at 0040ebe7
+;   core_batcreat.cpp_CBatCreature_archive_FUN_00412110 at 00412117
 ;   core_batman.cpp_CBatman_archive_FUN_00413b60 at 00413b67
-;   core_beast.cpp_FUN_00414800 at 00414807
-;   core_biggs.cpp_FUN_00414f30 at 00414f37
+;   core_beast.cpp_CBeast_archive_FUN_00414800 at 00414807
+;   core_biggs.cpp_CBiggs_archive_FUN_00414f30 at 00414f37
 ;   core_boneguy.cpp_CBoneGuy_archive_FUN_0041d0d0 at 0041d0dc
-;   core_bride.cpp_FUN_00424840 at 00424846
-;   core_bugs.cpp_FUN_004257f0 at 004257f9
-;   core_carved.cpp_FUN_0042b3c0 at 0042b3c7
-;   core_constrct.cpp_FUN_00446e30 at 00446e3a
+;   core_bride.cpp_CBride_archive_FUN_00424840 at 00424846
+;   core_bugs.cpp_CBugs_archive_FUN_004257f0 at 004257f9
+;   core_carved.cpp_CCarved_archive_FUN_0042b3c0 at 0042b3c7
+;   core_construc.cpp_CConstruct_archive_FUN_00446e30 at 00446e3a
 ;   ... and 25 more
 ;
 ; Referenced Globals:
@@ -39,7 +39,7 @@
 ;   core_actor.cpp_archiveInteger_FUN_0040b670
 ;   core_actor.cpp_archiveString_FUN_0040b440
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040c040
-;   core_charactr.cpp_FUN_0042c7f0
+;   core_charactr.cpp_CCharacter_archive_FUN_0042c7f0
 ;
 ; *****************************************************************************
 
@@ -65,7 +65,7 @@ section .text
     PUSH 0x5dcac5                       ; 004a054b | = "speed"
     PUSH ESI                            ; 004a0550
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 004a0551
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004a0556
     CMP dword ptr [0x0061b480],0x3      ; 004a0559 | g_CEnemyClassVersion
         ;   Label: LAB_004a0559
@@ -80,7 +80,7 @@ section .text
     LEA ESI,[EBX + 0x2538]              ; 004a056a
     PUSH ESI                            ; 004a0570
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 004a0571
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004a0576
     PUSH 0x5dcad5                       ; 004a0579 | = "poolMe"
     ADD EBX,0xc1d4                      ; 004a057e
@@ -93,13 +93,13 @@ section .text
     RET                                 ; 004a058f
     PUSH EBX                            ; 004a0590
         ;   Label: LAB_004a0590
-    CALL core_charactr.cpp_FUN_0042c7f0 ; 004a0591
-        ;   XREF to: 0042c7f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042c7f0()
+    CALL core_charactr.cpp_CCharacter_archive_FUN_0042c7f0 ; 004a0591
+        ;   XREF to: 0042c7f0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_archive_FUN_0042c7f0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004a0596
     PUSH 0x5dcadc                       ; 004a0599 | = "speed"
     PUSH ESI                            ; 004a059e
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 004a059f
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004a05a4
     PUSH 0x5dcae2                       ; 004a05a7 | = "poolMe"
     LEA ESI,[EBX + 0xc1d4]              ; 004a05ac
@@ -125,7 +125,7 @@ section .text
     LEA ESI,[EBX + 0xc260]              ; 004a05e8
     PUSH ESI                            ; 004a05ee
     CALL core_actor.cpp_archiveActor_FUN_0040b6f0 ; 004a05ef
-        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b6f0()
+        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b6f0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 004a05f4
     CMP dword ptr [0x0061b480],0x7      ; 004a05f7 | g_CEnemyClassVersion
         ;   Label: LAB_004a05f7
@@ -145,7 +145,7 @@ section .text
     LEA ESI,[EBX + 0xc1e0]              ; 004a0622
     PUSH ESI                            ; 004a0628
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 004a0629
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004a062e
     CMP dword ptr [0x0061b480],0x9      ; 004a0631 | g_CEnemyClassVersion
         ;   Label: LAB_004a0631
@@ -155,7 +155,7 @@ section .text
     LEA ESI,[EBX + 0xc25c]              ; 004a063f
     PUSH ESI                            ; 004a0645
     CALL core_actor.cpp_archiveFloat_FUN_0040b5f0 ; 004a0646
-        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040b5f0()
+        ;   XREF to: 0040b5f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveFloat_FUN_0040b5f0(float * float_ptr, char * property_name)
     ADD ESP,0x8                         ; 004a064b
     CMP dword ptr [0x0061b480],0xa      ; 004a064e | g_CEnemyClassVersion
         ;   Label: LAB_004a064e
@@ -165,7 +165,7 @@ section .text
     ADD EBX,0xc1e8                      ; 004a0660
     PUSH EBX                            ; 004a0666
     CALL core_actor.cpp_archiveActor_FUN_0040b6f0 ; 004a0667
-        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b6f0()
+        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b6f0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 004a066c
     POP ESI                             ; 004a066f
     POP EBX                             ; 004a0670

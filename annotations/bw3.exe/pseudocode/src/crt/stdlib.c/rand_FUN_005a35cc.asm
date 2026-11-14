@@ -5,14 +5,14 @@
 ;
 ;
 ; XREF[34]:
-;   core_actor.cpp_FUN_0040ce40 at 0040ce8b
-;   core_actor.cpp_FUN_0040cf40 at 0040cf7d
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 at 0040ce8b
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0 at 0040ced5
-;   core_boxactor.cpp_FUN_00420420 at 004204fe
+;   core_actor.cpp_randomChance_FUN_0040cf40 at 0040cf7d
+;   core_boxactor.cpp_CLightActor_process_FUN_00420420 at 004204fe
 ;   core_carved.cpp_FUN_00428810 at 00428830
 ;   core_charactr.cpp_FUN_0042d500 at 0042d644
 ;   core_charactr.cpp_FUN_0042f310 at 0042f37a
-;   core_cow.cpp_FUN_00445730 at 00445750
+;   core_cow.cpp_CZombieCow_processDismemberment_FUN_00445730 at 00445750
 ;   core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_0044d800 at 0044d82a
 ;   core_dcamera.cpp_generateFogGrid_FUN_00448750 at 004487a8
 ;   ... and 24 more

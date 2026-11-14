@@ -49,7 +49,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   core_charactr.cpp_FUN_0042b0e0 at 0042b203
+;   core_charactr.cpp_CCharacter_setup_FUN_0042b0e0 at 0042b203
 ;   core_charactr.cpp_FUN_0042e8c0 at 0042eea6
 ;   core_charactr.cpp_FUN_0042fbd0 at 0042fc76
 ;
@@ -58,8 +58,8 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b80
+;   core_skeleton.cpp_CDeformableModel_getBonePart_FUN_0054a3a0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
-;   core_skeleton.cpp_FUN_0054a3a0
 ;   core_xform.cpp_FUN_00583260
 ;   crt_math.c_round_FUN_005a3120
 ;
@@ -218,8 +218,8 @@ section .text
     MOV EDX,dword ptr [EBP + 0x1c]      ; 0042e691
     PUSH EDX                            ; 0042e694
     PUSH EAX                            ; 0042e695
-    CALL core_skeleton.cpp_FUN_0054a3a0 ; 0042e696
-        ;   XREF to: 0054a3a0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_0054a3a0(CDeformableModel * this_ptr, int bone_index)
+    CALL core_skeleton.cpp_CDeformableModel_getBonePart_FUN_0054a3a0 ; 0042e696
+        ;   XREF to: 0054a3a0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_getBonePart_FUN_0054a3a0(CDeformableModel * this_ptr, int bone_index)
     ADD ESP,0x8                         ; 0042e69b
     MOV EDX,dword ptr [ESP + 0xac]      ; 0042e69e
     MOV dword ptr [EDX],EAX             ; 0042e6a5

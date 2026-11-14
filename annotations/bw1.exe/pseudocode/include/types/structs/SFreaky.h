@@ -2,15 +2,24 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDraculaBride;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: SFreaky
-// Stub: size from Watcom RTTI, fields not yet recovered
+// static array DAT_01bc0d54 of 6 (staticInit 0047b000 __arrinit, RTTI 84), walked at stride 0x15 dwords; layout identical to nocedit's in the start (FUN_0047d920) and update (FUN_0047de00) functions.
 // Ghidra size: 0x54 (84 bytes)
 #pragma pack(push, 1)
 typedef struct SFreaky {
-    char field_0[84]; // 0x0
+    uint sfx_handle; // 0x0, FUN_0047d920 *puVar5=sfx handle; FUN_0047de00 polls *local_28 with the is-playing call
+    CVector3f position; // 0x4, FUN_0047d920 puVar5[1..3]; FUN_0047de00 stores the spline point to +1..+3 (console prints it)
+    CVector3f tangent; // 0x10, FUN_0047d920 puVar5[4..6]; FUN_0047de00 stores the spline tangent to +4..+6
+    float t; // 0x1c, puVar5[7]=0; update adds delta and steps the control points while >1
+    CVector3f control_points[4]; // 0x20, puVar5[8..0x13] written in 4 triples; update shifts +0xb->+8, +0xe->+0xb, +0x11->+0xe
+    struct CDraculaBride* owner; // 0x50, update compares this with local_28[0x14] and clears it when the sound ends
 } SFreaky;
 #pragma pack(pop)
 

@@ -12,7 +12,7 @@
 ;   core_event.cpp_FUN_004a1d00 at 004a55b9
 ;
 ; Called Functions:
-;   core_set.cpp_FUN_005558f0
+;   core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_005558f0
 ;
 ; *****************************************************************************
 
@@ -52,8 +52,8 @@ section .text
         ;   Label: LAB_005559a0
     PUSH EBX                            ; 005559a4
     PUSH EDI                            ; 005559a5
-    CALL core_set.cpp_FUN_005558f0      ; 005559a6
-        ;   XREF to: 005558f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_005558f0(CDemonSet * this_ptr, int index, float value)
+    CALL core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_005558f0 ; 005559a6
+        ;   XREF to: 005558f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_005558f0(CDemonSet * this_ptr, int index, float value)
     ADD ESP,0xc                         ; 005559ab
     JMP 0x0055598e                      ; 005559ae
         ;   XREF to: 0055598e (UNCONDITIONAL_JUMP)  ; LAB_0055598e

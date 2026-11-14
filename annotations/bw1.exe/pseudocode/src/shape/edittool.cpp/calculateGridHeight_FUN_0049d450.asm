@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   shape_edittool.cpp_FUN_0049b060 at 0049b404
-;   shape_edittool.cpp_FUN_0049b830 at 0049b931
+;   shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_0049b060 at 0049b404
+;   shape_edittool.cpp_CPickList_renderDialog_FUN_0049b830 at 0049b931
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061b498

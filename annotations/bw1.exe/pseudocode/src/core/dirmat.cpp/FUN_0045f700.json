@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 47,
     "complexity_score": 297,
-    "cross_reference_count": 25,
+    "cross_reference_count": 26,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
@@ -30,15 +30,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00419b90",
-      "from_addr": "0041a13d",
-      "name": "core_bodypart.cpp_FUN_00419b90",
+      "addr": "0041a200",
+      "from_addr": "0041a51f",
+      "name": "core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a200",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0041a200",
-      "from_addr": "0041a51f",
-      "name": "core_bodypart.cpp_FUN_0041a200",
+      "addr": "00419b90",
+      "from_addr": "0041a13d",
+      "name": "core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -56,7 +56,7 @@
     {
       "addr": "00440640",
       "from_addr": "00440b98",
-      "name": "core_cloth.cpp_FUN_00440640",
+      "name": "core_cloth.cpp_CCloth_step_FUN_00440640",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -80,7 +80,7 @@
     {
       "addr": "0045edf0",
       "from_addr": "0045ee45",
-      "name": "core_dglobe.cpp_FUN_0045edf0",
+      "name": "core_dglobe.cpp_CDemonGlobe_intersectAABB_FUN_0045edf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -98,7 +98,7 @@
     {
       "addr": "00464190",
       "from_addr": "00464238",
-      "name": "core_dlight.cpp_FUN_00464190",
+      "name": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00464190",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -110,7 +110,7 @@
     {
       "addr": "00477ab0",
       "from_addr": "00477f08",
-      "name": "core_door.cpp_FUN_00477ab0",
+      "name": "core_door.cpp_CDoor_process_FUN_00477ab0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -122,19 +122,19 @@
     {
       "addr": "00504580",
       "from_addr": "00504841",
-      "name": "core_manpuz.cpp_FUN_00504580",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00504580",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00536290",
       "from_addr": "00536480",
-      "name": "core_pendulum.cpp_FUN_00536290",
+      "name": "core_pendulum.cpp_CPendulum_testCollisionWithActor_FUN_00536290",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00551d50",
       "from_addr": "00551fba",
-      "name": "core_set.cpp_FUN_00551d50",
+      "name": "core_set.cpp_CDemonSet_gatherVisibleLights_FUN_00551d50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -158,13 +158,19 @@
     {
       "addr": "0055c6f0",
       "from_addr": "0055c742",
-      "name": "core_setutil.cpp_FUN_0055c6f0",
+      "name": "core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_0055c6f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aadb0",
+      "from_addr": "005aae4c",
+      "name": "core_wateract.cpp_FUN_005aadb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005ada60",
       "from_addr": "005adaba",
-      "name": "core_weapon.cpp_FUN_005ada60",
+      "name": "core_weapon.cpp_CWeapon_onDropped_FUN_005ada60",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -183,7 +189,7 @@
   "function_calls": [],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 40,
+    "call_site_count": 41,
     "call_sites": [
       {
         "call_addr": "00408bfa",
@@ -319,7 +325,7 @@
       {
         "call_addr": "0041a13d",
         "call_type": "direct",
-        "caller": "core_bodypart.cpp_FUN_00419b90",
+        "caller": "core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -363,6 +369,20 @@
       "STORE": 7
     },
     "pcode_op_count": 341
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004495a0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0045b870",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 20,
@@ -605,7 +625,7 @@
       "type": "unaffected_reg"
     },
     {
-      "call_site_count": 40,
+      "call_site_count": 41,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 4,

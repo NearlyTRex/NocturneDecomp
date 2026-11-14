@@ -2,27 +2,26 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 253,
-    "complexity_score": 466,
+    "complexity_score": 355,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 111,
-    "suspect_count": 33,
+    "pseudocode_lines": 95,
+    "suspect_count": 24,
     "suspect_types": [
       "raw_address_constant",
       "undefined_data",
-      "unnamed_field",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 364
+    "total_lines": 348
   },
   "cross_references": [
     {
       "addr": "0049c780",
       "from_addr": "0049c90c",
-      "name": "core_fire.cpp_FUN_0049c780",
+      "name": "core_fire.cpp_CFireEffect_render_FUN_0049c780",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -87,7 +86,7 @@
     {
       "addr": "0046b4a0",
       "is_variadic": false,
-      "name": "engine_matrix.c_pop_FUN_0046b4a0"
+      "name": "engine_drender.cpp_pop_FUN_0046b4a0"
     },
     {
       "addr": "0055d723",
@@ -240,7 +239,7 @@
       {
         "call_addr": "0049c90c",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049c780",
+        "caller": "core_fire.cpp_CFireEffect_render_FUN_0049c780",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -292,6 +291,32 @@
       "TRUNC": 19
     },
     "pcode_op_count": 1222
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004ac0b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00496f60",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004bf4c0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00482950",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9631
+    }
   },
   "stack_frame": {
     "frame_size": 120,
@@ -488,55 +513,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 37,
+      "line": 25,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "output = *(SProjectedVertex **)DAT_0060b280;",
+      "text": "vertex_ptr = DAT_0060b280->vertex_buffer_ptr;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "local_64 = (int)ROUND(*(float *)&this_ptr->field_0x4 * _DAT_005f64e4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "local_60 = (int)ROUND(*(float *)&this_ptr->field_0x8 * _DAT_005f64e4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "local_5c = (int)ROUND(*(float *)&this_ptr->field_0xc * _DAT_005f64e4);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 30,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "(DAT_0060b280,(SRenderVertex *)output);",
+      "text": "iVar2 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_0046cad0(DAT_0060b280,vertex_ptr);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "fVar3 = (float10)*(float *)&this_ptr->field_0x18;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 41,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,(SMRGLTextureBasic *)(&DAT_00614d34 + local_18 * 0x18));",
@@ -544,31 +537,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 41,
       "match": "DAT_00614d34",
       "severity": "mild",
       "text": "(DAT_0060b280,(SMRGLTextureBasic *)(&DAT_00614d34 + local_18 * 0x18));",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 55,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "world_position = &this_ptr->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 44,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "(DAT_0060b280,(CVector3f *)world_position);",
+      "text": "(DAT_0060b280,world_position);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 46,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,(CVector3i *)&DAT_01c3deb8,(CVector3i *)0x0);",
@@ -576,26 +561,34 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 46,
       "match": "DAT_01c3deb8",
       "severity": "mild",
       "text": "(DAT_0060b280,(CVector3i *)&DAT_01c3deb8,(CVector3i *)0x0);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 60,
-      "match": "field_0x14",
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "local_14 = *(float *)&this_ptr->field_0x14;",
-      "type": "unnamed_field"
+      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr->projected_vertex,&local_28);",
+      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 68,
+      "line": 62,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_0055d723(*(SProjectedVertex **)DAT_0060b280,(CVector3i *)&local_28);",
+      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[1].projected_vertex,&local_70);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 69,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[2].projected_vertex,&local_34);",
       "type": "undefined_data"
     },
     {
@@ -603,28 +596,12 @@
       "line": 76,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x30),(CVector3i *)&local_70);",
+      "text": "engine_special_cpp_FUN_0055d723(&DAT_0060b280->vertex_buffer_ptr[3].projected_vertex,&local_4c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 84,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x60),(CVector3i *)&local_34);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 92,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x90),(CVector3i *)&local_4c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 93,
+      "line": 77,
       "match": "DAT_0062202c",
       "severity": "mild",
       "text": "DAT_0062202c = 0x80000;",
@@ -632,39 +609,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 82,
       "match": "DAT_00622090",
       "severity": "mild",
       "text": "DAT_00622090 = 0x80000;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 102,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "local_3c = (int)ROUND(*(float *)&this_ptr->field_0x8 * _DAT_005f64e4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 103,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "local_38 = (int)ROUND(*(float *)&this_ptr->field_0xc * _DAT_005f64e4);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 105,
+      "line": 89,
       "match": "DAT_01c3dec4",
       "severity": "mild",
-      "text": "(g_CDemonSetPtr,(CVector3i *)&local_40,(CVector3i *)&DAT_01c3dec4,0,4);",
+      "text": "(g_CDemonSetPtr,&local_40,(CVector3i *)&DAT_01c3dec4,0,4);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 106,
+      "line": 90,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(DAT_007bda74 + 0x3c) + 4))(DAT_007bda74,world_position,0);",
@@ -672,7 +633,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 106,
+      "line": 90,
       "match": "DAT_007bda74",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(DAT_007bda74 + 0x3c) + 4))(DAT_007bda74,world_position,0);",
@@ -680,23 +641,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 106,
+      "line": 90,
       "match": "DAT_007bda74",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(DAT_007bda74 + 0x3c) + 4))(DAT_007bda74,world_position,0);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 107,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "lVar1 = (longlong)(0xffff - _DAT_01c38aec) * (longlong)*(int *)&this_ptr->field_0x28;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 109,
+      "line": 93,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,(uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);",
@@ -704,7 +657,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 111,
+      "line": 95,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,(SMRGLHeaderPrimitive *)0x1c3ded0);",
@@ -712,7 +665,7 @@
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_00622030`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_00622030` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 94,
+      "line": 78,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "_DAT_00622030 = 0xf80000;",
@@ -720,7 +673,7 @@
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_0062205c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_0062205c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 95,
+      "line": 79,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "_DAT_0062205c = 0xf80000;",
@@ -728,7 +681,7 @@
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_00622060`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_00622060` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 96,
+      "line": 80,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "_DAT_00622060 = 0xf80000;",
@@ -736,7 +689,7 @@
     },
     {
       "description": "Raw hex address 0xf80000 assigned to bare local `_DAT_0062208c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `_DAT_0062208c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 97,
+      "line": 81,
       "match": "0xf80000",
       "severity": "moderate",
       "text": "_DAT_0062208c = 0xf80000;",

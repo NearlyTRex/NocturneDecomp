@@ -5,9 +5,9 @@
 // Function prototypes for core/path.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_path.cpp_FUN_00532f5c
-// Address: 00532f5c
-void FUN_00532f5c(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3);
+// Original: core_path.cpp_FUN_00532f60
+// Address: 00532f60
+void FUN_00532f60(void);
 
 // Original: core_path.cpp_CPathMap_ctor_FUN_00532fe0
 // Address: 00532fe0
@@ -21,9 +21,9 @@ CPathMap * __cdecl CPathMap::dtor(CPathMap *this_ptr,uint flags);
 // Address: 00533140
 float FUN_00533140(float *param_1,int param_2,int param_3,int param_4,float *param_5);
 
-// Original: core_path.cpp_FUN_005334f0
+// Original: core_path.cpp_CPathMap_updateIfNeeded_FUN_005334f0
 // Address: 005334f0
-void __cdecl FUN_005334f0(CPathMap *this_ptr,CVector3f *source_position,int force_update);
+void __cdecl CPathMap::updateIfNeeded(CPathMap *this_ptr,CVector3f *source_position,int force_update);
 
 // Original: core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_00533640
 // Address: 00533640
@@ -41,25 +41,25 @@ int __cdecl CPathMap::checkAxisAlignedPath(CPathMap *this_ptr,int start_x,int st
 // Address: 00533dc0
 int __cdecl CPathMap::findPathToDestination(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles,int direction_hint);
 
-// Original: core_path.cpp_FUN_0053489e
-// Address: 0053489e
-void FUN_0053489e(void);
+// Original: core_path.cpp_FUN_005348a0
+// Address: 005348a0
+void FUN_005348a0(void);
 
 // Original: core_path.cpp_CPathMap_findPathWithRetry_FUN_005349a0
 // Address: 005349a0
 int __cdecl CPathMap::findPathWithRetry(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles,int direction_hint);
 
-// Original: core_path.cpp_FUN_00534a70
+// Original: core_path.cpp_renderGridQuad_FUN_00534a70
 // Address: 00534a70
-void FUN_00534a70(int param_1,int param_2,int param_3,int param_4,undefined4 param_5,int param_6,int param_7);
+void __cdecl renderGridQuad(int grid_x,int grid_y,int grid_z,int red,int green,int blue,int alpha);
 
-// Original: core_path.cpp_FUN_00534ca0
+// Original: core_path.cpp_CPathMap_renderPathMap_FUN_00534ca0
 // Address: 00534ca0
-void FUN_00534ca0(int param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl CPathMap::renderPathMap(CPathMap *this_ptr,int depth,int red,int green,int fog);
 
-// Original: core_path.cpp_FUN_00535080
+// Original: core_path.cpp_getOrCreatePathMap_FUN_00535080
 // Address: 00535080
-CPathMap * __cdecl FUN_00535080(CLocation *location);
+CPathMap * __cdecl getOrCreatePathMap(CLocation *location);
 
 // Original: core_path.cpp_getPathMap_FUN_005351f0
 // Address: 005351f0
@@ -73,17 +73,17 @@ void __cdecl CPathMap::reset(CPathMap *this_ptr);
 // Address: 00535280
 void __cdecl resetAllPathMaps(void);
 
-// Original: core_path.cpp_FUN_005352e0
+// Original: core_path.cpp_renderAllPathMaps_FUN_005352e0
 // Address: 005352e0
-void FUN_005352e0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+void __cdecl renderAllPathMaps(int depth,int red,int green,int fog);
 
-// Original: core_path.cpp_FUN_00535370
+// Original: core_path.cpp_renderPathMapsAtPosition_FUN_00535370
 // Address: 00535370
-void FUN_00535370(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
+void __cdecl renderPathMapsAtPosition(CVector3f *position,int depth,int red,int green,int fog);
 
-// Original: core_path.cpp_FUN_0053543e
-// Address: 0053543e
-void FUN_0053543e(CPathMap *param_1);
+// Original: core_path.cpp_FUN_00535440
+// Address: 00535440
+void FUN_00535440(void);
 
 // Original: core_path.cpp_CPathMap_searchGrid_FUN_00535490
 // Address: 00535490
@@ -91,4 +91,4 @@ uint __cdecl CPathMap::searchGrid(CPathMap *this_ptr,int start_height);
 
 // Original: core_path.cpp_CPathMap_arrdtor12_FUN_00535920
 // Address: 00535920
-CPathMap * CPathMap::arrdtor12(CPathMap *this_ptr,uint flags);
+CPathMap * __cdecl CPathMap::arrdtor12(CPathMap *this_ptr,uint flags);

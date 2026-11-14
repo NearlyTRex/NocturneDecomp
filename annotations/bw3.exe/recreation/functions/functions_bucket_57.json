@@ -1,7 +1,7 @@
 [
   {
     "addr":"0046fa57",
-    "conv":"unknown",
+    "conv":"__edi_esi_ebx",
     "data_refs":[
       "0046c004",
       "0046c428"
@@ -9,10 +9,36 @@
     "instructions":74,
     "method":"renderTexturedAlphaMMXScanline",
     "name":"core_dstrendr.cpp_renderTexturedAlphaMMXScanline_FUN_0046fa57",
+    "params":[
+      {
+        "name":"left_edge",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      },
+      {
+        "name":"right_edge",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      },
+      {
+        "name":"scanline_y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/dstrendr.cpp",
@@ -117,7 +143,8 @@
       "0055e7a0",
       "00566fd0",
       "005683b0",
-      "00570adc",
+      "0056fef0",
+      "00570ae0",
       "00570d30",
       "00572310",
       "00577cf0",
@@ -134,11 +161,38 @@
     "instructions":31,
     "method":"__arrinit",
     "name":"crt_memory.c___arrinit_FUN_005a30d7",
+    "params":[
+      {
+        "name":"array_start",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      },
+      {
+        "name":"element_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"type_info",
+        "type":{
+          "header":"watcom",
+          "kind":"system",
+          "name":"WatcomTypeInfo",
+          "ptr":1
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "name":"void",
+      "ptr":1
     },
     "tu":"crt/memory.c",
     "variadic":false

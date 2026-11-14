@@ -12,7 +12,7 @@
 ;
 ; XREF[2]:
 ;   core_main.c_FUN_004e4400 at 004e4487
-;   core_menu.cpp_FUN_004ea4d0 at 004ea786
+;   core_menu.cpp_showMainGameMenu_FUN_004ea4d0 at 004ea786
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c37cd
@@ -34,7 +34,7 @@
 ;
 ; Called Functions:
 ;   core_event.cpp_FUN_00494880
-;   core_fldnotes.cpp_FUN_004ab7a0
+;   core_fldnotes.cpp_CFieldNotes_clear_FUN_004ab7a0
 ;   core_game.cpp_FUN_004bdfb0
 ;   core_game.cpp_FUN_004c4d10
 ;   core_level.cpp_FUN_004dfc50
@@ -89,7 +89,7 @@ section .text
     MOV dword ptr [EBX + 0x258],0x0     ; 004be957
     MOV [0x01c5b0e0],EAX                ; 004be961 | DAT_01c5b0e0
     CALL crt_stdio.c_fopen_FUN_005a43ec ; 004be966
-        ;   XREF to: 005a43ec (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fopen_FUN_005a43ec()
+        ;   XREF to: 005a43ec (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_fopen_FUN_005a43ec(char * filename, char * mode)
     ADD ESP,0x8                         ; 004be96b
     TEST EAX,EAX                        ; 004be96e
     JZ 0x004be980                       ; 004be970
@@ -141,8 +141,8 @@ section .text
     PUSH 0x5c383f                       ; 004be9ff | = "Select mission to play"
     MOV EAX,[0x005fb140]                ; 004bea04 | g_CEditorToolsPtr
     PUSH EAX                            ; 004bea09
-    CALL shape_edittool.cpp_FUN_0047db70 ; 004bea0a
-        ;   XREF to: 0047db70 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_FUN_0047db70(CEditorTools * this_ptr, char * dialog_title, char * search_directory, char * file_pattern, ...)
+    CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047db70 ; 004bea0a
+        ;   XREF to: 0047db70 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047db70(CEditorTools * this_ptr, char * dialog_title, char * search_directory, char * file_pattern, ...)
     ADD ESP,0x18                        ; 004bea0f
     TEST EAX,EAX                        ; 004bea12
     JZ 0x004beb7a                       ; 004bea14
@@ -155,8 +155,8 @@ section .text
     MOV ESI,dword ptr [0x005fe4b0]      ; 004bea30 | g_CFieldNotesPtr
         ;   Label: LAB_004bea30
     PUSH ESI                            ; 004bea36
-    CALL core_fldnotes.cpp_FUN_004ab7a0 ; 004bea37
-        ;   XREF to: 004ab7a0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004ab7a0()
+    CALL core_fldnotes.cpp_CFieldNotes_clear_FUN_004ab7a0 ; 004bea37
+        ;   XREF to: 004ab7a0 (UNCONDITIONAL_CALL)  ; void core_fldnotes.cpp_CFieldNotes_clear_FUN_004ab7a0(CFieldNotes * this_ptr)
     ADD ESP,0x4                         ; 004bea3c
     MOV EDI,dword ptr [0x005fba60]      ; 004bea3f | DAT_005fba60
     PUSH EDI                            ; 004bea45

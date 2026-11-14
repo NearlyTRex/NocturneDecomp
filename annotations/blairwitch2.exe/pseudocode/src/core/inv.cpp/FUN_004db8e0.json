@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 103,
-    "complexity_score": 712,
+    "complexity_score": 702,
     "cross_reference_count": 7,
     "function_call_count": 3,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 47,
-    "suspect_count": 64,
+    "suspect_count": 63,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -20,45 +20,45 @@
   },
   "cross_references": [
     {
+      "addr": "0045bdc0",
+      "from_addr": "0045c85d",
+      "name": "core_doc.cpp_FUN_0045bdc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004da860",
       "from_addr": "004da883",
       "name": "core_inv.cpp_CInventory_clear_FUN_004da860",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004dc8c0",
-      "from_addr": "004dca6a",
-      "name": "core_inv.cpp_FUN_004dc8c0",
+      "addr": "004def40",
+      "from_addr": "004def7c",
+      "name": "core_inv.cpp_CInventory_removeMatchingKeys_FUN_004def40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004def40",
-      "from_addr": "004def7c",
-      "name": "core_inv.cpp_FUN_004def40",
+      "addr": "004dc8c0",
+      "from_addr": "004dca6a",
+      "name": "core_inv.cpp_CInventory_select_FUN_004dc8c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00522350",
       "from_addr": "00526a40",
-      "name": "core_script.cpp_FUN_00522350",
+      "name": "core_script.cpp_CScript_step_FUN_00522350",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0056db50",
       "from_addr": "0056dd3d",
-      "name": "core_stranger.cpp_FUN_0056db50",
+      "name": "core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_0056db50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00583160",
       "from_addr": "00583346",
-      "name": "core_vampboss.cpp_FUN_00583160",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0045bdc0",
-      "from_addr": "0045c85d",
-      "name": "unkafter_stranger.cpp_FUN_0045bdc0",
+      "name": "core_vampboss.cpp_CVampireBoss_processDamage_FUN_00583160",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -88,7 +88,7 @@
     {
       "addr": "00436710",
       "is_variadic": false,
-      "name": "engine_console.cpp_FUN_00436710"
+      "name": "engine_console.cpp_CConsole_printf_FUN_00436710"
     }
   ],
   "globals": [
@@ -117,7 +117,7 @@
       {
         "call_addr": "00526a40",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00522350",
+        "caller": "core_script.cpp_CScript_step_FUN_00522350",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -143,7 +143,7 @@
       {
         "call_addr": "004def7c",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004def40",
+        "caller": "core_inv.cpp_CInventory_removeMatchingKeys_FUN_004def40",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -156,7 +156,7 @@
       {
         "call_addr": "0045c85d",
         "call_type": "direct",
-        "caller": "unkafter_stranger.cpp_FUN_0045bdc0",
+        "caller": "core_doc.cpp_FUN_0045bdc0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -169,7 +169,7 @@
       {
         "call_addr": "0045c8c6",
         "call_type": "direct",
-        "caller": "unkafter_stranger.cpp_FUN_0045bdc0",
+        "caller": "core_doc.cpp_FUN_0045bdc0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -182,7 +182,7 @@
       {
         "call_addr": "004dca6a",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004dc8c0",
+        "caller": "core_inv.cpp_CInventory_select_FUN_004dc8c0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -195,7 +195,7 @@
       {
         "call_addr": "004dcbfe",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004dc8c0",
+        "caller": "core_inv.cpp_CInventory_select_FUN_004dc8c0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -208,7 +208,7 @@
       {
         "call_addr": "0056dd3d",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_FUN_0056db50",
+        "caller": "core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_0056db50",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -221,7 +221,7 @@
       {
         "call_addr": "00583346",
         "call_type": "direct",
-        "caller": "core_vampboss.cpp_FUN_00583160",
+        "caller": "core_vampboss.cpp_CVampireBoss_processDamage_FUN_00583160",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -298,14 +298,6 @@
       "match": "param_3",
       "severity": "mild",
       "text": "void * core_inv_cpp_FUN_004db8e0(void *param_1,int param_2,int param_3)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "engine_console_cpp_FUN_00436710(g_CConsolePtr,\"Deleting: %s\\n\",param_2);",
       "type": "unnamed_param"
     },
     {

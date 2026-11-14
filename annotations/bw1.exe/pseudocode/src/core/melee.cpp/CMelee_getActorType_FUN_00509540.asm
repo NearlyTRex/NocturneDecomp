@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_melee_cpp_CMelee_getActorType_FUN_00509540(CMelee *this_ptr)
+; CDemonActorType * __cdecl core_melee_cpp_CMelee_getActorType_FUN_00509540(CMelee *this_ptr)
 ;
 ; Parameters:
 ; CMelee *         Stack[0x4]:4   this_ptr

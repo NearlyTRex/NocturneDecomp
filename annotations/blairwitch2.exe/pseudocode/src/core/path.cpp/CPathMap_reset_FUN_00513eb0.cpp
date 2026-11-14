@@ -11,16 +11,16 @@ void __cdecl core_path_cpp_CPathMap_reset_FUN_00513eb0(CPathMap *this_ptr)
 {
   uint uVar1;
   
-  memset(&this_ptr->field_0x9c70,0x7f,40000);
-  *(uint *)&this_ptr->field_0x138bc = 0;
-  *(uint *)&this_ptr->field_0x138c8 = 0;
-  *(uint *)&this_ptr->field_0x138c4 = *(uint *)&this_ptr->field_0x138c8;
-  *(uint *)&this_ptr->field_0x138c0 = *(uint *)&this_ptr->field_0x138c4;
-  *(uint *)&this_ptr->field_0x138c0 = 0x7149f2ca;
-  *(uint *)&this_ptr->field_0x138d4 = 0;
-  *(uint *)&this_ptr->field_0x138d0 = *(uint *)&this_ptr->field_0x138d4;
-  *(uint *)&this_ptr->field_0x138cc = *(uint *)&this_ptr->field_0x138d0;
+  memset(this_ptr->height_cache_tags,0x7f,40000);
+  this_ptr->last_pathfinding_result = 0;
+  (this_ptr->cached_world_position).z = 0.0;
+  (this_ptr->cached_world_position).y = (this_ptr->cached_world_position).z;
+  (this_ptr->cached_world_position).x = (this_ptr->cached_world_position).y;
+  (this_ptr->cached_world_position).x = 1e+30;
+  (this_ptr->path_heading).z = 0.0;
+  (this_ptr->path_heading).y = (this_ptr->path_heading).z;
+  (this_ptr->path_heading).x = (this_ptr->path_heading).y;
   uVar1 = rand();
-  *(uint *)&this_ptr->field_0x138d8 = uVar1 & 0x3fff;
+  this_ptr->update_timer = uVar1 & 0x3fff;
   return;
 }

@@ -11,7 +11,7 @@
 ; CDeformableModelInstance * Stack[0x14]:4   model_ptr
 ;
 ; XREF[1]:
-;   core_gabriela.cpp_FUN_004afa20 at 004b0119
+;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20 at 004b0119
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d6da3

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_vecdir_cpp_staticInit_FUN_005a7500(void)
+; void __cdecl core_vecdir_cpp_staticInit_FUN_005a7500(void)
 ;
 ;
 ; Referenced Globals:

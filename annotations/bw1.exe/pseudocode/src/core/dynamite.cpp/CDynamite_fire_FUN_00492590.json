@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 158,
+    "complexity_score": 32,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 18,
-    "suspect_count": 13,
+    "pseudocode_lines": 17,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "unrolled_memset"
     ],
-    "total_lines": 57
+    "total_lines": 56
   },
   "cross_references": [],
   "function": {
@@ -79,6 +78,32 @@
     },
     "pcode_op_count": 116
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0047a0a0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0047b130",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0049ce70",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0046ec80",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -97,107 +122,11 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(0x01C57074,(CVector3f *)&this_ptr->field_0x20,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "(UOrientationVector *)&this_ptr->field_0x30,(CVector3f *)&this_ptr->field_0x57c,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x57c",
-      "severity": "mild",
-      "text": "(UOrientationVector *)&this_ptr->field_0x30,(CVector3f *)&this_ptr->field_0x57c,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x578",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x578,*(uint *)&this_ptr->field_0x588);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x588",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x578,*(uint *)&this_ptr->field_0x588);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x588",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x588 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
       "line": 16,
-      "match": "field_0x578",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x578 = 0xbf800000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x584",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x584 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x580",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x580 = *(uint *)&this_ptr->field_0x584;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x584",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x580 = *(uint *)&this_ptr->field_0x584;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x57c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x57c = *(uint *)&this_ptr->field_0x580;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x580",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x57c = *(uint *)&this_ptr->field_0x580;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 17,
       "match": "cascade_constant_fill",
       "severity": "moderate",
-      "text": "*(uint *)&this_ptr->field_0x584 = 0;",
+      "text": "(this_ptr->toss_velocity).z = 0.0;",
       "type": "unrolled_memset"
     }
   ],

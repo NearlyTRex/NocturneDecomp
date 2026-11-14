@@ -26,8 +26,8 @@ int core_charactr_cpp_FUN_004348b0(int param_1,char *param_2)
   iVar7 = 0;
   local_1c = 0;
   iVar6 = 0;
-  for (local_18 = 0; local_18 < *(int *)&g_CDemonSetPtr->field_0x154e74; local_18 = local_18 + 1) {
-    target_string = *(char **)(&g_CDemonSetPtr->field_0x154e78 + iVar7);
+  for (local_18 = 0; local_18 < g_CDemonSetPtr->waypoint_count; local_18 = local_18 + 1) {
+    target_string = *(char **)((int)g_CDemonSetPtr->waypoints + iVar7);
     iVar5 = shape_edittool_cpp_wildcardStringMatch_FUN_00486a40(param_2,target_string,0);
     iVar4 = iVar6;
     if ((iVar5 != 0) &&

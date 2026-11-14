@@ -13,7 +13,7 @@
 ; XREF[3]:
 ;   crt_time.c__strftime_FUN_005c2784 at 005c2b53
 ;   crt_unknown.c_FUN_005c26e0 at 005c26e6
-;   unkafter_zombie.cpp_FUN_005cc6e0 at 005cc7fb
+;   crt_unknown.c_FUN_005cc6e0 at 005cc7fb
 ;
 ; Referenced Globals:
 ;   void* PTR_GetTimeZoneInformation_005d05d4 = 001d0fa2
@@ -30,8 +30,8 @@
 ; Called Functions:
 ;   crt_env.c_getenv_FUN_005c3050
 ;   crt_unknown.c_FUN_005c969c
+;   crt_unknown.c_FUN_005cc610
 ;   GetTimeZoneInformation
-;   unkafter_zombie.cpp_FUN_005cc610
 ;
 ; *****************************************************************************
 
@@ -91,8 +91,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 005c93c6
     PUSH EAX                            ; 005c93ca
     PUSH 0x62688c                       ; 005c93cb | DAT_0062688c
-    CALL unkafter_zombie.cpp_FUN_005cc610 ; 005c93d0
-        ;   XREF to: 005cc610 (UNCONDITIONAL_CALL)  ; undefined unkafter_zombie.cpp_FUN_005cc610()
+    CALL crt_unknown.c_FUN_005cc610     ; 005c93d0
+        ;   XREF to: 005cc610 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005cc610()
     ADD ESP,0xc                         ; 005c93d5
     CMP EAX,-0x1                        ; 005c93d8
     JNZ 0x005c93e7                      ; 005c93db
@@ -109,8 +109,8 @@ section .text
     LEA EAX,[ESP + 0x5c]                ; 005c93f4
     PUSH EAX                            ; 005c93f8
     PUSH 0x62690d                       ; 005c93f9 | DAT_0062690d
-    CALL unkafter_zombie.cpp_FUN_005cc610 ; 005c93fe
-        ;   XREF to: 005cc610 (UNCONDITIONAL_CALL)  ; undefined unkafter_zombie.cpp_FUN_005cc610()
+    CALL crt_unknown.c_FUN_005cc610     ; 005c93fe
+        ;   XREF to: 005cc610 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005cc610()
     ADD ESP,0xc                         ; 005c9403
     CMP EAX,-0x1                        ; 005c9406
     JNZ 0x005c9415                      ; 005c9409

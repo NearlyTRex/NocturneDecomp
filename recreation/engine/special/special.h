@@ -53,6 +53,13 @@ public:
     void renderAlphaRow16(std::span<std::uint16_t> dest_pixels,
                           std::span<const std::uint8_t> src_indices,
                           std::span<const std::uint8_t> src_alpha, int global_alpha);
+    // The same with 8-8-8 colours in place of indices, as a filtered image has.
+    void renderColorRow32(std::span<std::uint32_t> dest_pixels,
+                          std::span<const std::uint32_t> src_colors,
+                          std::span<const std::uint8_t> src_alpha, int global_alpha);
+    void renderColorRow16(std::span<std::uint16_t> dest_pixels,
+                          std::span<const std::uint32_t> src_colors,
+                          std::span<const std::uint8_t> src_alpha, int global_alpha);
     void renderScanline(SSoftwareEdge *left, SSoftwareEdge *right, int scanline_y);
     // Takes the point into eye space and onto the screen. Outside the view, screen_x holds the
     // clip flags instead, and inv_z and screen_y keep what they held.
@@ -108,6 +115,9 @@ private:
                            std::span<std::uint8_t> palette);
     [[nodiscard]] std::optional<std::uint32_t>
     getAlphaPixel(std::uint8_t index, std::uint32_t coverage, std::uint32_t dest) const;
+    // The same for an 8-8-8 colour.
+    [[nodiscard]] std::optional<std::uint32_t>
+    getColorPixel(std::uint32_t source, std::uint32_t coverage, std::uint32_t dest) const;
 
     platform::IRenderer &renderer_;
     IScreenDevice &screen_;

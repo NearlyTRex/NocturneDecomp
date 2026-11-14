@@ -2,33 +2,33 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 8,
+    "complexity_score": 10,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 8,
+    "pseudocode_lines": 10,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 31
+    "total_lines": 33
   },
   "cross_references": [
     {
       "addr": "004285f0",
       "from_addr": "0042864d",
-      "name": "core_charactr.cpp_FUN_004285f0",
+      "name": "core_charactr.cpp_CCharacter_setWalkTarget_FUN_004285f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004cea50",
       "from_addr": "004ceb26",
-      "name": "core_hero.cpp_FUN_004cea50",
+      "name": "core_hero.cpp_CHero_getGrabbed_FUN_004cea50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004ceb80",
       "from_addr": "004cebf5",
-      "name": "core_hero.cpp_FUN_004ceb80",
+      "name": "core_hero.cpp_CHero_releaseFromGrab_FUN_004ceb80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -59,7 +59,7 @@
     {
       "addr": "00502fa0",
       "is_variadic": false,
-      "name": "core_motion.cpp_FUN_00502fa0"
+      "name": "core_motion.cpp_CMotionList_findStateIndex_FUN_00502fa0"
     }
   ],
   "globals": [],
@@ -69,7 +69,7 @@
       {
         "call_addr": "0042864d",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_004285f0",
+        "caller": "core_charactr.cpp_CCharacter_setWalkTarget_FUN_004285f0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -80,7 +80,7 @@
       {
         "call_addr": "004ceb26",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004cea50",
+        "caller": "core_hero.cpp_CHero_getGrabbed_FUN_004cea50",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -91,7 +91,7 @@
       {
         "call_addr": "004cebf5",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004ceb80",
+        "caller": "core_hero.cpp_CHero_releaseFromGrab_FUN_004ceb80",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -147,6 +147,32 @@
       "STORE": 10
     },
     "pcode_op_count": 73
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00524850",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004fc160",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0052db90",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004e1740",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 16,

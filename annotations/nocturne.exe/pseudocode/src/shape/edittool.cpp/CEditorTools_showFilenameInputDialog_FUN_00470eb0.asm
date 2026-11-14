@@ -21,7 +21,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_game.cpp_CGame_FUN_004a3b90 at 004a4075
+;   core_game.cpp_CGame_saveGame_FUN_004a3b90 at 004a4075
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa

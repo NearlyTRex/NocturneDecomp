@@ -1,13 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_xform_cpp_setIdentityMatrix3x4_FUN_005918a0(undefined4 *param_1)
+; void __cdecl core_xform_cpp_setIdentityMatrix3x4_FUN_005918a0(CMatrix3x4f *matrix)
 ;
+; Parameters:
+; CMatrix3x4f *    Stack[0x4]:4   matrix
 ;
 ; XREF[4]:
 ;   core_doc.cpp_FUN_004568e0 at 00457e12
-;   core_gabriela.cpp_FUN_004b22c0 at 004b2723
-;   core_mirror.cpp_FUN_004f9990 at 004f9cc6
+;   core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004b22c0 at 004b2723
+;   core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_004f9990 at 004f9cc6
 ;   core_stranger.cpp_FUN_00568500 at 0056939b
 ;
 ; *****************************************************************************

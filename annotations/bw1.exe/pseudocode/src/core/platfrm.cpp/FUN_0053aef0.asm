@@ -18,12 +18,12 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_platfrm.cpp_FUN_00539810 at 0053a326
+;   core_platfrm.cpp_CPlatform_process_FUN_00539810 at 0053a326
 ;
 ; Called Functions:
 ;   core_xform.cpp_FUN_005b5760
-;   core_xform.cpp_FUN_005b5930
 ;   core_xform.cpp_FUN_005b6270
+;   core_xform.cpp_matrixToEulerAngles_FUN_005b5930
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005b5200
 ;
 ; *****************************************************************************
@@ -76,7 +76,7 @@ section .text
     LEA ESI,[ESP + 0x38]                ; 0053af55
     LEA EDI,[ESP + 0x68]                ; 0053af59
     CALL core_xform.cpp_multiplyMatrix3x4_FUN_005b5200 ; 0053af5d
-        ;   XREF to: 005b5200 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyMatrix3x4_FUN_005b5200()
+        ;   XREF to: 005b5200 (UNCONDITIONAL_CALL)  ; CMatrix3x4f * core_xform.cpp_multiplyMatrix3x4_FUN_005b5200(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, CMatrix3x4f * matrix_out)
     MOV ECX,0xc                         ; 0053af62
     LEA ESI,[ESP + 0x38]                ; 0053af67
     ADD ESP,0x8                         ; 0053af6b
@@ -89,8 +89,8 @@ section .text
     MOV EAX,dword ptr [EAX + 0x154]     ; 0053af89
     LEA ESI,[ESP + 0xa0]                ; 0053af8f
     MOV dword ptr [ESP + 0xc8],EAX      ; 0053af96
-    CALL core_xform.cpp_FUN_005b5930    ; 0053af9d
-        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b5930()
+    CALL core_xform.cpp_matrixToEulerAngles_FUN_005b5930 ; 0053af9d
+        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_005b5930()
     LEA ESI,[ESP + 0xa0]                ; 0053afa2
     ADD ESP,0x4                         ; 0053afa9
     MOVSD ES:EDI,ESI                    ; 0053afac

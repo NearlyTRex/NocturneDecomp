@@ -2,19 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 15,
-    "complexity_score": 33,
+    "complexity_score": 7,
     "cross_reference_count": 13,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 8,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 23
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 22
   },
   "cross_references": [
+    {
+      "addr": "0040c870",
+      "from_addr": "0040c9bc",
+      "name": "core_actor.cpp_CDemonActor_handleFootstep_FUN_0040c870",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "00408c20",
       "from_addr": "00408c36",
@@ -22,21 +26,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0040c870",
-      "from_addr": "0040c9bc",
-      "name": "core_actor.cpp_FUN_0040c870",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00449a50",
       "from_addr": "00449cab",
-      "name": "core_crossbow.cpp_FUN_00449a50",
+      "name": "core_crossbow.cpp_CCrossbow_fire_FUN_00449a50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0049e1a0",
       "from_addr": "0049e53d",
-      "name": "core_elephant.cpp_FUN_0049e1a0",
+      "name": "core_elephant.cpp_CElephantGun_fire_FUN_0049e1a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -48,43 +46,43 @@
     {
       "addr": "004b4230",
       "from_addr": "004b4304",
-      "name": "core_fire.cpp_FUN_004b4230",
+      "name": "core_fire.cpp_CShell_onCollision_FUN_004b4230",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e8630",
       "from_addr": "004e88dc",
-      "name": "core_gun.cpp_FUN_004e8630",
+      "name": "core_gun.cpp_CGun_fire_FUN_004e8630",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00500310",
       "from_addr": "0050036c",
-      "name": "core_lightgun.cpp_FUN_00500310",
+      "name": "core_lightgun.cpp_CLightGun_fire_FUN_00500310",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00501a70",
       "from_addr": "00501acc",
-      "name": "core_lightpis.cpp_FUN_00501a70",
+      "name": "core_lightpis.cpp_CLightPis_fire_FUN_00501a70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00540080",
       "from_addr": "0054042c",
-      "name": "core_rifle.cpp_FUN_00540080",
+      "name": "core_rifle.cpp_CRifle_fire_FUN_00540080",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005407e0",
       "from_addr": "00540920",
-      "name": "core_rifle.cpp_FUN_005407e0",
+      "name": "core_rifle.cpp_CRifle_onFired_FUN_005407e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00561760",
       "from_addr": "00561aed",
-      "name": "core_shotgun.cpp_FUN_00561760",
+      "name": "core_shotgun.cpp_CShotgun_fire_FUN_00561760",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -110,7 +108,7 @@
     {
       "addr": "0057bef0",
       "is_variadic": false,
-      "name": "core_sound.cpp_FUN_0057bef0"
+      "name": "core_sound.cpp_playSfxInternal_FUN_0057bef0"
     }
   ],
   "globals": [],
@@ -153,7 +151,7 @@
       {
         "call_addr": "0040c9bc",
         "call_type": "direct",
-        "caller": "core_actor.cpp_FUN_0040c870",
+        "caller": "core_actor.cpp_CDemonActor_handleFootstep_FUN_0040c870",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -164,7 +162,7 @@
       {
         "call_addr": "0040cafb",
         "call_type": "direct",
-        "caller": "core_actor.cpp_FUN_0040c870",
+        "caller": "core_actor.cpp_CDemonActor_handleFootstep_FUN_0040c870",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -175,7 +173,7 @@
       {
         "call_addr": "00449cab",
         "call_type": "direct",
-        "caller": "core_crossbow.cpp_FUN_00449a50",
+        "caller": "core_crossbow.cpp_CCrossbow_fire_FUN_00449a50",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -186,7 +184,7 @@
       {
         "call_addr": "0049e53d",
         "call_type": "direct",
-        "caller": "core_elephant.cpp_FUN_0049e1a0",
+        "caller": "core_elephant.cpp_CElephantGun_fire_FUN_0049e1a0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -197,7 +195,7 @@
       {
         "call_addr": "0049e570",
         "call_type": "direct",
-        "caller": "core_elephant.cpp_FUN_0049e1a0",
+        "caller": "core_elephant.cpp_CElephantGun_fire_FUN_0049e1a0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -208,7 +206,7 @@
       {
         "call_addr": "004b4304",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004b4230",
+        "caller": "core_fire.cpp_CShell_onCollision_FUN_004b4230",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -219,7 +217,7 @@
       {
         "call_addr": "004b4336",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004b4230",
+        "caller": "core_fire.cpp_CShell_onCollision_FUN_004b4230",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -253,6 +251,32 @@
       "STORE": 8
     },
     "pcode_op_count": 50
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0055ae50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005609d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005b3a40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0052ea60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 20,
@@ -291,22 +315,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "(actor,sound_name,*(float *)position,*(float *)&position->field_0x4,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(float *)&position->field_0x8,(CVector3f *)0x0,0);",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

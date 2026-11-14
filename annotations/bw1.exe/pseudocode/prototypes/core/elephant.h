@@ -7,39 +7,39 @@
 
 // Original: core_elephant.cpp_staticInit_FUN_0049dfa0
 // Address: 0049dfa0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_elephant.cpp_factoryFuncElephantGun_FUN_0049dfd0
 // Address: 0049dfd0
-void factoryFuncElephantGun(void);
+CElephantGun * __cdecl factoryFuncElephantGun(void);
 
 // Original: core_elephant.cpp_CElephantGun_getActorType_FUN_0049dff0
 // Address: 0049dff0
-CDemonActorType * CElephantGun::getActorType(CElephantGun *this_ptr);
+CDemonActorType * __cdecl CElephantGun::getActorType(CElephantGun *this_ptr);
 
 // Original: core_elephant.cpp_CElephantGun_ctor_FUN_0049e000
 // Address: 0049e000
 CElephantGun * __cdecl CElephantGun::ctor(CElephantGun *this_ptr);
 
-// Original: core_elephant.cpp_FUN_0049e090
+// Original: core_elephant.cpp_CElephantGun_process_FUN_0049e090
 // Address: 0049e090
-void FUN_0049e090(CWeapon *param_1,float param_2);
+void __cdecl CElephantGun::process(CElephantGun *this_ptr,float delta_time);
 
-// Original: core_elephant.cpp_FUN_0049e1a0
+// Original: core_elephant.cpp_CElephantGun_fire_FUN_0049e1a0
 // Address: 0049e1a0
-undefined4 FUN_0049e1a0(CWeapon *param_1);
+int __cdecl CElephantGun::fire(CElephantGun *this_ptr);
 
-// Original: core_elephant.cpp_FUN_0049e9c0
+// Original: core_elephant.cpp_CElephantGun_onFired_FUN_0049e9c0
 // Address: 0049e9c0
-void FUN_0049e9c0(int param_1);
+void __cdecl CElephantGun::onFired(CElephantGun *this_ptr);
 
 // Original: core_elephant.cpp_CElephantGun_getDamage_FUN_0049eaf0
 // Address: 0049eaf0
 float __cdecl CElephantGun::getDamage(CElephantGun *this_ptr);
 
-// Original: core_elephant.cpp_FUN_0049eb30
+// Original: core_elephant.cpp_CElephantGun_renderAimBeam_FUN_0049eb30
 // Address: 0049eb30
-void FUN_0049eb30(int param_1);
+void __cdecl CElephantGun::renderAimBeam(CElephantGun *this_ptr);
 
 // Original: core_elephant.cpp_CElephantGun_dtor_FUN_0049ed90
 // Address: 0049ed90

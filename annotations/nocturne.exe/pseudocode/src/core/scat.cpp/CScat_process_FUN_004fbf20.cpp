@@ -322,7 +322,7 @@ LAB_004fc138:
               (unaff_EBX,source_quaternions,fVar17,iVar13,blend_callback);
   }
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042a150((CCharacter *)this_ptr,delta_time);
-  core_scat_cpp_CScat_FUN_004fdd00(this_ptr);
+  core_scat_cpp_CScat_updateWeaponAttachment_FUN_004fdd00(this_ptr);
 switchD_004fc3b6_caseD_5:
   return;
 }

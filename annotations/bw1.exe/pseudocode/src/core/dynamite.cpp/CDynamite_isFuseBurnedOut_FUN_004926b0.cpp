@@ -9,5 +9,5 @@
 int __cdecl core_dynamite_cpp_CDynamite_isFuseBurnedOut_FUN_004926b0(CDynamite *this_ptr)
 
 {
-  return (uint)((*(uint *)&this_ptr->field_0x578 & 0x7fffffff) == 0);
+  return (uint)(ABS(this_ptr->fuse_timer) == 0.0);
 }

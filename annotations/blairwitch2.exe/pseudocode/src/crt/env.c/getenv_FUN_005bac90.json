@@ -17,15 +17,15 @@
   },
   "cross_references": [
     {
-      "addr": "004b5190",
-      "from_addr": "004b5d52",
-      "name": "core_game.cpp_FUN_004b5190",
+      "addr": "004b6170",
+      "from_addr": "004b63b4",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004b6170",
-      "from_addr": "004b63b4",
-      "name": "core_game.cpp_FUN_004b6170",
+      "addr": "004b5190",
+      "from_addr": "004b5d52",
+      "name": "core_game.cpp_FUN_004b5190",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -55,13 +55,13 @@
     {
       "addr": "005c59e0",
       "from_addr": "005c59ec",
-      "name": "unkafter_2d.cpp_FUN_005c59e0",
+      "name": "crt_unknown.c_FUN_005c59e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0058fdec",
+      "addr": "0058fdf0",
       "from_addr": "0058fe4f",
-      "name": "wincore_winrun.cpp_FUN_0058fdec",
+      "name": "wincore_winrun.cpp_getComputerAndUserName_FUN_0058fdf0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -98,7 +98,7 @@
       {
         "call_addr": "004b63b4",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b6170",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -186,7 +186,7 @@
       {
         "call_addr": "005c59ec",
         "call_type": "direct",
-        "caller": "unkafter_2d.cpp_FUN_005c59e0",
+        "caller": "crt_unknown.c_FUN_005c59e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -197,7 +197,7 @@
       {
         "call_addr": "0058fe4f",
         "call_type": "direct",
-        "caller": "wincore_winrun.cpp_FUN_0058fdec",
+        "caller": "wincore_winrun.cpp_getComputerAndUserName_FUN_0058fdf0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -240,6 +240,32 @@
       "STORE": 9
     },
     "pcode_op_count": 229
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005c3050",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005a5ec0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "006013f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00566e10",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 8,

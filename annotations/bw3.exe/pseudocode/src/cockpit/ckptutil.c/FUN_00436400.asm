@@ -10,8 +10,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
+;   crt_memory.c_operator_new_array_FUN_005a40df
 ;   crt_unknown.c_FUN_005a30c4
-;   crt_unknown.c_FUN_005a40df
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     LEA EAX,[EBP*0x4 + 0x0]             ; 00436433
         ;   Label: LAB_00436433
     PUSH EAX                            ; 0043643a
-    CALL crt_unknown.c_FUN_005a40df     ; 0043643b
-        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a40df()
+    CALL crt_memory.c_operator_new_array_FUN_005a40df ; 0043643b
+        ;   XREF to: 005a40df (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_array_FUN_005a40df()
     ADD ESP,0x4                         ; 00436440
     MOV dword ptr [ESP + 0x20],EAX      ; 00436443
     TEST EAX,EAX                        ; 00436447

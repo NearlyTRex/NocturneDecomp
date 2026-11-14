@@ -1,0 +1,193 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 67,
+    "complexity_score": 49,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 11,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 19,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 86
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00517de0",
+    "address_range": [
+      [
+        "00517de0",
+        "00517eb2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_mini3d.cpp_setColorARGB_FUN_00517de0",
+    "signature": "void __cdecl engine_mini3d_cpp_setColorARGB_FUN_00517de0(uint argb)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005e903b",
+      "name": "DAT_005e903b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c50948",
+      "name": "DAT_01c50948",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d224c0",
+      "name": "DAT_01d224c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d22548",
+      "name": "DAT_01d22548",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2254c",
+      "name": "DAT_01d2254c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d22550",
+      "name": "DAT_01d22550",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d25f38",
+      "name": "DAT_01d25f38",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d25f3c",
+      "name": "DAT_01d25f3c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d25f40",
+      "name": "DAT_01d25f40",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d25f44",
+      "name": "DAT_01d25f44",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c83448",
+      "name": "DAT_02c83448",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.311475409836065,
+    "instruction_count": 61,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 16,
+      "BOOL_OR": 1,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 167,
+      "FLOAT2FLOAT": 7,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 4,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 4,
+      "INT_ADD": 16,
+      "INT_AND": 72,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 29,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 14,
+      "INT_OR": 20,
+      "INT_RIGHT": 6,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 16,
+      "INT_SUB": 11,
+      "INT_ZEXT": 4,
+      "LOAD": 11,
+      "POPCOUNT": 13,
+      "RETURN": 2,
+      "STORE": 11
+    },
+    "pcode_op_count": 446
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004f8eb0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004f35b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "argb",
+        "offset": 4,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 15,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if ((_DAT_02c83448 != (code *)0x0) && (_DAT_01c50948 != 0)) {",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

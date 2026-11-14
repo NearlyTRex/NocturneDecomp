@@ -13,14 +13,14 @@ void core_game_cpp_FUN_004c4bc0(int param_1)
   
   if (*(char *)(param_1 + 0x298) == '\0') {
     if (*(uint *)(param_1 + 0x2fc) != 0) {
-      sound_sndmain_cpp_FUN_00556c10(*(uint *)(param_1 + 0x2fc),0.0,2.0,1);
+      sound_sndmain_cpp_setSfxFade_FUN_00556c10(*(uint *)(param_1 + 0x2fc),0.0,2.0,1);
       *(uint *)(param_1 + 0x2fc) = 0;
       return;
     }
   }
   else {
     if (*(uint *)(param_1 + 0x2fc) != 0) {
-      iVar1 = sound_sndmain_cpp_FUN_00556700(*(uint *)(param_1 + 0x2fc));
+      iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_00556700(*(uint *)(param_1 + 0x2fc));
       if (iVar1 != 0) goto LAB_004c4be7;
     }
     core_game_cpp_FUN_004c4a60
@@ -32,14 +32,15 @@ LAB_004c4be7:
     if (*(int *)(param_1 + 0x24c) == 0) {
       if (*(float *)(param_1 + 0x308) < 1.0) {
         *(uint *)(param_1 + 0x308) = 0x3f800000;
-        sound_sndmain_cpp_FUN_00556c10(*(uint *)(param_1 + 0x2fc),*(float *)(param_1 + 0x308),2.0,0)
-        ;
+        sound_sndmain_cpp_setSfxFade_FUN_00556c10
+                  (*(uint *)(param_1 + 0x2fc),*(float *)(param_1 + 0x308),2.0,0);
         return;
       }
     }
     else if (*(int *)(param_1 + 0x308) == 0x3f800000) {
       *(uint *)(param_1 + 0x308) = 0x3e99999a;
-      sound_sndmain_cpp_FUN_00556c10(*(uint *)(param_1 + 0x2fc),*(float *)(param_1 + 0x308),2.0,0);
+      sound_sndmain_cpp_setSfxFade_FUN_00556c10
+                (*(uint *)(param_1 + 0x2fc),*(float *)(param_1 + 0x308),2.0,0);
       return;
     }
   }

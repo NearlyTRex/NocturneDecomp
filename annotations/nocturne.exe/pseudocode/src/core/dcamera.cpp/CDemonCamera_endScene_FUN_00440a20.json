@@ -16,15 +16,15 @@
   },
   "cross_references": [
     {
-      "addr": "0050aba0",
-      "from_addr": "0050acde",
-      "name": "core_set.cpp_CDemonSet_FUN_0050aba0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00507f80",
       "from_addr": "00508070",
       "name": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050aba0",
+      "from_addr": "0050acde",
+      "name": "core_set.cpp_CDemonSet_renderCameraAimedAtHero_FUN_0050aba0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -179,7 +179,7 @@
       {
         "call_addr": "0050acde",
         "call_type": "direct",
-        "caller": "core_set.cpp_CDemonSet_FUN_0050aba0",
+        "caller": "core_set.cpp_CDemonSet_renderCameraAimedAtHero_FUN_0050aba0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -248,6 +248,32 @@
       "SUBPIECE": 2
     },
     "pcode_op_count": 381
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0043bf50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8548
+    },
+    "bw1.exe": {
+      "addr": "0044d610",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8548
+    },
+    "bw3.exe": {
+      "addr": "00449750",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8548
+    },
+    "nocedit.exe": {
+      "addr": "0044cb80",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8548
+    }
   },
   "stack_frame": {
     "frame_size": 12,

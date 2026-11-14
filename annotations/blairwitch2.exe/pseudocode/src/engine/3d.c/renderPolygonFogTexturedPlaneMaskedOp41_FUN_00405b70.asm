@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00405b70(int param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00405b70(SMRGLHeaderPrimitive *prim)
 ;
+; Parameters:
+; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ;
 ; XREF[2]:
-;   engine_3d.c_FUN_004079f0 at 00407b17
+;   engine_3d.c_dispatchMRGLToRenderer_FUN_004079f0 at 00407b17
 ;   engine_3d.c_flushRenderQueue_FUN_00407980 at 004079aa
 ;
 ; Referenced Globals:
@@ -39,7 +41,7 @@ section .text
     LEA EAX,[EDI + 0x8]                 ; 00405b80
     PUSH EAX                            ; 00405b83
     CALL engine_3d.c_isVisiblePlane_FUN_00403970 ; 00405b84
-        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_isVisiblePlane_FUN_00403970()
+        ;   XREF to: 00403970 (UNCONDITIONAL_CALL)  ; int engine_3d.c_isVisiblePlane_FUN_00403970(SClipPlane * plane)
     ADD ESP,0x4                         ; 00405b89
     TEST EAX,EAX                        ; 00405b8c
     JZ 0x00405cd6                       ; 00405b8e

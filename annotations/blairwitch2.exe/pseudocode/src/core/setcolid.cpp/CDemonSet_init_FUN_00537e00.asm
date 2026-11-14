@@ -6,18 +6,18 @@
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ;
-; XREF[38]:
-;   core_actor.cpp_FUN_0040c990 at 0040ca0f
-;   core_actor.cpp_FUN_0040ca40 at 0040cb12
+; XREF[39]:
+;   core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040ca40 at 0040cb12
+;   core_actor.cpp_CDemonActor_processFootstep_FUN_0040c990 at 0040ca0f
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429420 at 00429650
 ;   core_charactr.cpp_FUN_00423a60 at 00423f46
-;   core_charactr.cpp_FUN_00429420 at 00429650
 ;   core_confedrt.cpp_FUN_005a14e0 at 005a17e4
-;   core_crossbow.cpp_FUN_0043a7a0 at 0043a952
+;   core_crossbow.cpp_CCrossbow_fire_FUN_0043a7a0 at 0043a952
+;   core_doc.cpp_CDoc_renderOpaque_FUN_004599a0 at 00459a26
 ;   core_doc.cpp_FUN_00459555 at 00459626
-;   core_doc.cpp_FUN_004599a0 at 00459a26
-;   core_elephant.cpp_FUN_00485b40 at 00485dea
-;   core_emitter.cpp_FUN_00487790 at 004877d1
-;   ... and 28 more
+;   core_doc.cpp_FUN_00459ff0 at 0045a868
+;   core_doc.cpp_FUN_0045ab40 at 0045acf1
+;   ... and 29 more
 ;
 ; *****************************************************************************
 

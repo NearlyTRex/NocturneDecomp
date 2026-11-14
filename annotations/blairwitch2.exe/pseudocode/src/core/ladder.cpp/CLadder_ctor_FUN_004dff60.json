@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 237,
+    "complexity_score": 47,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 22,
-    "suspect_count": 20,
+    "suspect_count": 2,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_field",
-      "unrolled_memset"
+      "negative_offset"
     ],
     "total_lines": 62
   },
@@ -95,6 +93,32 @@
     },
     "pcode_op_count": 125
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004fd330",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004df650",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00502540",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004c4290",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -117,160 +141,16 @@
       "line": 11,
       "match": "this_ptr_00[-1].",
       "severity": "mild",
-      "text": "*(byte **)&this_ptr_00[-1].field_0x178 = &g_CLadderVTable;",
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CLadderVTable;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "*(byte **)&this_ptr_00[-1].field_0x178 = &g_CLadderVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x4 = 0x41200000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x8 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0xc = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x18 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x14 = *(uint *)&this_ptr_00[1].field_0x18;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x14 = *(uint *)&this_ptr_00[1].field_0x18;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x10 = *(uint *)&this_ptr_00[1].field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x10 = *(uint *)&this_ptr_00[1].field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x24 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x20 = *(uint *)&this_ptr_00[1].field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x20 = *(uint *)&this_ptr_00[1].field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x1c = *(uint *)&this_ptr_00[1].field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x1c = *(uint *)&this_ptr_00[1].field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x28 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 24,
       "match": "this_ptr_00[-2].",
       "severity": "mild",
-      "text": "return (CLadder *)&this_ptr_00[-2].field_0x44;",
+      "text": "return (CLadder *)(this_ptr_00[-2].part_visibility_flags + 0x11);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "return (CLadder *)&this_ptr_00[-2].field_0x44;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 17,
-      "match": "cascade_constant_fill",
-      "severity": "moderate",
-      "text": "*(uint *)&this_ptr_00[1].field_0x18 = 0;",
-      "type": "unrolled_memset"
-    },
-    {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 20,
-      "match": "cascade_constant_fill",
-      "severity": "moderate",
-      "text": "*(uint *)&this_ptr_00[1].field_0x24 = 0;",
-      "type": "unrolled_memset"
     }
   ],
   "vtable_info": {

@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 76,
+    "complexity_score": 32,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 16,
-    "suspect_count": 5,
+    "pseudocode_lines": 17,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 42
+    "total_lines": 43
   },
   "cross_references": [],
   "function": {
@@ -97,38 +96,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x244",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x244 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x284",
-      "severity": "mild",
-      "text": "pCVar1 = *(CGame **)&((CGame *)(_DAT_01cedef4 * 4))[0x299b].field_0x284;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x850",
-      "severity": "mild",
-      "text": "if ((pCVar1 != (CGame *)0x0) && (pCVar2 = pCVar1, *(int *)&pCVar1[0x35].field_0x850 != 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x858",
-      "severity": "mild",
-      "text": "_DAT_0200a3a4 = *(uint *)&pCVar1[0x35].field_0x858;",
-      "type": "unnamed_field"
     }
   ]
 }

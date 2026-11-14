@@ -9,5 +9,5 @@
 int __cdecl core_platfrm_cpp_CPlatform_getBlockVirtualDirectorFlag_FUN_0053ada0(CPlatform *this_ptr)
 
 {
-  return *(int *)&this_ptr->field_0x4c4;
+  return this_ptr->block_virtual_director_flag;
 }

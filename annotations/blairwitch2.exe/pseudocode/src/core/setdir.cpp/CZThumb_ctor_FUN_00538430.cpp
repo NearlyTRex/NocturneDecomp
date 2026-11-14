@@ -9,8 +9,8 @@
 CZThumb * __cdecl core_setdir_cpp_CZThumb_ctor_FUN_00538430(CZThumb *this_ptr)
 
 {
-  *(uint *)&this_ptr->field_0x4 = 0;
-  *(uint *)&this_ptr->field_0x24 = 0;
-  *(uint *)this_ptr = *(uint *)&this_ptr->field_0x4;
+  this_ptr->height = 0;
+  this_ptr->zbuffer_data = (void *)0x0;
+  this_ptr->width = this_ptr->height;
   return this_ptr;
 }

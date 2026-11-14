@@ -2,30 +2,29 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 375,
-    "complexity_score": 361,
+    "complexity_score": 347,
     "cross_reference_count": 2,
     "function_call_count": 29,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 171,
-    "suspect_count": 15,
+    "pseudocode_lines": 172,
+    "suspect_count": 14,
     "suspect_types": [
       "extra_output",
       "pointer_cast",
       "undefined_data",
-      "unnamed_field",
       "unresolved_funcptr",
       "unrolled_strcpy",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 546
+    "total_lines": 547
   },
   "cross_references": [
     {
       "addr": "004bdfb0",
       "from_addr": "004be07a",
-      "name": "core_game.cpp_FUN_004bdfb0",
+      "name": "core_game.cpp_CGame_finishAct_FUN_004bdfb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -52,12 +51,12 @@
     {
       "addr": "004b3000",
       "is_variadic": false,
-      "name": "core_game.cpp_FUN_004b3000"
+      "name": "core_game.cpp_CGame_saveClockTime_FUN_004b3000"
     },
     {
       "addr": "004b3010",
       "is_variadic": false,
-      "name": "core_game.cpp_FUN_004b3010"
+      "name": "core_game.cpp_CGame_updateDT_FUN_004b3010"
     },
     {
       "addr": "004e4500",
@@ -68,6 +67,11 @@
       "addr": "005b7ff0",
       "is_variadic": false,
       "name": "crt_math.c_round_FUN_005b7ff0"
+    },
+    {
+      "addr": "005b8580",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005b8580"
     },
     {
       "addr": "005b89c0",
@@ -83,11 +87,6 @@
       "addr": "005b8c30",
       "is_variadic": false,
       "name": "crt_string.c__strcmp_FUN_005b8c30"
-    },
-    {
-      "addr": "005b8580",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b8580"
     },
     {
       "addr": "005b86a0",
@@ -137,7 +136,7 @@
     {
       "addr": "004ab560",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004ab560"
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560"
     },
     {
       "addr": "0055b1f0",
@@ -145,34 +144,29 @@
       "name": "engine_special.cpp_clearScreen_FUN_0055b1f0"
     },
     {
-      "addr": "00550450",
+      "addr": "005524b0",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00550450"
-    },
-    {
-      "addr": "005504d0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005504d0"
-    },
-    {
-      "addr": "005506b0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005506b0"
-    },
-    {
-      "addr": "00550b70",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00550b70"
+      "name": "sound_sndmain.cpp_enableSoundSystem_FUN_005524b0"
     },
     {
       "addr": "005512a0",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005512a0"
+      "name": "sound_sndmain.cpp_isSfxChannelEnabled_FUN_005512a0"
     },
     {
-      "addr": "005524b0",
+      "addr": "00550b70",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005524b0"
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_00550b70"
+    },
+    {
+      "addr": "005504d0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005504d0"
+    },
+    {
+      "addr": "00550450",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_00550450"
     },
     {
       "addr": "005526b0",
@@ -190,9 +184,14 @@
       "name": "sound_sndmain.cpp_setNextSfxFlags_FUN_00550380"
     },
     {
+      "addr": "005506b0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_startSfx_FUN_005506b0"
+    },
+    {
       "addr": "00589560",
       "is_variadic": false,
-      "name": "wincore_wddvmem.cpp_FUN_00589560"
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00589560"
     }
   ],
   "globals": [
@@ -317,7 +316,7 @@
       {
         "call_addr": "004be07a",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bdfb0",
+        "caller": "core_game.cpp_CGame_finishAct_FUN_004bdfb0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -388,6 +387,32 @@
       "TRUNC": 3
     },
     "pcode_op_count": 1422
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004d8e50",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4484
+    },
+    "bw3.exe": {
+      "addr": "004c02a0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3902
+    },
+    "nocedit.exe": {
+      "addr": "004e4010",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3374
+    },
+    "nocturne.exe": {
+      "addr": "004a6e90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4484
+    }
   },
   "stack_frame": {
     "frame_size": 4448,
@@ -610,23 +635,15 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 146,
+      "line": 147,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar6 = (**(code **)*0x01D02F84)(0x01D02F84,1);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 149,
-      "match": "field_0x284",
-      "severity": "mild",
-      "text": "local_28 = local_28 - *(float *)&this_ptr->field_0x284 * _DAT_005d8ab3;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 169,
+      "line": 170,
       "match": "(uint *)((int)auStack_1154",
       "severity": "moderate",
       "text": "puVar1 = (uint *)((int)auStack_1154 + iVar3);",

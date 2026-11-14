@@ -9,16 +9,16 @@
 ; EBloodType       Stack[0xc]:4   blood_type
 ;
 ; XREF[21]:
-;   core_batcreat.cpp_FUN_004115b0 at 00411990
-;   core_batman.cpp_FUN_00412ba0 at 00413340
-;   core_bride.cpp_FUN_00423b70 at 00423d95
-;   core_carved.cpp_FUN_00428ae0 at 00429b0f
-;   core_cow.cpp_FUN_00448570 at 0044891a
-;   core_demnfolk.cpp_FUN_00459100 at 0045a480
-;   core_dog.cpp_FUN_004768a0 at 00476ce4
-;   core_dracbrid.cpp_FUN_0047b510 at 0047c2d9
-;   core_drone.cpp_FUN_00485d70 at 00486246
-;   core_ghoul.cpp_FUN_004de330 at 004dee83
+;   core_batcreat.cpp_CBatCreature_process_FUN_004115b0 at 00411990
+;   core_batman.cpp_CBatman_process_FUN_00412ba0 at 00413340
+;   core_bird.cpp_CBird_process_FUN_00415340 at 00415435
+;   core_bride.cpp_CBride_process_FUN_00423b70 at 00423d95
+;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 00429b0f
+;   core_cow.cpp_CZombieCow_process_FUN_00448570 at 0044891a
+;   core_demnfolk.cpp_CDemnfolk_process_FUN_00459100 at 0045a480
+;   core_dog.cpp_CZombieDog_process_FUN_004768a0 at 00476ce4
+;   core_dracbrid.cpp_CDraculaBride_process_FUN_0047b510 at 0047c2d9
+;   core_drone.cpp_CDrone_process_FUN_00485d70 at 00486246
 ;   ... and 11 more
 ;
 ; Called Functions:

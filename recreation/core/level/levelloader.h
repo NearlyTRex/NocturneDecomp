@@ -6,6 +6,7 @@
 #include "core/fwd.h"
 #include "core/loadingscreen.h"
 #include "engine/fwd.h"
+#include "platform/fwd.h"
 #include "platform/mrgltexturebasic.h"
 
 #include <string_view>
@@ -26,6 +27,8 @@ struct SLevelLoaderOwners {
     engine::CConsole &console;
     // The packages' loading pictures.
     const engine::SGameContent &content;
+    // Its Upscaler, which the picture is enlarged as.
+    const platform::IDisplay &display;
 };
 
 // The loading screen: the moon, lit by a light that swings round it as loading goes on, behind

@@ -1,10 +1,10 @@
 {
-  "count":398,
+  "count":388,
   "switch_tables":[
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x40e214]",
       "function_addr":"0040e240",
-      "function_name":"core_ammo.cpp_FUN_0040e240",
+      "function_name":"core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040e240",
       "switch_addr":"0040e27b",
       "target_count":7,
       "targets":[
@@ -41,7 +41,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x40f938]",
       "function_addr":"0040f950",
-      "function_name":"core_baron.cpp_FUN_0040f950",
+      "function_name":"core_baron.cpp_CBaron_process_FUN_0040f950",
       "switch_addr":"0040fedf",
       "target_count":2,
       "targets":[
@@ -58,7 +58,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x4109c0]",
       "function_addr":"004109d0",
-      "function_name":"core_baron.cpp_FUN_004109d0",
+      "function_name":"core_baron.cpp_CBaronWeapon_isReadyToFire_FUN_004109d0",
       "switch_addr":"00410a23",
       "target_count":1,
       "targets":[
@@ -71,7 +71,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x4119ec]",
       "function_addr":"00411a10",
-      "function_name":"core_batcreat.cpp_FUN_00411a10",
+      "function_name":"core_batcreat.cpp_CBatCreature_process_FUN_00411a10",
       "switch_addr":"00412491",
       "target_count":5,
       "targets":[
@@ -100,7 +100,7 @@
     {
       "assembly":"JMP dword ptr [EDX*0x4 + 0x4124e8]",
       "function_addr":"00412500",
-      "function_name":"core_batcreat.cpp_FUN_00412500",
+      "function_name":"core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00412500",
       "switch_addr":"00412536",
       "target_count":6,
       "targets":[
@@ -133,7 +133,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x412ef8]",
       "function_addr":"00412f40",
-      "function_name":"core_batman.cpp_FUN_00412f40",
+      "function_name":"core_batman.cpp_CBatman_process_FUN_00412f40",
       "switch_addr":"004135d2",
       "target_count":4,
       "targets":[
@@ -158,7 +158,7 @@
     {
       "assembly":"JMP dword ptr [EDI*0x4 + 0x412f08]",
       "function_addr":"00412f40",
-      "function_name":"core_batman.cpp_FUN_00412f40",
+      "function_name":"core_batman.cpp_CBatman_process_FUN_00412f40",
       "switch_addr":"00413c5b",
       "target_count":8,
       "targets":[
@@ -199,7 +199,7 @@
     {
       "assembly":"JMP dword ptr [EDX*0x4 + 0x413f1c]",
       "function_addr":"00413f40",
-      "function_name":"core_batman.cpp_FUN_00413f40",
+      "function_name":"core_batman.cpp_CBatman_processDismemberment_FUN_00413f40",
       "switch_addr":"00413f76",
       "target_count":6,
       "targets":[
@@ -232,7 +232,7 @@
     {
       "assembly":"JMP dword ptr [EDI*0x4 + 0x4186a0]",
       "function_addr":"004186c0",
-      "function_name":"core_boneguy.cpp_FUN_004186c0",
+      "function_name":"core_boneguy.cpp_CBoneGuy_process_FUN_004186c0",
       "switch_addr":"00419295",
       "target_count":6,
       "targets":[
@@ -294,7 +294,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x41f374]",
       "function_addr":"0041f390",
-      "function_name":"core_bugs.cpp_FUN_0041f390",
+      "function_name":"core_bugs.cpp_CBugs_process_FUN_0041f390",
       "switch_addr":"0041f3c4",
       "target_count":4,
       "targets":[
@@ -337,56 +337,6 @@
         },
         {
           "addr":"00430c3b",
-          "ref_type":"COMPUTED_JUMP"
-        }
-      ]
-    },
-    {
-      "assembly":"JMP dword ptr [EAX*0x4 + 0x430c98]",
-      "function_addr":"00430cae",
-      "function_name":"engine_clipper.c_FUN_00430cae",
-      "switch_addr":"00430cfe",
-      "target_count":4,
-      "targets":[
-        {
-          "addr":"00430d05",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"00430d0a",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"00430d30",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"00430d81",
-          "ref_type":"COMPUTED_JUMP"
-        }
-      ]
-    },
-    {
-      "assembly":"JMP dword ptr [EAX*0x4 + 0x430f18]",
-      "function_addr":"00430f2e",
-      "function_name":"engine_clipper.c_FUN_00430f2e",
-      "switch_addr":"00430f80",
-      "target_count":4,
-      "targets":[
-        {
-          "addr":"00430f87",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"00430f8c",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"00430fb2",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"00431003",
           "ref_type":"COMPUTED_JUMP"
         }
       ]
@@ -517,31 +467,6 @@
       ]
     },
     {
-      "assembly":"JMP dword ptr [EAX*0x4 + 0x4322c8]",
-      "function_addr":"004322de",
-      "function_name":"engine_clipper.c_FUN_004322de",
-      "switch_addr":"0043233a",
-      "target_count":4,
-      "targets":[
-        {
-          "addr":"00432341",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"0043236b",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"00432387",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"004323ad",
-          "ref_type":"COMPUTED_JUMP"
-        }
-      ]
-    },
-    {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x432404]",
       "function_addr":"00432420",
       "function_name":"engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_00432420",
@@ -562,31 +487,6 @@
         },
         {
           "addr":"004324f7",
-          "ref_type":"COMPUTED_JUMP"
-        }
-      ]
-    },
-    {
-      "assembly":"JMP dword ptr [EAX*0x4 + 0x432688]",
-      "function_addr":"0043269e",
-      "function_name":"engine_clipper.c_FUN_0043269e",
-      "switch_addr":"00432701",
-      "target_count":4,
-      "targets":[
-        {
-          "addr":"00432708",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"00432732",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"00432752",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"00432778",
           "ref_type":"COMPUTED_JUMP"
         }
       ]
@@ -694,7 +594,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x435814]",
       "function_addr":"00435830",
-      "function_name":"core_colonel.cpp_FUN_00435830",
+      "function_name":"core_colonel.cpp_CColonel_process_FUN_00435830",
       "switch_addr":"00435cf7",
       "target_count":3,
       "targets":[
@@ -715,7 +615,7 @@
     {
       "assembly":"JMP dword ptr [EDI*0x4 + 0x436e38]",
       "function_addr":"00436e80",
-      "function_name":"unkafter_conveyor.cpp_FUN_00436e80",
+      "function_name":"core_construc.cpp_CConstruct_process_FUN_00436e80",
       "switch_addr":"00437b48",
       "target_count":8,
       "targets":[
@@ -756,7 +656,7 @@
     {
       "assembly":"JMP dword ptr [EDI*0x4 + 0x439294]",
       "function_addr":"004392b0",
-      "function_name":"core_cow.cpp_FUN_004392b0",
+      "function_name":"core_cow.cpp_CZombieCow_process_FUN_004392b0",
       "switch_addr":"0043981a",
       "target_count":5,
       "targets":[
@@ -835,7 +735,7 @@
     {
       "assembly":"JMP dword ptr [ECX*0x4 + 0x444204]",
       "function_addr":"00444220",
-      "function_name":"core_dcube.cpp_FUN_00444220",
+      "function_name":"core_dcube.cpp_clipPolygonAgainstMaxX_FUN_00444220",
       "switch_addr":"0044428a",
       "target_count":4,
       "targets":[
@@ -860,7 +760,7 @@
     {
       "assembly":"JMP dword ptr [ECX*0x4 + 0x444634]",
       "function_addr":"00444650",
-      "function_name":"core_dcube.cpp_FUN_00444650",
+      "function_name":"core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00444650",
       "switch_addr":"004446c4",
       "target_count":4,
       "targets":[
@@ -883,159 +783,9 @@
       ]
     },
     {
-      "assembly":"JMP dword ptr [ECX*0x4 + 0x4459c8]",
-      "function_addr":"00445a2e",
-      "function_name":"core_dcube.cpp_FUN_00445a2e",
-      "switch_addr":"00445c8e",
-      "target_count":4,
-      "targets":[
-        {
-          "addr":"00445c95",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"00445cbc",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"00446016",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"0044605b",
-          "ref_type":"COMPUTED_JUMP"
-        }
-      ]
-    },
-    {
-      "assembly":"JMP dword ptr [ECX*0x4 + 0x4459d8]",
-      "function_addr":"00445a2e",
-      "function_name":"core_dcube.cpp_FUN_00445a2e",
-      "switch_addr":"00445d30",
-      "target_count":4,
-      "targets":[
-        {
-          "addr":"00445d37",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"00445d5e",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"004460ca",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"0044610c",
-          "ref_type":"COMPUTED_JUMP"
-        }
-      ]
-    },
-    {
-      "assembly":"JMP dword ptr [ECX*0x4 + 0x4459e8]",
-      "function_addr":"00445a2e",
-      "function_name":"core_dcube.cpp_FUN_00445a2e",
-      "switch_addr":"00445dd3",
-      "target_count":4,
-      "targets":[
-        {
-          "addr":"00445dda",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"00445e01",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"00446178",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"004461bd",
-          "ref_type":"COMPUTED_JUMP"
-        }
-      ]
-    },
-    {
-      "assembly":"JMP dword ptr [ECX*0x4 + 0x4459f8]",
-      "function_addr":"00445a2e",
-      "function_name":"core_dcube.cpp_FUN_00445a2e",
-      "switch_addr":"00445e76",
-      "target_count":4,
-      "targets":[
-        {
-          "addr":"00445e7d",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"00445ea4",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"0044622c",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"0044626f",
-          "ref_type":"COMPUTED_JUMP"
-        }
-      ]
-    },
-    {
-      "assembly":"JMP dword ptr [ECX*0x4 + 0x445a08]",
-      "function_addr":"00445a2e",
-      "function_name":"core_dcube.cpp_FUN_00445a2e",
-      "switch_addr":"00445f1c",
-      "target_count":4,
-      "targets":[
-        {
-          "addr":"00445f23",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"00445f4a",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"004462dc",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"0044631f",
-          "ref_type":"COMPUTED_JUMP"
-        }
-      ]
-    },
-    {
-      "assembly":"JMP dword ptr [ECX*0x4 + 0x445a18]",
-      "function_addr":"00445a2e",
-      "function_name":"core_dcube.cpp_FUN_00445a2e",
-      "switch_addr":"00445fc2",
-      "target_count":4,
-      "targets":[
-        {
-          "addr":"00445fc9",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"00445ff0",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"0044638c",
-          "ref_type":"COMPUTED_JUMP"
-        },
-        {
-          "addr":"004463cf",
-          "ref_type":"COMPUTED_JUMP"
-        }
-      ]
-    },
-    {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x450ac4]",
       "function_addr":"00450b20",
-      "function_name":"core_doc.cpp_FUN_00450b20",
+      "function_name":"core_doc.cpp_CDoc_process_FUN_00450b20",
       "switch_addr":"00450bff",
       "target_count":2,
       "targets":[
@@ -1073,7 +823,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x459960]",
       "function_addr":"004599a0",
-      "function_name":"core_doc.cpp_FUN_004599a0",
+      "function_name":"core_doc.cpp_CDoc_renderOpaque_FUN_004599a0",
       "switch_addr":"00459c4e",
       "target_count":7,
       "targets":[
@@ -1110,7 +860,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x45bd24]",
       "function_addr":"0045bdc0",
-      "function_name":"unkafter_stranger.cpp_FUN_0045bdc0",
+      "function_name":"core_doc.cpp_FUN_0045bdc0",
       "switch_addr":"0045bed9",
       "target_count":6,
       "targets":[
@@ -1143,7 +893,7 @@
     {
       "assembly":"JMP dword ptr [ESI*0x4 + 0x45bc0c]",
       "function_addr":"0045bdc0",
-      "function_name":"unkafter_stranger.cpp_FUN_0045bdc0",
+      "function_name":"core_doc.cpp_FUN_0045bdc0",
       "switch_addr":"0045c3cb",
       "target_count":3,
       "targets":[
@@ -1164,7 +914,7 @@
     {
       "assembly":"JMP dword ptr [ESI*0x4 + 0x45bc44]",
       "function_addr":"0045bdc0",
-      "function_name":"unkafter_stranger.cpp_FUN_0045bdc0",
+      "function_name":"core_doc.cpp_FUN_0045bdc0",
       "switch_addr":"0045c43b",
       "target_count":3,
       "targets":[
@@ -1185,7 +935,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x45bc7c]",
       "function_addr":"0045bdc0",
-      "function_name":"unkafter_stranger.cpp_FUN_0045bdc0",
+      "function_name":"core_doc.cpp_FUN_0045bdc0",
       "switch_addr":"0045c465",
       "target_count":7,
       "targets":[
@@ -1222,7 +972,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x45bcb4]",
       "function_addr":"0045bdc0",
-      "function_name":"unkafter_stranger.cpp_FUN_0045bdc0",
+      "function_name":"core_doc.cpp_FUN_0045bdc0",
       "switch_addr":"0045c4f5",
       "target_count":3,
       "targets":[
@@ -1243,7 +993,7 @@
     {
       "assembly":"JMP dword ptr [ESI*0x4 + 0x45bcec]",
       "function_addr":"0045bdc0",
-      "function_name":"unkafter_stranger.cpp_FUN_0045bdc0",
+      "function_name":"core_doc.cpp_FUN_0045bdc0",
       "switch_addr":"0045c548",
       "target_count":3,
       "targets":[
@@ -1264,7 +1014,7 @@
     {
       "assembly":"JMP dword ptr [ESI*0x4 + 0x45bd4c]",
       "function_addr":"0045bdc0",
-      "function_name":"unkafter_stranger.cpp_FUN_0045bdc0",
+      "function_name":"core_doc.cpp_FUN_0045bdc0",
       "switch_addr":"0045c7ec",
       "target_count":3,
       "targets":[
@@ -1285,7 +1035,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x45bd84]",
       "function_addr":"0045bdc0",
-      "function_name":"unkafter_stranger.cpp_FUN_0045bdc0",
+      "function_name":"core_doc.cpp_FUN_0045bdc0",
       "switch_addr":"0045c840",
       "target_count":3,
       "targets":[
@@ -1306,7 +1056,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x45c9f4]",
       "function_addr":"0045ca30",
-      "function_name":"unkafter_stranger.cpp_FUN_0045ca30",
+      "function_name":"core_doc.cpp_CDoc_doHeroAction_FUN_0045ca30",
       "switch_addr":"0045ca4c",
       "target_count":5,
       "targets":[
@@ -1335,7 +1085,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x45c9cc]",
       "function_addr":"0045ca30",
-      "function_name":"unkafter_stranger.cpp_FUN_0045ca30",
+      "function_name":"core_doc.cpp_CDoc_doHeroAction_FUN_0045ca30",
       "switch_addr":"0045cb69",
       "target_count":6,
       "targets":[
@@ -1368,7 +1118,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x45c9e4]",
       "function_addr":"0045ca30",
-      "function_name":"unkafter_stranger.cpp_FUN_0045ca30",
+      "function_name":"core_doc.cpp_CDoc_doHeroAction_FUN_0045ca30",
       "switch_addr":"0045ce44",
       "target_count":2,
       "targets":[
@@ -1385,7 +1135,7 @@
     {
       "assembly":"JMP dword ptr [EBP*0x4 + 0x45d088]",
       "function_addr":"0045d0c0",
-      "function_name":"unkafter_stranger.cpp_FUN_0045d0c0",
+      "function_name":"core_doc.cpp_CDoc_canDoHeroAction_FUN_0045d0c0",
       "switch_addr":"0045d17e",
       "target_count":4,
       "targets":[
@@ -1410,7 +1160,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x45d27c]",
       "function_addr":"0045d2c0",
-      "function_name":"unkafter_stranger.cpp_FUN_0045d2c0",
+      "function_name":"core_doc.cpp_FUN_0045d2c0",
       "switch_addr":"0045d3bc",
       "target_count":7,
       "targets":[
@@ -1447,7 +1197,7 @@
     {
       "assembly":"JMP dword ptr [ESI*0x4 + 0x45d6b4]",
       "function_addr":"0045d6d0",
-      "function_name":"unkafter_stranger.cpp_FUN_0045d6d0",
+      "function_name":"core_doc.cpp_CDoc_canReachPickup_FUN_0045d6d0",
       "switch_addr":"0045d6eb",
       "target_count":3,
       "targets":[
@@ -1468,7 +1218,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x45e338]",
       "function_addr":"0045e360",
-      "function_name":"core_dog.cpp_FUN_0045e360",
+      "function_name":"core_dog.cpp_CZombieDog_process_FUN_0045e360",
       "switch_addr":"0045eaa0",
       "target_count":5,
       "targets":[
@@ -1497,7 +1247,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x45f01c]",
       "function_addr":"0045f030",
-      "function_name":"core_door.cpp_FUN_0045f030",
+      "function_name":"core_door.cpp_CDoor_reposition_FUN_0045f030",
       "switch_addr":"0045f071",
       "target_count":4,
       "targets":[
@@ -1522,7 +1272,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x45f588]",
       "function_addr":"0045f5a0",
-      "function_name":"core_door.cpp_FUN_0045f5a0",
+      "function_name":"core_door.cpp_CDoor_process_FUN_0045f5a0",
       "switch_addr":"0045f5e2",
       "target_count":4,
       "targets":[
@@ -1547,7 +1297,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x46033c]",
       "function_addr":"00460350",
-      "function_name":"core_door.cpp_FUN_00460350",
+      "function_name":"core_door.cpp_CDoor_getOpenStandPos_FUN_00460350",
       "switch_addr":"00460392",
       "target_count":2,
       "targets":[
@@ -1589,7 +1339,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x462f74]",
       "function_addr":"00462ff0",
-      "function_name":"core_dracbrid.cpp_FUN_00462ff0",
+      "function_name":"core_dracbrid.cpp_CDraculaBride_process_FUN_00462ff0",
       "switch_addr":"00463536",
       "target_count":4,
       "targets":[
@@ -1614,7 +1364,7 @@
     {
       "assembly":"JMP dword ptr [ESI*0x4 + 0x462f84]",
       "function_addr":"00462ff0",
-      "function_name":"core_dracbrid.cpp_FUN_00462ff0",
+      "function_name":"core_dracbrid.cpp_CDraculaBride_process_FUN_00462ff0",
       "switch_addr":"004646db",
       "target_count":18,
       "targets":[
@@ -1695,7 +1445,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x465204]",
       "function_addr":"00465230",
-      "function_name":"core_dracbrid.cpp_FUN_00465230",
+      "function_name":"core_dracbrid.cpp_CDraculaBride_getDeathState_FUN_00465230",
       "switch_addr":"00465268",
       "target_count":3,
       "targets":[
@@ -1716,7 +1466,7 @@
     {
       "assembly":"JMP dword ptr [EAX + 0x467f24]",
       "function_addr":"00467f70",
-      "function_name":"cockpit_drawsurf.cpp_FUN_00467f70",
+      "function_name":"cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00467f70",
       "switch_addr":"00468027",
       "target_count":8,
       "targets":[
@@ -1757,7 +1507,7 @@
     {
       "assembly":"JMP dword ptr [EAX + 0x467f44]",
       "function_addr":"00467f70",
-      "function_name":"cockpit_drawsurf.cpp_FUN_00467f70",
+      "function_name":"cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00467f70",
       "switch_addr":"00468230",
       "target_count":8,
       "targets":[
@@ -1798,7 +1548,7 @@
     {
       "assembly":"JMP dword ptr [EDI*0x4 + 0x46d840]",
       "function_addr":"0046d870",
-      "function_name":"core_drone.cpp_FUN_0046d870",
+      "function_name":"core_drone.cpp_CDrone_process_FUN_0046d870",
       "switch_addr":"0046defe",
       "target_count":6,
       "targets":[
@@ -1831,7 +1581,7 @@
     {
       "assembly":"JMP dword ptr [ECX*0x4 + 0x478d54]",
       "function_addr":"00478d70",
-      "function_name":"core_dtri.cpp_FUN_00478d70",
+      "function_name":"core_dtri.cpp_clipPolygonToRight_FUN_00478d70",
       "switch_addr":"00478dda",
       "target_count":4,
       "targets":[
@@ -1856,7 +1606,7 @@
     {
       "assembly":"JMP dword ptr [ECX*0x4 + 0x479184]",
       "function_addr":"004791a0",
-      "function_name":"core_dtri.cpp_FUN_004791a0",
+      "function_name":"core_dtri.cpp_clipPolygonToFar_FUN_004791a0",
       "switch_addr":"00479214",
       "target_count":4,
       "targets":[
@@ -2077,7 +1827,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x486c74]",
       "function_addr":"00486cb0",
-      "function_name":"core_emitter.cpp_FUN_00486cb0",
+      "function_name":"core_emitter.cpp_CEmitter_process_FUN_00486cb0",
       "switch_addr":"00486dbb",
       "target_count":12,
       "targets":[
@@ -2383,7 +2133,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x494790]",
       "function_addr":"004947a0",
-      "function_name":"core_fire.cpp_FUN_004947a0",
+      "function_name":"core_fire.cpp_CSpark_render_FUN_004947a0",
       "switch_addr":"00494ea5",
       "target_count":4,
       "targets":[
@@ -2408,7 +2158,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x495140]",
       "function_addr":"00495150",
-      "function_name":"core_fire.cpp_FUN_00495150",
+      "function_name":"core_fire.cpp_CFirefly_render_FUN_00495150",
       "switch_addr":"004958f8",
       "target_count":4,
       "targets":[
@@ -2433,7 +2183,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x49ccf4]",
       "function_addr":"0049cd50",
-      "function_name":"core_fire.cpp_FUN_0049cd50",
+      "function_name":"core_fire.cpp_CFireEffect_createBulletImpact_FUN_0049cd50",
       "switch_addr":"0049ceb4",
       "target_count":2,
       "targets":[
@@ -2450,7 +2200,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x49cd1c]",
       "function_addr":"0049cd50",
-      "function_name":"core_fire.cpp_FUN_0049cd50",
+      "function_name":"core_fire.cpp_CFireEffect_createBulletImpact_FUN_0049cd50",
       "switch_addr":"0049cedc",
       "target_count":5,
       "targets":[
@@ -2479,7 +2229,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x49d288]",
       "function_addr":"0049d2c0",
-      "function_name":"core_fire.cpp_FUN_0049d2c0",
+      "function_name":"core_fire.cpp_CFireEffect_createStake_FUN_0049d2c0",
       "switch_addr":"0049d2d9",
       "target_count":3,
       "targets":[
@@ -2500,7 +2250,7 @@
     {
       "assembly":"JMP dword ptr [EDX*0x4 + 0x4a52ec]",
       "function_addr":"004a5310",
-      "function_name":"core_fldnotes.cpp_FUN_004a5310",
+      "function_name":"core_fldnotes.cpp_CFieldNotes_enableEntry_FUN_004a5310",
       "switch_addr":"004a535a",
       "target_count":5,
       "targets":[
@@ -2529,7 +2279,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x4a5598]",
       "function_addr":"004a55b0",
-      "function_name":"core_fldnotes.cpp_FUN_004a55b0",
+      "function_name":"core_fldnotes.cpp_CFieldNotes_completeTask_FUN_004a55b0",
       "switch_addr":"004a55fa",
       "target_count":4,
       "targets":[
@@ -2554,7 +2304,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x4a6438]",
       "function_addr":"004a6470",
-      "function_name":"core_fldnotes.cpp_FUN_004a6470",
+      "function_name":"core_fldnotes.cpp_CFieldNotes_saveState_FUN_004a6470",
       "switch_addr":"004a650e",
       "target_count":2,
       "targets":[
@@ -2571,7 +2321,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x4a6454]",
       "function_addr":"004a6470",
-      "function_name":"core_fldnotes.cpp_FUN_004a6470",
+      "function_name":"core_fldnotes.cpp_CFieldNotes_saveState_FUN_004a6470",
       "switch_addr":"004a659e",
       "target_count":2,
       "targets":[
@@ -2588,7 +2338,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x4acc80]",
       "function_addr":"004accb0",
-      "function_name":"core_frankgen.cpp_FUN_004accb0",
+      "function_name":"core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004accb0",
       "switch_addr":"004accca",
       "target_count":8,
       "targets":[
@@ -2629,7 +2379,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x4ad62c]",
       "function_addr":"004ad640",
-      "function_name":"core_gabriela.cpp_FUN_004ad640",
+      "function_name":"core_gabriela.cpp_CGabriella_process_FUN_004ad640",
       "switch_addr":"004ae90f",
       "target_count":2,
       "targets":[
@@ -2728,7 +2478,7 @@
     {
       "assembly":"JMP dword ptr [ESI*0x4 + 0x4c0034]",
       "function_addr":"004c0050",
-      "function_name":"core_gargoyle.cpp_FUN_004c0050",
+      "function_name":"core_gargoyle.cpp_CGargoyle_process_FUN_004c0050",
       "switch_addr":"004c0a6d",
       "target_count":5,
       "targets":[
@@ -2757,7 +2507,7 @@
     {
       "assembly":"JMP dword ptr [EDX*0x4 + 0x4c0be8]",
       "function_addr":"004c0c00",
-      "function_name":"core_gargoyle.cpp_FUN_004c0c00",
+      "function_name":"core_gargoyle.cpp_CGargoyle_processDismemberment_FUN_004c0c00",
       "switch_addr":"004c0c36",
       "target_count":6,
       "targets":[
@@ -2790,7 +2540,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x4c1b30]",
       "function_addr":"004c1bb0",
-      "function_name":"core_ghoul.cpp_FUN_004c1bb0",
+      "function_name":"core_ghoul.cpp_CGhoul_process_FUN_004c1bb0",
       "switch_addr":"004c2644",
       "target_count":7,
       "targets":[
@@ -2827,7 +2577,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x4c1b68]",
       "function_addr":"004c1bb0",
-      "function_name":"core_ghoul.cpp_FUN_004c1bb0",
+      "function_name":"core_ghoul.cpp_CGhoul_process_FUN_004c1bb0",
       "switch_addr":"004c37ee",
       "target_count":8,
       "targets":[
@@ -2901,7 +2651,7 @@
     {
       "assembly":"JMP dword ptr [EDX*0x4 + 0x4c44b4]",
       "function_addr":"004c44d0",
-      "function_name":"core_ghoul.cpp_FUN_004c44d0",
+      "function_name":"core_ghoul.cpp_CGhoul_getTargetPoints_FUN_004c44d0",
       "switch_addr":"004c4554",
       "target_count":4,
       "targets":[
@@ -2979,7 +2729,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x4cc964]",
       "function_addr":"004cc990",
-      "function_name":"core_haystack.cpp_FUN_004cc990",
+      "function_name":"core_haystack.cpp_CHaystack_process_FUN_004cc990",
       "switch_addr":"004cce93",
       "target_count":3,
       "targets":[
@@ -3000,7 +2750,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x4cd638]",
       "function_addr":"004cd660",
-      "function_name":"core_haystack.cpp_FUN_004cd660",
+      "function_name":"core_haystack.cpp_CHaystack_advanceMotion_FUN_004cd660",
       "switch_addr":"004cd68d",
       "target_count":4,
       "targets":[
@@ -3025,7 +2775,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x4d0374]",
       "function_addr":"004d03b0",
-      "function_name":"core_hero.cpp_FUN_004d03b0",
+      "function_name":"core_hero.cpp_CHero_doHeroAction_FUN_004d03b0",
       "switch_addr":"004d03c3",
       "target_count":7,
       "targets":[
@@ -3062,7 +2812,7 @@
     {
       "assembly":"JMP dword ptr [EDX*0x4 + 0x4d0690]",
       "function_addr":"004d06c0",
-      "function_name":"core_hero.cpp_FUN_004d06c0",
+      "function_name":"core_hero.cpp_CHero_canDoHeroAction_FUN_004d06c0",
       "switch_addr":"004d0710",
       "target_count":3,
       "targets":[
@@ -3083,7 +2833,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x4d1620]",
       "function_addr":"004d1660",
-      "function_name":"core_hostage.cpp_FUN_004d1660",
+      "function_name":"core_hostage.cpp_CHostage_process_FUN_004d1660",
       "switch_addr":"004d167d",
       "target_count":3,
       "targets":[
@@ -3104,7 +2854,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x4d1638]",
       "function_addr":"004d1660",
-      "function_name":"core_hostage.cpp_FUN_004d1660",
+      "function_name":"core_hostage.cpp_CHostage_process_FUN_004d1660",
       "switch_addr":"004d25b0",
       "target_count":4,
       "targets":[
@@ -3129,7 +2879,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x4d1648]",
       "function_addr":"004d1660",
-      "function_name":"core_hostage.cpp_FUN_004d1660",
+      "function_name":"core_hostage.cpp_CHostage_process_FUN_004d1660",
       "switch_addr":"004d28c3",
       "target_count":6,
       "targets":[
@@ -3162,7 +2912,7 @@
     {
       "assembly":"JMP dword ptr [EDI*0x4 + 0x4d3a30]",
       "function_addr":"004d3a70",
-      "function_name":"core_hotdemon.cpp_FUN_004d3a70",
+      "function_name":"core_hotdemon.cpp_CHotDemon_process_FUN_004d3a70",
       "switch_addr":"004d42c8",
       "target_count":5,
       "targets":[
@@ -3191,7 +2941,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x4d42d0]",
       "function_addr":"004d42f0",
-      "function_name":"core_hotdemon.cpp_FUN_004d42f0",
+      "function_name":"core_hotdemon.cpp_CHotDemon_getDeathState_FUN_004d42f0",
       "switch_addr":"004d430d",
       "target_count":3,
       "targets":[
@@ -3212,7 +2962,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x4d4c38]",
       "function_addr":"004d4c50",
-      "function_name":"core_icepick.cpp_FUN_004d4c50",
+      "function_name":"core_icepick.cpp_CIcePick_process_FUN_004d4c50",
       "switch_addr":"004d528c",
       "target_count":3,
       "targets":[
@@ -3233,7 +2983,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x4d6128]",
       "function_addr":"004d6140",
-      "function_name":"core_icepick.cpp_FUN_004d6140",
+      "function_name":"core_icepick.cpp_CIcePick_processMotionEvents_FUN_004d6140",
       "switch_addr":"004d616d",
       "target_count":6,
       "targets":[
@@ -3266,7 +3016,7 @@
     {
       "assembly":"JMP dword ptr [ESI*0x4 + 0x4d6958]",
       "function_addr":"004d6980",
-      "function_name":"core_imp.cpp_FUN_004d6980",
+      "function_name":"core_imp.cpp_CImp_process_FUN_004d6980",
       "switch_addr":"004d7818",
       "target_count":7,
       "targets":[
@@ -3303,7 +3053,7 @@
     {
       "assembly":"JMP dword ptr [EDX*0x4 + 0x4d7a98]",
       "function_addr":"004d7ab0",
-      "function_name":"core_imp.cpp_FUN_004d7ab0",
+      "function_name":"core_imp.cpp_CImp_processDismemberment_FUN_004d7ab0",
       "switch_addr":"004d7ae6",
       "target_count":6,
       "targets":[
@@ -3517,7 +3267,7 @@
     {
       "assembly":"JMP dword ptr [ESI*0x4 + 0x4ee3e0]",
       "function_addr":"004ee3f0",
-      "function_name":"core_menu.cpp_FUN_004ee3f0",
+      "function_name":"core_menu.cpp_showMainGameMenu_FUN_004ee3f0",
       "switch_addr":"004ee64c",
       "target_count":4,
       "targets":[
@@ -3559,7 +3309,7 @@
     {
       "assembly":"JMP dword ptr [ECX*0x4 + 0x4f62e8]",
       "function_addr":"004f6300",
-      "function_name":"engine_mini3d.cpp_FUN_004f6300",
+      "function_name":"engine_mini3d.cpp_clipAgainstPlane0_FUN_004f6300",
       "switch_addr":"004f636c",
       "target_count":4,
       "targets":[
@@ -3584,7 +3334,7 @@
     {
       "assembly":"JMP dword ptr [ECX*0x4 + 0x4f6414]",
       "function_addr":"004f6430",
-      "function_name":"engine_mini3d.cpp_FUN_004f6430",
+      "function_name":"engine_mini3d.cpp_clipAgainstPlane1_FUN_004f6430",
       "switch_addr":"004f64a0",
       "target_count":4,
       "targets":[
@@ -3609,7 +3359,7 @@
     {
       "assembly":"JMP dword ptr [ECX*0x4 + 0x4f6548]",
       "function_addr":"004f6560",
-      "function_name":"engine_mini3d.cpp_FUN_004f6560",
+      "function_name":"engine_mini3d.cpp_clipAgainstPlane2_FUN_004f6560",
       "switch_addr":"004f65cd",
       "target_count":4,
       "targets":[
@@ -3634,7 +3384,7 @@
     {
       "assembly":"JMP dword ptr [ECX*0x4 + 0x4f6678]",
       "function_addr":"004f6690",
-      "function_name":"engine_mini3d.cpp_FUN_004f6690",
+      "function_name":"engine_mini3d.cpp_clipAgainstPlane3_FUN_004f6690",
       "switch_addr":"004f6701",
       "target_count":4,
       "targets":[
@@ -3659,7 +3409,7 @@
     {
       "assembly":"JMP dword ptr [ECX*0x4 + 0x4f85f8]",
       "function_addr":"004f8610",
-      "function_name":"engine_mini3d.cpp_FUN_004f8610",
+      "function_name":"engine_mini3d.cpp_clipToUserPlane_FUN_004f8610",
       "switch_addr":"004f86c1",
       "target_count":4,
       "targets":[
@@ -3709,7 +3459,7 @@
     {
       "assembly":"JMP dword ptr [ESI*0x4 + 0x4fde50]",
       "function_addr":"004fde80",
-      "function_name":"core_mobster.cpp_FUN_004fde80",
+      "function_name":"core_mobster.cpp_CMobster_process_FUN_004fde80",
       "switch_addr":"004fef11",
       "target_count":7,
       "targets":[
@@ -3965,7 +3715,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x50c234]",
       "function_addr":"0050c280",
-      "function_name":"core_netgame.cpp_FUN_0050c280",
+      "function_name":"core_netgame.cpp_CNetGame_processPacket_FUN_0050c280",
       "switch_addr":"0050c2db",
       "target_count":16,
       "targets":[
@@ -4274,7 +4024,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x5184ac]",
       "function_addr":"005184c0",
-      "function_name":"core_platfrm.cpp_FUN_005184c0",
+      "function_name":"core_platfrm.cpp_CPlatform_process_FUN_005184c0",
       "switch_addr":"0051850a",
       "target_count":5,
       "targets":[
@@ -4303,7 +4053,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x51caf8]",
       "function_addr":"0051cb20",
-      "function_name":"engine_prim.c_FUN_0051cb20",
+      "function_name":"engine_prim.c_renderPolygonSoftware_FUN_0051cb20",
       "switch_addr":"0051cc29",
       "target_count":6,
       "targets":[
@@ -4369,7 +4119,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x51e110]",
       "function_addr":"0051e130",
-      "function_name":"engine_prim.c_FUN_0051e130",
+      "function_name":"engine_prim.c_renderIndexedPolygonAdvanced_FUN_0051e130",
       "switch_addr":"0051e61a",
       "target_count":6,
       "targets":[
@@ -4402,7 +4152,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x51ec88]",
       "function_addr":"0051ecc0",
-      "function_name":"core_scat.cpp_FUN_0051ecc0",
+      "function_name":"core_scat.cpp_CScat_process_FUN_0051ecc0",
       "switch_addr":"0051f1f0",
       "target_count":3,
       "targets":[
@@ -4423,7 +4173,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x51fa60]",
       "function_addr":"0051fa90",
-      "function_name":"core_scat.cpp_FUN_0051fa90",
+      "function_name":"core_scat.cpp_CScat_renderOpaque_FUN_0051fa90",
       "switch_addr":"0051fadf",
       "target_count":2,
       "targets":[
@@ -4440,7 +4190,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x51fcd8]",
       "function_addr":"0051fd00",
-      "function_name":"core_scat.cpp_FUN_0051fd00",
+      "function_name":"core_scat.cpp_CScat_updateWeaponState_FUN_0051fd00",
       "switch_addr":"0051fda5",
       "target_count":2,
       "targets":[
@@ -4457,7 +4207,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x52a940]",
       "function_addr":"0052a9a0",
-      "function_name":"core_sentinel.cpp_FUN_0052a9a0",
+      "function_name":"core_sentinel.cpp_CSentinel_process_FUN_0052a9a0",
       "switch_addr":"0052adfc",
       "target_count":5,
       "targets":[
@@ -4486,7 +4236,7 @@
     {
       "assembly":"JMP dword ptr [EDI*0x4 + 0x52a954]",
       "function_addr":"0052a9a0",
-      "function_name":"core_sentinel.cpp_FUN_0052a9a0",
+      "function_name":"core_sentinel.cpp_CSentinel_process_FUN_0052a9a0",
       "switch_addr":"0052ae5a",
       "target_count":9,
       "targets":[
@@ -4531,7 +4281,7 @@
     {
       "assembly":"JMP dword ptr [EDI*0x4 + 0x52a954]",
       "function_addr":"0052a9a0",
-      "function_name":"core_sentinel.cpp_FUN_0052a9a0",
+      "function_name":"core_sentinel.cpp_CSentinel_process_FUN_0052a9a0",
       "switch_addr":"0052af35",
       "target_count":9,
       "targets":[
@@ -4589,7 +4339,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x53c4a0]",
       "function_addr":"0053c500",
-      "function_name":"core_shadow.cpp_FUN_0053c500",
+      "function_name":"core_shadow.cpp_CShadow_process_FUN_0053c500",
       "switch_addr":"0053dec8",
       "target_count":7,
       "targets":[
@@ -4626,7 +4376,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x53ec18]",
       "function_addr":"0053ec30",
-      "function_name":"core_shadow.cpp_FUN_0053ec30",
+      "function_name":"core_shadow.cpp_CShadow_getDeathState_FUN_0053ec30",
       "switch_addr":"0053ec67",
       "target_count":2,
       "targets":[
@@ -4643,7 +4393,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x549b70]",
       "function_addr":"00549ba0",
-      "function_name":"core_smiley.cpp_FUN_00549ba0",
+      "function_name":"core_smiley.cpp_CSmiley_process_FUN_00549ba0",
       "switch_addr":"0054a4fd",
       "target_count":7,
       "targets":[
@@ -4680,7 +4430,7 @@
     {
       "assembly":"JMP dword ptr [EDX*0x4 + 0x54a774]",
       "function_addr":"0054a790",
-      "function_name":"core_smiley.cpp_FUN_0054a790",
+      "function_name":"core_smiley.cpp_CSmiley_processDismemberment_FUN_0054a790",
       "switch_addr":"0054a819",
       "target_count":6,
       "targets":[
@@ -4713,7 +4463,7 @@
     {
       "assembly":"JMP dword ptr [EDX*0x4 + 0x55a3ac]",
       "function_addr":"0055a3c0",
-      "function_name":"core_sound.cpp_FUN_0055a3c0",
+      "function_name":"core_sound.cpp_CSound_process_FUN_0055a3c0",
       "switch_addr":"0055ac3e",
       "target_count":3,
       "targets":[
@@ -4747,7 +4497,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x562edc]",
       "function_addr":"00562f30",
-      "function_name":"core_stranger.cpp_FUN_00562f30",
+      "function_name":"core_stranger.cpp_CStranger_process_FUN_00562f30",
       "switch_addr":"00562feb",
       "target_count":2,
       "targets":[
@@ -4764,7 +4514,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x563018]",
       "function_addr":"00563060",
-      "function_name":"core_stranger.cpp_FUN_00563060",
+      "function_name":"core_stranger.cpp_CStranger_processFrame_FUN_00563060",
       "switch_addr":"00564c2e",
       "target_count":3,
       "targets":[
@@ -4785,7 +4535,7 @@
     {
       "assembly":"JMP dword ptr [EDI*0x4 + 0x563000]",
       "function_addr":"00563060",
-      "function_name":"core_stranger.cpp_FUN_00563060",
+      "function_name":"core_stranger.cpp_CStranger_processFrame_FUN_00563060",
       "switch_addr":"00564db7",
       "target_count":2,
       "targets":[
@@ -4802,7 +4552,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x5695f8]",
       "function_addr":"00569620",
-      "function_name":"core_stranger.cpp_FUN_00569620",
+      "function_name":"core_stranger.cpp_CStranger_tryPickupObject_FUN_00569620",
       "switch_addr":"00569bde",
       "target_count":3,
       "targets":[
@@ -4823,7 +4573,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x569608]",
       "function_addr":"00569620",
-      "function_name":"core_stranger.cpp_FUN_00569620",
+      "function_name":"core_stranger.cpp_CStranger_tryPickupObject_FUN_00569620",
       "switch_addr":"00569d8b",
       "target_count":2,
       "targets":[
@@ -4840,7 +4590,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x56b748]",
       "function_addr":"0056b770",
-      "function_name":"core_stranger.cpp_FUN_0056b770",
+      "function_name":"core_stranger.cpp_CStranger_renderOpaque_FUN_0056b770",
       "switch_addr":"0056b94f",
       "target_count":6,
       "targets":[
@@ -4873,7 +4623,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x56db24]",
       "function_addr":"0056db50",
-      "function_name":"core_stranger.cpp_FUN_0056db50",
+      "function_name":"core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_0056db50",
       "switch_addr":"0056dc38",
       "target_count":6,
       "targets":[
@@ -4906,7 +4656,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x56dafc]",
       "function_addr":"0056db50",
-      "function_name":"core_stranger.cpp_FUN_0056db50",
+      "function_name":"core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_0056db50",
       "switch_addr":"0056dff9",
       "target_count":6,
       "targets":[
@@ -4939,7 +4689,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x56e4b0]",
       "function_addr":"0056e4d0",
-      "function_name":"core_stranger.cpp_FUN_0056e4d0",
+      "function_name":"core_stranger.cpp_CStranger_handleActionButton_FUN_0056e4d0",
       "switch_addr":"0056e552",
       "target_count":5,
       "targets":[
@@ -4968,7 +4718,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x56e824]",
       "function_addr":"0056e850",
-      "function_name":"core_stranger.cpp_FUN_0056e850",
+      "function_name":"core_stranger.cpp_CStranger_handleFireButton_FUN_0056e850",
       "switch_addr":"0056e93d",
       "target_count":6,
       "targets":[
@@ -5001,7 +4751,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x5704dc]",
       "function_addr":"00570510",
-      "function_name":"core_svetlana.cpp_FUN_00570510",
+      "function_name":"core_svetlana.cpp_CSvetlana_process_FUN_00570510",
       "switch_addr":"0057096f",
       "target_count":3,
       "targets":[
@@ -5022,7 +4772,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x5779bc]",
       "function_addr":"005779d0",
-      "function_name":"core_trigger.cpp_FUN_005779d0",
+      "function_name":"core_trigger.cpp_CTrigger_process_FUN_005779d0",
       "switch_addr":"00577a89",
       "target_count":3,
       "targets":[
@@ -5097,7 +4847,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x57baa8]",
       "function_addr":"0057bb80",
-      "function_name":"unkaddr_0057b9a0.cpp_FUN_0057bb80",
+      "function_name":"support_trstream.cpp_CInStream_vscanf_FUN_0057bb80",
       "switch_addr":"0057bd3c",
       "target_count":12,
       "targets":[
@@ -5154,7 +4904,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x57ba4c]",
       "function_addr":"0057bb80",
-      "function_name":"unkaddr_0057b9a0.cpp_FUN_0057bb80",
+      "function_name":"support_trstream.cpp_CInStream_vscanf_FUN_0057bb80",
       "switch_addr":"0057bde9",
       "target_count":17,
       "targets":[
@@ -5256,7 +5006,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x5818e4]",
       "function_addr":"00581910",
-      "function_name":"core_vampboss.cpp_FUN_00581910",
+      "function_name":"core_vampboss.cpp_CVampireBoss_process_FUN_00581910",
       "switch_addr":"005825b7",
       "target_count":3,
       "targets":[
@@ -5277,7 +5027,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x5818d4]",
       "function_addr":"00581910",
-      "function_name":"core_vampboss.cpp_FUN_00581910",
+      "function_name":"core_vampboss.cpp_CVampireBoss_process_FUN_00581910",
       "switch_addr":"00582c28",
       "target_count":2,
       "targets":[
@@ -5419,7 +5169,7 @@
     {
       "assembly":"JMP dword ptr [EDX*0x4 + 0x5993e4]",
       "function_addr":"00599400",
-      "function_name":"core_zombie.cpp_FUN_00599400",
+      "function_name":"core_zombie.cpp_CZombie_processDismemberment_FUN_00599400",
       "switch_addr":"00599436",
       "target_count":6,
       "targets":[
@@ -5452,7 +5202,7 @@
     {
       "assembly":"JMP dword ptr [EDX*0x4 + 0x5998e8]",
       "function_addr":"00599900",
-      "function_name":"core_zombie.cpp_FUN_00599900",
+      "function_name":"core_zombie.cpp_CZombie_getTargetPoints_FUN_00599900",
       "switch_addr":"00599987",
       "target_count":4,
       "targets":[
@@ -5477,7 +5227,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x59a5a8]",
       "function_addr":"0059a5d0",
-      "function_name":"unkafter_zombie.cpp_FUN_0059a5d0",
+      "function_name":"core_zombie.cpp_rasterizePolygonCustom_FUN_0059a5d0",
       "switch_addr":"0059a640",
       "target_count":6,
       "targets":[
@@ -5510,7 +5260,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x59c3b4]",
       "function_addr":"0059c3d0",
-      "function_name":"unkaddr_0059c270.cpp_FUN_0059c3d0",
+      "function_name":"core_gmehook.cpp_CGameHook_showDebugMenu_FUN_0059c3d0",
       "switch_addr":"0059c512",
       "target_count":5,
       "targets":[
@@ -5539,7 +5289,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x59f410]",
       "function_addr":"0059f420",
-      "function_name":"unkafter_basicene.cpp_FUN_0059f420",
+      "function_name":"core_basicene.cpp_CBasicEnemy_process_FUN_0059f420",
       "switch_addr":"0059f483",
       "target_count":4,
       "targets":[
@@ -5564,7 +5314,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x5a1334]",
       "function_addr":"005a1350",
-      "function_name":"core_confedrt.cpp_FUN_005a1350",
+      "function_name":"core_confedrt.cpp_CConfederate_processMotionEvent_FUN_005a1350",
       "switch_addr":"005a1365",
       "target_count":5,
       "targets":[
@@ -5593,7 +5343,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x5a2500]",
       "function_addr":"005a2520",
-      "function_name":"core_confzomb.cpp_FUN_005a2520",
+      "function_name":"core_confzomb.cpp_CConfederateZombie_processMotionEvent_FUN_005a2520",
       "switch_addr":"005a2537",
       "target_count":5,
       "targets":[
@@ -5622,7 +5372,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x5a33f4]",
       "function_addr":"005a3420",
-      "function_name":"core_schngeis.cpp_FUN_005a3420",
+      "function_name":"core_schngeis.cpp_CSchnellGeist_processMotionEvent_FUN_005a3420",
       "switch_addr":"005a3436",
       "target_count":10,
       "targets":[
@@ -5671,7 +5421,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x5a45e0]",
       "function_addr":"005a4600",
-      "function_name":"core_unionzom.cpp_FUN_005a4600",
+      "function_name":"core_unionzom.cpp_CUnionZombie_processMotionEvent_FUN_005a4600",
       "switch_addr":"005a4617",
       "target_count":5,
       "targets":[
@@ -5700,7 +5450,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x5a52e4]",
       "function_addr":"005a5300",
-      "function_name":"core_union.cpp_FUN_005a5300",
+      "function_name":"core_union.cpp_CUnion_processMotionEvent_FUN_005a5300",
       "switch_addr":"005a5315",
       "target_count":5,
       "targets":[
@@ -5729,7 +5479,7 @@
     {
       "assembly":"JMP dword ptr [EAX*0x4 + 0x5aa368]",
       "function_addr":"005aa380",
-      "function_name":"core_hand.cpp_FUN_005aa380",
+      "function_name":"core_hand.cpp_CHand_processMotionEvent_FUN_005aa380",
       "switch_addr":"005aa397",
       "target_count":4,
       "targets":[
@@ -5779,7 +5529,7 @@
     {
       "assembly":"JMP dword ptr CS:[EAX*0x4 + 0x5c30bc]",
       "function_addr":"005c30d8",
-      "function_name":"unkafter_morph.cpp_FUN_005c30d8",
+      "function_name":"crt_unknown.c_FUN_005c30d8",
       "switch_addr":"005c3100",
       "target_count":7,
       "targets":[
@@ -5816,7 +5566,7 @@
     {
       "assembly":"JMP dword ptr CS:[EDX*0x4 + 0x5c5088]",
       "function_addr":"005c50b8",
-      "function_name":"unkafter_2d.cpp_FUN_005c50b8",
+      "function_name":"crt_unknown.c_processSignal_FUN_005c50b8",
       "switch_addr":"005c50d1",
       "target_count":3,
       "targets":[
@@ -8420,5 +8170,5 @@
       ]
     }
   ],
-  "total_targets":1209
+  "total_targets":1169
 }

@@ -11,7 +11,7 @@ void * __cdecl shape_memdbg_cpp_debugRealloc_FUN_0050f540(void *ptr,int new_size
 {
   SMemHead *pSVar1;
   char *pcVar2;
-  SMemHead *header;
+  SMemHead *this_ptr;
   void *pvVar3;
   
   if (g_RecursiveCallFlag == 0) {
@@ -35,20 +35,20 @@ void * __cdecl shape_memdbg_cpp_debugRealloc_FUN_0050f540(void *ptr,int new_size
       pSVar1 = (SMemHead *)((int)ptr + -0x28);
       shape_memdbg_cpp_SMemHead_checkMemory_FUN_0050f020(pSVar1,filename,line_number);
       shape_memdbg_cpp_SMemHead_remove_FUN_0050ef20(pSVar1);
-      header = (SMemHead *)realloc(pSVar1,new_size + GAME_SMEMHEAD_AND_BACKGUARD_SIZE)
-      ;
-      if (header != (SMemHead *)0x0) {
-        header->num_bytes = new_size;
-        shape_memdbg_cpp_SMemHead_recordSourceFile_FUN_0050eea0(header,filename);
-        header->front_guard = GAME_DEADBEEF;
-        pSVar1 = header + 1;
-        header->source_line = line_number;
-        pcVar2 = pSVar1->source_file + header->num_bytes + -0xc;
+      this_ptr = (SMemHead *)realloc
+                           (pSVar1,new_size + GAME_SMEMHEAD_AND_BACKGUARD_SIZE);
+      if (this_ptr != (SMemHead *)0x0) {
+        this_ptr->num_bytes = new_size;
+        shape_memdbg_cpp_SMemHead_recordSourceFile_FUN_0050eea0(this_ptr,filename);
+        this_ptr->front_guard = GAME_DEADBEEF;
+        pSVar1 = this_ptr + 1;
+        this_ptr->source_line = line_number;
+        pcVar2 = pSVar1->source_file + this_ptr->num_bytes + -0xc;
         pcVar2[0] = -0x53;
         pcVar2[1] = -0x22;
         pcVar2[2] = -0x11;
         pcVar2[3] = -0x42;
-        shape_memdbg_cpp_SMemHead_add_FUN_0050eef0(header);
+        shape_memdbg_cpp_SMemHead_add_FUN_0050eef0(this_ptr);
         shape_memdbg_cpp_traceMemory_FUN_0050f150("   Returns %08X",pSVar1);
         wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_FileMutex);
         return pSVar1;

@@ -12,8 +12,8 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
-;   core_mobster.cpp_FUN_00500370 at 00500410
-;   core_script.cpp_FUN_00529750 at 005297e0
+;   core_mobster.cpp_CMobster_playTaunt_FUN_00500370 at 00500410
+;   core_script.cpp_CScript_startDialogLine_FUN_00529750 at 005297e0
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061ed94
@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   sound_sndmain.cpp_CSampleInfo_getSampleDuration_FUN_0054fd20
 ;   sound_sndmain.cpp_CSfxSample_init_FUN_0054fcd0
-;   sound_sndmain.cpp_FUN_005519e0
+;   sound_sndmain.cpp_getSampleInfo_FUN_005519e0
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
         ;   Label: LAB_0055afbf
     MOV EAX,ESP                         ; 0055afc2
     PUSH EAX                            ; 0055afc4
-    CALL sound_sndmain.cpp_FUN_005519e0 ; 0055afc5
-        ;   XREF to: 005519e0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005519e0(CSfxSample * out_sample)
+    CALL sound_sndmain.cpp_getSampleInfo_FUN_005519e0 ; 0055afc5
+        ;   XREF to: 005519e0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getSampleInfo_FUN_005519e0(CSfxSample * out_sample)
     ADD ESP,0x4                         ; 0055afca
     TEST EAX,EAX                        ; 0055afcd
     JNZ 0x0055b00c                      ; 0055afcf

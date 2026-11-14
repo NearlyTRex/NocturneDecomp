@@ -10,12 +10,12 @@
 ;   core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_00451e20 at 00451e93
 ;   core_game.cpp_FUN_004ce580 at 004cf026
 ;   core_game.cpp_FUN_004d77d0 at 004d79a0
-;   core_mission.cpp_FUN_0051b8d0 at 0051b9f5
-;   engine_special.cpp_FUN_005821c0 at 0058229c
+;   core_mission.cpp_CDemonMission_process_FUN_0051b8d0 at 0051b9f5
+;   engine_mini3d.cpp_unlockFrame_FUN_00511170 at 00511172
 ;   engine_special.cpp_presentToExternalRenderer_FUN_00582990 at 00582a42
-;   shape_edittool.cpp_FUN_00494030 at 004940f3
+;   engine_special.cpp_setResolutionAndColorTable_FUN_005821c0 at 0058229c
+;   shape_edittool.cpp_CEditorTools_backupScreen_FUN_00494030 at 004940f3
 ;   shape_edittool.cpp_FUN_00494110 at 004941c3
-;   unkafter_minecar.cpp_FUN_00511170 at 00511172
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061b4a0

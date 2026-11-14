@@ -1,14 +1,12 @@
 // Name: core_marquee.cpp_CMarquee_dtor_FUN_004e85b0
 // Address: 004e85b0
 // Address Range: [[004e85b0, 004e8614]]
-// Convention: unknown
-// Signature: CMarquee * core_marquee_cpp_CMarquee_dtor_FUN_004e85b0(CMarquee *this_ptr,uint flags)
+// Convention: __cdecl
+// Signature: CMarquee * __cdecl core_marquee_cpp_CMarquee_dtor_FUN_004e85b0(CMarquee *this_ptr,uint flags)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CMarquee * core_marquee_cpp_CMarquee_dtor_FUN_004e85b0(CMarquee *this_ptr,uint flags)
+CMarquee * __cdecl core_marquee_cpp_CMarquee_dtor_FUN_004e85b0(CMarquee *this_ptr,uint flags)
 
 {
   CCourse *pCVar1;
@@ -16,13 +14,13 @@ CMarquee * core_marquee_cpp_CMarquee_dtor_FUN_004e85b0(CMarquee *this_ptr,uint f
   void *ptr;
   
   if ((flags & 4) != 0) {
-    ptr = (void *)__vec_delete(this_ptr,&g_CMarqueeTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CMarqueeTypeInfo);
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  pCVar1 = core_course_cpp_CCourse_dtor_FUN_00438a70((CCourse *)&this_ptr->field_0x300,0);
+  pCVar1 = core_course_cpp_CCourse_dtor_FUN_00438a70(&this_ptr->course,0);
   pCVar2 = (CMarquee *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)(pCVar1 + -0x300),1);
+           core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)(pCVar1 + -0x40),1);
   if ((flags & 2) == 0) {
     return pCVar2;
   }

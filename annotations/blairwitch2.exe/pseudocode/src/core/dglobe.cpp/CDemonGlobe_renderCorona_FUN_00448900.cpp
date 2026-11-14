@@ -19,12 +19,7 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00448900(CDemonGlobe *
   float afStackY_1044 [1005];
   SMRGLHeaderPrimitive *prim;
   code *scanline_renderer;
-  SMRGLHeaderPrimitive local_84 [4];
-  uint local_80;
-  uint local_7c;
-  uint local_78;
-  uint local_74;
-  int local_70;
+  SMRGLHeaderPrimitive local_84;
   uint local_6c;
   uint local_68;
   uint local_64;
@@ -34,9 +29,7 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00448900(CDemonGlobe *
   float local_44;
   float local_40;
   float local_3c;
-  int local_38;
-  int local_34;
-  int local_30;
+  CVector3i local_38;
   float local_2c;
   float local_28 [4];
   float local_18;
@@ -44,15 +37,15 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00448900(CDemonGlobe *
   
   bVar3 = 0;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
-            (0x01BA5C50,(CVector3f *)(this_ptr + 0x24));
-  engine_matrix_c_FUN_0046b5e0(DAT_0060b280);
+            (0x01BA5C50,&this_ptr->position);
+  engine_drender_cpp_FUN_0046b5e0(DAT_0060b280);
   local_5c = local_58[2];
   local_58[(uint)bVar3 * -2] = local_58[(uint)bVar3 * -2 + 3];
   local_58[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
        local_58[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4];
-  local_28[2] = local_5c - *(float *)(this_ptr + 0x24);
-  local_28[3] = local_58[0] - *(float *)(this_ptr + 0x28);
-  local_18 = local_58[1] - *(float *)(this_ptr + 0x2c);
+  local_28[2] = local_5c - (this_ptr->position).x;
+  local_28[3] = local_58[0] - (this_ptr->position).y;
+  local_18 = local_58[1] - (this_ptr->position).z;
   local_2c = local_28[2];
   local_28[(uint)bVar3 * -2] = local_28[(uint)bVar3 * -2 + 3];
   local_28[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
@@ -62,40 +55,42 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00448900(CDemonGlobe *
     local_58[0] = local_28[0];
     local_58[1] = local_28[1];
   }
-  if (*(float *)(this_ptr + 0x18) <=
+  if (this_ptr->radius_squared <=
       local_58[1] * local_58[1] + local_5c * local_5c + local_58[0] * local_58[0]) {
-    local_14 = *(float *)(this_ptr + 0x30) * (float)_DAT_005cf012;
+    local_14 = this_ptr->radius * (float)_DAT_005cf012;
     iVar2 = 0;
     iVar1 = 0;
     do {
       local_44 = (float)*(int *)((int)&DAT_0060a0fc + iVar1) * local_14;
       local_40 = (float)*(int *)((int)&DAT_0060a100 + iVar1) * local_14;
       local_3c = (float)*(int *)((int)&DAT_0060a104 + iVar1) * local_14;
-      local_38 = (int)ROUND(local_44 * _DAT_005f5020);
-      local_34 = (int)ROUND(local_40 * _DAT_005f5020);
-      local_30 = (int)ROUND(local_3c * _DAT_005f5020);
+      local_38.x = (int)ROUND(local_44 * _DAT_005f5020);
+      local_38.y = (int)ROUND(local_40 * _DAT_005f5020);
+      local_38.z = (int)ROUND(local_3c * _DAT_005f5020);
       iVar1 = iVar1 + 0xc;
       engine_special_cpp_FUN_0055d723
-                ((SProjectedVertex *)(*(int *)0x01BA5C50 + iVar2),(CVector3i *)&local_38);
+                ((SProjectedVertex *)
+                 ((int)&(0x01BA5C50->vertex_buffer_ptr->projected_vertex).transformed_x + iVar2),
+                 &local_38);
       iVar2 = iVar2 + 0x30;
     } while (iVar1 != 0x2e8);
     iVar1 = 0;
     do {
       this_ptr_00 = 0x01BA5C50;
-      local_80 = *(uint *)((int)&DAT_0060a3e4 + iVar1);
-      local_7c = *(uint *)((int)&DAT_0060a3e8 + iVar1);
-      local_78 = *(uint *)((int)&DAT_0060a3ec + iVar1);
-      local_74 = *(uint *)((int)&DAT_0060a3f0 + iVar1);
+      local_84.base.count = *(int *)((int)&DAT_0060a3e4 + iVar1);
+      local_84.surface_normal.A = *(UIntegerFloat *)((int)&DAT_0060a3e8 + iVar1);
+      local_84.surface_normal.B = *(UIntegerFloat *)((int)&DAT_0060a3ec + iVar1);
+      local_84.surface_normal.C = *(UIntegerFloat *)((int)&DAT_0060a3f0 + iVar1);
       local_6c = *(uint *)((int)&DAT_0060a3f8 + iVar1);
-      fVar4 = (float10)*(int *)((int)&DAT_0060a3f4 + iVar1) * (float10)*(float *)(this_ptr + 0x30);
+      fVar4 = (float10)*(int *)((int)&DAT_0060a3f4 + iVar1) * (float10)this_ptr->radius;
       local_68 = *(uint *)((int)&DAT_0060a3fc + iVar1);
       local_64 = *(uint *)((int)&DAT_0060a400 + iVar1);
       scanline_renderer = core_dcamera_cpp_renderCoronaDepthScanline_FUN_0043f860;
       local_60 = *(uint *)((int)&DAT_0060a404 + iVar1);
       iVar1 = iVar1 + 0x24;
-      prim = local_84;
+      prim = &local_84;
       round();
-      local_70 = (int)ROUND(fVar4);
+      local_84.surface_normal.D.i = (int)ROUND(fVar4);
       engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0046b750
                 (this_ptr_00,prim,scanline_renderer);
     } while (iVar1 != 0xbd0);

@@ -9,6 +9,6 @@
 void __cdecl core_weapon_cpp_CWeapon_pickup_FUN_005ada50(CWeapon *this_ptr,CDemonActor *carrier)
 
 {
-  *(CDemonActor **)&this_ptr->field_0x304 = carrier;
+  this_ptr->carried_by_actor = carrier;
   return;
 }

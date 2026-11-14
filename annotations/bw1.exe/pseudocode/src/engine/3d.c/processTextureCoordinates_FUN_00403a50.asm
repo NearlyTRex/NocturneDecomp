@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_3d_c_processTextureCoordinates_FUN_00403a50(int param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_processTextureCoordinates_FUN_00403a50(SMRGLHeaderPrimitive *prim)
 ;
+; Parameters:
+; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0062902c

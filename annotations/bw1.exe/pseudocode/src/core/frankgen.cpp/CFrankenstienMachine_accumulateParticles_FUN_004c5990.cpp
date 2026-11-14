@@ -13,11 +13,11 @@ int __cdecl core_frankgen_cpp_CFrankenstienMachine_accumulateParticles_FUN_004c5
   float10 fVar2;
   double dVar3;
   
-  fVar1 = emission_rate * delta_time + *(float *)&this_ptr->field_0x48c;
-  *(float *)&this_ptr->field_0x48c = fVar1;
+  fVar1 = emission_rate * delta_time + this_ptr->particle_accumulator;
+  this_ptr->particle_accumulator = fVar1;
   dVar3 = floor((double)fVar1);
   fVar2 = (float10)dVar3;
   round();
-  *(float *)&this_ptr->field_0x48c = *(float *)&this_ptr->field_0x48c - (float)(int)ROUND(fVar2);
+  this_ptr->particle_accumulator = this_ptr->particle_accumulator - (float)(int)ROUND(fVar2);
   return (int)ROUND(fVar2);
 }

@@ -17,7 +17,7 @@ void __cdecl core_netgame_cpp_CNetGame_init_FUN_00503e20(CNetGame *this_ptr)
   
   FUN_005a54b0("netlog.txt");
   _DAT_01da6478 = 1;
-  _DAT_01da6474 = wincore_winrun_cpp_FUN_005806a0();
+  _DAT_01da6474 = wincore_winrun_cpp_getTime_FUN_005806a0();
   _DAT_01da6474 = _DAT_01da6474 / 0x12;
   support_trisock_cpp_FUN_00571ea0();
   pcVar2 = getenv("USERNAME");
@@ -27,7 +27,7 @@ void __cdecl core_netgame_cpp_CNetGame_init_FUN_00503e20(CNetGame *this_ptr)
   if (pcVar2 == (char *)0x0) {
     pcVar2 = "MyComputer";
   }
-  pcVar3 = &this_ptr->field_0x8;
+  pcVar3 = this_ptr->player_name;
   do {
     cVar1 = *pcVar2;
     *pcVar3 = cVar1;

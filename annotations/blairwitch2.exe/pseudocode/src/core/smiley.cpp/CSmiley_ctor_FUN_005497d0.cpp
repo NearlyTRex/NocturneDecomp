@@ -11,25 +11,25 @@
 CSmiley * __cdecl core_smiley_cpp_CSmiley_ctor_FUN_005497d0(CSmiley *this_ptr)
 
 {
-  uint uVar1;
-  uint uVar2;
+  float fVar1;
+  float fVar2;
   CSmiley *pCVar3;
   
-  pCVar3 = (CSmiley *)core_enemy_cpp_CEnemy_ctor_FUN_00487db0((CEnemy *)this_ptr);
-  *(byte **)&pCVar3->field_0x2b0 = &g_CSmileyVTable;
+  pCVar3 = (CSmiley *)core_enemy_cpp_CEnemy_ctor_FUN_00487db0(&this_ptr->base);
+  (pCVar3->base).base.base.vtable._ub = &g_CSmileyVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
-            ((CDeformableModelInstance *)&pCVar3->field_0x2b4,(char *)0x5e765d);
-  *(uint *)&pCVar3->field_0x10af8 = 0;
-  *(uint *)&pCVar3->field_0x10afc = 0x42c80000;
-  *(uint *)&pCVar3->field_0x3430 = 0x3f19999a;
-  *(uint *)&pCVar3->field_0x3434 = 0x3f666666;
-  *(uint *)&pCVar3->field_0x10b2c = 0;
-  uVar1 = _DAT_005fba5c;
-  *(uint *)&pCVar3->field_0x10b30 = 0;
-  uVar2 = _DAT_005fba60;
-  *(uint *)&pCVar3->field_0x10b34 = 0;
-  *(uint *)&pCVar3->field_0x10b38 = 1;
-  *(uint *)&pCVar3->field_0x3438 = uVar1;
-  *(uint *)&pCVar3->field_0x343c = uVar2;
+            (&(pCVar3->base).base.model,(char *)0x5e765d);
+  pCVar3->attack_cooldown = 0.0;
+  pCVar3->guard_distance = 100.0;
+  (pCVar3->base).base.collision_cylinder_height = 0.6;
+  (pCVar3->base).base.collision_cylinder_radius = 0.9;
+  pCVar3->attack_hit_count = 0;
+  fVar1 = _DAT_005fba5c;
+  pCVar3->dismember_hit_count = 0;
+  fVar2 = _DAT_005fba60;
+  pCVar3->dismember_cooldown = 0.0;
+  pCVar3->model_variant = 1;
+  (pCVar3->base).base.ai_detection_range_min = fVar1;
+  (pCVar3->base).base.ai_detection_range_max = fVar2;
   return pCVar3;
 }

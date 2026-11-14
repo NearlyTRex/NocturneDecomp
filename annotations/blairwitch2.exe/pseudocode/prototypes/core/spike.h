@@ -7,43 +7,43 @@
 
 // Original: core_spike.cpp_staticInit_FUN_005604e0
 // Address: 005604e0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_spike.cpp_factoryFuncSpike_FUN_00560510
 // Address: 00560510
-void factoryFuncSpike(void);
+CSpike * __cdecl factoryFuncSpike(void);
 
 // Original: core_spike.cpp_CSpike_getActorType_FUN_00560530
 // Address: 00560530
-CDemonActorType * CSpike::getActorType(CSpike *this_ptr);
+CDemonActorType * __cdecl CSpike::getActorType(CSpike *this_ptr);
 
 // Original: core_spike.cpp_CSpike_ctor_FUN_00560540
 // Address: 00560540
 CSpike * __cdecl CSpike::ctor(CSpike *this_ptr);
 
-// Original: core_spike.cpp_FUN_00560680
+// Original: core_spike.cpp_CSpike_setup_FUN_00560680
 // Address: 00560680
-void FUN_00560680(CDemonActor *param_1);
+void __cdecl CSpike::setup(CSpike *this_ptr);
 
-// Original: core_spike.cpp_FUN_00560760
+// Original: core_spike.cpp_CSpike_process_FUN_00560760
 // Address: 00560760
-void FUN_00560760(CSpike *param_1,float param_2);
+void __cdecl CSpike::process(CSpike *this_ptr,float delta_time);
 
-// Original: core_spike.cpp_FUN_00560a90
+// Original: core_spike.cpp_CSpike_renderOpaque_FUN_00560a90
 // Address: 00560a90
-int FUN_00560a90(CDemonActor *param_1);
+int __cdecl CSpike::renderOpaque(CSpike *this_ptr);
 
-// Original: core_spike.cpp_FUN_00560b10
+// Original: core_spike.cpp_CSpike_getBoundingBox_FUN_00560b10
 // Address: 00560b10
-void FUN_00560b10(int param_1);
+CBoundingBox3D * __cdecl CSpike::getBoundingBox(CSpike *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_spike.cpp_FUN_00560b50
+// Original: core_spike.cpp_CSpike_archive_FUN_00560b50
 // Address: 00560b50
-void FUN_00560b50(CDemonActor *param_1);
+void __cdecl CSpike::archive(CSpike *this_ptr);
 
-// Original: core_spike.cpp_FUN_00560ca0
+// Original: core_spike.cpp_CSpike_getCollisionType_FUN_00560ca0
 // Address: 00560ca0
-undefined4 FUN_00560ca0(void);
+ECollisionType __cdecl CSpike::getCollisionType(CSpike *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_00560cb0
 // Address: 00560cb0

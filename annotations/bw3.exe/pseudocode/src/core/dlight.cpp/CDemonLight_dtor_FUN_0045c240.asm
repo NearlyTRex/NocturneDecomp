@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_dtor_FUN_00448c40
-;   core_dlight.cpp_FUN_0045c380
+;   core_dlight.cpp_CDemonLight_free_FUN_0045c380
 ;   crt_memory.c___vec_delete_FUN_005a308f
 ;   crt_unknown.c_FUN_005a30b6
 ;   crt_unknown.c_FUN_005a30c4
@@ -33,8 +33,8 @@ section .text
         ;   XREF to: 0045c276 (CONDITIONAL_JUMP)  ; LAB_0045c276
     PUSH EBX                            ; 0045c24c
     MOV dword ptr [EBX + 0x3c],0x5de514 ; 0045c24d | PTR_core_dlight.cpp_CDemonLight_dtor_FUN_0045c240_005de514
-    CALL core_dlight.cpp_FUN_0045c380   ; 0045c254
-        ;   XREF to: 0045c380 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_FUN_0045c380()
+    CALL core_dlight.cpp_CDemonLight_free_FUN_0045c380 ; 0045c254
+        ;   XREF to: 0045c380 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_free_FUN_0045c380(CDemonLight * this_ptr)
     ADD ESP,0x4                         ; 0045c259
     PUSH 0x1                            ; 0045c25c
     PUSH EBX                            ; 0045c25e
@@ -53,7 +53,7 @@ section .text
         ;   Label: LAB_0045c276
     PUSH EBX                            ; 0045c27b
     CALL crt_memory.c___vec_delete_FUN_005a308f ; 0045c27c
-        ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005a308f()
+        ;   XREF to: 005a308f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005a308f(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 0045c281
     PUSH EAX                            ; 0045c284
     CALL crt_unknown.c_FUN_005a30b6     ; 0045c285

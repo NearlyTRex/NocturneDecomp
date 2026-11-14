@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SScrape * __cdecl core_box_cpp_SScrape_arrdtor8_FUN_00420220(SScrape *objs,uint flags)
+; SScrape * __cdecl core_box_cpp_SScrape_arrdtor8_FUN_00420220(SScrape *this_ptr,uint flags)
 ;
 ; Parameters:
-; SScrape *        Stack[0x4]:4   objs
+; SScrape *        Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:

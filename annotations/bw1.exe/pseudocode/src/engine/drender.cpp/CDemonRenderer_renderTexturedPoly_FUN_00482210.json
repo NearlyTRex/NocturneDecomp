@@ -2,18 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 150,
-    "complexity_score": 130,
+    "complexity_score": 154,
     "cross_reference_count": 9,
     "function_call_count": 3,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 70,
-    "suspect_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 69,
+    "suspect_count": 7,
     "suspect_types": [
+      "shadow_pointer_walk",
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 220
+    "total_lines": 219
   },
   "cross_references": [
     {
@@ -25,25 +26,25 @@
     {
       "addr": "00486900",
       "from_addr": "00486c2b",
-      "name": "core_dskybox.cpp_FUN_00486900",
+      "name": "core_dskybox.cpp_renderSkyDome_FUN_00486900",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004c0080",
       "from_addr": "004c045b",
-      "name": "core_flies.cpp_FUN_004c0080",
+      "name": "core_flies.cpp_CFlies_renderOpaque_FUN_004c0080",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e1fb0",
       "from_addr": "004e2103",
-      "name": "core_glass.cpp_FUN_004e1fb0",
+      "name": "core_glass.cpp_CGlass_renderBackground_FUN_004e1fb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004f655e",
+      "addr": "004f6560",
       "from_addr": "004f6b0a",
-      "name": "core_inv.cpp_FUN_004f655e",
+      "name": "core_inv.cpp_FUN_004f6560",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -61,7 +62,7 @@
     {
       "addr": "005ab030",
       "from_addr": "005ab25f",
-      "name": "core_wateract.cpp_FUN_005ab030",
+      "name": "core_wateract.cpp_CWaterActor_renderTransparent_FUN_005ab030",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -155,7 +156,7 @@
       {
         "call_addr": "00486c2b",
         "call_type": "direct",
-        "caller": "core_dskybox.cpp_FUN_00486900",
+        "caller": "core_dskybox.cpp_renderSkyDome_FUN_00486900",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -166,7 +167,7 @@
       {
         "call_addr": "00486d89",
         "call_type": "direct",
-        "caller": "core_dskybox.cpp_FUN_00486900",
+        "caller": "core_dskybox.cpp_renderSkyDome_FUN_00486900",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -210,7 +211,7 @@
       {
         "call_addr": "004e2103",
         "call_type": "direct",
-        "caller": "core_glass.cpp_FUN_004e1fb0",
+        "caller": "core_glass.cpp_CGlass_renderBackground_FUN_004e1fb0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -221,7 +222,7 @@
       {
         "call_addr": "004c045b",
         "call_type": "direct",
-        "caller": "core_flies.cpp_FUN_004c0080",
+        "caller": "core_flies.cpp_CFlies_renderOpaque_FUN_004c0080",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -232,7 +233,7 @@
       {
         "call_addr": "005ab25f",
         "call_type": "direct",
-        "caller": "core_wateract.cpp_FUN_005ab030",
+        "caller": "core_wateract.cpp_CWaterActor_renderTransparent_FUN_005ab030",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -243,7 +244,7 @@
       {
         "call_addr": "004f6b0a",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004f655e",
+        "caller": "core_inv.cpp_FUN_004f6560",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -288,6 +289,32 @@
       "SUBPIECE": 2
     },
     "pcode_op_count": 503
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00469d00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0046b8f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0048aeb0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0045f460",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 32,
@@ -337,7 +364,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 30,
       "match": "DAT_01bc1240",
       "severity": "mild",
       "text": "*(int *)(&DAT_01bc1240 + iVar4) = iVar1;",
@@ -345,15 +372,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 43,
       "match": "DAT_01bc1240",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_01bc1240 + iVar4) = *(uint *)(pSVar2 + 0x18);",
+      "text": "*(int *)(&DAT_01bc1240 + iVar4) = pSVar2->vertices[0].vertex_index;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 51,
       "match": "DAT_0061b4a0",
       "severity": "mild",
       "text": "if (DAT_0061b4a0 == 0x20) {",
@@ -361,11 +388,27 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 66,
       "match": "DAT_01bc1240",
       "severity": "mild",
-      "text": "(this_ptr,*(int *)(poly + 4),(int *)&DAT_01bc1240);",
+      "text": "(this_ptr,(poly->base).base.count,(int *)&DAT_01bc1240);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 31,
+      "match": "pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar2 = (SMRGLPrimitivePoly *)&(pSVar2->base).surface_normal.B;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 46,
+      "match": "pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar2 = (SMRGLPrimitivePoly *)&(pSVar2->base).surface_normal.B;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

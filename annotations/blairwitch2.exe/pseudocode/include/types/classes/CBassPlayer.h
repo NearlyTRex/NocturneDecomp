@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CNPC.h"
 
 // Structure: CBassPlayer
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x24350 (148304 bytes)
 #pragma pack(push, 1)
 typedef struct CBassPlayer {
-    char field_0[148304]; // 0x0
+    CNPC base; // 0x0
+    int bone_indices[2]; // 0x24348
 } CBassPlayer;
 #pragma pack(pop)
 

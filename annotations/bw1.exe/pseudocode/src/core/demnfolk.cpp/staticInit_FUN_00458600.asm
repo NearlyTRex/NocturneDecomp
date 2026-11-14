@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_demnfolk_cpp_staticInit_FUN_00458600(void)
+; void __cdecl core_demnfolk_cpp_staticInit_FUN_00458600(void)
 ;
 ;
 ; Called Functions:

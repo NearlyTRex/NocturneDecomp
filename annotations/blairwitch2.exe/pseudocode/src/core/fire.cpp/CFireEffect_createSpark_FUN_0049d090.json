@@ -1,0 +1,287 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 51,
+    "complexity_score": 39,
+    "cross_reference_count": 19,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 24,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 75
+  },
+  "cross_references": [
+    {
+      "addr": "00412760",
+      "from_addr": "004128fd",
+      "name": "core_batcreat.cpp_CBatCreature_processDamage_FUN_00412760",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00414290",
+      "from_addr": "0041442d",
+      "name": "core_batman.cpp_CBatman_processDamage_FUN_00414290",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0041ead0",
+      "from_addr": "0041ec92",
+      "name": "core_bride.cpp_CBride_processDamage_FUN_0041ead0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00464f60",
+      "from_addr": "004650ed",
+      "name": "core_dracbrid.cpp_CDraculaBride_processDamage_FUN_00464f60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047a1e0",
+      "from_addr": "0047a3c5",
+      "name": "core_dynamite.cpp_CDynamite_process_FUN_0047a1e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00486cb0",
+      "from_addr": "00486de0",
+      "name": "core_emitter.cpp_CEmitter_process_FUN_00486cb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049cd50",
+      "from_addr": "0049cf51",
+      "name": "core_fire.cpp_CFireEffect_createBulletImpact_FUN_0049cd50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004964c0",
+      "from_addr": "00496510",
+      "name": "core_fire.cpp_CFireball_onCollision_FUN_004964c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00495960",
+      "from_addr": "00495a71",
+      "name": "core_fire.cpp_CFireball_process_FUN_00495960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004993f0",
+      "from_addr": "00499540",
+      "name": "core_fire.cpp_CToss_process_FUN_004993f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049f2e0",
+      "from_addr": "0049f359",
+      "name": "core_flame.cpp_CFlame_process_FUN_0049f2e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a08d0",
+      "from_addr": "004a0905",
+      "name": "core_flamecan.cpp_CFlameCan_ignite_FUN_004a08d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c0ea0",
+      "from_addr": "004c0eed",
+      "name": "core_gargoyle.cpp_CGargoyle_processDamage_FUN_004c0ea0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d4390",
+      "from_addr": "004d4478",
+      "name": "core_hotdemon.cpp_CHotDemon_processDamage_FUN_004d4390",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d7d50",
+      "from_addr": "004d7dbf",
+      "name": "core_imp.cpp_CImp_processDamage_FUN_004d7d50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e3b10",
+      "from_addr": "004e3ff5",
+      "name": "core_lightgun.cpp_CLightGun_renderAimBeam_FUN_004e3b10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f2090",
+      "from_addr": "004f20f5",
+      "name": "core_minecar.cpp_CMineCar_process_FUN_004f2090",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00583160",
+      "from_addr": "00583267",
+      "name": "core_vampboss.cpp_CVampireBoss_processDamage_FUN_00583160",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0058d920",
+      "from_addr": "0058dadb",
+      "name": "core_werewolf.cpp_CWerewolf_processDamage_FUN_0058d920",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0049d090",
+    "address_range": [
+      [
+        "0049d090",
+        "0049d11d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireEffect_createSpark_FUN_0049d090",
+    "signature": "void __cdecl core_fire_cpp_CFireEffect_createSpark_FUN_0049d090(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int intensity_target,int intensity_scale,int spark_type,int fade_rate)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cfc0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cfc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01c7f4f0",
+      "name": "DAT_01c7f4f0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.297872340425532,
+    "instruction_count": 47,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 15,
+      "CALL": 1,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 43,
+      "INT_ADD": 24,
+      "INT_AND": 56,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 25,
+      "INT_LEFT": 5,
+      "INT_LESS": 1,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 9,
+      "INT_OR": 16,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 6,
+      "INT_SEXT": 3,
+      "INT_SLESS": 17,
+      "INT_SUB": 16,
+      "INT_XOR": 4,
+      "LOAD": 13,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "STORE": 16,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 296
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004b59e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a23c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004c79d0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9787
+    },
+    "nocturne.exe": {
+      "addr": "0048ae90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9787
+    }
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "velocity",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "intensity_target",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "intensity_scale",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "spark_type",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "fade_rate",
+        "offset": 28,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

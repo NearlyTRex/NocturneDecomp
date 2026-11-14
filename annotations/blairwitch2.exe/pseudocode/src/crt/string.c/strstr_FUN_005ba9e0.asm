@@ -10,13 +10,13 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[7]:
-;   core_fldnotes.cpp_FUN_004a41b0 at 004a446d
-;   core_hag.cpp_FUN_005aae80 at 005aafa5
+;   core_basicene.cpp_CBasicEnemy_processBurnState_FUN_005a0380 at 005a049a
+;   core_flashlit.cpp_FUN_004a1420 at 004a142a
+;   core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0 at 004a446d
+;   core_hellhag.cpp_CHag_processBurnState_FUN_005aae80 at 005aafa5
 ;   core_script.cpp_trimLine_FUN_00521070 at 005210b5
-;   sound_sndmain.cpp_FUN_0054bac0 at 0054bcb8
+;   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_0054bac0 at 0054bcb8
 ;   sound_sndmain.cpp_trimLineAndRemoveComments_FUN_0054ba30 at 0054ba3d
-;   unkaddr_004a1200.cpp_FUN_004a1420 at 004a142a
-;   unkafter_basicene.cpp_FUN_005a0380 at 005a049a
 ;
 ; *****************************************************************************
 

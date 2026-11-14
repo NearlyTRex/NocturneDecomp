@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CStorm * core_storm_cpp_CStorm_ctor_FUN_00568ab0(CStorm *this_ptr)
+; CStorm * __cdecl core_storm_cpp_CStorm_ctor_FUN_00568ab0(CStorm *this_ptr)
 ;
 ; Parameters:
 ; CStorm *         Stack[0x4]:4   this_ptr

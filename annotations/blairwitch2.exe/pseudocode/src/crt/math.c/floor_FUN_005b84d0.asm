@@ -11,16 +11,16 @@
 ; undefined        Stack[-0x8]:1  local_8
 ;
 ; XREF[28]:
-;   core_actor.cpp_FUN_0040d0c0 at 0040d107
-;   core_bat.cpp_FUN_004114e0 at 0041152c
-;   core_boneguy.cpp_FUN_00418110 at 00418238
-;   core_boxactor.cpp_FUN_0041c090 at 0041c0cf
+;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 at 0040d107
+;   core_bat.cpp_CBat_updateCoursePosition_FUN_004114e0 at 0041152c
+;   core_boneguy.cpp_hsvToRgb_FUN_00418110 at 00418238
+;   core_boxactor.cpp_CBoxActor_process_FUN_0041c090 at 0041c0cf
 ;   core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_0041fad0 at 0041fbb2
 ;   core_course.cpp_FUN_00438cf0 at 00438ee8
+;   core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004769a0 at 004769bd
+;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00476a50 at 00476a6d
 ;   core_dtrace.cpp_FUN_00472c60 at 00472cb9
 ;   core_dtrace.cpp_FUN_00473390 at 00473414
-;   core_dtrace.cpp_FUN_004769a0 at 004769bd
-;   core_dtrace.cpp_FUN_00476a50 at 00476a6d
 ;   ... and 18 more
 ;
 ; Referenced Globals:

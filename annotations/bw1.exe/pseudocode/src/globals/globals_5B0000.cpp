@@ -9,7 +9,6 @@ string caseD_0 = "k=Tu|";
 string caseD_2 = "k=Tu|";
 
 // undefined1*
-undefined1* switchdataD_005b8ea0 = (undefined1*)0x005B8EED; // caseD_0
 undefined1* switchdataD_005b9280 = (undefined1*)0x005B933B; // caseD_0
 undefined1* switchdataD_005b992c = (undefined1*)0x005B99A1; // caseD_0
 undefined1* switchdataD_005b9aa0 = (undefined1*)0x005B9B17; // caseD_0

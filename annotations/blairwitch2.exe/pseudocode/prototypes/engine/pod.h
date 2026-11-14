@@ -21,13 +21,13 @@ CPodFile * __cdecl CPodFile::ctor(CPodFile *this_ptr);
 // Address: 00519ec0
 CPodFile * __cdecl CPodFile::dtor(CPodFile *this_ptr,uint flags);
 
-// Original: engine_pod.cpp_FUN_00519ee0
+// Original: engine_pod.cpp_qsortByFilename_FUN_00519ee0
 // Address: 00519ee0
-void FUN_00519ee0(undefined4 *param_1,undefined4 *param_2);
+int __cdecl qsortByFilename(char **filename1_ptr,char **filename2_ptr);
 
-// Original: engine_pod.cpp_FUN_00519f00
+// Original: engine_pod.cpp_CPodFile_mountFromFile_FUN_00519f00
 // Address: 00519f00
-int __cdecl FUN_00519f00(CPodFile *this_ptr,char *pod_filename);
+int __cdecl CPodFile::mountFromFile(CPodFile *this_ptr,char *pod_filename);
 
 // Original: engine_pod.cpp_CPodFile_cleanup_FUN_0051a8f0
 // Address: 0051a8f0
@@ -41,9 +41,9 @@ int __cdecl CPodFile::findFileIndex(CPodFile *this_ptr,char *filename);
 // Address: 0051aa00
 void __cdecl CPodFile::populateFileInfo(CPodFile *this_ptr,int file_index,SFoundFileInfo *output_info);
 
-// Original: engine_pod.cpp_FUN_0051aa7e
-// Address: 0051aa7e
-bool FUN_0051aa7e(int *param_1);
+// Original: engine_pod.cpp_FUN_0051aa80
+// Address: 0051aa80
+bool FUN_0051aa80(int *param_1);
 
 // Original: engine_pod.cpp_FUN_0051ad50
 // Address: 0051ad50
@@ -69,9 +69,9 @@ CPod * __cdecl CPod::dtor(CPod *this_ptr,uint flags);
 // Address: 0051b110
 void FUN_0051b110(int *param_1,char *param_2);
 
-// Original: engine_pod.cpp_FUN_0051b1e0
+// Original: engine_pod.cpp_CPod_remount_FUN_0051b1e0
 // Address: 0051b1e0
-void FUN_0051b1e0(int *param_1);
+void __cdecl CPod::remount(CPod *this_ptr);
 
 // Original: engine_pod.cpp_CPod_dismount_FUN_0051b280
 // Address: 0051b280
@@ -87,7 +87,7 @@ void __cdecl CPod::cleanup(CPod *this_ptr);
 
 // Original: engine_pod.cpp_findFilesByExtension_FUN_0051b3c0
 // Address: 0051b3c0
-int __cdecl findFilesByExtension(int *param_1,byte *param_2,int param_3,int param_4,int param_5);
+int __cdecl findFilesByExtension(CPod *pod,char *extension,char *output_buffer,int max_results,int result_string_length);
 
 // Original: engine_pod.cpp_CPod_initSearch_FUN_0051b580
 // Address: 0051b580
@@ -97,9 +97,13 @@ void __cdecl CPod::initSearch(CPod *this_ptr,char *search_pattern,CPodSearchCont
 // Address: 0051b5d0
 int __cdecl CPod::getNextSearchResult(CPod *this_ptr,CPodSearchContext *search_context);
 
-// Original: engine_pod.cpp_FUN_0051b6dc
-// Address: 0051b6dc
-void FUN_0051b6dc(undefined4 param_1,char *param_2);
+// Original: engine_pod.cpp_FUN_0051b6e0
+// Address: 0051b6e0
+void FUN_0051b6e0(void);
+
+// Original: engine_pod.cpp_CPod_verifyIntegrity_FUN_0051b8d0
+// Address: 0051b8d0
+undefined4 __cdecl CPod::verifyIntegrity(CPod *this_ptr,char *param_2);
 
 // Original: engine_pod.cpp_CPod_findFile_FUN_0051b9d0
 // Address: 0051b9d0

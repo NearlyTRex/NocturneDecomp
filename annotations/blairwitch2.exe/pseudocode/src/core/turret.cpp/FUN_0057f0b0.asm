@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_turret_cpp_FUN_0057f0b0(CTurret *param_1,float param_2)
+; void core_turret_cpp_FUN_0057f0b0(CCharacter *param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x178]:1  local_178
@@ -18,21 +18,21 @@
 ;   CConsole* g_CConsolePtr = 007c158c
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   CConsole g_CConsoleInstance
-;   undefined4 g_CDemonSetInstance.field1364324_0x14d164
-;   undefined4 g_CDemonSetInstance.field1364328_0x14d168
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408d70
 ;   core_actor.cpp_FUN_00408de0
-;   core_actor.cpp_FUN_0040c840
+;   core_actor.cpp_isOfClass_FUN_0040c840
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_0041a590
 ;   core_box.cpp_CBoundingBox3D_reset_FUN_0041b600
 ;   core_box.cpp_FUN_0041a600
-;   core_turret.cpp_FUN_0057f700
-;   core_turret.cpp_FUN_0057fa00
-;   core_vecdir.cpp_FUN_005838f0
+;   core_turret.cpp_CTurret_aimAtTarget_FUN_0057f700
+;   core_turret.cpp_CTurret_updatePatrol_FUN_0057fa00
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 ;   crt_memory.c___arrinit_FUN_005b7f5f
-;   engine_console.cpp_FUN_00436710
+;   engine_console.cpp_CConsole_printf_FUN_00436710
 ;
 ; *****************************************************************************
 
@@ -153,17 +153,17 @@ section .text
     MOV EAX,[0x0061b5a8]                ; 0057f24e | g_CDemonSetPtr
         ;   Label: LAB_0057f24e
     MOV EDX,dword ptr [ESP + 0x1d8]     ; 0057f253
-    CMP EDX,dword ptr [EAX + 0x14d164]  ; 0057f25a | g_CDemonSetInstance.field1364324_0x14d164
+    CMP EDX,dword ptr [EAX + 0x14d164]  ; 0057f25a | g_CDemonSetInstance.actor_count
     JGE 0x0057f688                      ; 0057f260
         ;   XREF to: 0057f688 (CONDITIONAL_JUMP)  ; LAB_0057f688
     MOV EBX,dword ptr [ESP + 0x1d0]     ; 0057f266
     MOV ESI,dword ptr [ESP + 0x1c8]     ; 0057f26d
     ADD EAX,EBX                         ; 0057f274
     PUSH ESI                            ; 0057f276
-    MOV EBX,dword ptr [EAX + 0x14d168]  ; 0057f277 | g_CDemonSetInstance.field1364328_0x14d168
+    MOV EBX,dword ptr [EAX + 0x14d168]  ; 0057f277 | g_CDemonSetInstance.actors[0]
     PUSH EBX                            ; 0057f27d
-    CALL core_actor.cpp_FUN_0040c840    ; 0057f27e
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c840 ; 0057f27e
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 0057f283
     TEST EAX,EAX                        ; 0057f286
     JNZ 0x0057f2c8                      ; 0057f288
@@ -182,8 +182,8 @@ section .text
     PUSH 0x5ed7e7                       ; 0057f2ad | = "%s has no guard trigger!\n"
     MOV EBX,dword ptr [0x00609ed0]      ; 0057f2b2 | g_CConsolePtr
     PUSH EBX                            ; 0057f2b8 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00436710 ; 0057f2b9
-        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00436710()
+    CALL engine_console.cpp_CConsole_printf_FUN_00436710 ; 0057f2b9
+        ;   XREF to: 00436710 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00436710(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 0057f2be
     MOV ESP,EBP                         ; 0057f2c1
     POP EBP                             ; 0057f2c3
@@ -241,7 +241,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0057f347
     PUSH EAX                            ; 0057f34b
     CALL crt_memory.c___arrinit_FUN_005b7f5f ; 0057f34c
-        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005b7f5f()
+        ;   XREF to: 005b7f5f (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005b7f5f(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0057f351
     MOV EDX,ESP                         ; 0057f354
     PUSH EDX                            ; 0057f356
@@ -388,8 +388,8 @@ section .text
     PUSH EAX                            ; 0057f56d
     LEA ESI,[ESP + 0x100]               ; 0057f56e
     LEA EDI,[ESP + 0x154]               ; 0057f575
-    CALL core_vecdir.cpp_FUN_005838f0   ; 0057f57c
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005838f0()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 0057f57c
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
     LEA ESI,[ESP + 0x100]               ; 0057f581
     ADD ESP,0x4                         ; 0057f588
     MOVSD ES:EDI,ESI                    ; 0057f58b
@@ -464,8 +464,8 @@ section .text
     PUSH EAX                            ; 0057f69f
     MOV EAX,dword ptr [EBP + 0x14]      ; 0057f6a0
     PUSH EAX                            ; 0057f6a3
-    CALL core_turret.cpp_FUN_0057f700   ; 0057f6a4
-        ;   XREF to: 0057f700 (UNCONDITIONAL_CALL)  ; int core_turret.cpp_FUN_0057f700(CTurret * this_ptr, CVector3f * target_pos, float delta_time)
+    CALL core_turret.cpp_CTurret_aimAtTarget_FUN_0057f700 ; 0057f6a4
+        ;   XREF to: 0057f700 (UNCONDITIONAL_CALL)  ; int core_turret.cpp_CTurret_aimAtTarget_FUN_0057f700(CTurret * this_ptr, CVector3f * target_pos, float delta_time)
     ADD ESP,0xc                         ; 0057f6a9
     MOV EAX,dword ptr [EBP + 0x14]      ; 0057f6ac
     FLD float ptr [EAX + 0x45c]         ; 0057f6af
@@ -494,8 +494,8 @@ section .text
         ;   Label: LAB_0057f6e8
     PUSH dword ptr [EBP + 0x18]         ; 0057f6eb
     PUSH ECX                            ; 0057f6ee
-    CALL core_turret.cpp_FUN_0057fa00   ; 0057f6ef
-        ;   XREF to: 0057fa00 (UNCONDITIONAL_CALL)  ; void core_turret.cpp_FUN_0057fa00(CTurret * this_ptr, float delta_time)
+    CALL core_turret.cpp_CTurret_updatePatrol_FUN_0057fa00 ; 0057f6ef
+        ;   XREF to: 0057fa00 (UNCONDITIONAL_CALL)  ; void core_turret.cpp_CTurret_updatePatrol_FUN_0057fa00(CTurret * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0057f6f4
     MOV ESP,EBP                         ; 0057f6f7
     POP EBP                             ; 0057f6f9

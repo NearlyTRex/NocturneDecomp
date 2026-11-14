@@ -12,8 +12,8 @@ void __cdecl core_morph_cpp_CMorphModel_setFaceListFromTriangles_FUN_005228c0(CM
 
 {
   int *piVar1;
-  SInputFace *pSVar2;
-  int iVar3;
+  int iVar2;
+  SInputFace *pSVar3;
   int iVar4;
   int iVar5;
   SInputFace *local_24;
@@ -21,14 +21,14 @@ void __cdecl core_morph_cpp_CMorphModel_setFaceListFromTriangles_FUN_005228c0(CM
   int local_1c;
   int local_14;
   
-  if ((part_index < 0) || (*(int *)this_ptr <= part_index)) {
+  if ((part_index < 0) || (this_ptr->part_count <= part_index)) {
     _DAT_01d1d400 = "..\\core\\morph.cpp";
     _DAT_01d1d404 = 0x191;
     core_main_c_FUN_005030e0("CMorphModel::setFaceList - invalid part index");
   }
-  iVar5 = start_face + *(int *)(&this_ptr->field_0x10 + part_index * 0x10);
-  if (*(int *)(&this_ptr->field_0x10 + part_index * 0x10) +
-      *(int *)(&this_ptr->field_0x8 + part_index * 0x10) < face_count + iVar5) {
+  iVar2 = this_ptr->parts[part_index].start_face;
+  iVar5 = start_face + iVar2;
+  if (iVar2 + this_ptr->parts[part_index].face_count < face_count + iVar5) {
     _DAT_01d1d400 = "..\\core\\morph.cpp";
     _DAT_01d1d404 = 0x198;
     core_main_c_FUN_005030e0("CMorphModel::setFaceList - invalid vertex range");
@@ -39,38 +39,38 @@ void __cdecl core_morph_cpp_CMorphModel_setFaceListFromTriangles_FUN_005228c0(CM
     local_20 = index_data;
     local_14 = iVar5 * 0x3c;
     do {
-      iVar5 = core_morph_cpp_CMorphModel_findOrAddTexture_FUN_00522a80
-                        (this_ptr,(char *)(texture_sets + *local_20 * 0x48 + 8));
-      iVar4 = 0;
-      *(uint *)(*(int *)&this_ptr->field_0x60 + local_14 + 4) = 3;
-      pSVar2 = local_24;
+      iVar2 = core_morph_cpp_CMorphModel_findOrAddTexture_FUN_00522a80
+                        (this_ptr,texture_sets->textures[*local_20].texture_name);
+      iVar5 = 0;
+      *(uint *)((int)this_ptr->faces->vertices + local_14 + -0x14) = 3;
+      pSVar3 = local_24;
       do {
-        iVar3 = iVar4;
+        iVar4 = iVar5;
         if (_DAT_01d39d30 != 0) {
-          iVar3 = 2 - iVar4;
+          iVar4 = 2 - iVar5;
         }
-        iVar3 = iVar3 * 0xc;
-        *(uint *)(iVar3 + 0x18 + *(int *)&this_ptr->field_0x60 + local_14) = (uint)*(ushort *)pSVar2
-        ;
-        iVar4 = iVar4 + 1;
-        *(uint *)(iVar3 + 0x1c + *(int *)&this_ptr->field_0x60 + local_14) =
-             (uint)*(ushort *)(pSVar2 + 6) << 8;
-        *(uint *)(iVar3 + *(int *)&this_ptr->field_0x60 + local_14 + 0x20) =
-             (uint)*(ushort *)(pSVar2 + 0xc) << 8;
-        pSVar2 = pSVar2 + 2;
-      } while (iVar4 < 3);
-      *(int *)(local_14 + *(int *)&this_ptr->field_0x60) = iVar5;
-      piVar1 = (int *)(local_14 + 0x18 + *(int *)&this_ptr->field_0x60);
-      *piVar1 = *piVar1 + *(int *)(&this_ptr->field_0xc + part_index * 0x10);
-      *(int *)(local_14 + 0x24 + *(int *)&this_ptr->field_0x60) =
-           *(int *)(local_14 + 0x24 + *(int *)&this_ptr->field_0x60) +
-           *(int *)(&this_ptr->field_0xc + part_index * 0x10);
+        *(uint *)((int)&this_ptr->faces->vertices[iVar4].vertex_index + local_14) =
+             (uint)(pSVar3->vertex_indices).vertex_index_0;
+        iVar5 = iVar5 + 1;
+        *(uint *)((int)&this_ptr->faces->vertices[iVar4].texture_u + local_14) =
+             (uint)pSVar3->u_coord_0 << 8;
+        *(uint *)((int)&this_ptr->faces->vertices[iVar4].texture_v + local_14) =
+             (uint)pSVar3->v_coord_0 << 8;
+        pSVar3 = (SInputFace *)&(pSVar3->vertex_indices).vertex_index_1;
+      } while (iVar5 < 3);
+      *(int *)((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).base.type
+              + local_14) = iVar2;
+      piVar1 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + local_14);
+      *piVar1 = *piVar1 + this_ptr->parts[part_index].start_vertex;
+      *(int *)((int)&this_ptr->faces->vertices[1].vertex_index + local_14) =
+           *(int *)((int)&this_ptr->faces->vertices[1].vertex_index + local_14) +
+           this_ptr->parts[part_index].start_vertex;
       local_20 = local_20 + 1;
-      iVar5 = local_14 + *(int *)&this_ptr->field_0x60;
       local_1c = local_1c + 1;
-      *(int *)(iVar5 + 0x30) =
-           *(int *)(iVar5 + 0x30) + *(int *)(&this_ptr->field_0xc + part_index * 0x10);
-      local_24 = local_24 + 0x12;
+      *(int *)((int)&this_ptr->faces->vertices[2].vertex_index + local_14) =
+           *(int *)((int)&this_ptr->faces->vertices[2].vertex_index + local_14) +
+           this_ptr->parts[part_index].start_vertex;
+      local_24 = local_24 + 1;
       local_14 = local_14 + 0x3c;
     } while (local_1c < face_count);
   }

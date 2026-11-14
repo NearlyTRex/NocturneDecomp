@@ -7,15 +7,15 @@
 
 // Original: core_flies.cpp_staticInit_FUN_004ad750
 // Address: 004ad750
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_flies.cpp_factoryFuncFlies_FUN_004ad780
 // Address: 004ad780
-void factoryFuncFlies(void);
+CFlies * __cdecl factoryFuncFlies(void);
 
 // Original: core_flies.cpp_CFlies_getActorType_FUN_004ad7a0
 // Address: 004ad7a0
-CDemonActorType * CFlies::getActorType(CFlies *this_ptr);
+CDemonActorType * __cdecl CFlies::getActorType(CFlies *this_ptr);
 
 // Original: core_flies.cpp_CFlies_ctor_FUN_004ad7b0
 // Address: 004ad7b0
@@ -29,9 +29,9 @@ void __cdecl CFlies::setup(CFlies *this_ptr);
 // Address: 004ad8b0
 void __cdecl CFlies::archive(CFlies *this_ptr);
 
-// Original: core_flies.cpp_FUN_004ad950
+// Original: core_flies.cpp_CFlies_process_FUN_004ad950
 // Address: 004ad950
-void FUN_004ad950(CFlies *param_1,float param_2);
+void __cdecl CFlies::process(CFlies *this_ptr,float delta_time);
 
 // Original: core_flies.cpp_drawFlyPixel_FUN_004add00
 // Address: 004add00
@@ -41,33 +41,33 @@ void __cdecl drawFlyPixel(int screen_x,int screen_y,int z_depth);
 // Address: 004add90
 void __cdecl drawFlyPixelClipped(int screen_x,int screen_y,int z_depth);
 
-// Original: core_flies.cpp_FUN_004addd0
+// Original: core_flies.cpp_CFlies_renderOpaque_FUN_004addd0
 // Address: 004addd0
-int FUN_004addd0(CDemonActor *param_1);
+int __cdecl CFlies::renderOpaque(CFlies *this_ptr);
 
-// Original: core_flies.cpp_FUN_004ae200
+// Original: core_flies.cpp_CFlies_getBoundingBox_FUN_004ae200
 // Address: 004ae200
-void FUN_004ae200(int param_1);
+CBoundingBox3D * __cdecl CFlies::getBoundingBox(CFlies *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_flies.cpp_FUN_004ae270
+// Original: core_flies.cpp_CFlies_getCollisionType_FUN_004ae270
 // Address: 004ae270
-undefined4 FUN_004ae270(void);
+ECollisionType __cdecl CFlies::getCollisionType(CFlies *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_flies.cpp_FUN_004ae280
+// Original: core_flies.cpp_CFlies_initFly_FUN_004ae280
 // Address: 004ae280
-void __cdecl FUN_004ae280(CFlies *this_ptr,int fly_index);
+void __cdecl CFlies::initFly(CFlies *this_ptr,int fly_index);
 
 // Original: core_flies.cpp_FUN_004ae380
 // Address: 004ae380
 float * FUN_004ae380(int param_1,float *param_2);
 
-// Original: core_flies.cpp_FUN_004ae6c0
+// Original: core_flies.cpp_findFliesByFollowActor_FUN_004ae6c0
 // Address: 004ae6c0
-CFlies * __cdecl FUN_004ae6c0(CDemonActor *actor);
+CFlies * __cdecl findFliesByFollowActor(CDemonActor *actor);
 
 // Original: core_flies.cpp_CFlies_dtor_FUN_004ae710
 // Address: 004ae710
-CFlies * CFlies::dtor(CFlies *this_ptr,uint flags);
+CFlies * __cdecl CFlies::dtor(CFlies *this_ptr,uint flags);
 
 // Original: core_flies.cpp_SFly_ctor_FUN_004ae760
 // Address: 004ae760

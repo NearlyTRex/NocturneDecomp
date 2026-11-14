@@ -1,23 +1,23 @@
 // Name: crt_unknown.c_FUN_005ba2e0
 // Address: 005ba2e0
 // Address Range: [[005ba2e0, 005ba2f6]]
-// Convention: unknown
-// Signature: undefined4 crt_unknown_c_FUN_005ba2e0(LPCSTR param_1)
+// Convention: __cdecl
+// Signature: int __cdecl crt_unknown_c_FUN_005ba2e0(char *path)
 
 #include "nocturne.h"
 
-uint FUN_005ba2e0(LPCSTR param_1)
+int __cdecl FUN_005ba2e0(char *path)
 
 {
   BOOL BVar1;
   DWORD DVar2;
-  uint uVar3;
+  int iVar3;
   
-  BVar1 = SetCurrentDirectoryA(param_1);
+  BVar1 = SetCurrentDirectoryA(path);
   if (BVar1 != 0) {
     return 0;
   }
   DVar2 = GetLastError();
-  uVar3 = FUN_005c0300(DVar2);
-  return uVar3;
+  iVar3 = FUN_005c0300(DVar2);
+  return iVar3;
 }

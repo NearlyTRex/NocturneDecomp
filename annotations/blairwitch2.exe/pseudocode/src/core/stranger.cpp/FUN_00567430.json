@@ -2,19 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 78,
-    "complexity_score": 120,
+    "complexity_score": 143,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 45,
-    "suspect_count": 6,
+    "pseudocode_lines": 48,
+    "suspect_count": 7,
     "suspect_types": [
-      "unnamed_field",
+      "pointer_cast",
+      "pointer_truncation",
       "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "warning_overlapping_globals",
+      "warning_type_propagation"
     ],
-    "total_lines": 123
+    "total_lines": 126
   },
   "cross_references": [
     {
@@ -43,19 +45,19 @@
       "name": "core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40"
     },
     {
-      "addr": "00544f80",
-      "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_00544f80"
-    },
-    {
       "addr": "00548620",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_00548620"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_00548620"
     },
     {
       "addr": "005486f0",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_005486f0"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005486f0"
+    },
+    {
+      "addr": "00544f80",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00544f80"
     },
     {
       "addr": "005940b0",
@@ -209,8 +211,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Type propagation did not converge",
       "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
@@ -218,43 +228,43 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 11,
+      "line": 13,
       "match": "code *",
       "severity": "moderate",
       "text": "code *blend_callback;",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "this_ptr_00 = &this_ptr->field_0x2b4;",
-      "type": "unnamed_field"
+      "description": "Pointer value `&local_48` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 41,
+      "match": "(int)&local_48",
+      "severity": "moderate",
+      "text": "pfVar1 = (float *)((int)&local_48 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x256f0",
-      "severity": "mild",
-      "text": "(this_ptr_00,*(uint *)&this_ptr->field_0x256f0,",
-      "type": "unnamed_field"
+      "description": "Pointer value `&local_48` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 42,
+      "match": "(int)&local_48",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_48 + (uint)bVar2 * -8 + 4) = afStack_34[(uint)bVar2 * -2];",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x256c0",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x256c0 * (float)_DAT_005eb865,0xffffffff);",
-      "type": "unnamed_field"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 41,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar1 = (float *)((int)&local_48 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x964",
-      "severity": "mild",
-      "text": "core_xform_cpp_FUN_005940b0(&this_ptr->field_0x964 + _DAT_0264be30 * 0x10);",
-      "type": "unnamed_field"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 42,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_48 + (uint)bVar2 * -8 + 4) = afStack_34[(uint)bVar2 * -2];",
+      "type": "pointer_cast"
     }
   ]
 }

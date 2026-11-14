@@ -1,17 +1,43 @@
 [
   {
     "addr":"00486ff2",
-    "conv":"unknown",
+    "conv":"__edi_esi_ebx",
     "data_refs":[
       "00481d91"
     ],
     "instructions":131,
     "method":"renderZBufferFill16xUnrolled",
     "name":"core_dstrendr.cpp_renderZBufferFill16xUnrolled_FUN_00486ff2",
+    "params":[
+      {
+        "name":"left_edge",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      },
+      {
+        "name":"right_edge",
+        "type":{
+          "kind":"struct",
+          "name":"SSoftwareEdge",
+          "ptr":1
+        }
+      },
+      {
+        "name":"scanline_y",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
+      "name":"void",
       "ptr":0
     },
     "tu":"core/dstrendr.cpp",

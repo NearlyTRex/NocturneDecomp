@@ -13,11 +13,11 @@
 ;   undefined4 DAT_02c81040
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_00573e70
 ;   sound_sndmain.cpp_isRecordingStarted_FUN_00575990
 ;   sound_sndmain.cpp_isRecordingSystemActive_FUN_00575980
 ;   sound_sndmain.cpp_lockSound_FUN_00575d20
 ;   sound_sndmain.cpp_setRecordingFormat_FUN_005759b0
+;   sound_sndmain.cpp_unlockSound_FUN_00573e70
 ;
 ; *****************************************************************************
 
@@ -72,15 +72,15 @@ section .text
     PUSH EDI                            ; 00575afe
     MOV EDI,0x1                         ; 00575aff
     MOV dword ptr [0x02c8103c],EDI      ; 00575b04 | DAT_02c8103c
-    CALL sound_sndmain.cpp_FUN_00573e70 ; 00575b0a
-        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00573e70()
+    CALL sound_sndmain.cpp_unlockSound_FUN_00573e70 ; 00575b0a
+        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00573e70()
     MOV EAX,EDI                         ; 00575b0f
     POP EDI                             ; 00575b11
     POP ESI                             ; 00575b12
     POP EBX                             ; 00575b13
     RET                                 ; 00575b14
-    CALL sound_sndmain.cpp_FUN_00573e70 ; 00575b15
-        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00573e70()
+    CALL sound_sndmain.cpp_unlockSound_FUN_00573e70 ; 00575b15
+        ;   XREF to: 00573e70 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00573e70()
         ;   Label: LAB_00575b15
     XOR EAX,EAX                         ; 00575b1a
     POP ESI                             ; 00575b1c

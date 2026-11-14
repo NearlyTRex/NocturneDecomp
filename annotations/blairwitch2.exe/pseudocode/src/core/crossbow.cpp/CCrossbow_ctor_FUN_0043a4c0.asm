@@ -7,7 +7,7 @@
 ; CCrossbow *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_curtain.cpp_factoryFuncCrossbow_FUN_0043a490 at 0043a4a3
+;   core_crossbow.cpp_factoryFuncCrossbow_FUN_0043a490 at 0043a4a3
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70

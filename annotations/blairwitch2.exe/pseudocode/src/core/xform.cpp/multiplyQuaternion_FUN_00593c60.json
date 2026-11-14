@@ -50,19 +50,13 @@
     {
       "addr": "004afa20",
       "from_addr": "004afbfe",
-      "name": "core_gabriela.cpp_FUN_004afa20",
+      "name": "core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0059c680",
       "from_addr": "0059c7a5",
-      "name": "core_patrpoin.cpp_FUN_0059c680",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005a61f0",
-      "from_addr": "005a6429",
-      "name": "core_robin.cpp_FUN_005a61f0",
+      "name": "core_hpatrol.cpp_CPatrolPoint_process_FUN_0059c680",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -72,9 +66,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00546da0",
+      "from_addr": "00546ed5",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_00546da0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00546f40",
       "from_addr": "00547079",
       "name": "core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00545a60",
+      "from_addr": "0054610b",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -86,25 +92,19 @@
     {
       "addr": "00544f80",
       "from_addr": "005454f0",
-      "name": "core_skeleton.cpp_FUN_00544f80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00545a60",
-      "from_addr": "0054610b",
-      "name": "core_skeleton.cpp_FUN_00545a60",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00546da0",
-      "from_addr": "00546ed5",
-      "name": "core_skeleton.cpp_FUN_00546da0",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00544f80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00567fd0",
       "from_addr": "00568171",
-      "name": "core_stranger.cpp_FUN_00567fd0",
+      "name": "core_stranger.cpp_CStranger_applyArmAimRotation_FUN_00567fd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a61f0",
+      "from_addr": "005a6429",
+      "name": "core_weaver.cpp_FUN_005a61f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -147,7 +147,7 @@
       {
         "call_addr": "005454f0",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_00544f80",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00544f80",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -161,7 +161,7 @@
       {
         "call_addr": "0054552a",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_00544f80",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00544f80",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -176,7 +176,7 @@
       {
         "call_addr": "005457f2",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_00544f80",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00544f80",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -190,7 +190,7 @@
       {
         "call_addr": "00545823",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_00544f80",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00544f80",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -204,7 +204,7 @@
       {
         "call_addr": "00545863",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_00544f80",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00544f80",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -218,7 +218,7 @@
       {
         "call_addr": "00545932",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_00544f80",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00544f80",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -232,7 +232,7 @@
       {
         "call_addr": "00545989",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_00544f80",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00544f80",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -245,7 +245,7 @@
       {
         "call_addr": "005459f3",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_00544f80",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_00544f80",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -259,7 +259,7 @@
       {
         "call_addr": "0054610b",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_00545a60",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_00545a60",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -303,6 +303,32 @@
       "STORE": 9
     },
     "pcode_op_count": 565
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "005b77b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00585990",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005f7640",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9193
+    },
+    "nocturne.exe": {
+      "addr": "0055d130",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 24,

@@ -4,12 +4,18 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/SPlayerActionState.h"
+#include "types/structs/SPlayerInput.h"
 
 // Structure: SSimFrame
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// allocSimFrame 0050b160 scans g_SimFrameHistory with stride 0x74; applySimFrameHistory 0050f370 reads seed +4, dt +8, sequence +0 and copies the inputs from +0xc with stride 0x34.
+// Ghidra size: 0x74 (116 bytes)
 #pragma pack(push, 1)
 typedef struct SSimFrame {
+    int sequence_number; // 0x0, applySimFrameHistory 0050f370: players[local].sim_frame_index = *(int*)frame + 1
+    int random_seed; // 0x4, applySimFrameHistory 0050f370: random_seed = frame+4
+    float delta_time; // 0x8, applySimFrameHistory 0050f370: slamDT(frame+8)
+    SPlayerInput player_input[2]; // 0xc, applySimFrameHistory 0050f370: copies from frame+0xc, stride 0x34
 } SSimFrame;
 #pragma pack(pop)
 

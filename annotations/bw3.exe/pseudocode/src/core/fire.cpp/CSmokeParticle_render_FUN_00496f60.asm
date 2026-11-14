@@ -32,7 +32,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_004a1ad0 at 004a1c5c
+;   core_fire.cpp_CFireEffect_render_FUN_004a1ad0 at 004a1c5c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_fire_cpp_005c04c4
@@ -62,7 +62,7 @@
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
 ;   engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
-;   engine_matrix.c_pop_FUN_0046d080
+;   engine_drender.cpp_pop_FUN_0046d080
 ;   engine_special.cpp_FUN_005632a3
 ;   engine_special.cpp_FUN_0056356c
 ;
@@ -313,8 +313,8 @@ section .text
     ADD ESP,0x8                         ; 00497274
     MOV ESI,dword ptr [0x005f2afc]      ; 00497277 | DAT_005f2afc
     PUSH ESI                            ; 0049727d | DAT_01bdd7e4
-    CALL engine_matrix.c_pop_FUN_0046d080 ; 0049727e
-        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046d080()
+    CALL engine_drender.cpp_pop_FUN_0046d080 ; 0049727e
+        ;   XREF to: 0046d080 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046d080()
     ADD ESP,0x4                         ; 00497283
     ADD ESP,0x60                        ; 00497286
         ;   Label: LAB_00497286

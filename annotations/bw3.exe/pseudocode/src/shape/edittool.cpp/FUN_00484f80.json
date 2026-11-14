@@ -2,25 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 333,
+    "complexity_score": 287,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 28,
-    "suspect_count": 29,
+    "pseudocode_lines": 27,
+    "suspect_count": 25,
     "suspect_types": [
-      "unnamed_field",
-      "unnamed_param",
-      "unresolved_funcptr"
+      "pointer_cast",
+      "unnamed_param"
     ],
-    "total_lines": 103
+    "total_lines": 102
   },
   "cross_references": [
     {
-      "addr": "0047dd1e",
+      "addr": "0047dd20",
       "from_addr": "0047df74",
-      "name": "shape_edittool.cpp_FUN_0047dd1e",
+      "name": "shape_edittool.cpp_FUN_0047dd20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -55,7 +54,7 @@
       {
         "call_addr": "0047df74",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047dd1e",
+        "caller": "shape_edittool.cpp_FUN_0047dd20",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -101,6 +100,20 @@
     },
     "pcode_op_count": 269
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00483d80",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0049c3e0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -139,7 +152,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)&param_1[0x1a].field_0xc <= param_2) && (*(int *)&param_1[0x1b].field_0x4 <= param_2)",
+      "text": "if (((int)param_1[0x1a].vtable._us <= param_2) && (param_1[0x1b].capacity <= param_2)) {",
       "type": "unnamed_param"
     },
     {
@@ -147,7 +160,7 @@
       "line": 9,
       "match": "param_2",
       "severity": "mild",
-      "text": "if ((*(int *)&param_1[0x1a].field_0xc <= param_2) && (*(int *)&param_1[0x1b].field_0x4 <= param_2)",
+      "text": "if (((int)param_1[0x1a].vtable._us <= param_2) && (param_1[0x1b].capacity <= param_2)) {",
       "type": "unnamed_param"
     },
     {
@@ -155,7 +168,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)&param_1[0x1a].field_0xc <= param_2) && (*(int *)&param_1[0x1b].field_0x4 <= param_2)",
+      "text": "if (((int)param_1[0x1a].vtable._us <= param_2) && (param_1[0x1b].capacity <= param_2)) {",
       "type": "unnamed_param"
     },
     {
@@ -163,28 +176,12 @@
       "line": 9,
       "match": "param_2",
       "severity": "mild",
-      "text": "if ((*(int *)&param_1[0x1a].field_0xc <= param_2) && (*(int *)&param_1[0x1b].field_0x4 <= param_2)",
+      "text": "if (((int)param_1[0x1a].vtable._us <= param_2) && (param_1[0x1b].capacity <= param_2)) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "if ((*(int *)&param_1[0x1a].field_0xc <= param_2) && (*(int *)&param_1[0x1b].field_0x4 <= param_2)",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "if ((*(int *)&param_1[0x1a].field_0xc <= param_2) && (*(int *)&param_1[0x1b].field_0x4 <= param_2)",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 10,
       "match": "param_1",
       "severity": "mild",
       "text": "shape_edittool_cpp_CStrList_sort_FUN_004823d0(param_1,param_2,param_3);",
@@ -192,7 +189,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 10,
       "match": "param_2",
       "severity": "mild",
       "text": "shape_edittool_cpp_CStrList_sort_FUN_004823d0(param_1,param_2,param_3);",
@@ -200,7 +197,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 10,
       "match": "param_3",
       "severity": "mild",
       "text": "shape_edittool_cpp_CStrList_sort_FUN_004823d0(param_1,param_2,param_3);",
@@ -208,7 +205,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 13,
       "match": "param_2",
       "severity": "mild",
       "text": "for (; param_2 < param_3; param_3 = param_3 + -1) {",
@@ -216,7 +213,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 13,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "for (; param_2 < param_3; param_3 = param_3 + -1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "for (; param_2 < param_3; param_3 = param_3 + -1) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
       "match": "param_3",
       "severity": "mild",
       "text": "for (; param_2 < param_3; param_3 = param_3 + -1) {",
@@ -225,22 +238,6 @@
     {
       "description": "Unnamed function parameter",
       "line": 14,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "for (; param_2 < param_3; param_3 = param_3 + -1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "for (; param_2 < param_3; param_3 = param_3 + -1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 < param_3) {",
@@ -248,10 +245,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 14,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_2 < param_3) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar2 = param_2 * 4;",
       "type": "unnamed_param"
     },
     {
@@ -259,87 +264,63 @@
       "line": 16,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar3 = param_2 * 4;",
+      "text": "index1 = param_2;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "iVar2 = param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(char **)(iVar3 + *(int *)&param_1->field_0x8),",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "(*(char **)(iVar3 + *(int *)&param_1->field_0x8),",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(char **)(iVar3 + 4 + *(int *)&param_1->field_0x8));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(char **)(iVar3 + 4 + *(int *)&param_1->field_0x8));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 23,
-      "match": "code *",
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(char **)(iVar2 + (int)param_1",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)&param_1->field_0xc + 0x10))(param_1,iVar2,iVar2 + 1);",
-      "type": "unresolved_funcptr"
+      "text": "(*(char **)(iVar2 + (int)param_1->data_array),",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_1->field_0xc + 0x10))(param_1,iVar2,iVar2 + 1);",
+      "text": "(*(char **)(iVar2 + (int)param_1->data_array),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(char **)(iVar2 + 4 + (int)param_1",
+      "severity": "moderate",
+      "text": "*(char **)(iVar2 + 4 + (int)param_1->data_array));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(char **)(iVar2 + 4 + (int)param_1->data_array));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_1->field_0xc + 0x10))(param_1,iVar2,iVar2 + 1);",
+      "text": "(*((param_1->vtable)._us)->swap)(param_1,index1,index1 + 1);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0xc",
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_1->field_0xc + 0x10))(param_1,iVar2,iVar2 + 1);",
-      "type": "unnamed_field"
+      "text": "(*((param_1->vtable)._us)->swap)(param_1,index1,index1 + 1);",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 26,
       "match": "param_3",
       "severity": "mild",
-      "text": "} while (iVar2 < param_3);",
+      "text": "} while (index1 < param_3);",
       "type": "unnamed_param"
     }
   ],

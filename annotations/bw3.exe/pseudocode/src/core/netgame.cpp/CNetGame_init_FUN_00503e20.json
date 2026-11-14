@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 78,
+    "complexity_score": 63,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 33,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
@@ -20,7 +19,7 @@
     {
       "addr": "004e44e0",
       "from_addr": "004e4bc6",
-      "name": "core_main.c_FUN_004e44e0",
+      "name": "core_main.c_initializeGameSystems_FUN_004e44e0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -60,7 +59,7 @@
     {
       "addr": "005806a0",
       "is_variadic": false,
-      "name": "wincore_winrun.cpp_FUN_005806a0"
+      "name": "wincore_winrun.cpp_getTime_FUN_005806a0"
     }
   ],
   "globals": [
@@ -137,7 +136,7 @@
       {
         "call_addr": "004e4bc6",
         "call_type": "direct",
-        "caller": "core_main.c_FUN_004e44e0",
+        "caller": "core_main.c_initializeGameSystems_FUN_004e44e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -187,6 +186,32 @@
     },
     "pcode_op_count": 241
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0050b340",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0052c520",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0053f780",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004e9910",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -211,14 +236,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "pcVar3 = &this_ptr->field_0x8;",
-      "type": "unnamed_field"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

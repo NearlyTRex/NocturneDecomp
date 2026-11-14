@@ -12,8 +12,8 @@
 ; CDrawSurface *   Stack[0x18]:4   parent_surface
 ;
 ; XREF[2]:
-;   cockpit_drawsurf.cpp_FUN_0046a750 at 0046a7ac
-;   core_script.cpp_FUN_00529210 at 0052924e
+;   cockpit_drawsurf.cpp_testDrawingSurface_FUN_0046a750 at 0046a7ac
+;   core_script.cpp_CScript_renderEditor_FUN_00529210 at 0052924e
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_init_FUN_00467940

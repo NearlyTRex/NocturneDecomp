@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   z_depth
 ;
 ; XREF[1]:
-;   engine_2d.c_FUN_00402ade at 00402b29
+;   engine_2d.c_draw320x200SizeDot_FUN_00402ae0 at 00402b29
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c4eff8

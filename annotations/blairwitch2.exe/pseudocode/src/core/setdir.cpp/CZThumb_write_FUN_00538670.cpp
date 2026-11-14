@@ -9,7 +9,6 @@
 void __cdecl core_setdir_cpp_CZThumb_write_FUN_00538670(CZThumb *this_ptr,_FILE *file_handle)
 
 {
-  _fwrite(*(uint *)&this_ptr->field_0x24,*(int *)this_ptr * *(int *)&this_ptr->field_0x4,4,
-             file_handle);
+  _fwrite(this_ptr->zbuffer_data,this_ptr->width * this_ptr->height,4,file_handle);
   return;
 }

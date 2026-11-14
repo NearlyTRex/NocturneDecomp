@@ -51,7 +51,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_prye.cpp_FUN_005220d0 at 005221ed
+;   core_prye.cpp_CPrye_renderOpaque_FUN_005220d0 at 005221ed
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d0ace

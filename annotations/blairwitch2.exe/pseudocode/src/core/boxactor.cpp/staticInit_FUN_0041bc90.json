@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 28,
+    "complexity_score": 29,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 13,
+    "pseudocode_lines": 14,
     "suspect_count": 1,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 43
+    "total_lines": 44
   },
   "cross_references": [],
   "function": {
@@ -23,9 +23,9 @@
         "0041bcf7"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_boxactor.cpp_staticInit_FUN_0041bc90",
-    "signature": "void core_boxactor_cpp_staticInit_FUN_0041bc90(void)"
+    "signature": "void __cdecl core_boxactor_cpp_staticInit_FUN_0041bc90(void)"
   },
   "function_calls": [
     {
@@ -74,6 +74,32 @@
     },
     "pcode_op_count": 99
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00421c00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0041ef40",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00421650",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0041e260",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -88,7 +114,7 @@
       "line": 12,
       "match": "DAT_007bcc4c",
       "severity": "mild",
-      "text": "((CDemonActorType *)&DAT_007bcc4c,\"CLightActor\",core_boxactor_cpp_FUN_0041cf30,",
+      "text": "((CDemonActorType *)&DAT_007bcc4c,\"CLightActor\",",
       "type": "undefined_data"
     }
   ]

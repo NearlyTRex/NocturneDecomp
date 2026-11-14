@@ -7,48 +7,52 @@
 
 // Original: core_lightpis.cpp_staticInit_FUN_005015b0
 // Address: 005015b0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_lightpis.cpp_factoryFuncLightPis_FUN_005015e0
 // Address: 005015e0
-void factoryFuncLightPis(void);
+CLightPis * __cdecl factoryFuncLightPis(void);
 
 // Original: core_lightpis.cpp_CLightPis_getActorType_FUN_00501600
 // Address: 00501600
-CDemonActorType * CLightPis::getActorType(CLightPis *this_ptr);
+CDemonActorType * __cdecl CLightPis::getActorType(CLightPis *this_ptr);
 
 // Original: core_lightpis.cpp_CLightPis_ctor_FUN_00501610
 // Address: 00501610
-CLightPis * CLightPis::ctor(CLightPis *this_ptr);
+CLightPis * __cdecl CLightPis::ctor(CLightPis *this_ptr);
 
 // Original: core_lightpis.cpp_FUN_005016d0
 // Address: 005016d0
 undefined4 FUN_005016d0(CDemonActor *param_1);
 
+// Original: core_lightpis.cpp_FUN_00501750
+// Address: 00501750
+undefined4 FUN_00501750(CCharacter *param_1);
+
 // Original: core_lightpis.cpp_FUN_005017f0
 // Address: 005017f0
 void FUN_005017f0(int param_1);
 
-// Original: core_lightpis.cpp_FUN_005018c0
+// Original: core_lightpis.cpp_CLightPis_getMuzzlePoint_FUN_005018c0
 // Address: 005018c0
-void FUN_005018c0(int param_1);
+CVector3f * __cdecl CLightPis::getMuzzlePoint(CLightPis *this_ptr,CVector3f *out_point);
 
-// Original: core_lightpis.cpp_FUN_00501a70
+// Original: core_lightpis.cpp_CLightPis_fire_FUN_00501a70
 // Address: 00501a70
-undefined4 FUN_00501a70(CWeapon *param_1);
+int __cdecl CLightPis::fire(CLightPis *this_ptr);
 
-// Original: core_lightpis.cpp_FUN_00502480
+// Original: core_lightpis.cpp_CLightPis_process_FUN_00502480
 // Address: 00502480
-void FUN_00502480(CWeapon *param_1,float param_2);
+void __cdecl CLightPis::process(CLightPis *this_ptr,float delta_time);
 
-// Original: core_lightpis.cpp_FUN_00502680
+// Original: core_lightpis.cpp_CLightPis_getDamage_FUN_00502680
 // Address: 00502680
-float FUN_00502680(int param_1);
+float __cdecl CLightPis::getDamage(CLightPis *this_ptr);
 
-// Original: core_lightpis.cpp_FUN_005026f0
+// Original: core_lightpis.cpp_CLightPis_renderAimBeam_FUN_005026f0
 // Address: 005026f0
-void FUN_005026f0(CWeapon *param_1);
+void __cdecl CLightPis::renderAimBeam(CLightPis *this_ptr);
 
 // Original: core_lightpis.cpp_CLightPis_dtor_FUN_00502cc0
 // Address: 00502cc0
-CLightPis * CLightPis::dtor(CLightPis *this_ptr,uint flags);
+CLightPis * __cdecl CLightPis::dtor(CLightPis *this_ptr,uint flags);

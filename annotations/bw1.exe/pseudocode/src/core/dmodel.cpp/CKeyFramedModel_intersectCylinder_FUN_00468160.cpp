@@ -12,32 +12,32 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_intersectCylinder_FUN_00468160(CKey
 
 {
   int iVar1;
-  int iVar2;
+  CDemonTriangle *triangle;
   
-  if (*(int *)&this_ptr->field_0x100 <= frame_index) {
-    frame_index = *(int *)&this_ptr->field_0x100 + -1;
+  if (this_ptr->frame_count <= frame_index) {
+    frame_index = this_ptr->frame_count + -1;
   }
   if (frame_index < 0) {
     frame_index = 0;
   }
-  if (((*(float *)&this_ptr->field_0x364 != *(float *)transform_vector) ||
-      (*(float *)&this_ptr->field_0x368 != *(float *)&transform_vector->field_0x4)) ||
-     (*(float *)&this_ptr->field_0x36c != *(float *)&transform_vector->field_0x8)) {
-    core_dmodel_cpp_FUN_00468420(this_ptr,transform_vector);
+  if ((((this_ptr->transform_vector).x != transform_vector->x) ||
+      ((this_ptr->transform_vector).y != transform_vector->y)) ||
+     ((this_ptr->transform_vector).z != transform_vector->z)) {
+    core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00468420(this_ptr,transform_vector);
   }
-  if (*(int *)&this_ptr->field_0x358 == 0) {
+  if (this_ptr->collision_triangle_list == (CDemonTriangle *)0x0) {
     _DAT_01d1d400 = "..\\core\\dmodel.cpp";
     _DAT_01d1d404 = 0x40e;
     core_main_c_FUN_005030e0("Tried to call CKeyFramedModel::intersectCylinderXZ for model %s but this model does not have a collision triangle list!",this_ptr);
   }
-  iVar2 = *(int *)&this_ptr->field_0x358 + frame_index * *(int *)&this_ptr->field_0x354 * 0x38;
+  triangle = this_ptr->collision_triangle_list + frame_index * this_ptr->collision_triangle_count;
   iVar1 = 0;
-  if (0 < *(int *)&this_ptr->field_0x354) {
+  if (0 < this_ptr->collision_triangle_count) {
     do {
       iVar1 = iVar1 + 1;
-      core_dtri_cpp_cylinderTriangleTest_FUN_004904d0(iVar2,cylinder);
-      iVar2 = iVar2 + 0x38;
-    } while (iVar1 < *(int *)&this_ptr->field_0x354);
+      core_dtri_cpp_cylinderTriangleTest_FUN_004904d0(triangle,cylinder);
+      triangle = triangle + 1;
+    } while (iVar1 < this_ptr->collision_triangle_count);
   }
   return;
 }

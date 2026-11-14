@@ -7,7 +7,7 @@
 ; CShotgun *       Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cc00
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     PUSH 0x43480000                     ; 005620dc
         ;   Label: LAB_005620dc
     PUSH 0x43160000                     ; 005620e1
-    CALL core_actor.cpp_FUN_0040cc00    ; 005620e6
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 005620e6
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [ESP + 0xc],EAX       ; 005620eb
     FLD float ptr [ESP + 0xc]           ; 005620ef
     ADD ESP,0x8                         ; 005620f3

@@ -2,31 +2,30 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 149,
+    "complexity_score": 73,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 34,
-    "suspect_count": 10,
+    "pseudocode_lines": 33,
+    "suspect_count": 3,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 108
+    "total_lines": 107
   },
   "cross_references": [
+    {
+      "addr": "00482770",
+      "from_addr": "00482869",
+      "name": "shape_edittool.cpp_CPickList_handleDialogInput_FUN_00482770",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "0047c0f0",
       "from_addr": "0047c685",
       "name": "shape_edittool.cpp_FUN_0047c0f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00482770",
-      "from_addr": "00482869",
-      "name": "shape_edittool.cpp_FUN_00482770",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -98,7 +97,7 @@
       {
         "call_addr": "00482869",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00482770",
+        "caller": "shape_edittool.cpp_CPickList_handleDialogInput_FUN_00482770",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -109,7 +108,7 @@
       {
         "call_addr": "004829d0",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00482770",
+        "caller": "shape_edittool.cpp_CPickList_handleDialogInput_FUN_00482770",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -181,6 +180,32 @@
     },
     "pcode_op_count": 228
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0049d8a0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00486440",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004a6830",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00476fd0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -215,68 +240,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "if ((((*(int *)this_ptr == 0) && (*(int *)&this_ptr->field_0x8 <= _DAT_01c2a37c)) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0xc <= _DAT_01c2a380)) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "((_DAT_01c2a37c < *(int *)&this_ptr->field_0x10 &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "(_DAT_01c2a380 < *(int *)&this_ptr->field_0x14)))) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x18 = iVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x18 = 0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 31,
       "match": "DAT_01c2a384",
       "severity": "mild",
       "text": "if (((_DAT_01c26410 == (CEdButton *)0x0) && ((DAT_01c2a384 & 1) != 0)) && (iVar2 != 0)) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x18 = 1;",
-      "type": "unnamed_field"
     }
   ]
 }

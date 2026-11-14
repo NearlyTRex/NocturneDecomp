@@ -10,9 +10,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_processVisiblePrimitive_FUN_0046e
 
 {
   int iVar1;
-  ushort local_18;
-  ushort local_16;
-  ushort local_14;
+  STrianglePackedIndices local_18;
   ushort local_12;
   ushort local_10;
   ushort local_e;
@@ -20,22 +18,21 @@ void __cdecl engine_drender_cpp_CDemonRenderer_processVisiblePrimitive_FUN_0046e
   ushort local_a;
   ushort local_8;
   
-  if (*(int *)(this_ptr + 0xc) != 0) {
-    iVar1 = engine_3d_c_isVisiblePlane_FUN_00403920(primitive + 8);
+  if (this_ptr->plane_culling_enabled != 0) {
+    iVar1 = engine_3d_c_isVisiblePlane_FUN_00403920(&primitive->surface_normal);
     if (iVar1 == 0) {
       return;
     }
   }
-  local_18 = *(ushort *)(primitive + 0x18);
-  local_16 = *(ushort *)(primitive + 0x24);
-  local_14 = *(ushort *)(primitive + 0x30);
-  local_12 = (ushort)((uint)*(uint *)(primitive + 0x1c) >> 8);
-  local_10 = (ushort)((uint)*(uint *)(primitive + 0x28) >> 8);
-  local_e = (ushort)((uint)*(uint *)(primitive + 0x34) >> 8);
-  local_c = (ushort)((uint)*(uint *)(primitive + 0x20) >> 8);
-  local_a = (ushort)((uint)*(uint *)(primitive + 0x2c) >> 8);
-  local_8 = (ushort)((uint)*(uint *)(primitive + 0x38) >> 8);
-  engine_drender_cpp_CDemonRenderer_captureFace_FUN_0046e300
-            (this_ptr,(STrianglePackedIndices *)&local_18,render_flags);
+  local_18.vertex_index_0 = (ushort)primitive[1].base.type;
+  local_18.vertex_index_1 = *(ushort *)&primitive[1].surface_normal.B;
+  local_18.vertex_index_2 = (ushort)primitive[2].base.type;
+  local_12 = (ushort)((uint)primitive[1].base.count >> 8);
+  local_10 = (ushort)((uint)primitive[1].surface_normal.C.i >> 8);
+  local_e = (ushort)((uint)primitive[2].base.count >> 8);
+  local_c = (ushort)((uint)primitive[1].surface_normal.A.i >> 8);
+  local_a = (ushort)((uint)primitive[1].surface_normal.D.i >> 8);
+  local_8 = (ushort)((uint)primitive[2].surface_normal.A.i >> 8);
+  engine_drender_cpp_CDemonRenderer_captureFace_FUN_0046e300(this_ptr,&local_18,render_flags);
   return;
 }

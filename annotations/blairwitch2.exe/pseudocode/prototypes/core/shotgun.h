@@ -7,39 +7,39 @@
 
 // Original: core_shotgun.cpp_staticInit_FUN_0053ef70
 // Address: 0053ef70
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_shotgun.cpp_factoryFuncShotgun_FUN_0053efa0
 // Address: 0053efa0
-void factoryFuncShotgun(void);
+CShotgun * __cdecl factoryFuncShotgun(void);
 
 // Original: core_shotgun.cpp_CShotgun_getActorType_FUN_0053efc0
 // Address: 0053efc0
-CDemonActorType * CShotgun::getActorType(CShotgun *this_ptr);
+CDemonActorType * __cdecl CShotgun::getActorType(CShotgun *this_ptr);
 
 // Original: core_shotgun.cpp_CShotgun_ctor_FUN_0053efd0
 // Address: 0053efd0
 CShotgun * __cdecl CShotgun::ctor(CShotgun *this_ptr);
 
-// Original: core_shotgun.cpp_FUN_0053f060
+// Original: core_shotgun.cpp_CShotgun_process_FUN_0053f060
 // Address: 0053f060
-void FUN_0053f060(int param_1);
+void __cdecl CShotgun::process(CShotgun *this_ptr,float delta_time);
 
-// Original: core_shotgun.cpp_FUN_0053f170
+// Original: core_shotgun.cpp_CShotgun_fire_FUN_0053f170
 // Address: 0053f170
-undefined4 FUN_0053f170(CWeapon *param_1);
+int __cdecl CShotgun::fire(CShotgun *this_ptr);
 
-// Original: core_shotgun.cpp_FUN_0053f990
+// Original: core_shotgun.cpp_CShotgun_onFired_FUN_0053f990
 // Address: 0053f990
-void FUN_0053f990(int param_1);
+void __cdecl CShotgun::onFired(CShotgun *this_ptr);
 
-// Original: core_shotgun.cpp_FUN_0053fad0
+// Original: core_shotgun.cpp_CShotgun_getDamage_FUN_0053fad0
 // Address: 0053fad0
-undefined4 FUN_0053fad0(int param_1);
+float __cdecl CShotgun::getDamage(CShotgun *this_ptr);
 
-// Original: core_shotgun.cpp_FUN_0053fb10
+// Original: core_shotgun.cpp_CShotgun_renderAimBeam_FUN_0053fb10
 // Address: 0053fb10
-void FUN_0053fb10(int param_1);
+void __cdecl CShotgun::renderAimBeam(CShotgun *this_ptr);
 
 // Original: core_shotgun.cpp_CShotgun_dtor_FUN_0053fd70
 // Address: 0053fd70

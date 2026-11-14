@@ -51,16 +51,16 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[41]:
-;   core_batcreat.cpp_FUN_00411a10 at 00411c3a
-;   core_batman.cpp_FUN_00412f40 at 0041317b
-;   core_biggs.cpp_FUN_00414e50 at 0041502c
-;   core_boneguy.cpp_FUN_004186c0 at 00418cc3
-;   core_bride.cpp_FUN_0041dbe0 at 0041e706
-;   core_bugs.cpp_FUN_00420000 at 00420208
-;   core_bugs.cpp_FUN_004203a0 at 0042078d
-;   core_colonel.cpp_FUN_00435830 at 00435e18
-;   core_cow.cpp_FUN_004392b0 at 004394de
-;   core_doc.cpp_FUN_00450c60 at 00452bd8
+;   core_basicene.cpp_FUN_0059f0e0 at 0059f302
+;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 00411c3a
+;   core_batman.cpp_CBatman_process_FUN_00412f40 at 0041317b
+;   core_biggs.cpp_CBiggs_process_FUN_00414e50 at 0041502c
+;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 00418cc3
+;   core_bride.cpp_CBride_process_FUN_0041dbe0 at 0041e706
+;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_004203a0 at 0042078d
+;   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00420000 at 00420208
+;   core_colonel.cpp_CColonel_process_FUN_00435830 at 00435e18
+;   core_construc.cpp_CConstruct_process_FUN_00436e80 at 004374f4
 ;   ... and 31 more
 ;
 ; Referenced Globals:
@@ -291,7 +291,7 @@ section .text
     JNZ 0x00423d34                      ; 00423d22
         ;   XREF to: 00423d34 (CONDITIONAL_JUMP)  ; LAB_00423d34
     MOV EAX,[0x0061b5a8]                ; 00423d24 | g_CDemonSetPtr
-    MOV EAX,dword ptr [EAX + 0x14d144]  ; 00423d29 | g_CDemonSetInstance.field1364292_0x14d144
+    MOV EAX,dword ptr [EAX + 0x14d144]  ; 00423d29 | g_CDemonSetInstance.collision_actor
     MOV [0x007bdc98],EAX                ; 00423d2f | DAT_007bdc98
     IMUL EAX,dword ptr [ESP + 0xec],0x24 ; 00423d34
         ;   Label: LAB_00423d34
@@ -340,13 +340,13 @@ section .text
     FLD double ptr [ESP + 0x8]          ; 00423dc9
     MOV EAX,[0x0061b5a8]                ; 00423dcd | g_CDemonSetPtr
     FADD double ptr [0x005ccc96]        ; 00423dd2 | DAT_005ccc96
-    FLD float ptr [EAX + 0x14d128]      ; 00423dd8 | g_CDemonSetInstance.field1364264_0x14d128
+    FLD float ptr [EAX + 0x14d128]      ; 00423dd8 | g_CDemonSetInstance.collision_normal.x
     FXCH                                ; 00423dde
     FSTP float ptr [ESP + 0xb8]         ; 00423de0
     FMUL float ptr [ESP + 0xb8]         ; 00423de7
-    FLD float ptr [EAX + 0x14d12c]      ; 00423dee | g_CDemonSetInstance.field1364268_0x14d12c
+    FLD float ptr [EAX + 0x14d12c]      ; 00423dee | g_CDemonSetInstance.collision_normal.y
     FMUL float ptr [ESP + 0xb8]         ; 00423df4
-    FLD float ptr [EAX + 0x14d130]      ; 00423dfb | g_CDemonSetInstance.field1364272_0x14d130
+    FLD float ptr [EAX + 0x14d130]      ; 00423dfb | g_CDemonSetInstance.collision_normal.z
     FMUL float ptr [ESP + 0xb8]         ; 00423e01
     LEA EDI,[ESP + 0x94]                ; 00423e08
     LEA ESI,[ESP + 0x1c]                ; 00423e0f
@@ -424,7 +424,7 @@ section .text
     MOV EDX,dword ptr [EAX + 0x4]       ; 00423f20
     MOV dword ptr [EAX],EDX             ; 00423f23
     MOV EAX,[0x00616494]                ; 00423f25 | g_CGamePtr
-    FLD float ptr [EAX + 0x284]         ; 00423f2a | g_CGameInstance.field644_0x284
+    FLD float ptr [EAX + 0x284]         ; 00423f2a | g_CGameInstance.delta_time_float
     FLD float ptr [EBX + 0x24]          ; 00423f30
     FSUB float ptr [ESP + 0x44]         ; 00423f33
     FDIVRP                              ; 00423f37
@@ -629,9 +629,9 @@ section .text
     LEA EAX,[ESP + 0x4c]                ; 00424191
     LEA ESI,[ESI + 0x14d128]            ; 00424195
     PUSH EAX                            ; 0042419b
-    MOVSD ES:EDI,ESI                    ; 0042419c | g_CDemonSetInstance.field1364264_0x14d128
-    MOVSD ES:EDI,ESI                    ; 0042419d | g_CDemonSetInstance.field1364268_0x14d12c
-    MOVSD ES:EDI,ESI                    ; 0042419e | g_CDemonSetInstance.field1364272_0x14d130
+    MOVSD ES:EDI,ESI                    ; 0042419c | g_CDemonSetInstance.collision_normal.x
+    MOVSD ES:EDI,ESI                    ; 0042419d | g_CDemonSetInstance.collision_normal.y
+    MOVSD ES:EDI,ESI                    ; 0042419e | g_CDemonSetInstance.collision_normal.z
     PUSH dword ptr [EBX + 0x3430]       ; 0042419f
     MOV EDX,dword ptr [EBX + 0x2b0]     ; 004241a5
     PUSH EBX                            ; 004241ab

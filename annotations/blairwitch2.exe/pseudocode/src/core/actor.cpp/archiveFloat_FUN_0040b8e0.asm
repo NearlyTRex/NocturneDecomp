@@ -1,22 +1,25 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_archiveFloat_FUN_0040b8e0(float *param_1,char *param_2)
+; void __cdecl core_actor_cpp_archiveFloat_FUN_0040b8e0(float *float_ptr,char *property_name)
 ;
+; Parameters:
+; float *          Stack[0x4]:4   float_ptr
+; char *           Stack[0x8]:4   property_name
 ; Local Variables:
 ; undefined8       Stack[-0x10]:8  local_10
 ;
 ; XREF[73]:
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040c330 at 0040c37d
-;   core_ammobox.cpp_FUN_0040e860 at 0040e8c7
-;   core_anvil.cpp_FUN_0040ecc0 at 0040ed02
-;   core_armour.cpp_FUN_0040f040 at 0040f05b
-;   core_bat.cpp_FUN_00411110 at 0041113e
-;   core_batcreat.cpp_FUN_004124a0 at 004124bb
-;   core_batman.cpp_FUN_00413e60 at 00413e7b
-;   core_battery.cpp_FUN_004148b0 at 004148de
-;   core_beast.cpp_FUN_00414b10 at 00414b2b
-;   core_biggs.cpp_FUN_00415250 at 0041526b
+;   core_ammobox.cpp_CAmmoBox_archive_FUN_0040e860 at 0040e8c7
+;   core_anvil.cpp_CAnvil_archive_FUN_0040ecc0 at 0040ed02
+;   core_armour.cpp_CArmour_archive_FUN_0040f040 at 0040f05b
+;   core_basicene.cpp_CBasicEnemy_archive_FUN_0059fc10 at 0059fc3c
+;   core_bat.cpp_CBat_archive_FUN_00411110 at 0041113e
+;   core_batcreat.cpp_CBatCreature_archive_FUN_004124a0 at 004124bb
+;   core_batman.cpp_CBatman_archive_FUN_00413e60 at 00413e7b
+;   core_battery.cpp_CBattery_archive_FUN_004148b0 at 004148de
+;   core_beast.cpp_CBeast_archive_FUN_00414b10 at 00414b2b
 ;   ... and 63 more
 ;
 ; Referenced Globals:
@@ -49,7 +52,7 @@ section .text
     MOV EBX,dword ptr [0x007bc034]      ; 0040b8f5 | DAT_007bc034
     PUSH EBX                            ; 0040b8fb
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0040b8fc
-        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
+        ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005b8100(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0040b901
     CMP EAX,0x1                         ; 0040b904
     JNZ 0x0040b91e                      ; 0040b907

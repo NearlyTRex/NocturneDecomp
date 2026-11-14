@@ -11,12 +11,12 @@
 ; float            Stack[0x14]:4   decay
 ;
 ; XREF[6]:
-;   core_drip.cpp_FUN_0046d110 at 0046d2be
+;   core_drip.cpp_CDrip_process_FUN_0046d110 at 0046d2be
 ;   core_event.cpp_FUN_00489670 at 0048d871
+;   core_fire.cpp_CExplosion_activate_FUN_00498d30 at 00498d77
 ;   core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_0049e760 at 0049e7da
 ;   core_fire.cpp_CFireEffect_createLightningBolt_FUN_0049e6e0 at 0049e756
-;   core_fire.cpp_FUN_004964c0 at 00496532
-;   core_fire.cpp_FUN_00498d30 at 00498d77
+;   core_fire.cpp_CFireball_onCollision_FUN_004964c0 at 00496532
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00443570

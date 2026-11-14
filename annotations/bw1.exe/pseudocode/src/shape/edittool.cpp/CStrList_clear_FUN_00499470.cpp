@@ -13,23 +13,23 @@ void __cdecl shape_edittool_cpp_CStrList_clear_FUN_00499470(CStrList *this_ptr)
   int iVar2;
   int iVar3;
   
-  if (*(int *)&this_ptr->field_0x8 != 0) {
+  if (this_ptr->data_array != (char **)0x0) {
     iVar2 = 0;
-    if (0 < *(int *)this_ptr) {
+    if (0 < this_ptr->item_count) {
       iVar3 = 0;
       do {
-        iVar1 = *(int *)(*(int *)&this_ptr->field_0x8 + iVar3);
+        iVar1 = *(int *)((int)this_ptr->data_array + iVar3);
         if (iVar1 != 0) {
           FUN_005c09f0(iVar1);
         }
         iVar2 = iVar2 + 1;
         iVar3 = iVar3 + 4;
-      } while (iVar2 < *(int *)this_ptr);
+      } while (iVar2 < this_ptr->item_count);
     }
-    FUN_005c09f0(*(uint *)&this_ptr->field_0x8);
+    FUN_005c09f0(this_ptr->data_array);
   }
-  *(uint *)&this_ptr->field_0x8 = 0;
-  *(uint *)&this_ptr->field_0x4 = 0;
-  *(uint *)this_ptr = 0;
+  this_ptr->data_array = (char **)0x0;
+  this_ptr->capacity = 0;
+  this_ptr->item_count = 0;
   return;
 }

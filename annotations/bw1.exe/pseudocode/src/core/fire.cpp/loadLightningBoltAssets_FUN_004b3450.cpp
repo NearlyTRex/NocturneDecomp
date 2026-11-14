@@ -14,7 +14,7 @@ void __cdecl core_fire_cpp_loadLightningBoltAssets_FUN_004b3450(void)
   texture = (SMRGLTextureBasic *)&DAT_0061caac;
   do {
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00(DAT_00612560,texture);
-    texture = texture + 0x18;
+    texture = texture + 1;
   } while (texture != (SMRGLTextureBasic *)&DAT_0061cb3c);
   return;
 }

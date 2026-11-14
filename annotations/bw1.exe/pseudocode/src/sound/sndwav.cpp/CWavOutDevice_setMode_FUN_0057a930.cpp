@@ -12,61 +12,67 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_0057a930(CWavOutDevice *t
 
 {
   int iVar1;
-  HGLOBAL pvVar2;
-  LPVOID pvVar3;
-  MMRESULT MVar4;
-  int iVar5;
-  float10 fVar6;
-  byte auStack_24 [20];
+  float fVar2;
+  HGLOBAL pvVar3;
+  LPVOID pvVar4;
+  MMRESULT MVar5;
+  int iVar6;
+  float10 fVar7;
+  uint *in_stack_00000018;
+  WORD WStack_20;
+  WORD WStack_1e;
+  int *piStack_1c;
+  DWORD DStack_18;
+  ushort uStack_14;
+  WORD WStack_12;
   
-  iVar1 = (*(code *)**(uint **)this_ptr)(this_ptr);
+  iVar1 = (*((this_ptr->base).vtable)->close)(&this_ptr->base);
   if (iVar1 == 0) {
     return 0;
   }
-  _DAT_02c828c4 = bits_per_sample;
-  _DAT_02c828c8 = channels;
+  _DAT_02c828c4 = channels;
+  _DAT_02c828c8 = sample_rate;
   _DAT_02c828d4 = 4;
-  _DAT_02c828cc = sample_rate;
-  auStack_24._16_4_ = sound_sndmain_cpp_getMaxSwLatency_FUN_00576030();
-  fVar6 = ((float10)(int)_DAT_02c828cc * (float10)(float)auStack_24._16_4_) / (float10)_DAT_02c828d4
-  ;
+  _DAT_02c828cc = out_buffer_size;
+  fVar2 = sound_sndmain_cpp_getMaxSwLatency_FUN_00576030();
+  fVar7 = ((float10)(int)_DAT_02c828cc * (float10)fVar2) / (float10)_DAT_02c828d4;
   round();
-  _DAT_02c828d0 = (uint)ROUND(fVar6);
+  _DAT_02c828d0 = (uint)ROUND(fVar7);
   iVar1 = 0;
   _DAT_02c828d0 = _DAT_02c828d0 + 0xf & 0xfffffff0;
   if (0 < _DAT_02c828d4) {
-    iVar5 = 0;
+    iVar6 = 0;
     do {
-      pvVar2 = GlobalAlloc(0x2002,((int)((_DAT_02c828c4 + ((int)_DAT_02c828c4 >> 0x1f) * -8) -
+      pvVar3 = GlobalAlloc(0x2002,((int)((_DAT_02c828c4 + ((int)_DAT_02c828c4 >> 0x1f) * -8) -
                                         (uint)(((int)_DAT_02c828c4 >> 0x1f) << 2 < 0)) >> 3) *
                                   _DAT_02c828d0 * _DAT_02c828c8);
-      *(HGLOBAL *)(iVar5 + 0x2c82884) = pvVar2;
-      if (pvVar2 == (HGLOBAL)0x0) goto LAB_0057aadc;
-      pvVar3 = GlobalLock(pvVar2);
-      *(LPVOID *)(iVar5 + 0x2c828a4) = pvVar3;
-      if (pvVar3 == (LPVOID)0x0) goto LAB_0057aadc;
-      pvVar2 = GlobalAlloc(0x2002,0x20);
-      *(HGLOBAL *)(iVar5 + 0x2c82844) = pvVar2;
-      if (pvVar2 == (HGLOBAL)0x0) goto LAB_0057aadc;
+      *(HGLOBAL *)(iVar6 + 0x2c82884) = pvVar3;
+      if (pvVar3 == (HGLOBAL)0x0) goto LAB_0057aadc;
+      pvVar4 = GlobalLock(pvVar3);
+      *(LPVOID *)(iVar6 + 0x2c828a4) = pvVar4;
+      if (pvVar4 == (LPVOID)0x0) goto LAB_0057aadc;
+      pvVar3 = GlobalAlloc(0x2002,0x20);
+      *(HGLOBAL *)(iVar6 + 0x2c82844) = pvVar3;
+      if (pvVar3 == (HGLOBAL)0x0) goto LAB_0057aadc;
       iVar1 = iVar1 + 1;
-      pvVar3 = GlobalLock(*(HGLOBAL *)(iVar5 + 0x2c82844));
-      *(LPVOID *)(iVar5 + 0x2c82864) = pvVar3;
-      iVar5 = iVar5 + 4;
+      pvVar4 = GlobalLock(*(HGLOBAL *)(iVar6 + 0x2c82844));
+      *(LPVOID *)(iVar6 + 0x2c82864) = pvVar4;
+      iVar6 = iVar6 + 4;
     } while (iVar1 < _DAT_02c828d4);
   }
-  auStack_24._0_2_ = 1;
-  auStack_24._14_2_ = _DAT_02c828c4;
-  auStack_24._2_2_ = _DAT_02c828c8;
-  auStack_24._12_2_ = (short)((int)(_DAT_02c828c4 & 0xffff) >> 3) * _DAT_02c828c8;
-  auStack_24._4_4_ = _DAT_02c828cc;
-  auStack_24._8_4_ = _DAT_02c828cc * (ushort)auStack_24._12_2_;
-  MVar4 = waveOutOpen((LPHWAVEOUT)&DAT_02c82840,DAT_006235d4,(LPCWAVEFORMATEX)auStack_24,0,0,0);
-  if (MVar4 == 0) {
-    *out_buffer_size = _DAT_02c828d0;
+  WStack_20 = 1;
+  WStack_12 = _DAT_02c828c4;
+  WStack_1e = _DAT_02c828c8;
+  uStack_14 = (short)((int)(_DAT_02c828c4 & 0xffff) >> 3) * _DAT_02c828c8;
+  piStack_1c = _DAT_02c828cc;
+  DStack_18 = (int)_DAT_02c828cc * (uint)uStack_14;
+  MVar5 = waveOutOpen((LPHWAVEOUT)&DAT_02c82840,DAT_006235d4,(LPCWAVEFORMATEX)&WStack_20,0,0,0);
+  if (MVar5 == 0) {
+    *in_stack_00000018 = _DAT_02c828d0;
     return 1;
   }
-  sound_sndmain_cpp_FUN_005773f0("waveOutOpen failed");
+  sound_sndmain_cpp_logSoundError_FUN_005773f0("waveOutOpen failed");
 LAB_0057aadc:
-  (*(code *)**(uint **)this_ptr)(this_ptr);
+  (*((this_ptr->base).vtable)->close)(&this_ptr->base);
   return 0;
 }

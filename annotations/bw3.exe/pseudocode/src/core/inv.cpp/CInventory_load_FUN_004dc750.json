@@ -2,26 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 269,
-    "complexity_score": 227,
+    "complexity_score": 250,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 107,
-    "suspect_count": 10,
+    "pseudocode_lines": 105,
+    "suspect_count": 12,
     "suspect_types": [
+      "shadow_pointer_walk",
       "undefined_data",
       "unrolled_memcpy",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 376
+    "total_lines": 374
   },
   "cross_references": [
     {
       "addr": "004d27b0",
       "from_addr": "004d29fa",
-      "name": "core_hero.cpp_FUN_004d27b0",
+      "name": "core_hero.cpp_CHero_archive_FUN_004d27b0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -56,12 +57,12 @@
     {
       "addr": "004da440",
       "is_variadic": false,
-      "name": "core_inv.cpp_FUN_004da440"
+      "name": "core_inv.cpp_CInventory_clear_FUN_004da440"
     },
     {
       "addr": "004da4e0",
       "is_variadic": false,
-      "name": "core_inv.cpp_FUN_004da4e0"
+      "name": "core_inv.cpp_CInventory_initialize_FUN_004da4e0"
     },
     {
       "addr": "004dd2d0",
@@ -223,6 +224,32 @@
     },
     "pcode_op_count": 896
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004dc4b0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9467
+    },
+    "bw1.exe": {
+      "addr": "004f97a0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004ff400",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9977
+    },
+    "nocturne.exe": {
+      "addr": "004c1190",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9977
+    }
+  },
   "stack_frame": {
     "frame_size": 488,
     "local_size": 480,
@@ -292,39 +319,39 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 27,
       "match": "DAT_005c6497",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005c6497,this_ptr + 0x334);",
+      "text": "_fscanf(file_handle,&DAT_005c6497);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_005c649b",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005c649b);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 31,
-      "match": "DAT_005c649b",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005c649b,this_ptr + 0x10);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
       "match": "DAT_005c649f",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005c649f,&local_14);",
+      "text": "_fscanf(file_handle,&DAT_005c649f);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 34,
       "match": "DAT_005c64a3",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005c64a3,this_ptr);",
+      "text": "_fscanf(file_handle,&DAT_005c64a3);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 41,
       "match": "DAT_00600188",
       "severity": "mild",
       "text": "puVar8 = &DAT_00600188;",
@@ -332,7 +359,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 48,
       "match": "DAT_006001f0",
       "severity": "mild",
       "text": "puVar8 = &DAT_006001f0;",
@@ -340,7 +367,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 62,
+      "line": 60,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -348,7 +375,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 45,
+      "line": 43,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -356,11 +383,27 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 52,
+      "line": 50,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar6->owner`). Replace `pCVar6->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 77,
+      "match": "pCVar6 = (T *)&pCVar6->FIELD",
+      "severity": "moderate",
+      "text": "pCVar6 = (CInventory *)&pCVar6->owner;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar6->owner`). Replace `pCVar6->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 87,
+      "match": "pCVar6 = (T *)&pCVar6->FIELD",
+      "severity": "moderate",
+      "text": "pCVar6 = (CInventory *)&pCVar6->owner;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

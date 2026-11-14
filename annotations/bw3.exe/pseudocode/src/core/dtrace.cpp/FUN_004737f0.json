@@ -18,9 +18,9 @@
   },
   "cross_references": [
     {
-      "addr": "0047366e",
+      "addr": "00473670",
       "from_addr": "004736cb",
-      "name": "core_dtrace.cpp_FUN_0047366e",
+      "name": "core_dtrace.cpp_FUN_00473670",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -45,7 +45,7 @@
     {
       "addr": "005a40df",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a40df"
+      "name": "crt_memory.c_operator_new_array_FUN_005a40df"
     }
   ],
   "globals": [
@@ -68,7 +68,7 @@
       {
         "call_addr": "004736cb",
         "call_type": "direct",
-        "caller": "core_dtrace.cpp_FUN_0047366e",
+        "caller": "core_dtrace.cpp_FUN_00473670",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -111,6 +111,20 @@
     },
     "pcode_op_count": 206
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00472780",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0048ac70",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -141,7 +155,7 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar1 = FUN_005a40df(*(int *)(param_1 + 4) * 0x38);",
+      "text": "uVar1 = operator_new_array(*(int *)(param_1 + 4) * 0x38);",
       "type": "unnamed_param"
     },
     {
@@ -157,7 +171,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = FUN_005a40df(*(uint *)(param_1 + 4));",
+      "text": "iVar2 = operator_new_array(*(uint *)(param_1 + 4));",
       "type": "unnamed_param"
     },
     {

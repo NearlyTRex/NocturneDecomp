@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 246,
+    "complexity_score": 221,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 56,
-    "suspect_count": 16,
+    "suspect_count": 14,
     "suspect_types": [
+      "pointer_cast",
       "stack_alignment_array",
-      "suspicious_cast",
-      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
@@ -179,20 +178,12 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x150fec",
-      "severity": "mild",
-      "text": "for (; iStack_1c < *(int *)&g_CDemonSetPtr->field_0x150fec; iStack_1c = iStack_1c + 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 28,
-      "match": "field_0x150ff0",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(&g_CDemonSetPtr->field_0x150ff0 + iStack_20);",
-      "type": "unnamed_field"
+      "match": "(int *)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)g_CDemonSetPtr->enemies + iStack_20);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
@@ -249,14 +240,6 @@
       "severity": "mild",
       "text": "*param_2 = SQRT(*param_2);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00603b38 (at 0x00603b38, +16 bytes).",
-      "line": 28,
-      "match": "g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "iVar1 = *(int *)(&g_CDemonSetPtr->field_0x150ff0 + iStack_20);",
-      "type": "suspicious_cast"
     }
   ]
 }

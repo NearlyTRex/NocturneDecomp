@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CAsgaya * core_asgaya_cpp_CAsgaya_ctor_FUN_005a0a10(CAsgaya *this_ptr)
+; CAsgaya * __cdecl core_asgaya_cpp_CAsgaya_ctor_FUN_005a0a10(CAsgaya *this_ptr)
 ;
 ; Parameters:
 ; CAsgaya *        Stack[0x4]:4   this_ptr
@@ -10,10 +10,10 @@
 ;   core_asgaya.cpp_factoryFuncAsgaya_FUN_005a09e0 at 005a09f3
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040ce40
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_npc.cpp_CNPC_ctor_FUN_00508f40
 ;   core_path.cpp_CPathMap_ctor_FUN_0050acc0
-;   core_skeleton.cpp_FUN_0054eae0
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
     MOV dword ptr [EBX + 0x327c],0x3fcccccd ; 005a0a58
     PUSH 0x3f666666                     ; 005a0a62
     MOV dword ptr [EBX + 0x3280],0xc479c000 ; 005a0a67
-    CALL core_actor.cpp_FUN_0040ce40    ; 005a0a71
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 005a0a71
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x8],EAX       ; 005a0a76
     FLD float ptr [ESP + 0x8]           ; 005a0a7a
     ADD ESP,0x8                         ; 005a0a7e
@@ -49,8 +49,8 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 005a0a86
     PUSH EAX                            ; 005a0a8c
     FSTP float ptr [EBX + 0x33fac]      ; 005a0a8d
-    CALL core_skeleton.cpp_FUN_0054eae0 ; 005a0a93
-        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054eae0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 ; 005a0a93
+        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x27c0],0x0    ; 005a0a98
     MOV dword ptr [EBX + 0x33fa4],0x0   ; 005a0aa2
     MOV dword ptr [EBX + 0x33fa8],0x0   ; 005a0aac

@@ -30,13 +30,13 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 0059a0d3
     PUSH EAX                            ; 0059a0d9
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770 ; 0059a0da
-        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770()
+        ;   XREF to: 0040b770 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770(CKeyFramedModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 0059a0df
     PUSH 0x5f8015                       ; 0059a0e2 | = "wolfInTrap"
     LEA EAX,[EBX + 0x2d8]               ; 0059a0e7
     PUSH EAX                            ; 0059a0ed
     CALL core_actor.cpp_archiveActor_FUN_0040b6f0 ; 0059a0ee
-        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040b6f0()
+        ;   XREF to: 0040b6f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveActor_FUN_0040b6f0(CDemonActor * * actor_ptr, char * property_name)
     ADD ESP,0x8                         ; 0059a0f3
     POP EBX                             ; 0059a0f6
     RET                                 ; 0059a0f7

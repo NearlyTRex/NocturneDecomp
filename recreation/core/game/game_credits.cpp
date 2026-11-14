@@ -1,5 +1,6 @@
 #include "common/text/textlines.h"
 #include "core/dfont/dfont.h"
+#include "core/frontend.h"
 #include "core/game/game.h"
 #include "core/sound/sound.h"
 #include "engine/2d/2d.h"
@@ -11,6 +12,7 @@
 #include "engine/package/gamecontent.h"
 #include "engine/screendevice.h"
 #include "engine/special/special.h"
+#include "platform/display.h"
 #include "sound/sndmain/sfxoptions.h"
 #include "sound/sndmain/sndmain.h"
 
@@ -48,11 +50,12 @@ constexpr std::string_view kEndLine = "end";
 constexpr char kMarker = '\\';
 constexpr char kHeadingMarker = 'b';
 
-// The credits with their first line at `top`, those on the image and above its foot, centred
-// between the column's left and `right`.
+// The credits with their first line at layout row `top`, those on the image and above its foot,
+// centred between the column's left and the screen's `right`, as large as the layout shows them.
 void drawCredits(engine::CBitFont &font, std::span<const std::string_view> lines, int top,
-                 int right) {
+                 const SFrontEndLayout &layout, int right) {
     const int line_height = font.getCharHeight(kLineHeightChar);
+    const int left = layout.getX(kColumnLeft);
     int y = top;
     for (std::string_view line : lines) {
         int color = kTextColor;
@@ -63,7 +66,9 @@ void drawCredits(engine::CBitFont &font, std::span<const std::string_view> lines
             line.remove_prefix(std::min<std::size_t>(2, line.size()));
         }
         if (y >= 0 && y < kImageBottom - line_height) {
-            font.drawTextCenterInBounds(kColumnLeft, right, y, color, kShadowColor, line);
+            const int width = font.getTextWidthScaled(line, layout.scale);
+            font.drawTextScaled(line, ((left + right) / 2) - (width / 2), layout.getY(y), color,
+                                kShadowColor, layout.scale);
         }
         y += line_height;
     }
@@ -72,8 +77,9 @@ void drawCredits(engine::CBitFont &font, std::span<const std::string_view> lines
 } // namespace
 
 // The original kept at most 1024 lines of 254 characters, and ended on Escape held rather than
-// on Cancel. On a front end wider than the image, the image keeps to the left and the column
-// and its strips run on over the black to the screen's right edge.
+// on Cancel. The image is the front end's layout, scaled and centred up and down but kept to the
+// left, so on a wider screen its text column, over the image's black right side, runs on to the
+// screen's right edge with its strips; the strips also cover the screen's top and foot.
 // nocedit 0x004e4010
 void CGame::rollCredits() {
     const std::optional<engine::SGameCredits> &credits = owners_.content.credits;
@@ -81,7 +87,11 @@ void CGame::rollCredits() {
     if (!credits) {
         return;
     }
-    const int right = std::max(kImageWidth, owners_.screen.getWindowWidth()) - 1;
+    const engine::IScreenDevice &screen = owners_.screen;
+    SFrontEndLayout layout = getFrontEndLayout(screen.getWindowWidth(), screen.getWindowHeight());
+    layout.left = 0;
+    const int right = std::max(layout.getX(kImageWidth), screen.getWindowWidth()) - 1;
+    const int bottom = std::max(layout.getY(kImageHeight), screen.getWindowHeight()) - 1;
     owners_.two_d.clearInputAndWait();
     engine::CAlphaBitmap image(owners_.dosio, owners_.screen, owners_.special);
     image.load(credits->image, kImageWidth, kImageHeight);
@@ -114,13 +124,17 @@ void CGame::rollCredits() {
         // Redrawn only once the scroll reaches another row.
         if (top != drawn_top) {
             owners_.special.clearScreen();
-            image.display(0, 0, kFullAlpha);
-            drawCredits(font, lines, top, right);
+            displayInLayout(image, layout,
+                            {.x = 0, .y = 0, .width = kImageWidth, .height = kImageHeight},
+                            kFullAlpha, owners_.display.getUpscaler());
+            drawCredits(font, lines, top, layout, right);
             if (music != 0 && !sound_main.isSfxPlaying(music)) {
                 break;
             }
-            owners_.two_d.fillRectColor(kColumnLeft, 0, right, kTopStripBottom, kStripColor);
-            owners_.two_d.fillRectColor(kColumnLeft, kBottomStripTop, right, kImageBottom,
+            const int column_left = layout.getX(kColumnLeft);
+            owners_.two_d.fillRectColor(column_left, 0, right, layout.getY(kTopStripBottom),
+                                        kStripColor);
+            owners_.two_d.fillRectColor(column_left, layout.getY(kBottomStripTop), right, bottom,
                                         kStripColor);
             drawn_top = top;
         }

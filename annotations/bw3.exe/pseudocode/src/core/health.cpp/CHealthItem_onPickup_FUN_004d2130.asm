@@ -8,7 +8,7 @@
 ; CDemonActor *    Stack[0x8]:4   owner
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409d50
+;   core_actor.cpp_CDemonActor_onPickup_FUN_00409d50
 ;
 ; *****************************************************************************
 
@@ -19,8 +19,8 @@ section .text
     PUSH EDX                            ; 004d2134
     MOV ECX,dword ptr [ESP + 0x8]       ; 004d2135
     PUSH ECX                            ; 004d2139
-    CALL core_actor.cpp_FUN_00409d50    ; 004d213a
-        ;   XREF to: 00409d50 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_00409d50(CDemonActor * this_ptr, CDemonActor * owner)
+    CALL core_actor.cpp_CDemonActor_onPickup_FUN_00409d50 ; 004d213a
+        ;   XREF to: 00409d50 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_onPickup_FUN_00409d50(CDemonActor * this_ptr, CDemonActor * owner)
     ADD ESP,0x8                         ; 004d213f
     RET                                 ; 004d2142
 

@@ -4,13 +4,24 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBoxActor.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CDemonLight.h"
+#include "types/classes/CVector3f.h"
+#include "types/enums/ELightActorType.h"
+#include "types/unions/UOrientationVector.h"
 
 // Structure: CLightActor
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x37e4 (14308 bytes)
 #pragma pack(push, 1)
 typedef struct CLightActor {
-    char field_0[14308]; // 0x0
+    CBoxActor base; // 0x0
+    ELightActorType light_actor_type; // 0x7d4
+    CDemonLight light; // 0x7d8
+    CVector3f blight_pos; // 0x3788
+    UOrientationVector light_orient; // 0x3794
+    float flicker_timer; // 0x37a0
+    CDemonGlobe globe; // 0x37a4
 } CLightActor;
 #pragma pack(pop)
 

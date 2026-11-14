@@ -4,7 +4,8 @@
 Run it on a fresh install of a release the game doesn't know yet, before it is
 played, and send the output to be added to the catalogue: each POD's name, size
 and XXH3-128, which is how the recreation recognises the install, then every
-other file it shipped (executable, DLLs, loose data) by its path. --exclude
+other file it shipped (executable, DLLs, loose data) by its path. An INI is
+listed by its path alone, since the game rewrites it once played. --exclude
 leaves out what the installer wrote, such as Uninst.isu.
 
     python3 scripts/Python/catalog_release.py --id 1999-de-nocturne --name "Nocturne (1999, German)" --game nocturne /path/to/Nocturne
@@ -30,6 +31,8 @@ except ImportError:
 # The POD the game can't start without, where the release has it.
 STARTUP_POD = "STARTUP.POD"
 BLOCK_SIZE = 1 << 20
+# Files the game rewrites: a played install no longer matches their size or hash.
+REWRITTEN_SUFFIX = ".ini"
 ID_PATTERN = re.compile(r"[A-Za-z0-9._-]+")
 
 
@@ -68,7 +71,7 @@ def quote(text):
 
 
 def format_release(release_id, name, game, required, pods, files=()):
-    """pods and files are (name or path, size, hash) for each."""
+    """pods and files are (name or path, size, hash) for each; a file's size and hash may be None."""
     lines = ["[[release]]", f"id = {quote(release_id)}", f"name = {quote(name)}",
              f"game = {quote(game)}",
              "required = [" + ", ".join(quote(pod) for pod in required) + "]"]
@@ -76,13 +79,20 @@ def format_release(release_id, name, game, required, pods, files=()):
         lines += ["", "[[release.pod]]", f"name = {quote(pod_name)}", f"size = {size}",
                   f"xxh3 = {quote(digest)}"]
     for path, size, digest in files:
-        lines += ["", "[[release.file]]", f"path = {quote(path)}", f"size = {size}",
-                  f"xxh3 = {quote(digest)}"]
+        lines += ["", "[[release.file]]", f"path = {quote(path)}"]
+        if digest is not None:
+            lines += [f"size = {size}", f"xxh3 = {quote(digest)}"]
     return "\n".join(lines) + "\n"
 
 
 def describe(folder, paths):
     return [(path, os.path.getsize(os.path.join(folder, path)), hash_file(os.path.join(folder, path)))
+            for path in paths]
+
+
+def describe_loose(folder, paths):
+    """As describe, but a file the game rewrites has no size or hash."""
+    return [(path, None, None) if path.lower().endswith(REWRITTEN_SUFFIX) else describe(folder, [path])[0]
             for path in paths]
 
 
@@ -98,7 +108,7 @@ def catalog(folder, release_id, name, game, required_names=None, excluded=()):
             raise ValueError(f"{folder}: no {', '.join(missing)} here")
     required = [by_upper[n.upper()] for n in wanted if n.upper() in by_upper]
     files = find_loose_files(folder, pods, excluded)
-    return format_release(release_id, name, game, required, describe(folder, pods), describe(folder, files))
+    return format_release(release_id, name, game, required, describe(folder, pods), describe_loose(folder, files))
 
 
 def main(argv=None):

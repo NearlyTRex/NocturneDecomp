@@ -2,33 +2,31 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 176,
-    "complexity_score": 923,
+    "complexity_score": 166,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 38,
-    "suspect_count": 86,
+    "pseudocode_lines": 41,
+    "suspect_count": 11,
     "suspect_types": [
-      "bitcast_double_pair",
-      "param_count_too_few",
       "sub84_truncation",
-      "unnamed_param",
+      "unknown_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 214
+    "total_lines": 217
   },
   "cross_references": [
     {
-      "addr": "00478d70",
-      "from_addr": "00478e4a",
-      "name": "core_dtri.cpp_FUN_00478d70",
+      "addr": "004791a0",
+      "from_addr": "00479282",
+      "name": "core_dtri.cpp_clipPolygonToFar_FUN_004791a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004791a0",
-      "from_addr": "00479282",
-      "name": "core_dtri.cpp_FUN_004791a0",
+      "addr": "00478d70",
+      "from_addr": "00478e4a",
+      "name": "core_dtri.cpp_clipPolygonToRight_FUN_00478d70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -49,7 +47,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dtri.cpp_clipLineToPlane_FUN_00478900",
-    "signature": "void __cdecl core_dtri_cpp_clipLineToPlane_FUN_00478900(float *param_1,float *param_2,float *param_3,int param_4,uint param_5,int param_6,uint param_7,int param_8,uint param_9,double param_10)"
+    "signature": "void __cdecl core_dtri_cpp_clipLineToPlane_FUN_00478900(CVector3f *point1_ptr,CVector3f *point2_ptr,CVector3f *result_ptr,double plane_nx,double plane_ny,double plane_nz,double plane_d)"
   },
   "function_calls": [
     {
@@ -90,7 +88,7 @@
       {
         "call_addr": "00478e4a",
         "call_type": "direct",
-        "caller": "core_dtri.cpp_FUN_00478d70",
+        "caller": "core_dtri.cpp_clipPolygonToRight_FUN_00478d70",
         "estimated_params": 11,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -101,7 +99,7 @@
       {
         "call_addr": "00478ea8",
         "call_type": "direct",
-        "caller": "core_dtri.cpp_FUN_00478d70",
+        "caller": "core_dtri.cpp_clipPolygonToRight_FUN_00478d70",
         "estimated_params": 11,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -112,7 +110,7 @@
       {
         "call_addr": "00479282",
         "call_type": "direct",
-        "caller": "core_dtri.cpp_FUN_004791a0",
+        "caller": "core_dtri.cpp_clipPolygonToFar_FUN_004791a0",
         "estimated_params": 11,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -123,7 +121,7 @@
       {
         "call_addr": "004792de",
         "call_type": "direct",
-        "caller": "core_dtri.cpp_FUN_004791a0",
+        "caller": "core_dtri.cpp_clipPolygonToFar_FUN_004791a0",
         "estimated_params": 11,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -199,10 +197,10 @@
       }
     ],
     "confidence": "high",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "declared_params": 7,
+    "declared_stack_bytes": 44,
     "estimated_params": 11,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.496551724137931,
@@ -235,11 +233,37 @@
     },
     "pcode_op_count": 797
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00490df0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00479970",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0049b6c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0046d4e0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
-    "frame_size": 44,
+    "frame_size": 88,
     "local_size": 44,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 44,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -248,6 +272,55 @@
         "offset": -40,
         "size": 8,
         "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "point1_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "point2_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "result_ptr",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "plane_nx",
+        "offset": 16,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "plane_ny",
+        "offset": 24,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "plane_nz",
+        "offset": 32,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": true,
+        "name": "plane_d",
+        "offset": 40,
+        "size": 8,
+        "type": "double"
       }
     ]
   },
@@ -278,206 +351,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "void __cdecl core_dtri_cpp_clipLineToPlane_FUN_00478900(float *param_1,float *param_2,float *param_3,int param_4,uint param_5,int param_6,uint param_7,int param_8,uint param_9,double param_10)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "void __cdecl core_dtri_cpp_clipLineToPlane_FUN_00478900(float *param_1,float *param_2,float *param_3,int param_4,uint param_5,int param_6,uint param_7,int param_8,uint param_9,double param_10)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "void __cdecl core_dtri_cpp_clipLineToPlane_FUN_00478900(float *param_1,float *param_2,float *param_3,int param_4,uint param_5,int param_6,uint param_7,int param_8,uint param_9,double param_10)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "void __cdecl core_dtri_cpp_clipLineToPlane_FUN_00478900(float *param_1,float *param_2,float *param_3,int param_4,uint param_5,int param_6,uint param_7,int param_8,uint param_9,double param_10)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "void __cdecl core_dtri_cpp_clipLineToPlane_FUN_00478900(float *param_1,float *param_2,float *param_3,int param_4,uint param_5,int param_6,uint param_7,int param_8,uint param_9,double param_10)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "void __cdecl core_dtri_cpp_clipLineToPlane_FUN_00478900(float *param_1,float *param_2,float *param_3,int param_4,uint param_5,int param_6,uint param_7,int param_8,uint param_9,double param_10)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "void __cdecl core_dtri_cpp_clipLineToPlane_FUN_00478900(float *param_1,float *param_2,float *param_3,int param_4,uint param_5,int param_6,uint param_7,int param_8,uint param_9,double param_10)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "void __cdecl core_dtri_cpp_clipLineToPlane_FUN_00478900(float *param_1,float *param_2,float *param_3,int param_4,uint param_5,int param_6,uint param_7,int param_8,uint param_9,double param_10)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_9",
-      "severity": "mild",
-      "text": "void __cdecl core_dtri_cpp_clipLineToPlane_FUN_00478900(float *param_1,float *param_2,float *param_3,int param_4,uint param_5,int param_6,uint param_7,int param_8,uint param_9,double param_10)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_10",
-      "severity": "mild",
-      "text": "void __cdecl core_dtri_cpp_clipLineToPlane_FUN_00478900(float *param_1,float *param_2,float *param_3,int param_4,uint param_5,int param_6,uint param_7,int param_8,uint param_9,double param_10)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar2 = (param_2[2] - param_1[2]) * (float)__BITCAST_DOUBLE(CONCAT44(param_9,param_8)) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar2 = (param_2[2] - param_1[2]) * (float)__BITCAST_DOUBLE(CONCAT44(param_9,param_8)) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_9",
-      "severity": "mild",
-      "text": "fVar2 = (param_2[2] - param_1[2]) * (float)__BITCAST_DOUBLE(CONCAT44(param_9,param_8)) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "fVar2 = (param_2[2] - param_1[2]) * (float)__BITCAST_DOUBLE(CONCAT44(param_9,param_8)) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 11,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "fVar2 = (param_2[2] - param_1[2]) * (float)__BITCAST_DOUBLE(CONCAT44(param_9,param_8)) +",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(*param_2 - *param_1) * (float)__BITCAST_DOUBLE(CONCAT44(param_5,param_4)) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*param_2 - *param_1) * (float)__BITCAST_DOUBLE(CONCAT44(param_5,param_4)) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "(*param_2 - *param_1) * (float)__BITCAST_DOUBLE(CONCAT44(param_5,param_4)) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(*param_2 - *param_1) * (float)__BITCAST_DOUBLE(CONCAT44(param_5,param_4)) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 12,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "(*param_2 - *param_1) * (float)__BITCAST_DOUBLE(CONCAT44(param_5,param_4)) +",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(param_2[1] - param_1[1]) * (float)__BITCAST_DOUBLE(CONCAT44(param_7,param_6));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_2[1] - param_1[1]) * (float)__BITCAST_DOUBLE(CONCAT44(param_7,param_6));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "(param_2[1] - param_1[1]) * (float)__BITCAST_DOUBLE(CONCAT44(param_7,param_6));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "(param_2[1] - param_1[1]) * (float)__BITCAST_DOUBLE(CONCAT44(param_7,param_6));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 13,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "(param_2[1] - param_1[1]) * (float)__BITCAST_DOUBLE(CONCAT44(param_7,param_6));",
-      "type": "bitcast_double_pair"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 15,
       "match": "SUB84(",
@@ -486,479 +359,76 @@
       "type": "sub84_truncation"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar2 = -(param_1[2] * (float)__BITCAST_DOUBLE(CONCAT44(param_9,param_8)) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_9",
-      "severity": "mild",
-      "text": "fVar2 = -(param_1[2] * (float)__BITCAST_DOUBLE(CONCAT44(param_9,param_8)) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "fVar2 = -(param_1[2] * (float)__BITCAST_DOUBLE(CONCAT44(param_9,param_8)) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 21,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "fVar2 = -(param_1[2] * (float)__BITCAST_DOUBLE(CONCAT44(param_9,param_8)) +",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1[1] * (float)__BITCAST_DOUBLE(CONCAT44(param_7,param_6)) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "param_1[1] * (float)__BITCAST_DOUBLE(CONCAT44(param_7,param_6)) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "param_1[1] * (float)__BITCAST_DOUBLE(CONCAT44(param_7,param_6)) +",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 22,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "param_1[1] * (float)__BITCAST_DOUBLE(CONCAT44(param_7,param_6)) +",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "(float)__BITCAST_DOUBLE(CONCAT44(param_5,param_4)) * *param_1 + (float)param_10) / fVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(float)__BITCAST_DOUBLE(CONCAT44(param_5,param_4)) * *param_1 + (float)param_10) / fVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(float)__BITCAST_DOUBLE(CONCAT44(param_5,param_4)) * *param_1 + (float)param_10) / fVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_10",
-      "severity": "mild",
-      "text": "(float)__BITCAST_DOUBLE(CONCAT44(param_5,param_4)) * *param_1 + (float)param_10) / fVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 23,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "(float)__BITCAST_DOUBLE(CONCAT44(param_5,param_4)) * *param_1 + (float)param_10) / fVar2;",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*param_3 = (*param_2 - *param_1) * fVar2 + *param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*param_3 = (*param_2 - *param_1) * fVar2 + *param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_3 = (*param_2 - *param_1) * fVar2 + *param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*param_3 = (*param_2 - *param_1) * fVar2 + *param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3[1] = (param_2[1] - param_1[1]) * fVar2 + param_1[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_3[1] = (param_2[1] - param_1[1]) * fVar2 + param_1[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_3[1] = (param_2[1] - param_1[1]) * fVar2 + param_1[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_3[1] = (param_2[1] - param_1[1]) * fVar2 + param_1[1];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "param_3[2] = (param_2[2] - param_1[2]) * fVar2 + param_1[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_3[2] = (param_2[2] - param_1[2]) * fVar2 + param_1[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_3[2] = (param_2[2] - param_1[2]) * fVar2 + param_1[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_3[2] = (param_2[2] - param_1[2]) * fVar2 + param_1[2];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Unknown/mangled field access",
       "line": 27,
-      "match": "param_5",
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "if (((((param_5 & 0x7fffffff) != 0) || (param_4 != 0)) && ((param_7 & 0x7fffffff) == 0)) &&",
-      "type": "unnamed_param"
+      "text": "if ((((((ulonglong)plane_nx & 0x7fffffff00000000) != 0) || (plane_nx._0_4_ != 0)) &&",
+      "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "if (((((param_5 & 0x7fffffff) != 0) || (param_4 != 0)) && ((param_7 & 0x7fffffff) == 0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "if (((((param_5 & 0x7fffffff) != 0) || (param_4 != 0)) && ((param_7 & 0x7fffffff) == 0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "(((param_6 == 0 && ((param_9 & 0x7fffffff) == 0)) && (param_8 == 0)))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_9",
-      "severity": "mild",
-      "text": "(((param_6 == 0 && ((param_9 & 0x7fffffff) == 0)) && (param_8 == 0)))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "(((param_6 == 0 && ((param_9 & 0x7fffffff) == 0)) && (param_8 == 0)))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Unknown/mangled field access",
       "line": 29,
-      "match": "param_3",
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "*param_3 = (float)(-(float10)__BITCAST_DOUBLE(CONCAT44(param_5,param_4)) * (float10)param_10);",
-      "type": "unnamed_param"
+      "text": "(((plane_ny._0_4_ == 0 && (((ulonglong)plane_nz & 0x7fffffff00000000) == 0)) &&",
+      "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_5",
+      "description": "Unknown/mangled field access",
+      "line": 30,
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "*param_3 = (float)(-(float10)__BITCAST_DOUBLE(CONCAT44(param_5,param_4)) * (float10)param_10);",
-      "type": "unnamed_param"
+      "text": "(plane_nz._0_4_ == 0)))) {",
+      "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "*param_3 = (float)(-(float10)__BITCAST_DOUBLE(CONCAT44(param_5,param_4)) * (float10)param_10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_10",
-      "severity": "mild",
-      "text": "*param_3 = (float)(-(float10)__BITCAST_DOUBLE(CONCAT44(param_5,param_4)) * (float10)param_10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 29,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "*param_3 = (float)(-(float10)__BITCAST_DOUBLE(CONCAT44(param_5,param_4)) * (float10)param_10);",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if ((((param_5 & 0x7fffffff) == 0) && (param_4 == 0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "if ((((param_5 & 0x7fffffff) == 0) && (param_4 == 0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "((((param_7 & 0x7fffffff) != 0 || (param_6 != 0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "((((param_7 & 0x7fffffff) != 0 || (param_6 != 0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Unknown/mangled field access",
       "line": 33,
-      "match": "param_9",
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "(((param_9 & 0x7fffffff) == 0 && (param_8 == 0)))))) {",
-      "type": "unnamed_param"
+      "text": "if (((((ulonglong)plane_nx & 0x7fffffff00000000) == 0) && (plane_nx._0_4_ == 0)) &&",
+      "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 33,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "(((param_9 & 0x7fffffff) == 0 && (param_8 == 0)))))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Unknown/mangled field access",
       "line": 34,
-      "match": "param_3",
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "param_3[1] = (float)(-(float10)__BITCAST_DOUBLE(CONCAT44(param_7,param_6)) * (float10)param_10);",
-      "type": "unnamed_param"
+      "text": "(((((ulonglong)plane_ny & 0x7fffffff00000000) != 0 || (plane_ny._0_4_ != 0)) &&",
+      "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_7",
+      "description": "Unknown/mangled field access",
+      "line": 35,
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "param_3[1] = (float)(-(float10)__BITCAST_DOUBLE(CONCAT44(param_7,param_6)) * (float10)param_10);",
-      "type": "unnamed_param"
+      "text": "((((ulonglong)plane_nz & 0x7fffffff00000000) == 0 && (plane_nz._0_4_ == 0)))))) {",
+      "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "param_3[1] = (float)(-(float10)__BITCAST_DOUBLE(CONCAT44(param_7,param_6)) * (float10)param_10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_10",
-      "severity": "mild",
-      "text": "param_3[1] = (float)(-(float10)__BITCAST_DOUBLE(CONCAT44(param_7,param_6)) * (float10)param_10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 34,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "param_3[1] = (float)(-(float10)__BITCAST_DOUBLE(CONCAT44(param_7,param_6)) * (float10)param_10);",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if ((((((param_5 & 0x7fffffff) == 0) && (param_4 == 0)) && ((param_7 & 0x7fffffff) == 0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "if ((((((param_5 & 0x7fffffff) == 0) && (param_4 == 0)) && ((param_7 & 0x7fffffff) == 0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_7",
-      "severity": "mild",
-      "text": "if ((((((param_5 & 0x7fffffff) == 0) && (param_4 == 0)) && ((param_7 & 0x7fffffff) == 0)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "(param_6 == 0)) && (((param_9 & 0x7fffffff) != 0 || (param_8 != 0)))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_9",
-      "severity": "mild",
-      "text": "(param_6 == 0)) && (((param_9 & 0x7fffffff) != 0 || (param_8 != 0)))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "(param_6 == 0)) && (((param_9 & 0x7fffffff) != 0 || (param_8 != 0)))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Unknown/mangled field access",
       "line": 38,
-      "match": "param_3",
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "param_3[2] = (float)(-(float10)__BITCAST_DOUBLE(CONCAT44(param_9,param_8)) * (float10)param_10);",
-      "type": "unnamed_param"
+      "text": "if (((((((ulonglong)plane_nx & 0x7fffffff00000000) == 0) && (plane_nx._0_4_ == 0)) &&",
+      "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_9",
+      "description": "Unknown/mangled field access",
+      "line": 39,
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "param_3[2] = (float)(-(float10)__BITCAST_DOUBLE(CONCAT44(param_9,param_8)) * (float10)param_10);",
-      "type": "unnamed_param"
+      "text": "(((ulonglong)plane_ny & 0x7fffffff00000000) == 0)) && (plane_ny._0_4_ == 0)) &&",
+      "type": "unknown_field"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_8",
+      "description": "Unknown/mangled field access",
+      "line": 40,
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "param_3[2] = (float)(-(float10)__BITCAST_DOUBLE(CONCAT44(param_9,param_8)) * (float10)param_10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_10",
-      "severity": "mild",
-      "text": "param_3[2] = (float)(-(float10)__BITCAST_DOUBLE(CONCAT44(param_9,param_8)) * (float10)param_10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 38,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "param_3[2] = (float)(-(float10)__BITCAST_DOUBLE(CONCAT44(param_9,param_8)) * (float10)param_10);",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "call_site_count": 16,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 11,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:11",
-      "param_delta": 11,
-      "text": "Function declares 0 params but call sites push 11 (11 missing)",
-      "type": "param_count_too_few"
+      "text": "((((ulonglong)plane_nz & 0x7fffffff00000000) != 0 || (plane_nz._0_4_ != 0)))) {",
+      "type": "unknown_field"
     }
   ]
 }

@@ -2,71 +2,69 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 49,
+    "complexity_score": 14,
     "cross_reference_count": 9,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 14,
-    "suspect_count": 3,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 43
   },
   "cross_references": [
     {
       "addr": "00409f60",
       "from_addr": "0040ab4d",
-      "name": "core_actor.cpp_FUN_00409f60",
+      "name": "core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00486d40",
       "from_addr": "004874f3",
-      "name": "core_elephant.cpp_FUN_00486d40",
+      "name": "core_elephant.cpp_CElephantGun_fire_FUN_00486d40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0048b020",
       "from_addr": "0048b4e4",
-      "name": "core_exorcism.cpp_FUN_0048b020",
+      "name": "core_exorcism.cpp_CExorcism_fire_FUN_0048b020",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0049df60",
       "from_addr": "0049e15d",
-      "name": "core_fire.cpp_FUN_0049df60",
+      "name": "core_fire.cpp_CGunFlame_burnNearby_FUN_0049df60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004a7160",
       "from_addr": "004a7191",
-      "name": "core_flamecan.cpp_FUN_004a7160",
+      "name": "core_flamecan.cpp_CFlameCan_process_FUN_004a7160",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d0fc0",
       "from_addr": "004d150f",
-      "name": "core_gun.cpp_FUN_004d0fc0",
+      "name": "core_gun.cpp_CGun_fire_FUN_004d0fc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00527d70",
       "from_addr": "00528407",
-      "name": "core_rifle.cpp_FUN_00527d70",
+      "name": "core_rifle.cpp_CRifle_fire_FUN_00527d70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005353e0",
       "from_addr": "00535826",
-      "name": "core_set.cpp_FUN_005353e0",
+      "name": "core_set.cpp_CDemonSet_processActors_FUN_005353e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0056b410",
       "from_addr": "0056b9a6",
-      "name": "core_tommygun.cpp_FUN_0056b410",
+      "name": "core_tommygun.cpp_CTommyGun_fire_FUN_0056b410",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -103,7 +101,7 @@
       {
         "call_addr": "0049e15d",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049df60",
+        "caller": "core_fire.cpp_CGunFlame_burnNearby_FUN_0049df60",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -114,7 +112,7 @@
       {
         "call_addr": "00535826",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_005353e0",
+        "caller": "core_set.cpp_CDemonSet_processActors_FUN_005353e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -125,7 +123,7 @@
       {
         "call_addr": "0040ab4d",
         "call_type": "direct",
-        "caller": "core_actor.cpp_FUN_00409f60",
+        "caller": "core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f60",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -136,7 +134,7 @@
       {
         "call_addr": "004874f3",
         "call_type": "direct",
-        "caller": "core_elephant.cpp_FUN_00486d40",
+        "caller": "core_elephant.cpp_CElephantGun_fire_FUN_00486d40",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -147,7 +145,7 @@
       {
         "call_addr": "0048b4e4",
         "call_type": "direct",
-        "caller": "core_exorcism.cpp_FUN_0048b020",
+        "caller": "core_exorcism.cpp_CExorcism_fire_FUN_0048b020",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -158,7 +156,7 @@
       {
         "call_addr": "004d150f",
         "call_type": "direct",
-        "caller": "core_gun.cpp_FUN_004d0fc0",
+        "caller": "core_gun.cpp_CGun_fire_FUN_004d0fc0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -169,7 +167,7 @@
       {
         "call_addr": "00528407",
         "call_type": "direct",
-        "caller": "core_rifle.cpp_FUN_00527d70",
+        "caller": "core_rifle.cpp_CRifle_fire_FUN_00527d70",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -180,7 +178,7 @@
       {
         "call_addr": "0056b9a6",
         "call_type": "direct",
-        "caller": "core_tommygun.cpp_FUN_0056b410",
+        "caller": "core_tommygun.cpp_CTommyGun_fire_FUN_0056b410",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -191,7 +189,7 @@
       {
         "call_addr": "004a7191",
         "call_type": "direct",
-        "caller": "core_flamecan.cpp_FUN_004a7160",
+        "caller": "core_flamecan.cpp_CFlameCan_process_FUN_004a7160",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -231,6 +229,32 @@
     },
     "pcode_op_count": 98
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004a08d0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004b9180",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004cb340",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0048e550",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -247,30 +271,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x2d4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2d4 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x360",
-      "severity": "mild",
-      "text": "(0x01C73654,(CVector3f *)&this_ptr->field_0x360,(CVector3f *)0x0,0x4000,0x4000,0,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x4f4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x4f4 = 1;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

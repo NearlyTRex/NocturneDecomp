@@ -9,5 +9,5 @@
 CDemonActor * __cdecl core_crate_cpp_CCrate_getCarrier_FUN_00445d60(CCrate *this_ptr)
 
 {
-  return *(CDemonActor **)&this_ptr->field_0x2d4;
+  return this_ptr->carrier;
 }

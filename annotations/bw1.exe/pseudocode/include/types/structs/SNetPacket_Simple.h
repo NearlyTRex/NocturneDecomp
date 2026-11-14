@@ -11,7 +11,6 @@
 #pragma pack(push, 1)
 typedef struct SNetPacket_Simple {
     SNetPacketHeader header; // 0x0
-    char field_1[4]; // 0x1
     int value; // 0x5
 } SNetPacket_Simple;
 #pragma pack(pop)

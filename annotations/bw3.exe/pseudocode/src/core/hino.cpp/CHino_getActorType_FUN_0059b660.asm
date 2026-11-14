@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActorType * core_hino_cpp_CHino_getActorType_FUN_0059b660(CHino *this_ptr)
+; CDemonActorType * __cdecl core_hino_cpp_CHino_getActorType_FUN_0059b660(CHino *this_ptr)
 ;
 ; Parameters:
 ; CHino *          Stack[0x4]:4   this_ptr

@@ -11,19 +11,17 @@
 void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0046d960(CDemonRenderer *this_ptr,SMRGLPrimitiveQuad *primitive_array,int primitive_count,int primitive_stride,int render_flags)
 
 {
-  SMRGLPrimitiveQuad *pSVar1;
+  SMRGLHeaderPrimitive *pSVar1;
   int iVar2;
   int iVar3;
-  int local_28;
-  int local_24;
-  int local_20;
+  CVector3i local_28;
   int local_1c;
   int local_18;
   int local_14;
   
-  if (((*(int *)(this_ptr + 0x10) == 0) && (*(int *)(this_ptr + 0xc) == 0)) && (DAT_007303fc != 0))
-  {
-    if (*(int *)(this_ptr + 4) == 0) {
+  if (((this_ptr->face_capture_enabled == 0) && (this_ptr->plane_culling_enabled == 0)) &&
+     (DAT_007303fc != 0)) {
+    if (this_ptr->shadow_pass_active == 0) {
       if (DAT_005fba20 == 0x20) {
         _DAT_01c6b5cc = engine_special_cpp_FUN_00560f31;
       }
@@ -34,34 +32,29 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0046d960(CDem
       _DAT_01c6e2b8 = 6;
       if (_DAT_01c6cee8 == 0) {
         for (; 0 < primitive_count; primitive_count = primitive_count + -1) {
-          local_28 = *(int *)(primitive_array + 0x18);
-          local_24 = *(int *)(primitive_array + 0x24);
-          local_20 = *(int *)(primitive_array + 0x30);
-          if (*(int *)(primitive_array + 4) == 4) {
-            local_1c = *(int *)(primitive_array + 0x3c);
+          local_28.x = primitive_array->vertices[0].vertex_index;
+          local_28.y = primitive_array->vertices[1].vertex_index;
+          local_28.z = primitive_array->vertices[2].vertex_index;
+          if ((primitive_array->base).base.count == 4) {
+            local_1c = primitive_array->vertices[3].vertex_index;
           }
-          if (*(int *)(this_ptr + 0x20) == 0) {
-            *(uint *)(local_28 * 0x30 + *(int *)this_ptr + 0x18) =
-                 *(uint *)(primitive_array + 0x1c);
-            *(uint *)(*(int *)this_ptr + local_28 * 0x30 + 0x1c) =
-                 *(uint *)(primitive_array + 0x20);
-            *(uint *)(*(int *)this_ptr + local_24 * 0x30 + 0x18) =
-                 *(uint *)(primitive_array + 0x28);
-            *(uint *)(local_24 * 0x30 + *(int *)this_ptr + 0x1c) =
-                 *(uint *)(primitive_array + 0x2c);
-            *(uint *)(*(int *)this_ptr + local_20 * 0x30 + 0x18) =
-                 *(uint *)(primitive_array + 0x34);
-            *(uint *)(local_20 * 0x30 + *(int *)this_ptr + 0x1c) =
-                 *(uint *)(primitive_array + 0x38);
-            if (*(int *)(primitive_array + 4) == 4) {
-              *(uint *)(*(int *)this_ptr + local_1c * 0x30 + 0x18) =
-                   *(uint *)(primitive_array + 0x40);
-              *(uint *)(local_1c * 0x30 + *(int *)this_ptr + 0x1c) =
-                   *(uint *)(primitive_array + 0x44);
+          if (this_ptr->skip_uv_extraction == 0) {
+            this_ptr->vertex_buffer_ptr[local_28.x].u = primitive_array->vertices[0].texture_u;
+            this_ptr->vertex_buffer_ptr[local_28.x].v = primitive_array->vertices[0].texture_v;
+            this_ptr->vertex_buffer_ptr[local_28.y].u = primitive_array->vertices[1].texture_u;
+            this_ptr->vertex_buffer_ptr[local_28.y].v = primitive_array->vertices[1].texture_v;
+            this_ptr->vertex_buffer_ptr[local_28.z].u = primitive_array->vertices[2].texture_u;
+            this_ptr->vertex_buffer_ptr[local_28.z].v = primitive_array->vertices[2].texture_v;
+            if ((primitive_array->base).base.count == 4) {
+              this_ptr->vertex_buffer_ptr[local_1c].u = primitive_array->vertices[3].texture_u;
+              this_ptr->vertex_buffer_ptr[local_1c].v = primitive_array->vertices[3].texture_v;
             }
           }
-          unkafter_dpart_cpp_FUN_00466d50(&local_28,*(int *)(primitive_array + 4));
-          primitive_array = primitive_array + primitive_stride;
+          core_dpart_cpp_FUN_00466d50(&local_28.x,(primitive_array->base).base.count);
+          primitive_array =
+               (SMRGLPrimitiveQuad *)
+               ((int)&(((SMRGLPrimitiveQuad *)(primitive_array->vertices + -2))->base).base.type +
+               primitive_stride);
         }
       }
       else {
@@ -70,7 +63,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0046d960(CDem
         if (0 < primitive_count) {
           local_18 = 0;
           do {
-            iVar2 = engine_prim_c_FUN_00515b80((SMRGLPrimitiveTriangle *)primitive_array);
+            iVar2 = engine_prim_c_calculateTriangleWindingOrderFromIndices_FUN_00515b80
+                              ((SMRGLPrimitiveTriangle *)primitive_array);
             if (iVar2 != 0) {
               iVar3 = iVar3 + 1;
               iVar2 = local_18 + 4;
@@ -83,12 +77,16 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0046d960(CDem
               }
             }
             local_14 = local_14 + 1;
-            primitive_array = primitive_array + primitive_stride;
+            primitive_array =
+                 (SMRGLPrimitiveQuad *)
+                 ((int)&(((SMRGLPrimitiveTriangle *)(primitive_array->vertices + -2))->base).base.
+                        type + primitive_stride);
           } while (local_14 < primitive_count);
         }
         if (0 < iVar3) {
           engine_special_cpp_drawPolyList_FUN_00565c70
-                    (*(uint *)this_ptr,&DAT_005f2b04,iVar3,_DAT_01c6e2b4);
+                    (this_ptr->vertex_buffer_ptr,(SMRGLPrimitiveQuad **)&DAT_005f2b04,iVar3,
+                     _DAT_01c6e2b4);
           return;
         }
       }
@@ -98,15 +96,18 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0046d960(CDem
       _DAT_01c6e2b4 = 0;
       _DAT_01c6e2b8 = _DAT_01c6e2b4;
       for (; 0 < primitive_count; primitive_count = primitive_count + -1) {
-        local_28 = *(int *)(primitive_array + 0x18);
-        local_24 = *(int *)(primitive_array + 0x24);
-        local_20 = *(int *)(primitive_array + 0x30);
-        if (*(int *)(primitive_array + 4) == 4) {
-          local_1c = *(int *)(primitive_array + 0x3c);
+        local_28.x = primitive_array->vertices[0].vertex_index;
+        local_28.y = primitive_array->vertices[1].vertex_index;
+        local_28.z = primitive_array->vertices[2].vertex_index;
+        if ((primitive_array->base).base.count == 4) {
+          local_1c = primitive_array->vertices[3].vertex_index;
         }
-        pSVar1 = primitive_array + 4;
-        primitive_array = primitive_array + primitive_stride;
-        unkafter_dpart_cpp_FUN_004673d0((CVector3i *)&local_28,*(int *)pSVar1);
+        pSVar1 = &primitive_array->base;
+        primitive_array =
+             (SMRGLPrimitiveQuad *)
+             ((int)&(((SMRGLPrimitiveQuad *)(primitive_array->vertices + -2))->base).base.type +
+             primitive_stride);
+        core_dpart_cpp_FUN_004673d0(&local_28,(pSVar1->base).count);
       }
     }
   }
@@ -117,7 +118,10 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0046d960(CDem
         engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_0046b8f0
                   (this_ptr,(SMRGLPrimitivePoly *)primitive_array,render_flags);
         iVar3 = iVar3 + 1;
-        primitive_array = primitive_array + primitive_stride;
+        primitive_array =
+             (SMRGLPrimitiveQuad *)
+             ((int)&(((SMRGLPrimitivePoly *)(((SMRGLPrimitivePoly *)primitive_array)->vertices + -2)
+                     )->base).base.type + primitive_stride);
       } while (iVar3 < primitive_count);
     }
   }

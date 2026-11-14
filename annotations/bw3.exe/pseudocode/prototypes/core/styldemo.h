@@ -7,64 +7,64 @@
 
 // Original: core_styldemo.cpp_staticInit_FUN_0059e010
 // Address: 0059e010
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_styldemo.cpp_factoryFuncStylerDemon_FUN_0059e040
 // Address: 0059e040
-void factoryFuncStylerDemon(void);
+CStylerDemon * __cdecl factoryFuncStylerDemon(void);
 
 // Original: core_styldemo.cpp_CStylerDemon_getActorType_FUN_0059e060
 // Address: 0059e060
-CDemonActorType * CStylerDemon::getActorType(CStylerDemon *this_ptr);
+CDemonActorType * __cdecl CStylerDemon::getActorType(CStylerDemon *this_ptr);
 
 // Original: core_styldemo.cpp_CStylerDemon_ctor_FUN_0059e070
 // Address: 0059e070
-CStylerDemon * CStylerDemon::ctor(CStylerDemon *this_ptr);
+CStylerDemon * __cdecl CStylerDemon::ctor(CStylerDemon *this_ptr);
 
-// Original: core_styldemo.cpp_FUN_0059e130
+// Original: core_styldemo.cpp_CStylerDemon_setup_FUN_0059e130
 // Address: 0059e130
-void FUN_0059e130(CEnemy *param_1);
+void __cdecl CStylerDemon::setup(CStylerDemon *this_ptr);
 
-// Original: core_styldemo.cpp_FUN_0059e600
+// Original: core_styldemo.cpp_CStylerDemon_process_FUN_0059e600
 // Address: 0059e600
-void FUN_0059e600(CCharacter *param_1,float param_2);
+void __cdecl CStylerDemon::process(CStylerDemon *this_ptr,float delta_time);
 
-// Original: core_styldemo.cpp_FUN_005a0180
+// Original: core_styldemo.cpp_CStylerDemon_getDeathState_FUN_005a0180
 // Address: 005a0180
-undefined4 FUN_005a0180(int param_1);
+EDeathState __cdecl CStylerDemon::getDeathState(CStylerDemon *this_ptr);
 
-// Original: core_styldemo.cpp_FUN_005a01c0
+// Original: core_styldemo.cpp_CStylerDemon_renderOpaque_FUN_005a01c0
 // Address: 005a01c0
-int FUN_005a01c0(CDemonActor *param_1);
+int __cdecl CStylerDemon::renderOpaque(CStylerDemon *this_ptr);
 
-// Original: core_styldemo.cpp_FUN_005a02b0
+// Original: core_styldemo.cpp_CStylerDemon_shouldIgnoreForTargeting_FUN_005a02b0
 // Address: 005a02b0
-bool FUN_005a02b0(int param_1);
+int __cdecl CStylerDemon::shouldIgnoreForTargeting(CStylerDemon *this_ptr);
 
-// Original: core_styldemo.cpp_FUN_005a02e0
+// Original: core_styldemo.cpp_CStylerDemon_archive_FUN_005a02e0
 // Address: 005a02e0
-void FUN_005a02e0(int param_1);
+void __cdecl CStylerDemon::archive(CStylerDemon *this_ptr);
 
-// Original: core_styldemo.cpp_FUN_005a0330
+// Original: core_styldemo.cpp_CStylerDemon_processDamage_FUN_005a0330
 // Address: 005a0330
-void FUN_005a0330(int param_1,int param_2);
+void __cdecl CStylerDemon::processDamage(CStylerDemon *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_styldemo.cpp_FUN_005a0480
 // Address: 005a0480
 undefined4 FUN_005a0480(int param_1,int param_2);
 
-// Original: core_styldemo.cpp_FUN_005a06c0
+// Original: core_styldemo.cpp_CStylerDemon_getTargetPoints_FUN_005a06c0
 // Address: 005a06c0
-undefined4 FUN_005a06c0(int param_1,undefined4 *param_2);
+int __cdecl CStylerDemon::getTargetPoints(CStylerDemon *this_ptr,CVector3f *out_points_array);
 
-// Original: core_styldemo.cpp_FUN_005a07c0
+// Original: core_styldemo.cpp_CStylerDemon_getCarryObjToBodyXForm_FUN_005a07c0
 // Address: 005a07c0
-void FUN_005a07c0(int param_1,int param_2);
+CMatrix3x4f * __stack2_esi CStylerDemon::getCarryObjToBodyXForm(CStylerDemon *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
-// Original: core_styldemo.cpp_FUN_005a08f0
+// Original: core_styldemo.cpp_CStylerDemon_getCollisionType_FUN_005a08f0
 // Address: 005a08f0
-void FUN_005a08f0(CCharacter *param_1,SCollisionInfo *param_2);
+ECollisionType __cdecl CStylerDemon::getCollisionType(CStylerDemon *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_styldemo.cpp_CStylerDemon_dtor_FUN_005a0910
 // Address: 005a0910
-CStylerDemon * CStylerDemon::dtor(CStylerDemon *this_ptr,uint flags);
+CStylerDemon * __cdecl CStylerDemon::dtor(CStylerDemon *this_ptr,uint flags);

@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: STrainNoise
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x10 (16 bytes)
 #pragma pack(push, 1)
 typedef struct STrainNoise {
-    char field_0[16]; // 0x0
+    CVector3f position; // 0x0
+    uint sfx_handle; // 0xc
 } STrainNoise;
 #pragma pack(pop)
 

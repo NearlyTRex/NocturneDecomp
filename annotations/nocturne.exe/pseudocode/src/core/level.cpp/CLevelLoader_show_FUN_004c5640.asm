@@ -15,7 +15,7 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; XREF[3]:
-;   core_game.cpp_CGame_FUN_004a4170 at 004a42d7
+;   core_game.cpp_CGame_loadGame_FUN_004a4170 at 004a42d7
 ;   core_game.cpp_CGame_showChapterSelect_FUN_004a4b50 at 004a4e83
 ;   core_mission.cpp_CDemonMission_run_FUN_004d9440 at 004d957c
 ;

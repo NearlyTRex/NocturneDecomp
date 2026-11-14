@@ -1,12 +1,12 @@
 // Name: core_batman.cpp_staticInit_FUN_00412720
 // Address: 00412720
 // Address Range: [[00412720, 00412743]]
-// Convention: unknown
-// Signature: void core_batman_cpp_staticInit_FUN_00412720(void)
+// Convention: __cdecl
+// Signature: void __cdecl core_batman_cpp_staticInit_FUN_00412720(void)
 
 #include "nocturne.h"
 
-void core_batman_cpp_staticInit_FUN_00412720(void)
+void __cdecl core_batman_cpp_staticInit_FUN_00412720(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040c160

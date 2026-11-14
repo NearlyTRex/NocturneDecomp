@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl core_set_cpp_qsortByDisplayListEntry_FUN_005332c0(int param_1,int param_2)
+; int __cdecl core_set_cpp_qsortByDisplayListEntry_FUN_005332c0(SDisplayListSortEntry *a,SDisplayListSortEntry *b)
 ;
+; Parameters:
+; SDisplayListSortEntry * Stack[0x4]:4   a
+; SDisplayListSortEntry * Stack[0x8]:4   b
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_005332f0 at 005333eb
+;   core_set.cpp_CDemonSet_buildDisplayList_FUN_005332f0 at 005333eb
 ;
 ; *****************************************************************************
 

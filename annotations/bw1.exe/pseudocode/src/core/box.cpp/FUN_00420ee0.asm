@@ -28,12 +28,12 @@
 ;
 ; XREF[7]:
 ;   core_actor.cpp_FUN_00409170 at 00409353
-;   core_boxactor.cpp_FUN_00422ab0 at 00422b5a
+;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_00422ab0 at 00422b5a
+;   core_djien.cpp_CDjien_customRayIntersect_FUN_004610b0 at 00461100
 ;   core_dmodel.cpp_FUN_00467c00 at 00467c4a
-;   core_manpuz.cpp_FUN_00504580 at 00504896
+;   core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00504580 at 00504896
 ;   core_setdir.cpp_testOBBIntersection_FUN_0055bab0 at 0055bd4e
-;   core_wateract.cpp_FUN_005ab530 at 005ab574
-;   unkafter_djien.cpp_FUN_004610b0 at 00461100
+;   core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005ab530 at 005ab574
 ;
 ; *****************************************************************************
 

@@ -11,7 +11,7 @@
 ;   CGame* g_CGamePtr = 01ccf390
 ;
 ; Called Functions:
-;   core_weapon.cpp_FUN_005ad9a0
+;   core_weapon.cpp_CWeapon_canPickup_FUN_005ad9a0
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
     PUSH ECX                            ; 005a3e46
     MOV EBX,dword ptr [ESP + 0xc]       ; 005a3e47
     PUSH EBX                            ; 005a3e4b
-    CALL core_weapon.cpp_FUN_005ad9a0   ; 005a3e4c
-        ;   XREF to: 005ad9a0 (UNCONDITIONAL_CALL)  ; int core_weapon.cpp_FUN_005ad9a0(CWeapon * this_ptr, CDemonActor * picker)
+    CALL core_weapon.cpp_CWeapon_canPickup_FUN_005ad9a0 ; 005a3e4c
+        ;   XREF to: 005ad9a0 (UNCONDITIONAL_CALL)  ; int core_weapon.cpp_CWeapon_canPickup_FUN_005ad9a0(CWeapon * this_ptr, CDemonActor * picker)
     ADD ESP,0x8                         ; 005a3e51
     POP EBX                             ; 005a3e54
     RET                                 ; 005a3e55

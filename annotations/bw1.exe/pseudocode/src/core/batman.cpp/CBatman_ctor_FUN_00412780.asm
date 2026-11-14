@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CBatman * core_batman_cpp_CBatman_ctor_FUN_00412780(CBatman *this_ptr)
+; CBatman * __cdecl core_batman_cpp_CBatman_ctor_FUN_00412780(CBatman *this_ptr)
 ;
 ; Parameters:
 ; CBatman *        Stack[0x4]:4   this_ptr
@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a0410
-;   core_skeleton.cpp_FUN_00569f50
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     PUSH EAX                            ; 004127a1
     MOV dword ptr [EAX + -0x4],0x5fc184 ; 004127a2
     LEA EDI,[EBX + 0xc26c]              ; 004127a9
-    CALL core_skeleton.cpp_FUN_00569f50 ; 004127af
-        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569f50()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 004127af
+        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
     FLD float ptr [0x005fc170]          ; 004127b4 | DAT_005fc170
     MOV dword ptr [EBX + 0x2fec],0x3f19999a ; 004127ba
     FLD float ptr [0x005fc174]          ; 004127c4 | DAT_005fc174

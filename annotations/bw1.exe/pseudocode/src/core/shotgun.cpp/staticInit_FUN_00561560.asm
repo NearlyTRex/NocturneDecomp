@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_shotgun_cpp_staticInit_FUN_00561560(void)
+; void __cdecl core_shotgun_cpp_staticInit_FUN_00561560(void)
 ;
 ;
 ; Called Functions:

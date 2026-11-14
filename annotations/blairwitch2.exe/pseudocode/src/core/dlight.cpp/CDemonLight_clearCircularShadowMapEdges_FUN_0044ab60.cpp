@@ -16,32 +16,23 @@ void __cdecl core_dlight_cpp_CDemonLight_clearCircularShadowMapEdges_FUN_0044ab6
   int iVar5;
   int iVar6;
   
-  if (*(int *)&this_ptr->field_0x1cb8 != 0) {
-    for (iVar6 = 0; iVar6 < *(int *)&this_ptr->field_0x1cc4 / 2; iVar6 = iVar6 + 1) {
-      for (iVar4 = 0; iVar1 = *(int *)&this_ptr->field_0x1cc0 / 2, iVar4 < iVar1; iVar4 = iVar4 + 1)
-      {
-        iVar2 = *(int *)&this_ptr->field_0x1cc0 * *(int *)&this_ptr->field_0x1cc4;
+  if (this_ptr->shadow_bounds_mode != SHADOW_BOUNDS_RECTANGULAR) {
+    for (iVar6 = 0; iVar6 < this_ptr->shadow_map_height / 2; iVar6 = iVar6 + 1) {
+      for (iVar4 = 0; iVar1 = this_ptr->shadow_map_width / 2, iVar4 < iVar1; iVar4 = iVar4 + 1) {
+        iVar2 = this_ptr->shadow_map_width * this_ptr->shadow_map_height;
         iVar3 = iVar2 >> 0x1f;
         iVar1 = iVar1 - iVar4;
-        iVar5 = *(int *)&this_ptr->field_0x1cc4 / 2 - iVar6;
+        iVar5 = this_ptr->shadow_map_height / 2 - iVar6;
         if ((int)((iVar2 + iVar3 * -4) - (uint)(iVar3 << 1 < 0)) >> 2 <
             iVar1 * iVar1 + iVar5 * iVar5) {
-          *(ushort *)
-           (*(int *)&this_ptr->field_0x2f94 + (*(int *)&this_ptr->field_0x1cc0 * iVar6 + iVar4) * 2)
-               = 0;
-          *(ushort *)
-           (*(int *)&this_ptr->field_0x2f94 +
-           (*(int *)&this_ptr->field_0x1cc0 * iVar6 +
-           ((*(int *)&this_ptr->field_0x1cc0 + -1) - iVar4)) * 2) = 0;
-          *(ushort *)
-           (*(int *)&this_ptr->field_0x2f94 +
-           (((*(int *)&this_ptr->field_0x1cc0 + -1) - iVar4) +
-           *(int *)&this_ptr->field_0x1cc0 * ((*(int *)&this_ptr->field_0x1cc4 + -1) - iVar6)) * 2)
-               = 0;
-          *(ushort *)
-           (*(int *)&this_ptr->field_0x2f94 +
-           (((*(int *)&this_ptr->field_0x1cc4 + -1) - iVar6) * *(int *)&this_ptr->field_0x1cc0 +
-           iVar4) * 2) = 0;
+          this_ptr->shadow_depth_buffer[this_ptr->shadow_map_width * iVar6 + iVar4] = 0;
+          this_ptr->shadow_depth_buffer
+          [this_ptr->shadow_map_width * iVar6 + ((this_ptr->shadow_map_width + -1) - iVar4)] = 0;
+          this_ptr->shadow_depth_buffer
+          [((this_ptr->shadow_map_width + -1) - iVar4) +
+           this_ptr->shadow_map_width * ((this_ptr->shadow_map_height + -1) - iVar6)] = 0;
+          this_ptr->shadow_depth_buffer
+          [((this_ptr->shadow_map_height + -1) - iVar6) * this_ptr->shadow_map_width + iVar4] = 0;
         }
       }
     }

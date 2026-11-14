@@ -11,27 +11,25 @@ void __cdecl core_charactr_cpp_CCharacter_renderCharacter_FUN_0042e960(CCharacte
 {
   int iVar1;
   
-  if (*(int *)&this_ptr->field_0xb9e8 == 0) {
+  if (this_ptr->is_fully_burned == 0) {
     core_charactr_cpp_FUN_0042e580(this_ptr);
     core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_00569810
-              ((CDeformableModelInstance *)&this_ptr->field_0x158,-1,0xffffffff,1,0);
-    core_cloth_cpp_CClothList_render_FUN_00441ff0
-              ((CClothList *)&this_ptr->field_0x2ca0,
-               (CDeformableModelInstance *)&this_ptr->field_0x158);
+              (&this_ptr->model,-1,0xffffffff,1,0);
+    core_cloth_cpp_CClothList_render_FUN_00441ff0(&this_ptr->cloth_list,&this_ptr->model);
   }
   iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);
   if (iVar1 == 0) {
-    if (*(int *)&this_ptr->field_0x27a4 == 0) {
-      core_charactr_cpp_FUN_0042fe00(this_ptr);
+    if (this_ptr->is_ethereal == 0) {
+      core_charactr_cpp_CCharacter_renderBurn_FUN_0042fe00(this_ptr);
     }
-    if (0.0 < *(float *)&this_ptr->field_0xb9f0) {
-      core_charactr_cpp_FUN_00430060(this_ptr);
+    if (0.0 < this_ptr->stagger_amount) {
+      core_charactr_cpp_CCharacter_renderEthereal_FUN_00430060(this_ptr);
     }
   }
   core_charactr_cpp_CCharacter_renderAttachedModels_FUN_0042f3c0(this_ptr);
-  if (*(int *)&g_CGamePtr->field_0x238 == 0) {
+  if (g_CGamePtr->collision_render_enabled == 0) {
     return;
   }
-  core_charactr_cpp_FUN_0042ea10(this_ptr);
+  core_charactr_cpp_CCharacter_renderCollision_FUN_0042ea10(this_ptr);
   return;
 }

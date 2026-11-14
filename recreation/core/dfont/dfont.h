@@ -5,6 +5,7 @@
 #include "shape/fwd.h"
 #include "support/fwd.h"
 
+#include <array>
 #include <cstdint>
 #include <memory>
 
@@ -43,6 +44,9 @@ public:
     // Loads the sheets for the current depth, and makes the dialogs use the small editor font.
     void initFonts();
     void freeFonts();
+    // With OS text, each OS font again at `scale` times its size, for the text the front end's
+    // layout scales; none at 1.
+    void setOsFontScale(float scale);
 
     [[nodiscard]] EOsFontChoice getOsFontChoice() const;
     // Takes effect at the next initFonts.
@@ -88,6 +92,8 @@ private:
     std::unique_ptr<engine::CWinFont> theme_win_font_;
     std::unique_ptr<engine::CWinFont> tiny_win_font_;
     std::unique_ptr<engine::CWinFont> debug_win_font_;
+    // The same four at setOsFontScale's scale, in that order.
+    std::array<std::unique_ptr<engine::CWinFont>, 4> scaled_win_fonts_;
 };
 
 } // namespace nocturne::core

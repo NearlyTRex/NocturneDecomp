@@ -7,15 +7,15 @@
 
 // Original: core_lever.cpp_staticInit_FUN_004e00a0
 // Address: 004e00a0
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_lever.cpp_factoryFuncLever_FUN_004e00d0
 // Address: 004e00d0
-void factoryFuncLever(void);
+CLever * __cdecl factoryFuncLever(void);
 
 // Original: core_lever.cpp_CLever_getActorType_FUN_004e00f0
 // Address: 004e00f0
-CDemonActorType * CLever::getActorType(CLever *this_ptr);
+CDemonActorType * __cdecl CLever::getActorType(CLever *this_ptr);
 
 // Original: core_lever.cpp_CLever_ctor_FUN_004e0100
 // Address: 004e0100
@@ -25,9 +25,9 @@ CLever * __cdecl CLever::ctor(CLever *this_ptr);
 // Address: 004e01d0
 void __cdecl CLever::setup(CLever *this_ptr);
 
-// Original: core_lever.cpp_FUN_004e0250
+// Original: core_lever.cpp_CLever_process_FUN_004e0250
 // Address: 004e0250
-void FUN_004e0250(int param_1,float param_2);
+void __cdecl CLever::process(CLever *this_ptr,float delta_time);
 
 // Original: core_lever.cpp_FUN_004e04b0
 // Address: 004e04b0
@@ -37,13 +37,13 @@ void FUN_004e04b0(int param_1,float param_2,int param_3);
 // Address: 004e0630
 void __cdecl CLever::activate(CLever *this_ptr);
 
-// Original: core_lever.cpp_FUN_004e0690
+// Original: core_lever.cpp_CLever_renderOpaque_FUN_004e0690
 // Address: 004e0690
-int FUN_004e0690(CDemonActor *param_1);
+int __cdecl CLever::renderOpaque(CLever *this_ptr);
 
-// Original: core_lever.cpp_FUN_004e0730
+// Original: core_lever.cpp_CLever_getBoundingBox_FUN_004e0730
 // Address: 004e0730
-void FUN_004e0730(int param_1);
+CBoundingBox3D * __cdecl CLever::getBoundingBox(CLever *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_lever.cpp_FUN_004e0770
 // Address: 004e0770

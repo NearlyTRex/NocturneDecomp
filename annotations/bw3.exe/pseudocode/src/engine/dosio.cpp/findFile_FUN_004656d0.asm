@@ -1,15 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl engine_dosio_cpp_findFile_FUN_004656d0(undefined4 param_1)
+; int __cdecl engine_dosio_cpp_findFile_FUN_004656d0(SFoundFileInfo *context)
 ;
+; Parameters:
+; SFoundFileInfo * Stack[0x4]:4   context
 ;
 ; XREF[5]:
 ;   engine_dosio.cpp_FUN_004659c0 at 00465a37
 ;   engine_dosio.cpp_getFileSize_FUN_004657f0 at 00465816
 ;   engine_dosio.cpp_reopenFileStream_FUN_00465a80 at 00465b08
 ;   engine_texture.cpp_CTextureCache_loadTexture_FUN_00569790 at 00569826
-;   support_trstream.cpp_FUN_00573fc0 at 00573ffe
+;   support_trstream.cpp_CInStreamFile_openInDirectory_FUN_00573fc0 at 00573ffe
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01b8517c
@@ -60,7 +62,7 @@ section .text
     PUSH EDI                            ; 00465710
         ;   Label: LAB_00465710
     CALL engine_dosio.cpp_findFileNormally_FUN_00465730 ; 00465711
-        ;   XREF to: 00465730 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_findFileNormally_FUN_00465730()
+        ;   XREF to: 00465730 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_findFileNormally_FUN_00465730(SFoundFileInfo * info)
     ADD ESP,0x4                         ; 00465716
     POP EBP                             ; 00465719
     POP EDI                             ; 0046571a

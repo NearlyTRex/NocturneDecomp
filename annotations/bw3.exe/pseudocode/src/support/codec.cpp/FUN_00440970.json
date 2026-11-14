@@ -33,23 +33,23 @@
     ],
     "convention": "unknown",
     "name": "support_codec.cpp_FUN_00440970",
-    "signature": "bool support_codec_cpp_FUN_00440970(int *param_1,undefined4 param_2,int *param_3,undefined4 param_4)"
+    "signature": "bool support_codec_cpp_FUN_00440970(int *param_1,char *param_2,int *param_3,undefined4 param_4)"
   },
   "function_calls": [
+    {
+      "addr": "00574150",
+      "is_variadic": false,
+      "name": "support_trstream.cpp_CInStreamMemory_ctorOpen_FUN_00574150"
+    },
     {
       "addr": "005741d0",
       "is_variadic": false,
       "name": "support_trstream.cpp_CInStreamMemory_dtor_FUN_005741d0"
     },
     {
-      "addr": "00574150",
-      "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_00574150"
-    },
-    {
       "addr": "005743a0",
       "is_variadic": false,
-      "name": "support_trstream.cpp_FUN_005743a0"
+      "name": "support_trstream.cpp_CInStreamMemory_tell_FUN_005743a0"
     }
   ],
   "globals": [],
@@ -103,6 +103,20 @@
     },
     "pcode_op_count": 189
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00433ff0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00442d10",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 40,
     "local_size": 40,
@@ -125,7 +139,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "bool support_codec_cpp_FUN_00440970(int *param_1,uint param_2,int *param_3,uint param_4)",
+      "text": "bool support_codec_cpp_FUN_00440970(int *param_1,char *param_2,int *param_3,uint param_4)",
       "type": "unnamed_param"
     },
     {
@@ -133,7 +147,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "bool support_codec_cpp_FUN_00440970(int *param_1,uint param_2,int *param_3,uint param_4)",
+      "text": "bool support_codec_cpp_FUN_00440970(int *param_1,char *param_2,int *param_3,uint param_4)",
       "type": "unnamed_param"
     },
     {
@@ -141,7 +155,7 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "bool support_codec_cpp_FUN_00440970(int *param_1,uint param_2,int *param_3,uint param_4)",
+      "text": "bool support_codec_cpp_FUN_00440970(int *param_1,char *param_2,int *param_3,uint param_4)",
       "type": "unnamed_param"
     },
     {
@@ -149,7 +163,7 @@
       "line": 2,
       "match": "param_4",
       "severity": "mild",
-      "text": "bool support_codec_cpp_FUN_00440970(int *param_1,uint param_2,int *param_3,uint param_4)",
+      "text": "bool support_codec_cpp_FUN_00440970(int *param_1,char *param_2,int *param_3,uint param_4)",
       "type": "unnamed_param"
     },
     {
@@ -157,7 +171,7 @@
       "line": 9,
       "match": "param_2",
       "severity": "mild",
-      "text": "support_trstream_cpp_FUN_00574150(&local_24,param_2,*param_3);",
+      "text": "support_trstream_cpp_CInStreamMemory_ctorOpen_FUN_00574150(&local_24,param_2,*param_3);",
       "type": "unnamed_param"
     },
     {
@@ -165,7 +179,7 @@
       "line": 9,
       "match": "param_3",
       "severity": "mild",
-      "text": "support_trstream_cpp_FUN_00574150(&local_24,param_2,*param_3);",
+      "text": "support_trstream_cpp_CInStreamMemory_ctorOpen_FUN_00574150(&local_24,param_2,*param_3);",
       "type": "unnamed_param"
     },
     {
@@ -220,14 +234,14 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
-        "offset": 12,
-        "vtable_addr": "005dd52c"
+        "class_name": "CCheesyCipher",
+        "offset": 20,
+        "vtable_addr": "005dd524"
       },
       {
-        "class_name": "Unknown",
-        "offset": 12,
-        "vtable_addr": "005dd43c"
+        "class_name": "CCodec",
+        "offset": 20,
+        "vtable_addr": "005dd434"
       },
       {
         "class_name": "CLZWCompress",

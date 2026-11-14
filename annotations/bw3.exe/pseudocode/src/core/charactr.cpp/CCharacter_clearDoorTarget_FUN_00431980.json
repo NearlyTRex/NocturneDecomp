@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 44,
+    "complexity_score": 9,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 9,
-    "suspect_count": 3,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 26
   },
   "cross_references": [],
@@ -66,6 +64,32 @@
     },
     "pcode_op_count": 52
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00428ac0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00432560",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0042cd60",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00428ef0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -82,56 +106,31 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x2740",
-      "severity": "mild",
-      "text": "if (*(CDoor **)&this_ptr->field_0x2740 == (CDoor *)0x0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x2740",
-      "severity": "mild",
-      "text": "core_door_cpp_CDoor_onOpened_FUN_00463d10(*(CDoor **)&this_ptr->field_0x2740);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x2740",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2740 = 0;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CConstruct",
         "offset": 288,
         "vtable_addr": "005dd704"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CHotDemon",
         "offset": 288,
         "vtable_addr": "005e1d04"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CImp",
         "offset": 288,
         "vtable_addr": "005e1f04"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CTheHand",
         "offset": 288,
         "vtable_addr": "005e5504"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CKedward",
         "offset": 288,
         "vtable_addr": "005e7204"
       }

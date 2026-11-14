@@ -1,0 +1,278 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 191,
+    "complexity_score": 111,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 16,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 71,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 262
+  },
+  "cross_references": [
+    {
+      "addr": "005acec0",
+      "from_addr": "005acfdf",
+      "name": "wincore_wddvmem.cpp_setupColorPalette_FUN_005acec0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005acd00",
+    "address_range": [
+      [
+        "005acd00",
+        "005aceb4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_wddvmem.cpp_analyzePixelFormat_FUN_005acd00",
+    "signature": "void __cdecl wincore_wddvmem_cpp_analyzePixelFormat_FUN_005acd00(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "005bfb70",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005bfb70"
+    },
+    {
+      "addr": "004ecf70",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004ecf70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f96f1",
+      "name": "s_wincore_wddvmem_cpp_005f96f1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f9708",
+      "name": "s_setColorTable16_Unable_t_005f9708",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f9736",
+      "name": "s_wincore_wddvmem_cpp_005f9736",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f974d",
+      "name": "s_setColorTable16_Unable_t_005f974d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01c4e9d4",
+      "name": "DAT_01c4e9d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4e9d8",
+      "name": "DAT_01c4e9d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4e9dc",
+      "name": "DAT_01c4e9dc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4e9e0",
+      "name": "DAT_01c4e9e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4e9e4",
+      "name": "DAT_01c4e9e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4e9e8",
+      "name": "DAT_01c4e9e8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4e9ec",
+      "name": "DAT_01c4e9ec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4e9f0",
+      "name": "DAT_01c4e9f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c4e9f4",
+      "name": "DAT_01c4e9f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c99308",
+      "name": "DAT_02c99308",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005acfdf",
+        "call_type": "direct",
+        "caller": "wincore_wddvmem.cpp_setupColorPalette_FUN_005acec0",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.862068965517241,
+    "instruction_count": 145,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 19,
+      "BOOL_OR": 3,
+      "BRANCH": 6,
+      "CALL": 5,
+      "CALLIND": 2,
+      "CBRANCH": 14,
+      "COPY": 127,
+      "INT_ADD": 31,
+      "INT_AND": 141,
+      "INT_CARRY": 5,
+      "INT_DIV": 3,
+      "INT_EQUAL": 91,
+      "INT_LEFT": 3,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 15,
+      "INT_OR": 18,
+      "INT_REM": 3,
+      "INT_RIGHT": 12,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 47,
+      "INT_SUB": 29,
+      "INT_XOR": 9,
+      "INT_ZEXT": 9,
+      "LOAD": 19,
+      "POPCOUNT": 44,
+      "RETURN": 2,
+      "STORE": 23,
+      "SUBPIECE": 6
+    },
+    "pcode_op_count": 705
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00589270",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0057a5b0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005ed730",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00553620",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 116,
+    "local_size": 116,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 16,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*_DAT_02c99308 + 100))(_DAT_02c99308,0,local_70,1,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 22,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*_DAT_02c99308 + 0x80))(_DAT_02c99308,0);",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

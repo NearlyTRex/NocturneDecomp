@@ -4,13 +4,36 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CVector3f.h"
+#include "types/enums/EGroundType.h"
 
 // Structure: CPendulum
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x5a0 (1440 bytes)
 #pragma pack(push, 1)
 typedef struct CPendulum {
-    char field_0[1440]; // 0x0
+    CDemonActor base; // 0x0
+    CKeyFramedModelInstance model; // 0x2b4
+    char start_event[100]; // 0x430
+    char stop_event[100]; // 0x494
+    int moving; // 0x4f8
+    float param; // 0x4fc
+    float period; // 0x500
+    float max_angle; // 0x504
+    char swoosh_sound[32]; // 0x508
+    float swoosh_phase_bias; // 0x528
+    char creak_1_sound[32]; // 0x52c
+    char creak_2_sound[32]; // 0x54c
+    CVector3f swing_tip_local; // 0x56c
+    CVector3f swing_tip_world; // 0x578
+    int kill_hero; // 0x584
+    int kill_enemy; // 0x588
+    float decay; // 0x58c
+    float decay_timer; // 0x590
+    EGroundType ground_type; // 0x594
+    int half_movement; // 0x598
+    int is_stopped; // 0x59c
 } CPendulum;
 #pragma pack(pop)
 

@@ -10,38 +10,37 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00451c
 
 {
   uint *puVar1;
-  uint *puVar2;
+  ushort **ppuVar2;
   int iVar3;
   int iVar4;
   int iStack_1c;
-  int iStack_18;
-  int iStack_14;
+  ushort **ppuStack_18;
+  int *piStack_14;
   
   iVar4 = 0;
   iStack_1c = 0;
-  if (0 < *(int *)&this_ptr->field_0x154) {
-    iStack_18 = *(int *)&light_source->field_0x1c4c;
-    iStack_14 = *(int *)&light_source->field_0x1c48;
+  if (0 < this_ptr->display_height) {
+    ppuStack_18 = light_source->corona_depth_buffer;
+    piStack_14 = light_source->corona_visibility_buffers;
     do {
-      iVar3 = *(int *)&light_source->field_0x14c8 * 4;
-      puVar1 = (uint *)(iStack_14 + iVar3);
-      puVar2 = (uint *)(iVar3 + iStack_18);
-      for (iVar3 = (*(int *)&light_source->field_0x1888 - *(int *)&light_source->field_0x14c8) + 1;
-          0 < iVar3; iVar3 = iVar3 + -1) {
-        if ((*puVar1 != 0) && (*puVar1 < (uint)*(ushort *)*puVar2)) {
+      iVar3 = light_source->left_extent[0];
+      puVar1 = (uint *)(piStack_14 + iVar3);
+      ppuVar2 = ppuStack_18 + iVar3;
+      for (iVar3 = (light_source->right_extent[0] - iVar3) + 1; 0 < iVar3; iVar3 = iVar3 + -1) {
+        if ((*puVar1 != 0) && (*puVar1 < (uint)**ppuVar2)) {
           iVar4 = iVar4 + 1;
         }
         puVar1 = puVar1 + 1;
-        puVar2 = puVar2 + 1;
+        ppuVar2 = ppuVar2 + 1;
       }
       if (0x300 < iVar4) {
         return 1;
       }
-      light_source = (CDemonLight *)&light_source->field_0x4;
-      iStack_18 = iStack_18 + 0x500;
-      iStack_14 = iStack_14 + 0x500;
+      light_source = (CDemonLight *)&(light_source->base).base.position;
+      ppuStack_18 = ppuStack_18 + 0x140;
+      piStack_14 = piStack_14 + 0x140;
       iStack_1c = iStack_1c + 1;
-    } while (iStack_1c < *(int *)&this_ptr->field_0x154);
+    } while (iStack_1c < this_ptr->display_height);
   }
   return 0;
 }

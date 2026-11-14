@@ -25,7 +25,7 @@
     ],
     "convention": "unknown",
     "name": "support_codec.cpp_FUN_004406e0",
-    "signature": "undefined4 support_codec_cpp_FUN_004406e0(undefined4 param_1,int param_2,int param_3)"
+    "signature": "undefined4 support_codec_cpp_FUN_004406e0(undefined4 param_1,_FILE *param_2,int param_3)"
   },
   "function_calls": [
     {
@@ -77,6 +77,14 @@
     },
     "pcode_op_count": 200
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00442a80",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -91,7 +99,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint support_codec_cpp_FUN_004406e0(uint param_1,int param_2,int param_3)",
+      "text": "uint support_codec_cpp_FUN_004406e0(uint param_1,_FILE *param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -99,7 +107,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint support_codec_cpp_FUN_004406e0(uint param_1,int param_2,int param_3)",
+      "text": "uint support_codec_cpp_FUN_004406e0(uint param_1,_FILE *param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -107,7 +115,7 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "uint support_codec_cpp_FUN_004406e0(uint param_1,int param_2,int param_3)",
+      "text": "uint support_codec_cpp_FUN_004406e0(uint param_1,_FILE *param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -163,7 +171,7 @@
       "line": 19,
       "match": "param_3",
       "severity": "mild",
-      "text": "if ((param_3 < 0) && ((*(byte *)(param_2 + 0xc) & 0x20) == 0)) {",
+      "text": "if ((param_3 < 0) && ((param_2->_flag & 0x20) == 0)) {",
       "type": "unnamed_param"
     },
     {
@@ -171,7 +179,7 @@
       "line": 19,
       "match": "param_2",
       "severity": "mild",
-      "text": "if ((param_3 < 0) && ((*(byte *)(param_2 + 0xc) & 0x20) == 0)) {",
+      "text": "if ((param_3 < 0) && ((param_2->_flag & 0x20) == 0)) {",
       "type": "unnamed_param"
     }
   ]

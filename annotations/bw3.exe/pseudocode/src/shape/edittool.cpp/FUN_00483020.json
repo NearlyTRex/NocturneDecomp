@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 136,
-    "complexity_score": 121,
+    "complexity_score": 98,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 31,
-    "suspect_count": 8,
+    "pseudocode_lines": 33,
+    "suspect_count": 6,
     "suspect_types": [
-      "unknown_field",
       "unnamed_param"
     ],
-    "total_lines": 167
+    "total_lines": 169
   },
   "cross_references": [],
   "function": {
@@ -55,19 +54,19 @@
       "name": "engine_dosio.cpp_CFileFinder_openSearch_FUN_00465ba0"
     },
     {
-      "addr": "00465e50",
+      "addr": "00465ff0",
       "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00465e50"
+      "name": "engine_dosio.cpp_getFullPath_FUN_00465ff0"
     },
     {
       "addr": "00465e80",
       "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00465e80"
+      "name": "engine_dosio.cpp_makePath_FUN_00465e80"
     },
     {
-      "addr": "00465ff0",
+      "addr": "00465e50",
       "is_variadic": false,
-      "name": "engine_dosio.cpp_getFullPath_FUN_00465ff0"
+      "name": "engine_dosio.cpp_splitPath_FUN_00465e50"
     },
     {
       "addr": "00482070",
@@ -110,6 +109,20 @@
     },
     "pcode_op_count": 415
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00481e20",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0049a480",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -148,36 +161,20 @@
       "line": 15,
       "match": "param_2",
       "severity": "mild",
-      "text": "engine_dosio_cpp_FUN_00465e50(param_2,acStack_8,acStack_108,acStack_308,acStack_408);",
+      "text": "engine_dosio_cpp_splitPath_FUN_00465e50(param_2,acStack_8,acStack_108,acStack_308,acStack_408);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 18,
       "match": "param_3",
       "severity": "mild",
-      "text": "engine_dosio_cpp_FUN_00465e50(param_3,(char *)0x0,(char *)0x0,acStack_308,acStack_408);",
+      "text": "engine_dosio_cpp_splitPath_FUN_00465e50(param_3,(char *)0x0,(char *)0x0,acStack_308,acStack_408);",
       "type": "unnamed_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 21,
-      "match": "._0_1_",
-      "severity": "mild",
-      "text": "while (CStack_828._0_1_ != '\\0') {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 22,
-      "match": "._256_1_",
-      "severity": "mild",
-      "text": "if ((CStack_828._256_1_ & 4) == 0) {",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "shape_edittool_cpp_CStrList_add_FUN_00482070(param_1,acStack_610);",

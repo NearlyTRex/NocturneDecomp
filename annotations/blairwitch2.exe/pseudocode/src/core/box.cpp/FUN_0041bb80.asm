@@ -12,7 +12,7 @@
 ;   core_box.cpp_FUN_0041bc20 at 0041bc38
 ;   core_boxactor.cpp_FUN_0041cda0 at 0041ce10
 ;   core_enemy.cpp_FUN_00488320 at 004883e1
-;   core_platfrm.cpp_FUN_005184c0 at 00518b55
+;   core_platfrm.cpp_CPlatform_process_FUN_005184c0 at 00518b55
 ;
 ; *****************************************************************************
 

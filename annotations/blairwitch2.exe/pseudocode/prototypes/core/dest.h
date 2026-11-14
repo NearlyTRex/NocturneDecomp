@@ -7,15 +7,15 @@
 
 // Original: core_dest.cpp_staticInit_FUN_00447030
 // Address: 00447030
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_dest.cpp_factoryFuncActorDestination_FUN_00447060
 // Address: 00447060
-void factoryFuncActorDestination(void);
+CActorDestination * __cdecl factoryFuncActorDestination(void);
 
 // Original: core_dest.cpp_CActorDestination_getActorType_FUN_00447080
 // Address: 00447080
-CDemonActorType * CActorDestination::getActorType(CActorDestination *this_ptr);
+CDemonActorType * __cdecl CActorDestination::getActorType(CActorDestination *this_ptr);
 
 // Original: core_dest.cpp_CActorDestination_ctor_FUN_00447090
 // Address: 00447090
@@ -25,25 +25,25 @@ CActorDestination * __cdecl CActorDestination::ctor(CActorDestination *this_ptr)
 // Address: 00447100
 void __cdecl CActorDestination::setup(CActorDestination *this_ptr);
 
-// Original: core_dest.cpp_FUN_00447140
+// Original: core_dest.cpp_CActorDestination_process_FUN_00447140
 // Address: 00447140
-void __cdecl FUN_00447140(CActorDestination *this_ptr,float delta_time);
+void __cdecl CActorDestination::process(CActorDestination *this_ptr,float delta_time);
 
 // Original: core_dest.cpp_FUN_00447350
 // Address: 00447350
 undefined4 FUN_00447350(void);
 
-// Original: core_dest.cpp_FUN_00447360
+// Original: core_dest.cpp_CActorDestination_getBoundingBox_FUN_00447360
 // Address: 00447360
-void FUN_00447360(int param_1);
+CBoundingBox3D * __cdecl CActorDestination::getBoundingBox(CActorDestination *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_dest.cpp_FUN_004473f0
+// Original: core_dest.cpp_CActorDestination_acceptsActor_FUN_004473f0
 // Address: 004473f0
-int __cdecl FUN_004473f0(CActorDestination *this_ptr,CDemonActor *actor);
+int __cdecl CActorDestination::acceptsActor(CActorDestination *this_ptr,CDemonActor *actor);
 
-// Original: core_dest.cpp_FUN_00447450
+// Original: core_dest.cpp_CActorDestination_archive_FUN_00447450
 // Address: 00447450
-void __cdecl FUN_00447450(CActorDestination *this_ptr);
+void __cdecl CActorDestination::archive(CActorDestination *this_ptr);
 
 // Original: core_dest.cpp_CActorDestination_dtor_FUN_00447510
 // Address: 00447510

@@ -1,0 +1,228 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 58,
+    "complexity_score": 55,
+    "cross_reference_count": 5,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 25,
+    "suspect_count": 2,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "undefined_data"
+    ],
+    "total_lines": 83
+  },
+  "cross_references": [
+    {
+      "addr": "004a1d50",
+      "from_addr": "004a1d99",
+      "name": "core_flashlit.cpp_FUN_004a1d50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a1dd0",
+      "from_addr": "004a1e29",
+      "name": "core_flashlit.cpp_FUN_004a1dd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a5700",
+      "from_addr": "004a578a",
+      "name": "core_fldnotes.cpp_CFieldNotes_draw_FUN_004a5700",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a41b0",
+      "from_addr": "004a4383",
+      "name": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a5490",
+      "from_addr": "004a5526",
+      "name": "core_fldnotes.cpp_CFieldNotes_turnToEntry_FUN_004a5490",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a3740",
+    "address_range": [
+      [
+        "004a3740",
+        "004a37b8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fldnotes.cpp_SNotesSection_layout_FUN_004a3740",
+    "signature": "int __cdecl core_fldnotes_cpp_SNotesSection_layout_FUN_004a3740(SNotesSection *this_ptr,STextView *view)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a32e0",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_SNotesEntry_layout_FUN_004a32e0"
+    },
+    {
+      "addr": "004a28b0",
+      "is_variadic": false,
+      "name": "core_fldnotes.cpp_STextView_layoutChunk_FUN_004a28b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d5dc8",
+      "name": "DAT_005d5dc8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "004a4383",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004a41b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a578a",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_CFieldNotes_draw_FUN_004a5700",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a5526",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_CFieldNotes_turnToEntry_FUN_004a5490",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a1d99",
+        "call_type": "direct",
+        "caller": "core_flashlit.cpp_FUN_004a1d50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a1e29",
+        "call_type": "direct",
+        "caller": "core_flashlit.cpp_FUN_004a1dd0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.404255319148936,
+    "instruction_count": 47,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 2,
+      "CBRANCH": 4,
+      "COPY": 47,
+      "INT_ADD": 24,
+      "INT_AND": 25,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 22,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 11,
+      "INT_SUB": 12,
+      "INT_XOR": 2,
+      "LOAD": 18,
+      "POPCOUNT": 11,
+      "RETURN": 2,
+      "STORE": 12
+    },
+    "pcode_op_count": 207
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004bc130",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9091
+    },
+    "bw3.exe": {
+      "addr": "004a9d90",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9091
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "SNotesSection *"
+      },
+      {
+        "is_param": true,
+        "name": "view",
+        "offset": 8,
+        "size": 4,
+        "type": "STextView *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_005d5dc8",
+      "severity": "mild",
+      "text": "iVar2 = core_fldnotes_cpp_STextView_layoutChunk_FUN_004a28b0(view,&DAT_005d5dc8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar3` self-updates via pointer arithmetic on its own `name` field (which decays to a pointer), `+ CONST`; `offsetof(name) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `pSVar3`. Replace those `pSVar3->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
+      "line": 19,
+      "match": "pSVar3 = (T *)(pSVar3->name + CONST)",
+      "severity": "moderate",
+      "text": "pSVar3 = (SNotesSection *)(pSVar3->name + 4);",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

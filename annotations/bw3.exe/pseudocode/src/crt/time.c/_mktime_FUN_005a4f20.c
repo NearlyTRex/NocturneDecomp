@@ -2,66 +2,67 @@
 // Address: 005a4f20
 // Address Range: [[005a4f20, 005a50d2]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_time_c__mktime_FUN_005a4f20(int *param_1)
+// Signature: time_t __cdecl crt_time_c__mktime_FUN_005a4f20(_tm *timeptr)
 
 #include "nocturne.h"
 
-int __cdecl _mktime(int *param_1)
+time_t __cdecl _mktime(_tm *timeptr)
 
 {
-  int iVar1;
+  time_t tVar1;
   int iVar2;
   int iVar3;
   byte *puVar4;
+  int iVar5;
   
-  iVar3 = param_1[4] % 0xc;
+  iVar3 = timeptr->tm_mon % 0xc;
   puVar4 = &DAT_005e8804;
-  if (param_1[5] < -0xb04815f) {
-    iVar1 = -1;
+  if (timeptr->tm_year < -0xb04815f) {
+    tVar1 = -1;
   }
   else {
-    iVar1 = param_1[5] + param_1[4] / 0xc;
+    iVar5 = timeptr->tm_year + timeptr->tm_mon / 0xc;
     for (; iVar3 < 0; iVar3 = iVar3 + 0xc) {
-      iVar1 = iVar1 + -1;
+      iVar5 = iVar5 + -1;
     }
-    if (iVar1 < 0) {
+    if (iVar5 < 0) {
       return -1;
     }
-    iVar2 = FUN_005abdf0(iVar1 + 0x76c);
+    iVar2 = FUN_005abdf0(iVar5 + 0x76c);
     if (iVar2 != 0) {
       puVar4 = &DAT_005e881e;
     }
-    iVar2 = iVar1 + 3 >> 0x1f;
+    iVar2 = iVar5 + 3 >> 0x1f;
     iVar3 = (int)*(short *)(puVar4 + iVar3 * 2) +
-            ((iVar1 * 0x16d + ((int)((iVar1 + 3 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2)) -
-            (iVar1 + 99) / 100) + (iVar1 + 299) / 400 + param_1[3];
-    for (iVar1 = *param_1 + (param_1[1] + param_1[2] * 0x3c) * 0x3c; iVar3 = iVar3 + -1, iVar1 < 0;
-        iVar1 = iVar1 + 0x15180) {
+            ((iVar5 * 0x16d + ((int)((iVar5 + 3 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2)) -
+            (iVar5 + 99) / 100) + (iVar5 + 299) / 400 + timeptr->tm_mday;
+    for (iVar5 = timeptr->tm_sec + (timeptr->tm_min + timeptr->tm_hour * 0x3c) * 0x3c;
+        iVar3 = iVar3 + -1, iVar5 < 0; iVar5 = iVar5 + 0x15180) {
     }
-    FUN_005ac290(iVar3,iVar1,0,param_1);
+    FUN_005ac290(iVar3,iVar5,0,timeptr);
     FUN_005ac558();
-    iVar1 = iVar1 + DAT_00607d3c;
-    if (param_1[8] < 0) {
-      FUN_005abf84(param_1);
+    iVar5 = iVar5 + DAT_00607d3c;
+    if (timeptr->tm_isdst < 0) {
+      FUN_005abf84(timeptr);
     }
-    if (0 < param_1[8]) {
-      iVar1 = iVar1 - DAT_00607d44;
+    if (0 < timeptr->tm_isdst) {
+      iVar5 = iVar5 - DAT_00607d44;
     }
-    for (; iVar1 < 0; iVar1 = iVar1 + 0x15180) {
+    for (; iVar5 < 0; iVar5 = iVar5 + 0x15180) {
       iVar3 = iVar3 + -1;
     }
     if (iVar3 < 0x63de) {
       return -1;
     }
     if (iVar3 == 0x63de) {
-      iVar1 = iVar1 + -0x15180;
-      if ((DAT_00607d3c < 1) || (iVar1 < 0)) {
+      tVar1 = iVar5 + -0x15180;
+      if ((DAT_00607d3c < 1) || (tVar1 < 0)) {
         return -1;
       }
     }
     else {
-      iVar1 = iVar1 + (iVar3 + -0x63df) * 0x15180;
+      tVar1 = iVar5 + (iVar3 + -0x63df) * 0x15180;
     }
   }
-  return iVar1;
+  return tVar1;
 }

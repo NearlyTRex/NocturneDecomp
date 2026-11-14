@@ -17,6 +17,6 @@ void FUN_005c8e45(int param_1,uint param_2)
   if (param_2 == 0) {
     return;
   }
-  unkafter_zombie_cpp_FUN_005cc3d2(auStack_8,param_2);
+  FUN_005cc3d2(auStack_8,param_2);
   return;
 }

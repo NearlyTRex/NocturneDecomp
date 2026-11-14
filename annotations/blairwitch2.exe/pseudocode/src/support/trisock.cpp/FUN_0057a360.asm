@@ -4,8 +4,9 @@
 ; undefined4 support_trisock_cpp_FUN_0057a360(char *param_1,char *param_2,undefined2 *param_3,char *param_4,int param_5)
 ;
 ;
-; XREF[1]:
-;   support_trisock.cpp_FUN_0057ac2e at 0057ac79
+; XREF[2]:
+;   support_trisock.cpp_FUN_00579890 at 005798d0
+;   support_trisock.cpp_FUN_0057ac30 at 0057ac79
 ;
 ; Called Functions:
 ;   crt_stdio.c_sscanf_FUN_005ba8cc

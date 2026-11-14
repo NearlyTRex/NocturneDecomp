@@ -9,5 +9,5 @@
 CDemonActor * __cdecl core_weapon_cpp_CWeapon_getCarrier_FUN_005adb10(CWeapon *this_ptr)
 
 {
-  return *(CDemonActor **)&this_ptr->field_0x304;
+  return this_ptr->carried_by_actor;
 }

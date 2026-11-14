@@ -1,0 +1,407 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 514,
+    "complexity_score": 338,
+    "cross_reference_count": 1,
+    "function_call_count": 8,
+    "global_count": 16,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 223,
+    "suspect_count": 10,
+    "suspect_types": [
+      "sign_compare_idiom",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 737
+  },
+  "cross_references": [
+    {
+      "addr": "00431d90",
+      "from_addr": "00431dcf",
+      "name": "engine_clipper.c_clipAndRasterize_FUN_00431d90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0051cb20",
+    "address_range": [
+      [
+        "0051cb20",
+        "0051d040"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_prim.c_renderPolygonSoftware_FUN_0051cb20",
+    "signature": "void __cdecl engine_prim_c_renderPolygonSoftware_FUN_0051cb20(SRenderVertex *vertices,int vertex_count)"
+  },
+  "function_calls": [
+    {
+      "addr": "0051c6b0",
+      "is_variadic": false,
+      "name": "engine_prim.c_adjustNearPlaneTextureCoords_FUN_0051c6b0"
+    },
+    {
+      "addr": "0051c760",
+      "is_variadic": false,
+      "name": "engine_prim.c_calculateTriangleWindingOrder_FUN_0051c760"
+    },
+    {
+      "addr": "0051c580",
+      "is_variadic": false,
+      "name": "engine_prim.c_findEdgeInBuffer_FUN_0051c580"
+    },
+    {
+      "addr": "0051c630",
+      "is_variadic": false,
+      "name": "engine_prim.c_normalizeTextureCoords_FUN_0051c630"
+    },
+    {
+      "addr": "0051c5c0",
+      "is_variadic": false,
+      "name": "engine_prim.c_prepareDepthBuffer_FUN_0051c5c0"
+    },
+    {
+      "addr": "0051c720",
+      "is_variadic": false,
+      "name": "engine_prim.c_replaceWWithDepth_FUN_0051c720"
+    },
+    {
+      "addr": "0055f8f0",
+      "is_variadic": false,
+      "name": "engine_special.cpp_drawPolygon_FUN_0055f8f0"
+    },
+    {
+      "addr": "0055d6d7",
+      "is_variadic": false,
+      "name": "engine_special.cpp_FUN_0055d6d7"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0051caf8",
+      "name": "switchdataD_0051caf8",
+      "type": "void*",
+      "value": "0051cc30"
+    },
+    {
+      "addr": "006141e0",
+      "name": "DAT_006141e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061b424",
+      "name": "DAT_0061b424",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0070ca74",
+      "name": "DAT_0070ca74",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0070ca7c",
+      "name": "DAT_0070ca7c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e38",
+      "name": "DAT_01c35e38",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e3c",
+      "name": "DAT_01c35e3c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e40",
+      "name": "DAT_01c35e40",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c35e44",
+      "name": "DAT_01c35e44",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c37788",
+      "name": "DAT_01c37788",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38b54",
+      "name": "DAT_01c38b54",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38b58",
+      "name": "DAT_01c38b58",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e61648",
+      "name": "DAT_01e61648",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e61b4c",
+      "name": "DAT_01e61b4c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e61b50",
+      "name": "DAT_01e61b50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e61b58",
+      "name": "DAT_01e61b58",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00431dcf",
+        "call_type": "direct",
+        "caller": "engine_clipper.c_clipAndRasterize_FUN_00431d90",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.686182669789227,
+    "instruction_count": 427,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 80,
+      "BOOL_OR": 7,
+      "BRANCH": 10,
+      "BRANCHIND": 1,
+      "CALL": 13,
+      "CBRANCH": 29,
+      "COPY": 336,
+      "INT_ADD": 198,
+      "INT_AND": 420,
+      "INT_CARRY": 44,
+      "INT_DIV": 1,
+      "INT_EQUAL": 250,
+      "INT_LEFT": 16,
+      "INT_LESS": 30,
+      "INT_MULT": 18,
+      "INT_NOTEQUAL": 73,
+      "INT_OR": 88,
+      "INT_REM": 1,
+      "INT_RIGHT": 24,
+      "INT_SBORROW": 30,
+      "INT_SCARRY": 52,
+      "INT_SDIV": 3,
+      "INT_SEXT": 54,
+      "INT_SLESS": 140,
+      "INT_SREM": 3,
+      "INT_SRIGHT": 6,
+      "INT_SUB": 101,
+      "INT_XOR": 20,
+      "INT_ZEXT": 9,
+      "LOAD": 125,
+      "POPCOUNT": 116,
+      "RETURN": 3,
+      "STORE": 85,
+      "SUBPIECE": 42
+    },
+    "pcode_op_count": 2428
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0053e120",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00515e80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00552510",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004f9dd0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9671
+    }
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "vertices",
+        "offset": 4,
+        "size": 4,
+        "type": "SRenderVertex *"
+      },
+      {
+        "is_param": true,
+        "name": "vertex_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_006141e0",
+      "severity": "mild",
+      "text": "if ((DAT_006141e0 != 0) && (iVar9 = 0, pSVar4 = vertices, 0 < vertex_count)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_0070ca7c",
+      "severity": "mild",
+      "text": "if (DAT_0070ca7c != 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 69,
+      "match": "DAT_0070ca74",
+      "severity": "mild",
+      "text": "if ((_DAT_01c37788 != 0) && (DAT_0070ca74 == 0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 115,
+      "match": "DAT_01e6164c",
+      "severity": "mild",
+      "text": "*(int *)(&DAT_01e6164c + iVar3) = iVar8;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 185,
+      "match": "DAT_0061b424",
+      "severity": "mild",
+      "text": "iVar9 = _DAT_01e61b4c - DAT_0061b424;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
+      "line": 186,
+      "match": "SBORROW4",
+      "severity": "moderate",
+      "text": "bVar12 = SBORROW4(_DAT_01e61b4c,DAT_0061b424);",
+      "type": "sign_compare_idiom"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 186,
+      "match": "DAT_0061b424",
+      "severity": "mild",
+      "text": "bVar12 = SBORROW4(_DAT_01e61b4c,DAT_0061b424);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 217,
+      "match": "DAT_0061b424",
+      "severity": "mild",
+      "text": "iVar6 = DAT_0061b424;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
+      "line": 223,
+      "match": "SBORROW4",
+      "severity": "moderate",
+      "text": "bVar12 = SBORROW4(local_18,iVar6);",
+      "type": "sign_compare_idiom"
+    }
+  ]
+}

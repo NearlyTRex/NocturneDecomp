@@ -2,13 +2,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 195,
+    "complexity_score": 185,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 55,
-    "suspect_count": 13,
+    "suspect_count": 12,
     "suspect_types": [
       "unnamed_param",
       "warning_overlapping_globals"
@@ -40,14 +40,14 @@
       "name": "crt_stdio.c_fclose_FUN_005a3a90"
     },
     {
-      "addr": "005a28c0",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a28c0"
-    },
-    {
       "addr": "005a3140",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005a3140"
+    },
+    {
+      "addr": "005a28c0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
     },
     {
       "addr": "004659c0",
@@ -112,6 +112,14 @@
     },
     "pcode_op_count": 531
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00438e40",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -167,14 +175,6 @@
       "match": "param_1",
       "severity": "mild",
       "text": "p_Var7 = engine_dosio_cpp_FUN_004659c0((char *)0x5b8b74,param_1,(char *)0x5b8b71);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 28,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_005a28c0(auStack_6c,\"Could not create output file (%s).\",param_1);",
       "type": "unnamed_param"
     },
     {

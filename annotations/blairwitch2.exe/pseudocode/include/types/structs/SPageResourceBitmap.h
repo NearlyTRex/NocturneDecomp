@@ -4,13 +4,16 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CAlphaBitmap.h"
+#include "types/structs/SPageResource.h"
 
 // Structure: SPageResourceBitmap
-// Stub: size from Watcom RTTI, fields not yet recovered
+// new(0x2c) for <image> in STextView_handleTag
 // Ghidra size: 0x2c (44 bytes)
 #pragma pack(push, 1)
 typedef struct SPageResourceBitmap {
-    char field_0[44]; // 0x0
+    SPageResource base; // 0x0, derived
+    CAlphaBitmap bitmap; // 0x18, CAlphaBitmap ctor/load/display/dtor on +0x18
 } SPageResourceBitmap;
 #pragma pack(pop)
 

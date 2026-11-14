@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 32,
+    "complexity_score": 7,
     "cross_reference_count": 36,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 7,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 19
   },
   "cross_references": [
@@ -37,6 +35,12 @@
       "addr": "0040f4a0",
       "from_addr": "0040f4b4",
       "name": "core_battery.cpp_CBattery_ctor_FUN_0040f4a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00411b50",
+      "from_addr": "00411b82",
+      "name": "core_bmppuzzl.cpp_CAudioRecPuzzle_ctor_FUN_00411b50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -106,15 +110,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0049ce90",
-      "from_addr": "0049ce98",
-      "name": "core_fire.cpp_CToss_ctor_FUN_0049ce90",
+      "addr": "004a4340",
+      "from_addr": "004a4356",
+      "name": "core_fire.cpp_CFireEffect_preloadTossAssets_FUN_004a4340",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004a4340",
-      "from_addr": "004a4356",
-      "name": "core_fire.cpp_FUN_004a4340",
+      "addr": "0049ce90",
+      "from_addr": "0049ce98",
+      "name": "core_fire.cpp_CToss_ctor_FUN_0049ce90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -224,12 +228,6 @@
       "from_addr": "0057ad84",
       "name": "core_weapon.cpp_CWeapon_ctor_FUN_0057ad70",
       "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00411b50",
-      "from_addr": "00411b82",
-      "name": "unkafter_alphabit.cpp_CAudioRecPuzzle_ctor_FUN_00411b50",
-      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -280,7 +278,7 @@
       {
         "call_addr": "004a4356",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004a4340",
+        "caller": "core_fire.cpp_CFireEffect_preloadTossAssets_FUN_004a4340",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -335,7 +333,7 @@
       {
         "call_addr": "00411b82",
         "call_type": "direct",
-        "caller": "unkafter_alphabit.cpp_CAudioRecPuzzle_ctor_FUN_00411b50",
+        "caller": "core_bmppuzzl.cpp_CAudioRecPuzzle_ctor_FUN_00411b50",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -346,7 +344,7 @@
       {
         "call_addr": "00411b90",
         "call_type": "direct",
-        "caller": "unkafter_alphabit.cpp_CAudioRecPuzzle_ctor_FUN_00411b50",
+        "caller": "core_bmppuzzl.cpp_CAudioRecPuzzle_ctor_FUN_00411b50",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -392,6 +390,32 @@
     },
     "pcode_op_count": 35
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0044fc80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "00468860",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00478ce0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00454490",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -408,24 +432,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x78",
-      "severity": "mild",
-      "text": "this_ptr->field_0x78 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x178 = 0;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

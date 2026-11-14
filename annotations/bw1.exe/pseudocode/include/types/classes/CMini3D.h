@@ -6,11 +6,10 @@
 #include "system/basetypes.h"
 
 // Structure: CMini3D
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI size 1: empty class; ctor 00510f60 writes only absolute statics, the dtor does nothing, and the one object is the global g_CMini3DInstance constructed in the minecar.cpp staticInit (no new site)
 // Ghidra size: 0x1 (1 bytes)
 #pragma pack(push, 1)
 typedef struct CMini3D {
-    char field_0[1]; // 0x0
 } CMini3D;
 #pragma pack(pop)
 

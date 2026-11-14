@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_FUN_00481350(undefined4 param_1,int *param_2,int *param_3,int param_4)
+; void shape_edittool_cpp_FUN_00481350(undefined4 param_1,int *param_2,int *param_3,uint param_4)
 ;
 ;
 ; XREF[1]:
@@ -16,9 +16,9 @@
 ;
 ; Called Functions:
 ;   crt_memory.c___arrinit_FUN_005a30d7
-;   engine_3d.c_FUN_00407b30
+;   engine_3d.c_clipAndDrawLine2D_FUN_00407b30
 ;   engine_matrix.c_transformToCache_FUN_004e5540
-;   engine_mini3d.cpp_FUN_004f3520
+;   engine_mini3d.cpp_setColor_FUN_004f3520
 ;
 ; *****************************************************************************
 
@@ -38,7 +38,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00481376
     PUSH EAX                            ; 0048137a
     CALL crt_memory.c___arrinit_FUN_005a30d7 ; 0048137b
-        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005a30d7()
+        ;   XREF to: 005a30d7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005a30d7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 00481380
     XOR EAX,EAX                         ; 00481383
     MOV EDX,dword ptr [ESI]             ; 00481385
@@ -103,8 +103,8 @@ section .text
     AND EAX,0xff                        ; 0048142b
     OR EAX,EDX                          ; 00481430
     PUSH EAX                            ; 00481432
-    CALL engine_mini3d.cpp_FUN_004f3520 ; 00481433
-        ;   XREF to: 004f3520 (UNCONDITIONAL_CALL)  ; undefined engine_mini3d.cpp_FUN_004f3520()
+    CALL engine_mini3d.cpp_setColor_FUN_004f3520 ; 00481433
+        ;   XREF to: 004f3520 (UNCONDITIONAL_CALL)  ; void engine_mini3d.cpp_setColor_FUN_004f3520(uint rgb)
     ADD ESP,0x4                         ; 00481438
     XOR ECX,ECX                         ; 0048143b
         ;   Label: LAB_0048143b
@@ -209,8 +209,8 @@ section .text
     MOV ESI,0x60b014                    ; 004815c3
     MOV EDI,ESP                         ; 004815c8
     MOVSD.REP ES:EDI,ESI                ; 004815ca
-    CALL engine_3d.c_FUN_00407b30       ; 004815cc
-        ;   XREF to: 00407b30 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_FUN_00407b30()
+    CALL engine_3d.c_clipAndDrawLine2D_FUN_00407b30 ; 004815cc
+        ;   XREF to: 00407b30 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407b30(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 004815d1
     MOV EAX,dword ptr [ESP + 0x15c]     ; 004815d4
     XOR AL,0x2                          ; 004815db
@@ -310,8 +310,8 @@ section .text
     MOV ESI,0x60b014                    ; 00481755
     MOV EDI,ESP                         ; 0048175a
     MOVSD.REP ES:EDI,ESI                ; 0048175c
-    CALL engine_3d.c_FUN_00407b30       ; 0048175e
-        ;   XREF to: 00407b30 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_FUN_00407b30()
+    CALL engine_3d.c_clipAndDrawLine2D_FUN_00407b30 ; 0048175e
+        ;   XREF to: 00407b30 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407b30(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 00481763
     MOV EAX,dword ptr [ESP + 0x15c]     ; 00481766
     XOR AL,0x4                          ; 0048176d
@@ -413,8 +413,8 @@ section .text
     MOV ESI,0x60b014                    ; 004818d5
     MOV EDI,ESP                         ; 004818da
     MOVSD.REP ES:EDI,ESI                ; 004818dc
-    CALL engine_3d.c_FUN_00407b30       ; 004818de
-        ;   XREF to: 00407b30 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_FUN_00407b30()
+    CALL engine_3d.c_clipAndDrawLine2D_FUN_00407b30 ; 004818de
+        ;   XREF to: 00407b30 (UNCONDITIONAL_CALL)  ; void engine_3d.c_clipAndDrawLine2D_FUN_00407b30(SRenderVertex vertex1, SRenderVertex vertex2)
     ADD ESP,0x60                        ; 004818e3
     MOV EBX,dword ptr [ESP + 0x15c]     ; 004818e6
     INC EBX                             ; 004818ed

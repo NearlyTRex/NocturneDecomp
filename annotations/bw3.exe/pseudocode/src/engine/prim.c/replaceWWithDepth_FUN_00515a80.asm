@@ -1,19 +1,22 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_prim_c_replaceWWithDepth_FUN_00515a80(int param_1,int param_2)
+; void __cdecl engine_prim_c_replaceWWithDepth_FUN_00515a80(SRenderVertex *vertices,int vertex_count)
 ;
+; Parameters:
+; SRenderVertex *  Stack[0x4]:4   vertices
+; int              Stack[0x8]:4   vertex_count
 ;
 ; XREF[9]:
 ;   core_asgaya.cpp_FUN_005a1ea0 at 005a21c7
-;   core_asgaya.cpp_FUN_005a23c0 at 005a26a7
-;   core_flies.cpp_FUN_004addd0 at 004ae1bb
+;   core_asgaya.cpp_rasterizePolygonCustom_FUN_005a23c0 at 005a26a7
+;   core_dpart.cpp_FUN_004673d0 at 00467747
+;   core_flies.cpp_CFlies_renderOpaque_FUN_004addd0 at 004ae1bb
 ;   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046d550 at 0046d802
 ;   engine_drender.cpp_CDemonRenderer_depthTest_FUN_0046e6b0 at 0046e6f9
-;   engine_prim.c_FUN_00515e80 at 005160e4
-;   engine_prim.c_FUN_00516de0 at 0051713f
-;   engine_prim.c_FUN_00517480 at 005176bf
-;   unkafter_dpart.cpp_FUN_004673d0 at 00467747
+;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_00517480 at 005176bf
+;   engine_prim.c_renderPolygonSoftware_FUN_00515e80 at 005160e4
+;   engine_prim.c_renderScanlinePolygon_FUN_00516de0 at 0051713f
 ;
 ; *****************************************************************************
 

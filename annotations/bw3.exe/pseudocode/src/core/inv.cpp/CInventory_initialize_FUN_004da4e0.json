@@ -1,0 +1,248 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 50,
+    "complexity_score": 55,
+    "cross_reference_count": 4,
+    "function_call_count": 3,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 25,
+    "suspect_count": 2,
+    "suspect_types": [
+      "preinc_loop_idiom",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 75
+  },
+  "cross_references": [
+    {
+      "addr": "004d2cd0",
+      "from_addr": "004d2cda",
+      "name": "core_hero.cpp_FUN_004d2cd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dc750",
+      "from_addr": "004dc772",
+      "name": "core_inv.cpp_CInventory_load_FUN_004dc750",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00518430",
+      "from_addr": "0051843f",
+      "name": "core_prye.cpp_CPrye_createDefaultWeapon_FUN_00518430",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00529a70",
+      "from_addr": "0052dff8",
+      "name": "core_script.cpp_CScript_step_FUN_00529a70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004da4e0",
+    "address_range": [
+      [
+        "004da4e0",
+        "004da56e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inv.cpp_CInventory_initialize_FUN_004da4e0",
+    "signature": "void __cdecl core_inv_cpp_CInventory_initialize_FUN_004da4e0(CInventory *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c4f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_createActorByName_FUN_0040c4f0"
+    },
+    {
+      "addr": "004da440",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_clear_FUN_004da440"
+    },
+    {
+      "addr": "005a35cc",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_rand_FUN_005a35cc"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c5f22",
+      "name": "s_CAmmo_005c5f22",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c5f2b",
+      "name": "DAT_005c5f2b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c5f2f",
+      "name": "DAT_005c5f2f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c5f37",
+      "name": "DAT_005c5f37",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "0052dff8",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_step_FUN_00529a70",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004dc772",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_load_FUN_004dc750",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004d2cda",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_FUN_004d2cd0",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0051843f",
+        "call_type": "direct",
+        "caller": "core_prye.cpp_CPrye_createDefaultWeapon_FUN_00518430",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.809523809523809,
+    "instruction_count": 42,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 3,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 50,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_MULT": 3,
+      "INT2FLOAT": 1,
+      "INT_ADD": 22,
+      "INT_AND": 18,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 18,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 9,
+      "INT_SUB": 13,
+      "LOAD": 13,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 15
+    },
+    "pcode_op_count": 202
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004da900",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.988
+    },
+    "bw1.exe": {
+      "addr": "004f7050",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.988
+    },
+    "nocedit.exe": {
+      "addr": "004fd190",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.988
+    },
+    "nocturne.exe": {
+      "addr": "004bef10",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.988
+    }
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInventory *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar2` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `pCVar2 = pCVar2;` self-assign, two-var `tmp = &pCVar2->field; pCVar2 = tmp;` ping-pong, or a bare `pCVar2 = pCVar2 + N;` advance followed by a `*pCVar2 =` store \u2014 plus a constant-index store on `pCVar2`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
+      "line": 14,
+      "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
+    }
+  ]
+}

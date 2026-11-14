@@ -1,0 +1,200 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 89,
+    "complexity_score": 28,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 10,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 28,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 117
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004c5a80",
+    "address_range": [
+      [
+        "004c5a80",
+        "004c5b7d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_glass.cpp_CGlass_archive_FUN_004c5a80",
+    "signature": "void __cdecl core_glass_cpp_CGlass_archive_FUN_004c5a80(CGlass *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b960",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b960"
+    },
+    {
+      "addr": "0040b730",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b730"
+    },
+    {
+      "addr": "0040b4b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveVector_FUN_0040b4b0"
+    },
+    {
+      "addr": "0040c330",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c330"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d9382",
+      "name": "s_glassSize_005d9381+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d938c",
+      "name": "s_glassTexture_005d938c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9399",
+      "name": "s_opacity_005d9399",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d93a1",
+      "name": "s_shattered_005d93a1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d93ab",
+      "name": "s_breakEvent_005d93ab",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d93b6",
+      "name": "s_mirrorFlag_005d93b6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d93c1",
+      "name": "s_breakableCondition_005d93c1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d93d4",
+      "name": "s_backgroundFlag_005d93d4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d93e3",
+      "name": "s_brokenTexture_005d93e3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00616794",
+      "name": "g_CGlassClassVersion",
+      "type": "int",
+      "value": "0x6"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.303030303030303,
+    "instruction_count": 66,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 10,
+      "CBRANCH": 5,
+      "COPY": 39,
+      "INT_ADD": 24,
+      "INT_AND": 32,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 34,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 16,
+      "INT_SUB": 35,
+      "LOAD": 5,
+      "POPCOUNT": 16,
+      "RETURN": 2,
+      "STORE": 30
+    },
+    "pcode_op_count": 284
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004e21f0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004cad80",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004ea090",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004acbc0",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGlass *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 220,
+        "vtable_addr": "005f7a84"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

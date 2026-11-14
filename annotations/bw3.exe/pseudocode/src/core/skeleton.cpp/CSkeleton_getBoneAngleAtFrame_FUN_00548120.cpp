@@ -9,7 +9,5 @@
 CQuaternion4f * __cdecl core_skeleton_cpp_CSkeleton_getBoneAngleAtFrame_FUN_00548120(CSkeleton *this_ptr,int bone_index,int frame_index)
 
 {
-  return (CQuaternion4f *)
-         ((frame_index * *(int *)&this_ptr->field_0x1de78 + bone_index) * 0x10 +
-         *(int *)&this_ptr->field_0x1ec90);
+  return this_ptr->bone_angle_frames + frame_index * this_ptr->bone_count + bone_index;
 }

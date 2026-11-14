@@ -4,13 +4,20 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
 
 // Structure: CHecaitomix
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 53372; ctor 00597df0, setup 00597e50, process 00597f40, renderTransparent 00598480, getTargetPoints 00598600
 // Ghidra size: 0xd07c (53372 bytes)
 #pragma pack(push, 1)
 typedef struct CHecaitomix {
-    char field_0[53372]; // 0x0
+    CEnemy base; // 0x0, derived
+    int bone_indices[5]; // 0xd054, setup findBone "Bip01 Spine1" (+0xd054, getTargetPoints), "Bip01 Head", "Bip01 R Finger0", "Bip01 L Finger0", "Dummy05" (+0xd064)
+    float anim_speed; // 0xd068, setup 1.0; process advances motion by dt * +0xcdcc * anim_speed
+    char field_53356[4]; // 0xd06c
+    int unknown_0xd070; // 0xd070, setup zeroes; nothing reads it
+    int render_alpha; // 0xd074, setup 0x10000; renderTransparent passes it to setRenderAlpha
+    char field_53368[4]; // 0xd078
 } CHecaitomix;
 #pragma pack(pop)
 

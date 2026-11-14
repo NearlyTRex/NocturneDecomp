@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 77,
+    "complexity_score": 78,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 27,
+    "pseudocode_lines": 28,
     "suspect_count": 4,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 93
+    "total_lines": 94
   },
   "cross_references": [
     {
@@ -37,7 +37,7 @@
     {
       "addr": "00533f40",
       "from_addr": "00533fdb",
-      "name": "core_set.cpp_FUN_00533f40",
+      "name": "core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_00533f40",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -60,14 +60,14 @@
       "name": "core_xform.cpp_transformAndClipGeometry_FUN_00594f40"
     },
     {
+      "addr": "0059a5d0",
+      "is_variadic": false,
+      "name": "core_zombie.cpp_rasterizePolygonCustom_FUN_0059a5d0"
+    },
+    {
       "addr": "00403970",
       "is_variadic": false,
       "name": "engine_3d.c_isVisiblePlane_FUN_00403970"
-    },
-    {
-      "addr": "0059a5d0",
-      "is_variadic": false,
-      "name": "unkafter_zombie.cpp_FUN_0059a5d0"
     }
   ],
   "globals": [
@@ -146,7 +146,7 @@
       {
         "call_addr": "00533fdb",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00533f40",
+        "caller": "core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_00533f40",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -186,6 +186,32 @@
       "STORE": 13
     },
     "pcode_op_count": 213
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00483c50",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0046d330",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0048c8d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00460e80",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 16,
@@ -236,18 +262,18 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 30,
       "match": "DAT_007bee34",
       "severity": "mild",
-      "text": "unkafter_zombie_cpp_FUN_0059a5d0((SRenderVertex *)&DAT_007bee34,DAT_007bee30,scanline_renderer);",
+      "text": "((SRenderVertex *)&DAT_007bee34,DAT_007bee30,scanline_renderer);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 30,
       "match": "DAT_007bee30",
       "severity": "mild",
-      "text": "unkafter_zombie_cpp_FUN_0059a5d0((SRenderVertex *)&DAT_007bee34,DAT_007bee30,scanline_renderer);",
+      "text": "((SRenderVertex *)&DAT_007bee34,DAT_007bee30,scanline_renderer);",
       "type": "undefined_data"
     }
   ]

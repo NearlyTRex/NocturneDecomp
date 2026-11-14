@@ -11,16 +11,16 @@
 ; int              Stack[0x14]:4   render_pass
 ;
 ; XREF[10]:
-;   core_baron.cpp_FUN_00410670 at 004107f0
-;   core_batman.cpp_FUN_00413c70 at 00413e01
-;   core_charactr.cpp_FUN_00424bd0 at 00424c4e
-;   core_charactr.cpp_FUN_004264d0 at 00426690
-;   core_dracbrid.cpp_FUN_00464ac0 at 00464c60
+;   core_baron.cpp_CBaron_renderTransparent_FUN_00410670 at 004107f0
+;   core_batman.cpp_CBatman_renderOpaque_FUN_00413c70 at 00413e01
+;   core_charactr.cpp_CCharacter_renderBurn_FUN_004264d0 at 00426690
+;   core_charactr.cpp_CCharacter_renderCharacter_FUN_00424bd0 at 00424c4e
+;   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00464ac0 at 00464c60
+;   core_mimic.cpp_CMimic_renderBackground_FUN_004f1b80 at 004f1bf3
 ;   core_mimic.cpp_CMimic_renderMirrored_FUN_004f1890 at 004f19a8
-;   core_mimic.cpp_FUN_004f1b80 at 004f1bf3
-;   core_shadow.cpp_FUN_0053e6c0 at 0053e7b1
-;   core_succubus.cpp_FUN_0056fe50 at 0056feea
-;   core_vampboss.cpp_FUN_00582ec0 at 00582f48
+;   core_shadow.cpp_CShadow_renderTransparent_FUN_0053e6c0 at 0053e7b1
+;   core_succubus.cpp_CSuccubus_renderOpaque_FUN_0056fe50 at 0056feea
+;   core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_00582ec0 at 00582f48
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModel_selectLOD_FUN_00543d00

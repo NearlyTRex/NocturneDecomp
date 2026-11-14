@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CChain * core_chain_cpp_CChain_dtor_FUN_005b5f50(CChain *this_ptr,uint flags)
+; CChain * __cdecl core_chain_cpp_CChain_dtor_FUN_005b5f50(CChain *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CChain *         Stack[0x4]:4   this_ptr
@@ -43,7 +43,7 @@ section .text
         ;   Label: LAB_005b5f76
     PUSH EBX                            ; 005b5f7b
     CALL crt_memory.c___vec_delete_FUN_005b7fa7 ; 005b5f7c
-        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___vec_delete_FUN_005b7fa7()
+        ;   XREF to: 005b7fa7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005b7fa7(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 005b5f81
     PUSH EAX                            ; 005b5f84
     CALL crt_unknown.c_FUN_005b7fce     ; 005b5f85

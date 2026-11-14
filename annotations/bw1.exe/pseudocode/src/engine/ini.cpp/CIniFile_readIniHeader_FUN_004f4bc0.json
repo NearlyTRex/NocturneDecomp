@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 62,
+    "complexity_score": 37,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 22,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "unrolled_strcpy"
     ],
     "total_lines": 55
@@ -19,13 +18,13 @@
     {
       "addr": "004f4f50",
       "from_addr": "004f4f92",
-      "name": "core_inivar.cpp_FUN_004f4f50",
+      "name": "core_inivar.cpp_readIniData_FUN_004f4f50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f5760",
       "from_addr": "004f5788",
-      "name": "core_inivar.cpp_FUN_004f5760",
+      "name": "core_inivar.cpp_writeIniData_FUN_004f5760",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -66,7 +65,7 @@
       {
         "call_addr": "004f4f92",
         "call_type": "direct",
-        "caller": "core_inivar.cpp_FUN_004f4f50",
+        "caller": "core_inivar.cpp_readIniData_FUN_004f4f50",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -77,7 +76,7 @@
       {
         "call_addr": "004f51a5",
         "call_type": "direct",
-        "caller": "core_inivar.cpp_FUN_004f4f50",
+        "caller": "core_inivar.cpp_readIniData_FUN_004f4f50",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -88,7 +87,7 @@
       {
         "call_addr": "004f51c2",
         "call_type": "direct",
-        "caller": "core_inivar.cpp_FUN_004f4f50",
+        "caller": "core_inivar.cpp_readIniData_FUN_004f4f50",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -99,7 +98,7 @@
       {
         "call_addr": "004f56d0",
         "call_type": "direct",
-        "caller": "core_inivar.cpp_FUN_004f4f50",
+        "caller": "core_inivar.cpp_readIniData_FUN_004f4f50",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -110,7 +109,7 @@
       {
         "call_addr": "004f5718",
         "call_type": "direct",
-        "caller": "core_inivar.cpp_FUN_004f4f50",
+        "caller": "core_inivar.cpp_readIniData_FUN_004f4f50",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -121,7 +120,7 @@
       {
         "call_addr": "004f5788",
         "call_type": "direct",
-        "caller": "core_inivar.cpp_FUN_004f5760",
+        "caller": "core_inivar.cpp_writeIniData_FUN_004f5760",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -132,7 +131,7 @@
       {
         "call_addr": "004f5948",
         "call_type": "direct",
-        "caller": "core_inivar.cpp_FUN_004f5760",
+        "caller": "core_inivar.cpp_writeIniData_FUN_004f5760",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -143,7 +142,7 @@
       {
         "call_addr": "004f5965",
         "call_type": "direct",
-        "caller": "core_inivar.cpp_FUN_004f5760",
+        "caller": "core_inivar.cpp_writeIniData_FUN_004f5760",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -154,7 +153,7 @@
       {
         "call_addr": "004f5e7b",
         "call_type": "direct",
-        "caller": "core_inivar.cpp_FUN_004f5760",
+        "caller": "core_inivar.cpp_writeIniData_FUN_004f5760",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -192,6 +191,32 @@
     },
     "pcode_op_count": 113
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004d89d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004d8ae0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004fbae0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004bd8d0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -216,22 +241,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x100",
-      "severity": "mild",
-      "text": "this_ptr->field_0x100 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x100",
-      "severity": "mild",
-      "text": "pcVar2 = &this_ptr->field_0x100;",
-      "type": "unnamed_field"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 13,

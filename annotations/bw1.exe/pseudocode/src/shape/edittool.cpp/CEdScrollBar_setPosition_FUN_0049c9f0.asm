@@ -11,7 +11,7 @@
 ; int              Stack[0x14]:4   bottom_pos
 ;
 ; XREF[1]:
-;   shape_edittool.cpp_FUN_0049b060 at 0049b5e4
+;   shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_0049b060 at 0049b5e4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005dc811

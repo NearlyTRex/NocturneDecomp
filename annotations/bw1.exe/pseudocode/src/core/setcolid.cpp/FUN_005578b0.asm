@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_setcolid_cpp_FUN_005578b0(CDemonSet *param_1,float param_2,float *param_3,float *param_4,float param_5)
+; float core_setcolid_cpp_FUN_005578b0(CDemonSet *param_1,float param_2,CBoundingBox3D *param_3,float *param_4,float param_5)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x114]:4  local_114
@@ -40,8 +40,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[4]:
+;   core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_00557110 at 005571de
 ;   core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_00557230 at 00557277
-;   core_setcolid.cpp_FUN_00557110 at 005571de
 ;   core_setcolid.cpp_FUN_00557300 at 005573b3
 ;   core_setcolid.cpp_FUN_005574c0 at 00557528
 ;

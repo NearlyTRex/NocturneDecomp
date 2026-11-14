@@ -16,91 +16,97 @@
     {
       "addr": "004115b0",
       "from_addr": "00411990",
-      "name": "core_batcreat.cpp_FUN_004115b0",
+      "name": "core_batcreat.cpp_CBatCreature_process_FUN_004115b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00412ba0",
       "from_addr": "00413340",
-      "name": "core_batman.cpp_FUN_00412ba0",
+      "name": "core_batman.cpp_CBatman_process_FUN_00412ba0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00415340",
+      "from_addr": "00415435",
+      "name": "core_bird.cpp_CBird_process_FUN_00415340",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00423b70",
       "from_addr": "00423d95",
-      "name": "core_bride.cpp_FUN_00423b70",
+      "name": "core_bride.cpp_CBride_process_FUN_00423b70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00428ae0",
       "from_addr": "00429b0f",
-      "name": "core_carved.cpp_FUN_00428ae0",
+      "name": "core_carved.cpp_CCarved_process_FUN_00428ae0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00448570",
       "from_addr": "0044891a",
-      "name": "core_cow.cpp_FUN_00448570",
+      "name": "core_cow.cpp_CZombieCow_process_FUN_00448570",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00459100",
       "from_addr": "0045a480",
-      "name": "core_demnfolk.cpp_FUN_00459100",
+      "name": "core_demnfolk.cpp_CDemnfolk_process_FUN_00459100",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004768a0",
       "from_addr": "00476ce4",
-      "name": "core_dog.cpp_FUN_004768a0",
+      "name": "core_dog.cpp_CZombieDog_process_FUN_004768a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0047b510",
       "from_addr": "0047c2d9",
-      "name": "core_dracbrid.cpp_FUN_0047b510",
+      "name": "core_dracbrid.cpp_CDraculaBride_process_FUN_0047b510",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00485d70",
       "from_addr": "00486246",
-      "name": "core_drone.cpp_FUN_00485d70",
+      "name": "core_drone.cpp_CDrone_process_FUN_00485d70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004de330",
       "from_addr": "004dee83",
-      "name": "core_ghoul.cpp_FUN_004de330",
+      "name": "core_ghoul.cpp_CGhoul_process_FUN_004de330",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004efc90",
       "from_addr": "004eff87",
-      "name": "core_hotdemon.cpp_FUN_004efc90",
+      "name": "core_hotdemon.cpp_CHotDemon_process_FUN_004efc90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f2b80",
       "from_addr": "004f31db",
-      "name": "core_imp.cpp_FUN_004f2b80",
+      "name": "core_imp.cpp_CImp_process_FUN_004f2b80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004fda40",
       "from_addr": "004fdfe0",
-      "name": "core_larva.cpp_FUN_004fda40",
+      "name": "core_larva.cpp_CLarva_process_FUN_004fda40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0050fba0",
       "from_addr": "0050fdda",
-      "name": "core_mimic.cpp_FUN_0050fba0",
+      "name": "core_mimic.cpp_CMimic_processAnimation_FUN_0050fba0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0051ce40",
       "from_addr": "0051d798",
-      "name": "core_mobster.cpp_FUN_0051ce40",
+      "name": "core_mobster.cpp_CMobster_process_FUN_0051ce40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -112,31 +118,25 @@
     {
       "addr": "0054bc90",
       "from_addr": "0054c29a",
-      "name": "core_sentinel.cpp_FUN_0054bc90",
+      "name": "core_sentinel.cpp_CSentinel_process_FUN_0054bc90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0056c220",
       "from_addr": "0056c89c",
-      "name": "core_smiley.cpp_FUN_0056c220",
+      "name": "core_smiley.cpp_CSmiley_process_FUN_0056c220",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005af4a0",
       "from_addr": "005b00ba",
-      "name": "core_werewolf.cpp_FUN_005af4a0",
+      "name": "core_werewolf.cpp_CWerewolf_process_FUN_005af4a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005bafb0",
       "from_addr": "005bc394",
-      "name": "core_zombie.cpp_FUN_005bafb0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00415340",
-      "from_addr": "00415435",
-      "name": "unkafter_bird.cpp_FUN_00415340",
+      "name": "core_zombie.cpp_CZombie_process_FUN_005bafb0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -171,7 +171,7 @@
       {
         "call_addr": "00411990",
         "call_type": "direct",
-        "caller": "core_batcreat.cpp_FUN_004115b0",
+        "caller": "core_batcreat.cpp_CBatCreature_process_FUN_004115b0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -182,7 +182,7 @@
       {
         "call_addr": "00413340",
         "call_type": "direct",
-        "caller": "core_batman.cpp_FUN_00412ba0",
+        "caller": "core_batman.cpp_CBatman_process_FUN_00412ba0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -193,7 +193,7 @@
       {
         "call_addr": "00429b0f",
         "call_type": "direct",
-        "caller": "core_carved.cpp_FUN_00428ae0",
+        "caller": "core_carved.cpp_CCarved_process_FUN_00428ae0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -204,7 +204,7 @@
       {
         "call_addr": "0044891a",
         "call_type": "direct",
-        "caller": "core_cow.cpp_FUN_00448570",
+        "caller": "core_cow.cpp_CZombieCow_process_FUN_00448570",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -215,7 +215,7 @@
       {
         "call_addr": "0045a480",
         "call_type": "direct",
-        "caller": "core_demnfolk.cpp_FUN_00459100",
+        "caller": "core_demnfolk.cpp_CDemnfolk_process_FUN_00459100",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -226,7 +226,7 @@
       {
         "call_addr": "00476ce4",
         "call_type": "direct",
-        "caller": "core_dog.cpp_FUN_004768a0",
+        "caller": "core_dog.cpp_CZombieDog_process_FUN_004768a0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -237,7 +237,7 @@
       {
         "call_addr": "0047c2d9",
         "call_type": "direct",
-        "caller": "core_dracbrid.cpp_FUN_0047b510",
+        "caller": "core_dracbrid.cpp_CDraculaBride_process_FUN_0047b510",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -248,7 +248,7 @@
       {
         "call_addr": "00486246",
         "call_type": "direct",
-        "caller": "core_drone.cpp_FUN_00485d70",
+        "caller": "core_drone.cpp_CDrone_process_FUN_00485d70",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -259,7 +259,7 @@
       {
         "call_addr": "004dee83",
         "call_type": "direct",
-        "caller": "core_ghoul.cpp_FUN_004de330",
+        "caller": "core_ghoul.cpp_CGhoul_process_FUN_004de330",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -270,7 +270,7 @@
       {
         "call_addr": "004eff87",
         "call_type": "direct",
-        "caller": "core_hotdemon.cpp_FUN_004efc90",
+        "caller": "core_hotdemon.cpp_CHotDemon_process_FUN_004efc90",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -308,6 +308,32 @@
       "STORE": 8
     },
     "pcode_op_count": 79
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "004c9ad0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004cec40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004ede30",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004b0480",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 16,

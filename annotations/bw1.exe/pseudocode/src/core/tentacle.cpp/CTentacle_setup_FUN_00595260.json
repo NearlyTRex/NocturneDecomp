@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 58,
+    "complexity_score": 34,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 18,
-    "suspect_count": 3,
+    "pseudocode_lines": 19,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 66
+    "total_lines": 67
   },
   "cross_references": [],
   "function": {
@@ -40,14 +39,14 @@
       "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30"
     },
     {
+      "addr": "00569b20",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00569b20"
+    },
+    {
       "addr": "005634f0",
       "is_variadic": false,
       "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0"
-    },
-    {
-      "addr": "00569b20",
-      "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_00569b20"
     }
   ],
   "globals": [
@@ -129,6 +128,26 @@
     },
     "pcode_op_count": 159
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00572630",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005dafc0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00543bc0",
+      "by": "name",
+      "class": "const-change",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -153,22 +172,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_00569b20((CDeformableModelInstance *)&this_ptr->field_0x158);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)&this_ptr->field_0x158);",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

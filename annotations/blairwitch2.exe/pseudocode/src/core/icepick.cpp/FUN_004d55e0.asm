@@ -17,13 +17,13 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ;
 ; XREF[1]:
-;   core_icepick.cpp_FUN_004d4c50 at 004d51a4
+;   core_icepick.cpp_CIcePick_process_FUN_004d4c50 at 004d51a4
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005da866
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 g_CDemonSetInstance.field1364324_0x14d164
-;   undefined4 g_CDemonSetInstance.field1364328_0x14d168
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;   undefined4 g_CTommyGunClassInfo.name_hash
 ;
 ; Called Functions:
@@ -71,7 +71,7 @@ section .text
     MOV EAX,[0x0061b5a8]                ; 004d5642 | g_CDemonSetPtr
         ;   Label: LAB_004d5642
     MOV EBX,dword ptr [ESP + 0x40]      ; 004d5647
-    CMP EBX,dword ptr [EAX + 0x14d164]  ; 004d564b | g_CDemonSetInstance.field1364324_0x14d164
+    CMP EBX,dword ptr [EAX + 0x14d164]  ; 004d564b | g_CDemonSetInstance.actor_count
     JL 0x004d566d                       ; 004d5651
         ;   XREF to: 004d566d (CONDITIONAL_JUMP)  ; LAB_004d566d
     MOV EAX,dword ptr [EBP + 0x14]      ; 004d5653
@@ -88,7 +88,7 @@ section .text
     RET                                 ; 004d566c
     ADD EAX,dword ptr [ESP + 0x44]      ; 004d566d
         ;   Label: LAB_004d566d
-    MOV EBX,dword ptr [EAX + 0x14d168]  ; 004d5671 | g_CDemonSetInstance.field1364328_0x14d168
+    MOV EBX,dword ptr [EAX + 0x14d168]  ; 004d5671 | g_CDemonSetInstance.actors[0]
     PUSH EBX                            ; 004d5677
     MOV EAX,dword ptr [EBX + 0x2b0]     ; 004d5678
     CALL dword ptr [EAX + 0x9c]         ; 004d567e
@@ -100,7 +100,7 @@ section .text
     PUSH EDI                            ; 004d5695
     PUSH EBX                            ; 004d5696
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 004d5697
-        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
+        ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_actor.cpp_castToClassHash_FUN_0040c8f0(CDemonActor * actor_ptr, uint class_name_hash)
     ADD ESP,0x8                         ; 004d569c
     TEST EAX,EAX                        ; 004d569f
     JZ 0x004d5715                       ; 004d56a1

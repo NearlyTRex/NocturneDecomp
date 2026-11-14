@@ -2,21 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 12,
+    "complexity_score": 11,
     "cross_reference_count": 22,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 12,
+    "pseudocode_lines": 11,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 38
+    "total_lines": 37
   },
   "cross_references": [
     {
-      "addr": "00538b2e",
+      "addr": "00538b30",
       "from_addr": "00538b5e",
-      "name": "cockpit_pkbmpset.cpp_FUN_00538b2e",
+      "name": "cockpit_pkbmpset.cpp_FUN_00538b30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -40,7 +40,7 @@
     {
       "addr": "004bcba0",
       "from_addr": "004bcc15",
-      "name": "core_fldnotes.cpp_FUN_004bcba0",
+      "name": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004bcba0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -70,7 +70,7 @@
     {
       "addr": "004c0cd0",
       "from_addr": "004c0d5c",
-      "name": "engine_font.cpp_FUN_004c0cd0",
+      "name": "engine_font.cpp_CBitFont_loadBitmap_FUN_004c0cd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -86,51 +86,51 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0053bfbe",
+      "addr": "0053bfc0",
       "from_addr": "0053c069",
-      "name": "engine_pod.cpp_FUN_0053bfbe",
+      "name": "engine_pod.cpp_FUN_0053bfc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0053cc5c",
+      "addr": "0053cc60",
       "from_addr": "0053cd0c",
-      "name": "engine_pod.cpp_FUN_0053cc5c",
+      "name": "engine_pod.cpp_FUN_0053cc60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00597d6e",
+      "addr": "00597d70",
       "from_addr": "00597db1",
-      "name": "engine_texture.cpp_FUN_00597d6e",
+      "name": "engine_texture.cpp_FUN_00597d70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0052aea0",
       "from_addr": "0052aeb2",
-      "name": "sound_mp3.cpp_FUN_0052aea0",
+      "name": "sound_mp3.cpp_CMP3Decoder_openFile_FUN_0052aea0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0056e130",
       "from_addr": "0056e1dc",
-      "name": "sound_sndmain.cpp_FUN_0056e130",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0056e830",
-      "from_addr": "0056e8ec",
-      "name": "sound_sndmain.cpp_FUN_0056e830",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0056edde",
-      "from_addr": "0056edf3",
-      "name": "sound_sndmain.cpp_FUN_0056edde",
+      "name": "sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_0056e130",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00574410",
       "from_addr": "0057444a",
-      "name": "sound_sndmain.cpp_FUN_00574410",
+      "name": "sound_sndmain.cpp_getSampleInfo_FUN_00574410",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056e830",
+      "from_addr": "0056e8ec",
+      "name": "sound_sndmain.cpp_getSfxSample_FUN_0056e830",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056ede0",
+      "from_addr": "0056edf3",
+      "name": "sound_sndmain.cpp_isStreamableFile_FUN_0056ede0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -142,7 +142,7 @@
     {
       "addr": "00530bf0",
       "from_addr": "00530c10",
-      "name": "support_newmsg.cpp_FUN_00530bf0",
+      "name": "support_newmsg.cpp_readMessageFile_FUN_00530bf0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -177,7 +177,7 @@
       {
         "call_addr": "004bcc15",
         "call_type": "direct",
-        "caller": "core_fldnotes.cpp_FUN_004bcba0",
+        "caller": "core_fldnotes.cpp_CFieldNotes_loadFile_FUN_004bcba0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -188,7 +188,7 @@
       {
         "call_addr": "004c0d5c",
         "call_type": "direct",
-        "caller": "engine_font.cpp_FUN_004c0cd0",
+        "caller": "engine_font.cpp_CBitFont_loadBitmap_FUN_004c0cd0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -221,7 +221,7 @@
       {
         "call_addr": "00530c10",
         "call_type": "direct",
-        "caller": "support_newmsg.cpp_FUN_00530bf0",
+        "caller": "support_newmsg.cpp_readMessageFile_FUN_00530bf0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -313,6 +313,32 @@
       "STORE": 6
     },
     "pcode_op_count": 92
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00460aa0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004657f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00481880",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004568c0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 544,

@@ -26,7 +26,13 @@
     {
       "addr": "00422ab0",
       "from_addr": "00422b5a",
-      "name": "core_boxactor.cpp_FUN_00422ab0",
+      "name": "core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_00422ab0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004610b0",
+      "from_addr": "00461100",
+      "name": "core_djien.cpp_CDjien_customRayIntersect_FUN_004610b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -38,7 +44,7 @@
     {
       "addr": "00504580",
       "from_addr": "00504896",
-      "name": "core_manpuz.cpp_FUN_00504580",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00504580",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -50,13 +56,7 @@
     {
       "addr": "005ab530",
       "from_addr": "005ab574",
-      "name": "core_wateract.cpp_FUN_005ab530",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004610b0",
-      "from_addr": "00461100",
-      "name": "unkafter_djien.cpp_FUN_004610b0",
+      "name": "core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005ab530",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -154,7 +154,7 @@
       {
         "call_addr": "00422b5a",
         "call_type": "direct",
-        "caller": "core_boxactor.cpp_FUN_00422ab0",
+        "caller": "core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_00422ab0",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -169,7 +169,7 @@
       {
         "call_addr": "00461100",
         "call_type": "direct",
-        "caller": "unkafter_djien.cpp_FUN_004610b0",
+        "caller": "core_djien.cpp_CDjien_customRayIntersect_FUN_004610b0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -183,7 +183,7 @@
       {
         "call_addr": "00504896",
         "call_type": "direct",
-        "caller": "core_manpuz.cpp_FUN_00504580",
+        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00504580",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -197,7 +197,7 @@
       {
         "call_addr": "00504a47",
         "call_type": "direct",
-        "caller": "core_manpuz.cpp_FUN_00504580",
+        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00504580",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -211,7 +211,7 @@
       {
         "call_addr": "005ab574",
         "call_type": "direct",
-        "caller": "core_wateract.cpp_FUN_005ab530",
+        "caller": "core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005ab530",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -268,6 +268,20 @@
       "STORE": 62
     },
     "pcode_op_count": 2622
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0041af70",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0041e220",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 108,

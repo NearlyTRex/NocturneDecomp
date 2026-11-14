@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 24,
     "complexity_score": 11,
-    "cross_reference_count": 6,
+    "cross_reference_count": 8,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -14,15 +14,15 @@
   },
   "cross_references": [
     {
-      "addr": "00503ed0",
-      "from_addr": "00503ee9",
-      "name": "core_netgame.cpp_FUN_00503ed0",
+      "addr": "00504270",
+      "from_addr": "00504292",
+      "name": "core_netgame.cpp_CNetGame_initializeNetwork_FUN_00504270",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00504270",
-      "from_addr": "00504292",
-      "name": "core_netgame.cpp_FUN_00504270",
+      "addr": "00503ed0",
+      "from_addr": "00503ee9",
+      "name": "core_netgame.cpp_CNetGame_shutdown_FUN_00503ed0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -44,9 +44,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0056fef0",
+      "from_addr": "0057001c",
+      "name": "support_trisock.cpp_FUN_0056fef0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00571340",
       "from_addr": "00571447",
       "name": "support_trisock.cpp_FUN_00571340",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00571d10",
+      "from_addr": "00571d62",
+      "name": "support_trisock.cpp_FUN_00571d10",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -76,12 +88,12 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 6,
+    "call_site_count": 8,
     "call_sites": [
       {
         "call_addr": "00503ee9",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_FUN_00503ed0",
+        "caller": "core_netgame.cpp_CNetGame_shutdown_FUN_00503ed0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -114,7 +126,7 @@
       {
         "call_addr": "00504292",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_FUN_00504270",
+        "caller": "core_netgame.cpp_CNetGame_initializeNetwork_FUN_00504270",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -137,6 +149,28 @@
         "call_addr": "0056f8e6",
         "call_type": "direct",
         "caller": "support_trisock.cpp_CSocket_dtor_FUN_0056f8e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0057001c",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_FUN_0056fef0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00571d62",
+        "call_type": "direct",
+        "caller": "support_trisock.cpp_FUN_00571d10",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -172,6 +206,32 @@
       "STORE": 6
     },
     "pcode_op_count": 76
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00579360",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "0059cc40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005e1d20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "00549110",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 8,

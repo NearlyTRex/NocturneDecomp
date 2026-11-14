@@ -8,18 +8,18 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ; undefined4       Stack[-0x8]:4  local_8
 ;
-; XREF[51]:
-;   core_baal.cpp_FUN_005968a0 at 005975ea
-;   core_boneguy.cpp_FUN_004179b0 at 0041816d
-;   core_boneguy.cpp_FUN_004186b0 at 00418813
-;   core_boneguy.cpp_FUN_00419b40 at 0041a2c1
+; XREF[52]:
+;   core_baal.cpp_CBaal_process_FUN_005968a0 at 005975ea
+;   core_boneguy.cpp_CBaalSkel_process_FUN_00419b40 at 0041a2c1
+;   core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004186b0 at 00418813
+;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 0041816d
 ;   core_bugs.cpp_FUN_00423050 at 0042329b
-;   core_carved.cpp_FUN_00427780 at 00427954
+;   core_carved.cpp_CCarved_getCarryObjToBodyXForm_FUN_00427780 at 00427954
 ;   core_chain.cpp_FUN_00429420 at 0042945a
+;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00430590 at 00430781
 ;   core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042e4b0 at 0042e7a1
 ;   core_charactr.cpp_FUN_0042e8c0 at 0042eb3f
-;   core_charactr.cpp_FUN_0042fc90 at 0042fd34
-;   ... and 41 more
+;   ... and 42 more
 ;
 ; *****************************************************************************
 

@@ -33,7 +33,25 @@ Function addresses differ between the binaries. **Never look up by address acros
 
 2. **Grep by function name**, dropping the `_FUN_<addr>` suffix.
 
-3. **Use the precomputed mapping** when a name lookup fails, or when the confidence of a match
+3. **Read the function's `siblings` key.** Every per-function JSON beside the `.cpp` lists the
+   function's twin in each other program (nocedit, nocturne and the three Blair Witch builds):
+
+   ```json
+   "siblings": {
+     "bw3.exe":     {"addr": "004fbb70", "by": "name", "class": "identical", "ratio": 1.0},
+     "nocedit.exe": {"addr": "0052d610", "by": "name", "class": "logic-change", "ratio": 0.7882}
+   }
+   ```
+
+   `by` is `name` (the same class and method) or `body` (no name pairs them, but the bodies are the
+   same instructions and unique in both programs; this links the unnamed Blair Witch code the
+   builds share). `class` is `diff_functions.py`'s: `identical`, `layout-drift` (only structure
+   offsets differ), `const-change`, `regalloc`, `operand-change` or `logic-change`.
+   `sibling_identity.py` writes the key after every functions or pseudocode export. The recreation
+   itinerary reads it to list each function's Blair Witch variants and the Blair Witch code nocedit
+   lacks.
+
+4. **Use the precomputed mapping** when a name lookup fails, or when the confidence of a match
    matters. `annotations/nocturne.exe/reports/sibling_verified_mapping.json` records 4707 matched
    pairs:
 
@@ -51,9 +69,9 @@ Function addresses differ between the binaries. **Never look up by address acros
    `unverifiable` or `conflict`. The file also carries `editor_only` (351 functions with no game
    counterpart), `unmatched_a` and `unmatched_b`.
 
-4. **Prefer the counterpart's `.keep` if it has one**, then its `.asm`, then its `.cpp`.
+5. **Prefer the counterpart's `.keep` if it has one**, then its `.asm`, then its `.cpp`.
 
-5. **Search the sibling's existing names before inventing one — for globals as much as functions.**
+6. **Search the sibling's existing names before inventing one — for globals as much as functions.**
    A global that looks anonymous in one binary is very often already named in the other, reached
    through a different function. When the sibling has a name, transfer it. Two names for one
    structure across the pair is a defect introduced, not a synonym.

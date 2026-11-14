@@ -4,13 +4,20 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
 
 // Structure: CSmiley
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x10b3c (68412 bytes)
 #pragma pack(push, 1)
 typedef struct CSmiley {
-    char field_0[68412]; // 0x0
+    CEnemy base; // 0x0
+    float attack_cooldown; // 0x10af8
+    float guard_distance; // 0x10afc
+    int part_indices[11]; // 0x10b00
+    int attack_hit_count; // 0x10b2c
+    int dismember_hit_count; // 0x10b30
+    float dismember_cooldown; // 0x10b34
+    int model_variant; // 0x10b38
 } CSmiley;
 #pragma pack(pop)
 

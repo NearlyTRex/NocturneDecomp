@@ -7,7 +7,7 @@
 
 // Original: core_texlist.cpp_staticInit_FUN_00569080
 // Address: 00569080
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_texlist.cpp_CTextureList_ctor_FUN_005690a0
 // Address: 005690a0
@@ -21,9 +21,9 @@ CTextureList * __cdecl CTextureList::dtor(CTextureList *this_ptr,uint flags);
 // Address: 005690c0
 void __cdecl CTextureList::load(CTextureList *this_ptr,char *filename);
 
-// Original: core_texlist.cpp_FUN_00569380
+// Original: core_texlist.cpp_CTextureList_save_FUN_00569380
 // Address: 00569380
-void FUN_00569380(int *param_1,char *param_2);
+void __cdecl CTextureList::save(CTextureList *this_ptr,char *filename);
 
 // Original: core_texlist.cpp_CTextureList_captureAllTextures_FUN_005694e0
 // Address: 005694e0
@@ -32,3 +32,7 @@ void __cdecl CTextureList::captureAllTextures(CTextureList *this_ptr);
 // Original: core_texlist.cpp_CTextureList_captureTexture_FUN_00569520
 // Address: 00569520
 void __cdecl CTextureList::captureTexture(CTextureList *this_ptr,uint texture_index);
+
+// Original: core_texlist.cpp_FUN_00569550
+// Address: 00569550
+undefined4 * FUN_00569550(undefined4 *param_1);

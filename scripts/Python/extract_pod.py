@@ -30,7 +30,8 @@ two skeletons agree bone for bone.
 
     extract_pod.py hero.pod                    # list everything
     extract_pod.py hero.pod .skl               # list matching entries
-    extract_pod.py hero.pod .skl /tmp/out      # ...and extract them there
+    extract_pod.py hero.pod .skl /tmp/out      # ...and extract them there, under
+                                               # the archive's own folders
 """
 
 import os
@@ -53,20 +54,34 @@ def read_pod(path):
         raise SystemExit("%s: not a POD2 archive (magic %r)" % (path, blob[:4]))
 
     description = blob[8:0x58].split(b"\0")[0].decode("latin-1")
-    file_count, audit_count = struct.unpack_from("<ii", blob, 0x58)
+    try:
+        file_count, audit_count = struct.unpack_from("<ii", blob, 0x58)
+        entries = []
+        for i in range(file_count):
+            name_offset, size, offset, _timestamp, _checksum = struct.unpack_from(
+                "<IIIII", blob, POD2_HEADER_SIZE + i * POD2_DIR_ENTRY_SIZE)
+            entries.append({"name_offset": name_offset, "size": size, "offset": offset})
 
-    entries = []
-    for i in range(file_count):
-        name_offset, size, offset, _timestamp, _checksum = struct.unpack_from(
-            "<IIIII", blob, POD2_HEADER_SIZE + i * POD2_DIR_ENTRY_SIZE)
-        entries.append({"name_offset": name_offset, "size": size, "offset": offset})
-
-    name_table = POD2_HEADER_SIZE + file_count * POD2_DIR_ENTRY_SIZE
-    for entry in entries:
-        start = name_table + entry["name_offset"]
-        entry["name"] = blob[start:blob.index(b"\0", start)].decode("latin-1")
+        name_table = POD2_HEADER_SIZE + file_count * POD2_DIR_ENTRY_SIZE
+        for entry in entries:
+            start = name_table + entry["name_offset"]
+            entry["name"] = blob[start:blob.index(b"\0", start)].decode("latin-1")
+    except (struct.error, ValueError):
+        raise SystemExit("%s: truncated POD2 archive" % path)
 
     return description, audit_count, entries, blob
+
+
+def extract_path(name):
+    """The archive's Windows path as a relative path that stays inside the output folder.
+
+    Folders are kept: one archive holds the same file name in several of them
+    (BWV3.POD has 22 such entries), so the leaf alone would overwrite. Drive,
+    empty, `.` and `..` parts are dropped.
+    """
+    parts = [p for p in name.replace("\\", "/").split("/")
+             if p not in ("", ".", "..") and not p.endswith(":")]
+    return os.path.join(*parts) if parts else None
 
 
 def main(argv):
@@ -87,11 +102,11 @@ def main(argv):
     for entry in selected:
         print("  %-40s %9d bytes @ 0x%08x"
               % (entry["name"], entry["size"], entry["offset"]))
-        if out_dir:
-            os.makedirs(out_dir, exist_ok=True)
-            # Archive names are Windows paths; keep only the leaf.
-            leaf = os.path.basename(entry["name"].replace("\\", "/"))
-            with open(os.path.join(out_dir, leaf), "wb") as handle:
+        relative = extract_path(entry["name"]) if out_dir else None
+        if relative:
+            target = os.path.join(out_dir, relative)
+            os.makedirs(os.path.dirname(target), exist_ok=True)
+            with open(target, "wb") as handle:
                 handle.write(blob[entry["offset"]:entry["offset"] + entry["size"]])
 
     if pattern is not None:

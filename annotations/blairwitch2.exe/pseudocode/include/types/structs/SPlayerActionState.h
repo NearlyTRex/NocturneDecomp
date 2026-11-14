@@ -6,10 +6,19 @@
 #include "system/basetypes.h"
 
 // Structure: SPlayerActionState
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// 9 dwords: SPlayerInput's speeds start at +0x24 (FUN_004b76c0 zeroes strafe_speed at +0x24), one more than nocedit's 8 (bw1 typed drift: strafe/turn/look 0x20/0x24/0x28 -> 0x24/0x28/0x2c in processMouseControls).
+// Ghidra size: 0x24 (36 bytes)
 #pragma pack(push, 1)
 typedef struct SPlayerActionState {
+    int walk; // 0x0, FUN_004b76c0 stores the edge of CGame+0x28 (keyWalk, readIniData 004d8d60)
+    int backup; // 0x4, FUN_004b76c0 stores the edge of CGame+0x2c (keyBackup, readIniData 004d8d60)
+    int run; // 0x8, FUN_004b76c0 stores the edge of CGame+0x30 (keyRun (always_run inverts it), readIniData 004d8d60)
+    int fire; // 0xc, FUN_004b76c0 stores the edge of CGame+0x48 (keyFire (zeroed when the hero is dead), readIniData 004d8d60)
+    int use_item; // 0x10, FUN_004b76c0 stores the edge of CGame+0x4c (keyUseItem, readIniData 004d8d60)
+    int light; // 0x14, FUN_004b76c0 stores the edge of CGame+0x50 (keyLight, readIniData 004d8d60)
+    int draw; // 0x18, FUN_004b76c0 stores the edge of CGame+0x68 (keyDraw, readIniData 004d8d60)
+    int jump; // 0x1c, nocedit's jump slot; bw2 has no keyJump and FUN_004b76c0 never writes +0x1c (it skips from +0x18 to +0x20); kept by position
+    int quick_turn; // 0x20, FUN_004b76c0 stores CGame+0x70, the slot bw1 reads as keyQuickTurn; bw2's ini has no key for it
 } SPlayerActionState;
 #pragma pack(pop)
 

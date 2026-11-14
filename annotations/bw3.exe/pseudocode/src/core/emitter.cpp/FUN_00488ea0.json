@@ -27,7 +27,7 @@
     {
       "addr": "00487eb0",
       "from_addr": "004884ca",
-      "name": "core_emitter.cpp_FUN_00487eb0",
+      "name": "core_emitter.cpp_CEmitter_process_FUN_00487eb0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -52,7 +52,7 @@
     {
       "addr": "0040ce40",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040ce40"
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40"
     }
   ],
   "globals": [],
@@ -62,7 +62,7 @@
       {
         "call_addr": "004884ca",
         "call_type": "direct",
-        "caller": "core_emitter.cpp_FUN_00487eb0",
+        "caller": "core_emitter.cpp_CEmitter_process_FUN_00487eb0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -104,6 +104,14 @@
       "STORE": 27
     },
     "pcode_op_count": 303
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "004a02e0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 92,
@@ -156,9 +164,9 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 12,
-      "match": "auStackY_1004",
+      "match": "afStackY_1004",
       "severity": "moderate",
-      "text": "uint auStackY_1004 [1001];",
+      "text": "float afStackY_1004 [1001];",
       "type": "stack_alignment_array"
     },
     {

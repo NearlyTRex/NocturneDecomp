@@ -38,21 +38,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005384d0",
-      "from_addr": "005386fa",
-      "name": "core_stranger.cpp_CStranger_FUN_005384d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "005396d0",
       "from_addr": "00539780",
-      "name": "core_stranger.cpp_CStranger_FUN_005396d0",
+      "name": "core_stranger.cpp_CStranger_extractTurnPose_FUN_005396d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00539b10",
       "from_addr": "00539fe0",
       "name": "core_stranger.cpp_CStranger_makeDrawDecision_FUN_00539b10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005384d0",
+      "from_addr": "005386fa",
+      "name": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005384d0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -164,7 +164,7 @@
       {
         "call_addr": "005386fa",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_CStranger_FUN_005384d0",
+        "caller": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005384d0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -175,7 +175,7 @@
       {
         "call_addr": "00538749",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_CStranger_FUN_005384d0",
+        "caller": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005384d0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -186,7 +186,7 @@
       {
         "call_addr": "00538a51",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_CStranger_FUN_005384d0",
+        "caller": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005384d0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -197,7 +197,7 @@
       {
         "call_addr": "00538aa9",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_CStranger_FUN_005384d0",
+        "caller": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005384d0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -208,7 +208,7 @@
       {
         "call_addr": "00538aff",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_CStranger_FUN_005384d0",
+        "caller": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005384d0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -219,7 +219,7 @@
       {
         "call_addr": "00538c65",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_CStranger_FUN_005384d0",
+        "caller": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005384d0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -271,6 +271,32 @@
       "STORE": 54
     },
     "pcode_op_count": 726
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00546f40",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "005695e0",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0054e170",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0059ff20",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.8373
+    }
   },
   "stack_frame": {
     "frame_size": 264,

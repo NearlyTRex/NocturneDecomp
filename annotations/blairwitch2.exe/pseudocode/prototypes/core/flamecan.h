@@ -7,55 +7,55 @@
 
 // Original: core_flamecan.cpp_staticInit_FUN_004a0660
 // Address: 004a0660
-void staticInit(void);
+void __cdecl staticInit(void);
 
 // Original: core_flamecan.cpp_factoryFuncFlameCan_FUN_004a0690
 // Address: 004a0690
-void factoryFuncFlameCan(void);
+CFlameCan * __cdecl factoryFuncFlameCan(void);
 
 // Original: core_flamecan.cpp_CFlameCan_getActorType_FUN_004a06b0
 // Address: 004a06b0
-CDemonActorType * CFlameCan::getActorType(CFlameCan *this_ptr);
+CDemonActorType * __cdecl CFlameCan::getActorType(CFlameCan *this_ptr);
 
 // Original: core_flamecan.cpp_CFlameCan_ctor_FUN_004a06c0
 // Address: 004a06c0
 CFlameCan * __cdecl CFlameCan::ctor(CFlameCan *this_ptr);
 
-// Original: core_flamecan.cpp_FUN_004a0760
+// Original: core_flamecan.cpp_CFlameCan_setup_FUN_004a0760
 // Address: 004a0760
-void FUN_004a0760(CDemonActor *param_1);
+void __cdecl CFlameCan::setup(CFlameCan *this_ptr);
 
 // Original: core_flamecan.cpp_CFlameCan_ignite_FUN_004a08d0
 // Address: 004a08d0
 void __cdecl CFlameCan::ignite(CFlameCan *this_ptr);
 
-// Original: core_flamecan.cpp_FUN_004a0920
+// Original: core_flamecan.cpp_CFlameCan_process_FUN_004a0920
 // Address: 004a0920
-void FUN_004a0920(CFlameCan *param_1,float param_2);
+void __cdecl CFlameCan::process(CFlameCan *this_ptr,float delta_time);
 
-// Original: core_flamecan.cpp_FUN_004a09f0
+// Original: core_flamecan.cpp_CFlameCan_renderOpaque_FUN_004a09f0
 // Address: 004a09f0
-int FUN_004a09f0(int param_1);
+int __cdecl CFlameCan::renderOpaque(CFlameCan *this_ptr);
 
-// Original: core_flamecan.cpp_FUN_004a0a90
+// Original: core_flamecan.cpp_CFlameCan_renderTransparent_FUN_004a0a90
 // Address: 004a0a90
-undefined4 FUN_004a0a90(int param_1);
+int __cdecl CFlameCan::renderTransparent(CFlameCan *this_ptr);
 
-// Original: core_flamecan.cpp_FUN_004a0ac0
+// Original: core_flamecan.cpp_CFlameCan_getTargetPoints_FUN_004a0ac0
 // Address: 004a0ac0
-undefined4 FUN_004a0ac0(int param_1,float *param_2);
+int __cdecl CFlameCan::getTargetPoints(CFlameCan *this_ptr,CVector3f *out_points_array);
 
-// Original: core_flamecan.cpp_FUN_004a0b90
+// Original: core_flamecan.cpp_CFlameCan_archive_FUN_004a0b90
 // Address: 004a0b90
-void FUN_004a0b90(CDemonActor *param_1);
+void __cdecl CFlameCan::archive(CFlameCan *this_ptr);
 
-// Original: core_flamecan.cpp_FUN_004a0bf0
+// Original: core_flamecan.cpp_CFlameCan_getCollisionType_FUN_004a0bf0
 // Address: 004a0bf0
-undefined4 FUN_004a0bf0(void);
+ECollisionType __cdecl CFlameCan::getCollisionType(CFlameCan *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_flamecan.cpp_FUN_004a0c00
+// Original: core_flamecan.cpp_CFlameCan_getBoundingBox_FUN_004a0c00
 // Address: 004a0c00
-void FUN_004a0c00(int param_1);
+CBoundingBox3D * __cdecl CFlameCan::getBoundingBox(CFlameCan *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_flamecan.cpp_CFlameCan_dtor_FUN_004a0c40
 // Address: 004a0c40

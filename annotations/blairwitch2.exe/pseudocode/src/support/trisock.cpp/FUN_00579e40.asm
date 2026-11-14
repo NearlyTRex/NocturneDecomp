@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[2]:
-;   support_trisock.cpp_FUN_0057a0ec at 0057a1c0
+;   support_trisock.cpp_FUN_0057a0f0 at 0057a1c0
 ;   support_trisock.cpp_FUN_0057a1e0 at 0057a343
 ;
 ; Called Functions:
 ;   crt_stdio.c_sscanf_FUN_005ba8cc
 ;   crt_string.c__strnicmp_FUN_005b8da0
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;   support_trisock.cpp_FUN_00579cc0
 ;   support_trisock.cpp_FUN_00579cf0
 ;   support_trisock.cpp_FUN_00579dc0
@@ -191,8 +191,8 @@ section .text
     PUSH 0x5ed196                       ; 00579ff9
     LEA EAX,[ESP + 0x81c]               ; 00579ffe
     PUSH EAX                            ; 0057a005
-    CALL crt_unknown.c_FUN_005b7790     ; 0057a006
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0057a006
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x10                        ; 0057a00b
     LEA EAX,[ESP + 0x810]               ; 0057a00e
     PUSH EAX                            ; 0057a015
@@ -213,8 +213,8 @@ section .text
     PUSH 0x5ed19d                       ; 0057a033
     LEA EAX,[ESP + 0x81c]               ; 0057a038
     PUSH EAX                            ; 0057a03f
-    CALL crt_unknown.c_FUN_005b7790     ; 0057a040
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0057a040
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x10                        ; 0057a045
     LEA EAX,[ESP + 0x810]               ; 0057a048
     PUSH EAX                            ; 0057a04f

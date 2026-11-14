@@ -102,7 +102,7 @@ TEST_F(CAdjustMouseSensitivityTest, TheSliderIsDrawn) {
     EXPECT_TRUE(drawn);
 }
 
-// Control Options from Options, the fourth line.
+// Control Options from Options, the fifth line.
 class CConfigureCustomKeysTest : public CAdjustMouseSensitivityTest {
 protected:
     CConfigureCustomKeysTest() {
@@ -114,22 +114,23 @@ protected:
 // from being read as one.
 TEST_F(CConfigureCustomKeysTest, CancelGoesBackToOptions) {
     pressEachFrame({EInputCodeType::DIK_DOWN, EInputCodeType::DIK_DOWN, EInputCodeType::DIK_DOWN,
-                    EInputCodeType::DIK_RETURN, EInputCodeType::DIK_DOWN,
+                    EInputCodeType::DIK_DOWN, EInputCodeType::DIK_RETURN, EInputCodeType::DIK_DOWN,
                     EInputCodeType::DIK_ESCAPE, EInputCodeType::DIK_ESCAPE});
     menu_.showOptionsScreen(0);
-    EXPECT_EQ(frames_, 7);
+    EXPECT_EQ(game_.game_control, EControlMode::CONTROL_MODE_KEYBOARD);
+    EXPECT_EQ(frames_, 8);
 }
 
 // A new control type takes the bindings screen next, which clears the screen a frame before its
 // list; Options takes its Cancel in the frame the bindings close.
 TEST_F(CConfigureCustomKeysTest, ANewTypeGoesOnToItsBindings) {
     pressEachFrame({EInputCodeType::DIK_DOWN, EInputCodeType::DIK_DOWN, EInputCodeType::DIK_DOWN,
-                    EInputCodeType::DIK_RETURN, EInputCodeType::DIK_RETURN,
-                    EInputCodeType::DIK_ESCAPE, EInputCodeType::DIK_ESCAPE,
-                    EInputCodeType::DIK_ESCAPE});
+                    EInputCodeType::DIK_DOWN, EInputCodeType::DIK_RETURN,
+                    EInputCodeType::DIK_RETURN, EInputCodeType::DIK_ESCAPE,
+                    EInputCodeType::DIK_ESCAPE, EInputCodeType::DIK_ESCAPE});
     menu_.showOptionsScreen(0);
     EXPECT_EQ(game_.game_control, EControlMode::CONTROL_MODE_MOUSE);
-    EXPECT_EQ(frames_, 8);
+    EXPECT_EQ(frames_, 9);
 }
 
 } // namespace

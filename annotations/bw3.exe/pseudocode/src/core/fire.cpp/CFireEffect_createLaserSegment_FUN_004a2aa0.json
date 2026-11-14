@@ -18,13 +18,13 @@
     {
       "addr": "004a2b70",
       "from_addr": "004a2dcd",
-      "name": "core_fire.cpp_FUN_004a2b70",
+      "name": "core_fire.cpp_CFireEffect_createLaserPath_FUN_004a2b70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004a2e20",
       "from_addr": "004a3301",
-      "name": "core_fire.cpp_FUN_004a2e20",
+      "name": "core_fire.cpp_CFireEffect_traceLaser_FUN_004a2e20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -61,7 +61,7 @@
       {
         "call_addr": "004a3301",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004a2e20",
+        "caller": "core_fire.cpp_CFireEffect_traceLaser_FUN_004a2e20",
         "estimated_params": 10,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -72,7 +72,7 @@
       {
         "call_addr": "004a2dcd",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004a2b70",
+        "caller": "core_fire.cpp_CFireEffect_createLaserPath_FUN_004a2b70",
         "estimated_params": 10,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -114,6 +114,32 @@
       "STORE": 16
     },
     "pcode_op_count": 177
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0049d770",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw1.exe": {
+      "addr": "004b6070",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004c7eb0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0048b370",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 44,

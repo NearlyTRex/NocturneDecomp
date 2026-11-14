@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 34,
+    "complexity_score": 18,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 19,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 64
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 18,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 63
   },
   "cross_references": [
     {
@@ -118,6 +116,32 @@
     },
     "pcode_op_count": 142
   },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "0044cb00",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00448c40",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "0044c090",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0043ff30",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.3721
+    }
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -141,16 +165,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "*(byte ***)&this_ptr->field_0x3c = &g_CDemonCameraVTable;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CFieldNotes * core_fldnotes_cpp_CFieldNotes_ctor_FUN_004aa7d0(CFieldNotes *this_ptr)
+; CFieldNotes * __cdecl core_fldnotes_cpp_CFieldNotes_ctor_FUN_004aa7d0(CFieldNotes *this_ptr)
 ;
 ; Parameters:
 ; CFieldNotes *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   unkaddr_004a76f0.cpp_FUN_004a76f0 at 004a7876
+;   core_flashlit.cpp_FUN_004a76f0 at 004a7876
 ;
 ; *****************************************************************************
 

@@ -100,15 +100,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0055753e",
-      "from_addr": "005575a2",
-      "name": "sound_snddx.cpp_FUN_0055753e",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00557800",
       "from_addr": "00557824",
       "name": "sound_snddx.cpp_FUN_00557800",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00557540",
+      "from_addr": "005575a2",
+      "name": "sound_snddx.cpp_directSoundEnumerationCallback_FUN_00557540",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -295,28 +295,6 @@
         "stack_params": 1
       },
       {
-        "call_addr": "005575a2",
-        "call_type": "direct",
-        "caller": "sound_snddx.cpp_FUN_0055753e",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "0055765d",
-        "call_type": "direct",
-        "caller": "sound_snddx.cpp_FUN_0055753e",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
         "call_addr": "005551fc",
         "call_type": "direct",
         "caller": "sound_snddx.cpp_FUN_00555130",
@@ -359,6 +337,28 @@
         "reg_params": [],
         "stack_bytes": 4,
         "stack_params": 1
+      },
+      {
+        "call_addr": "00555301",
+        "call_type": "direct",
+        "caller": "sound_snddx.cpp_FUN_005552a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00555346",
+        "call_type": "direct",
+        "caller": "sound_snddx.cpp_FUN_005552a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
       }
     ],
     "confidence": "high",
@@ -388,6 +388,20 @@
       "RETURN": 22
     },
     "pcode_op_count": 290
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00577500",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0055a670",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 8,

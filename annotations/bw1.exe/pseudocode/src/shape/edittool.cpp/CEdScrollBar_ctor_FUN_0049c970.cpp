@@ -9,17 +9,17 @@
 CEdScrollBar * __cdecl shape_edittool_cpp_CEdScrollBar_ctor_FUN_0049c970(CEdScrollBar *this_ptr)
 
 {
-  uint uVar1;
+  int iVar1;
   
-  *(uint *)(this_ptr + 4) = 1;
-  *(uint *)this_ptr = 0;
-  *(uint *)(this_ptr + 8) = 1;
-  *(uint *)(this_ptr + 0x20) = 0;
-  *(uint *)(this_ptr + 0xc) = 1;
-  *(uint *)(this_ptr + 0x10) = 0;
-  uVar1 = *(uint *)(this_ptr + 0x20);
-  *(uint *)(this_ptr + 0x1c) = uVar1;
-  *(uint *)(this_ptr + 0x18) = uVar1;
-  *(uint *)(this_ptr + 0x14) = uVar1;
+  this_ptr->item_count = 1;
+  this_ptr->scroll_position = 0;
+  this_ptr->page_size = 1;
+  this_ptr->bounds_bottom = 0;
+  this_ptr->scroll_increment = 1;
+  this_ptr->orientation = 0;
+  iVar1 = this_ptr->bounds_bottom;
+  this_ptr->bounds_right = iVar1;
+  this_ptr->bounds_top = iVar1;
+  this_ptr->bounds_left = iVar1;
   return this_ptr;
 }

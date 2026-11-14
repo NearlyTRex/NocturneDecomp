@@ -49,7 +49,7 @@
 ;   core_actor.cpp_FUN_00408bf0
 ;   core_charactr.cpp_FUN_0042c230
 ;   core_xform.cpp_FUN_00583260
-;   engine_console.cpp_FUN_00441ff0
+;   engine_console.cpp_CConsole_printf_FUN_00441ff0
 ;
 ; *****************************************************************************
 
@@ -156,8 +156,8 @@ section .text
     PUSH 0x5d13c6                       ; 00545d75 | s_Chain_stretched_to_f_005d13c4+2
     MOV EDX,dword ptr [0x005f1690]      ; 00545d7a | g_CConsolePtr
     PUSH EDX                            ; 00545d80 | g_CConsoleInstance
-    CALL engine_console.cpp_FUN_00441ff0 ; 00545d81
-        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; undefined engine_console.cpp_FUN_00441ff0()
+    CALL engine_console.cpp_CConsole_printf_FUN_00441ff0 ; 00545d81
+        ;   XREF to: 00441ff0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441ff0(CConsole * this_ptr, char * format)
     FLD float ptr [EBP + 0x66]          ; 00545d86
     ADD ESP,0x10                        ; 00545d89
     FCOMP float ptr [EBX + 0xd08c]      ; 00545d8c

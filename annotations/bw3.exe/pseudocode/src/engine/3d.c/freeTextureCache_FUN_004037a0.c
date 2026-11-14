@@ -9,6 +9,6 @@
 void __cdecl engine_3d_c_freeTextureCache_FUN_004037a0(void)
 
 {
-  engine_texture_cpp_FUN_0056a9c0();
+  engine_texture_cpp_freeTextureCache_FUN_0056a9c0();
   return;
 }

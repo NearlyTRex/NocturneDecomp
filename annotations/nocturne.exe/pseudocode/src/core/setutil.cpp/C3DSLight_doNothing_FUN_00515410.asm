@@ -7,7 +7,7 @@
 ; C3DSLight *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_set.cpp_CDemonSet_FUN_0050ad20 at 0050ad70
+;   core_set.cpp_CDemonSet_clearLights_FUN_0050ad20 at 0050ad70
 ;
 ; *****************************************************************************
 

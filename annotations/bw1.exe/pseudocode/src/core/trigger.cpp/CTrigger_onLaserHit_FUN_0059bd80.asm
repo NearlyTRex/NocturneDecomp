@@ -8,7 +8,7 @@
 ; SLaserInfo *     Stack[0x8]:4   laser_info
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409680
+;   core_actor.cpp_CDemonActor_onLaserHit_FUN_00409680
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 0059bd86
     PUSH EBX                            ; 0059bd8a
     PUSH ESI                            ; 0059bd8b
-    CALL core_actor.cpp_FUN_00409680    ; 0059bd8c
-        ;   XREF to: 00409680 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409680()
+    CALL core_actor.cpp_CDemonActor_onLaserHit_FUN_00409680 ; 0059bd8c
+        ;   XREF to: 00409680 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_onLaserHit_FUN_00409680(CDemonActor * this_ptr, SLaserInfo * laser_info)
     MOV EDX,dword ptr [ESI + 0x174]     ; 0059bd91
     ADD ESP,0x8                         ; 0059bd97
     CMP EDX,0x5                         ; 0059bd9a

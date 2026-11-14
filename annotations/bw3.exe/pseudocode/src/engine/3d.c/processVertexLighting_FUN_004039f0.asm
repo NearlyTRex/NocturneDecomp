@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl engine_3d_c_processVertexLighting_FUN_004039f0(int param_1)
+; SMRGLHeaderExtended * __cdecl engine_3d_c_processVertexLighting_FUN_004039f0(SMRGLHeaderExtended *mrgl)
 ;
+; Parameters:
+; SMRGLHeaderExtended * Stack[0x4]:4   mrgl
 ;
 ; XREF[1]:
-;   engine_3d.c_FUN_00407860 at 00407922
+;   engine_3d.c_dispatchMRGLToRenderer_FUN_00407860 at 00407922
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_007303e0
@@ -39,7 +41,7 @@ section .text
     ADD ESI,0xc                         ; 00403a13
     INC EBX                             ; 00403a16
     CALL engine_light.cpp_calculateAndStoreVertexLight_FUN_004e0ed0 ; 00403a17
-        ;   XREF to: 004e0ed0 (UNCONDITIONAL_CALL)  ; undefined engine_light.cpp_calculateAndStoreVertexLight_FUN_004e0ed0()
+        ;   XREF to: 004e0ed0 (UNCONDITIONAL_CALL)  ; void engine_light.cpp_calculateAndStoreVertexLight_FUN_004e0ed0(int vertex_index, CVector3i * vertex_position)
     MOV EBP,dword ptr [EDI + 0x8]       ; 00403a1c
     ADD ESP,0x8                         ; 00403a1f
     CMP EBX,EBP                         ; 00403a22

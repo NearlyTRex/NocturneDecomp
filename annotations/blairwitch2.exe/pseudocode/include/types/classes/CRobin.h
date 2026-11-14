@@ -4,13 +4,16 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBasicNPC.h"
 
 // Structure: CRobin
-// Stub: size from Watcom RTTI, fields not yet recovered
+// RTTI 71768
 // Ghidra size: 0x11858 (71768 bytes)
 #pragma pack(push, 1)
 typedef struct CRobin {
-    char field_0[71768]; // 0x0
+    CBasicNPC base; // 0x0, derived
+    int head_bone; // 0x11850, setup findBone 'Bip01 Head', copied to +0x10a24
+    int hand_bone; // 0x11854, setup findBone 'Bip01 R Hand', copied to +0x2618
 } CRobin;
 #pragma pack(pop)
 

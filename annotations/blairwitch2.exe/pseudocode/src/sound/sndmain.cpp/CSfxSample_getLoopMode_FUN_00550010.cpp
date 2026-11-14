@@ -9,10 +9,10 @@
 int __cdecl sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_00550010(CSfxSample *this_ptr)
 
 {
-  if (((*(int *)&this_ptr->field_0x124 < 2) &&
-      (*(int *)&this_ptr->field_0x110 == *(int *)&this_ptr->field_0x128)) &&
-     (*(int *)&this_ptr->field_0x13c < 1)) {
-    if (*(int *)&this_ptr->field_0x13c == 0) {
+  if (((this_ptr->loop_marker_count < 2) &&
+      ((this_ptr->sample_info).sample_count == this_ptr->loop_endpoints[0])) &&
+     (this_ptr->loop_destinations[0] < 1)) {
+    if (this_ptr->loop_destinations[0] == 0) {
       return 1;
     }
     return 0;

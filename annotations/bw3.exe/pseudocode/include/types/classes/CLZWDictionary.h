@@ -2,14 +2,23 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CLZWDictionaryNode;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/SBitBuffer.h"
 
 // Structure: CLZWDictionary
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x1c (28 bytes)
 #pragma pack(push, 1)
 typedef struct CLZWDictionary {
+    int table_capacity; // 0x0
+    int num_bits; // 0x4
+    int current_num_bits; // 0x8
+    int entry_count; // 0xc
+    struct CLZWDictionaryNode* node_table; // 0x10
+    SBitBuffer bit_state; // 0x14
 } CLZWDictionary;
 #pragma pack(pop)
 

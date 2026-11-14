@@ -2,11 +2,11 @@
 // Address: 005a3e68
 // Address Range: [[005a3e68, 005a3efb]]
 // Convention: unknown
-// Signature: undefined4 * crt_unknown_c_FUN_005a3e68(undefined4 *param_1,int param_2)
+// Signature: undefined4 * crt_unknown_c_FUN_005a3e68(undefined4 *param_1,ulong param_2)
 
 #include "nocturne.h"
 
-uint * FUN_005a3e68(uint *param_1,int param_2)
+uint * FUN_005a3e68(uint *param_1,ulong param_2)
 
 {
   uint *puVar1;
@@ -18,7 +18,7 @@ uint * FUN_005a3e68(uint *param_1,int param_2)
   
   bVar6 = 0;
   if (param_1 == (uint *)0x0) {
-    puVar1 = (uint *)FUN_005a3660(param_2);
+    puVar1 = InternalHeapAlloc(param_2);
     return puVar1;
   }
   if (param_2 == 0) {
@@ -28,7 +28,7 @@ uint * FUN_005a3e68(uint *param_1,int param_2)
   uVar2 = FUN_005a9e60(param_1);
   puVar1 = (uint *)FUN_005aa044(param_1,param_2);
   if (puVar1 == (uint *)0x0) {
-    puVar1 = (uint *)FUN_005a3660(param_2);
+    puVar1 = InternalHeapAlloc(param_2);
     if (puVar1 == (uint *)0x0) {
       FUN_005aa044(param_1,uVar2);
     }

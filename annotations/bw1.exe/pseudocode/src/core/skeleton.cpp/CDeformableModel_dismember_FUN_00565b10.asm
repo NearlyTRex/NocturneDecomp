@@ -30,7 +30,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_skeleton.cpp_FUN_0056a7d0 at 0056a858
+;   core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_0056a7d0 at 0056a858
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005f2276
@@ -46,7 +46,7 @@
 ;
 ; Called Functions:
 ;   core_bodypart.cpp_CBodyPart_addTexture_FUN_0041ac60
-;   core_bodypart.cpp_FUN_00418d00
+;   core_bodypart.cpp_setCounts_FUN_00418d00
 ;   core_main.c_FUN_005030e0
 ;   crt_memory.c_memset_FUN_005bfb70
 ;
@@ -257,8 +257,8 @@ section .text
     PUSH EAX                            ; 00565d6b
     PUSH ECX                            ; 00565d6c
     PUSH EBP                            ; 00565d6d
-    CALL core_bodypart.cpp_FUN_00418d00 ; 00565d6e
-        ;   XREF to: 00418d00 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_FUN_00418d00()
+    CALL core_bodypart.cpp_setCounts_FUN_00418d00 ; 00565d6e
+        ;   XREF to: 00418d00 (UNCONDITIONAL_CALL)  ; undefined core_bodypart.cpp_setCounts_FUN_00418d00()
     ADD ESP,0xc                         ; 00565d73
     MOV EAX,dword ptr [ESP + 0x5c]      ; 00565d76
     MOV EDX,dword ptr [ESP + 0x58]      ; 00565d7a

@@ -17,27 +17,27 @@
   },
   "cross_references": [
     {
-      "addr": "00579f6e",
+      "addr": "00579f70",
       "from_addr": "0057a1ad",
-      "name": "sound_snddx.cpp_FUN_00579f6e",
+      "name": "sound_snddx.cpp_directSoundEnumerationCallback_FUN_00579f70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0056e830",
       "from_addr": "0056ec08",
-      "name": "sound_sndmain.cpp_FUN_0056e830",
+      "name": "sound_sndmain.cpp_getSfxSample_FUN_0056e830",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005773f0",
       "from_addr": "0057742f",
-      "name": "sound_sndmain.cpp_FUN_005773f0",
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005773f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0059daec",
+      "addr": "0059daf0",
       "from_addr": "0059dc80",
-      "name": "support_trisock.cpp_FUN_0059daec",
+      "name": "support_trisock.cpp_FUN_0059daf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -47,21 +47,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0059ef20",
+      "from_addr": "0059ef2e",
+      "name": "support_trisock.cpp_FUN_0059ef20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "005a1e90",
       "from_addr": "005a1ea3",
-      "name": "support_trstream.cpp_FUN_005a1e90",
+      "name": "support_trstream.cpp_COutStreamDebug_putChar_FUN_005a1e90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a1ec0",
       "from_addr": "005a1f20",
-      "name": "support_trstream.cpp_FUN_005a1ec0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059ef20",
-      "from_addr": "0059ef2e",
-      "name": "unkafter_trisock.cpp_FUN_0059ef20",
+      "name": "support_trstream.cpp_COutStreamDebug_write_FUN_005a1ec0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -98,7 +98,7 @@
       {
         "call_addr": "0059ef2e",
         "call_type": "direct",
-        "caller": "unkafter_trisock.cpp_FUN_0059ef20",
+        "caller": "support_trisock.cpp_FUN_0059ef20",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -111,7 +111,7 @@
       {
         "call_addr": "0056ec08",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_0056e830",
+        "caller": "sound_sndmain.cpp_getSfxSample_FUN_0056e830",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -124,7 +124,7 @@
       {
         "call_addr": "0057742f",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_005773f0",
+        "caller": "sound_sndmain.cpp_logSoundError_FUN_005773f0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -137,7 +137,7 @@
       {
         "call_addr": "0057743a",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_005773f0",
+        "caller": "sound_sndmain.cpp_logSoundError_FUN_005773f0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -150,7 +150,7 @@
       {
         "call_addr": "00577447",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_005773f0",
+        "caller": "sound_sndmain.cpp_logSoundError_FUN_005773f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -170,35 +170,9 @@
         "stack_params": 1
       },
       {
-        "call_addr": "0057a1ad",
-        "call_type": "direct",
-        "caller": "sound_snddx.cpp_FUN_00579f6e",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
-        "call_addr": "0057a1ca",
-        "call_type": "direct",
-        "caller": "sound_snddx.cpp_FUN_00579f6e",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
-        "reg_params": [
-          "EDX"
-        ],
-        "stack_bytes": 4,
-        "stack_params": 1
-      },
-      {
         "call_addr": "005a1ea3",
         "call_type": "direct",
-        "caller": "support_trstream.cpp_FUN_005a1e90",
+        "caller": "support_trstream.cpp_COutStreamDebug_putChar_FUN_005a1e90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -211,7 +185,7 @@
       {
         "call_addr": "005a1f20",
         "call_type": "direct",
-        "caller": "support_trstream.cpp_FUN_005a1ec0",
+        "caller": "support_trstream.cpp_COutStreamDebug_write_FUN_005a1ec0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -220,6 +194,35 @@
           "EBX",
           "ECX",
           "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005a1f57",
+        "call_type": "direct",
+        "caller": "support_trstream.cpp_COutStreamDebug_write_FUN_005a1ec0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0057a1ad",
+        "call_type": "direct",
+        "caller": "sound_snddx.cpp_directSoundEnumerationCallback_FUN_00579f70",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX"
         ],
         "stack_bytes": 4,
         "stack_params": 1
@@ -244,6 +247,26 @@
       "STORE": 2
     },
     "pcode_op_count": 13
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0058ffc0",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00581c70",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00600790",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,

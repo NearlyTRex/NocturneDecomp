@@ -18,19 +18,19 @@
     {
       "addr": "004ee3f0",
       "from_addr": "004ee492",
-      "name": "core_menu.cpp_FUN_004ee3f0",
+      "name": "core_menu.cpp_showMainGameMenu_FUN_004ee3f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004fcf50",
       "from_addr": "004fcf50",
-      "name": "core_mission.cpp_FUN_004fcf50",
+      "name": "core_mission.cpp_CDemonMission_freeAllAssets_FUN_004fcf50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f3420",
       "from_addr": "004f3420",
-      "name": "engine_mini3d.cpp_FUN_004f3420",
+      "name": "engine_mini3d.cpp_resetTextureCache_FUN_004f3420",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -73,7 +73,7 @@
       {
         "call_addr": "004ee492",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004ee3f0",
+        "caller": "core_menu.cpp_showMainGameMenu_FUN_004ee3f0",
         "estimated_params": 0,
         "instructions_analyzed": 1,
         "method": "push_count",
@@ -84,7 +84,7 @@
       {
         "call_addr": "004fcf50",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_004fcf50",
+        "caller": "core_mission.cpp_CDemonMission_freeAllAssets_FUN_004fcf50",
         "estimated_params": 0,
         "instructions_analyzed": 0,
         "method": "push_count",
@@ -95,7 +95,7 @@
       {
         "call_addr": "004ee6b3",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004ee3f0",
+        "caller": "core_menu.cpp_showMainGameMenu_FUN_004ee3f0",
         "estimated_params": 0,
         "instructions_analyzed": 1,
         "method": "push_count",
@@ -106,7 +106,7 @@
       {
         "call_addr": "004ee889",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004ee3f0",
+        "caller": "core_menu.cpp_showMainGameMenu_FUN_004ee3f0",
         "estimated_params": 0,
         "instructions_analyzed": 1,
         "method": "push_count",
@@ -117,7 +117,7 @@
       {
         "call_addr": "004f3420",
         "call_type": "direct",
-        "caller": "engine_mini3d.cpp_FUN_004f3420",
+        "caller": "engine_mini3d.cpp_resetTextureCache_FUN_004f3420",
         "estimated_params": 0,
         "instructions_analyzed": 0,
         "method": "push_count",
@@ -152,6 +152,20 @@
       "STORE": 2
     },
     "pcode_op_count": 31
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00597c30",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "0056ac20",
+      "by": "body",
+      "class": "identical",
+      "ratio": 1.0
+    }
   },
   "stack_frame": {
     "frame_size": 4,

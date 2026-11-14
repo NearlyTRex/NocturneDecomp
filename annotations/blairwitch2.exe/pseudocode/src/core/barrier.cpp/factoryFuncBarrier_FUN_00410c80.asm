@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_barrier_cpp_factoryFuncBarrier_FUN_00410c80(void)
+; CBarrier * __cdecl core_barrier_cpp_factoryFuncBarrier_FUN_00410c80(void)
 ;
 ;
 ; Called Functions:
 ;   core_barrier.cpp_CBarrier_ctor_FUN_00410cb0
-;   crt_unknown.c_FUN_005b8be2
+;   crt_memory.c_operator_new_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x38c                          ; 00410c80
         ;   Label: core_barrier.cpp_factoryFuncBarrier_FUN_00410c80
-    CALL crt_unknown.c_FUN_005b8be2     ; 00410c85
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_memory.c_operator_new_FUN_005b8be2 ; 00410c85
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c_operator_new_FUN_005b8be2()
     ADD ESP,0x4                         ; 00410c8a
     TEST EAX,EAX                        ; 00410c8d
     JNZ 0x00410c92                      ; 00410c8f

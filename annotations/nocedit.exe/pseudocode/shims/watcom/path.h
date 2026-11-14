@@ -87,6 +87,27 @@ std::string watcom_resolve_fs_path(const char *path, WatcomPathUse use = WatcomP
 // roots set, the one directory the game named.
 std::vector<std::string> watcom_resolve_fs_dirs(const char *directory);
 
+// The .pod files in the data directory's subfolders, as if they were in the
+// data directory itself: the game names a POD by its bare name and lists them
+// with "*.pod" in its own directory, so an install split into folders (a
+// package per game or mod) is found by both. Each entry is {leaf name, path
+// relative to the data directory}. A name the data directory itself has is not
+// listed, and a name in several subfolders is the first by path, so the answer
+// does not depend on the filesystem's order. Dot-folders and links to folders
+// are not entered, nor folders more than kWatcomNestedPodDepth down.
+//
+// Found once per data directory and set of roots; a read of a bare .pod name
+// the data directory does not have resolves through it.
+const int kWatcomNestedPodDepth = 4;
+struct WatcomNestedPod {
+    std::string name;
+    std::string relative;
+};
+std::vector<WatcomNestedPod> watcom_nested_pods();
+
+// The same, under `top` rather than the data directory, found afresh.
+std::vector<WatcomNestedPod> watcom_nested_pods_in(const std::string &top);
+
 // Whether an fopen mode string can create or change the file.
 inline bool watcom_mode_writes(const char *mode) {
     if (mode == nullptr)

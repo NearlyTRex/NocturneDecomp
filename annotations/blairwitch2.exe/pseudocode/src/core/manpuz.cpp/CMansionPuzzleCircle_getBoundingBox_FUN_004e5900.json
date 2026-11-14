@@ -1,0 +1,184 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 28,
+    "complexity_score": 89,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 24,
+    "suspect_count": 5,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "unaffected_reg",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 52
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004e5900",
+    "address_range": [
+      [
+        "004e5900",
+        "004e5951"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_manpuz.cpp_CMansionPuzzleCircle_getBoundingBox_FUN_004e5900",
+    "signature": "CBoundingBox3D * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getBoundingBox_FUN_004e5900(CMansionPuzzleCircle *this_ptr,CBoundingBox3D *out_box)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.444444444444445,
+    "instruction_count": 27,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CBRANCH": 1,
+      "COPY": 45,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_NEG": 1,
+      "INT_ADD": 16,
+      "INT_AND": 6,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 7,
+      "INT_LESS": 1,
+      "INT_MULT": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 6,
+      "INT_XOR": 1,
+      "INT_ZEXT": 2,
+      "LOAD": 10,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 9
+    },
+    "pcode_op_count": 120
+  },
+  "siblings": {
+    "bw1.exe": {
+      "addr": "00504510",
+      "by": "name",
+      "class": "layout-drift",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "005092e0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4651
+    },
+    "nocturne.exe": {
+      "addr": "004c9e00",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.4651
+    }
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMansionPuzzleCircle *"
+      },
+      {
+        "is_param": true,
+        "name": "out_box",
+        "offset": 8,
+        "size": 4,
+        "type": "CBoundingBox3D *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "004e5927",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 6,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "CBoundingBox3D *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 20,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "pCVar3 = unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 26,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "return unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 24,
+      "match": "pCVar3 = (T *)&(pCVar3->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar3 = (CBoundingBox3D *)&(pCVar3->min).y;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 004e5948, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 23,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004e5948: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 36,
+        "vtable_addr": "005f98d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

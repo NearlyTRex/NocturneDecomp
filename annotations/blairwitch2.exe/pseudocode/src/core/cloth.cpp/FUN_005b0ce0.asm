@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_cloth.cpp_FUN_005b0c8c at 005b0cbb
+;   core_cloth.cpp_FUN_005b0c90 at 005b0cbb
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f1107
@@ -18,7 +18,7 @@
 ;   core_dirmat.cpp_FUN_004496e0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
 ;   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046b970
-;   engine_matrix.c_pop_FUN_0046b4a0
+;   engine_drender.cpp_pop_FUN_0046b4a0
 ;   engine_special.cpp_FUN_0055d723
 ;   shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_0047f1c0
 ;   shape_edittool.cpp_FUN_0047fd00
@@ -155,8 +155,8 @@ section .text
     MOV ESI,dword ptr [0x0060b280]      ; 005b0e5c | DAT_0060b280
         ;   Label: LAB_005b0e5c
     PUSH ESI                            ; 005b0e62
-    CALL engine_matrix.c_pop_FUN_0046b4a0 ; 005b0e63
-        ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046b4a0()
+    CALL engine_drender.cpp_pop_FUN_0046b4a0 ; 005b0e63
+        ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_pop_FUN_0046b4a0()
     ADD ESP,0x4                         ; 005b0e68
     ADD ESP,0x60                        ; 005b0e6b
     POP EBP                             ; 005b0e6e

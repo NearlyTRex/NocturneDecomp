@@ -45,7 +45,7 @@
     {
       "addr": "005bfb40",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005bfb40"
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
     }
   ],
   "globals": [
@@ -147,6 +147,32 @@
     },
     "pcode_op_count": 309
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "00520fd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "005286f0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00559220",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "004fdec0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -169,7 +195,7 @@
       "line": 22,
       "match": "DAT_00626114",
       "severity": "mild",
-      "text": "while ((pcVar2 = pcVar2 + 1, ((&DAT_00626114)[(byte)(*pcVar2 + 1)] & 0xe0) != 0 ||",
+      "text": "((&DAT_00626114)[(byte)(*variable_name + 1)] & 0xe0) != 0 || (*variable_name == '_')))",
       "type": "undefined_data"
     },
     {
@@ -177,7 +203,7 @@
       "line": 29,
       "match": "DAT_01e810b0",
       "severity": "mild",
-      "text": "FUN_005bfb40(&DAT_01e810b0,\"Actor variable name \\\"%s\\\" is not valid\",variable_name);",
+      "text": "_sprintf(&DAT_01e810b0,\"Actor variable name \\\"%s\\\" is not valid\");",
       "type": "undefined_data"
     },
     {
@@ -185,7 +211,7 @@
       "line": 32,
       "match": "DAT_01e810b0",
       "severity": "mild",
-      "text": "FUN_005bfb40(&DAT_01e810b0,\"Actor variable name \\\"%s\\\" is too long\",variable_name);",
+      "text": "_sprintf(&DAT_01e810b0,\"Actor variable name \\\"%s\\\" is too long\");",
       "type": "undefined_data"
     },
     {
@@ -193,7 +219,7 @@
       "line": 35,
       "match": "DAT_01e810b0",
       "severity": "mild",
-      "text": "FUN_005bfb40(&DAT_01e810b0,\"?Actor variable name must begin with '@'\" + 1);",
+      "text": "_sprintf(&DAT_01e810b0,\"?Actor variable name must begin with '@'\" + 1);",
       "type": "undefined_data"
     },
     {

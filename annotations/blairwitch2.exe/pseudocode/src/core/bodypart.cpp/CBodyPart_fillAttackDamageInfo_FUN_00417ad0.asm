@@ -10,8 +10,8 @@
 ; CDemonActor *    Stack[0x10]:4   victim
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040ad50
-;   core_actor.cpp_FUN_0040cf60
+;   core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040ad50
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;
 ; *****************************************************************************
 
@@ -29,13 +29,13 @@ section .text
     PUSH ECX                            ; 00417ae3
     MOV ESI,dword ptr [ESP + 0x1c]      ; 00417ae4
     PUSH ESI                            ; 00417ae8
-    CALL core_actor.cpp_FUN_0040ad50    ; 00417ae9
-        ;   XREF to: 0040ad50 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ad50()
+    CALL core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040ad50 ; 00417ae9
+        ;   XREF to: 0040ad50 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040ad50(CDemonActor * this_ptr, int attack_flags, SDamageInfo * out_damage_info, CDemonActor * victim)
     ADD ESP,0x10                        ; 00417aee
     PUSH 0x41700000                     ; 00417af1
     PUSH 0x40a00000                     ; 00417af6
-    CALL core_actor.cpp_FUN_0040cf60    ; 00417afb
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 00417afb
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0x8],EAX       ; 00417b00
     MOV dword ptr [EBX + 0x2c],0x3ca3d70a ; 00417b04
     MOV EAX,dword ptr [ESP + 0x8]       ; 00417b0b

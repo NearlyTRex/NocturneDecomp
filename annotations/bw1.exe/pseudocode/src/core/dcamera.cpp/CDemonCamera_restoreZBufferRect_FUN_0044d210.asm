@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   core_dstrendr.cpp_memcpyMMX_FUN_004886f1
-;   engine_special.cpp_FUN_00582aa0
+;   engine_special.cpp_restoreZBuffer_FUN_00582aa0
 ;
 ; *****************************************************************************
 
@@ -104,8 +104,8 @@ section .text
     PUSH 0x0                            ; 0044d2d3
     PUSH 0x0                            ; 0044d2d5
     PUSH 0x0                            ; 0044d2d7
-    CALL engine_special.cpp_FUN_00582aa0 ; 0044d2d9
-        ;   XREF to: 00582aa0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_00582aa0(int slot, int left, int top, int right, ...)
+    CALL engine_special.cpp_restoreZBuffer_FUN_00582aa0 ; 0044d2d9
+        ;   XREF to: 00582aa0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_restoreZBuffer_FUN_00582aa0(int slot, int left, int top, int right, ...)
     ADD ESP,0x14                        ; 0044d2de
     POP EBP                             ; 0044d2e1
     POP EDI                             ; 0044d2e2

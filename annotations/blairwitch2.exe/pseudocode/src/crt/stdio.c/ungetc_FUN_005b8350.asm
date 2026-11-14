@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl crt_stdio_c_ungetc_FUN_005b8350(uint param_1,int *param_2)
+; int __cdecl crt_stdio_c_ungetc_FUN_005b8350(int character,_FILE *stream)
 ;
+; Parameters:
+; int              Stack[0x4]:4   character
+; _FILE *          Stack[0x8]:4   stream
 ;
 ; XREF[5]:
 ;   core_actor.cpp_archiveString_FUN_0040b730 at 0040b79a

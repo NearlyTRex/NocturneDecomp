@@ -11,39 +11,41 @@
 SMRGLHeaderExtended * __cdecl engine_model_c_FUN_00520150(char *filename,int model_size)
 
 {
-  _FILE *p_Var1;
-  SMRGLHeaderExtended *pSVar2;
-  int iVar3;
-  byte local_60 [80];
+  char cVar1;
+  _FILE *file;
+  SMRGLHeaderExtended *buffer;
+  SIZE_T SVar2;
+  char local_60 [80];
   
-  p_Var1 = engine_dosio_cpp_FUN_00479180("models",filename,&DAT_005ea11a);
-  if (p_Var1 == (_FILE *)0x0) {
-    FUN_005bfb40(local_60,"Unable to open model: %s",filename);
+  file = engine_dosio_cpp_FUN_00479180("models",filename,&DAT_005ea11a);
+  if (file == (_FILE *)0x0) {
+    _sprintf(local_60,"Unable to open model: %s");
     _DAT_01d1d400 = "..\\engine\\model.c";
     _DAT_01d1d404 = 0x2e4;
     core_main_c_FUN_005030e0(local_60);
   }
-  pSVar2 = FUN_005c08d0(model_size + 4);
-  if (pSVar2 == (SMRGLHeaderExtended *)0x0) {
-    FUN_005bfb40(local_60,"Out of partial model mem : %s",filename);
+  buffer = (SMRGLHeaderExtended *)malloc(model_size + 4);
+  if (buffer == (SMRGLHeaderExtended *)0x0) {
+    _sprintf(local_60,"Out of partial model mem : %s");
     _DAT_01d1d404 = 0x2ef;
     _DAT_01d1d400 = "..\\engine\\model.c";
     core_main_c_FUN_005030e0(local_60);
   }
-  iVar3 = _fread(pSVar2,1,model_size,p_Var1);
-  if (iVar3 != model_size) {
+  SVar2 = _fread(buffer,1,model_size,file);
+  if (SVar2 != model_size) {
     _DAT_01d1d400 = "..\\engine\\model.c";
     _DAT_01d1d404 = 0x2f4;
     core_main_c_FUN_005030e0("Model read hose");
   }
-  _fclose(p_Var1);
-  if ((*pSVar2 != (SMRGLHeaderExtended)0x14) && (*pSVar2 != (SMRGLHeaderExtended)0x20)) {
+  _fclose(file);
+  cVar1 = (char)(buffer->base).type;
+  if ((cVar1 != '\x14') && (cVar1 != ' ')) {
     _DAT_01d1d400 = "..\\engine\\model.c";
     _DAT_01d1d404 = 0x2f8;
     core_main_c_FUN_005030e0("Bad model!");
-    *(uint *)(pSVar2 + model_size) = 0;
-    return pSVar2;
+    *(uint *)((int)&(buffer->base).type + model_size) = 0;
+    return buffer;
   }
-  *(uint *)(pSVar2 + model_size) = 0;
-  return pSVar2;
+  *(uint *)((int)&(buffer->base).type + model_size) = 0;
+  return buffer;
 }

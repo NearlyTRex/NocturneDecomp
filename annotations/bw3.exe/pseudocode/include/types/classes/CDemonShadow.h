@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CShadow.h"
 
 // Structure: CDemonShadow
-// Stub: size from Watcom RTTI, fields not yet recovered
+// registered under CShadow (registerActorClass); size 53480 from RTTI; no fields of its own
 // Ghidra size: 0xd0e8 (53480 bytes)
 #pragma pack(push, 1)
 typedef struct CDemonShadow {
-    char field_0[53480]; // 0x0
+    CShadow base; // 0x0, parent class
 } CDemonShadow;
 #pragma pack(pop)
 

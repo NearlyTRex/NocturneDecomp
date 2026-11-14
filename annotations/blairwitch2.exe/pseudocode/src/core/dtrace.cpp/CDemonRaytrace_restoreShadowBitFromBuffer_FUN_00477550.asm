@@ -29,8 +29,8 @@
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_allocVoxelMemory_FUN_00446510
 ;   core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_00472af0
-;   core_dtrace.cpp_FUN_004769a0
-;   core_dtrace.cpp_FUN_00476a50
+;   core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004769a0
+;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00476a50
 ;   core_main.c_FUN_004e4500
 ;
 ; *****************************************************************************
@@ -49,8 +49,8 @@ section .text
     PUSH EBX                            ; 00477560
     LEA ESI,[ESP + 0x20]                ; 00477561
     LEA EDI,[ESP + 0x14]                ; 00477565
-    CALL core_dtrace.cpp_FUN_004769a0   ; 00477569
-        ;   XREF to: 004769a0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_004769a0()
+    CALL core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004769a0 ; 00477569
+        ;   XREF to: 004769a0 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004769a0(CDemonRaytrace * this_ptr, CVector3f * world_position, CVector3i * output_grid_coords)
     LEA ESI,[ESP + 0x20]                ; 0047756e
     ADD ESP,0x8                         ; 00477572
     MOVSD ES:EDI,ESI                    ; 00477575
@@ -90,8 +90,8 @@ section .text
     PUSH EBX                            ; 004775ac
     LEA ESI,[ESP + 0x2c]                ; 004775ad
     LEA EDI,[ESP + 0x8]                 ; 004775b1
-    CALL core_dtrace.cpp_FUN_00476a50   ; 004775b5
-        ;   XREF to: 00476a50 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00476a50()
+    CALL core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00476a50 ; 004775b5
+        ;   XREF to: 00476a50 (UNCONDITIONAL_CALL)  ; CVector3i * core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00476a50(CDemonRaytrace * this_ptr, CVector3f * world_position, CVector3i * output_voxel_coords)
     LEA ESI,[ESP + 0x2c]                ; 004775ba
     ADD ESP,0x8                         ; 004775be
     MOVSD ES:EDI,ESI                    ; 004775c1

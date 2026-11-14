@@ -2,54 +2,54 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 42,
+    "complexity_score": 43,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 12,
+    "pseudocode_lines": 13,
     "suspect_count": 2,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 43
+    "total_lines": 44
   },
   "cross_references": [
     {
       "addr": "0049e1a0",
       "from_addr": "0049e520",
-      "name": "core_elephant.cpp_FUN_0049e1a0",
+      "name": "core_elephant.cpp_CElephantGun_fire_FUN_0049e1a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e8630",
       "from_addr": "004e88bf",
-      "name": "core_gun.cpp_FUN_004e8630",
+      "name": "core_gun.cpp_CGun_fire_FUN_004e8630",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00540080",
       "from_addr": "005404aa",
-      "name": "core_rifle.cpp_FUN_00540080",
+      "name": "core_rifle.cpp_CRifle_fire_FUN_00540080",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00561760",
       "from_addr": "00561ad0",
-      "name": "core_shotgun.cpp_FUN_00561760",
+      "name": "core_shotgun.cpp_CShotgun_fire_FUN_00561760",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00598420",
       "from_addr": "00598704",
-      "name": "core_tommygun.cpp_FUN_00598420",
+      "name": "core_tommygun.cpp_CTommyGun_fire_FUN_00598420",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a3870",
       "from_addr": "005a3d1a",
-      "name": "core_turret.cpp_FUN_005a3870",
+      "name": "core_turret.cpp_CTurret_fire_FUN_005a3870",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -69,7 +69,7 @@
     {
       "addr": "004af340",
       "is_variadic": false,
-      "name": "core_fire.cpp_FUN_004af340"
+      "name": "core_fire.cpp_CMuzzleFlash_init_FUN_004af340"
     }
   ],
   "globals": [
@@ -86,7 +86,7 @@
       {
         "call_addr": "0049e520",
         "call_type": "direct",
-        "caller": "core_elephant.cpp_FUN_0049e1a0",
+        "caller": "core_elephant.cpp_CElephantGun_fire_FUN_0049e1a0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -97,7 +97,7 @@
       {
         "call_addr": "004e88bf",
         "call_type": "direct",
-        "caller": "core_gun.cpp_FUN_004e8630",
+        "caller": "core_gun.cpp_CGun_fire_FUN_004e8630",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -108,7 +108,7 @@
       {
         "call_addr": "005404aa",
         "call_type": "direct",
-        "caller": "core_rifle.cpp_FUN_00540080",
+        "caller": "core_rifle.cpp_CRifle_fire_FUN_00540080",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -119,7 +119,7 @@
       {
         "call_addr": "00561ad0",
         "call_type": "direct",
-        "caller": "core_shotgun.cpp_FUN_00561760",
+        "caller": "core_shotgun.cpp_CShotgun_fire_FUN_00561760",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -130,7 +130,7 @@
       {
         "call_addr": "00598704",
         "call_type": "direct",
-        "caller": "core_tommygun.cpp_FUN_00598420",
+        "caller": "core_tommygun.cpp_CTommyGun_fire_FUN_00598420",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -141,7 +141,7 @@
       {
         "call_addr": "005a3d1a",
         "call_type": "direct",
-        "caller": "core_turret.cpp_FUN_005a3870",
+        "caller": "core_turret.cpp_CTurret_fire_FUN_005a3870",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -185,6 +185,32 @@
     },
     "pcode_op_count": 187
   },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0049d120",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "004a2450",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "004c7a60",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocturne.exe": {
+      "addr": "0048af20",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    }
+  },
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -226,10 +252,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 14,
+      "line": 15,
       "match": "DAT_01c9f1bc",
       "severity": "mild",
-      "text": "core_fire_cpp_FUN_004af340((CMuzzleFlash *)(&DAT_01c9f1bc + iVar1),position,rotation_matrix);",
+      "text": "((CMuzzleFlash *)(&DAT_01c9f1bc + iVar1),position,rotation_matrix);",
       "type": "undefined_data"
     }
   ]

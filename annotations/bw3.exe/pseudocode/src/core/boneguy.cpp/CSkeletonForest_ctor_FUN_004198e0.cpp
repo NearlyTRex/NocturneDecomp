@@ -1,25 +1,24 @@
 // Name: core_boneguy.cpp_CSkeletonForest_ctor_FUN_004198e0
 // Address: 004198e0
 // Address Range: [[004198e0, 00419941]]
-// Convention: unknown
-// Signature: CSkeletonForest * core_boneguy_cpp_CSkeletonForest_ctor_FUN_004198e0(CSkeletonForest *this_ptr)
+// Convention: __cdecl
+// Signature: CSkeletonForest * __cdecl core_boneguy_cpp_CSkeletonForest_ctor_FUN_004198e0(CSkeletonForest *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CSkeletonForest * core_boneguy_cpp_CSkeletonForest_ctor_FUN_004198e0(CSkeletonForest *this_ptr)
+CSkeletonForest * __cdecl core_boneguy_cpp_CSkeletonForest_ctor_FUN_004198e0(CSkeletonForest *this_ptr)
 
 {
   CBoneGuy *pCVar1;
   
-  pCVar1 = core_boneguy_cpp_CBoneGuy_ctor_FUN_00417400((CBoneGuy *)this_ptr);
-  *(byte ***)&pCVar1->field_0x154 = &g_CSkeleton_ForestVTable;
-  core_skeleton_cpp_FUN_0054eae0(&pCVar1->field_0x158,0x5b7182);
-  *(uint *)&pCVar1->field_0x2538 = 0x41c80000;
-  *(uint *)&pCVar1->field_0xce5c = 0x41000000;
-  *(uint *)&pCVar1->field_0xce60 = 0x40a00000;
-  *(uint *)&pCVar1->field_0xd074 = 1;
-  *(uint *)&pCVar1->field_0xd058 = *(uint *)&pCVar1->field_0x2538;
+  pCVar1 = core_boneguy_cpp_CBoneGuy_ctor_FUN_00417400(&this_ptr->base);
+  (pCVar1->base).base.base.vtable._ub = &g_CSkeletonForestVTable._ub;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
+            (&(pCVar1->base).base.model,(char *)0x5b7182);
+  (pCVar1->base).base.hit_points = 25.0;
+  (pCVar1->base).attack_damage = 8.0;
+  (pCVar1->base).pain_threshold = 5.0;
+  pCVar1->skeleton_variant = 1;
+  pCVar1->start_hit_points = (pCVar1->base).base.hit_points;
   return (CSkeletonForest *)pCVar1;
 }

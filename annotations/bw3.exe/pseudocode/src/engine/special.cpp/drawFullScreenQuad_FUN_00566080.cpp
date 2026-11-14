@@ -11,34 +11,31 @@
 int __cdecl engine_special_cpp_drawFullScreenQuad_FUN_00566080(int color)
 
 {
-  byte auStack_c0 [8];
-  uint uStack_b8;
-  int iStack_b0;
-  int iStack_ac;
-  uint uStack_88;
+  SRenderVertex SStack_c0;
+  int iStack_88;
   int iStack_80;
   int iStack_7c;
-  uint uStack_58;
+  int iStack_58;
   int iStack_50;
   int iStack_4c;
-  uint uStack_28;
+  int iStack_28;
   int iStack_20;
   int iStack_1c;
   
-  memset(auStack_c0,0,0xc0);
-  iStack_b0 = _DAT_01c6b5a8 << 0x10;
-  iStack_ac = _DAT_01c6b5ac << 0x10;
+  memset(&SStack_c0,0,0xc0);
+  SStack_c0.projected_vertex.screen_x = _DAT_01c6b5a8 << 0x10;
+  SStack_c0.projected_vertex.screen_y = _DAT_01c6b5ac << 0x10;
   iStack_80 = _DAT_01c6b5b0 << 0x10;
   iStack_4c = _DAT_01c6b5b4 << 0x10;
-  uStack_b8 = _DAT_0060683c;
-  uStack_88 = _DAT_0060683c;
-  uStack_58 = _DAT_0060683c;
-  uStack_28 = _DAT_0060683c;
+  SStack_c0.projected_vertex.transformed_z = _DAT_0060683c;
+  iStack_88 = _DAT_0060683c;
+  iStack_58 = _DAT_0060683c;
+  iStack_28 = _DAT_0060683c;
   _DAT_01c6b5c0 = color;
-  iStack_7c = iStack_ac;
+  iStack_7c = SStack_c0.projected_vertex.screen_y;
   iStack_50 = iStack_80;
-  iStack_20 = iStack_b0;
+  iStack_20 = SStack_c0.projected_vertex.screen_x;
   iStack_1c = iStack_4c;
-  engine_special_cpp_drawPolygon_FUN_00565c10(auStack_c0,4,0x10);
+  engine_special_cpp_drawPolygon_FUN_00565c10(&SStack_c0,4,0x10);
   return 1;
 }

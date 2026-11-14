@@ -1,36 +1,34 @@
 // Name: core_disease.cpp_CDisease_ctor_FUN_0045bf80
 // Address: 0045bf80
 // Address Range: [[0045bf80, 0045c03d]]
-// Convention: unknown
-// Signature: CDisease * core_disease_cpp_CDisease_ctor_FUN_0045bf80(CDisease *this_ptr)
+// Convention: __cdecl
+// Signature: CDisease * __cdecl core_disease_cpp_CDisease_ctor_FUN_0045bf80(CDisease *this_ptr)
 
 #include "nocturne.h"
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-CDisease * core_disease_cpp_CDisease_ctor_FUN_0045bf80(CDisease *this_ptr)
+CDisease * __cdecl core_disease_cpp_CDisease_ctor_FUN_0045bf80(CDisease *this_ptr)
 
 {
   CDisease *pCVar1;
   
-  pCVar1 = (CDisease *)core_weapon_cpp_CWeapon_ctor_FUN_0057ad70((CWeapon *)this_ptr);
-  *(byte **)&pCVar1->field_0x154 = &g_CDiseaseVTable;
+  pCVar1 = (CDisease *)core_weapon_cpp_CWeapon_ctor_FUN_0057ad70(&this_ptr->base);
+  (pCVar1->base).base.vtable._ub = &g_CDiseaseVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
-            ((CKeyFramedModelInstance *)&pCVar1->field_0x158,"diseasebag.kfm");
-  *(uint *)&pCVar1->field_0x2d8 = 0;
-  *(uint *)&pCVar1->field_0x2dc = 0;
-  *(uint *)&pCVar1->field_0x2e0 = 3;
-  *(uint *)&pCVar1->field_0x2e4 = 1;
-  *(uint *)&pCVar1->field_0x2e8 = 0x42c80000;
-  *(uint *)&pCVar1->field_0x2ec = 0;
-  *(uint *)&pCVar1->field_0x56c = 10;
-  *(uint *)&pCVar1->field_0x58c = 0x14;
-  *(uint *)&pCVar1->field_0x574 = 4;
-  *(uint *)&pCVar1->field_0x5a0 = 0;
-  *(uint *)&pCVar1->field_0x59c = *(uint *)&pCVar1->field_0x5a0;
-  *(uint *)&pCVar1->field_0x598 = *(uint *)&pCVar1->field_0x59c;
-  *(uint *)&pCVar1->field_0x590 = 1;
-  *(uint *)&pCVar1->field_0x578 = 2;
-  *(uint *)&pCVar1->field_0x57c = 0;
+            (&(pCVar1->base).model,"diseasebag.kfm");
+  (pCVar1->base).is_spread_weapon = 0;
+  (pCVar1->base).fire_mode = FIRE_MODE_AUTOMATIC;
+  (pCVar1->base).weapon_type = WEAPON_TYPE_DYNAMITE;
+  (pCVar1->base).can_penetrate = 1;
+  (pCVar1->base).bolt_velocity = 100.0;
+  (pCVar1->base).fire_cooldown = 0;
+  (pCVar1->base).ammo_type = AMMO_TYPE_MANA;
+  (pCVar1->base).ammo_per_shot = 0x14;
+  (pCVar1->base).weapon_class = 4;
+  (pCVar1->toss_velocity).z = 0.0;
+  (pCVar1->toss_velocity).y = (pCVar1->toss_velocity).z;
+  (pCVar1->toss_velocity).x = (pCVar1->toss_velocity).y;
+  (pCVar1->base).uses_hero_ammo = 1;
+  (pCVar1->base).number_of_hands_needed = 2;
+  (pCVar1->base).draw_crosshair = 0;
   return pCVar1;
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_biggs_cpp_staticInit_FUN_00414cb0(void)
+; void __cdecl core_biggs_cpp_staticInit_FUN_00414cb0(void)
 ;
 ;
 ; Called Functions:

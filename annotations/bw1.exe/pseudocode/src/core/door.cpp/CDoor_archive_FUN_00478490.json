@@ -1,0 +1,386 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 278,
+    "complexity_score": 122,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 35,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 92,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 370
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00478490",
+    "address_range": [
+      [
+        "00478490",
+        "004787cc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_door.cpp_CDoor_archive_FUN_00478490",
+    "signature": "void __cdecl core_door_cpp_CDoor_archive_FUN_00478490(CDoor *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b5f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b5f0"
+    },
+    {
+      "addr": "0040b670",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b670"
+    },
+    {
+      "addr": "0040b770",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770"
+    },
+    {
+      "addr": "0040be80",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveRules_FUN_0040be80"
+    },
+    {
+      "addr": "0040b440",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b440"
+    },
+    {
+      "addr": "0040b1c0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveVector_FUN_0040b1c0"
+    },
+    {
+      "addr": "0040c040",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c040"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005da81c",
+      "name": "s_modelName_005da81b+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005da826",
+      "name": "s_doorType_005da826",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da82f",
+      "name": "s_doorSide_005da82f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da838",
+      "name": "s_doorState_005da838",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da842",
+      "name": "s_doorSwing_005da842",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da84c",
+      "name": "s_openEvent_005da84c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da856",
+      "name": "s_closeEvent_005da856",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da861",
+      "name": "s_openSound_005da861",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da86b",
+      "name": "s_closeSound_005da86b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da876",
+      "name": "s_keyMask_005da876",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da87e",
+      "name": "s_origPos_005da87e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da886",
+      "name": "s_origOrient_005da886",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da891",
+      "name": "s_param_005da891",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da897",
+      "name": "s_maxParam_005da897",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da8a0",
+      "name": "s_openSpeed_005da8a0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da8aa",
+      "name": "s_closeSpeed_005da8aa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da8b5",
+      "name": "s_groundType_005da8b5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da8c0",
+      "name": "s_eventToTriggerWhenOpen_005da8c0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da8d7",
+      "name": "s_eventToTriggerWhenClosed_005da8d7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da8f0",
+      "name": "s_oneShot_005da8f0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da8f8",
+      "name": "s_openRules_005da8f8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da902",
+      "name": "s_scriptOpenEvent_005da902",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da912",
+      "name": "DAT_005da912",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005da913",
+      "name": "DAT_005da913",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005da914",
+      "name": "DAT_005da914",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005da915",
+      "name": "DAT_005da915",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005da917",
+      "name": "s_blockVirtualDirectorFlag_005da917",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da930",
+      "name": "s_plotAsBoxInShadow_005da930",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da942",
+      "name": "s_allowedSides_005da942",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da94f",
+      "name": "s_allowBulletHoles_005da94f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da960",
+      "name": "s_lockedSound_005da960",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da96c",
+      "name": "s_shakeMeEvent_005da96c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da979",
+      "name": "s_shakeMeStrength_005da979",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da989",
+      "name": "s_handleVertexIndex_005da989",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006124f4",
+      "name": "g_CDoorClassVersion",
+      "type": "int",
+      "value": "0xd"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.188679245283019,
+    "instruction_count": 212,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 3,
+      "CALL": 31,
+      "CBRANCH": 15,
+      "COPY": 132,
+      "INT_ADD": 78,
+      "INT_AND": 99,
+      "INT_CARRY": 34,
+      "INT_EQUAL": 100,
+      "INT_LESS": 14,
+      "INT_NOTEQUAL": 10,
+      "INT_SBORROW": 14,
+      "INT_SCARRY": 34,
+      "INT_SLESS": 49,
+      "INT_SUB": 110,
+      "LOAD": 12,
+      "POPCOUNT": 49,
+      "RETURN": 2,
+      "STORE": 100
+    },
+    "pcode_op_count": 888
+  },
+  "siblings": {
+    "blairwitch2.exe": {
+      "addr": "0045ff80",
+      "by": "name",
+      "class": "operand-change",
+      "ratio": 1.0
+    },
+    "bw3.exe": {
+      "addr": "00464cd0",
+      "by": "name",
+      "class": "identical",
+      "ratio": 1.0
+    },
+    "nocedit.exe": {
+      "addr": "00480aa0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9531
+    },
+    "nocturne.exe": {
+      "addr": "00455ee0",
+      "by": "name",
+      "class": "logic-change",
+      "ratio": 0.9531
+    }
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDoor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 47,
+      "match": "DAT_005da912",
+      "severity": "mild",
+      "text": "pcVar2 = &DAT_005da912;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 49,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDoor",
+        "offset": 212,
+        "vtable_addr": "005ff034"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

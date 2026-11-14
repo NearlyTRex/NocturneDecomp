@@ -10,15 +10,15 @@
 ;
 ; XREF[2]:
 ;   core_charactr.cpp_FUN_00429f20 at 00429fb2
-;   core_shadow.cpp_FUN_0053c500 at 0053cb2f
+;   core_shadow.cpp_CShadow_process_FUN_0053c500 at 0053cb2f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005cd332
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 g_CDemonSetInstance.field1396340_0x154e74
+;   undefined4 g_CDemonSetInstance.waypoint_count
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cfc0
+;   core_actor.cpp_getRandomInt_FUN_0040cfc0
 ;   core_charactr.cpp_FUN_0042b420
 ;   shape_edittool.cpp_wildcardStringMatch_FUN_00485840
 ;
@@ -42,7 +42,7 @@ section .text
     MOV EAX,[0x0061b5a8]                ; 0042b328 | g_CDemonSetPtr
         ;   Label: LAB_0042b328
     MOV EBX,dword ptr [ESP + 0x1f4c]    ; 0042b32d
-    CMP EBX,dword ptr [EAX + 0x154e74]  ; 0042b334 | g_CDemonSetInstance.field1396340_0x154e74
+    CMP EBX,dword ptr [EAX + 0x154e74]  ; 0042b334 | g_CDemonSetInstance.waypoint_count
     JL 0x0042b37d                       ; 0042b33a
         ;   XREF to: 0042b37d (CONDITIONAL_JUMP)  ; LAB_0042b37d
     MOV ECX,dword ptr [ESP + 0x1f48]    ; 0042b33c
@@ -55,8 +55,8 @@ section .text
     PUSH EDI                            ; 0042b34e
         ;   Label: LAB_0042b34e
     PUSH EBP                            ; 0042b34f
-    CALL core_actor.cpp_FUN_0040cfc0    ; 0042b350
-        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cfc0(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cfc0 ; 0042b350
+        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cfc0(int min_value, int max_value)
     LEA EBX,[EAX*0x4 + 0x0]             ; 0042b355
     ADD ESP,0x8                         ; 0042b35c
     MOV EAX,dword ptr [ESP + EBX*0x1]   ; 0042b35f

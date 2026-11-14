@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   core_baal.cpp_FUN_005968a0 at 00596b07
-;   core_baal.cpp_FUN_00597af0 at 00597b50
+;   core_baal.cpp_CBaal_processDamage_FUN_00597af0 at 00597b50
+;   core_baal.cpp_CBaal_process_FUN_005968a0 at 00596b07
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CRainDrop * core_fire_cpp_CRainDrop_arrdtor256_FUN_004b7870(CRainDrop *this_ptr,uint flags)
+; CRainDrop * __cdecl core_fire_cpp_CRainDrop_arrdtor256_FUN_004b7870(CRainDrop *this_ptr,uint flags)
 ;
 ; Parameters:
 ; CRainDrop *      Stack[0x4]:4   this_ptr
@@ -20,7 +20,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004b787a
     PUSH EDX                            ; 004b787e
     CALL crt_memory.c___arrfini_FUN_005c1066 ; 004b787f
-        ;   XREF to: 005c1066 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrfini_FUN_005c1066()
+        ;   XREF to: 005c1066 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrfini_FUN_005c1066(void * obj_array, int obj_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004b7884
     RET                                 ; 004b7887
 
